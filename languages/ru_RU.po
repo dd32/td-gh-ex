@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-04-21 22:55-0700\n"
-"PO-Revision-Date: 2014-04-21 23:34-0700\n"
+"POT-Creation-Date: 2014-04-28 18:26-0700\n"
+"PO-Revision-Date: 2014-04-28 18:29-0700\n"
 "Last-Translator: Serhio <588885@mail.ru>\n"
 "Language-Team: \n"
 "Language: English\n"
@@ -514,9 +514,9 @@ msgstr "Навигация для чердака"
 msgid "Footer Navigation"
 msgstr "Навигация для подвала"
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
-#: ../themeoptions/inc/fields/border/field_border.php:112
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
+#: ../themeoptions/inc/fields/border/field_border.php:113
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
 msgstr "Все"
 
@@ -544,38 +544,45 @@ msgstr "Опции поста"
 msgid "Head Content"
 msgstr "Содержимое заголовка страницы"
 
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1897
+msgid "Default"
+msgstr "По умолчанию"
+
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
+#: ../themeoptions/options.php:1764
 msgid "None"
 msgstr "Никакие"
 
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
+#: ../themeoptions/options.php:1764
 msgid "Image Slider"
 msgstr "Слайдер изображений"
 
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
-#: ../lib/metaboxes.php:438
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
 msgid "Video"
 msgstr "Видео"
 
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:794
+#: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
+#: ../lib/widgets.php:794 ../themeoptions/options.php:1764
 msgid "Image"
 msgstr "Изображение"
 
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
 msgid "Max Image/Slider Height"
 msgstr "Максимальная высота Изображения/Слайдера"
 
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
+#: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию: 400 <b>(Внимание, просто введите значение, например: 350)</b>"
 
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
+#: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
 msgid "Max Image/Slider Width"
 msgstr "Максимальная ширина Изображения/Слайдера"
 
-#: ../lib/metaboxes.php:112
+#: ../lib/metaboxes.php:113
 #, fuzzy
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
@@ -584,138 +591,134 @@ msgstr ""
 "По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
 "введите значение, например: 650, не применяется для слайдера карусели)</b>"
 
-#: ../lib/metaboxes.php:117
+#: ../lib/metaboxes.php:118
 msgid "Post Summary"
 msgstr "Разместить краткое содержание"
 
-#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
-#: ../themeoptions/framework.php:1584
-msgid "Default"
-msgstr "По умолчанию"
-
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
 msgid "Text"
 msgstr "Текст"
 
-#: ../lib/metaboxes.php:124
+#: ../lib/metaboxes.php:125
 msgid "Portrait Image"
 msgstr "Портретное изображение"
 
-#: ../lib/metaboxes.php:125
+#: ../lib/metaboxes.php:126
 msgid "Landscape Image"
 msgstr "Пейзажное изображение"
 
-#: ../lib/metaboxes.php:126
+#: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
 msgstr "Сладер портретных изображений"
 
-#: ../lib/metaboxes.php:127
+#: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
 msgstr "Слайдер пейзажных изображений"
 
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
 msgstr "Показать боковую панель?"
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
+#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Укажите, тип страницы: во всю ширину или с боковой панелью"
 
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
-#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
-#: ../lib/metaboxes.php:574
+#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
+#: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
 msgstr "Да"
 
-#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
-#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
+#: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
+#: ../lib/metaboxes.php:584
 msgid "No"
 msgstr "Нет"
 
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
+#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
 msgstr "Выберите боковую панель"
 
-#: ../lib/metaboxes.php:148
+#: ../lib/metaboxes.php:149
 msgid "Author Info"
 msgstr "Информация об авторе"
 
-#: ../lib/metaboxes.php:149
+#: ../lib/metaboxes.php:150
 msgid "Display an author info box?"
 msgstr "Отображать информацию об авторе?"
 
-#: ../lib/metaboxes.php:158
+#: ../lib/metaboxes.php:159
 msgid "Posts Carousel"
 msgstr "Карусель постов"
 
-#: ../lib/metaboxes.php:159
+#: ../lib/metaboxes.php:160
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Отображать карусель похожих или недавних постов?"
 
-#: ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
 msgstr "Да - отображать недавние посты"
 
-#: ../lib/metaboxes.php:165
+#: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
 msgstr "Да - отображать похожие посты"
 
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
 msgstr "Заголовок карусели"
 
-#: ../lib/metaboxes.php:171
+#: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
 msgstr "например, Похожие посты"
 
-#: ../lib/metaboxes.php:179
+#: ../lib/metaboxes.php:180
 msgid "Post Video Box"
 msgstr "Разместить видео-пост"
 
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
 msgstr "Если видео-пост"
 
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
+#: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
 msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
 
-#: ../lib/metaboxes.php:196
+#: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
 msgstr "Опции поста портфолио"
 
-#: ../lib/metaboxes.php:204
+#: ../lib/metaboxes.php:205
 msgid "Project Layout"
 msgstr "Формат проекта"
 
-#: ../lib/metaboxes.php:209
+#: ../lib/metaboxes.php:210
 msgid "Beside"
 msgstr "Рядом"
 
-#: ../lib/metaboxes.php:210
+#: ../lib/metaboxes.php:211
 msgid "Above"
 msgstr "Сверху"
 
-#: ../lib/metaboxes.php:211
+#: ../lib/metaboxes.php:212
 msgid "Three Rows"
 msgstr "Три ряда"
 
-#: ../lib/metaboxes.php:215
+#: ../lib/metaboxes.php:216
 msgid "Project Options"
 msgstr "Опции проекта"
 
-#: ../lib/metaboxes.php:222
+#: ../lib/metaboxes.php:223
 #, fuzzy
 msgid "Carousel Slider"
 msgstr "Заголовок карусели"
 
-#: ../lib/metaboxes.php:229
+#: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию: 450 <b>(Внимание, просто введите значение, например: 350)</b>"
 
-#: ../lib/metaboxes.php:235
+#: ../lib/metaboxes.php:236
 #, fuzzy
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
@@ -724,141 +727,146 @@ msgstr ""
 "По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> форматах  "
 "<b>(Внимание, просто введите значение, например: 650)</b>"
 
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
+#, fuzzy
+msgid "Auto Play Slider?"
+msgstr "Автозапуск?"
+
+#: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
 msgstr "Название параметра 01"
 
-#: ../lib/metaboxes.php:241
+#: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
 msgstr "например: Тип проекта:"
 
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
 msgstr "Описание параметра 01"
 
-#: ../lib/metaboxes.php:247
+#: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
 msgstr "например, Описание иллюстрации"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
 msgstr "Название параметра 02"
 
-#: ../lib/metaboxes.php:253
+#: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
 msgstr "например, требуемые навыки:"
 
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
 msgstr "Описание параметра 02"
 
-#: ../lib/metaboxes.php:259
+#: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
 msgstr "например, Фотошоп, Иллюстратор"
 
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
 msgstr "Название параметра 03"
 
-#: ../lib/metaboxes.php:265
+#: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
 msgstr "например, Клиент:"
 
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
 msgstr "Описание параметра 03"
 
-#: ../lib/metaboxes.php:271
+#: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
 msgstr "например, Ромашка Инкорпорейтед"
 
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
 msgstr "Название параметра 04"
 
-#: ../lib/metaboxes.php:277
+#: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
 msgstr "например, Год проекта:"
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
 msgstr "Описание параметра 04"
 
-#: ../lib/metaboxes.php:283
+#: ../lib/metaboxes.php:294
 msgid "ex. 2013"
 msgstr "например, 2013"
 
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:299
 msgid "External Website"
 msgstr "Внешний сайт"
 
-#: ../lib/metaboxes.php:289
+#: ../lib/metaboxes.php:300
 msgid "ex. Website:"
 msgstr "например, Сайт:"
 
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:305
 msgid "Website Address"
 msgstr "Адрес сайта"
 
-#: ../lib/metaboxes.php:295
+#: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
 msgstr "например, https://www.ромашка.рф"
 
-#: ../lib/metaboxes.php:300
+#: ../lib/metaboxes.php:311
 msgid "If Video Project"
 msgstr "Если видео-проект"
 
-#: ../lib/metaboxes.php:306
+#: ../lib/metaboxes.php:317
 msgid "Similar Portfolio Item Carousel"
 msgstr "Карусель похожих элементов портфолио"
 
-#: ../lib/metaboxes.php:307
+#: ../lib/metaboxes.php:318
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr "Отображать карусель с подобными элементами портфолио под проектом?"
 
-#: ../lib/metaboxes.php:312
+#: ../lib/metaboxes.php:323
 msgid "Yes - Display Recent Projects"
 msgstr "Да - отображать недавние проекты"
 
-#: ../lib/metaboxes.php:317
+#: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
 msgstr "например, Подобные проекты"
 
-#: ../lib/metaboxes.php:326
+#: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
 msgstr "Опции страницы Портфолио"
 
-#: ../lib/metaboxes.php:335
+#: ../lib/metaboxes.php:346
 msgid "Columns"
 msgstr "Колонки"
 
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:351
 msgid "Four Column"
 msgstr "Четыре колонки"
 
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:352
 msgid "Three Column"
 msgstr "Три колонки"
 
-#: ../lib/metaboxes.php:342
+#: ../lib/metaboxes.php:353
 msgid "Two Column"
 msgstr "Две колонки"
 
-#: ../lib/metaboxes.php:346
+#: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
 msgstr "Виды работ портфолио"
 
-#: ../lib/metaboxes.php:353
+#: ../lib/metaboxes.php:364
 msgid "Order Items By"
 msgstr "Сортировать элементы по"
 
-#: ../lib/metaboxes.php:358
+#: ../lib/metaboxes.php:369
 msgid "Menu Order"
 msgstr "Порядок меню"
 
-#: ../lib/metaboxes.php:359
+#: ../lib/metaboxes.php:370
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
@@ -866,60 +874,60 @@ msgstr "Порядок меню"
 msgid "Title"
 msgstr "Заголовок"
 
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:371
 msgid "Date"
 msgstr "Дата"
 
-#: ../lib/metaboxes.php:361
+#: ../lib/metaboxes.php:372
 msgid "Random"
 msgstr "Случайно"
 
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:376
 msgid "Items per Page"
 msgstr "Элементов на страницу"
 
-#: ../lib/metaboxes.php:366
+#: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
 msgstr "Количество элементов портфолио на одной странице"
 
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:399
 msgid "Set image height"
 msgstr "Установить высоту изображения"
 
-#: ../lib/metaboxes.php:389
+#: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию соотношение 1:1  <b>(Внимание, просто введите значение, "
 "например: 350)</b>"
 
-#: ../lib/metaboxes.php:394
+#: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
 msgstr "Отображать виды работ элемента"
 
-#: ../lib/metaboxes.php:401
+#: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
 msgstr "Отображать выдержки описания элемента"
 
-#: ../lib/metaboxes.php:408
+#: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
 msgstr ""
 
-#: ../lib/metaboxes.php:423
+#: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
 msgstr "Опции страницы свойств"
 
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:443
 msgid "Feature Options"
 msgstr "Опции свойства"
 
-#: ../lib/metaboxes.php:433
+#: ../lib/metaboxes.php:444
 #, fuzzy
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
 "Если собираетесь загрузить изображения для слайдера, убедитесь, что их "
 "ширина как минимум 1170 пикселей."
 
-#: ../lib/metaboxes.php:450
+#: ../lib/metaboxes.php:461
 #, fuzzy
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
@@ -928,118 +936,118 @@ msgstr ""
 "По умолчанию: 1170  <b>(Внимание, просто введите значение, например: 350, не "
 "применяется для карусельного слайдера)</b>"
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
 msgstr "Использовать лайтбокс для изображений особенностей"
 
-#: ../lib/metaboxes.php:456
+#: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
 "Если опция фичи установлена в изображение, выберите использовать лайтбокс с "
 "изображением."
 
-#: ../lib/metaboxes.php:474
+#: ../lib/metaboxes.php:485
 msgid "Blog List Options"
 msgstr "Опции списка блогов"
 
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:494
 msgid "Blog Category"
 msgstr "Категория блога"
 
-#: ../lib/metaboxes.php:484
+#: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
 msgstr "Выберите все посты или категорию постов для отображения"
 
-#: ../lib/metaboxes.php:490
+#: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
 msgstr "Количество постов на странице"
 
-#: ../lib/metaboxes.php:514
+#: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
 msgstr "Отобразить содержимое поста как:"
 
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:530
 msgid "Summary"
 msgstr "Краткое содержание:"
 
-#: ../lib/metaboxes.php:520
+#: ../lib/metaboxes.php:531
 msgid "Full"
 msgstr "Полностью:"
 
-#: ../lib/metaboxes.php:543
+#: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
 msgstr "Страница опций контактов"
 
-#: ../lib/metaboxes.php:552
+#: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
 msgstr "Использовать контактную форму"
 
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
 msgstr "Заголовок контактной формы"
 
-#: ../lib/metaboxes.php:563
+#: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
 msgstr "например, Отправьте нам сообщение по электронной почте"
 
-#: ../lib/metaboxes.php:568
+#: ../lib/metaboxes.php:579
 msgid "Use Map"
 msgstr "Использовать карту"
 
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:589
 msgid "Address"
 msgstr "Адрес"
 
-#: ../lib/metaboxes.php:579
+#: ../lib/metaboxes.php:590
 msgid "Enter your Location"
 msgstr "Введите ваше местоположение"
 
-#: ../lib/metaboxes.php:584
+#: ../lib/metaboxes.php:595
 msgid "Map Type"
 msgstr "Тип карты"
 
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:600
 msgid "ROADMAP"
 msgstr "ДОРОГИ"
 
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:601
 msgid "HYBRID"
 msgstr "ГИБРИД"
 
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:602
 msgid "TERRAIN"
 msgstr "МЕСТНОСТЬ"
 
-#: ../lib/metaboxes.php:592
+#: ../lib/metaboxes.php:603
 msgid "SATELLITE"
 msgstr "СПУТНИК"
 
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
 msgstr "Vfcinf,"
 
-#: ../lib/metaboxes.php:597
+#: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
 msgstr "Наболее подходящий начальный масштаб 15"
 
-#: ../lib/metaboxes.php:602
+#: ../lib/metaboxes.php:613
 msgid "1 (World View)"
 msgstr "1 (Вид карты мира)"
 
-#: ../lib/metaboxes.php:622
+#: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
 msgstr "21 (Вид улиц)"
 
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:637
 msgid "Map Height"
 msgstr "Высота карты"
 
-#: ../lib/metaboxes.php:627
+#: ../lib/metaboxes.php:638
 msgid "Default is 300"
 msgstr "По умолчанию 300"
 
-#: ../lib/metaboxes.php:635
+#: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
 msgstr "Опции боковой панели"
 
@@ -1290,8 +1298,8 @@ msgstr "Virtue: О себе с изображением"
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
-#: ../themeoptions/inc/fields/background/field_background.php:307
-#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/background/field_background.php:306
+#: ../themeoptions/inc/fields/media/field_media.php:155
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
@@ -1337,11 +1345,11 @@ msgstr "Добавить отзыв"
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/background/field_background.php:312
+#: ../themeoptions/inc/fields/media/field_media.php:161
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
@@ -1368,7 +1376,7 @@ msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/framework.php:2406
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Download"
 msgstr "Выгрузить"
 
@@ -1444,8 +1452,8 @@ msgid "Submit Comment"
 msgstr "Добавить комментарий"
 
 #: ../templates/content-fullpost.php:78
-#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:258
+#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
+#: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -1484,6 +1492,124 @@ msgstr "Читать далее"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Избранные проекты"
+
+#: ../themeoptions/framework.php:203
+#, fuzzy, php-format
+msgid "Options panel created using %1$s"
+msgstr "Панель опций создана с использованием"
+
+#: ../themeoptions/framework.php:203
+msgid "Redux Framework"
+msgstr "Redux Framework"
+
+#: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:1262
+msgid "Options"
+msgstr "Опции"
+
+#: ../themeoptions/framework.php:489
+msgid "Dismiss"
+msgstr ""
+
+#: ../themeoptions/framework.php:1648
+#: ../themeoptions/extensions/customizer/extension_customizer.php:408
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
+
+#: ../themeoptions/framework.php:1649
+#: ../themeoptions/extensions/customizer/extension_customizer.php:409
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
+"значений."
+
+#: ../themeoptions/framework.php:1650
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
+"значений."
+
+#: ../themeoptions/framework.php:1651
+#: ../themeoptions/extensions/customizer/extension_customizer.php:410
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+"Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+
+#: ../themeoptions/framework.php:1652
+#, fuzzy
+msgid "Please Wait"
+msgstr "Пожалуйста, повторите попытку"
+
+#: ../themeoptions/framework.php:1788
+msgid "Hints"
+msgstr ""
+
+#: ../themeoptions/framework.php:1789
+msgid "<p>"
+msgstr ""
+
+#: ../themeoptions/framework.php:2631
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Внимание! Эта панель настроек не будет работать корректно без подключенного "
+"JavaScript!"
+
+#: ../themeoptions/framework.php:2693
+msgid "Expand"
+msgstr "Увеличить"
+
+#: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
+#, fuzzy
+msgid "Reset Section"
+msgstr "Очистить выбор"
+
+#: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
+msgid "Reset All"
+msgstr ""
+
+#: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
+msgid "Working..."
+msgstr "Выполняется..."
+
+#: ../themeoptions/framework.php:2714
+msgid "Settings Imported!"
+msgstr "Настройки импортированы!"
+
+#: ../themeoptions/framework.php:2727
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2739
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2745
+msgid "Settings Saved!"
+msgstr "Настройки сохранены!"
+
+#: ../themeoptions/framework.php:2752
+msgid "Settings have changed, you should save them!"
+msgstr "Настройки изменились, не забудьте их сохранить!"
+
+#: ../themeoptions/framework.php:2753
+msgid "error(s) were found!"
+msgstr "ошибка(и)!"
+
+#: ../themeoptions/framework.php:2754
+msgid "warning(s) were found!"
+msgstr "предупреждение(ия)!"
+
+#: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
+msgid "System Info"
+msgstr "Системная информация"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -2384,30 +2510,35 @@ msgid "Blog Post Summary Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
 #: ../themeoptions/options.php:1763
+#, fuzzy
+msgid "Blog Post Head Content Default"
+msgstr "Настройки записей блога по умолчанию"
+
+#: ../themeoptions/options.php:1771
 msgid "Create Sidebars"
 msgstr "Создать боковую панель"
 
-#: ../themeoptions/options.php:1768
+#: ../themeoptions/options.php:1776
 msgid "Create Custom Sidebars"
 msgstr "Создать нестандартные боковые панели"
 
-#: ../themeoptions/options.php:1769
+#: ../themeoptions/options.php:1777
 msgid "Type new sidebar name into textbox"
 msgstr "Введите название новой боковой панели в поле"
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1778
 msgid "Extra Sidebar"
 msgstr "Дополнительные боковые панели"
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1783
 msgid "Wordpress Galleries"
 msgstr "Галереи WordPress"
 
-#: ../themeoptions/options.php:1780
+#: ../themeoptions/options.php:1788
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Включите галереи Virtue вместо галерей WordPress"
 
-#: ../themeoptions/options.php:1781
+#: ../themeoptions/options.php:1789
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -2415,27 +2546,27 @@ msgstr ""
 "Выключите это опцию если вы используете плагин для нестандартных галерей, "
 "например галерею картинок JetPack."
 
-#: ../themeoptions/options.php:1789
+#: ../themeoptions/options.php:1797
 msgid "Advanced Settings"
 msgstr "Расширенные настройки"
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1798
 msgid "Custom CSS Box"
 msgstr "Пользовательский стиль CSS"
 
-#: ../themeoptions/options.php:1795
+#: ../themeoptions/options.php:1803
 msgid "Custom CSS"
 msgstr "Пользовательский CSS"
 
-#: ../themeoptions/options.php:1796
+#: ../themeoptions/options.php:1804
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Быстро добавьте код CSS к вашей теме добавляя его в этот блок кода."
 
-#: ../themeoptions/options.php:1804
+#: ../themeoptions/options.php:1812
 msgid "Theme Update Import"
 msgstr "Испорт обновлений темы"
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1813
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
@@ -2443,19 +2574,19 @@ msgstr ""
 "Если вы обновляетесь с версии 1.5.6 или более ранней, используйте этот "
 "скрипт для обновления настроек вашей темы."
 
-#: ../themeoptions/options.php:1810
+#: ../themeoptions/options.php:1818
 msgid "Turn on and save to start script"
 msgstr "Включите и сохраните для запуска скрипта."
 
-#: ../themeoptions/options.php:1817
+#: ../themeoptions/options.php:1825
 msgid "If using a child theme enter child theme folder"
 msgstr "Если используется дочерняя тема укажите путь к каталогу темы."
 
-#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
+#: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
 msgid "Theme Options"
 msgstr "Настройки темы"
 
-#: ../themeoptions/options.php:1848
+#: ../themeoptions/options.php:1857
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2463,78 +2594,25 @@ msgstr ""
 "Благодарим вас за использование  Virtue Theme by <a href=\"http://"
 "kadencethemes.com/\" target=\"_blank\">Kadence Themes</a>."
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
-msgid "Upload Icon"
-msgstr "Загрузитб иконку"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
+#: ../themeoptions/extensions/customizer/extension_customizer.php:441
 #, fuzzy
-msgid "Select an Icon"
-msgstr "Удалить иконку"
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
-#: ../themeoptions/inc/fields/slides/field_slides.php:137
-#: ../themeoptions/inc/fields/slides/field_slides.php:201
-msgid "URL"
-msgstr "URL"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
-#: ../themeoptions/inc/fields/slides/field_slides.php:135
-#: ../themeoptions/inc/fields/slides/field_slides.php:199
-msgid "Description"
-msgstr "Описание"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
-msgid "Icon Link"
-msgstr "Ссылка на иконку"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
-msgid "Open Link in New Tab/Window"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:442
+#, fuzzy
+msgid "Are you sure?  Resetting will lose all custom values."
 msgstr ""
+"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
+"значений."
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
-msgid "Delete Icon"
-msgstr "Удалить иконку"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
-msgid "Add Icon"
-msgstr "Добавить иконку"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
-msgid "Slide Link"
-msgstr "Ссылка на слайд"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
+#: ../themeoptions/extensions/customizer/extension_customizer.php:443
 #, fuzzy
-msgid "Select an Option"
-msgstr "Выбрать варианты"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
-#: ../themeoptions/inc/fields/slides/field_slides.php:168
-#: ../themeoptions/inc/fields/slides/field_slides.php:231
-msgid "Delete Slide"
-msgstr "Удалить слайд"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
-#: ../themeoptions/inc/fields/slides/field_slides.php:234
-msgid "Add Slide"
-msgstr "Добавить слайд"
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+"Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
@@ -2956,80 +3034,46 @@ msgstr "Дополнительная информация"
 msgid "Product Description"
 msgstr "Описание продукта"
 
-#~ msgid "Options"
-#~ msgstr "Опции"
+#~ msgid "Upload Icon"
+#~ msgstr "Загрузитб иконку"
 
 #, fuzzy
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Панель опций создана с использованием"
+#~ msgid "Select an Icon"
+#~ msgstr "Удалить иконку"
 
-#~ msgid "Redux Framework"
-#~ msgstr "Redux Framework"
+#~ msgid "URL"
+#~ msgstr "URL"
 
-#~ msgid ""
-#~ "You have changes that are not saved. Would you like to save them now?"
-#~ msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
+#~ msgid "Description"
+#~ msgstr "Описание"
 
-#, fuzzy
-#~ msgid "Are you sure? Resetting will lose all custom values."
-#~ msgstr ""
-#~ "Вы уверены? Установление значений по умолчанию приведет к потере "
-#~ "измененных значений."
+#~ msgid "Icon Link"
+#~ msgstr "Ссылка на иконку"
 
-#, fuzzy
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "Вы уверены? Установление значений по умолчанию приведет к потере "
-#~ "измененных значений."
+#~ msgid "Delete Icon"
+#~ msgstr "Удалить иконку"
 
-#~ msgid ""
-#~ "Your current options will be replaced with the values of this preset. "
-#~ "Would you like to proceed?"
-#~ msgstr ""
-#~ "Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+#~ msgid "Add Icon"
+#~ msgstr "Добавить иконку"
 
-#~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
-#~ msgstr ""
-#~ "Внимание! Эта панель настроек не будет работать корректно без "
-#~ "подключенного JavaScript!"
-
-#~ msgid "Expand"
-#~ msgstr "Увеличить"
-
-#~ msgid "Save Changes"
-#~ msgstr "Сохранить изменения"
+#~ msgid "Slide Link"
+#~ msgstr "Ссылка на слайд"
 
 #, fuzzy
-#~ msgid "Reset Section"
-#~ msgstr "Очистить выбор"
+#~ msgid "Select an Option"
+#~ msgstr "Выбрать варианты"
 
-#~ msgid "Working..."
-#~ msgstr "Выполняется..."
+#~ msgid "Delete Slide"
+#~ msgstr "Удалить слайд"
 
-#~ msgid "Settings Imported!"
-#~ msgstr "Настройки импортированы!"
-
-#~ msgid "Settings Saved!"
-#~ msgstr "Настройки сохранены!"
-
-#~ msgid "Settings have changed, you should save them!"
-#~ msgstr "Настройки изменились, не забудьте их сохранить!"
-
-#~ msgid "error(s) were found!"
-#~ msgstr "ошибка(и)!"
-
-#~ msgid "warning(s) were found!"
-#~ msgstr "предупреждение(ия)!"
+#~ msgid "Add Slide"
+#~ msgstr "Добавить слайд"
 
 #~ msgid "Import / Export"
 #~ msgstr "Импорт / Экспорт"
 
 #~ msgid "Options Object"
 #~ msgstr "Объект опций"
-
-#~ msgid "System Info"
-#~ msgstr "Системная информация"
 
 #~ msgid "Import / Export Options"
 #~ msgstr "Настройки Импорта / Экспорта"

@@ -95,6 +95,7 @@ function virtue_metaboxes( array $meta_boxes ) {
 				'id'      => $prefix . 'blog_head',
 				'type'    => 'select',
 				'options' => array(
+					array( 'name' => __('Default', 'virtue' ), 'value' => 'default', ),
 					array( 'name' => __("None", 'virtue' ), 'value' => 'none', ),
 					array( 'name' => __("Image Slider", 'virtue' ), 'value' => 'flex', ),
 					array( 'name' => __("Video", 'virtue' ), 'value' => 'video', ),
@@ -235,6 +236,16 @@ $meta_boxes[] = array(
 				'desc' => __("Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: just input number, example: 650)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
+			),
+			array(
+				'name' => __('Auto Play Slider?', 'virtue'),
+				'desc' => '',
+				'id'   => $prefix . 'portfolio_autoplay',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'Yes', ),
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+				),
 			),
 			array(
 				'name' => __('Value 01 Title', 'virtue'),

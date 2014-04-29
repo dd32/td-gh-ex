@@ -47,6 +47,13 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.1.4 =
+* Update Theme options
+* Fix footer column issue on Ipad
+* Add default option for default post header
+* Add auto play option to portfolio slider
+* Update languages
+
 = Version: 2.1.3 =
 * Use Masonry from wordpress core.
 * Use wordpress paginate_links

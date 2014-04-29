@@ -203,9 +203,18 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
 #redux-footer #redux-share a img{
 	margin-bottom:-3px;
 }
+.redux-container .noUi-connect {
+background: #777;
+margin-top: 5px;
+}
+.redux-container .noUi-horizontal .noUi-handle {
+	background: #00b5e2;
+border: 1px solid #00b5e2;
+box-shadow: none;
+	}
 
 
-#redux-save{
+#saved_notice{
 	margin:0px;
 	border-bottom:1px solid #E7E7E7;
     background-color: #DFF0D8;
@@ -560,6 +569,28 @@ line-height: 30px
 -moz-box-shadow:  0px 1px 2px rgba(0, 0, 0, 0.20), 0px 0px 1px rgba(0, 0, 0, 0.20);
 -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.20), 0px 0px 1px rgba(0, 0, 0, 0.20);
 }
+.redux-container .noUi-handle:before, .noUi-handle:after {
+content: "";
+display: block;
+position: absolute;
+height: 6px;
+width: 1px;
+background: #E8E7E6;
+left: 14px;
+top: 6px;
+}
+.redux-container .noUi-horizontal .noUi-handle {
+height: 20px;
+width: 26px;
+left: -13px;
+top: -6px;
+}
+.redux-container .noUi-connect {
+height: 12px;
+}
+.redux-container .noUi-handle:after {
+left: 10px;
+}
 .ui-slider .ui-slider-range {
 	background: #777;
 	border-radius: 0;
@@ -683,7 +714,10 @@ width: 200px;
 }
 
 
-
+.redux-container-image_select .redux-image-select li {
+width: 40px;
+padding: 10px;
+}
 
 .redux-container .redux-action_bar {
 	float: right;
@@ -700,21 +734,22 @@ width: 200px;
 
 
 #redux-intro-text {
-display: block;
-background: #00b5e2;
-border: 0;
-border-bottom: 0;
-border-width: 0 1px 1px;
--moz-box-shadow: none;
--webkit-box-shadow: none;
-box-shadow: none;
-padding: 3px;
-padding: 10px;
-color: #fff;
+	display: block;
+	background: #00b5e2;
+	border: 0;
+	border-bottom: 0;
+	border-width: 0 1px 1px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 3px;
+	padding: 10px;
+	color: #fff;
 }
 #redux-intro-text a {
 color: #fff;
 }
+
 #redux-intro-text p {
 	margin: 0px;
 	font-family: "Lucida Grande", Sans-serif;

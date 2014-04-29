@@ -31,7 +31,7 @@ if (!class_exists('ReduxFramework_gallery')) {
      *
      * @since       3.0.0
      */
-    class ReduxFramework_gallery extends ReduxFramework {
+    class ReduxFramework_gallery {
 
         /**
          * Field Constructor.
@@ -75,7 +75,8 @@ if (!class_exists('ReduxFramework_gallery')) {
             endif;
             echo '</div>';
             echo '<a href="#" onclick="return false;" id="edit-gallery" class="gallery-attachments button button-primary">' . __('Add/Edit Gallery', 'redux-framework') . '</a> ';
-            echo '<a href="#" onclick="return false;" id="clear-gallery" class="gallery-attachments button">' . __('Clear Gallery', 'redux-framework') . '</a>';            echo '<input type="hidden" class="gallery_values ' . $this->field['class'] . '" value="' . esc_attr($this->value) . '" name="' . $this->field['name'] . '" />';
+            echo '<a href="#" onclick="return false;" id="clear-gallery" class="gallery-attachments button">' . __('Clear Gallery', 'redux-framework') . '</a>';            
+            echo '<input type="hidden" class="gallery_values ' . $this->field['class'] . '" value="' . esc_attr($this->value) . '" name="' . $this->field['name'] . $this->field['name_suffix'] . '" />';
 
 
         }
@@ -102,7 +103,7 @@ if (!class_exists('ReduxFramework_gallery')) {
             wp_enqueue_script(
                 'redux-field-gallery-js', 
                 ReduxFramework::$_url . 'inc/fields/gallery/field_gallery.js', 
-                array('jquery', 'wp-color-picker'), 
+                array('jquery'), 
                 time(), 
                 true
             );

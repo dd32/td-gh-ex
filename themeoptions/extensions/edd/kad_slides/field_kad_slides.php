@@ -32,7 +32,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
      *
      * @since       1.0.0
      */
-    class ReduxFramework_kad_slides extends ReduxFramework{
+    class ReduxFramework_kad_slides {
 
         /**
          * Field Constructor.
@@ -45,7 +45,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
          */
         function __construct( $field = array(), $value ='', $parent ) {
         
-            parent::__construct( $parent->sections, $parent->args );
+            //parent::__construct( $parent->sections, $parent->args );
             $this->parent = $parent;
             $this->field = $field;
             $this->value = $value;
@@ -127,21 +127,21 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                     echo '</div>' . "\n";
 
                     echo '<ul id="' . $this->field['id'] . '-ul" class="redux-slides-list">';
-                    echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" value="' . esc_attr($slide['url']) . '" class="full-text upload" placeholder="'.__('URL', 'redux-framework').'" /></li>';
-                    echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][title]" value="' . esc_attr($slide['title']) . '" placeholder="'.__('Title', 'redux-framework').'" class="full-text slide-title" /></li>';
-                    echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
-                    echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][link]" value="' . esc_attr($slide['link']) . '" placeholder="'.__('Slide Link', 'virtue').'" class="full-text" /></li>';
+                    echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][url]" value="' . esc_attr($slide['url']) . '" class="full-text upload" placeholder="'.__('URL', 'redux-framework').'" /></li>';
+                    echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][title]" value="' . esc_attr($slide['title']) . '" placeholder="'.__('Title', 'redux-framework').'" class="full-text slide-title" /></li>';
+                    echo '<li><textarea name="' . $this->field['name'] . '[' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
+                    echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][link]" value="' . esc_attr($slide['link']) . '" placeholder="'.__('Slide Link', 'virtue').'" class="full-text" /></li>';
                     
                     echo '<li><label for="'. $this->field['id'] .  '-target_' . $x . '" class="icon-link-target">';
-                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . $this->field['id'] . '-target_' . $x . '" value="1" ' . checked(  $slide['target'], '1', false ) . ' name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][target]" />';
+                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . $this->field['id'] . '-target_' . $x . '" value="1" ' . checked(  $slide['target'], '1', false ) . ' name="' . $this->field['name'] . '[' . $x . '][target]" />';
                     echo ' '.__('Open Link in New Tab/Window', 'virtue'). '</label></li>';
 
-                    echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $slide['sort'] . '" />';
-                    echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="' . $slide['attachment_id'] . '" />';
-                    echo '<input type="hidden" class="upload-thumbnail" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][thumb]" id="' . $this->field['id'] . '-thumb_url_' . $x . '" value="' . $slide['thumb'] . '" readonly="readonly" />';
-                    echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][image]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="' . $slide['image'] . '" readonly="readonly" />';
-                    echo '<input type="hidden" class="upload-height" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][height]" id="' . $this->field['id'] . '-image_height_' . $x . '" value="' . $slide['height'] . '" />';
-                    echo '<input type="hidden" class="upload-width" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][width]" id="' . $this->field['id'] . '-image_width_' . $x . '" value="' . $slide['width'] . '" /></li>';
+                    echo '<li><input type="hidden" class="slide-sort" name="' . $this->field['name'] . '[' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $slide['sort'] . '" />';
+                    echo '<li><input type="hidden" class="upload-id" name="' . $this->field['name'] . '[' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="' . $slide['attachment_id'] . '" />';
+                    echo '<input type="hidden" class="upload-thumbnail" name="' . $this->field['name'] . '[' . $x . '][thumb]" id="' . $this->field['id'] . '-thumb_url_' . $x . '" value="' . $slide['thumb'] . '" readonly="readonly" />';
+                    echo '<input type="hidden" class="upload" name="' . $this->field['name'] . '[' . $x . '][image]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="' . $slide['image'] . '" readonly="readonly" />';
+                    echo '<input type="hidden" class="upload-height" name="' . $this->field['name'] . '[' . $x . '][height]" id="' . $this->field['id'] . '-image_height_' . $x . '" value="' . $slide['height'] . '" />';
+                    echo '<input type="hidden" class="upload-width" name="' . $this->field['name'] . '[' . $x . '][width]" id="' . $this->field['id'] . '-image_width_' . $x . '" value="' . $slide['width'] . '" /></li>';
                     if ( isset( $this->field['options'] ) && !empty( $this->field['options'] ) ) {
                         $placeholder = (isset($this->field['placeholder']['options'])) ? esc_attr($this->field['placeholder']['options']) : __( 'Select an Option', 'redux-framework' );
 
@@ -151,7 +151,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                             echo '<input type="hidden" class="select2_params" value="'. $select2_params .'">';
                         }
 
-                        echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][select]" class="redux-select-item '.$this->field['class'].'" rows="6">';
+                        echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="' . $this->field['name'] . '[' . $x . '][select]" class="redux-select-item '.$this->field['class'].'" rows="6">';
                             echo '<option></option>';
                             foreach($this->field['options'] as $k => $v){
                                 if (is_array($this->value)) {
@@ -187,29 +187,29 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                 //If the user has WP3.5+ show upload/remove button
                 echo '<span class="button media_upload_button" id="add_' . $x . '">' . __('Upload', 'redux-framework') . '</span>';
 
-                echo '<span class="button remove-image' . $hide . '" id="reset_' . $x . '" rel="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][attachment_id]">' . __('Remove', 'redux-framework') . '</span>';
+                echo '<span class="button remove-image' . $hide . '" id="reset_' . $x . '" rel="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][attachment_id]">' . __('Remove', 'redux-framework') . '</span>';
 
                 echo '</div>' . "\n";
 
                 echo '<ul id="' . $this->field['id'] . '-ul" class="redux-slides-list">';
                 $placeholder = (isset($this->field['placeholder']['url'])) ? esc_attr($this->field['placeholder']['url']) : __( 'URL', 'redux-framework' );
-                echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" value="" class="full-text upload" placeholder="'.$placeholder.'" /></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-url_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][url]" value="" class="full-text upload" placeholder="'.$placeholder.'" /></li>';
                 $placeholder = (isset($this->field['placeholder']['title'])) ? esc_attr($this->field['placeholder']['title']) : __( 'Title', 'redux-framework' );
-                echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][title]" value="" placeholder="'.$placeholder.'" class="full-text slide-title" /></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-title_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][title]" value="" placeholder="'.$placeholder.'" class="full-text slide-title" /></li>';
                 $placeholder = (isset($this->field['placeholder']['description'])) ? esc_attr($this->field['placeholder']['description']) : __( 'Description', 'redux-framework' );
-                echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.$placeholder.'" class="large-text" rows="6"></textarea></li>';
+                echo '<li><textarea name="' . $this->field['name'] . '[' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.$placeholder.'" class="large-text" rows="6"></textarea></li>';
                 $placeholder = (isset($this->field['placeholder']['link'])) ? esc_attr($this->field['placeholder']['link']) : __( 'Slide Link', 'virtue' );
-                echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][link]" value="" placeholder="'.$placeholder.'" class="full-text" /></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->field['name'] . '[' . $x . '][link]" value="" placeholder="'.$placeholder.'" class="full-text" /></li>';
                 
                 echo '<li><label for="'. $this->field['id'] .  '-target_' . $x . '">';
                 echo '<input type="checkbox" class="checkbox-slide-target" id="' . $this->field['id'] . '-target_' . $x . '" value="" ' . checked(  '', '1', false ) . ' name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][target]" />';
                 echo ' '.__('Open Link in New Tab/Window', 'virtue'). '</label></li>';
 
-                echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $x . '" />';
-                echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="" />';
-                echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="" readonly="readonly" />';
-                echo '<input type="hidden" class="upload-height" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][height]" id="' . $this->field['id'] . '-image_height_' . $x . '" value="" />';
-                echo '<input type="hidden" class="upload-width" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][width]" id="' . $this->field['id'] . '-image_width_' . $x . '" value="" /></li>';
+                echo '<li><input type="hidden" class="slide-sort" name="' . $this->field['name'] . '[' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $x . '" />';
+                echo '<li><input type="hidden" class="upload-id" name="' . $this->field['name'] . '[' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="" />';
+                echo '<input type="hidden" class="upload" name="' . $this->field['name'] . '[' . $x . '][url]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="" readonly="readonly" />';
+                echo '<input type="hidden" class="upload-height" name="' . $this->field['name'] . '[' . $x . '][height]" id="' . $this->field['id'] . '-image_height_' . $x . '" value="" />';
+                echo '<input type="hidden" class="upload-width" name="' . $this->field['name'] . '[' . $x . '][width]" id="' . $this->field['id'] . '-image_width_' . $x . '" value="" /></li>';
 
                     if ( isset( $this->field['options'] ) && !empty( $this->field['options'] ) ) {
                         $placeholder = (isset($this->field['placeholder']['select'])) ? esc_attr($this->field['placeholder']['select']) : __( 'Select an Option', 'redux-framework' );
@@ -219,7 +219,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                             echo '<input type="hidden" class="select2_params" value="'. $select2_params .'">';
                         }
 
-                        echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][select]" class="redux-select-item '.$this->field['class'].'" rows="6" style="width:93%;">';
+                        echo '<select '.$multi.' id="'.$this->field['id'].'-select" data-placeholder="'.$placeholder.'" name="' . $this->field['name'] . '[' . $x . '][select]" class="redux-select-item '.$this->field['class'].'" rows="6" style="width:93%;">';
                             echo '<option></option>';
                             foreach($this->field['options'] as $k => $v){
                                 if (is_array($this->value)) {
@@ -235,7 +235,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                 echo '<li><a href="javascript:void(0);" class="button deletion redux-slides-remove">' . __('Delete Slide', 'redux-framework') . '</a></li>';
                 echo '</ul></div></fieldset></div>';
             }
-            echo '</div><a href="javascript:void(0);" class="button redux-slides-add2 kad_redux-slides-add button-primary" rel-id="' . $this->field['id'] . '-ul" rel-name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][title][]">' . __('Add Slide', 'redux-framework') . '</a><br/>';
+            echo '</div><a href="javascript:void(0);" class="button redux-slides-add2 kad_redux-slides-add button-primary" rel-id="' . $this->field['id'] . '-ul" rel-name="' . $this->field['name'] . '[title][]">' . __('Add Slide', 'redux-framework') . '</a><br/>';
             
         }         
 

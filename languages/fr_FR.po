@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-04-21 22:55-0700\n"
-"PO-Revision-Date: 2014-04-21 23:34-0700\n"
+"POT-Creation-Date: 2014-04-28 18:26-0700\n"
+"PO-Revision-Date: 2014-04-28 18:30-0700\n"
 "Last-Translator: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language-Team: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language: fr_FR\n"
@@ -513,9 +513,9 @@ msgstr "Navigation de la barre supérieure"
 msgid "Footer Navigation"
 msgstr "Navigation de bas de page"
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
-#: ../themeoptions/inc/fields/border/field_border.php:112
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
+#: ../themeoptions/inc/fields/border/field_border.php:113
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
 msgstr "Tout"
 
@@ -543,39 +543,46 @@ msgstr "Options du billet"
 msgid "Head Content"
 msgstr "Contenu de l'entête"
 
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1897
+msgid "Default"
+msgstr "Défaut"
+
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
+#: ../themeoptions/options.php:1764
 msgid "None"
 msgstr "Aucun"
 
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
+#: ../themeoptions/options.php:1764
 msgid "Image Slider"
 msgstr "Carrousel d'images"
 
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
-#: ../lib/metaboxes.php:438
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
 msgid "Video"
 msgstr "Vidéo"
 
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:794
+#: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
+#: ../lib/widgets.php:794 ../themeoptions/options.php:1764
 msgid "Image"
 msgstr "Image"
 
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
 msgid "Max Image/Slider Height"
 msgstr "Hauteur maximale de l'image ou du carrousel"
 
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
+#: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "La valeur par défaut est 400 <b>(Note : entrez juste un nombre, exemple : "
 "350)</b>"
 
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
+#: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
 msgid "Max Image/Slider Width"
 msgstr "Largeur maximale de l'image ou du carrousel"
 
-#: ../lib/metaboxes.php:112
+#: ../lib/metaboxes.php:113
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
@@ -584,138 +591,134 @@ msgstr ""
 "(Note : entrez juste un nombre, exemple : 650, ne s'applique pas au "
 "carrousel)</b>"
 
-#: ../lib/metaboxes.php:117
+#: ../lib/metaboxes.php:118
 msgid "Post Summary"
 msgstr "Sommaire du billet"
 
-#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
-#: ../themeoptions/framework.php:1584
-msgid "Default"
-msgstr "Défaut"
-
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
 msgid "Text"
 msgstr "Texte"
 
-#: ../lib/metaboxes.php:124
+#: ../lib/metaboxes.php:125
 msgid "Portrait Image"
 msgstr "Image à la française"
 
-#: ../lib/metaboxes.php:125
+#: ../lib/metaboxes.php:126
 msgid "Landscape Image"
 msgstr "Image à l'italienne"
 
-#: ../lib/metaboxes.php:126
+#: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
 msgstr "Carrousel d'images à la française"
 
-#: ../lib/metaboxes.php:127
+#: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
 msgstr "Carrousel d'images à l'italienne"
 
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
 msgstr "Afficher la barre latérale"
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
+#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Choisir la disposition pleine largeur ou avec barre latérale"
 
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
-#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
-#: ../lib/metaboxes.php:574
+#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
+#: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
 msgstr "Oui"
 
-#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
-#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
+#: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
+#: ../lib/metaboxes.php:584
 msgid "No"
 msgstr "Non"
 
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
+#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
 msgstr "Choisir la barre latérale"
 
-#: ../lib/metaboxes.php:148
+#: ../lib/metaboxes.php:149
 msgid "Author Info"
 msgstr "Information sur l'auteure ou l'auteur"
 
-#: ../lib/metaboxes.php:149
+#: ../lib/metaboxes.php:150
 msgid "Display an author info box?"
 msgstr "Afficher une boîte d'information de l'auteure ou l'auteur ?"
 
-#: ../lib/metaboxes.php:158
+#: ../lib/metaboxes.php:159
 msgid "Posts Carousel"
 msgstr "Carrousel de billets"
 
-#: ../lib/metaboxes.php:159
+#: ../lib/metaboxes.php:160
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Afficher un carrousel avec des billets similaires ou récents ?"
 
-#: ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
 msgstr "Oui, afficher les billets récents"
 
-#: ../lib/metaboxes.php:165
+#: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
 msgstr "Oui, afficher les billets similaires"
 
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
 msgstr "Titre du carrousel"
 
-#: ../lib/metaboxes.php:171
+#: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
 msgstr "ex. billets similaires"
 
-#: ../lib/metaboxes.php:179
+#: ../lib/metaboxes.php:180
 msgid "Post Video Box"
 msgstr "Boîte de billet vidéo"
 
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
 msgstr "Si c'est un billet vidéo"
 
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
+#: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
 msgstr "Mettre le code d'intégration ici, fonctionne avec youtube, vimeo..."
 
-#: ../lib/metaboxes.php:196
+#: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
 msgstr "Options de billet portefolio"
 
-#: ../lib/metaboxes.php:204
+#: ../lib/metaboxes.php:205
 msgid "Project Layout"
 msgstr "Disposition de projet"
 
-#: ../lib/metaboxes.php:209
+#: ../lib/metaboxes.php:210
 msgid "Beside"
 msgstr "À côté"
 
-#: ../lib/metaboxes.php:210
+#: ../lib/metaboxes.php:211
 msgid "Above"
 msgstr "Au-dessus"
 
-#: ../lib/metaboxes.php:211
+#: ../lib/metaboxes.php:212
 msgid "Three Rows"
 msgstr "Trois rangées"
 
-#: ../lib/metaboxes.php:215
+#: ../lib/metaboxes.php:216
 msgid "Project Options"
 msgstr "Options du projet"
 
-#: ../lib/metaboxes.php:222
+#: ../lib/metaboxes.php:223
 msgid "Carousel Slider"
 msgstr "Carrousel"
 
-#: ../lib/metaboxes.php:229
+#: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "La valeur par défaut est 450 <b>(Note : entrez juste un nombre, exemple : "
 "350)</b>"
 
-#: ../lib/metaboxes.php:235
+#: ../lib/metaboxes.php:236
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
@@ -723,143 +726,148 @@ msgstr ""
 "La valeur par défaut est 670 et 1140 avec les dispositions  <b>au-dessus</b> "
 "et <b>trois rangées</b> <b>(Note : entrez juste un nombre, exemple : 650)</b>"
 
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
+#, fuzzy
+msgid "Auto Play Slider?"
+msgstr "Lecture automatique ?"
+
+#: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
 msgstr "Titre de la valeur 01"
 
-#: ../lib/metaboxes.php:241
+#: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
 msgstr "ex. Type de projet :"
 
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
 msgstr "Description de la valeur 01"
 
-#: ../lib/metaboxes.php:247
+#: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
 msgstr "ex. Illustration de personnage"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
 msgstr "Titre de la valeur 02"
 
-#: ../lib/metaboxes.php:253
+#: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
 msgstr "ex. Compétences requises :"
 
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
 msgstr "Description de la valeur 02"
 
-#: ../lib/metaboxes.php:259
+#: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
 msgstr "ex. Photoshop, Illustrator"
 
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
 msgstr "Titre de la valeur 03"
 
-#: ../lib/metaboxes.php:265
+#: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
 msgstr "ex. Clientèle :"
 
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
 msgstr "Description de la valeur 03"
 
-#: ../lib/metaboxes.php:271
+#: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
 msgstr "ex. Exemple Inc."
 
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
 msgstr "Titre de la valeur 04"
 
-#: ../lib/metaboxes.php:277
+#: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
 msgstr "ex. Année du projet :"
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
 msgstr "Description de la valeur 04"
 
-#: ../lib/metaboxes.php:283
+#: ../lib/metaboxes.php:294
 msgid "ex. 2013"
 msgstr "ex. 2013"
 
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:299
 msgid "External Website"
 msgstr "Site externe"
 
-#: ../lib/metaboxes.php:289
+#: ../lib/metaboxes.php:300
 msgid "ex. Website:"
 msgstr "ex. Site :"
 
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:305
 msgid "Website Address"
 msgstr "Adresse du site"
 
-#: ../lib/metaboxes.php:295
+#: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
 msgstr "ex. http://www.exemple.com"
 
-#: ../lib/metaboxes.php:300
+#: ../lib/metaboxes.php:311
 msgid "If Video Project"
 msgstr "Si c'est un projet vidéo"
 
-#: ../lib/metaboxes.php:306
+#: ../lib/metaboxes.php:317
 msgid "Similar Portfolio Item Carousel"
 msgstr "Carrousel d'items de portefolio similaires"
 
-#: ../lib/metaboxes.php:307
+#: ../lib/metaboxes.php:318
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr ""
 "Afficher un carrousel avec des items de portefolio similaires sous le "
 "projet ?"
 
-#: ../lib/metaboxes.php:312
+#: ../lib/metaboxes.php:323
 msgid "Yes - Display Recent Projects"
 msgstr "Oui, afficher les projets récents"
 
-#: ../lib/metaboxes.php:317
+#: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
 msgstr "ex. Projets similaires"
 
-#: ../lib/metaboxes.php:326
+#: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
 msgstr "Options de la page portefolio"
 
-#: ../lib/metaboxes.php:335
+#: ../lib/metaboxes.php:346
 msgid "Columns"
 msgstr "Colonnes"
 
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:351
 msgid "Four Column"
 msgstr "Quatre colonnes"
 
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:352
 msgid "Three Column"
 msgstr "Trois colonnes"
 
-#: ../lib/metaboxes.php:342
+#: ../lib/metaboxes.php:353
 msgid "Two Column"
 msgstr "Deux colonnes"
 
-#: ../lib/metaboxes.php:346
+#: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
 msgstr "Types de travail du portefolio"
 
-#: ../lib/metaboxes.php:353
+#: ../lib/metaboxes.php:364
 msgid "Order Items By"
 msgstr "Classer les items par"
 
-#: ../lib/metaboxes.php:358
+#: ../lib/metaboxes.php:369
 msgid "Menu Order"
 msgstr "Tri du menu"
 
-#: ../lib/metaboxes.php:359
+#: ../lib/metaboxes.php:370
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
@@ -867,59 +875,59 @@ msgstr "Tri du menu"
 msgid "Title"
 msgstr "Titre"
 
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:371
 msgid "Date"
 msgstr "Date"
 
-#: ../lib/metaboxes.php:361
+#: ../lib/metaboxes.php:372
 msgid "Random"
 msgstr "Au hasard"
 
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:376
 msgid "Items per Page"
 msgstr "Items par page"
 
-#: ../lib/metaboxes.php:366
+#: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
 msgstr "Combien d'articles de portefolio par page"
 
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:399
 msgid "Set image height"
 msgstr "Régler la hauteur de l'image"
 
-#: ../lib/metaboxes.php:389
+#: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "La proportion par défaut est 1:1 <b>(Note : entrez juste un nombre, "
 "exemple : 350)</b>"
 
-#: ../lib/metaboxes.php:394
+#: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
 msgstr "Afficher les types d'items de travail "
 
-#: ../lib/metaboxes.php:401
+#: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
 msgstr "Afficher l'extrait de l'item"
 
-#: ../lib/metaboxes.php:408
+#: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
 msgstr "Ajouter un lien de Visionneuse en haut à droite de chaque item"
 
-#: ../lib/metaboxes.php:423
+#: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
 msgstr "Options de la page En vedette"
 
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:443
 msgid "Feature Options"
 msgstr "Options de la section En vedette"
 
-#: ../lib/metaboxes.php:433
+#: ../lib/metaboxes.php:444
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
 "Si le carrousel d'images est utilisé, assurez-vous que les images "
 "téléversées ont au moins 1140 pixels de largeur."
 
-#: ../lib/metaboxes.php:450
+#: ../lib/metaboxes.php:461
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
@@ -927,120 +935,120 @@ msgstr ""
 "La valeur par défaut est 1140 (Note : entrez juste un nombre, exemple : 650, "
 "ne s'applique pas au carrousel)</b>"
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
 msgstr "Utilisez la Visionneuse pour l'image en vedette"
 
-#: ../lib/metaboxes.php:456
+#: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
 "Si l'option En vedette est réglée à image, choisir d'utiliser le lien "
 "visionneuse avec l'image."
 
-#: ../lib/metaboxes.php:474
+#: ../lib/metaboxes.php:485
 msgid "Blog List Options"
 msgstr "Options de la list de blogues"
 
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:494
 msgid "Blog Category"
 msgstr "Catégorie de blogue"
 
-#: ../lib/metaboxes.php:484
+#: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
 "Sélectionnez tous les billets du blogue ou une catégorie spécifique à "
 "afficher"
 
-#: ../lib/metaboxes.php:490
+#: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
 msgstr "Combien de billets par page"
 
-#: ../lib/metaboxes.php:514
+#: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
 msgstr "Afficher le contenu du billet comme :"
 
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:530
 msgid "Summary"
 msgstr "Sommaire"
 
-#: ../lib/metaboxes.php:520
+#: ../lib/metaboxes.php:531
 msgid "Full"
 msgstr "Complet"
 
-#: ../lib/metaboxes.php:543
+#: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
 msgstr "Options de la page de contact"
 
-#: ../lib/metaboxes.php:552
+#: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
 msgstr "Utiliser le formulaire de contact"
 
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
 msgstr "Titre du formulaire de contact"
 
-#: ../lib/metaboxes.php:563
+#: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
 msgstr "ex. Envoyez-nous un courriel"
 
-#: ../lib/metaboxes.php:568
+#: ../lib/metaboxes.php:579
 msgid "Use Map"
 msgstr "Utiliser la carte"
 
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:589
 msgid "Address"
 msgstr "Adresse"
 
-#: ../lib/metaboxes.php:579
+#: ../lib/metaboxes.php:590
 msgid "Enter your Location"
 msgstr "Entrez votre localisation"
 
-#: ../lib/metaboxes.php:584
+#: ../lib/metaboxes.php:595
 msgid "Map Type"
 msgstr "Type de carte"
 
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:600
 msgid "ROADMAP"
 msgstr "Carte routière"
 
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:601
 msgid "HYBRID"
 msgstr "Combinée"
 
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:602
 msgid "TERRAIN"
 msgstr "Topographique"
 
-#: ../lib/metaboxes.php:592
+#: ../lib/metaboxes.php:603
 msgid "SATELLITE"
 msgstr "Satellite"
 
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
 msgstr "Niveau d'agrandissement de la carte"
 
-#: ../lib/metaboxes.php:597
+#: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
 msgstr "Un bon choix initial est 15"
 
-#: ../lib/metaboxes.php:602
+#: ../lib/metaboxes.php:613
 msgid "1 (World View)"
 msgstr "1 (Vue globale)"
 
-#: ../lib/metaboxes.php:622
+#: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
 msgstr "21 (Vue de la rue)"
 
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:637
 msgid "Map Height"
 msgstr "Hauteur de la carte"
 
-#: ../lib/metaboxes.php:627
+#: ../lib/metaboxes.php:638
 msgid "Default is 300"
 msgstr "La valeur par défaut est 300"
 
-#: ../lib/metaboxes.php:635
+#: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
 msgstr "Options de la barre latérale"
 
@@ -1294,8 +1302,8 @@ msgstr "Virtue : À propos avec image"
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
-#: ../themeoptions/inc/fields/background/field_background.php:307
-#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/background/field_background.php:306
+#: ../themeoptions/inc/fields/media/field_media.php:155
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
@@ -1341,11 +1349,11 @@ msgstr "Ajouter une icône"
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/background/field_background.php:312
+#: ../themeoptions/inc/fields/media/field_media.php:161
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
@@ -1372,7 +1380,7 @@ msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/framework.php:2406
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Download"
 msgstr "Télécharger"
 
@@ -1448,8 +1456,8 @@ msgid "Submit Comment"
 msgstr "Envoyer un commentaire"
 
 #: ../templates/content-fullpost.php:78
-#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:258
+#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
+#: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
 msgstr "Pages :"
 
@@ -1488,6 +1496,124 @@ msgstr "Pour en savoir plus"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Projets en vedette"
+
+#: ../themeoptions/framework.php:203
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr "Panneau d'options créé avec %1$s"
+
+#: ../themeoptions/framework.php:203
+msgid "Redux Framework"
+msgstr "Infrastructure d'application Redux"
+
+#: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:1262
+msgid "Options"
+msgstr "Options"
+
+#: ../themeoptions/framework.php:489
+msgid "Dismiss"
+msgstr ""
+
+#: ../themeoptions/framework.php:1648
+#: ../themeoptions/extensions/customizer/extension_customizer.php:408
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+"Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous les "
+"enregistrer maintenant ?"
+
+#: ../themeoptions/framework.php:1649
+#: ../themeoptions/extensions/customizer/extension_customizer.php:409
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+"Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+"personnalisées."
+
+#: ../themeoptions/framework.php:1650
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+"Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+"personnalisées dans cette section."
+
+#: ../themeoptions/framework.php:1651
+#: ../themeoptions/extensions/customizer/extension_customizer.php:410
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+"Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
+"Voulez-vous continuer ?"
+
+#: ../themeoptions/framework.php:1652
+#, fuzzy
+msgid "Please Wait"
+msgstr "Veuillez réessayer"
+
+#: ../themeoptions/framework.php:1788
+msgid "Hints"
+msgstr ""
+
+#: ../themeoptions/framework.php:1789
+msgid "<p>"
+msgstr ""
+
+#: ../themeoptions/framework.php:2631
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Avertissement - Ce panneau d'options ne fonctionnera pas correctement sans "
+"javascript !"
+
+#: ../themeoptions/framework.php:2693
+msgid "Expand"
+msgstr "Afficher"
+
+#: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
+msgid "Reset Section"
+msgstr "Réinitialiser la section"
+
+#: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
+msgid "Reset All"
+msgstr "Réinitialiser tout"
+
+#: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
+msgid "Working..."
+msgstr "En cours..."
+
+#: ../themeoptions/framework.php:2714
+msgid "Settings Imported!"
+msgstr "Réglages importés !"
+
+#: ../themeoptions/framework.php:2727
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2739
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2745
+msgid "Settings Saved!"
+msgstr "Réglages enregistrés !"
+
+#: ../themeoptions/framework.php:2752
+msgid "Settings have changed, you should save them!"
+msgstr "Les réglages ont changé, vous devriez les enregistrer !"
+
+#: ../themeoptions/framework.php:2753
+msgid "error(s) were found!"
+msgstr "des erreurs ont été trouvées !"
+
+#: ../themeoptions/framework.php:2754
+msgid "warning(s) were found!"
+msgstr "Avertissement(s) ont été trouvé !"
+
+#: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
+msgid "System Info"
+msgstr "Informations du système"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -2390,30 +2516,35 @@ msgid "Blog Post Summary Default"
 msgstr "Valeur par défaut du sommaire de billet"
 
 #: ../themeoptions/options.php:1763
+#, fuzzy
+msgid "Blog Post Head Content Default"
+msgstr "Valeurs par défaut des billets"
+
+#: ../themeoptions/options.php:1771
 msgid "Create Sidebars"
 msgstr "Creation de barres latérales"
 
-#: ../themeoptions/options.php:1768
+#: ../themeoptions/options.php:1776
 msgid "Create Custom Sidebars"
 msgstr "Créer des barres latérales personnalisées"
 
-#: ../themeoptions/options.php:1769
+#: ../themeoptions/options.php:1777
 msgid "Type new sidebar name into textbox"
 msgstr "Entrez le nouveau nom de la barre latérale dans la zone de texte"
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1778
 msgid "Extra Sidebar"
 msgstr "Barre latérale extra"
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1783
 msgid "Wordpress Galleries"
 msgstr "Galeries WordPress"
 
-#: ../themeoptions/options.php:1780
+#: ../themeoptions/options.php:1788
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Permettre aux galeries Virtue de remplacer celles de WordPress"
 
-#: ../themeoptions/options.php:1781
+#: ../themeoptions/options.php:1789
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -2421,28 +2552,28 @@ msgstr ""
 "Désactivez cette option si vous utilisez une extensions pour personnaliser "
 "des galeries, par exemple jetpack."
 
-#: ../themeoptions/options.php:1789
+#: ../themeoptions/options.php:1797
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1798
 msgid "Custom CSS Box"
 msgstr "Encadré de CSS personnalisé"
 
-#: ../themeoptions/options.php:1795
+#: ../themeoptions/options.php:1803
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
-#: ../themeoptions/options.php:1796
+#: ../themeoptions/options.php:1804
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "Ajouter rapidement un peu de CSS à votre thème en l'ajoutant à cette zone."
 
-#: ../themeoptions/options.php:1804
+#: ../themeoptions/options.php:1812
 msgid "Theme Update Import"
 msgstr "Mise à jour des options du thème"
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1813
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
@@ -2450,21 +2581,21 @@ msgstr ""
 "Si vous faite la mise à jour depuis la version 1.5.6 ou antérieure, utilisez "
 "ce script pour mettre à jour les options du thème."
 
-#: ../themeoptions/options.php:1810
+#: ../themeoptions/options.php:1818
 msgid "Turn on and save to start script"
 msgstr "Activez et enregistrez les modification pour démarrer le script"
 
-#: ../themeoptions/options.php:1817
+#: ../themeoptions/options.php:1825
 msgid "If using a child theme enter child theme folder"
 msgstr ""
 "Si vous utilisez un thème dérivé (child theme), entrez le dossier du thème "
 "dérivé"
 
-#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
+#: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
 msgid "Theme Options"
 msgstr "Options du thème"
 
-#: ../themeoptions/options.php:1848
+#: ../themeoptions/options.php:1857
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2472,76 +2603,28 @@ msgstr ""
 "Merci d'utiliser le thème Virtue par <a href=\"http://kadencethemes.com/\" "
 "target=\"_blank\">Kadence Themes</a>."
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
-msgid "Upload Icon"
-msgstr "Téléversez l'icône"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
-msgid "Select an Icon"
-msgstr "Choisir une icône"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
-#: ../themeoptions/inc/fields/slides/field_slides.php:137
-#: ../themeoptions/inc/fields/slides/field_slides.php:201
-msgid "URL"
-msgstr "URL"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
-#: ../themeoptions/inc/fields/slides/field_slides.php:135
-#: ../themeoptions/inc/fields/slides/field_slides.php:199
-msgid "Description"
-msgstr "Description"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
-msgid "Icon Link"
-msgstr "Lien de l'icône"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
-msgid "Open Link in New Tab/Window"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:441
+#, fuzzy
+msgid "You have changes that are not saved.  Would you like to save them now?"
 msgstr ""
+"Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous les "
+"enregistrer maintenant ?"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
-msgid "Delete Icon"
-msgstr "Effacer l'icône"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:442
+#, fuzzy
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+"Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+"personnalisées."
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
-msgid "Add Icon"
-msgstr "Ajouter une icône"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
-msgid "Slide Link"
-msgstr "Lien du carrousel"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
-msgid "Select an Option"
-msgstr "Choisissez une option"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
-#: ../themeoptions/inc/fields/slides/field_slides.php:168
-#: ../themeoptions/inc/fields/slides/field_slides.php:231
-msgid "Delete Slide"
-msgstr "Effacer le carrousel"
-
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
-#: ../themeoptions/inc/fields/slides/field_slides.php:234
-msgid "Add Slide"
-msgstr "Ajouter une image"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:443
+#, fuzzy
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+"Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
+"Voulez-vous continuer ?"
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
@@ -2961,82 +3044,44 @@ msgstr "Informations complémentaires"
 msgid "Product Description"
 msgstr "Description de produit"
 
-#~ msgid "Options"
-#~ msgstr "Options"
+#~ msgid "Upload Icon"
+#~ msgstr "Téléversez l'icône"
 
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Panneau d'options créé avec %1$s"
+#~ msgid "Select an Icon"
+#~ msgstr "Choisir une icône"
 
-#~ msgid "Redux Framework"
-#~ msgstr "Infrastructure d'application Redux"
+#~ msgid "URL"
+#~ msgstr "URL"
 
-#~ msgid ""
-#~ "You have changes that are not saved. Would you like to save them now?"
-#~ msgstr ""
-#~ "Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous "
-#~ "les enregistrer maintenant ?"
+#~ msgid "Description"
+#~ msgstr "Description"
 
-#~ msgid "Are you sure? Resetting will lose all custom values."
-#~ msgstr ""
-#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-#~ "personnalisées."
+#~ msgid "Icon Link"
+#~ msgstr "Lien de l'icône"
 
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-#~ "personnalisées dans cette section."
+#~ msgid "Delete Icon"
+#~ msgstr "Effacer l'icône"
 
-#~ msgid ""
-#~ "Your current options will be replaced with the values of this preset. "
-#~ "Would you like to proceed?"
-#~ msgstr ""
-#~ "Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
-#~ "Voulez-vous continuer ?"
+#~ msgid "Add Icon"
+#~ msgstr "Ajouter une icône"
 
-#~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
-#~ msgstr ""
-#~ "Avertissement - Ce panneau d'options ne fonctionnera pas correctement "
-#~ "sans javascript !"
+#~ msgid "Slide Link"
+#~ msgstr "Lien du carrousel"
 
-#~ msgid "Expand"
-#~ msgstr "Afficher"
+#~ msgid "Select an Option"
+#~ msgstr "Choisissez une option"
 
-#~ msgid "Save Changes"
-#~ msgstr "Enregistrer les modifications"
+#~ msgid "Delete Slide"
+#~ msgstr "Effacer le carrousel"
 
-#~ msgid "Reset Section"
-#~ msgstr "Réinitialiser la section"
-
-#~ msgid "Reset All"
-#~ msgstr "Réinitialiser tout"
-
-#~ msgid "Working..."
-#~ msgstr "En cours..."
-
-#~ msgid "Settings Imported!"
-#~ msgstr "Réglages importés !"
-
-#~ msgid "Settings Saved!"
-#~ msgstr "Réglages enregistrés !"
-
-#~ msgid "Settings have changed, you should save them!"
-#~ msgstr "Les réglages ont changé, vous devriez les enregistrer !"
-
-#~ msgid "error(s) were found!"
-#~ msgstr "des erreurs ont été trouvées !"
-
-#~ msgid "warning(s) were found!"
-#~ msgstr "Avertissement(s) ont été trouvé !"
+#~ msgid "Add Slide"
+#~ msgstr "Ajouter une image"
 
 #~ msgid "Import / Export"
 #~ msgstr "Importation et Exportation"
 
 #~ msgid "Options Object"
 #~ msgstr "Objet d'options"
-
-#~ msgid "System Info"
-#~ msgstr "Informations du système"
 
 #~ msgid "Import / Export Options"
 #~ msgstr "Options d'importation et d'exportation"

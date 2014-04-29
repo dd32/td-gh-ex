@@ -9,7 +9,7 @@
 					</div> 
             	<?php }; ?>
 				<?php if (is_active_sidebar('footer_2') ) { ?> 
-					<div class="col-md-3  col-sm-6footercol2">
+					<div class="col-md-3  col-sm-6 footercol2">
 					<?php dynamic_sidebar('footer_2'); ?>
 					</div> 
 		        <?php }; ?>

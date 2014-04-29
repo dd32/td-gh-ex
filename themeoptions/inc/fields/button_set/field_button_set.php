@@ -31,7 +31,7 @@ if( !class_exists( 'ReduxFramework_button_set' ) ) {
      *
      * @since       1.0.0
      */
-    class ReduxFramework_button_set extends ReduxFramework {
+    class ReduxFramework_button_set {
     
         /**
          * Holds configuration settings for each field in a model.
@@ -90,12 +90,25 @@ if( !class_exists( 'ReduxFramework_button_set' ) ) {
          * @return      void
          */
         public function render() {
-        
+
+            // multi => true renders the field multi-selectable (checkbox vs radio)
             echo '<div class="buttonset ui-buttonset">';
-            
             foreach( $this->field['options'] as $k => $v ) {
+
+                $selected = '';
+                if ( isset( $this->field['multi'] ) && $this->field['multi'] == true ) {
+                    $type = "checkbox";
+                    $this->field['name_suffix'] = "[".$k."]";
+                    
+                    if (in_array($k, $this->value)){
+                        $selected = 'checked="checked"';
+                    }
+                } else {
+                    $type = "radio";
+                    $selected = checked( $this->value, $k, false );
+                }
                 
-                echo '<input data-id="'.$this->field['id'].'" type="radio" id="'.$this->field['id'].'-buttonset'.$k.'" name="' . $this->field['name'] . '" class="' . $this->field['class'] . '" value="' . $k . '" ' . checked( $this->value, $k, false ) . '/>';
+                echo '<input data-id="'.$this->field['id'].'" type="'.$type.'" id="'.$this->field['id'].'-buttonset'.$k.'" name="' . $this->field['name'] . $this->field['name_suffix'] . '" class="buttonset-item ' . $this->field['class'] . '" value="' . $k . '" ' . $selected . '/>';
                 echo '<label for="'.$this->field['id'].'-buttonset'.$k.'">' . $v . '</label>';
                 
             }

@@ -9,7 +9,7 @@
  * @since 3.1.2
  */
 
-class ReduxFramework_select_image extends ReduxFramework {
+class ReduxFramework_select_image {
 
     /**
      * Field Constructor.
@@ -19,7 +19,6 @@ class ReduxFramework_select_image extends ReduxFramework {
      * @since ReduxFramework 1.0.0
      */
     function __construct($field = array(), $value = '', $parent) {
-        //parent::__construct($parent->sections, $parent->args);
         $this->parent = $parent;
         $this->field = $field;
         $this->value = $value;
@@ -59,7 +58,7 @@ class ReduxFramework_select_image extends ReduxFramework {
             $placeholder = (isset($this->field['placeholder'])) ? esc_attr($this->field['placeholder']) : __('Select an item', 'redux-framework');
 
             // Begin the <select> tag
-            echo '<select id="' . $this->field['id'] . '-select_image" data-placeholder="' . $placeholder . '" name="' . $this->field['name'] . '" class="redux-select-item redux-select-image-item ' . $this->field['class'] . '"' . $width . ' rows="6"' . '>';
+            echo '<select id="' . $this->field['id'] . '-select_image" data-placeholder="' . $placeholder . '" name="' . $this->field['name'] . $this->field['name_suffix'] . '" class="redux-select-item redux-select-image-item ' . $this->field['class'] . '"' . $width . ' rows="6"' . '>';
             echo '<option></option>';
             
 

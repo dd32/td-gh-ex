@@ -20,7 +20,7 @@ require_once locate_template('/lib/widgets.php');         			// Sidebars and wid
 require_once locate_template('/lib/aq_resizer.php');      			// Resize on the fly
 require_once locate_template('/lib/scripts.php');        			// Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          			// Custom functions
-require_once locate_template('/lib/icons/icons.php');          		// Icon functions
+require_once locate_template('/lib/admin_scripts.php');          	// Icon functions
 require_once locate_template('/lib/authorbox.php');         		// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 		// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 	// Plugin Activation

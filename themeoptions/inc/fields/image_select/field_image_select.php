@@ -31,7 +31,7 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
      *
      * @since       1.0.0
      */
-    class ReduxFramework_image_select extends ReduxFramework {
+    class ReduxFramework_image_select {
     
         /**
          * Field Constructor.
@@ -63,7 +63,7 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
         public function render() {
                 
             if( !empty( $this->field['options'] ) ) {
-
+                echo '<div class="redux-table-container">';
                 echo '<ul class="redux-image-select">';
             
                 $x = 1;
@@ -98,7 +98,8 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
 
                         $style .= ';';
                     }
-                    $style .= " max-width: 100%; ";
+                    //$style .= " max-width: 100%; ";
+                    $style .= " width: 100%; ";
 
                     $theValue = $k;
                     if( !empty( $this->field['tiles'] ) && $this->field['tiles'] == true ) {
@@ -111,27 +112,33 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
                     $is_preset = false;
 
                     $this->field['class'] .= ' noUpdate ';
-                    if( !empty( $this->field['presets'] ) && $this->field['presets'] && !empty( $v['presets'] ) ) {
+                    if( isset($this->field['presets']) &&  $this->field['presets'] !== false ) {
+                        if (!isset($v['presets'])) {
+                            $v['presets'] = array();
+                        }
 
                         if( !is_array( $v['presets'] ) )
                             $v['presets'] = json_decode( $v['presets'], true );
                         
                         // Only highlight the preset if it's the same
                         if ($selected) {
-                            foreach($v['presets'] as $pk => $pv) {
-                                if ( empty($pv) && isset( $this->parent->options[$pk] ) && !empty( $this->parent->options[$pk] ) ) {
-                                    $selected = false;
-                                } else if ( !empty( $pv ) && !isset( $this->parent->options[$pk] ) ) {
-                                    $selected = false;
-                                } else if ( isset( $this->parent->options[$pk] ) && $this->parent->options[$pk] != $pv ) {
-                                    $selected = false;
-                                }
-                                if ( !$selected ) { // We're still not using the same preset. Let's unset that shall we?
-                                    $this->value = "";
-                                    break;
-                                }
-                            }  
-                            
+                            if (empty($v['presets'])) {
+                                $selected = false;
+                            } else {
+                                foreach($v['presets'] as $pk => $pv) {
+                                    if ( empty($pv) && isset( $this->parent->options[$pk] ) && !empty( $this->parent->options[$pk] ) ) {
+                                        $selected = false;
+                                    } else if ( !empty( $pv ) && !isset( $this->parent->options[$pk] ) ) {
+                                        $selected = false;
+                                    } else if ( isset( $this->parent->options[$pk] ) && $this->parent->options[$pk] != $pv ) {
+                                        $selected = false;
+                                    }
+                                    if ( !$selected ) { // We're still not using the same preset. Let's unset that shall we?
+                                        $this->value = "";
+                                        break;
+                                    }
+                                } 
+                            }
                         }
                         
 
@@ -148,8 +155,7 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
                     echo '<li class="redux-image-select">';
                     echo '<label class="' . $selected . ' redux-image-select' . $is_preset_class . $this->field['id'] . '_' . $x . '" for="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '">';
 
-                    echo '<input type="radio" class="' . $this->field['class'] . '" id="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '" name="' . $this->field['name'] . '" value="' . $theValue . '" ' . checked( $this->value, $theValue, false ) . $presets . '/>';
-                    
+                    echo '<input type="radio" class="' . $this->field['class'] . '" id="' . $this->field['id'] . '_' . (array_search( $k, array_keys( $this->field['options'] ) ) + 1) . '" name="' . $this->field['name'] . $this->field['name_suffix'] . '" value="' . $theValue . '" ' . checked( $this->value, $theValue, false ) . $presets . '/>';
                     if( !empty( $this->field['tiles'] ) && $this->field['tiles'] == true ) {
                         echo '<span class="tiles" style="background-image: url(' . $v['img'] . ');" rel="'.$v['img'].'"">&nbsp;</span>';
                     } else {
@@ -165,7 +171,7 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
                 }
                 
                 echo '</ul>';       
-
+                echo '</div>';
             }
 
 
@@ -199,34 +205,47 @@ if( !class_exists( 'ReduxFramework_image_select' ) ) {
         
         }
         
-        public function getCSS() {
+        public function getCSS($mode = '') {
             $css = '';
             $value = $this->value;
 
             if (!empty($value)) {
-                $css .= "background-image: url('" . $value . "');";
+                switch($mode) {
+                    case 'background-image':
+                        $output = "background-image: url('" . $value . "');";
+                    break;
+
+                    default:
+                        $output = $mode . ": " . $value . ";";
+                }
             }
+            
+           $css .= $output; 
+            
             return $css;
         }        
         
         public function output() {
+            $mode = ( isset( $this->field['mode'] ) && !empty( $this->field['mode'] ) ? $this->field['mode'] : 'background-image' );
+            
             if ( ( !isset( $this->field['output'] ) || !is_array( $this->field['output'] ) ) && ( !isset( $this->field['compiler'] )  ) ) {
                 return;
             }
 
-            $style = $this->getCSS();
+            $style = $this->getCSS($mode);
 
             if ( !empty( $style ) ) {
 
                 if ( !empty( $this->field['output'] ) && is_array( $this->field['output'] ) ) {
                     $keys = implode(",", $this->field['output']);
+                    $style = $keys . "{" . $style . '}';
                     $this->parent->outputCSS .= $style;
                 }
 
                 if ( !empty( $this->field['compiler'] ) && is_array( $this->field['compiler'] ) ) {
                     $keys = implode(",", $this->field['compiler']);
                     $style = $keys . "{" . $style . '}';
-                    $this->parent->compilerCSS .= $style; //$keys . "{" . $style . '}';
+                    $this->parent->compilerCSS .= $style;
                 }
             }
         }        

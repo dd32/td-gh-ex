@@ -1,5 +1,12 @@
   <?php if(kadence_display_sidebar()) {$slide_sidebar = 848;} else {$slide_sidebar = 1140;}
   global $post, $virtue; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
+  if(empty($headcontent) || $headcontent == 'default') {
+        if(!empty($virtue['post_head_default'])) {
+            $headcontent = $virtue['post_head_default'];
+        } else {
+            $headcontent = 'none';
+        }
+    }
    $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
     $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = $slide_sidebar; 
 ?>

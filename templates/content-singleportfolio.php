@@ -25,6 +25,8 @@
 						$ppost_type = get_post_meta( $post->ID, '_kad_ppost_type', true );
 						 $imgheight = get_post_meta( $post->ID, '_kad_posthead_height', true );
 						 $imgwidth = get_post_meta( $post->ID, '_kad_posthead_width', true );
+						 $autoplay = get_post_meta( $post->ID, '_kad_portfolio_autoplay', true );
+						 if(isset($autoplay) && $autoplay == 'no') {$slideauto = 'false';} else {$slideauto = 'true';}
 		if($layout == 'above')  {
 				$imgclass = 'col-md-12';
 				$textclass = 'pcfull clearfix';
@@ -86,7 +88,7 @@
 			                jQuery('.flexslider').flexslider({
 			                    animation: "fade",
 			                    animationSpeed: 500,
-			                    slideshow: true,
+			                    slideshow: <?php echo $slideauto; ?>,
 			                    slideshowSpeed: 7000,
 
 			                    before: function(slider) {
@@ -138,7 +140,7 @@
                               width: '100%',
                               height: carheight,
                               align: align,
-                              auto: {play: true, timeoutDuration: 9000},
+                              auto: {play: <?php echo $slideauto; ?>, timeoutDuration: 9000},
                               scroll: {
                                 items : 1,
                                 easing: 'quadratic'
@@ -170,7 +172,7 @@
                                  width: '100%',
                                   height: carheight,
                                   align: align,
-                                  auto: {play: true, timeoutDuration: 9000},
+                                  auto: {play: <?php echo $slideauto; ?>, timeoutDuration: 9000},
                                   scroll: {
                                     items : 1,
                                     easing: 'quadratic'

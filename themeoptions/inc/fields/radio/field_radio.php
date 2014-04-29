@@ -1,5 +1,5 @@
 <?php
-class ReduxFramework_radio extends ReduxFramework{	
+class ReduxFramework_radio {	
 	
 	/**
 	 * Field Constructor.
@@ -32,7 +32,7 @@ class ReduxFramework_radio extends ReduxFramework{
 			if (empty($this->field['args'])) {
 				$this->field['args'] = array();
 			}        	
-        	$this->field['options'] = $this->get_wordpress_data($this->field['data'], $this->field['args']);
+        	$this->field['options'] = $this->parent->get_wordpress_data($this->field['data'], $this->field['args']);
         }
         $this->field['data_class'] = ( isset($this->field['multi_layout']) ) ? 'data-'.$this->field['multi_layout'] : 'data-full';		
 		
@@ -44,7 +44,7 @@ class ReduxFramework_radio extends ReduxFramework{
 				
 				echo '<li>';
 				echo '<label for="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'">';
-				echo '<input type="radio" class="radio' . $this->field['class'] . '" id="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'" name="'.$this->parent->args['opt_name'].'['.$this->field['id'].']" value="'.$k.'" '.checked($this->value, $k, false).'/>';
+				echo '<input type="radio" class="radio ' . $this->field['class'] . '" id="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'" name="'.$this->field['name'] . $this->field['name_suffix'] . '" value="'.$k.'" '.checked($this->value, $k, false).'/>';
 				echo ' <span>'.$v.'</span>';
 				echo '</label>';
 				echo '</li>';

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virtue v2.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-21 22:55-0700\n"
-"PO-Revision-Date: 2014-04-21 23:33-0700\n"
+"POT-Creation-Date: 2014-04-28 18:26-0700\n"
+"PO-Revision-Date: 2014-04-28 18:29-0700\n"
 "Last-Translator: Georg Trixl <schick_post@gmx.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Sieht so aus, als wäre dies das Ergebnis von entweder:"
 # @ virtue
 #: ../404.php:16
 msgid "a mistyped address"
-msgstr "ein flasche Adresse"
+msgstr "eine falsche Adresse"
 
 # @ virtue
 #: ../404.php:17
@@ -49,7 +49,7 @@ msgstr "Leider wurden keine Ergebnisse gefunden."
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
-msgstr "Leider keine Blog Einträge gefunden."
+msgstr "Leider keine Blog-Einträge gefunden."
 
 # @ virtue
 #: ../page-contact.php:84
@@ -59,12 +59,12 @@ msgstr "Bitte Namen eingeben."
 # @ virtue
 #: ../page-contact.php:91
 msgid "Please enter your email address."
-msgstr "Bitte E-Mail-Adresse eingeben."
+msgstr "Bitte Email-Adresse eingeben."
 
 # @ virtue
 #: ../page-contact.php:94
 msgid "You entered an invalid email address."
-msgstr "Sie haben eine ungültige E-Mail-Adresse eingegeben."
+msgstr "Sie haben eine ungültige Email-Adresse eingegeben."
 
 # @ virtue
 #: ../page-contact.php:101
@@ -98,12 +98,13 @@ msgstr "Von"
 # @ virtue
 #: ../page-contact.php:158
 msgid "Thanks, your email was sent successfully."
-msgstr "Danke, ihr E-Mail wurde erfolgreich gesendet."
+msgstr "Danke, Ihre Email wurde erfolgreich gesendet."
 
 # @ virtue
 #: ../page-contact.php:162
+#, fuzzy
 msgid "Sorry, an error occured."
-msgstr "Leider ist ein Fehler augetretten."
+msgstr "Leider ist ein Fehler aufgetreten."
 
 # @ virtue
 #: ../page-contact.php:168 ../lib/widgets.php:285
@@ -113,7 +114,7 @@ msgstr "Name:"
 # @ virtue
 #: ../page-contact.php:177
 msgid "Email: "
-msgstr "E-Mail: "
+msgstr "Email: "
 
 # @ virtue
 #: ../page-contact.php:183
@@ -123,13 +124,13 @@ msgstr "Nachricht: "
 # @ virtue
 #: ../page-contact.php:190
 msgid "Send Email"
-msgstr "Sende E-Mail"
+msgstr "Sende Email"
 
 # @ virtue
 #: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
-msgstr "Leider keine Portfolio Einträge gefunden."
+msgstr "Leider keine Portfolio-Einträge gefunden."
 
 # @ virtue
 #: ../searchform.php:2
@@ -154,7 +155,7 @@ msgstr "neuere Einträge &rarr;"
 # @ virtue
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr "Über Author"
+msgstr "Über Autor"
 
 # @ virtue
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
@@ -224,7 +225,7 @@ msgstr "Letzte Einträge von"
 #: ../lib/class-tgm-plugin-activation.php:155
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
-msgstr "Installiere benötitgtes Plugins"
+msgstr "Installiere benötigte Plugins"
 
 # @ tgmpa
 # @ virtue
@@ -244,7 +245,7 @@ msgstr "Installiere Plugin: %s"
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
-msgstr "Etwas ist schief gegangen."
+msgstr "Etwas ist schiefgegangen."
 
 # @ tgmpa
 # @ virtue
@@ -264,7 +265,7 @@ msgstr "Zurück zur Übersicht"
 #: ../lib/class-tgm-plugin-activation.php:1840
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
-msgstr "Pluginaktivierung erfolgreich."
+msgstr "Plugin-Aktivierung erfolgreich."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:172
@@ -293,7 +294,7 @@ msgstr "Externer Link"
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1090
 msgid "Private Repository"
-msgstr "Privat Aufbewahrungsort"
+msgstr "Privater Aufbewahrungsort"
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1093
@@ -323,7 +324,7 @@ msgstr "Nicht installiert"
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1105
 msgid "Installed But Not Activated"
-msgstr "Installiert aber nicht aktiviert"
+msgstr "Installiert, aber nicht aktiviert"
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1275
@@ -368,40 +369,40 @@ msgstr "Aktivieren"
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1823
 msgid "Install package not available."
-msgstr "Installationspacket nicht verfügar."
+msgstr "Installationspaket nicht verfügbar."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1824
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
-"Herunterladen von Installationspaket von <span class=\"code\">%s</"
+"Herunterladen des Installationspaketes von <span class=\"code\">%s</"
 "span>&#8230;"
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1825
 msgid "Unpacking the package&#8230;"
-msgstr "Entpacke das Packet&#8230;"
+msgstr "Entpacke das Paket&#8230;"
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1826
 msgid "Installing the plugin&#8230;"
-msgstr "Installation des Plugin&#8230;"
+msgstr "Installation des Plugins&#8230;"
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1827
 msgid "Plugin install failed."
-msgstr "Plugin installation gescheitert."
+msgstr "Plugin-Installation gescheitert."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1828
 msgid "Plugin installed successfully."
-msgstr "Plugin installation erfolgreich."
+msgstr "Plugin-Installation erfolgreich."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1839
 msgid "Plugin activation failed."
-msgstr "Pluginaktivierung gescheitert."
+msgstr "Plugin-Aktivierung gescheitert."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1949
@@ -409,8 +410,9 @@ msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
-"Der Installations-und Aktivierungsprozess wird gestartet. Dieser Vorgang "
-"kann eine Weile auf einigen Server benötigen, seien Sie daher bitte geduldig."
+"Der Installations- und Aktivierungsprozess wird gestartet. Dieser Vorgang "
+"kann auf einigen Servern eine Weile benötigen, seien Sie daher bitte "
+"geduldig."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1950
@@ -447,21 +449,22 @@ msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"Der Installationsvorgang wird gestartet. Dieser Vorgang kann eine Weile auf "
-"einigen Server benötigen, seien Sie daher bitte geduldig."
+"Der Installationsvorgang wird gestartet. Dieser Vorgang kann auf einigen "
+"Servern eine Weile benötigen, seien Sie daher bitte geduldig."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1957
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
-"Ein Fehler passierte während der installation %1$s: <strong>%2$s</strong>."
+"Ein Fehler ist während der Installation %1$s: <strong>%2$s</strong> "
+"aufgetreten."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1958
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr "Die installation von %1$s scheiterte."
+msgstr "Die Installation von %1$s ist gescheitert."
 
 # @ tgmpa
 #: ../lib/class-tgm-plugin-activation.php:1959
@@ -504,7 +507,7 @@ msgstr "| (Editieren)"
 # @ virtue
 #: ../lib/comments.php:49 ../templates/comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Ihr Kommentar erwartet noch Moderation."
+msgstr "Ihr Kommentar wartet noch auf Moderation."
 
 # @ virtue
 # @ woocommerce
@@ -535,53 +538,53 @@ msgstr "Beruf"
 # @ virtue
 #: ../lib/custom.php:451
 msgid "Please enter your Occupation."
-msgstr "Bitte geben Sie ihren Beruf ein."
+msgstr "Bitte geben Sie Ihren Beruf ein."
 
 # @ virtue
 #: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
-msgstr "Bitte geben Sie ihren Twitter Benutzernamen ein."
+msgstr "Bitte geben Sie Ihren Twitter Benutzernamen ein."
 
 # @ virtue
 #: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Facebook URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Facebook URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Google Plus URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Google Plus URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
-msgstr "Bitte geben Sie ihre Flickr URL ein. (Unbedingt mit http:// beginnen)"
+msgstr "Bitte geben Sie Ihre Flickr URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Linkedin URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Linkedin URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Dribbble URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Dribbble URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Pinterest URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Pinterest URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
-"Bitte geben Sie ihre Instagram URL ein. (Unbedingt mit http:// beginnen)"
+"Bitte geben Sie Ihre Instagram URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
 #: ../lib/gallery_metabox.php:8
@@ -591,7 +594,7 @@ msgstr "Beitrag Slider Bilder"
 # @ virtue
 #: ../lib/gallery_metabox.php:9
 msgid "Portfolio Slider Images"
-msgstr "Portolio Silder Bilder"
+msgstr "Portolio Slider Bilder"
 
 # @ virtue
 #: ../lib/gallery_metabox.php:10
@@ -606,17 +609,17 @@ msgstr "Entferne Bild"
 # @ virtue
 #: ../lib/gallery_metabox.php:37
 msgid "Add images"
-msgstr "Bilder hinzugfügen"
+msgstr "Bilder hinzufügen"
 
 # @ virtue
 #: ../lib/gallery_metabox.php:66
 msgid "Add Images to Gallery"
-msgstr "Bilder zur Gallerie hinzufügen"
+msgstr "Bilder zur Galerie hinzufügen"
 
 # @ virtue
 #: ../lib/gallery_metabox.php:68
 msgid "Add to gallery"
-msgstr "Zur Gallerie hinzufügen"
+msgstr "Zur Galerie hinzufügen"
 
 # @ virtue
 #: ../lib/init.php:9
@@ -631,7 +634,7 @@ msgstr "Sekundärnavigation"
 # @ virtue
 #: ../lib/init.php:11
 msgid "Mobile Navigation"
-msgstr "Handynaviagtion"
+msgstr "Handynavigation"
 
 # @ virtue
 #: ../lib/init.php:12
@@ -641,13 +644,13 @@ msgstr "Topbar Navigation"
 # @ virtue
 #: ../lib/init.php:13
 msgid "Footer Navigation"
-msgstr "Fußnavigation"
+msgstr "Fußzeile Navigation"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
-#: ../themeoptions/inc/fields/border/field_border.php:112
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
+#: ../themeoptions/inc/fields/border/field_border.php:113
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
 msgstr "Alles"
 
@@ -659,17 +662,17 @@ msgstr "Alle Blogeinträge"
 # @ virtue
 #: ../lib/metaboxes.php:68
 msgid "Page Title and Subtitle"
-msgstr "Seiten Titel und Subtitel"
+msgstr "Seitentitel und Untertitel"
 
 # @ virtue
 #: ../lib/metaboxes.php:75
 msgid "Subtitle"
-msgstr "Subtitel"
+msgstr "Untertitel"
 
 # @ virtue
 #: ../lib/metaboxes.php:76
 msgid "Subtitle will go below page title"
-msgstr "Subtitel steht unt dem Seitentitel"
+msgstr "Untertitel steht unter dem Seitentitel"
 
 # @ virtue
 #: ../lib/metaboxes.php:85
@@ -679,394 +682,403 @@ msgstr "Beitragsoptionen"
 # @ virtue
 #: ../lib/metaboxes.php:93
 msgid "Head Content"
-msgstr "Kopfinhalt"
-
-# @ virtue
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
-msgid "None"
-msgstr "Kein"
-
-# @ virtue
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
-msgid "Image Slider"
-msgstr "Bilderslider"
-
-# @ virtue
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
-#: ../lib/metaboxes.php:438
-msgid "Video"
-msgstr "Video"
-
-# @ virtue
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:794
-msgid "Image"
-msgstr "Bild"
-
-# @ virtue
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
-msgid "Max Image/Slider Height"
-msgstr "Max Bild/Silder Höhe"
-
-# @ virtue
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
-msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
-msgstr "Standard ist: 400 <b>(Hinweis: nur Zahlen eingeben Beispiel: 350)</b>"
-
-# @ virtue
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
-msgid "Max Image/Slider Width"
-msgstr "Max Bild/Slider Breite"
-
-# @ virtue
-#: ../lib/metaboxes.php:112
-msgid ""
-"Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
-"example: 650, does not apply to carousel slider)</b>"
-msgstr ""
-"Standardwert ist: 770 oder 1140 auf Eintägen voller Breite<b>(Hinweis: nur "
-"Eingabe Anzahl, Beispiel: 650, gilt nicht für Karussellslider)</b>"
-
-# @ virtue
-#: ../lib/metaboxes.php:117
-msgid "Post Summary"
-msgstr "Eintragszusammenfassung"
+msgstr "Kopfzeile Inhalt"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
-#: ../themeoptions/framework.php:1584
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1897
 msgid "Default"
 msgstr "Standard"
 
 # @ virtue
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
+#: ../themeoptions/options.php:1764
+msgid "None"
+msgstr "Kein"
+
+# @ virtue
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
+#: ../themeoptions/options.php:1764
+msgid "Image Slider"
+msgstr "Bilderslider"
+
+# @ virtue
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
+msgid "Video"
+msgstr "Video"
+
+# @ virtue
+#: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
+#: ../lib/widgets.php:794 ../themeoptions/options.php:1764
+msgid "Image"
+msgstr "Bild"
+
+# @ virtue
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
+msgid "Max Image/Slider Height"
+msgstr "Max Bild/Slider Höhe"
+
+# @ virtue
+#: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
+msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
+msgstr "Standard ist: 400 <b>(Hinweis: nur Zahlen eingeben; Beispiel: 350)</b>"
+
+# @ virtue
+#: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
+msgid "Max Image/Slider Width"
+msgstr "Max Bild/Slider Breite"
+
+# @ virtue
+#: ../lib/metaboxes.php:113
+msgid ""
+"Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
+"example: 650, does not apply to carousel slider)</b>"
+msgstr ""
+"Standardwert ist: 770 oder 1140 bei Einträgen voller Breite<b>(Hinweis: nur "
+"Zahlen eingeben; Beispiel: 650, gilt nicht für Karussellslider)</b>"
+
+# @ virtue
+#: ../lib/metaboxes.php:118
+msgid "Post Summary"
+msgstr "Beitragszusammenfassung"
+
+# @ virtue
+#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
 msgid "Text"
 msgstr "Text"
 
 # @ virtue
-#: ../lib/metaboxes.php:124
+#: ../lib/metaboxes.php:125
 msgid "Portrait Image"
 msgstr "Portraitbild"
 
 # @ virtue
-#: ../lib/metaboxes.php:125
+#: ../lib/metaboxes.php:126
 msgid "Landscape Image"
 msgstr "Querformatbild"
 
 # @ virtue
-#: ../lib/metaboxes.php:126
+#: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
 msgstr "Portraitbild-Slider"
 
 # @ virtue
-#: ../lib/metaboxes.php:127
+#: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
 msgstr "Querformatbild-Slider"
 
 # @ virtue
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
 msgstr "Sidebar anzeigen?"
 
 # @ virtue
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
+#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Wähle Layout mit voller Breite oder mit Sidebar"
 
 # @ virtue
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
-#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
-#: ../lib/metaboxes.php:574
+#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
+#: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
 msgstr "Ja"
 
 # @ virtue
-#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
-#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
+#: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
+#: ../lib/metaboxes.php:584
 msgid "No"
 msgstr "Nein"
 
 # @ virtue
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
+#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
 msgstr "Wähle Sidebar"
 
 # @ virtue
-#: ../lib/metaboxes.php:148
-msgid "Author Info"
-msgstr "Author Info"
-
-# @ virtue
 #: ../lib/metaboxes.php:149
-msgid "Display an author info box?"
-msgstr "Zeige eine Author Infobox?"
+msgid "Author Info"
+msgstr "Autor Info"
 
 # @ virtue
-#: ../lib/metaboxes.php:158
-msgid "Posts Carousel"
-msgstr "Beitragskarousell"
+#: ../lib/metaboxes.php:150
+msgid "Display an author info box?"
+msgstr "Zeige eine Autor-Infobox?"
 
 # @ virtue
 #: ../lib/metaboxes.php:159
-msgid "Display a carousel with similar or recent posts?"
-msgstr "Zeige ein Karousell mit ähnlichen oder aktuellen Beiträgen?"
+msgid "Posts Carousel"
+msgstr "Beitragskarussell"
 
 # @ virtue
-#: ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:160
+msgid "Display a carousel with similar or recent posts?"
+msgstr "Zeige ein Karussell mit ähnlichen oder aktuellen Beiträgen?"
+
+# @ virtue
+#: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
 msgstr "Ja - aktuelle Beiträge anzeigen"
 
 # @ virtue
-#: ../lib/metaboxes.php:165
+#: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
 msgstr "Ja - ähnliche Beiträge anzeigen"
 
 # @ virtue
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
-msgstr "Karouselltitel"
+msgstr "Karusselltitel"
 
 # @ virtue
-#: ../lib/metaboxes.php:171
+#: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
-msgstr "zB. ähniliche Beiträge"
+msgstr "zB. ähnliche Beiträge"
 
 # @ virtue
-#: ../lib/metaboxes.php:179
+#: ../lib/metaboxes.php:180
 msgid "Post Video Box"
 msgstr "Videobox eintragen"
 
 # @ virtue
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
 msgstr "Wenn Videobeitrag"
 
 # @ virtue
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
+#: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
-msgstr "Hier Eingebett-Code eingeben, funktioniert mit youtube, vimeo..."
+msgstr "Hier eingebetteten Code eingeben, funktioniert mit youtube, vimeo..."
 
 # @ virtue
-#: ../lib/metaboxes.php:196
+#: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
 msgstr "Portfolio Beitragsoptionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:204
+#: ../lib/metaboxes.php:205
 msgid "Project Layout"
 msgstr "Projektlayout"
 
 # @ virtue
-#: ../lib/metaboxes.php:209
+#: ../lib/metaboxes.php:210
 msgid "Beside"
 msgstr "Neben"
 
 # @ virtue
-#: ../lib/metaboxes.php:210
+#: ../lib/metaboxes.php:211
 msgid "Above"
 msgstr "Über"
 
 # @ virtue
-#: ../lib/metaboxes.php:211
+#: ../lib/metaboxes.php:212
 msgid "Three Rows"
 msgstr "Drei Reihen"
 
 # @ virtue
-#: ../lib/metaboxes.php:215
+#: ../lib/metaboxes.php:216
 msgid "Project Options"
 msgstr "Projektoptionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:222
+#: ../lib/metaboxes.php:223
 msgid "Carousel Slider"
-msgstr "Sliderkarousell"
+msgstr "Sliderkarussell"
 
 # @ virtue
-#: ../lib/metaboxes.php:229
+#: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
-msgstr "Standard ist: 450 <b>(Hinweis: nur Zahlen eingeben, Beispiel: 350)</b>"
+msgstr "Standard ist: 450 <b>(Hinweis: nur Zahlen eingeben; Beispiel: 350)</b>"
 
 # @ virtue
-#: ../lib/metaboxes.php:235
+#: ../lib/metaboxes.php:236
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
 msgstr ""
 "Standard ist: 670 oder 1140 bei <b>über</b> oder <b>Drei Reihen</b> Layouts "
-"(Hinweis: nur Zahlen eingeben, Beispiel: 650)</b>"
+"(Hinweis: nur Zahlen eingeben; Beispiel: 650)</b>"
 
 # @ virtue
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
+#, fuzzy
+msgid "Auto Play Slider?"
+msgstr "Automatisch abspielen?"
+
+# @ virtue
+#: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
 msgstr "Wert 01 Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:241
+#: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
 msgstr "zB. Projekttyp:"
 
 # @ virtue
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
 msgstr "Wert 01 Beschreibung"
 
 # @ virtue
-#: ../lib/metaboxes.php:247
+#: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
 msgstr "zB. Zeichen-Illustration"
 
 # @ virtue
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
 msgstr "Wert 02 Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:253
+#: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
-msgstr "zB. Fähigkeiten gebraucht:"
+msgstr "zB. benötigte Fähigkeiten:"
 
 # @ virtue
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
 msgstr "Wert 02 Beschreibung"
 
 # @ virtue
-#: ../lib/metaboxes.php:259
+#: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
 msgstr "zB.: Photoshop, Illustrator"
 
 # @ virtue
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
-msgstr "Wert 03 Title"
+msgstr "Wert 03 Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:265
+#: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
 msgstr "zB. Kunde:"
 
 # @ virtue
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
 msgstr "Wert 03 Beschreibung"
 
 # @ virtue
-#: ../lib/metaboxes.php:271
+#: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
-msgstr "zB. Beispiel GmbH"
+msgstr "zB. Muster GmbH"
 
 # @ virtue
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
 msgstr "Wert 04 Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:277
+#: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
 msgstr "zB. Projektjahr:"
 
 # @ virtue
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
 msgstr "Wert 04 Beschreibung"
 
 # @ virtue
-#: ../lib/metaboxes.php:283
+#: ../lib/metaboxes.php:294
 msgid "ex. 2013"
 msgstr "zB. 2013"
 
 # @ virtue
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:299
 msgid "External Website"
 msgstr "Externe Webseite"
 
 # @ virtue
-#: ../lib/metaboxes.php:289
+#: ../lib/metaboxes.php:300
 msgid "ex. Website:"
 msgstr "zB. Webseite:"
 
 # @ virtue
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:305
 msgid "Website Address"
-msgstr "Webseitenadresse"
+msgstr "Webseiten-Adresse"
 
 # @ virtue
-#: ../lib/metaboxes.php:295
+#: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
 msgstr "zB. http://www.example.com"
 
 # @ virtue
-#: ../lib/metaboxes.php:300
+#: ../lib/metaboxes.php:311
 msgid "If Video Project"
-msgstr "Wenn Video Projekt"
-
-# @ virtue
-#: ../lib/metaboxes.php:306
-msgid "Similar Portfolio Item Carousel"
-msgstr "Ähnliche Portfolioeinträge Karussell"
-
-# @ virtue
-#: ../lib/metaboxes.php:307
-msgid "Display a carousel with similar portfolio items below project?"
-msgstr "Zeige ein Karussell mit ählichen Portfolioeinträge unter Projekt?"
-
-# @ virtue
-#: ../lib/metaboxes.php:312
-msgid "Yes - Display Recent Projects"
-msgstr "Ja - Zeige kürzliche Projekte"
+msgstr "Wenn Video-Projekt"
 
 # @ virtue
 #: ../lib/metaboxes.php:317
+msgid "Similar Portfolio Item Carousel"
+msgstr "Ähnliche Portfolio-Einträge Karussell"
+
+# @ virtue
+#: ../lib/metaboxes.php:318
+msgid "Display a carousel with similar portfolio items below project?"
+msgstr "Zeige ein Karussell mit ähnlichen Portfolio-Einträgen unter Projekt?"
+
+# @ virtue
+#: ../lib/metaboxes.php:323
+msgid "Yes - Display Recent Projects"
+msgstr "Ja - Zeige rezente Projekte"
+
+# @ virtue
+#: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
 msgstr "zB. ähnliche Projekte"
 
 # @ virtue
-#: ../lib/metaboxes.php:326
+#: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
 msgstr "Portfolio Seitenoptionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:335
+#: ../lib/metaboxes.php:346
 msgid "Columns"
-msgstr "Splaten"
+msgstr "Spalten"
 
 # @ virtue
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:351
 msgid "Four Column"
-msgstr "Viere Spalten"
+msgstr "Vier Spalten"
 
 # @ virtue
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:352
 msgid "Three Column"
 msgstr "Drei Spalten"
 
 # @ virtue
-#: ../lib/metaboxes.php:342
+#: ../lib/metaboxes.php:353
 msgid "Two Column"
 msgstr "Zwei Spalten"
 
 # @ virtue
-#: ../lib/metaboxes.php:346
+#: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
 msgstr "Portfolio Arbeitstypen"
 
 # @ virtue
-#: ../lib/metaboxes.php:353
+#: ../lib/metaboxes.php:364
 msgid "Order Items By"
 msgstr "Sortiere Einträge nach"
 
 # @ virtue
-#: ../lib/metaboxes.php:358
+#: ../lib/metaboxes.php:369
 msgid "Menu Order"
 msgstr "Menü Anordnung"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/metaboxes.php:359
+#: ../lib/metaboxes.php:370
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
@@ -1075,229 +1087,233 @@ msgid "Title"
 msgstr "Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:371
 msgid "Date"
 msgstr "Datum"
 
 # @ virtue
-#: ../lib/metaboxes.php:361
+#: ../lib/metaboxes.php:372
 msgid "Random"
 msgstr "Zufall"
 
 # @ virtue
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:376
 msgid "Items per Page"
 msgstr "Einträge pro Seite"
 
 # @ virtue
-#: ../lib/metaboxes.php:366
+#: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
-msgstr "Wie viele Portfolio Einträge pro Seite"
+msgstr "Wie viele Portfolio-Einträge pro Seite"
 
 # @ virtue
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:399
 msgid "Set image height"
 msgstr "Setze Bildhöhe"
 
 # @ virtue
-#: ../lib/metaboxes.php:389
+#: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
-"Standard  ist 1:1 Aspekt <b>(Hinweis: nur Zahlen eingeben, Bespiel: 350)</b>"
+"Standard  ist 1:1 Verhältnis <b>(Hinweis: nur Zahlen eingeben, Bespiel: 350)"
+"</b>"
 
 # @ virtue
-#: ../lib/metaboxes.php:394
+#: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
-msgstr "Zeig Eintrag-Arbeitstypen"
+msgstr "Zeige Eintrag-Arbeitstypen"
 
 # @ virtue
-#: ../lib/metaboxes.php:401
+#: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
 msgstr "Zeige Eintragsauszug"
 
 # @ virtue
-#: ../lib/metaboxes.php:408
+#: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
-msgstr "Addiere Lightbox-Link rechts oben bei jedem Element"
+msgstr "Füge Lightbox-Link rechts oben zu jedem Element"
 
 # @ virtue
-#: ../lib/metaboxes.php:423
+#: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
-msgstr "Feature Seietenoptionen"
+msgstr "Feature Seiten-Optionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:443
 msgid "Feature Options"
 msgstr "Feature Optionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:433
+#: ../lib/metaboxes.php:444
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
-"Wenn Bildslider, stelle sicher das die Bilder mindestens 1140px breit sind."
+"Wenn Bildslider, stelle sicher, dass die Bilder mindestens 1140px breit sind."
 
 # @ virtue
-#: ../lib/metaboxes.php:450
+#: ../lib/metaboxes.php:461
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
 msgstr ""
-"Standard ist: 1140 <b>(Hinweis: nur Zahlen eingeben, Beispiel: 650, bezieht "
-"sich nicht auf Karaousellslider)</b>"
+"Standard ist: 1140 <b>(Hinweis: nur Zahlen eingeben; Beispiel: 650, bezieht "
+"sich nicht auf Karussellslider)</b>"
 
 # @ virtue
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
-msgstr "Benutzer Lightbox für Feature-Bild"
+msgstr "Verwende Lightbox für Feature-Bild"
 
 # @ virtue
-#: ../lib/metaboxes.php:456
+#: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
-"Wenn Featureoption ist auf Bild gestellt, wähle Benutze Lightbox Link mit "
-"Bild."
+"Wenn Feature-Option auf Bild gestellt ist, nutze Lightbox Link mit Bild."
 
 # @ virtue
-#: ../lib/metaboxes.php:474
+#: ../lib/metaboxes.php:485
 msgid "Blog List Options"
-msgstr "Blog Listoptionen"
+msgstr "Blog List-Optionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:494
 msgid "Blog Category"
-msgstr "Blog Kategory"
+msgstr "Blog Kategorie"
 
 # @ virtue
-#: ../lib/metaboxes.php:484
+#: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
-msgstr "Wähle alle Blogeinträge oder eine Kategory zum anzeigen"
+msgstr "Wähle alle Blogeinträge oder eine Kategorie zum anzeigen"
 
 # @ virtue
-#: ../lib/metaboxes.php:490
+#: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
 msgstr "Wie viele Beiträge pro Seite"
 
 # @ virtue
-#: ../lib/metaboxes.php:514
+#: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
 msgstr "Zeige Beitragsinhalt als:"
 
 # @ virtue
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:530
 msgid "Summary"
 msgstr "Zusammenfassung"
 
 # @ virtue
-#: ../lib/metaboxes.php:520
+#: ../lib/metaboxes.php:531
 msgid "Full"
 msgstr "Voll"
 
 # @ virtue
-#: ../lib/metaboxes.php:543
+#: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
 msgstr "Kontaktseiten Optionen"
 
 # @ virtue
-#: ../lib/metaboxes.php:552
+#: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
 msgstr "Benutze Kontaktformular"
 
 # @ virtue
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
 msgstr "Kontakt von Titel"
 
 # @ virtue
-#: ../lib/metaboxes.php:563
+#: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
-msgstr "zB. Sende uns ein E-Mail"
+msgstr "zB. Sende uns eine Email"
 
 # @ virtue
-#: ../lib/metaboxes.php:568
+#: ../lib/metaboxes.php:579
 msgid "Use Map"
 msgstr "Benutze Karte"
 
 # @ virtue
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:589
 msgid "Address"
 msgstr "Adresse"
 
 # @ virtue
-#: ../lib/metaboxes.php:579
+#: ../lib/metaboxes.php:590
 msgid "Enter your Location"
 msgstr "Ort eingeben"
 
 # @ virtue
-#: ../lib/metaboxes.php:584
+#: ../lib/metaboxes.php:595
 msgid "Map Type"
 msgstr "Kartentyp"
 
 # @ virtue
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:600
 msgid "ROADMAP"
 msgstr "STRASSENKARTE"
 
 # @ virtue
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:601
 msgid "HYBRID"
 msgstr "HYBRID"
 
 # @ virtue
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:602
 msgid "TERRAIN"
 msgstr "TERRAIN"
 
 # @ virtue
-#: ../lib/metaboxes.php:592
+#: ../lib/metaboxes.php:603
 msgid "SATELLITE"
-msgstr "STAELLITE"
+msgstr "SATELLIT"
 
 # @ virtue
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
 msgstr "Karten Zoomstufe"
 
 # @ virtue
-#: ../lib/metaboxes.php:597
+#: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
-msgstr "Ein guter Weg zum starten ist 15"
+msgstr "Ein guter Ort für den Start ist 15"
 
 # @ virtue
-#: ../lib/metaboxes.php:602
+#: ../lib/metaboxes.php:613
 msgid "1 (World View)"
 msgstr "1 (Weltansicht)"
 
 # @ virtue
-#: ../lib/metaboxes.php:622
+#: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
 msgstr "21 (Strassenansicht)"
 
 # @ virtue
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:637
 msgid "Map Height"
 msgstr "Kartenhöhe"
 
 # @ virtue
-#: ../lib/metaboxes.php:627
+#: ../lib/metaboxes.php:638
 msgid "Default is 300"
 msgstr "Standard ist 300"
 
 # @ virtue
-#: ../lib/metaboxes.php:635
+#: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
-msgstr "Sidebaroptionen"
+msgstr "Sidebar-Optionen"
 
 #: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
+"Entschuldigung, kein Produkt entsprach Ihrer Auswahl. Bitte wählen Sie etwas "
+"anderes."
 
 #: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
+"Entschuldigung, dieses Produkt ist nicht verfügbar. Bitte wählen Sie eine "
+"andere Kombination."
 
 # @ virtue
 #: ../lib/utils.php:69
@@ -1321,7 +1337,7 @@ msgstr "Jährliches Archiv:  %s"
 #: ../lib/utils.php:75
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Authoren Archiv: %s"
+msgstr "Autoren Archiv: %s"
 
 # @ virtue
 #: ../lib/utils.php:81
@@ -1337,13 +1353,13 @@ msgstr "Nicht gefunden"
 # @ virtue
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
-msgstr "Etwas ist mit der Plugin-API schief gegangen."
+msgstr "Etwas ist mit der Plugin-API schiefgegangen."
 
 # @ virtue
 #: ../lib/virtuetoolkit-activate.php:50
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr "Ein Plugin wurde erfolgreiche installiert und aktiviert. %s"
+msgstr "Ein Plugin wurde erfolgreich installiert und aktiviert. %s"
 
 # @ virtue
 #: ../lib/widgets.php:6 ../lib/widgets.php:59
@@ -1377,13 +1393,15 @@ msgstr "Fußzeilenspalte 4"
 
 # @ virtue
 #: ../lib/widgets.php:177
+#, fuzzy
 msgid "Use this widget to add a Vcard to your site"
-msgstr "Nutze dieses Widget um eine Vcard zur Seite hinzu zu fügen"
+msgstr "Nutze dieses Widget, um eine vCard zur Seite hinzuzufügen"
 
 # @ virtue
 #: ../lib/widgets.php:178
+#, fuzzy
 msgid "Virtue: Contact/Vcard"
-msgstr "Virtue: Kontakt/Vcard"
+msgstr "Virtue: Kontakt/vCard"
 
 # @ virtue
 #: ../lib/widgets.php:205
@@ -1431,12 +1449,12 @@ msgstr "Telefon:"
 # @ woocommerce
 #: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
 msgid "Email:"
-msgstr "E-Mail:"
+msgstr "Email:"
 
 # @ virtue
 #: ../lib/widgets.php:320
 msgid "Simple way to add Social Icons"
-msgstr "Einfacher Weg zum hinzufügen von Social Icons"
+msgstr "Einfacher Weg, um Social Icons hinzuzufügen"
 
 # @ virtue
 #: ../lib/widgets.php:321
@@ -1510,18 +1528,17 @@ msgstr "RSS:"
 # @ virtue
 #: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
-msgstr ""
-"Dies zeigt den allerletzten Beitrag auf ihrer Seite mit einem Thumbnail"
+msgstr "Dies zeigt den neuesten Beitrag auf Ihrer Seite mit einem Thumbnail"
 
 # @ virtue
 #: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
-msgstr "Virtue: letzte Beiträge"
+msgstr "Virtue: Letzte Beiträge"
 
 # @ virtue
 #: ../lib/widgets.php:532
 msgid "Recent Posts"
-msgstr "Letzte Beträge"
+msgstr "Letzte Beiträge"
 
 # @ virtue
 #: ../lib/widgets.php:600
@@ -1538,8 +1555,8 @@ msgstr "Limitiere auf Kategorie (Optional):"
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
-"Dies zeigt einen Raster von gefeatureten Bildern der letzten Beiträge oder "
-"Portfolioeinträge"
+"Dies zeigt ein Raster gefeatureter Bilder der neuesten Beiträge oder "
+"Portfolio-Einträge"
 
 # @ virtue
 #: ../lib/widgets.php:615
@@ -1549,7 +1566,7 @@ msgstr "Virtue: Bild Raster"
 # @ virtue
 #: ../lib/widgets.php:640
 msgid "Post Gallery"
-msgstr "Beitrags Gallerie"
+msgstr "Beitrags Galerie"
 
 # @ virtue
 #: ../lib/widgets.php:738
@@ -1569,12 +1586,12 @@ msgstr "Portfolio"
 # @ virtue
 #: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
-msgstr "Wenn Betrag - wähle Kategorie (optional):"
+msgstr "Wenn Beitrag - wähle Kategorie (optional):"
 
 # @ virtue
 #: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
-msgstr "Wenn Portfolio -wähle Typ (optional):"
+msgstr "Wenn Portfolio - wähle Typ (optional):"
 
 # @ virtue
 #: ../lib/widgets.php:750
@@ -1584,7 +1601,7 @@ msgstr "Anzahl der anzuzeigenden Bilder:"
 # @ virtue
 #: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
-msgstr "Dies ermöglicht einen einfachen 'Übertext' mit Bild."
+msgstr "Dies ermöglicht einen einfachen 'Über'-Text mit Bild."
 
 # @ virtue
 #: ../lib/widgets.php:769
@@ -1596,8 +1613,8 @@ msgstr "Virtue: 'Über' mit Bild"
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
-#: ../themeoptions/inc/fields/background/field_background.php:307
-#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/background/field_background.php:306
+#: ../themeoptions/inc/fields/media/field_media.php:155
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
@@ -1637,7 +1654,7 @@ msgstr "Entferne Einbettung"
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
-msgstr "Keine Eingebetten Ergebnisse gefunden für %s. Mehr Infos unter"
+msgstr "Keine eingebetteten Ergebnisse gefunden für %s. Mehr Infos unter"
 
 # @ virtue
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
@@ -1651,11 +1668,11 @@ msgstr "Symbol hinzufügen"
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/background/field_background.php:312
+#: ../themeoptions/inc/fields/media/field_media.php:161
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
@@ -1684,7 +1701,7 @@ msgstr ""
 # @ redux-framework
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/framework.php:2406
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -1698,8 +1715,8 @@ msgstr "(Editieren)"
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
-msgstr[0] "Eine Reaktion "
-msgstr[1] "%1$s Reaktionen "
+msgstr[0] "Eine Antwort "
+msgstr[1] "%1$s Antworten "
 
 # @ virtue
 #: ../templates/comments.php:18
@@ -1719,33 +1736,33 @@ msgstr "Kommentare sind geschlossen."
 # @ virtue
 #: ../templates/comments.php:54
 msgid "Leave a Reply"
-msgstr "Hinterlasse eine Anmerkungen"
+msgstr "Hinterlasse einen Kommentar"
 
 # @ virtue
 # @ woocommerce
 #: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Hinterlasse eine Anmerkungen zu %s"
+msgstr "Hinterlasse einen Kommentar zu %s"
 
 # @ virtue
 #: ../templates/comments.php:57
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
-"Sie müssen <a href=\"%s\">eingelogt sein</a> um ein Kommentar zu "
+"Sie müssen <a href=\"%s\">eingeloggt sein</a>, um einen Kommentar zu "
 "hinterlassen."
 
 # @ virtue
 #: ../templates/comments.php:62
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr "Eingelogt als <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Eingeloggt als <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
 # @ virtue
 #: ../templates/comments.php:63
 msgid "Log out of this account"
-msgstr "Abmelden aus diesem Konto"
+msgstr "Abmelden von diesem Konto"
 
 # @ virtue
 #: ../templates/comments.php:63
@@ -1760,7 +1777,7 @@ msgstr " <span>*</span>"
 # @ virtue
 #: ../templates/comments.php:72
 msgid "Email (will not be published)"
-msgstr "E-Mail (wird nicht veröffentlicht)"
+msgstr "Email (wird nicht veröffentlicht)"
 
 # @ virtue
 #: ../templates/comments.php:76
@@ -1779,8 +1796,8 @@ msgstr "Kommentar absenden"
 
 # @ virtue
 #: ../templates/content-fullpost.php:78
-#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:258
+#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
+#: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
 msgstr "Seiten:"
 
@@ -1792,7 +1809,7 @@ msgstr "von"
 # @ virtue
 #: ../templates/entry-meta-subhead.php:6
 msgid "posted in:"
-msgstr "Eingetragen in:"
+msgstr "Eingetragen bei:"
 
 # @ virtue
 #: ../templates/entry-meta.php:2
@@ -1817,7 +1834,7 @@ msgstr "Ähnliche Beiträge"
 # @ virtue
 #: ../templates/home/blog-home.php:3
 msgid "Latest from the Blog"
-msgstr "Letzter aus dem Blog"
+msgstr "Neuester aus dem Blog"
 
 # @ virtue
 #: ../templates/home/blog-home.php:74
@@ -1829,10 +1846,145 @@ msgstr "WEITER LESEN"
 msgid "Featured Projects"
 msgstr "Gefeaturetes Projekt"
 
+# @ redux-framework
+#: ../themeoptions/framework.php:203
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr "Optionenverzeichnis erstellt mit %1$s"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:203
+msgid "Redux Framework"
+msgstr "Redux Framework"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:1262
+msgid "Options"
+msgstr "Optionen"
+
+#: ../themeoptions/framework.php:489
+msgid "Dismiss"
+msgstr ""
+
+# @ redux-framework
+#: ../themeoptions/framework.php:1648
+#: ../themeoptions/extensions/customizer/extension_customizer.php:408
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:1649
+#: ../themeoptions/extensions/customizer/extension_customizer.php:409
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+"Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte entfernen."
+
+# @ redux-framework
+#: ../themeoptions/framework.php:1650
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+"Sind Sie  sicher? Zurücksetzen wird alle benutzerdefinierten Werte dieser "
+"Sektion entfernen."
+
+# @ redux-framework
+#: ../themeoptions/framework.php:1651
+#: ../themeoptions/extensions/customizer/extension_customizer.php:410
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+"Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. Wollen "
+"Sie fortsetzen?"
+
+# @ cmb
+#: ../themeoptions/framework.php:1652
+#, fuzzy
+msgid "Please Wait"
+msgstr "Bitte nochmals versuchen"
+
+#: ../themeoptions/framework.php:1788
+msgid "Hints"
+msgstr ""
+
+#: ../themeoptions/framework.php:1789
+msgid "<p>"
+msgstr ""
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2631
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Warnung - Dieses Optionenverzeichnis wird ohne Javascript nicht richtig "
+"funktionieren!"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2693
+msgid "Expand"
+msgstr "Erweitern"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
+msgid "Reset Section"
+msgstr "Auswahl zurücksetzen"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
+msgid "Reset All"
+msgstr "Alles zurücksetzen"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
+msgid "Working..."
+msgstr "Arbeite..."
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2714
+msgid "Settings Imported!"
+msgstr "Einstellungen importiert!"
+
+#: ../themeoptions/framework.php:2727
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2739
+msgid "Section Defaults Restored!"
+msgstr ""
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2745
+msgid "Settings Saved!"
+msgstr "Einstellungen gespeichert!"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2752
+msgid "Settings have changed, you should save them!"
+msgstr "Einstellungen wurden geändert, Sie sollten diese speichern!"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2753
+msgid "error(s) were found!"
+msgstr "Fehler wurde(n) gefunden!"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2754
+msgid "warning(s) were found!"
+msgstr "Warnung(en) wurde(n) gefunden!"
+
+# @ redux-framework
+#: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
+msgid "System Info"
+msgstr "System Info"
+
 # @ virtue
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
-msgstr "Kopiere und füge diesen Code in die Thema - Optionen - Importfunktion"
+msgstr "Kopiere und füge diesen Code in die Importfunktion der Theme-Optionen"
 
 # @ virtue
 #: ../themeoptions/options.php:311
@@ -1847,42 +1999,42 @@ msgstr "Haupteinstellungen"
 # @ virtue
 #: ../themeoptions/options.php:325
 msgid "Welcome to Virtue Theme Options"
-msgstr "Willkommen zu den Virtue Themaoptionen"
+msgstr "Willkommen zu den Virtue Theme-Optionen"
 
 # @ virtue
 #: ../themeoptions/options.php:326
 msgid "This theme was developed by"
-msgstr "Dieses Thema wurde entwickelt von"
+msgstr "Dieses Theme wurde entwickelt von"
 
 # @ virtue
 #: ../themeoptions/options.php:327
 msgid "For theme documentation visit"
-msgstr "Für Themendokumentation besuche"
+msgstr "Für die Theme-Dokumentation besuchen Sie"
 
 # @ virtue
 #: ../themeoptions/options.php:329
 msgid "For support please visit"
-msgstr "Für Support besuche bitte"
+msgstr "Für Support besuchen Sie bitte"
 
 # @ virtue
 #: ../themeoptions/options.php:337
 msgid "Site Layout Style"
-msgstr "Seiten Layoutstill"
+msgstr "Seiten Layout-Stil"
 
 # @ virtue
 #: ../themeoptions/options.php:338
 msgid "Select Boxed or Wide Site Layout Style"
-msgstr "Wähle Spaltenstill oder füllender Layoutstill"
+msgstr "Wählen Sie Spalten- oder vollen Layout-Stil"
 
 # @ virtue
 #: ../themeoptions/options.php:349
 msgid "Footer Widget Layout"
-msgstr "Fuß Widget Layout"
+msgstr "Fußzeile Widget Layout"
 
 # @ virtue
 #: ../themeoptions/options.php:350
 msgid "Select how many columns for footer widgets"
-msgstr "Wähle wie viele Fuß-Widget-Spalten"
+msgstr "Wählen Sie die Anzahl der Fußzeilen-Widget-Spalten"
 
 # @ virtue
 #: ../themeoptions/options.php:361
@@ -1897,7 +2049,7 @@ msgstr "Logo Layout"
 # @ virtue
 #: ../themeoptions/options.php:368
 msgid "Choose how you want your logo to be laid out"
-msgstr "Wähle wie das Logolayout sein soll"
+msgstr "Wählen Sie, wie das Logo-Layout aussehen soll"
 
 # @ virtue
 #: ../themeoptions/options.php:380
@@ -1907,17 +2059,17 @@ msgstr "Logo"
 # @ virtue
 #: ../themeoptions/options.php:382
 msgid "Upload your Logo. If left blank theme will use site name."
-msgstr "Logo hochladen. Wenn leer, verwendet das Thema den Seitennamen."
+msgstr "Logo hochladen. Wenn leer verwendet das Thema den Seitennamen."
 
 # @ virtue
 #: ../themeoptions/options.php:388
 msgid "Upload Your @2x Logo for Retina Screens"
-msgstr "Lade Logo @2x für Retina Screens hoch"
+msgstr "Laden Sie Logo @2x für Retina Screens hoch"
 
 # @ virtue
 #: ../themeoptions/options.php:390
 msgid "Should be twice the pixel size of your normal logo."
-msgstr "Sollte die doppelte Pixelanzahl ihres normalen Logo besitzen."
+msgstr "Sollte die doppelte Pixelanzahl Ihres normalen Logos besitzen."
 
 # @ virtue
 #: ../themeoptions/options.php:395
@@ -1927,7 +2079,8 @@ msgstr "Font für den Seitennamen"
 # @ virtue
 #: ../themeoptions/options.php:409
 msgid "Choose size and style your sitename, if you don't use an image logo."
-msgstr "Wähle Größe & Still für den Seitennamen. Wenn Sie kein Logo verwenden."
+msgstr ""
+"Wählen Sie Größe & Stil für den Seitennamen, wenn Sie kein Logo verwenden."
 
 # @ virtue
 #: ../themeoptions/options.php:420
@@ -1947,7 +2100,7 @@ msgstr "Seiten-Slogan Font"
 # @ virtue
 #: ../themeoptions/options.php:441
 msgid "Choose size and style your site tagline"
-msgstr "Wähle Größe & Still des Seitenslogan"
+msgstr "Wählen Sie Größe & Stil des Seitenslogans"
 
 # @ virtue
 #: ../themeoptions/options.php:452 ../themeoptions/options.php:462
@@ -1983,12 +2136,12 @@ msgstr "Hauptmenü Abstand"
 # @ virtue
 #: ../themeoptions/options.php:513
 msgid "Sitewide Banner"
-msgstr "Seitenbreiter Banner"
+msgstr "Seitenweiter Banner"
 
 # @ virtue
 #: ../themeoptions/options.php:515
 msgid "Upload a banner for bottom of header."
-msgstr "Lade Banner hoch für den unteren Kopfteil."
+msgstr "Laden Sie ein Banner für die Kopfzeile unten hoch."
 
 # @ virtue
 #: ../themeoptions/options.php:522
@@ -2003,7 +2156,7 @@ msgstr "Benutze Topbar?"
 # @ virtue
 #: ../themeoptions/options.php:528
 msgid "Choose to show or hide topbar"
-msgstr "Wähle zum anzeigen der Topbar"
+msgstr "Wählen, um Topbar anzuzeigen"
 
 # @ virtue
 #: ../themeoptions/options.php:534
@@ -2013,7 +2166,7 @@ msgstr "Benutze Topbar Symbolmenü?"
 # @ virtue
 #: ../themeoptions/options.php:535
 msgid "Choose to show or hide topbar icon Menu"
-msgstr "Wähle zum anzeigen oder verstecken des Symbolmenü in der Topbar"
+msgstr "Wählen, um das Symbolmenü in der Topbar anzuzeigen oder zu verstecken"
 
 # @ virtue
 #: ../themeoptions/options.php:541
@@ -2033,7 +2186,7 @@ msgstr "Zeige Warenkorb-Total in Topbar?"
 # @ virtue
 #: ../themeoptions/options.php:549
 msgid "This only works if using woocommerce"
-msgstr "Dies funktioniert nur wenn Sie woocommerce verwenden"
+msgstr "Dies funktioniert nur, wenn Sie woocommerce verwenden"
 
 # @ virtue
 #: ../themeoptions/options.php:555
@@ -2043,7 +2196,7 @@ msgstr "Zeige Suche in der Topbar?"
 # @ virtue
 #: ../themeoptions/options.php:556
 msgid "Choose to show or hide search in topbar"
-msgstr "Wähle zum anzeigen oder versteckender Suche  in der Tobar"
+msgstr "Wählen,  um Suche in der Topbar anzuzeigen oder zu verstecken"
 
 # @ virtue
 #: ../themeoptions/options.php:562
@@ -2056,8 +2209,8 @@ msgid ""
 "Note this will hide remove search (you can re-enable it my adding it to the "
 "widget area)"
 msgstr ""
-"Hinweis dies entfernt die Suche (sie können es reaktivieren, durch "
-"hinzufügen in den Widgetbereich)"
+"Hinweis: Dies entfernt die Suche (Sie können sie durch hinzufügen in den "
+"Widgetbereich reaktivieren)"
 
 # @ virtue
 #: ../themeoptions/options.php:569
@@ -2083,19 +2236,19 @@ msgstr "Hauptseiten-Slider Einstellungen"
 # @ virtue
 #: ../themeoptions/options.php:584
 msgid "Choose a Home Image Slider"
-msgstr "Wähle einen Haupt Bildslider"
+msgstr "Wählen Sie einen Hauptseiten-Bildslider"
 
 # @ virtue
 #: ../themeoptions/options.php:585
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
-"Wenn Sie keinen Bildslider auf Ihrer Webseiten haben wollen, dann wählen Sie "
+"Wenn Sie keinen Bildslider auf Ihrer Webseite möchten, dann wählen Sie "
 "keinen aus."
 
 # @ virtue
 #: ../themeoptions/options.php:594 ../themeoptions/options.php:697
 msgid "Slider Images"
-msgstr "Silder Bilder"
+msgstr "Slider Bilder"
 
 # @ virtue
 #: ../themeoptions/options.php:595 ../themeoptions/options.php:698
@@ -2105,13 +2258,14 @@ msgstr "Benutze große Bilder für beste Ergebnisse"
 # @ virtue
 #: ../themeoptions/options.php:601 ../themeoptions/options.php:705
 msgid "Slider Max Height"
-msgstr "Slider maximal Höhe"
+msgstr "Slider maximale Höhe"
 
 # @ virtue
 #: ../themeoptions/options.php:602 ../themeoptions/options.php:612
 #: ../themeoptions/options.php:706 ../themeoptions/options.php:717
 msgid "Note: does not work if images are smaller than max."
-msgstr "Hinweis: das funktioniert nicht bei Bildern wenn kleiner sind als max."
+msgstr ""
+"Hinweis: Das funktioniert nicht, wenn Bilder kleiner als der Maximalwert sind"
 
 # @ virtue
 #: ../themeoptions/options.php:611 ../themeoptions/options.php:716
@@ -2126,7 +2280,7 @@ msgstr "Automatisch abspielen?"
 # @ virtue
 #: ../themeoptions/options.php:622 ../themeoptions/options.php:728
 msgid "This determines if a slider automatically scrolls"
-msgstr "Dies entscheiden ob der slider automatisch scrollt"
+msgstr "Soll der Slider automatisch scrollen?"
 
 # @ virtue
 #: ../themeoptions/options.php:628 ../themeoptions/options.php:735
@@ -2136,7 +2290,7 @@ msgstr "Slider Pausezeit"
 # @ virtue
 #: ../themeoptions/options.php:629 ../themeoptions/options.php:736
 msgid "How long to pause on each slide, in milliseconds."
-msgstr "Wie vie Pause pro Slide, in Millisekunden."
+msgstr "Wie viel Pause pro Slide, in Millisekunden."
 
 # @ virtue
 #: ../themeoptions/options.php:638 ../themeoptions/options.php:746
@@ -2146,7 +2300,7 @@ msgstr "Übergangstyp"
 # @ virtue
 #: ../themeoptions/options.php:639 ../themeoptions/options.php:747
 msgid "Choose a transition type"
-msgstr "Wähle einen Übergangstyp"
+msgstr "Wählen Sie einen Übergangstyp"
 
 # @ virtue
 #: ../themeoptions/options.php:646 ../themeoptions/options.php:755
@@ -2166,18 +2320,19 @@ msgstr "Zeige Beschriftung?"
 # @ virtue
 #: ../themeoptions/options.php:657 ../themeoptions/options.php:767
 msgid "Choose to show or hide captions"
-msgstr "Wähle zum anzeigen oder verstecken"
+msgstr "Wähle zum Anzeigen oder Verstecken"
 
 # @ virtue
 #: ../themeoptions/options.php:663 ../themeoptions/options.php:774
 msgid "Video Embed Code"
-msgstr "Video Einbettcode"
+msgstr "Video Einbettungscode"
 
 # @ virtue
 #: ../themeoptions/options.php:664 ../themeoptions/options.php:775
 msgid "If your using a video on the home page place video embed code here."
 msgstr ""
-"Wenn Sie ein Video für Ihre Hauptseite verwenden, bette den Code hier ein."
+"Wenn Sie ein Video für Ihre Hauptseite verwenden, betten Sie den Code hier "
+"ein."
 
 # @ virtue
 #: ../themeoptions/options.php:673
@@ -2188,12 +2343,12 @@ msgstr "Handy Slider"
 #: ../themeoptions/options.php:674
 msgid "Create a more lightweight home slider for your mobile visitors."
 msgstr ""
-"Erstelle einen mehr leichtgewichtigern Slider für die mobilen Besucher."
+"Erstellen Sie einen leichtgewichtigeren Slider für Ihre mobilen Besucher."
 
 # @ virtue
 #: ../themeoptions/options.php:679
 msgid "Would you like to use this feature?"
-msgstr "Wollen sie diese Funktion benutzen?"
+msgstr "Wollen Sie diese Funktion verwenden?"
 
 # @ virtue
 #: ../themeoptions/options.php:680
@@ -2207,12 +2362,12 @@ msgstr ""
 # @ virtue
 #: ../themeoptions/options.php:686
 msgid "Choose a Slider for Mobile"
-msgstr "Wähle einen Slider für Handies"
+msgstr "Wählen Sie einen Slider für Handys"
 
 # @ virtue
 #: ../themeoptions/options.php:687
 msgid "Choose which slider you would like to show for mobile viewers."
-msgstr "Wähle Slider welche Siie für Handybesucher anzeigen möchten."
+msgstr "Wählen Sie den Slider, den Sie für Handybesucher anzeigen möchten."
 
 # @ virtue
 #: ../themeoptions/options.php:784
@@ -2227,7 +2382,7 @@ msgstr "Zeige eine Sidebar auf der Hauptseite?"
 # @ virtue
 #: ../themeoptions/options.php:792
 msgid "This determines if there is a sidebar on the home page."
-msgstr "Das entscheided ob eine Sidebar auf der Hauptseite ist."
+msgstr "Das entscheidet, ob eine Sidebar auf der Hauptseite ist."
 
 # @ virtue
 #: ../themeoptions/options.php:802
@@ -2237,12 +2392,12 @@ msgstr "Wähle eine Sidbar für die Hauptseite"
 # @ virtue
 #: ../themeoptions/options.php:818
 msgid "Latest Blog Posts"
-msgstr "Aktuelle Blogeintäge"
+msgstr "Aktuelle Blogeinträge"
 
 # @ virtue
 #: ../themeoptions/options.php:819
 msgid "Portfolio Carousel"
-msgstr "Portofolio-Karousell"
+msgstr "Portofolio-Karussell"
 
 # @ virtue
 #: ../themeoptions/options.php:820 ../themeoptions/options.php:913
@@ -2272,62 +2427,63 @@ msgstr "Hauptseite - Blogtitel"
 # @ virtue
 #: ../themeoptions/options.php:839
 msgid "ex: Latest from the blog"
-msgstr "zB: aktuell aus dem Blog"
+msgstr "zB: Aktuell aus dem Blog"
 
 # @ virtue
 #: ../themeoptions/options.php:844
 msgid "Choose How many posts on Homepage"
-msgstr "Wähle Anzahl der Beiträge für Hauptseite"
+msgstr "Wählen Sie die Anzahl der Beiträge für Hauptseite"
 
 # @ virtue
 #: ../themeoptions/options.php:855
 msgid "Limit posts to a Category"
-msgstr "Limitiere Beträge auf eine Kategorie"
+msgstr "Limitiere Beiträge auf eine Kategorie"
 
 # @ virtue
 #: ../themeoptions/options.php:856
 msgid "Leave blank to select all"
-msgstr "Leer lassen um alle zu zeigen"
+msgstr "Leer lassen, um alle zu zeigen"
 
 # @ virtue
 #: ../themeoptions/options.php:863
 msgid "Home Portfolio Carousel Settings"
-msgstr "Hauptseite - Portfoliokarousell Einstellungen"
+msgstr "Hauptseite - Portfoliokarussell Einstellungen"
 
 # @ virtue
 #: ../themeoptions/options.php:868
 msgid "Home Portfolio Carousel title"
-msgstr "Hauptseite - Portfoliokarousell Titel"
+msgstr "Hauptseite - Portfoliokarussell Titel"
 
 # @ virtue
 #: ../themeoptions/options.php:869
 msgid "ex: Portfolio Carousel title"
-msgstr "zB: Portfoliokarousell Titel"
+msgstr "zB: Portfoliokarussell Titel"
 
 # @ virtue
 #: ../themeoptions/options.php:876
 msgid "Portfolio Carousel Category Type"
-msgstr "Portfoliokarousell Kategorietyp"
+msgstr "Portfoliokarussell Kategorietyp"
 
 # @ virtue
 #: ../themeoptions/options.php:877
 msgid "Leave blank to select all types"
-msgstr "Leer lassen um all Typen zu verwenden"
+msgstr "Leer lassen, um all Typen zu verwenden"
 
 # @ virtue
 #: ../themeoptions/options.php:884
 msgid "Choose how many portfolio items are in carousel"
-msgstr "Wähle wie viele Portofolioelmente im Karousell sein sollen"
+msgstr "Wählen Sie, wie viele Portofolio-Elmente im Karussell sein sollen"
 
 # @ virtue
 #: ../themeoptions/options.php:893
 msgid "Portfolio Carousel Order by"
-msgstr "Portfoliokarousell Sortierung nach"
+msgstr "Portfoliokarussell Sortierung nach"
 
 # @ virtue
 #: ../themeoptions/options.php:894
 msgid "Choose how the portfolio items should be ordered in the carousel."
-msgstr "Wähle wie die Portfolioelemente angeordnet sein sollen im Karousell."
+msgstr ""
+"Wählen Sie, wie die Portfolio-Elemente im Karussell angeordnet sein sollen."
 
 # @ virtue
 #: ../themeoptions/options.php:902
@@ -2342,12 +2498,12 @@ msgstr "Hauptseite - Symbolmenü"
 # @ virtue
 #: ../themeoptions/options.php:914
 msgid "Choose your icons for the icon menu."
-msgstr "Wähle die Symbole für das Symbomenü."
+msgstr "Wählen Sie die Symbole für das Symbolmenü."
 
 # @ virtue
 #: ../themeoptions/options.php:920
 msgid "Choose how many columns in each row"
-msgstr "Wähle wie viele Spalten pro Reihe"
+msgstr "Wählen Sie, wie viele Spalten pro Reihe"
 
 # @ virtue
 #: ../themeoptions/options.php:929
@@ -2364,8 +2520,8 @@ msgstr "Aktuellste Beitragsanzeige"
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
-"Wenn aktuelle Beiträge auf Hauptseite. Wählen Sie anzeige des vollen Beitrag "
-"oder Beitragsauszug."
+"Wenn aktuelle Beiträge auf Hauptseite. Wählen Sie Anzeige des vollen "
+"Beitrags oder Beitragsauszug."
 
 # @ virtue
 #: ../themeoptions/options.php:947
@@ -2380,13 +2536,13 @@ msgstr "Shop Archivseiten Einstellung"
 # @ virtue
 #: ../themeoptions/options.php:954
 msgid "Display the sidebar on shop archives?"
-msgstr "Zeige die Siebar auf Shoparchiven?"
+msgstr "Zeige die Sidebar in Shoparchiven?"
 
 # @ virtue
 #: ../themeoptions/options.php:955
 msgid "This determines if there is a sidebar on the shop and category pages."
 msgstr ""
-"Dies entscheidet ob eine Sidebar auf den Shop- und Kategorieseiten ist."
+"Dies entscheidet, ob eine Sidebar auf den Shop- und Kategorieseiten ist."
 
 # @ virtue
 #: ../themeoptions/options.php:965
@@ -2407,7 +2563,8 @@ msgstr "Zeige Bewertungen in Shop- und Kategorieseiten"
 #: ../themeoptions/options.php:984
 msgid "This determines if the rating is displayed in the product archive pages"
 msgstr ""
-"Dies entscheidet ob eine Bewertung angezeigt wird in den Produktarchivseiten"
+"Dies entscheidet, ob in den Produktarchiv-Seiten eine Bewertung angezeigt "
+"wird"
 
 # @ virtue
 #: ../themeoptions/options.php:990
@@ -2423,7 +2580,7 @@ msgstr "Shop & Archiv Produkttitel Schrift"
 #: ../themeoptions/options.php:1009
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
-"Wähle Größe und Still für die Produkttitel auf Kategory- und Archivseiten."
+"Wähle Größe und Stil für die Produkttitel auf Kategorie- und Archivseiten."
 
 # @ virtue
 #: ../themeoptions/options.php:1020
@@ -2433,7 +2590,7 @@ msgstr "Den Produkttitel groß schreiben?"
 # @ virtue
 #: ../themeoptions/options.php:1021
 msgid "This makes your product titles uppercase on Category pages"
-msgstr "Dies macht den Produkttiel großgeschrieben auf Kategorieseiten"
+msgstr "Den Produkttitel in Großschrift auf Kategorieseiten anzeigen"
 
 # @ virtue
 #: ../themeoptions/options.php:1027
@@ -2445,7 +2602,7 @@ msgstr "Produkttitel Mindesthöhe"
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
-"Wenn Ihre Titel lange sind, erhöhen Sie diese um die Ausrichtung Ihrer "
+"Wenn Ihre Titel lang sind, erhöhen Sie dies, um die Ausrichtung Ihrer "
 "Produkthöhe zu verbessern."
 
 # @ virtue
@@ -2489,12 +2646,12 @@ msgstr "Produktseiten Einstellung"
 # @ virtue
 #: ../themeoptions/options.php:1061
 msgid "Display product tabs?"
-msgstr "Zeige Produkttablulatoren?"
+msgstr "Zeige Produkttabulatoren?"
 
 # @ virtue
 #: ../themeoptions/options.php:1062
 msgid "This determines if product tabs are displayed"
-msgstr "Die entscheidet ob Produkttabulatoren angezeigt werden"
+msgstr "Dies entscheidet, ob Produkttabulatoren angezeigt werden"
 
 # @ virtue
 #: ../themeoptions/options.php:1068
@@ -2504,7 +2661,7 @@ msgstr "Zeige ähnliche Produkte?"
 # @ virtue
 #: ../themeoptions/options.php:1069
 msgid "This determines related products are displayed"
-msgstr "Dies entscheidet ob ähnliche Produkte angezeigt werden"
+msgstr "Dies entscheidet, ob ähnliche Produkte angezeigt werden"
 
 # @ virtue
 #: ../themeoptions/options.php:1077
@@ -2519,7 +2676,7 @@ msgstr "Basis Styling"
 # @ virtue
 #: ../themeoptions/options.php:1083
 msgid "Theme Skin Stylesheet"
-msgstr "Themen Skin Stylesheet"
+msgstr "Theme Skin Stylesheet"
 
 # @ virtue
 #: ../themeoptions/options.php:1084
@@ -2527,7 +2684,7 @@ msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
-"Hinweis*  Gemachte Änderungen im Einstellungspanel ignorieren diesen "
+"Hinweis*  Gemachte Änderungen im Einstellungspanel ignorieren dieses "
 "Stylesheet. Beispiel: gewählte Farben in Typographie."
 
 # @ virtue
@@ -2538,7 +2695,7 @@ msgstr "Hauptfarbe"
 # @ virtue
 #: ../themeoptions/options.php:1094
 msgid "Choose the default Highlight color for your site."
-msgstr "Wählen Sie die standard Highlight Farbe für Ihre Seite."
+msgstr "Wählen Sie die Standard-Highlightfarbe für Ihre Seite."
 
 # @ virtue
 #: ../themeoptions/options.php:1102
@@ -2548,7 +2705,7 @@ msgstr "20% heller als Hauptfarbe"
 # @ virtue
 #: ../themeoptions/options.php:1103
 msgid "This is used for hover effects"
-msgstr "Wird bentutzt für Mausdrüber-Effekte"
+msgstr "Wird für mouseover-Effekte verwendet"
 
 # @ virtue
 #: ../themeoptions/options.php:1111
@@ -2584,7 +2741,7 @@ msgstr "Hintergrund Farbe"
 #: ../themeoptions/options.php:1301 ../themeoptions/options.php:1340
 #: ../themeoptions/options.php:1379
 msgid "Upload background image or texture"
-msgstr "Hintergrundbild hochladen Bild oder Textur"
+msgstr "Hintergrundbild oder -textur hochladen"
 
 # @ virtue
 #: ../themeoptions/options.php:1150 ../themeoptions/options.php:1189
@@ -2618,7 +2775,7 @@ msgstr "Topbar Hintergrund"
 # @ virtue
 #: ../themeoptions/options.php:1210
 msgid "Header Background"
-msgstr "Kopf Hintergrund"
+msgstr "Kopfzeile Hintergrund"
 
 # @ virtue
 #: ../themeoptions/options.php:1249
@@ -2633,7 +2790,7 @@ msgstr "Handymenü Hintergrund"
 # @ virtue
 #: ../themeoptions/options.php:1327
 msgid "Footer Background"
-msgstr "Fußzeilen Hintergrund"
+msgstr "Fußzeile Hintergrund"
 
 # @ virtue
 #: ../themeoptions/options.php:1366
@@ -2643,7 +2800,7 @@ msgstr "Seiten Hintergrund"
 # @ virtue
 #: ../themeoptions/options.php:1405
 msgid "Fixed or Scroll"
-msgstr "Fixiert oder Scrollend"
+msgstr "Fixiert oder scrollend"
 
 # @ virtue
 #: ../themeoptions/options.php:1414
@@ -2663,7 +2820,7 @@ msgstr "H1 Überschrift"
 # @ virtue
 #: ../themeoptions/options.php:1434
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
-msgstr "Wähle Größe und Still für h1 (Dieser Still ist Ihr Seitentitel)"
+msgstr "Wähle Größe und Stil für h1 (Dieser Stil ist Ihr Seitentitel)"
 
 # @ virtue
 #: ../themeoptions/options.php:1445
@@ -2673,7 +2830,7 @@ msgstr "H2 Überschrift"
 # @ virtue
 #: ../themeoptions/options.php:1459
 msgid "Choose Size and Style for h2"
-msgstr "Wähle Größe und Still für h2"
+msgstr "Wähle Größe und Stil für h2"
 
 # @ virtue
 #: ../themeoptions/options.php:1470
@@ -2683,7 +2840,7 @@ msgstr "H3 Überschrift"
 # @ virtue
 #: ../themeoptions/options.php:1484
 msgid "Choose Size and Style for h3"
-msgstr "Wähle Größe und Still für h3"
+msgstr "Wähle Größe und Stil für h3"
 
 # @ virtue
 #: ../themeoptions/options.php:1495
@@ -2693,7 +2850,7 @@ msgstr "H4 Überschrift"
 # @ virtue
 #: ../themeoptions/options.php:1509
 msgid "Choose Size and Style for h4"
-msgstr "Wähle Größe und Still für h4"
+msgstr "Wähle Größe und Stil für h4"
 
 # @ virtue
 #: ../themeoptions/options.php:1520
@@ -2703,7 +2860,7 @@ msgstr "H5 Überschrift"
 # @ virtue
 #: ../themeoptions/options.php:1534
 msgid "Choose Size and Style for h5"
-msgstr "Wähle Größe und Still für h5"
+msgstr "Wähle Größe und Stil für h5"
 
 # @ virtue
 #: ../themeoptions/options.php:1545
@@ -2718,7 +2875,7 @@ msgstr "Generelle Schrift"
 # @ virtue
 #: ../themeoptions/options.php:1564
 msgid "Choose Size and Style for paragraphs"
-msgstr "Wähle Größe und Still für Paragraphen"
+msgstr "Wähle Größe und Stil für Paragraphen"
 
 # @ virtue
 #: ../themeoptions/options.php:1577
@@ -2738,7 +2895,7 @@ msgstr "Hauptmenü Schrift"
 # @ virtue
 #: ../themeoptions/options.php:1597
 msgid "Choose Size and Style for primary menu"
-msgstr "Wähle Größe & Still für Hauptmenü"
+msgstr "Wähle Größe & Stil für Hauptmenü"
 
 # @ virtue
 #: ../themeoptions/options.php:1608
@@ -2753,7 +2910,7 @@ msgstr "Sekundärmenü Schrift"
 # @ virtue
 #: ../themeoptions/options.php:1627
 msgid "Choose Size and Style for secondary menu"
-msgstr "Wähle Größe und Still für Sekundärmenü"
+msgstr "Wähle Größe und Stil für Sekundärmenü"
 
 # @ virtue
 #: ../themeoptions/options.php:1638
@@ -2763,12 +2920,12 @@ msgstr "Handymenü Einstellungen"
 # @ virtue
 #: ../themeoptions/options.php:1643
 msgid "Mobile Menu Font"
-msgstr "Händymenü Schrift"
+msgstr "Handymenü Schrift"
 
 # @ virtue
 #: ../themeoptions/options.php:1657
 msgid "Choose Size and Style for Mobile Menu"
-msgstr "Wähle Größe und Still für Handymenü"
+msgstr "Wähle Größe und Stil für Handymenü"
 
 # @ virtue
 #: ../themeoptions/options.php:1671 ../themeoptions/options.php:1672
@@ -2787,27 +2944,27 @@ msgid ""
 "set the page template to portfolio."
 msgstr ""
 "Dies setzt einen Link in jeder einzelnen Portfolioseite. *Hinweis: Sie "
-"müssten trotzdem das Seiten-Template auf Portfolio stellen."
+"müssen trotzdem das Seiten-Template auf Portfolio stellen."
 
 # @ virtue
 #: ../themeoptions/options.php:1685
 msgid "Allow Comments on Portfolio Posts"
-msgstr "Erlaube Kommentare auf Portfoliobeträgen"
+msgstr "Erlaube Kommentare in Portfolio-Beiträgen"
 
 # @ virtue
 #: ../themeoptions/options.php:1686
 msgid "Turn on to allow Comments on Portfolio posts"
-msgstr "Aktiviere um Kommmentare auf Portfoliobeiträgen zu erlauben"
+msgstr "Aktivieren, um Kommentare in Portfolio-Beiträgen zu erlauben"
 
 # @ virtue
 #: ../themeoptions/options.php:1692
 msgid "Hide Image Border"
-msgstr "Verstecke Bild-Rahmen"
+msgstr "Verstecke Bildrahmen"
 
 # @ virtue
 #: ../themeoptions/options.php:1693
 msgid "Choose to show or hide image border"
-msgstr "Wähle zum zeigen oder verstecken des Bild-Rahmen"
+msgstr "Wählen, um den Bildrahmen anzuzeigen oder zu verstecken"
 
 # @ virtue
 #: ../themeoptions/options.php:1699
@@ -2817,29 +2974,30 @@ msgstr "Blog Archiv"
 # @ virtue
 #: ../themeoptions/options.php:1700
 msgid "Choose to show full post or post excerpt."
-msgstr "Wähle zum anzeigen des ganzen Betrags oder nur Beitragsauszug."
+msgstr "Wählen, um den ganzen Betrag oder nur Beitragsauszug anzuzeigen."
 
 # @ virtue
 #: ../themeoptions/options.php:1708
 msgid "Show Comments Closed Text?"
-msgstr "Zeige Text kommentieren 'geschlossen'?"
+msgstr "Zeige Text 'Kommentare geschlossen'?"
 
 # @ virtue
 #: ../themeoptions/options.php:1709
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
-"Wähle zum zeigen oder verstecken des Kommentieren geschlossen Hinweis unter "
-"Beiträgen."
+"Wählen, um 'Kommentare geschlossen'-Hinweis unter Beiträgen anzuzeigen oder "
+"zu verstecken."
 
 # @ virtue
 #: ../themeoptions/options.php:1715
 msgid "Show Author Icon with posts?"
-msgstr "Zeige Author Symbol mit Beiträgen?"
+msgstr "Zeige Autor-Symbol mit Beiträgen?"
 
 # @ virtue
 #: ../themeoptions/options.php:1716
 msgid "Choose to show or hide author icon under post title."
-msgstr "Wähle zum zeigen oder verstecken des Authorsymbol unter Beitragstitel."
+msgstr ""
+"Wählen, um Autor-Symbol unter Beitragstitel anzuzeigen oder zu verstecken."
 
 #: ../themeoptions/options.php:1722
 msgid "Show Previous and Next posts links?"
@@ -2851,12 +3009,13 @@ msgstr ""
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
-msgstr "Wähle zum zeigen oder verstecken des Authorsymbol unter Beitragstitel."
+msgstr ""
+"Wählen, um Autor-Symbol unter Beitragstitel anzuzeigen oder zu verstecken."
 
 # @ virtue
 #: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
-msgstr "Benutzer definiertes Favicon"
+msgstr "Benutzerdefiniertes Favicon"
 
 # @ virtue
 #: ../themeoptions/options.php:1731
@@ -2864,23 +3023,23 @@ msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
-"Lade ein 16px * 16px png/gif/ico Bild hoch das als Symbol für Ihre Webseite "
-"verwendet wird."
+"Laden Sie ein 16px * 16px png/gif/ico Bild hoch, das als Symbol für Ihre "
+"Webseite verwendet wird."
 
 # @ virtue
 #: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
-msgstr "Kontakformular E-Mail"
+msgstr "Kontakformular Email"
 
 # @ virtue
 #: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
-msgstr "Stellt die E-Mailadresse für das Kontaktseiten E-mail Formular ein."
+msgstr "Stellt die Email-Adresse für das Email-Formular der Kontaktseiten ein."
 
 # @ virtue
 #: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
-msgstr "Fußzeilen Urhebertext"
+msgstr "Fußzeile Urhebertext"
 
 # @ virtue
 #: ../themeoptions/options.php:1744
@@ -2889,198 +3048,143 @@ msgid ""
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 "Schreiben Sie Ihren Urhebertext hier. Sie können folgende Kürzel in der "
-"Fußzeile verweden: [copyright] [site-name] [the-year]"
+"Fußzeile verwenden: [copyright] [site-name] [the-year]"
 
 # @ virtue
 #: ../themeoptions/options.php:1750
 msgid "Blog Post Defaults"
-msgstr "Blog Beitrag Standards"
+msgstr "Blogbeitrag Standards"
 
 # @ virtue
 #: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
-msgstr "Bloge Beitragübersicht Standardansicht"
+msgstr "Blog Beitragsübersicht Standardansicht"
 
 # @ virtue
 #: ../themeoptions/options.php:1763
+#, fuzzy
+msgid "Blog Post Head Content Default"
+msgstr "Blogbeitrag Standards"
+
+# @ virtue
+#: ../themeoptions/options.php:1771
 msgid "Create Sidebars"
 msgstr "Erstelle Sidebars"
 
 # @ virtue
-#: ../themeoptions/options.php:1768
+#: ../themeoptions/options.php:1776
 msgid "Create Custom Sidebars"
 msgstr "Erstelle benutzerdefinierte Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1769
+#: ../themeoptions/options.php:1777
 msgid "Type new sidebar name into textbox"
 msgstr "Schreibe den neuen Sidebarnamen in die Textbox"
 
 # @ virtue
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1778
 msgid "Extra Sidebar"
 msgstr "Extra Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1783
 msgid "Wordpress Galleries"
-msgstr "Wordpress Gallerien"
+msgstr "Wordpress Galerien"
 
 # @ virtue
-#: ../themeoptions/options.php:1780
+#: ../themeoptions/options.php:1788
 msgid "Enable Virtue Galleries to override Wordpress"
-msgstr "Ermöglicht das Virtue die Wordpressgallerien ersetzt"
+msgstr "Ermöglicht, dass Virtue die Wordpressgalerien ersetzt"
 
 # @ virtue
-#: ../themeoptions/options.php:1781
+#: ../themeoptions/options.php:1789
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 "Deaktivieren Sie diese, wenn Sie ein Plugin verwenden, um die Galerien "
-"anpassen, z. B. Jetpack gekachelt Galerie."
+"anpassen, z. B. Jetpack gekachelte Galerie."
 
 # @ virtue
-#: ../themeoptions/options.php:1789
+#: ../themeoptions/options.php:1797
 msgid "Advanced Settings"
 msgstr "Erweiterte Optionen"
 
 # @ virtue
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1798
 msgid "Custom CSS Box"
 msgstr "Benutzerdefinierte CSS Box"
 
 # @ virtue
-#: ../themeoptions/options.php:1795
+#: ../themeoptions/options.php:1803
 msgid "Custom CSS"
-msgstr "Benutzerdefinierter CSS"
-
-# @ virtue
-#: ../themeoptions/options.php:1796
-msgid "Quickly add some CSS to your theme by adding it to this block."
-msgstr ""
-"Addiert am schnellsten CSS zu ihren Thema durch Eintragung in diese Box."
+msgstr "Benutzerdefiniertes CSS"
 
 # @ virtue
 #: ../themeoptions/options.php:1804
-msgid "Theme Update Import"
-msgstr "Thema Update Import"
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr "Fügt durch Eintragen in dieser Box schnell CSS zu Ihren Theme hinzu."
 
 # @ virtue
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1812
+msgid "Theme Update Import"
+msgstr "Theme Update Import"
+
+# @ virtue
+#: ../themeoptions/options.php:1813
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
-"Wenn Sie von Version 1.5.6 oder früher aktuallisieren dann benutzen Sie "
-"dieses Skript zum aktullisieren Ihrer Themeneinstellungen."
+"Wenn Sie von Version 1.5.6 oder früheren aktualisieren, verwenden Sie dieses "
+"Skript zum Updaten Ihrer Theme-Einstellungen."
 
 # @ virtue
-#: ../themeoptions/options.php:1810
+#: ../themeoptions/options.php:1818
 msgid "Turn on and save to start script"
-msgstr "Einschalten und speichere um das Skript zu starten"
+msgstr "Einschalten und speichern, um das Skript zu starten"
 
 # @ virtue
-#: ../themeoptions/options.php:1817
+#: ../themeoptions/options.php:1825
 msgid "If using a child theme enter child theme folder"
-msgstr "Wenn Child-Thema verwendet, den Child-Thema Pfad angeben"
+msgstr "Wenn Child-Theme verwendet wird, den Child-Theme Pfad angeben"
 
 # @ virtue
-#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
+#: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
 msgid "Theme Options"
-msgstr "Thema Einstellungen"
+msgstr "Theme Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1848
+#: ../themeoptions/options.php:1857
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
-"Dank für das verweden des Virtue Thema von <a href=\"http://kadencethemes."
-"com/\" target=\"_blank\">Kadence Themes</a>."
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
-msgid "Upload Icon"
-msgstr "Symbol hochladen"
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
-msgid "Select an Icon"
-msgstr "Wähle ein Symbol"
+"Danke, dass Sie das Virtue Theme von <a href=\"http://kadencethemes.com/\" "
+"target=\"_blank\">Kadence Themes</a> verwenden."
 
 # @ redux-framework
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
-#: ../themeoptions/inc/fields/slides/field_slides.php:137
-#: ../themeoptions/inc/fields/slides/field_slides.php:201
-msgid "URL"
-msgstr "URL"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:441
+#, fuzzy
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
 
-# @ virtue
 # @ redux-framework
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
-#: ../themeoptions/inc/fields/slides/field_slides.php:135
-#: ../themeoptions/inc/fields/slides/field_slides.php:199
-msgid "Description"
-msgstr "Beschreibung"
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
-msgid "Icon Link"
-msgstr "Symbol Link"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
-msgid "Open Link in New Tab/Window"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:442
+#, fuzzy
+msgid "Are you sure?  Resetting will lose all custom values."
 msgstr ""
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
-msgid "Delete Icon"
-msgstr "Lösche Symbol"
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
-msgid "Add Icon"
-msgstr "Symbol hinzufügen"
-
-# @ virtue
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
-msgid "Slide Link"
-msgstr "Slide Link"
+"Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte entfernen."
 
 # @ redux-framework
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
-msgid "Select an Option"
-msgstr "Wähle eine Einstellung"
-
-# @ redux-framework
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
-#: ../themeoptions/inc/fields/slides/field_slides.php:168
-#: ../themeoptions/inc/fields/slides/field_slides.php:231
-msgid "Delete Slide"
-msgstr "Entferne Slide"
-
-# @ redux-framework
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
-#: ../themeoptions/inc/fields/slides/field_slides.php:234
-msgid "Add Slide"
-msgstr "Slide hinzufügen"
+#: ../themeoptions/extensions/customizer/extension_customizer.php:443
+#, fuzzy
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+"Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. Wollen "
+"Sie fortsetzen?"
 
 # @ woocommerce
 #: ../woocommerce/single-product-reviews.php:21
@@ -3108,12 +3212,12 @@ msgstr "Eine Bewertung erstellen"
 # @ woocommerce
 #: ../woocommerce/single-product-reviews.php:57
 msgid "Be the first to review"
-msgstr "Mach die erste Bewertung"
+msgstr "Als Erster bewerten"
 
 # @ woocommerce
 #: ../woocommerce/single-product-reviews.php:64
 msgid "Email"
-msgstr "E-Mail"
+msgstr "Email"
 
 # @ woocommerce
 #: ../woocommerce/single-product-reviews.php:67
@@ -3165,7 +3269,7 @@ msgstr "Ihre Bewertung"
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
-"Nur angemeldete Kunden, die dieses Produkt gekauft haben dürfen bewerten."
+"Nur angemeldete Kunden, die dieses Produkt gekauft haben, dürfen bewerten."
 
 # @ virtue
 #: ../woocommerce/single-product.php:24 ../woocommerce/single-product.php:28
@@ -3185,7 +3289,7 @@ msgstr "Warenkorb Endsumme"
 # @ woocommerce
 #: ../woocommerce/cart/cart-totals.php:21
 msgid "Cart Subtotal"
-msgstr "Warenkorb zwischensumme"
+msgstr "Warenkorb Zwischensumme"
 
 # @ woocommerce
 #: ../woocommerce/cart/cart-totals.php:75
@@ -3267,7 +3371,7 @@ msgstr "Zur Kasse"
 # @ woocommerce
 #: ../woocommerce/cart/cross-sells.php:38
 msgid "You may be interested in&hellip;"
-msgstr "Vielleicht ist für Sie interessant&hellip;"
+msgstr "Vielleicht ebenfalls für Sie interessant&hellip;"
 
 # @ woocommerce
 #: ../woocommerce/cart/shipping-calculator.php:22
@@ -3289,7 +3393,7 @@ msgstr "Bundesland"
 # @ woocommerce
 #: ../woocommerce/cart/shipping-calculator.php:52
 msgid "Select a state&hellip;"
-msgstr "Wählen Sie einen Bundesstaat&hellip;"
+msgstr "Wählen Sie ein Bundeslandt&hellip;"
 
 # @ woocommerce
 #: ../woocommerce/cart/shipping-calculator.php:72
@@ -3312,20 +3416,20 @@ msgid ""
 "Unfortunately your order cannot be processed as the originating bank/"
 "merchant has declined your transaction."
 msgstr ""
-"Leider kann Ihre Bestellung bearbeitet werden, wie der Herausgebende Bank/"
-"Händler Ihre Transaktion abgelehnt hat."
+"Leider kann Ihre Bestellung nicht bearbeitet werden, weil Ihre herausgebende "
+"Bank/Händler Ihre Transaktion abgelehnt hat."
 
 # @ woocommerce
 #: ../woocommerce/checkout/thankyou.php:22
 msgid "Please attempt your purchase again or go to your account page."
 msgstr ""
-"Bitte versuchen Sie Ihren Kauf noch einmal oder gehen Sie auf Ihrer Konto "
-"Seite."
+"Bitte versuchen Sie Ihren Kauf nochmals zu tätigen oder gehen Sie auf Ihre "
+"Konto- Seite."
 
 # @ woocommerce
 #: ../woocommerce/checkout/thankyou.php:24
 msgid "Please attempt your purchase again."
-msgstr "Bitte versuchen Sie erneut Ihren Einkauf."
+msgstr "Bitte versuchen Sie erneut, Ihren Einkauf zu tätigen."
 
 # @ woocommerce
 #: ../woocommerce/checkout/thankyou.php:28
@@ -3366,7 +3470,7 @@ msgstr "Zahlungsmethode:"
 # @ woocommerce
 #: ../woocommerce/loop/no-products-found.php:14
 msgid "No products found which match your selection."
-msgstr "Kein Produkt gefunden das zu Ihrer Auswahl paßt-"
+msgstr "Kein Produkt gefunden, das zu Ihrer Auswahl passt."
 
 # @ woocommerce
 #: ../woocommerce/loop/orderby.php:21
@@ -3422,9 +3526,9 @@ msgid ""
 "return. This was given to you on your receipt and in the confirmation email "
 "you should have received."
 msgstr ""
-"Zum Verfolgen Ihrer Bestellung bitte geben Sie Ihre Bestell-ID in das Feld "
-"unten ein und drücken Sie Enter. Dies wurde Ihnen auf Ihrer Quittung gegeben "
-"und in der Bestätigungs-Email sollten Sie erhalten haben."
+"Um Ihre Bestellung zu verfolgen, geben Sie bitte Ihre Bestell-ID in das Feld "
+"unten ein und drücken Sie Enter. Die ID finden Sie auf Ihrer Quittung und in "
+"der Bestätigungsemail, die Sie erhalten haben."
 
 # @ woocommerce
 #: ../woocommerce/order/form-tracking.php:19
@@ -3434,17 +3538,17 @@ msgstr "Bestell-ID"
 # @ woocommerce
 #: ../woocommerce/order/form-tracking.php:19
 msgid "Found in your order confirmation email."
-msgstr "Gefunden in Ihrern Bestell-Bestätigungs-EMail."
+msgstr "Gefunden in Ihrer Bestell-Bestätigungsemail."
 
 # @ woocommerce
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Billing Email"
-msgstr "Abrechnung E-Mail"
+msgstr "Abrechnung Email"
 
 # @ woocommerce
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Email you used during checkout."
-msgstr "E-Mail, die Sie während des Kaufes verwendet haben."
+msgstr "Email, die Sie während des Kaufes verwendet haben."
 
 # @ woocommerce
 #: ../woocommerce/order/form-tracking.php:23
@@ -3465,7 +3569,7 @@ msgstr "Dateien herunterladen%s"
 # @ woocommerce
 #: ../woocommerce/order/order-details.php:98
 msgid "Order Again"
-msgstr "Nochmals Bestellen"
+msgstr "Nochmals bestellen"
 
 # @ woocommerce
 #: ../woocommerce/order/order-details.php:105
@@ -3497,7 +3601,7 @@ msgstr "Produkte markiert &ldquo;"
 #: ../woocommerce/shop/breadcrumb.php:91
 #: ../woocommerce/shop/breadcrumb.php:188
 msgid "Search results for &ldquo;"
-msgstr "Suchergebniss für &ldquo;"
+msgstr "Suchergebnis für &ldquo;"
 
 # @ woocommerce
 #: ../woocommerce/shop/breadcrumb.php:146
@@ -3512,7 +3616,7 @@ msgstr "Beiträge markiert &ldquo;"
 # @ woocommerce
 #: ../woocommerce/shop/breadcrumb.php:197
 msgid "Author:"
-msgstr "Author:"
+msgstr "Autor:"
 
 # @ woocommerce
 #: ../woocommerce/shop/breadcrumb.php:202
@@ -3522,7 +3626,7 @@ msgstr "Seite"
 # @ woocommerce
 #: ../woocommerce/shop/form-login.php:20
 msgid "Username or email"
-msgstr "Benutzername oder E-Mail"
+msgstr "Benutzername oder Email"
 
 # @ woocommerce
 #: ../woocommerce/shop/form-login.php:31
@@ -3583,7 +3687,7 @@ msgstr "Lösche Auswahl"
 # @ woocommerce
 #: ../woocommerce/single-product/add-to-cart/variable.php:161
 msgid "This product is currently out of stock and unavailable."
-msgstr "Dieses Produkt ist momentan nicht auf Lager und unverfügbar."
+msgstr "Dieses Produkt ist momentan nicht auf Lager und nicht verfügbar."
 
 # @ woocommerce
 #: ../woocommerce/single-product/tabs/additional-information.php:14
@@ -3594,3 +3698,522 @@ msgstr "Zusätzliche Information"
 #: ../woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
 msgstr "Produktbeschreibung"
+
+# @ virtue
+#~ msgid "This theme requires the following plugin: %1$s."
+#~ msgid_plural "This theme requires the following plugins: %1$s."
+#~ msgstr[0] "Dieses Theme benötigt folgendes Plugin: %1$s."
+#~ msgstr[1] "Dieses Theme benötigt folgende Plugins: %1$s."
+
+# @ virtue
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "Dieses Theme empfiehlt folgendes Plugin: %1$s."
+#~ msgstr[1] "Dieses Theme empfiehlt folgende Plugins: %1$s."
+
+# @ virtue
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to install the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin installed."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to install the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins installed."
+#~ msgstr[0] ""
+#~ "Entschuldigung, aber Sie haben nicht die richtige Berechtigung zum "
+#~ "Installieren des %s Plugins. Kontaktieren Sie den Administrator dieser "
+#~ "Seite, um Hilfe für die Plugin-Installation zu bekommen."
+#~ msgstr[1] ""
+#~ "Entschuldigung, aber Sie haben nicht die richtige Berechtigung zum "
+#~ "Installieren der Plugins: %s. Kontaktieren Sie den Administrator dieser "
+#~ "Seite, um Hilfe für die Installation der Plugins zu bekommen."
+
+# @ virtue
+#~ msgid "The following required plugin is currently inactive: %1$s."
+#~ msgid_plural "The following required plugins are currently inactive: %1$s."
+#~ msgstr[0] "Das folgende Plugin wird benötigt und ist inaktiv: %1$s."
+#~ msgstr[1] "Die folgenden Plugins werden benötigt und sind inaktiv: %1$s."
+
+# @ virtue
+#~ msgid "The following recommended plugin is currently inactive: %1$s."
+#~ msgid_plural ""
+#~ "The following recommended plugins are currently inactive: %1$s."
+#~ msgstr[0] ""
+#~ "Das folgende Plugin wird empfohlen, ist aber momentan inaktiv: %1$s."
+#~ msgstr[1] ""
+#~ "Die folgenden Plugins werden empfohlen, sind aber momentan inaktiv: %1$s."
+
+# @ virtue
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to activate the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin activated."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to activate the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins activated."
+#~ msgstr[0] ""
+#~ "Entschuldigung, aber Sie besitzen nicht die Berechtigung, um das Plugin "
+#~ "%s zu aktiveren. Bitte kontaktieren Sie Ihren Seitenadministrator, um "
+#~ "Hilfe für die Aktivierung zu bekommen."
+#~ msgstr[1] ""
+#~ "Entschuldigung, aber Sie besitzen nicht die Berechtigung, um die Plugins "
+#~ "%s zu aktiveren. Bitte kontaktieren Sie Ihren Seitenadministrator, um "
+#~ "Hilfe für deren Aktivierung zu bekommen."
+
+# @ virtue
+#~ msgid ""
+#~ "The following plugin needs to be updated to its latest version to ensure "
+#~ "maximum compatibility with this theme: %1$s."
+#~ msgid_plural ""
+#~ "The following plugins need to be updated to their latest version to "
+#~ "ensure maximum compatibility with this theme: %1$s."
+#~ msgstr[0] ""
+#~ "Das folgende Plugin sollte auf die neueste Version aktualisiert werden, "
+#~ "um höchste Kompatibilität zu diesem Thema zu gewährleisten: %1$s."
+#~ msgstr[1] ""
+#~ "Die folgenden Plugins sollten auf die neueste Version aktualisiert "
+#~ "werden, um höchste Kompatibilität zu diesem Thema zu gewährleisten: %1$s."
+
+# @ virtue
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to update the %s "
+#~ "plugin. Contact the administrator of this site for help on getting the "
+#~ "plugin updated."
+#~ msgid_plural ""
+#~ "Sorry, but you do not have the correct permissions to update the %s "
+#~ "plugins. Contact the administrator of this site for help on getting the "
+#~ "plugins updated."
+#~ msgstr[0] ""
+#~ "Entschuldigung, aber Sie haben nicht die richtigen Berechtigungen, um das "
+#~ "Plugin %s zu aktualisieren. Kontaktieren Sie den Administrator dieser "
+#~ "Seite, um Hilfe für die Plugin-Aktualisierung zu bekommen."
+#~ msgstr[1] ""
+#~ "Entschuldigung, aber Sie haben nicht die richtigen Berechtigungen, um die "
+#~ "Plugins %s zu aktualisieren. Kontaktieren Sie den Administrator dieser "
+#~ "Seite, um Hilfe für die Plugin-Aktualisierung zu bekommen."
+
+# @ virtue
+#~ msgid "Begin installing plugin"
+#~ msgid_plural "Begin installing plugins"
+#~ msgstr[0] "Starte Plugin-Installation"
+#~ msgstr[1] "Starte Installation der Plugins"
+
+# @ virtue
+#~ msgid "Activate installed plugin"
+#~ msgid_plural "Activate installed plugins"
+#~ msgstr[0] "Aktiviere installiertes Plugin"
+#~ msgstr[1] "Aktiviere installierte Plugins"
+
+# @ virtue
+#~ msgid ""
+#~ "This theme comes packaged with the following premium plugin: %1$s. enjoy:)"
+#~ msgid_plural ""
+#~ "This theme comes packaged with the following premium plugin: %1$s. enjoy:)"
+#~ msgstr[0] ""
+#~ "Dieses Theme kommt zusammen mit den folgenden Premium-Plugin: %1$s. :)"
+#~ msgstr[1] ""
+#~ "Dieses Thema kommt zusammen mit den folgenden Premium-Plugins: %1$s. :)"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Not Activated"
+#~ msgstr "Aktivieren"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Deactivated"
+#~ msgstr "Aktivieren"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "License Status"
+#~ msgstr "Status"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Activate License"
+#~ msgstr "Aktivieren"
+
+# @ virtue
+#~ msgid "Upload Icon"
+#~ msgstr "Symbol hochladen"
+
+# @ virtue
+#~ msgid "Select an Icon"
+#~ msgstr "Wähle ein Symbol"
+
+# @ redux-framework
+#~ msgid "URL"
+#~ msgstr "URL"
+
+# @ virtue
+# @ redux-framework
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+# @ virtue
+#~ msgid "Icon Link"
+#~ msgstr "Symbol Link"
+
+#~ msgid "Open Link in New Tab/Window"
+#~ msgstr "Link in neuem Tab/Fenster öffnen"
+
+# @ virtue
+#~ msgid "Delete Icon"
+#~ msgstr "Lösche Symbol"
+
+# @ virtue
+#~ msgid "Add Icon"
+#~ msgstr "Symbol hinzufügen"
+
+# @ virtue
+#~ msgid "Slide Link"
+#~ msgstr "Slide Link"
+
+# @ redux-framework
+#~ msgid "Select an Option"
+#~ msgstr "Wählen Sie eine Einstellung"
+
+# @ redux-framework
+#~ msgid "Delete Slide"
+#~ msgstr "Entferne Slide"
+
+# @ redux-framework
+#~ msgid "Add Slide"
+#~ msgstr "Slide hinzufügen"
+
+# @ redux-framework
+#~ msgid "Transparent"
+#~ msgstr "Transparent"
+
+# @ redux-framework
+#~ msgid "Background Repeat"
+#~ msgstr "Hintergrund wiederholen"
+
+# @ redux-framework
+#~ msgid "Background Clip"
+#~ msgstr "Hintergrund beschneiden"
+
+# @ redux-framework
+#~ msgid "Background Origin"
+#~ msgstr "Hintergrund Ursprung"
+
+# @ redux-framework
+#~ msgid "Background Size"
+#~ msgstr "Hintergrund Größe"
+
+# @ redux-framework
+#~ msgid "Background Attachment"
+#~ msgstr "Hintergrund Anhang"
+
+# @ redux-framework
+#~ msgid "Background Position"
+#~ msgstr "Hintergrund Position"
+
+# @ redux-framework
+#~ msgid "No media selected"
+#~ msgstr "Keine Datei gewählt"
+
+# @ redux-framework
+#~ msgid "Top"
+#~ msgstr "Oben"
+
+# @ redux-framework
+#~ msgid "Right"
+#~ msgstr "Rechts"
+
+# @ redux-framework
+#~ msgid "Bottom"
+#~ msgstr "Unten"
+
+# @ redux-framework
+#~ msgid "Left"
+#~ msgstr "Links"
+
+# @ redux-framework
+#~ msgid "Border style"
+#~ msgstr "Randstil"
+
+# @ redux-framework
+#~ msgid "To "
+#~ msgstr "Zu "
+
+# @ redux-framework
+#~ msgid "Width"
+#~ msgstr "Breite"
+
+# @ redux-framework
+#~ msgid "height"
+#~ msgstr "Höhe"
+
+# @ redux-framework
+#~ msgid "Units"
+#~ msgstr "Einheiten"
+
+# @ redux-framework
+#~ msgid "Add/Edit Gallery"
+#~ msgstr "Hinzufügen/Editieren Galerie"
+
+# @ redux-framework
+#~ msgid "Clear Gallery"
+#~ msgstr "Galerie leeren"
+
+# @ redux-framework
+#~ msgid "New "
+#~ msgstr "Neu "
+
+# @ redux-framework
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+# @ redux-framework
+#~ msgid "Add"
+#~ msgstr "Hinzufügen"
+
+# @ redux-framework
+#~ msgid "Import / Export Options"
+#~ msgstr "Import / Export Optionen"
+
+# @ redux-framework
+#~ msgid "Import Options"
+#~ msgstr "Import Optionen"
+
+# @ redux-framework
+#~ msgid "Import from file"
+#~ msgstr "Import von Datei"
+
+# @ redux-framework
+#~ msgid "Import from URL"
+#~ msgstr "Import von URL"
+
+# @ redux-framework
+#~ msgid ""
+#~ "Input your backup file below and hit Import to restore your sites options "
+#~ "from a backup."
+#~ msgstr ""
+#~ "Geben Sie unten Ihre Sicherungsdatei ein und drücken Sie 'Importieren', "
+#~ "um Ihre Webseiten-Optionen aus einer Sicherung wiederherzustellen."
+
+# @ redux-framework
+#~ msgid ""
+#~ "Input the URL to another sites options set and hit Import to load the "
+#~ "options from that site."
+#~ msgstr ""
+#~ "Geben Sie die URL zu einer anderen Webseiten-Option ein und klicken Sie "
+#~ "'Importieren', um die Optionen von dieser Seite zu laden."
+
+# @ redux-framework
+#~ msgid "Import"
+#~ msgstr "Import"
+
+# @ redux-framework
+#~ msgid ""
+#~ "WARNING! This will overwrite all existing option values, please proceed "
+#~ "with caution!"
+#~ msgstr ""
+#~ "WARNUNG! Dies überschreibt alle existierenden Einstellungen, bitte mit "
+#~ "Vorsicht fortfahren!"
+
+# @ redux-framework
+#~ msgid "Export Options"
+#~ msgstr "Optionen exportieren"
+
+# @ redux-framework
+#~ msgid ""
+#~ "Here you can copy/download your current option settings. Keep this safe "
+#~ "as you can use it as a backup should anything go wrong, or you can use it "
+#~ "to restore your settings on this site (or any other site)."
+#~ msgstr ""
+#~ "Hier können Sie Ihre aktuellen Optionseinstellungen kopieren/"
+#~ "herunterladen. Verwahren Sie diese sicher, da Sie sie als Backup "
+#~ "verwenden können, wenn etwas schiefgeht. Sie können sie zum "
+#~ "Wiederherstellen verwenden (oder auch bei einer anderen Seite verwenden)."
+
+# @ redux-framework
+#~ msgid "Copy"
+#~ msgstr "Kopieren"
+
+# @ redux-framework
+#~ msgid "Copy Link"
+#~ msgstr "Link kopieren"
+
+# @ redux-framework
+#~ msgid "Import / Export"
+#~ msgstr "Import / Export"
+
+# @ redux-framework
+#~ msgid "Regular"
+#~ msgstr "Regulär"
+
+# @ redux-framework
+#~ msgid "Hover"
+#~ msgstr "Hover"
+
+# @ redux-framework
+#~ msgid "Visited"
+#~ msgstr "Besucht"
+
+# @ redux-framework
+#~ msgid "Active"
+#~ msgstr "Aktiv"
+
+# @ redux-framework
+#~ msgid "Add More"
+#~ msgstr "Mehr hinzufügen"
+
+# @ redux-framework
+# @ woocommerce
+#~ msgid "Password"
+#~ msgstr "Passwort"
+
+# @ redux-framework
+#~ msgid "Username"
+#~ msgstr "Benutzername"
+
+# @ redux-framework
+#~ msgid "Select an item"
+#~ msgstr "Wähle ein Element"
+
+# @ redux-framework
+#~ msgid "No items of this type were found."
+#~ msgstr "Keine Einträge dieser Art wurden gefunden."
+
+# @ redux-framework
+#~ msgid "Font family"
+#~ msgstr "Schriftfamilie"
+
+# @ redux-framework
+#~ msgid "Standard Fonts"
+#~ msgstr "Standardschriften"
+
+# @ redux-framework
+#~ msgid "Backup Font Family"
+#~ msgstr "Backup Schriftfamilie"
+
+# @ redux-framework
+#~ msgid "Font style"
+#~ msgstr "Schriftstil"
+
+# @ redux-framework
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+# @ redux-framework
+#~ msgid "Font subsets"
+#~ msgstr "Schrift Subsets"
+
+# @ redux-framework
+#~ msgid "Subsets"
+#~ msgstr "Subsets"
+
+# @ redux-framework
+#~ msgid "Font script"
+#~ msgstr "Schrift Skript"
+
+# @ redux-framework
+#~ msgid "Size"
+#~ msgstr "Größe"
+
+# @ redux-framework
+#~ msgid "Height"
+#~ msgstr "Höhe"
+
+# @ redux-framework
+#~ msgid "Word Spacing"
+#~ msgstr "Wortabstand"
+
+# @ redux-framework
+#~ msgid "Letter Spacing"
+#~ msgstr "Zeichenabstand"
+
+# @ redux-framework
+#~ msgid "Font color"
+#~ msgstr "Schriftfarbe"
+
+# @ redux-framework
+#~ msgid "Google Webfonts"
+#~ msgstr "Google Webfonts"
+
+# @ redux-framework
+#~ msgid "This field must be a valid color value."
+#~ msgstr "Dieses Feld muß einen gültigen Farbwert haben."
+
+# @ redux-framework
+#~ msgid ""
+#~ "You must provide a comma separated list of numerical values for this "
+#~ "option."
+#~ msgstr ""
+#~ "Bei dieser Einstellung müssen die numerischen Werte durch Kommata "
+#~ "getrennt werden."
+
+# @ redux-framework
+#~ msgid "This field must be a valid date."
+#~ msgstr "Dieses Feld muß ein gültiges Datum haben."
+
+# @ redux-framework
+#~ msgid "You must provide a valid email for this option."
+#~ msgstr "Sie müssen eine gültige Email-Adresse für diese Einstellung haben."
+
+# @ redux-framework
+#~ msgid ""
+#~ "You must not enter any HTML in this field, all HTML tags have been "
+#~ "removed."
+#~ msgstr ""
+#~ "Sie sollten kein HTML in dieses Feld eingeben, alle HTML-Tags werden "
+#~ "entfernt."
+
+# @ redux-framework
+#~ msgid ""
+#~ "You must not enter any special characters in this field, all special "
+#~ "characters have been removed."
+#~ msgstr ""
+#~ "Sie dürfen keine Sonderzeichen in dieses Feld eingeben, alle "
+#~ "Sonderzeichen werden entfernt."
+
+# @ redux-framework
+#, fuzzy
+#~ msgid "This field cannot be empty. Please provide a value."
+#~ msgstr "Dieses Feld muß einen gültigen Farbwert haben."
+
+# @ redux-framework
+#~ msgid "You must provide a numerical value for this option."
+#~ msgstr "Für diese Einstellung müssen Sie numerische Werte verwenden."
+
+# @ redux-framework
+#~ msgid "You must provide a valid URL for this option."
+#~ msgstr "Sie müssen eine gültige URL für dies Einstellung verwenden."
+
+# @ woocommerce
+#~ msgctxt "%1$d = first, %2$d = last, %3$d = total"
+#~ msgid "Showing %1$d–%2$d of %3$d results"
+#~ msgstr "Ergebnis %1$d–%2$d von %3$d Ergebnissen"
+
+# @ woocommerce
+#~ msgctxt "Product quantity input tooltip"
+#~ msgid "Qty"
+#~ msgstr "Anzahl"
+
+# @ redux-framework
+#~ msgid "Options Object"
+#~ msgstr "Optionen Objekt"
+
+# @ redux-framework
+#~ msgid "Show Object in Javascript Console Object"
+#~ msgstr "Objekt in Javascript-Konsole-Objekt anzeigen"
+
+# @ redux-framework
+#~ msgid "Help improve Our Panel"
+#~ msgstr "Helfen Sie, unser Panel zu verbessern"
+
+# @ redux-framework
+#, fuzzy
+#~ msgid ""
+#~ "Please helps us improve our panel by allowing us to gather anonymous "
+#~ "usage stats so we know which configurations, plugins and themes to test "
+#~ "with."
+#~ msgstr ""
+#~ "Bitte helfen Sie uns, unser Panel zu verbessern, indem Sie erlauben, "
+#~ "anonyme Benutzungsstatistiken zu sammeln, damit wir wissen, mit welchen "
+#~ "Einstellungen, Plugins und Themes wir testen sollten."

@@ -240,10 +240,10 @@ class cmb_Meta_Box {
 			   wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), self::CMB_VERSION );
 		   	wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), self::CMB_VERSION );
 				wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', array(
-					'clear' => __( 'Clear' ),
-					'defaultString' => __( 'Default' ),
-					'pick' => __( 'Select Color' ),
-					'current' => __( 'Current Color' ),
+					'clear' => __( 'Clear', 'virtue'),
+					'defaultString' => __( 'Default', 'virtue'),
+					'pick' => __( 'Select Color', 'virtue'),
+					'current' => __( 'Current Color', 'virtue'),
 				) );
 			}
 		} else {

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-04-21 22:55-0700\n"
-"PO-Revision-Date: 2014-04-21 22:55-0700\n"
+"POT-Creation-Date: 2014-04-28 18:26-0700\n"
+"PO-Revision-Date: 2014-04-28 18:26-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -503,9 +503,9 @@ msgstr ""
 msgid "Footer Navigation"
 msgstr ""
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
-#: ../themeoptions/inc/fields/border/field_border.php:112
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
+#: ../themeoptions/inc/fields/border/field_border.php:113
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
 msgstr ""
 
@@ -533,312 +533,319 @@ msgstr ""
 msgid "Head Content"
 msgstr ""
 
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1897
+msgid "Default"
+msgstr ""
+
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
+#: ../themeoptions/options.php:1764
 msgid "None"
 msgstr ""
 
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
+#: ../themeoptions/options.php:1764
 msgid "Image Slider"
 msgstr ""
 
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
-#: ../lib/metaboxes.php:438
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
+#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
 msgid "Video"
 msgstr ""
 
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:794
+#: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
+#: ../lib/widgets.php:794 ../themeoptions/options.php:1764
 msgid "Image"
 msgstr ""
 
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
 msgid "Max Image/Slider Height"
 msgstr ""
 
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
+#: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
+#: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
 msgid "Max Image/Slider Width"
 msgstr ""
 
-#: ../lib/metaboxes.php:112
+#: ../lib/metaboxes.php:113
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:117
+#: ../lib/metaboxes.php:118
 msgid "Post Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
-#: ../themeoptions/framework.php:1584
-msgid "Default"
-msgstr ""
-
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
 msgid "Text"
 msgstr ""
 
-#: ../lib/metaboxes.php:124
+#: ../lib/metaboxes.php:125
 msgid "Portrait Image"
 msgstr ""
 
-#: ../lib/metaboxes.php:125
+#: ../lib/metaboxes.php:126
 msgid "Landscape Image"
 msgstr ""
 
-#: ../lib/metaboxes.php:126
+#: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
 msgstr ""
 
-#: ../lib/metaboxes.php:127
+#: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
 msgstr ""
 
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
 msgstr ""
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
+#: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr ""
 
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
-#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
-#: ../lib/metaboxes.php:574
+#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
+#: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
 msgstr ""
 
-#: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
-#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
+#: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
+#: ../lib/metaboxes.php:584
 msgid "No"
 msgstr ""
 
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
+#: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
 msgstr ""
 
-#: ../lib/metaboxes.php:148
+#: ../lib/metaboxes.php:149
 msgid "Author Info"
 msgstr ""
 
-#: ../lib/metaboxes.php:149
+#: ../lib/metaboxes.php:150
 msgid "Display an author info box?"
 msgstr ""
 
-#: ../lib/metaboxes.php:158
+#: ../lib/metaboxes.php:159
 msgid "Posts Carousel"
 msgstr ""
 
-#: ../lib/metaboxes.php:159
+#: ../lib/metaboxes.php:160
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: ../lib/metaboxes.php:164
+#: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:165
+#: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:171
+#: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:179
+#: ../lib/metaboxes.php:180
 msgid "Post Video Box"
 msgstr ""
 
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
 msgstr ""
 
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
+#: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
 msgstr ""
 
-#: ../lib/metaboxes.php:196
+#: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:204
+#: ../lib/metaboxes.php:205
 msgid "Project Layout"
 msgstr ""
 
-#: ../lib/metaboxes.php:209
+#: ../lib/metaboxes.php:210
 msgid "Beside"
 msgstr ""
 
-#: ../lib/metaboxes.php:210
+#: ../lib/metaboxes.php:211
 msgid "Above"
 msgstr ""
 
-#: ../lib/metaboxes.php:211
+#: ../lib/metaboxes.php:212
 msgid "Three Rows"
 msgstr ""
 
-#: ../lib/metaboxes.php:215
+#: ../lib/metaboxes.php:216
 msgid "Project Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:222
+#: ../lib/metaboxes.php:223
 msgid "Carousel Slider"
 msgstr ""
 
-#: ../lib/metaboxes.php:229
+#: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:235
+#: ../lib/metaboxes.php:236
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
+msgid "Auto Play Slider?"
+msgstr ""
+
+#: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:241
+#: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
 msgstr ""
 
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
 msgstr ""
 
-#: ../lib/metaboxes.php:247
+#: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
 msgstr ""
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:253
+#: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
 msgstr ""
 
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
 msgstr ""
 
-#: ../lib/metaboxes.php:259
+#: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
 msgstr ""
 
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:265
+#: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
 msgstr ""
 
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
 msgstr ""
 
-#: ../lib/metaboxes.php:271
+#: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
 msgstr ""
 
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:277
+#: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
 msgstr ""
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
 msgstr ""
 
-#: ../lib/metaboxes.php:283
+#: ../lib/metaboxes.php:294
 msgid "ex. 2013"
 msgstr ""
 
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:299
 msgid "External Website"
 msgstr ""
 
-#: ../lib/metaboxes.php:289
+#: ../lib/metaboxes.php:300
 msgid "ex. Website:"
 msgstr ""
 
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:305
 msgid "Website Address"
 msgstr ""
 
-#: ../lib/metaboxes.php:295
+#: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
 msgstr ""
 
-#: ../lib/metaboxes.php:300
+#: ../lib/metaboxes.php:311
 msgid "If Video Project"
 msgstr ""
 
-#: ../lib/metaboxes.php:306
+#: ../lib/metaboxes.php:317
 msgid "Similar Portfolio Item Carousel"
 msgstr ""
 
-#: ../lib/metaboxes.php:307
+#: ../lib/metaboxes.php:318
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr ""
 
-#: ../lib/metaboxes.php:312
+#: ../lib/metaboxes.php:323
 msgid "Yes - Display Recent Projects"
 msgstr ""
 
-#: ../lib/metaboxes.php:317
+#: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
 msgstr ""
 
-#: ../lib/metaboxes.php:326
+#: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:335
+#: ../lib/metaboxes.php:346
 msgid "Columns"
 msgstr ""
 
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:351
 msgid "Four Column"
 msgstr ""
 
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:352
 msgid "Three Column"
 msgstr ""
 
-#: ../lib/metaboxes.php:342
+#: ../lib/metaboxes.php:353
 msgid "Two Column"
 msgstr ""
 
-#: ../lib/metaboxes.php:346
+#: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
 msgstr ""
 
-#: ../lib/metaboxes.php:353
+#: ../lib/metaboxes.php:364
 msgid "Order Items By"
 msgstr ""
 
-#: ../lib/metaboxes.php:358
+#: ../lib/metaboxes.php:369
 msgid "Menu Order"
 msgstr ""
 
-#: ../lib/metaboxes.php:359
+#: ../lib/metaboxes.php:370
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
@@ -846,170 +853,170 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:371
 msgid "Date"
 msgstr ""
 
-#: ../lib/metaboxes.php:361
+#: ../lib/metaboxes.php:372
 msgid "Random"
 msgstr ""
 
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:376
 msgid "Items per Page"
 msgstr ""
 
-#: ../lib/metaboxes.php:366
+#: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
 msgstr ""
 
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:399
 msgid "Set image height"
 msgstr ""
 
-#: ../lib/metaboxes.php:389
+#: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:394
+#: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
 msgstr ""
 
-#: ../lib/metaboxes.php:401
+#: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
 msgstr ""
 
-#: ../lib/metaboxes.php:408
+#: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
 msgstr ""
 
-#: ../lib/metaboxes.php:423
+#: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:443
 msgid "Feature Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:433
+#: ../lib/metaboxes.php:444
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
 
-#: ../lib/metaboxes.php:450
+#: ../lib/metaboxes.php:461
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
 msgstr ""
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
 msgstr ""
 
-#: ../lib/metaboxes.php:456
+#: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
 
-#: ../lib/metaboxes.php:474
+#: ../lib/metaboxes.php:485
 msgid "Blog List Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:494
 msgid "Blog Category"
 msgstr ""
 
-#: ../lib/metaboxes.php:484
+#: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
 
-#: ../lib/metaboxes.php:490
+#: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
 msgstr ""
 
-#: ../lib/metaboxes.php:514
+#: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
 msgstr ""
 
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:530
 msgid "Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:520
+#: ../lib/metaboxes.php:531
 msgid "Full"
 msgstr ""
 
-#: ../lib/metaboxes.php:543
+#: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
 msgstr ""
 
-#: ../lib/metaboxes.php:552
+#: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
 msgstr ""
 
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
 msgstr ""
 
-#: ../lib/metaboxes.php:563
+#: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
 msgstr ""
 
-#: ../lib/metaboxes.php:568
+#: ../lib/metaboxes.php:579
 msgid "Use Map"
 msgstr ""
 
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:589
 msgid "Address"
 msgstr ""
 
-#: ../lib/metaboxes.php:579
+#: ../lib/metaboxes.php:590
 msgid "Enter your Location"
 msgstr ""
 
-#: ../lib/metaboxes.php:584
+#: ../lib/metaboxes.php:595
 msgid "Map Type"
 msgstr ""
 
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:600
 msgid "ROADMAP"
 msgstr ""
 
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:601
 msgid "HYBRID"
 msgstr ""
 
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:602
 msgid "TERRAIN"
 msgstr ""
 
-#: ../lib/metaboxes.php:592
+#: ../lib/metaboxes.php:603
 msgid "SATELLITE"
 msgstr ""
 
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
 msgstr ""
 
-#: ../lib/metaboxes.php:597
+#: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
 msgstr ""
 
-#: ../lib/metaboxes.php:602
+#: ../lib/metaboxes.php:613
 msgid "1 (World View)"
 msgstr ""
 
-#: ../lib/metaboxes.php:622
+#: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
 msgstr ""
 
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:637
 msgid "Map Height"
 msgstr ""
 
-#: ../lib/metaboxes.php:627
+#: ../lib/metaboxes.php:638
 msgid "Default is 300"
 msgstr ""
 
-#: ../lib/metaboxes.php:635
+#: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
 msgstr ""
 
@@ -1259,8 +1266,8 @@ msgstr ""
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
-#: ../themeoptions/inc/fields/background/field_background.php:307
-#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/background/field_background.php:306
+#: ../themeoptions/inc/fields/media/field_media.php:155
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
@@ -1303,11 +1310,11 @@ msgstr ""
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/background/field_background.php:312
+#: ../themeoptions/inc/fields/media/field_media.php:161
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
@@ -1333,7 +1340,7 @@ msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/framework.php:2406
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Download"
 msgstr ""
 
@@ -1408,8 +1415,8 @@ msgid "Submit Comment"
 msgstr ""
 
 #: ../templates/content-fullpost.php:78
-#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:258
+#: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
+#: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
 msgstr ""
 
@@ -1449,153 +1456,111 @@ msgstr ""
 msgid "Featured Projects"
 msgstr ""
 
-#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
-#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
-msgid "Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:302
+#: ../themeoptions/framework.php:203
 #, php-format
 msgid "Options panel created using %1$s"
 msgstr ""
 
-#: ../themeoptions/framework.php:302
+#: ../themeoptions/framework.php:203
 msgid "Redux Framework"
 msgstr ""
 
-#: ../themeoptions/framework.php:1293
+#: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:1262
+msgid "Options"
+msgstr ""
+
+#: ../themeoptions/framework.php:489
+msgid "Dismiss"
+msgstr ""
+
+#: ../themeoptions/framework.php:1648
+#: ../themeoptions/extensions/customizer/extension_customizer.php:408
 msgid "You have changes that are not saved. Would you like to save them now?"
 msgstr ""
 
-#: ../themeoptions/framework.php:1294
+#: ../themeoptions/framework.php:1649
+#: ../themeoptions/extensions/customizer/extension_customizer.php:409
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr ""
 
-#: ../themeoptions/framework.php:1295
+#: ../themeoptions/framework.php:1650
 msgid "Are you sure? Resetting will lose all custom values in this section."
 msgstr ""
 
-#: ../themeoptions/framework.php:1296
+#: ../themeoptions/framework.php:1651
+#: ../themeoptions/extensions/customizer/extension_customizer.php:410
 msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
 
-#: ../themeoptions/framework.php:2156
+#: ../themeoptions/framework.php:1652
+msgid "Please Wait"
+msgstr ""
+
+#: ../themeoptions/framework.php:1788
+msgid "Hints"
+msgstr ""
+
+#: ../themeoptions/framework.php:1789
+msgid "<p>"
+msgstr ""
+
+#: ../themeoptions/framework.php:2631
 msgid "Warning- This options panel will not work properly without javascript!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2218
+#: ../themeoptions/framework.php:2693
 msgid "Expand"
 msgstr ""
 
-#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
+#: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
 msgid "Save Changes"
 msgstr ""
 
-#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
+#: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
 msgid "Reset Section"
 msgstr ""
 
-#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
+#: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
 msgid "Reset All"
 msgstr ""
 
-#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
+#: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
 msgid "Working..."
 msgstr ""
 
-#: ../themeoptions/framework.php:2238
+#: ../themeoptions/framework.php:2714
 msgid "Settings Imported!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2244
+#: ../themeoptions/framework.php:2727
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2739
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2745
 msgid "Settings Saved!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2251
+#: ../themeoptions/framework.php:2752
 msgid "Settings have changed, you should save them!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2252
+#: ../themeoptions/framework.php:2753
 msgid "error(s) were found!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2253
+#: ../themeoptions/framework.php:2754
 msgid "warning(s) were found!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2289
-msgid "Import / Export"
-msgstr ""
-
-#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
-msgid "Options Object"
-msgstr ""
-
-#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
+#: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
 msgid "System Info"
-msgstr ""
-
-#: ../themeoptions/framework.php:2356
-msgid "Import / Export Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2357
-msgid "Import Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2358
-msgid "Import from file"
-msgstr ""
-
-#: ../themeoptions/framework.php:2358
-msgid "Import from URL"
-msgstr ""
-
-#: ../themeoptions/framework.php:2367
-msgid ""
-"Input your backup file below and hit Import to restore your sites options "
-"from a backup."
-msgstr ""
-
-#: ../themeoptions/framework.php:2381
-msgid ""
-"Input the URL to another sites options set and hit Import to load the "
-"options from that site."
-msgstr ""
-
-#: ../themeoptions/framework.php:2392
-msgid "Import"
-msgstr ""
-
-#: ../themeoptions/framework.php:2392
-msgid ""
-"WARNING! This will overwrite all existing option values, please proceed with "
-"caution!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2395
-msgid "Export Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2401
-msgid ""
-"Here you can copy/download your current option settings. Keep this safe as "
-"you can use it as a backup should anything go wrong, or you can use it to "
-"restore your settings on this site (or any other site)."
-msgstr ""
-
-#: ../themeoptions/framework.php:2406
-msgid "Copy"
-msgstr ""
-
-#: ../themeoptions/framework.php:2406
-msgid "Copy Link"
-msgstr ""
-
-#: ../themeoptions/framework.php:2431
-msgid "Show Object in Javascript Console Object"
 msgstr ""
 
 #: ../themeoptions/options.php:38
@@ -2440,91 +2405,149 @@ msgid "Blog Post Summary Default"
 msgstr ""
 
 #: ../themeoptions/options.php:1763
+msgid "Blog Post Head Content Default"
+msgstr ""
+
+#: ../themeoptions/options.php:1771
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1768
+#: ../themeoptions/options.php:1776
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1769
+#: ../themeoptions/options.php:1777
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1778
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1783
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1780
+#: ../themeoptions/options.php:1788
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1781
+#: ../themeoptions/options.php:1789
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1789
+#: ../themeoptions/options.php:1797
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1798
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1795
+#: ../themeoptions/options.php:1803
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1796
+#: ../themeoptions/options.php:1804
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1804
+#: ../themeoptions/options.php:1812
 msgid "Theme Update Import"
 msgstr ""
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1813
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
 
-#: ../themeoptions/options.php:1810
+#: ../themeoptions/options.php:1818
 msgid "Turn on and save to start script"
 msgstr ""
 
-#: ../themeoptions/options.php:1817
+#: ../themeoptions/options.php:1825
 msgid "If using a child theme enter child theme folder"
 msgstr ""
 
-#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
+#: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1848
+#: ../themeoptions/options.php:1857
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
+#: ../themeoptions/extensions/customizer/extension_customizer.php:441
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: ../themeoptions/extensions/customizer/extension_customizer.php:442
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: ../themeoptions/extensions/customizer/extension_customizer.php:443
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/EDD_License_Handler.php:112
+#, php-format
+msgid "%1$s License Key"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/EDD_License_Handler.php:218
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:142
+msgid "Deactivate License"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/EDD_SL_Theme_Updater.php:54
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:110
+msgid "Not Activated"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:114
+msgid "Deactivated"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:116
+msgid "Valid"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:123
+msgid "License Status"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:132
+msgid "Verify License"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:137
+msgid "Activate License"
+msgstr ""
+
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:191
 msgid "Upload Icon"
 msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:198
 msgid "Select an Icon"
 msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:217
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
 #: ../themeoptions/inc/fields/slides/field_slides.php:137
@@ -2533,7 +2556,7 @@ msgid "URL"
 msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
 #: ../themeoptions/inc/fields/slides/field_slides.php:135
@@ -2542,23 +2565,23 @@ msgid "Description"
 msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
 msgid "Icon Link"
 msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:228
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
 msgid "Open Link in New Tab/Window"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:169
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:237
 msgid "Delete Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:240
 msgid "Add Icon"
 msgstr ""
 
@@ -2584,78 +2607,60 @@ msgstr ""
 msgid "Add Slide"
 msgstr ""
 
-#: ../themeoptions/inc/class.redux_helpers.php:59
-msgid "Help improve Our Panel"
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:60
-msgid ""
-"Please helps us improve our panel by allowing us to gather anonymous usage "
-"stats so we know which configurations, plugins and themes to test with."
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:65
-msgid "Allow tracking"
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:70
-msgid "Do not allow tracking"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:119
+#: ../themeoptions/inc/fields/background/field_background.php:118
 #: ../themeoptions/inc/fields/color/field_color.php:72
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
-#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
+#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:85
 msgid "Transparent"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:136
+#: ../themeoptions/inc/fields/background/field_background.php:135
 msgid "Background Repeat"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:152
+#: ../themeoptions/inc/fields/background/field_background.php:151
 msgid "Background Clip"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:168
+#: ../themeoptions/inc/fields/background/field_background.php:167
 msgid "Background Origin"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:183
+#: ../themeoptions/inc/fields/background/field_background.php:182
 msgid "Background Size"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:198
+#: ../themeoptions/inc/fields/background/field_background.php:197
 msgid "Background Attachment"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:218
+#: ../themeoptions/inc/fields/background/field_background.php:217
 msgid "Background Position"
 msgstr ""
 
-#: ../themeoptions/inc/fields/background/field_background.php:273
+#: ../themeoptions/inc/fields/background/field_background.php:272
 #: ../themeoptions/inc/fields/media/field_media.php:116
 msgid "No media selected"
 msgstr ""
 
-#: ../themeoptions/inc/fields/border/field_border.php:125
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
+#: ../themeoptions/inc/fields/border/field_border.php:126
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:175
 msgid "Top"
 msgstr ""
 
-#: ../themeoptions/inc/fields/border/field_border.php:132
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
+#: ../themeoptions/inc/fields/border/field_border.php:133
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
 msgid "Right"
 msgstr ""
 
-#: ../themeoptions/inc/fields/border/field_border.php:139
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
+#: ../themeoptions/inc/fields/border/field_border.php:140
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:189
 msgid "Bottom"
 msgstr ""
 
-#: ../themeoptions/inc/fields/border/field_border.php:146
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
+#: ../themeoptions/inc/fields/border/field_border.php:147
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:196
 msgid "Left"
 msgstr ""
 
@@ -2667,18 +2672,18 @@ msgstr ""
 msgid "To "
 msgstr ""
 
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:121
 msgid "Width"
 msgstr ""
 
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:137
 msgid "height"
 msgstr ""
 
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:149
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:150
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:206
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:207
 msgid "Units"
 msgstr ""
 
@@ -2690,36 +2695,92 @@ msgstr ""
 msgid "Clear Gallery"
 msgstr ""
 
-#: ../themeoptions/inc/fields/group/field_group.php:76
-msgid "New"
-msgstr ""
-
-#: ../themeoptions/inc/fields/group/field_group.php:89
+#: ../themeoptions/inc/fields/group/field_group.php:82
 msgid "New "
 msgstr ""
 
-#: ../themeoptions/inc/fields/group/field_group.php:138
-#: ../themeoptions/inc/fields/group/field_group.php:203
+#: ../themeoptions/inc/fields/group/field_group.php:125
 msgid "Delete"
 msgstr ""
 
-#: ../themeoptions/inc/fields/group/field_group.php:208
+#: ../themeoptions/inc/fields/group/field_group.php:129
 msgid "Add"
 msgstr ""
 
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
+#: ../themeoptions/inc/fields/import_export/import_export.php:77
+msgid "Import / Export Options"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:80
+msgid "Import Options"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:81
+msgid "Import from file"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:81
+msgid "Import from URL"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:85
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:93
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:99
+msgid "Import"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:99
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:102
+msgid "Export Options"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:105
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
+msgid "Copy"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:109
+msgid "Copy Link"
+msgstr ""
+
+#: ../themeoptions/inc/fields/import_export/import_export.php:149
+msgid "Import / Export"
+msgstr ""
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:91
 msgid "Regular"
 msgstr ""
 
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:95
 msgid "Hover"
 msgstr ""
 
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:99
 msgid "Visited"
 msgstr ""
 
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:103
 msgid "Active"
 msgstr ""
 
@@ -2736,70 +2797,88 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: ../themeoptions/inc/fields/select/field_select.php:79
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
+#: ../themeoptions/inc/fields/select/field_select.php:76
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:58
 msgid "Select an item"
 msgstr ""
 
-#: ../themeoptions/inc/fields/select/field_select.php:120
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
+#: ../themeoptions/inc/fields/select/field_select.php:117
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:133
 msgid "No items of this type were found."
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:141
+#: ../themeoptions/inc/fields/switch/field_switch.php:42
+msgid "On"
+msgstr ""
+
+#: ../themeoptions/inc/fields/switch/field_switch.php:49
+msgid "Off"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:163
 msgid "Font family"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:151
+#: ../themeoptions/inc/fields/typography/field_typography.php:178
 msgid "Standard Fonts"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:183
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Font style"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Style"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:213
-msgid "Font subsets"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Subsets"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Font script"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:232
-msgid "Size"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:241
-msgid "Height"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:249
-msgid "Word Spacing"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:257
-msgid "Letter Spacing"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:271
+#: ../themeoptions/inc/fields/typography/field_typography.php:225
 msgid "Backup Font Family"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:291
+#: ../themeoptions/inc/fields/typography/field_typography.php:245
+#: ../themeoptions/inc/fields/typography/field_typography.php:249
+msgid "Font style"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:249
+msgid "Style"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:278
+msgid "Font subsets"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:279
+msgid "Subsets"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:279
+msgid "Font script"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:296
+#: ../themeoptions/inc/fields/typography/field_typography.php:297
+msgid "Text Align"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:320
+#: ../themeoptions/inc/fields/typography/field_typography.php:321
+msgid "Text Transform"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:350
+msgid "Size"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:358
+msgid "Height"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:366
+msgid "Word Spacing"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:375
+msgid "Letter Spacing"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:392
 msgid "Font color"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:618
+#: ../themeoptions/inc/fields/typography/field_typography.php:734
 msgid "Google Webfonts"
 msgstr ""
 
@@ -2819,6 +2898,7 @@ msgid "This field must be a valid date."
 msgstr ""
 
 #: ../themeoptions/inc/validation/email/validation_email.php:15
+#: ../themeoptions/inc/validation/email_not_empty/validation_email_not_empty.php:15
 msgid "You must provide a valid email for this option."
 msgstr ""
 
@@ -2831,6 +2911,10 @@ msgstr ""
 msgid ""
 "You must not enter any special characters in this field, all special "
 "characters have been removed."
+msgstr ""
+
+#: ../themeoptions/inc/validation/not_empty/validation_not_empty.php:15
+msgid "This field cannot be empty. Please provide a value."
 msgstr ""
 
 #: ../themeoptions/inc/validation/numeric/validation_numeric.php:15

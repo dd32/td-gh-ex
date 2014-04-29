@@ -1019,7 +1019,7 @@ $this->sections[] = array(
             'type' => 'switch', 
             'title' => __('Set Product Title to Uppercase?', 'virtue'),
             'subtitle' => __('This makes your product titles uppercase on Category pages', 'virtue'),
-            "default"=> 1,
+            "default"=> 0,
             ),
         array(
             'id'=>'shop_title_min_height',
@@ -1758,6 +1758,14 @@ $this->sections[] = array(
             'default' => 'text',
             ),
         array(
+            'id'=>'post_head_default',
+            'type' => 'select',
+            'title' => __('Blog Post Head Content Default', 'virtue'), 
+            'options' => array('none' => __('None', 'virtue'), 'flex' => __('Image Slider', 'virtue'), 'image' => __('Image', 'virtue'), 'video' => __('Video', 'virtue')),
+            'width' => 'width:60%',
+            'default' => 'none',
+            ),
+        array(
             'id'=>'info_sidebars',
             'type' => 'info',
             'desc' => __('Create Sidebars', 'virtue'),
@@ -1843,6 +1851,7 @@ $this->sections[] = array(
             'page_slug' => 'kad_options',
             'default_show' => false,
             'default_mark' => '',
+            'admin_bar' => false,  
             'page_type' => 'submenu',
             'page_icon' => "kad_logo_header",
             'footer_credit' => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
@@ -1863,13 +1872,13 @@ $this->sections[] = array(
 
 
 function addAndOverridePanelCSS() {
-  wp_dequeue_style( 'redux-css' );
-  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 200);    
-  wp_enqueue_style('redux-custom-css');
-  wp_dequeue_style( 'redux-elusive-icon' );
-  wp_dequeue_style( 'redux-elusive-icon-ie7' );
-  wp_register_style('redux-virtue-icons', get_template_directory_uri() . '/assets/css/icons.css', false, null);    
-  wp_enqueue_style('redux-custom-css');
+    wp_dequeue_style( 'redux-css' );
+    wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 214);    
+    wp_enqueue_style( 'redux-custom-css' );
+    wp_dequeue_style( 'redux-elusive-icon' );
+    wp_dequeue_style( 'redux-elusive-icon-ie7' );
+    wp_dequeue_style( 'select2-css' );
+    wp_dequeue_script( 'select2-js' );
 }
 // This example assumes your opt_name is set to redux_demo, replace with your opt_name value
 add_action('redux-enqueue-virtue', 'addAndOverridePanelCSS');
