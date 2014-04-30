@@ -1,98 +1,101 @@
-# Copyright (C) 2012 the Catch Themes Team
-# This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-30 18:18+0545\n"
-"PO-Revision-Date: 2014-04-30 18:18+0545\n"
+"POT-Creation-Date: 2014-04-30 18:24+0545\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
+"Language-Team: Catch Themes <info@catchthemes.com>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__;"
+"_nx_noop:1,2;_nx:1,2;_n_noop:1,2\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "哟，没找到。"
+msgstr "Упс! Эта страница не может быть найдена."
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr "这个地址好像什么都没有。试试下边的链接或者搜一下？"
+msgstr ""
+"Похоже, ничего не было найдено по этому адресу. Может стоит попробовать одну "
+"из приведенных ссылок или воспользоваться поиском?"
 
 #: ../404.php:29
 msgid "Most Used Categories"
-msgstr "常用分类"
+msgstr "Самые используемые рубрики"
 
 #: ../404.php:37
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "试试找找每月存档。%1$s"
+msgstr "Попробуйте поискать в ежемесячных архивах. %1$s"
 
 #: ../archive.php:22
 #, php-format
 msgid "Category Archives: %s"
-msgstr "分类： %s"
+msgstr "Архив рубрики: %s"
 
 #: ../archive.php:25
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "标签： %s"
+msgstr "Архив меток: %s"
 
 #: ../archive.php:32
 #, php-format
 msgid "Author Archives: %s"
-msgstr "作者： %s"
+msgstr "Архив автора: %s"
 
 #: ../archive.php:40
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "每日： %s"
+msgstr "Архив за день: %s"
 
 #: ../archive.php:43
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "每月： %s"
+msgstr "Архив за месяц: %s"
 
 #: ../archive.php:46
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "每年： %s"
+msgstr "Архив за год: %s"
 
 #: ../archive.php:49 ../sidebar.php:53
 msgid "Archives"
-msgstr "文章存档"
+msgstr "Архивы"
 
 #: ../comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2$s: Один комментарий"
+msgstr[1] "%2$s: %1$s комментария"
+msgstr[2] "%2$s: %1$s комментариев"
 
 #: ../comments.php:39 ../comments.php:59
 msgid "Comment navigation"
-msgstr "评论导航"
+msgstr "Навигация по комментариям"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "早些的评论"
+msgstr "&larr;  Предыдущие комментарии"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "近来的评论"
+msgstr "Следующие комментарии &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr "不允许评论"
+msgstr "Комментарии закрыты."
 
 #: ../content-aside.php:17 ../content-audio.php:16 ../content-chat.php:16
 #: ../content-gallery.php:16 ../content-gallery.php:28
@@ -100,33 +103,33 @@ msgstr "不允许评论"
 #: ../content.php:19 ../content.php:28
 #, php-format
 msgid "Permalink to %s"
-msgstr "%s的固定链接"
+msgstr "Постоянная ссылка на %s"
 
 #: ../content-aside.php:21 ../content-audio.php:26 ../content-gallery.php:36
 #: ../content-image.php:26 ../content-link.php:20 ../content-quote.php:16
 #: ../content-status.php:24 ../content-video.php:26 ../content.php:49
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "查看全文<span class=\"meta-nav\">&rarr;</span>"
+msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "Leave a reply"
-msgstr "评论"
+msgstr "Ответить"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "1 Reply"
-msgstr "1 条评论"
+msgstr "1 ответ"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 msgid "% Replies;"
-msgstr "% 条评论"
+msgstr "% Комментарии;"
 
 #: ../content-aside.php:31 ../content-audio.php:37 ../content-chat.php:36
 #: ../content-gallery.php:46 ../content-image.php:37 ../content-link.php:29
@@ -134,98 +137,99 @@ msgstr "% 条评论"
 #: ../content-video.php:37 ../content.php:62 ../image.php:34 ../image.php:100
 #: ../inc/template-tags.php:179
 msgid "Edit"
-msgstr "编辑"
+msgstr "Изменить"
 
 #: ../content-audio.php:17
 msgid "All Audio Posts"
-msgstr "所有音频文章"
+msgstr "Все публикации в Аудио"
 
 #: ../content-audio.php:17
 msgid "Audio"
-msgstr "音频"
+msgstr "Аудио"
 
 #: ../content-audio.php:27 ../content-gallery.php:37 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:50
 #: ../image.php:86
 msgid "Pages:"
-msgstr "页码："
+msgstr "Страницы"
 
 #: ../content-chat.php:17
 msgid "All Chat Posts"
-msgstr "所有聊天文章"
+msgstr "Все Чат публикации"
 
 #: ../content-chat.php:17
 msgid "Chat"
-msgstr "聊天"
+msgstr "Чат"
 
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
-msgstr "所有图片集文章"
+msgstr "Все публикации в Галерее"
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "图片集"
+msgstr "Галерея"
 
 #: ../content-gallery.php:31
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "这个照片集有<a %1$s>%2$s张照片</a>."
-msgstr[1] "这个照片集有<a %1$s>%2$s张照片</a>."
+msgstr[0] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
+msgstr[1] "Эта галерея содержит <a %1$s>%2$s фотографии</a>."
+msgstr[2] "Эта галерея содержит <a %1$s>%2$s фотографий</a>."
 
 #: ../content-image.php:17
 msgid "All Image Posts"
-msgstr "所有图片文章"
+msgstr "Все публикации в Изображениях"
 
 #: ../content-image.php:17 ../inc/panel/theme-options.php:486
 msgid "Image"
-msgstr "图片"
+msgstr "Изображение"
 
 #: ../content-link.php:16
 msgid "All Link Posts"
-msgstr "所有链接文章"
+msgstr "Все публикации в Ссылках"
 
 #: ../content-link.php:16
 msgid "Link"
-msgstr "链接"
+msgstr "Ссылка"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
-msgstr "所有状态文章"
+msgstr "Все публикации в Статусе"
 
 #: ../content-status.php:20
 msgid "Status"
-msgstr "状态"
+msgstr "Статус"
 
 #: ../content-video.php:17
 msgid "All Video Posts"
-msgstr "所有视频文章"
+msgstr "Все публикации в Видео"
 
 #: ../content-video.php:17
 msgid "Video"
-msgstr "视频"
+msgstr "Видео"
 
 #: ../content.php:14
 msgid "Featured post"
-msgstr "精选文章"
+msgstr "Избранная публикация"
 
 #: ../content.php:59
 msgid "% Replies"
-msgstr "% 条评论"
+msgstr "% Комментарии"
 
 #: ../content.php:69
 #, php-format
 msgid "About %s"
-msgstr "关于 %s"
+msgstr "Детали %s"
 
 #: ../content.php:73
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "查看 %s 的所有文章 <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Посмотреть все записи автора %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:91 ../inc/catcheverest-functions.php:445
 msgid "Primary Menu"
-msgstr "主菜单"
+msgstr "Основное меню"
 
 #: ../image.php:24
 #, php-format
@@ -235,18 +239,18 @@ msgid ""
 "size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
 "\" rel=\"gallery\">%7$s</a>"
 msgstr ""
-"<span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" "
-"pubdate>%2$s</time></span> <a href=\"%3$s\" title=\"Link to full-size image"
-"\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
-"\"gallery\">%7$s</a>发表"
+"Опубликованное <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title="
+"\"Ссылка на полное изображение\">%4$s &times; %5$s</a> in <a href=\"%6$s\" "
+"title=\"Вернуться в %7$s\" rel=\"gallery\">%7$s</a>"
 
 #: ../image.php:38
 msgid "&larr; Previous"
-msgstr "&larr; 前一篇"
+msgstr "&larr; Назад"
 
 #: ../image.php:39
 msgid "Next &rarr;"
-msgstr "下一篇 &rarr;"
+msgstr "Вперед &rarr;"
 
 #: ../image.php:92
 #, php-format
@@ -255,9 +259,10 @@ msgid ""
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">评论</"
-"a> 或传百[trackback]: <a class=\"trackback-link\" href=\"%s\" title="
-"\"Trackback URL for your post\" rel=\"trackback\">传百[trackback]地址</a>."
+"<a class=\"comment-link\" href=\"#respond\" title=\"Добавить комментарий"
+"\">Добавить комментарий</a> или оставить обратную ссылку: <a class="
+"\"trackback-link\" href=\"%s\" title=\"URL обратной ссылки на запись\" rel="
+"\"trackback\">URL обратной ссылки</a>."
 
 #: ../image.php:94
 #, php-format
@@ -266,26 +271,26 @@ msgid ""
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
-"评论已经关闭，不过你可以传百[trackback]: <a class=\"trackback-link\" href="
-"\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback 地址"
-"</a>."
+"Комментарии отключены, но вы можете оставить обратную ссылку: <a class="
+"\"trackback-link\" href=\"%s\" title=\"URL обратной ссылки на запись\" rel="
+"\"trackback\">URL обратной ссылки</a>."
 
 #: ../image.php:96
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"传百[trackback]已经关闭，不过你可以 <a class=\"comment-link\" href=\"#respond"
-"\" title=\"Post a comment\">评论</a>."
+"Обратные ссылки закрыты, но вы можете <a class=\"comment-link\" href="
+"\"#respond\" title=\"Оставить комментарий\">оставить комментарий</a>."
 
 #: ../image.php:98
 msgid "Both comments and trackbacks are currently closed."
-msgstr "评论和传百[trackback]都已关闭。"
+msgstr "Комментарии и обратные ссылки отключены."
 
 #: ../inc/catcheverest-functions.php:175
 #, php-format
 msgid "Page %s"
-msgstr "第 %s 页"
+msgstr "Страница %s"
 
 #: ../inc/catcheverest-functions.php:208 ../inc/catcheverest-functions.php:692
 #: ../inc/catcheverest-functions.php:695 ../inc/catcheverest-functions.php:812
@@ -297,153 +302,153 @@ msgstr "%s"
 
 #: ../inc/catcheverest-functions.php:446
 msgid "Skip to content"
-msgstr "跳到内容部分"
+msgstr "Перейти к содержимому"
 
 #: ../inc/catcheverest-functions.php:984
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Авторские права"
 
 #: ../inc/catcheverest-functions.php:984
 msgid "All Rights Reserved"
-msgstr "All Rights Reserved"
+msgstr "Все права защищены"
 
 #: ../inc/catcheverest-functions.php:984
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "Автор"
 
 #: ../inc/catcheverest-functions.php:984
 msgid "Theme"
-msgstr "Theme"
+msgstr "Тема"
 
 #: ../inc/catcheverest-functions.php:1085
 #, php-format
 msgid "%s on Facebook"
-msgstr "%s on Facebook"
+msgstr "%s на Facebook"
 
 #: ../inc/catcheverest-functions.php:1090
 #, php-format
 msgid "%s on Twitter"
-msgstr "%s on Twitter"
+msgstr "%s в Twitter"
 
 #: ../inc/catcheverest-functions.php:1095
 #, php-format
 msgid "%s on Google+"
-msgstr "%s on Google+"
+msgstr "%s в Google+"
 
 #: ../inc/catcheverest-functions.php:1100
 #, php-format
 msgid "%s on Linkedin"
-msgstr "%s on Google+"
+msgstr "%s на Linkedin"
 
 #: ../inc/catcheverest-functions.php:1105
 #, php-format
 msgid "%s on Pinterest"
-msgstr "%s on Pinterest"
+msgstr "%s на Pinterest"
 
 #: ../inc/catcheverest-functions.php:1110
 #, php-format
 msgid "%s on YouTube"
-msgstr "%s on YouTube"
+msgstr "%s на YouTube"
 
 #: ../inc/catcheverest-functions.php:1115
 #, php-format
 msgid "%s on Vimeo"
-msgstr "%s on Vimeo"
+msgstr "%s на Vimeo"
 
 #: ../inc/catcheverest-functions.php:1120
 #, php-format
 msgid "%s on Slideshare"
-msgstr "%s on Slideshare"
+msgstr "%s на Slideshare"
 
 #: ../inc/catcheverest-functions.php:1125
 #, php-format
 msgid "%s on Foursquare"
-msgstr "%s on Foursquare"
+msgstr "%s на Foursquare"
 
 #: ../inc/catcheverest-functions.php:1130
 #, php-format
 msgid "%s on Flickr"
-msgstr "%s on Flickr"
+msgstr "%s в Flickr"
 
 #: ../inc/catcheverest-functions.php:1135
 #, php-format
 msgid "%s on Tumblr"
-msgstr "%s on Tumblr"
+msgstr "%s на Tumblr"
 
 #: ../inc/catcheverest-functions.php:1140
 #, php-format
 msgid "%s on deviantART"
-msgstr "%s on deviantART"
+msgstr "%s на deviantART"
 
 #: ../inc/catcheverest-functions.php:1145
 #, php-format
 msgid "%s on Dribbble"
-msgstr "%s on Dribbble"
+msgstr "%s на Dribbble"
 
 #: ../inc/catcheverest-functions.php:1150
 #, php-format
 msgid "%s on MySpace"
-msgstr "%s on MySpace"
+msgstr "%s на MySpace"
 
 #: ../inc/catcheverest-functions.php:1155
 #, php-format
 msgid "%s on WordPress"
-msgstr "%s on WordPress"
+msgstr "%s на WordPress"
 
 #: ../inc/catcheverest-functions.php:1160
 #, php-format
 msgid "%s on RSS"
-msgstr "%s on RSS"
+msgstr "%s в RSS"
 
 #: ../inc/catcheverest-functions.php:1165
 #, php-format
 msgid "%s on Delicious"
-msgstr "%s on Delicious"
+msgstr "%s на Delicious"
 
 #: ../inc/catcheverest-functions.php:1170
 #, php-format
 msgid "%s on Last.fm"
-msgstr "%s on Last.fm"
+msgstr "%s на Last.fm"
 
 #: ../inc/catcheverest-functions.php:1175
 #, php-format
 msgid "%s on Instagram"
-msgstr "%s on Instagram"
+msgstr "%s в Instagram"
 
 #: ../inc/catcheverest-functions.php:1180
 #, php-format
 msgid "%s on GitHub"
-msgstr "%s on GitHub"
+msgstr "%s в GitHub"
 
 #: ../inc/catcheverest-functions.php:1185
 #, php-format
 msgid "%s on Vkontakte"
-msgstr "%s on Vkontakte"
+msgstr "%s во Vkontakte"
 
 #: ../inc/catcheverest-functions.php:1190
 #, php-format
 msgid "%s on My World"
-msgstr "%s on My World"
+msgstr "%s в My World"
 
 #: ../inc/catcheverest-functions.php:1195
 #, php-format
 msgid "%s on Odnoklassniki"
-msgstr "%s on Odnoklassniki"
+msgstr "%s в Odnoklassniki"
 
 #: ../inc/catcheverest-functions.php:1200
 #, php-format
 msgid "%s on Goodreads"
-msgstr "%s on Goodreads"
+msgstr "%s в Goodreads"
 
 #: ../inc/catcheverest-functions.php:1205
 #, php-format
 msgid "%s on Skype"
-msgstr "%s on Skype"
+msgstr "%s в Skype"
 
 #: ../inc/catcheverest-functions.php:1210
 #, php-format
 msgid "%s on Soundcloud"
-msgstr "%s on Soundcloud"
+msgstr "%s на Soundcloud"
 
 #: ../inc/catcheverest-functions.php:1305
 msgid "ID"
@@ -452,44 +457,44 @@ msgstr "ID"
 #: ../inc/catcheverest-functions.php:1332
 #: ../inc/catcheverest-functions.php:1346
 msgid "Menu"
-msgstr "菜單"
+msgstr "Меню"
 
 #: ../inc/catcheverest-metabox.php:14 ../inc/catcheverest-metabox.php:20
 msgid "Select Sidebar layout"
-msgstr "选择边栏布局"
+msgstr "Выберите расположение боковой панели"
 
 #: ../inc/catcheverest-metabox.php:33
 msgid "Default Layout Set in"
-msgstr "默认布局设置"
+msgstr "Стандартное расположение задано в"
 
 #: ../inc/catcheverest-metabox.php:33
 msgid "Theme Settings"
-msgstr "主题选项"
+msgstr "Настройки темы"
 
 #: ../inc/catcheverest-metabox.php:39
 msgid "Right sidebar"
-msgstr "右边栏"
+msgstr "Правая боковая панель"
 
 #: ../inc/catcheverest-metabox.php:45
 msgid "Left sidebar"
-msgstr "左边栏"
+msgstr "Левая боковая панель"
 
 #: ../inc/catcheverest-metabox.php:51
 msgid "No sidebar"
-msgstr "无边栏"
+msgstr "Без боковой панели"
 
 #: ../inc/catcheverest-metabox.php:57
 msgid "No sidebar, Full Width"
-msgstr "No sidebar, Full Width"
+msgstr "Без боковой панели, Полная ширина"
 
 #: ../inc/panel/theme-options.php:40 ../inc/panel/theme-options.php:41
 #: ../inc/panel/theme-options.php:145
 msgid "Theme Options"
-msgstr "主题设置"
+msgstr "Опции темы"
 
 #: ../inc/panel/theme-options.php:102
 msgid "Options Saved"
-msgstr "设置已保存"
+msgstr "Опции сохранены"
 
 #: ../inc/panel/theme-options.php:109
 msgid "http://facebook.com/catchthemes"
@@ -501,7 +506,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/panel/theme-options.php:117
 msgid "Theme Options By"
-msgstr "Theme Options By"
+msgstr "Автор опций для темы"
 
 #: ../inc/panel/theme-options.php:119
 msgid "http://catchthemes.com/"
@@ -517,7 +522,7 @@ msgstr "http://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:126
 msgid "Upgrade to Catch Everest Pro"
-msgstr "Upgrade to Catch Everest Pro"
+msgstr "Повысить до Catch Everest Pro"
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://catchthemes.com/donate/"
@@ -525,11 +530,11 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:131
 msgid "Donate to Catch Everest"
-msgstr "Donate to Catch Everest"
+msgstr "Пожертвовать для Catch Everest"
 
 #: ../inc/panel/theme-options.php:131
 msgid "Donate Now"
-msgstr "Donate Now"
+msgstr "Пожертвовать"
 
 #: ../inc/panel/theme-options.php:132
 msgid "http://catchthemes.com/support/"
@@ -537,7 +542,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:132
 msgid "Support"
-msgstr "Support"
+msgstr "Поддержка"
 
 #: ../inc/panel/theme-options.php:133
 msgid "http://catchthemes.com/theme-instructions/catch-everest/"
@@ -545,7 +550,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
 
 #: ../inc/panel/theme-options.php:133
 msgid "Theme Instruction"
-msgstr "主题使用指导"
+msgstr "Инструкции для темы"
 
 #: ../inc/panel/theme-options.php:134
 msgid "https://www.facebook.com/catchthemes/"
@@ -553,7 +558,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes on Facebook"
+msgstr "Лайкнуть Catch Themes на Facebook"
 
 #: ../inc/panel/theme-options.php:134 ../inc/panel/theme-options.php:672
 msgid "Facebook"
@@ -565,7 +570,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:135
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Зафолловить Catch Themes в Twitter"
 
 #: ../inc/panel/theme-options.php:135 ../inc/panel/theme-options.php:677
 msgid "Twitter"
@@ -577,42 +582,42 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-everest"
 
 #: ../inc/panel/theme-options.php:136
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Оценить в 5 звезд на сайте WordPress"
 
 #: ../inc/panel/theme-options.php:136
 msgid "5 Star Rating"
-msgstr "五星评价"
+msgstr "Оценка в 5 звезд"
 
 #: ../inc/panel/theme-options.php:146
 msgid "Homepage Settings"
-msgstr "主页设置"
+msgstr "Настройки домашней страницы"
 
 #: ../inc/panel/theme-options.php:147
 msgid "Featured Post Slider"
-msgstr "精选图片秀"
+msgstr "Слайдер избранной записи"
 
 #: ../inc/panel/theme-options.php:148
 msgid "Social Links"
-msgstr "社交链接"
+msgstr "Социальные ссылки"
 
 #: ../inc/panel/theme-options.php:149
 msgid "Webmaster Tools"
-msgstr "站长工具"
+msgstr "Инструменты вебмастера"
 
 #: ../inc/panel/theme-options.php:157
 msgid "Responsive Design"
-msgstr "自适应设计"
+msgstr "Отзывчивый дизайн"
 
 #: ../inc/panel/theme-options.php:162
 msgid "Disable Responsive Design?"
-msgstr "禁用自适应？"
+msgstr "Отключить отзывчивый дизайн?"
 
 #: ../inc/panel/theme-options.php:164 ../inc/panel/theme-options.php:187
 #: ../inc/panel/theme-options.php:226 ../inc/panel/theme-options.php:266
 #: ../inc/panel/theme-options.php:441 ../inc/panel/theme-options.php:446
 #: ../inc/panel/theme-options.php:462
 msgid "Check to disable"
-msgstr "选上以禁用"
+msgstr "Отключить"
 
 #: ../inc/panel/theme-options.php:168 ../inc/panel/theme-options.php:214
 #: ../inc/panel/theme-options.php:254 ../inc/panel/theme-options.php:270
@@ -623,56 +628,56 @@ msgstr "选上以禁用"
 #: ../inc/panel/theme-options.php:634 ../inc/panel/theme-options.php:660
 #: ../inc/panel/theme-options.php:804 ../inc/panel/theme-options.php:839
 msgid "Save"
-msgstr "Save"
+msgstr "Сохранить"
 
 #: ../inc/panel/theme-options.php:173
 msgid "Upload Logo"
-msgstr "上传logo"
+msgstr "Залить ваш логотип"
 
 #: ../inc/panel/theme-options.php:175
 msgid "Custom Header. Need to Add or Remove Logo?"
-msgstr "自定义页头。需要增删logo吗？"
+msgstr "Изменяемый заголовок(header). Добавить или удалить логотип?"
 
 #: ../inc/panel/theme-options.php:175 ../inc/panel/theme-options.php:277
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">点击这里</a>"
+msgstr "<a class=\"button\" href=\"%s\">Нажмите здесь</a>"
 
 #: ../inc/panel/theme-options.php:180
 msgid "Favicon"
-msgstr "站点图标"
+msgstr "Мини-иконка сайта(Favicon)"
 
 #: ../inc/panel/theme-options.php:185
 msgid "Disable Favicon?"
-msgstr "禁用站点图标？"
+msgstr "Отключить мини-иконку сайта(Favicon)?"
 
 #: ../inc/panel/theme-options.php:190
 msgid "Fav Icon URL:"
-msgstr "站点图标地址："
+msgstr "Ссылка на мини-иконку сайта(Favicon):"
 
 #: ../inc/panel/theme-options.php:196
 msgid "Change Fav Icon"
-msgstr "Change Fav Icon"
+msgstr "Изменить мини-иконку сайта(Favicon)"
 
 #: ../inc/panel/theme-options.php:201 ../inc/panel/theme-options.php:240
 msgid "Preview: "
-msgstr "预览："
+msgstr "Превью: "
 
 #: ../inc/panel/theme-options.php:219
 msgid "Web Clip Icon Options"
-msgstr "Web Clip Icon Options"
+msgstr "Опции Web Clip иконки сайта"
 
 #: ../inc/panel/theme-options.php:224
 msgid "Disable Web Clip Icon?"
-msgstr "Disable Web Clip Icon?"
+msgstr "Отключить Web Clip иконку сайта?"
 
 #: ../inc/panel/theme-options.php:229
 msgid "Web Clip Icon URL:"
-msgstr "Web Clip Icon URL:"
+msgstr "Ссылка на Web Clip иконку сайта:"
 
 #: ../inc/panel/theme-options.php:235
 msgid "Change Web Clip Icon"
-msgstr "Change Web Clip Icon"
+msgstr "Изменить Web Clip иконку сайта"
 
 #: ../inc/panel/theme-options.php:253
 msgid ""
@@ -680,113 +685,113 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
-"Height 144px height, which will support High Resolution Devices like iPad "
-"Retina."
+"Пояснение: Web Clip - иконка для устройств Apple. Рекомендованный размер: "
+"ширина 144px и высота 144px - высота, которую поддерживают устройства с "
+"высоким разрешением как, например iPad Retina."
 
 #: ../inc/panel/theme-options.php:259
 msgid "Header Right Section"
-msgstr "页头右侧部分"
+msgstr "Правая область вершины(Header) сайта"
 
 #: ../inc/panel/theme-options.php:264
 msgid "Disable Header Right Section?"
-msgstr "禁用页头右侧部分（搜索）？"
+msgstr "Отключить правую область вершины(Header) сайта?"
 
 #: ../inc/panel/theme-options.php:275
 msgid "Background"
-msgstr "背景"
+msgstr "Фон"
 
 #: ../inc/panel/theme-options.php:277
 msgid "Custom Background. Need to replace or remove background?"
-msgstr "自定义背景。需要改或者删除背景？"
+msgstr "Изменяемый фон. Заменить или удалить фон?"
 
 #: ../inc/panel/theme-options.php:282
 msgid "Search Text Settings"
-msgstr "搜索占位符设定"
+msgstr "Настройки поиска текста"
 
 #: ../inc/panel/theme-options.php:287
 msgid "Default Display Text in Search"
-msgstr "搜索占位符"
+msgstr "Текст в строке поиска по умолчанию"
 
 #: ../inc/panel/theme-options.php:298
 msgid "Excerpt / More Tag Settings"
-msgstr "摘录/标记设置"
+msgstr "Обрезка / Дополнительные настройки меток"
 
 #: ../inc/panel/theme-options.php:303
 msgid "More Tag Text"
-msgstr "更多标记"
+msgstr "Дополнительный текст меток"
 
 #: ../inc/panel/theme-options.php:308
 msgid "Excerpt length(words)"
-msgstr "摘要长度（英文词为单位）"
+msgstr "Задать длину(в словах)"
 
 #: ../inc/panel/theme-options.php:318
 msgid "Feed Redirect"
-msgstr "Feed重定向"
+msgstr "Перенаправление ленты"
 
 #: ../inc/panel/theme-options.php:323
 msgid "Feed Redirect URL"
-msgstr "Feed重定向地址"
+msgstr "Ссылка на перенаправление ленты"
 
 #: ../inc/panel/theme-options.php:324
 msgid "Add in the Feedburner URL"
-msgstr "Add in the Feedburner URL"
+msgstr "Добавить ссылку Feedburner"
 
 #: ../inc/panel/theme-options.php:334
 msgid "Layout Options"
-msgstr "布局设定"
+msgstr "Опции разметки"
 
 #: ../inc/panel/theme-options.php:339
 msgid "Sidebar Layout Options"
-msgstr "侧边栏布局设置"
+msgstr "Опции разметки боковой панели"
 
 #: ../inc/panel/theme-options.php:343
 msgid "Right Sidebar"
-msgstr "右侧边栏"
+msgstr "Правая боковая панель"
 
 #: ../inc/panel/theme-options.php:348
 msgid "Left Sidebar"
-msgstr "左侧边栏"
+msgstr "Левая боковая панель"
 
 #: ../inc/panel/theme-options.php:353
 msgid "No Sidebar"
-msgstr "不要侧边栏"
+msgstr "Без боковой панели"
 
 #: ../inc/panel/theme-options.php:358
 msgid "No Sidebar, Full Width"
-msgstr "No Sidebar, Full Width"
+msgstr "Без боковой панели, Полная ширина"
 
 #: ../inc/panel/theme-options.php:363
 msgid "Content Layout"
-msgstr "内容布局"
+msgstr "Разметка содержания"
 
 #: ../inc/panel/theme-options.php:366
 msgid "Full Content Display"
-msgstr "完整内容显示"
+msgstr "Полное отображения содержания"
 
 #: ../inc/panel/theme-options.php:370
 msgid "Excerpt/Blog Display"
-msgstr "摘要/文章 展示"
+msgstr "Обрезка/Отображение блога"
 
 #: ../inc/panel/theme-options.php:376
 msgid "Reset Layout?"
-msgstr "重置布局？"
+msgstr "Сбросить разметку?"
 
 #: ../inc/panel/theme-options.php:379
 msgid "Check to reset"
-msgstr "点这里重置"
+msgstr "Сбросить"
 
 #: ../inc/panel/theme-options.php:389
 msgid "Custom CSS"
-msgstr "自定义CSS"
+msgstr "Изменяемый CSS"
 
 #: ../inc/panel/theme-options.php:394
 msgid "Enter your custom CSS styles."
-msgstr "输入你自定义的CSS"
+msgstr "Введите ваш стиль CSS"
 
 #: ../inc/panel/theme-options.php:401
 msgid "CSS Tutorial from W3Schools."
-msgstr "来自W3School的CSS教程"
+msgstr "Инструкция по CSS от W3Schools."
 
 #: ../inc/panel/theme-options.php:403
 msgid "http://www.w3schools.com/css/default.asp"
@@ -794,194 +799,198 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:403
 msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
+msgstr "Инструкция по CSS"
 
 #: ../inc/panel/theme-options.php:403
 msgid "Click Here to Read"
-msgstr "点这去看"
+msgstr "Нажмите для чтения"
 
 #: ../inc/panel/theme-options.php:418
 msgid "Homepage Headline Options"
-msgstr "主页头条设置"
+msgstr "Настройки верхней линии домашней страницы"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Homepage Headline"
-msgstr "主页头条"
+msgstr "Верхняя линия домашней страницы"
 
 #: ../inc/panel/theme-options.php:424 ../inc/panel/theme-options.php:432
 msgid "The appropriate length for Headine is around 10 words."
-msgstr "合适的头条长度，大约是10个词（20个字）。"
+msgstr "Подходящий размер верхней линии домашней страницы: 10 слов."
 
 #: ../inc/panel/theme-options.php:431
 msgid "Homepage Subheadline Headline"
-msgstr "主页头条副标题"
+msgstr "Подверхняя линия домашней страницы"
 
 #: ../inc/panel/theme-options.php:439
 msgid "Disable Homepage Headline?"
-msgstr "禁用主页头条？"
+msgstr "Отключить верхнюю линию домашней страницы?"
 
 #: ../inc/panel/theme-options.php:444
 msgid "Disable Homepage Subheadline?"
-msgstr "禁用主页头条副标题？"
+msgstr "Отключить подверхнюю линию домашней страницы?"
 
 #: ../inc/panel/theme-options.php:455
 msgid "Homepage Featured Content Options"
-msgstr "主页精选内容展示设置"
+msgstr "Опции избранного содержания домашней страницы"
 
 #: ../inc/panel/theme-options.php:460
 msgid "Disable Homepage Featured Content?"
-msgstr "禁用主页精选内容？"
+msgstr "Отключить избранное содержание домашней страницы?"
 
 #: ../inc/panel/theme-options.php:466
 msgid "Headline"
-msgstr "头条"
+msgstr "Верхняя линия"
 
 #: ../inc/panel/theme-options.php:469
 msgid "Leave empty if you want to remove headline"
-msgstr "留空即可禁用头条"
+msgstr "Оставьте верхнюю линию пустой, если вы хотите ее удалить"
 
 #: ../inc/panel/theme-options.php:473
 msgid "Number of Featured Content"
-msgstr "精选内容数量"
+msgstr "Число избранного содержания"
 
 #: ../inc/panel/theme-options.php:481
 #, php-format
 msgid "Featured Content #%s"
-msgstr "Featured Content #%s"
+msgstr "Избранное содержание #%s"
 
 #: ../inc/panel/theme-options.php:490
 msgid "Change Image"
-msgstr "Change Image"
+msgstr "Сменить изображение"
 
 #: ../inc/panel/theme-options.php:490
 msgid "Add Image"
-msgstr "Add Image"
+msgstr "Добавить изображение"
 
 #: ../inc/panel/theme-options.php:494
 msgid "Link URL"
-msgstr "链接地址"
+msgstr "Адрес ссылки"
 
 #: ../inc/panel/theme-options.php:495
 msgid "Add in the Target URL for the content"
-msgstr "给内容添加目标地址"
+msgstr "Добавить в целевой URL для содержания"
 
 #: ../inc/panel/theme-options.php:499
 msgid "Target. Open Link in New Window?"
-msgstr "要在新窗口打开？"
+msgstr "Цель. Открывать ссылку в новом окне?"
 
 #: ../inc/panel/theme-options.php:501
 msgid "Check to open in new window"
-msgstr "选上就在新窗口打开"
+msgstr "Открыть в новом окне"
 
 #: ../inc/panel/theme-options.php:506
 msgid "Title"
-msgstr "题目"
+msgstr "Название"
 
 #: ../inc/panel/theme-options.php:509
 msgid "Leave empty if you want to remove title"
-msgstr "留空即可禁用题目"
+msgstr "Оставить пустым, если вы хотите убрать название"
 
 #: ../inc/panel/theme-options.php:513
 msgid "Content"
-msgstr "内容"
+msgstr "Содержание"
 
 #: ../inc/panel/theme-options.php:514
 msgid "The appropriate length for Content is around 10 words."
-msgstr "内容的长度在10~20个字比较合适"
+msgstr "Подходящий размер для Содержания около 10 слов"
 
 #: ../inc/panel/theme-options.php:528
 msgid "Homepage / Frontpage Settings"
-msgstr "主页设置"
+msgstr "Настройки Домашней / Лицевой страницы"
 
 #: ../inc/panel/theme-options.php:533
 msgid "Enable Latest Posts?"
-msgstr "显示最近的文章?"
+msgstr "Включить послдение записи?"
 
 #: ../inc/panel/theme-options.php:535
 msgid "Check to Enable"
-msgstr "选上即可显示"
+msgstr "Включить"
 
 #: ../inc/panel/theme-options.php:538
 msgid "Add Page instead of Latest Posts"
-msgstr "添加替代最近文章的页面"
+msgstr "Добавить страницу вместо последних записей"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Widgets"
-msgstr "Widgets"
+msgstr "Виджеты"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
-msgstr "用特定的首页替代最近文章"
+msgstr ""
+"Нажмите здесь для установки статичной лицевой страницы, вместо последних "
+"записей"
 
 #: ../inc/panel/theme-options.php:543
 msgid "Homepage posts categories:"
-msgstr "首页文章类别："
+msgstr "Рубрики домашней страницы:"
 
 #: ../inc/panel/theme-options.php:545
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
-msgstr "只有选中的类别文章才会在主页显示。"
+msgstr ""
+"Только записи, которые относятся к рубрикам, выбранным здесь, будут "
+"отображаться на лицевой странице."
 
 #: ../inc/panel/theme-options.php:550
 msgid "--Disabled--"
-msgstr "--已禁用--"
+msgstr "--Отключено--"
 
 #: ../inc/panel/theme-options.php:561
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "你可以按住CTRL键选择多个"
+msgstr "Вы можете выбрать несколкьо рубрик, удерживая клавишу CTRL"
 
 #: ../inc/panel/theme-options.php:574
 msgid "Slider Options"
-msgstr "图片秀选项"
+msgstr "Опции слайдера"
 
 #: ../inc/panel/theme-options.php:578
 msgid "Enable Slider"
-msgstr "图片秀选项"
+msgstr "Включить слайдер"
 
 #: ../inc/panel/theme-options.php:582
 msgid "Homepage / Frontpage"
-msgstr "主页"
+msgstr "Домашняя страницы / Лицевая страница"
 
 #: ../inc/panel/theme-options.php:586
 msgid "Entire Site"
-msgstr "全站"
+msgstr "Весь сайт"
 
 #: ../inc/panel/theme-options.php:590
 msgid "Disable"
-msgstr "禁用"
+msgstr "Отключить"
 
 #: ../inc/panel/theme-options.php:595
 msgid "Number of Slides"
-msgstr "图片秀数量"
+msgstr "Количество слайдов"
 
 #: ../inc/panel/theme-options.php:600
 msgid "Transition Effect:"
-msgstr "变换效果："
+msgstr "Эффект перехода:"
 
 #: ../inc/panel/theme-options.php:604
 msgid "fade"
-msgstr "渐隐"
+msgstr "fade"
 
 #: ../inc/panel/theme-options.php:605
 msgid "wipe"
-msgstr "滑入"
+msgstr "wipe"
 
 #: ../inc/panel/theme-options.php:606
 msgid "scrollUp"
-msgstr "往上滑"
+msgstr "scrollUp"
 
 #: ../inc/panel/theme-options.php:607
 msgid "scrollDown"
-msgstr "往下滑"
+msgstr "scrollDown"
 
 #: ../inc/panel/theme-options.php:608
 msgid "scrollLeft"
-msgstr "往左滑"
+msgstr "scrollLeft"
 
 #: ../inc/panel/theme-options.php:609
 msgid "scrollRight"
-msgstr "往右划"
+msgstr "scrollRight"
 
 #: ../inc/panel/theme-options.php:610
 msgid "blindX"
@@ -1005,40 +1014,42 @@ msgstr "shuffle"
 
 #: ../inc/panel/theme-options.php:619
 msgid "Transition Delay"
-msgstr "渐变停顿时间"
+msgstr "Задержка перехода"
 
 #: ../inc/panel/theme-options.php:622 ../inc/panel/theme-options.php:629
 msgid "second(s)"
-msgstr "秒"
+msgstr "секунд(ы)"
 
 #: ../inc/panel/theme-options.php:626
 msgid "Transition Length"
-msgstr "渐变时长"
+msgstr "Длина перехода"
 
 #: ../inc/panel/theme-options.php:640
 msgid "Featured Post Slider Options"
-msgstr "精选图片秀选项"
+msgstr "Опции слайдера избранных записей"
 
 #: ../inc/panel/theme-options.php:644
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "把精选图片秀从主页去掉？"
+msgstr "Исключить записи в слайдере из записей домашней страницы?"
 
 #: ../inc/panel/theme-options.php:646
 msgid "Check to exclude"
-msgstr "点这里去掉"
+msgstr "Исключить"
 
 #: ../inc/panel/theme-options.php:651
 msgid "Featured Slider Post #"
-msgstr "精选图片秀第"
+msgstr "Избранная запись в слайдере #"
 
 #: ../inc/panel/theme-options.php:653
 msgid "Click Here To Edit"
-msgstr "点这编辑"
+msgstr "Нажмите здесь для редактирования"
 
 #: ../inc/panel/theme-options.php:659
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "你可以把主页显示的文章id号们，作为图片秀来源。"
+msgstr ""
+"Пояснение: Здесь вы можете вставить ID своих записей, которые будут "
+"присутствовать в слайдере на домашней странице"
 
 #: ../inc/panel/theme-options.php:682
 msgid "Google+"
@@ -1138,31 +1149,31 @@ msgstr "Soundcloud"
 
 #: ../inc/panel/theme-options.php:813
 msgid "Header and Footer Codes"
-msgstr "页头页尾代码"
+msgstr "Код верхней части(Header) и нижней части(Footer)"
 
 #: ../inc/panel/theme-options.php:818
 msgid "Code to display on Header"
-msgstr "页头代码"
+msgstr "Код для отображения в верхней части"
 
 #: ../inc/panel/theme-options.php:824
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
 msgstr ""
-"Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
-"This etc. which will load on Header"
+"Пояснение: Сюда вы можете поместить скрипты от Google, Facebook, Twitter, "
+"Add This и пр., которые будут загружаться с верхней частью(Header)"
 
 #: ../inc/panel/theme-options.php:827
 msgid "Code to display on Footer"
-msgstr "页尾代码"
+msgstr "Код для отображения в нижней части(Footer)"
 
 #: ../inc/panel/theme-options.php:834
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
-"which will load on footer"
+"Пояснение: Сюда вы можете поместить скрипты от Google, Facebook, Twitter, "
+"Add This и пр., которые будут загружаться с нижней частью(Footer)"
 
 #: ../inc/panel/theme-options.php:1220
 msgid "Y"
@@ -1174,7 +1185,7 @@ msgstr "Catch Everest"
 
 #: ../inc/template-tags.php:50 ../inc/template-tags.php:103
 msgid "Post navigation"
-msgstr "文章导航"
+msgstr "Навигация по записям"
 
 #: ../inc/template-tags.php:54 ../inc/template-tags.php:107
 msgctxt "Previous post link"
@@ -1184,45 +1195,45 @@ msgstr "&larr;"
 #: ../inc/template-tags.php:55 ../inc/template-tags.php:108
 msgctxt "Next post link"
 msgid "&rarr;"
-msgstr "&rarr;"
+msgstr "&rarr; "
 
 #: ../inc/template-tags.php:60 ../inc/template-tags.php:113
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> 早些的文章"
+msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
 
 #: ../inc/template-tags.php:64 ../inc/template-tags.php:117
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "较新的文章 <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:147
 msgid "Pingback:"
-msgstr "引用通告："
+msgstr "Уведомление:"
 
 #: ../inc/template-tags.php:147
 msgid "(Edit)"
-msgstr "(编辑)"
+msgstr "(Изменить)"
 
 #: ../inc/template-tags.php:162
 msgid "Post author"
-msgstr "文章作者"
+msgstr "Автор записи"
 
 #: ../inc/template-tags.php:168
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s 在 %2$s"
+msgstr "%1$s в %2$s"
 
 #: ../inc/template-tags.php:174
 msgid "Your comment is awaiting moderation."
-msgstr "您的评论正在等待审核。"
+msgstr "Ваш комментарий ожидает подтверждения."
 
 #: ../inc/template-tags.php:183
 msgid "Reply"
-msgstr "评论"
+msgstr "Ответить"
 
 #: ../inc/template-tags.php:212 ../inc/template-tags.php:285
 #, php-format
 msgid "View all posts by %s"
-msgstr "看 %s 发的所有文章"
+msgstr "Показать все записи %s"
 
 #: ../inc/template-tags.php:217
 #, php-format
@@ -1230,13 +1241,13 @@ msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
 "%2$s</span>"
 msgstr ""
-"<span class=\"on-date\">%1$s</span><span class=\"by-author\"> 由 %2$s 发表</"
-"span>"
+"<span class=\"on-date\">Запись опубликована %1$s</span><span class=\"by-"
+"author\"> автором %2$s</span>"
 
 #: ../inc/template-tags.php:239 ../inc/template-tags.php:242
 #: ../inc/template-tags.php:271 ../inc/template-tags.php:274
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../inc/template-tags.php:247
 #, php-format
@@ -1244,13 +1255,13 @@ msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">Tagged %2$s</span>"
 msgstr ""
-"<span class=\"in-category\">发表在 %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">标签： %2$s</span>"
+"<span class=\"in-category\">Запись опубликована %1$s</span><span class=\"sep"
+"\"> | </span><span class=\"in-tag\">с метками %2$s</span>"
 
 #: ../inc/template-tags.php:249
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
-msgstr "<span class=\"in-category\">发表在 %1$s<span>"
+msgstr "<span class=\"in-category\">Запись опубликована %1$s</span>"
 
 #: ../inc/template-tags.php:291
 #, php-format
@@ -1260,10 +1271,10 @@ msgid ""
 "%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
 "span>"
 msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"in-category\">  %1$s "
-"下面</span><span class=\"sep\"> | </span><span class=\"in-tag\">标签： %2$s</"
-"span><span class=\"sep\"> | </span><span class=\"by-author\"> 作者： %4$s</"
-"span>"
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"in-category\"> "
+"в %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">с метками "
+"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> автором "
+"%4$s</span>"
 
 #: ../inc/template-tags.php:293
 #, php-format
@@ -1272,9 +1283,9 @@ msgid ""
 "under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">发表在： %3$s</span><span class=\"in-category\"> "
-"%1$s 下面<span><span class=\"sep\"> | </span><span class=\"by-author\"> 作"
-"者： %4$s</span>."
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"in-category\"> "
+"в %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> автором "
+"%4$s</span>."
 
 #: ../inc/template-tags.php:295
 #, php-format
@@ -1282,130 +1293,113 @@ msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
 "span><span class=\"by-author\"> By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> 作者： %4$s</span>."
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> автором %4$s</span>."
 
 #: ../inc/widgets.php:14
 msgid "Main Sidebar"
-msgstr "主侧边栏"
+msgstr "Основная панель"
 
 #: ../inc/widgets.php:16
 msgid "Shows the Widgets at the side of Content"
-msgstr "把小工具显示在文章边上"
+msgstr "Показывать Виджеты на панели Содержание"
 
 #: ../inc/widgets.php:25
 msgid "Footer Area One"
-msgstr "页面底部1"
+msgstr "Первая нижняя область сайта(Footer)"
 
 #: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
 msgid "An optional widget area for your site footer"
-msgstr "页面底部可选的小工具区域"
+msgstr "Зона виджетов для нижней области сайта(Footer)"
 
 #: ../inc/widgets.php:36
 msgid "Footer Area Two"
-msgstr "页面底部2"
+msgstr "Вторая нижняя область сайта(Footer)"
 
 #: ../inc/widgets.php:47
 msgid "Footer Area Three"
-msgstr "页面底部3"
+msgstr "Третья нижняя область сайта(Footer)"
 
 #: ../inc/widgets.php:76
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+"Используйте этот виджет для добавления социальных иконок из настроек "
+"социальных иконок, в качестве виджета. "
 
 #: ../inc/widgets.php:77
 msgid "1. Catch Everest Social Widget"
-msgstr "1. Catch Everest Social Widget"
+msgstr "1. Catch Everest Социальный виджет"
 
 #: ../inc/widgets.php:90 ../inc/widgets.php:174
 msgid "Title (optional):"
-msgstr "标题（可选）："
+msgstr "Название(Title) (опционально):"
 
 #: ../inc/widgets.php:155
 msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr "Use this widget to add any type of Advertisement as a widget."
+msgstr ""
+"Используйте этот виджет для добавления любой рекламы в качестве виджета."
 
 #: ../inc/widgets.php:156
 msgid "2. Catch Everest: Advertisement"
-msgstr "2. Catch Everest: Advertisement"
+msgstr "2. Catch Everest: Реклама"
 
 #: ../inc/widgets.php:179
 msgid "Advertisement Code:"
-msgstr "Advertisement Code:"
+msgstr "Код рекламы:"
 
 #: ../inc/widgets.php:185
 msgid "Image Url:"
-msgstr "Image Url:"
+msgstr "Ссылка картинки:"
 
 #: ../inc/widgets.php:189
 msgid "Link URL:"
-msgstr "Link URL:"
+msgstr "Адрес ссылки:"
 
 #: ../inc/widgets.php:193
 msgid "Open Link in New Window"
-msgstr "Open Link in New Window"
+msgstr "Открыть ссылку в новом окне"
 
 #: ../inc/widgets.php:196
 msgid "Alt text:"
-msgstr "Alt text:"
+msgstr "Альтернативный текст:"
 
 #: ../inc/widgets.php:259
 msgid "Add Advertisement Code or Image URL"
-msgstr "Add Advertisement Code or Image URL"
+msgstr "Добавить код рекламы или ссылку на картинку"
 
 #: ../no-results.php:14
 msgid "Nothing Found"
-msgstr "啥都没找到"
+msgstr "Ничего не найдено."
 
 #: ../no-results.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "准备好写你的第一篇文章了？<a href=\"%1$s\">那就点这里</a>."
+msgstr ""
+"Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните отсюда</a>."
 
 #: ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "抱歉，你的关键词没找到东西，试试别的关键词。"
+msgstr ""
+"Извините, по вашему запросу ничего не найдено. Попробуйте другие ключевые "
+"слова."
 
 #: ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "你想要的系统没找到，试试搜索吧。"
+msgstr ""
+"Запрошенную информацию найти не удалось. Возможно, будет полезен поиск по "
+"сайту."
 
 #: ../search.php:17
 #, php-format
 msgid "Search Results for: %s"
-msgstr "%s 的搜索结果："
+msgstr "Результаты поиска для: %s"
 
 #: ../searchform.php:16 ../searchform.php:18
 msgid "Search"
-msgstr "搜索"
-
-#~ msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
-#~ msgstr "http://catchthemes.com/support-forum/forum/catch-everest-public/"
-
-#~ msgid "Site Verification"
-#~ msgstr "站点验证"
-
-#~ msgid "Google Site Verification ID"
-#~ msgstr "Google Site Verification ID"
-
-#~ msgid "Enter your Google ID number only"
-#~ msgstr "Enter your Google ID number only"
-
-#~ msgid "Yahoo Site Verification ID"
-#~ msgstr "Yahoo Site Verification ID"
-
-#~ msgid "Enter your Yahoo ID number only"
-#~ msgstr "Enter your Yahoo ID number only"
-
-#~ msgid "Bing Site Verification ID"
-#~ msgstr "Bing Site Verification ID"
-
-#~ msgid "Enter your Bing ID number only"
-#~ msgstr "Enter your Bing ID number only"
+msgstr "Поиск"

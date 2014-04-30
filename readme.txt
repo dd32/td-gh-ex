@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish, Chinese, Spanish, Italian and German(SWITZERLAND). Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND) and Russian. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -14,6 +14,7 @@ Added Translation for Chinese by ZCW (conanla@qq.com)
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@lichtundmusik.ch)
+Added Translation for Russian - Jose Rainbow (youlold@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -53,6 +54,8 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+version 1.5
+* Added Russian translation ru_RU.po and ru_RU.mo
 
 version 1.4.3
 * Added Aria Haspopup for menu in Touch Devices
