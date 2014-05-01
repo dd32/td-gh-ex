@@ -17,7 +17,7 @@
 	line-height: 1;
 	line-height: 1.9em;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.75);
-	z-index: 100; /* Above the menu shadow */ 
+	z-index: 10000; /* Above the menu shadow */ 
 }
 
 #siteorigin-admin-bar .inner {

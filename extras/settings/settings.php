@@ -135,7 +135,7 @@ function siteorigin_settings_enqueue_front_scripts(){
 function siteorigin_settings_adminbar( $bar ) {
 	$screen = get_current_screen();
 	if ( $screen->id == 'appearance_page_theme_settings_page' ) {
-		$bar = (object)array( 'id' => $GLOBALS['siteorigin_settings_name'], 'message' => array( 'extras/settings/message' ) );
+		$bar = (object) array( 'id' => $GLOBALS['siteorigin_settings_name'], 'message' => array( 'extras/settings/message' ) );
 	}
 
 	return $bar;
@@ -243,16 +243,6 @@ function siteorigin_setting_editable($field){
 	}
 }
 
-/**
- * Add a settings field to enable frontend settings editing.
- */
-function siteorigin_setting_editable_option_field(){
-	siteorigin_settings_add_field( 'general', 'hover_edit', 'checkbox', __( 'Display Hover Edit Icon', 'origami' ), array(
-		'description' => __( 'Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'origami' ),
-	) );
-}
-add_action('admin_init', 'siteorigin_setting_editable_option_field', 100);
-
 function siteorigin_setting_editable_option_default($defaults){
 	$defaults['general_hover_edit'] = true;
 	return $defaults;
@@ -311,7 +301,7 @@ function siteorigin_settings_field( $args ) {
 			break;
 
 		case 'color' :
-			if(wp_script_is('wp-color-picker', 'registered')){
+			if( wp_script_is('wp-color-picker', 'registered') ){
 				?><input type="text" value="<?php echo esc_attr( $current ) ?>" class="color-field" name="<?php echo esc_attr( $field_name ) ?>" /><?php
 			}
 			else{
@@ -374,7 +364,7 @@ function siteorigin_settings_field( $args ) {
 			?>
 			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 				<em></em>
-				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'origami' ), ucfirst($theme) ) ?>
+				<?php printf( __( 'Only available in <strong>%s</strong> - <strong class="upgrade">Upgrade Now</strong>', 'origami' ), apply_filters('siteorigin_premium_theme_name', ucfirst($theme) . ' ' . __( 'Premium', 'origami' ) ) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>
 					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 				<?php endif; ?>
@@ -409,6 +399,43 @@ function siteorigin_settings_field( $args ) {
 				<?php endforeach ?>
 			</select>
 			<?php
+			break;
+
+		case 'widget' :
+			if(empty($args['widget_class'])) break;
+
+			if( !class_exists($args['widget_class']) ) {
+				?><div class="so-settings-widget-form"><?php
+				printf( __('This field requires the %s plugin. ', 'influence'), $args['plugin_name']);
+				if( function_exists('siteorigin_plugin_activation_install_url') ) {
+					$install_url = siteorigin_plugin_activation_install_url($args['plugin'], $args['plugin_name']);
+					printf( __('<a href="%s" target="_blank">Install %s</a> now. ', 'influence'), $install_url, $args['plugin_name']);
+				}
+				?></div><?php
+			}
+			else {
+				global $siteorigin_settings_widget_forms;
+				if(is_null($siteorigin_settings_widget_forms)) {
+					$siteorigin_settings_widget_forms = array();
+				}
+
+				// Render the widget form
+				$the_widget = new $args['widget_class']();
+				$the_widget->id = $field_id;
+				$the_widget->number = $field_id;
+
+				ob_start();
+				$the_widget->form( $current );
+				$form = ob_get_clean();
+
+				// Convert the widget field naming into ones that Settings will use
+				$exp = preg_quote( $the_widget->get_field_name('____') );
+				$exp = str_replace('____', '(.*?)', $exp);
+				$form = preg_replace( '/'.$exp.'/', 'siteorigin_settings_widget['.preg_quote($field_id).'][$1]', $form );
+
+				echo '<div class="so-settings-widget-form"><a href="#" class="so-settings-widget-edit" data-is-setup="0" data-form="'.esc_attr($form).'">' . __('Edit', 'origami') . '</a></div>';
+				?><input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" value="<?php echo esc_attr( serialize( $current ) ) ?>" /><?php
+			}
 			break;
 
 		default :
@@ -455,6 +482,20 @@ function siteorigin_settings_validate( $values ) {
 						$attachment = get_post( $values[ $name ] );
 						if(empty($attachment) || $attachment->post_type != 'attachment') $values[ $name ] = '';
 					}
+					break;
+
+				case 'widget' :
+					if(!class_exists($field['args']['widget_class'])) break;
+					else if( !empty( $_POST['siteorigin_settings_widget'] ) && !empty($_POST['siteorigin_settings_widget'][$name]) ) {
+						$widget_values = stripslashes_deep($_POST['siteorigin_settings_widget'][$name]);
+						$the_widget = new $field['args']['widget_class']();
+						$values[ $name ] = $the_widget->update( $widget_values, !empty($current[$name]) ? $current[$name] : array() );
+					}
+					else {
+						$values[ $name ] = unserialize( $values[ $name ] );
+					}
+
+					break;
 			}
 			
 			if ( !isset( $current[ $name ] ) || ( isset( $values[ $name ] ) && isset( $current[ $name ] ) && $values[ $name ] != $current[ $name ] ) ) $changed = true;
@@ -463,6 +504,7 @@ function siteorigin_settings_validate( $values ) {
 			if ( !empty( $field['args']['validator'] ) && method_exists( 'SiteOrigin_Settings_Validator', $field['args']['validator'] ) ) {
 				$values[ $name ] = call_user_func( array( 'SiteOrigin_Settings_Validator', $field['args']['validator'] ), $values[ $name ] );
 			}
+
 		}
 	}
 
@@ -546,7 +588,9 @@ function siteorigin_settings_template_part_names($parts, $part_name){
 }
 
 function siteorigin_settings_media_view_strings($strings, $post){
-	if(!empty($post)) return $strings;
+	if( !empty($post) ) return $strings;
+	if( !is_admin() || !function_exists('get_current_screen') ) return $strings; // Skip this on front end usage
+
 	$screen = get_current_screen();
 	if(empty($screen->id) || $screen->id != 'appearance_page_theme_settings_page') return $strings;
 	

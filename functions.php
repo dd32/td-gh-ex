@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.16' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.17' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
@@ -432,3 +432,17 @@ function origami_header_image(){
 
 }
 endif;
+
+function origami_wp_header(){
+	if( siteorigin_setting('responsive_enabled') ) {
+		?><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0' /><?php
+	}
+	else {
+		?><meta name='viewport' content='width=1100' /><?php
+	}
+
+	// Make sure we don't use compatibility mode
+	?><meta http-equiv="X-UA-Compatible" content="IE=edge" /><?php
+
+}
+add_action('wp_head', 'origami_wp_header');
