@@ -2,7 +2,6 @@
 
 .updated {
 	max-width:764px;
-	margin-bottom:0px !important;
 }
 #optionsframework {
 	position:relative;
@@ -674,3 +673,12 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 #optionsframework-wrap p.btn strong {
 	margin-left: 4em;
 }
+
+#optionsframework-wrap h2.theme-opt {
+	margin-bottom: 10px;
+}
+
+#optionsframework-wrap .metabox-holder {
+	margin-bottom: 10px;
+}
+

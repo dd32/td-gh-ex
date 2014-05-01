@@ -1,13 +1,17 @@
-var tp=jQuery.noConflict();
-	tp(function () {
-  	tp.scrollUp({
-	    scrollName: 'scrollUp', // Element ID
-    	topDistance: '300', // Distance from top before showing element (px)
-    	topSpeed: 300, // Speed back to top (ms)
-		animation: 'slide', // Fade, slide, none
-    	animationInSpeed: 200, // Animation in speed (ms)
-	    animationOutSpeed: 200, // Animation out speed (ms)
-	    scrollText: '', // Text for element
-		activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-  	});
+jQuery(document).ready(function() {
+	var offset = 220;
+	var duration = 500;
+	jQuery(window).scroll(function() {
+		if (jQuery(this).scrollTop() > offset) {
+			jQuery('.back-to-top').fadeIn(duration);
+		} else {
+			jQuery('.back-to-top').fadeOut(duration);
+		}
+	});
+				
+	jQuery('.back-to-top').click(function(event) {
+		event.preventDefault();
+		jQuery('html, body').animate({scrollTop: 0}, duration);
+		return false;
+	})
 });

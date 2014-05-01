@@ -6,59 +6,62 @@
  *
  */
 
-/** 
- * Makes theme available for translation
- * 
- */
-load_theme_textdomain( 'apprise', get_template_directory() . '/languages' );
+function apprise_setup() {
 
-/** 
- * This theme styles the visual editor with editor-style.css to match the theme style.
- */
-add_editor_style();
+	/**
+ 	* Sets up the content width.
+ 	*/
+	global $content_width;
+	if ( ! isset( $content_width ) ) { $content_width = 1200; }
+	
+	/** 
+	 * Makes theme available for translation
+	 * 
+	 */
+	load_theme_textdomain( 'apprise', get_template_directory() . '/languages' );
 
-/** 
- * Default RSS feed links
- */
-add_theme_support('automatic-feed-links');
+	/** 
+ 	* This theme styles the visual editor with editor-style.css to match the theme style.
+ 	*/
+	add_editor_style();
 
-/**
- * Register Navigation
- */
-register_nav_menu('main_navigation', __('Primary Menu', 'apprise') );
+	/** 
+ 	* Default RSS feed links
+	 */
+	add_theme_support('automatic-feed-links');
 
-/** 
- * Support a variety of post formats.
- */
-add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery' ) );
+	/**
+ 	* Register Navigation
+ 	*/
+	register_nav_menu('main_navigation', __('Primary Menu', 'apprise') );
 
-/** 
- * Custom image size for featured images, displayed on "standard" posts.
- */
+	/** 
+ 	* Support a variety of post formats.
+ 	*/
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery' ) );
 
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 2500, 9999 ); // Unlimited height, soft crop
+	/** 
+ 	* Custom image size for featured images, displayed on "standard" posts.
+ 	*/
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 2500, 9999 ); // Unlimited height, soft crop
+	
+	/**
+ 	* Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use).
+ 	*/
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+	
+	/**
+ 	* Sets up theme custom backgrounds
+ 	*/
+	$custombg = array(
+		'default-color' => 'ffffff',
+		);	
+	add_theme_support( 'custom-background', $custombg );
+}
 
-/** 
- * Sets up the content width.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 1200;
-
-/**
- * Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use).
- */
-if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-	wp_enqueue_script( 'comment-reply' );
-
-/**
- * Sets up theme custom backgrounds
- */
-
-$custombg = array(
-	'default-color' => 'ffffff',
-	);	
-add_theme_support( 'custom-background', $custombg );
+add_action( 'after_setup_theme', 'apprise_setup' );
 
 /**
  * Function to change excerpt more string
@@ -93,6 +96,8 @@ function apprise_custom_styling() {
 	$logo_left_margin = of_get_option('logo_left_margin');
 	$logo_bottom_margin = of_get_option('logo_bottom_margin');
 	$logo_right_margin = of_get_option('logo_right_margin');
+	$scrollup_color = of_get_option('scrollup_color');
+	$scrollup_hover_color = of_get_option('scrollup_hover_color');
 
 	/**
 	 * Header Settings 
@@ -117,6 +122,7 @@ function apprise_custom_styling() {
 	$nav_hover_font_color  = of_get_option('nav_hover_font_color');
 	$nav_bg_hover_color = of_get_option('nav_bg_hover_color');
 	$nav_cur_item_color = of_get_option('nav_cur_item_color');
+	$menu_uppercase = of_get_option('menu_uppercase');
 
 	/**
 	 * Footer Settings
@@ -426,7 +432,9 @@ function apprise_custom_styling() {
 
 	if ( $nav_cur_item_color )
 	$output .= '#menu-main-navigation .current-menu-item a { color:' . $nav_cur_item_color . '}' . "\n";
-
+	
+	if ( $menu_uppercase == '1' )
+	$output .= '#site-navigation ul li a {text-transform: uppercase;}' . "\n";
 	/**
 	 * Header Settings 
 	 */	
@@ -491,6 +499,12 @@ function apprise_custom_styling() {
 	
 	if ( $body_font_color )
 	$output .= 'body {color:' . $body_font_color . '}' . "\n";
+	
+	if ( $scrollup_color )
+	$output .= '.back-to-top {color:' . $scrollup_color . '}' . "\n";
+	
+	if ( $scrollup_hover_color )
+	$output .= '.back-to-top i.fa:hover {color:' . $scrollup_hover_color . '}' . "\n";
 			
 	// Output styles
 	if ( isset( $output ) && $output != '' ) {
@@ -500,7 +514,7 @@ function apprise_custom_styling() {
 	}
 }
 
-add_action('wp_enqueue_scripts','apprise_custom_styling');
+add_action('wp_head','apprise_custom_styling');
 
 
 /**
@@ -563,7 +577,6 @@ function apprise_add_script_function() {
 	wp_enqueue_script('tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array( 'jquery' ),'', false);
 	wp_enqueue_script('refineslide', get_template_directory_uri() . '/js/jquery.refineslide.js', array( 'jquery' ),'', false);
 	wp_enqueue_script('imgLiquid-min', get_template_directory_uri() . '/js/imgLiquid-min.js', array( 'jquery' ),'', false);
-	wp_enqueue_script('scrollUp', get_template_directory_uri() . '/js/jquery.scrollUp.min.js', array( 'jquery' ),'', false);
 	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_template_directory_uri() . '/js/scrollup.js', array( 'jquery' ),'', true); }
 }
 
@@ -783,6 +796,17 @@ function apprise_comment( $comment, $args, $depth ) {
 }
 
 /** 
+ * Function to add ScrollUp to the footer.
+*/
+function apprise_add_scrollup() { 
+	if ( of_get_option('enable_scrollup') == 1) { 
+		echo '<a href="#" class="back-to-top"><i class="fa fa-arrow-circle-up"></i></a>'."\n";
+	}
+}
+
+add_action('wp_footer', 'apprise_add_scrollup');
+
+/** 
  * Theme Options sidebar
 */
 add_action( 'optionsframework_before','apprise_options_support' );
@@ -863,15 +887,5 @@ function apprise_gallery_post() {
 		?>		
 		</ul>
 	</div>	
-  	<script type="text/javascript">
-    	var flex=jQuery.noConflict();
-    	flex(window).load(function(){
-      	flex('.flexslider').flexslider({
-        	animation: 'slide',
-        	start: function(slider){
-          	flex('body').removeClass('loading');
-        	}
-      	});
-    	});
-  	</script>
-<?php }
+	<?php wp_enqueue_script('custom-slides', get_template_directory_uri() . '/js/slides.js', array( 'jquery' ),'', true);
+}

@@ -181,6 +181,18 @@ function optionsframework_options() {
 		"id" => "enable_scrollup",
 		"std" => "1",
 		"type" => "checkbox");
+		
+	$options[] = array( "name" => __("ScrollUp Color","apprise"),
+		"desc" => "Pick the color (default is #888888)",
+		"id" => "scrollup_color",
+		"std" => "#888888",
+		"type" => "color");
+		
+	$options[] = array( "name" => __("ScrollUp Hover Color","apprise"),
+		"desc" => "Pick the color (default is #999999)",
+		"id" => "scrollup_hover_color",
+		"std" => "#999999",
+		"type" => "color");
 
 	// Logo Settings
 	$options[] = array(
@@ -318,6 +330,12 @@ function optionsframework_options() {
 		"class" => "mini",
 		"type" => "text");
 
+	$options[] = array( "name" 	=> __("Uppercase Menu","apprise"),
+		"desc" => "",
+		"id" => "menu_uppercase",
+		"std" => "0",
+		"type" => "checkbox");
+		
 	$options[] = array( "name" => __("Main Navigation Menu Font Color","apprise"),
 		"desc" => "Pick a main navigation menu font color (default is #ffffff)",
 		"id" => "nav_font_color",

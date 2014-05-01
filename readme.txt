@@ -3,7 +3,7 @@ Theme URI: http://vpthemes.com/apprise/
 Author: Vitaly Pinchev	
 Author URI: http://vpthemes.com
 Description: Apprise is modern WordPress theme that is packaged with a lot of nice features such as: advanced admin panel, responsive design, unique featured posts layout for the home or featured image slider, customizable home page About Us and Content Boxes sections, custom logo and favicon, Google Fonts, unlimited colors for the menu, widgets, header and footer, localization support, from full screen layout to 1 or 2 sidebars to the left or right, 4 footer widget columns, Scroll to top feature, social links, support for Contact Form 7, 8 post formats and more.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,7 +43,6 @@ The exceptions to this license are as follows:
 * The script superfish.js is dual licensed under MIT and GPL (Superfish v1.5.8 - jQuery menu widget. Source: http://users.tpg.com.au/j_birch/plugins/superfish/)
 * The script supersubs.js is dual licensed under MIT and GPL (Supersubs v0.2b - jQuery plugin. Source: http://users.tpg.com.au/j_birch/plugins/superfish/)
 * The script tinynav.min.js is licensed under MIT license (Responsive navigation plugin. Source: http://tinynav.viljamis.com)
-* The script jquery.scrollUp.min.js is licensed under MIT license (scrollup v2.1.0. Source: https://github.com/markgoodyear/scrollup)
 
 * Font Awesome License
 
@@ -121,6 +120,9 @@ You may remove any copyright references (unless required by third party componen
 * Add option to enable / disable featured image to appear as part of the post.
 * Captions of the image slider are clickable.
 * Add CSS styles to navigation menu
- 
 
-
+== 1.0.6 ==
+* Updated Options Framework to version 1.7.2
+* Add CSS style to social links icons.
+* Updated ScrollUp functionality.
+* Add option to uppercase navigation menu.

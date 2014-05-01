@@ -1,0 +1,1034 @@
+# This file is distrubuted under the GPL-2.0+
+msgid ""
+msgstr ""
+"Project-Id-Version: Apprise v1.0.6\n"
+"POT-Creation-Date: 2014-04-27 10:49-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vitaly Pinchev <info@vpthemes.com>\n"
+"Language-Team: Vitaly Pinchev <info@vpthemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:11
+msgid "Error 404 - Page not found!"
+msgstr ""
+
+#: 404.php:12
+msgid "Sorry! It seems that the page you are looking for is not here."
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:85
+#: admin/includes/class-options-framework-admin.php:86
+#: admin/includes/class-options-framework-admin.php:319
+msgid "Theme Options"
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:185
+msgid "Save Options"
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:186
+msgid "Restore Defaults"
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:186
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:217
+msgid "Default options restored."
+msgstr ""
+
+#: admin/includes/class-options-framework-admin.php:271
+msgid "Options saved."
+msgstr ""
+
+#: admin/includes/class-options-media-uploader.php:63
+msgid "No file chosen"
+msgstr ""
+
+#: admin/includes/class-options-media-uploader.php:66
+#: admin/includes/class-options-media-uploader.php:119
+msgid "Upload"
+msgstr ""
+
+#: admin/includes/class-options-media-uploader.php:68
+#: admin/includes/class-options-media-uploader.php:120
+#: functions/meta-box-class.php:420 functions/meta-box-class.php:459
+msgid "Remove"
+msgstr ""
+
+#: admin/includes/class-options-media-uploader.php:71
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: admin/includes/class-options-media-uploader.php:95
+msgid "View File"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:241
+msgid "No Repeat"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:242
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:243
+msgid "Repeat Vertically"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:244
+msgid "Repeat All"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:257
+msgid "Top Left"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:258
+msgid "Top Center"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:259
+msgid "Top Right"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:260
+msgid "Middle Left"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:261
+msgid "Middle Center"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:262
+msgid "Middle Right"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:263
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:264
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:265
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:278
+msgid "Scroll Normally"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:279
+msgid "Fixed in Place"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:353
+msgid "Normal"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:354
+msgid "Italic"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:355
+msgid "Bold"
+msgstr ""
+
+#: admin/includes/class-options-sanitization.php:356
+msgid "Bold Italic"
+msgstr ""
+
+#: breadcrumbs.php:12 functions/apprise-functions.php:655
+msgid "Home"
+msgstr ""
+
+#: breadcrumbs.php:38
+msgid "Tag: "
+msgstr ""
+
+#: breadcrumbs.php:40 breadcrumbs.php:41 breadcrumbs.php:42
+msgid "Archive for: "
+msgstr ""
+
+#: breadcrumbs.php:43
+msgid "Author: "
+msgstr ""
+
+#: breadcrumbs.php:44
+msgid "Blog Archives "
+msgstr ""
+
+#: breadcrumbs.php:45
+msgid "Search Results "
+msgstr ""
+
+#: comments.php:27
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:34 comments.php:52
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:35 comments.php:53
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:36 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:16
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-single.php:49
+msgid "Tags:"
+msgstr ""
+
+#: content-single.php:51 page-betweensidebars.php:30 page-fullwidth.php:30
+#: page-sidebarleft.php:30 page-sidebarright.php:30
+#: page-twosidebarsleft.php:30 page-twosidebarsright.php:30 page.php:34
+msgid "Pages:"
+msgstr ""
+
+#: featuredpost-meta.php:7 post-info.php:27 post-meta.php:10
+#: post-sidebar.php:37
+msgid "No Comments"
+msgstr ""
+
+#: featuredpost-meta.php:7 post-info.php:27 post-meta.php:10
+#: post-sidebar.php:37
+msgid "1 Comment"
+msgstr ""
+
+#: featuredpost-meta.php:7 post-info.php:27 post-meta.php:10
+#: post-sidebar.php:37
+msgid "% Comments"
+msgstr ""
+
+#: featuredpost-meta.php:8 post-meta.php:11
+msgid "More"
+msgstr ""
+
+#: functions/apprise-functions.php:36
+msgid "Primary Menu"
+msgstr ""
+
+#: functions/apprise-functions.php:535
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions/apprise-functions.php:584 options.php:29
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions/apprise-functions.php:592 options.php:37
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: functions/apprise-functions.php:602
+msgid "Footer Widget 1"
+msgstr ""
+
+#: functions/apprise-functions.php:611
+msgid "Footer Widget 2"
+msgstr ""
+
+#: functions/apprise-functions.php:620
+msgid "Footer Widget 3"
+msgstr ""
+
+#: functions/apprise-functions.php:629
+msgid "Footer Widget 4"
+msgstr ""
+
+#: functions/apprise-functions.php:648
+msgid "Select a Menu to appear here in Dashboard->Appearance->Menus "
+msgstr ""
+
+#: functions/apprise-functions.php:691
+msgid "Post navigation"
+msgstr ""
+
+#: functions/apprise-functions.php:694
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: functions/apprise-functions.php:695
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions/apprise-functions.php:724
+msgid "Page "
+msgstr ""
+
+#: functions/apprise-functions.php:724
+msgid " of "
+msgstr ""
+
+#: functions/apprise-functions.php:752
+msgid "Pingback:"
+msgstr ""
+
+#: functions/apprise-functions.php:752 functions/apprise-functions.php:768
+msgid "Edit"
+msgstr ""
+
+#: functions/apprise-functions.php:767
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions/apprise-functions.php:771
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions/apprise-functions.php:780
+msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#: functions/apprise-functions.php:813
+msgid "Theme Support"
+msgstr ""
+
+#: functions/apprise-functions.php:813
+msgid "View Demo"
+msgstr ""
+
+#: functions/apprise-functions.php:813
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: functions/meta-box-class.php:432
+msgid "Add"
+msgstr ""
+
+#: functions/meta-box-class.php:789
+msgid "Select a color"
+msgstr ""
+
+#: functions/meta-box-class.php:877
+msgid "Select ..."
+msgstr ""
+
+#: functions/meta-box-class.php:1824 functions/meta-box-class.php:1832
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr ""
+
+#: options.php:28 options.php:36
+msgid "Disable"
+msgstr ""
+
+#: options.php:30
+msgid "Below Content"
+msgstr ""
+
+#: options.php:38
+msgid "Above Content"
+msgstr ""
+
+#: options.php:146
+msgid "General"
+msgstr ""
+
+#: options.php:149
+msgid "Enable Custom Favicon"
+msgstr ""
+
+#: options.php:155
+msgid "Custom Favicon"
+msgstr ""
+
+#: options.php:161
+msgid "Comments"
+msgstr ""
+
+#: options.php:167
+msgid "Breadcrumbs"
+msgstr ""
+
+#: options.php:173
+msgid "Responsive Design"
+msgstr ""
+
+#: options.php:179
+msgid "ScrollUp"
+msgstr ""
+
+#: options.php:185
+msgid "ScrollUp Color"
+msgstr ""
+
+#: options.php:191
+msgid "ScrollUp Hover Color"
+msgstr ""
+
+#: options.php:199
+msgid "Logo"
+msgstr ""
+
+#: options.php:202
+msgid "Logo Width (px)"
+msgstr ""
+
+#: options.php:209
+msgid "Logo Height (px)"
+msgstr ""
+
+#: options.php:216
+msgid "Logo Top Margin (px)"
+msgstr ""
+
+#: options.php:223
+msgid "Logo Left Margin (px)"
+msgstr ""
+
+#: options.php:230
+msgid "Logo Bottom Margin (px)"
+msgstr ""
+
+#: options.php:237
+msgid "Logo Right Margin (px)"
+msgstr ""
+
+#: options.php:244
+msgid "Image Logo"
+msgstr ""
+
+#: options.php:250
+msgid "Logo ALT Text"
+msgstr ""
+
+#: options.php:256
+msgid "Logo Uppercase"
+msgstr ""
+
+#: options.php:262
+msgid "Select Logo Font Family"
+msgstr ""
+
+#: options.php:269
+msgid "Logo Font Size (px)"
+msgstr ""
+
+#: options.php:276
+msgid "Logo Font Weight"
+msgstr ""
+
+#: options.php:283
+msgid "Logo Color"
+msgstr ""
+
+#: options.php:289
+msgid "Enable Tagline Underneath Logo"
+msgstr ""
+
+#: options.php:295
+msgid "Tagline Font Size (px)"
+msgstr ""
+
+#: options.php:302
+msgid "Tagline Color"
+msgstr ""
+
+#: options.php:308
+msgid "Tagline Uppercase"
+msgstr ""
+
+#: options.php:316
+msgid "Navigation"
+msgstr ""
+
+#: options.php:319
+msgid "Select Main Navigation Menu Font Family"
+msgstr ""
+
+#: options.php:326
+msgid "Main Navigation Menu Font Size (px)"
+msgstr ""
+
+#: options.php:333
+msgid "Uppercase Menu"
+msgstr ""
+
+#: options.php:339
+msgid "Main Navigation Menu Font Color"
+msgstr ""
+
+#: options.php:345
+msgid "Main Navigation Menu Background Color"
+msgstr ""
+
+#: options.php:351
+msgid "Main Navigation Menu Hover Font Color"
+msgstr ""
+
+#: options.php:357
+msgid "Main Navigation Menu Background Hover Color"
+msgstr ""
+
+#: options.php:363
+msgid "Main Navigation Selected Menu Color"
+msgstr ""
+
+#: options.php:371
+msgid "Typography"
+msgstr ""
+
+#: options.php:374
+msgid "Select Body Font Family"
+msgstr ""
+
+#: options.php:381
+msgid "Body Font Size (px)"
+msgstr ""
+
+#: options.php:388
+msgid "Body Font Color"
+msgstr ""
+
+#: options.php:396
+msgid "Header"
+msgstr ""
+
+#: options.php:399
+msgid "Header Social Links"
+msgstr ""
+
+#: options.php:405
+msgid "Header Social Links Color"
+msgstr ""
+
+#: options.php:412
+msgid "Shopping Cart"
+msgstr ""
+
+#: options.php:421
+msgid "Home Page"
+msgstr ""
+
+#: options.php:424
+msgid "Enable Featured Posts on Home Page"
+msgstr ""
+
+#: options.php:430
+msgid "Display Featured Posts as Image Slider"
+msgstr ""
+
+#: options.php:436
+msgid "Select Featured Posts Category"
+msgstr ""
+
+#: options.php:443
+msgid "Display About Section on Home Page"
+msgstr ""
+
+#: options.php:449
+msgid "About Section Header Text"
+msgstr ""
+
+#: options.php:455
+msgid "About Section Text"
+msgstr ""
+
+#: options.php:461
+msgid "Display Content Boxes Section on Home Page"
+msgstr ""
+
+#: options.php:467
+msgid "Display Blog Posts on Home Page"
+msgstr ""
+
+#: options.php:475
+msgid "Image Slider"
+msgstr ""
+
+#: options.php:478
+msgid "Slider Animation Effect:"
+msgstr ""
+
+#: options.php:485
+msgid "Slideshow Speed"
+msgstr ""
+
+#: options.php:492
+msgid "Animation Speed"
+msgstr ""
+
+#: options.php:499
+msgid "Number of Slides to Display"
+msgstr ""
+
+#: options.php:506
+msgid "Slider Captions"
+msgstr ""
+
+#: options.php:514
+msgid "Footer"
+msgstr ""
+
+#: options.php:517
+msgid "Footer Background Color"
+msgstr ""
+
+#: options.php:523
+msgid "Copyright Section Background Color"
+msgstr ""
+
+#: options.php:529
+msgid "Footer Widget Title Color"
+msgstr ""
+
+#: options.php:535
+msgid "Footer Widget Title Border Color"
+msgstr ""
+
+#: options.php:541
+msgid "Footer Widget Text Color"
+msgstr ""
+
+#: options.php:547
+msgid "Footer Widget Text Border Color"
+msgstr ""
+
+#: options.php:553
+msgid "Footer Widgets"
+msgstr ""
+
+#: options.php:559
+msgid "Copyright Text"
+msgstr ""
+
+#: options.php:567
+msgid "Layout"
+msgstr ""
+
+#: options.php:587
+msgid "Blog Options"
+msgstr ""
+
+#: options.php:590
+msgid "Excerpt or Full Blog Content"
+msgstr ""
+
+#: options.php:597
+msgid "Blog Excerpt Length"
+msgstr ""
+
+#: options.php:604
+msgid "Use Simple Pagination"
+msgstr ""
+
+#: options.php:611
+msgid "Post Navigation Links"
+msgstr ""
+
+#: options.php:619
+msgid "Post Info"
+msgstr ""
+
+#: options.php:626
+msgid "Display Featured Image Inside the Post"
+msgstr ""
+
+#: options.php:633
+msgid "Post Info Widget Settings:"
+msgstr ""
+
+#: options.php:637
+msgid "Post Info Widget Background Color"
+msgstr ""
+
+#: options.php:643
+msgid "Post Info Widget Font Color"
+msgstr ""
+
+#: options.php:649
+msgid "Post Info Widget Title Color"
+msgstr ""
+
+#: options.php:655
+msgid "Post Info Header"
+msgstr ""
+
+#: options.php:663
+msgid "Content Boxes"
+msgstr ""
+
+#: options.php:666
+msgid "First Column Header"
+msgstr ""
+
+#: options.php:672
+msgid "First Column Text"
+msgstr ""
+
+#: options.php:678
+msgid "First Column Image"
+msgstr ""
+
+#: options.php:679 options.php:697 options.php:715
+#, php-format
+msgid ""
+"Enter Font Awesome icon name. For icon name refer to: <a href=\"%1$s\" "
+"target=\"_blank\">Font Awesome Website</a>"
+msgstr ""
+
+#: options.php:684
+msgid "Second Column Header"
+msgstr ""
+
+#: options.php:690
+msgid "Second Column Text"
+msgstr ""
+
+#: options.php:696
+msgid "Second Column Image"
+msgstr ""
+
+#: options.php:702
+msgid "Third Column Header"
+msgstr ""
+
+#: options.php:708
+msgid "Third Column Text"
+msgstr ""
+
+#: options.php:714
+msgid "Third Column Image"
+msgstr ""
+
+#: options.php:722
+msgid "Widgets"
+msgstr ""
+
+#: options.php:726
+msgid "Archives Widget Settings:"
+msgstr ""
+
+#: options.php:730
+msgid "Archives Widget Background Color"
+msgstr ""
+
+#: options.php:736
+msgid "Archives Widget Font Color"
+msgstr ""
+
+#: options.php:742
+msgid "Archives Widget Title Color"
+msgstr ""
+
+#: options.php:749
+msgid "Categories Widget Settings:"
+msgstr ""
+
+#: options.php:753
+msgid "Categories Widget Background Color"
+msgstr ""
+
+#: options.php:759
+msgid "Categories Widget Font Color"
+msgstr ""
+
+#: options.php:765
+msgid "Categories Widget Title Color"
+msgstr ""
+
+#: options.php:772
+msgid "Calendar Widget Settings:"
+msgstr ""
+
+#: options.php:776
+msgid "Calendar Widget Background Color"
+msgstr ""
+
+#: options.php:782
+msgid "Calendar Widget Font Color"
+msgstr ""
+
+#: options.php:788
+msgid "Calendar Widget Title Color"
+msgstr ""
+
+#: options.php:795
+msgid "Custom Menu Widget Settings:"
+msgstr ""
+
+#: options.php:799
+msgid "Custom Menu Widget Background Color"
+msgstr ""
+
+#: options.php:805
+msgid "Custom Menu Widget Font Color"
+msgstr ""
+
+#: options.php:811
+msgid "Custom Menu Widget Title Color"
+msgstr ""
+
+#: options.php:818
+msgid "Links Widget Settings:"
+msgstr ""
+
+#: options.php:822
+msgid "Links Widget Background Color"
+msgstr ""
+
+#: options.php:828
+msgid "Links Widget Font Color"
+msgstr ""
+
+#: options.php:834
+msgid "Links Widget Title Color"
+msgstr ""
+
+#: options.php:841
+msgid "Meta Widget Settings:"
+msgstr ""
+
+#: options.php:845
+msgid "Meta Widget Background Color"
+msgstr ""
+
+#: options.php:851
+msgid "Meta Widget Font Color"
+msgstr ""
+
+#: options.php:857
+msgid "Meta Widget Title Color"
+msgstr ""
+
+#: options.php:864
+msgid "Pages Widget Settings:"
+msgstr ""
+
+#: options.php:868
+msgid "Pages Widget Background Color"
+msgstr ""
+
+#: options.php:874
+msgid "Pages Widget Font Color"
+msgstr ""
+
+#: options.php:880
+msgid "Pages Widget Title Color"
+msgstr ""
+
+#: options.php:887
+msgid "Recent Comments Widget Settings:"
+msgstr ""
+
+#: options.php:891
+msgid "Recent Comments Widget Background Color"
+msgstr ""
+
+#: options.php:897
+msgid "Recent Comments Widget Font Color"
+msgstr ""
+
+#: options.php:903
+msgid "Recent Comments Widget Title Color"
+msgstr ""
+
+#: options.php:910
+msgid "Recent Posts Widget Settings:"
+msgstr ""
+
+#: options.php:914
+msgid "Recent Posts Widget Background Color"
+msgstr ""
+
+#: options.php:920
+msgid "Recent Posts Widget Font Color"
+msgstr ""
+
+#: options.php:926
+msgid "Recent Posts Widget Title Color"
+msgstr ""
+
+#: options.php:933
+msgid "RSS Widget Settings:"
+msgstr ""
+
+#: options.php:937
+msgid "RSS Widget Background Color"
+msgstr ""
+
+#: options.php:943
+msgid "RSS Widget Font Color"
+msgstr ""
+
+#: options.php:949
+msgid "RSS Widget Title Color"
+msgstr ""
+
+#: options.php:956
+msgid "Search Widget Settings:"
+msgstr ""
+
+#: options.php:960
+msgid "Search Widget Background Color"
+msgstr ""
+
+#: options.php:966
+msgid "Search Widget Font Color"
+msgstr ""
+
+#: options.php:972
+msgid "Search Widget Title Color"
+msgstr ""
+
+#: options.php:979
+msgid "Tag Cloud Widget Settings:"
+msgstr ""
+
+#: options.php:983
+msgid "Tag Cloud Widget Background Color"
+msgstr ""
+
+#: options.php:989
+msgid "Tag Cloud Widget Font Color"
+msgstr ""
+
+#: options.php:995
+msgid "Tag Cloud Widget Title Color"
+msgstr ""
+
+#: options.php:1002
+msgid "Text Widget Settings:"
+msgstr ""
+
+#: options.php:1006
+msgid "Text Widget Background Color"
+msgstr ""
+
+#: options.php:1012
+msgid "Text Widget Font Color"
+msgstr ""
+
+#: options.php:1018
+msgid "Text Widget Title Color"
+msgstr ""
+
+#: options.php:1025
+msgid "Other Widgets Settings:"
+msgstr ""
+
+#: options.php:1029
+msgid "Other Widgets Background Color"
+msgstr ""
+
+#: options.php:1035
+msgid "Other Widgets Font Color"
+msgstr ""
+
+#: options.php:1041
+msgid "Other Widgets Title Color"
+msgstr ""
+
+#: options.php:1049
+msgid "Social Links"
+msgstr ""
+
+#: post-info.php:9 post-sidebar.php:19
+msgid "Image"
+msgstr ""
+
+#: post-info.php:11 post-sidebar.php:21
+msgid "Gallery"
+msgstr ""
+
+#: post-info.php:13 post-sidebar.php:23
+msgid "Video"
+msgstr ""
+
+#: post-info.php:15 post-sidebar.php:25
+msgid "Quote"
+msgstr ""
+
+#: post-info.php:17 post-sidebar.php:27
+msgid "Link"
+msgstr ""
+
+#: post-info.php:19 post-sidebar.php:29
+msgid "Aside"
+msgstr ""
+
+#: post-info.php:21 post-sidebar.php:31
+msgid "Audio"
+msgstr ""
+
+#: post-info.php:23 post-sidebar.php:33
+msgid "Standard"
+msgstr ""
+
+#: post-nav.php:8
+msgid "Next"
+msgstr ""
+
+#: post-nav.php:9
+msgid "Previous"
+msgstr ""
+
+#: post-sidebar.php:36
+msgid " ago"
+msgstr ""
+
+#: shopping-cart.php:9
+msgid "View your shopping cart"
+msgstr ""
+
+#: shopping-cart.php:9
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: shopping-cart.php:14
+msgid "My Account"
+msgstr ""
+
+#: shopping-cart.php:17
+msgid "Login / Register"
+msgstr ""
+
+#: sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:18
+msgid "Meta"
+msgstr ""
