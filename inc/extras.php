@@ -5,6 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 /**

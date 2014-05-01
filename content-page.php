@@ -3,6 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 ?>
 

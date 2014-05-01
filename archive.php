@@ -5,6 +5,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 get_header(); ?>
@@ -18,11 +19,13 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
+							_e( 'Category: ', 'apoc' );
 							single_cat_title();
 
 						elseif ( is_tag() ) :
+							_e( 'Tag: ', 'apoc' ); 
 							single_tag_title();
-
+							
 						elseif ( is_author() ) :
 							printf( __( 'Author: %s', 'apoc' ), '<span class="vcard">' . get_the_author() . '</span>' );
 

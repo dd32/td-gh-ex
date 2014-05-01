@@ -3,6 +3,7 @@
  * A Piece Of Cake Theme Customizer
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 /**

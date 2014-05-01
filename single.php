@@ -3,6 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 get_header(); ?>

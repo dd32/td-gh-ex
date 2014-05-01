@@ -5,6 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 ?>
 <!DOCTYPE html>
@@ -15,10 +16,6 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<link rel='stylesheet' id='apoc-style-css'  href="http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" type='text/css' media='all' />
-
-
 <?php wp_head(); ?>
 </head>
 
@@ -29,14 +26,20 @@
 
 		<?php if ( display_header_text() ) : ?>
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<h1 class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</h1>
+				<h2 class="site-description">
+					<?php bloginfo( 'description' ); ?>
+				</h2>
 			</div>
 		<?php endif; ?>
 		
 		<?php if ( get_header_image() ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="Header Image" >
 			</a>
 		<?php endif; // End header image check ?>
 

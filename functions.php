@@ -3,14 +3,8 @@
  * A Piece Of Cake functions and definitions
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( 'apoc_setup' ) ) :
 /**
@@ -59,10 +53,16 @@ function apoc_setup() {
 		'comment-list',
 		'search-form',
 		'comment-form',
-		'gallery',
 	) );
 	
 	add_theme_support( 'post-thumbnails' );
+	
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* pixels */
+	}
 }
 endif; // apoc_setup
 
@@ -74,7 +74,7 @@ add_action( 'after_setup_theme', 'apoc_setup' );
 function apoc_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'apoc' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'apoc-main-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -88,6 +88,7 @@ function apoc_widgets_init() {
 	
 	register_widget( 'Apoc_Social_Widget' );
 }
+
 add_action( 'widgets_init', 'apoc_widgets_init' );
 
 /**
@@ -109,11 +110,31 @@ function apoc_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'apoc_scripts' );
 
+/**
+ * Enqueue Google Fonts
+ */
+function apoc_google_fonts() {
+	if ( ! is_admin() ) {
+		$protocol = is_ssl() ? 'https' : 'http';
+		
+		wp_register_style( 'apoc-comfortaa', $protocol .'://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic-ext', array(), false, 'all' );
+		
+		wp_enqueue_style( 'apoc-comfortaa' );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'apoc_google_fonts' );
+
+/**
+ * Add Editor Styles
+ */
 function apoc_add_editor_styles() {
 	add_editor_style( 'custom-editor-style.css' );
 }
+
 add_action( 'init', 'apoc_add_editor_styles' );
 
 /**

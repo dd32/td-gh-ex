@@ -9,6 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 get_header(); ?>

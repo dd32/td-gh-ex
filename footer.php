@@ -5,6 +5,7 @@
  * Contains the closing of the #content div and all content after
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 ?>
 
@@ -20,6 +21,5 @@
 </div><!-- #wrapper -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

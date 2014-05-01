@@ -4,6 +4,7 @@
  * The template for displaying full content pages.
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 get_header(); ?>

@@ -503,6 +503,10 @@ a:active {
 	clear: both;
 }
 
+.clear {
+	clear:both;
+}
+
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
@@ -703,7 +707,10 @@ abbr[title], abbr[data-original-title] {
 	color: #68cef0;
 	font-size: 40px;
 	line-height: 1.846153846;
+	font-family: 'Comfortaa', cursive;
+	font-weight: bold;
 }
+
 
 .site-description {
 	margin-bottom: 5px;
@@ -712,11 +719,12 @@ abbr[title], abbr[data-original-title] {
 
 h1.page-title,
 h1.entry-title {
-	font: normal bold 24px Verdana, Geneva, sans-serif;
 	margin: .75em 0 0;
 	color: #68cef0;
+	font-family: 'Comfortaa', cursive;
+	font-size: 24px;
+	font-weight: bold;
 }
-
 
 #wrapper {
 	width: 1350px;
@@ -727,6 +735,10 @@ h1.entry-title {
 	word-wrap: break-word;
 }
 
+.apoc-featured-image {
+	padding: 10px;
+}
+
 /* Header */
 #masthead {
 
@@ -735,7 +747,7 @@ h1.entry-title {
 /* Main Menu */
 #site-navigation {
 	background: #68cef0 none repeat-x scroll 0 -800px;
-	background: #68cef0 none repeat-x scroll 0 -800px
+	background: #68cef0 none repeat-x scroll 0 -800px;
 	border-bottom: 1px solid #ffffff;
 }
 
@@ -757,7 +769,7 @@ h1.entry-title {
 	color: #000;
 	font-family: 'Comfortaa', cursive;
 	font-size: 15px;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 #site-navigation .current-menu-item {
@@ -804,7 +816,9 @@ h1.entry-title {
 h1.widget-title {
 	margin: 0 0 1em 0;
 	color: #000;
-	font: normal bold 14px Verdana, Geneva, sans-serif;
+	font-family: 'Comfortaa', cursive;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 #secondary a {
@@ -845,7 +859,7 @@ h1.widget-title {
 
 /* Blog Elements */
 .entry-meta {
-	padding: 0.4em;content
+	padding: 0.4em;
 	background-color: transparent;
 	color: #000000;
 	letter-spacing: 3px;
@@ -857,6 +871,174 @@ h1.widget-title {
 	border-bottom: 1px solid #68cef0;
 }
 
+/* WordPress Core */
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	max-width: 96%;
+	padding: 5px 3px 10px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid #f0f0f0;
+}
+
+.wp-caption.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+	width: auto;
+	max-width: 98.5%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	margin: 0;
+	padding: 0 4px 5px;
+	font-size: 11px;
+	line-height: 17px;
+}
+
+img.wp-smiley {
+	vertical-align: middle;
+}
+
+/* Gallery */
+.gallery {
+	float: left;
+    width: 100%;
+    min-width: 100%;
+	margin: 0 auto 18px;
+    text-align: center;
+}
+
+.gallery .gallery-item {
+	float: left;
+	width: 200px;
+	margin-top: 0;
+	text-align: center;
+}
+
+.gallery img {
+	border: 1px solid #ddd;
+}
+
+.gallery .gallery-caption {
+	margin: 0 0 12px;
+	font-size: 12px;
+}
+
+.gallery dl {
+	margin: 0;
+}
+
+
+
+.attachment-gallery img {
+	display: block;
+	width: auto;
+	max-width: 96%;
+	height: auto;
+	margin: 15px auto;
+	padding:5px;
+	background: #fff;
+	border: 1px solid #f0f0f0;
+}
+
+.gallery-meta {}
+
+.gallery-meta a {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.gallery-meta .full-size, 
+.gallery-meta .aperture, 
+.gallery-meta .focal-length, 
+.gallery-meta .iso, 
+.gallery-meta .shutter, 
+.gallery-meta .camera {
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 3px 12px;
+}
+
+.gallery .gallery-item {
+    float: left;
+    margin: 0px auto;
+    text-align: center;
+}
+.gallery img {
+    border: 1px solid #cfcfcf;
+}
+
+/* Gallery Columns Style */
+.gallery-columns-1 .gallery-item {
+    width: 638px;
+}
+
+.gallery-columns-2 .gallery-item {
+    width: 400px;
+}
+
+.gallery-columns-3 .gallery-item {
+    width: 300px;
+}
+
+.gallery-columns-4 .gallery-item {
+    width: 220px;
+}
+
+.gallery-columns-5 .gallery-item {
+    width: 180px;
+}
+
+.gallery-columns-6 .gallery-item {
+    width: 150px;
+}
+
+.gallery-columns-7 .gallery-item {
+    width: 130px;
+}
+
+.gallery-columns-8 .gallery-item {
+    width: 110px;
+}
+
+.gallery-columns-9 .gallery-item {
+    width: 100px;
+}
 
 /* 
 ===== Responsive Media Queries =====

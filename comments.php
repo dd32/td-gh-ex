@@ -6,6 +6,7 @@
  * and the comment form.
  *
  * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 
 /*

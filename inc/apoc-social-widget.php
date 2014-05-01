@@ -1,6 +1,8 @@
 <?php
 /**
  * Adds Apoc_Social_Widget widget.
+ * @package A Piece Of Cake
+ * @since available since Release 1.0
  */
 class Apoc_Social_Widget extends WP_Widget {
 

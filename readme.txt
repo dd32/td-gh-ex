@@ -1,7 +1,7 @@
 Thank you for downloading A Piece Of Cake Theme.
 
-A Piece Of Cake is simple and clean WordPress theme, based on Underscores (_s) - a starter theme. The theme firstly was created for a friend who wanted 
-to migrate from another blogging platform to WordPress, so the look and the functionallity is are intended to meet her needs.
+A Piece Of Cake is simple and clean WordPress theme, based on Underscores (_s) - a starter theme. At first the theme was created for a friend who wanted 
+to migrate from another blogging platform to WordPress, so the look and the functionality is are intended to meet her needs.
 ----
 Please note that A Piece Of Cake is a Parent Theme, which means that if you are making any changes do that via Child Theme.
 
