@@ -1,5 +1,9 @@
 *** Revision History ***
 ===========================
+
+version 1.0.9		2014-05-01
+* Fixed broken image on content-page and content-single
+
 version 1.0.8		2014-02-18
 * Added configurable search box in nav menu
 * Fixed blurb button configuration

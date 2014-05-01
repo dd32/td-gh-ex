@@ -12,7 +12,7 @@
 <?php 
 	$aadya_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 ?>
-<?php if(!empty($kce_feat_image)):?>
+<?php if(!empty($aadya_feat_image)):?>
 <div class="single-post-feat-image">	
 	<img src="<?php echo $aadya_feat_image;?>" class="img-responsive"/>
 </div>	
