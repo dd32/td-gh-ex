@@ -3,7 +3,7 @@ Theme URI: http://vpthemes.com/apprise/
 Author: Vitaly Pinchev	
 Author URI: http://vpthemes.com
 Description: Apprise is modern WordPress theme that is packaged with a lot of nice features such as: advanced admin panel, responsive design, unique featured posts layout for the home or featured image slider, customizable home page About Us and Content Boxes sections, custom logo and favicon, Google Fonts, unlimited colors for the menu, widgets, header and footer, localization support, from full screen layout to 1 or 2 sidebars to the left or right, 4 footer widget columns, Scroll to top feature, social links, support for Contact Form 7, 8 post formats and more.
-Version: 1.0.7
+Version: 1.0.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,7 +121,7 @@ You may remove any copyright references (unless required by third party componen
 * Captions of the image slider are clickable.
 * Add CSS styles to navigation menu
 
-== 1.0.7 ==
+== 1.0.7.1 ==
 * Add CSS style to social links icons.
 * Updated ScrollUp functionality.
 * Add option to uppercase navigation menu.
