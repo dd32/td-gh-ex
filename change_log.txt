@@ -73,5 +73,7 @@ Version 3.05
 Version 3.05.1 
  	i)  Modified sanitized PHP code for Theme Options for security reasons.
     ii)	Added Licensing terms of respond.min js file.
+Version	3.06
+    i)  Applied Sanitization in all input fields.
 
 	

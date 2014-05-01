@@ -1,8 +1,19 @@
 <?php
 function fasterthemes_options_init(){
- register_setting( 'ft_options', 'faster_theme_options');
+ register_setting( 'ft_options', 'faster_theme_options','ft_options_validate');
 } 
 add_action( 'admin_init', 'fasterthemes_options_init' );
+function ft_options_validate($input)
+{
+	$input['logo'] = esc_url_raw( $input['logo'] );
+	$input['fevicon'] = esc_url_raw( $input['fevicon'] );
+	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+
+	$input['fburl'] = esc_url_raw( $input['fburl'] );
+	$input['twitter'] = esc_url_raw( $input['twitter'] );
+
+    return $input;
+}
 function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
