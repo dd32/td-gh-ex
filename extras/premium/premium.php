@@ -9,7 +9,8 @@ function siteorigin_premium_admin_menu() {
 	// Don't display this page if the user has already upgraded to premium
 	if ( defined( 'SITEORIGIN_IS_PREMIUM' ) ) return;
 
-	add_theme_page( __( 'Premium Upgrade', 'vantage' ), __( 'Premium Upgrade', 'vantage' ), 'switch_themes', 'premium_upgrade', 'siteorigin_premium_page_render' );
+	$premium_name = apply_filters('siteorigin_premium_theme_name', ucfirst( get_option( 'template' ) ) . ' ' . __( 'Premium', 'vantage' ) );
+	add_theme_page( $premium_name, $premium_name, 'switch_themes', 'premium_upgrade', 'siteorigin_premium_page_render' );
 }
 
 add_action( 'admin_menu', 'siteorigin_premium_admin_menu' );
@@ -169,7 +170,7 @@ function siteorigin_premium_call_function($callback, $param_array, $args = array
 		?>
 		<a class="siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 			<em></em>
-			<?php printf( __( 'Available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'vantage' ), ucfirst($theme) ) ?>
+			<?php printf( __( 'Only available in <strong>%s</strong> - <strong class="upgrade">Upgrade Now</strong>', 'vantage' ), apply_filters('siteorigin_premium_theme_name', ucfirst($theme) . ' ' . __( 'Premium', 'vantage' ) ) ) ?>
 			<?php if(!empty($args['teaser-image'])) : ?>
 				<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 			<?php endif; ?>
@@ -267,10 +268,14 @@ endif;
 function siteorigin_premium_default_content($content){
 	$theme = basename( get_template_directory() );
 
+
+
+	$premium_name =  apply_filters('siteorigin_premium_theme_name', ucfirst($theme) . ' ' . __( 'Premium', 'vantage' ) );
+
 	$content['rewards'][] = array(
 		'amount' => 10,
 		'title' => sprintf(__('A Copy of %s Premium', 'vantage'), ucfirst($theme)),
-		'text' => sprintf(__('You get a copy of %s Premium, delivered instantly to your PayPal email address. This includes the same basic support we offer users of our free themes.', 'vantage'), ucfirst($theme)),
+		'text' => sprintf(__('You get a copy of %s, delivered instantly to your PayPal email address. This includes the same basic support we offer users of our free themes.', 'vantage'), $premium_name ),
 	);
 
 	$content['rewards'][] = array(
@@ -282,7 +287,7 @@ function siteorigin_premium_default_content($content){
 	$content['rewards'][] = array(
 		'amount' => 40,
 		'title' => __('Advanced Premium Support', 'vantage'),
-		'text' => sprintf(__("We'll go the extra mile and help you with minor CSS customizations, plugin conflicts and anything else that falls outside standard %s Premium support.", 'vantage'), ucfirst($theme)),
+		'text' => sprintf(__("We'll go the extra mile and help you with minor CSS customizations, plugin conflicts and anything else that falls outside standard %s support.", 'vantage'), $premium_name ),
 	);
 
 	$content['rewards'][] = array(
