@@ -12,15 +12,15 @@ if ( ! function_exists( 'ttfmake_customizer_init' ) ) :
  * @return void
  */
 function ttfmake_customizer_init() {
-	$path = get_template_directory() . '/inc/customizer/';
+	$path = '/inc/customizer/';
 
 	// Always load
-	require_once( $path . 'helpers.php' );
-	require_once( $path . 'helpers-css.php' );
-	require_once( $path . 'helpers-defaults.php' );
-	require_once( $path . 'helpers-display.php' );
-	require_once( $path . 'helpers-fonts.php' );
-	require_once( $path . 'helpers-logo.php' );
+	require_once( get_template_directory() . $path . 'helpers.php' );
+	require_once( get_template_directory() . $path . 'helpers-css.php' );
+	require_once( get_template_directory() . $path . 'helpers-defaults.php' );
+	require_once( get_template_directory() . $path . 'helpers-display.php' );
+	require_once( get_template_directory() . $path . 'helpers-fonts.php' );
+	require_once( get_template_directory() . $path . 'helpers-logo.php' );
 
 	// Hook up functions
 	add_action( 'customize_register', 'ttfmake_customizer_add_sections' );
@@ -46,49 +46,42 @@ if ( ! function_exists( 'ttfmake_customizer_add_sections' ) ) :
  * @return void
  */
 function ttfmake_customizer_add_sections( $wp_customize ) {
-	$path         = get_template_directory() . '/inc/customizer/';
+	$path         = '/inc/customizer/';
 	$section_path = $path . 'sections/';
 
 	// Get the custom controls
-	require_once( $path . 'controls.php' );
+	require_once( get_template_directory() . $path . 'controls.php' );
 
 	// Modifications for existing sections
-	require_once( $section_path . 'background.php' );
-	require_once( $section_path . 'navigation.php' );
-	require_once( $section_path . 'site-title-tagline.php' );
+	require_once( get_template_directory() . $section_path . 'background.php' );
+	require_once( get_template_directory() . $section_path . 'navigation.php' );
+	require_once( get_template_directory() . $section_path . 'site-title-tagline.php' );
 
 	// List of new sections to add
 	$sections = array(
-		'general'        => array( 'title' => __( 'General', 'make' ), 'path' => $section_path ),
-		'stylekit'       => array( 'title' => __( 'Style Kits', 'make' ), 'path' => $section_path ),
-		'font'           => array( 'title' => __( 'Fonts', 'make' ), 'path' => $section_path ),
-		'color'          => array( 'title' => __( 'Colors', 'make' ), 'path' => $section_path ),
-		'header'         => array( 'title' => __( 'Header', 'make' ), 'path' => $section_path ),
-		'logo'           => array( 'title' => __( 'Logo', 'make' ), 'path' => $section_path ),
-		'main'           => array( 'title' => __( 'Main', 'make' ), 'path' => $section_path ),
-		'layout-blog'    => array( 'title' => __( 'Layout: Blog (Posts Page)', 'make' ), 'path' => $section_path ),
-		'layout-archive' => array( 'title' => __( 'Layout: Archives', 'make' ), 'path' => $section_path ),
-		'layout-search'  => array( 'title' => __( 'Layout: Search Results', 'make' ), 'path' => $section_path ),
-		'layout-post'    => array( 'title' => __( 'Layout: Posts', 'make' ), 'path' => $section_path ),
-		'layout-page'    => array( 'title' => __( 'Layout: Pages', 'make' ), 'path' => $section_path ),
-		'footer'         => array( 'title' => __( 'Footer', 'make' ), 'path' => $section_path ),
-		'social'         => array( 'title' => __( 'Social Profiles &amp; RSS', 'make' ), 'path' => $section_path )
+		'general'        => __( 'General', 'make' ),
+		'font'           => __( 'Fonts', 'make' ),
+		'color'          => __( 'Colors', 'make' ),
+		'header'         => __( 'Header', 'make' ),
+		'logo'           => __( 'Logo', 'make' ),
+		'main'           => __( 'Main', 'make' ),
+		'layout-blog'    => __( 'Layout: Blog (Posts Page)', 'make' ),
+		'layout-archive' => __( 'Layout: Archives', 'make' ),
+		'layout-search'  => __( 'Layout: Search Results', 'make' ),
+		'layout-post'    => __( 'Layout: Posts', 'make' ),
+		'layout-page'    => __( 'Layout: Pages', 'make' ),
+		'footer'         => __( 'Footer', 'make' ),
+		'social'         => __( 'Social Profiles &amp; RSS', 'make' )
 	);
-	if ( ttfmake_is_plus() ) {
-		unset( $sections['stylekit'] );
-	}
 	$sections = apply_filters( 'ttfmake_customizer_sections', $sections );
 
 	// Priority for first section
 	$priority = new TTFMAKE_Prioritizer( 0, 10 );
 
 	// Add and populate each section, if it exists
-	foreach ( $sections as $section => $data ) {
-		$file = trailingslashit( $data[ 'path' ] ) . $section . '.php';
-		if ( file_exists( $file ) ) {
-			// First load the file
-			require_once( $file );
-
+	foreach ( $sections as $section => $title ) {
+		// First load the file
+		if ( '' !== locate_template( $section_path . $section . '.php', true ) ) {
 			// Custom priorities for built-in sections
 			if ( 'font' === $section ) {
 				$wp_customize->get_section( 'background_image' )->priority = $priority->add();
@@ -108,17 +101,15 @@ function ttfmake_customizer_add_sections( $wp_customize ) {
 			$section_callback .= ( strpos( $section, '-' ) ) ? str_replace( '-', '_', $section ) : $section;
 			if ( function_exists( $section_callback ) ) {
 				$section_id = 'ttfmake_' . esc_attr( $section );
-
-				// Sanitize the section title
-				if ( ! isset( $data[ 'title' ] ) || ! $data[ 'title' ] ) {
-					$data[ 'title' ] = ucfirst( esc_attr( $section ) );
+				if ( ! $title ) {
+					$title = ucfirst( esc_attr( $section ) );
 				}
 
 				// Add section
 				$wp_customize->add_section(
 					$section_id,
 					array(
-						'title'    => $data[ 'title' ],
+						'title'    => $title,
 						'priority' => $priority->add(),
 					)
 				);
@@ -197,17 +188,6 @@ function ttfmake_customizer_sections_script() {
 		TTFMAKE_VERSION,
 		true
 	);
-
-	if ( ! ttfmake_is_plus() ) {
-		wp_localize_script(
-			'ttfmake-customizer-sections',
-			'ttfmakeCustomizerL10n',
-			array(
-				'plusURL'   => esc_url( ttfmake_get_plus_link( 'customize-head' ) ),
-				'plusLabel' => __( 'Upgrade to Make Plus', 'make' ),
-			)
-		);
-	}
 }
 endif;
 

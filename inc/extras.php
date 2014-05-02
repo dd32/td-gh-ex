@@ -245,8 +245,7 @@ function ttfmake_get_view() {
 		$view = 'page';
 	}
 
-	// Filter the view and return
-	return apply_filters( 'ttfmake_get_view', $view, $parent_post_type );
+	return $view;
 }
 endif;
 
@@ -357,16 +356,3 @@ function ttfmake_sidebar_list_enabled( $location ) {
 	return $enabled_views;
 }
 endif;
-
-/**
- * Generate a link to the Make info page.
- *
- * @since  1.0.6.
- *
- * @param  string    $component    The component where the link is located.
- * @return string                  The link.
- */
-function ttfmake_get_plus_link( $component ) {
-	$url = 'https://thethemefoundry.com/wordpress-themes/make/?utm_source=make&utm_medium=link&utm_content=' . urlencode( sanitize_title_with_dashes( $component ) ) . '&utm_campaign=plus#make-table';
-	return esc_url( $url );
-}

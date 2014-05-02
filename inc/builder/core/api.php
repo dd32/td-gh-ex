@@ -66,11 +66,11 @@ class TTFMAKE_Sections {
 	}
 
 	/**
-	 * Add a section.
+	 * Return the sections.
 	 *
 	 * @since  1.0.0.
 	 *
-	 * @param  string    $id                  Unique ID for the section. Alphanumeric characters only.
+	 * @param  string    $id                  Unique ID for the section.
 	 * @param  string    $label               Name to display for the section.
 	 * @param  string    $description         Section description.
 	 * @param  string    $icon                URL to the icon for the display.
@@ -78,10 +78,9 @@ class TTFMAKE_Sections {
 	 * @param  string    $builder_template    Path to the template used in the builder.
 	 * @param  string    $display_template    Path to the template used for the frontend.
 	 * @param  int       $order               The order in which to display the item.
-	 * @param  string    $path                The path to the template files.
 	 * @return void
 	 */
-	public function add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order, $path ) {
+	public function add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order ) {
 		$this->_sections[ $id ] = array(
 			'id'               => $id,
 			'label'            => $label,
@@ -91,22 +90,7 @@ class TTFMAKE_Sections {
 			'builder_template' => $builder_template,
 			'display_template' => $display_template,
 			'order'            => $order,
-			'path'             => $path,
 		);
-	}
-
-	/**
-	 * Remove a section.
-	 *
-	 * @since  1.0.7.
-	 *
-	 * @param  string    $id    Unique ID for an existing section. Alphanumeric characters only.
-	 * @return void
-	 */
-	public function remove_section( $id ) {
-		if ( isset( $this->_sections[ $id ] ) ) {
-			unset( $this->_sections[ $id ] );
-		}
 	}
 }
 endif;
@@ -169,11 +153,11 @@ endif;
 
 if ( ! function_exists( 'ttfmake_add_section' ) ) :
 /**
- * Add a section.
+ * Return the sections.
  *
  * @since  1.0.0.
  *
- * @param  string    $id                  Unique ID for the section. Alphanumeric characters only.
+ * @param  string    $id                  Unique ID for the section.
  * @param  string    $label               Name to display for the section.
  * @param  string    $description         Section description.
  * @param  string    $icon                URL to the icon for the display.
@@ -181,24 +165,9 @@ if ( ! function_exists( 'ttfmake_add_section' ) ) :
  * @param  string    $builder_template    Path to the template used in the builder.
  * @param  string    $display_template    Path to the template used for the frontend.
  * @param  int       $order               The order in which to display the item.
- * @param  string    $path                The path to the template files.
  * @return void
  */
-function ttfmake_add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order, $path ) {
-	ttfmake_get_sections_class()->add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order, $path );
-}
-endif;
-
-if ( ! function_exists( 'ttfmake_remove_section' ) ) :
-/**
- * Remove a defined section.
- *
- * @since  1.0.7.
- *
- * @param  string    $id    Unique ID for an existing section. Alphanumeric characters only.
- * @return void
- */
-function ttfmake_remove_section( $id ) {
-	ttfmake_get_sections_class()->remove_section( $id );
+function ttfmake_add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order ) {
+	ttfmake_get_sections_class()->add_section( $id, $label, $icon, $description, $save_callback, $builder_template, $display_template, $order );
 }
 endif;

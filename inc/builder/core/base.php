@@ -59,14 +59,9 @@ class TTFMAKE_Builder_Base {
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 11 );
 		add_action( 'admin_print_styles-post.php', array( $this, 'admin_print_styles' ) );
 		add_action( 'admin_print_styles-post-new.php', array( $this, 'admin_print_styles' ) );
-		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
 		add_action( 'admin_footer', array( $this, 'print_templates' ) );
 		add_action( 'tiny_mce_before_init', array( $this, 'tiny_mce_before_init' ), 15, 2 );
 		add_action( 'after_wp_tiny_mce', array( $this, 'after_wp_tiny_mce' ) );
-
-		if ( false === ttfmake_is_plus() ) {
-			add_action( 'post_submitbox_misc_actions', array( $this, 'post_submitbox_misc_actions' ) );
-		}
 	}
 
 	/**
@@ -257,9 +252,6 @@ class TTFMAKE_Builder_Base {
 			#ttfmake-builder {
 				display: none;
 			}
-			.ttfmake-duplicator {
-				display: none;
-			}
 			<?php endif; ?>
 
 			<?php foreach ( ttfmake_get_sections() as $key => $section ) : ?>
@@ -269,29 +261,6 @@ class TTFMAKE_Builder_Base {
 			<?php endforeach; ?>
 		</style>
 	<?php
-	}
-
-	/**
-	 * Add a class to indicate the current template being used.
-	 *
-	 * @since  1.0.4.
-	 *
-	 * @param  array    $classes    The current classes.
-	 * @return array                The modified classes.
-	 */
-	function admin_body_class( $classes ) {
-		global $pagenow;
-
-		// Do not complete the function if the product template is in use (i.e., the builder needs to be shown)
-		if ( 'page' === get_post_type() ) {
-			if ( 'post-new.php' === $pagenow || ( 'post.php' === $pagenow && 'template-builder.php' === get_page_template_slug() ) ) {
-				$classes .= ' ttfmake-builder-active';
-			} else {
-				$classes .= ' ttfmake-default-active';
-			}
-		}
-
-		return $classes;
 	}
 
 	/**
@@ -305,7 +274,7 @@ class TTFMAKE_Builder_Base {
 	 * @return void
 	 */
 	public function add_uploader( $section_name, $image_id = 0, $messages = array() ) {
-		$image        = ttfmake_get_image( $image_id, 'large' );
+		$image        = wp_get_attachment_image( $image_id, 'large' );
 		$add_state    = ( '' === $image ) ? 'ttfmake-show' : 'ttfmake-hide';
 		$remove_state = ( '' === $image ) ? 'ttfmake-hide' : 'ttfmake-show';
 
@@ -330,7 +299,7 @@ class TTFMAKE_Builder_Base {
 					<?php echo $messages['remove']; ?>
 				</a>
 			</div>
-			<input type="hidden" name="<?php echo esc_attr( $section_name ); ?>[image-id]" value="<?php echo ttfmake_sanitize_image_id( $image_id ); ?>" class="ttfmake-media-uploader-value" />
+			<input type="hidden" name="<?php echo esc_attr( $section_name ); ?>[image-id]" value="<?php echo absint( $image_id ); ?>" class="ttfmake-media-uploader-value" />
 		</div>
 	<?php
 	}
@@ -357,10 +326,7 @@ class TTFMAKE_Builder_Base {
 		);
 
 		// Include the template
-		ttfmake_load_section_template(
-			$section['builder_template'],
-			$section['path']
-		);
+		get_template_part( $section['builder_template'] );
 
 		// Destroy the variable as a good citizen does
 		unset( $GLOBALS['ttfmake_section_data'] );
@@ -548,7 +514,6 @@ class TTFMAKE_Builder_Base {
 	public function get_section_data( $post_id ) {
 		$ordered_data = array();
 		$ids          = get_post_meta( $post_id, '_ttfmake-section-ids', true );
-		$ids          = ( ! empty( $ids ) && is_array( $ids ) ) ? array_map( 'strval', $ids ) : $ids;
 		$post_meta    = get_post_meta( $post_id );
 
 		// Temp array of hashed keys
@@ -619,33 +584,6 @@ class TTFMAKE_Builder_Base {
 		// Return the result array
 		return $result;
 	}
-
-	/**
-	 * Display information about duplicating posts.
-	 *
-	 * @since  1.1.0.
-	 *
-	 * @return void
-	 */
-	public function post_submitbox_misc_actions() {
-	?>
-		<div class="misc-pub-section ttfmake-duplicator">
-			<p style="font-style:italic;margin:0 0 7px 3px;">
-				<?php
-				printf(
-					__( 'Duplicate this page with %s.', 'make' ),
-					sprintf(
-						'<a href="%1$s" target="_blank">%2$s</a>',
-						esc_url( ttfmake_get_plus_link( 'duplicator' ) ),
-						'Make Plus'
-					)
-				);
-				?>
-			</p>
-			<div class="clear"></div>
-		</div>
-	<?php
-	}
 }
 endif;
 
@@ -662,10 +600,7 @@ function ttfmake_get_builder_base() {
 }
 endif;
 
-// Add the base immediately
-if ( is_admin() ) {
-	ttfmake_get_builder_base();
-}
+add_action( 'admin_init', 'ttfmake_get_builder_base', 1 );
 
 if ( ! function_exists( 'ttfmake_load_section_header' ) ) :
 /**
@@ -676,9 +611,7 @@ if ( ! function_exists( 'ttfmake_load_section_header' ) ) :
  * @return void
  */
 function ttfmake_load_section_header() {
-	global $ttfmake_section_data;
-	get_template_part( 'inc/builder/core/templates/section', 'header' );
-	do_action( 'ttfmake_section_' . $ttfmake_section_data['section']['id'] . '_before', $ttfmake_section_data );
+	get_template_part( '/inc/builder/core/templates/section', 'header' );
 }
 endif;
 
@@ -691,40 +624,7 @@ if ( ! function_exists( 'ttfmake_load_section_footer' ) ) :
  * @return void
  */
 function ttfmake_load_section_footer() {
-	global $ttfmake_section_data;
-	get_template_part( 'inc/builder/core/templates/section', 'footer' );
-	do_action( 'ttfmake_section_' . $ttfmake_section_data['section']['id'] . '_after', $ttfmake_section_data );
-}
-endif;
-
-if ( ! function_exists( 'ttfmake_load_section_template' ) ) :
-/**
- * Load a section front- or back-end section template. Searches for child theme versions
- * first, then parent themes, then plugins.
- *
- * @since  1.0.4.
- *
- * @param  string    $slug    The relative path and filename (w/out suffix) required
- *                            to substitute the template in a child theme.
- * @param  string    $path    An optional path extension to point to the template in
- *                            the parent theme or a plugin.
- * @return string
- */
-function ttfmake_load_section_template( $slug, $path ) {
-	$located = '';
-
-	$templates = array(
-		$slug . '.php',
-		trailingslashit( $path ) . $slug . '.php'
-	);
-	if ( '' === $located = locate_template( $templates, true, false ) ) {
-		if ( file_exists( $templates[1] ) ) {
-			require( $templates[1] );
-			$located = $templates[1];
-		}
-	}
-
-	return $located;
+	get_template_part( '/inc/builder/core/templates/section', 'footer' );
 }
 endif;
 
@@ -788,143 +688,3 @@ function ttfmake_sanitize_text( $string ) {
 	return wp_kses( $string , $allowedtags );
 }
 endif;
-
-if ( ! function_exists( 'ttfmake_get_image' ) ) :
-/**
- * Get an image to display in page builder backend or front end template.
- *
- * This function allows image IDs defined with a negative number to surface placeholder images. This allows templates to
- * approximate real content without needing to add images to the user's media library.
- *
- * @since  1.0.4.
- *
- * @param  int       $image_id    The attachment ID. Dimension value IDs represent placeholders (100x150).
- * @param  string    $size        The image size.
- * @return string                 HTML for the image. Empty string if image cannot be produced.
- */
-function ttfmake_get_image( $image_id, $size ) {
-	if ( false === strpos( $image_id, 'x' ) ) {
-		return wp_get_attachment_image( $image_id, $size );
-	} else {
-		$image = ttfmake_get_placeholder_image( $image_id );
-
-		if ( ! empty( $image ) && isset( $image['src'] ) && isset( $image['alt'] ) && isset( $image['class'] ) && isset( $image['height'] ) && isset( $image['width'] ) ) {
-			return '<img src="' . $image['src'] . '" alt="' . $image['alt'] . '" class="' . $image['class'] . '" height="' . $image['height'] . '" width="' . $image['width'] . '" />';
-		} else {
-			return '';
-		}
-	}
-}
-endif;
-
-if ( ! function_exists( 'ttfmake_get_image_src' ) ) :
-/**
- * Get an image's src.
- *
- * @since  1.0.4.
- *
- * @param  int       $image_id    The attachment ID. Dimension value IDs represent placeholders (100x150).
- * @param  string    $size        The image size.
- * @return string                 URL for the image.
- */
-function ttfmake_get_image_src( $image_id, $size ) {
-	$src = '';
-
-	if ( false === strpos( $image_id, 'x' ) ) {
-		$image = wp_get_attachment_image_src( $image_id, $size );
-
-		if ( false !== $image && isset( $image[0] ) ) {
-			$src = $image;
-		}
-	} else {
-		$image = ttfmake_get_placeholder_image( $image_id );
-
-		if ( isset( $image['src'] ) ) {
-			$wp_src = array(
-				0 => $image['src'],
-				1 => $image['width'],
-				2 => $image['height'],
-			);
-			$src = array_merge( $image, $wp_src );
-		}
-	}
-
-	return $src;
-}
-endif;
-
-global $ttfmake_placeholder_images;
-
-if ( ! function_exists( 'ttfmake_get_placeholder_image' ) ) :
-/**
- * Gets the specified placeholder image.
- *
- * @since  1.0.4.
- *
- * @param  int      $image_id    Image ID. Should be a dimension value (100x150).
- * @return array                 The image data, including 'src', 'alt', 'class', 'height', and 'width'.
- */
-function ttfmake_get_placeholder_image( $image_id ) {
-	global $ttfmake_placeholder_images;
-
-	if ( isset( $ttfmake_placeholder_images[ $image_id ] ) ) {
-		return $ttfmake_placeholder_images[ $image_id ];
-	} else {
-		return array();
-	}
-}
-endif;
-
-if ( ! function_exists( 'ttfmake_register_placeholder_image' ) ) :
-/**
- * Add a new placeholder image.
- *
- * @since  1.0.4.
- *
- * @param  int      $id      The ID for the image. Should be a dimension value (100x150).
- * @param  array    $data    The image data, including 'src', 'alt', 'class', 'height', and 'width'.
- * @return void
- */
-function ttfmake_register_placeholder_image( $id, $data ) {
-	global $ttfmake_placeholder_images;
-	$ttfmake_placeholder_images[ $id ] = $data;
-}
-endif;
-
-/**
- * Add information about Quick Start.
- *
- * @since  1.0.6.
- *
- * @return void
- */
-function ttfmake_plus_quick_start() {
-	if ( false !== ttfmake_is_plus() || 'page' !== get_post_type() ) {
-		return;
-	}
-
-	$section_ids        = get_post_meta( get_the_ID(), '_ttfmake-section-ids', true );
-	$additional_classes = ( ! empty( $section_ids ) ) ? ' ttfmp-import-message-hide' : '';
-	?>
-	<div id="message" class="error below-h2 ttfmp-import-message<?php echo esc_attr( $additional_classes ); ?>">
-		<p>
-			<strong><?php _e( 'Want some ideas?', 'make' ); ?></strong><br />
-			<?php
-			printf(
-				__( '%s and get a quick start with pre-made designer builder templates.', 'make' ),
-				sprintf(
-					'<a href="%1$s" target="_blank">%2$s</a>',
-					esc_url( ttfmake_get_plus_link( 'quick-start' ) ),
-					sprintf(
-						__( 'Upgrade to %s', 'make' ),
-						'Make Plus'
-					)
-				)
-			);
-			?>
-		</p>
-	</div>
-<?php
-}
-
-add_action( 'edit_form_after_title', 'ttfmake_plus_quick_start' );

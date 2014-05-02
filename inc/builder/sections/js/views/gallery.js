@@ -113,11 +113,8 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 	});
 
 	// Initialize available gallery items
-	oneApp.initGalleryItemViews = function ($el) {
-		$el = $el || '';
-		var $items = ('' === $el) ? $('.ttfmake-gallery-item') : $('.ttfmake-gallery-item', $el);
-
-		$items.each(function () {
+	oneApp.initGalleryItemViews = function () {
+		$('.ttfmake-gallery-item').each(function () {
 			var $item = $(this),
 				idAttr = $item.attr('id'),
 				id = $item.attr('data-id'),

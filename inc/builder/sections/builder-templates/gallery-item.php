@@ -17,7 +17,7 @@ $image_id    = ( isset( $ttfmake_section_data['data']['gallery-items'][ $ttfmake
 $description = ( isset( $ttfmake_section_data['data']['gallery-items'][ $ttfmake_gallery_id ]['description'] ) ) ? $ttfmake_section_data['data']['gallery-items'][ $ttfmake_gallery_id ]['description'] : '';
 ?>
 <?php if ( true !== $ttfmake_is_js_template ) : ?>
-<div class="ttfmake-gallery-item" id="ttfmake-gallery-item-<?php echo esc_attr( $ttfmake_gallery_id ); ?>" data-id="<?php echo esc_attr( $ttfmake_gallery_id ); ?>" data-section-type="gallery-item">
+<div class="ttfmake-gallery-item" id="ttfmake-gallery-item-<?php echo esc_attr( $ttfmake_gallery_id ); ?>" data-id="<?php echo esc_attr( $ttfmake_gallery_id ); ?>">
 <?php endif; ?>
 	<div title="<?php esc_attr_e( 'Drag-and-drop this column into place', 'make' ); ?>" class="ttfmake-sortable-handle">
 		<div class="sortable-background"></div>
@@ -27,7 +27,7 @@ $description = ( isset( $ttfmake_section_data['data']['gallery-items'][ $ttfmake
 		<input placeholder="<?php esc_attr_e( 'Enter link here', 'make' ); ?>" type="text" name="<?php echo $section_name; ?>[link]" class="ttfmake-link code widefat" value="<?php echo esc_url( $link ); ?>" autocomplete="off" />
 	</div>
 
-	<?php ttfmake_get_builder_base()->add_uploader( $section_name, ttfmake_sanitize_image_id( $image_id ) ); ?>
+	<?php ttfmake_get_builder_base()->add_uploader( $section_name, absint( $image_id ) ); ?>
 
 	<div class="ttfmake-titlediv">
 		<div class="ttfmake-titlewrap">
@@ -40,7 +40,7 @@ $description = ( isset( $ttfmake_section_data['data']['gallery-items'][ $ttfmake
 	</div>
 
 	<a href="#" class="ttfmake-gallery-item-remove">
-		<?php _e( 'Remove this item', 'make' ); ?>
+		<?php _e( 'Remove gallery item', 'make' ); ?>
 	</a>
 <?php if ( true !== $ttfmake_is_js_template ) : ?>
 </div>

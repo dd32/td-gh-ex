@@ -120,11 +120,8 @@ var oneApp = oneApp || {}, $oneApp = $oneApp || jQuery(oneApp);
 	});
 
 	// Initialize available slides
-	oneApp.initBannerSlideViews = function ($el) {
-		$el = $el || '';
-		var $slides = ('' === $el) ? $('.ttfmake-banner-slide') : $('.ttfmake-banner-slide', $el);
-
-		$slides.each(function () {
+	oneApp.initBannerSlideViews = function () {
+		$('.ttfmake-banner-slide').each(function () {
 			var $item = $(this),
 				idAttr = $item.attr('id'),
 				id = $item.attr('data-id'),

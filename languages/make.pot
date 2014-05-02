@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Make 1.0.11\n"
+"Project-Id-Version: Make 1.0.2\n"
 "Report-Msgid-Bugs-To: https://thethemefoundry.com/support\n"
-"POT-Creation-Date: 2014-06-24 16:37:44+00:00\n"
+"POT-Creation-Date: 2014-05-02 20:50:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,74 +60,40 @@ msgstr ""
 msgid "Footer 4"
 msgstr ""
 
-#: inc/builder/core/base.php:82
+#: inc/builder/core/base.php:77
 msgid "Page Builder"
 msgstr ""
 
-#: inc/builder/core/base.php:314
+#: inc/builder/core/base.php:283
 msgid "Set featured image"
 msgstr ""
 
-#: inc/builder/core/base.php:315
+#: inc/builder/core/base.php:284
 msgid "Remove featured image"
 msgstr ""
 
-#: inc/builder/core/base.php:316
+#: inc/builder/core/base.php:285
 msgid "Featured Image"
 msgstr ""
 
-#: inc/builder/core/base.php:317
+#: inc/builder/core/base.php:286
 msgid "Use as Featured Image"
 msgstr ""
 
-#: inc/builder/core/base.php:472
+#: inc/builder/core/base.php:438
 msgid "Add Media"
-msgstr ""
-
-#: inc/builder/core/base.php:636
-msgid "Duplicate this page with %s."
-msgstr ""
-
-#: inc/builder/core/base.php:911
-msgid "Want some ideas?"
-msgstr ""
-
-#: inc/builder/core/base.php:914
-msgid "%s and get a quick start with pre-made designer builder templates."
-msgstr ""
-
-#: inc/builder/core/base.php:919 inc/builder/core/templates/menu.php:46
-#: inc/builder/core/templates/menu.php:73
-#: inc/builder/sections/builder-templates/text.php:26 inc/edit-page.php:96
-msgid "Upgrade to %s"
 msgstr ""
 
 #: inc/builder/core/templates/menu.php:14
 msgid "Add"
 msgstr ""
 
-#: inc/builder/core/templates/menu.php:36
-msgid "Products"
-msgstr ""
-
-#: inc/builder/core/templates/menu.php:41
-msgid "%s and feature your WooCommerce products in a grid layout."
-msgstr ""
-
-#: inc/builder/core/templates/menu.php:63
-msgid "Downloads"
-msgstr ""
-
-#: inc/builder/core/templates/menu.php:68
-msgid "%s and feature your Easy Digital Downloads products in a grid layout."
-msgstr ""
-
-#: inc/builder/core/templates/menu.php:87
+#: inc/builder/core/templates/menu.php:33
 msgid "Add New Section"
 msgstr ""
 
-#: inc/builder/core/templates/section-footer.php:10
-msgid "Remove this section"
+#: inc/builder/core/templates/section-footer.php:8
+msgid "Remove"
 msgstr ""
 
 #: inc/builder/core/templates/section-header.php:17
@@ -145,21 +111,21 @@ msgstr ""
 msgid "Background image"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:43
+#: inc/builder/sections/builder-templates/banner-slide.php:42
 #: inc/builder/sections/builder-templates/gallery.php:105
 msgid "Darken to improve readability"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:49
+#: inc/builder/sections/builder-templates/banner-slide.php:47
 #: inc/builder/sections/builder-templates/gallery.php:108
 msgid "Background color"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:56
-msgid "Content position"
+#: inc/builder/sections/builder-templates/banner-slide.php:52
+msgid "Content position:"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:59
+#: inc/builder/sections/builder-templates/banner-slide.php:54
 #: inc/builder/sections/builder-templates/gallery.php:35
 #: inc/builder/sections/builder-templates/gallery.php:45
 #: inc/customizer/helpers.php:78 inc/customizer/helpers.php:90
@@ -167,105 +133,105 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:60
+#: inc/builder/sections/builder-templates/banner-slide.php:56
 #: inc/customizer/helpers.php:118 inc/customizer/helpers.php:148
 msgid "Left"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:61
+#: inc/builder/sections/builder-templates/banner-slide.php:57
 #: inc/customizer/helpers.php:120 inc/customizer/helpers.php:149
 msgid "Right"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:73
+#: inc/builder/sections/builder-templates/banner-slide.php:69
 msgid "Set slide image"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:74
+#: inc/builder/sections/builder-templates/banner-slide.php:70
 msgid "Remove slide image"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:75
+#: inc/builder/sections/builder-templates/banner-slide.php:71
 msgid "Slide image"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:76
+#: inc/builder/sections/builder-templates/banner-slide.php:72
 msgid "Use as slide image"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:85
+#: inc/builder/sections/builder-templates/banner-slide.php:81
 msgid "Slide content overlay"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner-slide.php:102
+#: inc/builder/sections/builder-templates/banner-slide.php:98
 msgid "Remove this slide"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:20
+#: inc/builder/sections/builder-templates/banner.php:21
 msgid "Add New Slide"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:37
+#: inc/builder/sections/builder-templates/banner.php:38
 #: inc/builder/sections/builder-templates/gallery.php:77
 msgid "Options"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:42
+#: inc/builder/sections/builder-templates/banner.php:43
 #: inc/builder/sections/builder-templates/blank.php:14
 #: inc/builder/sections/builder-templates/gallery-item.php:34
 #: inc/builder/sections/builder-templates/gallery.php:82
-#: inc/builder/sections/builder-templates/text.php:49
-#: inc/builder/sections/builder-templates/text.php:77
+#: inc/builder/sections/builder-templates/text.php:27
+#: inc/builder/sections/builder-templates/text.php:53
 msgid "Enter title here"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:48
+#: inc/builder/sections/builder-templates/banner.php:49
 msgid "Slideshow display"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:54
+#: inc/builder/sections/builder-templates/banner.php:55
 #: inc/gallery-slider/gallery-slider.php:98
 msgid "Hide navigation arrows"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:61
+#: inc/builder/sections/builder-templates/banner.php:62
 #: inc/gallery-slider/gallery-slider.php:102
 msgid "Hide navigation dots"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:68
+#: inc/builder/sections/builder-templates/banner.php:69
 msgid "Autoplay slideshow"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:75
+#: inc/builder/sections/builder-templates/banner.php:76
 msgid "Time between slides (in ms)"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:80
+#: inc/builder/sections/builder-templates/banner.php:81
 msgid "Transition effect"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:83
+#: inc/builder/sections/builder-templates/banner.php:84
 #: inc/gallery-slider/gallery-slider.php:116
 msgid "Slide horizontal"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:84
+#: inc/builder/sections/builder-templates/banner.php:85
 #: inc/gallery-slider/gallery-slider.php:117
 msgid "Fade"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/banner.php:91
+#: inc/builder/sections/builder-templates/banner.php:92
 msgid "Section height"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery-item.php:22
-#: inc/builder/sections/builder-templates/text.php:63
+#: inc/builder/sections/builder-templates/text.php:41
 msgid "Drag-and-drop this column into place"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery-item.php:27
-#: inc/builder/sections/builder-templates/text.php:70
+#: inc/builder/sections/builder-templates/text.php:46
 msgid "Enter link here"
 msgstr ""
 
@@ -274,7 +240,7 @@ msgid "Enter description here"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery-item.php:43
-msgid "Remove this item"
+msgid "Remove gallery item"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery.php:23
@@ -282,12 +248,10 @@ msgid "Caption color:"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery.php:25
-#: inc/customizer/sections/stylekit.php:67
 msgid "Light"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery.php:26
-#: inc/customizer/sections/stylekit.php:68
 msgid "Dark"
 msgstr ""
 
@@ -320,7 +284,7 @@ msgid "Square"
 msgstr ""
 
 #: inc/builder/sections/builder-templates/gallery.php:50
-#: inc/builder/sections/builder-templates/text.php:38
+#: inc/builder/sections/builder-templates/text.php:16
 msgid "Columns:"
 msgstr ""
 
@@ -354,23 +318,19 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: inc/builder/sections/builder-templates/text.php:21
-msgid "%s and convert any column into an area for widgets."
-msgstr ""
-
 #: inc/builder/sections/section-definitions.php:72
 msgid "Create rearrangeable columns of content and images."
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:139
+#: inc/builder/sections/section-definitions.php:138
 msgid "A blank canvas for standard content or HTML code."
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:182
+#: inc/builder/sections/section-definitions.php:180
 msgid "Display multiple types of content in a banner or a slider."
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:263
+#: inc/builder/sections/section-definitions.php:260
 msgid "Display your images in various grid combinations."
 msgstr ""
 
@@ -379,59 +339,51 @@ msgid "General"
 msgstr ""
 
 #: inc/customizer/bootstrap.php:63
-msgid "Style Kits"
-msgstr ""
-
-#: inc/customizer/bootstrap.php:64
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:65
+#: inc/customizer/bootstrap.php:64
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:66
+#: inc/customizer/bootstrap.php:65
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:67
+#: inc/customizer/bootstrap.php:66
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:68
+#: inc/customizer/bootstrap.php:67
 msgid "Main"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:69
+#: inc/customizer/bootstrap.php:68
 msgid "Layout: Blog (Posts Page)"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:70
+#: inc/customizer/bootstrap.php:69
 msgid "Layout: Archives"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:71
+#: inc/customizer/bootstrap.php:70
 msgid "Layout: Search Results"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:72
+#: inc/customizer/bootstrap.php:71
 msgid "Layout: Posts"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:73
+#: inc/customizer/bootstrap.php:72
 msgid "Layout: Pages"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:74
+#: inc/customizer/bootstrap.php:73
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/bootstrap.php:75
+#: inc/customizer/bootstrap.php:74
 msgid "Social Profiles &amp; RSS"
-msgstr ""
-
-#: inc/customizer/bootstrap.php:207 inc/customizer/sections/stylekit.php:32
-msgid "Upgrade to Make Plus"
 msgstr ""
 
 #: inc/customizer/helpers-defaults.php:22
@@ -626,47 +578,35 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
-#: inc/customizer/sections/font.php:119
-msgid "Typekit"
-msgstr ""
-
-#: inc/customizer/sections/font.php:134
-msgid "Looking to add premium fonts from Typekit to your website? %s."
-msgstr ""
-
-#: inc/customizer/sections/font.php:139 inc/customizer/sections/footer.php:355
-msgid "Upgrade to %1$s"
-msgstr ""
-
-#: inc/customizer/sections/font.php:179
+#: inc/customizer/sections/font.php:138
 msgid "Site Title Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:200
+#: inc/customizer/sections/font.php:159
 msgid "Site Tagline Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:221
+#: inc/customizer/sections/font.php:180
 msgid "Navigation Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:242
+#: inc/customizer/sections/font.php:201
 msgid "Header Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:263
+#: inc/customizer/sections/font.php:222
 msgid "Widget Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:284
+#: inc/customizer/sections/font.php:243
 msgid "Body Font Size (in px)"
 msgstr ""
 
-#: inc/customizer/sections/font.php:319
+#: inc/customizer/sections/font.php:278
 msgid "Character Subset"
 msgstr ""
 
-#: inc/customizer/sections/font.php:335
+#: inc/customizer/sections/font.php:294
 msgid "Not all fonts provide each of these subsets."
 msgstr ""
 
@@ -714,14 +654,6 @@ msgstr ""
 
 #: inc/customizer/sections/footer.php:304
 msgid "Show social icons"
-msgstr ""
-
-#: inc/customizer/sections/footer.php:334
-msgid "White Label"
-msgstr ""
-
-#: inc/customizer/sections/footer.php:350
-msgid "Want to remove the theme byline from your website&#8217;s footer? %s."
 msgstr ""
 
 #: inc/customizer/sections/general.php:36
@@ -826,7 +758,7 @@ msgstr ""
 
 #: inc/customizer/sections/layout-archive.php:135
 #: inc/customizer/sections/layout-blog.php:135
-#: inc/customizer/sections/layout-page.php:186
+#: inc/customizer/sections/layout-page.php:171
 #: inc/customizer/sections/layout-post.php:135
 #: inc/customizer/sections/layout-search.php:135
 msgid "Featured Images"
@@ -834,7 +766,7 @@ msgstr ""
 
 #: inc/customizer/sections/layout-archive.php:157
 #: inc/customizer/sections/layout-blog.php:157
-#: inc/customizer/sections/layout-page.php:208
+#: inc/customizer/sections/layout-page.php:193
 #: inc/customizer/sections/layout-post.php:157
 #: inc/customizer/sections/layout-search.php:157
 msgid "Post Date"
@@ -842,7 +774,7 @@ msgstr ""
 
 #: inc/customizer/sections/layout-archive.php:179
 #: inc/customizer/sections/layout-blog.php:179
-#: inc/customizer/sections/layout-page.php:230
+#: inc/customizer/sections/layout-page.php:215
 #: inc/customizer/sections/layout-post.php:179
 #: inc/customizer/sections/layout-search.php:179
 msgid "Post Author"
@@ -882,14 +814,10 @@ msgid "Show tags"
 msgstr ""
 
 #: inc/customizer/sections/layout-page.php:129
-msgid "Sidebars are not available on pages using the Builder Template."
-msgstr ""
-
-#: inc/customizer/sections/layout-page.php:144
 msgid "Page Title"
 msgstr ""
 
-#: inc/customizer/sections/layout-page.php:165
+#: inc/customizer/sections/layout-page.php:150
 msgid "Hide title"
 msgstr ""
 
@@ -989,89 +917,51 @@ msgstr ""
 msgid "Custom RSS URL (replaces default)"
 msgstr ""
 
-#: inc/customizer/sections/stylekit.php:28
-msgid ""
-"%s to quickly apply designer-picked style choices (fonts, layout, colors) "
-"to your website."
-msgstr ""
-
-#: inc/customizer/sections/stylekit.php:49
-msgid "Kits"
-msgstr ""
-
-#: inc/customizer/sections/stylekit.php:66
-msgid "Choose a kit"
-msgstr ""
-
-#: inc/customizer/sections/stylekit.php:69
-msgid "Modern"
-msgstr ""
-
-#: inc/customizer/sections/stylekit.php:70
-msgid "Creative"
-msgstr ""
-
-#: inc/customizer/sections/stylekit.php:71
-msgid "Vintage"
-msgstr ""
-
 #: inc/edit-page.php:29
 msgid ""
 "Featured images are not available for this page while using the current "
 "page template."
 msgstr ""
 
-#: inc/edit-page.php:64
-msgid "Layout Settings"
-msgstr ""
-
-#: inc/edit-page.php:86
-msgid "Post"
-msgstr ""
-
-#: inc/edit-page.php:90
-msgid "Looking to configure a unique layout for this %1$s? %2$s."
-msgstr ""
-
 #: inc/extras.php:78
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:304
+#: inc/extras.php:303
 msgid ""
 "This widget area is currently disabled. Enable it in the \"Footer\" section "
 "of the Theme Customizer."
 msgstr ""
 
-#: inc/extras.php:315
+#: inc/extras.php:314
 msgid ""
 "This widget area is currently disabled. Enable it in the \"Layout\" section "
 "of the Theme Customizer."
 msgstr ""
 
-#: inc/extras.php:320
+#: inc/extras.php:319
 msgid ""
 "This widget area is currently enabled for the following views: %s. Change "
 "this in the \"Layout\" section of the Theme Customizer."
 msgstr ""
 
-#: inc/extras.php:343
+#: inc/extras.php:342
 msgid "Blog (Post Page)"
 msgstr ""
 
-#: inc/extras.php:344
+#: inc/extras.php:343
 msgid "Archives"
 msgstr ""
 
-#: inc/extras.php:345
+#: inc/extras.php:344
 msgid "Search Results"
 msgstr ""
 
-#: inc/extras.php:346
+#: inc/extras.php:345
 msgid "Posts"
 msgstr ""
 
-#: inc/extras.php:347
+#: inc/extras.php:346
 msgid "Pages"
 msgstr ""
 
@@ -1111,67 +1001,67 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:144
+#: inc/tinymce-buttons/tinymce-buttons.php:149
 msgid "Add button"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:145
+#: inc/tinymce-buttons/tinymce-buttons.php:150
 msgid "Insert Button"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:146
+#: inc/tinymce-buttons/tinymce-buttons.php:151
 msgid "Button text"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:147
+#: inc/tinymce-buttons/tinymce-buttons.php:152
 msgid "Button URL"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:148
+#: inc/tinymce-buttons/tinymce-buttons.php:153
 msgid "Normal"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:149 inc/tinymce.php:59
+#: inc/tinymce-buttons/tinymce-buttons.php:154 inc/tinymce.php:59
 msgid "Alert"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:150
+#: inc/tinymce-buttons/tinymce-buttons.php:155
 msgid "Download"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:151
+#: inc/tinymce-buttons/tinymce-buttons.php:156
 msgid "Color"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:152
+#: inc/tinymce-buttons/tinymce-buttons.php:157
 msgid "Primary"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:153
+#: inc/tinymce-buttons/tinymce-buttons.php:158
 msgid "Secondary"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:154
+#: inc/tinymce-buttons/tinymce-buttons.php:159
 msgid "Green"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:155
+#: inc/tinymce-buttons/tinymce-buttons.php:160
 msgid "Red"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:156
+#: inc/tinymce-buttons/tinymce-buttons.php:161
 msgid "Orange"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:157
+#: inc/tinymce-buttons/tinymce-buttons.php:162
 msgid "Style"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:158
+#: inc/tinymce-buttons/tinymce-buttons.php:163
 msgid "Dotted"
 msgstr ""
 
-#: inc/tinymce-buttons/tinymce-buttons.php:159
+#: inc/tinymce-buttons/tinymce-buttons.php:164
 msgid "Double"
 msgstr ""
 
@@ -1267,7 +1157,7 @@ msgstr ""
 msgid "<i class=\"fa fa-tag\"></i> "
 msgstr ""
 
-#: partials/footer-credit.php:21
+#: partials/footer-credit.php:19
 msgid "homepage"
 msgstr ""
 
@@ -1364,7 +1254,7 @@ msgid_plural "%1$s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/builder/sections/builder-templates/banner.php:85
+#: inc/builder/sections/builder-templates/banner.php:86
 msgctxt "transition effect"
 msgid "None"
 msgstr ""
@@ -1374,17 +1264,17 @@ msgctxt "section name"
 msgid "Text"
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:137
+#: inc/builder/sections/section-definitions.php:136
 msgctxt "section name"
 msgid "Blank"
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:180
+#: inc/builder/sections/section-definitions.php:178
 msgctxt "section name"
 msgid "Banner"
 msgstr ""
 
-#: inc/builder/sections/section-definitions.php:261
+#: inc/builder/sections/section-definitions.php:258
 msgctxt "section name"
 msgid "Gallery"
 msgstr ""
@@ -1429,7 +1319,7 @@ msgctxt "footer widget area number"
 msgid "4"
 msgstr ""
 
-#: inc/extras.php:321
+#: inc/extras.php:320
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
@@ -1444,52 +1334,52 @@ msgctxt "e.g. Bob says hello."
 msgid "says:"
 msgstr ""
 
-#: inc/template-tags.php:463
+#: inc/template-tags.php:446
 msgctxt "time"
 msgid "second"
 msgstr ""
 
-#: inc/template-tags.php:469
+#: inc/template-tags.php:452
 msgctxt "time"
 msgid "seconds"
 msgstr ""
 
-#: inc/template-tags.php:479
+#: inc/template-tags.php:462
 msgctxt "camera f-stop"
 msgid "f/"
 msgstr ""
 
-#: inc/template-tags.php:489
+#: inc/template-tags.php:472
 msgctxt "camera setting"
 msgid "Camera:"
 msgstr ""
 
-#: inc/template-tags.php:495
+#: inc/template-tags.php:478
 msgctxt "camera setting"
 msgid "Taken:"
 msgstr ""
 
-#: inc/template-tags.php:502
+#: inc/template-tags.php:485
 msgctxt "camera setting"
 msgid "Focal length:"
 msgstr ""
 
-#: inc/template-tags.php:508
+#: inc/template-tags.php:491
 msgctxt "camera setting"
 msgid "Aperture:"
 msgstr ""
 
-#: inc/template-tags.php:514
+#: inc/template-tags.php:497
 msgctxt "camera setting"
 msgid "Exposure:"
 msgstr ""
 
-#: inc/template-tags.php:520
+#: inc/template-tags.php:503
 msgctxt "camera setting"
 msgid "ISO:"
 msgstr ""
 
-#: inc/template-tags.php:503
+#: inc/template-tags.php:486
 msgctxt "millimeters"
 msgid "mm"
 msgstr ""
@@ -1499,7 +1389,7 @@ msgctxt "author byline"
 msgid "by %s"
 msgstr ""
 
-#: partials/footer-credit.php:19
+#: partials/footer-credit.php:17
 msgctxt "attribution"
 msgid "by"
 msgstr ""
