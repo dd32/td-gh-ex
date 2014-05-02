@@ -4,7 +4,7 @@
  * Author:      The Theme Foundry
  * Author URI:  https://thethemefoundry.com
  * Description: Create your website without touching a line of code. Make's flexible customization features and a powerful drag and drop page builder make designing your site fun and easy. Build almost anything: a simple portfolio or photography site, an ecommerce business site, a minimalist blog, or even a professional magazine. You'll start by customizing your background, layouts, fonts, colors, and logo. Next, add and organize your content using the drag and drop page builder. Add a photo, a video, a gallery, or even a slider to any page on your website. Make is responsive, so your website will naturally look great on phones, tablets, and desktop screens. It's also fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and WP PageNavi.
- * Version:     1.0.0
+ * Version:     1.0.1
  * License:     GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: make
@@ -966,8 +966,15 @@ a {
 	width: 100%;
 	float: left;
 	margin-right: 3.33333%;
-	margin-bottom: 44px;
-	margin-bottom: 4.4rem;
+	margin-bottom: 22px;
+	margin-bottom: 2.2rem;
+}
+
+@media screen and (min-width: 800px) {
+	.site-footer .widget-area {
+		margin-bottom: 44px;
+		margin-bottom: 4.4rem;
+	}
 }
 
 .site-footer .widget-area:last-of-type {
@@ -2270,7 +2277,7 @@ iframe[src*="google.com/maps"] {
 	cursor: pointer;
 }
 
-.builder-gallery-captions-reveal .builder-gallery-item {
+.builder-gallery-captions-reveal .builder-gallery-item, .builder-gallery-captions-overlay .builder-gallery-item {
 	position: relative;
 }
 
@@ -2286,24 +2293,24 @@ iframe[src*="google.com/maps"] {
 	visibility: hidden;
 }
 
-.builder-gallery-captions-reveal .builder-gallery-content {
+.builder-gallery-captions-reveal .builder-gallery-content, .builder-gallery-captions-overlay .builder-gallery-content {
 	position: absolute;
 	top: 0;
 	padding: 32px;
 	padding: 3.2rem;
 }
 
-.builder-gallery-captions-reveal .builder-gallery-content {
+.builder-gallery-captions-reveal .builder-gallery-content, .builder-gallery-captions-overlay .builder-gallery-content {
 	visibility: hidden;
 	height: 100%;
 }
 
-.builder-gallery-captions-reveal .builder-gallery-description {
+.builder-gallery-captions-reveal .builder-gallery-description, .builder-gallery-captions-overlay .builder-gallery-description {
 	overflow: hidden;
 	height: 60%;
 }
 
-.builder-gallery-captions-reveal .builder-gallery-title {
+.builder-gallery-captions-reveal .builder-gallery-title, .builder-gallery-captions-overlay .builder-gallery-title {
 	overflow: hidden;
 	max-height: 100%;
 	line-height: 1.5;
