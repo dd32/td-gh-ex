@@ -20,7 +20,7 @@ $default_fonts = sampression_fonts_style();
                         <?php
                         $sidebar = $style['sidebar'];
                         $sidebar_name = $sidebar['name'];
-                        $sidebar_active = $sidebar['active'];
+                        $sidebar_active = esc_attr( $sidebar['active'] );
                         for ( $i = 0; $i < count( $sidebar_name ); $i++ ) {
                             ?>
                             <li class="<?php
@@ -30,9 +30,9 @@ $default_fonts = sampression_fonts_style();
                                 echo 'active ';
                             }
                             ?>style-selector">
-                                <a href="javascript:void(0);" data-sidebar="<?php echo $sidebar_name[$i]; ?>" class="sam-style">
-                                    <img src="<?php echo SAM_FW_ADMIN_IMAGES_URL; ?>/<?php echo $sidebar_name[$i]; ?>-layout.jpg" alt=""/>
-    <?php echo ucwords( $sidebar_name[$i] ); ?>
+                                <a href="javascript:void(0);" data-sidebar="<?php echo esc_attr( $sidebar_name[$i] ); ?>" class="sam-style">
+                                    <img src="<?php echo SAM_FW_ADMIN_IMAGES_URL; ?>/<?php echo esc_attr( $sidebar_name[$i] ); ?>-layout.jpg" alt=""/>
+    <?php echo ucwords( esc_attr( $sidebar_name[$i] ) ); ?>
                                 </a>
                             </li>
     <?php

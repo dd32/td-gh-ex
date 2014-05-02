@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 <!--[if IE 8]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
-<meta charset="<?php echo esc_attr( get_bloginfo( 'charset' ) ); ?>" />
+<meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
 <title> <?php wp_title( '|', true, 'right' ); ?></title>

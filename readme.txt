@@ -5,7 +5,7 @@ Theme URI: http://sampression.com/themes/naya-lite
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,12 @@ Tags: white, black, green, one-column, two-columns, responsive-layout, custom-me
  = Naya Lite is distributed under the terms of the GNU GPL.
 
 == Changelog ==
+Version 1.0.5
+ = home_url() escaped with esc_url() 
+ = data sanitazation, validation and escape fuctions used
+ = PHP fixes for sidebar
+ = CSS fixes for table font size
+
 Version 1.0.4
  = get_stylesheet_uri() used instead of bloginfo() function for main stylesheet url.
  = google font path fixed

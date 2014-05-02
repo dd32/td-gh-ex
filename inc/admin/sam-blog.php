@@ -3,6 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 
 $blog_settings = sampression_blog();
 $post_meta = $blog_settings['post_meta'];
+//sam_p($post_meta);
 ?>
 <div id="content">
     <form id="sampression-metadata" onsubmit="javascript:return false;">
@@ -21,9 +22,9 @@ $post_meta = $blog_settings['post_meta'];
                             $meta = $post_meta['meta'];
                             foreach ( $meta as $mkey => $mval ) {
                             ?>
-                            <input type="checkbox" class="sam-checkbox" id="use-<?php echo $mkey; ?>"<?php if ( $mval == 'yes' ) echo ' checked="checked"'; ?> />
-                            <label for="use-<?php echo $mkey; ?>" class="checkbox-label show-meta"><?php echo ucwords( $mkey ); ?></label>
-                            <input type="hidden" name="show_<?php echo $mkey; ?>" id="show-use-<?php echo $mkey; ?>" value="<?php echo $mval; ?>" />
+                            <input type="checkbox" class="sam-checkbox" id="use-<?php echo esc_attr( $mkey ); ?>"<?php if ( $mval == 'yes' ) echo ' checked="checked"'; ?> />
+                            <label for="use-<?php echo esc_attr( $mkey ); ?>" class="checkbox-label show-meta"><?php echo ucwords( esc_attr( $mkey ) ); ?></label>
+                            <input type="hidden" name="show_<?php echo esc_attr( $mkey ); ?>" id="show-use-<?php echo esc_attr( $mkey ); ?>" value="<?php echo esc_attr( $mval ); ?>" />
                             <?php
                             }
                             ?>
@@ -39,6 +40,7 @@ $post_meta = $blog_settings['post_meta'];
                     <h4><?php _e( 'Hide blog from the following categories', 'sampression' );?></h4>
                     <?php
                     $blog_category = $blog_settings['blog_category'];
+                    //sam_p($blog_category);
                     ?>
                 </div>
                 <div class="box-entry sam-lists sam-blogmeta-option exclude-cat-list">

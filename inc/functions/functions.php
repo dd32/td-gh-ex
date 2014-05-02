@@ -254,23 +254,30 @@ function sampression_content_class($classes = array()) {
 }
 
 function sampression_sidebar_position() {
-    global $post;
-    $post_id = $post->ID;
-    if(is_front_page()) {
-        $post_id = get_option('page_on_front');
-    }
-    if(is_home()) {
-        $post_id = get_option('page_for_posts');
-    }
-    $position = '';
-    if(is_page() || is_single() || is_front_page() || is_home()) {
-        $position = get_post_meta($post_id, 'sam_sidebar_by_post', true);
-    }
-    $sampression_position = (object) sampression_styling();
-    if($position == '' || $position == 'default') {
+    if ( (is_front_page() && is_home()) || is_author() || is_category() || is_tag()) {
+        $sampression_position = (object) sampression_styling();
         $position = $sampression_position->sidebar['active'];
+        return $position;
     }
-    return $position;
+    else{
+        global $post;
+        $post_id = $post->ID;
+        if(is_front_page()) {
+            $post_id = get_option('page_on_front');
+        }
+        if(is_home()) {
+            $post_id = get_option('page_for_posts');
+        }
+        $position = '';
+        if(is_page() || is_single() || is_front_page() || is_home()) {
+            $position = get_post_meta($post_id, 'sam_sidebar_by_post', true);
+        }
+        $sampression_position = (object) sampression_styling();
+        if($position == '' || $position == 'default') {
+            $position = $sampression_position->sidebar['active'];
+        }
+        return $position;
+   }
 }
 
 
@@ -283,12 +290,12 @@ function sampression_sidebar_position() {
 function sampression_blog_title() {
     $logo_icon = (object) sampression_logos_icons();
     if ($logo_icon->logo_icon['active']['name'] === 'use-title') {
-        echo '<h1 class="site-title"><a href="'.home_url().'" class="home-link">' . get_bloginfo('name') . '</a></h1>';
+        echo '<h1 class="site-title"><a href="'.esc_url(home_url()).'" class="home-link">' . get_bloginfo('name') . '</a></h1>';
         if ($logo_icon->logo_icon['web_desc']['use_desc'] === 'yes') {
             echo '<h2 class="site-description">' . get_bloginfo('description') . '</h2>';
         }
     } else {
-        echo '<div id="logo"><a href="'.home_url().'" class="home-link"><img src="' . $logo_icon->logo_icon['image'] . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . '" /></a></div>';
+        echo '<div id="logo"><a href="'.esc_url(home_url()).'" class="home-link"><img src="' . $logo_icon->logo_icon['image'] . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . '" /></a></div>';
     }
 }
 

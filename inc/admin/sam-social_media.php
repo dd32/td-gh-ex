@@ -52,7 +52,7 @@ $available_social_media = $social_media->link_name;
                                         <div class="select-wrapper alignleft large-select" id="social-media-select-wrapper">
                                             <select id="social_media_name" class="change-social-media">
                                                 <?php foreach( $available_social_media as $key => $val ) :?>
-                                                <option value="<?php echo $key; ?>"><?php echo esc_attr( $val['label'] ); ?></option>
+                                                <option value="<?php echo esc_attr( $key ); ?>"><?php echo esc_attr( $val['label'] ); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
@@ -64,7 +64,7 @@ $available_social_media = $social_media->link_name;
                                         $cntr = 1;
                                         foreach ( $available_social_media as $key => $val ) :
                                             $hidden = $cntr == 1? "": "hidden" ;
-                                            echo '<div class="example sam-info ' . $hidden . '" id="social_example_' . $key . '">' . esc_url( $val['url'] ) . '</div>';
+                                            echo '<div class="example sam-info ' . $hidden . '" id="social_example_' . esc_attr( $key ) . '">' . esc_url( $val['url'] ) . '</div>';
                                             $cntr ++;
                                         endforeach; ?>
                                     </li>

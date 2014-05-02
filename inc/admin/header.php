@@ -6,7 +6,7 @@
             <span class="tagline"><?php _e( 'a new theme', 'sampression' );?></span>
         </div>
         <div class="sam-version">
-            <span><?php _e( 'version 1.0.4', 'sampression' );?></span>
+            <span><?php _e( 'version 1.0.5', 'sampression' );?></span>
         </div>
     </div><!--end of #header-->
     <nav id="top-nav" class="clearfix">

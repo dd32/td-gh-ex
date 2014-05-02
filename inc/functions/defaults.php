@@ -192,19 +192,19 @@ function sampression_social_media($defaults = false) {
         'link_name' => array(
             'facebook' => array(
                 'label' => 'Facebook',
-                'url' => 'http://www.facebook.com/sampressiontheme'
+                'url' => esc_url( 'http://www.facebook.com/sampressiontheme' )
             ),
             'twitter' => array(
                 'label' => 'Twitter',
-                'url' => 'http://www.twitter.com/sampressiontheme'
+                'url' => esc_url( 'http://www.twitter.com/sampressiontheme' )
             ),
             'youtube' => array(
                 'label' => 'Youtube',
-                'url' => 'http://www.youtube.com/sampressiontheme'
+                'url' => esc_url( 'http://www.youtube.com/sampressiontheme' )
             ),
             'linkedin' => array(
                 'label' => 'LinkedIn',
-                'url' => 'http://www.linkedin.com/in/sampression'
+                'url' => esc_url( 'http://www.linkedin.com/in/sampression' )
             )
         ),
         'links' => array(

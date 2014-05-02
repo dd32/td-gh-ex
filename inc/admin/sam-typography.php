@@ -34,12 +34,12 @@ $default_fonts = sampression_fonts_style();
                     <div class="section row">
                         <div class="sec-label"><?php _e( 'Body Text', 'sampression' ) ?></div>
                         <div class="entry">
-                            <p id="paragraphtext" class="font-demo" style="font: <?php echo $general['p']['active']['size']; ?>px <?php echo $general['p']['active']['font']; ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></p>
+                            <p id="paragraphtext" class="font-demo" style="font: <?php echo absint( $general['p']['active']['size'] ); ?>px <?php echo esc_attr( $general['p']['active']['font'] ); ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></p>
                             <div class="select-wrapper font-face large-select alignleft" >
-                                <?php sampression_font_select( 'p_font_face', 'sam-select change-fontface', $general['p']['active']['font'] ) ?>
+                                <?php sampression_font_select( 'p_font_face', 'sam-select change-fontface', esc_attr( $general['p']['active']['font'] ) ) ?>
                             </div>
                             <div class="select-wrapper font-size alignleft">
-                                <?php sampression_font_size_select( 'p_font_size', 'sam-select change-fontsize', $general['p']['active']['size'] ) ?>
+                                <?php sampression_font_size_select( 'p_font_size', 'sam-select change-fontsize', absint( $general['p']['active']['size'] ) ) ?>
                             </div>
                         </div>
                     </div>
@@ -55,12 +55,12 @@ $default_fonts = sampression_fonts_style();
                                 <div class="section row">
                                     <div class="sec-label"><?php _e( 'Title', 'sampression' ) ?></div>
                                     <div class="entry">
-                                        <h1 id="sam-post-title" class="font-demo" style="font: <?php echo $pp['title']['text']['active']['size']; ?>px <?php echo $pp['title']['text']['active']['font']; ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></h1>
+                                        <h1 id="sam-post-title" class="font-demo" style="font: <?php echo absint( $pp['title']['text']['active']['size'] ); ?>px <?php echo esc_attr( $pp['title']['text']['active']['font'] ); ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></h1>
                                         <div class="select-wrapper font-face large-select alignleft" >
-                                            <?php sampression_font_select( 'pp_title_font_face', 'sam-select change-fontface', $pp['title']['text']['active']['font'] ) ?>
+                                            <?php sampression_font_select( 'pp_title_font_face', 'sam-select change-fontface', esc_attr( $pp['title']['text']['active']['font'] ) ) ?>
                                         </div>
                                         <div class="select-wrapper font-size small-select alignleft">
-                                            <?php sampression_font_size_select( 'pp_title_font_size', 'sam-select change-fontsize', $pp['title']['text']['active']['size'] ) ?>
+                                            <?php sampression_font_size_select( 'pp_title_font_size', 'sam-select change-fontsize', absint( $pp['title']['text']['active']['size'] ) ) ?>
                                         </div>
                                     </div>
                                 </div>
@@ -77,12 +77,12 @@ $default_fonts = sampression_fonts_style();
                                 <div class="section row">
                                     <div class="sec-label"><?php _e( 'Text', 'sampression' ) ?></div>
                                     <div class="entry">
-                                        <div id="sam-meta-text" class="font-demo" style="font: <?php echo $pp['meta']['text']['active']['size']; ?>px <?php echo $pp['meta']['text']['active']['font']; ?>; "><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></div>
+                                        <div id="sam-meta-text" class="font-demo" style="font: <?php echo absint( $pp['meta']['text']['active']['size'] ); ?>px <?php echo esc_attr( $pp['meta']['text']['active']['font'] ); ?>; "><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></div>
                                         <div class="select-wrapper font-face large-select alignleft" >
-                                            <?php sampression_font_select( 'pp_meta_font_face', 'sam-select change-fontface', $pp['meta']['text']['active']['font'] ) ?>
+                                            <?php sampression_font_select( 'pp_meta_font_face', 'sam-select change-fontface', esc_attr( $pp['meta']['text']['active']['font'] ) ) ?>
                                         </div>
                                         <div class="select-wrapper font-size small-select alignleft">
-                                            <?php sampression_font_size_select( 'pp_meta_font_size', 'sam-select change-fontsize', $pp['meta']['text']['active']['size'] ) ?>
+                                            <?php sampression_font_size_select( 'pp_meta_font_size', 'sam-select change-fontsize', absint( $pp['meta']['text']['active']['size'] ) ) ?>
                                         </div>
                                     </div>
                                 </div>
