@@ -47,6 +47,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
+= Version 1.0.6 = 
+* Added Russian language file. Thanks to Alex <tkia@ya.ru> for providing us the translation file.
+* Added Norsk(Bokmål) language file. Thanks to Ingebjørg Synnøve Thoresen <ist@kreasjoner.com> for providing us the translation file.
+
 = Version 1.0.5 = 
 * Fixed layout issue for wide 978px and narrow 978px layout for smaller screen size of less than 768px.
 * Added hover image effect for linked images.
