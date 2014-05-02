@@ -1,8 +1,8 @@
 <?php
 /**
- * @package URVR
+ * @package ABARIS
  */
-global $urvr;
+global $abaris;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,23 +16,23 @@ global $urvr;
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php if( isset($urvr['featured-image'] ) && $urvr['featured-image'] ) : ?>
+		<?php if( isset($abaris['featured-image'] ) && $abaris['featured-image'] ) : ?>
 			<div class="thumb">
 				<?php 
 					if( has_post_thumbnail() && ! post_password_required() ) : 
 						the_post_thumbnail(); 
 					else :
-						echo '<img src="' . URVR_CHILD_URL . '/images/no-image.png" />';
+						echo '<img src="' . ABARIS_CHILD_URL . '/images/no-image.png" />';
 					endif;
 				?>
 			</div>
 		<?php endif; ?>
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', TEXTDOMAIN ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'abaris' ) ); ?>
 		<?php //the_content( '',false,'' ); ?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', TEXTDOMAIN ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'abaris' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -45,26 +45,26 @@ global $urvr;
 			<span class="posted-on"><?php abaris_post_date(); ?></span>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', TEXTDOMAIN ) );
+				$categories_list = get_the_category_list( __( ', ', 'abaris' ) );
 				if ( $categories_list && abaris_categorized_blog() ) :
 			?>
 			<span class="cat-links">
 				<i class="el-icon-list-alt"></i>
-				<?php printf( __( ' %1$s', TEXTDOMAIN ), $categories_list ); ?>
+				<?php printf( __( ' %1$s', 'abaris' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', TEXTDOMAIN ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'abaris' ) );
 				if ( $tags_list ) :
 			?>		
 			<span class="tags-links">
 				<i class="el-icon-tags"></i>
-				<?php printf( __( ' %1$s', TEXTDOMAIN ), $tags_list ); ?>
+				<?php printf( __( ' %1$s', 'abaris' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-		<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', TEXTDOMAIN ), '', '' ); ?>
+		<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', 'abaris' ), '', '' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

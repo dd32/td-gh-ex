@@ -4,7 +4,7 @@
  *
  * Various functions to use through out site such as breadcrumb, pagination, etc
  *
- * @package URVR
+ * @package ABARIS
  *
  * @since 1.0
  *
@@ -28,9 +28,9 @@
 	add_action( 'wp_head', 'abaris_custom_css' );
 
 	function abaris_custom_css() {
-		global $urvr;
-		if( isset( $urvr['custom-css'] ) ) {
-			$custom_css = '<style type="text/css">' . $urvr['custom-css'] . '</style>';
+		global $abaris;
+		if( isset( $abaris['custom-css'] ) ) {
+			$custom_css = '<style type="text/css">' . $abaris['custom-css'] . '</style>';
 			echo $custom_css;
 		}
 	}
@@ -38,10 +38,10 @@
 	add_action( 'wp_footer', 'abaris_custom_js', 99 );
 	
 	function abaris_custom_js() {
-		global $urvr;
-		if( isset( $urvr['custom-js'] ) ) {
+		global $abaris;
+		if( isset( $abaris['custom-js'] ) ) {
 			$custom_js = '<script type="text/javascript"><!--';
-	 		$custom_js .= $urvr['custom-js'];
+	 		$custom_js .= $abaris['custom-js'];
 	 		$custom_js .= '//--><!]]></script>';
 	 		echo $custom_js;
 		}

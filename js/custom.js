@@ -1,6 +1,8 @@
 jQuery(document).ready(function($){
 
-	 $('.flexslider').flexslider({
+  $('#masthead').waypoint('sticky');
+
+  $('.flexslider').flexslider({
     animation: "slide",
     controlNav: false
   });
@@ -19,6 +21,7 @@ jQuery(document).ready(function($){
   });
 
   $(window).scroll(function() {
+
     $('.services h3').each(function(){
     var imagePos = $(this).offset().top;
 

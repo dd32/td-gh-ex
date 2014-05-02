@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package URVR
+ * @package ABARIS
  */
 
 /**
@@ -22,7 +22,7 @@
  * @uses abaris_admin_header_style()
  * @uses abaris_admin_header_image()
  *
- * @package URVR
+ * @package ABARIS
  */
 function abaris_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'abaris_custom_header_args', array(

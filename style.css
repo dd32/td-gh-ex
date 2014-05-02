@@ -1,15 +1,15 @@
 /*
 Theme Name: Abaris
-Theme URI: http://demo.webulous.in/abaris/
+Theme URI: http://www.webulous.in/abaris/
 Author: N. Venkat Raj
 Author URI: http://www.webulous.in/
 Description: Abaris is a multi purpose, responsive theme with beautiful design and cool CSS3 animations. It uses HTML5, CSS3, Bootstrap Grid system and coded with love and care. It's best suited for corporate/portfolio/blog sites. It has advanced theme options panel support to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/abaris/
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: urvr
+Text Domain: abaris
 Domain Path: /languages/
-Tags:  black, orange, custom-background, custom-header, custom-menu, dark, featured-images, fixed-layout, fluid-layout, left-sidebar, post-formats, responsive-layout, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns
+Tags:  black, orange, custom-background, custom-header, custom-menu, dark, featured-images, fixed-layout, left-sidebar, post-formats, responsive-layout, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2590,6 +2590,8 @@ h2 i {
 .mejs-container {
 	clear: both;
 }
+
+.stuck { position: fixed; top:0; left: 0; width: 100%; z-index: 100;}
 
 @media (max-width: 768px) {
   .main-navigation ul {

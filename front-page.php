@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package URVR
+ * @package ABARIS
  */
 	if ( 'posts' == get_option( 'show_on_front' ) ) {
 	    include( get_home_template() );
@@ -16,8 +16,8 @@
 	} else {
 		get_header(); 
 	
-					if( isset($urvr['homepage_blocks']['enabled']['slider']) && isset($urvr['slides']) ) {
-						$slides = $urvr['slides'];
+					if( isset($abaris['homepage_blocks']['enabled']['slider']) && isset($abaris['slides']) ) {
+						$slides = $abaris['slides'];
 						$output = '';
 						if( count($slides) > 1) {
 
@@ -46,29 +46,29 @@
 						echo $output;
 						
 					}
-					if( isset( $urvr['homepage_blocks']['enabled']['services'] ) ) {
+					if( isset( $abaris['homepage_blocks']['enabled']['services'] ) ) {
 						$output = '';
 							$output = '<div class="services">';
 							$output .= '<div class="container">';
 							$output .= '<div class="row">';
-								if( isset( $urvr['service-icon-1'] ) && isset( $urvr['service-description-1'] ) ) {
+								if( isset( $abaris['service-icon-1'] ) && isset( $abaris['service-description-1'] ) ) {
 									$output .= '<div class="span4" id="service1">';
-									$output .= '<h3><i class="' . $urvr['service-icon-1'] . '"></i></h3>';
-									$output .= '<div class="service">' . $urvr['service-description-1'] . '</div>';
+									$output .= '<h3><i class="' . $abaris['service-icon-1'] . '"></i></h3>';
+									$output .= '<div class="service">' . $abaris['service-description-1'] . '</div>';
 									$output .= '</div><!-- .span4 -->';
 								}
 
-								if( isset( $urvr['service-icon-2'] ) && isset( $urvr['service-description-2'] ) ) {
+								if( isset( $abaris['service-icon-2'] ) && isset( $abaris['service-description-2'] ) ) {
 									$output .= '<div class="span4" id="service2">';
-									$output .= '<h3><i class="' . $urvr['service-icon-2'] . '"></i></h3>';
-									$output .= '<div class="service">' . $urvr['service-description-2'] . '</div>';
+									$output .= '<h3><i class="' . $abaris['service-icon-2'] . '"></i></h3>';
+									$output .= '<div class="service">' . $abaris['service-description-2'] . '</div>';
 									$output .= '</div><!-- .span4 -->';
 								}
 
-								if( isset( $urvr['service-icon-3'] ) && isset( $urvr['service-description-3'] ) ) {
+								if( isset( $abaris['service-icon-3'] ) && isset( $abaris['service-description-3'] ) ) {
 									$output .= '<div class="span4" id="service3">';
-									$output .= '<h3><i class="' . $urvr['service-icon-3'] . '"></i></h3>';
-									$output .= '<div class="service">' . $urvr['service-description-3'] . '</div>';
+									$output .= '<h3><i class="' . $abaris['service-icon-3'] . '"></i></h3>';
+									$output .= '<div class="service">' . $abaris['service-description-3'] . '</div>';
 									$output .= '</div><!-- .span4 -->';
 								}
 
@@ -85,12 +85,12 @@
 				<div id="primary" class="content-area span12">
 					<main id="main" class="site-main" role="main">
 		<?php
-					if( isset( $urvr['homepage_blocks']['enabled'] )) {
-						$enabled = $urvr['homepage_blocks']['enabled'];
+					if( isset( $abaris['homepage_blocks']['enabled'] )) {
+						$enabled = $abaris['homepage_blocks']['enabled'];
 						foreach ($enabled as $key => $value) {
 							switch ($key) {
 								case 'features':
-									$features = isset( $urvr['features'] ) ? $urvr['features'] : '';
+									$features = isset( $abaris['features'] ) ? $abaris['features'] : '';
 								?>
 								<div class="row">
 									<div class="feature-wrap">
@@ -98,26 +98,26 @@
 									<div class="span6" id="whyus">
 
 										<div class="feature2">
-											<?php echo isset( $urvr['features'] ) ? $urvr['features'] : '' ?>
+											<?php echo isset( $abaris['features'] ) ? $abaris['features'] : '' ?>
 										</div>
 									</div>
 
 									<div class="span6" id="skills">
 										<?php
 											$output = '';
-											if ( isset( $urvr['skill-heading'] ) ) {
-												$output .= '<h2><i class="el-icon-tags"></i>' . $urvr['skill-heading'] . '</h2>';
+											if ( isset( $abaris['skill-heading'] ) ) {
+												$output .= '<h2><i class="el-icon-tags"></i>' . $abaris['skill-heading'] . '</h2>';
 											}
 
 											for ($i=1;$i<6;$i++) {
 												$skill = "skill-{$i}";
 												$percentage = "percentage-{$i}";
 												$icon = "skill-icon-{$i}";
-												if( isset( $skill ) && isset( $urvr[$icon] ) && isset( $urvr[$percentage] ) && isset( $urvr[$skill] ) ) {
-													$output .= '<div class="skill-container"><i class="' . $urvr[$icon] . '"></i>';
+												if( isset( $skill ) && isset( $abaris[$icon] ) && isset( $abaris[$percentage] ) && isset( $abaris[$skill] ) ) {
+													$output .= '<div class="skill-container"><i class="' . $abaris[$icon] . '"></i>';
 													$output .= '<div class="skill">';
-													$output .= '<div class="skill-percentage percent' . $urvr[$percentage] .' start"><span class="circle"></span></div>';
-													$output .= '<div class="skill-content">'  . $urvr[$skill] .' ' . $urvr[$percentage] . '%</div>';
+													$output .= '<div class="skill-percentage percent' . $abaris[$percentage] .' start"><span class="circle"></span></div>';
+													$output .= '<div class="skill-content">'  . $abaris[$skill] .' ' . $abaris[$percentage] . '%</div>';
 													$output .= '</div>';
 													$output .= '</div>';
 												}
@@ -154,7 +154,6 @@
 						}
 					}
 				?>
-			
 			</main><!-- #main -->
 		</div><!-- #primary -->
 <?php 

@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package URVR
+ * @package ABARIS
  */
 ?>
 	<div id="secondary" class="widget-area one-third column span3" role="complementary">
@@ -14,14 +14,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Archives', TEXTDOMAIN ); ?></h1>
+				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Archives', 'abaris' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Meta', TEXTDOMAIN ); ?></h1>
+				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Meta', 'abaris' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

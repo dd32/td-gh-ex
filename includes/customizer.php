@@ -1,8 +1,8 @@
 <?php
 /**
- * URVR Theme Customizer
+ * ABARIS Theme Customizer
  *
- * @package URVR
+ * @package ABARIS
  */
 
 /**

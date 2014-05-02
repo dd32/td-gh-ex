@@ -235,16 +235,16 @@ if (!class_exists("Redux_Framework_sample_config")) {
             // ACTUAL DECLARATION OF SECTIONS
 
             $this->sections[] = array(
-                'title' => __('General Settings', TEXTDOMAIN),
-                'desc' => __('General Settings of Theme to change look and feel through out the site', TEXTDOMAIN),
+                'title' => __('General Settings', 'abaris'),
+                'desc' => __('General Settings of Theme to change look and feel through out the site', 'abaris'),
                 'icon' => 'el-icon-cogs',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
                     array(
                         'id'=>'breadcrumb',
                         'type' => 'switch', 
-                        'title' => __('Enable Breadcrumb Navigation', TEXTDOMAIN),
-                        'subtitle'=> __('Check to display breadcrumb navigation.', TEXTDOMAIN),
+                        'title' => __('Enable Breadcrumb Navigation', 'abaris'),
+                        'subtitle'=> __('Check to display breadcrumb navigation.', 'abaris'),
                         'default' => 1,
                         'on' => 'Enable',
                         'off' => 'Disable',
@@ -253,8 +253,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'breadcrumb-char',
                         'type' => 'select',
-                        'title' => __('Breadcrumb Character', TEXTDOMAIN),
-                        'subtitle'=> __('Check to display breadcrumb navigation.', TEXTDOMAIN),
+                        'title' => __('Breadcrumb Character', 'abaris'),
+                        'subtitle'=> __('Check to display breadcrumb navigation.', 'abaris'),
                         'options' => array( '1' => ' &raquo; ', '2' => ' / ', '3' => ' > ' ),
                         'default' => '1'
                         ),
@@ -262,8 +262,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'pagenavi',
                         'type' => 'switch', 
-                        'title' => __('Enable Numeric Page Navigation', TEXTDOMAIN),
-                        'subtitle'=> __('Check to display numeric page navigation, instead of Previous Posts / Next Posts links.', TEXTDOMAIN),
+                        'title' => __('Enable Numeric Page Navigation', 'abaris'),
+                        'subtitle'=> __('Check to display numeric page navigation, instead of Previous Posts / Next Posts links.', 'abaris'),
                         'default'       => 1,
                         'on' => 'Enable',
                         'off' => 'Disable',
@@ -273,8 +273,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'id'=>'layout',
                         'type' => 'image_select',
                         'compiler'=>true,
-                        'title' => __('Main Layout', TEXTDOMAIN ), 
-                        'subtitle' => __('Select main content and sidebar alignment.', TEXTDOMAIN ),
+                        'title' => __('Main Layout', 'abaris' ), 
+                        'subtitle' => __('Select main content and sidebar alignment.', 'abaris' ),
                         'options' => array(
                                 '2' => array('alt' => 'Right Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
                                 '3' => array('alt' => 'Left Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cr.png'),
@@ -285,16 +285,16 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'custom-js',
                         'type' => 'textarea',
-                        'title' => __('Custom Javascript', TEXTDOMAIN), 
-                        'subtitle' => __('Quickly add some Javascript to your theme by adding it to this block.', TEXTDOMAIN),
+                        'title' => __('Custom Javascript', 'abaris'), 
+                        'subtitle' => __('Quickly add some Javascript to your theme by adding it to this block.', 'abaris'),
                         'validate' => 'js',
                         'desc' => 'Validate that it\'s javascript!',
                         ),      
                array(
                         'id'=>'custom-css',
                         'type' => 'ace_editor',
-                        'title' => __('Custom CSS', TEXTDOMAIN), 
-                        'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', TEXTDOMAIN),
+                        'title' => __('Custom CSS', 'abaris'), 
+                        'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'abaris'),
                         'mode' => 'css',
                   'theme' => 'monokai',
                         'desc' => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
@@ -304,8 +304,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
 
             $this->sections[] = array(
-                'title' => __('Header', TEXTDOMAIN),
-                'desc' => __('Theme options related to header section', TEXTDOMAIN),
+                'title' => __('Header', 'abaris'),
+                'desc' => __('Theme options related to header section', 'abaris'),
                 'icon' => 'el-icon-arrow-up',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
@@ -313,8 +313,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'site-title',
                         'type' => 'switch', 
-                        'title' => __('Logo as site title', TEXTDOMAIN),
-                        'subtitle'=> __('Enable to load custom logo as site title in header.', TEXTDOMAIN),
+                        'title' => __('Logo as site title', 'abaris'),
+                        'subtitle'=> __('Enable to load custom logo as site title in header.', 'abaris'),
                         "default"       => 0,
                         'on' => 'Enable',
                         'off' => 'Disable',
@@ -324,19 +324,19 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'id'=>'custom-logo',
                         'type' => 'media', 
                         'url'=> true,
-                        'title' => __('Custom Logo', TEXTDOMAIN),
+                        'title' => __('Custom Logo', 'abaris'),
                         'compiler' => 'true',
                         //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                        'desc'=> __('Upload logo to use as site title', TEXTDOMAIN),
-                        'subtitle' => __('Upload any media using the WordPress native uploader', TEXTDOMAIN),
+                        'desc'=> __('Upload logo to use as site title', 'abaris'),
+                        'subtitle' => __('Upload any media using the WordPress native uploader', 'abaris'),
                         'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
                         ),
 
                     array(
                         'id'=>'site-description',
                         'type' => 'switch', 
-                        'title' => __('Site Description', TEXTDOMAIN),
-                        'subtitle'=> __('Enable to show site description in header.', TEXTDOMAIN),
+                        'title' => __('Site Description', 'abaris'),
+                        'subtitle'=> __('Enable to show site description in header.', 'abaris'),
                         "default"       => 1,
                         'on' => 'Enable',
                         'off' => 'Disable',
@@ -346,48 +346,48 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'id'=>'favicon',
                         'type' => 'media', 
                         'preview'=> false,
-                        'title' => __('Custom Favicon (ICO)', TEXTDOMAIN),
-                        'desc' => __('You can upload an ico image that will represent your website\'s favicon (16px X 16px)', TEXTDOMAIN),
+                        'title' => __('Custom Favicon (ICO)', 'abaris'),
+                        'desc' => __('You can upload an ico image that will represent your website\'s favicon (16px X 16px)', 'abaris'),
                         ),
 
                     array(
                         'id'=>'ipad-icon-retina',
                         'type' => 'media', 
                         'preview'=> false,
-                        'title' => __('Apple iPad Retina Icon Upload (144px X 144px)', TEXTDOMAIN),
-                        'desc'=> __('For third-generation iPad with high-resolution Retina display', TEXTDOMAIN),
+                        'title' => __('Apple iPad Retina Icon Upload (144px X 144px)', 'abaris'),
+                        'desc'=> __('For third-generation iPad with high-resolution Retina display', 'abaris'),
                         ),
 
                     array(
                         'id'=>'iphone-icon-retina',
                         'type' => 'media', 
                         'preview'=> false,
-                        'title' => __('Apple iPhone Retina Icon Upload (114px X 114px)', TEXTDOMAIN),
-                        'desc'=> __('For iPhone with high-resolution Retina display', TEXTDOMAIN),
+                        'title' => __('Apple iPhone Retina Icon Upload (114px X 114px)', 'abaris'),
+                        'desc'=> __('For iPhone with high-resolution Retina display', 'abaris'),
                         ),
 
                     array(
                         'id'=>'ipad-icon',
                         'type' => 'media', 
                         'preview'=> false,
-                        'title' => __('Apple iPad Icon Upload (72px X 72px)', TEXTDOMAIN),
-                        'desc'=> __('For first- and second-generation iPad', TEXTDOMAIN),
+                        'title' => __('Apple iPad Icon Upload (72px X 72px)', 'abaris'),
+                        'desc'=> __('For first- and second-generation iPad', 'abaris'),
                         ),
 
                     array(
                         'id'=>'iphone-icon',
                         'type' => 'media', 
                         'preview'=> false,
-                        'title' => __('Apple iPhone Icon Upload (57px X 57px)', TEXTDOMAIN),
-                        'desc'=> __('For non-Retina iPhone, iPod Touch, and Android 2.1+ devices', TEXTDOMAIN),
+                        'title' => __('Apple iPhone Icon Upload (57px X 57px)', 'abaris'),
+                        'desc'=> __('For non-Retina iPhone, iPod Touch, and Android 2.1+ devices', 'abaris'),
                         ),          
                     )
             );
 
 
             $this->sections[] = array(
-                'title' => __('Footer', TEXTDOMAIN),
-                'desc' => __('Theme options related to footer area of theme', TEXTDOMAIN),
+                'title' => __('Footer', 'abaris'),
+                'desc' => __('Theme options related to footer area of theme', 'abaris'),
                 'icon' => 'el-icon-arrow-down',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
@@ -395,8 +395,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'footer-widgets',
                         'type' => 'switch', 
-                        'title' => __('Enable Footer Widget Area', TEXTDOMAIN),
-                        'subtitle'=> __('Check to enable 4 Column Footer widget Area', TEXTDOMAIN),
+                        'title' => __('Enable Footer Widget Area', 'abaris'),
+                        'subtitle'=> __('Check to enable 4 Column Footer widget Area', 'abaris'),
                         "default"       => 0,
                         'on' => 'Enable',
                         'off' => 'Disable',
@@ -405,10 +405,10 @@ if (!class_exists("Redux_Framework_sample_config")) {
                     array(
                         'id'=>'footer-text',
                         'type' => 'textarea',
-                        'title' => __('Footer Copyright Text', TEXTDOMAIN), 
-                        'subtitle' => __('Footer copyright text. HTML Allowed', TEXTDOMAIN),
-                        'desc' => __('This field is even HTML validated!', TEXTDOMAIN),
-                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulous.in/">Webulous</a>.', TEXTDOMAIN ),
+                        'title' => __('Footer Copyright Text', 'abaris'), 
+                        'subtitle' => __('Footer copyright text. HTML Allowed', 'abaris'),
+                        'desc' => __('This field is even HTML validated!', 'abaris'),
+                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulous.in/">Webulous</a>.', 'abaris' ),
                         'validate' => 'html',
                         ),
 
@@ -416,8 +416,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 );
 
                 $this->sections[] = array(
-                    'title' => __('Home', TEXTDOMAIN),
-                    'desc' => __('Theme options related to home page', TEXTDOMAIN),
+                    'title' => __('Home', 'abaris'),
+                    'desc' => __('Theme options related to home page', 'abaris'),
                     'icon' => 'el-icon-home',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(  
@@ -425,23 +425,24 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         array(
                             'id'=>'slides',
                             'type' => 'slides',
-                            'title' => __('Flex Slider Options', TEXTDOMAIN ),
-                            'subtitle'=> __('Unlimited slides with drag and drop sortings.', TEXTDOMAIN )
+                            'title' => __('Flex Slider Options', 'abaris' ),
+                            'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'abaris' ),
+                            'show' => array( 'title' => true, 'description' => true, 'url' => true ),
                         ),
 
                         array(
                         'id'=>'service-icon-1',
                         'type' => 'select',
                         'data' => 'elusive-icons',
-                        'title' => __('1. Service Icon', TEXTDOMAIN ), 
-                        'subtitle' => __('Select icon that represents your service', TEXTDOMAIN ),
+                        'title' => __('1. Service Icon', 'abaris' ), 
+                        'subtitle' => __('Select icon that represents your service', 'abaris' ),
                         ),
                         array(
                             'id'=>'service-description-1',
                             'type' => 'textarea',
-                            'title' => __('1. Service Description', TEXTDOMAIN ), 
-                            'subtitle' => __('Custom HTML, Just like a text box widget.', TEXTDOMAIN ),
-                            'desc' => __('This field is even HTML validated!', TEXTDOMAIN ),
+                            'title' => __('1. Service Description', 'abaris' ), 
+                            'subtitle' => __('Custom HTML, Just like a text box widget.', 'abaris' ),
+                            'desc' => __('This field is even HTML validated!', 'abaris' ),
                             'validate' => 'html',
                         ),
 
@@ -449,15 +450,15 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'service-icon-2',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('2. Service Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents your service', TEXTDOMAIN ),
+                            'title' => __('2. Service Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents your service', 'abaris' ),
                         ),
                         array(
                             'id'=>'service-description-2',
                             'type' => 'textarea',
-                            'title' => __('2. Service Description', TEXTDOMAIN ), 
-                            'subtitle' => __('Custom HTML, Just like a text box widget.', TEXTDOMAIN ),
-                            'desc' => __('This field is even HTML validated!', TEXTDOMAIN ),
+                            'title' => __('2. Service Description', 'abaris' ), 
+                            'subtitle' => __('Custom HTML, Just like a text box widget.', 'abaris' ),
+                            'desc' => __('This field is even HTML validated!', 'abaris' ),
                             'validate' => 'html',
                         ),
 
@@ -465,23 +466,23 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'service-icon-3',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('3. Service Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents your service', TEXTDOMAIN ),
+                            'title' => __('3. Service Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents your service', 'abaris' ),
                         ),
                         array(
                             'id'=>'service-description-3',
                             'type' => 'textarea',
-                            'title' => __('3. Service Description', TEXTDOMAIN ), 
-                            'subtitle' => __('Custom HTML, Just like a text box widget.', TEXTDOMAIN ),
-                            'desc' => __('This field is even HTML validated!', TEXTDOMAIN ),
+                            'title' => __('3. Service Description', 'abaris' ), 
+                            'subtitle' => __('Custom HTML, Just like a text box widget.', 'abaris' ),
+                            'desc' => __('This field is even HTML validated!', 'abaris' ),
                             'validate' => 'html',
                         ),
 
                         array(
                             'id'=>'features',
                             'type' => 'textarea',
-                            'title' => __('Why Us? (or) Featrues', TEXTDOMAIN ), 
-                            'subtitle' => __('A list is best, like "Why Us?", "Features".', TEXTDOMAIN ),
+                            'title' => __('Why Us? (or) Featrues', 'abaris' ), 
+                            'subtitle' => __('A list is best, like "Why Us?", "Features".', 'abaris' ),
                             'validate' => 'html',
                         ),  
 
@@ -489,21 +490,21 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         array(
                             'id'=>'skill-heading',
                             'type' => 'text',
-                            'title' => __('Skills Heading', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter heading of the skills list', TEXTDOMAIN ),
+                            'title' => __('Skills Heading', 'abaris' ), 
+                            'subtitle' => __('Enter heading of the skills list', 'abaris' ),
                         ),  
 
                         array(
                             'id'=>'skill-1',
                             'type' => 'text',
-                            'title' => __('1. Skill Name', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter name of the skill', TEXTDOMAIN ),
+                            'title' => __('1. Skill Name', 'abaris' ), 
+                            'subtitle' => __('Enter name of the skill', 'abaris' ),
                         ),      
                         array(
                             'id'=>'percentage-1',
                             'type' => 'spinner',
-                            'title' => __('1. Skill Percentage', TEXTDOMAIN ), 
-                            'desc' => __('Enter 0 to 100', TEXTDOMAIN ),
+                            'title' => __('1. Skill Percentage', 'abaris' ), 
+                            'desc' => __('Enter 0 to 100', 'abaris' ),
                             'min' => '0',
                             'max' => '100',
                             'step' => '5',
@@ -513,22 +514,22 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'skill-icon-1',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('1. Skill Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents this skill', TEXTDOMAIN ),
+                            'title' => __('1. Skill Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents this skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'skill-2',
                             'type' => 'text',
-                            'title' => __('2. Skill Name', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter name of the skill', TEXTDOMAIN ),
+                            'title' => __('2. Skill Name', 'abaris' ), 
+                            'subtitle' => __('Enter name of the skill', 'abaris' ),
                         ),      
 
                         array(
                             'id'=>'percentage-2',
                             'type' => 'spinner',
-                            'title' => __('2. Skill Percentage', TEXTDOMAIN ), 
-                            'desc' => __('Enter 0 to 100', TEXTDOMAIN ),
+                            'title' => __('2. Skill Percentage', 'abaris' ), 
+                            'desc' => __('Enter 0 to 100', 'abaris' ),
                             'min' => '0',
                             'max' => '100',
                             'step' => '5',
@@ -538,22 +539,22 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'skill-icon-2',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('2. Skill Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents this skill', TEXTDOMAIN ),
+                            'title' => __('2. Skill Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents this skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'skill-3',
                             'type' => 'text',
-                            'title' => __('3. Skill Name', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter name of the skill', TEXTDOMAIN ),
+                            'title' => __('3. Skill Name', 'abaris' ), 
+                            'subtitle' => __('Enter name of the skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'percentage-3',
                             'type' => 'spinner',
-                            'title' => __('3. Skill Percentage', TEXTDOMAIN ), 
-                            'desc' => __('Enter 0 to 100', TEXTDOMAIN ),
+                            'title' => __('3. Skill Percentage', 'abaris' ), 
+                            'desc' => __('Enter 0 to 100', 'abaris' ),
                             'min' => '0',
                             'max' => '100',
                             'step' => '5',
@@ -563,22 +564,22 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'skill-icon-3',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('3. Skill Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents this skill', TEXTDOMAIN ),
+                            'title' => __('3. Skill Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents this skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'skill-4',
                             'type' => 'text',
-                            'title' => __('4. Skill Name', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter name of the skill', TEXTDOMAIN ),
+                            'title' => __('4. Skill Name', 'abaris' ), 
+                            'subtitle' => __('Enter name of the skill', 'abaris' ),
                             ),
 
                         array(
                             'id'=>'percentage-4',
                             'type' => 'spinner',
-                            'title' => __('4. Skill Percentage', TEXTDOMAIN ), 
-                            'desc' => __('Enter 0 to 100', TEXTDOMAIN ),
+                            'title' => __('4. Skill Percentage', 'abaris' ), 
+                            'desc' => __('Enter 0 to 100', 'abaris' ),
                             'min' => '0',
                             'max' => '100',
                             'step' => '5',
@@ -588,22 +589,22 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'skill-icon-4',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('4. Skill Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents this skill', TEXTDOMAIN ),
+                            'title' => __('4. Skill Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents this skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'skill-5',
                             'type' => 'text',
-                            'title' => __('5. Skill Name', TEXTDOMAIN ), 
-                            'subtitle' => __('Enter name of the skill', TEXTDOMAIN ),
+                            'title' => __('5. Skill Name', 'abaris' ), 
+                            'subtitle' => __('Enter name of the skill', 'abaris' ),
                         ),
 
                         array(
                             'id'=>'percentage-5',
                             'type' => 'spinner',
-                            'title' => __('5. Skill Percentage', TEXTDOMAIN ), 
-                            'desc' => __('Enter 0 to 100', TEXTDOMAIN ),
+                            'title' => __('5. Skill Percentage', 'abaris' ), 
+                            'desc' => __('Enter 0 to 100', 'abaris' ),
                             'min' => '0',
                             'max' => '100',
                             'step' => '5',
@@ -613,8 +614,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'id'=>'skill-icon-5',
                             'type' => 'select',
                             'data' => 'elusive-icons',
-                            'title' => __('5. Skill Icon', TEXTDOMAIN ), 
-                            'subtitle' => __('Select icon that represents this skill', TEXTDOMAIN ),
+                            'title' => __('5. Skill Icon', 'abaris' ), 
+                            'subtitle' => __('Select icon that represents this skill', 'abaris' ),
                         ),
 
                         array(
@@ -642,8 +643,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
 
                 $this->sections[] = array(
-                    'title' => __('Blog', TEXTDOMAIN),
-                    'desc' => __('Blog options for site', TEXTDOMAIN),
+                    'title' => __('Blog', 'abaris'),
+                    'desc' => __('Blog options for site', 'abaris'),
                     'icon' => 'el-icon-file',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(  
@@ -651,8 +652,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         array(
                             'id'=>'featured-image',
                             'type' => 'switch', 
-                            'title' => __('Featured Image', TEXTDOMAIN),
-                            'subtitle'=> __('Check to show featured image', TEXTDOMAIN),
+                            'title' => __('Featured Image', 'abaris'),
+                            'subtitle'=> __('Check to show featured image', 'abaris'),
                             "default"       => 0,
                             'on' => 'Show',
                             'off' => 'Hide',
@@ -661,8 +662,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         array(
                             'id'=>'single-featured-image',
                             'type' => 'switch', 
-                            'title' => __('Single Post Featured Image', TEXTDOMAIN),
-                            'subtitle'=> __('Check to show featured image on single post', TEXTDOMAIN),
+                            'title' => __('Single Post Featured Image', 'abaris'),
+                            'subtitle'=> __('Check to show featured image on single post', 'abaris'),
                             "default"       => 0,
                             'on' => 'Show',
                             'off' => 'Hide',
@@ -703,7 +704,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
             $this->args = array(
                 // TYPICAL -> Change these values as you need/desire
-                'opt_name' => 'urvr', // This is where your data is stored in the database and also becomes your global variable name.
+                'opt_name' => 'abaris', // This is where your data is stored in the database and also becomes your global variable name.
                 'display_name' => $theme->get('Name'), // Name that appears at the top of your panel
                 'display_version' => $theme->get('Version'), // Version that appears at the top of your panel
                 'menu_type' => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
@@ -715,7 +716,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 'google_api_key' => '', // Must be defined to add google fonts to the typography module
                 //'admin_bar' => false, // Show the panel pages on the admin bar
                 'global_variable' => '', // Set a different name for your global variable other than the opt_name
-                'dev_mode' => true, // Show the time the page took to load, etc
+                'dev_mode' => false, // Show the time the page took to load, etc
                 'customizer' => true, // Enable basic customizer support
                 // OPTIONAL -> Give you extra features
                 'page_priority' => null, // Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
