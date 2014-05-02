@@ -20,6 +20,8 @@ if ( ! isset( $content_width ) )
 /*
  * Iconic One supported features and Registering defaults
  */
+if( !function_exists( 'themonic_setup' ) ) :
+
 function themonic_setup() {
 	/*
 	 * Making Iconic One ready for translation.
@@ -41,10 +43,11 @@ function themonic_setup() {
 	// Uncomment the following two lines to add support for post thumbnails - for classic blog layout
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 660, 9999 ); // Unlimited height, soft crop
+	//Defining home page thumbnail size
+	add_image_size('excerpt-thumbnail', 200, 140, true);
 }
+endif; //Iconic One setup
 add_action( 'after_setup_theme', 'themonic_setup' );
-
-add_image_size('excerpt-thumbnail', 200, 140, true);
 
 
  /*
