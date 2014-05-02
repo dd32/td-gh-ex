@@ -83,4 +83,4 @@
 	}else{
 	$accesspresslite_content_id ="content";
 	} ?>
-	<div id="<?php echo $content; ?>" class="site-content">
+	<div id="<?php echo $accesspresslite_content_id; ?>" class="site-content">

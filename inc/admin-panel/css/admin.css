@@ -152,6 +152,15 @@
 	float:none;
 	margin-bottom:5px;
 }
+#optionsframework input[type="email"], 
+#optionsframework input[type="number"], 
+#optionsframework input[type="password"], 
+#optionsframework input[type="search"], 
+#optionsframework input[type="text"], 
+#optionsframework input[type="url"]{ 
+	height: 28px;
+    vertical-align: middle;
+}
 
 /* Image Uploader */
 
