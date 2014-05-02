@@ -1,0 +1,341 @@
+/*
+Theme Name: White Spektrum
+Author: Benjamin Lu
+Description: This White Premium is light weight, simple and easy to navigate. 
+Version: 0.0.1
+License: White Premium is distributed under the terms of the GNU GPL.
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, two-columns, right-sidebar
+Text Domain: whitespektrum
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Google API for Ubuntu Font */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic);
+
+/* micro-clearfix by Niclas Gallagher */
+.cf:before, .cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Basic Structure
+------------------------------------------------------- */
+body {
+	font-family: 'Ubuntu', 'sans-serif';
+	font-size: 10pt;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #0195c5;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #333333;	
+}
+
+#site-container {
+	margin: 40px auto 0 auto;
+	width: 860px;
+}
+
+.site-header {
+	height: 100px;
+	text-align: center;
+}
+
+.site-title {
+	font-size: 26pt;
+	margin: 50px 0 0 0;
+}
+
+.site-title a {
+	color: #0195c5;
+	text-decoration: none;
+}
+
+.site-title a:hover {
+	color: #333333;
+}
+
+.site-description {
+	font-size: 12pt;
+	line-height: 5px;
+	margin: 0 0 0 0;
+}
+
+#site-article-full {
+	margin: 33px 10px 20px 10px;
+}
+
+#site-article {
+	float: left;
+	margin: 0 0 20px 10px;
+	width: 600px;
+}
+
+#site-aside {
+	float: right;
+	margin: 0 10px 20px 0;
+	width: 210px;
+} 
+
+#site-aside ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+}
+
+.entry-title {
+	border-bottom: 1px solid #cccccc;
+	font-size: 12pt;
+	margin-bottom: 0;
+}
+
+
+.entry-content {
+	
+}
+
+.entry-metadata {
+	margin: 0 0 0 0;
+}
+
+.entry-meta {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.widget-title {
+	border-bottom: 1px solid #cccccc;
+	font-size: 12pt;
+}
+
+.site-footer {
+	margin: 0 auto;
+	text-align: center;
+	width: 860px;
+}
+
+.entry-archive {
+	font-size: 16pt;
+}
+
+/* Navigation Menu
+------------------------------------------------------- */
+#top-navigation {
+  	height: 30px;
+  	margin: 0 10px 20px 10px;
+}
+
+.top-menu {
+  	font-size: 12pt;
+  	display: block;
+  	height: 29px;
+  	margin: 0 auto;
+  	width: 860px;
+}
+
+.top-menu ul {
+  	list-style-type: none;
+  	margin: 0;
+}
+
+.top-menu li {
+  	float: left;
+  	position: relative;
+}
+
+.top-menu a {
+  	color: #0195c5;
+  	display: block;
+  	padding: 5px 10px;
+  	text-decoration: none;
+}
+
+.top-menu ul ul {
+  	display: none;
+  	float: left;
+  	left: -40px;
+  	position: absolute;
+  	top: 28px;
+  	width: 100px;
+}
+
+.top-menu ul ul a {
+  	background: #cccccc;
+  	border: 1px solid #000000;
+  	color: #0195c5;
+  	display: block;
+  	height: auto;
+  	line-height: 1em;
+  	padding: 10px;
+  	width: 250px;
+}
+
+.top-menu ul ul li {
+  	width: auto;
+}
+
+.top-menu ul ul ul {
+  	left: 230px;
+  	top: 0;
+  	width: 250px;
+}
+
+.top-menu li:hover > a, .top-menu ul ul :hover > a {
+	color: #333333;
+  	display: block;
+
+}
+
+.top-menu ul li:hover > ul {
+  	display: block;	
+}
+
+.top-menu ul li.current_page_item > a,
+.top-menu ul li.current-menu-ancestor > a,
+.top-menu ul li.current-menu-item > a,
+.top-menu ul li.current-menu-parent > a {
+  	cursor: default;
+  	font-weight: bold;
+}
+
+
+#wp-calendar {
+  text-align: center;
+  width: 100%;
+}
+
+#wp-calendar caption {
+  font-weight: bold;
+}
+
+#wp-calendar #today {
+  font-weight: bold;
+}
+
+.alignleft {
+  float: left;
+  padding: 0 10px 0 0;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 10px 0;
+
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 0 10px;
+}
+
+.wp-caption {
+	
+}
+
+.wp-caption-text {
+	
+}
+
+.sticky {
+	
+	
+}
+
+.gallery-caption {}
+
+.bypostauthor {}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+.comment-list {
+  background: #cccccc;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 20px 0 10px 20px;
+}
+
+.comment-list li {
+  list-style-type: none;
+}
+
+.comments-title {
+	margin-bottom: 40px;
+	font-size: 13pt;
+	line-height: 1;
+	font-weight: normal;
+}
+
+.comments-area article header {
+	margin: 0 0 10px;
+}
+.comments-area article header img {
+	float: left;
+	padding: 0;
+	line-height: 0;
+}
+.comments-area article header cite,
+.comments-area article header time {
+	margin-left: 55px;
+}
+.comments-area article header cite {
+	font-size: 50pt;
+}
+
+.comments-area article header time {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #5e5e5e;
+}
+.comments-area article header a {
+	text-decoration: none;
+	color: #0195c5;
+}
+.comments-area article header a:hover {
+	color: #21759b;
+}
+.comments-area article header cite a {
+	color: #0195c5;
+}
+.comments-area article header cite a:hover {
+	text-decoration: none;
+}
+
+.avatar {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.reply {
+  margin-bottom: 20px;
+}
+.comment-form-author label {
+  display: block;
+}
+
+.comment-form-email label {
+  display: block;
+}
+
+.comment-form-url label {
+  display: block;
+}
+ 
+.comment-form-comment  label{
+  display: block;
+}
