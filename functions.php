@@ -187,6 +187,9 @@ function sparkling_scripts() {
   // Add main theme stylesheet
 	wp_enqueue_style( 'sparkling-style', get_stylesheet_uri() );
 
+  // Add Modernizr for better HTML5 and CSS3 support
+  wp_enqueue_script('sparkling-modernizr', get_template_directory_uri().'/inc/js/modernizr.min.js', array('jquery') );
+
   // Add Bootstrap default JS
 	wp_enqueue_script('sparkling-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 

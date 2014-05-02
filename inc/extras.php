@@ -14,8 +14,8 @@
  * @return array
  */
 function sparkling_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+  $args['show_home'] = true;
+  return $args;
 }
 add_filter( 'wp_page_menu_args', 'sparkling_page_menu_args' );
 
@@ -26,12 +26,12 @@ add_filter( 'wp_page_menu_args', 'sparkling_page_menu_args' );
  * @return array
  */
 function sparkling_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+  // Adds a class of group-blog to blogs with more than 1 published author.
+  if ( is_multi_author() ) {
+    $classes[] = 'group-blog';
+  }
 
-	return $classes;
+  return $classes;
 }
 add_filter( 'body_class', 'sparkling_body_classes' );
 
@@ -43,27 +43,27 @@ add_filter( 'body_class', 'sparkling_body_classes' );
  * @return string The filtered title.
  */
 function sparkling_wp_title( $title, $sep ) {
-	global $page, $paged;
+  global $page, $paged;
 
-	if ( is_feed() ) {
-		return $title;
-	}
+  if ( is_feed() ) {
+    return $title;
+  }
 
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
+  // Add the blog name
+  $title .= get_bloginfo( 'name' );
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
+  // Add the blog description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $title .= " $sep $site_description";
+  }
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'sparkling' ), max( $paged, $page ) );
-	}
+  // Add a page number if necessary:
+  if ( $paged >= 2 || $page >= 2 ) {
+    $title .= " $sep " . sprintf( __( 'Page %s', 'sparkling' ), max( $paged, $page ) );
+  }
 
-	return $title;
+  return $title;
 }
 add_filter( 'wp_title', 'sparkling_wp_title', 10, 2 );
 
@@ -92,11 +92,11 @@ function sparkling_title( $title ) {
  * @return void
  */
 function sparkling_setup_author() {
-	global $wp_query;
+  global $wp_query;
 
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
+  if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
+    $GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
+  }
 }
 add_action( 'wp', 'sparkling_setup_author' );
 
@@ -124,9 +124,9 @@ function sparkling_wpsearch($form) {
 add_filter( 'the_password_form', 'custom_password_form' );
 
 function custom_password_form() {
-	global $post;
-	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-	$o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
+  global $post;
+  $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+  $o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
   <div class="row">
     <div class="col-lg-10">
         ' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'sparkling') . '
@@ -139,7 +139,7 @@ function custom_password_form() {
     </div>
   </div>
 </form>';
-	return $o;
+  return $o;
 }
 
 // Add Bootstrap classes for table
@@ -378,6 +378,45 @@ function sparkling_options_display_sidebar() { ?>
       </div>
     </div>
 <?php }
+
+/**
+ * Add Bootstrap thumbnail styling to images with captions
+ * Use <figure> and <figcaption>
+ *
+ * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
+ */
+function sparkling_caption($output, $attr, $content) {
+  if (is_feed()) {
+    return $output;
+  }
+
+  $defaults = array(
+    'id'      => '',
+    'align'   => 'alignnone',
+    'width'   => '',
+    'caption' => ''
+  );
+
+  $attr = shortcode_atts($defaults, $attr);
+
+  // If the width is less than 1 or there is no caption, return the content wrapped between the [caption] tags
+  if ($attr['width'] < 1 || empty($attr['caption'])) {
+    return $content;
+  }
+
+  // Set up the attributes for the caption <figure>
+  $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
+  $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
+  $attributes .= ' style="width: ' . (esc_attr($attr['width']) + 10) . 'px"';
+
+  $output  = '<figure' . $attributes .'>';
+  $output .= do_shortcode($content);
+  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
+  $output .= '</figure>';
+
+  return $output;
+}
+add_filter('img_caption_shortcode', 'sparkling_caption', 10, 3);
 
 /*
  * This one shows/hides the an option when a checkbox is clicked.

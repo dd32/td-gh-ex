@@ -1,25 +1,14 @@
-// first set the body to hide and show everything when fully loaded
-document.write("<style>body{display:none;}</style>");
-
+// Bootstrap specific functions and styling
 jQuery(document).ready(function(){
 
 	// here for each comment reply link of WordPress
 	jQuery( '.comment-reply-link' ).addClass( 'btn btn-sm btn-default' );
 
 	// here for the submit button of the comment reply form
-	jQuery( '#submit' ).addClass( 'btn btn-default' );
-
-	// Style contact form submit button
-	jQuery( '.wpcf7-submit' ).addClass( 'btn btn-default' );
-
-	// Add thumbnail styling
-	jQuery( '.wp-caption' ).addClass( 'thumbnail' );
+	jQuery( '#submit, button[type=submit], button' ).addClass( 'btn btn-default' );
 
 	// Add fixed size to tag cloud
-	jQuery('.tagcloud a ').css('font-size' , '12px');
-
-	// Apply styling for regular submit buttons
-	jQuery('input[type="submit"]').addClass('btn btn-default');
+	jQuery('.tagcloud a').css('font-size' , '12px');
 
 	// Now we'll add some classes for the WordPress default widgets - let's go
 	jQuery( '.widget_rss ul' ).addClass( 'media-list' );
@@ -27,9 +16,10 @@ jQuery(document).ready(function(){
 	// Add Bootstrap style for drop-downs
 	jQuery( '.postform' ).addClass( 'form-control' );
 
+	// Add Bootstrap styling for tables
 	jQuery( 'table#wp-calendar' ).addClass( 'table table-striped');
 
-	jQuery(document.body).show();
+	jQuery( '#submit, .tagcloud, button[type=submit], .comment-reply-link, .widget_rss ul, .postform, table#wp-calendar' ).show( "fast" );
 
 });
 
