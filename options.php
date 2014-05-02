@@ -157,12 +157,6 @@ function optionsframework_options() {
 		"id" => "favicon",
 		"mod" => "min",
 		"type" => "upload");
-
-	$options[] = array( "name" 	=> __("Comments","apprise"),
-		"desc" => "",
-		"id" => "enable_comments",
-		"std" => "1",
-		"type" => "checkbox");
 		
 	$options[] = array( "name" 	=> __("Breadcrumbs","apprise"),
 		"desc" => "",
