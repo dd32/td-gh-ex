@@ -1,99 +1,101 @@
-# Translation of Expound in French (France)
-# This file is distributed under the same license as the Expound package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "POT-Creation-Date: 2014-05-03 23:59+0545\n"
-"PO-Revision-Date: 2014-05-03 23:59+0545\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
-"Language: fr_FR\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 1.6.5\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__;"
+"_nx_noop:1,2;_nx:1,2;_n_noop:1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:24
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Aïe ! Cette page ne peut pas être trouvée."
+msgstr "Упс! Эта страница не может быть найдена."
 
 #: ../404.php:28
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Il semble que rien ne puisse être trouvé pour cette page. Peut-être en "
-"suivant un des liens ci-dessous, ou en faisant une recherche ?"
+"Похоже, ничего не было найдено по этому адресу. Может стоит попробовать одну "
+"из приведенных ссылок или воспользоваться поиском?"
 
 #: ../404.php:35
 msgid "Most Used Categories"
-msgstr "Catégories les plus utilisées"
+msgstr "Самые используемые рубрики"
 
 #: ../404.php:43
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Essayez de chercher dans les archvices par mois. %1$s"
+msgstr "Попробуйте поискать в ежемесячных архивах. %1$s"
 
 #: ../archive.php:23
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Archives de la catégorie: %s"
+msgstr "Архив рубрики: %s"
 
 #: ../archive.php:26
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "Archives du mot-clef: %s"
+msgstr "Архив меток: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archives de lauteur: %s"
+msgstr "Архив автора: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Archives du jour: %s"
+msgstr "Архив за день: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Archives du mois: %s"
+msgstr "Архив за месяц: %s"
 
 #: ../archive.php:47
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Archives de l'année: %s"
+msgstr "Архив за год: %s"
 
 #: ../archive.php:50 ../sidebar.php:62
 msgid "Archives"
-msgstr "Archives"
+msgstr "Архивы"
 
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commentaire sur &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commentaires sur &ldquo;%2$s&rdquo;"
+msgstr[0] "%2$s: Один комментарий"
+msgstr[1] "%2$s: %1$s комментария"
+msgstr[2] "%2$s: %1$s комментариев"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Parcourir les commentaires"
+msgstr "Навигация по комментариям"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Commentaires plus anciens "
+msgstr "&larr;  Предыдущие комментарии"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Commentaires plus récents &rarr;"
+msgstr "Следующие комментарии &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "Les commentaires sont fermés."
+msgstr "Комментарии закрыты."
 
 #: ../content-aside.php:21 ../content-audio.php:21 ../content-chat.php:22
 #: ../content-gallery.php:25 ../content-gallery.php:42
@@ -102,7 +104,7 @@ msgstr "Les commentaires sont fermés."
 #: ../inc/catchkathmandu-functions.php:377
 #, php-format
 msgid "Permalink to %s"
-msgstr "Permalien vers %s"
+msgstr "Постоянная ссылка на %s"
 
 #: ../content-aside.php:27 ../content-audio.php:33 ../content-chat.php:34
 #: ../content-gallery.php:49 ../content-image.php:35 ../content-link.php:30
@@ -110,27 +112,27 @@ msgstr "Permalien vers %s"
 #: ../content-status.php:34 ../content-video.php:36 ../content.php:52
 #: ../image.php:101
 msgid "Pages:"
-msgstr "Pages:"
+msgstr "Страницы"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
 #: ../content-video.php:49 ../content.php:66
 msgid "Leave a reply"
-msgstr "Laisser un réponse"
+msgstr "Ответить"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
 #: ../content-video.php:49 ../content.php:66
 msgid "1 Reply"
-msgstr "Une réponse"
+msgstr "1 ответ"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-status.php:46 ../content-video.php:49
 msgid "% Replies;"
-msgstr "% réponses;"
+msgstr "% Комментарии;"
 
 #: ../content-aside.php:42 ../content-audio.php:48 ../content-chat.php:49
 #: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
@@ -138,97 +140,98 @@ msgstr "% réponses;"
 #: ../content-status.php:48 ../content-video.php:51 ../content.php:69
 #: ../image.php:47 ../image.php:120 ../inc/template-tags.php:180
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Изменить"
 
 #: ../content-audio.php:22
 msgid "All Audio Posts"
-msgstr "All Audio Posts"
+msgstr "Все публикации в Аудио"
 
 #: ../content-audio.php:22
 msgid "Audio"
-msgstr "Audio"
+msgstr "Аудио"
 
 #: ../content-chat.php:23
 msgid "All Chat Posts"
-msgstr "All Chat Posts"
+msgstr "Все Чат публикации"
 
 #: ../content-chat.php:23
 msgid "Chat"
-msgstr "Discuter"
+msgstr "Чат"
 
 #: ../content-gallery.php:26
 msgid "All Gallery Posts"
-msgstr "All Gallery Posts"
+msgstr "Все публикации в Галерее"
 
 #: ../content-gallery.php:26
 msgid "Gallery"
-msgstr "Galerie"
+msgstr "Галерея"
 
 #: ../content-gallery.php:43
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Cette galerie contient <a %1$s>%2$s photo</a>"
-msgstr[1] "Cette galerie contient <a %1$s>%2$s photos</a>"
+msgstr[0] "Эта галерея содержит <a %1$s>%2$s фотографию</a>."
+msgstr[1] "Эта галерея содержит <a %1$s>%2$s фотографии</a>."
+msgstr[2] "Эта галерея содержит <a %1$s>%2$s фотографий</a>."
 
 #: ../content-image.php:24
 msgid "All Image Posts"
-msgstr "All Image Posts"
+msgstr "Все публикации в Изображениях"
 
 #: ../content-image.php:24 ../inc/panel/theme-options.php:770
 #: ../inc/panel/theme-options.php:1069
 msgid "Image"
-msgstr "Image"
+msgstr "Изображение"
 
 #: ../content-link.php:24
 msgid "All Link Posts"
-msgstr "All Link Posts"
+msgstr "Все публикации в Ссылках"
 
 #: ../content-link.php:24
 msgid "Link"
-msgstr "Lien"
+msgstr "Ссылка"
 
 #: ../content-single.php:46 ../content.php:66
 msgid "% Replies"
-msgstr "% Replies"
+msgstr "% Комментарии"
 
 #: ../content-single.php:56 ../content.php:76
 #, php-format
 msgid "About %s"
-msgstr "A propos de %s"
+msgstr "Детали %s"
 
 #: ../content-single.php:60 ../content.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Посмотреть все записи автора %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:28
 msgid "All Status Posts"
-msgstr "All Status Posts"
+msgstr "Все публикации в Статусе"
 
 #: ../content-status.php:28
 msgid "Status"
-msgstr "Statut"
+msgstr "Статус"
 
 #: ../content-video.php:25
 msgid "All Video Posts"
-msgstr "All Video Posts"
+msgstr "Все публикации в Видео"
 
 #: ../content-video.php:25
 msgid "Video"
-msgstr "Video"
+msgstr "Видео"
 
 #: ../content.php:24
 msgid "Featured post"
-msgstr "Featured post"
+msgstr "Избранная публикация"
 
 #: ../functions.php:93 ../inc/catchkathmandu-menus.php:11
 msgid "Primary Menu"
-msgstr "Menu principal"
+msgstr "Основное меню"
 
 #: ../functions.php:94 ../inc/catchkathmandu-menus.php:45
 msgid "Secondary Menu"
-msgstr "Menu secondary"
+msgstr "Вторичный меню"
 
 #: ../image.php:37
 #, php-format
@@ -238,18 +241,18 @@ msgid ""
 "size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
 "\" rel=\"gallery\">%7$s</a>"
 msgstr ""
-"Publié le <span class=\"entry-date\"><time class=\"entry-date\" datetime="
-"\"%1$s\" pubdate>%2$s</time></span> à <a href=\"%3$s\" title=\"Lien vers "
-"l'image pleine taille\">%4$s &times; %5$s</a> dans <a href=\"%6$s\" title="
-"\"Revenir à %7$s\" rel=\"gallery\">%7$s</a>"
+"Опубликованное <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title="
+"\"Ссылка на полное изображение\">%4$s &times; %5$s</a> in <a href=\"%6$s\" "
+"title=\"Вернуться в %7$s\" rel=\"gallery\">%7$s</a>"
 
 #: ../image.php:51
 msgid "&larr; Previous"
-msgstr "&larr; Précédent"
+msgstr "&larr; Назад"
 
 #: ../image.php:52
 msgid "Next &rarr;"
-msgstr "Suivant &rarr;"
+msgstr "Вперед &rarr;"
 
 #: ../image.php:112
 #, php-format
@@ -258,10 +261,10 @@ msgid ""
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Laisser un commentaire"
-"\">Laisser un commentaire</a> ou un rétrolien : <a class=\"trackback-link\" "
-"href=\"%s\" title=\"les retroliens pour cet article\" rel=\"trackback\">les "
-"retroliens</a>"
+"<a class=\"comment-link\" href=\"#respond\" title=\"Добавить комментарий"
+"\">Добавить комментарий</a> или оставить обратную ссылку: <a class="
+"\"trackback-link\" href=\"%s\" title=\"URL обратной ссылки на запись\" rel="
+"\"trackback\">URL обратной ссылки</a>."
 
 #: ../image.php:114
 #, php-format
@@ -270,26 +273,26 @@ msgid ""
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
-"Les commentaires sont clos mais vous pouvez faire un rétrolien : <a class="
-"\"trackback-link\" href=\"%s\" title=\"le retrolien pour votre article\" rel="
-"\"trackback\">le rétrolien</a>."
+"Комментарии отключены, но вы можете оставить обратную ссылку: <a class="
+"\"trackback-link\" href=\"%s\" title=\"URL обратной ссылки на запись\" rel="
+"\"trackback\">URL обратной ссылки</a>."
 
 #: ../image.php:116
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"Les rétroliens sont fermés, mais vous pouvez <a class=\"comment-link\" href="
-"\"#respond\" title=\"Laisser un commentaire\">commenter</a>."
+"Обратные ссылки закрыты, но вы можете <a class=\"comment-link\" href="
+"\"#respond\" title=\"Оставить комментарий\">оставить комментарий</a>."
 
 #: ../image.php:118
 msgid "Both comments and trackbacks are currently closed."
-msgstr "Les commentaires et les rétroliens sont fermés pour l'instant."
+msgstr "Комментарии и обратные ссылки отключены."
 
 #: ../inc/catchkathmandu-functions.php:451
 #, php-format
 msgid "Page %s"
-msgstr "Page %s"
+msgstr "Страница %s"
 
 #: ../inc/catchkathmandu-functions.php:498
 #: ../inc/catchkathmandu-functions.php:995
@@ -304,132 +307,132 @@ msgstr "%s"
 #: ../inc/catchkathmandu-functions.php:1501
 #, php-format
 msgid "%s on Facebook"
-msgstr "%s sur Facebook"
+msgstr "%s на Facebook"
 
 #: ../inc/catchkathmandu-functions.php:1506
 #, php-format
 msgid "%s on Twitter"
-msgstr "%s sur Twitter"
+msgstr "%s в Twitter"
 
 #: ../inc/catchkathmandu-functions.php:1511
 #, php-format
 msgid "%s on Google+"
-msgstr "%s sur Google+"
+msgstr "%s в Google+"
 
 #: ../inc/catchkathmandu-functions.php:1516
 #, php-format
 msgid "%s on Linkedin"
-msgstr "%s sur Linkedin"
+msgstr "%s на Linkedin"
 
 #: ../inc/catchkathmandu-functions.php:1521
 #, php-format
 msgid "%s on Pinterest"
-msgstr "%s sur Pinterest"
+msgstr "%s на Pinterest"
 
 #: ../inc/catchkathmandu-functions.php:1526
 #, php-format
 msgid "%s on YouTube"
-msgstr "%s sur YouTube"
+msgstr "%s на YouTube"
 
 #: ../inc/catchkathmandu-functions.php:1531
 #, php-format
 msgid "%s on Vimeo"
-msgstr "%s sur Vimeo"
+msgstr "%s на Vimeo"
 
 #: ../inc/catchkathmandu-functions.php:1536
 #, php-format
 msgid "%s on Slideshare"
-msgstr "%s sur Slideshare"
+msgstr "%s на Slideshare"
 
 #: ../inc/catchkathmandu-functions.php:1541
 #, php-format
 msgid "%s on Foursquare"
-msgstr "%s sur Foursquare"
+msgstr "%s на Foursquare"
 
 #: ../inc/catchkathmandu-functions.php:1546
 #, php-format
 msgid "%s on Flickr"
-msgstr "%s sur Flickr"
+msgstr "%s в Flickr"
 
 #: ../inc/catchkathmandu-functions.php:1551
 #, php-format
 msgid "%s on Tumblr"
-msgstr "%s sur Tumblr"
+msgstr "%s на Tumblr"
 
 #: ../inc/catchkathmandu-functions.php:1556
 #, php-format
 msgid "%s on deviantART"
-msgstr "%s sur deviantART"
+msgstr "%s на deviantART"
 
 #: ../inc/catchkathmandu-functions.php:1561
 #, php-format
 msgid "%s on Dribbble"
-msgstr "%s sur Dribbble"
+msgstr "%s на Dribbble"
 
 #: ../inc/catchkathmandu-functions.php:1566
 #, php-format
 msgid "%s on MySpace"
-msgstr "%s sur MySpace"
+msgstr "%s на MySpace"
 
 #: ../inc/catchkathmandu-functions.php:1571
 #, php-format
 msgid "%s on WordPress"
-msgstr "%s sur WordPress"
+msgstr "%s на WordPress"
 
 #: ../inc/catchkathmandu-functions.php:1576
 #, php-format
 msgid "%s on RSS"
-msgstr "%s sur RSS"
+msgstr "%s в RSS"
 
 #: ../inc/catchkathmandu-functions.php:1581
 #, php-format
 msgid "%s on Delicious"
-msgstr "%s sur Delicious"
+msgstr "%s на Delicious"
 
 #: ../inc/catchkathmandu-functions.php:1586
 #, php-format
 msgid "%s on Last.fm"
-msgstr "%s sur Last.fm"
+msgstr "%s на Last.fm"
 
 #: ../inc/catchkathmandu-functions.php:1591
 #, php-format
 msgid "%s on Instagram"
-msgstr "%s sur Instagram"
+msgstr "%s в Instagram"
 
 #: ../inc/catchkathmandu-functions.php:1596
 #, php-format
 msgid "%s on GitHub"
-msgstr "%s sur GitHub"
+msgstr "%s в GitHub"
 
 #: ../inc/catchkathmandu-functions.php:1601
 #, php-format
 msgid "%s on Vkontakte"
-msgstr "%s sur Vkontakte"
+msgstr "%s во Vkontakte"
 
 #: ../inc/catchkathmandu-functions.php:1606
 #, php-format
 msgid "%s on My World"
-msgstr "%s sur My World"
+msgstr "%s в My World"
 
 #: ../inc/catchkathmandu-functions.php:1611
 #, php-format
 msgid "%s on Odnoklassniki"
-msgstr "%s sur Odnoklassniki"
+msgstr "%s в Odnoklassniki"
 
 #: ../inc/catchkathmandu-functions.php:1616
 #, php-format
 msgid "%s on Goodreads"
-msgstr "%s sur Goodreads"
+msgstr "%s в Goodreads"
 
 #: ../inc/catchkathmandu-functions.php:1621
 #, php-format
 msgid "%s on Skype"
-msgstr "%s sur Skype"
+msgstr "%s в Skype"
 
 #: ../inc/catchkathmandu-functions.php:1626
 #, php-format
 msgid "%s on Soundcloud"
-msgstr "%s sur Soundcloud"
+msgstr "%s на Soundcloud"
 
 #: ../inc/catchkathmandu-functions.php:1721
 msgid "ID"
@@ -438,11 +441,11 @@ msgstr "ID"
 #: ../inc/catchkathmandu-functions.php:1745
 #: ../inc/catchkathmandu-functions.php:1758
 msgid "Menu"
-msgstr "Menu"
+msgstr "Меню"
 
 #: ../inc/catchkathmandu-menus.php:12
 msgid "Skip to content"
-msgstr "Aller au contenu"
+msgstr "Перейти к содержимому"
 
 #: ../inc/catchkathmandu-metabox.php:14 ../inc/catchkathmandu-metabox.php:20
 msgid "Catch Kathmandu Options"
@@ -450,38 +453,38 @@ msgstr "Catch Kathmandu Options"
 
 #: ../inc/catchkathmandu-metabox.php:34
 msgid "Default"
-msgstr "Défaut"
+msgstr "Default"
 
 #: ../inc/catchkathmandu-metabox.php:39
 msgid "Enable"
-msgstr "Activer"
+msgstr "Включить"
 
 #: ../inc/catchkathmandu-metabox.php:44 ../inc/panel/theme-options.php:349
 #: ../inc/panel/theme-options.php:912
 msgid "Disable"
-msgstr "Désactiver"
+msgstr "Отключить"
 
 #: ../inc/catchkathmandu-metabox.php:55 ../inc/catchkathmandu-metabox.php:85
 msgid "Default Layout Set in"
-msgstr "Les options de maquette par défaut sont réglés dans"
+msgstr "Стандартное расположение задано в"
 
 #: ../inc/catchkathmandu-metabox.php:55 ../inc/catchkathmandu-metabox.php:85
 #: ../inc/panel/theme-options.php:43 ../inc/panel/theme-options.php:44
 #: ../inc/panel/theme-options.php:148
 msgid "Theme Options"
-msgstr "Options du thème"
+msgstr "Опции темы"
 
 #: ../inc/catchkathmandu-metabox.php:61
 msgid "Right sidebar"
-msgstr "Barre latérale à droite"
+msgstr "Правая боковая панель"
 
 #: ../inc/catchkathmandu-metabox.php:67
 msgid "Left sidebar"
-msgstr "Barre latérale à gauche"
+msgstr "Левая боковая панель"
 
 #: ../inc/catchkathmandu-metabox.php:73
 msgid "No sidebar"
-msgstr "Sans barre latérale"
+msgstr "Без боковой панели"
 
 #: ../inc/catchkathmandu-metabox.php:90 ../inc/panel/theme-options.php:367
 #: ../inc/panel/theme-options.php:429
@@ -504,7 +507,7 @@ msgstr "Disable Image"
 
 #: ../inc/catchkathmandu-metabox.php:122
 msgid "Sidebar Layout"
-msgstr "Présentation pour la barre latérale"
+msgstr "Sidebar Layout"
 
 #: ../inc/catchkathmandu-metabox.php:152 ../inc/panel/theme-options.php:315
 msgid "Header Featured Image Options"
@@ -516,15 +519,15 @@ msgstr "Content Featured Image Options"
 
 #: ../inc/catchkathmandu-widgets.php:14
 msgid "Main Sidebar"
-msgstr "Barre principale"
+msgstr "Основная панель"
 
 #: ../inc/catchkathmandu-widgets.php:16
 msgid "Shows the Widgets at the side of Content"
-msgstr "Shows the Widgets at the side of Content"
+msgstr "Показывать Виджеты на панели Содержание"
 
 #: ../inc/catchkathmandu-widgets.php:25 ../inc/panel/theme-options.php:302
 msgid "Header Right Sidebar"
-msgstr "Barre latérale à droite dans l'entête"
+msgstr "Header Right Sidebar"
 
 #: ../inc/catchkathmandu-widgets.php:27
 msgid "Shows the Widgets at the Top Right Side of Header"
@@ -532,31 +535,31 @@ msgstr "Shows the Widgets at the Top Right Side of Header"
 
 #: ../inc/catchkathmandu-widgets.php:36
 msgid "Footer Area One"
-msgstr "Pied de page, zone 1"
+msgstr "Первая нижняя область сайта(Footer)"
 
 #: ../inc/catchkathmandu-widgets.php:38 ../inc/catchkathmandu-widgets.php:49
 #: ../inc/catchkathmandu-widgets.php:60 ../inc/catchkathmandu-widgets.php:71
 msgid "An optional widget area for your site footer"
-msgstr "Une zone facultative de widgets pour le pied de page de votre site"
+msgstr "Зона виджетов для нижней области сайта(Footer)"
 
 #: ../inc/catchkathmandu-widgets.php:47
 msgid "Footer Area Two"
-msgstr "Pied de page, zone 2"
+msgstr "Вторая нижняя область сайта(Footer)"
 
 #: ../inc/catchkathmandu-widgets.php:58
 msgid "Footer Area Three"
-msgstr "Pied de page, zone 3"
+msgstr "Третья нижняя область сайта(Footer)"
 
 #: ../inc/catchkathmandu-widgets.php:69
 msgid "Footer Area Four"
-msgstr "Pied de page, zone 4"
+msgstr "четвертый нижняя область сайта(Footer)"
 
 #: ../inc/catchkathmandu-widgets.php:99
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
-"Widget pour afficher les boutons Sociaux paramètres dans Options des Liens "
-"Sociaux."
+"Используйте этот виджет для добавления социальных иконок из настроек "
+"социальных иконок, в качестве виджета. "
 
 #: ../inc/catchkathmandu-widgets.php:100
 msgid "1. Catch Kathmandu: Social"
@@ -564,27 +567,27 @@ msgstr "1. Catch Kathmandu: Social"
 
 #: ../inc/catchkathmandu-widgets.php:113
 msgid "Title (optional):"
-msgstr "Titre (optionnel):"
+msgstr "Название(Title) (опционально):"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Авторские права"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
 msgid "All Rights Reserved"
-msgstr "Tous droits réservés"
+msgstr "Все права защищены"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
 msgid "Powered by"
-msgstr "Propulsé par"
+msgstr "Автор"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
 msgid "Theme"
-msgstr "Thème"
+msgstr "Тема"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Options Saved"
-msgstr "Paramètres enregistrés"
+msgstr "Опции сохранены"
 
 #: ../inc/panel/theme-options.php:112
 msgid "http://facebook.com/catchthemes"
@@ -596,7 +599,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/panel/theme-options.php:120
 msgid "Theme Options By"
-msgstr "Options du thèmes par"
+msgstr "Автор опций для темы"
 
 #: ../inc/panel/theme-options.php:122
 msgid "http://catchthemes.com/"
@@ -612,7 +615,7 @@ msgstr "http://catchthemes.com/themes/catch-kathmandu-pro/"
 
 #: ../inc/panel/theme-options.php:129
 msgid "Upgrade to Catch Kathmandu Pro"
-msgstr "Passer à la version pro de Catch Kathmandu"
+msgstr "Повысить до Catch Kathmandu Pro"
 
 #: ../inc/panel/theme-options.php:134
 msgid "http://catchthemes.com/donate/"
@@ -620,11 +623,11 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Donate to Catch Kathmandu"
-msgstr "Donate to Catch Kathmandu"
+msgstr "Пожертвовать для Catch Kathmandu"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Donate Now"
-msgstr "Faites une donation maintenant"
+msgstr "Пожертвовать"
 
 #: ../inc/panel/theme-options.php:135
 msgid "http://catchthemes.com/support/"
@@ -632,7 +635,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:135
 msgid "Support"
-msgstr "Supporte"
+msgstr "Поддержка"
 
 #: ../inc/panel/theme-options.php:136
 msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
@@ -640,7 +643,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-kathmandu/"
 
 #: ../inc/panel/theme-options.php:136
 msgid "Theme Instruction"
-msgstr "Mode d'emploi du thème"
+msgstr "Инструкции для темы"
 
 #: ../inc/panel/theme-options.php:137
 msgid "https://www.facebook.com/catchthemes/"
@@ -648,7 +651,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:137
 msgid "Like Catch Themes on Facebook"
-msgstr "Aimer Catch Themes sur Facebook"
+msgstr "Лайкнуть Catch Themes на Facebook"
 
 #: ../inc/panel/theme-options.php:137 ../inc/panel/theme-options.php:1127
 msgid "Facebook"
@@ -660,7 +663,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:138
 msgid "Follow Catch Themes on Twitter"
-msgstr "Suivre Catch Themes sur Twitter"
+msgstr "Зафолловить Catch Themes в Twitter"
 
 #: ../inc/panel/theme-options.php:138 ../inc/panel/theme-options.php:1135
 msgid "Twitter"
@@ -672,42 +675,42 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
 
 #: ../inc/panel/theme-options.php:139
 msgid "Rate us 5 Star on WordPress"
-msgstr "Noter nous avec 5 étoiles sur WordPress"
+msgstr "Оценить в 5 звезд на сайте WordPress"
 
 #: ../inc/panel/theme-options.php:139
 msgid "5 Star Rating"
-msgstr "5 étoiles"
+msgstr "Оценка в 5 звезд"
 
 #: ../inc/panel/theme-options.php:149
 msgid "Homepage Settings"
-msgstr "Homepage Settings"
+msgstr "Настройки домашней страницы"
 
 #: ../inc/panel/theme-options.php:150
 msgid "Featured Slider"
-msgstr "Options pour le diaporama"
+msgstr "Популярные слайд-шоу"
 
 #: ../inc/panel/theme-options.php:151
 msgid "Social Links"
-msgstr "Liens sociaux"
+msgstr "Социальные ссылки"
 
 #: ../inc/panel/theme-options.php:153
 msgid "Tools"
-msgstr "Outils"
+msgstr "Tools"
 
 #: ../inc/panel/theme-options.php:162
 msgid "Responsive Design"
-msgstr "Désigne responsive"
+msgstr "Отзывчивый дизайн"
 
 #: ../inc/panel/theme-options.php:166
 msgid "Disable Responsive Design?"
-msgstr "Désactiver le désigne responsive?"
+msgstr "Отключить отзывчивый дизайн?"
 
 #: ../inc/panel/theme-options.php:170 ../inc/panel/theme-options.php:197
 #: ../inc/panel/theme-options.php:241 ../inc/panel/theme-options.php:692
 #: ../inc/panel/theme-options.php:701 ../inc/panel/theme-options.php:710
 #: ../inc/panel/theme-options.php:728
 msgid "Check to disable"
-msgstr "Cocher pour désactiver"
+msgstr "Отключить"
 
 #: ../inc/panel/theme-options.php:175
 msgid "Enable Secondary Menu in Mobile Devices?"
@@ -715,7 +718,7 @@ msgstr "Enable Secondary Menu in Mobile Devices?"
 
 #: ../inc/panel/theme-options.php:179
 msgid "Check to enable"
-msgstr "Cocher pour activer"
+msgstr "Включить"
 
 #: ../inc/panel/theme-options.php:183 ../inc/panel/theme-options.php:227
 #: ../inc/panel/theme-options.php:275 ../inc/panel/theme-options.php:309
@@ -729,47 +732,47 @@ msgstr "Cocher pour activer"
 #: ../inc/panel/theme-options.php:1056 ../inc/panel/theme-options.php:1112
 #: ../inc/panel/theme-options.php:1334 ../inc/panel/theme-options.php:1364
 msgid "Save Changes"
-msgstr "Enregistrer les changements"
+msgstr "Сохранить"
 
 #: ../inc/panel/theme-options.php:189
 msgid "Favicon"
-msgstr "Favicon"
+msgstr "Мини-иконка сайта(Favicon)"
 
 #: ../inc/panel/theme-options.php:193
 msgid "Disable Favicon?"
-msgstr "Désactiver le Favicon?"
+msgstr "Отключить мини-иконку сайта(Favicon)?"
 
 #: ../inc/panel/theme-options.php:202
 msgid "Fav Icon URL:"
-msgstr "URL du Favicon:"
+msgstr "Ссылка на мини-иконку сайта(Favicon):"
 
 #: ../inc/panel/theme-options.php:206
 msgid "Change Fav Icon"
-msgstr "Modifier le Favicon"
+msgstr "Изменить мини-иконку сайта(Favicon)"
 
 #: ../inc/panel/theme-options.php:208
 msgid "Upload Fav Icon"
-msgstr "Modifier le Favicon"
+msgstr "Upload Fav Icon"
 
 #: ../inc/panel/theme-options.php:214 ../inc/panel/theme-options.php:259
 msgid "Preview"
-msgstr "Aperçu"
+msgstr "Превью"
 
 #: ../inc/panel/theme-options.php:233
 msgid "Web Clip Icon Options"
-msgstr "Option de l'icône WebClip"
+msgstr "Опции Web Clip иконки сайта"
 
 #: ../inc/panel/theme-options.php:237
 msgid "Disable Web Clip Icon?"
-msgstr "Désactiver l'icône WebClip?"
+msgstr "Отключить Web Clip иконку сайта?"
 
 #: ../inc/panel/theme-options.php:246
 msgid "Web Clip Icon URL:"
-msgstr "URL de l'icône WebClip:"
+msgstr "Ссылка на Web Clip иконку сайта:"
 
 #: ../inc/panel/theme-options.php:254
 msgid "Change Web Clip Icon"
-msgstr "Modifier l'icône WebClip"
+msgstr "Изменить Web Clip иконку сайта"
 
 #: ../inc/panel/theme-options.php:272
 msgid ""
@@ -777,13 +780,13 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Note : Icône WebClip pour les appareils d'Apple. Taille recommandée :  "
-"largeur 144px et hauteur 144px, qui supportera les dispositifs haute "
-"résolution comme l'iPad Retina\""
+"Пояснение: Web Clip - иконка для устройств Apple. Рекомендованный размер: "
+"ширина 144px и высота 144px - высота, которую поддерживают устройства с "
+"высоким разрешением как, например iPad Retina."
 
 #: ../inc/panel/theme-options.php:281
 msgid "Header Options"
-msgstr "Options de l'entête"
+msgstr "Header Options"
 
 #: ../inc/panel/theme-options.php:285
 msgid "Custom Header: Logo & Site Details"
@@ -795,15 +798,15 @@ msgstr "Click Here to Add/Replace Header Logo & Site Details"
 
 #: ../inc/panel/theme-options.php:293
 msgid "Disable Header Right Sidebar?"
-msgstr "Désactiverla barre droite de l'entête?"
+msgstr "Disable Header Right Sidebar?"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Check to Disable"
-msgstr "Cocher pour désactiver"
+msgstr "Check to Disable"
 
 #: ../inc/panel/theme-options.php:305
 msgid "Widgets"
-msgstr "Widgets"
+msgstr "Виджеты"
 
 #: ../inc/panel/theme-options.php:305
 msgid "Click Here to Add/Replace Widgets"
@@ -815,7 +818,7 @@ msgstr "Enable Featured Header Image"
 
 #: ../inc/panel/theme-options.php:324 ../inc/panel/theme-options.php:904
 msgid "Homepage"
-msgstr "page d'accueil"
+msgstr "Homepage"
 
 #: ../inc/panel/theme-options.php:329
 msgid "Excluding Homepage"
@@ -823,7 +826,7 @@ msgstr "Excluding Homepage"
 
 #: ../inc/panel/theme-options.php:334 ../inc/panel/theme-options.php:908
 msgid "Entire Site"
-msgstr "Tout le site"
+msgstr "Весь сайт"
 
 #: ../inc/panel/theme-options.php:339
 msgid "Entire Site, Page/Post Featured Image"
@@ -843,7 +846,7 @@ msgstr "Featured Header Image URL"
 
 #: ../inc/panel/theme-options.php:376 ../inc/panel/theme-options.php:774
 msgid "Change Image"
-msgstr "Change Image"
+msgstr "Сменить изображение"
 
 #: ../inc/panel/theme-options.php:381
 msgid "Featured Header Image Alt/Title Tag"
@@ -856,12 +859,12 @@ msgstr "Featured Header Image Link URL"
 #: ../inc/panel/theme-options.php:397 ../inc/panel/theme-options.php:787
 #: ../inc/panel/theme-options.php:1086
 msgid "Target. Open Link in New Window?"
-msgstr "Cible: Ouvrir le lien dans une nouvelle fenêtre?"
+msgstr "Цель. Открывать ссылку в новом окне?"
 
 #: ../inc/panel/theme-options.php:401 ../inc/panel/theme-options.php:791
 #: ../inc/panel/theme-options.php:1090
 msgid "Check to open in new window"
-msgstr "Validier pour ouvrir dans une nouvelle fenêtre"
+msgstr "Открыть в новом окне"
 
 #: ../inc/panel/theme-options.php:407
 msgid "Reset Header Featured Image Options?"
@@ -870,7 +873,7 @@ msgstr "Reset Header Featured Image Options?"
 #: ../inc/panel/theme-options.php:411 ../inc/panel/theme-options.php:496
 #: ../inc/panel/theme-options.php:592
 msgid "Check to reset"
-msgstr "Cliquez pour réinitialiser"
+msgstr "Сбросить"
 
 #: ../inc/panel/theme-options.php:425
 msgid "Content Featured Image Size"
@@ -878,55 +881,55 @@ msgstr "Content Featured Image Size"
 
 #: ../inc/panel/theme-options.php:452
 msgid "Layout Options"
-msgstr "Options de présentation"
+msgstr "Опции разметки"
 
 #: ../inc/panel/theme-options.php:456
 msgid "Sidebar Layout Options"
-msgstr "Options de présentation pour la barre latérale"
+msgstr "Опции разметки боковой панели"
 
 #: ../inc/panel/theme-options.php:461
 msgid "Right Sidebar"
-msgstr "Barre latérale à droite"
+msgstr "Правая боковая панель"
 
 #: ../inc/panel/theme-options.php:466
 msgid "Left Sidebar"
-msgstr "Barre latérale à gauche"
+msgstr "Левая боковая панель"
 
 #: ../inc/panel/theme-options.php:471
 msgid "No Sidebar"
-msgstr "Aucune barre"
+msgstr "Без боковой панели"
 
 #: ../inc/panel/theme-options.php:477
 msgid "Content Layout"
-msgstr "Disposition du contenu"
+msgstr "Разметка содержания"
 
 #: ../inc/panel/theme-options.php:481
 msgid "Full Content Display"
-msgstr "Affichage complet de l'article"
+msgstr "Полное отображения содержания"
 
 #: ../inc/panel/theme-options.php:485
 msgid "Excerpt/Blog Display"
-msgstr "Affichage de l'extrait de l'article"
+msgstr "Обрезка/Отображение блога"
 
 #: ../inc/panel/theme-options.php:492
 msgid "Reset Layout?"
-msgstr "Reset Layout?"
+msgstr "Сбросить разметку?"
 
 #: ../inc/panel/theme-options.php:506
 msgid "Color Options"
-msgstr "Jeu de couleurs"
+msgstr "Color Options"
 
 #: ../inc/panel/theme-options.php:510
 msgid "Default Color Scheme"
-msgstr "Couleurs par défaut"
+msgstr "Default Color Scheme"
 
 #: ../inc/panel/theme-options.php:515
 msgid "Light"
-msgstr "Pale"
+msgstr "Светлый"
 
 #: ../inc/panel/theme-options.php:519
 msgid "Dark"
-msgstr "Foncé"
+msgstr "Темный"
 
 #: ../inc/panel/theme-options.php:525
 msgid "Custom Background Color:"
@@ -938,7 +941,7 @@ msgstr "Click Here to change Background Color/Image"
 
 #: ../inc/panel/theme-options.php:535
 msgid "Custom Header: "
-msgstr "Custom Header: "
+msgstr "Custom Header:"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Click Here to change Site Title and Tagline Color"
@@ -946,51 +949,51 @@ msgstr "Click Here to change Site Title and Tagline Color"
 
 #: ../inc/panel/theme-options.php:550
 msgid "Search Text Settings"
-msgstr "Search Text Settings"
+msgstr "Настройки поиска текста"
 
 #: ../inc/panel/theme-options.php:554
 msgid "Default Display Text in Search"
-msgstr "Texte par défaut du champ 'Recherche'"
+msgstr "Текст в строке поиска по умолчанию"
 
 #: ../inc/panel/theme-options.php:567
 msgid "Excerpt / More Tag Settings"
-msgstr "Réglages du résumé / lien \"Lire la suite\""
+msgstr "Обрезка / Дополнительные настройки меток"
 
 #: ../inc/panel/theme-options.php:571
 msgid "More Tag Text"
-msgstr "Texte du lien \"Lire la suite\""
+msgstr "Дополнительный текст меток"
 
 #: ../inc/panel/theme-options.php:579
 msgid "Excerpt length(words)"
-msgstr "Longueur du résumé (en mots)"
+msgstr "Задать длину(в словах)"
 
 #: ../inc/panel/theme-options.php:588
 msgid "Reset Excerpt?"
-msgstr "Réinitialiser du résumé?"
+msgstr "Reset Excerpt?"
 
 #: ../inc/panel/theme-options.php:602
 msgid "Feed Redirect"
-msgstr "Redirection du flux"
+msgstr "Перенаправление ленты"
 
 #: ../inc/panel/theme-options.php:606
 msgid "Feed Redirect URL"
-msgstr "URL de redirection du flux"
+msgstr "Ссылка на перенаправление ленты"
 
 #: ../inc/panel/theme-options.php:609
 msgid "Add in the Feedburner URL"
-msgstr "Ajoutez l'URL de Feedburner"
+msgstr "Добавить ссылку Feedburner"
 
 #: ../inc/panel/theme-options.php:619
 msgid "Custom CSS"
-msgstr "Personalisation du CSS"
+msgstr "Изменяемый CSS"
 
 #: ../inc/panel/theme-options.php:623
 msgid "Enter your custom CSS styles."
-msgstr "Saisissez vos CSS personnalisés."
+msgstr "Введите ваш стиль CSS"
 
 #: ../inc/panel/theme-options.php:631
 msgid "CSS Tutorial from W3Schools."
-msgstr "Tutoriel CSS de  W3Schools."
+msgstr "Инструкция по CSS от W3Schools."
 
 #: ../inc/panel/theme-options.php:634
 msgid "http://www.w3schools.com/css/default.asp"
@@ -998,15 +1001,15 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:634
 msgid "CSS Tutorial"
-msgstr "Tutoriel CSS"
+msgstr "Инструкция по CSS"
 
 #: ../inc/panel/theme-options.php:634
 msgid "Click Here to Read"
-msgstr "Cliquez ici pour lire"
+msgstr "Нажмите для чтения"
 
 #: ../inc/panel/theme-options.php:649
 msgid "Homepage Headline Options"
-msgstr "Homepage Headline Options"
+msgstr "Настройки верхней линии домашней страницы"
 
 #: ../inc/panel/theme-options.php:653
 msgid "Homepage Headline Text"
@@ -1014,11 +1017,11 @@ msgstr "Homepage Headline Text"
 
 #: ../inc/panel/theme-options.php:654
 msgid "The appropriate length for Headine is around 10 words."
-msgstr "The appropriate length for Headine is around 10 words."
+msgstr "Подходящий размер верхней линии домашней страницы: 10 слов."
 
 #: ../inc/panel/theme-options.php:662
 msgid "Homepage Subheadline Headline"
-msgstr "Homepage Subheadline Headline"
+msgstr "Подверхняя линия домашней страницы"
 
 #: ../inc/panel/theme-options.php:663
 msgid "The appropriate length for Headine is around 15 words."
@@ -1038,11 +1041,11 @@ msgstr "Headine Link"
 
 #: ../inc/panel/theme-options.php:688
 msgid "Disable Homepage Headline?"
-msgstr "Disable Homepage Headline?"
+msgstr "Отключить верхнюю линию домашней страницы?"
 
 #: ../inc/panel/theme-options.php:697
 msgid "Disable Homepage Subheadline?"
-msgstr "Disable Homepage Subheadline?"
+msgstr "Отключить подверхнюю линию домашней страницы?"
 
 #: ../inc/panel/theme-options.php:706
 msgid "Disable Homepage Button?"
@@ -1050,23 +1053,23 @@ msgstr "Disable Homepage Button?"
 
 #: ../inc/panel/theme-options.php:720
 msgid "Homepage Featured Content Options"
-msgstr "Homepage Featured Content Options"
+msgstr "Опции избранного содержания домашней страницы"
 
 #: ../inc/panel/theme-options.php:724
 msgid "Disable Homepage Featured Content?"
-msgstr "Disable Homepage Featured Content?"
+msgstr "Отключить избранное содержание домашней страницы?"
 
 #: ../inc/panel/theme-options.php:733
 msgid "Headline"
-msgstr "Headline"
+msgstr "Верхняя линия"
 
 #: ../inc/panel/theme-options.php:736
 msgid "Leave empty if you want to remove headline"
-msgstr "Leave empty if you want to remove headline"
+msgstr "Оставьте верхнюю линию пустой, если вы хотите ее удалить"
 
 #: ../inc/panel/theme-options.php:741
 msgid "Number of Featured Content"
-msgstr "Number of Featured Content"
+msgstr "Число избранного содержания"
 
 #: ../inc/panel/theme-options.php:749
 msgid "Featured Content Layout"
@@ -1083,74 +1086,77 @@ msgstr "4 Columns"
 #: ../inc/panel/theme-options.php:767
 #, php-format
 msgid "Featured Content #%s"
-msgstr "Featured Content #%s"
+msgstr "Избранное содержание #%s"
 
 #: ../inc/panel/theme-options.php:774
 msgid "Add Image"
-msgstr "Add Image"
+msgstr "Добавить изображение"
 
 #: ../inc/panel/theme-options.php:779 ../inc/panel/theme-options.php:1078
 msgid "Link URL"
-msgstr "Lien URL"
+msgstr "Адрес ссылки"
 
 #: ../inc/panel/theme-options.php:782
 msgid "Add in the Target URL for the content"
-msgstr "Add in the Target URL for the content"
+msgstr "Добавить в целевой URL для содержания"
 
 #: ../inc/panel/theme-options.php:796 ../inc/panel/theme-options.php:1095
 msgid "Title"
-msgstr "Title"
+msgstr "Название"
 
 #: ../inc/panel/theme-options.php:799
 msgid "Leave empty if you want to remove title"
-msgstr "Leave empty if you want to remove title"
+msgstr "Оставить пустым, если вы хотите убрать название"
 
 #: ../inc/panel/theme-options.php:804 ../inc/panel/theme-options.php:1103
 msgid "Content"
-msgstr "contenu"
+msgstr "Содержание"
 
 #: ../inc/panel/theme-options.php:805
 msgid "The appropriate length for Content is around 10 words."
-msgstr "The appropriate length for Content is around 10 words."
+msgstr "Подходящий размер для Содержания около 10 слов"
 
 #: ../inc/panel/theme-options.php:820
 msgid "Homepage / Frontpage Settings"
-msgstr "Homepage / Frontpage Settings"
+msgstr "Настройки Домашней / Лицевой страницы"
 
 #: ../inc/panel/theme-options.php:824
 msgid "Enable Latest Posts?"
-msgstr "Enable Latest Posts?"
+msgstr "Включить послдение записи?"
 
 #: ../inc/panel/theme-options.php:828
 msgid "Check to Enable"
-msgstr "Cocher pour activer"
+msgstr "Включить"
 
 #: ../inc/panel/theme-options.php:833
 msgid "Add Page instead of Latest Posts"
-msgstr "Add Page instead of Latest Posts"
+msgstr "Добавить страницу вместо последних записей"
 
 #: ../inc/panel/theme-options.php:836
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
-msgstr "Click Here to Set Static Front Page Instead of Latest Posts"
+msgstr ""
+"Нажмите здесь для установки статичной лицевой страницы, вместо последних "
+"записей"
 
 #: ../inc/panel/theme-options.php:841
 msgid "Homepage posts categories:"
-msgstr "Catégories à  afficher de la page d'accueil:"
+msgstr "Рубрики домашней страницы:"
 
 #: ../inc/panel/theme-options.php:842
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Seuls les articles des catégories choisies seront affichés en page d'accueil."
+"Только записи, которые относятся к рубрикам, выбранным здесь, будут "
+"отображаться на лицевой странице."
 
 #: ../inc/panel/theme-options.php:846 ../inc/panel/theme-options.php:1038
 msgid "--Disabled--"
-msgstr "--Désactiver--"
+msgstr "--Отключено--"
 
 #: ../inc/panel/theme-options.php:857 ../inc/panel/theme-options.php:1049
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Vous pouvez choisir plusieurs catégories en maintenant la touche CTRL."
+msgstr "Вы можете выбрать несколкьо рубрик, удерживая клавишу CTRL"
 
 #: ../inc/panel/theme-options.php:862
 msgid "Move above Homepage Featured Content?"
@@ -1158,142 +1164,142 @@ msgstr "Move above Homepage Featured Content?"
 
 #: ../inc/panel/theme-options.php:866
 msgid "Check to Move"
-msgstr "Cliquer pour déplacer"
+msgstr "Check to Move"
 
 #: ../inc/panel/theme-options.php:879
 msgid "Slider Options"
-msgstr "Options du diaporama"
+msgstr "Опции слайдера"
 
 #: ../inc/panel/theme-options.php:883
 msgid "Select Slider Type"
-msgstr "Sélectionnez le type de diaporama"
+msgstr "Select Slider Type"
 
 #: ../inc/panel/theme-options.php:888
 msgid "Post Slider"
-msgstr "Selection d'articles pour le diaporama"
+msgstr "Post Slider"
 
 #: ../inc/panel/theme-options.php:893
 msgid "Category Slider"
-msgstr "Sélection de catégories pour le diaporama"
+msgstr "Category Slider"
 
 #: ../inc/panel/theme-options.php:899
 msgid "Enable Slider"
-msgstr "Activer diaporama"
+msgstr "Включить слайдер"
 
 #: ../inc/panel/theme-options.php:918
 msgid "Number of Slides"
-msgstr "Nombre de slides"
+msgstr "Количество слайдов"
 
 #: ../inc/panel/theme-options.php:926
 msgid "Transition Effect:"
-msgstr "Effet de transition:"
+msgstr "Эффект перехода:"
 
 #: ../inc/panel/theme-options.php:930
 msgid "fade"
-msgstr "Disparaitre"
+msgstr "fade"
 
 #: ../inc/panel/theme-options.php:931
 msgid "wipe"
-msgstr "Essuyer"
+msgstr "wipe"
 
 #: ../inc/panel/theme-options.php:932
 msgid "scrollUp"
-msgstr "Défiler vers le haut"
+msgstr "scrollUp"
 
 #: ../inc/panel/theme-options.php:933
 msgid "scrollDown"
-msgstr "Défiler vers le bas"
+msgstr "scrollDown"
 
 #: ../inc/panel/theme-options.php:934
 msgid "scrollLeft"
-msgstr "Défiler vers la gauche"
+msgstr "scrollLeft"
 
 #: ../inc/panel/theme-options.php:935
 msgid "scrollRight"
-msgstr "Défiler vers la droite"
+msgstr "scrollRight"
 
 #: ../inc/panel/theme-options.php:936
 msgid "blindX"
-msgstr "ChevauchementX"
+msgstr "blindX"
 
 #: ../inc/panel/theme-options.php:937
 msgid "blindY"
-msgstr "ChevauchementY"
+msgstr "blindY"
 
 #: ../inc/panel/theme-options.php:938
 msgid "blindZ"
-msgstr "ChevauchementZ"
+msgstr "blindZ"
 
 #: ../inc/panel/theme-options.php:939
 msgid "cover"
-msgstr "Couverture"
+msgstr "cover"
 
 #: ../inc/panel/theme-options.php:940
 msgid "shuffle"
-msgstr "Aléatoire"
+msgstr "shuffle"
 
 #: ../inc/panel/theme-options.php:946
 msgid "Transition Delay"
-msgstr "Délai de transition"
+msgstr "Задержка перехода"
 
 #: ../inc/panel/theme-options.php:950 ../inc/panel/theme-options.php:959
 msgid "second(s)"
-msgstr "seconde(s)"
+msgstr "секунд(ы)"
 
 #: ../inc/panel/theme-options.php:955
 msgid "Transition Length"
-msgstr "Durée de la transition"
+msgstr "Длина перехода"
 
 #: ../inc/panel/theme-options.php:970
 msgid "Featured Post Slider Options"
-msgstr "Options de sélection des articles pour le diaporama"
+msgstr "Опции слайдера избранных записей"
 
 #: ../inc/panel/theme-options.php:974
 msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
-"Exclure de la page d'accueil les articles se trouvant dans le diaporama?"
+msgstr "Исключить записи в слайдере из записей домашней страницы?"
 
 #: ../inc/panel/theme-options.php:978
 msgid "Check to exclude"
-msgstr "Cocher pour exclure"
+msgstr "Исключить"
 
 #: ../inc/panel/theme-options.php:985
 #, php-format
 msgid "Featured Post Slider #%s"
-msgstr "Selection d'articles pour le diaporama #%s"
+msgstr "Featured Post Slider #%s"
 
 #: ../inc/panel/theme-options.php:989 ../inc/panel/theme-options.php:1014
 msgid "Click Here To Edit"
-msgstr "Cliquez ici pour modifier"
+msgstr "Нажмите здесь для редактирования"
 
 #: ../inc/panel/theme-options.php:995
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Remarque: saisissez ici l'ID des articles qui apparaîtront dans le diaporama."
+"Пояснение: Здесь вы можете вставить ID своих записей, которые будут "
+"присутствовать в слайдере на домашней странице"
 
 #: ../inc/panel/theme-options.php:1004
 msgid "Featured Page Slider Options"
-msgstr "Paramètre de la page du diaporama"
+msgstr "Featured Page Slider Options"
 
 #: ../inc/panel/theme-options.php:1010
 #, php-format
 msgid "Featured Page Slider #%s"
-msgstr "Sélection de pages pour le diaporama #%s"
+msgstr "Featured Page Slider #%s"
 
 #: ../inc/panel/theme-options.php:1020
 msgid ""
 "Note: Here You can put your Page IDs which displays on Homepage as slider."
 msgstr ""
-"Remarque: saisissez ici l'ID des pages qui apparaîtront dans le diaporama."
+"Note: Here You can put your Page IDs which displays on Homepage as slider."
 
 #: ../inc/panel/theme-options.php:1029
 msgid "Featured Category Slider Options"
-msgstr "Sélection des catégories pour le diaporama"
+msgstr "Featured Category Slider Options"
 
 #: ../inc/panel/theme-options.php:1033
 msgid "Select Slider Categories"
-msgstr "Sélectionnez les catégories"
+msgstr "Select Slider Categories"
 
 #: ../inc/panel/theme-options.php:1034
 msgid ""
@@ -1313,16 +1319,16 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:1062
 msgid "Featured Image Slider Options"
-msgstr "Paramètres des images pour le diaporama"
+msgstr "Featured Image Slider Options"
 
 #: ../inc/panel/theme-options.php:1066
 #, php-format
 msgid "Featured Image Slider #%s"
-msgstr "Sélection d'images pour le diaporama  #%s"
+msgstr "Featured Image Slider #%s"
 
 #: ../inc/panel/theme-options.php:1073
 msgid "Upload"
-msgstr "Télécharger"
+msgstr "Upload"
 
 #: ../inc/panel/theme-options.php:1123
 msgid "Predefine Social Icons"
@@ -1426,31 +1432,31 @@ msgstr "Soundcloud"
 
 #: ../inc/panel/theme-options.php:1345
 msgid "Header and Footer Codes"
-msgstr "Codes à placer en haut de page (header) ou bas de page (Footer)"
+msgstr "Код верхней части(Header) и нижней части(Footer)"
 
 #: ../inc/panel/theme-options.php:1349
 msgid "Code to display on Header"
-msgstr "Code à afficher en haut de page"
+msgstr "Код для отображения в верхней части"
 
 #: ../inc/panel/theme-options.php:1352
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
 msgstr ""
-"Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
-"This etc. which will load on Header"
+"Пояснение: Сюда вы можете поместить скрипты от Google, Facebook, Twitter, "
+"Add This и пр., которые будут загружаться с верхней частью(Header)"
 
 #: ../inc/panel/theme-options.php:1357
 msgid "Code to display on Footer"
-msgstr "Code à afficher en bas de page"
+msgstr "Код для отображения в нижней части(Footer)"
 
 #: ../inc/panel/theme-options.php:1360
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
-"which will load on footer"
+"Пояснение: Сюда вы можете поместить скрипты от Google, Facebook, Twitter, "
+"Add This и пр., которые будут загружаться с нижней частью(Footer)"
 
 #: ../inc/panel/theme-options.php:1909
 msgid "Y"
@@ -1462,7 +1468,7 @@ msgstr "Catch Kathmandu"
 
 #: ../inc/template-tags.php:51 ../inc/template-tags.php:104
 msgid "Post navigation"
-msgstr "Navigation dans les articles"
+msgstr "Навигация по записям"
 
 #: ../inc/template-tags.php:55 ../inc/template-tags.php:108
 msgctxt "Previous post link"
@@ -1472,45 +1478,45 @@ msgstr "&larr;"
 #: ../inc/template-tags.php:56 ../inc/template-tags.php:109
 msgctxt "Next post link"
 msgid "&rarr;"
-msgstr "&rarr;"
+msgstr "&rarr; "
 
 #: ../inc/template-tags.php:61 ../inc/template-tags.php:114
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
+msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
 
 #: ../inc/template-tags.php:65 ../inc/template-tags.php:118
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Следующие записи <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:148
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr "Уведомление:"
 
 #: ../inc/template-tags.php:148
 msgid "(Edit)"
-msgstr "(Modifier)"
+msgstr "(Изменить)"
 
 #: ../inc/template-tags.php:163
 msgid "Post author"
-msgstr "Post author"
+msgstr "Автор записи"
 
 #: ../inc/template-tags.php:169
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s в %2$s"
 
 #: ../inc/template-tags.php:175
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de modération."
+msgstr "Ваш комментарий ожидает подтверждения."
 
 #: ../inc/template-tags.php:184
 msgid "Reply"
-msgstr "Répondre"
+msgstr "Ответить"
 
 #: ../inc/template-tags.php:213 ../inc/template-tags.php:286
 #, php-format
 msgid "View all posts by %s"
-msgstr "Voir tous les articles par %s"
+msgstr "Показать все записи %s"
 
 #: ../inc/template-tags.php:218
 #, php-format
@@ -1518,8 +1524,8 @@ msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
 "%2$s</span>"
 msgstr ""
-"<span class=\"on-date\">Posté le %1$s</span><span class=\"by-author\"> par "
-"%2$s</span>"
+"<span class=\"on-date\">Запись опубликована %1$s</span><span class=\"by-"
+"author\"> автором %2$s</span>"
 
 #: ../inc/template-tags.php:240 ../inc/template-tags.php:243
 #: ../inc/template-tags.php:272 ../inc/template-tags.php:275
@@ -1532,13 +1538,13 @@ msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">Tagged %2$s</span>"
 msgstr ""
-"<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">Tagged %2$s</span>"
+"<span class=\"in-category\">Запись опубликована %1$s</span><span class=\"sep"
+"\"> | </span><span class=\"in-tag\">с метками %2$s</span>"
 
 #: ../inc/template-tags.php:250
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
-msgstr "<span class=\"in-category\">Posté dans %1$s</span>"
+msgstr "<span class=\"in-category\">Запись опубликована %1$s</span>"
 
 #: ../inc/template-tags.php:292
 #, php-format
@@ -1548,10 +1554,10 @@ msgid ""
 "%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
 "span>"
 msgstr ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged "
-"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
-"span>"
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"in-category\"> "
+"в %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">с метками "
+"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> автором "
+"%4$s</span>"
 
 #: ../inc/template-tags.php:294
 #, php-format
@@ -1560,9 +1566,9 @@ msgid ""
 "under in %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under in %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"By %4$s</span>."
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"in-category\"> "
+"в %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> автором "
+"%4$s</span>."
 
 #: ../inc/template-tags.php:296
 #, php-format
@@ -1570,65 +1576,105 @@ msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
 "span><span class=\"by-author\"> By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">Posté le %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> Par %4$s</span>."
+"<span class=\"on-date\">Опубликовано %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> автором %4$s</span>."
 
 #: ../no-results.php:15
 msgid "Nothing Found"
-msgstr "Rien na été trouvé"
+msgstr "Ничего не найдено."
 
 #: ../no-results.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt à publier votre premier article? <a href=\"%1$s\">Lancez-vous</a>."
+"Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните отсюда</a>."
 
 #: ../no-results.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Désolé, mais rien ne correspond à vos critères de recherche. Veuillez "
-"réessayer avec dautres mots-clés."
+"Извините, по вашему запросу ничего не найдено. Попробуйте другие ключевые "
+"слова."
 
 #: ../no-results.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Il semblerait que nous ne soyons pas en mesure de trouver votre contenu. "
-"Essayez en lançant une recherche."
+"Запрошенную информацию найти не удалось. Возможно, будет полезен поиск по "
+"сайту."
 
 #: ../search.php:18
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
+msgstr "Результаты поиска для: %s"
 
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
-msgstr "Recherche"
+msgstr "Поиск"
 
-#~ msgid "Continue reading &rarr;"
-#~ msgstr "Lire la suite &rarr;"
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
 
-#~ msgid "Theme: %1$s by %2$s"
-#~ msgstr "Thème : %1$s par %2$s"
+#~ msgid "Theme Settings"
+#~ msgstr "Настройки темы"
 
-#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
+#~ msgid "No sidebar, Full Width"
+#~ msgstr "Без боковой панели, Полная ширина"
 
-#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
+#~ msgid "Webmaster Tools"
+#~ msgstr "Инструменты вебмастера"
 
-#~ msgid "%1$s / %2$s"
-#~ msgstr "%1$s / %2$s"
+#~ msgid "Save"
+#~ msgstr "Сохранить"
 
-#~ msgid "ago"
-#~ msgstr "auparavant"
+#~ msgid "Custom Header. Need to Add or Remove Logo?"
+#~ msgstr "Изменяемый заголовок(header). Добавить или удалить логотип?"
 
-#~ msgid "%1$s in %2$s."
-#~ msgstr "%1$s dans %2$s."
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Нажмите здесь</a>"
 
-#~ msgid "Tags: "
-#~ msgstr "Mots-clés&nbsp;:"
+#~ msgid "Header Right Section"
+#~ msgstr "Правая область вершины(Header) сайта"
+
+#~ msgid "Background"
+#~ msgstr "Фон"
+
+#~ msgid "Custom Background. Need to replace or remove background?"
+#~ msgstr "Изменяемый фон. Заменить или удалить фон?"
+
+#~ msgid "No Sidebar, Full Width"
+#~ msgstr "Без боковой панели, Полная ширина"
+
+#~ msgid "Homepage / Frontpage"
+#~ msgstr "Домашняя страницы / Лицевая страница"
+
+#~ msgid "Catch Everest"
+#~ msgstr "Catch Everest"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr ""
+#~ "Используйте этот виджет для добавления любой рекламы в качестве виджета."
+
+#~ msgid "2. Catch Everest: Advertisement"
+#~ msgstr "2. Catch Everest: Реклама"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Код рекламы:"
+
+#~ msgid "Image Url:"
+#~ msgstr "Ссылка картинки:"
+
+#~ msgid "Link URL:"
+#~ msgstr "Адрес ссылки:"
+
+#~ msgid "Open Link in New Window"
+#~ msgstr "Открыть ссылку в новом окне"
+
+#~ msgid "Alt text:"
+#~ msgstr "Альтернативный текст:"
+
+#~ msgid "Add Advertisement Code or Image URL"
+#~ msgstr "Добавить код рекламы или ссылку на картинку"
