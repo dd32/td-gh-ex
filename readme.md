@@ -33,6 +33,15 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.12 =
+* fixed : (css) category archive icon now displayed again in chrome
+* fixed : (php : TC_init::tc_add_retina_support) retina bug fixed by <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>
+* improved : (php : TC_breadcrumb ) breadcrumb trail for single posts, category and tag archive now includes the page_for_posts rewrited if defined.
+* improved : (php) Better handling of the comment reply with the add_below parameter. Thanks to <a href="http://www.themesandco.com/author/eri_trabiccolo/">Rocco</a>.
+* improved : (php) TC_Utils::tc_get_option() returns false if option not set
+* removed : (php) Customiz'it button has been taken off
+
+
 = 3.1.11 =
 * added : (php , css) customizer : new option in the Skin Settings, enable/disable the minified version of skin
 * added : (php) customizer : new option in the Responsive Settings, enable/disable the automatic centering of slides

@@ -33,3 +33,22 @@
 
 
 })(jQuery);
+
+/*jQuery(document).ready(function () {
+    ! function ($) {
+
+      var $FrontDropdown = $('li#customize-control-show_on_front.customize-control select');
+
+      function DisplayPostPageOption() {
+        console.log($FrontDropdown.val());
+        if ( $FrontDropdown.val() != 'posts' ) {
+          $('li#customize-control-page_for_posts.customize-control.customize-control-dropdown-pages').show();
+        }
+      }
+      DisplayPostPageOption()
+      $FrontDropdown.on('change', function() {
+        DisplayPostPageOption();
+      } );
+
+    }(window.jQuery)
+});*/
