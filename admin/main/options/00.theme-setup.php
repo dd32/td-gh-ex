@@ -257,104 +257,42 @@ add_filter( 'the_content', 'wpautop' , 12);
 function thinkup_input_addimagesizes() {
 
 	// 1 Column Layout
-	add_image_size( 'column1-1/1', 960, 960, true );
-	add_image_size( 'column1-1/2', 960, 480, true );
-	add_image_size( 'column1-1/3', 960, 320, true );
-	add_image_size( 'column1-2/3', 960, 640, true );
-	add_image_size( 'column1-1/4', 960, 240, true );
-	add_image_size( 'column1-3/4', 960, 720, true );
-	add_image_size( 'column1-1/5', 960, 192, true );
-	add_image_size( 'column1-2/5', 960, 384, true );
-	add_image_size( 'column1-3/5', 960, 576, true );
-	add_image_size( 'column1-4/5', 960, 768, true );
+	add_image_size( 'column1-1/3', 1140, 380, true );
+	add_image_size( 'column1-2/3', 1140, 760, true );
+	add_image_size( 'column1-2/5', 1140, 456, true );
 
 	// 2 Column Layout
-	add_image_size( 'column2-1/1', 480, 480, true );
-	add_image_size( 'column2-1/2', 480, 240, true );
-	add_image_size( 'column2-1/3', 480, 160, true );
-	add_image_size( 'column2-2/3', 480, 320, true );
-	add_image_size( 'column2-1/4', 480, 120, true );
-	add_image_size( 'column2-3/4', 480, 360, true );
-	add_image_size( 'column2-1/5', 480, 96, true );
-	add_image_size( 'column2-2/5', 480, 192, true );
-	add_image_size( 'column2-3/5', 480, 288, true );
-	add_image_size( 'column2-4/5', 480, 384, true );
+	add_image_size( 'column2-1/2', 570, 285, true );
+	add_image_size( 'column2-2/3', 570, 380, true );
+	add_image_size( 'column2-2/5', 570, 228, true );
+	add_image_size( 'column2-3/5', 570, 342, true );
 
 	// 3 Column Layout
-	add_image_size( 'column3-1/1', 320, 320, true );
-	add_image_size( 'column3-1/2', 320, 160, true );
-	add_image_size( 'column3-1/3', 320, 107, true );
-	add_image_size( 'column3-2/3', 320, 213, true );
-	add_image_size( 'column3-1/4', 320, 80, true );
-	add_image_size( 'column3-3/4', 320, 240, true );
-	add_image_size( 'column3-1/5', 320, 64, true );
-	add_image_size( 'column3-2/5', 320, 128, true );
-	add_image_size( 'column3-3/5', 320, 192, true );
-	add_image_size( 'column3-4/5', 320, 256, true );
+	add_image_size( 'column3-2/3', 380, 254, true );
 
 	// 4 Column Layout
-	add_image_size( 'column4-1/1', 240, 240, true );
-	add_image_size( 'column4-1/2', 240, 120, true );
-	add_image_size( 'column4-1/3', 240, 80, true );
-	add_image_size( 'column4-2/3', 240, 160, true );
-	add_image_size( 'column4-1/4', 240, 60, true );
-	add_image_size( 'column4-3/4', 240, 180, true );
-	add_image_size( 'column4-1/5', 240, 48, true );
-	add_image_size( 'column4-2/5', 240, 96, true );
-	add_image_size( 'column4-3/5', 240, 144, true );
-	add_image_size( 'column4-4/5', 240, 192, true );
+	add_image_size( 'column4-2/3', 285, 190, true );
 }
 add_action( 'init', 'thinkup_input_addimagesizes' );
  
 function thinkup_input_showimagesizes($sizes) {
 
 	// 1 Column Layout
-	$sizes['column1-1/1'] = 'Full - 1:1';
-	$sizes['column1-1/2'] = 'Full - 1:2';
 	$sizes['column1-1/3'] = 'Full - 1:3';
 	$sizes['column1-2/3'] = 'Full - 2:3';
-	$sizes['column1-1/4'] = 'Full - 1:4';
-	$sizes['column1-3/4'] = 'Full - 3:4';
-	$sizes['column1-1/5'] = 'Full - 1:5';
 	$sizes['column1-2/5'] = 'Full - 2:5';
-	$sizes['column1-3/5'] = 'Full - 3:5';
-	$sizes['column1-4/5'] = 'Full - 4:5';
 
 	// 2 Column Layout
-	$sizes['column2-1/1'] = 'Half - 1:1';
 	$sizes['column2-1/2'] = 'Half - 1:2';
-	$sizes['column2-1/3'] = 'Half - 1:3';
 	$sizes['column2-2/3'] = 'Half - 2:3';
-	$sizes['column2-1/4'] = 'Half - 1:4';
-	$sizes['column2-3/4'] = 'Half - 3:4';
-	$sizes['column2-1/5'] = 'Half - 1:5';
 	$sizes['column2-2/5'] = 'Half - 2:5';
 	$sizes['column2-3/5'] = 'Half - 3:5';
-	$sizes['column2-4/5'] = 'Half - 4:5';
 
 	// 3 Column Layout
-	$sizes['column3-1/1'] = 'Third - 1:1';
-	$sizes['column3-1/2'] = 'Third - 1:2';
-	$sizes['column3-1/3'] = 'Third - 1:3';
 	$sizes['column3-2/3'] = 'Third - 2:3';
-	$sizes['column3-1/4'] = 'Third - 1:4';
-	$sizes['column3-3/4'] = 'Third - 3:4';
-	$sizes['column3-1/5'] = 'Third - 1:5';
-	$sizes['column3-2/5'] = 'Third - 2:5';
-	$sizes['column3-3/5'] = 'Third - 3:5';
-	$sizes['column3-4/5'] = 'Third - 4:5';
 
 	// 4 Column Layout
-	$sizes['column4-1/1'] = 'Quarter - 1:1';
-	$sizes['column4-1/2'] = 'Quarter - 1:2';
-	$sizes['column4-1/3'] = 'Quarter - 1:3';
 	$sizes['column4-2/3'] = 'Quarter - 2:3';
-	$sizes['column4-1/4'] = 'Quarter - 1:4';
-	$sizes['column4-3/4'] = 'Quarter - 3:4';
-	$sizes['column4-1/5'] = 'Quarter - 1:5';
-	$sizes['column4-2/5'] = 'Quarter - 2:5';
-	$sizes['column4-3/5'] = 'Quarter - 3:5';
-	$sizes['column4-4/5'] = 'Quarter - 4:5';
 
 	return $sizes;
 }

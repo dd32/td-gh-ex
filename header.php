@@ -10,6 +10,7 @@
 
 <html <?php language_attributes(); ?>>
 <head>
+<?php thinkup_hook_header(); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -19,18 +20,21 @@
 <script src="<?php echo get_template_directory_uri(); ?>/lib/scripts/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php thinkup_hook_header(); ?>
 <?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?><?php thinkup_bodystyle(); ?>>
-
 <div id="body-core" class="hfeed site">
 
 	<header>
 	<div id="site-header">
 		<div id="header">
+
+		<?php if ( get_header_image() ) : ?>
+			<div class="custom-header"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt=""></div>
+		<?php endif; // End header image check. ?>
+
 		<div id="header-core">
 
 			<div id="logo">

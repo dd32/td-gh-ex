@@ -67,6 +67,11 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio', 'status', 'quote', 'link', 'chat' ) );
+		add_theme_support( 'custom-background' );
+
+		// Add support for custom header
+		$args = apply_filters( 'custom-header', array( 'height' => 200, 'width'  => 1600 ) );
+		add_theme_support( 'custom-header', $args );
 
 		// Register theme menu's.
 		register_nav_menus( array( 'pre_header_menu' => 'Pre Header Menu', ) );
@@ -95,7 +100,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
 	wp_enqueue_style( 'elusive-min', get_template_directory_uri() . '/lib/extentions/elusive-icons/elusive-webfont.css', '', '2.0' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.2' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.3' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add theme scripts

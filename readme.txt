@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	3.4.1
-Tested up to:		3.8.1
+Tested up to:		3.9.2
 
 Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -94,6 +94,14 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.5.3 - CURRENT VERSION
+- New:     Custom background functionality added.
+- New:     Custom header image functionality added.
+- New:     thinkup_hook_header() moved to immediately after <head> html tag in header.php.
+- Fixed:   Responsive jQuery fixed for iframes. Including Youtube videos etc...
+- Updated: Image sizes updated to screen width of 1140px
+- Updated: thinkup_hook_header() moved to immediately after <head> html tag.
 
 Version 1.5.2
 - Fixed:   Icons now display on tabs in theme options panelOffer updated to 10% off with value $31.
