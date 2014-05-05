@@ -25,12 +25,6 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
-    <script> var sliderscpeed=<?php if ( of_get_option('sliderspeed') ) : 
-										echo of_get_option('sliderspeed');  
-									else : 
-										echo "7000";
-									endif;	
-								?>;</script>
 </head>
 
 <body <?php body_class(); ?>>

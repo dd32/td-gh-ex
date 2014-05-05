@@ -189,6 +189,15 @@ function itransform_scripts_styles() {
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
 	
+	$sliderscpeed = "6000";
+	if(of_get_option('sliderspeed'))
+	{
+		$sliderscpeed = of_get_option('sliderspeed');
+	}
+
+	wp_localize_script( 'itransform-script', 'sliderscpeed', $sliderscpeed );	
+	
+	
 	$color_scheme = of_get_option('itrans_color_scheme');
 	
 	$blog_layout = of_get_option('itrans_blog_layout');
@@ -225,7 +234,7 @@ function itransform_scripts_styles() {
 	
 	
 	wp_enqueue_style( 'itrans-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2014-03-11' );
-	$custom_css = of_get_option( 'itrans_extra_style');
+	$custom_css = htmlspecialchars_decode(of_get_option( 'itrans_extra_style'));
 	
 	if ( of_get_option( 'boxed_type') )
 	{
