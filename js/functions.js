@@ -262,7 +262,7 @@ jQuery(document).ready(function($) {
 		if(slidemove==1){
 		slidetimer = setInterval(function () {
 			moveRight();
-    	}, 6000);
+    	}, sliderscpeed);
 		}
 	}
 	if(slidemove==1){

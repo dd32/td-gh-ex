@@ -166,6 +166,14 @@ function optionsframework_options() {
 		'id' => 'itrans_extra_style',
 		'std' => '',
 		'type' => 'textarea');	
+		
+	$options[] = array(
+		'name' => __('Boxed Type', 'itransform'),
+		'desc' => __('Boxed Type layout at 1200px', 'itransform'),
+		'id' => 'boxed_type',
+		'std' => '',
+		'type' => 'checkbox');		
+		
 				
 	$options[] = array(
 		'name' => __('Social Links ', 'itransform'),
@@ -213,10 +221,26 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'text');
 		
+	$options[] = array(
+		'name' => __('Google plus', 'itransform'),
+		'desc' => __('', 'itransform'),
+		'id' => 'itrans_social_googleplus',
+		'std' => '',
+		'type' => 'text');
+				
+		
 	/* Sliders */
 	$options[] = array(
 		'name' => __('Slider', 'itransform'),
 		'type' => 'heading');
+		
+	$options[] = array(
+		'name' => __('Slide Duration', 'itransform'),
+		'desc' => __('slide visibility in milisecond ', 'itransform'),
+		'id' => 'sliderspeed',
+		'std' => '6000',
+		'class' => 'mini',
+		'type' => 'text');		
 
 	$options[] = array(
 		'name' => __('Slide1 Title', 'itransform'),

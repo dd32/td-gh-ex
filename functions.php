@@ -226,6 +226,12 @@ function itransform_scripts_styles() {
 	
 	wp_enqueue_style( 'itrans-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2014-03-11' );
 	$custom_css = of_get_option( 'itrans_extra_style');
+	
+	if ( of_get_option( 'boxed_type') )
+	{
+		$custom_css .= " .site { max-width: 1200px; } ";
+	}
+	
 	if ( $custom_css ) {
 		wp_add_inline_style( 'itrans-extra-stylesheet', $custom_css );
 	}

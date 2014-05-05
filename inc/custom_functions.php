@@ -6,7 +6,7 @@ function itransform_social_icons () {
 	
 	$socio_list = '';
 	$siciocount = 0;
-    $services = array ('facebook','twitter','pinterest','flickr','feed','instagram');
+    $services = array ('facebook','twitter','pinterest','flickr','feed','instagram','googleplus');
     
 		$socio_list .= '<ul class="social">';	
 		foreach ( $services as $service ) :
@@ -43,6 +43,11 @@ function itransform_ibanner_slider () {
 			$slide_linktext = of_get_option ('itrans_slide'.$slideno.'_linktext');
 			$slide_linkurl = of_get_option ('itrans_slide'.$slideno.'_linkurl');
 			$slide_image = of_get_option ('itrans_slide'.$slideno.'_image');
+			
+			if (!$slide_linktext)
+			{
+				$slide_linktext="Read more";
+			}
 			
 			if ($slide_title) {
 			$strret .= '<h2>'.$slide_title.'</h2>';
