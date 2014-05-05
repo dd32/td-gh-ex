@@ -334,7 +334,9 @@ function interface_theloop_for_single() {
     </footer>
     <!-- .entry-meta -->
     <?php  }
-						 }?>
+						 }
+		comments_template();
+		?>
   </article>
 </section>
 <!-- .post -->

@@ -177,10 +177,10 @@ function interface_headercontent_details() {
 		$elements = array( 	$options[ 'social_facebook' ], 
 									$options[ 'social_twitter' ],
 									$options[ 'social_googleplus' ],
-									$options[ 'social_linkedin' ],
 									$options[ 'social_pinterest' ],
 									$options[ 'social_youtube' ],
 									$options[ 'social_vimeo' ],
+									$options[ 'social_linkedin' ],
 									$options[ 'social_flickr' ],
 									$options[ 'social_tumblr' ],
 									$options[ 'social_rss' ]
@@ -223,10 +223,10 @@ function interface_headercontent_details() {
 		if ( !empty($options['social_phone'] )){ 
 		
 		$interface_footer_infoblog .= '<li class=' .'"phone-number"'. '><a title='. '"Call us"'.' '. 'href=' .'"tel:' ;
-		$interface_footer_infoblog .=  preg_replace("/[^0-9]/", '', $options[ 'social_phone' ]) ; 
+		$interface_footer_infoblog .=  preg_replace("/[^0-9+-]/", '', $options[ 'social_phone' ]) ; 
 		
 		$interface_footer_infoblog .= '">';
-		$interface_footer_infoblog .=  preg_replace("/[^0-9]/", '', $options[ 'social_phone' ]) ;
+		$interface_footer_infoblog .=  preg_replace("/[^0-9+-]/", '', $options[ 'social_phone' ]) ;
 		$interface_footer_infoblog .= '</a></li>';
 		 
 				} if (!empty($options['social_email'] )){ 
@@ -307,8 +307,8 @@ function interface_socialnetworks( $set_flags ) {
 					if ( !empty( $options[ $value ] ) ) {
 						$a .=
 							'<li class="'.strtolower($key).'"><a href="'.esc_url( $options[ $value ] ).'" title="'.sprintf( esc_attr__( '%1$s on %2$s', 'interface' ), get_bloginfo( 'name' ), $social_links_name[$i] ).'" target="_blank">'.'</a></li>';
-					$i++;}
-					
+					}
+				$i++;	
 				}
 				
 				if($i > 0)

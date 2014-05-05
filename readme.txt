@@ -61,6 +61,11 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.3 =
+ - Phone Number validate as standard format
+ - Social icons title issue fixed
+ - Post Comment issue fixed
+
 = 1.0.2 =
  - Condition used for dynamic sidebar
  - Testimonial name display issue fixed
