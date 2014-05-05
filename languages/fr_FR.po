@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2014-04-07 10:03+0100\n"
-"PO-Revision-Date: 2014-04-07 10:04+0100\n"
+"POT-Creation-Date: 2014-05-05 08:13+0100\n"
+"PO-Revision-Date: 2014-05-05 08:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: fr_FR\n"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:17
+#: ../404.php:16
 msgid "404"
 msgstr "404"
 
-#: ../404.php:21
+#: ../404.php:20
 msgid "Page Not Found"
 msgstr "Page Introuvable"
 
-#: ../404.php:22 ../index.php:115 ../page-full-width.php:55 ../page.php:56
-#: ../single.php:136
+#: ../404.php:21 ../index.php:115 ../page-full-width.php:55 ../page.php:54
+#: ../single.php:121
 msgid "What you are looking for isn't here..."
 msgstr "Ce que vous cherchez n'est pas ici..."
 
-#: ../404.php:23
+#: ../404.php:22
 msgid "Maybe a search will help ?"
 msgstr "Peut-être qu'une recherche pourrait vous aider ?"
 
@@ -38,24 +38,24 @@ msgstr ""
 "Cet article est protégé par un mot de passe. Veuillez entrer le mot de passe "
 "pour voir les commentaires."
 
-#: ../comments.php:24
+#: ../comments.php:23
 #, php-format
 msgid "One Response to %2$s"
 msgstr "Une réponse à %2$s"
 
-#: ../comments.php:30
+#: ../comments.php:29
 msgid "Reply"
 msgstr "Répondre"
 
-#: ../comments.php:38
+#: ../comments.php:37
 msgid "Older comments"
 msgstr "Commentaires précédents"
 
-#: ../comments.php:41
+#: ../comments.php:40
 msgid "Newer comments"
 msgstr "Commentaires suivants"
 
-#: ../comments.php:53
+#: ../comments.php:49
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
@@ -85,72 +85,72 @@ msgstr "Pied de page"
 msgid "Read More"
 msgstr "Lire la suite"
 
-#: ../index.php:19
+#: ../index.php:18
 msgid "Search Results for "
-msgstr "Résultat de la Recherche pour"
+msgstr "Résultat de la Recherche pour "
 
-#: ../index.php:24
+#: ../index.php:23
 msgid "Tag: "
-msgstr "Tag:"
+msgstr "Tag: "
 
-#: ../index.php:29
+#: ../index.php:28
 msgid "Category: "
-msgstr "Catégorie :"
+msgstr "Catégorie : "
 
-#: ../index.php:34
+#: ../index.php:33
 msgid "Daily archives: "
-msgstr "Archives journalières :"
+msgstr "Archives journalières : "
 
-#: ../index.php:37
+#: ../index.php:36
 msgid "Monthly archives: "
-msgstr "Archives mensuelles :"
+msgstr "Archives mensuelles : "
 
-#: ../index.php:40
+#: ../index.php:39
 msgid "Yearly archives: "
-msgstr "Archives annuelles :"
+msgstr "Archives annuelles : "
 
-#: ../index.php:65 ../single.php:33
+#: ../index.php:63 ../single.php:32
 msgid "No"
 msgstr "Pas de "
 
-#: ../index.php:65 ../single.php:33
+#: ../index.php:63 ../single.php:32
 msgid "1"
 msgstr "1"
 
-#: ../index.php:65 ../single.php:33
+#: ../index.php:63 ../single.php:32
 msgid "%"
 msgstr "%"
 
-#: ../index.php:66 ../single.php:34
+#: ../index.php:64 ../single.php:33
 msgid "Comment"
 msgstr "Commentaire"
 
-#: ../index.php:66 ../single.php:34
+#: ../index.php:64 ../single.php:33
 msgid "Comments"
 msgstr "Commentaires"
 
-#: ../index.php:66 ../single.php:34
+#: ../index.php:64 ../single.php:33
 msgid "Comments Off"
 msgstr "Commentaires Off"
 
-#: ../index.php:70 ../single.php:38
+#: ../index.php:68 ../single.php:37
 msgid "by "
-msgstr "par"
+msgstr "par "
 
-#: ../index.php:72 ../page-full-width.php:40 ../page.php:41 ../single.php:40
+#: ../index.php:70 ../page-full-width.php:37 ../page.php:37 ../single.php:39
 msgid "Edit"
 msgstr "Éditer"
 
-#: ../index.php:87 ../single.php:57
+#: ../index.php:85 ../single.php:54
 msgid "Posted in"
 msgstr "Publié dans"
 
-#: ../index.php:92 ../single.php:76
+#: ../index.php:92 ../single.php:73
 msgid "Tags"
 msgstr "Tags"
 
-#: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:55
-#: ../single.php:135
+#: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:53
+#: ../single.php:120
 msgid "Not Found"
 msgstr "Introuvable"
 
@@ -167,47 +167,47 @@ msgstr "Voulez-vous essayer une nouvelle recherche ?"
 msgid "Previous Posts"
 msgstr "Articles précédents"
 
-#: ../index.php:126
+#: ../index.php:127
 msgid "Next Posts"
 msgstr "Articles suivants"
 
-#: ../page-full-width.php:28 ../page.php:29 ../single.php:64
+#: ../page-full-width.php:25 ../page.php:25 ../single.php:61
 msgid "Pages:"
 msgstr "Pages :"
 
-#: ../page-full-width.php:33 ../page.php:34 ../single.php:69
+#: ../page-full-width.php:30 ../page.php:30 ../single.php:66
 msgid "Next page"
 msgstr "Page suivante"
 
-#: ../page-full-width.php:34 ../page.php:35 ../single.php:70
+#: ../page-full-width.php:31 ../page.php:31 ../single.php:67
 msgid "Previous page"
 msgstr "Page précédente"
 
-#: ../sidebar.php:16
+#: ../sidebar.php:15
 msgid "Recent Posts"
 msgstr "Articles récents"
 
-#: ../sidebar.php:22
+#: ../sidebar.php:20
 msgid "Archives"
 msgstr "Archives"
 
-#: ../sidebar.php:28
+#: ../sidebar.php:25
 msgid "Meta"
 msgstr "Meta"
 
-#: ../single.php:89
+#: ../single.php:83
 msgid "Previous Image"
 msgstr "Image précédente"
 
-#: ../single.php:92
+#: ../single.php:86
 msgid "Next Image"
 msgstr "Image suivante"
 
-#: ../single.php:98 ../single.php:121
+#: ../single.php:90 ../single.php:107
 msgid "Previous Post"
 msgstr "Article précédent"
 
-#: ../single.php:101 ../single.php:124
+#: ../single.php:93 ../single.php:110
 msgid "Next Post"
 msgstr "Article suivant"
 

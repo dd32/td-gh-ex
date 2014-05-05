@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Pro 1.2.0\n"
 "POT-Creation-Date: 2013-08-23 11:17+0100\n"
-"PO-Revision-Date: 2014-04-07 10:03+0100\n"
+"PO-Revision-Date: 2014-05-05 08:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: FromBeyond <info@frombeyond.de>\n"
 "Language: de_DE\n"
@@ -82,27 +82,27 @@ msgstr "Weiterlesen"
 
 #: ../index.php:32
 msgid "Search Results for "
-msgstr "Suchergebnisse für"
+msgstr "Suchergebnisse für "
 
 #: ../index.php:37
 msgid "Tag: "
-msgstr "Tag:"
+msgstr "Tag: "
 
 #: ../index.php:42
 msgid "Category: "
-msgstr "Kategorie:"
+msgstr "Kategorie: "
 
 #: ../index.php:47
 msgid "Daily archives: "
-msgstr "Tägliches Archiv:"
+msgstr "Tägliches Archiv: "
 
 #: ../index.php:50
 msgid "Monthly archives: "
-msgstr "Monatliches Archiv:"
+msgstr "Monatliches Archiv: "
 
 #: ../index.php:53
 msgid "Yearly archives: "
-msgstr "Jährliches Archiv:"
+msgstr "Jährliches Archiv: "
 
 #: ../index.php:78 ../single.php:44
 msgid "No"
