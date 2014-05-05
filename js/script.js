@@ -3,25 +3,26 @@
 	$(document).ready(function() {
 
 		/* *** *** Placaholder realization *** *** */
-		var lbl = $( 'label[for="s"]' ); /* label */
-		var inp = $( 'input[name="s"]' ); /* input */
-		lbl.text( 'Enter search keyword' );
-		inp.val() == '' ? lbl.show() : lbl.hide();
-		inp.focusin(function() {
-			$( this ).parent().children( 'label[for="s"]' ).hide(); /* not prev() - IE not supported it */
+		$( '.searchform' ).each(function() {
+			var lbl = $( this ).find( 'label[for="s"]' ); /* label */
+			var inp = $( this ).find( 'input[name="s"]' ); /* input */
+			lbl.text( 'Enter search keyword' );
+			inp.val() == '' ? lbl.show() : lbl.hide();
+			inp.focusin(function() {
+				$( this ).parent().children( 'label[for="s"]' ).hide(); /* not prev() - IE not supported it */
+			});
+			inp.focusout(function() {
+				if( !$( this ).val().length ) {
+					$( this ).parent().children( 'label[for="s"]' ).show();
+				}
+			});
+			lbl.click(function(event) {
+				event = event || window.event;
+				/* not next() - IE not work great with it */
+				$( this ).parent().children( 'input[name="s"]' ).focus(); /* input[name="s"] */
+				event.preventDefault();
+			});
 		});
-		inp.focusout(function() {
-			if( !$( this ).val().length ) {
-				$( this ).parent().children( 'label[for="s"]' ).show();
-			}
-		});
-		lbl.click(function(event) {
-			event = event || window.event;
-			/* not next() - IE not work great with it */
-			$( this ).parent().children( 'input[name="s"]' ).focus(); /* input[name="s"] */
-			event.preventDefault();
-		});
-
 
 		/* *** *** Scroll to top *** *** */
 		$( 'a[href="#wrapper"]' ).on( 'click', function(e) {

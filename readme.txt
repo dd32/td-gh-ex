@@ -3,9 +3,9 @@ Contributors: the BestWebSoft team
 Author URI: https://github.com/bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: two-column, left-sidebar, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready, pagination, image-slider, white, blue, gray.
-Requires at least: 3.4
-Tested up to: 3.8.1
-Stable tag: 1.4
+Requires at least: 3.7
+Tested up to: 3.9
+Stable tag: 1.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -101,6 +101,10 @@ You can display Custom Header image by adding it via 'Appearances' > 'Header' me
 
 == Changelog ==
 
+= v1.5 - 05.04.2014 =
+* Update: We updated all functionality for wordpress 3.9.
+* Bugfix: We fixed a bug for the search form in the sidebar and in the search template.
+
 = v1.4 - 11.02.2014 =
 * Bugfix: Created archy.pot file without any translation.
 
@@ -119,6 +123,9 @@ You can display Custom Header image by adding it via 'Appearances' > 'Header' me
 Ability to use the Archy theme in your site.
 
 == Upgrade Notice ==
+
+= v1.5 =
+We updated all functionality for wordpress 3.9. We fixed a bug for the search form in the sidebar and in the search template.
 
 = v1.4 =
 Created archy.pot file without any translation.
