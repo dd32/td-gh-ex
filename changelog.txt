@@ -1,6 +1,12 @@
 *** Hemingway changelog ***
 
 
+Version 1.43 (2014-05-06)
+-------------------------
+- Fixed so that the recent posts widgets only display published posts
+- Added a full width page template
+
+
 Version 1.42 (2014-04-13)
 -------------------------
 - Added support for editor styles
