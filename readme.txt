@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.2.0
+Version: 1.2.1
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -62,8 +62,11 @@ Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
 
-= 1.2.0 - 29.04.2014 =
+= 1.2.1 - 06.05.2014 =
 
+* Fixed a tiny bug when comments are closed for single posts.
+
+= 1.2.0 - 29.04.2014 =
 * Added Spanish translation thanks to Hugo (http://hartodebuscar.blogspot.com/)
 * Moved some functions from jQuery to PHP to avoid conflicts with plugins and other JavaScript based scripts.
 * Improved main theme JavaScript compatibility with other plugins and scripts.
