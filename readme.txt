@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version:1.4.4
+New Theme added in the Option Panel Page.
 @Version: 1.4.3
 Small Changes in theme option Home page Tag-line setting ( product heading and service heading).
 

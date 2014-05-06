@@ -1,4 +1,6 @@
 .theme-info { padding-left:4%;}
+.webrit_button_new{float:right;}
+.webrit_button_new:hover{color:white;}
 .webriti-container {
     border-bottom: 1px dashed #CCCCCC;
     margin-bottom: 40px;
