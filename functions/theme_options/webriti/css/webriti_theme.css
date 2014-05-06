@@ -1,3 +1,5 @@
+.webrit_button_new{float:right;}
+.webrit_button_new:hover{color:white;}
 table td[class*="span"],
 table th[class*="span"],
 .row-fluid table td[class*="span"],
