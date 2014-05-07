@@ -1,5 +1,71 @@
 <?php
 
+require_once(dirname(__FILE__).'/include/class-tgm-plugin-activation.php');
+
+add_action( 'tgmpa_register', 'azabujuban_register_required_plugins' );
+function azabujuban_register_required_plugins() {
+ 
+    $plugins = array(
+ 
+        array(
+            'name'                  => 'GMO Font Agent', // The plugin name
+            'slug'                  => 'gmo-font-agent', // The plugin slug (typically the folder name)
+ //           'source'                => get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
+            'required'              => false, // If false, the plugin is only 'recommended' instead of required
+ //           'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+ //           'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+ //           'force_deactivation'    => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+ //           'external_url'          => '', // If set, overrides default API URL and points to an external URL
+        ),
+ 
+        array(
+            'name'      => 'GMO Showtime',
+            'slug'      => 'gmo-showtime',
+            'required'  => false,
+        ),
+ 
+    );
+ 
+    $theme_text_domain = 'azabujuban';
+ 
+    $config = array(
+        'domain'            => $theme_text_domain,           // Text domain - likely want to be the same as your theme.
+        'default_path'      => '',                           // Default absolute path to pre-packaged plugins
+        'parent_menu_slug'  => 'themes.php',         // Default parent menu slug
+        'parent_url_slug'   => 'themes.php',         // Default parent URL slug
+        'menu'              => 'install-required-plugins',   // Menu slug
+        'has_notices'       => true,                         // Show admin notices or not
+        'is_automatic'      => false,            // Automatically activate plugins after installation or not
+        'message'           => '',               // Message to output right before the plugins table
+        'strings'           => array(
+            'page_title'                                => __( 'Install Required Plugins', $theme_text_domain ),
+            'menu_title'                                => __( 'Install Plugins', $theme_text_domain ),
+            'installing'                                => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
+            'oops'                                      => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
+            'notice_can_install_required'               => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
+            'notice_can_install_recommended'            => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
+            'notice_cannot_install'                     => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
+            'notice_can_activate_required'              => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
+            'notice_can_activate_recommended'           => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
+            'notice_cannot_activate'                    => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
+            'notice_ask_to_update'                      => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
+            'notice_cannot_update'                      => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
+            'install_link'                              => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
+            'activate_link'                             => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
+            'return'                                    => __( 'Return to Required Plugins Installer', $theme_text_domain ),
+            'plugin_activated'                          => __( 'Plugin activated successfully.', $theme_text_domain ),
+            'complete'                                  => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
+        )
+    );
+ 
+    tgmpa( $plugins, $config );
+ 
+}
+
+
+
+
+	
 function azabujuban_custom_header_setup(){
 	$args = array(
 		'default-text-color'     => '220e10',
@@ -47,11 +113,42 @@ function azabujuban_header_image_setup(){
 			'thumbnail_url' => '%2$s/images/headers/ichimatsuhanabishi-thumbnail.png',
 			'description'   => _x( 'Ichimatsuhanabishi', 'header image description', 'twentythirteen' )
 		),
+		'higaki' => array(
+			'url'           => '%2$s/images/headers/higaki.png',
+			'thumbnail_url' => '%2$s/images/headers/higaki_thumbnail.png',
+			'description'   => _x( 'Higaki', 'header image description', 'twentythirteen' )
+		),
+		'sasa' => array(
+			'url'           => '%2$s/images/headers/sasa.png',
+			'thumbnail_url' => '%2$s/images/headers/sasa_thumbnail.png',
+			'description'   => _x( 'Sasa', 'header image description', 'twentythirteen' )
+		),
+		'sayagata' => array(
+			'url'           => '%2$s/images/headers/sayagata.png',
+			'thumbnail_url' => '%2$s/images/headers/sayagata_thumbnail.png',
+			'description'   => _x( 'Sayagata', 'header image description', 'twentythirteen' )
+		),
+		'sippoukomon' => array(
+			'url'           => '%2$s/images/headers/sippoukomon.png',
+			'thumbnail_url' => '%2$s/images/headers/sippoukomon_thumbnail.png',
+			'description'   => _x( 'Sippoukomon', 'header image description', 'twentythirteen' )
+		),
+		'yotuwakuzusi' => array(
+			'url'           => '%2$s/images/headers/yotuwakuzusi.png',
+			'thumbnail_url' => '%2$s/images/headers/yotuwakuzusi_thumbnail.png',
+			'description'   => _x( 'Yotuwakuzusi', 'header image description', 'twentythirteen' )
+		),
 	) );
 }
 add_action('after_setup_theme', 'azabujuban_header_image_setup', 12);
 
 function azabujuban_original_customize( $wp_customize ) {
+	
+	$wp_customize->add_section( 'original_section', array(
+		'title'          => 'Azabu Juban',
+		'priority'       => 10000,
+	));
+	
 	$wp_customize->add_setting('navbar_color', array(
 		'default'           => '#f7f5e7',
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -60,7 +157,7 @@ function azabujuban_original_customize( $wp_customize ) {
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'navbar_color', array(
 		'label'    => 'Header Navigation Color',
-		'section'  => 'colors',
+		'section'  => 'original_section',
 		'settings' => 'navbar_color',
 	)));
 	
@@ -72,7 +169,7 @@ function azabujuban_original_customize( $wp_customize ) {
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'paging_navigation_color', array(
 		'label'    => 'Paging Navigation Color',
-		'section'  => 'colors',
+		'section'  => 'original_section',
 		'settings' => 'paging_navigation_color',
 	)));
 	
@@ -84,7 +181,7 @@ function azabujuban_original_customize( $wp_customize ) {
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'footer_widget_area_color', array(
 		'label'    => 'Footer Widget Area Color',
-		'section'  => 'colors',
+		'section'  => 'original_section',
 		'settings' => 'footer_widget_area_color',
 	)));
 	
@@ -96,9 +193,337 @@ function azabujuban_original_customize( $wp_customize ) {
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'site_info_color', array(
 		'label'    => 'Site Info Color',
-		'section'  => 'colors',
+		'section'  => 'original_section',
 		'settings' => 'site_info_color',
 	)));
+	$wp_customize->add_setting('Header_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Header_Text_Colorr', array(
+		'label'    => 'Header Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Header_Text_Color',
+	)));
+	
+
+
+
+
+
+
+
+	$wp_customize->add_setting('Navigation_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Navigation_Text_Color', array(
+		'label'    => 'Navigation Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Navigation_Text_Color',
+	)));
+	$wp_customize->add_setting('Navigation_Link_Hover_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Navigation_Link_Hover_Color', array(
+		'label'    => 'Navigation Link Hover Color',
+		'section'  => 'original_section',
+		'settings' => 'Navigation_Link_Hover_Color',
+	)));
+	$wp_customize->add_setting('Main_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Main_Text_Color', array(
+		'label'    => 'Main Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Main_Text_Color',
+	)));
+	$wp_customize->add_setting('Accent_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Accent_Color', array(
+		'label'    => 'Accent Color',
+		'section'  => 'original_section',
+		'settings' => 'Accent_Color',
+	)));
+	$wp_customize->add_setting('Main_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Main_Text_Color', array(
+		'label'    => 'Main Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Main_Text_Color',
+	)));
+	$wp_customize->add_setting('Main_Link_Hover_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Main_Link_Hover_Color', array(
+		'label'    => 'Main Link Hover Color',
+		'section'  => 'original_section',
+		'settings' => 'Main_Link_Hover_Color',
+	)));
+	$wp_customize->add_setting('Sidebar_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Sidebar_Background_Color', array(
+		'label'    => 'Sidebar Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Sidebar_Background_Color',
+	)));
+	$wp_customize->add_setting('Sidebar_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Sidebar_Text_Color', array(
+		'label'    => 'Sidebar Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Sidebar_Text_Color',
+	)));
+	$wp_customize->add_setting('Sidebar_Link_Hover_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Sidebar_Link_Hover_Color', array(
+		'label'    => 'Sidebar Link Hover Color',
+		'section'  => 'original_section',
+		'settings' => 'Sidebar_Link_Hover_Color',
+	)));
+	$wp_customize->add_setting('Paging_Navigation_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Paging_Navigation_Text_Color', array(
+		'label'    => 'Paging Navigation Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Paging_Navigation_Text_Color',
+	)));
+	$wp_customize->add_setting('Paging_Navigation_Link_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Paging_Navigation_Link_Color', array(
+		'label'    => 'Paging Navigation Link Color',
+		'section'  => 'original_section',
+		'settings' => 'Paging_Navigation_Link_Color',
+	)));
+	$wp_customize->add_setting('Footer_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Footer_Text_Color', array(
+		'label'    => 'Footer Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Footer_Text_Color',
+	)));
+	$wp_customize->add_setting('Footer_Link_Hover_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Footer_Link_Hover_Color', array(
+		'label'    => 'Footer Link Hover Color',
+		'section'  => 'original_section',
+		'settings' => 'Footer_Link_Hover_Color',
+	)));
+	$wp_customize->add_setting('Site_Info_Text_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Site_Info_Text_Color', array(
+		'label'    => 'Site Info Text Color',
+		'section'  => 'original_section',
+		'settings' => 'Site_Info_Text_Color',
+	)));
+	$wp_customize->add_setting('Site_Info_Link_Hover_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Site_Info_Link_Hover_Color', array(
+		'label'    => 'Site Info Link Hover Color',
+		'section'  => 'original_section',
+		'settings' => 'Site_Info_Link_Hover_Color',
+	)));
+	$wp_customize->add_setting('Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Background_Color', array(
+		'label'    => 'Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Background_Color',
+	)));
+
+
+
+
+	$wp_customize->add_setting('Video_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Video_Background_Color', array(
+		'label'    => 'Video Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Video_Background_Color',
+	)));
+	$wp_customize->add_setting('Status_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Status_Background_Color', array(
+		'label'    => 'Status Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Status_Background_Color',
+	)));
+	$wp_customize->add_setting('Quote_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Quote_Background_Color', array(
+		'label'    => 'Quote Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Quote_Background_Color',
+	)));
+	$wp_customize->add_setting('Link_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Link_Background_Color', array(
+		'label'    => 'Link Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Link_Background_Color',
+	)));
+	$wp_customize->add_setting('Image_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Image_Background_Color', array(
+		'label'    => 'Image Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Image_Background_Color',
+	)));
+	$wp_customize->add_setting('Gallery_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Gallery_Background_Color', array(
+		'label'    => 'Gallery Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Gallery_Background_Color',
+	)));
+	$wp_customize->add_setting('Chat_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Chat_Background_Color', array(
+		'label'    => 'Chat Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Chat_Background_Color',
+	)));
+	$wp_customize->add_setting('Audio_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Audio_Background_Color', array(
+		'label'    => 'Audio Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Audio_Background_Color',
+	)));
+	$wp_customize->add_setting('Aside_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Aside_Background_Color', array(
+		'label'    => 'Aside Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Aside_Background_Color',
+	)));
+	$wp_customize->add_setting('Standard_Background_Color', array(
+		'default'           => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Standard_Background_Color', array(
+		'label'    => 'Standard Background Color',
+		'section'  => 'original_section',
+		'settings' => 'Standard_Background_Color',
+	)));
+
+
+	// Logo Image
+    $wp_customize->add_setting('Logo_Image', array(
+        'default'        => '',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+    ));
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'Logo_Image',array(
+            'label'     => 'Logo Image',
+            'section'   => 'original_section',
+            'settings'  => 'Logo_Image',
+        )
+    ));
+
+
+
+	
+	$wp_customize->remove_section('colors');
 }
 add_action('customize_register', 'azabujuban_original_customize');
 
@@ -108,9 +533,73 @@ function azabujuban_customize_css(){
 	echo ".paging-navigation { background-color:".get_option('paging_navigation_color')."; }";
 	echo ".site-info { background-color:".get_option('site_info_color')."; }";
 	echo ".site-footer .sidebar-container { background-color:".get_option('footer_widget_area_color')."; }";
+	echo ".site-title,.site-description { color:".get_option('Header_Text_Color')."; }";
+	echo ".nav-menu li:hover > a, .nav-menu li a:hover, .nav-menu li:focus > a, .nav-menu li a:focus,.nav-menu li:hover > a, .nav-menu li a:hover, .nav-menu li:focus > a, .nav-menu li a:focus,.nav-menu li a:hover { color:".get_option('Navigation_Link_Hover_Color')."; }";
+	echo ".nav-menu li a { color:".get_option('Navigation_Text_Color')."; }";
+	echo ".entry-title a,.entry-content,.entry-content a,.entry-meta a { color:".get_option('Main_Text_Color')."; }";
+	
+	echo ".entry-title, .entry-meta { color:".get_option('Accent_Color')."; }";
+
+	echo ".entry-meta a:hover { color:".get_option('Main_Link_Hover_Color')."; }";
+	echo ".widget { background-color:".get_option('Sidebar_Background_Color')."; }";
+	echo ".sidebar-inner .widget .widget-title,.sidebar-inner .widget_calendar table, .sidebar-inner .widget_calendar td,.sidebar-inner .widget a { color:".get_option('Sidebar_Text_Color')."; }";	
+	echo ".widget a:hover { color:".get_option('Sidebar_Link_Hover_Color')."; }";
+	echo ".paging-navigation .meta-nav { background-color:".get_option('Paging_Navigation_Text_Color')."; }";
+	echo ".paging-navigation .meta-nav { color:".get_option('Paging_Navigation_Link_Color')."; }";
+	echo ".navigation a { color:".get_option('Paging_Navigation_Text_Color')."; }";
+	echo ".navigation a:hover { color:".get_option('Paging_Navigation_Link_Color')."; }";
+	echo ".paging-navigation a:hover .meta-nav { background-color:".get_option('Paging_Navigation_Link_Color')."; }";
+	echo ".paging-navigation a:hover .meta-nav { color:".get_option('Paging_Navigation_Text_Color')."; }";
+	echo "#secondary .widget .widget-title, #secondary .widget_calendar table, #secondary .widget_calendar td, #secondary .widget a,.site-footer .widget { color:".get_option('Footer_Text_Color')."; }";	
+	echo "#secondary .widget a:hover { color:".get_option('Footer_Link_Hover_Color')."; }";	
+	echo ".paging-navigation a:hover .meta-nav { color:".get_option('Site_Info_Text_Color')."; }";
+	echo ".site-info a { color:".get_option('Site_Info_Text_Color')."; }";
+	echo ".site-info a:hover { color:".get_option('Site_Info_Link_Hover_Color')."; }";
+	echo "#main { background-color:".get_option('Background_Color')."; }";
+
+	if(!get_option('Logo_Image')==null){
+		echo "#logo-image img{ margin-right:10px; }";
+	}
+	echo ".format-gallery { background-color:".get_option('Gallery_Background_Color')."; }";
+	echo ".format-image { background-color:".get_option('Image_Background_Color')."; }";
+	echo ".format-video { background-color:".get_option('Video_Background_Color')."; }";
+	echo ".format-status { background-color:".get_option('Status_Background_Color')."; }";
+	echo ".format-quote { background-color:".get_option('Quote_Background_Color')."; }";
+	echo ".format-link { background-color:".get_option('Link_Background_Color')."; }";
+	echo ".format-chat { background-color:".get_option('Chat_Background_Color')."; }";
+	echo ".format-audio { background-color:".get_option('Audio_Background_Color')."; }";
+	echo ".format-aside { background-color:".get_option('Aside_Background_Color')."; }";
+	echo ".format-standard { background-color:".get_option('Standard_Background_Color')."; }";
+	
+	
 	echo "-->\n</style>\n";
 }
 add_action('wp_head', 'azabujuban_customize_css');
+
+
+
+function azabujuban_scripts(){
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js' );
+}
+add_action( 'wp_enqueue_scripts', 'azabujuban_scripts' );
+
+
+//Dashboard
+function azabujuban_dashboard_widget_function() {
+?>
+<a href="http://www.conoha.jp/lp/20131201wp/?banner_id=vn_wps_azabu" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/conoha.gif' ?>" style="width:100%"></a>
+<?php
+}
+function azabujuban_add_dashboard_widgets() {
+wp_add_dashboard_widget('azabujuban_dashboard_widget', 'ConoHa VPS hosting', 'azabujuban_dashboard_widget_function');
+global $wp_meta_boxes;
+$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+$azabujuban_widget_backup = array('azabujuban_dashboard_widget' => $normal_dashboard['azabujuban_dashboard_widget']);
+unset($normal_dashboard['azabujuban_dashboard_widget']);
+$sorted_dashboard = array_merge($azabujuban_widget_backup, $normal_dashboard);
+$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+}
+add_action('wp_dashboard_setup', 'azabujuban_add_dashboard_widgets' );
 
 
 
