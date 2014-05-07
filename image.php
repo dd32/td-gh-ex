@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <section class="section" role="main">
+  <section class="section-wide" role="main">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -9,19 +9,21 @@
       <header class="post-header">
         <h2 class="post-title"><?php the_title(); ?></h2>
       </header>
- 
-      <img src="<?php echo wp_get_attachment_url($post->ID); ?>" alt="<?php the_title(); ?>" class="centered" />
 
-      <strong><?php if ( !empty($post->post_excerpt) ) the_excerpt(); // this is the "caption" ?></strong>
+      <article class="post-content">
 
-      <?php if ( !empty($post->post_content) ) the_content(); // this is the "description" ?>
+        <img src="<?php echo wp_get_attachment_url( $post->ID ); ?>" alt="<?php the_title(); ?>" class="aligncenter" />
+
+        <article class="attachment-caption"><?php the_excerpt(); ?></article>
+
+        <article class="attachment-desc"><?php the_content(); ?></article>
+
+      </article><!-- .post-content -->
 
     </article><!-- .article -->
 
     <?php endwhile; endif; ?>
 
   </section><!-- .section -->
-
-  <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

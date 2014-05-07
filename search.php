@@ -2,21 +2,19 @@
 
   <section class="section" role="main">
 
-    <?php if (have_posts()) : ?>
+    <?php if ( have_posts() ) : ?>
   
-      <h2 class="pagetitle"><?php _e('Searching for','adelle-theme'); ?> &quot;<?php the_search_query(); ?>&quot;</h2>
+      <h2 class="pagetitle"><?php _e( 'Searching for','adelle-theme' ); ?> &quot;<?php the_search_query(); ?>&quot;</h2>
 
-    <?php while (have_posts()) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); ?>
 
-      <?php get_template_part( 'content', get_post_format() ); ?>
+      <?php get_template_part( 'content', 'list' ); ?>
 
     <?php endwhile; ?>
 
-      <section class="pagination">
-        <p><?php echo adelle_theme_pagination_links(); ?></p>
-      </section>
+      <?php echo adelle_theme_pagination_links(); ?>
 
-    <?php else : get_template_part( 'content', 'list' ); endif; ?>
+    <?php else : get_template_part( 'content', 'none' ); endif; ?>
 
   </section><!-- .section -->
 

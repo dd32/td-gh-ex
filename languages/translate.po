@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2013-11-06 23:36+0800\n"
-"PO-Revision-Date: 2013-11-07 16:45+0800\n"
+"POT-Creation-Date: 2014-05-07 11:33+0800\n"
+"PO-Revision-Date: 2014-05-07 11:34+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
 "Language: English\n"
@@ -20,101 +20,101 @@ msgstr ""
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: 404.php:11
+#: 404.php:13
 msgid "404 Not Found"
 msgstr ""
 
-#: 404.php:16 content-none.php:10
+#: 404.php:18 content-none.php:12
 msgid "Archives by month"
 msgstr ""
 
-#: 404.php:22 content-none.php:16
+#: 404.php:24 content-none.php:18
 msgid "Archives by category"
 msgstr ""
 
-#: archive.php:8
+#: archive.php:7
 msgid "Archive of"
 msgstr ""
 
-#: archive.php:8
+#: archive.php:7
 msgid "category"
 msgstr ""
 
-#: archive.php:10
+#: archive.php:9
 msgid "Posts Tagged"
 msgstr ""
 
-#: archive.php:12 archive.php:14 archive.php:16
+#: archive.php:11 archive.php:13 archive.php:15
 msgid "archive"
 msgstr ""
 
-#: archive.php:18
+#: archive.php:17
 msgid "Author Archive"
-msgstr ""
-
-#: archive.php:20
-msgid "Blog Archives"
 msgstr ""
 
 #: comments.php:7
 msgid "This post is password protected. Enter the password to view comments"
 msgstr ""
 
-#: comments.php:18 content-list.php:18 content.php:17
+#: comments.php:14 comments.php:31
+msgid "Older comments"
+msgstr ""
+
+#: comments.php:15 comments.php:32
+msgid "Newer comments"
+msgstr ""
+
+#: comments.php:19 content-list.php:20 content.php:19
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:18 content.php:17
+#: comments.php:19 content-list.php:20 content.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:18 content.php:17
+#: comments.php:19 content-list.php:20 content.php:19
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:19
 msgid "on"
 msgstr ""
 
-#: comments.php:23
+#: comments.php:24
 msgid "Pingbacks &amp; Trackbacks on"
 msgstr ""
 
-#: comments.php:36
+#: comments.php:42
 msgid "Comments are closed"
 msgstr ""
 
-#: comments.php:49 comments.php:55
+#: comments.php:55 comments.php:61
 msgid "Comment"
 msgstr ""
 
-#: comments.php:50
+#: comments.php:56
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:57
 #, php-format
 msgid "Leave a reply to %s"
 msgstr ""
 
-#: comments.php:52
+#: comments.php:58
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:63
 msgid "Name"
 msgstr ""
 
-#: comments.php:58
+#: comments.php:64
 msgid "Email"
 msgstr ""
 
-#: comments.php:59
+#: comments.php:65
 msgid "Website"
-msgstr ""
-
-#: content-list.php:5 content.php:5
-msgid "bookmark"
 msgstr ""
 
 #: content-list.php:6 content.php:6
@@ -125,16 +125,16 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: content-none.php:5
+#: content-none.php:7
 msgid ""
 "You have come to a page that is either not existing or already been removed"
 msgstr ""
 
-#: content.php:21
+#: content.php:23
 msgid "<li class=\"previous\">&laquo; %link</li>"
 msgstr ""
 
-#: content.php:22
+#: content.php:24
 msgid "<li class=\"next\">%link &raquo;</li>"
 msgstr ""
 
@@ -147,75 +147,71 @@ msgid "Powered by"
 msgstr ""
 
 #: footer.php:4
-msgid "Adelle theme designed by BluChic"
+msgid "Theme designed by BluChic"
 msgstr ""
 
 #: footer.php:4
 msgid "Designed by"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:157
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:204
 msgid "Please enable referrers in your browser."
 msgstr ""
 
-#: functions.php:162
+#: functions.php:214
 msgid "ago"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:226
 #, php-format
 msgid "<h6>%s</h6>"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:227
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:227
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:229
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:202
+#: functions.php:247
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:258
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:263
 msgid "Next page"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:264
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:297
 msgid "Previous"
 msgstr ""
 
-#: functions.php:243
+#: functions.php:298
 msgid "Next"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:313
 msgid "Right Widget 1"
-msgstr ""
-
-#: header.php:31 header.php:32 searchform.php:3 searchform.php:4
-msgid "Search"
 msgstr ""
 
 #: search.php:7
