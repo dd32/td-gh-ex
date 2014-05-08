@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.44 (2014-05-08)
+-------------------------
+- Added a query reset to template-archives.php to prevent the wrong comments from loading
+
+
 Version 1.43 (2014-05-06)
 -------------------------
 - Fixed so that the recent posts widgets only display published posts

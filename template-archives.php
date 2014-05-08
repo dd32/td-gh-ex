@@ -83,7 +83,9 @@ Template Name: Archive template
 					                    foreach ($tags as $tag) {
 					                 	   echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'hemingway' ), $tag->name ) . '" ' . '>' . $tag->name.'</a></li> ';
 					                    }
-					                } ?>
+					                }
+					                
+					                wp_reset_query();?>
 					            </ul>
 				            
 				            </div> <!-- /archive-col -->
