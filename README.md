@@ -46,3 +46,6 @@ Changelog
 
 #### 1.12
 * Fix link to footer credits
+
+#### 1.13
+* Add featured images on pages
