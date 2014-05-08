@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.1.4
+1.New Screen Shot added. 
 @Version: 1.1.3
 1.New Theme Detail added to Options Panle.
 @Version: 1.1.2
