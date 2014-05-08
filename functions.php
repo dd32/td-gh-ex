@@ -81,9 +81,11 @@ add_action('after_setup_theme', 'whitespektrum_setup');
 
 // Scripts
 function whitespektrum_scripts_styles() {
+	// Enables Ubuntu Font
+	wp_enqueue_style('Ubuntu','http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+	
 	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'whitespektrum_scripts_styles');
-
 ?>
