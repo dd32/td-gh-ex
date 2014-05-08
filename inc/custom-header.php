@@ -60,10 +60,24 @@ function catchkathmandu_custom_header_setup() {
 
 	$args = apply_filters( 'catchkathmandu_custom_header_args', $args );
 
-	if ( function_exists( 'wp_get_theme' ) ) {
-		// For WordPress 3.4+
-		add_theme_support( 'custom-header', $args );
-	} 
+	add_theme_support( 'custom-header', $args );
+	
+	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
+	register_default_headers( array(
+		'defaultlogo' => array(
+			'url' => '%s/images/logo.png',
+			'thumbnail_url' => '%s/images/logo.png',
+			/* translators: header image description */
+			'description' => __( 'Default Logo', 'catchkathmandu' )
+		),
+		'catchkathmandulogo' => array(
+			'url' => '%s/images/catch-kathmdnu.png',
+			'thumbnail_url' => '%s/images/catch-kathmdnu.png',
+			/* translators: header image description */
+			'description' => __( 'Catch Kathmandu Logo', 'catchkathmandu' )
+		)
+	) );	
+ 
 }
 add_action( 'after_setup_theme', 'catchkathmandu_custom_header_setup' );
 
