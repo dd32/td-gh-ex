@@ -584,22 +584,5 @@ function azabujuban_scripts(){
 add_action( 'wp_enqueue_scripts', 'azabujuban_scripts' );
 
 
-//Dashboard
-function azabujuban_dashboard_widget_function() {
-?>
-<a href="http://www.conoha.jp/lp/20131201wp/?banner_id=vn_wps_azabu" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/conoha.gif' ?>" style="width:100%"></a>
-<?php
-}
-function azabujuban_add_dashboard_widgets() {
-wp_add_dashboard_widget('azabujuban_dashboard_widget', 'ConoHa VPS hosting', 'azabujuban_dashboard_widget_function');
-global $wp_meta_boxes;
-$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
-$azabujuban_widget_backup = array('azabujuban_dashboard_widget' => $normal_dashboard['azabujuban_dashboard_widget']);
-unset($normal_dashboard['azabujuban_dashboard_widget']);
-$sorted_dashboard = array_merge($azabujuban_widget_backup, $normal_dashboard);
-$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
-}
-add_action('wp_dashboard_setup', 'azabujuban_add_dashboard_widgets' );
-
 
 
