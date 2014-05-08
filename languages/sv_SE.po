@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-29 00:26+0545\n"
-"PO-Revision-Date: 2014-04-29 00:26+0545\n"
+"POT-Creation-Date: 2014-05-09 03:26+0545\n"
+"PO-Revision-Date: 2014-05-09 03:26+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -747,7 +747,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 msgid "Like Catch Themes on Facebook"
 msgstr "Gilla Catch Themes på Facebook"
 
-#: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:691
+#: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:693
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -759,7 +759,7 @@ msgstr "https://twitter.com/catchthemes/"
 msgid "Follow Catch Themes on Twitter"
 msgstr "Följ Catch Themes på Twitter"
 
-#: ../inc/panel/theme-options.php:133 ../inc/panel/theme-options.php:696
+#: ../inc/panel/theme-options.php:133 ../inc/panel/theme-options.php:698
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -817,10 +817,10 @@ msgstr "Förhandsgranska:"
 #: ../inc/panel/theme-options.php:189 ../inc/panel/theme-options.php:229
 #: ../inc/panel/theme-options.php:308 ../inc/panel/theme-options.php:418
 #: ../inc/panel/theme-options.php:474 ../inc/panel/theme-options.php:508
-#: ../inc/panel/theme-options.php:534 ../inc/panel/theme-options.php:550
-#: ../inc/panel/theme-options.php:574 ../inc/panel/theme-options.php:644
-#: ../inc/panel/theme-options.php:669 ../inc/panel/theme-options.php:783
-#: ../inc/panel/theme-options.php:816
+#: ../inc/panel/theme-options.php:534 ../inc/panel/theme-options.php:552
+#: ../inc/panel/theme-options.php:576 ../inc/panel/theme-options.php:646
+#: ../inc/panel/theme-options.php:671 ../inc/panel/theme-options.php:785
+#: ../inc/panel/theme-options.php:818
 msgid "Save Changes"
 msgstr "Spara Ändringar"
 
@@ -1102,231 +1102,231 @@ msgstr "Omdirigera Feed URL"
 msgid "Add in the Feedburner URL"
 msgstr "Lägg till i Feedburner URL"
 
-#: ../inc/panel/theme-options.php:555
+#: ../inc/panel/theme-options.php:557
 msgid "Custom CSS"
 msgstr "Anpassad CSS"
 
-#: ../inc/panel/theme-options.php:560
+#: ../inc/panel/theme-options.php:562
 msgid "Enter your custom CSS styles."
 msgstr "Lägg till anpassade CSS-stilar."
 
-#: ../inc/panel/theme-options.php:567
+#: ../inc/panel/theme-options.php:569
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS Handledning ifrån W3Schools."
 
-#: ../inc/panel/theme-options.php:569
+#: ../inc/panel/theme-options.php:571
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:569
+#: ../inc/panel/theme-options.php:571
 msgid "CSS Tutorial"
 msgstr "CSS Handledning"
 
-#: ../inc/panel/theme-options.php:569
+#: ../inc/panel/theme-options.php:571
 msgid "Click Here to Read"
 msgstr "Klicka Här för att Läsa"
 
-#: ../inc/panel/theme-options.php:583
+#: ../inc/panel/theme-options.php:585
 msgid "Slider Options"
 msgstr "Inställningar Bildspel"
 
-#: ../inc/panel/theme-options.php:587
+#: ../inc/panel/theme-options.php:589
 msgid "Enable Sidebar"
 msgstr "Aktivera Sidopanel"
 
-#: ../inc/panel/theme-options.php:591
+#: ../inc/panel/theme-options.php:593
 msgid "Homepage / Frontpage"
 msgstr "Hemsida / Framsida"
 
-#: ../inc/panel/theme-options.php:595
+#: ../inc/panel/theme-options.php:597
 msgid "Entire Site"
 msgstr "Hela Sidan"
 
-#: ../inc/panel/theme-options.php:599
+#: ../inc/panel/theme-options.php:601
 msgid "Disable"
 msgstr "Avaktivera"
 
-#: ../inc/panel/theme-options.php:604
+#: ../inc/panel/theme-options.php:606
 msgid "Number of Slides"
 msgstr "Antal i Bildspel"
 
-#: ../inc/panel/theme-options.php:610
+#: ../inc/panel/theme-options.php:612
 msgid "Transition Effect:"
 msgstr "Övergångseffekt:"
 
-#: ../inc/panel/theme-options.php:614
+#: ../inc/panel/theme-options.php:616
 msgid "fade"
 msgstr "tona"
 
-#: ../inc/panel/theme-options.php:615
+#: ../inc/panel/theme-options.php:617
 msgid "wipe"
 msgstr "sudda"
 
-#: ../inc/panel/theme-options.php:616
+#: ../inc/panel/theme-options.php:618
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../inc/panel/theme-options.php:617
+#: ../inc/panel/theme-options.php:619
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../inc/panel/theme-options.php:618
+#: ../inc/panel/theme-options.php:620
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../inc/panel/theme-options.php:619
+#: ../inc/panel/theme-options.php:621
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../inc/panel/theme-options.php:620
+#: ../inc/panel/theme-options.php:622
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/panel/theme-options.php:621
+#: ../inc/panel/theme-options.php:623
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/panel/theme-options.php:622
+#: ../inc/panel/theme-options.php:624
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/panel/theme-options.php:623
+#: ../inc/panel/theme-options.php:625
 msgid "cover"
 msgstr "täcka"
 
-#: ../inc/panel/theme-options.php:624
+#: ../inc/panel/theme-options.php:626
 msgid "shuffle"
 msgstr "blanda"
 
-#: ../inc/panel/theme-options.php:629
+#: ../inc/panel/theme-options.php:631
 msgid "Transition Delay"
 msgstr "Övergång Fördröjning"
 
-#: ../inc/panel/theme-options.php:632 ../inc/panel/theme-options.php:639
+#: ../inc/panel/theme-options.php:634 ../inc/panel/theme-options.php:641
 msgid "second(s)"
 msgstr "sekund(er)"
 
-#: ../inc/panel/theme-options.php:636
+#: ../inc/panel/theme-options.php:638
 msgid "Transition Length"
 msgstr "Övergång Tid"
 
-#: ../inc/panel/theme-options.php:649
+#: ../inc/panel/theme-options.php:651
 msgid "Featured Post Slider Options"
 msgstr "Framhävda Inlägg Bildspel Inställningar"
 
-#: ../inc/panel/theme-options.php:653
+#: ../inc/panel/theme-options.php:655
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Exkludera Bildspel Inlägg från Startsidans inlägg?"
 
-#: ../inc/panel/theme-options.php:655
+#: ../inc/panel/theme-options.php:657
 msgid "Check to exclude"
 msgstr "Markera för att exludera"
 
-#: ../inc/panel/theme-options.php:660
+#: ../inc/panel/theme-options.php:662
 msgid "Featured Slider Post #"
 msgstr "Framhävt Bildspel Inlägg#"
 
-#: ../inc/panel/theme-options.php:662
+#: ../inc/panel/theme-options.php:664
 msgid "Click Here To Edit"
 msgstr "Klicka Här för att Redigera"
 
-#: ../inc/panel/theme-options.php:668
+#: ../inc/panel/theme-options.php:670
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Notering: Här kan du sätta dina inläggs-ID som ska visas som bildspel på "
 "hemsidan."
 
-#: ../inc/panel/theme-options.php:680
+#: ../inc/panel/theme-options.php:682
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Aktivera Sociala Ikoner i Sidhuvudets Högra Sidpanel?"
 
-#: ../inc/panel/theme-options.php:682
+#: ../inc/panel/theme-options.php:684
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
 "Lägg bara till Catch Evolution Social Widget i Sidhuvudets Högra Sidpanel"
 
-#: ../inc/panel/theme-options.php:686
+#: ../inc/panel/theme-options.php:688
 msgid "Enable Social Icons in Footer?"
 msgstr "Aktivera Sociala Ikoner i Sidfoten?"
 
-#: ../inc/panel/theme-options.php:688
+#: ../inc/panel/theme-options.php:690
 msgid "Check to enable"
 msgstr "Markera för att aktivera"
 
-#: ../inc/panel/theme-options.php:701
+#: ../inc/panel/theme-options.php:703
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/panel/theme-options.php:706
+#: ../inc/panel/theme-options.php:708
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/panel/theme-options.php:711
+#: ../inc/panel/theme-options.php:713
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/theme-options.php:716
+#: ../inc/panel/theme-options.php:718
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/panel/theme-options.php:722
+#: ../inc/panel/theme-options.php:724
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/theme-options.php:727
+#: ../inc/panel/theme-options.php:729
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/panel/theme-options.php:732
+#: ../inc/panel/theme-options.php:734
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/panel/theme-options.php:737
+#: ../inc/panel/theme-options.php:739
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/panel/theme-options.php:742
+#: ../inc/panel/theme-options.php:744
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/panel/theme-options.php:747
+#: ../inc/panel/theme-options.php:749
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/panel/theme-options.php:752
+#: ../inc/panel/theme-options.php:754
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/panel/theme-options.php:757 ../inc/panel/theme-options.php:1174
+#: ../inc/panel/theme-options.php:759 ../inc/panel/theme-options.php:1176
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/panel/theme-options.php:762
+#: ../inc/panel/theme-options.php:764
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/panel/theme-options.php:767
+#: ../inc/panel/theme-options.php:769
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/theme-options.php:772
+#: ../inc/panel/theme-options.php:774
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/panel/theme-options.php:777
+#: ../inc/panel/theme-options.php:779
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/panel/theme-options.php:790
+#: ../inc/panel/theme-options.php:792
 msgid "Header and Footer Codes"
 msgstr "Koder för Sidhuvud och Sidfot"
 
-#: ../inc/panel/theme-options.php:795
+#: ../inc/panel/theme-options.php:797
 msgid "Code to display on Header"
 msgstr "Kod att lägga in i Sidhuvud"
 
-#: ../inc/panel/theme-options.php:801
+#: ../inc/panel/theme-options.php:803
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1334,11 +1334,11 @@ msgstr ""
 "Notering: Här kan du lägga skript från Google, Facebook etc som laddas i "
 "Headern"
 
-#: ../inc/panel/theme-options.php:804
+#: ../inc/panel/theme-options.php:806
 msgid "Code to display on Footer"
 msgstr "Kod att lägga in i sidfot"
 
-#: ../inc/panel/theme-options.php:811
+#: ../inc/panel/theme-options.php:813
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1346,11 +1346,11 @@ msgstr ""
 "Notera: Här kan du lägga skript från Google, Facebook etc som laddas i "
 "sidfoten"
 
-#: ../inc/panel/theme-options.php:1153
+#: ../inc/panel/theme-options.php:1155
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1184
+#: ../inc/panel/theme-options.php:1186
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
 

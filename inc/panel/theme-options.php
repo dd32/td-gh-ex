@@ -541,8 +541,10 @@ function catchevolution_theme_options_do_page() {
                             <table class="form-table">  
                                 <tbody>
 									<tr>
-                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catchevolution' ); ?></label></th>
-                                        <td><input type="text" size="70" name="catchevolution_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catchevolution' ); ?>
+                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catchevolution' ); ?></label>
+                                        <p><small><?php _e( 'Add in the Feedburner URL', 'catchevolution' ); ?></small></p>
+                                        </th>
+                                        <td><input type="text" size="70" name="catchevolution_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
                                         </td>
                                     </tr>  
                                	</tbody>
