@@ -28,8 +28,8 @@
 			<div id="footer-info">		
 				
 				<span id="copyright"><?php _e( 'Copyright ', 'application' ); ?><?php echo date( 'Y' ); ?>
- <?php echo get_option('app_footer_text') ?> | <?php _e( 'Powered by', 'application' ); ?> <a href="http://www.wordpress.org">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
-				<span id="follow-us"><?php _e( 'Follow us: ', 'application' ); ?><a href="<?php echo get_option('app_facebook') ?>">Facebook</a> | <a href="<?php echo get_option('app_twitter') ?> ">Twitter</a></span>
+ <?php echo get_option('footer_cr') ?> | <?php _e( 'Powered by', 'application' ); ?> <a href="http://www.wordpress.org">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
+				<span id="follow-us"><?php _e( 'Follow us: ', 'application' ); ?><a href="<?php echo of_get_option('footer_facebook') ?>">Facebook</a> | <a href="<?php echo of_get_option('footer_twitter') ?> ">Twitter</a></span>
 			
 			</div>
 	

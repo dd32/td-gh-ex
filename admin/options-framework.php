@@ -212,7 +212,7 @@ function optionsframework_page() {
 	
 	 <div id="go_pro">
             <h1>Go for Pro Version!</h1>
-            <p>This is a free version of application. Get your own copy of professional version and get UNLIMITED SLIDER , FULL WIDTH template, No Credit Link, FORUM support and much more. <a href="http://www.themeszen.com/application" target="blank">Click Here to Learn More Now</a> </p>
+            <p>This is a free version of application. Get your own copy of professional version and get UNLIMITED SLIDER , FULL WIDTH template, FORUM support and much more. <a href="http://www.themeszen.com/application" target="blank">Click Here to Learn More Now</a> </p>
 
         </div>
     

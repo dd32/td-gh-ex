@@ -29,26 +29,18 @@
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
-			<ol class="commentlist">
-				<?php
-					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use application_comment() to format the comments.
-					 * If you want to overload this in a child theme then you can
-					 * define application_comment() and that will be used instead.
-					 * See application_comment() in application/functions.php for more.
-					 */
-					wp_list_comments('type=comment');
-				?>
-			</ol>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 74,
+				) );
+			?>
+		</ol><!-- .comment-list -->
+		
 	<?php endif; ?>
 	
-	    <?php if ( ! empty($comments_by_type['pings']) ) : ?>
-    <h3 id="pings">Trackbacks/Pingbacks</h3>
-    <ol class="commentlist">
-    <?php wp_list_comments('type=pings&callback=list_pings'); ?>
-    </ol>
-
-    <?php endif; ?>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">

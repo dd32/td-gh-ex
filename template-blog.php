@@ -43,20 +43,18 @@ if (have_posts()) : while (have_posts()) : the_post();
 			
 			<div class="meta-data">
 			
-			<span class="meta-info"><?php application_posted_on(); ?> in <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'application' ), __( '1 Comment', 'application' ), __( '% Comments', 'application' ) ); ?></span>
+			<span class="meta-info"><?php application_posted_on(); ?> <?php _e('in', 'application'); ?> <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'application' ), __( '1 Comment', 'application' ), __( '% Comments', 'application' ) ); ?></span>
 			
 			</div><!--meta data end-->
 			<div class="clear"></div>
 
 <div class="post-entry">
+
+ 	<?php if ( has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
 		
-			<?php the_content( __( '', 'application' ) ); ?>
+			<?php the_content( '<span class="read-more">'.__('Read More', 'application').'</span>' ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
-	
-	<!--clear float--><div class="clear"></div>
-				
-				<span class="read-more"><a href="<?php the_permalink() ?>#more-<?php the_ID(); ?>"><?php _e('Read More' , 'application'); ?></a></span>
 				
 				
 				</div><!--post-entry end-->
