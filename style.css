@@ -4,7 +4,7 @@ Theme URI: http://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version:  1.0
+Version:  1.0.1
 Tags: white, red , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -41,16 +41,13 @@ margin-top:70px;
 	margin: 0 0 62px;
 }
 .qua-separator-small{
-	height: 3px;
-	margin-top:10px;
+	height: 3px;	
 	text-align:center;
 	width: 50px;
 }
 .row a{
 	text-decoration:none;
 }
-
-
 .caroufredsel_wrapper{
 	max-height: 100% !important;
 }
@@ -951,7 +948,7 @@ a.qua_blog_btn i {
 }
 .qua_sidebar_widget_title h2 , .widgettitle{
 	font-size:20px;
-	margin: 0 0 25px;
+	margin: 0 0 10px;
 	word-wrap: break-word;
 	font-family: OpenSansRegular;
 }
@@ -1740,3 +1737,11 @@ font-family: 'OpensansRegular';
 .qua_post_cats{display:inline-block;}
 .qua_post_cats i{color:#ccc;}
 .banner{margin-bottom:15px;}
+
+.qua_blog_post_content abbr,
+.qua_blog_post_content acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+.qua-logo a:hover{color: #FA504B;}
+.spacer{margin: 0 0 25px;}

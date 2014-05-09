@@ -8,22 +8,18 @@
 */	
 ?>
 <?php get_header(); ?>
-<!--/Header Logo & Menus-->
 <div class="page-seperator"></div>
-<!-- Page Title Section ---->
 <div class="container">
 	<div class="row">
 		<div class="qua_page_heading">
 			<h1><?php the_title(); ?></h1>			
-			<div class="qua-separator" id=""></div>
+			<div class="qua-separator"></div>
 		</div>
 	</div>
 </div>
-<!-- /Page Title Section ---->
 	<div class="container">	
 	<div class="row qua_blog_wrapper">		
-		<!--Blog Content-->
-		<div class="col-md-8">
+	<div class="col-md-8">
 			<?php the_post(); ?>
 		<div class="qua_blog_detail_section">	
 			<?php $defalt_arg =array('class' => "img-responsive"); ?>
@@ -36,12 +32,11 @@
 			<?php endif; ?>	
 				<div class="clear"></div>
 				<div class="qua_blog_post_content">
-				<p><?php the_content( __( 'Read More' , 'quality' ) ); ?></p>
+				<?php the_content( __( 'Read More' , 'quality' ) ); ?>
 				</div>
 		</div>	
 			<?php comments_template('',true); ?>
-		</div>		
-		<!--/Blog Content-->
+		</div>				
 		<?php get_sidebar();  ?>
 	</div>
 </div>

@@ -18,5 +18,4 @@
 				the_widget('WP_Widget_Categories','',$args);
 			}
 			?>	
-</div> 
-<!-- Right sidebar ---->
+</div>

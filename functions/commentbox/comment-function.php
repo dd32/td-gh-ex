@@ -19,19 +19,16 @@ function quality_comment( $comment, $args, $depth )
 			   <div class="qua_comment_detail">
 				<h4 class="qua_comment_detail_title"><?php the_author();?></h4>
 				<span class="qua_comment_date"><?php comment_date('F j, Y');?>&nbsp;<?php _e('at','quality');?>&nbsp;<?php comment_time('g:i a'); ?></span>
-				<p><?php comment_text() ;?></p>
+				<?php comment_text() ;?>
 				
-				<div class="reply">
-				<a href="#">
+				<div class="reply">				
 				<i class="fa fa-mail-reply"></i>&nbsp;<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</a>
 				</div>
 				
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quality' ); ?></em>
 				<br/>
-				<?php endif; ?>
-				
+				<?php endif; ?>				
 				</div>
 			</div>
 		  </div>

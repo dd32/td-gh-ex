@@ -84,6 +84,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog 
+@version 1.0.1
+1.W3C validate
 @Version 1.0
 released
 
