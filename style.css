@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/interface
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Get free support at http://themehorse.com/support-forum/ and View beautiful demo site at http://themehorse.com/preview/interface
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -1302,7 +1302,7 @@ footer.entry-meta a.readmore {
 	margin-left: 14px;
 	margin-bottom: 7px;
 	font-size: 11px;
-	line-height: 19px;
+	line-height: 20px;
 	color: #fff;
 	background-color: #999;
 	-moz-border-radius-bottomright: 3px;
@@ -1521,9 +1521,9 @@ footer.entry-meta a.readmore {
 .narrow-layout .wrapper {
 	max-width: 1038px;
 	margin: 0 auto;
-	-webkit-box-shadow: 0 0 5px #ddd;
-	-moz-box-shadow: 0 0 5px #ddd;
-	box-shadow: 0 0 5px #ddd;
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .narrow-layout .featured-text {
 	bottom: 60px;

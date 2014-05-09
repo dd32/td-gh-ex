@@ -61,6 +61,10 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.4 =
+ - Theme default setting function issue fixed
+ - Minor CSS edit
+
 = 1.0.3 =
  - Phone Number validate as standard format
  - Social icons title issue fixed

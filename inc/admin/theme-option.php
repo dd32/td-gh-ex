@@ -1047,7 +1047,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
     
    return $validated_input_values;
 }
-function attitude_themeoption_invalidate_caches(){
+function interface_themeoption_invalidate_caches(){
 	
 	delete_transient( 'interface_socialnetworks' );  
 	

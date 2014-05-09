@@ -291,7 +291,7 @@ $interface_theme_default = interface_theme_default_set( $interface_default );
 
 function interface_theme_default_set( $interface_default) {
 	$interface_theme_default = array_merge( $interface_default, (array) get_option( 'interface_theme_options', array() ) );
-	return apply_filters( 'interfacse_theme_default', $interface_theme_default );
+	return apply_filters( 'interface_theme_default', $interface_theme_default );
 }
 
 
