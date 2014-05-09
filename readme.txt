@@ -1,2 +1,5 @@
 White Spektrum WordPress Theme, Copyright 2014 benjlu.com
 White Spektrum is distributed under the terms of the GNU GPL.
+
+Ubuntu Font Family, Licensed under SIL Open Font License (OFL)
+http://www.google.com/fonts/specimen/Ubuntu
