@@ -255,7 +255,7 @@ function spacious_widgets_init() {
 	 			endif;
 		 	}
 			$output .= '<p>'.get_the_excerpt().'...'.'</p>'; 
-			$output .= '<a class="read-more" href="'. get_permalink() .'">Read more</a>';
+			$output .= '<a class="read-more" href="'. get_permalink() .'">'.__( 'Read more', 'spacious' ).'</a>';
 	 		$output .= $after_widget;
 	 		endwhile;
 	 		// Reset Post Data

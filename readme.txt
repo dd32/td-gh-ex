@@ -47,6 +47,12 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
+= Version 1.0.7 = 
+* Added missing field (author, vcard, updated) for Google Structured Data.
+* Missing string added in the pot file.
+* Added Czech language file. Thanks to Pavel Šimonek <pasimonek@delcam.cz> for providing us the translation file.
+* Added French language file. Thanks to Elie Michel <elie.michel@ens.fr> for providing us the translation file.
+
 = Version 1.0.6 = 
 * Added Russian language file. Thanks to Alex <tkia@ya.ru> for providing us the translation file.
 * Added Norsk(Bokmål) language file. Thanks to Ingebjørg Synnøve Thoresen <ist@kreasjoner.com> for providing us the translation file.
