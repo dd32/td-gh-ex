@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cherish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-28 06:47+0100\n"
-"PO-Revision-Date: 2014-04-28 06:47+0100\n"
+"POT-Creation-Date: 2014-05-10 18:24+0100\n"
+"PO-Revision-Date: 2014-05-10 18:25+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: layout.nu <myazalea@hotmail.com>\n"
 "Language: en\n"
@@ -13,13 +13,13 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\cherish\n"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/404.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:245
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:240
 msgid "Page not found"
 msgstr ""
 
@@ -56,10 +56,10 @@ msgstr ""
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:31
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:22
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:13
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:20
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/content.php:10
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/page.php:8
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:17
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:20
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/single.php:20
 msgid "Pages: "
 msgstr ""
@@ -89,6 +89,34 @@ msgstr ""
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:4
 msgid ""
 "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:29
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:33
+msgid "Comment"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:36
+msgid "Name"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:42
+msgid "Email"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:48
+msgid "Website"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:53
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:45
@@ -121,77 +149,89 @@ msgstr ""
 msgid "Cherry 3"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:177
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:172
 msgid "Read more: "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:202
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:197
 msgid "Frontpage Footer widget 1"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:203
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:198
 msgid "Widgets in this area will be shown on the left-hand side."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:209
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:204
 msgid "Frontpage Footer widget 2"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:210
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:205
 msgid "Widgets in this area will be shown in the middle"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:216
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:211
 msgid "Frontpage Footer widget 3"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:217
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:212
 msgid "Widgets in this area will be shown on the right-hand side."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:242
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:237
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:258
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:253
 msgid "No title"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:280
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:280
 msgid "(Edit)"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:296
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:301
-msgid "Reply"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:293
+#, php-format
+msgid "Reply to %s"
 msgstr ""
 
 # There is a space after By
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:314
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:306
 msgid "By "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:319
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:311
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:332
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:335
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/page.php:10
 msgid "Edit"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:18
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:24
 msgid "Skip to content"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:15
+msgid "Show and hide menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:52
+msgid ""
+"This is your call to action area. You can change it's appearance and text in "
+"the customizer."
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:5
@@ -207,57 +247,81 @@ msgid "Call to Action"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:22
+msgid "Image details"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:28
 msgid "Reset the Customizer"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:35
+msgid "Accessibility and Support"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:36
+msgid ""
+"Please note that changing the colors can impact the accessibility of the "
+"theme.<br/><br/>If you have any questions or suggestions for this theme, "
+"please visit <a href=\"http://wordpress.org/support/theme/cherish\">the "
+"theme support page.</a>"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:59
 msgid "Display the text in the footer"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:46
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:70
 msgid "Footer text color"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:57
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:81
 msgid "Choose a logo to be displayed in the footer: "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:68
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:92
 msgid "Add this link to the logo:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:82
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:106
 msgid "Check this box to hide all the meta information."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:100
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:124
 msgid "Add this text to the Call to Action area on the front page:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:112
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:136
 msgid "Change the font size of your text here: (em)"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:123
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:147
 msgid "Change the color of your Call to action text:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:134
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:158
 msgid "Change the background color of your Call to action area:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:146
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:170
 msgid "Add a link to the Call to action text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:157
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:181
 msgid "Check this box to disable the Call to Action area"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:170
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:193
+msgid "Check this box to remove the floral post divider image"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:205
+msgid "Check this box to use a black post divider image"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:218
 msgid ""
 "Are you sure you want to reset the customizer settings? Type YES in the box "
-"then press Save and Publish."
+"and then press Save and Publish."
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/metabox.php:10
@@ -268,7 +332,16 @@ msgstr ""
 msgid "Background color:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:7
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:28
+msgid "No results found"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/searchform.php:2
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/searchform.php:4
+msgid "Search"
 msgstr ""

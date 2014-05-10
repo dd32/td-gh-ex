@@ -32,8 +32,7 @@ function cherish_meta_box_callback( $post ) {
 	$cherish_color_meta_value = get_post_meta( $post->ID, 'meta-color', true );
 	?>
 	<p>
-    <label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>
-    <input name="meta-color" type="text" value="<?php echo $cherish_color_meta_value ?>" class="meta-color" />
+    <label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>&nbsp; <input name="meta-color" type="text" value="<?php echo $cherish_color_meta_value ?>" class="meta-color" />
 	</p>
 <?php
 }

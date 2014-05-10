@@ -3,9 +3,9 @@ Theme Name: Cherish
 Theme URI: http://gratistema.se/cherish/
 Author: Poena
 Author URI: http://layout.nu/about/
-Description: Cherish is a full width responsive theme with a fixed top menu. It has 3 widget areas in the footer of the front page and you can change the background color of your posts. Edit or disable your Call to Action area in the customizer, where you can also change colors, hide your post meta and upload your own logo. Includes Swedish translation.
-Version: 0.6
-Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, accessibility-ready
+Description: Cherish is an accessible, full width responsive theme with a fixed top menu. It has 3 widget areas in the footer of the front page and you can change the background color of your posts. Edit or disable your Call to Action area in the customizer, where you can also change colors, hide your post meta and upload your own logo. Includes Swedish translation.
+Version: 0.7
+Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, responsive-layout, accessibility-ready
 Text Domain: cherish
 
 License: MIT License
@@ -79,6 +79,7 @@ td, th{border:1px solid #f5f5f5; padding:6px;}
 	padding:0;
 	font-family: 'Open Sans Condensed', sans-serif;
 	width:100%;
+	color:#ffffff;
 }
 
 #action{
@@ -90,7 +91,7 @@ td, th{border:1px solid #f5f5f5; padding:6px;}
 	font-weight: bold;
 	font-family: 'Open Sans Condensed', sans-serif;
 	background:#fff;
-	opacity:0.4;
+	border-radius:8px;
 }
 
 /* =Header Menu
@@ -135,47 +136,35 @@ body.admin-bar #menu-wrap{top:28px;}
 	line-height: 2.5em;
 	margin-right: 0.7em;
 	margin-left:0.7em;
-	color:#333333;
+	font-family: 'Open Sans', sans-serif;
 }
 
-/*sub menu level 2*/
-#header-menu ul ul {
-	display: none;
-	font-size:0.8em;
-	float: left;
+#header-menu li ul {
 	position: absolute;
-	top: 3.1em;
-	line-height: 4em;
-	left: 0;
-	z-index: 99999;
-	width:187px;
-	padding-right:1em;
+	display: block;
+	width: 220px;
+	top: auto;
 	clear:both;
+	font-size:1em;
+	padding-right:1em;
+	clip: rect(1px, 1px, 1px, 1px);
+	z-index:999; 
 }
-#header-menu ul ul a {
+ 
+#header-menu li ul a {
 	line-height: 1em;
 	padding: .5em 0 .5em 1em;
-	width:187px;
+	width:220px;
 	margin:0;
 	border-left:3px solid #f5f5f5;
 	border-bottom:1px solid #f5f5f5;
+
+}
+ 
+#header-menu li:hover ul , .keyboard-dropdown{
+	clip: auto !important;
 }
 
-/* sub menu level 3-5*/
-#header-menu ul ul ul,
-#header-menu ul ul ul ul,
-#header-menu ul ul ul ul ul
- {
-	display: none;
-	font-size:1em;
-	float: left;
-	position: absolute;
-	top:0;
-	line-height: 4em;
-	left:187px;
-	z-index: 99999;
-	width:187px;
-}
 #header-menu ul ul a:hover,
 #header-menu ul li ul :hover > a{
 	border-left:3px solid #99b0ca;
@@ -184,6 +173,8 @@ body.admin-bar #menu-wrap{top:28px;}
 #header-menu ul li:hover > ul {
 	display: block;
 }
+
+
 
 /* Keep posts and stickies in place if there is a sidebar: */
 .container{ 
@@ -262,6 +253,14 @@ body.admin-bar #menu-wrap{top:28px;}
 	padding:0;
 }
 
+.divider-black{
+	background:url(images/cherish-black.png) no-repeat;
+	width:59px;
+	height:57px;
+	margin:-22px auto -35px auto;
+	padding:0;
+}
+
 .meta hr{
     width:45%;
 	border:0;
@@ -270,6 +269,11 @@ body.admin-bar #menu-wrap{top:28px;}
 	background-color: #fff;
 	padding:0;
 	opacity:0.5;
+}
+
+.meta  hr.black{
+	background-color: #000;
+	color:#000;
 }
 
 .single-post .meta{font-size:1em;}
@@ -402,7 +406,9 @@ object {
 	 height: auto;
 }
 
-a img {border: none;}
+a img {padding:4px;}
+a:focus img{padding:0; border:4px solid #000000;}
+
 p img {margin: 0.5em;}
 
 img.size-auto,
@@ -464,7 +470,12 @@ h2#comments-title{
 	font-size:2em;
 }
 
- .comment-reply-title, .paged-comments{
+.comment-reply-title{
+	font-family: 'Lily Script One', cursive;
+	font-size:2em;
+}
+ 
+.paged-comments{
 	font-family: 'Lily Script One', cursive;
 	font-size:1.5em;
 }
@@ -531,7 +542,7 @@ h2#comments-title{
 	vertical-align:middle;
 }
 
-.comment-author .fn{margin-top:-35px; margin-left:64px; font-size:1em;}
+.comment-author h3{margin-top:-35px; margin-left:64px; font-size:1em;}
 .comment-edit-link{font-size:.9em;}
 /*
 .bypostauthor .comment-author {}
@@ -562,14 +573,18 @@ h2#comments-title{
 input[type="submit"], 
 input[type="text"],  
 input[type="password"], 
+input[type="email"],
 select{
 	margin:3px;
 	padding:8px;
 	height:35px;
 }
+
 #respond {
+	width:70%;
 	margin-bottom:30px;
 }
+
 #cancel-comment-reply-link{
 	font-size:.9em;
 	font-weight:normal;
@@ -589,7 +604,7 @@ select{
 
 #respond .comment-notes{
 	font-size:12px;
-	margin-bottom: 1em;
+	margin-bottom: 1.9em;
 }
 #respond .required {
 	font-weight: bold;
@@ -600,13 +615,28 @@ select{
 	margin:9px;
 }
 
-.comment-form-comment label,
+.comment-form-comment label{}
+
 #respond textarea {
 	padding:6px;
 	width:100%;
 	float:left;
 	clear:both;
 }
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	width:50%;
+}
+
+.comment-form-author  input,
+.comment-form-email  input,
+.comment-form-url  input{
+	width:100%;
+	clear:both;
+}
+
 #respond .form-allowed-tags {
 	margin-top:14px;
 	margin-bottom:14px;
@@ -633,17 +663,14 @@ select{
 	position:relative;
 }
 
-#footer .site-title{font-size:22px; font-weight:normal;}
-#footer .site-description{font-size:20px;}
+#footer .site-title{font-size:1.5em; font-weight:normal; 	font-family: 'Open Sans Condensed', sans-serif;}
+#footer .site-description{font-size:1em; 	font-family: 'Open Sans Condensed', sans-serif;}
 
 .footer-credit{
 	width:80%; 
 	margin:1em auto; 
 	clear:both; 
 	position:relative; 
-	font-size:20px;
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight:bold;
 }
 .footer-credit, .footer-credit  a{color:#000;}
 
@@ -724,6 +751,9 @@ select{
 	font-size:18px;
 	margin-bottom:8px;
 }
+
+#today{border-bottom:1px solid #000000;}
+
 .tagcloud{
 	padding:10px;
 }
@@ -768,7 +798,24 @@ option {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
-
+.keyboard-shortcut{position:absolute;top:-1000em}
+.keyboard-shortcut:focus{
+	left:6px;
+	top:7px;
+	height:auto;
+	width:auto;
+	display:block;
+	font-size:14px;
+	font-weight:700;
+	padding:15px 23px 14px;
+	background:#ffffff;
+	color:#000000;
+	z-index:100000;
+	line-height:normal;
+	text-decoration:none;
+	border:3px solid #000000;
+	border-radius:8px;
+}
 
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
@@ -820,7 +867,10 @@ option {
 .fa-angle-down:before {
   content: "\f107";
   float:right;
+  position:absolute;
+  right:12px;
 }
+
 .fa-angle-up:before {
   content: "\f106";
 	float:right;
@@ -835,6 +885,7 @@ option {
 #mobile-menu, .nav-menu{
 	display: none;
 }
+
 @media (max-width: 1064px){
 	.meta hr{width:35%;}
 }
@@ -857,7 +908,7 @@ option {
  
 	.nav-menu{
 		background:#fff;
-		list-style: none;
+		list-style:none;
 		margin:auto;
 		padding:0;
 		width: 100%;
@@ -868,12 +919,13 @@ option {
 	
 	.sub-menu{list-style:none;}
 	
-	.nav-menu a{color:#666666;}
+	.nav-menu a{color:#00000; font-weight:bold;}
 	
 	.nav-menu li {
 		width:100%;
 		padding:1em; 
 		margin:0;
+		list-style:none;
 	}
 	.nav-menu li ul.sub-menu {padding:0.4em 0 0 0 ;}
 	
@@ -884,7 +936,10 @@ option {
 		margin:0;
 	}
 
-	#action{width:80%; margin:1em auto 0 auto;}
+	#action{
+		width:80%; 
+		margin:1em auto 0 auto;
+	}
 	
 	.site-title{font-size:4em; margin:1em 0 0 0;}
 

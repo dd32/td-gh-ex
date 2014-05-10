@@ -82,12 +82,7 @@ echo '<style type="text/css">
 			height:'. get_custom_header()->height . 'px;
 			}';
 		
-		if ( get_theme_mod( 'cherish_hide_action' ) == '' ) {
-		
-			if( get_theme_mod( 'cherish_action_text' ) <> '') {
-				echo '#action{opacity:1;}';
-			}
-			
+		if ( get_theme_mod( 'cherish_hide_action' ) == '' ) {	
 			if ( get_theme_mod( 'cherish_action_color' ) <> '') {
 				echo '#action, #action a{color:' . get_theme_mod( 'cherish_action_color' ) . ';}';
 			}
@@ -114,9 +109,6 @@ function cherish_skip(){
 		$(".fa-angle-down").click(function(){
 			window.scrollTo(0,<?php echo get_custom_header()->height-10?>);
 		});
-		$(".fa-angle-up").click(function(){
-			window.scrollTo(0,0);
-		})
 	});
 	//--><!]]>
 	 </script>
@@ -263,9 +255,6 @@ add_filter( 'the_title', 'cherish_post_title' );
 
 /* Comments */
 function cherish_comment($comment, $args, $depth) {
-	//If you want to hide all comments, first turn comments off, then uncomment this line below and one line at the end: scroll down!
-	//if ( comments_open() ) {
-
 		$GLOBALS['comment'] = $comment;
 		?>
 		<li <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
@@ -278,7 +267,7 @@ function cherish_comment($comment, $args, $depth) {
 			/*If avatars are off, show a font-awesome icon.*/
 			echo '<i class="avataroff fa-big"></i>';
 		}
-		printf('<div class="fn">%s</div>', get_comment_author_link() );		
+		printf('<h3>%s</h3>', get_comment_author_link() );		
 		?>
 			<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 				<?php
@@ -296,38 +285,70 @@ function cherish_comment($comment, $args, $depth) {
 		}
 		if ( comments_open() ) {
 		?>
-			<div class="reply" title="<?php _e('Reply', 'cherish');?>">
+			<div class="reply" title="<?php printf( __('Reply to %s', 'cherish'), get_comment_author() ); ?>">
 			<?php comment_reply_link(array_merge( $args, array('add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<i class="reply-link fa-big"></i>' ))) ?>
 			</div>
 		<?php 
 		}
 		echo '</div>';
-	//If you want to hide all comments, first turn comments off, then uncomment this line below:
-	//}
 }
 
 function cherish_meta(){
+	global $id;
+	
 	echo '<div class="meta"><p>';
 	if ( get_theme_mod( 'cherish_hide_meta' ) == '' ) {
 			_e('By ', 'cherish');
-			printf(('<a href="%3$s" title="%4$s" rel="author">%5$s</a> <a href="%1$s" rel="bookmark">%2$s</a> '),
+			printf(('<a href="%3$s" title="%4$s" rel="author">%5$s</a> %2$s.'),
 			esc_url( get_permalink() ),
 			esc_html( get_the_date(get_option('date_format')) ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'cherish' ), get_the_author() ) ),
 			get_the_author()
-		);	
+		);
+		
+		echo '&nbsp; ';
+		
 		if ( comments_open() ) {
 			comments_popup_link();			
 		}
+		
+		echo '&nbsp; ';
+		
 		if ( count( get_the_category() ) ) { 
 			echo ' ' . get_the_category_list(', ');
 		}
+		
+		echo '&nbsp; ';
+		
 		if ( get_the_tag_list() ) {
 			echo ' ' . get_the_tag_list( '', ', ' );
 		}
-		echo ' ';
-		edit_post_link( __( 'Edit', 'cherish' ));
+		
+		echo '&nbsp; ';
+		
+		edit_post_link( __( 'Edit', 'cherish' ) . '<span class="screen-reader-text">' . get_the_title( $id ) . '</span>');
 	}
-	echo '</p><hr class="alignleft"><div class="divider"></div><hr class="alignright"></div>';
+	if ( get_theme_mod( 'cherish_details' ) == '' ) {
+		if ( get_theme_mod( 'cherish_details_black' ) <> '' ) {
+			echo '</p><hr class="alignleft black"><div class="divider-black"></div><hr class="alignright black"></div>';
+		}else{
+			echo '</p><hr class="alignleft"><div class="divider"></div><hr class="alignright"></div>';
+		}
+	}else{
+		echo '</p></div>';
+	}
 }
+
+//Thanks: http://www.evagoras.com/2012/11/01/how-to-handle-and-customize-an-empty-search-query-in-wordpress/
+function cherish_search($query) {
+    // If 's' request variable is set but empty
+    if (isset($_GET['s']) && empty($_GET['s']) && $query->is_main_query()){
+        $query->is_search = true;
+        $query->is_home = false;
+    }
+    return $query;
+}
+add_filter('pre_get_posts','cherish_search');
+
+

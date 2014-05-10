@@ -1,7 +1,7 @@
 </div>
-<div id="footer">
+<div id="footer" role="contentinfo">
 
-<?php if ( is_home() || is_front_page() || is_404() ) {?>
+<?php if ( is_home() || is_front_page() || is_404() || is_search() ) {?>
 	<div class="widget_wrap">
 	<?php 
 	if (is_active_sidebar(1)){
@@ -28,9 +28,9 @@
 	<?php
 	if( get_theme_mod( 'cherish_logo' ) ) {
 		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
-			echo '<a href="' . get_theme_mod( 'cherish_logo_link' ) . '">';
+			echo '<a href="' . esc_url(get_theme_mod( 'cherish_logo_link' )) . '">';
 		}
-		echo '<img src="' . get_theme_mod( 'cherish_logo' ) . '" alt="Logo" class="footer-logo">';
+		echo '<img src="' . get_theme_mod( 'cherish_logo' ) . '" class="footer-logo">';
 		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
 			echo '</a>';
 		}
@@ -47,7 +47,7 @@
 	<a href="http://gratistema.se/cherish/"><?php printf( __( 'Theme: %1$s', 'cherish' ), 'Cherish'); ?></a>
 	</div> <!--End Footer Credit -->
 	
-<a href="#wrapper" class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></a>
+<span class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></span>
 </div> <!--End Footer -->
 <?php wp_footer(); ?>
 </body>

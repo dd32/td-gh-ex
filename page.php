@@ -5,10 +5,9 @@
 				<h1 class="post-title"><?php the_title(); ?></h1>
 				<?php
 				the_content();
-				wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'cherish' ), 'after' => '</div>' ) );
+					wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'cherish' ), 'after' => '</div>' ) );
 				?>					
-				<div class="page-link"><?php edit_post_link( __( 'Edit', 'cherish' ) ); ?></div>
-			
+				<div class="page-link"><?php edit_post_link( __( 'Edit', 'cherish' ) . '<span class="screen-reader-text">' . get_the_title( $id ) . '</span>'); ?></div>
 	<?php
 	endwhile;
 	comments_template( '', true );

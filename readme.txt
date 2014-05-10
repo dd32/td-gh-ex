@@ -1,13 +1,13 @@
 === Cherish ===
 Contributors: Poena
-Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images
+Tags:light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, responsive-layout, accessibility-ready
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
 Copyright 2014 Carolina Nymark
 
 = Description ==
-Cherish is a full width responsive theme with a fixed top menu. 
+ herish is an accessible, full width responsive theme with a fixed top menu. 
 It has 3 widget areas in the footer of the front page and you can change the background color of your posts. 
 Edit or disable your Call to Action area in the customizer, where you can also change colors, 
 hide your post meta and upload your own logo. Includes Swedish translation.
@@ -18,12 +18,16 @@ hide your post meta and upload your own logo. Includes Swedish translation.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Known Limitations ==
--A one or two line menu is recommended, instead of using long menus, use submenus.
+-A one line menu is recommended, instead of using long menus, use submenus.
 -It's recommended not to use a font-size larger than 4em for the Call to Action area.
--Note that the footer widgets are only shown on the front page.
+-Note that the footer widgets are only shown on the front page, 404, and search page.
 
 
 == Changelog ==
+=0.7=
+Improved accessibility.
+Added a customizer option to remove or use a black post divider image.
+Minor changes to the language files.
 
 
 == Folders included in this theme ==
@@ -52,6 +56,8 @@ Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://dave
 Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 
-
+Keyboard Accessible Dropdown Menus
+Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
+License: MIT
 
 If you have any questions or suggestions for this theme please contact me on the theme support page, http://wordpress.org/support/theme/cherish.

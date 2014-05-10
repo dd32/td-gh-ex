@@ -18,13 +18,37 @@ function cherish_customizer( $wp_customize ) {
         )
     );
 	
+	$wp_customize->add_section('cherish_section_five',      array(
+            'title' => __( 'Image details', 'cherish' ),
+            'priority' => 105
+        )
+    );
+	
 	$wp_customize->add_section('cherish_section_four',      array(
             'title' => __( 'Reset the Customizer', 'cherish' ),
             'priority' => 220
         )
     );
-	//-------------------------------------------------------
 
+	/** Accessibility info*/
+	$wp_customize->add_section( 'cherish_info', 			array(
+			'title'      => __( 'Accessibility and Support', 'cherish'),
+			'description' => sprintf( __( 'Please note that changing the colors can impact the accessibility of the theme.<br/><br/>If you have any questions or suggestions for this theme, please visit <a href="http://wordpress.org/support/theme/cherish">the theme support page.</a>', 'cherish' ) ),
+			'priority'   => 30
+	)
+	);
+	
+	//-------------------------------------------------------
+	
+	$wp_customize->add_setting( 'cherish_info' );
+	
+	$wp_customize->add_control('cherish_info',			    array(
+			'section' => 'cherish_info',
+			'type'  => 'read-only',
+		)
+	);
+	
+	
 	/** Display title and description in the footer */
 	$wp_customize->add_setting( 'cherish_footer_title',		array(
 			'sanitize_callback' => 'cherish_sanitize_checkbox',
@@ -159,6 +183,30 @@ function cherish_customizer( $wp_customize ) {
 		)
 	);
 
+	/** Image details */
+	$wp_customize->add_setting( 'cherish_details',		array(
+			'sanitize_callback' => 'cherish_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('cherish_details',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to remove the floral post divider image', 'cherish' ),
+			'section' => 'cherish_section_five',
+		)
+	);
+	
+	$wp_customize->add_setting( 'cherish_details_black',		array(
+			'sanitize_callback' => 'cherish_sanitize_checkbox',
+		)
+	);
+	
+	$wp_customize->add_control('cherish_details_black',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to use a black post divider image', 'cherish' ),
+			'section' => 'cherish_section_five',
+		)
+	);
+	
 	
 	/** Reset */
 	$wp_customize->add_setting( 'cherish_reset',		array(
@@ -167,7 +215,7 @@ function cherish_customizer( $wp_customize ) {
 	);
 	$wp_customize->add_control('cherish_reset',		array(
 			'type' => 'text',
-			'label' =>  __( 'Are you sure you want to reset the customizer settings? Type YES in the box then press Save and Publish.', 'cherish' ),
+			'label' =>  __( 'Are you sure you want to reset the customizer settings? Type YES in the box and then press Save and Publish.', 'cherish' ),
 			'section' => 'cherish_section_four',
 		)
 	);
