@@ -7,7 +7,7 @@
 <div id="name">Tautira Premium Theme</div>
 <div id="info">Tautira is a Premium Business Theme - it's very easy to create a professional website with it. We integrated Jetpack by WordPress.com for the first time in one of our themes, so it gets even more powerful. Tautira looks great on every device because of its Responsive Design.
 
-<p><a href="http://fimply.de/tautira" target="_blank">Go to the Fimply Store</a></p></div>
+<p><a href="http://fimply.de/themes/tautira" target="_blank">Go to the Fimply Store</a></p></div>
 
 </div>
 
@@ -15,9 +15,9 @@
 <div id="theme">
 <img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/ewp.png'; ?>" width="600">
 <div id="name">elegantWhite Pro</div>
-<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 9.99$!
+<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 12.99$!
 
-<p><a href="http://fimply.de/elegantwhitepro" target="_blank">Go to the Fimply Store</a></p></div>
+<p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Go to the Fimply Store</a></p></div>
 
 </div>
 
