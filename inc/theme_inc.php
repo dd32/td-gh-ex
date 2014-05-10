@@ -76,7 +76,7 @@ function olo_theme_options_do_page() {
 										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','olo'), '<a href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">HJYL</a>'); ?>
 											<br /><br />
 											<table>
-											<td>
+											<tr>
 											<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 												<input type="hidden" name="cmd" value="_xclick">
 												<input type="hidden" name="business" value="i@hjyl.org">
@@ -85,10 +85,10 @@ function olo_theme_options_do_page() {
 												<input type="hidden" name="currency_code" value="USD">
 												<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
 											</form>
-											</td>
-											<td>
-											<a href="<?php echo esc_url( __( 'http://me.alipay.com/hjyl', 'olo' ) ); ?>"><?php _e('Alipay', 'olo'); ?></a>
-											</td>
+											</tr>
+											<tr>
+											<img src="<?php echo esc_url( __( 'http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000', 'olo' ) ); ?>" alt="<?php _e('Alipay', 'olo'); ?>" />
+											</tr>
 											</table>
 								</div>
 						</div>

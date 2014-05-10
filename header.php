@@ -14,7 +14,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title( ' - ', true, 'right' ); ?></title>
+<title><?php wp_title( ' | ', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if (is_archive() && ($paged > 1)&& ($paged < $wp_query->max_num_pages)) { ?>

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-24 22:37+0800\n"
-"PO-Revision-Date: 2014-02-24 22:37+0800\n"
+"POT-Creation-Date: 2014-05-10 21:01+0800\n"
+"PO-Revision-Date: 2014-05-10 21:03+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -47,7 +47,7 @@ msgstr "编辑"
 
 #: ../archive.php:56 ../index.php:59
 msgid "&laquo; Previous page"
-msgstr "&laquo; 前一页"
+msgstr "&laquo; 上一页"
 
 #: ../archive.php:56 ../index.php:59
 msgid "Next page &raquo;"
@@ -159,8 +159,8 @@ msgstr "手机导航"
 
 #: ../functions.php:76
 #, php-format
-msgid "Page %s"
-msgstr "第 %s 页"
+msgid "Page %1$s of %2$s"
+msgstr "Page %1$s of %2$s"
 
 #: ../functions.php:95
 msgid "Before Refresh, you can"
@@ -340,8 +340,8 @@ msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
 #: ../inc/theme_inc.php:90
-msgid "http://me.alipay.com/hjyl"
-msgstr "http://me.alipay.com/hjyl"
+msgid "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
+msgstr "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 
 #: ../inc/theme_inc.php:90
 msgid "Alipay"
@@ -362,6 +362,12 @@ msgstr "重置所有设置"
 #: ../inc/theme_inc.php:185
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#~ msgid "Page %s"
+#~ msgstr "第 %s 页"
+
+#~ msgid "http://me.alipay.com/hjyl"
+#~ msgstr "http://me.alipay.com/hjyl"
 
 #~ msgid "http://wordpress.org/"
 #~ msgstr "http://wordpress.org/"
@@ -496,9 +502,6 @@ msgstr "点击‘确定’重置。所有设置将被丢失！"
 
 #~ msgid "Enable Stat Code "
 #~ msgstr "启用统计代码"
-
-#~ msgid "Page %1$s of %2$s"
-#~ msgstr "Page %1$s of %2$s"
 
 #~ msgid "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
 #~ msgstr "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"

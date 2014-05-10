@@ -2,15 +2,15 @@
 		<ul>
 			<?php if (is_home()) { ?>
 				<?php if ( !dynamic_sidebar('home') ) : ?>
-					<li id="archives" class="widget">
-						<h3 class="widget-title"><?php _e( 'Archives', 'olo' ); ?></h3>
+					<li id="archives" class="widget widget_archive">
+						<h2><span><?php _e( 'Archives', 'olo' ); ?></span></h2>
 						<ul>
-							<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+							<?php wp_get_archives( array( 'type' => 'monthly', 'show_post_count' => true ) ); ?>
 						</ul>
 					</li>
 
 					<li id="meta" class="widget">
-						<h3 class="widget-title"><?php _e( 'Meta', 'olo' ); ?></h3>
+						<h2><span><?php _e( 'Meta', 'olo' ); ?></span></h2>
 						<ul>
 							<?php wp_register(); ?>
 							<li><?php wp_loginout(); ?></li>

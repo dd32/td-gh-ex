@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.2
+Version: 2.3
 Tags: blue, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("css/font-awesome.min.css");
@@ -457,7 +457,7 @@ body > header{
 .oloPosts:before,
 #olo article:before,
 .oloEntry:before ,
-#comments > .depth-1 > .comment:before ,
+.commentlist > .depth-1 > .comment:before ,
 #comments-title span:before,
 #pings-title span:before,
 #pinglist li:before ,
@@ -477,7 +477,7 @@ body > header{
 	padding: 0 0 1em;
 }
 #olo article:before,
-#comments > .depth-1 > .comment:before,
+.commentlist > .depth-1 > .comment:before,
 #comments-title span:before ,
 #reply-title:before,
 #pings-title span:before ,
@@ -492,7 +492,7 @@ body > header{
 	width: 9px;
 }
 #olo article:hover:before,
-#comments > .depth-1:hover > .comment:before,
+.commentlist > .depth-1:hover > .comment:before,
 #comments-title:hover:before,
 #comments-title:hover span:before,
 #pings-title:hover:before,
@@ -582,7 +582,7 @@ body > header{
 	transform:			rotate(45deg);
 }
 .oloEntry,
-#comments li.depth-1{
+.commentlist li.depth-1{
 	float:right;
 	width:490px;
 	background:#FFF;
@@ -705,14 +705,14 @@ body > header{
 }
 
 /*Comments*/
-#comments li.depth-1{
+.commentlist li.depth-1{
 	margin:10px 0 10px 80px;
 	position:relative;
 	padding:10px;
 	border:1px solid #ccc;
 	border-radius:5px;
 }
-#comments li.depth-1:before{
+.commentlist li.depth-1:before{
 	content:" ";
 	border-left:1px solid #ccc;
 	border-bottom:1px solid #ccc;
@@ -727,14 +727,14 @@ body > header{
 	-ms-transform:		rotate(45deg);
 	transform:			rotate(45deg);
 }
-#comments > .depth-1 > .comment:before{
+.commentlist > .depth-1 > .comment:before{
 	margin:20px 0 0 -135px;
 }
 /*IE9 hack
-:root #comments li.depth-1:before{
+:root .commentlist li.depth-1:before{
 	filter:none\9;
 }*/
-#comments li.depth-1 > .comment div.comment-author .avatar{
+.commentlist li.depth-1 > .comment div.comment-author .avatar{
 	position:absolute;
 	top:0;
 	left:-115px;
@@ -749,7 +749,7 @@ body > header{
 	font-size:3.5em;
 	color:#EBEBEB;
 }
-#comments ul.children li.comment{
+.commentlist ul.children li.comment{
 	clear:both;
 	margin-top:10px;
 	width: 90%;
@@ -764,7 +764,7 @@ ul.children .avatar{
 ul.children .comment-body{
 	margin-left:40px;
 }
-#comments .comment-body{
+.commentlist .comment-body{
 	position:relative;
 	z-index:1;
 }
@@ -806,7 +806,7 @@ ul.children .comment-body{
 	margin:3px 0 0 -16px;
 }
 .comment-form-comment #comment{
-	width:70%;
+	width:97.5%;
 	padding:10px;
 }
 .comment-form-comment #comment,
