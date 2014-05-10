@@ -24,6 +24,10 @@ hide your post meta and upload your own logo. Includes Swedish translation.
 
 
 == Changelog ==
+
+=0.8=
+Updated screenshot
+
 =0.7=
 Improved accessibility.
 Added a customizer option to remove or use a black post divider image.
