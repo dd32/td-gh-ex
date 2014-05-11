@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bunny\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-12 16:08+0100\n"
-"PO-Revision-Date: 2014-04-12 16:08+0100\n"
+"POT-Creation-Date: 2014-05-11 12:46+0100\n"
+"PO-Revision-Date: 2014-05-11 12:52+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: layout.nu <myazalea@hotmail.com>\n"
 "Language: en\n"
@@ -13,164 +13,178 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\bunny\n"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/404.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:125
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/404.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:118
 msgid "Page not found"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:4
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:5
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:6
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:7
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:7
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:8
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:9
 msgid "Archive:"
 msgstr ""
 
 # there is a space after  :
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:26
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:33
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:13
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/content.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/page.php:8
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:18
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/single.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/comments.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/comments.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/content.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/page.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:18
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/single.php:16
 msgid "Pages: "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:32
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:39
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/index.php:9
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:24
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:32
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/index.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:24
 msgid "Next page &rarr;"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:33
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:40
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/index.php:14
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/index.php:14
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:25
 msgid "&larr; Previous page"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:4
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:219
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:212
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:226
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:243
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:251
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:219
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:236
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:244
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/comments.php:4
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:10
 msgid "Header Navigation"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:64
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:57
 msgid "Read more: "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:89
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:82
 msgid "Untitled"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:99
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:92
 msgid "Footer Sidebar"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:100
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:93
 msgid "Widgets in this area will be shown in the footer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:122
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:115
 #, php-format
 msgid "Page %s"
 msgstr ""
 
 # /* translators: 1: date, 2: time */
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:163
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:156
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:163
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:156
 msgid "(Edit)"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:169
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:162
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:176
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:169
 msgid "Reply"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:189
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:182
 msgid "Home"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:262
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:255
 msgid "Category"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:269
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:262
 msgid "Tags"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/header.php:13
+msgid "Skip to content"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:5
+msgid "Logo Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:12
 msgid "Easter eggs"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:17
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:25
 msgid ""
 "Adjust the value of the arc to match the length of your site title. Set a "
 "small number for a high arc, and high number for a low arc."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:29
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:37
 msgid "Adjust the value of the arc to match the length of your tagline"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:48
 msgid "Check this box to turn Bunny into the Easter bunny!"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:56
+msgid ""
+"Choose a logo to replace the cloud behind the site title. Recommended height "
+"is 140px. Remove the image to add the cloud back."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:3
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""

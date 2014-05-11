@@ -10,9 +10,27 @@
 </head>
 <body <?php body_class(); ?>>
 
-<div id="header">
-	<div id="header-menu" class="menu-background" role="navigation"><?php wp_nav_menu( array( 'theme_location' => 'header' ) ); ?></div>
-	<div class="logo"><img src="<?php echo get_template_directory_uri()?>/images/cloud-large.png" height="146px" width="316px" alt="<?php wp_title( '|', true, 'right' ); ?>" /></div>
+<a href="#wrapper" class="keyboard-shortcut"><?php _e('Skip to content', 'bunny' );?></a>
+
+<div id="header" role="banner">
+		<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu' ) ); ?>
+
+		<!-- mobile menu -->
+		<a href="#" id="mobile-menu" title="<?php esc_attr_e( 'Show and hide menu', 'bunny' ); ?>"></a>
+		<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu' ) ); ?>
+		<!-- End mobile menu -->
+
+	<div class="logo">
+	<?php
+	if( get_theme_mod( 'bunny_logo' ) ) {
+		echo '<img src="' . get_theme_mod( 'bunny_logo' ) . '">';
+	}else{
+	?>
+		<img src="<?php echo get_template_directory_uri()?>/images/cloud-large.png" height="146px" width="316px"/>
+	<?php
+	}
+	?>
+	</div>
 	<h1 class="site-title" id="headline"><?php bloginfo( 'name' ); ?></h1>
 	<h2 class="site-description" id="tagline"><?php bloginfo( 'description' ); ?></h2>
 </div>
@@ -23,4 +41,4 @@
 
 <div id="kaninf" class="kaninf"></div>
 <div id="grass" class="grass"></div>
-<div class="wrapper">
+<div id="wrapper" role="main">

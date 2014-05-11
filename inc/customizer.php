@@ -1,11 +1,19 @@
 <?php
 function bunny_customizer( $wp_customize ) {
 
+	$wp_customize->add_section('bunny_section_one',      array(
+            'title' => __( 'Logo Image', 'bunny' ),
+            'priority' => 90
+        )
+    );
+
+
 	$wp_customize->add_section('bunny_section_three',        array(
         'title' => __( 'Easter eggs', 'bunny' ),
        'priority' => 210
         )
     );
+	
 
 	$wp_customize->add_setting( 'bunny_title_arc_size',		array(
 			'sanitize_callback' => 'bunny_sanitize_arc_value',
@@ -41,6 +49,15 @@ function bunny_customizer( $wp_customize ) {
 			'section' => 'bunny_section_three',
 		)
 	);
+	
+	/** Logo settings */
+	$wp_customize->add_setting( 'bunny_logo' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bunny_logo', array(
+		'label'    => __( 'Choose a logo to replace the cloud behind the site title. Recommended height is 140px. Remove the image to add the cloud back.', 'bunny' ),
+		'section' => 'bunny_section_one',
+		'settings' => 'bunny_logo',
+	)));
+	
 }
 add_action( 'customize_register', 'bunny_customizer' );
 

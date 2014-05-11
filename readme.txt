@@ -13,7 +13,6 @@ The theme is responsive and translation ready with one custom menu, a widget are
 Swedish language files are included.
 
 The code is sometimes commented in both English and Swedish. -In those cases, the Swedish comment is to the right.
-Sub menu's will not show on smaller screens such as on some smart phones.
 Featured images are not shown on pages or single posts.
 
 == Installation ==
@@ -33,6 +32,12 @@ Set a small number for a high arc, and high number for a low arc.
 
 
 == Changelog ==
+= 1.3 =
+Fixed a bug with sub-menus as reported by knaveenchand.
+Added a responsive menu.
+Added keyboard navigation for menus.
+Added skip link.
+Added a logo upload option in the customizer that replaces the cloud behind the site title.
 
 = 1.2 =
 Removed set_post_thumbnail_size from functions.php
@@ -73,18 +78,21 @@ Webfont.js Copyright 2014 Small Batch, Inc., and
 Web Font Loader Copyright (c) 2010 Adobe Systems Incorporated, Google Incorporated.
 Licensed under the Apache License, Version 2.0
 
+Keyboard Accessible Dropdown Menus
+Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
+License: MIT
+
 (Bunny.js is the themes supporting file for Spritely and Arctext.)
 
 
 Images
-All images are in the public domain. http://creativecommons.org/publicdomain/zero/1.0/
-All images except the sun and the easter eggs where made by and released into the public domain by the theme author.
+All images except the menu icon are public domain.  
+All images except the menu icon, the sun and the easter eggs were made by and released into the public domain by the theme author.
+
+The mobile menu icon was created from the Font Awesome font, licensed under SIL OFL 1.1.
 
 Sun: http://openclipart.org/detail/170678/weather-icon---thunder-by-gnokii-170678
 Eggs: 
 http://openclipart.org/detail/191742/blue-lace-easter-egg-by-scout-191742
 http://openclipart.org/detail/77473/easter-egg-green-by-shokunin
 http://openclipart.org/detail/192498/happy-easter-sign-by-chad78-192498
-
-
-

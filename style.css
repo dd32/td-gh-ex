@@ -4,8 +4,8 @@ Theme URI: http://wordpress.org/themes/bunny
 Author: Carolina Nymark
 Author URI: http://layout.nu/about/
 Description: Fluffy friendly and cute! 'Bunny' is an animated one column theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! The theme is responsive and translation ready with one custom menu, a widget area in the footer, sticky posts and threaded comments. Swedish language files are included.
-Version: 1.2
-Tags: white, blue, threaded-comments, custom-menu, sticky-post, translation-ready, one-column, editor-style, featured-images, theme-options
+Version: 1.3
+Tags: white, blue, threaded-comments, custom-menu, sticky-post, translation-ready, one-column, editor-style, featured-images, theme-options, responsive-layout
 Text Domain: bunny
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -53,13 +53,13 @@ th{background:#f5f5f5;}
     width: 100%;
 	height:146px;
 	padding:0;
+	margin:0 auto;
 	margin-bottom:-150px;
 	text-align:center; 
 }
 
 .site-title{
-	position: relative;
-	top:0;
+	margin-top:66px;
 	text-align:center;
 	font-size: 3.9em;
 	font-weight: bold;
@@ -69,8 +69,6 @@ th{background:#f5f5f5;}
  }
 
 .site-description {
-	position: relative;
-	top:-19px;
 	text-align:center;
 	font-size: 1.4em;
 	font-weight: bold;
@@ -79,7 +77,7 @@ th{background:#f5f5f5;}
 	z-index: 105;
 }
 
-.wrapper {
+#wrapper {
 	position:relative;
 	float:left;
 	margin-top:40px;
@@ -93,6 +91,7 @@ th{background:#f5f5f5;}
 	z-index:100;
 }
 .clear{display:block; height:20px; width:70%;line-height:1em; border:0; clear:both;}
+
 /*Add cuteness*/
 .stage {
 	position: fixed;
@@ -154,80 +153,73 @@ th{background:#f5f5f5;}
 
 /* =Header Menu
 -------------------------------------------------------------- */
-#header-menu {
+
+#header-menu,  .menu{
 	display: block;
 	float: left;
 	width: 100%;
 	font-size:1em;
 	font-family: 'Oswald', arial,sans-serif;
-	background: url(images/40.png);
+	background: #2c6580;
 }
 
-#header-menu a {
-	color:#fff;
-}
-
-#header-menu ul {
+#header-menu ul , .menu ul{
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	background: #2c6580;
 }
-#header-menu li {
+
+#header-menu li, .menu li {
 	float: left;
 	position: relative;
 }
-#header-menu a {
+#header-menu a, .menu a{
 	display: block;
-	line-height: 2em;
+	line-height: 2.5em;
 	margin-right: 0.7em;
 	margin-left:0.7em;
 	padding-bottom:6px;
+	color:#fff;
+	border-left:3px solid #2c6580;
 }
 
-#header-menu ul li ul li{
-	border-bottom:1px solid #fff;
+#header-menu a:hover, .menu a:hover{
+	text-decoration:underline;
 }
 
-/*sub menu level 2*/
-#header-menu ul ul {
-	display: none;
-	font-size:0.9em;
-	float: left;
+#header-menu ul ul a:hover .menu ul ul a:hover{
+	border-left:3px solid #ffffff;
+}
+
+#header-menu li ul, .menu li ul {
 	position: absolute;
-	top: 2.4em;
-	line-height: 4em;
-	left: 0;
-	z-index: 99999;
-	width:170px;
-	padding-right:1em;
+	display: block;
+	width: 220px;
+	top: auto;
 	clear:both;
-	background: #2c6580;
-
+	font-size:1em;
+	padding-right:1em;
+	clip: rect(1px, 1px, 1px, 1px);
+	z-index:999; 
 }
-#header-menu ul ul a {
+
+#header-menu li ul a, .menu li ul a{
 	line-height: 1em;
 	padding: .5em 0 .5em 1em;
-	width:167px;
+	width:220px;
 	margin:0;
+	border-bottom:1px solid #f5f5f5;
+}
+	
+#header-menu li:hover ul, #header-menu li:focus ul,
+.menu li:hover ul, .menu li:focus ul,
+.keyboard-dropdown{
+	clip: auto !important;
 }
 
-/* sub menu level 3-5*/
-#header-menu ul ul ul,
-#header-menu ul ul ul ul,
-#header-menu ul ul ul ul ul
- {
-	display: none;
-	font-size:1em;
-	float: left;
-	position: absolute;
-	top:0;
-	line-height: 4em;
-	left:180px;
-	z-index: 99999;
-	width:170px;
-}
-
-#header-menu ul li:hover > ul {
+#header-menu ul li:hover > ul,
+.menu ul li:hover > ul {
 	display: block;
 }
 
@@ -308,7 +300,7 @@ th{background:#f5f5f5;}
 	padding:7px;
 	padding-left:0;
 }
-.author .wrapper .author-info {
+.author #wrapper .author-info {
 	padding-left:2em;
 }
 
@@ -490,7 +482,6 @@ object {
 	 height: auto;
 }
 
-a img {border: none;}
 p img {margin: 0.5em;}
 
 img.size-auto,
@@ -894,21 +885,98 @@ option {
 	position: absolute !important;
 }
 
+
+.keyboard-shortcut{position:absolute;top:-1000em}
+.keyboard-shortcut:focus{
+	left:6px;
+	top:67px;
+	height:auto;
+	width:auto;
+	display:block;
+	font-size:14px;
+	font-weight:700;
+	padding:15px 23px 14px;
+	background:#ffffff;
+	color:#000000;
+	z-index:100000;
+	line-height:normal;
+	text-decoration:none;
+	border:3px solid #000000;
+	border-radius:8px;
+}
+
+
 /* Responsive 
 -------------------------------------------------------*/
 
-@media screen and (max-width:1024px){
-	.wrapper, .footer{width:45%;}
+#mobile-menu, .nav-menu{
+	display: none;
 }
 
-@media screen and (max-width:780px){
-	.wrapper, .footer{margin-left:20px; width:90%;}
+@media screen and (max-width:1024px){
+	#wrapper, .footer{width:45%;}
+}
+
+@media screen and (max-width:782px){
+	#header-menu, .menu{
+		display: none;
+	}
+
+	.site-title{
+		margin-top:0px;
+	}
+	#mobile-menu{
+		 background:url("images/burger.png") no-repeat scroll 0 0 transparent; 
+		 cursor: pointer; 
+		 display: inline-block; 
+		 float: right; 
+		 position:relative;
+		 height: 26px;
+		 margin: 12px 12px -52px -52px;
+		 width: 40px;
+		 clear:both;
+		 z-index:999999999;
+	}
+ 
+	.nav-menu{
+		color:#ffffff;
+		background:#2c6580;
+		list-style:none;
+		margin:auto;
+		padding:0;
+		width: 100%;
+		z-index:99999;
+		display: none;
+		clear:both;
+	}
+	
+	.sub-menu{list-style:none;}
+	
+	.nav-menu a{color:#ffffff; font-weight:bold;}
+	.nav-menu a:hover{text-decoration:underline;}
+	
+	.nav-menu li {
+		width:100%;
+		padding:1em; 
+		margin:0;
+		list-style:none;
+	}
+	.nav-menu li ul.sub-menu {padding:0.4em 0 0 0 ;}
+	
+	.nav-menu li ul, 
+	.nav-menu li ul li,
+	.nav-menu li ul li ul{
+		padding:1em 0 0 0; 
+		margin:0;
+	}
+	
+
+	#wrapper, .footer{margin-left:20px; width:90%;}
 	.footer {margin-bottom:20px;}
 	.kaninf{visibility:hidden;}
 	.kaninsmall{margin:0 auto; position:relative; left:30%; z-index:99999; visibility:visible; 
 	background: transparent url(images/kanin2.png)no-repeat; width:175px; height:177px;}
 	.site-title {font-size:2.6em;}
-	#header-menu{font-size:1em;}
 	
 	.author-info .author-avatar img, .author-avatar img:hover, .sticky, .pinned, .author-links, .edit-links, .comment-icon, .reply-link,
 	.cat-links2, .tag-links2, .cat-links2:hover, .tag-links2:hover, .pinned:hover, .author-links:hover, .edit-links:hover, .comment-icon:hover, .reply-link:hover, 
@@ -918,13 +986,12 @@ option {
 
 @media screen and (max-width:600px){
 	html{background:url(images/blue.png) repeat;}
-	.wrapper, .footer{margin-left:1%; width:90%;}
+	#wrapper, .footer{margin-left:1%; width:90%;}
 	.footer {margin-bottom:20px;}
 	.kaninf{visibility:hidden;}
 	.kaninsmall{margin:0 auto; position:relative; left:30%; z-index:99999; visibility:visible; 
 	background:transparent url(images/kanin2.png)no-repeat; width:175px; height:177px;}
 	.site-title{clear:both;}
-	#header-menu li ul {visibility:hidden;}
 	.older-posts,.newer-posts{font-size:1em;}
 	body{border:0px solid;}
 	
@@ -967,7 +1034,8 @@ option {
 .tag-links:before {
 	content: "\f02b";
 }
-.author-links:before, .avataroff:before{ 
+.author-links:before, 
+.avataroff:before{ 
 	content: "\f007";
 }
 
