@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.3
+Version: 2.4
 Tags: blue, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("css/font-awesome.min.css");
@@ -702,6 +702,26 @@ body > header{
 .widget_count li{
 	float:left;
 	width:48%;
+}
+.twitter_rss{
+	text-align:center;
+	margin-top:20px;
+	border-bottom:2px solid #DDDDDD;
+	height:15px;
+	
+}
+.twitter_rss span{
+	float:left;
+	font-size:30px;
+	width:40px;
+	height:40px;
+	color:#DDDDDD;
+	margin-left:18px;
+	border-radius:20px;
+	background:#FFF;
+}
+.twitter_rss span:hover{
+	color:#227EC0;
 }
 
 /*Comments*/

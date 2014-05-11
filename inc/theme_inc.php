@@ -3,25 +3,105 @@
 function olo_theme_options_items() {
 	$items = array (
 		array(
-			'id' => 'is_olo_icp',
-			'name' => __('Show ICP No.', 'olo'),
-			'desc' => __('Enable ICP', 'olo'),
-			'std'    => '',
-			'hr'     => '',
-			'nTable' => '',
-			'nTitle' => '',
-			'type'   => 'checkbox'
-		),
-		array(
-			'id'     => 'olo_icp',
-			'name'   => __('ICP No.', 'olo'),
-			'desc'   => __('Put your ICP No. here.', 'olo'),
+			'id' => 'twitter_url',
+			'name' => __('Twitter URL.', 'olo'),
+			'desc' => __('Enter your twitter url. For example: http://twitter.com/ylgod.', 'olo'),
 			'std'    => '',
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
 			'type'   => ''
-		)
+		),
+		array(
+			'id'     => 'twitter_name',
+			'name'   => __('Twitter Name', 'olo'),
+			'desc'   => __('Enter your twitter name or another description.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id' => 'weibo_url',
+			'name' => __('Sina Weibo URL.', 'olo'),
+			'desc' => __('Enter your Sina Weibo url. For example: http://weibo.com/ylgod.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id'     => 'weibo_name',
+			'name'   => __('Sina WeiBo Name', 'olo'),
+			'desc'   => __('Enter your Sina Weibo name or another description.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id' => 'email_url',
+			'name' => __('Email URL.', 'olo'),
+			'desc' => __('Enter your Email url. For example: mailto:i@hjyl.org.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id'     => 'email_name',
+			'name'   => __('Email Name', 'olo'),
+			'desc'   => __('Enter your Email name or another description.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id' => 'rss_url',
+			'name' => __('RSS URL.', 'olo'),
+			'desc' => __('Enter your RSS url. For example: http://hjyl.org/feed.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id'     => 'rss_name',
+			'name'   => __('RSS Name', 'olo'),
+			'desc'   => __('Enter your RSS name or another description.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id' => 'qrcode_url',
+			'name' => __('Qrcode Image URL.', 'olo'),
+			'desc' => __('Enter your Qrcode Image url. For example: http://img.hjyl.org/uploads/2009/09/qrcode_for_gh_8b1a277c7cb7_430-300x300.jpg.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
+		array(
+			'id'     => 'qrcode_name',
+			'name'   => __('Qrcode Name', 'olo'),
+			'desc'   => __('Enter your Qrcode name or another description.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		),
 	);
 	return $items;
 }
@@ -193,12 +273,9 @@ function olo_theme_options_do_page() {
 
 //	Sanitize and validate input. Accepts an array, return a sanitized array.
 function olo_options_validate( $input ) {
-
-	// Say our checkbox option must be a positive number
-	$input['is_olo_icp'] = absint( $input['is_olo_icp'] );
-	
 	// must be safe text with no HTML tags
-	$input['olo_icp'] = sanitize_text_field( $input['olo_icp'] );
+	$str = array('twitter_name','twitter_url','weibo_name','weibo_url','email_name','email_url','rss_name','rss_url','qrcode_name','qrcode_url');
+	$input[$str] = sanitize_text_field( $input[$str] );
 
 	return $input;
 }

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-10 21:01+0800\n"
-"PO-Revision-Date: 2014-05-10 21:03+0800\n"
+"POT-Creation-Date: 2014-05-11 23:34+0800\n"
+"PO-Revision-Date: 2014-05-11 23:40+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -214,11 +214,11 @@ msgstr "Last Updated"
 msgid "Search..."
 msgstr "搜索..."
 
-#: ../sidebar.php:6
+#: ../sidebar.php:60
 msgid "Archives"
 msgstr "归档"
 
-#: ../sidebar.php:13
+#: ../sidebar.php:67
 msgid "Meta"
 msgstr "管理"
 
@@ -297,35 +297,103 @@ msgid "(Edit)"
 msgstr "（编辑）"
 
 #: ../inc/theme_inc.php:7
-msgid "Show ICP No."
-msgstr "显示备案号"
+msgid "Twitter URL."
+msgstr "Twitter地址"
 
 #: ../inc/theme_inc.php:8
-msgid "Enable ICP"
-msgstr "启用"
+msgid "Enter your twitter url. For example: http://twitter.com/ylgod."
+msgstr "填写你的Twitter地址，例如http://twitter.com/ylgod。"
 
 #: ../inc/theme_inc.php:17
-msgid "ICP No."
-msgstr "备案号"
+msgid "Twitter Name"
+msgstr "Twitter名称"
 
 #: ../inc/theme_inc.php:18
-msgid "Put your ICP No. here."
-msgstr "这里填写你的备案号"
+msgid "Enter your twitter name or another description."
+msgstr "填写你的 Twitter名字或者其他描述性语言。"
 
-#: ../inc/theme_inc.php:35
+#: ../inc/theme_inc.php:27
+msgid "Sina Weibo URL."
+msgstr "新浪微博地址"
+
+#: ../inc/theme_inc.php:28
+msgid "Enter your Sina Weibo url. For example: http://weibo.com/ylgod."
+msgstr "填写你的新浪微博地址，比如http://weibo.com/ylgod。"
+
+#: ../inc/theme_inc.php:37
+msgid "Sina WeiBo Name"
+msgstr "新浪微博名称"
+
+#: ../inc/theme_inc.php:38
+msgid "Enter your Sina Weibo name or another description."
+msgstr "填写你的新浪微博名称或者其他描述性语言。"
+
+#: ../inc/theme_inc.php:47
+msgid "Email URL."
+msgstr "Email邮箱地址"
+
+#: ../inc/theme_inc.php:48
+msgid "Enter your Email url. For example: mailto:i@hjyl.org."
+msgstr "填写你的Email地址，比如mailto:i@hjyl.org，以mailto开头。"
+
+#: ../inc/theme_inc.php:57
+msgid "Email Name"
+msgstr "Email邮箱名称"
+
+#: ../inc/theme_inc.php:58
+msgid "Enter your Email name or another description."
+msgstr "填写你的邮箱名称或其他描述性语言。"
+
+#: ../inc/theme_inc.php:67
+msgid "RSS URL."
+msgstr "RSS订阅地址"
+
+#: ../inc/theme_inc.php:68
+msgid "Enter your RSS url. For example: http://hjyl.org/feed."
+msgstr "填写你的RSS订阅地址，比如: http://hjyl.org/feed。"
+
+#: ../inc/theme_inc.php:77
+msgid "RSS Name"
+msgstr "RSS订阅地址"
+
+#: ../inc/theme_inc.php:78
+msgid "Enter your RSS name or another description."
+msgstr "填写你的RSS订阅名称或者其他描述。"
+
+#: ../inc/theme_inc.php:87
+msgid "Qrcode Image URL."
+msgstr "二维码地址"
+
+#: ../inc/theme_inc.php:88
+msgid ""
+"Enter your Qrcode Image url. For example: http://img.hjyl.org/"
+"uploads/2009/09/qrcode_for_gh_8b1a277c7cb7_430-300x300.jpg."
+msgstr ""
+"填写你的二维码地址，比如http://img.hjyl.org/uploads/2009/09/"
+"qrcode_for_gh_8b1a277c7cb7_430-300x300.jpg。"
+
+#: ../inc/theme_inc.php:97
+msgid "Qrcode Name"
+msgstr "二维码名称"
+
+#: ../inc/theme_inc.php:98
+msgid "Enter your Qrcode name or another description."
+msgstr "填写你的二维码名称或者其他描述"
+
+#: ../inc/theme_inc.php:115
 msgid "Theme Options"
 msgstr "主题设置"
 
-#: ../inc/theme_inc.php:68
+#: ../inc/theme_inc.php:148
 #, php-format
 msgid "%1$s Theme Options"
 msgstr "%1$s 主题设置"
 
-#: ../inc/theme_inc.php:74
+#: ../inc/theme_inc.php:154
 msgid "Donation"
 msgstr "捐助"
 
-#: ../inc/theme_inc.php:76
+#: ../inc/theme_inc.php:156
 #, php-format
 msgid ""
 "Created, Developed and maintained by %s . If you feel my work is useful and "
@@ -335,33 +403,45 @@ msgstr ""
 "本主题由%s开发和维护，如果你觉得还不错，并想支持开发更多免费资源，你可以给我"
 "捐助。非常感谢你的支持！"
 
-#: ../inc/theme_inc.php:76
+#: ../inc/theme_inc.php:156
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
-#: ../inc/theme_inc.php:90
+#: ../inc/theme_inc.php:170
 msgid "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 msgstr "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 
-#: ../inc/theme_inc.php:90
+#: ../inc/theme_inc.php:170
 msgid "Alipay"
 msgstr "支付宝捐赠"
 
-#: ../inc/theme_inc.php:102
+#: ../inc/theme_inc.php:182
 msgid "General settings"
 msgstr "常规设置"
 
-#: ../inc/theme_inc.php:181
+#: ../inc/theme_inc.php:261
 msgid "Save Options"
 msgstr "保存设置"
 
-#: ../inc/theme_inc.php:185
+#: ../inc/theme_inc.php:265
 msgid "Reset All Settings"
 msgstr "重置所有设置"
 
-#: ../inc/theme_inc.php:185
+#: ../inc/theme_inc.php:265
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#~ msgid "Show ICP No."
+#~ msgstr "显示备案号"
+
+#~ msgid "Enable ICP"
+#~ msgstr "启用"
+
+#~ msgid "ICP No."
+#~ msgstr "备案号"
+
+#~ msgid "Put your ICP No. here."
+#~ msgstr "这里填写你的备案号"
 
 #~ msgid "Page %s"
 #~ msgstr "第 %s 页"
@@ -442,9 +522,6 @@ msgstr "点击‘确定’重置。所有设置将被丢失！"
 
 #~ msgid "Share to Twitter"
 #~ msgstr "分享到Twitter"
-
-#~ msgid "Twitter"
-#~ msgstr "Twitter"
 
 #~ msgid "meta tags"
 #~ msgstr "meta标签设置"

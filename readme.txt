@@ -25,9 +25,10 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 			Add css to Pings,
 			Fix Sanitize and validate input in theme options,
 			Fix default Menu option.
-2014.05.01	Fix first comment CSS,
+2014.05.10	Fix first comment CSS,
 			Add external link in posts,
 			Fix wp_title(),
 			home_url() Instead of bloginfo('url') in functions.php,
 			Fix default sidebar.php,
 			Fix alipay donate image.
+2014.05.11	Del ICP option, and Add Twitter and RSS Options.
