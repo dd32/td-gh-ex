@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 2.2 - may 2014
+- changed size of featured image
+- reduced space between elements
+- several minor adjustments 
+
 PrivateBusiness version 2.1 - april 2014 
 - several adjustments in functions file
 - added pot translation file

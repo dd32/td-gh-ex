@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 2.1
+Version: 2.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -76,7 +76,7 @@ table {
 /* GENERAL */
 body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 #container {max-width: 1200px; background:#fff; border:0; margin: 10px auto 10px; padding: 20px 0 0; text-align: left; word-wrap: break-word;}
-#content {width: 58%; float:left; padding: 20px 0 20px 2%; word-wrap: break-word;}
+#content {width: 60%; float:left; padding: 20px 0 20px 2%; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
@@ -146,8 +146,8 @@ select {max-width:100%;}
 /* HOMEPAGE WIDGET AREA */
 #header-widgets {width: 100%; margin:0 auto 0; padding:0; background:none; border-bottom:3px solid #0066ff;}
 #header-widgets:after {content:''; display:block; clear:both;}
-.home-left {float: left; width: 46%; margin: 0 0 0 2%; padding: 0; word-wrap: break-word;}
-.home-right {float: right; width: 46%; margin: 0 2% 0 0; padding: 0; word-wrap: break-word;}
+.home-left {float: left; width: 47%; margin: 0 0 0 2%; padding: 0; word-wrap: break-word;}
+.home-right {float: right; width: 47%; margin: 0 2% 0 0; padding: 0; word-wrap: break-word;}
 
 
 /* PAGE */
@@ -163,7 +163,7 @@ select {max-width:100%;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #0066ff; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {margin:20px 0; padding:5px; background: #f8f8f8; border:1px solid #ccc;}
-.more {margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #0066ff;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #0066ff;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #0066ff; color:#fff;}
 a.readmore:hover {background: #333; text-decoration:none;}
@@ -183,6 +183,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+
+.wp-post-image {float:left; margin: 10px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -227,8 +229,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 #footer-widgets {width: 100%; margin:0 auto 0; padding:0; background:none; border-top:3px solid #0066ff;}
 #footer-widgets:after {content:''; display:block; clear:both;}
-.footer-left {float: left; width: 46%; margin: 0 0 0 2%; padding: 0; word-wrap: break-word;}
-.footer-right {float: right; width: 46%; margin: 0 2% 0 0; padding: 0; word-wrap: break-word;}
+.footer-left {float: left; width: 47%; margin: 0 0 0 2%; padding: 0; word-wrap: break-word;}
+.footer-right {float: right; width: 47%; margin: 0 2% 0 0; padding: 0; word-wrap: break-word;}
 
 
 /* Mobile */
@@ -244,6 +246,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#footer {width:100%; padding:10px 0 0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 	.article {padding:0;}
+	.wp-post-image {width:100%; margin:0 auto 0.5em;}
 	.widget {margin: 15px 0 15px;}
 	.home-right, .home-left, .footer-right, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.nav-head ul {display: none;} 

@@ -45,7 +45,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 700, 550 ); 
+		set_post_thumbnail_size( 300, 300 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -153,6 +153,12 @@
 
 	}
 	add_action( 'widgets_init', 'privatebusiness_widgets_init' );
+
+
+// Custom excerpt lenght 
+	function privatebusiness_excerpt_length( $length ) { 
+		return 75; } 
+	add_filter( 'excerpt_length', 'privatebusiness_excerpt_length', 999 ); 
 
 
 // Add class to the excerpt 
