@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 2.2 - may 2014
+PrivateBusiness version 2.3 - may 2014
 - changed size of featured image
 - reduced space between elements
 - several minor adjustments 
