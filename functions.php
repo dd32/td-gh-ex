@@ -10,27 +10,14 @@
  */
 
 /*
- * Set default $content_width
- */
-if ( ! isset( $content_width ) )
-	$content_width = 590;
-
-/* Adjust $content_width depending on the page being displayed */
-function boldr_content_width() {
-	global $content_width;
-	if ( is_singular() && !is_page() )
-		$content_width = 595;
-	if ( is_page() )
-		$content_width = 680;
-	if ( is_page_template( 'page-full-width.php' ) )
-		$content_width = 920;
-}
-add_action( 'template_redirect', 'boldr_content_width' );
-
-/*
  * Setup and registration functions
  */
 function boldr_setup(){
+
+	/* Set default $content_width */
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 590;
+
 	/* Translation support
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
@@ -66,6 +53,18 @@ function boldr_setup(){
 
 }
 add_action('after_setup_theme', 'boldr_setup');
+
+/* Adjust $content_width depending on the page being displayed */
+function boldr_content_width() {
+	global $content_width;
+	if ( is_singular() && !is_page() )
+		$content_width = 595;
+	if ( is_page() )
+		$content_width = 680;
+	if ( is_page_template( 'page-full-width.php' ) )
+		$content_width = 920;
+}
+add_action( 'template_redirect', 'boldr_content_width' );
 
 /*
  * Page title
