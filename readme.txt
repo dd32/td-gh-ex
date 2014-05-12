@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.2.1
+Version: 1.3.0
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -61,6 +61,16 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 1.3.0 - 12.05.2014 =
+
+* Added foursquare icon in Sparkling social widget and footer.
+* Added Italian translation thanks to Achille D'Aniello
+* Added French translation thanks to Antoine Lorence
+* Updated translations files
+* Updated 404 error page (404.php)
+* Improved WordPress default galleries
+* Added different content width for full-width pages.
 
 = 1.2.1 - 06.05.2014 =
 

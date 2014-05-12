@@ -237,7 +237,7 @@ function optionsframework_options() {
 							'type' => 'heading');
 
 		$options[] = array( 'name' => __('Top nav background color', 'sparkling'),
-							'desc' => __('Default used if no color is selected.', 'sparkling'),
+							'desc' => __('Default used if no color is selected', 'sparkling'),
 							'id' => 'nav_bg_color',
 							'std' => '',
 							'type' => 'color');
@@ -379,6 +379,12 @@ function optionsframework_options() {
 
     $options[] = array(	'id' => 'social_skype',
 							'desc' => __('Skype', 'sparkling'),
+        			'std' => '',
+        			'class' => 'mini',
+        			'type' => 'text');
+
+    $options[] = array(	'id' => 'social_foursquare',
+							'desc' => __('Foursquare', 'sparkling'),
         			'std' => '',
         			'class' => 'mini',
         			'type' => 'text');

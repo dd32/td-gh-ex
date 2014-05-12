@@ -9,8 +9,19 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 750; /* pixels */
+	$content_width = 648; /* pixels */
 }
+
+/**
+ * Set the content width for full width pages with no sidebar.
+ */
+function sparkling_content_width() {
+  if ( is_page_template( 'page-fullwidth.php' ) || is_page_template( 'front-page.php' ) ) {
+    global $content_width;
+    $content_width = 1008; /* pixels */
+  }
+}
+add_action( 'template_redirect', 'sparkling_content_width' );
 
 if ( ! function_exists( 'sparkling_setup' ) ) :
 /**
@@ -162,6 +173,14 @@ require_once(get_template_directory() . '/inc/widgets/widget-popular-posts.php')
 
 add_filter( 'get_search_form', 'sparkling_wpsearch' );
 
+/**
+ * This function removes inline styles set by WordPress gallery.
+ */
+function sparkling_remove_gallery_css( $css ) {
+  return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+}
+
+add_filter( 'gallery_style', 'sparkling_remove_gallery_css' );
 
 /**
  * Enqueue scripts and styles.
