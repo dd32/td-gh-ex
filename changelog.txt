@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-Medical version 1.4 - may 2014
+Medical version 1.5 - may 2014
 - changed width of main content and sidebar
 - removed some unnecessary code from file style 
 - several minor adjustments 
