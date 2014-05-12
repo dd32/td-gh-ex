@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 520;
+		$content_width = 560;
 
 	// Make theme available for translation
 		load_theme_textdomain('medical', get_template_directory() . '/languages');  
@@ -45,7 +45,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 200, 200 ); 
+		set_post_thumbnail_size( 250, 250 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
@@ -155,7 +155,7 @@
 
 // Custom excerpt lenght 
 	function medical_excerpt_length( $length ) { 
-		return 80; } 
+		return 75; } 
 	add_filter( 'excerpt_length', 'medical_excerpt_length', 999 ); 
 
 

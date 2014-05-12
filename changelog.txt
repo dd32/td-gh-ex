@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Medical version 1.4 - may 2014
+- changed width of main content and sidebar
+- removed some unnecessary code from file style 
+- several minor adjustments 
+
 Medical version 1.3 - may 2014 
 - changed size of featured image
 - several minor adjustments 
