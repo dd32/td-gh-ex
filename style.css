@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.4
+Version: 2.5
 Tags: blue, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("css/font-awesome.min.css");
@@ -327,7 +327,7 @@ body > header{
 	background:rgba(6,35,56,0.4);
 	height:50px;
 }
-#oloMenu > ul > li{
+#oloMenu > ul li{
 	float:left;
 	padding:0 20px;
 	line-height:50px;
@@ -339,7 +339,7 @@ body > header{
 	font-size:14px;
 	font-weight:600;
 }
-.sub-menu{
+#oloMenu .sub-menu{
 	display:none;
 	z-index:999;
 	background:rgba(6,35,56,0.4);
@@ -349,7 +349,7 @@ body > header{
 	-o-transition:		all 0.3s ease-in-out;
 	transition:			all 0.3s ease-in-out;
 }
-.sub-menu li{
+#oloMenu .sub-menu li{
 	min-width:120px;
 }
 #oloMenu > ul > li > a{
@@ -361,16 +361,20 @@ body > header{
 	float:left;
 	left:0;
 }
-.sub-menu li a{
+#oloMenu .sub-menu li a{
 	text-decoration:none;
 	padding:10px 20px;
 }
-.sub-menu li:hover,
-.sub-menu li.current-menu-item{
+#oloMenu .sub-menu li:hover,
+#oloMenu .sub-menu li.current-menu-item{
 	background:rgba(6,35,56,0.8);
 }
-#oloMenu ul.sub-menu ul.sub-menu{
-	display:none;
+#oloMenu ul.sub-menu  li:hover > .sub-menu{
+	display:block;
+	position:absolute;
+	float:left;
+	left:100%;
+	top:0;
 }
 #oloMenu li.oloCat:hover a:after{
 	-webkit-transform:	rotate(180deg);
@@ -722,6 +726,14 @@ body > header{
 }
 .twitter_rss span:hover{
 	color:#227EC0;
+}
+#oloWidget .widget_nav_menu ul li{
+	display:block;
+	line-height:22px;
+	font-size:13px;
+}
+#oloWidget .widget_nav_menu ul.sub-menu{
+	margin-left:15px;
 }
 
 /*Comments*/
