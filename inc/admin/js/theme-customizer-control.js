@@ -34,21 +34,20 @@
 
 })(jQuery);
 
-/*jQuery(document).ready(function () {
+
+jQuery(document).ready(function () {
     ! function ($) {
+      var html = '';
+      html += '  <div id="tc-donate-customizer">';              
+      html += '    <h3>We do our best do make Customizr the perfect free theme for you!</h3>';
+      html += '    <span class="tc-notice"> Please help support it\'s continued development with a donation of $20, $50, or even $100.</span>';
+      html += '      <a class="tc-donate-link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8CTH6YFDBQYGU" target="_blank" rel="nofollow">';
+      html += '        <img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" alt="Make a donation for Customizr">';
+      html += '      </a>';
+      //html += '    </p>';
+      html += '  </div>';
 
-      var $FrontDropdown = $('li#customize-control-show_on_front.customize-control select');
-
-      function DisplayPostPageOption() {
-        console.log($FrontDropdown.val());
-        if ( $FrontDropdown.val() != 'posts' ) {
-          $('li#customize-control-page_for_posts.customize-control.customize-control-dropdown-pages').show();
-        }
-      }
-      DisplayPostPageOption()
-      $FrontDropdown.on('change', function() {
-        DisplayPostPageOption();
-      } );
+      $('#customize-info').append( html );
 
     }(window.jQuery)
-});*/
+});

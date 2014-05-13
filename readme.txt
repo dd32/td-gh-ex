@@ -33,6 +33,10 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.13 =
+* added : (lang) Danish translation. Thanks to <a href="http://teknikalt.dk">Peter Wiwe</a>
+* added : (css, js) Donate link in admin
+
 = 3.1.12 =
 * fixed : (css) category archive icon now displayed again in chrome
 * fixed : (php : TC_init::tc_add_retina_support) retina bug fixed by <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>

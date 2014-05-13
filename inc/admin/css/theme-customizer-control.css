@@ -1,3 +1,35 @@
+#customize-info .accordion-section-title {
+	padding-bottom: 0px;
+}
+#tc-donate-customizer {
+	background-color: #FFF;
+	color: #666;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #EEE;
+	margin: 0;
+	padding: 4px 15px 4px;
+	position: relative;;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#tc-donate-customizer h3 {
+	font-size: 13px;
+	margin-bottom: 1px;
+	margin-top: 0px;
+}
+#tc-donate-customizer .tc-notice {
+	padding-bottom: 4px;
+}
+#tc-donate-customizer p {
+	margin: 0px;
+}
+#tc-donate-customizer .tc-donate-link {
+	display: block;
+	text-align: center;
+}
 .control-section .accordion-section-title {
 	padding: 6px 20px!important;
 }
