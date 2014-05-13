@@ -302,7 +302,7 @@ class Options_Framework_Admin {
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => 'Smartia Options',
+			'title' => 'NewsPress Options',
 			'href' => admin_url( 'themes.php?page=' . $menu['menu_slug'] )
 		) );
 	}

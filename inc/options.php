@@ -25,13 +25,15 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	add_filter( 'wp_default_editor', create_function('', 'return "html";') );
+	// add_filter( 'wp_default_editor', create_function('', 'return "html";') ); 
 	
 	$wp_editor_settings = array(
 		'wpautop' => false, // Default
 		'textarea_rows' => 5,
 		'editor_css' => '<style>.wp-editor-tools, .quicktags-toolbar { display:none; hidden; height:0px;} </style>',
-		'quicktags' => true
+		'teeny' => true,
+'tinymce' => false,
+'quicktags' => false
 	);	
 
 	$options[] = array(

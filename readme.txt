@@ -1,7 +1,7 @@
 ----------------------------------
 Smartia Theme
 ----------------------------------
-Version: 	2.4
+Version: 	2.5
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -21,4 +21,10 @@ Important for Version 2.4
 ====================================
 The 2.0 Version is a Major Version which is used almost all new code from the Previous Versions. This version is using the same Framework that other Themes of D5 Creation is using. So, please keep a backup of the Previous Theme before updating. Thus you can go back to the previous if you feel anything wrong with this new version. This version has introduced many new features like Theme Options where you can add the Slide Images, Social Links from the Theme Options.
 
+-------------------
+Changelog
+===================
 
+Version 2.5
+______________
+- Options Framework Updated

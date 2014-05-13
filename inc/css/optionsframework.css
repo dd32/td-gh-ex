@@ -322,7 +322,7 @@ width: 100%;
 #optionsframework-wrap .nav-tab-wrapper { width: 201px; margin-top: 143px; position: absolute; z-index: 100; background: transparent; border: none; text-align:left; padding: 0; margin-right: 850px;}
 #optionsframework-wrap h2 .nav-tab { width: 100%; border: none; border-top: 1px solid #AAAAAA; border-bottom: 1px solid #EEEEEE; color: #06add7;}
 #optionsframework-wrap h2 .nav-tab:hover, #optionsframework-wrap h2 .nav-tab-active { border: none; border-top: 1px solid #EEEEEE; border-bottom: 1px solid #AAAAAA; color: #08718c; background: #F5F5F5; z-index: 100; }
-#optionsframework-wrap h2 .nav-tab { padding: 10px; font-size: 17px; color: #272A2E; }
+#optionsframework-wrap h2 .nav-tab { padding: 10px; font-size: 17px; color: #555555; }
 
 #optionsframework-wrap h2 .nav-tab:hover, #optionsframework-wrap h2 .nav-tab-active { background: #0CB9E4; color: #FFFFFF; text-shadow: none;  }
 #optionsframework-wrap h2  .nav-tab-active:after {
@@ -340,7 +340,7 @@ width: 100%;
 
 #optionsframework .sub-item { border-bottom: 3px solid #0EC2EA; }
 #optionsframework .featured-area-sub-title {
-    background:#272A2E;
+    background:#555555;
     color: #EEEEEE;
     display: block;
     font-size: 20px;
