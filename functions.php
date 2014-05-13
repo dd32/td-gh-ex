@@ -87,6 +87,83 @@ function thebox_setup() {
 endif; // thebox_setup
 add_action( 'after_setup_theme', 'thebox_setup' );
 
+
+/**
+ * Return the Google font stylesheet URL, if available.
+ *
+ * @since The Box 1.0
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function thebox_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'thebox' );
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Bitter, translate this to 'off'. Do not translate into your
+	 * own language.
+	 */
+	$oxygen = _x( 'on', 'Oxygen font: on or off', 'thebox' );
+
+	if ( 'off' !== $source_sans_pro || 'off' !== $oxygen ) {
+		$font_families = array();
+
+		if ( 'off' !== $source_sans_pro )
+			$font_families[] = 'Source Sans Pro:300,400,700,300italic,400italic,700italic';
+
+		if ( 'off' !== $oxygen )
+			$font_families[] = 'Oxygen:300,400,700';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+
+/**
+ * Enqueue scripts and styles for the front end.
+ *
+ * @since The Box 1.0
+ *
+ * @return void
+ */
+ 
+function thebox_scripts() {
+
+	// Add Source Sans Pro and Oxygen fonts, used in the main stylesheet.
+	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
+
+	// Add Genericons font, used in the main stylesheet.
+	wp_enqueue_style( 'icon-fonts', get_template_directory_uri() . '/icon-fonts.css', array(), '1.0' );
+
+	// Loads our main stylesheet.
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '2014-05-13' );
+	
+	
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	}
+	
+}
+add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
+
+
 /**
  * Setup the WordPress core custom background feature.
  *
@@ -140,26 +217,6 @@ function thebox_widgets_init() {
 	
 }
 add_action( 'widgets_init', 'thebox_widgets_init' );
-
-
-/**
- * Enqueue scripts and styles
- */
- 
-function thebox_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
 
 
 /**

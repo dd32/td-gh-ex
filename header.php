@@ -14,11 +14,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600,400italic' rel='stylesheet' type='text/css'>
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -41,7 +36,7 @@
 			
 			<?php $options = get_option( 'thebox_theme_options' ); ?>
 			
-			<div class="social-media">
+			<div class="social-links">
 			
 				<?php if ( $options['facebookurl'] != '' ) : ?>
 					<a href="<?php echo $options['facebookurl']; ?>" class="facebook" alt="facebook"><span class="icon-facebook"></span> <?php // _e( 'Facebook', 'short-news' ); ?></a>
@@ -63,7 +58,7 @@
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss"><span class="icon-rss" alt="rss"></span> <?php // _e( 'RSS Feed', 'short-news' ); ?></a>
 				<?php endif; ?>
 				
-			</div><!-- .social-media-->
+			</div><!-- .social-links-->
 			
 		</div>	
 		<nav role="navigation" class="site-navigation main-navigation clearfix">
