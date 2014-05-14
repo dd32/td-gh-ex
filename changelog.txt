@@ -1,0 +1,6 @@
+*** agency Changelog ***
+
+14-05-2013 - version 1.2.5
+* Code Bug fix: Change in line 253 in folder admin/options-medialibrary-uploader.php file
+to <?php echo esc_attr($_of_title); ?>
+esc_attr added.
