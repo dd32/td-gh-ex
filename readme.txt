@@ -51,8 +51,8 @@ To take advantage of the full-bleed featured post slider (requires WordPress.com
 
 == Changelog ==
 
-= 1.1.2 - Apr 08 2014 =
-* Update readme with current featured slider Instructions
+= 1.1.3 - May 14, 2014 =
+* Ensure only posts with featured images are displayed in the single post mini slider
 
 = 1.1 - Dec 06 2013 =
 * Fixed cite styling.
