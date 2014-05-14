@@ -116,13 +116,6 @@ function cherish_skip(){
 }
 add_action('wp_footer', 'cherish_skip');
 
-/* Add a 'home' button to our menu            'hem' knapp i menyn*/
-function cherish_menu( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu', 'cherish_menu' );
-
 
 /* Enqueue fonts and scripts*/
  function cherish_styles_scripts() {

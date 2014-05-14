@@ -42,6 +42,7 @@
 	<?php
 	}
 	?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
 	<a href="http://wordpress.org/"><?php printf( __( 'Proudly powered by %s', 'cherish' ), 'WordPress' ); ?></a>
 	<span class="sep"> | </span>
 	<a href="http://gratistema.se/cherish/"><?php printf( __( 'Theme: %1$s', 'cherish' ), 'Cherish'); ?></a>

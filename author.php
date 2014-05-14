@@ -11,7 +11,7 @@ $cherish_curauth = (get_query_var('author_name')) ? get_user_by('slug', get_quer
 		<?php
 		while ( have_posts() ) : the_post(); ?> 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?php
 					if (strpos($post->post_content,'[gallery') === false){
 					   if ( has_post_thumbnail()) {

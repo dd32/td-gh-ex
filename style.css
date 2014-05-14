@@ -4,18 +4,13 @@ Theme URI: http://gratistema.se/cherish/
 Author: Poena
 Author URI: http://layout.nu/about/
 Description: Cherish is an accessible, full width responsive theme with a fixed top menu. It has 3 widget areas in the footer of the front page and you can change the background color of your posts. Edit or disable your Call to Action area in the customizer, where you can also change colors, hide your post meta and upload your own logo. Includes Swedish translation.
-Version: 0.8
+Version: 0.9
 Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, responsive-layout, accessibility-ready
 Text Domain: cherish
 
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 */
-
-html {
-	-webkit-text-stroke: 1px rgba(0,0,0,0.1);
-	-webkit-font-smoothing: antialiased;
-}
 
 *,
 *:before,
@@ -36,13 +31,18 @@ body {
 	background:#ffffff;
 }
 
-a, a:active{
-	text-decoration:none; 
+a{
 	color:#333333;
 }
-
+a:active, 
+a:hover{
+	color:#000000;
+	outline:#000000 dotted thin;
+}
+ 
+ 
 table{margin:4px 4px 10px 4px; border-collapse:collapse;}
-td, th{border:1px solid #f5f5f5; padding:6px;}
+td, th{border:1px solid #666666; padding:6px;}
 
 #wrapper {
 	margin:0 auto;
@@ -137,6 +137,7 @@ body.admin-bar #menu-wrap{top:28px;}
 	margin-right: 0.7em;
 	margin-left:0.7em;
 	font-family: 'Open Sans', sans-serif;
+	font-weight:bold;
 }
 
 #header-menu li ul {
@@ -152,7 +153,7 @@ body.admin-bar #menu-wrap{top:28px;}
 }
  
 #header-menu li ul a {
-	line-height: 1em;
+	line-height: 1.4em;
 	padding: .5em 0 .5em 1em;
 	width:220px;
 	margin:0;
@@ -168,6 +169,7 @@ body.admin-bar #menu-wrap{top:28px;}
 #header-menu ul ul a:hover,
 #header-menu ul li ul :hover > a{
 	border-left:3px solid #99b0ca;
+	color: #000000;
 }
 
 #header-menu ul li:hover > ul {
@@ -218,7 +220,9 @@ body.admin-bar #menu-wrap{top:28px;}
 	font-family: 'Lily Script One', cursive;
 	text-align:center;
 }
-
+.post-title a, .archive-title a{
+	color:#000000;
+}
 .archive-title{
 	margin-top:2em;
 }
@@ -509,9 +513,6 @@ h2#comments-title{
 	margin:0;
 	padding:0;
 }
-.comment-body a{
-	text-decoration:none;
-}
 .comment-meta{
 	font-size:0.6em;
 	margin-left:64px;
@@ -562,11 +563,6 @@ h2#comments-title{
 	display: none;
 }
 
-.pingback a{
-	text-decoration:none;
-}
-
-
 /* Comments form
 -------------------------------------------------------------- */
 
@@ -578,6 +574,10 @@ select{
 	margin:3px;
 	padding:8px;
 	height:35px;
+		
+}
+input:hover, select:hover{
+	outline:#000000 dotted thin;
 }
 
 #respond {
@@ -752,8 +752,6 @@ select{
 	margin-bottom:8px;
 }
 
-#today{border-bottom:1px solid #000000;}
-
 .tagcloud{
 	padding:10px;
 }
@@ -908,7 +906,6 @@ option {
  
 	.nav-menu{
 		background:#fff;
-		list-style:none;
 		margin:auto;
 		padding:0;
 		width: 100%;
@@ -919,7 +916,11 @@ option {
 	
 	.sub-menu{list-style:none;}
 	
-	.nav-menu a{color:#00000; font-weight:bold;}
+	.nav-menu a{
+		color:#00000;
+		font-weight:bold; 
+		font-family: 'Open Sans', sans-serif;
+	}
 	
 	.nav-menu li {
 		width:100%;
