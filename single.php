@@ -15,15 +15,13 @@ get_header();
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-8 no-padding-left booster-post">
 	
- <?php $feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
+ <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     	<div class="blog">
-            <img src="<?php echo $feature_img_url; ?>" alt="" class="img-responsive blog-img" />
-            <h1 class="blog-title"><?php echo get_the_title(); ?> <span class="comment-cont"> 
-            <img src="<?php echo get_template_directory_uri(); ?>/images/comment-icon.png" class="comment-icon" />2</span></h1>
+            <img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive blog-img" />
+            <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
            
              <div class="post-date-blog">
-                <span class="glyphicon glyphicon-calendar" ></span>   Posted on <a href="#"> Apr 11, 2014 </a>
-                <span class="glyphicon glyphicon-user icon-admin "></span><a href="#"> by admin</a>
+                <?php booster_entry_meta(); ?>
              </div>   
     
             <p class="blog-text">

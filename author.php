@@ -23,9 +23,9 @@ get_header(); ?>
         <article class="post">
           <figure class="feature-thumbnail-large">
             <?php 
-			$feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
-			if($feat_image!="") { ?>
-            <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
+			$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
+			if($booster_feature_img!="") { ?>
+            <img src="<?php echo $booster_feature_img ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
             <?php } ?>
           </figure>
           <div class="post-meta">

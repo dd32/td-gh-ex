@@ -15,30 +15,30 @@ get_header(); ?>
 <!--========================= Carousel ========================= -->
 <div id="myCarousel" class="carousel slide col-md-8 no-padding-left subscribe-box" data-ride="carousel"> 
   <!-- Indicators -->
-    <?php $args = array(
+    <?php $booster_args = array(
 					'orderby'          => 'post_date',
 					'order'            => 'DESC',
 					'post_type'        => 'homeslider',
 					'post_status'      => 'publish'
 		  );
-    $booster_slider = new WP_Query( $args );?>
+    $booster_slider = new WP_Query( $booster_args );?>
     <ol class="carousel-indicators">
     <?php for($i=0;$i<$booster_slider->post_count;$i++){
-	  if($i==0){$class='active';}else{$class='';} ?>
-        <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>" class="<?php echo $class; ?>"></li>
+	  if($i==0){$booster_class='active';}else{$booster_class='';} ?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>" class="<?php echo $booster_class; ?>"></li>
     <?php } ?>
   	</ol>
   <div class="carousel-inner">
     <?php
-   	$count = 0;
+   	$booster_count = 0;
 	if($booster_slider->post_count != 0) {
     while ( $booster_slider->have_posts() ) {
     $booster_slider->the_post();
-	$class='';
-	if($count==0){ $class='active'; }
-	$slider_image_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
-    <div class="item <?php echo $class;?>">
-     <a href="#"><img src="<?php echo $slider_image_url; ?>" alt="First slide" class="img-responsive booster-slider-image"></a> 
+	$booster_class='';
+	if($booster_count==0){ $booster_class='active'; }
+	$booster_slider_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
+    <div class="item <?php echo $booster_class;?>">
+     <a href="#"><img src="<?php echo $booster_slider_image; ?>" alt="First slide" class="img-responsive booster-slider-image"></a> 
       <div class="container">
         <div class="carousel-caption carousel-caption1">
           <h1 class="home-slider-caption font-type-roboto"><?php echo get_the_title(); ?></h1>
@@ -46,7 +46,7 @@ get_header(); ?>
         </div>
       </div>
     </div>
-    <?php $count++; } 
+    <?php $booster_count++; } 
 	} else {
 	?>
     <div class="item active">
@@ -108,28 +108,28 @@ get_header(); ?>
 <section class="section-main container no-padding">
   <div class="col-md-12 no-padding-left padding-br">
     <?php     
-	$args = array(
+	$booster_args = array(
 			'posts_per_page'   => '4',
             'orderby'          => 'post_date',
             'order'            => 'DESC',
             'post_type'        => 'service',
             'post_status'      => 'publish'
         );
-    $booster_services = new WP_Query( $args );
+    $booster_services = new WP_Query( $booster_args );
    
     while ( $booster_services->have_posts() ) {
     $booster_services->the_post();
 	
-	$feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
+	$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
 	?>
     <div class="col-md-3 clear-data">
-      <div class="img-laft"> <img src="<?php echo $feature_img_url; ?>"  alt=""  class="img-responsive home-services-image"/></div>
+      <div class="img-laft"> <img src="<?php echo $booster_feature_img; ?>"  alt=""  class="img-responsive home-services-image"/></div>
       <div class="img-test-padding"> <strong>
-        <p class="sp"><?php echo get_the_title(); ?></p>
+        <p class="sp"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
         </strong>
         <p class="font-size-14">
-		<?php echo substr(get_the_content(), 0, 150); ?></p>
-        <a href="<?php echo get_permalink(); ?>" class="font-color-text"><?php _e('Read More...','booster'); ?></a> </div>
+		<?php echo get_the_excerpt(); ?></p>
+		</div>
     </div>
 	<?php } ?>
   </div>

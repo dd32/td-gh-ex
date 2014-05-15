@@ -506,7 +506,7 @@ function booster_homeslider_init() {
 		'parent_item_colon' => '',
 		'menu_name' => 'Home Slider'
 	);
-	$args = array(
+	$booster_args = array(
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -521,7 +521,7 @@ function booster_homeslider_init() {
 		'supports' => array( 'title', 'editor', 'thumbnail' )
 	);
 
-	register_post_type( 'homeslider', $args );
+	register_post_type( 'homeslider', $booster_args );
 }
 add_action( 'init', 'booster_homeslider_init' );
 
@@ -543,7 +543,7 @@ function booster_service_init() {
 		'parent_item_colon' => '',
 		'menu_name' => 'Service'
 	);
-	$args = array(
+	$booster_args = array(
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -558,7 +558,7 @@ function booster_service_init() {
 		'supports' => array( 'title', 'editor', 'thumbnail' )
 	);
 
-	register_post_type( 'service', $args );
+	register_post_type( 'service', $booster_args );
 }
 add_action( 'init', 'booster_service_init' );
 
@@ -580,7 +580,7 @@ function booster_ourteam_init() {
 		'parent_item_colon' => '',
 		'menu_name' => 'Our Team'
 	);
-	$args = array(
+	$booster_args = array(
 		'labels' => $labels,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -595,7 +595,7 @@ function booster_ourteam_init() {
 		'supports' => array( 'title', 'editor', 'thumbnail' )
 	);
 
-	register_post_type( 'member', $args );
+	register_post_type( 'member', $booster_args );
 }
 add_action( 'init', 'booster_ourteam_init' );
 
@@ -664,11 +664,11 @@ function booster_entry_meta() {
 
 
 	if ( $booster_tag_list ) {
-		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'booster' );
+		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
 	} elseif ( $booster_category_list ) {
-		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'booster' );
+		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
 	} else {
-		$booster_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'booster' );
+		$booster_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
 	}
 
 	printf(
@@ -690,7 +690,7 @@ if ( ! function_exists( 'booster_comment' ) ) :
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
  */
-function booster_comment( $comment, $args, $depth ) {
+function booster_comment( $comment, $booster_args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -725,7 +725,7 @@ function booster_comment( $comment, $args, $depth ) {
       					<?php
                             
                             echo ' '.get_comment_date().'</b>';
-							echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'booster' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ).'</a>';
+							echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $booster_args, array( 'reply_text' => __( 'Reply', 'booster' ), 'after' => '', 'depth' => $depth, 'max_depth' => $booster_args['max_depth'] ) ) ).'</a>';
 							
                         ?>
      				 <div class="blog-post-comment-text comment">
@@ -782,3 +782,11 @@ function booster_pagination($pages = '', $range = 1)
 	echo "</div>\n";
 	}
 }
+/*
+ * Replace Excerpt [...] with Read More
+ */
+ 
+function booster_read_more( ) {
+return ' ..<br /><a href="'. get_permalink() . '">Read More...</a>';
+ }
+add_filter( 'excerpt_more', 'booster_read_more' ); 

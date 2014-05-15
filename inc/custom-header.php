@@ -3,7 +3,7 @@
  * Implement a custom header for booster
  */
 function booster_custom_header_setup() {
-	$args = array(
+	$booster_args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '220e10',
 		'default-image'          => '%s/images/headers/circle.png',
@@ -18,7 +18,7 @@ function booster_custom_header_setup() {
 		'admin-preview-callback' => 'booster_admin_header_image',
 	);
 
-	add_theme_support( 'custom-header', $args );
+	add_theme_support( 'custom-header', $booster_args );
 
 	/*
 	 * Default custom headers packaged with the theme.
@@ -60,18 +60,18 @@ add_action( 'admin_print_styles-appearance_page_custom-header', 'booster_custom_
  * Style the header text displayed on the blog.
  */
 function booster_header_style() {
-	$header_image = get_header_image();
-	$text_color   = get_header_textcolor();
+	$booster_header_image = get_header_image();
+	$booster_text_color   = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
-	if ( empty( $header_image ) && $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
+	if ( empty( $booster_header_image ) && $booster_text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
 	// If we get this far, we have custom styles.
 	?>
 	<style type="text/css" id="booster-header-css">
 	<?php
-		if ( ! empty( $header_image ) ) :
+		if ( ! empty( $booster_header_image ) ) :
 	?>
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
@@ -90,7 +90,7 @@ function booster_header_style() {
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 	<?php
-			if ( empty( $header_image ) ) :
+			if ( empty( $booster_header_image ) ) :
 	?>
 		.site-header .home-link {
 			min-height: 0;
@@ -99,11 +99,11 @@ function booster_header_style() {
 			endif;
 
 		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+		elseif ( $booster_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
 	?>
 		.site-title,
 		.site-description {
-			color: #<?php echo esc_attr( $text_color ); ?>;
+			color: #<?php echo esc_attr( $booster_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -114,7 +114,7 @@ function booster_header_style() {
  * Style the header image displayed on the Appearance > Header admin panel.
  */
 function booster_admin_header_style() {
-	$header_image = get_header_image();
+	$booster_header_image = get_header_image();
 ?>
 	<style type="text/css" id="booster-admin-header-css">
 	.appearance_page_custom-header #headimg {
@@ -123,8 +123,8 @@ function booster_admin_header_style() {
 		-moz-box-sizing:    border-box;
 		box-sizing:         border-box;
 		<?php
-		if ( ! empty( $header_image ) ) {
-			echo 'background: url(' . esc_url( $header_image ) . ') no-repeat scroll top; background-size: 1600px auto;';
+		if ( ! empty( $booster_header_image ) ) {
+			echo 'background: url(' . esc_url( $booster_header_image ) . ') no-repeat scroll top; background-size: 1600px auto;';
 		} ?>
 		padding: 0 20px;
 	}
@@ -135,7 +135,7 @@ function booster_admin_header_style() {
 		margin: 0 auto;
 		max-width: 1040px;
 		<?php
-		if ( ! empty( $header_image ) || display_header_text() ) {
+		if ( ! empty( $booster_header_image ) || display_header_text() ) {
 			echo 'min-height: 230px;';
 		} ?>
 		width: 100%;
@@ -179,10 +179,10 @@ function booster_admin_header_style() {
 function booster_admin_header_image() {
 	?>
 	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 1600px auto;">
-		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
+		<?php $booster_style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
-			<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="#"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
+			<h1 class="displaying-header-text"><a id="name"<?php echo $booster_style; ?> onclick="return false;" href="#"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 id="desc" class="displaying-header-text"<?php echo $booster_style; ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
 <?php }

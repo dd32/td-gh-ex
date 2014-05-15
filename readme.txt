@@ -8,7 +8,7 @@ It has loads of Theme Options to manage home page content, Social media pages et
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
-version: 0.1
+version: 0.1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.

@@ -27,7 +27,7 @@ if ( post_password_required() )
        <?php paginate_comments_links(); ?>     
 	<?php endif; // have_comments() ?>
 	<?php
-	$args = array('comment_notes_after'=>'All fields are mandatory.',
+	$booster_args = array('comment_notes_after'=>'All fields are mandatory.',
 				  'comment_notes_before'=>'',
 				  'title_reply' => 'LEAVE A COMMENT',
 				  'label_submit'=>'Submit Comment',
@@ -48,5 +48,5 @@ if ( post_password_required() )
     'comment_notes_after' => 'All fields are mandatory.',
 				  );
 	?>
-	<?php comment_form($args); ?>
+	<?php comment_form($booster_args); ?>
 </div><!-- #comments .comments-area -->

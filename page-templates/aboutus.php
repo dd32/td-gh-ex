@@ -36,26 +36,26 @@ get_header();
 		<h1 class="font-color-text p-margin"><?php _e('Our Team','booster'); ?></h1>
 </div>
   <div class="col-md-12 no-padding-left hr-bottom">
-  <?php     $args = array(
+  <?php     $booster_args = array(
                     'orderby'          => 'post_date',
                     'order'            => 'DESC',
                     'post_type'        => 'member',
                     'post_status'      => 'publish'
                 );
-    $booster_member = new WP_Query( $args );
+    $booster_member = new WP_Query( $booster_args );
    
     while ( $booster_member->have_posts() ) {
     $booster_member->the_post();
 ?>
-<?php $feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
+<?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
         <div class="col-md-3 padding-left-right-30 clear-data">
                 <div class="img-laft">
-                    <img src="<?php echo $feature_img_url; ?>" alt="" class="img-responsive img-boder our-team-image" />
+                    <img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive img-boder our-team-image" />
                 </div>  
             <div class="img-test-padding">
-            	<p class="sp"><?php echo get_the_title(); ?></p>
+            	<p class="sp"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
                 <p class="out-time-cont">
-                	<?php echo substr(get_the_content(), 0, 150).'<p><a href="'.get_permalink().'">Read More...</a></p>'; ?>
+                	<?php echo get_the_excerpt(); ?>
                 </p>
             </div>  
         </div>

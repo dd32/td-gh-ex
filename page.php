@@ -15,10 +15,10 @@ get_header(); ?>
 <div class="container blog-background">
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-8 no-padding-left">
- <?php $feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
+ <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     	<div class="blog">
-        	<?php if(!empty($feature_img_url)){ ?>
-            <img src="<?php echo $feature_img_url; ?>" alt="" class="img-responsive blog-img" />
+        	<?php if(!empty($booster_feature_img)){ ?>
+            <img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive blog-img" />
             <?php } ?>
             <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
             <p class="blog-text">
