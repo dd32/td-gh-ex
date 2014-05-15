@@ -1,5 +1,10 @@
 *** Revision History ***
 ===========================
+version 1.1.0		2014-05-02
+* Added option to disply page/post nav on single page/post
+* Added option to control meta info disply on post
+* Added option to set favicon
+* Added support to embed new youtube iframe codes
 
 version 1.0.9		2014-05-01
 * Fixed broken image on content-page and content-single

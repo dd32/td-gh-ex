@@ -805,7 +805,7 @@ add_filter('excerpt_length', 'aadya_custom_excerpt_length');
 
 
 function aadya_get_branding() {	
-	$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/\" target=\"_blank\">OpenCodez</a></span>";
+	$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/free-themes/aadya/\" target=\"_blank\">OpenCodez</a></span>";
 	return $note;
 }
 

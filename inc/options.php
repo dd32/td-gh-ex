@@ -131,13 +131,6 @@ function optionsframework_options() {
 		'type' => 'upload');			
 		
 	$options[] = array(
-		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
-		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
-		'id' => 'display_nav_search',
-		'std' => '1',
-		'type' => 'checkbox');				
-		
-	$options[] = array(
 		'name' => __('Theme Layout', 'options_check'),
 		'desc' => __('This option allows you to set wider theme layout.', 'options_check'),
 		'id' => 'theme_layout',
@@ -168,7 +161,7 @@ function optionsframework_options() {
 		'std' => '3',
 		'type' => 'select',
 		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_footer_widgets);			
+		'options' => $theme_footer_widgets);		
 	
 	$options[] = array(
 		'name' => __('Copyright Text', 'options_check'),
@@ -401,5 +394,47 @@ function optionsframework_options() {
 			'std' => '',
 			'class' => 'hidden',
 			'type' => 'text');		
+			
+	$options[] = array(
+		'name' => __('Misc Settings', 'options_check'),
+		'type' => 'heading');		
+		
+	$options[] = array(
+		'name' => __('Set your Favicon', 'options_check'),
+		'desc' => __('Set your Favicon. Add complete url for icon image' , 'options_check'),
+		'id' => 'favicon_url',
+		'std' => '',
+		'type' => 'text');				
+
+	$options[] = array(
+		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
+		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
+		'id' => 'display_nav_search',
+		'std' => '1',
+		'type' => 'checkbox');			
+		
+	$options[] = array(
+		'name' => __('Display Post Meta Information', 'options_check'),
+		'desc' => __('Check to display Post Meta Information. Defaults to True.', 'options_check'),
+		'id' => 'display_post_meta_info',
+		'std' => '1',
+		'type' => 'checkbox');		
+		
+	$options[] = array(
+		'name' => __('Display Post/Page Navigation and Category/Tags on Single Post/Page', 'options_check'),
+		'desc' => __('Check to display Post/Page Navigation and Category/Tags on Single Post/Page. Defaults to True.', 'options_check'),
+		'id' => 'display_post_page_nav',
+		'std' => '1',
+		'type' => 'checkbox');	
+		
+	$options[] = array(
+		'name' => __('Display Featured Image on top of Single Post/Page', 'options_check'),
+		'desc' => __('Check to Display Featured Image on top of Single Post/Page. Defaults to True.', 'options_check'),
+		'id' => 'display_featured_img_on_page_post',
+		'std' => '1',
+		'type' => 'checkbox');	
+		
+
+		
 	return $options;
 }

@@ -79,7 +79,17 @@ function aadya_custom_sanitize_textarea($input) {
       $custom_allowedtags["script"] = array(
 	  "src" => array(),
       "type" => array()
-	  );
+	  );	  
+	
+    $custom_allowedtags["iframe"] = array(
+		"src" => array(),
+		"type" => array(),
+		"allowfullscreen" => array(),
+		"allowscriptaccess" => array(),
+		"height" => array(),
+		"width" => array(),
+		"frameborder" => array(),
+      );	  
  
       $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
       $output = wp_kses( $input, $custom_allowedtags);

@@ -7,7 +7,12 @@
  * @since Aadya 1.0.0
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+
+<?php 
+	$aadya_display_post_meta_info = of_get_option('display_post_meta_info');
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('index-card'); ?> >
 <header>
 	<hgroup>		
 		<h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'aadya' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -23,6 +28,7 @@
 <div class="entry-summary">
 <?php the_excerpt(); ?>
 </div><!-- .entry-summary -->
+<?php if(!empty($aadya_display_post_meta_info)):?>
 <div class="post-meta">			
 
 <?php
@@ -47,5 +53,6 @@
 </div>			
 
 </div> 
+<?php endif;?>
 <div class="clearfix"/>
 </article>

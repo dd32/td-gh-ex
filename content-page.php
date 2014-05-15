@@ -9,8 +9,10 @@
 ?>
 <?php 
 	$aadya_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$aadya_display_post_page_nav = of_get_option('display_post_page_nav');
+	$aadya_display_featured_img = of_get_option('display_featured_img_on_page_post');
 ?>
-<?php if(!empty($aadya_feat_image)):?>
+<?php if(!empty($aadya_feat_image) && $aadya_display_featured_img == true):?>
 <div class="single-post-feat-image">	
 	<img src="<?php echo $aadya_feat_image;?>" class="img-responsive"/>
 </div>	
@@ -28,7 +30,7 @@
 	<footer class="entry-meta">					
 		<p><?php wp_link_pages(); ?></p>
 		<hr/>
-		
+		<?php if(!empty($aadya_display_post_page_nav)):?>
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		 
@@ -67,6 +69,7 @@
 		  </div>
 		  <?php endif;?>
 		</div>	
+		<?php endif;?>
 	</footer>
 </article>
 
