@@ -1,0 +1,75 @@
+== Booster ==
+Theme Name: Booster
+Theme URI: http://fasterthemes.com/themes/Booster
+Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
+and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster theme comes with Appointment Management,
+social icon integration, Services page , Contact us page etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
+It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+Author: Faster Themes
+Author URI: http://fasterthemes.com/
+Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
+version: 0.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+This theme, like WordPress, is licensed under the Faster Themes.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+== Theme Description ==
+Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
+and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster theme comes with Appointment Management,
+social icon integration, Services page , Contact us page etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
+It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+
+== Features ==
+
+Responsive design(Bootstrap), Appointment Management, Theme Options, Service Pages,  Custom Widgets, Custom Menu, supports social media.
+
+== Tags ==
+
+WordPress Free Premium Theme
+
+== Installation ==
+
+1. Primary:
+ = Login to your wp-admin account and go to Appearance -> Themes.
+ = Select "Install" tab and click on the "Upload" link.
+ = Select "booster.zip" and click on "Install Now" button.
+ = In case of errors, use an alternate method.
+2. Alternate:
+ = Unzip the template file (booster.zip) that you have downloaded.
+ = Upload the entire folder (booster) to your server via FTP and place it in the /wp-content/themes/ folder.
+ = Do not change the directory name.
+ = The template files should be there now: /wp-content/themes/booster/index.php (example).
+3. Log into your WP admin panel and click on "Appearance". Go to "Themes" tab.
+4. Now click on "booster" to activate the theme.
+5. Complete all of the required inputs in the theme Options page (in the WP admin panel) and click "Save".
+6. Change Logo and Favicon:
+ = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Select "Basic Settings" Tab.
+ = Upload the logo, that you require & Enter Introduction text for right of Your Theme.
+7. Social Media:
+ = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Select "Social Settings" tab
+ = Here you can add your Facebook, Twitter, Linkedin URLs which appear in the header.
+ 
+== Settings of home page ==
+1. Setup home page slider : Open wp-admin then click on Home Slider --> Add new 
+   Then add Slider Title, content and featured image for slider image.
+2. Setup of 'Welcome' and 'Why choose me' sections : First you need to open Appearance -> FT Options -> Home Settings
+	then you can input content and images for these sections.
+3. Setup 'Services' Post : You need to add your services in 'Services' custom post types from wp-admin.
+
+ 
+---------------------------------------------------------
+License and Copyrights for Resources used in this theme
+---------------------------------------------------------
+ 
+
+	i)   Social icons and other graphics used in this theme are under GPL v2 License have been created by our team.
+	ii)  For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
+	iii) We have used 2 External fonts from Google Webfonts: Roboto and Lato : They are under SIL Open Font License v1.1.
+	iv)  License details of JS files used by us are in the header of corresponding JS files.
+	v)   The bootstrap files which we used are licensed under the Apache License v2.0
+	
+	
+	For any help you can mail us at support[at]fasterthemes.com
