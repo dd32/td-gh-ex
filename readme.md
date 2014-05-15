@@ -33,9 +33,14 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.14 =
+* added : (js : theme-customizer-control.js, css : theme-customizer-control.css, php : class-admin-customize.php) Donate block can now be disabled forever in admin.
+
+
 = 3.1.13 =
 * added : (lang) Danish translation. Thanks to <a href="http://teknikalt.dk">Peter Wiwe</a>
 * added : (css, js) Donate link in admin
+
 
 = 3.1.12 =
 * fixed : (css) category archive icon now displayed again in chrome
