@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+LeftSide version 1.0 - may 2014 
+- first stable release
+
+
