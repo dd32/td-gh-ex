@@ -1155,6 +1155,13 @@ footer.entry-meta {
 	.main-nav .sf-menu > li {
 		float: none;
 	}
+	body.nav-below-header .main-navigation .menu > li, 
+	body.nav-below-header .main-navigation .sf-menu > li,
+	body.nav-above-header .main-navigation .menu > li, 
+	body.nav-above-header .main-navigation .sf-menu > li {
+		display: block;
+		margin: 0;
+	}
 	.main-navigation .main-nav ul ul {
 		position: relative;
 		top: 0;

@@ -10,5 +10,11 @@ Changelog Legend:
 
 ----
 
+(5/16/2014)
+[!] Fixed mobile menu when centered
+[*] Screenshot updated
+
+----
+
 (04/26/2014)
 Initial Release
