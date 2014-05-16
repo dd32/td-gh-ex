@@ -47,6 +47,14 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 2.1.7 =
+* Update print styles
+* Update woocommerce template
+* Add class for your cart "dash"
+* Fix for categories
+* Small CSS fixes
+
 = Version: 2.1.6 =
 * Fix Theme Options Script URL
 

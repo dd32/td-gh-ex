@@ -46,6 +46,7 @@ $catimgheight = 130;
             $image_cat_url = wp_get_attachment_image_src( $thumbnail_id, 'full');
             $image_cat_url = $image_cat_url[0];
             $cat_image = aq_resize($image_cat_url, $catimgwidth, $catimgheight, true);
+            if(empty($cat_image)) {$cat_image = $image_cat_url;}
         } else {
             $cat_image = virtue_img_placeholder();
          }

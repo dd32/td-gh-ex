@@ -17,13 +17,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
       <div class="main <?php echo kadence_main_class(); ?>" role="main">
 		<div class="product_header clearfix">
       	<?php
-				$terms = get_the_terms($post->ID,'product_cat');
-				$i = 1;
-				 if($terms) {
-					foreach ($terms as $term) {					
-						    echo '<div class="cat_back_btn headerfont"><i class="icon-arrow-left"></i> '.__('Back to', 'virtue').' <a href="'.get_term_link($term->slug, 'product_cat').'">'.$term->name.'</a></div>';
-						    if($i == 1) break;
-					}
+				$terms = wp_get_post_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) );
+				$main_term = $terms[0];
+				 if($main_term) {				
+						    echo '<div class="cat_back_btn headerfont"><i class="icon-arrow-left"></i> '.__('Back to', 'virtue').' <a href="'.get_term_link($main_term->slug, 'product_cat').'">'.$main_term->name.'</a></div>';
 				} else {
 					echo '<div class="cat_back_btn headerfont"><i class="icon-arrow-left"></i> '.__('Back to', 'virtue').' <a href="'.get_permalink( woocommerce_get_page_id( 'shop' ) ).'">'.__('Shop','virtue').'</a></div>';
 						}	?>

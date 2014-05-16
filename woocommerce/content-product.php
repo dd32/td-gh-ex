@@ -71,7 +71,9 @@ if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
 		             echo woocommerce_placeholder_img( 'shop_catalog' );
 		             }  
 			} else { 
+				echo '<div class="kad-woo-image-size">';
 				echo woocommerce_template_loop_product_thumbnail();
+				echo '</div>';
          }?>
              </a>
 		<div class="product_details">

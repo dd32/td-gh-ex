@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 	</div>
-	<div class="col-md-7">
+	<div class="col-md-7 product-summary-case">
 	<div class="summary entry-summary">
 
 		<?php

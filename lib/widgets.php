@@ -712,8 +712,8 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $gridchoice = isset($instance['gridchoice']) ? esc_attr($instance['gridchoice']) : '';
     $number = isset($instance['number']) ? absint($instance['number']) : 6;
-    if (isset($instance['thecat'])) { $thecat = esc_attr($instance['thecat']); }
-    if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); }
+    if (isset($instance['thecat'])) { $thecat = esc_attr($instance['thecat']); } else {$thecat = '';}
+    if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); } else {$thetype = '';}
      $types= get_terms('portfolio-type');
      $type_options = array();
           $type_options[] = '<option value="">All</option>';

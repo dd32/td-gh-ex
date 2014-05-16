@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-05-16 14:20-0700\n"
-"PO-Revision-Date: 2014-05-16 14:21-0700\n"
-"Last-Translator: Serhio <588885@mail.ru>\n"
+"POT-Creation-Date: 2014-05-16 13:49-0700\n"
+"PO-Revision-Date: 2014-05-16 13:49-0700\n"
+"Last-Translator: \n"
 "Language-Team: \n"
-"Language: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,248 +17,246 @@ msgstr ""
 
 #: ../404.php:11
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
-"Приносим извинения, но страница, которую вы пытаетесь отобразить, не "
-"существует."
+msgstr "הדף לא קיים"
 
 #: ../404.php:14
 msgid "It looks like this was the result of either:"
-msgstr "Похоже, что это явилось результатом одного из:"
+msgstr "נראה שזה קרה כתוצאה מ:"
 
 #: ../404.php:16
 msgid "a mistyped address"
-msgstr "опечатка в адресе"
+msgstr "כתובת לא תקינה"
 
 #: ../404.php:17
 msgid "an out-of-date link"
-msgstr "просроченная ссылка"
+msgstr "קישור ישן לא תקין"
 
 #: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
-msgstr "Приносим извинения, результаты не найдены."
+msgstr "לא נמצאו תוצאות."
 
 #: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
-msgstr "Приносим извинения, записи блога не найдены."
+msgstr "לא נמצאו רשומות בלוג."
 
 #: ../page-contact.php:84
 msgid "Please enter your name."
-msgstr "Пожалуйста, укажите свое имя."
+msgstr "אנא הכנס את שמך."
 
 #: ../page-contact.php:91
 msgid "Please enter your email address."
-msgstr "Пожалуйста, укажите адрес своей электронной почты."
+msgstr "אנא הכנס את כתובת האימייל שלך."
 
 #: ../page-contact.php:94
 msgid "You entered an invalid email address."
-msgstr "Вы ввели недействительный адрес электронной почты."
+msgstr "הקשת כתובת אימייל שגויה."
 
 #: ../page-contact.php:101
 msgid "Please enter a message."
-msgstr "Пожалуйста, введите текст сообщения."
+msgstr "אנא הוסף הודעה."
 
 #: ../page-contact.php:118
 msgid " Contact"
-msgstr " Контакт"
+msgstr "צור קשר"
 
 #: ../page-contact.php:118
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:73
 msgid "From "
-msgstr "От"
+msgstr "מאת:"
 
 #: ../page-contact.php:119 ../templates/comments.php:68
 #: ../woocommerce/single-product-reviews.php:62
 msgid "Name"
-msgstr "Имя"
+msgstr "שם"
 
 #: ../page-contact.php:120
 msgid "From"
-msgstr "От"
+msgstr "מאת:"
 
 #: ../page-contact.php:158
 msgid "Thanks, your email was sent successfully."
-msgstr "Спасибо, ваше сообщение отправлено успешно."
+msgstr "תודה, האימייל שלך נשלח בהצלחה."
 
 #: ../page-contact.php:162
 msgid "Sorry, an error occured."
-msgstr "Извините, возникла ошибка."
+msgstr "מצטערים, אירעה תקלה."
 
 #: ../page-contact.php:168 ../lib/widgets.php:285
 msgid "Name:"
-msgstr "Имя:"
+msgstr "שם:"
 
 #: ../page-contact.php:177
 msgid "Email: "
-msgstr "Email:"
+msgstr "אימייל:"
 
 #: ../page-contact.php:183
 msgid "Message: "
-msgstr "Сообщение:"
+msgstr "הודעה:"
 
 #: ../page-contact.php:190
 msgid "Send Email"
-msgstr "Отправить сообщение"
+msgstr "שלח אימייל:"
 
 #: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
-msgstr "Извините, записей портфолио не найдено."
+msgstr "מצטערים, לא נמצאו רשומות פורטפוליו."
 
 #: ../searchform.php:2
 msgid "Search for:"
-msgstr "Искать:"
+msgstr "חפש את:"
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr "Искать"
+msgstr "חיפוש"
 
 #: ../taxonomy-portfolio-type.php:101
 msgid "&larr; Older posts"
-msgstr "&larr; Более старые посты"
+msgstr "פוסטים ישנים"
 
 #: ../taxonomy-portfolio-type.php:102
 msgid "Newer posts &rarr;"
-msgstr "Более свежие посты &rarr;"
+msgstr "פוסטים חדשים יותר"
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr "Об авторе"
+msgstr "אודות הכותב"
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr "Свежие посты"
+msgstr "פוסטים אחרונים"
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
 #: ../lib/authorbox.php:36 ../lib/authorbox.php:40 ../lib/authorbox.php:44
 #: ../lib/authorbox.php:48
 msgid "Follow"
-msgstr "Следить"
+msgstr "עקוב"
 
 #: ../lib/authorbox.php:16
 msgid "on Facebook"
-msgstr "на Facebook"
+msgstr "בפייסבוק"
 
 #: ../lib/authorbox.php:20
 msgid "on Twitter"
-msgstr "на Twitter"
+msgstr "בטוויטר"
 
 #: ../lib/authorbox.php:24
 msgid "on Google Plus"
-msgstr "на Google Plus"
+msgstr "בגוגל פלוס"
 
 #: ../lib/authorbox.php:28
 msgid "on Flickr"
-msgstr "на Flickr"
+msgstr "בפליקר"
 
 #: ../lib/authorbox.php:32
 msgid "on Vimeo"
-msgstr "на Vimeo"
+msgstr "ב-Vimeo"
 
 #: ../lib/authorbox.php:36
 msgid "on linkedin"
-msgstr "на linkedin"
+msgstr "בלינקדאין"
 
 #: ../lib/authorbox.php:40
 msgid "on Dribbble"
-msgstr "на Dribbble"
+msgstr "בדריבל"
 
 #: ../lib/authorbox.php:44
 msgid "on Pinterest"
-msgstr "на Pinterest"
+msgstr "בפינטרסט"
 
 #: ../lib/authorbox.php:48
 msgid "on Instagram"
-msgstr "на Instagram"
+msgstr "באינסטגרם"
 
 #: ../lib/authorbox.php:65
 msgid "Latest posts from"
-msgstr "Самые свежие посты от"
+msgstr "פוסטים אחרונים מאת:"
 
 #: ../lib/class-tgm-plugin-activation.php:155
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
-msgstr "Установите требуемые плагины"
+msgstr "התקן פלאגינים דרושים"
 
 #: ../lib/class-tgm-plugin-activation.php:156
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
-msgstr "Установить плагины"
+msgstr "התקן פלאגינים"
 
 #: ../lib/class-tgm-plugin-activation.php:157
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr "Устанавливаем плагин: %s"
+msgstr "מתקין פלאגין: %s"
 
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
-msgstr "Что-то пошло не так."
+msgstr "משהו השתבש."
 
 #: ../lib/class-tgm-plugin-activation.php:169
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
-msgstr "Вернуться к устанвке необходимых плагинов"
+msgstr "חזור למתקין הפלאגינים הדרושים"
 
 #: ../lib/class-tgm-plugin-activation.php:170
 msgid "Return to the dashboard"
-msgstr "Вернуться в консоль"
+msgstr "חזור ללוח הבקרה"
 
 #: ../lib/class-tgm-plugin-activation.php:171
 #: ../lib/class-tgm-plugin-activation.php:1840
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
-msgstr "Плагин активирован успешно."
+msgstr "הפלאגין הופעל בהצלחה."
 
 #: ../lib/class-tgm-plugin-activation.php:172
 #: ../lib/class-tgm-plugin-activation.php:1538
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Следующий плагин активирован успешно:"
-msgstr[1] "Следующие плагины активированы успешно:"
+msgstr[0] "הפלאגין הבא הופעל בהצלחה:"
+msgstr[1] "הפלאגינים הבאים הופעלו בהצלחה:"
 
 #: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Все плагины установлены и активированы успешно. %1$s"
+msgstr "כל הפלאגינים הותקנו והופעלו בהצלחה. %1$s"
 
 #: ../lib/class-tgm-plugin-activation.php:174
 msgid "Dismiss this notice"
-msgstr "Убрать это уведомление"
+msgstr "התעלם מודעה זו:"
 
 #: ../lib/class-tgm-plugin-activation.php:1085
 msgid "External Link"
-msgstr "Внешняя ссылка"
+msgstr "לינק חיצוני:"
 
 #: ../lib/class-tgm-plugin-activation.php:1090
 msgid "Private Repository"
-msgstr "Частный репозиторий"
+msgstr "מאגר פרטי"
 
 #: ../lib/class-tgm-plugin-activation.php:1093
 msgid "Pre-Packaged"
-msgstr "Пре-упакованные"
+msgstr "ארוז מראש"
 
 #: ../lib/class-tgm-plugin-activation.php:1097
 msgid "WordPress Repository"
-msgstr "Репозиторий WordPress"
+msgstr "מאגר וורדפרס"
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Required"
-msgstr "Требуемый"
+msgstr "נדרש"
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Recommended"
-msgstr "Рекомендуемый"
+msgstr "מומלץ"
 
 #: ../lib/class-tgm-plugin-activation.php:1103
 msgid "Not Installed"
-msgstr "Не установлен"
+msgstr "לא מותקן"
 
 #: ../lib/class-tgm-plugin-activation.php:1105
 msgid "Installed But Not Activated"
-msgstr "Установлен но не активирован"
+msgstr "מותקן אך לא מופעל"
 
 #: ../lib/class-tgm-plugin-activation.php:1275
 #, php-format
@@ -266,133 +264,131 @@ msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
-"Не найдено плагинов к установке или активации. <a href=\"%1$s\" title="
-"\"Return to the Dashboard\">Вернуться в консоль</a>"
+"אין פלאגינים להתקנה או הפעלה. <a href=\"%1$s\" title=\"חזור ללוח הבקרה"
+"\">חזור ללוח הבקרה</a>"
 
 #: ../lib/class-tgm-plugin-activation.php:1291
 msgid "Plugin"
-msgstr "Плагин"
+msgstr "פלאגין"
 
 #: ../lib/class-tgm-plugin-activation.php:1292
 msgid "Source"
-msgstr "Исходник"
+msgstr "מקור"
 
 #: ../lib/class-tgm-plugin-activation.php:1293
 msgid "Type"
-msgstr "Тип"
+msgstr "סוג"
 
 #: ../lib/class-tgm-plugin-activation.php:1294
 msgid "Status"
-msgstr "Статус"
+msgstr "סטטוס"
 
 #: ../lib/class-tgm-plugin-activation.php:1312
 msgid "Install"
-msgstr "Установить"
+msgstr "התקן"
 
 #: ../lib/class-tgm-plugin-activation.php:1313
 msgid "Activate"
-msgstr "Активировать"
+msgstr "הפעל"
 
 #: ../lib/class-tgm-plugin-activation.php:1823
 msgid "Install package not available."
-msgstr "Пакет установки недоступен."
+msgstr "חבילת התקנה לא זמינה."
 
 #: ../lib/class-tgm-plugin-activation.php:1824
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr "Загружаем установочный пакет с <span class=\"code\">%s</span>&#8230;"
+msgstr "הורד חבילת התקנה מאת <span class=\"code\">%s</span>&#8230;"
 
 #: ../lib/class-tgm-plugin-activation.php:1825
 msgid "Unpacking the package&#8230;"
-msgstr "Распаковываем пакет&#8230;"
+msgstr "פותח את החבילה"
 
 #: ../lib/class-tgm-plugin-activation.php:1826
 msgid "Installing the plugin&#8230;"
-msgstr "Устанавливаем пакет&#8230;"
+msgstr "מתקין את הפלאגין"
 
 #: ../lib/class-tgm-plugin-activation.php:1827
 msgid "Plugin install failed."
-msgstr "Неудачная установка плагина."
+msgstr "התקנת פלאגין נכשלה."
 
 #: ../lib/class-tgm-plugin-activation.php:1828
 msgid "Plugin installed successfully."
-msgstr "Плагин установлен успешно."
+msgstr "פלאגין הותקן בהצלחה."
 
 #: ../lib/class-tgm-plugin-activation.php:1839
 msgid "Plugin activation failed."
-msgstr "Неудачная активация плагина."
+msgstr "הפעלת פלאגין נכשלה."
 
 #: ../lib/class-tgm-plugin-activation.php:1949
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
-msgstr ""
-"Процесс установки и активации начат. Этот процесс может занять "
-"продолжительное время на некоторых системах, так что проявите терпение."
+msgstr "תהליך ההתקנה וההפעלה מתחיל. התהליך יכול לקחת זמן מה..."
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr "%1$s установлен и активирован успешно."
+msgstr "%1$s הותקן והופעל בהצלחה. "
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Show Details"
-msgstr "Показать подробности"
+msgstr "הצג פרטים"
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Hide Details"
-msgstr "Скрыть подробности"
+msgstr "הסתר פרטים"
 
 #: ../lib/class-tgm-plugin-activation.php:1951
 msgid "All installations and activations have been completed."
-msgstr "Все установки и активации завершены."
+msgstr "כל ההתקנות וההפעלות הושלמו."
 
 #: ../lib/class-tgm-plugin-activation.php:1952
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Устанавливаем и активируем плагин %1$s (%2$d/%3$d)"
+msgstr "מתקין ומפעיל פלאגין %1$s (%2$d/%3$d)"
 
 #: ../lib/class-tgm-plugin-activation.php:1956
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"Процесс установки начинается. Этот процесс может занять продолжительное "
-"время на некоторых системах, так что проявите терпение."
+"תהליך ההתקנה מתחיל. זה יכול לקחת זמן מה במחשבים מאחרים מסוימים, אז אנא היה "
+"סבלני."
 
 #: ../lib/class-tgm-plugin-activation.php:1957
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "При установке %1$s возникла ошибка: <strong>%2$s</strong>."
+msgstr "קרתה תקלה בהתקנה %1$s: <strong>%2$s</strong>."
 
 #: ../lib/class-tgm-plugin-activation.php:1958
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr "Установка %1$s завершилась неудачно."
+msgstr "ההתקנה של %1$s נכשלה. "
 
 #: ../lib/class-tgm-plugin-activation.php:1959
 #, php-format
 msgid "%1$s installed successfully."
-msgstr "%1$s установлен успешно."
+msgstr "%1$s הותקן בהצלחה"
 
 #: ../lib/class-tgm-plugin-activation.php:1960
 msgid "All installations have been completed."
-msgstr "Все установки были завершены."
+msgstr "כל ההתקנות הושלמו."
 
 #: ../lib/class-tgm-plugin-activation.php:1961
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Устанавливаем плагин %1$s (%2$d/%3$d)"
+msgstr "מתקין פלאגין %1$s (%2$d/%3$d)"
 
 #: ../lib/class-tgm-plugin-activation.php:2052
 msgid "Return to the Dashboard"
-msgstr "Вернуться в консоль."
+msgstr "חזור ללוח הבקרה"
 
 #: ../lib/cleanup.php:164
 msgid "Continued"
-msgstr "Читать далее"
+msgstr "נמשך"
 
 #: ../lib/comments.php:38 ../templates/comment.php:5
 #, php-format
@@ -401,468 +397,459 @@ msgstr "%1$s"
 
 #: ../lib/comments.php:43
 msgid "| (Edit)"
-msgstr "| (Изменить)"
+msgstr "| (ערוך)"
 
 #: ../lib/comments.php:49 ../templates/comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Ваш комментарий ожидает модерации."
+msgstr "התגובה שלך ממתינה לבדיקה"
 
 #: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
-msgstr "Посмотреть вашу корзину"
+msgstr "הצג את עגלת הקניות שלך"
 
 #: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
-msgstr "Ваша корзина"
+msgstr "העגלה שלך"
 
 #: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr "Предыдущий пост"
+msgstr "פוסט קודם"
 
 #: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
-msgstr "Слеудющий пост"
+msgstr "הפוסט הבא"
 
 #: ../lib/custom.php:448
 msgid "Occupation"
-msgstr "Род занятий"
+msgstr "עיסוק"
 
 #: ../lib/custom.php:451
 msgid "Please enter your Occupation."
-msgstr "Пожалуйста укажите род ваших занятий."
+msgstr "אנא הכנס את תחום העיסוק שלך."
 
 #: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
-msgstr "Пожалуйста введите ваше имя на Twitter."
+msgstr "אנא הכנס את שם המשתמש שלך בטוויטר."
 
 #: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
-msgstr "Пожалуйста введите ваш Facebook адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך בפייסבוק. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
-msgstr ""
-"Пожалуйста введите ваш Google Plusадрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך גוגל פלוס. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
-msgstr "Пожалуйста введите ваш Flikr адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך בפליקר. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
-msgstr "Пожалуйста введите ваш Linkedin адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך בלינקדאין. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
-msgstr "Пожалуйста введите ваш Dribble адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך בדריבל. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
-msgstr ""
-"Пожалуйста введите ваш Pinterest адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך בפינטרסט. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
-msgstr ""
-"Пожалуйста введите ваш Instagram адрес. (обязательно включайте http://)"
+msgstr "אנא הכנס את שורת הכתובת שלך באינסטגרם. (וודא שהכתובת כוללת http://)"
 
 #: ../lib/gallery_metabox.php:8
 msgid "Post Slider Images"
-msgstr "Разместить изображения слайдера"
+msgstr "פרסם תמונות סליידר"
 
 #: ../lib/gallery_metabox.php:9
 msgid "Portfolio Slider Images"
-msgstr "Изображения для слайдера портфолио"
+msgstr "תמונות של סליידר פורטפוליו"
 
 #: ../lib/gallery_metabox.php:10
 msgid "Feature Page Slider Images"
-msgstr "Изображения для слайдера страницы описания"
+msgstr "תמונות של סליידר דף פיצ'ר"
 
 #: ../lib/gallery_metabox.php:26 ../lib/gallery_metabox.php:91
 msgid "Remove image"
-msgstr "Удалить изображение"
+msgstr "הסר תמונה"
 
 #: ../lib/gallery_metabox.php:37
 msgid "Add images"
-msgstr "Добавить изображения"
+msgstr "הוסף תמונות"
 
 #: ../lib/gallery_metabox.php:66
 msgid "Add Images to Gallery"
-msgstr "Добавить изображения в галерею"
+msgstr "הוסף תמונות לגלריה"
 
 #: ../lib/gallery_metabox.php:68
 msgid "Add to gallery"
-msgstr "Добавить в галерею"
+msgstr "הוסף לגלריה"
 
 #: ../lib/init.php:9
 msgid "Primary Navigation"
-msgstr "Основная навигация"
+msgstr "תפריט ניווט ראשי"
 
 #: ../lib/init.php:10
 msgid "Secondary Navigation"
-msgstr "Дополнительная навигация"
+msgstr "תפריט ניווט משני"
 
 #: ../lib/init.php:11
 msgid "Mobile Navigation"
-msgstr "Мобильная навигация"
+msgstr "תפריט ניווט סלולרי"
 
 #: ../lib/init.php:12
 msgid "Topbar Navigation"
-msgstr "Навигация для чердака"
+msgstr "תפריט ניווט עליון"
 
 #: ../lib/init.php:13
 msgid "Footer Navigation"
-msgstr "Навигация для подвала"
+msgstr "תפריט ניווט תחתון"
 
 #: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
 #: ../themeoptions/inc/fields/border/field_border.php:113
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
-msgstr "Все"
+msgstr "הכל"
 
 #: ../lib/metaboxes.php:36
 msgid "All Blog Posts"
-msgstr "Все поста блога"
+msgstr "כל הפוסטים בבלוג"
 
 #: ../lib/metaboxes.php:68
 msgid "Page Title and Subtitle"
-msgstr "Заголовок и подзаголовок страницы"
+msgstr "כותרת ראשית ומשנית לדף"
 
 #: ../lib/metaboxes.php:75
 msgid "Subtitle"
-msgstr "Подзаголовок"
+msgstr "כותרת משנית"
 
 #: ../lib/metaboxes.php:76
 msgid "Subtitle will go below page title"
-msgstr "Подзаголовок, размещаемый под заголовком страницы"
+msgstr "כותרת משנית תופיע מתחת לכותרת הראשית בדף"
 
 #: ../lib/metaboxes.php:85
 msgid "Post Options"
-msgstr "Опции поста"
+msgstr "אפשרויות פוסט"
 
 #: ../lib/metaboxes.php:93
 msgid "Head Content"
-msgstr "Содержимое заголовка страницы"
+msgstr "תוכן ראשי"
 
 #: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
 #: ../themeoptions/framework.php:1897
 msgid "Default"
-msgstr "По умолчанию"
+msgstr "ברירת מחדל"
 
 #: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
 #: ../themeoptions/options.php:1764
 msgid "None"
-msgstr "Никакие"
+msgstr "כלום"
 
 #: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
 #: ../themeoptions/options.php:1764
 msgid "Image Slider"
-msgstr "Слайдер изображений"
+msgstr "סליידר תמונות"
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
 #: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
 msgid "Video"
-msgstr "Видео"
+msgstr "וידאו"
 
 #: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
 #: ../lib/widgets.php:794 ../themeoptions/options.php:1764
 msgid "Image"
-msgstr "Изображение"
+msgstr "תמונה"
 
 #: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
 msgid "Max Image/Slider Height"
-msgstr "Максимальная высота Изображения/Слайдера"
+msgstr "גודל תמונה/סליידר מקסימלי"
 
 #: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
-msgstr ""
-"По умолчанию: 400 <b>(Внимание, просто введите значение, например: 350)</b>"
+msgstr "ברירת מחדל היא: 400 <b>(שים לב: פשוט הקש מספר, לדוגמא: 350)</b>"
 
 #: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
 msgid "Max Image/Slider Width"
-msgstr "Максимальная ширина Изображения/Слайдера"
+msgstr "רוחב תמונה/סליידר מקסימלי"
 
 #: ../lib/metaboxes.php:113
-#, fuzzy
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
-"По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
-"введите значение, например: 650, не применяется для слайдера карусели)</b>"
+"ברירת מחדל היא: 770 או 1140 על פוסטים ברוחב מלא <b>(שים לב: פשוט הקש מספר, "
+"לדוגמא: 650ת לא תקף לסליידר קרוסלה)</b>"
 
 #: ../lib/metaboxes.php:118
 msgid "Post Summary"
-msgstr "Разместить краткое содержание"
+msgstr "תקציר פוסט"
 
 #: ../lib/metaboxes.php:124 ../lib/widgets.php:800
 msgid "Text"
-msgstr "Текст"
+msgstr "טקסט"
 
 #: ../lib/metaboxes.php:125
 msgid "Portrait Image"
-msgstr "Портретное изображение"
+msgstr "תמונת אנכית"
 
 #: ../lib/metaboxes.php:126
 msgid "Landscape Image"
-msgstr "Пейзажное изображение"
+msgstr "תמונה אופקית"
 
 #: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
-msgstr "Сладер портретных изображений"
+msgstr "סליידר תמונה אנכית"
 
 #: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
-msgstr "Слайдер пейзажных изображений"
+msgstr "סליידר תמונה אופקית"
 
 #: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
-msgstr "Показать боковую панель?"
+msgstr "הצג סרגל צדדי"
 
 #: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
-msgstr "Укажите, тип страницы: во всю ширину или с боковой панелью"
+msgstr "בחר עיצוב ברוחב מלא או עם סרגל צדדי"
 
 #: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
 #: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
 #: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
-msgstr "Да"
+msgstr "כן"
 
 #: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
 #: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
 #: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
 #: ../lib/metaboxes.php:584
 msgid "No"
-msgstr "Нет"
+msgstr "לא"
 
 #: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
-msgstr "Выберите боковую панель"
+msgstr "בחר סרגל צדדי"
 
 #: ../lib/metaboxes.php:149
 msgid "Author Info"
-msgstr "Информация об авторе"
+msgstr "מידע על הכותב"
 
 #: ../lib/metaboxes.php:150
 msgid "Display an author info box?"
-msgstr "Отображать информацию об авторе?"
+msgstr "הצג תיבת מידע על הכותב?"
 
 #: ../lib/metaboxes.php:159
 msgid "Posts Carousel"
-msgstr "Карусель постов"
+msgstr "קרוסלת פוסטים"
 
 #: ../lib/metaboxes.php:160
 msgid "Display a carousel with similar or recent posts?"
-msgstr "Отображать карусель похожих или недавних постов?"
+msgstr "הצג קרוסלה עם פוסטים דומים או אחרונים?"
 
 #: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
-msgstr "Да - отображать недавние посты"
+msgstr "כן - הצג פוסטים אחרונים"
 
 #: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
-msgstr "Да - отображать похожие посты"
+msgstr "כן - הצג פוסטים דומים"
 
 #: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
-msgstr "Заголовок карусели"
+msgstr "כותרת קרוסלה"
 
 #: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
-msgstr "например, Похожие посты"
+msgstr "לדוגמא, פוסטים דומים"
 
 #: ../lib/metaboxes.php:180
 msgid "Post Video Box"
-msgstr "Разместить видео-пост"
+msgstr "תיבת פוסט וידאו"
 
 #: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
-msgstr "Если видео-пост"
+msgstr "אם וידאו פוסט"
 
 #: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
-msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
+msgstr "הכנס קוד הטמעה כאן, עובד עם Youtube, Vimeo..."
 
 #: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
-msgstr "Опции поста портфолио"
+msgstr "אפשרויות פוסט של פורטפוליו"
 
 #: ../lib/metaboxes.php:205
 msgid "Project Layout"
-msgstr "Формат проекта"
+msgstr "מתאר הפרוייקט"
 
 #: ../lib/metaboxes.php:210
 msgid "Beside"
-msgstr "Рядом"
+msgstr "ליד"
 
 #: ../lib/metaboxes.php:211
 msgid "Above"
-msgstr "Сверху"
+msgstr "מעל"
 
 #: ../lib/metaboxes.php:212
 msgid "Three Rows"
-msgstr "Три ряда"
+msgstr "3 שורות"
 
 #: ../lib/metaboxes.php:216
 msgid "Project Options"
-msgstr "Опции проекта"
+msgstr "אפשרויות פרויקט"
 
 #: ../lib/metaboxes.php:223
-#, fuzzy
 msgid "Carousel Slider"
-msgstr "Заголовок карусели"
+msgstr "סליידר קרוסלה"
 
 #: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
-msgstr ""
-"По умолчанию: 450 <b>(Внимание, просто введите значение, например: 350)</b>"
+msgstr "ברירת המחדל היא 450: <b>(שים לב: פשוט הכנס מספר, לדוגמא: 350)</b>"
 
 #: ../lib/metaboxes.php:236
-#, fuzzy
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
 msgstr ""
-"По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> форматах  "
-"<b>(Внимание, просто введите значение, например: 650)</b>"
+"ברירת המחדל היא: 640 או 1140 על <b>מעל</b> או <b>שלוש שורות</b>מתארים (שים "
+"לב: פשוט הכנס מספר, לדוגמא: 650)</b>"
 
 #: ../lib/metaboxes.php:241
-#, fuzzy
 msgid "Auto Play Slider?"
-msgstr "Автозапуск?"
+msgstr "הפעל אוטומטית סליידר?"
 
 #: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
-msgstr "Название параметра 01"
+msgstr "כותרת ערך 01"
 
 #: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
-msgstr "например: Тип проекта:"
+msgstr "לדוגמא, סוג פרוייקט:"
 
 #: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
-msgstr "Описание параметра 01"
+msgstr "תיאור ערך 01"
 
 #: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
-msgstr "например, Описание иллюстрации"
+msgstr "לדוגמא, איור תו"
 
 #: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
-msgstr "Название параметра 02"
+msgstr "כותרת ערך 2"
 
 #: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
-msgstr "например, требуемые навыки:"
+msgstr "לדוגמא, כישורים נדרשים:"
 
 #: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
-msgstr "Описание параметра 02"
+msgstr "תיאור ערך 2"
 
 #: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
-msgstr "например, Фотошоп, Иллюстратор"
+msgstr "לדוגמא Photoshop, Illustrator"
 
 #: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
-msgstr "Название параметра 03"
+msgstr "כותרת ערך 03"
 
 #: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
-msgstr "например, Клиент:"
+msgstr "לדוגמא, לקוח:"
 
 #: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
-msgstr "Описание параметра 03"
+msgstr "תיאור ערך 03:"
 
 #: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
-msgstr "например, Ромашка Инкорпорейтед"
+msgstr "לדוגמא, חברת דוגמא בע\"מ"
 
 #: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
-msgstr "Название параметра 04"
+msgstr "כותרת ערך 04"
 
 #: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
-msgstr "например, Год проекта:"
+msgstr "לדוגמא, שנת פרויקט:"
 
 #: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
-msgstr "Описание параметра 04"
+msgstr "תיאור ערך 04"
 
 #: ../lib/metaboxes.php:294
 msgid "ex. 2013"
-msgstr "например, 2013"
+msgstr "לדוגמא, 2013"
 
 #: ../lib/metaboxes.php:299
 msgid "External Website"
-msgstr "Внешний сайт"
+msgstr "אתר חיצוני"
 
 #: ../lib/metaboxes.php:300
 msgid "ex. Website:"
-msgstr "например, Сайт:"
+msgstr "לדוגמא, שם אתר:"
 
 #: ../lib/metaboxes.php:305
 msgid "Website Address"
-msgstr "Адрес сайта"
+msgstr "כתובת אתר"
 
 #: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
-msgstr "например, https://www.ромашка.рф"
+msgstr "לדוגמא, http://www.example.com"
 
 #: ../lib/metaboxes.php:311
 msgid "If Video Project"
-msgstr "Если видео-проект"
+msgstr "אם פרויקט וידאו"
 
 #: ../lib/metaboxes.php:317
 msgid "Similar Portfolio Item Carousel"
-msgstr "Карусель похожих элементов портфолио"
+msgstr "קרוסלת פריט פורטפוליו דומה"
 
 #: ../lib/metaboxes.php:318
 msgid "Display a carousel with similar portfolio items below project?"
-msgstr "Отображать карусель с подобными элементами портфолио под проектом?"
+msgstr "הצג קרוסלה עם פריטי פורטפוליו דומים מתחת לפרויקט?"
 
 #: ../lib/metaboxes.php:323
 msgid "Yes - Display Recent Projects"
-msgstr "Да - отображать недавние проекты"
+msgstr "כן - הצג פרויקטים אחרונים"
 
 #: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
-msgstr "например, Подобные проекты"
+msgstr "לדוגמא, פרויקטים דומים"
 
 #: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
-msgstr "Опции страницы Портфолио"
+msgstr "אפשרויות דף פורטפוליו"
 
 #: ../lib/metaboxes.php:346
 msgid "Columns"
-msgstr "Колонки"
+msgstr "טורים"
 
 #: ../lib/metaboxes.php:351
 msgid "Four Column"
-msgstr "Четыре колонки"
+msgstr "ארבעה טורים"
 
 #: ../lib/metaboxes.php:352
 msgid "Three Column"
-msgstr "Три колонки"
+msgstr "שלושה טורים"
 
 #: ../lib/metaboxes.php:353
 msgid "Two Column"
-msgstr "Две колонки"
+msgstr "שני טורים"
 
 #: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
-msgstr "Виды работ портфолио"
+msgstr "סוגי עבודה בפורטפוליו"
 
 #: ../lib/metaboxes.php:364
 msgid "Order Items By"
-msgstr "Сортировать элементы по"
+msgstr "סדר פריטים לפי"
 
 #: ../lib/metaboxes.php:369
 msgid "Menu Order"
-msgstr "Порядок меню"
+msgstr "סדר תפריט"
 
 #: ../lib/metaboxes.php:370
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
@@ -872,265 +859,257 @@ msgstr "Порядок меню"
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
 #: ../themeoptions/inc/fields/slides/field_slides.php:197
 msgid "Title"
-msgstr "Заголовок"
+msgstr "כותרת"
 
 #: ../lib/metaboxes.php:371
 msgid "Date"
-msgstr "Дата"
+msgstr "תאריך"
 
 #: ../lib/metaboxes.php:372
 msgid "Random"
-msgstr "Случайно"
+msgstr "אקראי"
 
 #: ../lib/metaboxes.php:376
 msgid "Items per Page"
-msgstr "Элементов на страницу"
+msgstr "פריטים לפי דף"
 
 #: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
-msgstr "Количество элементов портфолио на одной странице"
+msgstr "כמה פריטי פורטפוליו לכל דף"
 
 #: ../lib/metaboxes.php:399
 msgid "Set image height"
-msgstr "Установить высоту изображения"
+msgstr "הכנס גובה תמונה"
 
 #: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
-msgstr ""
-"По умолчанию соотношение 1:1  <b>(Внимание, просто введите значение, "
-"например: 350)</b>"
+msgstr "ברירת מחדל היא יחס 1:1 <b>(שים לב: פשוט הכנס מספר, לדוגמא:350)</b>"
 
 #: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
-msgstr "Отображать виды работ элемента"
+msgstr "הצג סוגי עבודה של פריטים"
 
 #: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
-msgstr "Отображать выдержки описания элемента"
+msgstr "הצג תקציר פריט"
 
 #: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
-msgstr ""
+msgstr "הוסף קישור Lightbox בחלק הימני העליון של כל פריט"
 
 #: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
-msgstr "Опции страницы свойств"
+msgstr "אפשרויות דף פיצ'ר"
 
 #: ../lib/metaboxes.php:443
 msgid "Feature Options"
-msgstr "Опции свойства"
+msgstr "אפשרויות פיצ'ר"
 
 #: ../lib/metaboxes.php:444
-#, fuzzy
 msgid "If image slider make sure images uploaded are at least 1140px wide."
-msgstr ""
-"Если собираетесь загрузить изображения для слайдера, убедитесь, что их "
-"ширина как минимум 1170 пикселей."
+msgstr "אם סליידר תמונות וודא שתמונות מועלות הן לפחות ברוחב 1140px."
 
 #: ../lib/metaboxes.php:461
-#, fuzzy
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
 msgstr ""
-"По умолчанию: 1170  <b>(Внимание, просто введите значение, например: 350, не "
-"применяется для карусельного слайдера)</b>"
+"ברירת המחדל היא: 1140 <b>(שים לב: פשוט הכנס מספר, לדוגמא: 650, לא תקף "
+"לסליידר קרוסלה)</b>"
 
 #: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
-msgstr "Использовать лайтбокс для изображений особенностей"
+msgstr "השתמש בLightbox עבור תמונת פיצ'ר"
 
 #: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
-msgstr ""
-"Если опция фичи установлена в изображение, выберите использовать лайтбокс с "
-"изображением."
+msgstr "אם אפשרות פיצ'ר מוגדרת כתמונה, בחר להשתמש בקישור Lightbox עם התמונה."
 
 #: ../lib/metaboxes.php:485
 msgid "Blog List Options"
-msgstr "Опции списка блогов"
+msgstr "אפשרויות רשימת בלוג"
 
 #: ../lib/metaboxes.php:494
 msgid "Blog Category"
-msgstr "Категория блога"
+msgstr "קטגורית בלוג"
 
 #: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
-msgstr "Выберите все посты или категорию постов для отображения"
+msgstr "בחר את כל הפוסטים של הבלוג או קטגוריה ספציפית להצגה"
 
 #: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
-msgstr "Количество постов на странице"
+msgstr "כמה פוסטים לדף"
 
 #: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
-msgstr "Отобразить содержимое поста как:"
+msgstr "הצג תוכן פוסט בתור:"
 
 #: ../lib/metaboxes.php:530
 msgid "Summary"
-msgstr "Краткое содержание:"
+msgstr "תקציר"
 
 #: ../lib/metaboxes.php:531
 msgid "Full"
-msgstr "Полностью:"
+msgstr "מלא"
 
 #: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
-msgstr "Страница опций контактов"
+msgstr "אפשרויות דף יצירת קשר"
 
 #: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
-msgstr "Использовать контактную форму"
+msgstr "השתמש בדף יצירת קשר"
 
 #: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
-msgstr "Заголовок контактной формы"
+msgstr "כותרת טופס יצירת קשר"
 
 #: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
-msgstr "например, Отправьте нам сообщение по электронной почте"
+msgstr "לדוגמא, שלח לנו אימייל"
 
 #: ../lib/metaboxes.php:579
 msgid "Use Map"
-msgstr "Использовать карту"
+msgstr "השתמש במפה"
 
 #: ../lib/metaboxes.php:589
 msgid "Address"
-msgstr "Адрес"
+msgstr "כתובת"
 
 #: ../lib/metaboxes.php:590
 msgid "Enter your Location"
-msgstr "Введите ваше местоположение"
+msgstr "הכנס את מיקומך"
 
 #: ../lib/metaboxes.php:595
 msgid "Map Type"
-msgstr "Тип карты"
+msgstr "סוג מפה"
 
 #: ../lib/metaboxes.php:600
 msgid "ROADMAP"
-msgstr "ДОРОГИ"
+msgstr "מפת דרכים"
 
 #: ../lib/metaboxes.php:601
 msgid "HYBRID"
-msgstr "ГИБРИД"
+msgstr "היברידי"
 
 #: ../lib/metaboxes.php:602
 msgid "TERRAIN"
-msgstr "МЕСТНОСТЬ"
+msgstr "פני השטח"
 
 #: ../lib/metaboxes.php:603
 msgid "SATELLITE"
-msgstr "СПУТНИК"
+msgstr "לויין"
 
 #: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
-msgstr "Vfcinf,"
+msgstr "רמת זום למפה"
 
 #: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
-msgstr "Наболее подходящий начальный масштаб 15"
+msgstr "מקום טוב להתחיל הוא 15"
 
 #: ../lib/metaboxes.php:613
 msgid "1 (World View)"
-msgstr "1 (Вид карты мира)"
+msgstr "1 (תצוגה מנקודת מבט עולם)"
 
 #: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
-msgstr "21 (Вид улиц)"
+msgstr "21 (תצוגה מנקודת מבט רחוב)"
 
 #: ../lib/metaboxes.php:637
 msgid "Map Height"
-msgstr "Высота карты"
+msgstr "גובה מפה"
 
 #: ../lib/metaboxes.php:638
 msgid "Default is 300"
-msgstr "По умолчанию 300"
+msgstr "ברירת מחדל היא 300"
 
 #: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
-msgstr "Опции боковой панели"
+msgstr "אפשרויות סרגל צדדי"
 
 #: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
-msgstr ""
+msgstr "מצטערים, אין מוצרים שתואמים את בחירתך. אנא בחר צירוף אחר."
 
 #: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
-msgstr ""
+msgstr "מצטערים, המוצר אינו זמין, אנא בחר צירוף אחר."
 
 #: ../lib/utils.php:69
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Архивы за день: %s"
+msgstr "ארכיון יומי: %s"
 
 #: ../lib/utils.php:71
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Архивы за месяц: %s"
+msgstr "ארכיון חודשי: %s"
 
 #: ../lib/utils.php:73
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Годовые архива: %s"
+msgstr "ארכיון שנתי: %s"
 
 #: ../lib/utils.php:75
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Архивы автора: %s"
+msgstr "ארכיון כותב: %s"
 
 #: ../lib/utils.php:81
 #, php-format
 msgid "Search Results for %s"
-msgstr "Результаты поиска по запросу %s"
+msgstr "תוצאות חיפוש עבור %s"
 
 #: ../lib/utils.php:84
 msgid "Not Found"
-msgstr "Не найдено"
+msgstr "לא נמצא"
 
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
-msgstr "Что-то пошло не так с API плагина."
+msgstr "משהו השתבש עם הAPI של הפלאגין."
 
 #: ../lib/virtuetoolkit-activate.php:50
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr "Все плагины установлены и активированы успешно. %s"
+msgstr "כל הפלאגינים הותקנו והופעלו בהצלחה. %s"
 
 #: ../lib/widgets.php:6 ../lib/widgets.php:59
 msgid "Primary Sidebar"
-msgstr "Основная боковая панель"
+msgstr "סרגל צדדי ראשי"
 
 #: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
-msgstr "Виджеты чердака"
+msgstr "ווידג'ט חלק עליון"
 
 #: ../lib/widgets.php:71 ../lib/widgets.php:112 ../lib/widgets.php:143
 msgid "Footer Column 1"
-msgstr "Столбец подвала 1"
+msgstr "טור חלק תחתון מספר 1"
 
 #: ../lib/widgets.php:81 ../lib/widgets.php:122 ../lib/widgets.php:153
 msgid "Footer Column 2"
-msgstr "Столбец подвала 2"
+msgstr "טור חלק תחתון מספר 2"
 
 #: ../lib/widgets.php:91 ../lib/widgets.php:132
 msgid "Footer Column 3"
-msgstr "Столбец подвала 3"
+msgstr "טור חלק תחתון מספר 3"
 
 #: ../lib/widgets.php:101
 msgid "Footer Column 4"
-msgstr "Столбец подвала 4"
+msgstr "טור חלק תחתון מספר 4"
 
 #: ../lib/widgets.php:177
 msgid "Use this widget to add a Vcard to your site"
-msgstr "Используйте это виджет для добавления VCard на ваш сайт"
+msgstr "השתמש בווידג'ט כדי להוסיף Vcard לאתר שלך"
 
 #: ../lib/widgets.php:178
 msgid "Virtue: Contact/Vcard"
-msgstr "Virtue: Кнтакт/Vcard"
+msgstr "Virtue: צור קשר/Vcard"
 
 #: ../lib/widgets.php:205
 msgid "vCard"
@@ -1139,63 +1118,63 @@ msgstr "vCard"
 #: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
 #: ../lib/widgets.php:735
 msgid "Title:"
-msgstr "Заголовок:"
+msgstr "כותרת:"
 
 #: ../lib/widgets.php:281
 msgid "Company Name:"
-msgstr "Название компании:"
+msgstr "שם חברה:"
 
 #: ../lib/widgets.php:289
 msgid "Street Address:"
-msgstr "Адрес:"
+msgstr "כתובת רחוב:"
 
 #: ../lib/widgets.php:293
 msgid "City/Locality:"
-msgstr "Город:"
+msgstr "עיר/מיקום:"
 
 #: ../lib/widgets.php:297
 msgid "State/Region:"
-msgstr "Область/Регион:"
+msgstr "מדינה/אזור:"
 
 #: ../lib/widgets.php:301
 msgid "Zipcode/Postal Code:"
-msgstr "Почтовый индекс:"
+msgstr "מיקוד:"
 
 #: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:110
 msgid "Telephone:"
-msgstr "Телефон:"
+msgstr "טלפון:"
 
 #: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
 msgid "Email:"
-msgstr "Адрес эл.почты:"
+msgstr "אימייל:"
 
 #: ../lib/widgets.php:320
 msgid "Simple way to add Social Icons"
-msgstr "Простой способ добавить иконки соцсетей:"
+msgstr "דרך פשוטה להוסיף אייקונים חברתיים"
 
 #: ../lib/widgets.php:321
 msgid "Virtue: Social Links"
-msgstr "Virtue: Ссылки соцсетей"
+msgstr "Virtue: לינקים חברתיים"
 
 #: ../lib/widgets.php:444
 msgid "Facebook:"
-msgstr "Facebook:"
+msgstr "פייסבוק:"
 
 #: ../lib/widgets.php:448
 msgid "Twitter:"
-msgstr "Twitter:"
+msgstr "טוויטר:"
 
 #: ../lib/widgets.php:452
 msgid "Instagram:"
-msgstr "Instagram:"
+msgstr "אינסטגרם:"
 
 #: ../lib/widgets.php:456
 msgid "GooglePlus:"
-msgstr "GooglePlus:"
+msgstr "גוגל פלוס:"
 
 #: ../lib/widgets.php:460
 msgid "Flickr:"
-msgstr "Flickr:"
+msgstr "פליקר:"
 
 #: ../lib/widgets.php:464
 msgid "Vimeo:"
@@ -1203,27 +1182,27 @@ msgstr "Vimeo:"
 
 #: ../lib/widgets.php:468
 msgid "Youtube:"
-msgstr "Youtube:"
+msgstr "יוטיוב:"
 
 #: ../lib/widgets.php:472
 msgid "Pinterest:"
-msgstr "Pinterest:"
+msgstr "פינטרסט:"
 
 #: ../lib/widgets.php:476
 msgid "Dribbble:"
-msgstr "Dribbble:"
+msgstr "דריבל:"
 
 #: ../lib/widgets.php:480
 msgid "Linkedin:"
-msgstr "Linkedin:"
+msgstr "לינקדאין:"
 
 #: ../lib/widgets.php:484
 msgid "Tumblr:"
-msgstr ""
+msgstr "טאמבלר:"
 
 #: ../lib/widgets.php:488
 msgid "VK:"
-msgstr ""
+msgstr "VK:"
 
 #: ../lib/widgets.php:492
 msgid "RSS:"
@@ -1231,69 +1210,69 @@ msgstr "RSS:"
 
 #: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
-msgstr "Показывает наиболее свежие поста на вашем сайте с миниатюрой"
+msgstr "זה מציג את הפוסטים הכי עדכניים על האתר שלך עם תמונה ממוזערת"
 
 #: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
-msgstr "Virtue: свежие посты"
+msgstr "Virtue: פוסטים אחרונים"
 
 #: ../lib/widgets.php:532
 msgid "Recent Posts"
-msgstr "Свежие посты"
+msgstr "פוסטים אחרונים"
 
 #: ../lib/widgets.php:600
 msgid "Number of posts to show:"
-msgstr "Количество отображаемых постов:"
+msgstr "מספר פוסטים להצגה:"
 
 #: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
-msgstr "Ограничить категорией (опция):"
+msgstr "הגבל לקטגוריה (אופציונלי):"
 
 #: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
-"Это создаст таблицу изображений из свежих постов или элементов портфолио"
+"זה מציג תצוגת רשת של תמונות מפורסמות מתוך פוסטים אחרונים או פריטי פורטפוליו"
 
 #: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
-msgstr "Virtue: таблица изображений"
+msgstr "Virtue: תצוגת רשת תמונות"
 
 #: ../lib/widgets.php:640
 msgid "Post Gallery"
-msgstr "Галерея постов"
+msgstr "גלרית פוסטים"
 
 #: ../lib/widgets.php:738
 msgid "Grid Choice:"
-msgstr "Выбор таблицы:"
+msgstr "בחירת רשת תצוגה:"
 
 #: ../lib/widgets.php:740
 msgid "Blog Posts"
-msgstr "Записи блога"
+msgstr "פוסטים של הבלוג"
 
 #: ../lib/widgets.php:741
 msgid "Portfolio"
-msgstr "Порфолио"
+msgstr "פורטפוליו"
 
 #: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
-msgstr "Если пост - выберите категорию (опция):"
+msgstr "אם פוסט - בחר קטגוריה (אופציונלי):"
 
 #: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
-msgstr "Если портфолио - выберите тип (опция):"
+msgstr "אם פורטפוליו - בחר סוג (אופציונלי):"
 
 #: ../lib/widgets.php:750
 msgid "Number of images to show:"
-msgstr "Количество отображаемых изображений:"
+msgstr "מספר תמונות להצגה:"
 
 #: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
-msgstr "Позволяет разместить изображение и краткое текстовое описание."
+msgstr "זה מאפשר תמונה ותיאור טקסט פשוט"
 
 #: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
-msgstr "Virtue: О себе с изображением"
+msgstr "Virtue: אודות עם תמונה"
 
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
@@ -1303,43 +1282,40 @@ msgstr "Virtue: О себе с изображением"
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
-msgstr "Загрузить"
+msgstr "העלה"
 
 #: ../lib/cmb/init.php:243
 msgid "Clear"
-msgstr ""
+msgstr "נקה"
 
 #: ../lib/cmb/init.php:245
-#, fuzzy
 msgid "Select Color"
-msgstr "Выбрать варианты"
+msgstr "בחר צבע"
 
 #: ../lib/cmb/init.php:246
-#, fuzzy
 msgid "Current Color"
-msgstr "Основной цвет"
+msgstr "צבע נוכחי"
 
 #: ../lib/cmb/init.php:1185
 msgid "Save"
-msgstr "Сохранить"
+msgstr "שמור"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
-msgstr "Пожалуйста, повторите попытку"
+msgstr "אנא נסה שוב"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
-msgstr "Удалить Embed(?)"
+msgstr "הסר הטמעה"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
-msgstr "Результаты oEmbed не найдены %s. Посмотреть боле информации на"
+msgstr "לא נמצאו תוצאות oEmbed עבור %s. הצג מידע נוסף ב"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
-#, fuzzy
 msgid "Add Row"
-msgstr "Добавить отзыв"
+msgstr "הוסף שורה"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
@@ -1356,80 +1332,78 @@ msgstr "Добавить отзыв"
 #: ../themeoptions/inc/fields/slides/field_slides.php:128
 #: ../themeoptions/inc/fields/slides/field_slides.php:192
 msgid "Remove"
-msgstr "Удалить"
+msgstr "הסר"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
 msgid "Add or Upload File"
-msgstr ""
+msgstr "הוסף או העלה קובץ"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
-#, fuzzy
 msgid "Remove Image"
-msgstr "Удалить изображение"
+msgstr "הסר תמונה"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 msgid "File:"
-msgstr ""
+msgstr "קובץ:"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Download"
-msgstr "Выгрузить"
+msgstr "הורד"
 
 #: ../templates/comment.php:7
 msgid "(Edit)"
-msgstr "(Редактировать)"
+msgstr "(ערוך)"
 
 #: ../templates/comments.php:8
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
-msgstr[0] "Один ответ"
-msgstr[1] "%1$s ответов"
+msgstr[0] "תגובה אחת"
+msgstr[1] "%1$s תגובות"
 
 #: ../templates/comments.php:18
 msgid "&larr; Older comments"
-msgstr "&larr; Более старые комментарии"
+msgstr "&larr; תגובות קודמות"
 
 #: ../templates/comments.php:21
 msgid "Newer comments &rarr;"
-msgstr "Более свежие комментарии &rarr; "
+msgstr "תגובות חדשות יותר &rarr;"
 
 #: ../templates/comments.php:31 ../templates/comments.php:43
 msgid "Comments are closed."
-msgstr "Добавление комментариев закрыто."
+msgstr "תגובות סגורות."
 
 #: ../templates/comments.php:54
 msgid "Leave a Reply"
-msgstr "Оставить ответ"
+msgstr "השאר תגובה"
 
 #: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Оставить ответ на %s"
+msgstr "השאר תגובה ל %s"
 
 #: ../templates/comments.php:57
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-"Вы должны быть <a href=\"%s\">авторизованы</a> чтобы оставлять комментарии."
+msgstr "אתה חייב להיות <a href=\"%s\">מחובר</a> כדי להגיב."
 
 #: ../templates/comments.php:62
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr "Авторизован как <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "התחבר כ- <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
 #: ../templates/comments.php:63
 msgid "Log out of this account"
-msgstr "Выйти из этой учетной записи"
+msgstr "צא מחשבון זה"
 
 #: ../templates/comments.php:63
 msgid "Log out &raquo;"
-msgstr "Выйти &raquo;"
+msgstr "התנתק &raquo;"
 
 #: ../templates/comments.php:68 ../templates/comments.php:72
 msgid " <span>*</span>"
@@ -1437,66 +1411,66 @@ msgstr " <span>*</span>"
 
 #: ../templates/comments.php:72
 msgid "Email (will not be published)"
-msgstr "Эл.почта (не публикуется)"
+msgstr "אימייל (לא יפורסם)"
 
 #: ../templates/comments.php:76
 msgid "Website"
-msgstr "Сайт"
+msgstr "אתר"
 
 #: ../templates/comments.php:81
 msgid "Comment"
-msgstr "Коментарий"
+msgstr "תגובה"
 
 #: ../templates/comments.php:83
 msgid "Submit Comment"
-msgstr "Добавить комментарий"
+msgstr "שלח תגובה"
 
 #: ../templates/content-fullpost.php:78
 #: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
 #: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
-msgstr "Страницы:"
+msgstr "דפים:"
 
 #: ../templates/entry-meta-subhead.php:3
 msgid "by"
-msgstr "кем"
+msgstr "על ידי"
 
 #: ../templates/entry-meta-subhead.php:6
 msgid "posted in:"
-msgstr "размещено в:"
+msgstr "פורסם ב:"
 
 #: ../templates/entry-meta.php:2
 msgid "By"
-msgstr "Кем"
+msgstr "על ידי"
 
 #: ../templates/header.php:81
 msgid "Menu"
-msgstr "Меню"
+msgstr "תפריט"
 
 #: ../templates/recentportfolio-carousel.php:2
 msgid "Recent Projects"
-msgstr "Свежие проекты"
+msgstr "פרויקטים אחרונים"
 
 #: ../templates/similarblog-carousel.php:2
 msgid "Similar Posts"
-msgstr "Подобные посты"
+msgstr "פוסטים דומים"
 
 #: ../templates/home/blog-home.php:3
 msgid "Latest from the Blog"
-msgstr "Самое новое из блога"
+msgstr "לאחרונה מהבלוג"
 
 #: ../templates/home/blog-home.php:74
 msgid "READ MORE"
-msgstr "Читать далее"
+msgstr "קרא עוד"
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
-msgstr "Избранные проекты"
+msgstr "פרויקטים מפורסמים"
 
 #: ../themeoptions/framework.php:203
-#, fuzzy, php-format
+#, php-format
 msgid "Options panel created using %1$s"
-msgstr "Панель опций создана с использованием"
+msgstr "לוח בקרת אפשרויות נוצר באמצעות %1$s"
 
 #: ../themeoptions/framework.php:203
 msgid "Redux Framework"
@@ -1505,31 +1479,25 @@ msgstr "Redux Framework"
 #: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
 #: ../themeoptions/framework.php:1262
 msgid "Options"
-msgstr "Опции"
+msgstr "אפשרויות"
 
 #: ../themeoptions/framework.php:489
 msgid "Dismiss"
-msgstr ""
+msgstr "סגור"
 
 #: ../themeoptions/framework.php:1648
 #: ../themeoptions/extensions/customizer/extension_customizer.php:408
 msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
+msgstr "יש לך שינויים שאינם שמורים. האם תרצה לשמור אותם כעת?"
 
 #: ../themeoptions/framework.php:1649
 #: ../themeoptions/extensions/customizer/extension_customizer.php:409
-#, fuzzy
 msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
-"значений."
+msgstr "האם אתה בטוח? אתחול מחדש יגרום לאובדן כל הערכים שהותאמו אישית."
 
 #: ../themeoptions/framework.php:1650
-#, fuzzy
 msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
-"значений."
+msgstr "האם אתה בטוח? אתחול מחדש יגרום לאובדן כל הערכים שהותאמו אישית בחלק זה."
 
 #: ../themeoptions/framework.php:1651
 #: ../themeoptions/extensions/customizer/extension_customizer.php:410
@@ -1537,1135 +1505,1081 @@ msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
-"Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+"האפשרויות הנוכחיות שלך יוחלפו עם הערכים של שנקבעו מראש בPreset הזה. האם תרצה "
+"להמשיך?"
 
 #: ../themeoptions/framework.php:1652
-#, fuzzy
 msgid "Please Wait"
-msgstr "Пожалуйста, повторите попытку"
+msgstr "אנא המתן"
 
 #: ../themeoptions/framework.php:1788
 msgid "Hints"
-msgstr ""
+msgstr "רמזים"
 
 #: ../themeoptions/framework.php:1789
 msgid "<p>"
-msgstr ""
+msgstr "<p>"
 
 #: ../themeoptions/framework.php:2631
 msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Внимание! Эта панель настроек не будет работать корректно без подключенного "
-"JavaScript!"
+msgstr "אזהרה- לוח בקרת האפשרויות הזה לא יפעל כראוי ללא javascript!"
 
 #: ../themeoptions/framework.php:2693
 msgid "Expand"
-msgstr "Увеличить"
+msgstr "הרחב"
 
 #: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
 msgid "Save Changes"
-msgstr "Сохранить изменения"
+msgstr "שמור שינויים"
 
 #: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
-#, fuzzy
 msgid "Reset Section"
-msgstr "Очистить выбор"
+msgstr "אתחל מחדש חלק זה"
 
 #: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
 msgid "Reset All"
-msgstr ""
+msgstr "אתחל מחדש הכל"
 
 #: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
 msgid "Working..."
-msgstr "Выполняется..."
+msgstr "עובד..."
 
 #: ../themeoptions/framework.php:2714
 msgid "Settings Imported!"
-msgstr "Настройки импортированы!"
+msgstr "הגדרות יובאו!"
 
 #: ../themeoptions/framework.php:2727
 msgid "All Defaults Restored!"
-msgstr ""
+msgstr "כל ברירות המחדל שוחזרו!"
 
 #: ../themeoptions/framework.php:2739
 msgid "Section Defaults Restored!"
-msgstr ""
+msgstr "ברירות המחדל של חלק זה שוחזרו!"
 
 #: ../themeoptions/framework.php:2745
 msgid "Settings Saved!"
-msgstr "Настройки сохранены!"
+msgstr "הגדרות נשמרו!"
 
 #: ../themeoptions/framework.php:2752
 msgid "Settings have changed, you should save them!"
-msgstr "Настройки изменились, не забудьте их сохранить!"
+msgstr "ההגדרות השתנו, אתה צריך לשמור אותן!"
 
 #: ../themeoptions/framework.php:2753
 msgid "error(s) were found!"
-msgstr "ошибка(и)!"
+msgstr "נמצאה/ו שגיאה/ות!"
 
 #: ../themeoptions/framework.php:2754
 msgid "warning(s) were found!"
-msgstr "предупреждение(ия)!"
+msgstr "מצאה/ו אזהר/ות!"
 
 #: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
 msgid "System Info"
-msgstr "Системная информация"
+msgstr "מידע מערכת"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
-msgstr "Скопируйте и вставьте этот код в поле импорта настроек темы"
+msgstr "העתק והדבק קוד זה לתוך פיצ'ר ייבוא אפשרויות של עיצוב הנושא (Theme)"
 
 #: ../themeoptions/options.php:311
 msgid "There are no previous options"
-msgstr "Нет ранее сохраненных настроект"
+msgstr "אין אפשרויות קודמות"
 
 #: ../themeoptions/options.php:323
 msgid "Main Settings"
-msgstr "Основные настройки"
+msgstr "הגדרות ראשיות"
 
 #: ../themeoptions/options.php:325
 msgid "Welcome to Virtue Theme Options"
-msgstr "Добро пожаловать в настройки темы Virtue Theme"
+msgstr "ברוך הבא לאפשרויות Virtue Theme"
 
 #: ../themeoptions/options.php:326
 msgid "This theme was developed by"
-msgstr "Эта тема была разработана"
+msgstr "עיצוב נושא זה פותח על ידי"
 
 #: ../themeoptions/options.php:327
 msgid "For theme documentation visit"
-msgstr "Для просмотра документации перейдите по ссылке"
+msgstr "לתיעוד עיצוב הנושא בקר ב"
 
 #: ../themeoptions/options.php:329
 msgid "For support please visit"
-msgstr "Для получения поддержки перейдите по ссылке"
+msgstr "לתמיכה אנא בקר ב"
 
 #: ../themeoptions/options.php:337
 msgid "Site Layout Style"
-msgstr "Стиль конфигурации сайта"
+msgstr "סגנון מתאר האתר"
 
 #: ../themeoptions/options.php:338
 msgid "Select Boxed or Wide Site Layout Style"
-msgstr "Выберите Широкий или Рамочный макет сайта"
+msgstr "בחר סגנון מתאר לאתר של תיבה או רחב"
 
 #: ../themeoptions/options.php:349
 msgid "Footer Widget Layout"
-msgstr "Макет виджета подвала"
+msgstr "מתאר ווידג'ט תחתון"
 
 #: ../themeoptions/options.php:350
 msgid "Select how many columns for footer widgets"
-msgstr "Выберите количество колонок для виджета подвала"
+msgstr "בחר כמה טורים עבור ווידג'טים בתחתית"
 
 #: ../themeoptions/options.php:361
 msgid "Logo Options"
-msgstr "Настройки Логотипа"
+msgstr "אפשרויות לוגו"
 
 #: ../themeoptions/options.php:367
 msgid "Logo Layout"
-msgstr "Расположение логотипа"
+msgstr "מתאר לוגו"
 
 #: ../themeoptions/options.php:368
 msgid "Choose how you want your logo to be laid out"
-msgstr "Выберите каким образом должен быть размещен логотип"
+msgstr "בחר מתאר להצגת הלוגו שלך"
 
 #: ../themeoptions/options.php:380
 msgid "Logo"
-msgstr "Логотип"
+msgstr "לוגו"
 
 #: ../themeoptions/options.php:382
 msgid "Upload your Logo. If left blank theme will use site name."
-msgstr ""
-"Загрузите ваш логотип. Если его нет, тема будет использовать название сайта "
-"в качестве логотипа."
+msgstr "העלה את הלוגו שלך. אם יושאר ריק, נושא העיצוב ישתמש בשם האתר."
 
 #: ../themeoptions/options.php:388
 msgid "Upload Your @2x Logo for Retina Screens"
-msgstr "Загрузите ва логотип @2x для ретинных дисплеев"
+msgstr "העלה לוגו בגודל כפול עבור מסכי רטינה"
 
 #: ../themeoptions/options.php:390
 msgid "Should be twice the pixel size of your normal logo."
-msgstr ""
-"Должен быть в два раза большего размера в пикселах, чем нормальный логотип"
+msgstr "צריך להיות בגודל פיקסל פי 2 מהלוגו הרגיל שלך."
 
 #: ../themeoptions/options.php:395
 msgid "Sitename Logo Font"
-msgstr "Шрифт логотипа названия сайта"
+msgstr "פונט ללוגו של שם האתר"
 
 #: ../themeoptions/options.php:409
 msgid "Choose size and style your sitename, if you don't use an image logo."
-msgstr ""
-"Выберите размер и стиль шрифта для текстового логотипа, если вы не "
-"используете графический логотип."
+msgstr "בחר גודל וסגנון לשם האתר, אם אתה לא משתמש בתמונת לוגו."
 
 #: ../themeoptions/options.php:420
 msgid "Site Tagline - Below Logo\""
-msgstr "Описание сайта - размещается под логотипом \""
+msgstr "סלוגן האתר - מתחת ללוגו\""
 
 #: ../themeoptions/options.php:421
 msgid "An optional line of text below your logo"
-msgstr "Необязательная строка текста для размещения под логотипом"
+msgstr "שורת טקסט אופציונלית מתחת ללוגו שלך"
 
 #: ../themeoptions/options.php:429
 msgid "Site Tagline Font"
-msgstr "Шрифт описания сайта"
+msgstr "פונט לסלוגן האתר"
 
 #: ../themeoptions/options.php:441
 msgid "Choose size and style your site tagline"
-msgstr "Выберите размер и стиль шрифта для строки описания сайта"
+msgstr "בחר גודל ועיצוב לסלוגן האתר שלך"
 
 #: ../themeoptions/options.php:452 ../themeoptions/options.php:462
 #: ../themeoptions/options.php:472 ../themeoptions/options.php:482
 msgid "Logo Spacing"
-msgstr "Отступы логотипа"
+msgstr "מרווח לוגו"
 
 #: ../themeoptions/options.php:453 ../themeoptions/options.php:493
 msgid "Top Spacing"
-msgstr "Отступ логотипа сверху"
+msgstr "מרווח עליון"
 
 #: ../themeoptions/options.php:463 ../themeoptions/options.php:503
 msgid "Bottom Spacing"
-msgstr "Отступ логотипа снизу"
+msgstr "מרווח תחתון"
 
 #: ../themeoptions/options.php:473
 msgid "Left Spacing"
-msgstr "Отступ логотипа слева"
+msgstr "מרווח משמאל"
 
 #: ../themeoptions/options.php:483
 msgid "Right Spacing"
-msgstr "Отступ логотипа справа"
+msgstr "מרווח מימין"
 
 #: ../themeoptions/options.php:492 ../themeoptions/options.php:502
 msgid "Primary Menu Spacing"
-msgstr "Отступы Главного меню"
+msgstr "מרווח תפריט ראשי"
 
 #: ../themeoptions/options.php:513
 msgid "Sitewide Banner"
-msgstr "Баннер для размещения на всем сайте"
+msgstr "באנר לכלל האתר"
 
 #: ../themeoptions/options.php:515
 msgid "Upload a banner for bottom of header."
-msgstr "Загрузите баннер для размещения на чердаке или в подвале."
+msgstr "העלה באנר לתחתית חלק עליון."
 
 #: ../themeoptions/options.php:522
 msgid "Topbar Settings"
-msgstr "Настройки чердака"
+msgstr "הגדרות סרגל חלק עליון"
 
 #: ../themeoptions/options.php:527
 msgid "Use Topbar?"
-msgstr "Использовать чердак?"
+msgstr "השתמש בסרגל חלק עליון?"
 
 #: ../themeoptions/options.php:528
 msgid "Choose to show or hide topbar"
-msgstr "Укажите использовать чердак или нет"
+msgstr "בחר להראות או להסתיר סרגל חלק עליון"
 
 #: ../themeoptions/options.php:534
 msgid "Use Topbar Icon Menu?"
-msgstr "Использовать иконное меню чердака?"
+msgstr "השתמש בתפריט אייקונים של סרגל חלק עליון?"
 
 #: ../themeoptions/options.php:535
 msgid "Choose to show or hide topbar icon Menu"
-msgstr "Укажите, отображать или нет иконки меню чердака"
+msgstr "בחר להראות או להסתיר תפריט אייקונים של סרגל חלק עליון"
 
 #: ../themeoptions/options.php:541
 msgid "Topbar Icon Menu"
-msgstr "Меню иконок чердака"
+msgstr "תפריט אייקונים של סרגל חלק עליון"
 
 #: ../themeoptions/options.php:542
 msgid "Choose your icons for the topbar icon menu."
-msgstr "Выберите иконки для меню чердака."
+msgstr "בחר את האייקונים שלך עבור תפריט האייקונים של סרגל חלק עליון."
 
 #: ../themeoptions/options.php:548
 msgid "Show Cart total in topbar?"
-msgstr "Показывать общие данные корзины в меню чердака?"
+msgstr "הראה סכום עגלת קניות בסרגל חלק עליון?"
 
 #: ../themeoptions/options.php:549
 msgid "This only works if using woocommerce"
-msgstr "Эта опция работает только с плагином WooCommerce"
+msgstr "זה עובד רק אם משתמשים ב- Woocommerce"
 
 #: ../themeoptions/options.php:555
 msgid "Display Search in Topbar?"
-msgstr "Отображать Поиск в меню чердака?"
+msgstr "הצג חיפוש בסרגל חלק עליון?"
 
 #: ../themeoptions/options.php:556
 msgid "Choose to show or hide search in topbar"
-msgstr "Укажите, отображать поле поиска в меню чердака или нет."
+msgstr "בחר אם להראות או להסתיר חיפוש בסרגל חלק עליון"
 
 #: ../themeoptions/options.php:562
 msgid "Enable widget area in right of Topbar?"
-msgstr "Активировать область виджетов в правой части чердака?"
+msgstr "אפשר אזור ווידג'טים בחלק הימני של סרגל חלק עליון?"
 
 #: ../themeoptions/options.php:563
 msgid ""
 "Note this will hide remove search (you can re-enable it my adding it to the "
 "widget area)"
 msgstr ""
-"Внимание, это скроет (уберет) поле поиска (вы можете его восстановить "
-"добавив в область виджетов)"
+"שים לב שזה יסתיר הסרת חיפוש (אתה יכול לאפשר אותו מחדש על ידי הוספתו לאזור "
+"הוויג'טים)"
 
 #: ../themeoptions/options.php:569
 msgid "Topbar Layout Switch"
-msgstr "Переключатель макета чердака"
+msgstr "מתג מתאר סרגל חלק עליון"
 
 #: ../themeoptions/options.php:570
 msgid "This moves the left items to the right and right items to the left."
-msgstr "Это поменяет местами правые и левые элементы."
+msgstr "זה מזיז את הפריטים משמאל לימין ואת הפריטים מימין לשמאל."
 
 #: ../themeoptions/options.php:578
 msgid "Slider Settings"
-msgstr "Настройки слайдера"
+msgstr "הגדרות סליידר"
 
 #: ../themeoptions/options.php:579
 msgid "Home Page Slider Options"
-msgstr "Настройки слайдера домашней страницы"
+msgstr "אפשרויות סליידר דף הבית"
 
 #: ../themeoptions/options.php:584
 msgid "Choose a Home Image Slider"
-msgstr "Выберите слайдер домашней страницы"
+msgstr "בחר סליידר לדף הבית"
 
 #: ../themeoptions/options.php:585
 msgid "If you don't want an image slider on your home page choose none."
-msgstr ""
-"Если вы не хотите использовать слайдер на домашней странице укажите \"никакой"
-"\"."
+msgstr "אם אתה לא רוצה סליידר תמונה על דף הבית שלך בחר כלום."
 
 #: ../themeoptions/options.php:594 ../themeoptions/options.php:697
 msgid "Slider Images"
-msgstr "Изображения слайдреа"
+msgstr "תמונות סליידר"
 
 #: ../themeoptions/options.php:595 ../themeoptions/options.php:698
 msgid "Use large images for best results."
-msgstr "Используйте крупные изображения для лучших результатов."
+msgstr "בחר תמונות גדולות לתוצאות הטובות ביותר."
 
 #: ../themeoptions/options.php:601 ../themeoptions/options.php:705
 msgid "Slider Max Height"
-msgstr "Максимальная высота слайдера"
+msgstr "גובה מקסימלי לסליידר."
 
 #: ../themeoptions/options.php:602 ../themeoptions/options.php:612
 #: ../themeoptions/options.php:706 ../themeoptions/options.php:717
 msgid "Note: does not work if images are smaller than max."
-msgstr ""
-"Внимание: не используется если размер изображений меньше максимального "
-"размера слайдера."
+msgstr "שים לב: לא עובד אם התמונות יותר קטנות ממקסימום."
 
 #: ../themeoptions/options.php:611 ../themeoptions/options.php:716
 msgid "Slider Max Width"
-msgstr "Максимальная ширина слайдера."
+msgstr "רוחב מקסימלי של הסליידר"
 
 #: ../themeoptions/options.php:621 ../themeoptions/options.php:727
 msgid "Auto Play?"
-msgstr "Автозапуск?"
+msgstr "הפעל אוטומטית?"
 
 #: ../themeoptions/options.php:622 ../themeoptions/options.php:728
 msgid "This determines if a slider automatically scrolls"
-msgstr "Это определеяет, прокручивается ли слайдер автоматически."
+msgstr "זה קובע אם הסליידר יגלול אוטומטית"
 
 #: ../themeoptions/options.php:628 ../themeoptions/options.php:735
 msgid "Slider Pause Time"
-msgstr "Время паузы слайдера."
+msgstr "זמן המתנה של הסליידר"
 
 #: ../themeoptions/options.php:629 ../themeoptions/options.php:736
 msgid "How long to pause on each slide, in milliseconds."
-msgstr "Как долго отображается один слайд, миллисекунды."
+msgstr "כמה זמן להמתין על כל שקופית, במילישניות."
 
 #: ../themeoptions/options.php:638 ../themeoptions/options.php:746
 msgid "Transition Type"
-msgstr "Тип перехода."
+msgstr "סוג מעבר"
 
 #: ../themeoptions/options.php:639 ../themeoptions/options.php:747
 msgid "Choose a transition type"
-msgstr "Выберите тип перехода"
+msgstr "בחר סוג מעבר"
 
 #: ../themeoptions/options.php:646 ../themeoptions/options.php:755
 msgid "Slider Transition Time"
-msgstr "Время перехода"
+msgstr "זמן מעבר של הסליידר"
 
 #: ../themeoptions/options.php:647 ../themeoptions/options.php:756
 msgid "How long for slide transitions, in milliseconds."
-msgstr "Как долго происходит смена слайдов, миллисекунды."
+msgstr "כמה זמן למעבר בין שקופיות, במילישניות."
 
 #: ../themeoptions/options.php:656 ../themeoptions/options.php:766
 msgid "Show Captions?"
-msgstr "Отображать подписи?"
+msgstr "הראה כתוביות"
 
 #: ../themeoptions/options.php:657 ../themeoptions/options.php:767
 msgid "Choose to show or hide captions"
-msgstr "Выберите отображать подписи или нет"
+msgstr "בחר להראות או להסתיר כתוביות"
 
 #: ../themeoptions/options.php:663 ../themeoptions/options.php:774
 msgid "Video Embed Code"
-msgstr "Код встраиваемого видео"
+msgstr "קוד הטמעת וידאו"
 
 #: ../themeoptions/options.php:664 ../themeoptions/options.php:775
 msgid "If your using a video on the home page place video embed code here."
-msgstr ""
-"Если вы используете видео на главной странице разместите код встраиваемого "
-"видео здесь."
+msgstr "אם אתה משתמש בוידאו על דף הבית מקם את קוד הטמעת הוידאו כאן."
 
 #: ../themeoptions/options.php:673
 msgid "Mobile Slider"
-msgstr "Мобильный слайдер"
+msgstr "סליידר למכשירים ניידים"
 
 #: ../themeoptions/options.php:674
 msgid "Create a more lightweight home slider for your mobile visitors."
-msgstr ""
-"Создайте более легкий слайдер домашней страницы для мобильной версии сайта."
+msgstr "צור סליידר דף בית יותר קל משקל עבור הגולשים שלך ממכשירים ניידים."
 
 #: ../themeoptions/options.php:679
 msgid "Would you like to use this feature?"
-msgstr "Хотите использовать эту возможность?"
+msgstr "האם תרצה להשתמש בפיצ'ר הזה?"
 
 #: ../themeoptions/options.php:680
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
 msgstr ""
-"Укажите, если вы хотите отображать специальный слайдер на домашней странице "
-"для ваших мобильных посетителей."
+"בחר אם תרצה להציג סליידר שונה על דף הבית שלך עבור גולשים ממכשירים ניידים."
 
 #: ../themeoptions/options.php:686
 msgid "Choose a Slider for Mobile"
-msgstr "Выберите слайдер для мобильной версии сайта"
+msgstr "בחר סליידר עבור מכשירים ניידים."
 
 #: ../themeoptions/options.php:687
 msgid "Choose which slider you would like to show for mobile viewers."
-msgstr ""
-"Укажите какой слайдер вы хотите использовать для мобильной версии сайта."
+msgstr "בחר איזה סליידר תרצה להציג לגולשים ממכשירים ניידים."
 
 #: ../themeoptions/options.php:784
 msgid "Home Layout"
-msgstr "Макет домашней страницы"
+msgstr "מתאר דף הבית"
 
 #: ../themeoptions/options.php:791
 msgid "Display a sidebar on the Home Page?"
-msgstr "Отображать боковую панель на домашней странице?"
+msgstr "הצג סרגל צדדי על דף הבית?"
 
 #: ../themeoptions/options.php:792
 msgid "This determines if there is a sidebar on the home page."
-msgstr ""
-"Это определяет будет ли отображаться боковая панель на домашней странице."
+msgstr "זה קובע אם יש סרגל צדדי על דף הבית."
 
 #: ../themeoptions/options.php:802
 msgid "Choose a Sidebar for your Home Page"
-msgstr "Выберите боковую панель для вашей домашней страницы"
+msgstr "בחר סרגל צדדי עבור דף הבית שלך"
 
 #: ../themeoptions/options.php:818
 msgid "Latest Blog Posts"
-msgstr "Самые свежие записи блога"
+msgstr "פוסטים אחרונים בבלוג"
 
 #: ../themeoptions/options.php:819
 msgid "Portfolio Carousel"
-msgstr "Карусель портфолио"
+msgstr "קרוסלת פורטפוליו"
 
 #: ../themeoptions/options.php:820 ../themeoptions/options.php:913
 msgid "Icon Menu"
-msgstr "Меню иконок"
+msgstr "תפריט אייקונים"
 
 #: ../themeoptions/options.php:824
 msgid "Page Title"
-msgstr "Заголовок страницы"
+msgstr "כותרת דף"
 
 #: ../themeoptions/options.php:825
 msgid "Page Content"
-msgstr "Содержимое страницы"
+msgstr "תוכן דף"
 
 #: ../themeoptions/options.php:833
 msgid "Home Blog Settings"
-msgstr "Настройки записей блога для домашней страницы"
+msgstr "הגדרות בלוג הבית"
 
 #: ../themeoptions/options.php:838
 msgid "Home Blog Title"
-msgstr "Название блога домашней страницы"
+msgstr "כותרת בלוג הבית"
 
 #: ../themeoptions/options.php:839
 msgid "ex: Latest from the blog"
-msgstr "например: Самое свежее из нашего блога"
+msgstr "לדוגמא, לאחרונה מתוך הבלוג"
 
 #: ../themeoptions/options.php:844
 msgid "Choose How many posts on Homepage"
-msgstr "Укажите сколько записей блога отображать на домашней странице"
+msgstr "בחר כמה פוסטים מתוך דף הבית"
 
 #: ../themeoptions/options.php:855
 msgid "Limit posts to a Category"
-msgstr "Ограничить записи категорией"
+msgstr "הגבל פוסטים לקטגוריה"
 
 #: ../themeoptions/options.php:856
 msgid "Leave blank to select all"
-msgstr "Оставьте пустым для отображения всех записей"
+msgstr "השאר ריק כדי לבחור הכל"
 
 #: ../themeoptions/options.php:863
 msgid "Home Portfolio Carousel Settings"
-msgstr "Настройки карусели портфолио для домашней страницы"
+msgstr "הגדרות קרוסלת פורטפוליו הבית"
 
 #: ../themeoptions/options.php:868
 msgid "Home Portfolio Carousel title"
-msgstr "Заголовок карусели портфолио домашней страницы"
+msgstr "כותרת קרוסלת פורטפוליו הבית"
 
 #: ../themeoptions/options.php:869
 msgid "ex: Portfolio Carousel title"
-msgstr "например: Наш портфолио"
+msgstr "לדוגמא, כותרת, קרוסלת פורטפוליו"
 
 #: ../themeoptions/options.php:876
 msgid "Portfolio Carousel Category Type"
-msgstr "Тип категории для карусели портфолио"
+msgstr "סוג קטגוריית קרוסלת פורטפוליו"
 
 #: ../themeoptions/options.php:877
 msgid "Leave blank to select all types"
-msgstr "Оставьте пустым для отображения всех категорий"
+msgstr "השאר ריק כדי לבחור את כל הסוגים"
 
 #: ../themeoptions/options.php:884
 msgid "Choose how many portfolio items are in carousel"
-msgstr "Укажите, сколько элементов размещается в карусели"
+msgstr "בחר כמה פריטי פורטפוליו לקרוסלה"
 
 #: ../themeoptions/options.php:893
 msgid "Portfolio Carousel Order by"
-msgstr "Порядок сортировки элементов карусели"
+msgstr "סדר קרוסלת פורטפוליו לפי"
 
 #: ../themeoptions/options.php:894
 msgid "Choose how the portfolio items should be ordered in the carousel."
-msgstr ""
-"Выберите в каком порядке будут сортироваться элементы карусели портфолио"
+msgstr "בחר איך פריטי הפורטפוליו אמורים להיות מסודרים בקרוסלה."
 
 #: ../themeoptions/options.php:902
 msgid "Display Portfolio Types under Title"
-msgstr "Отображать тип элемента портфолио под заголовком"
+msgstr "הצג סוגי פורטפוליו מתחת לכותרת"
 
 #: ../themeoptions/options.php:908
 msgid "Home Icon Menu"
-msgstr "Меню иконок домашней страницы"
+msgstr "תפריט האייקונים של דף הבית"
 
 #: ../themeoptions/options.php:914
 msgid "Choose your icons for the icon menu."
-msgstr "Выберите иконки для меню иконок"
+msgstr "בחר את האייקונים עבור תפריט האייקונים."
 
 #: ../themeoptions/options.php:920
-#, fuzzy
 msgid "Choose how many columns in each row"
-msgstr "Укажите, сколько элементов размещается в карусели"
+msgstr "בחר כמה טורים בכל שורה"
 
 #: ../themeoptions/options.php:929
 msgid "Page Content Options"
-msgstr "Настройки содержимого страницы"
+msgstr "אפשרויות תוכן דף"
 
 #: ../themeoptions/options.php:934
 msgid "Latest Post Display"
-msgstr "Отображение самых свежих записей"
+msgstr "הצגת פוסט אחרון"
 
 #: ../themeoptions/options.php:935
-#, fuzzy
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
-msgstr ""
-"If Latest Post page is font page. Выберите отображать запись полностью или "
-"кратко."
+msgstr "אם דף פוסט אחרון הוא דף פונטים. בחר להראות פוסט מלא או תקציר פוסט."
 
 #: ../themeoptions/options.php:947
 msgid "Shop Settings"
-msgstr "Настройки Магазина."
+msgstr "הגדרות חנות."
 
 #: ../themeoptions/options.php:948
 msgid "Shop Archive Page Settings"
-msgstr "Настройки архива Магазина"
+msgstr "הגדרות דף ארכיון חנות"
 
 #: ../themeoptions/options.php:954
 msgid "Display the sidebar on shop archives?"
-msgstr "Отображать боковую панель на странице архива Магазина?"
+msgstr "הצג סרגל צדדי על ארכיון החנות?"
 
 #: ../themeoptions/options.php:955
 msgid "This determines if there is a sidebar on the shop and category pages."
-msgstr ""
-"Это определяет будет ли отображаться боковая панель на страницах Магазина и "
-"Каталога."
+msgstr "זה קובע אם יש סרגל צדדי על דפי החנות והקטגוריות."
 
 #: ../themeoptions/options.php:965
 msgid "Choose a Sidebar for your shop page"
-msgstr "Выберите боковую панель для страницы Магазина."
+msgstr "צור סרגל צדדי לדף החנות שלך"
 
 #: ../themeoptions/options.php:973
 msgid "How many products per page"
-msgstr "Количество продуктов на страницу"
+msgstr "כמה מוצרים לכל דף"
 
 #: ../themeoptions/options.php:983
 msgid "Show Ratings in Shop and Category Pages"
-msgstr "Отображать рейтинг на страницах Магазина и Каталога."
+msgstr "הצג דירוגים בדפי החנות והקטגוריות"
 
 #: ../themeoptions/options.php:984
 msgid "This determines if the rating is displayed in the product archive pages"
-msgstr ""
-"Это определяет будет ли отображаться рейтинг на странице архива Продуктов"
+msgstr "זה קובע אם הרייטינג בדפי ארכיון המוצרים"
 
 #: ../themeoptions/options.php:990
 msgid "Shop Product Title Settings"
-msgstr "Настройки заголовка Пролукта"
+msgstr "הגדרות כותרת מוצר חנות"
 
 #: ../themeoptions/options.php:995
 msgid "Shop & archive Product title Font"
-msgstr "Шрифт заголовков страниц Магазина и Продуктов"
+msgstr "פונט כותרת של החנות וארכיון מוצרים"
 
 #: ../themeoptions/options.php:1009
 msgid "Choose Size and Style for product titles on category and archive pages."
-msgstr ""
-"Выберите размер и стиль для заголовкой продуктов на страницах Каталога и "
-"архивов"
+msgstr "בחר את הגודל והסגנון לכותרות מוצרים בדפי קטגוריה וארכיון."
 
 #: ../themeoptions/options.php:1020
 msgid "Set Product Title to Uppercase?"
-msgstr "Перевести заголовок продукта в ВЕРХНИЙ РЕГИСТР?"
+msgstr "הגדר כותרת מוצר כאותיות גדולות?"
 
 #: ../themeoptions/options.php:1021
 msgid "This makes your product titles uppercase on Category pages"
-msgstr ""
-"Это приведет к отображению заголовков продуктов в Каталоге в ВЕРХНЕМ "
-"РЕГИСТРЕ."
+msgstr "זה יוצר כותרות מוצרים באותיות גדולות על דפי קטגוריה"
 
 #: ../themeoptions/options.php:1027
 msgid "Product title Min Height"
-msgstr "Минимальная высота заголовка продукта"
+msgstr "גובה מינימום לכותרת מוצר"
 
 #: ../themeoptions/options.php:1028
 msgid ""
 "If your titles are long increase this to help align your products height."
-msgstr ""
-"Если названия продуктов длинные, увеличтьте этот параметр для улучшения "
-"выравнивания высоты продуктов."
+msgstr "אם הכותרות ארוכות, הגדל את זה כדי לסייע ביישור גובה המוצרים שלך."
 
 #: ../themeoptions/options.php:1037
 msgid "Product Image Sizes"
-msgstr "Размер изображений продуктов"
+msgstr "גדלי תמונות מוצרים"
 
 #: ../themeoptions/options.php:1042
 msgid "Enable Product Image Crop on Catalog pages"
-msgstr "Включить обрезку изображений продукта на страницах Каталога"
+msgstr "אפשר חיתוך תמונת מוצר על דפי קטלוג"
 
 #: ../themeoptions/options.php:1043
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
 msgstr ""
-"Если выключено, размер изображений будет установлен настройками плагина "
-"WooCommerce на основании рекомендованных: 270 пикселов для изображений в "
-"каталоге."
+"אם מכובה, גדלי תמונה מוגדרים על ידי הגדרות Woocommerce- רוחב מומלץ: 270 "
+"פיקסלים לתמונות קטלוג"
 
 #: ../themeoptions/options.php:1049
 msgid "Enable Product Image Crop on product Page"
-msgstr "Включить обрезку изображений на странице продукта"
+msgstr "אפשר חיתוך תמונת מוצר על דף מוצר"
 
 #: ../themeoptions/options.php:1050
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
 msgstr ""
-"Если выключено, размер изображений будет установлен настройками плагина "
-"WooCommerce на основании рекомендованных: 486 пикселов для единичного "
-"изображения продукта."
+"אם מכובה, מימדי התמונה נקבעים על ידי הגדרות Woocommerce - רוחב מומלץ 468 "
+"פיקסלים לתמונת מוצר יחיד"
 
 #: ../themeoptions/options.php:1056
 msgid "Product Page Settings"
-msgstr "Настройка страницы продукта"
+msgstr "הגדרות דף מוצר"
 
 #: ../themeoptions/options.php:1061
 msgid "Display product tabs?"
-msgstr "Отображать закладки продуктов?"
+msgstr "הצג לשוניות מוצר?"
 
 #: ../themeoptions/options.php:1062
 msgid "This determines if product tabs are displayed"
-msgstr "Это определяет будут ли отображаться закладки для продуктов."
+msgstr "זה קובע אם לשוניות מוצר מוצגות"
 
 #: ../themeoptions/options.php:1068
 msgid "Display related products?"
-msgstr "Отображать связанные продукты?"
+msgstr "הצג מוצרים קשורים?"
 
 #: ../themeoptions/options.php:1069
 msgid "This determines related products are displayed"
-msgstr "Это определяет будут ли отображаться связанные продукты"
+msgstr "זה קובע אם מוצרים קשורים מוצגים"
 
 #: ../themeoptions/options.php:1077
 msgid "Basic Styling"
-msgstr "Базовые насройки стиля"
+msgstr "עיצוב בסיסי"
 
 #: ../themeoptions/options.php:1078
 msgid "Basic Stylng"
-msgstr "Базовые настройки стиля"
+msgstr "עיצוב בסיסי"
 
 #: ../themeoptions/options.php:1083
 msgid "Theme Skin Stylesheet"
-msgstr "Страница стилей скина темы"
+msgstr "Theme Skin Stylesheet"
 
 #: ../themeoptions/options.php:1084
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
-"Внимание: изменения, сделанные в настройках темы имеют больший приоритет чем "
-"указанные в странице стилей. Например: цвета установленные в разделе "
-"Типография."
+"שים לב* שינויים שנעשו בלוח בקרת האפשרויות יעקפו את ה- Stylesheet הזה. "
+"לדוגמא: צבעים שהוגדרו ב- טיפוגרפיה."
 
 #: ../themeoptions/options.php:1093
 msgid "Primary Color"
-msgstr "Основной цвет"
+msgstr "צבע עיקרי"
 
 #: ../themeoptions/options.php:1094
 msgid "Choose the default Highlight color for your site."
-msgstr "Выберите цвет выделения по умоляанию для вашего сайта."
+msgstr "בחר את צבע ה-Highlight לאתר שלך."
 
 #: ../themeoptions/options.php:1102
 msgid "20% lighter than Primary Color"
-msgstr "20% более яркий, чем основной цвет"
+msgstr "20% בהיר יותר מהצבע העיקרי"
 
 #: ../themeoptions/options.php:1103
 msgid "This is used for hover effects"
-msgstr "Этот цвет используется для эффекта подсветки при наведении курсора"
+msgstr "נעשה בזה שימוש לאפקט בעת ריחוף סמן עכבר"
 
 #: ../themeoptions/options.php:1111
 msgid "Sitewide Gray Fonts"
-msgstr "Серые шрифты для сайта"
+msgstr "פונטים Gray של כלל האתר"
 
 #: ../themeoptions/options.php:1120
 msgid "Footer Font Color"
-msgstr "Цвет шрифтов подвала"
+msgstr "צבע פונט לתחתית"
 
 #: ../themeoptions/options.php:1131
 msgid "Advanced Styling"
-msgstr "Расширенные настройки стиля"
+msgstr "עיצוב מתקדם"
 
 #: ../themeoptions/options.php:1132
 msgid "Main Content Background"
-msgstr "Цвет фона основного содержимого"
+msgstr "רקע תוכן מרכזי"
 
 #: ../themeoptions/options.php:1137 ../themeoptions/options.php:1176
 #: ../themeoptions/options.php:1215 ../themeoptions/options.php:1254
 #: ../themeoptions/options.php:1293 ../themeoptions/options.php:1332
 #: ../themeoptions/options.php:1371
 msgid "Background Color"
-msgstr "Цвет фона"
+msgstr "צבע רקע"
 
 #: ../themeoptions/options.php:1145 ../themeoptions/options.php:1184
 #: ../themeoptions/options.php:1223 ../themeoptions/options.php:1262
 #: ../themeoptions/options.php:1301 ../themeoptions/options.php:1340
 #: ../themeoptions/options.php:1379
 msgid "Upload background image or texture"
-msgstr "Загрузите фоновое изображение или текстуру"
+msgstr "העלה תמונת רקע או טקסטורה"
 
 #: ../themeoptions/options.php:1150 ../themeoptions/options.php:1189
 #: ../themeoptions/options.php:1228 ../themeoptions/options.php:1267
 #: ../themeoptions/options.php:1306 ../themeoptions/options.php:1345
 #: ../themeoptions/options.php:1384
 msgid "Image repeat options"
-msgstr "Настройки повторяемости изображения"
+msgstr "אפשרויות שכפול תמונה"
 
 #: ../themeoptions/options.php:1157 ../themeoptions/options.php:1196
 #: ../themeoptions/options.php:1235 ../themeoptions/options.php:1274
 #: ../themeoptions/options.php:1313 ../themeoptions/options.php:1352
 #: ../themeoptions/options.php:1391
 msgid "X image placement options"
-msgstr "Настройка по горизонтали - X"
+msgstr "אפשרויות מיקום תמונה על ציר X"
 
 #: ../themeoptions/options.php:1164 ../themeoptions/options.php:1203
 #: ../themeoptions/options.php:1242 ../themeoptions/options.php:1281
 #: ../themeoptions/options.php:1320 ../themeoptions/options.php:1359
 #: ../themeoptions/options.php:1398
 msgid "Y image placement options"
-msgstr "Настройка по верикали - Y"
+msgstr "אפשרויות מיקום תמונה על ציר Y"
 
 #: ../themeoptions/options.php:1171
 msgid "Topbar Background"
-msgstr "Фон чердака"
+msgstr "רקע סרגל חלק עליון"
 
 #: ../themeoptions/options.php:1210
 msgid "Header Background"
-msgstr "Фон заголовков"
+msgstr "רקע חלק עליון"
 
 #: ../themeoptions/options.php:1249
 msgid "Secondary Menu Background"
-msgstr "Фон дополнительного  меню"
+msgstr "רקע תפריט משני"
 
 #: ../themeoptions/options.php:1288
 msgid "Mobile Menu Background"
-msgstr "Фон мобильного меню"
+msgstr "רקע תפריט למכשירים ניידים"
 
 #: ../themeoptions/options.php:1327
 msgid "Footer Background"
-msgstr "Фон подвала"
+msgstr "רקע תחתית"
 
 #: ../themeoptions/options.php:1366
 msgid "Body Background"
-msgstr "Фон раздела body"
+msgstr "רקע חלק גוף מרכזי"
 
 #: ../themeoptions/options.php:1405
 msgid "Fixed or Scroll"
-msgstr "Фиксированный или прокручиваемый"
+msgstr "קבוע או נגלל"
 
 #: ../themeoptions/options.php:1414
 msgid "Typography"
-msgstr "Типография"
+msgstr "טיפוגרפיה"
 
 #: ../themeoptions/options.php:1415
 msgid "Header Font Options"
-msgstr "Настройки шрифтов заголовков"
+msgstr "אפשרויות פונט חלק עליון"
 
 #: ../themeoptions/options.php:1420
 msgid "H1 Headings"
-msgstr "Заголовок H1"
+msgstr "כותרות H1"
 
 #: ../themeoptions/options.php:1434
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
-msgstr ""
-"Выберите размер и стиль для заголовка H1 (это стиль заголовков страниц)"
+msgstr "בחר צבע וסגנון עבור h1 (זה מעצב את כותרות הדף שלך)"
 
 #: ../themeoptions/options.php:1445
 msgid "H2 Headings"
-msgstr "Заголовок Н2"
+msgstr "כותרות H2"
 
 #: ../themeoptions/options.php:1459
 msgid "Choose Size and Style for h2"
-msgstr "Выберите размер и стиль для заголовка H2"
+msgstr "בחר צבע וסגנון עבור h2"
 
 #: ../themeoptions/options.php:1470
 msgid "H3 Headings"
-msgstr "Заголовок Н3"
+msgstr "כותרות H3"
 
 #: ../themeoptions/options.php:1484
 msgid "Choose Size and Style for h3"
-msgstr "Выберите размер и стиль для заголовка H3"
+msgstr "בחר צבע וסגנון עבור h3"
 
 #: ../themeoptions/options.php:1495
 msgid "H4 Headings"
-msgstr "Заголовок Н4"
+msgstr "כותרות H4"
 
 #: ../themeoptions/options.php:1509
 msgid "Choose Size and Style for h4"
-msgstr "Выберите размер и стиль для заголовка H4"
+msgstr "בחר צבע וסגנון עבור h4"
 
 #: ../themeoptions/options.php:1520
 msgid "H5 Headings"
-msgstr "Заголовок Н5"
+msgstr "כותרות H5"
 
 #: ../themeoptions/options.php:1534
 msgid "Choose Size and Style for h5"
-msgstr "Выберите размер и стиль для заголовка H5"
+msgstr "בחר צבע וסגנון עבור h5"
 
 #: ../themeoptions/options.php:1545
 msgid "Body Font Options"
-msgstr "Настройки шрифта раздела body"
+msgstr "אפשרויות פונט גוף מרכזי"
 
 #: ../themeoptions/options.php:1550
 msgid "Body Font"
-msgstr "Шрифт раздела body"
+msgstr "פונט גוף מרכזי"
 
 #: ../themeoptions/options.php:1564
 msgid "Choose Size and Style for paragraphs"
-msgstr "Выберите размер и стиль для отображения текста параграфов"
+msgstr "בחר גודל וסגנון עבור פסקאות"
 
 #: ../themeoptions/options.php:1577
 msgid "Menu Settings"
-msgstr "Настройки меню"
+msgstr "הגדרות תפריט"
 
 #: ../themeoptions/options.php:1578
 msgid "Primary Menu Options"
-msgstr "Главное меню"
+msgstr "אפשרויות תפריט ראשי"
 
 #: ../themeoptions/options.php:1583
 msgid "Primary Menu Font"
-msgstr "Шрифт главного меню"
+msgstr "פונט תפריט ראשי"
 
 #: ../themeoptions/options.php:1597
 msgid "Choose Size and Style for primary menu"
-msgstr "Выберите размер и стиль для главного меню"
+msgstr "בחר גודל וסגנון לתפריט ראשי"
 
 #: ../themeoptions/options.php:1608
 msgid "Secondary Menu Options"
-msgstr "Настройки дополнительного меню"
+msgstr "אפשרויות תפריט משני"
 
 #: ../themeoptions/options.php:1613
 msgid "Secondary Menu Font"
-msgstr "Шрифт дополнительного меню"
+msgstr "פונט תפריט משני"
 
 #: ../themeoptions/options.php:1627
 msgid "Choose Size and Style for secondary menu"
-msgstr "Выберите размер и стиль для дополнительного меню"
+msgstr "בחר גודל וסגנון לתפריט משני"
 
 #: ../themeoptions/options.php:1638
 msgid "Mobile Menu Options"
-msgstr "Настройки мобильного меню"
+msgstr "אפשרויות תפריט למכשירים ניידים"
 
 #: ../themeoptions/options.php:1643
 msgid "Mobile Menu Font"
-msgstr "Шрифт мобильного меню"
+msgstr "פונט לתפריט למכשירים ניידים"
 
 #: ../themeoptions/options.php:1657
 msgid "Choose Size and Style for Mobile Menu"
-msgstr "Выберите размер и стиль для мобильного меню"
+msgstr "בחר גודל וסגנון לתפריט למכשירים ניידים"
 
 #: ../themeoptions/options.php:1671 ../themeoptions/options.php:1672
 msgid "Misc Settings"
-msgstr "Прочие настройки"
+msgstr "הגדרות שונות"
 
 #: ../themeoptions/options.php:1679
 msgid "All Projects Portfolio Page"
-msgstr "Страница портфолио всех проектов"
+msgstr "דף פורטפוליו לכל הפרויקטים"
 
 #: ../themeoptions/options.php:1680
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
-"Это установит ссылку на всех страницах каждого элемента портфолио. Внимание: "
-"вам все равно необходимо установить шаблон страницы для портфолио."
+"זה קובע את הקישור בכל דף פורטפוליו. *שים לב: אתה עדיין צריך לקבוע את ה-"
+"template של הדף למצב פורטפוליו."
 
 #: ../themeoptions/options.php:1685
 msgid "Allow Comments on Portfolio Posts"
-msgstr "Разрешить комментарии на записях элементов портфолио."
+msgstr "אפשר תגובות על פוסטים של פורטפוליו"
 
 #: ../themeoptions/options.php:1686
 msgid "Turn on to allow Comments on Portfolio posts"
-msgstr ""
-"Включите, чтобы разрешить комментарии на страницах элементов портфолио."
+msgstr "הפעל לאפשר תגובות על פוסטים של פורטפוליו"
 
 #: ../themeoptions/options.php:1692
 msgid "Hide Image Border"
-msgstr "Скрыть границы изображений"
+msgstr "הסתר גבולות תמונה"
 
 #: ../themeoptions/options.php:1693
 msgid "Choose to show or hide image border"
-msgstr "Выберите отображать или нет границы изображений"
+msgstr "בחר להראות או להסתיר גבולות תמונה"
 
 #: ../themeoptions/options.php:1699
-#, fuzzy
 msgid "Blog Archive"
-msgstr "Архивы за день: %s"
+msgstr "ארכיון בלוג"
 
 #: ../themeoptions/options.php:1700
-#, fuzzy
 msgid "Choose to show full post or post excerpt."
-msgstr ""
-"If Latest Post page is font page. Выберите отображать запись полностью или "
-"кратко."
+msgstr "בחר להראות פוסט מלא או תקציר פוסט."
 
 #: ../themeoptions/options.php:1708
 msgid "Show Comments Closed Text?"
-msgstr "Отображать текст \"Комментарии закрыты\"?"
+msgstr "הראה טקסט סגור של תגובות?"
 
 #: ../themeoptions/options.php:1709
 msgid "Choose to show or hide comments closed alert below posts."
-msgstr ""
-"Выберите отображать или нет предупреждение о закрытии возможности оставлять "
-"комментарии внизу страницы записи."
+msgstr "בחר להציג או להסתיר אתרעה סגורה על תגובות מתחת לפוסטים."
 
 #: ../themeoptions/options.php:1715
 msgid "Show Author Icon with posts?"
-msgstr "Отображать иконку автора в записях?"
+msgstr "הצג אייקון של הכותב עם פוסטים?"
 
 #: ../themeoptions/options.php:1716
 msgid "Choose to show or hide author icon under post title."
-msgstr "Выберите обображать или нет иконку автора под заголовком записи."
+msgstr "בחר להציג או להסתיר אייקון של הכותב מתחת לכותרת הפוסט."
 
 #: ../themeoptions/options.php:1722
 msgid "Show Previous and Next posts links?"
-msgstr ""
+msgstr "הראה קישורים לפוסטים קודמים והבאים?"
 
 #: ../themeoptions/options.php:1723
-#, fuzzy
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
-msgstr "Выберите обображать или нет иконку автора под заголовком записи."
+msgstr "בחר להציג או להסתיר קישורים לפוסטים קודמים והבאים בתחתית של פוסט יחיד."
 
 #: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
-msgstr "Настройка иконки сайта."
+msgstr "Favicon מותאם"
 
 #: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
-"Загрузите изображение размера 16х16 в формате png/gif/ico для использования "
-"в качестве иконки вашего сайта."
+"העלה תמונה בגודל 16X16 פיקסלים בפורמט png/gif/ico שתציג את ה-Favicon של האתר "
+"שלך."
 
 #: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
-msgstr "Адрес электронной почты для контактной формы"
+msgstr "אימייל טופס יצירת קשר"
 
 #: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
-msgstr "Устанавливает адрес электронной почты для контактной формы."
+msgstr "מגדיר את האימייל אליו יישלח טופס יצירת קשר במייל."
 
 #: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
-msgstr "Текст сообщения об авторских правах для подвала."
+msgstr "טקסט זכויות יוצרים לחלק תחתון"
 
 #: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
-"Напишите свой текст сообщения об авторских правах. Вы можете использовать "
-"следующие макросы для вашего текста: [copyright] [site-name] [the-year]"
+"כתוב את טקסט זכויות היוצרים שלך כאן. אתה יכול להשתמש ב- Shortcodes הבאים "
+"בטקסט עבור החלק התחתון: [copyright] [site-name] [the-year]"
 
 #: ../themeoptions/options.php:1750
-#, fuzzy
 msgid "Blog Post Defaults"
-msgstr "Настройки записей блога по умолчанию"
+msgstr "ברירות מחדל לפוסט של הבלוג"
 
 #: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
-msgstr "Настройки краткого содержания записи блога по умолчанию"
+msgstr "ברירת מחדל לתקציר פוסט של הבלוג"
 
 #: ../themeoptions/options.php:1763
-#, fuzzy
 msgid "Blog Post Head Content Default"
-msgstr "Настройки записей блога по умолчанию"
+msgstr "ברירת מחדל לראש תוכן של פוסט בבלוג"
 
 #: ../themeoptions/options.php:1771
 msgid "Create Sidebars"
-msgstr "Создать боковую панель"
+msgstr "צור סרגלי צד"
 
 #: ../themeoptions/options.php:1776
 msgid "Create Custom Sidebars"
-msgstr "Создать нестандартные боковые панели"
+msgstr "צור סרגלי צד מותאמים"
 
 #: ../themeoptions/options.php:1777
 msgid "Type new sidebar name into textbox"
-msgstr "Введите название новой боковой панели в поле"
+msgstr "הקש את השם של סרגל הצד החדש שלך בתיבת הטקסט"
 
 #: ../themeoptions/options.php:1778
 msgid "Extra Sidebar"
-msgstr "Дополнительные боковые панели"
+msgstr "סרגל צד נוסף"
 
 #: ../themeoptions/options.php:1783
 msgid "Wordpress Galleries"
-msgstr "Галереи WordPress"
+msgstr "גלריות וורדפרס"
 
 #: ../themeoptions/options.php:1788
 msgid "Enable Virtue Galleries to override Wordpress"
-msgstr "Включите галереи Virtue вместо галерей WordPress"
+msgstr "אפשר גלריות של Virtue כדי לעקוף את וורדפרס"
 
 #: ../themeoptions/options.php:1789
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
-"Выключите это опцию если вы используете плагин для нестандартных галерей, "
-"например галерею картинок JetPack."
+"השבת זאת אם משתמשים בפלאגין כדי להתאים גלריות, לדוגמא גלריה מרושתת על ידי "
+"jetpack."
 
 #: ../themeoptions/options.php:1797
 msgid "Advanced Settings"
-msgstr "Расширенные настройки"
+msgstr "הגדרות מתקדמות"
 
 #: ../themeoptions/options.php:1798
 msgid "Custom CSS Box"
-msgstr "Пользовательский стиль CSS"
+msgstr "תיבת CSS מותאמת"
 
 #: ../themeoptions/options.php:1803
 msgid "Custom CSS"
-msgstr "Пользовательский CSS"
+msgstr "CSS מותאם"
 
 #: ../themeoptions/options.php:1804
 msgid "Quickly add some CSS to your theme by adding it to this block."
-msgstr "Быстро добавьте код CSS к вашей теме добавляя его в этот блок кода."
+msgstr "הוסף קצת CSS לנושא העיצוב שלך על ידי הוספתו לתיבה זו."
 
 #: ../themeoptions/options.php:1812
 msgid "Theme Update Import"
-msgstr "Испорт обновлений темы"
+msgstr "ייבוא עדכון לעיצוב נושא"
 
 #: ../themeoptions/options.php:1813
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
-msgstr ""
-"Если вы обновляетесь с версии 1.5.6 или более ранней, используйте этот "
-"скрипт для обновления настроек вашей темы."
+msgstr "אם מעדכנים מגרסה 1.5.6 או מוקדם יותר "
 
 #: ../themeoptions/options.php:1818
 msgid "Turn on and save to start script"
-msgstr "Включите и сохраните для запуска скрипта."
+msgstr "הפעל ושמור כדי להפעיל סקריפט"
 
 #: ../themeoptions/options.php:1825
 msgid "If using a child theme enter child theme folder"
-msgstr "Если используется дочерняя тема укажите путь к каталогу темы."
+msgstr "אם אתה משתמש ב- chile theme הכנס תיקייה של child theme"
 
 #: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
 msgid "Theme Options"
-msgstr "Настройки темы"
+msgstr "אפשרויות עיצוב נושא"
 
 #: ../themeoptions/options.php:1857
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
-"Благодарим вас за использование  Virtue Theme by <a href=\"http://"
-"kadencethemes.com/\" target=\"_blank\">Kadence Themes</a>."
+"תודה לך שבחרת בעיצוב נושא Virtue על ידי <a href=\"http://kadencethemes.com/"
+"\" target=\"_blank\">Kadence Themes</a>"
 
 #: ../themeoptions/extensions/customizer/extension_customizer.php:441
-#, fuzzy
 msgid "You have changes that are not saved.  Would you like to save them now?"
-msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
+msgstr "יש לך שינויים שלא שמרת. האם תרצה לשמור אותם כעת?"
 
 #: ../themeoptions/extensions/customizer/extension_customizer.php:442
-#, fuzzy
 msgid "Are you sure?  Resetting will lose all custom values."
-msgstr ""
-"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
-"значений."
+msgstr "אתה בטוח? אתחול מחדש יגרום לאיבוד כל הערכים המותאמים."
 
 #: ../themeoptions/extensions/customizer/extension_customizer.php:443
-#, fuzzy
 msgid ""
 "Your current options will be replaced with the values of this preset.  Would "
 "you like to proceed?"
 msgstr ""
-"Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+"האפשרויות הנוכחיות שלך יוחלפו עם הערכים של ה-Preset הזה. האם תרצה להמשיך?"
 
 #: ../themeoptions/extensions/edd/edd_license/EDD_License_Handler.php:112
 #, php-format
 msgid "%1$s License Key"
-msgstr "%1$s ключ лицензии"
+msgstr "מפתח רישיון %1$s"
 
 #: ../themeoptions/extensions/edd/edd_license/EDD_License_Handler.php:218
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:142
 msgid "Deactivate License"
-msgstr "Деактивировать лицензию"
+msgstr "בטל רישיון"
 
 #: ../themeoptions/extensions/edd/edd_license/EDD_SL_Theme_Updater.php:54
 msgid ""
 "Updating this theme will lose any customizations you have made. 'Cancel' to "
 "stop, 'OK' to update."
 msgstr ""
-"Обновление данной темы приведет к потере всех модификаций сделанных ранее. "
-"Нажмите 'Отменить' для отмены, 'Ок' для продолжения."
+"עדכון עיצוב הנושא הזה יגרום לאובדן כל ההתאמות שעשית. \"ביטול\" כדי לעצור, "
+"\"אישור\" כדי לעדכן."
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:110
 msgid "Not Activated"
-msgstr "Не активирован"
+msgstr "לא מופעל"
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:114
 msgid "Deactivated"
-msgstr "Отключено"
+msgstr "מנוטרל"
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:116
 msgid "Valid"
-msgstr "Действительный"
+msgstr "תקף"
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:123
 msgid "License Status"
-msgstr "Статус лицензии"
+msgstr "מצב רישיון"
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:132
 msgid "Verify License"
-msgstr "Проверить лицензию"
+msgstr "וודא רישיון"
 
 #: ../themeoptions/extensions/edd/edd_license/field_edd_license.php:137
 msgid "Activate License"
-msgstr "Активировать лицензию"
+msgstr "הפעל רישיון"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:191
 msgid "Upload Icon"
-msgstr "Загрузитб иконку"
+msgstr "העלה אייקון"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:198
-#, fuzzy
 msgid "Select an Icon"
-msgstr "Удалить иконку"
+msgstr "בחר אייקון"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:217
@@ -2683,51 +2597,50 @@ msgstr "URL"
 #: ../themeoptions/inc/fields/slides/field_slides.php:135
 #: ../themeoptions/inc/fields/slides/field_slides.php:199
 msgid "Description"
-msgstr "Описание"
+msgstr "תיאור"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
 msgid "Icon Link"
-msgstr "Ссылка на иконку"
+msgstr "קישור אייקון"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:228
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
 msgid "Open Link in New Tab/Window"
-msgstr ""
+msgstr "פתח קישור בלשונית/חלון חדש"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:169
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:237
 msgid "Delete Icon"
-msgstr "Удалить иконку"
+msgstr "מחק אייקון"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:240
 msgid "Add Icon"
-msgstr "Добавить иконку"
+msgstr "הוסף אייקון"
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 msgid "Slide Link"
-msgstr "Ссылка на слайд"
+msgstr "קישור שקופית"
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
-#, fuzzy
 msgid "Select an Option"
-msgstr "Выбрать варианты"
+msgstr "בחר אפשרות"
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
 #: ../themeoptions/inc/fields/slides/field_slides.php:168
 #: ../themeoptions/inc/fields/slides/field_slides.php:231
 msgid "Delete Slide"
-msgstr "Удалить слайд"
+msgstr "מחק שקופית"
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
-msgstr "Добавить слайд"
+msgstr "הוסף שקופית"
 
 #: ../themeoptions/inc/fields/background/field_background.php:118
 #: ../themeoptions/inc/fields/color/field_color.php:72
@@ -2735,155 +2648,145 @@ msgstr "Добавить слайд"
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
 #: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:85
 msgid "Transparent"
-msgstr "Прозрачный"
+msgstr "שקוף"
 
 #: ../themeoptions/inc/fields/background/field_background.php:135
-#, fuzzy
 msgid "Background Repeat"
-msgstr "Цвет фона"
+msgstr "חזור על רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:151
-#, fuzzy
 msgid "Background Clip"
-msgstr "Цвет фона"
+msgstr "קליפ רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:167
-#, fuzzy
 msgid "Background Origin"
-msgstr "Цвет фона"
+msgstr "מקור רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:182
-#, fuzzy
 msgid "Background Size"
-msgstr "Цвет фона"
+msgstr "גודל רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:197
-#, fuzzy
 msgid "Background Attachment"
-msgstr "Цвет фона"
+msgstr "נספח רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:217
-#, fuzzy
 msgid "Background Position"
-msgstr "Цвет фона"
+msgstr "מיקום רקע"
 
 #: ../themeoptions/inc/fields/background/field_background.php:272
 #: ../themeoptions/inc/fields/media/field_media.php:116
-#, fuzzy
 msgid "No media selected"
-msgstr "Объекты медиа не выбраны"
+msgstr "לא נבחרה מדיה"
 
 #: ../themeoptions/inc/fields/border/field_border.php:126
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:175
 msgid "Top"
-msgstr "Верх"
+msgstr "עליון"
 
 #: ../themeoptions/inc/fields/border/field_border.php:133
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:182
 msgid "Right"
-msgstr "Право"
+msgstr "ימני"
 
 #: ../themeoptions/inc/fields/border/field_border.php:140
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:189
 msgid "Bottom"
-msgstr "Низ"
+msgstr "תחתון"
 
 #: ../themeoptions/inc/fields/border/field_border.php:147
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:196
 msgid "Left"
-msgstr "Лево"
+msgstr "שמאלי"
 
 #: ../themeoptions/inc/fields/border/field_border.php:162
 msgid "Border style"
-msgstr "Стиль рамки"
+msgstr "סגנון גבול"
 
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
 msgid "To "
-msgstr "Кому"
+msgstr "אל"
 
 #: ../themeoptions/inc/fields/dimensions/field_dimensions.php:121
 msgid "Width"
-msgstr "Ширина"
+msgstr "רוחב"
 
 #: ../themeoptions/inc/fields/dimensions/field_dimensions.php:137
 msgid "height"
-msgstr "высота"
+msgstr "גובה"
 
 #: ../themeoptions/inc/fields/dimensions/field_dimensions.php:149
 #: ../themeoptions/inc/fields/dimensions/field_dimensions.php:150
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:206
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:207
 msgid "Units"
-msgstr "Единицы"
+msgstr "יחידות"
 
 #: ../themeoptions/inc/fields/gallery/field_gallery.php:77
 msgid "Add/Edit Gallery"
-msgstr "Добавить/Редактировать галерею"
+msgstr "הוסף/ערוך גלריה"
 
 #: ../themeoptions/inc/fields/gallery/field_gallery.php:78
 msgid "Clear Gallery"
-msgstr "Очистить галерею"
+msgstr "נקה גלריה"
 
 #: ../themeoptions/inc/fields/group/field_group.php:82
-#, fuzzy
 msgid "New "
-msgstr "Новая иконка"
+msgstr "חדש"
 
 #: ../themeoptions/inc/fields/group/field_group.php:125
 msgid "Delete"
-msgstr "Удалить"
+msgstr "מחק"
 
 #: ../themeoptions/inc/fields/group/field_group.php:129
 msgid "Add"
-msgstr "Добавить"
+msgstr "הוסף"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:77
 msgid "Import / Export Options"
-msgstr "Настройки Импорта / Экспорта"
+msgstr "אפשרויות ייבוא/ייצוא"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:80
 msgid "Import Options"
-msgstr "Настройки Импорта"
+msgstr "ייבוא אפשרויות"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:81
 msgid "Import from file"
-msgstr "Импортировать из файла"
+msgstr "ייבוא מקובץ"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:81
 msgid "Import from URL"
-msgstr "Импортировать из URL"
+msgstr "ייבוא מכתובת URL"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:85
 msgid ""
 "Input your backup file below and hit Import to restore your sites options "
 "from a backup."
 msgstr ""
-"Укажите файл бэкапа в поле ниже и нажмите Импорт для восстановления настроек "
-"сайта из бэкапа."
+"הכנס את קובץ הגיבוי שלך למטה ולחץ על \"ייבא\" כדי לשחזר את אפשרויות האתר שלך "
+"מתוך גיבוי."
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:93
 msgid ""
 "Input the URL to another sites options set and hit Import to load the "
 "options from that site."
 msgstr ""
-"Введите URL на настройки другого сайта и нажмите Импорт для загрузки "
-"настроек из того сайта."
+"הכנס את כתובת הURL לאפשרויות אתר אחרות ולחץ \"ייבא\" כדי לטעון את האפשרויות "
+"מתוך האתר הזה."
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:99
 msgid "Import"
-msgstr "Импорт"
+msgstr "ייבא"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:99
 msgid ""
 "WARNING! This will overwrite all existing option values, please proceed with "
 "caution!"
-msgstr ""
-"ВНИМАНИЕ! Это приведет к замене всех текущих настроек, действуйте с "
-"осторожностю!"
+msgstr "אזהרה! זה ידרוס את ערכי האפשרויות הקיימים, אנא המשך בזהירות!"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:102
 msgid "Export Options"
-msgstr "Настройки экспорта:"
+msgstr "אפשרויות ייצוא"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:105
 msgid ""
@@ -2891,279 +2794,271 @@ msgid ""
 "you can use it as a backup should anything go wrong, or you can use it to "
 "restore your settings on this site (or any other site)."
 msgstr ""
-"Здесь вы можете сделать копию / выгрузить выш набор настроек. Храните их в "
-"надежном месте, поскольку вы в дальнейшем сможете использовать их в качестве "
-"бэкапа если что-то пойдет не по плану, или вы сможете использовать их для "
-"восстановления настроек на этом или другом сайте."
+"כאן אתה יכול להעתיק/להוריד את הגדרות האפשרויות הנוכחיות שלך. שמור על זה היטב "
+"מאחר ואתה יכולה להשתמש בזה כגיבוי אם משהו ישתבש, או שאתה יכול להשתמש בזה כדי "
+"לשחזר את ההגדרות שלך לאתר זה (או כל אתר אחר)."
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Copy"
-msgstr "Копировать"
+msgstr "העתק"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:109
 msgid "Copy Link"
-msgstr "Копировать ссылку"
+msgstr "העתק קישור"
 
 #: ../themeoptions/inc/fields/import_export/import_export.php:149
 msgid "Import / Export"
-msgstr "Импорт / Экспорт"
+msgstr "ייבוא/ייצוא"
 
 #: ../themeoptions/inc/fields/link_color/field_link_color.php:91
 msgid "Regular"
-msgstr "Стандартный (обычный)"
+msgstr "רגיל"
 
 #: ../themeoptions/inc/fields/link_color/field_link_color.php:95
 msgid "Hover"
-msgstr "Наведение"
+msgstr "רחף"
 
 #: ../themeoptions/inc/fields/link_color/field_link_color.php:99
 msgid "Visited"
-msgstr ""
+msgstr "ביקרו בו"
 
 #: ../themeoptions/inc/fields/link_color/field_link_color.php:103
 msgid "Active"
-msgstr "Активный"
+msgstr "פעיל"
 
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
 msgid "Add More"
-msgstr "Добавить еще"
+msgstr "הוסף עוד"
 
 #: ../themeoptions/inc/fields/password/field_password.php:55
 #: ../woocommerce/shop/form-login.php:24
 msgid "Password"
-msgstr "Пароль"
+msgstr "סיסמא"
 
 #: ../themeoptions/inc/fields/password/field_password.php:56
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr "שם משתמש "
 
 #: ../themeoptions/inc/fields/select/field_select.php:76
 #: ../themeoptions/inc/fields/select_image/field_select_image.php:58
 msgid "Select an item"
-msgstr "Выберите элемент"
+msgstr "בחר פריט"
 
 #: ../themeoptions/inc/fields/select/field_select.php:117
 #: ../themeoptions/inc/fields/select_image/field_select_image.php:133
 msgid "No items of this type were found."
-msgstr "Элементы данного типа не найдены"
+msgstr "לא נמצאו פריטים מסוג זה."
 
 #: ../themeoptions/inc/fields/switch/field_switch.php:42
 msgid "On"
-msgstr ""
+msgstr "פעיל"
 
 #: ../themeoptions/inc/fields/switch/field_switch.php:49
 msgid "Off"
-msgstr ""
+msgstr "כבוי"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:163
 msgid "Font family"
-msgstr "Семейство шрифтов"
+msgstr "משפחת פונטים"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:178
 msgid "Standard Fonts"
-msgstr "Стандартные шрифты"
+msgstr "פונטים סטנדרטיים"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:225
 msgid "Backup Font Family"
-msgstr "Запасное семейство шрифтов"
+msgstr "גבה משפחת פונטים"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:245
 #: ../themeoptions/inc/fields/typography/field_typography.php:249
 msgid "Font style"
-msgstr "Стиль шрифта"
+msgstr "סגנון פונט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:249
 msgid "Style"
-msgstr "Стиль"
+msgstr "סגנון"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:278
 msgid "Font subsets"
-msgstr "Подмножества шрифтов"
+msgstr "סטים משניים לפונט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:279
 msgid "Subsets"
-msgstr "Подмножества"
+msgstr "סטים משניים"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:279
 msgid "Font script"
-msgstr "Начертание шрифта"
+msgstr "סקריפט של פונט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:296
 #: ../themeoptions/inc/fields/typography/field_typography.php:297
 msgid "Text Align"
-msgstr ""
+msgstr "יישור טקסט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:320
 #: ../themeoptions/inc/fields/typography/field_typography.php:321
 msgid "Text Transform"
-msgstr ""
+msgstr "שינוי טקסט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:350
 msgid "Size"
-msgstr "Размер"
+msgstr "גודל"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:358
 msgid "Height"
-msgstr "Высота"
+msgstr "גובה"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:366
 msgid "Word Spacing"
-msgstr "Интервал между словами"
+msgstr "מרווח מילים"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:375
 msgid "Letter Spacing"
-msgstr "Интервал между буквами"
+msgstr "מרווח אותיות"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:392
 msgid "Font color"
-msgstr "Цвет шрифта"
+msgstr "צבע פונט"
 
 #: ../themeoptions/inc/fields/typography/field_typography.php:734
 msgid "Google Webfonts"
-msgstr "Веб-шрифты Google"
+msgstr "פונטים של גוגל לרשת"
 
 #: ../themeoptions/inc/validation/color/validation_color.php:15
 #: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
 #: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
 msgid "This field must be a valid color value."
-msgstr "Это поле должно содержать корректный код цвета."
+msgstr "שדה זה צריך להיות ערך צבע חוקי."
 
 #: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
 msgid ""
 "You must provide a comma separated list of numerical values for this option."
-msgstr ""
-"Вы должны указать список через запятую числовых значений для данного поля."
+msgstr "עליך לספק רשימה של ערכים נומריים, מופרדים בפסיק, עבור אפשרות זאת."
 
 #: ../themeoptions/inc/validation/date/validation_date.php:15
 msgid "This field must be a valid date."
-msgstr "Это поле должно содержать корректную дату."
+msgstr "שדה זה צריך להיות תאריך חוקי."
 
 #: ../themeoptions/inc/validation/email/validation_email.php:15
 #: ../themeoptions/inc/validation/email_not_empty/validation_email_not_empty.php:15
 msgid "You must provide a valid email for this option."
-msgstr "Вы должны указать в этом поле корректный адрес электронной почты."
+msgstr "עליך לספק אימייל חוקי עבור אפשרות זאת."
 
 #: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
 msgid ""
 "You must not enter any HTML in this field, all HTML tags have been removed."
-msgstr "Вы не должны вводить код HTML в этом поле, все тэги HTML были удалены."
+msgstr "עליך לא להכניס כל HTML בשדה זה, כל תגיות ה-HTML הוסרו."
 
 #: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
 msgid ""
 "You must not enter any special characters in this field, all special "
 "characters have been removed."
-msgstr ""
-"Вы не должны вводить специальные символы в этом поле, все специальные "
-"символы были удалены."
+msgstr "עליך לא להכניס תווים מיוחדים כלשהם בשדה זה, כל התווים המיוחדים הוסרו."
 
 #: ../themeoptions/inc/validation/not_empty/validation_not_empty.php:15
-#, fuzzy
 msgid "This field cannot be empty. Please provide a value."
-msgstr "Это поле должно содержать корректный код цвета."
+msgstr "שדה זה לא יכול להיות ריק. אנא הכנס ערך."
 
 #: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
 msgid "You must provide a numerical value for this option."
-msgstr "Вы должны указать числовое значение в этом поле."
+msgstr "עליך לספק ערך נומרי עבור אפשרות זאת."
 
 #: ../themeoptions/inc/validation/url/validation_url.php:15
 msgid "You must provide a valid URL for this option."
-msgstr "Вы должны указать корректный URL в этом поле."
+msgstr "עליך לספק כתובת URL חוקית עבור אפשרות זאת."
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] "%s обзор для %s"
-msgstr[1] "%s обзоров для %s"
+msgstr[0] "%s ביקורת עבור %s"
+msgstr[1] "%s ביקורות עבור %s"
 
 #: ../woocommerce/single-product-reviews.php:23
 msgid "Reviews"
-msgstr "Отзывы"
+msgstr "ביקורות"
 
 #: ../woocommerce/single-product-reviews.php:44
-#, fuzzy
 msgid "There are no reviews yet."
-msgstr "Нет ранее сохраненных настроект"
+msgstr "אין עדיין ביקורות."
 
 #: ../woocommerce/single-product-reviews.php:57
 msgid "Add a review"
-msgstr "Добавить отзыв"
+msgstr "הוסף ביקורת."
 
 #: ../woocommerce/single-product-reviews.php:57
 msgid "Be the first to review"
-msgstr "Оставьте свой отзыв первым"
+msgstr "היה הראשון לסקור לביקורת"
 
 #: ../woocommerce/single-product-reviews.php:64
 msgid "Email"
-msgstr "Электронная почта"
+msgstr "אימייל"
 
 #: ../woocommerce/single-product-reviews.php:67
-#, fuzzy
 msgid "Submit"
-msgstr "Разместить отзыв"
+msgstr "שלח"
 
 #: ../woocommerce/single-product-reviews.php:73
-#, fuzzy
 msgid "Your Rating"
-msgstr "Рейтинг"
+msgstr "הדירוג שלך"
 
 #: ../woocommerce/single-product-reviews.php:74
 msgid "Rate&hellip;"
-msgstr "Рейтинг&hellip;"
+msgstr "דרג&hellip;"
 
 #: ../woocommerce/single-product-reviews.php:75
 msgid "Perfect"
-msgstr "Замечательный"
+msgstr "מושלם"
 
 #: ../woocommerce/single-product-reviews.php:76
 msgid "Good"
-msgstr "Хороший"
+msgstr "טוב"
 
 #: ../woocommerce/single-product-reviews.php:77
 msgid "Average"
-msgstr "Средний"
+msgstr "ממוצע"
 
 #: ../woocommerce/single-product-reviews.php:78
 msgid "Not that bad"
-msgstr "Неплохой"
+msgstr "לא כל כך גרוע"
 
 #: ../woocommerce/single-product-reviews.php:79
 msgid "Very Poor"
-msgstr "Очень плохой"
+msgstr "גרוע"
 
 #: ../woocommerce/single-product-reviews.php:83
 msgid "Your Review"
-msgstr "Ваш отзыв"
+msgstr "הביקורת שלך"
 
 #: ../woocommerce/single-product-reviews.php:92
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
-msgstr ""
+msgstr "רק לקוחות שנכנסו לחשבון ורכשו מוצר זה יכולים להשאיר ביקורת."
 
 #: ../woocommerce/single-product.php:23 ../woocommerce/single-product.php:25
 msgid "Back to"
-msgstr "Назад к"
+msgstr "חזור אל"
 
 #: ../woocommerce/single-product.php:25
 msgid "Shop"
-msgstr "Магазин"
+msgstr "חנות"
 
 #: ../woocommerce/cart/cart-totals.php:16
 msgid "Cart Totals"
-msgstr "Итого в корзине"
+msgstr "סיכומי עגלת קניות"
 
 #: ../woocommerce/cart/cart-totals.php:21
 msgid "Cart Subtotal"
-msgstr "Промежуточный итог в корзине"
+msgstr "סיכום ביניים לעגלה"
 
 #: ../woocommerce/cart/cart-totals.php:75
 msgid "Order Total"
-msgstr "Итого заказа"
+msgstr "סיכום הזמנה"
 
 #: ../woocommerce/cart/cart-totals.php:87
 #, php-format
 msgid " (taxes estimated for %s)"
-msgstr "(налог оценен в %s)"
+msgstr " (מיסים משוערים עבור %s)"
 
 #: ../woocommerce/cart/cart-totals.php:90
 #, php-format
@@ -3171,176 +3066,171 @@ msgid ""
 "Note: Shipping and taxes are estimated%s and will be updated during checkout "
 "based on your billing and shipping information."
 msgstr ""
-"Внимание: Доставка и налоги оцениваются в %s и будут обновлены во время "
-"оформления заказа на основании ваших данных для выставления счета и доставки."
+"שים לב: עלויות משלוח ומיסים מוערכים %s ויעודכנו במהלך התשלום בקופה על בסיס "
+"המידע שסיפקת למשלוח וגבייה."
 
 #: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
 msgid "Product"
-msgstr "Продукт"
+msgstr "מוצר"
 
 #: ../woocommerce/cart/cart.php:28
 msgid "Price"
-msgstr "Цена"
+msgstr "מחיר"
 
 #: ../woocommerce/cart/cart.php:29
 msgid "Quantity"
-msgstr "Количество"
+msgstr "כמות"
 
 #: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
 msgid "Total"
-msgstr "Итого"
+msgstr "סך הכל"
 
 #: ../woocommerce/cart/cart.php:47
 msgid "Remove this item"
-msgstr "Удалить этот элемент"
+msgstr "הסר פריט זה"
 
 #: ../woocommerce/cart/cart.php:74
 msgid "Available on backorder"
-msgstr "Доступно позднее"
+msgstr "זמין להזמנה מיוחדת"
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Coupon"
-msgstr "Купон"
+msgstr "קופון"
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Coupon code"
-msgstr "Код купона"
+msgstr "קוד קופון"
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Apply Coupon"
-msgstr "Применить купон"
+msgstr "הפעל קופון"
 
 #: ../woocommerce/cart/cart.php:125
 msgid "Update Cart"
-msgstr "Обновить корзину"
+msgstr "עדכן עגלה"
 
 #: ../woocommerce/cart/cart.php:125
-#, fuzzy
 msgid "Proceed to Checkout"
-msgstr "К оформлению заказа &rarr;"
+msgstr "המשך לקופה"
 
 #: ../woocommerce/cart/cross-sells.php:38
 msgid "You may be interested in&hellip;"
-msgstr "Вас также может заинтересовать&hellip;"
+msgstr "אולי תהיה מעוניין ב-&hellip;"
 
 #: ../woocommerce/cart/shipping-calculator.php:22
 msgid "Calculate Shipping"
-msgstr "Расчитать стоимость доставки"
+msgstr "חשב עלויות משלוח"
 
 #: ../woocommerce/cart/shipping-calculator.php:28
 msgid "Select a country&hellip;"
-msgstr "Выберите страну&hellip;"
+msgstr "בחר מדינה &hellip;"
 
 #: ../woocommerce/cart/shipping-calculator.php:45
 #: ../woocommerce/cart/shipping-calculator.php:51
 #: ../woocommerce/cart/shipping-calculator.php:63
 msgid "State / county"
-msgstr "Страна"
+msgstr "מדינה בארהב / ארץ"
 
 #: ../woocommerce/cart/shipping-calculator.php:52
 msgid "Select a state&hellip;"
-msgstr "Выберите штат&hellip;"
+msgstr "בחר מדינה בארהב &hellip;"
 
 #: ../woocommerce/cart/shipping-calculator.php:72
 msgid "City"
-msgstr "Город"
+msgstr "עיר"
 
 #: ../woocommerce/cart/shipping-calculator.php:80
 msgid "Postcode / Zip"
-msgstr "Индекс"
+msgstr "מיקוד"
 
 #: ../woocommerce/cart/shipping-calculator.php:86
 msgid "Update Totals"
-msgstr "Пересчитать итог"
+msgstr "עדכן סיכומים"
 
 #: ../woocommerce/checkout/thankyou.php:18
 msgid ""
 "Unfortunately your order cannot be processed as the originating bank/"
 "merchant has declined your transaction."
-msgstr ""
-"К сожалению, ваш заказ не может быть обработан, поскольку ваш банк / "
-"платежный агент отказал в проведении операции."
+msgstr "מצטערים, אך לא ניתן לבצע את הזמנתך מאחר ובנק המקור/המוכר דחו את העסקה."
 
 #: ../woocommerce/checkout/thankyou.php:22
 msgid "Please attempt your purchase again or go to your account page."
-msgstr ""
-"Пожалуйста, повторите попытку еще раз или перейдите на страницу настроек "
-"вашей учетной записи."
+msgstr "אנא נסה שוב את הרכישה או גש לדף החשבון שלך."
 
 #: ../woocommerce/checkout/thankyou.php:24
 msgid "Please attempt your purchase again."
-msgstr "Пожалуйста, повторите попытку еще раз."
+msgstr "אנא נסה שוב את הרכישה שלך."
 
 #: ../woocommerce/checkout/thankyou.php:28
 msgid "Pay"
-msgstr "Оплатить"
+msgstr "שלם"
 
 #: ../woocommerce/checkout/thankyou.php:30
 msgid "My Account"
-msgstr "Моя запись"
+msgstr "החשבון שלי"
 
 #: ../woocommerce/checkout/thankyou.php:36
 #: ../woocommerce/checkout/thankyou.php:67
 msgid "Thank you. Your order has been received."
-msgstr "Спасибо! Ваш заказ принят."
+msgstr "תודה. הזמנתך התקבלה."
 
 #: ../woocommerce/checkout/thankyou.php:40
 msgid "Order:"
-msgstr "Заказ:"
+msgstr "הזמנה:"
 
 #: ../woocommerce/checkout/thankyou.php:44
 msgid "Date:"
-msgstr "Дата:"
+msgstr "תאריך:"
 
 #: ../woocommerce/checkout/thankyou.php:48
 msgid "Total:"
-msgstr "Итого:"
+msgstr "סך הכל:"
 
 #: ../woocommerce/checkout/thankyou.php:53
 msgid "Payment method:"
-msgstr "Метод оплаты:"
+msgstr "אמצעי תשלום:"
 
 #: ../woocommerce/loop/no-products-found.php:14
 msgid "No products found which match your selection."
-msgstr "Не найдено ни одного продукта удовлетворяющего критериям выбора."
+msgstr "לא נמצאו מוצרים שתואמים את בחירתך."
 
 #: ../woocommerce/loop/orderby.php:21
 msgid "Default sorting"
-msgstr "Сортировка по умолчанию"
+msgstr "מיון לפי ברירת מחדל"
 
 #: ../woocommerce/loop/orderby.php:22
 msgid "Sort by popularity"
-msgstr "По полулярности"
+msgstr "מיין לפי פופולריות"
 
 #: ../woocommerce/loop/orderby.php:23
 msgid "Sort by average rating"
-msgstr "По среднему рейтингу"
+msgstr "מיין לפי דירוג ממוצע"
 
 #: ../woocommerce/loop/orderby.php:24
 msgid "Sort by newness"
-msgstr "По новизне"
+msgstr "מיין לפי תאריך כניסה לחנות"
 
 #: ../woocommerce/loop/orderby.php:25
 msgid "Sort by price: low to high"
-msgstr "По цене: сначала дешевые"
+msgstr "מיין לפי מחיר: נמוך עד גבוה"
 
 #: ../woocommerce/loop/orderby.php:26
 msgid "Sort by price: high to low"
-msgstr "По цене: сначала дорогие"
+msgstr "מיין לפי מחיר: גבוה לנמוך"
 
 #: ../woocommerce/loop/result-count.php:28
 msgid "Showing the single result"
-msgstr "Единственный результат"
+msgstr "מציג את התוצאה היחידה"
 
 #: ../woocommerce/loop/result-count.php:30
 #, php-format
 msgid "Showing all %d results"
-msgstr "Все %d результаты"
+msgstr "מציג את כל תוצאות %d"
 
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr "Распродажа!"
+msgstr "מבצע!"
 
 #: ../woocommerce/order/form-tracking.php:17
 msgid ""
@@ -3348,589 +3238,142 @@ msgid ""
 "return. This was given to you on your receipt and in the confirmation email "
 "you should have received."
 msgstr ""
-"Для отслеживания статуса вашего заказа укажите ID Заказа и нажмите Enter. ID "
-"Заказа был присвоен при его оформлении и отправлен вам вместе с "
-"подтверждением заказа по электронной почте."
+"על מנת לעקוב אחר הזמנתך אנא הכנס מספר מזהה להזמנה בתיבה למטה ולחץ Enter. "
+"מזהה זה ניתן לך בקבלה שלך ובמייל האישור שהיית אמור לקבל."
 
 #: ../woocommerce/order/form-tracking.php:19
 msgid "Order ID"
-msgstr "ID Заказа"
+msgstr "מזהה הזמנה"
 
 #: ../woocommerce/order/form-tracking.php:19
 msgid "Found in your order confirmation email."
-msgstr "Указан в сообщении о подтверждении заказа."
+msgstr "נמצא במייל האישור שלך."
 
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Billing Email"
-msgstr "Адрес электронной почты для выставления счетов"
+msgstr "מייל עבור נושאי גביה"
 
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Email you used during checkout."
-msgstr "Адрес электронной почты, указанный при оформлении заказа."
+msgstr "האימייל שבו השתמשת בזמן תשלום בקופה."
 
 #: ../woocommerce/order/form-tracking.php:23
 msgid "Track"
-msgstr "Отследить"
+msgstr "עקוב"
 
 #: ../woocommerce/order/order-details.php:16
 msgid "Order Details"
-msgstr "Реквизиты заказа"
+msgstr "פרטי הזמנה"
 
 #: ../woocommerce/order/order-details.php:66
 #, php-format
 msgid "Download file%s"
-msgstr "Скачать файл %s"
+msgstr "הורד קובץ%s"
 
 #: ../woocommerce/order/order-details.php:98
 msgid "Order Again"
-msgstr "Повторный заказ"
+msgstr "הזמן שוב"
 
 #: ../woocommerce/order/order-details.php:105
 msgid "Customer details"
-msgstr "Реквизиты клиента"
+msgstr "פרטי לקוח"
 
 #: ../woocommerce/order/order-details.php:126
 msgid "Billing Address"
-msgstr "Адрес для выставления счета"
+msgstr "כתובת לחיוב"
 
 #: ../woocommerce/order/order-details.php:130
 #: ../woocommerce/order/order-details.php:145
 msgid "N/A"
-msgstr "Н/Д"
+msgstr "לא זמין"
 
 #: ../woocommerce/order/order-details.php:141
 msgid "Shipping Address"
-msgstr "Адрес доставки"
+msgstr "כתובת למשלוח"
 
 #: ../woocommerce/shop/breadcrumb.php:63
 msgid "Products tagged &ldquo;"
-msgstr "Пролукты с тэгами &ldquo;"
+msgstr "מוצר מתויג &ldquo;"
 
 #: ../woocommerce/shop/breadcrumb.php:91
 #: ../woocommerce/shop/breadcrumb.php:188
 msgid "Search results for &ldquo;"
-msgstr "Результаты поиска &ldquo;"
+msgstr "תוצאות חיפוש עבור &ldquo;"
 
 #: ../woocommerce/shop/breadcrumb.php:146
 msgid "Error 404"
-msgstr "Ошибка 404"
+msgstr "שגיאה 404"
 
 #: ../woocommerce/shop/breadcrumb.php:192
 msgid "Posts tagged &ldquo;"
-msgstr "Записи с тэгами &ldquo;"
+msgstr "פוסטים שתויגו &ldquo;"
 
 #: ../woocommerce/shop/breadcrumb.php:197
 msgid "Author:"
-msgstr "Автор:"
+msgstr "הכותב:"
 
 #: ../woocommerce/shop/breadcrumb.php:202
 msgid "Page"
-msgstr "Страница"
+msgstr "עמוד"
 
 #: ../woocommerce/shop/form-login.php:20
 msgid "Username or email"
-msgstr "Имя пользователя или адрес электронной почты"
+msgstr "שם משתמש או אימייל"
 
 #: ../woocommerce/shop/form-login.php:31
 msgid "Login"
-msgstr "Войти"
+msgstr "כניסה"
 
 #: ../woocommerce/shop/form-login.php:33
 msgid "Lost Password?"
-msgstr "Забыли пароль?"
+msgstr "איבדת סיסמא?"
 
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
-msgstr "Рейтинг %s из 5."
+msgstr "דורג %s מתוך 5"
 
 #: ../woocommerce/single-product/rating.php:25
 #: ../woocommerce/single-product/review.php:27
 msgid "out of 5"
-msgstr "из 5"
+msgstr "מתוך 5"
 
 #: ../woocommerce/single-product/rating.php:28
 #, php-format
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s ביקורת לקוח"
+msgstr[1] "%s ביקורות לקוחות"
 
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
-msgstr "Ретинг %d из 5"
+msgstr "דורג %d מתוך 5"
 
 #: ../woocommerce/single-product/review.php:34
 msgid "Your comment is awaiting approval"
-msgstr "Ваш комментарий ожидает одобрения"
+msgstr "התגובה שלך ממתינה לאישור"
 
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
-msgstr "подтвержденный владелец"
+msgstr "בעלים מאומתים"
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:80
 msgid "Choose an option"
-msgstr "Выберите вариант"
+msgstr "בחר אפשרות"
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:128
 msgid "Clear selection"
-msgstr "Очистить выбор"
+msgstr "נקה בחירה"
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:161
 msgid "This product is currently out of stock and unavailable."
-msgstr ""
+msgstr "המוצר הזה כרגע מחוץ למלאי ולא זמין."
 
 #: ../woocommerce/single-product/tabs/additional-information.php:14
 msgid "Additional Information"
-msgstr "Дополнительная информация"
+msgstr "מידע נוסף"
 
 #: ../woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
-msgstr "Описание продукта"
-
-#~ msgid "Options Object"
-#~ msgstr "Объект опций"
-
-#~ msgid "Show Object in Javascript Console Object"
-#~ msgstr "Показать объект в консоли объектов JavaScript"
-
-#~ msgid "Enter a valid email address."
-#~ msgstr "Ведите действующий адрес электронной почты."
-
-#~ msgid "New"
-#~ msgstr "Новый"
-
-#~ msgid "SKU:"
-#~ msgstr "Артикул:"
-
-#~ msgid "Category:"
-#~ msgid_plural "Categories:"
-#~ msgstr[0] "Категория:"
-#~ msgstr[1] "Категории:"
-
-#~ msgid "Tag:"
-#~ msgid_plural "Tags:"
-#~ msgstr[0] "Тэг:"
-#~ msgstr[1] "Тэги:"
-
-#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущий"
-
-#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Следующий <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "Add Your Review"
-#~ msgstr "Добавить ваш отзыв"
-
-#~ msgid ""
-#~ "There are no reviews yet, would you like to <a data-toggle=\"collapse\" "
-#~ "data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-#~ "show_review_form\">submit yours</a>?"
-#~ msgstr ""
-#~ "На настоящий момнет нет ни одного отзыва, не хотите <a data-toggle="
-#~ "\"collapse\" data-parent=\"#review_form\" href=\"#review_form\" class="
-#~ "\"inline show_review_form\">оставить свой</a>?"
-
-#~ msgid "Cart Discount"
-#~ msgstr "Скидка на товары в корзине"
-
-#~ msgid "[Remove]"
-#~ msgstr "[Удалить]"
-
-#~ msgid "Shipping"
-#~ msgstr "Доставка"
-
-#~ msgid "Order Discount"
-#~ msgstr "Скидка на заказ"
-
-#~ msgid "(Includes %s)"
-#~ msgstr "(Включает %s)"
-
-#~ msgid ""
-#~ "No shipping methods were found; please recalculate your shipping and "
-#~ "enter your state/county and zip/postcode to ensure there are no other "
-#~ "available methods for your location."
-#~ msgstr ""
-#~ "Методы доставки не найдены; пожалуйста, пересчитайте вашу доставку и "
-#~ "укажите ваше местоположение и почтовый индекс, чтобы убедиться, что "
-#~ "других методов доставки нет."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available shipping methods for your "
-#~ "location (%s)."
-#~ msgstr "Извините, доставка по указанному адресу (%s) невозможна."
-
-#~ msgid ""
-#~ "If you require assistance or wish to make alternate arrangements please "
-#~ "contact us."
-#~ msgstr ""
-#~ "Если вам нужна помощь или требуются особые условия свяжитесь с нами."
-
-#~ msgid "You must be logged in to checkout."
-#~ msgstr "Вы долдны войти в учетную запись для оформления покупки."
-
-#~ msgid "Your order"
-#~ msgstr "Ваш заказ"
-
-#~ msgid "Have a coupon?"
-#~ msgstr "Есть купон?"
-
-#~ msgid "Click here to enter your code"
-#~ msgstr "Кликните здесь для ввода кода"
-
-#~ msgid "Read More"
-#~ msgstr "Читать далее"
-
-#~ msgid "View options"
-#~ msgstr "Просмотреть варианты"
-
-#~ msgid "Add to cart"
-#~ msgstr "Добавить в корзину"
-
-#~ msgid "New password"
-#~ msgstr "Новый пароль"
-
-#~ msgid "Re-enter new password"
-#~ msgstr "Повторите новый пароль"
-
-#~ msgid "Save Address"
-#~ msgstr "Сохранить адрес"
-
-#~ msgid "Register"
-#~ msgstr "Регистрация"
-
-#~ msgid "Re-enter password"
-#~ msgstr "Повторите пароль"
-
-#~ msgid ""
-#~ "Lost your password? Please enter your username or email address. You will "
-#~ "receive a link to create a new password via email."
-#~ msgstr ""
-#~ "Забыли пароль? Пожалуйста, укажите ваше имя пользователя или адрес "
-#~ "электронной почты. Мы отправим вам на ваш электронный адрес ссылку на "
-#~ "страницу для восстановления пароля."
-
-#~ msgid "Enter a new password below."
-#~ msgstr "Введите новый пароль ниже"
-
-#~ msgid "Reset Password"
-#~ msgstr "Сбросить пароль"
-
-#~ msgid ""
-#~ "Hello, <strong>%s</strong>. From your account dashboard you can view your "
-#~ "recent orders, manage your shipping and billing addresses and <a href=\"%s"
-#~ "\">change your password</a>."
-#~ msgstr ""
-#~ "Здравствуйте, <strong>%s</strong>. Из вашего личного кабинета вы можете "
-#~ "просматривать сделанные заказы, редактировать данные для оплаты и "
-#~ "доставки и <a href=\"%s\">изменить ваш пароль</a>."
-
-#~ msgid "My Addresses"
-#~ msgstr "Мои адреса"
-
-#~ msgid "My Address"
-#~ msgstr "Мой адрес"
-
-#~ msgid ""
-#~ "The following addresses will be used on the checkout page by default."
-#~ msgstr ""
-#~ "Данный адрес будет использоваться на странице оформления заказа по "
-#~ "умолчанию."
-
-#~ msgid "Edit"
-#~ msgstr "Редактировать"
-
-#~ msgid "You have not set up this type of address yet."
-#~ msgstr "Вы еще не указали адрес этого типа."
-
-#~ msgid "Available downloads"
-#~ msgstr "Доступно для скачивания"
-
-#~ msgid "%s download remaining"
-#~ msgid_plural "%s downloads remaining"
-#~ msgstr[0] "%s осталось для скачивания"
-#~ msgstr[1] "%s осталось для скачивания"
-
-#~ msgid "Recent Orders"
-#~ msgstr "Недавние заказы"
-
-#~ msgid "Order"
-#~ msgstr "Заказать"
-
-#~ msgid "%s for %s item"
-#~ msgid_plural "%s for %s items"
-#~ msgstr[0] "%s для %s элемента"
-#~ msgstr[1] "%s для %s элементов"
-
-#~ msgid "Cancel"
-#~ msgstr "Отменить"
-
-#~ msgid "View"
-#~ msgstr "Просмотреть"
-
-#~ msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
-#~ msgstr "Заказ %s сделанный %s имеет статус &ldquo;%s&rdquo;"
-
-#~ msgid "ago"
-#~ msgstr "назад"
-
-#~ msgid "and was completed"
-#~ msgstr "и был выполнен"
-
-#~ msgid " ago"
-#~ msgstr "назад"
-
-#~ msgid "Order Updates"
-#~ msgstr "Обновления заказа"
-
-#~ msgid "Weight"
-#~ msgstr "Вес"
-
-#~ msgid "Dimensions"
-#~ msgstr "Размеры"
-
-#~ msgid "Related Products"
-#~ msgstr "Связанные продукты"
-
-#~ msgid "You may also like&hellip;"
-#~ msgstr "Вам также может понравиться &hellip;"
-
-#~ msgid "Reset to Defaults"
-#~ msgstr "Восстановить по умолчанию"
-
-#~ msgid "Not Valid"
-#~ msgstr "Не действительный"
-
-#~ msgid "Licencing"
-#~ msgstr "Лицензирование"
-
-#~ msgid "Shoestrap Theme Licence"
-#~ msgstr "Лицензия темы Shoestrap"
-
-#~ msgid "Enter your shoestrap licence to enable automatic updates."
-#~ msgstr ""
-#~ "Введите текст лицензионного соглашения Shoestrap для автоматического "
-#~ "обновления."
-
-#~ msgid "Invalid"
-#~ msgstr "Недействительный"
-
-#~ msgid "Choose Icon"
-#~ msgstr "Выбрать иконку"
-
-#~ msgid "Image URL"
-#~ msgstr "Ссыдка на изображение"
-
-#~ msgid "Your cart is currently empty."
-#~ msgstr "Ваша корзина пуста."
-
-#~ msgid "&larr; Return To Shop"
-#~ msgstr "&larr; Назад в магазин"
-
-#~ msgid "No products in the cart."
-#~ msgstr "В корзине нет продуктов."
-
-#~ msgid "Subtotal"
-#~ msgstr "Промежуточный итог"
-
-#~ msgid "View Cart &rarr;"
-#~ msgstr "Посмотреть корзину &rarr;"
-
-#~ msgid "Checkout &rarr;"
-#~ msgstr "Оформление &rarr;"
-
-#~ msgid "Free"
-#~ msgstr "Бесплатно"
-
-#~ msgid "Please fill in your details to see available shipping methods."
-#~ msgstr ""
-#~ "Пожалуйста заполните реквизиты для просмотра возможных вариантов доставки."
-
-#~ msgid ""
-#~ "There are some issues with the items in your cart (shown above). Please "
-#~ "go back to the cart page and resolve these issues before checking out."
-#~ msgstr ""
-#~ "Есть проблемы с товарами в вашей корзине (указано выше). Пожалуйста, "
-#~ "вернитесь в корзину и устраните эти проблемы до начала оформления заказа."
-
-#~ msgid "&larr; Return To Cart"
-#~ msgstr "&larr; Вернуться к корзине"
-
-#~ msgid "Billing &amp; Shipping"
-#~ msgstr "Счета &amp; Доставка"
-
-#~ msgid "Create an account?"
-#~ msgstr "Создать учетную запись?"
-
-#~ msgid ""
-#~ "Create an account by entering the information below. If you are a "
-#~ "returning customer please login at the top of the page."
-#~ msgstr ""
-#~ "Создайте учетную запись, указав требуемую информацию ниже. Если у вас уже "
-#~ "есть своя запись, войдите в нее с помощью меню входя в учетную запись."
-
-#~ msgid "Returning customer?"
-#~ msgstr "Регистрировались ранее?"
-
-#~ msgid "Click here to login"
-#~ msgstr "Нажмите для входа"
-
-#~ msgid ""
-#~ "If you have shopped with us before, please enter your details in the "
-#~ "boxes below. If you are a new customer please proceed to the Billing "
-#~ "&amp; Shipping section."
-#~ msgstr ""
-#~ "Если вы уже оформляли у нас заказы, введите ваши данные в форму ниже. "
-#~ "Если вы новый клиент, пожалуйста, перейдите в раздел Счета &amp; Доставка."
-
-#~ msgid "Qty"
-#~ msgstr "Кол-во"
-
-#~ msgid "Totals"
-#~ msgstr "Всего"
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "location. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "Извините, похоже что для вашего местоположения нет доступных методов "
-#~ "оплаты. Пожалуйста, свяхитесь с нами если вам нужна консультация или вы "
-#~ "хотите обговорить специальные условия."
-
-#~ msgid "Pay for order"
-#~ msgstr "Оплата заказа"
-
-#~ msgid "Ship to billing address?"
-#~ msgstr "Доставка по адресу выставления счета?"
-
-#~ msgid "Please fill in your details above to see available payment methods."
-#~ msgstr ""
-#~ "Пожалуйста, заполните данные для определения доступных методов оплаты."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "state. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "Извините, похоже что для вашей страны (штата) нет доступных методов "
-#~ "оплаты. Пожалуйста, свяжитесь с нами, если вам нужна консультация или вы "
-#~ "хотите обговорить специальные условия."
-
-#~ msgid ""
-#~ "Since your browser does not support JavaScript, or it is disabled, please "
-#~ "ensure you click the <em>Update Totals</em> button before placing your "
-#~ "order. You may be charged more than the amount stated above if you fail "
-#~ "to do so."
-#~ msgstr ""
-#~ "Поскольку ваш браузер не поддерживает JavaScript, или он отключен, "
-#~ "пожалуйста, убедитесь, что вы нажали кнопку <em>Пересчитать итог</em> "
-#~ "перед началом оформления заказа. Вам может быть начислен счет на сумму "
-#~ "большую, чем должно быть, если вы этого не сделаете."
-
-#~ msgid "Update totals"
-#~ msgstr "Пересчитать итоги"
-
-#~ msgid "Place order"
-#~ msgstr "Оформить заказ"
-
-#~ msgid "I have read and accept the"
-#~ msgstr "Я прочитал и принимаю"
-
-#~ msgid "terms &amp; conditions"
-#~ msgstr "условия"
-
-#~ msgid "You have received an order from %s. Their order is as follows:"
-#~ msgstr "Вы получили заказ от %s. Данные заказа указаны ниже:"
-
-#~ msgid "Order: %s"
-#~ msgstr "Заказ: %s"
-
-#~ msgid "Tel:"
-#~ msgstr "Тел:"
-
-#~ msgid ""
-#~ "Hi there. Your recent order on %s has been completed. Your order details "
-#~ "are shown below for your reference:"
-#~ msgstr ""
-#~ "Привет! Ваш недавних заказ на %s был выполнен. Подробности вашего заказа "
-#~ "указаны ниже для ваших записей:"
-
-#~ msgid ""
-#~ "An order has been created for you on %s. To pay for this order please use "
-#~ "the following link: %s"
-#~ msgstr "Для вас был создан заказ на %s. Для оплаты используйте ссулку: %s"
-
-#~ msgid "pay"
-#~ msgstr "Оплатить"
-
-#~ msgid ""
-#~ "Thanks for creating an account on %s. Your username is <strong>%s</"
-#~ "strong>."
-#~ msgstr ""
-#~ "Спасибо за регистрацию на %s. Ваше имя пользователя <strong>%s</strong>."
-
-#~ msgid "You can access your account area here: %s."
-#~ msgstr "Вы можете просмотреть свою учетную запись здесь: %s."
-
-#~ msgid "Hello, a note has just been added to your order:"
-#~ msgstr "Привет! К вашему заказу только что было добавлено сообщение:"
-
-#~ msgid "For your reference, your order details are shown below."
-#~ msgstr "Для вашего удобства подробности вашего заказа указаны ниже."
-
-#~ msgid ""
-#~ "Your order has been received and is now being processed. Your order "
-#~ "details are shown below for your reference:"
-#~ msgstr ""
-#~ "Ваш заказ был получен и в настоящее время обрабатывается. Для вашего "
-#~ "удобства подробности вашего заказа указаны ниже."
-
-#~ msgid ""
-#~ "Someone requested that the password be reset for the following account:"
-#~ msgstr ""
-#~ "Нами был получен запрос на восстановление пароля для этой учетной записи:"
-
-#~ msgid "Username: %s"
-#~ msgstr "Пользователь: %s"
-
-#~ msgid ""
-#~ "If this was a mistake, just ignore this email and nothing will happen."
-#~ msgstr "Если это произошло по ошибке, просто проигнорируйте это сообщение."
-
-#~ msgid "To reset your password, visit the following address:"
-#~ msgstr "Для смены пароля обратитесь по этой ссылке:"
-
-#~ msgid "Click here to reset your password"
-#~ msgstr "Кликните здесь для восстановления пароля"
-
-#~ msgid "Billing address"
-#~ msgstr "Реквизиты для выставления счета"
-
-#~ msgid "Shipping address"
-#~ msgstr "Адрес доставки"
-
-#~ msgid "Download %d:"
-#~ msgstr "Загрузить %d:"
-
-#~ msgid "Download:"
-#~ msgstr "Загрузить:"
-
-#~ msgid "Order number: %s"
-#~ msgstr "Заказ №: %s"
-
-#~ msgid "Order date: %s"
-#~ msgstr "Дата заказа: %s"
-
-#~ msgid "jS F Y"
-#~ msgstr "jS F Y"
-
-#~ msgid "Your details"
-#~ msgstr "Ваши реквизиты"
-
-#~ msgid "Quantity: %s"
-#~ msgstr "Количество: %s"
-
-#~ msgid "Cost: %s"
-#~ msgstr "Стоимость: %s"
+msgstr "תיאור מוצר"

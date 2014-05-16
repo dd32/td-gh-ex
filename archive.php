@@ -9,7 +9,6 @@
         <?php global $virtue; if(isset($virtue['blog_archive_full']) && $virtue['blog_archive_full'] == 'full')
         {$summery = 'full'; $postclass = "single-article fullpost";} else {$summery = 'normal'; $postclass = 'postlist';} ?>
       <div class="main <?php echo kadence_main_class(); ?>  <?php echo $postclass;?>" role="main">
-        <?php echo category_description(); ?> 
 
 <?php if (!have_posts()) : ?>
   <div class="alert">

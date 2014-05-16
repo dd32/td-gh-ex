@@ -93,7 +93,7 @@ function kad_woocommerce_header_add_to_cart_fragment( $fragments ) {
     ob_start(); ?>
 
     <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'virtue'); ?>">
-        <i class="icon-shopping-cart" style="padding-right:5px;"></i>  <?php _e('Your Cart', 'virtue');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+        <i class="icon-shopping-cart" style="padding-right:5px;"></i>  <?php _e('Your Cart', 'virtue');?> <span class="kad-cart-dash">-</span> <?php echo $woocommerce->cart->get_cart_total(); ?>
     </a>
     <?php
     $fragments['a.cart-contents'] = ob_get_clean();
