@@ -12,6 +12,7 @@ Catch Kathmandu theme is translation ready.
 Added Translation for French by Rico (Email: postmaster@web-automobile.com) and Sebastian Chamusard (admin78@orange.fr)
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
+Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -67,6 +68,10 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 1.5
+* Added Polish translation pl_PL.po and pl_PL.mo
+* Fixed Footer widget issues in Mobile devices when using 3 footer areas (Reported By Tim) 
 
 Version 1.4
 * Added Spanish translation es_ES.po and es_ES.mo

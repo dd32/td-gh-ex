@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
-"POT-Creation-Date: 2014-05-09 04:38+0545\n"
-"PO-Revision-Date: 2014-05-09 04:38+0545\n"
+"POT-Creation-Date: 2014-05-16 11:44+0545\n"
+"PO-Revision-Date: 2014-05-16 11:44+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -1616,27 +1616,3 @@ msgstr "Résultats de la recherche pour: %s"
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
 msgstr "Recherche"
-
-#~ msgid "Continue reading &rarr;"
-#~ msgstr "Lire la suite &rarr;"
-
-#~ msgid "Theme: %1$s by %2$s"
-#~ msgstr "Thème : %1$s par %2$s"
-
-#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
-
-#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "%1$s / %2$s"
-#~ msgstr "%1$s / %2$s"
-
-#~ msgid "ago"
-#~ msgstr "auparavant"
-
-#~ msgid "%1$s in %2$s."
-#~ msgstr "%1$s dans %2$s."
-
-#~ msgid "Tags: "
-#~ msgstr "Mots-clés&nbsp;:"

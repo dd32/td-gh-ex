@@ -71,8 +71,8 @@ function catchkathmandu_custom_header_setup() {
 			'description' => __( 'Default Logo', 'catchkathmandu' )
 		),
 		'catchkathmandulogo' => array(
-			'url' => '%s/images/catch-kathmdnu.png',
-			'thumbnail_url' => '%s/images/catch-kathmdnu.png',
+			'url' => '%s/images/catch-kathmandu.png',
+			'thumbnail_url' => '%s/images/catch-kathmandu.png',
 			/* translators: header image description */
 			'description' => __( 'Catch Kathmandu Logo', 'catchkathmandu' )
 		)

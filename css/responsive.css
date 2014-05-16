@@ -116,7 +116,6 @@
 		padding: 5px 10px;
 		padding: 0.5rem 1rem;
 	}	
-		
 	.container {
 		padding: 0 30px;
 		padding: 0 3rem;
@@ -217,36 +216,35 @@
 		font-size: 22rem;
 		font-size: 2.2rem;
 	}	
-
-.widget-title {
-	font-size: 16px;
-	font-size: 1.6rem;		
-}
-.comments-title, #reply-title,
-.entry-content h1, .comment-content h1 {
-	font-size: 19px;
-    font-size: 1.9rem;
-}
-.entry-content h2, .comment-content h2 {
-	font-size: 18px;
-    font-size: 1.8rem;
-}
-.entry-content h3, .comment-content h3 {
-	font-size: 17px;
-    font-size: 1.7rem;
-}
-.entry-content h4, .comment-content h4 {
-	font-size: 16px;
-	font-size: 1.6rem;	
-}
-.entry-content h5, .comment-content h5 {
-	font-size: 15px;
-	font-size: 1.5rem;	
-}
-.entry-content h6, .comment-content h6 {
-	font-size: 14px;
-	font-size: 1.4rem;	
-}
+	.widget-title {
+		font-size: 16px;
+		font-size: 1.6rem;		
+	}
+	.comments-title, #reply-title,
+	.entry-content h1, .comment-content h1 {
+		font-size: 19px;
+		font-size: 1.9rem;
+	}
+	.entry-content h2, .comment-content h2 {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	.entry-content h3, .comment-content h3 {
+		font-size: 17px;
+		font-size: 1.7rem;
+	}
+	.entry-content h4, .comment-content h4 {
+		font-size: 16px;
+		font-size: 1.6rem;	
+	}
+	.entry-content h5, .comment-content h5 {
+		font-size: 15px;
+		font-size: 1.5rem;	
+	}
+	.entry-content h6, .comment-content h6 {
+		font-size: 14px;
+		font-size: 1.4rem;	
+	}
 }
 @media screen and (max-width: 960px) {	
 	.site {
@@ -652,6 +650,11 @@ and (orientation : portrait) {
 	#featured-post #feature-heading {
 		font-size: 16px;		
 		font-size: 1.6rem;
+	}
+	#supplementary.three .widget-area {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
 	}		
 } 
 @media screen and (max-width: 560px) {
@@ -671,10 +674,12 @@ and (orientation : portrait) {
 	#featured-post.layout-three .featued-content-wrap,
 	#featured-post.layout-four .post,
 	#featured-post.layout-three .post,
-	#secondary {
+	#secondary,
+	#footer-sidebar #supplementary .widget-area {
 		margin-left: 0;
+		margin-right: 0;
 		width: 100%;
-	}	
+	}
 	#secondary .widget {
 		margin-left: 0;
 		padding: 10px 4%;
@@ -720,15 +725,6 @@ and (orientation : landscape) {
 	#homepage-message .left-section {
 		padding-bottom: 10px;
 	}
-	#featured-post.layout-four .featued-content-wrap, 
-	#featured-post.layout-three .featued-content-wrap,
-	#featured-post.layout-four .post,
-	#featured-post.layout-three .post,
-	#secondary,
-	#supplementary.four .widget-area {
-		margin-left: 0;
-		width: 100%;
-	}	
 	#secondary .widget {
 		margin-left: 0;
 		padding: 10px 4%;

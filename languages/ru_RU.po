@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
-"POT-Creation-Date: 2014-05-09 04:38+0545\n"
+"POT-Creation-Date: 2014-05-16 11:44+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -1622,67 +1622,3 @@ msgstr "Результаты поиска для: %s"
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
 msgstr "Поиск"
-
-#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Читать далее <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "Theme Settings"
-#~ msgstr "Настройки темы"
-
-#~ msgid "No sidebar, Full Width"
-#~ msgstr "Без боковой панели, Полная ширина"
-
-#~ msgid "Webmaster Tools"
-#~ msgstr "Инструменты вебмастера"
-
-#~ msgid "Save"
-#~ msgstr "Сохранить"
-
-#~ msgid "Custom Header. Need to Add or Remove Logo?"
-#~ msgstr "Изменяемый заголовок(header). Добавить или удалить логотип?"
-
-#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-#~ msgstr "<a class=\"button\" href=\"%s\">Нажмите здесь</a>"
-
-#~ msgid "Header Right Section"
-#~ msgstr "Правая область вершины(Header) сайта"
-
-#~ msgid "Background"
-#~ msgstr "Фон"
-
-#~ msgid "Custom Background. Need to replace or remove background?"
-#~ msgstr "Изменяемый фон. Заменить или удалить фон?"
-
-#~ msgid "No Sidebar, Full Width"
-#~ msgstr "Без боковой панели, Полная ширина"
-
-#~ msgid "Homepage / Frontpage"
-#~ msgstr "Домашняя страницы / Лицевая страница"
-
-#~ msgid "Catch Everest"
-#~ msgstr "Catch Everest"
-
-#~ msgid "Use this widget to add any type of Advertisement as a widget."
-#~ msgstr ""
-#~ "Используйте этот виджет для добавления любой рекламы в качестве виджета."
-
-#~ msgid "2. Catch Everest: Advertisement"
-#~ msgstr "2. Catch Everest: Реклама"
-
-#~ msgid "Advertisement Code:"
-#~ msgstr "Код рекламы:"
-
-#~ msgid "Image Url:"
-#~ msgstr "Ссылка картинки:"
-
-#~ msgid "Link URL:"
-#~ msgstr "Адрес ссылки:"
-
-#~ msgid "Open Link in New Window"
-#~ msgstr "Открыть ссылку в новом окне"
-
-#~ msgid "Alt text:"
-#~ msgstr "Альтернативный текст:"
-
-#~ msgid "Add Advertisement Code or Image URL"
-#~ msgstr "Добавить код рекламы или ссылку на картинку"
