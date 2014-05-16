@@ -33,11 +33,15 @@
 
 	<?php 
 	
-	if ((is_home()) || (is_category()) || (is_page()) || (is_search()) ):
+	if ((is_home()) || (is_category()) || (is_page()) || (is_search()) ) {
 		
-		suevafree_excerpt(); 
-	
-	else:
+		if ( (!suevafree_setting('suevafree_view_readmore')) || (suevafree_setting('suevafree_view_readmore') == "on" ) ) {
+			suevafree_excerpt(); 
+		} else if (suevafree_setting('suevafree_view_readmore') == "off" ) {
+			the_content(); 
+		}
+
+	} else {
 
 		the_content();
 		
@@ -53,7 +57,7 @@
 			comments_template();
 		endif;
 		
-	endif;
+	}
 	
 	
 	?>

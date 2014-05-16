@@ -79,7 +79,14 @@ array( "type" => "begintab",
 	   	   "right-sidebar" => __( "Right Sidebar","wip"),
 		   ),
 	       "std" => ""),
-		   
+
+	array( "name" => __( "Read more","wip"),
+	       "desc" => __( "You want to display the read more button?","wip"),
+	       "class" => "hidden",
+	       "id" => $shortname."_view_readmore",
+	       "type" => "on-off",
+	       "std" => "on"),
+
 	array( "name" => __( "Comments","wip"),
 	       "desc" => __( "You want to view the comments after articles?","wip"),
 	       "class" => "hidden",
