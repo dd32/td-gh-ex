@@ -7,3 +7,8 @@
 - Fixed Gallery issues 
 - Remove hardcoded by mistake style from header.php
 - Several styling changes
+
+(07.05.2014)
+- Version is updated to 1.1.1
+- Add Custom Featured Image size
+- Few small styling changes

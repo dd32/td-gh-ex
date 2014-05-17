@@ -736,7 +736,7 @@ h1.entry-title {
 }
 
 .apoc-featured-image {
-	padding: 10px;
+	padding: 5px;
 }
 
 /* Header */
@@ -838,7 +838,7 @@ h1.widget-title {
 }
 
 #social-icons a {
-	margin: 0 3px;
+	margin: 0 5px;
 }
 
 #social-icons > a i:hover {

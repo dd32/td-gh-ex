@@ -57,10 +57,17 @@ function apoc_setup() {
 	
 	add_theme_support( 'post-thumbnails' );
 	
+	// * Add Custom Featured Image size
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'apoc-thumbnail', 940, 400, true );
+	}
+	
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 */
 	if ( ! isset( $content_width ) ) {
+		global $content_width;
+		
 		$content_width = 640; /* pixels */
 	}
 }

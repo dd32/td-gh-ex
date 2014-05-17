@@ -23,7 +23,7 @@
 	<?php 
 	if ( has_post_thumbnail() ) {
 		echo '<div class="apoc-featured-image">';
-			the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) );
+			the_post_thumbnail( 'apoc-thumbnail', array( 'class' => 'aligncenter' ) );
 		echo '</div>';
 	}
 	?>
