@@ -145,16 +145,7 @@ function semperfi_is_sidebar_active($index) {
 		
 // Load up links in admin bar so theme is edit
 function semperfi_theme_options_add_page() {
-	add_theme_page(__('Theme Customizer', 'localize_semperfi'), __('Theme Customizer', 'localize_semperfi'), 'edit_theme_options', 'customize.php' );
-    add_theme_page(__('Theme Information', 'localize_semperfi'), __('Theme Information', 'localize_semperfi'), 'edit_theme_options', 'theme_options', 'semperfi_theme_options_do_page');}
-
-
-// Add link to theme options in Admin bar
-add_action( 'admin_bar_menu', 'semperfi_admin_link', 113 );
-function semperfi_admin_link() {
-	global $wp_admin_bar;
-	$wp_admin_bar->add_menu( array( 'id' => 'Semper_Fi_Customizer', 'title' => __('Theme Customizer', 'localize_semperfi'), 'href' => admin_url( 'customize.php' ) ));
-	$wp_admin_bar->add_menu( array( 'id' => 'Semper_Fi_Information', 'title' => __('Theme Information', 'localize_semperfi'), 'href' => admin_url( 'themes.php?page=theme_options' ) )); }
+    add_theme_page(__('Theme Information', 'localize_alocalize_semperfi'), __('Theme Information', 'localize_localize_semperfi'), 'edit_theme_options', 'theme_options', 'semperfi_theme_options_do_page');}
 
 
 // Load up the Localizer so that the theme can be translated
@@ -627,7 +618,7 @@ function semperfi_customize($wp_customize) {
 		'section'			=> 'title_tagline',
 		'settings'			=> 'titlecolor_setting', )));
     
-    // Rotation of The Tagline
+    // Control the Size of the site Title and Slogan size
     $wp_customize->add_control('title_size_control', array(
 		'label'				=> __('Title Font Size', 'localize_semperfi'),
 		'priority'			=> 1,
@@ -786,6 +777,18 @@ function semperfi_customize($wp_customize) {
 		'type'					=> 'select',
 		'choices'				=> $google_font_array, ));
 
+	// Settings for the Previous & Next Post Link
+	$wp_customize->add_control( 'previousnext_control', array(
+		'label'				=> __('Previous & Next Links After Content', 'localize_semperfi'),
+		'section'			=> 'content_section',
+		'settings'			=> 'previousnext_setting',
+		'type'				=> 'select',
+		'choices'			=> array(
+			'both'			=> __('Both Pages & Posts', 'localize_semperfi'),
+			'single'	    => __('Only Posts', 'localize_semperfi'),
+			'page'			=> __('Only Pages', 'localize_semperfi'),
+			'neither'		=> __('Neither', 'localize_semperfi'), ), ));
+
 	// Adjust the Space Between the Top of the Page and Content
 	$wp_customize->add_control( 'headerspacing_control', array(
 		'label'				=> __('Spacing Between Top and Content', 'localize_semperfi'),
@@ -865,8 +868,8 @@ function semperfi_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-        if (is_page() || is_single()) $featured_background = get_post_meta( get_queried_object_ID(), 'featured-background', true ); if (!empty($featured_background)) echo '   body.custom-background {background-image:url(' . $featured_background . '); background-size:cover;}' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+        if (is_page() || is_single()) $featured_background = get_post_meta( get_queried_object_ID(), 'featured-background', true ); if (!empty($featured_background)) echo '   body, body.custom-background {background-image:url(' . $featured_background . '); background-size:cover;}' . "\n";
+		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body, body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( (get_theme_mod('backgroundpaper_setting') != 'auto') && (get_theme_mod('backgroundpaper_setting') != '') )echo '	.content {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		if ( get_theme_mod('titlecolor_setting') != '#e0dbce' ) echo '	.header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('taglinecolor_setting') != '#3e5a21' ) echo '	.header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
@@ -1018,6 +1021,10 @@ function semperfi_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
+                            <th>13</th>
+                            <td><?php _e('Added the ablity to remove the previous and next tag from posts and pages.', 'localize_semperfi'); ?></td>
+                        </tr>
+                        <tr>
                             <th>11</th>
                             <td><?php _e('Changed site Title and Slogan to scale using CSS instead of jQuery code. Added an option to control the size of the Title and Slogan under in the "Theme Customizer" under "Header." Fixed the issues with featured backgrounds, and also added some jQuery to auto load the background image after making your choice.', 'localize_semperfi'); ?></td>
                         </tr>
@@ -1037,6 +1044,10 @@ function semperfi_theme_options_do_page() { ?>
                         <tr>
                             <th><?php _e('Version', 'localize_semperfi'); ?></th>
                             <th></th>
+                        </tr>
+                        <tr>
+                            <th>2.6</th>
+                            <td><?php _e('Added the ablity to remove the previous and next tag from posts and pages.', 'localize_semperfi'); ?></td>
                         </tr>
                         <tr>
                             <th>2.5</th>
