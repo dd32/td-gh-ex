@@ -1,6 +1,12 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.4.0
+Version : 1.4.1
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+May 17 2014 - 1.4.1
+===========================================================
+- Updated to OptionTree 2.4.0
+- Updated to Font Awesome 4.1.0
+- Improved alx_wp_title function - @Gummibeer (via GitHub)
 
 April 16 2014 - 1.4.0
 ===========================================================
