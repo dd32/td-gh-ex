@@ -10,7 +10,7 @@ global $data;
 //translations
 $leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_to_coment'] : __('Reply','sis_spa');
 ?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>"> 
 <div id="comment-<?php comment_ID(); ?>" class="comment-body <?php if ($comment->comment_approved == '0') echo 'pending-comment'; ?> clearfix">
       <div class="comment-details">
         <div class="comment-avatar">
@@ -39,6 +39,7 @@ $leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_t
                     </div><!-- /comment-content -->
 				</div><!-- /comment-details -->
 		</div><!-- /comment -->
+		</div>
 <?php
 }
 endif; 

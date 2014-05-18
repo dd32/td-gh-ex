@@ -1,7 +1,7 @@
 <?php $current_options=get_option('spa_theme_options'); 
 ?>
 <div id="container" class="cf">
-<div id="main" role="main">
+<div class="main" role="main">
       <div class="slider">
         <div id="slider" class="flexslider">
           <ul class="slides">
@@ -13,8 +13,8 @@
 					 
 	             <div class="row-fluid">
 			        <div class="span3" id="slidedescription">
-			          <dl class="pink_title">    <dt><?php echo ($current_options['line_one']); ?></dt>
-                      <dt><h1 class="pink-head"><?php echo ($current_options['line_two']); ?></h1></dt>	</dl>
+			          <dl class="pink_title"><dt><?php echo ($current_options['line_one']); ?></dt>
+                      <dt><div class="pink-head"><?php echo ($current_options['line_two']); ?></div></dt><dd></dd>	</dl>
 					</div>
 			 
 					<div class="span6"  id="slide_desc"><p> <?php echo ($current_options['description']); ?></p>
@@ -32,23 +32,23 @@
 		      
 				<div class="thumb-img-container">
 				   	 <?php 	if($current_options['first_thumb_image']!='')  ?>
-			           <img src="<?php echo $current_options['first_thumb_image']; ?>"  alt="Spa Featture"class="slider-thumb" />
+			           <img src="<?php echo $current_options['first_thumb_image']; ?>"  alt="Spa Featture" class="slider-thumb" />
 	                   
 				</div>
 				
 				<div class="thumb-img-container">
 					 <?php 	if($current_options['second_thumb_image']!='')  ?>
-			           <img src="<?php echo $current_options['second_thumb_image']; ?>"  alt="Spa Featture"class="slider-thumb" />
+			           <img src="<?php echo $current_options['second_thumb_image']; ?>"  alt="Spa Featture" class="slider-thumb" />
 	                    
 				</div>
 				
 				<div class="thumb-img-container">
 					 <?php 	if($current_options['third_thumb_image']!='') ?>
-			           <img src="<?php echo $current_options['third_thumb_image']; ?>"  alt="Spa Featture"class="slider-thumb" />
+			           <img src="<?php echo $current_options['third_thumb_image']; ?>"  alt="Spa Featture" class="slider-thumb" />
 	                  
 				</div>
 			</div>
-	 <!--end of slider Thumbnails images-->
+	 <!-- end of slider Thumbnails images -->
         </div>
 	  </div>
 </div>

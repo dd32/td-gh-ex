@@ -5,12 +5,12 @@
   if(is_home()){ } 
   
   else{?>
- <!-----Footer Spacer Div----->
+ <!-- Footer Spacer Div -->
 <div class="footer-blank">
 </div>
 <?php }?>
 
-<!------End of Footer Spacer Div---->
+<!-- End of Footer Spacer Div -->
 <!-- Footer -->
 <div class="row-fluid footer_full">
 	<div class="container">

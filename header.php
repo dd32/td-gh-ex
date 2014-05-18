@@ -1,9 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">``
+	<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta charset="<?php bloginfo('charset'); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php if(get_option('spa_theme_options')!='')			
 			{

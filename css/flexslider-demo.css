@@ -241,7 +241,7 @@ height:150px;
 
 
 
-#main {
+.main {
  /*   margin-left: 420px;
     margin-top: -25px;
     overflow: hidden; */
@@ -356,7 +356,7 @@ added by akhlesh  */
         width: 380px;
     } */
 
-    #main {
+    .main {
    /*      margin-left: 380px;  commented by akhlesh*/
       margin-left:0px
     }
@@ -385,7 +385,7 @@ added by akhlesh  */
     
  
 
-    #main {
+    .main {
         margin-left: 0;
     }
 	#carousel {

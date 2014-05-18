@@ -3,7 +3,7 @@
   Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.4.4
+* Version: 1.4.4.1
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout
@@ -17,7 +17,12 @@ It has a pixel-perfect design that is great for any health care ,salons , spas e
 
 /* Add additional stylesheets below
 -------------------------------------------------- */
-
+.pink-head {
+color: #FFFFFF;
+    line-height: 1.25;
+    margin: 0;
+	font-weight: bold;
+}
 body {
      -webkit-font-smoothing:antialiased;
     -moz-font-smoothing:antialiased;

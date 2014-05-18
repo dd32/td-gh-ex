@@ -263,12 +263,13 @@ position: absolute;
 right: 0;
 margin:0px auto;
 }
-.slidesDescription  h1, .slidesDescription  .lead {
+.slidesDescription  h1, .slidesDescription  .lead  {
     color: #FFFFFF;
     line-height: 1.25;
     margin: 0;
    
 }
+
 .slidesDescription p{
 	border-left: 1px solid #F05D7D;
     color: #FCCED7;

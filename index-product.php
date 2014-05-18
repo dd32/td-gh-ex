@@ -1,6 +1,6 @@
 <!--product thumbnails slider-->
 <?php $products=get_option('spa_theme_options');?>
-<div id="main" role="main">
+<div class="main" role="main">
       <section class="slider" id="product_slide">
         <div class="flexslider carousel product_manage">
           <ul class="slides" id="flex_new">

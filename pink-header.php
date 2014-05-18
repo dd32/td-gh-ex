@@ -5,7 +5,7 @@
 		$h1=get_post_meta( $post->ID, 'heading_one', true );
 		$h2=get_post_meta( $post->ID, 'heading_two', true );
 ?>
- <!--   pink strip--> 
+<!-- pink strip --> 
 <div class="container">
  <div class="pink-container">		 
 	<div class="row-fluid">
@@ -13,8 +13,8 @@
 			    <dl class="pink_title">
 				<dt><?php if($h1!=''){ echo $h1; } else{ 
 		  _e("GET YOURSELF",'sis_spa');} ?></dt>
-				<dt><h1 class="pink-head"><?php if($h2!='') { echo $h2;} else{ 
-		  _e("REFRESHED",'sis_spa');} ?></h1></dt>
+				<dt><div class="pink-head"><?php if($h2!='') { echo $h2;} else{ 
+		  _e("REFRESHED",'sis_spa');} ?></div></dt><dd></dd>
 				</dl>
 			 </div>
 			 
@@ -31,4 +31,4 @@
 </div>
 </div>
 </div>		
-<!---End of pink strip---->
+<!-- End of pink strip -->
