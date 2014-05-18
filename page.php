@@ -21,8 +21,8 @@
 			<div class="blog_section">		
 			       <h2 class="blog_section_title"><a><?php the_title(); ?></a></h2>				   
 				<div class="blog_link">
-					<span><img  src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
-					<a><img  src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<b><?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></b></a>
+					<span><img  alt="webriti" src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
+					<a><img alt="webriti" src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<b><?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></b></a>
 				</div>				   
 			  <?php $defalt_arg =array('class' => "blog_section_img" )?>
 				<?php if(has_post_thumbnail()):?>

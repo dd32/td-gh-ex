@@ -52,7 +52,7 @@ $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['tra
     	              </div><!-- /reply -->
                     </div><!-- /comment-content -->
 				</div><!-- /comment-details -->
-		<!-- /comment -->		
+		</div><!-- /comment -->		
 <?php
 }
 endif;

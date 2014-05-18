@@ -19,8 +19,7 @@
 			</div>
 			<div class="row-fluid">
 			<div class="tab-content" id="myTabContent">			
-			  <div id="all" class="tab-pane fade active in">
-					<!---First Project Work---->
+			  <div id="all" class="tab-pane fade active in">					
 					<div class="row-fluid service_section">
 					<div class="span3 rec_cols_mn">
 					<?php if($current_options['project_one_url']!='') {?>
@@ -40,8 +39,6 @@
 							<p><?php echo $current_options['project_text_one'] ?></p>
 					<?php } ?>		
 					</div>
-					
-					<!---Second Project Work---->
 					<div class="span3 rec_cols_mn">
 					<?php if($current_options['project_two_url']!='') {?>
 					<a href="<?php echo $current_options['project_two_url'] ?>">
@@ -60,7 +57,6 @@
 							<p><?php echo $current_options['project_text_two'] ?></p>
 					<?php } ?>		
 					</div>
-					<!---3rd Project Work---->
 					<div class="span3 rec_cols_mn">
 					<?php if($current_options['project_three_url']!='') {?>
 					<a href="<?php echo $current_options['project_three_url'] ?>">
@@ -79,7 +75,6 @@
 							<p><?php echo $current_options['project_text_three'] ?></p>
 					<?php } ?>		
 					</div>
-					<!---4th Project Work---->
 					<div class="span3 rec_cols_mn">
 					<?php if($current_options['project_four_url']!='') {?>
 					<a href="<?php echo $current_options['project_four_url'] ?>">

@@ -45,7 +45,7 @@
 add_filter('comment_form_default_fields','my_fields'); 
 	$defaults = array(
      'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-	'comment_field'        => '<textarea rows="3" id="comment" name="comment" type="text" placeholder="Message" rows="3"></textarea>',		
+	'comment_field'        => '<textarea id="comment" name="comment" placeholder="Message" rows="3"></textarea>',		
 	 'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'busi_prof' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'busi_prof').'</a>' . '</p>',
 	 'id_submit'            => 'submit_btn',
 	'label_submit'         =>__( 'Submit Now','busi_prof'),

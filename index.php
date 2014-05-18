@@ -10,7 +10,7 @@
  * @filesource     wp-content/themes/Busiprof/index.php
 */
 	get_template_part('banner', 'header') ;
-	$image_uri=get_template_directory_uri(). '/images' ;		?>
+	$image_uri=get_template_directory_uri(). '/images' ;?>
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span8 blog_left">
@@ -18,16 +18,16 @@
 						//$post_type_data = new WP_Query( $args );
 						while(have_posts()):the_post();	?>
 			
-				<div class="blog_section" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="blog_section" id="post-<?php the_ID(); ?>">
                 <h2 class="blog_section_title">
 				 <a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<!--Link Section-->
 				<div class="blog_link">
 					<span>
-					<img  src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
-					<a><img  src="<?php echo $image_uri. '/blog_ic2.png'?>"><b>&nbsp;&nbsp;<?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></b></a>
-					<a><img  src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category(','); ?></a>
+					<img  alt ="webriti" src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
+					<a><img alt ="webriti" src="<?php echo $image_uri. '/blog_ic2.png'?>"><b>&nbsp;&nbsp;<?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></b></a>
+					<a><img alt ="webriti"  src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category(','); ?></a>
 				</div>
 				<!--Link Section-->
 				<?php $defalt_arg =array('class' => "blog_section_img" )?>
@@ -42,15 +42,13 @@
 					<span><?php the_tags('<b>'.__('Tags:','busi_prof').'</b>','');?></span>
 					</div>
 				</div>	
-			<?php endwhile ?>
-				<?php	//$Webriti_pagination = new Webriti_pagination();
-						//$Webriti_pagination->Webriti_page($paged, 'post');		?>
-						<div class="pagination_blog">	
-		<ul>
-			<li class="paginanext"><?php previous_posts_link(); ?></li>
-			<li class="paginanext"><?php next_posts_link(); ?></li>
-		</ul>
-	</div>
+			<?php endwhile ?>		
+			<div class="pagination_blog">	
+			<ul>
+				<li class="paginanext"><?php previous_posts_link(); ?></li>
+				<li class="paginanext"><?php next_posts_link(); ?></li>
+			</ul>
+			</div>
              </div>		
 			 <?php get_sidebar();?>
 

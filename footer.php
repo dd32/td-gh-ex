@@ -50,8 +50,7 @@
 				</div>
 		   </div>
 		</div>
-<!--closing of the footer-->
-</div>
+<!-- closing of the footer -->
 <?php wp_footer(); ?> 
 </body>
 </html>

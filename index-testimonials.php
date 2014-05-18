@@ -9,7 +9,7 @@ $template_uri=get_template_directory_uri(). '/images/default' ;
 				<h2><?php echo $current_options['testimonials_title']; ?>
 				<?php } ?><br><span><?php if($current_options['testimonials_text']!='') { echo $current_options['testimonials_text'];  } ?></span></h2>
 				<div id="testimonial_mn_cols" class="media">
-					<img src="<?php if($current_options['testimonials_image_one']!='') { echo $current_options['testimonials_image_one'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
+					<img alt="webriti" src="<?php if($current_options['testimonials_image_one']!='') { echo $current_options['testimonials_image_one'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
 					<div class="media-body">
 					<p><?php if($current_options['testimonials_text_one']!='') { echo $current_options['testimonials_text_one'];} ?></p>
 					<a href="#"><?php if($current_options['testimonials_name_one']!='') { echo $current_options['testimonials_name_one'];} ?> <span>(<?php if($current_options['testimonials_designation_one']!='') { echo $current_options['testimonials_designation_one'];} ?>)</span></a>
@@ -17,7 +17,7 @@ $template_uri=get_template_directory_uri(). '/images/default' ;
 				</div>
 				
 				<div id="testimonial_mn_cols" class="media">
-					<img src="<?php if($current_options['testimonials_image_two']!='') { echo $current_options['testimonials_image_two'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
+					<img alt="webriti" src="<?php if($current_options['testimonials_image_two']!='') { echo $current_options['testimonials_image_two'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
 					<div class="media-body">
 					<p><?php if($current_options['testimonials_text_two']!='') { echo $current_options['testimonials_text_two'];} ?></p>
 					<a href="#"><?php if($current_options['testimonials_name_two']!='') { echo $current_options['testimonials_name_two'];} ?> <span>(<?php if($current_options['testimonials_designation_two']!='') { echo $current_options['testimonials_designation_two'];} ?>)</span></a>
@@ -37,7 +37,7 @@ $template_uri=get_template_directory_uri(). '/images/default' ;
 										<?php 	$defalt_arg=array('class'=>'media-object img-circle pull-left recent_blog_thumb');
 												echo get_the_post_thumbnail($recent["ID"],'recent-blog-thumb', $defalt_arg); ?>
 											<?php } else { ?>
-											<img src="<?php echo $template_uri .'/testimonial.jpg'; ?>"  class="media-object img-circle pull-left recent_blog_thumb">
+											<img alt="webriti" src="<?php echo $template_uri .'/testimonial.jpg'; ?>"  class="media-object img-circle pull-left recent_blog_thumb">
 											<?php } ?>
 											<div class="media-body">
 											<p><?php echo '<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a>'; ?></p>
