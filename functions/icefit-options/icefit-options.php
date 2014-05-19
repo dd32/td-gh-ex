@@ -216,27 +216,6 @@ function boldr_settings_save_nojs() {
 	update_option($boldr_settings_slug,$boldr_settings);	
 }
 
-// Update settings template in the database upon theme activation
-function boldr_settings_theme_activation() {
-	global $boldr_settings_slug;
-	// Get current settings from the database
-	$boldr_settings = get_option($boldr_settings_slug);
-	// Get the settings template
-	$options = boldr_settings_template();
-	// Updates all settings
-	foreach($options as $option_array){
-		if ($option_array['type'] != 'start_menu' && $option_array['type'] != 'end_menu') {
-			$id = $option_array['id'];
-			if ( !isset( $boldr_settings[$id] ) )
-				$boldr_settings[$id] = stripslashes($option_array['default']);
-		}
-
-	}
-	// Updates settings in the database
-	update_option($boldr_settings_slug,$boldr_settings);	
-}
-add_action('after_switch_theme', 'boldr_settings_theme_activation');
-
 // Outputs the settings panel
 function boldr_settings_page(){
 	
