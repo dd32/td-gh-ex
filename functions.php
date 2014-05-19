@@ -270,6 +270,13 @@ function base_favicon() { ?>
 <?php }
 add_action('wp_head', 'base_favicon');
 
+/*
+ * Extra.
+ */
+ //Shortcodes
+if ( of_get_option('shortcodes_checkbox') == '1' ) {
+include_once("extra/ig-shortcodes/ig-shortcodes.php");
+include_once("extra/ig-shortcodes/includes/shortcodes.php"); }
 
 /*
  * Woocommerce support.

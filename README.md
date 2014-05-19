@@ -49,3 +49,6 @@ Changelog
 
 #### 1.13
 * Add featured images on pages
+
+#### 1.14
+* Add shortcodes to theme

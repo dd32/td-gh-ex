@@ -65,6 +65,13 @@ function optionsframework_options() {
 		'name' => __('Meta Slider', 'base'),
 		'desc' => __('Only available in premium version', 'base'),
 		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Theme shortcodes', 'base'),
+		'desc' => __('Check the box if you want enable the shortcodes', 'base'),
+		'id' => 'shortcodes_checkbox',
+		'std' => '1',
+		'type' => 'checkbox');
 		
 	$options[] = array( "name" => "Advanced Settings",
 		"type" => "heading" );	
