@@ -525,7 +525,7 @@ function semperfi_customize($wp_customize) {
         'bodyfontstyle_setting'	        => 'Default',
         'backgroundpaper_setting'       => 'clean',
         'backgroundsize_setting'        => 'auto',
-        'bannerimage_setting'           => 'marble.png',
+        'bannerimage_setting'           => '',
         'border_setting'			    => '3px',
         'bordercolor_setting'			=> '#4a4646',
         'commentsclosed_setting'        => 'on',
@@ -680,7 +680,7 @@ function semperfi_customize($wp_customize) {
 		'settings'			=> 'bannerimage_setting',
 		'type'				=> 'select',
 		'choices'			=> array(
-			'marble.png'	=> __('Marble (Default)', 'localize_semperfi'),
+			''	=> __('Marble (Default)', 'localize_semperfi'),
 			'purple.png'	=> __('Purple', 'localize_semperfi'),
 			'blue.png'		=> __('Blue', 'localize_semperfi'),
 			'green.png'		=> __('Green', 'localize_semperfi'), ), ));
@@ -878,7 +878,7 @@ function semperfi_inline_css() {
     
     
 		if ( get_theme_mod('tagline_rotation_setting') != '-1.00' ) echo '	.header h1 i {-moz-transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg); transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg);}' . "\n";
-		if ( get_theme_mod('bannerimage_setting') != 'marble.png' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
+		if ( get_theme_mod('bannerimage_setting') != '' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '20' ) echo '	.spacing {height:' . get_theme_mod('headerspacing_setting') . 'em;}'. "\n";
 		if ( get_theme_mod('menu_setting') == 'notitle' ) { echo '	.header {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar .header {margin-top:28px;}' . "\n" . '.header h1:first-child, .header h1:first-child i,  .header img:first-child {display: none;}' . "\n"; }
 		if ( get_theme_mod('menu_setting') == 'bottom' ) { echo '	.header {position: fixed; bottom:0; top:auto;}' . "\n" . '	.header h1:first-child, .header h1:first-child i,  .header img:first-child {display: none;}' . "\n" . '.header li ul {bottom:2.78em; top:auto;}' . "\n";}
