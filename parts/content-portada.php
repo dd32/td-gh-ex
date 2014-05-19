@@ -177,7 +177,7 @@
         <?php echo the_post_thumbnail(); ?>
       </div><!-- #col-md-4 -->
       <div class="col-md-8">
-        <h2><?php echo get_the_title(); ?></h2>
+      <h2><?php echo get_the_title(); ?></h2>
         <p class="badge">
         <?php echo get_the_time('j') ?> <?php echo get_the_time('M')?> <?php echo get_the_time('Y') ?></p>
         <p><?php echo get_the_excerpt(); ?></p>
@@ -185,7 +185,9 @@
       </div><!-- #col-md-8 -->
     </div><!-- #container -->
     <div class="container"><hr style="margin-top:60px; margin-bottom:60px;"></div>
-    <?php endwhile; ?>    
+    <?php endwhile; ?>
+    <div class="col-md-6 text-left"><?php previous_posts_link(); ?></div>
+    <div class="col-md-6 text-right"><?php next_posts_link(); ?></div>
    </div><!-- #row -->
 </div><!-- #container -->
 

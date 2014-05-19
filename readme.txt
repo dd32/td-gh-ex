@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.1
+Version: 1.1.2
 Requires at least: 3.0.1
-Tested up to: 3.8.1
+Tested up to: 3.9.1
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.2 - 19.05.2014 =
+* Paging error is corrected in frontpage.
 
 = 1.1.1 - 07.04.2014 =
 * Function is added to convert videos from youtube, vimeo, justin stream and in responsive.
