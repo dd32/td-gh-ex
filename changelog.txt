@@ -10,6 +10,15 @@ Changelog Legend:
 
 ----
 
+(5/19/2014)
+[+] Page header can be added using the Featured Image option
+[x] Activated message deleted
+[!] Fixed broken caption background URL in CSS
+[*] Bottom padding removed from last header widget
+[*] Screenshot updated
+
+----
+
 (5/16/2014)
 [!] Fixed mobile menu when centered
 [*] Screenshot updated

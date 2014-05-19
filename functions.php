@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.1');
+define( 'GENERATE_VERSION', '1.0.2');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -229,7 +229,7 @@ require get_template_directory() . '/inc/options.php';
 /**
  * Load Options
  */
-require get_template_directory() . '/inc/helper.php';
+//require get_template_directory() . '/inc/helper.php';
 
 
 /**
@@ -538,4 +538,29 @@ function generate_default_colors()
 		return;
 		
 	echo '.site-header {background: #FFFFFF; }.site-header a, .site-header a:visited {color: #3a3a3a; }.main-title a, .main-title a:hover, .main-title a:visited {color: #222222; }.site-description {color: #999999; }.main-navigation,   .main-navigation ul ul {background: #222222; }.main-navigation ul ul {background: #3f3f3f; }.main-navigation .main-nav ul li a, .menu-toggle {color: #FFFFFF; }.main-navigation .main-nav ul ul li a {color: #FFFFFF; }.main-navigation .main-nav ul li > a:hover,  .main-navigation .main-nav ul li.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul li > a:hover,  .main-navigation .main-nav ul ul li.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul .current-menu-item > a,  .main-navigation .main-nav ul .current-menu-parent > a,  .main-navigation .main-nav ul .current-menu-ancestor > a,  .main-navigation .main-nav ul .current_page_item > a,  .main-navigation .main-nav ul .current_page_parent > a,  .main-navigation .main-nav ul .current_page_ancestor > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul .current-menu-item > a:hover,  .main-navigation .main-nav ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul .current_page_item > a:hover,  .main-navigation .main-nav ul .current_page_parent > a:hover,  .main-navigation .main-nav ul .current_page_ancestor > a:hover,  .main-navigation .main-nav ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul .current-menu-item > a,  .main-navigation .main-nav ul ul .current-menu-parent > a,  .main-navigation .main-nav ul ul .current-menu-ancestor > a,  .main-navigation .main-nav ul ul .current_page_item > a,  .main-navigation .main-nav ul ul .current_page_parent > a,  .main-navigation .main-nav ul ul .current_page_ancestor > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul ul .current-menu-item > a:hover,  .main-navigation .main-nav ul ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul ul .current_page_item > a:hover,  .main-navigation .main-nav ul ul .current_page_parent > a:hover,  .main-navigation .main-nav ul ul .current_page_ancestor > a:hover, .main-navigation .main-nav ul ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.inside-article,  .comments-area,  .page-header, .one-container .container, .paging-navigation, .inside-page-header {background: #FFFFFF; }.sidebar .widget {background: #FFFFFF; }.sidebar .widget .widget-title {color: #000000; }.footer-widgets {background: #FFFFFF; color: #3a3a3a; }.footer-widgets .widget-title {color: #000000; }.site-info {background: #222222; color: #ffffff; }.site-info a,  .site-info a:visited {color: #ffffff; }.site-info a:hover {color: #4295DD; }';
+}
+
+/**
+ * Add page header using featured image if Page Header addon isn't installed
+ * @since 1.0.2
+ */
+add_action('generate_after_header','generate_featured_page_header', 10);
+function generate_featured_page_header()
+{
+	if ( function_exists('generate_page_header') )
+		return;
+
+	if ( is_single() || is_page() ) :
+		
+		global $post;
+		$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
+		$page_header_image_width = 1200;
+		
+		if ( '' !== $page_header_image ) :
+			echo '<div class="page-header-image grid-container grid-parent">';
+				echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" alt="" />';
+			echo '</div>';
+		endif;
+	
+	endif;
 }

@@ -521,7 +521,7 @@ a:active {
 .wp-caption .wp-caption-text {
 	padding: 8px 10px;
 	margin: 0;
-	background: url('images/blk_trans.png');
+	background: url('../images/blk_trans.png');
 	color:#FFF;
 	position:absolute;
 	bottom: 0;
@@ -1127,8 +1127,14 @@ footer.entry-meta {
 	padding: 0 0 20px;
 	margin-bottom: 0;
 }
+.header-widget .widget:last-child {
+	padding-bottom:0;
+}
 .nav-float-right .header-widget .widget {
 	padding: 0 0 10px;
+}
+.nav-float-right .header-widget .widget:last-child {
+	padding-bottom: 0;
 }
 .nav-float-right .header-widget {
 	position:relative;
