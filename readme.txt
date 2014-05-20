@@ -113,6 +113,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
         2.8     (2014.3.23)  -  fixed : rtl styles.
         2.9     (2014.3.29)  -  added : afrikaans language.
         2.10    (2014.4.3)   -  added : ukraine language.
+        2.11    (2014.5.20)  -  added : the ability to add year in to the red data ribbons.
 
 == Contact & Issues for Anarcho Notepad ==
 

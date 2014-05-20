@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Anarcho Notepad v2.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-03 03:04:24+0000\n"
+"PO-Revision-Date: 2014-04-05 01:11:10+0000\n"
 "Last-Translator: Svetlana Drotianko\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -254,7 +254,7 @@ msgstr "(Редактувати)"
 msgid "(Post author) "
 msgstr "(Автор запису) "
 
-#. translators: 1: date, 2: time 
+#. translators: 1: date, 2: time
 #: functions.php:364
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
@@ -522,11 +522,6 @@ msgstr "Помістити"
 msgid "Cover"
 msgstr "Обкладинка"
 
-#: inc/theme_info.php:29
-#@ anarcho-notepad
-msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \\\"Anarcho Notepad\\\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
-msgstr "Натхненний ідеєю анархії, я створив цю тему для ваших особистих блогів і щоденників.  \"Anarcho Notepad\" (Анархо Блокнот) може бути легко настроєний. Він використовує останні HTML5, CSS3 і вбудовані функції WordPress для створення дивного сайту, який виглядає добре на будь-якому браузері. Я постійно додаю нові можливості до цієї теми, щоб можна було налаштувати її для власних потреб. Якщо вам потрібна нова функція або ви просто хочете змінити щось тоді просто дайте мені знати і я буду радий зробити це для вас. Хотілося б подякувати вам за вашу підтримку, відвідайте URI теми для того, що-б дізнатися про історію оновлень і насолоджуйтеся!"
-
 #: inc/theme_info.php:33
 #@ anarcho-notepad
 msgid "If you liked the theme \"Anarcho Notepad\", then I'll be glad if you consider donating:"
@@ -643,4 +638,9 @@ msgstr "Записи:"
 #@ anarcho-notepad
 msgid "Archives:"
 msgstr "Архіви:"
+
+#: inc/theme_info.php:29
+#@ anarcho-notepad
+msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
+msgstr "Натхненний ідеєю Анархії, я створив цю тему для ваших особистих блогів і щоденників. \"Anarcho Notepad\" (Анархо Блокнот) може бути легко настроєний. Він використовує останні HTML5, CSS3 і вбудовані функції WordPress для створення дивного сайту, який виглядає добре на будь-якому браузері. Я постійно додаю нові можливості до цієї теми, щоб можна було налаштувати її для власних потреб. Якщо вам потрібна нова функція або ви просто хочете змінити щось тоді просто дайте мені знати і я буду радий зробити це для вас. Хотілося б подякувати вам за вашу підтримку, відвідайте URI теми для того, що-б дізнатися про історію оновлень і насолоджуйтеся!"
 

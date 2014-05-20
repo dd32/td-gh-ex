@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.7
+ * @since	2.11
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -134,10 +134,10 @@ function include_smoothscroll_script() {
 }
 add_action( 'wp_enqueue_scripts', 'include_smoothscroll_script' );
 
-// Red Data Ribbons
-/* Display red ribbons. */
+ /* Display red ribbons. */
 function anarcho_ribbons() {
     if(get_theme_mod('disable_ribbons') == '0') {
+      if(get_theme_mod('enable_year_ribbons') == '0') {
         if ( is_home() || is_category() || is_archive() || is_search() ) {
            printf( '<a href="%1$s">',
                 esc_url( get_permalink() )
@@ -152,6 +152,22 @@ function anarcho_ribbons() {
         );
         if ( is_home() || is_category() || is_archive() || is_search() ) {
            printf( '</a>' ); }
+      } else {
+                if ( is_home() || is_category() || is_archive() || is_search() ) {
+           printf( '<a href="%1$s">',
+                esc_url( get_permalink() )
+           );
+        }
+        printf( '<div class="date-tab">
+                     <span class="month">%1$s</span>
+                     <span class="day">%2$s</span>
+                 </div><!-- .date-tab -->',
+             esc_attr( get_the_date('F j') ),
+             esc_attr( get_the_date('Y') )
+        );
+        if ( is_home() || is_category() || is_archive() || is_search() ) {
+           printf( '</a>' ); }
+      }
     }
 }
 // END-Red Data Ribbons

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Anarcho Notepad v2.8\n"
+"Project-Id-Version: Anarcho Notepad v2.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-03-28 19:51:10+0000\n"
+"PO-Revision-Date: 2014-04-05 01:13:10+0000\n"
 "Last-Translator: MadriVictor\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -511,11 +511,6 @@ msgstr "Bevat"
 msgid "Cover"
 msgstr "Aangesig"
 
-#: inc/theme_info.php:29
-#@ anarcho-notepad
-msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \\\"Anarcho Notepad\\\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
-msgstr "Die idee van anargie het my inspireer om hierdie tema vir jou persoonlike blogs en dagboekinskrywings te ontwikkel. \"Anarcho Notepad\" kan maklik verpersoonlik word. Dit gebruik die nuutste HTML 5, CSS3 en wordpress narratief funksies om hierdie briljante blad, wat op elke webleser goed lyk, te ontwikkel. Ek voeg gereeld nuwe funksies by sodat jy dit maklik kan verpersoonlik. Indien jy 'n spesifieke funksie of verandering wil hê, vra my\\; ek verander of voeg dit met graagte by. Baie dankie vir jou ondersteuning. Besoek die Tema URI vir die opdatteerde geskiedenis en geniet dit!"
-
 #: inc/theme_info.php:50
 #@ anarcho-notepad
 msgid "The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language."
@@ -643,4 +638,9 @@ msgstr "Customiz'it!"
 #@ anarcho-notepad
 msgid "Customize your website at any time!"
 msgstr "Pas jou webwerf op enige tyd!"
+
+#: inc/theme_info.php:29
+#@ anarcho-notepad
+msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
+msgstr "Die idee van Anargie het my inspireer om hierdie tema vir jou persoonlike blogs en dagboekinskrywings te ontwikkel. \"Anarcho Notepad\" kan maklik verpersoonlik word. Dit gebruik die nuutste HTML 5, CSS3 en wordpress narratief funksies om hierdie briljante blad, wat op elke webleser goed lyk, te ontwikkel. Ek voeg gereeld nuwe funksies by sodat jy dit maklik kan verpersoonlik. Indien jy 'n spesifieke funksie of verandering wil hê, vra my\\; ek verander of voeg dit met graagte by. Baie dankie vir jou ondersteuning. Besoek die Tema URI vir die opdatteerde geskiedenis en geniet dit!"
 

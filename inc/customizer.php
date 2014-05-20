@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package	Anarcho Notepad
- * @since	2.7
+ * @since	2.11
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -110,11 +110,20 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		        'label'				=> __( 'Disable box "Frends & Links"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
+		// Enable Year in Red Data Ribbons
+		$wp_customize->add_setting('enable_year_ribbons', array(
+			'default'        		=> '0' ));
+		$wp_customize->add_control( 'enable_year_ribbons', array(
+			'priority'			=> 5,
+		        'type'				=> 'checkbox',
+		        'label'				=> __( 'Enable Year in "Red Data Ribbons"', 'anarcho-notepad' ),
+		        'section'			=> 'stuff_section', ));
+
 		// Disable Red Data Ribbons
 		$wp_customize->add_setting('disable_ribbons', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'disable_ribbons', array(
-			'priority'			=> 5,
+			'priority'			=> 6,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable "Red Data Ribbons"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
@@ -123,7 +132,7 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		$wp_customize->add_setting('disable_recent_sticker', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'disable_recent_sticker', array(
-			'priority'			=> 6,
+			'priority'			=> 7,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable "Recent Posts Sticker"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
@@ -132,7 +141,7 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		$wp_customize->add_setting('enable_breadcrumbs', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'enable_breadcrumbs', array(
-			'priority'			=> 7,
+			'priority'			=> 8,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Breadcrumbs"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
@@ -141,7 +150,7 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		$wp_customize->add_setting('enable_page-nav', array(
 			'default'        		=> '1' ));
 		$wp_customize->add_control( 'enable_page-nav', array(
-			'priority'			=> 8,
+			'priority'			=> 9,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Page Navigation"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
@@ -150,7 +159,7 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		$wp_customize->add_setting('disable_top_button', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'disable_top_button', array(
-			'priority'			=> 9,
+			'priority'			=> 10,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Disable button "To Top"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
@@ -159,7 +168,7 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		$wp_customize->add_setting('show_info_line', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'show_info_line', array(
-			'priority'			=> 10,
+			'priority'			=> 11,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Show info line in footer', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
