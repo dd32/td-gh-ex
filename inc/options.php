@@ -21,10 +21,10 @@ add_action('admin_menu', 'generate_create_menu');
 function generate_create_menu() 
 {
 	$addons = array(
-		'generate_fonts_setup' => 'generate_fonts_license_key_status',
-		'generate_colors_setup' => 'generate_colors_license_key_status',
-		'generate_page_header' => 'generate_page_header_license_key_status',
-		'generate_insert_import_export' => 'generate_ie_license_key_status'
+		'generate_fonts_setup' => 'gen_fonts_license_key_status',
+		'generate_colors_setup' => 'gen_colors_license_key_status',
+		'generate_page_header' => 'gen_page_header_license_key_status',
+		'generate_insert_import_export' => 'gen_ie_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -109,28 +109,28 @@ function generate_settings_page()
 												'name' => __('Colors','generate'),
 												'version' => ( function_exists('generate_colors_setup') ) ? GENERATE_COLORS_VERSION : '',
 												'id' => 'generate_colors_setup',
-												'license' => 'generate_colors_license_key_status',
+												'license' => 'gen_colors_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-colors/')
 										),
 										'2' => array(
 												'name' => __('Typography','generate'),
 												'version' => ( function_exists('generate_fonts_setup') ) ? GENERATE_FONT_VERSION : '',
 												'id' => 'generate_fonts_setup',
-												'license' => 'generate_fonts_license_key_status',
+												'license' => 'gen_fonts_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-typography/')
 										 ),
 										'3' => array(
 												'name' => __('Page Header','generate'),
 												'version' => ( function_exists('generate_page_header') ) ? GENERATE_PAGE_HEADER_VERSION : '',
 												'id' => 'generate_page_header',
-												'license' => 'generate_page_header_license_key_status',
+												'license' => 'gen_page_header_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-page-header/')
 										),
 										'4' => array(
 												'name' => __('Import / Export','generate'),
 												'version' => ( function_exists('generate_insert_import_export') ) ? GENERATE_IE_VERSION : '',
 												'id' => 'generate_insert_import_export',
-												'license' => 'generate_ie_license_key_status',
+												'license' => 'gen_ie_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-import-export/')
 										)
 									);
@@ -162,24 +162,7 @@ function generate_settings_page()
 							</div>
 						</div>
 
-						<div class="postbox generate-metabox" id="gen-2">
-							<h3 class="hndle"><?php _e('Scripts','generate');?></h3>
-							<div class="inside">
-								<p>
-									<label for="generate_header_scripts"><?php _e('Insert into <code>&lt;head&gt;</code>','generate');?></label>
-									<textarea id="generate_header_scripts" name="generate_header_scripts"><?php echo esc_html(get_option('generate_header_scripts')); ?></textarea>
-									<span class="description"><?php _e('Custom meta tags, styles..','generate');?></span>
-								</p>
-											
-								<div class="clear" style="margin-bottom:20px;"></div>
-										 
-								<p>
-									<label for="generate_footer_scripts"><?php _e('Insert before closing <code>&lt;/body&gt;</code>','generate');?></label>
-									<textarea id="generate_footer_scripts" name="generate_footer_scripts"><?php echo esc_html(get_option('generate_footer_scripts')); ?></textarea>
-									<span class="description"><?php _e('Analytics tracking codes, other javascript..','generate');?></span>
-								</p>
-							</div>
-						</div>
+						
 						
 						<?php do_action('generate_inside_options_form'); ?>
 						

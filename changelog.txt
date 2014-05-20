@@ -10,7 +10,12 @@ Changelog Legend:
 
 ----
 
-(5/19/2014)
+(5/19/2014) - 1.0.3
+[x] Script options
+
+----
+
+(5/19/2014) - 1.0.2
 [+] Page header can be added using the Featured Image option
 [x] Activated message deleted
 [!] Fixed broken caption background URL in CSS
@@ -19,11 +24,11 @@ Changelog Legend:
 
 ----
 
-(5/16/2014)
+(5/16/2014) - 1.0.1
 [!] Fixed mobile menu when centered
 [*] Screenshot updated
 
 ----
 
-(04/26/2014)
+(04/26/2014) - 1.0
 Initial Release

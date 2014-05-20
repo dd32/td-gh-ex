@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.2');
+define( 'GENERATE_VERSION', '1.0.3');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -490,26 +490,6 @@ echo $output; ?>
 <?php do_action('generate_head_css') . '\n'; ?> 
 </style>
 <?php
-}
-
-/**
- * Add the scripts added in Generate > Options to the <head> section
- * @since 0.1
- */
-add_action('wp_head','generate_add_head_scripts');
-function generate_add_head_scripts()
-{
-	echo get_option('generate_header_scripts');
-}
-
-/**
- * Add the scripts added in Generate > Options before the closing </body> tag
- * @since 0.1
- */
-add_action('wp_footer','generate_add_footer_scripts');
-function generate_add_footer_scripts()
-{
-	echo get_option('generate_footer_scripts');
 }
 
 /**
