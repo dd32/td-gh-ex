@@ -69,6 +69,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+Version 1.5.1
+* Added missing Polish language and WordPress theme tags
+
 Version 1.5
 * Added Polish translation pl_PL.po and pl_PL.mo
 * Fixed Footer widget issues in Mobile devices when using 3 footer areas (Reported By Tim) 
