@@ -8,9 +8,9 @@
 
 	Copyright (C) 2003-2012 Eric Schwarz - Schwarttzy
 
-	License: GNU General Public License, version 3 (AGPLv3)
+	License: GNU GENERAL PUBLIC LICENSE, Version 3
 
-	License URI: http://opensource.org/licenses/AGPL-3.0
+	License URI: http://www.gnu.org/licenses/gpl.html
 
 == About Semper Fi ==
 
