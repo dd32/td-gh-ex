@@ -768,11 +768,19 @@ class interface_featured_image_widget extends WP_Widget {
  			$var = 'path'.$i;
  			$var1 = 'redirectlink'.$i;
  			$path = isset( $instance[ $var ] ) ? $instance[ $var ] : '';
- 			$redirectlink = isset( $instance[ $var1 ] ) ? $instance[ $var1 ] : ''; 			
- 			if( !empty( $path ) )
- 				array_push( $path_array, $path ); // Push the page id in the array
- 			if( !empty( $redirectlink ) )
- 				array_push( $redirectlink_array, $redirectlink ); // Push the page id in the array
+ 			$redirectlink = isset( $instance[ $var1 ] ) ? $instance[ $var1 ] : '';
+ 			if( !empty( $path )  || !empty( $redirectlink ))  {			
+	 			if( !empty( $path ) ){
+	 				array_push( $path_array, $path ); // Push the page id in the array
+	 			}else{
+		 			array_push($path_array, "");
+	 			}
+	 			if( !empty( $redirectlink ) ){
+	 				array_push( $redirectlink_array, $redirectlink ); // Push the page id in the array
+	 			}else{
+		 			array_push($redirectlink_array, "");
+	 			}
+ 			}
  		}
 
 		echo $before_widget;
@@ -784,22 +792,17 @@ class interface_featured_image_widget extends WP_Widget {
 			$output .= '<div class="container">';
 			$output .= '<ul>';
 			for( $i=0; $i<$number; $i++ ) {
-				$output .= '<li>';
-				if( !empty( $redirectlink_array[$i] ) ) {
+				if( !empty( $redirectlink_array[$i] ) || !empty($path_array[$i] )) {
+					$output .= '<li>';
 					$output .= '<a href="'.$redirectlink_array[$i].'" title="'.$title.'" target="_blank">
 										<img src="'.$path_array[$i].'" alt="'.$title.'">
 									</a>';
+					$output .=	'</li>';
 				}
-				else {
-					$output .= '<img src="'.$path_array[$i].'" alt="'.$title.'">';
-				}
-									
-				$output .=	'</li>';
 			}
-			$output .= '</ul>';
-			
-			$output .= '</div>';
-			echo $output;
+					$output .= '</ul>';
+					$output .= '</div>';
+					echo $output;
 		}
 		
 		echo $after_widget;

@@ -61,6 +61,11 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.5 =
+ - Featured Image widget issue fixed
+ - Theme Options Panel modified
+ - Minor CSS edited
+
 = 1.0.4 =
  - Theme default setting function issue fixed
  - Minor CSS edit
