@@ -50,7 +50,7 @@
 
 == Images / Icons Licensing on Semper Fi ==
 
-	All Images / Icons in the Theme "Semper Fi" are released under the same GPL (GNU General Public License, version 3 (AGPLv3)) license that the theme is released.
+	All Images / Icons in the Theme "Semper Fi" are released under the same GPL (GNU General Public License, version 3) license that the theme is released.
 
 == Customizing Semper Fi ==
 
