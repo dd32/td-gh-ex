@@ -30,10 +30,9 @@
 		if($options['footertext'] != '')
 		{
 			echo $options['footertext'];
-		}else{
-			echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
-			echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";				
 		}
+		echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
+		echo " <a href='http://fasterthemes.com/themes/MyWiki' target='_blank'>MyWiki Theme</a> by FasterThemes.";				
 	?>
     </p>
   </div>
