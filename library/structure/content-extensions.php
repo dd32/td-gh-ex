@@ -113,9 +113,9 @@ function attitude_theloop_for_archive() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -196,9 +196,9 @@ function attitude_theloop_for_page() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<?php the_title(); ?>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -267,9 +267,9 @@ function attitude_theloop_for_single() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<?php the_title(); ?>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -364,9 +364,9 @@ function attitude_theloop_for_search() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -430,9 +430,9 @@ function attitude_theloop_for_template_blog_image_large() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -543,9 +543,9 @@ function attitude_theloop_for_template_blog_image_medium() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -657,9 +657,9 @@ function attitude_theloop_for_template_blog_full_content() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h2 class="entry-title">
+    			<h1 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h2><!-- .entry-title -->
+    			</h1><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
