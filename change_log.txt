@@ -75,5 +75,7 @@ Version 3.05.1
     ii)	Added Licensing terms of respond.min js file.
 Version	3.06
     i)  Applied Sanitization in all input fields.
+Version	3.07
+    i)  Fixed copyright link
 
 	

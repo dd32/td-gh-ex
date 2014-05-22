@@ -23,11 +23,10 @@
 									if($options['footertext'] != '')
 									{
 										echo $options['footertext'];
-									}else{
-										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
-										echo "<br />";
-										echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";				
 									}
+										echo "<br />Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
+										echo "<br />";
+										echo "<a href='http://fasterthemes.com/themes/redpro' target='_blank'>RedPro Theme</a> by FasterThemes.";													
 									?>
           </span> </div>
       </aside>
