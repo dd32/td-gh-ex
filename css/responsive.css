@@ -600,6 +600,12 @@ and (orientation : landscape) {
 	}	
 	.error404 #main #s {
 		width: 85%;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"] {
+		width: 80%;
 	}		
 }
 @media only screen 
@@ -758,5 +764,11 @@ and (max-width: 767px) {
 	}
 	.error404 #main #s {
 		width: 80%;
-	}			
+	}	
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"] {
+		width: 98%;
+	}		
 }

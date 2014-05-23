@@ -12,7 +12,7 @@ Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
 Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
 Added Translation for Danish by Med venlig hilsen (medvind@medvind.dk)
 Added Translation for Italian by Eticamente Bella (eticamentebella1@gmail.com) and Lorenzo Bossi (lorenzobossi83@gmail.com) 
-Added Translation for Japanese by Makiko Saito (saito.makiko@gmail.com)
+Added Translation for Japanese by Key Saito (key@keyspace.info)
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 
 == License ==
@@ -53,6 +53,9 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+1.8.2
+* Fixed form overflow in mobile devices (Reported By Paul)
 
 1.8.1
 * Added Russian translation ru_RU.po and ru_RU.mo
