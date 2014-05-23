@@ -1,5 +1,5 @@
 /*
-	A dark color scheme for Catch Kathmandu Pro
+	A dark color scheme for Catch Kathmandu
 */
 
 body {
@@ -142,4 +142,21 @@ input[type="submit"]:hover {
 }
 th, h1, h2, h3 {
     color: #ddd;
+}
+.sb-holder {
+	background-color: #222;
+}
+#masthead .sb-holder a:hover {
+	color: #fff;
+}
+.sb-options {
+	background-color: #222;
+}
+.sb-options a {
+	border-color: #333;
+}
+.sb-options a:hover,
+.sb-options a:focus,
+.sb-options a.sb-focus {
+    background-color: #000;
 }

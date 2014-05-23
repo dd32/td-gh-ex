@@ -69,6 +69,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+Version 1.5.2
+* Fixed menu color option in dark color scheme (Reported by puriabhishek22)
+
 Version 1.5.1
 * Added missing Polish language and WordPress theme tags
 

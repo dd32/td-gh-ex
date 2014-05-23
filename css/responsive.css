@@ -569,17 +569,6 @@ and (orientation : portrait) {
 		font-size: 15px;
 		font-size: 1.5rem;
 	}
-	#masthead .menu,
-	#footer-menu .menu {
-		display: none;
-	}
-	.tinynav {
-		display: block;
-	}
-	
-	.sb-holder {
-		display: block;
-	}
 	.commentlist .children {
 		margin-left: 0;
 	}	
@@ -595,20 +584,17 @@ and (orientation : portrait) {
 	#main .woocommerce .col-2 {
 		width: 100%;
 	}
-	.header-sidebar .widget.widget_nav_menu {
-		width: 100%;
-	}
-	.widget.widget_nav_menu .sb-holder {
-		background-color: #21759b;
-		color: #fff;
-		clear: both;
+	.tinynav,
+	.sb-holder {
 		display: block;
+	}
+	#masthead .widget.widget_nav_menu {
 		width: 100%;
-	}
-	.widget.widget_nav_menu .sb-holder a,
-	.widget.widget_nav_menu .sb-holder a:hover {
-		color: #fff;
-	}
+	}	
+	#masthead .menu,
+	#footer-menu .menu {
+		display: none;
+	}	
 }	
 @media screen and (max-width: 640px) {
 	.site {
