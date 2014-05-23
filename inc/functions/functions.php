@@ -82,7 +82,7 @@ if (!function_exists('sampression_setup')):
                     register_nav_menu( $id , $name );
             }
       
-            // Remove text color optopn from header options
+            // Remove text color option from header options
             define( 'NO_HEADER_TEXT', true );
             
     }
@@ -119,71 +119,72 @@ function sampression_filter_wp_title( $title, $sep = '|' ){
  * @param $location header / footer
  * @return Social Media Links
  */
-function sampression_social_media_icons($location = '', $separater = '') {
-    if($location == '') {
-        return '';
-    }
-    $icons = sampression_social_media();
-    //sam_p($icons);
-    if(count($icons['links']) == 0) {
-        return '';
-    }
-    $return = '';
-    $media = array();
-    if($icons['link_styling'][$location]['active'] == 'yes') {
-        //sam_p($icons['links']);
-        foreach($icons['links'] as $key => $val) {
-            if($icons['link_styling'][$location]['type'] == 'icon_only') {
-                $media[] = '<a href="'.$val['url'].'" class="social-'.$key.'"><i class="icon-social-'.$key.'"></i></a>';
-            } elseif($icons['link_styling'][$location]['type'] == 'text_only') {
-                $media[] = '<a href="'.$val['url'].'" class="social-'.$key.'">'.$val['label'].'</a>';
-            } else {
-                $media[] = '<a href="'.$val['url'].'" class="social-'.$key.'"><i class="icon-social-'.$key.'"></i>'.$val['label'].'</a>';
-            }
+function sampression_social_media_icons() {
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;
+    if( $options['social_facebook_url'] || $options['social_twitter_url'] || $options['social_linkedin_url'] || $options['social_youtube_url'] ){
+        if( $options['social_facebook_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_facebook_url'] ); ?>" class="social-facebook"> <i class="icon-social-facebook"></i> </a>
+        <?php
         }
-        $return = implode($separater, $media);
+        if( $options['social_twitter_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_twitter_url'] ); ?>" class="social-twitter"> <i class="icon-social-twitter"></i> </a>
+        <?php
+        }
+        if( $options['social_linkedin_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_linkedin_url'] ); ?>" class="social-linkedin"> <i class="icon-social-linkedin"></i> </a>
+        <?php
+        }
+        if( $options['social_youtube_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_youtube_url'] ); ?>" class="social-youtube"> <i class="icon-social-youtube"></i> </a>
+        <?php
+        }
     }
-    return $return;
 }
 /*
- * Menu
+ *  Menu of theme option
  */
 function sampression_option_menu() {//SAM_FW_CURRENT_PAGE
     
     $menus = array(
         'logos-icons' => array(
-            'slug' => 'sampression-options',
+            'slug' => 'logos-icons',
             'label' => __( 'Logos &amp; Icons', 'sampression' )
         ),
         'styling' => array(
-            'slug' => 'sampression-options&sam-page=styling',
+            'slug' => 'styling',
             'label' => __( 'Styling', 'sampression' )
         ),
         'typography' => array(
-            'slug' => 'sampression-options&sam-page=typography',
+            'slug' => 'typography',
             'label' => __( 'Typography', 'sampression' )
         ),
         'social-media' => array(
-            'slug' => 'sampression-options&sam-page=social-media',
+            'slug' => 'social-media',
             'label' => __( 'Social Media', 'sampression' )
         ),
         'custom-css' => array(
-            'slug' => 'sampression-options&sam-page=custom-css',
+            'slug' => 'custom-css',
             'label' => __( 'Custom CSS', 'sampression' )
         ),
         'blog' => array(
-            'slug' => 'sampression-options&sam-page=blog',
+            'slug' => 'blog',
             'label' => __( 'Blog', 'sampression' )
         )
     );
     
     foreach ( (array) $menus as $key => $val ) {
         ?>
-        <li class="<?php echo $key; if($key == SAM_FW_CURRENT_PAGE) { echo ' current'; } ?>"><a href="themes.php?page=<?php echo $val['slug']; ?>"><i class="icon-sam-<?php echo $key; ?>"></i><?php echo $val['label']; ?></a></li>
+        <li><a href="#<?php echo $val['slug']; ?>"><i class="icon-sam-<?php echo $key; ?>"></i><?php echo $val['label']; ?></a></li>
     <?php
     }
     
 }
+//require_once SAM_FW_ADMIN_DIR . '/theme-options.php';
 /**
  * Sampression Post thumbnail
  *
@@ -211,9 +212,7 @@ function sampression_post_thumbnail() {
 function sampression_sidebar_class($classes = array()) {
     $position = sampression_sidebar_position();
     $class = '';
-    if ($position === 'left') {
-        $class = 'four columns';
-    } elseif ($position === 'right') {
+    if ($position === 'right') {
         $class = 'four columns offset-by-one';
     } else {
         $class = '';
@@ -253,10 +252,14 @@ function sampression_content_class($classes = array()) {
     echo $class;
 }
 
+/*
+ * Sampression sidebar postition/ layout
+ */
 function sampression_sidebar_position() {
-    if ( (is_front_page() && is_home()) || is_author() || is_category() || is_tag()) {
-        $sampression_position = (object) sampression_styling();
-        $position = $sampression_position->sidebar['active'];
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;
+    if ( (is_front_page() && is_home()) || is_author() || is_category() || is_tag() || is_404()) {
+        $position = esc_attr( $options['sidebar_active'] );
         return $position;
     }
     else{
@@ -272,9 +275,8 @@ function sampression_sidebar_position() {
         if(is_page() || is_single() || is_front_page() || is_home()) {
             $position = get_post_meta($post_id, 'sam_sidebar_by_post', true);
         }
-        $sampression_position = (object) sampression_styling();
         if($position == '' || $position == 'default') {
-            $position = $sampression_position->sidebar['active'];
+            $position = esc_attr( $options['sidebar_active'] );
         }
         return $position;
    }
@@ -288,14 +290,15 @@ function sampression_sidebar_position() {
  * @global type $sampression_logo_icon
  */
 function sampression_blog_title() {
-    $logo_icon = (object) sampression_logos_icons();
-    if ($logo_icon->logo_icon['active']['name'] === 'use-title') {
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;
+    if (esc_attr($options['use_logo_title']) === 'use_title') {
         echo '<h1 class="site-title"><a href="'.esc_url(home_url()).'" class="home-link">' . get_bloginfo('name') . '</a></h1>';
-        if ($logo_icon->logo_icon['web_desc']['use_desc'] === 'yes') {
+        if ( esc_attr( $options['use_web_desc'] )  === 'yes') {
             echo '<h2 class="site-description">' . get_bloginfo('description') . '</h2>';
         }
     } else {
-        echo '<div id="logo"><a href="'.esc_url(home_url()).'" class="home-link"><img src="' . $logo_icon->logo_icon['image'] . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . '" /></a></div>';
+        echo '<div id="logo"><a href="'.esc_url(home_url()).'" class="home-link"><img src="' . esc_url( $options['logo_url'] ) . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . '" /></a></div>';
     }
 }
 
@@ -305,22 +308,23 @@ function sampression_blog_title() {
  * @global type $sampression_logo_icon
  */
 function sampression_favicons() {
-    $sampression_logo_icon = (object) sampression_logos_icons();
-    if ($sampression_logo_icon->fav_icon['favicon_16']['donot_use_favicon'] === 'no') {
-        echo '<link rel="shortcut icon" href="' . $sampression_logo_icon->fav_icon['favicon_16']['image'] . '" />';
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;
+    if (esc_attr($options['donot_use_favicon_16']) === 'no') {
+        echo '<link rel="shortcut icon" href="' . esc_url($options['favicon_url_16']) . '" />';
     }
-    if ($sampression_logo_icon->apple_icon['donot_use_apple_icon'] === 'no') {
-        if ($sampression_logo_icon->apple_icon['favicon_57']['donot_use_favicon'] === 'no') {
-            echo '<link rel="apple-touch-icon" sizes="57x57" href="' . $sampression_logo_icon->apple_icon['favicon_57']['image'] . '" />';
+    if (esc_attr($options['donot_use_apple_icon']) === 'no') {
+        if (esc_attr($options['donot_use_apple_icon_57']) === 'no') {
+            echo '<link rel="apple-touch-icon" sizes="57x57" href="' . esc_url($options['apple_icon_url_57']) . '" />';
         }
-        if ($sampression_logo_icon->apple_icon['favicon_72']['donot_use_favicon'] === 'no') {
-            echo '<link rel="apple-touch-icon" sizes="72x72" href="' . $sampression_logo_icon->apple_icon['favicon_72']['image'] . '" />';
+        if (esc_attr($options['donot_use_apple_icon_72']) === 'no'){
+            echo '<link rel="apple-touch-icon" sizes="72x72" href="' . esc_url($options['apple_icon_url_72']) . '" />';
         }
-        if ($sampression_logo_icon->apple_icon['favicon_114']['donot_use_favicon'] === 'no') {
-            echo '<link rel="apple-touch-icon" sizes="114x114" href="' . $sampression_logo_icon->apple_icon['favicon_114']['image'] . '" />';
+        if (esc_attr($options['donot_use_apple_icon_114']) === 'no') {
+            echo '<link rel="apple-touch-icon" sizes="114x114" href="' . esc_url($options['apple_icon_url_114']) . '" />';
         }
-        if ($sampression_logo_icon->apple_icon['favicon_144']['donot_use_favicon'] === 'no') {
-            echo '<link rel="apple-touch-icon" sizes="144x144" href="' . $sampression_logo_icon->apple_icon['favicon_144']['image'] . '" />';
+        if (esc_attr($options['donot_use_apple_icon_144']) === 'no') {
+            echo '<link rel="apple-touch-icon" sizes="144x144" href="' . esc_url($options['apple_icon_url_144']) . '" />';
         }
     }
 }
@@ -378,38 +382,31 @@ function sam_p($array) {
     echo '</pre>';
 }
 
-if (isset($_GET['action']) && $_GET['action'] === 'restore') {
+/**
+ * restore theme options 
+ */
+if(isset($_POST['reset'])) {
     require_once(ABSPATH . 'wp-admin/includes/file.php');
     WP_Filesystem();
     global $wp_filesystem;
-    $key_values = array('sam-logos-icons-settings', 'sam-style-settings', 'sam-typography-settings', 'sam-social-media-settings', 'sam-custom-css-settings', 'sam-blog-page-settings');
-    $counter = 0;
-    foreach ($key_values as $key_value) {
-        if (delete_option($key_value)) {
-            $counter++;
-        }
-    }
-    
-    $message = 2;
-    if ($counter === 0) {
-        $message = 3;
+    $message = 0;
+    if(get_option('sampression_theme_options')){
+        delete_option('sampression_theme_options');
+        $message = 2;
     }
     $file = SAM_FW_CSS_DIR . '/custom-css.css';
     $css = ' ';
     if (!is_writable($file)) {
         $message = 4;
+        wp_redirect('themes.php?page=sampression-options&message=' . $message);
     } else {
         if (file_exists($file)) {
             if ( ! $wp_filesystem->put_contents( $file, $css, FS_CHMOD_FILE) ) {
                 echo __('CSS could not be written at this time. Please try again later.', 'sampression');
             }
         }
-    }
-    $link = '';
-    if(isset($_GET['sam-page']) && $_GET['sam-page']!= '') {
-        $link = '&sam-page='.$_GET['sam-page'];
-    }
-    wp_redirect('themes.php?page=' . $_GET['page'] . $link . '&message=' . $message);
+        wp_redirect('themes.php?page=sampression-options');
+    }    
     exit;
 }
 
@@ -456,7 +453,8 @@ if (!function_exists('sampression_post_meta')) :
      * Prints HTML with meta information for the current post-date/time and author.
      */
     function sampression_post_meta() {
-        $sampression_blog_settings = (object) sampression_blog();
+        global $sampression_options_settings;
+        $options = $sampression_options_settings;
         $posted = '';
         $post_format = 'posted';
         if(get_post_format() === 'chat') {
@@ -466,7 +464,7 @@ if (!function_exists('sampression_post_meta')) :
         } elseif(get_post_format() === 'video') {
             $post_format = 'video';
         }
-        if($sampression_blog_settings->post_meta['meta']['author'] === 'yes') {
+        if( $options['show_meta_author'] === 'yes' ) {
             global $authordata;
             $posted .= sprintf(
                         '<span class="author">%4$s by <a href="%1$s" title="%2$s" rel="author">%3$s</a></span> ',
@@ -476,25 +474,25 @@ if (!function_exists('sampression_post_meta')) :
                         $post_format
                     );
         }
-        if($sampression_blog_settings->post_meta['meta']['date'] === 'yes') {
+        if( $options['show_meta_date'] === 'yes' ) {
             $time = '';
-            if($sampression_blog_settings->post_meta['meta']['time'] === 'yes') {
+            if( $options['show_meta_time'] === 'yes' ) {
                 $time = ' ' . get_the_time();
             }
             $posted .= sprintf(
                         '<time datetime="%2$s" class="entry-date"><a href="%3$s">%1$s' . $time . '</a></time>',
-                        get_the_date($sampression_blog_settings->post_meta['date_time']['date_active']),
+                        get_the_date(),
                         get_the_date('c'),
                         get_permalink()
                     );
         }
 
-        if($sampression_blog_settings->post_meta['meta']['categories'] === 'yes') {
+        if($options['show_meta_categories'] === 'yes') {
             if(get_the_category_list()) {
                 $posted .= '<span class="categories-links"> under ' . get_the_category_list(__(', ', 'sampression')) . '</span> ';
             }
         }
-        if($sampression_blog_settings->post_meta['meta']['tags'] === 'yes') {
+        if($options['show_meta_tags'] === 'yes') {
             if(get_the_tag_list()) {
                 $posted .= '<span class="tags-links">' . get_the_tag_list( '', ', ', '' ) .'</span>';
             }
@@ -504,12 +502,17 @@ if (!function_exists('sampression_post_meta')) :
 
 endif;
 
+/*
+ * Filter to support shortcode in widget
+ */
 add_filter( 'widget_text', 'do_shortcode');
 
 function sampression_exclude_categories($query) {
-    $sampression_blog_settings = (object) sampression_blog();
-    if(count($sampression_blog_settings->blog_category['cat_id']) > 0) {
-        $exclude = $sampression_blog_settings->blog_category['cat_id'];
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;    
+    $hidden_categories_value = esc_attr( $options['hide_blog_from_category'] ); // Get string value from database for hidden categories id
+    $exclude = explode(',', $hidden_categories_value); // Convert string to array for hidden categories id
+    if(count($exclude) > 0) {
         if ($query->is_home) {
             $query->set('category__not_in', $exclude);
         }
@@ -579,11 +582,7 @@ function sampression_content_nav(  ) {
                 ?>
 
         <?php } elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
-                <?php
-                $sampression_blog_settings = (object) sampression_blog();
-                //sam_p($sampression_blog_settings);
-                if($sampression_blog_settings->pagination['default']['active'] === 'yes') {
-                ?>
+                
 		<?php if ( get_next_posts_link() ) : ?>
 		<?php next_posts_link( __( 'Older Posts', 'sampression' ) ); ?>
 		<?php endif; ?>
@@ -591,11 +590,6 @@ function sampression_content_nav(  ) {
 		<?php if ( get_previous_posts_link() ) : ?>
 		<?php previous_posts_link( __( 'Newer Posts', 'sampression' ) ); ?>
 		<?php endif; ?>
-                <?php
-                } else {
-                     sampression_pagination();
-                }
-                ?>
 
     <?php } ?>
 
@@ -667,23 +661,6 @@ if(!function_exists('sampression_attached_image')) {
     }
     
 }
-
-if ( ! function_exists( 'sampression_pagination' ) ) :
-	function sampression_pagination() {
-		global $wp_query;
-
-		$big = 999999999; // need an unlikely integer
-
-		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages,
-                        'prev_text' => __('<', 'sampression'),
-                        'next_text' => __('>', 'sampression')
-		) );
-	}
-endif;
 
 add_filter('next_posts_link_attributes', 'sampression_next_posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'sampression_previous_posts_link_attributes');
@@ -917,19 +894,15 @@ function sampression_get_template($template_name) {
 
 function sampression_readmore_link() {
     if(sampression_get_the_excerpt()) {
-        $blog_settings = (object) sampression_blog();
         $more = 'Read more';
-        if(!empty($blog_settings->post_meta['others']['more_text'])) {
-            $more = $blog_settings->post_meta['others']['more_text'];
-        }
         printf( '<div class="entry-footer"><a href="%2$s">%1$s</a></div>', $more, get_permalink() );
     }
 }
 
 function sampression_post_class() {
-    
-    $blog_settings = (object)sampression_blog();
-    if($blog_settings->post_meta['meta']['icon'] == 'yes') {
+    global $sampression_options_settings;
+    $options = $sampression_options_settings;  
+    if($options['show_meta_icon'] == 'yes') {
         return array('format-icon', 'clearfix');
     }
     return array('clearfix');
@@ -990,8 +963,8 @@ if ( ! function_exists( 'sampression_admin_header_style' ) ) :
  * @see sampression_custom_header_setup().
  */
 function sampression_admin_header_style() {
-        $sampression_logo_icon = (object) sampression_logos_icons();
-        
+        global $sampression_options_settings;
+        $options = $sampression_options_settings;        
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #admin-heading {
@@ -1001,13 +974,13 @@ function sampression_admin_header_style() {
                     margin: 0;
 		}
 		#admin-heading h1.site-title a {
-                   color: <?php echo $sampression_logo_icon->logo_icon['active']['color']; ?>;
+                   color: <?php echo esc_attr( $options['web_title_color'] ); ?>;
                    text-decoration: none;
-                   font: <?php echo $sampression_logo_icon->logo_icon['active']['style'].' '. $sampression_logo_icon->logo_icon['active']['size'] . 'px '. $sampression_logo_icon->logo_icon['active']['font']; ?>;
+                   font: <?php echo esc_attr( $options['web_title_style'] ).' '. absint( $options['web_title_size'] ) . 'px '. esc_attr( $options['web_title_font'] ); ?>;
 		}
 		#desc {
-                   color: <?php echo $sampression_logo_icon->logo_icon['web_desc']['color']; ?>;
-                   font: <?php echo $sampression_logo_icon->logo_icon['web_desc']['style'].' '. $sampression_logo_icon->logo_icon['web_desc']['size'] . 'px '. $sampression_logo_icon->logo_icon['web_desc']['font']; ?>;
+                   color: <?php echo esc_attr( $options['web_desc_color'] ); ?>;
+                   font: <?php echo esc_attr( $options['web_desc_style'] ).' '. absint( $options['web_desc_size'] ) . 'px '. esc_attr( $options['web_desc_font'] ); ?>;
                    padding-top: 0;
                    padding-bottom: 10px;
 		}

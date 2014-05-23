@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
                     <div class="site-info"> &copy; <?php _e(date('Y')); ?>. "<?php bloginfo( 'name' ); ?>". <?php do_action( 'sampression_credits' ); ?></div>
                 </div>
                 <div class="five columns">
-                    <div class="social-connect social-withtext">
-                        <?php echo sampression_social_media_icons( $location = 'footer' ) ?>
+                    <div class="social-connect social-footer">
+                        <?php sampression_social_media_icons() ?>
                     </div>
                 </div>
             </div>

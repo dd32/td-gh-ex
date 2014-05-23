@@ -12,17 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 <!--[if IE 8]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo('charset'); ?>" />
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="<?php bloginfo('charset'); ?>" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-<title> <?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
-<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
-<?php sampression_favicons(); ?>
-<!--[if lt IE 9]>
-<script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
-<![endif]-->
-<?php wp_head(); ?>
+    <title> <?php wp_title( '|', true, 'right' ); ?></title>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
+    <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
+    <?php sampression_favicons(); ?>
+    <!--[if lt IE 9]>
+    <script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
+    <![endif]-->
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper">
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
                     </div>
                 </div>
                 <div class="social-connect">
-                    <?php echo sampression_social_media_icons( $location = 'header', $separater = '' ) ?>
+                    <?php sampression_social_media_icons() ?>
                 </div>
                 <?php $header_image = get_header_image();
         		if ( ! empty( $header_image ) ) : ?>

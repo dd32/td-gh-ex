@@ -9,11 +9,17 @@ if ( !defined( 'ABSPATH' ) )
 ?>
 <aside id="sidebar" role="complementary" class="<?php sampression_sidebar_class() ?>">
     <?php do_action( 'sampression_before_sidebar' ); ?>
-    <?php
-    if ( is_active_sidebar( 'primary-sidebar' ) ) {
-        dynamic_sidebar( 'primary-sidebar' );
-    }
-    ?>
+     <?php if ( ! dynamic_sidebar( 'primary-sidebar' ) ) : ?>
+        <div class="widget widget_search clearfix">
+            <?php get_search_form(); ?>
+        </div> <!-- search widget -->
+        <div class="widget widget_categories clearfix">
+            <h3 class="widget-title"> <?php _e( 'Categories', 'sampression' ); ?> </h3>
+            <ul>
+                <?php wp_list_categories( array( 'title_li' => '', 'hierarchical' => 0 ) ); ?>
+            </ul>
+        </div>    
+    <?php endif; // end sidebar widget area ?>
     <?php do_action( 'sampression_after_sidebar' ); ?>
 </aside>
 <!-- #sidebar-->
