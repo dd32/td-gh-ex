@@ -13,7 +13,7 @@
  * @package  WordPress
  * @author   Thomas Usborne
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     http://www.generateframework.com
+ * @link     http://www.generatepress.com
  */
 
 // create custom plugin settings menu
@@ -24,7 +24,9 @@ function generate_create_menu()
 		'generate_fonts_setup' => 'gen_fonts_license_key_status',
 		'generate_colors_setup' => 'gen_colors_license_key_status',
 		'generate_page_header' => 'gen_page_header_license_key_status',
-		'generate_insert_import_export' => 'gen_ie_license_key_status'
+		'generate_insert_import_export' => 'gen_ie_license_key_status',
+		'generate_copyright_option' => 'gen_copyright_license_key_status',
+		'generate_disable_elements' => 'gen_disable_elements_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -35,13 +37,8 @@ function generate_create_menu()
 		endif;
 	}
 	
-	//add_menu_page( __('Generate','generate'), __('Generate','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page', 'dashicons-plus', 3 );
-	//add_submenu_page('generate-options', __('Options','generate'), __('Options','generate'), 'edit_themes', 'generate-options', 'generate_settings_page');
-	//add_submenu_page('generate-options', 'Customizer', 'Customizer', 'edit_theme_options', 'customize.php', '', '');
 	$generate_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page' );
 	
-	//call register settings function
-	add_action( 'admin_init', 'generate_register_settings' );
 	add_action( "admin_print_scripts-$generate_page", 'generate_options_scripts' );
 	add_action( "admin_print_styles-$generate_page", 'generate_options_styles' );
 }
@@ -60,11 +57,7 @@ function generate_options_styles()
 }
 
 
-function generate_register_settings() {
-	//register our settings
-	register_setting( 'generate-settings-group', 'generate_header_scripts' );
-	register_setting( 'generate-settings-group', 'generate_footer_scripts' );
-}
+
 
 function generate_settings_page() 
 {
@@ -132,6 +125,20 @@ function generate_settings_page()
 												'id' => 'generate_insert_import_export',
 												'license' => 'gen_ie_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-import-export/')
+										),
+										'5' => array(
+												'name' => __('Copyright','generate'),
+												'version' => ( function_exists('generate_copyright_option') ) ? GENERATE_COPYRIGHT_VERSION : '',
+												'id' => 'generate_copyright_option',
+												'license' => 'gen_copyright_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-copyright/')
+										),
+										'6' => array(
+												'name' => __('Disable Elements','generate'),
+												'version' => ( function_exists('generate_disable_elements') ) ? GENERATE_DE_VERSION : '',
+												'id' => 'generate_disable_elements',
+												'license' => 'gen_disable_elements_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-disable-elements/')
 										)
 									);
 									
@@ -175,8 +182,12 @@ function generate_settings_page()
 								if ( !function_exists('generate_fonts_setup') &&
 									!function_exists('generate_colors_setup') &&
 									!function_exists('generate_page_header') &&
-									!function_exists('generate_insert_import_export') ) :
+									!function_exists('generate_insert_import_export') &&
+									!function_exists('generate_copyright_option') &&
+									!function_exists('generate_disable_elements') ) :
 										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
+									else :
+										echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.') . '</p>';
 									endif;
 
 								?>

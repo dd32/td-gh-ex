@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.4');
+define( 'GENERATE_VERSION', '1.0.5');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -63,14 +63,19 @@ function generate_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-	
-	/**
-	 * Set default options
-	 */
-	global $generate_defaults;
+}
+endif; // generate_setup
+
+/**
+ * Set default options
+ */
+function generate_get_defaults()
+{
 	$generate_defaults = array(
 		'container_width' => '1100',
 		'header_layout_setting' => 'fluid-header',
+		'center_header' => '',
+		'center_nav' => '',
 		'nav_layout_setting' => 'fluid-nav',
 		'nav_position_setting' => 'nav-below-header',
 		'content_layout_setting' => 'separate-containers',
@@ -84,9 +89,9 @@ function generate_setup() {
 		'link_color_hover' => '#000000',
 		'link_color_visited' => '',
 	);
-
+	
+	return apply_filters( 'generate_option_defaults', $generate_defaults );
 }
-endif; // generate_setup
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -163,11 +168,6 @@ function generate_scripts() {
 	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
-	
-	// If the Typography plugin isn't activated, set up the default fonts
-	if ( !function_exists('generate_fonts_setup') ) :
-		wp_enqueue_style( 'generate-fonts', '//fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic' );
-	endif;
 
 	// Generate scripts
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
@@ -227,9 +227,9 @@ require get_template_directory() . '/inc/metaboxes.php';
 require get_template_directory() . '/inc/options.php';
 
 /**
- * Load Options
+ * Load Addon options
  */
-//require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/addons.php';
 
 
 /**
@@ -239,8 +239,8 @@ require get_template_directory() . '/inc/options.php';
 add_action('generate_sidebars','generate_contruct_sidebars');
 function generate_contruct_sidebars()
 {
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$stored_meta = '';
 	
 	// Prevent PHP notices
@@ -308,8 +308,7 @@ function generate_add_login_attribution()
 add_action( 'generate_after_header', 'generate_add_navigation_after_header', 5 );
 function generate_add_navigation_after_header()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	if ( 'nav-below-header' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -319,8 +318,7 @@ function generate_add_navigation_after_header()
 add_action( 'generate_before_header', 'generate_add_navigation_before_header', 5 );
 function generate_add_navigation_before_header()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	if ( 'nav-above-header' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -330,8 +328,7 @@ function generate_add_navigation_before_header()
 add_action( 'generate_inside_header', 'generate_add_navigation_float_right', 5 );
 function generate_add_navigation_float_right()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	if ( 'nav-float-right' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -341,8 +338,7 @@ function generate_add_navigation_float_right()
 add_action( 'generate_before_right_sidebar', 'generate_add_navigation_before_right_sidebar', 5 );
 function generate_add_navigation_before_right_sidebar()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	if ( 'nav-right-sidebar' == $generate_settings['nav_position_setting'] ) :
 		echo '<div class="gen-sidebar-nav">';
@@ -354,8 +350,7 @@ function generate_add_navigation_before_right_sidebar()
 add_action( 'generate_before_left_sidebar', 'generate_add_navigation_before_left_sidebar', 5 );
 function generate_add_navigation_before_left_sidebar()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	if ( 'nav-left-sidebar' == $generate_settings['nav_position_setting'] ) :
 		echo '<div class="gen-sidebar-nav">';
@@ -399,8 +394,7 @@ function generate_navigation_position()
 add_action('wp_head','generate_base_css');
 function generate_base_css()
 {
-	global $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$space = ' ';
 	
 	// Start the magic
@@ -493,34 +487,6 @@ echo $output; ?>
 }
 
 /**
- * Add fonts if Typography plugin isn't installed
- * @since 0.1
- */
-add_action('generate_head_css','generate_default_fonts');
-function generate_default_fonts()
-{
-	// If the plugin is active, stop the function
-	if ( function_exists('generate_fonts_setup') )
-		return;
-		
-	echo 'body {font-family: Arial, Helvetica, sans-serif; font-weight: normal; text-transform: none; font-size: 15px; }.main-title {font-family: Roboto; font-weight: bold; text-transform: uppercase; font-size: 45px; }.site-description {font-family: Roboto; font-weight: normal; text-transform: none; font-size: 15px; }.main-navigation a, .gen-sidebar-nav .widget_nav_menu a {font-family: Roboto; font-weight: normal; text-transform: none; font-size: 15px; }.widget-title {font-family: Roboto; font-weight: normal; text-transform: none; font-size: 20px; }h1 {font-family: Roboto; font-weight: 300; text-transform: none; font-size: 40px; }h2 {font-family: Roboto; font-weight: 300; text-transform: none; font-size: 30px; }h3 {font-family: inherit; font-weight: normal; text-transform: none; font-size: 20px; }h4 {font-family: inherit; font-weight: normal; text-transform: none; font-size: 15px; }';
-}
-
-/**
- * Add colors if Colors plugin isn't installed
- * @since 0.1
- */
-add_action('generate_head_css','generate_default_colors');
-function generate_default_colors()
-{
-	// If the plugin is active, stop the function
-	if ( function_exists('generate_colors_setup') )
-		return;
-		
-	echo '.site-header {background: #FFFFFF; }.site-header a, .site-header a:visited {color: #3a3a3a; }.main-title a, .main-title a:hover, .main-title a:visited {color: #222222; }.site-description {color: #999999; }.main-navigation,   .main-navigation ul ul {background: #222222; }.main-navigation ul ul {background: #3f3f3f; }.main-navigation .main-nav ul li a, .menu-toggle {color: #FFFFFF; }.main-navigation .main-nav ul ul li a {color: #FFFFFF; }.main-navigation .main-nav ul li > a:hover,  .main-navigation .main-nav ul li.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul li > a:hover,  .main-navigation .main-nav ul ul li.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul .current-menu-item > a,  .main-navigation .main-nav ul .current-menu-parent > a,  .main-navigation .main-nav ul .current-menu-ancestor > a,  .main-navigation .main-nav ul .current_page_item > a,  .main-navigation .main-nav ul .current_page_parent > a,  .main-navigation .main-nav ul .current_page_ancestor > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul .current-menu-item > a:hover,  .main-navigation .main-nav ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul .current_page_item > a:hover,  .main-navigation .main-nav ul .current_page_parent > a:hover,  .main-navigation .main-nav ul .current_page_ancestor > a:hover,  .main-navigation .main-nav ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul .current-menu-item > a,  .main-navigation .main-nav ul ul .current-menu-parent > a,  .main-navigation .main-nav ul ul .current-menu-ancestor > a,  .main-navigation .main-nav ul ul .current_page_item > a,  .main-navigation .main-nav ul ul .current_page_parent > a,  .main-navigation .main-nav ul ul .current_page_ancestor > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul ul .current-menu-item > a:hover,  .main-navigation .main-nav ul ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul ul .current_page_item > a:hover,  .main-navigation .main-nav ul ul .current_page_parent > a:hover,  .main-navigation .main-nav ul ul .current_page_ancestor > a:hover, .main-navigation .main-nav ul ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.inside-article,  .comments-area,  .page-header, .one-container .container, .paging-navigation, .inside-page-header {background: #FFFFFF; }.sidebar .widget {background: #FFFFFF; }.sidebar .widget .widget-title {color: #000000; }.footer-widgets {background: #FFFFFF; color: #3a3a3a; }.footer-widgets .widget-title {color: #000000; }.site-info {background: #222222; color: #ffffff; }.site-info a,  .site-info a:visited {color: #ffffff; }.site-info a:hover {color: #4295DD; }';
-}
-
-/**
  * Add page header using featured image if Page Header addon isn't installed
  * @since 1.0.2
  */
@@ -530,13 +496,13 @@ function generate_featured_page_header()
 	if ( function_exists('generate_page_header') )
 		return;
 
-	if ( is_single() || is_page() ) :
+	if ( ( is_single() || is_page() ) && !is_attachment() ) :
 		
 		global $post;
 		$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
 		$page_header_image_width = 1200;
 		
-		if ( '' !== $page_header_image ) :
+		if ( !empty($page_header_image) ) :
 			echo '<div class="page-header-image grid-container grid-parent">';
 				echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" alt="" />';
 			echo '</div>';

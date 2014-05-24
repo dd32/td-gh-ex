@@ -1,6 +1,6 @@
 <?php
 /**
- * Generate Theme Customizer
+ * GeneratePress Customizer
  *
  * @package Generate
  */
@@ -12,6 +12,8 @@
  */
 add_action( 'customize_register', 'generate_customize_register' );
 function generate_customize_register( $wp_customize ) {
+
+	$defaults = generate_get_defaults();
 
 	// Load custom controls
 	require_once GENERATE_DIR . '/inc/controls.php';
@@ -85,27 +87,27 @@ function generate_customize_register( $wp_customize ) {
 	$body_colors = array();
 	$body_colors[] = array(
 		'slug'=>'background_color', 
-		'default' => '#efefef',
+		'default' => $defaults['background_color'],
 		'label' => __('Background Color', 'generate')
 	);
 	$body_colors[] = array(
 		'slug'=>'text_color', 
-		'default' => '#3a3a3a',
+		'default' => $defaults['text_color'],
 		'label' => __('Text Color', 'generate')
 	);
 	$body_colors[] = array(
 		'slug'=>'link_color', 
-		'default' => '#1e73be',
+		'default' => $defaults['link_color'],
 		'label' => __('Link Color', 'generate')
 	);
 	$body_colors[] = array(
 		'slug'=>'link_color_hover', 
-		'default' => '#000000',
+		'default' => $defaults['link_color_hover'],
 		'label' => __('Link Color Hover', 'generate')
 	);
 	$body_colors[] = array(
 		'slug'=>'link_color_visited', 
-		'default' => '',
+		'default' => $defaults['link_color_visited'],
 		'label' => __('Link Color Visited', 'generate')
 	);
 
@@ -148,7 +150,7 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 
 		'generate_settings[container_width]', 
 		array(
-			'default' => '1100',
+			'default' => $defaults['container_width'],
 			'type' => 'option'
 		)
 	);
@@ -172,7 +174,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[header_layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'fluid-header',
+			'default' => $defaults['header_layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -199,7 +201,7 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 
 		'generate_settings[center_header]', 
 		array(
-			'default' => '',
+			'default' => $defaults['center_header'],
 			'type' => 'option'
 		)
 	);
@@ -220,7 +222,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[nav_layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'fluid-nav',
+			'default' => $defaults['nav_layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -250,7 +252,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[nav_position_setting]',
 		// Arguments array
 		array(
-			'default' => 'nav-below-header',
+			'default' => $defaults['nav_position_setting'],
 			'type' => 'option'
 		)
 	);
@@ -281,7 +283,7 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 
 		'generate_settings[center_nav]', 
 		array(
-			'default' => '',
+			'default' => $defaults['center_nav'],
 			'type' => 'option'
 		)
 	);
@@ -302,7 +304,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[content_layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'separate-containers',
+			'default' => $defaults['content_layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -332,7 +334,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'right-sidebar',
+			'default' => $defaults['layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -366,7 +368,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[blog_layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'right-sidebar',
+			'default' => $defaults['blog_layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -400,7 +402,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[footer_layout_setting]',
 		// Arguments array
 		array(
-			'default' => 'fluid-footer',
+			'default' => $defaults['footer_layout_setting'],
 			'type' => 'option'
 		)
 	);
@@ -430,7 +432,7 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[footer_widget_setting]',
 		// Arguments array
 		array(
-			'default' => '3',
+			'default' => $defaults['footer_widget_setting'],
 			'type' => 'option'
 		)
 	);

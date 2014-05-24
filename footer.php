@@ -12,8 +12,8 @@
 </div><!-- #page -->
 <div <?php generate_footer_class(); ?>>
 	<?php 
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$stored_meta = '';
 	if ( isset( $post ) ) :
 		$stored_meta = get_post_meta( $post->ID, '_generate-footer-widget-meta', true );

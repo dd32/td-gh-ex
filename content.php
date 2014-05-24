@@ -70,8 +70,7 @@
 				<?php comments_popup_link( __( 'Leave a comment', 'generate' ), __( '1 Comment', 'generate' ), __( '% Comments', 'generate' ) ); ?>
 			</span>
 			<?php endif; ?>
-
-			<!--<?php// edit_post_link( __( 'Edit', 'generate' ), '<span class="edit-link">', '</span>' ); ?>-->
+			
 		</footer><!-- .entry-meta -->
 	</div><!-- .inside-article -->
 </article><!-- #post-## -->

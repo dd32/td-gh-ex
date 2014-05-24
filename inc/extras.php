@@ -31,8 +31,8 @@ add_filter( 'body_class', 'generate_body_classes' );
 function generate_body_classes( $classes ) {
 	
 	// Get theme options
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$stored_meta = '';
 	$page_header_image = '';
 	$page_header_slideshow = '';
@@ -96,8 +96,8 @@ function generate_right_sidebar_classes( $classes )
 	$classes[] = 'sidebar';
 
 	// Get theme options
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$layout = $generate_settings['layout_setting'];
 	$stored_meta = '';
 	
@@ -158,8 +158,8 @@ function generate_left_sidebar_classes( $classes )
 	$classes[] = 'sidebar';
 
 	// Get theme options
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	
 	if ( '' !== $stored_meta ) :
@@ -209,8 +209,8 @@ function generate_content_classes( $classes )
 	$classes[] = 'grid-parent';
 
 	// Get theme options
-	global $post, $generate_defaults;
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );
+	global $post;
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$stored_meta = '';
 	
 	if ( isset( $post ) ) :
@@ -320,12 +320,11 @@ add_filter( 'wp_title', 'generate_wp_title', 10, 2 );
 add_filter( 'generate_header_class', 'generate_header_classes');
 function generate_header_classes( $classes )
 {
-	global $generate_defaults;
 	
 	$classes[] = 'site-header';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$header_layout = $generate_settings['header_layout_setting'];
 	
 	if ( $header_layout == 'contained-header' ) :
@@ -344,12 +343,11 @@ function generate_header_classes( $classes )
 add_filter( 'generate_inside_header_class', 'generate_inside_header_classes');
 function generate_inside_header_classes( $classes )
 {
-	global $generate_defaults;
 	
 	$classes[] = 'inside-header';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$header_layout = $generate_settings['header_layout_setting'];
 	
 	if ( $header_layout == 'fluid-header' || $header_layout == '' ) :
@@ -368,12 +366,11 @@ function generate_inside_header_classes( $classes )
 add_filter( 'generate_navigation_class', 'generate_navigation_classes');
 function generate_navigation_classes( $classes )
 {
-	global $generate_defaults;
 	
 	$classes[] = 'main-navigation';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$nav_layout = $generate_settings['nav_layout_setting'];
 	
 	if ( $nav_layout == 'contained-nav' ) :
@@ -392,13 +389,12 @@ function generate_navigation_classes( $classes )
 add_filter( 'generate_menu_class', 'generate_menu_classes');
 function generate_menu_classes( $classes )
 {
-	global $generate_defaults;
 	
 	$classes[] = 'menu';
 	$classes[] = 'sf-menu';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 
 	return $classes;
 	
@@ -411,11 +407,10 @@ function generate_menu_classes( $classes )
 add_filter( 'generate_footer_class', 'generate_footer_classes');
 function generate_footer_classes( $classes )
 {
-	global $generate_defaults;
 	$classes[] = 'site-footer';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
+	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
 	$footer_layout = $generate_settings['footer_layout_setting'];
 	
 	if ( $footer_layout == 'contained-footer' ) :
