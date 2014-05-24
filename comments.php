@@ -43,7 +43,7 @@ if ( post_password_required() )
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<h4 class="no-comments"><?php _e( 'Comments are closed.' , 'shipyard' ); ?></h4>
+		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'shipyard' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

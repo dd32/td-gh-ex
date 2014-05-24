@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.9\n"
+"Project-Id-Version: Shipyard v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 11:06:55+0000\n"
+"PO-Revision-Date: 2014-05-24 10:24:57+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -130,11 +130,6 @@ msgstr "&laquo; Oudere Reacties"
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: comments.php:46
-#@ shipyard
-msgid "Comments are closed."
-msgstr "Reageren is niet mogelijk."
-
 #: functions.php:114
 #@ shipyard
 msgid "Footer Sidebar Right"
@@ -251,4 +246,9 @@ msgstr ", "
 #@ shipyard
 msgid "Tags: %s"
 msgstr "Tags: %s"
+
+#: comments.php:46
+#@ shipyard
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
 

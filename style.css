@@ -1,7 +1,7 @@
 /*
 Theme Name: Shipyard
 Theme URI: http://www.guidovanderleest.nl/shipyard
-Version: 1.9
+Version: 2.0
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Shipyard is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -76,7 +76,7 @@ table {
 
 /* GENERAL */
 body {background: #f8f8f8; font-family: 'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
-#container {max-width: 960px; margin: 10px auto 10px; padding: 20px 2%; background:#fff; border: 1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align: left; word-wrap: break-word;}
+#container {max-width: 960px; margin: 10px auto 10px; padding: 20px; background:#fff; border: 1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align: left; word-wrap: break-word;}
 #content {width: 60%; float:left; padding: 10px 0 20px; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding: 10px 0 20px; word-wrap: break-word;}
 
@@ -153,7 +153,7 @@ select {max-width:100%;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #f26535; margin: 10px 0 10px; padding:5px; border:0; border-radius:5px;-moz-border-radius:5px;}
 .postmetadata {margin:10px 0; padding:5px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-.more {margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #333; color:#fff; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #f26535; text-decoration:none;}
@@ -173,6 +173,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+
+.wp-post-image {float:left; margin: 10px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -204,7 +206,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width: 36%; float: right; margin:20px 0 0; padding:0; word-wrap: break-word;}
+#sidebar {width: 38%; float: right; margin:20px 0 0; padding:0; word-wrap: break-word;}
 .widget {padding:10px 10px 10px; margin: 0 0 20px; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
 .widgettitle {background:#f8f8f8; color:#333; padding:5px; margin:10px 0; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
 #wp-calendar {width:90%;}
@@ -214,8 +216,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #footer {clear:both; background:none; color:#333; padding:10px 0 0; border-top:1px solid #ccc;}
 #footer .site-info {text-align:center; clear:both; padding:5px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
 
-.footer-left {float: left; width: 48%; margin:10px 0; padding:0; word-wrap: break-word;}
-.footer-right {float: right; width: 48%; margin:10px 0; padding:0; word-wrap: break-word;}
+.footer-left {float: left; width: 49%; margin:10px 0; padding:0; word-wrap: break-word;}
+.footer-right {float: right; width: 49%; margin:10px 0; padding:0; word-wrap: break-word;}
 
 
 /* Mobile */
@@ -232,6 +234,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#footer {width:100%; padding:5px 0 0;}
 	.widget {margin: 0 0 10px;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
 	.footer-right, .footer-left {width:100%; border:0; margin: 5px 0 0; padding:0; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0; border:0;}
