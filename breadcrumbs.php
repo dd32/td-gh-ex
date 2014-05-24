@@ -7,7 +7,7 @@ global $post;
 if (!is_front_page()) {
 	echo '<ul>';
     echo '<li><a href="';
-    echo home_url();
+    echo esc_url(home_url());
     echo '">';
     _e('Home','apprise');
     echo '</a></li><li class="separator"> / </li>';

@@ -47,7 +47,7 @@
 			<div class="clear"></div>	
 			<div id="logo">
 				<?php if ( of_get_option('logo') != '' ) { ?>
-					<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><img src="<?php echo of_get_option('logo'); ?>" alt="<?php echo of_get_option('logo_alt_text'); ?>"/></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><img src="<?php echo esc_url(of_get_option('logo')); ?>" alt="<?php echo of_get_option('logo_alt_text'); ?>"/></a>
 					<?php if (of_get_option('enable_logo_tagline') == '1' ) { ?> 
 						<h5 class="site-description"><?php echo bloginfo('description'); ?></h5>
 					<?php } ?>
