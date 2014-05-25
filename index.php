@@ -24,7 +24,7 @@
 		</h5>
 
 		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail('homepage'); 
+			the_post_thumbnail(); 
 		} ?>
 
 		<?php the_excerpt(); ?>
@@ -33,7 +33,7 @@
 		<?php printf( __( 'Posted on %s', 'gridbulletin' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
 		<?php printf( __( 'By %s', 'gridbulletin' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
-		<?php comments_popup_link( __( 'Leave a response', 'gridbulletin' ), __( '1 response', 'gridbulletin' ), __( '% responses', 'gridbulletin' ) ); ?><?php endif; ?></h5>
+		<?php comments_popup_link( __( 'Leave a response', 'gridbulletin' ), __( '1 response', 'gridbulletin' ), __( '% responses', 'gridbulletin' ) ); ?><?php endif; ?>
 		</h5>
 
 	</div>
