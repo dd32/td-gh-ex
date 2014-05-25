@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-OneColumn Version 1.9 - june 2014
+OneColumn Version 2.0 - june 2014
 - changed size of single post image
 - added featured image on single page
 - several minor adjustments 
