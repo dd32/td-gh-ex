@@ -46,7 +46,10 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 880, 550 ); 
+		set_post_thumbnail_size( 450, 450 ); 
+
+	// Resize single page thumbnail
+		add_image_size( 'single', 450, 450 ); 
 
 	// Background color
 		$args = array( 'default-color' => 'ffffff', 
@@ -149,6 +152,12 @@
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "onecolumn_excerpt" );
+
+
+// Custom excerpt lenght 
+	function onecolumn_excerpt_length( $length ) { 
+		return 100; } 
+	add_filter( 'excerpt_length', 'onecolumn_excerpt_length', 999 ); 
 
 
 // Theme Customizer (option to add logo)

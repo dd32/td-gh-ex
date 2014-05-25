@@ -144,7 +144,7 @@ msgstr ""
 
 #: comments.php:45
 #@ onecolumn
-msgid "Comments are closed."
+msgid "Comments are closed"
 msgstr ""
 
 #: footer.php:10

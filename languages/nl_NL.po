@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v1.8\n"
+"Project-Id-Version: OneColumn v1.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 12:01:24+0000\n"
+"PO-Revision-Date: 2014-05-24 21:52:38+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,10 +78,10 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
-#: functions.php:115
-#: functions.php:126
-#: functions.php:136
+#: functions.php:108
+#: functions.php:118
+#: functions.php:129
+#: functions.php:139
 #@ onecolumn
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -103,7 +103,7 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page.php:19
+#: page.php:24
 #: single.php:38
 #@ onecolumn
 msgid "Edit"
@@ -127,15 +127,15 @@ msgstr "Nieuwere Reacties &raquo;"
 
 #: comments.php:45
 #@ onecolumn
-msgid "Comments are closed."
-msgstr "Reageren is niet mogelijk."
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
 
-#: functions.php:124
+#: functions.php:127
 #@ onecolumn
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:134
+#: functions.php:137
 #@ onecolumn
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -153,23 +153,23 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:103
+#: functions.php:106
 #@ onecolumn
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:113
+#: functions.php:116
 #@ onecolumn
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
-#: functions.php:158
-#: functions.php:164
+#: functions.php:167
+#: functions.php:173
 #@ onecolumn
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:160
+#: functions.php:169
 #@ onecolumn
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"

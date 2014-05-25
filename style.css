@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 1.8
+Version: 1.9
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. 2 widget-areas are located in footer and 2 underneath header-image on homepage. Custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -161,7 +161,7 @@ select {max-width:100%;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #f26535; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {margin:20px 0; padding:5px 10px; color: #333; background:#eee;}
-.more {margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #eee;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #eee;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #f26535; color:#fff;}
 a.readmore:hover {background: #333; text-decoration:none;}
@@ -181,6 +181,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+
+.wp-post-image {float:left; margin: 10px 20px 5px 0;}
+.single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -246,6 +249,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#sidebar {width:100%; border:0; padding:0; float:left;}
 	#footer {width:100%;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
+	.single-image {width:50%; margin: 5px 10px 5px 0;}
 	.home-left, .home-right, .footer-left, .footer-right {width:90%; border:0; padding:0 5%; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0; border:0;}
