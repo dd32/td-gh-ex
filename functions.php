@@ -286,7 +286,7 @@ add_filter( 'the_content', 'boldr_protect_pre' );
  */
 function boldr_excerpt_more( $more ) {
 	global $post;
-	return '<div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr') .'</a></div>';
+	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'boldr_excerpt_more' );
 
