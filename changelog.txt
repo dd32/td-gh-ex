@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+SimplyBlack Version 1.9 - june 2014
+- changed size of featured image
+- several minor adjustments 
+
 SimplyBlack Version 1.8 - april 2014
 - several adjustments in functions file
 - added pot translation file
