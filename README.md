@@ -25,3 +25,8 @@ Version 1.0.6
 1. Removed wrong theme tags
 2. Removed all instances of TEXTDOMAIN, URVR and $urvr, instead used 'abaris', ABARIS and $abaris respectively
 
+Version 1.0.7
+1. Eliminated need for 'url' in slider section
+2. Added Full Width Page Template
+3. Added Sticky Navigation for mobiles
+4. Added option to show site description with logo

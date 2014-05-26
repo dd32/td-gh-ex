@@ -6,7 +6,7 @@
 get_header(); ?>
 <div class="row">
 
-	<div id="primary" class="content-area span12">
+	<div id="primary" class="content-area two-thirds column span9">
 		<main id="main" class="site-main" role="main">
 			
 			<?php if ( $abaris['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			

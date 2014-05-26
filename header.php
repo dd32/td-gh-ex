@@ -55,14 +55,11 @@ global $abaris;
 				<div class="span3">
 					<div class="logo site-branding">
 						<?php if( isset( $abaris['site-title'] ) && isset( $abaris['custom-logo'] ) && $abaris['site-title'] ) : ?>
-							<img src="<?php echo $abaris['custom-logo']['url']; ?>" alt="logo" >
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $abaris['custom-logo']['url']; ?>" alt="logo" ></a></h1>
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php if( isset( $abaris['site-description'] ) && $abaris['site-description'] != 0 ) : ?>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-							<?php endif; ?>
 						<?php endif; ?>
-						<?php if( ! isset( $abaris['site-description'] ) ) : ?>
+						<?php if( isset( $abaris['site-description'] ) && $abaris['site-description'] != 0 ) : ?>
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php endif; ?>
 					</div>

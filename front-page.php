@@ -19,7 +19,7 @@
 					if( isset($abaris['homepage_blocks']['enabled']['slider']) && isset($abaris['slides']) ) {
 						$slides = $abaris['slides'];
 						$output = '';
-						if( count($slides) > 1) {
+						if( count($slides) >= 1) {
 
 							$output .= '<div class="flex-container">';
 							$output .= '<div class="container">';
@@ -30,7 +30,8 @@
 
 							foreach($slides as $slide) {
 								$output .= '<li>';
-								$output .= '<div class="flex-image"><img src="' . $slide['url'] . '" alt="" ></div>';
+
+								$output .= '<div class="flex-image"><img src="' . $slide['image'] . '" alt="" ></div>';
 								if ( $slide['description'] != '' ) {
 									$output .= '<div class="flex-caption">' . $slide['description'] . '</div>';
 								}

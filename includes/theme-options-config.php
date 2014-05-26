@@ -776,10 +776,12 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 } else {
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
-                //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
+               $this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }
+            
+           //$this->args['intro_text'] = __('<p><a href="#">Buy Pro Version</a> <a href="#">Donate</a> <a href="#">Support</a> <a href="#">Rate This Theme</a></p>', 'redux-framework-demo');
 
             // Add content after the form.
             $this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo');
