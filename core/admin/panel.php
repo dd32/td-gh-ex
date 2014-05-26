@@ -47,7 +47,8 @@
 					echo "<li ".$class."><a href='themes.php?page=diarjolite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
 				}
 				?>
-               
+               		<li> <a href="<?php echo esc_url('themes.php?page=diarjolite_premium'); ?>"> <?php _e('Get premium version','diarjolite'); ?> </a> </li>
+              
                 </ul>
                
                 <?php	
@@ -124,59 +125,6 @@
 			
 							</div>
 			   
-						<?php break;
-			
-						case 'multicategory': ?>
-			
-							<div class="wip_inputbox">
-			
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-					
-							<?php foreach ($value['options'] as $val => $option ) { 
-			
-								$checked ='';
-			
-								if ( diarjolite_setting($value['id']) != false ) {
-			
-									foreach (diarjolite_setting($value['id']) as $check ) { 
-			
-									if ($check == $val )  { $checked ='checked="checked"'; } } 
-			
-								} ?> 
-			
-								<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $val; ?>" <?php echo $checked; ?> /> <?php echo $option; ?> 					</p> <?php } ?>  
-								<p><?php echo $value['desc']; ?></p>
-			
-								</div>
-			
-							<?php break;
-			
-							case 'pages': ?>
-			
-								<div class="wip_inputbox">
-			
-								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-			
-								<?php foreach ( $value['options'] as $page ) { 
-			
-								$checked ='';
-			
-								if ( diarjolite_setting($value['id']) != false ) {
-			
-									foreach (diarjolite_setting($value['id']) as $check ) { 
-			
-									if ($check == $page->ID )  { $checked ='checked="checked"'; } } 
-			
-								} ?> 
-				  
-								<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $page->ID; ?>" <?php echo $checked; ?> /> <?php echo $page->post_title; ?></p>
-			
-								<?php } ?>  
-								
-								<p><?php echo $value['desc']; ?></p>
-			 
-								</div>
-			 
 							<?php break;
 							
 							case 'text': ?>
@@ -192,7 +140,21 @@
 								</div>
 			
 							<?php break;
-				
+
+							case 'url': ?>
+			
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+								
+								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( diarjolite_setting($value['id']) != "") { echo esc_url_raw(diarjolite_setting($value['id'])); } else { echo $value['std']; } ?>" />
+								
+								<p> <?php echo $value['desc']; ?> </p>
+			
+								</div>
+			
+							<?php break;
+
 							case 'form':  ?>
 				
 							<?php break;
@@ -220,21 +182,28 @@
 								</div> 
 				
 							<?php break;
+
+							case "on-off": ?>
 			
-							case 'categoria': ?>
-				
 								<div class="wip_inputbox">
 			
 								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 			
-								<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( diarjolite_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
-			 
+								<div class="bool-slider <?php if ( diarjolite_setting($value['id']) != "") { echo stripslashes(diarjolite_setting($value['id'])); } else { echo $value['std']; } ?>">
+									<div class="inset">
+										<div class="control"></div>
+									</div>
+									<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( diarjolite_setting($value['id']) != "") { echo stripslashes(diarjolite_setting($value['id'])); } else { echo $value['std']; } ?>" />
+								</div>  
+								
+								<div class="clear"></div>      
+								
 								<p><?php echo $value['desc']; ?></p>
-			
+								
 								</div>
-				
+			
 							<?php break;
-				 
+
 							case 'select': ?>
 				
 								<div class="wip_inputbox">
@@ -252,7 +221,6 @@
 			
 								</div>
 				
-				
 							<?php break;
 							
 							case "save-button": ?>
@@ -262,9 +230,9 @@
 								<input name="action" id="element-open" type="submit" value="<?php echo $value['value']; ?>" class="button"/>
 			
 								</div>
-			
+
 							<?php break;
-			 
+
 					}
 					
 				endif;

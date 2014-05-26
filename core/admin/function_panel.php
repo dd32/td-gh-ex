@@ -78,13 +78,24 @@ function diarjolite_save_option ( $panel ) {
 								require_once dirname(__FILE__) . '/option/skins.php';
 								update_option( diarjolite_themename(), array_merge( $diarjolite_setting  ,$current) );
 								break;
-							} 
+								
+						} 
 						
 						else if ( ( isset( $value['id']) ) && ( isset( $_POST[$value["id"]] ))) {	
+							
+							if ($value["id"] == "url"):
+							
+								$current[$value["id"]] = esc_url_raw($_POST[$value["id"]]); 
 								
-								$current[$value["id"]] = $_POST[$value["id"]]; 
+							else:
+							
+								$current[$value["id"]] = stripslashes($_POST[$value["id"]]); 
+								
+							endif;
+							
 								update_option( diarjolite_themename(), array_merge( $diarjolite_setting  ,$current) );
-							}
+								
+						}
 							
 						$message_action = 'Options saved successfully.';
 					

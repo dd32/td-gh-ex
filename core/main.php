@@ -11,13 +11,6 @@
  */
 
 /*-----------------------------------------------------------------------------------*/
-/* CONTENT WIDTH */
-/*-----------------------------------------------------------------------------------*/ 
-
-if ( ! isset( $content_width ) )
-	$content_width = 940;
-
-/*-----------------------------------------------------------------------------------*/
 /* POST CLASS */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -346,6 +339,9 @@ function diarjolite_setup() {
 		'default-color' => 'f3f3f3'
 	) );
 
+	if ( ! isset( $content_width ) )
+		$content_width = 940;
+
 }
 
 add_action( 'after_setup_theme', 'diarjolite_setup' );
@@ -410,21 +406,6 @@ function diarjolite_paged() {
 	return $paged;
 	
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* ADMIN MENU */
-/*-----------------------------------------------------------------------------------*/   
-
-function diarjolite_option_panel() {
-       
-	    global $wp_admin_bar, $wpdb;
-    	$wp_admin_bar->add_menu( array( 'id' => 'diarjolite_options', 'title' => __('Diarjo Options', 'diarjolite' ), 'href' => get_admin_url() . 'themes.php?page=diarjolite_option' ) );
-		
-		$wp_admin_bar->add_menu( array( 'id' => 'diarjolite_premium', 'title' => __('Get Premium', 'diarjolite' ), 'href' => get_admin_url() . 'themes.php?page=diarjolite_premium' ) );
-
-}
-
-add_action( 'admin_bar_menu', 'diarjolite_option_panel', 1000 );
 
 /*-----------------------------------------------------------------------------------*/
 /* PRETTYPHOTO */

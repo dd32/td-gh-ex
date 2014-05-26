@@ -10,7 +10,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function post_formats() {
+function diarjolite_post_format_function() {
 	
 	if ( get_post_type( get_the_ID()) == "page" ) {
 		$postformats = "page";
@@ -32,6 +32,6 @@ function post_formats() {
 
 }
 
-add_action( 'diarjolite_postformat','post_formats', 10, 2 );
+add_action( 'diarjolite_postformat','diarjolite_post_format_function', 10, 2 );
 
 ?>

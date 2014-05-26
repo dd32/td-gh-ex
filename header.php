@@ -11,7 +11,7 @@
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
 
@@ -40,7 +40,7 @@
                             
                         <?php 
                                         
-                            if ( (diarjolite_setting('diarjolite_custom_logo')) && (diarjolite_setting('diarjolite_view_custom_logo') == "on")):
+                            if ( (diarjolite_setting('diarjolite_custom_logo')) ):
                                 echo "<img src='".diarjolite_setting('diarjolite_custom_logo')."' alt='logo'>"; 
                             else: 
                                 bloginfo('name');
