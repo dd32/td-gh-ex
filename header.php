@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <?php if (diarjolite_setting('diarjolite_custom_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo diarjolite_setting('diarjolite_custom_favicon'); ?>"/>
+	<link rel="shortcut icon" href="<?php echo esc_url(diarjolite_setting('diarjolite_custom_favicon')); ?>"/>
 <?php endif; ?>
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -41,7 +41,7 @@
                         <?php 
                                         
                             if ( (diarjolite_setting('diarjolite_custom_logo')) ):
-                                echo "<img src='".diarjolite_setting('diarjolite_custom_logo')."' alt='logo'>"; 
+                                echo "<img src='".esc_url(diarjolite_setting('diarjolite_custom_logo'))."' alt='logo'>"; 
                             else: 
                                 bloginfo('name');
                             endif; 

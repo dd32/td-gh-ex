@@ -10,7 +10,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function after_content_function() {
+function diarjolite_after_content_function() {
 
 	if ((is_home()) || (is_category()) || (is_search()) || (is_tag()) || ( (is_page()) && (get_post_type() <> "page")) ):
 		
@@ -61,6 +61,6 @@ function after_content_function() {
 
 } 
 
-add_action( 'diarjolite_after_content', 'after_content_function', 10, 2 );
+add_action( 'diarjolite_after_content', 'diarjolite_after_content_function', 10, 2 );
 
 ?>

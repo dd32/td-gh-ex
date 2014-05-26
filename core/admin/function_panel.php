@@ -39,7 +39,6 @@ function diarjolite_add_script() {
 	
 	 wp_enqueue_script( 'wip_panel', $file_dir.'/js/wip_panel.js',array('jquery','media-upload','thickbox'),'1.0',TRUE ); 
 	 wp_enqueue_script( 'wip_on_off', $file_dir.'/js/wip_on_off.js','3.5', '', TRUE); 
-     wp_enqueue_script( "mColorPicker", $file_dir."/mColorPicker.php", '', '1.0', TRUE ); 
 	
 	 wp_enqueue_script( "jquery-ui-core", array('jquery'));
 	 wp_enqueue_script( "jquery-ui-tabs", array('jquery'));

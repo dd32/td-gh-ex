@@ -147,7 +147,7 @@
 			
 								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 								
-								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( diarjolite_setting($value['id']) != "") { echo esc_url_raw(diarjolite_setting($value['id'])); } else { echo $value['std']; } ?>" />
+								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( diarjolite_setting($value['id']) != "") { echo stripslashes(diarjolite_setting($value['id'])); } else { echo $value['std']; } ?>" />
 								
 								<p> <?php echo $value['desc']; ?> </p>
 			
