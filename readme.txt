@@ -56,7 +56,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 THEME IMAGES
 ============
 Item: boats.jpg
-Author: Guido van der Leest
+Copyright author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

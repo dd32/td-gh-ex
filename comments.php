@@ -10,7 +10,7 @@ if ( post_password_required() )
 	return;
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments">
 
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
@@ -43,7 +43,7 @@ if ( post_password_required() )
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<h4 class="no-comments"><?php _e( 'Comments are closed.' , 'darkorange' ); ?></h4>
+		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'darkorange' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

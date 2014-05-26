@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange Version 2.0 - june 2014
+- changed size of featured image
+- added featured image on single page
+- several minor adjustments 
+
 DarkOrange Version 1.9 - april 2014
 - several adjustments in functions file
 - added pot translation file

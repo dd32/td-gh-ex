@@ -144,7 +144,7 @@ msgstr ""
 
 #: comments.php:46
 #@ darkorange
-msgid "Comments are closed."
+msgid "Comments are closed"
 msgstr ""
 
 #: footer.php:30

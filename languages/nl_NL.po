@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.9\n"
+"Project-Id-Version: DarkOrange v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 12:46:02+0000\n"
+"PO-Revision-Date: 2014-05-24 22:43:21+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -128,8 +128,8 @@ msgstr "Nieuwere Reacties &raquo;"
 
 #: comments.php:46
 #@ darkorange
-msgid "Comments are closed."
-msgstr "Reageren is niet mogelijk."
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
 
 #: functions.php:125
 #@ darkorange

@@ -45,10 +45,13 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 675, 550 ); 
+		set_post_thumbnail_size( 350, 350 ); 
 
 	// Resize homepage thumbnails
-		add_image_size( 'homepage', 500, 450 ); 
+		add_image_size( 'homepage', 250, 250 ); 
+
+	// Resize single page thumbnail
+		add_image_size( 'single', 350, 350 ); 
 
 	// Background color
 		$args = array( 'default-color' => 'f2f2f2', 
