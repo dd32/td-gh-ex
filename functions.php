@@ -7,11 +7,7 @@ function ct_ignite_load_javascript_files() {
 
     // enqueues media query support polyfill for ie8 
     if(! is_admin() ) {
-        wp_enqueue_script('functions', get_template_directory_uri() . '/js/functions.min.js', array('jquery'),'', true);
-        wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array('jquery'),'', true);
-        wp_enqueue_script('placeholders', get_template_directory_uri() . '/js/placeholders.min.js', array('jquery'),'', true);
-        wp_enqueue_script('media-query-polyfill', get_template_directory_uri() . '/js/respond.min.js', array('jquery'),'', true);
-        wp_enqueue_script('tappy', get_template_directory_uri() . '/js/tappy.min.js', array('jquery'),'', true);
+        wp_enqueue_script('production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
 
         wp_enqueue_style('google-fonts');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
@@ -19,8 +15,16 @@ function ct_ignite_load_javascript_files() {
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
     if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' ); 
 }
-
 add_action('wp_enqueue_scripts', 'ct_ignite_load_javascript_files' );
+
+/* enqueue styles used on theme options page */
+function ct_ignite_enqueue_admin_styles($hook){
+
+    if ( 'appearance_page_ignite-options' == $hook ) {
+        wp_enqueue_style('style-admin', get_template_directory_uri() . '/style-admin.css');
+    }
+}
+add_action('admin_enqueue_scripts',	'ct_ignite_enqueue_admin_styles' );
 
 /* Load the core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
@@ -42,8 +46,6 @@ function ct_ignite_theme_setup() {
 	$prefix = hybrid_get_prefix();
     
 	/* Theme-supported features go here. */
-    add_theme_support( 'hybrid-core-menus', array( 'primary' ));
-    add_theme_support( 'hybrid-core-sidebars', array( 'primary' ) );
     add_theme_support( 'hybrid-core-widgets' );
     add_theme_support( 'hybrid-core-template-hierarchy' );
     add_theme_support( 'hybrid-core-styles', array( 'style','reset', 'gallery' ) );
@@ -52,10 +54,26 @@ function ct_ignite_theme_setup() {
     add_theme_support( 'cleaner-gallery' );
     add_theme_support( 'breadcrumb-trail' );
     add_theme_support( 'automatic-feed-links' ); //from WordPress core not theme hybrid
-    
+
     // adds the file with the customizer functionality
     require_once( trailingslashit( get_template_directory() ) . 'functions-admin.php' );
 }
+
+/* register primary sidebar */
+function ct_ignite_register_sidebar(){
+    hybrid_register_sidebar( array(
+        'name'         => __( 'Primary Sidebar' ),
+        'id'           => 'primary',
+        'description'  => __( 'The main sidebar' ),
+    ) );
+}
+add_action('widgets_init','ct_ignite_register_sidebar');
+
+// register primary menu
+function ct_ignite_register_menu() {
+    register_nav_menu('primary', __('Primary'));
+}
+add_action('init', 'ct_ignite_register_menu');
 
 // takes user input from the customizer and outputs linked social media icons
 function ct_ignite_social_media_icons() {
@@ -240,6 +258,16 @@ function ct_ignite_update_comment_field($comment_field) {
 }
 add_filter('comment_form_field_comment','ct_ignite_update_comment_field');
 
+
+// remove allowed tags text after comment form
+function ct_ignite_remove_comments_notes_after($defaults){
+
+    $defaults['comment_notes_after']='';
+    return $defaults;
+}
+
+add_action('comment_form_defaults', 'ct_ignite_remove_comments_notes_after');
+
 // for 'read more' tag excerpts
 function ct_ignite_excerpt() {
 	
@@ -310,18 +338,6 @@ function ct_ignite_featured_image() {
     }
 }
 
-// does it contain a featured image?
-function ct_ignite_contains_featured() {
-
-    global $post;
-	
-	if(has_post_thumbnail( $post->ID ) ) {
-		echo " has-featured-image";
-	} else {
-		echo " no-featured-image";
-	}
-}
-
 // functions to allow styling of post count in widgets
 add_filter('get_archives_link', 'ct_ignite_archive_count_add_span');
 function ct_ignite_archive_count_add_span($links) {
@@ -359,4 +375,82 @@ function ct_ignite_body_class( $classes ) {
 }
 add_filter( 'body_class', 'ct_ignite_body_class' );
 
-?>
+function ct_ignite_post_class_update($classes){
+
+    $remove = [];
+    $remove[] = 'entry';
+
+    if ( ! is_singular() ) {
+        foreach ( $classes as $key => $class ) {
+
+            if ( in_array( $class, $remove ) ){
+                unset( $classes[ $key ] );
+                $classes[] = 'excerpt';
+            }
+        }
+    }
+    return $classes;
+}
+add_filter( 'post_class', 'ct_ignite_post_class_update' );
+
+/* outputs the inline css to position the logo */
+function ct_ignite_logo_positioning_css(){
+
+    $updown =  get_theme_mod( 'logo_positioning_updown_setting');
+    $leftright =  get_theme_mod( 'logo_positioning_leftright_setting');
+
+    if($updown || $leftright){
+
+        $css = "
+            #site-header .logo {
+                position: relative;
+                bottom: " . $updown . "px;
+                left: " . $leftright . "px;
+                right: auto;
+                top: auto;
+        }";
+        wp_add_inline_style('style', $css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_ignite_logo_positioning_css');
+
+/* outputs the inline css to position the logo */
+function ct_ignite_logo_size_css(){
+
+    $width =  get_theme_mod( 'logo_size_width_setting');
+    $height =  get_theme_mod( 'logo_size_height_setting');
+
+    if($width || $height){
+
+        $max_width = 156 + $width;
+        $max_height = 59 + $height;
+
+        $css = "
+            #site-header .logo {
+                max-width: " . $max_width . "px;
+                max-height: " . $max_height . "px;
+        }";
+        wp_add_inline_style('style', $css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_ignite_logo_size_css');
+
+/* outputs the inline css to switch the layout if sidebar on left radio button is active */
+function ct_ignite_author_meta_css(){
+
+    $show_author_meta = get_theme_mod('ct_ignite_author_meta_settings');
+
+    /* if the sidebar is on the left then add the necessary inline styles */
+    if($show_author_meta == 'hide') {
+        $css = ".author-meta {display: none;}";
+        wp_add_inline_style('style', $css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_ignite_author_meta_css');
+
+
+// fix for bug with Disqus saying comments are closed
+if ( function_exists( 'dsq_options' ) ) {
+    remove_filter( 'comments_template', 'dsq_comments_template' );
+    add_filter( 'comments_template', 'dsq_comments_template', 99 ); // You can use any priority higher than '10'
+}

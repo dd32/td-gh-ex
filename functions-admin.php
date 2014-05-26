@@ -15,7 +15,7 @@ function ct_ignite_customize_register_logo( $wp_customize ) {
 		'ct-ignite-upload',
 		array(
 			'title'      => esc_html__( 'Logo', 'ignite' ),
-			'priority'   => 60,
+			'priority'   => 30,
 			'capability' => 'edit_theme_options'
 		)
 	);
@@ -27,7 +27,7 @@ function ct_ignite_customize_register_logo( $wp_customize ) {
 			'default'           => '',
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url',
+			'sanitize_callback' => 'esc_url_raw',
 			//'transport'         => 'postMessage'
 		)
 	);
@@ -42,8 +42,137 @@ function ct_ignite_customize_register_logo( $wp_customize ) {
 			)
 		)
 	);
-
 }
+
+/* allow logo position to be adjusted */
+function ct_ignite_customize_logo_positioning( $wp_customize ) {
+
+    /* create custom control for number input */
+    class ct_ignite_number_input_control extends WP_Customize_Control {
+        public $type = 'number';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <input type="number" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />
+            </label>
+        <?php
+        }
+    }
+    /* Add the layout section. */
+    $wp_customize->add_section(
+        'ct-logo-positioning',
+        array(
+            'title'      => esc_html__( 'Logo Positioning', 'ignite' ),
+            'priority'   => 31,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    /* logo positioning top setting. */
+    $wp_customize->add_setting(
+        'logo_positioning_updown_setting',
+        array(
+            'default' => 0,
+            'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        )
+    );
+    /* logo positioning right setting. */
+    $wp_customize->add_setting(
+        'logo_positioning_leftright_setting',
+        array(
+            'default' => 0,
+            'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        )
+    );
+    /* top input */
+    $wp_customize->add_control(
+        new ct_ignite_number_input_control(
+            $wp_customize, 'logo_positioning_updown_setting',
+            array(
+                'label' => 'Up/down',
+                'section' => 'ct-logo-positioning',
+                'settings' => 'logo_positioning_updown_setting',
+                'type' => 'number',
+            )
+        )
+    );
+    /* right input */
+    $wp_customize->add_control(
+        new ct_ignite_number_input_control(
+            $wp_customize, 'logo_positioning_leftright_setting',
+            array(
+                'label' => 'Left/right',
+                'section' => 'ct-logo-positioning',
+                'settings' => 'logo_positioning_leftright_setting',
+                'type' => 'number',
+            )
+        )
+    );
+}
+add_action( 'customize_register', 'ct_ignite_customize_logo_positioning' );
+
+/* need custom function because WP only supplies absint and negative numbers need to be allowed */
+function ct_ignite_sanitize_integer($input){
+    return intval( $input );
+}
+
+/* allow logo size to be adjusted */
+function ct_ignite_customize_logo_size( $wp_customize ) {
+
+    /* Add the layout section. */
+    $wp_customize->add_section(
+        'ct-logo-size',
+        array(
+            'title'      => esc_html__( 'Logo Size', 'ignite' ),
+            'priority'   => 32,
+            'capability' => 'edit_theme_options',
+            'description'=> 'This will not stretch or pixelate your logo. You may need to increase both values to increase the size.'
+        )
+    );
+    /* logo increase/decrease width setting. */
+    $wp_customize->add_setting(
+        'logo_size_width_setting',
+        array(
+            'default' => 0,
+            'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        )
+    );
+    /* logo increase/decrease height setting. */
+    $wp_customize->add_setting(
+        'logo_size_height_setting',
+        array(
+            'default' => 0,
+            'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        )
+    );
+    /* top input */
+    $wp_customize->add_control(
+        new ct_ignite_number_input_control(
+            $wp_customize, 'logo_size_width_setting',
+            array(
+                'label' => 'Width (increase/decrease)',
+                'section' => 'ct-logo-size',
+                'settings' => 'logo_size_width_setting',
+                'type' => 'number',
+            )
+        )
+    );
+    /* right input */
+    $wp_customize->add_control(
+        new ct_ignite_number_input_control(
+            $wp_customize, 'logo_size_height_setting',
+            array(
+                'label' => 'Height (increase/decrease)',
+                'section' => 'ct-logo-size',
+                'settings' => 'logo_size_height_setting',
+                'type' => 'number',
+            )
+        )
+    );
+}
+add_action( 'customize_register', 'ct_ignite_customize_logo_size' );
+
 
 function ct_ignite_customizer_social_media_array() {
 
@@ -58,6 +187,19 @@ add_action('customize_register', 'ct_ignite_add_social_sites_customizer');
 
 function ct_ignite_add_social_sites_customizer($wp_customize) {
 
+    /* create custom control for url input so http:// is automatically added */
+    class ct_ignite_url_input_control extends WP_Customize_Control {
+        public $type = 'url';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <input type="url" <?php $this->link(); ?> value="<?php echo esc_url_raw( $this->value() ); ?>" />
+            </label>
+        <?php
+        }
+    }
 	$wp_customize->add_section( 'ct_ignite_social_settings', array(
 			'title'          => 'Social Media Icons',
 			'priority'       => 35,
@@ -71,58 +213,144 @@ function ct_ignite_add_social_sites_customizer($wp_customize) {
 		$wp_customize->add_setting( "$social_site", array(
                 'type'              => 'theme_mod',
                 'capability'        => 'edit_theme_options',
-                'sanitize_callback' => 'esc_url'
+                'sanitize_callback' => 'esc_url_raw'
 		) );
 
-		$wp_customize->add_control( $social_site, array(
+		$wp_customize->add_control(
+            new ct_ignite_url_input_control(
+            $wp_customize, $social_site, array(
 				'label'   => __( "$social_site url:", 'ct_ignite_icon' ),
 				'section' => 'ct_ignite_social_settings',
-				'type'    => 'text',
 				'priority'=> $priority,
-		) );
+		    )
+            )
+        );
 	
 		$priority = $priority + 5;
 	}
 }
 
-// adds widget that aside uses to give people access to support
-function ct_ignite_add_dashboard_widget() {
+/* allow sidebar to be placed on left or right side */
+function ct_ignite_show_author_meta( $wp_customize ) {
 
-	wp_add_dashboard_widget(
-                 'ct_ignite_dashboard_widget',    // Widget slug.
-                 'Support Dashboard',   // Title.
-                 'ct_ignite_widget_contents' 	  // Display function.
-        );	
-        
-    // Globalize the metaboxes array, this holds all the widgets for wp-admin
- 	global $wp_meta_boxes;
- 	
- 	// Get the regular dashboard widgets array 
- 	// (which has our new widget already but at the end)
- 	$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
- 	
- 	// Backup and delete our new dashboard widget from the end of the array
- 	$example_widget_backup = array( 'ct_ignite_dashboard_widget' => $normal_dashboard['ct_ignite_dashboard_widget'] );
- 	unset( $normal_dashboard['ct_ignite_dashboard_widget'] );
- 
- 	// Merge the two arrays together so our widget is at the beginning
- 	$sorted_dashboard = array_merge( $example_widget_backup, $normal_dashboard );
- 
- 	// Save the sorted array back into the original metaboxes 
- 	$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+    /* Add the layout section. */
+    $wp_customize->add_section(
+        'ct-author-meta',
+        array(
+            'title'      => esc_html__( 'Post Author Info', 'ignite' ),
+            'priority'   => 70,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    /* Add the color setting. */
+    $wp_customize->add_setting(
+        'ct_ignite_author_meta_settings',
+        array(
+            'default'           => 'show',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_ignite_sanitize_author_meta_settings',
+        )
+    );
+    $wp_customize->add_control(
+        'ct_ignite_show_author_meta',
+        array(
+            'label'          => __( 'Show post author info after posts?', 'ignite' ),
+            'section'        => 'ct-author-meta',
+            'settings'       => 'ct_ignite_author_meta_settings',
+            'type'           => 'radio',
+            'choices'        => array(
+                'show'   => 'Show',
+                'hide'  => 'Hide'
+            )
+        )
+    );
 }
-add_action( 'wp_dashboard_setup', 'ct_ignite_add_dashboard_widget' );
+add_action( 'customize_register', 'ct_ignite_show_author_meta' );
 
-// outputs contents for widget created by aside_add_dashboard_widget
-function ct_ignite_widget_contents() { ?>
+/* sanitize the radio button input */
+function ct_ignite_sanitize_author_meta_settings($input){
+    $valid = array(
+        'show' => 'Show',
+        'hide' => 'Hide'
+    );
 
-    <ol>
-        <li>For self-help, <a target="_blank" href="http://competethemes.com/documentation">visit the knowledgebase</a></li>
-        <li>For support, <a target="_blank" href="http://wordpress.org/support/theme/ignite">visit the support forum</a></li>
-        <li>If you like Ignite, <a target="_blank" href="http://wordpress.org/support/view/theme-reviews/ignite">take 1 minute to leave a review</a></li>
-    </ol>
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
 
-	<?php
-} 
 
-?>
+/* create theme options page */
+function ct_ignite_register_theme_page(){
+    add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'ignite-options', 'ct_ignite_options_content', 'ct_ignite_options_content');
+}
+add_action( 'admin_menu', 'ct_ignite_register_theme_page' );
+
+/* callback used to add content to options page */
+function ct_ignite_options_content(){
+    ?>
+    <div id="ignite-dashboard-wrap" class="wrap">
+        <h2>Ignite Dashboard</h2>
+        <p>Thanks for downloading Ignite!</p>
+        <p>If you can, take a minute to <a target="_blank" href="http://wordpress.org/support/view/theme-reviews/ignite"><strong>leave a review</strong></a> so other users know what to expect from this theme.</p>
+        <hr />
+        <div>
+            <h3>Customization</h3>
+            <p>Ignite now has more customization options! Try out the new logo size & position tools with the customizer.</p>
+            <p><a class="button-primary" href="customize.php">Use the customizer</a></p>
+        </div>
+        <div class="support">
+            <h3>Support</h3>
+            <ol>
+                <li><a target="_blank" href="http://www.competethemes.com/documentation/ignite-knowledgebase/?utm_source=WordPress%20Dashboard&utm_medium=User%20Admin&utm_content=Ignite&utm_campaign=Admin%20Support%20Widgets">Visit the knowledgebase</a> for self-help.</li>
+                <li><a target="_blank" href="http://wordpress.org/support/theme/ignite">Visit the support forum</a> for community support.</li>
+            </ol>
+            <p>I (Ben) visit the support forum everyday, so any questions you have will be answered there.</p>
+        </div>
+        <div>
+            <h3>Premium</h3>
+            <p>There is now a premium version of Ignite called "Ignite Plus" available.</p>
+            <p><a target="_blank" class="button-primary" href="http://www.competethemes.com/ignite-plus/">View Ignite Plus</a></p>
+        </div>
+    </div>
+    <hr />
+    <div id="ignite-premium-wrap" class="wrap">
+        <h2>Ignite Plus</h2>
+        <p>Enjoy greater customization and functionality with the Ignite Plus upgrade.</p>
+        <div class="odd">
+            <h2>Custom Colors</h2>
+            <p>Change the colors of Ignite to match your brand or personal preference and watch your site update instantly.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-custom-colors.jpg'; ?>" />
+        </div>
+        <div class="even">
+            <h2>3 New Widgets</h2>
+            <p>Ignite Plus includes a social media icons, recent posts w/ thumbnails, and recent comments w/ thumbnails widgets.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-new-widgets.jpg'; ?>" />
+        </div>
+        <div class="odd">
+            <h2>Layout Options</h2>
+            <p>Switch between a left-sidebar and right-sidebar layout with a click of a button.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-layout.jpg'; ?>" />
+        </div>
+        <div class="even">
+            <h2>Author-specific Social Icons</h2>
+            <p>Allow every author on your site to include social icons after every post.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-author-social-icons.jpg'; ?>" />
+        </div>
+        <div class="odd">
+            <h2>After-content Widget Area</h2>
+            <p>Use the after-content widget area to add email signup forms or other widgets after every blog post.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-after-content-widget.jpg'; ?>" />
+        </div>
+        <div class="even">
+            <h2>Footer Menu</h2>
+            <p>The additional footer menu is perfect for your TOS, privacy policy, and other required pages that don't need a lot of visibility.</p>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ignite-footer-menu.jpg'; ?>" />
+        </div>
+        <p class="button-wrap"><a target="_blank" class="button-primary" href="http://www.competethemes.com/ignite-plus/">Download Ignite Plus</a></p>
+    </div>
+    <?php
+}

@@ -1,7 +1,7 @@
 <?php 
 
 if( is_home() ) { ?>
-    <div class='excerpt <?php hybrid_post_class(); ct_ignite_contains_featured(); ?>'>
+    <div <?php post_class(); ?>>
     	<?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
             Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
@@ -21,7 +21,7 @@ if( is_home() ) { ?>
 	</div>
 <?php     
 } elseif( is_single() ) { ?>
-    <div class='entry <?php hybrid_post_class(); ct_ignite_contains_featured(); ?>'>
+    <div <?php post_class(); ?>>
         <?php ct_ignite_featured_image(); ?>
         <div class="entry-meta-top">
             Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
@@ -37,13 +37,28 @@ if( is_home() ) { ?>
 		</div>
 		<div class='entry-meta-bottom'>
 			<?php ct_ignite_further_reading(); ?>
+            <div class="author-meta">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 72 );?>
+                <div class="name-container">
+                    <h4>
+                        <?php
+                        if(get_the_author_meta('user_url')){
+                            echo "<a href='" . get_the_author_meta('user_url') . "'>" . get_the_author() . "</a>";
+                        } else {
+                            the_author();
+                        }
+                        ?>
+                    </h4>
+                </div>
+                <p><?php echo get_the_author_meta('description'); ?></p>
+            </div>
 			<div class="entry-categories"><?php ct_ignite_category_display(); ?></div>
 			<div class="entry-tags"><?php ct_ignite_tags_display(); ?></div>
 		</div>
     </div>
 <?php 
 } else { ?>
-    <div class='excerpt <?php hybrid_post_class(); ct_ignite_contains_featured(); ?>'>
+    <div <?php post_class(); ?>>
         <?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
             Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
