@@ -82,7 +82,7 @@ function diarjolite_save_option ( $panel ) {
 						
 						else if ( ( isset( $value['id']) ) && ( isset( $_POST[$value["id"]] ))) {	
 							
-							if ($value["id"] == "url"):
+							if ($value["type"] == "url"):
 							
 								$current[$value["id"]] = esc_url_raw($_POST[$value["id"]]); 
 								
