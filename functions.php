@@ -160,6 +160,17 @@ function azabujuban_original_customize( $wp_customize ) {
 		'section'  => 'original_section',
 		'settings' => 'navbar_color',
 	)));
+
+	$wp_customize->add_setting('Header_Navigation_Opacity', array(
+		'default'           => '100',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control('Header_Navigation_Opacity', array(
+		'label'    => 'Header Navigation Opacity(1-100)',
+		'section'  => 'original_section',
+		'settings' => 'Header_Navigation_Opacity',
+		'type'           => 'text',
+	));
 	
 	$wp_customize->add_setting('paging_navigation_color', array(
 		'default'           => '#e8e5ce',
@@ -171,6 +182,18 @@ function azabujuban_original_customize( $wp_customize ) {
 		'label'    => 'Paging Navigation Color',
 		'section'  => 'original_section',
 		'settings' => 'paging_navigation_color',
+	)));
+	
+	$wp_customize->add_setting('Navigation_Selected_Link_Color', array(
+		'default'           => '#e8e5ce',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+		'type'           => 'option',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'Navigation_Selected_Link_Color', array(
+		'label'    => 'Navigation Selected Link Color',
+		'section'  => 'original_section',
+		'settings' => 'Navigation_Selected_Link_Color',
 	)));
 	
 	$wp_customize->add_setting('footer_widget_area_color', array(
@@ -528,8 +551,21 @@ function azabujuban_original_customize( $wp_customize ) {
 add_action('customize_register', 'azabujuban_original_customize');
 
 function azabujuban_customize_css(){
+	
+	$Header_Navigation_Opacity = get_option('Header_Navigation_Opacity');
+	$Header_Navigation_Opacity = $Header_Navigation_Opacity / 100;
+	
+	$navi_color = get_option('navbar_color');
+	$navi_color = preg_replace("/^#/", '', $navi_color);
+
+	$out = array();
+	for($i = 0; $i < 6; $i+=2) {
+	$hex = substr($navi_color, $i, 2);
+	$out[] = hexdec($hex);
+	}
+	
 	echo "<style type=\"text/css\">\n<!--\n";
-	echo ".navbar { background-color:".get_option('navbar_color')."; }";
+	echo ".navbar { background-color:rgba(".$out[0].",".$out[1].",".$out[2].",".$Header_Navigation_Opacity."); }";
 	echo ".paging-navigation { background-color:".get_option('paging_navigation_color')."; }";
 	echo ".site-info { background-color:".get_option('site_info_color')."; }";
 	echo ".site-footer .sidebar-container { background-color:".get_option('footer_widget_area_color')."; }";
@@ -548,6 +584,7 @@ function azabujuban_customize_css(){
 	echo ".paging-navigation .meta-nav { color:".get_option('Paging_Navigation_Link_Color')."; }";
 	echo ".navigation a { color:".get_option('Paging_Navigation_Text_Color')."; }";
 	echo ".navigation a:hover { color:".get_option('Paging_Navigation_Link_Color')."; }";
+	echo ".nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a { color:".get_option('Navigation_Selected_Link_Color')."; }";
 	echo ".paging-navigation a:hover .meta-nav { background-color:".get_option('Paging_Navigation_Link_Color')."; }";
 	echo ".paging-navigation a:hover .meta-nav { color:".get_option('Paging_Navigation_Text_Color')."; }";
 	echo "#secondary .widget .widget-title, #secondary .widget_calendar table, #secondary .widget_calendar td, #secondary .widget a,.site-footer .widget { color:".get_option('Footer_Text_Color')."; }";	
@@ -579,10 +616,28 @@ add_action('wp_head', 'azabujuban_customize_css');
 
 
 function azabujuban_scripts(){
+	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js' );
 }
 add_action( 'wp_enqueue_scripts', 'azabujuban_scripts' );
 
 
 
+
+//Dashboard
+function azabu_juban_dashboard_widget_function() {
+?>
+<a href="http://www.conoha.jp/lp/20131201wp/?banner_id=vn_wps_azabu" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/300250_wpshop_0001.jpg' ?>" style="width:100%"></a>
+<?php
+}
+function azabu_juban_add_dashboard_widgets() {
+wp_add_dashboard_widget('azabu_juban_dashboard_widget', 'ConoHa VPS hosting', 'azabu_juban_dashboard_widget_function');
+global $wp_meta_boxes;
+$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+$example_widget_backup = array('azabu_juban_dashboard_widget' => $normal_dashboard['azabu_juban_dashboard_widget']);
+unset($normal_dashboard['azabu_juban_dashboard_widget']);
+$sorted_dashboard = array_merge($example_widget_backup, $normal_dashboard);
+$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+}
+add_action('wp_dashboard_setup', 'azabu_juban_add_dashboard_widgets' );
 
