@@ -36,6 +36,11 @@ Custom Css:
 
 == Change log ==
 
+= 1.4.2 =
+*Option framework updated
+*Resolved thumbnail issue use regenerate thumbnail plugin
+*minor bug fixed
+
 = 1.4.1 =
 *Favicon upload Option added
 *Fix Header logo image in IE8 Issue

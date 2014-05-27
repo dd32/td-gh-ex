@@ -1,10 +1,10 @@
 <ul>
 <?php 
-$args = array( 
+$promaxran_args = array( 
  'ignore_sticky_posts' => true,
  'showposts' => 5,
  'orderby' => 'rand',  );
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query( $promaxran_args );
  if ( $the_query->have_posts() ) :
 while ( $the_query->have_posts() ) : $the_query->the_post();
 ?>
