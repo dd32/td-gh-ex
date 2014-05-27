@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 1.4
+Version: 1.5
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -393,18 +393,24 @@ video {
 
 
 /* ========== default form styles ========== */
-input[type="text"], input[type="email"], input[type="url"], select, textarea {
+textarea, input[type="text"], input[type="email"],
+input[type="url"], input[type="password"], input[type="file"],
+input[type="email"], input[type="number"], input[type="search"],
+input[type="tel"], input[type="url"], select {
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
-	line-height: 1.428571429;
-	color: #555555;
-	vertical-align: middle;
+	line-height: 1.42857143;
+	color: #555;
 	background-color: #fff;
+	background-image: none;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
-input[type="submit"], input[type="button"], button {
+textarea {
+	height: auto;
+}
+input[type="submit"], input[type="button"], input[type="reset"], button {
 	display: inline-block;
 	margin-bottom: 0;
 	text-align: center;

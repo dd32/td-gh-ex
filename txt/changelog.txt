@@ -1,3 +1,7 @@
+= 1.5 - 2014-05-27 =
+* default form controls styles update
+* remove link to bootstrap.css.map
+
 = 1.4 - 2014-04-02 =
 * update Bootstrap v.3.1.1
 
