@@ -111,7 +111,7 @@ function diarjolite_css_custom() {
 /* =================== END LINK STYLE =================== */
 
 	if (diarjolite_setting('diarjolite_custom_css_code'))
-		echo diarjolite_setting('diarjolite_custom_css_code'); 
+		echo htmlspecialchars_decode(diarjolite_setting('diarjolite_custom_css_code')); 
 
 	echo '</style>';
 
