@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 1.8 - june 2014
+- changed size of single post image
+- added featured image on single page
+- several minor adjustments 
+
 BlueGray version 1.7 - may 2014
 - several minor adjustments 
 

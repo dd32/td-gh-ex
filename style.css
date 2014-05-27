@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 1.7
+Version: 1.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -79,7 +79,7 @@ body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:1em; col
 #container {width: 100%; border:0; margin:0; padding:0; word-wrap: break-word;}
 #main-content {max-width: 1160px; margin: 0 auto 0; padding:0 20px 0; text-align: left; word-wrap: break-word;}
 #main-content:after {content:''; display:block; clear:both;}
-#content {width: 56%; float:left; padding: 20px 4% 20px 0; word-wrap: break-word;}
+#content {width: 58%; float:left; padding: 20px 2% 20px 0; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
@@ -169,7 +169,7 @@ select {max-width:100%;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #00aaff; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ddd;}
-.more {margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #ddd;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #ddd;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #00aaff; color:#fff;}
 a.readmore:hover {background: #333; text-decoration:none;}
@@ -189,6 +189,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+
+.wp-post-image {float:left; margin: 10px 20px 5px 0;}
+.single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -257,6 +260,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
 	.post-title, .single-post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
+	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
+	.single-image {width:50%; margin: 5px 10px 5px 0;}
 	.home-right, .home-middle, .home-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.footer-right, .footer-middle, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.widget, #footer .widget {padding:5px 5% 5px; margin: 0 0 10px;} 
