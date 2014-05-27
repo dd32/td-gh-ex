@@ -16,6 +16,12 @@ Credits
 
 /** IMAGES **/
 
+- Screenshot's image
+
+-- Featured image in the post by Pixabay: http://pixabay.com/get/51d5e3f3a58a2c59608b/1401209058/vw-camper-336606_1280.jpg
+
+--- Image licensed under CC0 License (Compatible with GNU General Public License v3)
+
 - Patters
 
 -- By Theme in Progress - http://www.themeinprogress.com
