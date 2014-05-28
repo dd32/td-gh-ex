@@ -13,6 +13,7 @@ Added Translation for French by Rico (Email: postmaster@web-automobile.com) and 
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
+Added Translation for Brazilian Portuguese by Valdir Trombini (Email: valdirtrombini@hotmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -68,6 +69,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 1.6
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
 Version 1.5.2
 * Fixed menu color option in dark color scheme (Reported by puriabhishek22)

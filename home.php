@@ -24,7 +24,6 @@ get_header();
 
 	if ( !empty ( $enable_post ) || ( !empty( $page_id ) && $page_id == $page_for_posts ) ) { 
 ?>
-
     <div id="primary" class="content-area">
         <div id="content" class="site-content" role="main">
         
