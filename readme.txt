@@ -56,12 +56,20 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 * Analytical_Interior_Demo.png
 	http://publicdomainarchive.com/girl-nature-outdoors-autumn-lens-flare-sun-rays/
 
+* Foodeez-Theme.png
+	http://pixabay.com/en/restaurant-dinner-tables-yowani-237060/
+
 * All other images were created by SketchThemes as per requirement.
 
 
 
 
 == Changelog ==
+
+= 1.0.3 =
+* WP 3.9.1 Compatible.
+* Fixed slider align to the left issue.
+
 
 = 1.0.2 =
 * Fixed Image license issue add GPL-compatible license images.

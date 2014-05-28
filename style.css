@@ -2,7 +2,7 @@
 Theme Name: Advertica Lite
 Theme URI: http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/
 Description: Behold the glory of the most beautiful Business theme, ADVERTICA. Advertica is a clean, elegant, beautiful, responsive, and SEO optimized WordPress Theme from SketchThemes. Adverica features a bag full of features that would give you a massive edge when you're creating a website for yourself or for your clients. Some key features worth noticing are: 1-It has a responsive bootstrap framework allowing your site to be seen flawlessly even on mobile devices. 2-Featured Boxes allows you to highlight your key service sectors. 3-You can showcase your work through the 'Latest Projects section'. 4-A Parallax Section is there to give your side a creative edge. 5-Easy to use and customizable Admin Panel which is as easy as pie. 6-Beautifully carved Footer which can be ornate with cool widgets. Apart from the above mentioned super-cool features, Advertica dawns Fluid Layout, Fixed Layout, Persistant Header, Custom Menu, Full-Width Template, Client Logo Section, Translation Ready, Easy to Use Theme Options Panel, Sticky Posts, Right & Left Sidebars, SEO Optimized, Supports Threaded Comments.
-Version: 1.0.2
+Version: 1.0.3
 Author: SketchThemes
 Author URI: http://www.sketchthemes.com
 License: GNU General Public License v2.0
@@ -112,7 +112,7 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 #skehead #skenav { margin-top:0px; }
 .bottom-shadow { background: url("images/header_shadow.png") no-repeat scroll 0 0 transparent;  display: block;  height: 25px;  margin-bottom: 15px;  margin-top: -10px;  position: relative;  width: 869px;  }
 .advertica-image-post img{max-width:100%;}
-
+.Skt-header-image {text-align: center;}
 
 /* =Error Messages
 -------------------------------------------------------------- */
