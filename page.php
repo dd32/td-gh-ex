@@ -1,87 +1,44 @@
 <?php get_header();
 
-if(!is_paged()) : while ( have_posts() ) : the_post(); ?>
+while ( have_posts() ) : the_post(); ?>
 
-        <article id="title-image-content" itemscope itemtype="http://schema.org/NewsArticle">
-            
-            <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/>
-            
-            <header id="title-and-image">
-            
-            <?php if (is_customize_preview()) echo '<div class="customizer-tite-image"></div>'; ?>
+<div id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php if ( has_post_thumbnail() ) : ?>
-                <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <h3 class="post_title"><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M jS') ?><br/><?php the_time('Y') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_adventure'); } ?></h3>
 
-                    <?php the_post_thumbnail('featured_image', array( 'class' => 'featured_image', 'itemprop' => 'url')); ?>
+	<?php the_post_thumbnail('large_featured', array( 'class' => "featured_image"));
 
-
-                    <meta itemprop="url" content="<?php wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured_image' ); ?>">
-
-                    <meta itemprop="width" content="900">
-
-                    <meta itemprop="height" content="532">
+	the_content(); ?>
+                
+	<span class="tags">
                     
-                </div>
-<?php else :?>
-            <img src="<?php echo get_theme_mod('default_header_img'); ?>" class="featured_image" />
+		<?php wp_link_pages( array('before' => 'Pages: ', 'after' => '') ); ?>
 
-<?php endif; ?>
-                <h2 itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
-            
-            </header>
-            
-            <main id="the-article" itemprop="articleBody">
-            
-                <?php edit_post_link('Edit this Post'); ?>
-                
-                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php get_template_part( 'microdata' ); ?><?php endif; endif; ?>
-                
-                <?php the_content(); ?>
+	</span>
 
-                <?php wp_link_pages( array('before' => 'Pages: ', 'after' => '</br>') ); ?>
-            
-            </main>
-            
-            <?php if ( function_exists( 'is_cart' ) ) : if(!is_cart() && !is_account_page() && comments_open()) : ?><section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
-<?php if (get_the_category_list() != '') : ?>
-    
-                <ul class="post-categories" itemprop="about">
+</div>
 
-                    <li><?php echo get_the_category_list( __( '</li>
+<?php if ((get_theme_mod('previousnext_setting') != 'page') && (get_theme_mod('previousnext_setting') != 'neither')) : ?>
 
-                    <li>', 'semper-fi-lite' ) ); ?></li>
+    <div class="stars_and_bars">
+        <span class="left"><?php previous_post_link('%link', '&#8249; ' . __(' Older Post', 'localize_adventure')); ?></span>
+        <span class="right"><?php next_post_link('%link', __('Newer Post', 'localize_adventure') . ' &#8250;'); ?></span>
+    </div>
 
-                </ul>
-    <?php endif; elseif (comments_open()) : ?><section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod('categories_and_tags_img'); ?>);">
-<?php if (get_the_category_list() != '') : ?>
-    
-                <ul class="post-categories" itemprop="about">
+<?php else : ?>
 
-                    <li><?php echo get_the_category_list( __( '</li>
+    <div class="stars_and_bars"></div>
 
-                    <li>', 'semper-fi-lite' ) ); ?></li>
+<?php endif;
 
-                </ul><?php endif; endif; ?>
+if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'single')) :
 
-                <?php if(get_the_tag_list()) { echo get_the_tag_list('<ul class="tag-list" itemprop="keywords">
+	comments_template();
 
-                    <li>',' </li>
+endif;
 
-                    <li>','</li>
+endwhile;
 
-                </ul>');} ?>
+if (semperfi_is_sidebar_active('widget')) get_sidebar();
 
-
-            </section><?php endif; ?>
-<?php if (!is_home() && (get_theme_mod('comments_setting') != 'none') && (get_theme_mod('comments_setting') != 'page')) : comments_template(); endif; ?>
-
-        </article>
-
-<?php endwhile; endif; ?>
-
-<?php if ( function_exists( 'is_checkout' ) ) : if (!is_checkout()) : get_template_part( 'store-front' ); endif; else : get_template_part( 'store-front' ); endif; ?>
-
-<?php get_template_part( 'advertise' ); ?>
-
-<?php get_footer(); ?>
+get_footer(); ?>

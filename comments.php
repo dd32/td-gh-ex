@@ -1,60 +1,45 @@
-<?php if ( post_password_required() ) { return; } ?>
+<?php if (have_comments()) :
+	
+	$comment_count = 0;
 
-<?php if ( have_comments() ) : ?>
+	$pings_and_tracks = 0;
 
-        <ol id="list-comments">
+	foreach ( get_approved_comments( $id ) as $comment ) {
+		
+		if ( $comment->comment_type === '' ) : $comment_count++;
+		else : $pings_and_tracks++;
+		endif; }
 
-    <?php wp_list_comments( array(
-              'style'       => 'ol',
-              'short_ping'  => true,
-              'avatar_size' => 500 )); ?>
-            
-            
-<?php if (get_the_comments_pagination() != '') : ?>
-            <li class="comment">
-            
-                <?php paginate_comments_links(); ?>
-            
-            </li><?php endif; ?>
+	if ($comment_count > 0) : ?>
 
-<?php else :?>
+		<div id="comments" class="the_comments">
+			<h3 class="post_title"><?php _e('Comments', 'localize_adventure'); ?></h3>
+			<ul class="commentlist"><?php wp_list_comments(array('avatar_size' => 100, 'style' => 'li', 'type' => 'comment')); ?></ul>
+		</div>
 
-        <ol id="list-comments">
-<?php endif; ?>       
-            
-<?php  comment_form(
-    array(
-        'comment_field'         => '
-            <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+	<?php endif;
 
-',
-        'comment_notes_after'   => '',
-        'comment_notes_before'  => '',
-        'format'                => 'html5',
-        'label_submit'          => 'Submit Reply',
-        'logged_in_as'          => '
-            <p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>.
+	if ($pings_and_tracks > 0) : ?>
 
-                <a class="log-out-link" href="%3$s" title="Log out of this account">Log out?</a>', 'semper-fi-lite' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '
+        <div class="the_comments">
+            <h3 class="post_title"><?php _e('Pingbacks &amp; Trackbacks', 'localize_adventure'); ?></h3>
+            <ul class="commentlist"><?php wp_list_comments(array('avatar_size' => 100, 'style' => 'li', 'type' => 'pings')); ?></ul>
+        </div>
+	<?php endif;
+    
+endif;
+        
+if (comments_open()) :
 
-            </p>
-',
-        'submit_button'         => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-        'submit_field'          => '            <p class="form-submit">
+   comment_form();
 
-                %1$s
+endif;
 
-                %2$s
+if ( have_comments() || comments_open() ) : ?>
 
-            </p>        
-',
-        'title_reply_before'    => '
-        <h3>',
-        'title_reply_after'     => '</h3>
+    <div class="stars_and_bars">
+        <span class="left"><?php paginate_comments_links(); ?></span>
+        <span class="right"></span>
+    </div><?php 
 
-',
-    )
-); ?>
-            
-        </ol>
-
+endif; ?>
