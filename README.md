@@ -1,6 +1,6 @@
 Base WP
 ---------------
-Base WP is a basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid. 
+Base WP is a basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugin or for support and documentation visit our website (http://themes.iografica.it).
 
 
 License
@@ -51,4 +51,9 @@ Changelog
 * Add featured images on pages
 
 #### 1.14
-* Add shortcodes to theme
+* Add retina support
+* Add better upgrade button
+
+#### 1.15
+* Add retina support
+* Add better upgrade button
