@@ -65,13 +65,6 @@ function optionsframework_options() {
 		'name' => __('Meta Slider', 'base'),
 		'desc' => __('Only available in premium version', 'base'),
 		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Theme shortcodes', 'base'),
-		'desc' => __('Check the box if you want enable the shortcodes', 'base'),
-		'id' => 'shortcodes_checkbox',
-		'std' => '1',
-		'type' => 'checkbox');
 		
 	$options[] = array( "name" => "Advanced Settings",
 		"type" => "heading" );	
@@ -176,7 +169,9 @@ function optionscheck_display_sidebar() { ?>
             <h3><?php echo __('Upgrade to premium version', "base"); ?></h3>
                 <div class="inside">
                     <p><?php echo __('Upgrade to the premium version to get access to advanced options.', "base"); ?></p>
-                    <a href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/premium-upgradebutton.jpg" alt="Upgrade to premium version" /></a>
+                    <a title="Upgrade to premium version" href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank">
+                    <span class="upgrade-button">Upgrade to premium</span>
+                    </a>
 					<p><?php echo __('With premium version you have access to priority support and lifetime upgrade.',  "base"); ?></p>
 					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
                 </div>
