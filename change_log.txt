@@ -1,9 +1,10 @@
 Version 0.1
-
-	i)   Theme Submitted for approval
-	
+i)   Theme Submitted for approval
+ 
 Version 0.1.1
+i)   A few changes for comments and stylesheets.
 
-    i)   A few changes for comments and stylesheets.
+Version 0.2
+i)   Removed Custom post-content, Custom Post Types, Custom Taxonomies etc from the theme.
 
-   
+

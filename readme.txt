@@ -1,32 +1,33 @@
 == Booster ==
 Theme Name: Booster
 Theme URI: http://fasterthemes.com/themes/Booster
-Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
-and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster theme comes with Appointment Management,
-social icon integration, Services page , Contact us page etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
-It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
-Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
-version: 0.1.1
+Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
+and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
+social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
+It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
+Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width,theme-options
+version: 0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 == Theme Description ==
+
 Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
-and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster theme comes with Appointment Management,
-social icon integration, Services page , Contact us page etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
+and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
+social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
 
 == Features ==
 
-Responsive design(Bootstrap), Appointment Management, Theme Options, Service Pages,  Custom Widgets, Custom Menu, supports social media.
+Responsive design(Bootstrap), Theme Options, Custom Menu, supports social media.
 
 == Tags ==
 
-WordPress Free Premium Theme
+Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width,theme-options
 
 == Installation ==
 
@@ -44,20 +45,23 @@ WordPress Free Premium Theme
 4. Now click on "booster" to activate the theme.
 5. Complete all of the required inputs in the theme Options page (in the WP admin panel) and click "Save".
 6. Change Logo and Favicon:
- = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Login to your wp-admin area and go to Appearance -> FT Options.
  = Select "Basic Settings" Tab.
  = Upload the logo, that you require & Enter Introduction text for right of Your Theme.
 7. Social Media:
- = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Login to your wp-admin area and go to Appearance -> FT Options.
  = Select "Social Settings" tab
  = Here you can add your Facebook, Twitter, Linkedin URLs which appear in the header.
+8. Home Slider:
+ = Login to your wp-admin area and go to Appearance -> FT Options.
+ = Select "Home Slider" tab
+ = Here you can add your slider image and slider link . 
  
 == Settings of home page ==
-1. Setup home page slider : Open wp-admin then click on Home Slider --> Add new 
-   Then add Slider Title, content and featured image for slider image.
+1. Setup home page slider : Open wp-admin then set from Appearance -> FT Options -> Home Slider
+   Then add slide image and slide link for slider image.
 2. Setup of 'Welcome' and 'Why choose me' sections : First you need to open Appearance -> FT Options -> Home Settings
 	then you can input content and images for these sections.
-3. Setup 'Services' Post : You need to add your services in 'Services' custom post types from wp-admin.
 
  
 ---------------------------------------------------------

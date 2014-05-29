@@ -4,13 +4,13 @@ Theme URI: http://fasterthemes.com/themes/Booster
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
-and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster theme comes with Appointment Management,
-social icon integration, Services page , Contact us page etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
+and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
+social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
-Version: 0.1.1
+Version: 0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
+Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
 Text Domain: booster
 This theme, like WordPress, is licensed under the Faster Themes.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -51,7 +51,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	text-decoration: none;
 }
 .booster-menu a:hover, .booster-menu a:focus {
-	color: rgb(126, 126, 126) !important;
+	color: #FFF !important;
 }
 .booster-menu li:hover > a {
 	color: rgb(126, 126, 126);
@@ -93,7 +93,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	text-decoration: none;
 }
 .booster-menu ul li a:hover, .booster-menu ul li a:focus, .booster-menu ul li a:active {
-	color: #666 !important;
+	color: #FFF !important;
 }
 .booster-menu ul li {
 	background-color: #FFFFFF;
@@ -164,6 +164,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .footer .sub-menu {
 	display:none;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: rgb(38, 133, 182) !important;
+}
+.navbar-nav > li > a {
+    padding-bottom: 10px;
+    padding-top: 10px;	
+}
  @media screen and (max-width: 767px) {
 /* nav-wrap */
 .menu-wrap {
@@ -203,7 +210,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	border-bottom: 8px solid #fff;
 }
 .booster-menu a:hover, .booster-menu a:focus {
-	color: rgb(38, 133, 182) !important;
+	color: #666 !important;
 }
 .booster-menu li:hover > a {
 	color: rgb(38, 133, 182);
@@ -275,6 +282,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	color: rgb(38, 133, 182);
 }
 .booster-menu li> a:hover {
-	color: rgb(38, 133, 182);
+	color: #666 !important;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: transparent !important;
+}
+.booster-menu ul li a:hover, .booster-menu ul li a:focus, .booster-menu ul li a:active {
+	color: #666 !important;
+}
+.booster-menu li a:hover {
+	background: transparent !important;
 }
 }

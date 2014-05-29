@@ -3,12 +3,12 @@ get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
-      <div class="col-md-6  col-sm-6 ">
+      <div class="col-md-6  col-sm-6 no-padding">
         <?php if ( have_posts() ) : 
 	 		printf( __( '<p class="booster-post-title">Archives : %s', 'booster' ), '<span class="booster-post-subtitle">' . get_the_date('M-Y') . '</span></p>' );
 		endif; ?>
       </div>
-      <div class="col-md-6  col-sm-6 ">
+      <div class="col-md-6 col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">
           <?php if (function_exists('booster_custom_breadcrumbs')) booster_custom_breadcrumbs(); ?>
         </ol>
@@ -17,19 +17,12 @@ get_header(); ?>
   </div>
 </div>
 <div class="main-container">
-  <div class="container"> 
+  <div class="container no-padding-left"> 
     <div class="row">
-      <div class="col-md-8 main">
+      <div class="col-md-8 booster-post main">
         <?php if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
-        <article class="post">
-          <figure class="feature-thumbnail-large">
-            <?php 
-			$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
-			if($booster_feature_img!="") { ?>
-            <img src="<?php echo $booster_feature_img ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
-            <?php } ?>
-          </figure>
+        <article class="post clearfix">
           <div class="post-meta">
             <div class="post-meta-author">
               <div class="post-author-name blog-title">
@@ -41,16 +34,17 @@ get_header(); ?>
             </div>
             
           </div>
-          
-          
-          
+           <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
+		   		 if($booster_feature_img != '') { ?>
+                	<img src="<?php echo $booster_feature_img; ?>" class="img-responsive blog-page-image" />
+           <?php } ?>
           <div class="post-content">
             <?php the_excerpt(); ?>
-            <div class="blog-hr-archive"></div>
+            
           </div>
          
         </article>
-           
+          <div class="blog-hr-archive"></div> 
         <?php endwhile; ?>
         <?php endif; ?>
         <nav class="booster-nav">

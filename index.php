@@ -8,96 +8,56 @@ get_header(); ?>
 
 <div class="separator"></div>
 
-<section class="section-main ">
-  <div class="container no-padding">
-    <div class="col-md-12 no-padding-left"> 
+<section class="section-main booster-slider-setion">
+  <div class="col-md-12 no-padding"> 
 
 <!--========================= Carousel ========================= -->
-<div id="myCarousel" class="carousel slide col-md-8 no-padding-left subscribe-box" data-ride="carousel"> 
+<?php 
+$booster_slider = array(0 => $booster_options['first-slider-image'],1 => $booster_options['second-slider-image'],2 => $booster_options['third-slider-image'],3 => $booster_options['forth-slider-image'],4 => $booster_options['fifth-slider-image']);	
+$booster_link = array(0 => $booster_options['first-slider-link'], 1 => $booster_options['second-slider-link'],2 => $booster_options['third-slider-link'],								3 => $booster_options['forth-slider-link'],4 => $booster_options['fifth-slider-link']);										
+$booster_value = array_filter($booster_slider);
+?>
+<div id="myCarousel" class="carousel slide col-md-12 no-padding-left subscribe-box" data-ride="carousel"> 
   <!-- Indicators -->
-    <?php $booster_args = array(
-					'orderby'          => 'post_date',
-					'order'            => 'DESC',
-					'post_type'        => 'homeslider',
-					'post_status'      => 'publish'
-		  );
-    $booster_slider = new WP_Query( $booster_args );?>
+<?php if(!empty($booster_value)) { ?>
     <ol class="carousel-indicators">
-    <?php for($i=0;$i<$booster_slider->post_count;$i++){
-	  if($i==0){$booster_class='active';}else{$booster_class='';} ?>
-        <li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>" class="<?php echo $booster_class; ?>"></li>
-    <?php } ?>
-  	</ol>
-  <div class="carousel-inner">
-    <?php
-   	$booster_count = 0;
-	if($booster_slider->post_count != 0) {
-    while ( $booster_slider->have_posts() ) {
-    $booster_slider->the_post();
-	$booster_class='';
-	if($booster_count==0){ $booster_class='active'; }
-	$booster_slider_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
-    <div class="item <?php echo $booster_class;?>">
-     <a href="#"><img src="<?php echo $booster_slider_image; ?>" alt="First slide" class="img-responsive booster-slider-image"></a> 
-      <div class="container">
-        <div class="carousel-caption carousel-caption1">
-          <h1 class="home-slider-caption font-type-roboto"><?php echo get_the_title(); ?></h1>
-          <h6-home><p class="font-color-black"><?php echo get_the_content(); ?></h6-home>
-        </div>
-      </div>
+    <?php $booster_count = 0; 
+		  foreach ($booster_slider as $booster_slide) { 
+		  if (empty($booster_slide)) { continue; } ?>
+        <li data-target="#myCarousel" data-slide-to="0" class="<?php if($booster_count==0){ echo'active'; } ?>"></li>
+    <?php $booster_count++; } ?>
+    </ol>
+  	<div class="carousel-inner">
+    <?php $booster_count_img = 0; 
+		  foreach ($booster_slider as $booster_key => $booster_slide) { 
+		  if (empty($booster_slide)) { continue; } ?>
+    <div class="item <?php if($booster_count_img==0){ echo'active'; } ?>">
+     <a href="<?php echo $booster_link[$booster_key]; ?>" target="_blank"><img src="<?php echo $booster_slide; ?>" class="img-responsive booster-slider-image"></a> 
     </div>
-    <?php $booster_count++; } 
-	} else {
-	?>
+	<?php $booster_count_img++; } ?>
+  </div>  
+	<?php } else { ?>	
+    <ol class="carousel-indicators">
+	   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	</ol>
+    <div class="carousel-inner">
     <div class="item active">
-     <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/home_img.png" alt="First slide" class="img-responsive booster-slider-image"></a> 
-      <div class="container">
-        <div class="carousel-caption carousel-caption1">
-          <h1 class="home-slider-caption font-type-roboto">Booster</h1>
-          <h6-home><p class="font-color-black">Booster Slider</h6-home>
-        </div>
-      </div>
+     <img src="<?php echo get_template_directory_uri(); ?>/images/home-slider.jpg" alt="First slide" class="img-responsive booster-slider-image"> 
     </div>
-    <?php } ?>
-  </div>
-  <a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
-  <a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> </div>
-<!-- /.carousel --> 
+    </div>  
+	<?php } ?>
+    	<a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
+  		<a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
+    </div>
   
-      <div class="panel panel-default subscribe-box col-md-4">
-        <h3 class="Label-book">BOOK AN APPOINTMENT</h3>
-        <div class="panel-body">
-		<div id="displaymessage"></div>
-          <form id="appointment" name="appointment" method="post">
-            <fieldset>
-              <div class="form-group">
-                <input id="appointment_name" class="table-width" type="text" placeholder="Name" name="name" />
-              </div>
-              <div class="form-group">
-                <input id="appointment_email" class="table-width" type="text" placeholder="E-mail" name="email" />
-              </div>
-              <div class="form-group">
-                <input id="appointment_phone" class="table-width" type="text" placeholder="Phone" name="phone" />
-              </div>
-              <div class="form-group">
-                <input type="text" id="datetime" class="table-width" placeholder="Date & Time" name="datetime" autocomplete="off" />
-              </div>
-              <div class="form-group">
-                <textarea id="appointement_comment" class="table-width" placeholder="Comment" name="comment" ></textarea>
-              </div>
-              <input type="button" name="submit" id="appointment_insert" class="btn-subscribe" value="Submit" />
-            </fieldset>
-          </form>
-          
-        </div>
-      </div>
+<!-- /.carousel --> 
+ 
     </div>
-  </div>
 </section>
 <section class="section-main back-img">
   <div class="container">
-    <div class="col-md-12 no-padding-left ">
-      <div class="col-md-4"> <img class="img-banner welcome-image" src="<?php echo $booster_options['welcome-image']; ?>" alt=""  /> </div>
+    <div class="col-md-12 no-padding">
+      <div class="col-md-4"> <?php if($booster_options['welcome-image'] != '') { ?><img class="img-banner welcome-image" src="<?php echo $booster_options['welcome-image']; ?>" alt=""  /><?php } ?></div>
       <div class="col-md-8 font-type font-color font-type-roboto">
         <h1><?php echo $booster_options['welcome-title']; ?></h1>
         <p class="font-type"><?php echo $booster_options['welcome-content']; ?> </p>
@@ -106,24 +66,29 @@ get_header(); ?>
   </div>
 </section>
 <section class="section-main container no-padding">
+  <h2 class="font-color-text">Latest Post</h2>
   <div class="col-md-12 no-padding-left padding-br">
     <?php     
-	$booster_args = array(
-			'posts_per_page'   => '4',
-            'orderby'          => 'post_date',
+	$booster_args1 = array(
             'order'            => 'DESC',
-            'post_type'        => 'service',
-            'post_status'      => 'publish'
-        );
-    $booster_services = new WP_Query( $booster_args );
-   
-    while ( $booster_services->have_posts() ) {
-    $booster_services->the_post();
-	
+            'post_type'        => 'post',
+            'post_status'      => 'publish',
+			'posts_per_page'   => 3
+			);
+    $booster_posts = new WP_Query( $booster_args1 );
+    while ( $booster_posts->have_posts() ) {
+    $booster_posts->the_post();
 	$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
 	?>
-    <div class="col-md-3 clear-data">
-      <div class="img-laft"> <img src="<?php echo $booster_feature_img; ?>"  alt=""  class="img-responsive home-services-image"/></div>
+
+    <div class="col-md-3 clear-data no-padding-left">
+      <div class="img-laft"> 
+      <?php if($booster_feature_img) { ?>
+      	<img src="<?php echo $booster_feature_img; ?>"  alt=""  class="img-responsive home-services-image"/>
+      <?php } else { ?>
+      	<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png"  alt=""  class="img-responsive home-services-image"/>
+      <?php } ?>
+      </div>
       <div class="img-test-padding"> <strong>
         <p class="sp"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
         </strong>
@@ -131,14 +96,14 @@ get_header(); ?>
 		<?php echo get_the_excerpt(); ?></p>
 		</div>
     </div>
-	<?php } ?>
+	<?php }	 ?>
   </div>
 </section>
 <div class="separator"></div>
 <section class="section-main container no-padding">
   <div class="col-md-12 no-padding-left">
-    <div class="col-lg-5 img-banner1"> <img src="<?php echo $booster_options['why-chooseus-image']; ?>" alt="" class="img-responsive why-chooseus-image"  /> </div>
-    <div class="col-lg-7 font-type-roboto">
+    <div class="col-lg-5 img-banner1"><?php  if($booster_options['why-chooseus-image'] != '') { ?><img src="<?php echo $booster_options['why-chooseus-image']; ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
+    <div class="col-lg-7 font-type-roboto why-chooseus-content">
       <h2 class="font-color-text"><?php echo $booster_options['why-chooseus-title']; ?></h2>
       <p class="sp"><?php echo $booster_options['why-chooseus-content']; ?></p>
     </div>

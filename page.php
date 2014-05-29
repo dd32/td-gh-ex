@@ -12,7 +12,7 @@ get_header(); ?>
   </div>
 </section>
  
-<div class="container blog-background">
+<div class="container blog-background booster-page no-padding">
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-8 no-padding-left">
  <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>

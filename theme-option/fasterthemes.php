@@ -12,10 +12,6 @@ function ft_options_validate( $input ) {
 	 $input['why-chooseus-title'] = wp_filter_nohtml_kses( $input['why-chooseus-title'] );
 	 $input['why-chooseus-content'] = wp_filter_nohtml_kses( $input['why-chooseus-content'] );
 	 
-	 $input['address1'] = wp_filter_nohtml_kses( $input['address1'] );
-	 $input['address2'] = wp_filter_nohtml_kses( $input['address2'] );
-	 $input['gmaddress'] = wp_filter_nohtml_kses( $input['gmaddress'] );
-	 
 	 $input['logo'] = esc_url_raw( $input['logo'] );
 	 $input['fevicon'] = esc_url_raw( $input['fevicon'] );
 	 $input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
@@ -23,17 +19,28 @@ function ft_options_validate( $input ) {
 	 $input['fburl'] = esc_url_raw( $input['fburl'] );
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
 	 $input['linkedin'] = esc_url_raw( $input['linkedin'] );
+	 
+	 $input['first-slider-image'] = esc_url_raw( $input['first-slider-image'] );
+	 $input['first-slider-link'] = wp_filter_nohtml_kses( $input['first-slider-link'] );
+	 
+	 $input['second-slider-image'] = esc_url_raw( $input['second-slider-image'] );
+	 $input['second-slider-link'] = wp_filter_nohtml_kses( $input['second-slider-link'] );
+	 
+	 $input['third-slider-image'] = esc_url_raw( $input['third-slider-image'] );
+	 $input['third-slider-link'] = wp_filter_nohtml_kses( $input['third-slider-link'] );
+	 
+	 $input['forth-slider-image'] = esc_url_raw( $input['forth-slider-image'] );
+	 $input['forth-slider-link'] = wp_filter_nohtml_kses( $input['forth-slider-link'] );
+	 
+	 $input['fifth-slider-image'] = esc_url_raw( $input['fifth-slider-image'] );
+	 $input['fifth-slider-link'] = wp_filter_nohtml_kses( $input['fifth-slider-link'] );
     return $input;
 }
 function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
 	wp_enqueue_style( 'fasterthemes_framework' );
-	wp_enqueue_style( 'wp-color-picker', get_template_directory_uri(). '/theme-option/css/color-picker.min.css' );
-	wp_enqueue_style( 'wp-color-picker' );
 	
-	// Enqueue colorpicker scripts for versions below 3.5 for compatibility
-	wp_enqueue_script( 'wp-color-picker', get_template_directory_uri(). '/theme-option/js/color-picker.min.js', array( 'jquery', 'iris' ) );
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery','wp-color-picker' ) );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery', 'iris' ) );		
@@ -70,9 +77,10 @@ function fastertheme_framework_page(){
 <div id="fasterthemes_framework-wrap" class="wrap">
   <h2 class="nav-tab-wrapper"> 
   		<a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Home Settings" href="#options-group-1">Home Settings</a> 
-        <a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="Contact Settings" href="#options-group-2">Contact Address</a>
+        <a id="options-group-2-tab" class="nav-tab thirdsettings-tab" title="Social Settings" href="#options-group-2">Home Slider</a>
         <a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Basic Settings" href="#options-group-3">Basic Settings</a>
   		<a id="options-group-4-tab" class="nav-tab thirdsettings-tab" title="Social Settings" href="#options-group-4">Social Settings</a>
+        
   </h2>
   <div id="fasterthemes_framework-metabox" class="metabox-holder">
     <div id="fasterthemes_framework" class="postbox"> 
@@ -91,9 +99,9 @@ function fastertheme_framework_page(){
             <h4 class="heading">Welcome Image</h4>
             <div class="option">
                  <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[welcome-image]" value="<?php echo $booster_options['welcome-image']; ?>" placeholder="No file chosen" />
+                <input id="welcome" class="upload" type="text" name="faster_theme_options[welcome-image]" value="<?php echo $booster_options['welcome-image']; ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
-                    <div class="screenshot" id="logo-image">
+                    <div class="screenshot" id="welcome-image">
                       <?php if($booster_options['welcome-image'] != '') echo "<img src='".$booster_options['welcome-image']."' /><a class='remove-image'>Remove</a>" ?>
                     </div>
                 </div>
@@ -119,7 +127,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Why Choose us Image</h4>
             <div class="option">
                  <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[why-chooseus-image]" value="<?php echo $booster_options['why-chooseus-image']; ?>" placeholder="No file chosen" />
+                <input id="why-choose-us" class="upload" type="text" name="faster_theme_options[why-chooseus-image]" value="<?php echo $booster_options['why-chooseus-image']; ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="logo-image">
                       <?php if($booster_options['why-chooseus-image'] != '') echo "<img src='".$booster_options['why-chooseus-image']."' /><a class='remove-image'>Remove</a>" ?>
@@ -147,36 +155,119 @@ function fastertheme_framework_page(){
         
         <!-------------- Second group ----------------->
         
-        <div id="options-group-2" class="group socialsettings">
-          <h3>Contact Address</h3>
-          <div id="section-address1" class="section section-text mini">
-            <h4 class="heading">Address 1</h4>
+        <div id="options-group-2" class="group basicsettings">
+          <h3>First Slide</h3>
+          <div id="first-slider-image" class="section section-upload">
+            <h4 class="heading">Slide Image</h4>
             <div class="option">
-              <div class="controls">
-                <textarea id="address1" name="faster_theme_options[address1]"><?php echo $booster_options['address1']; ?></textarea>
-              </div>
-              <div class="explain">.</div>
+                 <div class="controls">
+                <input id="first-slider" class="upload" type="text" name="faster_theme_options[first-slider-image]" value="<?php echo $booster_options['first-slider-image']; ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <div class="screenshot" id="first-image">
+                      <?php if($booster_options['first-slider-image'] != '') echo "<img src='".$booster_options['first-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                    </div>
+                  </div>
+                <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
             </div>
           </div>
-          <div id="section-address2" class="section section-text mini">
-            <h4 class="heading">Address 2</h4>
+          <div id="first-slider-div" class="section section-text mini">
+            <h4 class="heading">Slide Link</h4>
             <div class="option">
               <div class="controls">
-                <textarea id="address2" name="faster_theme_options[address2]"><?php echo $booster_options['address2']; ?></textarea>
+                <input id="first-slider-link" class="of-input" name="faster_theme_options[first-slider-link]" type="text" size="30" value="<?php echo $booster_options['first-slider-link']; ?>" />
               </div>
-              <div class="explain"></div>
             </div>
           </div>
-          <div id="section-address2" class="section section-text mini">
-            <h4 class="heading">Google Map Address</h4>
+          <h3>Second Slide</h3>
+          <div id="second-slider-image" class="section section-upload">
+            <h4 class="heading">Slide Image</h4>
+            <div class="option">
+                 <div class="controls">
+                <input id="second-slider" class="upload" type="text" name="faster_theme_options[second-slider-image]" value="<?php echo $booster_options['second-slider-image']; ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <div class="screenshot" id="second-image">
+                      <?php if($booster_options['second-slider-image'] != '') echo "<img src='".$booster_options['second-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                    </div>
+                </div>
+                <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
+            </div>
+          </div>
+          <div id="second-slider-div" class="section section-text mini">
+            <h4 class="heading">Slide Link</h4>
             <div class="option">
               <div class="controls">
-                <textarea id="address2" name="faster_theme_options[gmaddress]"><?php echo $booster_options['gmaddress']; ?></textarea>
+                <input id="second-slider-link" class="of-input" name="faster_theme_options[second-slider-link]" type="text" size="30" value="<?php echo $booster_options['second-slider-link']; ?>" />
               </div>
-              <div class="explain"></div>
+            </div>
+          </div>
+          <h3>Third Slide</h3>
+          <div id="third-slider-image" class="section section-upload">
+            <h4 class="heading">Slide Image</h4>
+            <div class="option">
+                 <div class="controls">
+                <input id="third-slider" class="upload" type="text" name="faster_theme_options[third-slider-image]" value="<?php echo $booster_options['third-slider-image']; ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <div class="screenshot" id="third-image">
+                      <?php if($booster_options['third-slider-image'] != '') echo "<img src='".$booster_options['third-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                    </div>
+                </div>
+                <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
+            </div>
+          </div>
+          <div id="third-slider-div" class="section section-text mini">
+            <h4 class="heading">Slide Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input id="third-slider-link" class="of-input" name="faster_theme_options[third-slider-link]" type="text" size="30" value="<?php echo $booster_options['third-slider-link']; ?>" />
+              </div>
+            </div>
+          </div> 
+          <h3>Forth Slide</h3>
+          <div id="forth-slider-image" class="section section-upload">
+            <h4 class="heading">Slide Image</h4>
+            <div class="option">
+                 <div class="controls">
+                <input id="forth-slider" class="upload" type="text" name="faster_theme_options[forth-slider-image]" value="<?php echo $booster_options['forth-slider-image']; ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <div class="screenshot" id="forth-image">
+                      <?php if($booster_options['forth-slider-image'] != '') echo "<img src='".$booster_options['forth-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                    </div>
+                </div>
+                <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
+            </div>
+          </div>
+          <div id="forth-slider-div" class="section section-text mini">
+            <h4 class="heading">Slide Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input id="forth-slider-link" class="of-input" name="faster_theme_options[forth-slider-link]" type="text" size="30" value="<?php echo $booster_options['forth-slider-link']; ?>" />
+              </div>
+            </div>
+          </div> 
+          <h3>Fifth Slide</h3>
+          <div id="fifth-slider-image" class="section section-upload">
+            <h4 class="heading">Slide Image</h4>
+            <div class="option">
+                 <div class="controls">
+                <input id="fifth-slider" class="upload" type="text" name="faster_theme_options[fifth-slider-image]" value="<?php echo $booster_options['fifth-slider-image']; ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <div class="screenshot" id="fifth-image">
+                      <?php if($booster_options['fifth-slider-image'] != '') echo "<img src='".$booster_options['fifth-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                    </div>
+                </div>
+                <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
+            </div>
+          </div>
+          <div id="fifth-slider-div" class="section section-text mini">
+            <h4 class="heading">Slide Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input id="fifth-slider-link" class="of-input" name="faster_theme_options[fifth-slider-link]" type="text" size="30" value="<?php echo $booster_options['fifth-slider-link']; ?>" />
+              </div>
             </div>
           </div>
         </div>
+        
         
         <!-------------- Third group ----------------->
         
@@ -186,14 +277,14 @@ function fastertheme_framework_page(){
             <h4 class="heading">Site Logo</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" 
+                <input id="main-logo" class="upload" type="text" name="faster_theme_options[logo]" 
                             value="<?php echo $booster_options['logo']; ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
-                <div class="screenshot" id="logo-image">
+                <div class="screenshot" id="main-logo-image">
                   <?php if($booster_options['logo'] != '') echo "<img src='".$booster_options['logo']."' /><a class='remove-image'>Remove</a>" ?>
                 </div>
               </div>
-              <div class="explain">Size of logo should be exactly 250x125px for best results. Leave blank to use text heading.</div>
+              <div class="explain">Size of logo should be exactly 250x125px for best results.</div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
@@ -221,7 +312,7 @@ function fastertheme_framework_page(){
           </div>
         </div>
         
-        <!-------------- Fourth group ----------------->
+        <!-------------- Forth group ----------------->
         
         <div id="options-group-4" class="group socialsettings">
           <h3>Social Settings</h3>

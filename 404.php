@@ -16,7 +16,7 @@
 <div class="main-container">
   <div class="container"> 
     <div class="row">
-      <div class="col-md-12 main">
+      <div class="col-md-12 main no-padding">
         <div class="jumbotron">
 				<h1>Epic 404 - Article Not Found</h1>
 				<p>This is embarassing. We can't find what you were looking for.</p>

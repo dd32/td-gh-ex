@@ -37,11 +37,11 @@
 			<img src="<?php header_image(); ?>" class="custom_header_img" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 	</a>
     <?php } ?>
-      <div class="col-md-4 no-padding text-left-menu">
+      <div class="col-md-3 no-padding text-left-menu">
       		<?php if($booster_options['logo'] == '') { ?>
-      			<a href="<?php echo site_url(); ?>" class="pull-left"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="" class="img-responsive" /></a> 
+      			<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><?php echo get_bloginfo('name'); ?></a> 
             <?php } else { ?>
-            	<a href="<?php echo site_url(); ?>" class="pull-left"><img src="<?php echo $booster_options['logo']; ?>" alt="" class="img-responsive header-logo" /></a> 
+            	<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><img src="<?php echo $booster_options['logo']; ?>" alt="" class="img-responsive header-logo" /></a> 
             <?php } ?>	
                 <div class="navbar-header pull-right">
                 	<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle toggle-top" type="button">
@@ -54,7 +54,7 @@
                 <div class="clearfix"></div>
 		</div>
       
-      <div class="col-md-6 no-padding text-left-menu">
+      <div class="col-md-7 no-padding text-left-menu">
         <div class="navbar-collapse collapse padding-menu">
         <?php 
 			$booster_args = array(

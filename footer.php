@@ -7,8 +7,8 @@
 
 	<!-- footer -->
 <div class="copyright col-lg-12">
-    <div class="container">
-      <div class="col-md-7 footer-margin-top footer-center">
+    <div class="container no-padding">
+      <div class="col-md-7 footer-margin-top footer-center no-padding">
 	  		<?php if($booster_options['footertext'] != '') { 
 						echo $booster_options['footertext'];
 					} else {

@@ -11,19 +11,19 @@ get_header();
   </div>
 </section>
  
-<div  id="post-<?php the_ID(); ?>" <?php post_class("container blog-background"); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class("container blog-background no-padding"); ?>>
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-8 no-padding-left booster-post">
 	
  <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
-    	<div class="blog">
-            <img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive blog-img" />
-            <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
-           
-             <div class="post-date-blog">
+    		<div class="blog">
+           		<h1 class="blog-title"><?php echo get_the_title(); ?></h1>
+           	<div class="post-date-blog">
                 <?php booster_entry_meta(); ?>
              </div>   
-    
+     		<div class="blog-line"></div> 
+        	<?php if($booster_feature_img) { ?><img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive blog-img blog-page-image" /><?php } ?>
+            
             <p class="blog-text">
               <?php the_content();
 					wp_link_pages( array(
@@ -34,20 +34,16 @@ get_header();
 						) );
 				 ?>
             </p>
-            
-            <div class="blog-hr"></div>
         </div>
-        
-        
 <!-- paging -->
     <div class="col-md-12 paging-back-color ">
   			<ul class="list-inline text-center">
-            	<li>
+            	<span class="booster-previous-link">
                 	<?php previous_post_link(); ?>
-                </li>
-                <li>
+                </span>
+                <span class="booster-next-link">
                 	<?php next_post_link(); ?>
-                </li>
+                </span>
             </ul>
     </div>
 <!-- paging -->

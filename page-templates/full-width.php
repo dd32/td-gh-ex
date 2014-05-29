@@ -14,9 +14,9 @@ get_header();
   </div>
 </section>
  
-<div class="container blog-background">
+<div class="container blog-background booster-page no-padding">
 <?php while ( have_posts() ) : the_post(); ?>
-	<div class="col-md-12 no-padding-left">
+	<div class="col-md-12 no-padding">
 	
  <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     	<div class="blog">
