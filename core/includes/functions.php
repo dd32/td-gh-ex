@@ -179,12 +179,11 @@ if ( !function_exists( 'responsive_setup' ) ):
 		 * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
 		 */
 		register_nav_menus( array(
-								'top-menu'        => __( 'Top Menu', 'responsive' ),
-								'header-menu'     => __( 'Header Menu', 'responsive' ),
-								'sub-header-menu' => __( 'Sub-Header Menu', 'responsive' ),
-								'footer-menu'     => __( 'Footer Menu', 'responsive' )
-							)
-		);
+			'top-menu'        => __( 'Top Menu', 'responsive' ),
+			'header-menu'     => __( 'Header Menu', 'responsive' ),
+			'sub-header-menu' => __( 'Sub-Header Menu', 'responsive' ),
+			'footer-menu'     => __( 'Footer Menu', 'responsive' )
+		) );
 
 		add_theme_support( 'custom-background' );
 
@@ -722,7 +721,7 @@ if ( !function_exists( 'responsive_js' ) ) {
 		// JS at the bottom for fast page loading.
 		// except for Modernizr which enables HTML5 elements & feature detects.
 		wp_enqueue_script( 'modernizr', $template_directory_uri . '/core/' . $directory . '/responsive-modernizr' . $suffix . '.js', array( 'jquery' ), '2.6.1', false );
-		wp_enqueue_script( 'responsive-scripts', $template_directory_uri . '/core/' . $directory . '/responsive-scripts' . $suffix . '.js', array( 'jquery' ), '1.2.5', true );
+		wp_enqueue_script( 'responsive-scripts', $template_directory_uri . '/core/' . $directory . '/responsive-scripts' . $suffix . '.js', array( 'jquery' ), '1.2.6', true );
 		if ( !wp_script_is( 'tribe-placeholder' ) ) {
 			wp_enqueue_script( 'jquery-placeholder', $template_directory_uri . '/core/' . $directory . '/jquery.placeholder' . $suffix . '.js', array( 'jquery' ), '2.0.7', true );
 		}
