@@ -1,12 +1,66 @@
-<?php get_header(); ?>
-<div style="background-color:#939">
-    <section  class="twelve columns clearfix">
-        <?php get_template_part('loop'); ?>
-    </section>
-    <aside class="four columns clearfix">
-        <?php get_sidebar(); ?>
-    </aside>
-</div>
-<section class="footer sixteen columns">
-    <?php get_footer(); ?>
-</section>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme and one
+ * of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query,
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage B & W
+ * @since B & W 1.1
+ */
+
+get_header(); ?>
+	
+	<!-- Content
+	================================================== -->
+	<section class="home-blog wow fadeInUp">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<div class="col-sm-12 col-md-6 col-lg-12">
+								<!-- Loop -->
+								<?php get_template_part('loop'); ?>
+								<!-- /Loop -->
+							</div>
+						<?php endwhile; ?>
+							<!-- Pagination -->
+							<ul class="pager">
+								<?php bnw_page_navi(); ?>
+							</ul>
+							<!-- /Pagination -->
+						<?php else : ?>
+							<!-- Post Not Found -->
+							<article id="post-not-found" class="hentry clearfix">
+								<header class="article-header">
+								<h1><?php _e( 'Oops, Post Not Found!', 'bnwtheme' ); ?></h1>
+								</header>
+								<section class="entry-content">
+								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bnwtheme' ); ?></p>
+								</section>
+								<footer class="article-footer">
+								<p><?php _e( 'This is the error message in the index.php template.', 'bnwtheme' ); ?></p>
+								</footer>
+							</article>
+							<!-- /Post Not Found -->
+						<?php endif; ?>
+					</div>	
+				</div>
+				
+				<div class="col-lg-4">
+					<div class="sidebar">
+						<!-- Sidebar Primary Sidebar -->
+						<?php get_sidebar(); ?>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</section><!-- /home-blog -->
+	<!-- /Content End -->
+<?php get_footer(); ?>
