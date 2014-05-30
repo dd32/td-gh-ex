@@ -377,7 +377,7 @@ add_filter( 'body_class', 'ct_ignite_body_class' );
 
 function ct_ignite_post_class_update($classes){
 
-    $remove = [];
+    $remove = array();
     $remove[] = 'entry';
 
     if ( ! is_singular() ) {
