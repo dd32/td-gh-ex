@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package simone
+ * @package my-simone
  */
 
 if ( ! function_exists( 'simone_paging_nav' ) ) :
@@ -79,8 +79,8 @@ function simone_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'simone' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . __( 'Previous Post:', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
-				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . __( 'Next Post:', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
+				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
             </div><!-- .post-nav-box -->
@@ -123,12 +123,12 @@ function simone_posted_on() {
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( _x('F jS, Y', 'Public posted on date', 'simone') ) ),
+		esc_html( get_the_date( __('F jS, Y', 'simone') ) ),
 		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date( _x('F jS, Y', 'Public modified on date', 'simone') ) )
+		esc_html( get_the_modified_date( __('F jS, Y', 'simone') ) )
 	);
-        // Translators: Text wrapped in mobile-hide class is hidden on wider screens.
-	printf( _x( '<span class="byline">Written by %1$s</span><span class="mobile-hide"> on </span><span class="posted-on">%2$s</span><span class="mobile-hide">.</span>', 'mobile-hide class is used to hide connecting elements like "on" and "." on wider screens.', 'simone' ),
+
+	printf( __( '<span class="byline">Written by %1$s</span><span class="posted-on">%2$s</span>', 'my-simone' ),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
@@ -278,11 +278,11 @@ function simone_the_responsive_thumbnail($post_id) {
     
     echo '<picture>';
     echo '<!--[if IE 9]><video style="display: none;"><![endif]-->';
-    echo '<source srcset="' . $thumb_data['thumb_large'] . ', ' . $thumb_data['thumb_original'] . ' 2x" media="(min-width: 800px)">';
-    echo '<source srcset="' . $thumb_data['thumb_medium'] . ', ' . $thumb_data['thumb_large'] . ' 2x" media="(min-width: 400px)">'; 
-    echo '<source srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' 2x">'; 
+    echo '<source srcset="' . $thumb_data['thumb_large'] . ', ' . $thumb_data['thumb_original'] . ' x2" media="(min-width: 800px)">';
+    echo '<source srcset="' . $thumb_data['thumb_medium'] . ', ' . $thumb_data['thumb_large'] . ' x2" media="(min-width: 400px)">'; 
+    echo '<source srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' x2">'; 
     echo '<!--[if IE 9]></video><![endif]-->';
-    echo '<img srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' 2x" alt="' . $thumb_data['thumb_alt'] . '">';
+    echo '<img srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' x2" alt="' . $thumb_data['thumb_alt'] . '">';
     echo '</picture>';
 }
 

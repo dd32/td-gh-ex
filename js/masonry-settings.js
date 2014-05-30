@@ -1,6 +1,6 @@
 // Masonry settings to organize footer widgets
 jQuery(document).ready(function($){
-    var $container = $('#footer-widgets').masonry();
+    var $container = $('#footer-widgets');
     enquire.register("screen and (min-width:880px)", {
 
         // Triggered when a media query matches.
