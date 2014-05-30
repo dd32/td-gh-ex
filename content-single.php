@@ -6,6 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPost" itemtype="http://schema.org/BlogPosting" itemscope="itemscope">
 	<div class="inside-article">
+		<?php do_action( 'generate_before_content'); ?>
 		<header class="entry-header">
 			<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 
@@ -52,5 +53,6 @@
 
 			<?php edit_post_link( __( 'Edit', 'generate' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- .entry-meta -->
+		<?php do_action( 'generate_after_content'); ?>
 	</div><!-- .inside-article -->
 </article><!-- #post-## -->

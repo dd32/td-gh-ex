@@ -10,8 +10,10 @@
 
 	</div><!-- #content -->
 </div><!-- #page -->
+<?php do_action('generate_before_footer'); ?>
 <div <?php generate_footer_class(); ?>>
 	<?php 
+	do_action('generate_before_footer_content');
 	global $post;
 	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	$stored_meta = '';
@@ -97,6 +99,7 @@
 			<?php do_action( 'generate_credits' ); ?>
 		</div>
 	</footer><!-- .site-info -->
+	<?php do_action( 'generate_after_footer_content' ); ?>
 </div><!-- .site-footer -->
 
 <?php wp_footer(); ?>

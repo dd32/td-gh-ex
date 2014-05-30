@@ -8,6 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
 	<div class="inside-article">
+		<?php do_action( 'generate_before_content'); ?>
 		<header class="entry-header">
 			<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 		</header><!-- .entry-header -->
@@ -21,6 +22,7 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
+		<?php do_action( 'generate_after_content'); ?>
 		<?php edit_post_link( __( 'Edit', 'generate' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 	</div><!-- .inside-article -->
 </article><!-- #post-## -->

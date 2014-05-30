@@ -187,7 +187,7 @@ function generate_settings_page()
 									!function_exists('generate_disable_elements') ) :
 										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
 									else :
-										echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.') . '</p>';
+										echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.','generate') . '</p>';
 									endif;
 
 								?>

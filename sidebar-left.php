@@ -7,7 +7,7 @@
 ?>
 	<div id="left-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" <?php generate_left_sidebar_class(); ?>>
 		<div class="inside-left-sidebar">
-			<?php do_action( 'generate_before_left_sidebar' ); ?>
+			<?php do_action( 'generate_before_left_sidebar_content' ); ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
 
 				<aside id="search" class="widget widget_search">
@@ -31,5 +31,6 @@
 				</aside>
 
 			<?php endif; // end sidebar widget area ?>
+			<?php do_action( 'generate_after_left_sidebar_content' ); ?>
 		</div>
 	</div><!-- #secondary -->

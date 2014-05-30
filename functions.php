@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.5');
+define( 'GENERATE_VERSION', '1.0.6');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -325,7 +325,7 @@ function generate_add_navigation_before_header()
 	endif;
 	
 }
-add_action( 'generate_inside_header', 'generate_add_navigation_float_right', 5 );
+add_action( 'generate_before_header_content', 'generate_add_navigation_float_right', 5 );
 function generate_add_navigation_float_right()
 {
 	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
@@ -335,7 +335,7 @@ function generate_add_navigation_float_right()
 	endif;
 	
 }
-add_action( 'generate_before_right_sidebar', 'generate_add_navigation_before_right_sidebar', 5 );
+add_action( 'generate_before_right_sidebar_content', 'generate_add_navigation_before_right_sidebar', 5 );
 function generate_add_navigation_before_right_sidebar()
 {
 	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
@@ -347,7 +347,7 @@ function generate_add_navigation_before_right_sidebar()
 	endif;
 	
 }
-add_action( 'generate_before_left_sidebar', 'generate_add_navigation_before_left_sidebar', 5 );
+add_action( 'generate_before_left_sidebar_content', 'generate_add_navigation_before_left_sidebar', 5 );
 function generate_add_navigation_before_left_sidebar()
 {
 	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );

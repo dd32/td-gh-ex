@@ -9,6 +9,13 @@ Changelog Legend:
 [!] = Bugs
 
 ----
+(5/30/2014) - 1.0.6
+
+[!] Fixed major bug causing Customizer options to disappear
+[+] Additional tags
+[+] More hooks
+
+----
 
 (5/23/2014) - 1.0.5
 [*] Theme defaults changed from global variable to function: generate_get_defaults()

@@ -74,7 +74,13 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 	add_action('generate_head_css','generate_font_css');
 	function generate_font_css()
 	{
-		$generate_settings = get_option( 'generate_settings', generate_get_default_fonts() );
+		$generate_settings = get_option( 'generate_settings' );
+		if ( !empty( $generate_settings['font_body'] ) ) :
+			$generate_settings = get_option( 'generate_settings', generate_get_default_fonts() );
+		else :
+			$generate_settings = generate_get_default_fonts();
+		endif;
+		
 		$space = ' ';
 		
 		// Start the magic
@@ -198,7 +204,13 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			"Georgia,+Times New Roman,+Times,+serif"
 		);
 
-		$generate_settings = get_option( 'generate_settings', generate_get_default_fonts() );
+		// Force a check to see if the settings exist - if not, populate them.
+		$generate_settings = get_option( 'generate_settings' );
+		if ( !empty( $generate_settings['font_body'] ) ) :
+			$generate_settings = get_option( 'generate_settings', generate_get_default_fonts() );
+		else :
+			$generate_settings = generate_get_default_fonts();
+		endif;
 		
 		$google_fonts = array();
 		if ( !empty($generate_settings) ) :
@@ -285,7 +297,13 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 	add_action('generate_head_css','generate_advanced_css');
 	function generate_advanced_css()
 	{
-		$generate_settings = get_option( 'generate_settings', generate_get_color_defaults() );
+		
+		$generate_settings = get_option( 'generate_settings' );
+		if ( !empty( $generate_settings['header_background_color'] ) ) :
+			$generate_settings = get_option( 'generate_settings', generate_get_color_defaults() );
+		else :
+			$generate_settings = generate_get_color_defaults();
+		endif;
 		$space = ' ';
 
 		// Start the magic

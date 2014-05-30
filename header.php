@@ -21,7 +21,7 @@
 	<?php do_action( 'generate_before_header' ); ?>
 	<header itemtype="http://schema.org/WPHeader" itemscope="itemscope" id="masthead" role="banner" <?php generate_header_class(); ?>>
 		<div <?php generate_inside_header_class(); ?>>
-			<?php do_action( 'generate_inside_header'); ?>
+			<?php do_action( 'generate_before_header_content'); ?>
 			
 			<?php if ( is_active_sidebar('header') ) : ?>
 				<div class="header-widget">
@@ -44,6 +44,7 @@
 			if ( get_theme_mod( 'generate_logo' ) ) : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="header-image" src="<?php echo get_theme_mod( 'generate_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 			<?php endif; ?>
+			<?php do_action( 'generate_after_header_content'); ?>
 		</div><!-- .inside-header -->
 	</header><!-- #masthead -->
 	<?php do_action( 'generate_after_header' ); ?>
