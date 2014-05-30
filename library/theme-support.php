@@ -62,8 +62,8 @@
 		// registering wp3+ menus
 		register_nav_menus(
 			array(
-				'top-nav' => __( 'Top Menu', 'bnwtheme' ),        // Top Menu in header
-				'main-nav' => __( 'The Main Menu', 'bnwtheme' ),  // main nav in header
+				//'top-nav' => __( 'Top Menu', 'bnwtheme' ),        // Top Menu in header
+				'main-nav' => __( 'Main Menu', 'bnwtheme' ),      // main nav in header
 				'footer-nav' => __( 'Footer Menu', 'bnwtheme' )   // Footer Menu
 			)
 		);
