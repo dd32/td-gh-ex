@@ -11,7 +11,6 @@
  */
 global $adventurous_options_defaults;
 $adventurous_options_defaults = array(
-	'disable_responsive'					=> '0',
 	'fav_icon'								=> get_template_directory_uri().'/images/favicon.ico',
  	'remove_favicon'						=> '0',
 	'web_clip'								=> get_template_directory_uri().'/images/apple-touch-icon.png',

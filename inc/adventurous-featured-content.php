@@ -5,7 +5,7 @@
  * @uses adventurous_main action to add it in the header
  */
 function adventurous_default_featured_content() { 
-	delete_transient( 'adventurous_default_featured_content' ); 
+	//delete_transient( 'adventurous_default_featured_content' ); 
 	
 	// Getting data from Theme Options
 	global $adventurous_options_settings;
@@ -121,7 +121,7 @@ if ( ! function_exists( 'adventurous_homepage_featured_content' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_homepage_featured_content() { 
-	delete_transient( 'adventurous_homepage_featured_content' );
+	//delete_transient( 'adventurous_homepage_featured_content' );
 	
 	// Getting data from Theme Options
 	global $adventurous_options_settings;

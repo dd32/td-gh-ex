@@ -34,13 +34,14 @@ function adventurous_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
 
 	/**
-	 * Loads up Responsive stylesheet and Menu JS
+	 * Loads up Responsive stylesheet
 	 */
-	if ( empty ($options[ 'disable_responsive' ] ) ) {	
-		wp_enqueue_style( 'adventurous-responsive', get_template_directory_uri() . '/css/responsive.css' );
-		
-		wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20140317', true );	
-	}
+	wp_enqueue_style( 'adventurous-responsive', get_template_directory_uri() . '/css/responsive.css' );
+	
+	/**
+	 * Loads up Responsive Video Script
+	 */	
+	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20140317', true );	
 	
 	/**
 	 * Loads up jQuery Waypoints and Custom Scripts
@@ -94,21 +95,7 @@ add_action( 'wp_enqueue_scripts', 'adventurous_scripts' );
  * @action wp_head
  */
 function adventurous_responsive() {
-	//delete_transient('adventurous_responsive');	
-	
-	if ( !$adventurous_responsive = get_transient( 'adventurous_responsive' ) ) {
-	global $adventurous_options_settings;
-   	$options = $adventurous_options_settings;
-
-		if ( $options[ 'disable_responsive' ] == '0' ) {
-			$adventurous_responsive = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-		}
-		else {
-			$adventurous_responsive = '<!-- Disable Responsive -->';
-		}
-		set_transient( 'adventurous_responsive', $adventurous_responsive, 86940 );										  
-	}
-	echo $adventurous_responsive;
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 } // adventurous_responsive
 add_filter( 'wp_head', 'adventurous_responsive', 1 );
 
@@ -209,7 +196,7 @@ function adventurous_content_image() {
    	<?php
 	}
 }
-endif; //adventurous_content_image
+endif; //adventurous_content_image 
 
 
 /**
@@ -231,7 +218,7 @@ function adventurous_inline_css() {
 			$adventurous_inline_css	.= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
 	        $adventurous_inline_css .= '<style type="text/css" media="screen">' . "\n";
 			$adventurous_inline_css .=  $options['custom_css'] . "\n";
-			$adventurous_inline_css 	.= '</style>' . "\n";
+			$adventurous_inline_css .= '</style>' . "\n";
 			
 		}
 			

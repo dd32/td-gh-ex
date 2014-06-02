@@ -152,24 +152,6 @@ function adventurous_theme_options_do_page() {
                    
                 <!-- Theme Options -->
                 <div id="themeoptions">     
-                
-                	<div id="responsive-design" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Responsive Design', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
-                       		<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Responsive Design?', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='adventurous_options[disable_responsive]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[disable_responsive]" value="1" <?php checked( '1', $options['disable_responsive'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
-                                </div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                      			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content --> 
-                    </div><!-- .option-container --> 
                        
                   	<div id="fav-icons" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'adventurous' ); ?></a></h3>
@@ -1367,13 +1349,7 @@ function adventurous_theme_options_validate( $options ) {
 	
     $input = array();
     $input = $options;
-	
-	// Data Validation for Resonsive Design	
-	if ( isset( $input['disable_responsive'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'disable_responsive' ] = $input[ 'disable_responsive' ];
-	}
-	
+
 	// Data Validation for Favicon		
 	if ( isset( $input[ 'fav_icon' ] ) ) {
 		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
@@ -1744,7 +1720,6 @@ function adventurous_theme_options_validate( $options ) {
  * Clearing the cache if any changes in Admin Theme Option
  */
 function adventurous_themeoption_invalidate_caches() {
-	delete_transient('adventurous_responsive'); // Responsive design
 	delete_transient( 'adventurous_favicon' );	 // favicon on cpanel/ backend and frontend
 	delete_transient( 'adventurous_featured_image' ); // featured header image	
 	delete_transient( 'adventurous_inline_css' ); // Custom Inline CSS
@@ -1841,5 +1816,5 @@ function adventurous_wp_link_shortcode() {
  * @return string
  */
 function adventurous_theme_link_shortcode() {
-	return '<a href="http://catchthemes.com/themes/adventurous-pro" target="_blank" title="' . esc_attr__( 'Adventurous Pro', 'adventurous' ) . '"><span>' . __( 'Adventurous Pro', 'adventurous' ) . '</span></a>';
+	return '<a href="http://catchthemes.com/themes/adventurous" target="_blank" title="' . esc_attr__( 'Adventurous', 'adventurous' ) . '"><span>' . __( 'Adventurous', 'adventurous' ) . '</span></a>';
 }

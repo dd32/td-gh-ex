@@ -18,28 +18,16 @@ $options = $adventurous_options_settings;
 
 if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
     <div id="header-right" class="header-sidebar widget-area">
-    	<?php if ( has_nav_menu( 'primary' ) ) { ?>
-                <aside class="widget widget_nav_menu">
-                    <?php adventurous_primary_menu(); ?>
-                </aside>
-                <aside class="widget widget_search" id="header-search-widget">
-                	<span id="header-search" href="#"></span>
-                    <div class="header-search-wrap displaynone">
-                    	<?php echo get_search_form(); ?>
-                    </div>
-   				</aside>
-				<div id="header-mobile-menu"><a href="#" class="mobile-nav closed"><span class="mobile-menu-bar"></span></a></div>
-            <?php
-            } 
-			else { ?>
-				<aside class="widget widget_search" id="header-search-widget">
-                	<span id="header-search" href="#"></span>
-                    <div class="header-search-wrap displaynone">
-                    	<?php echo get_search_form(); ?>
-                    </div>
-   				</aside>
-			<?php 
-			} ?>
+        <aside class="widget widget_nav_menu">
+            <?php adventurous_primary_menu(); ?>
+        </aside>
+        <aside class="widget widget_search" id="header-search-widget">
+            <span id="header-search" href="#"></span>
+            <div class="header-search-wrap displaynone">
+                <?php echo get_search_form(); ?>
+            </div>
+        </aside>
+        <div id="header-mobile-menu"><a href="#" class="mobile-nav closed"><span class="mobile-menu-bar"></span></a></div>  
     </div><!-- #header-right .widget-area -->
 <?php 
 }

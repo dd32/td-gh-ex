@@ -101,8 +101,8 @@ function adventurous_setup() {
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
      */		
 	register_nav_menus(array(
-		'primary' 	=> __( 'Fixed Header Menu', 'adventurous' ),
-		'secondary'	=> __( 'Header Menu', 'adventurous' )
+		'primary' 	=> __( 'Header Right Menu', 'adventurous' ),
+		'secondary'	=> __( 'Header Secondary Menu', 'adventurous' )
 	) );
 	
 	/**

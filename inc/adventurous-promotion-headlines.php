@@ -10,7 +10,7 @@ if ( ! function_exists( 'adventurous_homepage_headline' ) ) :
  * @since Adventurous 1.0
  */
 function adventurous_homepage_headline() { 
-	delete_transient( 'adventurous_homepage_headline' );
+	//delete_transient( 'adventurous_homepage_headline' );
 	
 	global $post, $wp_query, $adventurous_options_settings;
    	$options = $adventurous_options_settings;

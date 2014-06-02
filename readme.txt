@@ -96,6 +96,19 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 == Changelog ==
 
+Version 0.2
+* Added slider navigation arrow and fixed slider CSS
+* Changed theme description
+* Changed footer credit
+* Removed unused slider codes
+* Fixed Header Image option in page/post layout
+* Fixed author css
+* Fixed footer widget css in mobile devices
+* Fixed seconday menu issue in mobile devices
+* Fixed header css
+* Fixed iPad Portrait CSS
+
+
 Version 0.1
 * Initial release in http://catchthemes.com
 * Submitted theme for review in http://wordpress.org
