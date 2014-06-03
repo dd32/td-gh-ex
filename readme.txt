@@ -7,12 +7,14 @@ Description: Booster is a clean minimal and responsive WordPress theme well suit
 and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
 social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
-Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width,theme-options
-version: 0.2
+Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
+version: 0.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.
 Use it to make something cool, have fun, and share what you've learned with others.
+
+Booster is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 == Theme Description ==
 

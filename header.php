@@ -34,7 +34,7 @@
     <div class="container no-padding">
     <?php if(get_header_image()){ ?>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" class="custom_header_img" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+			<img src="<?php header_image(); ?>" class="custom-header-img" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 	</a>
     <?php } ?>
       <div class="col-md-3 no-padding text-left-menu">

@@ -7,4 +7,6 @@ i)   A few changes for comments and stylesheets.
 Version 0.2
 i)   Removed Custom post-content, Custom Post Types, Custom Taxonomies etc from the theme.
 
-
+Version 0.2.1
+i)	 A few changes for FT Options.
+ii)  changes in style.css 
