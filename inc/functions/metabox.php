@@ -63,7 +63,7 @@ function sam_meta_box_save($post_id) {
         return;
 
     // if our current user can't edit this post, bail
-    if (!current_user_can('edit_post'))
+    if (!current_user_can('edit_posts'))
         return;
 
     // now we can actually save the data
