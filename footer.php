@@ -11,9 +11,8 @@
       <div class="col-md-7 footer-margin-top footer-center no-padding">
 	  		<?php if($booster_options['footertext'] != '') { 
 						echo $booster_options['footertext'];
-					} else {
-						echo"&copy; ".date("Y"). " ".get_bloginfo( 'name' )." All Right Reserved. <a href='http://fasterthemes.com/themes/Booster' target='_blank'>Booster Theme</a> by Faster Themes.";	
-				}
+					}
+		    echo " <a href='http://fasterthemes.com/themes/Booster' target='_blank'>Booster Theme</a> by Faster Themes.";				
 			 ?>
       </div>
        <?php 

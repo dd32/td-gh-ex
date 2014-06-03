@@ -10,3 +10,6 @@ i)   Removed Custom post-content, Custom Post Types, Custom Taxonomies etc from 
 Version 0.2.1
 i)	 A few changes for FT Options.
 ii)  changes in style.css 
+
+Version 0.3
+i) Replacing screenshot.png
