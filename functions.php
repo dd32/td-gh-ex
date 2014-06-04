@@ -11,7 +11,6 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); //Menu Walker Class
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');  //Menu Walker Class	
 	require_once( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');     //Theme Scripts And Styles	
-	//require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/post-meta.php');      //Meta Box Added	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
