@@ -135,8 +135,7 @@ function booster_enqueue()
 	wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css',array(),'','');
 	wp_enqueue_style('custom',get_template_directory_uri().'/css/custom.css',array(),'','');
 	wp_enqueue_style('style',get_stylesheet_uri(),array(),'','');
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'','');	
+	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'','');		
 	wp_enqueue_script('default',get_template_directory_uri().'/js/default.js');	
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
@@ -158,7 +157,7 @@ function booster_custom_breadcrumbs() {
   $after = '</span>'; // tag after the current crumb
 
   global $post;
-  $homeLink = home_url();
+  $homeLink = esc_url(home_url());
 
   if (is_home() || is_front_page()) {
 

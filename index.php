@@ -17,9 +17,9 @@ $booster_slider = array(0 => $booster_options['first-slider-image'],1 => $booste
 $booster_link = array(0 => $booster_options['first-slider-link'], 1 => $booster_options['second-slider-link'],2 => $booster_options['third-slider-link'],								3 => $booster_options['forth-slider-link'],4 => $booster_options['fifth-slider-link']);										
 $booster_value = array_filter($booster_slider);
 ?>
+<?php if(!empty($booster_value)) { ?>
 <div id="myCarousel" class="carousel slide col-md-12 no-padding-left subscribe-box" data-ride="carousel"> 
   <!-- Indicators -->
-<?php if(!empty($booster_value)) { ?>
     <ol class="carousel-indicators">
     <?php $booster_count = 0; 
 		  foreach ($booster_slider as $booster_slide) { 
@@ -36,20 +36,10 @@ $booster_value = array_filter($booster_slider);
     </div>
 	<?php $booster_count_img++; } ?>
   </div>  
-	<?php } else { ?>	
-    <ol class="carousel-indicators">
-	   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	</ol>
-    <div class="carousel-inner">
-    <div class="item active">
-     <img src="<?php echo get_template_directory_uri(); ?>/images/home-slider.jpg" alt="First slide" class="img-responsive booster-slider-image"> 
-    </div>
-    </div>  
-	<?php } ?>
     	<a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
   		<a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
     </div>
-  
+<?php } ?>  
 <!-- /.carousel --> 
  
     </div>

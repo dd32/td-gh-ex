@@ -1008,7 +1008,10 @@ body {
     font-size: 36px;
     margin-top: 5px;
 }
- @media(max-width:600px) {
+.booster-slider-setion {
+	padding:10px 0px 0px 0px;
+}
+@media(max-width:600px) {
 .service-img-test-padding {
 	padding: 2px 0px 10px 0 !important;
 }

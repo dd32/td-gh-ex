@@ -13,3 +13,7 @@ ii)  changes in style.css
 
 Version 0.3
 i) Replacing screenshot.png
+
+Version 0.3.1
+i)   Changed code in custom-header.php
+ii)  Changed slider code in index.php and a few changes in functions.php
