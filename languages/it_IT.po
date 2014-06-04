@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Base WP v1.01\n"
+"Project-Id-Version: Base WP v1.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-21 11:05:53+0000\n"
+"PO-Revision-Date: 2014-06-04 10:48:30+0000\n"
 "Last-Translator: iografica <info@iografica.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgstr "Non abbiamo trovato alcuna corrispondenza con quello che stavi cercando.
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Sembra che non siamo riusciti a trovare quello che ti interessava.  Prova ad effettuare una ricerca."
 
-#: content-page.php:18
+#: content-page.php:22
 #: content-pagenotitle.php:17
 #: content-single.php:25
 #: content.php:32
@@ -190,7 +190,7 @@ msgstr "Sembra che non siamo riusciti a trovare quello che ti interessava.  Prov
 msgid "Pages:"
 msgstr "Pagine:"
 
-#: content-page.php:23
+#: content-page.php:27
 #: content-pagenotitle.php:22
 #: content-single.php:65
 #: content.php:66
@@ -263,22 +263,22 @@ msgstr "1 Commento"
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: functions.php:45
+#: functions.php:46
 #@ base
 msgid "Primary Menu"
 msgstr "Menu Principale"
 
-#: functions.php:77
+#: functions.php:75
 #@ base
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:85
 #@ base
 msgid "First Footer Widget Area"
 msgstr "Prima Widget Area Footer"
 
-#: functions.php:88
+#: functions.php:87
 #@ base
 msgid "The first footer widget area"
 msgstr "La prima area widget del footer"
@@ -293,32 +293,32 @@ msgstr "Seconda Footer Widget Area"
 msgid "The second footer widget area"
 msgstr "La seconda area widget del footer"
 
-#: functions.php:106
+#: functions.php:107
 #@ base
 msgid "Third Footer Widget Area"
 msgstr "Terza Footer Widget Area"
 
-#: functions.php:108
+#: functions.php:109
 #@ base
 msgid "The third footer widget area"
 msgstr "La terza area widget del footer"
 
-#: functions.php:116
+#: functions.php:118
 #@ base
 msgid "Fourth Footer Widget Area"
 msgstr "Quarta Footer Widget Area"
 
-#: functions.php:118
+#: functions.php:120
 #@ base
 msgid "The fourth footer widget area"
 msgstr "La quarta area widget del footer"
 
-#: header.php:38
+#: header.php:44
 #@ base
 msgid "Menu"
 msgstr ""
 
-#: header.php:39
+#: header.php:45
 #@ base
 msgid "Skip to content"
 msgstr "Vai al contenuto"
@@ -523,7 +523,7 @@ msgstr ""
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr "<span class=\"posted-on\">Pubblicato in %1$s</span><span class=\"byline\"> da %2$s</span>"
 
-#: options.php:61
+#: options.php:130
 #@ base
 msgid "Logo Upload"
 msgstr ""
@@ -560,4 +560,94 @@ msgstr ""
 #@ base
 msgid "%s"
 msgstr ""
+
+#: options.php:43
+#@ base
+msgid "Link color"
+msgstr ""
+
+#: options.php:44
+#: options.php:50
+#: options.php:55
+#: options.php:60
+#: options.php:66
+#: options.php:74
+#: options.php:79
+#: options.php:87
+#: options.php:92
+#: options.php:97
+#: options.php:102
+#@ base
+msgid "Only available in premium version"
+msgstr "Disponibile solo nella versione premium"
+
+#: options.php:49
+#@ base
+msgid "Link color hover"
+msgstr ""
+
+#: options.php:54
+#@ base
+msgid "Footer text"
+msgstr "Testo del footer"
+
+#: options.php:59
+#@ base
+msgid "Display credits link"
+msgstr ""
+
+#: options.php:65
+#@ base
+msgid "Meta Slider"
+msgstr ""
+
+#: options.php:73
+#@ base
+msgid "Custom css"
+msgstr ""
+
+#: options.php:78
+#@ base
+msgid "Footer code"
+msgstr ""
+
+#: options.php:86
+#@ base
+msgid "Show featured image in blog and archive page"
+msgstr "Mostra l'immagine in evidenza nel blog e nelle pagine di archivio"
+
+#: options.php:91
+#@ base
+msgid "Show featured image in single post"
+msgstr "Mostra l'immagine in evidenza nel singolo articolo"
+
+#: options.php:96
+#@ base
+msgid "Display meta inforamtion"
+msgstr ""
+
+#: options.php:148
+#@ base
+msgid "Favicon"
+msgstr ""
+
+#: options.php:169
+#@ base
+msgid "Upgrade to premium version"
+msgstr ""
+
+#: options.php:171
+#@ base
+msgid "Upgrade to the premium version to get access to advanced options."
+msgstr "Aggiorna il tema alla versione premium per avere accesso alle impostazioni avanzate."
+
+#: options.php:175
+#@ base
+msgid "With premium version you have access to priority support."
+msgstr "Con la versione premium hai diritto al servizio di assistenza."
+
+#: options.php:176
+#@ base
+msgid "We offer a 7 day full refund if you are not happy with your purchase."
+msgstr "Ti offriamo un rimborso completo entro 7 giorni se non sei soddisfatto del tuo acquisto."
 
