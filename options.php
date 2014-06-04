@@ -172,7 +172,7 @@ function optionscheck_display_sidebar() { ?>
                     <a title="Upgrade to premium version" href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank">
                     <span class="upgrade-button">Upgrade to premium</span>
                     </a>
-					<p><?php echo __('With premium version you have access to priority support and lifetime upgrade.',  "base"); ?></p>
+					<p><?php echo __('With premium version you have access to priority support.',  "base"); ?></p>
 					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
                 </div>
         </div>
