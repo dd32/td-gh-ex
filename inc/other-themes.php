@@ -15,7 +15,7 @@
 <div id="theme">
 <img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/ewp.png'; ?>" width="600">
 <div id="name">elegantWhite Pro</div>
-<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 12.99$!
+<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one best WordPress themes on the planet!
 
 <p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Go to the Fimply Store</a></p></div>
 
