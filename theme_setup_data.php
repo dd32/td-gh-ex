@@ -57,7 +57,7 @@ function theme_data_setup()
 			//Social media links
 			'footer_social_media_enabled'=>'on',
 			'social_media_twitter_link' =>"https://twitter.com/",
-			'social_media_facebook_link' =>"https:www.facebook.com",
+			'social_media_facebook_link' =>"https://www.facebook.com",
 			'social_media_linkedin_link' =>"http://linkedin.com/",
 			'social_media_google_plus' =>"https://plus.google.com/",
 					

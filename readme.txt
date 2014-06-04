@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.1.5.2
+1.SMALL FIX in default data.
 @Version: 1.1.5.1
 1.Word Break Issue for Post and Pages, fixed!!
 @Version: 1.1.5
