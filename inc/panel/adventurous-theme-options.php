@@ -260,20 +260,11 @@ function adventurous_theme_options_do_page() {
                             <div class="row">
                             	<div class="col col-1">
                                 	<?php _e( 'Assign Locations', 'adventurous' ); ?><br />
-                                    <small><?php _e( 'Note: You can assign your custom menu to Fixed Header Menu Location and Header Menu Location. This will replace the WordPress default page menu', 'adventurous' ); ?></small>
+                                    <small><?php _e( 'Note: You can assign your custom menu to Header Right Menu Location and Header Secondary Menu Location. This will replace the WordPress default page menu', 'adventurous' ); ?></small>
                                 </div>
                                 <div class="col col-2">
                                 	<a class="button" href="<?php echo admin_url('nav-menus.php?action=locations'); ?>"><?php _e('Click to Manage Menu Locations', 'adventurous'); ?></a>
                            		</div>
-                         	</div><!-- .row -->
-                           <div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Header Menu?', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                        			<input type='hidden' value='0' name='adventurous_options[remove_header_menu]'>
-                        			<input type="checkbox" id="favicon" name="adventurous_options[remove_header_menu]" value="1" <?php checked( '1', $options['remove_header_menu'] ); ?> /> <?php _e('Check to disable', 'adventurous'); ?>
-                              	</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
@@ -602,11 +593,11 @@ function adventurous_theme_options_do_page() {
                         <div class="option-content inside">
                          	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Enable Latest Posts?', 'adventurous' ); ?>
+                                	<?php _e( 'Disable Latest Posts?', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='adventurous_options[enable_posts_home]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[enable_posts_home]" value="1" <?php checked( '1', $options['enable_posts_home'] ); ?> /> <?php _e( 'Check to Enable', 'adventurous'); ?>
+                                    <input type="checkbox" id="headerlogo" name="adventurous_options[enable_posts_home]" value="1" <?php checked( '1', $options['enable_posts_home'] ); ?> /> <?php _e( 'Check to Disable', 'adventurous'); ?>
                              	</div>
                           	</div><!-- .row -->
                          	<div class="row">
@@ -748,25 +739,8 @@ function adventurous_theme_options_do_page() {
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                    
-                    <div id="feed-redirect" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Feed Redirect URL', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">  
-                                	<input type="text" size="70" name="adventurous_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'adventurous' ); ?>
-                             	</div>
-                          	</div><!-- .row --> 
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->     
-                    
+                    </div><!-- .option-container -->   
+                  
                     <div id="custom-css" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'adventurous' ); ?></a></h3>
                         <div class="option-content inside"> 
@@ -1017,7 +991,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Transition Delay', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="adventurous_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
+                                    <input type="text" name="adventurous_options[transition_delay]" value="<?php echo intval( $options[ 'transition_delay' ] ); ?>" size="2" />
                          			<span class="description"><?php _e( 'second(s)', 'adventurous' ); ?></span>
                              	</div>
                           	</div><!-- .row -->  
@@ -1026,7 +1000,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Transition Length', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="adventurous_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
+                                    <input type="text" name="adventurous_options[transition_duration]" value="<?php echo intval( $options[ 'transition_duration' ] ); ?>" size="2" />
                                  	<span class="description"><?php _e( 'second(s)', 'adventurous' ); ?></span>
                              	</div>
                           	</div><!-- .row -->                                 
@@ -1366,13 +1340,7 @@ function adventurous_theme_options_validate( $options ) {
 	if ( isset( $input['remove_web_clip'] ) ) {
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
-	}	 
-	
-	// Data Validation for Disble Header Menu
-	if ( isset( $input['remove_header_menu'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'remove_header_menu' ] = $input[ 'remove_header_menu' ];
-	}		
+	}	 	
 	
 	// Data Validation for Logo 
 	if ( isset( $input['remove_header_logo'] ) ) {
@@ -1542,13 +1510,13 @@ function adventurous_theme_options_validate( $options ) {
         $input_validated['transition_effect'] = wp_filter_nohtml_kses( $input['transition_effect'] );
     }
     // data validation for transition delay
-    if ( isset( $input[ 'transition_delay' ] ) && is_numeric( $input[ 'transition_delay' ] ) ) {
-        $input_validated[ 'transition_delay' ] = $input[ 'transition_delay' ];
-    }
+	if ( isset( $input[ 'transition_delay' ] ) ) {
+		$input_validated[ 'transition_delay' ] = absint( $input[ 'transition_delay' ] ) ? $input [ 'transition_delay' ] : 4;
+	}		
     // data validation for transition length
-    if ( isset( $input[ 'transition_duration' ] ) && is_numeric( $input[ 'transition_duration' ] ) ) {
-        $input_validated[ 'transition_duration' ] = $input[ 'transition_duration' ];
-    }	
+	if ( isset( $input[ 'transition_duration' ] ) ) {
+		$input_validated[ 'transition_duration' ] = absint( $input[ 'transition_duration' ] ) ? $input [ 'transition_duration' ] : 1;
+	}		
 	
 	// data validation for Featured Post Slider
 	if ( isset( $input[ 'featured_slider' ] ) ) {
@@ -1696,13 +1664,6 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
 		$input_validated[ 'featured_image' ] = $defaults[ 'featured_image' ];
 	}		
-	
-
-
-	//Feed Redirect
-	if ( isset( $input[ 'feed_url' ] ) ) {
-		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
-	}
 	
 	//Reset Footer
 	if ( $input[ 'reset_footer' ] == 1 ) {

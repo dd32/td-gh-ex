@@ -24,7 +24,7 @@ function adventurous_setup() {
 	 * Global content width.
 	 */
 	 if (!isset($content_width))
-     	$content_width = 1220;
+     	$content_width = 1190;
 				
 	/**
 	 * Make theme available for translation

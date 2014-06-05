@@ -46,6 +46,10 @@ do_action( 'adventurous_before' ); ?>
 	<?php 
     /** 
      * adventurous_before_header hook
+	 *
+	 * HOOKED_FUNCTION_NAME PRIORITY
+	 *
+	 * adventurous_header_top 10
      */
     do_action( 'adventurous_before_header' ); ?>
     
@@ -57,7 +61,6 @@ do_action( 'adventurous_before' ); ?>
 		 *
 		 * HOOKED_FUNCTION_NAME PRIORITY
 		 *
-		 * adventurous_header_top 10
 		 * adventurous_promotion_display 20
 		 */
 		do_action( 'adventurous_before_hgroup_wrap' ); ?>

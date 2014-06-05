@@ -91,10 +91,18 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 1. Primary: Login to your wp-admin area and go to "Appearance => Themes". Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
 2. Alternate: Unzip the template file (adventurous.zip) that you have downloaded. Via FTP, upload the whole folder (adventurous) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/adventurous/index.php (for example).
 3. Log into your WP admin panel and click on the Design tab. Now click on the Adventurous theme to activate it.
-4. Complete all of the required inputs on the Adventurous Pro Theme Options page (in the WP admin panel) and click "Save Changes".
+4. Complete all of the required inputs on the Adventurous Theme Options page (in the WP admin panel) and click "Save Changes".
 
 
 == Changelog ==
+
+Version 0.3
+* Added background and text color in promotion wrapper in style.css
+* Changed to Favicon disable by default 
+* Fixed content width
+* Fixed mobile menu css
+* Removed feed redirect option
+* Remove unnecessary option to disable header menu
 
 Version 0.2
 * Added slider navigation arrow and fixed slider CSS

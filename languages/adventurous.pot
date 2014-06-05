@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-02 18:57+0545\n"
-"PO-Revision-Date: 2014-06-02 18:57+0545\n"
+"POT-Creation-Date: 2014-06-05 11:00+0545\n"
+"PO-Revision-Date: 2014-06-05 11:00+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -174,7 +174,7 @@ msgstr[1] ""
 msgid "All Image Posts"
 msgstr ""
 
-#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:882
+#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:856
 msgid "Image"
 msgstr ""
 
@@ -284,137 +284,137 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:758
+#: ../inc/adventurous-functions.php:738
 #, php-format
 msgid "%s on Facebook"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:763
+#: ../inc/adventurous-functions.php:743
 #, php-format
 msgid "%s on Twitter"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:768
+#: ../inc/adventurous-functions.php:748
 #, php-format
 msgid "%s on Google+"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:773
+#: ../inc/adventurous-functions.php:753
 #, php-format
 msgid "%s on Linkedin"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:778
+#: ../inc/adventurous-functions.php:758
 #, php-format
 msgid "%s on Pinterest"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:783
+#: ../inc/adventurous-functions.php:763
 #, php-format
 msgid "%s on YouTube"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:788
+#: ../inc/adventurous-functions.php:768
 #, php-format
 msgid "%s on Vimeo"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:793
+#: ../inc/adventurous-functions.php:773
 #, php-format
 msgid "%s on Slideshare"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:798
+#: ../inc/adventurous-functions.php:778
 #, php-format
 msgid "%s on Foursquare"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:803
+#: ../inc/adventurous-functions.php:783
 #, php-format
 msgid "%s on Flickr"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:808
+#: ../inc/adventurous-functions.php:788
 #, php-format
 msgid "%s on Tumblr"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:813
+#: ../inc/adventurous-functions.php:793
 #, php-format
 msgid "%s on deviantART"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:818
+#: ../inc/adventurous-functions.php:798
 #, php-format
 msgid "%s on Dribbble"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:823
+#: ../inc/adventurous-functions.php:803
 #, php-format
 msgid "%s on MySpace"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:828
+#: ../inc/adventurous-functions.php:808
 #, php-format
 msgid "%s on WordPress"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:833
+#: ../inc/adventurous-functions.php:813
 #, php-format
 msgid "%s on RSS"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:838
+#: ../inc/adventurous-functions.php:818
 #, php-format
 msgid "%s on Delicious"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:843
+#: ../inc/adventurous-functions.php:823
 #, php-format
 msgid "%s on Last.fm"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:848
+#: ../inc/adventurous-functions.php:828
 #, php-format
 msgid "%s on Instagram"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:853
+#: ../inc/adventurous-functions.php:833
 #, php-format
 msgid "%s on GitHub"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:858
+#: ../inc/adventurous-functions.php:838
 #, php-format
 msgid "%s on Vkontakte"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:863
+#: ../inc/adventurous-functions.php:843
 #, php-format
 msgid "%s on My World"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:868
+#: ../inc/adventurous-functions.php:848
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:873
+#: ../inc/adventurous-functions.php:853
 #, php-format
 msgid "%s on Goodreads"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:878
+#: ../inc/adventurous-functions.php:858
 #, php-format
 msgid "%s on Skype"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:883
+#: ../inc/adventurous-functions.php:863
 #, php-format
 msgid "%s on Soundcloud"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:905
+#: ../inc/adventurous-functions.php:885
 msgid "ID"
 msgstr ""
 
@@ -431,7 +431,7 @@ msgid "Secondary Menu"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:14
-#: ../inc/panel/adventurous-theme-options.php:1819
+#: ../inc/panel/adventurous-theme-options.php:1780
 msgid "Adventurous"
 msgstr ""
 
@@ -448,10 +448,10 @@ msgid "Enable"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:44
-#: ../inc/panel/adventurous-theme-options.php:376
-#: ../inc/panel/adventurous-theme-options.php:519
-#: ../inc/panel/adventurous-theme-options.php:818
-#: ../inc/panel/adventurous-theme-options.php:974
+#: ../inc/panel/adventurous-theme-options.php:367
+#: ../inc/panel/adventurous-theme-options.php:510
+#: ../inc/panel/adventurous-theme-options.php:792
+#: ../inc/panel/adventurous-theme-options.php:948
 msgid "Disable"
 msgstr ""
 
@@ -479,25 +479,25 @@ msgid "No sidebar"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:91
-#: ../inc/panel/adventurous-theme-options.php:394
-#: ../inc/panel/adventurous-theme-options.php:477
+#: ../inc/panel/adventurous-theme-options.php:385
+#: ../inc/panel/adventurous-theme-options.php:468
 msgid "Featured Image"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:96
-#: ../inc/panel/adventurous-theme-options.php:386
-#: ../inc/panel/adventurous-theme-options.php:481
+#: ../inc/panel/adventurous-theme-options.php:377
+#: ../inc/panel/adventurous-theme-options.php:472
 msgid "Full Image"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:101
-#: ../inc/panel/adventurous-theme-options.php:390
-#: ../inc/panel/adventurous-theme-options.php:485
+#: ../inc/panel/adventurous-theme-options.php:381
+#: ../inc/panel/adventurous-theme-options.php:476
 msgid "Slider Image"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:106
-#: ../inc/panel/adventurous-theme-options.php:489
+#: ../inc/panel/adventurous-theme-options.php:480
 msgid "Disable Image"
 msgstr ""
 
@@ -506,12 +506,12 @@ msgid "Sidebar Layout"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:153
-#: ../inc/panel/adventurous-theme-options.php:342
+#: ../inc/panel/adventurous-theme-options.php:333
 msgid "Header Featured Image Options"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:181
-#: ../inc/panel/adventurous-theme-options.php:469
+#: ../inc/panel/adventurous-theme-options.php:460
 msgid "Content Featured Image Options"
 msgstr ""
 
@@ -679,41 +679,41 @@ msgstr ""
 msgid "Title (optional):"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:22
+#: ../inc/panel/adventurous-theme-options-defaults.php:21
 msgid "Adventurous is a Simple, Clean and Responsive WordPress Theme"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:23
+#: ../inc/panel/adventurous-theme-options-defaults.php:22
 msgid ""
 "This is Promotion Headine. You can edit this from \"Appearance => Theme "
 "Options => Promotion Headeline Options\""
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:24
+#: ../inc/panel/adventurous-theme-options-defaults.php:23
 msgid "Reviews"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:40
+#: ../inc/panel/adventurous-theme-options-defaults.php:39
 msgid "Continue Reading &rarr;"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:43
+#: ../inc/panel/adventurous-theme-options-defaults.php:42
 msgid "Search &hellip;"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:96
+#: ../inc/panel/adventurous-theme-options-defaults.php:94
 msgid "Copyright"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:96
+#: ../inc/panel/adventurous-theme-options-defaults.php:94
 msgid "All Rights Reserved"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:96
+#: ../inc/panel/adventurous-theme-options-defaults.php:94
 msgid "Powered by"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:96
+#: ../inc/panel/adventurous-theme-options-defaults.php:94
 msgid "Theme"
 msgstr ""
 
@@ -787,7 +787,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:135
-#: ../inc/panel/adventurous-theme-options.php:1117
+#: ../inc/panel/adventurous-theme-options.php:1091
 msgid "Facebook"
 msgstr ""
 
@@ -800,7 +800,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:136
-#: ../inc/panel/adventurous-theme-options.php:1125
+#: ../inc/panel/adventurous-theme-options.php:1099
 msgid "Twitter"
 msgstr ""
 
@@ -838,12 +838,11 @@ msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:165
 #: ../inc/panel/adventurous-theme-options.php:209
-#: ../inc/panel/adventurous-theme-options.php:275
-#: ../inc/panel/adventurous-theme-options.php:293
+#: ../inc/panel/adventurous-theme-options.php:284
+#: ../inc/panel/adventurous-theme-options.php:564
 #: ../inc/panel/adventurous-theme-options.php:573
 #: ../inc/panel/adventurous-theme-options.php:582
-#: ../inc/panel/adventurous-theme-options.php:591
-#: ../inc/panel/adventurous-theme-options.php:984
+#: ../inc/panel/adventurous-theme-options.php:958
 msgid "Check to disable"
 msgstr ""
 
@@ -861,30 +860,29 @@ msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:182
 #: ../inc/panel/adventurous-theme-options.php:227
-#: ../inc/panel/adventurous-theme-options.php:313
-#: ../inc/panel/adventurous-theme-options.php:415
+#: ../inc/panel/adventurous-theme-options.php:304
+#: ../inc/panel/adventurous-theme-options.php:406
 msgid "Preview"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:195
 #: ../inc/panel/adventurous-theme-options.php:243
-#: ../inc/panel/adventurous-theme-options.php:279
-#: ../inc/panel/adventurous-theme-options.php:335
-#: ../inc/panel/adventurous-theme-options.php:463
-#: ../inc/panel/adventurous-theme-options.php:494
-#: ../inc/panel/adventurous-theme-options.php:595
-#: ../inc/panel/adventurous-theme-options.php:642
-#: ../inc/panel/adventurous-theme-options.php:696
-#: ../inc/panel/adventurous-theme-options.php:713
-#: ../inc/panel/adventurous-theme-options.php:748
-#: ../inc/panel/adventurous-theme-options.php:765
-#: ../inc/panel/adventurous-theme-options.php:790
-#: ../inc/panel/adventurous-theme-options.php:866
-#: ../inc/panel/adventurous-theme-options.php:926
-#: ../inc/panel/adventurous-theme-options.php:1034
-#: ../inc/panel/adventurous-theme-options.php:1069
-#: ../inc/panel/adventurous-theme-options.php:1102
-#: ../inc/panel/adventurous-theme-options.php:1324
+#: ../inc/panel/adventurous-theme-options.php:270
+#: ../inc/panel/adventurous-theme-options.php:326
+#: ../inc/panel/adventurous-theme-options.php:454
+#: ../inc/panel/adventurous-theme-options.php:485
+#: ../inc/panel/adventurous-theme-options.php:586
+#: ../inc/panel/adventurous-theme-options.php:633
+#: ../inc/panel/adventurous-theme-options.php:687
+#: ../inc/panel/adventurous-theme-options.php:704
+#: ../inc/panel/adventurous-theme-options.php:739
+#: ../inc/panel/adventurous-theme-options.php:764
+#: ../inc/panel/adventurous-theme-options.php:840
+#: ../inc/panel/adventurous-theme-options.php:900
+#: ../inc/panel/adventurous-theme-options.php:1008
+#: ../inc/panel/adventurous-theme-options.php:1043
+#: ../inc/panel/adventurous-theme-options.php:1076
+#: ../inc/panel/adventurous-theme-options.php:1298
 msgid "Save Changes"
 msgstr ""
 
@@ -929,643 +927,625 @@ msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:263
 msgid ""
-"Note: You can assign your custom menu to Fixed Header Menu Location and "
-"Header Menu Location. This will replace the WordPress default page menu"
+"Note: You can assign your custom menu to Header Right Menu Location and "
+"Header Secondary Menu Location. This will replace the WordPress default page "
+"menu"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:266
 msgid "Click to Manage Menu Locations"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:271
-msgid "Disable Header Menu?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:285
+#: ../inc/panel/adventurous-theme-options.php:276
 msgid "Header Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:289
+#: ../inc/panel/adventurous-theme-options.php:280
 msgid "Disable Logo?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:298
+#: ../inc/panel/adventurous-theme-options.php:289
 msgid "Logo url"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:308
+#: ../inc/panel/adventurous-theme-options.php:299
 msgid "Change Logo"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:327
+#: ../inc/panel/adventurous-theme-options.php:318
 msgid "Disable Header Right Section?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:331
+#: ../inc/panel/adventurous-theme-options.php:322
+#: ../inc/panel/adventurous-theme-options.php:600
 msgid "Check to Disable"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:346
+#: ../inc/panel/adventurous-theme-options.php:337
 msgid "Enable Featured Header Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:351
-#: ../inc/panel/adventurous-theme-options.php:509
-#: ../inc/panel/adventurous-theme-options.php:810
-#: ../inc/panel/adventurous-theme-options.php:966
+#: ../inc/panel/adventurous-theme-options.php:342
+#: ../inc/panel/adventurous-theme-options.php:500
+#: ../inc/panel/adventurous-theme-options.php:784
+#: ../inc/panel/adventurous-theme-options.php:940
 msgid "Homepage"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:356
+#: ../inc/panel/adventurous-theme-options.php:347
 msgid "Excluding Homepage"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:361
-#: ../inc/panel/adventurous-theme-options.php:514
-#: ../inc/panel/adventurous-theme-options.php:814
-#: ../inc/panel/adventurous-theme-options.php:970
+#: ../inc/panel/adventurous-theme-options.php:352
+#: ../inc/panel/adventurous-theme-options.php:505
+#: ../inc/panel/adventurous-theme-options.php:788
+#: ../inc/panel/adventurous-theme-options.php:944
 msgid "Entire Site"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:366
+#: ../inc/panel/adventurous-theme-options.php:357
 msgid "Entire Site, Page/Post Featured Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:371
+#: ../inc/panel/adventurous-theme-options.php:362
 msgid "Pages & Posts"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:382
+#: ../inc/panel/adventurous-theme-options.php:373
 msgid "Page/Post Featured Image Size"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:400
+#: ../inc/panel/adventurous-theme-options.php:391
 msgid "Header Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:406
+#: ../inc/panel/adventurous-theme-options.php:397
 msgid "Click here to change header image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:406
+#: ../inc/panel/adventurous-theme-options.php:397
 msgid "Click here to change Header Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:408
+#: ../inc/panel/adventurous-theme-options.php:399
 msgid "Click here to add header image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:408
+#: ../inc/panel/adventurous-theme-options.php:399
 msgid "Click here to add Header Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:422
+#: ../inc/panel/adventurous-theme-options.php:413
 msgid "There is no Header Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:429
+#: ../inc/panel/adventurous-theme-options.php:420
 msgid "Featured Header Image Alt/Title Tag"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:437
+#: ../inc/panel/adventurous-theme-options.php:428
 msgid "Featured Header Image Link URL"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:445
-#: ../inc/panel/adventurous-theme-options.php:899
+#: ../inc/panel/adventurous-theme-options.php:436
+#: ../inc/panel/adventurous-theme-options.php:873
 msgid "Target. Open Link in New Window?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:449
-#: ../inc/panel/adventurous-theme-options.php:564
-#: ../inc/panel/adventurous-theme-options.php:903
+#: ../inc/panel/adventurous-theme-options.php:440
+#: ../inc/panel/adventurous-theme-options.php:555
+#: ../inc/panel/adventurous-theme-options.php:877
 msgid "Check to open in new window"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:455
+#: ../inc/panel/adventurous-theme-options.php:446
 msgid "Reset Header Featured Image Options?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:459
-#: ../inc/panel/adventurous-theme-options.php:692
-#: ../inc/panel/adventurous-theme-options.php:744
+#: ../inc/panel/adventurous-theme-options.php:450
+#: ../inc/panel/adventurous-theme-options.php:683
+#: ../inc/panel/adventurous-theme-options.php:735
 msgid "Check to reset"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:473
+#: ../inc/panel/adventurous-theme-options.php:464
 msgid "Content Featured Image Size"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:500
+#: ../inc/panel/adventurous-theme-options.php:491
 msgid "Promotion Headline Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:504
+#: ../inc/panel/adventurous-theme-options.php:495
 msgid "Enable Promotion"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:525
+#: ../inc/panel/adventurous-theme-options.php:516
 msgid "Headline Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:526
+#: ../inc/panel/adventurous-theme-options.php:517
 msgid "The appropriate length for Headine is around 10 words."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:534
+#: ../inc/panel/adventurous-theme-options.php:525
 msgid "Subheadline Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:535
+#: ../inc/panel/adventurous-theme-options.php:526
 msgid "The appropriate length for Headine is around 15 words."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:543
+#: ../inc/panel/adventurous-theme-options.php:534
 msgid "Button Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:544
+#: ../inc/panel/adventurous-theme-options.php:535
 msgid "The appropriate length for Headine is around 3 words."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:552
+#: ../inc/panel/adventurous-theme-options.php:543
 msgid "Button Link"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:560
+#: ../inc/panel/adventurous-theme-options.php:551
 msgid "Target. Open Link in New Window? "
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:569
+#: ../inc/panel/adventurous-theme-options.php:560
 msgid "Disable Headline?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:578
+#: ../inc/panel/adventurous-theme-options.php:569
 msgid "Disable Subheadline?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:587
+#: ../inc/panel/adventurous-theme-options.php:578
 msgid "Disable Button?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:601
+#: ../inc/panel/adventurous-theme-options.php:592
 msgid "Homepage / Frontpage Settings"
 msgstr ""
 
+#: ../inc/panel/adventurous-theme-options.php:596
+msgid "Disable Latest Posts?"
+msgstr ""
+
 #: ../inc/panel/adventurous-theme-options.php:605
-msgid "Enable Latest Posts?"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:609
-msgid "Check to Enable"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:614
 msgid "Add Page instead of Latest Posts"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:617
+#: ../inc/panel/adventurous-theme-options.php:608
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:622
+#: ../inc/panel/adventurous-theme-options.php:613
 msgid "Homepage posts categories:"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:623
+#: ../inc/panel/adventurous-theme-options.php:614
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:627
-#: ../inc/panel/adventurous-theme-options.php:1084
+#: ../inc/panel/adventurous-theme-options.php:618
+#: ../inc/panel/adventurous-theme-options.php:1058
 msgid "--Disabled--"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:638
-#: ../inc/panel/adventurous-theme-options.php:1095
+#: ../inc/panel/adventurous-theme-options.php:629
+#: ../inc/panel/adventurous-theme-options.php:1069
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:648
+#: ../inc/panel/adventurous-theme-options.php:639
 msgid "Layout Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:652
+#: ../inc/panel/adventurous-theme-options.php:643
 msgid "Sidebar Layout Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:657
+#: ../inc/panel/adventurous-theme-options.php:648
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:662
+#: ../inc/panel/adventurous-theme-options.php:653
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:667
+#: ../inc/panel/adventurous-theme-options.php:658
 msgid "No Sidebar"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:673
+#: ../inc/panel/adventurous-theme-options.php:664
 msgid "Content Layout"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:677
+#: ../inc/panel/adventurous-theme-options.php:668
 msgid "Full Content Display"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:681
+#: ../inc/panel/adventurous-theme-options.php:672
 msgid "Excerpt/Blog Display"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:688
+#: ../inc/panel/adventurous-theme-options.php:679
 msgid "Reset Layout?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:702
+#: ../inc/panel/adventurous-theme-options.php:693
 msgid "Search Text Settings"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:706
+#: ../inc/panel/adventurous-theme-options.php:697
 msgid "Default Display Text in Search"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:719
+#: ../inc/panel/adventurous-theme-options.php:710
 msgid "Excerpt / More Tag Settings"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:723
+#: ../inc/panel/adventurous-theme-options.php:714
 msgid "More Tag Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:731
+#: ../inc/panel/adventurous-theme-options.php:722
 msgid "Excerpt length(words)"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:740
+#: ../inc/panel/adventurous-theme-options.php:731
 msgid "Reset Excerpt?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:754
-msgid "Feed Redirect"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:758
-msgid "Feed Redirect URL"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:761
-msgid "Add in the Feedburner URL"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:771
+#: ../inc/panel/adventurous-theme-options.php:745
 msgid "Custom CSS"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:775
+#: ../inc/panel/adventurous-theme-options.php:749
 msgid "Enter your custom CSS styles."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:783
+#: ../inc/panel/adventurous-theme-options.php:757
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:786
+#: ../inc/panel/adventurous-theme-options.php:760
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:786
+#: ../inc/panel/adventurous-theme-options.php:760
 msgid "CSS Tutorial"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:786
+#: ../inc/panel/adventurous-theme-options.php:760
 msgid "Click Here to Read"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:801
+#: ../inc/panel/adventurous-theme-options.php:775
 msgid "Featured Settings"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:805
+#: ../inc/panel/adventurous-theme-options.php:779
 msgid "Enable Featured Content"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:824
+#: ../inc/panel/adventurous-theme-options.php:798
 msgid "Featured Content Headline Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:825
+#: ../inc/panel/adventurous-theme-options.php:799
 msgid "Leave empty if you want to remove headline."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:833
+#: ../inc/panel/adventurous-theme-options.php:807
 msgid "Featured Content Subheadline Text"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:834
+#: ../inc/panel/adventurous-theme-options.php:808
 msgid "eave empty if you want to remove Subheadline"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:842
+#: ../inc/panel/adventurous-theme-options.php:816
 msgid "Number of Featured Content"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:850
+#: ../inc/panel/adventurous-theme-options.php:824
 msgid "Featured Content Layout"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:855
+#: ../inc/panel/adventurous-theme-options.php:829
 msgid "3 Columns"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:860
+#: ../inc/panel/adventurous-theme-options.php:834
 msgid "4 Columns"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:873
+#: ../inc/panel/adventurous-theme-options.php:847
 msgid "Featured Content Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:879
+#: ../inc/panel/adventurous-theme-options.php:853
 #, php-format
 msgid "Featured Content #%s"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:886
+#: ../inc/panel/adventurous-theme-options.php:860
 msgid "Change Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:886
+#: ../inc/panel/adventurous-theme-options.php:860
 msgid "Add Image"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:891
+#: ../inc/panel/adventurous-theme-options.php:865
 msgid "Link URL"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:894
+#: ../inc/panel/adventurous-theme-options.php:868
 msgid "Add in the Target URL for the content"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:908
+#: ../inc/panel/adventurous-theme-options.php:882
 msgid "Title"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:911
+#: ../inc/panel/adventurous-theme-options.php:885
 msgid "Leave empty if you want to remove title"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:916
+#: ../inc/panel/adventurous-theme-options.php:890
 msgid "Content"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:917
+#: ../inc/panel/adventurous-theme-options.php:891
 msgid "The appropriate length for Content is around 10 words."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:936
+#: ../inc/panel/adventurous-theme-options.php:910
 msgid "Slider Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:940
+#: ../inc/panel/adventurous-theme-options.php:914
 msgid "Select Slider Type"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:945
+#: ../inc/panel/adventurous-theme-options.php:919
 msgid "Demo Slider"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:949
+#: ../inc/panel/adventurous-theme-options.php:923
 msgid "Post Slider"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:954
+#: ../inc/panel/adventurous-theme-options.php:928
 msgid "Category Slider"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:961
+#: ../inc/panel/adventurous-theme-options.php:935
 msgid "Enable Slider"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:980
+#: ../inc/panel/adventurous-theme-options.php:954
 msgid "Disable Text in Slider?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:989
+#: ../inc/panel/adventurous-theme-options.php:963
 msgid "Number of Slides"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:997
+#: ../inc/panel/adventurous-theme-options.php:971
 msgid "Transition Effect:"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1001
+#: ../inc/panel/adventurous-theme-options.php:975
 msgid "fade"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1002
+#: ../inc/panel/adventurous-theme-options.php:976
 msgid "wipe"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1003
+#: ../inc/panel/adventurous-theme-options.php:977
 msgid "scrollUp"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1004
+#: ../inc/panel/adventurous-theme-options.php:978
 msgid "scrollDown"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1005
+#: ../inc/panel/adventurous-theme-options.php:979
 msgid "scrollLeft"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1006
+#: ../inc/panel/adventurous-theme-options.php:980
 msgid "scrollRight"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1007
+#: ../inc/panel/adventurous-theme-options.php:981
 msgid "blindX"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1008
+#: ../inc/panel/adventurous-theme-options.php:982
 msgid "blindY"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1009
+#: ../inc/panel/adventurous-theme-options.php:983
 msgid "blindZ"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1010
+#: ../inc/panel/adventurous-theme-options.php:984
 msgid "cover"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1011
+#: ../inc/panel/adventurous-theme-options.php:985
 msgid "shuffle"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1017
+#: ../inc/panel/adventurous-theme-options.php:991
 msgid "Transition Delay"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1021
-#: ../inc/panel/adventurous-theme-options.php:1030
+#: ../inc/panel/adventurous-theme-options.php:995
+#: ../inc/panel/adventurous-theme-options.php:1004
 msgid "second(s)"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1026
+#: ../inc/panel/adventurous-theme-options.php:1000
 msgid "Transition Length"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1041
+#: ../inc/panel/adventurous-theme-options.php:1015
 msgid "Featured Post Slider Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1045
+#: ../inc/panel/adventurous-theme-options.php:1019
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1049
+#: ../inc/panel/adventurous-theme-options.php:1023
 msgid "Check to exclude"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1056
+#: ../inc/panel/adventurous-theme-options.php:1030
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1060
+#: ../inc/panel/adventurous-theme-options.php:1034
 msgid "Click Here To Edit"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1066
+#: ../inc/panel/adventurous-theme-options.php:1040
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1075
+#: ../inc/panel/adventurous-theme-options.php:1049
 msgid "Featured Category Slider Options"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1079
+#: ../inc/panel/adventurous-theme-options.php:1053
 msgid "Select Slider Categories"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1080
+#: ../inc/panel/adventurous-theme-options.php:1054
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1099
+#: ../inc/panel/adventurous-theme-options.php:1073
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1113
+#: ../inc/panel/adventurous-theme-options.php:1087
 msgid "Predefine Social Icons"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1133
+#: ../inc/panel/adventurous-theme-options.php:1107
 msgid "Google+"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1141
+#: ../inc/panel/adventurous-theme-options.php:1115
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1149
+#: ../inc/panel/adventurous-theme-options.php:1123
 msgid "Youtube"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1157
+#: ../inc/panel/adventurous-theme-options.php:1131
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1165
+#: ../inc/panel/adventurous-theme-options.php:1139
 msgid "Linkedin"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1173
+#: ../inc/panel/adventurous-theme-options.php:1147
 msgid "Slideshare"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1181
+#: ../inc/panel/adventurous-theme-options.php:1155
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1189
+#: ../inc/panel/adventurous-theme-options.php:1163
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1197
+#: ../inc/panel/adventurous-theme-options.php:1171
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1205
+#: ../inc/panel/adventurous-theme-options.php:1179
 msgid "deviantART"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1213
+#: ../inc/panel/adventurous-theme-options.php:1187
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1221
+#: ../inc/panel/adventurous-theme-options.php:1195
 msgid "MySpace"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1229
-#: ../inc/panel/adventurous-theme-options.php:1809
+#: ../inc/panel/adventurous-theme-options.php:1203
+#: ../inc/panel/adventurous-theme-options.php:1770
 msgid "WordPress"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1237
+#: ../inc/panel/adventurous-theme-options.php:1211
 msgid "RSS"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1245
+#: ../inc/panel/adventurous-theme-options.php:1219
 msgid "Delicious"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1253
+#: ../inc/panel/adventurous-theme-options.php:1227
 msgid "Last.fm"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1261
+#: ../inc/panel/adventurous-theme-options.php:1235
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1269
+#: ../inc/panel/adventurous-theme-options.php:1243
 msgid "GitHub"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1277
+#: ../inc/panel/adventurous-theme-options.php:1251
 msgid "Vkontakte"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1285
+#: ../inc/panel/adventurous-theme-options.php:1259
 msgid "My World"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1293
+#: ../inc/panel/adventurous-theme-options.php:1267
 msgid "Odnoklassniki"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1301
+#: ../inc/panel/adventurous-theme-options.php:1275
 msgid "Goodreads"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1309
+#: ../inc/panel/adventurous-theme-options.php:1283
 msgid "Skype"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1317
+#: ../inc/panel/adventurous-theme-options.php:1291
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:1788
+#: ../inc/panel/adventurous-theme-options.php:1749
 msgid "Y"
 msgstr ""
 

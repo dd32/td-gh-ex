@@ -12,10 +12,9 @@
 global $adventurous_options_defaults;
 $adventurous_options_defaults = array(
 	'fav_icon'								=> get_template_directory_uri().'/images/favicon.ico',
- 	'remove_favicon'						=> '0',
+ 	'remove_favicon'						=> '1',
 	'web_clip'								=> get_template_directory_uri().'/images/apple-touch-icon.png',
  	'remove_web_clip'						=> '1',
-	'remove_header_menu'					=> '0',
 	'remove_header_logo'					=> '1',
 	'featured_logo_header'					=> get_template_directory_uri().'/images/logo.png',
 	'enable_promotion'						=> 'homepage',
@@ -41,7 +40,6 @@ $adventurous_options_defaults = array(
 	'reset_moretag'							=> '2',
 	'excerpt_length'						=> 30,
  	'search_display_text'					=> __( 'Search &hellip;', 'adventurous' ),
-	'feed_url'								=> '',
 	'disable_homepage_headline'				=> '0',
 	'disable_homepage_subheadline'			=> '0',
 	'disable_homepage_button'				=> '0',

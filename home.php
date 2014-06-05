@@ -22,7 +22,7 @@ get_header();
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	if ( !empty ( $enable_post ) || ( !empty( $page_id ) && $page_id == $page_for_posts ) ) { 
+	if ( empty ( $enable_post ) || ( !empty( $page_id ) && $page_id == $page_for_posts ) ) { 
 ?>
 
 

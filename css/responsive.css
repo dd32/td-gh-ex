@@ -69,11 +69,7 @@
 	padding-left: 5%;
 }
 .mobile-menu .menu-item-has-children > a {
-    background-color: #F8F8F8;
     font-weight: bold;
-}
-.mobile-menu li .menu-item-has-children > a { 
-	background-color: #fff; 
 }
 
 
