@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.4.2
+Version: 1.5.0
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -61,6 +61,17 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 1.5.0 - 26.05.2014 =
+
+* Improved Child Theme support
+* Recreated Social Icons
+* Added SoundCloud and Vimeo icons
+* Recreated default WordPress gallery support
+* Improved code consistency in extra.php file
+* Several other code improvement for main theme functions
+* Recreated logic behind color in Theme Options. Now these settings provides with more flexibility.
+* Added German translations thanks to Bernd Schray
 
 = 1.4.2 - 24.05.2014 =
 

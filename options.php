@@ -266,6 +266,18 @@ function optionsframework_options() {
 							'std' => '',
 							'type' => 'color');
 
+		$options[] = array( 'name' => __('Top nav dropdown item hover color', 'sparkling'),
+							'desc' => __('Dropdown item hover color', 'sparkling'),
+							'id' => 'nav_dropdown_item_hover',
+							'std' => '',
+							'type' => 'color');
+
+		$options[] = array( 'name' => __('Top nav dropdown item background hover color', 'sparkling'),
+							'desc' => __('Background of dropdown item hover color', 'sparkling'),
+							'id' => 'nav_dropdown_bg_hover',
+							'std' => '',
+							'type' => 'color');
+
 		$options[] = array( 'name' => __('Footer', 'sparkling'),
 							'type' => 'heading');
 
@@ -335,6 +347,12 @@ function optionsframework_options() {
         			'class' => 'mini',
         			'type' => 'text');
 
+		$options[] = array(	'id' => 'social_vimeo',
+							'desc' => __('Vimeo', 'sparkling'),
+        			'std' => '',
+        			'class' => 'mini',
+        			'type' => 'text');
+
 		$options[] = array(	'id' => 'social_linkedin',
 							'desc' => __('LinkedIn', 'sparkling'),
         			'std' => '',
@@ -385,6 +403,12 @@ function optionsframework_options() {
 
     $options[] = array(	'id' => 'social_foursquare',
 							'desc' => __('Foursquare', 'sparkling'),
+        			'std' => '',
+        			'class' => 'mini',
+        			'type' => 'text');
+
+		$options[] = array(	'id' => 'social_soundcloud',
+							'desc' => __('SoundCloud', 'sparkling'),
         			'std' => '',
         			'class' => 'mini',
         			'type' => 'text');

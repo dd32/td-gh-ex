@@ -103,7 +103,7 @@ add_action( 'wp', 'sparkling_setup_author' );
 /************* search form *****************/
 
 // Search Form
-function sparkling_wpsearch($form) {
+function sparkling_wpsearch( $form ) {
     $form = '<form method="get" class="form-search" action="' . home_url( '/' ) . '">
   <div class="row">
     <div class="col-lg-12">
@@ -148,21 +148,41 @@ function sparkling_add_custom_table_class( $content ) {
     return str_replace( '<table>', '<table class="table table-hover">', $content );
 }
 
-// //Display social links
+if ( ! function_exists( 'sparkling_social' ) ) :
+/**
+ * Display social links in footer and widgets if enabled
+ */
 function sparkling_social(){
-    $services = array ('facebook','twitter','googleplus','youtube','linkedin','pinterest','rss','tumblr','flickr','instagram','dribbble','skype', 'foursquare');
+    $services = array (
+      'facebook'    => 'Facebok',
+      'twitter'     => 'Twitter',
+      'googleplus'  => 'Google+',
+      'youtube'     => 'Youtube',
+      'vimeo'       => 'Vimeo',
+      'linkedin'    => 'LinkedIn',
+      'pinterest'   => 'Pinterest',
+      'rss'         => 'RSS',
+      'tumblr'      => 'Tumblr',
+      'flickr'      => 'Flickr',
+      'instagram'   => 'Instagram',
+      'dribbble'    => 'Dribbble',
+      'skype'       => 'Skype',
+      'foursquare'  => 'Foursquare',
+      'soundcloud'  => 'SoundCloud'
+      );
 
     echo '<div class="social-icons">';
 
-    foreach ( $services as $service ) :
+    foreach ( $services as $service => $name ) :
 
-        $active[$service] = of_get_option ('social_'.$service);
-        if ($active[$service]) { echo '<a href="'. esc_url($active[$service]) .'" title="'. __('Follow us on ','sparkling').$service.'" class="'. $service .'"><i class="social_icon fa fa-'.$service.'"></i></a>';}
+        $active[ $service ] = of_get_option ( 'social_'.$service );
+        if ( $active[$service] ) { echo '<a href="'. esc_url( $active[$service] ) .'" title="'. __('Follow us on ','sparkling').$name.'" class="'. $service .'" target="_blank"><i class="social_icon fa fa-'.$service.'"></i></a>';}
 
     endforeach;
     echo '</div>';
 
 }
+endif;
 
 // header menu (should you choose to use one)
 function sparkling_header_menu() {
@@ -197,61 +217,63 @@ function sparkling_footer_links() {
         ));
 } /* end sparkling footer link */
 
-// Call for action text area
-if ( ! function_exists( 'sparkling_call_for_action' ) ) {
-
-  function sparkling_call_for_action() {
-    if ( is_front_page() && of_get_option('w2f_cfa_text')!=''){
-      echo '<div class="cfa">';
-        echo '<div class="container">';
-          echo '<div class="col-sm-8">';
-            echo '<span class="cfa-text">'. of_get_option('w2f_cfa_text').'</span>';
-            echo '</div>';
-            echo '<div class="col-sm-4">';
-            echo '<a class="btn btn-lg cfa-button" href="'. of_get_option('w2f_cfa_link'). '">'. of_get_option('w2f_cfa_button'). '</a>';
-            echo '</div>';
-        echo '</div>';
+if ( ! function_exists( 'sparkling_call_for_action' ) ) :
+/**
+ * Call for action text and button displayed above content
+ */
+function sparkling_call_for_action() {
+  if ( is_front_page() && of_get_option( 'w2f_cfa_text' )!=''){
+    echo '<div class="cfa">';
+      echo '<div class="container">';
+        echo '<div class="col-sm-8">';
+          echo '<span class="cfa-text">'. of_get_option( 'w2f_cfa_text' ).'</span>';
+          echo '</div>';
+          echo '<div class="col-sm-4">';
+          echo '<a class="btn btn-lg cfa-button" href="'. of_get_option( 'w2f_cfa_link' ). '">'. of_get_option( 'w2f_cfa_button' ). '</a>';
+          echo '</div>';
       echo '</div>';
-    }
+    echo '</div>';
   }
 }
+endif;
 
-// Featured image slider
-if ( ! function_exists( 'sparkling_featured_slider' ) ) {
+if ( ! function_exists( 'sparkling_featured_slider' ) ) :
+/**
+ * Featured image slider, displayed on front page for static page and blog
+ */
+function sparkling_featured_slider() {
+  if ( is_front_page() && of_get_option( 'sparkling_slider_checkbox' ) == 1 ) {
+    echo '<div class="flexslider">';
+      echo '<ul class="slides">';
 
-  function sparkling_featured_slider() {
-      if ( is_front_page() && of_get_option('sparkling_slider_checkbox') == 1 ) {
-        echo '<div class="flexslider">';
-          echo '<ul class="slides">';
+        $count = of_get_option( 'sparkling_slide_number' );
+        $slidecat =of_get_option( 'sparkling_slide_categories' );
 
-            $count = of_get_option('sparkling_slide_number');
-            $slidecat =of_get_option('sparkling_slide_categories');
+        $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
+        if ($query->have_posts()) :
+          while ($query->have_posts()) : $query->the_post();
 
-            $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
-            if ($query->have_posts()) :
-              while ($query->have_posts()) : $query->the_post();
+          echo '<li>';
+            if ( (function_exists( 'has_post_thumbnail' )) && ( has_post_thumbnail() ) ) :
+              echo get_the_post_thumbnail();
+            endif;
 
-              echo '<li>';
-                if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail()) ) :
-                  echo get_the_post_thumbnail();
-                endif;
+              echo '<div class="flex-caption">';
+                echo '<a href="'. get_permalink() .'">';
+                  if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
+                  if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
+                echo '</a>';
+              echo '</div>';
 
-                  echo '<div class="flex-caption">';
-                    echo '<a href="'. get_permalink() .'">';
-                      if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
-                      if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
-                    echo '</a>';
-                  echo '</div>';
+              endwhile;
+            endif;
 
-                  endwhile;
-                endif;
-
-              echo '</li>';
-          echo '</ul>';
-        echo ' </div>';
-      }
+          echo '</li>';
+      echo '</ul>';
+    echo ' </div>';
   }
 }
+endif;
 
 /**
  * function to show the footer info, copyright information
@@ -261,9 +283,11 @@ global $sparkling_footer_info;
   printf( __( 'Theme by %1$s Powered by %2$s', 'sparkling' ) , '<a href="http://colorlib.com/" target="_blank">Colorlib</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
 }
 
-// Get theme options
 
-if (!function_exists('get_sparkling_theme_options'))  {
+if ( ! function_exists( 'get_sparkling_theme_options' ) ) {
+/**
+ * Get information from Theme Options and add it into wp_head
+ */
     function get_sparkling_theme_options(){
 
       echo '<style type="text/css">';
@@ -278,7 +302,7 @@ if (!function_exists('get_sparkling_theme_options'))  {
         echo '.btn-default, .label-default, .flex-caption h2, .btn.btn-default.read-more {background-color: '.of_get_option('element_color').'; border-color: '.of_get_option('element_color').';} .site-main [class*="navigation"] a, .more-link { color: '.of_get_option('element_color').'}';
       }
       if ( of_get_option('element_color_hover')) {
-        echo '.btn-default:hover, .label-default[href]:hover, .tagcloud a:hover, .main-content [class*="navigation"] a:hover, .label-default[href]:focus, #infinite-handle span:hover, .btn.btn-default.read-more:hover, .btn-default:hover, .scroll-to-top:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .site-main [class*="navigation"] a:hover, .more-link:hover, #image-navigation .nav-previous a:hover, #image-navigation .nav-next a:hover,  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus  { background-color: '.of_get_option('element_color_hover').'; border-color: '.of_get_option('element_color_hover').'; } .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .entry-title a:hover {color: '.of_get_option('element_color_hover').'}';
+        echo '.btn-default:hover, .label-default[href]:hover, .tagcloud a:hover, .main-content [class*="navigation"] a:hover, .label-default[href]:focus, #infinite-handle span:hover, .btn.btn-default.read-more:hover, .btn-default:hover, .scroll-to-top:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .site-main [class*="navigation"] a:hover, .more-link:hover, #image-navigation .nav-previous a:hover, #image-navigation .nav-next a:hover, .cfa-button:hover { background-color: '.of_get_option('element_color_hover').'; border-color: '.of_get_option('element_color_hover').'; }';
       }
       if ( of_get_option('cfa_bg_color')) {
         echo '.cfa { background-color: '.of_get_option('cfa_bg_color').'; } .cfa-button:hover a {color: '.of_get_option('cfa_bg_color').';}';
@@ -286,11 +310,8 @@ if (!function_exists('get_sparkling_theme_options'))  {
       if ( of_get_option('cfa_color')) {
         echo '.cfa-text { color: '.of_get_option('cfa_color').';}';
       }
-      if ( of_get_option('cfa_btn_color')) {
-        echo '.cfa-button {border-color: '.of_get_option('cfa_btn_color').';}';
-      }
-      if ( of_get_option('cfa_btn_txt_color')) {
-        echo '.cfa-button {color: '.of_get_option('cfa_btn_txt_color').';}';
+      if ( of_get_option('cfa_btn_color') || of_get_option('cfa_btn_txt_color') ) {
+        echo '.cfa-button {border-color: '.of_get_option('cfa_btn_color').'; color: '.of_get_option('cfa_btn_txt_color').';}';
       }
       if ( of_get_option('heading_color')) {
         echo 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .entry-title {color: '.of_get_option('heading_color').';}';
@@ -302,13 +323,16 @@ if (!function_exists('get_sparkling_theme_options'))  {
         echo '.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: '.of_get_option('nav_link_color').';}';
       }
       if ( of_get_option('nav_item_hover_color')) {
-        echo '.navbar-default .navbar-nav > li > a:hover {color: '.of_get_option('nav_item_hover_color').';}';
+        echo '.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .entry-title a:hover {color: '.of_get_option('nav_item_hover_color').';}';
       }
       if ( of_get_option('nav_dropdown_bg')) {
-        echo '.dropdown-menu, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: '.of_get_option('nav_dropdown_bg').';}';
+        echo '.dropdown-menu {background-color: '.of_get_option('nav_dropdown_bg').';}';
       }
       if ( of_get_option('nav_dropdown_item')) {
         echo '.navbar-default .navbar-nav .open .dropdown-menu > li > a, .dropdown-menu > li > a { color: '.of_get_option('nav_dropdown_item').';}';
+      }
+      if ( of_get_option('nav_dropdown_bg_hover') || of_get_option('nav_dropdown_item_hover') ) {
+        echo '.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: '.of_get_option('nav_dropdown_bg_hover').'; color:'.of_get_option('nav_dropdown_item_hover').'}';
       }
       if ( of_get_option('footer_bg_color')) {
         echo '#colophon {background-color: '.of_get_option('footer_bg_color').';}';
@@ -338,10 +362,10 @@ if (!function_exists('get_sparkling_theme_options'))  {
         echo '</style>';
     }
 }
-add_action('wp_head','get_sparkling_theme_options',10);
+add_action( 'wp_head', 'get_sparkling_theme_options', 10 );
 
 // Theme Options sidebar
-add_action( 'optionsframework_after','sparkling_options_display_sidebar' );
+add_action( 'optionsframework_after', 'sparkling_options_display_sidebar' );
 
 function sparkling_options_display_sidebar() { ?>
   <!-- Twitter -->
@@ -421,7 +445,6 @@ add_filter('img_caption_shortcode', 'sparkling_caption', 10, 3);
 /*
  * This one shows/hides the an option when a checkbox is clicked.
  */
-
 add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
 
 function optionsframework_custom_scripts() { ?>
@@ -447,7 +470,6 @@ jQuery(document).ready(function() {
 
 });
 </script>
-
 
 <?php
 }
