@@ -2,6 +2,9 @@ iFeature Changelog
 
 ****************************
 
+Version 5.1.72 (6-06-14)
+- Uploading again due to technical problem.
+
 Version 5.1.71 (6-06-14)
 - Code reformatting: Changed spaces to tabs.
 
