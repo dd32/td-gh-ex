@@ -1,15 +1,14 @@
 /*
 
 Theme Name: Beardsley
+Theme URI: http://sashenko.com/beardsley
 Description: A black and white art nouveau theme. Graphics are taken from the work of Aubrey Beardsley, the famous British illustrator associated with Oscar Wilde, among others. Try reloading the page to see a new border in the bottom corner of the page, from Beardsley’s illuminations for the 1893 Dent edition of Mallory’s 'King Arthur'.
-Version: 1.1.4
+Version: 2.0
 Author: Sash Lewis
-Author URI: http://sashlewis.blogspot.com/
-Tags: black, white, fixed-width, two-columns, right-sidebar
-
-	The CSS, XHTML and design is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
-	
+Author URI: http://vtcongresstracker.com/
+Tags: black, white, fixed-layout, two-columns, right-sidebar
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
 	The Parisian font embedded in this theme is by George Wilson, and is distributed under OFL (the Open Font License).
 
@@ -288,6 +287,14 @@ font-size: 12px;
 line-height: 19px;
 }
 
+
+.bypostauthor {
+border: 1px solid #000;
+}
+
+.sticky {
+border: 1px solid #000;
+}
 
 .wp-caption {
 background: #000;

@@ -4,7 +4,9 @@
  * @subpackage Beardsley
  */
 
-automatic_feed_links();
+add_theme_support( 'automatic-feed-links' )
+
+add_theme_support( $feature );
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
@@ -13,6 +15,10 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>',
 	));
+}
+
+if ( ! isset( $content_width ) ) {
+	$content_width = 600;
 }
 
 function remove_more_jump_link($link) { 
