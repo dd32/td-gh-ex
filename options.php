@@ -129,15 +129,20 @@ function optionsframework_options() {
 		"type" => "upload");
 		
 	$options[] = array( 
-		"name" => "Site title/slogan",
+		"name" => "Site title/slogan (optional)",
 		"desc" => "if you are using a logo and want your site title or slogan to appear on the header banner",
 		"id" => "itrans_slogan",
 		'std' => '',
 		"type" => "text");
+
+	$options[] = array(
+		'name' => __('Layout Options', 'itransform'),
+		'type' => 'heading');
 		
+				
 	$options[] = array(
 		'name' => "Color Scheme",
-		'desc' => "Images for layout.",
+		'desc' => "Choose a color for layout.",
 		'id' => "itrans_color_scheme",
 		'std' => "blue",
 		'type' => "images",
@@ -159,6 +164,53 @@ function optionsframework_options() {
 			'onecol' => $imagepath . 'onecol.png',		
 			'twocol' => $imagepath . 'twocol.png')
 	);	
+		
+	$options[] = array(
+		'name' => __('Boxed Type', 'itransform'),
+		'desc' => __('Boxed Type layout at 1200px', 'itransform'),
+		'id' => 'boxed_type',
+		'std' => '',
+		'type' => 'checkbox');	
+		
+	$options[] = array(
+		'name' => "Background Image",
+		'desc' => "Choose a background image for boxed type layout",
+		'id' => "itrans_background",
+		'std' => "1",
+		'type' => "images",
+		'options' => array(
+			'1' => $imagepath . 'patt1.png',		
+			'2' => $imagepath . 'patt2.png',
+			'3' => $imagepath . 'patt3.png',
+			'4' => $imagepath . 'patt4.png',			
+			'5' => $imagepath . 'patt5.png'
+			//'6' => $imagepath . 'patt6.png'
+		)
+	);
+	
+	$options[] = array( 
+		"name" => "Custom Background Image",
+		"desc" => "Upload or select a background image from media library",
+		"id" => "itrans_bg_image",
+		"type" => "upload");
+		
+	$options[] = array(
+		'name' => "Background image size/repeat",
+		'desc' => "Select cover to have a fullsize background image or Choose repeat to have the background in pattern",
+		'id' => "itrans_bg_layout",
+		'std' => "repeat",
+		'type' => "select",
+		'options' => array(
+			'repeat' => 'Repeat',		
+			'cover' => 'Cover')
+	);			
+
+	$options[] = array(
+		'name' => __('Fixed background image attachment', 'itransform'),
+		'desc' => __('Check if you want the background image to be fixed', 'itransform'),
+		'id' => 'itrans_fixed_bg',
+		'std' => '',
+		'type' => 'checkbox');				
 	
 	$options[] = array(
 		'name' => __('Additional style', 'itransform'),
@@ -167,12 +219,6 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea');	
 		
-	$options[] = array(
-		'name' => __('Boxed Type', 'itransform'),
-		'desc' => __('Boxed Type layout at 1200px', 'itransform'),
-		'id' => 'boxed_type',
-		'std' => '',
-		'type' => 'checkbox');		
 		
 				
 	$options[] = array(

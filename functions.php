@@ -239,6 +239,33 @@ function itransform_scripts_styles() {
 	if ( of_get_option( 'boxed_type') )
 	{
 		$custom_css .= " .site { max-width: 1200px; } ";
+		$bg_image_layout = "";
+		
+		if ( of_get_option( 'itrans_background') )
+		{
+			$custom_css .= " body { background-image: URL(".get_template_directory_uri() ."/images/pat".of_get_option( 'itrans_background').".png); } ";
+		}
+		
+		if ( of_get_option('itrans_bg_image') )
+		{
+			if ( of_get_option('itrans_bg_layout') )
+			{
+				$bg_layout = of_get_option('itrans_bg_layout');
+				if ( $bg_layout == "repeat" )
+				{
+					$bg_image_layout = " background-repeat: repeat; ";
+				} else if ( $bg_layout == "cover" )
+				{
+					$bg_image_layout = " background-size: cover; ";
+				}
+				
+				if ( of_get_option('itrans_fixed_bg') )
+				{
+					$bg_image_layout .= " background-attachment: fixed; ";
+				}
+			}
+			$custom_css .= " body { background-image: URL(".of_get_option('itrans_bg_image')."); ".$bg_image_layout." } ";
+		}
 	}
 	
 	if ( $custom_css ) {
@@ -382,6 +409,8 @@ function itransform_post_nav() {
 	<?php
 }
 endif;
+
+
 
 if ( ! function_exists( 'itransform_entry_meta' ) ) :
 /**

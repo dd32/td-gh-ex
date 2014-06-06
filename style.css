@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
-Version: 2.0.1
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -4092,4 +4092,47 @@ div.ibanner .da-img img {
 	.comment-reply-login {
 		color: #333;
 	}
+}
+
+
+.site1
+{
+  	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.site
+{
+  	position:relative;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+.site:before, 
+.site:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 6px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0 6px rgba(0,0,0,0.2);
+    box-shadow:0 0 6px rgba(0,0,0,0.2);
+    top:4px;
+    bottom:4px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 4px;
+    border-radius:100px / 4px;
+} 
+.site1:after
+{
+	right:10px; 
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg); 
+       -moz-transform:skew(8deg) rotate(3deg);     
+        -ms-transform:skew(8deg) rotate(3deg);     
+         -o-transform:skew(8deg) rotate(3deg); 
+            transform:skew(8deg) rotate(3deg);
 }
