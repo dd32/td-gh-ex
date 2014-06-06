@@ -28,7 +28,6 @@ function ct_tracks_customize_register_logo( $wp_customize ) {
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'esc_url_raw',
-			//'transport'         => 'postMessage'
 		)
 	);
 
@@ -102,7 +101,7 @@ function ct_tracks_save_social_profiles($user_id) {
    	
    	foreach ($social_sites as $key => $social_site) {
 		if( isset( $_POST["$key-profile"] ) ){
-			update_user_meta( $user_id, $social_site, esc_attr( $_POST["$key-profile"] ) );
+			update_user_meta( $user_id, $social_site, esc_url_raw( $_POST["$key-profile"] ) );
 		}
 	}
 }
