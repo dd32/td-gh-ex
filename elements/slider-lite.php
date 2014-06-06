@@ -31,42 +31,42 @@ function cyberchimps_slider_lite_page_options() {
     // set directory
     $directory = get_template_directory_uri();
 
-    $page_fields = array(
+    $page_fields	= array(
         // Image one
         array(
-            'type'  => 'single_image',
-            'id'    => 'cyberchimps_slider_lite_slide_one_image',
-            'class' => '',
-            'name'  => __( 'Slide One Image', 'cyberchimps_elements' ),
-            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/images/branding/slide1.jpg' )
+            'type'	=> 'single_image',
+            'id'	=> 'cyberchimps_slider_lite_slide_one_image',
+            'class'	=> '',
+            'name'	=> __( 'Slide One Image', 'cyberchimps_elements' ),
+            'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/images/branding/slide1.jpg' )
         ),
         array(
-            'type'  => 'text',
-            'id'    => 'cyberchimps_slider_lite_slide_one_url',
-            'class' => '',
-            'name'  => __( 'Slide One Link', 'cyberchimps_elements' ),
-            'std'   => 'http://cyberchimps.com'
+            'type'	=> 'text',
+            'id'	=> 'cyberchimps_slider_lite_slide_one_url',
+            'class'	=> '',
+            'name'	=> __( 'Slide One Link', 'cyberchimps_elements' ),
+            'std'	=> 'http://cyberchimps.com'
         ),
         array(
-            'type'  => 'single_image',
-            'id'    => 'cyberchimps_slider_lite_slide_two_image',
-            'class' => '',
-            'name'  => __( 'Slide Two Image', 'cyberchimps_elements' ),
-            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' )
+            'type'	=> 'single_image',
+            'id'	=> 'cyberchimps_slider_lite_slide_two_image',
+            'class'	=> '',
+            'name'	=> __( 'Slide Two Image', 'cyberchimps_elements' ),
+            'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
-            'type'  => 'text',
-            'id'    => 'cyberchimps_slider_lite_slide_two_url',
-            'class' => '',
-            'name'  => __( 'Slide Two Link', 'cyberchimps_elements' ),
-            'std'   => 'http://cyberchimps.com'
+            'type'	=> 'text',
+            'id'	=> 'cyberchimps_slider_lite_slide_two_url',
+            'class'	=> '',
+            'name'	=> __( 'Slide Two Link', 'cyberchimps_elements' ),
+            'std'	=> 'http://cyberchimps.com'
         ),
-array(
-            'type'  => 'single_image',
-            'id'    => 'cyberchimps_slider_lite_slide_three_image',
-            'class' => '',
-            'name'  => __( 'Slide Three Image', 'cyberchimps_elements' ),
-            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' )
+		array(
+            'type'	=> 'single_image',
+            'id'	=> 'cyberchimps_slider_lite_slide_three_image',
+            'class'	=> '',
+            'name'	=> __( 'Slide Three Image', 'cyberchimps_elements' ),
+            'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'  => 'text',
