@@ -2,7 +2,7 @@
 Catch Kathmandu Theme by Catch Themes team, http://catchthemes.com/
 
 == About Catch Kathmandu ==
-Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledge WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese and Italian languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
+Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledge WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian and German(SWITZERLAND) languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
 
 == Tags ==
 black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -15,6 +15,7 @@ Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 Added Translation for Brazilian Portuguese by Valdir Trombini (Email: valdirtrombini@hotmail.com)
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
+Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@lichtundmusik.ch)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -70,6 +71,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 1.8
+* Added Italian translation de_CH.po and de_CH.mo
 
 Version 1.7
 * Added Italian translation it_IT.po and it_IT.mo
