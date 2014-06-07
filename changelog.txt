@@ -1,5 +1,12 @@
 *** Baskerville changelog ***
 
 
-Version 1 (2014-06-07)
+Version 1.01 (2014-06-07)
+-------------------------
+- Added support for custom background
+- Added missing text domains in template-contributors.php
+- Minor adjustments to style.css
+
+
+Version 1.00 (2014-06-07)
 -------------------------

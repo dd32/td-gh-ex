@@ -3,7 +3,6 @@
 Template Name: Contributors template
 */
 
-// Get all users order by amount of posts
 $allUsers = get_users('orderby=post_count&order=DESC');
 
 $user_num = 0;
@@ -21,7 +20,7 @@ foreach ( $allUsers as $currentUser ) {
 
 <?php get_header(); ?>
 
-<div class="wrapper section bg-grey medium-padding">						
+<div class="wrapper section medium-padding">						
 
 	<div class="section-inner">
 	
@@ -73,10 +72,10 @@ foreach ( $allUsers as $currentUser ) {
 			
 								<div class="author-links">
 								
-									<?php if ( !empty($user->user_email) ) : ?><a class="author-link-mail" href="mailto:<?php echo $user->user_email; ?>" title="Skicka ett e-postmeddelande till <?php echo $user->nickname; ?>">E-post</a><?php endif; ?>
+									<?php if ( !empty($user->user_email) ) : ?><a class="author-link-mail" href="mailto:<?php echo $user->user_email; ?>"><?php _e('E-mail','baskerville'); ?></a><?php endif; ?>
 									
-									<?php if ( !empty($user->user_url) ) : ?><a class="author-link-website" href="<?php echo $user->user_url; ?>">Webbplats</a><?php endif; ?>
-									<?php if ( !empty($user->twitter) ) : ?><a class="author-link-twitter" href="http://www.twitter.com/<?php echo $user->twitter; ?>" title="<?php echo $user->nickname; ?> på Twitter">Twitter</a><?php endif; ?>
+									<?php if ( !empty($user->user_url) ) : ?><a class="author-link-website" href="<?php echo $user->user_url; ?>"><?php _e('Website', 'baskerville') ?></a><?php endif; ?>
+									<?php if ( !empty($user->twitter) ) : ?><a class="author-link-twitter" href="http://www.twitter.com/<?php echo $user->twitter; ?>"><?php _e('Twitter', 'baskerville'); ?></a><?php endif; ?>
 									
 								</div> <!-- /author-links -->
 								
