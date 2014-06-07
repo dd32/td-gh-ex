@@ -66,7 +66,7 @@ foreach ( $allUsers as $currentUser ) {
 							
 								<h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
 								
-								<h5><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo count_user_posts( $user->ID ); ?> <?php _e ('posts'); ?></a></h5>
+								<h5><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo count_user_posts( $user->ID ); ?> <?php _e ('posts', 'baskerville'); ?></a></h5>
 								
 								<p class="author-description"><?php echo get_user_meta($user->ID, 'description', true); ?></p>
 			

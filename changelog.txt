@@ -1,6 +1,11 @@
 *** Baskerville changelog ***
 
 
+Version 1.02 (2014-06-07)
+-------------------------
+- Added yet another missing text domain
+
+
 Version 1.01 (2014-06-07)
 -------------------------
 - Added support for custom background
