@@ -1,38 +1,34 @@
 <?php get_header(); ?>
 
-<div class="wrapper section medium-padding" id="site-content">
+<div class="wrapper section bg-grey">
 										
 	<div class="section-inner">
 	
 		<div class="content fleft">
 	
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 				<div class="post">
 				
 					<div class="post-header">
 												
-					    <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
+					    <h2 class="post-title"><?php the_title(); ?></h2>
 					    				    
-				    </div><!-- .post-header -->
+				    </div> <!-- /post-header -->
 				
-					<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+					<?php if ( has_post_thumbnail() ) : ?>
 						
 						<div class="featured-media">
 						
-							<a href="<?php the_permalink(); ?>" rel="bookmark">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 							
-								<?php 
+								<?php the_post_thumbnail('post-image'); ?>
 								
-								the_post_thumbnail( 'post-image' );
-
-								$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
-								
-								if ( $image_caption ) : ?>
+								<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
 												
 									<div class="media-caption-container">
 									
-										<p class="media-caption"><?php echo $image_caption; ?></p>
+										<p class="media-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
 										
 									</div>
 									
@@ -40,37 +36,42 @@
 								
 							</a>
 									
-						</div><!-- .featured-media -->
+						</div> <!-- /featured-media -->
 							
 					<?php endif; ?>
 				   				        			        		                
 					<div class="post-content">
 								                                        
-						<?php 
-						the_content();
-						wp_link_pages();
-						?>
+						<?php the_content(); ?>
+						
+						<?php if ( current_user_can( 'manage_options' ) ) : ?>
+																								
+						<?php endif; ?>
 						
 						<div class="clear"></div>
 															            			                        
-					</div><!-- .post-content -->
+					</div> <!-- /post-content -->
 					
 					<?php comments_template( '', true ); ?>
 									
-				</div><!-- .post -->
+				</div> <!-- /post -->
 			
-			<?php endwhile; endif; ?>
+			<?php endwhile; else: ?>
+			
+				<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "baskerville"); ?></p>
+		
+			<?php endif; ?>
 		
 			<div class="clear"></div>
 			
-		</div><!-- .content -->
+		</div> <!-- /content -->
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="clear"></div>
 	
-	</div><!-- .section-inner -->
+	</div> <!-- /section-inner -->
 
-</div><!-- .wrapper -->
+</div> <!-- /wrapper -->
 								
 <?php get_footer(); ?>

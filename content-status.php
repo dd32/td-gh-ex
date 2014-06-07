@@ -1,9 +1,31 @@
-<?php if ( get_the_content() ) : ?>
+<?php if($post->post_content != "") : ?>
+									                                    	    
 	<div class="post-excerpt">
-		<?php the_excerpt( 100 ); ?>
-	</div><!-- .post-excerpt -->
+		    		            			            	                                                                                            
+		<?php the_excerpt('100'); ?>
+	
+	</div> <!-- /post-excerpt -->
+
 <?php endif; ?>
 
-<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerville' ) . '</span>'; ?>
+<div class="post-meta">
 
-<?php baskerville_meta(); ?>
+	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+	
+	<?php
+	
+		if( function_exists('zilla_likes') ) zilla_likes(); 
+	
+		if ( comments_open() ) {
+			comments_popup_link( '0', '1', '%', 'post-comments' );
+		}
+		
+		edit_post_link(); 
+	
+	?>
+
+	<div class="clear"></div>
+
+</div>
+            
+<div class="clear"></div>

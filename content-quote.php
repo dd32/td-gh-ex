@@ -1,40 +1,54 @@
-<div class="post-header">
+<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
+<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
 
-	<?php if ( get_the_title() ) : ?>
-	    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-	<?php endif; ?>
+<div class="post-header">
+	
+    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
     
-    <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerville' ) . '</span>'; ?>
+    <?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
     
-</div><!-- .post-header -->
+</div> <!-- /post-header -->
 
 <div class="post-quote">
 
+	<blockquote><?php echo $quote_content; ?></blockquote>
+	
+	<?php if ( $quote_attribution != '' ) : ?>
+	
+		<cite><?php echo $quote_attribution; ?></cite>
+	
+	<?php endif; ?>
+
+</div> <!-- /post-quote -->
+						
+<?php if($post->post_content != "") : ?>
+									                                    	    
+	<div class="post-excerpt">
+		    		            			            	                                                                                            
+		<?php the_excerpt('100'); ?>
+	
+	</div> <!-- /post-excerpt -->
+
+<?php endif; ?>
+
+<div class="post-meta">
+
+	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+	
 	<?php
-		
-	// Fetch post content
-	$content = get_post_field( 'post_content', get_the_ID() );
 	
-	// Get content parts
-	$content_parts = get_extended( $content );
+		if( function_exists('zilla_likes') ) zilla_likes(); 
 	
-	// Output part before <!--more--> tag
-	echo $content_parts['main'];
-	
-	?>
-
-</div><!-- .post-quote -->
-
-<div class="post-excerpt">
-		
-	<?php 
-		if ( strpos( $post->post_content, '<!--more-->' ) ) {
-			echo '<p>' . mb_strimwidth( $content_parts['extended'], 0, 200, '...' ) . '</p>';
-		} else {
-			the_excerpt( 100 );
+		if ( comments_open() ) {
+			comments_popup_link( '0', '1', '%', 'post-comments' );
 		}
+		
+		edit_post_link(); 
+	
 	?>
 
-</div><!-- .post-excerpt -->
+	<div class="clear"></div>
 
-<?php baskerville_meta(); ?>
+</div>
+            
+<div class="clear"></div>

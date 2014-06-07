@@ -1,723 +1,715 @@
 <?php
 
+// Theme setup
+add_action( 'after_setup_theme', 'baskerville_setup' );
 
-/* ---------------------------------------------------------------------------------------------
-   THEME SETUP
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_setup' ) ) {
-
-	function baskerville_setup() {
-		
-		// Automatic feed
-		add_theme_support( 'automatic-feed-links' );
-			
-		// Post thumbnails
-		add_theme_support( 'post-thumbnails' );
-
-		set_post_thumbnail_size( 600, 9999 );
-		add_image_size( 'post-image', 945, 9999 );
-		
-		// Post formats
-		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
-
-		// Custom background
-		add_theme_support( 'custom-background', array(
-			'default-color'	=> '#f1f1f1'
-		) );
-
-		// Custom header
-		add_theme_support( 'custom-header', array(
-			'width'         => 1440,
-			'height'        => 221,
-			'default-image' => get_template_directory_uri() . '/images/header.jpg',
-			'uploads'       => true,
-			'header-text'  	=> false
-		) );
-
-		// Custom logo
-		add_theme_support( 'custom-logo', array(
-			'height'      => 240,
-			'width'       => 320,
-			'flex-height' => true,
-			'flex-width'  => true,
-			'header-text' => array( 'site-title', 'site-description' ),
-		) );
-		
-		// Add support for title_tag
-		add_theme_support( 'title-tag' );
-
-		// Set content width
-		global $content_width;
-		if ( ! isset( $content_width ) ) $content_width = 676;
-
-		// Add nav menu
-		register_nav_menu( 'primary', __( 'Primary Menu', 'baskerville' ) );
-		
-		// Make the theme translation ready
-		load_theme_textdomain( 'baskerville', get_template_directory() . '/languages' );
-		
-	}
-	add_action( 'after_setup_theme', 'baskerville_setup' );
-
-}
-
-
-/* ---------------------------------------------------------------------------------------------
-   ENQUEUE SCRIPTS
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_load_javascript_files' ) ) :
-	function baskerville_load_javascript_files() {
-
-		$theme_version = wp_get_theme( 'baskerville' )->get( 'Version' );
-
-		wp_register_script( 'baskerville_flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.7.2' );
-
-		wp_enqueue_script( 'baskerville_global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry', 'imagesloaded', 'baskerville_flexslider' ), $theme_version );
-
-		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
-
-	}
-	add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
-endif;
-
-
-/* ---------------------------------------------------------------------------------------------
-   ENQUEUE STYLES
-   --------------------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'baskerville_load_style' ) ) :
-	function baskerville_load_style() {
-
-		if ( is_admin() ) return;
-
-		$dependencies = array();
-		$theme_version = wp_get_theme( 'baskerville' )->get( 'Version' );
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'baskerville' );
-
-		if ( 'off' !== $google_fonts ) {
-
-			// Register Google Fonts
-			wp_register_style( 'baskerville_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400', array(), $theme_version );
-			$dependencies[] = 'baskerville_googleFonts';
-
-		}
-
-		// Enqueue the styles
-		wp_enqueue_style( 'baskerville_style', get_template_directory_uri() . '/style.css', $dependencies, $theme_version );
-
-	}
-	add_action( 'wp_print_styles', 'baskerville_load_style' );
-endif;
-
-
-/* ---------------------------------------------------------------------------------------------
-   ADD EDITOR STYLES
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_add_editor_styles' ) ) {
-	function baskerville_add_editor_styles() {
-
-		add_editor_style( 'baskerville-editor-style.css' );
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'baskerville' );
-
-		if ( 'off' !== $google_fonts ) {
-			$font_url = '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300';
-			add_editor_style( str_replace( ',', '%2C', $font_url ) );
-		}
-
-	}
-	add_action( 'init', 'baskerville_add_editor_styles' );
-}
-
-
-/* ---------------------------------------------------------------------------------------------
-   ADD FOOTER WIDGET AREAS
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_sidebar_registration' ) ) :
-	function baskerville_sidebar_registration() {
-
-		register_sidebar( array(
-			'name' 			=> __( 'Footer A', 'baskerville' ),
-			'id' 			=> 'footer-a',
-			'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'baskerville' ),
-			'before_title' 	=> '<h3 class="widget-title">',
-			'after_title' 	=> '</h3>',
-			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-			'after_widget' 	=> '</div><div class="clear"></div></div>'
-		) );
-
-		register_sidebar( array(
-			'name' 			=> __( 'Footer B', 'baskerville' ),
-			'id' 			=> 'footer-b',
-			'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'baskerville' ),
-			'before_title' 	=> '<h3 class="widget-title">',
-			'after_title' 	=> '</h3>',
-			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-			'after_widget' 	=> '</div><div class="clear"></div></div>'
-		) );
-
-		register_sidebar( array(
-			'name' 			=> __( 'Footer C', 'baskerville' ),
-			'id' 			=> 'footer-c',
-			'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'baskerville' ),
-			'before_title' 	=> '<h3 class="widget-title">',
-			'after_title' 	=> '</h3>',
-			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-			'after_widget' 	=> '</div><div class="clear"></div></div>'
-		) );
-
-		register_sidebar( array(
-			'name' 			=> __( 'Sidebar', 'baskerville' ),
-			'id'			=> 'sidebar',
-			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerville' ),
-			'before_title' 	=> '<h3 class="widget-title">',
-			'after_title' 	=> '</h3>',
-			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-			'after_widget' 	=> '</div><div class="clear"></div></div>'
-		) );
-
-	}
-	add_action( 'widgets_init', 'baskerville_sidebar_registration' ); 
-endif;
+function baskerville_setup() {
 	
+	// Automatic feed
+	add_theme_support( 'automatic-feed-links' );
+		
+	// Post thumbnails
+	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_image_size( 'post-image', 900, 9999 );
+	add_image_size( 'post-thumbnail', 600, 9999 );
+	
+	// Post formats
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'link', 'quote', 'status', 'video' ) );
 
-/* ---------------------------------------------------------------------------------------------
-   ADD THEME WIDGETS
-   --------------------------------------------------------------------------------------------- */
+	// Custom header
+	$args = array(
+		'width'         => 1440,
+		'height'        => 221,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       => true,
+		'header-text'  	=> false
+		
+	);
+	add_theme_support( 'custom-header', $args );
 
-
-require_once( get_template_directory() . '/widgets/dribbble-widget.php' );
-require_once( get_template_directory() . '/widgets/flickr-widget.php' );
-
-
-/* ---------------------------------------------------------------------------------------------
-   ADD CLASSES TO PAGINATION
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_pagination_classes_next' ) ) {
-	function baskerville_pagination_classes_next() {
-
-		return 'class="post-nav-older fleft"';
-
-	}
-	add_filter( 'next_posts_link_attributes', 'baskerville_pagination_classes_next' );
+	// Add nav menu
+	register_nav_menu( 'primary', 'Primary Menu' );
+	
+	// Make the theme translation ready
+	load_theme_textdomain('baskerville', get_template_directory() . '/languages');
+	
+	$locale = get_locale();
+	$locale_file = get_template_directory() . "/languages/$locale.php";
+	if ( is_readable($locale_file) )
+	  require_once($locale_file);
+	
 }
 
-if ( ! function_exists( 'baskerville_pagination_classes_prev' ) ) {
-	function baskerville_pagination_classes_prev() {
+// Enqueue Javascript files
+function baskerville_load_javascript_files() {
 
-		return 'class="post-nav-newer fright"';
+	if ( !is_admin() )
+		wp_register_script( 'baskerville_masonry', get_template_directory_uri().'/js/masonry.pkgd.min.js', array('jquery'), '', true );
+		wp_register_script( 'baskerville_mediaelement', get_template_directory_uri().'/js/mediaelement-and-player.min.js', array('jquery'), '', true );
+		wp_register_script( 'baskerville_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
+		wp_register_script( 'baskerville_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
+		
+		wp_enqueue_script( 'jquery' );	
+		wp_enqueue_script( 'baskerville_masonry' );
+		wp_enqueue_script( 'baskerville_mediaelement' );
+		wp_enqueue_script( 'baskerville_flexslider' );
+		wp_enqueue_script( 'baskerville_global' );
+}
 
-	}
-	add_filter( 'previous_posts_link_attributes', 'baskerville_pagination_classes_prev' );
+add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
+
+
+// Enqueue styles
+function baskerville_load_style() {
+	if ( !is_admin() )
+	    wp_register_style('baskerville_googleFonts',  '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400' );
+		wp_register_style('baskerville_style', get_stylesheet_uri() );
+		
+	    wp_enqueue_style( 'baskerville_googleFonts' );
+	    wp_enqueue_style( 'baskerville_style' );
+}
+
+add_action('wp_print_styles', 'baskerville_load_style');
+
+
+// Add editor styles
+function baskerville_add_editor_styles() {
+    add_editor_style( 'baskerville-editor-style.css' );
+    $font_url = '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300';
+    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+}
+add_action( 'init', 'baskerville_add_editor_styles' );
+
+
+// Add footer widget areas
+add_action( 'widgets_init', 'baskerville_sidebar_reg' ); 
+
+function baskerville_sidebar_reg() {
+	register_sidebar(array(
+	  'name' => __( 'Footer A', 'baskerville' ),
+	  'id' => 'footer-a',
+	  'description' => __( 'Widgets in this area will be shown in the left column in the footer.', 'baskerville' ),
+	  'before_title' => '<h3 class="widget-title">',
+	  'after_title' => '</h3>',
+	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+	  'after_widget' => '</div><div class="clear"></div></div>'
+	));	
+	register_sidebar(array(
+	  'name' => __( 'Footer B', 'baskerville' ),
+	  'id' => 'footer-b',
+	  'description' => __( 'Widgets in this area will be shown in the middle column in the footer.', 'baskerville' ),
+	  'before_title' => '<h3 class="widget-title">',
+	  'after_title' => '</h3>',
+	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+	  'after_widget' => '</div><div class="clear"></div></div>'
+	));
+	register_sidebar(array(
+	  'name' => __( 'Footer C', 'baskerville' ),
+	  'id' => 'footer-c',
+	  'description' => __( 'Widgets in this area will be shown in the right column in the footer.', 'baskerville' ),
+	  'before_title' => '<h3 class="widget-title">',
+	  'after_title' => '</h3>',
+	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+	  'after_widget' => '</div><div class="clear"></div></div>'
+	));
+	register_sidebar(array(
+	  'name' => __( 'Sidebar', 'baskerville' ),
+	  'id' => 'sidebar',
+	  'description' => __( 'Widgets in this area will be shown in the sidebar.', 'baskerville' ),
+	  'before_title' => '<h3 class="widget-title">',
+	  'after_title' => '</h3>',
+	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+	  'after_widget' => '</div><div class="clear"></div></div>'
+	));
+}
+	
+// Add theme widgets
+require_once (get_template_directory() . "/widgets/dribbble-widget.php");  
+require_once (get_template_directory() . "/widgets/flickr-widget.php");  
+require_once (get_template_directory() . "/widgets/video-widget.php");
+
+
+// Set content-width
+if ( ! isset( $content_width ) ) $content_width = 676;
+
+
+// Custom title function
+function baskerville_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'baskerville' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'baskerville_wp_title', 10, 2 );
+
+
+// Add classes to next_posts_link and previous_posts_link
+add_filter('next_posts_link_attributes', 'baskerville_posts_link_attributes_1');
+add_filter('previous_posts_link_attributes', 'baskerville_posts_link_attributes_2');
+
+function baskerville_posts_link_attributes_1() {
+    return 'class="post-nav-older fleft"';
+}
+function baskerville_posts_link_attributes_2() {
+    return 'class="post-nav-newer fright"';
 }
 
 
-/* ---------------------------------------------------------------------------------------------
-   CUSTOM NAV WALKER WITH HAS-CHILDREN CLASS
-   --------------------------------------------------------------------------------------------- */
-
-
+// Menu walker adding "has-children" class to menu li's with children menu items
 class baskerville_nav_walker extends Walker_Nav_Menu {
-
-    function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
         $id_field = $this->db_fields['id'];
-        if ( ! empty( $children_elements[$element->$id_field] ) ) {
+        if ( !empty( $children_elements[ $element->$id_field ] ) ) {
             $element->classes[] = 'has-children';
         }
         Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
     }
-
 }
 
 
-/* ---------------------------------------------------------------------------------------------
-   BODY CLASSES
-   --------------------------------------------------------------------------------------------- */
+// Add class to body if the post/page has a featured image
+add_action('body_class', 'baskerville_if_featured_image_class' );
+
+function baskerville_if_featured_image_class($classes) {
+     global $post;
+     if ( isset( $post ) && has_post_thumbnail() ) {
+             $classes[] = 'has-featured-image';
+     } else {
+	     $classes[] = 'no-featured-image';
+     }
+     return $classes;
+}
 
 
-if ( ! function_exists( 'baskerville_body_classes' ) ) {
-	function baskerville_body_classes( $classes ) {
-		
-		// If has post thumbnail
-		$classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
+// Add class to body if it's viewed on mobile
+add_action('body_class', 'baskerville_if_is_mobile' );
 
-		// If is mobile
-		if ( wp_is_mobile() ) {
-			$classes[] = 'is_mobile';
+function baskerville_if_is_mobile($classes) {
+     global $post;
+     if ( wp_is_mobile() ) {
+             $classes[] = 'is_mobile';
+     }
+     return $classes;
+}
+
+
+// Add class to body if it's a single page
+add_action('body_class', 'baskerville_if_page_class' );
+
+function baskerville_if_page_class($classes) {
+     global $post;
+     if ( is_page() || is_404() || is_attachment() ) {
+             $classes[] = 'single-post';
+     }
+     return $classes;
+}
+
+// Change the length of excerpts
+function custom_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+// Add more-link text to excerpt
+function new_excerpt_more( $more ) {
+	return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __('Continue Reading', 'baskerville') . ' &rarr;</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+
+// Remove inline styling of attachment
+add_shortcode('wp_caption', 'baskerville_fixed_img_caption_shortcode');
+add_shortcode('caption', 'baskerville_fixed_img_caption_shortcode');
+
+function baskerville_fixed_img_caption_shortcode($attr, $content = null) {
+	if ( ! isset( $attr['caption'] ) ) {
+		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
+			$content = $matches[1];
+			$attr['caption'] = trim( $matches[2] );
 		}
-
-		// Replicate single classes on other pages
-		if ( is_singular() || is_404() ) {
-			$classes[] = 'single single-post';
-		}
-
-		return $classes;
-
 	}
-	add_action( 'body_class', 'baskerville_body_classes' );
+	
+	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
+	
+	if ( $output != '' ) return $output;
+	extract(shortcode_atts(array(
+		'id' => '',
+		'align' => 'alignnone',
+		'width' => '',
+		'caption' => ''
+	), $attr));
+	
+	if ( 1 > (int) $width || empty($caption) )
+	return $content;
+	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
+	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 
 
-/* ---------------------------------------------------------------------------------------------
-   CUSTOM EXCERPT LENGTH
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_custom_excerpt_length' ) ) {
-	function baskerville_custom_excerpt_length( $length ) {
-
-		return 40;
-
-	}
-	add_filter( 'excerpt_length', 'baskerville_custom_excerpt_length', 999 );
+// Get domain name from URL
+function url_to_domain($url) {
+    $host = @parse_url($url, PHP_URL_HOST);
+ 
+    if (!$host) {
+        $host = $url;
+    }
+ 
+    if (substr($host, 0, 4) == "www.") {
+        $host = substr($host, 0);
+    }
+ 
+    return $host;
 }
 
 
-/* ---------------------------------------------------------------------------------------------
-   CUSTOM EXCERPT OUTPUT
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_new_excerpt_more' ) ) {
-	function baskerville_new_excerpt_more( $more ) {
-
-		return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Continue Reading', 'baskerville' ) . ' &rarr;</a>';
-
-	}
-	add_filter( 'excerpt_more', 'baskerville_new_excerpt_more' );
+// Style the admin area
+function baskerville_custom_colors() {
+   echo '<style type="text/css">
+   
+#postimagediv #set-post-thumbnail img {
+	max-width: 100%;
+	height: auto;
 }
 
-
-/* ---------------------------------------------------------------------------------------------
-   BASKERVILLE META FUNCTION
-   --------------------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'baskerville_meta' ) ) :
-	function baskerville_meta() {
-		
-		?>
-
-		<div class="post-meta">
-		
-			<a class="post-date" href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
-			
-			<?php
-			
-			if ( function_exists( 'zilla_likes' ) ) zilla_likes(); 
-		
-			if ( comments_open() ) {
-				comments_popup_link( '0', '1', '%', 'post-comments' );
-			}
-			
-			edit_post_link(); 
-			
-			?>
-			
-			<div class="clear"></div>
-		
-		</div><!-- .post-meta -->
-		
-	<?php
-
-	}
-endif;
-
-
-/* ---------------------------------------------------------------------------------------------
-   REMOVE ARCHIVE PREFIXES
-   --------------------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'baskerville_remove_archive_title_prefix' ) ) :
-	function baskerville_remove_archive_title_prefix( $title ) {
-
-		if ( is_category() ) {
-			$title = single_cat_title( '', false );
-		} elseif ( is_tag() ) {
-			$title = single_tag_title( '', false );
-		} elseif ( is_author() ) {
-			$title = '<span class="vcard">' . get_the_author() . '</span>';
-		} elseif ( is_year() ) {
-			$title = get_the_date( 'Y' );
-		} elseif ( is_month() ) {
-			$title = get_the_date( 'F Y' );
-		} elseif ( is_day() ) {
-			$title = get_the_date( get_option( 'date_format' ) );
-		} elseif ( is_tax( 'post_format' ) ) {
-			if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-				$title = _x( 'Asides', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-				$title = _x( 'Galleries', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-				$title = _x( 'Images', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-				$title = _x( 'Videos', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-				$title = _x( 'Quotes', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-				$title = _x( 'Links', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-				$title = _x( 'Statuses', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-				$title = _x( 'Audio', 'post format archive title', 'baskerville' );
-			} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-				$title = _x( 'Chats', 'post format archive title', 'baskerville' );
-			}
-		} elseif ( is_post_type_archive() ) {
-			$title = post_type_archive_title( '', false );
-		} elseif ( is_tax() ) {
-			$title = single_term_title( '', false );
-		} elseif ( is_search() ) {
-			$title = '&lsquo;' . get_search_query() . '&rsquo;';
-		} else {
-			$title = __( 'Archives', 'baskerville' );
-		} // End if().
-
-		return $title;
-
-	}
-	add_filter( 'get_the_archive_title', 'baskerville_remove_archive_title_prefix' );
-endif;
-
-
-/* ---------------------------------------------------------------------------------------------
-   GET ARCHIVE PREFIX
-   --------------------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'baskerville_get_archive_title_prefix' ) ) :
-	function baskerville_get_archive_title_prefix() {
-
-		if ( is_category() ) {
-			$title_prefix = __( 'Category', 'baskerville' );
-		} elseif ( is_tag() ) {
-			$title_prefix = __( 'Tag', 'baskerville' );
-		} elseif ( is_author() ) {
-			$title_prefix = __( 'Author', 'baskerville' );
-		} elseif ( is_year() ) {
-			$title_prefix = __( 'Year', 'baskerville' );
-		} elseif ( is_month() ) {
-			$title_prefix = __( 'Month', 'baskerville' );
-		} elseif ( is_day() ) {
-			$title_prefix = __( 'Day', 'baskerville' );
-		} elseif ( is_tax() ) {
-			$tax = get_taxonomy( get_queried_object()->taxonomy );
-			$title_prefix = $tax->labels->singular_name;
-		} elseif ( is_search() ) {
-			$title_prefix = __( 'Search', 'baskerville' );
-		} else {
-			$title_prefix = __( 'Archives', 'baskerville' );
-		}
-		return $title_prefix;
-
-	}
-endif;
-
-
-/* ---------------------------------------------------------------------------------------------
-   FLEXSLIDER OUTPUT
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'baskerville_flexslider' ) ) {
-	function baskerville_flexslider( $size = 'post-thumbnail' ) {
-
-		$attachment_parent = is_page() ? $post->ID : get_the_ID();
-
-		$images = get_posts( array(
-			'orderby'        	=> 'menu_order',
-			'order'          	=> 'ASC',
-			'post_mime_type' 	=> 'image',
-			'post_parent'   	=> $attachment_parent,
-			'post_status'    	=> null,
-			'post_type'     	=> 'attachment',
-			'posts_per_page'    => -1,
-		) );
-
-		if ( $images ) { ?>
-		
-			<div class="flexslider">
-			
-				<ul class="slides">
-		
-					<?php 
-					foreach( $images as $image ) :
-						$attimg = wp_get_attachment_image( $image->ID, $size ); ?>
-						
-						<li>
-							<?php echo $attimg; ?>
-							<?php if ( ! empty( $image->post_excerpt ) && is_single() ) : ?>
-								<div class="media-caption-container">
-									<p class="media-caption"><?php echo $image->post_excerpt; ?></p>
-								</div>
-							<?php endif; ?>
-						</li>
-						
-						<?php 
-					endforeach; 
-					?>
-			
-				</ul>
-				
-			</div><!-- .flexslider -->
-			
-			<?php
-			
-		}
-
-	}
+         </style>';
 }
 
-
-/* ---------------------------------------------------------------------------------------------
-   BASKERVILLE COMMENT FUNCTION
-   --------------------------------------------------------------------------------------------- */
+add_action('admin_head', 'baskerville_custom_colors');
 
 
-if ( ! function_exists( 'baskerville_comment' ) ) {
-	function baskerville_comment( $comment, $args, $depth ) {
+// Flexslider function for format-gallery
+function baskerville_flexslider($size = thumbnail) {
 
-		switch ( $comment->comment_type ) :
-			case 'pingback' :
-			case 'trackback' :
-		?>
+	if ( is_page()) :
+		$attachment_parent = $post->ID;
+	else : 
+		$attachment_parent = get_the_ID();
+	endif;
+
+	if($images = get_posts(array(
+		'post_parent'    => $attachment_parent,
+		'post_type'      => 'attachment',
+		'numberposts'    => -1, // show all
+		'post_status'    => null,
+		'post_mime_type' => 'image',
+                'orderby'        => 'menu_order',
+                'order'           => 'ASC',
+	))) { ?>
+	
+		<div class="flexslider">
 		
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		
-			<?php __( 'Pingback:', 'baskerville' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'baskerville' ), '<span class="edit-link">', '</span>' ); ?>
-			
-		</li>
-		<?php
-				break;
-			default :
-			global $post;
-		?>
-		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		
-			<div id="comment-<?php comment_ID(); ?>" class="comment">
-			
-				<?php echo get_avatar( $comment, 80 ); ?>
-			
-				<div class="comment-inner">
-
-					<div class="comment-header">
-												
-						<?php printf( '<cite class="fn">%1$s</cite>',
-							get_comment_author_link()
-						); ?>
-						
-						<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(  _x( '%1$s at %2$s', '[date] at [time of day]', 'baskerville' ), get_comment_date(), get_comment_time() ); ?></a></p>
-						
-						<div class="comment-actions">
-						
-							<?php edit_comment_link( __( 'Edit', 'baskerville' ), '', '' ); ?>
-							
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'baskerville' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-							
-							<div class="clear"></div>
-						
-						</div><!-- .comment-actions -->
-						
-					</div><!-- .comment-header -->
-
-					<div class="comment-content">
+			<ul class="slides">
+	
+				<?php foreach($images as $image) { 
+					$attimg = wp_get_attachment_image($image->ID,$size); ?>
 					
-						<?php if ( '0' == $comment->comment_approved ) : ?>
-						
-							<p class="comment-awaiting-moderation"><?php _e( 'Awaiting moderation', 'baskerville' ); ?></p>
-							
+					<li>
+						<?php echo $attimg; ?>
+						<?php if ( !empty($image->post_excerpt) && is_single()) : ?>
+							<div class="media-caption-container">
+								<p class="media-caption"><?php echo $image->post_excerpt ?></p>
+							</div>
 						<?php endif; ?>
+					</li>
 					
-						<?php comment_text(); ?>
-						
-					</div><!-- .comment-content -->
+				<?php }; ?>
+		
+			</ul>
+			
+		</div><?php
+		
+	}
+}
+
+
+// Baskerville comment function
+if ( ! function_exists( 'baskerville_comment' ) ) :
+function baskerville_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+	?>
+	
+	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+	
+		<?php __( 'Pingback:', 'baskerville' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'baskerville' ), '<span class="edit-link">', '</span>' ); ?>
+		
+	</li>
+	<?php
+			break;
+		default :
+		global $post;
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+	
+		<div id="comment-<?php comment_ID(); ?>" class="comment">
+		
+			<?php echo get_avatar( $comment, 80 ); ?>
+		
+			<div class="comment-inner">
+
+				<div class="comment-header">
+											
+					<?php printf( '<cite class="fn">%1$s</cite>',
+						get_comment_author_link()
+					); ?>
 					
-					<div class="comment-actions-below hidden">
-						
+					<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date() . ' at ' . get_comment_time() ?></a></p>
+					
+					<div class="comment-actions">
+					
 						<?php edit_comment_link( __( 'Edit', 'baskerville' ), '', '' ); ?>
 						
 						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'baskerville' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						
 						<div class="clear"></div>
 					
-					</div><!-- .comment-actions -->
+					</div> <!-- /comment-actions -->
 					
-				</div><!-- .comment-inner -->
+				</div> <!-- /comment-header -->
 
-			</div><!-- .comment-## -->
-		<?php
-			break;
-		endswitch;
+				<div class="comment-content">
+				
+					<?php if ( '0' == $comment->comment_approved ) : ?>
+					
+						<p class="comment-awaiting-moderation"><?php _e( 'Awaiting moderation', 'baskerville' ); ?></p>
+						
+					<?php endif; ?>
+				
+					<?php comment_text(); ?>
+					
+				</div><!-- /comment-content -->
+				
+				<div class="comment-actions-below hidden">
+					
+					<?php edit_comment_link( __( 'Edit', 'baskerville' ), '', '' ); ?>
+					
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'baskerville' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					
+					<div class="clear"></div>
+				
+				</div> <!-- /comment-actions -->
+				
+			</div> <!-- /comment-inner -->
 
-	}
+		</div><!-- /comment-## -->
+	<?php
+		break;
+	endswitch;
+}
+endif;
+
+
+// Add Twitter field to user profiles
+function wpg_modify_contact_methods($profile_fields) {
+
+	// Add new fields
+	$profile_fields['twitter'] = 'Twitter-username (without the @)';
+
+	return $profile_fields;
+}
+add_filter('user_contactmethods', 'wpg_modify_contact_methods');
+
+
+// Add the option to show or hide the email address for post authors
+add_action( 'show_user_profile', 'show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'show_extra_profile_fields' );
+
+function show_extra_profile_fields( $user ) { ?>
+
+	<h3>Extra profile information</h3>
+
+	<table class="form-table">
+
+
+		<tr>
+			<th><label for="showemail"><?php _e('Show email', 'baskerville'); ?></label></th>
+
+			<td>
+				<input type="checkbox" name="showemail" id="showemail" value="yes" <?php if (esc_attr( get_the_author_meta( "showemail", $user->ID )) == "yes") echo "checked"; ?> />	
+				<span class="description"><?php _e('Check if you want to display your email address in single posts and the contributors page template.', 'baskerville'); ?></span>
+			</td>
+		</tr>
+
+	</table>
+<?php }
+
+add_action( 'personal_options_update', 'save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
+
+function save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+	update_user_meta( $user_id, 'showemail', $_POST['showemail'] );
+
 }
 
 
-/* ---------------------------------------------------------------------------------------------
-   BASKERVILLE THEME OPTIONS
-   --------------------------------------------------------------------------------------------- */
 
-if ( ! class_exists( 'Baskerville_Customize' ) ) :
-	class Baskerville_Customize {
+// Add and save meta boxes for posts
+add_action( 'add_meta_boxes', 'cd_meta_box_add' );
+function cd_meta_box_add() {
+	add_meta_box( 'post-video-url', __('Video URL', 'baskerville'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
+	add_meta_box( 'post-audio-url', __('Audio URL', 'baskerville'), 'cd_meta_box_audio_url', 'post', 'side', 'high' );
+	add_meta_box( 'post-quote-content-box', __('Quote content', 'baskerville'), 'cd_meta_box_quote_content', 'post', 'normal', 'core' );
+	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'baskerville'), 'cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
+	add_meta_box( 'post-link-url', __('Link URL', 'baskerville'), 'cd_meta_box_link_url', 'post', 'side', 'high' );
+	add_meta_box( 'post-link-title', __('Link title', 'baskerville'), 'cd_meta_box_link_title', 'post', 'side', 'high' );
+}
 
-		public static function register( $wp_customize ) {
+function cd_meta_box_video_url( $post ) {
+	$values = get_post_custom( $post->ID );
+	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
+		</p>
+	<?php		
+}
 
-			// Only display the Customizer section for the baskerville_logo setting if it already has a value.
-			// This means that site owners with existing logos can remove them, but new site owners can't add them.
-			// Since v2.1.0, the core custom_logo setting (in the Site Identity Customizer panel) should be used instead.
-			if ( ! get_theme_mod( 'baskerville_logo' ) ) return;
+function cd_meta_box_audio_url( $post ) {
+	$values = get_post_custom( $post->ID );
+	$audio_url = isset( $values['audio_url'] ) ? esc_attr( $values['audio_url'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<input type="text" class="widefat" name="audio_url" id="audio_url" value="<?php echo $audio_url; ?>" />
+		</p>
+	<?php		
+}
 
-			// Register the logo section, setting, and control
-			$wp_customize->add_section( 'baskerville_logo_section', array(
-				'title'				=> __( 'Logo', 'baskerville' ),
-				'priority'			=> 40,
-				'description'		=> 'Upload a logo to replace the default site name and description in the header',
-			) );
+function cd_meta_box_quote_content( $post ) {
+	$values = get_post_custom( $post->ID );
+	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<textarea name="quote_content" id="quote_content" class="widefat" rows="5"><?php echo $quote_content; ?></textarea>
+		</p>
+	<?php		
+}
 
-			$wp_customize->add_setting( 'baskerville_logo', array( 
-				'sanitize_callback'	=> 'esc_url_raw' 
-			) );
+function cd_meta_box_quote_attribution( $post ) {
+	$values = get_post_custom( $post->ID );
+	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<input name="quote_attribution" id="quote_attribution" class="widefat" value="<?php echo $quote_attribution; ?>" />
+		</p>
+	<?php		
+}
 
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'baskerville_logo', array(
-				'label'				=> __( 'Logo', 'baskerville' ),
-				'section'			=> 'baskerville_logo_section',
-				'settings'			=> 'baskerville_logo',
-			) ) );
+function cd_meta_box_link_url( $post ) {
+	$values = get_post_custom( $post->ID );
+	$link_url = isset( $values['link_url'] ) ? esc_attr( $values['link_url'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<input name="link_url" id="link_url" class="widefat" value="<?php echo $link_url; ?>" />
+		</p>
+	<?php		
+}
 
-		}
+function cd_meta_box_link_title( $post ) {
+	$values = get_post_custom( $post->ID );
+	$link_title = isset( $values['link_title'] ) ? esc_attr( $values['link_title'][0] ) : '';
+	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
+	?>
+		<p>
+			<input name="link_title" id="link_title" class="widefat" value="<?php echo $link_title; ?>" />
+		</p>
+	<?php		
+}
 
+add_action( 'save_post', 'cd_meta_box_save' );
+function cd_meta_box_save( $post_id ) {
+	// Bail if we're doing an auto save
+	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	
+	// if our nonce isn't there, or we can't verify it, bail
+	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+	
+	// if our current user can't edit this post, bail
+	if( !current_user_can( 'edit_post' ) ) return;
+	
+	// now we can actually save the data
+	$allowed = array( 
+		'a' => array( // on allow a tags
+			'href' => array() // and those anchords can only have href attribute
+		)
+	);
+	
+	// Probably a good idea to make sure the data is set		
+	if( isset( $_POST['video_url'] ) ) {
+		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
 	}
-	add_action( 'customize_register', array( 'Baskerville_Customize', 'register' ) );
-endif;
+	
+	if( isset( $_POST['audio_url'] ) ) {
+		update_post_meta( $post_id, 'audio_url', wp_kses( $_POST['audio_url'], $allowed ) );
+	}
+	
+	if( isset( $_POST['quote_content'] ) ) {
+		update_post_meta( $post_id, 'quote_content', wp_kses( $_POST['quote_content'], $allowed ) );
+	}
+	
+	if( isset( $_POST['quote_attribution'] ) ) {
+		update_post_meta( $post_id, 'quote_attribution', wp_kses( $_POST['quote_attribution'], $allowed ) );
+	}
+	
+	if( isset( $_POST['link_url'] ) ) {
+		update_post_meta( $post_id, 'link_url', wp_kses( $_POST['link_url'], $allowed ) );
+	}
+	
+	if( isset( $_POST['link_title'] ) ) {
+		update_post_meta( $post_id, 'link_title', wp_kses( $_POST['link_title'], $allowed ) );
+	}
+
+}
 
 
-/* ---------------------------------------------------------------------------------------------
-   SPECIFY GUTENBERG SUPPORT
------------------------------------------------------------------------------------------------- */
+// Hide/show meta boxes depending on the post format selected
+function meta_box_post_format_toggle()
+{
+    wp_enqueue_script( 'jquery' );
+
+    $script = '
+    <script type="text/javascript">
+        jQuery( document ).ready( function($)
+            {
+            
+                $( "#post-video-url" ).hide();
+                $( "#post-audio-url" ).hide();
+                $( "#post-link-title" ).hide();
+                $( "#post-link-url" ).hide();
+                $( "#post-quote-content-box" ).hide();
+                $( "#post-quote-attribution-box" ).hide();
+            	
+            	if($("#post-format-video").is(":checked"))
+	                $( "#post-video-url" ).show();
+            	if($("#post-format-audio").is(":checked"))
+	                $( "#post-audio-url" ).show();
+            	if($("#post-format-link").is(":checked")) {
+	                $( "#post-link-title" ).show();
+	                $( "#post-link-url" ).show();
+				}
+            	if($("#post-format-quote").is(":checked")) {
+	                $( "#post-quote-content-box" ).show();
+	                $( "#post-quote-attribution-box" ).show();
+				}
+                
+                $( "input[name=\"post_format\"]" ).change( function() {
+	                $( "#post-video-url" ).hide();
+	                $( "#post-audio-url" ).hide();
+	                $( "#post-link-url" ).hide();
+	                $( "#post-link-title" ).hide();
+	                $( "#post-quote-content-box" ).hide();
+	                $( "#post-quote-attribution-box" ).hide();
+                } );
+
+                $( "input#post-format-video" ).change( function() {
+                    $( "#post-video-url" ).show();
+				});
+                
+                $( "input#post-format-audio" ).change( function() {
+					$( "#post-audio-url" ).show();
+				});
+				
+                $( "input#post-format-link" ).change( function() {
+                    $( "#post-link-url" ).show();
+                    $( "#post-link-title" ).show();
+                });
+                
+                $( "input#post-format-quote" ).change( function() {
+                    $( "#post-quote-content-box" ).show();
+                    $( "#post-quote-attribution-box" ).show();
+                });
+
+            }
+        );
+    </script>';
+
+    return print $script;
+}
+add_action( 'admin_footer', 'meta_box_post_format_toggle' );
 
 
-if ( ! function_exists( 'baskerville_add_gutenberg_features' ) ) :
-	function baskerville_add_gutenberg_features() {
+// Baskerville theme options
 
-		add_theme_support( 'align-wide' );
+class baskerville_Customize {
 
-		/* Gutenberg Palette --------------------------------------- */
-
-		add_theme_support( 'editor-color-palette', array(
-			array(
-				'name' 	=> _x( 'Cyan', 'Name of the cyan color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'accent',
-				'color' => '#13C4A5',
-			),
-			array(
-				'name' 	=> _x( 'Black', 'Name of the black color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'black',
-				'color' => '#222',
-			),
-			array(
-				'name' 	=> _x( 'Dark Gray', 'Name of the dark gray color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'dark-gray',
-				'color' => '#444',
-			),
-			array(
-				'name' 	=> _x( 'Medium Gray', 'Name of the medium gray color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'medium-gray',
-				'color' => '#666',
-			),
-			array(
-				'name' 	=> _x( 'Light Gray', 'Name of the light gray color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'light-gray',
-				'color' => '#888',
-			),
-			array(
-				'name' 	=> _x( 'White', 'Name of the white color in the Gutenberg palette', 'baskerville' ),
-				'slug' 	=> 'white',
-				'color' => '#fff',
-			),
+   public static function register ( $wp_customize ) {
+   
+      //1. Define a new section (if desired) to the Theme Customizer
+      $wp_customize->add_section( 'baskerville_options', 
+         array(
+            'title' => __( 'Baskerville Options', 'baskerville' ), //Visible title of section
+            'priority' => 35, //Determines what order this appears in
+            'capability' => 'edit_theme_options', //Capability needed to tweak
+            'description' => __('Allows you to customize some settings for Baskerville.', 'baskerville'), //Descriptive tooltip
+         ) 
+      );
+      
+      $wp_customize->add_section( 'baskerville_logo_section' , array(
+		    'title'       => __( 'Logo', 'baskerville' ),
+		    'priority'    => 40,
+		    'description' => 'Upload a logo to replace the default site name and description in the header',
 		) );
+      
+      //2. Register new settings to the WP database...      
+      $wp_customize->add_setting( 'baskerville_logo' );
+                  
+      //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'baskerville_logo', array(
+		    'label'    => __( 'Logo', 'baskerville' ),
+		    'section'  => 'baskerville_logo_section',
+		    'settings' => 'baskerville_logo',
+		) ) );
+      
+      //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
+      $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+      $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+   }
+   
+   public static function generate_css( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true ) {
+      $return = '';
+      $mod = get_theme_mod($mod_name);
+      if ( ! empty( $mod ) ) {
+         $return = sprintf('%s { %s:%s; }',
+            $selector,
+            $style,
+            $prefix.$mod.$postfix
+         );
+         if ( $echo ) {
+            echo $return;
+         }
+      }
+      return $return;
+    }
+}
 
-		/* Gutenberg Font Sizes --------------------------------------- */
-
-		add_theme_support( 'editor-font-sizes', array(
-			array(
-				'name' 		=> _x( 'Small', 'Name of the small font size in Gutenberg', 'baskerville' ),
-				'shortName' => _x( 'S', 'Short name of the small font size in the Gutenberg editor.', 'baskerville' ),
-				'size' 		=> 16,
-				'slug' 		=> 'small',
-			),
-			array(
-				'name' 		=> _x( 'Regular', 'Name of the regular font size in Gutenberg', 'baskerville' ),
-				'shortName' => _x( 'M', 'Short name of the regular font size in the Gutenberg editor.', 'baskerville' ),
-				'size' 		=> 18,
-				'slug' 		=> 'regular',
-			),
-			array(
-				'name' 		=> _x( 'Large', 'Name of the large font size in Gutenberg', 'baskerville' ),
-				'shortName' => _x( 'L', 'Short name of the large font size in the Gutenberg editor.', 'baskerville' ),
-				'size' 		=> 24,
-				'slug' 		=> 'large',
-			),
-			array(
-				'name' 		=> _x( 'Larger', 'Name of the larger font size in Gutenberg', 'baskerville' ),
-				'shortName' => _x( 'XL', 'Short name of the larger font size in the Gutenberg editor.', 'baskerville' ),
-				'size' 		=> 32,
-				'slug' 		=> 'larger',
-			),
-		) );
-
-	}
-	add_action( 'after_setup_theme', 'baskerville_add_gutenberg_features' );
-endif;
+// Setup the Theme Customizer settings and controls...
+add_action( 'customize_register' , array( 'baskerville_Customize' , 'register' ) );
 
 
-/* ---------------------------------------------------------------------------------------------
-   GUTENBERG EDITOR STYLES
-   --------------------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'baskerville_block_editor_styles' ) ) :
-	function baskerville_block_editor_styles() {
-
-		$dependencies = array();
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'baskerville' );
-
-		if ( 'off' !== $google_fonts ) {
-
-			// Register Google Fonts
-			wp_register_style( 'baskerville-block-editor-styles-font', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300', false, 1.0, 'all' );
-			$dependencies[] = 'baskerville-block-editor-styles-font';
-
-		}
-
-		// Enqueue the editor styles
-		wp_enqueue_style( 'baskerville-block-editor-styles', get_theme_file_uri( '/baskerville-gutenberg-editor-style.css' ), $dependencies, '1.0', 'all' );
-
-	}
-	add_action( 'enqueue_block_editor_assets', 'baskerville_block_editor_styles', 1 );
-endif;
+?>

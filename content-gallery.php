@@ -1,23 +1,45 @@
 <div class="post-header">
-
-	<?php if ( get_the_title() ) : ?>
-	    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-	<?php endif; ?>
+	
+    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
     
-    <?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'baskerville' ) . '</span>'; ?>
+    <?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
     
-</div><!-- .post-header -->
+</div> <!-- /post-header -->
 
-<?php if ( ! post_password_required() ) : ?>
-	<div class="featured-media">
-		<?php baskerville_flexslider( 'post-image' ); ?>
-	</div><!-- .featured-media -->
-<?php endif; ?>
+<div class="featured-media">
 
-<?php if ( get_the_content() ) : ?>
+	<?php baskerville_flexslider('post-thumbnail'); ?>
+					
+</div> <!-- /featured-media -->
+
+<?php if($post->post_content != "") : ?>
+									                                    	    
 	<div class="post-excerpt">
-		<?php the_excerpt( '100' ); ?>
-	</div><!-- .post-excerpt -->
+		    		            			            	                                                                                            
+		<?php the_excerpt('100'); ?>
+	
+	</div> <!-- /post-excerpt -->
+
 <?php endif; ?>
 									                                    	    
-<?php baskerville_meta(); ?>
+<div class="post-meta">
+
+	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+	
+	<?php
+	
+		if( function_exists('zilla_likes') ) zilla_likes(); 
+	
+		if ( comments_open() ) {
+			comments_popup_link( '0', '1', '%', 'post-comments' );
+		}
+		
+		edit_post_link(); 
+	
+	?>
+
+	<div class="clear"></div>
+
+</div>
+            
+<div class="clear"></div>

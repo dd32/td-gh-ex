@@ -6,10 +6,9 @@ include_once(ABSPATH . WPINC . '/feed.php');
 
 class baskerville_dribbble_widget extends WP_Widget {
 
-	function __construct() {
-        $widget_ops = array( 'classname' => 'baskerville_dribbble_widget', 'description' => __('Displays your latest Dribbble photos.', 'baskerville') );
-        parent::__construct( 'baskerville_dribbble_widget', __('Dribbble Widget','baskerville'), $widget_ops );
-    }
+	function baskerville_dribbble_widget() {
+		parent::WP_Widget(false, $name = 'Dribbble widget', array('description' => __('Displays your latest Dribbble photos.', 'baskerville') ));	
+	}
 	
 	function widget($args, $instance) {
 	
@@ -38,8 +37,7 @@ class baskerville_dribbble_widget extends WP_Widget {
 			
 				<div class="dribbble-container">
 						
-					<?php foreach ( $items as $item ) :
-
+					<?php foreach ( $items as $item ):
 						$title = $item->get_title();
 						$link = $item->get_permalink();
 						$description = $item->get_description();
@@ -47,11 +45,11 @@ class baskerville_dribbble_widget extends WP_Widget {
 						preg_match("/src=\"(http.*(jpg|jpeg|gif|png))/", $description, $image_url);
 						$image = $image_url[1]; ?>
 																												
-							<a href="<?php echo esc_url( $link ); ?>" class="dribbble-shot"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>"/></a>
+							<a href="<?php echo $link; ?>" title="<?php echo $title;?>" class="dribbble-shot"><img src="<?php echo $image; ?>" alt="<?php echo $title;?>"/></a> 
 																																			 	
 					<?php endforeach; ?>
 					
-					<p class="widgetmore"><a href="http://www.dribbble.com/<?php echo esc_attr( $dribbble_user ); ?>"><?php printf( __( 'Follow %s on Dribbble', 'baskerville' ) . ' &raquo;', $dribbble_username ); ?></a></p>
+					<p class="widgetmore"><a href="http://www.dribbble.com/<?php echo $dribbble_user; ?>"><?php printf( __('Follow %s on Dribbble','baskerville') . ' &raquo;', $dribbble_username); ?></a></p>
 				
 				</div>
 							
@@ -72,9 +70,9 @@ class baskerville_dribbble_widget extends WP_Widget {
 	function form($instance) {
 	
 		// Get the options into variables, escaping html characters on the way
-		$widget_title = isset( $instance['widget_title'] ) ? $instance['widget_title'] : '';
-		$dribbble_username = isset( $instance['dribbble_username'] ) ? $instance['dribbble_username'] : '';
-		$dribbble_number = isset( $instance['dribbble_number'] ) ? $instance['dribbble_number'] : '';
+		$widget_title = $instance['widget_title'];
+		$dribbble_username = $instance['dribbble_username'];
+		$dribbble_number = $instance['dribbble_number'];
 		?>
 		
 		<p>
