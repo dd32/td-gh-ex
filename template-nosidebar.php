@@ -6,9 +6,7 @@ Template Name: No sidebar template
 
 <?php get_header(); ?>
 
-<?php get_header(); ?>
-
-<div class="wrapper section bg-grey">
+<div class="wrapper section medium-padding">
 										
 	<div class="section-inner">
 	

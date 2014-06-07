@@ -26,6 +26,12 @@ function baskerville_setup() {
 		
 	);
 	add_theme_support( 'custom-header', $args );
+	
+	// Add support for custom background
+	$args = array(
+		'default-color'	=> '#f1f1f1'
+	);
+	add_theme_support( "custom-background", $args );
 
 	// Add nav menu
 	register_nav_menu( 'primary', 'Primary Menu' );
