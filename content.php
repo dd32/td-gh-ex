@@ -2,6 +2,7 @@
 /**
  * @package Generate
  */
+$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPost" itemtype="http://schema.org/BlogPosting" itemscope="itemscope">
@@ -16,18 +17,11 @@
 			</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
-
+		<?php do_action( 'generate_after_entry_header'); ?>
+		
 		<?php
-		if ( has_post_thumbnail() ) :
-		?>
-			<div class="post-image">
-				<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-			</div>
-		<?php
-		endif;
-
 		$format = get_post_format();
-		if ( is_search() ) : // Only display Excerpts for Search ?>
+		if ( is_search() || 'excerpt' == $generate_settings['post_content'] ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary" itemprop="text">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->

@@ -211,3 +211,33 @@ function generate_posted_on() {
 	);
 }
 endif;
+
+/**
+ * Prints the read more HTML to post excerpts
+ */
+if ( ! function_exists( 'generate_excerpt_more' ) ) :
+	add_filter( 'excerpt_more', 'generate_excerpt_more' );
+	function generate_excerpt_more( $more ) {
+		return ' ... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read more', 'generate') . '</a>';
+	}
+endif;
+
+/**
+ * Prints the Post Image to post excerpts
+ */
+if ( ! function_exists( 'generate_post_image' ) ) :
+	add_action( 'generate_after_entry_header', 'generate_post_image' );
+	function generate_post_image()
+	{
+		if ( !has_post_thumbnail() )
+			return;
+			
+		if ( 'post' == get_post_type() && !is_single() ) {
+		?>
+			<div class="post-image">
+				<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+			</div>
+		<?php
+		}
+	}
+endif;

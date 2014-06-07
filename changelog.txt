@@ -9,6 +9,16 @@ Changelog Legend:
 [!] = Bugs
 
 ----
+
+(6/7/2014) - 1.0.7
+
+[*] Page header on single post moved within content
+[+] Single Post Layout setting added
+[+] Blog post content setting added - show full post or excerpt
+[+] Hook added after entry header
+
+----
+
 (5/30/2014) - 1.0.6
 
 [!] Fixed major bug causing Customizer options to disappear

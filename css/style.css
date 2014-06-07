@@ -282,7 +282,7 @@ textarea:focus {
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
+	padding: 7px
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
 }
@@ -987,9 +987,6 @@ h4, h5, h6 {
 .page-header {
 	margin-bottom: 30px;
 }
-.page-header-image {
-	line-height: 0; /* no more weird spacing */
-}
 .page-header h1 {
 	font-size: 25px;
 }
@@ -1183,11 +1180,34 @@ footer.entry-meta {
 }
 
 /* Page Header Addon */
+
+.page-header-image,
+.page-header-image-single {
+	line-height: 0; /* no more weird spacing */
+}
+
 .separate-containers .page-header-image,
 .separate-containers .page-header-content {
 	margin-top: 30px;
 }
 
+.inside-article .page-header-image, 
+.inside-article .page-header-content {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+
 .inside-page-header {
 	padding: 40px;
+}
+
+.separate-containers .page-header-image-single,
+.separate-containers .page-header-content-single {
+	margin-top: 30px;
+}
+
+.inside-article .page-header-image-single,
+.inside-article .page-header-content-single {
+	margin-bottom: 1.5em;
+	margin-top: 0;
 }

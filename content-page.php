@@ -12,7 +12,7 @@
 		<header class="entry-header">
 			<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 		</header><!-- .entry-header -->
-
+		<?php do_action( 'generate_after_entry_header'); ?>
 		<div class="entry-content" itemprop="text">
 			<?php the_content(); ?>
 			<?php

@@ -133,6 +133,31 @@ function generate_customize_register( $wp_customize ) {
 		);
 	}
 	
+	if ( !function_exists( 'generate_colors_customize_register' ) ) {
+
+		$wp_customize->add_control(
+			new Generate_Customize_Misc_Control(
+				$wp_customize,
+				'colors_get_addon_desc',
+				array(
+					'section'     => 'body_section',
+					'type'        => 'addon',
+					'label'			=> __( 'More Settings','generate' ),
+					'url' => 'http://www.generatepress.com/downloads/generate-colors/',
+					'description' => sprintf(
+						__( 'Looking to add more color settings?<br /> %s.', 'generate' ),
+						sprintf(
+							'<a href="%1$s" target="_blank">%2$s</a>',
+							esc_url( 'http://www.generatepress.com/downloads/generate-colors/' ),
+							__( 'Check out Generate Colors', 'generate' )
+						)
+					),
+					'priority'    => 30
+				)
+			)
+		);
+	}
+	
 	// Add Layout section
 	$wp_customize->add_section(
 		// ID
@@ -396,6 +421,40 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
+	// Add Layout setting
+	$wp_customize->add_setting(
+		// ID
+		'generate_settings[single_layout_setting]',
+		// Arguments array
+		array(
+			'default' => $defaults['single_layout_setting'],
+			'type' => 'option'
+		)
+	);
+	
+	// Add Layout control
+	$wp_customize->add_control(
+		// ID
+		'single_layout_control',
+		// Arguments array
+		array(
+			'type' => 'select',
+			'label' => __( 'Single Post Sidebar Layout', 'generate' ),
+			'section' => 'layout_section',
+			'choices' => array(
+				'left-sidebar' => __( 'Sidebar / Content', 'generate' ),
+				'right-sidebar' => __( 'Content / Sidebar', 'generate' ),
+				'no-sidebar' => __( 'Content (no sidebars)', 'generate' ),
+				'both-sidebars' => __( 'Sidebar / Content / Sidebar', 'generate' ),
+				'both-left' => __( 'Sidebar / Sidebar / Content', 'generate' ),
+				'both-right' => __( 'Content / Sidebar / Sidebar', 'generate' )
+			),
+			// This last one must match setting ID from above
+			'settings' => 'generate_settings[single_layout_setting]',
+			'priority' => 36
+		)
+	);
+	
 	// Add footer setting
 	$wp_customize->add_setting(
 		// ID
@@ -458,6 +517,74 @@ function generate_customize_register( $wp_customize ) {
 			'priority' => 45
 		)
 	);
+	
+	// Add Layout section
+	$wp_customize->add_section(
+		// ID
+		'blog_section',
+		// Arguments array
+		array(
+			'title' => __( 'Blog', 'generate' ),
+			'capability' => 'edit_theme_options',
+			'description' => __( '', 'generate' ),
+			'priority' => 35
+		)
+	);
+	
+	// Add Layout setting
+	$wp_customize->add_setting(
+		// ID
+		'generate_settings[post_content]',
+		// Arguments array
+		array(
+			'default' => $defaults['post_content'],
+			'type' => 'option'
+		)
+	);
+	
+	// Add Layout control
+	$wp_customize->add_control(
+		// ID
+		'blog_content_control',
+		// Arguments array
+		array(
+			'type' => 'select',
+			'label' => __( 'Blog Post Content', 'generate' ),
+			'section' => 'blog_section',
+			'choices' => array(
+				'full' => __( 'Show full post', 'generate' ),
+				'excerpt' => __( 'Show excerpt', 'generate' )
+			),
+			// This last one must match setting ID from above
+			'settings' => 'generate_settings[post_content]',
+			'priority' => 10
+		)
+	);
+	
+	if ( !function_exists( 'generate_blog_customize_register' ) ) {
+
+		$wp_customize->add_control(
+			new Generate_Customize_Misc_Control(
+				$wp_customize,
+				'blog_get_addon_desc',
+				array(
+					'section'     => 'blog_section',
+					'type'        => 'addon',
+					'label'			=> __( 'More Settings','generate' ),
+					'url' => 'http://www.generatepress.com/downloads/generate-blog/',
+					'description' => sprintf(
+						__( 'Looking to add more blog settings?<br /> %s.', 'generate' ),
+						sprintf(
+							'<a href="%1$s" target="_blank">%2$s</a>',
+							esc_url( 'http://www.generatepress.com/downloads/generate-blog/' ),
+							__( 'Check out Generate Blog', 'generate' )
+						)
+					),
+					'priority'    => 30
+				)
+			)
+		);
+	}
 }
 
 
@@ -482,6 +609,57 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
  
 }
 
+/**
+ * Class TTFMAKE_Customize_Misc_Control
+ *
+ * Control for adding arbitrary HTML to a Customizer section.
+ *
+ * @since 1.0.0.
+ */
+if ( class_exists( 'WP_Customize_Control' ) ) {
+	class Generate_Customize_Misc_Control extends WP_Customize_Control {
+		public $settings = 'blogname';
+		public $description = '';
+		public $url = '';
+		public $group = '';
+
+		/**
+		 * Render the description and title for the section.
+		 *
+		 * Prints arbitrary HTML to a customizer section. This provides useful hints for how to properly set some custom
+		 * options for optimal performance for the option.
+		 *
+		 * @since  1.0.0.
+		 *
+		 * @return void
+		 */
+		public function render_content() {
+			switch ( $this->type ) {
+				default:
+				case 'text' :
+					echo '<p class="description">' . $this->description . '</p>';
+					break;
+
+				case 'addon':
+					echo '<span class="get-addon">' . sprintf(
+								'<a href="%1$s" target="_blank">%2$s</a>',
+								esc_url( $this->url ),
+								'Addon available'
+							) . '</span>';
+					echo '<p class="description" style="margin-top:5px;">' . $this->description . '</p>';
+					break;
+					
+					
+
+				case 'line' :
+					echo '<hr />';
+					break;
+			}
+		}
+	}
+}
+
+add_action('customize_controls_print_styles', 'generate_customize_preview_css');
 function generate_customize_preview_css() {
 	?>
 	<style>
@@ -490,7 +668,23 @@ function generate_customize_preview_css() {
 			margin-bottom: 0;
 		}
 		
+		.customize-control-title.addon {
+			display:inline;
+		}
+
+		.get-addon a {
+			background: #D54E21;
+			color:#FFF;
+			text-transform: uppercase;
+			font-size:11px;
+			padding: 3px 5px;
+			font-weight: bold;
+		}
+		
+		.customize-control-addon {
+			margin-top: 10px;
+		}
+		
 	</style>
 	<?php
 }
-add_action('customize_controls_print_styles', 'generate_customize_preview_css');

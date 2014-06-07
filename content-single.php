@@ -14,7 +14,7 @@
 				<?php generate_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
-
+		<?php do_action( 'generate_after_entry_header'); ?>
 		<div class="entry-content" itemprop="text">
 			<?php the_content(); ?>
 			<?php

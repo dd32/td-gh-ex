@@ -49,9 +49,8 @@ function generate_body_classes( $classes ) {
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
 	
-	// If we're on the blog, single post etc.. replace value with the blog layout setting
-	if ( is_home() || 
-		is_single() || 
+	// If we're on the blog etc.. replace value with the blog layout setting
+	if ( is_home() ||  
 		is_category() || 
 		is_tag() || 
 		is_archive() || 
@@ -62,6 +61,12 @@ function generate_body_classes( $classes ) {
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
 	// Let us know if a page header is being used
@@ -111,7 +116,6 @@ function generate_right_sidebar_classes( $classes )
 	
 	// If we're on the blog, single post etc.. replace value with the blog layout setting
 	if ( is_home() || 
-		is_single() || 
 		is_category() || 
 		is_tag() || 
 		is_archive() || 
@@ -122,6 +126,12 @@ function generate_right_sidebar_classes( $classes )
 		is_attachment() ) :
 		$layout = null;
 		$layout = $generate_settings['blog_layout_setting'];
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$layout = null;
+		$layout = $generate_settings['single_layout_setting'];
 	endif;
 	
 	if ( $layout != '' ) {
@@ -168,7 +178,6 @@ function generate_left_sidebar_classes( $classes )
 	
 	// If we're on the blog, single post etc.. replace value with the blog layout setting
 	if ( is_home() || 
-		is_single() || 
 		is_category() || 
 		is_tag() || 
 		is_archive() || 
@@ -179,6 +188,12 @@ function generate_left_sidebar_classes( $classes )
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
 	// Left sidebar
@@ -223,7 +238,6 @@ function generate_content_classes( $classes )
 	
 	// If we're on the blog, single post etc.. replace value with the blog layout setting
 	if ( is_home() || 
-		is_single() || 
 		is_category() || 
 		is_tag() || 
 		is_archive() || 
@@ -234,6 +248,12 @@ function generate_content_classes( $classes )
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
 	// If only the right sidebar is set:

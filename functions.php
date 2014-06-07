@@ -9,9 +9,9 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 1000; /* pixels */
+	$content_width = 1200; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.6');
+define( 'GENERATE_VERSION', '1.0.7');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -81,6 +81,8 @@ function generate_get_defaults()
 		'content_layout_setting' => 'separate-containers',
 		'layout_setting' => 'right-sidebar',
 		'blog_layout_setting' => 'right-sidebar',
+		'single_layout_setting' => 'right-sidebar',
+		'post_content' => 'full',
 		'footer_layout_setting' => 'fluid-footer',
 		'footer_widget_setting' => '3',
 		'background_color' => '#efefef',
@@ -207,6 +209,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+ * Build the navigation
+ */
+require get_template_directory() . '/inc/navigation.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -254,8 +261,7 @@ function generate_contruct_sidebars()
 	endif;
 	
 	// If we're on the blog, single post etc.. replace value with the blog layout setting
-	if ( is_home() || 
-		is_single() || 
+	if ( is_home() ||
 		is_category() || 
 		is_tag() || 
 		is_archive() || 
@@ -266,6 +272,12 @@ function generate_contruct_sidebars()
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 
 	// When to show the right sidebar
@@ -298,92 +310,6 @@ function generate_add_login_attribution()
 {
 	?>
 	&#x000B7; <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank" title="<?php _e('GeneratePress','generate');?>"><?php _e('GeneratePress','generate');?></a> &#x000B7; <a href="http://wordpress.org" target="_blank" title="<?php _e('Proudly powered by WordPress','generate');?>"><?php _e('WordPress','generate');?></a> &#x000B7; <a href="<?php echo wp_login_url(); ?>" title="<?php _e('Log in','generate');?>"><?php _e('Log in','generate');?></a>
-	<?php
-}
-
-/**
- * Generate the navigation based on settings
- * @since 0.1
- */
-add_action( 'generate_after_header', 'generate_add_navigation_after_header', 5 );
-function generate_add_navigation_after_header()
-{
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
-	
-	if ( 'nav-below-header' == $generate_settings['nav_position_setting'] ) :
-		generate_navigation_position();
-	endif;
-	
-}
-add_action( 'generate_before_header', 'generate_add_navigation_before_header', 5 );
-function generate_add_navigation_before_header()
-{
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
-	
-	if ( 'nav-above-header' == $generate_settings['nav_position_setting'] ) :
-		generate_navigation_position();
-	endif;
-	
-}
-add_action( 'generate_before_header_content', 'generate_add_navigation_float_right', 5 );
-function generate_add_navigation_float_right()
-{
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
-	
-	if ( 'nav-float-right' == $generate_settings['nav_position_setting'] ) :
-		generate_navigation_position();
-	endif;
-	
-}
-add_action( 'generate_before_right_sidebar_content', 'generate_add_navigation_before_right_sidebar', 5 );
-function generate_add_navigation_before_right_sidebar()
-{
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
-	
-	if ( 'nav-right-sidebar' == $generate_settings['nav_position_setting'] ) :
-		echo '<div class="gen-sidebar-nav">';
-			generate_navigation_position();
-		echo '</div>';
-	endif;
-	
-}
-add_action( 'generate_before_left_sidebar_content', 'generate_add_navigation_before_left_sidebar', 5 );
-function generate_add_navigation_before_left_sidebar()
-{
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
-	
-	if ( 'nav-left-sidebar' == $generate_settings['nav_position_setting'] ) :
-		echo '<div class="gen-sidebar-nav">';
-			generate_navigation_position();
-		echo '</div>';
-	endif;
-	
-}
-function generate_navigation_position()
-{
-	?>
-	<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" role="navigation" <?php generate_navigation_class(); ?>>
-		<div class="inside-navigation grid-container grid-parent">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'generate' ); ?></h3>
-			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'generate' ); ?>"><?php _e( 'Skip to content', 'generate' ); ?></a></div>
-				<div class="main-nav">
-					<ul <?php generate_menu_class(); ?>>
-						<?php 
-						if ( has_nav_menu( 'primary' ) ) :
-							wp_nav_menu( array( 
-								'theme_location' => 'primary',
-								'container_class' => 'main-nav',
-								'menu_class' => 'menu',
-								'items_wrap' => '%3$s'
-							) );
-						else :
-							wp_list_pages('sort_column=menu_order&title_li=');
-						endif;
-						?>
-					</ul>
-				</div><!-- .main-nav -->
-		</div><!-- .inside-navigation -->
-	</nav><!-- #site-navigation -->
 	<?php
 }
 
@@ -487,7 +413,24 @@ echo $output; ?>
 }
 
 /**
- * Add page header using featured image if Page Header addon isn't installed
+ * Build the page header
+ * @since 1.0.7
+ */
+function generate_featured_page_header_area($class)
+{
+	global $post;
+	$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
+	$page_header_image_width = 1200;
+		
+	if ( !empty($page_header_image) ) :
+		echo '<div class="' . $class . ' grid-container grid-parent">';
+			echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" alt="" />';
+		echo '</div>';
+	endif;
+}
+
+/**
+ * Add page header above content
  * @since 1.0.2
  */
 add_action('generate_after_header','generate_featured_page_header', 10);
@@ -496,17 +439,27 @@ function generate_featured_page_header()
 	if ( function_exists('generate_page_header') )
 		return;
 
-	if ( ( is_single() || is_page() ) && !is_attachment() ) :
+	if ( is_page() ) :
 		
-		global $post;
-		$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
-		$page_header_image_width = 1200;
-		
-		if ( !empty($page_header_image) ) :
-			echo '<div class="page-header-image grid-container grid-parent">';
-				echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" alt="" />';
-			echo '</div>';
-		endif;
+		generate_featured_page_header_area('page-header-image');
+	
+	endif;
+}
+
+/**
+ * Add post header inside content
+ * Only add to single post
+ * @since 1.0.7
+ */
+add_action('generate_before_content','generate_featured_page_header_inside_single', 10);
+function generate_featured_page_header_inside_single()
+{
+	if ( function_exists('generate_page_header') )
+		return;
+
+	if ( is_single() ) :
+	
+		generate_featured_page_header_area('page-header-image-single');
 	
 	endif;
 }

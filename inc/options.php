@@ -26,7 +26,8 @@ function generate_create_menu()
 		'generate_page_header' => 'gen_page_header_license_key_status',
 		'generate_insert_import_export' => 'gen_ie_license_key_status',
 		'generate_copyright_option' => 'gen_copyright_license_key_status',
-		'generate_disable_elements' => 'gen_disable_elements_license_key_status'
+		'generate_disable_elements' => 'gen_disable_elements_license_key_status',
+		'generate_blog_get_defaults' => 'gen_blog_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -139,21 +140,29 @@ function generate_settings_page()
 												'id' => 'generate_disable_elements',
 												'license' => 'gen_disable_elements_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-disable-elements/')
+										),
+										'7' => array(
+												'name' => __('Blog','generate'),
+												'version' => ( function_exists('generate_blog_get_defaults') ) ? GENERATE_BLOG_VERSION : '',
+												'id' => 'generate_blog_get_defaults',
+												'license' => 'gen_blog_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-blog/')
 										)
 									);
 									
 									foreach ( $addons as $addon ) {
-										echo '<br /><a href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . '</a>';
+										echo '<div class="addon-container"><span class="addon-title"><a href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . '</a>';
 										if ( !function_exists($addon['id']) ) :
-											echo ' / <span style="color:red;">' . __('plugin inactive','generate') . '</span>';
+											echo '</span><span class="inactive">' . __('plugin inactive','generate') . '</span>';
 										else :
-											echo ' ' . $addon['version'] . ' - <span style="color:green;">' . __('plugin active','generate') . '</span>';
+											echo ' ' . $addon['version'] . '</span><span class="active">' . __('plugin active','generate') . '</span>';
 											if ( get_option($addon['license']) !== 'valid' ) :
-												echo ' / <span style="color:red;">' . __('license key inactive','generate') . '</span>';
+												echo '<span class="inactive">' . __('license key inactive','generate') . '</span>';
 											else :
-												echo ' / <span style="color:green;">' . __('license key active','generate') . '</span>';
+												echo '<span class="active">' . __('license key active','generate') . '</span>';
 											endif;
 										endif;
+										echo '</div>';
 									} 
 									?>
 											
@@ -184,7 +193,8 @@ function generate_settings_page()
 									!function_exists('generate_page_header') &&
 									!function_exists('generate_insert_import_export') &&
 									!function_exists('generate_copyright_option') &&
-									!function_exists('generate_disable_elements') ) :
+									!function_exists('generate_disable_elements') &&
+									!function_exists('generate_blog_get_defaults') ) :
 										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
 									else :
 										echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.','generate') . '</p>';
@@ -205,7 +215,7 @@ function generate_settings_page()
 					<?php do_action('generate_options_items'); ?>
 					
 					<div class="postbox generate-metabox" id="gen-delete">
-						<h3 class="hndle"><?php _e('Delete Visual Settings','generate');?></h3>
+						<h3 class="hndle"><?php _e('Delete Customizer Settings','generate');?></h3>
 						<div class="inside">
 										
 							<p><?php _e( '<strong>Warning:</strong> Clicking this button will delete your settings set in the <a href="' . admin_url('customize.php') . '">Customize</a> area.','generate' ); ?></p>
@@ -214,8 +224,9 @@ function generate_settings_page()
 								<p><input type="hidden" name="generate_reset_customizer" value="generate_reset_customizer_settings" /></p>
 								<p>
 									<?php wp_nonce_field( 'generate_reset_customizer_nonce', 'generate_reset_customizer_nonce' ); ?>
-									<?php submit_button( __( 'Delete Visual Settings', 'generate' ), 'button', 'submit', false ); ?>
+									<?php submit_button( __( 'Delete Default Customizer Settings', 'generate' ), 'button', 'submit', false ); ?>
 								</p>
+								<?php do_action('generate_delete_settings_form');?>
 							</form>
 
 						</div>
@@ -242,6 +253,8 @@ function generate_reset_customizer_settings() {
 		return;
 
 	delete_option('generate_settings');
+	delete_option('generate_blog_settings');
+	delete_option('generate_page_header_settings');
 	
 	wp_safe_redirect( admin_url( 'admin.php?page=generate-options&status=reset' ) ); exit;
 
