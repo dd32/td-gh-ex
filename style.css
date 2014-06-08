@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Baskerville
-	Version: 1.03
+	Version: 1.04
 	Description: Baskerville is a beautiful, responsive and retina-ready masonry theme for hoarders. It's the perfect way to showcase your posts, videos, images and galleries, and share your favorite quotes and links. Features responsive design, retina-ready assets, full-width header image, support for all post formats, custom logo upload, custom widgets (video, Flickr and Dribbble), four page templates (including a contributors template), editor styling, like functionality via the ZillaLikes plugin and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -731,11 +731,24 @@ body a {
 }
 
 
-/* format video */
+/* format video, format image */
 
 
 .posts .format-video .post-header:before,
-.posts .format-video .post-header:after { content: none; }
+.posts .format-video .post-header:after,
+.posts .format-image .post-header:before,
+.posts .format-image .post-header:after { content: none; }
+
+
+/* format image */
+
+
+.format-image .post-excerpt { 
+	padding-top: 7.5%; 
+	font-size: 0.9em;
+}
+
+.format-image .post-excerpt .image-caption { font-weight: 600; }
 
 
 /* format audio */
@@ -1974,8 +1987,10 @@ p.form-submit { margin-top: 30px; }
 
 .author-avatar {
 	display: inline-block;
+	width: 134px;
+	height: auto;
 	margin: 0 auto 25px auto;
-	border: 8px solid #eee;
+	border: 6px solid #eee;
 	border-radius: 9999px;
 	-moz-border-radius: 9999px;
 	-webkit-border-radius: 9999px;
@@ -2828,6 +2843,9 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	}
 	
 	.authors-row:first-child .author-info:first-child { border-top: none; }
+	
+	.author-avatar,
+	.author-info h5 { margin-bottom: 20px; }
 	
 	/* pagination */
 	

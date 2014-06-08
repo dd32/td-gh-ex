@@ -62,11 +62,21 @@ foreach ( $allUsers as $currentUser ) {
 														
 							<div class="one-half author-info">
 							
-								<a href="<?php echo get_author_posts_url( $user->ID ); ?>" class="author-avatar"><?php echo get_avatar( $user->user_email, '134' ); ?></a>
+								<a href="<?php echo get_author_posts_url( $user->ID ); ?>" class="author-avatar"><?php echo get_avatar( $user->user_email, '256' ); ?></a>
 							
 								<h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
 								
-								<h5><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo count_user_posts( $user->ID ); ?> <?php _e ('posts', 'baskerville'); ?></a></h5>
+								<h5>
+								
+									<a href="<?php echo get_author_posts_url( $user->ID ); ?>">
+									
+										<?php echo count_user_posts( $user->ID ); ?>
+									
+										<?php if ( count_user_posts( $user->ID ) == 1 ) { echo ' post'; } else { echo ' posts'; } ?>
+										
+									</a>
+									
+								</h5>
 								
 								<p class="author-description"><?php echo get_user_meta($user->ID, 'description', true); ?></p>
 			
