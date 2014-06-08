@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+SimplyBlack Version 2.0 - june 2014
+- changed theme width to 1200px
+- added featured image on single page
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 SimplyBlack Version 1.9 - june 2014
 - changed size of featured image
 - several minor adjustments 

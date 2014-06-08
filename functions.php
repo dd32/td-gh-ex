@@ -24,7 +24,7 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 960,
+		'width' => 1160,
 		'height' => 300,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,
@@ -47,10 +47,11 @@
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 250, 250 ); 
 
+	// Resize single page thumbnail
+		add_image_size( 'single', 250, 250 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
-
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
