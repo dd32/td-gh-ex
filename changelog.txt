@@ -1,6 +1,13 @@
 *** Baskerville changelog ***
 
 
+Version 1.03 (2014-06-08)
+-------------------------
+- Fixed a bug in the search form in the header
+- Upped the resolution of home-g.png, author-w.png and the post-nav icons in the /2x/ folder
+- Adjusted font sizes and line heights of elements @ 600px
+
+
 Version 1.02 (2014-06-07)
 -------------------------
 - Added yet another missing text domain
