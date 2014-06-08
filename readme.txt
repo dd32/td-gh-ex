@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian and Danish. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish and Czech. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -38,6 +38,7 @@ Added Translation for Spanish by Jorge Lorente (chaguanco@ofdp.com)
 Added Translation for German by Manuel Salmann (manuel.salmann@gmail.com)
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for Danish by Marianne (marianne@gindrup.dk)
+Added Translation for Czech by Marek Pridal (Email: m.pridal29@gmail.com)
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -398,3 +399,6 @@ Version 2.7.1
 * Fixed menu css isssue
 * Minified admin scripts
 * Remove outdated simplecatch_backward_compatibility(), simplecatch_template_backward_compatibility(), simplecatch_sidebar_layout_backward_compatibility() and simplecatch_reset_template_cache functions
+
+Version 2.7.2
+* Added Czech translation cs_CZ.po and cs_CZ.mo
