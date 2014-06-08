@@ -2,10 +2,10 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box Pro\n"
+"Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-30 18:18+0545\n"
-"PO-Revision-Date: 2014-04-30 18:18+0545\n"
+"PO-Revision-Date: 2014-06-02 19:33+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"

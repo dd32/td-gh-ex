@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-30 18:18+0545\n"
-"PO-Revision-Date: 2014-04-30 18:18+0545\n"
+"POT-Creation-Date: 2014-05-09 05:12+0545\n"
+"PO-Revision-Date: 2014-05-09 05:13+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -228,7 +228,7 @@ msgstr "Ver todos los mensajes %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:91 ../inc/catcheverest-functions.php:445
 msgid "Primary Menu"
-msgstr "Menu Principal"
+msgstr "Menú Principal"
 
 #: ../image.php:24
 #, php-format

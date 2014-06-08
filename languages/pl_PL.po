@@ -525,7 +525,7 @@ msgstr "http://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:126
 msgid "Upgrade to Catch Everest Pro"
-msgstr "Upgrade to Catch Everest Pro"
+msgstr "Uaktualnij do Catch Everest Pro"
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://catchthemes.com/donate/"
