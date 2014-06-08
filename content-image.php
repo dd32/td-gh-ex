@@ -1,10 +1,4 @@
-<div class="post-header">
-	
-    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-    
-    <?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
-    
-</div> <!-- /post-header -->
+<?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
 
 <?php if ( has_post_thumbnail() ) : ?>
 
@@ -22,15 +16,15 @@
 		
 <?php endif; ?>
 
-<?php if($post->post_content != "") : ?>
-									                                    	    
-	<div class="post-excerpt">
-		    		            			            	                                                                                            
-		<?php the_excerpt('100'); ?>
-	
-	</div> <!-- /post-excerpt -->
+<div class="post-excerpt">
 
-<?php endif; ?>
+	<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+										
+		<p class="image-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
+		
+	<?php else : the_excerpt('100'); endif; ?>
+		
+</div>
 									                                    	    
 <div class="post-meta">
 

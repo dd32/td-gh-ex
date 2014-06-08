@@ -1,6 +1,12 @@
 *** Baskerville changelog ***
 
 
+Version 1.04 (2014-06-08)
+-------------------------
+- Minor fixes and touch-ups to template-contributors.php
+- Realized that the image post format was missing, added it in
+
+
 Version 1.03 (2014-06-08)
 -------------------------
 - Fixed a bug in the search form in the header

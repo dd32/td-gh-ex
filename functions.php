@@ -14,7 +14,7 @@ function baskerville_setup() {
 	add_image_size( 'post-thumbnail', 600, 9999 );
 	
 	// Post formats
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'link', 'quote', 'status', 'video' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 
 	// Custom header
 	$args = array(
