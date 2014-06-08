@@ -21,7 +21,7 @@
 		
 			<div class="cover"></div>
 		
-			<form method="get" class="header-search-block bg-graphite hidden" action="">
+			<form method="get" class="header-search-block bg-graphite hidden" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<input type="search" value="" placeholder="<?php _e('Type and press enter','baskerville') ?>" name="s" id="s" /> 
 			</form>
 					
