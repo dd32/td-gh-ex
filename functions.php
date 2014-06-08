@@ -24,7 +24,7 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 960,
+		'width' => 1160,
 		'height' => 350,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,
@@ -47,6 +47,8 @@
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 250, 250 ); 
 
+	// Resize single page thumbnail
+		add_image_size( 'single', 250, 250 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );

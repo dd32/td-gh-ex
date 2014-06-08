@@ -1,11 +1,17 @@
 CHANGELOG
 =========
 
+Shipyard version 2.1 - june 2014
+- changed theme width to 1200px
+- added featured image on single page
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 Shipyard version 2.0 - june 2014
 - changed size of featured image
 - reduced space between elements
 - several minor adjustments 
-
 
 Shipyard version 1.9 - april 2014
 - several adjustments in functions file
@@ -16,7 +22,6 @@ Shipyard version 1.9 - april 2014
 - added several adjustments for better responsive layout
 - a bunch of other minor adjustments in stylesheet
 
-
 Shipyard version 1.8 - february 2014
 - added html5 support for IE8 and older
 - added editor styles for page and post
@@ -26,14 +31,12 @@ Shipyard version 1.8 - february 2014
 - fixed issue in full width page template
 - a bunch of other minor adjustments in stylesheet
 
-
 Shipyard version 1.7 - january 2014
 - added custom background and custom logo function (check readme file for instructions)
 - added several adjustments in file header
 - added metadata (comments number) to post listing and single post
 - added new screenshot
 - a bunch of other minor adjustments in stylesheet (navigation, img alignment, mobile stylesheet, etc)
-
 
 Shipyard version 1.6 - november 2013 
 - added wp_title function in functions.php
@@ -45,7 +48,6 @@ Shipyard version 1.6 - november 2013
 - added style to several text elements
 - changed font to Open Sans
 - a bunch of other minor adjustments in stylesheet
-
 
 Shipyard version 1.5 - october 2013 
 - first stable release
