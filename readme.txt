@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak and Japanese. Theme Support at http://catchthemes.com/support/
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, German, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak, Japanese and Bosnian. Theme Support at http://catchthemes.com/support/
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -23,8 +23,8 @@ Catch Box theme is translation ready.
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
 Added Translation for Spanish by César Gómez ( Email: cesar@temperatio.com )
 Added Translation for Danish by Kris Thomsen ( Email: mail@kristhomsen.dk )
-Added Translation for Germany by Heinz Peter Brinkmann
-Added Translation for French by  D'CLIC (cEmail: ontact@dclic.info), Athéna G (Email: webmaster@athena.georgakelos.net) and Capronnier luc (Emil: lcapronnier@yahoo.com)
+Added Translation for German by Heinz Peter Brinkmann
+Added Translation for French by  D'CLIC (Email: contact@dclic.info), Athéna G (Email: webmaster@athena.georgakelos.net) and Capronnier luc (Emil: lcapronnier@yahoo.com)
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 Added Translation for Czech by Marek Přidal (Email: m.pridal29@gmail.com)
 Added Translation for Croatian by Sanjin Barac (Email: rapid24income@gmail.com)
@@ -167,7 +167,7 @@ Version 1.4.1
 * Fixed css for Threaded Comment Image Issue
 
 Version 1.5
-* Added Germany translation de_DE.po and de_DE.mo
+* Added German translation de_DE.po and de_DE.mo
 * Fixed site title though changes in wp_title and catchbox_filter_wp_title function
 
 Version 1.5.1
@@ -408,3 +408,9 @@ Version 2.9.4
 Version 2.9.5
 * Added Orange Color Scheme
 * Minified admin script and style
+
+Version 2.9.6
+* Added Bosnian translation bs_BA.po and bs_BA.mo
+* Updated Brazilian Portuguese language translation by Capronnier luc
+* Updated French language translation by Valdir Trombini
+* Fixed the admin css

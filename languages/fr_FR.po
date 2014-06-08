@@ -2,11 +2,11 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box 2.9\n"
+"Project-Id-Version: Catch Box 2.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-20 16:39+0545\n"
-"PO-Revision-Date: 2014-03-20 16:40+0545\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"POT-Creation-Date: 2014-03-23 23:44+0100\n"
+"PO-Revision-Date: 2014-03-23 23:44+0100\n"
+"Last-Translator: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
 "Com>\n"
 "Language: en\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -533,6 +533,44 @@ msgstr ""
 "%5$s</a> dans <a href=\"%6$s\" title=\"Revenir à %7$s\" rel=\"gallery\">"
 "%8$s</a>"
 
+#: ../search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+#: ../search.php:43
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, aucun résultat n'a été trouvé pour votre recherche. Veuillez essayer "
+"de saisir des mots-clés différents."
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr "Recherche"
+
+#: ../sidebar.php:28
+msgid "Archives"
+msgstr "Archives"
+
+#: ../sidebar.php:37
+msgid "Meta"
+msgstr "Meta"
+
+#: ../single.php:16
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
+
+#: ../single.php:17
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../tag.php:16
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Archives des mots-clés: %s"
+
 #: ../inc/theme-options.php:104
 msgid "Favicon URL"
 msgstr "Favicon URL"
@@ -1023,44 +1061,6 @@ msgstr "Lien URL:"
 #: ../inc/widgets.php:57
 msgid "Alt text:"
 msgstr "Texte alternatif"
-
-#: ../search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
-
-#: ../search.php:43
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Désolé, aucun résultat n'a été trouvé pour votre recherche. Veuillez essayer "
-"de saisir des mots-clés différents."
-
-#: ../searchform.php:11
-msgid "Search"
-msgstr "Recherche"
-
-#: ../sidebar.php:28
-msgid "Archives"
-msgstr "Archives"
-
-#: ../sidebar.php:37
-msgid "Meta"
-msgstr "Meta"
-
-#: ../single.php:16
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
-
-#: ../single.php:17
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../tag.php:16
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Archives des mots-clés: %s"
 
 #~ msgid ""
 #~ "Some themes provide customization options that are grouped together on a "

@@ -72,6 +72,8 @@
 	line-height: 18px;
 }
 #catchthemes .tabNavigation li {
+	background: none #000;
+	border: none;
     display: inline-block;
     margin: 0;
 }

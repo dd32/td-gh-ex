@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-20 16:41+0545\n"
-"PO-Revision-Date: 2014-03-20 16:41+0545\n"
+"POT-Creation-Date: 2014-05-07 08:44+0545\n"
+"PO-Revision-Date: 2014-05-07 08:44+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -15,20 +15,18 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: .\n"
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Erro 404 - Página não Encontrada."
+msgstr "Erro 404 - Página não encontrada."
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr ""
-"Este post é protegido por senha. Digite a senha para ver todo o conteúdo, e "
-"também os comentários."
+msgstr "Parece que não consegue encontrar o que você está procurando."
 
 #: ../404.php:19
 msgid "This might be because:"
@@ -39,8 +37,8 @@ msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Você digitou o endereço da Web incorretamente, ou a página que você está "
-"procurando pode ter sido movida, atualizada ou excluída."
+"Você digitou o endereço da web de forma incorreta, ou a página que você "
+"estava procurando pode ter sido movida, atualizada ou excluída."
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
@@ -58,7 +56,7 @@ msgstr ""
 #: ../archive.php:22
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Arquivos Diários: %s"
+msgstr "Arquivos Mensais: %s"
 
 #: ../archive.php:24
 #, php-format
@@ -154,7 +152,7 @@ msgstr "Link permanente para: %s"
 
 #: ../content-aside.php:17
 msgid "Aside"
-msgstr "Notas"
+msgstr "de lado"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
@@ -542,11 +540,11 @@ msgstr ""
 
 #: ../inc/theme-options.php:104
 msgid "Favicon URL"
-msgstr "Favicon URL"
+msgstr "Adicionar ícone - Favicon"
 
 #: ../inc/theme-options.php:113
 msgid "Web Clip Icon URL"
-msgstr "Web Clip Icon URL"
+msgstr "Adicionar ícone - WebClip"
 
 #: ../inc/theme-options.php:122
 msgid "Color Scheme"
@@ -577,19 +575,19 @@ msgstr "Redirecionamento da URL para o seu Feed"
 
 #: ../inc/theme-options.php:170
 msgid "Move Site Title and Tagline?"
-msgstr "Move Site Title and Tagline?"
+msgstr "Você quer mover o título do site/blog e seu slogan?"
 
 #: ../inc/theme-options.php:178
 msgid "Default Display Text in Search"
-msgstr "Default Display Text in Search"
+msgstr "Exibição do texto padrão no campo Pesquisar"
 
 #: ../inc/theme-options.php:186
 msgid "Disable Search in Header?"
-msgstr "Desativar a barra de pesquisa no cabeçalho?"
+msgstr "Você quer desativar o campo pesquisar no cabeçalho?"
 
 #: ../inc/theme-options.php:194
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
-msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
+msgstr "Você quer ativar o menu secundário no rodapé em dispositivos móveis?"
 
 #: ../inc/theme-options.php:202
 msgid "Custom CSS Styles"
@@ -602,11 +600,11 @@ msgstr "Opções do Tema"
 
 #: ../inc/theme-options.php:262
 msgid "Add/Change Favicon"
-msgstr "Adicionar/Mudar Favicon"
+msgstr "Adicionar/Mudar - Favicon"
 
 #: ../inc/theme-options.php:276
 msgid "Add/Change Web Clip Icon"
-msgstr "Adicionar/Mudar Web Clip Icon"
+msgstr "Adicionar/Mudar WebClip Icon"
 
 #: ../inc/theme-options.php:290
 msgid "Light"
@@ -622,19 +620,19 @@ msgstr "Azul"
 
 #: ../inc/theme-options.php:308
 msgid "Green"
-msgstr "Green"
+msgstr "Verde"
 
 #: ../inc/theme-options.php:314
 msgid "Red"
-msgstr "Red"
+msgstr "Vermelho"
 
 #: ../inc/theme-options.php:320
 msgid "Brown"
-msgstr "Brown"
+msgstr "Marrom"
 
 #: ../inc/theme-options.php:326
 msgid "Orange"
-msgstr "Orange"
+msgstr "Laranja"
 
 #: ../inc/theme-options.php:345
 msgid "Content on left"
@@ -667,11 +665,11 @@ msgstr "Esta é a cor padrão do link: %s"
 
 #: ../inc/theme-options.php:498
 msgid "Words"
-msgstr "Words"
+msgstr "Palavras"
 
 #: ../inc/theme-options.php:526
 msgid "Check to move above the Header/Logo Image"
-msgstr "Check to move above the Header/Logo Image"
+msgstr "Marque aqui para mover o cabeçalho/slogan ou a imagem do logotipo"
 
 #: ../inc/theme-options.php:556
 msgid "Check to Disable"
@@ -686,7 +684,7 @@ msgid "CSS Tutorial from W3Schools."
 msgstr ""
 "Aprenda tudo que você precisa saber a respeito da apresentação das folhas de "
 "estilo em cascata <strong>CSS</strong>  (<strong>C</strong>ascading "
-"<strong>S</strong>tyle <strong>S</strong>heet - Folha de Estilo em Cascata) "
+"<strong>S</strong>tule <strong>S</strong>heet - Folha de Estilo em Cascata) "
 "com os tutoriais dinâmicos da escola <strong>W3Schools</strong>. (em inglês, "
 "contudo, vale o seu esforço em traduzir, para aprender esse "
 "<strong>Ensinamento Gratuito</strong> e apresentar o seu website/blog a seu "
@@ -716,7 +714,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/theme-options.php:658
 msgid "Theme Options By"
-msgstr "Theme Options By"
+msgstr "Opções do tema <strong>Catch Box</strong> desenvolvido por:"
 
 #: ../inc/theme-options.php:660 ../inc/theme-options.php:661
 msgid "Catch Themes"
@@ -728,7 +726,7 @@ msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:667
 msgid "Upgrade to Catch Box Pro"
-msgstr "Upgrade para Catch Box Pro"
+msgstr "Faça upgrade para o Tema Catch Box Pro"
 
 #: ../inc/theme-options.php:672
 msgid "http://catchthemes.com/donate/"
@@ -744,7 +742,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/theme-options.php:673
 msgid "Support"
-msgstr "Support"
+msgstr "Suporte"
 
 #: ../inc/theme-options.php:674
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
@@ -752,7 +750,7 @@ msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
 #: ../inc/theme-options.php:674
 msgid "Support Forum"
-msgstr "Support Forum"
+msgstr "Fórum de suporte"
 
 #: ../inc/theme-options.php:675
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
@@ -760,7 +758,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
 #: ../inc/theme-options.php:675
 msgid "Theme Instructions"
-msgstr "Theme Instructions"
+msgstr "Instruções para o Tema"
 
 #: ../inc/theme-options.php:676
 msgid "https://www.facebook.com/catchthemes/"
@@ -768,7 +766,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/theme-options.php:676
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes on Facebook"
+msgstr "Curtir o Catch Themes no Facebook"
 
 #: ../inc/theme-options.php:676 ../inc/theme-options.php:805
 msgid "Facebook"
@@ -780,7 +778,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/theme-options.php:677
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Siga o Catch Themes no Twitter"
 
 #: ../inc/theme-options.php:677 ../inc/theme-options.php:810
 msgid "Twitter"
@@ -792,15 +790,15 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
 #: ../inc/theme-options.php:678
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Classifique-nos com 5 Estrelas no WordPress, obrigado!"
 
 #: ../inc/theme-options.php:678
 msgid "5 Star Rating"
-msgstr "5 Star Rating"
+msgstr "Classifique-nos com 5 Estrelas!"
 
 #: ../inc/theme-options.php:688
 msgid "Featured Post Slider"
-msgstr "Featured Post Slider"
+msgstr "Postagens em destaque no Slider Show"
 
 #: ../inc/theme-options.php:689
 msgid "Social Links"
@@ -828,7 +826,7 @@ msgstr "Escolha o número de Slides!"
 
 #: ../inc/theme-options.php:732
 msgid "Featured Post ID"
-msgstr "Featured Post ID"
+msgstr "ID destacado da postagem"
 
 #: ../inc/theme-options.php:734
 msgid "Click Here To Edit"
@@ -909,7 +907,7 @@ msgstr "Regular o tempo de exposição do Slide, para leitura do texto."
 #: ../inc/theme-options.php:774 ../inc/theme-options.php:783
 msgid "second(s)"
 msgstr ""
-"segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23  ... o "
+"segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23,  enfim... o "
 "número é para sua livre escolha!<br/>Teste qualquer número e escolha o que "
 "fique melhor para a visualização!"
 
@@ -995,36 +993,36 @@ msgstr ""
 
 #: ../inc/theme-options.php:928
 msgid "Header and Footer Code"
-msgstr "Header and Footer Code"
+msgstr "Coloque aqui os códigos de Cabeçalho e de Rodapé"
 
 #: ../inc/theme-options.php:933
 msgid "Code to display on Header"
-msgstr "Code to display on Header"
+msgstr "Coloque aqui o código para ser incerido no Cabeçalho"
 
 #: ../inc/theme-options.php:940
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook etc. which will load on "
-"Header"
+"<strong>Nota:</strong> Aqui você pode colocar os scripts do Google, "
+"Facebook, etc... que irá carregar no cabeçalho"
 
 #: ../inc/theme-options.php:944
 msgid "Code to display on Footer"
-msgstr "Code to display on Footer"
+msgstr "Coloque aqui o código para ser incerido no Rodapé"
 
 #: ../inc/theme-options.php:951
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
-"will load on footer"
+"<strong>Nota:</strong> Aqui você pode colocar os scripts do Google, "
+"Facebook, Add This, etc... que irá carregar no rodapé"
 
 #: ../inc/widgets.php:20
 msgid "Use this widget to add any type of Ad as a widget."
 msgstr ""
-"Utilize este widget como espaço publicitário para veiculação dos seus "
+"Utilize este widget como espaço publicitário para veicularão dos seus "
 "produtos para comércio (código fonte do banner de quem você é afiliado), "
 "adicionando qualquer tipo de anúncio como um widget, no local de sua "
 "preferência."
