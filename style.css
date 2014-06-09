@@ -1,10 +1,10 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 2.0
+Version: 2.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. 2 widget-areas are located in footer and 2 underneath header-image on homepage. Custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. 2 widget-areas in footer and 2 underneath header-image on homepage. Custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, gray, orange, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -76,7 +76,7 @@ table {
 
 /* GENERAL */
 body {background: #fff; font-family: 'Open Sans', sans-serif; font-size:1em; line-height:1.5em; color:#333;}
-#container {border: 0; margin:0;  background:none; text-align: left; word-wrap: break-word;}
+#container {padding:0; margin:0; background:none; text-align: left; word-wrap: break-word;}
 #content {max-width: 960px; margin: 0 auto 0; background:#f8f8f8; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
@@ -95,7 +95,7 @@ big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #ccc; background: #fff; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; font-style:italic;}
-p {margin:0 0 20px;}
+p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:10px;}
@@ -114,10 +114,10 @@ select {max-width:100%;}
 
 
 /* HEADER */
-#header {margin:0; padding: 10px 0 10px; background:#f26535; text-align:center;}
+#header {margin:0; padding:10px 0; background:#f26535; text-align:center;}
 #header:after {content:''; display:block; clear:both;}
 #header .header-img {width: 960px; height: auto;}
-#header .logo {max-width: 960px; margin: 0 auto; padding:10px 0;}
+#header .logo {max-width: 960px; margin: 0 auto 0; padding:10px 0;}
 #header .logo h1 a {font-size: 1.5em; color: #fff;}
 #header .logo h1 a:hover {text-decoration:none; color: #333;}
 #header .logo h3 {padding:10px 0 0; color: #fff;}
@@ -142,17 +142,17 @@ select {max-width:100%;}
 
 
 /* HOMEPAGE WIDGET AREA */
-#header-widgets {max-width: 960px; margin:0 auto; padding:0; background:#f8f8f8; border-bottom:3px solid #f26535;}
+#header-widgets {max-width: 960px; margin:0 auto 0; padding:0; background:#f8f8f8; border-bottom:3px solid #f26535;}
 #header-widgets:after {content:''; display:block; clear:both;}
 .home-left {float: left; padding: 0 0 0 4%; width: 44%; word-wrap: break-word;}
 .home-right {float: right; padding: 0 4% 0 0; width: 44%; word-wrap: break-word;}
 
 
 /* PAGE */
-.article {padding:20px 4%;}
+.article {clear:both; padding:20px 4%;}
 .page-title {margin: 0; padding: 0 0 10px;}
 .pagelink {clear:both; margin:20px 0 10px;}
-.edit-link {display:block; clear:both; margin:10px 0; padding: 5px; border:1px solid #f26535;}
+.edit-link {display:block; clear:both; margin:10px 0 0; padding:5px; border:1px solid #f26535;}
 
 
 /* POST */
@@ -160,12 +160,12 @@ select {max-width:100%;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #f26535; margin: 0 0 10px; padding:5px; border:0;}
-.postmetadata {margin:20px 0; padding:5px 10px; color: #333; background:#eee;}
+.postmetadata {clear:both; margin:20px 0; padding:5px 10px; color: #333; background:#eee;}
 .more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #eee;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #f26535; color:#fff;}
 a.readmore:hover {background: #333; text-decoration:none;}
-.post-nav {padding: 5px 0;}
+.post-nav {padding: 5px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
@@ -211,7 +211,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em; margin:0;} 
+#commentform input[type="submit"]{width:9em;} 
 
 
 /* WIDGETS */
@@ -222,14 +222,14 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 
 /* SIDEBAR - FOOTER WIDGET AREA */
-#sidebar {clear:both; max-width: 960px; margin:0 auto; padding:0; color: #333; background: #f8f8f8; word-wrap: break-word; border-top:3px solid #f26535;}
+#sidebar {clear:both; max-width: 960px; margin:0 auto 0; padding:0; color: #333; background: #f8f8f8; word-wrap: break-word; border-top:3px solid #f26535;}
 #sidebar:after {content:''; display:block; clear:both;}
 .footer-left {float: left; padding: 0 0 0 4%; width: 44%; word-wrap: break-word;}
 .footer-right {float: right; padding: 0 4% 0 0; width: 44%; word-wrap: break-word;}
 
 
 /* FOOTER */
-#footer {clear:both; max-width: 960px; margin:0 auto; background:#f26535; color:#fff; padding:20px 0;}
+#footer {clear:both; max-width: 960px; margin:0 auto 0; background:#f26535; color:#fff; padding:20px 0;}
 #footer .site-info {text-align:center; clear:both; padding:0 20px;}
 #footer .site-info a{color:#fff;}
 
@@ -237,22 +237,24 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* Mobile */
 @media screen and (max-width: 767px) { 
 	body {font-size: 1em; line-height: 1.2em;}
-	#container {width: 95%; padding:10px;}
+	p {text-align:left;}
+	#container {width: 96%; padding:10px 2%;}
 	#content {width: 100%;}
-	#content .article {clear:both; padding: 20px;}
 	#header {width:100%;}	
-	#header .logo {padding: 10px 20px 10px;}
+	#header .logo {width:96%; padding: 5px 0;}
 	#header .logo h1 {font-size:2em;}
 	#header .logo h3 {padding:0; font-size:1.3em;}
-	#header .header-img {width: 100%; height: auto;}
-	#header-widgets {width: 100%; border:0; padding:0; float:left;}
-	#sidebar {width:100%; border:0; padding:0; float:left;}
+	#header .header-img {width: 96%; padding:15px 0 0;}
+	#header-widgets {width: 100%; float:left;}
+	#sidebar {width:100%; float:left;}
 	#footer {width:100%;}
+	.article {padding: 10px 2%;}
+	.postmetadata {margin:10px 0;} 
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
 	.single-image {width:50%; margin: 5px 10px 5px 0;}
-	.home-left, .home-right, .footer-left, .footer-right {width:90%; border:0; padding:0 5%; float:left;} 
+	.home-left, .home-right, .footer-left, .footer-right {width:96%; padding:0 2%; float:left;} 
 	.nav-head ul {display: none;} 
-	.nav-head {padding:0; border:0;}
-	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.1em; color: #333; background:#f8f8f8; border:0;}
+	.nav-head {padding:0;}
+	.nav-head select {display: block; width: 96%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.1em; color: #333; background:#f8f8f8; border:0;}
 }

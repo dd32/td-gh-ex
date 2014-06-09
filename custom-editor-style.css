@@ -33,7 +33,7 @@ big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #ccc; background: #fff; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; font-style:italic;}
-p {margin:0 0 20px;}
+p {margin:0 0 20px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:10px;}

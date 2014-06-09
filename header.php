@@ -32,7 +32,7 @@
 		<?php if ( get_theme_mod( 'onecolumn_logo' ) ) : ?> 
 			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'onecolumn_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 		<?php else : ?> 
-			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
+			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h3><?php bloginfo('description'); ?></h3> 
 		<?php endif; ?>
 	</div>
@@ -54,7 +54,6 @@
 <div id="header-widgets">
 
 		<div class="home-right"> 
-
 			<?php if ( is_active_sidebar( 'homepage-right' ) ) : ?>
 		
 			<?php dynamic_sidebar( 'homepage-right' ); ?>
@@ -64,7 +63,6 @@
 		</div>
 	
 		<div class="home-left"> 
-
 			<?php if ( is_active_sidebar( 'homepage-left' ) ) : ?>
 	
 			<?php dynamic_sidebar( 'homepage-left' ); ?>
