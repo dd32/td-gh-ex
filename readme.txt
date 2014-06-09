@@ -61,6 +61,9 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.7 =
+ - Text domain name issue fixed
+
 = 1.0.6 =
  - Testimonial minor issue fixed
 
