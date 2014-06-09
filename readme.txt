@@ -61,6 +61,9 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.6 =
+ - Testimonial minor issue fixed
+
 = 1.0.5 =
  - Featured Image widget issue fixed
  - Theme Options Panel modified

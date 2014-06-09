@@ -557,14 +557,14 @@ class interface_Widget_Testimonial extends WP_Widget {
     <div class="testimonial-image"> <img src="<?php echo esc_url($image1)?>" title="<?php echo esc_attr($name1); ?>" alt="<?php echo esc_attr($name1); ?>" /> </div>
     <div class="testimonial-content">
       <p><?php echo esc_html( $text1 ); ?></p>
-      <div class="testimonial-meta"> <strong><?php echo esc_html( $name1 ); ?></strong> <?php echo esc_html( $designation1 );  echo '-'; ?> <a href="<?php echo esc_url($company_link1); ?>" title="<?php echo $company_name1; ?>" target="_blank"> <?php echo esc_html( $company_name1 ); ?></a> </div>
+      <div class="testimonial-meta"> <strong><?php echo esc_html( $name1 ); ?></strong> <?php echo esc_html( $designation1 ); if(!empty($company_name1)){  _e(' - '); } ?> <a href="<?php echo esc_url($company_link1); ?>" title="<?php echo $company_name1; ?>" target="_blank"> <?php echo esc_html( $company_name1 ); ?></a> </div>
     </div>
   </div>
   <div class="one-half">
     <div class="testimonial-image"> <img src="<?php echo esc_url($image2);?>" title="<?php echo esc_attr($name2); ?>" alt="<?php echo esc_attr($name2); ?>"/> </div>
     <div class="testimonial-content">
       <p><?php echo esc_html( $text2 ); ?></p>
-      <div class="testimonial-meta"> <strong><?php echo esc_html( $name2 ); ?></strong> <?php echo esc_html( $designation2 );  echo '-';?> <a href="<?php echo esc_url($company_link2); ?>" title="<?php echo $company_name2; ?>" target="_blank"> <?php echo esc_html( $company_name2 ); ?></a> </div>
+      <div class="testimonial-meta"> <strong><?php echo esc_html( $name2 ); ?></strong> <?php echo esc_html( $designation2 ); if(!empty($company_name2)){ _e(' - '); } ?> <a href="<?php echo esc_url($company_link2); ?>" title="<?php echo $company_name2; ?>" target="_blank"> <?php echo esc_html( $company_name2 ); ?></a> </div>
     </div>
   </div>
 </div>

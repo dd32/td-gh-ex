@@ -148,7 +148,7 @@ function interface_theme_options_add_theme_page() {
   </a> <a title="<?php esc_attr_e( 'Review Interface', 'interface' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/interface' ); ?>" target="_blank" class="review">
   <?php _e( 'Rate Interface', 'interface' ); ?>
   </a>
-   <a href="<?php echo esc_url( 'http://themehorse.com/theme-instruction/interface/' ); ?>" title="<?php esc_attr_e( 'Interface Pro Theme Instructions', 'interface' ); ?>" target="_blank" class="instruction">
+   <a href="<?php echo esc_url( 'http://themehorse.com/theme-instruction/interface/' ); ?>" title="<?php esc_attr_e( 'Interface Theme Instructions', 'interface' ); ?>" target="_blank" class="instruction">
     <?php _e( 'Theme Instructions', 'interface' ); ?>
   </a>
   <a href="<?php echo esc_url( 'http://themehorse.com/support-forum/' ); ?>" title="<?php esc_attr_e( 'Support Forum', 'interface' ); ?>" target="_blank" class="support">
