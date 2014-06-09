@@ -5,7 +5,7 @@
 global $wp_query,$post;
 $big = 999999999; 
 
-if ( (is_category()) || (is_search()) || (is_tax()) ) { 
+if ( (is_category()) || (is_search()) || (is_tax()) || (is_tag()) || (is_month()) ) { 
 
     $paginate_links = paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),

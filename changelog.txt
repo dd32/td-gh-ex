@@ -1,0 +1,5 @@
+Diarjo Lite Changelog
+
+Version 1.0.6 - Released: 01.10.2013
+
+Fixed : Pagination for archive and tag pages.
