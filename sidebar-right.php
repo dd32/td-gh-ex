@@ -15,8 +15,7 @@ $testimonail_category = $accesspresslite_settings['testimonial_cat'];
 $blog_category = $accesspresslite_settings['blog_cat'];
 $show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
 $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
-
-if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class)){
+if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class) || is_archive()){
 ?>
 	<div id="secondary-right" class="widget-area right-sidebar sidebar">
 		<?php
@@ -30,11 +29,9 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 				$loop = new WP_Query( array(
 	                'cat' => $event_category,
 	                'posts_per_page' => 3,
-	                'orderby' => 'date',
-	                'order' => 'DSC'
 	            )); ?>
 	        <aside id="latest-events" class="clear">
-	        <h1 class="widget-title">Latest <?php echo get_cat_name($event_category); ?></h1>
+	        <h1 class="widget-title"><?php echo get_cat_name($event_category); ?></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 	        	<div class="event-list clear">
@@ -68,7 +65,9 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 	        		</div>
 	        	</div>
 	        <?php endwhile; ?>
-	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>">View All <?php echo get_cat_name($event_category); ?></a>
+	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
+	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+	        <?php } ?>
 	        <?php wp_reset_postdata(); ?>
 	        </aside>
 	        <?php
@@ -113,9 +112,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 				
 	            $loop = new WP_Query( array(
 	                'cat' => $testimonail_category,
-	                'post_per_page' => 3,
-	                'orderby' => 'date',
-	                'order' => 'ASC'
+	                'posts_per_page' => 3,
 	            )); ?>
 	        <div class="testimonail-wrap">
 		        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
@@ -138,7 +135,9 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 					</div>
 			<?php endwhile; ?>
 	        </div>
-            <a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All Testimonails</a>
+            <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
+            <a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+            <?php } ?>
             
 	        <?php wp_reset_postdata(); 
 			}else{ 
@@ -160,7 +159,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 						
 				<?php } ?>
 				</div>
-			<a class="all-testimonial" href="#">View All Testimonails</a>
+			<a class="all-testimonial" href="#">View All Testimonials</a>
 			<?php } ?>
 			</aside>
 			<?php } ?>

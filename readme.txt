@@ -42,3 +42,20 @@ Fonts
 ---------------------------------------------
 Images
     All the images used are either self taken or free image and are fully GPL compatible.
+
+== Changelog ==
+Version 1.8
+* All Hard coded codes removed
+* Cropping a logo into fixed sized Removed
+* New Option for the social media buttons added in the header
+* Made the theme translation ready
+* Small bugs in slider solved
+* Feature to show category posts as a slider added along with previous features as well.
+* index-one.php and index-two.php merged in to a single index-one.php
+* Spelling mistakes for the word Testimonial solved
+
+Version 1.7
+* Approved in http://wordpress.org and Theme made to live
+ 
+Version 1
+* Submitted theme for review in http://wordpress.org

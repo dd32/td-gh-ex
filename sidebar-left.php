@@ -24,11 +24,9 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 				$loop = new WP_Query( array(
 	                'cat' => $event_category,
 	                'posts_per_page' => 3,
-	                'orderby' => 'date',
-	                'order' => 'DSC'
 	            )); ?>
 	        <aside id="latest-events" class="clear">
-	        <h1 class="widget-title">Latest <?php echo get_cat_name($event_category); ?></h1>
+	        <h1 class="widget-title"><?php echo get_cat_name($event_category); ?></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 	        	<div class="event-list clear">
@@ -62,7 +60,9 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	        		</div>
 	        	</div>
 	        <?php endwhile; ?>
-	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>">View All <?php echo get_cat_name($event_category); ?></a>
+	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
+	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+	        <?php } ?>
 	        <?php wp_reset_postdata(); ?>
 	        </aside>
 	        <?php
@@ -108,9 +108,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 				
 	            $loop = new WP_Query( array(
 	                'cat' => $testimonail_category,
-	                'post_per_page' => 3,
-	                'orderby' => 'date',
-	                'order' => 'ASC'
+	                'posts_per_page' => 3,
 	            )); ?>
 	        <div class="testimonail-wrap">
 		        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
@@ -133,8 +131,9 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 					</div>
 			<?php endwhile; ?>
 	        </div>
-            <a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All Testimonails</a>
-            
+	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
+            <a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+            <?php } ?>
 	        
 	        <?php wp_reset_postdata(); 
 			}else{ 
@@ -156,7 +155,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 						
 				<?php } ?>
 				</div>
-			<a class="all-testimonial" href="#">View All Testimonails</a>
+			<a class="all-testimonial" href="#">View All Testimonials</a>
 			<?php } ?>
 			</aside>
 			<?php } ?>

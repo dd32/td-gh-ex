@@ -180,6 +180,9 @@
 }
 
 /* SLIDER CAPTIONS */
+.slides img{ 
+	margin: 0 auto;
+}
 .slider-caption{ 
 	background: url(images/caption-bg.png);
 	position: absolute; 

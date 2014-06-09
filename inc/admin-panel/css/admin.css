@@ -358,3 +358,11 @@
     display: inline-block;
     margin-left: 5px;
 }
+
+.cat-as-slider, .post-as-slider{
+	display: none;
+}
+
+#welcome_post_char, #show_event_number{
+	width: 50px;
+}

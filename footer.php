@@ -15,7 +15,7 @@
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
-		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
+		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) || !empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])) : ?>
 		<div id="top-footer">
 		<div class="ak-container">
 			<div class="footer1 footer">
@@ -52,25 +52,14 @@
 						<?php }
 						if(!empty($accesspresslite_settings['contact_address'])) { ?>
 						
-						<div class="ak-contact-address"><?php echo $accesspresslite_settings['contact_address']; ?></div>
+						<div class="ak-contact-address"><?php echo wpautop($accesspresslite_settings['contact_address']); ?></div>
 
 						<?php }
 					
 						if($accesspresslite_settings['show_social_footer'] == 0){
 						do_action( 'accesspresslite_social_links' ); 
 						}
-					 }else { ?>
-
-					<h1 class="widget-title">Contact Us</h1>
-					<div class="ak-google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d56516.31397712412!2d85.3261328!3d27.708960349999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1396803241107" width="450" height="160" frameborder="0" style="border:0"></iframe></div>
-					<div class="ak-contact-address">
-						mail@yourcompany.com<br />
-						+1 555 1234 5667<br />
-						Main Street, New York City,<br />
-						United States
-					</div>
-
-					<?php } 
+					 }
 				endif; ?>	
 			</div>
 		</div>

@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalabe=no">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -22,6 +22,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+global $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+?>
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header">
@@ -29,13 +33,13 @@
 		<div class="ak-container">
 			<div class="site-branding">
 				
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				
 				<?php if ( get_header_image() ) { ?>
-					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-				<?php } else { ?>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/logo.png" alt="<?php echo bloginfo('name'); ?>">
-				<?php }	 ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>">
 				</a>
+				<?php } ?>
+				
 				
 			</div><!-- .site-branding -->
         
@@ -46,8 +50,6 @@
                 ?>
                 <div class="clear"></div>
                 <?php
-				global $accesspresslite_options;
-				$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 				/** 
 				* @hooked accesspresslite_social_cb - 10
 				*/
@@ -69,13 +71,17 @@
 			<div class="ak-container">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'accesspresslite' ); ?></h1>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php wp_nav_menu( array( 
+				'theme_location' => 'primary' ) ); ?>
 			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<section id="slider-banner">
-		<?php do_action( 'accesspresslite_bxslider' ); ?>
+		<?php 
+		if(is_home() || is_front_page() ){
+			do_action( 'accesspresslite_bxslider' ); 
+		}?>
 	</section><!-- #slider-banner -->
 	<?php
 	if(is_home() || is_front_page() ){

@@ -1,16 +1,28 @@
 <?php 
 global $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-?>
+$accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
+$accesspresslite_blog_cat = $accesspresslite_settings['blog_cat'];
+$accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
+$accesspresslite_event_category = $accesspresslite_settings['event_cat'];
+$featured_post1 = $accesspresslite_settings['featured_post1'];
+$featured_post2 = $accesspresslite_settings['featured_post2'];
+$featured_post3 = $accesspresslite_settings['featured_post3'];
+$show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
+$testimonail_category = $accesspresslite_settings['testimonial_cat'];
+$accesspresslite_welcome_post_char = $accesspresslite_settings['welcome_post_char'];
+$show_event_number = $accesspresslite_settings['show_event_number'];
 
+if( $accesspresslite_layout !== 'Layout2') { ?>
+			
 <section id="top-section" class="ak-container">
 <div id="welcome-text" class="clear">
 	<?php
-		$welcome_post_id = $accesspresslite_settings['welcome_post'];
-			if(!empty($welcome_post_id)){
+		
+			if(!empty($accesspresslite_welcome_post_id)){
 			
-			query_posts( 'p='.$welcome_post_id );
-				while (have_posts()) : the_post(); ?>
+			$query1 = new WP_Query( 'p='.$accesspresslite_welcome_post_id );
+				while ($query1->have_posts()) : $query1->the_post(); ?>
 					 
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					
@@ -27,12 +39,15 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 					<?php } ?>
 					
 					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
-					<p><?php echo accesspresslite_excerpt( get_the_content() , 650 ) ?></p>
-					<a href="<?php the_permalink(); ?>" class="readmore bttn">Read More</a>
+					<p><?php echo accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char ) ?></p>
+					<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['welcome_post_readmore']; ?></a>
+						<?php } ?>
 					</div>
 					
 				<?php endwhile;	
-				wp_reset_postdata(); }
+				wp_reset_postdata(); 
+				}
 				
 				else{ ?>
 				
@@ -54,18 +69,14 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 <div id="latest-events">
 
 			<?php
-				$event_category = $accesspresslite_settings['event_cat'];
-
-				if(!empty($event_category)){
+				if(!empty($accesspresslite_event_category)){
 
 	            $loop = new WP_Query( array(
-	                'cat' => $event_category,
-	                'posts_per_page' => 3,
-	                'orderby' => 'date',
-	                'order' => 'DSC'
+	                'cat' => $accesspresslite_event_category,
+	                'posts_per_page' => $show_event_number,
 	            )); ?>
 
-	        <h1><a href="<?php echo get_category_link($event_category); ?>">Latest <?php echo get_cat_name($event_category); ?></a></h1>
+	        <h1><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 	        	<div class="event-list clear">
@@ -133,19 +144,14 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 
 <section id="mid-section" class="ak-container">
 <?php 
-$featured_post1 = $accesspresslite_settings['featured_post1'];
-$featured_post2 = $accesspresslite_settings['featured_post2'];
-$featured_post3 = $accesspresslite_settings['featured_post3'];
-$show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
-
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     if(!empty($featured_post1)) { ?>
 		<div id="featured-post-1" class="featured-post">
 			
 			<?php
-				query_posts( 'p='.$featured_post1 );
+				$query2 = new WP_Query( 'p='.$featured_post1 );
 				// the Loop
-				while (have_posts()) : the_post(); 
+				while ($query2->have_posts()) : $query2->the_post(); 
 					
 					if( $show_fontawesome_icon == 0 ){
 					?>
@@ -181,7 +187,9 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
+						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<?php } ?>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -193,9 +201,9 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div id="featured-post-2" class="featured-post">
 			
 			<?php
-				query_posts( 'p='.$featured_post2 );
+				$query3 = new WP_Query( 'p='.$featured_post2 );
 				// the Loop
-				while (have_posts()) : the_post();
+				while ($query2->have_posts()) : $query2->the_post();
 					
 					if( $show_fontawesome_icon == 0 ){
 					?>
@@ -231,7 +239,9 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
+						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<?php } ?>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -243,9 +253,9 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div id="featured-post-3" class="featured-post">
 			
 			<?php
-				query_posts( 'p='.$featured_post3 );
+				$query4 = new WP_Query( 'p='.$featured_post3 );
 				// the Loop
-				while (have_posts()) : the_post(); 
+				while ($query4->have_posts()) : $query4->the_post(); 
 					if( $show_fontawesome_icon == 0 ){
 					?>
 					<figure class="featured-image">
@@ -280,7 +290,9 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
+						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<?php } ?>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -314,6 +326,45 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 	<?php }
 	} ?>
 </section>
+<?php } 
+?>
+
+<?php if( $accesspresslite_layout !== 'Default' && !empty($accesspresslite_blog_cat) ){?>
+<section id="ak-blog">
+	<section class="ak-container" id="ak-blog-post">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php 
+		$query5 = new WP_Query('cat=49');
+		if ( $query5->have_posts() ) : ?>
+			<?php while ( $query5->have_posts() ) : $query5->the_post(); ?>
+
+				<?php
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php accesspresslite_paging_nav(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; 
+		wp_reset_postdata();
+		?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php get_sidebar('right'); ?>
+	</section>
+</section>
+
+<?php }
+wp_reset_query(); ?>
 
 
 <section id="bottom-section">
@@ -399,20 +450,21 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		</div>        
         
 		<div class="testimonail-slider">
- 		<h1>Testimonials</h1>
+		<?php 
+		if ( is_active_sidebar( 'textblock-3' ) ) {
+		  dynamic_sidebar( 'textblock-3' );
+		}else{
+
+		if(!empty($testimonail_category)) {	?>
+ 		<h1><?php echo $testimonail_category; ?></h1>
 			<?php
-			$testimonail_category = $accesspresslite_settings['testimonial_cat'];
-			if(!empty($testimonail_category)) {
-				
-	            $loop = new WP_Query( array(
+				$loop2 = new WP_Query( array(
 	                'cat' => $testimonail_category,
 	                'post_per_page' => 5,
-	                'orderby' => 'date',
-	                'order' => 'ASC'
 	            )); ?>
 	        <div class="testimonail-wrap">
 		        <div class="testimonial-slider">
-		        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+		        <?php while ($loop2->have_posts()) : $loop2->the_post(); ?>
 
 		        	<div class="testimonial-slide">
 			        	<div class="testimonail-list clear">
@@ -434,13 +486,14 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All Testimonails</a>
+			<a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All <?php echo $testimonail_category; ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 
 			}else{ 
 			$client_name=array("","Linda Lee","George Bailey","Micheal Warner","Rosey Partick");
 			?>
+			<h1 class="widget-title">Testimonials</h1>
 			<div class="testimonail-wrap">
 				<div class="testimonial-slider">
 				<?php for ($testimonial_count=1 ; $testimonial_count < 5 ; $testimonial_count++) { ?>
@@ -459,8 +512,10 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 				<?php } ?>
 				</div>
 			</div>
-				<a class="all-testimonial" href="<?php get_category_link( $testimonail_category ) ?>">View All Testimonails</a>
-			<?php } ?>
+				<a class="all-testimonial" href="#">View All Testimonials</a>
+			<?php } 
+			}?>
 		</div>
 	</div>
 </section>
+

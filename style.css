@@ -4,7 +4,7 @@ Theme URI: http://access-keys.com/accesspresslite/
 Author: Access Keys Team
 Author URI: http://access-keys.com/
 Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. It is easily customizable as per requirement with all the options avaliable at the dashboard theme option.
-Version: 1.7.1
+Version: 1.7.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
@@ -854,7 +854,7 @@ object {
 Header
 --------------------------------------------------------------*/
 #masthead #top-header{
-    background: url(images/bgheader.jpg) repeat-x scroll left bottom;
+    background: url(images/bgheader.jpg) repeat-x scroll left bottom #FFF;
 }
 
 body.boxed-layout{
@@ -891,7 +891,7 @@ body.boxed-layout{
 
 #masthead .right-header{
 	float: right;
-	padding-top: 10px;
+	padding: 10px 0;
 }
 
 #masthead .right-header .clear:first-child{
@@ -907,6 +907,11 @@ body.boxed-layout{
     margin-bottom: 10px;
 }
 
+.header-text p{
+	margin-bottom: 0;
+}
+
+
 /*--------------------------------------------------------------
 Social Icons
 --------------------------------------------------------------*/
@@ -915,8 +920,8 @@ Social Icons
     margin-left: 20px;
 }
 .socials a{
-	height:38px;
-	width: 38px;
+	height:36px;
+	width: 36px;
 	margin-left: 1px;
 	color: #01aefd;
 	border: 1px solid #01aefd;
@@ -942,7 +947,7 @@ search form
 }
 
 .searchform{
-	height: 38px;
+	height: 36px;
 	width: 200px; 
 	border: 1px solid #01aefd;
     margin-left: 20px;
@@ -951,19 +956,20 @@ search form
 .searchform .s{ 
 	border: none;
 	background: none;
-	height: 36px;
+	height: 34px;
 	float: left;
 	padding: 5px 10px;
 	width: 160px;
     vertical-align: middle;
+    font-size: 14px;
 }
 
 .searchform .searchsubmit{
 	background: url(images/ak-sprite.png) scroll center no-repeat;
 	background-position: 0 0;
 	border: none;
-	height: 36px;
-	width: 36px;
+	height: 34px;
+	width: 34px;
 	text-indent: -9999px;
 	padding: 0;
 	box-shadow: none;
@@ -1025,7 +1031,7 @@ Menus
 	display: block;
 	text-decoration: none;
 	color: #FFF;
-	padding: 0 18px
+	padding: 0 18px;
 }
 
 .main-navigation ul ul {
@@ -1061,19 +1067,20 @@ Menus
 
 .main-navigation ul ul li {
 	font-size: 16px;
-	line-height: 20px;
+	line-height: 18px;
 	border-bottom: 1px solid #DDD;
 	margin: 0 !important;
 	padding:10px 15px;
 	display: block;
 	text-align: left;
+	text-transform: none;
 }
 
 .main-navigation ul ul li:last-child{
 	border-bottom: none;
 }
 
-.main-navigation .menu > li:hover > a {
+.main-navigation li:hover > a {
 	background: #04A3ED;
 }
 
@@ -1094,10 +1101,10 @@ Menus
 	display: block;
 }
 
-.main-navigation .menu .current-menu-parent > a,
-.main-navigation .menu .current-menu-item > a,
-.main-navigation .menu .current_page_item > a,
-.main-navigation .menu .current_page_parent > a {
+.main-navigation .current-menu-parent > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_parent > a {
 	background: #04A3ED;
 }
 
@@ -1259,7 +1266,7 @@ Top Section
 .sidebar #latest-events{
 	width: auto;
 	float: none;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 .sidebar .event-list .event-thumbnail{
@@ -1411,6 +1418,10 @@ Bottom Section
 	background:#0097d6;
 	color: #FFF;
 	padding: 40px 0;
+}
+
+#bottom-section a{
+	color:#FFF;
 }
 
 #bottom-section h1,
@@ -1863,7 +1874,6 @@ Archives
 .cat-event-list:last-child{
 	border-bottom: none;
 	margin-bottom: 0;
-	padding-bottom: 0;
 }
 
 .cat-event-list .cat-event-image{
@@ -1946,6 +1956,11 @@ Archives
 	left: auto;
 	right: -40px;
 	border-color: transparent transparent transparent #F2F3F4 ; 
+}
+
+.entry-thumbnail{
+	margin: 0 15px 10px 0;
+	float: left;
 }
 
 .short-content{

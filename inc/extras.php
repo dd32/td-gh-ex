@@ -184,6 +184,16 @@ function accesspresslite_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Right Block above footer', 'accesspresslite' ),
+		'id'            => 'textblock-3',
+		'description'   => 'Display items in the Right just above the footer and replaces Testimonials',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'accesspresslite_widgets_init' );
 
@@ -193,9 +203,12 @@ add_action( 'widgets_init', 'accesspresslite_widgets_init' );
 function accesspresslite_scripts() {
 	global $accesspresslite_options;
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	$protocol = is_ssl() ? 'https' : 'http';
+	$query_args = array(
+		'family' => 'Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700',
+	);
 	
-	
-	
+	wp_enqueue_style( 'google-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ) );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
 	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
@@ -212,7 +225,6 @@ function accesspresslite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
 /**
 * Loads up responsive css if it is not disabled
 */
@@ -223,16 +235,6 @@ function accesspresslite_scripts() {
 add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 /**
-* Loads up google font in the header
-*/
-  function load_fonts() {
-            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700');
-            wp_enqueue_style( 'googleFonts');
-        }
-    
-    add_action('wp_print_styles', 'load_fonts');
-
-/**
 * Loads up favicon
 */
 	function accesspresslite_add_favicon(){
@@ -241,10 +243,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		
 		if( !empty($accesspresslite_settings[ 'media_upload' ])){
 		echo '<link rel="shortcut icon" type="image/png" href="'. $accesspresslite_settings[ 'media_upload' ].'"/>';
-		}else{
-		echo '<link rel="shortcut icon" type="image/png" href="'.get_template_directory_uri().'/images/favicon.png"/>';	
 		}
-	
 	}
 	add_action('wp_head', 'accesspresslite_add_favicon');
 
@@ -290,6 +289,14 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
 		<?php } ?>
 
+		<?php if(!empty($accesspresslite_settings['accesspresslite_instagram'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_instagram']); ?>" class="instagram" title="instagram" target="_blank"><span class="fa fa-instagram"></span></a>
+		<?php } ?>
+
+		<?php if(!empty($accesspresslite_settings['accesspresslite_sound_cloud'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_sound_cloud']); ?>" class="sound-cloud" title="sound-cloud" target="_blank"><span class="font-icon-social-soundcloud"></span></a>
+		<?php } ?>
+
 		<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
 		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
@@ -307,7 +314,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		if(!empty($accesspresslite_settings['header_text'])){
-		echo '<div class="header-text">'.$accesspresslite_settings['header_text'].'</div>';
+		echo '<div class="header-text">'.wpautop($accesspresslite_settings['header_text']).'</div>';
 		}
 	}
 
@@ -339,19 +346,23 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 
 	function accesspresslite_bxslidercb(){
-		if(is_home() || is_front_page() ){
-
-			global $accesspresslite_options, $post;
-			$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-            ($accesspresslite_settings['slider_show_pager'] == 'yes1' || empty($accesspresslite_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
-            ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
-            ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
-            ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
+		global $accesspresslite_options, $post;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+        ($accesspresslite_settings['slider_show_pager'] == 'yes1' || empty($accesspresslite_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
+        ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
+        ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
+        ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
 			
-			if( $accesspresslite_settings['show_slider'] =='yes' && (!empty($accesspresslite_settings['slider1']) || !empty($accesspresslite_settings['slider2']) || !empty($accesspresslite_settings['slider3']) || !empty($accesspresslite_settings['slider4']))){
-            ?>
+		if( $accesspresslite_settings['show_slider'] !='no') { 
+		if((isset($accesspresslite_settings['slider1']) && !empty($accesspresslite_settings['slider1'])) 
+			|| (isset($accesspresslite_settings['slider2']) && !empty($accesspresslite_settings['slider2'])) 
+			|| (isset($accesspresslite_settings['slider3']) && !empty($accesspresslite_settings['slider3']))
+			|| (isset($accesspresslite_settings['slider4']) && !empty($accesspresslite_settings['slider4'])) 
+			|| (isset($accesspresslite_settings['slider_cat']) && !empty($accesspresslite_settings['slider_cat']))
+		){
 
-            <script type="text/javascript">
+		?>
+ 		<script type="text/javascript">
             jQuery(function(){
 				jQuery('.bx-slider').bxSlider({
 					pager:<?php echo $a; ?>,
@@ -363,52 +374,80 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					<?php } ?>
 				});
 			});
-            </script>
+        </script>
+        <?php 
 
-			<?php 
-			$sliders = array($accesspresslite_settings['slider1'],$accesspresslite_settings['slider2'],$accesspresslite_settings['slider3'],$accesspresslite_settings['slider4']);
-			$remove = array(0);
-		    $sliders = array_diff($sliders, $remove);  
-			?>
-			<div class="bx-slider">
-			<?php
-			foreach ($sliders as $slider){
+            if($accesspresslite_settings['slider_options'] == 'single_post_slider'){
+            	if(!empty($accesspresslite_settings['slider1']) || !empty($accesspresslite_settings['slider2']) || !empty($accesspresslite_settings['slider3']) || !empty($accesspresslite_settings['slider4'])){
+            		$sliders = array($accesspresslite_settings['slider1'],$accesspresslite_settings['slider2'],$accesspresslite_settings['slider3'],$accesspresslite_settings['slider4']);
+					$remove = array(0);
+				    $sliders = array_diff($sliders, $remove);  ?>
+
+				    <div class="bx-slider">
+				    <?php
+				    foreach ($sliders as $slider){
 					$args = array (
 					'p' => $slider
 					);
 
-				$loop = new WP_query( $args );
-				if($loop->have_posts()){ ?>
+						$loop = new WP_query( $args );
+						if($loop->have_posts()){ 
+						while($loop->have_posts()) : $loop-> the_post(); 
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
+						?>
+						<div class="slides">
+							
+								<img src="<?php echo $image[0]; ?>">
+								
+								<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
+								<div class="slider-caption">
+									<div class="ak-container">
+										<div class="caption-title"><?php the_title();?></div>
+										<div class="caption-description"><?php echo get_the_content();?></div>
+									</div>
+								</div>
+								<?php  endif; ?>
 				
+			            </div>
+						<?php endwhile;
+						}
+					} ?>
+				    </div>
+            	<?php
+            	}
+
+            }elseif ($accesspresslite_settings['slider_options'] == 'cat_post_slider') { ?>
+            	<div class="bx-slider">
 				<?php
+				$loop = new WP_Query(array(
+						'cat' => $accesspresslite_settings['slider_options']
+					));
+					if($loop->have_posts()){ 
 					while($loop->have_posts()) : $loop-> the_post(); 
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
 					?>
 					<div class="slides">
-						
-							<img src="<?php echo $image[0]; ?>">
 							
-							<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
-							<div class="slider-caption">
-								<div class="ak-container">
-									<div class="caption-title"><?php the_title();?></div>
-									<div class="caption-description"><?php echo get_the_content();?></div>
-								</div>
+						<img src="<?php echo $image[0]; ?>">
+								
+						<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
+						<div class="slider-caption">
+							<div class="ak-container">
+								<div class="caption-title"><?php the_title();?></div>
+								<div class="caption-description"><?php echo get_the_content();?></div>
 							</div>
-							<?php  endif; ?>
-			
-		            </div>
-					<?php endwhile;
-				}
-			}
-			?>
-			</div>
-			<?php
-			}elseif( !$accesspresslite_settings['slider1'] && !$accesspresslite_settings['slider2'] && !$accesspresslite_settings['slider3'] && !$accesspresslite_settings['slider4']){ 
-			 if($accesspresslite_settings['show_slider'] =='yes' || empty($accesspresslite_settings['show_slider'])){
-             ?>
+						</div>
+						<?php  endif; ?>
+				
+			            </div>
+						<?php endwhile;
+						} ?>
+				</div>
+            <?php
+        	}
+        	}else{ ?>
 
-			<script type="text/javascript">
+        	<script type="text/javascript">
             jQuery(function(){
 				jQuery('.bx-slider').bxSlider({
 					pager:<?php echo $a; ?>,
@@ -421,60 +460,59 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 				});
 			});
             </script>
-					<div class="bx-slider">
-						<div class="slides">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
-                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-							<div class="slider-caption">
-								<div class="ak-container">
-									<div class="caption-title">Learning from failure</div>
-									<div class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</div>
-								</div>
-							</div>
-                            <?php  endif; ?>
+            <div class="bx-slider">
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
+                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+					<div class="slider-caption">
+						<div class="ak-container">
+							<div class="caption-title">Learning from failure</div>
+							<div class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</div>
 						</div>
+					</div>
+                    <?php  endif; ?>
+				</div>
 						
-						<div class="slides">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
-                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-							<div class="slider-caption">
-								<div class="ak-container">
-									<div class="caption-title">Know secret to Successful Business</div>
-									<div class="caption-description">The secret of business is to know something that nobody else knows.</div>
-								</div>
-							</div>
-                            <?php  endif; ?>
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
+                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+					<div class="slider-caption">
+						<div class="ak-container">
+							<div class="caption-title">Know secret to Successful Business</div>
+							<div class="caption-description">The secret of business is to know something that nobody else knows.</div>
 						</div>
+					</div>
+                    <?php  endif; ?>
+				</div>
 
-						<div class="slides">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider3.jpg" alt="slider3">
-                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-							<div class="slider-caption">
-								<div class="ak-container">
-									<div class="caption-title">So who is the boss!!</div>
-									<div class="caption-description">There is only one boss. The customer. And he can fire everybody in the company from the chairman on down, simply by spending his money somewhere else.</div>
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider3.jpg" alt="slider3">
+                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+						<div class="slider-caption">
+							<div class="ak-container">
+								<div class="caption-title">So who is the boss!!</div>
+								<div class="caption-description">There is only one boss. The customer. And he can fire everybody in the company from the chairman on down, simply by spending his money somewhere else.</div>
 								</div>
-							</div>
-                            <?php  endif; ?>
 						</div>
+                    <?php  endif; ?>
+				</div>
 
-						<div class="slides">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider4.jpg" alt="slider4">
-                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+				<div class="slides">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider4.jpg" alt="slider4">
+                       	<?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title">The real entrepreneurs</div>
 									<div class="caption-description">When times are bad is when the real entrepreneurs emerge.</div>
 								</div>
 							</div>
-                            <?php  endif; ?>
-						</div>
-					</div>
-
-				<?php }
-                }
+                        <?php  endif; ?>
+				</div>
+			</div>
+		<?php
 		}
-	}	
+	}
+	}
 
    add_action('accesspresslite_bxslider','accesspresslite_bxslidercb', 10);
 

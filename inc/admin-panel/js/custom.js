@@ -5,6 +5,24 @@
 
 jQuery(document).ready(function($) {
 
+  $('#single_post_slider').click(function(){
+    $('.post-as-slider').show();
+    $('.cat-as-slider').hide();
+  });
+
+  $('#cat_post_slider').click(function(){
+    $('.cat-as-slider').show();
+    $('.post-as-slider').hide();
+  });
+
+  if($('#single_post_slider input').is(':checked')){
+  	$('.post-as-slider').show();
+  }
+
+  if($('#cat_post_slider input').is(':checked')){
+  	$('.cat-as-slider').show();
+  }
+
 	// Loads tabbed sections if they exist
 	if ( $('.nav-tab-wrapper').length > 0 ) {
 		accesspresslite_tabs();

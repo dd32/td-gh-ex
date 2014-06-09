@@ -43,4 +43,4 @@ jQuery(function(){
   jQuery('.more-menu-item').prepend('<a href=#>More</a>');
     }
 
-});
+ });

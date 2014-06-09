@@ -98,8 +98,13 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
+		<?php if(has_post_thumbnail()){?>
+		<div class="entry-thumbnail">
+			<?php  the_post_thumbnail('thumbnail'); ?>
+		</div>
+		<?php } ?>
 		<div class="short-content">
-		<?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?>
+		<?php echo accesspresslite_excerpt( get_the_content() , 600 ) ?>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="bttn">More</a>
 		<?php
@@ -138,7 +143,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'accesspresslite' ), __( '1 Comment', 'accesspresslite' ), __( '% Comments', 'accesspresslite' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'accesspresslite' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php //edit_post_link( __( 'Edit', 'accesspresslite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 <?php endif; ?>
