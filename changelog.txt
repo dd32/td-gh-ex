@@ -1,6 +1,11 @@
 *** Baskerville changelog ***
 
 
+Version 1.05 (2014-06-09)
+-------------------------
+- Fixed a bug where template-archives.php would always display comments
+
+
 Version 1.04 (2014-06-08)
 -------------------------
 - Minor fixes and touch-ups to template-contributors.php

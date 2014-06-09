@@ -123,6 +123,8 @@ Template Name: Archive template
 			            </div> <!-- /archive-box -->
 															            			                        
 					</div> <!-- /post-content -->
+					
+					<?php wp_reset_query(); ?>
 											
 					<div class="clear"></div>
 			
