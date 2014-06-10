@@ -5,12 +5,13 @@ html {
 	font-size: 62.5%; /* 10px */
 }
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 17px;
     line-height: 1.55;
     color: #171717;
 }
 a {
+	color: #3070d1;
     font-weight: bold;
     text-decoration: none;
 }
@@ -56,6 +57,7 @@ h4,
 h5,
 h6 {
     clear: both;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h1,
 h4,
@@ -75,7 +77,7 @@ blockquote cite {
     font-size: 75%; /* 12px */
 }
 .ttfmake-testimonial {
-    padding: 33px 32px;
+    padding: 10px 20px;
     background-color: #eaecee;
 }
 tt,
@@ -106,6 +108,20 @@ strike {
     color: inherit;
 }
 /*---------------------------------------------------------
+ Table (editor-style.css)
+-------------------------------------------------------- */
+table {
+	width: 100%;
+	text-align: left;
+}
+table caption {
+	font-weight: bold;
+}
+table th,
+table td {
+	padding: 5px 10px;
+}
+/*---------------------------------------------------------
  Media (editor-style.css)
 -------------------------------------------------------- */
 * {
@@ -124,15 +140,6 @@ hr.ttfmake-line-dashed {
 }
 hr.ttfmake-line-double {
     border-top: 6px double #eaecee;
-}
-/*---------------------------------------------------------
- Lists (editor-style.css)
--------------------------------------------------------- */
-ul {
-    list-style: disc;
-}
-ol {
-    list-style: decimal;
 }
 /*---------------------------------------------------------
  Buttons (editor-style.css)
@@ -193,6 +200,12 @@ input[type="submit"] {
 /*---------------------------------------------------------
  Lists (editor-style.css)
 -------------------------------------------------------- */
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
 ul,
 ol {
     margin: 0 0 22px 0;
