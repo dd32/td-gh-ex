@@ -47,6 +47,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
+= Version 1.0.9 =
+* Testimonial icon rotated.
+* Rating button added at options panel.
+
 = Version 1.0.8 = 
 * Added Spanish language file. Thanks to Francisco Marín <francisco@usuwp.es> for providing us the translation file.
 
