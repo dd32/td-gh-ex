@@ -44,7 +44,10 @@ Images
     All the images used are either self taken or free image and are fully GPL compatible.
 
 == Changelog ==
-Version 1.8
+Version 1.7.3
+* Small bug in index-one.php solved.
+
+Version 1.7.2
 * All Hard coded codes removed
 * Cropping a logo into fixed sized Removed
 * New Option for the social media buttons added in the header
@@ -54,7 +57,7 @@ Version 1.8
 * index-one.php and index-two.php merged in to a single index-one.php
 * Spelling mistakes for the word Testimonial solved
 
-Version 1.7
+Version 1.7.1
 * Approved in http://wordpress.org and Theme made to live
  
 Version 1

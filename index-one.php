@@ -203,7 +203,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 			<?php
 				$query3 = new WP_Query( 'p='.$featured_post2 );
 				// the Loop
-				while ($query2->have_posts()) : $query2->the_post();
+				while ($query3->have_posts()) : $query3->the_post();
 					
 					if( $show_fontawesome_icon == 0 ){
 					?>
