@@ -164,25 +164,30 @@
 
 <div class="container"><hr></div>
 
-
 <div class="container">
    <div class="row transbody">
 	<?php
       $portada = new WP_Query('showposts');
       while ($portada->have_posts()) : $portada->the_post();
       $do_not_duplicate = $post->ID;
-    ?>   
+    ?>
     <div class="container">
-      <div class="col-md-4">
-        <?php echo the_post_thumbnail(); ?>
-      </div><!-- #col-md-4 -->
-      <div class="col-md-8">
-      <h2><?php echo get_the_title(); ?></h2>
-        <p class="badge">
-        <?php echo get_the_time('j') ?> <?php echo get_the_time('M')?> <?php echo get_the_time('Y') ?></p>
-        <p><?php echo get_the_excerpt(); ?></p>
-        <a href="<?php the_permalink() ?>" class="btn btn-success"><?php echo __('Continue reading &raquo;&raquo;', 'athenea'); ?></a>
-      </div><!-- #col-md-8 -->
+     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <div class="entry-content">
+        <div class="col-md-4">
+          <?php echo the_post_thumbnail(); ?>
+        </div><!-- #col-md-4 -->
+        <div class="col-md-8">
+        <h2 class="post-title entry-title"><?php echo get_the_title(); ?></h2>
+         <div class="entry-meta">
+            <?php athenea_posted_on(); ?>
+         </div><!-- .entry-meta -->
+         <br/>
+         <p><?php echo get_the_excerpt(); ?></p>
+         <a href="<?php the_permalink() ?>" class="btn btn-success"><?php echo __('Continue reading &raquo;&raquo;', 'athenea'); ?></a>
+        </div><!-- #col-md-8 -->
+      </div><!-- #entry-content -->
+     </article>
     </div><!-- #container -->
     <div class="container"><hr style="margin-top:60px; margin-bottom:60px;"></div>
     <?php endwhile; ?>
@@ -190,7 +195,6 @@
     <div class="col-md-6 text-right"><?php next_posts_link(); ?></div>
    </div><!-- #row -->
 </div><!-- #container -->
-
 
 	</div><!-- #primary col-md-12 -->
    </div><!-- /row -->

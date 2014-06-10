@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.2
+Version: 1.1.3
 Requires at least: 3.0.1
 Tested up to: 3.9.1
 Author: Miguel Angel Rico
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.3 - 10.06.2014 =
+* Se agrega hatom-feed en frontpage para evaluación correcta de datos estructurados.
 
 = 1.1.2 - 19.05.2014 =
 * Paging error is corrected in frontpage.
