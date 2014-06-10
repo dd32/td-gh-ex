@@ -21,10 +21,7 @@
 	<!-- /Header End -->
 	<section class="breadcrumb-wrapper" style="background: #F5F5F5; margin-bottom: 0px;">
 		<div class="container">
-			<!-- Breadcrumbs -->
-			<?php if ( of_get_option( 'breadcrumbs' ) ) { ?>
-				<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
-			<?php } ?>
+			<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
 		</div>
 	</section>
 	<!-- /breadcrumb End -->
@@ -48,10 +45,7 @@
 								<?php get_template_part('loop-single'); ?>
 								<!-- /Loop -->
 								
-								<!-- Page Comment -->
-								<?php if ( of_get_option( 'page_comment' ) ) { ?>
-									<?php comments_template(); ?>
-								<?php } ?>
+								<?php comments_template(); ?>
 								
 							</div>
 						<?php endwhile; ?>

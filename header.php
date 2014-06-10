@@ -18,16 +18,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<!-- favicon -->
-		<?php if ( of_get_option( 'apple_touch_icon' ) ) { ?>
-		<link rel="apple-touch-icon" href="<?php echo of_get_option( 'apple_touch_icon' ); ?>" />
-		<?php } ?>
-		
-		<!-- favicon -->
-		<?php if ( of_get_option( 'custom_favicon' ) ) { ?>
-		<link rel="icon" href="<?php echo of_get_option( 'custom_favicon' ); ?>" />
-		<?php } ?>
-		
+		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
@@ -59,16 +51,10 @@
 					<div class="row">
 						<div class="col-lg-8 col-md-8">
 							<div class="top-info fadeIn" >
-								<strong><i class="fa fa-envelope-o"></i></strong>
-								<?php if ( of_get_option( 'top_header_email' ) ) { ?>
-									<a href="mailto:<?php echo of_get_option( 'top_header_email' ); ?>"><?php echo of_get_option( 'top_header_email' ); ?></a>
-								<?php } ?>
+								<strong><i class="fa fa-envelope-o"></i></strong> <a href="#">hello@yourcompany.com</a>
 							</div><!-- /.header-infobox-->
 							<div class="top-info fadeIn" >
-								<strong><i class="fa fa-phone"></i> </strong>
-								<?php if ( of_get_option( 'top_header_phone' ) ) { ?>
-									<?php echo of_get_option( 'top_header_phone' ); ?>
-								<?php } ?>
+								<strong><i class="fa fa-phone"></i> </strong> 800-123-4567
 							</div><!-- /.header-infobox-->
 						</div>
 						<div class="col-lg-4 col-md-4">
@@ -93,31 +79,20 @@
 					<?php endif; ?>
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="logo text-center center-block" id="menu">
+							<div class="logo text-center" id="menu">
 								<?php 
 								// to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> 
 								?>
-								<!-- Logo -->
-								<?php if ( of_get_option( 'check_custom_logo' ) ) { ?>
-									<a class="center" href="<?php echo home_url(); ?>" rel="nofollow">
-										<img src="<?php echo of_get_option( 'check_custom_logo_enable' ); ?>" />
-									</a>
-								<?php } ?>
-								<!-- Blog Title -->
-								<?php if ( of_get_option( 'site_title_check' ) ) { ?>
-									<a href="<?php echo home_url(); ?>" rel="nofollow">
-										<?php bloginfo('name'); ?>
-									</a>
-								<?php } ?>
-								
+							
+								<a href="<?php echo home_url(); ?>" rel="nofollow">
+									<?php bloginfo('name'); ?>
+								</a>
 								
 							</div>
-							<p class="text-center fadeIn tagline">
+							<div class="text-center fadeIn">
 								<?php // if you'd like to use the site description you can un-comment it below ?>
-								<?php if ( of_get_option( 'site_des_check' ) ) { ?>
-									<?php echo bloginfo('description'); ?>
-								<?php } ?>
-							</p>
+								<?php  bloginfo('description'); ?>
+							</div>
 						</div>
 					</div>
 				</div>

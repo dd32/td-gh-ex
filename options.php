@@ -167,13 +167,6 @@ function optionsframework_options() {
 			'id' => 'custom_favicon',
 			'type' => 'upload');
 			
-		// Apple touch icon
-		$options[] = array(
-			'name' => __('Apple touch icon', 'options_framework_theme'),
-			'desc' => __('Upload a 129x129px Png/Gif image that will be your 	Apple touch icon.', 'options_framework_theme'),
-			'id' => 'apple_touch_icon',
-			'type' => 'upload');
-			
 		// Custom CSS
 		$options[] = array(
 			'name' => __('Custom CSS', 'options_framework_theme'),
@@ -274,21 +267,12 @@ function optionsframework_options() {
 			'class' => 'hidden',
 			'type' => 'upload');
 		
-		// Site Description
+		// Custom Logo
 		$options[] = array(
-			'name' => __('Site Description', 'options_framework_theme'),
-			'desc' => __('If you want to hide the description just uncheck it.', 'options_framework_theme'),
-			'id' => 'site_des_check',
-			'std' => '1',
-			'type' => 'checkbox');
-			
-		// Site Title
-		$options[] = array(
-			'name' => __('Site Title', 'options_framework_theme'),
-			'desc' => __('If you want to hide the description just uncheck it.', 'options_framework_theme'),
-			'id' => 'site_title_check',
-			'std' => '1',
-			'type' => 'checkbox');
+			'name' => __('Custom Logo', 'options_framework_theme'),
+			'desc' => __('Upload your Custom Logo.', 'options_framework_theme'),
+			'id' => 'custom_logo',
+			'type' => 'upload');
 		
 		// Site Title color
 		$options[] = array(
@@ -306,6 +290,13 @@ function optionsframework_options() {
 			'std' => '',
 			'type' => 'color' );
 		
+		// Site Description
+		$options[] = array(
+			'name' => __('Site Description', 'options_framework_theme'),
+			'desc' => __('If you want to hide the description that appears next to your logo.', 'options_framework_theme'),
+			'id' => 'site_des_check',
+			'std' => '0',
+			'type' => 'checkbox');
 		
 		// Top Header Email
 			$options[] = array(
@@ -325,7 +316,7 @@ function optionsframework_options() {
 			
 	// Homepage Settings
 	// ===================================================
-	/*$options[] = array(
+	$options[] = array(
 		'name' => __('Home', 'options_framework_theme'),
 		'type' => 'heading');
 		
@@ -419,10 +410,9 @@ function optionsframework_options() {
 		// Partners Area
 		// Twitter Area
 		// Bottom Call of Action
-		*/
+		
 	// Blog Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Blog', 'options_framework_theme'),
 		'type' => 'heading');
@@ -469,10 +459,9 @@ function optionsframework_options() {
 		// Share Post Settings
 		// Related Posts Settings
 		// jQuery Comments Settings
-		*/
+		
 	// Archives Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Archives', 'options_framework_theme'),
 		'type' => 'heading');
@@ -485,7 +474,7 @@ function optionsframework_options() {
 			'id' => 'example_radio',
 			'std' => 'one',
 			'type' => 'radio',
-			'options' => $test_array); *//*
+			'options' => $test_array); */
 		
 		// Blog Post Count
 		$options[] = array(
@@ -516,10 +505,9 @@ function optionsframework_options() {
 			'type' => 'multicheck',
 			'options' => $multicheck_array_post);
 		
-	*/
+	
 	// Typography Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Typography', 'options_framework_theme'),
 		'type' => 'heading');
@@ -631,10 +619,9 @@ function optionsframework_options() {
 			'type' => 'typography' );
 
 		// 
-		*/
+			
 	// Layout Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Layout', 'options_framework_theme'),
 		'type' => 'heading');
@@ -700,10 +687,9 @@ function optionsframework_options() {
 				'2c-l-fixed' => $imagepath . '2cl.png',
 				'2c-r-fixed' => $imagepath . '2cr.png')
 		);
-	*/
+	
 	// Style Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Style', 'options_framework_theme'),
 		'type' => 'heading');
@@ -819,7 +805,7 @@ function optionsframework_options() {
 			'id' => 'footer_background',
 			'std' => $background_defaults,
 			'type' => 'background' );
-	*/
+	
 	// Footer Settings
 	// ===================================================
 	$options[] = array(
@@ -831,14 +817,6 @@ function optionsframework_options() {
 			'name' => __('Footer Social Icon Background Color', 'options_framework_theme'),
 			'desc' => __('Change Your Footer Social Icon Background Color', 'options_framework_theme'),
 			'id' => 'footer_sicon_bg_color',
-			'std' => '',
-			'type' => 'color' );
-		
-		// Footer Social Icon Background hover Color
-		$options[] = array(
-			'name' => __('Footer Social Icon Background hover Color', 'options_framework_theme'),
-			'desc' => __('Change Your Footer Social Icon Background hover Color', 'options_framework_theme'),
-			'id' => 'footer_sicon_bg_hover_color',
 			'std' => '',
 			'type' => 'color' );
 		
@@ -881,7 +859,6 @@ function optionsframework_options() {
 	
 	// Contact Page Settings
 	// ===================================================
-	/*
 	$options[] = array(
 		'name' => __('Contact', 'options_framework_theme'),
 		'type' => 'heading');
@@ -907,7 +884,7 @@ function optionsframework_options() {
 			'id' => 'gmap_contact_page',
 			'std' => '',
 			'type' => 'textarea');
-		*/
+		
 	// Info Settings
 	// ===================================================
 	$options[] = array(
@@ -916,7 +893,7 @@ function optionsframework_options() {
 	
 		$options[] = array(
 			'name' => __('Example Info', 'options_framework_theme'),
-			'desc' => __('', 'options_framework_theme'),
+			'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
 			'type' => 'info');
 
 
