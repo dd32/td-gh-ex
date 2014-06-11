@@ -1,6 +1,12 @@
 *** Baskerville changelog ***
 
 
+Version 1.06 (2014-06-11)
+-------------------------
+- Escaped the_title() in link title attributes
+- Increased the contrast of the post-excerpt element
+
+
 Version 1.05 (2014-06-09)
 -------------------------
 - Fixed a bug where template-archives.php would always display comments
