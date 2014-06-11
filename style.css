@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Baskerville
-	Version: 1.06
+	Version: 1.07
 	Description: Baskerville is a beautiful, responsive and retina-ready masonry theme for hoarders. It's the perfect way to showcase your posts, videos, images and galleries, and share your favorite quotes and links. Features responsive design, retina-ready assets, full-width header image, support for all post formats, custom logo upload, custom widgets (video, Flickr and Dribbble), four page templates (including a contributors template), editor styling, like functionality via the ZillaLikes plugin and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -761,7 +761,7 @@ body a {
 	max-width: 100%;
 	height: auto !important;
 	background: #2B3542;
-	padding: 3% 1%;
+	padding: 3% 0;
 	color: #FFF;
 	position: relative;
 }
@@ -806,7 +806,7 @@ body a {
 .mejs-unmute button {
 	margin: 0 auto;
 	width: 100%;
-	height: 32px;
+	height: 31px;
 	background: none;
 	background-size: 18px auto;
 	background-repeat: no-repeat;
@@ -834,7 +834,7 @@ body a {
 	height: 8px;
 }
  
-.mejs-horizontal-volume-total { background: #555D67; }
+.mejs-horizontal-volume-total { background: #222A34; }
 
 .mejs-horizontal-volume-current {
     position: absolute;
@@ -844,7 +844,7 @@ body a {
 
 .mejs-controls .mejs-time-rail { 
     margin-top: 12px;
-	width: 56.25%;
+	max-width: 56.25%; 
 	float: left;
 }
  
@@ -855,11 +855,11 @@ body a {
     cursor: pointer;
 }
  
-.mejs-controls .mejs-time-rail .mejs-time-total { background: #6A717A; }
+.mejs-controls .mejs-time-rail .mejs-time-total { background: #555D67; }
  
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
     width: 0;
-    background: #555D67;
+    background: #222A34;
 }
  
 .mejs-controls .mejs-time-rail .mejs-time-current {
@@ -1058,8 +1058,14 @@ body.single-post .content.center {
 
 /* format audio */
 
+.single-post .mejs-playpause-button.mejs-play button,
+.single-post .mejs-playpause-button.mejs-pause button { background-size: 24px auto; }
+
 .single-post .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play-big.png); }
 .single-post .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause-big.png); }
+
+.single-post .post-audio .mejs-mute button,
+.single-post .post-audio .mejs-unmute button { background-size: 32px auto; }
 
 .single-post .post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute-big.png); }
 .single-post .post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute-big.png); }
@@ -2730,6 +2736,14 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	.post-excerpt { font-size: 1em; }
 	
 	.posts .post-meta { padding: 0 6%; }
+	
+	/* format audio */
+	
+	.single-post .post-audio .mejs-mute button, 
+	.single-post .post-audio .mejs-unmute button { background-size: 20px auto; }
+	
+	.single-post .mejs-playpause-button.mejs-play button, 
+	.single-post .mejs-playpause-button.mejs-pause button { background-size: 16px auto; }
 	
 	/* single post */
 	
