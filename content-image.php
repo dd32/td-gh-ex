@@ -6,7 +6,7 @@
 	
 		<?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
 	
-		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_attr( get_the_title() ); ?>">
+		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 		
 			<?php the_post_thumbnail('post-thumbnail'); ?>
 			
@@ -28,7 +28,7 @@
 									                                    	    
 <div class="post-meta">
 
-	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php esc_attr( get_the_title() ); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
 	
 	<?php
 	

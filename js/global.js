@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 	    alwaysShowControls: true,
 	    features: ['playpause','progress','volume'],
 	    audioVolume: 'horizontal',
-	    audioWidth: 1000,
+	    audioWidth: 872,
 	    audioHeight: 100
 	})
 	

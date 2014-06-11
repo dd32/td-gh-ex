@@ -1,6 +1,12 @@
 *** Baskerville changelog ***
 
 
+Version 1.07 (2014-06-12)
+-------------------------
+- Replaced esc_attr() with the_title_attribute() in link title attributes
+- Fixed a bug where the audio player would overflow in some browsers
+
+
 Version 1.06 (2014-06-11)
 -------------------------
 - Escaped the_title() in link title attributes
