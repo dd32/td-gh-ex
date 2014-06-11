@@ -42,7 +42,7 @@
 				
 					<div class="post-header">
 						
-					    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h2>
 					    
 					</div> <!-- /post-header -->
 					
@@ -234,7 +234,7 @@
 								$prev_post = get_previous_post();
 								if (!empty( $prev_post )): ?>
 								
-									<a class="post-nav-prev" title="<?php _e('Previous post:', 'baskerville'); echo ' ' . get_the_title($prev_post); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>"><?php _e('Previous post', 'baskerville'); ?></a>
+									<a class="post-nav-prev" title="<?php _e('Previous post:', 'baskerville'); echo ' ' . esc_attr( get_the_title($prev_post) ); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>"><?php _e('Previous post', 'baskerville'); ?></a>
 							
 								<?php endif; ?>
 								
@@ -242,7 +242,7 @@
 								$next_post = get_next_post();
 								if (!empty( $next_post )): ?>
 									
-									<a class="post-nav-next" title="<?php _e('Next post:', 'baskerville'); echo ' ' . get_the_title($next_post); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>"><?php _e('Next post', 'baskerville'); ?></a>
+									<a class="post-nav-next" title="<?php _e('Next post:', 'baskerville'); echo ' ' . esc_attr( get_the_title($next_post) ); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>"><?php _e('Next post', 'baskerville'); ?></a>
 							
 								<?php endif; ?>
 								
