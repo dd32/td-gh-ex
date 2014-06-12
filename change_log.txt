@@ -42,3 +42,6 @@ Version 1.06.2
    
 Version 1.07
     i) Fixed header issue.
+	   
+Version 1.08
+    i) Fixed stylesheet url.
