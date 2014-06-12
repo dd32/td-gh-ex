@@ -77,5 +77,7 @@ Version	3.06
     i)  Applied Sanitization in all input fields.
 Version	3.07
     i)  Fixed copyright link
+Version	3.07
+    i)  Fixed stylesheet url	
 
 	

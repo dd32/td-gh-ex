@@ -250,7 +250,7 @@ add_filter( 'excerpt_more', 'redpro_read_more' );
 function redpro_scripts_styles() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.1');
 	wp_enqueue_script( 'function', get_template_directory_uri() . '/js/function.js', array('jquery'), '1.0.0');
-	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('style', get_stylesheet_uri());
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
