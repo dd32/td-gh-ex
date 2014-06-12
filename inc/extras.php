@@ -98,7 +98,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Left Sidebar', 'accesspresslite' ),
 		'id'            => 'left-sidebar',
-		'description'   => 'Display items in the Left Sidebar of the inner pages',
+		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -108,7 +108,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Right Sidebar', 'accesspresslite' ),
 		'id'            => 'right-sidebar',
-		'description'   => 'Display items in the Right Sidebar of the inner pages',
+		'description'   => __( 'Display items in the Right Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -118,7 +118,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Blog Right Sidebar', 'accesspresslite' ),
 		'id'            => 'blog-sidebar',
-		'description'   => 'Display items for the blog category in the Right Sidebar of the inner pages',
+		'description'   => __( 'Display items for the blog category in the Right Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -128,7 +128,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area One', 'accesspresslite' ),
 		'id'            => 'footer-1',
-		'description'   => 'Display items in First Footer Area',
+		'description'   => __( 'Display items in First Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -138,7 +138,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Two', 'accesspresslite' ),
 		'id'            => 'footer-2',
-		'description'   => 'Display items in Second Footer Area',
+		'description'   => __( 'Display items in Second Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -148,7 +148,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Three', 'accesspresslite' ),
 		'id'            => 'footer-3',
-		'description'   => 'Display items in Third Footer Area',
+		'description'   => __( 'Display items in Third Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -158,7 +158,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Four', 'accesspresslite' ),
 		'id'            => 'footer-4',
-		'description'   => 'Display items in Fourth Footer Area',
+		'description'   => __( 'Display items in Fourth Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -168,7 +168,7 @@ function accesspresslite_widgets_init() {
     register_sidebar( array(
 		'name'          => __( 'Left Block above footer', 'accesspresslite' ),
 		'id'            => 'textblock-1',
-		'description'   => 'Display items in the left just above the footer',
+		'description'   => __( 'Display items in the left just above the footer', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -178,7 +178,7 @@ function accesspresslite_widgets_init() {
     register_sidebar( array(
 		'name'          => __( 'Middle Block above footer', 'accesspresslite' ),
 		'id'            => 'textblock-2',
-		'description'   => 'Display items in the middle just above the footer and replaces defaul gallery',
+		'description'   => __( 'Display items in the middle just above the footer and replaces defaul gallery', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -188,7 +188,7 @@ function accesspresslite_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Right Block above footer', 'accesspresslite' ),
 		'id'            => 'textblock-3',
-		'description'   => 'Display items in the Right just above the footer and replaces Testimonials',
+		'description'   => __( 'Display items in the Right just above the footer and replaces Testimonials', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -203,12 +203,11 @@ add_action( 'widgets_init', 'accesspresslite_widgets_init' );
 function accesspresslite_scripts() {
 	global $accesspresslite_options;
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-	$protocol = is_ssl() ? 'https' : 'http';
 	$query_args = array(
 		'family' => 'Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700',
 	);
 	
-	wp_enqueue_style( 'google-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ) );
+	wp_enqueue_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
 	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );

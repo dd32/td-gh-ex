@@ -226,7 +226,7 @@ function accesspresslite_theme_options_page() {
 		<p><?php _e('Follow us for new updates','accesspresslite') ?></p>
 		<a href="<?php echo esc_url('http://www.facebook.com/accesskeys','accesspresslite'); ?>" title="<?php esc_attr_e('Facebook','accesspresslite') ?>" class="accesspresslite_facebook" target="_blank">Facebook</a>
 		<a href="<?php echo esc_url('http://twitter.com/accesskeys','accesspresslite'); ?>" title="<?php esc_attr_e('Twitter','accesspresslite') ?>" class="accesspresslite_twitter" target="_blank">Twitter</a>
-		<a href="<?php echo esc_url('http://wordpress.org/support/profile/access-keys','accesspresslite'); ?>" title="<?php esc_attr_e('Wordpress','accesspresslite') ?>" class="accesspresslite_wordpress" target="_blank">Wordpress</a>
+		<a href="<?php echo esc_url('http://wordpress.org/support/profile/access-keys','accesspresslite'); ?>" title="<?php esc_attr_e('WordPress','accesspresslite') ?>" class="accesspresslite_wordpress" target="_blank">WordPress</a>
 		</div>
 
 		<div class="accesspresslite_title"><?php echo wp_get_theme();  _e( ' Theme Options', 'accesspresslite' )?></div>
@@ -297,8 +297,8 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<div class="accesspresslite_fav_icon">
 							  <input type="text" name="accesspresslite_options[media_upload]" id="accesspresslite_media_upload" value="<?php if(!empty($settings['media_upload'])){ echo $settings['media_upload']; }?>" />
-							  <input class="button" name="media_upload_button" id="accesspresslite_media_upload_button" value="Upload" type="button" />
-							  <em class="f13">&nbsp;&nbsp;Upload favicon(.png) with size of 16px X 16px</em>
+							  <input class="button" name="media_upload_button" id="accesspresslite_media_upload_button" value="<?php _e('Upload','accesspresslite'); ?>" type="button" />
+							  <em class="f13">&nbsp;&nbsp;<?php _e('Upload favicon(.png) with size of 16px X 16px', 'accesspresslite'); ?></em>
 
 							  <?php if(!empty($settings['media_upload'])){ ?>
 							  <div id="accesspresslite_media_image">
@@ -325,7 +325,7 @@ function accesspresslite_theme_options_page() {
 					<tr>
 					<th scope="row"><label for="header_text"><?php _e('Header Text','accesspresslite'); ?></label></th>
 					<td>
-					<textarea id="header_text" name="accesspresslite_options[header_text]" rows="5" cols="30" placeholder="Example.. Call Us : 985XXX9856XX"><?php echo $settings['header_text']; ?></textarea><br />
+					<textarea id="header_text" name="accesspresslite_options[header_text]" rows="5" cols="30" placeholder="<?php _e('Example.. Call Us : 985XXX9856XX','accesspresslite')?>"><?php echo $settings['header_text']; ?></textarea><br />
                     <em class="f13"><?php _e('Html content allowed','accesspresslite'); ?></em> </td>
                     </tr>
 
@@ -335,7 +335,7 @@ function accesspresslite_theme_options_page() {
 					<select id="menu_alignment" name="accesspresslite_options[menu_alignment]">
 					<?php
 					foreach ( $accesspresslite_menu_alignments as $accesspresslite_menu_alignment ) :
-						echo '<option style="padding-right: 10px;" value="' .  $accesspresslite_menu_alignment . '" ' . selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ) . '>' . esc_attr($accesspresslite_menu_alignment,'accesspresslite')  . '</option>';
+						echo '<option style="padding-right: 10px;" value="' .  __($accesspresslite_menu_alignment,'accesspresslite') . '" ' . selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ) . '>' . esc_attr($accesspresslite_menu_alignment,'accesspresslite')  . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -391,17 +391,17 @@ function accesspresslite_theme_options_page() {
 					</tr>
 					<tr>
 						<th><label for="welcome_post_char"><?php _e('Welcome Post Excerpt Character','accesspresslite'); ?></label></th>
-						<td><input id="welcome_post_char" type="text" name="accesspresslite_options[welcome_post_char]" value="<?php echo esc_attr($settings['welcome_post_char'],'accesspresslite'); ?>"> <?php _e('Characters','accesspresslite'); ?></td>
+						<td><input id="welcome_post_char" type="text" name="accesspresslite_options[welcome_post_char]" value="<?php if (isset($settings['welcome_post_char'])){ echo esc_attr($settings['welcome_post_char'],'accesspresslite'); } ?>"> <?php _e('Characters','accesspresslite'); ?></td>
 					</tr>
 
 					<tr>
 						<th><label for="welcome_post_readmore"><?php _e('Read More Text','accesspresslite'); ?></label></th>
-						<td><input id="welcome_post_readmore" type="text" name="accesspresslite_options[welcome_post_readmore]" value="<?php echo esc_attr($settings['welcome_post_readmore'],'accesspresslite'); ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
+						<td><input id="welcome_post_readmore" type="text" name="accesspresslite_options[welcome_post_readmore]" value="<?php if (isset($settings['welcome_post_readmore'])){ echo esc_attr($settings['welcome_post_readmore'],'accesspresslite'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr>
 						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspresslite'); ?></label></th>
-						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php echo esc_attr($settings['show_event_number'],'accesspresslite'); ?>"></td>
+						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number'],'accesspresslite'); } ?>"></td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -467,7 +467,7 @@ function accesspresslite_theme_options_page() {
 
 					<tr>
 						<th><label for="featured_post_readmore"><?php _e('Read More Text','accesspresslite'); ?></label></th>
-						<td><input id="featured_post_readmore" type="text" name="accesspresslite_options[featured_post_readmore]" value="<?php echo esc_attr($settings['featured_post_readmore'],'accesspresslite'); ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
+						<td><input id="featured_post_readmore" type="text" name="accesspresslite_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){echo esc_attr($settings['featured_post_readmore'],'accesspresslite'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -558,6 +558,11 @@ function accesspresslite_theme_options_page() {
 							<?php _e('Show','accesspresslite'); ?>
 						</th>
 						<td>
+						<?php 
+						if(!isset($settings['slider_options'])){
+							$settings['slider_options']='single_post_slider';
+						}
+						?>
 						<label class="checkbox" id="single_post_slider">
 							<input value="single_post_slider" type="radio" name="accesspresslite_options[slider_options]" <?php checked($settings['slider_options'],'single_post_slider'); ?> ><?php _e('Single Posts as a Slider','accesspresslite'); ?>
 						</label>
@@ -636,6 +641,11 @@ function accesspresslite_theme_options_page() {
 					<tr>
 					<th><?php _e('Select the Category','accesspresslite'); ?></th>
 					<td>
+					<?php 
+					if(!isset($settings['slider_cat'])){
+						$settings['slider_cat']=0;
+					}
+					?>
 						<select id="slider_cat" name="accesspresslite_options[slider_cat]">
 						<?php
 						foreach ( $accesspresslite_catlist as $single_cat ) :
@@ -780,7 +790,7 @@ function accesspresslite_theme_options_page() {
 					<td>
 						<tr>
 							<td colspan="2">View All Text&nbsp;&nbsp;
-							<input type="text" name="accesspresslite_options[view_all_text]" value="<?php echo esc_attr($settings['view_all_text']); ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
+							<input type="text" name="accesspresslite_options[view_all_text]" value="<?php if (isset($settings['view_all_text'])){ echo esc_attr($settings['view_all_text']); } ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
 						</tr>
 					</td>
 				</tbody>
@@ -867,13 +877,13 @@ function accesspresslite_theme_options_page() {
 
 					<tr><th scope="row"><label for="accesspresslite_instagram">Instagram</label></th>
 					<td>
-					<input id="accesspresslite_instagram" name="accesspresslite_options[accesspresslite_instagram]" type="text" value="<?php echo esc_url($settings['accesspresslite_instagram']); ?>" />
+					<input id="accesspresslite_instagram" name="accesspresslite_options[accesspresslite_instagram]" type="text" value="<?php if(isset($settings['accesspresslite_instagram'])) { echo esc_url($settings['accesspresslite_instagram']); } ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="accesspresslite_sound_cloud">Sound Cloud</label></th>
 					<td>
-					<input id="accesspresslite_sound_cloud" name="accesspresslite_options[accesspresslite_sound_cloud]" type="text" value="<?php echo esc_url($settings['accesspresslite_sound_cloud']); ?>" />
+					<input id="accesspresslite_sound_cloud" name="accesspresslite_options[accesspresslite_sound_cloud]" type="text" value="<?php if(isset($settings['accesspresslite_sound_cloud'])) { echo esc_url($settings['accesspresslite_sound_cloud']); } ?>" />
 					</td>
 					</tr>
 
@@ -1022,13 +1032,18 @@ function accesspresslite_validate_options( $input ) {
         if(intval($input['welcome_post_char'])){
             $input['welcome_post_char'] = absint($input['welcome_post_char']);
         }
+    }else{
+    	$input['welcome_post_char']="";
     }
 
     if (isset( $input['show_event_number'] ) ){
         if(intval($input['show_event_number'])){
             $input['show_event_number'] = absint($input['show_event_number']);
         }
+    }else{
+    	$input['show_event_number']="";
     }
+
 
 	// If the checkbox has not been checked, we void it
 	if ( ! isset( $input['responsive_design'] ) )

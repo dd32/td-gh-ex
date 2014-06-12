@@ -10,8 +10,8 @@ $featured_post2 = $accesspresslite_settings['featured_post2'];
 $featured_post3 = $accesspresslite_settings['featured_post3'];
 $show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
 $testimonail_category = $accesspresslite_settings['testimonial_cat'];
-$accesspresslite_welcome_post_char = $accesspresslite_settings['welcome_post_char'];
-$show_event_number = $accesspresslite_settings['show_event_number'];
+isset($accesspresslite_settings['welcome_post_char'])?($accesspresslite_welcome_post_char = $accesspresslite_settings['welcome_post_char']) : ($accesspresslite_welcome_post_char = 10);
+isset($accesspresslite_settings['show_event_number'])?($accesspresslite_show_event_number = $accesspresslite_settings['show_event_number']) : ($accesspresslite_show_event_number = 10);
 
 if( $accesspresslite_layout !== 'Layout2') { ?>
 			
