@@ -1,5 +1,5 @@
 <div id="portfolio_carousel_container" class="carousel_outerrim">
-    <?php global $post; $text = get_post_meta( $post->ID, '_kad_portfolio_carousel_title', true ); if( $text != '') { echo '<h3 class="title">'.$text.'</h3>'; } else {echo '<h3 class="title">'.__('Recent Projects', 'virtue').'</h3>';} ?>
+    <?php global $post; $text = get_post_meta( $post->ID, '_kad_portfolio_carousel_title', true ); if(!empty($text)) { echo '<h3 class="title">'.$text.'</h3>'; } else {echo '<h3 class="title">'.__('Recent Projects', 'virtue').'</h3>';} ?>
         <div class="portfolio-carouselcase fredcarousel">
             <?php $itemsize = 'tcol-lg-3 tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 269; $slideheight = 269; $md = 4; $sm = 3; $xs = 2; $ss = 1; ?>
 				<div id="carouselcontainer" class="rowtight">

@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.1.8 =
+* Update Turkish Translation
+* Update support for MQtranslate
+* Fix small gettext issue.
+* Fix small issue with recent posts carousel.
+* Fix small CSS issue.
+
 = Version: 2.1.7 =
 * Update print styles
 * Update woocommerce template

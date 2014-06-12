@@ -30,7 +30,17 @@ function hex2rgb($hex) {
    //return implode(",", $rgb); // returns the rgb values separated by commas
    return $rgb; // returns an array with the rgb values
 }
-
+// Add support for qtranslate
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active('qtranslate/qtranslate.php') || is_plugin_active('mqtranslate/mqtranslate.php') ) {
+    add_action('portfolio-type_add_form',  'qtrans_modifyTermFormFor');
+    add_action('portfolio-type_edit_form',   'qtrans_modifyTermFormFor');
+    add_action('product_cat_add_form',   'qtrans_modifyTermFormFor');
+    add_action('product_cat_edit_form',  'qtrans_modifyTermFormFor');
+    add_action('product_tag_add_form',   'qtrans_modifyTermFormFor');
+    add_action('product_tag_edit_form',  'qtrans_modifyTermFormFor');
+    add_filter('woocommerce_cart_item_name', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);
+}
 
 // Ecerpt Length
 

@@ -1,5 +1,5 @@
 <div id="blog_carousel_container" class="carousel_outerrim">
-    <?php global $post; $text = get_post_meta( $post->ID, '_kad_blog_carousel_title', true ); if( $text != '') { echo '<h3 class="title">'.$text.'</h3>'; } else {echo '<h3 class="title">Recent Posts</h3>';} ?>
+    <?php global $post; $text = get_post_meta( $post->ID, '_kad_blog_carousel_title', true ); if(!empty($text)) { echo '<h3 class="title">'.$text.'</h3>'; } else {echo '<h3 class="title">'.__('Recent Posts', 'virtue').'</h3>';} ?>
     <div class="blog-carouselcase fredcarousel">
     <?php if (kadence_display_sidebar()) {$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $catimgwidth = 266; $catimgheight = 266; $md = 3; $sm = 3; $xs = 2; $ss = 1; } else {$itemsize = 'tcol-md-3 tcol-sm-3 tcol-xs-4 tcol-ss-12'; $catimgwidth = 276; $catimgheight = 276; $md = 4; $sm = 3; $xs = 2; $ss = 1; } ?>
 		<div id="carouselcontainer" class="rowtight">

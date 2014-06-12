@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Virtue v1.8.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-28 18:26-0700\n"
-"PO-Revision-Date: 2014-04-28 18:30-0700\n"
+"PO-Revision-Date: 2014-06-12 15:28-0700\n"
 "Last-Translator: Dovy Paukstys <dovy@reduxframework.com>\n"
 "Language-Team:  <language@reduxframework.com>\n"
 "Language: it_IT\n"
@@ -3702,6 +3702,42 @@ msgstr "Informazioni aggiuntive"
 msgid "Product Description"
 msgstr "Descrizione prodotto"
 
+# @ tgmpa
+# @ virtue
+#, fuzzy
+#~ msgid "Begin installing plugin"
+#~ msgid_plural "Begin installing plugins"
+#~ msgstr[0] "Installazione del plugin: %s"
+#~ msgstr[1] "Installazione del plugin: %s"
+
+# @ redux-framework
+#, fuzzy
+#~ msgid "Activate installed plugin"
+#~ msgid_plural "Activate installed plugins"
+#~ msgstr[0] "Licenza attivata"
+#~ msgstr[1] "Licenza attivata"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Not Activated"
+#~ msgstr "Attivare"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Deactivated"
+#~ msgstr "Attivare"
+
+# @ tgmpa
+# @ woocommerce
+#, fuzzy
+#~ msgid "License Status"
+#~ msgstr "Stato"
+
+# @ tgmpa
+#, fuzzy
+#~ msgid "Activate License"
+#~ msgstr "Attivare"
+
 # @ virtue
 #~ msgid "Upload Icon"
 #~ msgstr "Carica icona"
@@ -3748,122 +3784,6 @@ msgstr "Descrizione prodotto"
 # @ virtue
 #~ msgid "Add Slide"
 #~ msgstr "Aggiungi slide"
-
-# @ tgmpa
-# @ virtue
-#, fuzzy
-#~ msgid "Begin installing plugin"
-#~ msgid_plural "Begin installing plugins"
-#~ msgstr[0] "Installazione del plugin: %s"
-#~ msgstr[1] "Installazione del plugin: %s"
-
-# @ redux-framework
-#, fuzzy
-#~ msgid "Activate installed plugin"
-#~ msgid_plural "Activate installed plugins"
-#~ msgstr[0] "Licenza attivata"
-#~ msgstr[1] "Licenza attivata"
-
-# @ redux-framework
-#~ msgid "Import / Export"
-#~ msgstr "Importa / Esporta"
-
-# @ redux-framework
-#~ msgid "Options Object"
-#~ msgstr "Opzioni Oggeto"
-
-# @ redux-framework
-#~ msgid "Import / Export Options"
-#~ msgstr "Opzione Importa / Esporta"
-
-# @ redux-framework
-#~ msgid "Import Options"
-#~ msgstr "Importa Opzioni"
-
-# @ redux-framework
-#~ msgid "Import from file"
-#~ msgstr "Importa da file"
-
-# @ redux-framework
-#~ msgid "Import from URL"
-#~ msgstr "Importa da URL"
-
-# @ redux-framework
-#~ msgid ""
-#~ "Input your backup file below and hit Import to restore your sites options "
-#~ "from a backup."
-#~ msgstr ""
-#~ "Importa il tuo file di backup qui sotto e premi Importa per ripristinare "
-#~ "le opzioni del tuo sito da un backup."
-
-# @ redux-framework
-#~ msgid ""
-#~ "Input the URL to another sites options set and hit Import to load the "
-#~ "options from that site."
-#~ msgstr ""
-#~ "Inserire l'URL di un altro set di opzioni siti e premi Importa per "
-#~ "caricare le opzioni di quel sito."
-
-# @ redux-framework
-#~ msgid "Import"
-#~ msgstr "Importa"
-
-# @ redux-framework
-#~ msgid ""
-#~ "WARNING! This will overwrite all existing option values, please proceed "
-#~ "with caution!"
-#~ msgstr ""
-#~ "ATTENZIONE! Questo sovrascriverà tutti i valori delle opzioni attuali, si "
-#~ "prega di procedere con cautela!"
-
-# @ redux-framework
-#~ msgid "Export Options"
-#~ msgstr "Esporta Opzioni"
-
-# @ redux-framework
-#~ msgid ""
-#~ "Here you can copy/download your current option settings. Keep this safe "
-#~ "as you can use it as a backup should anything go wrong, or you can use it "
-#~ "to restore your settings on this site (or any other site)."
-#~ msgstr ""
-#~ "Qui è possibile copiare / scaricare le impostazioni delle opzioni "
-#~ "correnti. Conservalo al sicuro in modo da poterlo utilizzare come backup "
-#~ "se qualcosa dovesse andare storto, oppure è possibile utilizzarlo per "
-#~ "ripristinare le impostazioni su questo sito (o qualsiasi altro sito)."
-
-# @ redux-framework
-#~ msgid "Copy"
-#~ msgstr "Copia"
-
-# @ redux-framework
-#~ msgid "Copy Link"
-#~ msgstr "Copia Link"
-
-# @ redux-framework
-#~ msgid "Show Object in Javascript Console Object"
-#~ msgstr "Mostra oggetti nella console Javascript"
-
-# @ virtue
-#~ msgid "Enter a valid email address."
-#~ msgstr "Inserire un indirizzo email valido."
-
-#~ msgid "Help improve Our Panel"
-#~ msgstr "Contribuisci a migliorare il nostro pannello"
-
-#~ msgid ""
-#~ "Please helps us improve our panel by allowing us to gather anonymous "
-#~ "usage stats so we know which configurations, plugins and themes to test "
-#~ "with."
-#~ msgstr ""
-#~ "Per favore aiutaci a migliorare il nostro pannello, permettendoci di "
-#~ "raccogliere statistiche in forma anonima sull'utilizzo, in modo da sapere "
-#~ "quali configurazioni, plugin e temi per testare."
-
-#~ msgid "Allow tracking"
-#~ msgstr "Permetti il monitoraggio"
-
-#~ msgid "Do not allow tracking"
-#~ msgstr "Non consentire il monitoraggio"
 
 # @ redux-framework
 #~ msgid "Transparent"
@@ -3939,6 +3859,77 @@ msgstr "Descrizione prodotto"
 #~ msgid "Add"
 #~ msgstr "Indirizzo"
 
+# @ redux-framework
+#~ msgid "Import / Export Options"
+#~ msgstr "Opzione Importa / Esporta"
+
+# @ redux-framework
+#~ msgid "Import Options"
+#~ msgstr "Importa Opzioni"
+
+# @ redux-framework
+#~ msgid "Import from file"
+#~ msgstr "Importa da file"
+
+# @ redux-framework
+#~ msgid "Import from URL"
+#~ msgstr "Importa da URL"
+
+# @ redux-framework
+#~ msgid ""
+#~ "Input your backup file below and hit Import to restore your sites options "
+#~ "from a backup."
+#~ msgstr ""
+#~ "Importa il tuo file di backup qui sotto e premi Importa per ripristinare "
+#~ "le opzioni del tuo sito da un backup."
+
+# @ redux-framework
+#~ msgid ""
+#~ "Input the URL to another sites options set and hit Import to load the "
+#~ "options from that site."
+#~ msgstr ""
+#~ "Inserire l'URL di un altro set di opzioni siti e premi Importa per "
+#~ "caricare le opzioni di quel sito."
+
+# @ redux-framework
+#~ msgid "Import"
+#~ msgstr "Importa"
+
+# @ redux-framework
+#~ msgid ""
+#~ "WARNING! This will overwrite all existing option values, please proceed "
+#~ "with caution!"
+#~ msgstr ""
+#~ "ATTENZIONE! Questo sovrascriverà tutti i valori delle opzioni attuali, si "
+#~ "prega di procedere con cautela!"
+
+# @ redux-framework
+#~ msgid "Export Options"
+#~ msgstr "Esporta Opzioni"
+
+# @ redux-framework
+#~ msgid ""
+#~ "Here you can copy/download your current option settings. Keep this safe "
+#~ "as you can use it as a backup should anything go wrong, or you can use it "
+#~ "to restore your settings on this site (or any other site)."
+#~ msgstr ""
+#~ "Qui è possibile copiare / scaricare le impostazioni delle opzioni "
+#~ "correnti. Conservalo al sicuro in modo da poterlo utilizzare come backup "
+#~ "se qualcosa dovesse andare storto, oppure è possibile utilizzarlo per "
+#~ "ripristinare le impostazioni su questo sito (o qualsiasi altro sito)."
+
+# @ redux-framework
+#~ msgid "Copy"
+#~ msgstr "Copia"
+
+# @ redux-framework
+#~ msgid "Copy Link"
+#~ msgstr "Copia Link"
+
+# @ redux-framework
+#~ msgid "Import / Export"
+#~ msgstr "Importa / Esporta"
+
 # @ tgmpa
 #, fuzzy
 #~ msgid "Active"
@@ -3971,6 +3962,16 @@ msgstr "Descrizione prodotto"
 
 # @ woocommerce
 #, fuzzy
+#~ msgid "Font style"
+#~ msgstr "Descrizione prodotto"
+
+# @ woocommerce
+#, fuzzy
+#~ msgid "Font subsets"
+#~ msgstr "Descrizione prodotto"
+
+# @ woocommerce
+#, fuzzy
 #~ msgid "Font script"
 #~ msgstr "Descrizione prodotto"
 
@@ -3999,22 +4000,6 @@ msgstr "Descrizione prodotto"
 #~ msgctxt "%1$d = first, %2$d = last, %3$d = total"
 #~ msgid "Showing %1$d–%2$d of %3$d results"
 #~ msgstr "Mostra %d risultato/i"
-
-# @ woocommerce
-#~ msgid "SKU:"
-#~ msgstr "Numero di inventario del prodotto:"
-
-# @ woocommerce
-#~ msgid "Category:"
-#~ msgid_plural "Categories:"
-#~ msgstr[0] "Categoria:"
-#~ msgstr[1] "Categorie:"
-
-# @ woocommerce
-#~ msgid "Tag:"
-#~ msgid_plural "Tags:"
-#~ msgstr[0] "Tag:"
-#~ msgstr[1] "Tags:"
 
 # @ woocommerce
 #, fuzzy
