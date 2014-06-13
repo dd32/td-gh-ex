@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange Version 2.1 - june 2014
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 DarkOrange Version 2.0 - june 2014
 - changed size of featured image
 - added featured image on single page
