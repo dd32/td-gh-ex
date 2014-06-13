@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian and Japanese. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese and French. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -16,6 +16,7 @@ Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@lichtundmusik.ch)
 Added Translation for Russian - Jose Rainbow (youlold@gmail.com)
 Added Translation for Japanese - Key Saito (key@keyspace.info)
+Added Translation for French by Rico (Email: postmaster@web-automobile.com) and Sebastian Chamusard (admin78@orange.fr)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -55,6 +56,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+version 1.5.2
+* Added French translation fr_FR.po and fr_FR.mo
+
 version 1.5.1
 * Added Japanese translation ja.po and ja.mo
 * Updated Spanish translation
