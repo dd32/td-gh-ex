@@ -63,6 +63,9 @@ License: Public domain/No copyright
 
 == CHANGELOG ==
 
+06/12/2014 v1.0.4.1
+* Fix for missing icon from widget
+
 06/11/2014 v1.0.4
 * Tweaked CSS for custom widget
 * Fixed custom header image on blog/attachment pages
