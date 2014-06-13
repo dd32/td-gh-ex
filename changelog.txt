@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-DarkOrange Version 2.1 - june 2014
+DarkOrange Version 2.2 - june 2014
 - added several adjustments for better responsive layout
 - text-align justify for content area, sidebar and footer
 - several minor adjustments 
