@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-13 23:04+0545\n"
-"PO-Revision-Date: 2014-03-20 16:37+0545\n"
+"POT-Creation-Date: 2014-06-13 23:09+0545\n"
+"PO-Revision-Date: 2014-06-13 23:09+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -134,7 +134,7 @@ msgstr ""
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:836
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:829
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:382
+#: ../content.php:55 ../functions.php:375
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -194,8 +194,8 @@ msgstr ""
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:630
-#: ../functions.php:658 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:623
+#: ../functions.php:651 ../image.php:97
 msgid "Edit"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgid ""
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
 
-#: ../content-image.php:45 ../functions.php:696
+#: ../content-image.php:45 ../functions.php:689
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
@@ -333,78 +333,78 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: ../functions.php:186
+#: ../functions.php:179
 msgid "Garden"
 msgstr ""
 
-#: ../functions.php:192
+#: ../functions.php:185
 msgid "Flower"
 msgstr ""
 
-#: ../functions.php:198
+#: ../functions.php:191
 msgid "Mountain"
 msgstr ""
 
-#: ../functions.php:350
+#: ../functions.php:343
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:451
+#: ../functions.php:444
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:460
+#: ../functions.php:453
 msgid "Footer Area One"
 msgstr ""
 
-#: ../functions.php:462 ../functions.php:472 ../functions.php:482
+#: ../functions.php:455 ../functions.php:465 ../functions.php:475
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: ../functions.php:470
+#: ../functions.php:463
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../functions.php:480
+#: ../functions.php:473
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../functions.php:514 ../functions.php:543 ../single.php:15
+#: ../functions.php:507 ../functions.php:536 ../single.php:15
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:522 ../functions.php:551
+#: ../functions.php:515 ../functions.php:544
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../functions.php:523 ../functions.php:552
+#: ../functions.php:516 ../functions.php:545
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../functions.php:630
+#: ../functions.php:623
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:647
+#: ../functions.php:640
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: ../functions.php:653
+#: ../functions.php:646
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:662
+#: ../functions.php:655
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:671
+#: ../functions.php:664
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:690
+#: ../functions.php:683
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -414,64 +414,64 @@ msgid ""
 "\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: ../functions.php:748
+#: ../functions.php:741
 msgid "ID"
 msgstr ""
 
-#: ../functions.php:958
+#: ../functions.php:955
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:960
+#: ../functions.php:957
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:1327
+#: ../functions.php:1324
 msgid "Primary menu"
 msgstr ""
 
-#: ../functions.php:1329 ../functions.php:1362
+#: ../functions.php:1326 ../functions.php:1359
 msgid "Skip to primary content"
 msgstr ""
 
-#: ../functions.php:1330 ../functions.php:1363
+#: ../functions.php:1327 ../functions.php:1360
 msgid "Skip to secondary content"
 msgstr ""
 
-#: ../functions.php:1360
+#: ../functions.php:1357
 msgid "Secondary menu"
 msgstr ""
 
-#: ../functions.php:1382
+#: ../functions.php:1379
 msgid "Copyright &copy;"
 msgstr ""
 
-#: ../functions.php:1386
+#: ../functions.php:1383
 msgid ". All Rights Reserved."
 msgstr ""
 
-#: ../functions.php:1389
+#: ../functions.php:1386
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:1389
+#: ../functions.php:1386
 msgid "Powered by WordPress"
 msgstr ""
 
-#: ../functions.php:1389
+#: ../functions.php:1386
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: ../functions.php:1391 ../inc/theme-options.php:654
+#: ../functions.php:1388 ../inc/theme-options.php:660
 msgid "http://catchthemes.com/"
 msgstr ""
 
-#: ../functions.php:1391
+#: ../functions.php:1388
 msgid "Theme Catch Box by Catch Themes"
 msgstr ""
 
-#: ../functions.php:1391
+#: ../functions.php:1388
 #, php-format
 msgid "Theme: %s"
 msgstr ""
@@ -550,7 +550,7 @@ msgid "Custom CSS Styles"
 msgstr ""
 
 #: ../inc/theme-options.php:239 ../inc/theme-options.php:240
-#: ../inc/theme-options.php:681
+#: ../inc/theme-options.php:687
 msgid "Theme Options"
 msgstr ""
 
@@ -586,359 +586,363 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: ../inc/theme-options.php:339
+#: ../inc/theme-options.php:326
+msgid "Orange"
+msgstr ""
+
+#: ../inc/theme-options.php:345
 msgid "Content on left"
 msgstr ""
 
-#: ../inc/theme-options.php:344
+#: ../inc/theme-options.php:350
 msgid "Content on right"
 msgstr ""
 
-#: ../inc/theme-options.php:349
+#: ../inc/theme-options.php:355
 msgid "One-column, no sidebar"
 msgstr ""
 
-#: ../inc/theme-options.php:367
+#: ../inc/theme-options.php:373
 msgid "Show excerpt"
 msgstr ""
 
-#: ../inc/theme-options.php:372
+#: ../inc/theme-options.php:378
 msgid "Show full content"
 msgstr ""
 
-#: ../inc/theme-options.php:473
+#: ../inc/theme-options.php:479
 msgid "Select a Color"
 msgstr ""
 
-#: ../inc/theme-options.php:476
+#: ../inc/theme-options.php:482
 #, php-format
 msgid "Default color: %s"
 msgstr ""
 
-#: ../inc/theme-options.php:492
+#: ../inc/theme-options.php:498
 msgid "Words"
 msgstr ""
 
-#: ../inc/theme-options.php:520
+#: ../inc/theme-options.php:526
 msgid "Check to move above the Header/Logo Image"
 msgstr ""
 
-#: ../inc/theme-options.php:550
+#: ../inc/theme-options.php:556
 msgid "Check to Disable"
 msgstr ""
 
-#: ../inc/theme-options.php:565
+#: ../inc/theme-options.php:571
 msgid "Check to Enable"
 msgstr ""
 
-#: ../inc/theme-options.php:579
+#: ../inc/theme-options.php:585
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
 
-#: ../inc/theme-options.php:579
+#: ../inc/theme-options.php:585
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
-#: ../inc/theme-options.php:579
+#: ../inc/theme-options.php:585
 msgid "CSS Tutorial"
 msgstr ""
 
-#: ../inc/theme-options.php:579
+#: ../inc/theme-options.php:585
 msgid "Click Here to Read"
 msgstr ""
 
-#: ../inc/theme-options.php:644
+#: ../inc/theme-options.php:650
 msgid "http://facebook.com/catchthemes"
 msgstr ""
 
-#: ../inc/theme-options.php:646
+#: ../inc/theme-options.php:652
 msgid "https://twitter.com/catchthemes"
 msgstr ""
 
-#: ../inc/theme-options.php:652
+#: ../inc/theme-options.php:658
 msgid "Theme Options By"
 msgstr ""
 
-#: ../inc/theme-options.php:654 ../inc/theme-options.php:655
+#: ../inc/theme-options.php:660 ../inc/theme-options.php:661
 msgid "Catch Themes"
 msgstr ""
 
-#: ../inc/theme-options.php:661
+#: ../inc/theme-options.php:667
 msgid "http://catchthemes.com/themes/catch-box-pro/"
 msgstr ""
 
-#: ../inc/theme-options.php:661
+#: ../inc/theme-options.php:667
 msgid "Upgrade to Catch Box Pro"
 msgstr ""
 
-#: ../inc/theme-options.php:666
+#: ../inc/theme-options.php:672
 msgid "http://catchthemes.com/donate/"
 msgstr ""
 
-#: ../inc/theme-options.php:666
+#: ../inc/theme-options.php:672
 msgid "Donate"
 msgstr ""
 
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:673
 msgid "http://catchthemes.com/support/"
 msgstr ""
 
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:673
 msgid "Support"
 msgstr ""
 
-#: ../inc/theme-options.php:668
+#: ../inc/theme-options.php:674
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
 msgstr ""
 
-#: ../inc/theme-options.php:668
+#: ../inc/theme-options.php:674
 msgid "Support Forum"
 msgstr ""
 
-#: ../inc/theme-options.php:669
+#: ../inc/theme-options.php:675
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
 msgstr ""
 
-#: ../inc/theme-options.php:669
+#: ../inc/theme-options.php:675
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/theme-options.php:670
+#: ../inc/theme-options.php:676
 msgid "https://www.facebook.com/catchthemes/"
 msgstr ""
 
-#: ../inc/theme-options.php:670
+#: ../inc/theme-options.php:676
 msgid "Like Catch Themes on Facebook"
 msgstr ""
 
-#: ../inc/theme-options.php:670 ../inc/theme-options.php:799
+#: ../inc/theme-options.php:676 ../inc/theme-options.php:805
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/theme-options.php:671
+#: ../inc/theme-options.php:677
 msgid "https://twitter.com/catchthemes/"
 msgstr ""
 
-#: ../inc/theme-options.php:671
+#: ../inc/theme-options.php:677
 msgid "Follow Catch Themes on Twitter"
 msgstr ""
 
-#: ../inc/theme-options.php:671 ../inc/theme-options.php:804
+#: ../inc/theme-options.php:677 ../inc/theme-options.php:810
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:678
 msgid "http://wordpress.org/support/view/theme-reviews/catch-box/"
 msgstr ""
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:678
 msgid "Rate us 5 Star on WordPress"
 msgstr ""
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:678
 msgid "5 Star Rating"
 msgstr ""
 
-#: ../inc/theme-options.php:682
+#: ../inc/theme-options.php:688
 msgid "Featured Post Slider"
 msgstr ""
 
-#: ../inc/theme-options.php:683
+#: ../inc/theme-options.php:689
 msgid "Social Links"
 msgstr ""
 
-#: ../inc/theme-options.php:684
+#: ../inc/theme-options.php:690
 msgid "Webmaster Tools"
 msgstr ""
 
-#: ../inc/theme-options.php:711
+#: ../inc/theme-options.php:717
 msgid "Slider Options"
 msgstr ""
 
-#: ../inc/theme-options.php:715
+#: ../inc/theme-options.php:721
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 
-#: ../inc/theme-options.php:717
+#: ../inc/theme-options.php:723
 msgid "Check to disable"
 msgstr ""
 
-#: ../inc/theme-options.php:720
+#: ../inc/theme-options.php:726
 msgid "Number of Slides"
 msgstr ""
 
-#: ../inc/theme-options.php:726
+#: ../inc/theme-options.php:732
 msgid "Featured Post ID"
 msgstr ""
 
-#: ../inc/theme-options.php:728
+#: ../inc/theme-options.php:734
 msgid "Click Here To Edit"
 msgstr ""
 
-#: ../inc/theme-options.php:734
+#: ../inc/theme-options.php:740
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
 msgstr ""
 
-#: ../inc/theme-options.php:735 ../inc/theme-options.php:781
-#: ../inc/theme-options.php:908 ../inc/theme-options.php:949
+#: ../inc/theme-options.php:741 ../inc/theme-options.php:787
+#: ../inc/theme-options.php:914 ../inc/theme-options.php:955
 msgid "Save"
 msgstr ""
 
-#: ../inc/theme-options.php:739
+#: ../inc/theme-options.php:745
 msgid "Slider Effect Options"
 msgstr ""
 
-#: ../inc/theme-options.php:744
+#: ../inc/theme-options.php:750
 msgid "Transition Effect:"
 msgstr ""
 
-#: ../inc/theme-options.php:749
+#: ../inc/theme-options.php:755
 msgid "fade"
 msgstr ""
 
-#: ../inc/theme-options.php:750
+#: ../inc/theme-options.php:756
 msgid "wipe"
 msgstr ""
 
-#: ../inc/theme-options.php:751
+#: ../inc/theme-options.php:757
 msgid "scrollUp"
 msgstr ""
 
-#: ../inc/theme-options.php:752
+#: ../inc/theme-options.php:758
 msgid "scrollDown"
 msgstr ""
 
-#: ../inc/theme-options.php:753
+#: ../inc/theme-options.php:759
 msgid "scrollLeft"
 msgstr ""
 
-#: ../inc/theme-options.php:754
+#: ../inc/theme-options.php:760
 msgid "scrollRight"
 msgstr ""
 
-#: ../inc/theme-options.php:755
+#: ../inc/theme-options.php:761
 msgid "blindX"
 msgstr ""
 
-#: ../inc/theme-options.php:756
+#: ../inc/theme-options.php:762
 msgid "blindY"
 msgstr ""
 
-#: ../inc/theme-options.php:757
+#: ../inc/theme-options.php:763
 msgid "blindZ"
 msgstr ""
 
-#: ../inc/theme-options.php:758
+#: ../inc/theme-options.php:764
 msgid "cover"
 msgstr ""
 
-#: ../inc/theme-options.php:759
+#: ../inc/theme-options.php:765
 msgid "shuffle"
 msgstr ""
 
-#: ../inc/theme-options.php:765
+#: ../inc/theme-options.php:771
 msgid "Transition Delay"
 msgstr ""
 
-#: ../inc/theme-options.php:768 ../inc/theme-options.php:777
+#: ../inc/theme-options.php:774 ../inc/theme-options.php:783
 msgid "second(s)"
 msgstr ""
 
-#: ../inc/theme-options.php:774
+#: ../inc/theme-options.php:780
 msgid "Transition Length"
 msgstr ""
 
-#: ../inc/theme-options.php:810
+#: ../inc/theme-options.php:816
 msgid "Google +"
 msgstr ""
 
-#: ../inc/theme-options.php:816
+#: ../inc/theme-options.php:822
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/theme-options.php:822
+#: ../inc/theme-options.php:828
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/theme-options.php:828
+#: ../inc/theme-options.php:834
 msgid "Youtube"
 msgstr ""
 
-#: ../inc/theme-options.php:834
+#: ../inc/theme-options.php:840
 msgid "RSS Feed"
 msgstr ""
 
-#: ../inc/theme-options.php:840
+#: ../inc/theme-options.php:846
 msgid "Deviantart"
 msgstr ""
 
-#: ../inc/theme-options.php:846
+#: ../inc/theme-options.php:852
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/theme-options.php:852
+#: ../inc/theme-options.php:858
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/theme-options.php:858
+#: ../inc/theme-options.php:864
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/theme-options.php:864
+#: ../inc/theme-options.php:870
 msgid "MySpace"
 msgstr ""
 
-#: ../inc/theme-options.php:870
+#: ../inc/theme-options.php:876
 msgid "Aim"
 msgstr ""
 
-#: ../inc/theme-options.php:876
+#: ../inc/theme-options.php:882
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/theme-options.php:882
+#: ../inc/theme-options.php:888
 msgid "Slideshare"
 msgstr ""
 
-#: ../inc/theme-options.php:888
+#: ../inc/theme-options.php:894
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/theme-options.php:894
+#: ../inc/theme-options.php:900
 msgid "Skype"
 msgstr ""
 
-#: ../inc/theme-options.php:900
+#: ../inc/theme-options.php:906
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/theme-options.php:907
+#: ../inc/theme-options.php:913
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr ""
 
-#: ../inc/theme-options.php:922
+#: ../inc/theme-options.php:928
 msgid "Header and Footer Code"
 msgstr ""
 
-#: ../inc/theme-options.php:927
+#: ../inc/theme-options.php:933
 msgid "Code to display on Header"
 msgstr ""
 
-#: ../inc/theme-options.php:934
+#: ../inc/theme-options.php:940
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
 
-#: ../inc/theme-options.php:938
+#: ../inc/theme-options.php:944
 msgid "Code to display on Footer"
 msgstr ""
 
-#: ../inc/theme-options.php:945
+#: ../inc/theme-options.php:951
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

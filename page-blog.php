@@ -71,7 +71,10 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
-			<?php endif; ?>                
+            <?php endif; 
+			$wp_query = $temp_query;
+			wp_reset_postdata();
+			?>               
 
 		</div><!-- #content -->
         
