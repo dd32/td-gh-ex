@@ -74,7 +74,7 @@ function thebox_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Facebook URL', 'thebox' ); ?></th>
 					<td>
-						<input id="thebox_theme_options[facebookurl]" class="regular-text" type="text" name="thebox_theme_options[facebookurl]" value="<?php esc_attr_e( $options['facebookurl'] ); ?>" />
+						<input id="thebox_theme_options[facebookurl]" class="regular-text" type="text" name="thebox_theme_options[facebookurl]" value="<?php echo esc_attr( $options['facebookurl'] ); ?>" />
 						<label class="description" for="thebox_theme_options[facebookurl]"><?php _e( 'Leave blank to hide Facebook Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
@@ -86,7 +86,7 @@ function thebox_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Twitter URL', 'thebox' ); ?></th>
 					<td>
-						<input id="thebox_theme_options[twitterurl]" class="regular-text" type="text" name="thebox_theme_options[twitterurl]" value="<?php esc_attr_e( $options['twitterurl'] ); ?>" />
+						<input id="thebox_theme_options[twitterurl]" class="regular-text" type="text" name="thebox_theme_options[twitterurl]" value="<?php echo esc_attr( $options['twitterurl'] ); ?>" />
 						<label class="description" for="thebox_theme_options[twitterurl]"><?php _e( 'Leave blank to hide Twitter Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
@@ -98,7 +98,7 @@ function thebox_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Google + URL', 'thebox' ); ?></th>
 					<td>
-						<input id="thebox_theme_options[googleplusurl]" class="regular-text" type="text" name="thebox_theme_options[googleplusurl]" value="<?php esc_attr_e( $options['googleplusurl'] ); ?>" />
+						<input id="thebox_theme_options[googleplusurl]" class="regular-text" type="text" name="thebox_theme_options[googleplusurl]" value="<?php echo esc_attr( $options['googleplusurl'] ); ?>" />
 						<label class="description" for="thebox_theme_options[googleplusurl]"><?php _e( 'Leave blank to hide Google + Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
@@ -110,7 +110,7 @@ function thebox_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Instagram URL', 'thebox' ); ?></th>
 					<td>
-						<input id="thebox_theme_options[instagramurl]" class="regular-text" type="text" name="thebox_theme_options[instagramurl]" value="<?php esc_attr_e( $options['instagramurl'] ); ?>" />
+						<input id="thebox_theme_options[instagramurl]" class="regular-text" type="text" name="thebox_theme_options[instagramurl]" value="<?php echo esc_attr( $options['instagramurl'] ); ?>" />
 						<label class="description" for="thebox_theme_options[instagramurl]"><?php _e( 'Leave blank to hide Instagram Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
