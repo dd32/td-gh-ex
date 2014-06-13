@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-02 19:57+0545\n"
-"PO-Revision-Date: 2014-06-02 19:57+0545\n"
+"POT-Creation-Date: 2014-06-14 00:52+0545\n"
+"PO-Revision-Date: 2014-06-14 00:52+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: it\n"
@@ -570,19 +570,19 @@ msgstr "Logo di defalut"
 msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:101
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:101
 msgid "All Rights Reserved"
 msgstr "Tutti i diritti riservati"
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:101
 msgid "Powered by"
 msgstr "Fornito da"
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:102
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:101
 msgid "Theme"
 msgstr "Tema"
 

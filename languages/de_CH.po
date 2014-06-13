@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-08 00:03+0545\n"
-"PO-Revision-Date: 2014-06-08 00:03+0545\n"
+"POT-Creation-Date: 2014-06-14 00:52+0545\n"
+"PO-Revision-Date: 2014-06-14 00:52+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <support@catchthemes.com>\n"
 "Language: de_CH\n"
@@ -1617,70 +1617,3 @@ msgstr "Suchresultate für: %s"
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
 msgstr "Suche"
-
-#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Weiter lesen"
-
-#~ msgid "Theme Settings"
-#~ msgstr "Theme Einstellungen"
-
-#~ msgid "No sidebar, Full Width"
-#~ msgstr "No sidebar, Full Width"
-
-#~ msgid "Webmaster Tools"
-#~ msgstr "Webmaster Tools"
-
-#~ msgid "Save"
-#~ msgstr "Speichern"
-
-#~ msgid "Custom Header. Need to Add or Remove Logo?"
-#~ msgstr "Benutzerdefinierter Header. Logo entfernen oder hinzufügen"
-
-#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-#~ msgstr "<a class=\"button\" href=\"%s\">Hier klicken</a>"
-
-#~ msgid "Header Right Section"
-#~ msgstr "Kopfzeile rechts"
-
-#~ msgid "Background"
-#~ msgstr "Hintergrund"
-
-#~ msgid "Custom Background. Need to replace or remove background?"
-#~ msgstr ""
-#~ "Benutzerdefinierter Hintergrund. Den Hintergrund ändern oder ersetzen?"
-
-#~ msgid "No Sidebar, Full Width"
-#~ msgstr "No Sidebar, Full Width"
-
-#~ msgid "Homepage / Frontpage"
-#~ msgstr "Homepage / Frontpage"
-
-#~ msgid "Catch Everest"
-#~ msgstr "Catch Everest"
-
-#~ msgid "Use this widget to add any type of Advertisement as a widget."
-#~ msgstr "Use this widget to add any type of Advertisement as a widget."
-
-#~ msgid "2. Catch Everest: Advertisement"
-#~ msgstr "2. Catch Everest: Advertisement"
-
-#~ msgid "Advertisement Code:"
-#~ msgstr "Advertisement Code:"
-
-#~ msgid "Image Url:"
-#~ msgstr "Image Url:"
-
-#~ msgid "Link URL:"
-#~ msgstr "Link URL:"
-
-#~ msgid "Open Link in New Window"
-#~ msgstr "Open Link in New Window"
-
-#~ msgid "Alt text:"
-#~ msgstr "Alt text:"
-
-#~ msgid "Add Advertisement Code or Image URL"
-#~ msgstr "Add Advertisement Code or Image URL"
-
-#~ msgid "Enter your Yahoo ID number only"
-#~ msgstr "Gebe nur deine Yahoo ID ein"
