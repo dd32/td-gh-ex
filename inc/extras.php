@@ -477,35 +477,11 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
                     <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<div class="caption-title">Know secret to Successful Business</div>
+							<div class="caption-title">Key secret to Successful Business</div>
 							<div class="caption-description">The secret of business is to know something that nobody else knows.</div>
 						</div>
 					</div>
                     <?php  endif; ?>
-				</div>
-
-				<div class="slides">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider3.jpg" alt="slider3">
-                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-						<div class="slider-caption">
-							<div class="ak-container">
-								<div class="caption-title">So who is the boss!!</div>
-								<div class="caption-description">There is only one boss. The customer. And he can fire everybody in the company from the chairman on down, simply by spending his money somewhere else.</div>
-								</div>
-						</div>
-                    <?php  endif; ?>
-				</div>
-
-				<div class="slides">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider4.jpg" alt="slider4">
-                       	<?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-							<div class="slider-caption">
-								<div class="ak-container">
-									<div class="caption-title">The real entrepreneurs</div>
-									<div class="caption-description">When times are bad is when the real entrepreneurs emerge.</div>
-								</div>
-							</div>
-                        <?php  endif; ?>
 				</div>
 			</div>
 		<?php

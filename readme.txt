@@ -41,9 +41,12 @@ Fonts
 
 ---------------------------------------------
 Images
-    All the images used are either self taken or free image and are fully GPL compatible.
+    All the images used are from http://pixabay.com or self taken are fully GPL compatible.
 
 == Changelog ==
+Version 1.8
+* Replacement of images due to GPL issues.
+
 Version 1.7.3
 * Small bug in index-one.php solved.
 
