@@ -65,20 +65,25 @@ Customizer options
 */
 function cherish_customize_css() {
 echo '<style type="text/css">
-		.site-title a,
+		.site-title,
 		.site-description {
-			color: #' . get_header_textcolor() . '}';
+			color: #' . get_header_textcolor() . '; ';
+	
+		if( get_theme_mod( 'cherish_text_shadow_active' ) <> '' ) {
+			echo 'text-shadow: 2px 2px 3px ' . get_theme_mod( 'cherish_text_shadow') . ';';
+		}
+		echo '}';
 		
 		if( get_theme_mod( 'cherish_footer_color' ) <> '' ) {
 			echo '#footer .site-title a,
 			#footer .site-description,
 			.footer-credit, 
 			.footer-credit a{
-				color:' . get_theme_mod( 'cherish_footer_color' )  . '}';
+				color:' . get_theme_mod( 'cherish_footer_color' )  . ';}';
 		}
 		
 		echo '#header{
-			background:url(' . get_header_image() . ');
+			background:url("' . get_header_image() . '");
 			height:'. get_custom_header()->height . 'px;
 			}';
 		
@@ -95,7 +100,7 @@ echo '<style type="text/css">
 		}
 		
 		echo 'a:focus, .site-title a:focus, #footer a:focus, #header-menu a:focus{text-decoration:underline;}';
-
+		
 	echo '</style>';
 }
 add_action( 'wp_head', 'cherish_customize_css');
@@ -106,9 +111,9 @@ function cherish_skip(){
 	<script type="text/javascript">
 	<!--//--><![CDATA[//><!--
 	jQuery(document).ready(function($){
-		$(".fa-angle-down").click(function(){
-			window.scrollTo(0,<?php echo get_custom_header()->height-10?>);
-		});
+		$(".jump-down").click(function(){
+			window.scrollTo(0,<?php echo get_custom_header()->height;?>);
+		});	
 	});
 	//--><!]]>
 	 </script>
@@ -126,6 +131,8 @@ add_action('wp_footer', 'cherish_skip');
     wp_enqueue_style( 'cherish_Font' );
 	wp_enqueue_style( 'cherish_Font2' );
 	
+	 wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css');
+	 
 	/* Enqueue comment reply / threaded comments. */
 	if ( ! is_admin() ){
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
@@ -136,6 +143,7 @@ add_action('wp_footer', 'cherish_skip');
 	wp_enqueue_script( 'cherish_skrollr', get_template_directory_uri() . '/inc/skrollr.js', array( 'jquery' ) );
 	wp_enqueue_script( 'cherish_fitvids', get_template_directory_uri() . '/inc/jquery.fitvids.js', array('jquery'), '', TRUE ); 
 	wp_enqueue_script( 'cherish_js', get_template_directory_uri() . '/inc/cherish.js', array( 'jquery' ) );
+	
 }
 add_action( 'wp_enqueue_scripts', 'cherish_styles_scripts' );
 
@@ -343,5 +351,4 @@ function cherish_search($query) {
     return $query;
 }
 add_filter('pre_get_posts','cherish_search');
-
 

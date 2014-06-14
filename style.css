@@ -4,7 +4,7 @@ Theme URI: http://gratistema.se/cherish/
 Author: Poena
 Author URI: http://layout.nu/about/
 Description: Cherish is an accessible, full width responsive theme with a fixed top menu. It has 3 widget areas in the footer of the front page and you can change the background color of your posts. Edit or disable your Call to Action area in the customizer, where you can also change colors, hide your post meta and upload your own logo. Includes Swedish translation.
-Version: 0.9
+Version: 1.0
 Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, responsive-layout, accessibility-ready
 Text Domain: cherish
 
@@ -70,6 +70,7 @@ td, th{border:1px solid #666666; padding:6px;}
 	margin:1.2em 0 0 0;
 	font-weight: bold;
 	font-family: 'Lily Script One', cursive;
+	/*text-shadow: h-shadow v-shadow blur color;*/
 }
 .site-description {
 	font-size: 2em;
@@ -194,7 +195,8 @@ body.admin-bar #menu-wrap{top:28px;}
 
 .post,
 .type-page,
-.type-attachment{
+.type-attachment,
+.type-forum{
 	width:75%;
 	line-height: 1.5;
 	padding:0 10px 0 10px;
@@ -796,7 +798,10 @@ option {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
-.keyboard-shortcut{position:absolute;top:-1000em}
+.keyboard-shortcut{
+	position:absolute;
+	top:-1000em;
+}
 .keyboard-shortcut:focus{
 	left:6px;
 	top:7px;
@@ -864,10 +869,18 @@ option {
 }
 .fa-angle-down:before {
   content: "\f107";
-  float:right;
-  position:absolute;
-  right:12px;
 }
+
+
+.jump-down:before {
+  content: "\f107";
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:99999999;
+}
+/*make room for the admin-bar*/
+body.admin-bar .jump-down:before{top:40px;} 
 
 .fa-angle-up:before {
   content: "\f106";
@@ -875,7 +888,7 @@ option {
 	position:absolute;
 	right:12px;
 	bottom:12px;
-}
+}	
 
 /* Responsive 
 -------------------------------------------------------*/
@@ -904,6 +917,9 @@ option {
 		 clear:both;
 	}
  
+	.jump-down:before{display:none;} 
+ 
+ 
 	.nav-menu{
 		background:#fff;
 		margin:auto;
@@ -917,7 +933,7 @@ option {
 	.sub-menu{list-style:none;}
 	
 	.nav-menu a{
-		color:#00000;
+		color:#000000;
 		font-weight:bold; 
 		font-family: 'Open Sans', sans-serif;
 	}
@@ -956,3 +972,80 @@ option {
 	
 	.meta hr{width:20%;}
 }
+
+/*bbPress*/
+#bbpress-forums{width:100%; margin:0 auto;}
+
+#bbpress-forums  fieldset.bbp-form legend{
+	margin-top:4px;
+	margin-bottom:15px;
+	font-weight:bold;
+	font-family: 'Lily Script One', cursive;
+	font-size:2.5em;
+	padding:0;
+	width:100%;
+}
+
+
+#bbpress-forums  #bbp-user-wrapper{width:70%; margin:0 auto; float:none; clear:both;}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current{background:#ffffff; opacity:1;}
+
+
+#bbpress-forums a,
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li a,
+#bbpress-forums a.bbp-reply-permalink,
+#bbpress-forums span.bbp-admin-links a,
+#bbpress-forums a .bbp-topic-reply-link {color:#000000; text-decoration:underline; }
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation{
+	margin-bottom:1.5em;
+}
+
+#bbpress-forums div.bbp-reply-content code{padding:8px;}
+#bbpress-forums .forum-titles{line-height:22px;}
+#bbpress-forums fieldset.bbp-form {border:none; margin:0; padding:0;}
+#bbpress-forums fieldset.bbp-form fieldset legend{font-size:1.8em;}
+
+
+.bbp-search #bbpress-forums,
+.reply-edit #bbpress-forums,
+.single-topic #bbpress-forums, 
+.topic-tag-edit #bbpress-forums, 
+.topic-tag #bbpress-forums {width:70%; clear:both;}
+
+
+
+.bbpress .page-link{width:70%; margin:0 auto; padding-top:110px; float:none; clear:both;}
+
+.topic-tag-edit #bbpress-forums fieldset.bbp-form{margin-bottom:20px;}
+
+
+div.bbp-breadcrumb{
+	display: block;
+	line-height: 2.5em;
+	margin-right: 0.7em;
+	margin-left:0.7em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:bold;
+	font-size:1.3em;
+}
+#bbpress-forums .status-closed a,
+#bbpress-forums .status-closed {
+	color:#000;
+}
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar, 
+#bbpress-forums ul.bbp-topic-revision-log img.avatar, 
+#bbpress-forums div.bbp-template-notice img.avatar, 
+#bbpress-forums .widget_display_topics img.avatar, 
+#bbpress-forums .widget_display_replies img.avatar
+.bbp-author-avatar{display:none;}
+
+.bbp-pagination{font-weight:bold;}
+.bbp-breadcrumb-sep{}
+.subscription-toggle{ padding:10px; background:#ffffff; float:right;}
+ul .type-forum{width:100%;}
+/*.li.bbp-forum-info, li.bbp-topic-title{width:80%;}*/
+div.bbp-submit-wrapper{float:left;}
+.bbp-body{background:#ffffff;}

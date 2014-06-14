@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cherish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-10 18:25+0100\n"
-"PO-Revision-Date: 2014-05-10 18:25+0100\n"
+"POT-Creation-Date: 2014-06-14 07:49+0100\n"
+"PO-Revision-Date: 2014-06-14 07:52+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: Layout.nu <carro@layout.nu>\n"
 "Language: sv_SE\n"
@@ -18,7 +18,7 @@ msgstr ""
 "\\cherish\n"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/404.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:240
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:233
 msgid "Page not found"
 msgstr "Sidan kunde inte hittas"
 
@@ -122,17 +122,17 @@ msgstr ""
 "Inloggad som <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Logga ut "
 "från det här kontot\">Logga ut?</a>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:45
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:46
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Drivs med %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:47
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:48
 #, php-format
 msgid "Theme: %1$s"
 msgstr "Tema: %1$s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:50
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:51
 msgid "Back to the top"
 msgstr "Tillbaka till toppen"
 
@@ -152,85 +152,81 @@ msgstr "Körsbärsblomma 2"
 msgid "Cherry 3"
 msgstr "Körsbärsblomma 3"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:172
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:165
 msgid "Read more: "
 msgstr "Läs mer: "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:197
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:190
 msgid "Frontpage Footer widget 1"
 msgstr "Sidfotswidget 1"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:198
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:191
 msgid "Widgets in this area will be shown on the left-hand side."
 msgstr "Widgets i denna panel visas på vänster sida av sidfoten"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:204
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:197
 msgid "Frontpage Footer widget 2"
 msgstr "Sidfotswidget 2"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:205
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:198
 msgid "Widgets in this area will be shown in the middle"
 msgstr "Widgets i denna panel visas i mitten av sidfoten"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:211
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:204
 msgid "Frontpage Footer widget 3"
 msgstr "Sidfotswidget 3"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:212
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:205
 msgid "Widgets in this area will be shown on the right-hand side."
 msgstr "Widgets i denna panel visas på höger sida av sidfoten"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:237
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:230
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:253
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:246
 msgid "No title"
 msgstr "Inlägget har ingen titel"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:280
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:273
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s kl %2$s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:280
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:273
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:281
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar måste godkännas innan publicering."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:293
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:286
 #, php-format
 msgid "Reply to %s"
 msgstr "Besvara %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:306
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:299
 msgid "By "
 msgstr "Av "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:311
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:304
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visa alla inägg av %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:335
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:328
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/page.php:10
 msgid "Edit"
 msgstr "Redigera"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:13
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:24
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:15
 msgid "Skip to content"
 msgstr "Hoppa till innehållet"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:15
-msgid "Show and hide menu"
-msgstr "Visa och göm meny"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:52
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:47
 msgid ""
 "This is your call to action area. You can change it's appearance and text in "
 "the customizer."
@@ -238,31 +234,35 @@ msgstr ""
 "Detta är ditt  'Call to Action'-område. Du kan ändra dess utseende och text "
 "under rubriken Anpassa. "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:6
+msgid "Text shadow"
+msgstr "Skugga"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:12
 msgid "Logo Image"
 msgstr "Logo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:17
 msgid "Post Meta"
 msgstr "Information om inlägg"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:23
 msgid "Call to Action"
 msgstr "Call to Action"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:22
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:29
 msgid "Image details"
 msgstr "Bilddetaljer"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:28
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:35
 msgid "Reset the Customizer"
 msgstr "Återställning"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:35
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:42
 msgid "Accessibility and Support"
 msgstr "Tillgänglighet och Hjälp"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:36
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:43
 msgid ""
 "Please note that changing the colors can impact the accessibility of the "
 "theme.<br/><br/>If you have any questions or suggestions for this theme, "
@@ -274,59 +274,75 @@ msgstr ""
 "innehåll.<br/><br/>Om du har frågor eller förslag angående temat, besök <a "
 "href=\"http://wordpress.org/support/theme/cherish\">temats hjälpsida.</a>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:59
-msgid "Display the text in the footer"
-msgstr "Visa texten i sidfoten"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:48
+msgid "Text Colors"
+msgstr "Textfärg"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:70
-msgid "Footer text color"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:68
+msgid "Display the text in the footer:"
+msgstr "Visa texten i sidfoten."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:80
+msgid "Footer text color:"
 msgstr "Textfärg för sidfoten"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:81
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:95
+msgid ""
+"Check this box to add a text shadow to the site title and description. This "
+"can make your text easier to read when a background image is chosen."
+msgstr ""
+"Klicka i rutan för att lägga till en skugga bakom texten i sidhuvudet. Detta "
+"kan göra texten enklare att läsa om du använder en bakgrundsbild."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:107
+msgid "Text shadow color:"
+msgstr "Färg på skugga:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:116
 msgid "Choose a logo to be displayed in the footer: "
 msgstr "Välj en logo som visas i sidfoten: "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:92
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:127
 msgid "Add this link to the logo:"
 msgstr "Lägg till denna länk till logon:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:106
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:141
 msgid "Check this box to hide all the meta information."
 msgstr "Klicka i rutan för att gömma all meta information."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:124
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:159
 msgid "Add this text to the Call to Action area on the front page:"
 msgstr "Lägg till denna text:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:136
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:171
 msgid "Change the font size of your text here: (em)"
 msgstr "Ändra textstorlek här: (em)"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:147
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:183
 msgid "Change the color of your Call to action text:"
 msgstr "Ändra textfärg:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:158
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:195
 msgid "Change the background color of your Call to action area:"
 msgstr "Ändra bakgrundsfärg:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:170
-msgid "Add a link to the Call to action text"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:207
+msgid "Add a link to the Call to action text:"
 msgstr "Lägg till denna länk:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:181
-msgid "Check this box to disable the Call to Action area"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:218
+msgid "Check this box to hide the Call to Action area."
 msgstr "Klicka i rutan för att inaktivera"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:193
-msgid "Check this box to remove the floral post divider image"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:230
+msgid "Check this box to hide the floral post divider image."
 msgstr "Klicka i rutan för att ta bort avdelaren (blomman) mellan inlägen."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:205
-msgid "Check this box to use a black post divider image"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:242
+msgid "Check this box to use a black post divider image."
 msgstr "Klicka i rutan för att använda en svart avdelare"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:218
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:255
 msgid ""
 "Are you sure you want to reset the customizer settings? Type YES in the box "
 "and then press Save and Publish."
@@ -355,6 +371,9 @@ msgstr "Inget resultat"
 #: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/searchform.php:4
 msgid "Search"
 msgstr "Sök"
+
+#~ msgid "Show and hide menu"
+#~ msgstr "Visa och göm meny"
 
 #~ msgid "Sunset"
 #~ msgstr "Solnedgång"
@@ -514,9 +533,6 @@ msgstr "Sök"
 
 #~ msgid "Header image placement"
 #~ msgstr "Välj placering av bild i sidhuvud"
-
-#~ msgid "Hide shadows"
-#~ msgstr "Göm skuggor"
 
 #~ msgid "View all posts by %s &rarr;"
 #~ msgstr "Visa alla inlägg av %s &rarr;"

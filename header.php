@@ -9,26 +9,20 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-
 <a href="#wrapper" class="keyboard-shortcut"><?php _e('Skip to content', 'cherish' );?></a>
-
 <?php
-if ( has_nav_menu( 'header' ) ) {
-	echo '<a href="#" id="mobile-menu" title="' . esc_attr( 'Show and hide menu', 'cherish' ) . '"></a>';
-	wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu', 'items_wrap' => '<nav role="navigation"><ul id="%1$s" class="%2$s">%3$s</ul></nav>', 'fallback_cb' => false) ); 
+if ( is_home() || is_front_page() ) {?>
+	<div class="jump-down fa" title="<?php esc_attr_e( 'Skip to content', 'cherish' ); ?>"></div>
+<?php
 }
-?>
-<div id="menu-wrap" role="navigation">
-	<?php 
-	wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu', 'fallback_cb' => false ) ); 
-	if ( is_home() || is_front_page() ) {?>
-		<span class="fa-angle-down fa" title="<?php esc_attr_e( 'Skip to content', 'cherish' ); ?>"></span>
-	<?php
-	}
-	?>
-</div>
+if ( has_nav_menu( 'header' ) ) {
 
+	echo '<a href="#" id="mobile-menu"><span class="screen-reader-text">' . esc_attr( 'Show and hide menu', 'cherish' ) . '</span></a>';
+	wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu', 'items_wrap' => '<nav role="navigation"><ul id="%1$s" class="%2$s">%3$s</ul></nav>', 'fallback_cb' => false) ); 
+?>
+	<div id="menu-wrap" role="navigation"><?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu', 'fallback_cb' => false ) ); ?></div>
 <?php 
+}
 if ( is_home() || is_front_page() ) {?>
 	<div id="header" role="banner">
 	<?php if (display_header_text() ) {	?>

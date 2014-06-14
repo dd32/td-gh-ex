@@ -1,6 +1,13 @@
 <?php
 function cherish_customizer( $wp_customize ) {
 	//Add sections to the WordPress customizer
+	
+	$wp_customize->add_section('cherish_section_six',      array(
+            'title' => __( 'Text shadow', 'cherish' ),
+            'priority' => 90
+        )
+    );
+	
 	$wp_customize->add_section('cherish_section_one',      array(
             'title' => __( 'Logo Image', 'cherish' ),
             'priority' => 90
@@ -38,6 +45,8 @@ function cherish_customizer( $wp_customize ) {
 	)
 	);
 	
+	$wp_customize->get_section('colors')->title = __( 'Text Colors', 'cherish');
+	
 	//-------------------------------------------------------
 	
 	$wp_customize->add_setting( 'cherish_info' );
@@ -56,7 +65,7 @@ function cherish_customizer( $wp_customize ) {
 	);
 	$wp_customize->add_control('cherish_footer_title',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Display the text in the footer', 'cherish' ),
+			'label' =>  __( 'Display the text in the footer:', 'cherish' ),
 			'section' => 'title_tagline',
 		)
 	);
@@ -64,17 +73,43 @@ function cherish_customizer( $wp_customize ) {
 
 	$wp_customize->add_setting( 'cherish_footer_color', array(
 		'default'        => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cherish_footer_color', array(
-	'label'        => __( 'Footer text color', 'cherish' ),
+	'label'        => __( 'Footer text color:', 'cherish' ),
 	'section' => 'colors',
 	'settings'  => 'cherish_footer_color',
 	) ) );
-	
-	
-	
 
+	
+	
+	/** Text shadows */
+	
+	$wp_customize->add_setting( 'cherish_text_shadow_active',		array(
+			'sanitize_callback' => 'cherish_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('cherish_text_shadow_active',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to add a text shadow to the site title and description. This can make your text easier to read when a background image is chosen.', 'cherish' ),
+			'section' => 'cherish_section_six',
+		)
+	);
+	
+	
+	$wp_customize->add_setting( 'cherish_text_shadow', array(
+		'default'        => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cherish_text_shadow', array(
+	'label'        => __( 'Text shadow color:', 'cherish' ),
+	'section' => 'cherish_section_six',
+	'settings'  => 'cherish_text_shadow',
+	) ) );
+	
+		
 	/** Logo settings */
 	$wp_customize->add_setting( 'cherish_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cherish_logo', array(
@@ -141,6 +176,7 @@ function cherish_customizer( $wp_customize ) {
 	/** Call to action text color */
 	$wp_customize->add_setting( 'cherish_action_color', array(
 		'default'        => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cherish_action_color', array(
@@ -152,6 +188,7 @@ function cherish_customizer( $wp_customize ) {
 	/** Call to action background color */
 	$wp_customize->add_setting( 'cherish_action_bgcolor', array(
 		'default'        => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cherish_action_bgcolor', array(
@@ -167,7 +204,7 @@ function cherish_customizer( $wp_customize ) {
 	);
 	$wp_customize->add_control('cherish_action_link',		array(
 			'type' => 'text',
-			'label' =>  __( 'Add a link to the Call to action text', 'cherish' ),
+			'label' =>  __( 'Add a link to the Call to action text:', 'cherish' ),
 			'section' => 'cherish_section_three',
 		)
 	);
@@ -178,7 +215,7 @@ function cherish_customizer( $wp_customize ) {
 	);
 	$wp_customize->add_control('cherish_hide_action',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to disable the Call to Action area', 'cherish' ),
+			'label' =>  __( 'Check this box to hide the Call to Action area.', 'cherish' ),
 			'section' => 'cherish_section_three',
 		)
 	);
@@ -190,7 +227,7 @@ function cherish_customizer( $wp_customize ) {
 	);
 	$wp_customize->add_control('cherish_details',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to remove the floral post divider image', 'cherish' ),
+			'label' =>  __( 'Check this box to hide the floral post divider image.', 'cherish' ),
 			'section' => 'cherish_section_five',
 		)
 	);
@@ -202,7 +239,7 @@ function cherish_customizer( $wp_customize ) {
 	
 	$wp_customize->add_control('cherish_details_black',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to use a black post divider image', 'cherish' ),
+			'label' =>  __( 'Check this box to use a black post divider image.', 'cherish' ),
 			'section' => 'cherish_section_five',
 		)
 	);

@@ -7,7 +7,7 @@ License URI: http://opensource.org/licenses/MIT
 Copyright 2014 Carolina Nymark
 
 = Description ==
- herish is an accessible, full width responsive theme with a fixed top menu. 
+Cherish is an accessible, full width responsive theme with a fixed top menu. 
 It has 3 widget areas in the footer of the front page and you can change the background color of your posts. 
 Edit or disable your Call to Action area in the customizer, where you can also change colors, 
 hide your post meta and upload your own logo. Includes Swedish translation.
@@ -18,12 +18,17 @@ hide your post meta and upload your own logo. Includes Swedish translation.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Known Limitations ==
--A one line menu is recommended, instead of using long menus, use submenus.
+-A one line menu is strongly recommended, instead of using long menus, use submenus.
 -It's recommended not to use a font-size larger than 4em for the Call to Action area.
 -Note that the footer widgets are only shown on the front page, 404, and search page.
-
+-The theme aims to be compatible with Woocommerce. It does not adress issues within Woocommerce such as missing labels and screenreader texts, but increases it's contrasts. 
 
 == Changelog ==
+
+=1.0=
+Improved styling for bbPress and Woocommerce.
+Added a customizer option for a text shadow behind the site title and description.
+Minor changes to the language files.
 
 =0.8=
 Updated screenshot
