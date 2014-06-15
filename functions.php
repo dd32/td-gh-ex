@@ -6,7 +6,7 @@ function ct_tracks_load_javascript_files() {
     wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
 
     if(! is_admin() ) {
-        wp_enqueue_script('production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
+        wp_enqueue_script('production', get_template_directory_uri() . '/js/build/production.min.js#ct_tracks_asyncload', array('jquery'),'', true);
         wp_enqueue_style('google-fonts');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
     }
@@ -20,6 +20,18 @@ add_action('wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
 
+// load all scripts enqueued by theme asynchronously
+function ct_tracks_add_async_script($url) {
+
+    // if async parameter not present, do nothing
+    if (strpos($url, '#ct_tracks_asyncload') === false){
+        return $url;
+    }
+    // if async parameter present, add async attribute
+    return str_replace('#ct_tracks_asyncload', '', $url)."' async='async";
+}
+add_filter('clean_url', 'ct_tracks_add_async_script', 11, 1);
+
 /* Do theme setup on the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'ct_tracks_theme_setup', 10 );
 
@@ -32,15 +44,36 @@ function ct_tracks_theme_setup() {
     add_theme_support( 'hybrid-core-template-hierarchy' );
     add_theme_support( 'hybrid-core-styles', array( 'style', 'reset', 'gallery' ) );
     add_theme_support( 'loop-pagination' );
-    add_theme_support( 'featured-header' );
     add_theme_support( 'cleaner-gallery' );
-    add_theme_support( 'automatic-feed-links' ); //from WordPress core not theme hybrid
+    add_theme_support( 'hybrid-core-widgets' );
 
-    register_nav_menu('primary', __('Primary'));
+    // from WordPress core not theme hybrid
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'automatic-feed-links' );
+
+    register_nav_menu('primary', __('Primary', 'tracks'));
     
     // adds the file with the customizer functionality
     require_once( trailingslashit( get_template_directory() ) . 'functions-admin.php' );
 }
+
+function ct_tracks_register_widget_areas(){
+
+    /* register after post content widget area */
+    hybrid_register_sidebar( array(
+        'name'         => __( 'After Post Content', 'tracks' ),
+        'id'           => 'after-post-content',
+        'description'  => __( 'Widgets in this area will be shown after post content before the prev/next post links', 'tracks' )
+    ) );
+
+    /* register after page content widget area */
+    hybrid_register_sidebar( array(
+        'name'         => __( 'After Page Content', 'tracks' ),
+        'id'           => 'after-page-content',
+        'description'  => __( 'Widgets in this area will be shown after page content', 'tracks' )
+    ) );
+}
+add_action('widgets_init','ct_tracks_register_widget_areas');
 
 // Creates the next/previous post section below every post
 function ct_tracks_further_reading() {
@@ -360,16 +393,44 @@ if( function_exists('add_image_size')){
     add_image_size('blog', 600, 460);
 }
 
-function compete_themes_oddeven_post_class( $classes ) {
+function ct_tracks_odd_even_post_class( $classes ) {
 
-   global $compete_themes_current_class;
-   $classes[] = $compete_themes_current_class;
-    $compete_themes_current_class = ($compete_themes_current_class == 'odd') ? 'even' : 'odd';
-   return $classes;
+    global $wp_query;
+    $classes[] = ($wp_query->current_post % 2 == 0) ? 'odd' : 'even';
+    return $classes;
 }
+add_filter ( 'post_class' , 'ct_tracks_odd_even_post_class' );
 
-add_filter ( 'post_class' , 'compete_themes_oddeven_post_class' );
-global $compete_themes_current_class;
-$compete_themes_current_class = 'odd';
+/* css output for hiding the scroll to top link */
+function ct_tracks_return_top_settings_output(){
+
+    $setting = get_theme_mod('additional_options_return_top_settings');
+
+    /* if 'hide' is selected, hide it */
+    if($setting == 'hide') {
+        $css = "#return-top { display: none; }";
+        wp_add_inline_style('style', $css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_tracks_return_top_settings_output');
+
+
+/* css output for hiding the scroll to top link */
+function ct_tracks_image_zoom_settings_output(){
+
+    $setting = get_theme_mod('additional_options_image_zoom_settings');
+
+    /* if 'hide' is selected, hide it */
+    if($setting == 'no-zoom') {
+        $css = "
+            .featured-image-link:hover .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
+            .featured-image-link:active .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
+            .featured-image-link:focus .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
+        ";
+        wp_add_inline_style('style', $css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_tracks_image_zoom_settings_output');
+
 
 ?>

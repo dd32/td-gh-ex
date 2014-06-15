@@ -3,9 +3,9 @@ Theme Name: Tracks
 Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
-Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites.
-Version: 1.08
-Tags: black, gray, white, dark, one-column, responsive-layout, custom-menu, featured-images, sticky-post
+Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
+Version: 1.09
+Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,26 +14,32 @@ Tracks is distributed under the terms of the GNU GPL
 */
 /*===== Variables =====*/
 /* Theme Colors */
-/* 26px font */
 .site-title, .toggle-navigation i {
   font-size: 1.625em;
   line-height: 1.85;
 }
 
-/* 13px font */
 .wp-caption-text, .excerpt-meta, .entry-meta, .more-link, .loop-pagination, .further-reading span,
 .further-reading a,
 .entry-categories span,
 .entry-categories a,
 .entry-tags span,
-.entry-tags a, .author-meta .author span, .comments-number h3, .comment-author div, .design-credit {
+.entry-tags a, .author-meta .author span, .comments-number h3, .comment-author div, .design-credit, .widget li {
   font-size: 0.813em;
   line-height: 1.85;
 }
 
-/* padding */
 .entry-container, .comments {
   padding: 0 5.55%;
+}
+
+.site-title, .menu-unset > ul li a,
+.menu-primary-items li a, .excerpt-meta, .entry-meta, .excerpt-title, .entry-title, .more-link, .loop-pagination, .further-reading,
+.entry-categories,
+.entry-tags, .author-meta .author span, .comments-number h3, .comment-author .author-name, .site-footer h3, .design-credit, .widget-title, .widget li {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 /* Social Media Brand Colors */
@@ -84,8 +90,6 @@ a {
   text-decoration: none;
   color: #222222;
   -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 a:link {
@@ -259,13 +263,9 @@ textarea {
   font-family: "raleway", sans-serif;
   font-size: 0.813em;
   line-height: 1.85;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   -webkit-appearance: none;
   -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -276,7 +276,7 @@ textarea {
 input[type="submit"] {
   background: #222222;
   color: white;
-  max-width: 13.875em;
+  max-width: 13.875em !important;
 }
 input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   cursor: pointer;
@@ -343,17 +343,13 @@ a img {
 .title-info {
   display: inline-block;
   position: relative;
-  z-index: 2;
+  z-index: 29;
 }
 
 .site-title {
   letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 700;
   opacity: 0.6;
   -webkit-transition: opacity 0.2s ease;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
 .site-title span {
@@ -378,7 +374,7 @@ a img {
 .toggle-navigation {
   position: absolute;
   right: 0;
-  z-index: 2;
+  z-index: 29;
   border: none;
   background: none;
   font-size: 1em;
@@ -390,8 +386,6 @@ a img {
   color: white;
   opacity: 0.6;
   -webkit-transition: opacity 0.2s ease;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
 .toggle-navigation:hover, .toggle-navigation:active, .toggle-navigation:focus {
@@ -401,9 +395,10 @@ a img {
 }
 
 .menu-primary, .menu-primary-tracks {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -413,20 +408,22 @@ a img {
   left: 100%;
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 19;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(24px, #222222), color-stop(24px, transparent), color-stop(48px, transparent));
+  background-image: -webkit-linear-gradient(#222222 24px, transparent 24px, transparent 48px);
   background-image: linear-gradient(#222222 24px, transparent 24px, transparent 48px);
+  -webkit-background-size: 1px 48px;
   background-size: 1px 48px;
   /* this is a 24px baseline grid */
   text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .menu-primary-tracks {
   top: 1.5em;
   left: -100%;
+  z-index: 19;
 }
 
 .site-description {
@@ -445,11 +442,7 @@ a img {
   color: white;
   opacity: 0.6;
   margin: 1.5em 0 0.75em 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -499,8 +492,6 @@ a img {
 .site-header.toggled .menu-primary-items,
 .site-header.toggled .site-description {
   -webkit-transition: opacity 0.3s 0.3s;
-  -moz-transition: opacity 0.3s 0.3s;
-  -o-transition: opacity 0.3s 0.3s;
   transition: opacity 0.3s 0.3s;
 }
 .site-header.toggled .menu-unset > ul,
@@ -669,8 +660,6 @@ a img {
     opacity: 0;
     left: -0.75em;
     -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
   }
   .menu-unset > ul ul li.menu-item,
@@ -704,13 +693,17 @@ a img {
 }
 .excerpt-container {
   padding: 0 5.55%;
+  position: relative;
+  z-index: 9;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .excerpt {
   text-align: center;
   background: white;
+  overflow: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -719,19 +712,22 @@ a img {
 .featured-image {
   height: 13.5em;
   background-position: 50%;
+  -webkit-background-size: cover;
   background-size: cover;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.featured-image-link:hover .featured-image, .featured-image-link:active .featured-image, .featured-image-link:focus .featured-image {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .excerpt-meta, .entry-meta {
   color: #aaaaaa;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
   padding-top: 1.84502em;
 }
 .excerpt-meta a, .entry-meta a {
@@ -745,8 +741,6 @@ a img {
 }
 
 .excerpt-title, .entry-title {
-  text-transform: uppercase;
-  font-weight: 700;
   letter-spacing: 0.04em;
   font-size: 1.875em;
   /* 30px */
@@ -771,7 +765,9 @@ a img {
   background: #4d4d4d;
   width: 4.5em;
   height: 0.375em;
-  left: calc(50% - 36px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   bottom: -1.5em;
 }
 
@@ -782,10 +778,7 @@ a img {
 .more-link {
   position: relative;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
   color: #4d4d4d;
-  letter-spacing: 0.1em;
 }
 .more-link:link, .more-link:visited {
   color: #4d4d4d;
@@ -794,6 +787,8 @@ a img {
   color: #222222;
 }
 .more-link:hover:after, .more-link:active:after, .more-link:focus:after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
 .more-link:after {
@@ -803,14 +798,15 @@ a img {
   height: 3px;
   background: #4d4d4d;
   bottom: -0.75em;
-  left: calc(50% - 12px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -818,9 +814,6 @@ a img {
 
 .loop-pagination {
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
   padding: 1.5em;
   margin-bottom: -1.5em;
 }
@@ -880,6 +873,8 @@ a img {
   }
 
   .excerpt {
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
     transform: translateZ(0);
     /* fix weird chrome wiggle glitch */
     position: relative;
@@ -888,11 +883,8 @@ a img {
     margin-bottom: 1.5em;
     opacity: 0.8;
     -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -903,7 +895,6 @@ a img {
     position: absolute;
     right: 0;
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -958,22 +949,15 @@ a img {
   margin: 3em 0;
 }
 
-.further-reading,
-.entry-categories,
-.entry-tags {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
 .further-reading span,
 .entry-categories span,
 .entry-tags span {
-  font-weight: 700;
-  letter-spacing: 0.1em;
   display: block;
 }
 .further-reading a,
 .entry-categories a,
 .entry-tags a {
+  font-weight: 400;
   color: #8c8c8c;
 }
 .further-reading a:link, .further-reading a:visited,
@@ -1025,14 +1009,7 @@ a img {
   margin: 0 0.75em 1.5em 0;
   width: 4.5em;
   height: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
-}
-.author-meta .author span {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
 }
 .author-meta .author a {
   font-weight: 400;
@@ -1117,8 +1094,6 @@ a img {
     width: 100%;
     opacity: 0.2;
     -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
   }
   .entry .featured-image:hover:after {
@@ -1206,11 +1181,6 @@ a img {
 .comments-number {
   padding: 1.5em 0;
 }
-.comments-number h3 {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
 
 .comment-list {
   list-style: none;
@@ -1248,16 +1218,9 @@ li.pingback:after {
 .comment-author img {
   width: 4.5em;
   height: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   float: left;
   margin-right: 0.75em;
-}
-.comment-author .author-name {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1em;
 }
 .comment-author .author-name a {
   text-decoration: none;
@@ -1411,13 +1374,9 @@ li.pingback:after {
   color: #8c8c8c;
 }
 .site-footer h3 {
-  text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 700;
   opacity: 0.4;
   -webkit-transition: opacity 0.2s ease;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
 .site-footer h3:hover, .site-footer h3:active, .site-footer h3:focus {
@@ -1431,9 +1390,6 @@ li.pingback:after {
 .design-credit {
   background: #111111;
   color: #4d4d4d;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
   padding: 0.75em 0;
 }
 .design-credit a {
@@ -1451,6 +1407,46 @@ li.pingback:after {
   opacity: 1;
 }
 
+.return-top {
+  display: none;
+}
+
+/* 600px */
+@media all and (min-width: 37.5em) {
+  .return-top {
+    display: block;
+    position: fixed;
+    bottom: -4em;
+    right: 0;
+    width: 5.055%;
+    height: 4em;
+    background: white;
+    border: none;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 4em;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .return-top i {
+    position: relative;
+    top: 0;
+    -webkit-transition: top 0.3s ease;
+    transition: top 0.3s ease;
+  }
+
+  .return-top.visible {
+    bottom: 0;
+  }
+  .return-top.visible:hover, .return-top.visible:active, .return-top.visible:focus {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .return-top.visible:hover i, .return-top.visible:active i, .return-top.visible:focus i {
+    top: -6px;
+  }
+}
 /* 900px */
 @media all and (min-width: 56.25em) {
   .site-footer h3 {
@@ -1514,5 +1510,46 @@ li.pingback:after {
 @media all and (min-width: 56.25em) {
   .search-form-container {
     margin: 1.5em 0 3em;
+  }
+}
+/* Widget Area Styles */
+.sidebar-after-post-content,
+.sidebar-after-page-content {
+  padding: 3em 0 1.5em;
+  border-top: solid 1px #ededed;
+  border-bottom: solid 1px #ededed;
+  margin-bottom: 1.5em;
+}
+
+/* Widget Styles */
+.widget-title {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.widget ul {
+  margin: 1.5em 0;
+  list-style: none;
+}
+.widget li {
+  font-weight: 400;
+}
+.widget li a {
+  color: #8c8c8c;
+}
+.widget li a:link, .widget li a:visited {
+  color: #8c8c8c;
+}
+.widget li a:hover, .widget li a:active, .widget li a:focus {
+  color: black;
+}
+
+/* 900px */
+@media all and (min-width: 56.25em) {
+  .ie9 .excerpt {
+    opacity: 1;
+  }
+  .ie9 .excerpt:hover {
+    opacity: 1;
   }
 }

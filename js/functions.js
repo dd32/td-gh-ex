@@ -2,11 +2,11 @@ jQuery(document).ready(function($){
 
     $(".entry-content").fitVids();
 
-    // bind the tap event (from 'tappy.min.js') on the menu icon
-    $('#toggle-navigation').bind('tap', onTap);
+    // bind the tap event on the menu icon
+    // no longer using tappy.js b/c didn't work when production.min.js loaded asynchronously
+    $('#toggle-navigation').bind('click', onTap);
 
     function onTap() {
-        // do work
 
         if ($('#site-header').hasClass('toggled')) {
             $('#site-header').removeClass('toggled')
@@ -61,6 +61,20 @@ jQuery(document).ready(function($){
         $(this).parents('ul').removeClass('focused');
     });
 
+    // ===== Scroll to Top ==== //
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 600) {        // If page is scrolled more than 50px
+            $('#return-top').addClass('visible');    // Fade in the arrow
+        } else {
+            $('#return-top').removeClass('visible');   // Else fade out the arrow
+        }
+    });
+    $('#return-top').click(function(e) {      // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 800);
+    });
 });
 
 /* fix for skip-to-content link bug in Chrome & IE9 */
