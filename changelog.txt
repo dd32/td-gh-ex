@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+Shipyard version 2.2 - june 2014
+- forgot to reset the content_width in previous version
+- changed size of featured and single page image
+
 Shipyard version 2.1 - june 2014
 - changed theme width to 1200px
 - added featured image on single page
