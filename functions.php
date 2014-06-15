@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 580;
+		$content_width = 720;
 
 	// Make theme available for translation
 		load_theme_textdomain('simplyblack', get_template_directory() . '/languages');  
@@ -45,10 +45,10 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 250, 250 ); 
+		set_post_thumbnail_size( 300, 300 ); 
 
 	// Resize single page thumbnail
-		add_image_size( 'single', 250, 250 ); 
+		add_image_size( 'single', 300, 300 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
