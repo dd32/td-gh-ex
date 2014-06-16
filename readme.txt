@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 == ABOUT WORTEX LITE ==
 
@@ -52,7 +52,10 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
-Date: 2014-05-14
-Version: 1.0
-Basename: wortex-pro.1.0
+= 1.0.1 = 
+June 16th, 2014 
+* Added ellipsis (...) to the end of truncated excerpts when displaying the "read more" button (based on user feedback).
+
+= 1.0.0 =
+May 14th, 2014
 * Initial public release

@@ -278,7 +278,7 @@ add_filter( 'the_content', 'wortex_protect_pre' );
  */
 function wortex_excerpt_more( $more ) {
 	global $post;
-	return '<div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'wortex') .'<i class="fa fa-angle-right"></i></a></div><br class="clear" />';
+	return '... <div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'wortex') .'<i class="fa fa-angle-right"></i></a></div><br class="clear" />';
 }
 add_filter( 'excerpt_more', 'wortex_excerpt_more' );
 
