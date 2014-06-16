@@ -12,8 +12,8 @@ function theme_data_setup()
 {
 	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
 	return $rambo_theme_options=array(
-			//Logo and Fevicon header			
-			
+						
+			'front_page' => 'on',
 			'rambo_stylesheet'=>'default.css',			
 			'upload_image_logo'=>'',
 			'height'=>'50',
@@ -57,7 +57,7 @@ function theme_data_setup()
 			//Social media links
 			'footer_social_media_enabled'=>'on',
 			'social_media_twitter_link' =>"https://twitter.com/",
-			'social_media_facebook_link' =>"https://www.facebook.com",
+			'social_media_facebook_link' =>"https:www.facebook.com",
 			'social_media_linkedin_link' =>"http://linkedin.com/",
 			'social_media_google_plus' =>"https://plus.google.com/",
 					

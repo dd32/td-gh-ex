@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.2
+1. front-page added version.
 @Version: 1.1.5.2
 1.SMALL FIX in default data.
 @Version: 1.1.5.1

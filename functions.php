@@ -53,8 +53,12 @@
 		add_image_size('blog1_section_img',270,260,true);
 		add_image_size('blog2_section_img',770,300,true);		
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menu( 'primary', __( 'Primary Menu', 'rambo' ) );
-		
+		//register_nav_menu( 'primary', __( 'Primary Menu', 'rambo' ) );
+		register_nav_menus(
+			array(
+ 				'primary' => __('Primary Menu', 'rambo' ),
+			)		
+		);
 		//do_action('busiprof_init');//load admin pannal file	
 		require_once('theme_setup_data.php');
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Custom Menus		
