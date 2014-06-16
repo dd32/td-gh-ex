@@ -60,3 +60,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == 1.16 ==
 * Add better description and minor bug fix.
+
+== 1.17 ==
+* Add japan translation (thanks to ISHIKAWA Koutarou)
