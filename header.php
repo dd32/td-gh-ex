@@ -26,8 +26,8 @@
 	<div id="header_container">
 	
 		<!--header-->
-	<div class="row">	
-		<div class="three columns">
+	<div class="row">
+		<div class="twelve columns">
 	
 <?php $header_image = get_header_image();
 	if ( ! empty( $header_image ) ) { ?>
@@ -39,10 +39,10 @@
 	<?php } ?>
 	
 			
-	</div>
+
 	
 	<!--top menu-->
-			<div class="nine columns" id="menu_container" >
+			<div id="menu_container">
 		
 		<?php $navcheck = '' ; ?>
 	
@@ -59,7 +59,7 @@
 
 	</div>
 	
-	
+		</div>
 		</div>
 		
 	</div><!--header container end-->	
