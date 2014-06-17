@@ -514,16 +514,19 @@ function content_sidebar_check() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();	
 	
-	if ( is_front_page() && is_home() && !empty( $enable_post ) ){
+	if ( is_front_page() && is_home() && !empty( $enable_post ) ) {
 		return;
-	} elseif ( is_front_page() ){
+	} 
+	elseif ( is_front_page() ) {
 		add_action( 'adventurous_main', 'adventurous_main_wrapper', 10 );
 		add_action( 'adventurous_content_sidebar', 'adventurous_content_sidebar_wrapper', 10 );
 		add_action( 'adventurous_content_sidebar_close', 'adventurous_content_sidebar_wrapper_close', 10 );
 		add_action( 'adventurous_main_close', 'adventurous_main_wrapper_close', 10 );
-	} elseif ( is_home() && !empty( $enable_post ) && empty( $page_id ) ) {
+	} 
+	elseif ( is_home() && !empty( $enable_post ) && empty( $page_id ) ) {
 		return;
-	} else {
+	}
+	else {
 		add_action( 'adventurous_main', 'adventurous_main_wrapper', 10 );
 		add_action( 'adventurous_content_sidebar', 'adventurous_content_sidebar_wrapper', 10 );
 		add_action( 'adventurous_content_sidebar_close', 'adventurous_content_sidebar_wrapper_close', 10 );

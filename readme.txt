@@ -5,7 +5,7 @@ Adventurous Theme by Catch Themes team, http://catchthemes.com/
 
 == About Adventurous ==
 
-Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready.  Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
+Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
 
 
 == Tags ==
@@ -16,6 +16,7 @@ black, blue, gray, green, white, dark,light, one-column, two-columns, left-sideb
 == Translation ==
 
 Adventurous theme is translation ready. 
+Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
 
 
 == License ==
@@ -95,6 +96,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 
 == Changelog ==
+
+Version 0.4
+* Added German translation pt_BR.po and pt_BR.mo
 
 Version 0.3
 * Added background and text color in promotion wrapper in style.css
