@@ -21,3 +21,6 @@ ii)  Changed slider code in index.php and a few changes in functions.php
 
 Version 0.3.2
 i) Image references added.
+
+Version 1.0
+i) Grammatical Error on home page. Added 's' in the 'latest post' heading and made it 'Latest Posts'.

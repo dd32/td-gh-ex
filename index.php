@@ -56,7 +56,7 @@ $booster_value = array_filter($booster_slider);
   </div>
 </section>
 <section class="section-main container no-padding">
-  <h2 class="font-color-text">Latest Post</h2>
+  <h2 class="font-color-text">Latest Posts</h2>
   <div class="col-md-12 no-padding-left padding-br">
     <?php     
 	$booster_args1 = array(
