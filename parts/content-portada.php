@@ -166,11 +166,7 @@
 
 <div class="container">
    <div class="row transbody">
-	<?php
-      $portada = new WP_Query('showposts');
-      while ($portada->have_posts()) : $portada->the_post();
-      $do_not_duplicate = $post->ID;
-    ?>
+	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <div class="container">
      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="entry-content">
@@ -187,12 +183,13 @@
          <a href="<?php the_permalink() ?>" class="btn btn-success"><?php echo __('Continue reading &raquo;&raquo;', 'athenea'); ?></a>
         </div><!-- #col-md-8 -->
       </div><!-- #entry-content -->
-     </article>
+     </article><!-- #article -->
     </div><!-- #container -->
     <div class="container"><hr style="margin-top:60px; margin-bottom:60px;"></div>
-    <?php endwhile; ?>
+	<?php endwhile; ?>
     <div class="col-md-6 text-left"><?php previous_posts_link(); ?></div>
     <div class="col-md-6 text-right"><?php next_posts_link(); ?></div>
+    <?php endif; ?>
    </div><!-- #row -->
 </div><!-- #container -->
 
