@@ -24,3 +24,6 @@ i) Image references added.
 
 Version 1.0
 i) Grammatical Error on home page. Added 's' in the 'latest post' heading and made it 'Latest Posts'.
+
+Version 1.01
+i) Removed blank spaces from theme description in style.css so that it display properly on theme page in WordPress.org.

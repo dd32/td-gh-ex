@@ -8,7 +8,7 @@ and any other creative websites and blogs. Developed using Bootstrap 3 that make
 social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
 Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
-version: 1.0
+version: 1.01
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.
