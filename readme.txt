@@ -56,6 +56,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+version 1.5.3
+* Removed rem in width, padding and margins, now only in font sizes css
+
 version 1.5.2
 * Added French translation fr_FR.po and fr_FR.mo
 
