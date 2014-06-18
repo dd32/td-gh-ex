@@ -47,19 +47,47 @@ function accessiblezen_content_nav( $nav_id ) {
 }
 endif; // ends check for accessiblezen_content_nav
 
+if ( ! function_exists( 'accessiblezen_author' ) ) :
+/**
+ * Prints HTML with author information for the current post.
+ *
+ * @since accessiblezen 1.1.1
+ */
+function accessiblezen_author() {
+	$byline = sprintf(
+		_x( 'By %s', 'post author', 'accessiblezen' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+
+	echo '<span class="byline"> ' . $byline . '</span>';
+}
+endif; // ends check for accessiblezen_author
+
 if ( ! function_exists( 'accessiblezen_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current post date/time.
  *
  * @since accessiblezen 1.0
  */
 function accessiblezen_posted_on() {
-	printf( __( '<span class="post-date">Posted: <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>.</span>', 'accessiblezen' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'm.d.Y' ) )
+		esc_html( get_the_date( 'm.d.Y' ) ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date( 'm.d.Y' ) )
 	);
+
+	$posted_on = sprintf(
+		_x( 'Posted: %s', 'post date', 'accessiblezen' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	echo '<span class="posted-on">' . $posted_on . '</span>';
 }
 endif; // ends check for accessiblezen_posted_on
 
@@ -135,14 +163,26 @@ function accessiblezen_archive_page_title_etc() {
 		_e( 'Archives', 'accessiblezen' );
 
 	endif;
-
-	// Show an optional term description.
-	$term_description = term_description();
-	if ( ! empty( $term_description ) ) :
-	printf( '<div class="taxonomy-description">%s</div>', $term_description );
-	endif;
 }
 endif; // ends check for accessiblezen_archive_page_title_etc
+
+if ( ! function_exists( 'accessiblezen_term_description' ) ):
+ /**
+ * Display optional term description for category, tag and custom taxonomy pages.
+ *
+ * @since accessiblezen 1.1.1
+ */
+function accessiblezen_term_description() {
+
+// Show an optional term description.
+$term_description = term_description();
+
+if ( is_category() || is_tag || is_tax && ! empty( $term_description ) ) :
+	printf( '<div class="taxonomy-description">%s</div>', $term_description, 'accessiblezen' );
+endif;
+
+}
+endif; // ends check for accessiblezen_term_description
 
 if ( ! function_exists( 'accessiblezen_cats_and_tags' ) ) :
 /**
@@ -156,7 +196,7 @@ function accessiblezen_cats_and_tags() {
 			$category_list = get_the_category_list( __( ', ', 'accessiblezen' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', ', ' );
+			$tag_list = get_the_tag_list( '', __( ', ', 'accessiblezen' ) );
 
 			if ( ! accessiblezen_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
@@ -192,9 +232,12 @@ if ( ! function_exists( 'get_post_format_archive_link' ) ): {
  * @since accessiblezen 1.0
  */
 function get_post_format_archive_link() {
-    return sprintf( 
-        'Format: <a href="' . get_post_format_link( get_post_format() ) . '">' . get_post_format_string( get_post_format() ) . '</a>' 
-    );
+    $get_post_format_archive_link = sprintf(
+		_x( 'Format: %s', 'post-format-archive-link', 'accessiblezen' ),
+		'<a href="' . esc_url( get_post_format_link( get_post_format() ) ) . '">' . get_post_format_string( get_post_format() ) . '</a>'
+	);
+
+	echo '<span class="post-format-archive-link">' . $get_post_format_archive_link . '</span>';
 }
 }
 endif; // ends check for get_post_format_archive_link

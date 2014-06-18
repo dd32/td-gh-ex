@@ -1,5 +1,18 @@
 # Changelog
 
+**June 17, 2014**
+
+Release: Version 1.1.1
+
+- [Add author and updated microformats](https://github.com/davidakennedy/accessible-zen/issues/56).
+- [Add HTML5 output for galleries and captions](https://github.com/davidakennedy/accessible-zen/issues/55).
+- [Make tag list translatable](https://github.com/davidakennedy/accessible-zen/issues/57).
+- [Fix unclosed h1 on certain templates](https://github.com/davidakennedy/accessible-zen/issues/58).
+- Add more robust styles for menu abstraction on desktop.
+- Add bottom margin for audio embeds.
+- Add version 3.0.3 of Genericons.
+- Improve stylesheet loading order.
+
 **January 4, 2014**
 
 Release: Version 1.1
@@ -7,6 +20,7 @@ Release: Version 1.1
 - [Add contextual help to theme](https://github.com/davidakennedy/accessible-zen/issues/54). 
 - [Improve Customizer features and set better default options](https://github.com/davidakennedy/accessible-zen/issues/53). This may cause users to have to set their options again via the Customizer.
 - Add appropriate theme tags for WordPress, version 3.8, including accessibility-ready.
+- Remove bottom border on hover on site title.
 - Add new screenshot according to WordPress, version 3.8 standards.
 - Update Genericons to version 3.0.2.
 - Move changelog to separate file.

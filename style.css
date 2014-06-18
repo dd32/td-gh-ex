@@ -4,7 +4,7 @@ Theme URI: http://davidakennedy.com/projects/accessible-zen/
 Author: David A. Kennedy
 Author URI: http://davidakennedy.com
 Description: The Accessible Zen theme is an accessible, minimalistic, readable, and fully responsive HTML5 theme that puts the focus on your content and nothing else. Based on the original Zen Habits theme by Leo Babauta: http://zenhabits.net/theme/, with more WordPress goodness built in.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License
 License URI: license.txt
 Tags: white, blue, light, one-column, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -785,6 +785,9 @@ div.callout {
 	padding-left: 1em;
 	padding-right: 1em;
 }
+.updated {
+	display: none;
+}
 .title {
 	color: #666;
 	font-weight: bold;
@@ -819,13 +822,22 @@ div.callout {
 	font-size: 1.125em;
 	text-transform: uppercase;
 }
+.taxonomy-description {
+	color: #666;
+	font-size: 1em;
+	text-align: center;
+}
+.taxonomy-description p {
+	margin-bottom: 0;
+}
 .author-info {
 	margin: 1.5em 0;
 }
 .author-info > .author-avatar {
 	text-align: center;
 }
-.post-date,
+.posted-on,
+.post-format-info,
 .post-categories,
 .post-tags,
 .post-permalink,
@@ -921,8 +933,42 @@ img[class*="wp-image-"] {
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
-.content-area .gallery {
+.gallery {
 	margin-bottom: 1.5em;
+}
+.gallery-item {
+	display: inline-block;
+	margin: 0 0 1.5em;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	/* IE7 hack to mimic inline-block on block elements */
+    *display: inline;
+    *zoom: 1;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
 }
 .gallery-caption {
 }
@@ -936,15 +982,6 @@ img[class*="wp-image-"] {
 .content-area .gallery-item a:active img,
 .content-area .gallery-item a:focus img {
 	border: 3px solid #008fcc;
-	height: auto;
-	max-width: 90%;
-}
-.content-area .gallery dd {
-	margin: 0;
-}
-.content-area .gallery-columns-4 .gallery-item {
-}
-.content-area .gallery-columns-4 .gallery-item img {
 }
 
 /* Make sure embeds and iframes fit their containers */
@@ -952,6 +989,11 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* WP Audio Embeds */
+.wp-audio-shortcode {
+	margin-bottom: 1.5em;
 }
 
 /* =Navigation
@@ -1276,7 +1318,7 @@ p.comment-form-comment {
 	.two .sidebar-widgets { width: 43.458%; }
 	
 	/* Nav abstraction adjustment */
-	.nav li { display: inline; }
+	.nav li { display: inline-block; }
 	
 	/* Content */
 	.site tr, th, td { padding-right: 1.5em; }
@@ -1308,6 +1350,11 @@ p.comment-form-comment {
 
 /* Browser Fixes
 ----------------------------------------------- */
+.ie7 .nav li {
+	/* IE7 hack to mimic inline-block on block elements */
+    *display: inline;
+    *zoom: 1;
+}
 #respond .comment-form-author label,
 #respond .comment-form-email label,
 #respond .comment-form-url label,
@@ -1325,4 +1372,7 @@ p.comment-form-comment {
 .ie7 body.custom-background .site,
 .ie8 body.custom-background .site {
 	width: 80%;
+}
+.ie7 .genericon {
+	display: none;
 }
