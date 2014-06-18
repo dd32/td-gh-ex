@@ -1,6 +1,6 @@
 === INTERFACE ===
 
-Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Get free support at http://themehorse.com/support-forum and View beautiful demo site at http://themehorse.com/preview/interface
+Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Russian. Get free support at http://themehorse.com/support-forum and View beautiful demo site at http://themehorse.com/preview/interface
 
 =================================================================================
 
@@ -60,6 +60,10 @@ https://wordpress.org/themes/simple-catch
 =================================================================================
 
 == CHANGE LOG ==
+
+= 1.0.8 =
+ - Language translation added for some fields
+ - Interface now available in Russian Language. Thanks to Kirill Belotserkovskiy <k.belotserkovskiy@gmail.com> for providing us with the translation files
 
 = 1.0.7 =
  - Text domain name issue fixed

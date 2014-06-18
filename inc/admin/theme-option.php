@@ -761,7 +761,7 @@ function interface_theme_options_add_theme_page() {
                 <th scope="row" style="padding: 0px;"><h4>
                     <?php _e( 'Phone Number', 'interface' ); ?>
                   </h4></th>
-                <td><input type="text" size="45" name="interface_theme_options[social_phone]" value="<?php echo  preg_replace("/[^0-9+-]/", '', $options[ 'social_phone' ]) ; ?>" />
+                <td><input type="text" size="45" name="interface_theme_options[social_phone]" value="<?php echo  preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]) ; ?>" />
                   <?php _e('Enter your Phone number only', 'interface'); ?></td>
               </tr>
               <tr>
@@ -974,7 +974,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 		$validated_input_values[ 'disable_bottom' ] = $input[ 'disable_bottom' ];
 	}
    if ( isset( $input[ 'social_phone' ] ) ) {
-		$validated_input_values[ 'social_phone' ] = preg_replace("/[^0-9+-]/", '', $options[ 'social_phone' ]);
+		$validated_input_values[ 'social_phone' ] = preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]);
 	}
 
 	if( isset( $input[ 'social_email' ] ) ) {
