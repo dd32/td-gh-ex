@@ -105,7 +105,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 
 	    <?php if($show_testimonials == 1){ ?>
 		<aside class="widget testimonail-sidebar clear">
- 		<h1 class="widget-title">Testimonials</h1>
+ 		<h1 class="widget-title"><?php echo get_cat_name($testimonail_category); ?></h1>
 			<?php
 			
 			if(!empty($testimonail_category)) {

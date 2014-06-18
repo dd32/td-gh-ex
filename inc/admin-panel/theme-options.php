@@ -1028,20 +1028,20 @@ function accesspresslite_validate_options( $input ) {
         }
     }
 
-    if (isset( $input['welcome_post_char'] ) ){
-        if(intval($input['welcome_post_char'])){
+    if (!isset( $input['welcome_post_char'] ) || empty( $input['welcome_post_char'] ) ){
+        $input['welcome_post_char']= "650";
+    }else{
+    	if(intval($input['welcome_post_char'])){
             $input['welcome_post_char'] = absint($input['welcome_post_char']);
         }
-    }else{
-    	$input['welcome_post_char']="";
     }
 
-    if (isset( $input['show_event_number'] ) ){
-        if(intval($input['show_event_number'])){
+    if (!isset( $input['show_event_number'] ) || empty( $input['show_event_number'] )){
+       	$input['show_event_number']= "3";
+    }else{
+    	 if(intval($input['show_event_number'])){
             $input['show_event_number'] = absint($input['show_event_number']);
         }
-    }else{
-    	$input['show_event_number']="";
     }
 
 

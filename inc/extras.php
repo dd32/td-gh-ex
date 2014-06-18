@@ -339,7 +339,10 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 	function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
 		$accesspresslite_striped_content = strip_tags($accesspresslite_content);
-		$accesspresslite_excerpt = substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count )."...";
+		$accesspresslite_excerpt = substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
+		if($accesspresslite_striped_content > $accesspresslite_excerpt){
+			$accesspresslite_excerpt .= "...";
+		}
 		return $accesspresslite_excerpt;
 	}
 
@@ -518,3 +521,12 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
    }
    
    add_filter( 'body_class', 'accesspresslite_web_layout' );
+
+   function accesspresslite_post_count_queries( $query ) {
+	  if (!is_admin() && $query->is_main_query()){
+	    if(is_home()){
+	       $query->set('posts_per_page', 1);
+	    }
+	  }
+	}
+	add_action( 'pre_get_posts', 'accesspresslite_post_count_queries' );

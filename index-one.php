@@ -10,8 +10,8 @@ $featured_post2 = $accesspresslite_settings['featured_post2'];
 $featured_post3 = $accesspresslite_settings['featured_post3'];
 $show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
 $testimonail_category = $accesspresslite_settings['testimonial_cat'];
-isset($accesspresslite_settings['welcome_post_char'])?($accesspresslite_welcome_post_char = $accesspresslite_settings['welcome_post_char']) : ($accesspresslite_welcome_post_char = 10);
-isset($accesspresslite_settings['show_event_number'])?($accesspresslite_show_event_number = $accesspresslite_settings['show_event_number']) : ($accesspresslite_show_event_number = 10);
+$accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
+$accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
 
 if( $accesspresslite_layout !== 'Layout2') { ?>
 			
@@ -73,7 +73,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 	            $loop = new WP_Query( array(
 	                'cat' => $accesspresslite_event_category,
-	                'posts_per_page' => $show_event_number,
+	                'posts_per_page' => $accesspresslite_show_event_number,
 	            )); ?>
 
 	        <h1><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h1>
@@ -336,7 +336,13 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<main id="main" class="site-main" role="main">
 
 		<?php 
-		$query5 = new WP_Query('cat=49');
+		$no_of_posts = get_option('posts_per_page');
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$query5 = new WP_Query(array(
+	                'cat' => $accesspresslite_blog_cat,
+	                'posts_per_page' => $no_of_posts,
+	                'paged' => $paged
+	            ));
 		if ( $query5->have_posts() ) : ?>
 			<?php while ( $query5->have_posts() ) : $query5->the_post(); ?>
 
@@ -346,7 +352,12 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 			<?php endwhile; ?>
 
-			<?php accesspresslite_paging_nav(); ?>
+		<nav class="navigation paging-navigation">
+		<div class="nav-links">
+	   		<div class="nav-previous"><?php previous_posts_link( 'Newer posts') ?></div>
+			<div class="nav-next"><?php next_posts_link( 'Older posts') ?></div>
+		</div>
+		</nav>
 
 		<?php else : ?>
 
@@ -456,7 +467,7 @@ wp_reset_query(); ?>
 		}else{
 
 		if(!empty($testimonail_category)) {	?>
- 		<h1><?php echo $testimonail_category; ?></h1>
+ 		<h1><?php echo get_cat_name($testimonail_category); ?></h1>
 			<?php
 				$loop2 = new WP_Query( array(
 	                'cat' => $testimonail_category,
@@ -486,7 +497,7 @@ wp_reset_query(); ?>
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All <?php echo $testimonail_category; ?></a>
+			<a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All <?php echo get_cat_name($testimonail_category); ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 

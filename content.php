@@ -139,10 +139,6 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'accesspresslite' ), __( '1 Comment', 'accesspresslite' ), __( '% Comments', 'accesspresslite' ) ); ?></span>
-		<?php endif; ?>
-
 		<?php //edit_post_link( __( 'Edit', 'accesspresslite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
