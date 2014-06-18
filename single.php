@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package	Anarcho Notepad
- * @since	2.5
+ * @since	2.12
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -45,7 +45,7 @@
       <div class="meta">
 	<?php _e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category ', 'anarcho-notepad'); the_category(', '); ?><br/>
 
-        <?php if ( ( get_the_author_meta( 'description' ) != '' ) ) esc_html(get_template_part( 'author-bio' )); ?>
+        <?php anarcho_author_bio(); ?>
       </div>
 
       <?php anarcho_post_nav(); ?>
