@@ -41,7 +41,23 @@ Fonts
 
 ---------------------------------------------
 Images
-    All the images used are from http://pixabay.com or self taken are fully GPL compatible.
+    All the images used are from http://pixabay.com, http://unsplash.com/ or self taken are fully GPL compatible.
+    http://pixabay.com/en/business-office-chef-170645/
+    http://pixabay.com/en/beautiful-face-female-girl-happy-19075/
+    http://pixabay.com/en/board-blank-border-couple-empty-84420/
+    http://pixabay.com/en/teacher-lecturer-writer-counselor-99741/
+
+    http://pixabay.com/en/money-bills-calculator-save-256312/
+    http://pixabay.com/en/architecture-banking-blue-building-19171/
+    http://pixabay.com/en/keyboard-apple-input-keys-hardware-338510/
+    http://pixabay.com/en/calculator-office-pen-178124/
+
+    http://unsplash.com/post/71169983328/download-by-craig-garner
+    http://unsplash.com/post/86352115939/download-by-sylwia-bartyzel
+    http://unsplash.com/post/82304768990/download-by-kristian-karlsson
+    http://pixabay.com/en/advert-advertising-banner-blank-84408/
+
+    http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
 Version 1.8
