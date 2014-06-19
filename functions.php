@@ -1,7 +1,7 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.9' );
-define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.6' );
+define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
 include get_template_directory() . '/extras/settings/settings.php';
@@ -85,7 +85,7 @@ function origami_setup(){
 	) );
 
 	// Only include the bundled version of panels if the plugin does not exist
-	if(!defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels')) {
+	if( !defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels') ) {
 		include get_template_directory().'/extras/panels/panels.php';
 	}
 }
@@ -104,7 +104,7 @@ function origami_widgets_init(){
 		'name'        => __( 'Footer', 'origami' ),
 		'before_widget' => '<div id="%1$s" class="cell widget %2$s">',
 		'after_widget'  => '</div>',
-	));
+	) );
 
 	register_widget( 'SiteOrigin_Widgets_CTA' );
 	register_widget( 'SiteOrigin_Widgets_Button' );
@@ -159,11 +159,11 @@ if(!function_exists('origami_enqueue_scripts')) :
 function origami_enqueue_scripts(){
 	wp_enqueue_style('origami', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION);
 	
-	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array(), '2.0.6');
-	wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array('jquery'), '1.0');
-	wp_enqueue_script('origami', get_template_directory_uri() . '/js/origami.min.js', array('jquery', 'modernizr'), SITEORIGIN_THEME_VERSION);
+	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/modernizr.min.js', array(), '2.0.6');
+	wp_enqueue_script('fitvids', get_template_directory_uri().'/js/jquery.fitvids.min.js', array('jquery'), '1.0');
+	wp_enqueue_script('origami', get_template_directory_uri().'/js/origami.min.js', array('jquery', 'modernizr'), SITEORIGIN_THEME_VERSION);
 	
-	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array('jquery'), '2.1');
+	wp_enqueue_script('flexslider', get_template_directory_uri().'/js/jquery.flexslider.min.js', array('jquery'), '2.1');
 	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '2.0');
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
@@ -398,7 +398,7 @@ function origami_filter_show_on_front($r){
 	 * @var WP_Query
 	 */
 	global $origami_is_blog_archive;
-	if(!empty($origami_is_blog_archive)) {
+	if( !empty($origami_is_blog_archive) ) {
 		return false;
 	}
 	else return $r;
@@ -414,3 +414,35 @@ function origami_set_is_blog_archive($new) {
 	global $origami_is_blog_archive;
 	$origami_is_blog_archive = $new;
 }
+
+if( !function_exists('origami_header_image') ) :
+function origami_header_image(){
+
+	$header = get_custom_header();
+
+	echo '<img src="' . esc_url( $header->url ) .  '"';
+	if(!empty($header->height)) {
+		echo ' height="' . $header->height . '"';
+	}
+	if(!empty($header->width)) {
+		echo ' width="' . $header->width . '"';
+	}
+
+	echo ' alt="' . esc_attr( get_bloginfo('name') ) . '" />';
+
+}
+endif;
+
+function origami_wp_header(){
+	if( siteorigin_setting('responsive_enabled') ) {
+		?><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0' /><?php
+	}
+	else {
+		?><meta name='viewport' content='width=1100' /><?php
+	}
+
+	// Make sure we don't use compatibility mode
+	?><meta http-equiv="X-UA-Compatible" content="IE=edge" /><?php
+
+}
+add_action('wp_head', 'origami_wp_header');

@@ -1,10 +1,14 @@
+/**
+ * (c) Greg Priday, freely distributable under the terms of the GPL 2.0 license.
+ */
+
 jQuery( function ( $ ) {
     var minPrice = Number( $('#theme-upgrade input[name=variable_pricing_custom]').attr('min') );
 
     // Handle clicking the play button
-    $('#theme-upgrade #click-to-play').click(function(){
-        // Only load the video from Vimeo when the user clicks play
-        $(this).replaceWith('<iframe src="http://player.vimeo.com/video/' + $(this).data('video-id') + '?title=0&byline=0&portrait=0&autoplay=1" width="640" height="362" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+    $('#theme-upgrade #click-to-play').click(function(e){
+        // Open the Vimeo video in a new window
+        window.open($(this).attr('href'), 'videowindow', 'width=640,height=362,resizeable,scrollbars');
         return false;
     })
 
@@ -19,6 +23,11 @@ jQuery( function ( $ ) {
     $('#theme-upgrade #purchase-form').submit(function(){
         window.open('', 'paymentwindow', 'width=960,height=800,resizeable,scrollbars');
         this.target = 'paymentwindow';
+    });
+
+    $('#theme-upgrade #purchase-form.supporters-pack .download a').click(function(e){
+        e.preventDefault();
+        window.open($(this).attr('href'), 'paymentwindow', 'width=960,height=800,resizeable,scrollbars');
     });
 
     $('#theme-upgrade #purchase-form .options input[type=radio]').change(function(){
