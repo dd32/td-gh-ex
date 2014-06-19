@@ -3,8 +3,8 @@ Theme Name: Catch Kathmandu
 Theme URI: http://catchthemes.com/themes/catch-kathmandu
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledge WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND) and Japanese languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
-Version: 1.8.1
+Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND) and Japanese languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
+Version: 1.8.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging, holiday
@@ -126,9 +126,7 @@ a img {
 
 .site {
 	width: 1280px;
-	width: 128rem;
-	margin: 40px auto;
-	margin: 4rem auto;		
+	margin: 40px auto;		
 }
 #hgroup-wrap,
 #main-feat-img {
@@ -152,12 +150,10 @@ a img {
 	clear: both;
     float: left;
     width: 750px;
-	width: 75rem;
 }
 #secondary {
     float: right;
-    width: 380px;
-	width: 38rem;	
+    width: 380px;	
 }
 
 
@@ -166,13 +162,11 @@ a img {
 
 .container {
 	padding: 0 50px;
-	padding: 0 5rem;
 }
 #hgroup-wrap,
 .hentry,
 .comments-area article { 
 	padding-bottom: 50px;
-	padding-bottom: 5rem;
 }
 #site-logo,
 #hgroup,
@@ -180,7 +174,6 @@ a img {
 #supplementary,
 #main {
 	padding-top: 50px;
-	padding-top: 5rem;
 }
 .page-links,
 .widget,
@@ -192,21 +185,16 @@ blockquote,
 .comments-title, #reply-title,
 #respond {
 	margin-bottom: 50px;
-	margin-bottom: 5rem;
 }
 #homepage-message {
 	padding-top: 30px;
-	padding-top: 3rem;
 	padding-bottom: 30px;
-	padding-bottom: 3rem;
 }
 #homepage-message .right-section a {
-	padding: 1rem 3rem;
 	padding: 10px 30px;
 }
 .single-format-gallery .entry-meta {
 	margin-top: 30px;
-	margin-top: 3rem;
 }
 article.sticky .featured-sticky,
 .page-header,
@@ -218,23 +206,19 @@ p,
 .page-link,
 .single-attachment .entry-attachment img {
 	margin-bottom: 30px;
-	margin-bottom: 3rem;
 }
 .entry-header,
 article.format-aside .entry-title,
 .comments-area article header,
 .widget-feat-content {
-	margin-bottom: 20px;
-	margin-bottom: 2rem;	
+	margin-bottom: 20px;	
 }
 .page .entry-header,
 .widget-title {
 	margin-bottom: 10px;
-	margin-bottom: 1rem;
 }
 #header-right ul.social-profile li {
 	margin: 10px 0 0 10px;
-	margin: 1rem 0 0 1rem;
 }
 #header-right .widget,
 #featured-post .entry-header {
@@ -242,31 +226,25 @@ article.format-aside .entry-title,
 }
 #header-right .widget {
 	margin-top: 15px;
-	margin-top: 1.5rem;
 }
 #header-right .widget.widget_catchkathmandu_social_widget {
 	margin-top: 10px;
-	margin-top: 1rem;
 }
 #site-generator .site-info {
 	padding: 30px 0;
-	padding: 3rem 0;
 }
 .entry-header .entry-title {
 	padding-bottom: 10px;
-	padding-bottom: 1rem;
 }
 .page .entry-header .entry-title,
 .tag-post-formats .entry-header .entry-title{
 	padding-bottom: 0;
 }
 #secondary .widget {
-    padding: 30px 40px;	
-	padding: 3rem 4rem;	
+    padding: 30px 40px;		
 }
 #secondary .widget.widget_catchkathmandu_social_widget {
-    padding: 30px 40px 20px;	
-	padding: 3rem 4rem 2rem;		
+    padding: 30px 40px 20px;		
 }
 
 
@@ -412,7 +390,6 @@ textarea {
 	font-size: 100%; /* Corrects font size not being inherited in all browsers */
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	padding: 10px;
-	padding: 1rem;
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
@@ -428,7 +405,6 @@ input[type="reset"],
 article.post-password-required input[type=submit],
 li.bypostauthor cite span {
 	padding: 12px 20px 10px;
-	padding: 1.2rem 2rem 1rem;
 	font-size: 14px;
 	font-size: 1.4rem;
 	line-height: 1.5;
@@ -506,7 +482,6 @@ textarea:focus {
 input[type=text],
 input[type=email] {
 	padding: 10px;
-	padding: 1rem;
 	width: 60%;
 }
 textarea {
@@ -641,14 +616,12 @@ img#wpstats {
 	line-height: 45px;
 	line-height: 4.5rem;
 	padding: 0 20px;
-	padding: 0 2rem;
 	text-decoration: none;
 	white-space: nowrap;	
 }
 #secondary-menu ul.menu a {
 	color: #fff;
 	padding: 5px 25px;
-	padding: 0.5rem 2.5rem;	
 }
 #footer-menu ul.menu a {
 	color: #ccc;	
@@ -665,7 +638,6 @@ img#wpstats {
 	line-height: 2.3rem;
 	height: auto;
 	padding: 10px 19px;
-	padding: 1rem 1.9rem;
 	width: 168px;
 	white-space: normal;	
 }
@@ -679,15 +651,13 @@ img#wpstats {
 	margin: 0;
 	position: absolute;
 	top: 45px;
-	top: 4.5rem;
 	left: 0;
 	list-style: none;
 	width: 205px;
 	z-index: 99999;
 }
 #secondary-menu ul.menu ul {
-	top: 55px;
-	top: 5.5rem;	
+	top: 55px;	
 }
 .header-sidebar .widget ul.menu ul ul,
 #secondary-menu ul.menu ul ul {
@@ -876,14 +846,10 @@ img#wpstats {
 	border: 1px solid transparent;
 	color: #fff;
 	width: 350px;
-	width: 35rem;
 	padding: 10px 25px 15px;
-	padding: 1rem 2.5rem 1.5rem;
 	position: absolute;
 	bottom: 50px;
-	bottom: 5rem;
 	left: 50px;
-	left: 5rem;
 }
 #main-slider .entry-container:hover {
 	background: #21759b; /* Show a solid color for older browsers */
@@ -935,9 +901,8 @@ img#wpstats {
 	font-weight: 600;
 	line-height:24px;
 	margin: 0 4px;
-	margin: 0 0.4rem;
-	text-indent:-48px;
-	overflow:hidden;
+	text-indent: -48px;
+	overflow: hidden;
 }
 #controllers a:hover, 
 #controllers a.active {
@@ -1027,17 +992,14 @@ img#wpstats {
 }
 #featured-post figure {
 	margin-bottom: 15px;
-	margin-bottom: 1.5rem;
 }
 #featured-post #feature-heading {
 	border-bottom: 1px solid #eee;
 	margin-bottom: 20px;
-	margin-bottom: 2rem;
 }
 #featured-post .entry-title {
 	color: #222;
 	padding-bottom: 5px;
-	padding-bottom: 0.5rem;
 }	
 #featured-post .post {
     display: inline;
@@ -1114,7 +1076,6 @@ img#wpstats {
 .comment-content ul,
 .mu_register ul {
 	margin: 0 0 24px;
-	margin: 0 0 2.4rem;
 	line-height: 1.7;
 }
 .entry-content ul ul,
@@ -1140,9 +1101,7 @@ img#wpstats {
 .comment-content li,
 .mu_register li {
 	margin: 0 0 0 36px;
-	margin: 0 0 0 3.6rem;
 }
-
 .entry-content h1,
 .comment-content h1 {
 	font-size: 24px;
@@ -1165,7 +1124,6 @@ img#wpstats {
 .entry-content h3,
 .comment-content h3 {
 	margin-bottom: 10px;
-	margin-bottom: 1rem;
 }
 .entry-content h4,
 .comment-content h4 { 
@@ -1191,7 +1149,6 @@ img#wpstats {
 .comment-content td {
     border-top: 1px solid #eee;
     padding: 10px 10px 8px 0;
-	padding: 1rem 1rem 0.8rem 0;
 }
 
 
@@ -1226,7 +1183,6 @@ img#wpstats {
 }
 .error404 .searchform {
 	margin-bottom: 30px;
-	margin-bottom: 3rem;
 }
 .error404 .site-content article {
 	border-bottom: 0;
@@ -1267,9 +1223,7 @@ article.format-aside .entry-title a:hover {
 }
 article.format-aside .aside {
 	margin-bottom: 30px;
-	margin-bottom: 3rem;
 	padding: 30px;
-	padding: 3rem;
 	background: #d2e0f9;
 	border-left: 22px solid #a8bfe8;
 }
@@ -1295,9 +1249,7 @@ article.format-aside p:last-child {
 }
 article .entry-format {
 	margin-top: 5px;
-	margin-top: 0.5rem;
 	padding: 0 10px;
-	padding: 0 1rem;
 	float: right;
 	font-size: 11px;
 	font-size: 1.1rem;
@@ -1354,7 +1306,6 @@ article.format-image .entry-title a:hover {
 blockquote {
 	display: block;
 	padding: 30px;
-	padding: 3rem;
 	color: #6a6a6a;
 	background: #efefef;
 }
@@ -1377,7 +1328,6 @@ article.format-status .entry-title {
 .format-status .entry-header img {
 	float: left;
 	margin-right: 15px;
-	margin-right: 1.5rem;
 }
 
 
@@ -1387,9 +1337,7 @@ article.format-status .entry-title {
 .chat-transcript {
     background-color: #efefef;
 	margin-bottom: 30px;
-    margin-bottom: 3rem;
 	padding: 0 30px 1px;
-    padding: 0 3rem 0.1rem;
 }
 .chat-author {
     color: #757575;
@@ -1398,8 +1346,7 @@ article.format-status .entry-title {
 }
 .chat-row {
     border-bottom: 1px solid #eee;
-    padding-top: 30px;
-	padding-top: 3rem;	
+    padding-top: 30px;	
 }
 .chat-row:last-child {
 	border: none;
@@ -1443,7 +1390,6 @@ a:hover img.wp-post-image {
 }
 .entry-header img.wp-post-image {
 	margin-bottom: 15px;
-	margin-bottom: 1.5rem;	
 }
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -1464,9 +1410,7 @@ img.alignright,
 .wp-caption.alignleft,
 .wp-caption.alignright {
 	margin-top: 8px;
-	margin-top: 0.8rem;
 	margin-bottom: 10px;
-	margin-bottom: 1rem;
 }
 .wp-caption img {
 	display: block;
@@ -1483,7 +1427,6 @@ img.alignright,
 }
 .wp-caption .wp-caption-text {
 	margin: 10px auto;
-	margin: 1rem auto;
 	max-width: 98%;
 }
 .gallery-item a,
@@ -1544,7 +1487,6 @@ object {
 }
 #image-navigation {
 	padding-top: 10px;
-	padding-top: 1rem;
 }
 
 
@@ -1581,7 +1523,6 @@ object {
 }
 #respond p {
 	margin-bottom: 20px;
-	margin-bottom: 2rem;
 }
 .comments-area article header {
 	overflow: hidden;
@@ -1596,7 +1537,6 @@ object {
 .comments-area article header time {
 	display: block;
 	margin-left: 80px;
-	margin-left: 8rem;
 }
 .comments-area article header cite {
 	font-style: normal;
@@ -1622,14 +1562,11 @@ object {
 }
 .commentlist .children {
 	margin-left: 48px;
-	margin-left: 4.8rem;
 }
 .comments-area li.bypostauthor cite span {
 	position: absolute;
 	margin-left: 5px;
-	margin-left: 0.5rem;
 	padding: 2px 5px 1px;
-	padding: 0.2rem 0.5rem 0.1rem;
 	font-size: 10px;
 	font-size: 1rem;
 }
@@ -1668,7 +1605,6 @@ li.bypostauthor cite span {
 }
 .widget-area .widget ul ul {
 	margin-left: 15px;
-	margin-left: 1.5rem;
 }
 /* Calendar Widget */
 #wp-calendar {
@@ -1680,7 +1616,6 @@ li.bypostauthor cite span {
 }
 #wp-calendar #next {
 	padding-right: 35px;
-	padding-right: 3.5rem;
 	text-align: right;
 }
 
@@ -1689,12 +1624,11 @@ li.bypostauthor cite span {
 input#s {
     background: url("images/search.png") no-repeat scroll 5px 6px transparent;
     height: 22px;
-	height: 2.2rem;
     padding: 5px 10px 5px 28px;
 	width: 85%;
 }
 #searchsubmit {
-	padding: 0.9rem 2rem;
+	padding: 9px 20px;
 	display: none;
 }
 
@@ -1716,11 +1650,9 @@ input#s {
 	-o-transition-property: width, background;
 	-o-transition-timing-function: ease;
 	width: 72px;
-	width: 7.2rem;
 }
 .header-sidebar #s:focus {
 	width: 166px;
-	width: 16.6rem;
 }
 .header-sidebar .widget-title {
 	font-size: 16px;
@@ -1752,7 +1684,6 @@ textarea {
 ul.social-profile {
 	list-style:none;
 	margin-left: -10px;
-	margin-left: -1rem;
 }
 .header-sidebar ul.social-profile {
 	float:right;
@@ -1761,13 +1692,12 @@ ul.social-profile li {
     display: inline-block;
 	float: left;
     margin: 0 0 10px 10px;
-	margin: 0 0 1rem 1rem;
 }
 ul.social-profile li a {
-	display:block;
-	background:url(images/social-profile.png) right bottom no-repeat;
-	width:33px;
-	height:33px;
+	display: block;
+	background: url("images/social-profile.png") right bottom no-repeat;
+	width: 33px;
+	height: 33px;
 	text-indent: -99999px;
 }
 ul.social-profile li.facebook a {
@@ -2034,7 +1964,6 @@ ul.social-profile li.custom-social a img {
 
 #masthead .breadcrumb {
 	padding-top: 25px;
-	padding-top: 2.5rem;
 }
 .breadcrumb ul {	
 	list-style: none;
