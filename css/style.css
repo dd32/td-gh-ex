@@ -95,7 +95,8 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 /* Text elements */
@@ -476,9 +477,11 @@ a:active {
 .hentry {
 	margin: 0 0 2em;
 }
-.byline,
 .updated {
 	display: none;
+}
+.byline {
+	display: inline;
 }
 .single .byline,
 .group-blog .byline {
@@ -487,7 +490,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 2em 0 0;
 }
 .page-links {
 	clear: both;

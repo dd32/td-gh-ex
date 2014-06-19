@@ -299,7 +299,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 	{
 		
 		$generate_settings = get_option( 'generate_settings' );
-		if ( !empty( $generate_settings['header_background_color'] ) ) :
+		if ( !empty( $generate_settings['site_title_color'] ) ) :
 			$generate_settings = get_option( 'generate_settings', generate_get_color_defaults() );
 		else :
 			$generate_settings = generate_get_color_defaults();

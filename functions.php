@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1200; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.7');
+define( 'GENERATE_VERSION', '1.0.8');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -72,6 +72,9 @@ endif; // generate_setup
 function generate_get_defaults()
 {
 	$generate_defaults = array(
+		'hide_title' => '',
+		'hide_tagline' => '',
+		'logo' => '',
 		'container_width' => '1100',
 		'header_layout_setting' => 'fluid-header',
 		'center_header' => '',
@@ -185,17 +188,6 @@ function generate_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'generate-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
-}
-
-/**
- * Remove Open Sans from the front-end of the website
- * @since 0.1
- */
-add_action('wp_enqueue_scripts', 'generate_remove_wp_open_sans');
-function generate_remove_wp_open_sans() 
-{
-	wp_deregister_style( 'open-sans' );
-	wp_register_style( 'open-sans', false );
 }
 
 /**
@@ -462,4 +454,44 @@ function generate_featured_page_header_inside_single()
 		generate_featured_page_header_area('page-header-image-single');
 	
 	endif;
+}
+
+/** 
+ * Moving standalone db entries to generate_settings db entry
+ * @since 1.0.8
+ */
+add_action('after_setup_theme', 'generate_update_db_entries');
+function generate_update_db_entries() 
+{
+	$generate_settings = get_option('generate_settings');
+	
+	//Grab options
+	$generate_hide_title = get_theme_mod( 'generate_title' );
+	$generate_hide_tagline = get_theme_mod( 'generate_tagline' );
+	$generate_logo = get_theme_mod( 'generate_logo' );
+
+	if ( !empty( $generate_hide_title ) || !empty( $generate_hide_tagline ) || !empty( $generate_logo ) ) {
+	
+		// Set up array
+		$generate_new_entries = array();
+		
+		if ( !empty( $generate_hide_title ) ) {
+			$generate_new_entries['hide_title'] = $generate_hide_title;
+		}
+		
+		if ( !empty( $generate_hide_tagline ) ) {
+			$generate_new_entries['hide_tagline'] = $generate_hide_tagline;
+		}
+		
+		if ( !empty( $generate_logo ) ) {
+			$generate_new_entries['logo'] = $generate_logo;
+		}
+		
+		// Update options based on the above
+		$generate_new_entry_settings = wp_parse_args( $generate_new_entries, $generate_settings );
+		update_option( 'generate_settings', $generate_new_entry_settings );
+		remove_theme_mod( 'generate_title' );
+		remove_theme_mod( 'generate_tagline' );
+		remove_theme_mod( 'generate_logo' );
+	}
 }

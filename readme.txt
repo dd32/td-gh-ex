@@ -33,9 +33,7 @@ GeneratePress is licensed under the GNU General Public License v2 or later
 
 More details here: http://www.gnu.org/licenses/gpl-2.0.html
 
-Screenshot images:
+Screenshot images are all licensed under CC0 1.0 Universal - http://creativecommons.org/publicdomain/zero/1.0/deed.en
+http://pixabay.com/en/road-asphalt-space-sky-clouds-220058/
 http://pixabay.com/en/chicago-skyline-tall-buildings-343941/
-http://pixabay.com/en/new-york-city-brooklyn-bridge-night-336475/
 http://pixabay.com/en/water-wave-drip-liquid-321847/
-http://pixabay.com/en/pasque-flower-common-pasque-flower-323193/
-http://pixabay.com/en/leaf-leafs-colorful-green-macro-318667/

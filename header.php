@@ -14,7 +14,10 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php wp_head(); ?>
+<?php 
+wp_head();
+$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+?>
 </head>
 
 <body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
@@ -29,20 +32,20 @@
 				</div>
 			<?php endif; // end sidebar widget area ?>
 		
-			<?php if ( !get_theme_mod( 'generate_title' ) || !get_theme_mod( 'generate_tagline' ) ) : ?>
+			<?php if ( empty( $generate_settings['hide_title'] ) || empty( $generate_settings['hide_tagline'] ) ) : ?>
 				<div class="site-branding">
-				<?php if ( !get_theme_mod( 'generate_title' ) ) : ?>
+				<?php if ( empty( $generate_settings['hide_title'] ) ) : ?>
 					<p class="main-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif;
 				
-				if ( !get_theme_mod( 'generate_tagline' ) ) : ?>
+				if ( empty( $generate_settings['hide_tagline'] ) ) : ?>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 				<?php endif; ?>
 				</div>
 			<?php endif;
 			
-			if ( get_theme_mod( 'generate_logo' ) ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="header-image" src="<?php echo get_theme_mod( 'generate_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+			if ( !empty( $generate_settings['logo'] ) ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="header-image" src="<?php echo $generate_settings['logo']; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 			<?php endif; ?>
 			<?php do_action( 'generate_after_header_content'); ?>
 		</div><!-- .inside-header -->

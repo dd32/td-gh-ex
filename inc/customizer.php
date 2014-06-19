@@ -17,6 +17,7 @@ function generate_customize_register( $wp_customize ) {
 
 	// Load custom controls
 	require_once GENERATE_DIR . '/inc/controls.php';
+	require_once GENERATE_DIR . '/inc/sanitize.php';
 	
 	// $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -34,10 +35,17 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('nav');
 	
 	// Remove title
-	$wp_customize->add_setting('generate_title');
+	$wp_customize->add_setting( 
+		'generate_settings[hide_title]', 
+		array(
+			'default' => $defaults['hide_title'],
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_checkbox'
+		)
+	);
 	
 	$wp_customize->add_control(
-		'generate_title',
+		'generate_settings[hide_title]',
 		array(
 			'type' => 'checkbox',
 			'label' => __('Hide site title','generate'),
@@ -46,10 +54,17 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting('generate_tagline');
+	$wp_customize->add_setting( 
+		'generate_settings[hide_tagline]', 
+		array(
+			'default' => $defaults['hide_tagline'],
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_checkbox'
+		)
+	);
 	
 	$wp_customize->add_control(
-		'generate_tagline',
+		'generate_settings[hide_tagline]',
 		array(
 			'type' => 'checkbox',
 			'label' => __('Hide site tagline','generate'),
@@ -58,16 +73,22 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 'generate_logo' );
+	$wp_customize->add_setting( 
+		'generate_settings[logo]', 
+		array(
+			'default' => $defaults['logo'],
+			'type' => 'option'
+		)
+	);
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
-			'generate_logo',
+			'generate_settings[logo]',
 			array(
 				'label' => __('Logo','generate'),
 				'section' => 'title_tagline',
-				'settings' => 'generate_logo'
+				'settings' => 'generate_settings[logo]'
 			)
 		)
 	);
@@ -117,8 +138,8 @@ function generate_customize_register( $wp_customize ) {
 			'generate_settings[' . $color['slug'] . ']', array(
 				'default' => $color['default'],
 				'type' => 'option', 
-				'capability' => 
-				'edit_theme_options'
+				'capability' => 'edit_theme_options',
+				'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 		// CONTROLS
@@ -176,7 +197,8 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[container_width]', 
 		array(
 			'default' => $defaults['container_width'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_integer'
 		)
 	);
 		
@@ -200,7 +222,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['header_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_header_layout'
 		)
 	);
 	
@@ -227,7 +250,8 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[center_header]', 
 		array(
 			'default' => $defaults['center_header'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_checkbox'
 		)
 	);
 	
@@ -248,7 +272,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['nav_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_nav_layout'
 		)
 	);
 	
@@ -278,7 +303,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['nav_position_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_nav_position'
 		)
 	);
 	
@@ -309,7 +335,8 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[center_nav]', 
 		array(
 			'default' => $defaults['center_nav'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_checkbox'
 		)
 	);
 	
@@ -330,7 +357,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['content_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_content_layout'
 		)
 	);
 	
@@ -360,7 +388,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_sidebar_layout'
 		)
 	);
 	
@@ -394,7 +423,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['blog_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_sidebar_layout'
 		)
 	);
 	
@@ -428,7 +458,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['single_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_sidebar_layout'
 		)
 	);
 	
@@ -462,7 +493,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['footer_layout_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_footer_layout'
 		)
 	);
 	
@@ -492,7 +524,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['footer_widget_setting'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_footer_widgets'
 		)
 	);
 	
@@ -538,7 +571,8 @@ function generate_customize_register( $wp_customize ) {
 		// Arguments array
 		array(
 			'default' => $defaults['post_content'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_blog_excerpt'
 		)
 	);
 	
@@ -610,11 +644,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 }
 
 /**
- * Class TTFMAKE_Customize_Misc_Control
+ * Class Generate_Customize_Misc_Control
  *
  * Control for adding arbitrary HTML to a Customizer section.
  *
- * @since 1.0.0.
+ * @since 1.0.7
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 	class Generate_Customize_Misc_Control extends WP_Customize_Control {
@@ -623,16 +657,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public $url = '';
 		public $group = '';
 
-		/**
-		 * Render the description and title for the section.
-		 *
-		 * Prints arbitrary HTML to a customizer section. This provides useful hints for how to properly set some custom
-		 * options for optimal performance for the option.
-		 *
-		 * @since  1.0.0.
-		 *
-		 * @return void
-		 */
 		public function render_content() {
 			switch ( $this->type ) {
 				default:
@@ -649,8 +673,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					echo '<p class="description" style="margin-top:5px;">' . $this->description . '</p>';
 					break;
 					
-					
-
 				case 'line' :
 					echo '<hr />';
 					break;

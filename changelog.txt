@@ -9,6 +9,14 @@ Changelog Legend:
 [!] = Bugs
 
 ----
+(6/18/2014) - 1.0.8
+[+] Sanitization for all Customizer options
+[!] Allow transparent header background
+[*] Hide title, hide tagline and logo options moved into generate_settings db entry
+[!] Fix bug regarding deleting options in GeneratePress options page
+[*] Screenshot updated
+
+----
 
 (6/7/2014) - 1.0.7
 
