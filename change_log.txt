@@ -1,1 +1,8 @@
-Version 0.1
+Version 1.0
+
+	i)   Theme Submitted for approval
+	
+Version 1.0.1
+
+	i)  screenshot.png modified.
+	ii) changes in style.css
