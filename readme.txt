@@ -30,7 +30,7 @@ You can add your own background(image) via  WordPress Dashboard > Appearance > B
 
 HOW TO SET MENU
 ===============
-PrivateBusiness offers a menu that can contain subpages (2 levels deep).
+PrivateBusiness offers a menu that can contain subpages (2 levels deep) and a single level header menu.
 You can create and set menu via WordPress Dashboard > Appearance > Menu's.
 
 
@@ -52,6 +52,7 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 Scripts
 =======
 Script: nav.js
+Script: nav-secondary
 Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
 Copyright author: John Hartley
 Author URI: http://maxfoundry.com/blog/author/johnbhartley 

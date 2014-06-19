@@ -15,8 +15,9 @@
 		load_theme_textdomain('privatebusiness', get_template_directory() . '/languages');  
 
 	// Register Menu
-		register_nav_menus( 
-		array( 'primary' => __( 'Primary Navigation', 'privatebusiness' ), 
+		register_nav_menus( array( 
+			'primary' => __( 'Primary Navigation', 'privatebusiness' ),
+			'secondary' => __( 'Secondary Navigation', 'privatebusiness' ), 
 	 	) ); 
 
 	// Add editor styles
@@ -47,10 +48,11 @@
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 300, 300 ); 
 
+	// Resize single page thumbnail
+		add_image_size( 'single', 300, 300 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
-
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
@@ -90,6 +92,7 @@
 	function privatebusiness_scripts() {
 			wp_enqueue_style( 'privatebusiness-style', get_stylesheet_uri() );
 			wp_enqueue_script( 'privatebusiness-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_script( 'privatebusiness-nav-secondary', get_template_directory_uri() . '/js/nav-secondary.js', array( 'jquery' ) );
 			wp_enqueue_style( 'privatebusiness-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

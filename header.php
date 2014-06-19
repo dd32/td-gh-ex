@@ -36,6 +36,9 @@
 			<h4><?php bloginfo('description'); ?></h4> 
 		<?php endif; ?>
 	</div>
+	<?php if ( has_nav_menu( 'secondary' ) ) : ?> 
+		<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'container_class' => 'nav-head-secondary' ) ); ?>
+	<?php endif; ?>
 </div>
 
 <div id="header-second">

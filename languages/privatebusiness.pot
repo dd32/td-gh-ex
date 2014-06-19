@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: privatebusiness\n"
+"Project-Id-Version: PrivateBusiness\n"
 "POT-Creation-Date: 2014-03-06 19:24+0100\n"
 "PO-Revision-Date: 2014-03-06 19:26+0100\n"
 "Last-Translator: \n"
@@ -175,6 +175,11 @@ msgstr ""
 #: functions.php:105
 #@ privatebusiness
 msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:20
+#@ privatebusiness
+msgid "Secondary Navigation"
 msgstr ""
 
 #: functions.php:107

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v2.3\n"
+"Project-Id-Version: PrivateBusiness v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 09:24:04+0000\n"
+"PO-Revision-Date: 2014-06-18 16:53:45+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,16 +78,16 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
+#: functions.php:107
 #@ privatebusiness
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
-#: functions.php:147
+#: functions.php:109
+#: functions.php:119
+#: functions.php:129
+#: functions.php:139
+#: functions.php:149
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -99,7 +99,7 @@ msgstr "Selecteer widgets van de rechterkant."
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:40
+#: functions.php:41
 #@ privatebusiness
 msgid "Boats"
 msgstr "Boten"
@@ -109,8 +109,8 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:21
-#: page.php:19
+#: page-full.php:26
+#: page.php:24
 #: single.php:38
 #@ privatebusiness
 msgid "Edit"
@@ -137,12 +137,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:135
+#: functions.php:137
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:145
+#: functions.php:147
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -160,23 +160,23 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:169
-#: functions.php:175
+#: functions.php:177
+#: functions.php:183
 #@ privatebusiness
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:171
+#: functions.php:179
 #@ privatebusiness
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: functions.php:115
+#: functions.php:117
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:125
+#: functions.php:127
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
@@ -263,4 +263,9 @@ msgstr "Tags %s"
 #@ privatebusiness
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
+
+#: functions.php:20
+#@ privatebusiness
+msgid "Secondary Navigation"
+msgstr "Headermenu"
 

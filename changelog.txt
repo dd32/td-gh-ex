@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 2.4 - june 2014
+- added single level header navigation
+- added featured image on single page
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 PrivateBusiness version 2.3 - may 2014
 - changed size of featured image
 - reduced space between elements
