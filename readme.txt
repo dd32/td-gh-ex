@@ -51,5 +51,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
+= Version 1.0.1 =
+* z-index value adjustment for slider elements.
+* Featured images (large) now will appear for the archive/categoery view.
+* CSS adjustment for slider navigation arrow.
+
 = Version 1.0 =
 * All brand new.

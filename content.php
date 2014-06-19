@@ -23,6 +23,18 @@
 		endif; 
 	?>
 
+	<?php
+		if( has_post_thumbnail() ) {
+			$image = '';        			
+     		$title_attribute = get_the_title( $post->ID );
+     		$image .= '<figure class="post-featured-image">';
+  			$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
+  			$image .= get_the_post_thumbnail( $post->ID, 'featured-blog-large', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+  			$image .= '</figure>';
+  			echo $image;
+  		}
+	?>
+
 	<div class="entry-content clearfix">
 		<?php
 			global $more;
