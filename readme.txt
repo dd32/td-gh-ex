@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese and French. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French and Brazilian Portuguese. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -17,6 +17,7 @@ Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@
 Added Translation for Russian - Jose Rainbow (youlold@gmail.com)
 Added Translation for Japanese - Key Saito (key@keyspace.info)
 Added Translation for French by Rico (Email: postmaster@web-automobile.com) and Sebastian Chamusard (admin78@orange.fr)
+Added Translation for Brazilian Portuguese by Valdir Trombini (Email: valdirtrombini@hotmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -56,6 +57,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+version 1.5.4
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+
 version 1.5.3
 * Removed rem in width, padding and margins, now only in font sizes css
 
