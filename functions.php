@@ -347,7 +347,7 @@ function thebox_excerpt($num) {
 	$limit = $num+1;
 	$excerpt = explode(' ', get_the_excerpt(), $limit);
 	array_pop($excerpt);
-	$excerpt = implode(" ",$excerpt)."... <br><a class=\"more-link\" href='" .get_permalink($post->ID) ." '>".__('Read more', 'short-news')." &raquo;</a>";
+	$excerpt = implode(" ",$excerpt)."... <br><a class=\"more-link\" href='" .get_permalink($post->ID) ." '>".__('Read more', 'thebox')." &raquo;</a>";
 	echo $excerpt;
     }
     

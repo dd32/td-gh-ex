@@ -39,23 +39,23 @@
 			<div class="social-links">
 			
 				<?php if ( $options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo $options['facebookurl']; ?>" class="facebook" alt="facebook"><span class="icon-facebook"></span> <?php // _e( 'Facebook', 'short-news' ); ?></a>
+					<a href="<?php echo $options['facebookurl']; ?>" class="facebook" alt="facebook"><span class="icon-facebook"></span></a>
 				<?php endif; ?>
 				
 				<?php if ( $options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo $options['twitterurl']; ?>" class="twitter" alt="twitter"><span class="icon-twitter"></span> <?php // _e( 'Twitter', 'short-news' ); ?></a>
+					<a href="<?php echo $options['twitterurl']; ?>" class="twitter" alt="twitter"><span class="icon-twitter"></span></a>
 				<?php endif; ?>
 
 				<?php if ( $options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo $options['googleplusurl']; ?>" class="googleplus" alt="google plus"><span class="icon-google-plus"></span> <?php // _e( 'Google +', 'short-news' ); ?></a>
+					<a href="<?php echo $options['googleplusurl']; ?>" class="googleplus" alt="google plus"><span class="icon-google-plus"></span></a>
 				<?php endif; ?>
 				
 				<?php if ( $options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo $options['instagramurl']; ?>" class="instagram" alt="instagram"><span class="icon-instagram"></span> <?php // _e( 'Instagram', 'short-news' ); ?></a>
+					<a href="<?php echo $options['instagramurl']; ?>" class="instagram" alt="instagram"><span class="icon-instagram"></span></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $options['hiderss'] ) : ?>
-					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss"><span class="icon-rss" alt="rss"></span> <?php // _e( 'RSS Feed', 'short-news' ); ?></a>
+					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss"><span class="icon-rss" alt="rss"></span></a>
 				<?php endif; ?>
 				
 			</div><!-- .social-links-->
