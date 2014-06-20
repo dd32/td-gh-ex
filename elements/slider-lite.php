@@ -69,11 +69,11 @@ function cyberchimps_slider_lite_page_options() {
             'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
-            'type'  => 'text',
-            'id'    => 'cyberchimps_slider_lite_slide_three_url',
-            'class' => '',
-            'name'  => __( 'Slide Three Link', 'cyberchimps_elements' ),
-            'std'   => 'http://cyberchimps.com'
+            'type'	=> 'text',
+            'id'	=> 'cyberchimps_slider_lite_slide_three_url',
+            'class'	=> '',
+            'name'	=> __( 'Slide Three Link', 'cyberchimps_elements' ),
+            'std'	=> 'http://cyberchimps.com'
         )
 
     );
