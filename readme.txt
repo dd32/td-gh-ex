@@ -1,7 +1,7 @@
 I.Theme
 
 Solon, Copyright 2014 solon.com
-Solon is licensed under GNU General Public License V3. You cand find a copy of it in the license.txt file.
+Solon is licensed under GNU General Public License V2 or later. You cand find a copy of it in the license.txt file.
 
 II. Resources
 

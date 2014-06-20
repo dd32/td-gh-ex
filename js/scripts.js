@@ -16,7 +16,7 @@ jQuery(function($) {
 jQuery(function($) {
 	$("html").niceScroll({
 		cursorborder:"", 
-		cursorcolor:"#2A363B", 
+		cursorcolor:"#525252", 
 		boxzoom:true, 
 		cursoropacitymin: 0.5,
 		cursoropacitymax: 1,
