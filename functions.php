@@ -551,6 +551,7 @@ function adventure_customize($wp_customize) {
         'commentsclosed_setting'        => 'on',
         'comments_setting'			    => 'both',
         'contentbackground_setting'     => '.80',
+        'dateformat_setting'            => '',
         'display_date_setting'          => 'on',
         'display_excerpt_setting'       => 'off',
         'display_post_title_setting'    => 'on',
@@ -911,6 +912,22 @@ function adventure_customize($wp_customize) {
 			'.10'			=> '10',
 			'.05'			=> '5',
 			'.00'			=> '0',), ));
+
+	// Settings for the Date
+	$wp_customize->add_control( 'dateformat_control', array(
+		'label'				=> __('Format for Date', 'localize_adventure'),
+		'section'			=> 'content_section',
+		'settings'			=> 'dateformat_setting',
+		'type'				=> 'select',
+		'choices'			=> array(
+			''			    => __('May 14th (Default)', 'localize_adventure'),
+			'M j'    		=> __('May 14', 'localize_adventure'),
+			'M jS, Y'    	=> __('May 14th, 2014', 'localize_adventure'),
+			'M j, Y'	    => __('May 14, 2014', 'localize_adventure'),
+			'jS M, Y'     	=> __('14th May, 2014', 'localize_adventure'),
+			'Y, M js'       => __('2014, May 14th', 'localize_adventure'),
+			'Y/m/d'     	=> __('2014/5/14', 'localize_adventure'),
+			'd/m/Y'         => __('14/5/2014', 'localize_adventure'), ), ));
 
 	// Settings for the Previous & Next Post Link
 	$wp_customize->add_setting( 'previousnext_setting', array(
