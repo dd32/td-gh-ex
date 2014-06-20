@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.5 - june 2014
+- removed featured image on single post
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 GridBulletin version 1.4 - june 2014
 - changed size of single post image
 - added featured image on single page

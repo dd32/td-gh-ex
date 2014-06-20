@@ -6,12 +6,11 @@
 
 <div id="footer">
 
-<div id="widgets-container"> 
+<?php if ( is_active_sidebar( 'footer-home-right' ) || is_active_sidebar( 'footer-home-middle' ) || is_active_sidebar( 'footer-home-left' ) ) { ?>
+<div id="footer-widgets">
 
 	<div class="footer-left"> 
-
 		<?php if ( is_active_sidebar( 'footer-home-left' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-home-left' ); ?>
 
 		<?php else : ?> 
@@ -21,24 +20,23 @@
 	<div class="footer-middle"> 
 
 		<?php if ( is_active_sidebar( 'footer-home-middle' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-home-middle' ); ?>
 
 		<?php else : ?> 
 		<?php endif; ?> 
 	</div>
 
-	<div class="footer-right"> 
 
+	<div class="footer-right"> 
 		<?php if ( is_active_sidebar( 'footer-home-right' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-home-right' ); ?>
 
 		<?php else : ?> 
 		<?php endif; ?> 
 	</div>
-
+		
 </div>
+<?php } ?> 
 
 	<div class="site-info">
 		<?php _e('Copyright', 'gridbulletin'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 

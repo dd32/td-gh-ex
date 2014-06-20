@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 1.4
+Version: 1.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -76,7 +76,7 @@ table {
 /* GENERAL */
 body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 #container {max-width: 1200px; background:#fff; border:0; margin: 10px auto 10px; padding: 20px 0 0; text-align: left; word-wrap: break-word; border-top-right-radius:10px;-moz-border-top-right-radius:10px; border-top-left-radius:10px;-moz-border-top-left-radius:10px;}
-#content {width: 62%; float:left; padding: 20px 0; word-wrap: break-word;}
+#content {width: 64%; float:left; padding: 20px 0; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
@@ -95,7 +95,7 @@ big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #ccc; background: #f8f8f8; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
-p {padding:0 0 15px;}
+p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px 10px;}
@@ -122,11 +122,11 @@ select {max-width:100%;}
 
 #header-second {margin:0; padding:0; background:none;}
 #header-second:after {content:''; display:block; clear:both;}
-#header-second .header-img {width: 100%; height: auto; margin:0; padding:0;}
+#header-second .header-img {width: 100%; height: auto;}
 
 
 /* HEADER MENU */
-.nav-head {background:#0066ff;margin:10px 0 0; clear:both; padding:0; text-align:left;}
+.nav-head {background:#0066ff; margin:10px 0 0; clear:both; padding:0; text-align:left;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0 10px; margin:0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
@@ -153,12 +153,12 @@ select {max-width:100%;}
 
 /* POST */
 .post-title {clear:both; margin:5px 0 10px; text-align:center; line-height:1.5em; font-weight:bold;}
-.excerpt {padding:5px;}
+.excerpt {padding:5px 5px 10px;}
 .sticky {text-align:center; clear:both; color:#fff; background: #ec6500; margin: 10px 0 10px; padding:5px; border:0;}
 .postmetadata {clear:both; margin:0 0 10px; padding:2px 10px; background: #0066ff; color:#fff;}
 .postmetadata a{color:#fff;}
 
-.post-nav {padding: 5px 0; clear:both;}
+.post-nav {padding: 10px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
@@ -183,6 +183,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
+.wp-post-image {display:block; margin: 0 auto 0;}
 .single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
@@ -211,11 +212,11 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em; margin:10px 0 0;} 
+#commentform input[type="submit"]{width:9em;} 
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width: 36%; float: right; margin:20px 2% 0 0; padding:0; word-wrap: break-word;}
+#sidebar {width: 34%; float: right; margin:20px 2% 0 0; padding:0; word-wrap: break-word;}
 .widget {padding:15px 15px 15px; margin: 0 0 20px; background: #eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px;-moz-border-top-right-radius:10px; border-top-left-radius:10px;-moz-border-top-left-radius:10px;}
 .widgettitle {margin:0 0 10px;}
 #wp-calendar {width:90%;}
@@ -225,8 +226,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #footer {clear:both; background:none; color:#333; padding:0;}
 #footer .site-info {text-align:center; clear:both; padding:10px 0; background:#0066ff; color:#fff;}
 #footer .site-info a{color:#fff;}
-#widgets-container {padding: 0 2%;}
-#widgets-container:after {content:''; display:block; clear:both;}
+#footer-widgets {padding: 0 2%;}
+#footer-widgets:after {content:''; display:block; clear:both;}
 
 .footer-left {float: left; width: 32%; margin: 10px 0 0; padding:0; word-wrap: break-word;}
 .footer-middle {float: left; width: 32%; margin:10px 2% 0; padding:0; word-wrap: break-word;}
@@ -236,24 +237,26 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* Mobile */
 @media screen and (max-width: 767px) { 
 	body {font-size:1em; line-height:1.2em;}
-	#container {width: 94%; padding:10px; margin:0 auto 0;}
+	p {text-align:left;}
+	#container {width: 94%; padding:5px 2%; margin:5px auto 5px;}
 	#content, #content-full {width:100%; padding:5px 0; margin:5px 0; background:none;}
-	#header-first .logo {padding: 10px 0; text-align:center;}
+	#header-first {padding: 0;}
+	#header-first .logo {padding: 10px 0;}
 	#header-first .logo h1 {font-size:2em;}
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
-	#header-second .header-img {width: 100%; height: auto;}
-	#sidebar {width:100%; margin:0; padding:0; float:left;}
+	#header-second .header-img {margin: 10px 0 0;}
+	#sidebar {width:100%; margin:0; float:left;}
 	#footer {width:100%;}
-	#widgets-container {padding:0;}
+	#footer-widgets {padding:0;}
 	.article, .article-full {padding:0; margin:0; border:0; background:none;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
-	.wp-post-image {float:left; width:50%; margin: 10px 10px 10px 0;}
+	.wp-post-image {float:left; width:50%; margin: 10px 10px 5px 0;}
 	.single-image {float:left; width:50%; margin: 5px 10px 5px 0;}
-	.widget {margin: 10px 0 10px;}
+	.widget {margin: 10px 0;}
 	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
 	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
-	.footer-right, .footer-middle, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
+	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 	.nav-head ul {display: none;} 
-	.nav-head {padding:0; border:0;}
-	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #fff; background:#ec6500; border:0;}
+	.nav-head {margin:0;}
+	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #fff; background:#0066ff; border:0;}
 }

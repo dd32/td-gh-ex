@@ -9,7 +9,7 @@
 	// Set max content width for img, video, and more
 		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 650;
+		$content_width = 675;
 
 	// Make theme available for translation
 		load_theme_textdomain('gridbulletin', get_template_directory() . '/languages');  
