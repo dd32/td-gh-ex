@@ -75,14 +75,14 @@ function my_theme_register_required_plugins() {
         array(
             'name'      => 'Bootstrap Shortcodes for WordPress',
             'slug'      => 'bootstrap-3-shortcodes',
-            'required'  => true,
+            'required'  => false,
         ),
 		
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
             'name'      => 'Page Builder by SiteOrigin',
             'slug'      => 'siteorigin-panels',
-            'required'  => true,
+            'required'  => false,
         ),
 
     );
