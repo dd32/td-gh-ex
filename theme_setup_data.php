@@ -11,6 +11,7 @@
 function theme_data_setup()
 {
 	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
+	$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
 	return $rambo_theme_options=array(
 						
 			'front_page' => 'on',
@@ -60,7 +61,26 @@ function theme_data_setup()
 			'social_media_facebook_link' =>"https:www.facebook.com",
 			'social_media_linkedin_link' =>"http://linkedin.com/",
 			'social_media_google_plus' =>"https://plus.google.com/",
-					
+			
+			//Projects Section Settings
+			'home_projects_enabled' => 'on',
+			'project_heading_one' => 'Featured Portfolio Projects',
+			'project_tagline' => 'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			'project_one_thumb' => $project_img,
+			'project_one_title' => 'Lorem Ipsum',
+			'project_one_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+		
+		    'project_two_thumb' => $project_img,
+			'project_two_title' => 'Postao je popularan',
+			'project_two_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			
+			'project_three_thumb' => $project_img,
+			'project_three_title' => 'kojekakve promjene s',
+			'project_three_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			
+			'project_four_thumb' => $project_img,
+			'project_four_title' => 'kojekakve promjene s',
+			'project_four_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
 		);
 }
 ?>

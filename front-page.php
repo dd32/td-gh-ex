@@ -20,6 +20,9 @@
 	/****** get index service  ********/
 	get_template_part('index', 'service') ;
 	
+	/****** get index projects  ********/
+	get_template_part('index', 'projects') ;
+	
 	/****** get footer section *********/
 	get_footer(); 
 	}

@@ -21,7 +21,9 @@
 							<li><a href="#"  id="ui-id-2"><?php _e('Banner Setting','rambo');?></a><span></span>
 							</li>
 							<li><a href="#"  id="ui-id-3"><?php _e('Service Section','rambo');?></a><span></span>
-							</li>	
+							</li>
+							<li><a href="#"  id="ui-id-9"><?php _e('Projects Section','rambo');?></a><span></span>
+							</li>
 						</ul>
 					</li>
 					<li>
@@ -32,7 +34,8 @@
 					</li>
 					<li>
 						<div class="arrow"><div></div></div><a href="#" id="ui-id-8"><span class="icon upgrade"></span><?php _e('Upgrade To Premium','rambo');?></a>
-					</li>	
+					</li>
+						
 					<div id="nav-shadow"></div>
                 </ul>				
 				<!--most 1 tabs header_page_settings --> 
@@ -51,6 +54,8 @@
 				<?php require_once('pages/footer_social_media_settings.php'); ?>			
 				<!--most 8 tabs home_page_settings --> 
 				<?php require_once('pages/UpgradeToPro.php'); ?>
+				<!--most 9 tabs projects_page_settings --> 
+				<?php require_once('pages/projects_page.php'); ?>
 			</div>		
         </div>
 		<div class="webriti-submenu" id="webriti_submenu">			

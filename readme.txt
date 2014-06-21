@@ -85,12 +85,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.2.0
+1. Added Projects Section On HOME.
 @Version: 1.2
 1. front-page added version.
-@Version: 1.1.5.2
-1.SMALL FIX in default data.
-@Version: 1.1.5.1
-1.Word Break Issue for Post and Pages, fixed!!
 @Version: 1.1.5
 1. GPL screen shot added.
 @Version: 1.1.4
