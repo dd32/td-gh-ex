@@ -259,6 +259,9 @@ Description:
 		text-transform: uppercase;
 		font-family: 'Limelight', 'cursive';
 	}
+	.logo img{
+		margin: 0 auto;
+	}
 /*
 ** 4.0 - Navigation
 ** ----------------------------------------------------------------------------

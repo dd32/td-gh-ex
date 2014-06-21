@@ -16,7 +16,10 @@ get_header(); ?>
 	<!-- Breadcrumb -->
 	<section class="breadcrumb-wrapper" style="background: #F5F5F5; margin-bottom: 0px;">
 		<div class="container">
-			<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
+			<!-- Breadcrumbs -->
+			<?php if ( of_get_option( 'breadcrumbs' ) ) { ?>
+				<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
+			<?php } ?>
 		</div>
 	</section><!-- /breadcrumb-wrapper -->
 
@@ -35,11 +38,16 @@ get_header(); ?>
 					<div class="row">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<div class="col-sm-12 col-md-6 col-lg-12">
+							
 								<!-- Loop -->
 								<?php get_template_part('loop-single'); ?>
 								<!-- /Loop -->
 								
-								<?php comments_template(); ?>
+								<!-- Page Comment -->
+								<?php if ( of_get_option( 'page_comment' ) ) { ?>
+									<?php comments_template(); ?>
+								<?php } ?>
+							
 								
 							</div>
 						<?php endwhile; ?>

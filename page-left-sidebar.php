@@ -48,7 +48,10 @@
 								<?php get_template_part('loop-single'); ?>
 								<!-- /Loop -->
 								
-								<?php comments_template(); ?>
+								<!-- Page Comment -->
+								<?php if ( of_get_option( 'page_comment' ) ) { ?>
+									<?php comments_template(); ?>
+								<?php } ?>
 								
 							</div>
 						<?php endwhile; ?>

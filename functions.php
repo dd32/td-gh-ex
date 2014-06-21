@@ -121,6 +121,13 @@ Author URI: http://alisiddique.com/
 //	Custom Functions
 //	=================================================================
 	require_once( 'library/custom-function.php' );
+	
+//	Custom style and script
+//	=================================================================
+	function bnw_custom_setting() {
+		load_template( get_template_directory() . '/custom-styles-scripts.php' );
+	}
+	add_action( 'wp_head', 'bnw_custom_setting' );
 
 //	Theme OPTIONS FRAMEWORK
 //	=================================================================
@@ -130,8 +137,8 @@ Author URI: http://alisiddique.com/
 	* If you're loading from a child theme use stylesheet_directory
 	* instead of template_directory
 	*/
-	//define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/' );
-	//require_once( 'admin/options-framework.php' );
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/' );
+	require_once( 'admin/options-framework.php' );
 	
 	/*
 	 * This is an example of how to add custom scripts to the options panel.
@@ -140,8 +147,8 @@ Author URI: http://alisiddique.com/
 	 * You can delete it if you not using that option
 	 */
 	 
-	//add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
-	/*
+	add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
+	
 	function optionsframework_custom_scripts() { ?>
 
 	<script type="text/javascript">
@@ -170,5 +177,4 @@ Author URI: http://alisiddique.com/
 
 	<?php
 	}
-	*/
 /* DON'T DELETE THIS CLOSING TAG */ ?>
