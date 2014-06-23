@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 
-<!--[if lt IE 7 ]> <html class="ie6" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv/html5shiv.js"></script>
-<![endif]-->
 <!--[if IE 9 ]><html class="ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
 
 <head>
 
@@ -22,10 +16,29 @@
     <a class="skip-content" href="#main">Skip to content</a>
 <header id="site-header" class="site-header" role="banner">
 
-	<div class="title-info">
-		<?php get_template_part('logo')  ?>    
+    <?php
+
+    // if secondary menu is set, search bar is on, or any social icons are being used, display top-navigation
+    if( (has_nav_menu( 'secondary' )) || (get_theme_mod('search_input_setting') == 'show') || (get_theme_mod('social_icons_display_setting') != 'no') ) {
+        echo "<div class='top-navigation'>";
+
+            // add secondary menu if set
+            get_template_part( 'menu', 'secondary' );
+
+            // add search input if set
+            if(get_theme_mod('search_input_setting') == 'show'){
+                get_search_form();
+            }
+            if( (get_theme_mod('social_icons_display_setting') == 'header-footer') || (get_theme_mod('social_icons_display_setting') == 'header')){
+                ct_tracks_social_icons_output();
+            }
+        echo "</div>";
+    } ?>
+
+	<div id="title-info" class="title-info">
+		<?php get_template_part('logo')  ?>
 	</div>
-	
+
 	<?php get_template_part( 'menu', 'primary' ); // adds the primary menu ?>
 
 </header>

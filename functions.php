@@ -3,12 +3,13 @@
 // register and enqueue all of the scripts used by Aside
 function ct_tracks_load_javascript_files() {
 
-    wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
+    wp_register_style( 'ct-tracks-google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
 
     if(! is_admin() ) {
-        wp_enqueue_script('production', get_template_directory_uri() . '/js/build/production.min.js#ct_tracks_asyncload', array('jquery'),'', true);
-        wp_enqueue_style('google-fonts');
-        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js#ct_tracks_asyncload', array('jquery'),'', true);
+        wp_enqueue_style('ct-tracks-google-fonts');
+        wp_enqueue_style('ct-tracks-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
     }
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
     if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' ); 
@@ -42,7 +43,6 @@ function ct_tracks_theme_setup() {
     
 	/* Theme-supported features go here. */
     add_theme_support( 'hybrid-core-template-hierarchy' );
-    add_theme_support( 'hybrid-core-styles', array( 'style', 'reset', 'gallery' ) );
     add_theme_support( 'loop-pagination' );
     add_theme_support( 'cleaner-gallery' );
     add_theme_support( 'hybrid-core-widgets' );
@@ -51,7 +51,11 @@ function ct_tracks_theme_setup() {
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'automatic-feed-links' );
 
-    register_nav_menu('primary', __('Primary', 'tracks'));
+    register_nav_menus(array(
+        'primary' => __('Primary', 'tracks'),
+        'secondary' => __('Secondary', 'tracks'),
+        'footer' => __('Footer', 'tracks')
+    ));
     
     // adds the file with the customizer functionality
     require_once( trailingslashit( get_template_directory() ) . 'functions-admin.php' );
@@ -290,8 +294,10 @@ function ct_tracks_post_navigation() {
 // displays the social icons in the .entry-author div
 function ct_tracks_author_social_icons() {
 
-	$social_sites = ct_tracks_create_social_array();
-    
+    // array of social media site names
+    $social_sites = ct_tracks_social_array();
+
+    /*
     foreach($social_sites as $key => $social_site) {
     	if(get_the_author_meta( $social_site)) {
     		if($key == 'googleplus') {
@@ -306,6 +312,20 @@ function ct_tracks_author_social_icons() {
 	    		echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key-square\"></i></a>";
 	    	}
     	}
+    }
+*/
+    foreach ($social_sites as $key => $social_site) {
+        if(get_the_author_meta( $social_site)) {
+            if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news") {
+                echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key\"></i></a>";
+            }
+            elseif($key == 'googleplus'){
+                echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-google-plus-square\"></i></a>";
+            }
+            else {
+                echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key-square\"></i></a>";
+            }
+        }
     }
 }
 
@@ -390,7 +410,7 @@ if ( function_exists( 'dsq_options' ) ) {
 
 /* add a smaller size for the portfolio page */
 if( function_exists('add_image_size')){
-    add_image_size('blog', 600, 460);
+    add_image_size('blog', 700, 350);
 }
 
 function ct_tracks_odd_even_post_class( $classes ) {
@@ -414,7 +434,6 @@ function ct_tracks_return_top_settings_output(){
 }
 add_action('wp_enqueue_scripts','ct_tracks_return_top_settings_output');
 
-
 /* css output for hiding the scroll to top link */
 function ct_tracks_image_zoom_settings_output(){
 
@@ -432,5 +451,40 @@ function ct_tracks_image_zoom_settings_output(){
 }
 add_action('wp_enqueue_scripts','ct_tracks_image_zoom_settings_output');
 
+// outputs linked social media icons from customizer
+function ct_tracks_social_icons_output() {
 
-?>
+    // array of social media site names
+    $social_sites = ct_tracks_social_site_list();
+
+    // any inputs that aren't empty are stored in $active_sites array
+    foreach($social_sites as $social_site) {
+        if( strlen( get_theme_mod( $social_site ) ) > 0 ) {
+            $active_sites[] = $social_site;
+        }
+    }
+
+    // for each active social site, add it as a list item
+    if(!empty($active_sites)) {
+        echo "<ul class='social-media-icons'>";
+        foreach ($active_sites as $active_site) { ?>
+            <li>
+            <a href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
+                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news") { ?>
+                    <i class="fa fa-<?php echo $active_site; ?>"></i> <?php
+                } else { ?>
+                <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php
+                } ?>
+            </a>
+            </li><?php
+        }
+        echo "</ul>";
+    }
+}
+
+// array of social media site names
+function ct_tracks_social_site_list(){
+
+    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam');
+    return $social_sites;
+} ?>

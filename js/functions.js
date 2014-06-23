@@ -75,6 +75,48 @@ jQuery(document).ready(function($){
             scrollTop : 0                       // Scroll to top of body
         }, 800);
     });
+
+    // bind the click event on the secondary menu icon
+    $('#toggle-secondary-navigation').bind('click', openSecondaryMenu);
+
+    function openSecondaryMenu() {
+
+        var body = $('body');
+
+        if (body.hasClass('secondary-toggle')) {
+            body.removeClass('secondary-toggle');
+            $('#main, #title-info, #toggle-navigation').css('transform','translateY(0)');
+        } else {
+            body.addClass('secondary-toggle');
+            var menuHeight = $('#menu-secondary-items').height() + 48;
+            $('#main, #title-info, #toggle-navigation').css('transform','translateY(' + menuHeight + 'px)');
+        }
+    }
+
+    // bind the click event on the search icon
+    $('#search-icon').bind('click', openSearchBar);
+
+    function openSearchBar() {
+
+        var body = $('body');
+
+        if (body.hasClass('search-open')) {
+            body.removeClass('search-open');
+            $('#search-icon').css('left', 0);
+        } else {
+            body.addClass('search-open');
+
+            // get the width of the search bar
+            var sitePadding = $('body').width() * 0.0555;
+
+            // get width of site padding-right
+            var searchFormWidth = $('#site-header').find('.search-form').width();
+
+            /* transform on a button makes it disappear in webkit, so using left.
+            *  Move search-form width left minus site padding plus extra 7px space */
+            $('#search-icon').css('left', -searchFormWidth + sitePadding - 7);
+        }
+    }
 });
 
 /* fix for skip-to-content link bug in Chrome & IE9 */
