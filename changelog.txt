@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 1.9 - july 2014
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 BlueGray version 1.8 - june 2014
 - changed size of single post image
 - added featured image on single page

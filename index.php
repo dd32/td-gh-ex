@@ -15,9 +15,9 @@
 		</div>
 	<?php endif; ?>
 
-		<h3 class="post-title">
+		<h4 class="post-title">
 		<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'bluegray'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
-		</h3>
+		</h4>
 
 		<h5 class="postmetadata">
 		<?php printf( __( 'Posted on %s', 'bluegray' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 

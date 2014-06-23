@@ -8,11 +8,11 @@
 <div id="content">
 
 	<?php if ( have_posts() ) : ?>
-		<h3 class="archive-title"><?php printf( __( 'Search Results for: %s', 'bluegray' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+		<h4 class="archive-title"><?php printf( __( 'Search Results for: %s', 'bluegray' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
 			
 	<?php while ( have_posts() ) : the_post(); ?>
-		<h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'bluegray'); ?>
-		<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<h4 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'bluegray'); ?>
+		<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
 
 			<h5 class="postmetadata">
 			<?php printf( __( 'Posted on %s', 'bluegray' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
@@ -32,7 +32,7 @@
 
 		<?php endwhile; else: ?>
 					
-	<h3 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h3>
+	<h4 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h4>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'bluegray'); ?></p>
 		<?php get_search_form(); ?>
 			
