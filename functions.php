@@ -140,8 +140,8 @@ function foodrecipes_enqueue()
 	wp_enqueue_style('foodrecipes_media',get_template_directory_uri().'/css/media.css',array(),'','');
 	wp_enqueue_style('awesome',get_template_directory_uri().'/css/font-awesome.min.css',array(),'','');
 	wp_enqueue_style('foodrecipes_base',get_template_directory_uri().'/css/base.css',array(),'','');
-	wp_enqueue_script('jquerymasonry',get_template_directory_uri().'/js/jquery.masonry.js',array('jquery'),'','');
 	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'','');	
+	wp_enqueue_script('jquery-masonry');
 	wp_enqueue_script('base',get_template_directory_uri().'/js/base.js',array('jquery'),'','');
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
@@ -361,45 +361,6 @@ function foodrecipes_comment( $comment, $foodrecipes_args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
-
-/**********************************/
-
-function foodrecipes_pagination($pages = '', $range = 1)
-{
-	$foodrecipes_showitems = ($range * 2)+1;
-	
-	global $paged;
-	if(empty($paged)) $paged = 1;
-	
-	if($pages == '')
-	{
-	global $wp_query;
-	$pages = wp_count_posts()->publish;
-	if(!$pages)
-	{
-	$pages = 1;
-	}
-	}
-	
-	if(1 != $pages)
-	{
-	echo "<div class='foodrecipes-pagination-color list-inline text-center'>";
-	if($paged > 2 && $paged > $range+1 && $foodrecipes_showitems < $pages) echo "<li><a href='".get_pagenum_link(1)."'><span class='sprite prev-all-icon'> First </span></a></li>";
-	if($paged > 1 && $foodrecipes_showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'><span class='sprite prev-icon'> Prev </span></a></li>";
-	
-	for ($i=1; $i <= $pages; $i++)
-	{
-	if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $foodrecipes_showitems ))
-	{
-	echo ($paged == $i)? "<li><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-	}
-	}
-	
-	if ($paged < $pages && $foodrecipes_showitems < $pages) echo "<li><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'> Next </span></a></li>";
-	if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $foodrecipes_showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'> Last <span class='sprite next-all-icon'></span></a></li>";
-	echo "</div>\n";
-	}
-}
 
 /*
  * Replace Excerpt [...] with Read More

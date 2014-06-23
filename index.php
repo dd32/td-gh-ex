@@ -3,7 +3,6 @@
  * The main template file
  */
 get_header(); ?>
-
 <div class="container foodrecipes-container-recipes foodrecipes-main-template">
   <div class="col-md-12 foodrecipes-bg">
     <div class="col-md-8">
@@ -13,8 +12,7 @@ get_header(); ?>
                     'orderby'          => 'post_date',
                     'order'            => 'DESC',
                     'post_type'        => 'post',
-                    'post_status'      => 'publish',
-					'paged' 		   => $paged,
+                    'post_status'      => 'publish'
                 );
             $foodrecipes_posts = new WP_Query( $foodrecipes_args );
            
@@ -50,11 +48,13 @@ get_header(); ?>
       
       <!-- next,prev,pages  -->
       <div class="clearfix"></div>
-      <?php if(get_option('posts_per_page') < $wp_query->found_posts) { ?>
-      <div class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination" >
-        <?php foodrecipes_pagination($foodrecipes_posts->max_num_pages); ?>
-      </div>
-      <?php } ?>
+     <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <nav class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination foodrecipes-nav"> <span class="foodrecipes-nav-previous">
+          <?php previous_posts_link(); ?>
+          </span> <span class="foodrecipes-nav-next">
+          <?php next_posts_link(); ?>
+          </span> </nav>
+        <?php } ?>
     </div>
     <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
       <?php 	

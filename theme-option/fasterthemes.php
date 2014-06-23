@@ -6,7 +6,7 @@ add_action( 'admin_init', 'fasterthemes_options_init' );
 function ft_options_validate( $input ) {
  
 	 $input['logo'] = esc_url_raw( $input['logo'] );
-	 $input['fevicon'] = esc_url_raw( $input['fevicon'] );
+	 $input['favicon'] = esc_url_raw( $input['favicon'] );
 	 $input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
 	 
 	 $input['fburl'] = esc_url_raw( $input['fburl'] );
@@ -84,7 +84,7 @@ function fastertheme_framework_page(){
                             value="<?php if(!empty($foodrecipes_options['logo'])) { echo $foodrecipes_options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($foodrecipes_options['logo'] != '') echo "<img src='".$foodrecipes_options['logo']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($foodrecipes_options['logo'])) { echo "<img src='".$foodrecipes_options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
@@ -94,14 +94,14 @@ function fastertheme_framework_page(){
             <h4 class="heading">Favicon</h4>
             <div class="option">
               <div class="controls">
-                <input id="fevicon" class="upload" type="text" name="faster_theme_options[fevicon]" 
-                            value="<?php if(!empty($foodrecipes_options['fevicon'])) { echo $foodrecipes_options['fevicon']; } ?>" placeholder="No file chosen" />
+                <input id="favicon" class="upload" type="text" name="faster_theme_options[favicon]" 
+                            value="<?php if(!empty($foodrecipes_options['favicon'])) { echo $foodrecipes_options['favicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="favicon-image">
-                  <?php if($foodrecipes_options['fevicon'] != '') echo "<img src='".$foodrecipes_options['fevicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($foodrecipes_options['favicon'])) { echo "<img src='".$foodrecipes_options['favicon']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
-              <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
+              <div class="explain">Size of favicon should be exactly 32x32px for best results.</div>
             </div>
           </div>
           <div id="section-footertext2" class="section section-textarea">

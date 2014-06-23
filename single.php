@@ -66,9 +66,7 @@ get_header();
         
         <!-- side-menu -->
         <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
-          <?php 	
-		get_sidebar(); 
-	?>
+          <?php get_sidebar(); ?>
         </div>
         <!-- side-menu --> 
       </div>

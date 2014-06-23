@@ -1,1 +1,10 @@
 Version 1.0
+    i) Intial Release
+
+Version: 1.0.1
+	i) Set condition in header.php
+	ii) changed footer copy right text
+	iii) set pagination in index page
+	iv) changed comment form 
+	v) used search form in 404 file
+	vi) changed favicon typo

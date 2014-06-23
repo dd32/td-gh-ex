@@ -33,14 +33,7 @@ get_header();
               <div class="clear-fix"></div>
               <?php the_tags(); ?>
               <p>
-                <?php the_content();
-                        wp_link_pages( array(
-                                'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'foodrecipes' ) . '</span>',
-                                'after'       => '</div>',
-                                'link_before' => '<span>',
-                                'link_after'  => '</span>',
-                            ) );
-                     ?>
+                <?php the_content(); ?>
               </p>
             </div>
             <div class="foodrecipes-inner-blog-text" >
@@ -51,17 +44,6 @@ get_header();
             <div class="foodrecipes-comment-form">
               <?php comments_template( '', true ); ?>
             </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="col-md-12 foodrecipes-box-paging clearfix" >
-            <ul class="list-inline">
-              <li>
-                <?php previous_post_link(); ?>
-              </li>
-              <li>
-                <?php next_post_link(); ?>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

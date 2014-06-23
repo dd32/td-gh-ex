@@ -28,6 +28,14 @@ get_header();
               </p>
               <div class="blog-hr"></div>
             </div>
+            <div class="foodrecipes-inner-blog-text" >
+                  <h6>
+                    <?php comments_number( '0 COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
+                  </h6>
+                </div>
+            <div class="foodrecipes-comment-form">
+                  <?php comments_template( '', true ); ?>
+             </div>
           </article>
         </div>
       </div>
@@ -35,9 +43,7 @@ get_header();
       <!-- right sidebar --> 
       <!-- side-menu -->
       <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
-        <?php 	
-                get_sidebar() 
-            ?>
+        <?php get_sidebar() ?>
       </div>
       <!-- side-menu --> 
       

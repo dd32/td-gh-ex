@@ -29,12 +29,7 @@ get_header(); ?>
             <p>Whatever you were looking for was not found, but maybe try looking again or search using the form below.</p>
             <div class="row">
               <div class="col-sm-12">
-                <form role="search" method="get" class="search-form" action="<?php echo site_url('/'); ?>">
-                  <label>
-                    <input type="search" class="search-field" placeholder="Search ..." value="" name="s">
-                  </label>
-                  <input type="submit" class="search-submit" value="Search">
-                </form>
+                <?php get_search_form(); ?>
               </div>
             </div>
           </section>

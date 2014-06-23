@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/foodrecipes
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Food-Recipes is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout, theme-options
@@ -69,6 +69,3 @@ License and Copyrights for Resources used in this theme
 	v)   The bootstrap files which we used are licensed under the Apache License v2.0
 	vi)  jquery.masonry.js file is Licensed under the MIT license.
 	vii) respond.min js file is licensed under MIT/GPL2.
-	
-	
-	For any help you can mail us at support[at]fasterthemes.com
