@@ -12,6 +12,7 @@ function ft_options_validate( $input ) {
 	 $input['phone'] = wp_filter_nohtml_kses( $input['phone'] );
 	 $input['home-title'] = wp_filter_nohtml_kses( $input['home-title'] );
 	 $input['home-content'] = wp_filter_nohtml_kses( $input['home-content'] );
+	 $input['post-title'] = wp_filter_nohtml_kses( $input['post-title'] );
 	 
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
 	 $input['fburl'] = esc_url_raw( $input['fburl'] );
@@ -66,6 +67,7 @@ function fastertheme_framework_page(){
   <h2 class="nav-tab-wrapper"> 
         <a id="options-group-1-tab" class="nav-tab socialsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a>
   		<a id="options-group-2-tab" class="nav-tab thirdsettings-tab" title="Social Settings" href="#options-group-2">Social Settings</a>
+  		<a id="options-group-3-tab" class="nav-tab thirdsettings-tab" title="Home page slider images" href="#options-group-3">Home page slider images</a>
   </h2>
   <div id="fasterthemes_framework-metabox" class="metabox-holder">
     <div id="fasterthemes_framework" class="postbox"> 
@@ -151,6 +153,48 @@ function fastertheme_framework_page(){
               <div class="explain">Enter home content for your site , you would like to display in the Home Page.</div>
             </div>
           </div>
+          
+          
+          <div id="section-post" class="section section-textarea">
+            <h4 class="heading">Recent Post Title</h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="post" class="of-input" name="faster_theme_options[post-title]" size="32"  value="<?php if(!empty($generator_options['post-title'])) { echo $generator_options['post-title']; } ?>">
+              </div>
+              <div class="explain">Enter recent post title for your site , you would like to display in the Home Page.</div>
+            </div>
+          </div>
+
+          <div id="section-category" class="section section-textarea">
+            <h4 class="heading">Category</h4>
+            <div class="option">
+              <div class="controls">
+               <select name="faster_theme_options[post-category]" id="category"> 
+                 <option value=""><?php echo esc_attr(__('Select Category','generator')); ?></option> 
+                 <?php 
+				 $generator_args = array(
+				  'orderby' => 'name',
+				  'parent' => 0
+				  );
+                  $generator_categories = get_categories($generator_args); 
+                  foreach ($generator_categories as $generator_category) {
+					  if($generator_category->term_id == $generator_options['post-category'])
+					  	$generator_selected="selected=selected";
+					  else
+					  	$generator_selected='';
+                    $generator_option = '<option value="'.$generator_category->term_id .'" '.$generator_selected.'>';
+                    $generator_option .= $generator_category->cat_name;
+                    $generator_option .= '</option>';
+                    echo $generator_option;
+                  }
+                 ?>
+                </select>
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>
+          
+          
         </div>
         
         <!-------------- second group ----------------->
@@ -208,6 +252,46 @@ function fastertheme_framework_page(){
           </div>
           
         </div>
+        
+        
+        <!-------------- Third group ----------------->
+ 
+        
+        <div id="options-group-3" class="group homesettings">
+          <h3>Banner Slider</h3>
+           <?php for($generator_i=1; $generator_i <=5 ;$generator_i++ ):?> 
+           <div id="section-slider-upload" class="section section-text">
+            <h4 class="heading"></h4>
+          
+            <div class="option">
+              <div class="controls">
+                <input id="slider-img-<?php echo $generator_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $generator_i;?>]" 
+                            value="<?php if(!empty($generator_options['slider-img-'.$generator_i])) echo $generator_options['slider-img-'.$generator_i]; ?>" placeholder="No file chosen" />
+                <input id="slider" class="upload-button button" type="button" value="Upload" />
+                <div class="screenshot" id="slider-image">
+                  <?php if(!empty($generator_options['slider-img-'.$generator_i])) echo "<img src='".$generator_options['slider-img-'.$generator_i]."' /><a class='remove-image'>Remove</a>"; ?>
+                </div>
+               
+              </div>
+              <div class="explain"></div>
+            </div>
+            
+          </div>
+          
+          <div id="section-link" class="section section-text mini">
+            <h4 class="heading">Slide<?php echo $generator_i; ?> Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input id="slidelink-<?php echo $generator_i; ?>" class="of-input" name="faster_theme_options[slidelink-<?php echo $generator_i; ?>]" type="text" size="30" value="<?php if(!empty($generator_options['slidelink-'.$generator_i])) { echo $generator_options['slidelink-'.$generator_i]; } ?>" />
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>
+          
+		  <?php endfor; ?>
+   
+        </div>
+        
         <!-------------- End group ----------------->
         
         <div id="fasterthemes_framework-submit" class="section-submite"> <span>&copy; <a href="http://fasterthemes.com/" target="_blank">fasterthemes.com</a></span> <span class="fb"> <a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span>

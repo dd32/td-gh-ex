@@ -54,13 +54,7 @@
       </div>
     </div>
     <div class="separator no-padding navbar-fixed-top header-bg-color <?php generator_header_scroll(); ?>">
-	<?php if(get_header_image()){ ?>
-        <div class="custom-header-img">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-        	<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-        </a>
-        </div>
-    <?php } ?>    
+	 
       <div class="container-generator container">
         <div class="col-md-3 no-padding menu-left">
         	<?php if(empty($generator_options['logo'])) { ?>
@@ -73,7 +67,7 @@
           <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>
          <?php
-			$defaults = array(
+			$generator_defaults = array(
 							'theme_location'  => 'primary',
 							'container'       => 'div',
 							'container_class' => 'navbar-collapse collapse no-padding pull-right',
@@ -90,9 +84,16 @@
 							'depth'           => 0,
 							'walker'          => ''
 						);
-			wp_nav_menu($defaults); ?>
+			wp_nav_menu($generator_defaults); ?>
       </div>
       <div class="clearfix"></div>
     </div>
-  </div>
+    
+  </div><?php if(get_header_image()){ ?>
+        <div class="custom-header-img">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        	<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+        </a>
+        </div>
+    <?php } ?>   
 </header>

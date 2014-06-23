@@ -60,16 +60,16 @@
 			if ( $('.section-upload .upload-notice').length > 0 ) {
 				$('.upload-button').remove();
 			}
-			selector.find('.upload-button').on('click', function() {
+			selector.find('.upload-button').live('click', function() {
 				generator_add_file(event, $(this).parents('.section'));
 			});
 		}
 		
-		$('.remove-image, .remove-file').on('click', function() {
+		$('.remove-image, .remove-file').live('click', function() {
 			generator_remove_file( $(this).parents('.section') );
         });
         
-        $('.upload-button').click( function( event ) {
+        $('.upload-button').live('click', function( event ) {
         	generator_add_file(event, $(this).parents('.section'));
         });
         

@@ -21,9 +21,9 @@ function generator_wp_title( $title, $sep ) {
 	$title .= get_bloginfo( 'name', 'display' );
 
 	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
+	$generator_site_description = get_bloginfo( 'description', 'display' );
+	if ( $generator_site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $generator_site_description";
 	}
 
 	// Add a page number if necessary.
@@ -39,9 +39,9 @@ add_filter( 'wp_title', 'generator_wp_title', 10, 2 );
  * Add default menu style if menu is not set from the backend.
  */
 function generator_add_menuid ($page_markup) {
-preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
+preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $generator_matches);
 $generator_divclass = '';
-if(!empty($matches)) { $generator_divclass = $matches[1]; }
+if(!empty($generator_matches)) { $generator_divclass = $generator_matches[1]; }
 $generator_toreplace = array('<div class="'.$generator_divclass.' pull-right-res">', '</div>');
 $generator_replace = array('<div class="nav navbar-nav menu">', '</div>');
 $generator_new_markup = str_replace($generator_toreplace,$generator_replace, $page_markup);
@@ -60,10 +60,46 @@ function generator_widgets_init() {
 		'description'   => __( 'Main sidebar that appears on the left.', 'generator' ),
 		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="sidebar-title"><h1 class="widget-title">',
+		'before_title'  => '<div class="sidebar-title"><h1 class="sidebar-title">',
 		'after_title'   => '</h1></div>',
 	) );
-	
+	register_sidebar( array(
+		'name'          => __( 'Generator Widget One', 'generator' ),
+		'id'            => 'generator-1',
+		'description'   => __( 'Show in front end area', 'generator' ),
+		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="theme-title-14">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Generator Widget Two', 'generator' ),
+		'id'            => 'generator-2',
+		'description'   => __( 'Show in front end area', 'generator' ),
+		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="theme-title-14">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Generator Widget Three', 'generator' ),
+		'id'            => 'generator-3',
+		'description'   => __( 'Show in front end area', 'generator' ),
+		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="theme-title-14">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Generator Widget Four', 'generator' ),
+		'id'            => 'generator-4',
+		'description'   => __( 'Show in front end area', 'generator' ),
+		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="theme-title-14">',
+		'after_title'   => '</h3>',
+	) );
+
 	register_sidebar( array(
 		'name'          => __( 'Footer Area One', 'generator' ),
 		'id'            => 'footer-1',

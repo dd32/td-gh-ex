@@ -52,26 +52,32 @@ add_action( 'after_setup_theme', 'generator_setup' );
  * Register Lato Google font for generator.
  */
 function generator_font_url() {
-	$font_url = '';
+	$generator_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by Lato, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'generator' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
+		$generator_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
 	}
 
-	return $font_url;
+	return $generator_font_url;
 }
+
+function generator_change_excerpt_more( $more ) {
+    return (is_front_page()) ? '' : '[...]';
+}
+add_filter('excerpt_more', 'generator_change_excerpt_more');
+function generator_excerpt_length( $length ) {
+    return (is_front_page()) ? 8 : 25;
+}
+add_filter( 'excerpt_length', 'generator_excerpt_length', 999 );
 
 /*** Enqueue css and js files ***/
 require_once('functions/enqueue-files.php');
 
 /*** Theme Default Setup ***/
 require_once('functions/theme-default-setup.php');
-
-/*** Pagination ***/
-require_once('functions/pagination.php');
 
 /*** Breadcrumbs ***/
 require_once('functions/breadcrumbs.php');
@@ -81,3 +87,6 @@ require_once('theme-option/fasterthemes.php');
 
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
+
+/*** Generator Widget ***/
+require_once('functions/widget.php');

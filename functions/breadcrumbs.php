@@ -8,8 +8,8 @@ function generator_custom_breadcrumbs() {
   $generator_delimiter = '/'; // generator_delimiter between crumbs
   $generator_home = 'Home'; // text for the 'Home' link
   $generator_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = ' '; // tag before the current crumb
-  $after = ' '; // tag after the current crumb
+  $generator_before = ' '; // tag before the current crumb
+  $generator_after = ' '; // tag after the current crumb
 
   global $post;
   $generator_homelink = esc_url(home_url());
@@ -23,78 +23,78 @@ function generator_custom_breadcrumbs() {
     echo '<div id="crumbs" class="font-14 color-fff conter-text generator-breadcrumb"><a href="' . $generator_homelink . '">' . $generator_home . '</a> ' . $generator_delimiter . ' ';
 
     if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $generator_delimiter . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+      $generator_thisCat = get_category(get_query_var('cat'), false);
+      if ($generator_thisCat->parent != 0) echo get_category_parents($generator_thisCat->parent, TRUE, ' ' . $generator_delimiter . ' ');
+      echo $generator_before . 'Archive by category "' . single_cat_title('', false) . '"' . $generator_after;
 
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+      echo $generator_before . 'Search results for "' . get_search_query() . '"' . $generator_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $generator_delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $generator_delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
+      echo $generator_before . get_the_time('d') . $generator_after;
 
     } elseif ( is_month() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $generator_delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
+      echo $generator_before . get_the_time('F') . $generator_after;
 
     } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
+      echo $generator_before . get_the_time('Y') . $generator_after;
 
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $generator_homelink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $before . get_the_title() . $after;
+        $generator_post_type = get_post_type_object(get_post_type());
+        $generator_slug = $generator_post_type->rewrite;
+        echo '<a href="' . $generator_homelink . '/' . $generator_slug['slug'] . '/">' . $generator_post_type->labels->singular_name . '</a>';
+        if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $generator_before . get_the_title() . $generator_after;
       } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $generator_delimiter . ' ');
-        if ($generator_showcurrent == 0) $cats = preg_replace("#^(.+)\s$generator_delimiter\s$#", "$1", $cats);
-        echo $cats;
-        if ($generator_showcurrent == 1) echo $before . get_the_title() . $after;
+        $generator_cat = get_the_category(); $generator_cat = $generator_cat[0];
+        $generator_cats = get_category_parents($generator_cat, TRUE, ' ' . $generator_delimiter . ' ');
+        if ($generator_showcurrent == 0) $generator_cats = preg_replace("#^(.+)\s$generator_delimiter\s$#", "$1", $generator_cats);
+        echo $generator_cats;
+        if ($generator_showcurrent == 1) echo $generator_before . get_the_title() . $generator_after;
       }
 
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      $generator_post_type = get_post_type_object(get_post_type());
+      echo $generator_before . $generator_post_type->labels->singular_name . $generator_after;
 
     } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $generator_delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $before . get_the_title() . $after;
+      $generator_parent = get_post($post->post_parent);
+      $generator_cat = get_the_category($generator_parent->ID); $generator_cat = $generator_cat[0];
+      echo get_category_parents($generator_cat, TRUE, ' ' . $generator_delimiter . ' ');
+      echo '<a href="' . get_permalink($generator_parent) . '">' . $generator_parent->post_title . '</a>';
+      if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $generator_before . get_the_title() . $generator_after;
 
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($generator_showcurrent == 1) echo $before . get_the_title() . $after;
+      if ($generator_showcurrent == 1) echo $generator_before . get_the_title() . $generator_after;
 
     } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
+      $generator_parent_id  = $post->post_parent;
+      $generator_breadcrumbs = array();
+      while ($generator_parent_id) {
+        $generator_page = get_page($generator_parent_id);
+        $generator_breadcrumbs[] = '<a href="' . get_permalink($generator_page->ID) . '">' . get_the_title($generator_page->ID) . '</a>';
+        $generator_parent_id  = $generator_page->post_parent;
       }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $generator_delimiter . ' ';
+      $generator_breadcrumbs = array_reverse($generator_breadcrumbs);
+      for ($i = 0; $i < count($generator_breadcrumbs); $i++) {
+        echo $generator_breadcrumbs[$i];
+        if ($i != count($generator_breadcrumbs)-1) echo ' ' . $generator_delimiter . ' ';
       }
-      if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $before . get_the_title() . $after;
+      if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $generator_before . get_the_title() . $generator_after;
 
     } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+      echo $generator_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $generator_after;
 
     } elseif ( is_author() ) {
        global $author;
-      $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      $generator_userdata = get_userdata($author);
+      echo $generator_before . 'Articles posted by ' . $generator_userdata->display_name . $generator_after;
 
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+      echo $generator_before . 'Error 404' . $generator_after;
     }
 
     if ( get_query_var('paged') ) {
