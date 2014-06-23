@@ -45,7 +45,7 @@ if(isset($virtue['menu_margin_top'])) {
 //Basic Styling
 
 if(!empty($virtue['primary_color'])) {
-  $primaryrgb = hex2rgb($virtue['primary_color']); 
+  $primaryrgb = kad_hex2rgb($virtue['primary_color']); 
   $color_primary = '.home-message:hover {background-color:'.$virtue['primary_color'].'; background-color: rgba('.$primaryrgb[0].', '.$primaryrgb[1].', '.$primaryrgb[2].', 0.6);}
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .panel-heading .accordion-toggle, .variations .kad_radio_variations label:hover, .variations .kad_radio_variations label.selectedValue {border-color: '.$virtue['primary_color'].';}
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,

@@ -14,7 +14,7 @@ function detect_mobile()
     else
         return false;
 }
-function hex2rgb($hex) {
+function kad_hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
 
    if(strlen($hex) == 3) {

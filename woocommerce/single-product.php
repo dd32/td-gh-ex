@@ -18,7 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<div class="product_header clearfix">
       	<?php
 				$terms = wp_get_post_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) );
-				$main_term = $terms[0];
+				if(!empty($terms)) {
+					$main_term = $terms[0];
+				} else {
+					$main_term = "";
+				}
 				 if($main_term) {				
 						    echo '<div class="cat_back_btn headerfont"><i class="icon-arrow-left"></i> '.__('Back to', 'virtue').' <a href="'.get_term_link($main_term->slug, 'product_cat').'">'.$main_term->name.'</a></div>';
 				} else {

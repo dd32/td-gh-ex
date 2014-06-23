@@ -65,7 +65,7 @@
 			                          			} ?>"><i class="icon-folder-open"></i></span>
 			                          		 <?php }?>
 			                          		 |
-			                        	<span class="postcommentscount" data-toggle="tooltip" data-placement="top" data-original-title="<?php esc_attr(comments_number( '0', '1', '%' )); ?>">
+			                        	<span class="postcommentscount" data-toggle="tooltip" data-placement="top" data-original-title="<?php $num_comments = get_comments_number(); if(comments_open()) {echo esc_attr($num_comments);} ?>">
 			                        		<i class="icon-comments-alt"></i>
 			                        	</span>
 			                        </div>

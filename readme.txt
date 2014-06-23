@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.1.9 =
+* Update Options panel, huge speed improvement!
+* Add my account sidebar with image.
+* Add Danish Translation
+* Small php notice fix for products without a category.
+* Small fix for users using disqus
+
 = Version: 2.1.8 =
 * Update Turkish Translation
 * Update support for MQtranslate
