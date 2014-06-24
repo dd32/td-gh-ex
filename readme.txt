@@ -48,6 +48,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.0 =
+* Fix small issue slides not deleting.
+* Fix skins not showing.
+
 = Version: 2.1.9 =
 * Update Options panel, huge speed improvement!
 * Add my account sidebar with image.

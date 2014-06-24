@@ -45,7 +45,7 @@
                         $( this ).parent().siblings().find( 'textarea' ).val( '' );
                         $( this ).parent().siblings().find( 'input[type="hidden"]' ).val( '' );
 
-                        var slideCount = $( this ).parents( '.redux-container-slides:first' ).find( '.redux-slides-accordion-group' ).length;
+                        var slideCount = $( this ).parents( '.redux-container-kad_slides:first' ).find( '.redux-slides-accordion-group' ).length;
 
                         if ( slideCount > 1 ) {
                             $( this ).parents( '.redux-slides-accordion-group:first' ).slideUp(
