@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.4
+Version: 1.1.5
 Requires at least: 3.0.1
 Tested up to: 3.9.1
 Author: Miguel Angel Rico
@@ -29,7 +29,7 @@ Theme Athenea uses:
 
 /*========= Description =========*/
 
-Athenea is a theme for business or personal desktop and mobile fully configurable devices multitude of designs. It features front-page editable from theme options. Athenea is a completely free theme with premium features in future releases.
+Athenea is a theme for business or personal desktop and mobile fully configurable devices multitude of designs. It features front-page editable from theme options. Athenea is a completely free theme with premium features in future releases. Theme optimized for SEO positioning.
 
 For questions, comments or bug reports, please go to WordPress forums (http://wordpress.org/support/) and Athenea Doc (http://www.ibermega.com/themes/athenea/). 
 
@@ -61,6 +61,11 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.5 - 24.06.2014 =
+* Unify and minimize all javascripts into one and sent to the footer to lighten the load of visual assets.
+* Style sheets are unified to lighten the load and remains in the head.
+* Javascript and css files leftover, are eliminated.
 
 = 1.1.4 - 11.06.2014 =
 * Resolved bug in template page (templates/homepage_page_full.php).
