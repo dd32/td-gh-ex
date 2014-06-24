@@ -17,6 +17,7 @@ black, blue, gray, green, white, dark,light, one-column, two-columns, left-sideb
 
 Adventurous theme is translation ready. 
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
+Added Translation for Hungarian by Dinnye ( Email: pdinnye@gmail.com )
 
 
 == License ==
@@ -97,8 +98,12 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 == Changelog ==
 
+Version 0.5
+* Added Hungarian translation hu_HU.po and hu_HU.mo
+* Removed rem in width, padding and margins, now only in font sizes css
+
 Version 0.4
-* Added German translation pt_BR.po and pt_BR.mo
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
 Version 0.3
 * Added background and text color in promotion wrapper in style.css
@@ -106,7 +111,7 @@ Version 0.3
 * Fixed content width
 * Fixed mobile menu css
 * Removed feed redirect option
-* Remove unnecessary option to disable header menu
+* Removed unnecessary option to disable header menu
 
 Version 0.2
 * Added slider navigation arrow and fixed slider CSS
@@ -116,7 +121,7 @@ Version 0.2
 * Fixed Header Image option in page/post layout
 * Fixed author css
 * Fixed footer widget css in mobile devices
-* Fixed seconday menu issue in mobile devices
+* Fixed secondary menu issue in mobile devices
 * Fixed header css
 * Fixed iPad Portrait CSS
 
