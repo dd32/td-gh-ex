@@ -1,3 +1,27 @@
+## 1.1.0
+
+* Added control for showing comment count
+* Added controls for positioning author, date, and comment count
+* Added control for aligning featured images
+
+## 1.0.11
+
+* Improved messaging about Make Plus
+* Improved sorting of footer links in builder sections
+* Fixed ID sanitization bugs where ID values were greater than the maximum allowed integer value
+* Fixed bug that did not allow anyone but Super Admins to save banner sections in Multisite
+* Fixed a bug that defaulted comments to being hidden on posts
+* Removed unnecessary class from banner sections
+* Added a notice about sidebars not being available on builder template pages
+* Added more social icons
+
+## 1.0.10
+
+* Improved consistency in styling between custom menus and default menus
+* Improved JetPack share button styling
+* Fixed an issue with dynamically added TinyMCE instances affecting already added instances
+* Added link to social menu support documentation
+
 ## 1.0.9
 
 * Fixed PHP notice edge case when $post object is not set when saving post
