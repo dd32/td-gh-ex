@@ -9,7 +9,7 @@
 */
 function theme_data_setup()
 {	
-	
+	$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
 	return $theme_options=array(
 			//Logo and Fevicon header			
 			'front_page'  => 'on',
@@ -38,6 +38,28 @@ function theme_data_setup()
 			'service_two_text' => 'Lorem Ipsum Lorem Ipsum which looks reason able. The generated Lorem Ipsum is which looks reason able. The generated Lorem Ipsum is ',
 			'service_three_text' => 'fLorem Ipsum which looks reason able. The generated Lorem Ipsum is t',
 			'service_four_text' => 'Lorem Ipsum which looks reason able. The generated Lorem Ipsum is-o',
+			//Projects Section Settings
+			'home_projects_enabled' => 'on',
+			'project_heading_one' => 'Featured Portfolio Projects',
+			'project_tagline' => 'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			'project_one_thumb' => $project_img,
+			'project_one_title' => 'Lorem Ipsum',
+			
+		
+		    'project_two_thumb' => $project_img,
+			'project_two_title' => 'Postao je popularan',
+			
+			
+			'project_four_thumb' => $project_img,
+			'project_four_title' => 'kojekakve promjene s',
+			
+			
+			'project_four_thumb' => $project_img,
+			'project_four_title' => 'kojekakve promjene s',
+			
+			//BLOG
+			'home_blog_enabled' => 'on',
+			'blog_heading' => 'Latest <span>From</span> Blog',
 			
 			'webrit_custom_css'=>'',						
 			'footer_customizations' => '&copy; 2014 <span> Quality </span>. Design & Developed by',

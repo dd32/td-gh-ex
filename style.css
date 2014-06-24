@@ -4,7 +4,7 @@ Theme URI: http://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version:  1.0.2
+Version:  1.0.2.1
 Tags: white, red , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -15,6 +15,7 @@ Text Domain: quality
 /*!
  * Quality Css created By Shahid, Deepesh - Scientech IT
 */
+
 #wrapper{	
 	margin: 0px auto;
     /* left: 0;
@@ -1745,3 +1746,195 @@ font-family: 'OpensansRegular';
 }
 .qua-logo a:hover{color: #FA504B;}
 .spacer{margin: 0 0 25px;}
+.qua_col_padding {
+padding-left: 1px;
+padding-right: 1px;
+margin: 0 0 40px;
+}
+.qua_port_title {
+background-position: center top;
+background-repeat: no-repeat;
+margin: 0 auto 52px;
+padding: 0 15px 0px;
+position: relative;
+width: 97.4%;
+}
+.qua_port_title h1 {
+font-family: 'OpensansRegular';
+font-size: 30px;
+font-weight: normal;
+line-height: 40px;
+margin: 0 0 10px;
+text-align: center;
+}
+.qua_port_title p {
+font-family: 'OpensansRegular';
+font-size: 20px;
+line-height: 25px;
+margin: 0px 0 33px;
+text-align: center;
+}
+.qua_portfolio_image {
+text-align: center;
+position: relative;
+line-height: 0px;
+font-size: 0px;
+transition: all 200ms ease-out;
+-webkit-transition: all 200ms ease-out;
+width: 100%;
+position: relative;
+height: 100%;
+overflow: hidden;
+}
+.qua_home_portfolio_showcase_overlay {
+visibility: hidden;
+opacity: 0;
+transition: all 0.4s ease;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.qua_home_portfolio_showcase_overlay_inner {
+position: absolute;
+top: 50%;
+left: 0;
+width: 100%;
+margin-top: -40px;
+}
+.qua_portfolio_image .qua_home_portfolio_showcase_icons {
+margin-top: 0px;
+text-align: center;
+width: 100%;
+}
+.qua_portfolio_image .qua_home_portfolio_showcase_icons a {
+font-size: 1.3em;
+display: inline-block;
+margin-left: 2px;
+padding: 8px 8px;
+opacity: 1;
+text-decoration: none;
+}
+.qua_home_portfolio_caption {
+border-radius: 0;
+padding: 10px 15px 10px 15px;
+text-align: center;
+transition: all 180ms ease-in-out 0s;
+font-family: 'OpenSansRegular';
+cursor: pointer;
+word-wrap: break-word;
+}
+.qua_portfolio_carusel, .qua_testimonial_carusel {
+padding-left: 20px;
+padding-right: 20px;
+padding: 55px 0;
+margin: 0 0 72px;
+}
+.qua_home_portfolio_caption a {
+float: left;
+font-weight: 600;
+}
+.qua_portfolio_image img{
+transition: all 300ms ease-in-out 0s;
+-webkit-transition: all 300ms ease-out;
+}
+.qua_portfolio_image:hover  img{
+transform: scale(2, 2);
+-webkit-transform: scale(2, 2);
+-ms-transform: scale(2, 2);
+}
+.qua_proejct_button {
+border-radius: 0;
+margin-top: 0px;
+padding: 0px;
+text-align: center;
+transition: all 0.4s ease 0s;
+text-align: center;
+}
+.qua_proejct_button a {
+background-color: transparent;
+transition: all 0.4s ease 0s;
+}
+.qua_proejct_button a {
+display: inline-block;
+font-family: 'OpenSansSemiBold';
+font-size: 18px;
+line-height: 20px;
+margin: 8px 0;
+padding: 14px 20px;
+text-align: right;
+text-transform: uppercase;
+transition: all 0.3s ease 0s;
+vertical-align: middle;
+}
+.qua-blog-area {
+    border-radius: 0;
+    margin-bottom: 80px;
+    transition: all 0.4s ease 0s;
+}
+.qua-blog-area img {
+width: 100%;
+}
+.qua-blog-info {
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 18px;
+}
+.qua-blog-area .qua-blog-info h2 {
+font-family: 'OpenSansSemiBold';
+font-size: 22px;
+line-height: 30px;
+margin: 0px 0 10px;
+text-align: left;
+}
+.qua-blog-post-detail {
+font-family: 'OpenSansSemiBold';
+margin: 0 0 5px;
+padding: 0;
+font-size: 12px;
+text-transform: lovercase;
+width: 100%;
+}
+.qua-blog-post-detail span {
+display: inline-block;
+padding: 3px 0;
+}
+.post-seperator {
+margin: 0 15px 0px 15px;
+}
+.qua-tags {
+display: inline-block;
+margin: 0 0px 5px;
+}
+.qua-blog-post-description {
+font-family: 'OpenSansRegular';
+font-size: 15px;
+line-height: 25px;
+margin: 0 0 20px;
+padding: 0px;
+text-align: left;
+}
+.qua-blog-date-cm {
+padding-top: 10px;
+padding-bottom: 10px;
+overflow: hidden;
+}
+.qua-blog-area .qua-blog-info .qua-blog-date-cm .left {
+/* text-align: left; */
+float: left;
+font-size: 13px;
+font-family: 'OpenSansSemiBold';
+line-height: 20px;
+padding-right: 10px;
+}
+.qua-blog-area .qua-blog-info .qua-blog-date-cm .right {
+float: right;
+line-height: 20px;
+}
+.qua-blog-area .qua-blog-info .qua-blog-date-cm .right a {
+font-size: 13px;
+font-family: 'OpenSansSemiBold';
+transition: all 0.3s ease 0s;
+margin: 0;
+}

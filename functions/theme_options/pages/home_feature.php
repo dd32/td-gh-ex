@@ -38,6 +38,7 @@
 			</table>			
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
+		
 		<div class="section">
 			<h3><?php _e('Home Feature Image','quality'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Add your Home Feaure Image here','quality');?></span></span>

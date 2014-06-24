@@ -144,7 +144,8 @@
 						<ul><li class="currunt" ><a href="#" class="ui-tabs-anchor" id="ui-id-1"><?php _e('Quick Start','quality');?> </a><span></span></li>
 							<li><a href="#"  id="ui-id-2"><?php _e('Home Feature','quality');?></a><span></span></li>
 							<li><a href="#"  id="ui-id-3"><?php _e('Service Section Settings','quality');?></a><span></span></li> 
-							
+							<li><a href="#"  id="ui-id-4"><?php _e('Projects Section Settings','quality');?></a><span></span></li> 
+							<li><a href="#"  id="ui-id-5"><?php _e('Blog On Home','quality');?></a><span></span></li> 
 						</ul>
 					</li>
 					<li>
@@ -164,7 +165,10 @@
 				
 				<!--most 4 home_service_settings tabs s --> 
 				<?php require_once('pages/home_service_settings.php'); ?>
-				
+				<!--most 5 home_service_settings tabs s --> 
+				<?php require_once('pages/projects_settings.php'); ?>
+				<!--most 6 home_service_settings tabs s --> 
+				<?php require_once('pages/blog_settings.php'); ?>
 				
 			</div>		
         </div>

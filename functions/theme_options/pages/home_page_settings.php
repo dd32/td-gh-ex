@@ -13,7 +13,7 @@
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
 				$current_options['webrit_custom_css'] =$_POST['webrit_custom_css'];
-				
+				$current_options['front_page']=$_POST['front_page'];
 				if($_POST['text_title'])
 				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
 				else
@@ -23,7 +23,7 @@
 			}
 		}	
 		if($_POST['webriti_settings_save_1'] == 2) 
-		{
+		{	$current_options['front_page']="on";
 			$current_options['upload_image_logo']="";			
 			$current_options['height']=80;
 			$current_options['width']=200;
@@ -50,6 +50,11 @@
 			</table>			
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
+		<div class="section">
+			<h3><?php _e('Enable Home Page ?','quality'); ?>&nbsp;&nbsp;<span class="icons help"><span class="tooltip"><?php  _e('Check this box for enabling the Custom Home Page of the theme.','quality');?></span></span>  </h3>
+			<input type="checkbox" <?php if($current_options['front_page']=='on') echo "checked='checked'"; ?> id="front_page" name="front_page" > <span class="explain"><?php _e('Enable Home on front page.','quality'); ?></span>
+			
+		</div>
 		<div class="section">
 			<h3><?php _e('Custom Logo','quality'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Add custom logo from here suggested size is 150X50 px','quality');?></span></span>

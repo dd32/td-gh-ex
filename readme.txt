@@ -84,6 +84,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog 
+
+@version 1.0.2.1
+1. front-page.php added.
+2. project sections added.
+3. blog section of home page added.
 @version 1.0.2
 1.Removed unused resources.
 @version 1.0.1
