@@ -73,10 +73,6 @@ Author URI: http://alisiddique.com/
 //	Utility functions
 //	=================================================================
 	require_once( 'library/utility.php' );
-	
-//	Custom post type 
-//	=================================================================
-	//require_once( 'library/custom-post-type.php' );
 
 //	Customize WordPress admin (off by default)
 //	=================================================================
