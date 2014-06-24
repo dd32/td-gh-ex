@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version:1.4.4.3
+1. Code Structure changes for front-page.php . 
 @Version:1.4.4.2
 1.Word Wraping Issue fixed in HOME SERVICE.
 @Version:1.4.4.1

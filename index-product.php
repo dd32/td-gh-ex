@@ -1,6 +1,12 @@
 <!--product thumbnails slider-->
 <?php $products=get_option('spa_theme_options');?>
-<div class="main" role="main">
+<div class="container-fluid">
+	<div class="container">
+	<div class="jumbotron">
+        <h1 class="home_product_tagline"><?php echo $products['product_title']; ?></h1>
+        <p><?php echo $products['product_contents']; ?></p>
+    </div>
+	<div class="main" role="main">
       <section class="slider" id="product_slide">
         <div class="flexslider carousel product_manage">
           <ul class="slides" id="flex_new">
@@ -50,3 +56,5 @@
         </div>
       </section>
 </div>
+</div>
+</div>	

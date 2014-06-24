@@ -59,7 +59,7 @@ function spa_the_theme_setup() /*function declear*/
 								'first_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
 								'second_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
 								'third_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
-								 
+								'enable_services' => 'yes', 
 								'service1_title'=>__('Spa Treatment','sis_spa'),
 								'service1_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
 								'service1_content'=>__('Pellentesque habitant morbi tristique senectus 

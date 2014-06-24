@@ -1,4 +1,14 @@
-<?php $service_data=get_option('spa_theme_options');?> 
+<?php $service_data=get_option('spa_theme_options');?>
+<div class="container">	  
+	<!-- jumbotron - Tagline with Description -->
+	  <div class="jumbotron">
+	     <?php if($service_data['tagline_title']!=''){?>
+		 
+        <h1 class="home_tagline"><?php echo $service_data['tagline_title'] ?></h1>
+        <p><?php echo $service_data['tagline_contents']; ?> </p>
+          <?php } ?>
+      </div>
+</div> 
 <div class="container">	  
       <div class="row">
           
