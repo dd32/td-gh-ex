@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.3
+1. All files are properly indented.
 @Version: 1.4.2.2
 1.Search Widget in footer widget area managed
 @Version: 1.4.2.1
