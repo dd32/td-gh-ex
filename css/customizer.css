@@ -1,0 +1,17 @@
+/*
+ * Theme Customizer CSS
+ *
+ */
+
+#customize-control-airballoon_control_header_content,
+#customize-control-airballoon_control_posts_length,
+#customize-control-airballoon_control_slider_activated_label,
+#customize-control-airballoon_control_front_page_content_label {
+	margin-top: 12px;
+	border-top: 1px solid #eee;
+	padding-top: 12px;
+}
+
+#customize-control-airballoon_control_header_content {
+	margin-bottom: 0;
+}
