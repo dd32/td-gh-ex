@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.2 =
+* Custom hook name prefixed with theme name (missing one).
+* Blog templates removed and now the blog posts index is displayed via home.php template hierarchy.
+* `$content_width` should be hooked into `after_setup_theme` hook.
+* Language pot file updated.
 
 = Version 1.0.1 =
 * z-index value adjustment for slider elements.

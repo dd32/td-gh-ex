@@ -146,6 +146,19 @@ function optionsframework_options() {
 							)
 	);
 
+	$options[] = array(
+		'name' 		=> __( 'Posts page listing display type', 'accelerate' ),
+		'desc' 		=> __( 'Choose the display type for the latests posts view or posts page view (static front page).', 'accelerate' ),
+		'id' 			=> 'accelerate_posts_page_display_type',
+		'std' 		=> 'large_image',
+		'type' 		=> 'radio',
+		'options' 	=> array(
+							'large_image' 	=> __( 'Large featured image', 'accelerate' ),
+							'small_image' 	=> __( 'Small featured image', 'accelerate' ),
+							'small_image_alternate' 	=> __( 'Small featured image with alternating sides', 'accelerate' )
+						)
+	);
+
 	// Site primary color option
 	$options[] = array(
 		'name' 		=> __( 'Primary color option', 'accelerate' ),

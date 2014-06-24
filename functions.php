@@ -12,12 +12,6 @@
  * @since Accelerate 1.0
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 720;
-
 add_action( 'after_setup_theme', 'accelerate_setup' );
 /**
  * All setup functionalities.
@@ -26,6 +20,12 @@ add_action( 'after_setup_theme', 'accelerate_setup' );
  */
 if( !function_exists( 'accelerate_setup' ) ) :
 function accelerate_setup() {
+
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	if ( ! isset( $content_width ) )
+		$content_width = 720;
 
 	/*
 	 * Make theme available for translation.

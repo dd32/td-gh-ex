@@ -40,7 +40,7 @@ function accelerate_scripts_styles_method() {
 	/**
 	 * Enqueue Slider setup js file.	 
 	 */
-	if ( is_home() || is_front_page() && of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
+	if ( is_front_page() && of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
 		wp_enqueue_script( 'accelerate_slider', ACCELERATE_JS_URL . '/accelerate-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
 	wp_enqueue_script( 'accelerate-navigation', ACCELERATE_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
@@ -153,11 +153,11 @@ function accelerate_body_class( $classes ) {
 	elseif( $layout_meta == 'no_sidebar_content_centered' ) { $classes[] = 'no-sidebar'; }
 
 
-	if( is_page_template( 'page-templates/blog-small-image-alternate.php' ) ) {
-		$classes[] = 'blog-alternate-small';
-	}
-	if( is_page_template( 'page-templates/blog-small-image.php' ) ) {
+	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
 		$classes[] = 'blog-small';
+	}
+	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
+		$classes[] = 'blog-alternate-small';
 	}
 	
 	if( of_get_option( 'accelerate_site_layout', 'wide' ) == 'wide' ) {
@@ -201,6 +201,30 @@ function accelerate_sidebar_select() {
 	}
 	elseif( $layout_meta == 'right_sidebar' ) { get_sidebar(); }
 	elseif( $layout_meta == 'left_sidebar' ) { get_sidebar( 'left' ); }
+}
+endif;
+
+/****************************************************************************************/
+
+if ( ! function_exists( 'accelerate_posts_listing_display_type_select' ) ) :
+/**
+ * Function to select the posts listing display type
+ */
+function accelerate_posts_listing_display_type_select() {			
+	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'large_image' ) {
+		$format = 'blog-image-large';
+	}
+	elseif ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
+		$format = 'blog-small-image';
+	}
+	elseif ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
+		$format = 'blog-small-image';
+	}
+	else {
+		$format = get_post_format();
+	}
+
+	return $format;
 }
 endif;
 

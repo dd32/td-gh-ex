@@ -33,7 +33,7 @@ wp_head();
 </head>
 
 <body <?php body_class(); ?>>
-<?php	do_action( 'before' ); ?>
+<?php	do_action( 'accelerate_before' ); ?>
 <div id="page" class="hfeed site">
 	<?php do_action( 'accelerate_before_header' ); ?>
 	<header id="masthead" class="site-header clearfix">		
@@ -106,7 +106,7 @@ wp_head();
 
 		<?php
    	if( of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
-			if ( is_home() || is_front_page() ) {
+			if ( is_front_page() ) {
    			accelerate_featured_image_slider();
 			}
    	}
