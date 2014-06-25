@@ -122,7 +122,7 @@ function sampression_filter_wp_title( $title, $sep = '|' ){
 function sampression_social_media_icons() {
     global $sampression_options_settings;
     $options = $sampression_options_settings;
-    if( $options['social_facebook_url'] || $options['social_twitter_url'] || $options['social_linkedin_url'] || $options['social_youtube_url'] ){
+    if( $options['social_facebook_url'] || $options['social_twitter_url'] || $options['social_linkedin_url'] || $options['social_youtube_url'] || $options['social_googleplus_url'] || $options['social_flickr_url'] || $options['social_vimeo_url'] ){
         if( $options['social_facebook_url'] ){
         ?>
             <a href="<?php echo esc_url( $options['social_facebook_url'] ); ?>" class="social-facebook"> <i class="icon-social-facebook"></i> </a>
@@ -141,6 +141,21 @@ function sampression_social_media_icons() {
         if( $options['social_youtube_url'] ){
         ?>
             <a href="<?php echo esc_url( $options['social_youtube_url'] ); ?>" class="social-youtube"> <i class="icon-social-youtube"></i> </a>
+        <?php
+        }
+        if( $options['social_googleplus_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_googleplus_url'] ); ?>" class="social-googleplus"> <i class="icon-social-googleplus"></i> </a>
+        <?php
+        }
+        if( $options['social_flickr_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_flickr_url'] ); ?>" class="social-flickr"> <i class="icon-social-flicker"></i> </a>
+        <?php
+        }
+        if( $options['social_vimeo_url'] ){
+        ?>
+            <a href="<?php echo esc_url( $options['social_vimeo_url'] ); ?>" class="social-vimeo"> <i class="icon-social-viemo"></i> </a>
         <?php
         }
     }

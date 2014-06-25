@@ -32,6 +32,21 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
                                         <label class="sec-label medium-label"><?php _e( 'Youtube:', 'sampression' );?></label>
                                         <input name="sampression_theme_options[social_youtube_url]" class="medium-input" id="youtube_url" type="text" placeholder="<?php _e( 'Youtube Url', 'sampression' );?>" value="<?php echo esc_url( $options['social_youtube_url'] ); ?>" >
                                     </li>
+                                    <li class="clearfix">
+                                        <!-- Google Plus -->
+                                        <label class="sec-label medium-label"><?php _e( 'Google Plus:', 'sampression' );?></label>
+                                        <input name="sampression_theme_options[social_googleplus_url]" class="medium-input" id="googleplus_url" type="text" placeholder="<?php _e( 'Google Plus Url', 'sampression' );?>" value="<?php echo esc_url( $options['social_googleplus_url'] ); ?>" >      
+                                    </li>
+                                    <li class="clearfix">
+                                        <!-- Flickr -->
+                                        <label class="sec-label medium-label"><?php _e( 'Flickr:', 'sampression' );?></label>
+                                        <input name="sampression_theme_options[social_flickr_url]" class="medium-input" id="flickr_url" type="text" placeholder="<?php _e( 'Flickr Url', 'sampression' );?>"  value="<?php echo esc_url( $options['social_flickr_url'] ); ?>" >
+                                    </li>
+                                    <li class="clearfix">
+                                        <!-- Vimeo -->
+                                        <label class="sec-label medium-label"><?php _e( 'Vimeo:', 'sampression' );?></label>
+                                        <input name="sampression_theme_options[social_vimeo_url]" class="medium-input" id="vimeo_url" type="text" placeholder="<?php _e( 'Vimeo Url', 'sampression' );?>" value="<?php echo esc_url( $options['social_vimeo_url'] ); ?>">
+                                    </li>
                                 </ul>
                             </div>
                         </li>

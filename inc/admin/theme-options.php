@@ -293,6 +293,21 @@ function get_sampression_option($option_name) {
         $validated[ 'social_youtube_url' ] = esc_url_raw( $input[ 'social_youtube_url' ] );
     }
     
+    // Data Validation for Google Plus url
+    if ( isset( $input[ 'social_googleplus_url' ] ) ) {
+        $validated[ 'social_googleplus_url' ] = esc_url_raw( $input[ 'social_googleplus_url' ] );
+    }
+    
+    // Data Validation for flickr url
+    if ( isset( $input[ 'social_flickr_url' ] ) ) {
+        $validated[ 'social_flickr_url' ] = esc_url_raw( $input[ 'social_flickr_url' ] );
+    }
+    
+    // Data Validation for vimeo url
+    if ( isset( $input[ 'social_vimeo_url' ] ) ) {
+        $validated[ 'social_vimeo_url' ] = esc_url_raw( $input[ 'social_vimeo_url' ] );
+    }
+    
     return $validated;
 
     }

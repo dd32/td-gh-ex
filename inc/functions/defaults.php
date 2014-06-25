@@ -45,6 +45,9 @@ $sampression_option_defaults = array(
     'social_twitter_url' => '',
     'social_youtube_url' => '',
     'social_linkedin_url' => '',
+    'social_googleplus_url' => '',
+    'social_flickr_url' => '',
+    'social_vimeo_url' => '',
     'custom_css_value' => '/* Some example CSS */
             /* Any changes made will appear in live site */
 

@@ -84,6 +84,7 @@ class Sampression_Admin {
      * load css
      */
     public function sampression_enqueue_skeleton() {
+        wp_enqueue_style( 'sampression-style', get_stylesheet_uri() );       
         wp_enqueue_style( 'fonts', SAM_FW_CSS_URL . '/fonts-sampression.css' );       
         wp_enqueue_style( 'superfish', SAM_FW_CSS_URL . '/superfish.css' );
         wp_enqueue_style( 'mediaquery', SAM_FW_CSS_URL . '/mediaquery.css' );
