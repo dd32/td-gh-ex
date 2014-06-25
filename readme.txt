@@ -61,8 +61,11 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.1 =
+ - bbPress compatible issue fixed
+
 = 1.0.9 =
-- bbPress compatible
+ - bbPress compatible
 
 = 1.0.8 =
  - Language translation added for some fields

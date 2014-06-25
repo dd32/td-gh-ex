@@ -129,7 +129,7 @@ function interface_theloop_for_archive() {
 		  		}
 	  			?>
     <header class="entry-header">
-      <?php if (is_page()){?>
+      <?php if (get_the_author() !=''){?>
       <div class="entry-meta"> <span class="cat-links">
         <?php the_category(', '); ?>
         </span><!-- .cat-links --> 
@@ -140,7 +140,7 @@ function interface_theloop_for_archive() {
         <?php the_title();?>
         </a> </h1>
       <!-- .entry-title -->
-       <?php if (is_page()){?>
+       <?php if (get_the_author() !=''){?>
       <div class="entry-meta clearfix">
         <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" 
                         title="<?php  esc_attr(the_author()); ?>">
