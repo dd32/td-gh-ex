@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Base WP v1.16\n"
+"Project-Id-Version: Base WP v1.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-06-04 10:48:30+0000\n"
+"PO-Revision-Date: 2014-06-25 15:49:41+0000\n"
 "Last-Translator: iografica <info@iografica.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,18 +25,18 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! La pagina non è stata trovata."
 
-#: 404.php:19
+#: 404.php:20
 #@ base
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr "Non abbiamo trovato quello che stavi cercando. Hai provato a fare una ricerca o a vedere i link sottostanti?"
 
-#: 404.php:27
+#: 404.php:28
 #@ base
 msgid "Most Used Categories"
 msgstr "Categorie più utilizzate"
 
 #. translators: %1$s: smiley
-#: 404.php:44
+#: 404.php:45
 #, php-format
 #@ base
 msgid "Try looking in the monthly archives. %1$s"
@@ -161,104 +161,112 @@ msgstr "Commenti Successivi &rarr;"
 msgid "Comments are closed."
 msgstr "I commenti sono disattivati."
 
-#: content-none.php:13
+#: content/content-none.php:13
 #@ base
 msgid "Nothing Found"
 msgstr "Nessun Risultato"
 
-#: content-none.php:19
+#: content/content-none.php:19
 #, php-format
 #@ base
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Pronto a pubblicare il tuo primo articolo?<a href=\"%1$s\">Inizia qui</a>."
 
-#: content-none.php:23
+#: content/content-none.php:23
 #@ base
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "Non abbiamo trovato alcuna corrispondenza con quello che stavi cercando. Per favore, prova con parole differenti."
 
-#: content-none.php:28
+#: content/content-none.php:28
 #@ base
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Sembra che non siamo riusciti a trovare quello che ti interessava.  Prova ad effettuare una ricerca."
 
-#: content-page.php:22
-#: content-pagenotitle.php:17
-#: content-single.php:25
-#: content.php:32
+#: content/content-page.php:22
+#: content/content-pagenotitle.php:21
+#: content/content-single.php:25
+#: content.php:28
 #@ base
 msgid "Pages:"
 msgstr "Pagine:"
 
-#: content-page.php:27
-#: content-pagenotitle.php:22
-#: content-single.php:65
-#: content.php:66
+#: content/content-page.php:27
+#: content/content-pagenotitle.php:26
+#: content/content-search.php:53
+#: content/content-single.php:65
+#: content.php:61
 #@ base
 msgid "Edit"
 msgstr "Modifica"
 
 #. translators: used between list items, there is a space after the comma
-#: content-single.php:34
-#: content-single.php:37
-#: content.php:43
-#: content.php:53
+#: content/content-search.php:30
+#: content/content-search.php:40
+#: content/content-single.php:34
+#: content/content-single.php:37
+#: content.php:38
+#: content.php:48
 #@ base
 msgid ", "
 msgstr ""
 
-#: content-single.php:42
+#: content/content-single.php:42
 #, php-format
 #@ base
 msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Tag articolo: %2$s. Aggiungi ai preferiti: <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 
-#: content-single.php:44
+#: content/content-single.php:44
 #, php-format
 #@ base
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Aggiungi ai preferiti: <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 
-#: content-single.php:50
+#: content/content-single.php:50
 #, php-format
 #@ base
 msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Articolo pubblicato in  %1$s. Tag: %2$s. Aggiungilo ai preferiti: <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 
-#: content-single.php:52
+#: content/content-single.php:52
 #, php-format
 #@ base
 msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Questo articolo è stato pubblicato in %1$s. Aggiungilo ai preferiti: <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 
-#: content.php:29
+#: content.php:25
 #@ base
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
-#: content.php:47
+#: content/content-search.php:34
+#: content.php:42
 #, php-format
 #@ base
 msgid "Posted in %1$s"
 msgstr "Pubblicato in %1$s"
 
-#: content.php:57
+#: content/content-search.php:44
+#: content.php:52
 #, php-format
 #@ base
 msgid "Tagged %1$s"
 msgstr "Taggato %1$s"
 
-#: content.php:63
+#: content/content-search.php:50
+#: content.php:58
 #@ base
 msgid "Leave a comment"
 msgstr "Lascia un commento"
 
-#: content.php:63
+#: content/content-search.php:50
+#: content.php:58
 #@ base
 msgid "1 Comment"
 msgstr "1 Commento"
 
-#: content.php:63
+#: content/content-search.php:50
+#: content.php:58
 #@ base
 msgid "% Comments"
 msgstr "% Commenti"
@@ -332,201 +340,196 @@ msgstr "Pagina %s"
 #: inc/includes/class-options-framework-admin.php:85
 #: inc/includes/class-options-framework-admin.php:86
 #: inc/includes/class-options-framework-admin.php:305
-#@ textdomain
+#@ base
 msgid "Theme Options"
-msgstr ""
+msgstr "Impostazioni Tema"
 
 #: inc/includes/class-options-framework-admin.php:171
-#@ textdomain
+#@ base
 msgid "Save Options"
-msgstr ""
+msgstr "Salva Impostazioni"
 
 #: inc/includes/class-options-framework-admin.php:172
-#@ textdomain
+#@ base
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Ripristina Default"
 
 #: inc/includes/class-options-framework-admin.php:172
-#@ textdomain
+#@ base
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
+msgstr "Clicca OK per resettare. Tutte le impostazioni del tema andranno perse!"
 
 #: inc/includes/class-options-framework-admin.php:203
-#@ textdomain
+#@ base
 msgid "Default options restored."
-msgstr ""
+msgstr "Impostazioni di default ripristinate."
 
 #: inc/includes/class-options-framework-admin.php:257
-#@ textdomain
+#@ base
 msgid "Options saved."
-msgstr ""
+msgstr "Impostazioni salvate."
 
 #: inc/includes/class-options-media-uploader.php:63
-#@ textdomain
+#@ base
 msgid "No file chosen"
-msgstr ""
+msgstr "Nessun file selezionato"
 
 #: inc/includes/class-options-media-uploader.php:66
 #: inc/includes/class-options-media-uploader.php:119
-#@ textdomain
+#@ base
 msgid "Upload"
-msgstr ""
+msgstr "Carica"
 
 #: inc/includes/class-options-media-uploader.php:68
 #: inc/includes/class-options-media-uploader.php:120
-#@ textdomain
+#@ base
 msgid "Remove"
-msgstr ""
+msgstr "Rimuovi"
 
 #: inc/includes/class-options-media-uploader.php:71
-#@ textdomain
+#@ base
 msgid "Upgrade your version of WordPress for full media support."
 msgstr ""
 
 #: inc/includes/class-options-media-uploader.php:95
-#@ textdomain
+#@ base
 msgid "View File"
-msgstr ""
+msgstr "Vedi File"
 
 #: inc/includes/class-options-sanitization.php:241
-#@ textdomain
+#@ base
 msgid "No Repeat"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:242
-#@ textdomain
+#@ base
 msgid "Repeat Horizontally"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:243
-#@ textdomain
+#@ base
 msgid "Repeat Vertically"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:244
-#@ textdomain
+#@ base
 msgid "Repeat All"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:257
-#@ textdomain
+#@ base
 msgid "Top Left"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:258
-#@ textdomain
+#@ base
 msgid "Top Center"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:259
-#@ textdomain
+#@ base
 msgid "Top Right"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:260
-#@ textdomain
+#@ base
 msgid "Middle Left"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:261
-#@ textdomain
+#@ base
 msgid "Middle Center"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:262
-#@ textdomain
+#@ base
 msgid "Middle Right"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:263
-#@ textdomain
+#@ base
 msgid "Bottom Left"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:264
-#@ textdomain
+#@ base
 msgid "Bottom Center"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:265
-#@ textdomain
+#@ base
 msgid "Bottom Right"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:278
-#@ textdomain
+#@ base
 msgid "Scroll Normally"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:279
-#@ textdomain
+#@ base
 msgid "Fixed in Place"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:353
-#@ textdomain
+#@ base
 msgid "Normal"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:354
-#@ textdomain
+#@ base
 msgid "Italic"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:355
-#@ textdomain
+#@ base
 msgid "Bold"
 msgstr ""
 
 #: inc/includes/class-options-sanitization.php:356
-#@ textdomain
+#@ base
 msgid "Bold Italic"
 msgstr ""
 
-#: inc/template-tags.php:23
+#: inc/template-tags.php:21
 #@ base
 msgid "Posts navigation"
 msgstr "Navigazione articoli"
 
-#: inc/template-tags.php:27
+#: inc/template-tags.php:25
 #@ base
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Articolo precedente"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articoli precedenti"
 
-#: inc/template-tags.php:31
+#: inc/template-tags.php:29
 #@ base
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Articolo successivo <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articoli successivi <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:56
+#: inc/template-tags.php:52
 #@ base
 msgid "Post navigation"
 msgstr "Navigazione articolo"
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:55
 #, php-format
 #@ base
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr ""
 
-#: inc/template-tags.php:60
+#: inc/template-tags.php:56
 #, php-format
 #@ base
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:85
-#, php-format
-#@ base
-msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
-msgstr "<span class=\"posted-on\">Pubblicato in %1$s</span><span class=\"byline\"> da %2$s</span>"
-
-#: options.php:130
+#: options.php:41
+#: options.php:193
 #@ base
 msgid "Logo Upload"
-msgstr ""
+msgstr "Carica Logo"
 
 #: search.php:16
 #, php-format
@@ -539,115 +542,234 @@ msgstr "Risultati ricerca per: %s"
 msgid "Meta"
 msgstr ""
 
-#: footer.php:18
+#: footer.php:20
 #@ base
 msgid "&copy;"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:24
 #, php-format
 #@ base
 msgid "Theme: %1$s by %2$s "
 msgstr "Tema: %1$s realizzato da %2$s "
 
-#: footer.php:24
+#: footer.php:26
 #@ base
 msgid "Powered by "
 msgstr ""
 
-#: footer.php:25
+#: footer.php:27
 #, php-format
 #@ base
 msgid "%s"
 msgstr ""
 
-#: options.php:43
+#: options.php:65
 #@ base
 msgid "Link color"
-msgstr ""
+msgstr "Colore link"
 
-#: options.php:44
-#: options.php:50
-#: options.php:55
-#: options.php:60
-#: options.php:66
-#: options.php:74
-#: options.php:79
-#: options.php:87
-#: options.php:92
-#: options.php:97
-#: options.php:102
-#@ base
-msgid "Only available in premium version"
-msgstr "Disponibile solo nella versione premium"
-
-#: options.php:49
-#@ base
-msgid "Link color hover"
-msgstr ""
-
-#: options.php:54
+#: options.php:116
 #@ base
 msgid "Footer text"
 msgstr "Testo del footer"
 
-#: options.php:59
+#: options.php:121
 #@ base
 msgid "Display credits link"
-msgstr ""
+msgstr "Mostra i ringraziamenti"
 
-#: options.php:65
+#: options.php:47
 #@ base
 msgid "Meta Slider"
 msgstr ""
 
-#: options.php:73
+#: options.php:160
 #@ base
 msgid "Custom css"
-msgstr ""
+msgstr "Css personalizzato"
 
-#: options.php:78
+#: options.php:165
 #@ base
 msgid "Footer code"
-msgstr ""
+msgstr "Codice piè di pagina"
 
-#: options.php:86
-#@ base
-msgid "Show featured image in blog and archive page"
-msgstr "Mostra l'immagine in evidenza nel blog e nelle pagine di archivio"
-
-#: options.php:91
-#@ base
-msgid "Show featured image in single post"
-msgstr "Mostra l'immagine in evidenza nel singolo articolo"
-
-#: options.php:96
-#@ base
-msgid "Display meta inforamtion"
-msgstr ""
-
-#: options.php:148
+#: options.php:211
 #@ base
 msgid "Favicon"
 msgstr ""
 
-#: options.php:169
+#: options.php:232
 #@ base
 msgid "Upgrade to premium version"
-msgstr ""
+msgstr "Aggiorna alla versione premium"
 
-#: options.php:171
+#: options.php:234
 #@ base
 msgid "Upgrade to the premium version to get access to advanced options."
 msgstr "Aggiorna il tema alla versione premium per avere accesso alle impostazioni avanzate."
 
-#: options.php:175
+#: options.php:238
 #@ base
 msgid "With premium version you have access to priority support."
 msgstr "Con la versione premium hai diritto al servizio di assistenza."
 
-#: options.php:176
+#: options.php:239
 #@ base
 msgid "We offer a 7 day full refund if you are not happy with your purchase."
 msgstr "Ti offriamo un rimborso completo entro 7 giorni se non sei soddisfatto del tuo acquisto."
+
+#: inc/template-tags.php:82
+#, php-format
+#@ base
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Pubblicato il %s"
+
+#: inc/template-tags.php:87
+#, php-format
+#@ base
+msgctxt "post author"
+msgid "by %s"
+msgstr "da %s"
+
+#: options.php:31
+#@ base
+msgid "General"
+msgstr "Generale"
+
+#: options.php:35
+#@ base
+msgid "Add favicon"
+msgstr "Aggiungi favicon"
+
+#: options.php:36
+#@ base
+msgid "Upload your favicon"
+msgstr "Carica la tua favicon"
+
+#: options.php:42
+#@ base
+msgid "Upload your logo"
+msgstr "Carica il tuo logo"
+
+#: options.php:51
+#@ base
+msgid "Style"
+msgstr "Stile"
+
+#: options.php:55
+#@ base
+msgid "Header background"
+msgstr "Sfondo testata"
+
+#: options.php:60
+#@ base
+msgid "Menu background color"
+msgstr "Colore sfondo menu"
+
+#: options.php:70
+#@ base
+msgid "Link color on hover"
+msgstr "Colore link al passaggio del mouse"
+
+#: options.php:75
+#@ base
+msgid "Footer background"
+msgstr "Sfondo piè di pagina"
+
+#: options.php:79
+#@ base
+msgid "Blog &amp; Pages"
+msgstr "Blog &amp; Pagine"
+
+#: options.php:83
+#@ base
+msgid "Pages comments"
+msgstr "Commenti pagine"
+
+#: options.php:88
+#@ base
+msgid "Show blog and archive featured image"
+msgstr "Mostra l'immagine in evidenza nel blog e negli archivi"
+
+#: options.php:93
+#@ base
+msgid "Show post featured image"
+msgstr "Mostra l'immagine in evidenza dell'articolo"
+
+#: options.php:98
+#@ base
+msgid "Display post meta"
+msgstr "Mostra le meta informazioni articolo"
+
+#: options.php:103
+#@ base
+msgid "Index sidebar"
+msgstr "Sidebar index"
+
+#: options.php:108
+#@ base
+msgid "Post sidebar"
+msgstr "Sidebar articolo"
+
+#: options.php:112
+#@ base
+msgid "Footer"
+msgstr ""
+
+#: options.php:125
+#@ base
+msgid "Social"
+msgstr ""
+
+#: options.php:129
+#@ base
+msgid "Facebook url"
+msgstr "Indirizzo Facebook"
+
+#: options.php:130
+#@ base
+msgid "Add the url of your Facebook page"
+msgstr "Inserisci l'indirizzo della tua pagina Facebook"
+
+#: options.php:136
+#@ base
+msgid "Twitter url"
+msgstr "Indirizzo Twitter"
+
+#: options.php:137
+#@ base
+msgid "Add the url of your Twitter page"
+msgstr "Inserisci l'indirizzo della tua pagina Twitter"
+
+#: options.php:143
+#@ base
+msgid "Google plus url"
+msgstr "Indirizzo Google plus"
+
+#: options.php:144
+#@ base
+msgid "Add the url of your Google Plus page"
+msgstr "Inserisci l'indirizzo della tua pagina Google Plus"
+
+#: options.php:150
+#@ base
+msgid "Pinterest url"
+msgstr "Indirizzo Pinterest"
+
+#: options.php:151
+#@ base
+msgid "Add the url of your Pinterest page"
+msgstr "Inserisci l'indirizzo della tua pagina Pinterest"
+
+#: options.php:156
+#@ base
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: options.php:28
+#@ base
+msgid "Only available in premium version"
+msgstr "Disponibile solo nella versione premium"
 

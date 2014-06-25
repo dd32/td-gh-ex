@@ -16,10 +16,11 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
+                	<div class="message-404">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'base' ); ?></p>
-
 					<?php get_search_form(); ?>
-
+					</div><!-- .message-404 -->
+                    
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php if ( base_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>

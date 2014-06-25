@@ -8,13 +8,15 @@
  */
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 	</div><!-- wide contenitor-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
   		 <div class="widget-footer container">
    			<?php get_sidebar( 'footer' ); ?>
    		</div><!-- .widget-footer -->
 		<div class="site-info">
+        <?php get_template_part( 'content/social' ); // Social link ?>        
+        
 		<?php esc_attr_e( '&copy;', 'base' ); ?> <?php _e( date( 'Y' ) ); ?> <a href="<?php echo esc_url(home_url( '/' )) ?>" target="_blank" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 		<?php bloginfo( 'name' ); ?>
         </a>        

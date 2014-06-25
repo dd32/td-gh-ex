@@ -24,85 +24,148 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	$options[] = array( "name" => "Basic Settings",
+	// Background Defaults
+	$upgrade_message = __('Only available in premium version', 'base');
+	
+
+	$options[] = array( "name" => __('General', 'base'),
 		"type" => "heading" );
 		
 	$options['favicon_uploader'] = array(
-		"name" => "Add favicon",
-		"desc" => "Upload your favicon.",
+		"name" => __('Add favicon', 'base'),
+		"desc" => __('Upload your favicon', 'base'),
 		"id" => "favicon_uploader",
 		"type" => "upload" );	
 	
 	$options['logo_uploader'] = array(
-		"name" => "Logo Upload",
-		"desc" => "Upload your logo.",
+		"name" => __('Logo Upload', 'base'),
+		"desc" =>  __('Upload your logo', 'base'),
 		"id" => "logo_uploader",
-		"type" => "upload" );	
+		"type" => "upload" );
 	
+	$options[] = array(
+		'name' => __('Meta Slider', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array( "name" => __('Style', 'base'),
+		"type" => "heading" );
+	
+	$options[] = array(
+		'name' => __('Header background', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Menu background color', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');;
+			
 	$options[] = array(
 		'name' => __('Link color', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
-
 	
 	$options[] = array(
-		'name' => __('Link color hover', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'name' => __('Link color on hover', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Footer background', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array( "name" => __('Blog &amp; Pages', 'base'),
+		"type" => "heading" );
+	
+	$options[] = array(
+		'name' => __('Pages comments', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Show blog and archive featured image', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Show post featured image', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Display post meta', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
 		
 	$options[] = array(
+		'name' => __('Index sidebar', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Post sidebar', 'base'),
+		'desc' => $upgrade_message,
+		'type' => 'info');
+	
+	$options[] = array( "name" => __('Footer', 'base'),
+		"type" => "heading" );
+		
+	$options[] = array(
 		'name' => __('Footer text', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
 	
 	$options[] = array(
 		'name' => __('Display credits link', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
-
+	
+	$options[] = array( "name" => __('Social', 'base'),
+		"type" => "heading" );
+			
+	$options[] = array(
+		'name' => __('Facebook url', 'base'),
+		'desc' => __('Add the url of your Facebook page', 'base'),
+		'id' => 'facebook_url',
+		'std' => '',
+		'type' => 'text');
 	
 	$options[] = array(
-		'name' => __('Meta Slider', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
-		'type' => 'info');
+		'name' => __('Twitter url', 'base'),
+		'desc' => __('Add the url of your Twitter page', 'base'),
+		'id' => 'twitter_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Google plus url', 'base'),
+		'desc' => __('Add the url of your Google Plus page', 'base'),
+		'id' => 'google_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Pinterest url', 'base'),
+		'desc' => __('Add the url of your Pinterest page', 'base'),
+		'id' => 'pinterest_url',
+		'std' => '',
+		'type' => 'text');
 		
-	$options[] = array( "name" => "Advanced Settings",
+	$options[] = array( "name" => __('Advanced', 'base'),
 		"type" => "heading" );	
 	
 	$options[] = array(
 		'name' => __('Custom css', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
 
 	$options[] = array(
 		'name' => __('Footer code', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
-		'type' => 'info');
-	
-	$options[] = array( "name" => "Blog and post settings",
-		"type" => "heading" );	
-	
-	$options[] = array(
-		'name' => __('Show featured image in blog and archive page', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Show featured image in single post', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
-		'type' => 'info');
-	
-	$options[] = array(
-		'name' => __('Display meta inforamtion', 'base'),
-		'desc' => __('Only available in premium version', 'base'),
+		'desc' => $upgrade_message,
 		'type' => 'info');
 		
-	$options[] = array(
-		'name' => "Display sidebar in blog and archive page",
-		'desc' => __('Only available in premium version', 'base'),
-		'type' => 'info');
-	
-	
 return $options;
 }
 
@@ -178,4 +241,3 @@ function optionscheck_display_sidebar() { ?>
         </div>
     </div>
 <?php }
-
