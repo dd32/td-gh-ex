@@ -29,18 +29,17 @@ get_header();
               <?php if($foodrecipes_feature_img_url != "") {?>
               <img src="<?php echo $foodrecipes_feature_img_url; ?>">
               <?php } ?>
-              <?php foodrecipes_entry_meta(); ?>
-              <div class="clear-fix"></div>
-              <?php the_tags(); ?>
               <p>
                 <?php the_content(); ?>
               </p>
             </div>
+            <?php if ( get_comments_number() > 0 ) : ?>
             <div class="foodrecipes-inner-blog-text" >
               <h6>
-                <?php comments_number( '0 COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
+                <?php comments_number( 'NO COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
               </h6>
             </div>
+            <?php endif; ?>
             <div class="foodrecipes-comment-form">
               <?php comments_template( '', true ); ?>
             </div>

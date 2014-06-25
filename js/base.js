@@ -24,7 +24,7 @@ jQuery(document).ready(function(){
                 }
 
                 jQuery('.box').width(box_width);
-
+				jQuery('.article').css('margin','0px');	
                 return box_width;
               }
         });

@@ -22,7 +22,8 @@ get_header(); ?>
             $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
         ?>
         <div class="col-md-6 box masonry-brick foodrecipes-post-box-margin no-padding">
-          <div class="foodrecipes-post-box">
+          <div class="article">
+           <div class="foodrecipes-post-box">
             <div class="foodrecipes-post-box-img">
               <?php if($foodrecipes_feature_img_url == "") {?>
               <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" class="img-responsive">
@@ -39,8 +40,9 @@ get_header(); ?>
             <div class="foodrecipes-box-name">
               <h6><?php echo get_the_date("j F, Y"); ?></h6>
               <div class="foodrecipes-title"> <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a> </div>
-              <div class="foodrecipes-hr"> Post By: <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span> Comments:<span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span> </div>
+              <div class="foodrecipes-hr"> Post By: <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span><?php if ( get_comments_number() > 0 ) : ?> Comments:<span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span><?php endif; ?> </div>
             </div>
+          </div>
           </div>
         </div>
         <?php } ?>
@@ -56,11 +58,8 @@ get_header(); ?>
           </span> </nav>
         <?php } ?>
     </div>
-    <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
-      <?php 	
-		get_sidebar() 
-	?>
-    </div>
+
+      <?php get_sidebar() ?>
   </div>
 </div>
 <?php get_footer(); ?>

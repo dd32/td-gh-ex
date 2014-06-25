@@ -44,11 +44,13 @@ get_header();
                      ?>
                   </p>
                 </div>
+                <?php if ( get_comments_number() > 0 ) : ?>
                 <div class="foodrecipes-inner-blog-text" >
                   <h6>
-                    <?php comments_number( '0 COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
+                    <?php comments_number( 'NO COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
                   </h6>
                 </div>
+                <?php  endif; ?>
                 <div class="foodrecipes-comment-form">
                   <?php comments_template( '', true ); ?>
                 </div>
@@ -65,9 +67,7 @@ get_header();
         <?php endwhile; ?>
         
         <!-- side-menu -->
-        <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
           <?php get_sidebar(); ?>
-        </div>
         <!-- side-menu --> 
       </div>
     </div>

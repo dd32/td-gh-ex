@@ -19,7 +19,7 @@ function foodrecipes_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 672, 372, true );
+	set_post_thumbnail_size();
 	add_image_size( 'foodrecipes-full-width', 1038, 576, true );
 	
 	// This theme uses wp_nav_menu() in two locations.
@@ -276,7 +276,7 @@ function foodrecipes_entry_meta() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'foodrecipes' ), get_the_author() ) ),
 		get_the_author()
 	);
-
+if(get_comments_number() > 0 ) {
 
 	if ( $foodrecipes_tag_list ) {
 		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'</div>', 'foodrecipes' );
@@ -285,6 +285,16 @@ function foodrecipes_entry_meta() {
 	} else {
 		$foodrecipes_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'</div>', 'foodrecipes' );
 	}
+} else {
+	
+	if ( $foodrecipes_tag_list ) {
+		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
+	} elseif ( $foodrecipes_category_list ) {
+		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
+	} else {
+		$foodrecipes_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
+	}
+}
 
 	printf(
 		$foodrecipes_utility_text,

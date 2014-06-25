@@ -23,7 +23,7 @@ if ( post_password_required() )
   </h2>
   <ul class="">
     <?php	
-	wp_list_comments( array( 'callback' => 'foodrecipes_comment', 'style' => 'ul' ) ); ?>
+	wp_list_comments( array( 'callback' => 'foodrecipes_comment', 'short_ping' => true, 'style' => 'ul' ) ); ?>
   </ul>
   <?php paginate_comments_links(); ?>
   <?php endif; // have_comments() ?>

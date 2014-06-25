@@ -70,9 +70,9 @@
 			$foodrecipes_defaults = array(
 					'theme_location'  => 'primary',
 					'container'       => 'div',
-					'container_class' => '',
+					'container_class' => 'col-md-6 no-padding',
 					'container_id'    => '',
-					'menu_class'      => '',
+					'menu_class'      => 'col-md-6 no-padding',
 					'menu_id'         => '',
 					'echo'            => true,
 					'fallback_cb'     => 'wp_page_menu',

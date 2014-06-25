@@ -8,3 +8,8 @@ Version: 1.0.1
 	iv) changed comment form 
 	v) used search form in 404 file
 	vi) changed favicon typo
+	
+Version: 1.0.2
+	i) set image margin on page loading
+	ii) set comment counter condition
+	iii) Set div structure 

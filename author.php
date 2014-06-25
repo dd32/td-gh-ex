@@ -61,11 +61,7 @@ get_header(); ?>
           </span> </nav>
         <?php } ?>
       </div>
-      <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
-        <?php 	
-                get_sidebar() 
-            ?>
-      </div>
+        <?php get_sidebar(); ?>
     </div>
   </div>
 </div>

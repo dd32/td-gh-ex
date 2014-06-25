@@ -17,11 +17,7 @@ get_header();
 <div class="main-container ">
   <div class="foodrecipes-container-recipes container">
     <div class="row">
-      <div class="col-md-4 foodrecipes-side-menu-bgcolor main-sidebar">
-        <?php 	
-                get_sidebar(); 
-            ?>
-      </div>
+        <?php get_sidebar(); ?>
       <!-- side-menu -->
       <?php while ( have_posts() ) : the_post(); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -35,18 +31,15 @@ get_header();
               <?php if($foodrecipes_feature_img_url != "") { ?>
               <div><img src="<?php echo $foodrecipes_feature_img_url; ?>"></div>
               <?php } ?>
-              <?php foodrecipes_entry_meta(); ?>
-              <div class="clear-fix"></div>
-              <?php the_tags(); ?>
-              <p>
-                <?php the_content(); ?>
-              </p>
+              <p><?php the_content(); ?></p>
             </div>
+            <?php if ( get_comments_number() > 0 ) : ?>
             <div class="foodrecipes-inner-blog-text" >
               <h6>
-                <?php comments_number( '0 COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
+                <?php comments_number( 'NO COMMENT', '1 COMMENT', '% COMMENTS' ); ?>
               </h6>
             </div>
+            <?php endif; ?>
             <div class="foodrecipes-comment-form">
               <?php comments_template( '', true ); ?>
             </div>
