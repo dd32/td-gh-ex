@@ -61,6 +61,9 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.9 =
+- bbPress compatible
+
 = 1.0.8 =
  - Language translation added for some fields
  - Interface now available in Russian Language. Thanks to Kirill Belotserkovskiy <k.belotserkovskiy@gmail.com> for providing us with the translation files
