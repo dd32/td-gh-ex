@@ -7,7 +7,7 @@
  * @package base
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php html_tag_schema(); ?> <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,4 +49,4 @@
        
 	</header><!-- #masthead -->
 	<div class="wide contenitor">
-	<div id="content" class="site-content container">
+<div id="content" class="site-content container">

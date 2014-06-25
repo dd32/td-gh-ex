@@ -63,3 +63,12 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == 1.17 ==
 * Add japan translation (thanks to ISHIKAWA Koutarou)
+
+== 1.18 ==
+* Move content to content folder.
+* Add content template for search.
+* Improve template-tags.php.
+* Improve css for 404 error page.
+* Fix main menu minor css error.
+* Add social options.
+* Add Schema.org for posts and pages.

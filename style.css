@@ -4,7 +4,7 @@ Theme URI: http://www.iografica.it/prodotto/base-wp/
 Author: iografica
 Author URI: http://themes.iografica.it/
 Description: Base WP is a basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugin or for support and documentation visit our website (http://themes.iografica.it).
-Version: 1.17
+Version: 1.18
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base
@@ -448,7 +448,7 @@ a:active {
 	background: #F90;
 	color:#fff;
 }
-.main-navigation ul ul :hover > a {
+.main-navigation ul ul:hover > a {
 	background: #F90;
 	color:#fff;
 }
@@ -767,6 +767,14 @@ text-shadow: 1px 1px 0 #fff;
 b.fn{
 	margin-bottom:6em !important ;
 	}
+.error-404 .page-header, .error-404 .message-404 {
+	text-align:center;
+	}
+.error-404 .message-404 input.search-field {
+	width:50%;
+	padding:0.6em;
+	margin-bottom:1em;
+	}
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -904,4 +912,43 @@ object {
 .site-info a {
 }
 .site-info a:hover, .site-info a:focus, .site-info a:active {
+}
+.social-url  {
+	text-align:center;
+	width:100%;
+	display:block;
+	padding-top:0.6em;
+	padding-bottom:0.8em;
+
+}
+.social-url a {
+	text-align:center;
+	display:inline-block;
+	margin:0px 2px;
+	width:32px;
+	height:32px;
+}	
+.social-url a.facebook-icon {
+	background: url(images/social/social-facebook.png);
+}
+.social-url a.facebook-icon:hover {
+	background: url(images/social/social-facebook-hover.png);
+}
+.social-url a.twitter-icon {
+	background: url(images/social/social-twitter.png);
+}
+.social-url a.twitter-icon:hover {
+	background: url(images/social/social-twitter-hover.png);
+}
+.social-url a.google-icon {
+	background: url(images/social/social-google-plus.png);
+}
+.social-url a.google-icon:hover {
+	background: url(images/social/social-google-plus-hover.png);
+}
+.social-url a.pinterest-icon {
+	background: url(images/social/social-pinterest.png);
+}
+.social-url a.pinterest-icon:hover {
+	background: url(images/social/social-pinterest-hover.png);
 }
