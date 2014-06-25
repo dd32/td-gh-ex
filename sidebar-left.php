@@ -25,11 +25,11 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	                'cat' => $event_category,
 	                'posts_per_page' => 3,
 	            )); ?>
-	        <aside id="latest-events" class="clear">
+	        <aside id="latest-events" class="clearfix">
 	        <h1 class="widget-title"><?php echo get_cat_name($event_category); ?></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-	        	<div class="event-list clear">
+	        	<div class="event-list clearfix">
 	        		
 	        		<figure class="event-thumbnail">
 						<a href="<?php the_permalink(); ?>">
@@ -67,10 +67,10 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	        </aside>
 	        <?php
 	        } else { ?>
-	        <aside id="latest-events" class="clear">
+	        <aside id="latest-events" class="clearfix">
 	        <h1 class="widget-title">Latest Events/News</h1>
 		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
-		        <div class="event-list clear">
+		        <div class="event-list clearfix">
 						<figure class="event-thumbnail">
 							<a href="#"><img src="<?php echo get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'; ?>" alt="<?php echo 'event'.$event_count; ?>">
 							<div class="event-date">
@@ -100,7 +100,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
         <?php wp_reset_query(); ?>
         
 	    <?php if($show_testimonials == 1){ ?>
-		<aside class="widget testimonail-sidebar clear">
+		<aside class="widget testimonail-sidebar clearfix">
  		<h1 class="widget-title"><?php echo get_cat_name($testimonail_category); ?></h1>
 			<?php
 			
@@ -126,7 +126,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			        	<div class="testimonail-excerpt">
 			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
 			        	</div>
-			        	<div class="clear"></div>
+			        	<div class="clearfix"></div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>
 					</div>
 			<?php endwhile; ?>
@@ -141,7 +141,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			?>
 			<div class="testimonail-wrap">
 				<?php for ($testimonial_count=1 ; $testimonial_count < 4 ; $testimonial_count++) { ?>
-			        	<div class="testimonail-list clear">
+			        	<div class="testimonail-list clearfix">
 			        		<div class="testimonail-thumbnail">
 			        		<img src="<?php echo get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg' ?>" alt="<?php echo $client_name[$testimonial_count]; ?>">
 			        		</div>
@@ -149,7 +149,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			        		<div class="testimonail-excerpt">
 			        			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer..
 			        		</div>
-			        		<div class="clear"></div>
+			        		<div class="clearfix"></div>
 			        	<div class="testimoinal-client-name"><?php echo $client_name[$testimonial_count]; ?></div>
 			        	</div>
 						

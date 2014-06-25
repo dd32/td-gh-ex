@@ -86,7 +86,10 @@ $accesspresslite_options = array(
 
     'slider_options' => 'single_post_slider',
     'slider_cat' => '',
-    'view_all_text' =>'View All'
+    'view_all_text' =>'View All',
+    'custom_css' => '',
+    'custom_code' => '',
+    'featured_bar' => false
 );
 
 
@@ -240,12 +243,12 @@ function accesspresslite_theme_options_page() {
 
 	<?php // Shows all the tabs of the theme options ?>
 	<div class="nav-tab-wrapper">
-	<a id="options-group-1-tab" class="nav-tab nav-tab-active" href="#options-group-1"><?php _e('Basic','accesspresslite'); ?></a>
+	<a id="options-group-1-tab" class="nav-tab nav-tab-active" href="#options-group-1"><?php _e('Basic Settings','accesspresslite'); ?></a>
     <a id="options-group-2-tab" class="nav-tab" href="#options-group-2"><?php _e('Home Page','accesspresslite'); ?></a>
-	<a id="options-group-3-tab" class="nav-tab" href="#options-group-3"><?php _e('Slider','accesspresslite'); ?></a>
+	<a id="options-group-3-tab" class="nav-tab" href="#options-group-3"><?php _e('Slider Settings','accesspresslite'); ?></a>
 	<a id="options-group-4-tab" class="nav-tab" href="#options-group-4"><?php _e('Sidebar','accesspresslite'); ?></a>
 	<a id="options-group-5-tab" class="nav-tab" href="#options-group-5"><?php _e('Social Links','accesspresslite'); ?></a>
-	<a id="options-group-6-tab" class="nav-tab" href="#options-group-6"><?php _e('Footer Contact','accesspresslite'); ?></a>
+	<a id="options-group-6-tab" class="nav-tab" href="#options-group-6"><?php _e('Tools','accesspresslite'); ?></a>
 	<a id="options-group-7-tab" class="nav-tab" href="#options-group-7"><?php _e('About AccessPress Lite','accesspresslite'); ?></a>
 	</div>
 
@@ -544,6 +547,16 @@ function accesspresslite_theme_options_page() {
                         <?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></a>
                         </td>
                     </tr>
+
+                    <tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+                    <tr>
+						<th><label for="featured_bar"><?php _e('Disable Featured Bar (above footer)','accesspresslite'); ?></th>
+						<td>
+							<input type="checkbox" id="featured_bar" name="accesspresslite_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
+							<label for="featured_bar"><?php _e('Check to disable','accesspresslite'); ?></label><br />
+						</td>
+					</tr>
                 </table>
             </div>
 
@@ -918,6 +931,20 @@ function accesspresslite_theme_options_page() {
 						<p class="f13"><em><?php _e('Enter the Contact Address<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
 						</td>
 					</tr>
+
+					<tr><th scope="row"><label for="custom_css"><?php _e('Custom CSS','accesspresslite'); ?></label></th>
+						<td>
+						<textarea id="custom_css" name="accesspresslite_options[custom_css]" rows="8" cols="60"><?php if(isset($settings['custom_css'])){ echo esc_attr($settings['custom_css']); } ?></textarea>
+						<p class="f13"><em>Put your custom CSS</em></p>
+						</td>
+					</tr>
+
+					<tr><th scope="row"><label for="custom_code"><?php _e('Custom Code (analytics)','accesspresslite'); ?></label></th>
+						<td>
+						<textarea id="custom_code" name="accesspresslite_options[custom_code]" rows="8" cols="60"><?php if(isset($settings['custom_code'])){ echo esc_html($settings['custom_code']); } ?></textarea>
+						<p class="f13"><em>Put the script like anlytics or any other</em></p>
+						</td>
+					</tr>
 				</table>
 			</div>
 
@@ -982,6 +1009,8 @@ function accesspresslite_validate_options( $input ) {
     $input['featured_post_readmore'] = sanitize_text_field( $input['featured_post_readmore'] );
     $input['welcome_post_readmore'] = sanitize_text_field( $input['welcome_post_readmore'] );
     $input['view_all_text'] = sanitize_text_field( $input['view_all_text'] );
+    $input['custom_css'] = wp_kses_stripslashes( $input['custom_css'] );
+    $input['custom_code'] = wp_kses_stripslashes( $input[ 'custom_code' ] );
 
     // We select the previous value of the field, to restore it in case an invalid entry has been given
 	$prev = $settings['featured_post1'];

@@ -10,13 +10,15 @@ $featured_post2 = $accesspresslite_settings['featured_post2'];
 $featured_post3 = $accesspresslite_settings['featured_post3'];
 $show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
 $testimonail_category = $accesspresslite_settings['testimonial_cat'];
+$accesspresslite_featured_bar = $accesspresslite_settings['featured_bar'];
 $accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
 $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
+$big_icons = $accesspresslite_settings['big_icons'];
 
 if( $accesspresslite_layout !== 'Layout2') { ?>
 			
 <section id="top-section" class="ak-container">
-<div id="welcome-text" class="clear">
+<div id="welcome-text" class="clearfix">
 	<?php
 		
 			if(!empty($accesspresslite_welcome_post_id)){
@@ -79,7 +81,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	        <h1><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-	        	<div class="event-list clear">
+	        	<div class="event-list clearfix">
 	        		
 	        		<figure class="event-thumbnail">
 						<a href="<?php the_permalink(); ?>">
@@ -116,7 +118,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	        
 	        <h1>Latest Events/News</h1>
 		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
-		        <div class="event-list clear">
+		        <div class="event-list clearfix">
 						<figure class="event-thumbnail">
 							<a href="#"><img src="<?php echo get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'; ?>" alt="<?php echo 'event'.$event_count; ?>">
 							<div class="event-date">
@@ -146,7 +148,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 <?php 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     if(!empty($featured_post1)) { ?>
-		<div id="featured-post-1" class="featured-post">
+		<div id="featured-post-1" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			
 			<?php
 				$query2 = new WP_Query( 'p='.$featured_post1 );
@@ -180,8 +182,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<i class="fa <?php echo $accesspresslite_settings['featured_post1_icon'] ?>"></i>
 							
-					<?php }
-					the_title(); ?>
+					<?php } ?>
+					<span><?php the_title(); ?></span>
 					</a>
 					</h2>
 
@@ -198,7 +200,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 	<?php }
 
 	if(!empty($featured_post2)) { ?>
-		<div id="featured-post-2" class="featured-post">
+		<div id="featured-post-2" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			
 			<?php
 				$query3 = new WP_Query( 'p='.$featured_post2 );
@@ -232,8 +234,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<i class="fa <?php echo $accesspresslite_settings['featured_post2_icon'] ?>"></i>
 							
-					<?php }
-					the_title(); ?>
+					<?php } ?>
+					<span><?php the_title(); ?></span>
 					</a>
 					</h2>
 
@@ -250,8 +252,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 	<?php } 
 
 	if(!empty($featured_post3)) { ?>
-		<div id="featured-post-3" class="featured-post">
-			
+		<div id="featured-post-3" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			<?php
 				$query4 = new WP_Query( 'p='.$featured_post3 );
 				// the Loop
@@ -283,8 +284,8 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<i class="fa <?php echo $accesspresslite_settings['featured_post3_icon'] ?>"></i>
 							
-					<?php }
-					the_title(); ?>
+					<?php } ?>
+					<span><?php the_title(); ?></span>
 					</a>
 					</h2>
 
@@ -377,7 +378,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 <?php }
 wp_reset_query(); ?>
 
-
+<?php if($accesspresslite_featured_bar != 1) :?>
 <section id="bottom-section">
 	<div class="ak-container">
         <div class="text-box">
@@ -401,7 +402,7 @@ wp_reset_query(); ?>
 		<?php endif; ?>	
 		</div>
         
-        <div class="thumbnail-gallery clear">
+        <div class="thumbnail-gallery clearfix">
         <?php 
         $gallery_code = $accesspresslite_settings['gallery_code'];
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
@@ -427,7 +428,7 @@ wp_reset_query(); ?>
             </a>
             </dt>
             </dl>
-            <br style="clear: both">
+            <br style="clearfix: both">
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
             <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img3.jpg">
@@ -471,14 +472,14 @@ wp_reset_query(); ?>
 			<?php
 				$loop2 = new WP_Query( array(
 	                'cat' => $testimonail_category,
-	                'post_per_page' => 5,
+	                'posts_per_page' => 5,
 	            )); ?>
 	        <div class="testimonail-wrap">
 		        <div class="testimonial-slider">
 		        <?php while ($loop2->have_posts()) : $loop2->the_post(); ?>
 
 		        	<div class="testimonial-slide">
-			        	<div class="testimonail-list clear">
+			        	<div class="testimonail-list clearfix">
 			        		<div class="testimonail-thumbnail">
 			        		<?php 
                             if(has_post_thumbnail()){
@@ -509,7 +510,7 @@ wp_reset_query(); ?>
 				<div class="testimonial-slider">
 				<?php for ($testimonial_count=1 ; $testimonial_count < 5 ; $testimonial_count++) { ?>
 					<div class="testimonial-slide">
-			        	<div class="testimonail-list clear">
+			        	<div class="testimonail-list clearfix">
 			        		<div class="testimonail-thumbnail">
 			        		<img src="<?php echo get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg' ?>" alt="<?php echo $client_name[$testimonial_count]; ?>">
 			        		</div>
@@ -529,4 +530,5 @@ wp_reset_query(); ?>
 		</div>
 	</div>
 </section>
+<?php endif; ?>
 

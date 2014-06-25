@@ -60,8 +60,14 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
-Version 2.1
-* Programming Bug fixed
+Version 2.02
+* Fields for custom css and analytic script added in theme option
+* Show slider by category bug fixed
+* Option to disable featured bar above featured bar added
+* Fontawesome updated
+
+Version 2.01
+* Small Bug fixed
 
 Version 1.8
 * Replacement of images due to GPL issues.

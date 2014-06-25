@@ -30,7 +30,7 @@
 				<?php endif; ?>	
 			</div>
 
-			<div class="clear hide"></div>
+			<div class="clearfix hide"></div>
 
 			<div class="footer3 footer">
 				<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>

@@ -422,7 +422,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
             	<div class="bx-slider">
 				<?php
 				$loop = new WP_Query(array(
-						'cat' => $accesspresslite_settings['slider_options']
+						'cat' => $accesspresslite_settings['slider_cat']
 					));
 					if($loop->have_posts()){ 
 					while($loop->have_posts()) : $loop-> the_post(); 
@@ -530,3 +530,23 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 	  }
 	}
 	add_action( 'pre_get_posts', 'accesspresslite_post_count_queries' );
+
+	function accesspresslite_custom_css(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+		echo '<style type="text/css">';
+			echo $accesspresslite_settings['custom_css'];
+		echo '</style>';
+	}
+
+	add_action('wp_head',accesspresslite_custom_css);
+
+	function accesspresslite_custom_code(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+		//echo '<style type="text/css">';
+			echo $accesspresslite_settings['custom_code'];
+		//echo '</style>';
+	}
+
+	add_action('wp_footer',accesspresslite_custom_code);

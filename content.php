@@ -36,7 +36,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 
 <?php elseif(!empty($cat_testimonail) && is_category() && is_category($cat_testimonail)): ?>
 
-<article id="post-<?php the_ID(); ?>" class="cat-testimonial-list clear">
+<article id="post-<?php the_ID(); ?>" class="cat-testimonial-list clearfix">
 	<header class="entry-header">
 	<div class="cat-testimonial-image">
 	<?php 

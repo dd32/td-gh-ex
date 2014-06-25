@@ -44,11 +44,11 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 			</div><!-- .site-branding -->
         
 
-			<div class="right-header clear">
+			<div class="right-header clearfix">
 				<?php 
 				do_action( 'accesspresslite_header_text' ); 
                 ?>
-                <div class="clear"></div>
+                <div class="clearfix"></div>
                 <?php
 				/** 
 				* @hooked accesspresslite_social_cb - 10

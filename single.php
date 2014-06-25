@@ -6,12 +6,18 @@
  */
 
 get_header();
-global $accesspresslite_options;
+global $accesspresslite_options, $post;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $cat_blog = $accesspresslite_settings['blog_cat'];
+$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 ?>
 
 <div class="ak-container">
+	<?php 
+		if ($post_class=='both-sidebar') { ?>
+			<div id="primary-wrap" class="clearfix"> 
+		<?php }
+	?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -35,8 +41,14 @@ $cat_blog = $accesspresslite_settings['blog_cat'];
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-<?php get_sidebar('left'); ?>
-<?php get_sidebar('right'); ?>
+	<?php 
+	get_sidebar('left'); 
+
+		if ($post_class=='both-sidebar') { ?>
+			</div> 
+		<?php }
+
+	get_sidebar('right'); ?>
 </div>
 
 <?php get_footer(); ?>

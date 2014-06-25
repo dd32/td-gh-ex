@@ -19,7 +19,7 @@ $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true
 
 <?php 
 	if ($post_class=='both-sidebar') { ?>
-		<div id="primary-wrap" class="clear"> 
+		<div id="primary-wrap" class="clearfix"> 
 	<?php }
 ?>
 	<div id="primary" class="content-area">
