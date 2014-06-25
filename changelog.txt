@@ -1,6 +1,13 @@
 *** Baskerville changelog ***
 
 
+Version 1.08 (2014-06-25)
+-------------------------
+- Removed a stray closing div from footer.php
+- Replaced the search field in the header with get_search_form();
+- Added sanitize_callback to theme customization in functions.php
+
+
 Version 1.07 (2014-06-12)
 -------------------------
 - Replaced esc_attr() with the_title_attribute() in link title attributes

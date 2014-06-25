@@ -683,7 +683,11 @@ class baskerville_Customize {
 		) );
       
       //2. Register new settings to the WP database...      
-      $wp_customize->add_setting( 'baskerville_logo' );
+      $wp_customize->add_setting( 'baskerville_logo', 
+      	array( 
+      		'sanitize_callback' => 'esc_url_raw'
+      	) 
+      );
                   
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'baskerville_logo', array(

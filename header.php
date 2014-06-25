@@ -20,10 +20,12 @@
 		<div class="header section small-padding bg-dark bg-image" style="background-image: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/header.jpg'; ?><?php endif; ?>);">
 		
 			<div class="cover"></div>
-		
-			<form method="get" class="header-search-block bg-graphite hidden" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="search" value="" placeholder="<?php _e('Type and press enter','baskerville') ?>" name="s" id="s" /> 
-			</form>
+			
+			<div class="header-search-block bg-graphite hidden">
+			
+				<?php get_search_form(); ?>
+			
+			</div> <!-- /header-search-block -->
 					
 			<div class="header-inner section-inner">
 			
