@@ -41,6 +41,23 @@ function adventure_page_menu_args( $args ) {
 	return $args; }
 
 
+// Filters the title so that it says something useful on the tabs
+add_filter( 'wp_title', 'adventure_filter_wp_title' );
+function adventure_filter_wp_title( $title ) {
+	global $page, $paged;
+
+	if ( is_feed() )
+		return $title;
+
+	$site_description = get_bloginfo( 'description' );
+
+	$filtered_title = $title . get_bloginfo( 'name' );
+	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
+	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) ) : '';
+
+	return $filtered_title;}
+
+
 /**
  * Filter 'get_comments_number'
  * 
@@ -566,6 +583,7 @@ function adventure_customize($wp_customize) {
         'headerfontstyle_setting'       => 'Default',
         'headerspacing_setting'	        => '18',
         'header_image_width_setting'    => '20',
+        'instagram_setting'             => __('The url link goes in here.', 'localize_semperfi'),
         'linkcolor_setting'	            => '#0b6492',
         'linkcolorhover_setting'        => '#FFFFFF',
         'menu_setting'                  => 'standard',
@@ -771,6 +789,13 @@ function adventure_customize($wp_customize) {
 		'priority'			=> 51,
 		'section'			=> 'nav',
 		'settings'			=> 'twitter_setting', )));
+			
+	// Add Instagram Icon to the navigation
+	$wp_customize->add_control( new semperfi_Customize_Textarea_Control( $wp_customize, 'instagram_plus_control', array(
+		'label'				=> __('Instagram icon in the Menu', 'localize_semperfi'),
+		'priority'			=> 52,
+		'section'			=> 'nav',
+		'settings'			=> 'instagram_setting', )));
 			
 	// Add Google+ Icon to the navigation
 	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'google_plus_control', array(
@@ -1220,6 +1245,18 @@ function adventure_theme_options_do_page() { ?>
                 <table>
                     <tbody>
                         <tr>
+                            <th><?php _e('Version', 'localize_adventure'); ?></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>24</th>
+                            <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Fixed an issue with the sidebar sliding up on mobile platforms. Also added in instagram as a social icon.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
+                            <th>23</th>
+                            <td><?php _e('Added the ablity to change the date format.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
                             <th>22</th>
                             <td><?php _e('Quick update to help out mobile devices with social icons in the menu. Pintrest and few other social icons coming soon too.', 'localize_adventure'); ?></td>
                         <tr>
@@ -1267,6 +1304,14 @@ function adventure_theme_options_do_page() { ?>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>3.7</th>
+                            <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Fixed an issue with the sidebar sliding up on mobile platforms. Also added in instagram as a social icon.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
+                            <th>3.6</th>
+                            <td><?php _e('Same as Adventure+ Version ', 'localize_adventure'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.5</th>
                             <td><?php _e('Quick update to help out mobile devices with social icons in the menu. Pintrest and few other social icons coming soon too.', 'localize_adventure'); ?></td>
