@@ -150,7 +150,7 @@ function adventurous_homepage_featured_content() {
 					$adventurous_homepage_featured_content .= '<h2>' . $headline . '</h2>';
 				}
 				if ( !empty( $subheadline ) ) {
-					$adventurous_homepage_featured_content .= '<p>' . $headline . '</p>';
+					$adventurous_homepage_featured_content .= '<p>' . $subheadline . '</p>';
 				}
 				$adventurous_homepage_featured_content .= '</div><!-- #featured-heading -->';
 			}		
@@ -259,7 +259,7 @@ function adventurous_homepage_featured_display() {
 	$page_id = $wp_query->get_queried_object_id();
 	
 	if ( ( $enablefeatured == 'allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablefeatured == 'homepage' ) ) {
-		if  ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
+		if  ( !empty( $options[ 'homepage_featured_headline' ] ) || !empty( $options[ 'homepage_featured_subheadline' ] ) || !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
 			adventurous_homepage_featured_content();
 		} else {
 			adventurous_default_featured_content();
