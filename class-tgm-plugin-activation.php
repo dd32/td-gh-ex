@@ -69,7 +69,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          *
          * @var string
          */
-        public $id = 'tgmpa';
+        public $id = 'digital';
 
         /**
          * Name of the querystring argument for the admin page.
@@ -78,7 +78,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          *
          * @var string
          */
-        public $menu = 'tgmpa-install-plugins';
+        public $menu = 'digital-install-plugins';
 
         /**
          * Default absolute path to folder containing pre-packaged plugin zip files.
@@ -156,7 +156,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
         /**
          * Adds a reference of this object to $instance, populates default strings,
-         * does the tgmpa_init action hook, and hooks in the interactions to init.
+         * does the digital_init action hook, and hooks in the interactions to init.
          *
          * @since 1.0.0
          *
@@ -171,7 +171,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             $this->wp_version = $wp_version;
 
             // Announce that the class is ready, and pass the object (for advanced use).
-            do_action_ref_array( 'tgmpa_init', array( $this ) );
+            do_action_ref_array( 'digital_init', array( $this ) );
 
             // When the rest of WP has loaded, kick-start the rest of the class.
             add_action( 'init', array( $this, 'init' ) );
@@ -193,29 +193,29 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
             // Load class strings.
             $this->strings = array(
-                'page_title'                     => __( 'Install Required Plugins', 'tgmpa' ),
-                'menu_title'                     => __( 'Install Plugins', 'tgmpa' ),
-                'installing'                     => __( 'Installing Plugin: %s', 'tgmpa' ),
-                'oops'                           => __( 'Something went wrong.', 'tgmpa' ),
-                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'tgmpa' ),
-                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'tgmpa' ),
-                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'tgmpa' ),
-                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'tgmpa' ),
-                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'tgmpa' ),
-                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'tgmpa' ),
-                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'tgmpa' ),
-                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'tgmpa' ),
-                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'tgmpa' ),
-                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'tgmpa' ),
-                'return'                         => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-                'dashboard'                      => __( 'Return to the dashboard', 'tgmpa' ),
-                'plugin_activated'               => __( 'Plugin activated successfully.', 'tgmpa' ),
-                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-                'dismiss'                        => __( 'Dismiss this notice', 'tgmpa' ),
+                'page_title'                     => __( 'Install Required Plugins', 'digital' ),
+                'menu_title'                     => __( 'Install Plugins', 'digital' ),
+                'installing'                     => __( 'Installing Plugin: %s', 'digital' ),
+                'oops'                           => __( 'Something went wrong.', 'digital' ),
+                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'digital' ),
+                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'digital' ),
+                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'digital' ),
+                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'digital' ),
+                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'digital' ),
+                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'digital' ),
+                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'digital' ),
+                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'digital' ),
+                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'digital' ),
+                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'digital' ),
+                'return'                         => __( 'Return to Required Plugins Installer', 'digital' ),
+                'dashboard'                      => __( 'Return to the dashboard', 'digital' ),
+                'plugin_activated'               => __( 'Plugin activated successfully.', 'digital' ),
+                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'digital' ),
+                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'digital' ),
+                'dismiss'                        => __( 'Dismiss this notice', 'digital' ),
             );
 
-            do_action( 'tgmpa_register' );
+            do_action( 'digital_register' );
             // After this point, the plugins should be registered and the configuration set.
 
             // Proceed only if we have plugins to handle.
@@ -234,7 +234,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 add_action( 'switch_theme', array( $this, 'flush_plugins_cache' ) );
 
                 // Load admin bar in the header to remove flash when installing plugins.
-                if ( $this->is_tgmpa_page() ) {
+                if ( $this->is_digital_page() ) {
                     remove_action( 'wp_footer', 'wp_admin_bar_render', 1000 );
                     remove_action( 'admin_footer', 'wp_admin_bar_render', 1000 );
                     add_action( 'wp_head', 'wp_admin_bar_render', 1000 );
@@ -270,7 +270,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
         /**
          * Handles calls to show plugin information via links in the notices.
          *
-         * We get the links in the admin notices to point to the TGMPA page, rather
+         * We get the links in the admin notices to point to the digital page, rather
          * than the typical plugin-install.php file, so we can prepare everything
          * beforehand.
          *
@@ -285,11 +285,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          *
          * @global string $tab Used as iframe div class names, helps with styling
          * @global string $body_id Used as the iframe body ID, helps with styling
-         * @return null Returns early if not the TGMPA page.
+         * @return null Returns early if not the digital page.
          */
         public function admin_init() {
 
-            if ( ! $this->is_tgmpa_page() ) {
+            if ( ! $this->is_digital_page() ) {
                 return;
             }
 
@@ -321,7 +321,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          */
         public function thickbox() {
 
-            if ( ! get_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, true ) ) {
+            if ( ! get_user_meta( get_current_user_id(), 'digital_dismissed_notice_' . $this->id, true ) ) {
                 add_thickbox();
             }
 
@@ -377,18 +377,18 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
         public function install_plugins_page() {
 
             // Store new instance of plugin table in object.
-            $plugin_table = new TGMPA_List_Table;
+            $plugin_table = new digital_List_Table;
 
             // Return early if processing a plugin installation action.
-            if ( isset( $_POST['action'] ) && 'tgmpa-bulk-install' == $_POST['action'] && $plugin_table->process_bulk_actions() || $this->do_plugin_install() ) {
+            if ( isset( $_POST['action'] ) && 'digital-bulk-install' == $_POST['action'] && $plugin_table->process_bulk_actions() || $this->do_plugin_install() ) {
                 return;
             }
 
             ?>
-            <div class="tgmpa wrap">
+            <div class="digital wrap">
 
                 <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {
-                    screen_icon( apply_filters( 'tgmpa_default_screen_icon', 'themes' ) );
+                    screen_icon( apply_filters( 'digital_default_screen_icon', 'themes' ) );
                 } ?>
                 <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
                 <?php $plugin_table->prepare_items(); ?>
@@ -397,8 +397,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                     echo wp_kses_post( $this->message );
                 } ?>
 
-                <form id="tgmpa-plugins" action="" method="post">
-                    <input type="hidden" name="tgmpa-page" value="<?php echo $this->menu; ?>" />
+                <form id="digital-plugins" action="" method="post">
+                    <input type="hidden" name="digital-page" value="<?php echo $this->menu; ?>" />
                     <?php $plugin_table->display(); ?>
                 </form>
 
@@ -433,8 +433,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             $plugin = array();
 
             // Checks for actions from hover links to process the installation.
-            if ( isset( $_GET['plugin'] ) && ( isset( $_GET['tgmpa-install'] ) && 'install-plugin' == $_GET['tgmpa-install'] ) ) {
-                check_admin_referer( 'tgmpa-install' );
+            if ( isset( $_GET['plugin'] ) && ( isset( $_GET['digital-install'] ) && 'install-plugin' == $_GET['digital-install'] ) ) {
+                check_admin_referer( 'digital-install' );
 
                 $plugin['name']   = $_GET['plugin_name']; // Plugin name.
                 $plugin['slug']   = $_GET['plugin']; // Plugin slug.
@@ -448,14 +448,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                             'plugin'        => $plugin['slug'],
                             'plugin_name'   => $plugin['name'],
                             'plugin_source' => $plugin['source'],
-                            'tgmpa-install' => 'install-plugin',
+                            'digital-install' => 'install-plugin',
                         ),
                         admin_url( 'themes.php' )
                     ),
-                    'tgmpa-install'
+                    'digital-install'
                 );
                 $method = ''; // Leave blank so WP_Filesystem can populate it as necessary.
-                $fields = array( 'tgmpa-install' ); // Extra fields to pass to WP_Filesystem.
+                $fields = array( 'digital-install' ); // Extra fields to pass to WP_Filesystem.
 
                 if ( false === ( $creds = request_filesystem_credentials( $url, $method, false, false, $fields ) ) ) {
                     return true;
@@ -541,15 +541,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'digital' ) . '">' . __( 'Return to the Dashboard', 'digital' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 
                 return true;
             }
             // Checks for actions from hover links to process the activation.
-            elseif ( isset( $_GET['plugin'] ) && ( isset( $_GET['tgmpa-activate'] ) && 'activate-plugin' == $_GET['tgmpa-activate'] ) ) {
-                check_admin_referer( 'tgmpa-activate', 'tgmpa-activate-nonce' );
+            elseif ( isset( $_GET['plugin'] ) && ( isset( $_GET['digital-activate'] ) && 'activate-plugin' == $_GET['digital-activate'] ) ) {
+                check_admin_referer( 'digital-activate', 'digital-activate-nonce' );
 
                 // Populate $plugin array with necessary information.
                 $plugin['name']   = $_GET['plugin_name'];
@@ -596,12 +596,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             global $current_screen;
 
             // Remove nag on the install page.
-            if ( $this->is_tgmpa_page() ) {
+            if ( $this->is_digital_page() ) {
                 return;
             }
 
             // Return early if the nag message has been dismissed.
-            if ( get_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, true ) ) {
+            if ( get_user_meta( get_current_user_id(), 'digital_dismissed_notice_' . $this->id, true ) ) {
                 return;
             }
 
@@ -729,20 +729,20 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                     $last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability.
                     $imploded    = empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
 
-                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'tgmpa' ), $imploded, $count ) . '</p>';
+                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'digital' ), $imploded, $count ) . '</p>';
                 }
 
                 // Setup variables to determine if action links are needed.
-                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ) . '</a>' : '';
-                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ) . '</a>'  : '';
+                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'digital' ) . '</a>' : '';
+                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'digital' ) . '</a>'  : '';
 
                 // Define all of the action links.
                 $action_links = apply_filters(
-                    'tgmpa_notice_action_links',
+                    'digital_notice_action_links',
                     array(
                         'install'  => ( current_user_can( 'install_plugins' ) )  ? $show_install_link  : '',
                         'activate' => ( current_user_can( 'activate_plugins' ) ) ? $show_activate_link : '',
-                        'dismiss'  => $this->dismissable ? '<a class="dismiss-notice" href="' . add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ) . '" target="_parent">' . $this->strings['dismiss'] . '</a>' : '',
+                        'dismiss'  => $this->dismissable ? '<a class="dismiss-notice" href="' . add_query_arg( 'digital-dismiss', 'dismiss_admin_notices' ) . '" target="_parent">' . $this->strings['dismiss'] . '</a>' : '',
                     )
                 );
 
@@ -754,15 +754,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 // Register the nag messages and prepare them to be processed.
                 $nag_class = version_compare( $this->wp_version, '3.8', '<' ) ? 'updated' : 'update-nag';
                 if ( ! empty( $this->strings['nag_type'] ) ) {
-                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
+                    add_settings_error( 'digital', 'digital', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
                 } else {
-                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, $nag_class );
+                    add_settings_error( 'digital', 'digital', $rendered, $nag_class );
                 }
             }
 
             // Admin options pages already output settings_errors, so this is to avoid duplication.
             if ( 'options-general' !== $current_screen->parent_base ) {
-                settings_errors( 'tgmpa' );
+                settings_errors( 'digital' );
             }
 
         }
@@ -776,8 +776,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          */
         public function dismiss() {
 
-            if ( isset( $_GET['tgmpa-dismiss'] ) ) {
-                update_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, 1 );
+            if ( isset( $_GET['digital-dismiss'] ) ) {
+                update_user_meta( get_current_user_id(), 'digital_dismissed_notice_' . $this->id, 1 );
             }
 
         }
@@ -843,8 +843,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          */
         public function actions( $install_actions ) {
 
-            // Remove action links on the TGMPA install page.
-            if ( $this->is_tgmpa_page() ) {
+            // Remove action links on the digital install page.
+            if ( $this->is_digital_page() ) {
                 return false;
             }
 
@@ -926,13 +926,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
         }
 
         /**
-         * Determine if we're on the TGMPA Install page.
+         * Determine if we're on the digital Install page.
          *
          * @since 2.1.0
          *
-         * @return boolean True when on the TGMPA page, false otherwise.
+         * @return boolean True when on the digital page, false otherwise.
          */
-        protected function is_tgmpa_page() {
+        protected function is_digital_page() {
 
             if ( isset( $_GET['page'] ) && $this->menu === $_GET['page'] ) {
                 return true;
@@ -952,7 +952,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
          */
         public function update_dismiss() {
 
-            delete_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id );
+            delete_user_meta( get_current_user_id(), 'digital_dismissed_notice_' . $this->id );
 
         }
 
@@ -1036,11 +1036,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
     }
 
     // Ensure only one instance of the class is ever invoked.
-    $tgmpa = TGM_Plugin_Activation::get_instance();
+    $digital = TGM_Plugin_Activation::get_instance();
 
 }
 
-if ( ! function_exists( 'tgmpa' ) ) {
+if ( ! function_exists( 'digital' ) ) {
     /**
      * Helper function to register a collection of required plugins.
      *
@@ -1050,7 +1050,7 @@ if ( ! function_exists( 'tgmpa' ) ) {
      * @param array $plugins An array of plugin arrays.
      * @param array $config  Optional. An array of configuration values.
      */
-    function tgmpa( $plugins, $config = array() ) {
+    function digital( $plugins, $config = array() ) {
 
         foreach ( $plugins as $plugin ) {
             TGM_Plugin_Activation::$instance->register( $plugin );
@@ -1073,7 +1073,7 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 
-if ( ! class_exists( 'TGMPA_List_Table' ) ) {
+if ( ! class_exists( 'digital_List_Table' ) ) {
     /**
      * List table class for handling plugins.
      *
@@ -1091,12 +1091,12 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
      * @author  Thomas Griffin <thomas@thomasgriffinmedia.com>
      * @author  Gary Jones <gamajo@gamajo.com>
      */
-    class TGMPA_List_Table extends WP_List_Table {
+    class digital_List_Table extends WP_List_Table {
 
         /**
          * References parent constructor and sets defaults for class.
          *
-         * The constructor also grabs a copy of $instance from the TGMPA class
+         * The constructor also grabs a copy of $instance from the digital class
          * and stores it in the global object TGM_Plugin_Activation::$instance.
          *
          * @since 2.2.0
@@ -1171,23 +1171,23 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( ! empty( $plugin['source'] ) ) {
                     // The plugin must be from a private repository.
                     if ( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-                        $table_data[$i]['source'] = __( 'Private Repository', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Private Repository', 'digital' );
                     // The plugin is pre-packaged with the theme.
                     } else {
-                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'digital' );
                     }
                 }
                 // The plugin is from the WordPress repository.
                 else {
-                    $table_data[$i]['source'] = __( 'WordPress Repository', 'tgmpa' );
+                    $table_data[$i]['source'] = __( 'WordPress Repository', 'digital' );
                 }
 
-                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'tgmpa' ) : __( 'Recommended', 'tgmpa' );
+                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'digital' ) : __( 'Recommended', 'digital' );
 
                 if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'digital' ) );
                 } elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'digital' ) );
                 }
 
                 $table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1287,7 +1287,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
                 $actions = array(
                     'install' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Install', 'tgmpa' ) . ' %2$s">' . __( 'Install', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Install', 'digital' ) . ' %2$s">' . __( 'Install', 'digital' ) . '</a>',
                         wp_nonce_url(
                             add_query_arg(
                                 array(
@@ -1295,11 +1295,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                                     'plugin'        => $item['slug'],
                                     'plugin_name'   => $item['sanitized_plugin'],
                                     'plugin_source' => $item['url'],
-                                    'tgmpa-install' => 'install-plugin',
+                                    'digital-install' => 'install-plugin',
                                 ),
                                 admin_url( 'themes.php' )
                             ),
-                            'tgmpa-install'
+                            'digital-install'
                         ),
                         $item['sanitized_plugin']
                     ),
@@ -1309,15 +1309,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             elseif ( is_plugin_inactive( $item['file_path'] ) ) {
                 $actions = array(
                     'activate' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Activate', 'tgmpa' ) . ' %2$s">' . __( 'Activate', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Activate', 'digital' ) . ' %2$s">' . __( 'Activate', 'digital' ) . '</a>',
                         add_query_arg(
                             array(
                                 'page'                 => TGM_Plugin_Activation::$instance->menu,
                                 'plugin'               => $item['slug'],
                                 'plugin_name'          => $item['sanitized_plugin'],
                                 'plugin_source'        => $item['url'],
-                                'tgmpa-activate'       => 'activate-plugin',
-                                'tgmpa-activate-nonce' => wp_create_nonce( 'tgmpa-activate' ),
+                                'digital-activate'       => 'activate-plugin',
+                                'digital-activate-nonce' => wp_create_nonce( 'digital-activate' ),
                             ),
                             admin_url( 'themes.php' )
                         ),
@@ -1358,7 +1358,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
          */
         public function no_items() {
 
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'tgmpa' ), admin_url() );
+            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'digital' ), admin_url() );
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
         }
@@ -1374,10 +1374,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
             $columns = array(
                 'cb'     => '<input type="checkbox" />',
-                'plugin' => __( 'Plugin', 'tgmpa' ),
-                'source' => __( 'Source', 'tgmpa' ),
-                'type'   => __( 'Type', 'tgmpa' ),
-                'status' => __( 'Status', 'tgmpa' )
+                'plugin' => __( 'Plugin', 'digital' ),
+                'source' => __( 'Source', 'digital' ),
+                'type'   => __( 'Type', 'digital' ),
+                'status' => __( 'Status', 'digital' )
             );
 
             return $columns;
@@ -1395,8 +1395,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function get_bulk_actions() {
 
             $actions = array(
-                'tgmpa-bulk-install'  => __( 'Install', 'tgmpa' ),
-                'tgmpa-bulk-activate' => __( 'Activate', 'tgmpa' ),
+                'digital-bulk-install'  => __( 'Install', 'digital' ),
+                'digital-bulk-activate' => __( 'Activate', 'digital' ),
             );
 
             return $actions;
@@ -1415,7 +1415,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function process_bulk_actions() {
 
             // Bulk installation process.
-            if ( 'tgmpa-bulk-install' === $this->current_action() ) {
+            if ( 'digital-bulk-install' === $this->current_action() ) {
                 check_admin_referer( 'bulk-' . $this->_args['plural'] );
 
                 // Prep variables to be populated.
@@ -1505,7 +1505,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                 // No need to proceed further if we have no plugins to install.
                 if ( empty( $plugin_installs ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'tgmpa' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'digital' ) . '</p></div>';
                     return false;
                 }
 
@@ -1524,7 +1524,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                     add_query_arg(
                         array(
                             'page'          => TGM_Plugin_Activation::$instance->menu,
-                            'tgmpa-action'  => 'install-selected',
+                            'digital-action'  => 'install-selected',
                             'plugins'       => urlencode( implode( ',', $plugins ) ),
                             'plugin_paths'  => urlencode( implode( ',', $plugin_paths ) ),
                             'plugin_names'  => urlencode( implode( ',', $plugin_names ) ),
@@ -1553,10 +1553,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 $sources      = array();
                 $install_path = array();
 
-                // Loop through each plugin to install and try to grab information from WordPress API, if not create 'tgmpa-empty' scalar.
+                // Loop through each plugin to install and try to grab information from WordPress API, if not create 'digital-empty' scalar.
                 $i = 0;
                 foreach ( $plugin_installs as $plugin ) {
-                    $api[$i] = plugins_api( 'plugin_information', array( 'slug' => $plugin, 'fields' => array( 'sections' => false ) ) ) ? plugins_api( 'plugin_information', array( 'slug' => $plugin, 'fields' => array( 'sections' => false ) ) ) : (object) $api[$i] = 'tgmpa-empty';
+                    $api[$i] = plugins_api( 'plugin_information', array( 'slug' => $plugin, 'fields' => array( 'sections' => false ) ) ) ? plugins_api( 'plugin_information', array( 'slug' => $plugin, 'fields' => array( 'sections' => false ) ) ) : (object) $api[$i] = 'digital-empty';
                     $i++;
                 }
 
@@ -1580,9 +1580,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 $installer = new TGM_Bulk_Installer( $skin = new TGM_Bulk_Installer_Skin( compact( 'url', 'nonce', 'names' ) ) );
 
                 // Wrap the install process with the appropriate HTML.
-                echo '<div class="tgmpa wrap">';
+                echo '<div class="digital wrap">';
                     if ( version_compare( TGM_Plugin_Activation::$instance->wp_version, '3.8', '<' ) ) {
-                        screen_icon( apply_filters( 'tgmpa_default_screen_icon', 'themes' ) );
+                        screen_icon( apply_filters( 'digital_default_screen_icon', 'themes' ) );
                     }
                     echo '<h2>' . esc_html( get_admin_page_title() ) . '</h2>';
                     // Process the bulk installation submissions.
@@ -1593,7 +1593,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             }
 
             // Bulk activation process.
-            if ( 'tgmpa-bulk-activate' === $this->current_action() ) {
+            if ( 'digital-bulk-activate' === $this->current_action() ) {
                 check_admin_referer( 'bulk-' . $this->_args['plural'] );
 
                 // Grab plugin data from $_POST.
@@ -1613,7 +1613,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                 // Return early if there are no plugins to activate.
                 if ( empty( $plugins_to_activate ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'tgmpa' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'digital' ) . '</p></div>';
                     return false;
                 }
 
@@ -1635,7 +1635,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( is_wp_error( $activate ) ) {
                     echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
                 } else {
-                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ), $imploded );
+                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'digital' ), $imploded );
                 }
 
                 // Update recently activated plugins option.
@@ -1688,8 +1688,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
  *
  * @since 2.2.0
  */
-add_action( 'admin_init', 'tgmpa_load_bulk_installer' );
-function tgmpa_load_bulk_installer() {
+add_action( 'admin_init', 'digital_load_bulk_installer' );
+function digital_load_bulk_installer() {
 
     if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET['page'] ) && TGM_Plugin_Activation::$instance->menu === $_GET['page'] ) ) {
         require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
@@ -1803,7 +1803,7 @@ function tgmpa_load_bulk_installer() {
                  * Performs the actual installation of each plugin.
                  *
                  * This method also activates the plugin in the automatic flag has been
-                 * set to true for the TGMPA class.
+                 * set to true for the digital class.
                  *
                  * @since 2.2.0
                  *
@@ -1931,12 +1931,12 @@ function tgmpa_load_bulk_installer() {
                  */
                 public function install_strings() {
 
-                    $this->strings['no_package']          = __( 'Install package not available.', 'tgmpa' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'tgmpa' );
-                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'tgmpa' );
-                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'tgmpa' );
-                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'tgmpa' );
-                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'tgmpa' );
+                    $this->strings['no_package']          = __( 'Install package not available.', 'digital' );
+                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'digital' );
+                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'digital' );
+                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'digital' );
+                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'digital' );
+                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'digital' );
 
                 }
 
@@ -1947,8 +1947,8 @@ function tgmpa_load_bulk_installer() {
                  */
                 public function activate_strings() {
 
-                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'digital' );
+                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'digital' );
 
                 }
 
@@ -2061,19 +2061,19 @@ function tgmpa_load_bulk_installer() {
 
                     // Automatic activation strings.
                     if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'digital' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'digital' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'digital' ) . '</span><span class="hidden">' . __( 'Hide Details', 'digital' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'digital' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'digital' );
                     }
                     // Default installation strings.
                     else {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'digital' );
+                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'digital' );
+                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'digital' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'digital' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'digital' ) . '</span><span class="hidden">' . __( 'Hide Details', 'digital' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'digital' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'digital' );
                     }
 
                 }
@@ -2165,7 +2165,7 @@ function tgmpa_load_bulk_installer() {
 
                     // All plugins are active, so we display the complete string and hide the menu to protect users.
                     if ( empty( $complete ) ) {
-                        echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                        echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'digital' ) . '">' . __( 'Return to the Dashboard', 'digital' ) . '</a>' ) . '</p>';
                         echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                     }
 

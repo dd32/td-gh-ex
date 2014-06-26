@@ -2,14 +2,14 @@
 Theme Name: Digital
 Theme URI: http://www.insertcart.com/digital/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support woocommerce shoping plugin with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products.
-Version: 1.0
+Version: 1.0.1
 Author: insertcart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: digital
-License: GNU General Public License v2
+License: GNU General Public License
 License URI: license.txt
-Copyright (C) 2011-2013 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright (C) 2011-2014 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Digital WordPress theme, Copyright (C) 2014 insertcart.com
 Digital WordPress theme is licensed under the GPL.
@@ -107,11 +107,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: 28px;
-	line-height: 28px;
+	line-height: 30px;
 }
 h2 {
-	font-size: 22px;
-	line-height: 22px;
+	font-size: 18px;
+	line-height: 28px;
 }
 h3 {
 	font-size: 18px;

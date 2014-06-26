@@ -36,7 +36,7 @@ Custom Css:
 
 == Change log ==
 
-= 1.0 =
+= 1.0.1 =
 *Initial Release @ 1.0
 
 
@@ -47,5 +47,4 @@ Custom Css:
 *Images into /images/ folder that's are created by me abno.png, cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Open Sans: Designed by Steve Matteson Director of Ascender Corp. Styled by: https://profiles.google.com/107777320916704234605/about License: Apache License, version 2.0 with GPL
 This theme uses Nivo Slider, which is under the MIT License. More details: http://dev7studios.com/nivo-slider/
-*Flat UI Icons Free by Designmodo License: Creative Commons (Attribution 3.0 Unported)
-**This theme and file are created by me & publish under GPLv3
+**This theme and file are created by me & publish under GPL
