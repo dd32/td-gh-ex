@@ -40,6 +40,23 @@ function semperfi_setup() {
         add_theme_support('custom-background'); } } endif;
 
 
+// Filters the title so that it says something useful on the tabs
+add_filter( 'wp_title', 'semperfi_filter_wp_title' );
+function semperfi_filter_wp_title( $title ) {
+	global $page, $paged;
+
+	if ( is_feed() )
+		return $title;
+
+	$site_description = get_bloginfo( 'description' );
+
+	$filtered_title = $title . get_bloginfo( 'name' );
+	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
+	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) ) : '';
+
+	return $filtered_title;}
+
+
 /**
  * Filter 'get_comments_number'
  * 
@@ -546,6 +563,7 @@ function semperfi_customize($wp_customize) {
         'headerfontstyle_setting'       => 'Default',
         'headerspacing_setting'	        => '18',
         'header_image_width_setting'    => '20',
+        'instagram_setting'        => __('The url link goes in here.', 'localize_semperfi'),
         'linkcolor_setting'	            => '#dc1111',
         'linkcolorhover_setting'        => '#555555',
         'menu_setting'                  => 'standard',
@@ -730,6 +748,13 @@ function semperfi_customize($wp_customize) {
 		'priority'			=> 51,
 		'section'			=> 'nav',
 		'settings'			=> 'twitter_setting', )));
+			
+	// Add Instagram Icon to the navigation
+	$wp_customize->add_control( new semperfi_Customize_Textarea_Control( $wp_customize, 'instagram_plus_control', array(
+		'label'				=> __('Instagram icon in the Menu', 'localize_semperfi'),
+		'priority'			=> 52,
+		'section'			=> 'nav',
+		'settings'			=> 'instagram_setting', )));
 			
 	// Add Google+ Icon to the navigation
 	$wp_customize->add_control( new semperfi_Customize_Textarea_Control( $wp_customize, 'google_plus_control', array(
@@ -1021,6 +1046,10 @@ function semperfi_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
+                            <th>15</th>
+                            <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Added instagram to the mix of social plugins.', 'localize_semperfi'); ?></td>
+                        </tr>
+                        <tr>
                             <th>14</th>
                             <td><?php _e('Fixed the issues with Social Icons.', 'localize_semperfi'); ?></td>
                         </tr>
@@ -1048,6 +1077,10 @@ function semperfi_theme_options_do_page() { ?>
                         <tr>
                             <th><?php _e('Version', 'localize_semperfi'); ?></th>
                             <th></th>
+                        </tr>
+                        <tr>
+                            <th>3.2</th>
+                            <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Added instagram to the mix of social plugins.', 'localize_semperfi'); ?></td>
                         </tr>
                         <tr>
                             <th>3.1</th>

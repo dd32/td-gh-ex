@@ -35,6 +35,7 @@
 	<?php endif; ?>
 	<?php if ( get_theme_mod('facebook_setting') != 'The url link goes in here.' ) : ?><li><a href="<?php echo get_theme_mod('facebook_setting') ;?>" class="fontello" target="_blank">F</a></li><?php endif; ?>
     <?php if ( ( get_theme_mod('twitter_setting') != 'The url link goes in here.' ) && ( get_theme_mod('twitter_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('twitter_setting') ;?>" class="fontello" target="_blank">T</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('instagram_setting') != 'The url link goes in here.' ) && ( get_theme_mod('instagram_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('instagram_setting') ;?>" class="fontello" target="_blank">I</a></li><?php endif; ?>
     <?php if ( ( get_theme_mod('google_plus_setting') != 'The url link goes in here.' ) && ( get_theme_mod('google_plus_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('google_plus_setting') ;?>" class="fontello" target="_blank">g</a></li><?php endif; ?>
     <?php if ( ( get_theme_mod('youtube_setting') != 'The url link goes in here.' ) && ( get_theme_mod('youtube_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('youtube_setting') ;?>" class="fontello" target="_blank">Y</a></li><?php endif; ?>
     <?php if ( ( get_theme_mod('vimeo_setting') != 'The url link goes in here.' ) && ( get_theme_mod('vimeo_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('vimeo_setting') ;?>" class="fontello" target="_blank">V</a></li><?php endif; ?>
