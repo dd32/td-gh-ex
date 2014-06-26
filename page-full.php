@@ -9,7 +9,12 @@
 <div id="content-full">
 
 	<?php while ( have_posts() ) : the_post(); ?>
-		<h3 class="page-title"><?php the_title(); ?></h3>
+		<h4 class="page-title"><?php the_title(); ?></h4>
+
+		<?php if ( has_post_thumbnail() ) { 
+			the_post_thumbnail('single', array('class' => 'single-image')); 
+		} ?>
+
 		<?php the_content(); ?>
 		<div class="pagelink"><?php wp_link_pages(); ?></div>
 

@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Medical version 1.6 - july 2014
+- added featured image on single page
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 Medical version 1.5 - may 2014
 - changed width of main content and sidebar
 - removed some unnecessary code from file style 

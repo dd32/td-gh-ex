@@ -47,6 +47,9 @@
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 250, 250 ); 
 
+	// Resize single page thumbnail
+		add_image_size( 'single', 250, 250 ); 
+
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
 

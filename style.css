@@ -1,10 +1,10 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: Medical is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Medical or Business website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: Medical is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for Medical or Business website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -79,8 +79,8 @@ body {background:#fff url('images/border.png') repeat-x; background-position: 50
 #container {max-width: 960px; margin:0 auto 0; padding: 0 1% 0; text-align: left; word-wrap: break-word;}
 #main {clear:both; padding: 0 2% 0; background:#fff; border:1px solid #ddd; border-radius:15px;-moz-border-radius:15px; box-shadow: 0 0 20px #ddd;}
 #main:after {content:''; display:block; clear:both;}
-#content {width: 60%; float:left; padding: 20px 0 20px; word-wrap: break-word;}
-#content-full {width: 100%; float:left; padding:20px 0 20px; word-wrap: break-word;}
+#content {width: 60%; float:left; padding: 20px 0; word-wrap: break-word;}
+#content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
 h2 {font-size:2.5em; line-height:1.2em;}
@@ -98,7 +98,7 @@ big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #ddd; background: #f8f8f8; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
-p {margin:0 0 20px;}
+p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ddd; padding:5px 10px;}
@@ -120,19 +120,19 @@ select {max-width:100%;}
 #header-first {margin: 0; padding:10px 0 0;}
 #header-first:after {content:''; display:block; clear:both;}
 #header-first .logo {width:35%; float:right; text-align:right;}
-#header-first .logo h1 a {font-size:0.6em;}
+#header-first .logo h1 {font-size:2em;}
 #header-first .logo h1 a:hover {text-decoration:none; color:#333;}
 #header-first .logo h5 {padding:0 0 10px; font-style:italic;}
 #header-first .logo img {padding:0 0 10px;}
 
 #header-second {margin:0; padding:20px 0 10px; border-bottom:10px solid #08a0ff;border-radius:15px;-moz-border-radius:15px;}
 #header-second:after {content:''; display:block; clear:both;}
-#header-second .image-homepage {width: 52%; float:left; margin:0; padding:0;}
+#header-second .image-homepage {width: 52%; float:left;}
 #header-second .header-img {width: 100%; height: auto; border-top-left-radius:15px;moz-border-radius-topleft:15px;}
 
 
 /* HOMEPAGE SIDEBAR */
-#header-second .sidebar-homepage {width: 46%; float: right; margin:0; padding:0; word-wrap: break-word; background:#08a0ff;border-top-right-radius:15px;moz-border-radius-topright:15px;}
+#header-second .sidebar-homepage {width: 46%; float: right; word-wrap: break-word; background:#08a0ff; border-top-right-radius:15px;moz-border-radius-topright:15px;}
 #header-second .widget {margin:15px 0; padding: 0 15px; background:none; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
 
@@ -166,12 +166,12 @@ select {max-width:100%;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #08a0ff; margin: 0 0 10px; padding:2px 5px; border:0;}
-.postmetadata {margin:10px 0 15px; padding:5px; background: #f8f8f8; border:1px solid #ddd;}
+.postmetadata {clear:both; margin:10px 0 15px; padding:5px; background: #f8f8f8; border:1px solid #ddd;}
 .more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ddd;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #08a0ff; color:#fff;}
 a.readmore:hover {background: #333; text-decoration:none;}
-.post-nav {padding: 5px 0;}
+.post-nav {padding: 5px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
@@ -189,6 +189,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
 .wp-post-image {float:left; margin: 10px 15px 5px 0;}
+.single-image {float:left; margin: 5px 15px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -216,12 +217,12 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em; margin:0;} 
+#commentform input[type="submit"]{width:9em;} 
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width: 36%; float: right; margin:0; padding:20px 0 0;word-wrap: break-word;}
-.widget {padding:0 0 10px; margin: 0 0 20px; background:none; border-bottom:1px solid #ddd;}
+#sidebar {width: 36%; float: right; margin:0; padding:20px 0 0; word-wrap: break-word;}
+.widget {padding:0 0 10px; margin:0 0 20px; background:none; border-bottom:1px solid #ddd;}
 .widgettitle {margin:0 0 10px;}
 #wp-calendar {width:90%;}
 
@@ -239,25 +240,27 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* Mobile */
 @media screen and (max-width: 767px) { 
 	body {font-size:1em; line-height:1.2em; background:none;}
-	#container {width: 96%; padding:0; margin:0 auto 0;}
-	#main {margin: 10px 0 0; padding: 0 10px 0;}
+	p {text-align:left;}
+	#container {width: 96%; padding:0;}
+	#main {margin: 10px 0 0;}
 	#content, #content-full {width:100%; padding:10px 0;}
 	#header-first .logo {width:100%; text-align:center;}
-	#header-first .logo h1 a{font-size:1em; text-align:center;}
+	#header-first .logo h1 {font-size:2em; text-align:center;}
 	#header-first .logo h5 {padding:0; font-size:1em; text-align:center;}
 	#header-first .logo img {padding:0;}
-	#header-second {margin:0; padding:10px 0; border:0;}
-	#header-second .image-homepage {width: 100%; margin:0 0 10px; padding:0;}
-	#header-second .header-img {width: 100%; height: auto; border-radius:15px;-moz-border-radius:15px;}
-	#header-second .sidebar-homepage {width:100%; border:0; float:left; border-radius:15px;-moz-border-radius:15px;}
-	#sidebar {width:100%; border:0; margin:0; padding:0 0 10px; float:left;}
+	#header-second {padding:10px 0; border:0;}
+	#header-second .image-homepage {width: 100%; margin:0 0 10px;}
+	#header-second .header-img {border-radius:15px;-moz-border-radius:15px;}
+	#header-second .sidebar-homepage {width:100%; float:left; border-radius:15px;-moz-border-radius:15px;}
+	#sidebar {width:100%; padding:0 0 10px; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.widget {margin: 10px 0 10px;}
-	#footer .widget {margin:5px 0 5px;}
-	.footer-right, .footer-middle, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
+	.single-image {float:left; margin: 5px 10px 5px 0;}
+	.widget {margin: 10px 0;}
+	#footer .widget {margin:5px 0;}
+	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 	.nav-head ul {display: none;} 
-	.nav-head {width:100%; padding:0; border:0;}
+	.nav-head {width:100%; margin:5px 0 0;}
 	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #fff; background:#08a0ff; border:0;}
 }
