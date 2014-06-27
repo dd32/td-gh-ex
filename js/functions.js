@@ -41,6 +41,38 @@ jQuery(document).ready(function($){
         }
     }
 
+    /* see if social media icons can fit and display if they can */
+    function showSocialIcons() {
+
+        // get widths of all elements involved
+        var siteHeaderWidth = $('#site-header').width();
+        var menuWidth = $('#menu-primary-items').width();
+        var titleInfoWidth = $('#title-info').width();
+        var siteDescriptionWidth = $('#site-description').width();
+        var socialIcons = $('#menu-primary').find('.social-media-icons');
+
+        // remove the classes
+        $(socialIcons).removeClass('visible visible-top');
+
+        /* multiply # of icons by 68 b/c each is 68px wide */
+        var socialIconsWidth = $('#menu-primary').find('.social-media-icons li').length * 26;
+
+        /* If site-header has space for social icons + 48 margin + 48 extra margin, show them */
+        if ( (siteHeaderWidth - menuWidth - titleInfoWidth - siteDescriptionWidth) > socialIconsWidth + 96) {
+            $(socialIcons).addClass('visible');
+        }
+        /* if the menu is on the next line, display the social icons */
+        if( $('#menu-primary-items').offset().top > $('#title-info').offset().top ){
+            $(socialIcons).addClass('visible-top');
+        }
+    }
+    showSocialIcons();
+
+    /* check to see if social icons can be displayed on resize */
+    $(window).on('resize', function(){
+        showSocialIcons();
+    });
+
     /* allow keyboard access/visibility for dropdown menu items */
     $('.menu-item a, .page_item a').focus(function(){
         $(this).parent('li').addClass('focused');
@@ -50,48 +82,6 @@ jQuery(document).ready(function($){
         $(this).parent('li').removeClass('focused');
         $(this).parents('ul').removeClass('focused');
     });
-
-    /* logo size tools */
-    function displayLogoSizeInputs(){
-
-        var logoSelector = $('#logo');
-        var maxWidth = 156;
-        var maxHeight = 59;
-
-        // set max-width & max-height to initial values
-        $(logoSelector).css({
-            'max-width': maxWidth,
-            'max-height': maxHeight
-        });
-
-        // if initially constrained by width, hide height input
-        if($(logoSelector).width() == maxWidth){
-            $('html', window.parent.document).find('#customize-control-logo_size_height_setting').hide();
-            $('html', window.parent.document).find('#customize-control-logo_size_width_setting').show();
-
-            // remove max-width applied to check constraint
-            $(logoSelector).removeAttr('style');
-
-            // reset max-height adjustment so it doesn't interfere. This will be save when the user saves.
-            $('html', window.parent.document).find('#customize-control-logo_size_height_setting input').val(0);
-
-            // return b/c height could also be true after adjustment
-            return;
-        }
-
-        // if initially constrained by height, hide width input
-        if($(logoSelector).height() == maxHeight){
-            $('html', window.parent.document).find('#customize-control-logo_size_width_setting').hide();
-            $('html', window.parent.document).find('#customize-control-logo_size_height_setting').show();
-
-            // remove max-width applied to check constraint
-            $(logoSelector).removeAttr('style');
-
-            // reset max-width adjustment so it doesn't interfere. This will be save when the user saves.
-            $('html', window.parent.document).find('#customize-control-logo_size_width_setting input').val(0);
-        }
-    }
-    displayLogoSizeInputs();
 });
 
 

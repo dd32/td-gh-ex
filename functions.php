@@ -64,16 +64,16 @@ function ct_ignite_theme_setup() {
 /* register primary sidebar */
 function ct_ignite_register_sidebar(){
     hybrid_register_sidebar( array(
-        'name'         => __( 'Primary Sidebar' ),
+        'name'         => __( 'Primary Sidebar', 'ignite' ),
         'id'           => 'primary',
-        'description'  => __( 'The main sidebar' ),
+        'description'  => __( 'The main sidebar', 'ignite' ),
     ) );
 }
 add_action('widgets_init','ct_ignite_register_sidebar');
 
 // register primary menu
 function ct_ignite_register_menu() {
-    register_nav_menu('primary', __('Primary'));
+    register_nav_menu('primary', __('Primary', 'ignite'));
 }
 add_action('init', 'ct_ignite_register_menu');
 
@@ -270,7 +270,7 @@ function ct_ignite_remove_comments_notes_after($defaults){
 
 add_action('comment_form_defaults', 'ct_ignite_remove_comments_notes_after');
 
-// for 'read more' tag excerpts
+// excerpt handling
 function ct_ignite_excerpt() {
 
     // make post variable available
