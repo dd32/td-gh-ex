@@ -34,10 +34,10 @@
 			wp_register_script( 'bnw-js-bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.js', array( 'jquery' ), '', true );
 			
 			//adding jquery-waypoints file in the footer
-			wp_register_script( 'bnw-js-waypoints', get_stylesheet_directory_uri() . '/plugin/jquery-waypoints/waypoints.js', array( 'jquery' ), '', true );
+			wp_register_script( 'bnw-js-waypoints', get_stylesheet_directory_uri() . '/inc/jquery-waypoints/waypoints.js', array( 'jquery' ), '', true );
 			
 			//adding jquery-waypoints sticky-elements file in the footer
-			wp_register_script( 'bnw-js-waypoint-sticky', get_stylesheet_directory_uri() . '/plugin/jquery-waypoints/waypoints-sticky.js', array( 'jquery' ), '', true );
+			wp_register_script( 'bnw-js-waypoint-sticky', get_stylesheet_directory_uri() . '/inc/jquery-waypoints/waypoints-sticky.js', array( 'jquery' ), '', true );
 			
 			//adding WOW  file in the footer
 			wp_register_script( 'bnw-js-wow', get_stylesheet_directory_uri() . '/plugin/wow/wow.js', array( 'jquery' ), '', true );

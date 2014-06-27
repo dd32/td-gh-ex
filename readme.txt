@@ -3,15 +3,15 @@
 
 The theme itself is nothing but 100% GPLv3. See headers of files for further details.
 
-B & W clean and simple WordPress Blog theme. B & W based on twitter bootstrap and bnw theme. HTML ready.
+B & W clean and simple WordPress Blog theme. B & W based on twitter bootstrap and Bones Starter theme. HTML5 and CSS3 ready.
 
-B & W based on bones theme
-Designed by Eddie Machado
-http://themble.com/bones
+
+/*  Bones Theme License
+/* ------------------------------------ */
 
 License: WTFPL
 License URI: http://sam.zoy.org/wtfpl/
-
+Copyright: Eddie Machado, http://themble.com/bones
 
 /*  Font Awesome License
 /* ------------------------------------ */
@@ -57,6 +57,14 @@ Code License - http://janpaepke.github.io/ScrollMagic/
 License: ScrollMagic is dual licensed under the MIT license (below) and GPL
 License URI: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
 Copyright: Jan Paepke, http://www.janpaepke.de/
+
+/*  jQuery Waypoints License
+/* ------------------------------------ */
+
+Code License - http://imakewebthings.com/jquery-waypoints/
+License: The MIT License
+License URI: https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
+Copyright: Copyright (c) 2011-2012 Caleb Troughton
 
 /*  BxSlider License
 /* ------------------------------------ */
