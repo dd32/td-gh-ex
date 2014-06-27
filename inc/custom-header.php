@@ -50,10 +50,10 @@ if ( ! function_exists( 'customizable_header_style' ) ) :
  *
  */
 function customizable_header_style() {
-	$text_color = get_header_textcolor();
+	$customizable_text_color = get_header_textcolor();
 
 	// If no custom color for text is set, let's bail.
-	if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
+	if ( display_header_text() && $customizable_text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
 	// If we get this far, we have custom styles.
@@ -71,10 +71,10 @@ function customizable_header_style() {
 		}
 	<?php
 		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+		elseif ( $customizable_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
 	?>
 		.site-title a {
-			color: #<?php echo esc_attr( $text_color ); ?>;
+			color: #<?php echo esc_attr( $customizable_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>

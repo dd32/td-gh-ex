@@ -8,7 +8,21 @@ function ft_options_validate( $input ) {
 	$input['favicon'] = esc_url_raw( $input['favicon'] );
 	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
 	$input['headingtext'] = wp_filter_nohtml_kses( $input['headingtext'] );
- 
+
+	 for($customizable_k=1; $customizable_k <= 5 ;$customizable_k++ ):
+	 	$input['slider-img-'.$customizable_k] = esc_url_raw( $input['slider-img-'.$customizable_k] );
+	 	$input['slidelink-'.$customizable_k] = esc_url_raw( $input['slidelink-'.$customizable_k] );
+	 endfor;
+
+	 for($customizable_l=1; $customizable_l <= 3 ;$customizable_l++ ):
+	 	$input['section-icon-'.$customizable_l] = esc_url_raw( $input['section-icon-'.$customizable_l] );
+	 	$input['sectiontitle'.$customizable_l] = wp_filter_nohtml_kses( $input['sectiontitle-'.$customizable_l] );
+	 	$input['sectiondesc-'.$customizable_l] = wp_filter_nohtml_kses( $input['sectiondesc-'.$customizable_l] );
+	 endfor;
+
+	$input['post-title'] = wp_filter_nohtml_kses( $input['post-title'] );
+	$input['downloadcaption'] = wp_filter_nohtml_kses( $input['downloadcaption'] );
+	$input['downloadlink'] = wp_filter_nohtml_kses( $input['downloadlink'] );
     return $input;
 }
 add_action( 'admin_init', 'fasterthemes_options_init' );
@@ -56,7 +70,10 @@ function fastertheme_framework_page(){
 ?>
 
 <div id="fasterthemes_framework-wrap" class="wrap">
-  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> </h2>
+  <h2 class="nav-tab-wrapper"> 
+  <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> 
+  <a id="options-group-2-tab" class="nav-tab thirdsettings-tab" title="Home page settings" href="#options-group-2">Home Page Settings</a>  
+  </h2>
   <div id="fasterthemes_framework-metabox" class="metabox-holder">
     <div id="fasterthemes_framework" class="postbox"> 
       
@@ -117,6 +134,154 @@ function fastertheme_framework_page(){
             </div>
           </div>
         </div>
+        
+        <!-------------- Second group ----------------->
+ 
+        
+        <div id="options-group-2" class="group homesettings">
+          <h3>Home page slider images</h3>
+           <?php for($customizable_i=1; $customizable_i <= 5 ;$customizable_i++ ):?> 
+           <div id="section-slider-upload" class="section section-text">
+            <h4 class="heading">Slide<?php echo $customizable_i; ?></h4>
+
+          
+            <div class="option">
+              <div class="controls">
+                <input id="slider-img-<?php echo $customizable_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $customizable_i;?>]" 
+                            value="<?php if(!empty($customizable_options['slider-img-'.$customizable_i])) echo $customizable_options['slider-img-'.$customizable_i]; ?>" placeholder="No file chosen" />
+                <input id="slider" class="upload-button button" type="button" value="Upload" />
+                <div class="screenshot" id="slider-image">
+                  <?php if(!empty($customizable_options['slider-img-'.$customizable_i])) echo "<img src='".$customizable_options['slider-img-'.$customizable_i]."' /><a class='remove-image'>Remove</a>"; ?>
+                </div>
+               
+              </div>
+              <div class="explain"></div>
+            </div>
+            
+          </div>
+          
+          <div id="section-link" class="section section-text mini">
+            <h4 class="heading">Slide<?php echo $customizable_i; ?> Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input id="slidelink-<?php echo $customizable_i; ?>" class="of-input" name="faster_theme_options[slidelink-<?php echo $customizable_i; ?>]" type="text" size="30" value="<?php if(!empty($customizable_options['slidelink-'.$customizable_i])) { echo $customizable_options['slidelink-'.$customizable_i]; } ?>" />
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>
+          
+		  <?php endfor; ?>
+		<h3>Section Settings</h3>
+		<div id="section-sectionhead" class="section section-text mini">
+            <h4 class="heading">Title</h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="sectionhead" class="of-input" name="faster_theme_options[sectionhead]" size="32"  value="<?php if(!empty($customizable_options['sectionhead'])) { echo $customizable_options['sectionhead']; } ?>">
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>        
+		<?php for($customizable_j=1; $customizable_j <= 3 ;$customizable_j++ ):?> 
+        <div id="section-slider-upload" class="section section-text">
+        <h4 class="heading">Section <?php echo $customizable_j; ?></h4>
+        
+        
+        <div class="option">
+          <div class="controls">
+            <input id="section-icon-<?php echo $customizable_j;?>" class="upload" type="text" name="faster_theme_options[section-icon-<?php echo $customizable_j;?>]" 
+                        value="<?php if(!empty($customizable_options['section-icon-'.$customizable_j])) echo $customizable_options['section-icon-'.$customizable_j]; ?>" placeholder="No file chosen" />
+            <input id="icon" class="upload-button button" type="button" value="Upload" />
+            <div class="screenshot" id="slider-image">
+              <?php if(!empty($customizable_options['section-icon-'.$customizable_j])) echo "<img src='".$customizable_options['section-icon-'.$customizable_j]."' /><a class='remove-image'>Remove</a>"; ?>
+            </div>
+           
+          </div>
+          <div class="explain"></div>
+        </div>
+        
+        </div>
+        
+        <div id="section-title" class="section section-text mini">
+        <div class="option">
+          <div class="controls">
+            <input id="sectiontitle-<?php echo $customizable_j; ?>" class="of-input" name="faster_theme_options[sectiontitle-<?php echo $customizable_j; ?>]" type="text" size="30" value="<?php if(!empty($customizable_options['sectiontitle-'.$customizable_j])) { echo $customizable_options['sectiontitle-'.$customizable_j]; } ?>"  placeholder="Section Title" />
+          </div>
+          <div class="explain"></div>
+        </div>
+        </div>
+		<div id="section-desc" class="section section-textarea">
+        <div class="option">
+          <div class="controls">
+          <textarea name="faster_theme_options[sectiondesc-<?php echo $customizable_j; ?>]" id="sectiondesc-<?php echo $customizable_j; ?>" class="of-input" placeholder="Section Description" rows="5" ><?php if(!empty($customizable_options['sectiondesc-'.$customizable_j])) { echo $customizable_options['sectiondesc-'.$customizable_j]; } ?></textarea>
+          </div>
+          <div class="explain"></div>
+        </div>
+        </div>          
+		  <?php endfor; ?>
+		<h3>Recent Post Settings</h3>
+          <div id="section-post" class="section section-text mini">
+            <h4 class="heading">Recent Post Title</h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="post" class="of-input" name="faster_theme_options[post-title]" size="32"  value="<?php if(!empty($customizable_options['post-title'])) { echo $customizable_options['post-title']; } ?>">
+              </div>
+              <div class="explain">Enter recent post title for your site , you would like to display in the Home Page.</div>
+            </div>
+          </div>
+
+          <div id="section-category" class="section section-textarea">
+            <h4 class="heading">Category</h4>
+            <div class="option">
+              <div class="controls">
+               <select name="faster_theme_options[post-category]" id="category"> 
+                 <option value=""><?php echo esc_attr(__('Select Category','customizable')); ?></option> 
+                 <?php 
+				 $customizable_args = array(
+				  'orderby' => 'name',
+				  'parent' => 0
+				  );
+                  $customizable_categories = get_categories($customizable_args); 
+                  foreach ($customizable_categories as $customizable_category) {
+					  if($customizable_category->term_id == $customizable_options['post-category'])
+					  	$customizable_selected="selected=selected";
+					  else
+					  	$customizable_selected='';
+                    $customizable_option = '<option value="'.$customizable_category->term_id .'" '.$customizable_selected.'>';
+                    $customizable_option .= $customizable_category->cat_name;
+                    $customizable_option .= '</option>';
+                    echo $customizable_option;
+                  }
+                 ?>
+                </select>
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>
+
+		<h3>Download Settings</h3>
+       <div id="section-caption" class="section section-textarea">
+       <h4 class="heading">Download Caption</h4>
+        <div class="option">
+          <div class="controls">
+          <textarea name="faster_theme_options[downloadcaption]" id="downloadcaption" class="of-input" rows="5" placeholder="Caption" ><?php if(!empty($customizable_options['downloadcaption'])) { echo $customizable_options['downloadcaption']; } ?></textarea>
+          </div>
+          <div class="explain"></div>
+        </div>
+        </div>
+          
+          <div id="section-downloadlink" class="section section-textarea">
+            <h4 class="heading">Download Link</h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="downloadlink" class="of-input" name="faster_theme_options[downloadlink]" size="32" placeholder="Download Link"  value="<?php if(!empty($customizable_options['downloadlink'])) { echo $customizable_options['downloadlink']; } ?>">
+              </div>
+              <div class="explain"></div>
+            </div>
+          </div>
+
+
+        </div>
+        
         <!-------------- End group ----------------->
         
         <div id="fasterthemes_framework-submit" class="section-submite"> <span>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></span> <span class="fb"> <a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a> </span> <span class="tw"> <a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a> </span>

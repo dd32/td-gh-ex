@@ -4,8 +4,8 @@ Theme Name: Customizable
 Theme URI: http://fasterthemes.com/themes/customizable
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
-Description: Customizable is a WordPress responsive blog theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design.
-Version: 1.0.1
+Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design.  
+Version: 2.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-width-template, theme-options

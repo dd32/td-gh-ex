@@ -29,11 +29,12 @@ get_header();?>
           <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a> </div>
       </article>
       <?php endwhile;?>
-      <div class="pagination">
-        <?php if (function_exists("customizable_paginate"))
-		
-   		 customizable_paginate(); ?>
+      <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+      <div class="col-md-12 customizable-default-pagination">
+      		<span class="customizable-previous-link"><?php previous_posts_link(); ?></span>
+            <span class="customizable-next-link"><?php next_posts_link(); ?></span>
       </div>
+      <?php } ?>
       <?php
 		   else : 
 		   ?>

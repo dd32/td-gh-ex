@@ -71,7 +71,7 @@
 			customizable_remove_file( $(this).parents('.section') );
         });
         
-        $('.upload-button').click( function( event ) {
+        $('.upload-button').live('click', function( event ) {
         	customizable_add_file(event, $(this).parents('.section'), $(this));
         });
         

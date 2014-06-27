@@ -104,4 +104,3 @@ function widget($args, $customizable_instance) {
    echo $after_widget;
 }
 }
-

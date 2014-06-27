@@ -5,6 +5,7 @@
 if ( ! function_exists( 'customizable_setup' ) ) :
 
 function customizable_setup() {
+	global $content_width;
 	if ( ! isset( $content_width ) ) {
 	$content_width = 750;
 	}
@@ -19,7 +20,7 @@ function customizable_setup() {
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 672, 372, true );
+	set_post_thumbnail_size();
 	add_image_size( 'customizable-full-width', 1038, 576, true );
 	add_image_size( 'customizable-blog-width', 730, 428, true );
 	// This theme uses wp_nav_menu() in two locations.
@@ -71,8 +72,11 @@ require get_template_directory() . '/inc/custom-header.php';
 add_action('wp_enqueue_scripts','customizable_load_scripts');
 function customizable_load_scripts(){
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.0.2' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '3.0.2' );
 	wp_enqueue_style( 'customizable-style', get_stylesheet_uri(),array('bootstrap'));
-	wp_enqueue_style( 'customizable-media', get_template_directory_uri() . '/css/media.css');
+	wp_enqueue_style('owl-carousel-css',get_template_directory_uri().'/css/owl.carousel.css',array(),'','');	
+	wp_enqueue_script( 'owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array( 'jquery' ), '20131209', true );	
+	wp_enqueue_script('sliderjs',get_template_directory_uri().'/js/responsiveslides.min.js',array('jquery'));
 	wp_enqueue_script('customizable-default-js', get_template_directory_uri() . '/js/default.js', array('jquery'), '20131209', true);
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	}
@@ -104,16 +108,16 @@ function customizable_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'customizable_wp_title', 10, 2 );
 
 function customizable_font_url() {
-	$font_url = '';
+	$customizable_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
 	 * by Lato, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'customizable' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
+		$customizable_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
 	}
 
-	return $font_url;
+	return $customizable_font_url;
 }
 
 /**
@@ -175,44 +179,6 @@ return ' ...';
  }
 add_filter( 'excerpt_more', 'customizable_read_more' ); 
 
-/**
- * customizable custom pagination for posts 
- */
-
-function customizable_paginate($pages = '', $range = 5)
-{  
-     $customizable_showitems = ($range * 2)+1;  
-     global $paged;
-     if(empty($paged)) $paged = 1;
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     } echo '<div class="clearfix"></div>';  
-     if(1 != $pages)
-     {
-		 
-         echo "<ul>";
-         if($paged > 2 && $paged > $range+1 && $customizable_showitems < $pages) echo "<li class='pagination-previous-all'><a href='".get_pagenum_link(1)."'><span class='sprite previous-all-icon'><<</span></a></li>";
-         if($paged > 1 && $customizable_showitems < $pages) echo "<li class='pagination-previous'><a href='".get_pagenum_link($paged - 1)."'><span class='sprite previous-icon'><</span></a></li>";
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $customizable_showitems ))
-             {
-                 echo ($paged == $i)? "<li class='active'><a href='#' >".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-             }
-         }
-         if ($paged < $pages && $customizable_showitems < $pages) echo "<li class='pagination-next'><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'>></span></a></li>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $customizable_showitems < $pages) echo "<li class='pagination-next-all'><a href='".get_pagenum_link($pages)."'><span class='sprite next-all-icon'>>></span></a></li>";
-         echo "</ul>\n";
-     }
-}
-
-
 function customizable_breadcrumbs() {
     global $post;
     echo '<ol>';
@@ -233,13 +199,13 @@ function customizable_breadcrumbs() {
             }
         } elseif (is_page()) {
             if($post->post_parent){
-                $anc = get_post_ancestors( $post->ID );
-                $title = get_the_title();
-                foreach ( $anc as $ancestor ) {
-                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> / ';
+                $customizable_anc = get_post_ancestors( $post->ID );
+                $customizable_title = get_the_title();
+                foreach ( $customizable_anc as $customizable_ancestor ) {
+                    $customizable_output = '<li><a href="'.get_permalink($customizable_ancestor).'" title="'.get_the_title($customizable_ancestor).'">'.get_the_title($customizable_ancestor).'</a></li> / ';
                 }
-                echo $output;
-                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+                echo $customizable_output;
+                echo '<strong title="'.$customizable_title.'"> '.$customizable_title.'</strong>';
             } else {
                 echo '<li><strong> '.get_the_title().'</strong></li>';
             }
@@ -383,25 +349,33 @@ function customizable_entry_meta() {
 	$customizable_tag_list = get_the_tag_list( '', __( ', ', 'customizable' ) );
 
 	$customizable_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
-		esc_url( get_permalink() ),
+		esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-
 	$customizable_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'customizable' ), get_the_author() ) ),
 		get_the_author()
 	);
 
-
-	if ( $customizable_tag_list ) {
-		$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
-	} elseif ( $customizable_category_list ) {
-		$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
-	} else {
-		$customizable_utility_text = __( '<span class="post-category"> Posted on : %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+	if(get_comments_number() > 0){
+		if ( $customizable_tag_list ) {
+			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+		} elseif ( $customizable_category_list ) {
+			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+		} else {
+			$customizable_utility_text = __( '<span class="post-category"> Posted on : %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+		}
+	}else{
+		if ( $customizable_tag_list ) {
+			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+		} elseif ( $customizable_category_list ) {
+			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+		} else {
+			$customizable_utility_text = __( '<span class="post-category"> Posted on : %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+		}
 	}
 
 	printf(
@@ -418,3 +392,12 @@ function customizable_entry_meta() {
   <?php }
 
 endif;
+
+function customizable_change_excerpt_more( $more ) {
+    return (is_front_page()) ? '' : '...';
+}
+add_filter('excerpt_more', 'customizable_change_excerpt_more');
+function customizable_excerpt_length( $length ) {
+    return (is_front_page()) ? 8 : 25;
+}
+add_filter( 'excerpt_length', 'customizable_excerpt_length', 999 );
