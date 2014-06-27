@@ -13,3 +13,6 @@ Version: 1.0.2
 	i) set image margin on page loading
 	ii) set comment counter condition
 	iii) Set div structure 
+
+Version: 1.0.3
+	i) Fixed a pagination issue

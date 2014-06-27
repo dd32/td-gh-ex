@@ -8,14 +8,18 @@ get_header(); ?>
     <div class="col-md-8">
       <div class="masonry-container masonry">
         <?php     
-            $foodrecipes_args = array(
+if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+  elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+  else { $paged = 1; }
+              $foodrecipes_args = array(
                     'orderby'          => 'post_date',
                     'order'            => 'DESC',
                     'post_type'        => 'post',
-                    'post_status'      => 'publish'
+                    'post_status'      => 'publish',
+					'paged'			  => $paged
                 );
             $foodrecipes_posts = new WP_Query( $foodrecipes_args );
-           
+           	
             while ( $foodrecipes_posts->have_posts() ) {
             $foodrecipes_posts->the_post();
             
