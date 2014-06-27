@@ -42,11 +42,19 @@
 		<h4 class="nav-widgettitle">
 			<?php _e('Navigation', 'leftside'); ?>
 		</h4>
-
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
+	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( get_header_image() ) {?> 
+		<div id="header-image-mobile">
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
+		</div>
+	<?php } ?> 
+	<?php } ?>
+
+	<?php get_sidebar(); ?>
+
 </div>
 
 <?php if ( is_home() || is_front_page() ) {?> 

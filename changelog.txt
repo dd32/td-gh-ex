@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+LeftSide version 1.2 - july 2014 
+- added featured image on single page
+- mobile stylesheet: relocated header image
+- added several adjustments for better responsive layout
+- text-align justify for content area, sidebar and footer
+- several minor adjustments 
+
 LeftSide version 1.1 - may 2014 
 - first stable release
 

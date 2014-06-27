@@ -47,10 +47,11 @@
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 300, 300 ); 
 
+	// Resize single page thumbnail
+		add_image_size( 'single', 300, 300 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
-
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
