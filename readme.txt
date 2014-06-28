@@ -98,6 +98,10 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 == Changelog ==
 
+Version 0.7
+* Remove blog page template page-blog.php. 
+Note: Now to setup of Page as blog, go to "Settings => Readings". In Front page displays, check "A static page (select below)" and select your blog from "Posts page:" select box.
+
 Version 0.6
 * Fixed Featured Content Sub-headline showing repeat headline ( Reported by Jessica )
 
