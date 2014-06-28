@@ -99,18 +99,20 @@ function optionsframework_options() {
 
 	$options = array();
 $options[] = array(
-		'desc' => __('<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
-		<li>SEO Optimized WordPress Theme.</li>
-		<li>Page Speed Optimize for better result.</li>
-		<li>Color Customize of theme.</li>
-		<li>Custom Widgets and Functions.</li>
-		<li>Social Media Integration.</li>
-		<li>Responsive Website Design.</li>
-		<li>Different Website Layout to Select.</li>
-		<li>Many of Other customize feature for your blog or webiste.</li>
-		<p><span class="buypre"><a href="http://www.wrock.org/product/optimize-premium-theme/" target="_blank">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/" target="_blank">Shop More Themes !</a></span></p>','effect'),
-		'class' => 'tesingh',
-		'type' => 'info');
+    'desc' => '<h2 style="color: #FFF !important;">' . esc_attr__( 'Upgrade to Premium Theme & Enable Full Features!', 'optimize' ) . '</h2>
+            <li>' . esc_attr__( 'SEO Optimized WordPress Theme.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'More Slides for your slider.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Theme Customization help & Support Forum.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Page Speed Optimize for better result.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Color Customize of theme.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Custom Widgets and Functions.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Social Media Integration.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Responsive Website Design.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Different Website Layout to Select.', 'optimize' ) . '</li>
+            <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'optimize' ) . '</li>
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/optimize/','optimize')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'optimize' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/','optimize')) . '" target="_blank">' . esc_attr__( 'Shop More Themes !', 'optimize' ) . '</a></span></p>',
+            'class' => 'tesingh',
+            'type' => 'info');
 	$options[] = array(
 		'name' => __('Basic Settings', 'optimize'),
 		'type' => 'heading');
@@ -177,7 +179,7 @@ $options[] = array(
    	
 		
 $options[] = array(
-		'name' => __('Premium Feature', 'optimize'),
+		'name' => __('Advance Options', 'optimize'),
 		'type' => 'heading');
 			
 				

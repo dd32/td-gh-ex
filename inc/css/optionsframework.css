@@ -5,26 +5,46 @@ display: none;}
 font-size: 1.13em !important;
 margin: 1em 0 !important;
 }
-.basicsettings-tab{background-image: url("../images/tools.png");
+.basicsettings-tab, .basicsettings-tab :hover{background-image: url("../images/home.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
-padding-left: 25px !important;}
-.homepage-tab{background-image: url("../images/home.png");
+padding-left: 25px !important;
+background-color: #FFBA6F !important;
+color: #474747;
+}
+.slidersettings-tab, .slidersettings-tab :hover{background-image: url("../images/wrock.ico");
 background-repeat: no-repeat;
 background-position: 3% 10px;
-padding-left: 25px !important;}
+padding-left: 25px !important;
+background-color: #FF777D !important;
+color: #474747;
+}
+.advanceoptions-tab{background-image: url("../images/tools.png");
+background-repeat: no-repeat;
+background-position: 3% 10px;
+padding-left: 25px !important;
+background-color: #FF6F6F !important;
+color: #fff;
+}
 .socialmedia-tab{background-image: url("../images/graph.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
-padding-left: 25px !important;}
+padding-left: 25px !important;
+background-color: #6F9DFF !important;
+color: #FDFDFD;}
 .customstyling-tab{background-image: url("../images/style.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
-padding-left: 25px !important;}
+padding-left: 25px !important;
+background-color: #CB6FFF !important;
+color: #FFFFFF;}
 .adsmanagement-tab{background-image: url("../images/layout.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
-padding-left: 25px !important;}
+padding-left: 25px !important;
+
+background-color: #6FFF97 !important;
+color: #5E5E5E;}
 
 .tesingh{background: #B76CA9;
 color: #FFF !important;
@@ -87,7 +107,6 @@ padding-bottom: 5px;
 background-repeat: no-repeat;
 background-position: 2% 7px;
 padding-left: 25px !important;box-shadow: 0px 0px 30px #FF5959 inset;}
-.upgradetopremium{box-shadow: 0px 0px 39px #B6B6B6 inset;}
 .upgradetopremium h3{
 color: #FF4545;
 font-size: 27px;
@@ -208,9 +227,9 @@ width: auto;
 #optionsframework {
 position: relative;
 z-index: 0;
-max-width: 88%;
+max-width: 78%;
 background: #FFF;
-margin: 0 auto;
+
 }
 #optionsframework h3 {
 	cursor: default;
@@ -442,3 +461,13 @@ border-bottom: 1px solid #ECECEC;
 	clear: both;
 }
 
+.nav-tab-active{
+border-bottom: 1px solid #f1f1f1;
+background-color: #f1f1f1 !important;
+color: #000;
+}
+.nav-tab-active:hover{
+border-bottom: 1px solid #f1f1f1;
+background: none !important;
+color: #000;
+}

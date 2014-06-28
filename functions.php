@@ -10,11 +10,7 @@ function optimize_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 add_action( 'wp_enqueue_scripts', 'optimize_scripts' );
-/**
- * Sets up the content width value based on the theme's design.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 770;
+
 
 	
  function optimize_googlemeta() {
@@ -57,7 +53,11 @@ function optimize_theme_setup() {
 	'default-color' => 'ffffff',
 );
 add_theme_support( 'custom-background', $args );
-	
+	/**
+ * Sets up the content width value based on the theme's design.
+ */
+if ( ! isset( $content_width ) ){
+	$content_width = 770;}
 	add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	
 

@@ -4,9 +4,9 @@
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
- * @copyright 2013 WP Theming
+ * @copyright 2010-2014 WP Theming
  */
-add_action('admin_init','optionscheck_change_santiziation', 100);
+ add_action('admin_init','optionscheck_change_santiziation', 100);
 function optionscheck_change_santiziation() {
     remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
     add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
@@ -39,15 +39,15 @@ add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
 
 /* Select */
 
-add_filter( 'of_sanitize_select', 'of_sanitize_enum', 10, 2);
+add_filter( 'of_sanitize_select', 'of_sanitize_enum', 10, 2 );
 
 /* Radio */
 
-add_filter( 'of_sanitize_radio', 'of_sanitize_enum', 10, 2);
+add_filter( 'of_sanitize_radio', 'of_sanitize_enum', 10, 2 );
 
 /* Images */
 
-add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2);
+add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2 );
 
 /* Checkbox */
 
@@ -87,9 +87,9 @@ add_filter( 'of_sanitize_color', 'of_sanitize_hex' );
 
 function of_sanitize_upload( $input ) {
 	$output = '';
-	$filetype = wp_check_filetype($input);
+	$filetype = wp_check_filetype( $input );
 	if ( $filetype["ext"] ) {
-		$output = $input;
+		$output = esc_url( $input );
 	}
 	return $output;
 }
@@ -97,7 +97,7 @@ add_filter( 'of_sanitize_upload', 'of_sanitize_upload' );
 
 /* Editor */
 
-function of_sanitize_editor($input) {
+function of_sanitize_editor( $input ) {
 	if ( current_user_can( 'unfiltered_html' ) ) {
 		$output = $input;
 	}
@@ -121,7 +121,7 @@ function of_sanitize_allowedtags( $input ) {
 
 function of_sanitize_allowedposttags( $input ) {
 	global $allowedposttags;
-	$output = wpautop(wp_kses( $input, $allowedposttags));
+	$output = wpautop( wp_kses( $input, $allowedposttags) );
 	return $output;
 }
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedposttags' );
@@ -250,10 +250,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'optimize' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'optimize' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'optimize' ),
-		'repeat'    => __( 'Repeat All', 'optimize' ),
+		'no-repeat' => __( 'No Repeat', 'textdomain' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'textdomain' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'textdomain' ),
+		'repeat'    => __( 'Repeat All', 'textdomain' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -266,15 +266,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'optimize' ),
-		'top center'    => __( 'Top Center', 'optimize' ),
-		'top right'     => __( 'Top Right', 'optimize' ),
-		'center left'   => __( 'Middle Left', 'optimize' ),
-		'center center' => __( 'Middle Center', 'optimize' ),
-		'center right'  => __( 'Middle Right', 'optimize' ),
-		'bottom left'   => __( 'Bottom Left', 'optimize' ),
-		'bottom center' => __( 'Bottom Center', 'optimize' ),
-		'bottom right'  => __( 'Bottom Right', 'optimize')
+		'top left'      => __( 'Top Left', 'textdomain' ),
+		'top center'    => __( 'Top Center', 'textdomain' ),
+		'top right'     => __( 'Top Right', 'textdomain' ),
+		'center left'   => __( 'Middle Left', 'textdomain' ),
+		'center center' => __( 'Middle Center', 'textdomain' ),
+		'center right'  => __( 'Middle Right', 'textdomain' ),
+		'bottom left'   => __( 'Bottom Left', 'textdomain' ),
+		'bottom center' => __( 'Bottom Center', 'textdomain' ),
+		'bottom right'  => __( 'Bottom Right', 'textdomain')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -287,8 +287,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'optimize' ),
-		'fixed'  => __( 'Fixed in Place', 'optimize')
+		'scroll' => __( 'Scroll Normally', 'textdomain' ),
+		'fixed'  => __( 'Fixed in Place', 'textdomain')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -362,10 +362,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'optimize' ),
-		'italic'      => __( 'Italic', 'optimize' ),
-		'bold'        => __( 'Bold', 'optimize' ),
-		'bold italic' => __( 'Bold Italic', 'optimize' )
+		'normal'      => __( 'Normal', 'textdomain' ),
+		'italic'      => __( 'Italic', 'textdomain' ),
+		'bold'        => __( 'Bold', 'textdomain' ),
+		'bold italic' => __( 'Bold Italic', 'textdomain' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

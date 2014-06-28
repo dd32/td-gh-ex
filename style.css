@@ -1,17 +1,17 @@
 /*
 Theme Name: Optimize
-Author: wRock.org by Sandy
-Author URI: http://www.wrock.org
-Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme/
+Author: InsertCart
+Author URI: http://www.insertcart.com
+Theme URI: http://www.insertcart.com/optimize
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.4.7
+Version: 1.4.8
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
 License URI: license.txt
-Copyright (C) 2011-2013 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright (C) 2011-2014 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.4 See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Optimize WordPress theme, Copyright (C) 2014 wRock.Org
+Optimize WordPress theme, Copyright (C) 2014 InsertCart
 Optimize WordPress theme is licensed under the GPL.
 
 */
@@ -362,11 +362,11 @@ img, img a {
 margin: 0 auto;
 width: 90%;
 position: relative;
-background: #6FA39B;
+background: #6171C7;
 min-width: 790px;
 }
  #navigation .secondary{
-	background: #6FA39B;
+	background: #6171C7;
 	margin-bottom: 5px;
  }
 #navigation  ul {
@@ -837,8 +837,9 @@ background-position: 0px -26px;
 	cursor: pointer;
 	padding: 8px;
 	float: right;
-	color: #333;
+	color: #fff;
 	font-weight: bold;
+	background: #FD4326;
 } 
 .readmore:hover {
 	opacity: 0.9;
@@ -1127,6 +1128,8 @@ margin: 2px;
 text-decoration: none;
 line-height: 24px;
 border: 1px solid;
+background: #6171C7;
+color: #fff;
 }
 #pagenavi span {
 padding: 5px 14px 5px 14px;
@@ -1137,6 +1140,7 @@ border: 1px solid;
 }
 #pagenavi a:hover {
 	text-decoration: none;
+	background: #89D942;
 }
 #pagenavi span.current {
 	padding: 5px 14px 5px 14px;

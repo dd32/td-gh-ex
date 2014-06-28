@@ -2,7 +2,7 @@
 Thanks for Downloading Optimize theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.wrock.org/forums/
+You can directly contact us: http://forum.insertcart.com/
 also suggestion are welcome
 
 
@@ -29,6 +29,11 @@ Custom Css:
 
 
 == Change log ==
+= 1.4.8 =
+*Option framework updated to new version
+*Fixed Content width issue into theme
+*Updated some codes
+
 = 1.4.7 =
 *Menu Color customize
 *favicon upload option added
@@ -64,5 +69,4 @@ Custom Css:
 *For Responsive Menu Public code Used as ref. for http://wordpress.stackexchange.com/questions/74633/convert-wp-menu-to-a-drop-down-for-mobile-browser/98257
 *Images into /images/ folder that's are created by me cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Monda: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)  This Font Software is licensed under the SIL Open Font License, Version 1.1. http://scripts.sil.org/OFL
-
 **This theme and file are created by me & publish under GPL
