@@ -16,3 +16,6 @@ Version: 1.0.2
 
 Version: 1.0.3
 	i) Fixed a pagination issue
+
+Version: 1.0.4
+	i) Optional custom pagination support added through plugin integration
