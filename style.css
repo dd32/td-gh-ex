@@ -1,0 +1,622 @@
+/*
+Theme Name: Universal
+Theme URI: http://themes.joedolson.com/universal/
+Version: 0.9.0
+Author: Joseph C Dolson
+Author URI: http://www.joedolson.com
+Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
+*/
+
+/* Import Reset and Menu styles */
+@import url('css/reset.css');
+@import url('css/editor.css');
+@import url('css/menu.css');
+@import url('css/font.css');
+/* 
+ * Menu for mobile 
+ * Styles for menu don't apply below 800px; base styles.
+ */
+.primary-menu ul {
+	margin: 1em 2em;
+}
+
+.primary-menu li {
+	display: block;
+	text-align: left;
+	padding: .25em 1em;
+	line-height: 1.5;
+}
+
+.secondary-menu li {
+	display: inline-block; 	
+	position: relative;
+}
+
+.secondary-menu a {
+	margin: .5em;
+}
+
+/* 
+ *	Colors 
+ *	All major background and text colors outside of menu.css are defined here. 
+ *	Border and shadow colors are defined below using rgba values.
+ *	Color contrast must meet a minimum of 4.5:1 luminosity ratio, or 3:1 for text rendered larger than 18pt/14pt bold
+ *	https://www.joedolson.com/tools/color-contrast-compare.php?color=%23333&color2=%23fff&alpha=1
+ *
+*/
+.header { background-color: #fff; color: #333; }
+.sidebar { background-color: #fff; color: #333; }
+.content { background-color: #fff; color: #333; }
+.wrapper { background-color: rgb( 210,210,210 ); background-color: rgba( 240,240,240, .85 ); color: #333; }
+.page-wrapper { background-color: #fff; color: #333; }
+
+body {
+	background-color: #344f92;
+	color: #fff;
+}
+
+a { 
+	color: #00d;
+}
+
+a:hover, a:focus, a:active {
+	color: #33f;
+}
+
+table th {
+	text-align: center;
+	background-color: rgba( 0,0,0,.15 );
+}
+
+.sticky {
+	background-color: rgba( 0,0,0,.1 );
+}
+
+.wp-caption {
+	background-color: rgba( 0,0,0,.05 );
+	color: #111;	
+}
+
+.comment.bypostauthor {
+	background-color: rgba( 255, 255, 255, 1);
+	color: #111; 
+}
+
+.comment .comment-reply-link {
+	background-color: rgba( 0,0,0,.9 );
+	color: #fff;
+}
+
+.menu-toggle {
+	border: 1px solid #aaa;
+	background-color: #ccc;
+	color: #000;
+	border-radius: 2px;
+}
+
+.menu-toggle:hover, .menu-toggle:focus {
+	background-color: #333;
+	color: #fff;
+	border: 1px solid #666;
+}
+
+/* 
+ * General styling for major HTML elements
+ */
+
+body {
+	text-align: center;
+	font-size: 62.5%;
+}
+
+.header, .sidebar, .content, .wrapper, .page-wrapper, .hentry { position: relative; }
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	font-size: 1.3em;
+	text-align: center;
+	box-shadow: 0 0 5px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.page-wrapper {
+	padding: 1em;
+	text-align: left;
+	outline: 1px solid rgb( 200, 200, 200 );
+	outline: 1px solid rgba( 255, 255, 255, .7 );
+}
+/*
+ * I want to be able to move focus to #content, but I don't need to see that.
+ */
+#content:focus {
+	outline: none;
+}
+
+.sidebar ul {
+	list-style-type: none;
+}
+
+.sidebar li {
+	line-height: 1.5;
+	margin: 0 0 .25em;
+}
+
+.post-wrapper ul, .post-wrapper ol { 
+	margin: 1em 2em;
+}
+
+.post-wrapper ol > li {
+	list-style-type: decimal;
+}
+
+.post-wrapper ul > li {
+	list-style-type: disc;
+}
+
+.post-wrapper li {
+	line-height: 1.5;
+}
+
+.hentry {
+	margin-bottom: 1em;
+}
+
+.hentry:after {
+	content: ''; 
+	display: table;
+	clear: both;
+}
+
+.post:nth-last-of-type(1) {
+	margin-bottom: 0;
+}
+
+.paginated, .prev_next {
+	margin: .5em 0;
+}
+
+.paginated a, .prev_next a {
+	text-decoration: none;
+	background-color: rgb( 235,235,235 );
+	background-color: rgba( 0,0,0,.07 );
+	padding: 3px;
+	outline: 1px solid;
+}
+
+.paginated a:hover, .paginated a:focus, .prev_next a:hover, .prev_next a:focus {
+	background-color: rgb( 250,250,250 );
+	background-color: rgba( 0,0,0,.01 );
+	outline: 1px solid #ddd;
+}
+
+.featured-image img {
+	width: 100%;
+	height: auto;
+}
+
+.header {
+	padding: 1em 0 0;
+	line-height: 1.5;
+	outline: 1px solid #ccc;
+}
+
+.header .site-title {
+	font-size: 2em;
+}
+
+.header-image {
+	display: block;
+	width: 100% !important;
+	height: auto !important;
+}
+
+.header .site-title a {
+	text-decoration: none;
+}
+
+.header .site-title a:hover, .header .site-title a:focus {
+	text-decoration: underline;
+}
+
+.header .site-description {
+	font-size: 1.4em; 
+	text-transform: uppercase;
+	opacity: .95; 
+}
+
+.hentry p:last-of-type { padding-bottom: 0; }
+
+.meta {
+	border: 1px solid rgba( 0,0,0,.1 );
+	box-shadow: 1px 1px 1px rgba( 0,0,0,.05 );
+	background-color: rgb( 245,245,245 );
+	background-color: rgba( 0,0,0,.05 );
+	padding: .5em;
+	margin-bottom: .5em;
+	line-height: 1.5;
+	font-size: 1.2em;
+}
+
+.meta.foot {
+	margin-top: 1em;
+	font-size: 1em;
+}
+
+/* 
+ *	dashicons 
+ *	dashicons and similar choices are inaccessible by themselves, since they provide no alternate text.
+ *	These dashicons are supplemental, added before the terms that they represent. 
+ */
+.dashicon { font-family: 'dashicons'; vertical-align: middle; }
+.dashicon.the-tags:before { content: "\f323"; }
+.dashicon.the-author:before { content: "\f110"; }
+.dashicon.the-category:before { content: "\f318"; }
+.dashicon.the-date:before { content: "\f145"; }
+.dashicon.prevpage:before { content: "\f340"; }
+.dashicon.nextpage:before { content: "\f344"; }
+.dashicon.video:before { content: "\f234"; }
+.dashicon.audio:before { content: "\f127"; }
+.dashicon.image:before { content: "\f306"; }
+.dashicon.gallery:before { content: "\f232"; }
+
+.widget h2:before { font-family: 'dashicons'; vertical-align: middle; padding-right: .25em; }
+.widget_meta h2:before {  content: "\f107"; }
+.widget_search h2:before { content: "\f179"; }
+.widget_archive h2:before, .widget_calendar h2:before, .widget_recent_entries h2:before  { content: "\f145"; }
+.widget_categories h2:before { content: "\f318"; }
+.widget_tag_cloud h2:before { content: "\f323"; }
+.widget_nav_menu h2:before, .widget_pages h2:before { content: "\f333"; }
+.widget_links h2:before { content: "\f103"; }
+.widget_recent_comments h2:before { content: "\f101"; }
+.widget_rss h2:before { content: "\f303"; }
+.widget_rss h2 img { display: none; }
+
+a[href*=\.mp3]:before, a[href*=\.wma]:before, a[href*=\.ogg]:before, a[href*=\.m4a]:before {
+	content: "\f127"; 
+	font-family: 'dashicons';
+	color: rgb( 120,120,120 );
+	color: rgba( 100,100,100,.8 );
+	padding-right: .25em;
+}
+a[href*=\.mp4]:before, a[href*=\.avi]:before, a[href*=\.flv]:before , a[href*=\.mov]:before, a[href*=\.m4v]:before {
+	content: "\f234"; 
+	font-family: 'dashicons'; 
+	color: rgb( 120,120,120 );
+	color: rgba( 100,100,100,.8 );
+	padding-right: .25em;	
+}
+
+.footer {
+	clear: both;
+	padding: 15px;
+}
+
+.searchform input{
+	font-size: 1.2em; 
+}
+
+.post-content {
+	font-size: 1.1em;
+}
+
+.format-aside, .format-status, .format-quote {
+	padding: 2em;
+}
+
+.format-aside .post-content {
+	font-style: italic;
+}
+
+.format-status .post-content {
+	font-size: 1.3em;
+}
+
+.format-quote .post-content {
+	font-size: 1.3em;
+	padding: 1em;
+}
+
+.single-attachment .post-content img {
+	margin: .5em auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.sticky {
+	padding: 1em;
+	margin: -1em -1em 0;
+}
+
+.sticky .meta {
+	border: none;
+	box-shadow: 0px 0px 0px #000;
+	padding: 0;
+}
+
+#wp-calendar td {
+	text-align: center;
+	width: 14.2857%;
+}
+
+#wp-calendar a {
+	font-weight: 700; 
+	display: inline-block; 
+	height: 100%;
+	padding: .5em;
+	border-radius: 30px;
+	background-color: rgba( 0,0,0,.1 );	
+}
+
+#wp-calendar a:hover, #wp-calendar a:focus {
+	background-color: rgba( 255, 255, 255, 1 ); 
+}
+
+#content .gallery-caption { 
+	text-align: left;
+	width: 70%;
+	margin: 0 auto!important;
+}
+
+.post-content .twitter-tweet {
+	margin: 1em auto!important;
+}
+
+/* Social Networks */
+.social-networks { position: absolute; bottom: .5em; right: .5em; }
+.social-networks li { display: inline-block; }
+.social-networks a:before { font-family: dashicons; vertical-align: middle;  background-color: rgb( 255,255,255 ); background-color: rgba( 255,255,255,.8 ); padding: 2px; margin: 0 0 0 2px; }
+.social-networks a span { font-family: Raleway, Helvetica, Arial, sans-serif; }
+.social-networks a { text-decoration: none; font-size: 2em; line-height: 1; }
+.social-networks a:hover:before, .social-networks a:focus:before { background: #f0f0f0; }
+
+/* dashicon fonts */
+.social-networks a[href*="twitter.com"]:before { content: "\f301"; color: #55acee; }
+.social-networks a[href*="facebook.com"]:before { content: "\f304"; color: #4c66a4; }
+.social-networks a[href*="plus.google.com"]:before { content: "\f462"; color: #dd4b39; }
+.social-networks a[href*="wordpress.org"]:before { content: "\f120"; color: #21759b; border-color: #464646; }
+.social-networks a[href*="wordpress.com"]:before { content: "\f120"; color: #21759b; border-color: #d54e21; }
+
+/* icomoon fonts */
+.social-networks a[href*="instagram.com"]:before { font-family: icomoon; content: "\e600"; color: #3f729b; }
+.social-networks a[href*="lanyrd.com"]:before { font-family: icomoon; content: "\e609"; color: #0d6797; }
+.social-networks a[href*="flickr.com"]:before { font-family: icomoon; content: "\e60a"; color: #ff0084; border-color: #0063dc; }
+.social-networks a[href*="picasa.google.com"]:before { font-family: icomoon; content: "\e60b"; color: #0f9d58; border-color: #db4437; }
+.social-networks a[href*="dribbble.com"]:before { font-family: icomoon; content: "\e60d"; color: #ff8833; border-color: #00b6e3; }
+.social-networks a[href*="github.com"]:before { font-family: icomoon; content: "\e602"; color: #333; border-color: #4183c4; }
+.social-networks a[href*="tumblr.com"]:before { font-family: icomoon; content: "\e604"; color: #35465c; }
+.social-networks a[href*="linkedin.com"]:before { font-family: icomoon; content: "\e605"; color: #0976b4; border-color: #000; }
+.social-networks a[href*="stumbleupon.com"]:before { font-family: icomoon; content: "\e606"; color: #eb4924; }
+.social-networks a[href*="pinterest.com"]:before { font-family: icomoon; content: "\e607"; color: #cc2127; }
+.social-networks a[href*="paypal.com"]:before { font-family: icomoon; content: "\e608"; color: #253b80; border-color: #179bd7;  }
+
+/* Comments */
+.comments-wrapper .commentlist, .comments-wrapper .commentlist ol {
+	margin: 0;
+}
+
+.comments-wrapper .commentlist ol {
+	margin: 0 0 1em 1em;
+}
+
+.comments-wrapper .commentlist li, .comments-wrapper .commentlist li li {
+	margin: 0 0 1em;
+	list-style-type: none;	
+}
+
+.comments-wrapper .commentlist .comment article ol li {
+	list-style-type: decimal;
+}
+
+.comment {
+	padding: 1em;
+}
+
+.navigation:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.nav-previous {
+	float: left;
+}
+
+.nav-next {
+	float: right;
+}
+
+.comment-body:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.comment.bypostauthor {
+	outline: 1px solid rgba( 0,0,0,.6 );
+}
+
+.comment.even {
+	background-color: rgba( 0,0,0,.02 );
+}
+
+.comment .avatar {
+	float: left;
+	margin: 0 .5em .5em 0;
+}
+
+.comment .comment-content {
+	margin-left: 96px;
+	padding-left: .5em;
+}
+
+.comment .reply {
+	margin: 0 0 1em;
+	text-align: right;
+}
+
+.comment .comment-reply-link {
+	border-radius: 4px;
+	border: 1px solid;
+	padding: 2px 6px;
+}
+
+.comment .comment-reply-link:focus, .comment .comment-reply-link:hover {
+	background-color: rgba( 0,0,0,.7 );
+	border: 1px solid #333;
+}
+
+.comment .comment-meta {
+	font-size: 1.2em;
+}
+
+.comment .fn {
+	font-weight: 700;
+}
+
+label[for=comment], label[for=email], label[for=author], label[for=url] { display: block; }
+textarea[id=comment] { width: 100%; }
+
+/* Utility Classes */
+.clear:after { content: ''; display: table; clear: both; }
+.screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; }
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; }
+.admin-bar .skiplink a:focus { margin-top: 32px; }
+
+/* Menu Toggle */
+.menu-toggle {
+	font-size: 3em;
+	margin: .25em 0;
+	padding: 0;
+}
+
+.menu-toggle:before {
+	font-family: dashicons;
+	content: "\f333";
+	vertical-align: middle;
+	line-height: 1;
+}
+
+.home .featured-image, .page .featured-image {
+	margin: -1em -1em 0;
+}
+
+/* Mobile first */
+/* Triggered when wider than 480px */
+@media only screen and (min-width: 480px) {
+	.post-wrapper { padding: 1em; }
+	.content, .sidebar {
+		width: 100%;
+		float: none; 
+	}
+
+	.sticky .featured-image {
+		margin: -2em -2em 0;
+	}
+	
+	.sticky {
+		padding: 2em;
+		margin: -2em -2em 0 -1em;
+	}
+	
+	.header .site-title {
+		font-size: 3em;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.primary-menu li {
+		font-size: 1.2em;
+	}
+}
+
+/* Triggered when wider than 800px */
+@media only screen and (min-width: 800px) {
+	.menu-toggle { display: none; }
+	.content {
+		width: 66.666666%;
+		float: right;
+	}
+	.home .featured-image:first, .page .featured-image {
+		margin: -2em -2em 0;
+	}
+	.page-template-page-sidebar-right-php .content {
+		float: left;
+	}
+	.home.page .content, .page-template-page-full-width-php .content {
+		width: 100%;
+		float: none;
+	}
+	.sidebar {
+		width: 33.333333%;
+	}
+	.page-template-page-sidebar-right-php .sidebar {
+		float: right;
+	}
+	.sidebar .post-wrapper {
+		padding-right: 2em;
+	}
+	.home.page .sidebar, .page-template-page-full-width-php .sidebar {
+		width: 100%;
+	}
+	.home.page .sidebar .post-wrapper {
+		padding-right: 1em;
+	}
+	.home.page .sidebar .widget {
+		float: left;
+		vertical-align: top;
+	}
+	.home.page .sidebar .widgets-3 .widget {
+		width: 33.333333%;
+	}
+	.home.page .sidebar .widgets-2 .widget {
+		width: 50%;
+	}	
+	.home.page .sidebar .widgets-4 .widget {
+		width: 25%;
+	}
+	.home.page .sidebar .widgets-5 .widget {
+		width: 20%;
+	}
+	.home.page .sidebar .widget > h2 {
+		text-align: center;
+		background: rgba( 0,0,0,.05 );
+	}
+	.header .site-title {
+		font-size: 4em;
+	}
+	.social-networks a { 
+		font-size: 3em;
+	}
+}
+
+/* Triggered when wider than 1000px */
+@media only screen and (min-width: 1000px) {
+	.wrapper {
+		width: 960px;
+		padding: 1em;		
+	}
+	.social-networks a { 
+		font-size: 4em;
+	}	
+}
+
+/* Triggered when wider than 1360px */
+@media only screen and (min-width: 1360px) {
+	.wrapper {
+		width: 1280px;
+		padding: 2em;
+	}
+	.post-wrapper {
+		padding: 2em;
+	}
+	.post-content {
+		font-size: 1.3em;	
+	}
+}
+
