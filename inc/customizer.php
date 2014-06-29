@@ -79,6 +79,22 @@ function solon_customize_register( $wp_customize ) {
             )
         )
     );
+	$wp_customize->add_setting(
+		'solon_scroller',
+		array(
+			'sanitize_callback' => 'solon_sanitize_checkbox',
+			'default' => 0,			
+		)		
+	);
+	$wp_customize->add_control(
+		'solon_scroller',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Check this box if you want to disable the custom scroller.', 'solon'),
+			'section' => 'solon_general',
+            'priority' => 9,			
+		)
+	);    
 	//Layout
 	$wp_customize->add_setting(
 		'solon_layout',

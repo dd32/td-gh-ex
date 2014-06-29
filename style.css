@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/solon
 Author: aThemes
 Author URI: http://athemes.com
 Description: Solon is a fully responsive theme, ideal to use if you want your blog to have a slick and modern look. Some of the features that are packed in this theme include: custom logo upload, custom favicon upload, color changing for various elements, including the primary and the secondary color, integration with FontAwesome, about 20 of the most used Google Fonts, option to change the layout from content-sidebar to sidebar-content, css transitions, custom scroll effect and design etc.
-Version: 1.01
+Version: 1.02
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: solon
@@ -215,6 +215,7 @@ table > tfoot > tr > td {
 	display: none;
 	font-size: 25px;
 	color: #2a363b;
+	background-color: #dadada;
 }
 @media screen and (max-width: 991px) {
 	.menu-toggle,
@@ -265,12 +266,12 @@ table > tfoot > tr > td {
 .menu-social-container {
 	overflow: hidden;
 }
-.menu-social-container li,
+.social-widget li,
 .social-navigation li {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;	
 }
-.menu-social-container li:hover,
+.social-widget li:hover,
 .social-navigation li:hover {
 	-webkit-transform: translatey(5px);
 	-ms-transform: translatey(5px);
@@ -279,56 +280,56 @@ table > tfoot > tr > td {
 .social-navigation li a {
 	text-decoration: none;
 }
-.menu-social-container li a::before,
+.social-widget a::before,
 .social-navigation li a::before {
 	font-family: FontAwesome;
 	font-size: 26px;
 }
-.menu-social-container li a[href*="twitter.com"]::before,
+.social-widget a[href*="twitter.com"]::before,
 .social-navigation li a[href*="twitter.com"]::before {
 	content: '\f081';
 }
-.menu-social-container li a[href*="facebook.com"]::before,
+.social-widget a[href*="facebook.com"]::before,
 .social-navigation li a[href*="facebook.com"]::before {
 	content: '\f082';
 }
-.menu-social-container li a[href*="plus.google.com"]::before,
+.social-widget a[href*="plus.google.com"]::before,
 .social-navigation li a[href*="plus.google.com"]::before {
 	content: '\f0d4';
 }
-.menu-social-container li a[href*="dribbble.com"]::before,
+.social-widget a[href*="dribbble.com"]::before,
 .social-navigation li a[href*="dribbble.com"]::before {
 	content: '\f17d';
 }
-.menu-social-container li a[href*="pinterest.com"]::before,
+.social-widget a[href*="pinterest.com"]::before,
 .social-navigation li a[href*="pinterest.com"]::before {
 	content: '\f0d3';
 }
-.menu-social-container li a[href*="youtube.com"]::before,
+.social-widget a[href*="youtube.com"]::before,
 .social-navigation li a[href*="youtube.com"]::before {
 	content: '\f166';
 }
-.menu-social-container li a[href*="flickr.com"]::before,
+.social-widget a[href*="flickr.com"]::before,
 .social-navigation li a[href*="flickr.com"]::before {
 	content: '\f16e';
 }
-.menu-social-container li a[href*="vimeo.com"]::before,
+.social-widget a[href*="vimeo.com"]::before,
 .social-navigation li a[href*="vimeo.com"]::before {
 	content: '\f194';
 }
-.menu-social-container li a[href*="instagram.com"]::before,
+.social-widget a[href*="instagram.com"]::before,
 .social-navigation li a[href*="instagram.com"]::before {
 	content: '\f16d';
 }
-.menu-social-container li a[href*="linkedin.com"]::before,
+.social-widget a[href*="linkedin.com"]::before,
 .social-navigation li a[href*="linkedin.com"]::before {
 	content: '\f08c';
 }
-.menu-social-container li a[href*="foursquare.com"]::before,
+.social-widget a[href*="foursquare.com"]::before,
 .social-navigation li a[href*="foursquare.com"]::before {
 	content: '\f180';
 }
-.menu-social-container li a[href*="tumblr.com"]::before ,
+.social-widget a[href*="tumblr.com"]::before ,
 .social-navigation li a[href*="tumblr.com"]::before {
 	content: '\f174';
 }
@@ -428,7 +429,7 @@ table > tfoot > tr > td {
 .entry-thumb,
 .single-thumb {
 	position: relative;
-	display: table;
+	display: block;
 	margin: 0 auto 20px;
 	overflow: hidden;
 }
@@ -798,12 +799,15 @@ textarea#comment {
 	background-color: #e86f67;
 }
 /* Social Widget */
+.social-widget {
+	overflow: hidden;
+}
 .social-widget ul {
 	margin: 0;
 }
 .social-widget li {
-	float: left;
-	padding: 0 29px 10px 0;
+	display: inline-block;
+	padding: 8px;
 }
 .social-widget li:nth-of-type(4),
 .social-widget li:nth-of-type(8),
