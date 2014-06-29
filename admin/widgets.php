@@ -6,7 +6,7 @@ class Newsmag_Flickr_Widget extends WP_Widget
 	{
 		parent::__construct(
 			'newsmag_flickr_widget',
-			'Newsmag - Flickr',
+			__('Newsmag - Flickr','newsmag'),
 			array('description' => __('Display latest photos from flickr.', 'newsmag'), 'classname' => 'newsmag-flickr')
 		);
 	}
@@ -121,19 +121,19 @@ class Newsmag_Flickr_Widget extends WP_Widget
 	?>
 	
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'newsmag-widgets'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'newsmag'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php 
 				echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('user_id')); ?>"><?php _e('Flickr ID (<a href="http://www.idgettr' . '.com">Get Your ID</a>):', 'newsmag-widgets'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('user_id')); ?>"><?php _e('Flickr ID (<a href="http://www.idgettr' . '.com">Get Your ID</a>):', 'newsmag'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('user_id')); ?>" name="<?php 
 				echo esc_attr($this->get_field_name('user_id')); ?>" type="text" value="<?php echo esc_attr($user_id); ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('show_num')); ?>"><?php _e('Number of Photos:', 'newsmag-widgets'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('show_num')); ?>"><?php _e('Number of Photos:', 'newsmag'); ?></label>
 			<input class="width100" id="<?php echo esc_attr($this->get_field_id('show_num')); ?>" name="<?php 
 				echo esc_attr($this->get_field_name('show_num')); ?>" type="text" value="<?php echo esc_attr($show_num); ?>" />
 		</p>
@@ -153,7 +153,7 @@ class Newsmag_PopularPosts_Widget extends WP_Widget
 	{
 		parent::__construct(
 			'newsmag-popular-posts-widget',
-			'Newsmag - Popular Posts',
+			__('Newsmag - Popular Posts','newsmag'),
 			array('description' => __('Displays posts with most comments.','newsmag'), 'classname' => 'popular-posts')
 		);
 	}
@@ -222,10 +222,10 @@ class Newsmag_PopularPosts_Widget extends WP_Widget
 		$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
 		$number = isset($instance['number']) ? absint($instance['number']) : 5;
 ?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'newsmag-widgets'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'newsmag'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:', 'newsmag-widgets'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:', 'newsmag'); ?></label>
 		<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 <?php
 	}

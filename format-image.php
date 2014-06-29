@@ -32,7 +32,7 @@
 
 					$image=get_field('image'); ?>
 
-					<img src="<?php echo $image['url']; ?>" class="entry-photo" title="<?php echo $image['title']; ?>">
+					<img src="<?php echo esc_url($image['url']); ?>" class="entry-photo" title="<?php echo $image['title']; ?>">
 
 				<?php } ?>
 											

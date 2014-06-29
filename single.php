@@ -28,7 +28,7 @@
 									<hr>
 
 										<div class="single-tags">
-											<?php the_tags(__('Tags : ','flower'),'  ',''); ?>
+											<?php the_tags(__('Tags : ','newsmag'),'  ',''); ?>
 										</div>
 
 										<hr>

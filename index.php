@@ -30,7 +30,7 @@
 
 						<div class="image">
 							<a href="<?php echo get_the_permalink($slide_one->ID); ?>" class="u-photo">
-								<img src="<?php echo $image_one['url']; ?>" alt="">
+								<img src="<?php echo esc_url($image_one['url']); ?>" alt="">
 							</a>
 						</div> <!-- end image -->
 

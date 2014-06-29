@@ -1,17 +1,14 @@
 <?php 
 
-
-
 /* TGM */
 require get_template_directory() . '/admin/admin-init.php';
 
 
-
-
-function newsmag_setup() {
-
-	if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) )
 	$content_width = 663;
+
+
+function newsmag_setup() {	
 	
 	load_theme_textdomain( 'newsmag', get_template_directory() . '/lang' );
 	
@@ -38,9 +35,6 @@ add_action( 'after_setup_theme', 'newsmag_setup' );
 
 
 
-
-
-
 function newsmag_scripts_styles() {
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
@@ -59,13 +53,13 @@ function newsmag_scripts_styles() {
 	wp_enqueue_script('newsmag-custom',get_template_directory_uri().'/js/newsmag-custom.js',array('jquery'),'',true);
 
 
-	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri(), array(), '' );
+	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri());
 	
 }
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts_styles' );
 
 
-function load_google_fonts() {
+function newsmag_google_fonts() {
 
 			wp_register_style('googleFontsRoboto','//fonts.googleapis.com/css?family=Roboto+Slab');
             wp_enqueue_style( 'googleFontsRoboto'); 
@@ -75,10 +69,9 @@ function load_google_fonts() {
 
             wp_register_style('googleFontsOpen','//fonts.googleapis.com/css?family=Open+Sans');
             wp_enqueue_style( 'googleFontsOpen');
-
-
 }
-add_action('wp_print_styles', 'load_google_fonts');
+
+add_action('wp_enqueue_scripts', 'newsmag_google_fonts');
 
 
 
@@ -101,7 +94,7 @@ add_filter('wp_title','newsmag_title');
 
 
 
-function header_fallback(){ ?>
+function newsmag_header_fallback(){ ?>
 
 	<nav class="primary-navigation col-sm-12">
 		<ul class="nav navbar-nav">
@@ -119,7 +112,7 @@ function header_fallback(){ ?>
 
 
 
-function footer_fallback(){ ?>
+function newsmag_footer_fallback(){ ?>
 
 	<div class="footer-menu">
 		<ul>
@@ -258,69 +251,6 @@ add_filter('comment_form_default_fields', 'newsmag_custom_comment_fields');
 
 
 
-
-
-/************************************************************************
-// Shortcodes
-*************************************************************************/
-function one_column($attr, $content){
-
-	echo '<p class="col-sm-3 row">'.$content.'</p>';	
-
-}
-
-add_shortcode('one','one_column');
-
-
-function two_column($attr, $content){
-
-	echo '<p class="col-sm-6 row">'.$content.'</p>';
-
-}
-
-add_shortcode('two','two_column');
-
-
-
-function three_column($attr, $content){
-
-	echo '<p class="col-sm-9 row padding-left">'.$content.'</p>';
-
-}
-
-add_shortcode('three','three_column');
-
-
-
-function four_column($attr, $content){
-
-	echo '<p class="col-sm-12 row">'.$content.'</p>';
-
-}
-
-add_shortcode('four','four_column');
-
-
-
-
-
-
-
-
-function button_short($attr,$content){
-
-
-	extract(shortcode_atts(array(
-		'href' => ''
-		),$attr));
-
-
-	return '<a href="'.esc_url($href).'" class="btn-short" target="_blank" rel="nofollow">'.$content.'</a>';
-
-
-}
-
-add_shortcode('button','button_short');
 
 
 
@@ -696,11 +626,11 @@ endif;
 
 
 
-function options(){ 
+function newsmag_options(){ 
 
 	global $newsmag;		
 
-		echo '<link rel="shortcut icon" href="'.$newsmag['favicon']['url'].'">';		
+		echo '<link rel="shortcut icon" href="'.esc_url($newsmag['favicon']['url']).'">';		
 
  ?> <style>
 
@@ -712,4 +642,4 @@ function options(){
 
 }
 
-add_action('wp_head','options');
+add_action('wp_head','newsmag_options');

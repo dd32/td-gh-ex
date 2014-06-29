@@ -8,7 +8,7 @@
 					'theme_location' => 'footer-menu',				
 					'container' => 'div',
 					'container_class' => 'footer-menu',				
-					'fallback_cb' => 'footer_fallback',
+					'fallback_cb' => 'newsmag_footer_fallback',
 					'depth' => 1,					
 				);
 			

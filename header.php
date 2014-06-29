@@ -40,7 +40,7 @@
 
 				<?php if($newsmag['logo']['url']){ ?>
 					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home" title="<?php bloginfo('name'); ?>">
-						<img src="<?php echo $newsmag['logo']['url']; ?>" class="newsmag-logo"alt="<?php bloginfo('name'); ?>">
+						<img src="<?php echo esc_url($newsmag['logo']['url']); ?>" class="newsmag-logo"alt="<?php bloginfo('name'); ?>">
 					</a>
 				<?php }else{ ?>
 				
@@ -77,7 +77,7 @@
 					'container' => 'nav',
 					'container_class' => 'primary-navigation col-sm-12',
 					'menu_class' => 'nav navbar-nav',
-					'fallback_cb' => 'header_fallback',
+					'fallback_cb' => 'newsmag_header_fallback',
 					'depth' => 3
 				)); ?>
 

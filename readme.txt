@@ -39,9 +39,15 @@ TGM Plugin Activation - http://tgmpluginactivation.com/
 Licensed under the GPL-2.0 or later license
 
 Contact Form 7 - http://wordpress.org/plugins/contact-form-7/
-Licenced under GNU GENERAL PUBLIC LICENSE  
+Licenced under GPL v2 or later
 
-FitVids 1.0.3 - http://css-tricks.com + http://daverupert.com
+FitVids 1.0.3 ( for responsive video ) - http://fitvidsjs.com/
 License under the WTFPL 
 
-Used pixabay and WordPress test data images for screenshot - http://pixabay.com/ 
+
+== Screenshot images ==
+Background image source : http://pixabay.com/en/manhattan-empire-state-building-336708/
+Licensed under Creative Commons Deed CC0 
+
+WordPress Test Data is used for other images on screenshot
+https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml

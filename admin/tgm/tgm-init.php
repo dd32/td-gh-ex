@@ -5,7 +5,7 @@
  */
 include_once ('class-tgm-plugin-activation.php');
 
-function starter_plugin_register_required_plugins() {
+function newsmag_recommended_plugins() {
 
 	$plugins = array(
 		array(
@@ -33,7 +33,7 @@ function starter_plugin_register_required_plugins() {
 	);
 
 	$config = array(
-		'domain'       		=> 'flower',         	// Text domain - likely want to be the same as your theme.
+		'domain'       		=> 'newsmag',         	// Text domain - likely want to be the same as your theme.
 		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
 		'parent_menu_slug' 	=> 'plugins.php', 				// Default parent menu slug
 		'parent_url_slug' 	=> 'plugins.php', 				// Default parent URL slug
@@ -45,4 +45,4 @@ function starter_plugin_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-add_action( 'tgmpa_register', 'starter_plugin_register_required_plugins' );
+add_action( 'tgmpa_register', 'newsmag_recommended_plugins' );
