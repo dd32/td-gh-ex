@@ -13,7 +13,7 @@
 include_once('icefit-options.php');
 
 // Set setting panel name and slug
-$wortex_settings_name = "Wortex Pro Settings";
+$wortex_settings_name = "Wortex Lite Settings";
 $wortex_settings_slug = "wortex_settings";
 
 // Set settings template
@@ -50,6 +50,15 @@ function wortex_settings_template() {
 		'id'            => 'main',
 		'icon'          => 'control',
 	);
+
+		$settings_options[] = array(
+			'name'          => __('Layout', 'icefit'),
+			'desc'          => __('Choose between wide or boxed layout', 'icefit'),
+			'id'            => 'layout',
+			'type'          => 'radio',
+			'default'       => 'Boxed',
+			'values'		=> array ( 'Wide', 'Boxed' ),
+		);
 
 		$settings_options[] = array(
 			'name'          => 'Logo',

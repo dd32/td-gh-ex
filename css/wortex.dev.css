@@ -217,6 +217,14 @@ figure figcaption,
 
 /* #Base Grid */
 
+#main-wrap { background: #fff; }
+
+#main-wrap.boxed {
+	width: 1000px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
 .container {
 	position: relative;
 	width: 1000px;
@@ -1441,6 +1449,7 @@ textarea {
 
 	#main-wrap { width: 100%; }
 
+	#main-wrap.boxed,
 	.container { width: 768px; }
 
 	#header-wrap .container { padding: 0 15px; }
@@ -1474,8 +1483,11 @@ textarea {
 /* #Mobile (Portrait) | Design for a width of 320px */
 @media only screen and (max-width: 767px) {
 
+	#main-wrap.boxed { width: 310px; margin: 0 auto; }
+
 	#header-wrap { top: 0px; }
 	#header-wrap .container { padding: 0; }
+	.boxed #header-wrap { width: 310px; }
 	.container { width: 300px; }
 
 	#logo { text-align: center; float: none; max-width: 100%; }
@@ -1533,6 +1545,8 @@ textarea {
 /* #Mobile (Landscape) | Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 
+	#main-wrap.boxed,
+	.boxed #header-wrap { width: 440px; }
 	.container { width: 420px; }
 
 	#page-container,

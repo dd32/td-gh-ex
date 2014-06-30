@@ -40,6 +40,14 @@ function wortex_setup(){
 								)
 					);
 
+	/* Custom background support */
+	add_theme_support( 'custom-background',
+						array(	'default-color' => 'e9e9e9',
+								'default-image' => get_template_directory_uri() . '/img/bright-squares.jpg',
+								)
+					);
+
+
 }
 add_action('after_setup_theme', 'wortex_setup');
 

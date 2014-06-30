@@ -98,7 +98,7 @@ function wortex_settings_machine($options) {
 	<li>Quick Setup <strong>Page Templates</strong></li>
 	<li><strong>Translation Ready</strong> (.POT file included)</li>
 	<li><strong>Child Theme</strong> support</li>
-	<li>(Pro only) <strong>Wide</strong> or <strong>Boxed</strong> layout</li>
+	<li><strong>Wide</strong> or <strong>Boxed</strong> layout</li>
 	<li>(Pro only) <strong>Fixed header</strong> option</li>
 	<li>(Pro only) <strong>Unlimited colors</strong> and <strong>backgrounds</strong></li>
 	<li>(Pro Only) <strong>Unlimited Slideshows </strong><em>(NEW! the slider now supports videos from youtube and vimeo!)</em></li>

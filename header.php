@@ -29,8 +29,11 @@ if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?
 wp_head();
 ?></head><body <?php body_class(); ?>><?php
 
+/* Wide or boxed layout ? */
+$boxed = ('Boxed' == wortex_get_option('layout') ) ? true : false;
+
 /* Start main wrap */
-?><div id="main-wrap"><?php
+?><div id="main-wrap"<?php if ( $boxed ) echo ' class="boxed"'; ?>><?php
 
 	/* Start header wrap */
 	?><div id="header-wrap"><?php

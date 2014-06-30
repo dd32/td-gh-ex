@@ -216,6 +216,14 @@ figure figcaption,
 
 /* #Base Grid */
 
+#main-wrap { background: #fff; }
+
+#main-wrap.boxed {
+	width: 1000px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
 .container {
 	position: relative;
 	width: 1000px;
