@@ -152,15 +152,18 @@ add_filter('excerpt_more', 'suevafree_hide_excerpt_more');
 function suevafree_excerpt() {
 	
 	global $post,$more;
+	
 	$more = 0;
+
 	
 	if ($pos=strpos($post->post_content, '<!--more-->')): 
-		$output = '<p>'.strip_tags(get_the_content()).'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a></p>';
+		$content = the_content();
 	else:
-		$output = '<p>'.get_the_excerpt().'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a></p>';
+		$content = the_excerpt();
 	endif;
 	
-	echo $output;
+	echo '<p>' . $content . ' <a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a> </p>';
+
 }
 
 /*-----------------------------------------------------------------------------------*/
