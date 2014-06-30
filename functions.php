@@ -5,11 +5,6 @@
  * @package aThemes
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
 
 if ( ! function_exists( 'athemes_setup' ) ) :
 /**
@@ -33,6 +28,12 @@ function athemes_setup() {
 	 * Add default posts and comments RSS feed links to head
 	 */
 	add_theme_support( 'automatic-feed-links' );
+
+	// Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* pixels */
+	}	
 
 	/**
 	 * Enable support for Post Thumbnails on posts and pages
@@ -154,19 +155,27 @@ function athemes_footer_sidebar_class() {
  * Enqueue scripts and styles
  */
 function athemes_scripts() {
-	$protocol = is_ssl() ? 'https' : 'http';
-	$query_args = array(
-		'family' => 'Yanone+Kaffeesatz:200,300,400,700',
-	);
-	wp_enqueue_style( 'athemes-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ) );
+
+	//Load the fonts
+	$headings_font = esc_html(get_theme_mod('headings_fonts'));
+	$body_font = esc_html(get_theme_mod('body_fonts'));
+	if( $headings_font ) {
+		wp_enqueue_style( 'athemes-headings-fonts', '//fonts.googleapis.com/css?family='. $headings_font );	
+	} else {
+		wp_enqueue_style( 'athemes-headings-fonts', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700');
+	}	
+	if( $body_font ) {
+		wp_enqueue_style( 'athemes-body-fonts', '//fonts.googleapis.com/css?family='. $body_font );	
+	}
+
 	wp_enqueue_style( 'athemes-glyphs', get_template_directory_uri() . '/css/athemes-glyphs.css' );
 
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style( 'athemes-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'athemes-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
-	wp_enqueue_script( 'supersubs', get_template_directory_uri() . '/js/supersubs.js', array( 'jquery' ) );
+	wp_enqueue_script( 'athemes-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'athemes-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
+	wp_enqueue_script( 'athemes-supersubs', get_template_directory_uri() . '/js/supersubs.js', array( 'jquery' ) );
 	wp_enqueue_script( 'athemes-settings', get_template_directory_uri() . '/js/settings.js', array( 'jquery' ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -175,23 +184,40 @@ function athemes_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'athemes_scripts' );
 
-define('ATHEMES_PATH', get_template_directory() );
+/**
+ * Load html5shiv
+ */
+function athemes_html5shiv() {
+    echo '<!--[if lt IE 9]>' . "\n";
+    echo '<script src="' . esc_url( get_template_directory_uri() . '/js/html5shiv.js' ) . '"></script>' . "\n";
+    echo '<![endif]-->' . "\n";
+}
+add_action( 'wp_head', 'athemes_html5shiv' );
+
 /**
  * Custom functions that act independently of the theme templates.
  */
-require ATHEMES_PATH . '/inc/extras.php';
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Custom template tags for this theme.
  */
-require ATHEMES_PATH . '/inc/template-tags.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Add social links on user profile page.
  */
-require ATHEMES_PATH . '/inc/user-profile.php';
+require get_template_directory() . '/inc/user-profile.php';
 
 /**
  * Add custom widgets
  */
-require ATHEMES_PATH . '/inc/custom-widgets.php';
+require get_template_directory() . '/inc/custom-widgets.php';
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+/**
+ * Dynamic styles
+ */
+require get_template_directory() . '/styles.php';

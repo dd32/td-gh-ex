@@ -72,9 +72,9 @@ class aThemes_Media_Embed extends WP_Widget {
 		extract( $args );
 		
 		$widget_title		= apply_filters( 'widget_title', $instance['widget_title'] );
-		$embed_url 			= $instance['embed_url'];
-		$embed_width		= $instance['embed_width'];
-		$embed_description	= $instance['embed_description'];
+		$embed_url 			= isset( $instance['embed_url'] ) ? esc_url( $instance['embed_url'] ) : '';
+		$embed_width 		= ( ! empty( $instance['embed_width'] ) ) ? absint( $instance['embed_width'] ) : '';
+		$embed_description 	= isset( $instance['embed_description'] ) ? esc_html( $instance['embed_description'] ) : '';
 				
 		echo $before_widget; ?>
 		
@@ -100,7 +100,7 @@ class aThemes_Media_Embed extends WP_Widget {
 				}
 
 				if( isset( $embed_description ) ) {
-					echo '<div class="widget-oembed-description">' . $embed_description . '</div>';
+					echo '<div class="widget-oembed-description">' . esc_html($embed_description) . '</div>';
 				}
 			?>
 		<!-- .widget-oembed --></div>
@@ -123,6 +123,7 @@ class aThemes_Media_Embed extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
+		$instance['embed_url'] = esc_url_raw($new_instance['embed_url']);
 
 		$widget_fields = $this->widget_fields();
 
@@ -134,7 +135,7 @@ class aThemes_Media_Embed extends WP_Widget {
 			$instance[$athemes_widgets_name] = athemes_widgets_updated_field_value( $widget_field, $new_instance[$athemes_widgets_name] );
 			echo $instance[$athemes_widgets_name];
 		}
-				
+		
 		return $instance;
 	}
 

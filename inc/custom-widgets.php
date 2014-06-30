@@ -40,39 +40,39 @@ function athemes_widgets_updated_field_value( $widget_field, $new_field_value ) 
  *
  * @since aThemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-fields.php';
+require get_template_directory() . '/inc/widgets/widget-fields.php';
 
 /**
  * Register Post Preview Widget
  *
  * @since athemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-preview-post.php';
+require get_template_directory() . '/inc/widgets/widget-preview-post.php';
 
 /**
  * Register Social Icons Widget
  *
  * @since athemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-social-icons.php';
+require get_template_directory() . '/inc/widgets/widget-social-icons.php';
 
 /**
  * Media Embed Widget
  *
  * @since athemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-media-embed.php';
+require get_template_directory() . '/inc/widgets/widget-media-embed.php';
 
 /**
  * Flickr Stream Widget
  *
  * @since athemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-flickr-stream.php';
+require get_template_directory() . '/inc/widgets/widget-flickr-stream.php';
 
 /**
  * Tabber Widget
  *
  * @since athemes Widget Pack 1.0
  */
-require ATHEMES_PATH . '/inc/widgets/widget-tabs.php';
+require get_template_directory() . '/inc/widgets/widget-tabs.php';

@@ -17,6 +17,12 @@
 		<!-- .entry-meta --></div>
 	<!-- .entry-header --></header>
 
+	<?php if ( (has_post_thumbnail()) && ( get_theme_mod( 'athemes_post_img' )) ) : ?>
+		<div class="single-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>	
+	<?php endif; ?>		
+
 	<div class="clearfix entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -45,6 +51,8 @@
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
 					$meta_text = __( '<span class="cat-links"><i class="ico-folder"></i> %1$s</span><span class="tags-links"><i class="ico-tags"></i> %2$s</span>', 'athemes' );
+				} else {
+					$meta_text = __( '<span class="cat-links"><i class="ico-folder"></i> %1$s</span>', 'athemes' );
 				}
 
 			} // end check for categories on this blog

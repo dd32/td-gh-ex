@@ -103,12 +103,7 @@ class aThemes_Flickr_Stream extends WP_Widget {
 				}
 			?>
 		<div class="clearfix widget-flickr-stream">
-			<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=<?php echo $photo_count ?>&amp;display=<?php echo $photo_display ?>&amp;size=s&amp;layout=x&amp;source=<?php echo $photo_type ?>&amp;<?php echo $photo_type ?>=<?php echo $flickr_id ?>"></script>
-			<script type="text/javascript" defer="defer">
-			    jQuery(document).ready(function($){
-			        $('.widget-flickr-stream').imagesLoaded(function(){});
-			    });
-			</script>
+			<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=<?php echo absint($photo_count); ?>&amp;display=<?php echo esc_html($photo_display); ?>&amp;size=s&amp;layout=x&amp;source=<?php echo esc_html($photo_type); ?>&amp;<?php echo esc_html($photo_type); ?>=<?php echo esc_html($flickr_id); ?>"></script>
 		<!-- .widget-flickr-stream --></div>
 		
 		<?php
@@ -161,7 +156,7 @@ class aThemes_Flickr_Stream extends WP_Widget {
 		
 			// Make array elements available as variables
 			extract( $widget_field );
-			$athemes_widgets_field_value = isset( $instance[$athemes_widgets_name] ) ? esc_attr( $instance[$athemes_widgets_name] ) : '';			
+			$athemes_widgets_field_value = isset( $instance[$athemes_widgets_name] ) ? esc_attr( $instance[$athemes_widgets_name] ) : '';
 			athemes_widgets_show_widget_field( $this, $widget_field, $athemes_widgets_field_value );
 		
 		}	

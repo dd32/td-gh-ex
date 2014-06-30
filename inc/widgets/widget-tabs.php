@@ -91,7 +91,7 @@ class aThemes_Tabs extends WP_Widget {
 						</div>
 						<?php } ?>
 					</li>
-				<?php endwhile; wp_reset_query(); ?>
+				<?php endwhile; wp_reset_postdata(); ?>
 				</ul>
 			<!-- #widget-tab-popular --></div>
 
@@ -115,7 +115,7 @@ class aThemes_Tabs extends WP_Widget {
 						</div>							
 						<?php } ?>
 					</li>
-					<?php endwhile; wp_reset_query(); ?>
+					<?php endwhile; wp_reset_postdata(); ?>
 				</ul>
 			<!-- #widget-tab-latest --></div>
 
@@ -174,7 +174,7 @@ class aThemes_Tabs extends WP_Widget {
 		
 			// Make array elements available as variables
 			extract( $widget_field );
-			$athemes_widgets_field_value = isset( $instance[$athemes_widgets_name] ) ? esc_attr( $instance[$athemes_widgets_name] ) : '';			
+			$athemes_widgets_field_value = isset( $instance[$athemes_widgets_name] ) ? esc_attr( $instance[$athemes_widgets_name] ) : '';
 			athemes_widgets_show_widget_field( $this, $widget_field, $athemes_widgets_field_value );
 		
 		}	
