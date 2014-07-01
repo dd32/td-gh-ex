@@ -176,9 +176,10 @@ add_action( 'customize_register', 'ct_ignite_customize_logo_size' );
 function ct_ignite_customizer_social_media_array() {
 
 	// store social site names in array
-	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram');
+	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam');
 	
 	return $social_sites;
+
 }
 
 // add settings to create various social media text areas.
@@ -344,8 +345,7 @@ function ct_ignite_options_content(){
     ?>
     <div id="ignite-dashboard-wrap" class="wrap">
         <h2>Ignite Dashboard</h2>
-        <p>Thanks for downloading Ignite!</p>
-        <p>If you can, take a minute to <a target="_blank" href="http://wordpress.org/support/view/theme-reviews/ignite"><strong>leave a review</strong></a> so other users know what to expect from this theme.</p>
+        <p>Thanks for downloading Ignite! If you can, please take one minute to <a target="_blank" href="http://wordpress.org/support/view/theme-reviews/ignite"><strong>leave a review</strong></a>.</p>
         <hr />
         <div>
             <h3>Customization</h3>

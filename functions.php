@@ -3,14 +3,15 @@
 // register and enqueue all of the scripts used by Aside
 function ct_ignite_load_javascript_files() {
 
-    wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lusitana:400,700');
+    wp_register_style( 'ct-ignite-google-fonts', '//fonts.googleapis.com/css?family=Lusitana:400,700');
 
-    // enqueues media query support polyfill for ie8 
+    // enqueues scripts & styles
     if(! is_admin() ) {
-        wp_enqueue_script('production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
+        wp_enqueue_script('ct-ignite-production', get_template_directory_uri() . '/js/build/production.min.js#ct_ignite_asyncload', array('jquery'),'', true);
 
-        wp_enqueue_style('google-fonts');
-        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_style('ct-ignite-google-fonts');
+        wp_enqueue_style('ct-ignite-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
     }
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
     if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' ); 
@@ -25,6 +26,18 @@ function ct_ignite_enqueue_admin_styles($hook){
     }
 }
 add_action('admin_enqueue_scripts',	'ct_ignite_enqueue_admin_styles' );
+
+// load all scripts enqueued by theme asynchronously
+function ct_ignite_add_async_script($url) {
+
+    // if async parameter not present, do nothing
+    if (strpos($url, '#ct_ignite_asyncload') === false){
+        return $url;
+    }
+    // if async parameter present, add async attribute
+    return str_replace('#ct_ignite_asyncload', '', $url)."' async='async";
+}
+add_filter('clean_url', 'ct_ignite_add_async_script', 11, 1);
 
 /* Load the core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
@@ -48,7 +61,6 @@ function ct_ignite_theme_setup() {
 	/* Theme-supported features go here. */
     add_theme_support( 'hybrid-core-widgets' );
     add_theme_support( 'hybrid-core-template-hierarchy' );
-    add_theme_support( 'hybrid-core-styles', array( 'style','reset', 'gallery' ) );
     add_theme_support( 'loop-pagination' );
     add_theme_support( 'cleaner-gallery' );
     add_theme_support( 'breadcrumb-trail' );
@@ -95,7 +107,7 @@ function ct_ignite_social_media_icons() {
 		foreach ($active_sites as $active_site) {?>
 			<li>
 				<a href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
-					<?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram") { ?>
+                    <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news") { ?>
 						<i class="fa fa-<?php echo $active_site; ?>"></i> <?php
 					} else { ?>
                     <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php

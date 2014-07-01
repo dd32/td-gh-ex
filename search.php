@@ -3,7 +3,18 @@
 <div class="container">
 
     <div class="entry-header search-end top">
-        <h1 class='entry-title'>Search Results for "<?php echo $s ?>"</h1>
+        <h1 class="entry-title">
+            <?php
+            global $wp_query;
+            $total_results = $wp_query->found_posts;
+            if($total_results) {
+                printf(__('%d search results for','ignite'),$total_results);
+            } else {
+                _e("No search results for ", 'ignite');
+            }
+            ?>
+            <span>"<?php echo $s ?>"</span>
+        </h1>
         <?php get_search_form(); ?>
     </div>
 
@@ -19,10 +30,17 @@
 
     <?php if ( current_theme_supports( 'loop-pagination' ) ) loop_pagination(); ?>
 
-    <div class="search-end bottom">
-        <p>Can't find what you're looking for?  Try refining your search:</p>
-        <?php get_search_form(); ?>
-    </div>
-
+    <?php
+    // only display bottom search bar if there are search results
+    $total_results = $wp_query->found_posts;
+    if($total_results) {
+        ?>
+        <div class="search-end bottom">
+            <p>Can't find what you're looking for?  Try refining your search:</p>
+            <?php get_search_form(); ?>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 <?php get_footer(); ?>
