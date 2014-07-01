@@ -29,6 +29,12 @@ Special Thanks for Contribution
 QUICK START
 see: http://www.tenman.info/wp3/raindrops/quick-start/
 
+ver 1.228
+        $raindrops_accessibility_link is not support Statick Front Page
+            Custom template file, because it is not yet supported accessibility
+        Add $raindrops_base_font_size
+            default $raindrops_base_font_size is 13 (pixel value)
+            You can set above ver functions.php first line (<?php before) or Child Themes functions.php
 ver 1.200
 
 	IMPORTANT CHANGES
