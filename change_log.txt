@@ -5,3 +5,7 @@ Version 1.0
 Version 2.0
 
 	i)   Added home page layout with Slider, touch friendly recent posts feature and a few other features.
+	
+Version: 2.0.1
+   
+    i) Removed widget control and added theme options for home page settings.

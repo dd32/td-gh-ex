@@ -64,43 +64,6 @@ function generator_widgets_init() {
 		'after_title'   => '</h1></div>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Generator Widget One', 'generator' ),
-		'id'            => 'generator-1',
-		'description'   => __( 'Show in front end area', 'generator' ),
-		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="theme-title-14">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Generator Widget Two', 'generator' ),
-		'id'            => 'generator-2',
-		'description'   => __( 'Show in front end area', 'generator' ),
-		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="theme-title-14">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Generator Widget Three', 'generator' ),
-		'id'            => 'generator-3',
-		'description'   => __( 'Show in front end area', 'generator' ),
-		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="theme-title-14">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Generator Widget Four', 'generator' ),
-		'id'            => 'generator-4',
-		'description'   => __( 'Show in front end area', 'generator' ),
-		'before_widget' => '<aside id="%1$s" class="sidebar-widget widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="theme-title-14">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
 		'name'          => __( 'Footer Area One', 'generator' ),
 		'id'            => 'footer-1',
 		'description'   => __( 'Footer Area One that appears on the left.', 'generator' ),

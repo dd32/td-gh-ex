@@ -87,6 +87,3 @@ require_once('theme-option/fasterthemes.php');
 
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
-
-/*** Generator Widget ***/
-require_once('functions/widget.php');

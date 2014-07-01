@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/generator
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Generator is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel. 
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: orange, right-sidebar, two-columns, responsive-layout, theme-options
@@ -215,9 +215,10 @@ body {
 #banner-fade {
 margin-top:85px;
 }
-
 /**************Home page slider settings end here ***************/
-/*****************************/
+.generator-home-content {
+	margin-top:10px;
+}
 .homepage-theme-title {
 	text-align: center;
 	color: #FFF;
@@ -731,6 +732,37 @@ p > embed, p > iframe, p > object, span > embed, span > iframe, span > object {
 }
 #comments li {
 	list-style: none outside none;
+}
+.comment-form-comment #comment,
+.comment-form-author #author,
+.comment-form-email #email,
+.comment-form-url #url{
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: rgb(85, 85, 85);
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.comment-form-comment #comment:focus,
+.comment-form-author #author:focus,
+.comment-form-email #email:focus,
+.comment-form-url #url:focus {
+    border-color: rgb(102, 175, 233);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+	line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.form-allowed-tags {
+	display:none;
 }
 .generator-entry-meta {
 	padding: 0 0 5px;

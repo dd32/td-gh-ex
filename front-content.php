@@ -1,20 +1,18 @@
+<?php $generator_options = get_option( 'faster_theme_options' ); ?>
+<div class="col-md-12 generator-post no-padding">
+<?php for($generator_section_i=1; $generator_section_i <=4 ;$generator_section_i++ ):?>  
+<?php if(empty($generator_options['home-icon-'.$generator_section_i]) && empty($generator_options['section-title-'.$generator_section_i]) && empty($generator_options['section-content-'.$generator_section_i])) { continue; }	?>
 <div class="col-md-3 generator-sidebar">
-<?php if ( is_active_sidebar( 'generator-1' ) ) { 
-			 dynamic_sidebar( 'generator-1' );
-	 } ?>
+<aside class="sidebar-widget widget widget_generator_widget" id="generator_widget-3">
+<?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { ?>
+<div class="font-icon-size ">
+        <img class="fa icon-center" src="<?php echo $generator_options['home-icon-'.$generator_section_i]; ?>"> 
 </div>
-<div class="col-md-3 generator-sidebar">
-<?php if ( is_active_sidebar( 'generator-2' ) ) { 
-			 dynamic_sidebar( 'generator-2' );
-	 } ?>
+<?php } ?>
+    <h3 class="theme-title-14"><?php if(!empty($generator_options['section-title-'.$generator_section_i])) { echo $generator_options['section-title-'.$generator_section_i]; } ?></h3>       
+    <p class="theme-text"><?php if(!empty($generator_options['section-content-'.$generator_section_i])) { echo $generator_options['section-content-'.$generator_section_i]; } ?></p>      
+</aside>
+<div class="clearfix"></div>
 </div>
-<div class="col-md-3 generator-sidebar">
-<?php if ( is_active_sidebar( 'generator-3' ) ) { 
-			 dynamic_sidebar( 'generator-3' );
-	 } ?>
-</div>
-<div class="col-md-3 generator-sidebar">
-<?php if ( is_active_sidebar( 'generator-4' ) ) { 
-			 dynamic_sidebar( 'generator-4' );
-	 } ?>
+<?php endfor; ?>
 </div>
