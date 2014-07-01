@@ -193,8 +193,8 @@ function my_theme_setup(){
 // Adds a meta box to the post editing screen
 add_action( 'add_meta_boxes', 'prfx_custom_meta' );
 function prfx_custom_meta() {
-    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_semperfi' ), 'prfx_meta_callback', 'post', 'side' );
-    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_semperfi' ), 'prfx_meta_callback', 'page', 'side' ); }
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_adventure' ), 'prfx_meta_callback', 'post', 'side' );
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_adventure' ), 'prfx_meta_callback', 'page', 'side' ); }
 
 
 // Outputs the content of the meta box
@@ -205,10 +205,10 @@ function prfx_meta_callback( $post ) {
     ?>
 
 	<p>
-	<label for="featured-background" class="prfx-row-title" style="text-align:justify;"><?php _e( 'The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.', 'localize_semperfi' )?><br><br></label>
+	<label for="featured-background" class="prfx-row-title" style="text-align:justify;"><?php _e( 'The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.', 'localize_adventure' )?><br><br></label>
 	<img id="theimage" src='<?php if (empty($featured_background)) { echo get_template_directory_uri() . '/images/nothing_found.jpg';} else {echo $featured_background;} ?>' style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"/>
 		<input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
-		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
+		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_adventure' )?>" style="margin:0 0 .25em; width:100%;" />
 	</p> <?php }
 
 
@@ -583,7 +583,7 @@ function adventure_customize($wp_customize) {
         'headerfontstyle_setting'       => 'Default',
         'headerspacing_setting'	        => '18',
         'header_image_width_setting'    => '20',
-        'instagram_setting'             => __('The url link goes in here.', 'localize_semperfi'),
+        'instagram_setting'             => __('The url link goes in here.', 'localize_adventure'),
         'linkcolor_setting'	            => '#0b6492',
         'linkcolorhover_setting'        => '#FFFFFF',
         'menu_setting'                  => 'standard',
@@ -659,7 +659,7 @@ function adventure_customize($wp_customize) {
     
     // Control the Size of the site Title and Slogan size
     $wp_customize->add_control('title_size_control', array(
-		'label'				=> __('Title Font Size', 'localize_semperfi'),
+		'label'				=> __('Title Font Size', 'localize_adventure'),
 		'priority'			=> 1,
 		'section'			=> 'header_section',
 		'settings'			=> 'title_size_setting',
@@ -791,8 +791,8 @@ function adventure_customize($wp_customize) {
 		'settings'			=> 'twitter_setting', )));
 			
 	// Add Instagram Icon to the navigation
-	$wp_customize->add_control( new semperfi_Customize_Textarea_Control( $wp_customize, 'instagram_plus_control', array(
-		'label'				=> __('Instagram icon in the Menu', 'localize_semperfi'),
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'instagram_plus_control', array(
+		'label'				=> __('Instagram icon in the Menu', 'localize_adventure'),
 		'priority'			=> 52,
 		'section'			=> 'nav',
 		'settings'			=> 'instagram_setting', )));
@@ -1249,6 +1249,10 @@ function adventure_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
+                            <th>25</th>
+                            <td><?php _e('Minor error in the code fixed.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
                             <th>24</th>
                             <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Fixed an issue with the sidebar sliding up on mobile platforms. Also added in instagram as a social icon.', 'localize_adventure'); ?></td>
                         <tr>
@@ -1304,6 +1308,10 @@ function adventure_theme_options_do_page() { ?>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>3.8</th>
+                            <td><?php _e('Minor error in the code fixed.', 'localize_adventure'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.7</th>
                             <td><?php _e('Fixed the issue with the title being worthless, unless you have an SEO plugin installed. Fixed an issue with the sidebar sliding up on mobile platforms. Also added in instagram as a social icon.', 'localize_adventure'); ?></td>
