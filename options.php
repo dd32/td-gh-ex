@@ -179,7 +179,7 @@ function optionsframework_options() {
 			'name' => __('Custom CSS', 'options_framework_theme'),
 			'desc' => __('Want to add any custom CSS code? Put in here.', 'options_framework_theme'),
 			'id' => 'custom_css',
-			'std' => 'Add here your custom css',
+			'std' => '',
 			'type' => 'textarea');
 			
 		// Custom JavaScript
@@ -187,7 +187,7 @@ function optionsframework_options() {
 			'name' => __('Custom JavaScript', 'options_framework_theme'),
 			'desc' => __('You can paste your JavaScript code in this box. This will be automatically added to the footer.', 'options_framework_theme'),
 			'id' => 'custom_javascript',
-			'std' => 'Add here your custom JavaScript',
+			'std' => '',
 			'type' => 'textarea');
 			
 		// Page Comment
@@ -910,6 +910,7 @@ function optionsframework_options() {
 		*/
 	// Info Settings
 	// ===================================================
+	/*
 	$options[] = array(
 		'name' => __('Info', 'options_framework_theme'),
 		'type' => 'heading');
@@ -919,6 +920,6 @@ function optionsframework_options() {
 			'desc' => __('', 'options_framework_theme'),
 			'type' => 'info');
 
-
+	*/
 	return $options;
 }

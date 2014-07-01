@@ -59,14 +59,16 @@
 					<div class="row">
 						<div class="col-lg-8 col-md-8">
 							<div class="top-info fadeIn" >
-								<strong><i class="fa fa-envelope-o"></i></strong>
+								
 								<?php if ( of_get_option( 'top_header_email' ) ) { ?>
+									<strong><i class="fa fa-envelope-o"></i></strong>
 									<a href="mailto:<?php echo of_get_option( 'top_header_email' ); ?>"><?php echo of_get_option( 'top_header_email' ); ?></a>
 								<?php } ?>
 							</div><!-- /.header-infobox-->
 							<div class="top-info fadeIn" >
-								<strong><i class="fa fa-phone"></i> </strong>
+								
 								<?php if ( of_get_option( 'top_header_phone' ) ) { ?>
+									<strong><i class="fa fa-phone"></i> </strong>
 									<?php echo of_get_option( 'top_header_phone' ); ?>
 								<?php } ?>
 							</div><!-- /.header-infobox-->

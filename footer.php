@@ -154,10 +154,7 @@
 					<div  class="row">
 						<div class="col-lg-6">
 							<div class="copyright">
-								&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.
-								<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bnwtheme' ) ); ?>">
-								<?php printf( __( 'Proudly powered by %s', 'bnwtheme' ), 'WordPress' ); ?></a> | 
-								Developed by : 
+								&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. 
 								<!--  -->
 								<?php if ( of_get_option( 'footer_copyright' ) ) { ?>
 									<?php echo of_get_option( 'footer_copyright' ); ?>

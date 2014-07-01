@@ -147,6 +147,7 @@
 		* WOW
 		* 
 		*/
+		/*
 		wow = new WOW(
 			{
 			boxClass:     'wow',      // animated element css class (default is wow)
@@ -156,7 +157,7 @@
 			}
 		);
 		wow.init();
-		
+		*/
 		// ******* Attention Seekers
 		$('.bounce').addClass('animated bounce');
 		$('.flash').addClass('animated flash');
