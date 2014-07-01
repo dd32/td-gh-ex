@@ -117,6 +117,7 @@ jQuery(document).ready(function($){
             $('#search-icon').css('left', -searchFormWidth + sitePadding - 7);
         }
     }
+
 });
 
 /* fix for skip-to-content link bug in Chrome & IE9 */

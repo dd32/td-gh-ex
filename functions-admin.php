@@ -393,5 +393,3 @@ function ct_tracks_save_social_profiles($user_id) {
 
 add_action( 'personal_options_update', 'ct_tracks_save_social_profiles' );
 add_action( 'edit_user_profile_update', 'ct_tracks_save_social_profiles' );
-
-?>

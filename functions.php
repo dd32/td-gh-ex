@@ -12,7 +12,7 @@ function ct_tracks_load_javascript_files() {
         wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
     }
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
-    if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' ); 
+    if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
 }
 
 add_action('wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
@@ -44,7 +44,6 @@ function ct_tracks_theme_setup() {
 	/* Theme-supported features go here. */
     add_theme_support( 'hybrid-core-template-hierarchy' );
     add_theme_support( 'loop-pagination' );
-    add_theme_support( 'cleaner-gallery' );
     add_theme_support( 'hybrid-core-widgets' );
 
     // from WordPress core not theme hybrid
@@ -59,6 +58,7 @@ function ct_tracks_theme_setup() {
     
     // adds the file with the customizer functionality
     require_once( trailingslashit( get_template_directory() ) . 'functions-admin.php' );
+
 }
 
 function ct_tracks_register_widget_areas(){
@@ -239,18 +239,33 @@ function ct_tracks_remove_comments_notes_after($defaults){
 
 add_action('comment_form_defaults', 'ct_tracks_remove_comments_notes_after');
 
-// for 'read more' tag excerpts
+// excerpt handling
 function ct_tracks_excerpt() {
-	
-	global $post;
-	// check for the more tag
+
+    // make post variable available
+    global $post;
+
+    // make 'read more' setting available
+    global $more;
+
+    // get the 'show full post' setting
+    $setting = get_theme_mod('premium_layouts_full_width_full_post');
+
+    // check for the more tag
     $ismore = strpos( $post->post_content, '<!--more-->');
-    
-	/* if there is a more tag, edit the link to keep reading
-	*  works for both manual excerpts and read more tags
-	*/
-    if($ismore) {
-        the_content("Read the Post <span class='screen-reader-text'>" . get_the_title() . "</span>");
+
+    // if show full post is on, and full-width layout is on, show full post unless on search page
+    if(($setting == 'yes') && get_theme_mod('premium_layouts_setting') == 'full-width' && !is_search()){
+
+        // set read more value for all posts to 'off'
+        $more = -1;
+
+        // output the full content
+        the_content();
+    }
+    // use the read more link if present
+    elseif($ismore) {
+        the_content("Read More <span class='screen-reader-text'>" . get_the_title() . "</span>");
     }
     // otherwise the excerpt is automatic, so output it
     else {
@@ -297,23 +312,6 @@ function ct_tracks_author_social_icons() {
     // array of social media site names
     $social_sites = ct_tracks_social_array();
 
-    /*
-    foreach($social_sites as $key => $social_site) {
-    	if(get_the_author_meta( $social_site)) {
-    		if($key == 'googleplus') {
-				echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-google-plus-square\"></i></a>";
-			} elseif($key == 'flickr') {
-				echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-flickr\"></i></a>";
-			} elseif($key == 'dribbble') {
-                echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-dribbble\"></i></a>";
-            } elseif($key == 'instagram') {
-                echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-instagram\"></i></a>";
-            } else {
-	    		echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key-square\"></i></a>";
-	    	}
-    	}
-    }
-*/
     foreach ($social_sites as $key => $social_site) {
         if(get_the_author_meta( $social_site)) {
             if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news") {
@@ -335,8 +333,9 @@ function ct_tracks_featured_image() {
     global $post;
     $has_image = false;
 
-    // load smaller version on archive pages and larger version on post pages
+    // load smaller version on archive pages unless full-width layout active
     if(is_archive() || is_home()) {
+
         if (has_post_thumbnail( $post->ID ) ) {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog' );
             $image = $image[0];
@@ -367,6 +366,7 @@ function ct_tracks_body_class( $classes ) {
     if ( ! is_front_page() ) {
         $classes[] = 'not-front';
     }
+
     return $classes;
 }
 add_filter( 'body_class', 'ct_tracks_body_class' );
@@ -415,8 +415,15 @@ if( function_exists('add_image_size')){
 
 function ct_tracks_odd_even_post_class( $classes ) {
 
+    // access the post object
     global $wp_query;
+
+    // add even/odd class
     $classes[] = ($wp_query->current_post % 2 == 0) ? 'odd' : 'even';
+
+    // add post # class
+    $classes[] = "excerpt-" . ($wp_query->current_post + 1);
+
     return $classes;
 }
 add_filter ( 'post_class' , 'ct_tracks_odd_even_post_class' );
@@ -487,4 +494,15 @@ function ct_tracks_social_site_list(){
 
     $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam');
     return $social_sites;
-} ?>
+}
+
+function ct_tracks_category_link(){
+    $category = get_the_category();
+    $category_link = get_category_link( $category[0]->term_id );
+    $category_name = $category[0]->cat_name;
+    $html = "<a href='" . $category_link . "'>" . $category_name . "</a>";
+    echo $html;
+}
+
+
+?>
