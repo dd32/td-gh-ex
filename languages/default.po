@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adamos\n"
-"POT-Creation-Date: 2014-05-11 07:39-0000\n"
-"PO-Revision-Date: 2014-05-11 07:39-0000\n"
+"POT-Creation-Date: 2014-07-02 20:13-0000\n"
+"PO-Revision-Date: 2014-07-02 20:14-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -207,8 +207,65 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
+#: ../functions.php:248
+msgid "Featured Text Area"
+msgstr ""
+
+#: ../functions.php:249 ../functions.php:314 ../functions.php:364
+#: ../functions.php:413
+msgid "This is a settings section to change the homepage featured text area."
+msgstr ""
+
+#: ../functions.php:257 ../functions.php:274
+msgid "Default Featured Text"
+msgstr ""
+
+#: ../functions.php:265
+msgid "Featured Text Header"
+msgstr ""
+
+#: ../functions.php:282
+msgid "Featured sub text"
+msgstr ""
+
 #: ../functions.php:290 ../functions.php:297
 msgid "Featured sub text url"
+msgstr ""
+
+#: ../functions.php:313
+msgid "Featured Text Box 1"
+msgstr ""
+
+#: ../functions.php:322 ../functions.php:372 ../functions.php:421
+msgid "Default featured text Header"
+msgstr ""
+
+#: ../functions.php:330
+msgid "Featured Header Text"
+msgstr ""
+
+#: ../functions.php:339 ../functions.php:389 ../functions.php:438
+msgid "Default featured text"
+msgstr ""
+
+#: ../functions.php:347
+msgid "Featured Text"
+msgstr ""
+
+#: ../functions.php:363
+msgid "Featured Text Box 2"
+msgstr ""
+
+#: ../functions.php:380 ../functions.php:429
+msgid "Featured Header text"
+msgstr ""
+
+#: ../functions.php:397 ../functions.php:446
+msgid "Featured text"
+msgstr ""
+
+#: ../functions.php:412
+msgid "Featured Text Box 3"
 msgstr ""
 
 #: ../functions.php:519
@@ -336,6 +393,14 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
+msgstr ""
+
+#: ../page-templates/custom_home.php:39
+msgid "Recent Posts"
+msgstr ""
+
+#: ../page-templates/custom_home.php:56
+msgid "More"
 msgstr ""
 
 #: ../search.php:17

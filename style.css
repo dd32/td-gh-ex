@@ -4,7 +4,7 @@ Theme URI: http://www.templateexpress.com/adamos-theme/
 Author: Ossie Heffell
 Author URI: http://www.templateexpress.com/
 Description: Adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add and edit your own logo, header, featured slider, featured areas and much more.
-Version: 1.6
+Version: 1.7
 License: GNU General Public License v2.0
 License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, responsive-layout, black
@@ -830,6 +830,29 @@ body.archive .page-title {
 .comment-content tr.odd td {
 	background: #dfd6c7;
 }
+.entry-content ul li {
+	list-style-type: square;
+	list-style-position: inside;
+}
+.entry-content ol {
+	list-style: decimal;
+	margin: 0 0 1.5em 1.5em;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #69C;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.entry-content a.more-link, .entry-content a.more-link:visited{
+    color: #FFF;
+}
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+	clear: none;
+}
+.entry-content dfn, cite, em, i {
+	font-style:italic;
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -1144,6 +1167,9 @@ p.nocomments {
 }
 .site-info a{
 	color: #AAA;
+}
+.site-info a:hover{
+	color: #FFF;
 }
 .site-footer .widget p{
 	color: #AAA;

@@ -245,8 +245,8 @@ function adamos_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'featured_section_top',
         array(
-            'title' => 'Featured Text Area',
-            'description' => 'This is a settings section to change the homepage featured text area.',
+			'title'       => __( 'Featured Text Area', 'adamos' ),
+    		'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
             'priority' => 150,
         )
     );
@@ -254,7 +254,7 @@ function adamos_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'featured_textbox',
     array(
-        'default' => 'Default featured text',
+        'default' => __( 'Default Featured Text', 'adamos' ),
 		'sanitize_callback' => 'adamos_sanitize_text',
     )
 );
@@ -262,7 +262,7 @@ function adamos_customizer( $wp_customize ) {
 $wp_customize->add_control(
     'featured_textbox',
     array(
-        'label' => 'Featured text main',
+		'label'    => __( 'Featured Text Header', 'adamos' ),
         'section' => 'featured_section_top',
         'type' => 'text',
     )
@@ -271,7 +271,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
 		'featured_textbox_text',
 		array(
-			'default' => 'Default featured text',
+			'default' => __( 'Default Featured Text', 'adamos' ),
 			'sanitize_callback' => 'adamos_sanitize_text',
 		)
 	);
@@ -279,7 +279,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
 		'featured_textbox_text',
 		array(
-			'label' => 'Featured sub text',
+			'label'    => __( 'Featured sub text', 'adamos' ),
 			'section' => 'featured_section_top',
 			'type' => 'text',
 		)
@@ -310,8 +310,8 @@ function featured_text_one_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'featured_section_one',
         array(
-            'title' => 'Featured Text Box 1',
-            'description' => 'This is a settings section to change the homepage featured text area.',
+			'title' => __( 'Featured Text Box 1', 'adamos' ),
+            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
             'priority' => 155,
         )
     );
@@ -319,7 +319,7 @@ function featured_text_one_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'featured_textbox_header_one',
     array(
-        'default' => 'Default featured text Header',
+        'default' => __( 'Default featured text Header', 'adamos' ),
 		'sanitize_callback' => 'adamos_sanitize_text',
     )
 	);
@@ -327,7 +327,7 @@ function featured_text_one_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_header_one',
 		array(
-			'label' => 'Featured Header text',
+			'label' => __( 'Featured Header Text', 'adamos' ),
 			'section' => 'featured_section_one',
 			'type' => 'text',
 		)
@@ -336,7 +336,7 @@ function featured_text_one_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'featured_textbox_text_one',
 		array(
-			'default' => 'Default featured text',
+			'default' => __( 'Default featured text', 'adamos' ),
 			'sanitize_callback' => 'adamos_sanitize_text',
 		)
 	);
@@ -344,7 +344,7 @@ function featured_text_one_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_text_one',
 		array(
-			'label' => 'Featured text',
+			'label' => __( 'Featured Text', 'adamos' ),
 			'section' => 'featured_section_one',
 			'type' => 'text',
 		)
@@ -360,8 +360,8 @@ function featured_text_two_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'featured_section_two',
         array(
-            'title' => 'Featured Text Box 2',
-            'description' => 'This is a settings section to change the homepage featured text area.',
+			'title' => __( 'Featured Text Box 2', 'adamos' ),
+            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
             'priority' => 160,
         )
     );
@@ -369,7 +369,7 @@ function featured_text_two_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'featured_textbox_header_two',
     array(
-        'default' => 'Default featured text Header',
+       'default' => __( 'Default featured text Header', 'adamos' ),
 		'sanitize_callback' => 'adamos_sanitize_text',
     )
 	);
@@ -377,7 +377,7 @@ function featured_text_two_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_header_two',
 		array(
-			'label' => 'Featured Header text',
+			'label' => __( 'Featured Header text', 'adamos' ),
 			'section' => 'featured_section_two',
 			'type' => 'text',
 		)
@@ -386,7 +386,7 @@ function featured_text_two_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'featured_textbox_text_two',
 		array(
-			'default' => 'Default featured text',
+			'default' => __( 'Default featured text', 'adamos' ),
 			'sanitize_callback' => 'adamos_sanitize_text',
 		)
 	);
@@ -394,7 +394,7 @@ function featured_text_two_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_text_two',
 		array(
-			'label' => 'Featured text',
+			'label' => __( 'Featured text', 'adamos' ),
 			'section' => 'featured_section_two',
 			'type' => 'text',
 		)
@@ -409,8 +409,8 @@ function featured_text_three_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'featured_section_three',
         array(
-            'title' => 'Featured Text Box 3',
-            'description' => 'This is a settings section to change the homepage featured text area.',
+			'title' => __( 'Featured Text Box 3', 'adamos' ),
+            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
             'priority' => 165,
         )
     );
@@ -418,7 +418,7 @@ function featured_text_three_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'featured_textbox_header_three',
     array(
-        'default' => 'Default featured text Header',
+		'default' => __( 'Default featured text Header', 'adamos' ),
 		'sanitize_callback' => 'adamos_sanitize_text',
     )
 	);
@@ -426,7 +426,7 @@ function featured_text_three_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_header_three',
 		array(
-			'label' => 'Featured Header text',
+			'label' => __( 'Featured Header text', 'adamos' ),
 			'section' => 'featured_section_three',
 			'type' => 'text',
 		)
@@ -435,7 +435,7 @@ function featured_text_three_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'featured_textbox_text_three',
 		array(
-			'default' => 'Default featured text',
+			'default' => __( 'Default featured text', 'adamos' ),
 			'sanitize_callback' => 'adamos_sanitize_text',
 		)
 	);
@@ -443,7 +443,7 @@ function featured_text_three_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		'featured_textbox_text_three',
 		array(
-			'label' => 'Featured text',
+			'label' => __( 'Featured text', 'adamos' ),
 			'section' => 'featured_section_three',
 			'type' => 'text',
 		)
