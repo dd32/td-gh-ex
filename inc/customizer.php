@@ -643,7 +643,7 @@ function aperture_customize_register( $wp_customize ) {
         ),
     ) );
 
-    /* Sanitization copyright text */
+    /* Sanitization copyright text and slider texts */
     function aperture_sanitize_text( $input ) {
         return wp_kses_post( force_balance_tags( $input ) );
     }
