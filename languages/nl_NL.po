@@ -1,0 +1,288 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MultiColors v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-07-02 21:36:10+0000\n"
+"Last-Translator: Guido van der Leest\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:11
+#: search.php:37
+#@ multicolors
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: 404.php:12
+#: archive.php:49
+#: index.php:45
+#: search.php:38
+#@ multicolors
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sorry, er zijn helaas geen berichten gevonden."
+
+#: archive.php:14
+#@ multicolors
+msgid "Archive"
+msgstr "Archief"
+
+#: archive.php:16
+#@ multicolors
+msgid "Daily Archives"
+msgstr "Dag Archieven"
+
+#: archive.php:18
+#@ multicolors
+msgid "Monthly Archives"
+msgstr "Maand Archieven"
+
+#: archive.php:20
+#@ multicolors
+msgid "Yearly Archives"
+msgstr "Jaar Archieven"
+
+#: archive.php:22
+#@ multicolors
+msgid "Author Archives"
+msgstr "Auteur Archieven"
+
+#: archive.php:24
+#@ multicolors
+msgid "Tag Archives"
+msgstr "Tag Archieven"
+
+#: archive.php:29
+#: search.php:16
+#@ multicolors
+msgid "Permalink to "
+msgstr "Permalink naar "
+
+#: archive.php:53
+#: index.php:49
+#: search.php:44
+#@ multicolors
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:54
+#: index.php:50
+#: search.php:45
+#@ multicolors
+msgid "Newer posts &raquo;"
+msgstr "Nieuwere berichten &raquo;"
+
+#: functions.php:106
+#@ multicolors
+msgid "Primary Sidebar"
+msgstr "Hoofd Sidebar"
+
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
+#: functions.php:149
+#: functions.php:159
+#: functions.php:169
+#: functions.php:179
+#@ multicolors
+msgid "Select widgets from the right-hand side."
+msgstr "Selecteer widgets van de rechterkant."
+
+#: archive.php:45
+#: index.php:39
+#: search.php:32
+#@ multicolors
+msgid "Read More &raquo;"
+msgstr "Lees Meer &raquo;"
+
+#: functions.php:40
+#@ multicolors
+msgid "Boats"
+msgstr "Boten"
+
+#: index.php:18
+#@ multicolors
+msgid "Featured post"
+msgstr "Aanbevolen bericht"
+
+#: page-full.php:27
+#: page.php:26
+#: single.php:40
+#@ multicolors
+msgid "Edit"
+msgstr "Bewerk"
+
+#: search.php:13
+#, php-format
+#@ multicolors
+msgid "Search Results for: %s"
+msgstr "Zoekresultaat voor: %s"
+
+#: comments.php:38
+#@ multicolors
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Oudere Reacties"
+
+#: comments.php:39
+#@ multicolors
+msgid "Newer Comments &raquo;"
+msgstr "Nieuwere Reacties &raquo;"
+
+#: comments.php:44
+#@ multicolors
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
+
+#: functions.php:157
+#@ multicolors
+msgid "Footer Sidebar Right"
+msgstr "Footer Sidebar Rechts"
+
+#: functions.php:177
+#@ multicolors
+msgid "Footer Sidebar Left"
+msgstr "Footer Sidebar Links"
+
+#: functions.php:19
+#@ multicolors
+msgid "Primary Navigation"
+msgstr "Hoofdmenu"
+
+#: comments.php:18
+#, php-format
+#@ multicolors
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
+
+#: functions.php:201
+#: functions.php:207
+#@ multicolors
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:203
+#@ multicolors
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: functions.php:126
+#@ multicolors
+msgid "Homepage Sidebar Right"
+msgstr "Homepage Sidebar Rechts"
+
+#: functions.php:147
+#@ multicolors
+msgid "Homepage Sidebar Left"
+msgstr "Homepage Sidebar Links"
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:22
+#@ multicolors
+msgid "Leave a response"
+msgstr "Plaats een reactie"
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:22
+#@ multicolors
+msgid "% responses"
+msgstr "% reacties"
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:22
+#@ multicolors
+msgid "1 response"
+msgstr "1 reactie"
+
+#: footer.php:45
+#@ multicolors
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:46
+#@ multicolors
+msgid "WordPress Blog Platform"
+msgstr "WordPress Blog Platform"
+
+#: footer.php:46
+#@ multicolors
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
+
+#: functions.php:136
+#@ multicolors
+msgid "Homepage Sidebar Middle"
+msgstr "Homepage Sidebar Midden"
+
+#: functions.php:167
+#@ multicolors
+msgid "Footer Sidebar Middle"
+msgstr "Footer Sidebar Midden"
+
+#: archive.php:33
+#: index.php:27
+#: search.php:20
+#: single.php:19
+#, php-format
+#@ multicolors
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: archive.php:34
+#: index.php:28
+#: search.php:21
+#: single.php:20
+#, php-format
+#@ multicolors
+msgid "By %s"
+msgstr "Door %s"
+
+#: single.php:29
+#: single.php:30
+#@ multicolors
+msgid ", "
+msgstr ", "
+
+#: single.php:29
+#, php-format
+#@ multicolors
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: single.php:30
+#, php-format
+#@ multicolors
+msgid "Tags: %s"
+msgstr "Tags: %s"
+
+#: functions.php:116
+#@ multicolors
+msgid "Header Sidebar"
+msgstr "Header Sidebar"
+
+#: index.php:23
+#, php-format
+#@ multicolors
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
