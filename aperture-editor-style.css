@@ -1,0 +1,442 @@
+/*
+Theme Name: Aperture
+Description: Used to style the TinyMCE editor.
+*/
+
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Body
+ * 2.0 - Headings
+ * 3.0 - Text Elements
+ * 4.0 - Links
+ * 5.0 - Alignment
+ * 6.0 - Tables
+ * ----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 1.0 Body
+ * ----------------------------------------------------------------------------
+ */
+
+html .mceContentBody {
+	font-size: 100%;
+	max-width: 960px;
+}
+body {
+	color: #303030;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	vertical-align: baseline;
+}
+
+/**
+ * 2.0 Headings
+ * ----------------------------------------------------------------------------
+ */
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	clear: both;
+	color: #303030;
+  	font-family: 'Oswald', sans-serif;
+  	font-weight: normal;
+}
+h1 {
+	font-size: 20px;
+	font-size: 2.0rem;
+	font-weight: 700;
+	line-height: 150%;
+}
+h2 {
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 150%;
+}
+h3 {
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 160%;
+}
+h4 {
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 170%;
+}
+h5 {
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 170%;
+}
+h6 {
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 170%;
+}
+
+/**
+ * 3.0 Elements
+ * ----------------------------------------------------------------------------
+ */
+
+p {
+	margin-bottom: 1.25em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+pre, kbd, tt, var {
+	font: 14px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	border-radius: 0.3em;
+}
+
+/* Blockquote */
+blockquote {
+	margin: .5em 0 1.5em;
+	padding: 10px;
+	font-style: oblique;
+	color: #fefefa;
+	background: #272822;
+	border-radius: 0.3em;
+}
+blockquote p {
+	display: inline;
+	margin: 0;
+}
+blockquote.big {
+	padding: 20px 10px 20px 10px;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	font-family: 'Oswald', sans-serif;
+	font-style: normal;
+	font-size: 32px;
+	font-size: 3.2rem;
+	line-height: 4.0rem;
+	text-align: center;
+	color: white;
+	background: #272822;
+	border-left: none;
+	border-radius: 0.3em;
+}
+blockquote.big:before {
+	content: '';
+}
+blockquote.big p {
+	display: inline;
+}
+blockquote.big cite {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	text-align: right;
+}
+blockquote.quote,
+blockquote.info,
+blockquote.notice,
+blockquote.help,
+blockquote.heart,
+blockquote.hide {
+	margin: 1em 3em 1.5em;
+	color: #303030;
+	font-size: 14px;
+	font-size: 1.4rem;
+	border-radius: 0.3em;
+}
+blockquote.quote:before,
+blockquote.info:before,
+blockquote.notice:before,
+blockquote.help:before,
+blockquote.heart:before,
+blockquote.hide:before {
+	margin-left: -42px;
+	padding-right: 10px;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 32px/20px 'Genericons';
+	vertical-align: bottom;
+}
+blockquote.quote {
+	border-left: 32px solid #ff7f00;
+	background-color: #ffd473; 
+	background-color: #ffdf96; 
+}
+blockquote.quote:before {
+	content: '\f106';
+}
+blockquote.info {
+	border-left: 32px solid #248f40;
+	background-color: #75c78b;
+	background-color: #f6ebc1;
+}
+blockquote.info:before {
+	content: '\f455';
+}
+blockquote.notice{
+	border-left: 32px solid #ffe200;
+	background-color: #fff6b2; 
+}
+blockquote.notice:before {
+	content: '\f456';
+}
+blockquote.help {
+	border-left: 32px solid #4867d6;
+	background-color: #c4cef5; 
+	background-color: #e7defa; 
+}
+blockquote.help:before {
+	content: '\f457';
+}
+blockquote.heart {
+	border-left: 32px solid #ff1e00;
+	background-color: #ffb873; 
+}
+blockquote.heart:before {
+	content: '\f461';
+}
+blockquote.hide {
+	border-left: 32px solid #202020;
+	background-color: #eee;
+}
+blockquote.hide:before {
+	content: '\f404';
+	color: #989898;
+}
+blockquote.hide span.hidden-text {
+	background-color: #303030;
+}
+blockquote.left {
+	clear: left;
+	float: left;
+	width: 33%;
+	margin: 1.5em 1.5em 1.5em 0;
+}
+blockquote.right {
+	clear: right;
+	float: right;
+	width: 33%;
+	margin: 1.5em 0 1.5em 1.5em;
+}
+blockquote > cite,
+blockquote > p > cite {
+	display: block;
+	padding-top: 5px;
+	font-variant: italic;
+	font-size: 12px;
+	font-size: 1.2rem;
+	text-align: right;
+}
+
+/* Pre & Code Tags () */
+:not(pre) > code {
+	background: #272822;
+	color: white;
+	padding: .1em;
+	border-radius: .3em;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	white-space: pre-wrap;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0 1.5em;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: pre-wrap;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	padding: 0 1.5px 0px 1.5px;
+	border-radius: 0.3em;
+	background-color: #ff7f00;
+}
+del {
+	color: red;
+	text-decoration: line-through;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	vertical-align: middle;
+}
+figure {
+	margin: 0;
+}
+
+/**
+ * 4.0 Links
+ * ----------------------------------------------------------------------------
+ */
+
+a {
+	color: #ff7f00;
+	text-decoration: none;
+}
+a:visited {
+	color: #ff7f00;
+}
+a:hover,
+a:focus,
+a:active {
+	color: #ff7f00;
+	text-decoration: underline;
+}
+
+/**
+ * 5.0 Alignment
+ * ----------------------------------------------------------------------------
+ */
+
+ .alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+.inline {
+	display: inline;
+}
+
+/**
+ * 6.0 Tables
+ * ----------------------------------------------------------------------------
+ */
+
+.mceItemTable > thead > tr > th,
+.mceItemTable > tbody > tr > th,
+.mceItemTable > tfoot > tr > th,
+.mceItemTable > thead > tr > td,
+.mceItemTable > tbody > tr > td,
+.mceItemTable > tfoot > tr > td {
+  padding: 6px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.mceItemTable > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.mceItemTable > caption + thead > tr:first-child > th,
+.mceItemTable > colgroup + thead > tr:first-child > th,
+.mceItemTable > thead:first-child > tr:first-child > th,
+.mceItemTable > caption + thead > tr:first-child > td,
+.mceItemTable > colgroup + thead > tr:first-child > td,
+.mceItemTable > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.mceItemTable > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.mceItemTable .table {
+  background-color: #fff;
+}
