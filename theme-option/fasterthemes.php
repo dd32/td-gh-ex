@@ -37,15 +37,10 @@ function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
 	wp_enqueue_style( 'fasterthemes_framework' );
-	wp_enqueue_style( 'wp-color-picker', get_template_directory_uri(). '/theme-option/css/color-picker.min.css' );
-	wp_enqueue_style( 'wp-color-picker' );
-	
-	// Enqueue colorpicker scripts for versions below 3.5 for compatibility
-	wp_enqueue_script( 'wp-color-picker', get_template_directory_uri(). '/theme-option/js/color-picker.min.js', array( 'jquery', 'iris' ) );
+
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery','wp-color-picker' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery', 'iris' ) );		
-	wp_enqueue_script('media-uploader');
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery' ) );		
 }
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {

@@ -9,3 +9,7 @@ Version 2.0
 Version: 2.0.1
    
     i) Removed widget control and added theme options for home page settings.
+	
+Version: 2.0.2	
+	
+	i) set fasterthemes.php file for wp-admin sub-menu
