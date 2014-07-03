@@ -1,10 +1,15 @@
-<?php 
+<?php
 /*
-*	Template name:Front Page
+* Front Page template file
 */
-get_header();
+?>
+<?php
+if ( 'page' != get_option( 'show_on_front' ) ) {
+	include( get_home_template() );
+}
+?>
+<?php get_header(); 
 $customizable_options = get_option( 'faster_theme_options' );
-
 ?>
 
 <section class="main_section">

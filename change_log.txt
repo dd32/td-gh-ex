@@ -6,3 +6,7 @@ Version 2.0
 
 	i)  Added custom home page 
 	ii) Changes in style.css
+
+Version 2.0.1
+
+	i)   Set front-page.php as per template hierarchy
