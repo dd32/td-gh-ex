@@ -39,7 +39,7 @@ if ( is_home() || is_front_page() ) {?>
 				if( get_theme_mod( 'cherish_action_link' ) <> '') {
 					echo '<a href="' . esc_url( get_theme_mod( 'cherish_action_link' ) ) .'">';
 				}
-				echo get_theme_mod( 'cherish_action_text' );
+				echo esc_html( get_theme_mod( 'cherish_action_text' ) );
 				if( get_theme_mod( 'cherish_action_link' ) <> '') {
 					echo '</a>';
 				}

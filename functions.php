@@ -18,7 +18,9 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'html5', array( 'gallery', 'caption' ) );
-
+		
+		add_theme_support( 'woocommerce' );
+		
 		/* translate */
 		load_theme_textdomain( 'cherish', get_template_directory() . '/languages' );
 		
@@ -67,10 +69,10 @@ function cherish_customize_css() {
 echo '<style type="text/css">
 		.site-title,
 		.site-description {
-			color: #' . get_header_textcolor() . '; ';
-	
+			color: #' . esc_attr( get_header_textcolor() ) . '; ';
+
 		if( get_theme_mod( 'cherish_text_shadow_active' ) <> '' ) {
-			echo 'text-shadow: 2px 2px 3px ' . get_theme_mod( 'cherish_text_shadow') . ';';
+			echo 'text-shadow: 2px 2px 3px ' .  esc_attr( get_theme_mod( 'cherish_text_shadow') ) . ';';
 		}
 		echo '}';
 		
@@ -79,23 +81,23 @@ echo '<style type="text/css">
 			#footer .site-description,
 			.footer-credit, 
 			.footer-credit a{
-				color:' . get_theme_mod( 'cherish_footer_color' )  . ';}';
+				color:' .  esc_attr( get_theme_mod( 'cherish_footer_color' ) )  . ';}';
 		}
 		
 		echo '#header{
 			background:url("' . get_header_image() . '");
-			height:'. get_custom_header()->height . 'px;
+			height:' .  get_custom_header()->height . 'px;
 			}';
 		
 		if ( get_theme_mod( 'cherish_hide_action' ) == '' ) {	
 			if ( get_theme_mod( 'cherish_action_color' ) <> '') {
-				echo '#action, #action a{color:' . get_theme_mod( 'cherish_action_color' ) . ';}';
+				echo '#action, #action a{color:' . esc_attr( get_theme_mod( 'cherish_action_color' ) ) . ';}';
 			}
 			if ( get_theme_mod( 'cherish_action_bgcolor' ) <> '' ) {
-				echo '#action{background-color:' . get_theme_mod( 'cherish_action_bgcolor' ) . ';}';
+				echo '#action{background-color:' . esc_attr( get_theme_mod( 'cherish_action_bgcolor' ) ) . ';}';
 			}
 			if ( get_theme_mod( 'cherish_action_size' ) <> '' ) {
-				echo '#action{font-size:' . get_theme_mod( 'cherish_action_size' ) . 'em;}';
+				echo '#action{font-size:' . esc_attr( get_theme_mod( 'cherish_action_size' ) ) . 'em;}';
 			}
 		}
 		
@@ -131,7 +133,7 @@ add_action('wp_footer', 'cherish_skip');
     wp_enqueue_style( 'cherish_Font' );
 	wp_enqueue_style( 'cherish_Font2' );
 	
-	 wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css');
+	wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css');
 	 
 	/* Enqueue comment reply / threaded comments. */
 	if ( ! is_admin() ){

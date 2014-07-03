@@ -30,7 +30,7 @@
 		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
 			echo '<a href="' . esc_url(get_theme_mod( 'cherish_logo_link' )) . '">';
 		}
-		echo '<img src="' . get_theme_mod( 'cherish_logo' ) . '" class="footer-logo">';
+		echo '<img src="' . esc_url( get_theme_mod( 'cherish_logo' )) . '" class="footer-logo">';
 		if( get_theme_mod( 'cherish_logo_link' ) <> '') {
 			echo '</a>';
 		}

@@ -19,6 +19,7 @@ hide your post meta and upload your own logo. Includes Swedish translation.
 
 == Known Limitations ==
 -A one line menu is strongly recommended, instead of using long menus, use submenus.
+-On singe posts, pages and archives the site title is only displayed in the footer.
 -It's recommended not to use a font-size larger than 4em for the Call to Action area.
 -Note that the footer widgets are only shown on the front page, 404, and search page.
 -The theme aims to be compatible with Woocommerce. It does not adress issues within Woocommerce such as missing labels and screenreader texts, but increases it's contrasts. 

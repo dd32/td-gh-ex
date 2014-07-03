@@ -5,7 +5,7 @@ get_header();
 		if ($cherish_color_meta_value == '' AND is_sticky()){
 			echo '<div class="container" style="background:#edaeae">';
 		}else{		
-			echo '<div class="container" style="background:' . $cherish_color_meta_value . ';">';
+			echo '<div class="container" style="background:' . esc_attr($cherish_color_meta_value) . ';">';
 		}
 		get_template_part( 'content', get_post_format() ); 
 		echo '</div>';

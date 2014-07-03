@@ -1,6 +1,6 @@
 <?php get_header(); 
 	$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
-	echo '<div class="container" style="background:' . $cherish_color_meta_value . ';">';
+	echo '<div class="container" style="background:' . esc_attr($cherish_color_meta_value) . ';">';
 	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<h1 class="post-title"><?php the_title(); ?></h1>
@@ -25,7 +25,6 @@
 next_post_link('<div class="newer-posts">%link &rarr;</div>');
 previous_post_link('<div class="older-posts">&larr; %link </div>');
 comments_template( '', true ); 
-echo '</div>';
-echo '</div>';
+echo '</div></div>';
 get_footer(); 
 ?>
