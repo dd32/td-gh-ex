@@ -39,6 +39,7 @@ function optimize_post_meta_data() {
 }
 	
 function optimize_theme_setup() { 
+
 		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
 		set_post_thumbnail_size( 150, 150, true ); // Normal post thumbnails, 200 pixels wide by 200 pixels tall, hard crop mode
 	
@@ -47,7 +48,7 @@ function optimize_theme_setup() {
         add_editor_style();
 		
         add_theme_support('automatic-feed-links');
-		}
+		
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
 	$args = array(
 	'default-color' => 'ffffff',
@@ -58,10 +59,9 @@ add_theme_support( 'custom-background', $args );
  */
 if ( ! isset( $content_width ) ){
 	$content_width = 770;}
-	add_action( 'after_setup_theme', 'optimize_theme_setup' );
-	
 
-/* Excerpt ********************************************/
+	
+	/* Excerpt ********************************************/
 
     function optimize_excerptlength_teaser($length) {
     return 10;
@@ -84,8 +84,13 @@ if ( ! isset( $content_width ) ){
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
     $output = ''.$output.'';
-    echo $output;
-    }
+    echo $output;    }
+	
+	}
+add_action( 'after_setup_theme', 'optimize_theme_setup' );
+	
+
+
 
 	
 

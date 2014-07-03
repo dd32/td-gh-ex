@@ -29,7 +29,7 @@ Custom Css:
 
 
 == Change log ==
-= 1.4.8 =
+= 1.4.9 =
 *Option framework updated to new version
 *Fixed Content width issue into theme
 *Updated some codes
