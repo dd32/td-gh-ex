@@ -415,7 +415,8 @@ class accelerate_call_to_action_widget extends WP_Widget {
 				<div class="<?php echo $class; ?>">
 					<?php 
 					if ( has_post_thumbnail() ) {
-						echo'<div class="service-image"><a title="'.get_the_title().'" href="'.get_the_permalink().'">'.get_the_post_thumbnail( $post->ID, 'featured-recent-work', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a></div>';
+						$title_attribute = get_the_title( $post->ID );
+						echo'<div class="service-image"><a title="'.get_the_title().'" href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID, 'featured-recent-work', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a></div>';
 					}
 					?>
 					<a class="recent_work_title" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">

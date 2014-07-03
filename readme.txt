@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.3 =
+* TG: Featured Widget bug fixed.
+* $content_width now declared as global inside the callback.
+
 = Version 1.0.2 =
 * Custom hook name prefixed with theme name (missing one).
 * Blog templates removed and now the blog posts index is displayed via home.php template hierarchy.
