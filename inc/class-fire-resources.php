@@ -79,10 +79,10 @@ class TC_resources {
 	    wp_enqueue_script( 'jquery-ui-core' );
 
 	    //bootstrap scripts
-	    wp_enqueue_script( 'bootstrap' ,TC_BASE_URL . 'inc/js/bootstrap.min.js' ,array( 'jquery' ),null, $in_footer = true);
+	    wp_enqueue_script( 'bootstrap' ,TC_BASE_URL . 'inc/assets/js/bootstrap.min.js' ,array( 'jquery' ),null, $in_footer = true);
 	     
 	    //tc scripts
-	    wp_enqueue_script( 'tc-scripts' ,TC_BASE_URL . 'inc/js/tc-scripts.min.js' ,array( 'jquery' ),null, $in_footer = true);
+	    wp_enqueue_script( 'tc-scripts' ,TC_BASE_URL . 'inc/assets/js/tc-scripts.min.js' ,array( 'jquery' ),null, $in_footer = true);
 
 	    //passing dynamic vars to tc-scripts
 	    //fancybox options
@@ -142,20 +142,20 @@ class TC_resources {
 
 
 	    //holder image
-	    wp_enqueue_script( 'holder' ,TC_BASE_URL . 'inc/js/holder.js' ,array( 'jquery' ),null, $in_footer = true);
+	    wp_enqueue_script( 'holder' ,TC_BASE_URL . 'inc/assets/js/holder.js' ,array( 'jquery' ),null, $in_footer = true);
 
 	    //modernizr (must be loaded in wp_head())
-	    wp_enqueue_script( 'modernizr' ,TC_BASE_URL . 'inc/js/modernizr.min.js' ,array( 'jquery' ),null, $in_footer = false);
+	    wp_enqueue_script( 'modernizr' ,TC_BASE_URL . 'inc/assets/js/modernizr.min.js' ,array( 'jquery' ),null, $in_footer = false);
 
 	    //fancybox script and style
 	    if ( 1 == tc__f( '__get_option' , 'tc_fancybox' ) ) {
-	      	wp_enqueue_script( 'fancyboxjs' ,TC_BASE_URL . 'inc/js/fancybox/jquery.fancybox-1.3.4.min.js' ,array( 'jquery' ),null, $in_footer = true);
-	      	wp_enqueue_style( 'fancyboxcss' , TC_BASE_URL . 'inc/js/fancybox/jquery.fancybox-1.3.4.min.css' );
+	      	wp_enqueue_script( 'fancyboxjs' ,TC_BASE_URL . 'inc/assets/js/fancybox/jquery.fancybox-1.3.4.min.js' ,array( 'jquery' ),null, $in_footer = true);
+	      	wp_enqueue_style( 'fancyboxcss' , TC_BASE_URL . 'inc/assets/js/fancybox/jquery.fancybox-1.3.4.min.css' );
 	    }
 
 	    //retina support script
 	    if ( 1 == tc__f( '__get_option' , 'tc_retina_support' ) ) {
-	    	wp_enqueue_script( 'retinajs', TC_BASE_URL . 'inc/js/retina.min.js', null, null, $in_footer = true );
+	    	wp_enqueue_script( 'retinajs', TC_BASE_URL . 'inc/assets/js/retina.min.js', null, null, $in_footer = true );
 	   	}
 
 	 }

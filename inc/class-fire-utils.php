@@ -110,7 +110,7 @@ class TC_utils {
         $option_group   = is_null($option_group) ? 'tc_theme_options' : $option_group;
 
         //initialize the default array with the sliders options
-        //$defaults       = is_null($option_group) ? array( 'tc_sliders' => array() ) : array() ;
+        $defaults = array();
 
         foreach ($map['add_setting_control'] as $key => $options) {
 
@@ -691,8 +691,8 @@ class TC_utils {
    * @updated Customizr 3.0.15
    */
   function tc_skin_choices() {
-      $parent_skins     = $this -> tc_get_skins(TC_BASE .'inc/css');
-      $child_skins    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/css') ) ? $this -> tc_get_skins(TC_BASE_CHILD .'inc/css') : array();
+      $parent_skins     = $this -> tc_get_skins(TC_BASE .'inc/assets/css');
+      $child_skins    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css') ) ? $this -> tc_get_skins(TC_BASE_CHILD .'inc/assets/css') : array();
       $skin_list      = array_merge( $parent_skins , $child_skins );
 
     return apply_filters( 'tc_skin_list', $skin_list );

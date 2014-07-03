@@ -209,7 +209,7 @@ class TC_init {
                                             'active'        =>  'active',
                                             'color_style'   =>  '',
                                             'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                        TC_BASE_URL.'inc/img/phare.jpg',
+                                                                        TC_BASE_URL.'inc/assets/img/phare.jpg',
                                                                         __( 'Customizr is a clean responsive theme' , 'customizr' )
                                                                 )
                                           ),
@@ -223,7 +223,7 @@ class TC_init {
                                             'active'        =>  '',
                                             'color_style'   =>  '',
                                             'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                        TC_BASE_URL.'inc/img/chevrolet.jpg',
+                                                                        TC_BASE_URL.'inc/assets/img/chevrolet.jpg',
                                                                         __( 'Style your WordPress site live!' , 'customizr' )
                                                                 )
                                           ),
@@ -237,7 +237,7 @@ class TC_init {
                                             'active'        =>  '',
                                             'color_style'   =>  '',
                                             'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                        TC_BASE_URL.'inc/img/ampoules.jpg',
+                                                                        TC_BASE_URL.'inc/assets/img/ampoules.jpg',
                                                                         __( 'Create beautiful sliders' , 'customizr' )
                                                                 )
                                           )
@@ -271,9 +271,9 @@ class TC_init {
 
       /*
        * Makes Customizr available for translation.
-       * Translations can be added to the /lang/ directory.
+       * Translations can be added to the /inc/lang/ directory.
        */
-      load_theme_textdomain( 'customizr' , TC_BASE . 'lang' );
+      load_theme_textdomain( 'customizr' , TC_BASE . '/inc/lang' );
 
       /*
       * Customizr styles the visual editor to resemble the theme style,
@@ -341,16 +341,16 @@ class TC_init {
 
       //Finds the good path : are we in a child theme and is there a skin to override?
       $remote_path    = false;
-      $remote_path    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/css/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/css/' : $remote_path ;
-      $remote_path    = ( !$remote_path && file_exists(TC_BASE .'inc/css/' . $skin) ) ? TC_BASE_URL .'inc/css/' : $remote_path ;
+      $remote_path    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/assets/css/' : $remote_path ;
+      $remote_path    = ( !$remote_path && file_exists(TC_BASE .'inc/assets/css/' . $skin) ) ? TC_BASE_URL .'inc/assets/css/' : $remote_path ;
       //Checks if there is a rtl version of the selected skin if needed
       if ('ar' == WPLANG || 'he_IL' == WPLANG) {
-        $remote_path   = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/css/rtl/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/css/rtl/' : $remote_path ;
-        $remote_path   = ( !TC___::$instance -> tc_is_child() && file_exists(TC_BASE .'inc/css/rtl/' . $skin) ) ? TC_BASE_URL .'inc/css/rtl/' : $remote_path ;
+        $remote_path   = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/assets/css/rtl/' : $remote_path ;
+        $remote_path   = ( !TC___::$instance -> tc_is_child() && file_exists(TC_BASE .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL .'inc/assets/css/rtl/' : $remote_path ;
       } 
 
       //Defines the active skin and fallback to blue.css if needed
-      $tc_active_skin  = $remote_path ? $remote_path.$skin : TC_BASE_URL.'inc/css/blue.css';
+      $tc_active_skin  = $remote_path ? $remote_path.$skin : TC_BASE_URL.'inc/assets/css/blue.css';
       return apply_filters ( 'tc_active_skin' , $tc_active_skin );
     }
 

@@ -33,6 +33,12 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.16 July 3rd 2014 =
+* improved : (php, css, js) better file structure. Every front end has been move iin /inc folder
+* improved : (php) init class and functions have been moved in /inc/init.php
+* improved : new theme screenshot
+* fixed : (php, class-content-slider.php#102) missing icon parameter has been added to wp_get_attachment_image()
+
 = 3.1.15 May 31st 2014 =
 * fixed : (css : editor-style.css) background default color flagged as !important
 * fixed : (php : class-content-headings.php) post edit button is displayed to author of the post and admin profiles Thanks to <a href="http://www.themesandco.com/author/eri_trabiccolo/">Rocco</a>
