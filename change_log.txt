@@ -13,3 +13,7 @@ Version: 2.0.1
 Version: 2.0.2	
 	
 	i) set fasterthemes.php file for wp-admin sub-menu
+
+Version: 2.0.3	
+	
+	i) set front-page.php as per template hierarchy
