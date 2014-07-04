@@ -17,3 +17,7 @@ Version: 2.0.2
 Version: 2.0.3	
 	
 	i) set front-page.php as per template hierarchy
+	
+Version: 2.0.4	
+	
+	i) Home page bug fixed
