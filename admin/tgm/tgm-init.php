@@ -14,11 +14,10 @@ function newsmag_recommended_plugins() {
 			'required' 	=> false,
 		),
 		array(
-            'name'               => 'Advanced Custom Fields Pro', // The plugin name.
-            'slug'               => 'acf5-beta-master', // The plugin slug (typically the folder name).
-            'source'             => 'https://github.com/AdvancedCustomFields/acf5-beta/archive/master.zip',
+            'name'               => 'Advanced Custom Fields', // The plugin name.
+            'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
             'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-            'external_url'       => 'https://github.com/AdvancedCustomFields/acf5-beta', // If set, overrides default API URL and points to an external URL.
+            'external_url'       => 'http://wordpress.org/plugins/advanced-custom-fields', // If set, overrides default API URL and points to an external URL.
         ),
 
         array(

@@ -4,11 +4,16 @@
 require get_template_directory() . '/admin/admin-init.php';
 
 
-if ( ! isset( $content_width ) )
-	$content_width = 663;
+/* Homepage Builder Widget */
+require_once get_template_directory() . '/admin/homepage-widget.php';
 
 
 function newsmag_setup() {	
+
+	global $content_width;
+	if ( ! isset( $content_width ) ){
+		$content_width = 663; 
+	}
 	
 	load_theme_textdomain( 'newsmag', get_template_directory() . '/lang' );
 	
@@ -18,12 +23,7 @@ function newsmag_setup() {
 
 	add_theme_support('custom-background');
 
-	add_theme_support( 'post-thumbnails' );
-
-	add_theme_support( 'post-formats', array(
-		'audio', 'gallery', 'image', 'video'
-	) );
-
+	add_theme_support( 'post-thumbnails' );	
 
 	register_nav_menus(array(
 		'top-menu' => __( 'Top Menu', 'newsmag' ),
@@ -39,6 +39,7 @@ function newsmag_scripts_styles() {
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );	
+
 	
 	wp_enqueue_script('GoogleMaps','https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',array('jquery'),'',true);	
 
@@ -54,6 +55,16 @@ function newsmag_scripts_styles() {
 
 
 	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri());
+
+
+	wp_register_style('googleFontsRoboto','//fonts.googleapis.com/css?family=Roboto+Slab');
+    wp_enqueue_style( 'googleFontsRoboto'); 
+
+    wp_register_style('googleFontsPT','//fonts.googleapis.com/css?family=PT+Sans');
+    wp_enqueue_style( 'googleFontsPT');
+
+    wp_register_style('googleFontsOpen','//fonts.googleapis.com/css?family=Open+Sans');
+    wp_enqueue_style( 'googleFontsOpen');
 	
 }
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts_styles' );
@@ -61,14 +72,7 @@ add_action( 'wp_enqueue_scripts', 'newsmag_scripts_styles' );
 
 function newsmag_google_fonts() {
 
-			wp_register_style('googleFontsRoboto','//fonts.googleapis.com/css?family=Roboto+Slab');
-            wp_enqueue_style( 'googleFontsRoboto'); 
-
-            wp_register_style('googleFontsPT','//fonts.googleapis.com/css?family=PT+Sans');
-            wp_enqueue_style( 'googleFontsPT');
-
-            wp_register_style('googleFontsOpen','//fonts.googleapis.com/css?family=Open+Sans');
-            wp_enqueue_style( 'googleFontsOpen');
+			
 }
 
 add_action('wp_enqueue_scripts', 'newsmag_google_fonts');
@@ -146,23 +150,28 @@ add_filter('excerpt_more', 'newsmag_excerpt_more');
 
 function newsmag_widgets(){
 
+	register_sidebar(array(
+		'id'			=> 'homepage',
+		'name' 			=> __('Build Your Homepage','newsmag'),
+		'description'	=> __('Build your homepage to use this area. But first, create a homepage template. Dashboard > Pages > Add New > Template > Homepage','newsmag')
+		));
 		
 
 	register_sidebar(array(
-		'id'          => 'sidebar',
-	    'name'        => __( 'Right Sidebar', 'newsmag' ),
-	    'description' => __( 'This widget is located right side as sidebar.', 'newsmag' ),
-	    'before_widget' => '<div class="widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'id'         	 => 'sidebar',
+	    'name'       	 => __( 'Right Sidebar', 'newsmag' ),
+	    'description' 	 => __( 'This widget is located right side as sidebar.', 'newsmag' ),
+	    'before_widget'	 => '<div class="widget">',
+		'after_widget' 	 => '</div>',
+		'before_title' 	 => '<h3>',
+		'after_title'  	 => '</h3>',
 		));
 
 
 	register_sidebar(array(
-		'id'          => 'footer-1',
-	    'name'        => __( 'Footer 1', 'newsmag' ),
-	    'description' => __( 'This widget is located footer.', 'newsmag' ),
+		'id'         	=> 'footer-1',
+	    'name'       	=> __( 'Footer 1', 'newsmag' ),
+	    'description' 	=> __( 'This widget is located footer.', 'newsmag' ),
 	    'before_widget' => '<div class="widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -171,9 +180,20 @@ function newsmag_widgets(){
 
 
 	register_sidebar(array(
-		'id'          => 'footer-2',
-	    'name'        => __( 'Footer 2', 'newsmag' ),
-	    'description' => __( 'This widget is located footer.', 'newsmag' ),
+		'id'         	 => 'footer-2',
+	    'name'      	 => __( 'Footer 2', 'newsmag' ),
+	    'description'	 => __( 'This widget is located footer.', 'newsmag' ),
+	    'before_widget'	 => '<div class="widget">',
+		'after_widget' 	 => '</div>',
+		'before_title' 	 => '<h3 class="widget-title">',
+		'after_title' 	 => '</h3>',
+		));
+
+
+	register_sidebar(array(
+		'id'         	=> 'footer-3',
+	    'name'       	=> __( 'Footer 3', 'newsmag' ),
+	    'description'	=> __( 'This widget is located footer.', 'newsmag' ),
 	    'before_widget' => '<div class="widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -182,25 +202,15 @@ function newsmag_widgets(){
 
 
 	register_sidebar(array(
-		'id'          => 'footer-3',
-	    'name'        => __( 'Footer 3', 'newsmag' ),
-	    'description' => __( 'This widget is located footer.', 'newsmag' ),
+		'id'         	=> 'footer-4',
+	    'name'       	=> __( 'Footer 4', 'newsmag' ),
+	    'description'	=> __( 'This widget is located footer.', 'newsmag' ),
 	    'before_widget' => '<div class="widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 		));
 
-
-	register_sidebar(array(
-		'id'          => 'footer-4',
-	    'name'        => __( 'Footer 4', 'newsmag' ),
-	    'description' => __( 'This widget is located footer.', 'newsmag' ),
-	    'before_widget' => '<div class="widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-		));
 
 
 }
@@ -258,7 +268,8 @@ function newsmag_widget_init() {
 
 	require_once get_template_directory() . '/admin/widgets.php';
 	register_widget( 'Newsmag_Flickr_Widget' );	
-	register_widget( 'Newsmag_PopularPosts_Widget' );	
+	register_widget( 'Newsmag_PopularPosts_Widget' );
+	register_widget('homepage_builder');	
 
 }
 
@@ -267,361 +278,90 @@ add_action( 'widgets_init', 'newsmag_widget_init' );
 
 
 
-define( 'ACF_LITE' , true );
+
+define('ACF_LITE',true);
 
 
-
-if( function_exists('register_field_group') ):
-
-register_field_group(array (
-	'key' => 'group_5392cbb2d4d33',
-	'title' => 'Audio',
-	'fields' => array (
-		array (
-			'key' => 'field_5392ceda5d9a3',
-			'label' => 'Audio',
-			'name' => 'audio',
-			'prefix' => '',
-			'type' => 'oembed',
-			'instructions' => 'This field supports Mixcloud, Rdio, SoundCloud and Spotify',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'width' => 663,
-			'height' => 200,
-		),
-	),
-	'location' => array (
-		array (
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_google-maps',
+		'title' => 'Google Maps',
+		'fields' => array (
 			array (
-				'param' => 'post_format',
-				'operator' => '==',
-				'value' => 'audio',
+				'key' => 'field_53b70abfbe7f4',
+				'label' => 'Add Google Map',
+				'name' => 'google_maps',
+				'type' => 'google_map',
+				'center_lat' => 39,
+				'center_lng' => 35,
+				'zoom' => 6,
+				'height' => '',
 			),
 		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_539304283b4c0',
-	'title' => 'Contact Form',
-	'fields' => array (
-		array (
-			'key' => 'field_5393042f04a5c',
-			'label' => 'Google Maps',
-			'name' => 'google_maps',
-			'prefix' => '',
-			'type' => 'google_map',
-			'instructions' => 'You can add to contact page where you are',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'center_lat' => '',
-			'center_lng' => '',
-			'zoom' => '',
-			'height' => '',
-		),
-	),
-	'location' => array (
-		array (
+		'location' => array (
 			array (
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'template-contact.php',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_5392d9fddeac9',
-	'title' => 'Gallery',
-	'fields' => array (
-		array (
-			'key' => 'field_5392da04153cc',
-			'label' => 'Gallery',
-			'name' => 'gallery',
-			'prefix' => '',
-			'type' => 'gallery',
-			'instructions' => 'You can create image gallery. If you type something in caption, it will appear below the per images.',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'min' => '',
-			'max' => '',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'post_format',
-				'operator' => '==',
-				'value' => 'gallery',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_5393413e7fd7c',
-	'title' => 'Homepage Builder',
-	'fields' => array (
-		array (
-			'key' => 'field_53934169df8a6',
-			'label' => 'Home Page Builder',
-			'name' => 'home_page_builder',
-			'prefix' => '',
-			'type' => 'repeater',
-			'instructions' => 'Click the Add Block button to add a new block to homepage. Click the minus sign of the	block to delete. You can also drag and drop the blocks',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'min' => '',
-			'max' => '',
-			'layout' => 'row',
-			'button_label' => 'Add Block',
-			'sub_fields' => array (
 				array (
-					'key' => 'field_539341c14a973',
-					'label' => 'Title',
-					'name' => 'title',
-					'prefix' => '',
-					'type' => 'text',
-					'instructions' => 'Set the title of the content block.	If you leave this empty, it will appear \'Category\' ( No need the title Slider and Single Post Banner )',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'column_width' => '',
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-					'formatting' => 'html',
-					'readonly' => 0,
-					'disabled' => 0,
-				),
-				array (
-					'key' => 'field_539341d44a974',
-					'label' => 'Filter by Categories',
-					'name' => 'filter_by_categories',
-					'prefix' => '',
-					'type' => 'taxonomy',
-					'instructions' => 'Filter posts by a category.',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'column_width' => '',
-					'taxonomy' => 'category',
-					'field_type' => 'select',
-					'allow_null' => 0,
-					'load_save_terms' => 0,
-					'return_format' => 'id',
-					'multiple' => 0,
-				),
-				array (
-					'key' => 'field_539341f34a975',
-					'label' => 'Style',
-					'name' => 'style',
-					'prefix' => '',
-					'type' => 'select',
-					'instructions' => 'Select a style',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'column_width' => '',
-					'choices' => array (
-						'thumbnails_one' => 'Small Thumbnail',
-						'one_column' => 'One Column',
-						'two_columns' => 'Two Columns',
-						'post_banner' => 'Single Post Banner',
-						'slick_slider' => 'Slider',
-					),
-					'default_value' => 'Select',
-					'allow_null' => 0,
-					'multiple' => 0,
-					'ui' => 0,
-					'ajax' => 0,
-					'placeholder' => '',
-					'disabled' => 0,
-					'readonly' => 0,
-				),
-				array (
-					'key' => 'field_5393423e4a976',
-					'label' => 'Posts to show',
-					'name' => 'posts_to_show',
-					'prefix' => '',
-					'type' => 'number',
-					'instructions' => 'Set the maximum number of posts to show',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'column_width' => '',
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'min' => 1,
-					'max' => 20,
-					'step' => '',
-					'readonly' => 0,
-					'disabled' => 0,
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-contact.php',
+					'order_no' => 0,
+					'group_no' => 0,
 				),
 			),
 		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'template-homepage.php',
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
 			),
 		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_5392d34cd151a',
-	'title' => 'Image',
-	'fields' => array (
-		array (
-			'key' => 'field_5392d35c5cdcc',
-			'label' => 'Image',
-			'name' => 'image',
-			'prefix' => '',
-			'type' => 'image',
-			'instructions' => 'You can upload a single image. ',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'return_format' => 'array',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-		),
-	),
-	'location' => array (
-		array (
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_slider-option',
+		'title' => 'Slider Option',
+		'fields' => array (
 			array (
-				'param' => 'post_format',
-				'operator' => '==',
-				'value' => 'image',
+				'key' => 'field_53b706d16c610',
+				'label' => 'Add to Slider',
+				'name' => 'slider_one_check',
+				'type' => 'true_false',
+				'instructions' => 'Enable Slider ?',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_53b707676c611',
+				'label' => 'Slider Image',
+				'name' => 'slider_one_image',
+				'type' => 'image',
+				'instructions' => 'Add the image to slider ',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
 			),
 		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_53932669a2e5a',
-	'title' => 'Slider Image',
-	'fields' => array (
-		array (
-			'key' => 'field_539326750f3d8',
-			'label' => 'Slider',
-			'name' => 'slider_one_check',
-			'prefix' => '',
-			'type' => 'true_false',
-			'instructions' => 'Enable Slide for this post ?',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'message' => '',
-			'default_value' => 0,
-		),
-		array (
-			'key' => 'field_539326cd0f3d9',
-			'label' => '',
-			'name' => 'slider_one_image',
-			'prefix' => '',
-			'type' => 'image',
-			'instructions' => 'Add image for this post',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'return_format' => 'array',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-		),
-	),
-	'location' => array (
-		array (
+		'location' => array (
 			array (
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
 			),
 		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-register_field_group(array (
-	'key' => 'group_5392e10a8ef57',
-	'title' => 'Video',
-	'fields' => array (
-		array (
-			'key' => 'field_5392e12a85615',
-			'label' => 'Video',
-			'name' => 'video',
-			'prefix' => '',
-			'type' => 'oembed',
-			'instructions' => 'You can enter video url. ',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'width' => '',
-			'height' => 450,
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'post_format',
-				'operator' => '==',
-				'value' => 'video',
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
 			),
 		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-));
-
-endif;
-
-
-
-
-
-
+		'menu_order' => 0,
+	));
+}
 
 
 

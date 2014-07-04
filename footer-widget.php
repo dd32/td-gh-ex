@@ -5,9 +5,6 @@
 				<div class="main-footer-line"></div>
 
 			<?php } ?>
-
-
-
 			
 
 			<div class="col-sm-3">

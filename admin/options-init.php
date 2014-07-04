@@ -403,8 +403,8 @@ if (!class_exists('newsmag_Redux_Framework_config')) {
   ),
   'intro_text' => 'Theme by Burak Aydin',
   'last_tab' => '1',
-  'menu_title' => 'Newsmag Option',
-  'menu_type' => 'menu',
+  'menu_title' => 'Newsmag Options',
+  'menu_type' => 'submenu',
   'output' => '1',
   'output_tag' => '1',
   'page_icon' => 'icon-themes',
@@ -412,7 +412,7 @@ if (!class_exists('newsmag_Redux_Framework_config')) {
   'page_priority' => '61',
   'page_permissions' => 'manage_options',
   'page_slug' => '_options',
-  'page_title' => 'Newsmag Option',
+  'page_title' => 'Newsmag Options',
   'save_defaults' => '1',
 );
 

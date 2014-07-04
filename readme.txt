@@ -46,8 +46,8 @@ License under the WTFPL
 
 
 == Screenshot images ==
-Background image source : http://pixabay.com/en/manhattan-empire-state-building-336708/
-Licensed under Creative Commons Deed CC0 
+Background image source : http://publicdomainarchive.com/public-domain-images-high-quality-free-photos/
+Licensed under CC0 1.0 Universal (CC0 1.0)
 
 WordPress Test Data is used for other images on screenshot
 https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml
