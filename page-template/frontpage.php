@@ -1,13 +1,7 @@
 <?php
 /*
-* Front Page template file
+* Template Name: Home Page
 */
-?>
-<?php
-if ( 'page' != get_option( 'show_on_front' ) ) {
-	include( get_home_template() );
-	exit;
-}
 ?>
 <?php get_header(); 
 $generator_options = get_option( 'faster_theme_options' );
