@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 23:10+0545\n"
-"PO-Revision-Date: 2014-06-13 23:10+0545\n"
+"POT-Creation-Date: 2014-07-06 01:24+0545\n"
+"PO-Revision-Date: 2014-07-06 01:24+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -450,56 +450,56 @@ msgstr "ID"
 msgid "Name"
 msgstr "名前"
 
-#: ../functions.php:957
+#: ../functions.php:957 ../inc/theme-options.php:883
 msgid "Email"
 msgstr "メールアドレス"
 
-#: ../functions.php:1324
+#: ../functions.php:1329
 msgid "Primary menu"
 msgstr "第1メニュー"
 
-#: ../functions.php:1326 ../functions.php:1359
+#: ../functions.php:1331 ../functions.php:1364
 msgid "Skip to primary content"
 msgstr "第1メニューのコンテンツまでスキップ"
 
-#: ../functions.php:1327 ../functions.php:1360
+#: ../functions.php:1332 ../functions.php:1365
 msgid "Skip to secondary content"
 msgstr "第2メニューのコンテンツまでスキップ"
 
-#: ../functions.php:1357
+#: ../functions.php:1362
 msgid "Secondary menu"
 msgstr "第2メニュー"
 
-#: ../functions.php:1379
+#: ../functions.php:1384
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1383
+#: ../functions.php:1388
 msgid ". All Rights Reserved."
 msgstr ". All Rights Reserved."
 
-#: ../functions.php:1386
+#: ../functions.php:1391
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1386
+#: ../functions.php:1391
 msgid "Powered by WordPress"
 msgstr "Powered by WordPress"
 
-#: ../functions.php:1386
+#: ../functions.php:1391
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"
 
-#: ../functions.php:1388 ../inc/theme-options.php:660
+#: ../functions.php:1393 ../inc/theme-options.php:631
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1388
+#: ../functions.php:1393
 msgid "Theme Catch Box by Catch Themes"
 msgstr "テーマ Catch Box by Catch Themes"
 
-#: ../functions.php:1388
+#: ../functions.php:1393
 #, php-format
 msgid "Theme: %s"
 msgstr "テーマ：%s"
@@ -530,443 +530,435 @@ msgstr ""
 "%5$s</a>。ギャラリー <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
 "\">%8$s</a>"
 
-#: ../inc/theme-options.php:104
+#: ../inc/theme-options.php:84
 msgid "Favicon URL"
 msgstr "ファビコン URL"
 
-#: ../inc/theme-options.php:113
+#: ../inc/theme-options.php:93
 msgid "Web Clip Icon URL"
 msgstr "ウェブクリップアイコン URL"
 
-#: ../inc/theme-options.php:122
+#: ../inc/theme-options.php:102
 msgid "Color Scheme"
 msgstr "配色"
 
-#: ../inc/theme-options.php:130
+#: ../inc/theme-options.php:110
 msgid "Link Color"
 msgstr "リンクつきテキストの色"
 
-#: ../inc/theme-options.php:138
+#: ../inc/theme-options.php:118
 msgid "Default Layout"
 msgstr "デフォルトのレイアウト"
 
-#: ../inc/theme-options.php:146
+#: ../inc/theme-options.php:126
 msgid "Content layout"
 msgstr "コンテンツのレイアウト"
 
-#: ../inc/theme-options.php:154
+#: ../inc/theme-options.php:134
 msgid "Excerpt Length in Words"
 msgstr "抜粋の文字数"
 
-#: ../inc/theme-options.php:162
+#: ../inc/theme-options.php:142
 msgid "Feed Redirect URL"
 msgstr "フィードリダイレクトURL"
 
-#: ../inc/theme-options.php:170
+#: ../inc/theme-options.php:150
 msgid "Move Site Title and Tagline?"
 msgstr "タイトルとキャッチフレーズを上に移動"
 
-#: ../inc/theme-options.php:178
+#: ../inc/theme-options.php:158
 msgid "Default Display Text in Search"
 msgstr "検索フィールドにあらかじめ表示される文字列"
 
-#: ../inc/theme-options.php:186
+#: ../inc/theme-options.php:166
 msgid "Disable Search in Header?"
 msgstr "ヘッダー内での検索を無効化する？"
 
-#: ../inc/theme-options.php:194
+#: ../inc/theme-options.php:174
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 msgstr "モバイル機器でも、2つめのメニューやフッターメニューを有効化する？"
 
-#: ../inc/theme-options.php:202
+#: ../inc/theme-options.php:182
 msgid "Custom CSS Styles"
 msgstr "カスタム CSS スタイル"
 
-#: ../inc/theme-options.php:239 ../inc/theme-options.php:240
-#: ../inc/theme-options.php:687
+#: ../inc/theme-options.php:219 ../inc/theme-options.php:220
+#: ../inc/theme-options.php:658
 msgid "Theme Options"
 msgstr "テーマオプション"
 
-#: ../inc/theme-options.php:262
+#: ../inc/theme-options.php:242
 msgid "Add/Change Favicon"
 msgstr "ファビコンの追加／変更"
 
-#: ../inc/theme-options.php:276
+#: ../inc/theme-options.php:256
 msgid "Add/Change Web Clip Icon"
 msgstr "ウェブクリップアイコンの追加／変更"
 
-#: ../inc/theme-options.php:290
+#: ../inc/theme-options.php:270
 msgid "Light"
 msgstr "明るい"
 
-#: ../inc/theme-options.php:296
+#: ../inc/theme-options.php:276
 msgid "Dark"
 msgstr "暗い"
 
-#: ../inc/theme-options.php:302
+#: ../inc/theme-options.php:282
 msgid "Blue"
 msgstr "青"
 
-#: ../inc/theme-options.php:308
+#: ../inc/theme-options.php:288
 msgid "Green"
 msgstr "緑"
 
-#: ../inc/theme-options.php:314
+#: ../inc/theme-options.php:294
 msgid "Red"
 msgstr "赤"
 
-#: ../inc/theme-options.php:320
+#: ../inc/theme-options.php:300
 msgid "Brown"
 msgstr "茶色"
 
-#: ../inc/theme-options.php:326
+#: ../inc/theme-options.php:306
 msgid "Orange"
 msgstr "Orange"
 
-#: ../inc/theme-options.php:345
+#: ../inc/theme-options.php:325
 msgid "Content on left"
 msgstr "コンテンツを左に配置"
 
-#: ../inc/theme-options.php:350
+#: ../inc/theme-options.php:330
 msgid "Content on right"
 msgstr "コンテンツを右に配置"
 
-#: ../inc/theme-options.php:355
+#: ../inc/theme-options.php:335
 msgid "One-column, no sidebar"
 msgstr "1カラム、サイドバーなし"
 
-#: ../inc/theme-options.php:373
+#: ../inc/theme-options.php:353
 msgid "Show excerpt"
 msgstr "抜粋を表示"
 
-#: ../inc/theme-options.php:378
+#: ../inc/theme-options.php:358
 msgid "Show full content"
 msgstr "全文を表示"
 
-#: ../inc/theme-options.php:479
+#: ../inc/theme-options.php:459
 msgid "Select a Color"
 msgstr "色を選択"
 
-#: ../inc/theme-options.php:482
+#: ../inc/theme-options.php:462
 #, php-format
 msgid "Default color: %s"
 msgstr "デフォルトの色：%s"
 
-#: ../inc/theme-options.php:498
+#: ../inc/theme-options.php:478
 msgid "Words"
 msgstr "文字"
 
-#: ../inc/theme-options.php:526
+#: ../inc/theme-options.php:506
 msgid "Check to move above the Header/Logo Image"
 msgstr "チェックするとヘッダー／ロゴイメージの上に移動する"
 
-#: ../inc/theme-options.php:556
+#: ../inc/theme-options.php:536
 msgid "Check to Disable"
 msgstr "チェックすると無効化"
 
-#: ../inc/theme-options.php:571
+#: ../inc/theme-options.php:551
 msgid "Check to Enable"
 msgstr "チェックすると有効化"
 
-#: ../inc/theme-options.php:585
+#: ../inc/theme-options.php:565
 msgid "CSS Tutorial from W3Schools."
 msgstr "W3Schools の CSS チュートリアル"
 
-#: ../inc/theme-options.php:585
+#: ../inc/theme-options.php:565
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/theme-options.php:585
+#: ../inc/theme-options.php:565
 msgid "CSS Tutorial"
 msgstr "CSS チュートリアル"
 
-#: ../inc/theme-options.php:585
+#: ../inc/theme-options.php:565
 msgid "Click Here to Read"
 msgstr "読む"
 
-#: ../inc/theme-options.php:650
-msgid "http://facebook.com/catchthemes"
-msgstr "http://facebook.com/catchthemes"
-
-#: ../inc/theme-options.php:652
-msgid "https://twitter.com/catchthemes"
-msgstr "https://twitter.com/catchthemes"
-
-#: ../inc/theme-options.php:658
+#: ../inc/theme-options.php:629
 msgid "Theme Options By"
 msgstr "テーマオプション "
 
-#: ../inc/theme-options.php:660 ../inc/theme-options.php:661
+#: ../inc/theme-options.php:631 ../inc/theme-options.php:632
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:638
 msgid "http://catchthemes.com/themes/catch-box-pro/"
 msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
-#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:638
 msgid "Upgrade to Catch Box Pro"
 msgstr "Catch Box Pro にアップグレード"
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:643
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/theme-options.php:672
+#: ../inc/theme-options.php:643
 msgid "Donate"
 msgstr "寄付"
 
-#: ../inc/theme-options.php:673
+#: ../inc/theme-options.php:644
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/support/"
 
-#: ../inc/theme-options.php:673
+#: ../inc/theme-options.php:644
 msgid "Support"
 msgstr "サポート"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:645
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
 msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:645
 msgid "Support Forum"
 msgstr "サポートフォーラム"
 
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:646
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
 msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:646
 msgid "Theme Instructions"
 msgstr "テーマの設定方法"
 
-#: ../inc/theme-options.php:676
+#: ../inc/theme-options.php:647
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: ../inc/theme-options.php:676
+#: ../inc/theme-options.php:647
 msgid "Like Catch Themes on Facebook"
 msgstr "Facebook で Catch Themes に、いいね！ する"
 
-#: ../inc/theme-options.php:676 ../inc/theme-options.php:805
+#: ../inc/theme-options.php:647 ../inc/theme-options.php:776
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/theme-options.php:677
+#: ../inc/theme-options.php:648
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: ../inc/theme-options.php:677
+#: ../inc/theme-options.php:648
 msgid "Follow Catch Themes on Twitter"
 msgstr "Twitter で CatchThemes をフォローする"
 
-#: ../inc/theme-options.php:677 ../inc/theme-options.php:810
+#: ../inc/theme-options.php:648 ../inc/theme-options.php:781
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:649
 msgid "http://wordpress.org/support/view/theme-reviews/catch-box/"
 msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:649
 msgid "Rate us 5 Star on WordPress"
 msgstr "ぜひ5つ星の評価をお願いします"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:649
 msgid "5 Star Rating"
 msgstr "5つ星で評価"
 
-#: ../inc/theme-options.php:688
+#: ../inc/theme-options.php:659
 msgid "Featured Post Slider"
 msgstr "スライドショー"
 
-#: ../inc/theme-options.php:689
+#: ../inc/theme-options.php:660
 msgid "Social Links"
 msgstr "ソーシャルリンク"
 
-#: ../inc/theme-options.php:690
+#: ../inc/theme-options.php:661
 msgid "Webmaster Tools"
 msgstr "ウェブ管理者用ツール"
 
-#: ../inc/theme-options.php:717
+#: ../inc/theme-options.php:688
 msgid "Slider Options"
 msgstr "スライドショーのオプション"
 
-#: ../inc/theme-options.php:721
+#: ../inc/theme-options.php:692
 msgid "Exclude Slider post from Home page posts:"
 msgstr "スライドショーに表示される記事は、一覧表示から除く"
 
-#: ../inc/theme-options.php:723
+#: ../inc/theme-options.php:694
 msgid "Check to disable"
 msgstr "チェックして無効化"
 
-#: ../inc/theme-options.php:726
+#: ../inc/theme-options.php:697
 msgid "Number of Slides"
 msgstr "スライドショーの枚数"
 
-#: ../inc/theme-options.php:732
+#: ../inc/theme-options.php:703
 msgid "Featured Post ID"
 msgstr "投稿のID"
 
-#: ../inc/theme-options.php:734
+#: ../inc/theme-options.php:705
 msgid "Click Here To Edit"
 msgstr "クリックして編集"
 
-#: ../inc/theme-options.php:740
+#: ../inc/theme-options.php:711
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
 msgstr ""
 "<strong>注意</strong>：スライドショーに表示させたい投稿のIDを指定します。"
 
-#: ../inc/theme-options.php:741 ../inc/theme-options.php:787
-#: ../inc/theme-options.php:914 ../inc/theme-options.php:955
+#: ../inc/theme-options.php:712 ../inc/theme-options.php:758
+#: ../inc/theme-options.php:891 ../inc/theme-options.php:932
 msgid "Save"
 msgstr "変更を保存"
 
-#: ../inc/theme-options.php:745
+#: ../inc/theme-options.php:716
 msgid "Slider Effect Options"
 msgstr "スライドショーの効果のオプション"
 
-#: ../inc/theme-options.php:750
+#: ../inc/theme-options.php:721
 msgid "Transition Effect:"
 msgstr "表示遷移時の効果："
 
-#: ../inc/theme-options.php:755
+#: ../inc/theme-options.php:726
 msgid "fade"
 msgstr "フェード"
 
-#: ../inc/theme-options.php:756
+#: ../inc/theme-options.php:727
 msgid "wipe"
 msgstr "ワイプ"
 
-#: ../inc/theme-options.php:757
+#: ../inc/theme-options.php:728
 msgid "scrollUp"
 msgstr "上にスクロール"
 
-#: ../inc/theme-options.php:758
+#: ../inc/theme-options.php:729
 msgid "scrollDown"
 msgstr "下にスクロール"
 
-#: ../inc/theme-options.php:759
+#: ../inc/theme-options.php:730
 msgid "scrollLeft"
 msgstr "左にスクロール"
 
-#: ../inc/theme-options.php:760
+#: ../inc/theme-options.php:731
 msgid "scrollRight"
 msgstr "右にスクロール"
 
-#: ../inc/theme-options.php:761
+#: ../inc/theme-options.php:732
 msgid "blindX"
 msgstr "ブラインドX"
 
-#: ../inc/theme-options.php:762
+#: ../inc/theme-options.php:733
 msgid "blindY"
 msgstr "ブラインドY"
 
-#: ../inc/theme-options.php:763
+#: ../inc/theme-options.php:734
 msgid "blindZ"
 msgstr "ブラインドZ"
 
-#: ../inc/theme-options.php:764
+#: ../inc/theme-options.php:735
 msgid "cover"
 msgstr "カバー"
 
-#: ../inc/theme-options.php:765
+#: ../inc/theme-options.php:736
 msgid "shuffle"
 msgstr "シャッフル"
 
-#: ../inc/theme-options.php:771
+#: ../inc/theme-options.php:742
 msgid "Transition Delay"
 msgstr "投稿を表示している時間"
 
-#: ../inc/theme-options.php:774 ../inc/theme-options.php:783
+#: ../inc/theme-options.php:745 ../inc/theme-options.php:754
 msgid "second(s)"
 msgstr "秒"
 
-#: ../inc/theme-options.php:780
+#: ../inc/theme-options.php:751
 msgid "Transition Length"
 msgstr "遷移にかける時間"
 
-#: ../inc/theme-options.php:816
+#: ../inc/theme-options.php:787
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:822
+#: ../inc/theme-options.php:793
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:828
+#: ../inc/theme-options.php:799
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:834
+#: ../inc/theme-options.php:805
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:840
+#: ../inc/theme-options.php:811
 msgid "RSS Feed"
 msgstr "RSS フィード"
 
-#: ../inc/theme-options.php:846
+#: ../inc/theme-options.php:817
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:852
+#: ../inc/theme-options.php:823
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:858
+#: ../inc/theme-options.php:829
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:864
+#: ../inc/theme-options.php:835
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:870
+#: ../inc/theme-options.php:841
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:876
+#: ../inc/theme-options.php:847
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:882
+#: ../inc/theme-options.php:853
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:888
+#: ../inc/theme-options.php:859
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/theme-options.php:894
+#: ../inc/theme-options.php:865
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/theme-options.php:900
+#: ../inc/theme-options.php:871
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:906
+#: ../inc/theme-options.php:877
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/theme-options.php:913
+#: ../inc/theme-options.php:890
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr "<strong>注意：</strong> 各 SNS のサイトの URL を入力してください"
 
-#: ../inc/theme-options.php:928
+#: ../inc/theme-options.php:905
 msgid "Header and Footer Code"
 msgstr "ヘッダー／フッター用コード"
 
-#: ../inc/theme-options.php:933
+#: ../inc/theme-options.php:910
 msgid "Code to display on Header"
 msgstr "ヘッダーに表示されるコード"
 
-#: ../inc/theme-options.php:940
+#: ../inc/theme-options.php:917
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -974,11 +966,11 @@ msgstr ""
 "注意：Goolge、Facebookなどから入手したスクリプトをここに入力すると、ヘッダー"
 "の位置にロードされます"
 
-#: ../inc/theme-options.php:944
+#: ../inc/theme-options.php:921
 msgid "Code to display on Footer"
 msgstr "フッターに表示されるコード"
 
-#: ../inc/theme-options.php:951
+#: ../inc/theme-options.php:928
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1051,3 +1043,9 @@ msgstr "次 <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "タグアーカイブ：%s"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"

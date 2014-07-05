@@ -56,6 +56,11 @@ dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, ri
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 2.9.7
+* Added email in social link option
+* Fixed Word-Wrap css issue
+* Optimized theme options panel
+
 Version 2.9.6.1
 * Fixed french language issue with Structured Data Test
 * Fixed Blog page template

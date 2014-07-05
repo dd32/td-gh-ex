@@ -26,26 +26,6 @@ function catchbox_admin_enqueue_scripts( $hook_suffix ) {
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_enqueue_scripts' );
 
-/* 
- * Admin Social Links
- * use facebook and twitter scripts
- */
-function catchbox_admin_social() { ?>
-<!-- Start Social scripts -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=276203972392824";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<!-- End Social scripts -->
-<?php
-}
-add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_social' );
-
 
 /**
  * Register the form setting for our catchbox_options array.
@@ -644,15 +624,6 @@ function catchbox_theme_options_render_page() {
 	<div id="catchthemes" class="wrap">
     
 			<div id="theme-option-header">
-            	<div id="theme-social">
-                	<ul>
-            			<li class="widget-fb">
-                            <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" class="fb-like"></div></li>
-                     	<li class="widget-tw">
-                            <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','catchbox')); ?>">Follow @catchthemes</a>
-            			</li>
-                   	</ul>
-               	</div><!-- #theme-social -->
             
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catchbox' ); ?></h2>
@@ -908,6 +879,12 @@ function catchbox_theme_options_render_page() {
                                         </td>
                                     </tr>
                                     
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Email', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_email]" value="<?php if ( isset( $options[ 'social_email' ] ) ) echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                        </td>
+                                    </tr>                                    
+                                    
                                 </tbody>
                             </table>
                             <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
@@ -1101,7 +1078,10 @@ function catchbox_options_social_links_validation( $options ) {
 		$options_validated[ 'social_skype' ] = sanitize_text_field( $options[ 'social_skype' ] );
 	//Soundcloud
 	if( isset( $options[ 'social_soundcloud' ] ) )
-		$options_validated[ 'social_soundcloud' ] = esc_url_raw( $options[ 'social_soundcloud' ] );		
+		$options_validated[ 'social_soundcloud' ] = esc_url_raw( $options[ 'social_soundcloud' ] );	
+	//Email
+	if( isset( $options[ 'social_email' ] ) )
+		$options_validated[ 'social_email' ] = sanitize_email( $options[ 'social_email' ] );			
 	
 	//Clearing the theme option cache
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }

@@ -1166,8 +1166,13 @@ function catchbox_socialprofile() {
 					
 					//Soundcloud
 					if ( !empty( $options[ 'social_soundcloud' ] ) ) {
-						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'.$options[ 'social_soundcloud' ].'" title="Instagram" target="_blank">Soundcloud</a></li>';
+						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'.$options[ 'social_soundcloud' ].'" title="Soundcloud" target="_blank">Soundcloud</a></li>';
 					}
+					
+					//Email
+					if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {	
+						$catchbox_socialprofile .= '<li class="email"><a href="mailto:'.$options[ 'social_email' ].'" title="Email" target="_blank">Email</a></li>';
+					}					
 					
 					$catchbox_socialprofile .= '
 				</ul>
