@@ -23,7 +23,7 @@ function adventurous_admin_scripts() {
 	wp_enqueue_script( 'adventurous_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 	wp_enqueue_script( 'adventurous_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	
-	wp_enqueue_style( 'adventurous_admin_style',get_template_directory_uri().'/inc/panel/admin.css', array( 'thickbox'), '1.0', 'screen' );
+	wp_enqueue_style( 'adventurous_admin_style',get_template_directory_uri().'/inc/panel/admin.min.css', array( 'thickbox'), '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'adventurous_admin_scripts');
@@ -46,27 +46,6 @@ function adventurous_options_menu() {
     );	
 
 }
-
-
-/* 
- * Admin Social Links
- * use facebook and twitter scripts
- */
-function adventurous_admin_social() { ?>
-<!-- Start Social scripts -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=276203972392824";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<!-- End Social scripts -->
-<?php
-}
-add_action('admin_print_styles-appearance_page_theme_options','adventurous_admin_social');
 
 
 /*
@@ -104,15 +83,6 @@ function adventurous_theme_options_do_page() {
             <?php endif; ?>            
             
 			<div id="theme-option-header">
-            	<div id="theme-social">
-                	<ul>
-            			<li class="widget-fb">
-                            <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','adventurous')); ?>" class="fb-like"></div></li>
-                     	<li class="widget-tw">
-                            <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','adventurous')); ?>">Follow @catchthemes</a>
-            			</li>
-                   	</ul>
-               	</div><!-- #theme-social -->
             
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'adventurous' ); ?></h2>

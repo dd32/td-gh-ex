@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/adventurous
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese and Hungarian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
-Version: 0.7
+Version: 0.8
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
@@ -771,30 +771,30 @@ img#wpstats {
 #header-menu #access {
 	float: left;
 }
-#header-right .widget .menu li {
+#header-right .widget ul.menu li {
 	display: inline-block;
+	float: left;
 	padding-right: 10px;
 	position: relative;	
 	line-height: 1.5;
 }
-#header-right .widget .menu a {
+#header-right .widget ul.menu a {
+	color: #757575;
 	display: block;
-	position: relative;
 	text-decoration: none;
 	white-space: nowrap;
 }
+#header-right .widget ul.menu ul li a {
+	padding: 10px;
+	width: 180px;
+	white-space: normal;
+}
 #header-right .widget ul.menu ul { 
-	width: 200px; 
-	background: #fff;
-	opacity: 0;
-	visibility: hidden; 
+	background: #fff; 
 	border-top: 3px solid #7c9b30; 
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-	-moz-transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out; 
-	transition: all 0.2s ease-in-out;
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 	
 	float: left;
 	margin: 0;
 	padding: 10px;
@@ -802,15 +802,13 @@ img#wpstats {
 	top: 44px;
 	left: -20px;
 	list-style: none;
+	opacity: 0;
+	visibility: hidden;
+	width: 200px; 
 	z-index: 99999;
 }
 .fixed-header #header-right .widget ul.menu ul {
 	top: 34px;	
-}
-#header-right .widget ul.menu ul li a {
-	padding: 10px;
-	width: 180px;
-	white-space: normal;
 }
 .fixed-header #header-right .widget ul.menu ul ul,
 #header-right .widget ul.menu ul ul {
@@ -889,6 +887,7 @@ img#wpstats {
 	top: 55px;	
 	left: 0;
 	list-style: none;
+	opacity: 0;
 	visibility: hidden;
 	width: 205px;
 	z-index: 99999;
@@ -902,6 +901,7 @@ img#wpstats {
 	border: none;
 }
 #secondary-menu ul.menu li:hover > ul {
+	opacity: 1;
 	visibility: visible;
 }
 #secondary-menu ul.menu li:hover > a,
@@ -1092,6 +1092,9 @@ img#wpstats {
 #featured-post .featued-content-wrap {
 	margin-left: -2%;
 }
+#featured-post.layout-three .featued-content-wrap {
+	margin-left: -2.3%;
+}
 #featured-post.featued-content-wrap {
 	display: block;
 	margin: 0 auto;
@@ -1112,8 +1115,8 @@ img#wpstats {
     width: 23%;
 }
 #featured-post.layout-three .post {
-    margin-left: 4%;
-    width: 29.3%;
+    margin-left: 2.3%;
+    width: 31%;
 }
 #featured-post.layout-four .post:nth-child(4n+1),
 #featured-post.layout-three .post:nth-child(3n+1) {
