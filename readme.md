@@ -33,6 +33,10 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.17 July 6rd 2014 =
+* fixed : back to previous screenshot
+
+
 = 3.1.16 July 3rd 2014 =
 * improved : (php, css, js) better file structure. Every front end has been move iin /inc folder
 * improved : (php) init class and functions have been moved in /inc/init.php

@@ -14,6 +14,7 @@ SNIPPETS : http://themesandco.com/code-snippets/
 HOOKS API : http://www.themesandco.com/customizr/hooks-api/
 
 
+
 ####################### Licenses #######################
 Unless otherwise specified, all the theme files, scripts and images
 are licensed under GNU General Public License version 2, see file license.txt.
@@ -33,9 +34,11 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.17 July 6rd 2014 =
+* fixed : back to previous screenshot
+
 = 3.1.16 July 3rd 2014 =
-* improved : (php, css, js) better file structure. Every front end has been move iin /inc folder
-* improved : (php) init class and functions have been moved in /inc/init.php
+* improved : (php, css, js) better file structure. Init and front end files have been moved in /inc folder
 * improved : new theme screenshot
 * fixed : (php, class-content-slider.php#102) missing icon parameter has been added to wp_get_attachment_image()
 
