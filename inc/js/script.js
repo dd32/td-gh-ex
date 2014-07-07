@@ -4,103 +4,52 @@
  * 
  */
 jQuery(document).ready(function($) {
-    //--slider
-//    resize_slider();
-
-    var currentSlide = 1;
-    var maxNum = 3;
-    var minNum = 1;
     
-    window.setInterval(function(){
-        slideUp();
-        init();
-    }, 4000);    
-    
-    init();
-    
-    $(".fa-chevron-right").click(function() {
-        slideUp();
-        init();
+    $('.sc-slider h1').not('.sc-slider li:first-child h1').hide();
+    $('.sc-slider').unslider({
+        speed: 500,
+        delay: 4000,
+        complete: function() {
+            $('.sc-slider h1').fadeIn(500).delay(2500).fadeOut(500);
+        },
+        keys: true, 
+        dots: true,
+        fluid: true,
     });
-    $(".fa-chevron-left").click(function() {
-        if (currentSlide > minNum) {
-            currentSlide--;
-        }else if(currentSlide === minNum){
-            currentSlide = maxNum;
-        }
-        init();
-    });
-
-
-    //show + hide chevrons when hover
-    $(".slider-slide").hover(function() {
-        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeIn(300);
-    }, function() {
-        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeOut(300);
+    $('.sc-slider li').hover(function(){
+        $('h1',this).stop(true,false).fadeIn(300);
     });
     
-    // don't run event when hover over the chevron
-//    $(".fa-chevron-right,.fa-chevron-left").hover(function(event) {
-//        event.stopPropagation();
-//    });
-
-    function init(){
-        hideSlides();
-        showSlide();
-    }
-    function slideUp(){
-         if (currentSlide < maxNum) {
-            currentSlide ++;
-        }else if(currentSlide === maxNum){
-            currentSlide = minNum;
-        }
-    }
-    
-
-    function hideSlides() {
-        $(".the-slider").children(".slider-slide").hide();
-    }
-    function showSlide() {
-        $(".the-slider #slide" + currentSlide).fadeIn(600);
-    }
 
     //--Match CTA Boxes height
     matchColHeights('.site-cta');
 
     //--CTA boxes
     $('.site-cta').hover(function() {
-        $(this).css({
-            'borderColor': '#ff6600'
-        });
+        $(this).addClass('sc-primary-border');
         $('.col-md-10', this).stop(true, false).animate({'bottom': '20px'}, 300);
-        $('.btn', this).stop(true,false).fadeIn(300);
-        $('h3', this).css({'color': '#ff6600'});
+        $('.btn', this).stop(true, false).fadeIn(300);
+        $('h3', this).addClass('sc-primary-color');
 
         $('.fa', this).css({
             'width': '85px',
             'height': '85px',
             'top': '-50px',
             'left': '-57px',
-            'line-height': '85px',
-            'color': '#ff6600',
-            'borderColor': '#ff6600'
-        });
+            'line-height': '85px'
+        }).addClass('sc-primary-color sc-primary-border');
     }, function() {
-        $(this).css({
-            'borderColor': '#444'
-        });
+        $(this).removeClass('sc-primary-border');
         $('.col-md-10', this).stop(true, false).animate({'bottom': '0'}, 300);
-        $('h3', this).css({'color': '#444'});
-        $('.btn', this).stop(true,false).fadeOut(300);
+        $('h3', this).removeClass('sc-primary-color');
+        $('.btn', this).stop(true, false).fadeOut(300);
         $('.fa', this).css({
             'width': '50px',
             'height': '50px',
             'top': '0',
             'left': '-40px',
             'line-height': '50px',
-            'color': '#444',
-            'borderColor': '#444'
-        });
+        }).removeClass('sc-primary-color sc-primary-border');
     });
 
 
