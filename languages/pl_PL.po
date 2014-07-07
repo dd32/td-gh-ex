@@ -1,363 +1,360 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2014-07-07 16:38+0200\n"
+"POT-Creation-Date: 2014-07-07 16:37+0200\n"
 "PO-Revision-Date: 2014-07-07 16:38+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
-"Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
-"Language: he\n"
+"Language-Team: Colorlib <info@colrolib.com>\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.5\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../404.php:11
 msgid "Error 404 - Page NOT Found"
-msgstr "שגיאה 404 - דף לא נמצא"
+msgstr "Błąd 404 - Strona nie została znaleziona"
 
 #: ../404.php:14
 msgid "It seems we can't find what you're looking for."
-msgstr "נראה שאנחנו לא מוצאים את מה שחיפשת."
+msgstr "Niestety nie możemy znaleźć tego, czego szukasz."
 
 #: ../404.php:15
 msgid "This might be because:"
-msgstr "ייתכן שזה בגלל:"
+msgstr "Przyczyną może być:"
 
 #: ../404.php:17
 msgid "You have typed the web address incorrectly"
-msgstr "הזנת כתובת אינטרנט שגויה"
+msgstr "Błędny adres witryny"
 
 #: ../404.php:18
 msgid "The page you were looking for may have been moved, updated or deleted."
-msgstr "הדף שחיפשת הועבר, עודכן או נמחק."
+msgstr ""
+"Strona, którą szukasz mogła zostać przeniesiona, zaktualizowana lub usunięta"
 
 #: ../404.php:20
 msgid "Please try the following:"
-msgstr "אנא נסה את:"
+msgstr "Spróbuj wykonać następujące kroki:"
 
 #: ../404.php:22
 msgid "Check for a mis-typed URL error"
-msgstr "בדוק את כתובת URL שהזנת."
+msgstr "Sprawdź poprawność adresu URL"
 
 #: ../404.php:23
 msgid "Press the refresh button on your browser."
-msgstr "לחץ על רענן בדפדפן שלך."
+msgstr "Kliknij przycisk odśwież"
 
 #: ../404.php:24
 msgid "Go back to"
-msgstr "חזור אל"
+msgstr "Wróć"
 
 #: ../404.php:24
 msgid "Homepage"
-msgstr "דף הבית"
+msgstr "Strona głowna"
 
 #: ../comments.php:24
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgstr "Odpowiedź do artykułu &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:27
 #, php-format
 msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgstr "%1$s odpowiedzi do artykułu &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:38
 msgid "Comment navigation"
-msgstr "ניווט להערות"
+msgstr "Komentarze"
 
 #: ../comments.php:39
-#, fuzzy
 msgid "&larr; Older Comments"
-msgstr "אין תגובות"
+msgstr "&larr; Starsze komentarze"
 
 #: ../comments.php:40
-#, fuzzy
 msgid "Newer Comments &rarr;"
-msgstr "אין תגובות"
+msgstr "Nowsze komentarze &rarr;"
 
 #: ../comments.php:47
 msgid "Comments are closed."
-msgstr "לא ניתן להוסיף תגובות."
+msgstr "Zablokowano możliwość dodawania komentarzy"
 
 #: ../functions.php:76
 msgid "Primary Menu"
-msgstr "תפריט ראשי"
+msgstr "Menu"
 
 #: ../library/functions/customizer.php:7
 msgid "Travelify Header Area"
-msgstr ""
+msgstr "Ustawienia nagłówka Travelify"
 
 #: ../library/functions/customizer.php:8
 msgid "Use the following settings change color for menu and website title"
-msgstr ""
+msgstr "Użyj tych ustawień, aby zmienic kolor menu i nazwy strony"
 
 #: ../library/functions/customizer.php:24
 msgid "Website Title Color"
-msgstr ""
+msgstr "Kolor nazwy strony"
 
 #: ../library/functions/customizer.php:44
 msgid "Website Title Hover Color"
-msgstr ""
+msgstr "Kolor podświetlenia nazwy strony"
 
 #: ../library/functions/customizer.php:64
-#, fuzzy
 msgid "Menu Bar Color"
-msgstr "תפריט ראשי"
+msgstr "Kolor przycisku menu"
 
 #: ../library/functions/customizer.php:83
 msgid "Menu Bar Hover Color"
-msgstr ""
+msgstr "Kolor podświetlenia przycisku menu"
 
 #: ../library/functions/customizer.php:102
 msgid "Menu Item Text Color"
-msgstr ""
+msgstr "Kolor tekstu menu"
 
 #: ../library/functions/customizer.php:122
 msgid "Social Icon Color"
-msgstr ""
+msgstr "Kolor ikonek serwisów społecznościowych"
 
 #: ../library/functions/customizer.php:131
 msgid "Travelify Element Color"
-msgstr ""
+msgstr "Ustawienia kolorów zawartości Travelify"
 
 #: ../library/functions/customizer.php:132
 msgid "Use the following settings change color for website elements"
-msgstr ""
+msgstr "Użyj tych ustawień, aby zmienić kolor elementów strony"
 
 #: ../library/functions/customizer.php:148
 msgid "Element Color"
-msgstr ""
+msgstr "Kolor przycisków"
 
 #: ../library/functions/customizer.php:168
 msgid "Element Hover Color"
-msgstr ""
+msgstr "Kolor podświetlenia przycisków"
 
 #: ../library/functions/customizer.php:188
 msgid "Wrapper Color"
-msgstr ""
+msgstr "Kolor - Wrapper"
 
 #: ../library/functions/customizer.php:208
-#, fuzzy
 msgid "Content Background Color"
-msgstr "תפריט ראשי"
+msgstr "Kolor zawartości tła"
 
 #: ../library/functions/customizer.php:217
 msgid "Travelify Typography Color"
-msgstr ""
+msgstr "Ustawienia kolorów czcionek Travelify"
 
 #: ../library/functions/customizer.php:218
 msgid ""
 "Use the following settings change color for typography such as links, "
 "headings and content"
 msgstr ""
+"Użyj tych ustawień, aby zmienic kolory linków, nagłówków lub zawartości"
 
 #: ../library/functions/customizer.php:234
 msgid "Entry Content Color"
-msgstr ""
+msgstr "Kolor tekstu zawartości"
 
 #: ../library/functions/customizer.php:253
 msgid "Header/Title Color"
-msgstr ""
+msgstr "Kolor tytułu/nagłówka"
 
 #: ../library/functions/customizer.php:273
 msgid "Link Color"
-msgstr ""
+msgstr "Kolor linków"
 
 #: ../library/functions/customizer.php:293
 msgid "Link Hover Color"
-msgstr ""
+msgstr "Kolor podświetlenia linków "
 
 #: ../library/functions/customizer.php:302
 msgid "Travelify Footer"
-msgstr ""
+msgstr "Ustawienia stopki Travelify"
 
 #: ../library/functions/customizer.php:303
 msgid "Use the following settings customize Footer"
-msgstr ""
+msgstr "Użyj tych ustawień, aby dostosować Stopkę"
 
 #: ../library/functions/customizer.php:317
-#, fuzzy
 msgid "Copyright text"
-msgstr "Copyright &copy;"
+msgstr "Prawa autorskie"
 
 #: ../library/functions/functions.php:296
 #: ../library/functions/functions.php:310
-#, fuzzy
 msgid "Navigation"
-msgstr "ניווט להערות"
+msgstr "Nawigacja"
 
 #: ../library/functions/functions.php:362
 #: ../library/panel/theme-options.php:291
 msgid "Left Sidebar"
-msgstr ""
+msgstr "Lewy pasek"
 
 #: ../library/functions/functions.php:364
 msgid "Shows widgets at Left side."
-msgstr ""
+msgstr "Pokazuj widgety po lewej"
 
 #: ../library/functions/functions.php:373
 #: ../library/panel/theme-options.php:295
 msgid "Right Sidebar"
-msgstr ""
+msgstr "Prawy pasek"
 
 #: ../library/functions/functions.php:375
 msgid "Shows widgets at Right side."
-msgstr ""
+msgstr "Pokazuj widgety po prawej"
 
 #: ../library/functions/functions.php:384
 msgid "Footer"
-msgstr ""
+msgstr "Stopka"
 
 #: ../library/functions/functions.php:386
 msgid "Shows widgets at footer."
-msgstr ""
+msgstr "Pokazuj widgety w stopce"
 
 #: ../library/functions/shortcodes.php:49
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: ../library/functions/shortcodes.php:58
 #: ../library/panel/theme-options.php:125
 msgid "Colorlib"
-msgstr ""
+msgstr "Colorlib"
 
 #: ../library/panel/metaboxes.php:16
 msgid ""
 "Select layout for this specific Page only ( Note: This setting only reflects "
 "if page Template is set as Default Template and Blog Type Templates.)"
-msgstr ""
+msgstr "Wybierz wygląd jedynie dla tej strony"
 
 #: ../library/panel/metaboxes.php:22
 msgid "Select layout for this specific Post only"
-msgstr ""
+msgstr "Wybierz wygląd jedynie dla tego postu"
 
 #: ../library/panel/metaboxes.php:35
 msgid "Default Layout Set in"
-msgstr ""
+msgstr "Ustawiono domyślny wygląd"
 
 #: ../library/panel/metaboxes.php:35
 msgid "Theme Settings"
-msgstr ""
+msgstr "Ustawienia motywu"
 
 #: ../library/panel/metaboxes.php:41
 msgid "No sidebar"
-msgstr ""
+msgstr "Brak paska"
 
 #: ../library/panel/metaboxes.php:47
 msgid "No sidebar, Full Width"
-msgstr ""
+msgstr "Brak paska, pełna szerokość"
 
 #: ../library/panel/metaboxes.php:53 ../library/panel/theme-options.php:287
 msgid "No Sidebar, One Column"
-msgstr ""
+msgstr "Brak paska, jedna kolumna"
 
 #: ../library/panel/metaboxes.php:59
 msgid "Left sidebar"
-msgstr ""
+msgstr "Lewy pasek"
 
 #: ../library/panel/metaboxes.php:65
 msgid "Right sidebar"
-msgstr ""
+msgstr "Prawy pasek"
 
 #: ../library/panel/theme-options.php:92 ../library/panel/theme-options.php:93
 msgid "Theme Options"
-msgstr ""
+msgstr "Opcje motywu"
 
 #: ../library/panel/theme-options.php:125
 msgid "Theme Options by"
-msgstr ""
+msgstr "Opcje motywu przez"
 
 #: ../library/panel/theme-options.php:132
 msgid "Other Themes"
-msgstr ""
+msgstr "Pozostałe motywy"
 
 #: ../library/panel/theme-options.php:133
 msgid "Rate this Theme"
-msgstr ""
+msgstr "Oceń ten motyw"
 
 #: ../library/panel/theme-options.php:134
 msgid "Theme Instruction"
-msgstr ""
+msgstr "Instrukcja motywu"
 
 #: ../library/panel/theme-options.php:134
 msgid "Theme Instructions"
-msgstr ""
+msgstr "Instrukcje motywu"
 
 #: ../library/panel/theme-options.php:135
 msgid "Support Forum"
-msgstr ""
+msgstr "Support Forum"
 
 #: ../library/panel/theme-options.php:135
 msgid "Support"
-msgstr ""
+msgstr "Wsparcie"
 
 #: ../library/panel/theme-options.php:136
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../library/panel/theme-options.php:137
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../library/panel/theme-options.php:152
 msgid "Settings saved."
-msgstr ""
+msgstr "Zapisano ustawienia"
 
 #: ../library/panel/theme-options.php:158
 msgid "Main Options"
-msgstr ""
+msgstr "Opcje"
 
 #: ../library/panel/theme-options.php:159
 msgid "Featured Slider"
-msgstr ""
+msgstr "Featured Slider"
 
 #: ../library/panel/theme-options.php:160
 msgid "Social Links"
-msgstr ""
+msgstr "Linki do serwisów społecznościowych"
 
 #: ../library/panel/theme-options.php:161
 msgid "Other"
-msgstr ""
+msgstr "Pozostałe"
 
 #: ../library/panel/theme-options.php:167
 msgid "Header Options"
-msgstr ""
+msgstr "Opcje nagłówka"
 
 #: ../library/panel/theme-options.php:172
 #: ../library/panel/theme-options.php:182
 msgid "Header Logo"
-msgstr ""
+msgstr "Logo nagłówka"
 
 #: ../library/panel/theme-options.php:175
 msgid "Upload Logo"
-msgstr ""
+msgstr "Dodaj logo"
 
 #: ../library/panel/theme-options.php:179
 #: ../library/panel/theme-options.php:224
 #: ../library/panel/theme-options.php:256
 msgid "Preview"
-msgstr ""
+msgstr "Podgląd"
 
 #: ../library/panel/theme-options.php:187
 msgid "Show"
-msgstr "הצג"
+msgstr "Pokaż"
 
 #: ../library/panel/theme-options.php:190
 msgid "Header Logo Only"
-msgstr ""
+msgstr "Tylko logo nagłówka"
 
 #: ../library/panel/theme-options.php:193
 msgid "Header Text Only"
-msgstr ""
+msgstr "Tylko tekst nagłówka"
 
 #: ../library/panel/theme-options.php:196
 msgid "Disable"
-msgstr ""
+msgstr "Wyłącz"
 
 #: ../library/panel/theme-options.php:201
 #: ../library/panel/theme-options.php:233
@@ -370,244 +367,248 @@ msgstr ""
 #: ../library/panel/theme-options.php:516
 #: ../library/panel/theme-options.php:539
 msgid "Save All Changes"
-msgstr ""
+msgstr "Zapisz wszystkie zmiany"
 
 #: ../library/panel/theme-options.php:206
 msgid "Favicon Options"
-msgstr ""
+msgstr "Opcje Favicona"
 
 #: ../library/panel/theme-options.php:211
 msgid "Disable Favicon"
-msgstr ""
+msgstr "Wyłącz Favicon"
 
 #: ../library/panel/theme-options.php:213
 #: ../library/panel/theme-options.php:245
 #: ../library/panel/theme-options.php:431
 msgid "Check to disable"
-msgstr ""
+msgstr "Zaznacz, aby wyłączyć"
 
 #: ../library/panel/theme-options.php:216
 msgid "Favicon URL"
-msgstr ""
+msgstr "URL Favicona"
 
 #: ../library/panel/theme-options.php:219
 msgid "Upload Favicon"
-msgstr ""
+msgstr "Dodaj Favicon"
 
 #: ../library/panel/theme-options.php:220
 msgid ""
 "Favicon is this tiny icon you see beside URL in your browser address bar"
-msgstr ""
+msgstr "Favicon to mała ikonka, którą widzisz obok adresu URL w przeglądarce"
 
 #: ../library/panel/theme-options.php:227
-#, fuzzy
 msgid "favicon"
 msgstr "favicon"
 
 #: ../library/panel/theme-options.php:238
 msgid "Web Clip Icon Options"
-msgstr ""
+msgstr "Ustawienia ikony strony"
 
 #: ../library/panel/theme-options.php:243
 msgid "Disable Web Clip Icon"
-msgstr ""
+msgstr "Wyłącz ikonę strony"
 
 #: ../library/panel/theme-options.php:248
 msgid "Web Clip Icon URL"
-msgstr ""
+msgstr "Adres URL ikony strony"
 
 #: ../library/panel/theme-options.php:251
 msgid "Upload Web Clip Icon"
-msgstr ""
+msgstr "Dodaj ikonę strony"
 
 #: ../library/panel/theme-options.php:252
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
-msgstr ""
+msgstr "Ikona strony służy jako skrót w systemie iOS"
 
 #: ../library/panel/theme-options.php:259
 msgid "webpage icon"
-msgstr ""
+msgstr "ikona strony"
 
 #: ../library/panel/theme-options.php:270
 msgid "Layout Options"
-msgstr ""
+msgstr "Ustawienia Wyglądu"
 
 #: ../library/panel/theme-options.php:275
 msgid "Default Layout"
-msgstr ""
+msgstr "Domyślny wygląd"
 
 #: ../library/panel/theme-options.php:279
 msgid "No Sidebar"
-msgstr ""
+msgstr "Brak paska"
 
 #: ../library/panel/theme-options.php:283
 msgid "No Sidebar, Full Width"
-msgstr ""
+msgstr "Brak paska, pełna szerokość"
 
 #: ../library/panel/theme-options.php:301
 msgid ""
 "This will set the default layout style. However, you can choose different "
 "layout for each page via editor"
 msgstr ""
+"Ustaw domyślny wygląd strony. Możesz wybrać inny wybląd dla każdej strony "
+"używając edytora strony"
 
 #: ../library/panel/theme-options.php:302
 msgid "Reset Layout"
-msgstr ""
+msgstr "Przywróć wygląd domyślny"
 
 #: ../library/panel/theme-options.php:305
 msgid "Check to reset"
-msgstr ""
+msgstr "Zaznacz, aby zresetować"
 
 #: ../library/panel/theme-options.php:315
 msgid "Custom Background"
-msgstr ""
+msgstr "Dopasuj tło"
 
 #: ../library/panel/theme-options.php:321
 msgid "Change theme background"
-msgstr ""
+msgstr "Zmień tło motywu"
 
 #: ../library/panel/theme-options.php:324
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr ""
+msgstr "<a class=\"button\" href=\"%s\">Click here</a>"
 
 #: ../library/panel/theme-options.php:334
 msgid "RSS URL"
-msgstr ""
+msgstr "RSS URL"
 
 #: ../library/panel/theme-options.php:340
-#, fuzzy
 msgid "Feed Redirect URL"
-msgstr "בדוק את כתובת URL שהזנת."
+msgstr "Przekierowanie URL"
 
 #: ../library/panel/theme-options.php:343
 msgid "Enter your preferred RSS URL. (Feedburner or other)"
-msgstr ""
+msgstr "Wskaż preferowany RSS URL"
 
 #: ../library/panel/theme-options.php:353
-#, fuzzy
 msgid "Homepage Post Options"
-msgstr "דף הבית"
+msgstr "Opcje postów na stronie głównej"
 
 #: ../library/panel/theme-options.php:359
-#, fuzzy
 msgid "Homepage posts categories:"
-msgstr "דף הבית"
+msgstr "Kategorie postów na stronie głównej"
 
 #: ../library/panel/theme-options.php:361
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
+"Jedynie posty należące do wybranej kategorii będą wyświetlane na stronie "
+"głównej"
 
 #: ../library/panel/theme-options.php:366
 msgid "--Disabled--"
-msgstr ""
+msgstr "--Wyłączono--"
 
 #: ../library/panel/theme-options.php:376
 msgid ""
 "You may select multiple categories by holding down the CTRL (Windows) or cmd "
 "(Mac)."
-msgstr ""
+msgstr "Możesz zaznaczyć wiele kategorii wciskając CTRL"
 
 #: ../library/panel/theme-options.php:389
 msgid "Featured Post/Page Slider Options"
-msgstr ""
+msgstr "Wyróżnienie wpisu - opcje"
 
 #: ../library/panel/theme-options.php:393
 msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
+msgstr "Wyłącz wyróżnienia opisu na stronie głównej"
 
 #: ../library/panel/theme-options.php:395
 msgid "Check to exclude"
-msgstr ""
+msgstr "Zaznacz, aby wyłączyć"
 
 #: ../library/panel/theme-options.php:399
 msgid "Number of Slides"
-msgstr ""
+msgstr "Liczba slajdów"
 
 #: ../library/panel/theme-options.php:404
 msgid "Featured Slide #"
-msgstr ""
+msgstr "Wyróżniony wpis #"
 
 #: ../library/panel/theme-options.php:406
 msgid "Click Here To Edit"
-msgstr "לחץ כאן כדי לערוך"
+msgstr "Kliknij, aby edytować"
 
 #: ../library/panel/theme-options.php:412
 msgid "How to use the featured slider?"
-msgstr ""
+msgstr "Jak używać wyróżnienia wpisów?"
 
 #: ../library/panel/theme-options.php:414
 msgid "Create Post or Page and add featured image to it."
-msgstr ""
+msgstr "Utwórz wpis oraz dodaj zdjęcie"
 
 #: ../library/panel/theme-options.php:415
 msgid ""
 "Add all the Post ID that you want to use in the featured slider. Post ID can "
 "be found at All Posts table in last column"
 msgstr ""
+"Dodaj ID wpisu, który chcesz wyróżnić. ID wpisu znajdziesz w polu Wszystkie "
+"Wpisy w ostatniej kolumnie"
 
 #: ../library/panel/theme-options.php:416
 msgid ""
 "Featured Slider will show featured images, Title and excerpt of the "
 "respected added post IDs."
 msgstr ""
+"Wyróżniony wpis zostanie pokazany na stronie głównej w formie slajdu "
+"zawierającego zdjęcie i tytuł"
 
 #: ../library/panel/theme-options.php:417
 msgid "The recommended image size is"
-msgstr ""
+msgstr "Rekomendowany rozmiar zdjęcia to"
 
 #: ../library/panel/theme-options.php:425
 msgid "Slider Options"
-msgstr ""
+msgstr "Opcje wyróżniania wpisów"
 
 #: ../library/panel/theme-options.php:429
 msgid "Disable Slider"
-msgstr ""
+msgstr "Wyłącz wyróżnienie wpisu"
 
 #: ../library/panel/theme-options.php:435
 msgid "Transition Effect:"
-msgstr ""
+msgstr "Efekt przejścia"
 
 #: ../library/panel/theme-options.php:455
 #: ../library/panel/theme-options.php:507
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../library/panel/theme-options.php:463
 msgid "Transition Delay"
-msgstr ""
+msgstr "Opóźnienie"
 
 #: ../library/panel/theme-options.php:466
 #: ../library/panel/theme-options.php:473
 msgid "second(s)"
-msgstr ""
+msgstr "sekund"
 
 #: ../library/panel/theme-options.php:470
 msgid "Transition Length"
-msgstr ""
+msgstr "Czas trwania"
 
 #: ../library/panel/theme-options.php:501
 msgid "Enter URLs for your social networks e.g."
-msgstr ""
+msgstr "Odnośniki do serwisów społecznościowych"
 
 #: ../library/panel/theme-options.php:524
 msgid "Custom CSS (Advanced)"
-msgstr ""
+msgstr "Dostosuj CSS (zaawansowane)"
 
 #: ../library/panel/theme-options.php:529
 msgid "Enter your custom CSS styles."
-msgstr ""
+msgstr "Wprowadź własny CSS"
 
 #: ../library/panel/theme-options.php:530
 msgid "This CSS will overwrite the CSS of style.css file."
-msgstr ""
+msgstr "Ten CSS zaktualizuje plik style.css"
 
 #: ../library/panel/theme-options.php:534
 msgid "Make sure you know what you are doing."
-msgstr ""
+msgstr "Upewnij się, że wiesz co robisz"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -615,7 +616,7 @@ msgstr ""
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "No Comments"
-msgstr "אין תגובות"
+msgstr "Brak odpowiedzi"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -623,7 +624,7 @@ msgstr "אין תגובות"
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "1 Comment"
-msgstr "תגובה 1"
+msgstr "1 odpowiedź"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -631,23 +632,22 @@ msgstr "תגובה 1"
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "% Comments"
-msgstr "% תגובות"
+msgstr "% odpowiedzi"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
 #: ../library/structure/content-extensions.php:466
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
-#, fuzzy
 msgid "Comments Off"
-msgstr "אין תגובות"
+msgstr "Wyłączono możliwość komentowania"
 
 #: ../library/structure/content-extensions.php:152
 #: ../library/structure/content-extensions.php:470
 #: ../library/structure/content-extensions.php:582
 #: ../library/structure/content-extensions.php:667
 msgid "Read more"
-msgstr "קרא עוד"
+msgstr "Więcej"
 
 #: ../library/structure/content-extensions.php:167
 #: ../library/structure/content-extensions.php:238
@@ -656,19 +656,18 @@ msgstr "קרא עוד"
 #: ../library/structure/content-extensions.php:498
 #: ../library/structure/content-extensions.php:609
 #: ../library/structure/content-extensions.php:721
-#, fuzzy
 msgid "No Posts Found."
-msgstr "שגיאה 404 - דף לא נמצא"
+msgstr "Nie znaleziono wpisów"
 
 #: ../library/structure/content-extensions.php:207
 #: ../library/structure/content-extensions.php:306
 #: ../library/structure/content-extensions.php:670
 msgid "Pages:"
-msgstr ""
+msgstr "Strony:"
 
 #: ../library/structure/content-extensions.php:294
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../library/structure/content-extensions.php:489
 #: ../library/structure/content-extensions.php:600
@@ -676,7 +675,7 @@ msgstr ""
 #: ../library/structure/content-extensions.php:748
 #: ../library/structure/content-extensions.php:768
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; Poprzedni"
 
 #: ../library/structure/content-extensions.php:490
 #: ../library/structure/content-extensions.php:601
@@ -684,61 +683,58 @@ msgstr ""
 #: ../library/structure/content-extensions.php:749
 #: ../library/structure/content-extensions.php:769
 msgid "Next &raquo;"
-msgstr "下一篇 &raquo"
+msgstr "Następny &raquo;"
 
 #: ../library/structure/content-extensions.php:813
-#, fuzzy
 msgid "Pingback:"
 msgstr "Pingback:"
 
 #: ../library/structure/content-extensions.php:813
-#, fuzzy
 msgid "(Edit)"
-msgstr "ערוך"
+msgstr "Edytuj"
 
 #: ../library/structure/content-extensions.php:828
 msgid "Post author"
-msgstr ""
+msgstr "Autor"
 
 #: ../library/structure/content-extensions.php:834
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s o %2$s"
 
 #: ../library/structure/content-extensions.php:840
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Twój komentarz oczekuje na moderację"
 
 #: ../library/structure/content-extensions.php:845
 msgid "Edit"
-msgstr "ערוך"
+msgstr "Edytuj"
 
 #: ../library/structure/content-extensions.php:849
 msgid "Reply"
-msgstr "השב"
+msgstr "Odpowiedz"
 
 #: ../library/structure/footer-extensions.php:35
-#, fuzzy
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
 #: ../library/structure/footer-extensions.php:35
 msgid "Theme by"
-msgstr ""
+msgstr "Theme by"
 
 #: ../library/structure/footer-extensions.php:35
 msgid "Powered by"
-msgstr ""
+msgstr "Powered by"
 
 #: ../library/structure/header-extensions.php:75
-#, fuzzy, php-format
+#, php-format
 msgid "Page %s"
-msgstr "שגיאה 404 - דף לא נמצא"
+msgstr "Strona %s"
 
 #: ../library/structure/header-extensions.php:426
 msgid "Search Results"
-msgstr "תוצאות חיפוש"
+msgstr "Wynik wyszukiwania"
 
 #: ../searchform.php:7 ../searchform.php:8
 msgid "Search"
-msgstr "חפש"
+msgstr "Szukaj"
