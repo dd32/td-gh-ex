@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.7";
+$ast_version = "1.1.8";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -232,7 +232,7 @@ add_filter( 'wp_title', 'asteroid_wp_title', 10, 2 );
 
 function asteroid_responsive_meta() {
 ?>
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="initial-scale=1.0" />
 <?php
 }
 

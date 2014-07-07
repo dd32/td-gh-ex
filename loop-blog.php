@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-view'); ?>>
 
 <div class="entry-header">
-	<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
+	<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 </div>
 
 <?php if ( ( asteroid_option('ast_blog_date') == 1 ) && ( get_post_type() == 'post' ) ) : ?>
@@ -24,10 +24,12 @@
 	<?php if ( ( asteroid_option('ast_post_display_type') == 1 ) && ( (get_post_type() == 'post') || (get_post_type() == 'page') ) ) : ?>
 
 		<?php if ( asteroid_option('ast_excerpt_thumbnails') == 1 ) : ?>
-			<?php if ( has_post_thumbnail()) : ?>
-				<a class="entry-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail') ; ?></a>
-			<?php endif ; ?>
-		<?php endif ; ?>
+			<?php if ( apply_filters( 'asteroid_has_post_thumbnail', has_post_thumbnail() ) ) : ?>
+				<a class="entry-thumbnail" href="<?php the_permalink(); ?>">
+					<?php echo apply_filters( 'asteroid_excerpt_thumbnail' , get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) ); ?>
+				</a>
+			<?php endif; ?>
+		<?php endif; ?>
 
 		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
 
@@ -35,7 +37,7 @@
 
 		<?php the_content(); ?>
 
-	<?php endif ; ?>
+	<?php endif; ?>
 
 	<?php wp_link_pages( array(
 		'before'           => '<div class="page-nav">' . __('<span>Pages</span>', 'asteroid'),
@@ -62,15 +64,15 @@
 		<!-- Widgets: Below Excerpts -->
 		<?php if ( is_active_sidebar('widgets_below_excerpts') )  : ?>
 			<div id="widgets-wrap-below-excerpts" class="cf"><?php dynamic_sidebar('widgets_below_excerpts'); ?></div>
-		<?php endif ; ?>
+		<?php endif; ?>
 
 	<?php else : ?>
 		<div class="entry-tags"><?php the_tags(); ?></div>
-	<?php endif ; ?>
+	<?php endif; ?>
 
 	<?php if ( ( asteroid_option('ast_blog_comment_links') == 1 ) && ( (get_post_type() == 'post') || (get_post_type() == 'page') ) ) : ?>
 		<a class="comment-count cf" href="<?php the_permalink(); ?>#comment-area"><?php comments_number(); ?></a>
-	<?php endif ; ?>
+	<?php endif; ?>
 </footer>
 
 </article>

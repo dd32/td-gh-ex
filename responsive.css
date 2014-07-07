@@ -60,7 +60,7 @@
 		margin: 0 auto;
 	}
 	#nav-search-form label {width: 80%;}
-	#nav-search-form input[type="search"] {width: 85%;}
+	#nav-search-form input[type="search"] {width: 100%;}
 
 	#nav .sub-menu, #nav .children, #nav .sub-menu li, #nav .children li {
 		border: none;

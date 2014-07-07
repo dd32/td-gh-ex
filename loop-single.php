@@ -1,13 +1,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-view'); ?>>
 
 <div class="entry-header">
-	<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h1>
+	<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 </div>
 
 <!-- Widgets: Before Post -->
 <?php if ( ( is_active_sidebar('widgets_before_post') ) && is_singular() ) : ?>
 	<div id="widgets-wrap-before-post" class="cf"><?php dynamic_sidebar('widgets_before_post'); ?></div>
-<?php endif ; ?>
+<?php endif; ?>
 
 <!-- Date & Author -->
 <div class="entry-meta-top cf">
@@ -39,14 +39,14 @@
 	<!-- Widgets: Before Post Content -->
 	<?php if ( ( is_active_sidebar('widgets_before_post_content') ) && is_singular() ) : ?>
 		<div id="widgets-wrap-before-post-content" class="cf"><?php dynamic_sidebar('widgets_before_post_content'); ?></div>
-	<?php endif ; ?>
+	<?php endif; ?>
 
 	<?php the_content(); ?>
 
 	<!-- Widgets: After Post Content -->
 	<?php if ( ( is_active_sidebar('widgets_after_post_content') ) && is_singular() ) : ?>
 		<div id="widgets-wrap-after-post-content" class="cf"><?php dynamic_sidebar('widgets_after_post_content'); ?></div>
-	<?php endif ; ?>
+	<?php endif; ?>
 
 	<?php wp_link_pages( array(
 		'before'           => '<div class="page-nav">' . __('<span>Pages</span>', 'asteroid'),
@@ -86,7 +86,7 @@
 	<!-- Widgets: After Post -->
 	<?php if ( ( is_active_sidebar('widgets_after_post') ) && is_singular() ) : ?>
 		<div id="widgets-wrap-after-post" class="cf"><?php dynamic_sidebar('widgets_after_post'); ?></div>
-	<?php endif ; ?>
+	<?php endif; ?>
 
 	<?php if ( is_singular('post') || is_attachment() ) : ?>
 		<div class="post-nav cf">

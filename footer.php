@@ -20,9 +20,8 @@
 		</div>
 
 		<?php if (! asteroid_option('ast_remove_theme_link') == 1 ) : ?>
-			<span id="theme-link">
-				<a href="<?php echo esc_url( __( 'http://ronangelo.com/asteroid/', 'asteroid' ) ); ?>"><?php _e( 'Asteroid Theme', 'asteroid' ); ?></a>
-			</span>
+			<?php $asteroid_theme_link = '<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '">Asteroid Theme</a>'; ?>
+			<span id="theme-link"><?php echo apply_filters( 'asteroid_theme_link', $asteroid_theme_link ); ?></span>
 		<?php endif; ?>
 	</div>
 
