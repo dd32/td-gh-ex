@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.1.35
+Stable tag: 1.1.36
 
 == ABOUT BOLDR LITE ==
 
@@ -60,8 +60,13 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.1.36 =
+July 7th, 2014
+* Optimized all png images (62% size reduction)
+* Replaced (has_post_thumbnail()) with ('' != get_the_post_thumbnail()) in single.php (as per codex recommendation - fixes an occasional issue)
+
 = 1.1.35 =
-JUne 10th, 2014
+June 10th, 2014
 * Fixed W3C validator error caused by the "X-UA-Compatible" meta tag. The theme now fully validates as HTML5.
 
 = 1.1.34 =

@@ -40,7 +40,7 @@ get_header();
 
 			?></div><?php
 
-			if (has_post_thumbnail()):
+				if ( '' != get_the_post_thumbnail() ):	// As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()
 			?><div class="thumbnail"><a href="<?php get_permalink() ?>"><?php
 				the_post_thumbnail('large', array('class' => 'scale-with-grid'));
 			?></a></div><?php
