@@ -117,12 +117,12 @@ function alhenalite_excerpt() {
 	$more = 0;
 	
 	if ($pos=strpos($post->post_content, '<!--more-->')): 
-		$output = '<p>'.strip_tags(get_the_content()).'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a></p>';
+		$content = the_content();
 	else:
-		$output = '<p>'.get_the_excerpt().'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a></p>';
+		$content = the_excerpt();
 	endif;
 	
-	echo $output;
+	echo '<p>' . $content . ' <a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a> </p>';
 }
 
 
