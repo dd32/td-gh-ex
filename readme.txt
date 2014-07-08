@@ -29,6 +29,10 @@ Custom Css:
 
 
 == Change log ==
+= 1.4.9.1 =
+*Theme url changed
+*Removed extra function from theme header
+
 = 1.4.9 =
 *Option framework updated to new version
 *Fixed Content width issue into theme
