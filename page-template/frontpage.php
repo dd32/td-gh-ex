@@ -1,11 +1,12 @@
 <?php
 /*
-* Front Page template file
+* Template:Home Page
 */
 ?>
 <?php
 if ( 'page' != get_option( 'show_on_front' ) ) {
 	include( get_home_template() );
+	exit;
 }
 ?>
 <?php get_header(); 

@@ -10,3 +10,11 @@ Version 2.0
 Version 2.0.1
 
 	i)   Set front-page.php as per template hierarchy
+
+Version 2.0.2
+
+	i)   Home page setting issue fixed
+
+Version 2.0.3
+
+	i)   Settings issue fixed.
