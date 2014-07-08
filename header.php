@@ -13,33 +13,25 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-} ?>
 
-<?php do_action( 'vantage_before_page_wrapper' ) ?>
+<?php do_action('vantage_before_page_wrapper') ?>
 
 <div id="page-wrapper">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vantage' ); ?></a>
-
 	<?php do_action( 'vantage_before_masthead' ); ?>
 
-	<?php if ( ! siteorigin_page_setting( 'hide_masthead', false ) ) : ?>
-
-		<?php get_template_part( 'parts/masthead', apply_filters( 'vantage_masthead_type', siteorigin_setting( 'layout_masthead' ) ) ); ?>
-
-	<?php endif; ?>
+	<?php get_template_part( 'parts/masthead', apply_filters( 'vantage_masthead_type', siteorigin_setting( 'layout_masthead' ) ) ); ?>
 
 	<?php do_action( 'vantage_after_masthead' ); ?>
 
-	<?php vantage_render_slider(); ?>
+	<?php vantage_render_slider() ?>
 
 	<?php do_action( 'vantage_before_main_container' ); ?>
 

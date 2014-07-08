@@ -1,13 +1,12 @@
 <?php
 /**
  * Integrates this theme with SiteOrigin Page Builder.
- *
+ * 
  * @package vantage
  * @since 1.0
  * @license GPL 2.0
  */
 
-if( !function_exists('vantage_prebuilt_page_layouts') ) :
 /**
  * Adds default page layouts
  *
@@ -16,7 +15,6 @@ if( !function_exists('vantage_prebuilt_page_layouts') ) :
 function vantage_prebuilt_page_layouts($layouts){
 	$layouts['default-home'] = array (
 		'name' => __('Default Home', 'vantage'),
-		'screenshot' =>  get_template_directory_uri() . '/images/default-home.png',
 		'widgets' =>
 		array(
 			0 =>
@@ -127,9 +125,7 @@ function vantage_prebuilt_page_layouts($layouts){
 			1 =>
 			array(
 				'cells' => '1',
-				'style' => array(
-					'class' => 'wide-grey'
-				),
+				'style' => 'wide-grey',
 			),
 			2 =>
 			array(
@@ -174,10 +170,8 @@ function vantage_prebuilt_page_layouts($layouts){
 
 	return $layouts;
 }
-endif;
 add_filter('siteorigin_panels_prebuilt_layouts', 'vantage_prebuilt_page_layouts');
 
-if( !function_exists('vantage_panels_row_styles') ) :
 /**
  * Add row styles.
  *
@@ -188,127 +182,58 @@ function vantage_panels_row_styles($styles) {
 	$styles['wide-grey'] = __('Wide Grey', 'vantage');
 	return $styles;
 }
-endif;
 add_filter('siteorigin_panels_row_styles', 'vantage_panels_row_styles');
 
-if( !function_exists('vantage_panels_save_post') ) :
-function vantage_panels_save_post( $post_id, $post ){
-	if( get_post_meta( $post_id, 'vantage_panels_no_legacy', true ) === '' ) {
-
-		if( get_post_meta( $post_id, 'panels_data', true ) === '' ) {
-			// There is no panels_data, so don't use legacy fields
-			add_post_meta( $post_id, 'vantage_panels_no_legacy', 'true', true );
-		}
-		else {
-			// There is existing panels_data, so add legacy fields
-			add_post_meta( $post_id, 'vantage_panels_no_legacy', 'false', true );
-		}
-
-	}
-
-}
-endif;
-add_action('save_post', 'vantage_panels_save_post', 5, 2);
-
-if( !function_exists('vantage_panels_row_style_fields') ) :
 function vantage_panels_row_style_fields($fields) {
-	if(
-		( !empty($_REQUEST['postId']) && get_post_meta( intval( $_REQUEST['postId'] ), 'vantage_panels_no_legacy', true ) === 'true' ) ||
-		( get_the_ID() && get_post_meta( get_the_ID(), 'vantage_panels_no_legacy', true ) === 'true' )
-	) {
-		return $fields;
-	}
-
-	// Detect if this is a custom home page builder and if has legacy row styles enabled or not
-	if ( ( ! empty( $_REQUEST['page'] ) && $_REQUEST['page'] === 'so_panels_home_page' && get_post_meta( intval( get_option('siteorigin_panels_home_page_id') ), 'vantage_panels_no_legacy', true ) === 'true' ) ) {
-		return $fields;
-	}
-
-	// Are we trying to generate a block preview?
-	if (
-		! empty( $_POST['action'] ) &&
-		(
-			$_POST['action'] == 'so_panels_layout_block_preview' ||
-			$_POST['action'] == 'so_panels_builder_content_json'
-		)
-	) {
-		return $fields;
-	}
 
 	$fields['top_border'] = array(
 		'name' => __('Top Border Color', 'vantage'),
-		'priority' => 3,
-		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['bottom_border'] = array(
 		'name' => __('Bottom Border Color', 'vantage'),
-		'priority' => 3,
-		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['background'] = array(
 		'name' => __('Background Color', 'vantage'),
-		'priority' => 5,
-		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['background_image'] = array(
-		'name' => __('Background Image URL', 'vantage'),
-		'priority' => 6,
-		'group' => 'theme',
+		'name' => __('Background Image', 'vantage'),
 		'type' => 'url',
 	);
 
 	$fields['background_image_repeat'] = array(
 		'name' => __('Repeat Background Image', 'vantage'),
-		'priority' => 7,
-		'group' => 'theme',
 		'type' => 'checkbox',
 	);
 
 	$fields['no_margin'] = array(
 		'name' => __('No Bottom Margin', 'vantage'),
-		'priority' => 10,
-		'group' => 'theme',
 		'type' => 'checkbox',
 	);
 
-	// How we also need to remove some of the fields implemented by Page Builder 2 that aren't compatible.
-	unset( $fields['background_image_attachment'] );
-	unset( $fields['background_display'] );
-	unset( $fields['border_color'] );
-
 	return $fields;
 }
-endif;
-add_filter('siteorigin_panels_row_style_fields', 'vantage_panels_row_style_fields', 11);
+add_filter('siteorigin_panels_row_style_fields', 'vantage_panels_row_style_fields');
 
-if( !function_exists('vantage_panels_panels_row_style_attributes') ) :
 function vantage_panels_panels_row_style_attributes($attr, $style) {
-	if(empty($attr['style'])) $attr['style'] = '';
+	$attr['style'] = '';
 
-	if(!empty($style['top_border'])) $attr['style'] .= 'border-top: 1px solid '.esc_attr($style['top_border']).'; ';
-	if(!empty($style['bottom_border'])) $attr['style'] .= 'border-bottom: 1px solid '.esc_attr($style['bottom_border']).'; ';
-	if(!empty($style['background'])) $attr['style'] .= 'background-color: '.esc_attr($style['background']).'; ';
+	if(!empty($style['top_border'])) $attr['style'] .= 'border-top: 1px solid '.$style['top_border'].'; ';
+	if(!empty($style['bottom_border'])) $attr['style'] .= 'border-bottom: 1px solid '.$style['bottom_border'].'; ';
+	if(!empty($style['background'])) $attr['style'] .= 'background-color: '.$style['background'].'; ';
 	if(!empty($style['background_image'])) $attr['style'] .= 'background-image: url('.esc_url($style['background_image']).'); ';
 	if(!empty($style['background_image_repeat'])) $attr['style'] .= 'background-repeat: repeat; ';
 
-	if( isset($style['row_stretch']) && strpos($style['row_stretch'], 'full') !== false ) {
-		// We'll use this to prevent the jump when loading.
-		$attr['class'][] = 'panel-row-style-full-width';
-	}
-
-	if( empty($attr['style']) ) unset( $attr['style'] );
+	if(empty($attr['style'])) unset($attr['style']);
 	return $attr;
 }
-endif;
 add_filter('siteorigin_panels_row_style_attributes', 'vantage_panels_panels_row_style_attributes', 10, 2);
 
-if( !function_exists('vantage_panels_panels_row_attributes') ) :
 function vantage_panels_panels_row_attributes($attr, $row) {
 	if(!empty($row['style']['no_margin'])) {
 		if(empty($attr['style'])) $attr['style'] = '';
@@ -317,45 +242,4 @@ function vantage_panels_panels_row_attributes($attr, $row) {
 
 	return $attr;
 }
-endif;
 add_filter('siteorigin_panels_row_attributes', 'vantage_panels_panels_row_attributes', 10, 2);
-
-if( !function_exists('vantage_panels_add_widget_groups') ) :
-/**
- * Set the groups for all Vantage registered Widgets
- *
- * @param $widgets
- *
- * @return mixed
- */
-function vantage_panels_add_widget_groups($widgets){
-	$widgets['Vantage_CircleIcon_Widget']['groups'] = array('vantage');
-	$widgets['Vantage_Headline_Widget']['groups'] = array('vantage');
-	$widgets['Vantage_Social_Media_Widget']['groups'] = array('vantage');
-	return $widgets;
-
-}
-endif;
-add_filter('siteorigin_panels_widgets', 'vantage_panels_add_widget_groups');
-
-if( !function_exists('vantage_panels_add_widgets_dialog_tabs') ) :
-function vantage_panels_add_widgets_dialog_tabs($tabs){
-	$tabs[] = array(
-		'title' => __('Vantage Widgets', 'vantage'),
-		'filter' => array(
-			'installed' => true,
-			'groups' => array('vantage')
-		)
-	);
-
-	return $tabs;
-}
-endif;
-add_filter('siteorigin_panels_widget_dialog_tabs', 'vantage_panels_add_widgets_dialog_tabs');
-
-if( !function_exists('vantage_panels_add_full_width_container') ) :
-function vantage_panels_add_full_width_container(){
-	return '#main';
-}
-endif;
-add_filter('siteorigin_panels_full_width_container', 'vantage_panels_add_full_width_container');
