@@ -32,7 +32,10 @@ function generate_body_classes( $classes ) {
 	
 	// Get theme options
 	global $post;
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$stored_meta = '';
 	$page_header_image = '';
 	$page_header_slideshow = '';
@@ -102,7 +105,10 @@ function generate_right_sidebar_classes( $classes )
 
 	// Get theme options
 	global $post;
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$layout = $generate_settings['layout_setting'];
 	$stored_meta = '';
 	
@@ -169,7 +175,10 @@ function generate_left_sidebar_classes( $classes )
 
 	// Get theme options
 	global $post;
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	
 	if ( '' !== $stored_meta ) :
@@ -225,7 +234,10 @@ function generate_content_classes( $classes )
 
 	// Get theme options
 	global $post;
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$stored_meta = '';
 	
 	if ( isset( $post ) ) :
@@ -344,7 +356,10 @@ function generate_header_classes( $classes )
 	$classes[] = 'site-header';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$header_layout = $generate_settings['header_layout_setting'];
 	
 	if ( $header_layout == 'contained-header' ) :
@@ -367,7 +382,10 @@ function generate_inside_header_classes( $classes )
 	$classes[] = 'inside-header';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$header_layout = $generate_settings['header_layout_setting'];
 	
 	if ( $header_layout == 'fluid-header' || $header_layout == '' ) :
@@ -390,7 +408,10 @@ function generate_navigation_classes( $classes )
 	$classes[] = 'main-navigation';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$nav_layout = $generate_settings['nav_layout_setting'];
 	
 	if ( $nav_layout == 'contained-nav' ) :
@@ -414,7 +435,10 @@ function generate_menu_classes( $classes )
 	$classes[] = 'sf-menu';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 
 	return $classes;
 	
@@ -430,7 +454,10 @@ function generate_footer_classes( $classes )
 	$classes[] = 'site-footer';
 
 	// Get theme options
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$footer_layout = $generate_settings['footer_layout_setting'];
 	
 	if ( $footer_layout == 'contained-footer' ) :

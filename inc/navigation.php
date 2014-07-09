@@ -6,7 +6,10 @@
 add_action( 'generate_after_header', 'generate_add_navigation_after_header', 5 );
 function generate_add_navigation_after_header()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	
 	if ( 'nav-below-header' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -16,7 +19,10 @@ function generate_add_navigation_after_header()
 add_action( 'generate_before_header', 'generate_add_navigation_before_header', 5 );
 function generate_add_navigation_before_header()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	
 	if ( 'nav-above-header' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -26,7 +32,10 @@ function generate_add_navigation_before_header()
 add_action( 'generate_before_header_content', 'generate_add_navigation_float_right', 5 );
 function generate_add_navigation_float_right()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	
 	if ( 'nav-float-right' == $generate_settings['nav_position_setting'] ) :
 		generate_navigation_position();
@@ -36,7 +45,10 @@ function generate_add_navigation_float_right()
 add_action( 'generate_before_right_sidebar_content', 'generate_add_navigation_before_right_sidebar', 5 );
 function generate_add_navigation_before_right_sidebar()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	
 	if ( 'nav-right-sidebar' == $generate_settings['nav_position_setting'] ) :
 		echo '<div class="gen-sidebar-nav">';
@@ -48,7 +60,10 @@ function generate_add_navigation_before_right_sidebar()
 add_action( 'generate_before_left_sidebar_content', 'generate_add_navigation_before_left_sidebar', 5 );
 function generate_add_navigation_before_left_sidebar()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	
 	if ( 'nav-left-sidebar' == $generate_settings['nav_position_setting'] ) :
 		echo '<div class="gen-sidebar-nav">';

@@ -28,7 +28,8 @@ function generate_create_menu()
 		'generate_copyright_option' => 'gen_copyright_license_key_status',
 		'generate_disable_elements' => 'gen_disable_elements_license_key_status',
 		'generate_blog_get_defaults' => 'gen_blog_license_key_status',
-		'generate_hooks_setup' => 'gen_hooks_license_key_status'
+		'generate_hooks_setup' => 'gen_hooks_license_key_status',
+		'generate_spacing_setup' => 'gen_spacing_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -39,7 +40,7 @@ function generate_create_menu()
 		endif;
 	}
 	
-	$generate_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page' );
+	$generate_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_theme_options', 'generate-options', 'generate_settings_page' );
 	
 	add_action( "admin_print_scripts-$generate_page", 'generate_options_scripts' );
 	add_action( "admin_print_styles-$generate_page", 'generate_options_styles' );
@@ -47,7 +48,7 @@ function generate_create_menu()
 
 function generate_options_scripts() 
 {
-
+	// Something will go here one day...
 }
 
 function generate_options_styles() 
@@ -57,9 +58,6 @@ function generate_options_styles()
         GENERATE_URI . '/inc/css/style.css'
     );
 }
-
-
-
 
 function generate_settings_page() 
 {
@@ -96,7 +94,7 @@ function generate_settings_page()
 									<strong style="display:inline-block;width:60px;"><?php _e('Website','generate');?>:</strong> <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank">GeneratePress</a>
 								</p>
 								<p>
-									<strong><?php _e('Addons','generate');?>:</strong>
+									<span class="addon-title"><?php _e('Addons','generate');?></span>
 									<?php 
 									
 									$addons = array(
@@ -155,22 +153,26 @@ function generate_settings_page()
 												'id' => 'generate_hooks_setup',
 												'license' => 'gen_hooks_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-hooks/')
+										),
+										'9' => array(
+												'name' => __('Spacing','generate'),
+												'version' => ( function_exists('generate_spacing_setup') ) ? GENERATE_SPACING_VERSION : '',
+												'id' => 'generate_spacing_setup',
+												'license' => 'gen_spacing_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-spacing/')
 										)
 									);
-									
+
 									foreach ( $addons as $addon ) {
-										echo '<div class="addon-container"><span class="addon-title"><a href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . '</a>';
 										if ( !function_exists($addon['id']) ) :
-											echo '</span><span class="inactive">' . __('plugin inactive','generate') . '</span>';
+											echo '<span class="inactive"><a title="' . __('Plugin not activated.','generate') . '" href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . '</a></span>';
 										else :
-											echo ' ' . $addon['version'] . '</span><span class="active">' . __('plugin active','generate') . '</span>';
 											if ( get_option($addon['license']) !== 'valid' ) :
-												echo '<span class="inactive">' . __('license key inactive','generate') . '</span>';
+												echo '<span class="inactive need-license"><a title="' . __('Plugin activated. Please add your license key below.','generate') . '" href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . ' ' . $addon['version'] . '</a></span>';
 											else :
-												echo '<span class="active">' . __('license key active','generate') . '</span>';
+												echo '<span class="active"><a title="' . __('Plugin activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank">' . $addon['name'] . ' ' . $addon['version'] . '</a></span>';
 											endif;
 										endif;
-										echo '</div>';
 									} 
 									?>
 											
@@ -181,7 +183,7 @@ function generate_settings_page()
 								<p>
 									<a id="generate_customize_button" class="button button-primary" href="<?php echo admin_url('customize.php'); ?>"><?php _e('Customize','generate');?></a>  
 									<a id="generate_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com/addons');?>" target="_blank"><?php _e('Addons','generate');?></a> 
-									<a title="<?php _e('Please help support development of the GeneratePress by donating.','generate');?>" class="button button-primary" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UVPTY2ZJA68S6"><?php _e('Donate','generate');?></a>
+									<a title="<?php _e('Please help support development of the GeneratePress by buying me a coffee :)','generate');?>" class="button button-primary" target="_blank" href="<?php echo esc_url('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UVPTY2ZJA68S6');?>"><?php _e('Buy me a coffee :)','generate');?></a>
 								</p>
 							</div>
 						</div>
@@ -195,23 +197,14 @@ function generate_settings_page()
 							<div class="inside">
 							
 								<?php
+								if ( generate_no_addons() == true ) :
+									echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
+								else :
+									echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.','generate') . '</p>';
+								endif;
 								
-								if ( !function_exists('generate_fonts_setup') &&
-									!function_exists('generate_colors_setup') &&
-									!function_exists('generate_page_header') &&
-									!function_exists('generate_insert_import_export') &&
-									!function_exists('generate_copyright_option') &&
-									!function_exists('generate_disable_elements') &&
-									!function_exists('generate_blog_get_defaults') &&
-									!function_exists('generate_hooks_setup') ) :
-										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
-									else :
-										echo '<p>' . __('To activate your license key, enter it in the appropriate field below, and click <strong>Save Changes</strong>. Once saved, click the <strong>Activate License</strong> button.','generate') . '</p>';
-									endif;
-
+								do_action('generate_license_key_items'); 
 								?>
-											
-								<?php do_action('generate_license_key_items'); ?>
 
 							</div>
 						</div>

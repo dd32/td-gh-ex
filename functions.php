@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1200; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.8');
+define( 'GENERATE_VERSION', '1.0.9');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -159,35 +159,14 @@ function generate_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-}
-
-/**
- * Enqueue scripts and styles
- */
-add_action( 'wp_enqueue_scripts', 'generate_scripts' );
-function generate_scripts() {
-
-	// Generate stylesheets
-	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/css/style.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
-
-	// Generate scripts
-	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
-	wp_enqueue_script( 'generate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), GENERATE_VERSION, true );
-	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GENERATE_VERSION, true );
-	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'generate-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 5', 'generate' ),
+		'id'            => 'footer-5',
+		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 
 /**
@@ -230,6 +209,36 @@ require get_template_directory() . '/inc/options.php';
  */
 require get_template_directory() . '/inc/addons.php';
 
+/**
+ * Enqueue scripts and styles
+ */
+add_action( 'wp_enqueue_scripts', 'generate_scripts' );
+function generate_scripts() {
+
+	// Generate stylesheets
+	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/css/style.css', false, GENERATE_VERSION, 'all' );
+	wp_add_inline_style( 'generate-style', generate_base_css() );
+	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
+
+	// Generate scripts
+	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
+	wp_enqueue_script( 'generate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), GENERATE_VERSION, true );
+	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GENERATE_VERSION, true );
+	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'generate-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	}
+}
+
 
 /**
  * Construct the sidebars
@@ -239,7 +248,10 @@ add_action('generate_sidebars','generate_contruct_sidebars');
 function generate_contruct_sidebars()
 {
 	global $post;
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$stored_meta = '';
 	
 	// Prevent PHP notices
@@ -309,10 +321,13 @@ function generate_add_login_attribution()
  * Generate the CSS in the <head> section using the Theme Customizer
  * @since 0.1
  */
-add_action('wp_head','generate_base_css');
 function generate_base_css()
 {
-	$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+	
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 	$space = ' ';
 	
 	// Start the magic
@@ -393,15 +408,9 @@ function generate_base_css()
 		if($elements_added > 0)
 			$output .= $temporary_output;
 	}
-	?>
-<!-- Generate CSS -->
-<style type="text/css">
-<?php 
-$output = str_replace(array("\r", "\n"), '', $output);
-echo $output; ?>
-<?php do_action('generate_head_css') . '\n'; ?> 
-</style>
-<?php
+
+	$output = str_replace(array("\r", "\n"), '', $output);
+	return $output;
 }
 
 /**

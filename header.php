@@ -16,7 +16,10 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php 
 wp_head();
-$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+$generate_settings = wp_parse_args( 
+	get_option( 'generate_settings', array() ), 
+	generate_get_defaults() 
+);
 ?>
 </head>
 
@@ -54,3 +57,4 @@ $generate_settings = get_option( 'generate_settings', generate_get_defaults() );
 	
 	<div id="page" class="hfeed site grid-container container grid-parent">
 		<div id="content" class="site-content">
+			<?php do_action('generate_inside_container'); ?>

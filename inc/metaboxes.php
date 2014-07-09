@@ -163,6 +163,10 @@ function generate_show_footer_widget_meta_box( $post ) {
 				<input type="radio" name="_generate-footer-widget-meta" id="meta-generate-footer-widget-four" value="4" <?php checked( $stored_meta['_generate-footer-widget-meta'][0], '4' ); ?>>
 				<?php _e('4 Widgets','generate');?>
 			</label>
+			<label for="meta-generate-footer-widget-five" style="display:block;margin-bottom:3px;" title="<?php _e('5 Widgets','generate');?>">
+				<input type="radio" name="_generate-footer-widget-meta" id="meta-generate-footer-widget-five" value="5" <?php checked( $stored_meta['_generate-footer-widget-meta'][0], '5' ); ?>>
+				<?php _e('5 Widgets','generate');?>
+			</label>
 		</div>
 	</p>
  

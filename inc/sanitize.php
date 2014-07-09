@@ -140,7 +140,8 @@ function generate_sanitize_footer_widgets( $input ) {
 		'1' => '1',
 		'2' => '2',
 		'3' => '3',
-		'4' => '4'
+		'4' => '4',
+		'5' => '5'
     );
  
     if ( array_key_exists( $input, $valid ) ) {

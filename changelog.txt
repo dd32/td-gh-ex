@@ -9,7 +9,20 @@ Changelog Legend:
 [!] = Bugs
 
 ----
+
+(7/9/2014) - 1.0.9
+
+[+] .pot file added for translation
+[+] Compatibility added for Generate Spacing addon
+[+] Option for a 5th footer widget
+[*] File cleanup
+[*] Customize.php generated CSS moved above enqueued child theme css
+[*] Changes made to better sane defaults
+
+----
+
 (6/18/2014) - 1.0.8
+
 [+] Sanitization for all Customizer options
 [!] Allow transparent header background
 [*] Hide title, hide tagline and logo options moved into generate_settings db entry

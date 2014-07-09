@@ -543,7 +543,8 @@ function generate_customize_register( $wp_customize ) {
 				'1' => '1',
 				'2' => '2',
 				'3' => '3',
-				'4' => '4'
+				'4' => '4',
+				'5' => '5'
 			),
 			// This last one must match setting ID from above
 			'settings' => 'generate_settings[footer_widget_setting]',
@@ -559,7 +560,7 @@ function generate_customize_register( $wp_customize ) {
 		array(
 			'title' => __( 'Blog', 'generate' ),
 			'capability' => 'edit_theme_options',
-			'description' => __( '', 'generate' ),
+			'description' => '',
 			'priority' => 35
 		)
 	);
@@ -668,7 +669,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					echo '<span class="get-addon">' . sprintf(
 								'<a href="%1$s" target="_blank">%2$s</a>',
 								esc_url( $this->url ),
-								'Addon available'
+								__('Addon available','generate')
 							) . '</span>';
 					echo '<p class="description" style="margin-top:5px;">' . $this->description . '</p>';
 					break;
@@ -708,5 +709,17 @@ function generate_customize_preview_css() {
 		}
 		
 	</style>
+	<?php
+}
+
+add_action('customize_controls_print_footer_scripts', 'generate_customize_preview_js');
+function generate_customize_preview_js()
+{
+	if ( generate_addons_available() !== true )
+		return;
+	?>
+	<script>
+		jQuery('#customize-info').append('<span class="get-addon" style="display:block;"><a style="display:block;padding-left: 15px;padding-right:0;" href="<?php echo esc_url('http://generatepress.com/addons');?>" target="_blank"><?php _e('Addons Available! Take a look','generate');?> &rarr;</a></span>');
+	</script>
 	<?php
 }

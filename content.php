@@ -2,7 +2,10 @@
 /**
  * @package Generate
  */
-$generate_settings = get_option( 'generate_settings', generate_get_defaults() );
+$generate_settings = wp_parse_args( 
+	get_option( 'generate_settings', array() ), 
+	generate_get_defaults() 
+);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPost" itemtype="http://schema.org/BlogPosting" itemscope="itemscope">

@@ -439,13 +439,6 @@ a:active {
 	line-height: normal;
 }
 
-.nav-float-right .main-navigation .main-nav ul li a {
-	line-height: 60px;
-}
-
-.nav-float-right .main-navigation ul ul {
-	top: 60px;
-}
 
 .nav-float-right .main-navigation ul ul ul{
 	top: 0
@@ -622,8 +615,13 @@ object {
 }
 
 .comment-form input {
-	display: block;
 	margin-bottom: 10px;
+}
+
+.comment-form #author,
+.comment-form #email,
+.comment-form #url {
+	display: block;
 }
 
 .comment-metadata .edit-link:before {
@@ -847,7 +845,8 @@ h4, h5, h6 {
 .widget .search-field {
 	width: 100%;
 }
-.widget:last-child {
+.widget:last-child,
+.separate-containers .widget:last-child {
 	margin-bottom: 0;
 }
 
