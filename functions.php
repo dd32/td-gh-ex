@@ -70,14 +70,6 @@ function newsmag_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts_styles' );
 
 
-function newsmag_google_fonts() {
-
-			
-}
-
-add_action('wp_enqueue_scripts', 'newsmag_google_fonts');
-
-
 
 
 function newsmag_title($title){
@@ -370,11 +362,16 @@ function newsmag_options(){
 
 	global $newsmag;		
 
-		echo '<link rel="shortcut icon" href="'.esc_url($newsmag['favicon']['url']).'">';		
+		if(isset($newsmag['favicon']['url'])){
+
+		echo '<link rel="shortcut icon" href="'.esc_url($newsmag['favicon']['url']).'">';
+
+		
+		}		
 
  ?> <style>
 
-	<?php echo $newsmag['opt-ace-editor-css']; ?>
+	<?php echo strip_tags($newsmag['opt-ace-editor-css']); ?>
 
  </style> <?php 
 

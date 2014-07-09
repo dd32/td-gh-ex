@@ -69,7 +69,7 @@ class homepage_builder extends WP_Widget{
 
 		<hr>
 		
-		<label><?php _e('Posts to Show'); ?> :</label><br>
+		<label><?php _e('Posts to Show','newsmag'); ?> :</label><br>
 		<select name="<?php echo $this->get_field_name('show_post'); ?>" id="<?php echo $this->get_field_id('show_post'); ?>">
 			<option value="2" <?php selected(2,$instance['show_post']); ?>>2</option>
 			<option value="3" <?php selected(3,$instance['show_post']); ?>>3</option>

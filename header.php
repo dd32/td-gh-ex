@@ -38,6 +38,8 @@
 			
 			<div class="col-sm-9">
 
+			<?php if(isset($newsmag['logo']['url'])){ ?>
+
 				<?php if($newsmag['logo']['url']){ ?>
 					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home" title="<?php bloginfo('name'); ?>">
 						<img src="<?php echo esc_url($newsmag['logo']['url']); ?>" class="newsmag-logo"alt="<?php bloginfo('name'); ?>">
@@ -48,7 +50,7 @@
 					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home"><?php bloginfo('name'); ?></a>
 				</h1>
 
-				<?php } ?>
+				<?php } } ?>
 
 			</div> <!-- col-sm-3 -->
 
