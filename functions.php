@@ -20,7 +20,6 @@ function customizable_setup() {
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size();
 	add_image_size( 'customizable-full-width', 1038, 576, true );
 	add_image_size( 'customizable-blog-width', 730, 428, true );
 	// This theme uses wp_nav_menu() in two locations.
