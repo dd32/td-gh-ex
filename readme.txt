@@ -57,60 +57,58 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version:1.4.4.4
+1. Comment Time Function Changes used-> comment_time() 
 @Version:1.4.4.3
 1. Code Structure changes for front-page.php . 
 @Version:1.4.4.2
-1.Word Wraping Issue fixed in HOME SERVICE.
+1.	Word Wraping Issue fixed in HOME SERVICE.
 @Version:1.4.4.1
-1.W3C Validated.
+1.	W3C Validated.
 @Version:1.4.4
-New Theme added in the Option Panel Page.
+1.	New Theme added in the Option Panel Page.
 @Version: 1.4.3
-Small Changes in theme option Home page Tag-line setting ( product heading and service heading).
-
+1.	Small Changes in theme option Home page Tag-line setting ( product heading and service heading).
 @Version: 1.4.2
-Small Changes in default setting.
+1.	Small Changes in default setting.
 @Version : 1.4.1
-1.Added New Theme Health Centre in Options panel Page.
+1.	Added New Theme Health Centre in Options panel Page.
 @Version : 1.4
-1.Added More Styling for tables .
-@ Version: 1.3.9
+1.	Added More Styling for tables .
+@Version: 1.3.9
 1. Added Pink strip in 404.php
-@ Version: 1.3.8
-1.WordPress Widgets managed.
-@ Version: 1.3.7
-1.Small bug fixed of typo color picker .
-@ Version: 1.3.6
-1.Small Fix for sub-menus in Nav_walker Class.
-@ Version: 1.3.5
-1.Add new theme option for webriti themes.
-2.Add new tab for subscriber in theme option panel.
-
-@ Version: 1.3.4
-1.Call On US Text Setting in OP.
-@ Version: 1.3.3
-1. Add new feature merge new option data and existing option data.
-
-
-@ Version: 1.3.2
-1. Add new feature call us number customization.
-2. Fixed width tag change with fixed-layout.
-@ Version: 1.3.1
-1.Streepslashes_deep() for magic quotes issue resolved.
-2. Rel="nofollow" added in footer.php . 
-@ Version: 1.3
-1.Theme URI added.
+@Version: 1.3.8
+1.	WordPress Widgets managed.
+@Version: 1.3.7
+1.	Small bug fixed of typo color picker .
+@Version: 1.3.6
+1.	Small Fix for sub-menus in Nav_walker Class.
+@Version: 1.3.5
+1.	Add new theme option for webriti themes.
+2.	Add new tab for subscriber in theme option panel.
+@Version: 1.3.4
+1.	Call On US Text Setting in OP.
+@Version: 1.3.3
+1.Add new feature merge new option data and existing option data.
+@Version: 1.3.2
+1.	Add new feature call us number customization.
+2. 	Fixed width tag change with fixed-layout.
+@Version: 1.3.1
+1.	Streepslashes_deep() for magic quotes issue resolved.
+2. 	Rel="nofollow" added in footer.php . 
+@Version: 1.3
+1.	Theme URI added.
 @version 1.2.9
-1. Added new tags responsive-layout
+1. 	Added new tags responsive-layout
 @version 1.2.8
-Theme Uri Removed
+1.	Theme Uri Removed
 @version1.2.6
-1.)IE 8+ Competible
-2.)Removd WhiteSpaces
-3.)Option Panel JS enabled.
-4.)Custom Css Box Added. 
+1.	IE 8+ Competible
+2.	Removd WhiteSpaces
+3.	Option Panel JS enabled.
+4.	Custom Css Box Added. 
 @veriosn 1.2.5
-1.Small Changes fixed.
+1.	Small Changes fixed.
 @veriosn 1.2.4
 1. Removed media upload script from post admin page which prohibitting to add image in editor
 @version 1.2.3
@@ -129,7 +127,7 @@ Theme Uri Removed
 @verison 1.1
 1. Added backward php version compatibility to resize_image.php  file by removing anonymous function.
 @version 1.0.4
-1 Remove responsive wordpress.
+1  Remove responsive wordpress.
 2. Removed all reference of Twenty Eleven.
 @version 1.0.3
 1. Credit link added
@@ -137,7 +135,6 @@ Theme Uri Removed
 @version 1.0.2
 1. Blog posts index and fornt page added
 2. Text wrap style appied to the front page.
-
 @version 1.0.1
 1. Author Uri Fixed
 2. Theme prefix applied 

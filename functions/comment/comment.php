@@ -19,7 +19,7 @@ $leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_t
            <div class="comment-author vcard">
 					<div class="mycomment-author"><?php printf(('%s'), get_comment_author_link()) ?>
 						<span class="comment-date">
-						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date(); ?> at <?php echo get_comment_time();?></a>
+						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date(); ?> at <?php comment_time();?></a>
 						</span>
                     
 					<div class="reply">
