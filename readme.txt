@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.4
+1. Comment Date Function used.
 @Version: 1.4.2.3
 1. All files are properly indented.
 @Version: 1.4.2.2

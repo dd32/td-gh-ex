@@ -38,7 +38,7 @@
       <!-- /comment-avatar -->
       <div class="comment_mn_row_sub">
         <?php printf(__('<cite class="author">%s</cite>'), get_comment_author_link()) ?>
-        <span class="comment-date"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">- <?php echo get_comment_date(); ?></a></span>
+        <span class="comment-date"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">- <?php comment_date(); ?></a></span>
       </div>
       <!-- /comment-meta -->
       <div class="comment-content">
