@@ -84,7 +84,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog 
-
+@version 1.0.3
+1.	HTML beautified Code.
 @version 1.0.2.1
 1. front-page.php added.
 2. project sections added.
