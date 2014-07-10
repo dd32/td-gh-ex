@@ -186,7 +186,7 @@ function sc_avenue_css() {
             font-family: <?php echo of_get_option('sc_font_family'); ?>;
         }
         .row{
-            width: <?php echo of_get_option('sc_container_width'); ?>;
+            /*width: <?php echo of_get_option('sc_container_width'); ?>;*/
         }
     </style>
 <?php

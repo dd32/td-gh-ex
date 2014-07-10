@@ -87,13 +87,14 @@ if (!function_exists('of_get_option')) :
 endif;
 
 function sc_slider() { ?>
+
     <div class="sc-slider-wrapper">
         <div class="sc-slider">
             <ul>
                 <?php if ('' != of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1><?php echo get_option('sc_slide1_text','Clean & Modern Design');?></h1>
+                            <h1><?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?></h1>
 <!--                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
                             <!--<a class="btn" href="#download">Download</a>-->
                         </div>
@@ -103,7 +104,7 @@ function sc_slider() { ?>
                 <?php if ('' != of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1><?php echo get_option('sc_slide2_text','Reponsive with Bootstrap');?></h1>
+                            <h1><?php echo of_get_option('sc_slide2_text','Reponsive with Bootstrap');?></h1>
                         </div>
                     </li>
                 <?php } ?>
@@ -111,7 +112,7 @@ function sc_slider() { ?>
                 <?php if ('' != of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1><?php echo get_option('sc_slide3_text','Comes with 600 Icons');?></h1>
+                            <h1><?php echo of_get_option('sc_slide3_text','Comes with 600 Icons');?></h1>
                         </div>
                     </li>
                 <?php } ?>
@@ -124,7 +125,7 @@ function sc_slider() { ?>
 
 function sc_ctas() {
     ?>
-    <div id="site-cta" class="row"><!-- #CTA boxes -->
+    <div id="site-cta" class="row <?php echo of_get_option('sc_container_width'); ?>"><!-- #CTA boxes -->
         <div class="col-md-12">
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
@@ -182,11 +183,11 @@ function sc_ctas() {
 function sc_banner() {
     ?>
     <div id="top-banner" class="full-banner col-md-12">
-        <div class="row">
+        <div class="row <?php echo of_get_option('sc_container_width'); ?>">
             <div class="col-md-12 center">
                 <p class="top-banner-text">
-                    <span class="primary-color"></span>
-                    <?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?>
+                    <span class="primary-color"><?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?></span>
+                    
                 </p>
                 <p>
                     <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_banner_button_text', 'Learn More'); ?></a>
