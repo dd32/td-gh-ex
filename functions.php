@@ -1249,6 +1249,10 @@ function adventure_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
+                            <th>26</th>
+                            <td><?php _e('Another bug in the code fixed, sorry guys.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
                             <th>25</th>
                             <td><?php _e('Minor error in the code fixed.', 'localize_adventure'); ?></td>
                         <tr>
@@ -1308,6 +1312,10 @@ function adventure_theme_options_do_page() { ?>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>3.9</th>
+                            <td><?php _e('Another bug in the code fixed, unrelated to the Adenture+ bug.', 'localize_adventure'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.8</th>
                             <td><?php _e('Minor error in the code fixed.', 'localize_adventure'); ?></td>

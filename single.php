@@ -6,8 +6,6 @@ while ( have_posts() ) : the_post(); ?>
 
     <?php if ( get_theme_mod('display_post_title_setting') == 'off' ) : else : ?>
 
-                <?php if ( get_theme_mod('display_post_title_setting') == 'off' ) : else : ?>
-
                     <h4><?php if (get_theme_mod('display_date_setting') != 'off' ) : ?>
                         <time datetime="<?php the_time('Y-m-d H:i') ?>">
                             <?php if ( get_theme_mod('dateformat_setting') != '' ) : 
@@ -15,7 +13,6 @@ while ( have_posts() ) : the_post(); ?>
                             else : the_time('M jS'); endif; ?></time><?php endif; ?>
                         <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                             <?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'localize_adventure'); } ?></a></h4>
-
     <?php endif;
 
     the_content(); ?>
