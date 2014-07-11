@@ -9,7 +9,6 @@
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
 	</span></div>		<div class="entry clearfix">
-			<?php if ( of_get_option('digital_ad2') <> "" ) { echo stripslashes(of_get_option('digital_ad2')); } ?>
 			<?php the_content(); ?> 
 			<div class="gap"></div><?php if ( of_get_option('digital_tags' ) =='1') { ?>	<?php  if (get_the_tags()) :?> <span class="tags"><?php if("the_tags")	$before = '';
 $seperator = ''; // blank instead of comma
@@ -31,9 +30,7 @@ $after = ''; the_tags("",$before, $seperator, $after );
 					<h3><?php _e('404 Error&#58; Not Found', 'digital' ); ?></h3>
 				</div>
 			<?php endif; ?>
-		<div id="footerads">
-<?php if ( of_get_option('digital_ad1') <> "" ) { echo stripslashes(of_get_option('digital_ad1')); } ?>
-</div></div> <!-- end div #content -->
+		</div> <!-- end div #content -->
 			
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

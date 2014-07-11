@@ -17,7 +17,7 @@
 
 	<div id="footer">
 	<div id="footer-inner" class="clearfix">
-			<a href="<?php echo esc_url( home_url( ));?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> <?php _e('Copyright &#169; | ', 'digital'); ?> <?php echo date('Y');?> <a href="<?php echo esc_url( __( 'http://www.insertcart.com/digital/', 'digital' ) ); ?>" title="<?php esc_attr_e( 'insertcart.com', 'digital' ); ?>"><?php printf( __( 'Digital Theme %s', 'digital' ),''); ?></a>
+			<a href="<?php echo esc_url( home_url( ));?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> <?php _e('Copyright &#169; | ', 'digital'); ?> <?php echo date('Y');?> <a href="<?php echo esc_url( __( 'http://www.insertcart.com/digital/', 'digital' ) ); ?>" title="<?php esc_attr_e( 'Digital', 'digital' ); ?>"><?php printf( __( 'Digital Theme %s', 'digital' ),''); ?></a>
 	</div> <!-- end div #footer-inner -->
 	</div> <!-- end div #footer -->
 	<!-- END FOOTER -->

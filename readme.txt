@@ -36,6 +36,9 @@ Custom Css:
 
 == Change log ==
 
+= 1.0.2 =
+*Fixed theme repoted issue
+
 = 1.0.1 =
 *Initial Release @ 1.0
 

@@ -220,10 +220,10 @@ $options[] = array(
 		'std' => $imagepath . 'thumb.jpg',
 		'type' => 'upload' );
 		$options[] = array(
-		'name' => __('Social Media', 'digital'),
+		'name' => __('Social Profile', 'digital'),
 		'type' => 'heading');
 		$options[] = array(
-		'name' => __('Show share buttons on Top Navigation', 'digital'),
+		'name' => __('Show Profiles Links for Top Navigation', 'digital'),
 		'desc' => __('Check or uncheck Box to show and hide share buttons', 'digital'),
 		'id' => 'digital_sharebut',
 		'std' => '1',
@@ -396,27 +396,7 @@ $options[] = array(
 		'std' => '',
 		'type' => 'textarea');
 		
-$options[] = array(
-		'name' => __('Ads Management', 'digital'),
-		'type' => 'heading');
-	$options[] = array(
-		'name' => __('Paste Ads code for header.', 'digital'),
-		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ad.', 'digital'),
-		'id' => 'banner_top',
-		'std' => '',
-		'type' => 'textarea');
-	$options[] = array(
-		 'name' => __( 'AD Code For Single Post', 'digital' ),
-            'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
-            'id' => 'digital_ad2',
-            'std' => '',
-            'type' => 'textarea');
-     $options[] = array(
-		'name' => __( 'AD Code For Footer', 'digital' ),
-            'desc' => 'Paste Ad Code for Footer Area.',
-            'id' => 'digital_ad1',
-            'std' => '',
-            'type' => 'textarea');	
+
 		
 $options[] = array(
 		'name' => __('Advance Options', 'digital'),
@@ -638,33 +618,7 @@ $options[] = array(
 			
 			)
 	);
-		$options[] = array(
-		'desc' => '<span class="pre-titleseo">SEO & Meta Options</span>', 
-		'type' => 'info');
-		$options[] = array(
-		'name' => __('Google+ Publisher URL', 'digital'),
-		'desc' => __('Paste Your Google Publisher URL https://plus.google.com/YOUR-GOOGLE+ID/posts.', 'digital'),
-		'id' => 'digital_googlepub',
-		'std' => '',
-		'type' => 'text');
-		$options[] = array(
-		'name' => __('Bing Site Verification', 'digital'),
-		'desc' => __('Enter the ID only. It will be verified by Yahoo as well.', 'digital'),
-		'id' => 'digital_bingvari',
-		'std' => '',
-		'type' => 'text');
-		$options[] = array(
-		'name' => __('Google Site verification', 'digital'),
-		'desc' => __('Enter your ID only.', 'digital'),
-		'id' => 'digital_googlevari',
-		'std' => '',
-		'type' => 'text');
-		$options[] = array(
-		'name' => __('Footer Script Area', 'digital'),
-		'desc' => __('Enter Code for footer like google analytic.', 'digital'),
-		'id' => 'digital_scriptfooter',
-		'std' => '',
-		'type' => 'textarea');
+		
 		
 		
 		$options[] = array(
@@ -722,7 +676,7 @@ $options[] = array(
 		$options[] = array(
 		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
             'id' => 'digital_ftarea',
-            'std' => 'Copyright  &#169; 2013 Designed by: <a href="http://www.insertcart.com/digital" title="insertcart.com">insertcart.com</a>',
+            'std' => 'Copyright  &#169; 2014',
             'type' => 'textarea');	
 			
 
