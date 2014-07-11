@@ -34,6 +34,16 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.18 July 11rd 2014 =
+* added : (lang) Czech translation. Many thanks to Martin Filák!
+* added : (php , class-content_slider.php) two new action hooks (filters) for a better control of the slider layout class (tc_slider_layout_class) and the slider image size (tc_slider_img_size)
+* added : (php, class-fire-resources.php) new filter named "tc_custom_css_priority" to take control over the custom css writing priority in head
+* added : (php) empty index.php added in all folders
+* improved : (php) Every class is now "pluggable" and can be overriden
+* improved : (php, class-content-post_list.php) the missing $layout parameter has been added to the "tc_post_list_thumbnail" filter
+* improved : (php, class-content-headings.php) headings of the page for post is now displayed by default (if not front page). Action hook (filter) : tc_page_for_post_header_content
+* improved : (php, class-content-sidebar.php) before and after sidebars hooks have been moved out of the active_sidebar condition in order to be used even with widget free sidebars
+
 = 3.1.17 July 6rd 2014 =
 * fixed : back to previous screenshot
 
