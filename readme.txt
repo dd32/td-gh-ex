@@ -1,0 +1,48 @@
+== Esteem ==
+
+Esteem is a clean multipurpose responsive WordPress theme designed to fit business, portfolio, blogging or any type of site. The theme supports custom header, custom background, custom widgets, page templates and has built in options panel to configure primary color, site logo, slider, sidebar layout and 3 blog layout. It's also fully compatible with popular plugins like contact Form 7, WP PageNavi and Breadcrumb Navxt and is translation ready.
+
+/**********************************************************/
+
+== COPYRIGHT AND LICENSE == 
+
+Resources packed within the theme. 
+* Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
+  SIL OFL 1.1 http://scripts.sil.org/OFL.
+* Images in the screenshot is from http://wefunction.com/free-high-res-photos/ link: 
+	http://wefunction.com/wordpress/wp-content/uploads/2013/09/003.jpg
+* HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+* The script jquery.cycle.all.js is dual licensed under GPL & MIT
+* Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* Other custom js files are our own creation and is licensed under the same license as this theme.
+
+All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+
+Esteem WordPress Theme, Copyright 2014 ThemeGrill
+Esteem is distributed under the terms of the GNU GPL
+
+/**********************************************************/
+
+== THEME USAGE == 
+
+= Theme Instruction =
+Get theme instruction at http://themegrill.com/theme-instruction/esteem
+
+= Free Support =
+Get free support at http://themegrill.com/support-forum
+
+= Theme Features Usage =
+All available options can be used from Appearance->Theme Options
+
+/**********************************************************/
+
+== TRANSLATIONS ==
+If you've translated this theme into your language, feel free to send the translation over to themegrill@gmail.com
+and we will include it within the theme from next version update. 
+
+/**********************************************************/
+
+== CHANGE LOG ==
+
+= Version 1.0 =
+* All brand new.
