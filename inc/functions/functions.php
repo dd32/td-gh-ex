@@ -348,19 +348,17 @@ function sampression_favicons() {
  * message info
  */
 function sampression_message_info() {
+     if ((isset($_GET['settings-updated'])) && ($_GET['settings-updated'] == 'reset') ) {
+         echo '<div id="self-destroy" class="restore-info">Successfully restored to default.</div>';
+    }
+    
+    if ((isset($_GET['settings-updated'])) && ($_GET['settings-updated'] == 'error') && ($_GET['errormessage'] == 4) ) {
+         echo '<div id="self-destroy" class="restore-info">' . SAM_FW_CSS_DIR . '/custom-css.css is not writeable. Please erase all CSS from the existing file.</div>';
+    }
     if (isset($_GET['message'])) {// class="message success auto-close"
         switch ($_GET['message']) {
-            case 1:
-                echo '<div id="self-destroy" class="restore-info">Successfully imported.</div>';
-                break;
-            case 2:
-                echo '<div id="self-destroy" class="restore-info">Successfully restored to default.</div>';
-                break;
             case 3:
                 echo '<div id="self-destroy" class="restore-info">Your site is using default settings.</div>';
-                break;
-            case 4:
-                echo '<div id="self-destroy" class="restore-info">' . SAM_FW_CSS_DIR . '/custom-css.css is not writeable. Please erase all CSS from the existing file.</div>';
                 break;
             case 5:
                 echo '<div id="self-destroy" class="restore-info">Imported file contain error.</div>';
@@ -413,15 +411,9 @@ if(isset($_POST['reset'])) {
     $css = ' ';
     if (!is_writable($file)) {
         $message = 4;
-        wp_redirect('themes.php?page=sampression-options&message=' . $message);
-    } else {
-        if (file_exists($file)) {
-            if ( ! $wp_filesystem->put_contents( $file, $css, FS_CHMOD_FILE) ) {
-                echo __('CSS could not be written at this time. Please try again later.', 'sampression');
-            }
-        }
-        wp_redirect('themes.php?page=sampression-options');
-    }    
+        wp_redirect('themes.php?page=sampression-options&settings-updated=error&errormessage=4');
+    }
+    wp_redirect('themes.php?page=sampression-options&settings-updated=reset');    
     exit;
 }
 

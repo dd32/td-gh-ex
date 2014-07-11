@@ -46,12 +46,12 @@ jQuery(document).ready(function($) {
     var bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.className = bodyTag.className.replace("noJS", "hasJS");
     
-    $('pre.select-me').live('click', function() {
+    $('pre.select-me').on('click', function() {
         $(this).selectText();
     });
 
     // check confirmation for restoring theme to default.
-    $('.sampression-restore').live('click', function() {
+    $('.sampression-restore').on('click', function() {
         var answer = confirm('Do you want to restore theme to default?');
         if (answer) {
             return true;
@@ -76,7 +76,7 @@ jQuery(document).ready(function($) {
     });
 
     //Show Meta - Blog Page Setting - check/uncheck checkbox
-    $('.show-meta').live('click', function() {
+    $('.show-meta').on('click', function() {
         var id = $(this).attr('for');
         if ($('#' + id).is(':checked')) {
             $('#show-' + id).val('no');
@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
     });
 
     //Check/Uncheck checkbox - Apple Touch Icons - Logos & Icons
-    $('.samp-style').live('click', function() {
+    $('.samp-style').on('click', function() {
         if ($(this).hasClass('appleicons') && !$(this).is(':checked')) {
             $('#no-touchicon').prop('checked', false);
             $('.sam-no-touchicon').val('no');
@@ -111,7 +111,7 @@ jQuery(document).ready(function($) {
     });
     
     //Check/Uncheck - Website Description - Logos & Icons
-    $('#no-webdesc').live('click', function() {
+    $('#no-webdesc').on('click', function() {
         check_checkbox_with_value($(this), '#sam-use-webdesc', 'yes', 'no');
     });
     
@@ -133,7 +133,7 @@ jQuery(document).ready(function($) {
     }
 
     //Get WP Default Image Uploader
-    $('.upload_image_button').live('click', function(e) {
+    $('.upload_image_button').on('click', function(e) {
         e.preventDefault();
         var iii = '';
         var iii = $(this);
@@ -475,7 +475,7 @@ jQuery(document).ready(function($) {
     /*
     * Get selected categories id from 'hide blog from' section on blog menu
     */
-    $('.show-categories').live('click', function(){
+    $('.show-categories').on('click', function(){
         var chkId = '';
         $('.show-categories:checked').each(function() {
           chkId += $(this).val() + ",";
@@ -485,7 +485,7 @@ jQuery(document).ready(function($) {
     });
     
     
-    $('#show-all-categories').live('click', function() {
+    $('#show-all-categories').on('click', function() {
         //Show blog from the following categories - Check all checkboxes and uncheck all checkboxes.
         if ($(this).is(':checked')) {
             $('.show-categories').attr('checked', 'checked');

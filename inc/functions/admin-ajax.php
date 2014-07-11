@@ -20,15 +20,6 @@ function sampression_write_custom_css() {
         echo $str;
         return;
     }
-    if ( ! $wp_filesystem->put_contents( $file, ' ', FS_CHMOD_FILE) ) {
-        echo __('CSS could not be written at this time. Please try again later.', 'sampression');
-    }
-    
-    if (file_exists($file)) {
-        if ( ! $wp_filesystem->put_contents( $file, $css, FS_CHMOD_FILE) ) {
-            echo __('CSS could not be written at this time. Please try again later.', 'sampression');
-        }
-    }
 }
 
 function sampression_generate_custom_css(){

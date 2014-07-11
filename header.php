@@ -24,8 +24,20 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+/** 
+ * sampression_after_body hook
+ */
+do_action('sampression_after_body'); 
+?>
 <div id="wrapper">
-    <div id="inner-wrapper">
+    <div id="inner-wrapper">        
+        <?php 
+        /** 
+        * sampression_before_header hook
+        */
+        do_action('sampression_before_header'); 
+        ?>
         <header id="header" class="block">
             <div class="container">
                 <div class="six columns">
@@ -54,3 +66,9 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
             </div>
         </header>
         <!--/#header-->
+        <?php 
+        /** 
+        * sampression_after_header hook
+        */
+        do_action('sampression_after_header'); 
+        ?>
