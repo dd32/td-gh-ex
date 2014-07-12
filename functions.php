@@ -277,6 +277,38 @@ define('ACF_LITE',true);
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
+		'id' => 'acf_tip-for-contact-form',
+		'title' => 'Tip for Contact Form',
+		'fields' => array (
+			array (
+				'key' => 'field_53c16fc19fe17',
+				'label' => 'Tip for Contact Form',
+				'name' => '',
+				'type' => 'message',
+				'message' => '( !!! But first, you have to install recommended plugin Contact Form 7. ) In order to add Contact Form, you should go to Contact > Contact Forms , and then you will see the shortcode on the screen. Copy it and paste above the editor.',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-contact.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
+	register_field_group(array (
 		'id' => 'acf_google-maps',
 		'title' => 'Google Maps',
 		'fields' => array (

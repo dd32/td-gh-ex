@@ -2,6 +2,8 @@ For your any question or request please feel free to contact me. I will be happy
 
 Newsmag PSD designed by me. You can find it on Behance : https://www.behance.net/gallery/17108567/NewsMag-News-Magazine-PSD-Template
 
+== How to add CONTACT FORM ==
+Firstly, you have to install recommended plugin Contact Form 7. In order to add Contact Form, you should go to Contact > Contact Forms , and then you will see the shortcode on the screen. Copy it and paste the contact form template's editor. 
 
 
 == Copyright ==
