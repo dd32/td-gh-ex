@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: selfie\n"
+"POT-Creation-Date: 2014-07-13 17:03+0600\n"
+"PO-Revision-Date: 2014-07-13 17:12+0600\n"
+"Last-Translator: support@d5creation.com\n"
+"Language-Team: D5 Creation <support@d5creation.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ./\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../archive.php:14
+msgid "now browsing by category"
+msgstr ""
+
+#: ../archive.php:20
+msgid "now browsing by tag"
+msgstr ""
+
+#: ../archive.php:25
+msgid "now browsing by day"
+msgstr ""
+
+#: ../archive.php:28
+msgid "now browsing by month"
+msgstr ""
+
+#: ../archive.php:31
+msgid "now browsing by year"
+msgstr ""
+
+#: ../archive.php:34 ../archive.php:37 ../sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: ../archive.php:34
+msgid "now browsing by author"
+msgstr ""
+
+#: ../archive.php:37
+msgid "now browsing the general archives"
+msgstr ""
+
+#: ../comments.php:14
+msgid "No Comments"
+msgstr ""
+
+#: ../comments.php:14
+msgid "One Comment"
+msgstr ""
+
+#: ../comments.php:14
+msgid "% Comments"
+msgstr ""
+
+#: ../functions.php:8
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:8
+msgid "Top Menu"
+msgstr ""
+
+#: ../functions.php:102
+msgid "Theme by:"
+msgstr ""
+
+#: ../functions.php:102
+msgid "Powered by:"
+msgstr ""
+
+#: ../functions.php:118 ../functions.php:124
+msgid "Read More"
+msgstr ""
+
+#: ../functions.php:148
+msgid "SORRY, NOT FOUND ANYTHING"
+msgstr ""
+
+#: ../functions.php:149
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: ../functions.php:151
+msgid "&laquo; Or Return to the Home Page"
+msgstr ""
+
+#: ../functions.php:161
+msgid "NEWER ENTRIES"
+msgstr ""
+
+#: ../functions.php:162
+msgid "OLDER ENTRIES"
+msgstr ""
+
+#: ../functions.php:171
+msgid "Primary Sidebar"
+msgstr ""
+
+#: ../functions.php:180
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: ../functions.php:189
+msgid "Footer Area One"
+msgstr ""
+
+#: ../functions.php:199
+msgid "Footer Area Two"
+msgstr ""
+
+#: ../functions.php:209
+msgid "Footer Area Three"
+msgstr ""
+
+#: ../functions.php:220
+msgid "Footer Area Four"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:85
+#: ../inc/includes/class-options-framework-admin.php:86
+#: ../inc/includes/class-options-framework-admin.php:305 ../inc/options.php:23
+msgid "Selfie Options"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:172
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:203
+msgid "Default options restored."
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:257
+msgid "Options saved."
+msgstr ""
+
+#: ../inc/options.php:27
+msgid ""
+"If you like this FREE Theme You can consider for a small Donation to us. "
+"Your Donation will be spent for the Disadvantaged Children and Students. You "
+"can visit our"
+msgstr ""
+
+#: ../inc/options.php:27
+msgid "DONATION PAGE"
+msgstr ""
+
+#: ../inc/options.php:27
+msgid "and Take your decision."
+msgstr ""
+
+#: ../inc/options.php:27
+msgid "We appreciate an"
+msgstr ""
+
+#: ../inc/options.php:27
+msgid "Honest Review"
+msgstr ""
+
+#: ../inc/options.php:27
+msgid "of this Theme if you Love our Work."
+msgstr ""
+
+#: ../inc/options.php:28
+msgid ""
+"is a Revolutionary One Page Theme with Hundreds of Features and "
+"Opportunities including Slides, Portfolio, Gallery, Services, Videos etc for "
+"Self Hosted WordPress Sites. Try"
+msgstr ""
+
+#: ../inc/options.php:28
+msgid "You can Visit the"
+msgstr ""
+
+#: ../inc/options.php:28
+msgid "Demo Here"
+msgstr ""
+
+#: ../inc/options.php:32
+msgid "Contact Number"
+msgstr ""
+
+#: ../inc/options.php:33
+msgid "Set Your Contact Number"
+msgstr ""
+
+#: ../inc/options.php:42
+msgid "Social Link - "
+msgstr ""
+
+#: ../inc/options.php:43
+msgid ""
+"Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
+"d5creation</b>.  If you do not want to show anything here leave the box "
+"blank. This Version supports only WordPress, Dribbble, Github, Tumblr, "
+"YouTube, Flickr, Vimeo, Instagram, Codepen and LinkedIn"
+msgstr ""
+
+#: ../post-content.php:35
+msgid "Previous Image"
+msgstr ""
+
+#: ../post-content.php:36
+msgid "Next Image"
+msgstr ""
+
+#: ../search.php:12
+msgid "SEARCH RESULTS"
+msgstr ""
+
+#: ../search.php:17
+msgid "Search Term:"
+msgstr ""
+
+#: ../search.php:18
+msgid "Number of Results:"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: ../searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:19
+msgid "Meta"
+msgstr ""
