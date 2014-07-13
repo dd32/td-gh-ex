@@ -646,6 +646,21 @@ and (orientation : landscape) {
 	#main-slider .entry-header {
 		padding: 5px 10px 2px;
 	}
+	#featured-post.layout-four .featued-content-wrap, 
+	#featured-post.layout-three .featued-content-wrap,
+	#featured-post.layout-four .post,
+	#featured-post.layout-three .post,
+	#secondary,
+	#footer-sidebar #supplementary .widget-area {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}		
+	#secondary .widget {
+		margin-left: 0;
+		padding: 10px 4%;
+		width: 91%;
+	}		
 }
 @media screen and (max-width: 360px) {
 	.site {

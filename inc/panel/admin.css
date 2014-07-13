@@ -1,5 +1,6 @@
 /* Self Clearing Goodness */
 #catchthemes:after,
+#theme-option-header:after,
 #theme-option-title:after,
 #theme-support:after,
 #catchkathmandu_ad_tabs:after,
@@ -223,7 +224,6 @@
 	min-height: 130px;
 }
 #catchthemes #upgradepro {
-	clear: left;
     float: right;
 	padding-bottom: 20px;
 }

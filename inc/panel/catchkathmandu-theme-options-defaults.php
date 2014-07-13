@@ -96,6 +96,7 @@ $catchkathmandu_options_defaults = array(
 	'social_goodreads'						=> '',
 	'social_skype'							=> '',
 	'social_soundcloud'						=> '',
+	'social_email'							=> '',
  	'analytic_header'						=> '',
  	'analytic_footer'						=> '',
 	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'catchkathmandu' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'catchkathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Powered by', 'catchkathmandu' ) . ': [wp-link] | '. esc_attr__( 'Theme', 'catchkathmandu' ) . ': [theme-link]</div>',

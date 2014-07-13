@@ -73,6 +73,11 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+Version 1.9
+* Added email in social link option
+* Fixed responsive css for sidebar in iPhone 4
+* Optimized Theme Options panel to speed up
+
 Version 1.8.2
 * Removed rem in width, padding and margins, now only in font sizes css
 

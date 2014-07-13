@@ -21,11 +21,11 @@ function catchkathmandu_admin_scripts() {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	
 	wp_enqueue_script( 'catchkathmandu_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-	wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
+	wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
 	
 	wp_enqueue_script( 'catchkathmandu_color', get_template_directory_uri().'/inc/panel/js/color_picker.min.js', array( 'farbtastic' ) );
 	
-	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
+	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.min.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catchkathmandu_admin_scripts');
@@ -48,27 +48,6 @@ function catchkathmandu_options_menu() {
     );	
 
 }
-
-
-/* 
- * Admin Social Links
- * use facebook and twitter scripts
- */
-function catchkathmandu_admin_social() { ?>
-<!-- Start Social scripts -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=276203972392824";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<!-- End Social scripts -->
-<?php
-}
-add_action('admin_print_styles-appearance_page_theme_options','catchkathmandu_admin_social');
 
 
 /*
@@ -106,15 +85,6 @@ function catchkathmandu_theme_options_do_page() {
             <?php endif; ?>            
             
 			<div id="theme-option-header">
-            	<div id="theme-social">
-                	<ul>
-            			<li class="widget-fb">
-                            <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchkathmandu')); ?>" class="fb-like"></div></li>
-                     	<li class="widget-tw">
-                            <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','catchkathmandu')); ?>">Follow @catchthemes</a>
-            			</li>
-                   	</ul>
-               	</div><!-- #theme-social -->
             
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catchkathmandu' ); ?></h2>
@@ -1331,6 +1301,14 @@ function catchkathmandu_theme_options_do_page() {
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Email', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="catchkathmandu_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->                             
+                            <div class="row">
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
                            	</div><!-- .row -->
                         </div><!-- .option-content -->
@@ -1721,7 +1699,10 @@ function catchkathmandu_theme_options_validate( $options ) {
 	}
 	if( isset( $input[ 'social_soundcloud' ] ) ) {
 		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
-	}		
+	}	
+	if( isset( $input[ 'social_email' ] ) ) {
+		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	}			
 
 	// data validation for Custom Social Icons 
 	if ( isset( $input[ 'social_custom_qty' ] ) ) {
