@@ -94,7 +94,7 @@ function catchevolution_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'chat' ) );
 	
 	// Load up theme options defaults
-	require( get_template_directory() . '/inc/catchevolution-themeoptions-defaults.php' );
+	require( get_template_directory() . '/inc/panel/catchevolution-themeoptions-defaults.php' );
 	
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/inc/panel/theme-options.php' );

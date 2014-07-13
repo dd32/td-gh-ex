@@ -447,15 +447,26 @@ if ( ! function_exists( 'catchevolution_posted_on' ) ) :
  * @since Catch Evolution 1.0
  */
 function catchevolution_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchevolution' ),
+	/* Check Author URL to Support Google Authorship
+	* 
+	* By deault the author will link to author archieve page
+	* But if the author have added their Website in Profile page then it will link to author website
+	*/	
+	if ( get_the_author_meta( 'user_url' ) != '' ) {
+		$catchevolution_author_url = 	esc_url( get_the_author_meta( 'user_url' ) );						  
+	}
+	else {
+		$catchevolution_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
+	}
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchevolution' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		$catchevolution_author_url,
 		esc_attr( sprintf( __( 'View all posts by %s', 'catchevolution' ), get_the_author() ) ),
 		get_the_author()
-	);
+	);	
 }
 endif;
 
@@ -890,7 +901,9 @@ function catchevolution_social_networks() {
 						$options[ 'social_rss' ],
 						$options[ 'social_slideshare' ],
 						$options[ 'social_instagram' ],
-						$options[ 'social_skype' ]
+						$options[ 'social_skype' ],
+						$options[ 'social_soundcloud' ],
+						$options[ 'social_email' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1003,7 +1016,16 @@ function catchevolution_social_networks() {
 				$catchevolution_social_networks .=
 					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s in Skype', 'catchevolution' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Skype </a></li>';
 			}
-	
+			//Soundcloud
+			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+				$catchevolution_social_networks .=
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'</a></li>';
+			}	
+			//Email
+			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
+				$catchevolution_social_networks .=
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catchevolution' ) .'</a></li>';
+			}		
 			$catchevolution_social_networks .='
 		</ul></div>';
 		

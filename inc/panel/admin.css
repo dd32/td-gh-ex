@@ -1,5 +1,6 @@
 /* Self Clearing Goodness */
 #catchthemes:after,
+#theme-option-header:after,
 #theme-option-title:after,
 #theme-support:after,
 #catchevolution_ad_tabs:after {
@@ -32,7 +33,6 @@
     text-shadow: none;
 }
 #upgradepro {
-	clear: left;
     float: right;
 }
 #upgradepro .button { 
@@ -84,6 +84,9 @@
     clear: both;
 	padding-top: 15px;
     text-align: right;
+}
+#theme-support ul {
+	margin: 0;
 }
 #theme-support ul li {
 	display: inline;

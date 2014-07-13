@@ -56,6 +56,11 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+1.9
+* Added email and Soundcloud social link option
+* Fixed Google's Structured Data
+* Optimized Theme Options panel to speed up
+
 1.8.5
 * Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 

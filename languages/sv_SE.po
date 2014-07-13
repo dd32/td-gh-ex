@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-14 00:23+0545\n"
-"PO-Revision-Date: 2014-06-14 00:23+0545\n"
+"POT-Creation-Date: 2014-07-14 03:22+0545\n"
+"PO-Revision-Date: 2014-07-14 03:22+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.6\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -142,7 +142,7 @@ msgstr "Kommentarer är avstängda."
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-page.php:13 ../content-quote.php:14
 #: ../content-status.php:15 ../content.php:27 ../content.php:31
-#: ../content.php:63 ../inc/catchevolution-functions.php:630
+#: ../content.php:63 ../inc/catchevolution-functions.php:641
 #, php-format
 msgid "Permalink to %s"
 msgstr "Direktlänk till %s"
@@ -268,7 +268,7 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s"
 "\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:44 ../inc/catchevolution-functions.php:456
+#: ../content-image.php:44 ../inc/catchevolution-functions.php:467
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visa alla poster av %s"
@@ -404,138 +404,143 @@ msgstr "Din kommentar väntar på moderering."
 msgid "Reply <span>&darr;</span>"
 msgstr "Svara <span>&darr;</span>"
 
-#: ../inc/catchevolution-functions.php:450
+#: ../inc/catchevolution-functions.php:461
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
-"a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class="
-"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
-"\"author\">%7$s</a></span></span>"
+"\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>"
+"%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
+"\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 "<span class=\"sep\">Postat den </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
-"a><span class=\"by-author\"> <span class=\"sep\"> av </span> <span class="
-"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
-"\"author\">%7$s</a></span></span>"
+"\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>"
+"%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> av </span> "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
+"\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchevolution-functions.php:535
+#: ../inc/catchevolution-functions.php:546
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchevolution-functions.php:804
+#: ../inc/catchevolution-functions.php:815
 msgid "Name"
 msgstr "Namn"
 
-#: ../inc/catchevolution-functions.php:806
+#: ../inc/catchevolution-functions.php:817
+#: ../inc/catchevolution-functions.php:1027 ../inc/panel/theme-options.php:759
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchevolution-functions.php:919
-#: ../inc/catchevolution-functions.php:1093
+#: ../inc/catchevolution-functions.php:932
+#: ../inc/catchevolution-functions.php:1115
 #, php-format
 msgid "%s in Facebook"
 msgstr "%s på Facebook"
 
-#: ../inc/catchevolution-functions.php:924
-#: ../inc/catchevolution-functions.php:1098
+#: ../inc/catchevolution-functions.php:937
+#: ../inc/catchevolution-functions.php:1120
 #, php-format
 msgid "%s in Twitter"
 msgstr "%s på Twitter"
 
-#: ../inc/catchevolution-functions.php:929
-#: ../inc/catchevolution-functions.php:1103
+#: ../inc/catchevolution-functions.php:942
+#: ../inc/catchevolution-functions.php:1125
 #, php-format
 msgid "%s in Google+"
 msgstr "%s på Google+"
 
-#: ../inc/catchevolution-functions.php:934
-#: ../inc/catchevolution-functions.php:1108
+#: ../inc/catchevolution-functions.php:947
+#: ../inc/catchevolution-functions.php:1130
 #, php-format
 msgid "%s in Linkedin"
 msgstr "%s på Linkedin"
 
-#: ../inc/catchevolution-functions.php:939
-#: ../inc/catchevolution-functions.php:1113
+#: ../inc/catchevolution-functions.php:952
+#: ../inc/catchevolution-functions.php:1135
 #, php-format
 msgid "%s in Pinterest"
 msgstr "%s på Pinterest"
 
-#: ../inc/catchevolution-functions.php:944
-#: ../inc/catchevolution-functions.php:1118
+#: ../inc/catchevolution-functions.php:957
+#: ../inc/catchevolution-functions.php:1140
 #, php-format
 msgid "%s in YouTube"
 msgstr "%s på YouTube"
 
-#: ../inc/catchevolution-functions.php:949
-#: ../inc/catchevolution-functions.php:1123
+#: ../inc/catchevolution-functions.php:962
+#: ../inc/catchevolution-functions.php:1145
 #, php-format
 msgid "%s in Vimeo"
 msgstr "%s på Vimeo"
 
-#: ../inc/catchevolution-functions.php:954
-#: ../inc/catchevolution-functions.php:994
-#: ../inc/catchevolution-functions.php:1128
-#: ../inc/catchevolution-functions.php:1168
+#: ../inc/catchevolution-functions.php:967
+#: ../inc/catchevolution-functions.php:1007
+#: ../inc/catchevolution-functions.php:1150
+#: ../inc/catchevolution-functions.php:1190
 #, php-format
 msgid "%s in Slideshare"
 msgstr "%s på Slideshare"
 
-#: ../inc/catchevolution-functions.php:959
-#: ../inc/catchevolution-functions.php:1133
+#: ../inc/catchevolution-functions.php:972
+#: ../inc/catchevolution-functions.php:1155
 #, php-format
 msgid "%s in Foursquare"
 msgstr "%s på Foursquare"
 
-#: ../inc/catchevolution-functions.php:964
-#: ../inc/catchevolution-functions.php:1138
+#: ../inc/catchevolution-functions.php:977
+#: ../inc/catchevolution-functions.php:1160
 #, php-format
 msgid "%s in Flickr"
 msgstr "%s på Flickr"
 
-#: ../inc/catchevolution-functions.php:969
-#: ../inc/catchevolution-functions.php:1143
+#: ../inc/catchevolution-functions.php:982
+#: ../inc/catchevolution-functions.php:1165
 #, php-format
 msgid "%s in Tumblr"
 msgstr "%s på Tumblr"
 
-#: ../inc/catchevolution-functions.php:974
-#: ../inc/catchevolution-functions.php:1148
+#: ../inc/catchevolution-functions.php:987
+#: ../inc/catchevolution-functions.php:1170
 #, php-format
 msgid "%s in deviantART"
 msgstr "%s på deviantART"
 
-#: ../inc/catchevolution-functions.php:979
-#: ../inc/catchevolution-functions.php:1153
+#: ../inc/catchevolution-functions.php:992
+#: ../inc/catchevolution-functions.php:1175
 #, php-format
 msgid "%s in Dribbble"
 msgstr "%s på Dribbble"
 
-#: ../inc/catchevolution-functions.php:984
-#: ../inc/catchevolution-functions.php:1158
+#: ../inc/catchevolution-functions.php:997
+#: ../inc/catchevolution-functions.php:1180
 #, php-format
 msgid "%s in WordPress"
 msgstr "%s på WordPress"
 
-#: ../inc/catchevolution-functions.php:989
-#: ../inc/catchevolution-functions.php:1163
+#: ../inc/catchevolution-functions.php:1002
+#: ../inc/catchevolution-functions.php:1185
 #, php-format
 msgid "%s in RSS"
 msgstr "%s på RSS"
 
-#: ../inc/catchevolution-functions.php:999
-#: ../inc/catchevolution-functions.php:1173
+#: ../inc/catchevolution-functions.php:1012
+#: ../inc/catchevolution-functions.php:1195
 #, php-format
 msgid "%s in Instagram"
 msgstr "%s på Instagram"
 
-#: ../inc/catchevolution-functions.php:1004
-#: ../inc/catchevolution-functions.php:1178
+#: ../inc/catchevolution-functions.php:1017
+#: ../inc/catchevolution-functions.php:1200
 #, php-format
 msgid "%s in Skype"
 msgstr "%s på Skype"
 
-#: ../inc/catchevolution-functions.php:1310
+#: ../inc/catchevolution-functions.php:1022 ../inc/panel/theme-options.php:754
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../inc/catchevolution-functions.php:1332
 msgid "Footer menu"
 msgstr "Sidfot Meny"
 
@@ -560,7 +565,7 @@ msgstr "Vänster sidofält"
 msgid "No sidebar"
 msgstr "Inget sidofält"
 
-#: ../inc/catchevolution-metabox.php:58 ../inc/panel/theme-options.php:447
+#: ../inc/catchevolution-metabox.php:58 ../inc/panel/theme-options.php:417
 msgid "Three Columns"
 msgstr "Tre kolumner"
 
@@ -675,172 +680,164 @@ msgid "Secondary menu"
 msgstr "Sekundär meny"
 
 #: ../inc/panel/theme-options.php:37 ../inc/panel/theme-options.php:38
-#: ../inc/panel/theme-options.php:143
+#: ../inc/panel/theme-options.php:113
 msgid "Theme Options"
 msgstr "Tema Inställningar"
 
-#: ../inc/panel/theme-options.php:100
+#: ../inc/panel/theme-options.php:79
 msgid "Options Saved"
 msgstr "Inställningar Sparade"
 
-#: ../inc/panel/theme-options.php:107
-msgid "http://facebook.com/catchthemes"
-msgstr "http://facebook.com/catchthemes"
-
-#: ../inc/panel/theme-options.php:109
-msgid "https://twitter.com/catchthemes"
-msgstr "https://twitter.com/catchthemes"
-
-#: ../inc/panel/theme-options.php:115
+#: ../inc/panel/theme-options.php:85
 msgid "Theme Options By"
 msgstr "Tema Alternativ Av"
 
-#: ../inc/panel/theme-options.php:117
+#: ../inc/panel/theme-options.php:87
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:118
+#: ../inc/panel/theme-options.php:87 ../inc/panel/theme-options.php:88
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/theme-options.php:124
+#: ../inc/panel/theme-options.php:94
 msgid "http://catchthemes.com/themes/catch-evolution-pro/"
 msgstr "http://catchthemes.com/themes/catch-evolution-pro/"
 
-#: ../inc/panel/theme-options.php:124
+#: ../inc/panel/theme-options.php:94
 msgid "Upgrade to Catch Evolution Pro"
 msgstr "Uppgradera till Catch Evolution Pro"
 
-#: ../inc/panel/theme-options.php:129
+#: ../inc/panel/theme-options.php:99
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/panel/theme-options.php:129
+#: ../inc/panel/theme-options.php:99
 msgid "Donate to Catch Evolution"
 msgstr "Donera till Catch Evolution"
 
-#: ../inc/panel/theme-options.php:129
+#: ../inc/panel/theme-options.php:99
 msgid "Donate Now"
 msgstr "Donera Nu"
 
-#: ../inc/panel/theme-options.php:130
+#: ../inc/panel/theme-options.php:100
 msgid "http://catchthemes.com/theme-instructions/catch-evolution/"
 msgstr "http://catchthemes.com/theme-instructions/catch-evolution/"
 
-#: ../inc/panel/theme-options.php:130
+#: ../inc/panel/theme-options.php:100
 msgid "Theme Instruction"
 msgstr "Tema Instruktioner"
 
-#: ../inc/panel/theme-options.php:131
+#: ../inc/panel/theme-options.php:101
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/support/"
 
-#: ../inc/panel/theme-options.php:131
+#: ../inc/panel/theme-options.php:101
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/panel/theme-options.php:132
+#: ../inc/panel/theme-options.php:102
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: ../inc/panel/theme-options.php:132
+#: ../inc/panel/theme-options.php:102
 msgid "Like Catch Themes on Facebook"
 msgstr "Gilla Catch Themes på Facebook"
 
-#: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:693
+#: ../inc/panel/theme-options.php:102 ../inc/panel/theme-options.php:663
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/panel/theme-options.php:133
+#: ../inc/panel/theme-options.php:103
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: ../inc/panel/theme-options.php:133
+#: ../inc/panel/theme-options.php:103
 msgid "Follow Catch Themes on Twitter"
 msgstr "Följ Catch Themes på Twitter"
 
-#: ../inc/panel/theme-options.php:133 ../inc/panel/theme-options.php:698
+#: ../inc/panel/theme-options.php:103 ../inc/panel/theme-options.php:668
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/panel/theme-options.php:134
+#: ../inc/panel/theme-options.php:104
 msgid "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 msgstr "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 
-#: ../inc/panel/theme-options.php:134
+#: ../inc/panel/theme-options.php:104
 msgid "Rate us 5 Star on WordPress"
 msgstr "Rate us 5 Star on WordPress"
 
-#: ../inc/panel/theme-options.php:134
+#: ../inc/panel/theme-options.php:104
 msgid "5 Star Rating"
 msgstr "5 Star Rating"
 
-#: ../inc/panel/theme-options.php:144
+#: ../inc/panel/theme-options.php:114
 msgid "Featured Post Slider"
 msgstr "Framhävda Inlägg Bildspel"
 
-#: ../inc/panel/theme-options.php:145
+#: ../inc/panel/theme-options.php:115
 msgid "Social Links"
 msgstr "Sociala Länkar"
 
-#: ../inc/panel/theme-options.php:147
+#: ../inc/panel/theme-options.php:117
 msgid "Webmaster Tools"
 msgstr "Webmaster Verktyg"
 
-#: ../inc/panel/theme-options.php:155
+#: ../inc/panel/theme-options.php:125
 msgid "Favicon Options"
 msgstr "Favicon Inställningar"
 
-#: ../inc/panel/theme-options.php:160
+#: ../inc/panel/theme-options.php:130
 msgid "Disable Favicon?"
 msgstr "Avaktivera Favicon?"
 
-#: ../inc/panel/theme-options.php:162 ../inc/panel/theme-options.php:201
-#: ../inc/panel/theme-options.php:241 ../inc/panel/theme-options.php:253
-#: ../inc/panel/theme-options.php:282 ../inc/panel/theme-options.php:287
-#: ../inc/panel/theme-options.php:345
+#: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:171
+#: ../inc/panel/theme-options.php:211 ../inc/panel/theme-options.php:223
+#: ../inc/panel/theme-options.php:252 ../inc/panel/theme-options.php:257
+#: ../inc/panel/theme-options.php:315
 msgid "Check to disable"
 msgstr "Markera för att avaktivera"
 
-#: ../inc/panel/theme-options.php:165
+#: ../inc/panel/theme-options.php:135
 msgid "Fav Icon URL:"
 msgstr "Fav Icon URL:"
 
-#: ../inc/panel/theme-options.php:171
+#: ../inc/panel/theme-options.php:141
 msgid "Change Fav Icon"
 msgstr "Ändra Fav Icon"
 
-#: ../inc/panel/theme-options.php:176 ../inc/panel/theme-options.php:215
+#: ../inc/panel/theme-options.php:146 ../inc/panel/theme-options.php:185
 msgid "Preview: "
 msgstr "Förhandsgranska:"
 
-#: ../inc/panel/theme-options.php:189 ../inc/panel/theme-options.php:229
-#: ../inc/panel/theme-options.php:308 ../inc/panel/theme-options.php:418
-#: ../inc/panel/theme-options.php:474 ../inc/panel/theme-options.php:508
-#: ../inc/panel/theme-options.php:534 ../inc/panel/theme-options.php:552
-#: ../inc/panel/theme-options.php:576 ../inc/panel/theme-options.php:646
-#: ../inc/panel/theme-options.php:671 ../inc/panel/theme-options.php:785
-#: ../inc/panel/theme-options.php:818
+#: ../inc/panel/theme-options.php:159 ../inc/panel/theme-options.php:199
+#: ../inc/panel/theme-options.php:278 ../inc/panel/theme-options.php:388
+#: ../inc/panel/theme-options.php:444 ../inc/panel/theme-options.php:478
+#: ../inc/panel/theme-options.php:504 ../inc/panel/theme-options.php:522
+#: ../inc/panel/theme-options.php:546 ../inc/panel/theme-options.php:616
+#: ../inc/panel/theme-options.php:641 ../inc/panel/theme-options.php:765
+#: ../inc/panel/theme-options.php:798
 msgid "Save Changes"
 msgstr "Spara Ändringar"
 
-#: ../inc/panel/theme-options.php:194
+#: ../inc/panel/theme-options.php:164
 msgid "Web Clip Icon Options"
 msgstr "Web Clip Icon Inställningar"
 
-#: ../inc/panel/theme-options.php:199
+#: ../inc/panel/theme-options.php:169
 msgid "Disable Web Clip Icon?"
 msgstr "Avaktivera Web Clip Icon?"
 
-#: ../inc/panel/theme-options.php:204
+#: ../inc/panel/theme-options.php:174
 msgid "Web Clip Icon URL:"
 msgstr "Web Clip Icon URL:"
 
-#: ../inc/panel/theme-options.php:210
+#: ../inc/panel/theme-options.php:180
 msgid "Change Web Clip Icon"
 msgstr "Ändra Web Clip Icon"
 
-#: ../inc/panel/theme-options.php:228
+#: ../inc/panel/theme-options.php:198
 msgid ""
 "Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
 "Height 144px height, which will support High Resolution Devices like iPad "
@@ -850,215 +847,215 @@ msgstr ""
 "144px och höjd 144px , vilket kommer att stödja högupplösta enheter som iPad "
 "Retina."
 
-#: ../inc/panel/theme-options.php:234
+#: ../inc/panel/theme-options.php:204
 msgid "Header Options"
 msgstr "Header Inställningar"
 
-#: ../inc/panel/theme-options.php:239
+#: ../inc/panel/theme-options.php:209
 msgid "Disable Header?"
 msgstr "Avaktivera Header"
 
-#: ../inc/panel/theme-options.php:245
+#: ../inc/panel/theme-options.php:215
 msgid "Change Custom Header Image (Buddha)?"
 msgstr "Ändra Custom Header Bild (Buddha)?"
 
-#: ../inc/panel/theme-options.php:247
+#: ../inc/panel/theme-options.php:217
 msgid "Click here to change header image"
 msgstr "Klicka här för att ändra headerns bild"
 
-#: ../inc/panel/theme-options.php:251
+#: ../inc/panel/theme-options.php:221
 msgid "Disable Header Logo?"
 msgstr "Avaktivera Headerns Logga?"
 
-#: ../inc/panel/theme-options.php:256
+#: ../inc/panel/theme-options.php:226
 msgid "Logo url:"
 msgstr "Loggans url:"
 
-#: ../inc/panel/theme-options.php:264
+#: ../inc/panel/theme-options.php:234
 msgid "Change Header Logo"
 msgstr "Ändra Headerns Logga"
 
-#: ../inc/panel/theme-options.php:268
+#: ../inc/panel/theme-options.php:238
 msgid "Preview:"
 msgstr "Förhandsgranska:"
 
-#: ../inc/panel/theme-options.php:280
+#: ../inc/panel/theme-options.php:250
 msgid "Disable Site Title?"
 msgstr "Avaktivera Sidans Titel?"
 
-#: ../inc/panel/theme-options.php:285
+#: ../inc/panel/theme-options.php:255
 msgid "Disable Site Description (Tagline)?"
 msgstr "Inaktivera Sidans Beskrivning (Undertitel)?"
 
-#: ../inc/panel/theme-options.php:290
+#: ../inc/panel/theme-options.php:260
 msgid "Move Site Title and Tagline?"
 msgstr "Flytta Sidans Titel och Undertitel?"
 
-#: ../inc/panel/theme-options.php:292
+#: ../inc/panel/theme-options.php:262
 msgid "Check to move before the Logo"
 msgstr "Markera för att lägga före Loggan"
 
-#: ../inc/panel/theme-options.php:295
+#: ../inc/panel/theme-options.php:265
 msgid "Seperate Logo and Site Details?"
 msgstr "Separera Logotyp och Sidans Detaljer?"
 
-#: ../inc/panel/theme-options.php:297
+#: ../inc/panel/theme-options.php:267
 msgid "Check to move down"
 msgstr "Markera för att flytta ner"
 
-#: ../inc/panel/theme-options.php:300
+#: ../inc/panel/theme-options.php:270
 msgid "Enable Header Right Sidebar?"
 msgstr "Aktivera Sidhuvudets Högra Sidopanel"
 
-#: ../inc/panel/theme-options.php:302
+#: ../inc/panel/theme-options.php:272
 msgid "Just add Widgets in Header Right Sidebar"
 msgstr "Lägg bara till Widgets i Sidhuvudets Högra Sidopanel"
 
-#: ../inc/panel/theme-options.php:314
+#: ../inc/panel/theme-options.php:284
 msgid "Menu Options"
 msgstr "Meny Inställningar"
 
-#: ../inc/panel/theme-options.php:319
+#: ../inc/panel/theme-options.php:289
 msgid "Menu Tutorial from WordPress.com"
 msgstr "Meny Handledning från WordPress.com"
 
-#: ../inc/panel/theme-options.php:321
+#: ../inc/panel/theme-options.php:291
 msgid "http://en.support.wordpress.com/menus/"
 msgstr "http://en.support.wordpress.com/menus/"
 
-#: ../inc/panel/theme-options.php:321
+#: ../inc/panel/theme-options.php:291
 msgid "Menu Tutorial"
 msgstr "Meny Handledning"
 
-#: ../inc/panel/theme-options.php:321
+#: ../inc/panel/theme-options.php:291
 msgid "Click Here to Read Menu Tutorial"
 msgstr "Klicka Här för att Läsa Meny Handledning"
 
-#: ../inc/panel/theme-options.php:325 ../inc/panel/theme-options.php:327
+#: ../inc/panel/theme-options.php:295 ../inc/panel/theme-options.php:297
 msgid "Create Menu"
 msgstr "Skapa Meny"
 
-#: ../inc/panel/theme-options.php:327
+#: ../inc/panel/theme-options.php:297
 msgid "Click Here to Create Menu"
 msgstr "Klicka Här för att Skapa Meny"
 
-#: ../inc/panel/theme-options.php:331
+#: ../inc/panel/theme-options.php:301
 msgid "Assign Menu to Respective Location"
 msgstr "Tilldela Meny till respektive plats"
 
-#: ../inc/panel/theme-options.php:333
+#: ../inc/panel/theme-options.php:303
 msgid "Assign Menu Location"
 msgstr "Tilldela Meny Placering"
 
-#: ../inc/panel/theme-options.php:333
+#: ../inc/panel/theme-options.php:303
 msgid "Click Here to Assign Menu Location"
 msgstr "Klicka Här för att Tilldela Menyns Placering"
 
-#: ../inc/panel/theme-options.php:337
+#: ../inc/panel/theme-options.php:307
 msgid "Add Menu in Header Right Sidebar"
 msgstr "Lägg till Meny i Sidhuvudets Högra Sidofält"
 
-#: ../inc/panel/theme-options.php:339
+#: ../inc/panel/theme-options.php:309
 msgid "Add Menu Widget in Header Right Sidebar"
 msgstr "Lägg till Meny Widget i Sidhuvudets Högra Sidofält"
 
-#: ../inc/panel/theme-options.php:343
+#: ../inc/panel/theme-options.php:313
 msgid "Disable Primary & Secondary Menu?"
 msgstr "Avaktivera Primär & Sekundär Meny"
 
-#: ../inc/panel/theme-options.php:349 ../inc/panel/theme-options.php:367
+#: ../inc/panel/theme-options.php:319 ../inc/panel/theme-options.php:337
 msgid "Save"
 msgstr "Spara"
 
-#: ../inc/panel/theme-options.php:355
+#: ../inc/panel/theme-options.php:325
 msgid "Search Options"
 msgstr "Sök Inställningar"
 
-#: ../inc/panel/theme-options.php:360
+#: ../inc/panel/theme-options.php:330
 msgid "Default Display Text in Search"
 msgstr "Standardtext i Sök"
 
-#: ../inc/panel/theme-options.php:373
+#: ../inc/panel/theme-options.php:343
 msgid "Color Options"
 msgstr "Färg Inställningar"
 
-#: ../inc/panel/theme-options.php:378
+#: ../inc/panel/theme-options.php:348
 msgid "Default Color Scheme"
 msgstr "Standardfärgschema"
 
-#: ../inc/panel/theme-options.php:382
+#: ../inc/panel/theme-options.php:352
 msgid "Light"
 msgstr "Ljus"
 
-#: ../inc/panel/theme-options.php:386
+#: ../inc/panel/theme-options.php:356
 msgid "Dark"
 msgstr "Mörk"
 
-#: ../inc/panel/theme-options.php:394
+#: ../inc/panel/theme-options.php:364
 msgid "Main Background Color:"
 msgstr "Bakgrundsfärg"
 
-#: ../inc/panel/theme-options.php:399
+#: ../inc/panel/theme-options.php:369
 msgid "Click Here to change Main Background Image/Color"
 msgstr "Klicka här för att ändra Bakgrundens Bild / Färg"
 
-#: ../inc/panel/theme-options.php:406
+#: ../inc/panel/theme-options.php:376
 msgid "Site Title Color:"
 msgstr "Sidans Bild för Sidhuvud"
 
-#: ../inc/panel/theme-options.php:411
+#: ../inc/panel/theme-options.php:381
 msgid "Click Here to change Site Title Color"
 msgstr "Klicka Här för att ändra Bild för Sidhuvud"
 
-#: ../inc/panel/theme-options.php:423
+#: ../inc/panel/theme-options.php:393
 msgid "Layout Options"
 msgstr "Layout Inställningar"
 
-#: ../inc/panel/theme-options.php:428
+#: ../inc/panel/theme-options.php:398
 msgid "Default Layout"
 msgstr "Standard Layout"
 
-#: ../inc/panel/theme-options.php:432
+#: ../inc/panel/theme-options.php:402
 msgid "Right Sidebar"
 msgstr "Höger Sidopanel"
 
-#: ../inc/panel/theme-options.php:437
+#: ../inc/panel/theme-options.php:407
 msgid "Left Sidebar"
 msgstr "Vänster Sidopanel"
 
-#: ../inc/panel/theme-options.php:442
+#: ../inc/panel/theme-options.php:412
 msgid "No Sidebar"
 msgstr "Ingen Sidopanel"
 
-#: ../inc/panel/theme-options.php:453
+#: ../inc/panel/theme-options.php:423
 msgid "Content Layout"
 msgstr "Innehåll Layout"
 
-#: ../inc/panel/theme-options.php:457
+#: ../inc/panel/theme-options.php:427
 msgid "Excerpt/Blog Display"
 msgstr "Visa Utdrag Blogginlägg "
 
-#: ../inc/panel/theme-options.php:461
+#: ../inc/panel/theme-options.php:431
 msgid "Full Content Display"
 msgstr "Visa Hela Blogginlägg "
 
-#: ../inc/panel/theme-options.php:468
+#: ../inc/panel/theme-options.php:438
 msgid "Reset Layout?"
 msgstr "Återställ Layout?"
 
-#: ../inc/panel/theme-options.php:470 ../inc/panel/theme-options.php:530
+#: ../inc/panel/theme-options.php:440 ../inc/panel/theme-options.php:500
 msgid "Check to reset"
 msgstr "Markera för återställning"
 
-#: ../inc/panel/theme-options.php:479
+#: ../inc/panel/theme-options.php:449
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Hemsida / Framsida Kategori Inställningar"
 
-#: ../inc/panel/theme-options.php:485
+#: ../inc/panel/theme-options.php:455
 msgid "Front page posts categories:"
 msgstr "Framsida Inlägg Kategorier"
 
-#: ../inc/panel/theme-options.php:487
+#: ../inc/panel/theme-options.php:457
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -1066,267 +1063,267 @@ msgstr ""
 "Endast inlägg som hör till de kategorier som väljs här kommer att visas på "
 "första sidan"
 
-#: ../inc/panel/theme-options.php:492
+#: ../inc/panel/theme-options.php:462
 msgid "--Disabled--"
 msgstr "--Inaktiverad--"
 
-#: ../inc/panel/theme-options.php:503
+#: ../inc/panel/theme-options.php:473
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Du kan välja flera kategorier genom att hålla ned CTRL-tangenten."
 
-#: ../inc/panel/theme-options.php:513
+#: ../inc/panel/theme-options.php:483
 msgid "Excerpt / More Tag Settings"
 msgstr "Utdrag / Mer Etikett Inställningar"
 
-#: ../inc/panel/theme-options.php:518
+#: ../inc/panel/theme-options.php:488
 msgid "More Tag Text"
 msgstr "Mera Ettikett Text"
 
-#: ../inc/panel/theme-options.php:523
+#: ../inc/panel/theme-options.php:493
 msgid "Excerpt length(words)"
 msgstr "Utdragets längd (ord)"
 
-#: ../inc/panel/theme-options.php:528
+#: ../inc/panel/theme-options.php:498
 msgid "Reset?"
 msgstr "Återställa?"
 
-#: ../inc/panel/theme-options.php:539
+#: ../inc/panel/theme-options.php:509
 msgid "Feed Redirect"
 msgstr "Feed Omdirigering"
 
-#: ../inc/panel/theme-options.php:544
+#: ../inc/panel/theme-options.php:514
 msgid "Feed Redirect URL"
 msgstr "Omdirigera Feed URL"
 
-#: ../inc/panel/theme-options.php:545
+#: ../inc/panel/theme-options.php:515
 msgid "Add in the Feedburner URL"
 msgstr "Lägg till i Feedburner URL"
 
-#: ../inc/panel/theme-options.php:557
+#: ../inc/panel/theme-options.php:527
 msgid "Custom CSS"
 msgstr "Anpassad CSS"
 
-#: ../inc/panel/theme-options.php:562
+#: ../inc/panel/theme-options.php:532
 msgid "Enter your custom CSS styles."
 msgstr "Lägg till anpassade CSS-stilar."
 
-#: ../inc/panel/theme-options.php:569
+#: ../inc/panel/theme-options.php:539
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS Handledning ifrån W3Schools."
 
-#: ../inc/panel/theme-options.php:571
+#: ../inc/panel/theme-options.php:541
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:571
+#: ../inc/panel/theme-options.php:541
 msgid "CSS Tutorial"
 msgstr "CSS Handledning"
 
-#: ../inc/panel/theme-options.php:571
+#: ../inc/panel/theme-options.php:541
 msgid "Click Here to Read"
 msgstr "Klicka Här för att Läsa"
 
-#: ../inc/panel/theme-options.php:585
+#: ../inc/panel/theme-options.php:555
 msgid "Slider Options"
 msgstr "Inställningar Bildspel"
 
-#: ../inc/panel/theme-options.php:589
+#: ../inc/panel/theme-options.php:559
 msgid "Enable Sidebar"
 msgstr "Aktivera Sidopanel"
 
-#: ../inc/panel/theme-options.php:593
+#: ../inc/panel/theme-options.php:563
 msgid "Homepage / Frontpage"
 msgstr "Hemsida / Framsida"
 
-#: ../inc/panel/theme-options.php:597
+#: ../inc/panel/theme-options.php:567
 msgid "Entire Site"
 msgstr "Hela Sidan"
 
-#: ../inc/panel/theme-options.php:601
+#: ../inc/panel/theme-options.php:571
 msgid "Disable"
 msgstr "Avaktivera"
 
-#: ../inc/panel/theme-options.php:606
+#: ../inc/panel/theme-options.php:576
 msgid "Number of Slides"
 msgstr "Antal i Bildspel"
 
-#: ../inc/panel/theme-options.php:612
+#: ../inc/panel/theme-options.php:582
 msgid "Transition Effect:"
 msgstr "Övergångseffekt:"
 
-#: ../inc/panel/theme-options.php:616
+#: ../inc/panel/theme-options.php:586
 msgid "fade"
 msgstr "tona"
 
-#: ../inc/panel/theme-options.php:617
+#: ../inc/panel/theme-options.php:587
 msgid "wipe"
 msgstr "sudda"
 
-#: ../inc/panel/theme-options.php:618
+#: ../inc/panel/theme-options.php:588
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../inc/panel/theme-options.php:619
+#: ../inc/panel/theme-options.php:589
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../inc/panel/theme-options.php:620
+#: ../inc/panel/theme-options.php:590
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../inc/panel/theme-options.php:621
+#: ../inc/panel/theme-options.php:591
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../inc/panel/theme-options.php:622
+#: ../inc/panel/theme-options.php:592
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/panel/theme-options.php:623
+#: ../inc/panel/theme-options.php:593
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/panel/theme-options.php:624
+#: ../inc/panel/theme-options.php:594
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/panel/theme-options.php:625
+#: ../inc/panel/theme-options.php:595
 msgid "cover"
 msgstr "täcka"
 
-#: ../inc/panel/theme-options.php:626
+#: ../inc/panel/theme-options.php:596
 msgid "shuffle"
 msgstr "blanda"
 
-#: ../inc/panel/theme-options.php:631
+#: ../inc/panel/theme-options.php:601
 msgid "Transition Delay"
 msgstr "Övergång Fördröjning"
 
-#: ../inc/panel/theme-options.php:634 ../inc/panel/theme-options.php:641
+#: ../inc/panel/theme-options.php:604 ../inc/panel/theme-options.php:611
 msgid "second(s)"
 msgstr "sekund(er)"
 
-#: ../inc/panel/theme-options.php:638
+#: ../inc/panel/theme-options.php:608
 msgid "Transition Length"
 msgstr "Övergång Tid"
 
-#: ../inc/panel/theme-options.php:651
+#: ../inc/panel/theme-options.php:621
 msgid "Featured Post Slider Options"
 msgstr "Framhävda Inlägg Bildspel Inställningar"
 
-#: ../inc/panel/theme-options.php:655
+#: ../inc/panel/theme-options.php:625
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Exkludera Bildspel Inlägg från Startsidans inlägg?"
 
-#: ../inc/panel/theme-options.php:657
+#: ../inc/panel/theme-options.php:627
 msgid "Check to exclude"
 msgstr "Markera för att exludera"
 
-#: ../inc/panel/theme-options.php:662
+#: ../inc/panel/theme-options.php:632
 msgid "Featured Slider Post #"
 msgstr "Framhävt Bildspel Inlägg#"
 
-#: ../inc/panel/theme-options.php:664
+#: ../inc/panel/theme-options.php:634
 msgid "Click Here To Edit"
 msgstr "Klicka Här för att Redigera"
 
-#: ../inc/panel/theme-options.php:670
+#: ../inc/panel/theme-options.php:640
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Notering: Här kan du sätta dina inläggs-ID som ska visas som bildspel på "
 "hemsidan."
 
-#: ../inc/panel/theme-options.php:682
+#: ../inc/panel/theme-options.php:652
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Aktivera Sociala Ikoner i Sidhuvudets Högra Sidpanel?"
 
-#: ../inc/panel/theme-options.php:684
+#: ../inc/panel/theme-options.php:654
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
 "Lägg bara till Catch Evolution Social Widget i Sidhuvudets Högra Sidpanel"
 
-#: ../inc/panel/theme-options.php:688
+#: ../inc/panel/theme-options.php:658
 msgid "Enable Social Icons in Footer?"
 msgstr "Aktivera Sociala Ikoner i Sidfoten?"
 
-#: ../inc/panel/theme-options.php:690
+#: ../inc/panel/theme-options.php:660
 msgid "Check to enable"
 msgstr "Markera för att aktivera"
 
-#: ../inc/panel/theme-options.php:703
+#: ../inc/panel/theme-options.php:673
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/panel/theme-options.php:708
+#: ../inc/panel/theme-options.php:678
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/panel/theme-options.php:713
+#: ../inc/panel/theme-options.php:683
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/theme-options.php:718
+#: ../inc/panel/theme-options.php:688
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/panel/theme-options.php:724
+#: ../inc/panel/theme-options.php:694
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/theme-options.php:729
+#: ../inc/panel/theme-options.php:699
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/panel/theme-options.php:734
+#: ../inc/panel/theme-options.php:704
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/panel/theme-options.php:739
+#: ../inc/panel/theme-options.php:709
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/panel/theme-options.php:744
+#: ../inc/panel/theme-options.php:714
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/panel/theme-options.php:749
+#: ../inc/panel/theme-options.php:719
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/panel/theme-options.php:754
+#: ../inc/panel/theme-options.php:724
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/panel/theme-options.php:759 ../inc/panel/theme-options.php:1176
+#: ../inc/panel/theme-options.php:729 ../inc/panel/theme-options.php:1162
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/panel/theme-options.php:764
+#: ../inc/panel/theme-options.php:734
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/panel/theme-options.php:769
+#: ../inc/panel/theme-options.php:739
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/theme-options.php:774
+#: ../inc/panel/theme-options.php:744
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/panel/theme-options.php:779
+#: ../inc/panel/theme-options.php:749
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/panel/theme-options.php:792
+#: ../inc/panel/theme-options.php:772
 msgid "Header and Footer Codes"
 msgstr "Koder för Sidhuvud och Sidfot"
 
-#: ../inc/panel/theme-options.php:797
+#: ../inc/panel/theme-options.php:777
 msgid "Code to display on Header"
 msgstr "Kod att lägga in i Sidhuvud"
 
-#: ../inc/panel/theme-options.php:803
+#: ../inc/panel/theme-options.php:783
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1334,11 +1331,11 @@ msgstr ""
 "Notering: Här kan du lägga skript från Google, Facebook etc som laddas i "
 "Headern"
 
-#: ../inc/panel/theme-options.php:806
+#: ../inc/panel/theme-options.php:786
 msgid "Code to display on Footer"
 msgstr "Kod att lägga in i sidfot"
 
-#: ../inc/panel/theme-options.php:813
+#: ../inc/panel/theme-options.php:793
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1346,11 +1343,11 @@ msgstr ""
 "Notera: Här kan du lägga skript från Google, Facebook etc som laddas i "
 "sidfoten"
 
-#: ../inc/panel/theme-options.php:1155
+#: ../inc/panel/theme-options.php:1141
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1186
+#: ../inc/panel/theme-options.php:1172
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
 
@@ -1383,3 +1380,9 @@ msgstr "Nästa <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Tagg Arkiv: %s"
+
+#~ msgid "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchthemes"
+
+#~ msgid "https://twitter.com/catchthemes"
+#~ msgstr "https://twitter.com/catchthemes"
