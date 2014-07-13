@@ -59,31 +59,31 @@ endif;
  *
  * @package discover_s
  */
-function discover_s_custom_header_setup() {
+function discover_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => 'fd7800',
 		'width'                  => 220,
 		'height'                 => 75,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'discover_s_header_style',
-		'admin-head-callback'    => 'discover_s_admin_header_style',
-		'admin-preview-callback' => 'discover_s_admin_header_image',
+		'wp-head-callback'       => 'discover_header_style',
+		'admin-head-callback'    => 'discover_admin_header_style',
+		'admin-preview-callback' => 'discover_admin_header_image',
 	);
 
-	$args = apply_filters( 'discover_s_custom_header_args', $args );
+	$args = apply_filters( 'discover_custom_header_args', $args );
 	add_theme_support( 'custom-header', $args );
 
 }
-add_action( 'after_setup_theme', 'discover_s_custom_header_setup' );
+add_action( 'after_setup_theme', 'discover_custom_header_setup' );
 
-if ( ! function_exists( 'discover_s_header_style' ) ) :
+if ( ! function_exists( 'discover_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
  * @see _s_custom_header_setup().
  */
-function discover_s_header_style() {
+function discover_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -116,13 +116,13 @@ function discover_s_header_style() {
 }
 endif; // _s_header_style
 
-if ( ! function_exists( 'discover_s_admin_header_style' ) ) :
+if ( ! function_exists( 'discover_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * @see _s_custom_header_setup().
  */
-function discover_s_admin_header_style() {
+function discover_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -144,13 +144,13 @@ function discover_s_admin_header_style() {
 }
 endif; // _s_admin_header_style
 
-if ( ! function_exists( 'discover_s_admin_header_image' ) ) :
+if ( ! function_exists( 'discover_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * @see discover_s_custom_header_setup().
  */
-function discover_s_admin_header_image() { ?>
+function discover_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )

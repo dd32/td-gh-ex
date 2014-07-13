@@ -1,5 +1,11 @@
 *** discover Changelog ***
 
+13-07-2014 - version 1.7.21
+Below function names corrected.._s removed from functions.php file..
+
+discover_s_header_style, discover_s_admin_header_style, discover_s_admin_header_image
+
+
 18-06-2014 - version 1.7.20
 
 CSS change for #wp-calendar
