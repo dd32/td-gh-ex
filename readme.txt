@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.1.36
+Stable tag: 1.1.37
 
 == ABOUT BOLDR LITE ==
 
@@ -51,6 +51,7 @@ Currently available translations:
 * German (de_DE) translation: Adapted from BoldR Pro translation by FromBeyond - info@frombeyond.de
 * Spanish (es_ES) translation: por Chema Masip Diaz – http://www.pedaleapormadrid.es/ – chmadi@gmail.com
 * Brazilian Portuguese (pt_BR) translation: Thanks to Rafael de Oliveira Stephano - http://rstephano.com.br - rafael@rstephano.com.br
+* Polish (pl_PL) translation: Thanks to nitr0 - dreambyte.pl
 
 Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
 If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
@@ -59,6 +60,10 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.37 =
+July 14th, 2014
+* Added polish translation files (kindly provided by nitr0 - dreambyte.pl)
 
 = 1.1.36 =
 July 7th, 2014
