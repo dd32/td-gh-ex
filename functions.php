@@ -48,7 +48,7 @@ function catcheverest_setup() {
 	/**
 	 * Theme Options Defaults
 	 */	
-	require( get_template_directory() . '/inc/catcheverest-theme-options-defaults.php' );	
+	require( get_template_directory() . '/inc/panel/catcheverest-theme-options-defaults.php' );	
 
 	/**
 	 * Custom Theme Options

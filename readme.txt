@@ -57,6 +57,10 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+version 1.6
+* Added email in social link option
+* Optimized Theme Options panel to speed up
+
 version 1.5.4
 * Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 

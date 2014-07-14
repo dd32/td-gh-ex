@@ -1056,7 +1056,8 @@ function catcheverest_social_networks() {
 						$options[ 'social_odnoklassniki' ],
 						$options[ 'social_goodreads' ],
 						$options[ 'social_skype' ],
-						$options[ 'social_soundcloud' ]
+						$options[ 'social_soundcloud' ],
+						$options[ 'social_email' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1208,7 +1209,12 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
-			}			
+			}	
+			//Email
+			if ( !empty( $options[ 'social_email' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
+			}				
 			
 			$catcheverest_social_networks .='
 		</ul>';
