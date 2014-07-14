@@ -22,7 +22,7 @@
 	</div><!-- .entry-content -->
 	
 	<footer class="entry-meta">
-	
+		<p>
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'thebox' ) );
@@ -58,6 +58,7 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'thebox' ), '<span class="edit-link">', '</span>' ); ?>
+		</p>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
 

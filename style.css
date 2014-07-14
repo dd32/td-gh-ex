@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Fabio Rubioglio
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.2.8
+Version: 1.2.9
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, post-formats, theme-options, translation-ready
 
 License: GNU General Public License v2 or later
@@ -118,7 +118,7 @@ a img {
 .entry-header:after,
 .entry-content:after,
 .entry-summary:after,
-.site-navigation:after {
+.main-navigation > div > ul:after {
 	clear: both;
 }
 .clearfix:before,
@@ -129,8 +129,8 @@ a img {
 .entry-content:after,
 .entry-summary:before,
 .entry-summary:after,
-.site-navigation:before,
-.site-navigation:after  {
+.main-navigation > div > ul:before,
+.main-navigation > div > ul:after  {
 	display: table;
 	content: "";
 }
@@ -144,7 +144,7 @@ a img {
 }
 
 .two-col .content-area {
-	width: 620px;
+	width: 640px;
 	float: left;
 }
 
@@ -161,7 +161,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	font-size: 2em; /* 28px */
+	font-size: 1.714em; /* 24px */
 	line-height: 1.4;
 	margin: 1.5em 0 0.5em;
 }
@@ -252,7 +252,7 @@ textarea {
 .main-navigation,
 .site-footer,
 .widget-area,
-.entry-meta {
+.entry-meta p {
 	font-size: 0.929em /* 13px */
 }
 
@@ -407,20 +407,19 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #fff;
-	color: #0fa5d9;
+	background-color: #0fa5d9;
+	color: #fff;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	line-height: 1;
-	padding: 0.5em 1em;
-	border: 1px solid #0fa5d9;
+	padding: 0.75em 1.5em;
+	border: none;
 }
 
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: #0fa5d9;
 	color: #fff !important;
 }
 button:focus,
@@ -431,10 +430,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
-	-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
-	-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
-	box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+	
 }
 
 input[type="checkbox"],
@@ -494,12 +490,13 @@ textarea {
 }
 
 input#submit {
-	background: #FFFFFF;
-    border: 1px solid #0fa5d9;
-    color: #0fa5d9;
+	background: #0fa5d9;
+    border: none;
+    color: #fff;
     font-weight: 700;
     font-size: 0.923em;
     text-transform: uppercase;
+    line-height: 1.4;
 }
 
 input#submit:hover {
@@ -508,6 +505,10 @@ input#submit:hover {
 
 #content input#submit:hover {
 	color: #fff !important;
+}
+
+#searchform input {
+	display: inline-block;
 }
 
 .icon-font {
@@ -555,11 +556,8 @@ a:active {
 
 .more-link {
     display: inline-block;
-    padding: 1em 0;
-     /* 
-     padding: 0.25em 1em;
-     border: 1px solid #0fa5d9; 
-     */
+    padding: 0;
+    margin: 1em 0 0;
 }
 
 #content .more-link:hover {
@@ -570,12 +568,14 @@ a:active {
 
 /* 05 :Alignment */
 
-.alignleft {
+.alignleft,
+.wp-caption.alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1em;
 }
-.alignright {
+.alignright,
+.wp-caption.alignright {
 	display: inline;
 	float: right;
 	margin-left: 1em;
@@ -639,7 +639,7 @@ hgroup h1 a {
 
 /* 06 :Header > Menu */
 
-.main-navigation {
+.main-navigation > div > ul {
 	background-color: #0fa5d9;
 }
 
@@ -755,7 +755,7 @@ hgroup h1 a {
 	display: block;
 	height: auto;
     line-height: 1.5;
-    padding: 0.6em 1em;
+    padding: 0.75em 1em;
     background: #fff;
 }
 
@@ -925,23 +925,36 @@ hgroup h1 a {
 }
 
 .hentry {
-	margin: 0 0 2em 0;
+	margin: 0 0 1.5em 0;
 	padding: 0;
-	border: 1px solid rgba(0,0,0,0.07);
 	background-color: #fff;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 
 .entry-header {
 	margin-bottom: 1em;
 	position: relative;
-	padding: 1em;
+	padding: 1em 1.5em;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .entry-content,
 .entry-summary {
 	margin: 0;
-	padding: 0 1em 1em;
+	padding: 0 1.5em;
+}
+
+.entry-content {
+	padding-bottom: 1.5em;
+}
+
+.entry-content p:last-child {
+	margin-bottom: 0;
+}
+
+.entry-summary {
+	margin-bottom: 1em;
 }
 
 .entry-meta {
@@ -992,8 +1005,12 @@ hgroup h1 a {
 }
 
 footer.entry-meta {
-	padding: 1.077em;
+	padding: 1em 1.5em;
 	border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+footer.entry-meta p {
+	margin: 0;
 }
 
 .entry-thumbnail  {
@@ -1001,8 +1018,12 @@ footer.entry-meta {
 }
 
 .post-thumbnail {
-	margin: 0 0 1em 0;
+	margin: 1em 0;
 	max-width: 100%;
+}
+
+.entry-summary .post-thumbnail {
+	margin-top: 0.5em;
 }
 
 .entry-thumbnail img,
@@ -1148,15 +1169,6 @@ footer.entry-meta {
 	color: #0fa5d9;
 }
 
-.archive .entry-content,
-.archive .entry-summary {
-	margin-bottom: 0.5em
-}
-
-.archive p {
-	margin-bottom: 0.5em
-}
-
 
 /* 08 :Asides */
 
@@ -1256,11 +1268,12 @@ object {
 /* 10 :Navigation */
 
 .site-content .site-navigation {
-	margin: 0 0 2em;
+	margin: 0 0 1.5em;
 	overflow: hidden;
-	padding: 1em;
+	padding: 1em 1.5em;
 	background-color: #fff;
-	border: 1px solid rgba(0,0,0,0.07);
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 
 .site-content .nav-previous {
@@ -1292,11 +1305,12 @@ object {
 
 
 .widget {
-	margin: 0 0 2em;
-	padding: 1.077em;
-	border: 1px solid rgba(0,0,0,0.07);
+	margin: 0 0 1.5em;
+	padding: 1.5em;
 	color: #757575;
 	background-color: #fff;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 
 .widget-title {
@@ -1384,6 +1398,8 @@ object {
 	box-sizing:         border-box;
 	width: 100%;
 	margin: 0;
+	padding: 0.75em 1.5em;
+	border: 0;
 }
 
 /* 12 :Widget > Comment widget */
@@ -1506,20 +1522,22 @@ textarea {
 }
 
 .comments-area {
-	margin: 2em 0;
+	margin: 1.5em 0;
 	font-size: 0.929em;
-	padding: 1em;
+	padding: 1.5em;
 	background-color: #fff;
-	border: 1px solid rgba(0,0,0,0.07);
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 
 .comments-area h3 {
-	font-size: 1.154em;
+	font-size: 1.385em; /* 18px */
 	color: #353535;
 }
 
 .comments-area label {
 	display: inline-block;
+	font-weight: 700;
 }
 
 .form-allowed-tags {
@@ -1584,14 +1602,17 @@ h2.comments-title {
 	}
 	.content-area,
 	.two-col .content-area,
-	.widget-area {
+	.two-col .widget-area {
 	float: none;
 	width: 100%;
 	margin: auto;
 	padding: 0;
 	}
-	#secondary {
-	display: none;
+	.widget {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
 	}
 }
 
@@ -1606,7 +1627,7 @@ h2.comments-title {
 	.main-navigation,
 	.content-area,
 	.two-col .content-area,
-	.widget-area {
+	.two-col .widget-area {
 	float: none;
 	width: 100%;
 	margin: auto;
@@ -1634,8 +1655,11 @@ h2.comments-title {
 	.main-small-navigation .menu li {
 	list-style-type: none;
 	}
-	#secondary {
-	display: none;
+	.widget {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
 	}
 }
 
@@ -1665,17 +1689,17 @@ h2.comments-title {
 	width: 100%;
 	float: none;	
 	}
-	.post-thumbnail {
-	float: none;
-	margin: 0 auto 1.5em;
-	width: 100%;
-	max-width: 100%;
-	}
 	.content-area img {
 	float: none;
 	margin: 1.5em auto;
 	text-align: center;
 	display: block;
+	}
+	.post-thumbnail img {
+	float: none;
+	margin: 0.5em auto 1.5em;
+	width: 100%;
+	max-width: 100%;
 	}
 	.entry-header h2 {
 	width: 100%;
@@ -1716,9 +1740,6 @@ h2.comments-title {
 	}
 	.entry-format-icon:before {
 	content: none !important;
-	}
-	#secondary {
-	display: none;
 	}
 	#tertiary .widget_nav_menu {
 	float: none;

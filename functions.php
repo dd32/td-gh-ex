@@ -12,7 +12,7 @@
  * @since thebox 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 590; /* pixels */
+	$content_width = 598; /* pixels */
 
 /*
  * Load Jetpack compatibility file.
@@ -69,7 +69,7 @@ function thebox_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 590, 9999, true ); //590 pixels wide (and unlimited height)
+	set_post_thumbnail_size( 600, 9999, true ); //600 pixels wide (and unlimited height)
 	
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -285,13 +285,13 @@ function add_css_styles() { ?>
 
 <style type="text/css">
 	
-	.site-header .main-navigation,
+	.main-navigation > div > ul,
 	#content input#submit:hover,
 	#content .entry-time,
-	#content button:hover,
-	#content input[type="button"]:hover,
-	#content input[type="reset"]:hover,
-	#content input[type="submit"]:hover {
+	#content button,
+	#content input[type="button"],
+	#content input[type="reset"],
+	#content input[type="submit"] {
 	background-color: <?php echo $color_primary; ?>;	
 	}
 	
@@ -299,7 +299,8 @@ function add_css_styles() { ?>
     .site-header .main-navigation ul ul a:focus,
     .site-header h1.site-title a:hover,
     #nav-below a,
-    #content a,
+    .entry-summary a,
+    .entry-content a,
     #content .entry-title a:hover,
     #content .entry-title a:focus,
     #content .entry-title a:active,
@@ -309,24 +310,14 @@ function add_css_styles() { ?>
     #content .entry-content a,
     #content .entry-meta a,
     #content .comments-area a,
-    #content input#submit,
     #content .page-title span,
-    #content button,
-	#content input[type="button"],
-	#content input[type="reset"],
-	#content input[type="submit"],
 	#content #tertiary td a,
 	#secondary a,
 	#secondary .widget_recent_comments a.url { 
     color: <?php echo $color_primary; ?>;
     }
    
-    #content .edit-link a,
-    #content input#submit,
-    #content button,
-	#content input[type="button"],
-	#content input[type="reset"],
-	#content input[type="submit"] {
+    #content .edit-link a {
 	border-color: <?php echo $color_primary; ?>;
     }
     

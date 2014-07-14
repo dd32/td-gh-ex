@@ -9,7 +9,7 @@
  */
 ?>
 
-<article id="post-0" class="post no-results not-found">
+<article id="post-0" class="post hentry no-results not-found">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Nothing Found', 'thebox' ); ?></h1>
 	</header><!-- .entry-header -->
@@ -31,4 +31,5 @@
 
 		<?php endif; ?>
 	</div><!-- .entry-content -->
+	<footer class="entry-meta"></footer>
 </article><!-- #post-0 .post .no-results .not-found -->

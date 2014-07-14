@@ -20,12 +20,16 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php comments_template( '', true ); ?>
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+					?>
 
 				<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
-<?php get_sidebar('sidebar-2'); ?>
+<?php get_sidebar('sidebar-1'); ?>
 <?php get_footer(); ?>
