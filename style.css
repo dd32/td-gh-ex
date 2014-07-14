@@ -3,8 +3,8 @@ Theme Name: Spacious
 Theme URI: http://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: http://themegrill.com
-Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/. Available Translations: Russian, Norsk(Bokmål), Czech, French, Spanish, Lithuanian and Dutch.
-Version: 1.1
+Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/. Available Translations: Russian, Norsk (Bokmål), Czech, French, Spanish, Lithuanian, Dutch and Traditional Chinese (Taiwan).
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, dark, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
@@ -1085,6 +1085,9 @@ li.default-menu {
 .wp-pagenavi {
 	text-align: center;
 }
+#content .wp-pagenavi .page {
+   padding-bottom: 3px;
+}
 
 /* =PAGINATION 
 ----------------------------------------------- */
@@ -1942,6 +1945,7 @@ a#scroll-up:hover {
 	#featured-slider .entry-container {
 		top: auto;
 		bottom: 15%;
+		max-width: 70%;
 	}
 	#featured-slider .entry-description-container {
 		padding: 0.5rem 1rem;
@@ -1993,6 +1997,28 @@ a#scroll-up:hover {
 		padding-right: 0;
 	}
 }
+@media screen and (max-width: 480px) {
+	#featured-slider .entry-container {
+		max-width: 90%;
+	}
+	#featured-slider .entry-description-container {
+		padding: 5px 10px;
+	}
+	#featured-slider .entry-title {
+		line-height: 1.5;
+	}
+   #featured-slider .slider-read-more-button {
+		display: none;
+	}
+	#controllers {
+		bottom: 5px;
+	}
+	#controllers a {
+		height: 4px;
+		margin: 0 3px;
+		width: 12px;
+	}
+}
 @media only screen and (max-width: 320px) {
    #page {
    	width: 97%; 
@@ -2004,10 +2030,10 @@ a#scroll-up:hover {
    #masthead .small-info-text {
    	max-width: 100%;
    }
-   #featured-slider .entry-description-container {
-		padding: 0.2rem 0.5rem;
+   #featured-slider .entry-title span {
+		font-size: 12px;
 	}
-   #featured-slider .slider-read-more-button {
-		display: none;
+   #featured-slider .entry-description-container {
+		padding: 2px 5px;
 	}
 }

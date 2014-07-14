@@ -65,7 +65,7 @@ function optionsframework_options() {
 
 	// Header image position option
 	$options[] = array(
-		'name' 		=> __( 'Heder Image Position', 'spacious' ),
+		'name' 		=> __( 'Header Image Position', 'spacious' ),
 		'desc' 		=> __( 'Choose top header image display position.', 'spacious' ),
 		'id' 			=> 'spacious_header_image_position',
 		'std' 		=> 'above',
@@ -225,21 +225,18 @@ function optionsframework_options() {
 			'type' 	=> 'upload'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider Title %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter title for your slider.', 'spacious' ),
 			'id' 		=> 'spacious_slider_title'.$i,
 			'std' 	=> '',
 			'type' 	=> 'text'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider Description %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter your slider description.', 'spacious' ),
 			'id' 		=> 'spacious_slider_text'.$i,
 			'std' 	=> '',
 			'type' 	=> 'textarea'
 		);
 		$options[] = array(
-			'name' 	=> sprintf( __( 'Slider redirect link %1$s', 'spacious' ), $i ),
 			'desc' 	=> __( 'Enter link to redirect slider when clicked', 'spacious' ),
 			'id' 		=> 'spacious_slider_link'.$i,
 			'std' 	=> '',

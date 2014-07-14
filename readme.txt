@@ -46,6 +46,14 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.1 =
+* Added traditional Chinese (Taiwan) language file.
+* Slider featured content css adjustment in smaller devices.
+* Small typo fix.
+* Small CSS adjustment for WP-PageNavi plugin.
+* Slider options presentation improved in theme options panel.
+* POT language file updated.
+
 = Version 1.1 =
 * Removed the extra three dots that appeared in the excerpt.
 * Scroll to top button appearance improved.
