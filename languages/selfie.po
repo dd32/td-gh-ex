@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: selfie\n"
-"POT-Creation-Date: 2014-07-13 17:03+0600\n"
-"PO-Revision-Date: 2014-07-13 17:12+0600\n"
+"POT-Creation-Date: 2014-07-15 02:18+0600\n"
+"PO-Revision-Date: 2014-07-15 02:18+0600\n"
 "Last-Translator: support@d5creation.com\n"
 "Language-Team: D5 Creation <support@d5creation.com>\n"
 "Language: en\n"
@@ -59,67 +59,75 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: ../functions.php:8
+#: ../comments.php:28
+msgid "Comments are Closed"
+msgstr ""
+
+#: ../functions.php:26
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:8
+#: ../functions.php:26
 msgid "Top Menu"
 msgstr ""
 
-#: ../functions.php:102
+#: ../functions.php:106
 msgid "Theme by:"
 msgstr ""
 
-#: ../functions.php:102
+#: ../functions.php:106
 msgid "Powered by:"
 msgstr ""
 
-#: ../functions.php:118 ../functions.php:124
+#: ../functions.php:122 ../functions.php:128
 msgid "Read More"
 msgstr ""
 
-#: ../functions.php:148
+#: ../functions.php:142
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:152
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: ../functions.php:149
+#: ../functions.php:153
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: ../functions.php:151
+#: ../functions.php:155
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: ../functions.php:161
+#: ../functions.php:165
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: ../functions.php:162
+#: ../functions.php:166
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: ../functions.php:171
+#: ../functions.php:175
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:180
+#: ../functions.php:184
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:189
+#: ../functions.php:193
 msgid "Footer Area One"
 msgstr ""
 
-#: ../functions.php:199
+#: ../functions.php:203
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../functions.php:209
+#: ../functions.php:213
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../functions.php:220
+#: ../functions.php:224
 msgid "Footer Area Four"
 msgstr ""
 

@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: Selfie is CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Selfie Theme will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the Selfie Demo at http://demo.d5creation.com/themes/?theme=Selfie
 
-Version: 1.0
+Version: 1.01
 
 Tags: blue, white, black, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -20,6 +20,18 @@ Selfie is distributed under the terms of the GNU GPL
 Text Domain: selfie
 
 */
+
+@font-face {
+	font-family: 'Genericons';
+	src: url('fonts/genericons/genericons-regular-webfont.eot');
+	src: url('fonts/genericons/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/genericons/genericons-regular-webfont.woff') format('woff'),
+	     url('fonts/genericons/genericons-regular-webfont.ttf') format('truetype'),
+	     url('fonts/genericons/genericons-regular-webfont.svg#genericonsregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -384,7 +396,7 @@ h3 span{color:#777777;}
 .social a { background: rgba(0, 0, 0, 0.15); border-radius: 5px; float: left; height: 50px; line-height: 1.7; margin: 0 5px; text-align: center; width: 50px; transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; }
 
 .social a:hover { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); }
-.social a::before { content: '\f408'; display: inline-block; font-size: 30px; vertical-align: top; -webkit-font-smoothing: antialiased; font-family:  }
+.social a::before { content: '\f408'; display: inline-block; font-size: 30px; vertical-align: top; -webkit-font-smoothing: antialiased; }
 
 .social-link a[href*="wordpress.org"]::before,
 .social-link a[href*="wordpress.com"]::before { 
@@ -436,3 +448,12 @@ h3 span{color:#777777;}
 	content: '\f208';
 	color:   #05ace3;
 }
+
+.genericon-next:before { content: "\f429"; }
+.genericon-previous:before { content: "\f430"; }
+.genericon-edit:before { content: "\f411"; }
+.genericon-user:before { content: "\f304"; }
+.genericon-time:before { content: "\f303"; }
+.genericon-tag:before { content: "\f302"; }
+.genericon-category:before { content: "\f301"; }
+.genericon-comment:before { content: "\f300"; }

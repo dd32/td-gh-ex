@@ -1,7 +1,7 @@
 ----------------------------------
 Selfie
 ----------------------------------
-Version: 	1.0
+Version: 	1.01
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 

@@ -75,7 +75,6 @@
 	wp_enqueue_style('selfie-gfonts1');
 	wp_register_style('selfie-gfonts2', '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700', false );
 	wp_enqueue_style('selfie-gfonts2');
-	wp_enqueue_style('selfie-genericons-css', get_template_directory_uri(). '/fonts/genericons/genericons.css' );
 	wp_enqueue_style('selfie-responsive', get_template_directory_uri(). '/style-responsive.css' );
 	}
 	add_action( 'wp_enqueue_scripts', 'selfie_enqueue_scripts' );
@@ -92,7 +91,7 @@
 	
 	color: #<?php echo get_header_textcolor(); ?>;
 	}
-	
+	<?php if ( is_admin_bar_showing() && of_get_option('header-fixed', '1') != '0' ): echo '#header { top: 32px; }'; endif; ?>
 	</style>
 	
 <?php 
@@ -140,7 +139,7 @@ function selfie_creditline () {
 	
 // 	Post Meta design
 	function selfie_post_meta() { ?>
-	<div class="post-meta"> <span class="post-edit genericon-edit"> <?php edit_post_link('Edit'); ?></span> <span class="post-author genericon-user"> <?php the_author_posts_link(); ?> </span> <span class="post-date genericon-time"><?php the_time('F j, Y'); ?></span>	<span class="post-tag genericon-tag"> <?php the_tags('' , ', '); ?> </span> <span class="post-category genericon-category"> <?php the_category(', '); ?> </span> <span class="post-comments genericon-comment"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;'); ?> </span>
+	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit', 'selfie'),'<span class="genericon-edit">','</span>' ); ?></span> <span class="post-author genericon-user"> <?php the_author_posts_link(); ?> </span> <span class="post-date genericon-time"><?php the_time('F j, Y'); ?></span>	<span class="post-tag genericon-tag"> <?php the_tags('' , ', '); ?> </span> <span class="post-category genericon-category"> <?php the_category(', '); ?> </span> <span class="post-comments genericon-comment"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;'); ?> </span>
 	</div> 
 	
 	<?php
@@ -150,10 +149,10 @@ function selfie_creditline () {
 	function selfie_not_found() { ?>
 	<br /><br />
         <div class="searchinfo">
-        <h1 class="page-title fa-times-circle"><?php __('SORRY, NOT FOUND ANYTHING', 'selfie') ?></h1>
-		<h3 class="arc-src"><span><?php __('You Can Try Another Search...', 'selfie') ?></span></h3>
+        <h1 class="page-title fa-times-circle"><?php __('SORRY, NOT FOUND ANYTHING', 'selfie'); ?></h1>
+		<h3 class="arc-src"><span><?php __('You Can Try Another Search...', 'selfie'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p class="backhome"><a href="<?php echo home_url(); ?>" ><?php __('&laquo; Or Return to the Home Page', 'selfie') ?></a></p>
+		<p class="backhome"><a href="<?php echo home_url(); ?>" ><?php __('&laquo; Or Return to the Home Page', 'selfie'); ?></a></p>
         </div>
         <br />
 	
@@ -163,8 +162,8 @@ function selfie_creditline () {
 // Page Navigation
 	function selfie_page_nav() { ?>	
 	<div id="page-nav">
-			<div class="alignleft"><?php previous_posts_link('<span class="genericon-previous"></span>  ' . __('NEWER ENTRIES', 'selfie') ) ?></div>
-			<div class="alignright"><?php next_posts_link( __('OLDER ENTRIES', 'selfie') .' <span class="genericon-next"></span>') ?></div>
+			<div class="alignleft"><?php previous_posts_link('<span class="genericon-previous"></span>  ' . __('NEWER ENTRIES', 'selfie') ); ?></div>
+			<div class="alignright"><?php next_posts_link( __('OLDER ENTRIES', 'selfie') .' <span class="genericon-next"></span>'); ?></div>
 	</div>
     <?php
 	}

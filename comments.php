@@ -9,9 +9,9 @@
 	if ( post_password_required() ) { return; }
 ?>
 
-<div id="commentsbox">
+<div id="comments">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number( __('No Comments', 'selfie'), __('One Comment', 'selfie'),  __('% Comments', 'selfie') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2><?php the_title();?></a></h2>
+	<h2 class="commentsbox"><?php comments_number( __('No Comments', 'selfie'), __('One Comment', 'selfie'),  __('% Comments', 'selfie') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments( array( 'avatar_size' => '200' )  ); ?>
 	</ol>
@@ -25,7 +25,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark">Comments are Closed</p>
+		<p class="watermark"><?php __('Comments are Closed', 'selfie'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>
