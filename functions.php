@@ -69,7 +69,7 @@ function thebox_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 600, 9999, true ); //600 pixels wide (and unlimited height)
+	set_post_thumbnail_size( 600, 9999 ); //600 pixels wide (and unlimited height)
 	
 	/**
 	 * This theme uses wp_nav_menu() in one location.
