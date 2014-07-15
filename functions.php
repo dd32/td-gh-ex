@@ -5,14 +5,14 @@
 <?php
 /**
  *
- * MaxFlat functions and definitions.
+ * HamronUX functions and definitions.
  *
  * The functions file is used to initialize everything in the theme.
  * It sets up the supported features, default actions  and filters.
  *
  *
  * 
- * @since      MaxFlat 1.0
+ * @since      HamronUX 1.0
  */
 
 // Load Smart Library
@@ -36,6 +36,8 @@ if (!isset($content_width))
  * Sets up theme defaults and registers the various WordPress features
  */
 
+ if ( ! function_exists( 'harmonux_setup' ) ) :
+ 
 function harmonux_setup(){
     /*
              * Load textdomain.
@@ -84,7 +86,7 @@ function harmonux_setup(){
 
 	add_action( 'tgmpa_register', 'harmonux_theme_register_required_plugins' );
 }
-
+endif; // harmonux_setup
 add_action('after_setup_theme', 'harmonux_setup');
 
 /**
@@ -103,6 +105,8 @@ function harmonux_scripts_styles()
 
 add_action('wp_enqueue_scripts', 'harmonux_scripts_styles');
 
+
+ if ( ! function_exists( 'harmonux_theme_register_required_plugins' ) ) :
 /**
  * Register the required plugins for this theme.
  *
@@ -180,3 +184,4 @@ function harmonux_theme_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
+endif; // harmonux_setup

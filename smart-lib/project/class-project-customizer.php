@@ -261,7 +261,7 @@ class Smart_Project_Customizer{
 		echo "\n";
 		foreach ( self::$font_variants as $key_section =>$css_line ) { //$row = project_general_fonts or project_headers_fonts
 
-				if ( isset( $display_fonts[$key_section] ) ) {
+				if ( isset( $display_fonts[$key_section] ) && isset($fonts[$display_fonts[$key_section]]['css'])) {
 
 					echo "\n" .$css_line .'{' .$fonts[$display_fonts[$key_section]]['css'].'}';
 				}

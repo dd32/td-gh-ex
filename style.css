@@ -3,8 +3,8 @@ Theme Name: HarmonUX Core
 Theme URI: http://netbiel.pl/harmonux-core/
 Author: Peter Bielecki
 Author URI: http://netbiel.pl
-Description: HarmonUX was design according to the idea of modern blog with SEO and UX optimization. Clean design provide a harmony experience, all easily tuned to fit Your content perfectly. Powerful Theme Customizer allows you to change many aspects in theme to adapt it to Your needs. Upload logo, change colors, modify all settings and see the preview in real-time before you save. HarmonUX is based on Zurb Foundation front end framework.
-Version: 1.0.2
+Description: HarmonUX Core was design according to the idea of modern blog with SEO and UX optimization. Clean design provide a harmony experience, all easily tuned to fit Your content perfectly. Powerful Theme Customizer allows you to change many aspects in theme to adapt it to Your needs. Upload logo, change colors, modify all settings and see the preview in real-time before you save. HarmonUX Core is based on Zurb Foundation front end framework.
+Version: 1.0.3
 License:
 License URI:
 Tags:  flexible-header, full-width-template,  post-formats,  theme-options, translation-ready,  responsive-layout, light
@@ -1152,6 +1152,13 @@ Top Navigation: top_pages theme location
 	font-size: 12px;
 	font-weight: bold;
 }
+.harmonux-top-menu ul li>a,
+.harmonux-top-menu li>a{
+   color: #fff;
+	padding: 7px 17px;
+}
+
+@media only screen and (min-width: 760px) {
 .harmonux-top-menu ul > li,
 .harmonux-top-menu > li
 {
@@ -1174,6 +1181,7 @@ Top Navigation: top_pages theme location
 	color: #5bd2a0;
 	transition: background 0.3s ease-out;
 }
+
 .harmonux-top-menu ul li ul,
 .harmonux-top-menu li ul
 {
@@ -1265,7 +1273,19 @@ ul.harmonux-top-menu ul li
 }
 
 
-
+}
+@media only screen and (max-width: 760px) {
+.harmonux-top-menu ul li ul,
+.harmonux-top-menu li ul{
+    margin-left: 30px;
+    font-size: 11px;
+    width: auto;
+}
+    harmonux-top-menu ul li ul a, .harmonux-top-menu li ul a{
+        padding: 3px 5px;
+        text-transform: none;
+    }
+}
 /*top navigation mobile*/
 
 #top-navigation-mobile {
@@ -3053,6 +3073,11 @@ margin-top: 5px;
 		max-width: 100%;
 	}
 
+    .smartlib-site-logo{
+        font-size: 20px;
+        line-height: 1;
+    }
+
 }
 
 
@@ -3122,11 +3147,15 @@ margin-top: 5px;
 	.smartlib-site-logo {
 
 		float: left;
-		font-size: 0.8em;
-		width: 100% !important;
-		line-height: 3;
-	}
 
+		width: 100% !important;
+
+	}
+    .smartlib-smaller-topbar .smartlib-logo-header a{
+       height: auto;
+        font-size: 15px;
+        text-align: center;
+    }
 	#top-bar .mobile-large-1 {
 		width: 100% !important;
 		background: #A10518 !important;
