@@ -26,7 +26,7 @@ noUiSlider -  http://refreshless.com/nouislider/ -> http://www.wtfpl.net/about/
 
 zurb / responsive-tables - MIT License: https://github.com/zurb/foundation/blob/master/LICENSE
 
-TGM-Plugin-Activation - http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+TGM-Plugin-Activation - http://tgmpluginactivation.com/#license GPL v2 or later
 
 
 Integrated plugins
