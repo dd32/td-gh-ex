@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/solon
 Author: aThemes
 Author URI: http://athemes.com
 Description: Solon is a fully responsive theme, ideal to use if you want your blog to have a slick and modern look. Some of the features that are packed in this theme include: custom logo upload, custom favicon upload, color changing for various elements, including the primary and the secondary color, integration with FontAwesome, about 20 of the most used Google Fonts, option to change the layout from content-sidebar to sidebar-content, css transitions, custom scroll effect and design etc.
-Version: 1.02
+Version: 1.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: solon
@@ -104,9 +104,9 @@ table > tbody > tr > td,
 table > tfoot > tr > td {
   border: 1px solid #dddddd;
 }
-::selection {
-	background-color: #e86f67;
-	color: #fff;
+input[type="search"],
+input[type="text"] {
+    color: #444;
 }
 /*--------------------------------------------------------------
 2.0 Menus
