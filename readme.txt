@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/foodrecipes
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout, theme-options
@@ -60,12 +60,37 @@ left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-lay
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
 ---------------------------------------------------------
- 
 
-	i)   Social icons are Font Awesome 4.0.3 by @davegandy - http://fontawesome.io.
-	ii)  For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
-	iii) We have used External fonts from Google Webfonts: Istok Web : They are under SIL Open Font License v1.1.
-	iv)  License details of JS files used by us are in the header of corresponding JS files.
-	v)   The bootstrap files which we used are licensed under the Apache License v2.0
-	vi)  jquery.masonry.js file is Licensed under the MIT license.
-	vii) respond.min js file is licensed under MIT/GPL2.
+i) Fontawesome
+===========
+License URI:  http://fontawesome.io/license/
+Resource Name: fontawesome
+License Name: Open Font License (OFL) Version 4.0.3	
+	
+ii)Administration Panel
+===========
+Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
+License: GNU General Public License v2
+
+iii)Fonts
+===========
+Istok Web - http://fonts.googleapis.com/css?family=Istok+Web
+They are under SIL Open Font.
+	
+iv)Bootstrap files
+===========
+we used are licensed under the Apache License v2.0
+
+vi) respond.min js file
+============
+we used are licensed under MIT/GPL2.
+
+vii) Images
+============
+http://picjumbo.com/colorful-healthy-coucous-dinner/
+http://picjumbo.com/chinese-colorful-meal-with-noodles/
+picjumbo.com/fresh-healthy-banana-breakfast/
+http://picjumbo.com/chicken-skewers-in-a-pan/
+http://picjumbo.com/glass-for-wine/
+Icons - http://www.fasterthemes.com
+License: General Public License (GPL)

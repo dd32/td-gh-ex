@@ -51,7 +51,6 @@ function fastertheme_framework_page(){
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;
 		
-		screen_icon(); 
 		$foodrecipes_image=get_template_directory_uri().'/theme-option/images/logo.png';
 		echo "<h1><img src='".$foodrecipes_image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :

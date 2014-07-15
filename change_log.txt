@@ -19,3 +19,11 @@ Version: 1.0.3
 
 Version: 1.0.4
 	i) Optional custom pagination support added through plugin integration
+	
+Version: 1.0.5
+	i) set post thumbnail size.
+	ii) set languages file.
+	iii) Removed extra plugin code.
+	iv) Removed screen icon function.
+	v) Added images links in readme.txt file
+	vi) Deleted unused masory js file. 

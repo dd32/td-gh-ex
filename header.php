@@ -64,7 +64,7 @@
         </ul>
       </div>
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> </button>
+        <button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation','foodrecipes'); ?></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> </button>
       </div>
       <?php 
 			$foodrecipes_defaults = array(

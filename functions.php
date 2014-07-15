@@ -19,7 +19,7 @@ function foodrecipes_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size();
+	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'foodrecipes-full-width', 1038, 576, true );
 	
 	// This theme uses wp_nav_menu() in two locations.
@@ -379,39 +379,3 @@ function foodrecipes_read_more( ) {
 return ' <br /><a class="more" href="'. get_permalink( get_the_ID() ) . '">Read more... </a>';
  }
 add_filter( 'excerpt_more', 'foodrecipes_read_more' ); 
-
-/*
-* Plugin Notice
-*/
-
-include_once( ABSPATH . 'wp-admin/includes/plugin.php');
-function foodrecipes_features_notice() {
-if ( get_user_meta( get_current_user_id(), 'foodrecipes-hide-plugin-notice', true ) != 1  )	{
-	if(!is_plugin_active('faster-pagination/ft-pagination.php')){
-		
-	$plugins = array(
-		sprintf( '<a href="%s">Faster Pagination</a>', wp_nonce_url( network_admin_url( 'update.php?action=install-plugin&plugin=faster-pagination' ), 'install-plugin_faster-pagination' ) )	);
-?>
-    <div class="updated">
-        <p><?php printf(__( 'In order to activate custom pagination, we recommend you to install the %s plugin <a href="%s" class="alignright">Hide this message.</a>.', 'foodrecipes' ),implode( ', ', $plugins ),
-					wp_nonce_url( add_query_arg( array( 'action' => 'foodrecipes-hide-plugin-notice' ), admin_url( 'index.php' ) ), 'foodrecipes-hide-plugin-notice' )
-			); ?></p>
-    </div>
-<?php
-	}
-}
-}
-if ( get_user_meta( get_current_user_id(), 'foodrecipes-hide-plugin-notice', true ) != 1  )
-	add_action( 'admin_notices', 'foodrecipes_features_notice' );
-/*
-* Hide plugin notice.
-*/
-function foodrecipes_hide_plugin_notice() {
-	check_admin_referer( 'foodrecipes-hide-plugin-notice' );
-
-	$user_id = get_current_user_id();
-
-	update_user_meta( $user_id, 'foodrecipes-hide-plugin-notice', 1 );
-}
-if ( is_admin() )
-	add_action( 'admin_action_foodrecipes-hide-plugin-notice', 'foodrecipes_hide_plugin_notice' );

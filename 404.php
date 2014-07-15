@@ -8,7 +8,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <h1>404 Page</h1>
+        <h1><?php _e('404 Page','foodrecipes'); ?></h1>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">
@@ -23,10 +23,10 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-12 main no-padding">
         <div class="jumbotron">
-          <h1>Epic 404 - Article Not Found</h1>
-          <p>This is embarassing. We can't find what you were looking for.</p>
+          <h1><?php _e('Epic 404 - Article Not Found','foodrecipes'); ?></h1>
+          <p><?php _e("This is embarassing. We can't find what you were looking for.","foodrecipes"); ?></p>
           <section class="post_content">
-            <p>Whatever you were looking for was not found, but maybe try looking again or search using the form below.</p>
+            <p><?php _e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.','foodrecipes'); ?></p>
             <div class="row">
               <div class="col-sm-12">
                 <?php get_search_form(); ?>
