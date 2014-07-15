@@ -44,7 +44,7 @@
 				<?php else:
                 if(!empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])){ ?>
                     
-                    <h1 class="widget-title">Find Us</h1>
+                    <h3 class="widget-title">Find Us</h3>
 				    <?php if(!empty($accesspresslite_settings['google_map'])) { ?>
 
                         <div class="ak-google-map"><?php echo $accesspresslite_settings['google_map']; ?></div>
@@ -72,7 +72,7 @@
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspresslite' ) ); ?>"><?php printf( __( 'Powered by %s', 'accesspresslite' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s', 'accesspresslite' ), '<a href="http://access-keys.com/" title="Access Keys">AccesspressLite</a>' ); ?>
+				<?php _e( 'Theme:', 'accesspresslite' ) ?> <a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
 			</div><!-- .site-info -->
 
 			<div class="copyright">

@@ -7,7 +7,7 @@
 global $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $cat_event = $accesspresslite_settings['event_cat'];
-$cat_testimonail = $accesspresslite_settings['testimonial_cat'];
+$cat_testimonial = $accesspresslite_settings['testimonial_cat'];
 $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 ?>
 
@@ -34,7 +34,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 	</div><!-- .entry-content -->
 </article>
 
-<?php elseif(!empty($cat_testimonail) && is_category() && is_category($cat_testimonail)): ?>
+<?php elseif(!empty($cat_testimonial) && is_category() && is_category($cat_testimonial)): ?>
 
 <article id="post-<?php the_ID(); ?>" class="cat-testimonial-list clearfix">
 	<header class="entry-header">
@@ -106,7 +106,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<div class="short-content">
 		<?php echo accesspresslite_excerpt( get_the_content() , 600 ) ?>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="bttn">More</a>
+		<a href="<?php the_permalink(); ?>" class="bttn"><?php _e('More','accesspresslite')?></a>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspresslite' ),

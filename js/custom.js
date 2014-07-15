@@ -1,8 +1,5 @@
 jQuery(function(){
 
-  jQuery('#s').attr('placeholder','SEARCH...')
-
-
   jQuery('.testimonial-slider').bxSlider({
    controls:false,
    auto:true,

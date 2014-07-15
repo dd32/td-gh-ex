@@ -9,7 +9,7 @@ $featured_post1 = $accesspresslite_settings['featured_post1'];
 $featured_post2 = $accesspresslite_settings['featured_post2'];
 $featured_post3 = $accesspresslite_settings['featured_post3'];
 $show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
-$testimonail_category = $accesspresslite_settings['testimonial_cat'];
+$testimonial_category = $accesspresslite_settings['testimonial_cat'];
 $accesspresslite_featured_bar = $accesspresslite_settings['featured_bar'];
 $accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
 $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
@@ -388,7 +388,7 @@ wp_reset_query(); ?>
         else:  
         ?>
         <aside id="text-3" class="widget widget_text">
-            <h1 class="widget-title">Why Us</h1>
+            <h3 class="widget-title">Why Us</h3>
             <div class="textwidget">
                 <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -408,11 +408,11 @@ wp_reset_query(); ?>
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
 		  <?php dynamic_sidebar( 'textblock-2' ); ?>
 		<?php elseif(!empty($gallery_code)): ?>	
-		<h1>Gallery</h1>
+		<h3>Gallery</h3>
         <?php 
         echo do_shortcode($gallery_code );
         else: ?>
-        <h1>Gallery</h1>
+        <h3>Gallery</h3>
         <div class="gallery">
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
@@ -461,26 +461,26 @@ wp_reset_query(); ?>
         <?php endif; ?>	
 		</div>        
         
-		<div class="testimonail-slider">
+		<div class="testimonial-slider-wrap">
 		<?php 
 		if ( is_active_sidebar( 'textblock-3' ) ) {
 		  dynamic_sidebar( 'textblock-3' );
 		}else{
 
-		if(!empty($testimonail_category)) {	?>
- 		<h1><?php echo get_cat_name($testimonail_category); ?></h1>
+		if(!empty($testimonial_category)) {	?>
+ 		<h3><?php echo get_cat_name($testimonial_category); ?></h3>
 			<?php
 				$loop2 = new WP_Query( array(
-	                'cat' => $testimonail_category,
+	                'cat' => $testimonial_category,
 	                'posts_per_page' => 5,
 	            )); ?>
-	        <div class="testimonail-wrap">
+	        <div class="testimonial-wrap">
 		        <div class="testimonial-slider">
 		        <?php while ($loop2->have_posts()) : $loop2->the_post(); ?>
 
 		        	<div class="testimonial-slide">
-			        	<div class="testimonail-list clearfix">
-			        		<div class="testimonail-thumbnail">
+			        	<div class="testimonial-list clearfix">
+			        		<div class="testimonial-thumbnail">
 			        		<?php 
                             if(has_post_thumbnail()){
                             the_post_thumbnail('thumbnail'); 
@@ -489,7 +489,7 @@ wp_reset_query(); ?>
                             <?php }?>
 			        		</div>
 
-			        		<div class="testimonail-excerpt">
+			        		<div class="testimonial-excerpt">
 			        			<?php echo accesspresslite_excerpt( get_the_content() , 140 ) ?>
 			        		</div>
 			        	</div>
@@ -498,24 +498,24 @@ wp_reset_query(); ?>
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonail_category ) ?>">View All <?php echo get_cat_name($testimonail_category); ?></a>
+			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>">View All <?php echo get_cat_name($testimonial_category); ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 
 			}else{ 
 			$client_name=array("","Linda Lee","George Bailey","Micheal Warner","Rosey Partick");
 			?>
-			<h1 class="widget-title">Testimonials</h1>
-			<div class="testimonail-wrap">
+			<h3 class="widget-title">Testimonials</h3>
+			<div class="testimonial-wrap">
 				<div class="testimonial-slider">
 				<?php for ($testimonial_count=1 ; $testimonial_count < 5 ; $testimonial_count++) { ?>
 					<div class="testimonial-slide">
-			        	<div class="testimonail-list clearfix">
-			        		<div class="testimonail-thumbnail">
+			        	<div class="testimonial-list clearfix">
+			        		<div class="testimonial-thumbnail">
 			        		<img src="<?php echo get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg' ?>" alt="<?php echo $client_name[$testimonial_count]; ?>">
 			        		</div>
 
-			        		<div class="testimonail-excerpt">
+			        		<div class="testimonial-excerpt">
 			        			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
 			        		</div>
 			        	</div>

@@ -65,7 +65,7 @@
 	bottom: -45px;
 }
 
-.testimonail-slider .bx-wrapper .bx-pager{
+.testimonial-slider-wrap .bx-wrapper .bx-pager{
 	width: auto;
 	right: -15px;
 }
@@ -95,8 +95,8 @@
 
 }
 
-.testimonail-slider .bx-wrapper .bx-pager.bx-default-pager a:hover,
-.testimonail-slider .bx-wrapper .bx-pager.bx-default-pager a.active{
+.testimonial-slider-wrap .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.testimonial-slider-wrap .bx-wrapper .bx-pager.bx-default-pager a.active{
 	background: #FFF;
 }
 
@@ -204,6 +204,7 @@
 	font-family: 'Lato', sans-serif;
 	font-weight: 700;
 	margin-bottom: 15px;
+	color: #FFF;
 }
 
 .slider-caption .caption-description{
@@ -213,5 +214,6 @@
 	margin: 0 auto;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+	color: #FFF;
 }
 

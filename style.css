@@ -1,10 +1,10 @@
 /*
 Theme Name: Accesspress Lite
-Theme URI: http://access-keys.com/accesspresslite/
+Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-lite/
 Author: Access Keys Team
-Author URI: http://access-keys.com/
-Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. The Theme includes featured post with thumbnail or icon option, event section, portfolio section, testimonial section (all sections with different design layouts), multiple sidebar layouts select option for every post/pages and is ready to use with contact form 7. The updated version is also traslation ready. Over all Accesspress Lite is a flexible theme with easy configuration in theme option panel.
-Version: 2.03
+Author URI: http://accesspressthemes.com/
+Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. The Theme includes featured post with thumbnail or icon option, event section, portfolio section, testimonial section (all sections with different design layouts), multiple sidebar layouts select option for every post/pages and is ready to use with contact form 7. The updated version is also translation ready. Over all Accesspress Lite is a flexible theme with easy configuration in theme option panel.
+Version: 2.04
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
@@ -1424,15 +1424,16 @@ Bottom Section
 	color:#FFF;
 }
 
-#bottom-section h1,
-#bottom-section h1.widget-title{ 
+#bottom-section h3,
+#bottom-section h3.widget-title{ 
 	text-transform: uppercase; 
 	line-height: 1; 
 	margin-bottom: 25px;
     color:#FFF;
+    font-size: 26px;
 }
 
-#bottom-section .testimonail-slider,
+#bottom-section .testimonial-slider-wrap,
 #bottom-section .thumbnail-gallery,
 #bottom-section .text-box{
 	width: 360px;
@@ -1440,7 +1441,7 @@ Bottom Section
 	float:left;
 }
 
-#bottom-section .testimonail-slider{
+#bottom-section .testimonial-slider-wrap{
 	margin-right: 0;
 }
 
@@ -1502,19 +1503,19 @@ Bottom Section
 }
 
 /*--------------------------------------------------------------
-Testimonail
+testimonial
 --------------------------------------------------------------*/
-#bottom-section .testimonail-slider{
+#bottom-section .testimonial-slider-wrap{
 	overflow: hidden;
 }
 
-.testimonail-wrap{ 
+.testimonial-wrap{ 
 	background: #00b4ff;
 	padding: 10px;
 	position: relative;
 }
 
-.testimonail-wrap:after{
+.testimonial-wrap:after{
 	content: "";
 	border-width:10px;
 	border-style: solid;
@@ -1524,12 +1525,12 @@ Testimonail
 	bottom: -20px; 
 }
 
-.testimonail-thumbnail{
+.testimonial-thumbnail{
 	width: 100px;
 	float: left;
 }
 
-.testimonail-excerpt{
+.testimonial-excerpt{
 	width: 225px; 
 	float: right;
 	line-height: 20px;
@@ -1543,11 +1544,11 @@ Testimonail
 	font-weight: 600;
 }
 
-.testimonail-wrap .bx-viewport{
+.testimonial-wrap .bx-viewport{
 	overflow: visible !important;
 }
 
-.testimonail-slider .all-testimonial{
+.testimonial-slider-wrap .all-testimonial{
 	float: right;
 	margin-top: 40px;
 	font-family: 'Lato', sans-serif;
@@ -1556,16 +1557,16 @@ Testimonail
     font-weight: 700;
 }
 
-.testimonail-sidebar .testimonail-wrap{
+.testimonial-sidebar .testimonial-wrap{
 	background: none;
 	padding: 0;
 }
 
-.testimonail-sidebar .testimonail-wrap:after{
+.testimonial-sidebar .testimonial-wrap:after{
 	display: none;
 }
 
-.testimonail-sidebar .testimonail-list{
+.testimonial-sidebar .testimonial-list{
 	position: relative;
 	margin-bottom: 50px;
 	background: #F2F3F4;
@@ -1573,7 +1574,7 @@ Testimonail
 	border-radius:3px;
 }
 
-.testimonail-sidebar .testimonail-list:after{
+.testimonial-sidebar .testimonial-list:after{
 	border-color: #F1F2F3 transparent transparent;
     border-style: solid;
     border-width: 10px;
@@ -1583,7 +1584,7 @@ Testimonail
     position: absolute;
 }
 
-.testimonail-sidebar .testimoinal-client-name{
+.testimonial-sidebar .testimoinal-client-name{
 	right: 50px;
 	left: auto;
 	bottom: -35px;
@@ -1593,19 +1594,19 @@ Testimonail
 	font-weight: 300;
 }
 
-.testimonail-sidebar .testimonail-thumbnail{
+.testimonial-sidebar .testimonial-thumbnail{
 	width: 30%;
 }
 
-.testimonail-sidebar .testimonail-thumbnail img{
+.testimonial-sidebar .testimonial-thumbnail img{
 
 }
 
-.testimonail-sidebar .testimonail-excerpt{
+.testimonial-sidebar .testimonial-excerpt{
 	width: 65%;
 }
 
-.testimonail-sidebar .all-testimonial{
+.testimonial-sidebar .all-testimonial{
 	float: right;
 }
 /*--------------------------------------------------------------
@@ -1655,7 +1656,7 @@ Footer
 	float: left;
 }
 
-#top-footer h1.widget-title{
+#top-footer h3.widget-title{
 	font-size: 24px;
 	color: #F2F3F4;
 	text-transform: uppercase;
@@ -1845,7 +1846,7 @@ Sidebars
 	color:#01AEFD;
 }
 
-.sidebar h1.widget-title{
+.sidebar h3.widget-title{
 	background:#F1F2F3;
 	border-left: 5px solid #01AEFD;
 	font-size: 22px;

@@ -84,7 +84,9 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 		}?>
 	</section><!-- #slider-banner -->
 	<?php
-	if(is_home() || is_front_page() ){
+	if((is_home() || is_front_page()) && 'page' == get_option( 'show_on_front' )){	
+		$accesspresslite_content_id = "content";	
+	}elseif(is_home() || is_front_page() ){
 	$accesspresslite_content_id = "home-content";
 	}else{
 	$accesspresslite_content_id ="content";

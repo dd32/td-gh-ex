@@ -98,22 +98,22 @@
 		margin-right: 5%;
 	}
 
-	#bottom-section .testimonail-slider, 
+	#bottom-section .testimonial-slider, 
 	#bottom-section .thumbnail-gallery, 
 	#bottom-section .text-box{
 		width: 31%; 
 		margin-right: 3.5%
 	}
     
-    #bottom-section .testimonail-slider{
+    #bottom-section .testimonial-slider{
         margin-right:0;
     }
 
-	.testimonail-thumbnail{
+	.testimonial-thumbnail{
 		width: 30%;
 	}
 
-	.testimonail-excerpt{
+	.testimonial-excerpt{
 		width: 65%;
 	}
 
@@ -159,7 +159,7 @@
 		float: none;
 	}
 
-	#bottom-section .testimonail-slider, 
+	#bottom-section .testimonial-slider, 
 	#bottom-section .gallery, 
 	#bottom-section .subscribe{
 		width: auto;
@@ -167,14 +167,14 @@
 		margin: 0 0 25px;
 	}
 
-	.testimonail-thumbnail,
-	.testimonail-sidebar .testimonail-thumbnail{
+	.testimonial-thumbnail,
+	.testimonial-sidebar .testimonial-thumbnail{
 		width: 100px;
 		margin-right: 20px
 	}
 
-	.testimonail-excerpt,
-	.testimonail-sidebar .testimonail-excerpt{
+	.testimonial-excerpt,
+	.testimonial-sidebar .testimonial-excerpt{
 		width: calc( 100% - 120px);
 		float: left;
 	}
@@ -283,7 +283,7 @@
 	.slider-caption{
 		padding: 20px 0;
 	}
-    #bottom-section .testimonail-slider, 
+    #bottom-section .testimonial-slider, 
     #bottom-section .thumbnail-gallery, 
     #bottom-section .text-box{
         width:100%;

@@ -11,7 +11,7 @@ get_header(); ?>
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
 		if ( 'page' == get_option( 'show_on_front' ) ) {
-		    get_template_part( 'index');
+		    include( get_page_template() );
 		} else {
 			get_template_part( 'index', 'one' ); 
 		}

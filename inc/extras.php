@@ -101,8 +101,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -111,8 +111,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in the Right Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -121,8 +121,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items for the blog category in the Right Sidebar of the inner pages', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -131,8 +131,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in First Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -141,8 +141,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in Second Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -151,8 +151,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in Third Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -161,8 +161,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in Fourth Footer Area', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
     
     register_sidebar( array(
@@ -171,8 +171,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in the left just above the footer', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
     
     register_sidebar( array(
@@ -181,8 +181,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in the middle just above the footer and replaces defaul gallery', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -191,8 +191,8 @@ function accesspresslite_widgets_init() {
 		'description'   => __( 'Display items in the Right just above the footer and replaces Testimonials', 'accesspresslite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'accesspresslite_widgets_init' );
@@ -297,7 +297,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		<?php } ?>
 
 		<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
+		<a href="<?php echo "skype:".esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($accesspresslite_settings['accesspresslite_rss'])){ ?>
@@ -339,7 +339,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 	function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
 		$accesspresslite_striped_content = strip_tags($accesspresslite_content);
-		$accesspresslite_excerpt = substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
+		$accesspresslite_excerpt = mb_substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
 		if($accesspresslite_striped_content > $accesspresslite_excerpt){
 			$accesspresslite_excerpt .= "...";
 		}
@@ -367,6 +367,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
  		<script type="text/javascript">
             jQuery(function(){
 				jQuery('.bx-slider').bxSlider({
+					adaptiveHeight:true,
 					pager:<?php echo $a; ?>,
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
@@ -404,8 +405,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 								<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 								<div class="slider-caption">
 									<div class="ak-container">
-										<div class="caption-title"><?php the_title();?></div>
-										<div class="caption-description"><?php echo get_the_content();?></div>
+										<h1 class="caption-title"><?php the_title();?></h1>
+										<h2 class="caption-description"><?php echo get_the_content();?></h2>
 									</div>
 								</div>
 								<?php  endif; ?>
@@ -435,8 +436,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 						<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 						<div class="slider-caption">
 							<div class="ak-container">
-								<div class="caption-title"><?php the_title();?></div>
-								<div class="caption-description"><?php echo get_the_content();?></div>
+								<h1 class="caption-title"><?php the_title();?></h1>
+								<h2 class="caption-description"><?php echo get_the_content();?></h2>
 							</div>
 						</div>
 						<?php  endif; ?>
@@ -468,8 +469,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
                     <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<div class="caption-title">Learning from failure</div>
-							<div class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</div>
+							<h1 class="caption-title">Learning from failure</h1>
+							<h2 class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</h2>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -480,8 +481,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
                     <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<div class="caption-title">Key secret to Successful Business</div>
-							<div class="caption-description">The secret of business is to know something that nobody else knows.</div>
+							<h1 class="caption-title">Key secret to Successful Business</h1>
+							<h2 class="caption-description">The secret of business is to know something that nobody else knows.</h2>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -496,15 +497,14 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
    function accesspresslite_layout_class($classes){
    	global $post;
-
-		$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
-		
-		if(!empty($post_class) && is_singular()){
+   		if( is_404()){
+		$classes[] = ' ';
+		}elseif(is_singular()){
+		$post_class = get_post_meta( $post -> ID, 'accesspress_pro_sidebar_layout', true );
 		$classes[] = $post_class;
 		}else{
 		$classes[] = 'right-sidebar';	
 		}
-
 		return $classes;
 	}
 
@@ -529,7 +529,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 	    }
 	  }
 	}
-	add_action( 'pre_get_posts', 'accesspresslite_post_count_queries' );
+	//add_action( 'pre_get_posts', 'accesspresslite_post_count_queries' );
 
 	function accesspresslite_custom_css(){
 		global $accesspresslite_options;
@@ -539,14 +539,12 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		echo '</style>';
 	}
 
-	add_action('wp_head',accesspresslite_custom_css);
+	add_action('wp_head','accesspresslite_custom_css');
 
 	function accesspresslite_custom_code(){
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		//echo '<style type="text/css">';
 			echo $accesspresslite_settings['custom_code'];
-		//echo '</style>';
 	}
 
-	add_action('wp_footer',accesspresslite_custom_code);
+	add_action('wp_footer','accesspresslite_custom_code');
