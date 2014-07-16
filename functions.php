@@ -31,7 +31,7 @@ function figureground_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'editor-style.css', 'genericons/genericons.css', figureground_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', 'genericons/genericons/genericons.css', figureground_fonts_url() ) );
 
 	// Switches default core markup for search form, comment form, and comments
 	// to output valid HTML5.
@@ -100,7 +100,7 @@ add_action( 'widgets_init', 'figureground_widgets_init' );
  */
 function figureground_scripts() {
 	wp_enqueue_style( 'figureground-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', '3.0.3' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons/genericons.css', '3.0.3' );
 	wp_enqueue_style( 'figureground-fonts', figureground_fonts_url() );
 	
 	// Adds Masonry to handle vertical alignment of footer widgets.

@@ -106,7 +106,7 @@ function figureground_relative_luminance( $color ) {
  * @link http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#contrast-ratiodef
  *
  * @param string $color1 The background or text color, in 3- or 6-digit hexadecimal form.
- * @param string $color2 The text or background color, in 3- or 6-digit hexadecimal form.0
+ * @param string $color2 The text or background color, in 3- or 6-digit hexadecimal form.
  * @return float $ratio The contrast ratio, as $ratio:1, which ranges from 1 to 21.
  */
 function figureground_contrast_ratio( $color1, $color2 ) {

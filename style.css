@@ -4,7 +4,7 @@ Theme URI: http://celloexpressions.com/themes/figureground
 Author: Nick Halsey
 Author URI: http://celloexpressions.com/
 Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu. From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: figureground
@@ -12,11 +12,13 @@ Tags: black, blue, red, white, one-column, responsive-layout, custom-colors, cus
 
 Figure/Ground WordPress Theme, Copyright 2014 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+Figure/Ground is distributed under the terms of the GNU GPL.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
+
 */
 
 
@@ -219,6 +221,14 @@ cite:before {
 	content: "\f421";
 }
 
+.comment-author cite.fn:before {
+    display: none;
+}
+
+.bypostauthor .comment-author cite.fn:before {
+    display: inline-block;
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -234,7 +244,9 @@ pre {
 }
 
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font: 16px monospace;
+	background: rgba(0,0,0,.3);
+	padding: 2px 4px;
 }
 
 abbr, acronym {
@@ -289,6 +301,10 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 	vertical-align: middle;
+}
+
+a img {
+	border: none;
 }
 
 button,
@@ -687,6 +703,8 @@ header#masthead {
 	float: left;
 	margin: -8px 16px -8px 0;
 	transition: opacity .18s ease-in-out;
+	max-height: 48px;
+	max-width: 48px;
 }
 
 a:hover .site-logo {

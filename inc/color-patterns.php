@@ -52,7 +52,6 @@ function figureground_fg_colors_css() {
 	.site-main article.formatted-post:nth-child(even) a.post-format-link:before,
 	.site-main article:nth-child(even) footer.entry-meta li.edit-link a:before,
 	.site-main article:nth-child(even) .entry-title a,
-	article.sticky .entry-content a,
 	.site-main article:nth-child(odd) footer.entry-meta li:nth-child(even),
 	.site-main article:nth-child(even) footer.entry-meta li:nth-child(odd),
 	.site-main article:nth-child(odd) footer.entry-meta li:nth-child(even) a,
@@ -375,6 +374,21 @@ function figureground_accent_colors_css() {
 	aside.widget:nth-child(even) a:active,
 	aside.widget:nth-child(even) a:focus {
 		color: ' . $accent_dark_lightened . ';
+	}';
+
+	// Accent light that contrasts with accent dark.
+	$contrasting_accent_light = $accent_light;
+	if ( 3 > figureground_contrast_ratio( $accent_dark, $accent_light ) ) {
+		// There isn't enough contrast, so we need to adjust the chosen color.
+		// Only change the light accent color, so 3:1 contrast may not be acheived.
+		while ( 3 > figureground_contrast_ratio( $accent_dark, $contrasting_accent_light )
+				&& 0 < figureground_relative_luminance( $contrasting_accent_light ) ) {
+					$contrasting_accent_light = figureground_adjust_color( $contrasting_accent_light, -8 );
+				}
+	}
+	$css .= '
+	article.sticky .entry-content a {
+		color: ' . $contrasting_accent_light . ';
 	}';
 
 	return $css;
