@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/ignite
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: Ignite is a responsive blog theme. Customize your site with Ignite's built-in social media icons and logo uploader. Then, make your logo pixel-perfect with the logo size and position tools. Additional features are available with Ignite Plus.
-Version: 1.19
+Version: 1.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, responsive-layout, custom-menu, featured-images, sticky-post, theme-options, threaded-comments
@@ -24,7 +24,12 @@ Ignite is distributed under the terms of the GNU GPL
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-size: 100%;
   margin: 0;
   padding: 0;
@@ -43,6 +48,8 @@ body {
 
 .overflow-container {
   overflow: hidden;
+  height: auto;
+  min-height: 100%;
 }
 
 .main {
@@ -199,6 +206,7 @@ th {
 .aligncenter {
   text-align: center;
   margin: 1.5em auto;
+  display: block;
 }
 
 .alignnone {
@@ -305,6 +313,18 @@ a img {
   border: none;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+  html {
+    -webkit-text-size-adjust: none;
+    /* none for no scaling */
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  html {
+    -webkit-text-size-adjust: none;
+    /* none for no scaling */
+  }
+}
 .site-header {
   background: white;
   height: 4.5em;
@@ -325,7 +345,10 @@ a img {
   text-decoration: none;
   color: #373b41;
 }
-.site-title a:hover {
+.site-title a:link, .site-title a:visited {
+  color: #373b41;
+}
+.site-title a:hover, .site-title a:active, .site-title a:focus {
   color: #e6a117;
 }
 .site-title img {
@@ -354,6 +377,8 @@ a img {
 }
 
 .menu-primary {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   background: #373b41;
   width: 100%;
   min-height: 75em;
@@ -364,7 +389,12 @@ a img {
   left: 0;
   padding-top: 1.5em;
   text-align: center;
-  z-index: -1;
+  z-index: 0;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .menu-primary p {
   color: #e6a117;
@@ -433,13 +463,15 @@ a img {
 }
 
 .site-header.toggled .menu-primary {
-  z-index: 0;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
-.site-header.toggled + div .main:after {
+.site-header.toggled ~ div .main:after {
   bottom: 0;
   opacity: 0.4;
 }
-.site-header.toggled + div .sidebar-primary-container:after {
+.site-header.toggled ~ div .sidebar-primary-container:after {
   bottom: 0;
   opacity: 0.4;
 }
@@ -493,6 +525,9 @@ a img {
     padding: 0;
     text-align: left;
     background: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
   .menu-primary p {
     display: none;
@@ -520,8 +555,6 @@ a img {
     z-index: 3;
     min-width: 100%;
     -webkit-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
     backface-visibility: hidden;
     /* remove slight wiggle caused by opacity change */
     -webkit-transition: opacity 0.2s ease;
@@ -1124,6 +1157,7 @@ a img {
   border-bottom: solid 1px #e6a117;
   font-weight: 700;
   position: relative;
+  display: inline-block;
 }
 .further-reading a {
   color: #373b41;
@@ -1229,6 +1263,11 @@ li.pingback {
 .comment-content p:last-child {
   margin-bottom: 1.437em;
   /* b/c comment meta border */
+}
+
+.no-avatars .comment-content,
+.no-avatars .comment-meta {
+  margin-left: 0;
 }
 
 .comment-author:after {
@@ -1571,6 +1610,11 @@ li.pingback {
 .post-password-form input[type="password"] {
   display: block;
   margin: 0.75em 0;
+}
+
+/* attachment page */
+.singular-attachment .further-reading p {
+  width: 49.5%;
 }
 
 /**

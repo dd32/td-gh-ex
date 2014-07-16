@@ -95,7 +95,7 @@ jQuery(document).ready(function($){
         var newMenuHeight = $('#overflow-container').height();
 
         if ($('#site-header').hasClass('toggled')) {
-            $('#site-header').removeClass('toggled')
+            $('#site-header').removeClass('toggled');
             $('#main').css('transform', 'translateX(' + 0 + 'px)');
             $('.breadcrumbs').css('transform', 'translateX(' + 0 + 'px)');
             $('#sidebar-primary-container').css('transform', 'translateX(' + 0 + 'px)');
@@ -105,7 +105,7 @@ jQuery(document).ready(function($){
                 $('#menu-primary').removeAttr('style');
             }, 400);
         } else {
-            $('#site-header').addClass('toggled')
+            $('#site-header').addClass('toggled');
             $('#menu-primary').css('height', newMenuHeight);
             $('#main').css('transform', 'translateX(' + menuWidth + 'px)');
             $('.breadcrumbs').css('transform', 'translateX(' + menuWidth + 'px)');
@@ -114,7 +114,12 @@ jQuery(document).ready(function($){
         }
     }
     function onScroll() {
-        var menuItemsBottom = $('#menu-primary-items').offset().top + $('#menu-primary-items').height();
+
+        if($('#menu-primary-items').length){
+            var menuItemsBottom = $('#menu-primary-items').offset().top + $('#menu-primary-items').height();
+        } else {
+            var menuItemsBottom = $('.menu-unset').offset().top + $('.menu-unset').height();
+        }
 
         // keep updating var on scroll
         var topDistance = $(window).scrollTop();
@@ -127,9 +132,16 @@ jQuery(document).ready(function($){
     /* see if social media icons can fit and display if they can */
     function showSocialIcons() {
 
+        if($('#menu-primary-items').length){
+            var menu = $('#menu-primary-items');
+        } else {
+            var menu = $('.menu-unset');
+        }
         // get widths of all elements involved
         var siteHeaderWidth = $('#site-header').width();
-        var menuWidth = $('#menu-primary-items').width();
+
+        var menuWidth = menu.width();
+
         var titleInfoWidth = $('#title-info').width();
         var siteDescriptionWidth = $('#site-description').width();
         var socialIcons = $('#menu-primary').find('.social-media-icons');
@@ -145,7 +157,7 @@ jQuery(document).ready(function($){
             $(socialIcons).addClass('visible');
         }
         /* if the menu is on the next line, display the social icons */
-        if( $('#menu-primary-items').offset().top > $('#title-info').offset().top ){
+        if( menu.offset().top > $('#title-info').offset().top ){
             $(socialIcons).addClass('visible-top');
         }
     }
@@ -158,8 +170,10 @@ jQuery(document).ready(function($){
 
     /* allow keyboard access/visibility for dropdown menu items */
     $('.menu-item a, .page_item a').focus(function(){
-        $(this).parent('li').addClass('focused');
-        $(this).parents('ul').addClass('focused');
+        setTimeout(function() {
+            $(this).parent('li').addClass('focused');
+            $(this).parents('ul').addClass('focused');
+        }, 0);
     });
     $('.menu-item a, .page_item a').focusout(function(){
         $(this).parent('li').removeClass('focused');
