@@ -21,7 +21,7 @@
 <?php wp_title( '|', true, 'right' ); ?>
 </title>
 <?php if(!empty($foodrecipes_options['favicon'])) { ?>
-<link rel="shortcut icon" href="<?php echo $foodrecipes_options['favicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url($foodrecipes_options['favicon']);?>">
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -41,25 +41,25 @@
         <?php if(empty($foodrecipes_options['logo'])){ ?>
         <h1 class="foodrecipes-site-title"><?php echo get_bloginfo('name'); ?></h1>
         <?php }else{
-                               echo  "<img src='".$foodrecipes_options['logo']."' class='img-responsive'/>";
+                               echo  "<img src='".esc_url($foodrecipes_options['logo'])."' class='img-responsive'/>";
                              }?>
         </a> </div>
       <div class="col-md-3 no-padding-right foodrecipes-social-icon-right ">
         <ul class="foodrecipes-social list-inline pull-right">
           <?php if(!empty($foodrecipes_options['fburl'])) {?>
-          <li><a href="<?php echo $foodrecipes_options['fburl']; ?>"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="<?php echo esc_url($foodrecipes_options['fburl']); ?>"><i class="fa fa-facebook"></i></a></li>
           <?php } ?>
           <?php if(!empty($foodrecipes_options['twitter'])) {?>
-          <li><a href="<?php echo $foodrecipes_options['twitter']; ?>"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="<?php echo esc_url($foodrecipes_options['twitter']); ?>"><i class="fa fa-twitter"></i></a></li>
           <?php } ?>
           <?php if(!empty($foodrecipes_options['googleplus'])) { ?>
-          <li><a href="<?php echo $foodrecipes_options['googleplus']; ?>"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="<?php echo esc_url($foodrecipes_options['googleplus']); ?>"><i class="fa fa-google-plus"></i></a></li>
           <?php } ?>
           <?php if(!empty($foodrecipes_options['dribbble'])) { ?>
-          <li><a href="<?php echo $foodrecipes_options['dribbble']; ?>"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="<?php echo esc_url($foodrecipes_options['dribbble']); ?>"><i class="fa fa-dribbble"></i></a></li>
           <?php } ?>
           <?php if(!empty($foodrecipes_options['pintrest'])) { ?>
-          <li><a href="<?php echo $foodrecipes_options['pintrest']; ?>"><i class="fa fa-pinterest"></i></a></li>
+          <li><a href="<?php echo esc_url($foodrecipes_options['pintrest']); ?>"><i class="fa fa-pinterest"></i></a></li>
           <?php } ?>
         </ul>
       </div>

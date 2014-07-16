@@ -28,7 +28,7 @@ get_header();
                   <h6> <?php echo get_the_date("j F, Y"); ?></h6>
                   <h1><?php echo get_the_title(); ?></h1>
                   <?php if($foodrecipes_feature_img_url != "") { ?>
-                  <div><img src="<?php echo $foodrecipes_feature_img_url; ?>"></div>
+                  <div><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>"></div>
                   <?php } ?>
                   <?php foodrecipes_entry_meta(); ?>
                   <div class="clear-fix"></div>

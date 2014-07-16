@@ -30,9 +30,9 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
            <div class="foodrecipes-post-box">
             <div class="foodrecipes-post-box-img">
               <?php if($foodrecipes_feature_img_url == "") {?>
-              <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" class="img-responsive">
+              <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-image.jpg'); ?>" class="img-responsive">
               <?php } else { ?>
-              <img src="<?php echo $foodrecipes_feature_img_url; ?>">
+              <img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>">
               <?php } ?>
               <div class="foodrecipes-post-box-hover">
                 <div class="foodrecipes-post-box-hover-center">

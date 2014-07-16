@@ -8,7 +8,7 @@
   <div class="col-md-12 footer">
     <h2>
       <?php if(!empty($foodrecipes_options['footertext'])) {
-               	 echo $foodrecipes_options['footertext']; 
+               	 echo wp_filter_nohtml_kses($foodrecipes_options['footertext']); 
 			}else{
 				echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.';
 			}

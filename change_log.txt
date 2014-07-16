@@ -27,3 +27,7 @@ Version: 1.0.5
 	iv) Removed screen icon function.
 	v) Added images links in readme.txt file
 	vi) Deleted unused masory js file. 
+
+Version: 1.0.6
+	i) form field values set with escaped.
+	ii) change image and screenshot.

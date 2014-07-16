@@ -52,7 +52,7 @@ function fastertheme_framework_page(){
 		$_REQUEST['settings-updated'] = false;
 		
 		$foodrecipes_image=get_template_directory_uri().'/theme-option/images/logo.png';
-		echo "<h1><img src='".$foodrecipes_image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".esc_url($foodrecipes_image)."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
 			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
 		endif; 
@@ -75,29 +75,29 @@ function fastertheme_framework_page(){
         
         <div id="options-group-1" class="group socialsettings">
           <h3>Basic Settings</h3>
-          <div id="section-logo" class="section section-upload ">
+          <div id="section-logo-image" class="section section-upload ">
             <h4 class="heading">Site Logo</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" 
+                <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" 
                             value="<?php if(!empty($foodrecipes_options['logo'])) { echo $foodrecipes_options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
-                <div class="screenshot" id="logo-image">
-                  <?php if(!empty($foodrecipes_options['logo'])) { echo "<img src='".$foodrecipes_options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
+                <div class="screenshot" id="logo-img">
+                  <?php if(!empty($foodrecipes_options['logo'])) { echo "<img src='".esc_url($foodrecipes_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
             </div>
           </div>
-          <div id="section-favicon" class="section section-upload ">
+          <div id="section-favicon-img" class="section section-upload ">
             <h4 class="heading">Favicon</h4>
             <div class="option">
               <div class="controls">
-                <input id="favicon" class="upload" type="text" name="faster_theme_options[favicon]" 
+                <input id="favicon-image" class="upload" type="text" name="faster_theme_options[favicon]" 
                             value="<?php if(!empty($foodrecipes_options['favicon'])) { echo $foodrecipes_options['favicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
-                <div class="screenshot" id="favicon-image">
-                  <?php if(!empty($foodrecipes_options['favicon'])) { echo "<img src='".$foodrecipes_options['favicon']."' /><a class='remove-image'>Remove</a>"; } ?>
+                <div class="screenshot" id="favicon-img">
+                  <?php if(!empty($foodrecipes_options['favicon'])) { echo "<img src='".esc_url($foodrecipes_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of favicon should be exactly 32x32px for best results.</div>

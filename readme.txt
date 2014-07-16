@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/foodrecipes
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout, theme-options
@@ -79,18 +79,23 @@ They are under SIL Open Font.
 	
 iv)Bootstrap files
 ===========
-we used are licensed under the Apache License v2.0
+we used are licensed under the Apache License v3.1.1
+Bootstrap - http://getbootstrap.com
+Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 vi) respond.min js file
 ============
 we used are licensed under MIT/GPL2.
+Version - v1.3.0
 
 vii) Images
 ============
-http://picjumbo.com/colorful-healthy-coucous-dinner/
-http://picjumbo.com/chinese-colorful-meal-with-noodles/
-picjumbo.com/fresh-healthy-banana-breakfast/
-http://picjumbo.com/chicken-skewers-in-a-pan/
-http://picjumbo.com/glass-for-wine/
+
+http://pixabay.com/en/fried-chicken-japanese-food-250863/
+http://pixabay.com/en/noodles-sausage-potatoes-cook-378948/
+http://pixabay.com/en/spaghetti-pasta-italian-food-bacon-237907/
+http://pixabay.com/en/rice-ladle-rice-sausage-potatoes-378946/
+http://pixabay.com/en/new-year-s-eve-feuerzangenbowle-325149/
+
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)

@@ -55,7 +55,7 @@ echo $before_title . $foodrecipes_title . $after_title;;
       <?php 
 			$foodrecipes_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 			if($foodrecipes_feat_image!="")
-				echo'<a href="'.get_the_permalink().'" title="Post Page"> <img src="'.$foodrecipes_feat_image.'" /></a>';
+				echo'<a href="'.get_the_permalink().'" title="Post Page"> <img src="'.esc_url($foodrecipes_feat_image).'" /></a>';
 			else			
 				echo'<a href="'.get_the_permalink().'" title="Post Page"> <img src="'.get_template_directory_uri().'/images/no-image.jpg" /> </a>';
 			?>

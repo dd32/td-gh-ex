@@ -35,11 +35,7 @@ get_header(); ?>
                 <?php 
                         $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
                         if($foodrecipes_feature_img_url!="") { ?>
-                <?php if($foodrecipes_feature_img_url == "") {?>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" class="img-responsive">
-                <?php } else { ?>
-                <img src="<?php echo $foodrecipes_feature_img_url; ?>" class="img-responsive" alt="<?php echo get_the_title();?>">
-                <?php } ?>
+                <img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>" class="img-responsive" alt="<?php echo get_the_title();?>">
                 <?php } ?>
               </figure>
               <?php foodrecipes_entry_meta(); ?>

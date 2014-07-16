@@ -37,7 +37,7 @@
               <?php 
                         $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
                         if($foodrecipes_feat_image!="") { ?>
-              <img src="<?php echo $foodrecipes_feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
+              <img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
               <?php } ?>
             </figure>
             <?php foodrecipes_entry_meta(); ?>
