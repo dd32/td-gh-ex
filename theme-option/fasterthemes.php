@@ -1,6 +1,6 @@
 <?php
 function fasterthemes_options_init(){
- register_setting( 'ft_options', 'faster_theme_options', 'ft_options_validate');
+ register_setting( 'ft_options', 'food_recipes_options', 'ft_options_validate');
 } 
 add_action( 'admin_init', 'fasterthemes_options_init' );
 function ft_options_validate( $input ) {
@@ -69,7 +69,7 @@ function fastertheme_framework_page(){
       
       <form method="post" action="options.php" id="form-option" class="theme_option_ft">
         <?php settings_fields( 'ft_options' );  
-		$foodrecipes_options = get_option( 'faster_theme_options' ); ?>
+		$foodrecipes_options = get_option( 'food_recipes_options' ); ?>
 
         <!-------------- first group ----------------->
         
@@ -79,7 +79,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Site Logo</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" 
+                <input id="logo-img" class="upload" type="text" name="food_recipes_options[logo]" 
                             value="<?php if(!empty($foodrecipes_options['logo'])) { echo $foodrecipes_options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-img">
@@ -93,7 +93,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Favicon</h4>
             <div class="option">
               <div class="controls">
-                <input id="favicon-image" class="upload" type="text" name="faster_theme_options[favicon]" 
+                <input id="favicon-image" class="upload" type="text" name="food_recipes_options[favicon]" 
                             value="<?php if(!empty($foodrecipes_options['favicon'])) { echo $foodrecipes_options['favicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="favicon-img">
@@ -107,7 +107,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($foodrecipes_options['footertext'])) { echo $foodrecipes_options['footertext']; } ?>">
+                <input type="text" id="footertext2" class="of-input" name="food_recipes_options[footertext]" size="32"  value="<?php if(!empty($foodrecipes_options['footertext'])) { echo esc_url($foodrecipes_options['footertext']); } ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>
@@ -122,7 +122,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Facebook</h4>
             <div class="option">
               <div class="controls">
-                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($foodrecipes_options['fburl'])) { echo $foodrecipes_options['fburl']; } ?>" />
+                <input id="facebook" class="of-input" name="food_recipes_options[fburl]" size="30" type="text" value="<?php if(!empty($foodrecipes_options['fburl'])) { echo esc_url($foodrecipes_options['fburl']); } ?>" />
               </div>
               <div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>
             </div>
@@ -133,7 +133,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Twitter</h4>
             <div class="option">
               <div class="controls">
-                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['twitter'])) { echo $foodrecipes_options['twitter']; } ?>" />
+                <input id="twitter" class="of-input" name="food_recipes_options[twitter]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['twitter'])) { echo esc_url($foodrecipes_options['twitter']); } ?>" />
               </div>
               <div class="explain">Twitter profile or page URL i.e. http://www.twitter.com/username/</div>
             </div>
@@ -143,7 +143,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Google Plus</h4>
             <div class="option">
               <div class="controls">
-                <input id="googleplus" class="of-input" name="faster_theme_options[googleplus]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['googleplus'])) { echo $foodrecipes_options['googleplus']; } ?>" />
+                <input id="googleplus" class="of-input" name="food_recipes_options[googleplus]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['googleplus'])) { echo esc_url($foodrecipes_options['googleplus']); } ?>" />
               </div>
               <div class="explain">Google Plus profile or page URL i.e. https://plus.google.com/username/</div>
             </div>
@@ -153,17 +153,17 @@ function fastertheme_framework_page(){
             <h4 class="heading">Dribbble</h4>
             <div class="option">
               <div class="controls">
-                <input id="dribbble" class="of-input" name="faster_theme_options[dribbble]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['dribbble'])) { echo $foodrecipes_options['dribbble']; } ?>" />
+                <input id="dribbble" class="of-input" name="food_recipes_options[dribbble]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['dribbble'])) { echo esc_url($foodrecipes_options['dribbble']); } ?>" />
               </div>
               <div class="explain">dribbble profile or page URL i.e. https://dribbble.com/username/</div>
             </div>
           </div>
  
           <div id="section-pintrest" class="section section-text mini">
-            <h4 class="heading">Pintrest</h4>
+            <h4 class="heading">Pinterest</h4>
             <div class="option">
               <div class="controls">
-                <input id="pintrest" class="of-input" name="faster_theme_options[pintrest]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['pintrest'])) { echo $foodrecipes_options['pintrest']; } ?>" />
+                <input id="pintrest" class="of-input" name="food_recipes_options[pintrest]" type="text" size="30" value="<?php if(!empty($foodrecipes_options['pintrest'])) { echo esc_url($foodrecipes_options['pintrest']); } ?>" />
               </div>
               <div class="explain">Google Plus profile or page URL i.e. https://pintrest.com/username/</div>
             </div>

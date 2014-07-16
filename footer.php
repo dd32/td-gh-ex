@@ -1,5 +1,5 @@
 <?php
- $foodrecipes_options = get_option( 'faster_theme_options' );
+ $foodrecipes_options = get_option( 'food_recipes_options' );
 ?>
 
 <!-- footer -->

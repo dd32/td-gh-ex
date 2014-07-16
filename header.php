@@ -2,7 +2,7 @@
 /**
  * The Header template for our theme
  */
-  $foodrecipes_options = get_option( 'faster_theme_options' );
+  $foodrecipes_options = get_option( 'food_recipes_options' );
 ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
@@ -37,7 +37,7 @@
       <?php if(get_header_image()){ ?>
       <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="foodrecipes-custom-header" alt="" />
       <?php } ?>
-      <div class="col-md-3 foodrecipes-logo"> <a href="<?php echo site_url(); ?>">
+      <div class="col-md-3 foodrecipes-logo"> <a href="<?php echo home_url(); ?>">
         <?php if(empty($foodrecipes_options['logo'])){ ?>
         <h1 class="foodrecipes-site-title"><?php echo get_bloginfo('name'); ?></h1>
         <?php }else{

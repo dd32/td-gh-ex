@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/foodrecipes
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout, theme-options
@@ -91,11 +91,11 @@ Version - v1.3.0
 vii) Images
 ============
 
-http://pixabay.com/en/fried-chicken-japanese-food-250863/
-http://pixabay.com/en/noodles-sausage-potatoes-cook-378948/
-http://pixabay.com/en/spaghetti-pasta-italian-food-bacon-237907/
-http://pixabay.com/en/rice-ladle-rice-sausage-potatoes-378946/
-http://pixabay.com/en/new-year-s-eve-feuerzangenbowle-325149/
-
+http://pixabay.com/en/fried-chicken-japanese-food-250863/  - Public Domain CC0 License
+http://pixabay.com/en/noodles-sausage-potatoes-cook-378948/  - Public Domain CC0 License
+http://pixabay.com/en/spaghetti-pasta-italian-food-bacon-237907/ - Public Domain CC0 License
+http://pixabay.com/en/rice-ladle-rice-sausage-potatoes-378946/  - Public Domain CC0 License
+http://pixabay.com/en/new-year-s-eve-feuerzangenbowle-325149/ - Public Domain CC0 License
+ 
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)
