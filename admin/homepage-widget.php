@@ -58,13 +58,15 @@ class homepage_builder extends WP_Widget{
 
 		<hr>
 
+		
+
 		<label><?php _e('Block Style','newsmag'); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name('blog_style'); ?>" id="<?php echo $this->get_field_id('blog_style'); ?>">
-			<option value="slider" <?php selected('slider',$instance['blog_style']); ?>><?php _e('Slider','newsmag'); ?></option>
-			<option value="banner" <?php selected('banner',$instance['blog_style']); ?>><?php _e('Post Banner','newsmag'); ?></option>
-			<option value="onecolumn" <?php selected('onecolumn',$instance['blog_style']); ?>><?php _e('One Column','newsmag'); ?></option>
-			<option value="twocolumns" <?php selected('twocolumns',$instance['blog_style']); ?>><?php _e('Two Columns','newsmag'); ?></option>
-			<option value="thumbnail" <?php selected('thumbnail',$instance['blog_style']); ?>><?php _e('Thumbnail','newsmag'); ?></option>
+		<select name="<?php echo $this->get_field_name('block_style'); ?>" id="<?php echo $this->get_field_id('block_style'); ?>">
+			<option value="slider" <?php selected('slider',$instance['block_style']); ?>><?php _e('Slider','newsmag'); ?></option>
+			<option value="banner" <?php selected('banner',$instance['block_style']); ?>><?php _e('Post Banner','newsmag'); ?></option>
+			<option value="onecolumn" <?php selected('onecolumn',$instance['block_style']); ?>><?php _e('One Column','newsmag'); ?></option>
+			<option value="twocolumns" <?php selected('twocolumns',$instance['block_style']); ?>><?php _e('Two Columns','newsmag'); ?></option>
+			<option value="thumbnail" <?php selected('thumbnail',$instance['block_style']); ?>><?php _e('Thumbnail','newsmag'); ?></option>
 		</select><br>
 
 		<hr>
@@ -94,7 +96,7 @@ class homepage_builder extends WP_Widget{
 
 		$instance['title']=(!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
 		$instance['newsmag_category']=(!empty($new_instance['newsmag_category'])) ? $new_instance['newsmag_category'] : '';
-		$instance['blog_style']=(!empty($new_instance['blog_style'])) ? $new_instance['blog_style'] : '';
+		$instance['block_style']=(!empty($new_instance['block_style'])) ? $new_instance['block_style'] : '';
 		$instance['show_post']=(!empty($new_instance['show_post'])) ? $new_instance['show_post'] : '';
 
 		return $instance;
@@ -109,7 +111,7 @@ class homepage_builder extends WP_Widget{
 
 		echo $before_widget;
 			
-			if($instance['blog_style']=='slider'){ ?>
+			if($instance['block_style']=='slider'){ ?>
 					
 					<section class="primary-slider col-sm-8" role="slider">	
 									
@@ -155,7 +157,7 @@ class homepage_builder extends WP_Widget{
 								
 					</section>
 
-			<?php }elseif($instance['blog_style']=='banner'){
+			<?php }elseif($instance['block_style']=='banner'){
 
 				query_posts('post_type=post&posts_per_page='.$instance['show_post'].'&category_name='.$instance['newsmag_category']); 				
 
@@ -197,7 +199,7 @@ class homepage_builder extends WP_Widget{
 
 				<?php wp_reset_query();
 
-			}elseif($instance['blog_style']=='onecolumn'){
+			}elseif($instance['block_style']=='onecolumn'){
 
 				query_posts('post_type=post&posts_per_page='.$instance['show_post'].'&category_name='.$instance['newsmag_category']);
 
@@ -281,7 +283,7 @@ class homepage_builder extends WP_Widget{
 				
 			<?php wp_reset_query();
 
-			}elseif($instance['blog_style']=='twocolumns'){
+			}elseif($instance['block_style']=='twocolumns'){
 
 				query_posts('post_type=post&posts_per_page='.$instance['show_post'].'&category_name='.$instance['newsmag_category']);
 
@@ -376,7 +378,7 @@ class homepage_builder extends WP_Widget{
 				<?php wp_reset_query(); 
 
 
-			}elseif($instance['blog_style']=='thumbnail'){
+			}elseif($instance['block_style']=='thumbnail'){
 
 				query_posts('post_type=post&posts_per_page='.$instance['show_post'].'&category_name='.$instance['newsmag_category']);
 

@@ -47,10 +47,16 @@
 				<?php }else{ ?>
 				
 				<h1 class="p-title">
-					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home"><?php bloginfo('name'); ?></a>
+					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" title="<?php bloginfo('description'); ?>" rel="home"><?php bloginfo('name'); ?></a>
 				</h1>
 
-				<?php } } ?>
+				<?php } }else{ ?>
+
+					<h1 class="p-title">
+						<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" title="<?php bloginfo('description'); ?>" rel="home"><?php bloginfo('name'); ?></a>
+					</h1>
+
+				<?php } ?>
 
 			</div> <!-- col-sm-3 -->
 
