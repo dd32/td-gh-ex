@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package my-simone
+ * @package simone
  */
 
 if ( ! function_exists( 'simone_paging_nav' ) ) :
@@ -79,8 +79,8 @@ function simone_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'simone' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
-				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . __( 'Previous Post:', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
+				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . __( 'Next Post:', 'simone' ) . '</div><h1>%link</h1></div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
             </div><!-- .post-nav-box -->
@@ -128,7 +128,7 @@ function simone_posted_on() {
 		esc_html( get_the_modified_date( __('F jS, Y', 'simone') ) )
 	);
 
-	printf( __( '<span class="byline">Written by %1$s</span><span class="posted-on">%2$s</span>', 'my-simone' ),
+	printf( __( '<span class="byline">Written by %1$s</span><span class="posted-on">%2$s</span>', 'simone' ),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
