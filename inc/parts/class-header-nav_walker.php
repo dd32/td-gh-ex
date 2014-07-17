@@ -69,5 +69,3 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
       }
   }//end of class
 endif;
-?>
-

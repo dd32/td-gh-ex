@@ -116,4 +116,3 @@ if ( ! class_exists( 'TC_sidebar' ) ) :
       }
   }//end of class
 endif;
-?>

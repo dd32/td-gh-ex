@@ -123,7 +123,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 	       	$logo_src    			= apply_filters( 'tc_logo_src' , $logo_src ) ;
 	       	
 	       	$logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
-	      	$accepted_formats		= array('jpg', 'jpeg', 'png' ,'gif');
+	      	$accepted_formats		= apply_filters( 'tc_logo_img_formats' , array('jpg', 'jpeg', 'png' ,'gif', 'svg', 'svgz' ) );
 	       	$filetype 				= wp_check_filetype ($logo_src);
 	       	$logo_class 			= apply_filters( 'tc_logo_class', 'brand span3' );
 			?>
@@ -317,4 +317,3 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 		}
 	}//end of class
 endif;
-?>

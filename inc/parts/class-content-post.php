@@ -103,4 +103,3 @@ if ( ! class_exists( 'TC_post' ) ) :
       }
   }//end of class
 endif;
-?>

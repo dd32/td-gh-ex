@@ -288,7 +288,7 @@ if ( ! class_exists( 'TC_breadcrumb' ) ) :
 							$parent_post_type_object = get_post_type_object( $parent_post_type );
 
 							/* If $front has been set, add it to the $path. */
-							if ( $parent_post_type_object->rewrite['with_front'] && $wp_rewrite->front )
+							if ( isset($parent_post_type_object->rewrite['with_front']) && $wp_rewrite->front )
 								$path .= trailingslashit( $wp_rewrite->front );
 
 							/* If there's a slug, add it to the $path. */
@@ -913,4 +913,3 @@ if ( ! class_exists( 'TC_breadcrumb' ) ) :
 		}
 	}//end of class
 endif;
-?>

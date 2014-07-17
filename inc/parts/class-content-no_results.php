@@ -48,4 +48,3 @@ if ( ! class_exists( 'TC_no_results' ) ) :
       }
   }//end of class
 endif;
-?>

@@ -162,4 +162,3 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         }
     }//end of class
 endif;
-?>

@@ -323,4 +323,3 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
       }
   }//end of class       
 endif;
-?>

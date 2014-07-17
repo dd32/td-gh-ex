@@ -209,4 +209,3 @@ if ( ! class_exists( 'TC_gallery' ) ) :
       }
   }//end of class
 endif;
-?>

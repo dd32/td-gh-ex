@@ -254,4 +254,3 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
 
    }//end of class
 endif;
-?>

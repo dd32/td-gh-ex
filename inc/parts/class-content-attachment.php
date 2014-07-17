@@ -152,4 +152,3 @@ if ( ! class_exists( 'TC_attachment' ) ) :
         }//end of function
     }//end of class
 endif;
-?>

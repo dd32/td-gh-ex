@@ -315,6 +315,9 @@ if ( ! class_exists( 'TC_init' ) ) :
         $slider_size      = apply_filters( 'tc_slider_size' , $this -> slider_size );
         add_image_size( 'slider' , $slider_size['width'] , $slider_size['height'], $slider_size['crop'] );
 
+        //add support for svg and svgz format in media upload
+        add_filter( 'upload_mimes'                        , array( $this , 'tc_custom_mtypes' ) );
+
         //add support for plugins (added in v3.1.0)
         add_theme_support( 'jetpack' );
         add_theme_support( 'bbpress' );
@@ -551,6 +554,22 @@ if ( ! class_exists( 'TC_init' ) ) :
       }//end of plugin compatibility function
 
 
+
+
+      /**
+      * Returns the $mimes array with svg and svgz entries added
+      *
+      * @package Customizr
+      * @since Customizr 3.1.19
+      */
+      function tc_custom_mtypes( $mimes ) {
+        if (! apply_filters( 'tc_add_svg_mime_type' , true ) )
+          return $mimes;
+        
+        $mimes['svg']   = 'image/svg+xml';
+        $mimes['svgz']  = 'image/svg+xml';
+        return $mimes;
+      }
 
 
 

@@ -265,4 +265,3 @@ if ( ! class_exists( 'TC_slider' ) ) :
       }
   } //end of class
 endif;
-?>

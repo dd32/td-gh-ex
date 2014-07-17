@@ -1401,4 +1401,3 @@ if ( ! class_exists( 'TC_meta_boxes' ) ) :
       }
   }//end of class
 endif;
-?>

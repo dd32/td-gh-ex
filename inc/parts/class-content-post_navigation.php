@@ -128,4 +128,3 @@ if ( ! class_exists( 'TC_post_navigation' ) ) :
       }
   }//end of class
 endif;
-?>

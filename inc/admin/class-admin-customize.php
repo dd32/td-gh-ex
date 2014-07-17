@@ -308,4 +308,3 @@ if ( ! class_exists( 'TC_customize' ) ) :
 	    }
 	}//end of class
 endif;
-?>

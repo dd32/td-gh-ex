@@ -286,4 +286,3 @@ if ( ! class_exists( 'TC_post_list' ) ) :
       }
   }//end of class
 endif;
-?>

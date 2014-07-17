@@ -33,6 +33,12 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.19 July 18th 2014 =
+* added : (php, class-fire-init.php) support for svg and svgz in media upload
+* added : (php, class-header-header_main.php) new filter 'tc_logo_img_formats'
+* fixed : (php, class-content-breadcrumb#291) check existence of rewrite['with_front']
+* fixed : (php) closing tags php removed from all classes
+
 = 3.1.18 July 11rd 2014 =
 * added : (lang) Czech translation. Many thanks to Martin Filák!
 * added : (php , class-content_slider.php) two new action hooks (filters) for a better control of the slider layout class (tc_slider_layout_class) and the slider image size (tc_slider_img_size)

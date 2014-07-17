@@ -173,6 +173,3 @@ if ( ! class_exists( 'TC_footer_main' ) ) :
 		}
 	}//end of class
 endif;
-?>
-
-

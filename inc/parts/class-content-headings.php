@@ -270,4 +270,3 @@ if ( ! class_exists( 'TC_headings' ) ) :
       }//end of function
   }//end of class
 endif;
-?>

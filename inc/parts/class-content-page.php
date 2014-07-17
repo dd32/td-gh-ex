@@ -60,4 +60,3 @@ if ( ! class_exists( 'TC_page' ) ) :
         }
     }//end of class
 endif;
-?>

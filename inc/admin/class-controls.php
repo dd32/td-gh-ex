@@ -145,5 +145,3 @@ if ( ! class_exists( 'TC_controls' ) ) :
 		 }//end function
 	}//end of class
 endif;
-?>
-

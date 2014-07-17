@@ -53,4 +53,3 @@ if ( ! class_exists( 'TC_404' ) ) :
       }
   }//end of class
 endif;
-?>
