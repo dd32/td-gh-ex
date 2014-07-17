@@ -36,3 +36,6 @@ Version: 1.0.7
 	i) Added license of images.
 	ii) Added home_url() in place of site_url() in header.php.
 	iii) Changed settings name to the unique name.
+
+Version: 1.0.8
+	i) Changed esc_url() tpo esc_attr() for copyright text option.

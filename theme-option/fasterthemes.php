@@ -107,7 +107,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="footertext2" class="of-input" name="food_recipes_options[footertext]" size="32"  value="<?php if(!empty($foodrecipes_options['footertext'])) { echo esc_url($foodrecipes_options['footertext']); } ?>">
+                <input type="text" id="footertext2" class="of-input" name="food_recipes_options[footertext]" size="32"  value="<?php if(!empty($foodrecipes_options['footertext'])) { echo esc_attr($foodrecipes_options['footertext']); } ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>
