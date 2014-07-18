@@ -126,7 +126,12 @@ function spacious_body_class( $classes ) {
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, 'spacious_page_layout', true ); }
 
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, 'spacious_page_layout', true ); 
+	}
+
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$spacious_default_layout = of_get_option( 'spacious_default_layout', 'right_sidebar' );
 
 	$spacious_default_page_layout = of_get_option( 'spacious_pages_default_layout', 'right_sidebar' );
@@ -162,6 +167,12 @@ function spacious_body_class( $classes ) {
 	if( is_page_template( 'page-templates/blog-image-medium.php' ) ) {
 		$classes[] = 'blog-medium';
 	}
+	if ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_medium_alternate' ) {
+		$classes[] = 'blog-alternate-medium';
+	}
+	if ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_medium' ) {
+		$classes[] = 'blog-medium';
+	}
 	if( of_get_option( 'spacious_site_layout', 'box_1218px' ) == 'wide_978px' ) {
 		$classes[] = 'wide-978';
 	}
@@ -189,7 +200,12 @@ function spacious_sidebar_select() {
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, 'spacious_page_layout', true ); }
 
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, 'spacious_page_layout', true ); 
+	}
+
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$spacious_default_layout = of_get_option( 'spacious_default_layout', 'right_sidebar' );
 
 	$spacious_default_page_layout = of_get_option( 'spacious_pages_default_layout', 'right_sidebar' );
@@ -471,4 +487,79 @@ function spacious_footer_copyright() {
 endif;
 
 /**************************************************************************************/
+
+if ( ! function_exists( 'spacious_posts_listing_display_type_select' ) ) :
+/**
+ * Function to select the posts listing display type
+ */
+function spacious_posts_listing_display_type_select() {			
+	if ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_large' ) {
+		$format = 'blog-image-large';
+	}
+	elseif ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_medium' ) {
+		$format = 'blog-image-medium';
+	}
+	elseif ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_medium_alternate' ) {
+		$format = 'blog-image-medium';
+	}
+	elseif ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) == 'blog_full_content' ) {
+		$format = 'blog-full-content';
+	}
+	else {
+		$format = get_post_format();
+	}
+
+	return $format;
+}
+endif;
+
+/****************************************************************************************/
+
+add_action( 'spacious_before_body_content', 'spacious_update_transition');
+/**
+ * checks for blog page templates for making transition
+ */
+if ( ! function_exists( 'spacious_update_transition' ) ) :
+function spacious_update_transition() {
+	if( is_page_template( 'page-templates/blog-image-alternate-medium.php' ) || is_page_template( 'page-templates/blog-image-large.php' ) || is_page_template( 'page-templates/blog-image-medium.php' ) || is_page_template( 'page-templates/blog-full-content.php' ) ) {
+		global $post;
+		if( !get_option('page_for_posts') && 'page' == get_option( 'show_on_front') && 'publish' == get_post_status() ) {
+			$template_meta = basename( get_post_meta( $post->ID, '_wp_page_template', 'default' ) );
+			spacious_update_option( $template_meta );
+			if( get_option( 'page_on_front' ) == get_the_ID() ) {
+				update_option ( 'page_on_front', 0 );
+			}
+			update_option( 'page_for_posts', get_the_ID() );
+			update_post_meta( $post->ID, '_wp_page_template', 'default' );
+		}
+	}
+}
+endif;
+
+/**************************************************************************************/
+
+/**
+ * Updates the blog display in options framework as per the template selection.
+ */
+if ( ! function_exists( 'spacious_update_option' ) ) :
+function spacious_update_option( $template_meta ) {
+	$config = get_option( 'optionsframework' );
+	$optionname = get_option( $config['id'] );
+	if ( $optionname ) {
+		if( $template_meta == 'blog-image-large.php') {
+	  		$optionname['spacious_archive_display_type'] = 'blog_large';
+	  	}
+	  	elseif( $template_meta == 'blog-image-medium.php') {
+	  		$optionname['spacious_archive_display_type'] = 'blog_medium';
+	  	}
+	  	elseif( $template_meta == 'blog-image-alternate-medium.php') {
+	  		$optionname['spacious_archive_display_type'] = 'blog_medium_alternate';
+	  	}
+	  	elseif( $template_meta == 'blog-full-content.php') {
+	  		$optionname['spacious_archive_display_type'] = 'blog_full_content';
+	  	}
+		update_option( $config['id'], $optionname );
+	}
+}
+endif;
 ?>

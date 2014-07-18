@@ -46,6 +46,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.2 =
+* Blog page display type option added.
+* Function added to shift the page using blog template to posts page.
+
 = Version 1.1.1 =
 * Added traditional Chinese (Taiwan) language file.
 * Slider featured content css adjustment in smaller devices.

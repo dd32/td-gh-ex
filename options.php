@@ -140,6 +140,20 @@ function optionsframework_options() {
 							)
 	);
 
+	$options[] = array(
+		'name' 		=> __( 'Blog Posts display type', 'spacious' ),
+		'desc' 		=> __( 'Choose the display type for the latests posts view or posts page view (static front page).', 'spacious' ),
+		'id' 			=> 'spacious_archive_display_type',
+		'std' 		=> 'blog_large',
+		'type' 		=> 'radio',
+		'options' 	=> array(
+							'blog_large' 	=> __( 'Blog Image Large', 'spacious' ),
+							'blog_medium' 	=> __( 'Blog Image Medium', 'spacious' ),
+							'blog_medium_alternate' 	=> __( 'Blog Image Alternate Medium', 'spacious' ),
+							'blog_full_content' 	=> __( 'Blog Full Content', 'spacious' ),
+						)
+	);
+
 	// Site primary color option
 	$options[] = array(
 		'name' 		=> __( 'Primary color option', 'spacious' ),
