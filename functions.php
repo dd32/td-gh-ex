@@ -9,8 +9,7 @@ function promax_scripts() {
 	}
 add_action( 'wp_enqueue_scripts', 'promax_scripts' );
 
-if ( ! isset( $content_width ) )
-	$content_width = 770;
+
 
 function promax_hdmenu() {	
 		echo '<ul>';
@@ -44,7 +43,7 @@ return $items;
 }
 
 //function to call first uploaded image in functions file
-function main_image() {
+function promax_main_image() {
 $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
 &post_mime_type=image&order=desc');
   if($files) :
@@ -87,20 +86,31 @@ function promax_theme_setup() {
 		add_image_size( 'popularpost', 340, 135, true);
 		add_image_size( 'latestpostthumb', 75, 75, true);
 
-
+global $content_width;
+		if ( ! isset( $content_width ) ) {
+		$content_width = 670;
+	}
+	
+	//theme text domain for languages
 	    load_theme_textdomain('promax', get_template_directory() . '/languages');
         add_editor_style();
         add_theme_support('automatic-feed-links');
 		}
+		// This theme uses wp_nav_menu() location.
+
 		register_nav_menus(
 			array(
  				'promax-navigation' => __('Navigation', 'promax'),
  				'primary' => __('Primary', 'promax'),
 				)		
 		);
-	$args = array( 'default-color' => 'ffffff', 
-		); 
-		add_theme_support( 'custom-background', $args ); 
+		// Setup the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'promax_custom_background_args', array(
+		'default-color' => '#ffffff',
+		'default-image' => '',
+	) ) );
+		
+		
 	add_action( 'after_setup_theme', 'promax_theme_setup' );
 	
 
@@ -172,25 +182,28 @@ function promax_theme_setup() {
 add_action('widgets_init', 'promax_widgets_init');
 //---------------------------- [ Pagenavi Function ] ------------------------------//
  
+
+
+
 function promax_pagenavi() {
-  global $wp_query, $wp_rewrite;
-  $pages = '';
-  $max = $wp_query->max_num_pages;
-  if (!$current = get_query_var('paged')) $current = 1;
-  $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
-  $args['total'] = $max;
-  $args['current'] = $current;
- 
-  $total = 1;
-  $args['mid_size'] = 3;
-  $args['end_size'] = 1;
-  $args['prev_text'] = '&#171; Prev';
-  $args['next_text'] = 'Next &raquo;';
- 
-  if ($max > 1) echo '<div class="wp-pagenavi">';
- if ($total == 1 && $max > 1) $pages = '<span class="pages">Page ' . $current . ' of ' . $max . '</span>';
- echo $pages . paginate_links($args);
- if ($max > 1) echo '</div>';
+	global $wp_query;
+	$big = 123456789;
+	$page_format = paginate_links( array(
+	    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	    'format' => '?paged=%#%',
+	    'current' => max( 1, get_query_var('paged') ),
+	    'total' => $wp_query->max_num_pages,
+	    'type'  => 'array'
+	) );
+	if( is_array($page_format) ) {
+	            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+	            echo '<div class="wp-pagenavi">';
+	            echo '<span class="pages">'. $paged . ' of ' . $wp_query->max_num_pages .'</span>';
+	            foreach ( $page_format as $page ) {
+	                    echo "$page";
+	            }
+	           echo '</div>';
+	 }
 }
 
 /**

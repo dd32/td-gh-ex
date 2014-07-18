@@ -2,7 +2,7 @@
 Thanks for Downloading ProMax theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.wrock.org/promax
+You can directly contact us: http://www.insertcart.com/promax
 also suggestion are welcome
 
 
@@ -35,6 +35,10 @@ Custom Css:
 
 
 == Change log ==
+
+= 1.4.3 =
+*fixed issue
+
 
 = 1.4.2 =
 *Option framework updated

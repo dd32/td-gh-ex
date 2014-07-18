@@ -1,8 +1,8 @@
 /*
 Theme Name: ProMax
-Theme URI: http://www.insertcart.com/promax
+Theme URI: http://www.insertcart.com/promax-basic
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
-Version: 1.4.2
+Version: 1.4.3
 Author: InsertCart by Sandy
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -938,7 +938,6 @@ position: absolute;
 background: #4DD247;
 padding: 6px;
 max-width: 19%;
-max-height: 2.4%;
 overflow: overlay;
 }
 .homecat a {
@@ -993,9 +992,6 @@ font-size: 17px !important;
 	margin-bottom: 15px;
 	list-style: none;
 	float: left;
-	box-shadow: 0 1px 3px 0 #B5B5B5;
--moz-box-shadow: 0 1px 3px 0 #b5b5b5;
--webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
 border: 1px solid #DDD;
 margin-right: 3%;
 height: 75px;
