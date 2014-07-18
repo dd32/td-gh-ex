@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-06-23 16:16-0700\n"
-"PO-Revision-Date: 2014-06-23 16:16-0700\n"
+"POT-Creation-Date: 2014-07-18 10:46-0700\n"
+"PO-Revision-Date: 2014-07-18 10:46-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../lib/cleanup.php:164
+#: ../lib/cleanup.php:154
 msgid "Continued"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
-#: ../lib/widgets.php:794 ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1776
 msgid "Image"
 msgstr ""
 
@@ -577,7 +577,7 @@ msgstr ""
 msgid "Post Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124
 msgid "Text"
 msgstr ""
 
@@ -1250,20 +1250,52 @@ msgstr ""
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:768
+#: ../lib/widgets.php:777
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:769
-msgid "Virtue: About with Image"
+#: ../lib/widgets.php:778
+msgid "Virtue: Image"
 msgstr ""
 
-#: ../lib/widgets.php:797
+#: ../lib/widgets.php:832
+msgid "Lightbox"
+msgstr ""
+
+#: ../lib/widgets.php:833
+msgid "New Window"
+msgstr ""
+
+#: ../lib/widgets.php:834
+msgid "Same Window"
+msgstr ""
+
+#: ../lib/widgets.php:835
+msgid "No Link"
+msgstr ""
+
+#: ../lib/widgets.php:847
+msgid "Image URL"
+msgstr ""
+
+#: ../lib/widgets.php:849
 #: ../themeoptions/inc/fields/background/field_background.php:315
 #: ../themeoptions/inc/fields/media/field_media.php:154
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:159
 msgid "Upload"
+msgstr ""
+
+#: ../lib/widgets.php:852
+msgid "Image opens in"
+msgstr ""
+
+#: ../lib/widgets.php:856
+msgid "Image Link (optional)"
+msgstr ""
+
+#: ../lib/widgets.php:860
+msgid "Text/Caption (optional)"
 msgstr ""
 
 #: ../lib/cmb/init.php:243
@@ -1453,109 +1485,6 @@ msgstr ""
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
-msgstr ""
-
-#: ../themeoptions/framework.php:270
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr ""
-
-#: ../themeoptions/framework.php:270
-msgid "Redux Framework"
-msgstr ""
-
-#: ../themeoptions/framework.php:274 ../themeoptions/framework.php:278
-#: ../themeoptions/framework.php:1334
-msgid "Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:1804
-#: ../themeoptions/extensions/customizer/extension_customizer.php:452
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr ""
-
-#: ../themeoptions/framework.php:1805
-#: ../themeoptions/extensions/customizer/extension_customizer.php:453
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-
-#: ../themeoptions/framework.php:1806
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-
-#: ../themeoptions/framework.php:1807
-#: ../themeoptions/extensions/customizer/extension_customizer.php:454
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-
-#: ../themeoptions/framework.php:1808
-msgid "Please Wait"
-msgstr ""
-
-#: ../themeoptions/framework.php:1955
-msgid "Hints"
-msgstr ""
-
-#: ../themeoptions/framework.php:1956
-msgid "<p>"
-msgstr ""
-
-#: ../themeoptions/framework.php:3132
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3206
-msgid "Expand"
-msgstr ""
-
-#: ../themeoptions/framework.php:3208 ../themeoptions/framework.php:3516
-msgid "Save Changes"
-msgstr ""
-
-#: ../themeoptions/framework.php:3212 ../themeoptions/framework.php:3520
-msgid "Reset Section"
-msgstr ""
-
-#: ../themeoptions/framework.php:3214 ../themeoptions/framework.php:3522
-msgid "Reset All"
-msgstr ""
-
-#: ../themeoptions/framework.php:3219 ../themeoptions/framework.php:3527
-msgid "Working..."
-msgstr ""
-
-#: ../themeoptions/framework.php:3239
-msgid "Settings Imported!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3254
-msgid "All Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3268
-msgid "Section Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3282
-msgid "Settings Saved!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3300
-msgid "Settings have changed, you should save them!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3308
-msgid "error(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3316
-msgid "warning(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3380 ../themeoptions/framework.php:3459
-msgid "System Info"
 msgstr ""
 
 #: ../themeoptions/options.php:38
@@ -1874,6 +1803,14 @@ msgstr ""
 
 #: ../themeoptions/options.php:804
 msgid "Choose a Sidebar for your Home Page"
+msgstr ""
+
+#: ../themeoptions/options.php:814
+msgid "Homepage Layout Manager"
+msgstr ""
+
+#: ../themeoptions/options.php:815
+msgid "Organize how you want the layout to appear on the homepage"
 msgstr ""
 
 #: ../themeoptions/options.php:820
@@ -2551,74 +2488,6 @@ msgstr ""
 msgid "Add %s"
 msgstr ""
 
-#: ../woocommerce/single-product-reviews.php:21
-#, php-format
-msgid "%s review for %s"
-msgid_plural "%s reviews for %s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../woocommerce/single-product-reviews.php:23
-msgid "Reviews"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:44
-msgid "There are no reviews yet."
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Add a review"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Be the first to review"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:64
-msgid "Email"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:67
-msgid "Submit"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:73
-msgid "Your Rating"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:74
-msgid "Rate&hellip;"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:75
-msgid "Perfect"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:76
-msgid "Good"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:77
-msgid "Average"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:78
-msgid "Not that bad"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:79
-msgid "Very Poor"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:83
-msgid "Your Review"
-msgstr ""
-
-#: ../woocommerce/single-product-reviews.php:92
-msgid ""
-"Only logged in customers who have purchased this product may leave a review."
-msgstr ""
-
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"
 msgstr ""
@@ -2627,273 +2496,7 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
-#: ../woocommerce/cart/cart-totals.php:16
-msgid "Cart Totals"
-msgstr ""
-
-#: ../woocommerce/cart/cart-totals.php:21
-msgid "Cart Subtotal"
-msgstr ""
-
-#: ../woocommerce/cart/cart-totals.php:75
-msgid "Order Total"
-msgstr ""
-
-#: ../woocommerce/cart/cart-totals.php:87
-#, php-format
-msgid " (taxes estimated for %s)"
-msgstr ""
-
-#: ../woocommerce/cart/cart-totals.php:90
-#, php-format
-msgid ""
-"Note: Shipping and taxes are estimated%s and will be updated during checkout "
-"based on your billing and shipping information."
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
-msgid "Product"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:28
-msgid "Price"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:29
-msgid "Quantity"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
-msgid "Total"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:47
-msgid "Remove this item"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:74
-msgid "Available on backorder"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon code"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Apply Coupon"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:125
-msgid "Update Cart"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:125
-msgid "Proceed to Checkout"
-msgstr ""
-
-#: ../woocommerce/cart/cross-sells.php:38
-msgid "You may be interested in&hellip;"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:22
-msgid "Calculate Shipping"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:28
-msgid "Select a country&hellip;"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:45
-#: ../woocommerce/cart/shipping-calculator.php:51
-#: ../woocommerce/cart/shipping-calculator.php:63
-msgid "State / county"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:52
-msgid "Select a state&hellip;"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:72
-msgid "City"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:80
-msgid "Postcode / Zip"
-msgstr ""
-
-#: ../woocommerce/cart/shipping-calculator.php:86
-msgid "Update Totals"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:21
-msgid "Default sorting"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:22
-msgid "Sort by popularity"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:23
-msgid "Sort by average rating"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:24
-msgid "Sort by newness"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:25
-msgid "Sort by price: low to high"
-msgstr ""
-
-#: ../woocommerce/loop/orderby.php:26
-msgid "Sort by price: high to low"
-msgstr ""
-
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:17
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"return. This was given to you on your receipt and in the confirmation email "
-"you should have received."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Order ID"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Found in your order confirmation email."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Billing Email"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Email you used during checkout."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:23
-msgid "Track"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:16
-msgid "Order Details"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:66
-#, php-format
-msgid "Download file%s"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:98
-msgid "Order Again"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:105
-msgid "Customer details"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:126
-msgid "Billing Address"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:130
-#: ../woocommerce/order/order-details.php:145
-msgid "N/A"
-msgstr ""
-
-#: ../woocommerce/order/order-details.php:141
-msgid "Shipping Address"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:63
-msgid "Products tagged &ldquo;"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:91
-#: ../woocommerce/shop/breadcrumb.php:188
-msgid "Search results for &ldquo;"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:146
-msgid "Error 404"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:192
-msgid "Posts tagged &ldquo;"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:197
-msgid "Author:"
-msgstr ""
-
-#: ../woocommerce/shop/breadcrumb.php:202
-msgid "Page"
-msgstr ""
-
-#: ../woocommerce/shop/form-login.php:20
-msgid "Username or email"
-msgstr ""
-
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr ""
-
-#: ../woocommerce/shop/form-login.php:31
-msgid "Login"
-msgstr ""
-
-#: ../woocommerce/shop/form-login.php:33
-msgid "Lost Password?"
-msgstr ""
-
-#: ../woocommerce/single-product/rating.php:23
-#, php-format
-msgid "Rated %s out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/rating.php:25
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/rating.php:28
-#, php-format
-msgid "%s customer review"
-msgid_plural "%s customer reviews"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../woocommerce/single-product/review.php:26
-#, php-format
-msgid "Rated %d out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:34
-msgid "Your comment is awaiting approval"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:43
-msgid "verified owner"
-msgstr ""
-
-#: ../woocommerce/single-product/add-to-cart/variable.php:80
-msgid "Choose an option"
-msgstr ""
-
-#: ../woocommerce/single-product/add-to-cart/variable.php:128
-msgid "Clear selection"
-msgstr ""
-
-#: ../woocommerce/single-product/add-to-cart/variable.php:161
-msgid "This product is currently out of stock and unavailable."
 msgstr ""

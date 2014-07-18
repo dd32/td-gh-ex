@@ -811,8 +811,8 @@ $this->sections[] = array(
     	 array(
             "id" => "homepage_layout",
             "type" => "sorter",
-            "title" => "Homepage Layout Manager",
-            "subtitle" => "Organize how you want the layout to appear on the homepage",
+            "title" => __('Homepage Layout Manager', 'virtue'),
+            "subtitle" => __('Organize how you want the layout to appear on the homepage', 'virtue'),
             //"compiler"=>'true',    
             'options' => array(
             	"disabled" => array(

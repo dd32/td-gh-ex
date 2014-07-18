@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virtue v2.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-28 18:26-0700\n"
-"PO-Revision-Date: 2014-04-28 18:29-0700\n"
+"POT-Creation-Date: 2014-07-18 10:46-0700\n"
+"PO-Revision-Date: 2014-07-18 10:51-0700\n"
 "Last-Translator: Georg Trixl <schick_post@gmx.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgid "an out-of-date link"
 msgstr "ein veralteter Link"
 
 # @ virtue
-#: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
+#: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
 msgstr "Leider wurden keine Ergebnisse gefunden."
 
@@ -79,7 +79,6 @@ msgstr " Kontakt"
 # @ virtue
 # @ redux-framework
 #: ../page-contact.php:118
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:73
 msgid "From "
 msgstr "Von "
 
@@ -489,7 +488,7 @@ msgid "Return to the Dashboard"
 msgstr "Zurück zur Übersicht"
 
 # @ virtue
-#: ../lib/cleanup.php:164
+#: ../lib/cleanup.php:154
 msgid "Continued"
 msgstr "Weiter"
 
@@ -521,67 +520,67 @@ msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
 # @ virtue
-#: ../lib/custom.php:356 ../templates/entry-post-links.php:3
+#: ../lib/custom.php:366 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr "Vorheriger Eintrag"
 
 # @ virtue
-#: ../lib/custom.php:356 ../templates/entry-post-links.php:6
+#: ../lib/custom.php:366 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr "Nächster Eintrag"
 
 # @ virtue
-#: ../lib/custom.php:448
+#: ../lib/custom.php:458
 msgid "Occupation"
 msgstr "Beruf"
 
 # @ virtue
-#: ../lib/custom.php:451
+#: ../lib/custom.php:461
 msgid "Please enter your Occupation."
 msgstr "Bitte geben Sie Ihren Beruf ein."
 
 # @ virtue
-#: ../lib/custom.php:458
+#: ../lib/custom.php:468
 msgid "Please enter your Twitter username."
 msgstr "Bitte geben Sie Ihren Twitter Benutzernamen ein."
 
 # @ virtue
-#: ../lib/custom.php:465
+#: ../lib/custom.php:475
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Facebook URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:472
+#: ../lib/custom.php:482
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Google Plus URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:479
+#: ../lib/custom.php:489
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr "Bitte geben Sie Ihre Flickr URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:486
+#: ../lib/custom.php:496
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Linkedin URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:493
+#: ../lib/custom.php:503
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Dribbble URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:500
+#: ../lib/custom.php:510
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Pinterest URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:507
+#: ../lib/custom.php:517
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie Ihre Instagram URL ein. (Unbedingt mit http:// beginnen)"
@@ -649,8 +648,6 @@ msgstr "Fußzeile Navigation"
 # @ virtue
 # @ redux-framework
 #: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
-#: ../themeoptions/inc/fields/border/field_border.php:113
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:151
 msgid "All"
 msgstr "Alles"
 
@@ -687,31 +684,31 @@ msgstr "Kopfzeile Inhalt"
 # @ virtue
 # @ redux-framework
 #: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
-#: ../themeoptions/framework.php:1897
+#: ../themeoptions/framework.php:2080
 msgid "Default"
 msgstr "Standard"
 
 # @ virtue
 #: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1776
 msgid "None"
 msgstr "Kein"
 
 # @ virtue
 #: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1776
 msgid "Image Slider"
 msgstr "Bilderslider"
 
 # @ virtue
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
-#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1764
+#: ../lib/metaboxes.php:449 ../themeoptions/options.php:1776
 msgid "Video"
 msgstr "Video"
 
 # @ virtue
 #: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
-#: ../lib/widgets.php:794 ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1776
 msgid "Image"
 msgstr "Bild"
 
@@ -745,7 +742,7 @@ msgid "Post Summary"
 msgstr "Beitragszusammenfassung"
 
 # @ virtue
-#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124
 msgid "Text"
 msgstr "Text"
 
@@ -1077,12 +1074,10 @@ msgstr "Menü Anordnung"
 # @ virtue
 # @ redux-framework
 #: ../lib/metaboxes.php:370
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
-#: ../themeoptions/inc/fields/slides/field_slides.php:133
-#: ../themeoptions/inc/fields/slides/field_slides.php:197
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:142
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:208
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:122
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:168
 msgid "Title"
 msgstr "Titel"
 
@@ -1536,7 +1531,7 @@ msgid "Virtue: Recent Posts"
 msgstr "Virtue: Letzte Beiträge"
 
 # @ virtue
-#: ../lib/widgets.php:532
+#: ../lib/widgets.php:532 ../templates/recentblog-carousel.php:2
 msgid "Recent Posts"
 msgstr "Letzte Beiträge"
 
@@ -1599,26 +1594,67 @@ msgid "Number of images to show:"
 msgstr "Anzahl der anzuzeigenden Bilder:"
 
 # @ virtue
-#: ../lib/widgets.php:768
+#: ../lib/widgets.php:777
 msgid "This allows for an image and a simple about text."
 msgstr "Dies ermöglicht einen einfachen 'Über'-Text mit Bild."
 
 # @ virtue
-#: ../lib/widgets.php:769
-msgid "Virtue: About with Image"
-msgstr "Virtue: 'Über' mit Bild"
+#: ../lib/widgets.php:778
+#, fuzzy
+msgid "Virtue: Image"
+msgstr "Virtue: Bild Raster"
+
+# @ redux-framework
+#: ../lib/widgets.php:832
+#, fuzzy
+msgid "Lightbox"
+msgstr "Rechts"
+
+#: ../lib/widgets.php:833
+msgid "New Window"
+msgstr ""
+
+#: ../lib/widgets.php:834
+msgid "Same Window"
+msgstr ""
+
+# @ virtue
+#: ../lib/widgets.php:835
+#, fuzzy
+msgid "No Link"
+msgstr "Symbol Link"
+
+# @ virtue
+#: ../lib/widgets.php:847
+#, fuzzy
+msgid "Image URL"
+msgstr "Bild"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/widgets.php:797
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
-#: ../themeoptions/inc/fields/background/field_background.php:306
-#: ../themeoptions/inc/fields/media/field_media.php:155
-#: ../themeoptions/inc/fields/slides/field_slides.php:121
-#: ../themeoptions/inc/fields/slides/field_slides.php:190
+#: ../lib/widgets.php:849
+#: ../themeoptions/inc/fields/background/field_background.php:315
+#: ../themeoptions/inc/fields/media/field_media.php:154
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:159
 msgid "Upload"
 msgstr "Upload"
+
+# @ virtue
+#: ../lib/widgets.php:852
+#, fuzzy
+msgid "Image opens in"
+msgstr "Bild Wiederholungsoptionen"
+
+# @ virtue
+#: ../lib/widgets.php:856
+#, fuzzy
+msgid "Image Link (optional)"
+msgstr "Bild Wiederholungsoptionen"
+
+#: ../lib/widgets.php:860
+msgid "Text/Caption (optional)"
+msgstr ""
 
 #: ../lib/cmb/init.php:243
 msgid "Clear"
@@ -1667,17 +1703,15 @@ msgstr "Symbol hinzufügen"
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:312
+#: ../themeoptions/inc/fields/background/field_background.php:322
 #: ../themeoptions/inc/fields/media/field_media.php:161
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:68
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:72
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
-#: ../themeoptions/inc/fields/slides/field_slides.php:128
-#: ../themeoptions/inc/fields/slides/field_slides.php:192
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:116
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:182
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:115
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:161
 msgid "Remove"
 msgstr "Entfernen"
 
@@ -1701,9 +1735,21 @@ msgstr ""
 # @ redux-framework
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
-#: ../themeoptions/inc/fields/import_export/import_export.php:109
+#: ../themeoptions/inc/import_export.php:104
 msgid "Download"
 msgstr "Herunterladen"
+
+# @ woocommerce
+#: ../templates/account-sidebar.php:18
+#, fuzzy
+msgid "Edit Account"
+msgstr "Mein Konto"
+
+# @ virtue
+#: ../templates/account-sidebar.php:21
+#, fuzzy
+msgid "Logout"
+msgstr "Logo"
 
 # @ virtue
 #: ../templates/comment.php:7
@@ -1807,7 +1853,7 @@ msgid "by"
 msgstr "von"
 
 # @ virtue
-#: ../templates/entry-meta-subhead.php:6
+#: ../templates/entry-meta-subhead.php:5
 msgid "posted in:"
 msgstr "Eingetragen bei:"
 
@@ -1817,7 +1863,7 @@ msgid "By"
 msgstr "Vom"
 
 # @ virtue
-#: ../templates/header.php:77
+#: ../templates/header.php:81
 msgid "Menu"
 msgstr "Menü"
 
@@ -1845,141 +1891,6 @@ msgstr "WEITER LESEN"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Gefeaturetes Projekt"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:203
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr "Optionenverzeichnis erstellt mit %1$s"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:203
-msgid "Redux Framework"
-msgstr "Redux Framework"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:206 ../themeoptions/framework.php:209
-#: ../themeoptions/framework.php:1262
-msgid "Options"
-msgstr "Optionen"
-
-#: ../themeoptions/framework.php:489
-msgid "Dismiss"
-msgstr ""
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1648
-#: ../themeoptions/extensions/customizer/extension_customizer.php:408
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1649
-#: ../themeoptions/extensions/customizer/extension_customizer.php:409
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-"Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte entfernen."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1650
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"Sind Sie  sicher? Zurücksetzen wird alle benutzerdefinierten Werte dieser "
-"Sektion entfernen."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1651
-#: ../themeoptions/extensions/customizer/extension_customizer.php:410
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-"Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. Wollen "
-"Sie fortsetzen?"
-
-# @ cmb
-#: ../themeoptions/framework.php:1652
-#, fuzzy
-msgid "Please Wait"
-msgstr "Bitte nochmals versuchen"
-
-#: ../themeoptions/framework.php:1788
-msgid "Hints"
-msgstr ""
-
-#: ../themeoptions/framework.php:1789
-msgid "<p>"
-msgstr ""
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2631
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Warnung - Dieses Optionenverzeichnis wird ohne Javascript nicht richtig "
-"funktionieren!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2693
-msgid "Expand"
-msgstr "Erweitern"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2695 ../themeoptions/framework.php:2910
-msgid "Save Changes"
-msgstr "Änderungen speichern"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2697 ../themeoptions/framework.php:2912
-msgid "Reset Section"
-msgstr "Auswahl zurücksetzen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2699 ../themeoptions/framework.php:2914
-msgid "Reset All"
-msgstr "Alles zurücksetzen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2702 ../themeoptions/framework.php:2917
-msgid "Working..."
-msgstr "Arbeite..."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2714
-msgid "Settings Imported!"
-msgstr "Einstellungen importiert!"
-
-#: ../themeoptions/framework.php:2727
-msgid "All Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2739
-msgid "Section Defaults Restored!"
-msgstr ""
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2745
-msgid "Settings Saved!"
-msgstr "Einstellungen gespeichert!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2752
-msgid "Settings have changed, you should save them!"
-msgstr "Einstellungen wurden geändert, Sie sollten diese speichern!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2753
-msgid "error(s) were found!"
-msgstr "Fehler wurde(n) gefunden!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2754
-msgid "warning(s) were found!"
-msgstr "Warnung(en) wurde(n) gefunden!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2800 ../themeoptions/framework.php:2860
-msgid "System Info"
-msgstr "System Info"
 
 # @ virtue
 #: ../themeoptions/options.php:38
@@ -2077,134 +1988,134 @@ msgid "Sitename Logo Font"
 msgstr "Font für den Seitennamen"
 
 # @ virtue
-#: ../themeoptions/options.php:409
+#: ../themeoptions/options.php:410
 msgid "Choose size and style your sitename, if you don't use an image logo."
 msgstr ""
 "Wählen Sie Größe & Stil für den Seitennamen, wenn Sie kein Logo verwenden."
 
 # @ virtue
-#: ../themeoptions/options.php:420
+#: ../themeoptions/options.php:421
 msgid "Site Tagline - Below Logo\""
 msgstr "Seiten Slogan - unter Logo\""
 
 # @ virtue
-#: ../themeoptions/options.php:421
+#: ../themeoptions/options.php:422
 msgid "An optional line of text below your logo"
 msgstr "Eine optionale Zeile unter dem Logo"
 
 # @ virtue
-#: ../themeoptions/options.php:429
+#: ../themeoptions/options.php:430
 msgid "Site Tagline Font"
 msgstr "Seiten-Slogan Font"
 
 # @ virtue
-#: ../themeoptions/options.php:441
+#: ../themeoptions/options.php:443
 msgid "Choose size and style your site tagline"
 msgstr "Wählen Sie Größe & Stil des Seitenslogans"
 
 # @ virtue
-#: ../themeoptions/options.php:452 ../themeoptions/options.php:462
-#: ../themeoptions/options.php:472 ../themeoptions/options.php:482
+#: ../themeoptions/options.php:454 ../themeoptions/options.php:464
+#: ../themeoptions/options.php:474 ../themeoptions/options.php:484
 msgid "Logo Spacing"
 msgstr "Logo Abstand"
 
 # @ virtue
-#: ../themeoptions/options.php:453 ../themeoptions/options.php:493
+#: ../themeoptions/options.php:455 ../themeoptions/options.php:495
 msgid "Top Spacing"
 msgstr "Abstand oben"
 
 # @ virtue
-#: ../themeoptions/options.php:463 ../themeoptions/options.php:503
+#: ../themeoptions/options.php:465 ../themeoptions/options.php:505
 msgid "Bottom Spacing"
 msgstr "Abstand unten"
 
 # @ virtue
-#: ../themeoptions/options.php:473
+#: ../themeoptions/options.php:475
 msgid "Left Spacing"
 msgstr "Abstand links"
 
 # @ virtue
-#: ../themeoptions/options.php:483
+#: ../themeoptions/options.php:485
 msgid "Right Spacing"
 msgstr "Abstand rechts"
 
 # @ virtue
-#: ../themeoptions/options.php:492 ../themeoptions/options.php:502
+#: ../themeoptions/options.php:494 ../themeoptions/options.php:504
 msgid "Primary Menu Spacing"
 msgstr "Hauptmenü Abstand"
 
 # @ virtue
-#: ../themeoptions/options.php:513
+#: ../themeoptions/options.php:515
 msgid "Sitewide Banner"
 msgstr "Seitenweiter Banner"
 
 # @ virtue
-#: ../themeoptions/options.php:515
+#: ../themeoptions/options.php:517
 msgid "Upload a banner for bottom of header."
 msgstr "Laden Sie ein Banner für die Kopfzeile unten hoch."
 
 # @ virtue
-#: ../themeoptions/options.php:522
+#: ../themeoptions/options.php:524
 msgid "Topbar Settings"
 msgstr "Topbar Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:527
+#: ../themeoptions/options.php:529
 msgid "Use Topbar?"
 msgstr "Benutze Topbar?"
 
 # @ virtue
-#: ../themeoptions/options.php:528
+#: ../themeoptions/options.php:530
 msgid "Choose to show or hide topbar"
 msgstr "Wählen, um Topbar anzuzeigen"
 
 # @ virtue
-#: ../themeoptions/options.php:534
+#: ../themeoptions/options.php:536
 msgid "Use Topbar Icon Menu?"
 msgstr "Benutze Topbar Symbolmenü?"
 
 # @ virtue
-#: ../themeoptions/options.php:535
+#: ../themeoptions/options.php:537
 msgid "Choose to show or hide topbar icon Menu"
 msgstr "Wählen, um das Symbolmenü in der Topbar anzuzeigen oder zu verstecken"
 
 # @ virtue
-#: ../themeoptions/options.php:541
+#: ../themeoptions/options.php:543
 msgid "Topbar Icon Menu"
 msgstr "Topbar Symbolmenü"
 
 # @ virtue
-#: ../themeoptions/options.php:542
+#: ../themeoptions/options.php:544
 msgid "Choose your icons for the topbar icon menu."
 msgstr "Wählen Sie die Symbole für das Topbar-Symbolmenü."
 
 # @ virtue
-#: ../themeoptions/options.php:548
+#: ../themeoptions/options.php:550
 msgid "Show Cart total in topbar?"
 msgstr "Zeige Warenkorb-Total in Topbar?"
 
 # @ virtue
-#: ../themeoptions/options.php:549
+#: ../themeoptions/options.php:551
 msgid "This only works if using woocommerce"
 msgstr "Dies funktioniert nur, wenn Sie woocommerce verwenden"
 
 # @ virtue
-#: ../themeoptions/options.php:555
+#: ../themeoptions/options.php:557
 msgid "Display Search in Topbar?"
 msgstr "Zeige Suche in der Topbar?"
 
 # @ virtue
-#: ../themeoptions/options.php:556
+#: ../themeoptions/options.php:558
 msgid "Choose to show or hide search in topbar"
 msgstr "Wählen,  um Suche in der Topbar anzuzeigen oder zu verstecken"
 
 # @ virtue
-#: ../themeoptions/options.php:562
+#: ../themeoptions/options.php:564
 msgid "Enable widget area in right of Topbar?"
 msgstr "Ermögliche Widgetbereich rechts in der Topbar?"
 
 # @ virtue
-#: ../themeoptions/options.php:563
+#: ../themeoptions/options.php:565
 msgid ""
 "Note this will hide remove search (you can re-enable it my adding it to the "
 "widget area)"
@@ -2213,145 +2124,145 @@ msgstr ""
 "Widgetbereich reaktivieren)"
 
 # @ virtue
-#: ../themeoptions/options.php:569
+#: ../themeoptions/options.php:571
 msgid "Topbar Layout Switch"
 msgstr "Topbar Layout-Tausch"
 
 # @ virtue
-#: ../themeoptions/options.php:570
+#: ../themeoptions/options.php:572
 msgid "This moves the left items to the right and right items to the left."
 msgstr ""
 "Dies verschiebt die linken Elemente nach rechts und die rechten nach links."
 
 # @ virtue
-#: ../themeoptions/options.php:578
+#: ../themeoptions/options.php:580
 msgid "Slider Settings"
 msgstr "Slider Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:579
+#: ../themeoptions/options.php:581
 msgid "Home Page Slider Options"
 msgstr "Hauptseiten-Slider Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:584
+#: ../themeoptions/options.php:586
 msgid "Choose a Home Image Slider"
 msgstr "Wählen Sie einen Hauptseiten-Bildslider"
 
 # @ virtue
-#: ../themeoptions/options.php:585
+#: ../themeoptions/options.php:587
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
 "Wenn Sie keinen Bildslider auf Ihrer Webseite möchten, dann wählen Sie "
 "keinen aus."
 
 # @ virtue
-#: ../themeoptions/options.php:594 ../themeoptions/options.php:697
+#: ../themeoptions/options.php:596 ../themeoptions/options.php:699
 msgid "Slider Images"
 msgstr "Slider Bilder"
 
 # @ virtue
-#: ../themeoptions/options.php:595 ../themeoptions/options.php:698
+#: ../themeoptions/options.php:597 ../themeoptions/options.php:700
 msgid "Use large images for best results."
 msgstr "Benutze große Bilder für beste Ergebnisse"
 
 # @ virtue
-#: ../themeoptions/options.php:601 ../themeoptions/options.php:705
+#: ../themeoptions/options.php:603 ../themeoptions/options.php:707
 msgid "Slider Max Height"
 msgstr "Slider maximale Höhe"
 
 # @ virtue
-#: ../themeoptions/options.php:602 ../themeoptions/options.php:612
-#: ../themeoptions/options.php:706 ../themeoptions/options.php:717
+#: ../themeoptions/options.php:604 ../themeoptions/options.php:614
+#: ../themeoptions/options.php:708 ../themeoptions/options.php:719
 msgid "Note: does not work if images are smaller than max."
 msgstr ""
 "Hinweis: Das funktioniert nicht, wenn Bilder kleiner als der Maximalwert sind"
 
 # @ virtue
-#: ../themeoptions/options.php:611 ../themeoptions/options.php:716
+#: ../themeoptions/options.php:613 ../themeoptions/options.php:718
 msgid "Slider Max Width"
 msgstr "Slider maximale Breite"
 
 # @ virtue
-#: ../themeoptions/options.php:621 ../themeoptions/options.php:727
+#: ../themeoptions/options.php:623 ../themeoptions/options.php:729
 msgid "Auto Play?"
 msgstr "Automatisch abspielen?"
 
 # @ virtue
-#: ../themeoptions/options.php:622 ../themeoptions/options.php:728
+#: ../themeoptions/options.php:624 ../themeoptions/options.php:730
 msgid "This determines if a slider automatically scrolls"
 msgstr "Soll der Slider automatisch scrollen?"
 
 # @ virtue
-#: ../themeoptions/options.php:628 ../themeoptions/options.php:735
+#: ../themeoptions/options.php:630 ../themeoptions/options.php:737
 msgid "Slider Pause Time"
 msgstr "Slider Pausezeit"
 
 # @ virtue
-#: ../themeoptions/options.php:629 ../themeoptions/options.php:736
+#: ../themeoptions/options.php:631 ../themeoptions/options.php:738
 msgid "How long to pause on each slide, in milliseconds."
 msgstr "Wie viel Pause pro Slide, in Millisekunden."
 
 # @ virtue
-#: ../themeoptions/options.php:638 ../themeoptions/options.php:746
+#: ../themeoptions/options.php:640 ../themeoptions/options.php:748
 msgid "Transition Type"
 msgstr "Übergangstyp"
 
 # @ virtue
-#: ../themeoptions/options.php:639 ../themeoptions/options.php:747
+#: ../themeoptions/options.php:641 ../themeoptions/options.php:749
 msgid "Choose a transition type"
 msgstr "Wählen Sie einen Übergangstyp"
 
 # @ virtue
-#: ../themeoptions/options.php:646 ../themeoptions/options.php:755
+#: ../themeoptions/options.php:648 ../themeoptions/options.php:757
 msgid "Slider Transition Time"
 msgstr "Slider Übergangszeit"
 
 # @ virtue
-#: ../themeoptions/options.php:647 ../themeoptions/options.php:756
+#: ../themeoptions/options.php:649 ../themeoptions/options.php:758
 msgid "How long for slide transitions, in milliseconds."
 msgstr "Wie viel Zeit für den Übergang, in Millisekunden."
 
 # @ virtue
-#: ../themeoptions/options.php:656 ../themeoptions/options.php:766
+#: ../themeoptions/options.php:658 ../themeoptions/options.php:768
 msgid "Show Captions?"
 msgstr "Zeige Beschriftung?"
 
 # @ virtue
-#: ../themeoptions/options.php:657 ../themeoptions/options.php:767
+#: ../themeoptions/options.php:659 ../themeoptions/options.php:769
 msgid "Choose to show or hide captions"
 msgstr "Wähle zum Anzeigen oder Verstecken"
 
 # @ virtue
-#: ../themeoptions/options.php:663 ../themeoptions/options.php:774
+#: ../themeoptions/options.php:665 ../themeoptions/options.php:776
 msgid "Video Embed Code"
 msgstr "Video Einbettungscode"
 
 # @ virtue
-#: ../themeoptions/options.php:664 ../themeoptions/options.php:775
+#: ../themeoptions/options.php:666 ../themeoptions/options.php:777
 msgid "If your using a video on the home page place video embed code here."
 msgstr ""
 "Wenn Sie ein Video für Ihre Hauptseite verwenden, betten Sie den Code hier "
 "ein."
 
 # @ virtue
-#: ../themeoptions/options.php:673
+#: ../themeoptions/options.php:675
 msgid "Mobile Slider"
 msgstr "Handy Slider"
 
 # @ virtue
-#: ../themeoptions/options.php:674
+#: ../themeoptions/options.php:676
 msgid "Create a more lightweight home slider for your mobile visitors."
 msgstr ""
 "Erstellen Sie einen leichtgewichtigeren Slider für Ihre mobilen Besucher."
 
 # @ virtue
-#: ../themeoptions/options.php:679
+#: ../themeoptions/options.php:681
 msgid "Would you like to use this feature?"
 msgstr "Wollen Sie diese Funktion verwenden?"
 
 # @ virtue
-#: ../themeoptions/options.php:680
+#: ../themeoptions/options.php:682
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
@@ -2360,163 +2271,173 @@ msgstr ""
 "Ihrer Hauptseite zeigen möchten."
 
 # @ virtue
-#: ../themeoptions/options.php:686
+#: ../themeoptions/options.php:688
 msgid "Choose a Slider for Mobile"
 msgstr "Wählen Sie einen Slider für Handys"
 
 # @ virtue
-#: ../themeoptions/options.php:687
+#: ../themeoptions/options.php:689
 msgid "Choose which slider you would like to show for mobile viewers."
 msgstr "Wählen Sie den Slider, den Sie für Handybesucher anzeigen möchten."
 
 # @ virtue
-#: ../themeoptions/options.php:784
+#: ../themeoptions/options.php:786
 msgid "Home Layout"
 msgstr "Hauptseite - Layout"
 
 # @ virtue
-#: ../themeoptions/options.php:791
+#: ../themeoptions/options.php:793
 msgid "Display a sidebar on the Home Page?"
 msgstr "Zeige eine Sidebar auf der Hauptseite?"
 
 # @ virtue
-#: ../themeoptions/options.php:792
+#: ../themeoptions/options.php:794
 msgid "This determines if there is a sidebar on the home page."
 msgstr "Das entscheidet, ob eine Sidebar auf der Hauptseite ist."
 
 # @ virtue
-#: ../themeoptions/options.php:802
+#: ../themeoptions/options.php:804
 msgid "Choose a Sidebar for your Home Page"
 msgstr "Wähle eine Sidbar für die Hauptseite"
 
 # @ virtue
-#: ../themeoptions/options.php:818
+#: ../themeoptions/options.php:814
+#, fuzzy
+msgid "Homepage Layout Manager"
+msgstr "Hauptseite - Layout"
+
+#: ../themeoptions/options.php:815
+msgid "Organize how you want the layout to appear on the homepage"
+msgstr ""
+
+# @ virtue
+#: ../themeoptions/options.php:820
 msgid "Latest Blog Posts"
 msgstr "Aktuelle Blogeinträge"
 
 # @ virtue
-#: ../themeoptions/options.php:819
+#: ../themeoptions/options.php:821
 msgid "Portfolio Carousel"
 msgstr "Portofolio-Karussell"
 
 # @ virtue
-#: ../themeoptions/options.php:820 ../themeoptions/options.php:913
+#: ../themeoptions/options.php:822 ../themeoptions/options.php:915
 msgid "Icon Menu"
 msgstr "Symbolmenü"
 
 # @ virtue
-#: ../themeoptions/options.php:824
+#: ../themeoptions/options.php:826
 msgid "Page Title"
 msgstr "Seitentitel"
 
 # @ virtue
-#: ../themeoptions/options.php:825
+#: ../themeoptions/options.php:827
 msgid "Page Content"
 msgstr "Seiteninhalt"
 
 # @ virtue
-#: ../themeoptions/options.php:833
+#: ../themeoptions/options.php:835
 msgid "Home Blog Settings"
 msgstr "Hauptseite - Blog Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:838
+#: ../themeoptions/options.php:840
 msgid "Home Blog Title"
 msgstr "Hauptseite - Blogtitel"
 
 # @ virtue
-#: ../themeoptions/options.php:839
+#: ../themeoptions/options.php:841
 msgid "ex: Latest from the blog"
 msgstr "zB: Aktuell aus dem Blog"
 
 # @ virtue
-#: ../themeoptions/options.php:844
+#: ../themeoptions/options.php:846
 msgid "Choose How many posts on Homepage"
 msgstr "Wählen Sie die Anzahl der Beiträge für Hauptseite"
 
 # @ virtue
-#: ../themeoptions/options.php:855
+#: ../themeoptions/options.php:857
 msgid "Limit posts to a Category"
 msgstr "Limitiere Beiträge auf eine Kategorie"
 
 # @ virtue
-#: ../themeoptions/options.php:856
+#: ../themeoptions/options.php:858
 msgid "Leave blank to select all"
 msgstr "Leer lassen, um alle zu zeigen"
 
 # @ virtue
-#: ../themeoptions/options.php:863
+#: ../themeoptions/options.php:865
 msgid "Home Portfolio Carousel Settings"
 msgstr "Hauptseite - Portfoliokarussell Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:868
+#: ../themeoptions/options.php:870
 msgid "Home Portfolio Carousel title"
 msgstr "Hauptseite - Portfoliokarussell Titel"
 
 # @ virtue
-#: ../themeoptions/options.php:869
+#: ../themeoptions/options.php:871
 msgid "ex: Portfolio Carousel title"
 msgstr "zB: Portfoliokarussell Titel"
 
 # @ virtue
-#: ../themeoptions/options.php:876
+#: ../themeoptions/options.php:878
 msgid "Portfolio Carousel Category Type"
 msgstr "Portfoliokarussell Kategorietyp"
 
 # @ virtue
-#: ../themeoptions/options.php:877
+#: ../themeoptions/options.php:879
 msgid "Leave blank to select all types"
 msgstr "Leer lassen, um all Typen zu verwenden"
 
 # @ virtue
-#: ../themeoptions/options.php:884
+#: ../themeoptions/options.php:886
 msgid "Choose how many portfolio items are in carousel"
 msgstr "Wählen Sie, wie viele Portofolio-Elmente im Karussell sein sollen"
 
 # @ virtue
-#: ../themeoptions/options.php:893
+#: ../themeoptions/options.php:895
 msgid "Portfolio Carousel Order by"
 msgstr "Portfoliokarussell Sortierung nach"
 
 # @ virtue
-#: ../themeoptions/options.php:894
+#: ../themeoptions/options.php:896
 msgid "Choose how the portfolio items should be ordered in the carousel."
 msgstr ""
 "Wählen Sie, wie die Portfolio-Elemente im Karussell angeordnet sein sollen."
 
 # @ virtue
-#: ../themeoptions/options.php:902
+#: ../themeoptions/options.php:904
 msgid "Display Portfolio Types under Title"
 msgstr "Zeige Portfoliotypen unter Titel"
 
 # @ virtue
-#: ../themeoptions/options.php:908
+#: ../themeoptions/options.php:910
 msgid "Home Icon Menu"
 msgstr "Hauptseite - Symbolmenü"
 
 # @ virtue
-#: ../themeoptions/options.php:914
+#: ../themeoptions/options.php:916
 msgid "Choose your icons for the icon menu."
 msgstr "Wählen Sie die Symbole für das Symbolmenü."
 
 # @ virtue
-#: ../themeoptions/options.php:920
+#: ../themeoptions/options.php:922
 msgid "Choose how many columns in each row"
 msgstr "Wählen Sie, wie viele Spalten pro Reihe"
 
 # @ virtue
-#: ../themeoptions/options.php:929
+#: ../themeoptions/options.php:931
 msgid "Page Content Options"
 msgstr "Seiteninhalt Optionen"
 
 # @ virtue
-#: ../themeoptions/options.php:934
+#: ../themeoptions/options.php:936
 msgid "Latest Post Display"
 msgstr "Aktuellste Beitragsanzeige"
 
 # @ virtue
-#: ../themeoptions/options.php:935
+#: ../themeoptions/options.php:937
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
@@ -2524,81 +2445,81 @@ msgstr ""
 "Beitrags oder Beitragsauszug."
 
 # @ virtue
-#: ../themeoptions/options.php:947
+#: ../themeoptions/options.php:949
 msgid "Shop Settings"
 msgstr "Shop Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:948
+#: ../themeoptions/options.php:950
 msgid "Shop Archive Page Settings"
 msgstr "Shop Archivseiten Einstellung"
 
 # @ virtue
-#: ../themeoptions/options.php:954
+#: ../themeoptions/options.php:956
 msgid "Display the sidebar on shop archives?"
 msgstr "Zeige die Sidebar in Shoparchiven?"
 
 # @ virtue
-#: ../themeoptions/options.php:955
+#: ../themeoptions/options.php:957
 msgid "This determines if there is a sidebar on the shop and category pages."
 msgstr ""
 "Dies entscheidet, ob eine Sidebar auf den Shop- und Kategorieseiten ist."
 
 # @ virtue
-#: ../themeoptions/options.php:965
+#: ../themeoptions/options.php:967
 msgid "Choose a Sidebar for your shop page"
 msgstr "Wählen Sie eine Sidebar für Ihre Shopseite"
 
 # @ virtue
-#: ../themeoptions/options.php:973
+#: ../themeoptions/options.php:975
 msgid "How many products per page"
 msgstr "Wie viele Produkte pro Seite"
 
 # @ virtue
-#: ../themeoptions/options.php:983
+#: ../themeoptions/options.php:985
 msgid "Show Ratings in Shop and Category Pages"
 msgstr "Zeige Bewertungen in Shop- und Kategorieseiten"
 
 # @ virtue
-#: ../themeoptions/options.php:984
+#: ../themeoptions/options.php:986
 msgid "This determines if the rating is displayed in the product archive pages"
 msgstr ""
 "Dies entscheidet, ob in den Produktarchiv-Seiten eine Bewertung angezeigt "
 "wird"
 
 # @ virtue
-#: ../themeoptions/options.php:990
+#: ../themeoptions/options.php:992
 msgid "Shop Product Title Settings"
 msgstr "Shop Produkttitel Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:995
+#: ../themeoptions/options.php:997
 msgid "Shop & archive Product title Font"
 msgstr "Shop & Archiv Produkttitel Schrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1009
+#: ../themeoptions/options.php:1012
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Wähle Größe und Stil für die Produkttitel auf Kategorie- und Archivseiten."
 
 # @ virtue
-#: ../themeoptions/options.php:1020
+#: ../themeoptions/options.php:1023
 msgid "Set Product Title to Uppercase?"
 msgstr "Den Produkttitel groß schreiben?"
 
 # @ virtue
-#: ../themeoptions/options.php:1021
+#: ../themeoptions/options.php:1024
 msgid "This makes your product titles uppercase on Category pages"
 msgstr "Den Produkttitel in Großschrift auf Kategorieseiten anzeigen"
 
 # @ virtue
-#: ../themeoptions/options.php:1027
+#: ../themeoptions/options.php:1030
 msgid "Product title Min Height"
 msgstr "Produkttitel Mindesthöhe"
 
 # @ virtue
-#: ../themeoptions/options.php:1028
+#: ../themeoptions/options.php:1031
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
@@ -2606,17 +2527,17 @@ msgstr ""
 "Produkthöhe zu verbessern."
 
 # @ virtue
-#: ../themeoptions/options.php:1037
+#: ../themeoptions/options.php:1040
 msgid "Product Image Sizes"
 msgstr "Produktbild Größen"
 
 # @ virtue
-#: ../themeoptions/options.php:1042
+#: ../themeoptions/options.php:1045
 msgid "Enable Product Image Crop on Catalog pages"
 msgstr "Verwende Produktbild Beschneidung auf Katalogseiten"
 
 # @ virtue
-#: ../themeoptions/options.php:1043
+#: ../themeoptions/options.php:1046
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -2625,12 +2546,12 @@ msgstr ""
 "verwendet - empfohlene Breite: 270px für Katalogbilder"
 
 # @ virtue
-#: ../themeoptions/options.php:1049
+#: ../themeoptions/options.php:1052
 msgid "Enable Product Image Crop on product Page"
 msgstr "Verwende Produktbild Beschneidung auf Produktseiten"
 
 # @ virtue
-#: ../themeoptions/options.php:1050
+#: ../themeoptions/options.php:1053
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -2639,47 +2560,47 @@ msgstr ""
 "verwendet - empfohlene Breite: 468px für Produktbilder"
 
 # @ virtue
-#: ../themeoptions/options.php:1056
+#: ../themeoptions/options.php:1059
 msgid "Product Page Settings"
 msgstr "Produktseiten Einstellung"
 
 # @ virtue
-#: ../themeoptions/options.php:1061
+#: ../themeoptions/options.php:1064
 msgid "Display product tabs?"
 msgstr "Zeige Produkttabulatoren?"
 
 # @ virtue
-#: ../themeoptions/options.php:1062
+#: ../themeoptions/options.php:1065
 msgid "This determines if product tabs are displayed"
 msgstr "Dies entscheidet, ob Produkttabulatoren angezeigt werden"
 
 # @ virtue
-#: ../themeoptions/options.php:1068
+#: ../themeoptions/options.php:1071
 msgid "Display related products?"
 msgstr "Zeige ähnliche Produkte?"
 
 # @ virtue
-#: ../themeoptions/options.php:1069
+#: ../themeoptions/options.php:1072
 msgid "This determines related products are displayed"
 msgstr "Dies entscheidet, ob ähnliche Produkte angezeigt werden"
 
 # @ virtue
-#: ../themeoptions/options.php:1077
+#: ../themeoptions/options.php:1080
 msgid "Basic Styling"
 msgstr "Basis Styling"
 
 # @ virtue
-#: ../themeoptions/options.php:1078
+#: ../themeoptions/options.php:1081
 msgid "Basic Stylng"
 msgstr "Basis Styling"
 
 # @ virtue
-#: ../themeoptions/options.php:1083
+#: ../themeoptions/options.php:1086
 msgid "Theme Skin Stylesheet"
 msgstr "Theme Skin Stylesheet"
 
 # @ virtue
-#: ../themeoptions/options.php:1084
+#: ../themeoptions/options.php:1087
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -2688,257 +2609,257 @@ msgstr ""
 "Stylesheet. Beispiel: gewählte Farben in Typographie."
 
 # @ virtue
-#: ../themeoptions/options.php:1093
+#: ../themeoptions/options.php:1096
 msgid "Primary Color"
 msgstr "Hauptfarbe"
 
 # @ virtue
-#: ../themeoptions/options.php:1094
+#: ../themeoptions/options.php:1097
 msgid "Choose the default Highlight color for your site."
 msgstr "Wählen Sie die Standard-Highlightfarbe für Ihre Seite."
 
 # @ virtue
-#: ../themeoptions/options.php:1102
+#: ../themeoptions/options.php:1105
 msgid "20% lighter than Primary Color"
 msgstr "20% heller als Hauptfarbe"
 
 # @ virtue
-#: ../themeoptions/options.php:1103
+#: ../themeoptions/options.php:1106
 msgid "This is used for hover effects"
 msgstr "Wird für mouseover-Effekte verwendet"
 
 # @ virtue
-#: ../themeoptions/options.php:1111
+#: ../themeoptions/options.php:1114
 msgid "Sitewide Gray Fonts"
 msgstr "Globale Link Schriftfarbe"
 
 # @ virtue
-#: ../themeoptions/options.php:1120
+#: ../themeoptions/options.php:1123
 msgid "Footer Font Color"
 msgstr "Fußzeilen Schriftfarbe"
 
 # @ virtue
-#: ../themeoptions/options.php:1131
+#: ../themeoptions/options.php:1134
 msgid "Advanced Styling"
 msgstr "Erweitertes Styling"
 
 # @ virtue
-#: ../themeoptions/options.php:1132
+#: ../themeoptions/options.php:1135
 msgid "Main Content Background"
 msgstr "Hauptinhalt Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1137 ../themeoptions/options.php:1176
-#: ../themeoptions/options.php:1215 ../themeoptions/options.php:1254
-#: ../themeoptions/options.php:1293 ../themeoptions/options.php:1332
-#: ../themeoptions/options.php:1371
+#: ../themeoptions/options.php:1140 ../themeoptions/options.php:1179
+#: ../themeoptions/options.php:1218 ../themeoptions/options.php:1257
+#: ../themeoptions/options.php:1296 ../themeoptions/options.php:1335
+#: ../themeoptions/options.php:1374
 msgid "Background Color"
 msgstr "Hintergrund Farbe"
 
 # @ virtue
-#: ../themeoptions/options.php:1145 ../themeoptions/options.php:1184
-#: ../themeoptions/options.php:1223 ../themeoptions/options.php:1262
-#: ../themeoptions/options.php:1301 ../themeoptions/options.php:1340
-#: ../themeoptions/options.php:1379
+#: ../themeoptions/options.php:1148 ../themeoptions/options.php:1187
+#: ../themeoptions/options.php:1226 ../themeoptions/options.php:1265
+#: ../themeoptions/options.php:1304 ../themeoptions/options.php:1343
+#: ../themeoptions/options.php:1382
 msgid "Upload background image or texture"
 msgstr "Hintergrundbild oder -textur hochladen"
 
 # @ virtue
-#: ../themeoptions/options.php:1150 ../themeoptions/options.php:1189
-#: ../themeoptions/options.php:1228 ../themeoptions/options.php:1267
-#: ../themeoptions/options.php:1306 ../themeoptions/options.php:1345
-#: ../themeoptions/options.php:1384
+#: ../themeoptions/options.php:1153 ../themeoptions/options.php:1192
+#: ../themeoptions/options.php:1231 ../themeoptions/options.php:1270
+#: ../themeoptions/options.php:1309 ../themeoptions/options.php:1348
+#: ../themeoptions/options.php:1387
 msgid "Image repeat options"
 msgstr "Bild Wiederholungsoptionen"
 
 # @ virtue
-#: ../themeoptions/options.php:1157 ../themeoptions/options.php:1196
-#: ../themeoptions/options.php:1235 ../themeoptions/options.php:1274
-#: ../themeoptions/options.php:1313 ../themeoptions/options.php:1352
-#: ../themeoptions/options.php:1391
+#: ../themeoptions/options.php:1160 ../themeoptions/options.php:1199
+#: ../themeoptions/options.php:1238 ../themeoptions/options.php:1277
+#: ../themeoptions/options.php:1316 ../themeoptions/options.php:1355
+#: ../themeoptions/options.php:1394
 msgid "X image placement options"
 msgstr "X Bild Platzierungsoption"
 
 # @ virtue
-#: ../themeoptions/options.php:1164 ../themeoptions/options.php:1203
-#: ../themeoptions/options.php:1242 ../themeoptions/options.php:1281
-#: ../themeoptions/options.php:1320 ../themeoptions/options.php:1359
-#: ../themeoptions/options.php:1398
+#: ../themeoptions/options.php:1167 ../themeoptions/options.php:1206
+#: ../themeoptions/options.php:1245 ../themeoptions/options.php:1284
+#: ../themeoptions/options.php:1323 ../themeoptions/options.php:1362
+#: ../themeoptions/options.php:1401
 msgid "Y image placement options"
 msgstr "Y Bild Platzierungsoption"
 
 # @ virtue
-#: ../themeoptions/options.php:1171
+#: ../themeoptions/options.php:1174
 msgid "Topbar Background"
 msgstr "Topbar Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1210
+#: ../themeoptions/options.php:1213
 msgid "Header Background"
 msgstr "Kopfzeile Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1249
+#: ../themeoptions/options.php:1252
 msgid "Secondary Menu Background"
 msgstr "Sekundärmenü Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1288
+#: ../themeoptions/options.php:1291
 msgid "Mobile Menu Background"
 msgstr "Handymenü Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1327
+#: ../themeoptions/options.php:1330
 msgid "Footer Background"
 msgstr "Fußzeile Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1366
+#: ../themeoptions/options.php:1369
 msgid "Body Background"
 msgstr "Seiten Hintergrund"
 
 # @ virtue
-#: ../themeoptions/options.php:1405
+#: ../themeoptions/options.php:1408
 msgid "Fixed or Scroll"
 msgstr "Fixiert oder scrollend"
 
 # @ virtue
-#: ../themeoptions/options.php:1414
+#: ../themeoptions/options.php:1417
 msgid "Typography"
 msgstr "Typographie"
 
 # @ virtue
-#: ../themeoptions/options.php:1415
+#: ../themeoptions/options.php:1418
 msgid "Header Font Options"
 msgstr "Überschrift Optionen"
 
 # @ virtue
-#: ../themeoptions/options.php:1420
+#: ../themeoptions/options.php:1423
 msgid "H1 Headings"
 msgstr "H1 Überschrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1434
+#: ../themeoptions/options.php:1438
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr "Wähle Größe und Stil für h1 (Dieser Stil ist Ihr Seitentitel)"
 
 # @ virtue
-#: ../themeoptions/options.php:1445
+#: ../themeoptions/options.php:1449
 msgid "H2 Headings"
 msgstr "H2 Überschrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1459
+#: ../themeoptions/options.php:1464
 msgid "Choose Size and Style for h2"
 msgstr "Wähle Größe und Stil für h2"
 
 # @ virtue
-#: ../themeoptions/options.php:1470
+#: ../themeoptions/options.php:1475
 msgid "H3 Headings"
 msgstr "H3 Überschrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1484
+#: ../themeoptions/options.php:1490
 msgid "Choose Size and Style for h3"
 msgstr "Wähle Größe und Stil für h3"
 
 # @ virtue
-#: ../themeoptions/options.php:1495
+#: ../themeoptions/options.php:1501
 msgid "H4 Headings"
 msgstr "H4 Überschrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1509
+#: ../themeoptions/options.php:1516
 msgid "Choose Size and Style for h4"
 msgstr "Wähle Größe und Stil für h4"
 
 # @ virtue
-#: ../themeoptions/options.php:1520
+#: ../themeoptions/options.php:1527
 msgid "H5 Headings"
 msgstr "H5 Überschrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1534
+#: ../themeoptions/options.php:1542
 msgid "Choose Size and Style for h5"
 msgstr "Wähle Größe und Stil für h5"
 
 # @ virtue
-#: ../themeoptions/options.php:1545
+#: ../themeoptions/options.php:1553
 msgid "Body Font Options"
 msgstr "Generelle Schrifteinstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1550
+#: ../themeoptions/options.php:1558
 msgid "Body Font"
 msgstr "Generelle Schrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1564
+#: ../themeoptions/options.php:1573
 msgid "Choose Size and Style for paragraphs"
 msgstr "Wähle Größe und Stil für Paragraphen"
 
 # @ virtue
-#: ../themeoptions/options.php:1577
+#: ../themeoptions/options.php:1586
 msgid "Menu Settings"
 msgstr "Menüeinstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1578
+#: ../themeoptions/options.php:1587
 msgid "Primary Menu Options"
 msgstr "Hauptmenü Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1583
+#: ../themeoptions/options.php:1592
 msgid "Primary Menu Font"
 msgstr "Hauptmenü Schrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1597
+#: ../themeoptions/options.php:1607
 msgid "Choose Size and Style for primary menu"
 msgstr "Wähle Größe & Stil für Hauptmenü"
 
 # @ virtue
-#: ../themeoptions/options.php:1608
+#: ../themeoptions/options.php:1618
 msgid "Secondary Menu Options"
 msgstr "Sekundärmenü Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1613
+#: ../themeoptions/options.php:1623
 msgid "Secondary Menu Font"
 msgstr "Sekundärmenü Schrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1627
+#: ../themeoptions/options.php:1638
 msgid "Choose Size and Style for secondary menu"
 msgstr "Wähle Größe und Stil für Sekundärmenü"
 
 # @ virtue
-#: ../themeoptions/options.php:1638
+#: ../themeoptions/options.php:1649
 msgid "Mobile Menu Options"
 msgstr "Handymenü Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1643
+#: ../themeoptions/options.php:1654
 msgid "Mobile Menu Font"
 msgstr "Handymenü Schrift"
 
 # @ virtue
-#: ../themeoptions/options.php:1657
+#: ../themeoptions/options.php:1669
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Wähle Größe und Stil für Handymenü"
 
 # @ virtue
-#: ../themeoptions/options.php:1671 ../themeoptions/options.php:1672
+#: ../themeoptions/options.php:1683 ../themeoptions/options.php:1684
 msgid "Misc Settings"
 msgstr "Generelle Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1679
+#: ../themeoptions/options.php:1691
 msgid "All Projects Portfolio Page"
 msgstr "Portfolio-Seite für alle Projekte"
 
 # @ virtue
-#: ../themeoptions/options.php:1680
+#: ../themeoptions/options.php:1692
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
@@ -2947,64 +2868,64 @@ msgstr ""
 "müssen trotzdem das Seiten-Template auf Portfolio stellen."
 
 # @ virtue
-#: ../themeoptions/options.php:1685
+#: ../themeoptions/options.php:1697
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Erlaube Kommentare in Portfolio-Beiträgen"
 
 # @ virtue
-#: ../themeoptions/options.php:1686
+#: ../themeoptions/options.php:1698
 msgid "Turn on to allow Comments on Portfolio posts"
 msgstr "Aktivieren, um Kommentare in Portfolio-Beiträgen zu erlauben"
 
 # @ virtue
-#: ../themeoptions/options.php:1692
+#: ../themeoptions/options.php:1704
 msgid "Hide Image Border"
 msgstr "Verstecke Bildrahmen"
 
 # @ virtue
-#: ../themeoptions/options.php:1693
+#: ../themeoptions/options.php:1705
 msgid "Choose to show or hide image border"
 msgstr "Wählen, um den Bildrahmen anzuzeigen oder zu verstecken"
 
 # @ virtue
-#: ../themeoptions/options.php:1699
+#: ../themeoptions/options.php:1711
 msgid "Blog Archive"
 msgstr "Blog Archiv"
 
 # @ virtue
-#: ../themeoptions/options.php:1700
+#: ../themeoptions/options.php:1712
 msgid "Choose to show full post or post excerpt."
 msgstr "Wählen, um den ganzen Betrag oder nur Beitragsauszug anzuzeigen."
 
 # @ virtue
-#: ../themeoptions/options.php:1708
+#: ../themeoptions/options.php:1720
 msgid "Show Comments Closed Text?"
 msgstr "Zeige Text 'Kommentare geschlossen'?"
 
 # @ virtue
-#: ../themeoptions/options.php:1709
+#: ../themeoptions/options.php:1721
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Wählen, um 'Kommentare geschlossen'-Hinweis unter Beiträgen anzuzeigen oder "
 "zu verstecken."
 
 # @ virtue
-#: ../themeoptions/options.php:1715
+#: ../themeoptions/options.php:1727
 msgid "Show Author Icon with posts?"
 msgstr "Zeige Autor-Symbol mit Beiträgen?"
 
 # @ virtue
-#: ../themeoptions/options.php:1716
+#: ../themeoptions/options.php:1728
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 "Wählen, um Autor-Symbol unter Beitragstitel anzuzeigen oder zu verstecken."
 
-#: ../themeoptions/options.php:1722
+#: ../themeoptions/options.php:1734
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
 # @ virtue
-#: ../themeoptions/options.php:1723
+#: ../themeoptions/options.php:1735
 #, fuzzy
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
@@ -3013,12 +2934,12 @@ msgstr ""
 "Wählen, um Autor-Symbol unter Beitragstitel anzuzeigen oder zu verstecken."
 
 # @ virtue
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1742
 msgid "Custom Favicon"
 msgstr "Benutzerdefiniertes Favicon"
 
 # @ virtue
-#: ../themeoptions/options.php:1731
+#: ../themeoptions/options.php:1743
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -3027,22 +2948,22 @@ msgstr ""
 "Webseite verwendet wird."
 
 # @ virtue
-#: ../themeoptions/options.php:1736
+#: ../themeoptions/options.php:1748
 msgid "Contact Form Email"
 msgstr "Kontakformular Email"
 
 # @ virtue
-#: ../themeoptions/options.php:1737
+#: ../themeoptions/options.php:1749
 msgid "Sets the email for the contact page email form."
 msgstr "Stellt die Email-Adresse für das Email-Formular der Kontaktseiten ein."
 
 # @ virtue
-#: ../themeoptions/options.php:1743
+#: ../themeoptions/options.php:1755
 msgid "Footer Copyright Text"
 msgstr "Fußzeile Urhebertext"
 
 # @ virtue
-#: ../themeoptions/options.php:1744
+#: ../themeoptions/options.php:1756
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -3051,53 +2972,53 @@ msgstr ""
 "Fußzeile verwenden: [copyright] [site-name] [the-year]"
 
 # @ virtue
-#: ../themeoptions/options.php:1750
+#: ../themeoptions/options.php:1762
 msgid "Blog Post Defaults"
 msgstr "Blogbeitrag Standards"
 
 # @ virtue
-#: ../themeoptions/options.php:1755
+#: ../themeoptions/options.php:1767
 msgid "Blog Post Summary Default"
 msgstr "Blog Beitragsübersicht Standardansicht"
 
 # @ virtue
-#: ../themeoptions/options.php:1763
+#: ../themeoptions/options.php:1775
 #, fuzzy
 msgid "Blog Post Head Content Default"
 msgstr "Blogbeitrag Standards"
 
 # @ virtue
-#: ../themeoptions/options.php:1771
+#: ../themeoptions/options.php:1783
 msgid "Create Sidebars"
 msgstr "Erstelle Sidebars"
 
 # @ virtue
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1788
 msgid "Create Custom Sidebars"
 msgstr "Erstelle benutzerdefinierte Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1777
+#: ../themeoptions/options.php:1789
 msgid "Type new sidebar name into textbox"
 msgstr "Schreibe den neuen Sidebarnamen in die Textbox"
 
 # @ virtue
-#: ../themeoptions/options.php:1778
+#: ../themeoptions/options.php:1790
 msgid "Extra Sidebar"
 msgstr "Extra Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1783
+#: ../themeoptions/options.php:1795
 msgid "Wordpress Galleries"
 msgstr "Wordpress Galerien"
 
 # @ virtue
-#: ../themeoptions/options.php:1788
+#: ../themeoptions/options.php:1800
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Ermöglicht, dass Virtue die Wordpressgalerien ersetzt"
 
 # @ virtue
-#: ../themeoptions/options.php:1789
+#: ../themeoptions/options.php:1801
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -3106,32 +3027,32 @@ msgstr ""
 "anpassen, z. B. Jetpack gekachelte Galerie."
 
 # @ virtue
-#: ../themeoptions/options.php:1797
+#: ../themeoptions/options.php:1809
 msgid "Advanced Settings"
 msgstr "Erweiterte Optionen"
 
 # @ virtue
-#: ../themeoptions/options.php:1798
+#: ../themeoptions/options.php:1810
 msgid "Custom CSS Box"
 msgstr "Benutzerdefinierte CSS Box"
 
 # @ virtue
-#: ../themeoptions/options.php:1803
+#: ../themeoptions/options.php:1815
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
 # @ virtue
-#: ../themeoptions/options.php:1804
+#: ../themeoptions/options.php:1816
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Fügt durch Eintragen in dieser Box schnell CSS zu Ihren Theme hinzu."
 
 # @ virtue
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1824
 msgid "Theme Update Import"
 msgstr "Theme Update Import"
 
 # @ virtue
-#: ../themeoptions/options.php:1813
+#: ../themeoptions/options.php:1825
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
@@ -3140,22 +3061,22 @@ msgstr ""
 "Skript zum Updaten Ihrer Theme-Einstellungen."
 
 # @ virtue
-#: ../themeoptions/options.php:1818
+#: ../themeoptions/options.php:1830
 msgid "Turn on and save to start script"
 msgstr "Einschalten und speichern, um das Skript zu starten"
 
 # @ virtue
-#: ../themeoptions/options.php:1825
+#: ../themeoptions/options.php:1837
 msgid "If using a child theme enter child theme folder"
 msgstr "Wenn Child-Theme verwendet wird, den Child-Theme Pfad angeben"
 
 # @ virtue
-#: ../themeoptions/options.php:1849 ../themeoptions/options.php:1850
+#: ../themeoptions/options.php:1861 ../themeoptions/options.php:1862
 msgid "Theme Options"
 msgstr "Theme Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1857
+#: ../themeoptions/options.php:1869
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -3163,355 +3084,105 @@ msgstr ""
 "Danke, dass Sie das Virtue Theme von <a href=\"http://kadencethemes.com/\" "
 "target=\"_blank\">Kadence Themes</a> verwenden."
 
-# @ redux-framework
-#: ../themeoptions/extensions/customizer/extension_customizer.php:441
+# @ virtue
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:50
 #, fuzzy
-msgid "You have changes that are not saved.  Would you like to save them now?"
-msgstr "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
-
-# @ redux-framework
-#: ../themeoptions/extensions/customizer/extension_customizer.php:442
-#, fuzzy
-msgid "Are you sure?  Resetting will lose all custom values."
-msgstr ""
-"Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte entfernen."
+msgid "Icon"
+msgstr "Symbol hinzufügen"
 
 # @ redux-framework
-#: ../themeoptions/extensions/customizer/extension_customizer.php:443
-#, fuzzy
-msgid ""
-"Your current options will be replaced with the values of this preset.  Would "
-"you like to proceed?"
-msgstr ""
-"Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. Wollen "
-"Sie fortsetzen?"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:21
-#, php-format
-msgid "%s review for %s"
-msgid_plural "%s reviews for %s"
-msgstr[0] "%s Bewertung von %s"
-msgstr[1] "%s Bewertungen von %s"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:23
-msgid "Reviews"
-msgstr "Bewertungen"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:44
-msgid "There are no reviews yet."
-msgstr "Es gibt zur Zeit noch keine Bewertungen."
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Add a review"
-msgstr "Eine Bewertung erstellen"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Be the first to review"
-msgstr "Als Erster bewerten"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:64
-msgid "Email"
-msgstr "Email"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:67
-msgid "Submit"
-msgstr "Übermitteln"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:73
-msgid "Your Rating"
-msgstr "Ihre Wertung"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:74
-msgid "Rate&hellip;"
-msgstr "Wert&hellip;"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:75
-msgid "Perfect"
-msgstr "Perfekt"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:76
-msgid "Good"
-msgstr "Gut"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:77
-msgid "Average"
-msgstr "Durchschnittlich"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:78
-msgid "Not that bad"
-msgstr "Nicht so schlecht"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:79
-msgid "Very Poor"
-msgstr "Sehr dürftig"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:83
-msgid "Your Review"
-msgstr "Ihre Bewertung"
-
-# @ woocommerce
-#: ../woocommerce/single-product-reviews.php:92
-msgid ""
-"Only logged in customers who have purchased this product may leave a review."
-msgstr ""
-"Nur angemeldete Kunden, die dieses Produkt gekauft haben, dürfen bewerten."
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:55
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:53
+#, fuzzy, php-format
+msgid "New %s"
+msgstr "Neu "
 
 # @ virtue
-#: ../woocommerce/single-product.php:24 ../woocommerce/single-product.php:28
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:110
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:180
+msgid "Upload Icon"
+msgstr "Symbol hochladen"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:121
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:187
+msgid "Select an Icon"
+msgstr "Wähle ein Symbol"
+
+# @ redux-framework
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:141
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:206
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:121
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:166
+msgid "URL"
+msgstr "URL"
+
+# @ virtue
+# @ redux-framework
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:143
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:210
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:123
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:170
+msgid "Description"
+msgstr "Beschreibung"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:144
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:212
+msgid "Icon Link"
+msgstr "Symbol Link"
+
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:148
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:217
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:128
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:177
+msgid "Open Link in New Tab/Window"
+msgstr "Link in neuem Tab/Fenster öffnen"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:158
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:226
+msgid "Delete Icon"
+msgstr "Lösche Symbol"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:229
+msgid "Add Icon"
+msgstr "Symbol hinzufügen"
+
+# @ redux-framework
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:48
+#, fuzzy
+msgid "Slide"
+msgstr "Slide hinzufügen"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:124
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:172
+msgid "Slide Link"
+msgstr "Slide Link"
+
+# @ redux-framework
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:137
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:185
+msgid "Delete Slide"
+msgstr "Entferne Slide"
+
+# @ virtue
+#: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:188
+#, fuzzy, php-format
+msgid "Add %s"
+msgstr "Bilder hinzufügen"
+
+# @ virtue
+#: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"
 msgstr "Zurück zu"
 
 # @ virtue
-#: ../woocommerce/single-product.php:28
+#: ../woocommerce/single-product.php:29
 msgid "Shop"
 msgstr "Shop"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart-totals.php:16
-msgid "Cart Totals"
-msgstr "Warenkorb Endsumme"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart-totals.php:21
-msgid "Cart Subtotal"
-msgstr "Warenkorb Zwischensumme"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart-totals.php:75
-msgid "Order Total"
-msgstr "Gesamtbestellung"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart-totals.php:87
-#, php-format
-msgid " (taxes estimated for %s)"
-msgstr "(Steuern geschätzt für %s)"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart-totals.php:90
-#, php-format
-msgid ""
-"Note: Shipping and taxes are estimated%s and will be updated during checkout "
-"based on your billing and shipping information."
-msgstr ""
-"Hinweis: Versand und Steuern sind geschätzte %s und werden während der "
-"Prüfung auf der Grundlage Ihrer Abrechnung und Versandinformationen "
-"aktualisiert."
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
-msgid "Product"
-msgstr "Produkt"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:28
-msgid "Price"
-msgstr "Preis"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:29
-msgid "Quantity"
-msgstr "Anzahl"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
-msgid "Total"
-msgstr "Gesamt"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:47
-msgid "Remove this item"
-msgstr "Entferne diesen Artikel"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:74
-msgid "Available on backorder"
-msgstr "Erhältlich im Rückstand"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon"
-msgstr "Gutschein"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon code"
-msgstr "Gutschein-Code"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:118
-msgid "Apply Coupon"
-msgstr "Gutschein einlösen"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:125
-msgid "Update Cart"
-msgstr "Warenkorb aktualisieren"
-
-# @ woocommerce
-#: ../woocommerce/cart/cart.php:125
-msgid "Proceed to Checkout"
-msgstr "Zur Kasse"
-
-# @ woocommerce
-#: ../woocommerce/cart/cross-sells.php:38
-msgid "You may be interested in&hellip;"
-msgstr "Vielleicht ebenfalls für Sie interessant&hellip;"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:22
-msgid "Calculate Shipping"
-msgstr "Berechne Lieferkosten"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:28
-msgid "Select a country&hellip;"
-msgstr "Wählen Sie ein Land&hellip;"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:45
-#: ../woocommerce/cart/shipping-calculator.php:51
-#: ../woocommerce/cart/shipping-calculator.php:63
-msgid "State / county"
-msgstr "Bundesland"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:52
-msgid "Select a state&hellip;"
-msgstr "Wählen Sie ein Bundeslandt&hellip;"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:72
-msgid "City"
-msgstr "Stadt"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:80
-msgid "Postcode / Zip"
-msgstr "Postleitzahl"
-
-# @ woocommerce
-#: ../woocommerce/cart/shipping-calculator.php:86
-msgid "Update Totals"
-msgstr "Endsumme aktualisieren"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:18
-msgid ""
-"Unfortunately your order cannot be processed as the originating bank/"
-"merchant has declined your transaction."
-msgstr ""
-"Leider kann Ihre Bestellung nicht bearbeitet werden, weil Ihre herausgebende "
-"Bank/Händler Ihre Transaktion abgelehnt hat."
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:22
-msgid "Please attempt your purchase again or go to your account page."
-msgstr ""
-"Bitte versuchen Sie Ihren Kauf nochmals zu tätigen oder gehen Sie auf Ihre "
-"Konto- Seite."
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:24
-msgid "Please attempt your purchase again."
-msgstr "Bitte versuchen Sie erneut, Ihren Einkauf zu tätigen."
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:28
-msgid "Pay"
-msgstr "Zahlen"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:30
-msgid "My Account"
-msgstr "Mein Konto"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:36
-#: ../woocommerce/checkout/thankyou.php:67
-msgid "Thank you. Your order has been received."
-msgstr "Danke. Ihre Bestellung wurde übermittelt."
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:40
-msgid "Order:"
-msgstr "Bestellung:"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:44
-msgid "Date:"
-msgstr "Datum:"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:48
-msgid "Total:"
-msgstr "Gesamt:"
-
-# @ woocommerce
-#: ../woocommerce/checkout/thankyou.php:53
-msgid "Payment method:"
-msgstr "Zahlungsmethode:"
-
-# @ woocommerce
-#: ../woocommerce/loop/no-products-found.php:14
-msgid "No products found which match your selection."
-msgstr "Kein Produkt gefunden, das zu Ihrer Auswahl passt."
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:21
-msgid "Default sorting"
-msgstr "Standard Sortierung"
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:22
-msgid "Sort by popularity"
-msgstr "Sortiere nach Popularität"
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:23
-msgid "Sort by average rating"
-msgstr "Sortiere nach durchschnittlicher Bewertung"
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:24
-msgid "Sort by newness"
-msgstr "Sortiere nach Aktualität"
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:25
-msgid "Sort by price: low to high"
-msgstr "Sortieren nach Preis: aufsteigend"
-
-# @ woocommerce
-#: ../woocommerce/loop/orderby.php:26
-msgid "Sort by price: high to low"
-msgstr "Sortieren nach Preis: absteigend"
-
-# @ woocommerce
-#: ../woocommerce/loop/result-count.php:28
-msgid "Showing the single result"
-msgstr "Das einzige Ergebnis anzeigen"
-
-# @ woocommerce
-#: ../woocommerce/loop/result-count.php:30
-#, php-format
-msgid "Showing all %d results"
-msgstr "Zeige alle %d Ergebnisse"
 
 # @ woocommerce
 #: ../woocommerce/loop/sale-flash.php:16
@@ -3519,185 +3190,514 @@ msgstr "Zeige alle %d Ergebnisse"
 msgid "Sale!"
 msgstr "Verkaufen!"
 
-# @ woocommerce
-#: ../woocommerce/order/form-tracking.php:17
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"return. This was given to you on your receipt and in the confirmation email "
-"you should have received."
-msgstr ""
-"Um Ihre Bestellung zu verfolgen, geben Sie bitte Ihre Bestell-ID in das Feld "
-"unten ein und drücken Sie Enter. Die ID finden Sie auf Ihrer Quittung und in "
-"der Bestätigungsemail, die Sie erhalten haben."
+# @ virtue
+#~ msgid "Virtue: About with Image"
+#~ msgstr "Virtue: 'Über' mit Bild"
+
+# @ redux-framework
+#~ msgid "Options panel created using %1$s"
+#~ msgstr "Optionenverzeichnis erstellt mit %1$s"
+
+# @ redux-framework
+#~ msgid "Redux Framework"
+#~ msgstr "Redux Framework"
+
+# @ redux-framework
+#~ msgid "Options"
+#~ msgstr "Optionen"
+
+# @ redux-framework
+#~ msgid ""
+#~ "You have changes that are not saved. Would you like to save them now?"
+#~ msgstr ""
+#~ "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
+
+# @ redux-framework
+#~ msgid "Are you sure? Resetting will lose all custom values."
+#~ msgstr ""
+#~ "Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte "
+#~ "entfernen."
+
+# @ redux-framework
+#~ msgid "Are you sure? Resetting will lose all custom values in this section."
+#~ msgstr ""
+#~ "Sind Sie  sicher? Zurücksetzen wird alle benutzerdefinierten Werte dieser "
+#~ "Sektion entfernen."
+
+# @ redux-framework
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset. "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. "
+#~ "Wollen Sie fortsetzen?"
+
+# @ cmb
+#, fuzzy
+#~ msgid "Please Wait"
+#~ msgstr "Bitte nochmals versuchen"
+
+# @ redux-framework
+#~ msgid ""
+#~ "Warning- This options panel will not work properly without javascript!"
+#~ msgstr ""
+#~ "Warnung - Dieses Optionenverzeichnis wird ohne Javascript nicht richtig "
+#~ "funktionieren!"
+
+# @ redux-framework
+#~ msgid "Expand"
+#~ msgstr "Erweitern"
+
+# @ redux-framework
+#~ msgid "Save Changes"
+#~ msgstr "Änderungen speichern"
+
+# @ redux-framework
+#~ msgid "Reset Section"
+#~ msgstr "Auswahl zurücksetzen"
+
+# @ redux-framework
+#~ msgid "Reset All"
+#~ msgstr "Alles zurücksetzen"
+
+# @ redux-framework
+#~ msgid "Working..."
+#~ msgstr "Arbeite..."
+
+# @ redux-framework
+#~ msgid "Settings Imported!"
+#~ msgstr "Einstellungen importiert!"
+
+# @ redux-framework
+#~ msgid "Settings Saved!"
+#~ msgstr "Einstellungen gespeichert!"
+
+# @ redux-framework
+#~ msgid "Settings have changed, you should save them!"
+#~ msgstr "Einstellungen wurden geändert, Sie sollten diese speichern!"
+
+# @ redux-framework
+#~ msgid "error(s) were found!"
+#~ msgstr "Fehler wurde(n) gefunden!"
+
+# @ redux-framework
+#~ msgid "warning(s) were found!"
+#~ msgstr "Warnung(en) wurde(n) gefunden!"
+
+# @ redux-framework
+#~ msgid "System Info"
+#~ msgstr "System Info"
+
+# @ redux-framework
+#, fuzzy
+#~ msgid ""
+#~ "You have changes that are not saved.  Would you like to save them now?"
+#~ msgstr ""
+#~ "Sie haben nicht gespeicherte Änderungen. Wollen Sie diese speichern?"
+
+# @ redux-framework
+#, fuzzy
+#~ msgid "Are you sure?  Resetting will lose all custom values."
+#~ msgstr ""
+#~ "Sind Sie sicher? Zurücksetzen wird alle benutzerdefinierten Werte "
+#~ "entfernen."
+
+# @ redux-framework
+#, fuzzy
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset.  "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. "
+#~ "Wollen Sie fortsetzen?"
 
 # @ woocommerce
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Order ID"
-msgstr "Bestell-ID"
+#~ msgid "%s review for %s"
+#~ msgid_plural "%s reviews for %s"
+#~ msgstr[0] "%s Bewertung von %s"
+#~ msgstr[1] "%s Bewertungen von %s"
 
 # @ woocommerce
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Found in your order confirmation email."
-msgstr "Gefunden in Ihrer Bestell-Bestätigungsemail."
+#~ msgid "Reviews"
+#~ msgstr "Bewertungen"
 
 # @ woocommerce
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Billing Email"
-msgstr "Abrechnung Email"
+#~ msgid "There are no reviews yet."
+#~ msgstr "Es gibt zur Zeit noch keine Bewertungen."
 
 # @ woocommerce
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Email you used during checkout."
-msgstr "Email, die Sie während des Kaufes verwendet haben."
+#~ msgid "Add a review"
+#~ msgstr "Eine Bewertung erstellen"
 
 # @ woocommerce
-#: ../woocommerce/order/form-tracking.php:23
-msgid "Track"
-msgstr "Verfolgen"
+#~ msgid "Be the first to review"
+#~ msgstr "Als Erster bewerten"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:16
-msgid "Order Details"
-msgstr "Bestelldetails"
+#~ msgid "Email"
+#~ msgstr "Email"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:66
-#, php-format
-msgid "Download file%s"
-msgstr "Dateien herunterladen%s"
+#~ msgid "Submit"
+#~ msgstr "Übermitteln"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:98
-msgid "Order Again"
-msgstr "Nochmals bestellen"
+#~ msgid "Your Rating"
+#~ msgstr "Ihre Wertung"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:105
-msgid "Customer details"
-msgstr "Kundendetails"
+#~ msgid "Rate&hellip;"
+#~ msgstr "Wert&hellip;"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:126
-msgid "Billing Address"
-msgstr "Rechnungsadresse"
+#~ msgid "Perfect"
+#~ msgstr "Perfekt"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:130
-#: ../woocommerce/order/order-details.php:145
-msgid "N/A"
-msgstr "N/A"
+#~ msgid "Good"
+#~ msgstr "Gut"
 
 # @ woocommerce
-#: ../woocommerce/order/order-details.php:141
-msgid "Shipping Address"
-msgstr "Lieferadresse"
+#~ msgid "Average"
+#~ msgstr "Durchschnittlich"
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:63
-msgid "Products tagged &ldquo;"
-msgstr "Produkte markiert &ldquo;"
+#~ msgid "Not that bad"
+#~ msgstr "Nicht so schlecht"
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:91
-#: ../woocommerce/shop/breadcrumb.php:188
-msgid "Search results for &ldquo;"
-msgstr "Suchergebnis für &ldquo;"
+#~ msgid "Very Poor"
+#~ msgstr "Sehr dürftig"
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:146
-msgid "Error 404"
-msgstr "Fehler 404"
+#~ msgid "Your Review"
+#~ msgstr "Ihre Bewertung"
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:192
-msgid "Posts tagged &ldquo;"
-msgstr "Beiträge markiert &ldquo;"
+#~ msgid ""
+#~ "Only logged in customers who have purchased this product may leave a "
+#~ "review."
+#~ msgstr ""
+#~ "Nur angemeldete Kunden, die dieses Produkt gekauft haben, dürfen bewerten."
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:197
-msgid "Author:"
-msgstr "Autor:"
+#~ msgid "Cart Totals"
+#~ msgstr "Warenkorb Endsumme"
 
 # @ woocommerce
-#: ../woocommerce/shop/breadcrumb.php:202
-msgid "Page"
-msgstr "Seite"
+#~ msgid "Cart Subtotal"
+#~ msgstr "Warenkorb Zwischensumme"
 
 # @ woocommerce
-#: ../woocommerce/shop/form-login.php:20
-msgid "Username or email"
-msgstr "Benutzername oder Email"
+#~ msgid "Order Total"
+#~ msgstr "Gesamtbestellung"
 
 # @ woocommerce
-#: ../woocommerce/shop/form-login.php:31
-msgid "Login"
-msgstr "Login"
+#~ msgid " (taxes estimated for %s)"
+#~ msgstr "(Steuern geschätzt für %s)"
 
 # @ woocommerce
-#: ../woocommerce/shop/form-login.php:33
-msgid "Lost Password?"
-msgstr "Passwort verloren?"
+#~ msgid ""
+#~ "Note: Shipping and taxes are estimated%s and will be updated during "
+#~ "checkout based on your billing and shipping information."
+#~ msgstr ""
+#~ "Hinweis: Versand und Steuern sind geschätzte %s und werden während der "
+#~ "Prüfung auf der Grundlage Ihrer Abrechnung und Versandinformationen "
+#~ "aktualisiert."
 
 # @ woocommerce
-#: ../woocommerce/single-product/rating.php:23
-#, php-format
-msgid "Rated %s out of 5"
-msgstr "Bewertet mit %s von 5"
+#~ msgid "Product"
+#~ msgstr "Produkt"
 
 # @ woocommerce
-#: ../woocommerce/single-product/rating.php:25
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr "von 5"
+#~ msgid "Price"
+#~ msgstr "Preis"
 
 # @ woocommerce
-#: ../woocommerce/single-product/rating.php:28
-#, php-format
-msgid "%s customer review"
-msgid_plural "%s customer reviews"
-msgstr[0] "%s Kundenbewertung"
-msgstr[1] "%s Kundenbewertungen"
+#~ msgid "Quantity"
+#~ msgstr "Anzahl"
 
 # @ woocommerce
-#: ../woocommerce/single-product/review.php:26
-#, php-format
-msgid "Rated %d out of 5"
-msgstr "Bewertet mit %d von 5"
+#~ msgid "Total"
+#~ msgstr "Gesamt"
 
 # @ woocommerce
-#: ../woocommerce/single-product/review.php:34
-msgid "Your comment is awaiting approval"
-msgstr "Ihr Kommentar wird geprüft."
+#~ msgid "Remove this item"
+#~ msgstr "Entferne diesen Artikel"
 
 # @ woocommerce
-#: ../woocommerce/single-product/review.php:43
-msgid "verified owner"
-msgstr "Verifizierter Inhaber"
+#~ msgid "Available on backorder"
+#~ msgstr "Erhältlich im Rückstand"
 
 # @ woocommerce
-#: ../woocommerce/single-product/add-to-cart/variable.php:80
-msgid "Choose an option"
-msgstr "Wähle eine Option"
+#~ msgid "Coupon"
+#~ msgstr "Gutschein"
 
 # @ woocommerce
-#: ../woocommerce/single-product/add-to-cart/variable.php:128
-msgid "Clear selection"
-msgstr "Lösche Auswahl"
+#~ msgid "Coupon code"
+#~ msgstr "Gutschein-Code"
 
 # @ woocommerce
-#: ../woocommerce/single-product/add-to-cart/variable.php:161
-msgid "This product is currently out of stock and unavailable."
-msgstr "Dieses Produkt ist momentan nicht auf Lager und nicht verfügbar."
+#~ msgid "Apply Coupon"
+#~ msgstr "Gutschein einlösen"
 
 # @ woocommerce
-#: ../woocommerce/single-product/tabs/additional-information.php:14
-msgid "Additional Information"
-msgstr "Zusätzliche Information"
+#~ msgid "Update Cart"
+#~ msgstr "Warenkorb aktualisieren"
 
 # @ woocommerce
-#: ../woocommerce/single-product/tabs/description.php:14
-msgid "Product Description"
-msgstr "Produktbeschreibung"
+#~ msgid "Proceed to Checkout"
+#~ msgstr "Zur Kasse"
+
+# @ woocommerce
+#~ msgid "You may be interested in&hellip;"
+#~ msgstr "Vielleicht ebenfalls für Sie interessant&hellip;"
+
+# @ woocommerce
+#~ msgid "Calculate Shipping"
+#~ msgstr "Berechne Lieferkosten"
+
+# @ woocommerce
+#~ msgid "Select a country&hellip;"
+#~ msgstr "Wählen Sie ein Land&hellip;"
+
+# @ woocommerce
+#~ msgid "State / county"
+#~ msgstr "Bundesland"
+
+# @ woocommerce
+#~ msgid "Select a state&hellip;"
+#~ msgstr "Wählen Sie ein Bundeslandt&hellip;"
+
+# @ woocommerce
+#~ msgid "City"
+#~ msgstr "Stadt"
+
+# @ woocommerce
+#~ msgid "Postcode / Zip"
+#~ msgstr "Postleitzahl"
+
+# @ woocommerce
+#~ msgid "Update Totals"
+#~ msgstr "Endsumme aktualisieren"
+
+# @ woocommerce
+#~ msgid ""
+#~ "Unfortunately your order cannot be processed as the originating bank/"
+#~ "merchant has declined your transaction."
+#~ msgstr ""
+#~ "Leider kann Ihre Bestellung nicht bearbeitet werden, weil Ihre "
+#~ "herausgebende Bank/Händler Ihre Transaktion abgelehnt hat."
+
+# @ woocommerce
+#~ msgid "Please attempt your purchase again or go to your account page."
+#~ msgstr ""
+#~ "Bitte versuchen Sie Ihren Kauf nochmals zu tätigen oder gehen Sie auf "
+#~ "Ihre Konto- Seite."
+
+# @ woocommerce
+#~ msgid "Please attempt your purchase again."
+#~ msgstr "Bitte versuchen Sie erneut, Ihren Einkauf zu tätigen."
+
+# @ woocommerce
+#~ msgid "Pay"
+#~ msgstr "Zahlen"
+
+# @ woocommerce
+#~ msgid "Thank you. Your order has been received."
+#~ msgstr "Danke. Ihre Bestellung wurde übermittelt."
+
+# @ woocommerce
+#~ msgid "Order:"
+#~ msgstr "Bestellung:"
+
+# @ woocommerce
+#~ msgid "Date:"
+#~ msgstr "Datum:"
+
+# @ woocommerce
+#~ msgid "Total:"
+#~ msgstr "Gesamt:"
+
+# @ woocommerce
+#~ msgid "Payment method:"
+#~ msgstr "Zahlungsmethode:"
+
+# @ woocommerce
+#~ msgid "No products found which match your selection."
+#~ msgstr "Kein Produkt gefunden, das zu Ihrer Auswahl passt."
+
+# @ woocommerce
+#~ msgid "Default sorting"
+#~ msgstr "Standard Sortierung"
+
+# @ woocommerce
+#~ msgid "Sort by popularity"
+#~ msgstr "Sortiere nach Popularität"
+
+# @ woocommerce
+#~ msgid "Sort by average rating"
+#~ msgstr "Sortiere nach durchschnittlicher Bewertung"
+
+# @ woocommerce
+#~ msgid "Sort by newness"
+#~ msgstr "Sortiere nach Aktualität"
+
+# @ woocommerce
+#~ msgid "Sort by price: low to high"
+#~ msgstr "Sortieren nach Preis: aufsteigend"
+
+# @ woocommerce
+#~ msgid "Sort by price: high to low"
+#~ msgstr "Sortieren nach Preis: absteigend"
+
+# @ woocommerce
+#~ msgid "Showing the single result"
+#~ msgstr "Das einzige Ergebnis anzeigen"
+
+# @ woocommerce
+#~ msgid "Showing all %d results"
+#~ msgstr "Zeige alle %d Ergebnisse"
+
+# @ woocommerce
+#~ msgid ""
+#~ "To track your order please enter your Order ID in the box below and press "
+#~ "return. This was given to you on your receipt and in the confirmation "
+#~ "email you should have received."
+#~ msgstr ""
+#~ "Um Ihre Bestellung zu verfolgen, geben Sie bitte Ihre Bestell-ID in das "
+#~ "Feld unten ein und drücken Sie Enter. Die ID finden Sie auf Ihrer "
+#~ "Quittung und in der Bestätigungsemail, die Sie erhalten haben."
+
+# @ woocommerce
+#~ msgid "Order ID"
+#~ msgstr "Bestell-ID"
+
+# @ woocommerce
+#~ msgid "Found in your order confirmation email."
+#~ msgstr "Gefunden in Ihrer Bestell-Bestätigungsemail."
+
+# @ woocommerce
+#~ msgid "Billing Email"
+#~ msgstr "Abrechnung Email"
+
+# @ woocommerce
+#~ msgid "Email you used during checkout."
+#~ msgstr "Email, die Sie während des Kaufes verwendet haben."
+
+# @ woocommerce
+#~ msgid "Track"
+#~ msgstr "Verfolgen"
+
+# @ woocommerce
+#~ msgid "Order Details"
+#~ msgstr "Bestelldetails"
+
+# @ woocommerce
+#~ msgid "Download file%s"
+#~ msgstr "Dateien herunterladen%s"
+
+# @ woocommerce
+#~ msgid "Order Again"
+#~ msgstr "Nochmals bestellen"
+
+# @ woocommerce
+#~ msgid "Customer details"
+#~ msgstr "Kundendetails"
+
+# @ woocommerce
+#~ msgid "Billing Address"
+#~ msgstr "Rechnungsadresse"
+
+# @ woocommerce
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+# @ woocommerce
+#~ msgid "Shipping Address"
+#~ msgstr "Lieferadresse"
+
+# @ woocommerce
+#~ msgid "Products tagged &ldquo;"
+#~ msgstr "Produkte markiert &ldquo;"
+
+# @ woocommerce
+#~ msgid "Search results for &ldquo;"
+#~ msgstr "Suchergebnis für &ldquo;"
+
+# @ woocommerce
+#~ msgid "Error 404"
+#~ msgstr "Fehler 404"
+
+# @ woocommerce
+#~ msgid "Posts tagged &ldquo;"
+#~ msgstr "Beiträge markiert &ldquo;"
+
+# @ woocommerce
+#~ msgid "Author:"
+#~ msgstr "Autor:"
+
+# @ woocommerce
+#~ msgid "Page"
+#~ msgstr "Seite"
+
+# @ woocommerce
+#~ msgid "Username or email"
+#~ msgstr "Benutzername oder Email"
+
+# @ woocommerce
+#~ msgid "Login"
+#~ msgstr "Login"
+
+# @ woocommerce
+#~ msgid "Lost Password?"
+#~ msgstr "Passwort verloren?"
+
+# @ woocommerce
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Bewertet mit %s von 5"
+
+# @ woocommerce
+#~ msgid "out of 5"
+#~ msgstr "von 5"
+
+# @ woocommerce
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s Kundenbewertung"
+#~ msgstr[1] "%s Kundenbewertungen"
+
+# @ woocommerce
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Bewertet mit %d von 5"
+
+# @ woocommerce
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Ihr Kommentar wird geprüft."
+
+# @ woocommerce
+#~ msgid "verified owner"
+#~ msgstr "Verifizierter Inhaber"
+
+# @ woocommerce
+#~ msgid "Choose an option"
+#~ msgstr "Wähle eine Option"
+
+# @ woocommerce
+#~ msgid "Clear selection"
+#~ msgstr "Lösche Auswahl"
+
+# @ woocommerce
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "Dieses Produkt ist momentan nicht auf Lager und nicht verfügbar."
+
+# @ woocommerce
+#~ msgid "Additional Information"
+#~ msgstr "Zusätzliche Information"
+
+# @ woocommerce
+#~ msgid "Product Description"
+#~ msgstr "Produktbeschreibung"
 
 # @ virtue
 #~ msgid "This theme requires the following plugin: %1$s."
@@ -3836,53 +3836,9 @@ msgstr "Produktbeschreibung"
 #~ msgid "Activate License"
 #~ msgstr "Aktivieren"
 
-# @ virtue
-#~ msgid "Upload Icon"
-#~ msgstr "Symbol hochladen"
-
-# @ virtue
-#~ msgid "Select an Icon"
-#~ msgstr "Wähle ein Symbol"
-
-# @ redux-framework
-#~ msgid "URL"
-#~ msgstr "URL"
-
-# @ virtue
-# @ redux-framework
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
-
-# @ virtue
-#~ msgid "Icon Link"
-#~ msgstr "Symbol Link"
-
-#~ msgid "Open Link in New Tab/Window"
-#~ msgstr "Link in neuem Tab/Fenster öffnen"
-
-# @ virtue
-#~ msgid "Delete Icon"
-#~ msgstr "Lösche Symbol"
-
-# @ virtue
-#~ msgid "Add Icon"
-#~ msgstr "Symbol hinzufügen"
-
-# @ virtue
-#~ msgid "Slide Link"
-#~ msgstr "Slide Link"
-
 # @ redux-framework
 #~ msgid "Select an Option"
 #~ msgstr "Wählen Sie eine Einstellung"
-
-# @ redux-framework
-#~ msgid "Delete Slide"
-#~ msgstr "Entferne Slide"
-
-# @ redux-framework
-#~ msgid "Add Slide"
-#~ msgstr "Slide hinzufügen"
 
 # @ redux-framework
 #~ msgid "Transparent"
@@ -3921,10 +3877,6 @@ msgstr "Produktbeschreibung"
 #~ msgstr "Oben"
 
 # @ redux-framework
-#~ msgid "Right"
-#~ msgstr "Rechts"
-
-# @ redux-framework
 #~ msgid "Bottom"
 #~ msgstr "Unten"
 
@@ -3959,10 +3911,6 @@ msgstr "Produktbeschreibung"
 # @ redux-framework
 #~ msgid "Clear Gallery"
 #~ msgstr "Galerie leeren"
-
-# @ redux-framework
-#~ msgid "New "
-#~ msgstr "Neu "
 
 # @ redux-framework
 #~ msgid "Delete"

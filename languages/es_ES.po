@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: deLite Virtue\n"
-"POT-Creation-Date: 2014-06-23 16:16-0700\n"
-"PO-Revision-Date: 2014-06-23 16:17-0700\n"
+"POT-Creation-Date: 2014-07-18 10:46-0700\n"
+"PO-Revision-Date: 2014-07-18 10:51-0700\n"
 "Last-Translator: María Digo <web.esdemay@gmail.com>\n"
 "Language-Team: Maria <web.esdemay@gmail.com>\n"
 "Language: es_ES\n"
@@ -391,7 +391,7 @@ msgstr "Instalar Plugin %1$s (%2$d/%3$d)"
 msgid "Return to the Dashboard"
 msgstr "Regresar al Escritorio"
 
-#: ../lib/cleanup.php:164
+#: ../lib/cleanup.php:154
 msgid "Continued"
 msgstr "Continuar"
 
@@ -562,7 +562,7 @@ msgid "Video"
 msgstr "Video"
 
 #: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
-#: ../lib/widgets.php:794 ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1776
 msgid "Image"
 msgstr "Imagen"
 
@@ -591,7 +591,7 @@ msgstr ""
 msgid "Post Summary"
 msgstr "Resumen publicaciones"
 
-#: ../lib/metaboxes.php:124 ../lib/widgets.php:800
+#: ../lib/metaboxes.php:124
 msgid "Text"
 msgstr "Texto"
 
@@ -1287,21 +1287,59 @@ msgstr "Si Portfolio - Elegir Tipo (opcional):"
 msgid "Number of images to show:"
 msgstr "Número de imágenes a mostrar:"
 
-#: ../lib/widgets.php:768
+#: ../lib/widgets.php:777
 msgid "This allows for an image and a simple about text."
 msgstr "Mostrar una imagen sobre un texto simple."
 
-#: ../lib/widgets.php:769
-msgid "Virtue: About with Image"
-msgstr "Virtue: Acerca de...con Imagen"
+#: ../lib/widgets.php:778
+#, fuzzy
+msgid "Virtue: Image"
+msgstr "Virtue: Imagen Rejilla | Grid"
 
-#: ../lib/widgets.php:797
+#: ../lib/widgets.php:832
+#, fuzzy
+msgid "Lightbox"
+msgstr "Derecha"
+
+#: ../lib/widgets.php:833
+msgid "New Window"
+msgstr ""
+
+#: ../lib/widgets.php:834
+msgid "Same Window"
+msgstr ""
+
+#: ../lib/widgets.php:835
+#, fuzzy
+msgid "No Link"
+msgstr "Enlace icono"
+
+#: ../lib/widgets.php:847
+#, fuzzy
+msgid "Image URL"
+msgstr "Imagen"
+
+#: ../lib/widgets.php:849
 #: ../themeoptions/inc/fields/background/field_background.php:315
 #: ../themeoptions/inc/fields/media/field_media.php:154
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:159
 msgid "Upload"
 msgstr "Subir"
+
+#: ../lib/widgets.php:852
+#, fuzzy
+msgid "Image opens in"
+msgstr "Opciones repetición imagen"
+
+#: ../lib/widgets.php:856
+#, fuzzy
+msgid "Image Link (optional)"
+msgstr "Opciones repetición imagen"
+
+#: ../lib/widgets.php:860
+msgid "Text/Caption (optional)"
+msgstr ""
 
 #: ../lib/cmb/init.php:243
 msgid "Clear"
@@ -1498,118 +1536,6 @@ msgstr "LEER MÁS"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Proyectos destacados"
-
-#: ../themeoptions/framework.php:270
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr "Panel Opciones creado usando %1$s"
-
-#: ../themeoptions/framework.php:270
-msgid "Redux Framework"
-msgstr "Redux Framework"
-
-#: ../themeoptions/framework.php:274 ../themeoptions/framework.php:278
-#: ../themeoptions/framework.php:1334
-msgid "Options"
-msgstr "Opciones"
-
-#: ../themeoptions/framework.php:1804
-#: ../themeoptions/extensions/customizer/extension_customizer.php:452
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr "Usted tiene cambios sin guardar. ¿Le gustar&iacute;a salvarlos ahora?"
-
-#: ../themeoptions/framework.php:1805
-#: ../themeoptions/extensions/customizer/extension_customizer.php:453
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-"¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-"personalizados."
-
-#: ../themeoptions/framework.php:1806
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-"personalizados en esta secci&oacute;n."
-
-#: ../themeoptions/framework.php:1807
-#: ../themeoptions/extensions/customizer/extension_customizer.php:454
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-"Las opciones actuales ser&aacute;n reemplazadas por los valores de esta "
-"preselecci&oacute;n. ¿Quiere continuar?"
-
-#: ../themeoptions/framework.php:1808
-#, fuzzy
-msgid "Please Wait"
-msgstr "Por favor, inténtelo de nuevo"
-
-#: ../themeoptions/framework.php:1955
-msgid "Hints"
-msgstr ""
-
-#: ../themeoptions/framework.php:1956
-msgid "<p>"
-msgstr ""
-
-#: ../themeoptions/framework.php:3132
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Advertencia: este panel de opciones no funcionar&aacute; correctamente sin "
-"JavaScript."
-
-#: ../themeoptions/framework.php:3206
-msgid "Expand"
-msgstr "Expandir"
-
-#: ../themeoptions/framework.php:3208 ../themeoptions/framework.php:3516
-msgid "Save Changes"
-msgstr "Guardar cambios"
-
-#: ../themeoptions/framework.php:3212 ../themeoptions/framework.php:3520
-msgid "Reset Section"
-msgstr "Resetear seleción"
-
-#: ../themeoptions/framework.php:3214 ../themeoptions/framework.php:3522
-msgid "Reset All"
-msgstr "Resetar todo"
-
-#: ../themeoptions/framework.php:3219 ../themeoptions/framework.php:3527
-msgid "Working..."
-msgstr "Trabajando..."
-
-#: ../themeoptions/framework.php:3239
-msgid "Settings Imported!"
-msgstr "Configuraci&oacute;n importada!"
-
-#: ../themeoptions/framework.php:3254
-msgid "All Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3268
-msgid "Section Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3282
-msgid "Settings Saved!"
-msgstr "Configuraci&oacute;n guardada."
-
-#: ../themeoptions/framework.php:3300
-msgid "Settings have changed, you should save them!"
-msgstr "La configuraci&oacute;n ha cambiado, debe guardala"
-
-#: ../themeoptions/framework.php:3308
-msgid "error(s) were found!"
-msgstr "error(es) encontrado (s)"
-
-#: ../themeoptions/framework.php:3316
-msgid "warning(s) were found!"
-msgstr "se encontraro advertencia (s)"
-
-#: ../themeoptions/framework.php:3380 ../themeoptions/framework.php:3459
-msgid "System Info"
-msgstr "Informaci&oacute;n del sistema"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -1943,6 +1869,14 @@ msgstr "Esto determina si hay una barra lateral en p&aacute;gina protada"
 #: ../themeoptions/options.php:804
 msgid "Choose a Sidebar for your Home Page"
 msgstr "Elija una barra lateral para p&aacute;gina de inicio"
+
+#: ../themeoptions/options.php:814
+msgid "Homepage Layout Manager"
+msgstr "Gestor Diseño Página Inicio"
+
+#: ../themeoptions/options.php:815
+msgid "Organize how you want the layout to appear on the homepage"
+msgstr "Organizar el diseño a mostrar en página de inicio"
 
 #: ../themeoptions/options.php:820
 msgid "Latest Blog Posts"
@@ -2660,76 +2594,6 @@ msgstr "Borra slide"
 msgid "Add %s"
 msgstr "Añadir Imágenes"
 
-#: ../woocommerce/single-product-reviews.php:21
-#, php-format
-msgid "%s review for %s"
-msgid_plural "%s reviews for %s"
-msgstr[0] "Opini&oacute;n para %s"
-msgstr[1] "%s Opiniones para %s"
-
-#: ../woocommerce/single-product-reviews.php:23
-msgid "Reviews"
-msgstr "Opiniones"
-
-#: ../woocommerce/single-product-reviews.php:44
-msgid "There are no reviews yet."
-msgstr "A&uacute;n no hay opiniones"
-
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Add a review"
-msgstr "Añadir una opini&oacute;n"
-
-#: ../woocommerce/single-product-reviews.php:57
-msgid "Be the first to review"
-msgstr "Sea el primero en opinar"
-
-#: ../woocommerce/single-product-reviews.php:64
-msgid "Email"
-msgstr "Email"
-
-#: ../woocommerce/single-product-reviews.php:67
-msgid "Submit"
-msgstr "Enviar "
-
-#: ../woocommerce/single-product-reviews.php:73
-msgid "Your Rating"
-msgstr "Su calificaci&oacute;n"
-
-#: ../woocommerce/single-product-reviews.php:74
-msgid "Rate&hellip;"
-msgstr "Cambio&hellip;"
-
-#: ../woocommerce/single-product-reviews.php:75
-msgid "Perfect"
-msgstr "Perfecto"
-
-#: ../woocommerce/single-product-reviews.php:76
-msgid "Good"
-msgstr "Bueno"
-
-#: ../woocommerce/single-product-reviews.php:77
-msgid "Average"
-msgstr "Medio"
-
-#: ../woocommerce/single-product-reviews.php:78
-msgid "Not that bad"
-msgstr "Regular"
-
-#: ../woocommerce/single-product-reviews.php:79
-msgid "Very Poor"
-msgstr "Malo"
-
-#: ../woocommerce/single-product-reviews.php:83
-msgid "Your Review"
-msgstr "Su opinión"
-
-#: ../woocommerce/single-product-reviews.php:92
-msgid ""
-"Only logged in customers who have purchased this product may leave a review."
-msgstr ""
-"S&oacute;lo los clientes que han comprado este producto, pueden dejar una "
-"rese&ntilde;a."
-
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"
 msgstr "Volver a"
@@ -2738,281 +2602,339 @@ msgstr "Volver a"
 msgid "Shop"
 msgstr "Tienda"
 
-#: ../woocommerce/cart/cart-totals.php:16
-msgid "Cart Totals"
-msgstr "Total Carro"
-
-#: ../woocommerce/cart/cart-totals.php:21
-msgid "Cart Subtotal"
-msgstr "Subtotal Carro"
-
-#: ../woocommerce/cart/cart-totals.php:75
-msgid "Order Total"
-msgstr "Total Pedido"
-
-#: ../woocommerce/cart/cart-totals.php:87
-#, php-format
-msgid " (taxes estimated for %s)"
-msgstr " (impuestos para %s)"
-
-#: ../woocommerce/cart/cart-totals.php:90
-#, php-format
-msgid ""
-"Note: Shipping and taxes are estimated%s and will be updated during checkout "
-"based on your billing and shipping information."
-msgstr ""
-" Nota: Envío e impuestos son estimados %s y se actualizará durante la "
-"comprobación de compra basada en la información de facturación y envío."
-
-#: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
-msgid "Product"
-msgstr "Producto"
-
-#: ../woocommerce/cart/cart.php:28
-msgid "Price"
-msgstr "Precio"
-
-#: ../woocommerce/cart/cart.php:29
-msgid "Quantity"
-msgstr "Cantidad"
-
-#: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
-msgid "Total"
-msgstr "Total"
-
-#: ../woocommerce/cart/cart.php:47
-msgid "Remove this item"
-msgstr "Quitar artículo"
-
-#: ../woocommerce/cart/cart.php:74
-msgid "Available on backorder"
-msgstr "Disponible bajo pedido"
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon"
-msgstr "Cupón"
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Coupon code"
-msgstr "Código del Cupón"
-
-#: ../woocommerce/cart/cart.php:118
-msgid "Apply Coupon"
-msgstr "Utilizar Cupón"
-
-#: ../woocommerce/cart/cart.php:125
-msgid "Update Cart"
-msgstr "Actualizar carrito"
-
-#: ../woocommerce/cart/cart.php:125
-msgid "Proceed to Checkout"
-msgstr "Pasar por caja &rarr;"
-
-#: ../woocommerce/cart/cross-sells.php:38
-msgid "You may be interested in&hellip;"
-msgstr "Puede que le interese in&hellip;"
-
-#: ../woocommerce/cart/shipping-calculator.php:22
-msgid "Calculate Shipping"
-msgstr "Calcular Envío"
-
-#: ../woocommerce/cart/shipping-calculator.php:28
-msgid "Select a country&hellip;"
-msgstr "Localidad &hellip;"
-
-#: ../woocommerce/cart/shipping-calculator.php:45
-#: ../woocommerce/cart/shipping-calculator.php:51
-#: ../woocommerce/cart/shipping-calculator.php:63
-msgid "State / county"
-msgstr "Pais / Localidad"
-
-#: ../woocommerce/cart/shipping-calculator.php:52
-msgid "Select a state&hellip;"
-msgstr "Pais&hellip;"
-
-#: ../woocommerce/cart/shipping-calculator.php:72
-msgid "City"
-msgstr "Ciudad"
-
-#: ../woocommerce/cart/shipping-calculator.php:80
-msgid "Postcode / Zip"
-msgstr "Código Postal"
-
-#: ../woocommerce/cart/shipping-calculator.php:86
-msgid "Update Totals"
-msgstr "Actualizar totales"
-
-#: ../woocommerce/loop/orderby.php:21
-msgid "Default sorting"
-msgstr "Orden por defecto"
-
-#: ../woocommerce/loop/orderby.php:22
-msgid "Sort by popularity"
-msgstr "Ordenar por popularidad"
-
-#: ../woocommerce/loop/orderby.php:23
-msgid "Sort by average rating"
-msgstr "Ordenar por calificación"
-
-#: ../woocommerce/loop/orderby.php:24
-msgid "Sort by newness"
-msgstr "Ordenar por novedad"
-
-#: ../woocommerce/loop/orderby.php:25
-msgid "Sort by price: low to high"
-msgstr "Ordenar por precio: ascendente"
-
-#: ../woocommerce/loop/orderby.php:26
-msgid "Sort by price: high to low"
-msgstr "Ordenar por precio: descendente"
-
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
 msgstr "¡Oferta!"
 
-#: ../woocommerce/order/form-tracking.php:17
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"return. This was given to you on your receipt and in the confirmation email "
-"you should have received."
-msgstr ""
-"Para rastrear su pedido, introduzca su ID de pedido en el cuadro de abajo y "
-"presione retorno. Estos datos aparecen en el recibo y en el email de "
-"confirmación que debe haber recibido."
+#~ msgid "Virtue: About with Image"
+#~ msgstr "Virtue: Acerca de...con Imagen"
 
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Order ID"
-msgstr "ID Pedido"
+#~ msgid "Options panel created using %1$s"
+#~ msgstr "Panel Opciones creado usando %1$s"
 
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Found in your order confirmation email."
-msgstr "Se encuentra en el correo electrónico de confirmación de pedido."
+#~ msgid "Redux Framework"
+#~ msgstr "Redux Framework"
 
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Billing Email"
-msgstr "Correo electrónico de facturación"
+#~ msgid "Options"
+#~ msgstr "Opciones"
 
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Email you used during checkout."
-msgstr "Correo electrónico que utiliza durante la comprobación."
+#~ msgid ""
+#~ "You have changes that are not saved. Would you like to save them now?"
+#~ msgstr ""
+#~ "Usted tiene cambios sin guardar. ¿Le gustar&iacute;a salvarlos ahora?"
 
-#: ../woocommerce/order/form-tracking.php:23
-msgid "Track"
-msgstr "Rastrear"
+#~ msgid "Are you sure? Resetting will lose all custom values."
+#~ msgstr ""
+#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
+#~ "personalizados."
 
-#: ../woocommerce/order/order-details.php:16
-msgid "Order Details"
-msgstr "Detalles Pedido"
+#~ msgid "Are you sure? Resetting will lose all custom values in this section."
+#~ msgstr ""
+#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
+#~ "personalizados en esta secci&oacute;n."
 
-#: ../woocommerce/order/order-details.php:66
-#, php-format
-msgid "Download file%s"
-msgstr "Descargas archivo%s"
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset. "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Las opciones actuales ser&aacute;n reemplazadas por los valores de esta "
+#~ "preselecci&oacute;n. ¿Quiere continuar?"
 
-#: ../woocommerce/order/order-details.php:98
-msgid "Order Again"
-msgstr "Pedir de nuevo"
+#, fuzzy
+#~ msgid "Please Wait"
+#~ msgstr "Por favor, inténtelo de nuevo"
 
-#: ../woocommerce/order/order-details.php:105
-msgid "Customer details"
-msgstr "Datos de cliente"
+#~ msgid ""
+#~ "Warning- This options panel will not work properly without javascript!"
+#~ msgstr ""
+#~ "Advertencia: este panel de opciones no funcionar&aacute; correctamente "
+#~ "sin JavaScript."
 
-#: ../woocommerce/order/order-details.php:126
-msgid "Billing Address"
-msgstr "Dirección de Facturación"
+#~ msgid "Expand"
+#~ msgstr "Expandir"
 
-#: ../woocommerce/order/order-details.php:130
-#: ../woocommerce/order/order-details.php:145
-msgid "N/A"
-msgstr "N/A"
+#~ msgid "Save Changes"
+#~ msgstr "Guardar cambios"
 
-#: ../woocommerce/order/order-details.php:141
-msgid "Shipping Address"
-msgstr "Dirección de Envío"
+#~ msgid "Reset Section"
+#~ msgstr "Resetear seleción"
 
-#: ../woocommerce/shop/breadcrumb.php:63
-msgid "Products tagged &ldquo;"
-msgstr "Productos etiquetados como &ldquo;"
+#~ msgid "Reset All"
+#~ msgstr "Resetar todo"
 
-#: ../woocommerce/shop/breadcrumb.php:91
-#: ../woocommerce/shop/breadcrumb.php:188
-msgid "Search results for &ldquo;"
-msgstr "Resultados búsqueda de &ldquo;"
+#~ msgid "Working..."
+#~ msgstr "Trabajando..."
 
-#: ../woocommerce/shop/breadcrumb.php:146
-msgid "Error 404"
-msgstr "Error 404"
+#~ msgid "Settings Imported!"
+#~ msgstr "Configuraci&oacute;n importada!"
 
-#: ../woocommerce/shop/breadcrumb.php:192
-msgid "Posts tagged &ldquo;"
-msgstr "Publicaciones con etiqueta &ldquo;"
+#~ msgid "Settings Saved!"
+#~ msgstr "Configuraci&oacute;n guardada."
 
-#: ../woocommerce/shop/breadcrumb.php:197
-msgid "Author:"
-msgstr "Autor:"
+#~ msgid "Settings have changed, you should save them!"
+#~ msgstr "La configuraci&oacute;n ha cambiado, debe guardala"
 
-#: ../woocommerce/shop/breadcrumb.php:202
-msgid "Page"
-msgstr "Página"
+#~ msgid "error(s) were found!"
+#~ msgstr "error(es) encontrado (s)"
 
-#: ../woocommerce/shop/form-login.php:20
-msgid "Username or email"
-msgstr "Nombre usuario o dirección de correo"
+#~ msgid "warning(s) were found!"
+#~ msgstr "se encontraro advertencia (s)"
 
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr "Contraseña"
+#~ msgid "System Info"
+#~ msgstr "Informaci&oacute;n del sistema"
 
-#: ../woocommerce/shop/form-login.php:31
-msgid "Login"
-msgstr "Iniciar sesión"
+#~ msgid "%s review for %s"
+#~ msgid_plural "%s reviews for %s"
+#~ msgstr[0] "Opini&oacute;n para %s"
+#~ msgstr[1] "%s Opiniones para %s"
 
-#: ../woocommerce/shop/form-login.php:33
-msgid "Lost Password?"
-msgstr "¿Contraseña perdida?"
+#~ msgid "Reviews"
+#~ msgstr "Opiniones"
 
-#: ../woocommerce/single-product/rating.php:23
-#, php-format
-msgid "Rated %s out of 5"
-msgstr "Calificación %s sobre 5"
+#~ msgid "There are no reviews yet."
+#~ msgstr "A&uacute;n no hay opiniones"
 
-#: ../woocommerce/single-product/rating.php:25
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr "sobre 5"
+#~ msgid "Add a review"
+#~ msgstr "Añadir una opini&oacute;n"
 
-#: ../woocommerce/single-product/rating.php:28
-#, php-format
-msgid "%s customer review"
-msgid_plural "%s customer reviews"
-msgstr[0] "%s evaluac&oacute;n del cliente"
-msgstr[1] "%s evaluaciones de clientes"
+#~ msgid "Be the first to review"
+#~ msgstr "Sea el primero en opinar"
 
-#: ../woocommerce/single-product/review.php:26
-#, php-format
-msgid "Rated %d out of 5"
-msgstr "Calificado %d sobre 5"
+#~ msgid "Email"
+#~ msgstr "Email"
 
-#: ../woocommerce/single-product/review.php:34
-msgid "Your comment is awaiting approval"
-msgstr "Comentario en espera de aprobación"
+#~ msgid "Submit"
+#~ msgstr "Enviar "
 
-#: ../woocommerce/single-product/review.php:43
-msgid "verified owner"
-msgstr "Propietario verificado"
+#~ msgid "Your Rating"
+#~ msgstr "Su calificaci&oacute;n"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:80
-msgid "Choose an option"
-msgstr "Elegir una opción"
+#~ msgid "Rate&hellip;"
+#~ msgstr "Cambio&hellip;"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:128
-msgid "Clear selection"
-msgstr "Borrar seleción"
+#~ msgid "Perfect"
+#~ msgstr "Perfecto"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:161
-msgid "This product is currently out of stock and unavailable."
-msgstr "Producto actualmente agotado y no est&aacute; disponible"
+#~ msgid "Good"
+#~ msgstr "Bueno"
+
+#~ msgid "Average"
+#~ msgstr "Medio"
+
+#~ msgid "Not that bad"
+#~ msgstr "Regular"
+
+#~ msgid "Very Poor"
+#~ msgstr "Malo"
+
+#~ msgid "Your Review"
+#~ msgstr "Su opinión"
+
+#~ msgid ""
+#~ "Only logged in customers who have purchased this product may leave a "
+#~ "review."
+#~ msgstr ""
+#~ "S&oacute;lo los clientes que han comprado este producto, pueden dejar una "
+#~ "rese&ntilde;a."
+
+#~ msgid "Cart Totals"
+#~ msgstr "Total Carro"
+
+#~ msgid "Cart Subtotal"
+#~ msgstr "Subtotal Carro"
+
+#~ msgid "Order Total"
+#~ msgstr "Total Pedido"
+
+#~ msgid " (taxes estimated for %s)"
+#~ msgstr " (impuestos para %s)"
+
+#~ msgid ""
+#~ "Note: Shipping and taxes are estimated%s and will be updated during "
+#~ "checkout based on your billing and shipping information."
+#~ msgstr ""
+#~ " Nota: Envío e impuestos son estimados %s y se actualizará durante la "
+#~ "comprobación de compra basada en la información de facturación y envío."
+
+#~ msgid "Product"
+#~ msgstr "Producto"
+
+#~ msgid "Price"
+#~ msgstr "Precio"
+
+#~ msgid "Quantity"
+#~ msgstr "Cantidad"
+
+#~ msgid "Total"
+#~ msgstr "Total"
+
+#~ msgid "Remove this item"
+#~ msgstr "Quitar artículo"
+
+#~ msgid "Available on backorder"
+#~ msgstr "Disponible bajo pedido"
+
+#~ msgid "Coupon"
+#~ msgstr "Cupón"
+
+#~ msgid "Coupon code"
+#~ msgstr "Código del Cupón"
+
+#~ msgid "Apply Coupon"
+#~ msgstr "Utilizar Cupón"
+
+#~ msgid "Update Cart"
+#~ msgstr "Actualizar carrito"
+
+#~ msgid "Proceed to Checkout"
+#~ msgstr "Pasar por caja &rarr;"
+
+#~ msgid "You may be interested in&hellip;"
+#~ msgstr "Puede que le interese in&hellip;"
+
+#~ msgid "Calculate Shipping"
+#~ msgstr "Calcular Envío"
+
+#~ msgid "Select a country&hellip;"
+#~ msgstr "Localidad &hellip;"
+
+#~ msgid "State / county"
+#~ msgstr "Pais / Localidad"
+
+#~ msgid "Select a state&hellip;"
+#~ msgstr "Pais&hellip;"
+
+#~ msgid "City"
+#~ msgstr "Ciudad"
+
+#~ msgid "Postcode / Zip"
+#~ msgstr "Código Postal"
+
+#~ msgid "Update Totals"
+#~ msgstr "Actualizar totales"
+
+#~ msgid "Default sorting"
+#~ msgstr "Orden por defecto"
+
+#~ msgid "Sort by popularity"
+#~ msgstr "Ordenar por popularidad"
+
+#~ msgid "Sort by average rating"
+#~ msgstr "Ordenar por calificación"
+
+#~ msgid "Sort by newness"
+#~ msgstr "Ordenar por novedad"
+
+#~ msgid "Sort by price: low to high"
+#~ msgstr "Ordenar por precio: ascendente"
+
+#~ msgid "Sort by price: high to low"
+#~ msgstr "Ordenar por precio: descendente"
+
+#~ msgid ""
+#~ "To track your order please enter your Order ID in the box below and press "
+#~ "return. This was given to you on your receipt and in the confirmation "
+#~ "email you should have received."
+#~ msgstr ""
+#~ "Para rastrear su pedido, introduzca su ID de pedido en el cuadro de abajo "
+#~ "y presione retorno. Estos datos aparecen en el recibo y en el email de "
+#~ "confirmación que debe haber recibido."
+
+#~ msgid "Order ID"
+#~ msgstr "ID Pedido"
+
+#~ msgid "Found in your order confirmation email."
+#~ msgstr "Se encuentra en el correo electrónico de confirmación de pedido."
+
+#~ msgid "Billing Email"
+#~ msgstr "Correo electrónico de facturación"
+
+#~ msgid "Email you used during checkout."
+#~ msgstr "Correo electrónico que utiliza durante la comprobación."
+
+#~ msgid "Track"
+#~ msgstr "Rastrear"
+
+#~ msgid "Order Details"
+#~ msgstr "Detalles Pedido"
+
+#~ msgid "Download file%s"
+#~ msgstr "Descargas archivo%s"
+
+#~ msgid "Order Again"
+#~ msgstr "Pedir de nuevo"
+
+#~ msgid "Customer details"
+#~ msgstr "Datos de cliente"
+
+#~ msgid "Billing Address"
+#~ msgstr "Dirección de Facturación"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "Shipping Address"
+#~ msgstr "Dirección de Envío"
+
+#~ msgid "Products tagged &ldquo;"
+#~ msgstr "Productos etiquetados como &ldquo;"
+
+#~ msgid "Search results for &ldquo;"
+#~ msgstr "Resultados búsqueda de &ldquo;"
+
+#~ msgid "Error 404"
+#~ msgstr "Error 404"
+
+#~ msgid "Posts tagged &ldquo;"
+#~ msgstr "Publicaciones con etiqueta &ldquo;"
+
+#~ msgid "Author:"
+#~ msgstr "Autor:"
+
+#~ msgid "Page"
+#~ msgstr "Página"
+
+#~ msgid "Username or email"
+#~ msgstr "Nombre usuario o dirección de correo"
+
+#~ msgid "Password"
+#~ msgstr "Contraseña"
+
+#~ msgid "Login"
+#~ msgstr "Iniciar sesión"
+
+#~ msgid "Lost Password?"
+#~ msgstr "¿Contraseña perdida?"
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Calificación %s sobre 5"
+
+#~ msgid "out of 5"
+#~ msgstr "sobre 5"
+
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s evaluac&oacute;n del cliente"
+#~ msgstr[1] "%s evaluaciones de clientes"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Calificado %d sobre 5"
+
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Comentario en espera de aprobación"
+
+#~ msgid "verified owner"
+#~ msgstr "Propietario verificado"
+
+#~ msgid "Choose an option"
+#~ msgstr "Elegir una opción"
+
+#~ msgid "Clear selection"
+#~ msgstr "Borrar seleción"
+
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "Producto actualmente agotado y no est&aacute; disponible"
 
 #, fuzzy
 #~ msgid ""
@@ -3194,9 +3116,6 @@ msgstr "Producto actualmente agotado y no est&aacute; disponible"
 
 #~ msgid "Top"
 #~ msgstr "Superior"
-
-#~ msgid "Right"
-#~ msgstr "Derecha"
 
 #~ msgid "Bottom"
 #~ msgstr "Inferior"
@@ -3562,12 +3481,6 @@ msgstr "Producto actualmente agotado y no est&aacute; disponible"
 
 #~ msgid "Mobile Video Embed Code"
 #~ msgstr "Incrustrar código de video para móviles"
-
-#~ msgid "Homepage Layout Manager"
-#~ msgstr "Gestor Diseño Página Inicio"
-
-#~ msgid "Organize how you want the layout to appear on the homepage"
-#~ msgstr "Organizar el diseño a mostrar en página de inicio"
 
 #~ msgid "Home Porfolio Settings"
 #~ msgstr "Ajustes de Portfolio en Página Inicio"

@@ -753,30 +753,58 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 <?php
   }
 }
+function kad_is_edit_page(){
+  if (!is_admin()) return false;
 
-function kadence_widget_uploadScript($hook){
-   if( 'widgets.php' != $hook )
-        return;
-  wp_enqueue_media();
-  wp_enqueue_script('kadadsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
+    if ( in_array( $GLOBALS['pagenow'], array( 'post.php', 'post-new.php', 'widgets.php', 'post.php', 'post-new.php' ) ) ) {
+      return true;
+    }
 }
-add_action('admin_enqueue_scripts', 'kadence_widget_uploadScript');
+function virtue_admin_script() {
+  if(is_admin()){ if(kad_is_edit_page()){
+    function kadence_widget_uploadScript(){
+      wp_enqueue_media();
+      wp_enqueue_script('kadadsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
+    }
+    add_action('admin_enqueue_scripts', 'kadence_widget_uploadScript');
+    }}
+}
+add_action('init', 'virtue_admin_script');
 
 class Simple_About_With_Image extends WP_Widget{
 
     function Simple_About_With_Image() {
         $widget_ops = array('classname' => 'virtue_about_with_image', 'description' => __('This allows for an image and a simple about text.', 'virtue'));
-        $this->WP_Widget('virtue_about_with_image', __('Virtue: About with Image', 'virtue'), $widget_ops);
+        $this->WP_Widget('virtue_about_with_image', __('Virtue: Image', 'virtue'), $widget_ops);
         $this->alt_option_name = 'virtue_about_with_image';
     }
 
     public function widget($args, $instance){ 
-        extract( $args );   
+        extract( $args );
+        if (!empty($instance['image_link_open']) && $instance['image_link_open'] == "none") {
+          $uselink = false;
+          $link = '';
+          $linktype = '';
+        } else if(empty($instance['image_link_open']) || $instance['image_link_open'] == "lightbox") {
+          $uselink = true;
+          $link = esc_url($instance['image_uri']);
+          $linktype = 'rel="lightbox"';
+        } else if($instance['image_link_open'] == "_blank") {
+          $uselink = true;
+          if(!empty($instance['image_link'])) {$link = $instance['image_link'];} else {$link = esc_url($instance['image_uri']);}
+          $linktype = 'target="_blank"';
+        } else if($instance['image_link_open'] == "_self") {
+          $uselink = true;
+          if(!empty($instance['image_link'])) {$link = $instance['image_link'];} else {$link = esc_url($instance['image_uri']);}
+          $linktype = 'target="_self"';
+        }
     ?>
      <?php echo $before_widget; ?>
-    <div class="about_image_widget">
+    <div class="kad_img_upload_widget">
+        <?php if($uselink == true) {echo '<a href="'.$link.'" '.$linktype.'>';} ?>
         <img src="<?php echo esc_url($instance['image_uri']); ?>" />
-        <p><?php echo $instance['text']; ?></p>
+        <?php if($uselink == true) {echo '</a>'; }?>
+        <?php if(!empty($instance['text'])) { ?> <div class="virtue_image_widget_caption"><?php echo $instance['text']; ?></div><?php }?>
     </div>
 
     <?php echo $after_widget; ?>
@@ -784,24 +812,58 @@ class Simple_About_With_Image extends WP_Widget{
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['text'] = strip_tags( $new_instance['text'] );
+        $instance['text'] = $new_instance['text'];
         $instance['image_uri'] = strip_tags( $new_instance['image_uri'] );
+        $instance['image_link'] = $new_instance['image_link'];
+        $instance['image_link_open'] = $new_instance['image_link_open'];
+        $this->flush_widget_cache();
         return $instance;
     }
+     function flush_widget_cache() {
+    wp_cache_delete('virtue_about_with_image', 'widget');
+  }
 
-  public function form($instance){ ?>
+  public function form($instance){ 
+    $image_uri = isset($instance['image_uri']) ? esc_attr($instance['image_uri']) : '';
+    $image_link = isset($instance['image_link']) ? esc_attr($instance['image_link']) : '';
+    if (isset($instance['image_link_open'])) { $image_link_open = esc_attr($instance['image_link_open']); } else {$image_link_open = 'lightbox';}
+    $link_options = array();
+    $link_options_array = array();
+    $link_options[] = array("slug" => "lightbox", "name" => __('Lightbox', 'virtue'));
+    $link_options[] = array("slug" => "_blank", "name" => __('New Window', 'virtue'));
+    $link_options[] = array("slug" => "_self", "name" => __('Same Window', 'virtue'));
+    $link_options[] = array("slug" => "none", "name" => __('No Link', 'virtue'));
+
+    foreach ($link_options as $link_option) {
+      if ($image_link_open == $link_option['slug']) { $selected=' selected="selected"';} else { $selected=""; }
+      $link_options_array[] = '<option value="' . $link_option['slug'] .'"' . $selected . '>' . $link_option['name'] . '</option>';
+    }
+    ?>
+  <div class="kad_img_upload_widget">
     <p>
-      <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'virtue'); ?></label><br />
-        <img class="custom_media_image" src="<?php if(!empty($instance['image_uri'])){echo $instance['image_uri'];} ?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
-        <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo $instance['image_uri']; ?>">
-        <input type="button" value="<?php _e('Upload', 'virtue'); ?>" class="button custom_media_upload" id="custom_image_uploader" />
+        <img class="kad_custom_media_image" src="<?php if(!empty($instance['image_uri'])){echo $instance['image_uri'];} ?>" style="margin:0;padding:0;max-width:100px;display:block" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text', 'virtue'); ?></label><br />
-      <textarea name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" ><?php echo $instance['text']; ?></textarea>
+        <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image URL', 'virtue'); ?></label><br />
+        <input type="text" class="widefat kad_custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo $image_uri; ?>">
+        <input type="button" value="<?php _e('Upload', 'virtue'); ?>" class="button kad_custom_media_upload" id="kad_custom_image_uploader" />
     </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('image_link_open'); ?>"><?php _e('Image opens in', 'virtue'); ?></label><br />
+        <select id="<?php echo $this->get_field_id('image_link_open'); ?>" name="<?php echo $this->get_field_name('image_link_open'); ?>"><?php echo implode('', $link_options_array);?></select>
+    </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('image_link'); ?>"><?php _e('Image Link (optional)', 'virtue'); ?></label><br />
+        <input type="text" class="widefat kad_img_widget_link" name="<?php echo $this->get_field_name('image_link'); ?>" id="<?php echo $this->get_field_id('image_link'); ?>" value="<?php echo $image_link; ?>">
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text/Caption (optional)', 'virtue'); ?></label><br />
+      <textarea name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" ><?php if(!empty($instance['text'])) echo $instance['text']; ?></textarea>
+    </p>
+  </div>
     <?php
   }
+
 
 
 }

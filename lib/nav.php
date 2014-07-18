@@ -23,7 +23,7 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
     $classes = empty($item->classes) ? array() : (array) $item->classes;
 
     $classes = array_filter($classes, array(&$this, 'check_current'));
-
+    $classes[] = 'menu-item-'. $item->ID;
 
     if ($custom_classes = get_post_meta($item->ID, '_menu_item_classes', true)) {
       foreach ($custom_classes as $custom_class) {

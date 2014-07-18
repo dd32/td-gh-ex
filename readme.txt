@@ -48,6 +48,15 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.1 =
+* Add string to pot file.
+* Add sweedish .po file
+* Update Image Widget
+* Add menu id class
+* Fix Stylesheet issue
+* Fix small issue with tgmpa
+* Fix small issue with user profiles
+
 = Version: 2.2.0 =
 * Fix small issue slides not deleting.
 * Fix skins not showing.

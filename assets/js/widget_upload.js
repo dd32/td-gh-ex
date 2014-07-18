@@ -1,27 +1,61 @@
-jQuery(document).ready( function(){
- function media_upload( button_class) {
-    var _custom_media = true,
-    _orig_send_attachment = wp.media.editor.send.attachment;
-    jQuery('body').on('click',button_class, function(e) {
-        var button_id ='#'+jQuery(this).attr('id');
-        /* console.log(button_id); */
-        var self = jQuery(button_id);
-        var send_attachment_bkp = wp.media.editor.send.attachment;
-        var button = jQuery(button_id);
-        var id = button.attr('id').replace('_button', '');
-        _custom_media = true;
-        wp.media.editor.send.attachment = function(props, attachment){
-            if ( _custom_media  ) {
-               jQuery('.custom_media_id').val(attachment.id);
-               jQuery('.custom_media_url').val(attachment.url);
-               jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');
-            } else {
-                return _orig_send_attachment.apply( button_id, [props, attachment] );
-            }
-        };
-        wp.media.editor.open(button);
-        return false;
+ (function($){
+    "use strict";
+
+    $.imgupload = $.imgupload || {};
+    
+    $(document).ready(function () {
+         $.imgupload();
     });
-}
-media_upload( '.custom_media_upload');
-});
+$.imgupload = function(){
+        // When the user clicks on the Add/Edit gallery button, we need to display the gallery editing
+        $('body').on({
+             click: function(event){
+                var current_imgupload = $(this).closest('.kad_img_upload_widget');
+
+                // Make sure the media gallery API exists
+                if ( typeof wp === 'undefined' || ! wp.media ) {
+                    return;
+                }
+                event.preventDefault();
+
+                var frame;
+                // Activate the media editor
+                var $$ = $(this);
+
+                // If the media frame already exists, reopen it.
+                if ( frame ) {
+                        frame.open();
+                        return;
+                    }
+
+                    // Create the media frame.
+                    frame = wp.media({
+                        multiple: false,
+                        library: {type: 'image'}
+                    });
+
+                        // When an image is selected, run a callback.
+                frame.on( 'select', function() {
+
+                    // Grab the selected attachment.
+                    var attachment = frame.state().get('selection').first();
+                    frame.close();
+
+                    current_imgupload.find('.kad_custom_media_url').val(attachment.attributes.url);
+                    current_imgupload.find('.kad_custom_media_id').val(attachment.attributes.id);
+                    var thumbSrc = attachment.attributes.url;
+                    if (typeof attachment.attributes.sizes !== 'undefined' && typeof attachment.attributes.sizes.thumbnail !== 'undefined') {
+                        thumbSrc = attachment.attributes.sizes.thumbnail.url;
+                    } else {
+                        thumbSrc = attachment.attributes.icon;
+                    }
+                    current_imgupload.find('.kad_custom_media_image').attr('src', thumbSrc);
+                });
+
+                // Finally, open the modal.
+                frame.open();
+            }
+
+        }, '.kad_custom_media_upload');
+     };
+})(jQuery);

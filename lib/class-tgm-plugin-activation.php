@@ -952,7 +952,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 /** Create a new instance of the class */
 new TGM_Plugin_Activation;
 
-if ( ! function_exists( 'virtue' ) ) {
+if ( ! function_exists( 'tgmpa' ) ) {
 	/**
 	 * Helper function to register a collection of required plugins.
 	 *

@@ -446,10 +446,10 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
   return true;
 }
 //User Addon
-add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'show_user_profile', 'kad_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'kad_show_extra_profile_fields' );
 
-function my_show_extra_profile_fields( $user ) { ?>
+function kad_show_extra_profile_fields( $user ) { ?>
 
 <h3>Extra profile information</h3>
 
@@ -519,10 +519,10 @@ function my_show_extra_profile_fields( $user ) { ?>
   </tr>
 </table>
 <?php }
-add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+add_action( 'personal_options_update', 'kad_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'kad_save_extra_profile_fields' );
 
-function my_save_extra_profile_fields( $user_id ) {
+function kad_save_extra_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
   update_user_meta( $user_id, 'occupation', $_POST['occupation'] );
