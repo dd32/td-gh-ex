@@ -1,11 +1,11 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 1.0
+Version: 1.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MultiColors is a colorful free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Primary sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, blue, light, dark, gray, editor-style, translation-ready
+Description: MultiColors is a colorful free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Primary sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, custom header-image, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-header, custom-menu, featured-images, red, orange, yellow, green, blue, purple, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: multicolors
@@ -77,10 +77,9 @@ table {
 body {background:#333; font-family: 'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
 #container {width: 100%; border:0; margin:0; padding:0; word-wrap: break-word;}
 #main-content-container {width:100%; background:#00aaff;}
+#main-content-container:after {content:''; display:block; clear:both;}
 #main-content {max-width: 1160px; margin: 0 auto 0; padding:0 20px; text-align: left; word-wrap: break-word;}
 #main-content:after {content:''; display:block; clear:both;}
-#content-container {width:100%; background:orange;}
-#content-container:after {content:''; display:block; clear:both;}
 #content {width: 60%; float:left; padding: 20px 2% 20px 0; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0 10px; word-wrap: break-word;}
 
@@ -97,7 +96,7 @@ a:hover {text-decoration:none;}
 strong {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
-pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; padding:10px; word-wrap: break-word;}
+pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; color:#333; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
 p {margin:0 0 10px; text-align:justify;}

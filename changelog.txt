@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-MultiColors version 1.0 - july 2014 
+MultiColors version 1.1 - july 2014 
 - first stable release
 
 
