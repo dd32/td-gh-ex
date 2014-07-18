@@ -936,12 +936,6 @@ if (!function_exists('semperfi_js')) {
 
 if (!is_admin()) add_action('wp_enqueue_scripts', 'semperfi_js', 21);
 
-//Initialize the update checker.
-require 'theme-update-checker.php';
-$example_update_checker = new ThemeUpdateChecker(
-	'semper-fi',
-	'http://schwarttzy.com/updates/semperfi.json' );
-
 // Add some CSS so I can Style the Theme Options Page
 function semperfi_admin_enqueue_scripts( $hook_suffix ) {
 	wp_enqueue_style('semperfi-theme-options', get_template_directory_uri() . '/theme-options.css', false, '1.0');}
@@ -1077,6 +1071,10 @@ function semperfi_theme_options_do_page() { ?>
                         <tr>
                             <th><?php _e('Version', 'localize_semperfi'); ?></th>
                             <th></th>
+                        </tr>
+                        <tr>
+                            <th>3.3</th>
+                            <td><?php _e('Fixed the issue with updater problems.', 'localize_semperfi'); ?></td>
                         </tr>
                         <tr>
                             <th>3.2</th>
