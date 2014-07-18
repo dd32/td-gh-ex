@@ -8,7 +8,7 @@
 	Author URI: http://www.andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0
+	Version: 1.01
 	
 	All files, unless otherwise stated, are released under the GNU General Public License
 	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1524,12 +1524,12 @@ abbr, acronym { cursor: help; }
 	left: 0;
 }
 
-.author-avatar,
-.author-avatar img {
+.author-meta-aside .author-avatar,
+.author-meta-aside .author-avatar img {
 	display: block;
 }
 
-.author-avatar img {
+.author-meta-aside .author-avatar img {
 	width: 100%;
 	height: auto;
 	border-radius: 999px;

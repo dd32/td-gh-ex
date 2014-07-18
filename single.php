@@ -241,29 +241,21 @@
 					<p class="author-position">
 				
 						<?php
-						
-							echo 'Administrator';
-						
-							/*
-							$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-							
-							$user_roles = $curauth->roles;
-							$user_role = array_shift($user_roles);
-							
-							if ($user_role == 'administrator') {
-								_e('Administrator','hoffman');
-							} elseif ($user_role == 'editor') {
-								_e('Editor','hoffman');
-							} elseif ($user_role == 'author') {
-								_e('Author','hoffman');
-							} elseif ($user_role == 'contributor') {
-								_e('Contributor','hoffman');
-							} elseif ($user_role == 'subscriber') {
-								_e('Subscriber','hoffman');
+
+							global $post;
+							if ( user_can( $post->post_author, 'administrator' ) ) {
+							  echo 'Administrator';
+							} elseif ( user_can( $post->post_author, 'editor' ) ) {
+							  echo 'Editor';
+							} elseif ( user_can( $post->post_author, 'author' ) ) {
+							  echo 'Author';
+							} elseif ( user_can( $post->post_author, 'contributor' ) ) {
+							  echo 'Contributor';
+							} elseif ( user_can( $post->post_author, 'subscriber' ) ) {
+							  echo 'Subscriber';
 							} else {
-								echo $user_role ;
+							  echo 'Guest';
 							}
-							*/
 						?>
 						
 					</h4>

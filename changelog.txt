@@ -1,5 +1,11 @@
 *** Hoffman changelog ***
 
 
-Version 1.0 (2014-07-XX)
+Version 1.01 (2014-07-18)
+-------------------------
+- Fixed the author position function in single.php
+– Fixed CSS conflict between the author avatar in single.php and Gravatar
+
+
+Version 1.0 (2014-07-17)
 ------------------------- 
