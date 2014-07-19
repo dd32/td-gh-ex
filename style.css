@@ -8,7 +8,7 @@
 	Author URI: http://www.andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.02
+	Version: 1.03
 	
 	All files, unless otherwise stated, are released under the GNU General Public License
 	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -325,7 +325,8 @@ img#wpstats { display: none !important } /* silly wp stats */
 
 
 .post,
-.posts .page { 
+.posts .page,
+.single-attachment .attachment { 
 	background: #fff; 
 }
 
@@ -608,7 +609,7 @@ a.post-quote:hover {
 .post-meta-inner p {
 	display: inline-block;
 	width: 46%;
-	margin: 0 5% 40px 0;
+	margin: 20px 5% 20px 0;
 	vertical-align: top;
 	text-align: center;
 	line-height: 130%;
@@ -632,13 +633,10 @@ a.post-quote:hover {
 
 
 .post-nav { 
-	padding-top: 40px;
+	padding-top: 20px;
 	border-top: 2px solid #555; 
+	margin-top: 20px;
 }
-
-.post-nav p { margin: 0; }
-
-.post-nav p + p { margin-left: 5%; }
 
 
 /* -------------------------------------------------------------------------------- */

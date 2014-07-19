@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Rams v1.0\n"
+"Project-Id-Version: Rams v1.02\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-19 08:44:29+0000\n"
+"PO-Revision-Date: 2014-07-19 14:10:14+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -209,8 +209,10 @@ msgstr "Accentfärg"
 msgid "Menu"
 msgstr "Meny"
 
+#: image.php:43
 #: page.php:53
-#: single.php:198
+#: single.php:207
+#: template-archive.php:113
 #@ rams
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchar din sökning. Vänligen försök igen."
@@ -273,22 +275,24 @@ msgstr "Stäng"
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: single.php:162
+#: single.php:169
 #@ rams
 msgid "Next post"
 msgstr "Nästa inlägg"
 
-#: single.php:173
+#: single.php:180
 #@ rams
 msgid "Previous post"
 msgstr "Föregående inlägg"
 
-#: single.php:142
+#: single.php:144
+#: template-archive.php:47
 #@ rams
 msgid "Categories"
 msgstr "Kategorier"
 
-#: single.php:146
+#: single.php:150
+#: template-archive.php:51
 #@ rams
 msgid "Tags"
 msgstr "Etiketter"
@@ -298,27 +302,30 @@ msgstr "Etiketter"
 msgid "Type and press enter"
 msgstr "Skriv och tryck enter"
 
+#: image.php:49
 #: single.php:118
 #@ rams
 msgid "Show information about the post"
 msgstr "Visa information om inlägget"
 
+#: image.php:69
 #: single.php:138
 #@ rams
 msgid "Author"
 msgstr "Författare"
 
+#: image.php:71
 #: single.php:140
 #@ rams
 msgid "Posted"
 msgstr "Publicerades"
 
-#: single.php:161
+#: single.php:168
 #@ rams
 msgid "Next"
 msgstr "Nästa"
 
-#: single.php:172
+#: single.php:179
 #@ rams
 msgid "Previous"
 msgstr "Föregående"
@@ -333,8 +340,45 @@ msgstr "Inställningar för Rams"
 msgid "Allows you to customize theme settings for Rams."
 msgstr "Låter dig anpassa temainställningarna för Rams."
 
+#: image.php:59
 #: single.php:128
 #@ rams
 msgid "Post meta"
 msgstr "Inläggsinfo"
+
+#: image.php:75
+#@ rams
+msgid "Resolution"
+msgstr "Upplösning"
+
+#: template-archive.php:31
+#@ rams
+msgid "Posts"
+msgstr "Inlägg"
+
+#: template-archive.php:58
+#, php-format
+#@ rams
+msgid "View all posts in %s"
+msgstr "Visa alla inlägg i %s"
+
+#: template-archive.php:65
+#@ rams
+msgid "Contributors"
+msgstr "Medarbetare"
+
+#: template-archive.php:71
+#@ rams
+msgid "Archives by Year"
+msgstr "Arkiv efter år"
+
+#: template-archive.php:77
+#@ rams
+msgid "Archives by Month"
+msgstr "Arkiv efter månader"
+
+#: template-archive.php:83
+#@ rams
+msgid "Archives by Day"
+msgstr "Arkiv efter dagar"
 

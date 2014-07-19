@@ -1,6 +1,13 @@
 *** Rams changelog ***
 
 
+Version 1.03 (2014-07-19)
+-------------------------
+- Added image.php and template-archives.php
+- Added missing namespaces
+- Updated the Swedish .mo file
+
+
 Version 1.02 (2014-07-19)
 -------------------------
 - Improved styling of tables

@@ -139,7 +139,11 @@
 					
 					<p class="post-meta-date"><strong><?php _e('Posted','rams'); ?></strong><a href="<?php the_permalink(); ?>"><?php the_date(get_option('date_format')); ?><span> &mdash; <?php the_time(get_option('time_format')); ?></span></a></p>
 					
-					<p><strong><?php _e('Categories','rams'); ?></strong><?php the_category(', '); ?></p>
+					<?php if (has_category()) : ?>
+					
+						<p><strong><?php _e('Categories','rams'); ?></strong><?php the_category(', '); ?></p>
+					
+					<?php endif; ?>
 					
 					<?php if (has_tag()) : ?>
 							
@@ -147,39 +151,44 @@
 					
 					<?php endif; ?>
 					
-					<div class="post-nav">
+					<?php
+						$prev_post = get_previous_post();
+						$next_post = get_next_post();
 						
-						<?php
-							$prev_post = get_previous_post();
-							$next_post = get_next_post();
-						?>
+						if (!empty( $next_post ) || !empty( $prev_post )):
 						
-						<?php
-						if (!empty( $next_post )): ?>
+					?>
+					
+						<div class="post-nav">
 							
-							<p>
-								<strong><?php _e('Next', 'rams'); ?></strong>
-								<a class="post-nav-newer" title="<?php _e('Next post', 'rams'); echo ': ' . get_the_title($next_post); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>">
-									<?php echo get_the_title($next_post); ?>
-								</a>
-							</p>
-					
-						<?php endif;
-														
-						if (!empty( $prev_post )): ?>
+							<?php
+							if (!empty( $next_post )): ?>
+								
+								<p>
+									<strong><?php _e('Next', 'rams'); ?></strong>
+									<a class="post-nav-newer" title="<?php _e('Next post', 'rams'); echo ': ' . get_the_title($next_post); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>">
+										<?php echo get_the_title($next_post); ?>
+									</a>
+								</p>
 						
-							<p>
-								<strong><?php _e('Previous', 'rams'); ?></strong>
-								<a class="post-nav-older" title="<?php _e('Previous post', 'rams'); echo ': ' . get_the_title($prev_post); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>">
-									<?php echo get_the_title($prev_post); ?>
-								</a>
-							</p>
-					
-						<?php endif; ?>
+							<?php endif;
+															
+							if (!empty( $prev_post )): ?>
+							
+								<p>
+									<strong><?php _e('Previous', 'rams'); ?></strong>
+									<a class="post-nav-older" title="<?php _e('Previous post', 'rams'); echo ': ' . get_the_title($prev_post); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>">
+										<?php echo get_the_title($prev_post); ?>
+									</a>
+								</p>
 						
-						<div class="clear"></div>
-																						
-					</div> <!-- /post-nav -->
+							<?php endif; ?>
+							
+							<div class="clear"></div>
+																							
+						</div> <!-- /post-nav -->
+					
+					<?php endif; ?>
 				
 				</div> <!-- /post-meta-inner -->
 			
