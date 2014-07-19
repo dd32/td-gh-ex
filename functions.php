@@ -44,12 +44,13 @@ function hoffman_setup() {
 // Register and enqueue Javascript files
 function hoffman_load_javascript_files() {
 
-	if ( !is_admin() )
+	if ( !is_admin() ) {
 		wp_register_script( 'hoffman_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
 		wp_register_script( 'hoffman_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
 		
 		wp_enqueue_script( 'hoffman_flexslider' );
 		wp_enqueue_script( 'hoffman_global' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'hoffman_load_javascript_files' );
@@ -57,7 +58,7 @@ add_action( 'wp_enqueue_scripts', 'hoffman_load_javascript_files' );
 
 // Register and enqueue styles
 function hoffman_load_style() {
-	if ( !is_admin() )
+	if ( !is_admin() ) {
 	    wp_register_style('hoffman_googleFonts', '//fonts.googleapis.com/css?family=Raleway:400,600,700,800|Vollkorn:400,400italic,700,700italic' );
 		wp_register_style('hoffman_genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
 		wp_register_style('hoffman_style', get_stylesheet_uri() );
@@ -65,6 +66,7 @@ function hoffman_load_style() {
 	    wp_enqueue_style( 'hoffman_googleFonts' );
 	    wp_enqueue_style( 'hoffman_genericons' );
 	    wp_enqueue_style( 'hoffman_style' );
+	}
 }
 
 add_action('wp_print_styles', 'hoffman_load_style');

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Hoffman v1.0\n"
+"Project-Id-Version: Hoffman v1.02\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-17 13:55:37+0000\n"
+"PO-Revision-Date: 2014-07-19 13:41:41+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -166,58 +166,58 @@ msgstr "Klistrat"
 msgid "Theme by"
 msgstr "Tema av"
 
-#: functions.php:87
+#: functions.php:89
 #@ hoffman
 msgid "Footer A"
 msgstr "Sidfot A"
 
-#: functions.php:89
+#: functions.php:91
 #@ hoffman
 msgid "Widgets in this area will be shown in the left column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i den vänstra kolumnen i sidfoten."
 
-#: functions.php:96
+#: functions.php:98
 #@ hoffman
 msgid "Footer B"
 msgstr "Footer B"
 
-#: functions.php:98
+#: functions.php:100
 #@ hoffman
 msgid "Widgets in this area will be shown in the middle column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i mittenkolumnen i sidfoten."
 
-#: functions.php:105
+#: functions.php:107
 #@ hoffman
 msgid "Footer C"
 msgstr "Footer C"
 
-#: functions.php:107
+#: functions.php:109
 #@ hoffman
 msgid "Widgets in this area will be shown in the right column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i den högra kolumnen i sidfoten."
 
-#: functions.php:159
+#: functions.php:161
 #, php-format
 #@ hoffman
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: functions.php:364
+#: functions.php:366
 #@ hoffman
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:364
+#: functions.php:366
 #@ hoffman
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: functions.php:383
+#: functions.php:385
 #@ hoffman
 msgid "Comment by post author"
 msgstr "Kommentar av inläggsförfattaren"
 
-#: functions.php:397
+#: functions.php:399
 #@ hoffman
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar moderering"
@@ -225,24 +225,24 @@ msgstr "Din kommentar inväntar moderering"
 #: content-gallery.php:32
 #: content-video.php:50
 #: content.php:44
-#: functions.php:415
+#: functions.php:417
 #: single.php:99
 #@ hoffman
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:420
+#: functions.php:422
 #@ hoffman
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:583
-#: functions.php:612
+#: functions.php:585
+#: functions.php:614
 #@ hoffman
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:604
+#: functions.php:606
 #@ hoffman
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -259,7 +259,7 @@ msgstr "Sökformulär"
 
 #: image.php:45
 #: page.php:60
-#: single.php:395
+#: single.php:387
 #: template-archive.php:113
 #: template-fullwidth.php:66
 #@ hoffman
@@ -316,28 +316,28 @@ msgstr "Huvudmeny"
 msgid "Social Menu"
 msgstr "Sociala medier-meny"
 
-#: functions.php:182
+#: functions.php:184
 #@ hoffman
 msgid "Read more"
 msgstr "Läs mer"
 
-#: functions.php:389
+#: functions.php:391
 #@ hoffman
 msgid "says:"
 msgstr "säger:"
 
-#: functions.php:449
+#: functions.php:451
 #: widgets/video.php:70
 #@ hoffman
 msgid "Video URL"
 msgstr "Video-länk"
 
-#: functions.php:450
+#: functions.php:452
 #@ hoffman
 msgid "Quote content"
 msgstr "Citatets innehåll"
 
-#: functions.php:451
+#: functions.php:453
 #@ hoffman
 msgid "Quote attribution"
 msgstr "Citatets attribution"
@@ -509,12 +509,12 @@ msgstr "Visa utvalda bilder"
 msgid "Displays a video of your choosing."
 msgstr "Visar en utvald video."
 
-#: functions.php:575
+#: functions.php:577
 #@ hoffman
 msgid "Hoffman Options"
 msgstr "Alternativ för Hoffman"
 
-#: functions.php:578
+#: functions.php:580
 #@ hoffman
 msgid "Allows you to customize theme settings for Hoffman."
 msgstr "Låter dig bestämma temainställningarna för Hoffman."
@@ -548,4 +548,34 @@ msgstr "1 kommentar"
 #@ hoffman
 msgid "% Comments"
 msgstr "% kommentarer"
+
+#: single.php:247
+#@ hoffman
+msgid "Administrator"
+msgstr "Administratör"
+
+#: single.php:249
+#@ hoffman
+msgid "Editor"
+msgstr "Redaktör"
+
+#: single.php:251
+#@ hoffman
+msgid "Author"
+msgstr "Skribent"
+
+#: single.php:253
+#@ hoffman
+msgid "Contributor"
+msgstr "Medarbetare"
+
+#: single.php:255
+#@ hoffman
+msgid "Subscriber"
+msgstr "Prenumerant"
+
+#: single.php:257
+#@ hoffman
+msgid "Guest"
+msgstr "Gäst"
 

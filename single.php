@@ -244,17 +244,17 @@
 
 							global $post;
 							if ( user_can( $post->post_author, 'administrator' ) ) {
-							  echo 'Administrator';
+								_e('Administrator','hoffman');
 							} elseif ( user_can( $post->post_author, 'editor' ) ) {
-							  echo 'Editor';
+								_e('Editor','hoffman');
 							} elseif ( user_can( $post->post_author, 'author' ) ) {
-							  echo 'Author';
+								_e('Author','hoffman');
 							} elseif ( user_can( $post->post_author, 'contributor' ) ) {
-							  echo 'Contributor';
+								_e('Contributor','hoffman');
 							} elseif ( user_can( $post->post_author, 'subscriber' ) ) {
-							  echo 'Subscriber';
+								_e('Subscriber','hoffman');
 							} else {
-							  echo 'Guest';
+								_e('Guest','hoffman');
 							}
 						?>
 						
