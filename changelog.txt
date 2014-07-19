@@ -1,6 +1,12 @@
 *** Rams changelog ***
 
 
+Version 1.02 (2014-07-19)
+-------------------------
+- Improved styling of tables
+– Made the header more adaptable to long blog titles at < 600px
+
+
 Version 1.01 (2014-07-19)
 -------------------------
 - Added missing .sticky class 
