@@ -1,6 +1,11 @@
 *** Baskerville changelog ***
 
 
+Version 1.09 (2014-07-19)
+-------------------------
+- Fixed so that the post-image size is the same as the maximum width of the container
+
+
 Version 1.08 (2014-06-25)
 -------------------------
 - Removed a stray closing div from footer.php
