@@ -10,7 +10,7 @@ function baskerville_setup() {
 		
 	// Post thumbnails
 	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-	add_image_size( 'post-image', 900, 9999 );
+	add_image_size( 'post-image', 945, 9999 );
 	add_image_size( 'post-thumbnail', 600, 9999 );
 	
 	// Post formats
@@ -49,7 +49,7 @@ function baskerville_setup() {
 // Enqueue Javascript files
 function baskerville_load_javascript_files() {
 
-	if ( !is_admin() )
+	if ( !is_admin() ) {
 		wp_register_script( 'baskerville_masonry', get_template_directory_uri().'/js/masonry.pkgd.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_mediaelement', get_template_directory_uri().'/js/mediaelement-and-player.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
@@ -60,6 +60,7 @@ function baskerville_load_javascript_files() {
 		wp_enqueue_script( 'baskerville_mediaelement' );
 		wp_enqueue_script( 'baskerville_flexslider' );
 		wp_enqueue_script( 'baskerville_global' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
@@ -67,12 +68,13 @@ add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
 
 // Enqueue styles
 function baskerville_load_style() {
-	if ( !is_admin() )
+	if ( !is_admin() ) {
 	    wp_register_style('baskerville_googleFonts',  '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400' );
 		wp_register_style('baskerville_style', get_stylesheet_uri() );
 		
 	    wp_enqueue_style( 'baskerville_googleFonts' );
 	    wp_enqueue_style( 'baskerville_style' );
+	}
 }
 
 add_action('wp_print_styles', 'baskerville_load_style');
