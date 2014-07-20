@@ -123,7 +123,11 @@ function accelerate_body_class( $classes ) {
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, 'accelerate_page_layout', true ); }
 
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true ); 
+	}
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$accelerate_default_layout = of_get_option( 'accelerate_default_layout', 'right_sidebar' );
 
 	$accelerate_default_page_layout = of_get_option( 'accelerate_pages_default_layout', 'right_sidebar' );
@@ -181,7 +185,12 @@ function accelerate_sidebar_select() {
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, 'accelerate_page_layout', true ); }
 
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true ); 
+	}
+
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$accelerate_default_layout = of_get_option( 'accelerate_default_layout', 'right_sidebar' );
 
 	$accelerate_default_page_layout = of_get_option( 'accelerate_pages_default_layout', 'right_sidebar' );
@@ -212,7 +221,7 @@ if ( ! function_exists( 'accelerate_posts_listing_display_type_select' ) ) :
  */
 function accelerate_posts_listing_display_type_select() {			
 	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'large_image' ) {
-		$format = 'blog-image-large';
+		$format = 'blog-large-image';
 	}
 	elseif ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image' ) {
 		$format = 'blog-small-image';

@@ -276,9 +276,11 @@ function accelerate_options_display_sidebar() { ?>
 	    	<div class="postbox">
 	    		<h3><?php esc_attr_e( 'Accelerate', 'accelerate' ); ?></h3>
       			<div class="inside"> 
+      				<div class="option-btn"><a class="btn upgrade" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/themes/accelerate-pro/' ); ?>"><?php esc_attr_e( 'Upgrade to Pro' , 'accelerate' ); ?></a></div>
 					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>"><?php esc_attr_e( 'Support Forum' , 'accelerate' ); ?></a></div>
 					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/accelerate/' ); ?>"><?php esc_attr_e( 'Documentation' , 'accelerate' ); ?></a></div>
 					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://demo.themegrill.com/accelerate/' ); ?>"><?php esc_attr_e( 'View Demo' , 'accelerate' ); ?></a></div>
+					<div class="option-btn"><a class="btn rate" target="_blank" href="<?php echo esc_url( 'http://wordpress.org/themes/accelerate/' ); ?>"><?php esc_attr_e( 'Rate this theme' , 'accelerate' ); ?></a></div>
       			</div><!-- inside -->
 	    	</div><!-- .postbox -->
 	  	</div><!-- .metabox-holder -->

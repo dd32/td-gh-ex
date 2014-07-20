@@ -50,6 +50,13 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.4 =
+* Blog sidebar layout issue fixed.
+* Posts page feature image type option fix.
+* Few CSS adjustments.
+* Business sidebar h1 title tag replaced by h3.
+* Some buttons added in theme options panel.
+
 = Version 1.0.3 =
 * TG: Featured Widget bug fixed.
 * $content_width now declared as global inside the callback.

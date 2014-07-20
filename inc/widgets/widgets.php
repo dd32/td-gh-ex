@@ -53,8 +53,8 @@ function accelerate_widgets_init() {
 		'description'   	=> __( 'Shows widgets on Business Page Template.', 'accelerate' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</section>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h3 class="widget-title">',
+		'after_title'   	=> '</h3>'
 	) );
 
 	// Registering contact Page sidebar
