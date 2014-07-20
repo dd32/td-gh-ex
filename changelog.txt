@@ -1,6 +1,11 @@
 *** Rams changelog ***
 
 
+Version 1.04 (2014-07-20)
+-------------------------
+- Added a .no-js fallback for the post meta
+
+
 Version 1.03 (2014-07-19)
 -------------------------
 - Added image.php and template-archives.php

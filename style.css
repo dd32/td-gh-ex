@@ -2,13 +2,13 @@
 
 	Theme Name: Rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
+	Version: 1.04
 	Description: A clean, minimalist and responsive theme, as well as an exercise in simplicity. Features responsive and retina-ready design, support for the gallery, video and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska.
 	Tags: gray, green, silver, white, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.03
 	
 	All files, unless otherwise stated, are released under the GNU General Public License
 	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -594,6 +594,9 @@ a.post-quote:hover {
 /* post meta inner */
 
 
+.no-js .post-meta-toggle { display: none; }
+.no-js .post-meta-inner { display: block; }
+
 .post-meta-inner { 
 	display: none; 
 	background: #444;
@@ -669,7 +672,7 @@ a.post-quote:hover {
 .post-content *:last-child { margin-bottom: 0; }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-	margin: 40px 0 20px;
+	margin: 50px 0 20px;
 	font-family: 'Montserrat', sans-serif;
 	line-height: 120%;
 	font-weight: 700;
