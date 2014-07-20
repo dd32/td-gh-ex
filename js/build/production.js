@@ -81,35 +81,39 @@
     };
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
-jQuery(document).ready(function($){
+jQuery(function($){
 
     $(".entry-content").fitVids();
+    $(".excerpt-content").fitVids();
 
     // bind the tap event on the menu icon
-    // no longer using tappy.js b/c didn't work when production.min.js loaded asynchronously
     $('#toggle-navigation').bind('click', onTap);
 
     function onTap() {
 
-        if ($('#site-header').hasClass('toggled')) {
-            $('#site-header').removeClass('toggled')
-            $('#menu-primary').css('transform', 'translateX(' + 0 + 'px)');
+        var siteHeader = $('#site-header');
+        var menuPrimary = $('#menu-primary');
+
+        if (siteHeader.hasClass('toggled')) {
+            siteHeader.removeClass('toggled');
+            menuPrimary.css('transform', 'translateX(' + 0 + 'px)');
             $('#menu-primary-tracks').css('transform', 'translateX(' + 0 + 'px)');
             $(window).unbind('scroll');
             // delayed so it isn't seen
             setTimeout(function() {
-                $('#menu-primary').removeAttr('style');
+                menuPrimary.removeAttr('style');
             }, 400);
         } else {
-            var menuWidth = $('#menu-primary').width();
-            $('#site-header').addClass('toggled')
-            $('#menu-primary').css('transform', 'translateX(' + -menuWidth + 'px)');
+            var menuWidth = menuPrimary.width();
+            siteHeader.addClass('toggled');
+            menuPrimary.css('transform', 'translateX(' + -menuWidth + 'px)');
             $('#menu-primary-tracks').css('transform', 'translateX(' + menuWidth + 'px)');
             $(window).scroll(onScroll);
         }
     }
     function onScroll() {
-        var menuItemsBottom = $('#menu-primary-items').offset().top + $('#menu-primary-items').height();
+        var menuPrimaryItems = $('#menu-primary-items');
+        var menuItemsBottom = menuPrimaryItems.offset().top + menuPrimaryItems.height();
 
         // keep updating var on scroll
         var topDistance = $(window).scrollTop();
@@ -190,7 +194,7 @@ jQuery(document).ready(function($){
             body.addClass('search-open');
 
             // get the width of the search bar
-            var sitePadding = $('body').width() * 0.0555;
+            var sitePadding = body.width() * 0.0555;
 
             // get width of site padding-right
             var searchFormWidth = $('#site-header').find('.search-form').width();
@@ -201,7 +205,161 @@ jQuery(document).ready(function($){
         }
     }
 
+    // ===== Show/Hide Customizer Options ==== //
+
+    function displayLayoutOptions(){
+
+        var imageHeightOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height');
+        var fullPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_full_post');
+        var contentDisplayOption = $('html', window.parent.document).find('#customize-control-premium_layouts_two_column_images_content_display');
+
+        imageHeightOption.hide();
+        fullPostOption.hide();
+        contentDisplayOption.hide();
+
+        // if the layout is set to full-width images, display the image height option
+        $('html', window.parent.document).find('#customize-control-premium_layouts_setting option').each(function(){
+            if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width-images'){
+                imageHeightOption.show();
+            }
+            if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width'){
+                fullPostOption.show();
+            }
+            if($(this).attr('selected') == 'selected' && $(this).val() == 'two-column-images'){
+                contentDisplayOption.show();
+            }
+        });
+    }
+    displayLayoutOptions();
+
+
+    // ===== Full-width Images - create separation between image and post ===== //
+
+    function separatePostImage(){
+
+        if($('.featured-image').width() < $('.featured-image-container').width()){
+            $('.featured-image-container').css('padding-bottom', 48);
+        } else {
+            $('.featured-image-container').css('padding-bottom', 0);
+        }
+    }
+
+    // wait until image loaded
+    $(window).bind('load', function() {
+        separatePostImage();
+    });
+
+    // ===== Window Resize ===== //
+
+    $(window).on('resize', function(){
+        separatePostImage();
+    });
+
+    /* ===== IE9 full-width image text positioning ===== */
+
+    function centerContentIE(){
+
+        // only if ie9 and full-width-images layout or two-column-images layout
+        if($('html').hasClass('ie9') && ($('body').hasClass('full-width-images') || $('body').hasClass('two-column-images'))){
+
+            $('.excerpt-container').each(function(){
+
+                // excerpt is container of content-container
+                var container = $(this);
+                var content = $(this).find('.excerpt-header');
+
+                var containerBottom = container.offset().top + container.height();
+
+                // coordinates of bottom of content
+                var contentBottom = content.offset().top + content.height();
+
+                // distance of bottom of container - content / 2 gives desired distance from top
+                var topDistance = (containerBottom - contentBottom) / 2;
+
+                // add the distance to the top
+                content.css('top', topDistance);
+
+            });
+        }
+    }
+    centerContentIE();
+
+    /* lazy load images */
+    function lazyLoadImages(){
+
+        $('.lazy').each(function(){
+            var distanceToTop = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            // distance from top plus 100 px to help it load a bit earlier to avoid FOUC and b/c only checked every 400ms
+            var isVisible = distanceToTop - scroll - 100 < windowHeight;
+            if (isVisible) {
+
+                if( $(this).hasClass('lazy-image') ){
+                    $(this).attr('src', $(this).attr('data-src')).removeClass('lazy-image');
+                }
+                if( $(this).hasClass('lazy-bg-image') ){
+                    $(this).css('background-image', 'url("' + $(this).attr('data-background') + '")').removeClass('lazy-bg-image');
+                }
+            }
+        });
+    }
+    lazyLoadImages();
+
+    var scrollHandling = {
+        allow: true,
+        reallow: function() {
+            scrollHandling.allow = true;
+        },
+        delay: 100 //(milliseconds) adjust to the highest acceptable value
+    };
+    $(window).scroll(function() {
+
+        if(scrollHandling.allow) {
+            lazyLoadImages();
+            scrollHandling.allow = false;
+            setTimeout(scrollHandling.reallow, scrollHandling.delay);
+        }
+    });
+
 });
+
+jQuery(window).load(function(){
+
+    var $ = jQuery;
+
+    // ===== Two-Column Layout ==== //
+
+    function removeLayoutGaps(){
+
+        if( $('body').hasClass('two-column') || $('body').hasClass('two-column-images')){
+
+            $('.excerpt').each(function(){
+
+                // 40% of the screen over to be safe
+                var windowWidth = $(window).width() * 0.4;
+
+                // if it ends of over on the right, float it right
+                if($(this).offset().left > windowWidth){
+                    $(this).css('float','right');
+                } else {
+                    // to remove old float: right; on window resize
+                    $(this).css('float','left');
+                }
+            });
+        }
+    }
+    removeLayoutGaps();
+
+    // ===== Window Resize ===== //
+
+    $(window).on('resize', function(){
+        removeLayoutGaps();
+    });
+
+});
+
 
 /* fix for skip-to-content link bug in Chrome & IE9 */
 window.addEventListener("hashchange", function(event) {

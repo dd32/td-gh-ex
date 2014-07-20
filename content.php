@@ -2,7 +2,17 @@
 
 if( is_single() ) { ?>
     <div <?php post_class(); ?>>
-        <?php ct_tracks_featured_image(); ?>
+        <?php
+        if(get_theme_mod('premium_layouts_setting') == 'full-width-images' || get_theme_mod('premium_layouts_setting') == 'two-column-images'){
+            if (has_post_thumbnail( $post->ID ) ) {
+                echo "<div class='featured-image-container'>";
+                ct_tracks_featured_image();
+                echo "</div>";
+            }
+        } else {
+            ct_tracks_featured_image();
+        }
+        ?>
         <div class="entry-meta">
             <span class="date"><?php echo get_the_date('F j'); ?> / </span>
             <span class="author"><?php the_author_posts_link(); ?> / </span>
@@ -41,16 +51,26 @@ if( is_single() ) { ?>
 <?php
 } else { ?>
     <div <?php post_class(); ?>>
-        <a class="featured-image-link" href="<?php the_permalink(); ?>">
-            <?php ct_tracks_featured_image(); ?>
-        </a>
+        <?php
+        // don't link the image if full-width layout
+        if(get_theme_mod('premium_layouts_setting') == 'full-width' || get_theme_mod('premium_layouts_setting') == 'full-width-images'){
+            ct_tracks_featured_image();
+        } else { ?>
+            <a class="featured-image-link" href="<?php the_permalink(); ?>">
+                <?php ct_tracks_featured_image(); ?>
+            </a>
+        <?php } ?>
         <div class="excerpt-container">
+            <?php
+            if(get_theme_mod('premium_layouts_setting') == 'full-width-images' || get_theme_mod('premium_layouts_setting') == 'two-column-images'){ ?>
+                <div class="content-container">
+            <?php } ?>
             <div class="excerpt-meta">
                 <span class="date"><?php echo get_the_date('F j'); ?> / </span>
                 <span class="author"><?php the_author_posts_link(); ?> / </span>
-                <span class="category">
-                    <?php ct_tracks_category_link(); ?>
-                </span>
+                    <span class="category">
+                        <?php ct_tracks_category_link(); ?>
+                    </span>
             </div>
             <div class='excerpt-header'>
                 <h1 class='excerpt-title'>
@@ -62,6 +82,10 @@ if( is_single() ) { ?>
                     <?php ct_tracks_excerpt(); ?>
                 </article>
             </div>
+            <?php
+                if(get_theme_mod('premium_layouts_setting') == 'full-width-images' || get_theme_mod('premium_layouts_setting') == 'two-column-images'){ ?>
+                </div>
+            <?php } ?>
         </div>
     </div>
 <?php

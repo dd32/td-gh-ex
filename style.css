@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.13
+Version: 1.14
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -233,7 +233,6 @@ th {
   margin: 1.5em;
 }
 
-img,
 .alignright,
 .alignleft,
 .aligncenter,
@@ -243,9 +242,30 @@ img,
 .size-large,
 .size-medium,
 .size-thumbnail {
-  max-width: 100%;
   height: auto;
   line-height: 0;
+  max-width: 100%;
+  max-width: calc(100% - 48px);
+}
+.alignright img,
+.alignleft img,
+.aligncenter img,
+.alignnone img,
+.size-auto img,
+.size-full img,
+.size-large img,
+.size-medium img,
+.size-thumbnail img {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  line-height: 0;
+}
+
+.singular-attachment img {
+  max-width: 100%;
 }
 
 .wp-caption-text {
@@ -330,12 +350,22 @@ a img {
   color: #ffffff;
 }
 
-/* 600px */
-@media all and (min-width: 37.5em) {
-  .blog .main,
-  .archive .main {
-    width: 88.89%;
-    margin: 0 auto;
+.blog .main,
+.archive .main {
+  width: 88.89%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+  html {
+    -webkit-text-size-adjust: none;
+    /* none for no scaling */
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  html {
+    -webkit-text-size-adjust: none;
+    /* none for no scaling */
   }
 }
 .site-header {
@@ -683,6 +713,7 @@ a img {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  margin-bottom: 1.5em;
 }
 
 .featured-image {
@@ -725,9 +756,9 @@ a img {
 
 .excerpt-title, .entry-title {
   letter-spacing: 0.04em;
-  font-size: 1.875em;
-  /* 30px */
-  line-height: 1.6;
+  font-size: 1.313em;
+  /* 21px / 16px */
+  line-height: 1.143;
 }
 .excerpt-title a, .entry-title a {
   color: #4d4d4d;
@@ -830,6 +861,12 @@ a img {
   .loop-pagination {
     padding: 0.75em 1.5em 3em;
   }
+
+  .excerpt-title, .entry-title {
+    font-size: 1.875em;
+    /* 30px */
+    line-height: 1.6;
+  }
 }
 /* 900px */
 @media all and (min-width: 56.25em) {
@@ -850,21 +887,26 @@ a img {
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
     -webkit-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
   }
   .excerpt .featured-image {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    /* fixes FF glitch where image focuses & unfocuses */
     width: 50%;
     height: 100%;
     padding-bottom: 0;
     position: absolute;
     right: 0;
     -webkit-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
+            backface-visibility: hidden;
   }
   .excerpt:hover {
     opacity: 1;
+  }
+
+  .excerpt.odd .excerpt-container {
+    width: calc(50% + 1px);
   }
 
   .excerpt.even .excerpt-container {
@@ -872,6 +914,7 @@ a img {
   }
   .excerpt.even .featured-image {
     right: 50%;
+    right: calc(50% - 1px);
   }
   .excerpt.even:after {
     content: ".";
@@ -988,7 +1031,7 @@ a img {
 /* 600px */
 @media all and (min-width: 37.5em) {
   .entry {
-    width: 89.89%;
+    width: 88.88%;
     margin: 0 auto;
   }
 
@@ -1234,7 +1277,7 @@ li.pingback:after {
 @media all and (min-width: 37.5em) {
   .comments {
     padding: 0 5.55% 3em;
-    width: 89.89%;
+    width: 88.88%;
     margin: 0 auto;
   }
 
