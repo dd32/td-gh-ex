@@ -108,7 +108,7 @@ function adaption_get_link_url() {
 	return ( $check_url ) ? $check_url : apply_filters( 'the_permalink', get_permalink() );
 }
 
-if ( ! function_exists( 'adaoption_continue_reading_link' ) ) :
+if ( ! function_exists( 'adaption_continue_reading_link' ) ) :
 /**
  * Returns an ellipsis rather than continue reading link
  */

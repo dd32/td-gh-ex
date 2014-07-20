@@ -127,13 +127,15 @@ function arimo_font_url() {
 		$arimo_font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
 	}
+
+	return $arimo_font_url;
 }
 
 /**
  * Enqueue Google Fonts for admin
  */
 function adaption_admin_fonts() {
-	wp_enqueue_style( 'adaption_arimo', arimo_font_url(), array(), null );
+	wp_enqueue_style( 'adaption-adminarimo', arimo_font_url(), array(), null );
 }
 add_action( 'admin_print_scripts-appearance_page_custom-header', 'adaption_admin_fonts' );
 
@@ -142,7 +144,7 @@ add_action( 'admin_print_scripts-appearance_page_custom-header', 'adaption_admin
  */
 function adaption_scripts() {
 
-	wp_enqueue_style( 'adaption_arimo', arimo_font_url(), array(), null );
+	wp_enqueue_style( 'adaption-arimo', arimo_font_url(), array(), null );
 
 	wp_enqueue_style( 'adaption-style', get_stylesheet_uri() );
 
