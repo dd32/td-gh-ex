@@ -4,12 +4,12 @@ Theme URI: http://adaptiondemo.wordpress.com/
 Author: Automattic
 Author URI: http://themes.wordpress.com/
 Description: A theme that adapts to your content, making sure it looks good on any device. Full width featured images make your content stand out. This theme adapts as add widgets with a 3rd column added to the layout.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adaption
 Domain Path: /languages/
-Tags: black, white, red, three-columns, two-columns, responsive-layout, fluid-layout, custom-colors, custom-header, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, translation-ready, photoblogging, light, custom-background
+Tags: black, white, red, three-columns, two-columns, responsive-layout, fluid-layout, custom-colors, custom-header, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, translation-ready, photoblogging, custom-background
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1836,6 +1836,50 @@ span.infinite-loader .spinner {
 
   .main-navigation li a {
     padding: 10px 40px;
+  }
+
+  .main-navigation li:first-child a {
+	padding: 20px 40px 10px 40px;
+  }
+
+  .main-navigation li:last-child a {
+	padding: 10px 40px 20px 40px;
+  }
+
+  .main-navigation ul ul li a {
+    padding-left: 60px;
+  }
+
+  .main-navigation ul ul li:first-child a {
+    padding: 10px 20px 10px 60px;
+  }
+
+  .main-navigation ul ul li:last-child a {
+    padding: 10px 20px 10px 60px;
+  }
+
+  .main-navigation ul ul ul li a {
+    padding-left: 80px;
+  }
+
+  .main-navigation ul ul ul li:first-child a {
+    padding: 10px 20px 10px 80px;
+  }
+
+  .main-navigation ul ul ul li:last-child a {
+    padding: 10px 20px 10px 80px;
+  }
+
+  .main-navigation ul ul ul ul li a {
+    padding-left: 100px;
+  }
+
+  .main-navigation ul ul ul ul li:first-child a {
+    padding: 10px 20px 10px 100px;
+  }
+
+  .main-navigation ul ul ul ul li:last-child a {
+  	padding: 10px 20px 10px 100px;
   }
 
   #social-links-wrapper {
