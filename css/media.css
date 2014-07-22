@@ -21,9 +21,26 @@
 	.footer h2{
 		padding-bottom:8px;
 	}
+	.foodrecipes-social {
+ 	   width: 100% !important;
+	}
+	.masonry-container {
+    margin: 0 auto;
+    width: 96%;
+}
+.foodrecipes-site-title {
+    text-align: center;
+}
 
 }
 @media (max-width:600px){
+	.foodrecipes-site-title {
+    	text-align: center;
+	}	
+	.masonry-container {
+   	 margin: 0 auto;
+   	 width: 96%;
+	}
 	.foodrecipes-container-recipes{
 		width:100%;
 	}
@@ -38,7 +55,7 @@
 	}
 	.foodrecipes-social-icon-right{
 		 float: left;
-		text-align: center;
+		text-align: left;
 		width: 78%
 		}
 	.foodrecipes-post-box {
@@ -59,7 +76,7 @@
 	.foodrecipes-social {
 		float: none !important;
 		margin: 8px auto;
-		width: 70%;
+		width: 100%;
 	}
 	.foodrecipes-inner-blog-text h6:before
 	{
@@ -263,7 +280,13 @@
 	.foodrecipes-social {
 		float: none !important;
 		margin: 0 auto;
-		width: 33% !important;
+		width: 100% !important;
+	}
+	.foodrecipes-site-title {
+    	text-align: center;
+	}
+	.foodrecipes-social-icon-right {
+		float: left;
 	}
 	.foodrecipes-box-name h6:before{
 	margin: 0 3px 3px 0;
@@ -416,7 +439,20 @@
 }
 
 }
-@media (min-width: 768px) and (max-width:1024px) {
+@media (min-width: 600px) and (max-width:767px) {
+.masonry-container {
+    width: 100% !important;
+}
+.foodrecipes-post-box img {
+    width: 96% !important;
+}
+.foodrecipes-box-name {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 96%;
+}
+}
+@media (min-width: 768px) and (max-width:1023px) {
 	.foodrecipes-container-recipes{
 		width:100% ;
 	}
@@ -431,7 +467,7 @@
 		width: 45%;
 	}
 	.foodrecipes-post-box-margin{
-		margin:10px;
+		margin:15px;
 	}
 	.foodrecipes-side-menu-bgcolor h1{
 		margin: 11px 0;
@@ -475,6 +511,21 @@
 .foodrecipes-inner-blog-bg{
 	float:none;
 }
+.foodrecipes-social-icon-right {
+    float: right;
+    padding: 0 15px !important;
+}
+.foodrecipes-logo {
+    float: left;
+    margin: 7px 0;
+    padding: 0 15px;
+}
+.menu-foodrecipes{
+clear:both;
+}
+.food-clear {
+    clear: both;
+}
 }
 @media (min-width:1024px) and (max-width:1190px){
 	.foodrecipes-container-recipes{
@@ -507,4 +558,10 @@
 .foodrecipes-social{
 		float:right !important;
 	}
+	.foodrecipes-logo {
+     padding: 0 0 0 15px;
+}
+.foodrecipes-social-icon-right {
+     padding-right: 15px !important;
+}
 }

@@ -39,3 +39,6 @@ Version: 1.0.7
 
 Version: 1.0.8
 	i) Changed esc_url() tpo esc_attr() for copyright text option.
+
+Version: 1.0.9
+	i) Set responsive css.	

@@ -70,9 +70,9 @@
 			$foodrecipes_defaults = array(
 					'theme_location'  => 'primary',
 					'container'       => 'div',
-					'container_class' => 'col-md-6 no-padding',
+					'container_class' => 'col-md-6 no-padding food-clear',
 					'container_id'    => '',
-					'menu_class'      => 'col-md-6 no-padding',
+					'menu_class'      => 'col-md-6 no-padding food-clear',
 					'menu_id'         => '',
 					'echo'            => true,
 					'fallback_cb'     => 'wp_page_menu',
@@ -86,5 +86,6 @@
 					);
 			wp_nav_menu($foodrecipes_defaults); ?>
     </div>
+    <div class="clearfix"></div>
   </div>
 </header>
