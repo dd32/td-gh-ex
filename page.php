@@ -12,7 +12,12 @@
 
 get_header(); 
 global $post;
-$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
+if(is_front_page()){
+	$post_id = get_option('page_on_front');
+}else{
+	$post_id = $post->ID;
+}
+$post_class = get_post_meta( $post->ID, 'accesspresslite_sidebar_layout', true );
 ?>
 
 <div class="ak-container">

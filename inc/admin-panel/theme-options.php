@@ -336,7 +336,7 @@ function accesspresslite_theme_options_page() {
 					<select id="menu_alignment" name="accesspresslite_options[menu_alignment]">
 					<?php
 					foreach ( $accesspresslite_menu_alignments as $accesspresslite_menu_alignment ) :
-						echo '<option style="padding-right: 10px;" value="' .  __($accesspresslite_menu_alignment,'accesspresslite') . '" ' . selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ) . '>' . esc_attr($accesspresslite_menu_alignment,'accesspresslite')  . '</option>';
+						echo '<option value="' .$accesspresslite_menu_alignment. '" ' . selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ) . '>' . esc_attr($accesspresslite_menu_alignment,'accesspresslite')  . '</option>';
 					endforeach;
 					?>
 					</select>

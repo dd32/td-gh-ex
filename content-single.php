@@ -22,12 +22,6 @@ $cat_blog = $accesspresslite_settings['blog_cat'];
 
 
 	<div class="entry-content">
-        <?php 
-			if( has_post_thumbnail() ){
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
-	    ?>
-        <img class="alignright" src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
-        <?php } ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
