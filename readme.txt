@@ -23,6 +23,12 @@ HOW TO SET LOGO
 You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
 
 
+HOW TO CHANGE BACKGROUND
+========================
+You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
+Note: because theme is fullwidth, this has no visible effect. But it might after your modifications, so that's why it's still included.
+
+
 HOW TO SET MENU
 ===============
 MultiColors offers a menu that can contain subpages (2 levels deep).
