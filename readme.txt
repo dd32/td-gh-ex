@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.05
+* Sidebar Bug Fixed
+
 Version 2.04
 * Theme Homepage and Author changed
 * Social Skype Link Bug fixed

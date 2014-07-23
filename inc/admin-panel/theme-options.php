@@ -967,6 +967,8 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 
 <p><?php _e('You will find features in a premium theme yet no nonsense!','accesspresslite'); ?></p>	
 
+<p><?php _e('Check out Premium version of AccessPress Lite','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>">here</a></p>	
+
 <p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 <p><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/contact/'); ?>">Contact us</a> for Direct support</p>				
 					</td>
