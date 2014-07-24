@@ -6,13 +6,6 @@
  */
 
 /**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-
-if ( ! function_exists( 'enrichmg_setup' ) ) :
-/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which runs
@@ -66,8 +59,13 @@ function enrichmg_setup() {
   
 	add_theme_support( 'custom-background', $args );
 }
-endif; // enrichmg_setup
 add_action( 'after_setup_theme', 'enrichmg_setup' );
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 640;
 
 /**
  * Register widgetized area and update sidebar with default widgets

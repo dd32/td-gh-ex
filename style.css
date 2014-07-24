@@ -2,9 +2,9 @@
 Theme Name: enrichmg
 Author: Terry East
 Author URI: http://www.designs2site.com
-Theme URI: http://www.designs2site.com/enrichmg/
+Theme URI: http://www.designs2site.com/enrichmg
 Description: Magazine format suitable for professional association website. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
-Version: 1.2.3 
+Version: 1.2.4 
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: enrichmg
@@ -21,13 +21,20 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 
+additional copyright and licensing information contained within the readme.txt file.
+
 Version 1.2.1 changes: 
 				fixed custom background color bug
 				CSS appearance ajustments to sidebar
 Version 1.2.2 changes:
 				updated footer credits
+
 Version 1.2.3 changes:
 				added custom theme URI
+
+Version 1.2.4 changes:
+				removal of redundant code within function.php
+				improved licensing information within readme.txt
 
 */
 
