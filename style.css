@@ -1,9 +1,10 @@
 /*
 Theme Name: enrichmg
 Author: Terry East
-Author URI: http://enricchicreative.com
+Author URI: http://www.designs2site.com
+Theme URI: http://wordpress.org/themes/enrichmg
 Description: Magazine format suitable for professional association website. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
-Version: 1.1.1 
+Version: 1.2.1 
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: enrichmg
@@ -19,6 +20,11 @@ Resetting and rebuilding styles have been helped along thanks to the fine work o
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
+
+Version 1.2.1 changes: 
+				fixed custom background color bug
+				CSS appearance ajustments to sidebar
+
 */
 
 
@@ -811,10 +817,34 @@ dd.gallery-caption, table {
 #secondary .widget {
     color:#000000;
 }
+
+#secondary .widget ul {
+  margin:0;
+}
+
+#secondary .widget li {
+  	margin-bottom:.25em;
+  	line-height:100%;
+}
 #secondary .widget a {
     color:#000000;
+  	font-size:.75em;
+  	text-decoration:none;
 }
-                                                    
+
+#secondary .widget li:last-of-type a:after {
+  	content: ".";
+}
+
+#secondary .widget a:after {
+  	content: ";";
+}
+
+
+#secondary .widget li.recentcomments a:after {
+  	content: " ";
+}
+
 .tag-edge-case h1, .tag-edge-case p {
        /* overflow-x:scroll;*/
     -ms-word-wrap: break-word;

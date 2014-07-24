@@ -58,10 +58,13 @@ function enrichmg_setup() {
 	/**
 	 * Setup the WordPress core custom background feature.
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'enrichmg_custom_background_args', array(
-		'default-color' => 'ef3d42',
-		'default-image' => '',
-	) ) );
+  
+  $args = array (
+    		'default-color' => 'ef3d42',
+				'default-image' => '',
+	);
+  
+	add_theme_support( 'custom-background', $args );
 }
 endif; // enrichmg_setup
 add_action( 'after_setup_theme', 'enrichmg_setup' );
