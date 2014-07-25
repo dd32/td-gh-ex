@@ -131,8 +131,12 @@ Template Name: Archive template
 					</div> <!-- /post-content -->
 											
 					<div class="clear"></div>
+					
+					<?php if ( comments_open() ) : ?>
 			
-					<?php comments_template( '', true ); ?>
+						<?php comments_template( '', true ); ?>
+					
+					<?php endif; ?>
 				
 				<?php endwhile; else: ?>
 		

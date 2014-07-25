@@ -14,27 +14,6 @@
 					
 				</div>
 				
-			<?php else : ?>
-			
-				<div class="column column-1 left">
-				
-					<div class="widgets">
-				
-						<div id="search" class="widget widget_search">
-						
-							<div class="widget-content">
-							
-								<h3 class="widget-title"><?php _e( 'Search form', 'hemingway' ); ?></h3>
-				                <?php get_search_form(); ?>
-				                
-							</div>
-							
-		                </div>
-										
-					</div>
-					
-				</div>
-				
 			<?php endif; ?> <!-- /footer-a -->
 				
 			<?php if ( is_active_sidebar( 'footer-b' ) ) : ?>
@@ -45,36 +24,6 @@
 			
 						<?php dynamic_sidebar( 'footer-b' ); ?>
 											
-					</div> <!-- /widgets -->
-					
-				</div>
-				
-			<?php else : ?>
-			
-				<div class="column column-2 left">
-				
-					<div class="widgets">
-					
-						<div class="widget widget_recent_entries">
-						
-							<div class="widget-content">
-							
-								<h3 class="widget-title"><?php _e( 'Latest posts', 'hemingway' ); ?></h3>
-								
-								<ul>
-					                <?php
-										$args = array( 'numberposts' => '5', 'post_status' => 'publish' );
-										$recent_posts = wp_get_recent_posts( $args );
-										foreach( $recent_posts as $recent ){
-											echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-										}
-									?>
-								</ul>
-				                
-							</div>
-							
-		                </div>
-										
 					</div> <!-- /widgets -->
 					
 				</div>
@@ -91,21 +40,6 @@
 											
 					</div> <!-- /widgets -->
 					
-				</div>
-				
-			<?php else : ?>
-			
-				<div class="column column-3 left">
-				
-					<div id="meta" class="widget widget_text">
-						<div class="widget-content">
-						
-							<h3 class="widget-title"><?php _e( "Text widget", "hemingway" ); ?></h3>
-							<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "hemingway" ); ?></p>
-			                
-						</div>
-	                </div>
-									
 				</div>
 				
 			<?php endif; ?> <!-- /footer-c -->

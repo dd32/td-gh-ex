@@ -1,6 +1,15 @@
 *** Hemingway changelog ***
 
 
+Version 1.45 (2014-07-25)
+-------------------------
+- Fixed so that the header height is fixed, rather than relative to the width of the screen
+- Fixed a bug in functions.php which would prevent plugins from setting featured images
+- Added in some missing accent color elements
+- Fixed so that the "Comments are closed" message isn't displayed on pages with comments deactivated
+- Removed the default widgets that previously would've been displayed in no widgets had been entered
+
+
 Version 1.44 (2014-05-08)
 -------------------------
 - Added a query reset to template-archives.php to prevent the wrong comments from loading

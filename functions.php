@@ -12,7 +12,7 @@ function hemingway_setup() {
 	add_theme_support( 'custom-background' );
 		
 	// Post thumbnails
-	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'post-image', 676, 9999 );
 	
 	// Post formats
@@ -414,6 +414,9 @@ class Hemingway_Customize {
 	      <!--Customizer CSS--> 
 	      
 	      <style type="text/css">
+	           <?php self::generate_css('body::selection', 'background', 'accent_color'); ?>
+	           <?php self::generate_css('body a', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('body a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog-title a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog-menu a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog-search #searchsubmit', 'background-color', 'accent_color'); ?>
@@ -478,9 +481,14 @@ class Hemingway_Customize {
 	           <?php self::generate_css('.widgetmore a', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widgetmore a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.flickr_badge_image a:hover img', 'background', 'accent_color'); ?>
+	           <?php self::generate_css('.footer .flickr_badge_image a:hover img', 'background', 'accent_color'); ?>
+	           <?php self::generate_css('.footer .dribbble-shot:hover img', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.sidebar .tagcloud a:hover', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.footer .tagcloud a:hover', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.credits a:hover', 'color', 'accent_color'); ?>
+	           
+	           <?php self::generate_css('body#tinymce.wp-editor a', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('body#tinymce.wp-editor a:hover', 'color', 'accent_color'); ?>
 	      </style> 
 	      
 	      <!--/Customizer CSS-->
