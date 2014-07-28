@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-lite/
 Author: Access Keys Team
 Author URI: http://accesspressthemes.com/
 Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. The Theme includes featured post with thumbnail or icon option, event section, portfolio section, testimonial section (all sections with different design layouts), multiple sidebar layouts select option for every post/pages and is ready to use with contact form 7. The updated version is also translation ready. Over all Accesspress Lite is a flexible theme with easy configuration in theme option panel.
-Version: 2.06
+Version: 2.07
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
@@ -1587,11 +1587,13 @@ testimonial
 .testimonial-sidebar .testimoinal-client-name{
 	right: 50px;
 	left: auto;
-	bottom: -35px;
+	top: 100%;
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-style: italic;
 	font-weight: 300;
+	margin-top: 10px;
+	line-height: 1.2;
 }
 
 .testimonial-sidebar .testimonial-thumbnail{

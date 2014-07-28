@@ -225,9 +225,14 @@ function accesspresslite_theme_options_page() {
 
 		<div class="ak-socials">
 		<p><?php _e('Follow us for new updates','accesspresslite') ?></p>
-		<a href="<?php echo esc_url('https://www.facebook.com/pages/AccesspressThemes/769025386451113','accesspresslite'); ?>" title="<?php esc_attr_e('Facebook','accesspresslite') ?>" class="accesspresslite_facebook" target="_blank">Facebook</a>
-		<a href="<?php echo esc_url('https://twitter.com/apthemes','accesspresslite'); ?>" title="<?php esc_attr_e('Twitter','accesspresslite') ?>" class="accesspresslite_twitter" target="_blank">Twitter</a>
-		<a href="<?php echo esc_url('http://wordpress.org/support/profile/access-keys','accesspresslite'); ?>" title="<?php esc_attr_e('WordPress','accesspresslite') ?>" class="accesspresslite_wordpress" target="_blank">WordPress</a>
+			<div class="social-bttns">
+			    
+				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowTransparency="true"></iframe>
+				&nbsp;&nbsp;
+			    <a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    		
+			</div>
 		</div>
 
 		<div class="accesspresslite_title"><?php echo wp_get_theme();  _e( ' Theme Options', 'accesspresslite' )?></div>

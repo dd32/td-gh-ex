@@ -10,6 +10,7 @@ global $accesspresslite_options, $post;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $cat_blog = $accesspresslite_settings['blog_cat'];
 $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
+echo $post_class;
 ?>
 
 <div class="ak-container">

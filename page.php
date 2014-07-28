@@ -17,7 +17,7 @@ if(is_front_page()){
 }else{
 	$post_id = $post->ID;
 }
-$post_class = get_post_meta( $post->ID, 'accesspresslite_sidebar_layout', true );
+$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
 ?>
 
 <div class="ak-container">

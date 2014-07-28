@@ -500,7 +500,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
    		if( is_404()){
 		$classes[] = ' ';
 		}elseif(is_singular()){
-		$post_class = get_post_meta( $post -> ID, 'accesspress_pro_sidebar_layout', true );
+		$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 		$classes[] = $post_class;
 		}else{
 		$classes[] = 'right-sidebar';	

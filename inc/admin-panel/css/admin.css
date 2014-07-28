@@ -294,23 +294,9 @@
 	text-align: center;
 }
 
-.ak-socials a{ 
-	height: 36px; 
-	width: 33px; 
-	display: inline-block; 
-	background: url(../images/socials.png) no-repeat; 
-	text-indent: -9999px;
-}
-
 .ak-socials p{
 	margin: 0 0 10px;
 }
-
-.ak-socials a.accesspresslite_facebook{ background-position:0 0 }
-.ak-socials a.accesspresslite_twitter{ background-position: -42px 0}
-.ak-socials a.accesspresslite_youtube{ background-position: -84px 0}
-.ak-socials a.accesspresslite_gplus{ background-position: -126px 0}
-.ak-socials a.accesspresslite_wordpress{ background-position: -168px 0}
 
 .nav-tab-wrapper{ border-bottom: 1px solid #CCC}
 .nav-tab-wrapper .nav-tab {
@@ -366,3 +352,4 @@
 #welcome_post_char, #show_event_number{
 	width: 50px;
 }
+.social-bttns{ white-space: nowrap;}

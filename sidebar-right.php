@@ -14,7 +14,13 @@ $show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
 $testimonial_category = $accesspresslite_settings['testimonial_cat'];
 $blog_category = $accesspresslite_settings['blog_cat'];
 $show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
-$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
+if(is_front_page()){
+	$post_id = get_option('page_on_front');
+}else{
+	$post_id = $post->ID;
+}
+$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
+
 if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class) || is_archive()){
 ?>
 	<div id="secondary-right" class="widget-area right-sidebar sidebar">

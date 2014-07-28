@@ -13,7 +13,12 @@ $event_category = $accesspresslite_settings['event_cat'];
 $show_events = $accesspresslite_settings['leftsidebar_show_latest_events'];
 $testimonial_category = $accesspresslite_settings['testimonial_cat'];
 $show_testimonials = $accesspresslite_settings['leftsidebar_show_testimonials'];
-$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
+if(is_front_page()){
+	$post_id = get_option('page_on_front');
+}else{
+	$post_id = $post->ID;
+}
+$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
 
 if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 ?>
@@ -101,11 +106,11 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
         
 	    <?php if($show_testimonials == 1){ ?>
 		<aside class="widget testimonial-sidebar clearfix">
- 		<h3 class="widget-title"><?php echo get_cat_name($testimonial_category); ?></h3>
-			<?php
+ 		<?php
 			
-			if(!empty($testimonial_category)) { 
-				
+			if(!empty($testimonial_category)) { ?>
+			<h3 class="widget-title"><?php echo get_cat_name($testimonial_category); ?></h3>
+			<?php
 	            $loop = new WP_Query( array(
 	                'cat' => $testimonial_category,
 	                'posts_per_page' => 3,
@@ -140,6 +145,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			$client_name=array("","Linda Lee","George Bailey","Micheal Warner");
 			?>
 			<div class="testimonial-wrap">
+			<h3 class="widget-title">Testimonial</h3>
 				<?php for ($testimonial_count=1 ; $testimonial_count < 4 ; $testimonial_count++) { ?>
 			        	<div class="testimonial-list clearfix">
 			        		<div class="testimonial-thumbnail">

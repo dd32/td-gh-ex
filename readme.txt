@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.07
+* Sidebar Bug still persists so fixed again
+
 Version 2.06
 * Sidebar Bug Fixed
 
