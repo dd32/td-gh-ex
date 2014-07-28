@@ -17,7 +17,10 @@ get_header(); ?>
 					<h1 class="title">
 						<?php printf( __( 'Tag Archives : %s', 'advertica-lite' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?> 
 					</h1>
-					<?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
+					<?php  if(sketch_get_option($advertica_shortname."_hide_bread") == 'true') {
+						if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();}
+					}
+					?>
 				</div>
 			</div>
 		</div>

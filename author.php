@@ -15,7 +15,10 @@ get_header(); ?>
 						<?php  $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
 						<?php _e('Author Archives : ','advertica-lite'); echo $curauth->display_name;  ?>
 					</h1>
-					<?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
+					<?php  if(sketch_get_option($advertica_shortname."_hide_bread") == 'true') {
+						if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();}
+					}
+					?>
 				</div>
 			</div>
 		</div>

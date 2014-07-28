@@ -3,7 +3,16 @@
  
 	if(sketch_get_option($advertica_shortname.'_colorpicker')){ $bg_color = sketch_get_option($advertica_shortname.'_colorpicker'); } 
 	if(sketch_get_option($advertica_shortname.'_fullparallax_image')){ $fullparallax_image = sketch_get_option($advertica_shortname.'_fullparallax_image'); }   	
-
+	if(sketch_get_option($advertica_shortname.'_bread_title_color')){ $skt_bread_title_color = sketch_get_option($advertica_shortname.'_bread_title_color'); } 
+	if(sketch_get_option($advertica_shortname.'_bread_color')){ $breadcolor = sketch_get_option($advertica_shortname.'_bread_color'); } 
+	if(sketch_get_option($advertica_shortname.'_bread_image')){ $breadimage = sketch_get_option($advertica_shortname.'_bread_image'); } 
+	
+	if(is_page()) {
+		$pagetitlebg = get_post_meta($post->ID, "_pagetitle_bg", true);
+	}else{
+		$pagetitlebg = "";
+	}
+	
 ?>
 <style type="text/css">
 
@@ -38,6 +47,19 @@
 	.full-bg-breadimage-fixed {}
 	#full-division-box { background-image: url("<?php if(isset($fullparallax_image)){ echo $fullparallax_image; } ?>"); }
 	
+	<?php if(sketch_get_option($advertica_shortname.'_bread_stype')){ $bread_type = sketch_get_option($advertica_shortname.'_bread_stype'); } 
+	
+	if(isset($bread_type)) {
+	if ($bread_type == "brcolor" && $pagetitlebg == Null ) {?>.full-bg-breadimage-fixed { background-color: <?php echo $breadcolor; ?>;}<?php  } 
+	else { ?> .full-bg-breadimage-fixed { background-image: url("<?php if(isset($pagetitlebg) && $pagetitlebg!= Null ){ echo $pagetitlebg;} ?>");} <?php }
+	?>
+	<?php if($bread_type == "brimage") { ?>.full-bg-breadimage-fixed { background-image: url("<?php if(isset($pagetitlebg) && $pagetitlebg!= Null ){ echo $pagetitlebg;} else { echo $breadimage; } ?>");}<?php } } ?>
+	#full-division-box { background-image: url("<?php if(isset($fullparallax_image)){ echo $fullparallax_image; } ?>"); }
+	
+	.bread-title-holder h1.title,.cont_nav_inner span,.bread-title-holder .cont_nav_inner p,.bread-title-holder .cont_nav_inner a{
+		color: <?php if(isset($skt_bread_title_color)){ echo $skt_bread_title_color; } ?>;
+	}
+	
 	/***************** PAGINATE *****************/
 	#skenav li a:hover,#skenav .sfHover { background-color:#333333;color: #FFFFFF;}
 	#skenav .sfHover a { color: #FFFFFF;}
@@ -46,9 +68,6 @@
 	.footer-seperator{background-color: rgba(0,0,0,.2);}
 	#skenav .ske-menu #menu-secondary-menu li .sub-menu li {	margin: 0;  }
 
-	.bread-title-holder h1.title,.cont_nav_inner span,.bread-title-holder .cont_nav_inner p{
-		color: <?php if(isset($bg_color)){ echo $bg_color; } ?>;
-	}
 
 	@media only screen and (max-width : 1025px) {
 		#menu-main {

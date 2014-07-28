@@ -34,7 +34,11 @@ get_header(); ?>
 							_e( 'Blog Archives', 'advertica-lite' );
 						endif;
 						?>
-					</h1><?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
+					</h1>
+					<?php  if(sketch_get_option($advertica_shortname."_hide_bread") == 'true') {
+						if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();}
+					}
+					?>
 				</div>
 			</div>
 		</div>

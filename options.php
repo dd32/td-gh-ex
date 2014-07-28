@@ -40,6 +40,17 @@ function optionsframework_options() {
 		'position' => 'top center',
 		'attachment'=>'scroll' );
 
+	//breadcumhide_array
+	$breadcumhide_array = array(
+		'true' => __('Enable', 'advertica-lite'),
+		'false' => __('Disable', 'advertica-lite')
+	);
+
+	$bread_type = array(
+		'brimage' => __('Image', 'advertica'),
+		'brcolor' => __('Color', 'advertica')
+	);
+
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
@@ -118,6 +129,49 @@ function optionsframework_options() {
 				'std'  => $background_style,
 				'type' => 'background' );
 
+			//Breadcrumb	
+	$options[] = array(
+		'name' => __('Breadcrumb Settings', 'advertica-lite'),
+		'type' => 'heading');
+
+	$options[] = array(
+			'name' => __('Breadcrumb Enable/Disable', 'advertica'),
+			'desc' => __('', 'advertica-lite'),
+			'id' => $advertica_shortname.'_hide_bread',
+			'std' => 'true',
+			'type' => 'radio',
+			'options' => $breadcumhide_array);
+
+	$options[] = array(
+			'name' => __('Page Title & Breadcrumb Background Type', 'advertica-lite'),
+			'desc' => __('', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_stype',
+			'std' => 'brcolor',
+			'type' => 'radio',
+			'options' => $bread_type);
+
+    $options[] = array(
+			'name' => __('Choose Page Title & Breadcrumb Background Color', 'advertica-lite'),
+			'desc' => __('Please choose background color', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_color',
+			'std' => '#F9F1E3',
+			'type' => 'color',
+			'class'=>'hidden' );
+
+    $options[] = array(
+			'name' => __('Upload Page Title & Breadcrumb Background Image ( width * height (1600px * 180px) )', 'advertica-lite'),
+			'desc' => __('This image will show up as background on page title & breadcrumb section.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_image',
+			'std' => $imagepath.'page-title-bg.jpg',
+			'type' => 'upload',
+			'class'=>'hidden');
+
+	$options[] = array(
+			'name' => __('Choose Page Title & Breadcrumb Font Color', 'advertica-lite'),
+			'desc' => __('Please choose font color', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_title_color',
+			'std' => '#222222',
+			'type' => 'color' );		
 	//Blog	
 	$options[] = array(
 		'name' => __('Blog Page Settings', 'advertica-lite'),
@@ -403,9 +457,24 @@ jQuery(document).ready(function($) {
 	if ($('#example_showhidden:checked').val() !== undefined) {
 		$('#section-example_text_hidden').show();
 	}
+	
+	 var selected_bredbtn = jQuery("#section-advertica_bread_stype input:checked").val();
+	if (selected_bredbtn === 'brcolor') {
+		jQuery('#section-advertica_bread_color').show();
+	}
+    else if (selected_bredbtn === 'brimage') {
+		jQuery('#section-advertica_bread_image').show();
+	}
 
 	jQuery("input[type='radio']").change(function() {
         var selected_radio = jQuery(this).val();
+				if (selected_radio === 'brcolor') {
+            jQuery('#section-advertica_bread_image').hide();
+			jQuery('#section-advertica_bread_color').fadeIn();
+        }else if (selected_radio === 'brimage') {
+			jQuery('#section-advertica_bread_color').hide();
+            jQuery('#section-advertica_bread_image').fadeIn();
+        }
 		
     });
 });
