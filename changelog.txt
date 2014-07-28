@@ -1,5 +1,9 @@
 *** discover Changelog ***
 
+28-07-2014 - version 1.7.22
+*Template-blog page removed..
+
+
 13-07-2014 - version 1.7.21
 Below function names corrected.._s removed from functions.php file..
 
