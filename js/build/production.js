@@ -112,7 +112,13 @@ jQuery(function($){
         }
     }
     function onScroll() {
-        var menuPrimaryItems = $('#menu-primary-items');
+
+        if($('#menu-primary-items').length){
+            var menuPrimaryItems = $('#menu-primary-items');
+        } else {
+            var menuPrimaryItems = $('.menu-unset');
+        }
+
         var menuItemsBottom = menuPrimaryItems.offset().top + menuPrimaryItems.height();
 
         // keep updating var on scroll
@@ -323,6 +329,20 @@ jQuery(function($){
         }
     });
 
+    // reapply closed class for touch device usage
+    // doesn't have any impact unless 'touchstart' fired
+    function reApplyClosedClass(e) {
+
+        var container = $('.menu-item-has-children');
+
+        if (!container.is(e.target) // if the target of the click isn't the container...
+            && container.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+            container.addClass('closed');
+        }
+    }
+    $(document).on('click', reApplyClosedClass);
+
 });
 
 jQuery(window).load(function(){
@@ -333,21 +353,29 @@ jQuery(window).load(function(){
 
     function removeLayoutGaps(){
 
-        if( $('body').hasClass('two-column') || $('body').hasClass('two-column-images')){
+        // if wide enough for two-column layout
+        if($(window).width() > 899){
 
-            $('.excerpt').each(function(){
+            if( $('body').hasClass('two-column') || $('body').hasClass('two-column-images')){
 
-                // 40% of the screen over to be safe
-                var windowWidth = $(window).width() * 0.4;
+                $('.excerpt').each(function(){
 
-                // if it ends of over on the right, float it right
-                if($(this).offset().left > windowWidth){
-                    $(this).css('float','right');
-                } else {
-                    // to remove old float: right; on window resize
-                    $(this).css('float','left');
-                }
-            });
+                    // 40% of the screen over to be safe
+                    var windowWidth = $(window).width() * 0.4;
+
+                    // if it ends of over on the right, float it right
+                    if($(this).offset().left > windowWidth){
+                        $(this).css('float','right');
+                    } else {
+                        // to remove old float: right; on window resize
+                        $(this).css('float','left');
+                    }
+                });
+            }
+        }
+        // otherwise, remove inline styles in case screen shrunk from >900 to <900
+        else {
+            $('.excerpt').removeAttr('style');
         }
     }
     removeLayoutGaps();
@@ -359,6 +387,50 @@ jQuery(window).load(function(){
     });
 
 });
+
+// wait to see if a touch event is fired
+var hasTouch;
+window.addEventListener('touchstart', function setHasTouch () {
+    hasTouch = true;
+
+    // Remove event listener once fired
+    window.removeEventListener('touchstart', setHasTouch);
+
+    // since touch events are definitely being used, turn on the functionality
+    // to require a double-click on parent dropdown items
+    enableTouchDropdown();
+
+}, false);
+
+// require a second click to visit parent navigation items
+function enableTouchDropdown(){
+
+    // get all the parent menu items
+    var menuParents = document.getElementsByClassName('menu-item-has-children');
+
+    // add a 'closed' class to each and add an event listener to them
+    for (i = 0; i < menuParents.length; i++) {
+        menuParents[i].className = menuParents[i].className + " closed";
+        menuParents[i].addEventListener('click', openDropdown);
+    }
+}
+
+// check if an element has a class
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+// open the dropdown without visiting parent link
+function openDropdown(e){
+
+    // if has 'closed' class...
+    if(hasClass(this, 'closed')){
+        // prevent link from being visited
+        e.preventDefault();
+        // remove 'closed' class to enable link
+        this.className = this.className.replace('closed', '');
+    }
+}
 
 
 /* fix for skip-to-content link bug in Chrome & IE9 */

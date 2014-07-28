@@ -8,7 +8,7 @@ function ct_tracks_load_javascript_files() {
     if(! is_admin() ) {
         wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js#ct_tracks_asyncload', array('jquery'),'', true);
         wp_enqueue_style('ct-tracks-google-fonts');
-        wp_enqueue_style('ct-tracks-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
         wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
 
         if(get_theme_mod('premium_layouts_setting') == 'full-width'){
@@ -395,7 +395,7 @@ function ct_tracks_featured_image() {
                 $image = $image[0];
             }
             ?>
-             <img class="featured-image" src='<?php echo $image; ?>' data-src='<?php echo $image; ?>' />;
+             <img class="featured-image" src='<?php echo $image; ?>' data-src='<?php echo $image; ?>' />
             <?php
         }
         // otherwise, just output the src as a bg image

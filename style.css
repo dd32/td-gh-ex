@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.14
+Version: 1.15
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,11 @@ background-size: 11.1%; /* This is at 6-columns -> just change this # */
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-size: 100%;
   margin: 0;
@@ -76,6 +81,8 @@ body {
 .overflow-container {
   overflow: hidden;
   position: relative;
+  height: auto;
+  min-height: 100%;
 }
 
 .main {
@@ -227,6 +234,7 @@ th {
 .aligncenter {
   text-align: center;
   margin: 1.5em auto;
+  display: block;
 }
 
 .alignnone {
@@ -274,7 +282,7 @@ img {
 }
 
 /* Form styles */
-input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea {
   padding: 0.8em;
   width: 100%;
@@ -299,7 +307,19 @@ textarea {
 input[type="submit"] {
   background: #222222;
   color: white;
-  max-width: 13.875em !important;
+  max-width: 22.2em !important;
+  min-width: 11.1em;
+  padding: 0.8em;
+  min-height: 45px;
+  outline: none;
+  border: none;
+  font-family: "raleway", sans-serif;
+  font-size: 0.813em;
+  line-height: 1.85;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   cursor: pointer;
@@ -793,6 +813,7 @@ a img {
   position: relative;
   text-decoration: none;
   color: #4d4d4d;
+  clear: both;
 }
 .more-link:link, .more-link:visited {
   color: #4d4d4d;
@@ -1358,12 +1379,6 @@ li.pingback:after {
     padding: 0 19.435% 3em;
   }
 }
-/* 1200px */
-@media all and (min-width: 75em) {
-  .comments {
-    padding: 0 22.22% 3em;
-  }
-}
 .site-footer {
   color: #8c8c8c;
   text-align: center;
@@ -1531,6 +1546,23 @@ li.pingback:after {
     padding-bottom: 1.5em;
   }
 }
+/* Attachment styles */
+.singular-attachment .further-reading a {
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #8c8c8c;
+}
+.singular-attachment .further-reading a:link, .singular-attachment .further-reading a:visited {
+  color: #8c8c8c;
+}
+.singular-attachment .further-reading a:hover, .singular-attachment .further-reading a:active, .singular-attachment .further-reading a:focus {
+  color: black;
+}
+.singular-attachment .further-reading p {
+  width: 49.5%;
+}
+
 /* Widget Area Styles */
 .sidebar-after-post-content,
 .sidebar-after-page-content {
