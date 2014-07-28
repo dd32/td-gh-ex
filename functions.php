@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.14
+ * @since	2.14.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -490,15 +490,5 @@ function anarcho_top_button() {
 }
 add_action ('wp_footer','anarcho_top_button', 999);
 // END-Top Button
-
-// Scripts
-/* Enable scripts in footer. */
-function anarcho_scripts_footer() {
-	echo '<div class="scripts-footer">';
-	echo get_theme_mod('scripts_footer');
-	echo '</div>';
-}
-add_action ('wp_footer','anarcho_scripts_footer', 999);
-// END-Scripts
 
 ?>

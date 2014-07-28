@@ -109,8 +109,9 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.14  (2014.7.28)  - fixed : footer sticking to the bottom of the site.
                          fixed : footer modifications.
                          fixed : many more minor fixes and changes.
-
+    2.14.1 (2014.7.28) - removed : option in customizer for header/footer scripts.
                          
+
 == Contact & Issues for Anarcho Notepad ==
 
 	If you need to contact me, have questions, or have any problems with the Theme you can contact me by visiting this link http://mycyberuniverse.com/contacts.html

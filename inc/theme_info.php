@@ -3,7 +3,7 @@
  * Theme Information Page
  *
  * @package	Anarcho Notepad
- * @since	2.6
+ * @since	2.14.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -118,21 +118,3 @@ function anarcho_include_admin_style() {
 	wp_enqueue_style( 'anarcho_admin_styles', get_template_directory_uri() . '/admin.css' );
 }
 add_action( 'admin_init', 'anarcho_include_admin_style' );
-
-
-// Add WordPress customizer page to the admin bar menu.
-function anarcho_add_admin_bar_options_menu() {
-   if ( current_user_can( 'edit_theme_options' ) ) {
-     global $wp_admin_bar;
-     $wp_admin_bar->add_menu( array(
-               'parent'         => false,
-               'id'             => 'anarcho-customizr' ,
-               'title'          =>  __( 'Customiz\'it!' , 'anarcho-notepad' ),
-               'href'           => admin_url( 'customize.php' ),
-               'meta'           => array(
-			                  'title'      => __( 'Customize your website at any time!', 'anarcho-notepad' ),
-	       ),
-     ));
-   }
-}
-add_action('wp_before_admin_bar_render', 'anarcho_add_admin_bar_options_menu');

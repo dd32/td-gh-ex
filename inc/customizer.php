@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package	Anarcho Notepad
- * @since	2.12
+ * @since	2.14.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -188,14 +188,6 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 	'description'			=> __( 'Put here your scripts', 'anarcho-notepad' ),
 	'priority'			=> 3, ));
 
-		// Scripts in to header
-		$wp_customize->add_setting( 'scripts_header');
-		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_header', array(
-			'priority'			=> 1,
-		        'label'				=> __( 'Scripts in to header', 'anarcho-notepad' ),
-		        'section'			=> 'scripts_section',
-			'settings'			=> 'scripts_header', )));
-
 		// Scripts before posts
                 $wp_customize->add_setting( 'scripts_before_posts');
                 $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_before_posts', array(
@@ -227,14 +219,6 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
                         'label'                         => __( 'Scripts after posts', 'anarcho-notepad' ),
                         'section'                       => 'scripts_section',
                         'settings'                      => 'scripts_after_posts', )));
-
-		// Scripts in to footer
-                $wp_customize->add_setting( 'scripts_footer');
-                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'scripts_footer', array(
-			'priority'			=> 6,
-                        'label'                         => __( 'Scripts in to footer', 'anarcho-notepad' ),
-                        'section'                       => 'scripts_section',
-                        'settings'                      => 'scripts_footer', )));
 
    // POST SECTION
    $wp_customize->add_section( 'post_section', array(
