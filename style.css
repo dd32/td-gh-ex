@@ -2,7 +2,7 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.com/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 2.13
+Version: 2.14
 Author: Arthur (Berserkr) Gareginyan
 Author URI: http://mycyberuniverse.com/author.html
 Tags: black, white, light, two-columns, right-sidebar, fluid-layout, custom-header, custom-background, featured-images, rtl-language-support, translation-ready, theme-options, threaded-comments
@@ -416,6 +416,8 @@ blockquote cite:before {
 #sidebar .pages ul .sub-menu {
 	padding-left: 10px;
 	overflow: hidden; }
+#sidebar .widget-title {
+	font-family: 'Permanent Marker'; }
 
 
 /* Recent posts
@@ -573,7 +575,7 @@ img.alignleft {
 	min-height:60px; }
 #footer .site-info {
 	text-align: center;
-	font-size: 80%;
+	font-size: 92%;
 	padding: 1% 0 0 0;
 	line-height: 110%;
 	overflow: hidden;
@@ -583,18 +585,12 @@ img.alignleft {
 	z-index: 10;
 	background-color: #2d3032;
 	border-top: 1px solid #8A8989; }
-#footer .rss a {
-	width:49px;
-	height:51px;
-	position:absolute;
-	top:58px;
-	left:273px;
-	font-size:70%;
-	text-indent:-400px;
-	z-index:103;
-	overflow:hidden;
-	background:url(images/icon-rss.gif) no-repeat 0 0; }
-#footer .rss a:hover { background:url(images/icon-rss.gif) no-repeat 0 -51px; }
+#footer .footer {
+	background-color: #2d3032;
+	text-align: center;
+	color: #ccc;
+	font-size: 92%;
+}
 /* END-Footer */
 
 /* Comment

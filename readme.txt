@@ -106,6 +106,9 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.13  (2014.6.24)  - fixed : the fon image optimized for web.
                          fixed : optimized images with text.
                          fixed : many more minor fixes and changes.
+    2.14  (2014.7.28)  - fixed : footer sticking to the bottom of the site.
+                         fixed : footer modifications.
+                         fixed : many more minor fixes and changes.
 
                          
 == Contact & Issues for Anarcho Notepad ==

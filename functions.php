@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.12
+ * @since	2.14
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -452,5 +452,53 @@ function anarcho_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'anarcho_wp_title', 10, 2 );
+
+// Copyright
+/* Enable info about copyright. */
+function anarcho_copyright() {
+ if(get_theme_mod('disable_anarcho_copy') == '0') {
+	echo '<a href="http://wordpress.org/themes/anarcho-notepad">Theme "Anarcho Notepad" designed and engineered by Arthur (Berserkr) Gareginyan.</a><br/>';
+ }
+}
+add_action ('wp_footer','anarcho_copyright', 999);
+// END-Copyright
+
+// Queries
+/* Display info about a database queries. */
+function anarcho_mysql_queries() {
+ if(get_theme_mod('show_info_line') == '1') {
+ 	echo "\n";
+	echo get_num_queries();
+	_e(' queries in ', 'anarcho-notepad');
+	timer_stop(1);
+	_e(' seconds', 'anarcho-notepad');
+	echo ' / ';
+	echo round(memory_get_usage()/1024/1024, 2);
+	_e(' mb', 'anarcho-notepad');
+	echo "\n";
+ }
+}
+add_action ('wp_footer','anarcho_mysql_queries', 999);
+// END-Queries
+
+// Top Button
+/* Enable Top Button. */
+function anarcho_top_button() {
+ if(get_theme_mod('disable_top_button') == '0') {
+	echo '<a id="back-top" href="#top"><i class="fa fa-arrow-up fa-lg"></i></a>';
+ }
+}
+add_action ('wp_footer','anarcho_top_button', 999);
+// END-Top Button
+
+// Scripts
+/* Enable scripts in footer. */
+function anarcho_scripts_footer() {
+	echo '<div class="scripts-footer">';
+	echo get_theme_mod('scripts_footer');
+	echo '</div>';
+}
+add_action ('wp_footer','anarcho_scripts_footer', 999);
+// END-Scripts
 
 ?>
