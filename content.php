@@ -4,7 +4,10 @@ if( is_home() ) { ?>
     <div <?php post_class(); ?>>
     	<?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
-            Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
+            <?php
+            echo __('Published', 'ignite') . " " . get_the_date('F jS, Y') . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            the_author_posts_link();
+            ?>
         </div>
 		<div class='excerpt-header'>
 			<h1 class='excerpt-title'>
@@ -24,7 +27,10 @@ if( is_home() ) { ?>
     <div <?php post_class(); ?>>
         <?php ct_ignite_featured_image(); ?>
         <div class="entry-meta-top">
-            Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
+            <?php
+            echo __('Published', 'ignite') . " " . get_the_date('F jS, Y') . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            the_author_posts_link();
+            ?>
         </div>
 		<div class='entry-header'>
 			<h1 class='entry-title'><?php the_title(); ?></h1>
@@ -37,21 +43,24 @@ if( is_home() ) { ?>
 		</div>
 		<div class='entry-meta-bottom'>
 			<?php ct_ignite_further_reading(); ?>
-            <div class="author-meta">
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 72 );?>
-                <div class="name-container">
-                    <h4>
-                        <?php
-                        if(get_the_author_meta('user_url')){
-                            echo "<a href='" . get_the_author_meta('user_url') . "'>" . get_the_author() . "</a>";
-                        } else {
-                            the_author();
-                        }
-                        ?>
-                    </h4>
+            <?php
+            if(get_theme_mod('ct_ignite_author_meta_settings') == 'show'){ ?>
+                <div class="author-meta">
+                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 72 );?>
+                    <div class="name-container">
+                        <h4>
+                            <?php
+                            if(get_the_author_meta('user_url')){
+                                echo "<a href='" . get_the_author_meta('user_url') . "'>" . get_the_author() . "</a>";
+                            } else {
+                                the_author();
+                            }
+                            ?>
+                        </h4>
+                    </div>
+                    <p><?php echo get_the_author_meta('description'); ?></p>
                 </div>
-                <p><?php echo get_the_author_meta('description'); ?></p>
-            </div>
+            <?php } ?>
 			<div class="entry-categories"><?php ct_ignite_category_display(); ?></div>
 			<div class="entry-tags"><?php ct_ignite_tags_display(); ?></div>
 		</div>
@@ -61,7 +70,10 @@ if( is_home() ) { ?>
     <div <?php post_class(); ?>>
         <?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
-            Published <?php echo get_the_date('F jS, Y'); ?> by <?php the_author_posts_link(); ?>
+            <?php
+            echo __('Published', 'ignite') . " " . get_the_date('F jS, Y') . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            the_author_posts_link();
+            ?>
         </div>
         <div class='excerpt-header'>
             <h1 class='excerpt-title'>

@@ -10,7 +10,13 @@
     <h3><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?></a></h3>
     <span><?php bloginfo('description'); ?></span>
     <div class="design-credit">
-        <span><a href="http://www.competethemes.com/ignite/">Ignite WordPress Theme</a> by Compete Themes</span>
+        <span>
+            <?php
+            $site_url = 'http://www.competethemes.com/ignite/';
+            $site_link = sprintf( __( '<a target="_blank" href="%s">Ignite WordPress Theme</a> by Compete Themes.', 'ignite' ), esc_url( $site_url ) );
+            echo $site_link;
+            ?>
+        </span>
     </div>
 </footer>
 
