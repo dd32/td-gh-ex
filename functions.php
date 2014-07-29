@@ -31,7 +31,7 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 		register_nav_menu( 'primary', 'Primary Menu' );
 
 		// hide admin bar
-	    show_admin_bar( true );
+		show_admin_bar( false );
 
 	    // register sidebars
 	    // 
@@ -214,7 +214,10 @@ function beautiful_filter_wp_title( $title ) {
  * @return blog navigation
  */
 function beautiful_blog_navigation() {
-	if( !empty( get_next_posts_link() ) || !empty( get_previous_posts_link() ) ) :
+	$get_next_posts_link 		= get_next_posts_link();
+	$get_previous_posts_link 	= get_previous_posts_link();
+
+	if( !empty( $get_next_posts_link ) || !empty( $get_previous_posts_link ) ) :
 		if( !is_rtl() ) :
 	?>
 		<div class="row blog-navigation">
@@ -298,7 +301,7 @@ function beautiful_blog_post() {
 	if(get_the_post_thumbnail() != '') : ?>	
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post blog-thumbnail'); ?>>
-			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( the_permalink() ) ?>">
 
 				<?php the_post_thumbnail(); ?>
 

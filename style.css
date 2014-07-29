@@ -1,10 +1,10 @@
 /*
 Theme Name: Beautiful
-Theme URI: http://chakosh.ir/themes/Beautiful
+Theme URI: http://chakosh.ir/theme/Beautiful
 Author: AmirMasoud Sheidayi
 Author URI: http://chakosh.ir/
-Description: colorful responsive simple theme created for creativity
-Version: 1.0
+Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -877,6 +877,10 @@ header.row .col-md-8
 	border-bottom: 1px solid #DDD;
 	border-top: 1px solid #DDD;
 	margin-top: 50px;
+}
+
+.comment-awaiting-moderation {
+	text-align: center;
 }
 
 .comment-metadata {
