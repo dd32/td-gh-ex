@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-14 22:31+0545\n"
-"PO-Revision-Date: 2014-07-14 22:31+0545\n"
+"POT-Creation-Date: 2014-07-30 14:28+0545\n"
+"PO-Revision-Date: 2014-07-30 14:28+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -135,7 +135,7 @@ msgstr "<b>%</b> Comentários;"
 #: ../content-gallery.php:46 ../content-image.php:37 ../content-link.php:29
 #: ../content-page.php:18 ../content-quote.php:25 ../content-status.php:33
 #: ../content-video.php:37 ../content.php:62 ../image.php:34 ../image.php:100
-#: ../inc/template-tags.php:179
+#: ../inc/template-tags.php:195
 msgid "Edit"
 msgstr "Editar"
 
@@ -226,7 +226,7 @@ msgstr "Sobre: %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Ver todas as postagens de: %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:91 ../inc/catcheverest-functions.php:445
+#: ../functions.php:91 ../inc/catcheverest-functions.php:453
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
@@ -286,180 +286,180 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Ambos os comentários e trackbacks estão atualmente fechados."
 
-#: ../inc/catcheverest-functions.php:175
+#: ../inc/catcheverest-functions.php:183
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../inc/catcheverest-functions.php:208 ../inc/catcheverest-functions.php:692
-#: ../inc/catcheverest-functions.php:695 ../inc/catcheverest-functions.php:812
-#: ../inc/catcheverest-functions.php:843 ../inc/catcheverest-functions.php:875
+#: ../inc/catcheverest-functions.php:216 ../inc/catcheverest-functions.php:700
+#: ../inc/catcheverest-functions.php:703 ../inc/catcheverest-functions.php:820
+#: ../inc/catcheverest-functions.php:851 ../inc/catcheverest-functions.php:883
 #: ../searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catcheverest-functions.php:446
+#: ../inc/catcheverest-functions.php:454
 msgid "Skip to content"
 msgstr "Ir para o conteúdo"
 
-#: ../inc/catcheverest-functions.php:984
+#: ../inc/catcheverest-functions.php:992
 msgid "Copyright"
 msgstr "Direitos Autorais "
 
-#: ../inc/catcheverest-functions.php:984
+#: ../inc/catcheverest-functions.php:992
 msgid "All Rights Reserved"
 msgstr "-  Todos os Direitos são Reservados"
 
-#: ../inc/catcheverest-functions.php:984
+#: ../inc/catcheverest-functions.php:992
 msgid "Powered by"
 msgstr "Desenvolvido por"
 
-#: ../inc/catcheverest-functions.php:984
+#: ../inc/catcheverest-functions.php:992
 msgid "Theme"
 msgstr "Tema"
 
-#: ../inc/catcheverest-functions.php:1086
+#: ../inc/catcheverest-functions.php:1094
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s no Facebook"
 
-#: ../inc/catcheverest-functions.php:1091
+#: ../inc/catcheverest-functions.php:1099
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s no Twitter"
 
-#: ../inc/catcheverest-functions.php:1096
+#: ../inc/catcheverest-functions.php:1104
 #, php-format
 msgid "%s on Google+"
 msgstr "%s no Google+"
 
-#: ../inc/catcheverest-functions.php:1101
+#: ../inc/catcheverest-functions.php:1109
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s no Linkedin"
 
-#: ../inc/catcheverest-functions.php:1106
+#: ../inc/catcheverest-functions.php:1114
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s no Pinterest"
 
-#: ../inc/catcheverest-functions.php:1111
+#: ../inc/catcheverest-functions.php:1119
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s no YouTube"
 
-#: ../inc/catcheverest-functions.php:1116
+#: ../inc/catcheverest-functions.php:1124
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s no Vimeo"
 
-#: ../inc/catcheverest-functions.php:1121
+#: ../inc/catcheverest-functions.php:1129
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s no Slideshare"
 
-#: ../inc/catcheverest-functions.php:1126
+#: ../inc/catcheverest-functions.php:1134
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s no Foursquare"
 
-#: ../inc/catcheverest-functions.php:1131
+#: ../inc/catcheverest-functions.php:1139
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s no Flickr"
 
-#: ../inc/catcheverest-functions.php:1136
+#: ../inc/catcheverest-functions.php:1144
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s no Tumblr"
 
-#: ../inc/catcheverest-functions.php:1141
+#: ../inc/catcheverest-functions.php:1149
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s no deviantART"
 
-#: ../inc/catcheverest-functions.php:1146
+#: ../inc/catcheverest-functions.php:1154
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s no Dribbble"
 
-#: ../inc/catcheverest-functions.php:1151
+#: ../inc/catcheverest-functions.php:1159
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s no MySpace"
 
-#: ../inc/catcheverest-functions.php:1156
+#: ../inc/catcheverest-functions.php:1164
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s no WordPress"
 
-#: ../inc/catcheverest-functions.php:1161
+#: ../inc/catcheverest-functions.php:1169
 #, php-format
 msgid "%s on RSS"
 msgstr "%s no RSS"
 
-#: ../inc/catcheverest-functions.php:1166
+#: ../inc/catcheverest-functions.php:1174
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s no Delicious"
 
-#: ../inc/catcheverest-functions.php:1171
+#: ../inc/catcheverest-functions.php:1179
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s no Last.fm"
 
-#: ../inc/catcheverest-functions.php:1176
+#: ../inc/catcheverest-functions.php:1184
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s no Instagram"
 
-#: ../inc/catcheverest-functions.php:1181
+#: ../inc/catcheverest-functions.php:1189
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s no GitHub"
 
-#: ../inc/catcheverest-functions.php:1186
+#: ../inc/catcheverest-functions.php:1194
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s no Vkontakte"
 
-#: ../inc/catcheverest-functions.php:1191
+#: ../inc/catcheverest-functions.php:1199
 #, php-format
 msgid "%s on My World"
 msgstr "%s no My World"
 
-#: ../inc/catcheverest-functions.php:1196
+#: ../inc/catcheverest-functions.php:1204
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s no Odnoklassniki"
 
-#: ../inc/catcheverest-functions.php:1201
+#: ../inc/catcheverest-functions.php:1209
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s no Goodreads"
 
-#: ../inc/catcheverest-functions.php:1206
+#: ../inc/catcheverest-functions.php:1214
 #, php-format
 msgid "%s on Skype"
 msgstr "%s no Skype"
 
-#: ../inc/catcheverest-functions.php:1211
+#: ../inc/catcheverest-functions.php:1219
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s no Soundcloud"
 
-#: ../inc/catcheverest-functions.php:1216
+#: ../inc/catcheverest-functions.php:1224
 #, php-format
 msgid "%s on Email"
 msgstr "%s no Email"
 
-#: ../inc/catcheverest-functions.php:1311
+#: ../inc/catcheverest-functions.php:1319
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1338
-#: ../inc/catcheverest-functions.php:1352
+#: ../inc/catcheverest-functions.php:1346
+#: ../inc/catcheverest-functions.php:1360
 msgid "Menu"
 msgstr "Menu"
 
@@ -1210,61 +1210,61 @@ msgstr "Y"
 msgid "Catch Everest"
 msgstr "Catch Everest"
 
-#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:111
 msgid "Post navigation"
 msgstr "Navegação das Postagens"
 
-#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
+#: ../inc/template-tags.php:54 ../inc/template-tags.php:115
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr; Anterior"
 
-#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
+#: ../inc/template-tags.php:55 ../inc/template-tags.php:116
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "Próximo &rarr;"
 
-#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
+#: ../inc/template-tags.php:67 ../inc/template-tags.php:128
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Postagens Anteriores"
 
-#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
+#: ../inc/template-tags.php:71 ../inc/template-tags.php:132
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Postagens Recentes <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/template-tags.php:147
+#: ../inc/template-tags.php:163
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/template-tags.php:147
+#: ../inc/template-tags.php:163
 msgid "(Edit)"
 msgstr "(Editar)"
 
-#: ../inc/template-tags.php:162
+#: ../inc/template-tags.php:178
 msgid "Post author"
 msgstr "Arquivos do autor: %s"
 
-#: ../inc/template-tags.php:168
+#: ../inc/template-tags.php:184
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s em %2$s"
 
-#: ../inc/template-tags.php:174
+#: ../inc/template-tags.php:190
 msgid "Your comment is awaiting moderation."
 msgstr ""
 "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado por "
 "Comentar!</strong>"
 
-#: ../inc/template-tags.php:183
+#: ../inc/template-tags.php:199
 msgid "Reply"
 msgstr "Responder"
 
-#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
+#: ../inc/template-tags.php:228 ../inc/template-tags.php:301
 #, php-format
 msgid "View all posts by %s"
 msgstr "Ver todas as postagens de: %s"
 
-#: ../inc/template-tags.php:217
+#: ../inc/template-tags.php:233
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
@@ -1273,12 +1273,12 @@ msgstr ""
 "<span class=\"on-date\">Postado em: %1$s</span><span class=\"by-author\"> "
 "por: %2$s</span>"
 
-#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
-#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
+#: ../inc/template-tags.php:255 ../inc/template-tags.php:258
+#: ../inc/template-tags.php:287 ../inc/template-tags.php:290
 msgid ", "
 msgstr ","
 
-#: ../inc/template-tags.php:247
+#: ../inc/template-tags.php:263
 #, php-format
 msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
@@ -1287,12 +1287,12 @@ msgstr ""
 "<span class=\"in-category\">Postado em: %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">com as Tags: %2$s</span>"
 
-#: ../inc/template-tags.php:249
+#: ../inc/template-tags.php:265
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
 msgstr "<span class=\"in-category\">Postado em: %1$s</span>"
 
-#: ../inc/template-tags.php:291
+#: ../inc/template-tags.php:307
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -1305,7 +1305,7 @@ msgstr ""
 "Tags: %2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "por: %4$s</span>"
 
-#: ../inc/template-tags.php:293
+#: ../inc/template-tags.php:309
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -1316,7 +1316,7 @@ msgstr ""
 "sob a %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "por %4$s</span>."
 
-#: ../inc/template-tags.php:295
+#: ../inc/template-tags.php:311
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"

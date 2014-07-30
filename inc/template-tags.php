@@ -56,13 +56,21 @@ function catcheverest_content_nav( $nav_id ) {
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
-		<?php endif; ?>
+		<?php if ( function_exists('wp_pagenavi' ) )  { 
+            wp_pagenavi();
+        }
+        elseif ( function_exists('wp_page_numbers' ) ) { 
+            wp_page_numbers();
+        }
+		else { ?>
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
+			<?php endif; ?>
 
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
-		<?php endif; ?>
+			<?php if ( get_previous_posts_link() ) : ?>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
+            <?php endif; ?>
+       	<?php } ?>
 
 	<?php endif; ?>
 
@@ -109,13 +117,21 @@ function catcheverest_content_query_nav( $nav_id ) {
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
-		<?php endif; ?>
+		<?php if ( function_exists('wp_pagenavi' ) )  { 
+            wp_pagenavi();
+        }
+        elseif ( function_exists('wp_page_numbers' ) ) { 
+            wp_page_numbers();
+        }
+		else { ?>
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
+			<?php endif; ?>
 
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
-		<?php endif; ?>
+			<?php if ( get_previous_posts_link() ) : ?>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
+            <?php endif; ?>
+       	<?php } ?>
 
 	<?php endif; ?>
 

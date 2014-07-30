@@ -71,6 +71,8 @@
     <?php 
     /** 
      * catcheverest_after_footer hook
+	 *
+	 * @hooked catcheverest_scrollup - 10
      */
     do_action( 'catcheverest_after_footer' ); 
     ?> 

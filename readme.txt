@@ -28,13 +28,18 @@ Catch Everest is distributed under the terms of the GNU General Public License v
 
 Unless otherwise specified, all Images are self shot by Catch Themes 
 Copyright: Catch Themes, catchthemes.com
-1) http://pixabay.com/en/nepal-himalayas-mount-everest-414/ - Slider Image is from PixaBay.com and is released under the CC0 license
+	1) http://pixabay.com/en/nepal-himalayas-mount-everest-414/ - Slider Image is from PixaBay.com and is released under the CC0 license
 
 Scripts used in the site are as below:
-1. Menu script uses Tinynav script (http://tinynav.viljamis.com) licensed under MIT and Slect Box Script (http://www.bulgaria-web-developers.com/projects/javascript/selectbox/) lincensed under MIT/GPL2 license 
-2. IE8 scrpt uses HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2, Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT and CSS3 Media Queries Script (https://code.google.com/p/css3-mediaqueries-js/) licensed under MIT license
-3. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
-4. Keyboard image navigation from Underscore theme license under GPL
+	1. Menu script uses Tinynav script (http://tinynav.viljamis.com) licensed under MIT and Slect Box Script (http://www.bulgaria-web-developers.com/projects/javascript/selectbox/) lincensed under MIT/GPL2 license 
+	2. IE8 scrpt uses HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2, Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT and CSS3 Media Queries Script (https://code.google.com/p/css3-mediaqueries-js/) licensed under MIT license
+	3. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
+	4. Keyboard image navigation from Underscore theme license under GPL
+
+Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later 
+	http://genericons.com/
 
 Catch Everest is based on Underscores
 http://underscores.me/
@@ -57,6 +62,12 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+version 1.7
+* Added support for pagination plugin WP-PageNavi and WP Page Numbers
+* Added Scroll Up script
+* Added genericons
+
 version 1.6
 * Added email in social link option
 * Optimized Theme Options panel to speed up

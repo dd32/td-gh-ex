@@ -30,6 +30,9 @@ function catcheverest_scripts() {
 	 */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
+	// Add Genericons font, used in the main stylesheet.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
+	
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
@@ -64,6 +67,11 @@ function catcheverest_scripts() {
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) {
 		wp_enqueue_script( 'catcheverest-slider', get_template_directory_uri() . '/js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
 	}
+	
+	/**
+	 * Loads up Scroll Up script
+	 */	
+	wp_enqueue_script( 'catcheverest-scrollup', get_template_directory_uri() . '/js/catcheverest-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	
 	/**
 	 * Browser Specific Enqueue Script
@@ -1413,3 +1421,16 @@ function catcheverest_web_clip() {
 
 //Load webclip icon in Header Section
 add_action( 'wp_head', 'catcheverest_web_clip' );
+
+
+/**
+ * This function loads Scroll Up Navigation
+ *
+ * @uses catcheverest_after_footer action
+ */
+function catcheverest_scrollup() {
+	
+	echo '<a href="#masthead" id="scrollup"></a>';
+	
+}
+add_action( 'catcheverest_after_footer', 'catcheverest_scrollup', 10 );
