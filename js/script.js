@@ -39,7 +39,7 @@
 			var selectDiv = document.createElement( 'div' ); /* create div element */
 			selectDiv.className = 'archy-select-block';
 			$( selectDiv ).mousemove(function() { /* reset selected class from choosed element */
-				$( this ).find( '.archy-option.archy-selected' ).removeClass( 'selected' );
+				$( this ).find( '.archy-option.selected' ).removeClass( 'selected' );
 			});
 			var mainSelect = $( val ); /* get select element */
 			mainSelect.hide(); /* hide all options */
@@ -70,15 +70,18 @@
 					elem.setAttribute( 'value', $( v ).attr( 'value' ) );
 
 					elem.onclick = function() {
-							if( !( $( this ).attr( 'class' ).indexOf( $( fakeSelect ).children( 'h1' ).attr( 'class' ) ) > 0 ) ) {
-								/* h1 changes */
-								$( fakeSelect ).children( 'h1' ).text( $( this ).text() );
-								$( fakeSelect ).children( 'h1' ).attr( 'value', $( this ).attr( 'value' ) );
-								$( fakeSelect ).children( 'h1' ).get( 0 ).className = $( this ).attr( 'class' ).match( /archy-index-\d+/, 'g' ); /* get index */
+						if( !( $( this ).attr( 'class' ).indexOf( $( fakeSelect ).children( 'h1' ).attr( 'class' ) ) > 0 ) ) {
+							/* h1 changes */
+							$( fakeSelect ).children( 'h1' ).text( $( this ).text() );
+							$( fakeSelect ).children( 'h1' ).attr( 'value', $( this ).attr( 'value' ) );
+							$( fakeSelect ).children( 'h1' ).get( 0 ).className = $( this ).attr( 'class' ).match( /archy-index-\d+/, 'g' ); /* get index */
 
-								mainSelect.prop( 'selectedIndex', $( this ).attr( 'class' ).split( '-' )[1] ).change();
-							}
-							$( selectDiv ).hide();
+							mainSelect.prop( 'selectedIndex', $( this ).attr( 'class' ).split( '-' )[1] ).change();
+						}
+						var selElementIndex = $( this ).index();
+						$( this ).parent().parent().prev().find( "option" ).removeAttr( 'selected' );
+						$( this ).parent().parent().prev().find( "option" ).eq( selElementIndex ).attr( 'selected', 'selected' ).trigger( "change" );
+						$( selectDiv ).hide();
 					}
 				}
 				if( $( v ).parent().get( 0 ).tagName == 'SELECT' ) { /* fisrt childs of select */
@@ -250,6 +253,21 @@
 			forms.find( '.archy-fake-radio, .archy-fake-checkbox' ).removeClass( 'selected' );
 			$( forms )[0].reset();
 			forms.find( 'input[type="file"]' ).change();
+
+			/* Clear original selects. */
+			$( 'select' ).each(function() {
+				/* set path */
+				var clear_select = $( this ).find( "option:first" );
+				/* clear active opt */
+				$( this ).find( "option" ).removeAttr( 'selected' );
+				$( clear_select ).attr( 'selected', 'selected' );
+			});
+			/* Clear custom selects. */
+			$( '.archy-select' ).each(function() {
+				/* clear active opt */
+				$( this ).find( ".archy-select-block" ).find( ".archy-option" ).removeAttr( "selected" );
+				$( this ).find( "h1:first" ).text( $( this ).prev().find( "option:first" ).text() );
+			});
 			e.preventDefault;
 		});	
 
