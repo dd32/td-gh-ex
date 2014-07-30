@@ -1265,6 +1265,14 @@ function adventurous_theme_options_do_page() {
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Email', 'adventurous' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="adventurous_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->                            
+                            <div class="row">
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                            	</div><!-- .row -->
                         </div><!-- .option-content -->
@@ -1584,7 +1592,9 @@ function adventurous_theme_options_validate( $options ) {
 	if( isset( $input[ 'social_soundcloud' ] ) ) {
 		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
 	}		
-
+	if( isset( $input[ 'social_email' ] ) ) {
+		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	}
 	
     // Layout settings verification
 	if( isset( $input[ 'sidebar_layout' ] ) ) {

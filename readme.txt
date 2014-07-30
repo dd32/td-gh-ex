@@ -98,9 +98,15 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 == Changelog ==
 
+Version 1.0
+* Added email in social link option
+* Added Scroll Up script
+* Added minifed custom script adventurous-custom.min.js
+
 Version 0.8
 * Fixed Featured Content 3 column layout css
 * Fixed Header Right Menu Drop Down issue
+* Optimized Theme Options panel to speed up
 
 Version 0.7
 * Remove blog page template page-blog.php 

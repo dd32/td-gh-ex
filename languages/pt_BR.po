@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-07 02:53+0545\n"
-"PO-Revision-Date: 2014-07-07 02:53+0545\n"
+"POT-Creation-Date: 2014-07-30 18:00+0545\n"
+"PO-Revision-Date: 2014-07-30 18:00+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -431,7 +431,12 @@ msgstr "%s no Skype"
 msgid "%s on Soundcloud"
 msgstr "%s no Soundcloud"
 
-#: ../inc/adventurous-functions.php:888
+#: ../inc/adventurous-functions.php:871
+#, php-format
+msgid "%s on Email"
+msgstr "%s no Email"
+
+#: ../inc/adventurous-functions.php:893
 msgid "ID"
 msgstr "ID"
 
@@ -448,7 +453,7 @@ msgid "Secondary Menu"
 msgstr "Menu Secundário"
 
 #: ../inc/adventurous-metabox.php:14
-#: ../inc/panel/adventurous-theme-options.php:1750
+#: ../inc/panel/adventurous-theme-options.php:1760
 msgid "Adventurous"
 msgstr "Adventurous (Aventureiro)"
 
@@ -744,19 +749,19 @@ msgstr "Continuar a leitura &rarr;"
 msgid "Search &hellip;"
 msgstr "Pesquisar..."
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:94
+#: ../inc/panel/adventurous-theme-options-defaults.php:95
 msgid "Copyright"
 msgstr "Direitos Autorais"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:94
+#: ../inc/panel/adventurous-theme-options-defaults.php:95
 msgid "All Rights Reserved"
 msgstr "Todos os Direitos são Reservados"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:94
+#: ../inc/panel/adventurous-theme-options-defaults.php:95
 msgid "Powered by"
 msgstr "Desenvolvido por"
 
-#: ../inc/panel/adventurous-theme-options-defaults.php:94
+#: ../inc/panel/adventurous-theme-options-defaults.php:95
 msgid "Theme"
 msgstr "Tema"
 
@@ -919,7 +924,7 @@ msgstr "Pré-visualização"
 #: ../inc/panel/adventurous-theme-options.php:978
 #: ../inc/panel/adventurous-theme-options.php:1013
 #: ../inc/panel/adventurous-theme-options.php:1046
-#: ../inc/panel/adventurous-theme-options.php:1268
+#: ../inc/panel/adventurous-theme-options.php:1276
 msgid "Save Changes"
 msgstr "Salvar Alterações"
 
@@ -1588,7 +1593,7 @@ msgid "MySpace"
 msgstr "MySpace"
 
 #: ../inc/panel/adventurous-theme-options.php:1173
-#: ../inc/panel/adventurous-theme-options.php:1740
+#: ../inc/panel/adventurous-theme-options.php:1750
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -1636,7 +1641,11 @@ msgstr "Skype"
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/panel/adventurous-theme-options.php:1719
+#: ../inc/panel/adventurous-theme-options.php:1269
+msgid "Email"
+msgstr "Email"
+
+#: ../inc/panel/adventurous-theme-options.php:1729
 msgid "Y"
 msgstr "Y"
 

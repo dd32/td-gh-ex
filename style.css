@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/adventurous
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese and Hungarian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
-Version: 0.8
+Version: 1.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
@@ -1588,8 +1588,39 @@ object {
 }
 
 
+/* =Scrollup
+----------------------------------------------- */
+
+a#scrollup {
+	background-color: #000;
+	bottom: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #fff;
+	display: none;
+	-webkit-font-smoothing: antialiased;
+	font: normal 24px/1 'Genericons';
+	padding: 5px;
+	position: fixed;
+	right: 20px;
+	text-decoration: none;
+	vertical-align: top;
+	opacity: 0.5;
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+a#scrollup:before {
+	content: '\f432';
+}
+a#scrollup:hover {
+	opacity: 1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+
 /* =Jetpack plugins
 ----------------------------------------------- */
+
 /* Infinite Scroller */
 #content #infinite-handle {
     display: block;
@@ -1972,6 +2003,12 @@ ul.social-profile li.soundcloud a {
 }
 ul.social-profile li.soundcloud a:hover {
 	background-position: -1076px -43px;
+}
+ul.social-profile li.email a {
+	background-position: -1119px 0;
+}
+ul.social-profile li.email a:hover {
+	background-position: -1119px -43px;
 }
 ul.social-profile li.custom-social a {
 	background: none;

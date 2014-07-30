@@ -372,6 +372,10 @@ and (orientation : landscape) {
 	.widget.widget_nav_menu .sb-holder a:hover {
 		color: #fff;
 	}	
+	a#scrollup {
+		font-size: 20px;
+		padding: 3px;
+	}		
 }
 
 

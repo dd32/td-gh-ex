@@ -47,7 +47,7 @@ function adventurous_scripts() {
 	 * Loads up jQuery Waypoints and Custom Scripts
 	 */	
 	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), '2.0.5', true);
-	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.js', array( 'waypoints' ), '20140317', true );	
+	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.min.js', array( 'waypoints' ), '20140317', true );	
 	
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -865,6 +865,11 @@ function adventurous_social_networks() {
 				$adventurous_social_networks .=
 					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'adventurous' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
 			}
+			//Email
+			if ( !empty( $options[ 'social_email' ] ) ) {
+				$adventurous_social_networks .=
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'adventurous' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
+			}		
 			
 			$adventurous_social_networks .='
 		</ul>';
@@ -998,3 +1003,16 @@ endif;
 
 // Load  breadcrumb in adventurous_after_hgroup_wrap hook
 add_action( 'adventurous_content_sidebar', 'adventurous_breadcrumb_display', 20 );
+
+
+/**
+ * This function loads Scroll Up Navigation
+ *
+ * @uses adventurous_after_footer action to add the code in the footer
+ */
+function adventurous_scrollup() {
+
+	echo '<a href="#masthead" id="scrollup"></a>' ;
+
+}
+add_action( 'adventurous_after_footer', 'adventurous_scrollup', 10 );

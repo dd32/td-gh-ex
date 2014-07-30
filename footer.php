@@ -73,6 +73,8 @@
     <?php 
     /** 
      * adventurous_after_footer hook
+	 *
+	 * @hooked adventurous_scrollup - 10
      */
     do_action( 'adventurous_after_footer' );  ?> 
     
