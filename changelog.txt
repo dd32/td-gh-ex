@@ -1,6 +1,12 @@
 *** Baskerville changelog ***
 
 
+
+Version 1.10 (2014-07-31)
+-------------------------
+- Fixed so that plugins can add post thumbnail sizes when Baskerville is active
+
+
 Version 1.09 (2014-07-19)
 -------------------------
 - Fixed so that the post-image size is the same as the maximum width of the container

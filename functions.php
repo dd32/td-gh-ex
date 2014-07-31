@@ -9,7 +9,7 @@ function baskerville_setup() {
 	add_theme_support( 'automatic-feed-links' );
 		
 	// Post thumbnails
-	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'post-image', 945, 9999 );
 	add_image_size( 'post-thumbnail', 600, 9999 );
 	
