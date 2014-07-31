@@ -53,6 +53,11 @@ JS Files
 
     fitvids is Licensed under the  WTFPL license
     http://fitvidsjs.com/
+	
+Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later 
+	http://genericons.com/	
 
 
 == Post ID shown in the All Posts Table ==
@@ -72,6 +77,13 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 2.0
+* Added Scroll Up script
+* Added support for pagination plugin WP-PageNavi and WP Page Numbers
+* Added genericons
+* Fixed image uploader in Theme Options panel
+* Fixed dark color scheme css for slider
 
 Version 1.9
 * Added email in social link option

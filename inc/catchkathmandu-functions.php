@@ -29,7 +29,12 @@ function catchkathmandu_scripts() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'catchkathmandu-style', get_stylesheet_uri() );		
+	wp_enqueue_style( 'catchkathmandu-style', get_stylesheet_uri() );
+	
+	/**
+	 *Add Genericons font, used in the main stylesheet.
+	 */	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
 	
 	/**
 	 * Loads up Color Scheme
@@ -87,6 +92,11 @@ function catchkathmandu_scripts() {
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) {	
 		wp_enqueue_script( 'catchkathmandu-slider', get_template_directory_uri() . '/js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}	
+	
+	/**
+	 * Loads up Scroll Up script
+	 */	
+	wp_enqueue_script( 'catchkathmandu-scrollup', get_template_directory_uri() . '/js/catchkathmandu-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	
 	/**
 	 * Browser Specific Enqueue Script
@@ -1873,3 +1883,16 @@ endif;
 
 // Load  breadcrumb in catchkathmandu_after_hgroup_wrap hook
 add_action( 'catchkathmandu_after_hgroup_wrap', 'catchkathmandu_breadcrumb_display', 30 );
+
+
+/**
+ * This function loads Scroll Up Navigation
+ *
+ * @uses catchkathmandu_after_footer action
+ */
+function catchkathmandu_scrollup() {
+	
+	echo '<a href="#masthead" id="scrollup"></a>';
+	
+}
+add_action( 'catchkathmandu_after_footer', 'catchkathmandu_scrollup', 10 );

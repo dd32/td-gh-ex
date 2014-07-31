@@ -522,6 +522,31 @@ and (orientation : portrait) {
 	#footer-menu .menu {
 		display: none;
 	}	
+	/* Pagination */
+	#nav-below .wp-pagenavi a, 
+	#nav-below .wp-pagenavi span, 
+	#nav-below #wp_page_numbers ul li a,
+	.page-link span,
+	.page-link a span {
+		height: 25px;
+		font-size:12px;
+		line-height: 24px;
+		padding:0 10px;
+	}	
+	#nav-below .wp-pagenavi a, 
+	#nav-below .wp-pagenavi span,
+	.page-link span {
+		margin: 0 0 0 5px;
+	}	
+	#nav-below #wp_page_numbers ul li,
+	#nav-below .wp-pagenavi a, 
+	#nav-below .wp-pagenavi span {
+		margin-bottom: 5px;
+	}	
+	a#scrollup {
+		font-size: 20px;
+		padding: 3px;
+	}	
 }	
 @media screen and (max-width: 640px) {
 	.site {

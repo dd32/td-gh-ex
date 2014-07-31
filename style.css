@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-kathmandu
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND) and Japanese languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
-Version: 1.9
+Version: 2.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging, holiday
@@ -1490,6 +1490,36 @@ object {
 }
 
 
+/* =Scrollup
+----------------------------------------------- */
+
+a#scrollup {
+	background-color: #000;
+	bottom: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #fff;
+	display: none;
+	-webkit-font-smoothing: antialiased;
+	font: normal 24px/1 'Genericons';
+	padding: 5px;
+	position: fixed;
+	right: 20px;
+	text-decoration: none;
+	vertical-align: top;
+	opacity: 0.5;
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+a#scrollup:before {
+	content: '\f432';
+}
+a#scrollup:hover {
+	opacity: 1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+
 /* =Jetpack plugins
 ----------------------------------------------- */
 /* Infinite Scroller */
@@ -1507,6 +1537,75 @@ object {
 }
 #content #infinite-handle span:hover {
 	background-color: #000;
+}
+
+
+/* =WP PageNavi and WP Page Numbers plugins
+----------------------------------------------- */
+#nav-below .wp-pagenavi {
+	float: right;
+}
+#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi span, 
+#nav-below #wp_page_numbers ul li a,
+.page-link span,
+.page-link a span {
+	border: none;
+	float: left;
+	height: 30px;
+	background-color: #21759b;
+	color: #ddd;
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+	display: block;
+	padding: 0 12px;
+	text-decoration: none;
+}
+#nav-below .wp-pagenavi a, 
+#nav-below .wp-pagenavi span,
+.page-link span {
+	margin: 0 0 0 10px;
+}
+#nav-below .wp-pagenavi span.pages,
+.page-link span.pages {
+	color: #555;
+	background: none; 
+	padding: 2px 0 0 0;
+}
+#nav-below .wp-pagenavi a:hover,
+#nav-below #wp_page_numbers ul li a:hover,
+.page-link a span:hover {
+	background-color: #1b5f7d;
+	color: #fff;
+}
+#nav-below .wp-pagenavi span.current, 
+#nav-below #wp_page_numbers ul li.active_page a,
+.page-link span {
+	background-color: #1b5f7d;
+	color: #fff;
+	font-weight: normal;
+}
+#nav-below #wp_page_numbers {
+    background: none repeat scroll 0 0 transparent;
+    float: right;
+    margin: 0;
+    width: auto;
+}
+#nav-below #wp_page_numbers ul {
+	border: none;
+    list-style: none;
+}
+#nav-below #wp_page_numbers ul li {
+    color: #aaa;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+#nav-below #wp_page_numbers ul li.page_info {
+	background: none;
+	border: none;
 }
 
 
