@@ -50,13 +50,14 @@ function baskerville_setup() {
 function baskerville_load_javascript_files() {
 
 	if ( !is_admin() ) {
-		wp_register_script( 'baskerville_masonry', get_template_directory_uri().'/js/masonry.pkgd.min.js', array('jquery'), '', true );
+		wp_register_script( 'baskerville_imagesloaded', get_template_directory_uri().'/js/imagesloaded.pkgd.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_mediaelement', get_template_directory_uri().'/js/mediaelement-and-player.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
 		
-		wp_enqueue_script( 'jquery' );	
-		wp_enqueue_script( 'baskerville_masonry' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'masonry' );
+		wp_enqueue_script( 'baskerville_imagesloaded' );
 		wp_enqueue_script( 'baskerville_mediaelement' );
 		wp_enqueue_script( 'baskerville_flexslider' );
 		wp_enqueue_script( 'baskerville_global' );
@@ -78,6 +79,15 @@ function baskerville_load_style() {
 }
 
 add_action('wp_print_styles', 'baskerville_load_style');
+
+
+// Remove built-in Mediaelement.js styles
+add_action( 'wp_enqueue_scripts', 'my_deregister_styles' );
+
+function my_deregister_styles() {
+    wp_deregister_style( 'mediaelement' );
+    wp_deregister_style( 'wp-mediaelement' );
+}
 
 
 // Add editor styles

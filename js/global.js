@@ -1,24 +1,22 @@
 jQuery(document).ready(function($) {
 
-	function masonryGo() {
-	
-		// Masonry
-		var $container = $('.posts');
-		
-		$container.masonry({
-		  itemSelector: '.post-container'
-		});
-	
-	}
+	//Masonry blocks
+	$blocks = $(".posts");
 
-	// Go Masonry!
-	masonryGo();
-    $(document).ready( function() { setTimeout( function() { masonryGo(); }, 500); });
-    $(document).ready( function() { setTimeout( function() { masonryGo(); }, 1000); });
-    $(document).ready( function() { setTimeout( function() { masonryGo(); }, 1500); });
-    $(window).load( function() { masonryGo(); });
-    $(window).resize( function() { masonryGo(); });
-    window.addEventListener("orientationchange", function() { masonryGo(); })
+	$blocks.imagesLoaded(function(){
+		$blocks.masonry({
+			itemSelector: '.post-container'
+		});
+
+		// Fade blocks in after images are ready (prevents jumping and re-rendering)
+		$(".post-container").fadeIn();
+	});
+	
+	$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
+
+	$(window).resize(function () {
+		$blocks.masonry();
+	});
 
 
 	// Toggle mobile-menu
@@ -99,6 +97,6 @@ jQuery(document).ready(function($) {
 		$(this).unbind("mouseenter mouseleave");
         return false;
     });
-	
-
+    
+    
 });
