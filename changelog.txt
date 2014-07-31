@@ -1,6 +1,13 @@
 *** Baskerville changelog ***
 
 
+Version 1.11 (2014-07-31)
+-------------------------
+– Added form styling to the post content CSS to better support Contact Form 7 and other form based plugins
+- Added a function to prevent WordPress built-in medieaelement.js styles from kicking in
+- Improved the Masonry function in global.js to be leaner and meaner
+– Replaced the Masonry files included with the theme with the ones packaded with WordPress
+
 
 Version 1.10 (2014-07-31)
 -------------------------
