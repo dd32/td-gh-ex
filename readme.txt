@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gray, green, right-sidebar, fixed-layout, custom-menu, featured-images, translation-ready, custom-background, custom-header, editor-style
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,6 +102,9 @@ In main catalog of your WordPress site find wp-config.php file, open it and chan
 
 == Changelog ==
 
+= V1.5 - 31.07.2014 = 
+* Bugfix: We fixed bugs in header.php, searchform.php.
+
 = V1.4 - 29.07.2014 = 
 * Update: We updated all functionality for wordpress 3.9.1. 
 * New: We added bicubic.pot file. 
@@ -130,6 +133,9 @@ In main catalog of your WordPress site find wp-config.php file, open it and chan
 * NEW: Bicubic theme release.
 
 == Upgrade Notice ==
+
+= V1.5 = 
+We fixed bugs in header.php, searchform.php.
 
 = V1.4 =
 We updated all functionality for wordpress 3.9.1. We fixed bugs in script.js. We added bicubic.pot file. 
