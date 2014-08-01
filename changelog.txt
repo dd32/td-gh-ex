@@ -1,6 +1,11 @@
 *** Baskerville changelog ***
 
 
+Version 1.12 (2014-08-02)
+-------------------------
+- Fixed a bug which made it so that the author email was always visible in the post meta, even if it had been set as hidden in the settings
+
+
 Version 1.11 (2014-07-31)
 -------------------------
 – Added form styling to the post content CSS to better support Contact Form 7 and other form based plugins
