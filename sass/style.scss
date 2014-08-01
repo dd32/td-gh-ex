@@ -1,0 +1,98 @@
+/*!
+Theme Name: Puro
+Author: Andrew Misplon
+Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms, WP PageNavi, MetaSlider and SiteOrigin Page Builder. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages.   
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: puro
+Domain Path: /languages/
+Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, accessibility-ready, custom-colors, custom-menu, editor-style, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Layout
+	2.1 - Basic Structure
+	2.2 - Additional Structure
+3.0 - Typography
+4.0 - Elements
+5.0 - Forms
+6.0 - Navigation
+	6.1 - Links
+	6.2 - Main Menu
+	6.3 - Comment, Post and Page Navigation
+	6.4 - Social Menu
+7.0 - Accessibility
+8.0 - Alignments
+9.0 - Clearings
+10.0 - Widgets
+	10.1 - General Styles
+	10.2 - Calendar
+	10.3 - RSS
+	10.4 - Recent Comments
+	10.5 - Recent Posts
+	10.6 - Search
+11.0 - Content
+	11.1 - Posts and Pages
+	11.2 - Asides
+	11.3 - Comments
+12.0 - Media
+	12.1 - Captions
+	12.2 - Galleries
+	12.3 - Audio
+	12.4 - Attachments
+13.0 - Header
+14.0 - Footer
+15.0 - Home
+16.0 - 404
+17.0 - Jetpack	
+	17.1 - Contact Form
+	17.2 - Gravatar Profile
+	17.3 - Infinite Scroll
+	17.4 - RSS Links
+	17.5 - Tiled Gallery
+	17.6 - Video Player
+	17.7 - WordPress Posts
+18.0 - Contact Form 7
+19.0 - Gravity Forms
+--------------------------------------------------------------*/
+
+// Vendor Dependencies
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+@import "compass/css3/hyphenation";
+@import "compass/css3/opacity";
+@import "compass/css3/transition";
+@import "compass/typography/text/nowrap";
+@import "compass/typography/text/force-wrap";
+@import "compass/typography/vertical_rhythm";
+@import "susy";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint/";
+
+// Partials
+
+@import "reset";
+@import "mixins";
+@import "variables";
+@import "layout";
+@import "typography";
+@import "elements";
+@import "forms";
+@import "navigation";
+@import "accessibility";
+@import "alignments";
+@import "clearings";
+@import "widgets";
+@import "content";
+@import "media";
+@import "header";
+@import "footer";
+@import "home";
+@import "jetpack";
+@import "contact-form-7";
+@import "gravity-forms";

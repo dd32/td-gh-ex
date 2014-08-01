@@ -1,0 +1,129 @@
+/*--------------------------------------------------------------
+3.0 - Typography
+--------------------------------------------------------------*/
+$base-font-size: 16px;
+$base-line-height: 27px;
+$rhythm-unit: "em";
+@include establish-baseline;
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	display: inline-block;
+	font-family: 'FontAwesome';
+  	font-weight: normal;
+  	font-style: normal;
+  	text-decoration: inherit; 
+ }
+body,
+button,
+input,
+select,
+textarea {
+	@include font-smoothing(subpixel-antialiased);
+	color: $text-color;
+	font-family: $helvetica;
+	font-size: 16px;
+	font-size: 1em;
+	line-height: 1.6875;
+}
+::selection {
+	background: $highlight-color;
+	color: #FFF; 
+}
+h1, h2, h3, h4, h5, h6 {
+	@include word-break(break-all);
+	font-family: $arial;
+	margin: rhythm(0.5) 0;	
+	clear: both;
+	color: $heading-color; 
+	font-weight: 600;	
+}
+h1 {
+	@include adjust-font-size-to(29px);
+}
+h2 {
+	@include adjust-font-size-to(26px);
+}
+h3 {
+	@include adjust-font-size-to(23px);
+}
+h4 {
+	@include adjust-font-size-to(20px);
+}
+h5 {
+	@include adjust-font-size-to(18px);
+}
+h6 {
+	@include adjust-font-size-to(16px);
+}
+p {
+	@include word-break(break-all);
+	margin-bottom: rhythm(1); 
+	&:last-child {
+		margin-bottom: 0; 
+	}
+	&:only-child {
+		margin-bottom: rhythm(1); 
+	}
+}
+b, strong {
+	font-weight: 600;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	border-left: 0.1875em solid $highlight-color; 
+	margin-top: rhythm(1);
+	margin-bottom: rhythm(1);  
+	padding: 0 0 0 rhythm(1);
+	cite {
+		@include adjust-font-size-to(16px);
+		display: block;
+		margin-top: rhythm(1);
+	}
+}
+address {
+	margin: 0 0 rhythm(1);	
+}
+code, kbd, tt, var, samp, pre {
+	@include hyphens(none);
+	font-family: $consolas;
+}
+pre {
+	@include force-wrap;
+	color: $heading-color-dark;
+	background: $background-color;
+	margin: 0 0 rhythm(1);	
+	max-width: 100%;
+	overflow: auto;
+	padding: rhythm(0.5) rhythm(1);
+}
+abbr, acronym {
+	border-bottom: 0.0625em dotted $highlight-color;
+	cursor: help;
+}
+mark, ins {
+	background: $inserted-background-color;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}

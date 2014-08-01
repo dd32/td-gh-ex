@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+13.0 - Header
+--------------------------------------------------------------*/
+.site-header {
+	border-bottom: 0.0625rem solid $border-color;
+	margin: 0 0 rhythm(2.5);
+	padding: rhythm(1.5) 0;
+	position: relative;
+	width: 100%; 
+	.site-branding {
+		@include box-sizing(border-box);
+		float: left;
+		margin: 0; 
+		max-width: 30%;
+		padding-right: rhythm(1); 
+		img {
+			margin-top: 0.625em; 
+		}	 
+		@include breakpoint($medium) {
+			text-align: center; 
+			max-width: 100%; 
+			width: 100%;
+		}		  
+		h1.site-title {
+			@include adjust-font-size-to(41px);
+			font-family: $arial;
+			font-weight: bold; 
+			letter-spacing: -1px; 
+			margin: 0; 
+			a {
+				color: #333;
+				text-decoration: none;
+			}
+		}
+		h2.site-description	{
+			@include adjust-font-size-to(16px);
+			color: $text-secondary-color;
+			font-weight: normal;
+			margin: -0.375em 0 0.25em;	
+		}
+	}
+	&.center-logo {
+		.site-branding {
+			max-width: 100%; 
+			text-align: center; 
+			width: 100%;	
+		}
+	}
+}

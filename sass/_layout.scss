@@ -1,0 +1,112 @@
+/*--------------------------------------------------------------
+2.0 - Layout
+--------------------------------------------------------------*/
+$susy: (
+  columns: 12,  
+  gutters: .5, 
+);
+$small: max-width 30rem;
+$medium: max-width 48rem;
+$large: max-width 64rem;
+
+/*--------------------------------------------------------------
+2.1 - Basic Structure
+--------------------------------------------------------------*/
+#page {
+	@include container(67.5rem);
+	padding: 0 5%;
+}
+#primary {
+	@include box-sizing(border-box);
+	float: left;
+}
+.sidebar #primary {
+	border-color: $border-color;
+	border-style: solid;
+	border-width: 0 0.0625em 0 0;
+	padding-right: 3.5%;
+	width: 75%;	 	
+	@include breakpoint($medium) {
+		border: none;
+		padding-right: 0;
+		padding-left: 0; 
+		width: 100%; 	
+	} 	
+}
+#secondary {
+	@include box-sizing(border-box);
+	border-color: $border-color;
+	border-style: solid;
+	float: right;	
+	padding-left: 3.5%;
+	width: 25%;	
+	@include breakpoint($medium) {
+		width: 100%; 
+	} 
+}
+
+/*--------------------------------------------------------------
+2.2 - Additional Structure
+
+One Column - No Sidebar Widgets Added
+Full Width Page
+Full Width Page - No Title
+Full Width Page - Unconstrained Content
+Full Width Page - Unconstrained Content - No Title
+404 Page
+--------------------------------------------------------------*/
+.one-column #primary, 
+.page-template-page-templatesfull-width-php #primary, 
+.page-template-page-templatesfull-width-no-title-php #primary,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary,
+.error404 #primary {
+	border: none; 
+	float: none;
+	padding: 0;
+	width: 100%;  
+}
+.one-column #primary .page-header, 
+.one-column #primary .page-content,
+.one-column #primary .entry-header,
+.one-column #primary .entry-summary,
+.one-column #primary .entry-content,
+.one-column #primary .entry-footer,
+.one-column #primary #comments,
+.page-template-page-templatesfull-width-php #primary .page-header, 
+.page-template-page-templatesfull-width-php #primary .page-content,
+.page-template-page-templatesfull-width-php #primary .entry-header,
+.page-template-page-templatesfull-width-php #primary .entry-summary,
+.page-template-page-templatesfull-width-php #primary .entry-content,
+.page-template-page-templatesfull-width-php #primary .entry-footer,
+.page-template-page-templatesfull-width-php #primary #comments,
+.page-template-page-templatesfull-width-no-title-php #primary .page-header, 
+.page-template-page-templatesfull-width-no-title-php #primary .page-content,
+.page-template-page-templatesfull-width-no-title-php #primary .entry-header,
+.page-template-page-templatesfull-width-no-title-php #primary .entry-summary,
+.page-template-page-templatesfull-width-no-title-php #primary .entry-content,
+.page-template-page-templatesfull-width-no-title-php #primary .entry-footer,
+.page-template-page-templatesfull-width-no-title-php #primary #comments,
+.error404 #primary {
+	margin-right: auto;
+	margin-left: auto; 
+	max-width: 71.3889%;
+}
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .page-header, 
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .page-content,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-header,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-summary,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-content,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary .entry-footer,
+.page-template-page-templatesfull-width-unconstrained-content-php #primary #comments,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .page-header, 
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .page-content,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-header,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-summary,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-content,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary .entry-footer,
+.page-template-page-templatesfull-width-unconstrained-content-no-title-php #primary #comments {
+	margin-right: auto;
+	margin-left: auto; 
+	max-width: 100%;
+}
