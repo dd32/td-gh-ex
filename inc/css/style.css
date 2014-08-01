@@ -72,3 +72,30 @@
 	font-size:16px;
 	margin-bottom:10px;
 }
+
+.addon-active img {
+	opacity: 1;
+}
+
+.addon-inactive img {
+	opacity: 0.3;
+}
+
+.addon-active img,
+.addon-inactive img {
+	width: 50px;
+	margin:5px;
+}
+
+.activate-button:before {
+	font-family: 'dashicons';
+	content: "\f147";
+}
+
+.wp-list-table.addons tr:nth-child(2n) {
+	background: #FFF;
+}
+.wp-list-table.addons td,
+.wp-list-table.email td {
+	vertical-align: middle;
+}

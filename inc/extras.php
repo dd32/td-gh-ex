@@ -46,6 +46,12 @@ function generate_body_classes( $classes ) {
 		$page_header_slideshow = get_post_meta( get_the_ID(), '_meta-generate-page-header-slideshow', true );
 	endif;
 	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
+	endif;
+	
 	// If a layout is set on the page, replace value with the metabox value
 	if ( '' !== $stored_meta ) :
 		$generate_settings['layout_setting'] = null;
@@ -64,12 +70,6 @@ function generate_body_classes( $classes ) {
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
-	endif;
-	
-	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
-		$generate_settings['layout_setting'] = null;
-		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
 	// Let us know if a page header is being used
@@ -98,8 +98,11 @@ add_filter( 'generate_right_sidebar_class', 'generate_right_sidebar_classes');
 function generate_right_sidebar_classes( $classes )
 {
 
+	$right_sidebar_width = apply_filters( 'generate_right_sidebar_width', '25' );
+	$left_sidebar_width = apply_filters( 'generate_left_sidebar_width', '25' );
+
 	$classes[] = 'widget-area';
-	$classes[] = 'grid-25';
+	$classes[] = 'grid-' . $right_sidebar_width;
 	$classes[] = 'grid-parent';
 	$classes[] = 'sidebar';
 
@@ -114,6 +117,12 @@ function generate_right_sidebar_classes( $classes )
 	
 	if ( isset( $post ) ) :
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
+	endif;
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$layout = null;
+		$layout = $generate_settings['single_layout_setting'];
 	endif;
 	
 	if ( '' !== $stored_meta ) :
@@ -134,24 +143,27 @@ function generate_right_sidebar_classes( $classes )
 		$layout = $generate_settings['blog_layout_setting'];
 	endif;
 	
-	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
-		$layout = null;
-		$layout = $generate_settings['single_layout_setting'];
-	endif;
+	
 	
 	if ( $layout != '' ) {
 		switch ( $layout ) {
 			case 'both-sidebars' :
-				$classes[] = 'push-25';
+				$classes[] = 'push-' . $left_sidebar_width;
 			break;
 			
 			case 'both-left' :
-				$classes[] = 'pull-25';
+				$total_sidebar_width = $left_sidebar_width + $right_sidebar_width;
+				$left_sidebar_pull = 100 - $left_sidebar_width;
+				$total_pull = $left_sidebar_pull - $total_sidebar_width;
+				if ( $total_pull > 0 ) {
+					$classes[] = 'pull-' . $total_pull;
+				} else {
+					$classes[] = 'push' . $total_pull;
+				}
 			break;
 			
 			case 'both-right' :
-				$classes[] = 'push-25';
+				$classes[] = 'push-' . $left_sidebar_width;
 			break;
 		}
 	}
@@ -167,9 +179,11 @@ function generate_right_sidebar_classes( $classes )
 add_filter( 'generate_left_sidebar_class', 'generate_left_sidebar_classes');
 function generate_left_sidebar_classes( $classes )
 {
-
+	$right_sidebar_width = apply_filters( 'generate_right_sidebar_width', '25' );
+	$left_sidebar_width = apply_filters( 'generate_left_sidebar_width', '25' );
+	
 	$classes[] = 'widget-area';
-	$classes[] = 'grid-25';
+	$classes[] = 'grid-' . $left_sidebar_width;
 	$classes[] = 'grid-parent';
 	$classes[] = 'sidebar';
 
@@ -180,6 +194,12 @@ function generate_left_sidebar_classes( $classes )
 		generate_get_defaults() 
 	);
 	$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
+	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
+	endif;
 	
 	if ( '' !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
@@ -199,22 +219,17 @@ function generate_left_sidebar_classes( $classes )
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
 	endif;
 	
-	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
-		$generate_settings['layout_setting'] = null;
-		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
-	endif;
-	
 	// Left sidebar
 	
 	if ( $generate_settings['layout_setting'] == 'left-sidebar' || 
 		 $generate_settings['layout_setting'] == 'both-sidebars' || 
 		 $generate_settings['layout_setting'] == 'both-left' ) :
-			$classes[] = 'pull-75';
+			$classes[] = 'pull-' . ( 100 - $left_sidebar_width );
+			//$classes[] = 'pull-75';
 	endif;
 	
 	if ( $generate_settings['layout_setting'] == 'both-right' ) :
-		$classes[] = 'pull-25';
+		$classes[] = 'pull-' . $right_sidebar_width;
 	endif;
 
 	return $classes;
@@ -228,7 +243,9 @@ function generate_left_sidebar_classes( $classes )
 add_filter( 'generate_content_class', 'generate_content_classes');
 function generate_content_classes( $classes )
 {
-
+	$right_sidebar_width = apply_filters( 'generate_right_sidebar_width', '25' );
+	$left_sidebar_width = apply_filters( 'generate_left_sidebar_width', '25' );
+	
 	$classes[] = 'content-area';
 	$classes[] = 'grid-parent';
 
@@ -244,6 +261,12 @@ function generate_content_classes( $classes )
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
+	endif;
+	
 	if ( '' !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
@@ -262,24 +285,21 @@ function generate_content_classes( $classes )
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
 	endif;
 	
-	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
-		$generate_settings['layout_setting'] = null;
-		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
-	endif;
-	
 	// If only the right sidebar is set:
 	// width: 75%
 	if ( $generate_settings['layout_setting'] == 'right-sidebar' ) :
-		$classes[] = 'grid-75';
+		//$classes[] = 'grid-75';
+		$classes[] = 'grid-' . ( 100 - $right_sidebar_width );
 	endif;
 	
 	// If only the left sidebar is set:
 	// width: 75%
 	// push to the right 25%
 	if ( $generate_settings['layout_setting'] == 'left-sidebar' ) :
-		$classes[] = 'push-25';
-		$classes[] = 'grid-75';
+		//$classes[] = 'push-25';
+		//$classes[] = 'grid-75';
+		$classes[] = 'push-' . $left_sidebar_width;
+		$classes[] = 'grid-' . ( 100 - $left_sidebar_width );
 	endif;
 	
 	// If no sidebars are set:
@@ -289,16 +309,23 @@ function generate_content_classes( $classes )
 	endif;
 	
 	if ( $generate_settings['layout_setting'] == 'both-sidebars' ) :
-		$classes[] = 'push-25';
-		$classes[] = 'grid-50';
+		//$classes[] = 'push-25';
+		//$classes[] = 'grid-50';
+		$total_sidebar_width = $left_sidebar_width + $right_sidebar_width;
+		$classes[] = 'push-' . $left_sidebar_width;
+		$classes[] = 'grid-' . ( 100 - $total_sidebar_width );
 	endif;
 	
 	if ( $generate_settings['layout_setting'] == 'both-left' || $generate_settings['layout_setting'] == 'both-right' ) :
-		$classes[] = 'grid-50';
+		//$classes[] = 'grid-50';
+		$total_sidebar_width = $left_sidebar_width + $right_sidebar_width;
+		$classes[] = 'grid-' . ( 100 - $total_sidebar_width );
 	endif;
 	
 	if ( $generate_settings['layout_setting'] == 'both-left' ) :
-		$classes[] = 'push-50';
+		//$classes[] = 'push-50';
+		$total_sidebar_width = $left_sidebar_width + $right_sidebar_width;
+		$classes[] = 'push-' . $total_sidebar_width;
 	endif;
 
 	return $classes;
@@ -464,6 +491,31 @@ function generate_footer_classes( $classes )
 		$classes[] = 'grid-container';
 		$classes[] = 'grid-parent';
 	endif;
+
+	return $classes;
+	
+}
+
+/**
+ * Adds custom classes to the <main> element
+ * @since 1.1.0
+ */
+add_filter( 'generate_main_class', 'generate_main_classes');
+function generate_main_classes( $classes )
+{
+	$classes[] = 'site-main';
+
+	// Get theme options
+	// $generate_settings = wp_parse_args( 
+		// get_option( 'generate_settings', array() ), 
+		// generate_get_defaults() 
+	// );
+	// $footer_layout = $generate_settings['footer_layout_setting'];
+	
+	// if ( $footer_layout == 'contained-footer' ) :
+		// $classes[] = 'grid-container';
+		// $classes[] = 'grid-parent';
+	// endif;
 
 	return $classes;
 	

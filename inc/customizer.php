@@ -32,7 +32,7 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
 	//$wp_customize->remove_section('static_front_page');
-	$wp_customize->remove_section('nav');
+	//$wp_customize->remove_section('nav');
 	
 	// Remove title
 	$wp_customize->add_setting( 
@@ -93,6 +93,14 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
+	// $wp_customize->add_panel( 'colors_panel', array(
+		// 'priority'       => 10,
+		// 'capability'     => 'edit_theme_options',
+		// 'theme_supports' => '',
+		// 'title'          => __('Colors','generate'),
+		// 'description'    => '',
+	// ) );
+	
 	$wp_customize->add_section(
 		// ID
 		'body_section',
@@ -100,7 +108,8 @@ function generate_customize_register( $wp_customize ) {
 		array(
 			'title' => __( 'Base Colors', 'generate' ),
 			'capability' => 'edit_theme_options',
-			'priority' => 40
+			'priority' => 40,
+			//'panel' => 'colors_panel'
 		)
 	);
 	
@@ -561,7 +570,7 @@ function generate_customize_register( $wp_customize ) {
 			'title' => __( 'Blog', 'generate' ),
 			'capability' => 'edit_theme_options',
 			'description' => '',
-			'priority' => 35
+			'priority' => 200
 		)
 	);
 	

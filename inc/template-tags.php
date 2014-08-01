@@ -217,6 +217,7 @@ endif;
  */
 if ( ! function_exists( 'generate_excerpt_more' ) ) :
 	add_filter( 'excerpt_more', 'generate_excerpt_more' );
+	add_filter( 'the_content_more_link', 'generate_excerpt_more' );
 	function generate_excerpt_more( $more ) {
 		return ' ... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read more', 'generate') . '</a>';
 	}

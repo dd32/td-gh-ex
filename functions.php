@@ -4,14 +4,8 @@
  *
  * @package Generate
  */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 1200; /* pixels */
 	
-define( 'GENERATE_VERSION', '1.0.9');
+define( 'GENERATE_VERSION', '1.1.0');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -62,6 +56,12 @@ function generate_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	if ( ! isset( $content_width ) )
+		$content_width = 1200; /* pixels */
 
 }
 endif; // generate_setup
@@ -217,15 +217,17 @@ function generate_scripts() {
 
 	// Generate stylesheets
 	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/css/style.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/style.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-mobile-style', get_template_directory_uri() . '/css/mobile.css', false, GENERATE_VERSION, 'all' );
 	wp_add_inline_style( 'generate-style', generate_base_css() );
-	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, GENERATE_VERSION, 'all' );
+	if ( is_child_theme() ) :
+		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, GENERATE_VERSION, 'all' );
+	endif;
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
 
 	// Generate scripts
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
-	wp_enqueue_script( 'generate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), GENERATE_VERSION, true );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GENERATE_VERSION, true );
 	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
@@ -259,6 +261,12 @@ function generate_contruct_sidebars()
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
+	// If we're on the single post page, use appropriate setting
+	if ( is_single() ) :
+		$generate_settings['layout_setting'] = null;
+		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
+	endif;
+	
 	// If the metabox is set, use it instead of the global settings
 	if ( '' !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
@@ -276,12 +284,6 @@ function generate_contruct_sidebars()
 		is_attachment() ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
-	endif;
-	
-	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
-		$generate_settings['layout_setting'] = null;
-		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 
 	// When to show the right sidebar
@@ -351,7 +353,7 @@ function generate_base_css()
 		),
 		
 		// Link hover
-		'a:hover' => array(
+		'a:hover, a:focus, a:active' => array(
 			'color' 			=> $generate_settings['link_color_hover'],
 			'text-decoration' 	=> null
 		),
@@ -503,4 +505,54 @@ function generate_update_db_entries()
 		remove_theme_mod( 'generate_tagline' );
 		remove_theme_mod( 'generate_logo' );
 	}
+}
+
+/** 
+ * Add viewport to wp_head
+ * Decide whether mobile viewport should be added or fixed width viewport
+ * @since 1.1.0
+ */
+add_action('wp_head','generate_add_viewport');
+function generate_add_viewport()
+{
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
+	
+	if ( !defined( 'GENERATE_DISABLE_MOBILE' ) ) :
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+	else :
+		echo '<meta name="viewport" content="width=' . $generate_settings['container_width'] . 'px">';
+	endif;
+}
+
+/** 
+ * Destroy mobile responsive functionality
+ * Only run if GENERATE_DISABLE_MOBILE constant is defined
+ * @since 1.1.0
+ */
+add_action( 'wp_enqueue_scripts', 'generate_dequeue_mobile_scripts', 100 );
+function generate_dequeue_mobile_scripts() {
+
+	if ( !defined( 'GENERATE_DISABLE_MOBILE' ) )
+		return;
+		
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
+
+	// Remove mobile stylesheets and scripts
+	wp_dequeue_style( 'generate-mobile-style' );
+	wp_dequeue_style( 'generate-style-grid' );
+	wp_dequeue_script( 'generate-navigation' );
+	
+	// Add in mobile grid (no min-width)
+	wp_enqueue_style( 'generate-style-mobile-grid', get_template_directory_uri() . '/css/mobile-structure.css', false, GENERATE_VERSION, 'all' );
+  
+   // Add necessary styles to kill mobile resposive features
+	$styles = 'body .grid-container {width:' . $generate_settings['container_width'] . 'px;max-width:' . $generate_settings['container_width'] . 'px}';
+	$styles .= '.menu-toggle {display:none;}';
+	wp_add_inline_style( 'generate-style', $styles );
 }

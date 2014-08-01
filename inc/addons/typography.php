@@ -81,7 +81,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 		$visual_css = array (
 		
 			// Main title font
-			'body' => array(
+			'body, button, input, select, textarea' => array(
 				'font-family' => current(explode(':', $generate_settings['font_body'])),
 				'font-weight' => $generate_settings['body_font_weight'],
 				'text-transform' => $generate_settings['body_font_transform'],

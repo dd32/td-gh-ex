@@ -295,3 +295,36 @@ function generate_get_footer_class( $class = '' ) {
 
 	return apply_filters('generate_footer_class', $classes, $class);
 }
+
+/**
+ * Display the classes for the <main> container.
+ *
+ * @since 1.1.0
+ * @param string|array $class One or more classes to add to the class list.
+ */
+function generate_main_class( $class = '' ) {
+	// Separates classes with a single space, collates classes for post DIV
+	echo 'class="' . join( ' ', generate_get_main_class( $class ) ) . '"';
+}
+
+/**
+ * Retrieve the classes for the footer.
+ *
+ * @since 0.1
+ * @param string|array $class One or more classes to add to the class list.
+ * @return array Array of classes.
+ */
+function generate_get_main_class( $class = '' ) {
+
+	$classes = array();
+
+	if ( !empty($class) ) {
+		if ( !is_array( $class ) )
+			$class = preg_split('#\s+#', $class);
+		$classes = array_merge($classes, $class);
+	}
+
+	$classes = array_map('esc_attr', $classes);
+
+	return apply_filters('generate_main_class', $classes, $class);
+}

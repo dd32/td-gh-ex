@@ -10,6 +10,27 @@ Changelog Legend:
 
 ----
 
+(7/31/2014) - 1.1.0
+
+[+] Added generate_main_class to <main> container to allow adding of classes
+[x] Removed extra empty CSS file - using is_child_theme instead
+[*] Cleaned up some CSS
+[+] Move navigation below header on mobile devices if originally in a sidebar
+[+] German translation added
+[+] GENERATE_DISABLE_MOBILE constant added to remove mobile responsive functionality
+[+] Added wrapper surrounding site logo
+[+] Added focus and active attributes to link color on hover
+[*] Header widget set to a max-width of 50% of the header
+[*] Couple mobile tweaks - center header and menu toggle
+[+] Subtle CSS transition added to links
+[*] Bundled skip-link-focus.fix.js with scripts.js to cut down on http requests
+[+] generate_inside_navigation hook added
+[*] Moved $content_width inside after_setup_theme action
+[!] Fixed bug causing single post specific sidebar layouts not to work
+[+] Filters added to sidebar widths for easy alteration
+
+----
+
 (7/9/2014) - 1.0.9
 
 [+] .pot file added for translation

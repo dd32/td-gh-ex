@@ -14,8 +14,8 @@
 get_header(); ?>
 
 	<div id="primary" <?php generate_content_class();?>>
-		<main id="main" class="site-main" itemtype="http://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
-
+		<main id="main" <?php generate_main_class(); ?> itemtype="http://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
+		<?php do_action('generate_before_main_content'); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'index' ); ?>
 
 		<?php endif; ?>
-
+		<?php do_action('generate_after_main_content'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

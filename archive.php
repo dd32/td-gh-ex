@@ -10,8 +10,7 @@
 get_header(); ?>
 
 	<section id="primary" <?php generate_content_class(); ?>>
-		<main id="main" class="site-main" itemtype="http://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
-
+		<main id="main" <?php generate_main_class(); ?> itemtype="http://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header<?php if ( is_author() ) echo ' clearfix';?>">
@@ -99,7 +98,6 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'archive' ); ?>
 
 		<?php endif; ?>
-
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

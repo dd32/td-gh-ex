@@ -13,8 +13,7 @@
 get_header(); ?>
 
 	<div id="primary" <?php generate_content_class();?>>
-		<main id="main" class="site-main" itemprop="mainContentOfPage" role="main">
-
+		<main id="main" <?php generate_main_class(); ?> itemprop="mainContentOfPage" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
@@ -26,7 +25,6 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // end of the loop. ?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

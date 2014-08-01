@@ -9,8 +9,7 @@ get_header(); ?>
 
 
 	<div id="primary" <?php generate_content_class(); ?>>
-		<main id="main" class="site-main" itemprop="mainContentOfPage" role="main">
-
+		<main id="main" <?php generate_main_class(); ?> itemprop="mainContentOfPage" role="main">
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'generate' ); ?></h1>
@@ -24,7 +23,6 @@ get_header(); ?>
 					</div><!-- .inside-article -->
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

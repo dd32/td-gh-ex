@@ -75,9 +75,27 @@ if ( !function_exists('generate_spacing_css') ) :
 				'padding-left' => ( isset( $spacing_settings['content_left'] ) ) ? $spacing_settings['content_left'] . 'px' : null,
 			),
 			
-			'.main-navigation .main-nav ul li a' => array(
+			'.ignore-x-spacing' => array(
+				'margin-right' => ( isset( $spacing_settings['content_right'] ) ) ? '-' . $spacing_settings['content_right'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['content_bottom'] ) ) ? $spacing_settings['content_bottom'] . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['content_left'] ) ) ? '-' . $spacing_settings['content_left'] . 'px' : null,
+			),
+			
+			'.ignore-xy-spacing' => array(
+				'margin-top' => ( isset( $spacing_settings['content_top'] ) ) ? '-' . $spacing_settings['content_top'] . 'px' : null,
+				'margin-right' => ( isset( $spacing_settings['content_right'] ) ) ? '-' . $spacing_settings['content_right'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['content_bottom'] ) ) ? $spacing_settings['content_bottom'] . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['content_left'] ) ) ? '-' . $spacing_settings['content_left'] . 'px' : null,
+			),
+			
+			'.main-navigation .main-nav ul li a,
+			.menu-toggle' => array(
 				'padding-left' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
 				'padding-right' => ( isset( $spacing_settings['menu_item'] ) ) ? $spacing_settings['menu_item'] . 'px' : null,
+				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+			),
+			
+			'.nav-float-right .main-navigation .main-nav ul li a' => array(
 				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
 			),
 			
@@ -143,7 +161,7 @@ if ( !function_exists('generate_spacing_css') ) :
 				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
-			'.separate-containers .page-header-image, .separate-containers .page-header-content' => array(
+			'.separate-containers .page-header-image, .separate-containers .page-header-content, .separate-containers .page-header-image-single, .separate-containers .page-header-content-single' => array(
 				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
@@ -156,7 +174,7 @@ if ( !function_exists('generate_spacing_css') ) :
 			
 			'.separate-containers .inside-right-sidebar, .inside-left-sidebar' => array(
 				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null
 			),
 			
 			'.separate-containers .widget, .separate-containers .hentry' => array(
