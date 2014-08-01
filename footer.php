@@ -81,6 +81,8 @@
     <?php 
     /** 
      * catchkathmandu_after_footer hook
+	 *
+     * @hooked catchkathmandu_scrollup - 10
      */
     do_action( 'catchkathmandu_after_footer' ); 
     ?> 

@@ -78,6 +78,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+Version 2.0.1
+* Fixed undefined index of feed_url
+
 Version 2.0
 * Added Scroll Up script
 * Added support for pagination plugin WP-PageNavi and WP Page Numbers

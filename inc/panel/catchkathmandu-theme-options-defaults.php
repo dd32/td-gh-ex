@@ -40,6 +40,7 @@ $catchkathmandu_options_defaults = array(
 	'reset_moretag'							=> '2',
 	'excerpt_length'						=> 30,
  	'search_display_text'					=> 'Search &hellip;',
+	'feed_url'								=> '',
 	'disable_homepage_headline'				=> '0',
 	'disable_homepage_subheadline'			=> '0',
 	'disable_homepage_button'				=> '0',

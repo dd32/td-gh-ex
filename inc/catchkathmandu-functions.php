@@ -93,9 +93,6 @@ function catchkathmandu_scripts() {
 		wp_enqueue_script( 'catchkathmandu-slider', get_template_directory_uri() . '/js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}	
 	
-	/**
-	 * Loads up Scroll Up script
-	 */	
 	wp_enqueue_script( 'catchkathmandu-scrollup', get_template_directory_uri() . '/js/catchkathmandu-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	
 	/**

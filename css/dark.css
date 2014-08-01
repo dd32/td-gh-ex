@@ -33,6 +33,7 @@ textarea {
 	background-color: transparent;
 }
 #masthead,
+#main-slider,
 #homepage-message,
 #footer-sidebar,
 article .entry-format,
@@ -189,6 +190,7 @@ a#scrollup,
 	background: #333; /* Show a solid color for older browsers */
 	background: rgba(51, 51, 51, 1);
 }
+#main-slider .entry-container:hover,
 #main-slider #slider-nav a:hover {
 	border-color: #000;	
 }
