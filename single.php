@@ -192,7 +192,7 @@
 									
 									$show_mail = get_the_author_meta('showemail');
 																	
-									if ( !empty($author_mail) && isset($show_mail) ) : ?>
+									if ( !empty($author_mail) && ($show_mail == "yes") ) : ?>
 									
 										<a class="author-link-mail" title="<?php echo $author_mail; ?>" href="mailto:<?php echo $author_mail ?>"><?php echo $author_mail; ?></a>
 										
