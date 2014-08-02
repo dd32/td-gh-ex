@@ -49,7 +49,7 @@ $thinkup_class_fullwidth = NULL;
 								}
 								if ( ! empty( $slide['slide_url'] ) ) {
 									echo '<div class="featured-link">',
-										 '<a href="' . $slide['slide_url'] . '"><span>' . $slide['slide_title'] . '</a></span>',
+										 '<a href="' . $slide['slide_url'] . '"><span>' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></span>',
 										 '</div>';
 								}
 
@@ -223,13 +223,13 @@ global $thinkup_homepage_section3_link;
 
 	// Set default values for images
 	if ( ! empty( $thinkup_homepage_section1_image ) )
-		$thinkup_homepage_section1_image = wp_get_attachment_image_src($thinkup_homepage_section1_image, 'column3-2/3');
+		$thinkup_homepage_section1_image = wp_get_attachment_image_src($thinkup_homepage_section1_image, 'column3-1/3');
 
 	if ( ! empty( $thinkup_homepage_section2_image ) )
-		$thinkup_homepage_section2_image = wp_get_attachment_image_src($thinkup_homepage_section2_image, 'column3-2/3');
+		$thinkup_homepage_section2_image = wp_get_attachment_image_src($thinkup_homepage_section2_image, 'column3-1/3');
 
 	if ( ! empty( $thinkup_homepage_section3_image ) )
-		$thinkup_homepage_section3_image = wp_get_attachment_image_src($thinkup_homepage_section3_image, 'column3-2/3');
+		$thinkup_homepage_section3_image = wp_get_attachment_image_src($thinkup_homepage_section3_image, 'column3-1/3');
 
 	// Set default values for titles
 	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = 'Perfect For All';

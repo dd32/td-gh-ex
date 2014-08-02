@@ -31,19 +31,32 @@ global $thinkup_general_sitedescription;
 	}
 }
 
+// Output retina js script if retina logo is set
+function thinkup_input_logoretinaja() {
+global $thinkup_general_logoswitch;
+global $thinkup_general_logolinkretina;
+
+	if ( $thinkup_general_logoswitch == "option1" ) {
+		if ( ! empty( $thinkup_general_logolinkretina ) ) {
+			wp_enqueue_script( 'retina' );
+		} 
+	}
+}	
+add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretinaja', 11 );
+
 
 /* ----------------------------------------------------------------------------------
 	Custom Favicon
 ---------------------------------------------------------------------------------- */
 
-function blog_favicon() {
+function thinkup_custom_favicon() {
 global $thinkup_general_faviconlink;
 
 	if ( ! empty( $thinkup_general_faviconlink ) ) {
 		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
 	}	
 }
-add_action('wp_head', 'blog_favicon');
+add_action('wp_head', 'thinkup_custom_favicon');
 
 
 /* ----------------------------------------------------------------------------------
@@ -391,7 +404,9 @@ function thinkup_input_responsiveclass($classes){
 global $thinkup_general_responsiveswitch;
 
 	if ( $thinkup_general_responsiveswitch !== '1' ) {
-		$classes[] = 'fixed';
+		$classes[] = 'layout-fixed';
+	} else {
+		$classes[] = 'layout-responsive';	
 	}
 	return $classes;
 }

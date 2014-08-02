@@ -132,80 +132,14 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
-Version 1.3.5
-- New:     Update notice added.
-- New:     ThinkUpSlider added to inner pages.
-- New:     Styling options added allowing user to customize basic theme styles.
-- New:     Dashicons font library added. Used in shortcodes such as image overlay.
-- New:     Backend styling added to hide meta options from shortcode dropdown list.
-- Fixed:   Unlimited sidebars updated to remove PHP error messages.
-- Fixed:   Responsive jQuery fixed for iframes. Including Youtube videos etc...
-- Fixed:   Walker_Nav_Menu_Responsive updated to fix reported PHP error messages.
-- Fixed:   Social media sharing links in blog.php changes from http:// (or https://) to //.
-- Fixed:   Page titles used in social media sharing links in blog.php wrapped with esc_attr().
-- Fixed:   thinkup_hook_header() moved to immediately after <head> html tag to correct SEO issue.
-- Fixed:   http: (and https:) removed from google fonts link in typography.php so fonts display correctly on all sites.
-- Updated: Shortcodes styling updated.
-- Updated: Sidebar selector updated so that footer sidebars are not displayed.
-- Updated: responsiveslides-call.js updated to ensure slider shortcode is responsive.
-- Updated: Full width slider now controlled by adding class to body tag when selected.
-- Updated: thinkup_input_sliderpage() moved immediately after thinkup_input_homepagesection().
-- Updated: Blog template updated to allow only posts from a specific category to be displayed.
-- Updated: Shortcode scripts removed from Caldera output, now enqued directly from functions.php.
-- Removed: Slidedeck 2 css removed from style-backend.css.
-
-Version 1.3.4
-- New:     ImagesLoaded script added to correct masonry layout issues
-- Fixed:   Imagesloaded script corrected to avoid $ error.
-- Fixed:   Carousel shortcode jQuery now assigns container height.
-- Updated: carousel css updated.
-- Updated: Parallax class added in adminbody tag if template-parallax.php is present
-
-Version 1.3.3
-- New:     Portfolio options added to individual pages.
-- New:     jQuery added to backend to only show portfolio options when template selected.
-- Fixed:   Twitter widget css corrected for links.
-- Fixed:   Sidebar selector displays correctly when blog template selected.
-- Fixed:   wp_reset_query added to portfolio archive and template pages. Sidebars now display correctly.
-- Updated: All shortcode specific jQuery removed from shortcodes folder.
-- Removed: Shortcode tabs style 2 removed.
-- Removed: Accordion styles 2, 3 and 5 removed.
-- Updated  Blog carousel shortcode updated to allow individual categories.
-
-Version 1.3.2
-- Fixed:   Responsive header menu now works on localhost correctly.
-- Updated: Auto sizing of logo image added.
-- Updated: Styling added for default WordPress widgets.
-- Removed: All references to blog layout 2.
-- Removed: All references to template family.
-
-Version 1.3.1
-- New:     Compatibility with ThinkUp Page Builder added
-- Updated: Shortcode styles updated (notification box and buttons)
-
-Version 1.3.0
-- New:     ThinkUpSlider added.
-- New:     Translation ready added.
-- New:     Page / Post / Image / Project navigation added.
-- Fixed:   Walker Nav(s) updated to follow WordPress best practices.
-- Fixed:   Responsive navigation menu displays when custom menu is not set.
-- Fixed:   Depreciated calls for widgets. attribute_escape() replaced with esc_attr().
-- Updated: Default logo is now blog name.
-- Updated: Styling added to default WordPress widgets.
-- Updated: Logo styling improved. Maximum logo image size added.
-- Updated: custom-styling.php updated to reflect sidebar and navigation styling.
-- Removed: Template Family removed.
-- Removed: SlideDeck2 plugins removed.
-- Removed: Blog style 2 removed. Only single blog layout now available.
-
-Version 1.2.0
-- Updated: Header menu displays fine when custom menu is not set.
-
-Version 1.1.0
-- New:     Redux framework
-- Fixed:   Flickr widget error handling improved.
-- Updated: Animation shortcode added.
-- Removed: SMOF framework.
+Version 1.0.1
+- Fixed:   Header image code added to header.php.
+- Fixed:   Translation issue corrected. Language folder location changed from /lib/languages to /languages.
+- Updated: Function blog_favicon() renamed to thinkup_custom_favicon().
+- Updated: Featured section image sizes changed from column3-2/3 to column3-1/3.
+- Updated: Slider button changes from slider title to be Read More (translatable string).
+- Updated: Responsive js only displays when HD ready logo is set. Prevents images 404 error on HD devices.
+- Updated: Responsive layout class changed from fixed to layout-fixed. Allows more developer control with layout-responsive class.
 
 Version 1.0.0
-- Initial release.
+- New:     Initial release.

@@ -28,6 +28,11 @@
 <div id="body-core" class="hfeed site">
 
 	<header id="site-header">
+
+		<?php if ( get_header_image() ) : ?>
+			<div class="custom-header"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt=""></div>
+		<?php endif; // End header image check. ?>
+
 		<div id="pre-header">
 		<div class="wrap-safari">
 		<div id="pre-header-core" class="main-navigation">
