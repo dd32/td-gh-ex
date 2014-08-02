@@ -348,6 +348,23 @@ function accelerate_custom_css() {
 
 /**************************************************************************************/
 
+/**
+ * Removing the more link jumping to middle of content
+ */
+function accelerate_remove_more_jump_link($link) { 
+	$offset = strpos($link, '#more-');
+	if ($offset) {
+		$end = strpos($link, '"',$offset);
+	}
+	if ($end) {
+		$link = substr_replace($link, '', $offset, $end-$offset);
+	}
+	return $link;
+}
+add_filter('the_content_more_link', 'accelerate_remove_more_jump_link');
+
+/**************************************************************************************/
+
 if ( ! function_exists( 'accelerate_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable

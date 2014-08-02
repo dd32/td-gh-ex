@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.5 =
+* Filter added to remove the more link redirecting to middle of content.
+* Polish language file added.
+
 = Version 1.0.4 =
 * Blog sidebar layout issue fixed.
 * Posts page feature image type option fix.
