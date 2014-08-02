@@ -123,7 +123,7 @@ if( !class_exists( 'ReduxFramework_promotion' ) ) {
 				if ( $this->field['section'] == 'main' ) {
 
 					echo	'<div id="redux-promotion-field-item" class="' . $this->field['style'] . $this->field['class'] . '">';
-					echo	'<div id="current-theme" class="' . esc_attr( $class ) . ' has-screenshot">';
+					echo	'<div class="' . esc_attr( $class ) . ' has-screenshot">';
 					echo	'<a href="' . $this->field['feat'] . '" class="promotion-image " title="' . esc_attr( $customize_title ) . '">';
 					echo	'<img src="' . $this->field['image'] . '" alt="Premium WordPress Theme - ' . $this->field['name'] . '" />';
 					echo	'</a>';

@@ -1256,7 +1256,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                         foreach( $this->sections as $k => $section ) {
                             if ( !isset( $section['title'] ) )
                                 continue;
-// HERE IS THE CODE
+
                             add_theme_page(
                                 $this->args['page_slug'],
                                 $section['title'],

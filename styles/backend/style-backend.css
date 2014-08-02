@@ -349,3 +349,21 @@ section-thinkup_portfolio_textcheck {
 ._thinkup_meta_colorscheme {
 	display: none;
 }
+
+
+/*---------------------------------------------------- 
+	FIX REDUX IMAGE ISSUE - MEDIA UPLOADER
+---------------------------------------------------- */
+
+.redux-slides-image {
+	max-height: 340px;
+	max-width: 340px;
+	padding: 5px;
+	margin-top: 10px;
+	border: 1px solid #E3E3E3;
+	background: #F7F7F7;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}

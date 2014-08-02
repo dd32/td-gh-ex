@@ -1218,7 +1218,7 @@ function setup_framework_options(){
 				'section'=>'header',
 				'id'=>'promotion-header',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
 				'name' => 'Alante',
 				'desc' => 'Alante is one of our best themes. Use this for any business or blog and give a professional image. Descriptions can even be added to the header menu making it easier for your customers to navigate through the site. With a drop shadow on the call to action and page titles this theme is a must have for any business.',
 				'demo' => 'http://demo.thinkupthemes.com/?theme=Alante',
@@ -1230,136 +1230,136 @@ function setup_framework_options(){
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/2_page_builder.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/2_page_builder.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/3_shortcodes.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/3_shortcodes.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/4_typography.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/4_typography.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/5_premium_support.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/5_premium_support.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/6_parallax_pages.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/6_parallax_pages.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/7_site_layout.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/7_site_layout.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/8_backgrounds.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/8_backgrounds.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/9_responsive.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/9_responsive.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/10_retina_ready.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/10_retina_ready.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/11_unlimited_colors.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/11_unlimited_colors.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/12_translation_ready.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/12_translation_ready.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/13_rtl_support.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/13_rtl_support.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/14_portfolios.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/14_portfolios.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/15_infinite_sidebars.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/15_infinite_sidebars.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/16_seo_optimized.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/16_seo_optimized.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/17_demo_content.png',
-				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				'image' => get_template_directory_uri()  . '/admin/main/assets/img/promotion/17_demo_content.png',
+				'feat' => '//www.thinkupthemes.com/themes/engrave/',
 				),
 		)
 	);

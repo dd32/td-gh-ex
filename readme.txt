@@ -37,6 +37,9 @@ Engrave Lite is the free version of the multi-purpose professional theme ideal f
 Engrave Lite WordPress Theme, Copyright 2011 Think Up Themes Ltd
 Engrave Lite is distributed under the terms of the GNU GPL
 
+Demo images are licensed under CC0 1.0 Universal (CC0 1.0) and available from http://pixabay.com/
+Image used in screenshot licensed under CC0 1.0 Universal (CC0 1.0) and available from http://pixabay.com/en/new-york-city-brooklyn-bridge-night-336475/
+
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
 
     [1.01] Item:        Underscores (_s) starter theme - Copyright: Automattic, automattic.com
@@ -95,7 +98,20 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
-Version 1.5.3 - CURRENT VERSION
+Version 1.5.4
+- New:     Font Awesome v4.1.0 added.
+- Fixed:   Css added to correct image format issue in theme options panel.
+- Updated: Slider image repaced with new image.
+- Updated: Retina js script only output when HD logo set. Prevents image 404 errors on hd screens.
+- Updated: http removed from credit links to ensure they work correctly on both http:// and https:// sites.
+- Updated: current-theme class removed from promotion section in theme options panel to correct image sizing issue.
+- Updated: get_stylesheet_directory_uri() changed to get_template_directory_uri() for theme info tab in theme options panel.
+- Updated: Responsive layout class changed from fixed to layout-fixed. Allows more developer control with layout-responsive class.
+- Removed: Delay autop code removed.
+- Removed: Unneccesary commented text remoed from framework.php.
+- Removed: Correct z-index of iframe code removed. No longer required since Wordpress v3.9 release.
+
+Version 1.5.3
 - New:     Custom background functionality added.
 - New:     Custom header image functionality added.
 - New:     thinkup_hook_header() moved to immediately after <head> html tag in header.php.
