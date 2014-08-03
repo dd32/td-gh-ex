@@ -28,7 +28,7 @@
 		<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 		<?php } ?>
 		<?php the_content( __( 'Read More' , 'weblizar' ) ); ?>		
-		<?php wp_link_pages( $args ); ?>		
+		<?php wp_link_pages(); ?>		
 		</div>
 	</div>
 </div>			

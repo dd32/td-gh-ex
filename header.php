@@ -51,13 +51,13 @@
 				<?php } ?>
 					<ul class="social">
 					<?php if($wl_theme_options['fb_link']!='') { ?>
-					   <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"><a  href="<?php echo $wl_theme_options['fb_link']; ?>"><i class="fa fa-facebook"></i></a></li>
+					   <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"><a  href="<?php echo esc_url($wl_theme_options['fb_link']); ?>"><i class="fa fa-facebook"></i></a></li>
 					<?php } if($wl_theme_options['twitter_link']!='') { ?>
-					<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="Twiiter"><a href="<?php echo $wl_theme_options['twitter_link']; ?>"><i class="fa fa-twitter"></i></a></li>
+					<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="Twiiter"><a href="<?php echo esc_url($wl_theme_options['twitter_link']); ?>"><i class="fa fa-twitter"></i></a></li>
 					<?php } if($wl_theme_options['linkedin_link']!='') { ?>					
-					<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo $wl_theme_options['linkedin_link']; ?>"><i class="fa fa-linkedin"></i></a></li>
+					<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo esc_url($wl_theme_options['linkedin_link']); ?>"><i class="fa fa-linkedin"></i></a></li>
 					<?php } if($wl_theme_options['youtube_link']!='') { ?>
-					<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo $wl_theme_options['youtube_link']; ?>"><i class="fa fa-youtube"></i></a></li>
+					<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo esc_url($wl_theme_options['youtube_link']) ; ?>"><i class="fa fa-youtube"></i></a></li>
 	                <?php } ?>
 					</ul>	
 				</div>

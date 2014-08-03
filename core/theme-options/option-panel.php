@@ -30,7 +30,7 @@ function weblizar_admin_enqueue_script() {
 function weblizar_option_panal_function() { 
 $theme_name = "Enigma-Pro"; 
 $get_theme= "Get Our Premium Theme" ;
-$purchase = "#" ;?>	
+$purchase = "http://weblizar.com/themes/enigma-premium/" ;?>	
 	<div class="wrap" id="weblizar_wrap" >
 		<div class="wbl-notify" id="wbl-notify">
 			<div class="col-md-12">
@@ -70,8 +70,8 @@ $purchase = "#" ;?>
 				<h2><span><?php _e('Weblizar Theme Settings','weblizar'); ?></span></h2>			
 				<div class="weblizar-submenu-links" id="weblizar-submenu-links">
 					<ul>
-						<li class=""> <div class="dashicons dashicons-format-aside"> </div> <a href="#" target="_blank" title="Documentation"><?php _e('Documentation','weblizar'); ?></a></li>
-						<li class=""> <div class="dashicons dashicons-format-chat" > </div> <a href="http://wordpress.org/themes/green-lantern/" target="_blank" title="Support Forum"><?php _e('Support Forum','weblizar'); ?></a></li>
+						<!-- <li class=""> <div class="dashicons dashicons-format-aside"> </div> <a href="#" target="_blank" title="Documentation"><?php _e('Documentation','weblizar'); ?></a></li> -->
+						<li class=""> <div class="dashicons dashicons-format-chat" > </div> <a href="https://wordpress.org/support/theme/" target="_blank" title="Support Forum"><?php _e('Support Forum','weblizar'); ?></a></li>
 						<li class=""> <div class="dashicons dashicons-welcome-write-blog"></div> <a href="<?php echo get_template_directory_uri() . '/readme.txt'?>" target="_blank" title="Theme Changelog"><?php _e('View Changelog','weblizar'); ?></a></li>      
 					</ul>
 				</div>			

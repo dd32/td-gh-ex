@@ -1,5 +1,5 @@
 <?php        
-/*	*Theme Name	: Enigma-Pro
+/*	*Theme Name	: Enigma
 	*Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
@@ -231,8 +231,7 @@
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
-	function weblizar_author_profile( $contactmethods ) {
-	
+	function weblizar_author_profile( $contactmethods ) {	
 	
 	$contactmethods['youtube_profile'] = 'Youtube Profile URL';	
 	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
@@ -250,71 +249,12 @@
 	function weblizar_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='author_detail_img", $class);
     return $class;
-	}
-	
-	
-	/*===================================================================================
-	* Paginated Posts
-	* =================================================================================
-	function weblizar_link_pages($args = '') {
-        $defaults = array(
-                'before' => '' . __('Pages:', 'weblizar'), 'after' => '',
-                'link_before' => '', 'link_after' => '',
-                'next_or_number' => 'number', 'nextpagelink' => __('Next page', 'weblizar'),
-                'previouspagelink' => __('Previous page', 'weblizar'), 'pagelink' => '%',
-                'echo' => 1
-        );
-
-        $r = wp_parse_args( $args, $defaults );
-        $r = apply_filters( 'wp_link_pages_args', $r );
-        extract( $r, EXTR_SKIP );
-
-        global $page, $numpages, $multipage, $more, $pagenow;
-        $output = '';
-        if ( $multipage ) {
-                if ( 'number' == $next_or_number ) {
-                        $output .= $before;
-                        for ( $i = 1; $i < ($numpages+1); $i = $i + 1 ) {
-                                $j = str_replace('%',$i,$pagelink);
-                                $output .= ' ';
-                                if ( ($i != $page) || ((!$more) && ($page==1)) ) {
-                                        $output .= _wp_link_page($i);
-                                } elseif ( $i == $page ) {
-                                    $output .= '<a class="active" href="#">';
-                                }
-                                $output .= $link_before . $j . $link_after;
-                                if ( ($i != $page) || ( $i == $page ) || ((!$more) && ($page==1)) )
-                                        $output .= '</a>';
-                        }
-                        $output .= $after;
-                } else {
-                        if ( $more ) {
-                                $output .= $before;
-                                $i = $page - 1;
-                                if ( $i && $more ) {
-                                        $output .= _wp_link_page($i);
-                                        $output .= $link_before. $previouspagelink . $link_after . '</a>';
-                                }
-                                $i = $page + 1;
-                                if ( $i <= $numpages && $more ) {
-                                        $output .= _wp_link_page($i);
-                                        $output .= $link_before. $nextpagelink . $link_after . '</a>';
-                                }
-                                $output .= $after;
-                        }
-                }
-        }
-
-        if ( $echo )
-                echo $output;
-
-        return $output;
-	} */
+	}	
 	/****--- Navigation for Author, Category , Tag , Archive ---***/
 	function weblizar_navigation() { ?>
 	<div class="enigma_blog_pagination">
 	<div class="enigma_blog_pagi">
-	<?php posts_nav_link(' -- ', 'Newer Posts', 'Older Posts'); ?>
+	<?php posts_nav_link(); ?>
 	</div>
 	</div>
 	<?php }	

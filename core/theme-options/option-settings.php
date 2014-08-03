@@ -1,6 +1,6 @@
 <?php  $wl_theme_options = get_option('enigma_options'); 
 $get_pro ="GET PREMIUM"; 
-$get_pro_url ="#";
+$get_pro_url ="http://weblizar.com/themes/enigma-premium/";
 $site ="http://www.weblizar.com" ;?>
 <div class="block ui-tabs-panel active" id="option-general" >	
 	<form method="post" id="weblizar_theme_options_general">
@@ -62,7 +62,7 @@ $site ="http://www.weblizar.com" ;?>
 			<input type="button" id="upload_button" value="Custom Logo" class="upload_image_button" />
 			<span class="explain"><?php _e('Add custom logo from here suggested size is 150X50','weblizar');?></span>	
 			<?php if($wl_theme_options['upload_image_logo']!='') { ?>
-			<p><img style="height:60px;width:100px;" src="<?php if($wl_theme_options['upload_image_logo']!='') { echo esc_attr($wl_theme_options['upload_image_logo']); } ?>" /></p>
+			<img style="height:60px;width:100px;" src="<?php if($wl_theme_options['upload_image_logo']!='') { echo esc_attr($wl_theme_options['upload_image_logo']); } ?>" />
 			<?php } ?>
 		</div>
 		<div class="section">
@@ -739,14 +739,14 @@ $site ="http://www.weblizar.com" ;?>
 	</form>	
 </div>
 <!---------------- footer customization Settings form ------------------------>
-<?php $demo = "#";
-$purchase ="#";
+<?php $demo = "http://weblizar.com/themes/enigma-premium/";
+$purchase ="http://weblizar.com/themes/enigma-premium/";
 $theme_name ="Enigma"; 
 ?>
 <div class="block ui-tabs-panel deactive" id="option-getpro" >
 <div class="plan-name">
-        <h2><?php echo $theme_name ;?> Pro Responsive Wordpress Theme</h2>
-		<h6>Get The Premium <?php echo $theme_name ;?> in Just <span><strike>$39</strike></span> $35 </h6>
+        <h2><?php echo $theme_name ;?> Pro Responsive WordPress Theme</h2>
+		<h6>Get The Premium <?php echo $theme_name ;?> in Just <span>$39</span></h6>
 </div>
 <div class="plan-name centre">
         <h2><?php echo $theme_name; ?> Pro And Free Comparison Table</h2>
@@ -810,7 +810,7 @@ $theme_name ="Enigma";
 	<div class="col-md-4">
 		<div class=" plan cp">
 			<div class="plan-name">
-				<h2>Pro - ( $35 )</h2>
+				<h2>Pro - ( $39 )</h2>
 				
 			</div>
 			<ul>
@@ -958,8 +958,8 @@ $theme_name ="Enigma";
 						</div>
 					</div>
 					<div class="col-md-12" style="margin-top:20px;">
-						<a class="btn btn-success btn-lg" target="_new" href="#">View Demo</a>&nbsp;&nbsp;
-						<a  class="btn btn-danger btn-lg" target="_new" href="#">Purchase Now</a>
+						<a class="btn btn-success btn-lg" target="_new" href="http://weblizar.com/themes/enigma-premium/">View Demo</a>&nbsp;&nbsp;
+						<a  class="btn btn-danger btn-lg" target="_new" href="http://weblizar.com/themes/enigma-premium/">Purchase Now</a>
 					</div>
 				</div>
 			</div>

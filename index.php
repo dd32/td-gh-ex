@@ -1,15 +1,5 @@
 <?php get_header();
-$wl_theme_options=get_option('enigma_options'); ?>
-<div class="enigma_header_breadcrum_title">	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1><?php  echo $wl_theme_options['home_banner_text'];  ?></h1>
-				<?php //get_template_part('breadcrums'); ?>
-			</div>
-		</div>
-	</div>	
-</div>
+get_template_part('breadcrums'); ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
 	<div class="col-md-8">
@@ -24,8 +14,9 @@ $wl_theme_options=get_option('enigma_options'); ?>
 		
 		<?php  endwhile; 
 		endif; ?>
-	<!-- Pagination -->
-		<?php weblizar_pagination($post_type_data->max_num_pages) ; ?>    
+		<!-- Pagination -->
+		<?php weblizar_pagination($post_type_data->max_num_pages) ; ?>
+		
 		<!-- //Pagination -->	
 	</div>	
 	<?php get_sidebar(); ?>
