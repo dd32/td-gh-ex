@@ -144,7 +144,7 @@ function base_scripts() {
 	
 	wp_enqueue_script( 'retina_js', get_template_directory_uri() . '/js/retina.js', '', '', true );
 
-	wp_enqueue_style( 'google-webfonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' );
+	wp_enqueue_style( 'google-webfonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

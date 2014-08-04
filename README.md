@@ -72,3 +72,8 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Fix main menu minor css error.
 * Add social options.
 * Add Schema.org for posts and pages.
+
+== 1.19 ==
+* Fixed https Google font issue.
+* Added Sitemap page template.
+* Admin css fix.
