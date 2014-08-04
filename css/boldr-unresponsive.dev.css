@@ -402,11 +402,13 @@ h1.page-title {
 }
 
 #footer .container > ul > li {
+	display: inline-block;
 	margin-left: 20px !important;
 	margin-right: 20px !important;
 	margin-bottom: 40px;
 	vertical-align: top;
 	float: none;
+	width: 200px;
 }
 
 #page-container {
@@ -428,8 +430,6 @@ h1.page-title {
 #page-container .page-title {
 	margin-top: 0px;
 }
-
-#footer div > ul > li { width: 200px; }
 
 #page-container.with-sidebar { width: 680px; }
 
@@ -1375,8 +1375,6 @@ p.comment-form-url
 
 #footer .container {
 	padding-top: 20px;
-	margin-bottom: 0;
-	width: 960px;
 }
 
 #footer .container > ul {
@@ -1459,10 +1457,6 @@ p.comment-form-url
 }
 
 /* Tagcloud widget */
-#footer .one-fourth {
-	display: inline-block;
-}
-
 #footer .tagcloud a {
     background: #707070;
     color: #eee!important;

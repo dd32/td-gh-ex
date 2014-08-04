@@ -169,7 +169,7 @@ function boldr_widgets_init() {
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
-		'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
