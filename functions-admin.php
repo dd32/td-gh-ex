@@ -282,10 +282,10 @@ function ct_ignite_sanitize_author_meta_settings($input){
     }
 }
 
-/* show full post or excerpt on homepage */
+/* additional options section */
 function ct_ignite_additional_options( $wp_customize ) {
 
-    /* Add the layout section. */
+    /* section */
     $wp_customize->add_section(
         'ct-additional-options',
         array(
@@ -294,7 +294,7 @@ function ct_ignite_additional_options( $wp_customize ) {
             'capability' => 'edit_theme_options'
         )
     );
-    /* Add the color setting. */
+    /* setting */
     $wp_customize->add_setting(
         'ct_ignite_show_full_post_setting',
         array(
@@ -304,12 +304,37 @@ function ct_ignite_additional_options( $wp_customize ) {
             'sanitize_callback' => 'ct_ignite_sanitize_show_full_post_setting',
         )
     );
+    /* control */
     $wp_customize->add_control(
         'ct_ignite_show_full_post',
         array(
             'label'          => __( 'Show full post on blog?', 'ignite' ),
             'section'        => 'ct-additional-options',
             'settings'       => 'ct_ignite_show_full_post_setting',
+            'type'           => 'radio',
+            'choices'        => array(
+                'yes'   => __('Yes', 'ignite'),
+                'no'  => __('No', 'ignite')
+            )
+        )
+    );
+    /* setting */
+    $wp_customize->add_setting(
+        'ct_ignite_show_breadcrumbs_setting',
+        array(
+            'default'           => 'yes',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_ignite_sanitize_show_full_post_setting',
+        )
+    );
+    /* control */
+    $wp_customize->add_control(
+        'ct_ignite_show_breadcrumbs_setting',
+        array(
+            'label'          => __( 'Show breadcrumbs?', 'ignite' ),
+            'section'        => 'ct-additional-options',
+            'settings'       => 'ct_ignite_show_breadcrumbs_setting',
             'type'           => 'radio',
             'choices'        => array(
                 'yes'   => __('Yes', 'ignite'),
@@ -333,6 +358,54 @@ function ct_ignite_sanitize_show_full_post_setting($input){
         return '';
     }
 }
+
+/* Custom CSS Section */
+function ct_ignite_customizer_custom_css( $wp_customize ) {
+
+    // Custom Textarea Control
+    class ct_ignite_Textarea_Control extends WP_Customize_Control {
+        public $type = 'textarea';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <textarea rows="8" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+            </label>
+        <?php
+        }
+    }
+    // section
+    $wp_customize->add_section(
+        'ct-custom-css',
+        array(
+            'title'      => __( 'Custom CSS', 'ignite' ),
+            'priority'   => 90,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    // setting
+    $wp_customize->add_setting(
+        'ct_ignite_custom_css_setting',
+        array(
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'esc_textarea',
+        )
+    );
+    // control
+    $wp_customize->add_control(
+        new ct_ignite_Textarea_Control(
+            $wp_customize,
+            'ct_ignite_custom_css_setting',
+            array(
+                'label'          => __( 'Add Custom CSS Here:', 'ignite' ),
+                'section'        => 'ct-custom-css',
+                'settings'       => 'ct_ignite_custom_css_setting',
+            )
+        ) );
+}
+add_action( 'customize_register', 'ct_ignite_customizer_custom_css' );
 
 /* create theme options page */
 function ct_ignite_register_theme_page(){
