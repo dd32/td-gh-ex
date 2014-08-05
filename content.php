@@ -28,7 +28,13 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		</div>
 		<?php } ?>
 		<div class="cat-event-excerpt <?php if(! has_post_thumbnail() ) { echo "full-width"; }?>">
-		    <?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?>
+		<?php 
+		$accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
+		$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
+		$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
+		?>
+		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo $accesspresslite_event_day." ".$accesspresslite_event_month." , ".$accesspresslite_event_year ?></div>
+		    <div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn">More</a>
 	</div><!-- .entry-content -->

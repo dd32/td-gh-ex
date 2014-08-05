@@ -7,13 +7,24 @@
 global $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $cat_blog = $accesspresslite_settings['blog_cat'];
+$cat_event = $accesspresslite_settings['event_cat'];
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
             
 		<?php 
-        if(has_category( $cat_blog) && !empty($cat_blog)){?>
+		if(has_category( $cat_event) && !empty($cat_event)){ ?>
+		<div class="cat-event-excerpt <?php if(! has_post_thumbnail() ) { echo "full-width"; }?>">
+		<?php 
+		$accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
+		$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
+		$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
+		?>
+		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo $accesspresslite_event_day." ".$accesspresslite_event_month." , ".$accesspresslite_event_year ?></div>
+		    <div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
+		</div>
+		<?php }else if(has_category( $cat_blog) && !empty($cat_blog)){?>
 			<div class="entry-meta">
 				<?php accesspresslite_posted_on(); ?>
 			</div><!-- .entry-meta -->

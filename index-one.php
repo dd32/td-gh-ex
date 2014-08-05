@@ -81,6 +81,13 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	        <h1><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h1>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+
+	        	<?php 
+				$accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
+				$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
+				$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
+				?>
+
 	        	<div class="event-list clearfix">
 	        		
 	        		<figure class="event-thumbnail">
@@ -94,10 +101,17 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
 						
+						<?php if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
 						<div class="event-date">
+							<span class="event-date-day"><?php echo $accesspresslite_event_day; ?> <?php echo $accesspresslite_event_month; ?></span>
+							<span class="event-date-month"><?php echo $accesspresslite_event_year; ?></span>
+						</div>
+						<?php }else {?>
+							<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
 							<span class="event-date-month"><?php echo get_the_date('M'); ?></span>
-						</div>
+							</div>
+						<?php } ?>
 						</a>
 					</figure>	
 
@@ -498,7 +512,7 @@ wp_reset_query(); ?>
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>">View All <?php echo get_cat_name($testimonial_category); ?></a>
+			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?> <?php echo get_cat_name($testimonial_category); ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 

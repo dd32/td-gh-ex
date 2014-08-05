@@ -51,6 +51,7 @@ $accesspresslite_options = array(
 	'slider_auto' => 'yes3',
 	'slider_speed' => '500',
 	'slider_caption'=>'yes4',
+	'slider_pause' => '4000',
 
 	'slider1'=>'',
 	'slider2'=>'',
@@ -612,7 +613,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label'];
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . selected($single_post['value'] , $settings['slider1'] ). '>' . $label . '</option>';
+						echo '<option value="' . $single_post['value'] . '" ' . selected($single_post['value'] , $settings['slider1'] ). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -625,7 +626,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label'];
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . selected($single_post['value'] , $settings['slider2'] ) . '>' . $label . '</option>';
+						echo '<option value="' . $single_post['value']  . '" ' . selected($single_post['value'] , $settings['slider2'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -638,7 +639,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label'];
-						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . selected($single_post['value'] , $settings['slider3'] ) . '>' . $label . '</option>';
+						echo '<option value="' . esc_attr( $single_post['value'] ) . '" ' . selected($single_post['value'] , $settings['slider3'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -652,7 +653,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label'];
-						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . selected( $single_post['value'], $settings['slider4'] ) . '>' . $label . '</option>';
+						echo '<option value="' . esc_attr( $single_post['value'] ) . '" ' . selected( $single_post['value'], $settings['slider4'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -673,7 +674,7 @@ function accesspresslite_theme_options_page() {
 						<?php
 						foreach ( $accesspresslite_catlist as $single_cat ) :
 							$label = $single_cat['label'];
-							echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['slider_cat'] ) . '>' . $label . '</option>';
+							echo '<option value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['slider_cat'] ) . '>' . $label . '</option>';
 						endforeach;
 						?>
 					</select>
@@ -736,6 +737,12 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Slider Speed','accesspresslite'); ?></th>
 					<td>
 					<input id="slider_speed" name="accesspresslite_options[slider_speed]" type="text" value="<?php echo esc_attr($settings['slider_speed']); ?>" />
+					</td>
+					</tr>
+
+					<tr><th scope="row"><?php _e('Slider Pause','accesspresslite'); ?></th>
+					<td>
+					<input id="slider_pause" name="accesspresslite_options[slider_pause]" type="text" value="<?php echo esc_attr($settings['slider_pause']); ?>" />
 					</td>
 					</tr>
 
@@ -1066,6 +1073,14 @@ function accesspresslite_validate_options( $input ) {
     if (isset( $input['slider_speed'] ) ){
         if(intval($input['slider_speed'])){
             $input['slider_speed'] = absint($input['slider_speed']);
+        }
+    }
+
+    if (!isset( $input['slider_pause'] ) || empty( $input['slider_pause'] ) ){
+        $input['slider_pause']= "5000";
+    }else{
+    	if(intval($input['slider_pause'])){
+            $input['slider_pause'] = absint($input['slider_pause']);
         }
     }
 

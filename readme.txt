@@ -60,6 +60,13 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.11
+* Slider Pause option added
+* Option for Custom Event date added
+
+Version 2.10
+* Reupload due to Server Problem
+
 Version 2.09
 * Sidebar Bug still persists so fixed again
 

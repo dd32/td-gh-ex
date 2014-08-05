@@ -372,6 +372,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
+					pause: '<?php echo $accesspresslite_settings['slider_pause']; ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
 					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>
@@ -457,6 +458,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
+					pause: '<?php echo $accesspresslite_settings['slider_pause']; ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
 					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>
