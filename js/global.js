@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 	    audioVolume: 'horizontal',
 	    audioWidth: 872,
 	    audioHeight: 100
-	})
+	});
 	
 			
 	// resize videos after container
