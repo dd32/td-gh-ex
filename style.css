@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Baskerville
-	Version: 1.12
+	Version: 1.13
 	Description: Baskerville is a beautiful, responsive and retina-ready masonry theme for hoarders. It's the perfect way to showcase your posts, videos, images and galleries, and share your favorite quotes and links. Features responsive design, retina-ready assets, full-width header image, support for all post formats, custom logo upload, custom widgets (video, Flickr and Dribbble), four page templates (including a contributors template), editor styling, like functionality via the ZillaLikes plugin and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -762,7 +762,7 @@ body a {
 .posts .format-audio .post-header:before,
 .posts .format-audio .post-header:after { content: none; }
 
-.format-audio .mejs-container {
+.post-audio .mejs-container {
 	max-width: 100%;
 	height: auto !important;
 	background: #2B3542;
@@ -771,25 +771,25 @@ body a {
 	position: relative;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-handle,
-.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle,
-.mejs-controls .mejs-time-rail .mejs-time-float,
-.mejs-controls .mejs-time-rail .mejs-time-float-current,
-.mejs-mediaelement,
-.mejs-layers {
+.post-audio .mejs-controls .mejs-time-rail .mejs-time-handle,
+.post-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle,
+.post-audio .mejs-controls .mejs-time-rail .mejs-time-float,
+.post-audio .mejs-controls .mejs-time-rail .mejs-time-float-current,
+.post-audio .mejs-mediaelement,
+.post-audio .mejs-layers {
     display: none;
 }
 
-.mejs-controls .mejs-button button {
+.post-audio .mejs-controls .mejs-button button {
     cursor: pointer;
     display: block;
     text-indent: -9999px;
 }
 
-.mejs-playpause-button,
-.mejs-time-rail,
-.mejs-volume-button,
-.mejs-horizontal-volume-slider {
+.post-audio .mejs-playpause-button,
+.post-audio .mejs-time-rail,
+.post-audio .mejs-volume-button,
+.post-audio .mejs-horizontal-volume-slider {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -798,17 +798,17 @@ body a {
 	float: left;
 }
 
-.mejs-horizontal-volume-slider { margin-right: 3%; }
+.post-audio .mejs-horizontal-volume-slider { margin-right: 3%; }
 
-.mejs-playpause-button,
-.mejs-volume-button {
+.post-audio .mejs-playpause-button,
+.post-audio .mejs-volume-button {
 	width: 6.25%;
 }
 
-.mejs-playpause-button button,
-.mejs-volume-button button,
-.mejs-mute button,
-.mejs-unmute button {
+.post-audio .mejs-playpause-button button,
+.post-audio .mejs-volume-button button,
+.post-audio .mejs-mute button,
+.post-audio .mejs-unmute button {
 	margin: 0 auto;
 	width: 100%;
 	height: 31px;
@@ -818,51 +818,51 @@ body a {
 	background-position: center;
 }
 
-.mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play.png); }
-.mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause.png); }
+.post-audio .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play.png); }
+.post-audio .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause.png); }
 
-.mejs-mute button,
-.mejs-unmute button { background-size: 20px auto; }
+.post-audio .mejs-mute button,
+.post-audio .mejs-unmute button { background-size: 20px auto; }
 
-.mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute.png); }
-.mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute.png); }
+.post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute.png); }
+.post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute.png); }
 
-.mejs-horizontal-volume-slider { 
+.post-audio .mejs-horizontal-volume-slider { 
 	margin-top: 12px;
 	width: 16.25%; 
 	cursor: pointer; 
 }
 
-.mejs-horizontal-volume-total,
-.mejs-horizontal-volume-current,
-.mejs-controls .mejs-time-rail span {
+.post-audio .mejs-horizontal-volume-total,
+.post-audio .mejs-horizontal-volume-current,
+.post-audio .mejs-controls .mejs-time-rail span {
 	height: 8px;
 }
  
-.mejs-horizontal-volume-total { background: #222A34; }
+.post-audio .mejs-horizontal-volume-total { background: #222A34; }
 
-.mejs-horizontal-volume-current {
+.post-audio .mejs-horizontal-volume-current {
     position: absolute;
     margin-top: -8px;
     background: #13C4A5;
 }
 
-.mejs-controls .mejs-time-rail { 
+.post-audio .mejs-controls .mejs-time-rail { 
     margin-top: 12px;
 	max-width: 56.25%; 
 	float: left;
 }
  
-.mejs-controls .mejs-time-rail span {
+.post-audio .mejs-controls .mejs-time-rail span {
     position: absolute;
     display: block;
     max-width: 100%;
     cursor: pointer;
 }
  
-.mejs-controls .mejs-time-rail .mejs-time-total { background: #555D67; }
+.post-audio .mejs-controls .mejs-time-rail .mejs-time-total { background: #555D67; }
  
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
+.post-audio .mejs-controls .mejs-time-rail .mejs-time-loaded {
     width: 0;
     background: #222A34;
 }
@@ -872,26 +872,26 @@ body a {
     background: #13C4A5;
 }
 
-.mejs-clear { clear: both; }
+.post-audio .mejs-clear { clear: both; }
 
-.mejs-android .mejs-controls .mejs-playpause-button,
-.mejs-ios .mejs-controls .mejs-playpause-button,
-.mejs-android .mejs-controls .mejs-time-rail,
-.mejs-ios .mejs-controls .mejs-time-rail {
+.post-audio .mejs-android .mejs-controls .mejs-playpause-button,
+.post-audio .mejs-ios .mejs-controls .mejs-playpause-button,
+.post-audio .mejs-android .mejs-controls .mejs-time-rail,
+.post-audio .mejs-ios .mejs-controls .mejs-time-rail {
 	padding: 5% 0;
 	margin-left: 5%;
 }
 
-.mejs-android .mejs-controls .mejs-playpause-button,
-.mejs-ios .mejs-controls .mejs-playpause-button { width: 15%; margin-left: 0; }
+.post-audio .mejs-android .mejs-controls .mejs-playpause-button,
+.post-audio .mejs-ios .mejs-controls .mejs-playpause-button { width: 15%; margin-left: 0; }
 
-.mejs-android .mejs-controls .mejs-time-rail,
-.mejs-ios .mejs-controls .mejs-time-rail { max-width: 80%; margin-right: 5%; margin-left: 0; }
+.post-audio .mejs-android .mejs-controls .mejs-time-rail,
+.post-audio .mejs-ios .mejs-controls .mejs-time-rail { max-width: 80%; margin-right: 5%; margin-left: 0; }
 
-.mejs-android .mejs-controls .mejs-volume-button,
-.mejs-ios .mejs-controls .mejs-volume-button,
-.mejs-android .mejs-controls .mejs-horizontal-volume-slider,
-.mejs-ios .mejs-controls .mejs-horizontal-volume-slider {
+.post-audio .mejs-android .mejs-controls .mejs-volume-button,
+.post-audio .mejs-ios .mejs-controls .mejs-volume-button,
+.post-audio .mejs-android .mejs-controls .mejs-horizontal-volume-slider,
+.post-audio .mejs-ios .mejs-controls .mejs-horizontal-volume-slider {
 	display: none;
 }
 
@@ -1063,17 +1063,17 @@ body.single-post .content.center {
 
 /* format audio */
 
-.single-post .mejs-playpause-button.mejs-play button,
-.single-post .mejs-playpause-button.mejs-pause button { background-size: 24px auto; }
+.single-post .featured-media .mejs-playpause-button.mejs-play button,
+.single-post .featured-media .mejs-playpause-button.mejs-pause button { background-size: 24px auto; }
 
-.single-post .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play-big.png); }
-.single-post .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause-big.png); }
+.single-post .featured-media .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play-big.png); }
+.single-post .featured-media .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause-big.png); }
 
-.single-post .post-audio .mejs-mute button,
-.single-post .post-audio .mejs-unmute button { background-size: 32px auto; }
+.single-post .featured-media .post-audio .mejs-mute button,
+.single-post .featured-media .post-audio .mejs-unmute button { background-size: 32px auto; }
 
-.single-post .post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute-big.png); }
-.single-post .post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute-big.png); }
+.single-post .featured-media .post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute-big.png); }
+.single-post .featured-media .post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute-big.png); }
 
 /* format gallery */
 
@@ -1663,6 +1663,7 @@ img.alignright,
 
 .comments-title { 
 	font-size: 1.75em;
+	font-weight: 700;
 	color: #2B3542; 
 }
 
@@ -1921,6 +1922,7 @@ img.alignright,
 .comment-reply-title {
 	font-family: 'Roboto Slab', sans-serif;
 	font-size: 1.75em;
+	font-weight: 700;
 	color: #2B3542;
 }
 
@@ -2579,14 +2581,14 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	.posts .post-meta a.post-comments { background-image: url(images/icons/2x/comment-g.png); }
 	.posts .post-meta a.post-comments:hover { background-image: url(images/icons/2x/comment-c.png); }
 	
-	.mejs-playpause-button.mejs-play button,
-	.single-post .mejs-playpause-button.mejs-play button { background-image: url(images/icons/2x/audio/play.png); }
-	.mejs-playpause-button.mejs-pause button,
-	.single-post .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/2x/audio/pause.png); }	
-	.mejs-mute button,
-	.single-post .mejs-mute button { background-image: url(images/icons/2x/audio/audio-mute.png); }
-	.mejs-unmute button,
-	.single-post .mejs-unmute button { background-image: url(images/icons/2x/audio/audio-unmute.png); }
+	.featured-media .mejs-playpause-button.mejs-play button,
+	.single-post .featured-media .mejs-playpause-button.mejs-play button { background-image: url(images/icons/2x/audio/play.png); }
+	.featured-media .mejs-playpause-button.mejs-pause button,
+	.single-post .featured-media .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/2x/audio/pause.png); }	
+	.featured-media .mejs-mute button,
+	.single-post .featured-media .mejs-mute button { background-image: url(images/icons/2x/audio/audio-mute.png); }
+	.featured-media .mejs-unmute button,
+	.single-post .featured-media .mejs-unmute button { background-image: url(images/icons/2x/audio/audio-unmute.png); }
 	
 	.post-link a { background-image: url(images/icons/2x/link-c.png); }
 	
@@ -2845,11 +2847,11 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	
 	/* format audio */
 	
-	.single-post .post-audio .mejs-mute button, 
-	.single-post .post-audio .mejs-unmute button { background-size: 20px auto; }
+	.single-post .featured-media .mejs-mute button, 
+	.single-post .featured-media .mejs-unmute button { background-size: 20px auto; }
 	
-	.single-post .mejs-playpause-button.mejs-play button, 
-	.single-post .mejs-playpause-button.mejs-pause button { background-size: 16px auto; }
+	.single-post .featured-media .mejs-playpause-button.mejs-play button, 
+	.single-post .featured-media .mejs-playpause-button.mejs-pause button { background-size: 16px auto; }
 	
 	/* single post */
 	

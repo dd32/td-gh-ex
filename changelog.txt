@@ -1,6 +1,12 @@
 *** Baskerville changelog ***
 
 
+Version 1.13 (2014-08-05)
+-------------------------
+- Fixed an issue which would prevent WordPress Mediaelement.js style from loading
+- Minor CSS tweaks and fixes
+
+
 Version 1.12 (2014-08-02)
 -------------------------
 - Fixed a bug which made it so that the author email was always visible in the post meta, even if it had been set as hidden in the settings

@@ -81,15 +81,6 @@ function baskerville_load_style() {
 add_action('wp_print_styles', 'baskerville_load_style');
 
 
-// Remove built-in Mediaelement.js styles
-add_action( 'wp_enqueue_scripts', 'my_deregister_styles' );
-
-function my_deregister_styles() {
-    wp_deregister_style( 'mediaelement' );
-    wp_deregister_style( 'wp-mediaelement' );
-}
-
-
 // Add editor styles
 function baskerville_add_editor_styles() {
     add_editor_style( 'baskerville-editor-style.css' );
@@ -436,14 +427,14 @@ endif;
 
 
 // Add Twitter field to user profiles
-function wpg_modify_contact_methods($profile_fields) {
+function baskerville_modify_contact_methods($profile_fields) {
 
 	// Add new fields
 	$profile_fields['twitter'] = 'Twitter-username (without the @)';
 
 	return $profile_fields;
 }
-add_filter('user_contactmethods', 'wpg_modify_contact_methods');
+add_filter('user_contactmethods', 'baskerville_modify_contact_methods');
 
 
 // Add the option to show or hide the email address for post authors
