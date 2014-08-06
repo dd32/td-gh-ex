@@ -1,6 +1,12 @@
 *** Hemingway changelog ***
 
 
+Version 1.47 (2014-08-06)
+-------------------------
+- Added missing form/input elements to the custom accent color control
+- Added license information for screenshot.png
+
+
 Version 1.46 (2014-08-06)
 -------------------------
 - Fixed a clearing bug in .blog-menu

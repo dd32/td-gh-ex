@@ -430,7 +430,10 @@ class Hemingway_Customize {
 	           <?php self::generate_css('.post-content a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog .format-quote blockquote cite a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-content a.more-link:hover', 'background-color', 'accent_color'); ?>
-	           <?php self::generate_css('.content .button:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="reset"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="button"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content fieldset legend', 'background-color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-content .searchform #searchsubmit', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.post-content .searchform #searchsubmit', 'border-color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-content .searchform #searchsubmit:hover', 'background', 'accent_color'); ?>
