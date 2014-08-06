@@ -1,6 +1,20 @@
 *** Hoffman changelog ***
 
 
+Version 1.04 (2014-08-06)
+-------------------------
+- Updated style.css for brevity and browser compatibility
+- Added a missing namespace, updated the Swedish translation
+- Updated the form/input styling
+- Updated the editor style with missing elements
+
+
+Version 1.03 (2014-08-01)
+-------------------------
+- Spruced up the gallery slideshow navigation
+- Improved the navigation toggle
+
+
 Version 1.02 (2014-07-19)
 -------------------------
 - Added missing namespaces in single.php

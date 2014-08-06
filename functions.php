@@ -11,7 +11,7 @@ function hoffman_setup() {
 	// Post thumbnails
 	add_theme_support( 'post-thumbnails' ); 
 	add_image_size( 'post-image', 1200, 9999 );
-	add_image_size( 'thumbnail-square', 100, 100, 'true' );
+	add_image_size( 'thumbnail-square', 100, 100, true );
 	
 	// Post formats
 	add_theme_support( 'post-formats', array( 'gallery', 'quote', 'video' ) );
@@ -584,7 +584,7 @@ class hoffman_Customize {
       $wp_customize->add_section( 'hoffman_logo_section' , array(
 		    'title'       => __( 'Logo', 'hoffman' ),
 		    'priority'    => 40,
-		    'description' => 'Upload a logo to replace the default site name and description in the header',
+		    'description' => __('Upload a logo to replace the default site name and description in the header', 'hoffman'),
 		) );
       
       //2. Register new settings to the WP database...
@@ -640,7 +640,7 @@ class hoffman_Customize {
 	           <?php self::hoffman_generate_css('.sticky .is-sticky:hover:before', 'border-left-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.sticky .is-sticky:hover:after', 'border-left-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.sticky .is-sticky:hover:after', 'border-bottom-color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('.flex-direction-nav a:hover', 'background', 'accent_color'); ?>
+	           <?php self::hoffman_generate_css('.flex-direction-nav a:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-quote cite', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('a.post-quote:hover cite', 'border-bottom-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-title a:hover', 'color', 'accent_color'); ?>
@@ -650,6 +650,10 @@ class hoffman_Customize {
 	           <?php self::hoffman_generate_css('.post-content a:hover', 'border-bottom-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-content a.more-link', 'border-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-content a.more-link:hover', 'background', 'accent_color'); ?>
+	           <?php self::hoffman_generate_css('.post-content input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::hoffman_generate_css('.post-content input[type="reset"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::hoffman_generate_css('.post-content input[type="button"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::hoffman_generate_css('.post-content fieldset legend', 'background-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('#infinite-handle span', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('#infinite-handle span', 'border-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('#infinite-handle span:hover', 'background', 'accent_color'); ?>
@@ -694,11 +698,6 @@ class hoffman_Customize {
 	           <?php self::hoffman_generate_css('.credits p a:hover', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.nav-toggle.active p', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.nav-toggle.active .bar', 'background', 'accent_color'); ?>
-	           
-	           <?php self::hoffman_generate_css('body#tinymce.wp-editor a', 'color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('body#tinymce.wp-editor a:hover', 'color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('body#tinymce.wp-editor a:hover', 'border-bottom-color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('body#tinymce.wp-editor legend', 'background', 'accent_color'); ?>
 	      </style> 
 	      
 	      <!--/Customizer CSS-->

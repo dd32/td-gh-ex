@@ -231,7 +231,8 @@
 			
 				<div class="author-meta-aside">
 			
-					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="author-avatar"><?php echo get_avatar( get_the_author_meta( 'email' ), '256' ); ?></a>					
+					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="author-avatar"><?php echo get_avatar( get_the_author_meta( 'email' ), '256' ); ?></a>
+								
 				</div> <!-- /author-meta-left -->
 			
 				<div class="author-meta-inner">

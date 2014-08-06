@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Hoffman v1.02\n"
+"Project-Id-Version: Hoffman v1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-19 13:41:41+0000\n"
+"PO-Revision-Date: 2014-08-06 13:00:43+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -259,7 +259,7 @@ msgstr "Sökformulär"
 
 #: image.php:45
 #: page.php:60
-#: single.php:387
+#: single.php:388
 #: template-archive.php:113
 #: template-fullwidth.php:66
 #@ hoffman
@@ -549,33 +549,38 @@ msgstr "1 kommentar"
 msgid "% Comments"
 msgstr "% kommentarer"
 
-#: single.php:247
+#: single.php:248
 #@ hoffman
 msgid "Administrator"
 msgstr "Administratör"
 
-#: single.php:249
+#: single.php:250
 #@ hoffman
 msgid "Editor"
 msgstr "Redaktör"
 
-#: single.php:251
+#: single.php:252
 #@ hoffman
 msgid "Author"
 msgstr "Skribent"
 
-#: single.php:253
+#: single.php:254
 #@ hoffman
 msgid "Contributor"
 msgstr "Medarbetare"
 
-#: single.php:255
+#: single.php:256
 #@ hoffman
 msgid "Subscriber"
 msgstr "Prenumerant"
 
-#: single.php:257
+#: single.php:258
 #@ hoffman
 msgid "Guest"
 msgstr "Gäst"
+
+#: functions.php:587
+#@ hoffman
+msgid "Upload a logo to replace the default site name and description in the header"
+msgstr "Ladda upp en logotyp för att visas istället för sidtiteln och -beskrivningen i sidhuvudet"
 
