@@ -1,5 +1,8 @@
 *** agency Changelog ***
 
+07-08-2014 - version 1.2.7
+*Readme.txt file updated...
+
 13-07-2013 - version 1.2.6
 * Backwards compatibility function for custom headers removed - Use WordPress core implementation instead.
 
