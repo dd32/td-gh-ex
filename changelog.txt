@@ -1,6 +1,15 @@
 *** Hemingway changelog ***
 
 
+Version 1.46 (2014-08-06)
+-------------------------
+- Fixed a clearing bug in .blog-menu
+- Optimized the CSS for brevity and browser compatibility
+- Improved the display of forms and inputs in the post-content
+- Improved the display of the comment form
+- Updated the Swedish translation, added missing namespaces
+
+
 Version 1.45 (2014-07-25)
 -------------------------
 - Fixed so that the header height is fixed, rather than relative to the width of the screen

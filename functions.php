@@ -370,7 +370,7 @@ class Hemingway_Customize {
       $wp_customize->add_section( 'hemingway_logo_section' , array(
 		    'title'       => __( 'Logo', 'hemingway' ),
 		    'priority'    => 40,
-		    'description' => 'Upload a logo to replace the default site name and description in the header',
+		    'description' => __('Upload a logo to replace the default site name and description in the header','hemingway'),
 		) );
       
       //2. Register new settings to the WP database...
