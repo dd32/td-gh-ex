@@ -19,7 +19,10 @@ of your WordPress installation. You will then be able to activate the theme.
 == Frequently Asked Questions ==
 
 = How to setup Home/front-page with out Blog =
-Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Home as the page template and name your page Home(or anything). And publish the page. Then go to Settings - Reading - select a static page as frontpage display option. Select Home as Front page option.
+Go to settings - reading and select A static page as option for front page display. Select any page as front page and a page called say "Blog" for blog page.
+
+= Footer-sidebar.php, How to add footer widgets =
+Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
 
 = Where can I get support for the theme? =
 Support is available at the http://antthemes.com/forum/.
