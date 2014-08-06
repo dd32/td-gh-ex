@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.0
+Version: 1.01
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -1214,8 +1214,7 @@ Header
 --------------------------------------------------------------*/
 .has-banner,
 .overlay {
-	height: 100vh;
-	width: 100vw;
+	width: 100%;
 }
 .site-header {
 	position: relative;
@@ -1273,20 +1272,20 @@ Welcome area
 	padding: 0 30px;
 }
 .welcome-title {
-	top: 10vh;
+	top: 100px;
 	font-size: 80px;
 	color: #fff;
 	text-shadow: 0 0 2px #222, 0 0 2px #222;
 	font-weight: 700;
 }
 .welcome-desc {
-	top: 10vh;
+	top: 100px;
 	font-size: 28px;
 	color: #D8D8D8;
 	text-shadow: 0 0 2px #222, 0 0 2px #222;
 }
 .welcome-button {
-	top: 15vh;
+	top: 150px;
 }
 .welcome-button,
 .call-to-action {
@@ -1476,17 +1475,14 @@ Responsive
 		font-size: 36px;
 	}
 	.welcome-title {
-		top: 10vh;
-		font-size: 12vw;
+		font-size: 24px;
 	}
 	.welcome-desc {
-		top: 10vh;
-		font-size: 8vw;
+		font-size: 20px;
 		color: #D8D8D8;
 		text-shadow: 0 0 2px #222, 0 0 2px #222;
 	}
 	.welcome-button {
-		top: 10vh;
 	    font-size: 14px;
 	    margin-top: 30px;
 	}

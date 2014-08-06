@@ -1,3 +1,12 @@
+//Sets the header image height
+jQuery(function($) {
+	var height = $(window).height(); 
+	$('.site-header, .overlay').css('height', height);
+	$(window).resize(function() {
+		var height = $(window).height(); 
+		$('.site-header, .overlay').css('height', height);
+	});	
+});
 
 //Page loader
 jQuery(document).ready(function($) {
