@@ -12,13 +12,10 @@ jQuery().waypoint && jQuery("body").imagesLoaded(function () {
              triggerOnce: !0
          })
      });
-		
-		
-		// photobos js
+	// photobos js
 		jQuery('.enima_photo_gallery').photobox('.photobox_a');
 		// or with a fancier selector and some settings, and a callback:
 		jQuery('.enima_photo_gallery').photobox('.photobox_a:first', { thumbs:false, time:0 }, imageLoaded);
 		function imageLoaded(){
 			console.log('image has been loaded...');
 		}
-		

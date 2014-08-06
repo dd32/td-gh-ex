@@ -552,3 +552,7 @@ text-align: center;
 .enigma_footer_widget_column ul li a:hover{color: #31a3dd;}
 .enigma_callout_area a:hover{background-color:#393c40;}
 ul .social li .facebook a:hover ,ul .social li .twitter a:hover,ul .social li .linkedin a:hover ,ul .social li .youtube a:hover {background-color:#34495e;}
+.enigma_blog_pagi a:hover, .enigma_blog_pagi a.active {
+background-color: #31A3DD;
+color: white;
+}

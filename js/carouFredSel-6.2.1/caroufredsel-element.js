@@ -45,4 +45,4 @@
             });   
 			jQuery(window).load(function () {
                 caroufredsel();
-            });
+            });		

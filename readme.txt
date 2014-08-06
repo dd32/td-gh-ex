@@ -5,6 +5,8 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.0 [06/08/14]
+Rest all issue fixed.
 @Version 0.99 [03/08/14]
 ->Issue raised after first review removed here.
 @Version 0.9.5

@@ -6,16 +6,16 @@ get_template_part('breadcrums'); ?>
 	<?php 	if ( have_posts()) : 
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$args = array( 'post_type' => 'post','paged'=>$paged);		
-			$post_type_data = new WP_Query( $args );
-			while($post_type_data->have_posts()):
-			$post_type_data->the_post(); ?>
+			$post_type = new WP_Query( $args );
+			while($post_type->have_posts()):
+			$post_type->the_post(); ?>
 		
 		<?php get_template_part('post','content'); ?>		
 		
 		<?php  endwhile; 
 		endif; ?>
 		<!-- Pagination -->
-		<?php weblizar_pagination($post_type_data->max_num_pages) ; ?>
+		<?php weblizar_pagination($post_type->max_num_pages) ; ?>
 		
 		<!-- //Pagination -->	
 	</div>	
