@@ -40,45 +40,45 @@
         <address>
          <small>
 		   <?php if (of_get_option('address_1') != '') { ?>
-           <strong><?php echo stripslashes(of_get_option('address_1')); ?></strong>
+           <strong><?php echo stripslashes(of_get_option('address_1')); ?></strong><br>
            <?php } else { ?>
-           <strong><?php _e( 'Company S.A.', 'athenea' ); ?></strong>
+           <strong><?php _e( 'Company S.A.', 'athenea' ); ?></strong><br>
            <?php } ?>
 
 		   <?php if (of_get_option('address_2') != '') { ?>
-           - <strong>CIF:</strong> <?php echo stripslashes(of_get_option('address_2')); ?><br>
+           <strong>CIF:</strong> <?php echo stripslashes(of_get_option('address_2')); ?><br>
            <?php } else { ?>
-           - <strong>CIF:</strong> <?php _e( 'B123456789', 'athenea' ); ?><br>
+           <strong>CIF:</strong> <?php _e( 'B123456789', 'athenea' ); ?><br>
            <?php } ?>
 
 		   <?php if (of_get_option('address_3') != '') { ?>
-           <?php echo stripslashes(of_get_option('address_3')); ?>
+           <?php echo stripslashes(of_get_option('address_3')); ?><br>
            <?php } else { ?>
-           <?php _e( 'New Burlington St, 123', 'athenea' ); ?>
+           <?php _e( 'New Burlington St, 123', 'athenea' ); ?><br>
            <?php } ?>
 
 		   <?php if (of_get_option('address_4') != '') { ?>
-           - CP: <?php echo stripslashes(of_get_option('address_4')); ?>
+           CP: <?php echo stripslashes(of_get_option('address_4')); ?>
            <?php } else { ?>
-           - CP: <?php _e( 'W1B 5NF', 'athenea' ); ?>
+           CP: <?php _e( 'W1B 5NF', 'athenea' ); ?>
            <?php } ?>
 
 		   <?php if (of_get_option('address_5') != '') { ?>
-           <?php echo stripslashes(of_get_option('address_5')); ?><br>
+           <?php echo stripslashes(of_get_option('address_5')); ?>
            <?php } else { ?>
-           <?php _e( 'London', 'athenea' ); ?><br>
+           <?php _e( 'London', 'athenea' ); ?>
            <?php } ?>
 
 		   <?php if (of_get_option('address_6') != '') { ?>
-           <?php echo stripslashes(of_get_option('address_6')); ?>
+           (<?php echo stripslashes(of_get_option('address_6')); ?>)<br>
            <?php } else { ?>
-           <?php _e( 'United Kingdom', 'athenea' ); ?>
+           (<?php _e( 'United Kingdom', 'athenea' ); ?>)<br>
            <?php } ?>
 
 		   <?php if (of_get_option('address_7') != '') { ?>
-           - <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php echo stripslashes(of_get_option('address_7')); ?><br>
+           <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php echo stripslashes(of_get_option('address_7')); ?><br>
            <?php } else { ?>
-           - <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php _e( '9XX 123 456', 'athenea' ); ?><br>
+           <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php _e( '9XX 123 456', 'athenea' ); ?><br>
            <?php } ?>
 
            <p><a href="mailto:<?php

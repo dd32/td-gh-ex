@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.5
+Version: 1.1.6
 Requires at least: 3.0.1
 Tested up to: 3.9.1
 Author: Miguel Angel Rico
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.6 - 06.08.2014 =
+* Address data is sorted in the footer.
 
 = 1.1.5 - 24.06.2014 =
 * Unify and minimize all javascripts into one and sent to the footer to lighten the load of visual assets.
