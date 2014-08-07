@@ -193,7 +193,10 @@ function generate_left_sidebar_classes( $classes )
 		get_option( 'generate_settings', array() ), 
 		generate_get_defaults() 
 	);
-	$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
+	$stored_meta = '';
+	if ( isset( $post ) ) :
+		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
+	endif;
 	
 	// If we're on the single post page, use appropriate setting
 	if ( is_single() ) :

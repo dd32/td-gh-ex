@@ -23,6 +23,7 @@ function generate_create_menu()
 	$addons = array(
 		'generate_fonts_setup' => 'gen_fonts_license_key_status',
 		'generate_colors_setup' => 'gen_colors_license_key_status',
+		'generate_backgrounds_setup' => 'gen_backgrounds_license_key_status',
 		'generate_page_header' => 'gen_page_header_license_key_status',
 		'generate_insert_import_export' => 'gen_ie_license_key_status',
 		'generate_copyright_option' => 'gen_copyright_license_key_status',
@@ -170,6 +171,14 @@ function generate_settings_page()
 												'license' => 'gen_spacing_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-spacing/'),
 												'img' => get_template_directory_uri() . '/images/admin/spacing.png'
+										),
+										'10' => array(
+												'name' => __('Backgrounds','generate'),
+												'version' => ( function_exists('generate_backgrounds_setup') ) ? GENERATE_BACKGROUNDS_VERSION : '',
+												'id' => 'generate_backgrounds_setup',
+												'license' => 'gen_backgrounds_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-backgrounds/'),
+												'img' => get_template_directory_uri() . '/images/admin/backgrounds.png'
 										)
 									);
 									

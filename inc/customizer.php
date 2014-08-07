@@ -24,11 +24,13 @@ function generate_customize_register( $wp_customize ) {
 	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	// Change title tagline title to Setup
-	$wp_customize->get_section('title_tagline')->title = __( 'Header', 'generate' );
+	$wp_customize->get_section('title_tagline')->title = __( 'Header Content', 'generate' );
 	$wp_customize->get_control('blogdescription')->priority = 3;
 	$wp_customize->get_control('blogname')->priority = 1;
-	$wp_customize->get_section('static_front_page')->title = __( 'Front Page', 'generate' );
+	$wp_customize->get_section('static_front_page')->title = __( 'Set Front Page', 'generate' );
 	$wp_customize->get_section('static_front_page')->priority = 10;
+	$wp_customize->get_section('nav')->priority = 5;
+	$wp_customize->get_section('nav')->title = __( 'Set Navigation', 'generate' );
 	$wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
 	//$wp_customize->remove_section('static_front_page');

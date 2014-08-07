@@ -65,6 +65,16 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'footer_text_color' => '#ffffff',
 			'footer_link_color' => '#ffffff',
 			'footer_link_hover_color' => '#4295DD',
+			'form_background_color' => '#FAFAFA',
+			'form_text_color' => '#666666',
+			'form_background_color_focus' => '#FFFFFF',
+			'form_text_color_focus' => '#666666',
+			'form_border_color' => '#CCCCCC',
+			'form_border_color_focus' => '#BFBFBF',
+			'form_button_background_color' => '#666666',
+			'form_button_background_color_hover' => '#606060',
+			'form_button_text_color' => '#FFFFFF',
+			'form_button_text_color_hover' => '#FFFFFF'
 		);
 		
 		return apply_filters( 'generate_color_option_defaults', $generate_color_defaults );
@@ -87,7 +97,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 		
 			// Header
 			'.site-header' => array(
-				'background' => $generate_settings['header_background_color'],
+				'background-color' => $generate_settings['header_background_color'],
 				'color' => $generate_settings['header_text_color']
 			),
 			
@@ -117,12 +127,12 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			// Navigation background
 			'.main-navigation,  
 			.main-navigation ul ul' => array(
-				'background' => $generate_settings['navigation_background_color']
+				'background-color' => $generate_settings['navigation_background_color']
 			),
 			
 			// Sub-Navigation background
 			'.main-navigation ul ul' => array(
-				'background' => $generate_settings['subnavigation_background_color']
+				'background-color' => $generate_settings['subnavigation_background_color']
 			),
 			
 			// Navigation text
@@ -140,14 +150,14 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'.main-navigation .main-nav ul li > a:hover, 
 			.main-navigation .main-nav ul li.sfHover > a' => array(
 				'color' => $generate_settings['navigation_text_hover_color'],
-				'background' => $generate_settings['navigation_background_hover_color']
+				'background-color' => $generate_settings['navigation_background_hover_color']
 			),
 			
 			// Sub-Navigation background/text on hover
 			'.main-navigation .main-nav ul ul li > a:hover, 
 			.main-navigation .main-nav ul ul li.sfHover > a' => array(
 				'color' => $generate_settings['subnavigation_text_hover_color'],
-				'background' => $generate_settings['subnavigation_background_hover_color']
+				'background-color' => $generate_settings['subnavigation_background_hover_color']
 			),
 			
 			// Navigation background / text current
@@ -158,7 +168,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			.main-navigation .main-nav ul .current_page_parent > a, 
 			.main-navigation .main-nav ul .current_page_ancestor > a' => array(
 				'color' => $generate_settings['navigation_text_current_color'],
-				'background' => $generate_settings['navigation_background_current_color']
+				'background-color' => $generate_settings['navigation_background_current_color']
 			),
 			
 			// Navigation background text current text hover
@@ -175,7 +185,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			.main-navigation .main-nav ul .current_page_parent.sfHover > a, 
 			.main-navigation .main-nav ul .current_page_ancestor.sfHover > a' => array(
 				'color' => $generate_settings['navigation_text_current_color'],
-				'background' => $generate_settings['navigation_background_current_color']
+				'background-color' => $generate_settings['navigation_background_current_color']
 			),
 			
 			// Sub-Navigation background / text current
@@ -186,7 +196,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			.main-navigation .main-nav ul ul .current_page_parent > a, 
 			.main-navigation .main-nav ul ul .current_page_ancestor > a' => array(
 				'color' => $generate_settings['subnavigation_text_current_color'],
-				'background' => $generate_settings['subnavigation_background_current_color']
+				'background-color' => $generate_settings['subnavigation_background_current_color']
 			),
 			
 			// Sub-Navigation current background / text current
@@ -203,7 +213,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			.main-navigation .main-nav ul ul .current_page_parent.sfHover > a, 
 			.main-navigation .main-nav ul ul .current_page_ancestor.sfHover > a' => array(
 				'color' => $generate_settings['subnavigation_text_current_color'],
-				'background' => $generate_settings['subnavigation_background_current_color']
+				'background-color' => $generate_settings['subnavigation_background_current_color']
 			),
 			
 			// Content
@@ -213,7 +223,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			.one-container .container,
 			.paging-navigation,
 			.inside-page-header' => array(
-				'background' => $generate_settings['content_background_color'],
+				'background-color' => $generate_settings['content_background_color'],
 				'color' => $generate_settings['content_text_color']
 			),
 			
@@ -272,7 +282,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			
 			// Sidebar widget
 			'.sidebar .widget' => array(
-				'background' => $generate_settings['sidebar_widget_background_color'],
+				'background-color' => $generate_settings['sidebar_widget_background_color'],
 				'color' => $generate_settings['sidebar_widget_text_color']
 			),
 			
@@ -294,7 +304,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			
 			// Footer widget
 			'.footer-widgets' => array(
-				'background' => $generate_settings['footer_widget_background_color'],
+				'background-color' => $generate_settings['footer_widget_background_color'],
 				'color' => $generate_settings['footer_widget_text_color']
 			),
 			
@@ -316,7 +326,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			
 			// Footer
 			'.site-info' => array(
-				'background' => $generate_settings['footer_background_color'],
+				'background-color' => $generate_settings['footer_background_color'],
 				'color' => $generate_settings['footer_text_color']
 			),
 			
@@ -330,6 +340,48 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'.site-info a:hover' => array(
 				'color' => $generate_settings['footer_link_hover_color']
 			),
+			
+			// Form input
+			'input[type="text"], 
+			input[type="email"], 
+			input[type="url"], 
+			input[type="password"], 
+			input[type="search"], 
+			textarea' => array(
+				'background-color' => $generate_settings['form_background_color'],
+				'border-color' => $generate_settings['form_border_color'],
+				'color' => $generate_settings['form_text_color']
+			),
+			
+			// Form input focus
+			'input[type="text"]:focus, 
+			input[type="email"]:focus, 
+			input[type="url"]:focus, 
+			input[type="password"]:focus, 
+			input[type="search"]:focus, 
+			textarea:focus' => array(
+				'background-color' => $generate_settings['form_background_color_focus'],
+				'color' => $generate_settings['form_text_color_focus'],
+				'border-color' => $generate_settings['form_border_color_focus']
+			),
+			
+			// Form button
+			'button, 
+			html input[type="button"], 
+			input[type="reset"], 
+			input[type="submit"]' => array(
+				'background-color' => $generate_settings['form_button_background_color'],
+				'color' => $generate_settings['form_button_text_color']
+			),
+			
+			// Form button hover
+			'button:hover, 
+			html input[type="button"]:hover, 
+			input[type="reset"]:hover, 
+			input[type="submit"]:hover' => array(
+				'background-color' => $generate_settings['form_button_background_color_hover'],
+				'color' => $generate_settings['form_button_text_color_hover']
+			)
 			
 		);
 		

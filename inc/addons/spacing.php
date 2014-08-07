@@ -32,6 +32,8 @@ if ( !function_exists('generate_spacing_get_defaults') ) :
 			'content_bottom' => '40',
 			'content_left' => '40',
 			'separator' => '30',
+			'left_sidebar_width' => '25',
+			'right_sidebar_width' => '25',
 			'widget_top' => '40',
 			'widget_right' => '40',
 			'widget_bottom' => '40',
@@ -177,7 +179,7 @@ if ( !function_exists('generate_spacing_css') ) :
 				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null
 			),
 			
-			'.separate-containers .widget, .separate-containers .hentry' => array(
+			'.separate-containers .widget, .separate-containers .hentry, .separate-containers .page-header, .widget-area .main-navigation' => array(
 				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			

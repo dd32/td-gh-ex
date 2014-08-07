@@ -87,15 +87,14 @@
 	margin:5px;
 }
 
-.activate-button:before {
-	font-family: 'dashicons';
-	content: "\f147";
-}
-
 .wp-list-table.addons tr:nth-child(2n) {
 	background: #FFF;
 }
 .wp-list-table.addons td,
 .wp-list-table.email td {
 	vertical-align: middle;
+}
+
+.column-addon_name {
+	width: 225px;
 }

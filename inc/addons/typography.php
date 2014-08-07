@@ -105,11 +105,15 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			),
 			
 			// Navigation font
-			'.main-navigation a' => array(
+			'.main-navigation a, .menu-toggle' => array(
 				'font-family' => current(explode(':', $generate_settings['font_navigation'])),
 				'font-weight' => $generate_settings['navigation_font_weight'],
 				'text-transform' => $generate_settings['navigation_font_transform'],
 				'font-size' => $generate_settings['navigation_font_size'] . 'px'
+			),
+			
+			'.main-navigation .main-nav ul ul li a' => array(
+				'font-size' => $generate_settings['navigation_font_size'] - 1 . 'px'
 			),
 			
 			// Widget title font

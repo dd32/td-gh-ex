@@ -28,6 +28,7 @@ function generate_addons_available()
 {
 	if ( !function_exists('generate_fonts_setup') ||
 		!function_exists('generate_colors_setup') ||
+		!function_exists('generate_backgrounds_setup') ||
 		!function_exists('generate_page_header') ||
 		!function_exists('generate_insert_import_export') ||
 		!function_exists('generate_copyright_option') ||
@@ -49,6 +50,7 @@ function generate_no_addons()
 {
 	if ( !function_exists('generate_fonts_setup') &&
 		!function_exists('generate_colors_setup') &&
+		!function_exists('generate_backgrounds_setup') &&
 		!function_exists('generate_page_header') &&
 		!function_exists('generate_insert_import_export') &&
 		!function_exists('generate_copyright_option') &&
