@@ -197,13 +197,13 @@ if ( ! class_exists( 'TC_slider' ) ) :
                 <?php 
                   if ( $data['title'] != null || $data['text'] != null || $data['button_text'] != null ) {
                     //apply filters first
-                    $data['title']          = apply_filters( 'tc_slide_title', $data['title'] , $id );
-                    $data['text']           = esc_html( apply_filters( 'tc_slide_text', $data['text'], $id ) );
+                    $data['title']          = isset($data['title']) ? apply_filters( 'tc_slide_title', $data['title'] , $id ) : '';
+                    $data['text']           = isset($data['text']) ? esc_html( apply_filters( 'tc_slide_text', $data['text'], $id ) ) : '';
                     $data['color_style']    = apply_filters( 'tc_slide_color', $data['color_style'], $id );
                     $data['link_id']        = apply_filters( 'tc_slide_link_id', $data['link_id'], $id );
                     $data['link_url']       = ( 'demo' == $slider_name_id && is_null($data['link_url']) ) ? admin_url().'customize.php' : $data['link_url'];
                     $data['link_url']       = apply_filters( 'tc_slide_link_url', $data['link_url'], $id );
-                    $data['button_text']    = apply_filters( 'tc_slide_button_text', $data['button_text'], $id );
+                    $data['button_text']    = isset($data['button_text']) ? apply_filters( 'tc_slide_button_text', $data['button_text'], $id ) : '';
 
                     //computes the link
                     $button_link            = ( !is_user_logged_in() && 'demo' == $slider_name_id ) ? 'javascript:void(0)' : $data['link_url'];

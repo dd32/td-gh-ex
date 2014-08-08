@@ -17,9 +17,34 @@ if ( ! class_exists( 'TC_post_list' ) ) :
       function __construct () {
           self::$instance =& $this;
           //displays the article with filtered layout : content + thumbnail
-          add_action  ( '__loop'                        , array( $this , 'tc_post_list_display'));
+          add_action ( '__loop'                         , array( $this , 'tc_post_list_display'));
           //Include attachments in search results
-          add_filter  ( 'pre_get_posts'                 , array( $this , 'tc_include_attachments_in_search' ));
+          add_filter ( 'pre_get_posts'                  , array( $this , 'tc_include_attachments_in_search' ));
+          //Include all post types in archive pages
+          add_filter ( 'pre_get_posts'                  , array( $this , 'tc_include_cpt_in_lists' ));
+      }
+
+
+      /**
+      * Includes Custom Posts Types (set to public and excluded_from_search_result = false) in archives and search results
+      * In archives, it handles the case where a CPT has been registered and associated with an existing built-in taxonomy like category or post_tag
+      *
+      * @package Customizr
+      * @since Customizr 3.1.20
+      */
+      function tc_include_cpt_in_lists($query) {
+        if ( 
+          is_admin()
+          || ! $query->is_main_query()
+          || ! apply_filters('tc_include_cpt_in_archives' , true)
+          || ! ( $query->is_search || $query->is_archive )
+          )
+          return;
+
+        //filter the post types to include, they must be public and not excluded from search
+        $post_types     = get_post_types( array( 'public' => true, 'exclude_from_search' => false) );
+        
+        $query->set('post_type', $post_types );
       }
 
 
@@ -32,11 +57,10 @@ if ( ! class_exists( 'TC_post_list' ) ) :
        */
       function tc_post_list_display() {
         global $wp_query;
+
         //must be archive or search result. Returns false if home is empty in options.
         if ( is_singular() || is_404() || (is_search() && 0 == $wp_query -> post_count) || tc__f( '__is_home_empty') )
           return;
-
-        
 
         //When do we show the post excerpt?
         //1) when set in options
@@ -270,7 +294,7 @@ if ( ! class_exists( 'TC_post_list' ) ) :
       * @since Customizr 3.0.10
       */
       function tc_include_attachments_in_search( $query ) {
-          if (! is_search() )
+          if (! is_search() || ! apply_filters( 'tc_include_attachments_in_search_results' , true ) )
             return $query;    
 
           // add post status 'inherit' 

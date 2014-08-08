@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v3.1.19\n"
+"Project-Id-Version: * Customizr v3.1.20\n"
 "POT-Creation-Date: 2014-05-13 16:24+0100\n"
-"PO-Revision-Date: 2014-05-13 16:24+0100\n"
+"PO-Revision-Date: 2014-08-09 00:22+0100\n"
 "Last-Translator: Nicolas <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Français\n"
@@ -1444,7 +1444,7 @@ msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../parts/class-footer-footer_main.php:179
 msgid "Back to top"
-msgstr "Zurück zum Anfang"
+msgstr "Zurück nach oben"
 
 #: ../parts/class-header-header_main.php:167
 msgid "Back Home"

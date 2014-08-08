@@ -202,15 +202,15 @@ if ( ! class_exists( 'TC_init' ) ) :
           //Default slides content
           $this -> default_slides     = array(
                                             1 => array(
-                                              'title'         =>  __( 'Customizr is a clean responsive theme' , 'customizr' ),
-                                              'text'          =>  __( 'Let your creativity speak and easily customiz\'it the way you want!' , 'customizr' ),
-                                              'button_text'   =>  __( 'Learn more' , 'customizr' ),
+                                              'title'         =>  '',
+                                              'text'          =>  '',
+                                              'button_text'   =>  '',
                                               'link_id'       =>  null,
                                               'link_url'      =>  null,
                                               'active'        =>  'active',
                                               'color_style'   =>  '',
-                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                          TC_BASE_URL.'inc/assets/img/phare.jpg',
+                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="" alt="%2$s" />',
+                                                                          TC_BASE_URL.'inc/assets/img/customizr.jpg',
                                                                           __( 'Customizr is a clean responsive theme' , 'customizr' )
                                                                   )
                                             ),
@@ -223,8 +223,8 @@ if ( ! class_exists( 'TC_init' ) ) :
                                               'link_url'      =>  null,
                                               'active'        =>  '',
                                               'color_style'   =>  '',
-                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                          TC_BASE_URL.'inc/assets/img/chevrolet.jpg',
+                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="" alt="%2$s" />',
+                                                                          TC_BASE_URL.'inc/assets/img/phare.jpg',
                                                                           __( 'Style your WordPress site live!' , 'customizr' )
                                                                   )
                                             ),
@@ -237,8 +237,8 @@ if ( ! class_exists( 'TC_init' ) ) :
                                               'link_url'      =>  null,
                                               'active'        =>  '',
                                               'color_style'   =>  '',
-                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="slide wp-post-image" alt="%2$s" />',
-                                                                          TC_BASE_URL.'inc/assets/img/ampoules.jpg',
+                                              'slide_background'       =>  sprintf('<img width="1200" height="500" src="%1$s" class="" alt="%2$s" />',
+                                                                          TC_BASE_URL.'inc/assets/img/chevrolet.jpg',
                                                                           __( 'Create beautiful sliders' , 'customizr' )
                                                                   )
                                             )

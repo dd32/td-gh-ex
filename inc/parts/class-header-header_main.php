@@ -76,30 +76,27 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 	     */
 	      function tc_favicon_display() {
 	       	$saved_path 			= esc_url ( tc__f( '__get_option' , 'tc_fav_upload') );
-	       	if ( !$saved_path || is_null($saved_path) )
+	       	if ( ! $saved_path || is_null($saved_path) )
 	       		return;
 
 	       	//rebuild the path : check if the full path is already saved in DB. If not, then rebuild it.
 	       	$upload_dir 			= wp_upload_dir();
 	       	
-	       	if ( false !== strpos( $saved_path , '/wp-content/' ) ) {
-	       		$url    			= $saved_path ;
-	       	} else {
-	       		$url 				= $upload_dir['baseurl'] . $saved_path;
-	       	}
-	       	$url    				= apply_filters( 'tc_fav_src' , $url );
+	       	$url 					= ( false !== strpos( $saved_path , '/wp-content/' ) ) ? $saved_path : $upload_dir['baseurl'] . $saved_path;
+	       	//makes ssl compliant url
+	       	$url 					= is_ssl() ? str_replace('http://', 'https://', $url) : $url;
+			$url    				= apply_filters( 'tc_fav_src' , $url );
 
-	        if( $url != null)   {
-	          $type = "image/x-icon";
-	          if(strpos( $url, '.png' )) $type = "image/png";
-	          if(strpos( $url, '.gif' )) $type = "image/gif";
-	        
-	          $html = '<link rel="shortcut icon" href="'.$url.'" type="'.$type.'">';
-	        
-	        echo apply_filters( 'tc_favicon_display', $html );
-	        }
+	        if( null == $url )
+	        	return;
 
-	      }
+          	$type = "image/x-icon";
+          	if( strpos( $url, '.png') ) $type = "image/png";
+          	if( strpos( $url, '.gif') ) $type = "image/gif";
+        
+        	echo apply_filters( 'tc_favicon_display', '<link rel="shortcut icon" href="'.$url.'" type="'.$type.'">' );
+
+	     }
 
 
 
@@ -115,11 +112,9 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 	       	//rebuild the logo path : check if the full path is already saved in DB. If not, then rebuild it.
 	       	$upload_dir 			= wp_upload_dir();
 	       	$saved_path 			= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') );
-	       	if ( false !== strpos( $saved_path , '/wp-content/' ) ) {
-	       		$logo_src    		= $saved_path ;
-	       	} else {
-	       		$logo_src 			= $upload_dir['baseurl'] . $saved_path;
-	       	}
+	       	$logo_src 				= ( false !== strpos( $saved_path , '/wp-content/' ) ) ? $saved_path : $upload_dir['baseurl'] . $saved_path;
+	       	//makes ssl compliant
+	       	$logo_src 				= is_ssl() ? str_replace('http://', 'https://', $logo_src) : $logo_src;
 	       	$logo_src    			= apply_filters( 'tc_logo_src' , $logo_src ) ;
 	       	
 	       	$logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );

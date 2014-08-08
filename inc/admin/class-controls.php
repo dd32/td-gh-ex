@@ -72,7 +72,20 @@ if ( ! class_exists( 'TC_controls' ) ) :
 							?>
 						</select>
 					</label>
-					<?php
+					<?php 
+					//retrieve all sliders in option array
+			        $options                   	= get_option( 'tc_theme_options' );
+			        $sliders 					= array();
+			        if ( isset( $options['tc_sliders'])) {
+			        	$sliders                = $options['tc_sliders'];
+			    	}
+	        	
+					if ( 'tc_theme_options[tc_front_slider]' == $this -> id  && empty( $sliders ) ) {
+						 echo '<div style="width:99%; padding: 5px;">';
+		                  echo '<p class="description">'.__("You haven't create any slider yet. Go to the media library, edit your images and add them to your sliders.", "customizr" ).'<br/><a class="button-primary" href="'.admin_url( 'upload.php' ).'" target="_blank">'.__( 'Create a slider' , 'customizr' ).'</a></p>
+		              </div>';
+					}
+
 				break;
 
 
@@ -122,21 +135,6 @@ if ( ! class_exists( 'TC_controls' ) ) :
 					</label>
 					<?php
 		        	break;
-	        	
-	        	case 'slider-check':
-		        	//retrieve all sliders in option array
-			        $options                   	= get_option( 'tc_theme_options' );
-			        $sliders 					= array();
-			        if ( isset( $options['tc_sliders'])) {
-			        	$sliders                = $options['tc_sliders'];
-			    	}
-	        	
-		            if(empty( $sliders )) {
-		               echo '<div style="width:99%; padding: 5px;">';
-		                  echo '<p class="description">'.__("You haven't create any slider yet. Go to the media library, edit your images and add them to your sliders.", "customizr" ).'<br/><a class="button-primary" href="'.admin_url( 'upload.php' ).'" target="_blank">'.__( 'Create a slider' , 'customizr' ).'</a></p>
-		              </div>';
-		            }	
-	        	break;
 
 	        	default:
 	        		screen_icon( $this -> type );

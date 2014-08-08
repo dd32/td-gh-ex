@@ -486,7 +486,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
         $socials      = apply_filters( 'tc_default_socials' , TC_init::$instance -> socials );
 
         //declares some vars
-        $target       = apply_filters( 'tc_socials_target', 'target=_blank' );
         $html         = '';
 
         foreach ( $socials as $key => $data ) {
@@ -504,7 +503,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
                   ),
                   esc_url( $__options[$key]),
                   isset($data['link_title']) ?  call_user_func( '__' , $data['link_title'] , 'customizr' ) : '' ,
-                  ( $key == 'tc_rss' ) ? '' : $target,
+                  ( $key == 'tc_rss' ) ? '' : apply_filters( 'tc_socials_target', 'target=_blank', $key ),
                   apply_filters( 'tc_additional_social_attributes', '' , $key),
                   ( isset($data['custom_icon_url']) && !empty($data['custom_icon_url']) ) ? sprintf('<img src="%1$s" width="%2$s" height="%3$s" alt="%4$s"/>',
                                                           $data['custom_icon_url'],
@@ -873,7 +872,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
               //logo upload
               'tc_theme_options[tc_logo_upload]'  => array(
                                 'control'   =>  'WP_Customize_Upload_Control' ,
-                                'label'     =>  __( 'Logo Upload (supported formats : .jpg, .png, .gif)' , 'customizr' ),
+                                'label'     =>  __( 'Logo Upload (supported formats : .jpg, .png, .gif, svg, svgz)' , 'customizr' ),
                                 'section'   =>  'tc_logo_settings' ,
                                 'sanitize_callback' => array( $this , 'tc_sanitize_uploads' ),
               ),
@@ -961,15 +960,15 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
               //select slider
               'tc_theme_options[tc_front_slider]' => array(
-                                'default'       => 'demo' ,
-                                'control'   => 'TC_controls' ,
+                                'default'     => 'demo' ,
+                                'control'     => 'TC_controls' ,
                                 'title'       => __( 'Slider options' , 'customizr' ),
                                 'label'       => __( 'Select front page slider' , 'customizr' ),
                                 'section'     => 'tc_frontpage_settings' ,
                                 'type'        => 'select' ,
                                 //!important
                                 'choices'     => ($get_default == true) ? null : $this -> tc_slider_choices(),
-                                'priority'      => 20,
+                                'priority'    => 20
               ),
 
               //select slider
@@ -980,14 +979,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
                                 'section'     => 'tc_frontpage_settings' ,
                                 'type'        => 'checkbox' ,
                                 'priority'      => 30,
-              ),
-
-              //slider check message
-              'slider_check'            => array(
-                                'setting_type'  =>  null,
-                                'section'     => 'tc_frontpage_settings' ,
-                                'type'      => 'slider-check' ,
-                                'priority'      => 40,
               ),
 
               //Delay between each slides

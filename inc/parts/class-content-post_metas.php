@@ -1,7 +1,7 @@
 <?php
 /**
 * Post metas content actions
-*
+* Since 3.1.20, displays all levels of any hierarchical taxinomies by default and for all types of post (including hierarchical CPT). This feature can be disabled with a the filter : tc_display_taxonomies_in_breadcrumb (set to true by default). In the case of hierarchical post types (like page or hierarchical CPT), the taxonomy trail is only displayed for the higher parent.
 * 
 * @package      Customizr
 * @subpackage   classes
@@ -110,26 +110,25 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
 
          /**
-         * Displays the category list
+         * Displays all the hierarchical taxonomy terms (including the category list for posts)
          *
          *
          * @package Customizr
          * @since Customizr 3.0 
          */
         function tc_category_list() {
-            $postcats                 = apply_filters( 'tc_cat_meta_list', get_the_category() );
-            $html                     = false;
-            if ( $postcats) {
-                foreach( $postcats as $cat) {
+            $post_terms                 = apply_filters( 'tc_cat_meta_list', $this -> _get_terms_of_tax_type( $hierarchical = true ) );
+            $html                       = false;
+            if ( false != $post_terms) {
+                foreach( $post_terms as $term_id => $term ) {
                     $html                 .= sprintf('<a class="%1$s" href="%2$s" title="%3$s"> %4$s </a>',
                                                 apply_filters( 'tc_category_list_class', 'btn btn-mini' ),
-                                                get_category_link( $cat->term_id ),
-                                                esc_attr( sprintf( __( "View all posts in %s", 'customizr' ), $cat->name ) ),
-                                                $cat->cat_name
+                                                get_term_link( $term_id , $term -> taxonomy ),
+                                                esc_attr( sprintf( __( "View all posts in %s", 'customizr' ), $term -> name ) ),
+                                                $term -> name
                     );
                 }//end foreach
             }//end if $postcats
-
             return apply_filters( 'tc_category_list', $html );
         }
 
@@ -138,27 +137,85 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
 
         /**
-         * Template for displaying the tag list
-         *
+         * Displays all the non-hierarchical taxonomy terms (including the tag list for posts)
+         * Handles tag like terms
+         * Alternative
          *
          * @package Customizr
          * @since Customizr 3.0 
          *
          */
         function tc_tag_list() {
-            $posttags                   = apply_filters( 'tc_tag_meta_list', get_the_tags() );
+            $post_terms                 = apply_filters( 'tc_tag_meta_list', $this -> _get_terms_of_tax_type( $hierarchical = false ) );
             $html                       = false;
-            if ( $posttags) {
-                foreach( $posttags as $tag) {
+
+            if ( false != $post_terms) {
+                foreach( $post_terms as $term_id => $term ) {
                     $html               .= sprintf('<a class="%1$s" href="%2$s" title="%3$s"> %4$s </a>',
                                                 apply_filters( 'tc_tag_list_class', 'btn btn-mini btn-tag' ),
-                                                get_tag_link( $tag->term_id ),
-                                                esc_attr( sprintf( __( "View all posts in %s", 'customizr' ), $tag->name ) ),
-                                                $tag->name
+                                                get_term_link( $term_id , $term -> taxonomy ),
+                                                esc_attr( sprintf( __( "View all posts in %s", 'customizr' ), $term -> name ) ),
+                                                $term -> name
                     );
                 }//end foreach
             }//end if
             return apply_filters( 'tc_tag_list', $html );
         }
+
+
+        /**
+         * Helper to return the current post terms of specified taxonomy type : hierarchical or not
+         *
+         * @return boolean (false) or array
+         * @param  boolean : hierarchical or not
+         * @package Customizr
+         * @since Customizr 3.1.20
+         *
+         */
+        private function _get_terms_of_tax_type ( $hierarchical = true ) {
+            //var declaration
+            $post_type              = get_post_type( tc__f('__ID') );
+            $tax_list               = get_object_taxonomies( $post_type, 'object' );
+            $_tax_type_list         = array();
+            $_tax_type_terms_list   = array();
+
+            if ( empty($tax_list) )
+                return false;
+
+            //filter the post taxonomies
+            while ( $el = current($tax_list) ) {
+                //skip the post format taxinomy
+                if ( in_array( key($tax_list) , apply_filters( 'tc_exclude_taxonomies_from_metas' , array('post_format') , $post_type , tc__f('__ID') ) ) ) {
+                    next($tax_list);
+                    continue;
+                }
+                if ( (bool) $hierarchical === (bool) $el -> hierarchical )
+                    $_tax_type_list[key($tax_list)] = $el;
+                next($tax_list);
+            }
+
+            if ( empty($_tax_type_list) )
+                return false;
+
+            //fill the post terms array
+            foreach ($_tax_type_list as $tax_name => $data ) {
+                $_current_tax_terms = get_the_terms( tc__f('__ID') , $tax_name );
+
+                //If current post support this tax but no terms has been assigned yet = continue
+                if ( ! $_current_tax_terms )
+                    continue;
+
+                while( $term = current($_current_tax_terms) ) {
+                    $_tax_type_terms_list[$term -> term_id] = $term;
+                    next($_current_tax_terms);
+                }
+            }
+            return empty($_tax_type_terms_list) ? false : $_tax_type_terms_list;
+        }
+
     }//end of class
 endif;
+//this only purpose of this function is to use the_tags() wp function.
+function tc_get_the_tags() {
+    return the_tags();
+}
