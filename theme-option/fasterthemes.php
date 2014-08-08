@@ -45,7 +45,7 @@ function fasterthemes_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$generator_menu = array(
-				'page_title' => __( 'Faster Themes Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
 				'menu_title' => __('FT Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
@@ -65,7 +65,7 @@ function fastertheme_framework_page(){
 		
 		screen_icon(); 
 		$generator_image=get_template_directory_uri().'/theme-option/images/logo.png';
-		echo "<h1><img src='".$generator_image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".$generator_image."' height='64px'  /> ". __( 'FasterThemes Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
 			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
 		endif; 

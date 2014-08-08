@@ -1,15 +1,15 @@
 /*
 Theme Name: Generator
 Theme URI: http://fasterthemes.com/themes/generator
-Author: Faster Themes
+Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Generator is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel. 
-Version: 2.0.5
+Version: 2.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: orange, right-sidebar, two-columns, responsive-layout, theme-options
 Text Domain: generator
-This theme, like WordPress, is licensed under the Faster Themes.
+This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 @import url(//fonts.googleapis.com/css?family=Ubuntu);
@@ -86,7 +86,7 @@ body {
 	border: medium none;
 	height: 30px;
 	width: 140px;
-	border-left: 1px solid #999;
+	border-left: 1px solid #e6e6e6;
 	text-align: center;
 	font-size: 12px;
 	vertical-align: top;
@@ -156,7 +156,7 @@ body {
 .footer-menu-title {
 	font-size: 16px;
 	color: #fcfcfc;
-	margin-top: 27px;
+	margin-top: 37px;
 }
 .footer {
 	clear: both;
@@ -655,7 +655,7 @@ p > embed, p > iframe, p > object, span > embed, span > iframe, span > object {
 	color: rgb(33, 33, 33);
 	font-size: 12px;
 	line-height: 24px;
-	margin-bottom: 40px;
+	margin-bottom: 15px;
 	text-align: justify;
 }
 .generator-default-pagination {
@@ -1076,6 +1076,7 @@ dd {
     margin: 0 auto;
     width: 70px !important;
 	text-align:center;
+	background-color:#f7f7f7;
 }
 .font-icon-size img{
 	max-height:25px;
@@ -1086,7 +1087,8 @@ dd {
     margin: 20px 0 0 !important;
 }
 .generator-sidebar{
-	margin:2% 0;
+    margin: 3% 0;
+    padding: 0 30px;
 }
 .back-radius {
     background: none repeat scroll 0 0 #181818;
@@ -1131,8 +1133,8 @@ dd {
     width: 22px !important;
 }
 .project1-line {
-    border-top: 1px solid #e9e9e9;
-    margin: 40px 0 20px;
+    border-top: 3px solid rgb(233, 233, 233);
+    margin: 40px 0 30px;
     width: 100%;
 }
 #hover-cap-4col .thumbnail {
@@ -1577,7 +1579,7 @@ header .margin-top-bottom-2 {
 	width: 100%;
 }
 .thumbnail {
-	width: 80% !important;
+	width: 100% !important;
 	margin: 0px auto !important;
 }
 .search-box {
@@ -1590,7 +1592,9 @@ header .margin-top-bottom-2 {
 .project-tag {
     font-size: 14px;
 }
-
+.generator-site-name {
+	font-size:24px;
+}
 }
 @media(min-width:481px) and (max-width:600px) {
 .header-icon {

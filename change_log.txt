@@ -25,3 +25,7 @@ Version: 2.0.4
 Version: 2.0.5	
 	
 	i) Home page display bug from settings area - Fixed.
+	
+Version: 2.0.6
+	
+	i) Fixed responsive issues in css.
