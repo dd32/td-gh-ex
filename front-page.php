@@ -36,7 +36,26 @@
 				else if ($slider == "mock_flex") {
 					get_template_part('templates/home/mock', 'flex');
 				}
-}?>
+}
+
+if(isset($virtue['homepage_layout']['enabled'])){
+		$i = 0;
+		$show_pagetitle = false;
+		foreach ($virtue['homepage_layout']['enabled'] as $key=>$value) {
+			if($key == "block_one") {
+				$show_pagetitle = true;
+			}
+			$i++;
+			if($i==2) break;
+		}
+	} 
+	if($show_pagetitle == true) {
+		?><div id="homeheader" class="welcomeclass">
+								<div class="container">
+									<?php get_template_part('templates/page', 'header'); ?>
+								</div>
+							</div><!--titleclass-->
+	<?php } ?>
 	
     <div id="content" class="container homepagecontent">
    		<div class="row">
@@ -51,9 +70,11 @@
 				    switch($key) {
 
 				    	case 'block_one':?>
-						    <div id="homeheader" class="welcomeclass">
+						   <?php if($show_pagetitle == false) {?>
+				    	  <div id="homeheader" class="welcomeclass">
 									<?php get_template_part('templates/page', 'header'); ?>
 							</div><!--titleclass-->
+							<?php }?>
 					    <?php 
 					    break;
 						case 'block_four': ?>

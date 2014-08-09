@@ -1,263 +1,261 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: deLite Virtue\n"
+"Project-Id-Version: Lite Virtue\n"
 "POT-Creation-Date: 2014-08-09 13:47-0700\n"
-"PO-Revision-Date: 2014-08-09 13:55-0700\n"
-"Last-Translator: María Digo <web.esdemay@gmail.com>\n"
-"Language-Team: Maria <web.esdemay@gmail.com>\n"
-"Language: es_ES\n"
+"PO-Revision-Date: 2014-08-09 13:56-0700\n"
+"Last-Translator: karmeljuk <karmeljuk@gmail.com>\n"
+"Language-Team: \n"
+"Language: Ukrainian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:11
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
-"Lo sentimos, pero la p&aacute;gina que est&aacute; intentando ver no existe."
+msgstr "Вибачте, але сторінка хибна."
 
 #: ../404.php:14
 msgid "It looks like this was the result of either:"
-msgstr "Parece que este es el resultado para todos:"
+msgstr "Схоже, це було результатом наступного:"
 
 #: ../404.php:16
 msgid "a mistyped address"
-msgstr "dirección mal escrita"
+msgstr "пропущена адреса"
 
 #: ../404.php:17
 msgid "an out-of-date link"
-msgstr "enlace obsoleto"
+msgstr "застаріла веб ланка"
 
 #: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
-msgstr "Lo sentimos, no se encontraron resultados"
+msgstr "Вибачте, немає результатів."
 
 #: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
-msgstr "Lo sentimos, no hay publicaciones del blog"
+msgstr "Вибачте, жодного запису блогу не знайдено"
 
 #: ../page-contact.php:84
 msgid "Please enter your name."
-msgstr "Por favor, escriba su nombre."
+msgstr "Будь ласка, введіть своє ім'я."
 
 #: ../page-contact.php:91
 msgid "Please enter your email address."
-msgstr "Por favor,escriba su dirección de correo electrónico."
+msgstr "Будь ласка, введіть свою електронну адресу."
 
 #: ../page-contact.php:94
 msgid "You entered an invalid email address."
-msgstr "La dirección de email no es v&aacute;lida."
+msgstr "Ви зазначили хибну електронну адресу."
 
 #: ../page-contact.php:101
 msgid "Please enter a message."
-msgstr "Por favor,escriba un mensaje."
+msgstr "Будь ласка, напишіть листа."
 
 #: ../page-contact.php:118
 msgid " Contact"
-msgstr "Contacto"
+msgstr "Контакт"
 
 #: ../page-contact.php:118
 msgid "From "
-msgstr "Desde"
+msgstr "Форма"
 
 #: ../page-contact.php:119 ../templates/comments.php:68
 #: ../woocommerce/single-product-reviews.php:62
 msgid "Name"
-msgstr "Nombre"
+msgstr "Ім'я"
 
 #: ../page-contact.php:120
 msgid "From"
-msgstr "Desde"
+msgstr "Форма"
 
 #: ../page-contact.php:158
 msgid "Thanks, your email was sent successfully."
-msgstr "Gracias. Su mensaje ha sido enviado. En breve contactaremos con usted."
+msgstr "Дякуємо, ваш лист щойно був надісланий."
 
 #: ../page-contact.php:162
 msgid "Sorry, an error occured."
-msgstr "Lo sentimos,se ha producido un error."
+msgstr "Вибачте, сталася помилка."
 
 #: ../page-contact.php:168 ../lib/widgets.php:289
 msgid "Name:"
-msgstr "Nombre:"
+msgstr "Ім'я:"
 
 #: ../page-contact.php:177
 msgid "Email: "
-msgstr "Email:"
+msgstr "Емейл:"
 
 #: ../page-contact.php:183
 msgid "Message: "
-msgstr "Mensaje:"
+msgstr "Повідомлення:"
 
 #: ../page-contact.php:190
 msgid "Send Email"
-msgstr "Enviar"
+msgstr "Надіслати листа"
 
 #: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
-msgstr "Lo sentimos,no se encontraron mensajes del portfolio"
+msgstr "Вибачте, жодного портфоліо не знайдено."
 
 #: ../searchform.php:2
 msgid "Search for:"
-msgstr "Búsqueda para:"
+msgstr "Пошук по:"
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr "Buscar"
+msgstr "Пошук"
 
 #: ../taxonomy-portfolio-type.php:101
 msgid "&larr; Older posts"
-msgstr "&larr; Publicaciones antiguas"
+msgstr "&larr; Попередні записи"
 
 #: ../taxonomy-portfolio-type.php:102
 msgid "Newer posts &rarr;"
-msgstr "Nuevas publicaciones &rarr;"
+msgstr "Нові записи &rarr;"
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr "Sobre el Autor"
+msgstr "Про автора"
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr "Últimos mensajes"
+msgstr "Останні записи"
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
 #: ../lib/authorbox.php:36 ../lib/authorbox.php:40 ../lib/authorbox.php:44
 #: ../lib/authorbox.php:48
 msgid "Follow"
-msgstr "Seguir"
+msgstr "Слідкувати"
 
 #: ../lib/authorbox.php:16
 msgid "on Facebook"
-msgstr "en Facebook"
+msgstr "на Facebook"
 
 #: ../lib/authorbox.php:20
 msgid "on Twitter"
-msgstr "en Twitter"
+msgstr "на Twitter"
 
 #: ../lib/authorbox.php:24
 msgid "on Google Plus"
-msgstr "en Google Plus"
+msgstr "на Google Plus"
 
 #: ../lib/authorbox.php:28
 msgid "on Flickr"
-msgstr "en Flickr"
+msgstr "на Flickr"
 
 #: ../lib/authorbox.php:32
 msgid "on Vimeo"
-msgstr "en Vimeo"
+msgstr "на Vimeo"
 
 #: ../lib/authorbox.php:36
 msgid "on linkedin"
-msgstr "en linkedin"
+msgstr "на linkedin"
 
 #: ../lib/authorbox.php:40
 msgid "on Dribbble"
-msgstr "en Dribbble"
+msgstr "на Dribbble"
 
 #: ../lib/authorbox.php:44
 msgid "on Pinterest"
-msgstr "en Pinterest"
+msgstr "на Pinterest"
 
 #: ../lib/authorbox.php:48
 msgid "on Instagram"
-msgstr "en Instagram"
+msgstr "на Instagram"
 
 #: ../lib/authorbox.php:65
 msgid "Latest posts from"
-msgstr "Últimas publicaciones de"
+msgstr "Останні записи з"
 
 #: ../lib/class-tgm-plugin-activation.php:155
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
-msgstr "Requiere instalación de plugins"
+msgstr "Встановити необхідні додатки"
 
 #: ../lib/class-tgm-plugin-activation.php:156
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
-msgstr "Instalar Plugins"
+msgstr "Встановити додатки"
 
 #: ../lib/class-tgm-plugin-activation.php:157
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr "Instalar Plugin: %s"
+msgstr "Встановлення додатку: %s"
 
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
-msgstr "Algo salió mal"
+msgstr "Щось пішло не так."
 
 #: ../lib/class-tgm-plugin-activation.php:169
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
-msgstr "Volver a instalador de Plugins"
+msgstr "Вернутися до встановлення додатку"
 
 #: ../lib/class-tgm-plugin-activation.php:170
 msgid "Return to the dashboard"
-msgstr "Volver al Escritorio"
+msgstr "Вернутися до головної панелі"
 
 #: ../lib/class-tgm-plugin-activation.php:171
 #: ../lib/class-tgm-plugin-activation.php:1840
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
-msgstr "Plugin activado correctamente."
+msgstr "Додаток ввімкнено."
 
 #: ../lib/class-tgm-plugin-activation.php:172
 #: ../lib/class-tgm-plugin-activation.php:1538
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "El siguiente Plugin se activó con éxito:"
-msgstr[1] "Los siguiente plugins se activaron  con éxito:"
+msgstr[0] "Вибраний додаток ввімкнений:"
+msgstr[1] "Вибрані додатки ввімкнені:"
 
 #: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Todos los plugins instalados y activados correctamente. %1$s"
+msgstr "Всі додатки встановленні та ввімкнені. %1$s"
 
 #: ../lib/class-tgm-plugin-activation.php:174
 msgid "Dismiss this notice"
-msgstr "Ignorar este aviso"
+msgstr "Відхилити дану примітку"
 
 #: ../lib/class-tgm-plugin-activation.php:1085
 msgid "External Link"
-msgstr "Enlace Externo"
+msgstr "Зовнішнє посилання"
 
 #: ../lib/class-tgm-plugin-activation.php:1090
 msgid "Private Repository"
-msgstr "Ámbito Privado"
+msgstr "Приватне сховище"
 
 #: ../lib/class-tgm-plugin-activation.php:1093
 msgid "Pre-Packaged"
-msgstr "Pre-Empaquetados"
+msgstr "Попередньо упаковані"
 
 #: ../lib/class-tgm-plugin-activation.php:1097
 msgid "WordPress Repository"
-msgstr "Repositorio de Wordpress"
+msgstr "Сховище WordPress"
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Required"
-msgstr "Requerido"
+msgstr "Обов'язково"
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Recommended"
-msgstr "Recomendado"
+msgstr "Рекомендується"
 
 #: ../lib/class-tgm-plugin-activation.php:1103
 msgid "Not Installed"
-msgstr "No se ha instalado"
+msgstr "Не встановлено"
 
 #: ../lib/class-tgm-plugin-activation.php:1105
 msgid "Installed But Not Activated"
-msgstr "Instalado pero sin activar"
+msgstr "Встановлено але не ввімкнено"
 
 #: ../lib/class-tgm-plugin-activation.php:1275
 #, php-format
@@ -265,135 +263,133 @@ msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
-"No hay plugins para instalar o activar. <a href=\"%1$s\" title=\"Return to "
-"the Dashboard\">Volver a Escritorio</a>"
+"Жодного додатку не встановлено чи ввімкнено. <a href=\"%1$s\" title="
+"\"Вернутися до головної панелі\">Вернутися до головної панелі</a>"
 
 #: ../lib/class-tgm-plugin-activation.php:1291
 msgid "Plugin"
-msgstr "Plugin"
+msgstr "Додаток"
 
 #: ../lib/class-tgm-plugin-activation.php:1292
 msgid "Source"
-msgstr "Fuente"
+msgstr "Джерело"
 
 #: ../lib/class-tgm-plugin-activation.php:1293
 msgid "Type"
-msgstr "Tipo"
+msgstr "Тип"
 
 #: ../lib/class-tgm-plugin-activation.php:1294
 msgid "Status"
-msgstr "Estado"
+msgstr "Стан"
 
 #: ../lib/class-tgm-plugin-activation.php:1312
 msgid "Install"
-msgstr "Instalar"
+msgstr "Встановити"
 
 #: ../lib/class-tgm-plugin-activation.php:1313
 msgid "Activate"
-msgstr "Activar"
+msgstr "Ввімкнути"
 
 #: ../lib/class-tgm-plugin-activation.php:1823
 msgid "Install package not available."
-msgstr "Instale el paquete no está disponible."
+msgstr "Встановлення пакунків не доступне."
 
 #: ../lib/class-tgm-plugin-activation.php:1824
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr ""
-"Descargar paquete de instalación de <span class=\"code\">%s</span>&#8230;"
+msgstr "Завантаження пакетів з <span class=\"code\">%s</span>&#8230;"
 
 #: ../lib/class-tgm-plugin-activation.php:1825
 msgid "Unpacking the package&#8230;"
-msgstr "Desembalar el paquete&#8230;"
+msgstr "Розпакування пакету&#8230;"
 
 #: ../lib/class-tgm-plugin-activation.php:1826
 msgid "Installing the plugin&#8230;"
-msgstr "Instalación del plugin de&#8230;"
+msgstr "Встановлення додатку&#8230;"
 
 #: ../lib/class-tgm-plugin-activation.php:1827
 msgid "Plugin install failed."
-msgstr "La instalación del plugin ha fallado"
+msgstr "Файл не вдалося встановити."
 
 #: ../lib/class-tgm-plugin-activation.php:1828
 msgid "Plugin installed successfully."
-msgstr "Plugin instalado correctamente."
+msgstr "Додаток встановлений."
 
 #: ../lib/class-tgm-plugin-activation.php:1839
 msgid "Plugin activation failed."
-msgstr "Activación del plugin fallida."
+msgstr "Додаток не вдалося ввімкнути."
 
 #: ../lib/class-tgm-plugin-activation.php:1949
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
-"Comienza el proceso de instalación y activación. Este proceso puede tardar "
-"un poco en algunos alojamientos, por favor sea paciente."
+"Процес встановлення та ввімкнення запущений. Даний процес може зайняти "
+"деякий час, тому, будь ласка, будьте терплячі."
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr "%1$s instalado y activado correctamente."
+msgstr "%1$s встановлено та ввімкнено."
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Show Details"
-msgstr "Mostrar detalles"
+msgstr "Показати подробиці"
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Hide Details"
-msgstr "Ocultar detalles"
+msgstr "Приховати подробиці"
 
 #: ../lib/class-tgm-plugin-activation.php:1951
 msgid "All installations and activations have been completed."
-msgstr "Todas las instalaciones y activaciones se han completado."
+msgstr "Встановлення та ввімкнення закінчено."
 
 #: ../lib/class-tgm-plugin-activation.php:1952
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalación y Activación de Plugin  %1$s (%2$d/%3$d)"
+msgstr "Встановлення і ввімкнення додатку %1$s (%2$d/%3$d)"
 
 #: ../lib/class-tgm-plugin-activation.php:1956
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"El proceso de instalación está iniciando. Este proceso puede tardar un poco "
-"en algunos alojamientos, por favor sea paciente."
+"Процес встановлення запущений. Даний процес може зайняти деякий час, тому, "
+"будь ласка, будьте терплячі."
 
 #: ../lib/class-tgm-plugin-activation.php:1957
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Ha ocurrido un error durante la instalación %1$s: <strong>%2$s</strong>."
+msgstr "Виникла помилка зі встановленням %1$s: <strong>%2$s</strong>."
 
 #: ../lib/class-tgm-plugin-activation.php:1958
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr "La instalación de %1$s ha fallado."
+msgstr "Встановлення %1$s обірване."
 
 #: ../lib/class-tgm-plugin-activation.php:1959
 #, php-format
 msgid "%1$s installed successfully."
-msgstr "%1$s instalado correctamente."
+msgstr "%1$s встановлено."
 
 #: ../lib/class-tgm-plugin-activation.php:1960
 msgid "All installations have been completed."
-msgstr "Todas las instalaciones se han completado."
+msgstr "Встановлення закінчене."
 
 #: ../lib/class-tgm-plugin-activation.php:1961
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalar Plugin %1$s (%2$d/%3$d)"
+msgstr "Встановлення додатку %1$s (%2$d/%3$d)"
 
 #: ../lib/class-tgm-plugin-activation.php:2052
 msgid "Return to the Dashboard"
-msgstr "Regresar al Escritorio"
+msgstr "Вернутися до головної панелі"
 
 #: ../lib/cleanup.php:154
 msgid "Continued"
-msgstr "Continuar"
+msgstr "Закінчити"
 
 #: ../lib/comments.php:38 ../templates/comment.php:5
 #, php-format
@@ -402,465 +398,457 @@ msgstr "%1$s"
 
 #: ../lib/comments.php:43
 msgid "| (Edit)"
-msgstr "| (Editar)"
+msgstr "| (Редагувати)"
 
 #: ../lib/comments.php:49 ../templates/comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Comentario pendiente de moderación."
+msgstr "Ваш відгук чекає на схвалення."
 
 #: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
-msgstr "Ver carrito compra"
+msgstr "Перегляд кошику"
 
 #: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
-msgstr "Su carrito"
+msgstr "Ваш кошик"
 
 #: ../lib/custom.php:366 ../templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr "Anterior publicación"
+msgstr "Попередні записи"
 
 #: ../lib/custom.php:366 ../templates/entry-post-links.php:6
 msgid "Next Post"
-msgstr "Siguiente publicación"
+msgstr "Наступні записи"
 
 #: ../lib/custom.php:458
 msgid "Occupation"
-msgstr "Ocupación/Profesión"
+msgstr "Вид заняття"
 
 #: ../lib/custom.php:461
 msgid "Please enter your Occupation."
-msgstr "Por favor, escriba su ocupación"
+msgstr "Будь ласка напишіть свій вид заняття."
 
 #: ../lib/custom.php:468
 msgid "Please enter your Twitter username."
-msgstr "Por favor,escriba su nombre usuario de Twitter"
+msgstr "Будь ласка введіть ваше ім'я в Twitter."
 
 #: ../lib/custom.php:475
 msgid "Please enter your Facebook url. (be sure to include http://)"
-msgstr "Por favor, escriba su url de Facebook. (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу у Facebook (не забудьте про http://)"
 
 #: ../lib/custom.php:482
 msgid "Please enter your Google Plus url. (be sure to include http://)"
-msgstr ""
-"Por favor, escriba su url de Google Plus (asegúrese de incluis http://)"
+msgstr "Будь ласка введіть вашу адресу у Google Plus (не забудьте про http://)"
 
 #: ../lib/custom.php:489
 msgid "Please enter your Flickr url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Flick (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу у Flickr. (не забудьте про http://)"
 
 #: ../lib/custom.php:496
 msgid "Please enter your Linkedin url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Linkedin (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу у Linkedin. (не забудьте про http://)"
 
 #: ../lib/custom.php:503
 msgid "Please enter your Dribbble url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Dribbble (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу у Dribbble. (не забудьте про http://)"
 
 #: ../lib/custom.php:510
 msgid "Please enter your Pinterest url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Pinterest (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу уPinterest . (не забудьте про http://)"
 
 #: ../lib/custom.php:517
 msgid "Please enter your Instagram url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Instagram (asegúrese de incluir http://)"
+msgstr "Будь ласка введіть вашу адресу у Instagram. (не забудьте про http://)"
 
 #: ../lib/gallery_metabox.php:8
 msgid "Post Slider Images"
-msgstr "Imágenes Slider Publicaciones"
+msgstr "Слайдер зображень записів"
 
 #: ../lib/gallery_metabox.php:9
 msgid "Portfolio Slider Images"
-msgstr "Imágenes Slider Portfolio"
+msgstr "Слайдер зображень портфоліо"
 
 #: ../lib/gallery_metabox.php:10
 msgid "Feature Page Slider Images"
-msgstr "Propiedades Imágenes Slider Página"
+msgstr "Вибрана сторінка слайдеру зображень"
 
 #: ../lib/gallery_metabox.php:26 ../lib/gallery_metabox.php:91
 msgid "Remove image"
-msgstr "Quitar Imagen"
+msgstr "Видалити зображення"
 
 #: ../lib/gallery_metabox.php:37
 msgid "Add images"
-msgstr "Añadir Imágenes"
+msgstr "Додати зображення"
 
 #: ../lib/gallery_metabox.php:66
 msgid "Add Images to Gallery"
-msgstr "Añadir imágenes a Galería"
+msgstr "Додати зображення до галереї"
 
 #: ../lib/gallery_metabox.php:68
 msgid "Add to gallery"
-msgstr "Añadir a Galería"
+msgstr "Додати до галереї"
 
 #: ../lib/init.php:9
 msgid "Primary Navigation"
-msgstr "Menú Navegación Principal"
+msgstr "Головна навігація"
 
 #: ../lib/init.php:10
 msgid "Secondary Navigation"
-msgstr "Menú Navegación Secundario"
+msgstr "Додаткова навігація"
 
 #: ../lib/init.php:11
 msgid "Mobile Navigation"
-msgstr "Menú Navegacion Móviles"
+msgstr "Мобільна навігація"
 
 #: ../lib/init.php:12
 msgid "Topbar Navigation"
-msgstr "Menú Navegación Barra superior"
+msgstr "Верхня навігація"
 
 #: ../lib/init.php:13
 msgid "Footer Navigation"
-msgstr "Menú Navegación Pie de Página"
+msgstr "Нижня навігація"
 
 #: ../lib/metaboxes.php:21 ../lib/metaboxes.php:381 ../lib/metaboxes.php:506
 msgid "All"
-msgstr "Todos"
+msgstr "Все"
 
 #: ../lib/metaboxes.php:36
 msgid "All Blog Posts"
-msgstr "Todas las publicaciones del Blog"
+msgstr "Всі записи блогу"
 
 #: ../lib/metaboxes.php:68
 msgid "Page Title and Subtitle"
-msgstr "Título y Subtítulo de Página"
+msgstr "Заголовок та підзаголовок сторінки"
 
 #: ../lib/metaboxes.php:75
 msgid "Subtitle"
-msgstr "Subtítulo"
+msgstr "Підзаголовок"
 
 #: ../lib/metaboxes.php:76
 msgid "Subtitle will go below page title"
-msgstr "Subtítulo aparece debajo del título de la página"
+msgstr "Підзаголовок буде нижче заголовка сторінки"
 
 #: ../lib/metaboxes.php:85
 msgid "Post Options"
-msgstr "Opciones Publicación"
+msgstr "Налаштування запису"
 
 #: ../lib/metaboxes.php:93
 msgid "Head Content"
-msgstr "Contenido Cabecera"
+msgstr "Головний вміст"
 
 #: ../lib/metaboxes.php:98 ../lib/metaboxes.php:123 ../lib/cmb/init.php:244
 #: ../themeoptions/framework.php:2080
 msgid "Default"
-msgstr "Por defecto "
+msgstr "Стандартно"
 
 #: ../lib/metaboxes.php:99 ../lib/metaboxes.php:225
 #: ../themeoptions/options.php:1776
 msgid "None"
-msgstr "Ninguno"
+msgstr "Жоден"
 
 #: ../lib/metaboxes.php:100 ../lib/metaboxes.php:222 ../lib/metaboxes.php:448
 #: ../themeoptions/options.php:1776
 msgid "Image Slider"
-msgstr "Imagen Slider"
+msgstr "Слайдер картинок"
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129 ../lib/metaboxes.php:224
 #: ../lib/metaboxes.php:449 ../themeoptions/options.php:1776
 msgid "Video"
-msgstr "Video"
+msgstr "Видиво"
 
 #: ../lib/metaboxes.php:102 ../lib/metaboxes.php:221 ../lib/metaboxes.php:450
 #: ../themeoptions/options.php:1776
 msgid "Image"
-msgstr "Imagen"
+msgstr "Картинка"
 
 #: ../lib/metaboxes.php:106 ../lib/metaboxes.php:229 ../lib/metaboxes.php:454
 msgid "Max Image/Slider Height"
-msgstr "Altura Maxima  / Imagen Slider"
+msgstr "Максимальна картинка/Висота слайдера"
 
 #: ../lib/metaboxes.php:107 ../lib/metaboxes.php:455
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
-msgstr ""
-"Por defecto es: 400 <b>(Nota: introducir sólo número, ejemplo: 350)</b>"
+msgstr "Стандартно: 400 <b>(Примітка: лиш введіть число, наприклад: 350)</b>"
 
 #: ../lib/metaboxes.php:112 ../lib/metaboxes.php:235 ../lib/metaboxes.php:460
 msgid "Max Image/Slider Width"
-msgstr "Ancho Máximo / Imagen Slider"
+msgstr "Максимальна картинка/Ширина слайдера"
 
 #: ../lib/metaboxes.php:113
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
-"Valor por defecto: 770 ó 1140 en diseño ancho completo <b>(Nota: introducir "
-"sólo número, ejemplo: 650, no se aplica en carrusel-slider)</b>"
+"Стандартно: 770 або 1140 на всій ширині запису <b>(Примітка: лиш введіть "
+"число, наприклад: 650, не поширюється на слайдер каруселі)</b>"
 
 #: ../lib/metaboxes.php:118
 msgid "Post Summary"
-msgstr "Resumen publicaciones"
+msgstr "Звіт запису"
 
 #: ../lib/metaboxes.php:124
 msgid "Text"
-msgstr "Texto"
+msgstr "Текст"
 
 #: ../lib/metaboxes.php:125
 msgid "Portrait Image"
-msgstr "Imagen lateral izquierda texto"
+msgstr "Портретна картинка"
 
 #: ../lib/metaboxes.php:126
 msgid "Landscape Image"
-msgstr "Imagen ancho cabecera texto"
+msgstr "Ландшафтна картинка"
 
 #: ../lib/metaboxes.php:127
 msgid "Portrait Image Slider"
-msgstr "Slider a izquierda texto"
+msgstr "Портретна картинка слайдеру"
 
 #: ../lib/metaboxes.php:128
 msgid "Landscape Image Slider"
-msgstr "Slider ancho encima texto"
+msgstr "Ландшафтна картинка слайдеру"
 
 #: ../lib/metaboxes.php:133 ../lib/metaboxes.php:535
 msgid "Display Sidebar?"
-msgstr "¿Mostrar barra lateral?"
+msgstr "Показувати бокову панель (сайдбар) ?"
 
 #: ../lib/metaboxes.php:134 ../lib/metaboxes.php:536
 msgid "Choose if layout is fullwidth or sidebar"
-msgstr "Seleccionar diseño - barra lateral o ancho total"
+msgstr "Виберіть, якщо компонування на всю ширину чи бокова панель (сайдбар)\t"
 
 #: ../lib/metaboxes.php:138 ../lib/metaboxes.php:155 ../lib/metaboxes.php:246
 #: ../lib/metaboxes.php:425 ../lib/metaboxes.php:471 ../lib/metaboxes.php:540
 #: ../lib/metaboxes.php:568 ../lib/metaboxes.php:585
 msgid "Yes"
-msgstr "Sí"
+msgstr "Так"
 
 #: ../lib/metaboxes.php:139 ../lib/metaboxes.php:154 ../lib/metaboxes.php:164
 #: ../lib/metaboxes.php:247 ../lib/metaboxes.php:322 ../lib/metaboxes.php:424
 #: ../lib/metaboxes.php:472 ../lib/metaboxes.php:541 ../lib/metaboxes.php:569
 #: ../lib/metaboxes.php:584
 msgid "No"
-msgstr "No"
+msgstr "Ні"
 
 #: ../lib/metaboxes.php:143 ../lib/metaboxes.php:545 ../lib/metaboxes.php:655
 msgid "Choose Sidebar"
-msgstr "Elegir Barra lateral"
+msgstr "Вибрати бокову панель (сайдбар)"
 
 #: ../lib/metaboxes.php:149
 msgid "Author Info"
-msgstr "Información del  Autor"
+msgstr "Інформація про автора"
 
 #: ../lib/metaboxes.php:150
 msgid "Display an author info box?"
-msgstr ""
-"Muestra un cuadro al final de la publicación con datos del autor y "
-"publicaciones realizadas"
+msgstr "Показати інформацію про автора?"
 
 #: ../lib/metaboxes.php:159
 msgid "Posts Carousel"
-msgstr "Carrusel de Publicaciones"
+msgstr "Карусель записів"
 
 #: ../lib/metaboxes.php:160
 msgid "Display a carousel with similar or recent posts?"
-msgstr "¿Mostrar un carrusel con publicaciones recientes o similares?"
+msgstr "Показати карусель зі схожими чи останніми записами?"
 
 #: ../lib/metaboxes.php:165
 msgid "Yes - Display Recent Posts"
-msgstr "Sí - Mostrar publicaciones recientes"
+msgstr "Так - показати останні записи"
 
 #: ../lib/metaboxes.php:166
 msgid "Yes - Display Similar Posts"
-msgstr "Sí - Mostrar publicaciones similares"
+msgstr "Так - показати схожі записи"
 
 #: ../lib/metaboxes.php:171 ../lib/metaboxes.php:327
 msgid "Carousel Title"
-msgstr "Título Carrusel"
+msgstr "Заголовок каруселі"
 
 #: ../lib/metaboxes.php:172
 msgid "ex. Similar Posts"
-msgstr "ej.: Publicaciones Similares"
+msgstr "наприклад: схожі записи"
 
 #: ../lib/metaboxes.php:180
 msgid "Post Video Box"
-msgstr "Caja Publicación Video"
+msgstr "Вікно відео запису"
 
 #: ../lib/metaboxes.php:188 ../lib/metaboxes.php:476
 msgid "If Video Post"
-msgstr "Si video de publicación "
+msgstr "Якщо є відео запису"
 
 #: ../lib/metaboxes.php:189 ../lib/metaboxes.php:312 ../lib/metaboxes.php:477
 msgid "Place Embed Code Here, works with youtube, vimeo..."
-msgstr "Espacio para incrustar código, funciona con youtube, vimeo..."
+msgstr "Вставте код сюди, працює з youtube, vimeo тощо"
 
 #: ../lib/metaboxes.php:197
 msgid "Portfolio Post Options"
-msgstr "Opciones publicación del  Portfolio"
+msgstr "Налаштування записів портфоліо"
 
 #: ../lib/metaboxes.php:205
 msgid "Project Layout"
-msgstr "Mostrar Ilustración respecto al texto:"
+msgstr "Компонування проекту"
 
 #: ../lib/metaboxes.php:210
 msgid "Beside"
-msgstr "Junto a"
+msgstr "Поруч"
 
 #: ../lib/metaboxes.php:211
 msgid "Above"
-msgstr "Arriba"
+msgstr "Зверху"
 
 #: ../lib/metaboxes.php:212
 msgid "Three Rows"
-msgstr "Tres filas"
+msgstr "Три рядки"
 
 #: ../lib/metaboxes.php:216
 msgid "Project Options"
-msgstr "Opciones presentación"
+msgstr "Налаштування проекту"
 
 #: ../lib/metaboxes.php:223
 msgid "Carousel Slider"
-msgstr "Slider Carrusel"
+msgstr "Слайдер каруселі"
 
 #: ../lib/metaboxes.php:230
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
-msgstr ""
-"El valor predeterminado es: 450 <b>(Nota: sólo el número, por ejemplo: 350)</"
-"b>"
+msgstr "Стандартно: 450 <b>(Примітка: лиш введіть число, наприклад: 350)</b>"
 
 #: ../lib/metaboxes.php:236
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
 msgstr ""
-"El valor predeterminado es: 670 ó 1140 en <b> diseños </ b> arriba <b> o </ "
-"b> tres filas (Nota: sólo el número, por ejemplo: 650) </ b>"
+"Стандартно: 670 або 1140 для компонування <b>зверху</b> чи в <b>три рядки</"
+"b> (Примітка: лиш введіть число, наприклад: 650)"
 
 #: ../lib/metaboxes.php:241
-#, fuzzy
 msgid "Auto Play Slider?"
-msgstr "¿Reproducción automática?"
+msgstr "Авто запуск слайдера?"
 
 #: ../lib/metaboxes.php:251
 msgid "Value 01 Title"
-msgstr "Textor Título 01"
+msgstr "Значення 01: Заголовок"
 
 #: ../lib/metaboxes.php:252
 msgid "ex. Project Type:"
-msgstr "ej: Tipo Proyecto:"
+msgstr "приклад типу проекту:"
 
 #: ../lib/metaboxes.php:257
 msgid "Value 01 Description"
-msgstr "Texto Descripción 01"
+msgstr "Значенні 01: Опис"
 
 #: ../lib/metaboxes.php:258
 msgid "ex. Character Illustration"
-msgstr "ej.: Características de la Ilustración "
+msgstr "приклад характеру ілюстрації"
 
 #: ../lib/metaboxes.php:263
 msgid "Value 02 Title"
-msgstr "Texto Título 02"
+msgstr "Значення 02: Заголовок"
 
 #: ../lib/metaboxes.php:264
 msgid "ex. Skills Needed:"
-msgstr "ej.: habilidades necesarias:"
+msgstr "приклад навички потрібні:"
 
 #: ../lib/metaboxes.php:269
 msgid "Value 02 Description"
-msgstr "Texto Descripción 02"
+msgstr "Значення 02: Опис"
 
 #: ../lib/metaboxes.php:270
 msgid "ex. Photoshop, Illustrator"
-msgstr "ej.; Photoshop, Illustrator"
+msgstr "Наприклад: Photoshop, Illustrator"
 
 #: ../lib/metaboxes.php:275
 msgid "Value 03 Title"
-msgstr "Texto Títilo 03"
+msgstr "Значення 02: Заголовок"
 
 #: ../lib/metaboxes.php:276
 msgid "ex. Customer:"
-msgstr "ej.: Cliente:"
+msgstr "Наприклад: Замовник"
 
 #: ../lib/metaboxes.php:281
 msgid "Value 03 Description"
-msgstr "Texto Descripción 03"
+msgstr "Значення 03: Опис"
 
 #: ../lib/metaboxes.php:282
 msgid "ex. Example Inc"
-msgstr "ej.: Compañia"
+msgstr "Наприклад: ТОВ Роги й Копита"
 
 #: ../lib/metaboxes.php:287
 msgid "Value 04 Title"
-msgstr "Texto Título 04"
+msgstr "Значення 04: Заголовок"
 
 #: ../lib/metaboxes.php:288
 msgid "ex. Project Year:"
-msgstr "ej.: Año del proyecto:"
+msgstr "Наприклад: Рік проекту"
 
 #: ../lib/metaboxes.php:293
 msgid "Value 04 Description"
-msgstr "Texto Descripción 04"
+msgstr "Значення 04: Опис"
 
 #: ../lib/metaboxes.php:294
 msgid "ex. 2013"
-msgstr "ej.: 2013"
+msgstr "Наприклад: 2013"
 
 #: ../lib/metaboxes.php:299
 msgid "External Website"
-msgstr "Web"
+msgstr "Зовнішній веб-сайт"
 
 #: ../lib/metaboxes.php:300
 msgid "ex. Website:"
-msgstr "ej.: url:"
+msgstr "Наприклад: Веб-сайт"
 
 #: ../lib/metaboxes.php:305
 msgid "Website Address"
-msgstr "Dirección página web"
+msgstr "Адреса сайту"
 
 #: ../lib/metaboxes.php:306
 msgid "ex. http://www.example.com"
-msgstr "ej.: http:www.ejemplo.com"
+msgstr "Наприклад: http://www.example.com"
 
 #: ../lib/metaboxes.php:311
 msgid "If Video Project"
-msgstr "Video del proyecto"
+msgstr "Якщо відеопроект"
 
 #: ../lib/metaboxes.php:317
 msgid "Similar Portfolio Item Carousel"
-msgstr "Carrusel de articulos similares del Portfolio"
+msgstr "Карусель схожих елементів портфоліо"
 
 #: ../lib/metaboxes.php:318
 msgid "Display a carousel with similar portfolio items below project?"
-msgstr ""
-"¿Mostrar un carrusel con artículos similares debajo de datos del proyecto?"
+msgstr "Показати карусель зі схожими елементами портфоліо нижче проекту?"
 
 #: ../lib/metaboxes.php:323
 msgid "Yes - Display Recent Projects"
-msgstr "Sí - Mostrar Proyectos Recientes"
+msgstr "Так - показати схожі проекти"
 
 #: ../lib/metaboxes.php:328
 msgid "ex. Similar Projects"
-msgstr "ej.: Proyectos similares"
+msgstr "Наприклад: Схожі проекти"
 
 #: ../lib/metaboxes.php:337
 msgid "Portfolio Page Options"
-msgstr "Opciones Página Portfolio"
+msgstr "Сторінка опцій портфоліо"
 
 #: ../lib/metaboxes.php:346
 msgid "Columns"
-msgstr "Columnas"
+msgstr "Колонки"
 
 #: ../lib/metaboxes.php:351
 msgid "Four Column"
-msgstr "Cuatro columnas"
+msgstr "Чотири колонки"
 
 #: ../lib/metaboxes.php:352
 msgid "Three Column"
-msgstr "Tres columnas"
+msgstr "Три колонки"
 
 #: ../lib/metaboxes.php:353
 msgid "Two Column"
-msgstr "Dos columnas"
+msgstr "Дві колонки"
 
 #: ../lib/metaboxes.php:357
 msgid "Portfolio Work Types"
-msgstr "Tipos de trabajo Porfolio"
+msgstr "Типи робіт портфоліо"
 
 #: ../lib/metaboxes.php:364
 msgid "Order Items By"
-msgstr "Ordenar los Elementos por"
+msgstr "Сортувати елементи по"
 
 #: ../lib/metaboxes.php:369
 msgid "Menu Order"
-msgstr "Orden Men&uacute;"
+msgstr "Порядок меню"
 
 #: ../lib/metaboxes.php:370
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:142
@@ -868,268 +856,265 @@ msgstr "Orden Men&uacute;"
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:122
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:168
 msgid "Title"
-msgstr "Título:"
+msgstr "Заголовок"
 
 #: ../lib/metaboxes.php:371
 msgid "Date"
-msgstr "Fecha"
+msgstr "Дата"
 
 #: ../lib/metaboxes.php:372
 msgid "Random"
-msgstr "Aleatorio"
+msgstr "Випадково"
 
 #: ../lib/metaboxes.php:376
 msgid "Items per Page"
-msgstr "Artículos por página"
+msgstr "Елементів на сторінку"
 
 #: ../lib/metaboxes.php:377
 msgid "How many portfolio items per page"
-msgstr "Cuantos artículos portfolio por página"
+msgstr "Скільки одиниць портфоліо на сторінку"
 
 #: ../lib/metaboxes.php:399
 msgid "Set image height"
-msgstr "Ajustar altura imagen"
+msgstr "Задати висоту зображення"
 
 #: ../lib/metaboxes.php:400
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
-"Valor por defecto proporción 1:1  <b>(Nota: sólo un número, ejemplo: 350)</b>"
+"Стандартне відношення 1:1 <b>(Примітка: лиш введіть число, наприклад: 350)</"
+"b> "
 
 #: ../lib/metaboxes.php:405
 msgid "Display Item Work Types"
-msgstr "Mostrar Categorías | Tipo -  Portfolio"
+msgstr "Показати елементи Робочий Тип"
 
 #: ../lib/metaboxes.php:412
 msgid "Display Item Excerpt"
-msgstr "Mostrar Extracto Texto "
+msgstr "Показати уривок елемента"
 
 #: ../lib/metaboxes.php:419
 msgid "Add Lightbox link in the top right of each item"
-msgstr ""
-"A&ntilde;adir enlace Lightbox en la parte superior derecha de cada elemento"
+msgstr "Додати веб-ланку лайтбоксу у верхній правій частині кожного елементу"
 
 #: ../lib/metaboxes.php:434
 msgid "Feature Page Options"
-msgstr "Características Páginas Opciones"
+msgstr "Особливі налаштування сторінки"
 
 #: ../lib/metaboxes.php:443
 msgid "Feature Options"
-msgstr "Características Opciones"
+msgstr "Опції вибраних"
 
 #: ../lib/metaboxes.php:444
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
-"Si usa imagen para slider, asegúrese de subir imágenes de al menos 1140 px"
+"Якщо використовується слайдер картинок - будьте певні, що картинки шириною "
+"менше 1140 пікселів"
 
 #: ../lib/metaboxes.php:461
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
 msgstr ""
-"Valor por defecto: 1140 <b>(Nota: sólo número, ejemplo: 650, no funciona "
-"para slider carrusel)</b>"
+"Стандартно: 1140 <b>(Примітка: лиш вкажіть число, наприклад: 650, не "
+"застосовується для слайдеру каруселі)</b>"
 
 #: ../lib/metaboxes.php:466
 msgid "Use Lightbox for Feature Image"
-msgstr "Usar lightbox para imagen destacadas"
+msgstr "Використовувати лайтбокс для вибраних картинок"
 
 #: ../lib/metaboxes.php:467
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
-"Si la opci&oacute;n se establece en  imagen, elija usar enlace a lightbox "
-"con la imagen."
+"Якщо опції вибраних визначені для картинок, виберіть використання веб ланки "
+"лайтбоксу з картинкою."
 
 #: ../lib/metaboxes.php:485
 msgid "Blog List Options"
-msgstr "Opciones Listado de Blog"
+msgstr "Опції списку блогу"
 
 #: ../lib/metaboxes.php:494
 msgid "Blog Category"
-msgstr "Categorías Blog"
+msgstr "Категорія Блог"
 
 #: ../lib/metaboxes.php:495
 msgid "Select all blog posts or a specific category to show"
-msgstr ""
-"Seleccionar todas las publicaciones de blog o de una categoría específica "
-"para mostrar"
+msgstr "Вибрати всі записи блогу чи спеціальну категорію для показу"
 
 #: ../lib/metaboxes.php:501
 msgid "How Many Posts Per Page"
-msgstr "Número de publicaciones por página"
+msgstr "Кількість записів на сторінку"
 
 #: ../lib/metaboxes.php:525
 msgid "Display Post Content as:"
-msgstr "Mostrar publicar contenido como:"
+msgstr "Показати текст відгуку як:"
 
 #: ../lib/metaboxes.php:530
 msgid "Summary"
-msgstr "Resumen"
+msgstr "Спрощений"
 
 #: ../lib/metaboxes.php:531
 msgid "Full"
-msgstr "Completo"
+msgstr "Повне"
 
 #: ../lib/metaboxes.php:554
 msgid "Contact Page Options"
-msgstr "Opciones página de contacto"
+msgstr "Опції сторінки контактів"
 
 #: ../lib/metaboxes.php:563
 msgid "Use Contact Form"
-msgstr "Usar formulario de contacto"
+msgstr "Використовувати контактну форму"
 
 #: ../lib/metaboxes.php:573
 msgid "Contact Form Title"
-msgstr "Título Formulario de Contacto"
+msgstr "Заголовок контактної форми"
 
 #: ../lib/metaboxes.php:574
 msgid "ex. Send us an Email"
-msgstr "ej.: Envíenos un correo electrónico"
+msgstr "наприклад, надіслати нам електронного листа"
 
 #: ../lib/metaboxes.php:579
 msgid "Use Map"
-msgstr "Usar Mapa"
+msgstr "Використовувати мапу"
 
 #: ../lib/metaboxes.php:589
 msgid "Address"
-msgstr "Dirección"
+msgstr "Адреса"
 
 #: ../lib/metaboxes.php:590
 msgid "Enter your Location"
-msgstr "Ingrese su localidad"
+msgstr "Введіть ваше місце розташування"
 
 #: ../lib/metaboxes.php:595
 msgid "Map Type"
-msgstr "Tipo de Mapa"
+msgstr "Тип мапи"
 
 #: ../lib/metaboxes.php:600
 msgid "ROADMAP"
-msgstr "Callejero"
+msgstr "Дорожня мапа"
 
 #: ../lib/metaboxes.php:601
 msgid "HYBRID"
-msgstr "Híbrido"
+msgstr "Гібрид"
 
 #: ../lib/metaboxes.php:602
 msgid "TERRAIN"
-msgstr "Terreno"
+msgstr "Рельєф"
 
 #: ../lib/metaboxes.php:603
 msgid "SATELLITE"
-msgstr "Satélite"
+msgstr "Супутник"
 
 #: ../lib/metaboxes.php:607
 msgid "Map Zoom Level"
-msgstr "Nivel Zoom del Mapa"
+msgstr "Рівень збільшення мапи"
 
 #: ../lib/metaboxes.php:608
 msgid "A good place to start is 15"
-msgstr "Punto para comenzar aconsejado es de 15"
+msgstr "Гарне місце для початку 15"
 
 #: ../lib/metaboxes.php:613
 msgid "1 (World View)"
-msgstr "1(Vista Mundo)"
+msgstr "1 (Перегляд світу)"
 
 #: ../lib/metaboxes.php:633
 msgid "21 (Street View)"
-msgstr "21 (Vista calle)"
+msgstr "21 (Перегляд вулиць)"
 
 #: ../lib/metaboxes.php:637
 msgid "Map Height"
-msgstr "Altura Mapa"
+msgstr "Висота мапи"
 
 #: ../lib/metaboxes.php:638
 msgid "Default is 300"
-msgstr "Por defecto es 300"
+msgstr "Стандартно 300"
 
 #: ../lib/metaboxes.php:646
 msgid "Sidebar Options"
-msgstr "Opciones Barra lateral"
+msgstr "Налаштування бокової панелі"
 
 #: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
-"Lo sentimos, no hay productos marcados con su selcci&oacute:n. Por favor "
-"elija una combinaci&oacute:n diferente."
+"Вибачте, жодного продукту не вибрано. Будь ласка виберіть іншу комбінацію."
 
 #: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
-"Lo sentimos, producto no disponible. Por favor seleccione otra "
-"combinaci&oacute;n."
+"Вибачте, даний продукт недоступний. Будь ласка виберіть іншу комбінацію."
 
 #: ../lib/utils.php:69
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Archivo Diario: %s"
+msgstr "Щоденні архіви: %s"
 
 #: ../lib/utils.php:71
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Archivo Mensual: %s"
+msgstr "Щомісячні архіви: %s"
 
 #: ../lib/utils.php:73
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Archivo Anual: %s"
+msgstr "Щорічні архіви: %s"
 
 #: ../lib/utils.php:75
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archivos Autor: %s"
+msgstr "Архіви автора: %s"
 
 #: ../lib/utils.php:81
 #, php-format
 msgid "Search Results for %s"
-msgstr "Resultados búsqueda para %s"
+msgstr "Знайти результати для %s"
 
 #: ../lib/utils.php:84
 msgid "Not Found"
-msgstr "No se encuentra"
+msgstr "Нічого не знайдено"
 
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
-msgstr "Algo falló con la API de plugin."
+msgstr "Щось не так з API додатку."
 
 #: ../lib/virtuetoolkit-activate.php:50
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr "Todos los plugins instalados y activados correctamente. %s"
+msgstr "Всі додатки встановлені та ввімкнені. %s"
 
 #: ../lib/widgets.php:6 ../lib/widgets.php:59
 msgid "Primary Sidebar"
-msgstr "Barra lateral Principal (Primary)"
+msgstr "Головна бокова колонка"
 
 #: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
-msgstr "Widget barra superior"
+msgstr "Верхній віджет"
 
 #: ../lib/widgets.php:71 ../lib/widgets.php:112 ../lib/widgets.php:143
 msgid "Footer Column 1"
-msgstr "Footer Column 1"
+msgstr "Колонка 1 підвалу"
 
 #: ../lib/widgets.php:81 ../lib/widgets.php:122 ../lib/widgets.php:153
 msgid "Footer Column 2"
-msgstr "Footer Column 2"
+msgstr "Колонка 2 підвалу"
 
 #: ../lib/widgets.php:91 ../lib/widgets.php:132
 msgid "Footer Column 3"
-msgstr "Footer Column 3"
+msgstr "Колонка 3 підвалу"
 
 #: ../lib/widgets.php:101
 msgid "Footer Column 4"
-msgstr "Footer Column 4"
+msgstr "Колонка 4 підвалу"
 
 #: ../lib/widgets.php:177
 msgid "Use this widget to add a Vcard to your site"
-msgstr "Use este widget para añadir datos Vcard del sitio web"
+msgstr "Використовувати даний віджет для додавання Vcard до сайту"
 
 #: ../lib/widgets.php:178
 msgid "Virtue: Contact/Vcard"
-msgstr "Virtue: Contacto/Vcard"
+msgstr "Virtue: Контакти/Vcard"
 
 #: ../lib/widgets.php:205
 msgid "vCard"
@@ -1138,49 +1123,49 @@ msgstr "vCard"
 #: ../lib/widgets.php:281 ../lib/widgets.php:448 ../lib/widgets.php:605
 #: ../lib/widgets.php:743
 msgid "Title:"
-msgstr "Título:"
+msgstr "Заголовок:"
 
 #: ../lib/widgets.php:285
 msgid "Company Name:"
-msgstr "Nombre Empresa:"
+msgstr "Назва товариства"
 
 #: ../lib/widgets.php:293
 msgid "Street Address:"
-msgstr "Dirección:"
+msgstr "Адреса вулиці:"
 
 #: ../lib/widgets.php:297
 msgid "City/Locality:"
-msgstr "Localidad:"
+msgstr "Місто/Місцевість:"
 
 #: ../lib/widgets.php:301
 msgid "State/Region:"
-msgstr "Pais:"
+msgstr "Область/Регіон"
 
 #: ../lib/widgets.php:305
 msgid "Zipcode/Postal Code:"
-msgstr "Código Postal:"
+msgstr "Код/Поштовий індекс:"
 
 #: ../lib/widgets.php:309
 #, fuzzy
 msgid "Mobile Telephone:"
-msgstr "Teléfono:"
+msgstr "Телефон:"
 
 #: ../lib/widgets.php:313
 #, fuzzy
 msgid "Fixed Telephone:"
-msgstr "Teléfono:"
+msgstr "Телефон:"
 
 #: ../lib/widgets.php:317 ../woocommerce/order/order-details.php:101
 msgid "Email:"
-msgstr "Email:"
+msgstr "Електронна адреса:"
 
 #: ../lib/widgets.php:328
 msgid "Simple way to add Social Icons"
-msgstr "Añadir facilmente iconos redes sociales"
+msgstr "Простий спосіб додати соціальні іконки"
 
 #: ../lib/widgets.php:329
 msgid "Virtue: Social Links"
-msgstr "Virtue: Redes Sociales"
+msgstr "Virtue: Соціальні іконки"
 
 #: ../lib/widgets.php:452
 msgid "Facebook:"
@@ -1196,7 +1181,7 @@ msgstr "Instagram:"
 
 #: ../lib/widgets.php:464
 msgid "GooglePlus:"
-msgstr "Google Plus:"
+msgstr "GooglePlus:"
 
 #: ../lib/widgets.php:468
 msgid "Flickr:"
@@ -1228,7 +1213,7 @@ msgstr "Tumblr:"
 
 #: ../lib/widgets.php:496
 msgid "VK:"
-msgstr ""
+msgstr "VK:"
 
 #: ../lib/widgets.php:500
 msgid "RSS:"
@@ -1236,94 +1221,89 @@ msgstr "RSS:"
 
 #: ../lib/widgets.php:514
 msgid "This shows the most recent posts on your site with a thumbnail"
-msgstr "Mostrar las publicaciones más recientes con una miniatura"
+msgstr "Показ останніх записів на вашому сайті з мініатюрою"
 
 #: ../lib/widgets.php:515
 msgid "Virtue: Recent Posts"
-msgstr "Virtue: Publicaciones Recientes"
+msgstr "Virtue: Останні записи"
 
 #: ../lib/widgets.php:540 ../templates/recentblog-carousel.php:2
 msgid "Recent Posts"
-msgstr "Publicaciones Recientes"
+msgstr "Останні записи"
 
 #: ../lib/widgets.php:608
 msgid "Number of posts to show:"
-msgstr "Número publicaciones a mostrar:"
+msgstr "Кількість записів для показу:"
 
 #: ../lib/widgets.php:611
 msgid "Limit to Catagory (Optional):"
-msgstr "Limitar a categoría (opcional):"
+msgstr "Обмеження категорій (Опція):"
 
 #: ../lib/widgets.php:622
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
-"Se muestran la imágenes usadas como destacadas de las publicaciones o "
-"artículos más recientes en una rejilla (grid)"
+"Показ сітки вибраних зображень з останніх записів чи елементів портфоліо"
 
 #: ../lib/widgets.php:623
 msgid "Virtue: Image Grid"
-msgstr "Virtue: Imagen Rejilla | Grid"
+msgstr "Virtue: Сітка зображень"
 
 #: ../lib/widgets.php:648
 msgid "Post Gallery"
-msgstr "Galería Publicaciones"
+msgstr "Запис Галереї"
 
 #: ../lib/widgets.php:746
 msgid "Grid Choice:"
-msgstr "Elegir rejilla:"
+msgstr "Сітка вибору:"
 
 #: ../lib/widgets.php:748
 msgid "Blog Posts"
-msgstr "Publicaciones Blog"
+msgstr "Записи блогу"
 
 #: ../lib/widgets.php:749
 msgid "Portfolio"
-msgstr "Portfolio"
+msgstr "Портфоліо"
 
 #: ../lib/widgets.php:752
 msgid "If Post - Choose Category (Optional):"
-msgstr "Si publicaciones - Elegir Categoría (opcional):"
+msgstr "Якщо записи - виберіть категорію (Опція):"
 
 #: ../lib/widgets.php:755
 msgid "If Portfolio - Choose Type (Optional):"
-msgstr "Si Portfolio - Elegir Tipo (opcional):"
+msgstr "Якщо портфоліо - виберіть тип (Опція):"
 
 #: ../lib/widgets.php:758
 msgid "Number of images to show:"
-msgstr "Número de imágenes a mostrar:"
+msgstr "Кількість зображень для показу:"
 
 #: ../lib/widgets.php:785
 msgid "This allows for an image and a simple about text."
-msgstr "Mostrar una imagen sobre un texto simple."
+msgstr "Дозволити для зображень і простого тексту."
 
 #: ../lib/widgets.php:786
-#, fuzzy
 msgid "Virtue: Image"
-msgstr "Virtue: Imagen Rejilla | Grid"
+msgstr "Virtue: Зображення"
 
 #: ../lib/widgets.php:840
-#, fuzzy
 msgid "Lightbox"
-msgstr "Derecha"
+msgstr "Лайтбокс"
 
 #: ../lib/widgets.php:841
 msgid "New Window"
-msgstr ""
+msgstr "Нове вікно"
 
 #: ../lib/widgets.php:842
 msgid "Same Window"
-msgstr ""
+msgstr "Це ж вікно"
 
 #: ../lib/widgets.php:843
-#, fuzzy
 msgid "No Link"
-msgstr "Enlace icono"
+msgstr "Без посилання"
 
 #: ../lib/widgets.php:855
-#, fuzzy
 msgid "Image URL"
-msgstr "Imagen"
+msgstr "Адреса зображення"
 
 #: ../lib/widgets.php:857
 #: ../themeoptions/inc/fields/background/field_background.php:315
@@ -1331,58 +1311,52 @@ msgstr "Imagen"
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:159
 msgid "Upload"
-msgstr "Subir"
+msgstr "Завантажити"
 
 #: ../lib/widgets.php:860
-#, fuzzy
 msgid "Image opens in"
-msgstr "Opciones repetición imagen"
+msgstr "Зображення відкриється в"
 
 #: ../lib/widgets.php:864
-#, fuzzy
 msgid "Image Link (optional)"
-msgstr "Opciones repetición imagen"
+msgstr "Ланка зображення (Опція)"
 
 #: ../lib/widgets.php:868
 msgid "Text/Caption (optional)"
-msgstr ""
+msgstr "Текст/Опис (Опція)"
 
 #: ../lib/cmb/init.php:243
 msgid "Clear"
-msgstr ""
+msgstr "Витерти"
 
 #: ../lib/cmb/init.php:245
-#, fuzzy
 msgid "Select Color"
-msgstr "Selecionar Opciones"
+msgstr "Вибрати колір"
 
 #: ../lib/cmb/init.php:246
-#, fuzzy
 msgid "Current Color"
-msgstr "Color Primario"
+msgstr "Вибраний колір"
 
 #: ../lib/cmb/init.php:1185
 msgid "Save"
-msgstr "Guardar"
+msgstr "Зберегти"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
-msgstr "Por favor, inténtelo de nuevo"
+msgstr "Будь ласка спробуйте знову"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
-msgstr "Quitar inscrustar"
+msgstr "Видалити вставлене"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
-msgstr ""
-"No se encuentrar resultados para incrustador %s. Ampliar información en"
+msgstr "Жодного результату oEmbed не знайдено для %s. Дивитися подробиці на "
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
-#, fuzzy
 msgid "Add Row"
-msgstr "Añadir comentario"
+msgstr "Додати рядок"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
@@ -1397,89 +1371,86 @@ msgstr "Añadir comentario"
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:115
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:161
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "Видалити"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
 msgid "Add or Upload File"
-msgstr ""
+msgstr "Додати чи завантажити файл"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
-#, fuzzy
 msgid "Remove Image"
-msgstr "Quitar Imagen"
+msgstr "Видалити зображення"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 msgid "File:"
-msgstr ""
+msgstr "Файл:"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/inc/import_export.php:104
 msgid "Download"
-msgstr "Descargar:"
+msgstr "Завантажити"
 
 #: ../templates/account-sidebar.php:18
-#, fuzzy
 msgid "Edit Account"
-msgstr "Mi Cuenta"
+msgstr "Редагувати обліковий запис"
 
 #: ../templates/account-sidebar.php:21
-#, fuzzy
 msgid "Logout"
-msgstr "Logotipo"
+msgstr "Вийти"
 
 #: ../templates/comment.php:7
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr "(Редагувати)"
 
 #: ../templates/comments.php:8
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
-msgstr[0] "Una respuesta"
-msgstr[1] "%1$s Respuestas"
+msgstr[0] "Один відгук"
+msgstr[1] "%1$s відгуків"
 
 #: ../templates/comments.php:18
 msgid "&larr; Older comments"
-msgstr "&larr; Comentarios antiguos"
+msgstr "&larr; Старіші відгуки"
 
 #: ../templates/comments.php:21
 msgid "Newer comments &rarr;"
-msgstr "Nuevo comentarios  &rarr;"
+msgstr "Новіші відгуки &rarr;"
 
 #: ../templates/comments.php:31 ../templates/comments.php:43
 msgid "Comments are closed."
-msgstr "Comentarios Cerrados."
+msgstr "Відгуки закриті."
 
 #: ../templates/comments.php:54
 msgid "Leave a Reply"
-msgstr "Dejar una opinión"
+msgstr "Написати відгук"
 
 #: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Leave a Reply to %s"
+msgstr "Залиште відгук для  %s"
 
 #: ../templates/comments.php:57
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Debe estar <a href=\"%s\">conectado</a> para escribir un comentario."
+msgstr "Ви повинні <a href=\"%s\">ввійти</a> для написання відгуку."
 
 #: ../templates/comments.php:62
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr "Conectado como&nbsp;<a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Ви ввійшли як <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
 #: ../templates/comments.php:63
 msgid "Log out of this account"
-msgstr "Desconectarse de la cuenta"
+msgstr "Вийти з системи"
 
 #: ../templates/comments.php:63
 msgid "Log out &raquo;"
-msgstr "Desconectar &raquo;"
+msgstr "Вийти &raquo;"
 
 #: ../templates/comments.php:68 ../templates/comments.php:72
 msgid " <span>*</span>"
@@ -1487,2256 +1458,1633 @@ msgstr " <span>*</span>"
 
 #: ../templates/comments.php:72
 msgid "Email (will not be published)"
-msgstr "Email (no será publicado)"
+msgstr "Електронна адреса (не публікується)"
 
 #: ../templates/comments.php:76
 msgid "Website"
-msgstr "Sitio Web"
+msgstr "Веб-сайт"
 
 #: ../templates/comments.php:81
 msgid "Comment"
-msgstr "Comentarios"
+msgstr "Відгук"
 
 #: ../templates/comments.php:83
 msgid "Submit Comment"
-msgstr "Enviar"
+msgstr "Відправити відгук"
 
 #: ../templates/content-fullpost.php:78
 #: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:94
 #: ../templates/content-singleportfolio.php:260
 msgid "Pages:"
-msgstr "Páginas:"
+msgstr "Сторінки:"
 
 #: ../templates/entry-meta-subhead.php:3
 msgid "by"
-msgstr "por"
+msgstr " &nbsp;"
 
 #: ../templates/entry-meta-subhead.php:5
 msgid "posted in:"
-msgstr "publicado en:"
+msgstr "опубліковано в категорії:"
 
 #: ../templates/entry-meta.php:2
 msgid "By"
-msgstr "por"
+msgstr "&nbsp;"
 
 #: ../templates/header.php:81
 msgid "Menu"
-msgstr "Men&uacute;"
+msgstr "Меню"
 
 #: ../templates/recentportfolio-carousel.php:2
 msgid "Recent Projects"
-msgstr "Proyectos Recientes"
+msgstr "Останні записи"
 
 #: ../templates/similarblog-carousel.php:2
 msgid "Similar Posts"
-msgstr "Publicaciones Similares"
+msgstr "Схожі записи"
 
 #: ../templates/home/blog-home.php:3
 msgid "Latest from the Blog"
-msgstr "Lo último del Blog"
+msgstr "Остання з блогу"
 
 #: ../templates/home/blog-home.php:74
 msgid "READ MORE"
-msgstr "LEER MÁS"
+msgstr "ЧИТАТИ ДАЛІ"
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
-msgstr "Proyectos destacados"
+msgstr "Вибрані проекти"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
-msgstr ""
-"Copiar y pegar este c&oacute;digo en el tema de las opciones de "
-"importaci&oacute;n de funci&oacute;n"
+msgstr "Вставте даний код в налаштування імпорту вибраного теми "
 
 #: ../themeoptions/options.php:311
 msgid "There are no previous options"
-msgstr "No hay opciones anteriores"
+msgstr "Немає попередніх налаштувань"
 
 #: ../themeoptions/options.php:323
 msgid "Main Settings"
-msgstr "Ajustes"
+msgstr "Основні установки"
 
 #: ../themeoptions/options.php:325
 msgid "Welcome to Virtue Theme Options"
-msgstr "Bienvenido a las opciones del tema Virtue"
+msgstr "Ласкаво просимо до налаштувань теми Virtue"
 
 #: ../themeoptions/options.php:326
 msgid "This theme was developed by"
-msgstr "Tema desarrollado por"
+msgstr "Тема розроблена "
 
 #: ../themeoptions/options.php:327
 msgid "For theme documentation visit"
-msgstr "Para ver la documentaci&oacute;n del tema"
+msgstr "Для документації теми відвідайте"
 
 #: ../themeoptions/options.php:329
 msgid "For support please visit"
-msgstr "Para recibir soporte, por favor visite"
+msgstr "Для підтримки відвідайте"
 
 #: ../themeoptions/options.php:337
 msgid "Site Layout Style"
-msgstr "Estilo diseño ancho pantalla del sitio web"
+msgstr "Компонування теми сайту"
 
 #: ../themeoptions/options.php:338
 msgid "Select Boxed or Wide Site Layout Style"
-msgstr "Seleccione disposici&oacute;n: Caja o Ancho completo"
+msgstr "Зробити сайт обмеженим чи по всій ширині"
 
 #: ../themeoptions/options.php:349
 msgid "Footer Widget Layout"
-msgstr "Dise&ntilde;o columnas-widgets pie de p&aacute;gina"
+msgstr "Компонування віджетів підвалу"
 
 #: ../themeoptions/options.php:350
 msgid "Select how many columns for footer widgets"
-msgstr "Seleccionar el n&uacute;mero de columnas  pie de p&aacute;gina"
+msgstr "Виберіть скільки колонок потрібно для віджетів підвалу"
 
 #: ../themeoptions/options.php:361
 msgid "Logo Options"
-msgstr "Opciones del logotipo"
+msgstr "Налаштування логотипу"
 
 #: ../themeoptions/options.php:367
 msgid "Logo Layout"
-msgstr "Disposici&oacute;n Logo"
+msgstr "Компонування логотипу"
 
 #: ../themeoptions/options.php:368
 msgid "Choose how you want your logo to be laid out"
-msgstr "Elija c&oacute;mo desea mostrar su logotipo"
+msgstr "Виберіть, як Ви бажаєте розмістити ваш логотип"
 
 #: ../themeoptions/options.php:380
 msgid "Logo"
-msgstr "Logotipo"
+msgstr "Логотип"
 
 #: ../themeoptions/options.php:382
 msgid "Upload your Logo. If left blank theme will use site name."
 msgstr ""
-"Suba su logotipo. Si se deja en blanco, se mostrar&aacute; el nombre del "
-"sitio."
+"Завантажте Ваш логотип. Якщо залишити порожнім - буде використана назва "
+"сайту."
 
 #: ../themeoptions/options.php:388
 msgid "Upload Your @2x Logo for Retina Screens"
-msgstr "Subir logo x2 para pantallas Retina"
+msgstr "Завантажте ваш @2x логотип для екранів Retina"
 
 #: ../themeoptions/options.php:390
 msgid "Should be twice the pixel size of your normal logo."
-msgstr "Debe ser dos veces el tama&ntilde;o de píxel de su logo normal"
+msgstr "Буде вдвічі більше ніж Ваш логотип."
 
 #: ../themeoptions/options.php:395
 msgid "Sitename Logo Font"
-msgstr "Fuente para el nombre del sitio"
+msgstr "Шрифт назви сайту"
 
 #: ../themeoptions/options.php:410
 msgid "Choose size and style your sitename, if you don't use an image logo."
 msgstr ""
-"Elija el tama&ntilde;o y estilo de su nombre de sitio, si no se utiliza un "
-"logotipo de imagen"
+"Виберіть Ваш розмір та стиль назви сайту, якщо не бажаєте використовувати "
+"зображення для логотипу."
 
 #: ../themeoptions/options.php:421
 msgid "Site Tagline - Below Logo\""
-msgstr "Lema del sitio - Debajo del logotipo"
+msgstr "Гасло сайту - нижче логотипу\""
 
 #: ../themeoptions/options.php:422
 msgid "An optional line of text below your logo"
-msgstr "L&iacute;nea de texto debajo de su logotipo -opcional-"
+msgstr "Лінія тексту під логотипом - опція"
 
 #: ../themeoptions/options.php:430
 msgid "Site Tagline Font"
-msgstr "Fuente para lema del sitio"
+msgstr "Шрифт гасла сайту"
 
 #: ../themeoptions/options.php:443
 msgid "Choose size and style your site tagline"
-msgstr "Elija un tamaño y estilo para su lema"
+msgstr "Вибір розміру та стилю гасла сайту"
 
 #: ../themeoptions/options.php:454 ../themeoptions/options.php:464
 #: ../themeoptions/options.php:474 ../themeoptions/options.php:484
 msgid "Logo Spacing"
-msgstr "Espaciado del Logo"
+msgstr "Відступи логотипу"
 
 #: ../themeoptions/options.php:455 ../themeoptions/options.php:495
 msgid "Top Spacing"
-msgstr "Margen superior"
+msgstr "Верхній відступ"
 
 #: ../themeoptions/options.php:465 ../themeoptions/options.php:505
 msgid "Bottom Spacing"
-msgstr "Margen inferior"
+msgstr "Нижній відступ"
 
 #: ../themeoptions/options.php:475
 msgid "Left Spacing"
-msgstr "Margen izquierdo"
+msgstr "Лівий відступ"
 
 #: ../themeoptions/options.php:485
 msgid "Right Spacing"
-msgstr "Margen derecho"
+msgstr "Правий відступ"
 
 #: ../themeoptions/options.php:494 ../themeoptions/options.php:504
 msgid "Primary Menu Spacing"
-msgstr "Margen Menú primario"
+msgstr "Відступ головного меню"
 
 #: ../themeoptions/options.php:515
 msgid "Sitewide Banner"
-msgstr "Banner en todo el sitio"
+msgstr "Банер сайту при всій ширині"
 
 #: ../themeoptions/options.php:517
 msgid "Upload a banner for bottom of header."
-msgstr ""
-"Subir un banner de cabecera. Ser&aacute; visible en todas las p&aacute;ginas."
+msgstr "Завантажити банер для низу шапки"
 
 #: ../themeoptions/options.php:524
 msgid "Topbar Settings"
-msgstr "Ajustes barra superior (topbar)"
+msgstr "Налаштування верхньої панелі"
 
 #: ../themeoptions/options.php:529
 msgid "Use Topbar?"
-msgstr "¿Usar barra superior? (topbar)"
+msgstr "Використовувати верхню панель?"
 
 #: ../themeoptions/options.php:530
 msgid "Choose to show or hide topbar"
-msgstr "Elija mostrar u ocultar barra superior"
+msgstr "Виберіть для показу чи приховування верхньої панелі"
 
 #: ../themeoptions/options.php:536
 msgid "Use Topbar Icon Menu?"
-msgstr "¿Usar iconos en menú barra superior?"
+msgstr "Використовувати іконки меню для верхньої панелі?"
 
 #: ../themeoptions/options.php:537
 msgid "Choose to show or hide topbar icon Menu"
-msgstr "Elija mostrar u ocultar icono men&uacute; barra superior"
+msgstr "Виберіть для показу чи приховування верхньої панелі"
 
 #: ../themeoptions/options.php:543
 msgid "Topbar Icon Menu"
-msgstr "Iconos Menú barra superior"
+msgstr "Іконки меню для верхньої панелі"
 
 #: ../themeoptions/options.php:544
 msgid "Choose your icons for the topbar icon menu."
-msgstr "Elija los iconos para el menú de la barra superior"
+msgstr "Виберіть свої іконки для верхньої панелі"
 
 #: ../themeoptions/options.php:550
 msgid "Show Cart total in topbar?"
-msgstr "Mostrar total cesta en barra superior"
+msgstr "Показати корзину у верхній панелі?"
 
 #: ../themeoptions/options.php:551
 msgid "This only works if using woocommerce"
-msgstr "Sólo funciona si se utiliza woocommerce"
+msgstr "Працює лише при використання woocommerce"
 
 #: ../themeoptions/options.php:557
 msgid "Display Search in Topbar?"
-msgstr "¿Mostrar búsqueda en barra superior?"
+msgstr "Показати пошук у верхній панелі?"
 
 #: ../themeoptions/options.php:558
 msgid "Choose to show or hide search in topbar"
-msgstr "Elija mostrar u ocultar búsqueda en barra superior"
+msgstr "Виберіть для показу чи приховування пошуку у верхній панелі"
 
 #: ../themeoptions/options.php:564
 msgid "Enable widget area in right of Topbar?"
-msgstr "¿Habilitar &aacute;rea de widgets a la derecha barra superior?"
+msgstr "Ввімкнути майданчик для віджетів у правій частині верхньої панелі?"
 
 #: ../themeoptions/options.php:565
 msgid ""
 "Note this will hide remove search (you can re-enable it my adding it to the "
 "widget area)"
 msgstr ""
-"Esto ocultar&aacute; la b&uacute;squeda (puede rehabilitarlo en la &aacute;"
-"rea de widgets)"
+"Примітка: це призведе до приховання пошуку (Ви можете знову ввімкнути його "
+"додавши до віджета)"
 
 #: ../themeoptions/options.php:571
 msgid "Topbar Layout Switch"
-msgstr "Activar dise&ntilde;o Topbar"
+msgstr "Перемикач компонування верхньої панелі"
 
 #: ../themeoptions/options.php:572
 msgid "This moves the left items to the right and right items to the left."
-msgstr "Esto mueve los elementos de la izquierda a la derecha y viceversa."
+msgstr "Це призведе до переміщення лівих елементів вправо і правих вліво."
 
 #: ../themeoptions/options.php:580
 msgid "Slider Settings"
-msgstr "Ajustes de slider"
+msgstr "Налаштування слайдера"
 
 #: ../themeoptions/options.php:581
 msgid "Home Page Slider Options"
-msgstr "Opciones Slider Portada (deslizador imagen-diapositivas)"
+msgstr "Опції слайдера головної сторінки"
 
 #: ../themeoptions/options.php:586
 msgid "Choose a Home Image Slider"
-msgstr "Elegir un slider de im&aacute;genes en Portada"
+msgstr "Виберіть картинку слайдера головної сторінки"
 
 #: ../themeoptions/options.php:587
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
-"Si usted No quiere un slider en su página de inicio, seleccione ninguno."
+"Якщо не бажаєте картинку слайдер картинок на головній сторінці не вибирайте "
+"нічого."
 
 #: ../themeoptions/options.php:596 ../themeoptions/options.php:699
 msgid "Slider Images"
-msgstr "Imágenes de slider"
+msgstr "Слайдер картинок"
 
 #: ../themeoptions/options.php:597 ../themeoptions/options.php:700
 msgid "Use large images for best results."
-msgstr "Usar  im&aacute;genes  grandes para obtener mejores resultados"
+msgstr "Використати великі картинки для кращих результатів."
 
 #: ../themeoptions/options.php:603 ../themeoptions/options.php:707
 msgid "Slider Max Height"
-msgstr "Altura máxima del slider"
+msgstr "Максимальна висота слайдера"
 
 #: ../themeoptions/options.php:604 ../themeoptions/options.php:614
 #: ../themeoptions/options.php:708 ../themeoptions/options.php:719
 msgid "Note: does not work if images are smaller than max."
-msgstr "Nota: no funciona si las imágenes son más pequeñas que el máximo."
+msgstr "Примітка: не працює, якщо картинка менша максимальної."
 
 #: ../themeoptions/options.php:613 ../themeoptions/options.php:718
 msgid "Slider Max Width"
-msgstr "Anchura máxima del slider"
+msgstr "Найбільша ширина слайдеру"
 
 #: ../themeoptions/options.php:623 ../themeoptions/options.php:729
 msgid "Auto Play?"
-msgstr "¿Reproducción automática?"
+msgstr "Автозапуск?"
 
 #: ../themeoptions/options.php:624 ../themeoptions/options.php:730
 msgid "This determines if a slider automatically scrolls"
-msgstr "Esto determina si el slider se desplaza automáticamente"
+msgstr "Визначає, чи буде слайдер автоматично прокручуватися"
 
 #: ../themeoptions/options.php:630 ../themeoptions/options.php:737
 msgid "Slider Pause Time"
-msgstr "Duración de la imagen en pausa"
+msgstr "Час зупинки слайдера"
 
 #: ../themeoptions/options.php:631 ../themeoptions/options.php:738
 msgid "How long to pause on each slide, in milliseconds."
-msgstr "Duración de pausa de la imágenes del slider,en milisegundos"
+msgstr "Як довго до зупинки на кожному слайді, в мілісекундах."
 
 #: ../themeoptions/options.php:640 ../themeoptions/options.php:748
 msgid "Transition Type"
-msgstr "Tipo de transición"
+msgstr "Тип переходу"
 
 #: ../themeoptions/options.php:641 ../themeoptions/options.php:749
 msgid "Choose a transition type"
-msgstr "Elegir tipo de transición"
+msgstr "Вибрати тип переходу"
 
 #: ../themeoptions/options.php:648 ../themeoptions/options.php:757
 msgid "Slider Transition Time"
-msgstr "Duración transición del slider"
+msgstr "Час переходу слайдера"
 
 #: ../themeoptions/options.php:649 ../themeoptions/options.php:758
 msgid "How long for slide transitions, in milliseconds."
-msgstr "Duración transición del slider, en milisegundos"
+msgstr "Час переходу слайдера, в мілісекундах."
 
 #: ../themeoptions/options.php:658 ../themeoptions/options.php:768
 msgid "Show Captions?"
-msgstr "¿Mostrar leyenda? "
+msgstr "Показати підписи?"
 
 #: ../themeoptions/options.php:659 ../themeoptions/options.php:769
 msgid "Choose to show or hide captions"
-msgstr "Elegir si mostrar u ocultar leyendas"
+msgstr "Вибрати для показу чи приховання підписів"
 
 #: ../themeoptions/options.php:665 ../themeoptions/options.php:776
 msgid "Video Embed Code"
-msgstr "Incrustrar código de video"
+msgstr "Код вставки відео"
 
 #: ../themeoptions/options.php:666 ../themeoptions/options.php:777
 msgid "If your using a video on the home page place video embed code here."
 msgstr ""
-"Si utiliza un video en la página de inicio, inserte el código del video aquí."
+"Якщо Ви використовуєте відео на головній сторінці вставте код відео сюди."
 
 #: ../themeoptions/options.php:675
 msgid "Mobile Slider"
-msgstr "Móvil - slider"
+msgstr "Мобільний слайдер"
 
 #: ../themeoptions/options.php:676
 msgid "Create a more lightweight home slider for your mobile visitors."
-msgstr "Crear un slider más ligero para visitantes que usen móvil."
+msgstr ""
+"Створити більш легкий слайдер головної сторінки для відвідувачів з мобільних "
+"телефонів."
 
 #: ../themeoptions/options.php:681
 msgid "Would you like to use this feature?"
-msgstr "¿Quiere usar ésta característica?"
+msgstr "Хочете використовувати цю функцію?"
 
 #: ../themeoptions/options.php:682
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
 msgstr ""
-"Elija si desea mostrar un slider diferente en página de inicio para los "
-"visitantes de móviles. Si elige que no, aplicará por defecto el slider de "
-"inicio."
+"Виберіть, якщо ви бажаєте показати інший слайдер на головній сторінці для "
+"відвідувачів з мобільних телефонів."
 
 #: ../themeoptions/options.php:688
 msgid "Choose a Slider for Mobile"
-msgstr "Elija un slider para móviles"
+msgstr "Виберіть мобільний слайдер"
 
 #: ../themeoptions/options.php:689
 msgid "Choose which slider you would like to show for mobile viewers."
 msgstr ""
-"Elija que slider le gustaría mostrar para los visitantes que usan móvil."
+"Виберіть який слайдер бажаєте показувати для відвідувачів з мобільних "
+"телефонів."
 
 #: ../themeoptions/options.php:786
 msgid "Home Layout"
-msgstr "Diseño Portada"
+msgstr "Компонування головної сторінки"
 
 #: ../themeoptions/options.php:793
 msgid "Display a sidebar on the Home Page?"
-msgstr "&iquest;Mostrar una barra lateral en la página de inicio?"
+msgstr "Показувати бокову колонку на головній сторінці?"
 
 #: ../themeoptions/options.php:794
 msgid "This determines if there is a sidebar on the home page."
-msgstr "Esto determina si hay una barra lateral en p&aacute;gina protada"
+msgstr "Визначає, чи показувати бокову колонку на головній сторінці."
 
 #: ../themeoptions/options.php:804
 msgid "Choose a Sidebar for your Home Page"
-msgstr "Elija una barra lateral para p&aacute;gina de inicio"
+msgstr "Виберіть бокову колонку для головної сторінки"
 
 #: ../themeoptions/options.php:814
 msgid "Homepage Layout Manager"
-msgstr "Gestor Diseño Página Inicio"
+msgstr "Компонування головної сторінки"
 
 #: ../themeoptions/options.php:815
 msgid "Organize how you want the layout to appear on the homepage"
-msgstr "Organizar el diseño a mostrar en página de inicio"
+msgstr "Організуйте, як потрібно, щоб макет з'являвся на головній сторінці"
 
 #: ../themeoptions/options.php:820
 msgid "Latest Blog Posts"
-msgstr "Últimas entradas Blog"
+msgstr "Останні записи в блозі"
 
 #: ../themeoptions/options.php:821
 msgid "Portfolio Carousel"
-msgstr "Carrusel Portafolio"
+msgstr "Карусель портфоліо"
 
 #: ../themeoptions/options.php:822 ../themeoptions/options.php:915
 msgid "Icon Menu"
-msgstr "Men&uacute; icono"
+msgstr "Меню іконок"
 
 #: ../themeoptions/options.php:826
 msgid "Page Title"
-msgstr "Título P&aacute;gina"
+msgstr "Заголовок сторінки"
 
 #: ../themeoptions/options.php:827
 msgid "Page Content"
-msgstr "Contenido P&aacute;gina"
+msgstr "Вміст сторінки"
 
 #: ../themeoptions/options.php:835
 msgid "Home Blog Settings"
-msgstr "Portada: Ajustes Blog"
+msgstr "Налаштування блогу головної сторінки"
 
 #: ../themeoptions/options.php:840
 msgid "Home Blog Title"
-msgstr "T&iacute;tulo blog en p&aacute;gina portada"
+msgstr "Заголовок блогу головної сторінки"
 
 #: ../themeoptions/options.php:841
 msgid "ex: Latest from the blog"
-msgstr "ej.: Lo último del blog "
+msgstr "Наприклад: останні з блогу"
 
 #: ../themeoptions/options.php:846
 msgid "Choose How many posts on Homepage"
-msgstr "Elija cuantas publicaciones de blog apareceran  en página de inicio"
+msgstr "Виберіть кількість записів на головній сторінці "
 
 #: ../themeoptions/options.php:857
 msgid "Limit posts to a Category"
-msgstr "Limitar publicaciones a una Categoría"
+msgstr "Обмеження записів категорії"
 
 #: ../themeoptions/options.php:858
 msgid "Leave blank to select all"
-msgstr "Dejar en blanco para seleccionar todo"
+msgstr "Залиште порожнім для вибору всіх"
 
 #: ../themeoptions/options.php:865
 msgid "Home Portfolio Carousel Settings"
-msgstr "Portada: Ajustes Carrusel Portafolio "
+msgstr "Налаштування каруселі портфоліо головної сторінки"
 
 #: ../themeoptions/options.php:870
 msgid "Home Portfolio Carousel title"
-msgstr "Título Carrusel Portafolio en P&acute;gina Inicio"
+msgstr "Заголовок каруселі портфоліо головної сторінки"
 
 #: ../themeoptions/options.php:871
 msgid "ex: Portfolio Carousel title"
-msgstr "ej.: Título Carrousel Portafolio"
+msgstr "Наприклад: заголовок каруселі портфоліо"
 
 #: ../themeoptions/options.php:878
 msgid "Portfolio Carousel Category Type"
-msgstr "Tipo Categoría Carrusel Portafolio"
+msgstr "Тип категорії каруселі портфоліо"
 
 #: ../themeoptions/options.php:879
 msgid "Leave blank to select all types"
-msgstr "Dejar en blanco para seleccionar todos los tipos"
+msgstr "Залиште порожнім для вибору всіх типів"
 
 #: ../themeoptions/options.php:886
 msgid "Choose how many portfolio items are in carousel"
-msgstr "Elija el número de elementos de portafolio para mostrar en carrusel"
+msgstr "Виберіть кількість елементів портфоліо в каруселі"
 
 #: ../themeoptions/options.php:895
 msgid "Portfolio Carousel Order by"
-msgstr "Ordenar por:"
+msgstr "Впорядкувати карусель портфоліо за"
 
 #: ../themeoptions/options.php:896
 msgid "Choose how the portfolio items should be ordered in the carousel."
-msgstr "Elige cómo ordenar los elementos de portafolio en carrusel"
+msgstr "Виберіть, як впорядкувати елементи каруселі портфоліо."
 
 #: ../themeoptions/options.php:904
 msgid "Display Portfolio Types under Title"
-msgstr "Mostrar Categoria Portfolio debajo del título"
+msgstr "Показати типи портфоліо під заголовком"
 
 #: ../themeoptions/options.php:910
 msgid "Home Icon Menu"
-msgstr "Portada: Men&uacute; Icono"
+msgstr "Іконки меню головної сторінки"
 
 #: ../themeoptions/options.php:916
 msgid "Choose your icons for the icon menu."
-msgstr "Elija los iconos que desea usar en men&uacute;"
+msgstr "Виберіть іконки для меню іконок."
 
 #: ../themeoptions/options.php:922
 msgid "Choose how many columns in each row"
-msgstr "Elija el número de columnas en cada fila"
+msgstr "Виберіть кількість колонок в кожному рядку"
 
 #: ../themeoptions/options.php:931
 msgid "Page Content Options"
-msgstr "Opciones contenido p&aacute;gina"
+msgstr "Налаштування сторінки вмісту"
 
 #: ../themeoptions/options.php:936
 msgid "Latest Post Display"
-msgstr "Mostrar &uacute;ltimas entradas"
+msgstr "Показ останніх записів"
 
 #: ../themeoptions/options.php:937
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
-"Si &uacute;ltimas entradas estan en p&aacute;gina portada. Elija mostrar "
-"completo o extracto."
+"Якщо останні записи на головній сторінці. Виберіть показ повного запису чи "
+"лише витягу."
 
 #: ../themeoptions/options.php:949
 msgid "Shop Settings"
-msgstr "Ajustes de la Tienda"
+msgstr "Налаштування магазину"
 
 #: ../themeoptions/options.php:950
 msgid "Shop Archive Page Settings"
-msgstr "Ajustes Tienda - Archivo / P&aacute;gina"
+msgstr "Налаштування архівної сторінки магазину"
 
 #: ../themeoptions/options.php:956
 msgid "Display the sidebar on shop archives?"
-msgstr " ¿Mostrar barra lateral en archivos de tienda?"
+msgstr "Показувати бокову колонку в архівах магазину?"
 
 #: ../themeoptions/options.php:957
 msgid "This determines if there is a sidebar on the shop and category pages."
-msgstr ""
-"Esto determina si hay una barra lateral en las páginas de la tienda y "
-"categoría"
+msgstr "Визначає чи буде бокова колонка на сторінках магазину та категорій."
 
 #: ../themeoptions/options.php:967
 msgid "Choose a Sidebar for your shop page"
-msgstr "Elija una de barra lateral para la página de la tienda"
+msgstr "Виберіть бокову колонку для сторінки магазину"
 
 #: ../themeoptions/options.php:975
 msgid "How many products per page"
-msgstr "Número de Productos por página"
+msgstr "Кількість продуктів на сторінку"
 
 #: ../themeoptions/options.php:985
 msgid "Show Ratings in Shop and Category Pages"
-msgstr "Mostrar calificaciones en páginas de categoría y tienda"
+msgstr "Показувати рейтинг на сторінках магазину та категоріях"
 
 #: ../themeoptions/options.php:986
 msgid "This determines if the rating is displayed in the product archive pages"
-msgstr ""
-"Esto determina si la clasificación se muestra en las páginas de archivo de "
-"producto"
+msgstr "Визначає, чи показується  рейтинг на сторінках архівіві продуктів"
 
 #: ../themeoptions/options.php:992
 msgid "Shop Product Title Settings"
-msgstr "Ajustes t&iacute;tulo producto tienda"
+msgstr "Налаштування заголовку продукту магазину"
 
 #: ../themeoptions/options.php:997
 msgid "Shop & archive Product title Font"
-msgstr "Fuente t&iacute;tulo  producto"
+msgstr "Шрифт заголовку магазину та архіву продуктів"
 
 #: ../themeoptions/options.php:1012
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
-"Elija un tama&ntilde;o y estilo para los t&iacute;tulos de productos en las "
-"p&aacute;ginas decategor&iacute;a y archivo."
+"Виберіть розмір та стиль заголовку продукту в категоріях та архівних "
+"сторінках."
 
 #: ../themeoptions/options.php:1023
 msgid "Set Product Title to Uppercase?"
-msgstr "&iquest; Ajustar título producto en mayúsculas?"
+msgstr "Зробити заголовок продукту прописними літерами?"
 
 #: ../themeoptions/options.php:1024
 msgid "This makes your product titles uppercase on Category pages"
-msgstr ""
-"Esto hace que el nombre de los productos est&eacute;n en mayúsculas en las "
-"p&aacute;ginas Categor&iacute;a"
+msgstr "Робить заголовок продукту прописними літерами на сторінках категорій"
 
 #: ../themeoptions/options.php:1030
 msgid "Product title Min Height"
-msgstr "Altura m&iacute;nima t&iacute;tulo producto"
+msgstr "Мінімальна висота заголовку продукту "
 
 #: ../themeoptions/options.php:1031
 msgid ""
 "If your titles are long increase this to help align your products height."
-msgstr ""
-"Ay&uacute;dese aqu&iacute; para alinear la altura del t&iacute;tulo de los "
-"productos."
+msgstr "Якщо заголовок довгий - збільште, щоб вирівняти висоту продуктів. "
 
 #: ../themeoptions/options.php:1040
 msgid "Product Image Sizes"
-msgstr "Tama&ntilde;o imagen producto"
+msgstr "Розмір зображення продукту"
 
 #: ../themeoptions/options.php:1045
 msgid "Enable Product Image Crop on Catalog pages"
-msgstr "Activar recortar imagen producto en p&aacute;ginas del catálogo"
+msgstr "Ввімкнути обрізання картинки продукту на сторінках каталогу"
 
 #: ../themeoptions/options.php:1046
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
 msgstr ""
-"Si desactiva dimensiones de imagen, se fijan los ajuste de woocommerce "
-"recomendados: 270 px para im&aacute;genes de cat&aacute;logo"
+"Якщо вимкнено, тоді розміри картинок визначаються в налаштуваннях "
+"woocommerce - рекомендована ширина: 270 пікселів для картинок каталогу"
 
 #: ../themeoptions/options.php:1052
 msgid "Enable Product Image Crop on product Page"
-msgstr "Activar recortar imagen producto en p&aacute;ginas del producto"
+msgstr "Ввімкнути обрізання картинки продукту на сторінках продукту"
 
 #: ../themeoptions/options.php:1053
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
 msgstr ""
-"Si desactiva dimensiones de imagen, se fijan los ajuste de woocommerce "
-"recomendados: 468 px para imagen un solo producto"
+"Якщо вимкнено, тоді розміри картинки визначається в налаштуваннях "
+"woocommerce - рекомендована ширина: 468 пікселів для одної картинки"
 
 #: ../themeoptions/options.php:1059
 msgid "Product Page Settings"
-msgstr "Ajustar página productos"
+msgstr "Налаштування сторінки продукту"
 
 #: ../themeoptions/options.php:1064
 msgid "Display product tabs?"
-msgstr "¿Mostrar fichas información en detalle producto?"
+msgstr "Показати вкладки продукту?"
 
 #: ../themeoptions/options.php:1065
 msgid "This determines if product tabs are displayed"
-msgstr "Esto determina si se muestra una ficha del producto"
+msgstr "Визначає, якщо вкладки продукту показуються"
 
 #: ../themeoptions/options.php:1071
 msgid "Display related products?"
-msgstr "¿Mostrar Productos relacionados?"
+msgstr "Показати схожі продукти?"
 
 #: ../themeoptions/options.php:1072
 msgid "This determines related products are displayed"
-msgstr "Esto determina que se muestran productos relacionados"
+msgstr "Визначає, чи показувати схожі продукти"
 
 #: ../themeoptions/options.php:1080
 msgid "Basic Styling"
-msgstr "Estilo Básico"
+msgstr "Базовий стиль"
 
 #: ../themeoptions/options.php:1081
 msgid "Basic Stylng"
-msgstr "Estilo Básico"
+msgstr "Базовий стиль"
 
 #: ../themeoptions/options.php:1086
 msgid "Theme Skin Stylesheet"
-msgstr "Estilo CSS del tema"
+msgstr "Стиль шаблону теми"
 
 #: ../themeoptions/options.php:1087
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
-" Nota * los cambios realizados en el panel de opciones anulará esta hoja de "
-"estilo. Ejemplo: colores establecidos en la tipografía."
+"Примітка: зміни, зроблені в панелі опцій будуть переписані даним файлем "
+"стилів. Наприклад: кольори, визначені в типографії"
 
 #: ../themeoptions/options.php:1096
 msgid "Primary Color"
-msgstr "Color Primario"
+msgstr "Головний колір"
 
 #: ../themeoptions/options.php:1097
 msgid "Choose the default Highlight color for your site."
-msgstr "Elija el color de \"resaltado\" predeterminado para su sitio."
+msgstr "Виберіть стандартний колір виділення тексту для сайту."
 
 #: ../themeoptions/options.php:1105
 msgid "20% lighter than Primary Color"
-msgstr "20% más ligero que el color primario"
+msgstr "На 20% світліше головного кольору"
 
 #: ../themeoptions/options.php:1106
 msgid "This is used for hover effects"
-msgstr "Esto se utiliza para efectos \"sobre\" (hover)"
+msgstr "Використовується для ефектів при наведенні"
 
 #: ../themeoptions/options.php:1114
 msgid "Sitewide Gray Fonts"
-msgstr "El color en todo el sitio para la tipografía es el Gris."
+msgstr "Сіри шрифти по всьому сайту"
 
 #: ../themeoptions/options.php:1123
 msgid "Footer Font Color"
-msgstr "Color fuentes pie de página"
+msgstr "Колір шрифту в підвалі"
 
 #: ../themeoptions/options.php:1134
 msgid "Advanced Styling"
-msgstr "Estilo - Avanzado"
+msgstr "Розширені стилі"
 
 #: ../themeoptions/options.php:1135
 msgid "Main Content Background"
-msgstr "Fondo contenido principal"
+msgstr "Фон головного вмісту сторінок"
 
 #: ../themeoptions/options.php:1140 ../themeoptions/options.php:1179
 #: ../themeoptions/options.php:1218 ../themeoptions/options.php:1257
 #: ../themeoptions/options.php:1296 ../themeoptions/options.php:1335
 #: ../themeoptions/options.php:1374
 msgid "Background Color"
-msgstr "Color Fondo"
+msgstr "Колір фону"
 
 #: ../themeoptions/options.php:1148 ../themeoptions/options.php:1187
 #: ../themeoptions/options.php:1226 ../themeoptions/options.php:1265
 #: ../themeoptions/options.php:1304 ../themeoptions/options.php:1343
 #: ../themeoptions/options.php:1382
 msgid "Upload background image or texture"
-msgstr "Subir una imagen o textura de fondo"
+msgstr "Завантажити картинку фону чи текстуру"
 
 #: ../themeoptions/options.php:1153 ../themeoptions/options.php:1192
 #: ../themeoptions/options.php:1231 ../themeoptions/options.php:1270
 #: ../themeoptions/options.php:1309 ../themeoptions/options.php:1348
 #: ../themeoptions/options.php:1387
 msgid "Image repeat options"
-msgstr "Opciones repetición imagen"
+msgstr "Опції повторення картинки"
 
 #: ../themeoptions/options.php:1160 ../themeoptions/options.php:1199
 #: ../themeoptions/options.php:1238 ../themeoptions/options.php:1277
 #: ../themeoptions/options.php:1316 ../themeoptions/options.php:1355
 #: ../themeoptions/options.php:1394
 msgid "X image placement options"
-msgstr "X opciones desplazamiento horizontal"
+msgstr "Розміщення картинки по горизонталі"
 
 #: ../themeoptions/options.php:1167 ../themeoptions/options.php:1206
 #: ../themeoptions/options.php:1245 ../themeoptions/options.php:1284
 #: ../themeoptions/options.php:1323 ../themeoptions/options.php:1362
 #: ../themeoptions/options.php:1401
 msgid "Y image placement options"
-msgstr "Y opciones desplazamiento vertical"
+msgstr "Розміщення картинки по вертикалі"
 
 #: ../themeoptions/options.php:1174
 msgid "Topbar Background"
-msgstr "Fondo barra superior"
+msgstr "Фон верхньої панелі"
 
 #: ../themeoptions/options.php:1213
 msgid "Header Background"
-msgstr "Fondo Cabecera"
+msgstr "Фон шапки"
 
 #: ../themeoptions/options.php:1252
 msgid "Secondary Menu Background"
-msgstr "Fondo Menú secundario"
+msgstr "Фон допоміжного меню"
 
 #: ../themeoptions/options.php:1291
 msgid "Mobile Menu Background"
-msgstr "Fondo men&uacute; m&oacute;vil"
+msgstr "Фон мобільного меню"
 
 #: ../themeoptions/options.php:1330
 msgid "Footer Background"
-msgstr "Fondo pie de página"
+msgstr "Фон підвалу"
 
 #: ../themeoptions/options.php:1369
 msgid "Body Background"
-msgstr "Fondo cuerpo - body"
+msgstr "Фон тіла сайту"
 
 #: ../themeoptions/options.php:1408
 msgid "Fixed or Scroll"
-msgstr "Fijo o deslizante"
+msgstr "Зафіксувати при прокручуванні"
 
 #: ../themeoptions/options.php:1417
 msgid "Typography"
-msgstr "Tipografía"
+msgstr "Типографія"
 
 #: ../themeoptions/options.php:1418
 msgid "Header Font Options"
-msgstr "Opciones tipografía cabecera"
+msgstr "Опції шрифту шапки"
 
 #: ../themeoptions/options.php:1423
 msgid "H1 Headings"
-msgstr "Encabezado h1"
+msgstr "Тег Н1 заголовку"
 
 #: ../themeoptions/options.php:1438
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
-msgstr "Elija el estilo y tamaño para h1 (Estilo para título de página)"
+msgstr "Виберіть розмір та стиль для тегу h1 (Стиль для заголовку сторінки)"
 
 #: ../themeoptions/options.php:1449
 msgid "H2 Headings"
-msgstr "Encabezado h2"
+msgstr "Тег Н2 заголовку"
 
 #: ../themeoptions/options.php:1464
 msgid "Choose Size and Style for h2"
-msgstr "Elija estilo y tamaño para h2"
+msgstr "Виберіть розмір та стиль для тегу h2"
 
 #: ../themeoptions/options.php:1475
 msgid "H3 Headings"
-msgstr "Encabezado h3"
+msgstr "Тег Н3 заголовку"
 
 #: ../themeoptions/options.php:1490
 msgid "Choose Size and Style for h3"
-msgstr "Elija estilo y tamaño para h3"
+msgstr "Виберіть розмір та стиль для тегу h3"
 
 #: ../themeoptions/options.php:1501
 msgid "H4 Headings"
-msgstr "Encabezado h4"
+msgstr "Тег Н4 заголовку"
 
 #: ../themeoptions/options.php:1516
 msgid "Choose Size and Style for h4"
-msgstr "Elija estilo y tamaño h4"
+msgstr "Виберіть розмір та стиль для тегу h4"
 
 #: ../themeoptions/options.php:1527
 msgid "H5 Headings"
-msgstr "Encabezado h5"
+msgstr "Тег Н5 заголовку"
 
 #: ../themeoptions/options.php:1542
 msgid "Choose Size and Style for h5"
-msgstr "Elija estiloy tamaño para h5"
+msgstr "Виберіть розмір та стиль для тегу h5"
 
 #: ../themeoptions/options.php:1553
 msgid "Body Font Options"
-msgstr "Opciones fuente del cuerpo | Body"
+msgstr "Опції шрифту тіла сайту"
 
 #: ../themeoptions/options.php:1558
 msgid "Body Font"
-msgstr "Fuente del cuerpo | Body"
+msgstr "Шрифт тіла сайту"
 
 #: ../themeoptions/options.php:1573
 msgid "Choose Size and Style for paragraphs"
-msgstr "Elija estilo y tamaño para los párrafos."
+msgstr "Виберіть розмір та стиль параграфів"
 
 #: ../themeoptions/options.php:1586
 msgid "Menu Settings"
-msgstr "Ajustes men&uacute;"
+msgstr "Налаштування меню"
 
 #: ../themeoptions/options.php:1587
 msgid "Primary Menu Options"
-msgstr "Opciones men&iuacute; primario"
+msgstr "Опції основного меню"
 
 #: ../themeoptions/options.php:1592
 msgid "Primary Menu Font"
-msgstr "Fuente men&uacute; primario"
+msgstr "шрифт основного меню"
 
 #: ../themeoptions/options.php:1607
 msgid "Choose Size and Style for primary menu"
-msgstr "Elija estilo y tamaño para menú primario"
+msgstr "Виберіть розмір та стиль для основного меню"
 
 #: ../themeoptions/options.php:1618
 msgid "Secondary Menu Options"
-msgstr "Opciones men&uacute; secundario"
+msgstr "Опції додаткового меню"
 
 #: ../themeoptions/options.php:1623
 msgid "Secondary Menu Font"
-msgstr "Fuente men&uacute; secundario"
+msgstr "Шрифт додаткового меню"
 
 #: ../themeoptions/options.php:1638
 msgid "Choose Size and Style for secondary menu"
-msgstr "Elija estilo y tamaño para menú secundario"
+msgstr "Виберіть розмір та стиль для додаткового меню"
 
 #: ../themeoptions/options.php:1649
 msgid "Mobile Menu Options"
-msgstr "Opciones men&uacute; m&oacute;viles"
+msgstr "Опції мобільного меню"
 
 #: ../themeoptions/options.php:1654
 msgid "Mobile Menu Font"
-msgstr "Fuente men&uacute; m&oacute;viles"
+msgstr "Шрифт мобільного меню"
 
 #: ../themeoptions/options.php:1669
 msgid "Choose Size and Style for Mobile Menu"
-msgstr "Elija un tama&ntilde;o y estilo para men&uacute; m&oacute;viles"
+msgstr "Виберіть розмір та стиль для мобільного меню"
 
 #: ../themeoptions/options.php:1683 ../themeoptions/options.php:1684
 msgid "Misc Settings"
-msgstr "Ajustes Varios"
+msgstr "Різні налаштування"
 
 #: ../themeoptions/options.php:1691
 msgid "All Projects Portfolio Page"
-msgstr "Página donde se mostraran todos los proyectos de portfolio."
+msgstr "Всі проекти сторінки портфоліо"
 
 #: ../themeoptions/options.php:1692
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
-"Este valor define el enlace a la página elegida como principal del portfolio "
-"para acceder desde cada página del portfolio individual. * Nota: tiene que "
-"configurar la plantilla de página como Portfolio"
+"Визначає веб ланку на кожній сторінці портфоліо. Примітка: ви ще маєте "
+"встановити шаблону сторінки в портфоліо."
 
 #: ../themeoptions/options.php:1697
 msgid "Allow Comments on Portfolio Posts"
-msgstr "Permitir comentarios en publicaciones de portafolio"
+msgstr "Дозволити відгуки на записах портфоліо"
 
 #: ../themeoptions/options.php:1698
 msgid "Turn on to allow Comments on Portfolio posts"
-msgstr "Activar para permitir comentarios en publicaciones de portafolio"
+msgstr "Ввімкніть для дозволу відгуків на записах портфоліо"
 
 #: ../themeoptions/options.php:1704
 msgid "Hide Image Border"
-msgstr "Ocultar borde imagen"
+msgstr "Приховати рамку картинок"
 
 #: ../themeoptions/options.php:1705
 msgid "Choose to show or hide image border"
-msgstr "Elija mostrar u ocultar borde imagen"
+msgstr "Виберіть для показу чи приховування рамки картинки"
 
 #: ../themeoptions/options.php:1711
 msgid "Blog Archive"
-msgstr "Archivo Blog"
+msgstr "Архів блогу"
 
 #: ../themeoptions/options.php:1712
 msgid "Choose to show full post or post excerpt."
-msgstr "Elija para mostrar completo o extracto de la publicaci&oacute;n"
+msgstr "Виберіть для показу повного запису чи лише уривку."
 
 #: ../themeoptions/options.php:1720
 msgid "Show Comments Closed Text?"
-msgstr "¿Mostrar texto \"Comentarios cerrados\"?"
+msgstr "Показати текст закритих відгуків?"
 
 #: ../themeoptions/options.php:1721
 msgid "Choose to show or hide comments closed alert below posts."
-msgstr ""
-"Mostrar  u ocultar aviso comentarios cerrados, debajo de las publicaciones."
+msgstr "Виберіть для показу чи приховування закритих нище записів."
 
 #: ../themeoptions/options.php:1727
 msgid "Show Author Icon with posts?"
-msgstr "&iquest;Mostrar icono autor en publicaciones?"
+msgstr "Показувати іконку автора разом з записом?"
 
 #: ../themeoptions/options.php:1728
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
-"Elija para mostrar u ocultar icono de autor debajo del t&iacute;tulo de la "
-"publicaci&oacute;n"
+"Виберіть для показу чи приховування іконки автора під заголовком запису."
 
 #: ../themeoptions/options.php:1734
 msgid "Show Previous and Next posts links?"
-msgstr ""
+msgstr "Показувати веб ланки попередніх та наступних записів?"
 
 #: ../themeoptions/options.php:1735
-#, fuzzy
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
-"Elija para mostrar u ocultar icono de autor debajo del t&iacute;tulo de la "
-"publicaci&oacute;n"
+"Виберіть для показу чи приховування веб ланки попередніх та наступних "
+"записів в підвалі окремого запису."
 
 #: ../themeoptions/options.php:1742
 msgid "Custom Favicon"
-msgstr "Personalizar Favicon"
+msgstr "Змінити favicon"
 
 #: ../themeoptions/options.php:1743
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
-"Subir una imagen png/gif/ico de 16p x 16 px, para mostrar favicon del sitio "
-"web"
+"Завантажити картинку розміром 16 на 16 пікселів з розширенням png/gif/ico, "
+"для показу на сайті favicon."
 
 #: ../themeoptions/options.php:1748
 msgid "Contact Form Email"
-msgstr "Formulario correo electrónico de contacto"
+msgstr "Електронна адреса контактної форми"
 
 #: ../themeoptions/options.php:1749
 msgid "Sets the email for the contact page email form."
-msgstr ""
-"Establecer cuenta email para utilizar en formulario de la página de contacto"
+msgstr "Встановити електронну адресу для форми сторінки контактів."
 
 #: ../themeoptions/options.php:1755
 msgid "Footer Copyright Text"
-msgstr "Texto copyright pie de página"
+msgstr "Текст авторського права у підвалі"
 
 #: ../themeoptions/options.php:1756
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
-"Escriba aquí su propio texto como autor que aparecerá al pie de página. "
-"Puede utilizar los shortcodes: [copyright] [site-name] [the-year]"
+"Напишіть власний текст авторського права тут. Можете використати наступні "
+"короткі коди у вашому тексті підвалу: [copyright] [site-name] [the-year]"
 
 #: ../themeoptions/options.php:1762
 msgid "Blog Post Defaults"
-msgstr "Entradas de blog predeterminada"
+msgstr "Записи в блозі за замовчуванням"
 
 #: ../themeoptions/options.php:1767
 msgid "Blog Post Summary Default"
-msgstr "Resumen de entradas de blog por defecto"
+msgstr "Основний запис в блозі за замовчуванням"
 
 #: ../themeoptions/options.php:1775
-#, fuzzy
 msgid "Blog Post Head Content Default"
-msgstr "Entradas de blog predeterminada"
+msgstr "Вмісту шапки в записі блогу за замовчуванням"
 
 #: ../themeoptions/options.php:1783
 msgid "Create Sidebars"
-msgstr "Crear Barras Laterales"
+msgstr "Створити бокові колонки"
 
 #: ../themeoptions/options.php:1788
 msgid "Create Custom Sidebars"
-msgstr "Crear barras laterales personalizadas"
+msgstr "Створити власні бокові колонки"
 
 #: ../themeoptions/options.php:1789
 msgid "Type new sidebar name into textbox"
-msgstr "Escribar el nombre para la nueva barra lateral"
+msgstr "Напишіть назву нової бокової колонки в текстовому полі"
 
 #: ../themeoptions/options.php:1790
 msgid "Extra Sidebar"
-msgstr "Barra lateral extra"
+msgstr "Додаткові бокові колонки"
 
 #: ../themeoptions/options.php:1795
 msgid "Wordpress Galleries"
-msgstr "Galer&iacute;as WordPress"
+msgstr "Галерея Wordpress"
 
 #: ../themeoptions/options.php:1800
 msgid "Enable Virtue Galleries to override Wordpress"
-msgstr "Habilitar Galerías Virtue para anular las de Wordpress"
+msgstr "Ввімкнути перезапис галереї Wordpress галереєю теми Virtue"
 
 #: ../themeoptions/options.php:1801
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
-"Desactivar esto si se utiliza un plugin para personalizar galer6iacute;as, "
-"por ejemplo jetpack Galer&iacute;a."
+"Вимкніть, якщо використовуєте додаток для змін в галереї, наприклад jetpack "
+"tiled gallery."
 
 #: ../themeoptions/options.php:1809
 msgid "Advanced Settings"
-msgstr "Ajustes Avanzados"
+msgstr "Додаткові налаштування"
 
 #: ../themeoptions/options.php:1810
 msgid "Custom CSS Box"
-msgstr "Cuadro CSS personalizado"
+msgstr "Власний CSS"
 
 #: ../themeoptions/options.php:1815
 msgid "Custom CSS"
-msgstr "Personalizar CSS"
+msgstr "Власний файл CSS"
 
 #: ../themeoptions/options.php:1816
 msgid "Quickly add some CSS to your theme by adding it to this block."
-msgstr "Añadir algún CSS rápidamente a su tema agregándolo en este cuadro."
+msgstr "Щоб швидко додати каскадні стилі до теми - напишіть їх в даному блоці."
 
 #: ../themeoptions/options.php:1824
 msgid "Theme Update Import"
-msgstr "Actualizar Importaci&oacute;n Tema"
+msgstr "Імпорт оновлення теми"
 
 #: ../themeoptions/options.php:1825
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
-"Si la actualizaci&oacute;n es desde versi&oacute;n 1.5.6 o anterior utilizar "
-"este comando para actualizar tus opciones de tema."
+"Якщо оновлено з версії 1.5.6 чи ранішої, використовуйте даний скрипт для для "
+"оновлення опцій вашої теми."
 
 #: ../themeoptions/options.php:1830
 msgid "Turn on and save to start script"
-msgstr "Activar y guardar para iniciar la escritura"
+msgstr "Увімкніть та збережіть для запуску скрипту"
 
 #: ../themeoptions/options.php:1837
 msgid "If using a child theme enter child theme folder"
-msgstr "Si se utiliza un tema hijo ingrese carpeta del tema hijo"
+msgstr "Якщо використовується похідна тема - введіть назву її каталогу"
 
 #: ../themeoptions/options.php:1861 ../themeoptions/options.php:1862
 msgid "Theme Options"
-msgstr "Opciones del tema"
+msgstr "Опції теми"
 
 #: ../themeoptions/options.php:1869
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
-"Gracias por utilizar el tema Virtue de <a href=\"http://kadencethemes.com/\" "
-"target=\"_blank\">Kadence Themes</a>."
+"Спасибі, що користуєтеся темою Virtue від <a href=\"http://kadencethemes.com/"
+"\" target=\"_blank\">Kadence Themes</a>."
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:50
-#, fuzzy
 msgid "Icon"
-msgstr "A&ntilde;adir icono"
+msgstr "Іконка"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:55
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:53
-#, fuzzy, php-format
+#, php-format
 msgid "New %s"
-msgstr "Nuevo"
+msgstr "Нові %s"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:110
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:180
 msgid "Upload Icon"
-msgstr "Subir icono"
+msgstr "Завантажити іконку"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:121
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:187
 msgid "Select an Icon"
-msgstr "Seleccionar un icono"
+msgstr "Вибрати іконку"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:141
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:206
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:121
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:166
 msgid "URL"
-msgstr "URL"
+msgstr "Веб адреса"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:143
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:210
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:123
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:170
 msgid "Description"
-msgstr "Descripci&oacute;n"
+msgstr "Опис"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:144
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:212
 msgid "Icon Link"
-msgstr "Enlace icono"
+msgstr "Веб адреса іконки"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:148
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:217
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:128
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:177
 msgid "Open Link in New Tab/Window"
-msgstr "Abrir enlace en nueva pesta&ntilde;a/ventana"
+msgstr "Відкрити веб ланку в новому вікні чи в новій вкладці"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:158
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:226
 msgid "Delete Icon"
-msgstr "Borrar icono"
+msgstr "Видалити іконку"
 
 #: ../themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons.php:229
 msgid "Add Icon"
-msgstr "A&ntilde;adir icono"
+msgstr "Додати іконку"
 
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:48
-#, fuzzy
 msgid "Slide"
-msgstr "Añadir Slide"
+msgstr "Слайд"
 
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:124
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:172
 msgid "Slide Link"
-msgstr "Enlace Slider"
+msgstr "Веб ланка слайду"
 
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:137
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:185
 msgid "Delete Slide"
-msgstr "Borra slide"
+msgstr "Видалити слайд"
 
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:188
-#, fuzzy, php-format
+#, php-format
 msgid "Add %s"
-msgstr "Añadir Imágenes"
+msgstr "Додати %s"
 
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
 msgid "Back to"
-msgstr "Volver a"
+msgstr "Вернутися до"
 
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr "¡Oferta!"
+msgstr "Розпродаж!"
 
 #~ msgid "Shop"
-#~ msgstr "Tienda"
-
-#~ msgid "Virtue: About with Image"
-#~ msgstr "Virtue: Acerca de...con Imagen"
-
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Panel Opciones creado usando %1$s"
-
-#~ msgid "Redux Framework"
-#~ msgstr "Redux Framework"
-
-#~ msgid "Options"
-#~ msgstr "Opciones"
-
-#~ msgid ""
-#~ "You have changes that are not saved. Would you like to save them now?"
-#~ msgstr ""
-#~ "Usted tiene cambios sin guardar. ¿Le gustar&iacute;a salvarlos ahora?"
-
-#~ msgid "Are you sure? Resetting will lose all custom values."
-#~ msgstr ""
-#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-#~ "personalizados."
-
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-#~ "personalizados en esta secci&oacute;n."
-
-#~ msgid ""
-#~ "Your current options will be replaced with the values of this preset. "
-#~ "Would you like to proceed?"
-#~ msgstr ""
-#~ "Las opciones actuales ser&aacute;n reemplazadas por los valores de esta "
-#~ "preselecci&oacute;n. ¿Quiere continuar?"
-
-#, fuzzy
-#~ msgid "Please Wait"
-#~ msgstr "Por favor, inténtelo de nuevo"
-
-#~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
-#~ msgstr ""
-#~ "Advertencia: este panel de opciones no funcionar&aacute; correctamente "
-#~ "sin JavaScript."
-
-#~ msgid "Expand"
-#~ msgstr "Expandir"
-
-#~ msgid "Save Changes"
-#~ msgstr "Guardar cambios"
-
-#~ msgid "Reset Section"
-#~ msgstr "Resetear seleción"
-
-#~ msgid "Reset All"
-#~ msgstr "Resetar todo"
-
-#~ msgid "Working..."
-#~ msgstr "Trabajando..."
-
-#~ msgid "Settings Imported!"
-#~ msgstr "Configuraci&oacute;n importada!"
-
-#~ msgid "Settings Saved!"
-#~ msgstr "Configuraci&oacute;n guardada."
-
-#~ msgid "Settings have changed, you should save them!"
-#~ msgstr "La configuraci&oacute;n ha cambiado, debe guardala"
-
-#~ msgid "error(s) were found!"
-#~ msgstr "error(es) encontrado (s)"
-
-#~ msgid "warning(s) were found!"
-#~ msgstr "se encontraro advertencia (s)"
-
-#~ msgid "System Info"
-#~ msgstr "Informaci&oacute;n del sistema"
+#~ msgstr "Магазин"
 
 #~ msgid "%s review for %s"
 #~ msgid_plural "%s reviews for %s"
-#~ msgstr[0] "Opini&oacute;n para %s"
-#~ msgstr[1] "%s Opiniones para %s"
+#~ msgstr[0] "%s переляд для %s"
+#~ msgstr[1] "%s перелядів для %s"
 
 #~ msgid "Reviews"
-#~ msgstr "Opiniones"
+#~ msgstr "Перегляди"
 
 #~ msgid "There are no reviews yet."
-#~ msgstr "A&uacute;n no hay opiniones"
+#~ msgstr "Немає жодного перегляду"
 
 #~ msgid "Add a review"
-#~ msgstr "Añadir una opini&oacute;n"
+#~ msgstr "Додати перегляд"
 
 #~ msgid "Be the first to review"
-#~ msgstr "Sea el primero en opinar"
+#~ msgstr "Бути "
 
 #~ msgid "Email"
-#~ msgstr "Email"
+#~ msgstr "Електронна адреса"
 
 #~ msgid "Submit"
-#~ msgstr "Enviar "
+#~ msgstr "Надіслати"
 
 #~ msgid "Your Rating"
-#~ msgstr "Su calificaci&oacute;n"
+#~ msgstr "Ваш рейтинг"
 
 #~ msgid "Rate&hellip;"
-#~ msgstr "Cambio&hellip;"
+#~ msgstr "Оцінити&hellip;"
 
 #~ msgid "Perfect"
-#~ msgstr "Perfecto"
+#~ msgstr "Відмінно"
 
 #~ msgid "Good"
-#~ msgstr "Bueno"
+#~ msgstr "Добре"
 
 #~ msgid "Average"
-#~ msgstr "Medio"
+#~ msgstr "Середньо"
 
 #~ msgid "Not that bad"
-#~ msgstr "Regular"
+#~ msgstr "Непогано"
 
 #~ msgid "Very Poor"
-#~ msgstr "Malo"
+#~ msgstr "Дуже погано"
 
 #~ msgid "Your Review"
-#~ msgstr "Su opinión"
+#~ msgstr "Ваш відгук"
 
 #~ msgid ""
 #~ "Only logged in customers who have purchased this product may leave a "
 #~ "review."
 #~ msgstr ""
-#~ "S&oacute;lo los clientes que han comprado este producto, pueden dejar una "
-#~ "rese&ntilde;a."
+#~ "Лише зареєстровані клієнти, котрі купили даний продукт, можуть залишати "
+#~ "відгук"
+
+#~ msgid "Calculate Shipping"
+#~ msgstr "Порахувати доставку"
+
+#~ msgid "Select a country&hellip;"
+#~ msgstr "Вибрати країну&hellip;"
+
+#~ msgid "State / county"
+#~ msgstr "Область / регіон"
+
+#~ msgid "Select a state&hellip;"
+#~ msgstr "Виберіть регіон&hellip;"
+
+#~ msgid "City"
+#~ msgstr "Місто"
+
+#~ msgid "Postcode / Zip"
+#~ msgstr "Індекс / Поштовий код"
+
+#~ msgid "Update Totals"
+#~ msgstr "Оновити результати"
+
+#~ msgid "You may be interested in&hellip;"
+#~ msgstr "Вас може зацікавити&hellip;"
 
 #~ msgid "Cart Totals"
-#~ msgstr "Total Carro"
+#~ msgstr "Результати кошику"
 
 #~ msgid "Cart Subtotal"
-#~ msgstr "Subtotal Carro"
+#~ msgstr "Попередні результати кошику"
 
 #~ msgid "Order Total"
-#~ msgstr "Total Pedido"
+#~ msgstr "Все замовлення"
 
 #~ msgid " (taxes estimated for %s)"
-#~ msgstr " (impuestos para %s)"
+#~ msgstr "(оцінка податків для %s)"
 
 #~ msgid ""
 #~ "Note: Shipping and taxes are estimated%s and will be updated during "
 #~ "checkout based on your billing and shipping information."
 #~ msgstr ""
-#~ " Nota: Envío e impuestos son estimados %s y se actualizará durante la "
-#~ "comprobación de compra basada en la información de facturación y envío."
+#~ "Примітка: Доставка та податки розраховані%s та будуть оновлені під час "
+#~ "оформлення замовлення базуючись на ваших даних рахунку та доставки."
 
 #~ msgid "Product"
-#~ msgstr "Producto"
+#~ msgstr "Продукт"
 
 #~ msgid "Price"
-#~ msgstr "Precio"
+#~ msgstr "Ціна"
 
 #~ msgid "Quantity"
-#~ msgstr "Cantidad"
+#~ msgstr "Кількість"
 
 #~ msgid "Total"
-#~ msgstr "Total"
+#~ msgstr "Всього"
 
 #~ msgid "Remove this item"
-#~ msgstr "Quitar artículo"
+#~ msgstr "Видалити даний елемент"
 
 #~ msgid "Available on backorder"
-#~ msgstr "Disponible bajo pedido"
+#~ msgstr "Доступно на попередньому замовленні"
 
 #~ msgid "Coupon"
-#~ msgstr "Cupón"
+#~ msgstr "Купон"
 
 #~ msgid "Coupon code"
-#~ msgstr "Código del Cupón"
+#~ msgstr "Код купону"
 
 #~ msgid "Apply Coupon"
-#~ msgstr "Utilizar Cupón"
+#~ msgstr "Застосувати купон"
 
 #~ msgid "Update Cart"
-#~ msgstr "Actualizar carrito"
+#~ msgstr "Оновити кошик"
 
 #~ msgid "Proceed to Checkout"
-#~ msgstr "Pasar por caja &rarr;"
-
-#~ msgid "You may be interested in&hellip;"
-#~ msgstr "Puede que le interese in&hellip;"
-
-#~ msgid "Calculate Shipping"
-#~ msgstr "Calcular Envío"
-
-#~ msgid "Select a country&hellip;"
-#~ msgstr "Localidad &hellip;"
-
-#~ msgid "State / county"
-#~ msgstr "Pais / Localidad"
-
-#~ msgid "Select a state&hellip;"
-#~ msgstr "Pais&hellip;"
-
-#~ msgid "City"
-#~ msgstr "Ciudad"
-
-#~ msgid "Postcode / Zip"
-#~ msgstr "Código Postal"
-
-#~ msgid "Update Totals"
-#~ msgstr "Actualizar totales"
+#~ msgstr "Перейти до оформлення"
 
 #~ msgid "Default sorting"
-#~ msgstr "Orden por defecto"
+#~ msgstr "Стандартний порядок"
 
 #~ msgid "Sort by popularity"
-#~ msgstr "Ordenar por popularidad"
+#~ msgstr "Сортувати за популярністю"
 
 #~ msgid "Sort by average rating"
-#~ msgstr "Ordenar por calificación"
+#~ msgstr "Сортувати за середнім рейтингом"
 
 #~ msgid "Sort by newness"
-#~ msgstr "Ordenar por novedad"
+#~ msgstr "Сортувати за новизною"
 
 #~ msgid "Sort by price: low to high"
-#~ msgstr "Ordenar por precio: ascendente"
+#~ msgstr "Сортувати по ціні: від низької до високої"
 
 #~ msgid "Sort by price: high to low"
-#~ msgstr "Ordenar por precio: descendente"
+#~ msgstr "Сортувати по ціні: від високої до низької"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Рейтинг %d з 5"
+
+#~ msgid "out of 5"
+#~ msgstr "з 5"
+
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Ваш відгук чекає на підтвердження"
+
+#~ msgid "verified owner"
+#~ msgstr "перевірений власником"
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Рейтинг %s з 5"
+
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s огляд клієнтом"
+#~ msgstr[1] "%s оглядів клієнтом"
+
+#~ msgid "Choose an option"
+#~ msgstr "Вибір купону"
+
+#~ msgid "Clear selection"
+#~ msgstr "Очистити"
+
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "Даний продукт видалений і не доступний"
 
 #~ msgid ""
 #~ "To track your order please enter your Order ID in the box below and press "
 #~ "return. This was given to you on your receipt and in the confirmation "
 #~ "email you should have received."
 #~ msgstr ""
-#~ "Para rastrear su pedido, introduzca su ID de pedido en el cuadro de abajo "
-#~ "y presione retorno. Estos datos aparecen en el recibo y en el email de "
-#~ "confirmación que debe haber recibido."
+#~ "Щоб відстежити ваше замовлення будь ласка, введіть свій ідентифікатор "
+#~ "замовлення у полі нижче та натисніть повернення. Ідентифікатор був "
+#~ "надісланий Вам у квитанції та Ви мали отримати його в електронному "
+#~ "підтвердженні бронювання."
 
 #~ msgid "Order ID"
-#~ msgstr "ID Pedido"
+#~ msgstr "Order ID"
 
 #~ msgid "Found in your order confirmation email."
-#~ msgstr "Se encuentra en el correo electrónico de confirmación de pedido."
+#~ msgstr "Знайдено у вашій електронній пошті підтвердження замовлення."
 
 #~ msgid "Billing Email"
-#~ msgstr "Correo electrónico de facturación"
+#~ msgstr "Електронна адреса для розрахунку"
 
 #~ msgid "Email you used during checkout."
-#~ msgstr "Correo electrónico que utiliza durante la comprobación."
+#~ msgstr "Надіслати листа під час оплати."
 
 #~ msgid "Track"
-#~ msgstr "Rastrear"
+#~ msgstr "Слідкувати"
 
 #~ msgid "Order Details"
-#~ msgstr "Detalles Pedido"
+#~ msgstr "Деталі замовлення"
 
 #~ msgid "Download file%s"
-#~ msgstr "Descargas archivo%s"
+#~ msgstr "Завантажити файл%s"
 
 #~ msgid "Order Again"
-#~ msgstr "Pedir de nuevo"
+#~ msgstr "Замовити знову"
 
 #~ msgid "Customer details"
-#~ msgstr "Datos de cliente"
+#~ msgstr "Подробиці клієнта"
 
 #~ msgid "Billing Address"
-#~ msgstr "Dirección de Facturación"
+#~ msgstr "Адреса для розрахунку"
 
 #~ msgid "N/A"
-#~ msgstr "N/A"
+#~ msgstr "Недоступно"
 
 #~ msgid "Shipping Address"
-#~ msgstr "Dirección de Envío"
+#~ msgstr "Адреса відправлення"
 
-#~ msgid "Products tagged &ldquo;"
-#~ msgstr "Productos etiquetados como &ldquo;"
+#~ msgid "Options panel created using %1$s"
+#~ msgstr "Панель опцій створена за допомогою %1$s"
 
-#~ msgid "Search results for &ldquo;"
-#~ msgstr "Resultados búsqueda de &ldquo;"
+#~ msgid "Redux Framework"
+#~ msgstr "Redux Framework"
 
-#~ msgid "Error 404"
-#~ msgstr "Error 404"
+#~ msgid "Options"
+#~ msgstr "Опції"
 
-#~ msgid "Posts tagged &ldquo;"
-#~ msgstr "Publicaciones con etiqueta &ldquo;"
+#~ msgid ""
+#~ "You have changes that are not saved. Would you like to save them now?"
+#~ msgstr "У вас є не збережені зміни. Бажаєте зберегти їх зараз?"
 
-#~ msgid "Author:"
-#~ msgstr "Autor:"
+#~ msgid "Are you sure? Resetting will lose all custom values."
+#~ msgstr "Ви впевнені? Перезапуск призведе до втрати всіх вибраних значень."
 
-#~ msgid "Page"
-#~ msgstr "Página"
+#~ msgid "Are you sure? Resetting will lose all custom values in this section."
+#~ msgstr ""
+#~ "Ви впевнені? Перезапуск призведе до втрати всіх вибраних значень в даному "
+#~ "розіділі"
 
-#~ msgid "Username or email"
-#~ msgstr "Nombre usuario o dirección de correo"
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset. "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Ваші нинішні опції будуть  замінені значеннями цього набору. Бажаєте "
+#~ "продовжити?"
 
-#~ msgid "Password"
-#~ msgstr "Contraseña"
+#~ msgid "Please Wait"
+#~ msgstr "Зачекайте"
 
-#~ msgid "Login"
-#~ msgstr "Iniciar sesión"
+#~ msgid "Hints"
+#~ msgstr "Поради"
 
-#~ msgid "Lost Password?"
-#~ msgstr "¿Contraseña perdida?"
+#~ msgid "<p>"
+#~ msgstr "<p>"
 
-#~ msgid "Rated %s out of 5"
-#~ msgstr "Calificación %s sobre 5"
+#~ msgid ""
+#~ "Warning- This options panel will not work properly without javascript!"
+#~ msgstr ""
+#~ "Обрежно: дана панель опцій не буде правильно працювати без javascript!"
 
-#~ msgid "out of 5"
-#~ msgstr "sobre 5"
+#~ msgid "Expand"
+#~ msgstr "Розгорнути"
 
-#~ msgid "%s customer review"
-#~ msgid_plural "%s customer reviews"
-#~ msgstr[0] "%s evaluac&oacute;n del cliente"
-#~ msgstr[1] "%s evaluaciones de clientes"
+#~ msgid "Save Changes"
+#~ msgstr "Зберегти зміни"
 
-#~ msgid "Rated %d out of 5"
-#~ msgstr "Calificado %d sobre 5"
+#~ msgid "Reset Section"
+#~ msgstr "Скидання секції"
 
-#~ msgid "Your comment is awaiting approval"
-#~ msgstr "Comentario en espera de aprobación"
+#~ msgid "Reset All"
+#~ msgstr "Скинути все"
 
-#~ msgid "verified owner"
-#~ msgstr "Propietario verificado"
+#~ msgid "Working..."
+#~ msgstr "Працюємо..."
 
-#~ msgid "Choose an option"
-#~ msgstr "Elegir una opción"
+#~ msgid "Settings Imported!"
+#~ msgstr "Налаштування імпортовані!"
 
-#~ msgid "Clear selection"
-#~ msgstr "Borrar seleción"
+#~ msgid "All Defaults Restored!"
+#~ msgstr "Всі стандартні налаштування відновлено!"
 
-#~ msgid "This product is currently out of stock and unavailable."
-#~ msgstr "Producto actualmente agotado y no est&aacute; disponible"
+#~ msgid "Section Defaults Restored!"
+#~ msgstr "Розділ стандартних налаштувань відновлено!"
 
-#, fuzzy
+#~ msgid "Settings Saved!"
+#~ msgstr "Налаштування збережено!"
+
+#~ msgid "Settings have changed, you should save them!"
+#~ msgstr "Налаштування вибрані, потрібно зберегти їх!"
+
+#~ msgid "error(s) were found!"
+#~ msgstr "виявлені помилки!"
+
+#~ msgid "warning(s) were found!"
+#~ msgstr "виявлені попередження!"
+
+#~ msgid "System Info"
+#~ msgstr "Інформація про систему"
+
 #~ msgid ""
 #~ "You have changes that are not saved.  Would you like to save them now?"
-#~ msgstr ""
-#~ "Usted tiene cambios sin guardar. ¿Le gustar&iacute;a salvarlos ahora?"
+#~ msgstr "Ваші зміни не збережені. Бажаєте зберегти їх зараз?"
 
-#, fuzzy
 #~ msgid "Are you sure?  Resetting will lose all custom values."
-#~ msgstr ""
-#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-#~ "personalizados."
+#~ msgstr "Ви впевнені? Скидання призведе до втрати вибраних значень."
 
-#, fuzzy
 #~ msgid ""
 #~ "Your current options will be replaced with the values of this preset.  "
 #~ "Would you like to proceed?"
 #~ msgstr ""
-#~ "Las opciones actuales ser&aacute;n reemplazadas por los valores de esta "
-#~ "preselecci&oacute;n. ¿Quiere continuar?"
+#~ "Ваші нинішні опції будуть замінені вибраними значеннями. Бажаєте "
+#~ "продовжити?"
 
-#~ msgid ""
-#~ "Unfortunately your order cannot be processed as the originating bank/"
-#~ "merchant has declined your transaction."
-#~ msgstr ""
-#~ "Desafortunadamente su orden no puede ser procesada el  banco origen ha "
-#~ "denegado su transacción."
-
-#~ msgid "Please attempt your purchase again or go to your account page."
-#~ msgstr "Por favor, intente otra vez su compra o vaya a página de su cuenta."
-
-#~ msgid "Please attempt your purchase again."
-#~ msgstr "Por favor, intente su compra otra vez."
-
-#~ msgid "Pay"
-#~ msgstr "Pago"
-
-#~ msgid "Thank you. Your order has been received."
-#~ msgstr "Gracias. Su pedido ha sido recibido."
-
-#~ msgid "Order:"
-#~ msgstr "Pedido:"
-
-#~ msgid "Date:"
-#~ msgstr "Fecha:"
-
-#~ msgid "Total:"
-#~ msgstr "Total:"
-
-#~ msgid "Payment method:"
-#~ msgstr "Método de Pago:"
-
-#~ msgid "No products found which match your selection."
-#~ msgstr "No se han encontrado productos que se ajusten a su selección."
-
-#~ msgid "Showing the single result"
-#~ msgstr "Mostrar resultado individual"
-
-#~ msgid "Showing all %d results"
-#~ msgstr "Mostrar todos los resultados de %d"
-
-#~ msgid "Additional Information"
-#~ msgstr "Información Adicional"
-
-#~ msgid "Product Description"
-#~ msgstr "Descripción artículo"
-
-#~ msgid "Select an Option"
-#~ msgstr "Selecionar una  Opci&oacute;n"
-
-#~ msgid "Import / Export"
-#~ msgstr "Importar / Exportar"
-
-#~ msgid "Options Object"
-#~ msgstr "Opciones Objeto"
+#~ msgid "Dismiss"
+#~ msgstr "Пропустити"
 
 #~ msgid "Import / Export Options"
-#~ msgstr "Importar / Exportar opciones"
+#~ msgstr "Імпорт / експорт опцій"
 
 #~ msgid "Import Options"
-#~ msgstr "Importar opciones"
+#~ msgstr "Імпорт опцій"
 
 #~ msgid "Import from file"
-#~ msgstr "Importar desde archivo"
+#~ msgstr "Імпортувати з файлу"
 
 #~ msgid "Import from URL"
-#~ msgstr "Importar desde URL"
+#~ msgstr "Імпортувати з веб адреси"
 
 #~ msgid ""
 #~ "Input your backup file below and hit Import to restore your sites options "
 #~ "from a backup."
 #~ msgstr ""
-#~ "Introduzca su archivo de copia de seguridad debajo y pulse Importar para "
-#~ "restaurar las opciones del sitio desde una copia de seguridad."
+#~ "Введіть ваш файл резервної копії нижче та почніть імпортування для "
+#~ "відновлення опцій сайту з резервної копії."
 
 #~ msgid ""
 #~ "Input the URL to another sites options set and hit Import to load the "
 #~ "options from that site."
 #~ msgstr ""
-#~ "Introduzca la URL del conjunto de opciones de otro sitio y pulse Importar "
-#~ "para cargar las opciones de dicho sitio."
+#~ "Введіть веб адресу інших опцій сайту та почніть імпортування для "
+#~ "завантаження опцій з того сайту."
 
 #~ msgid "Import"
-#~ msgstr "Importar"
+#~ msgstr "Імпортувати"
 
 #~ msgid ""
 #~ "WARNING! This will overwrite all existing option values, please proceed "
 #~ "with caution!"
-#~ msgstr ""
-#~ "¡ ADVERTENCIA! Esto sobrescribir%aacute; las opciones existentes valores, "
-#~ "proceda con precauci&oacute;n."
+#~ msgstr "ОБЕРЕЖНО! Це призведе до перезапису всих опцій, будьте обережними!"
 
 #~ msgid "Export Options"
-#~ msgstr "Exportar opciones"
+#~ msgstr "Експортувати опції"
 
 #~ msgid ""
 #~ "Here you can copy/download your current option settings. Keep this safe "
 #~ "as you can use it as a backup should anything go wrong, or you can use it "
 #~ "to restore your settings on this site (or any other site)."
 #~ msgstr ""
-#~ "Aqu&iacute; puede copiar / descargar sus ajustes de opciones. Mantenga "
-#~ "esto seguro, ya que se puede utilizar como una copia de seguridad si algo "
-#~ "va mal, o puede utilizarlo para restaurar la configuraci&oacute;n en este "
-#~ "sitio (o cualquier otro sitio)."
+#~ "Тут Ви можете скопіювати чи завантажити поточні налаштування. Збережіть "
+#~ "їх і зможете використати налаштування для відновлення при проблемах, або "
+#~ "можете використати для відновлення налаштувань на даному сайті (чи на "
+#~ "інших сайтах) "
 
 #~ msgid "Copy"
-#~ msgstr "Copiar"
+#~ msgstr "Копіювати"
 
 #~ msgid "Copy Link"
-#~ msgstr "Copiar enlace"
+#~ msgstr "Веб ланка копіювання"
 
-#~ msgid "Show Object in Javascript Console Object"
-#~ msgstr "Mostrar objeto en consola Javascript "
-
-#~ msgid "Enter a valid email address."
-#~ msgstr "Introduzca una direcci&oacute;n email v&aacute;lida"
-
-#~ msgid "Help improve Our Panel"
-#~ msgstr "Ayude a mejorar Nuestro Panel"
-
-#~ msgid ""
-#~ "Please helps us improve our panel by allowing us to gather anonymous "
-#~ "usage stats so we know which configurations, plugins and themes to test "
-#~ "with."
-#~ msgstr ""
-#~ "Por favor, nos ay&uacute;denos  a mejorar nuestro panel al permitirnos "
-#~ "recopilar estad&iacute;sticas de uso  de forma an&oacute;nima, as&iacute; "
-#~ "sabremos que configuraciones, plugins y temas a probar."
-
-#~ msgid "Allow tracking"
-#~ msgstr "Permitir el seguimiento"
-
-#~ msgid "Do not allow tracking"
-#~ msgstr "No permitir seguimiento"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparente"
-
-#~ msgid "Background Repeat"
-#~ msgstr "Repetir fondo"
-
-#~ msgid "Background Clip"
-#~ msgstr "Clip Fondo"
-
-#~ msgid "Background Origin"
-#~ msgstr "Origen del fondo"
-
-#~ msgid "Background Size"
-#~ msgstr "Tama&ntilde;o fondo"
-
-#~ msgid "Background Attachment"
-#~ msgstr "Fijaci&oacute;n Fondo"
-
-#~ msgid "Background Position"
-#~ msgstr "Posici&oacute:n fondo"
-
-#~ msgid "No media selected"
-#~ msgstr "No hay medios seleccionados"
-
-#~ msgid "Top"
-#~ msgstr "Superior"
-
-#~ msgid "Bottom"
-#~ msgstr "Inferior"
-
-#~ msgid "Left"
-#~ msgstr "Izquierda"
-
-#~ msgid "Border style"
-#~ msgstr "Estilo del borde"
-
-#~ msgid "To "
-#~ msgstr "A"
-
-#~ msgid "Width"
-#~ msgstr "Ancho"
-
-#~ msgid "height"
-#~ msgstr "Altura"
-
-#~ msgid "Units"
-#~ msgstr "Unidades"
-
-#~ msgid "Add/Edit Gallery"
-#~ msgstr "A&ntilde;adir/Editar galer&iacute;a"
-
-#~ msgid "Clear Gallery"
-#~ msgstr "Limpiar Galerí¡&iacute;a"
-
-#~ msgid "New"
-#~ msgstr "Nuevo"
-
-#~ msgid "Delete"
-#~ msgstr "Borrar"
-
-#~ msgid "Add"
-#~ msgstr "A&ntilde;adir"
-
-#~ msgid "Regular"
-#~ msgstr "Regular"
-
-#~ msgid "Hover"
-#~ msgstr "Sobre (hover)"
-
-#~ msgid "Visited"
-#~ msgstr "Visitado"
-
-#~ msgid "Active"
-#~ msgstr "Activo"
-
-#~ msgid "Add More"
-#~ msgstr "A&ntilde;adir m&aacute;s"
-
-#~ msgid "Username"
-#~ msgstr "Nombre Usuario"
-
-#~ msgid "Select an item"
-#~ msgstr "Seleccionar un elemento"
-
-#~ msgid "No items of this type were found."
-#~ msgstr "No se encontraron elementos de este tipo."
-
-#~ msgid "Font family"
-#~ msgstr "Familia fuente"
-
-#~ msgid "Standard Fonts"
-#~ msgstr "Fuente Est&aacute;ndar"
-
-#~ msgid "Font style"
-#~ msgstr "Estilo fuente"
-
-#~ msgid "Style"
-#~ msgstr "Estilo"
-
-#~ msgid "Font subsets"
-#~ msgstr "Subconjuntos de fuentes"
-
-#~ msgid "Subsets"
-#~ msgstr "Subgrupo"
-
-#~ msgid "Font script"
-#~ msgstr "Script Fuentes"
-
-#~ msgid "Size"
-#~ msgstr "Tama&ntilde;o"
-
-#~ msgid "Height"
-#~ msgstr "Altura"
-
-#~ msgid "Word Spacing"
-#~ msgstr "Espacio entre palabras"
-
-#~ msgid "Letter Spacing"
-#~ msgstr "Espacio entre l&iacute;neas"
-
-#~ msgid "Backup Font Family"
-#~ msgstr "Copia seguridad familia fuente"
-
-#~ msgid "Font color"
-#~ msgstr "Color fuente"
-
-#~ msgid "Google Webfonts"
-#~ msgstr "Google Webfonts"
-
-#~ msgid "This field must be a valid color value."
-#~ msgstr "Este campo debe tener un valor de color v&aacute;lido."
-
-#~ msgid ""
-#~ "You must provide a comma separated list of numerical values for this "
-#~ "option."
-#~ msgstr ""
-#~ "Debe proporcionar una lista separada por comas de los valores num&eacute;"
-#~ "ricos para esta opci&oacute;n."
-
-#~ msgid "This field must be a valid date."
-#~ msgstr "Este campo debe ser una fecha v&aaute;lida."
+#~ msgid "Import / Export"
+#~ msgstr "Імпорт / Еспорт"
 
 #~ msgid "You must provide a valid email for this option."
-#~ msgstr ""
-#~ "Usted debe proporcionar una direcci&oacute;n de correo electrónico válida "
-#~ "para esta opci&oacute;n"
+#~ msgstr "Повинна бути правильна електронна адреса для даної опції."
 
-#~ msgid ""
-#~ "You must not enter any HTML in this field, all HTML tags have been "
-#~ "removed."
-#~ msgstr ""
-#~ "No debe introducir  HTML en este campo, se han eliminado todas las "
-#~ "etiquetas HTML"
+#~ msgid "This field must be a valid color value."
+#~ msgstr "Дане поле повинно мати допустимий колір."
+
+#~ msgid "You must provide a numerical value for this option."
+#~ msgstr "Повинна бути правильне число для даних опцій."
 
 #~ msgid ""
 #~ "You must not enter any special characters in this field, all special "
 #~ "characters have been removed."
 #~ msgstr ""
-#~ "No debe introducir caracteres especiales en este campo, se han quitado "
-#~ "todos los caracteres especiales."
+#~ "Спеціальні символи заборонені  для даних полів, всі вони будуть видалені."
 
-#~ msgid "You must provide a numerical value for this option."
-#~ msgstr "Debe proporcionar un valor num&eacute;rico de esta opci&oacute;n."
+#~ msgid "This field must be a valid date."
+#~ msgstr "Поле повинно мати правильну дату."
+
+#~ msgid ""
+#~ "You must provide a comma separated list of numerical values for this "
+#~ "option."
+#~ msgstr "Використовуйте кому для розділення списку чисел для даної опції."
+
+#~ msgid "This field cannot be empty. Please provide a value."
+#~ msgstr " Порожнє поле не допускається. Будь ласка, вкажіть значення."
 
 #~ msgid "You must provide a valid URL for this option."
-#~ msgstr "Debe proporcionar una dirección URL válida para esta opci&oacute;n"
-
-#~ msgid "SKU:"
-#~ msgstr "Ref.:"
-
-#~ msgid "Category:"
-#~ msgid_plural "Categories:"
-#~ msgstr[0] "Categor&iacute;a"
-#~ msgstr[1] "Categor&iacute:as"
-
-#~ msgid "Tag:"
-#~ msgid_plural "Tags:"
-#~ msgstr[0] "Etiqueta:"
-#~ msgstr[1] "Etiquetas:"
-
-#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> Anteriores"
-
-#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Siguientes <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "Add Your Review"
-#~ msgstr "Añada su opinion"
+#~ msgstr "Веб адреса повинна бути правильною для даної опції."
 
 #~ msgid ""
-#~ "There are no reviews yet, would you like to <a data-toggle=\"collapse\" "
-#~ "data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-#~ "show_review_form\">submit yours</a>?"
-#~ msgstr ""
-#~ "No hay comentarios aún, ¿le gustaría <a data-toggle=\"collapse\" data-"
-#~ "parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-#~ "show_review_form\">enviar el suyo</a>?"
-
-#~ msgid "Cart Discount"
-#~ msgstr "Descuento "
-
-#~ msgid "[Remove]"
-#~ msgstr "[Eliminar]"
-
-#~ msgid "Shipping"
-#~ msgstr "Envío"
-
-#~ msgid "Order Discount"
-#~ msgstr "Descuento Pedido"
-
-#~ msgid "(Includes %s)"
-#~ msgstr "(Incluye %s)"
-
-#~ msgid ""
-#~ "No shipping methods were found; please recalculate your shipping and "
-#~ "enter your state/county and zip/postcode to ensure there are no other "
-#~ "available methods for your location."
-#~ msgstr ""
-#~ "No se encontraron métodos de envío; por favor para recalcular su envío  "
-#~ "introduzca su pais/localidad y código postal para asegurar que no existen "
-#~ "otros métodos envío para su ubicación."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available shipping methods for your "
-#~ "location (%s)."
-#~ msgstr ""
-#~ "Lo sentimos, parece que hay no hay métodos de envío disponibles para su "
-#~ "ubicación (%s)."
+#~ "You must not enter any HTML in this field, all HTML tags have been "
+#~ "removed."
+#~ msgstr "Не варто писати HTML код в даному полі, всі теги будуть видалені."
 
-#~ msgid ""
-#~ "If you require assistance or wish to make alternate arrangements please "
-#~ "contact us."
-#~ msgstr ""
-#~ "Si necesita ayuda o desea otro tipo envío,  póngase en contacto con "
-#~ "nosotros."
+#~ msgid "Select an item"
+#~ msgstr "Вибрати елемент"
 
-#~ msgid "You must be logged in to checkout."
-#~ msgstr "Debe estar conectado a Caja"
+#~ msgid "No items of this type were found."
+#~ msgstr "Жодного елементу даного типу не знайдено."
 
-#~ msgid "Your order"
-#~ msgstr "Su Pedido"
+#~ msgid "Font Family"
+#~ msgstr "Родина шрифту"
 
-#~ msgid "Have a coupon?"
-#~ msgstr "¿Tiene un cupón?"
+#~ msgid "Font family"
+#~ msgstr "Родина шрифту"
 
-#~ msgid "Click here to enter your code"
-#~ msgstr "Pulse aquí para introducir su código"
+#~ msgid "Backup Font Family"
+#~ msgstr "Резервне копіювання родини шрифту"
 
-#~ msgid "Read More"
-#~ msgstr "Leer más"
+#~ msgid "Font style"
+#~ msgstr "Стиль шрифту"
 
-#~ msgid "View options"
-#~ msgstr "Ver Opciones"
+#~ msgid "Font Weight &amp; Style"
+#~ msgstr "Розміри та стиль шрифту"
 
-#~ msgid "Add to cart"
-#~ msgstr "Añadir a carrito"
+#~ msgid "Style"
+#~ msgstr "Стиль"
 
-#~ msgid "New password"
-#~ msgstr "Nueva contraseña"
+#~ msgid "Font subsets"
+#~ msgstr "Підмножини шрифтів"
 
-#~ msgid "Re-enter new password"
-#~ msgstr "Confirmar nueva contraseña"
+#~ msgid "Font Subsets"
+#~ msgstr "Підмножини шрифтів"
 
-#~ msgid "Save Address"
-#~ msgstr "Guardar dirección"
+#~ msgid "Subsets"
+#~ msgstr "Підмножини"
 
-#~ msgid "Register"
-#~ msgstr "Registro"
+#~ msgid "Font script"
+#~ msgstr "Скрипт шрифту"
 
-#~ msgid "Re-enter password"
-#~ msgstr "Confirmar contraseña"
+#~ msgid "Text Align"
+#~ msgstr "Вирівнювання тексту"
 
-#~ msgid ""
-#~ "Lost your password? Please enter your username or email address. You will "
-#~ "receive a link to create a new password via email."
-#~ msgstr ""
-#~ "¿Perdió su contraseña? Introduzca su nombre de usuario o dirección de "
-#~ "email. Recibirá por correo electrónico un enlace para crear una nueva "
-#~ "contraseña."
+#~ msgid "Text Transform"
+#~ msgstr "Перетворення тексту"
 
-#~ msgid "Enter a new password below."
-#~ msgstr "Introduzca abajo una nueva contraseña. "
+#~ msgid "Font Variant"
+#~ msgstr "Варіанти шрифту"
 
-#~ msgid "Reset Password"
-#~ msgstr "Restablecer contraseña"
+#~ msgid "Text Decoration"
+#~ msgstr "Оформлення тексту"
 
-#~ msgid ""
-#~ "Hello, <strong>%s</strong>. From your account dashboard you can view your "
-#~ "recent orders, manage your shipping and billing addresses and <a href=\"%s"
-#~ "\">change your password</a>."
-#~ msgstr ""
-#~ "Hola, <strong>%s</strong>. Desde el panel de control de su cuenta, puede "
-#~ "ver sus pedidos recientes, gestionar su envío,  las direcciones de "
-#~ "facturación y <a href=\"%s\">cambiar su contraseña</a>."
+#~ msgid "Font Size"
+#~ msgstr "Розмір шрифту"
 
-#~ msgid "My Addresses"
-#~ msgstr "Mis Direcciones"
+#~ msgid "Size"
+#~ msgstr "Розмір"
 
-#~ msgid "My Address"
-#~ msgstr "Mi Dirección"
+#~ msgid "Line Height"
+#~ msgstr "Висота рядку"
 
-#~ msgid ""
-#~ "The following addresses will be used on the checkout page by default."
-#~ msgstr ""
-#~ "Por defecto, se utilizarán las siguientes direcciones en la página de "
-#~ "pago."
+#~ msgid "Height"
+#~ msgstr "Висота"
 
-#~ msgid "Edit"
-#~ msgstr "Editar"
+#~ msgid "Word Spacing"
+#~ msgstr "Відступ слів"
 
-#~ msgid "You have not set up this type of address yet."
-#~ msgstr "Aún no ha configurado esta dirección"
+#~ msgid "Letter Spacing"
+#~ msgstr "Відступ літер"
 
-#~ msgid "Available downloads"
-#~ msgstr "Descargas disponibles"
+#~ msgid "Font Color"
+#~ msgstr "Колір шрифту"
 
-#~ msgid "Recent Orders"
-#~ msgstr "Pedidos recientes"
+#~ msgid "Font color"
+#~ msgstr "Колір шрифту"
 
-#~ msgid "Order"
-#~ msgstr "Pedido"
+#~ msgid "Standard Fonts"
+#~ msgstr "Стандартні шрифти"
 
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
+#~ msgid "Google Webfonts"
+#~ msgstr "Шрифти Гугла"
 
-#~ msgid "View"
-#~ msgstr "Ver"
+#~ msgid "Transparent"
+#~ msgstr "Прозорий"
 
-#~ msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
-#~ msgstr "Pedido %s realizado el %s  su estado es &ldquo;%s&rdquo;"
+#~ msgid "On"
+#~ msgstr "Ввімкнено"
 
-#~ msgid "ago"
-#~ msgstr "hace"
+#~ msgid "Off"
+#~ msgstr "Вимкнено"
 
-#~ msgid "and was completed"
-#~ msgstr "y se completó"
+#~ msgid "No media selected"
+#~ msgstr "Жодного медіа файлу не вибрано"
 
-#~ msgid " ago"
-#~ msgstr "hace"
+#~ msgid "Background Repeat"
+#~ msgstr "Повторення фону"
 
-#~ msgid "Order Updates"
-#~ msgstr "Actualizaciones Pedido"
+#~ msgid "Background Clip"
+#~ msgstr "Обрізання фону"
 
-#~ msgid "Weight"
-#~ msgstr "Peso"
+#~ msgid "Background Origin"
+#~ msgstr "Початковий фон"
 
-#~ msgid "Dimensions"
-#~ msgstr "Dimensiones"
+#~ msgid "Background Size"
+#~ msgstr "Розмір фону"
 
-#~ msgid "Related Products"
-#~ msgstr "Articulos relacionados"
+#~ msgid "Background Attachment"
+#~ msgstr "Додаток фону"
 
-#~ msgid "You may also like&hellip;"
-#~ msgstr "Quizás también le guste&hellip;"
+#~ msgid "Background Position"
+#~ msgstr "Позиція фону"
 
-#~ msgid "Last Backup : "
-#~ msgstr "Última copia de seguridad: &nbsp;"
-
-#~ msgid "Options Updated"
-#~ msgstr "Opciones de actualización"
-
-#~ msgid "Error!"
-#~ msgstr "¡Error!"
-
-#~ msgid "Previously Uploaded"
-#~ msgstr "Subida anteriormente"
-
-#~ msgid "Select a page:"
-#~ msgstr "Seleccione una p&aacute;gina:"
-
-#~ msgid "This font will apply to your sitename if you don't upload a logo."
-#~ msgstr ""
-#~ "Tipo de letra que se usar&aacute; si no sube ninguna imagen de logotipo"
-
-#~ msgid "Sitename Style"
-#~ msgstr "Estilo para nombre del sitio"
-
-#~ msgid "This font will apply to your site tagline"
-#~ msgstr "Este tipo de letra se aplicar&aacute; en el lema"
-
-#~ msgid "Site Tagline Style"
-#~ msgstr "Estilo para lema del sitio"
-
-#~ msgid "Mobile Slider Images"
-#~ msgstr "Imágenes para slider para móvil"
-
-#~ msgid "Slider Height"
-#~ msgstr "Altura de slider"
-
-#~ msgid "Mobile Video Embed Code"
-#~ msgstr "Incrustrar código de video para móviles"
-
-#~ msgid "Home Porfolio Settings"
-#~ msgstr "Ajustes de Portfolio en Página Inicio"
-
-#~ msgid "Featured Content Background"
-#~ msgstr "Fondo contenido destacado"
-
-#~ msgid "Feature Background"
-#~ msgstr "Características fondo"
-
-#~ msgid "This font will apply to all header tags"
-#~ msgstr "Esta fuente se aplicará a todas las etiquetas de cabecera"
-
-#~ msgid "This font will apply to all body text"
-#~ msgstr "Fuente que se aplicará a todo el texto de body"
-
-#~ msgid "This font will apply to all page menus"
-#~ msgstr "Fuente que se aplicará a todos los menús de página"
-
-#~ msgid "Backup Options"
-#~ msgstr "Opciones Backup"
-
-#~ msgid "Backup and Restore Options"
-#~ msgstr "Opciones Copia Seguridad y Restauración"
-
-#~ msgid ""
-#~ "You can use the two buttons below to backup your current options, and "
-#~ "then restore it back at a later time. This is useful if you want to "
-#~ "experiment on the options but would like to keep the old settings in case "
-#~ "you need it back."
-#~ msgstr ""
-#~ "Puede realizar una copia de seguridad y luego restaurarla en un momento "
-#~ "posterior utilizando los botones de abajo. Esto es útil si quiere "
-#~ "experimentar con las opciones pero desea mantener la configuración "
-#~ "antigua en caso de que necesite volver."
-
-#~ msgid "menu"
-#~ msgstr "menú"
-
-#~ msgid "Your cart is currently empty."
-#~ msgstr "Su carrito está vacío."
-
-#~ msgid "&larr; Return To Shop"
-#~ msgstr "&larr; Volver a laTienda"
-
-#~ msgid "No products in the cart."
-#~ msgstr "No hay articulos en el carrito."
-
-#~ msgid "Subtotal"
-#~ msgstr "Subtotal"
-
-#~ msgid "View Cart &rarr;"
-#~ msgstr "Ver Carrito &rarr;"
-
-#~ msgid "Checkout &rarr;"
-#~ msgstr "Caja &rarr;"
-
-#~ msgid "Free"
-#~ msgstr "Gratis"
-
-#~ msgid "Please fill in your details to see available shipping methods."
-#~ msgstr ""
-#~ "Por favor, rellene sus datos para ver los métodos de envío disponibles."
-
-#~ msgid ""
-#~ "There are some issues with the items in your cart (shown above). Please "
-#~ "go back to the cart page and resolve these issues before checking out."
-#~ msgstr ""
-#~ "Hay algunos problemas con los artículos en su carrito (mostrado arriba). "
-#~ "Por favor, vuelva a la página del carrito y resuelva estos problemas "
-#~ "antes de salir."
-
-#~ msgid "&larr; Return To Cart"
-#~ msgstr "&larr; Volver a Carro"
-
-#~ msgid "Billing &amp; Shipping"
-#~ msgstr "Factura &amp; Envío"
-
-#~ msgid "Create an account?"
-#~ msgstr "¿Crear una cuenta?"
-
-#~ msgid ""
-#~ "Create an account by entering the information below. If you are a "
-#~ "returning customer please login at the top of the page."
-#~ msgstr ""
-#~ "Cree una cuenta introduciendo la siguiente información. Si usted ya es "
-#~ "cliente, por favor ingrese en la parte superior de la página."
-
-#~ msgid "Returning customer?"
-#~ msgstr "¿Cliente Registrado?"
-
-#~ msgid "Click here to login"
-#~ msgstr "Iniciar Sesión"
-
-#~ msgid ""
-#~ "If you have shopped with us before, please enter your details in the "
-#~ "boxes below. If you are a new customer please proceed to the Billing "
-#~ "&amp; Shipping section."
-#~ msgstr ""
-#~ "Si usted ha comprado con nosotros, por favor, introduzca sus datos  "
-#~ "abajo. Si usted es un cliente nuevo por favor proceda a la facturación "
-
-#~ msgid "Qty"
-#~ msgstr "Cantidad"
-
-#~ msgid "Totals"
-#~ msgstr "Totales"
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "location. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "Lo sentimos, parece que no hay ningún método de pago disponibles para su "
-#~ "ubicación. Póngase en contacto con nosotros si necesita ayuda o desea un "
-#~ "método de pago alternativo."
-
-#~ msgid "Pay for order"
-#~ msgstr "Pagar por pedido"
-
-#~ msgid "Ship to billing address?"
-#~ msgstr "¿Enviar a la dirección de facturación?"
-
-#~ msgid "Please fill in your details above to see available payment methods."
-#~ msgstr ""
-#~ "Por favor, rellene sus datos de arriba para ver métodos de pago "
-#~ "disponibles."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "state. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "    Lo sentimos, parece que no hay ningún método de pago disponibles para "
-#~ "su ubicación. Póngase en contacto con nosotros si necesita ayuda o desea "
-#~ "hacer un pago alternativo."
-
-#~ msgid ""
-#~ "Since your browser does not support JavaScript, or it is disabled, please "
-#~ "ensure you click the <em>Update Totals</em> button before placing your "
-#~ "order. You may be charged more than the amount stated above if you fail "
-#~ "to do so."
-#~ msgstr ""
-#~ "Su navegador no soporta JavaScript o está desactivado, por favor "
-#~ "asegúrese de pulsar el botón de Actualización Totales antes de realizar "
-#~ "su pedido. Se puede cobrar más que el monto indicado arriba, si no lo "
-#~ "hace así."
-
-#~ msgid "Update totals"
-#~ msgstr "Actualizar totales"
-
-#~ msgid "Place order"
-#~ msgstr "Lugar pedido"
-
-#~ msgid "I have read and accept the"
-#~ msgstr "He leído y acepto la"
-
-#~ msgid "terms &amp; conditions"
-#~ msgstr "Términos &amp; Condiciones"
-
-#~ msgid "You have received an order from %s. Their order is as follows:"
-#~ msgstr " Usted ha recibido una orden de %s. Su pedido es como sigue:"
-
-#~ msgid "Order: %s"
-#~ msgstr "Pedido: %s"
-
-#~ msgid "Tel:"
-#~ msgstr "Tel:"
-
-#~ msgid ""
-#~ "Hi there. Your recent order on %s has been completed. Your order details "
-#~ "are shown below for your reference:"
-#~ msgstr ""
-#~ "Hola. Su pedido de %s se ha completado. A continuación se muestran los "
-#~ "detalles de la orden para su referencia:"
-
-#~ msgid ""
-#~ "An order has been created for you on %s. To pay for this order please use "
-#~ "the following link: %s"
-#~ msgstr ""
-#~ "Ha realizado un pedido en %s. Para pagar por esta orden, por favor "
-#~ "utilice el siguiente enlace: %s"
-
-#~ msgid "pay"
-#~ msgstr "pago"
-
-#~ msgid ""
-#~ "Thanks for creating an account on %s. Your username is <strong>%s</"
-#~ "strong>."
-#~ msgstr "Gracias por crear una cuenta en %s. Su nombre de usuario es %s."
-
-#~ msgid "You can access your account area here: %s."
-#~ msgstr "Acceda a su cuenta aquí: %s."
-
-#~ msgid "Hello, a note has just been added to your order:"
-#~ msgstr "Hola, se ha añadido una nota a su pedido:"
-
-#~ msgid "For your reference, your order details are shown below."
-#~ msgstr " Para su control, abajo se muestran los detalles del pedido."
-
-#~ msgid ""
-#~ "Your order has been received and is now being processed. Your order "
-#~ "details are shown below for your reference:"
-#~ msgstr ""
-#~ "Su solicitud ha sido recibida y ahora está siendo procesada. A "
-#~ "continuación se muestran los detalles del pedido  para su referencia:"
-
-#~ msgid ""
-#~ "Someone requested that the password be reset for the following account:"
-#~ msgstr ""
-#~ "Alguien pidió que restablecer la contraseña para la cuenta siguiente:"
-
-#~ msgid "Username: %s"
-#~ msgstr "Usuario: %s"
-
-#~ msgid ""
-#~ "If this was a mistake, just ignore this email and nothing will happen."
-#~ msgstr "Si se trataba de un error, simplemente ignorar este mensaje."
-
-#~ msgid "To reset your password, visit the following address:"
-#~ msgstr "Para restablecer lacontraseña, visite la siguente dirección:"
-
-#~ msgid "Click here to reset your password"
-#~ msgstr "Pulse aquí para restablece su contraseña"
-
-#~ msgid "Billing address"
-#~ msgstr "Dirección de facturación"
-
-#~ msgid "Shipping address"
-#~ msgstr "Dirección de Envío:"
-
-#~ msgid "Download %d:"
-#~ msgstr "Descargar %d:"
-
-#~ msgid "Order number: %s"
-#~ msgstr "Pedido Nº: %s"
-
-#~ msgid "Order date: %s"
-#~ msgstr "Fecha Pedido: %s"
-
-#~ msgid "jS F Y"
-#~ msgstr "jS F Y"
-
-#~ msgid "Your details"
-#~ msgstr "Sus datos"
-
-#~ msgid "Quantity: %s"
-#~ msgstr "Cantidad: %s"
-
-#~ msgid "Cost: %s"
-#~ msgstr "Coste: %s"
-
-#~ msgid "This sets your background for your sites topbar."
-#~ msgstr "Esto establece el fondo para la barra superior."
+#~ msgid "Add More"
+#~ msgstr "Додати більше"

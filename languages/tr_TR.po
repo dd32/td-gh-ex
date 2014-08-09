@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-07-18 10:46-0700\n"
-"PO-Revision-Date: 2014-07-18 10:52-0700\n"
+"POT-Creation-Date: 2014-08-09 13:47-0700\n"
+"PO-Revision-Date: 2014-08-09 13:57-0700\n"
 "Last-Translator: Coaex Precious Metals <info@coaex.com>\n"
 "Language-Team: \n"
 "Language: tr\n"
@@ -82,7 +82,7 @@ msgstr "Teşekkürler, epostanız başarıyla gönderildi."
 msgid "Sorry, an error occured."
 msgstr "Üzgünüz, bir hata oluştu."
 
-#: ../page-contact.php:168 ../lib/widgets.php:285
+#: ../page-contact.php:168 ../lib/widgets.php:289
 msgid "Name:"
 msgstr "İsim:"
 
@@ -1136,191 +1136,197 @@ msgstr "Virtue: İletişim/Vcard"
 msgid "vCard"
 msgstr "vCard"
 
-#: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
-#: ../lib/widgets.php:735
+#: ../lib/widgets.php:281 ../lib/widgets.php:448 ../lib/widgets.php:605
+#: ../lib/widgets.php:743
 msgid "Title:"
 msgstr "Başlık:"
 
-#: ../lib/widgets.php:281
+#: ../lib/widgets.php:285
 msgid "Company Name:"
 msgstr "Şirket Adı:"
 
-#: ../lib/widgets.php:289
+#: ../lib/widgets.php:293
 msgid "Street Address:"
 msgstr "Açık Adres:"
 
-#: ../lib/widgets.php:293
+#: ../lib/widgets.php:297
 msgid "City/Locality:"
 msgstr "İl:"
 
-#: ../lib/widgets.php:297
+#: ../lib/widgets.php:301
 msgid "State/Region:"
 msgstr "İlçe:"
 
-#: ../lib/widgets.php:301
+#: ../lib/widgets.php:305
 msgid "Zipcode/Postal Code:"
 msgstr "Posta Kodu:"
 
-#: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:110
-msgid "Telephone:"
+#: ../lib/widgets.php:309
+#, fuzzy
+msgid "Mobile Telephone:"
 msgstr "Telefon:"
 
-#: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
+#: ../lib/widgets.php:313
+#, fuzzy
+msgid "Fixed Telephone:"
+msgstr "Telefon:"
+
+#: ../lib/widgets.php:317 ../woocommerce/order/order-details.php:101
 msgid "Email:"
 msgstr "Eposta:"
 
-#: ../lib/widgets.php:320
+#: ../lib/widgets.php:328
 msgid "Simple way to add Social Icons"
 msgstr "Sosyal Simgeler eklemenin basit yolu"
 
-#: ../lib/widgets.php:321
+#: ../lib/widgets.php:329
 msgid "Virtue: Social Links"
 msgstr "Virtue: Sosyal Bağlantılar"
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:452
 msgid "Facebook:"
 msgstr "Facebook:"
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:456
 msgid "Twitter:"
 msgstr "Twitter:"
 
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:460
 msgid "Instagram:"
 msgstr "Instagram:"
 
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:464
 msgid "GooglePlus:"
 msgstr "GooglePlus:"
 
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:468
 msgid "Flickr:"
 msgstr "Flickr:"
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:472
 msgid "Vimeo:"
 msgstr "Vimeo:"
 
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:476
 msgid "Youtube:"
 msgstr "Youtube:"
 
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:480
 msgid "Pinterest:"
 msgstr "Pinterest:"
 
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:484
 msgid "Dribbble:"
 msgstr "Dribbble:"
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:488
 msgid "Linkedin:"
 msgstr "Linkedin:"
 
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:492
 msgid "Tumblr:"
 msgstr "Tumblr:"
 
-#: ../lib/widgets.php:488
+#: ../lib/widgets.php:496
 msgid "VK:"
 msgstr "VK:"
 
-#: ../lib/widgets.php:492
+#: ../lib/widgets.php:500
 msgid "RSS:"
 msgstr "RSS:"
 
-#: ../lib/widgets.php:506
+#: ../lib/widgets.php:514
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr "Bu, sitenizdeki en son yazıları küçük bir resimle gösterir"
 
-#: ../lib/widgets.php:507
+#: ../lib/widgets.php:515
 msgid "Virtue: Recent Posts"
 msgstr "Virtue: Son Yazılar"
 
-#: ../lib/widgets.php:532 ../templates/recentblog-carousel.php:2
+#: ../lib/widgets.php:540 ../templates/recentblog-carousel.php:2
 msgid "Recent Posts"
 msgstr "Son Yazılar"
 
-#: ../lib/widgets.php:600
+#: ../lib/widgets.php:608
 msgid "Number of posts to show:"
 msgstr "Gösterilecek yazı sayısı:"
 
-#: ../lib/widgets.php:603
+#: ../lib/widgets.php:611
 msgid "Limit to Catagory (Optional):"
 msgstr "Kategori Limiti (Opsiyonel):"
 
-#: ../lib/widgets.php:614
+#: ../lib/widgets.php:622
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 "Bu, son yazılardaki veya portföy ögelerindeki öne çıkan resimleri bir "
 "karelaj olarak gösterir"
 
-#: ../lib/widgets.php:615
+#: ../lib/widgets.php:623
 msgid "Virtue: Image Grid"
 msgstr "Virtue: Resim Karelajı"
 
-#: ../lib/widgets.php:640
+#: ../lib/widgets.php:648
 msgid "Post Gallery"
 msgstr "Yazı Galerisi"
 
-#: ../lib/widgets.php:738
+#: ../lib/widgets.php:746
 msgid "Grid Choice:"
 msgstr "Karelaj Tercihi:"
 
-#: ../lib/widgets.php:740
+#: ../lib/widgets.php:748
 msgid "Blog Posts"
 msgstr "Blog Yazıları"
 
-#: ../lib/widgets.php:741
+#: ../lib/widgets.php:749
 msgid "Portfolio"
 msgstr "Portföy"
 
-#: ../lib/widgets.php:744
+#: ../lib/widgets.php:752
 msgid "If Post - Choose Category (Optional):"
 msgstr "Yazı ise - Kategori Seçin (Opsiyonel):"
 
-#: ../lib/widgets.php:747
+#: ../lib/widgets.php:755
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr "Portföy ise - Tür Seçin (Opsiyonel):"
 
-#: ../lib/widgets.php:750
+#: ../lib/widgets.php:758
 msgid "Number of images to show:"
 msgstr "Gösterilecek resim sayısı:"
 
-#: ../lib/widgets.php:777
+#: ../lib/widgets.php:785
 msgid "This allows for an image and a simple about text."
 msgstr "Bu, bir resmi ve basit bir metni sağlar."
 
-#: ../lib/widgets.php:778
+#: ../lib/widgets.php:786
 #, fuzzy
 msgid "Virtue: Image"
 msgstr "Virtue: Resim Karelajı"
 
-#: ../lib/widgets.php:832
+#: ../lib/widgets.php:840
 #, fuzzy
 msgid "Lightbox"
 msgstr "Sağ"
 
-#: ../lib/widgets.php:833
+#: ../lib/widgets.php:841
 msgid "New Window"
 msgstr ""
 
-#: ../lib/widgets.php:834
+#: ../lib/widgets.php:842
 msgid "Same Window"
 msgstr ""
 
-#: ../lib/widgets.php:835
+#: ../lib/widgets.php:843
 #, fuzzy
 msgid "No Link"
 msgstr "İkon Bağlantısı"
 
-#: ../lib/widgets.php:847
+#: ../lib/widgets.php:855
 #, fuzzy
 msgid "Image URL"
 msgstr "Resim"
 
-#: ../lib/widgets.php:849
+#: ../lib/widgets.php:857
 #: ../themeoptions/inc/fields/background/field_background.php:315
 #: ../themeoptions/inc/fields/media/field_media.php:154
 #: ../themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
@@ -1328,17 +1334,17 @@ msgstr "Resim"
 msgid "Upload"
 msgstr "Yükle"
 
-#: ../lib/widgets.php:852
+#: ../lib/widgets.php:860
 #, fuzzy
 msgid "Image opens in"
 msgstr "Resim tekrarı seçenekleri"
 
-#: ../lib/widgets.php:856
+#: ../lib/widgets.php:864
 #, fuzzy
 msgid "Image Link (optional)"
 msgstr "Resim tekrarı seçenekleri"
 
-#: ../lib/widgets.php:860
+#: ../lib/widgets.php:868
 msgid "Text/Caption (optional)"
 msgstr ""
 
@@ -2582,17 +2588,10 @@ msgstr "Resim ekle"
 msgid "Back to"
 msgstr "Geriye Dön"
 
-#: ../woocommerce/single-product.php:29
-msgid "Shop"
-msgstr "Mağaza"
-
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
 msgstr "İndirim!"
-
-#~ msgid "Virtue: About with Image"
-#~ msgstr "Virtue: Resim Hakkında"
 
 #~ msgid "Options panel created using %1$s"
 #~ msgstr "%1$s kullanılarak Seçenekler paneli yaratıldı"
@@ -2602,9 +2601,6 @@ msgstr "İndirim!"
 
 #~ msgid "Options"
 #~ msgstr "Seçenekler"
-
-#~ msgid "Dismiss"
-#~ msgstr "Son Ver"
 
 #~ msgid ""
 #~ "You have changes that are not saved. Would you like to save them now?"
@@ -2694,3 +2690,163 @@ msgstr "İndirim!"
 #~ msgstr ""
 #~ "Mevcut ayarlarınız, bu ayarlarla değiştirilecektir. Devam etmek istiyor "
 #~ "musunuz?"
+
+#~ msgid "Dismiss"
+#~ msgstr "Son Ver"
+
+#, fuzzy
+#~ msgid "Import / Export Options"
+#~ msgstr "Portföy Yazı Seçenekleri"
+
+#, fuzzy
+#~ msgid "Import Options"
+#~ msgstr "Yazı Seçenekleri"
+
+#, fuzzy
+#~ msgid "Export Options"
+#~ msgstr "Yazı Seçenekleri"
+
+#, fuzzy
+#~ msgid "Copy Link"
+#~ msgstr "İkon Bağlantısı"
+
+#, fuzzy
+#~ msgid "Background Repeat"
+#~ msgstr "Arka Plan Rengi"
+
+#, fuzzy
+#~ msgid "Background Clip"
+#~ msgstr "Arka Plan Rengi"
+
+#, fuzzy
+#~ msgid "Background Origin"
+#~ msgstr "Arka Plan Rengi"
+
+#, fuzzy
+#~ msgid "Background Size"
+#~ msgstr "Arka Plan Rengi"
+
+#, fuzzy
+#~ msgid "Background Position"
+#~ msgstr "Arka Plan Rengi"
+
+#, fuzzy
+#~ msgid "Add More"
+#~ msgstr "Satır Ekle"
+
+#, fuzzy
+#~ msgid "Select an item"
+#~ msgstr "Bir İkon Seç"
+
+#, fuzzy
+#~ msgid "Text Decoration"
+#~ msgstr "Bölümü Sıfırla"
+
+#, fuzzy
+#~ msgid "Line Height"
+#~ msgstr "Harita Yüksekliği"
+
+#, fuzzy
+#~ msgid "Height"
+#~ msgstr "Harita Yüksekliği"
+
+#, fuzzy
+#~ msgid "Word Spacing"
+#~ msgstr "Üst Boşluk"
+
+#, fuzzy
+#~ msgid "Letter Spacing"
+#~ msgstr "Sol Boşluk"
+
+#, fuzzy
+#~ msgid "Font Color"
+#~ msgstr "Alt Bilgi Yazı Tipi Rengi"
+
+#, fuzzy
+#~ msgid "Font color"
+#~ msgstr "Alt Bilgi Yazı Tipi Rengi"
+
+#, fuzzy
+#~ msgid "Standard Fonts"
+#~ msgstr "Site Geneli Gri Yazı Tipleri"
+
+#, fuzzy
+#~ msgid "There are no reviews yet."
+#~ msgstr "Hiçbir önceki seçenek yoktur"
+
+#, fuzzy
+#~ msgid "Email"
+#~ msgstr "Eposta:"
+
+#, fuzzy
+#~ msgid "Submit"
+#~ msgstr "Yorum Gönder"
+
+#, fuzzy
+#~ msgid "Your Rating"
+#~ msgstr "Sepetiniz"
+
+#~ msgid "Shop"
+#~ msgstr "Mağaza"
+
+#, fuzzy
+#~ msgid "Remove this item"
+#~ msgstr "Resmi kaldır"
+
+#, fuzzy
+#~ msgid "Update Cart"
+#~ msgstr "Tema Güncelleme İçeri Aktarımı"
+
+#, fuzzy
+#~ msgid "Select a country&hellip;"
+#~ msgstr "Bir İkon Seç"
+
+#, fuzzy
+#~ msgid "Default sorting"
+#~ msgstr "Varsayılan"
+
+#, fuzzy
+#~ msgid "Order ID"
+#~ msgstr "Ögeleri Sırala"
+
+#, fuzzy
+#~ msgid "Billing Email"
+#~ msgstr "Eposta Gönder"
+
+#, fuzzy
+#~ msgid "Order Details"
+#~ msgstr "Detayları Gizle"
+
+#, fuzzy
+#~ msgid "Download file%s"
+#~ msgstr "İndir"
+
+#, fuzzy
+#~ msgid "Customer details"
+#~ msgstr "Özel Site İkonu"
+
+#~ msgid "Telephone:"
+#~ msgstr "Telefon:"
+
+#, fuzzy
+#~ msgid "Billing Address"
+#~ msgstr "Adres"
+
+#, fuzzy
+#~ msgid "Shipping Address"
+#~ msgstr "Adres"
+
+#, fuzzy
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Yorumunuz moderasyon onayı bekliyor."
+
+#, fuzzy
+#~ msgid "Choose an option"
+#~ msgstr "Bir geçiş türü seçin"
+
+#, fuzzy
+#~ msgid "Clear selection"
+#~ msgstr "Bölümü Sıfırla"
+
+#~ msgid "Virtue: About with Image"
+#~ msgstr "Virtue: Resim Hakkında"

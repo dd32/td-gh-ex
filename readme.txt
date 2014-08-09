@@ -48,6 +48,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.2 =
+* Add fixed phone to vcard widget.
+* Fix image hover issue in chrome.
+* Add Ukrainian language.
+* Add string translation option for icon menu, home slider.
+* Small fix with home page title.
+* Fix woocommerce template.
+
 = Version: 2.2.1 =
 * Add string to pot file.
 * Add sweedish .po file

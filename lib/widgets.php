@@ -210,6 +210,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     if (!isset($instance['region'])) { $instance['region'] = ''; }
     if (!isset($instance['postal_code'])) { $instance['postal_code'] = ''; }
     if (!isset($instance['tel'])) { $instance['tel'] = ''; }
+     if (!isset($instance['fixedtel'])) { $instance['fixedtel'] = ''; }
     if (!isset($instance['email'])) { $instance['email'] = ''; }
 
     echo $before_widget;
@@ -228,6 +229,7 @@ class Kadence_Contact_Widget extends WP_Widget {
        <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>
      <?php endif;?>
       <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo $instance['tel']; ?></p><?php endif;?>
+      <?php if(!empty($instance['fixedtel'])):?><p class="tel fixedtel"><i class="icon-phone"></i> <?php echo $instance['fixedtel']; ?></p><?php endif;?>
       <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo $instance['email']; ?>"><i class="icon-envelope"></i> <?php echo $instance['email']; ?></a></p> <?php endif;?>
     </div>
   <?php
@@ -247,6 +249,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     $instance['region'] = strip_tags($new_instance['region']);
     $instance['postal_code'] = strip_tags($new_instance['postal_code']);
     $instance['tel'] = strip_tags($new_instance['tel']);
+    $instance['fixedtel'] = strip_tags($new_instance['fixedtel']);
     $instance['email'] = strip_tags($new_instance['email']);
     $this->flush_widget_cache();
 
@@ -271,6 +274,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     $region = isset($instance['region']) ? esc_attr($instance['region']) : '';
     $postal_code = isset($instance['postal_code']) ? esc_attr($instance['postal_code']) : '';
     $tel = isset($instance['tel']) ? esc_attr($instance['tel']) : '';
+    $fixedtel = isset($instance['fixedtel']) ? esc_attr($instance['fixedtel']) : '';
     $email = isset($instance['email']) ? esc_attr($instance['email']) : '';
   ?>
     <p>
@@ -302,8 +306,12 @@ class Kadence_Contact_Widget extends WP_Widget {
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('postal_code')); ?>" name="<?php echo esc_attr($this->get_field_name('postal_code')); ?>" type="text" value="<?php echo esc_attr($postal_code); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('tel')); ?>"><?php _e('Telephone:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('tel')); ?>"><?php _e('Mobile Telephone:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tel')); ?>" name="<?php echo esc_attr($this->get_field_name('tel')); ?>" type="text" value="<?php echo esc_attr($tel); ?>" />
+    </p>
+     <p>
+      <label for="<?php echo esc_attr($this->get_field_id('fixedtel')); ?>"><?php _e('Fixed Telephone:', 'virtue'); ?></label>
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('fixedtel')); ?>" name="<?php echo esc_attr($this->get_field_name('fixedtel')); ?>" type="text" value="<?php echo esc_attr($fixedtel); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('email')); ?>"><?php _e('Email:', 'virtue'); ?></label>
