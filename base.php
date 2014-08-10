@@ -4,13 +4,11 @@
       <script src="<?php echo get_template_directory_uri() . '/assets/js/vendor/respond.min.js';?>"></script>
     <![endif]-->
 <div id="wrapper" class="container">
-  <!--[if lt IE 8]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
 
   <?php
     do_action('get_header');
       get_template_part('templates/header');
   ?>
-
   <div class="wrap contentclass" role="document">
 
         <?php include kadence_template_path(); ?>

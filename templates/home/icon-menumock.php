@@ -1,8 +1,8 @@
 <?php $icons = array(
-    array('icon_o' => 'icon-pencil', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Clean Design', 'url' => '', 'description' => ''),
-    array('icon_o' => 'icon-mobile-phone', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Responsive', 'url' => '', 'description' => ''),
-    array('icon_o' => 'icon-cogs', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Tons of Options', 'url' => '', 'description' => ''),
-    array('icon_o' => 'icon-shopping-cart', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Ecommerce', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-pencil', 'link' => '', 'title' => 'Clean Design', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-mobile-phone', 'link' => '', 'title' => 'Responsive', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-cogs', 'link' => '', 'title' => 'Tons of Options', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-shopping-cart', 'link' => '', 'title' => 'Ecommerce', 'url' => '', 'description' => ''),
     ); 
     $itemsize = 'tcol-lg-3 tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12';                   
     ?>

@@ -19,6 +19,7 @@
 Virtue Theme Uses:
 
 * Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
+* Photos on in the screenshot (licensed under Public Domain) http://publicdomainarchive.com/category/modern/
 * FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Star Font, icons image folder and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
@@ -47,6 +48,12 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 2.2.3 =
+* Update Screenshot.
+* Fix favicon issue.
+* Remove links from mock icon menu.
+* Remove old browser warning.
 
 = Version: 2.2.2 =
 * Add fixed phone to vcard widget.
