@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.5
+1. Small CSS Changes in Footer Widget.
 @Version: 1.4.2.4
 1. Comment Date Function used.
 @Version: 1.4.2.3
