@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/ignite
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: Ignite is a responsive blog theme. Customize your site with Ignite's built-in social media icons and logo uploader. Then, make your logo pixel-perfect with the logo size and position tools. Additional features are available with Ignite Plus.
-Version: 1.24
+Version: 1.25
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, responsive-layout, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1190,6 +1190,18 @@ a img {
   margin-left: 6em;
 }
 
+.author-profile-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 1.5em;
+  overflow: hidden;
+}
+.author-profile-image img {
+  border-radius: 0;
+}
+
 /* 700px */
 @media all and (min-width: 43.75em) {
   .further-reading p {
@@ -1286,6 +1298,19 @@ li.pingback {
   color: #a87227;
 }
 
+.author-profile-image-comment {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 0.75em;
+  overflow: hidden;
+  border: solid 2px #e6a117;
+}
+.author-profile-image-comment img {
+  border-radius: 0;
+}
+
 .comment-meta {
   font-size: 0.813em;
   line-height: 1.85;
@@ -1310,6 +1335,9 @@ li.pingback {
 
 .bypostauthor .comment-author img {
   border: solid 2px #e6a117;
+}
+.bypostauthor .comment-author .author-profile-image-comment img {
+  border: none;
 }
 
 .comment-respond {
