@@ -6,7 +6,7 @@ global $wp_customize;
 //add extended featured content section
 
 //add controls
-$wp_customize->add_setting( 'num_posts_grid', array( 'default' => '3' ) );
+$wp_customize->add_setting( 'num_posts_grid', array( 'default' => '0' ) );
 $wp_customize->add_setting( 'num_posts_slider', array( 'default' => '6' ) );
 $wp_customize->add_setting( 'layout_mobile', array( 'default' => 'grid' ) );
 
