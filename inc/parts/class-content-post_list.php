@@ -36,7 +36,7 @@ if ( ! class_exists( 'TC_post_list' ) ) :
         if ( 
           is_admin()
           || ! $query->is_main_query()
-          || ! apply_filters('tc_include_cpt_in_archives' , true)
+          || ! apply_filters('tc_include_cpt_in_archives' , false)
           || ! ( $query->is_search || $query->is_archive )
           )
           return;
