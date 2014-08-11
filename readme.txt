@@ -29,6 +29,13 @@ Custom Css:
 
 
 == Change log ==
+
+= 1.5 =
+* Comment security loop removed
+* Updated theme functiions
+* Navigation Codes
+* Language Support Added
+
 = 1.4.9.1 =
 *Theme url changed
 *Removed extra function from theme header

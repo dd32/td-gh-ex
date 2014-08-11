@@ -50,16 +50,17 @@ function optimize_theme_setup() {
         add_theme_support('automatic-feed-links');
 		
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
-	$args = array(
-	'default-color' => 'ffffff',
-);
-add_theme_support( 'custom-background', $args );
-	/**
- * Sets up the content width value based on the theme's design.
- */
-if ( ! isset( $content_width ) ){
-	$content_width = 770;}
+		$args = array(
+		'default-color' => 'ffffff',
+		);
+		add_theme_support( 'custom-background', $args );
+// Sets up the content width value based on the theme's design.
+		global $content_width;
+		if ( ! isset( $content_width ) ){
+		$content_width = 770;
+		}
 
+	}
 	
 	/* Excerpt ********************************************/
 
@@ -86,7 +87,7 @@ if ( ! isset( $content_width ) ){
     $output = ''.$output.'';
     echo $output;    }
 	
-	}
+	
 add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	
 
@@ -110,25 +111,25 @@ add_action('widgets_init', 'optimize_widgets_init');
 //---------------------------- [ Pagenavi Function ] ------------------------------//
  
 function optimize_pagenavi() {
-  global $wp_query, $wp_rewrite;
-  $pages = '';
-  $max = $wp_query->max_num_pages;
-  if (!$current = get_query_var('paged')) $current = 1;
-  $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
-  $args['total'] = $max;
-  $args['current'] = $current;
- 
-  $total = 1;
-  $args['mid_size'] = 3;
-  $args['end_size'] = 1;
-  $args['prev_text'] = '&#171; Prev';
-  $args['next_text'] = 'Next &raquo;';
- 
-  if ($max > 1) echo '<div class="wp-pagenavi">';
- echo $pages . paginate_links($args);
- if ($max > 1) echo '</div>';
+  global $wp_query;
+	$big = 123456789;
+	$page_format = paginate_links( array(
+	    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	    'format' => '?paged=%#%',
+	    'current' => max( 1, get_query_var('paged') ),
+	    'total' => $wp_query->max_num_pages,
+	    'type'  => 'array'
+	) );
+	if( is_array($page_format) ) {
+	            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+	            echo '<div class="wp-pagenavi">';
+	            echo '<span class="pages">'. $paged . ' of ' . $wp_query->max_num_pages .'</span>';
+	            foreach ( $page_format as $page ) {
+	                    echo "$page";
+	            }
+	           echo '</div>';
+	 }
 }
-
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.

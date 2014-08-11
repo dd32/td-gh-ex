@@ -3,8 +3,8 @@
 		<div id="content">	
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts())  : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" class="post clearfix">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
+			<h1 class="entry-title" itemprop="name"><a itemprop="url" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 			<div class="entry clearfix">
 			<?php if ( of_get_option('optimize_ad2') <> "" ) { echo stripslashes(of_get_option('optimize_ad2')); } ?>
 			<?php the_content(); ?> 
@@ -20,7 +20,8 @@
 		<div id="single-nav-right"><?php next_post_link('<strong>%link</strong>&raquo;'); ?></div>
         </div>
         <!-- END single-nav -->
-			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments -->	</div> <!-- end div .post -->
+			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments -->
+			</article>
 			<?php endwhile; ?>
 			<?php else : ?>
 				<div class="post">

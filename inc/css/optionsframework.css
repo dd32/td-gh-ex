@@ -9,42 +9,32 @@ margin: 1em 0 !important;
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-background-color: #FFBA6F !important;
-color: #474747;
 }
 .slidersettings-tab, .slidersettings-tab :hover{background-image: url("../images/wrock.ico");
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-background-color: #FF777D !important;
-color: #474747;
 }
 .advanceoptions-tab{background-image: url("../images/tools.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-background-color: #FF6F6F !important;
-color: #fff;
 }
 .socialmedia-tab{background-image: url("../images/graph.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-background-color: #6F9DFF !important;
-color: #FDFDFD;}
+}
 .customstyling-tab{background-image: url("../images/style.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-background-color: #CB6FFF !important;
-color: #FFFFFF;}
+}
 .adsmanagement-tab{background-image: url("../images/layout.png");
 background-repeat: no-repeat;
 background-position: 3% 10px;
 padding-left: 25px !important;
-
-background-color: #6FFF97 !important;
-color: #5E5E5E;}
+}
 
 .tesingh{background: #B76CA9;
 color: #FFF !important;

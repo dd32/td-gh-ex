@@ -11,7 +11,7 @@
 <body <?php body_class(); ?> id="top">
 <div class="wrapper">
 <!-- BEGIN HEADER -->
-	<div id="header">
+	<header id="header">
     <div id="header-inner" class="clearfix">
 		<div id="logo">
 			<?php if (of_get_option( 'optimize_logo' )): ?>
@@ -24,7 +24,7 @@
 		</div>		
 <?php echo'<div id="myban">'; if ( of_get_option('optimize_ad1') <> "" ) { echo stripslashes(of_get_option('optimize_ad1')); } echo'</div>'; ?>
     </div> <!-- end div #header-inner -->
-	</div> <!-- end div #header -->
+	</header> <!-- end div #header -->
 
 	<!-- END HEADER -->
 
