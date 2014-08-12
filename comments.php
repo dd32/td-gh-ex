@@ -54,6 +54,7 @@
     'id_submit'=> 'qua_send_button',
     'label_submit'=>__( 'Post Comment','quality'),
     'comment_notes_after'=> '',
+	'comment_notes_before'=>'',
     'title_reply'=> '<h2>'.__( 'Leave a Reply','quality').'</h2>',
     'id_form'=> 'action'
     );

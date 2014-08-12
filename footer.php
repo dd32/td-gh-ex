@@ -19,9 +19,9 @@
   </div>
 </div>
 <?php
-  if($current_options['webrit_custom_css']!='') {  ?>
+  if($current_options['quality_custom_css']!='') {  ?>
 <style>
-  <?php echo $current_options['webrit_custom_css']; ?>
+  <?php echo $current_options['quality_custom_css']; ?>
 </style>
 <?php } ?>	
 <!-- /Footer Widget Secton -->

@@ -61,7 +61,7 @@ function theme_data_setup()
 			'home_blog_enabled' => 'on',
 			'blog_heading' => 'Latest <span>From</span> Blog',
 			
-			'webrit_custom_css'=>'',						
+			'quality_custom_css'=>'',						
 			'footer_customizations' => '&copy; 2014 <span> Quality </span>. Design & Developed by',
 			'created_by_webriti_text' => 'Webriti',
 			'created_by_link' => 'http://www.webriti.com',

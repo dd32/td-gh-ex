@@ -83,7 +83,11 @@ Support
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
-ChangLog 
+ChangLog:
+@version 1.0.4
+1.	Small Changes in Comment Form
+2.	Changes for Custom CSS.
+
 @version 1.0.3
 1.	HTML beautified Code.
 @version 1.0.2.1

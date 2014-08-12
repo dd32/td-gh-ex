@@ -12,7 +12,7 @@
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
-				$current_options['webrit_custom_css'] =$_POST['webrit_custom_css'];
+				$current_options['quality_custom_css'] =$_POST['quality_custom_css'];
 				$current_options['front_page']=$_POST['front_page'];
 				if($_POST['text_title'])
 				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
@@ -29,7 +29,7 @@
 			$current_options['width']=200;
 			$current_options['upload_image_favicon']="";
 			$current_options['text_title']="on";			
-			$current_options['webrit_custom_css']="";		
+			$current_options['quality_custom_css']="";		
 			update_option('quality_options',$current_options);
 		}
 	}  ?>
@@ -94,7 +94,7 @@
 		</div>		
 		<div class="section">
 			<h3><?php _e('Custom css','quality'); ?></h3>
-			<textarea rows="8" cols="8" id="webrit_custom_css" name="webrit_custom_css"><?php if($current_options['webrit_custom_css']!='') { echo esc_attr($current_options['webrit_custom_css']); } ?></textarea>
+			<textarea rows="8" cols="8" id="quality_custom_css" name="quality_custom_css"><?php if($current_options['quality_custom_css']!='') { echo esc_attr($current_options['quality_custom_css']); } ?></textarea>
 			<div class="explain"><?php _e('This is a powerful feature provided here. No need to use custom css plugin, just paste your css code and see the magic.','quality'); ?><br></div>
 		</div>		
 		<div id="button_section">
