@@ -1,4 +1,8 @@
-Changelog 3.7.15:
+Changelog 3.7.17:
+- Fixed 'Theme is redirected when activated.' 
+
+
+Changelog 3.7.16:
 
 - New Feature: using the '%category-linked%' option will now add a class of the category to the link
 - New Feature: using the '%categories-linked%' option will now add a class for each category to the link

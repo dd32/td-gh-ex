@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.16";
+$bfa_ata_version = "3.7.17";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -123,15 +123,6 @@ function bfa_escape($string) {
 }
 
 
-
-/**
- * Since 3.7.9
- * Redirect users to Theme Options after activation, this will also create the 
- * CSS file in the uploads dir, for the first time
- */
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
-	wp_redirect( 'themes.php?page=atahualpa-options' );
-	
 
 
 
