@@ -65,9 +65,9 @@
 </div>
 <?php
   $rambo_current_options=get_option('rambo_theme_options');
-  if($rambo_current_options['webrit_custom_css']!='') {  ?>
+  if($rambo_current_options['rambo_custom_css']!='') {  ?>
 <style type="text/css">
-  <?php echo $rambo_current_options['webrit_custom_css']; ?>
+  <?php echo $rambo_current_options['rambo_custom_css']; ?>
 </style>
 <?php } ?>
 <?php wp_footer(); ?>

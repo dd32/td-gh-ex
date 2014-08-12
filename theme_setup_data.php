@@ -21,7 +21,7 @@ function theme_data_setup()
 			'width'=>'150',
 			'rambo_texttitle'=>'on',
 			'upload_image_favicon'=>'',			
-			'webrit_custom_css'=>'',
+			'rambo_custom_css'=>'',
 			
 			//Home image section 	
 			'home_banner_enabled'=>'on',

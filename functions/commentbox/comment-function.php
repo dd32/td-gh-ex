@@ -27,7 +27,7 @@ function rambo_comment( $comment, $args, $depth )
             </a>
             <div class="blog_single_post_content">
 			<h4 class="blog_single_post_heading"><?php the_author();?><small> | </small>
-			<span><?php the_time('M j,Y');?></span>
+			<span><?php comment_time('M j,Y');?></span>
 			<div class="reply">
 			<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
     	    </div>

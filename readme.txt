@@ -85,6 +85,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.2.2
+1. comment_time fixed.
+2. Changes for Custom CSS.
 @Version: 1.2.1
 1. HTML Beautified Code.
 @Version: 1.2.0
