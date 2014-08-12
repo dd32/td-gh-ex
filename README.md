@@ -10,6 +10,7 @@ Simone's design is focused on typography and aims to put the content front and c
 Simone ships with English as the default language. Translations are available for:
 - French (fr_FR via Christine Rondeau)
 - German (de_DE via Caspar Hübinger)
+- Hungarian (hu_HU via Beata Kozma)
 - Norwegian Bokmål (nb_NO)
 
 
@@ -56,6 +57,15 @@ Responsive featured images powered by [Picturefill](http://scottjehl.github.io/p
 Simone is named after philosopher [Simone de Beauvoir](http://en.wikipedia.org/wiki/Simone_de_Beauvoir)
 
 ## Changelog
+### 1.0.8
+- New translations for French, German, and Norwegian. Hungarian translation added courtesy of Beata Kozma.
+
+### 1.0.7.2
+- Full refactoring of translation files including updated nb_NO translation.
+
+### 1.0.7.1
+- Minor translation updates to address date formatting and wider language support. Stop-gap while waiting for more translation files to come online.
+
 ### 1.0.7
 - French translation courtesy of Christine Rondeau
 

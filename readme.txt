@@ -12,6 +12,15 @@ Simone\'s design is focussed on typography and aims to put the content front and
 
 
 == Changelog ==
+=== 1.0.8 ===
+- New translations for French, German, and Norwegian. Hungarian translation added courtesy of Beata Kozma.
+
+=== 1.0.7.2 ===
+- Full refactoring of translation files including updated nb_NO translation.
+
+=== 1.0.7.1 ===
+- Minor translation updates to address date formatting and wider language support. Stop-gap while waiting for more translation files to come online.
+
 === 1.0.7 ===
 - French translation courtesy of Christine Rondeau
 
@@ -35,8 +44,11 @@ Simone\'s design is focussed on typography and aims to put the content front and
 
 === Translations ===
 Simone ships with English as the default language. Translations are available for:
-- Norwegian Bokmål (nb_NO)
+- French (fr_FR via Christine Rondeau)
 - German (de_DE via Caspar Hübinger)
+- Hungarian (hu_HU via Beata Kozma)
+- Norwegian Bokmål (nb_NO)
+
 
 === Customizer Options ===
 Extended options available from the Customizer:
