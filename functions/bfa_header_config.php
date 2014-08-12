@@ -261,13 +261,20 @@ function bfa_header_config() {
 	// Header Image
 	if ( strpos($header_items,'%image') !== FALSE ) {
 
+		// force 'top left' alignment if rotating and fading is on
+		if (($bfa_ata['header_image_javascript'] !== "0") AND
+		($bfa_ata['crossslide_fade'] !== "0")) {
+			$bfa_ata['headerimage_alignment'] = 'top left';
+		}
+		
 		ob_start();
 		$bfa_header_images = bfa_rotating_header_images();
 		
+        echo '<div id="imagecontainer-pre" class="header-image-container">';
 		echo '<div id="imagecontainer" class="header-image-container" style="background: url(' . 
 		$bfa_header_images[array_rand($bfa_header_images)] . ') ' . $bfa_ata['headerimage_alignment'] . 
 		' no-repeat;">';
-		
+		echo '</div>';		
 		if ( $bfa_ata['header_image_clickable'] == "Yes" ) {
 			echo '<div class="clickable"><a class="divclick" title="'; 
 			bloginfo('name'); echo '" href ="' . $homeURL . '/">&nbsp;</a></div>';

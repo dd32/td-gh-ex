@@ -173,7 +173,7 @@ $options1 = array(
 	"category" 	=> "export-import",
     "id" => "import_settings",
 	"type" 		=> "info",
-	"info" 		=> "<br /><span style='text-decoration:line-through'>Upload a Atahualpa settings file from your desktop computer and import it:</span><br />SINCE 3.6.5: <strong>Paste the content of a settings file here</strong> 
+	"info" 		=> "<br /><strong>Paste the content of a settings file here</strong> 
 	into this textarea and click 'Import'<br /><br />
 	PHP file functions cannot be used anymore in themes listed on wordpress.org, so we 
 			had to remove file operations from Atahualpa (Upload isn't enough, Atahualpa needs to read the file, too). Instead of uploading a settings file you now need to copy the content of the settings file instead, and paste it into the textarea below, finally click 'Import Settings'.   
@@ -781,7 +781,8 @@ For <strong>MULTI SITES</strong>, you should choose the 'wp-content' option and 
             "info" => "The aligned edge or end of the image will be the fixed part, and the image will be cut off from 
 			the opposite edge or end if it doesn't fit into the visitor's browser viewport. <br /><br />
 			<strong>Example:</strong> If you choose \"Top Left\" as the alignment, then the image(s) will be cut off 
-			from the opposite edge, which would be \"Bottom Right\" in this case."),
+			from the opposite edge, which would be \"Bottom Right\" in this case.<br /><br />
+			<strong>NOTE: If you choose to rotate and fade the header image, this option will automatically use \"Top Left\" as the alignment to prevent the image(s) from jumping when they are displayed.</strong>"),
 
     array(    "name" => "Opacity LEFT: Value",
     	    "category" => "header-image",
@@ -879,20 +880,20 @@ For <strong>MULTI SITES</strong>, you should choose the 'wp-content' option and 
 			Leave <code>width: ...;</code> out to let the box adjust to the width of the blog title or tagline, whichever is longer.<br />
 			<br />To change the styles of the blog title or the blog tagline individually, see the menu tab \"Header\"."),        
 
-    array(    "name" => "<span style='background:white;color:red'>NEW</span> Overlay Header Image",
+    array(    "name" => "Overlay Header Image",
     	    "category" => "header-image",
              "id" => "overlay_header_image",
             "std" => "",
             "type" => "textarea-large",
 			"lastoption" => "yes", 
             "info" => "The Overlay Header Image area allows you to put in HTML which will overlay the header image. You could use this code to put buttons for links on top of the header image. 
-			<span style='text-decoration:line-through'>You can also mix in PHP code in this area. This would allow you to point to an image in the wp-content folder and not have to worry about it's location during theme upgrades.</span><br /><br />
+			<br /><br />
 			For example, suppose you want to put buttons to link to your Twitter and FaceBook sites. You put the images (facebook.jpg and twitter.jpg) in a folder in wp-contents ('wp-content/my-images'). 
 			You could add the following to this option<br /><br />
 			<code>&lt;div id=\"header_image_sociable\"&gt;<br />&nbsp;&nbsp;&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.facebook.com/myid\"&gt;<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"<span style='text-decoration:line-through'>&lt;?php echo site_url(); ?&gt;</span>/wp-content/images/facebook.jpg\" alt=\"Facebook\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"/wp-content/images/facebook.jpg\" alt=\"Facebook\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.twitter.com/myid\"&gt;<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"<span style='text-decoration:line-through'>&lt;?php echo site_url(); ?&gt;</span>/wp-content/images/twitter.jpg\" alt=\"Twitter\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"/wp-content/images/twitter.jpg\" alt=\"Twitter\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
 			&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;&lt;/div&gt;</code>
 			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used</span> anymore. The sample code above should still work, with the striked-through PHP code removed, if your WP installation is in the root of your domain. If it's in a subdirectory such as blog, 
 			the image paths would begin with <code>/blog/wp-content/...</code> instead of <code>/wp-content/</code>
@@ -3033,7 +3034,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			\"visible\" HTML such as a table or a DIV container. If you put HTML here, then it would be machine parsable code, something like a 
 			meta tag, such as:<br /><code>&lt;meta name=\"author\" content=\"John W. Doe\" /&gt;</code>.
 			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts.
-			<strong>Google Analytics code</strong> would go here. '. 
+			<strong>Google Analytics code</strong> would go here. 
 			"),
 
     array(    "name" => "HTML Inserts: Body Tag",

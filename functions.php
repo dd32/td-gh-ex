@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.15";
+$bfa_ata_version = "3.7.16";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -409,7 +409,7 @@ function bfa_widget_area($args = '') {
 				echo '<col';
 				$current_width = "width_" . $i;
 				if ( $r[$current_width] ) {
-					echo ' style="width:' . $r[$current_width] . 'px"';
+					echo ' style="width:' . $r[$current_width] . '"';
 				}
 				echo ' />';
 			}
@@ -987,5 +987,14 @@ function bfa_is_pagetemplate_active($pagetemplate = '') {
 		return 0;
 	}
 }
-
+// add category nicenames in body and post class
+	function category_id_class($classes) {
+	    global $post;
+	    if (!is_archive()) {	
+	    	foreach((get_the_category($post->ID)) as $category)
+	        	$classes[] = 'category-'.$category->slug;
+		}
+		return $classes;
+	}
+	add_filter('body_class', 'category_id_class');
 ?>

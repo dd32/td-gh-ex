@@ -414,7 +414,9 @@ div.header-image-container {
 <?php if ( $bfa_ata['overlay_blog_title'] == "Yes" OR $bfa_ata['overlay_blog_tagline'] == "Yes" ) { ?>
 div.titleoverlay {
 	z-index: 4;
-	position: relative;
+	position: absolute; 
+	top: 0;
+    left: 0;
 	float: left;
 	width: auto;
 	<?php echo $bfa_ata['overlay_box_style']; ?>
@@ -2466,7 +2468,7 @@ div#menu1 ul.rMenu li.current_page_item a:active,
 div#menu1 ul.rMenu li.current_page_item a:hover, 
 div#menu1 ul.rMenu li.current_page_item a:visited, 
 div#menu1 ul.rMenu li a:hover {
-	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_hover']; ?>;
+	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_parent']; ?>;
 	color: #<?php echo $bfa_ata['page_menu_bar_link_color_hover']; ?>;
 	}
 div#menu2 ul.rMenu li.current-menu-item > a:link, 

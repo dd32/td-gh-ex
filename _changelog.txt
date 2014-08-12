@@ -1,5 +1,16 @@
 Changelog 3.7.15:
 
+- New Feature: using the '%category-linked%' option will now add a class of the category to the link
+- New Feature: using the '%categories-linked%' option will now add a class for each category to the link
+- New feature: on single post pages, the <body....> will now include the category classes of the post
+- New Feature/Bug Fix: when using rotating header images and fade in/out the Blog Title and tag will now remain visible - this also forces the images to be aligned 'top center'
+- fixed missing index's in all the default styles (atahualpa/styles)
+- Fixed an error where a child menu item was showing the hover color and not the parents color
+- Fixed some minor documentation errors in the theme options
+
+
+Changelog 3.7.15:
+
 - made default favicon_url value blank ("") as per new WP.org theme requirements
 - Replaced old tag 'fixed-width' with 'fixed-layout' 
 - Replaced old tag 'flexible-width' with 'fluid-layout'
