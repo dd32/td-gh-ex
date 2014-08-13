@@ -451,6 +451,9 @@
     text-align: center;
     width: 96%;
 }
+.foodrecipes-post-box-hover {
+	width:96%;
+}
 }
 @media (min-width: 768px) and (max-width:1023px) {
 	.foodrecipes-container-recipes{

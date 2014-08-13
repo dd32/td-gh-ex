@@ -1,15 +1,15 @@
 == Food Recipes ==
 Theme Name: Food Recipes
 Theme URI: http://fasterthemes.com/themes/foodrecipes
-Author: Faster Themes
+Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.0.9
+Version: 1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout, theme-options
 Text Domain: foodrecipes
-This theme, like WordPress, is licensed under the Faster Themes.
+This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 == Theme Description ==

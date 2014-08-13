@@ -258,3 +258,10 @@
  margin-left:20px;
  vertical-align:middle;
 }
+#mc_embed_signup{    
+	background-color: rgb(255, 255, 255);
+    clear: left;
+    font: 1em "Open Sans",sans-serif;
+    padding-right: 13px;
+    width: 67%;
+}

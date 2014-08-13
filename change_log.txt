@@ -42,3 +42,8 @@ Version: 1.0.8
 
 Version: 1.0.9
 	i) Set responsive css.	
+	
+Version: 1.1
+	i) Set responsive css.
+	ii) Set links in adminbar.
+	iii) Change FasterThemes logo in FT Option. 
