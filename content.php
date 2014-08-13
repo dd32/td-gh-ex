@@ -23,9 +23,9 @@
                             <?php if ( has_post_thumbnail() ) { 
                             the_post_thumbnail(); 
                             } else {
-                	    echo '<img src="' . get_stylesheet_directory_uri() . '/images/default-thumb.png" height="32" width="32" />';
+                	    echo '<div></div>';
                             } ?>
-                                <?php the_content(__( '(more...)', 'betilu' )); ?>
+                                <?php the_content(''); ?>
                                     <p><?php the_tags(); ?></p>
                             </article>
                             

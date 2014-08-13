@@ -30,7 +30,7 @@ get_header(); ?>
                                 } else {
                 	        echo '<div></div>';
                                     } ?>
-                                    <?php the_content(__( '(more...)', 'betilu' )); ?>
+                                    <?php the_content(''); ?>
                                         <p class="linkcat"><?php _e( 'Filed under: ', 'betilu' ); ?> <?php the_category(', ') ?> </p> 
                                             <?php edit_post_link(__( ' Edit This', 'betilu' )); ?>
                                                 <p><?php the_tags(); ?></p> 

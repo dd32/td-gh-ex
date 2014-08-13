@@ -18,7 +18,7 @@ get_header(); ?>
                             </hgroup>
                                 <div class="metadata">
                                     <?php _e( 'Filed under: ', 'betilu' ); ?>
-                                    <span class="linkcat"> <?php the_category(',') ?> </span> - <?php the_author() ?> @ <?php the_time() ?> 
+                                    <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p>
                                     <?php edit_post_link(__( 'Edit This', 'betilu' )); ?>
                                 </div>
                         </header>
@@ -28,7 +28,7 @@ get_header(); ?>
                                 } else {
                 	        echo '<div></div>';
                                     } ?>
-                                    <?php the_content(__( '(more...)', 'betilu' )); ?>
+                                    <?php the_content(''); ?>
                                         <p><?php the_tags(); ?></p> <?php wp_link_pages(); ?>
                                         <?php comments_template(); ?>
                             </article>

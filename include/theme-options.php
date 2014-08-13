@@ -59,7 +59,7 @@ function betilu_options_page() {
                     //do_settings_sections( 'betilu-options' ); 
                     $options = get_option( 'betilu_theme_options', $betilu_theme_options );
                 ?>
-                <hr>         
+            <hr>         
                 <h3>Top Right Logo - Square or Circular</h3>     
                 <table class="options-table">
                 <tr><td><label>Select Logo Style - Select Square or Circular</label></td>
@@ -69,23 +69,21 @@ function betilu_options_page() {
                     </select></td></tr>
                 </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/lang-icon.png" height="24"/> Square = <code>carr&#233;, Platz</code> | Circular = <code>circulaire, kreisf&#246;rmig</code> </p>
-                <hr>
+            <hr>
                 <h3>Add middle bar banner text here</h3>  
-                
                 <table class="options-table">
                 <tr><td><div>Add mid-section banner text here. Same text will appear on lower banner.</div><br />         
                 <input id="betilu_new_text" name="betilu_theme_options[betilu_new_text]" size="72" type="text" 
 value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_text']; ?>" /></td></tr>
                 </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>You can add HTML4 tags such as <code>&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;p&gt; &lt;b&gt;</code></p>
-                <hr>
-        <h3>Sidebar-Top-Right, Middle-Bar and Bottom-Bar Background set here</h3>
-        
-        <table class="options-table"><tr><td><label>Change Sidebar-Left Background Color</label>
+            <hr>
+                <h3>Sidebar-Top-Right, Middle-Bar and Bottom-Bar Background set here</h3>
+                <table class="options-table"><tr><td><label>Change sidebar-right and middle banner background color</label>
 <input type="text" name="betilu_theme_options[top_backgrnd]" size="20" value="<?php echo $options['top_backgrnd']; ?>" class="betilu-color-field" /></td></tr>
                     </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Selected color will appear on all mid-sections, Sticky posts and the Sidebar</p>
-                <hr>
+            <hr>
                 <h3>Add your Phone and eMail plus social media links here</h3>
                 <table class="options-table">
                 <tr><td><label>Phone Number</label> </td><td><input type="text" name="betilu_theme_options[phonenumber]" size="40" value="<?php echo $options['phonenumber']; ?>" /></td></tr>
@@ -93,8 +91,8 @@ value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_
                 <tr><td><label>Twitter</label> </td><td><input type="text" name="betilu_theme_options[twitterurl]" size="40" value="<?php echo $options['twitterurl']; ?>" /></td</tr>
                 <tr><td><label>E-Mail</label> </td><td><input type="text" name="betilu_theme_options[betilu_email]" size="40" value="<?php echo $options['betilu_email']; ?>" /></td</tr> 
                 </table>
-                <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Appears under Single Post Ariticles. Phone and Email will auto-dial<p>
-                            <hr>
+                <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Appears under Single Post Ariticles. Type only id for Twitter and url without the <code>https://</code> for facebook.</p>
+            <hr>
                 <?php submit_button(); ?>
                 </form>
 </div>

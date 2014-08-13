@@ -27,9 +27,8 @@ get_header(); ?>
                                 } else {
                 	        echo '<div></div>';
                                     } ?>
-                                    <?php the_content(__( '(more...)', 'betilu' )); ?>
+                                    <?php the_content(''); ?>
                                         <p><?php wp_link_pages(); ?></p>
-                                            <p><?php the_tags(); ?></p> 
                                                 <?php get_template_part( 'social', 'content' ); ?><br>
                                                     <?php comments_template(); ?>
                                         
