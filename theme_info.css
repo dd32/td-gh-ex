@@ -2,7 +2,7 @@
  * Styles for theme info page.
  *
  * @package	Anarcho Notepad
- * @since	2.6
+ * @since	2.15
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright © 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -96,6 +96,11 @@
 	text-shadow: 0 0 1px #AAA; }
 #page .content p {
 	font-size: 100%; }
+
+#page .content ul {
+	list-style: inherit;
+	padding: 0 0 0 40px; }
+
 #page .welcome {
 	font-size: 90%;
 	line-height: 150%;
@@ -152,5 +157,5 @@ tbody tr:nth-child(odd) {
 	margin-bottom: 40p }
 #sidebar .follow p {
 	font-size: 30px;
-	letter-spacing: 12px; }
+	letter-spacing: 8px; }
 @media only screen and (max-width:700px), only screen and (max-device-width : 700px){ #page>li { width:85%; } }

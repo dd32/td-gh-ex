@@ -98,8 +98,8 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : many more minor fixes and changes.
     2.7   (2014.2.23)  - Minor additions and fixes
     2.8   (2014.3.23)  - fixed : rtl styles.
-    2.9   (2014.3.29)  - added : afrikaans language.
-    2.10  (2014.4.3)   - added : ukraine language.
+    2.9   (2014.3.29)  - language : afrikaans.
+    2.10  (2014.4.3)   - language : ukraine.
     2.11  (2014.5.20)  - added : the ability to add year in to the red data ribbons.
     2.12  (2014.6.18)  - added : the ability to diasable the block about author.
                          fixed : many more minor fixes and changes.
@@ -110,7 +110,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : footer modifications.
                          fixed : many more minor fixes and changes.
     2.14.1 (2014.7.28) - removed : option in customizer for header/footer scripts.
-                         
+    2.15   (2014.7.30) - language : slovenčina.                         
 
 == Contact & Issues for Anarcho Notepad ==
 

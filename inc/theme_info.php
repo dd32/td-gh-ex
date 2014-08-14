@@ -3,7 +3,7 @@
  * Theme Information Page
  *
  * @package	Anarcho Notepad
- * @since	2.14.1
+ * @since	2.15
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -45,10 +45,23 @@ function anarcho_theme_options_do_page() { ?>
 	<?php _e('or at my website:', 'anarcho-notepad'); ?>
 	</br>
         <a href="http://mycyberuniverse.com/anarcho-notepad.html">http://mycyberuniverse.com/anarcho-notepad.html</a>
+
+	</br></br>
+	<?php _e('Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org.', 'anarcho-notepad'); ?>
 	</p>
 
+	<h4><?php _e('Languages', 'anarcho-notepad'); ?></h4>
 	<p><b><em><?php _e('The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language.', 'anarcho-notepad'); ?></em></b></p>
-
+        <p>
+	   <?php _e('"Anarcho-Notepad" written in English and translated into:', 'anarcho-notepad'); ?>
+	   <ul>
+	     <li>Русский (translated by Arthur Gareginyan)</li>
+             <li>Українська (translated by Svetlana Drotyanko)</li>
+             <li>Slovenčina (translated by Martin Petrus)</li>
+             <li>Afrikaans (translated by MadriVictor)</li>
+           </ul>
+	   <em><?php _e('Thanks to all who helped me translate "Anarcho-Notepad" into other languages!', 'anarcho-notepad'); ?></em>
+	</p>
       </div><!--<div class="content">-->
 
       <aside id="sidebar">
@@ -68,6 +81,7 @@ function anarcho_theme_options_do_page() { ?>
               <p style="font-family:FontAwesome;">
 		 <a href="https://twitter.com/AGareginyan" target="_blank"> &#xf099; </a>
 		 <a href="https://www.facebook.com/arthur.gareginyan" target="_blank"> &#xf09a; </a>
+                 <a href="http://instagram.com/arthur_gareginyan" target="_blank"> &#xf16d; </a>
 		 <a href="https://plus.google.com/+ArthurGareginyan" target="_blank"> &#xf0d5; </a>
 	      </p>
             </div><!--<div class="follow">-->

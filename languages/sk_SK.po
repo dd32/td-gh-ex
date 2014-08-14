@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Anarcho Notepad v2.10\n"
+"Project-Id-Version: Anarcho Notepad v2.14.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-05 01:10:16+0000\n"
-"Last-Translator: brute9000 <arthurgareginyan@gmail.com>\n"
+"PO-Revision-Date: 2014-07-29 20:53:42+0000\n"
+"Last-Translator: Martin Petrus\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: ../\n"
@@ -20,77 +20,10 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: archive.php:33
-#: category.php:33
-#: home.php:33
-#: index.php:35
-#: page.php:34
-#: page_without_date.php:34
-#: search.php:37
-#: sitemap.php:52
-#@ anarcho-notepad
-msgid "Category: "
-msgstr ""
-
-#: author-bio.php:19
-#@ anarcho-notepad
-msgid "About the Author"
-msgstr ""
-
-#: inc/customizer.php:32
-#@ anarcho-notepad
-msgid "Meta"
-msgstr ""
-
-#: inc/customizer.php:74
-#@ anarcho-notepad
-msgid "Stuff"
-msgstr ""
-
-#: inc/customizer.php:83
-#@ anarcho-notepad
-msgid "Enable \"Title animation\""
-msgstr ""
-
-#: inc/customizer.php:137
-#@ anarcho-notepad
-msgid "Enable \"Breadcrumbs\""
-msgstr ""
-
-#: inc/customizer.php:146
-#@ anarcho-notepad
-msgid "Enable \"Page Navigation\""
-msgstr ""
-
-#: functions.php:259
-#@ anarcho-notepad
-msgid "Previous page"
-msgstr ""
-
-#: functions.php:260
-#@ anarcho-notepad
-msgid "Next page"
-msgstr ""
-
-#: functions.php:262
-#@ anarcho-notepad
-msgid "Page "
-msgstr ""
-
-#: functions.php:262
-#@ anarcho-notepad
-msgid " of the "
-msgstr ""
-
-#: searchform.php:18
-#@ anarcho-notepad
-msgid "Write your search and hit Enter"
-msgstr ""
-
 #: 404.php:21
 #@ anarcho-notepad
 msgid "Page Not Found"
-msgstr ""
+msgstr "Stránka nenájdená"
 
 #: 404.php:22
 #@ anarcho-notepad
@@ -117,7 +50,19 @@ msgstr ""
 #: single.php:36
 #@ anarcho-notepad
 msgid "Continue reading"
-msgstr ""
+msgstr "Pokračovať"
+
+#: archive.php:33
+#: category.php:33
+#: home.php:33
+#: index.php:35
+#: page.php:34
+#: page_without_date.php:34
+#: search.php:37
+#: sitemap.php:52
+#@ anarcho-notepad
+msgid "Category: "
+msgstr "Kategórie: "
 
 #: archive.php:43
 #: author.php:32
@@ -129,7 +74,7 @@ msgstr ""
 #: single.php:60
 #@ anarcho-notepad
 msgid "Not Found"
-msgstr ""
+msgstr "Nenajdené"
 
 #: archive.php:44
 #: author.php:33
@@ -141,7 +86,12 @@ msgstr ""
 #: single.php:61
 #@ anarcho-notepad
 msgid "Sorry, but you are looking for something that isn't here."
-msgstr ""
+msgstr "Sorry, ale hľadáte niečo čo sa na tejto stránke nenachádza"
+
+#: author-bio.php:19
+#@ anarcho-notepad
+msgid "About the Author"
+msgstr "O autorovi"
 
 #: comments.php:42
 #@ anarcho-notepad
@@ -151,27 +101,12 @@ msgstr ""
 #: comments.php:53
 #@ anarcho-notepad
 msgid "Comments are closed."
-msgstr ""
-
-#: footer.php:27
-#@ anarcho-notepad
-msgid "queries in"
-msgstr ""
-
-#: footer.php:27
-#@ anarcho-notepad
-msgid "seconds"
-msgstr ""
-
-#: footer.php:27
-#@ anarcho-notepad
-msgid "mb"
-msgstr ""
+msgstr "Komentáre nie sú povolené"
 
 #: functions.php:50
 #@ anarcho-notepad
 msgid "Primary"
-msgstr ""
+msgstr "Primárne"
 
 #: functions.php:78
 #@ anarcho-notepad
@@ -213,159 +148,184 @@ msgstr ""
 msgid "Widgets in this area will be shown below \"Recent Posts\"."
 msgstr ""
 
-#: functions.php:176
+#: functions.php:199
 #@ anarcho-notepad
 msgid "Archive by category "
-msgstr ""
+msgstr "Archív po kategóriách "
 
-#: functions.php:180
+#: functions.php:203
 #@ anarcho-notepad
 msgid "Archive by date "
-msgstr ""
+msgstr "Archív podľa dátumu "
 
-#: functions.php:183
+#: functions.php:206
 #@ anarcho-notepad
 msgid "Archive by month "
-msgstr ""
+msgstr "Archív podľa mesiacov "
 
-#: functions.php:185
+#: functions.php:208
 #@ anarcho-notepad
 msgid "Archive by year "
-msgstr ""
+msgstr "Archív podľa rokov "
 
-#: functions.php:195
-#: functions.php:223
+#: functions.php:218
+#: functions.php:246
 #@ anarcho-notepad
 msgid "You currently reading "
-msgstr ""
+msgstr "Momentálne čítate "
 
-#: functions.php:225
+#: functions.php:248
 #@ anarcho-notepad
 msgid "Search results for "
-msgstr ""
+msgstr "Výsledky hľadanie pre "
 
-#: functions.php:227
+#: functions.php:250
 #@ anarcho-notepad
 msgid "Archive by tag "
-msgstr ""
+msgstr "Archív podľa značiek "
 
-#: functions.php:231
+#: functions.php:254
 #@ anarcho-notepad
 msgid "Articles posted by "
 msgstr ""
 
-#: functions.php:233
+#: functions.php:256
 #@ anarcho-notepad
 msgid "You got it "
+msgstr "Máš to "
+
+#: functions.php:282
+#@ anarcho-notepad
+msgid "Previous page"
+msgstr "Predchádzajúca stránka"
+
+#: functions.php:283
+#@ anarcho-notepad
+msgid "Next page"
+msgstr "Nasledujúca stránka"
+
+#: functions.php:285
+#@ anarcho-notepad
+msgid "Page "
+msgstr "Stránka "
+
+#: functions.php:285
+#@ anarcho-notepad
+msgid " of the "
 msgstr ""
 
-#: functions.php:274
+#: functions.php:297
 #@ anarcho-notepad
 msgid "Posts navigation"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:328
 #@ anarcho-notepad
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:360
 #@ anarcho-notepad
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:360
 #@ anarcho-notepad
 msgid "(Edit)"
-msgstr ""
+msgstr "(Uprav)"
 
-#: functions.php:352
+#: functions.php:375
 #@ anarcho-notepad
 msgid "(Post author) "
 msgstr ""
 
-#. translators: 1: date, 2: time 
-#: functions.php:364
+#. translators: 1: date, 2: time
+#: functions.php:387
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:369
-#@ anarcho-notepad
-msgid "Edit"
-msgstr ""
-
-#: functions.php:373
-#@ anarcho-notepad
-msgid "Reply"
-msgstr ""
-
-#: functions.php:390
-#@ anarcho-notepad
-msgid "Name:"
-msgstr ""
-
-#: functions.php:391
-#@ anarcho-notepad
-msgid "Name"
-msgstr ""
+msgstr "Váš komentár čaká na schválenie."
 
 #: functions.php:392
+#@ anarcho-notepad
+msgid "Edit"
+msgstr "Uprav"
+
+#: functions.php:396
+#@ anarcho-notepad
+msgid "Reply"
+msgstr "Odpoveď"
+
+#: functions.php:413
+#@ anarcho-notepad
+msgid "Name:"
+msgstr "Meno:"
+
+#: functions.php:414
+#@ anarcho-notepad
+msgid "Name"
+msgstr "Meno"
+
+#: functions.php:415
 #@ anarcho-notepad
 msgid "Email:"
 msgstr ""
 
-#: functions.php:393
+#: functions.php:416
 #@ anarcho-notepad
 msgid "Email"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:417
 #@ anarcho-notepad
 msgid "Website:"
-msgstr ""
+msgstr "Webstránka:"
 
-#: functions.php:395
+#: functions.php:418
 #@ anarcho-notepad
 msgid "Website"
-msgstr ""
+msgstr "Webstránka"
 
-#: functions.php:399
+#: functions.php:422
 #@ anarcho-notepad
 msgctxt "noun"
 msgid "Comment:"
-msgstr ""
+msgstr "Komentár:"
 
-#: functions.php:399
+#: functions.php:422
 #@ anarcho-notepad
 msgid "Comment"
-msgstr ""
+msgstr "Komentár"
 
-#: functions.php:401
+#: functions.php:424
 #@ anarcho-notepad
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Nechaj komentár:"
 
-#: functions.php:427
+#: functions.php:450
 #, php-format
 #@ anarcho-notepad
 msgid "Page %s"
+msgstr "Strana %s"
+
+#: inc/customizer.php:32
+#@ anarcho-notepad
+msgid "Meta"
 msgstr ""
 
 #: inc/customizer.php:37
 #@ anarcho-notepad
 msgid "Paste here small text about You and/or about site"
-msgstr ""
+msgstr "Napíš sem krátky text o tebe alebo o tvojej stránke"
 
 #: inc/customizer.php:40
 #@ anarcho-notepad
 msgid "About box - \"What is this place?\""
-msgstr ""
+msgstr "About box - \"Čo je toto za miesto?\""
 
 #: inc/customizer.php:49
 #@ anarcho-notepad
 msgid "Copyright after post"
-msgstr ""
+msgstr "Copyright po článku"
 
 #: inc/customizer.php:58
 #@ anarcho-notepad
@@ -375,6 +335,16 @@ msgstr ""
 #: inc/customizer.php:68
 #@ anarcho-notepad
 msgid "Disable copyright of the author of theme in footer"
+msgstr ""
+
+#: inc/customizer.php:74
+#@ anarcho-notepad
+msgid "Stuff"
+msgstr ""
+
+#: inc/customizer.php:83
+#@ anarcho-notepad
+msgid "Enable \"Title animation\""
 msgstr ""
 
 #: inc/customizer.php:92
@@ -392,144 +362,139 @@ msgstr ""
 msgid "Disable box \"Frends & Links\""
 msgstr ""
 
-#: inc/customizer.php:119
+#: inc/customizer.php:128
 #@ anarcho-notepad
 msgid "Disable \"Red Data Ribbons\""
 msgstr ""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:137
 #@ anarcho-notepad
 msgid "Disable \"Recent Posts Sticker\""
 msgstr ""
 
+#: inc/customizer.php:146
+#@ anarcho-notepad
+msgid "Enable \"Breadcrumbs\""
+msgstr ""
+
 #: inc/customizer.php:155
+#@ anarcho-notepad
+msgid "Enable \"Page Navigation\""
+msgstr ""
+
+#: inc/customizer.php:173
 #@ anarcho-notepad
 msgid "Disable button \"To Top\""
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:182
 #@ anarcho-notepad
 msgid "Show info line in footer"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:187
 #@ anarcho-notepad
 msgid "Scripts"
-msgstr ""
+msgstr "Skriptá"
 
-#: inc/customizer.php:170
+#: inc/customizer.php:188
 #@ anarcho-notepad
 msgid "Put here your scripts"
-msgstr ""
+msgstr "Vlož sem svoje skriptá"
 
-#: inc/customizer.php:177
-#@ anarcho-notepad
-msgid "Scripts in to header"
-msgstr ""
-
-#: inc/customizer.php:185
+#: inc/customizer.php:195
 #@ anarcho-notepad
 msgid "Scripts before posts"
 msgstr ""
 
-#: inc/customizer.php:193
+#: inc/customizer.php:203
 #@ anarcho-notepad
 msgid "Scripts at the beginning of the posts"
 msgstr ""
 
-#: inc/customizer.php:201
+#: inc/customizer.php:211
 #@ anarcho-notepad
 msgid "Scripts at the end of the posts"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:219
 #@ anarcho-notepad
 msgid "Scripts after posts"
 msgstr ""
 
-#: inc/customizer.php:217
-#@ anarcho-notepad
-msgid "Scripts in to footer"
-msgstr ""
-
-#: inc/customizer.php:223
+#: inc/customizer.php:225
 #@ anarcho-notepad
 msgid "Post"
-msgstr ""
+msgstr "Článok"
 
-#: inc/customizer.php:243
+#: inc/customizer.php:245
 #@ anarcho-notepad
 msgid "Font size of posts"
-msgstr ""
+msgstr "Veľkosť písma v článkoch"
 
-#: inc/customizer.php:550
+#: inc/customizer.php:552
 #@ anarcho-notepad
 msgid "Font of posts (Google Webfonts)"
-msgstr ""
+msgstr "Typ písma v článkoch (Google Webfonts)"
 
-#: inc/customizer.php:568
+#: inc/customizer.php:570
 #@ anarcho-notepad
 msgid "Site Title font (Google Webfonts)"
-msgstr ""
+msgstr "Typ písma v názve stránky (Google Webfonts)"
 
-#: inc/customizer.php:580
+#: inc/customizer.php:582
 #@ anarcho-notepad
 msgid "Site Tagline font (Google Webfonts)"
-msgstr ""
+msgstr "Typ písma na názov stránky (Google Webfonts)"
 
-#: inc/customizer.php:593
+#: inc/customizer.php:595
 #@ anarcho-notepad
 msgid "Site Title color"
-msgstr ""
+msgstr "Farby písma na názov"
 
-#: inc/customizer.php:605
+#: inc/customizer.php:607
 #@ anarcho-notepad
 msgid "Site Tagline color"
 msgstr ""
 
-#: inc/customizer.php:615
+#: inc/customizer.php:617
 #@ anarcho-notepad
 msgid "Site Title Position"
 msgstr ""
 
-#: inc/customizer.php:621
+#: inc/customizer.php:623
 #@ anarcho-notepad
 msgid "Left"
-msgstr ""
+msgstr "Vľavo"
 
-#: inc/customizer.php:622
+#: inc/customizer.php:624
 #@ anarcho-notepad
 msgid "Center"
-msgstr ""
+msgstr "V strede"
 
-#: inc/customizer.php:634
+#: inc/customizer.php:636
 #@ anarcho-notepad
 msgid "Background Color"
-msgstr ""
+msgstr "Farba pozadia"
 
-#: inc/customizer.php:642
+#: inc/customizer.php:644
 #@ anarcho-notepad
 msgid "Background Size"
-msgstr ""
+msgstr "Veľkosť pozadia"
 
-#: inc/customizer.php:648
+#: inc/customizer.php:650
 #@ anarcho-notepad
 msgid "Auto (Default)"
 msgstr ""
 
-#: inc/customizer.php:649
+#: inc/customizer.php:651
 #@ anarcho-notepad
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer.php:650
+#: inc/customizer.php:652
 #@ anarcho-notepad
 msgid "Cover"
-msgstr ""
-
-#: inc/theme_info.php:29
-#@ anarcho-notepad
-msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
 msgstr ""
 
 #: inc/theme_info.php:33
@@ -586,21 +551,11 @@ msgstr ""
 #: inc/theme_info.php:106
 #@ anarcho-notepad
 msgid "Help"
-msgstr ""
+msgstr "Pomoc"
 
 #: inc/theme_info.php:109
 #@ anarcho-notepad
 msgid "Need help with Anarcho-Notepad? Click here!"
-msgstr ""
-
-#: inc/theme_info.php:130
-#@ anarcho-notepad
-msgid "Customiz'it!"
-msgstr ""
-
-#: inc/theme_info.php:133
-#@ anarcho-notepad
-msgid "Customize your website at any time!"
 msgstr ""
 
 #: search.php:44
@@ -608,39 +563,74 @@ msgstr ""
 msgid "Sorry for your result nothing found"
 msgstr ""
 
+#: searchform.php:18
+#@ anarcho-notepad
+msgid "Write your search and hit Enter"
+msgstr "Napíš čo hľadáš a stlač ENTER"
+
 #: single.php:37
 #: sitemap.php:39
 #@ anarcho-notepad
 msgid "Pages:"
-msgstr ""
+msgstr "Stránky:"
 
 #: single.php:46
 #@ anarcho-notepad
 msgid "Posted "
-msgstr ""
+msgstr "Uverejnené "
 
 #: single.php:46
 #@ anarcho-notepad
 msgid " by "
-msgstr ""
+msgstr "od "
 
 #: single.php:46
 #@ anarcho-notepad
 msgid " in category "
-msgstr ""
+msgstr "v kategórii "
 
 #: sitemap.php:32
 #@ anarcho-notepad
 msgid "Author(s):"
-msgstr ""
+msgstr "Autor(i)"
 
 #: sitemap.php:46
 #@ anarcho-notepad
 msgid "Posts:"
-msgstr ""
+msgstr "Články:"
 
 #: sitemap.php:74
 #@ anarcho-notepad
 msgid "Archives:"
+msgstr "Archív:"
+
+#: inc/theme_info.php:29
+#@ anarcho-notepad
+msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
+msgstr ""
+
+#: inc/customizer.php:119
+#@ anarcho-notepad
+msgid "Enable Year in \"Red Data Ribbons\""
+msgstr ""
+
+#: inc/customizer.php:164
+#@ anarcho-notepad
+msgid "Disable block \"About the Author\""
+msgstr ""
+
+#: functions.php:472
+#@ anarcho-notepad
+msgid " queries in "
+msgstr ""
+
+#: functions.php:474
+#@ anarcho-notepad
+msgid " seconds"
+msgstr ""
+
+#: functions.php:477
+#@ anarcho-notepad
+msgid " mb"
 msgstr ""
 
