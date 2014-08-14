@@ -84,12 +84,14 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.0.4.14
+1. $content_width globalised and called fron the after theme setup callback tag
 @version 1.0.4
-1.	Small Changes in Comment Form
-2.	Changes for Custom CSS.
-
+1. Small Changes in Comment Form
+2. Changes for Custom CSS.
+3. Content Width Issue Fixed.
 @version 1.0.3
-1.	HTML beautified Code.
+1. HTML beautified Code.
 @version 1.0.2.1
 1. front-page.php added.
 2. project sections added.

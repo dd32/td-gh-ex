@@ -14,11 +14,7 @@
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
-  	
-  		
-  	
-  	//content width
-  	if ( ! isset( $content_width ) ) $content_width = 700;//In PX		
+	
   	//wp title tag starts here
   	function quality_head( $title, $sep )
   	{	global $paged, $page;		
@@ -39,7 +35,10 @@
   	
   	add_action( 'after_setup_theme', 'quality_setup' ); 	
   	function quality_setup()
-  	{	// Load text domain for translation-ready
+  	{	
+		//content width
+		if ( ! isset( $content_width ) ) $content_width = 700;//In PX
+		// Load text domain for translation-ready
   		load_theme_textdomain( 'quality', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
   		
   		add_theme_support( 'post-thumbnails' ); //supports featured image
