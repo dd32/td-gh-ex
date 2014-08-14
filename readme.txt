@@ -85,9 +85,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.2.2.1
+1. $content_width globalised from after theme setup tag.
 @Version: 1.2.2
 1. comment_time fixed.
 2. Changes for Custom CSS.
+3. Set Content Width Inside After Theme Setup Hook.
 @Version: 1.2.1
 1. HTML Beautified Code.
 @Version: 1.2.0
