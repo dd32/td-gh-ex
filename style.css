@@ -4,10 +4,10 @@ Theme URI: http://competethemes.com/ignite
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: Ignite is a responsive blog theme. Customize your site with Ignite's built-in social media icons and logo uploader. Then, make your logo pixel-perfect with the logo size and position tools. Additional features are available with Ignite Plus.
-Version: 1.25
+Version: 1.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, responsive-layout, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: ignite
 
 Ignite WordPress Theme, Copyright 2014 Compete Themes
@@ -367,6 +367,8 @@ a img {
   font-size: 1.625em;
   line-height: 1.35;
   position: absolute;
+  margin: 0;
+  padding: 0;
   z-index: 1;
   background: none;
   border: none;
@@ -509,6 +511,7 @@ a img {
 
   .title-info {
     float: left;
+    margin-bottom: 5px;
     padding: 1.125em 3em 0 0;
   }
 
@@ -538,6 +541,7 @@ a img {
   .menu-unset ul {
     margin: 0;
     line-height: 0;
+    float: left;
   }
   .menu-primary-items li,
   .menu-unset ul li {
@@ -638,17 +642,17 @@ a img {
   }
 
   #menu-primary-items,
-  .menu-unset {
+  .menu-unset ul {
     /* using id to avoid annoying selector competition */
   }
   #menu-primary-items .current-menu-item > a,
   #menu-primary-items .current_page_ancestor > a,
   #menu-primary-items .current_page_item > a,
   #menu-primary-items .current_page_ancestor > a,
-  .menu-unset .current-menu-item > a,
-  .menu-unset .current_page_ancestor > a,
-  .menu-unset .current_page_item > a,
-  .menu-unset .current_page_ancestor > a {
+  .menu-unset ul .current-menu-item > a,
+  .menu-unset ul .current_page_ancestor > a,
+  .menu-unset ul .current_page_item > a,
+  .menu-unset ul .current_page_ancestor > a {
     color: white;
     background: #e6a117;
   }
@@ -668,12 +672,12 @@ a img {
 
   /* show drop down items when accessed with keyboard too */
   .menu-primary-items ul.focused,
-  .menu-unset ul.focused {
+  .menu-unset ul ul.focused {
     top: 4.2495em;
     opacity: 1;
   }
   .menu-primary-items ul.focused ul.focused,
-  .menu-unset ul.focused ul.focused {
+  .menu-unset ul ul.focused ul.focused {
     top: 0;
     left: 100%;
   }
@@ -682,11 +686,6 @@ a img {
 @media all and (min-width: 56.25em) {
   .site-header {
     padding: 0 7.407%;
-  }
-
-  .menu-primary-items,
-  .menu-unset {
-    float: left;
   }
 
   .site-header .social-media-icons {
@@ -1632,6 +1631,17 @@ li.pingback {
   width: 49.5%;
 }
 
+/* Left Sidebar */
+@media all and (min-width: 56.25em) {
+  .sidebar-left .main {
+    float: right;
+    margin: 0 7.407% 0 3.703%;
+  }
+  .sidebar-left .sidebar-primary-container {
+    float: none;
+    margin-left: 7.407%;
+  }
+}
 /**
  * Cleaner Gallery Stylesheet
  * @version 20130526

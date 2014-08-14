@@ -1,6 +1,6 @@
 <?php 
 
-/* Add layout option in Customize. */
+/* Add logo option in Customize. */
 add_action( 'customize_register', 'ct_ignite_customize_register_logo' );
 
 /**
@@ -10,7 +10,7 @@ add_action( 'customize_register', 'ct_ignite_customize_register_logo' );
  */
 function ct_ignite_customize_register_logo( $wp_customize ) {
 
-	/* Add the layout section. */
+	/* section */
 	$wp_customize->add_section(
 		'ct-ignite-upload',
 		array(
@@ -59,7 +59,7 @@ function ct_ignite_customize_logo_positioning( $wp_customize ) {
         <?php
         }
     }
-    /* Add the layout section. */
+    /* section */
     $wp_customize->add_section(
         'ct-logo-positioning',
         array(
@@ -119,7 +119,7 @@ function ct_ignite_sanitize_integer($input){
 /* allow logo size to be adjusted */
 function ct_ignite_customize_logo_size( $wp_customize ) {
 
-    /* Add the layout section. */
+    /* section */
     $wp_customize->add_section(
         'ct-logo-size',
         array(
@@ -407,20 +407,282 @@ function ct_ignite_customizer_custom_css( $wp_customize ) {
 }
 add_action( 'customize_register', 'ct_ignite_customizer_custom_css' );
 
+/* allow users to change the font to a Google Webfont */
+function ct_ignite_customize_font_family_options( $wp_customize ) {
+
+    /* section. */
+    $wp_customize->add_section(
+        'ct-font-family',
+        array(
+            'title'       => __( 'Font Family', 'ignite' ),
+            'priority'    => 55,
+            'capability'  => 'edit_theme_options',
+            'description' => __('The default font is "Lusitana".', 'ignite')
+        )
+    );
+
+    /* font selection setting */
+    $wp_customize->add_setting(
+        'ct_ignite_font_family_settings',
+        array(
+            'default'           => 'Lusitana',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_ignite_sanitize_google_font_family'
+        )
+    );
+
+    /* control for font selection */
+    $wp_customize->add_control( 'ct_ignite_font_family_settings', array(
+        'type'     => 'select',
+        'label'    => __( 'Site Font Family', 'ignite' ),
+        'section'  => 'ct-font-family',
+        'choices'  => array(
+            'Lusitana' => 'Lusitana',
+            'Roboto' => 'Roboto',
+            'Lato' => 'Lato',
+            'Droid Serif' => 'Droid Serif',
+            'Roboto Slab' => 'Roboto Slab'
+        )
+    ));
+
+}
+add_action( 'customize_register', 'ct_ignite_customize_font_family_options' );
+
+function ct_ignite_sanitize_google_font_family($input){
+
+    $valid = array(
+        'Lusitana' => 'Lusitana',
+        'Roboto' => 'Roboto',
+        'Lato' => 'Lato',
+        'Droid Serif' => 'Droid Serif',
+        'Roboto Slab' => 'Roboto Slab'
+    );
+
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+/* allow users to change the font weights */
+function ct_ignite_customize_font_weight_options( $wp_customize ) {
+
+    /* section. */
+    $wp_customize->add_section(
+        'ct-font-weight',
+        array(
+            'title'       => __( 'Font Weight', 'ignite' ),
+            'priority'    => 56,
+            'capability'  => 'edit_theme_options',
+            'description' => __("If you've just changed fonts, please save and refresh the page to update available weights.", "ignite")
+        )
+    );
+
+    // get the weights available based on the current font
+    $font_weights = ct_ignite_get_available_font_weights();
+
+    /* font weight setting */
+    $wp_customize->add_setting( 'ct_ignite_font_weight_settings', array(
+        'default'           => 'regular',
+        'type'              => 'theme_mod',
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'ct_ignite_sanitize_google_font_weight'
+    ));
+    /* font weight control */
+    $wp_customize->add_control( 'ct_ignite_font_weight_settings', array(
+        'type'     => 'select',
+        'label'    => __( 'Site Font Weight', 'ignite' ),
+        'section'  => 'ct-font-weight',
+        'choices'  => $font_weights
+    ));
+}
+add_action( 'customize_register', 'ct_ignite_customize_font_weight_options' );
+
+function ct_ignite_get_available_font_weights(){
+
+    // current font is the one saved in the db
+    $current_font = get_theme_mod('ct_ignite_font_family_settings');
+
+    if($current_font){
+        $selected_font = $current_font;
+    } else {
+        $selected_font = "Lusitana";
+    }
+    if($selected_font == "Lusitana"){
+        $font_weights = array(
+            'regular' => 'Regular',
+            '700' => 'Bold'
+        );
+    }
+    elseif($selected_font == "Roboto"){
+        $font_weights = array(
+            '100' => 'Thin',
+            '100italic' => 'Thin Italic',
+            '300' => 'Light',
+            '300italic' => 'Light Italic',
+            'regular' => 'Regular',
+            'italic' => 'Italic',
+            '500' => 'Medium',
+            '500italic' => 'Medium Italic',
+            '700' => 'Bold',
+            '700italic' => 'Bold Italic',
+            '900' => 'Ultra-Bold',
+            '900italic' => 'Ultra-Bold Italic',
+        );
+    }
+    elseif($selected_font == "Lato"){
+        $font_weights = array(
+            '100' => 'Thin',
+            '100italic' => 'Thin Italic',
+            '300' => 'Light',
+            '300italic' => 'Light Italic',
+            'regular' => 'Regular',
+            'italic' => 'Italic',
+            '700' => 'Bold',
+            '700italic' => 'Bold Italic',
+            '900' => 'Ultra-Bold',
+            '900italic' => 'Ultra-Bold Italic',
+        );
+    }
+    elseif($selected_font == "Droid Serif"){
+        $font_weights = array(
+            'regular' => 'Regular',
+            'italic' => 'Italic',
+            '700' => 'Bold',
+            '700italic' => 'Bold Italic',
+        );
+    }
+    elseif($selected_font == "Roboto Slab"){
+        $font_weights = array(
+            '100' => 'Thin',
+            '300' => 'Light',
+            'regular' => 'Regular',
+            '700' => 'Bold',
+        );
+    }
+
+    return $font_weights;
+}
+
+function ct_ignite_sanitize_google_font_weight($input){
+
+    // get the available weights
+    $font_weights = ct_ignite_get_available_font_weights();
+
+    $valid = $font_weights;
+
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+function ct_ignite_customize_layout_options( $wp_customize ) {
+
+    /* section */
+    $wp_customize->add_section(
+        'ct-layout',
+        array(
+            'title'      => __( 'Layout', 'ignite' ),
+            'priority'   => 50,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    /* setting */
+    $wp_customize->add_setting(
+        'ct_ignite_layout_settings',
+        array(
+            'default'           => 'right',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_ignite_sanitize_layout_settings',
+        )
+    );
+    /* control */
+    $wp_customize->add_control(
+        'ct_ignite_sidebar_layout',
+        array(
+            'label'          => __( 'Pick Your Layout:', 'ignite' ),
+            'section'        => 'ct-layout',
+            'settings'       => 'ct_ignite_layout_settings',
+            'type'           => 'radio',
+            'choices'        => array(
+                'right'   => __('Right sidebar', 'ignite'),
+                'left'  => __('Left sidebar', 'ignite'),
+            )
+        )
+    );
+}
+add_action( 'customize_register', 'ct_ignite_customize_layout_options' );
+
+/* sanitize the radio button input */
+function ct_ignite_sanitize_layout_settings($input){
+    $valid = array(
+        'right'   => __('Right sidebar', 'ignite'),
+        'left'  => __('Left sidebar', 'ignite'),
+    );
+
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+/* custom background options */
+function ct_ignite_customize_background_options( $wp_customize ) {
+
+    /* section */
+    $wp_customize->add_section(
+        'ct-background',
+        array(
+            'title'      => __( 'Background', 'ignite' ),
+            'priority'   => 60,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    /* background color setting. */
+    $wp_customize->add_setting(
+        'ct_ignite_background_color_setting',
+        array(
+            'default'           => '#eeede8',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    /* background color control */
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'ct_ignite_background_color',
+            array(
+                'label'      => __( 'Background Color', 'ignite' ),
+                'section'    => 'ct-background',
+                'settings'   => 'ct_ignite_background_color_setting',
+                'priority'       => 10,
+            ) )
+    );
+}
+add_action( 'customize_register', 'ct_ignite_customize_background_options' );
+
 function ct_ignite_user_profile_image_setting( $user ) { ?>
 
     <table id="profile-image-table" class="form-table">
 
         <tr>
-            <th><label for="user_profile_image"><?php _e( 'Profile image', 'ignite-plus' ); ?></label></th>
+            <th><label for="user_profile_image"><?php _e( 'Profile image', 'ignite' ); ?></label></th>
             <td>
                 <!-- Outputs the image after save -->
                 <img id="image-preview" src="<?php echo esc_url( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" style="width:100px;"><br />
                 <!-- Outputs the text field and displays the URL of the image retrieved by the media uploader -->
                 <input type="text" name="user_profile_image" id="user_profile_image" value="<?php echo esc_url_raw( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" class="regular-text" />
                 <!-- Outputs the save button -->
-                <input type='button' id="user-profile-upload" class="button-primary" value="<?php _e( 'Upload Image', 'ignite-plus' ); ?>"/><br />
-                <span class="description"><?php _e( 'Upload an image here to use instead of your Gravatar. Perfectly square images will not be cropped.', 'ignite-plus' ); ?></span>
+                <input type='button' id="user-profile-upload" class="button-primary" value="<?php _e( 'Upload Image', 'ignite' ); ?>"/><br />
+                <span class="description"><?php _e( 'Upload an image here to use instead of your Gravatar. Perfectly square images will not be cropped.', 'ignite' ); ?></span>
             </td>
         </tr>
 
@@ -466,7 +728,7 @@ function ct_ignite_options_content(){
         <div>
             <h3><?php _e('Premium Upgrade', 'ignite'); ?></h3>
             <p><?php _e('Get more flexibility and customizations for your site, with Ignite Plus ($29).', 'ignite'); ?></p>
-            <p><?php _e('Custom colors, custom backgrounds, over 600+ fonts, and more...', 'ignite'); ?></p>
+            <p><?php _e('Custom colors, background images, over 600+ fonts, and more...', 'ignite'); ?></p>
             <p>
                 <a target="_blank" class="button-primary" href="https://www.competethemes.com/ignite-plus/"><?php _e('View Ignite Plus', 'ignite'); ?></a>
             </p>

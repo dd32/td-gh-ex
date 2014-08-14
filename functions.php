@@ -10,7 +10,7 @@ function ct_ignite_load_javascript_files() {
         wp_enqueue_script('ct-ignite-production', get_template_directory_uri() . '/js/build/production.min.js#ct_ignite_asyncload', array('jquery'),'', true);
 
         wp_enqueue_style('ct-ignite-google-fonts');
-        wp_enqueue_style('ct-ignite-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
+        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
         wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
     }
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
@@ -174,7 +174,7 @@ function ct_ignite_further_reading() {
     } else {
         echo "<p class='next'>
                 <span>" . __('Return to Blog', 'ignite') . "</span>
-        		<a href='".esc_url(home_url())."'>" . __('This is the oldest post', 'ignite') . "</a>
+        		<a href='".esc_url(home_url())."'>" . __('This is the newest post', 'ignite') . "</a>
         	 </p>";
     }
     echo "</nav>";
@@ -436,9 +436,19 @@ function ct_ignite_wp_page_menu() {
 }
 
 function ct_ignite_body_class( $classes ) {
+
     if ( ! is_front_page() ) {
         $classes[] = 'not-front';
     }
+
+    /* get layout chosen by user */
+    $layout = get_theme_mod('ct_ignite_layout_settings');
+
+    /* if sidebar left layout */
+    if($layout == 'left') {
+        $classes[] = 'sidebar-left';
+    }
+
     return $classes;
 }
 add_filter( 'body_class', 'ct_ignite_body_class' );
@@ -556,3 +566,80 @@ function ct_ignite_get_image_id($url) {
     // Returns null if no attachment is found
     return $attachment[0];
 }
+
+// implement fonts based on customizer selection
+function ct_ignite_change_font(){
+
+    // get the current font
+    $font = get_theme_mod('ct_ignite_font_family_settings');
+
+    // if it's the default do nothing, otherwise...
+    if($font != "Lusitana" && !empty($font)){
+
+        // get the current font weight
+        $font_weight = get_theme_mod('ct_ignite_font_weight_settings');
+
+        // check if font style is italic (needs double '==' b/c position may be '0')
+        if(strpos($font_weight, 'italic') !== false){
+
+            // if weight is simply italic, set weight to 400
+            if($font_weight == 'italic'){
+                $font_weight_css = 400;
+            }
+            // otherwise, remove 'italic' from weight and use integer (ex. 600italic -> 600)
+            else {
+                $font_weight_css = str_replace($font_weight, 'italic', '');
+            }
+            // save style as 'italic'
+            $font_style = 'italic';
+        }
+        // if not italic, just use weight integer and set style as 'normal'
+        else {
+            $font_weight_css = $font_weight;
+            $font_style = 'normal';
+        }
+
+        // css to be output
+        $css = "
+            body, h1, h2, h3, h4, h5, h6, input:not([type='checkbox']):not([type='radio']):not([type='submit']):not([type='file']), input[type='submit'], textarea {
+                font-family: $font;
+                font-weight: $font_weight_css;
+                font-style: $font_style;
+            }
+        ";
+        // output the css
+        wp_add_inline_style('style', $css);
+
+        // deregister the default call to Google Fonts
+        wp_deregister_style('ct-ignite-google-fonts');
+
+        // register the new font
+        wp_register_style( 'ct-ignite-google-fonts', '//fonts.googleapis.com/css?family=' . $font . ':' . $font_weight . '');
+
+        // enqueue the new GF stylesheet on the front-end
+        if( !is_admin()){
+            wp_enqueue_style('ct-ignite-google-fonts');
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'ct_ignite_change_font');
+
+function ct_ignite_background_css(){
+
+    $background_color = get_theme_mod('ct_ignite_background_color_setting');
+
+    if($background_color != '#eeede8'){
+
+        $background_color_css = "
+            .overflow-container {
+                background: $background_color;
+            }
+            .main, .sidebar-primary-container, .breadcrumb-trail {
+                background: none;
+            }
+        ";
+        wp_add_inline_style('style', $background_color_css);
+    }
+
+}
+add_action('wp_enqueue_scripts','ct_ignite_background_css');
