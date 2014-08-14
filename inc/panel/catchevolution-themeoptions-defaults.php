@@ -57,6 +57,7 @@ $catchevolution_options_defaults = array(
  	'social_skype'						=> '',
 	'social_soundcloud'					=> '',
 	'social_email'						=> '',	
+	'social_xing'						=> '',
  	'custom_css'						=> '',
  	'analytic_header'					=> '',
  	'analytic_footer'					=> '',

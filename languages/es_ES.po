@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-14 03:14+0545\n"
-"PO-Revision-Date: 2014-07-14 03:15+0545\n"
+"POT-Creation-Date: 2014-08-15 01:53+0545\n"
+"PO-Revision-Date: 2014-08-15 01:53+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -428,119 +428,115 @@ msgid "Name"
 msgstr "Nombre"
 
 #: ../inc/catchevolution-functions.php:817
-#: ../inc/catchevolution-functions.php:1027 ../inc/panel/theme-options.php:759
+#: ../inc/catchevolution-functions.php:1028
+#: ../inc/catchevolution-functions.php:1220 ../inc/panel/theme-options.php:765
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchevolution-functions.php:932
-#: ../inc/catchevolution-functions.php:1115
-#, php-format
-msgid "%s in Facebook"
-msgstr "%s en Facebook"
+#: ../inc/catchevolution-functions.php:933
+#: ../inc/catchevolution-functions.php:1125 ../inc/panel/theme-options.php:102
+#: ../inc/panel/theme-options.php:669
+msgid "Facebook"
+msgstr "Facebook"
 
-#: ../inc/catchevolution-functions.php:937
-#: ../inc/catchevolution-functions.php:1120
-#, php-format
-msgid "%s in Twitter"
-msgstr "%s en Twitter"
+#: ../inc/catchevolution-functions.php:938
+#: ../inc/catchevolution-functions.php:1130 ../inc/panel/theme-options.php:103
+#: ../inc/panel/theme-options.php:674
+msgid "Twitter"
+msgstr "Twitter"
 
-#: ../inc/catchevolution-functions.php:942
-#: ../inc/catchevolution-functions.php:1125
-#, php-format
-msgid "%s in Google+"
-msgstr "%s en Google+"
+#: ../inc/catchevolution-functions.php:943
+#: ../inc/catchevolution-functions.php:1135 ../inc/panel/theme-options.php:679
+msgid "Google+"
+msgstr "Google+"
 
-#: ../inc/catchevolution-functions.php:947
-#: ../inc/catchevolution-functions.php:1130
-#, php-format
-msgid "%s in Linkedin"
-msgstr "%s en Linkedin"
+#: ../inc/catchevolution-functions.php:948
+#: ../inc/catchevolution-functions.php:1140 ../inc/panel/theme-options.php:700
+msgid "Linkedin"
+msgstr "Linkedin"
 
-#: ../inc/catchevolution-functions.php:952
-#: ../inc/catchevolution-functions.php:1135
-#, php-format
-msgid "%s in Pinterest"
-msgstr "%s en Pinterest"
+#: ../inc/catchevolution-functions.php:953
+#: ../inc/catchevolution-functions.php:1145 ../inc/panel/theme-options.php:684
+msgid "Pinterest"
+msgstr "Pinterest"
 
-#: ../inc/catchevolution-functions.php:957
-#: ../inc/catchevolution-functions.php:1140
-#, php-format
-msgid "%s in YouTube"
-msgstr "%s en YouTube"
-
-#: ../inc/catchevolution-functions.php:962
-#: ../inc/catchevolution-functions.php:1145
-#, php-format
-msgid "%s in Vimeo"
-msgstr "%s en Vimeo"
-
-#: ../inc/catchevolution-functions.php:967
-#: ../inc/catchevolution-functions.php:1007
+#: ../inc/catchevolution-functions.php:958
 #: ../inc/catchevolution-functions.php:1150
-#: ../inc/catchevolution-functions.php:1190
-#, php-format
-msgid "%s in Slideshare"
-msgstr "%s en Slideshare"
+msgid "YouTube"
+msgstr "YouTube"
 
-#: ../inc/catchevolution-functions.php:972
-#: ../inc/catchevolution-functions.php:1155
-#, php-format
-msgid "%s in Foursquare"
-msgstr "%s en Foursquare"
+#: ../inc/catchevolution-functions.php:963
+#: ../inc/catchevolution-functions.php:1155 ../inc/panel/theme-options.php:694
+msgid "Vimeo"
+msgstr "Vimeo"
 
-#: ../inc/catchevolution-functions.php:977
-#: ../inc/catchevolution-functions.php:1160
-#, php-format
-msgid "%s in Flickr"
-msgstr "%s en Flickr"
+#: ../inc/catchevolution-functions.php:968
+#: ../inc/catchevolution-functions.php:1160 ../inc/panel/theme-options.php:705
+msgid "AIM"
+msgstr "AIM"
 
-#: ../inc/catchevolution-functions.php:982
-#: ../inc/catchevolution-functions.php:1165
-#, php-format
-msgid "%s in Tumblr"
-msgstr "%s en Tumblr"
+#: ../inc/catchevolution-functions.php:973
+#: ../inc/catchevolution-functions.php:1165 ../inc/panel/theme-options.php:710
+msgid "MySpace"
+msgstr "MySpace"
 
-#: ../inc/catchevolution-functions.php:987
-#: ../inc/catchevolution-functions.php:1170
-#, php-format
-msgid "%s in deviantART"
-msgstr "%s en deviantART"
+#: ../inc/catchevolution-functions.php:978
+#: ../inc/catchevolution-functions.php:1170 ../inc/panel/theme-options.php:715
+msgid "Flickr"
+msgstr "Flickr"
 
-#: ../inc/catchevolution-functions.php:992
-#: ../inc/catchevolution-functions.php:1175
-#, php-format
-msgid "%s in Dribbble"
-msgstr "%s en Dribbble"
+#: ../inc/catchevolution-functions.php:983
+#: ../inc/catchevolution-functions.php:1175 ../inc/panel/theme-options.php:720
+msgid "Tumblr"
+msgstr "Tumblr"
 
-#: ../inc/catchevolution-functions.php:997
-#: ../inc/catchevolution-functions.php:1180
-#, php-format
-msgid "%s in WordPress"
-msgstr "%s en WordPress"
+#: ../inc/catchevolution-functions.php:988
+#: ../inc/catchevolution-functions.php:1180 ../inc/panel/theme-options.php:725
+msgid "deviantART"
+msgstr "deviantART"
 
-#: ../inc/catchevolution-functions.php:1002
-#: ../inc/catchevolution-functions.php:1185
-#, php-format
-msgid "%s in RSS"
-msgstr "%s en RSS"
+#: ../inc/catchevolution-functions.php:993
+#: ../inc/catchevolution-functions.php:1185 ../inc/panel/theme-options.php:730
+msgid "Dribbble"
+msgstr "Dribbble"
 
-#: ../inc/catchevolution-functions.php:1012
-#: ../inc/catchevolution-functions.php:1195
-#, php-format
-msgid "%s in Instagram"
-msgstr "%s en Instagram"
+#: ../inc/catchevolution-functions.php:998
+#: ../inc/catchevolution-functions.php:1190 ../inc/panel/theme-options.php:735
+#: ../inc/panel/theme-options.php:1176
+msgid "WordPress"
+msgstr "WordPress"
 
-#: ../inc/catchevolution-functions.php:1017
-#: ../inc/catchevolution-functions.php:1200
-#, php-format
-msgid "%s in Skype"
-msgstr "%s en Skype"
+#: ../inc/catchevolution-functions.php:1003
+#: ../inc/catchevolution-functions.php:1195 ../inc/panel/theme-options.php:740
+msgid "RSS"
+msgstr "RSS"
 
-#: ../inc/catchevolution-functions.php:1022 ../inc/panel/theme-options.php:754
+#: ../inc/catchevolution-functions.php:1008
+#: ../inc/catchevolution-functions.php:1200 ../inc/panel/theme-options.php:745
+msgid "Slideshare"
+msgstr "Slideshare"
+
+#: ../inc/catchevolution-functions.php:1013
+#: ../inc/catchevolution-functions.php:1205 ../inc/panel/theme-options.php:750
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../inc/catchevolution-functions.php:1018
+#: ../inc/catchevolution-functions.php:1210 ../inc/panel/theme-options.php:755
+msgid "Skype"
+msgstr "Skype"
+
+#: ../inc/catchevolution-functions.php:1023
+#: ../inc/catchevolution-functions.php:1215 ../inc/panel/theme-options.php:760
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchevolution-functions.php:1332
+#: ../inc/catchevolution-functions.php:1033
+#: ../inc/catchevolution-functions.php:1225 ../inc/panel/theme-options.php:770
+msgid "Xing"
+msgstr "Xing"
+
+#: ../inc/catchevolution-functions.php:1357
 msgid "Footer menu"
 msgstr "Menu del Footer"
 
@@ -744,10 +740,6 @@ msgstr "https://www.facebook.com/catchthemes/"
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes en Facebook"
 
-#: ../inc/panel/theme-options.php:102 ../inc/panel/theme-options.php:663
-msgid "Facebook"
-msgstr "Facebook"
-
 #: ../inc/panel/theme-options.php:103
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
@@ -755,10 +747,6 @@ msgstr "https://twitter.com/catchthemes/"
 #: ../inc/panel/theme-options.php:103
 msgid "Follow Catch Themes on Twitter"
 msgstr "Seguir a Catch Themes en Twitter"
-
-#: ../inc/panel/theme-options.php:103 ../inc/panel/theme-options.php:668
-msgid "Twitter"
-msgstr "Twitter"
 
 #: ../inc/panel/theme-options.php:104
 msgid "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
@@ -816,8 +804,8 @@ msgstr "Vista Previa:"
 #: ../inc/panel/theme-options.php:444 ../inc/panel/theme-options.php:478
 #: ../inc/panel/theme-options.php:504 ../inc/panel/theme-options.php:522
 #: ../inc/panel/theme-options.php:546 ../inc/panel/theme-options.php:616
-#: ../inc/panel/theme-options.php:641 ../inc/panel/theme-options.php:765
-#: ../inc/panel/theme-options.php:798
+#: ../inc/panel/theme-options.php:647 ../inc/panel/theme-options.php:776
+#: ../inc/panel/theme-options.php:809
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
@@ -915,17 +903,13 @@ msgstr "Solo tiene que añadir Widgets en el Sidebar derecho del Header"
 msgid "Menu Options"
 msgstr "Opciones del Menu"
 
-#: ../inc/panel/theme-options.php:289
-msgid "Menu Tutorial from WordPress.com"
-msgstr "Tutorial de Menu de WordPress.com"
-
-#: ../inc/panel/theme-options.php:291
-msgid "http://en.support.wordpress.com/menus/"
-msgstr "http://en.support.wordpress.com/menus/"
-
-#: ../inc/panel/theme-options.php:291
+#: ../inc/panel/theme-options.php:289 ../inc/panel/theme-options.php:291
 msgid "Menu Tutorial"
 msgstr "Tutorial de Menu"
+
+#: ../inc/panel/theme-options.php:291
+msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
+msgstr "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
 
 #: ../inc/panel/theme-options.php:291
 msgid "Click Here to Read Menu Tutorial"
@@ -1211,119 +1195,75 @@ msgstr "Longitud de la Transicion"
 msgid "Featured Post Slider Options"
 msgstr "Opciones del Slider de Posts Destacados"
 
-#: ../inc/panel/theme-options.php:625
+#: ../inc/panel/theme-options.php:625 ../inc/panel/theme-options.php:627
+msgid "Post Slider Tutorial"
+msgstr "Post Slider Tutorial"
+
+#: ../inc/panel/theme-options.php:627
+msgid ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+msgstr ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+
+#: ../inc/panel/theme-options.php:627
+msgid "Click Here to Read Post Slider Tutorial"
+msgstr "Click Here to Read Post Slider Tutorial"
+
+#: ../inc/panel/theme-options.php:631
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Excluir Post Slider de los Post de la Homepage?"
 
-#: ../inc/panel/theme-options.php:627
+#: ../inc/panel/theme-options.php:633
 msgid "Check to exclude"
 msgstr "Marcar para excluir"
 
-#: ../inc/panel/theme-options.php:632
+#: ../inc/panel/theme-options.php:638
 msgid "Featured Slider Post #"
 msgstr "Posts del Slider Destacados #"
 
-#: ../inc/panel/theme-options.php:634
+#: ../inc/panel/theme-options.php:640
 msgid "Click Here To Edit"
 msgstr "Click Aquí para Editar"
 
-#: ../inc/panel/theme-options.php:640
+#: ../inc/panel/theme-options.php:646
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Nota: Aquí puede poner los IDs de los Post que quiere que se muestren en el "
 "Slider de la Homepage."
 
-#: ../inc/panel/theme-options.php:652
+#: ../inc/panel/theme-options.php:658
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Habilitar Iconos Sociales en Sidebar derecho del Header?"
 
-#: ../inc/panel/theme-options.php:654
+#: ../inc/panel/theme-options.php:660
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
 "Añadir Catch Evolution - Social Widget en el Sidebar derecho del Header"
 
-#: ../inc/panel/theme-options.php:658
+#: ../inc/panel/theme-options.php:664
 msgid "Enable Social Icons in Footer?"
 msgstr "Habilitar Iconos Sociales en el Footer?"
 
-#: ../inc/panel/theme-options.php:660
+#: ../inc/panel/theme-options.php:666
 msgid "Check to enable"
 msgstr "Marcar para habilitar"
 
-#: ../inc/panel/theme-options.php:673
-msgid "Google+"
-msgstr "Google+"
-
-#: ../inc/panel/theme-options.php:678
-msgid "Pinterest"
-msgstr "Pinterest"
-
-#: ../inc/panel/theme-options.php:683
+#: ../inc/panel/theme-options.php:689
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/theme-options.php:688
-msgid "Vimeo"
-msgstr "Vimeo"
-
-#: ../inc/panel/theme-options.php:694
-msgid "Linkedin"
-msgstr "Linkedin"
-
-#: ../inc/panel/theme-options.php:699
-msgid "AIM"
-msgstr "AIM"
-
-#: ../inc/panel/theme-options.php:704
-msgid "MySpace"
-msgstr "MySpace"
-
-#: ../inc/panel/theme-options.php:709
-msgid "Flickr"
-msgstr "Flickr"
-
-#: ../inc/panel/theme-options.php:714
-msgid "Tumblr"
-msgstr "Tumblr"
-
-#: ../inc/panel/theme-options.php:719
-msgid "deviantART"
-msgstr "deviantART"
-
-#: ../inc/panel/theme-options.php:724
-msgid "Dribbble"
-msgstr "Dribbble"
-
-#: ../inc/panel/theme-options.php:729 ../inc/panel/theme-options.php:1162
-msgid "WordPress"
-msgstr "WordPress"
-
-#: ../inc/panel/theme-options.php:734
-msgid "RSS"
-msgstr "RSS"
-
-#: ../inc/panel/theme-options.php:739
-msgid "Slideshare"
-msgstr "Slideshare"
-
-#: ../inc/panel/theme-options.php:744
-msgid "Instagram"
-msgstr "Instagram"
-
-#: ../inc/panel/theme-options.php:749
-msgid "Skype"
-msgstr "Skype"
-
-#: ../inc/panel/theme-options.php:772
+#: ../inc/panel/theme-options.php:783
 msgid "Header and Footer Codes"
 msgstr "Codigos del Header y Footer"
 
-#: ../inc/panel/theme-options.php:777
+#: ../inc/panel/theme-options.php:788
 msgid "Code to display on Header"
 msgstr "Codigo para mostrar en el Header"
 
-#: ../inc/panel/theme-options.php:783
+#: ../inc/panel/theme-options.php:794
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1331,11 +1271,11 @@ msgstr ""
 "Nota: Aquí puede poner scripts de Google, Facebook, etc, que se cargará en "
 "el Header"
 
-#: ../inc/panel/theme-options.php:786
+#: ../inc/panel/theme-options.php:797
 msgid "Code to display on Footer"
 msgstr "Codigo para mostrar en el Footer"
 
-#: ../inc/panel/theme-options.php:793
+#: ../inc/panel/theme-options.php:804
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1343,11 +1283,11 @@ msgstr ""
 "Nota: Aquí puede poner scripts de Google, Facebook, Add This etc, que se "
 "cargará en el Footer."
 
-#: ../inc/panel/theme-options.php:1141
+#: ../inc/panel/theme-options.php:1155
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1172
+#: ../inc/panel/theme-options.php:1186
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
 
@@ -1380,6 +1320,60 @@ msgstr "Siguiente <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archivo de la etiqueta: %s"
+
+#~ msgid "%s in Facebook"
+#~ msgstr "%s en Facebook"
+
+#~ msgid "%s in Twitter"
+#~ msgstr "%s en Twitter"
+
+#~ msgid "%s in Google+"
+#~ msgstr "%s en Google+"
+
+#~ msgid "%s in Linkedin"
+#~ msgstr "%s en Linkedin"
+
+#~ msgid "%s in Pinterest"
+#~ msgstr "%s en Pinterest"
+
+#~ msgid "%s in Vimeo"
+#~ msgstr "%s en Vimeo"
+
+#~ msgid "%s in Slideshare"
+#~ msgstr "%s en Slideshare"
+
+#~ msgid "%s in Foursquare"
+#~ msgstr "%s en Foursquare"
+
+#~ msgid "%s in Flickr"
+#~ msgstr "%s en Flickr"
+
+#~ msgid "%s in Tumblr"
+#~ msgstr "%s en Tumblr"
+
+#~ msgid "%s in deviantART"
+#~ msgstr "%s en deviantART"
+
+#~ msgid "%s in Dribbble"
+#~ msgstr "%s en Dribbble"
+
+#~ msgid "%s in WordPress"
+#~ msgstr "%s en WordPress"
+
+#~ msgid "%s in RSS"
+#~ msgstr "%s en RSS"
+
+#~ msgid "%s in Instagram"
+#~ msgstr "%s en Instagram"
+
+#~ msgid "%s in Skype"
+#~ msgstr "%s en Skype"
+
+#~ msgid "Menu Tutorial from WordPress.com"
+#~ msgstr "Tutorial de Menu de WordPress.com"
+
+#~ msgid "http://en.support.wordpress.com/menus/"
+#~ msgstr "http://en.support.wordpress.com/menus/"
 
 #~ msgid "http://facebook.com/catchthemes"
 #~ msgstr "http://facebook.com/catchthemes"

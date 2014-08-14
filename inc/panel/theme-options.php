@@ -286,9 +286,9 @@ function catchevolution_theme_options_do_page() {
                             <table class="form-table">  
                                 <tbody>
                                 	<tr>
-                                        <th scope="row"><?php _e( 'Menu Tutorial from WordPress.com', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Menu Tutorial', 'catchevolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://en.support.wordpress.com/menus/','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catchevolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>                            
@@ -621,6 +621,12 @@ function catchevolution_theme_options_do_page() {
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'catchevolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
+                            	<tr>
+                                    <th scope="row"><?php _e( 'Post Slider Tutorial', 'catchevolution' ); ?></th>
+                                    <td>
+                                        <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catchevolution' );?></a>
+                                    </td>
+                              	</tr>
                                 <tr>                            
                                     <th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'catchevolution' ); ?></th>
                                      <input type='hidden' value='0' name='catchevolution_options[exclude_slider_post]'>
@@ -759,7 +765,12 @@ function catchevolution_theme_options_do_page() {
                                     <th scope="row"><h4><?php _e( 'Email', 'catchevolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                     </td>
-                                </tr>                                 
+                                </tr> 
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Xing', 'catchevolution' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catchevolution_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                    </td>
+                                </tr>                                                                 
                             </tbody>
                         </table>                           
                         <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p>
@@ -1055,6 +1066,9 @@ function catchevolution_theme_options_validate( $options ) {
 	}		
 	if( isset( $input[ 'social_email' ] ) &&  isset( $input[ 'social_email' ] )  ) {
 		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	}	
+	if( isset( $input[ 'social_xing' ] ) ) {
+		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
 	}	
 
 		

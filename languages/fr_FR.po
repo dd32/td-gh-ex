@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-14 03:15+0545\n"
-"PO-Revision-Date: 2014-07-14 03:15+0545\n"
+"POT-Creation-Date: 2014-08-15 01:53+0545\n"
+"PO-Revision-Date: 2014-08-15 01:53+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -409,7 +409,7 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: inc/catchevolution-functions.php:1332
+#: inc/catchevolution-functions.php:1357
 msgid "Footer menu"
 msgstr "Menu pied de page"
 
@@ -604,7 +604,7 @@ msgstr "Aides"
 msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
-#: inc/panel/theme-options.php:102 inc/panel/theme-options.php:663
+#: inc/panel/theme-options.php:102 inc/panel/theme-options.php:669
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -612,7 +612,7 @@ msgstr "Facebook"
 msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
-#: inc/panel/theme-options.php:103 inc/panel/theme-options.php:668
+#: inc/panel/theme-options.php:103 inc/panel/theme-options.php:674
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -736,12 +736,12 @@ msgid "Menu Options"
 msgstr "Options menu"
 
 #: inc/panel/theme-options.php:289
-msgid "Menu Tutorial from WordPress.com"
-msgstr "Tutoriel du menu de WP"
+msgid "Menu Tutorial"
+msgstr "Menu Tutoriel"
 
 #: inc/panel/theme-options.php:291
-msgid "http://en.support.wordpress.com/menus/"
-msgstr "http://en.support.wordpress.com/menus/"
+msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
+msgstr "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
 
 #: inc/panel/theme-options.php:291
 msgid "Click Here to Read Menu Tutorial"
@@ -1017,126 +1017,146 @@ msgid "Featured Post Slider Options"
 msgstr "Option du Slider post représenté"
 
 #: inc/panel/theme-options.php:625
+msgid "Post Slider Tutorial"
+msgstr "Post Slider Tutorial"
+
+#: inc/panel/theme-options.php:627
+msgid ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+msgstr ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+
+#: inc/panel/theme-options.php:627
+msgid "Click Here to Read Post Slider Tutorial"
+msgstr "Click Here to Read Post Slider Tutorial"
+
+#: inc/panel/theme-options.php:631
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Exclure le Slider post de la page d'accueil?"
 
-#: inc/panel/theme-options.php:627
+#: inc/panel/theme-options.php:633
 msgid "Check to exclude"
 msgstr "Cochez pour exclure"
 
-#: inc/panel/theme-options.php:632
+#: inc/panel/theme-options.php:638
 msgid "Featured Slider Post #"
 msgstr "Slider post représenté #"
 
-#: inc/panel/theme-options.php:634
+#: inc/panel/theme-options.php:640
 msgid "Click Here To Edit"
 msgstr "Cliquez ici pour éditer"
 
-#: inc/panel/theme-options.php:640
+#: inc/panel/theme-options.php:646
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Notez : Ici Vous pouvez mettre votre Post ID qui affichera sur le slider de "
 "la page d'accueil."
 
-#: inc/panel/theme-options.php:652
+#: inc/panel/theme-options.php:658
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Activez les icône socials sur l'en-tête de la sidebar droite"
 
-#: inc/panel/theme-options.php:654
+#: inc/panel/theme-options.php:660
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
 "Ajouter le widget social Catch Evolution dans l'en-tête de la sidebar droite"
 
-#: inc/panel/theme-options.php:658
+#: inc/panel/theme-options.php:664
 msgid "Enable Social Icons in Footer?"
 msgstr "Activer les icônes sociales dans le pied de page?"
 
-#: inc/panel/theme-options.php:660
+#: inc/panel/theme-options.php:666
 msgid "Check to enable"
 msgstr "Cochez pour activer"
 
-#: inc/panel/theme-options.php:673
+#: inc/panel/theme-options.php:679
 msgid "Google+"
 msgstr "Google+"
 
-#: inc/panel/theme-options.php:678
+#: inc/panel/theme-options.php:684
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: inc/panel/theme-options.php:683
+#: inc/panel/theme-options.php:689
 msgid "Youtube"
 msgstr "Youtube"
 
-#: inc/panel/theme-options.php:688
+#: inc/panel/theme-options.php:694
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: inc/panel/theme-options.php:694
+#: inc/panel/theme-options.php:700
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: inc/panel/theme-options.php:699
+#: inc/panel/theme-options.php:705
 msgid "AIM"
 msgstr "AIM"
 
-#: inc/panel/theme-options.php:704
+#: inc/panel/theme-options.php:710
 msgid "MySpace"
 msgstr "MySpace"
 
-#: inc/panel/theme-options.php:709
+#: inc/panel/theme-options.php:715
 msgid "Flickr"
 msgstr "Flickr"
 
-#: inc/panel/theme-options.php:714
+#: inc/panel/theme-options.php:720
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: inc/panel/theme-options.php:719
+#: inc/panel/theme-options.php:725
 msgid "deviantART"
 msgstr "deviantART"
 
-#: inc/panel/theme-options.php:724
+#: inc/panel/theme-options.php:730
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: inc/panel/theme-options.php:729 inc/panel/theme-options.php:1162
+#: inc/panel/theme-options.php:735 inc/panel/theme-options.php:1176
 msgid "WordPress"
 msgstr "WordPress"
 
-#: inc/panel/theme-options.php:734
+#: inc/panel/theme-options.php:740
 msgid "RSS"
 msgstr "RSS"
 
-#: inc/panel/theme-options.php:739
+#: inc/panel/theme-options.php:745
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: inc/panel/theme-options.php:744
+#: inc/panel/theme-options.php:750
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/panel/theme-options.php:749
+#: inc/panel/theme-options.php:755
 msgid "Skype"
 msgstr "Skype"
 
-#: inc/panel/theme-options.php:754
+#: inc/panel/theme-options.php:760
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: inc/panel/theme-options.php:759
+#: inc/panel/theme-options.php:765
 msgid "Email"
 msgstr "E-mail"
 
-#: inc/panel/theme-options.php:772
+#: inc/panel/theme-options.php:770
+msgid "Xing"
+msgstr "Xing"
+
+#: inc/panel/theme-options.php:783
 msgid "Header and Footer Codes"
 msgstr "Codes En-tête et pied de page"
 
-#: inc/panel/theme-options.php:777
+#: inc/panel/theme-options.php:788
 msgid "Code to display on Header"
 msgstr "Code pour affichage sur en-tête"
 
-#: inc/panel/theme-options.php:783
+#: inc/panel/theme-options.php:794
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1144,11 +1164,11 @@ msgstr ""
 "Notez : Ici vous pouvez mettre des scripts de Google, Facebook etc... qui "
 "chargera sur l'En-tête"
 
-#: inc/panel/theme-options.php:786
+#: inc/panel/theme-options.php:797
 msgid "Code to display on Footer"
 msgstr "Code pour affichage sur pied de page"
 
-#: inc/panel/theme-options.php:793
+#: inc/panel/theme-options.php:804
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1156,11 +1176,11 @@ msgstr ""
 "Notez : Ici vous pouvez mettre des scripts de Google, Facebook, etc... qui "
 "chargera sur le pied de page"
 
-#: inc/panel/theme-options.php:1141
+#: inc/panel/theme-options.php:1155
 msgid "Y"
 msgstr "Y"
 
-#: inc/panel/theme-options.php:1172
+#: inc/panel/theme-options.php:1186
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
 
@@ -1193,6 +1213,12 @@ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archives des Tags: %s"
+
+#~ msgid "Menu Tutorial from WordPress.com"
+#~ msgstr "Tutoriel du menu de WP"
+
+#~ msgid "http://en.support.wordpress.com/menus/"
+#~ msgstr "http://en.support.wordpress.com/menus/"
 
 #~ msgid "http://facebook.com/catchthemes"
 #~ msgstr "http://facebook.com/catchthemes"
@@ -1290,14 +1316,8 @@ msgstr "Archives des Tags: %s"
 #~ msgid "Change Header Logo"
 #~ msgstr "Changer Header Logo"
 
-#~ msgid "Menu Tutorial"
-#~ msgstr "Menu Tutoriel"
-
 #~ msgid "Assign Menu Location"
 #~ msgstr "Attribuer Menu Lieu"
 
 #~ msgid "Save"
 #~ msgstr "Enregister"
-
-#~ msgid "CSS Tutorial"
-#~ msgstr "Tutoriel CSS"

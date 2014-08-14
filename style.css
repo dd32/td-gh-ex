@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-evolution
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to http://catchthemes.com/support/
-Version: 1.9
+Version: 2.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
@@ -535,7 +535,6 @@ a:hover {
     max-width: 100%;
 	padding: 0;
 }
-
 #logo-wrap {
 	clear: both;
 	display: inline-block;
@@ -576,6 +575,9 @@ a:hover {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.62em;
+}
+#header-image a { 
+	line-height: 0; 
 }
 
 
@@ -2817,6 +2819,12 @@ p.comment-form-comment {
 }
 .social-profile ul li.email a:hover {
 	background-position: -837px -44px;
+}
+.social-profile ul li.xing a {
+	background-position: -882px 0;
+}
+.social-profile ul li.xing a:hover {
+	background-position: -882px -44px;
 }
 img#wpstats {
 	display: none;
