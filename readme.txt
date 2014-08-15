@@ -3,7 +3,7 @@ Thanks for Downloading ProMax theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
 You can directly contact us: http://www.insertcart.com/promax
-also suggestion are welcome
+also suggestion are welcome 
 
 
 --------------------------------------------------------
@@ -36,9 +36,16 @@ Custom Css:
 
 == Change log ==
 
+= 1.4.4 =
+* Option Framework updated
+* Fixed comment security issue
+* updated screenshot
+* Added WP text editor instead of simple text area
+* Updated theme translation
+* Other minor issue
+ 
 = 1.4.3 =
 *fixed issue
-
 
 = 1.4.2 =
 *Option framework updated

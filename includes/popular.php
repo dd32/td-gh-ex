@@ -1,4 +1,4 @@
-<h4>Popular post</h4>
+<h4><?php _e('Popular post', 'promax'); ?></h4>
 <div id="populars">
 <?php 
 $args = array( 

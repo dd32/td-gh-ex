@@ -151,7 +151,7 @@ $options[] = array(
 		'type' => 'checkbox');
 		
 $options[] = array(
-		'name' => __('Social Media', 'promax'),
+		'name' => __('Social Profiles', 'promax'),
 		'type' => 'heading');
 		$options[] = array(
 		'name' => __('Facebook Link', 'promax'),
@@ -192,31 +192,36 @@ $options[] = array(
 $options[] = array(
 		'name' => __('Ads Management', 'promax'),
 		'type' => 'heading');
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5,
+		'tinymce' => array( 'plugins' => 'wordpress' )
+	);
 	$options[] = array(
 		'name' => __('Paste Ads code for header.', 'promax'),
-		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ad.', 'promax'),
+		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ads.', 'promax'),
 		'id' => 'banner_top',
-		'std' => '',
-		'type' => 'textarea');
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
 	$options[] = array(
-		 'name' => __( 'AD Code For Single Post', 'promax' ),
-            'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+		 'name' => __( 'Ads Code For Single Post', 'promax' ),
+            'desc' => __('Paste Ads code for single post it show ads below post title and before content.','promax' ),
             'id' => 'promax_ad2',
-            'std' => '',
-            'type' => 'textarea');
+            'type' => 'editor',
+		'settings' => $wp_editor_settings );
      $options[] = array(
-		'name' => __( 'AD Code For Footer', 'promax' ),
-            'desc' => 'Paste Ad Code for Footer Area.',
+		'name' => __( 'Ads Code For Footer', 'promax' ),
+            'desc' => __( 'Paste Ads Code for Footer Area', 'promax' ),
             'id' => 'promax_ad1',
-            'std' => '',
-            'type' => 'textarea');	
+            'type' => 'editor',
+		'settings' => $wp_editor_settings );
 		
 $options[] = array(
-		'name' => __('Advance Features', 'promax'),
+		'name' => __('Advance (Pro Only)', 'promax'),
 		'type' => 'heading');
 				
 		$options[] = array(
-		'desc' => '<span class="pre-title">New Features</span>', 
+		'desc' => __('<span class="pre-title">New Features</span>', 'promax'),
 		'type' => 'info');
 		
 		$options[] = array(
@@ -318,7 +323,7 @@ $options[] = array(
 		'std' => '#DC3030',
 		'type' => 'color' );
 		$options[] = array(
-		    'desc' => 'Change Text of Latest Post.',
+		    'desc' => __('Change Text of Latest Post.', 'promax'),
             'id' => 'promax_latestchange',
             'std' => 'Latest Posts',
             'type' => 'text');	
@@ -412,11 +417,11 @@ $options[] = array(
 				
 					
 		$options[] = array(
-		'name' => "Website layout",
-		'desc' => "Select Images for Website layout.",
-		'id' => "promax_layout",
-		'std' => "s1",
-		'type' => "images",
+		'name' => __('Website layout', 'promax'),
+		'desc' => __('Select Images for Website layout.', 'promax'),
+		'id' => 'promax_layout',
+		'std' => 's1',
+		'type' => 'images',
 		'options' => array(
 			's1' => $imagepath . 's1.png',
 			's2' => $imagepath . 's2.png',
@@ -424,7 +429,7 @@ $options[] = array(
 			)
 	);
 		$options[] = array(
-		'desc' => '<span class="pre-titleseo">SEO & Meta Options</span>', 
+		'desc' => __('<span class="pre-titleseo">SEO & Meta Options</span>','promax'), 
 		'type' => 'info');
 		$options[] = array(
 		'name' => __('Google+ Publisher URL', 'promax'),
@@ -447,7 +452,7 @@ $options[] = array(
 		
 		
 		$options[] = array(
-		'desc' => '<span class="pre-titlecus">Customization</span>', 
+		'desc' => __('<span class="pre-titlecus">Customization</span>', 'promax'),
 		'type' => 'info');
 		$options[] = array(
 		'name' => __('Breadcrumbs Options', 'promax'),

@@ -87,8 +87,8 @@ class Options_Framework_Admin {
             'mode' => 'submenu',
 
             // Submenu default settings
-            'page_title' => __( 'Theme Options', 'textdomain'),
-			'menu_title' => __('Theme Options', 'textdomain'),
+            'page_title' => __( 'Theme Options', 'promax'),
+			'menu_title' => __('Theme Options', 'promax'),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'options-framework',
             'parent_slug' => 'themes.php',
@@ -111,7 +111,19 @@ class Options_Framework_Admin {
 
 		$menu = $this->menu_settings();
 
-        $this->options_screen = add_theme_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ) );
+		// If you want a top level menu, see this Gist:
+		// https://gist.github.com/devinsays/884d6abe92857a329d99
+
+		// Code removed because it conflicts with .org theme check.
+
+		$this->options_screen = add_theme_page(
+            	$menu['page_title'],
+            	$menu['menu_title'],
+            	$menu['capability'],
+            	$menu['menu_slug'],
+            	array( $this, 'options_page' )
+        );
+
 	}
 
 	/**
@@ -182,8 +194,8 @@ class Options_Framework_Admin {
 				<?php settings_fields( 'optionsframework' ); ?>
 				<?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
 				<div id="optionsframework-submit">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'textdomain' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'textdomain' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'textdomain' ) ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'promax' ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'promax' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'promax' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -214,7 +226,7 @@ class Options_Framework_Admin {
 		 */
 
 		if ( isset( $_POST['reset'] ) ) {
-			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'textdomain' ), 'updated fade' );
+			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'promax' ), 'updated fade' );
 			return $this->get_default_values();
 		}
 
@@ -268,7 +280,7 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'textdomain' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'promax' ), 'updated fade' );
 	}
 
 	/**

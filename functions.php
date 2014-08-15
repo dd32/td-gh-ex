@@ -295,4 +295,6 @@ function promax_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+
 ?>
