@@ -354,7 +354,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
         ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
         ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
         ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
-			
+		empty($accesspresslite_settings['slider_pause']) ? ($e ='5000') : ($e = $accesspresslite_settings['slider_pause']);
+
 		if( $accesspresslite_settings['show_slider'] !='no') { 
 		if((isset($accesspresslite_settings['slider1']) && !empty($accesspresslite_settings['slider1'])) 
 			|| (isset($accesspresslite_settings['slider2']) && !empty($accesspresslite_settings['slider2'])) 
@@ -372,7 +373,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
-					pause: '<?php echo $accesspresslite_settings['slider_pause']; ?>',
+					pause: '<?php echo $e; ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
 					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>
@@ -458,7 +459,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
-					pause: '<?php echo $accesspresslite_settings['slider_pause']; ?>',
+					pause: '<?php echo $e; ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
 					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>

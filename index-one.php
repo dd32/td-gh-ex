@@ -362,15 +362,15 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 			<?php while ( $query5->have_posts() ) : $query5->the_post(); ?>
 
 				<?php
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content' );
 				?>
 
 			<?php endwhile; ?>
 
 		<nav class="navigation paging-navigation">
 		<div class="nav-links">
-	   		<div class="nav-previous"><?php previous_posts_link( 'Newer posts') ?></div>
-			<div class="nav-next"><?php next_posts_link( 'Older posts') ?></div>
+	   		<div class="nav-previous"><?php previous_posts_link( __('Newer posts', 'accesspresslite')) ?></div>
+			<div class="nav-next"><?php next_posts_link( __('Older posts', 'accesspresslite')) ?></div>
 		</div>
 		</nav>
 

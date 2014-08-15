@@ -7,6 +7,13 @@
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
+add_action( 'wp_ajax_my_action', 'my_action_function' );
+function my_action_function() {
+	//check_ajax_referer( 'my-special-string', 'security' );
+	echo 'got it';
+	die;
+}
+
 function accesspress_lite_admin_scripts() {
 	wp_enqueue_media();
 	wp_enqueue_script( 'accesspresslite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array( 'jquery' ) );
@@ -258,7 +265,7 @@ function accesspresslite_theme_options_page() {
 
 	<div id="optionsframework-metabox" class="metabox-holder">
 		<div id="optionsframework" class="postbox">
-			<form method="post" action="options.php">
+			<form id="form_options" method="post" action="options.php">
 
 			<?php $settings = get_option( 'accesspresslite_options', $accesspresslite_options ); ?>
 			

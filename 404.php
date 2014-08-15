@@ -20,7 +20,7 @@ get_header(); ?>
                 
                 <div class="number404">
                 404 
-                <span>error</span>   
+                <span><?php _e('error' , 'accesspresslite' ); ?></span>   
                 </div>
 			</section><!-- .error-404 -->
 

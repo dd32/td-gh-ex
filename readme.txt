@@ -60,6 +60,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.12
+* Multiple content in Event category fixed
+* Translation Issue fixed
+* Bug in Slider pause Fixed
+
 Version 2.11
 * Slider Pause option added
 * Option for Custom Event date added
