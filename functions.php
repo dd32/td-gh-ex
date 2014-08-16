@@ -360,8 +360,8 @@ function ct_ignite_excerpt() {
 function ct_ignite_excerpt_read_more_link($output) {
     return $output . "<p><a class='more-link' href='". get_permalink() ."'>" . __('Read More', 'ignite') . " <span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
 }
-
 add_filter('the_excerpt', 'ct_ignite_excerpt_read_more_link');
+
 
 // switch [...] to ellipsis on automatic excerpt
 function ct_ignite_new_excerpt_more( $more ) {
@@ -371,7 +371,15 @@ add_filter('excerpt_more', 'ct_ignite_new_excerpt_more');
 
 // change the length of the excerpts
 function ct_ignite_custom_excerpt_length( $length ) {
-    return 30;
+
+    $new_excerpt_length = get_theme_mod('ct_ignite_excerpt_length_settings');
+
+    // if there is a new length set and it's not 15, change it
+    if(!empty($new_excerpt_length) && $new_excerpt_length != 30){
+        return $new_excerpt_length;
+    } else {
+        return 30;
+    }
 }
 add_filter( 'excerpt_length', 'ct_ignite_custom_excerpt_length', 999 );
 
@@ -402,7 +410,16 @@ function ct_ignite_featured_image() {
 		$has_image = true;
 	}  
 	if ($has_image == true) {
-	    echo "<div class='featured-image' style=\"background-image: url('".$image."')\"></div>";
+
+        if(is_singular()){
+            echo "<div class='featured-image' style=\"background-image: url('".$image."')\"></div>";
+        } else {
+            echo "
+                <div class='featured-image' style=\"background-image: url('".$image."')\">
+                    <a href='" . get_the_permalink() ."'>" . get_the_title() . "</a>
+                </div>
+                ";
+        }
     }
 }
 
@@ -643,3 +660,27 @@ function ct_ignite_background_css(){
 
 }
 add_action('wp_enqueue_scripts','ct_ignite_background_css');
+
+/* comment count link in excerpts */
+function ct_ignite_post_meta_comments(){
+
+    // if comments aren't open and there aren't any comments
+    if(!comments_open() && get_comments_number() < 1) {
+        ?>
+        <p>
+            <i class="fa fa-comment"></i>
+            <?php comments_number( __( 'Comments closed', 'ignite' ), __( 'One Comment', 'ignite'), __( '% Comments', 'ignite' ) ); ?>
+        </p>
+    <?php
+    // otherwise link to the comments and display the count
+    } else {
+        ?>
+        <p>
+            <i class="fa fa-comment"></i>
+            <a href="<?php comments_link(); ?>">
+                <?php comments_number( __( 'Leave a Comment', 'ignite' ), __( 'One Comment', 'ignite'), __( '% Comments', 'ignite' ) ); ?>
+            </a>
+        </p>
+    <?php
+    }
+}
