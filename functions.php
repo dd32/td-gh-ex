@@ -89,9 +89,10 @@ function be_exclude_post_formats_from_blog( $query ) {
 
 }
 add_action( 'pre_get_posts', 'be_exclude_post_formats_from_blog' );
-if (!function_exists('post_teaser')) {
+if (!class_exists('post_teaser')) {
 include_once(get_stylesheet_directory() . '/post-teaser/post-teaser.php' );
 }
+
 function mytheme_setup() {
     set_post_thumbnail_size(300, 300, true);
 }
@@ -240,9 +241,9 @@ add_action( 'widgets_init', 'twentyfourteen_cms3_widgets_init', 11 );
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
 function your_welcome_panel() {
-echo '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
-<p>If you haven\'t already done so you can see a mock up version of this site at <a href=\'http://www.badeyes.com/2014\' target=\'_blank\'>www.badeyes.com/2014/ (opens in new window/tab)</a>.</p> 
-
+print '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
+<p>Important! This Theme requires that you have the TwentyFourteen Theme installed.</p>
+<p>If you haven\'t already done so you can see a mock up version of this site at <a href="http://www.badeyes.com/2014" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a>.</p> 
 <p>This Child Theme has been optimized for screen reader users but should still be understanbable by those who dont, see changes below.</p>
 <h2>Visual Editor</h2>
 <p>If you use a screen reader then you will need to go to your <a href="'. get_admin_url() . '/profile.php">Profile page</a> and check the box "Disable the visual Editor" so that you can create Posts properly, you will quickly find out that it does not work very well if you dont.</p> 
@@ -256,14 +257,12 @@ echo '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
 <h2>Menus</h2>
 <p>This Child Theme has 3 possible Menus, there is a custom menu an Primary one, both are situated horizontally under the Header section and the Secondary one or "Side Menu" located in the left hand sidebar.</p>
 <p>Neither These menus nor their corresponding "Skip Links" will appear unless you create and manage them in the <a href="'. get_admin_url() . 'nav-menus.php">Menus area</a>.</p> 
-<p>You can see examples at <a href=\'http://www.badeyes.com/2014/\' target=\'_blank\'>www.badeyes.com/2014/ (opens in new window/tab)</a></p>
+<p>You can see examples at <a href="http://www.badeyes.com/2014/" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a></p>
 <h2>Post Teaser Plugin</h2>
 <p>For accessibility reasons the Post Teaser Plugin comes bundled with this Theme and is edited accordingly so there is no need to install it again, you can however edit it as you would any other Plugin in the Admin area.</p>
  <p>Note: If you do install and activate it you will not be able to access the Admin area and will have to use ftp to uninstal it or change its name.</p>
 <p>If you do not wish to use it and know what you are doing then remove the corresponding code from the functions.php file or delete the "Post Teaser" folder from this Child Theme.</p>
-
 <h2>WordPress for Bad Eyes</h2>
-<p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href=\'http://www.wordpressforbadeyes.com\' target=\'_blank\'>www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>
-';
+<p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href="http://www.wordpressforbadeyes.com" target=_blank">www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>';
 }
 add_action('welcome_panel','your_welcome_panel');
