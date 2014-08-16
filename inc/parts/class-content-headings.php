@@ -221,7 +221,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
             if ( (get_the_title() != null) ) {
               
               //gets the post/page title
-              if ( is_singular() ) {
+              if ( is_singular() || ! apply_filters('tc_display_link_for_post_titles' , true ) ) {
                 $tc_heading_title = ( get_the_title() == null ) ? apply_filters( 'tc_no_title_post', __( '{no title} Read the post &raquo;' , 'customizr' ) )  : get_the_title();
               }
               else {

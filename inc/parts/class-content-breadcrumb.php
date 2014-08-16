@@ -440,7 +440,7 @@ class TC_breadcrumb {
 			elseif ( is_post_type_archive() ) {
 
 				/* Get the post type object. */
-				$post_type_object = get_post_type_object( get_query_var( 'post_type' ) );
+				$post_type_object = ! is_array(get_query_var( 'post_type' )) ? get_post_type_object( get_query_var( 'post_type' ) ) : array();
 
 				/* If $front has been set, add it to the $path. */
 				if ( isset($post_type_object->rewrite['with_front']) && $post_type_object->rewrite['with_front'] && $wp_rewrite->front )

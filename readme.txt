@@ -34,6 +34,12 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.22 August 16th 2014 =
+* added : (css, class-fire-init.php#75) 9 new minified css skins
+* fixed : (php, class-content-breadcrumb.php#443) added a check is_array(get_query_var( 'post_type' ) in archive context
+(bug reported here : https://wordpress.org/support/topic/illegal-offset-type-in-isset-or-empty-in-postphp-after-upgrade-to-custom3120)
+* improved : (php, class-content-headings.php#224) added a boolean filter named 'tc_display_link_for_post_titles' (default = true) to control whether the post list titles have to be a link or not
+
 = 3.1.21 August 11th 2014 =
 * fixed : (php, class-content-post_list.php) boolean filter 'tc_include_cpt_in_archives' is set to false. Following a bug reported here http://wordpress.org/support/topic/content-removedchanged-after-updating-to-3120?replies=8 Thanks to http://wordpress.org/support/profile/le-formateur for reporting it.
 
