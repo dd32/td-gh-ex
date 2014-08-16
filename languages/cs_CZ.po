@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-06 01:23+0545\n"
-"PO-Revision-Date: 2014-07-06 01:23+0545\n"
+"POT-Creation-Date: 2014-08-16 12:32+0545\n"
+"PO-Revision-Date: 2014-08-16 12:32+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -439,60 +439,60 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:955
+#: ../functions.php:967
 msgid "Name"
 msgstr "Jméno"
 
-#: ../functions.php:957 ../inc/theme-options.php:883
+#: ../functions.php:969 ../inc/theme-options.php:889
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions.php:1329
+#: ../functions.php:1346
 msgid "Primary menu"
 msgstr "Primární menu"
 
-#: ../functions.php:1331 ../functions.php:1364
+#: ../functions.php:1348 ../functions.php:1381
 msgid "Skip to primary content"
 msgstr "Přeskočit k primárnímu obsahu."
 
-#: ../functions.php:1332 ../functions.php:1365
+#: ../functions.php:1349 ../functions.php:1382
 msgid "Skip to secondary content"
 msgstr "Přeskočit k sekundárnímu obsahu."
 
-#: ../functions.php:1362
+#: ../functions.php:1379
 msgid "Secondary menu"
 msgstr "Sekundární menu"
 
-#: ../functions.php:1384
+#: ../functions.php:1401
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1388
+#: ../functions.php:1405
 msgid ". All Rights Reserved."
 msgstr "Všechna práva vyhrazena."
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 msgid "Powered by WordPress"
 msgstr "Powered by WordPress"
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"
 
-#: ../functions.php:1393 ../inc/theme-options.php:631
+#: ../functions.php:1410 ../inc/theme-options.php:631
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1393
+#: ../functions.php:1410
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Theme Catch Box od  Catch Themes"
 
-#: ../functions.php:1393
+#: ../functions.php:1410
 #, php-format
 msgid "Theme: %s"
 msgstr "Šablona: %s"
@@ -732,7 +732,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes on Facebook"
 
-#: ../inc/theme-options.php:647 ../inc/theme-options.php:776
+#: ../inc/theme-options.php:647 ../inc/theme-options.php:782
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -744,7 +744,7 @@ msgstr "https://twitter.com/catchthemes/"
 msgid "Follow Catch Themes on Twitter"
 msgstr "Follow Catch Themes on Twitter"
 
-#: ../inc/theme-options.php:648 ../inc/theme-options.php:781
+#: ../inc/theme-options.php:648 ../inc/theme-options.php:787
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -776,30 +776,46 @@ msgstr "Webmaster Tools"
 msgid "Slider Options"
 msgstr "Nastavení slideru"
 
-#: ../inc/theme-options.php:692
+#: ../inc/theme-options.php:692 ../inc/theme-options.php:694
+msgid "Post Slider Tutorial"
+msgstr "Post Slider Tutorial"
+
+#: ../inc/theme-options.php:694
+msgid ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+msgstr ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+
+#: ../inc/theme-options.php:694
+msgid "Click Here to Read Post Slider Tutorial"
+msgstr "Click Here to Read Post Slider Tutorial"
+
+#: ../inc/theme-options.php:698
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 "Vyloučit příspěvky, které jsou použity ve slideru, z výpisu článků na domácí "
 "obrazovce: "
 
-#: ../inc/theme-options.php:694
+#: ../inc/theme-options.php:700
 msgid "Check to disable"
 msgstr "Nezobrazovat: "
 
-#: ../inc/theme-options.php:697
+#: ../inc/theme-options.php:703
 msgid "Number of Slides"
 msgstr "Počet slidů"
 
-#: ../inc/theme-options.php:703
+#: ../inc/theme-options.php:709
 msgid "Featured Post ID"
 msgstr "Featured Post ID"
 
 # @ default
-#: ../inc/theme-options.php:705
+#: ../inc/theme-options.php:711
 msgid "Click Here To Edit"
 msgstr "Klikněte zde pro úpravu"
 
-#: ../inc/theme-options.php:711
+#: ../inc/theme-options.php:717
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
@@ -807,140 +823,144 @@ msgstr ""
 "<strong>Poznámka</strong>: Zde můžete zadat ID číslo článků, podle kterého "
 "se budou články ve slideru zobrazovat ."
 
-#: ../inc/theme-options.php:712 ../inc/theme-options.php:758
-#: ../inc/theme-options.php:891 ../inc/theme-options.php:932
+#: ../inc/theme-options.php:718 ../inc/theme-options.php:764
+#: ../inc/theme-options.php:901 ../inc/theme-options.php:942
 msgid "Save"
 msgstr "Uložit"
 
-#: ../inc/theme-options.php:716
+#: ../inc/theme-options.php:722
 msgid "Slider Effect Options"
 msgstr "Nastavení efektu přechodu mezi položkami ve slideru"
 
-#: ../inc/theme-options.php:721
+#: ../inc/theme-options.php:727
 msgid "Transition Effect:"
 msgstr "efekt přechodu:"
 
-#: ../inc/theme-options.php:726
+#: ../inc/theme-options.php:732
 msgid "fade"
 msgstr "zeslábnutí"
 
-#: ../inc/theme-options.php:727
+#: ../inc/theme-options.php:733
 msgid "wipe"
 msgstr "wipe"
 
-#: ../inc/theme-options.php:728
+#: ../inc/theme-options.php:734
 msgid "scrollUp"
 msgstr "Vyměnit ze shora"
 
-#: ../inc/theme-options.php:729
+#: ../inc/theme-options.php:735
 msgid "scrollDown"
 msgstr "Vyměnit z dola"
 
-#: ../inc/theme-options.php:730
+#: ../inc/theme-options.php:736
 msgid "scrollLeft"
 msgstr "Vyměnit z leva"
 
-#: ../inc/theme-options.php:731
+#: ../inc/theme-options.php:737
 msgid "scrollRight"
 msgstr "Vyměnit z prava"
 
-#: ../inc/theme-options.php:732
+#: ../inc/theme-options.php:738
 msgid "blindX"
 msgstr "roletaX"
 
-#: ../inc/theme-options.php:733
+#: ../inc/theme-options.php:739
 msgid "blindY"
 msgstr "roletaY"
 
-#: ../inc/theme-options.php:734
+#: ../inc/theme-options.php:740
 msgid "blindZ"
 msgstr "roletaZ"
 
-#: ../inc/theme-options.php:735
+#: ../inc/theme-options.php:741
 msgid "cover"
 msgstr "překrýt"
 
-#: ../inc/theme-options.php:736
+#: ../inc/theme-options.php:742
 msgid "shuffle"
 msgstr "Přehodit"
 
-#: ../inc/theme-options.php:742
+#: ../inc/theme-options.php:748
 msgid "Transition Delay"
 msgstr "Doba statického zobrazení"
 
-#: ../inc/theme-options.php:745 ../inc/theme-options.php:754
+#: ../inc/theme-options.php:751 ../inc/theme-options.php:760
 msgid "second(s)"
 msgstr "vteřin"
 
-#: ../inc/theme-options.php:751
+#: ../inc/theme-options.php:757
 msgid "Transition Length"
 msgstr "Délka trvání přechodu"
 
-#: ../inc/theme-options.php:787
+#: ../inc/theme-options.php:793
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:793
+#: ../inc/theme-options.php:799
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:799
+#: ../inc/theme-options.php:805
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:805
+#: ../inc/theme-options.php:811
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:817
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../inc/theme-options.php:817
+#: ../inc/theme-options.php:823
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:823
+#: ../inc/theme-options.php:829
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:829
+#: ../inc/theme-options.php:835
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:835
+#: ../inc/theme-options.php:841
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:847
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:847
+#: ../inc/theme-options.php:853
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:853
+#: ../inc/theme-options.php:859
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:859
+#: ../inc/theme-options.php:865
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/theme-options.php:865
+#: ../inc/theme-options.php:871
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/theme-options.php:871
+#: ../inc/theme-options.php:877
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:877
+#: ../inc/theme-options.php:883
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/theme-options.php:890
+#: ../inc/theme-options.php:894
+msgid "Xing"
+msgstr "Xing"
+
+#: ../inc/theme-options.php:900
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -948,15 +968,15 @@ msgstr ""
 "<strong>Poznámka:</strong>Zadejte URL adresy pro dané profily na určených "
 "sociálních sítích."
 
-#: ../inc/theme-options.php:905
+#: ../inc/theme-options.php:915
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:910
+#: ../inc/theme-options.php:920
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/theme-options.php:917
+#: ../inc/theme-options.php:927
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -964,11 +984,11 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:921
+#: ../inc/theme-options.php:931
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/theme-options.php:928
+#: ../inc/theme-options.php:938
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

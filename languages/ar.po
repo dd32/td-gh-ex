@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-06 01:23+0545\n"
+"POT-Creation-Date: 2014-08-16 12:31+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: www.ed3s.com <master@ed3s.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: .\n"
@@ -113,8 +113,8 @@ msgstr ""
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "One thought on &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
@@ -234,8 +234,8 @@ msgstr "المعرض"
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "This gallery contains <a %1$s>%2$s photo</a>."
+msgstr[1] "This gallery contains <a %1$s>%2$s photos</a>."
 
 #: ../content-gallery.php:72 ../content-image.php:57 ../content-quote.php:54
 #: ../content.php:75
@@ -438,60 +438,60 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:955
+#: ../functions.php:967
 msgid "Name"
 msgstr "الاسم"
 
-#: ../functions.php:957 ../inc/theme-options.php:883
+#: ../functions.php:969 ../inc/theme-options.php:889
 msgid "Email"
 msgstr "البريد الالكتروني"
 
-#: ../functions.php:1329
+#: ../functions.php:1346
 msgid "Primary menu"
 msgstr "القائمة الاولى"
 
-#: ../functions.php:1331 ../functions.php:1364
+#: ../functions.php:1348 ../functions.php:1381
 msgid "Skip to primary content"
 msgstr "تخطى الى المحتوى الاساسي"
 
-#: ../functions.php:1332 ../functions.php:1365
+#: ../functions.php:1349 ../functions.php:1382
 msgid "Skip to secondary content"
 msgstr "تخطى الى المحتوى الثانوي"
 
-#: ../functions.php:1362
+#: ../functions.php:1379
 msgid "Secondary menu"
 msgstr "القائمة الثانية"
 
-#: ../functions.php:1384
+#: ../functions.php:1401
 msgid "Copyright &copy;"
 msgstr "جميع الحقوق محفوظة &copy;"
 
-#: ../functions.php:1388
+#: ../functions.php:1405
 msgid ". All Rights Reserved."
 msgstr " "
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 msgid "Powered by WordPress"
 msgstr "مدعوم من"
 
-#: ../functions.php:1391
+#: ../functions.php:1408
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"
 
-#: ../functions.php:1393 ../inc/theme-options.php:631
+#: ../functions.php:1410 ../inc/theme-options.php:631
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1393
+#: ../functions.php:1410
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Theme Catch Box by Catch Themes"
 
-#: ../functions.php:1393
+#: ../functions.php:1410
 #, php-format
 msgid "Theme: %s"
 msgstr "Theme: %s"
@@ -731,7 +731,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes on Facebook"
 
-#: ../inc/theme-options.php:647 ../inc/theme-options.php:776
+#: ../inc/theme-options.php:647 ../inc/theme-options.php:782
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -743,7 +743,7 @@ msgstr "https://twitter.com/catchthemes/"
 msgid "Follow Catch Themes on Twitter"
 msgstr "Follow Catch Themes on Twitter"
 
-#: ../inc/theme-options.php:648 ../inc/theme-options.php:781
+#: ../inc/theme-options.php:648 ../inc/theme-options.php:787
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -775,27 +775,43 @@ msgstr "ادوات مشرفي المواقع"
 msgid "Slider Options"
 msgstr "خيارات"
 
-#: ../inc/theme-options.php:692
+#: ../inc/theme-options.php:692 ../inc/theme-options.php:694
+msgid "Post Slider Tutorial"
+msgstr "Post Slider Tutorial"
+
+#: ../inc/theme-options.php:694
+msgid ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+msgstr ""
+"http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
+"slider/"
+
+#: ../inc/theme-options.php:694
+msgid "Click Here to Read Post Slider Tutorial"
+msgstr "Click Here to Read Post Slider Tutorial"
+
+#: ../inc/theme-options.php:698
 msgid "Exclude Slider post from Home page posts:"
 msgstr "التدوينات التي ستعرض في السلايدر"
 
-#: ../inc/theme-options.php:694
+#: ../inc/theme-options.php:700
 msgid "Check to disable"
 msgstr "تعطيل السلايدر"
 
-#: ../inc/theme-options.php:697
+#: ../inc/theme-options.php:703
 msgid "Number of Slides"
 msgstr "عدد السلايدر"
 
-#: ../inc/theme-options.php:703
+#: ../inc/theme-options.php:709
 msgid "Featured Post ID"
 msgstr "Featured Post ID"
 
-#: ../inc/theme-options.php:705
+#: ../inc/theme-options.php:711
 msgid "Click Here To Edit"
 msgstr "تحرير"
 
-#: ../inc/theme-options.php:711
+#: ../inc/theme-options.php:717
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
@@ -803,154 +819,158 @@ msgstr ""
 "<strong>ملاحظة</strong>: عليك باضافة رقم ID الخاص بالتدوينة في المربع اعلاه "
 "حتى يتم عرض التدوينات في السلايدر"
 
-#: ../inc/theme-options.php:712 ../inc/theme-options.php:758
-#: ../inc/theme-options.php:891 ../inc/theme-options.php:932
+#: ../inc/theme-options.php:718 ../inc/theme-options.php:764
+#: ../inc/theme-options.php:901 ../inc/theme-options.php:942
 msgid "Save"
 msgstr "حفظ"
 
-#: ../inc/theme-options.php:716
+#: ../inc/theme-options.php:722
 msgid "Slider Effect Options"
 msgstr "اعدادات المؤثرات"
 
-#: ../inc/theme-options.php:721
+#: ../inc/theme-options.php:727
 msgid "Transition Effect:"
 msgstr "تأثير الانزلاق"
 
-#: ../inc/theme-options.php:726
+#: ../inc/theme-options.php:732
 msgid "fade"
 msgstr "تلاشي"
 
-#: ../inc/theme-options.php:727
+#: ../inc/theme-options.php:733
 msgid "wipe"
 msgstr "مسح"
 
-#: ../inc/theme-options.php:728
+#: ../inc/theme-options.php:734
 msgid "scrollUp"
 msgstr "الانتقال للاعلى"
 
-#: ../inc/theme-options.php:729
+#: ../inc/theme-options.php:735
 msgid "scrollDown"
 msgstr "الانتقال للاسفل"
 
-#: ../inc/theme-options.php:730
+#: ../inc/theme-options.php:736
 msgid "scrollLeft"
 msgstr "الانتقال لليسار"
 
-#: ../inc/theme-options.php:731
+#: ../inc/theme-options.php:737
 msgid "scrollRight"
 msgstr "الانتقال لليمين"
 
-#: ../inc/theme-options.php:732
+#: ../inc/theme-options.php:738
 msgid "blindX"
 msgstr "تعمية افقية"
 
-#: ../inc/theme-options.php:733
+#: ../inc/theme-options.php:739
 msgid "blindY"
 msgstr "تعمية طولية"
 
-#: ../inc/theme-options.php:734
+#: ../inc/theme-options.php:740
 msgid "blindZ"
 msgstr "تعمية من الزاوية"
 
-#: ../inc/theme-options.php:735
+#: ../inc/theme-options.php:741
 msgid "cover"
 msgstr "التفاف"
 
-#: ../inc/theme-options.php:736
+#: ../inc/theme-options.php:742
 msgid "shuffle"
 msgstr "اختلاط"
 
-#: ../inc/theme-options.php:742
+#: ../inc/theme-options.php:748
 msgid "Transition Delay"
 msgstr "تأخير التحويل"
 
-#: ../inc/theme-options.php:745 ../inc/theme-options.php:754
+#: ../inc/theme-options.php:751 ../inc/theme-options.php:760
 msgid "second(s)"
 msgstr "ثانية/ثواني"
 
-#: ../inc/theme-options.php:751
+#: ../inc/theme-options.php:757
 msgid "Transition Length"
 msgstr "طول الانتظار"
 
-#: ../inc/theme-options.php:787
+#: ../inc/theme-options.php:793
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:793
+#: ../inc/theme-options.php:799
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:799
+#: ../inc/theme-options.php:805
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:805
+#: ../inc/theme-options.php:811
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:817
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../inc/theme-options.php:817
+#: ../inc/theme-options.php:823
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:823
+#: ../inc/theme-options.php:829
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:829
+#: ../inc/theme-options.php:835
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:835
+#: ../inc/theme-options.php:841
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:847
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:847
+#: ../inc/theme-options.php:853
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:853
+#: ../inc/theme-options.php:859
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:859
+#: ../inc/theme-options.php:865
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/theme-options.php:865
+#: ../inc/theme-options.php:871
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/theme-options.php:871
+#: ../inc/theme-options.php:877
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:877
+#: ../inc/theme-options.php:883
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/theme-options.php:890
+#: ../inc/theme-options.php:894
+msgid "Xing"
+msgstr "Xing"
+
+#: ../inc/theme-options.php:900
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr "<strong>ملاحظة:</strong> اكتب عنوان/رابط الشبكات الاجتماعية بشكل كامل"
 
-#: ../inc/theme-options.php:905
+#: ../inc/theme-options.php:915
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:910
+#: ../inc/theme-options.php:920
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/theme-options.php:917
+#: ../inc/theme-options.php:927
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -958,11 +978,11 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:921
+#: ../inc/theme-options.php:931
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/theme-options.php:928
+#: ../inc/theme-options.php:938
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

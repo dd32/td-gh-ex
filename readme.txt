@@ -18,6 +18,18 @@ http://wordpress.org/themes/twentyeleven
 Copyright: Automattic, automattic.com
 Licensed under GPLv2 or later
 
+Scripts used in the site are as below:
+	1. Menu script uses Tinynav script (http://tinynav.viljamis.com) licensed under MIT
+	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
+	3. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
+	4. jQyery Cookie script (https://github.com/carhartl/jquery-cookie) licensed under MIT license
+	5. DD_belatedPNG script (http://www.dillerdesign.com/experiment/DD_belatedPNG/) licensed under MIT License
+	
+Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later 
+	http://genericons.com/
+
 == Translation ==
 Catch Box theme is translation ready. 
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
@@ -56,6 +68,12 @@ dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, ri
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 3.0
+* Added Xing social icon
+* Added Scroll Up script
+* Added post slider tutorial
+* Updated Dutch translation nl_NL.po and nl_NL.mo
+
 Version 2.9.7
 * Added email in social link option
 * Fixed Word-Wrap css issue

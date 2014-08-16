@@ -687,7 +687,13 @@ function catchbox_theme_options_render_page() {
                         <div class="option-container">
                             <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catchbox' ); ?></a></h3>
                             <div class="option-content inside">
-                                <table class="form-table">               
+                                <table class="form-table">  
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Post Slider Tutorial', 'catchbox' ); ?></th>
+                                        <td>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catchbox' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catchbox' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catchbox' );?></a>
+                                        </td>
+                                    </tr>                                             
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'catchbox' ); ?></th>
                                         <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
@@ -884,7 +890,11 @@ function catchbox_theme_options_render_page() {
                                         <td><input type="text" size="45" name="catchbox_options_social_links[social_email]" value="<?php if ( isset( $options[ 'social_email' ] ) ) echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                         </td>
                                     </tr>                                    
-                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Xing', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_xing]" value="<?php if ( isset( $options[ 'social_xing' ] ) ) echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                        </td>
+                                    </tr>                                     
                                 </tbody>
                             </table>
                             <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
@@ -1082,7 +1092,11 @@ function catchbox_options_social_links_validation( $options ) {
 	//Email
 	if( isset( $options[ 'social_email' ] ) )
 		$options_validated[ 'social_email' ] = sanitize_email( $options[ 'social_email' ] );			
-	
+	//Xing
+	if( isset( $options[ 'social_xing' ] ) )
+		$options_validated[ 'social_xing' ] = esc_url_raw( $options[ 'social_xing' ] );				
+
+
 	//Clearing the theme option cache
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }
 	

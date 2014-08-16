@@ -82,6 +82,8 @@
 <?php 
 /** 
  * catchbox_after hook
+ *
+ * @hooked catchbox_scrollup - 10 
  */
 do_action( 'catchbox_after' );
 ?>

@@ -889,6 +889,18 @@ function catchbox_scripts_method() {
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri() );
+	
+	/**
+	 * Add Genericons font, used in the main stylesheet.
+	 */	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
+	
+	
+	/**
+	 * Loads up Scroll Up script
+	 */	
+	wp_enqueue_script( 'catchbox-scrollup', get_template_directory_uri() . '/js/catchbox-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+	
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
@@ -1174,6 +1186,11 @@ function catchbox_socialprofile() {
 						$catchbox_socialprofile .= '<li class="email"><a href="mailto:'.$options[ 'social_email' ].'" title="Email" target="_blank">Email</a></li>';
 					}					
 					
+					//Xing
+					if ( !empty( $options[ 'social_xing' ] ) ) {
+						$catchbox_socialprofile .= '<li class="xing"><a href="'.$options[ 'social_xing' ].'" title="Xing" target="_blank">Xing</a></li>';
+					}
+					
 					$catchbox_socialprofile .= '
 				</ul>
 			</div>';
@@ -1397,3 +1414,16 @@ endif; //catchbox_footer_content
 
 // Load footer content in  catchbox_site_generator hook 
 add_action( 'catchbox_site_generator', 'catchbox_footer_content', 15 );
+
+
+/**
+ * This function loads Scroll Up Navigation
+ *
+ * @uses catchbox_after action
+ */
+function catchbox_scrollup() {
+	
+	echo '<a href="#branding" id="scrollup"></a>';
+	
+}
+add_action( 'catchbox_after', 'catchbox_scrollup', 10 );
