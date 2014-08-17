@@ -1,0 +1,752 @@
+/*
+Theme Name: WP FanZone
+Theme URI: http://wpfanzone.com
+Author: Hostmarks
+Author URI: http://hostmarks.com
+Description: WP Fan Zone was designed orginally with sports fans and bloggers in mind, but it could easily be used for any type of blog or magazine style site that wants to feature images and content. It is fully responsive, comes with two main menus, and widget areas for all page types. It also has customization options for social media links, color scheme and author bios, plus a simple banner widget for putting ads in the header.
+Version: 1.0.1
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-menu, full-width-template, post-formats
+
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+/*==================================================================================================================================*/
+.top-bar{background:#252525; padding:0; border-top:5px solid #339390;}
+.top-tittle h5{color: #ffffff; margin: 0; padding: 10px 20px; background: #339390; display: inline-block;}
+.top-tittle:after{
+	content:"";
+    width:0;
+    height:0;
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-left:10px solid #339390;
+	position: absolute;
+	top:6px;
+	}
+
+#top-nav .navbar-default .navbar-nav > li > a{
+	border:none;
+	}
+ul.top-menu li, .top-menu ul{
+	float:left;
+	padding:10px;
+	list-style:none;
+	}
+ul.top-menu li a{
+	color:#FFFFFF;
+}
+ul.top-menu li a:hover{
+	text-decoration:none;
+	}
+.arrow-right {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #339390;
+	display: inline-block;
+	}
+header{
+	padding:15px 0;
+	}
+header .logo, header .logo h1{
+	display:inline-block; 
+	margin-right:15px;
+	}
+.logo h1{
+	font-size:48px;
+		}
+.logo h1 span{
+	color:#339390;
+	}
+.logo a{
+	color:#252525;
+	}
+#site-logo{
+	margin-top:20px; 
+	margin-bottom:20px;
+	}
+p.live-news{
+	display: inline-block;
+	color: #fff;
+	margin-bottom: 0; 
+	padding-top:7px;
+	}
+.nav_container{
+	background:#2e2e2e; 
+	margin-bottom:20px; 
+	border-top:5px solid #339390;
+	}
+.btn a{
+	color:#ffffff;
+	}
+.fan-sociel-media{
+	margin:7px 0;
+	}
+.fan-sociel-media .btn-xs{
+	min-width:24px;
+	}
+.fa{f
+	ont-size:14px;
+	}
+.content{
+	margin-top:20px;
+	}
+#footer{
+	margin-top:20px;
+	}
+.post_box{
+	background: #fff;
+	-ms-box-shadow:0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	-webkit-box-shadow:0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+	padding:15px;
+	margin-bottom:30px;
+	width:100%;
+	}
+.post_box img{
+	width:100%;
+	height:auto;
+	margin-bottom:20px;
+	}
+.post_box img:hover{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	}
+.post_box .fa{
+	margin-right:5px;
+	}
+.meta-info, .meta-info a{
+	color:#bbbbbb;
+	}
+.meta-info a:hover{
+	color:#339390;
+	}
+.post_box a.meta-comment{
+	color:#bbbbbb;
+	float:right;
+	}
+.post_box a.meta-comment:hover{
+	color:#339390;
+	}
+h4.post_title{
+	font-weight:bold;
+	margin:0px 0 15px;
+	}
+h4.post_title a{
+	color:#212121;
+	}
+p.post_desc{
+	font-family: 'Lato', sans-serif;
+	margin-top:10px;
+	}
+.post_box a.read_more{
+	position: absolute;
+	right: 15px;
+	}
+a.btn-info {
+ color:#FFFFFF !important;
+	} 
+ p.post_desc{
+	margin-top:-7px;
+	line-height: 24px;
+	}
+.pagination{
+	text-align:center;
+	display:block;
+	font-size: 16px;
+	}
+.pagination .fa{
+	background:#339390;
+	color:#ffffff;
+	padding:5px;
+	margin: 0 5px;
+	}
+.pagination .fa:hover{
+	background:#212121;
+	}
+.pgwSlider p{
+	font-size: 12px;
+	}
+.pgwSlider a span{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+	}
+.pgwSlider a img:hover, .pgwSlider a span:hover{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/*widget*/
+#sidebar aside{
+	margin-bottom:20px;
+	padding-bottom: 10px;
+	}
+.widget-title{
+	background:#212121;
+	margin:-15px -15px 15px -15px ;
+	}
+.widget-title h4{
+	background:#339390;
+	color:#ffffff;
+	padding:8px 15px;
+	margin: 0;
+	display: inline-block;
+	}
+#sidebar aside{
+	background:#ebebeb;
+	padding:15px;
+	}
+
+aside ul, footer ul{
+	padding-left:0px;
+	}
+aside ul.children, aside ul.sub-menu{
+	padding-left:10px;
+}
+aside ul li, footer ul li{
+	list-style:none;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	}
+aside ul li a{
+	color:#339390;
+	}
+aside ul li a:hover{
+	color:#212121;
+	}
+.widget_wp_fanzone_recent_posts ul li img{
+	background:#ffffff;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	margin: 0 10px 0 0;
+	}
+.widget_wp_fanzone_recent_posts ul li h5{
+	margin-bottom:5px;
+	}
+
+.widget_wp_fanzone_recent_posts ul li img:hover{
+	background:#cccccc;
+	border: 1px solid #ffffff;
+	}
+
+
+/*comments */
+#respond {
+	background-color: #fefefe;
+	padding: 40px;
+	margin: 0 30px 60px 0;
+	margin: 0 3rem 6rem 0;
+	border: 1px solid #e4e9ea;
+	border-radius: 3px;
+	}
+#comments ol{
+	list-style-type: none;
+	padding: 0;
+	}
+#comments ul{
+	list-style-type: none;
+}
+#comments-title h3{
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	}
+.commentlist .comment-meta {
+	line-height: 24px;
+	font-size: 12px;
+	}
+.commentlist .comment-meta a {
+	}
+.commentlist li.comment article[id*=comment-] img, .post-content img {
+	margin: 0 10px 5px 0;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	float:left;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	}
+.commentlist .vcard cite.fn {
+	font-size: 12px;
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;
+	}
+.commentlist li.comment .comment-content {
+	margin-left: 72px;
+	padding-top: 0px;
+	padding-bottom: 30px;
+	padding-bottom: 3rem;
+	font-size: 12px;
+	font-size: 1.2rem;
+	}
+.commentmetadata time{
+	color:#95a5a6;
+	}
+a.comment-reply-link{
+	color:#339390;
+}
+ul li.recentcomments{
+	color:#339390;
+	}
+.author-bio {
+	padding: 40px;
+	}
+.author-info {
+	overflow: hidden;
+	font-size:12px;
+	}
+.author-thumb{
+	float: left;
+	margin-right: 30px;
+	margin-right: 3rem;
+	margin-bottom: 15px;
+	margin-bottom: 1.5rem;
+	margin-top: 5px;
+	margin-top: 0.5rem;
+	}
+.author-thumb img{
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	max-width: 100%;
+	width: auto;
+	max-height:100%;
+	height:auto;
+	}
+cite.fn, cite.fn a{
+	color:#339390;
+	}
+span.required{
+	color:#ed1c24;
+	}
+#respond label{
+	display:block;
+	margin-bottom:0;
+	color:#685f54;
+	}
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], textarea{
+	border:1px solid #e2e2e2;
+	}
+#respond #submit, .post-content form input[type=submit], .post-content form input[type=button] {
+	font-size: 90%;
+	background-color: #339390;
+	color: #fff;
+	padding: 7px 20px;
+	text-transform: uppercase;
+	border: 0;
+	margin:10px auto;
+	}
+#respond #submit:hover, .post-content form input[type=submit]:hover, .post-content form input[type=button]:hover{
+	background-color:#212121;
+	}
+#breadcrumbs{
+    list-style:none;
+    margin:10px 0;
+    overflow:hidden;
+	display: inline-block;
+	float: right;
+	}
+.breadcrumb-container{
+	border-bottom:1px solid #ebebeb;
+	margin-bottom:30px;
+	}
+#breadcrumbs li{
+    float:left;
+    margin-right:15px;
+	}
+#page-heading h1, h1.single-title{
+	margin:0px 0 20px ;
+	}
+
+
+/******************************************************************
+Calendar
+******************************************************************/
+.widget_calendar table {
+	line-height: 2;
+	margin: 0;
+	width:100%;
+	}
+
+.widget_calendar caption {
+	color: #000;
+	font-weight: 700;
+	line-height: 1.7142857142;
+	margin-bottom: 18px;
+	text-align: left;
+	text-transform: uppercase;
+	}
+.widget_calendar thead th {
+	background-color: rgba(255, 255, 255, 0.1);
+	}
+.widget_calendar tbody td,
+.widget_calendar thead th {
+	text-align: center;
+	padding:1px;
+	}
+.widget_calendar tbody a {
+	color: #fff;
+	display: block;
+	}
+.widget_calendar tbody a:hover {
+	}
+
+.widget_calendar tbody a:hover {
+	}
+.widget_calendar #prev {
+	padding-left: 5px;
+	}
+
+.widget_calendar #next {
+	padding-right: 5px;
+	text-align: right;
+	}
+footer .widget-title {
+	color:#fff;
+	background:none;
+	}
+
+footer ul.children, footer ul.sub-menu{
+	padding-left:10px;
+	}
+footer ul li a{
+	color:#fff;
+	}
+footer ul li a:hover{
+	color:#339390;
+	}
+footer .meta-info span, footer .meta-info a{
+	color:#339390;
+	}
+footer .textwidget{
+	color:#fff;
+	}
+footer .widget{
+	margin-bottom:15px;
+	}
+#footer .widget_calendar caption {
+	color:#fff;
+	}
+#footer .widget_calendar thead tr{
+	background:#339390;
+	}
+#footer .widget_calendar tbody td, #footer .widget_calendar thead th{
+	color:#fff;
+	}
+#footer h3{
+	padding:20px 0 5px;
+	text-transform:uppercase;
+	margin-left:15px;
+	margin-right:15px;
+	}
+#footer{
+	background:#212121;
+	padding-top:20px;
+	border-top:8px solid #339390;
+	}
+#copyright {
+	color:#fff;
+	padding:20px 0;
+	background:#339390;
+	}
+#copyright a{
+	color:#fff;
+	}
+
+
+/******************************************************************
+Search widget
+******************************************************************/
+
+#searchform { 
+	background:#F8F8F8; 
+	max-width:100%; 
+	border:1px solid #D9D9D9; 
+	padding:10px; overflow:hidden; 
+	}
+#searchform #s { 
+	background:none; 
+	border:none; color:#777; 
+	font-style:italic; 
+	float:left;
+	 width:90%; 
+	 }
+#searchform #s:focus { 
+	outline:none; 
+	}
+input#search-button{ 
+	width:16px; 
+	height:16px; 
+	float:right; 
+	}
+
+.widget_calendar td a {
+  color: #339390;
+}
+.widget_calendar caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/******************************************************************
+IMAGE STYLES
+******************************************************************/
+.post-content img {
+	margin-top: 12px; /* for ie8 & below */ 
+	margin-top: 1.2rem;
+	}
+
+.left img, 
+img.left, 
+.alignleft,
+img.alignleft,
+img[align=left] {
+	margin-right: 24px; /* for ie8 & below */
+	margin-right: 2.4rem;
+	margin-bottom: 16px; /* for ie8 & below */
+	margin-bottom: 1.6rem;
+	margin-top: 12px; /* for ie8 & below */
+	margin-top: 1.2rem;
+	display: inline-block; 
+	float: left;
+	}
+
+.right img, 
+img.right,
+.alignright,
+img.alignright,
+img[align=right] {
+	margin-left: 24px; /* for ie8 & below */
+	margin-left: 2.4rem;
+	margin-bottom: 16px; /* for ie8 & below */
+	margin-bottom: 1.6rem;
+	margin-top: 12px; /* for ie8 & below */
+	margin-top: 1.2rem;
+	display: inline-block; 
+	float: right;
+	}
+
+.aligncenter, 
+img.aligncenter, 
+img[align=center] { 
+	margin-right: auto; 
+	margin-left: auto; 
+	display: block; 
+	clear: both; 
+	}
+
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.wp-caption {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+	}
+.wp-caption-text{}
+.post-tags{display:none;}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+.sticky {}
+.gallery-caption{}
+.bypostauthor{}
+.meta-info span{
+	font-family:'Lato',Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#707070;
+	}
+
+@media (min-width: 768px) and (max-width: 1018px) {
+  .widget_calendar td,
+  .widget_calendar td {
+	   padding: 5px;
+	  }
+}
+
+@media screen and (min-width: 992px) {
+	.post_box a.read_more{bottom: 30px;}
+	.dropdown-menu, .dropdown-menu .sub-menu{
+		background:#339390;
+		border-radius:0;
+		border:none;
+		}
+	#top-widget{
+		float:right;
+		}
+	.dropdown-menu > li > a, .dropdown-menu .sub-menu a{
+		color:#fff;
+		font-size:16px;
+		font-family:'Oswald', sans-serif;
+		}
+	.dropdown-menu .sub-menu  {
+		left: 100%;
+		position: absolute;
+		top: 0;
+		visibility: hidden;
+		margin-top: -1px;		
+		}
+
+	.dropdown-menu li:hover .sub-menu {
+		visibility: visible;
+		}
+
+	.dropdown:hover .dropdown-menu {
+		display: block;
+		}
+
+	.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+		margin-top: 0;
+		}
+
+	.navbar .sub-menu:before {
+		border-bottom: 7px solid transparent;
+		border-left: none;
+		border-right: 7px solid rgba(0, 0, 0, 0.2);
+		border-top: 7px solid transparent;
+		left: -7px;
+		top: 10px;
+		}
+	.navbar .sub-menu:after {
+		border-top: 6px solid transparent;
+		border-left: none;
+		border-right: 6px solid #fff;
+		border-bottom: 6px solid transparent;
+		left: 10px;
+		top: 11px;
+		left: -6px;
+		}
+	
+}
+@media screen and (max-width: 992px) {
+	.item {
+		position: static ! important;
+		-webkit-transform: translate(0px, 0px) ! important;
+		-moz-transform: translate(0px, 0px) ! important;
+		transform: translate(0px, 0px) ! important;
+		}
+  #posts{
+  	display:inline;
+	}
+  .pagination{
+  	margin-top:5px;
+	}
+  .post_box a.read_more{
+  	bottom: 0px;
+	}
+}
+@media screen and (min-width: 768px) {
+	.fan-sociel-media .btn{
+		margin-right:5px;
+		float:
+		right;
+		}
+	nav .container-fluid, nav .navbar-collapse{
+		padding:0;
+		}
+	.pgwSlider .ps-current{
+		width:74.4%;
+		}
+	
+}
+
+@media screen and (max-width: 767px) {
+	h1 {
+		font-size: 20px;
+		}	
+	h2 {
+		font-size: 18px;
+		}	
+	h3 {
+		font-size: 16px;
+		}	
+	h4 {
+		font-size: 15px;
+		}	
+	h5 {
+		font-size: 14px;
+		}
+	
+	h6 {
+		font-size: 13px;
+		}
+	.navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
+		border:0;
+		}
+	.navbar-default .navbar-nav > li{
+		background:#464646;
+		}
+	.ps-current span h1{
+		margin:10px 0;
+		}
+	.ps-current span p{
+		display:none; 
+		}
+	ul.pgwSlider > li span, .pgwSlider > ul > li span{
+		display:none;
+		}
+
+	.dropdown-menu{
+		display: block;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+		position: relative;
+		box-shadow: none;
+		background:#464646 !important;
+		overflow:hidden;	
+		}
+	.navbar-nav{
+		overflow:hidden;
+		}
+	ul.dropdown-menu{
+		padding-left:10px;
+		}
+	ul.dropdown-menu a{
+		font-family: 'Oswald', sans-serif;
+		color:#FFFFFF;
+		}
+	.depth_0{
+		margin-bottom:10px;
+		}
+}
+
+
+@media screen and (min-width: 480px){
+	.r_margin{
+		margin-right:4%;
+		height:100px;
+		}
+}
+@media screen and (max-width: 480px){
+	ul.pgwSlider, .pgwSlider > ul{
+		padding:0;
+		}
+	.btn-default{
+	margin-bottom:5px !important;
+	}
+
+	
+}
