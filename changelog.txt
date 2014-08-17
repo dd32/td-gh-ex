@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+MyKnowledgeBase version 1.0 - august 2014 
+- first stable release
+
+
