@@ -226,7 +226,9 @@ add_action( 'wp_enqueue_scripts', 'moesia_scripts' );
  * Enqueues the necessary script for image uploading in widgets
  */
 add_action('admin_enqueue_scripts', 'moesia_image_upload');
-function moesia_image_upload() {
+function moesia_image_upload($post) {
+    if( 'post.php' != $post )
+        return;	
     wp_enqueue_script('moesia-image-upload', get_template_directory_uri() . '/js/image-uploader.js', array('jquery'), true );
 	if ( did_action( 'wp_enqueue_media' ) )
 		return;    

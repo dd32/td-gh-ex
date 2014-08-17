@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Moesia\n"
-"POT-Creation-Date: 2014-07-14 23:20+0200\n"
-"PO-Revision-Date: 2014-07-14 23:20+0200\n"
+"POT-Creation-Date: 2014-08-17 13:32+0200\n"
+"PO-Revision-Date: 2014-08-17 13:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -261,19 +261,19 @@ msgstr ""
 msgid "Footer C"
 msgstr ""
 
-#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:251
+#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:253
 msgid "Author Bio: Facebook"
 msgstr ""
 
-#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:252
+#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:254
 msgid "Author Bio: Twitter"
 msgstr ""
 
-#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:253
+#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:255
 msgid "Author Bio: Google Plus"
 msgstr ""
 
-#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:254
+#: D:\Programe\InstantWP\InstantWP_4.3.1\iwpserver\htdocs\wordpress\wp-content\themes\moesia/functions.php:256
 msgid "Author Bio: Linkedin"
 msgstr ""
 
