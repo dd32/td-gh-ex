@@ -81,3 +81,5 @@ Raleway font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scr
 Vollkorn font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 FlexSlider jQuery slider license : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
+
+Image in screenshot.png license : CC0 1.0 Universal (Public Domain) http://creativecommons.org/publicdomain/zero/1.0/

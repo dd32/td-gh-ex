@@ -31,6 +31,9 @@ function hoffman_setup() {
 	register_nav_menu( 'primary', __('Primary Menu','hoffman') );
 	register_nav_menu( 'social', __('Social Menu','hoffman') );
 	
+	// Set content-width
+	if ( ! isset( $content_width ) ) $content_width = 700;
+	
 	// Make the theme translation ready
 	load_theme_textdomain('hoffman', get_template_directory() . '/languages');
 	
@@ -45,11 +48,11 @@ function hoffman_setup() {
 function hoffman_load_javascript_files() {
 
 	if ( !is_admin() ) {
-		wp_register_script( 'hoffman_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
-		wp_register_script( 'hoffman_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
-		
-		wp_enqueue_script( 'hoffman_flexslider' );
-		wp_enqueue_script( 'hoffman_global' );
+		wp_enqueue_script( 'hoffman_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'hoffman_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true  );
+		if ( is_singular() ) { 
+			wp_enqueue_script( "comment-reply" ); 
+		}
 	}
 }
 
@@ -59,13 +62,9 @@ add_action( 'wp_enqueue_scripts', 'hoffman_load_javascript_files' );
 // Register and enqueue styles
 function hoffman_load_style() {
 	if ( !is_admin() ) {
-	    wp_register_style('hoffman_googleFonts', '//fonts.googleapis.com/css?family=Raleway:400,600,700,800|Vollkorn:400,400italic,700,700italic' );
-		wp_register_style('hoffman_genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
-		wp_register_style('hoffman_style', get_stylesheet_uri() );
-		
-	    wp_enqueue_style( 'hoffman_googleFonts' );
-	    wp_enqueue_style( 'hoffman_genericons' );
-	    wp_enqueue_style( 'hoffman_style' );
+	    wp_enqueue_style( 'hoffman_googleFonts', '//fonts.googleapis.com/css?family=Raleway:400,600,700,800|Vollkorn:400,400italic,700,700italic' );
+	    wp_enqueue_style( 'hoffman_genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
+	    wp_enqueue_style( 'hoffman_style', get_stylesheet_uri() );
 	}
 }
 
@@ -128,10 +127,6 @@ require_once (get_template_directory() . "/widgets/video.php");
      unregister_widget('WP_Widget_Recent_Posts');
  }
  add_action('widgets_init', 'hoffman_unregister_default_widgets', 11);
-
-
-// Set content-width
-if ( ! isset( $content_width ) ) $content_width = 700;
 
 
 // Check whether the browser supports javascript
