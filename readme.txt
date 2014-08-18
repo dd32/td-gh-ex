@@ -12,6 +12,7 @@ Simple Life is a simple and minimal theme for your awesome WordPress website. It
 Simple Life theme is translation ready.
 
 == License ==
+Simple Life is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +20,7 @@ Simple Life WordPress Theme, Copyright 2013 nilambar.net
 Simple Life is distributed under the terms of the GNU General Public License v3
 The exceptions to license are as follows:
 - Font Awesome is fully open source and is GPL friendly (http://fortawesome.github.io/Font-Awesome/)
-- jquery.meanmenu.js released by Chris Wharton (https://github.com/meanthemes/meanMenu)
+- jquery.meanmenu.js released by Chris Wharton (https://github.com/meanthemes/meanMenu) under GPLv3 license
 - Open Sans Google Font - Apache License, version 2.0
 
 == Tags ==
