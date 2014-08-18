@@ -112,19 +112,21 @@ function moesia_widgets_init() {
 	) );
 
 	//Register the front page widgets
-	register_widget( 'Moesia_Services' );
-	register_widget( 'Moesia_Employees' );
-	register_widget( 'Moesia_Fp_Social_Profile' );
-	register_widget( 'Moesia_Blockquote' );
-	register_widget( 'Moesia_Skills' );
-	register_widget( 'Moesia_Facts' );
-	register_widget( 'Moesia_Testimonials' );
-	register_widget( 'Moesia_Clients' );
-	register_widget( 'Moesia_Projects' );
-	register_widget( 'Moesia_Action' );
-	register_widget( 'Moesia_Latest_News' );
+	if ( function_exists('siteorigin_panels_activate') ) {
+		register_widget( 'Moesia_Services' );
+		register_widget( 'Moesia_Employees' );
+		register_widget( 'Moesia_Fp_Social_Profile' );
+		register_widget( 'Moesia_Blockquote' );
+		register_widget( 'Moesia_Skills' );
+		register_widget( 'Moesia_Facts' );
+		register_widget( 'Moesia_Testimonials' );
+		register_widget( 'Moesia_Clients' );
+		register_widget( 'Moesia_Projects' );
+		register_widget( 'Moesia_Action' );
+		register_widget( 'Moesia_Latest_News' );
+	}
 	
-	//Register the front page widgets
+	//Register the sidebar widgets
 	register_widget( 'Moesia_Recent_Comments' );
 	register_widget( 'Moesia_Recent_Posts' );
 	register_widget( 'Moesia_Social_Profile' );
@@ -136,17 +138,19 @@ add_action( 'widgets_init', 'moesia_widgets_init' );
 /**
  * Load the front page widgets.
  */
-require get_template_directory() . "/widgets/fp-services.php";
-require get_template_directory() . "/widgets/fp-employees.php";
-require get_template_directory() . "/widgets/fp-social.php";
-require get_template_directory() . "/widgets/fp-blockquote.php";
-require get_template_directory() . "/widgets/fp-skills.php";
-require get_template_directory() . "/widgets/fp-facts.php";
-require get_template_directory() . "/widgets/fp-testimonials.php";
-require get_template_directory() . "/widgets/fp-clients.php";
-require get_template_directory() . "/widgets/fp-projects.php";
-require get_template_directory() . "/widgets/fp-call-to-action.php";
-require get_template_directory() . "/widgets/fp-latest-news.php";
+if ( function_exists('siteorigin_panels_activate') ) {
+	require get_template_directory() . "/widgets/fp-services.php";
+	require get_template_directory() . "/widgets/fp-employees.php";
+	require get_template_directory() . "/widgets/fp-social.php";
+	require get_template_directory() . "/widgets/fp-blockquote.php";
+	require get_template_directory() . "/widgets/fp-skills.php";
+	require get_template_directory() . "/widgets/fp-facts.php";
+	require get_template_directory() . "/widgets/fp-testimonials.php";
+	require get_template_directory() . "/widgets/fp-clients.php";
+	require get_template_directory() . "/widgets/fp-projects.php";
+	require get_template_directory() . "/widgets/fp-call-to-action.php";
+	require get_template_directory() . "/widgets/fp-latest-news.php";
+}
 
 /**
  * Load the sidebar widgets.
