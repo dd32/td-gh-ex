@@ -8,7 +8,7 @@ $options = get_option( 'faster_theme_options' );
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php if($options['favicon'] != '') { ?>
+<?php if(!empty($options['favicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo $options['favicon'];?>">
 <?php } ?>
 <!--[if lt IE 9]>
@@ -28,7 +28,7 @@ $options = get_option( 'faster_theme_options' );
           <nav role="navigation">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              <a class="navbar-brand logo" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if($options['logo']) { echo '<img src='.$options['logo'].'  height="101" width="250" alt="logo" />'; } else { echo'<p><span class="header-text">'.bloginfo("name").'</span></p>'; } ?></a>
+              <a class="navbar-brand logo" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if(!empty($options['logo'])) { echo '<img src='.$options['logo'].'  height="101" width="250" alt="logo" />'; } else { echo'<p><span class="header-text">'.bloginfo("name").'</span></p>'; } ?></a>
             </div>
             
             <!-- end .navbar-header --> 

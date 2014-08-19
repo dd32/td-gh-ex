@@ -45,3 +45,10 @@ Version 1.07
 	   
 Version 1.08
     i) Fixed stylesheet url.
+ 
+Version 1.09
+    i) Fix image css in content area.
+	ii) Change FT Options logo.
+	iii) Remove space in Faster Themes.
+	iv) Set FT Options condition.
+	v) Set Widget css in Footer content area.

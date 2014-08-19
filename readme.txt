@@ -2,13 +2,13 @@
 Theme Name: MyWiki
 Theme URI: http://fasterthemes.com/themes/MyWiki
 Description: MyWiki is simple, lightweight and faster WordPress Theme for individuals and companies to manage their Knowledgebase or Wiki or FAQs. It is a mobile responsive theme based on Twitter bootstrap framework.
-Author: Faster Themes
+Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: Blue, two-columns, responsive-layout, custom-background, custom-colors, custom-menu, full-width-template, theme-options, translation-ready,left-sidebar,right-sidebar
-version: 1.08
+version: 1.09
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-This theme, like WordPress, is licensed under the Faster Themes.
+This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 == Theme Description ==

@@ -27,7 +27,7 @@ function fasterthemes_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$menu = array(
-				'page_title' => __( 'Faster Themes Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
 				'menu_title' => __('FT Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
@@ -47,7 +47,7 @@ function fastertheme_framework_page(){
 		
 		screen_icon(); 
 		$image=get_template_directory_uri().'/theme-option/images/logo.png';
-		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'FasterThemes Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
 			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
 		endif; 
@@ -71,11 +71,10 @@ function fastertheme_framework_page(){
             <h4 class="heading">Site Logo</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" 
-                            value="<?php echo $options['logo']; ?>" placeholder="No file chosen" />
+                <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($options['logo'])) { echo $options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['logo'] != '') echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($options['logo'])) { echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
@@ -85,11 +84,10 @@ function fastertheme_framework_page(){
             <h4 class="heading">Favicon</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[favicon]" 
-                            value="<?php echo $options['favicon']; ?>" placeholder="No file chosen" />
+                <input id="logo" class="upload" type="text" name="faster_theme_options[favicon]" value="<?php if(!empty($options['favicon'])) { echo $options['favicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['favicon'] != '') echo "<img src='".$options['favicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($options['favicon'])) { echo "<img src='".$options['favicon']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
@@ -99,7 +97,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php echo $options['footertext']; ?>">
+                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($options['footertext'])) { echo $options['footertext']; } ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>
@@ -114,7 +112,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Facebook</h4>
             <div class="option">
               <div class="controls">
-                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php echo $options['fburl']; ?>" />
+                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($options['fburl'])) { echo $options['fburl']; } ?>" />
               </div>
               <div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>
             </div>
@@ -123,7 +121,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Twitter</h4>
             <div class="option">
               <div class="controls">
-                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php echo $options['twitter']; ?>" />
+                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($options['twitter'])) { echo $options['twitter']; } ?>" />
               </div>
               <div class="explain">Twitter profile or page URL i.e. http://twitter.com/username/</div>
             </div>
@@ -132,7 +130,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Google +</h4>
             <div class="option">
               <div class="controls">
-                <input id="googleplus" class="of-input" name="faster_theme_options[googleplus]" size="30" type="text" value="<?php echo $options['googleplus']; ?>" />
+                <input id="googleplus" class="of-input" name="faster_theme_options[googleplus]" size="30" type="text" value="<?php if(!empty($options['googleplus'])) { echo $options['googleplus']; } ?>" />
               </div>
               <div class="explain">google+ profile or page URL i.e. http://plus.google.com/username/ </div>
             </div>
@@ -141,7 +139,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Linkedin</h4>
             <div class="option">
               <div class="controls">
-                <input id="linkedin" class="of-input" name="faster_theme_options[linkedin]" type="text" size="30" value="<?php echo $options['linkedin']; ?>" />
+                <input id="linkedin" class="of-input" name="faster_theme_options[linkedin]" type="text" size="30" value="<?php if(!empty($options['linkedin'])) { echo $options['linkedin']; } ?>" />
               </div>
               <div class="explain">Linkedin profile or page URL i.e. https://www.linkedin.com/username/</div>
             </div>
@@ -163,7 +161,32 @@ function fastertheme_framework_page(){
       
     </div>
     <!-- / #container --> 
-    
+          <br />
+          <div id="section-title" class="section">
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <h2>Enter your email to join our mailing list and we’ll keep you updated on new themes as they’re
+released and our exclusive special offers.</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+
+          </div>  
   </div>
 </div>
+   
 <?php }
