@@ -785,14 +785,6 @@ if ( ! function_exists( 'alx_plugins' ) ) {
 				'force_deactivation'=> false,
 			),
 			array(
-				'name' 				=> 'Responsive Lightbox',
-				'slug' 				=> 'light',
-				'source'			=> get_template_directory() . '/functions/plugins/light.zip',
-				'required'			=> false,
-				'force_activation' 	=> false,
-				'force_deactivation'=> false,
-			),
-			array(
 				'name' 				=> 'Contact Form 7',
 				'slug' 				=> 'contact-form-7',
 				'required'			=> false,
