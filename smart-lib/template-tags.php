@@ -271,8 +271,7 @@ function maxflat_searchform() {
  *
 */
 
-function  maxflat_mobile_menu($args=array()){
-
+function  smartlib_mobile_menu( $args = array() ) {
 
 
 	$defaults = array(
@@ -280,35 +279,52 @@ function  maxflat_mobile_menu($args=array()){
 		'menu_class'     => 'mobile-menu',
 	);
 
-	$args           = wp_parse_args( $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
-	$menu_item = __MAXFLAT::layout()->wp_nav_menu_select($args);
+	$menu_item = __SMARTLIB::layout()->wp_nav_menu_select( $args );
 
-	if($menu_item){
-	?>
+	if ( $menu_item ) {
+		?>
 
 	<select id="menu-<?php echo $args['theme_location'] ?>" class="<?php echo $args['menu_class'] ?>">
-			<option value=""><?php _e( '- Select -', 'maxflat'); ?></option>
-			<?php foreach ( $menu_item as $id => $data ) : ?>
-	<?php if ( $data['parent'] == true ) : ?>
-		<optgroup label="<?php echo $data['item']->title ?>">
+		<option value=""><?php _e( '- Select -', 'maxflat' ); ?></option>
+		<?php foreach ( $menu_item as $id => $data ) : ?>
+		<?php if ( $data['parent'] == true ) : ?>
+			<optgroup label="<?php echo $data['item']->title ?>">
+				<option value="<?php echo $data['item']->url ?>"><?php echo $data['item']->title ?></option>
+				<?php foreach ( $data['children'] as $id => $child ) : ?>
+				<option value="<?php echo $child->url ?>"><?php echo $child->title ?></option>
+				<?php endforeach; ?>
+			</optgroup>
+			<?php else : ?>
 			<option value="<?php echo $data['item']->url ?>"><?php echo $data['item']->title ?></option>
-			<?php foreach ( $data['children'] as $id => $child ) : ?>
-			<option value="<?php echo $child->url ?>"><?php echo $child->title ?></option>
-			<?php endforeach; ?>
-		</optgroup>
-		<?php else : ?>
-		<option value="<?php echo $data['item']->url ?>"><?php echo $data['item']->title ?></option>
-		<?php endif; ?>
-	<?php endforeach; ?>
-		</select>
-		<?php
-	}else{
-		?>
-	<select class="menu-not-found">
-		<option value=""><?php _e( 'Menu Not Found', 'maxflat'); ?></option>
+			<?php endif; ?>
+		<?php endforeach; ?>
 	</select>
+	<?php
+	}
+	else {
+		?>
+	<select id="menu-<?php echo $args['theme_location'] ?>" class="<?php echo $args['menu_class'] ?>">
+		<?php
+		$args = array(
+			'post_type'     => 'page',
+			'posts_per_page'=> - 1
+		);
+
+		$query = new WP_Query( $args );
+
+		while ( $query->have_posts() ): $query->the_post();
+			?>
+
+			<option value="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></option>
+
 			<?php
+		endwhile;
+		wp_reset_postdata();
+		?>
+	</select>
+	<?php
 	}
 
 }
