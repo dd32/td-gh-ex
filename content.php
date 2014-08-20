@@ -22,22 +22,22 @@
 			} else {
 				$featured_frontpage = 1;
 			}
-			if ((!get_post_format() == 'aside' ) && (!get_post_format() == 'quote' ) && (!get_post_format() == 'video' ) 
+			if ((!get_post_format() == 'aside' ) && (!get_post_format() == 'quote' ) && (!get_post_format() == 'video' )
 				&& (!get_post_format() == 'audio' ) && (!get_post_format() == 'image' ) && (!get_post_format() == 'status' )
 				&& (has_post_thumbnail() ) && ($featured_frontpage == 1 ) ) {
 					echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 					the_post_thumbnail('post-thumbnail', array('class'	=> "aligncenter"));
 					echo '</a>';
 			}
-		?>	
+		?>
 	</div>
 	<div class="entry-content justified">
-		<?php 
-			if ((get_post_format() == 'aside' ) || (get_post_format() == 'quote' ) || (get_post_format() == 'video' ) 
+		<?php
+			if ((get_post_format() == 'aside' ) || (get_post_format() == 'quote' ) || (get_post_format() == 'video' )
 				|| (get_post_format() == 'audio' ) || (get_post_format() == 'image' ) || (get_post_format() == 'status' )) {
-				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beluga' ) ); 
+				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beluga' ) );
 			} else {
-				the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beluga' ) ); 
+				the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beluga' ) );
 			}
 		?>
 		<?php

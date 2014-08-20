@@ -23,6 +23,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'beluga' ); ?></a>
 
 	<header id="masthead" class="site-header" <?php echo beluga_header_image_background(); ?> role="banner">
+		<div class="masthead-opacity"></div>
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -36,17 +37,17 @@
 			<?php get_search_form(); ?>
 		</nav><!-- #site-navigation -->
 		<div class="sidebar sidebar-1  menu-column justified">
-			 <?php dynamic_sidebar( 'sidebar-1' ); ?> 		
+			 <?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</div>
 		<div class="sidebar sidebar-2  menu-column justified">
-			 <?php dynamic_sidebar( 'sidebar-2' ); ?>		
+			 <?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</div>
 		<div class="sidebar sidebar-2  menu-column justified">
-			 <?php dynamic_sidebar( 'sidebar-3' ); ?>		
+			 <?php dynamic_sidebar( 'sidebar-3' ); ?>
 		</div>
 	</div>
 	<nav id="menu-button" class="clear">
-		<a href="#"><span class="genericon genericon-menu"></span></a>		
+		<a href="#"><span class="genericon genericon-menu"></span></a>
 	</nav>
 </div>
 	<div id="content" class="site-content">

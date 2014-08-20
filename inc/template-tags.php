@@ -6,7 +6,7 @@
  *
  * @package beluga
  */
- 
+
 if ( ! function_exists( 'beluga_license_info' ) ) :
 /**
  * Blog License Information
@@ -18,7 +18,7 @@ function beluga_license_info($output='return') {
 	} else {
 		$license_info = '&#169; ' . date("Y") . ' ' . get_bloginfo('name');
 	}
-	
+
 	if ($output == 'echo') {
 		echo $license_info;
 	} else {

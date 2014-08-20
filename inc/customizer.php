@@ -17,7 +17,7 @@ function beluga_customize_register( $wp_customize ) {
 
 	class beluga_Customize_Textarea_Control extends WP_Customize_Control {
 		public $type = 'textarea';
-		 
+
 		public function render_content() {
 		?>
 			<label>
@@ -50,12 +50,17 @@ function beluga_customize_register( $wp_customize ) {
 	    'default'			=> 1,
 	    'type'			=> 'option',
 	) );
+	//HEADER IMAGE OPACITY - SETTING
+	$wp_customize->add_setting( 'beluga_theme_settings[header_opacity]' , array(
+	    'default'			=> '0',
+	    'type'			=> 'option',
+	) );
 	//SITE LICENSE INFORMATION - SETTING
 	$wp_customize->add_setting( 'beluga_theme_settings[site_license]' , array(
 	    'default'			=> '',
 	    'type'			=> 'option',
 	) );
-	
+
 	//SITE LICENSE INFORMATION - CONTROL
 	$wp_customize->add_control( new beluga_Customize_Textarea_Control( $wp_customize, 'beluga_site_license', array(
 		'label'   => 'We recommend Creative Commons',
@@ -76,6 +81,24 @@ function beluga_customize_register( $wp_customize ) {
 			'section'  => 'beluga_featured_image_options',
 			'settings' => 'beluga_theme_settings[featured_header]',
 			'type'     => 'checkbox'
+		)
+	);
+	//HEADER IMAGE OPACITY - CONTROL
+	$wp_customize->add_control('beluga_header_opacity_control', array(
+			'label'    => __( 'Set the opacity of header images to make your title text better stand out.', 'beluga' ),
+			'section'  => 'header_image',
+			'settings' => 'beluga_theme_settings[header_opacity]',
+			'type'     => 'select',
+			'choices'  => array( '0' => 'Fully Visible',
+										'0.1' => '90%',
+										'0.2' => '80%',
+										'0.3' => '70%',
+										'0.4' => '60%',
+										'0.5' => '50%',
+										'0.6' => '40%',
+										'0.7' => '30%',
+										'0.8' => '20%',
+										'0.9' => '10%',)
 		)
 	);
 }

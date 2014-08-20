@@ -1,10 +1,10 @@
 /*
 Theme Name: Beluga
-Theme URI: 
+Theme URI: https://basilosaur.us/wordpress/themes/beluga/
 Author: Basilosaur.us
-Author URI: http://basilosaur.us/
+Author URI: https://basilosaur.us/
 Description: Beluga is a blogging theme that offers a modern minimalist sensibility with an emphasis on text layout and readability, and just enough JavaScript to complement your content without getting in its way.  Beluga has all the WordPress accouterments – search boxes, widget areas, and the works. But it keeps them out of sight unless the user makes them visible, making them secondary to what's really important:  your words, your images, and what you've created.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beluga
@@ -22,7 +22,7 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);*/
 
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.25em;
 	padding-bottom: .4em;
 	letter-spacing: 0.05em;
-	
+
 }
 h1 {
 	font-size: 2em;
@@ -238,8 +238,10 @@ big {
 	font-size: 3em;
 	font-weight: 300;
 	letter-spacing: .1em;
-	line-height: 1.2rem;
-	left: -2px;
+	left: -4px;
+	padding-bottom: 0;
+	line-height: 3.1rem;
+
 }
 .site-description {
 	position: relative;
@@ -249,7 +251,10 @@ big {
 	font-size: 1.25em;
 	font-weight: 300;
 	letter-spacing: .05em;
-	line-height: 1.2rem;
+	height: 100%;
+	line-height: 1.5rem;
+	padding: .33em 0 0.12em;
+
 }
 .entry-header {
 	color: #444;
@@ -337,7 +342,7 @@ table {
 	border: 1px solid #888;
 }
 th {
-	font-weight: 600; 
+	font-weight: 600;
 }
 td, th {
 	border-bottom: 1px solid #888;
@@ -363,7 +368,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #999; 
+	border-color: #999;
 	background: #fff;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
@@ -589,8 +594,8 @@ a:active {
 	border: 0;
 	font-weight: 400;
 	color: #bbb;
-	
-	
+
+
 }
 
 .main-navigation ul ul a {
@@ -767,6 +772,7 @@ a:active {
 #masthead {
 	position: relative;
 	height: 250px;
+	width: 100%;
 	background-repeat: no-repeat;
 	background-attachment: local;
 /*	-webkit-background-size: cover;
@@ -775,12 +781,24 @@ a:active {
 	background-size: cover;*/
 	background-position: top center;
 	background-clip: padding-box;
-
+	z-index: 0;
+}
+.masthead-opacity {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	opacity: 0;
+	z-index: 2;
 }
 .site-branding {
 	position: relative;
-	margin-top: 90px;
+	display: block;
+	margin-top: 80px;
 	margin-left: 1.5em;
+	z-index: 4;
 }
 .inner{
 	width: 85%;
@@ -979,7 +997,7 @@ a:active {
 	font-size: 1.33em;
 	font-variant: small-caps;
 	left: 0;
-	
+
 }
 .blog .format-status .entry-title::before,
 .archive .format-status .entry-title::before,
@@ -1102,6 +1120,9 @@ a:active {
 	margin-left: 0;
 	font-size: .8em;
 }
+.comment-list .children {
+	padding-bottom: 0;
+}
 .comment-list li {
 }
 .comment-meta {
@@ -1178,7 +1199,13 @@ a:active {
 .reply a {
 	border: 0;
 }
-.comment-closed .reply {
+.comment-closed .reply,
+.depth-5 .reply,
+.depth-6 .reply,
+.depth-7 .reply,
+.depth-8 .reply,
+.depth-9 .reply,
+.depth-10 .reply {
 	display: none;
 }
 .comment-list .children {
@@ -1340,17 +1367,17 @@ object {
 	}
 	#menu-inner .main-navigation,
 	#menu-inner .sidebar-1 {
-		padding-bottom: 1.5rem;	
+		padding-bottom: 1.5rem;
 	}
 	#menu-inner .sidebar-2,
 	#menu-inner .sidebar-3 {
-		padding-left: .5em;	
+		padding-left: .5em;
 	}
 
 }
 @media screen and (max-width: 640px) {
 	.search-404 span {
-		display: none;	
+		display: none;
 	}
 	.search-404 form {
 		width: 90%;
@@ -1359,10 +1386,17 @@ object {
 	.site-branding {
 		margin-top: 75px;
 		margin-left: 1em;
+		width: 95%;
+	}
+	.site-title {
+		font-size: 2.5em;
+		line-height: 2.75rem;
+		font-weight: 400;
 	}
 	.site-description {
 		font-size: 1em;
 		line-height: 1.7em;
+		font-weight: 400;
 	}
 	.single .entry-content,
 	.page .entry-content {
@@ -1383,7 +1417,7 @@ object {
 		max-width: none;
 	}
 	#colophon .site-info {
-		text-align: left;	
+		text-align: left;
 	}
 }
 @media screen and (max-width: 480px) {
@@ -1394,6 +1428,8 @@ object {
 		margin-right: 6%;
 	}
 	.site-title {
-		font-size: 2.25em;	
+		font-size: 2em;
+		line-height: 2.4rem;
+
 	}
 }

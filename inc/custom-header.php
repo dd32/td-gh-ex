@@ -137,7 +137,7 @@ function beluga_header_image_background() {
 	} else {
 		$featured_header = 1;
 	}
-	
+
 	if ( ( is_single() ) && ( has_post_thumbnail() ) && ($featured_header == 1 ) ) {
 		$id_num = get_post_thumbnail_id();
 		$thumb_array = wp_get_attachment_image_src( $id_num, 'featured-image' );
