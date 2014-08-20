@@ -387,6 +387,30 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
     );
     /* setting */
     $wp_customize->add_setting(
+        'additional_options_author_meta_settings',
+        array(
+            'default'           => 'show',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_tracks_sanitize_return_top_settings',
+        )
+    );
+    /* control */
+    $wp_customize->add_control(
+        'additional_options_author_meta_settings',
+        array(
+            'type' => 'radio',
+            'label' => 'Show author info box after posts?',
+            'section' => 'ct_tracks_additional_options',
+            'setting' => 'additional_options_author_meta_settings',
+            'choices' => array(
+                'show' => 'Show',
+                'hide' => 'Hide'
+            ),
+        )
+    );
+    /* setting */
+    $wp_customize->add_setting(
         'additional_options_image_zoom_settings',
         array(
             'default'           => 'zoom',
@@ -620,6 +644,92 @@ function ct_tracks_sanitize_premium_layouts_full_posts($input){
         return '';
     }
 }
+
+/* Custom CSS Section */
+function ct_tracks_customizer_custom_css( $wp_customize ) {
+
+    // Custom Textarea Control
+    class ct_tracks_Textarea_Control extends WP_Customize_Control {
+        public $type = 'textarea';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <textarea rows="8" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+            </label>
+        <?php
+        }
+    }
+    // section
+    $wp_customize->add_section(
+        'ct-custom-css',
+        array(
+            'title'      => __( 'Custom CSS', 'tracks' ),
+            'priority'   => 90,
+            'capability' => 'edit_theme_options'
+        )
+    );
+    // setting
+    $wp_customize->add_setting(
+        'ct_tracks_custom_css_setting',
+        array(
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'esc_textarea',
+        )
+    );
+    // control
+    $wp_customize->add_control(
+        new ct_tracks_Textarea_Control(
+            $wp_customize,
+            'ct_tracks_custom_css_setting',
+            array(
+                'label'          => __( 'Add Custom CSS Here:', 'tracks' ),
+                'section'        => 'ct-custom-css',
+                'settings'       => 'ct_tracks_custom_css_setting',
+            )
+        ) );
+}
+add_action( 'customize_register', 'ct_tracks_customizer_custom_css' );
+
+function ct_tracks_user_profile_image_setting( $user ) { ?>
+
+    <table id="profile-image-table" class="form-table">
+
+        <tr>
+            <th><label for="user_profile_image"><?php _e( 'Profile image', 'tracks' ); ?></label></th>
+            <td>
+                <!-- Outputs the image after save -->
+                <img id="image-preview" src="<?php echo esc_url( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" style="width:100px;"><br />
+                <!-- Outputs the text field and displays the URL of the image retrieved by the media uploader -->
+                <input type="text" name="user_profile_image" id="user_profile_image" value="<?php echo esc_url_raw( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" class="regular-text" />
+                <!-- Outputs the save button -->
+                <input type='button' id="user-profile-upload" class="button-primary" value="<?php _e( 'Upload Image', 'tracks' ); ?>"/><br />
+                <span class="description"><?php _e( 'Upload an image here to use instead of your Gravatar. Perfectly square images will not be cropped.', 'tracks' ); ?></span>
+            </td>
+        </tr>
+
+    </table><!-- end form-table -->
+<?php } // additional_user_fields
+
+add_action( 'show_user_profile', 'ct_tracks_user_profile_image_setting' );
+add_action( 'edit_user_profile', 'ct_tracks_user_profile_image_setting' );
+
+/**
+ * Saves additional user fields to the database
+ */
+function ct_tracks_save_user_profile_image( $user_id ) {
+
+    // only saves if the current user can edit user profiles
+    if ( !current_user_can( 'edit_user', $user_id ) )
+        return false;
+
+    update_user_meta( $user_id, 'user_profile_image', $_POST['user_profile_image'] );
+}
+
+add_action( 'personal_options_update', 'ct_tracks_save_user_profile_image' );
+add_action( 'edit_user_profile_update', 'ct_tracks_save_user_profile_image' );
 
 function ct_tracks_social_array(){
 

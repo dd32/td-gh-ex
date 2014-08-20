@@ -40,6 +40,20 @@ function ct_tracks_enqueue_admin_styles($hook){
 }
 add_action('admin_enqueue_scripts',	'ct_tracks_enqueue_admin_styles' );
 
+function ct_tracks_enqueue_profile_image_uploader($hook) {
+
+    // if is user profile page
+    if('profile.php' == $hook || 'user-edit.php' == $hook){
+
+        // Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
+        wp_enqueue_media();
+
+        // enqueue the JS needed to utilize media uploader on profile image upload
+        wp_enqueue_script('ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js');
+    }
+}
+add_action('admin_enqueue_scripts', 'ct_tracks_enqueue_profile_image_uploader');
+
 /* Load the core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
@@ -193,11 +207,20 @@ function ct_tracks_tags_display() {
 /* added to customize the comments. Same as default except -> added use of gravatar images for comment authors */
 function ct_tracks_customize_comments( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
+    global $post;
  
     ?>
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
         <article id="comment-<?php comment_ID(); ?>" class="comment">
-            <div class="comment-author"><?php echo get_avatar( get_comment_author_email(), 72 ); ?>
+            <div class="comment-author">
+                <?php
+                // if is post author
+                if( $comment->user_id === $post->post_author ) {
+                    ct_tracks_profile_image_output();
+                } else {
+                    echo get_avatar( get_comment_author_email(), 72 );
+                }
+                ?>
                 <div>
                     <div class="author-name"><?php comment_author_link(); ?></div>
                     <div class="comment-date"><?php comment_date('n/j/Y'); ?></div>
@@ -583,5 +606,60 @@ function ct_tracks_category_link(){
     $html = "<a href='" . $category_link . "'>" . $category_name . "</a>";
     echo $html;
 }
+
+// retrieves the attachment ID from the file URL
+function ct_tracks_get_image_id($url) {
+
+    // Split the $url into two parts with the wp-content directory as the separator
+    $parsed_url  = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
+
+    // Get the host of the current site and the host of the $url, ignoring www
+    $this_host = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
+    $file_host = str_ireplace( 'www.', '', parse_url( $url, PHP_URL_HOST ) );
+
+    // Return nothing if there aren't any $url parts or if the current host and $url host do not match
+    if ( ! isset( $parsed_url[1] ) || empty( $parsed_url[1] ) || ( $this_host != $file_host ) ) {
+        return;
+    }
+
+    // Now we're going to quickly search the DB for any attachment GUID with a partial path match
+    // Example: /uploads/2013/05/test-image.jpg
+    global $wpdb;
+
+    $attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->prefix}posts WHERE guid RLIKE %s;", $parsed_url[1] ) );
+
+    // Returns null if no attachment is found
+    return $attachment[0];
+}
+
+function ct_tracks_profile_image_output(){
+
+    // use User's profile image, else default to their Gravatar
+    if(get_the_author_meta('user_profile_image')){
+
+        // get the id based on the image's URL
+        $image_id = ct_tracks_get_image_id(get_the_author_meta('user_profile_image'));
+
+        // retrieve the thumbnail size of profile image
+        $image_thumb = wp_get_attachment_image($image_id, 'thumbnail');
+
+        // display the image
+        echo $image_thumb;
+
+    } else {
+        echo get_avatar( get_the_author_meta( 'ID' ), 72 );
+    }
+}
+
+function ct_tracks_custom_css_output(){
+
+    $custom_css = get_theme_mod('ct_tracks_custom_css_setting');
+
+    /* output custom css */
+    if($custom_css) {
+        wp_add_inline_style('style', $custom_css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_tracks_custom_css_output');
 
 ?>
