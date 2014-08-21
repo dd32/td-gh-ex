@@ -1,4 +1,8 @@
 <?php
+
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+
 function awesome_2014_customize_register() {
 
 global $wp_customize;
@@ -239,7 +243,6 @@ remove_action( 'widgets_init', 'twentyfourteen_widgets_init', 11 );
 add_action( 'widgets_init', 'twentyfourteen_cms3_widgets_init', 11 );
 
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
-
 function your_welcome_panel() {
 print '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
 <p>Important! This Theme requires that you have the TwentyFourteen Theme installed.</p>
@@ -260,8 +263,7 @@ print '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
 <p>You can see examples at <a href="http://www.badeyes.com/2014/" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a></p>
 <h2>Post Teaser Plugin</h2>
 <p>For accessibility reasons the Post Teaser Plugin comes bundled with this Theme and is edited accordingly so there is no need to install it again, you can however edit it as you would any other Plugin in the Admin area.</p>
- <p>Note: If you do install and activate it you will not be able to access the Admin area and will have to use ftp to uninstal it or change its name.</p>
-<p>If you do not wish to use it and know what you are doing then remove the corresponding code from the functions.php file or delete the "Post Teaser" folder from this Child Theme.</p>
+<p>If you already have it installed then it shouldn\'t be a problem but we suggest you deactivate and use our preset one.</p>
 <h2>WordPress for Bad Eyes</h2>
 <p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href="http://www.wordpressforbadeyes.com" target=_blank">www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>';
 }

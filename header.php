@@ -138,13 +138,16 @@
 <li><a href="#custommenu">Main Menu</a></li>
 <?php endif; ?>
 
+<?php if ( has_nav_menu( 'secondary' ) ) : ?>
 
-	<?php if ( has_nav_menu( 'secondary' ) ) : ?>
+<li><a href="#secondary"><?php
+global $badeyes_options;
 
-<li><a href="#secondary">Side Menu</a></li>
-
-	<?php endif; ?>
-
+					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
+?><?php if( $badeyes_settings['side_nav'] != '' ) : ?>
+<?php echo $badeyes_settings['side_nav']; ?>
+<?php endif; ?></a></li>
+<?php endif; ?>
 <li id="default"><a href="<?php bloginfo('stylesheet_directory'); ?>/styleswitcher.php?SETSTYLE=0" title="Click here to set Style 0"><span class="white">Default colours</span></a></li>
 
 <li id="high"><a href="<?php bloginfo('stylesheet_directory'); ?>/styleswitcher.php?SETSTYLE=1" title="Click here to set Style 1"><span class="black">High Contrast</span></a></li></ul>
