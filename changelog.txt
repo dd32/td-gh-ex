@@ -1,6 +1,17 @@
 *** Rams changelog ***
 
 
+Version 1.06 (2014-08-21)
+-------------------------
+- Fixed an error in header.php
+
+
+Version 1.05 (2014-08-06)
+-------------------------
+- Updated style.css for brevity and browser compatibility
+- Made some improvements to the editor style
+
+
 Version 1.04 (2014-07-20)
 -------------------------
 - Added a .no-js fallback for the post meta

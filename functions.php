@@ -234,7 +234,7 @@ function rams_flexslider($size) {
 }
 
 
-// rams comment function
+// Rams comment function
 if ( ! function_exists( 'rams_comment' ) ) :
 function rams_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -433,7 +433,7 @@ function meta_box_post_format_toggle()
 add_action( 'admin_footer', 'meta_box_post_format_toggle' );
 
 
-// rams theme options
+// Rams theme options
 class rams_Customize {
 
    public static function rams_register ( $wp_customize ) {
@@ -506,10 +506,6 @@ class rams_Customize {
 	           <?php self::rams_generate_css('.comment-form input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::rams_generate_css('.logged-in-as a:hover', 'color', 'accent_color'); ?>
 	           <?php self::rams_generate_css('.archive-nav a:hover', 'color', 'accent_color'); ?>
-	           
-	           <?php self::rams_generate_css('body#tinymce.wp-editor a', 'color', 'accent_color'); ?>
-	           <?php self::rams_generate_css('body#tinymce.wp-editor a:hover', 'color', 'accent_color'); ?>
-	           <?php self::rams_generate_css('body#tinymce.wp-editor a:hover', 'border-bottom-color', 'accent_color'); ?>
 	      </style> 
 	      
 	      <!--/Customizer CSS-->

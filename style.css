@@ -2,8 +2,8 @@
 
 	Theme Name: Rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
-	Version: 1.04
-	Description: A clean, minimalist and responsive theme, as well as an exercise in simplicity. Features responsive and retina-ready design, support for the gallery, video and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska.
+	Version: 1.06
+	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery, video and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska.
 	Tags: gray, green, silver, white, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -107,9 +107,9 @@ body a:hover {
 }
 
 * { 
-	box-sizing: border-box; 
-	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box; 
 }
 
 img {
@@ -165,14 +165,6 @@ body a {
 	transition: all 0.2s ease-in-out;
 }
 
- {
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
 .header .blog-title,
 .post-meta-toggle,
 .post-meta-toggle p,
@@ -184,14 +176,6 @@ body a {
 	-ms-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
-}
-
-{
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
 }
 
 
@@ -294,7 +278,9 @@ body a {
 	color: rgba(255,255,255,0.6);
 }
 
-.main-menu a:hover { color: #fff; }
+.main-menu a:hover,
+.main-menu .current_menu_item > a,
+.main-menu .current_page_item > a { color: #fff; }
 
 
 /* Credits --------------------------------------- */
@@ -576,21 +562,29 @@ a.post-quote:hover {
 .post-meta-toggle.active .bar:nth-child(1),
 .post-meta-toggle.active .bar:nth-child(3) { top: 4px; }
 
-.post-meta-toggle.active .bar:nth-child(2) { opacity: 0; }
+.post-meta-toggle.active .bar:nth-child(2) { 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0; 
+}
 
 .post-meta-toggle.active .bar:nth-child(1) {
-	transform: rotate(45deg); 
-	-moz-transform: rotate(45deg);  
 	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg);  
+	-ms-transform: rotate(45deg);  
+	-o-transform: rotate(45deg);  
+	transform: rotate(45deg); 
 }
 
 .post-meta-toggle.active .bar:nth-child(3) { 
-	transform: rotate(-45deg); 
-	-moz-transform: rotate(-45deg);  
 	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg);  
+	-ms-transform: rotate(-45deg);  
+	-o-transform: rotate(-45deg);  
+	transform: rotate(-45deg); 
 }
-
-
 /* post meta inner */
 
 
@@ -782,8 +776,6 @@ abbr, acronym { cursor: help; }
 .post-content tt {
 	padding: 5px;
 	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 }
 
 .post-content dl { line-height: 160%; }
@@ -947,11 +939,6 @@ abbr, acronym { cursor: help; }
     width: 100%;
 }
 
-.post-content tbody { 
-	border-top: 1px solid #ddd; 
-    border-bottom: 1px solid #ddd;
-}
-
 .post-content th,
 .post-content td {
 	padding: 2%;
@@ -1017,6 +1004,13 @@ abbr, acronym { cursor: help; }
 
 .post-content input { font-family: 'Montserrat', sans-serif; }
 
+.post-content input[type="file"] {
+	padding: 12px;
+	background: #fdfdfd;
+	border: 1px solid #eee;
+	border-radius: 3px;
+}
+
 .post-content input[type="text"],
 .post-content input[type="tel"],
 .post-content input[type="url"],
@@ -1026,7 +1020,7 @@ abbr, acronym { cursor: help; }
 	width: 100%;
 	padding: 20px;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 0.85em;
+	font-size: 0.8em;
 	border: none;
 	color: #444;
 	border: 2px solid #eee;
@@ -1038,8 +1032,6 @@ abbr, acronym { cursor: help; }
 	transition: background 0.2s ease-in-out;
 	-webkit-appearance: none;
 	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 }
 
 .post-content textarea { 
@@ -1069,8 +1061,16 @@ abbr, acronym { cursor: help; }
 	font-size: 0.9rem;
 	-webkit-appearance: none;
 	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
+}
+
+.post-content input[type="submit"] + input[type="reset"],
+.post-content input[type="submit"] + input[type="reset"],
+.post-content input[type="reset"] + input[type="submit"],
+.post-content input[type="reset"] + input[type="button"],
+.post-content input[type="button"] + input[type="button"],
+.post-content input[type="button"] + input[type="reset"],
+.post-content input[type="button"] + input[type="submit"] {
+	margin-left: 8px;
 }
 
 .post-content input[type="submit"]:hover,
@@ -1151,8 +1151,6 @@ li.comment { position: relative; }
 	width: 100%;
 	height: auto;
 	border-radius: 999px;
-	-moz-border-radius: 999px;
-	-webkit-border-radius: 999px;
 	position: relative;
 	z-index: 2;
 }
@@ -1262,7 +1260,7 @@ li.comment { position: relative; }
 #cancel-comment-reply-link:hover { text-decoration: underline; }
 
 .comment-form p.logged-in-as {
-	margin: -20px 0 40px;
+	margin: -25px 0 40px;
 	color: #999;
 }
 
@@ -1328,8 +1326,6 @@ li.comment { position: relative; }
 	color: #666;
 	-webkit-appearance: none;
 	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 }
 
 .comment-form textarea { height: 200px; }
@@ -1352,8 +1348,6 @@ li.comment { position: relative; }
 	color: #fff;
 	-webkit-appearance: none;
 	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 }
 
 .comment-form input[type="submit"]:hover,
@@ -1398,8 +1392,6 @@ li.comment { position: relative; }
 	padding: 16px 20px;
 	background: #444;
 	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 	font-size: 0.8em;
 	color: #fff;
 }
@@ -1537,18 +1529,28 @@ li.comment { position: relative; }
 	.nav-toggle.active .bar:nth-child(1),
 	.nav-toggle.active .bar:nth-child(3) { top: 4px; }
 	
-	.nav-toggle.active .bar:nth-child(2) { opacity: 0; }
+	.nav-toggle.active .bar:nth-child(2) { 
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		opacity: 0; 
+	}
 	
 	.nav-toggle.active .bar:nth-child(1) {
-		transform: rotate(45deg); 
-		-moz-transform: rotate(45deg);  
 		-webkit-transform: rotate(45deg); 
+		-moz-transform: rotate(45deg);  
+		-ms-transform: rotate(45deg);  
+		-o-transform: rotate(45deg);  
+		transform: rotate(45deg); 
 	}
 	
 	.nav-toggle.active .bar:nth-child(3) { 
-		transform: rotate(-45deg); 
-		-moz-transform: rotate(-45deg);  
 		-webkit-transform: rotate(-45deg); 
+		-moz-transform: rotate(-45deg);  
+		-ms-transform: rotate(-45deg);  
+		-o-transform: rotate(-45deg);  
+		transform: rotate(-45deg); 
 	}
 	
 	.nav-toggle.active .menu { display: none; }
