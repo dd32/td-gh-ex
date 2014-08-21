@@ -4,13 +4,13 @@ function solon_custom_styles($custom) {
 	//Primary color
 	$primary_color = esc_html(get_theme_mod( 'primary_color' ));
 	if ( $primary_color != '#e86f67' ) {
-		$custom = ".site-header, .social-navigation, .main-navigation ul ul li:hover, .page-header, .slide .entry-title, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], .site-info, #today { background-color: {$primary_color} !important; }"."\n";
+		$custom = ".wp-pagenavi .pages,  .wp-pagenavi .page, .wp-pagenavi .last, .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink, .site-header, .social-navigation, .main-navigation ul ul li:hover, .page-header, .slide .entry-title, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], .site-info, #today { background-color: {$primary_color} !important; }"."\n";
 		$custom .= ".entry-title a:hover, .main-navigation a:hover, .entry-meta, .entry-meta a, .entry-footer, .entry-footer a, .author-social a, .comment-meta a, .comment-form-author:before, .comment-form-email:before, .comment-form-url:before, .comment-form-comment:before, .widget-title, .widget li:before, .error404 .widgettitle, .main-navigation ul ul a, .flex-direction-nav a, .social-widget li a::before { color: {$primary_color}; }"."\n";
 		$custom .= ".author-bio .col-md-3, .main-navigation li, .read-more { border-right-color: {$primary_color}; }"."\n";
 		$custom .= ".author-bio .col-md-9 { border-left-color: {$primary_color}; }"."\n";
 		$custom .= ".widget-title, .main-navigation ul ul li, .hentry .entry-meta, .entry-footer, .error404 .widgettitle { border-bottom-color: {$primary_color}; }"."\n";
 		$custom .= ".footer-widget-area, .hentry .entry-meta, .entry-footer { border-top-color: {$primary_color}; }"."\n";
-	}	
+	}
 	//Secondary color
 	$secondary_color = esc_html(get_theme_mod( 'secondary_color' ));
 	if ( $secondary_color != '#2A363B' ) {

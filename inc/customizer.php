@@ -114,6 +114,23 @@ function solon_customize_register( $wp_customize ) {
 				'sidebar-content' => 'Sidebar-Content',
 			),
 		)
+	);
+	//Full content posts
+	$wp_customize->add_setting(
+		'solon_full_content',
+		array(
+			'sanitize_callback' => 'solon_sanitize_checkbox',
+			'default' => 0,			
+		)		
+	);
+	$wp_customize->add_control(
+		'solon_full_content',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Check this box to display the full content of the posts on the home page.', 'solon'),
+			'section' => 'solon_general',
+            'priority' => 11,			
+		)
 	);	
 	//___Fonts___//
     $wp_customize->add_section(

@@ -34,3 +34,15 @@ jQuery(function($) {
 jQuery(function($) {
 	$(".comment-body").addClass('clearfix');
 });
+
+//Social links in new window
+jQuery(function($) {
+     $( '.social-navigation li a' ).attr( 'target','_blank' );
+});
+
+jQuery(function($) {
+	$('.scrollup').click(function(){
+		$('html, body').animate({scrollTop : 0}, 500);
+		return false;
+	});
+});
