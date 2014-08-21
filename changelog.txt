@@ -1,6 +1,14 @@
 *** Hoffman changelog ***
 
 
+Version 1.06 (2014-08-21)
+-------------------------
+- Escaped URLs
+- Added function prefixes
+- Misc bug fixes
+
+
+
 Version 1.05 (2014-08-18)
 -------------------------
 - Added licensing information for screenshot.png

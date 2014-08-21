@@ -274,7 +274,7 @@
 						<?php 
 						$author_url = get_the_author_meta('user_url'); 
 						if ( !empty($author_url) ) : ?>
-							<a class="author-link-url" href="<?php echo $author_url ?>">
+							<a class="author-link-url" href="<?php echo esc_url( $author_url ); ?>">
 								<div class="genericon genericon-website"></div>
 							</a>
 						<?php endif; ?>
@@ -282,7 +282,7 @@
 						<?php 
 						$author_dribbble = get_the_author_meta('dribbble'); 
 						if ( !empty($author_dribbble) ) : ?>
-							<a class="author-link-dribbble" href="<?php echo $author_dribbble ?>">
+							<a class="author-link-dribbble" href="<?php echo esc_url( $author_dribbble ); ?>">
 								<div class="genericon genericon-dribbble"></div>
 							</a>
 						<?php endif; ?>
@@ -290,7 +290,7 @@
 						<?php 
 						$author_facebook = get_the_author_meta('facebook'); 
 						if ( !empty($author_facebook) ) : ?>
-							<a class="author-link-facebook" href="<?php echo $author_facebook ?>">
+							<a class="author-link-facebook" href="<?php echo esc_url( $author_facebook ); ?>">
 								<div class="genericon genericon-facebook-alt"></div>
 							</a>
 						<?php endif; ?>
@@ -298,7 +298,7 @@
 						<?php 
 						$author_flickr = get_the_author_meta('flickr'); 
 						if ( !empty($author_flickr) ) : ?>
-							<a class="author-link-flickr" href="<?php echo $author_flickr ?>">
+							<a class="author-link-flickr" href="<?php echo esc_url( $author_flickr ); ?>">
 								<div class="genericon genericon-flickr"></div>
 							</a>
 						<?php endif; ?>
@@ -306,7 +306,7 @@
 						<?php 
 						$author_googleplus = get_the_author_meta('googleplus'); 
 						if ( !empty($author_googleplus) ) : ?>
-							<a class="author-link-googleplus" href="<?php echo $author_googleplus ?>">
+							<a class="author-link-googleplus" href="<?php echo esc_url( $author_googleplus ); ?>">
 								<div class="genericon genericon-googleplus"></div>
 							</a>
 						<?php endif; ?>
@@ -314,7 +314,7 @@
 						<?php 
 						$author_linkedin = get_the_author_meta('linkedin'); 
 						if ( !empty($author_linkedin) ) : ?>
-							<a class="author-link-linkedin" href="<?php echo $author_linkedin ?>">
+							<a class="author-link-linkedin" href="<?php echo esc_url( $author_linkedin ); ?>">
 								<div class="genericon genericon-linkedin"></div>
 							</a>
 						<?php endif; ?>
@@ -322,7 +322,7 @@
 						<?php 
 						$author_instagram = get_the_author_meta('instagram'); 
 						if ( !empty($author_instagram) ) : ?>
-							<a class="author-link-instagram" href="<?php echo $author_instagram ?>">
+							<a class="author-link-instagram" href="<?php echo esc_url( $author_instagram ); ?>">
 								<div class="genericon genericon-instagram"></div>
 							</a>
 						<?php endif; ?>
@@ -330,7 +330,7 @@
 						<?php 
 						$author_pinterest = get_the_author_meta('pinterest'); 
 						if ( !empty($author_pinterest) ) : ?>
-							<a class="author-link-pinterest" href="<?php echo $author_pinterest ?>">
+							<a class="author-link-pinterest" href="<?php echo esc_url( $author_pinterest ); ?>">
 								<div class="genericon genericon-pinterest"></div>
 							</a>
 						<?php endif; ?>
@@ -338,7 +338,7 @@
 						<?php 
 						$author_skype = get_the_author_meta('skype'); 
 						if ( !empty($author_skype) ) : ?>
-							<a class="author-link-skype" href="<?php echo $author_skype ?>">
+							<a class="author-link-skype" href="<?php echo esc_url( $author_skype ); ?>">
 								<div class="genericon genericon-skype"></div>
 							</a>
 						<?php endif; ?>
@@ -346,7 +346,7 @@
 						<?php 
 						$author_tumblr = get_the_author_meta('tumblr'); 
 						if ( !empty($author_tumblr) ) : ?>
-							<a class="author-link-tumblr" href="<?php echo $author_tumblr ?>">
+							<a class="author-link-tumblr" href="<?php echo esc_url( $author_tumblr ); ?>">
 								<div class="genericon genericon-tumblr"></div>
 							</a>
 						<?php endif; ?>
@@ -354,7 +354,7 @@
 						<?php 
 						$author_twitter = get_the_author_meta('twitter'); 
 						if ( !empty($author_twitter) ) : ?>
-							<a class="author-link-twitter" href="<?php echo $author_twitter ?>">
+							<a class="author-link-twitter" href="<?php echo esc_url( $author_twitter ); ?>">
 								<div class="genericon genericon-twitter"></div>
 							</a>
 						<?php endif; ?>
@@ -362,7 +362,7 @@
 						<?php 
 						$author_vimeo = get_the_author_meta('vimeo'); 
 						if ( !empty($author_vimeo) ) : ?>
-							<a class="author-link-vimeo" href="<?php echo $author_vimeo ?>">
+							<a class="author-link-vimeo" href="<?php echo esc_url( $author_vimeo ); ?>">
 								<div class="genericon genericon-vimeo"></div>
 							</a>
 						<?php endif; ?>

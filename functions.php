@@ -32,6 +32,7 @@ function hoffman_setup() {
 	register_nav_menu( 'social', __('Social Menu','hoffman') );
 	
 	// Set content-width
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 700;
 	
 	// Make the theme translation ready
@@ -130,10 +131,10 @@ require_once (get_template_directory() . "/widgets/video.php");
 
 
 // Check whether the browser supports javascript
-function html_js_class () {
+function hoffman_html_js_class () {
     echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
-add_action( 'wp_head', 'html_js_class', 1 );
+add_action( 'wp_head', 'hoffman_html_js_class', 1 );
 
 
 // Custom title function
@@ -441,14 +442,14 @@ endif;
 
 
 // Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add() {
+add_action( 'add_meta_boxes', 'hoffman_cd_meta_box_add' );
+function hoffman_cd_meta_box_add() {
 	add_meta_box( 'post-video-url', __('Video URL', 'hoffman'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
 	add_meta_box( 'post-quote-content-box', __('Quote content', 'hoffman'), 'cd_meta_box_quote_content', 'post', 'normal', 'core' );
 	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'hoffman'), 'cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
 }
 
-function cd_meta_box_video_url( $post ) {
+function hoffman_cd_meta_box_video_url( $post ) {
 	$values = get_post_custom( $post->ID );
 	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
 	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
@@ -459,7 +460,7 @@ function cd_meta_box_video_url( $post ) {
 	<?php		
 }
 
-function cd_meta_box_quote_content( $post ) {
+function hoffman_cd_meta_box_quote_content( $post ) {
 	$values = get_post_custom( $post->ID );
 	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
 	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
@@ -470,7 +471,7 @@ function cd_meta_box_quote_content( $post ) {
 	<?php		
 }
 
-function cd_meta_box_quote_attribution( $post ) {
+function hoffman_cd_meta_box_quote_attribution( $post ) {
 	$values = get_post_custom( $post->ID );
 	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
 	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
@@ -481,8 +482,8 @@ function cd_meta_box_quote_attribution( $post ) {
 	<?php		
 }
 
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id ) {
+add_action( 'save_post', 'hoffman_cd_meta_box_save' );
+function hoffman_cd_meta_box_save( $post_id ) {
 	// Bail if we're doing an auto save
 	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	
@@ -516,7 +517,7 @@ function cd_meta_box_save( $post_id ) {
 
 
 // Hide/show meta boxes depending on the post format selected
-function meta_box_post_format_toggle()
+function hoffman_meta_box_post_format_toggle()
 {
     wp_enqueue_script( 'jquery' );
 
@@ -558,7 +559,7 @@ function meta_box_post_format_toggle()
 
     return print $script;
 }
-add_action( 'admin_footer', 'meta_box_post_format_toggle' );
+add_action( 'admin_footer', 'hoffman_meta_box_post_format_toggle' );
 
 
 // Hoffman theme options

@@ -45,7 +45,7 @@ class hoffman_dribbble extends WP_Widget {
 						preg_match("/src=\"(http.*(jpg|jpeg|gif|png))/", $description, $image_url);
 						$image = $image_url[1]; ?>
 																												
-							<a href="<?php echo $link; ?>" title="<?php echo $title;?>" class="dribbble-shot"><img src="<?php echo $image; ?>" alt="<?php echo $title;?>"/></a> 
+							<a href="<?php echo esc_url( $link ); ?>" title="<?php echo $title;?>" class="dribbble-shot"><img src="<?php echo $image; ?>" alt="<?php echo $title;?>"/></a> 
 																																			 	
 					<?php endforeach; ?>
 									
