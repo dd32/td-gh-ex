@@ -33,8 +33,12 @@ global $badeyes_options;
 					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 ?>
 
-<h2><?php if( $badeyes_settings['side_heading'] != '' ) : ?>
-<?php echo $badeyes_settings['side_heading']; ?></h2>
+<?php if( $badeyes_settings['side_heading'] != '' ) : ?>
+<?php 
+echo "<h2>";
+echo $badeyes_settings['side_heading']; 
+echo "</h2>";
+?>
 	<?php endif; ?>
 <div class="navigation">
 <?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>

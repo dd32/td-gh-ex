@@ -67,8 +67,12 @@ global $badeyes_options;
 
 					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 				?>
-<h1><?php if( $badeyes_settings['blog_title'] != '' ) : ?>
-<?php echo $badeyes_settings['blog_title']; ?></h1>
+<?php if( $badeyes_settings['blog_title'] != '' ) : ?>
+<?php 
+echo "<h1>";
+echo $badeyes_settings['blog_title']; 
+echo "</h1>";
+?>
 <?php endif; ?>
 <?php
 

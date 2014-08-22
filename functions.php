@@ -242,29 +242,3 @@ remove_action( 'widgets_init', 'twentyfourteen_widgets_init', 11 );
 
 add_action( 'widgets_init', 'twentyfourteen_cms3_widgets_init', 11 );
 
-remove_action( 'welcome_panel', 'wp_welcome_panel' );
-function your_welcome_panel() {
-print '<h1>Welcome to the Badeyes 2014 Child Theme</h1>
-<p>Important! This Theme requires that you have the TwentyFourteen Theme installed.</p>
-<p>If you haven\'t already done so you can see a mock up version of this site at <a href="http://www.badeyes.com/2014" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a>.</p> 
-<p>This Child Theme has been optimized for screen reader users but should still be understanbable by those who dont, see changes below.</p>
-<h2>Visual Editor</h2>
-<p>If you use a screen reader then you will need to go to your <a href="'. get_admin_url() . '/profile.php">Profile page</a> and check the box "Disable the visual Editor" so that you can create Posts properly, you will quickly find out that it does not work very well if you dont.</p> 
-<h2>Widgets</h2>
-<p>Screen reader users will also need to go to the <a href="'. get_admin_url() . '/widgets.php">Widgets page</a> and check the "enable accessibility mode" in the "Screen Options" area in order to be able to add and edit Widgets.</p>
-<h2>Header Image</h2>
-<p>The ability to crop the image has been removed for a number of reasons:<br />
-<ul><li>* Those who use a screen reader more than likely cant see it to be able to change the dimensions so it is important that the image you upload is the size you want, you can however change the size in the Media Library once it is uploaded.</li>
- <li>* Even when you chose not to crop the image I found that it did not keep your image at its original dimensions it just filled the full width distorting the image.</li></ul>
-
-<h2>Menus</h2>
-<p>This Child Theme has 3 possible Menus, there is a custom menu an Primary one, both are situated horizontally under the Header section and the Secondary one or "Side Menu" located in the left hand sidebar.</p>
-<p>Neither These menus nor their corresponding "Skip Links" will appear unless you create and manage them in the <a href="'. get_admin_url() . 'nav-menus.php">Menus area</a>.</p> 
-<p>You can see examples at <a href="http://www.badeyes.com/2014/" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a></p>
-<h2>Post Teaser Plugin</h2>
-<p>For accessibility reasons the Post Teaser Plugin comes bundled with this Theme and is edited accordingly so there is no need to install it again, you can however edit it as you would any other Plugin in the Admin area.</p>
-<p>If you already have it installed then it shouldn\'t be a problem but we suggest you deactivate and use our preset one.</p>
-<h2>WordPress for Bad Eyes</h2>
-<p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href="http://www.wordpressforbadeyes.com" target=_blank">www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>';
-}
-add_action('welcome_panel','your_welcome_panel');

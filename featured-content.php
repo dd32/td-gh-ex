@@ -15,8 +15,12 @@ $badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 
 				?>
 
-<h1><?php if( $badeyes_settings['featured_title'] != '' ) : ?>
-<?php echo $badeyes_settings['featured_title']; ?></h1>
+<?php if( $badeyes_settings['featured_title'] != '' ) : ?>
+<?php
+echo "<h1>";
+echo $badeyes_settings['featured_title']; 
+echo "</h1>";
+?>
 <?php endif; ?>
 	<div class="featured-content-inner">
 	<?php
