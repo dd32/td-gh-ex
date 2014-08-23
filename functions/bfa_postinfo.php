@@ -280,7 +280,6 @@ function bfa_postinfo($postinfo_string) {
 		while ( strpos($postinfo,'%categories-linked') !== FALSE ) {
 			$category_linked_separator = preg_match("/(.*)%categories-linked\('(.*?)'\)(.*)/i",
 	        $postinfo_string,$category_linked_matches);
-
 			ob_start(); 
 			$categories = get_the_category();
 			$items_in_categories = count($categories);
@@ -297,7 +296,6 @@ function bfa_postinfo($postinfo_string) {
 				}
 			}
 			ob_end_clean();
-
 			$postinfo = preg_replace("/(.*)%categories-linked\((.*?)\)%(.*)/i", "\${1}" .
     	    $categories_linked. "\${3}", $postinfo);
 		}

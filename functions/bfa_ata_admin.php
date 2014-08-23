@@ -49,7 +49,7 @@ echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0
 	<strong>Sidebars & Widgets</strong>
 	<li><a href="#" rel="sidebars">Style & configure SIDEBARS</a></li>
 	<li><a href="#" rel="widgets">Style WIDGETS</a></li>
-	<li><a href="#" rel="widget-areas">Add new WIDGET AREAS</a></li>
+	<li><a href="#" rel="widget-areas">Add DYNAMIC WIDGET AREAS</a></li>
 	
 	<strong>Post & Pages</strong>
 	<li><a href="#" rel="postinfos">Edit POST/PAGE INFO ITEMS</a></li>

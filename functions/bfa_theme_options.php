@@ -1401,7 +1401,7 @@ For <strong>MULTI SITES</strong>, you should choose the 'wp-content' option and 
             "type" => "textarea-large",
 			"switch" => "yes",
             "std" => "",
-            "info" => "You can add a new Widget Area here that will appear at the top of the center area. This widget area will display in posts and pages. <br />To control when it displays, use a plugin like 'Widget Logic'. See the <span style='color:red'>Add new Widget Areas</span> for the available options.<br /><br />
+            "info" => "You can add a new Widget Area here that will appear at the top of the center area. This widget area will display in posts and pages. <br />To control when it displays, use a plugin like 'Widget Logic'. See the <span style='color:red'>Add Dynamic Widget Areas</span> for the available options.<br /><br />
             example 1: <code>&lt;?php bfa_widget_area('name=Center Top widget area'); ?&gt;</code> - shortest and most basic way you can create a widget area<br />
             example 2: <code>&lt;?php bfa_widget_area('name=Center top widget area&cells=3'); ?&gt;</code> - This will create three widget areas<br />
             example 3: <code>&lt;?php bfa_widget_area('name=Center top widget area&cells=2&width_1=400'); ?&gt;</code> - This will create a two widget area and the first one will be 400 px wide
@@ -1414,7 +1414,7 @@ For <strong>MULTI SITES</strong>, you should choose the 'wp-content' option and 
              "id" => "widget_center_bottom",
             "std" => "",
             "type" => "textarea-large",
-            "info" => "You can add a new Widget Area here that will appear at the bottom of the center area. See the <span style='color:red'>Add new Widget Areas</span> for the available options."),
+            "info" => "You can add a new Widget Area here that will appear at the bottom of the center area. See the <span style='color:red'>Add Dynamic Widget Areas</span> for the available options."),
 
 // ---------------------------------
 
@@ -2062,7 +2062,7 @@ $options3 = array(
 			
 // New category: widget-areas
 
-    array(    "name" => "Delete custom Widget Areas",
+    array(    "name" => "Delete Dynamic Widget Areas",
     	    	"category" => "widget-areas",
 				"switch" => "yes",
              "id" => "widget_areas_reset",
@@ -2072,15 +2072,15 @@ $options3 = array(
 <form action=\"\" method=\"\" id=\"widgetarea-form\">" . $widget_form_string . "</form>
 <a style='display:block; background:#C6D9E9;width:250px;margin-top:10px; padding:5px 10px;' id='reset_widget_areas' href='#'>Delete checked Widget Areas</a><span style='color:green;font-weight:bold;float:left;padding-left:30px' id='formstatus'></span><br />"),
 
-    array(    "name" => "Add new Widget Areas",
+    array(    "name" => "Add Dynamic Widget Areas",
     	    	"category" => "widget-areas",
              "id" => "widget_areas_info",
             "type" => "info",
 				"lastoption" => "yes", 
-            "info" => "<strong>Note: After you've added new widget areas, you'll need to <span style='color:red'>reload a front end page</span> 
+            "info" => "<strong>Note: After you've added dynamic widget areas, you'll need to <span style='color:red'>reload a front end page</span> 
             1-2 times before they get created and start appearing on the front end. And you'll need to <span style='color:red'>reload WP->Presentation->Widgets</span> 
-            1-2 times before you can see the new widget areas there and start adding widgets.</strong><br /><br />In addition to the existing widget areas (the sidebars) you can add additional widget areas, i.e. in the header 
-area, the center column or the footer area. This page here only explains how to use this feature. To actually add a new widget area 
+            1-2 times before you can see the dynamic widget areas there and start adding widgets.</strong><br /><br />In addition to the existing widget areas (the sidebars) you can add additional widget areas, i.e. in the header 
+area, header image overlay, the center column or the footer area. This page here only explains how to use this feature. To actually add a dynamic widget area 
 you'll have to go to one of the following menu tabs:
 <ul><li><a href=\"javascript: myflowers.expandit('header-tab')\">Style & edit HEADER AREA</a>: Put the code into the text area named \"Configure Header Area\".</li>
 <li><a href=\"javascript: myflowers.expandit('center-tab')\">Style & edit CENTER COLUMN</a>: If you want to add a widget area to the Center Column, see the options there.</li>
@@ -2091,20 +2091,20 @@ most likely is a text area here in the theme option pages where you can insert y
 database and automatically carried over to new Atahualpa versions when you upgrade.</li></ul>
 
 <h3>Usage</h3>
-The code to create new widget areas is a PHP function with parameters:<br />
+The code to create dynamic widget areas is a PHP function with parameters:<br />
 <code>&lt;?php bfa_widget_area('parameter=value&#38;paramater=value&#38;paramater=value'); ?&gt;</code>
 
 <h3>Min. required paramaters</h3>
-This is the shortest and most basic way you can create a widget area.<br />
-<code>&lt;?php bfa_widget_area('name=My new widget area'); ?&gt;</code><br /><br />
+This is the shortest and most basic way you can create a dynamic widget area.<br />
+<code>&lt;?php bfa_widget_area('name=My dynamic widget area'); ?&gt;</code><br /><br />
 In this case a simple DIV container will be created. In the source code of your site, it will look like this:<br />
-<code>&lt;div id=\"my_new_widget_area\" class=\"bfa_widget_area\"&gt; Widgets will go here &lt;/div&gt;</code><br />
+<code>&lt;div id=\"my_dynamic_widget_area\" class=\"bfa_widget_area\"&gt; Widgets will go here &lt;/div&gt;</code><br />
 (If you choose several cells, a table will be created instead, see below).
 
 <h3>Example:</h3>
 This example uses more parameters. It creates a widget area spanning the whole available width (like all widget areas), with 4 widget area cells (default: 1). Each widget area cell is a widget area in its own right. You can 
 specify an alignment and a width for all or particular widget area cells. Finally, you can specify opening and closing HTML tags for the widgets that will be placed in 
-these new widget area cells.<br />
+these dynamic widget area cells.<br />
 <code>&lt;?php bfa_widget_area('name=My widget area&cells=4&align=1&align_2=9&align_3=7&width_4=700&before_widget=&lt;div id=\"%1\$s\" class=\"header-widget %2\$s\"&gt;&after_widget=&lt;/div&gt;'); ?&gt;</code><br /><br />
 Because these are multiple cells side by side, it will create a table instead of a DIV. Doing this with floating DIV's would not only be very fragile, it would also require more code 
 than the table consists of. 
@@ -2129,7 +2129,7 @@ than the table consists of.
 </td>
 </tr><tr>
 <td class='bfa-td'><code>cells</code></td>
-<td class='bfa-td'>Amount of (table) cells. Each cell is a new widget area. Default: 1</td>
+<td class='bfa-td'>Amount of (table) cells. Each cell is a dynamic widget area. Default: 1</td>
 </tr><tr>
 <td class='bfa-td'><code>align</code></td>
 <td class='bfa-td'><img src=\"" . $templateURI . "/options/images/widget-area-alignment.gif\" 
@@ -2142,12 +2142,12 @@ than the table consists of.
 			style=\"float: left; margin: 0 10px 10px 0;\">Alignment for a particular widget area cell. If not defined, widget area cells get the default value of the global parameter <code>align</code>, which, if not defined, is <code>2</code> (= center top).</td>
 </tr><tr>
 <td class='bfa-td'><code>width_1</code>, <code>width_2</code>, <code>width_3</code> etc.</td>	
-<td class='bfa-td'>Width of a particular widget area cell. If not defined, widget area cells get an equal share of the remaining width of the whole widget area table.</td>
+<td class='bfa-td'>Width of a particular widget area cell. If not defined, widget area cells get an equal share of the remaining width of the whole widget area table. You can specify the value with 'px' or '%' - if you don't use eithor, it will default to 'px'.</td>
 </tr>
 <tr>
 <td class='bfa-td' colspan='2' style='border-top-style: solid'>		
 <strong>Very Optional:</strong><br />Use these only if you want to apply different opening and closing HTML tags to the widgets that you 
-put into the new widget areas. By default the widgets will get the same opening/closing tags as the widgets in the sidebars. The default tags 
+put into the dynamic widget areas. By default the widgets will get the same opening/closing tags as the widgets in the sidebars. The default tags 
 are shown below. <br /><br /><em>Note: These are the HTML tags that will be wrapped around each single widget in this particular widget area. 
 The purpose is to be able to wrap a widget into different HTML tags depending on the widget area it was placed in. If you just want different styling for 
 a widget based on the widget area it was placed in, then you could usually achieve this with CSS alone, by adressing the widget through the ID or class of its parent (= widget area it was placed in):<br />

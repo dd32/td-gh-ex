@@ -1,6 +1,12 @@
+Changelog 3.7.18:
+- Fixed issue with the code added in 3.7.16 for rotating/fading header images
+- added code to eliminate some php warnings when using dynamic (new) widget areas 
+- added code to allow the 'width' for new widget area to use 'px' or '%'
+- changed all references of 'new widget area' to 'dynamic widget area'
+- atahualpa.pot was empty
+
 Changelog 3.7.17:
 - Fixed 'Theme is redirected when activated.' 
-
 
 Changelog 3.7.16:
 

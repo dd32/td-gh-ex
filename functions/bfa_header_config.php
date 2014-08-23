@@ -3,7 +3,7 @@ function bfa_header_config() {
 
 	global $bfa_ata, $post;
 	$templateURI = get_template_directory_uri(); 
-    $homeURL = get_home_url();  
+	$homeURL = get_home_url();  
 
 	// Since 3.6: bfa_header_config() instead of bfa_header_config($header_items)
 	$header_items = $bfa_ata['configure_header'];
@@ -270,11 +270,12 @@ function bfa_header_config() {
 		ob_start();
 		$bfa_header_images = bfa_rotating_header_images();
 		
-        echo '<div id="imagecontainer-pre" class="header-image-container">';
-		echo '<div id="imagecontainer" class="header-image-container" style="background: url(' . 
+		echo '<div id="imagecontainer-pre" class="header-image-container-pre">';
+
+		echo '    <div id="imagecontainer" class="header-image-container" style="background: url(' . 
 		$bfa_header_images[array_rand($bfa_header_images)] . ') ' . $bfa_ata['headerimage_alignment'] . 
 		' no-repeat;">';
-		echo '</div>';		
+		echo '</div>';
 		if ( $bfa_ata['header_image_clickable'] == "Yes" ) {
 			echo '<div class="clickable"><a class="divclick" title="'; 
 			bloginfo('name'); echo '" href ="' . $homeURL . '/">&nbsp;</a></div>';
