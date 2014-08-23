@@ -9,29 +9,22 @@ function besty_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 745;
 	}
-	/*	
+	/*
 	 * Make besty theme available for translation.
 	 */
 	load_theme_textdomain( 'besty', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', besty_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );	
+	add_theme_support( 'automatic-feed-links' );
+	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'besty-full-width', 1038, 576, true );
 	add_image_size( 'besty-thumbnail', 374, 254, true );
-	add_theme_support( "title-tag" );
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'besty' ),
-	) );
-	// Add theme support for Custom Logo.
-	add_theme_support( 'custom-logo', array(
-		'width'       => 250,
-		'height'      => 250,
-		'flex-width'  => true,
-		'flex-height' => true,
-		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -54,31 +47,18 @@ function besty_setup() {
 endif; // besty_setup
 add_action( 'after_setup_theme', 'besty_setup' );
 /**
- * Register Istok Web Google font for besty.
+ * Register Lato Google font for besty.
  */
 function besty_font_url() {
 	$besty_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Istok Web, translate this to 'off'. Do not translate into your own language.
+	 * by Lato, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Istok Web: on or off', 'besty' ) ) {
-		$besty_font_url = add_query_arg( 'family', urlencode( 'Istok Web:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
+		$besty_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
 	}
 	return $besty_font_url;
-}
-// Besty Pro Version Menu
-add_action( 'admin_menu', 'besty_admin_menu');
-function besty_admin_menu( ) {
-    add_theme_page( __('Pro Feature','besty'), __('Besty Pro','besty'), 'manage_options', 'besty-pro-buynow', 'besty_buy_now', 300 );   
-}
-function besty_buy_now(){ ?>
-<div class="besty_pro_version">
-  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/besty/'); ?>" target="_blank">    
-    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/besty_pro_features.png" width="70%" height="auto" />
-  </a>
-</div>
-<?php
 }
 /**
  * Template for comments and pingbacks.
@@ -91,15 +71,17 @@ function besty_buy_now(){ ?>
  */
  if ( ! function_exists( 'besty_comment' ) ) :
 function besty_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
-		// Display trackbacks differently than normal comments. ?>
+		// Display trackbacks differently than normal comments.
+			?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<p>
-				<?php esc_html_e('Pingback:', 'besty' ); ?>
+				<?php _e( 'Pingback:', 'besty' ); ?>
 				<?php comment_author_link(); ?>
-				<?php edit_comment_link( __( 'Edit', 'besty' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_comment_link( __( '(Edit)', 'besty' ), '<span class="edit-link">', '</span>' ); ?>
 				</p>
 			</li>
 			<?php
@@ -108,14 +90,21 @@ function besty_comment( $comment, $args, $depth ) {
 		// Proceed with normal comments.
 		if($comment->comment_approved==1)
 		{
-			global $post; ?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+			global $post;
+		?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); 
+			?>">
 			<article id="comment-<?php comment_ID(); ?>">
 			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
 			<div class="comment-content">
-           <div class="comment-metadata">
-					<span><?php esc_html_e('Post author','besty')?><span><?php echo ' : '.get_comment_author_link($comment->user_id === $post->post_author). ' '.get_comment_date('F j, Y')  ?>
-				</div>	
+           <?php
+		   		printf( '<div class="comment-metadata"><span>%1$s</span>',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'besty' ) . '</span>' : '');
+				
+				echo '<span>'.get_comment_date('F j, Y').'<span>';
+				
+				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'besty' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) )).'</div>';
+				
+				?>
                 <div class="comment-content-main">
                 <?php comment_text(); ?>
                 </div>
@@ -136,7 +125,7 @@ endif;  //besty_comment();
  */
 function besty_widgets_init() {
 	register_sidebar( array(
-		'name' => __('Main Sidebar','besty'),
+		'name' => 'Main Sidebar',
 		'id' => 'main_sidebar',
 		'class' => 'nav-list',
 		'before_widget' => '<aside class="besty-widget">',
@@ -146,84 +135,13 @@ function besty_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'besty_widgets_init' );
-
-add_filter( 'comment_form_default_fields', 'besty_comment_placeholders' );
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- * @return array
- */
-function besty_comment_placeholders( $fields )
-{
-    $fields['author'] = str_replace(
-        '<input',
-        '<input placeholder="'
-        /* Replace 'theme_text_domain' with your theme’s text domain.
-         * I use _x() here to make your translators life easier. :)
-         * See http://codex.wordpress.org/Function_Reference/_x
-         */
-            . _x(
-                'First Name',
-                'comment form placeholder',
-                'besty'
-                )
-            . '"',
-        $fields['author']
-    );
-    $fields['email'] = str_replace(
-        '<input',
-        '<input id="email" name="email" type="text" placeholder="'
-            . _x(
-                'Email Id',
-                'comment form placeholder',
-                'besty'
-                )
-            . '"',
-        $fields['email']
-        
-    );
-     $fields['url'] = str_replace(
-        '<input',
-        '<input id="url" name="url" type="text" placeholder="'
-            . _x(
-                'Website',
-                'comment form placeholder',
-                'besty'
-                )
-            . '"',
-        $fields['url']
-        
-    );
-    return $fields;
-}
-add_filter( 'comment_form_defaults', 'besty_textarea_insert' );
-function besty_textarea_insert( $fields )
-{
-        $fields['comment_field'] = str_replace(
-            '</textarea>',
-            ''. _x(
-                'Comment',
-                'comment form placeholder',
-                'besty'
-                )
-            . ''. '</textarea>',
-            $fields['comment_field']
-        );
-    return $fields;
-}
 /*** Enqueue css and js files ***/
-require get_template_directory() . '/functions/enqueue-files.php';
-
+require_once('functions/enqueue-files.php');
 /*** Theme Default Setup ***/
-require get_template_directory() . '/functions/theme-default-setup.php';
-
+require_once('functions/theme-default-setup.php');
 /*** Latest Posts Widgets ***/
-require get_template_directory() . '/functions/besty-latest-posts.php';
-
+require_once('functions/besty-latest-posts.php');
+/*** Theme Option ***/
+require_once('theme-option/fasterthemes.php');
 /*** Custom Header ***/
-require get_template_directory() . '/functions/custom-header.php';
-
-/*** Theme Customizer Option ***/
-require get_template_directory() . '/functions/theme-customization.php';
- ?>
+require_once('functions/custom-header.php');

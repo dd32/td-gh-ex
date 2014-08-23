@@ -1,4 +1,6 @@
+@charset "utf-8";
 /* CSS Document */
+@import url(//fonts.googleapis.com/css?family=Istok+Web);
 body{
 	font-family: 'Istok Web', sans-serif;
 	font-size:14px;
@@ -24,7 +26,7 @@ body{
 	top:0px;
 	bottom:0px;
 	background-color:#fafafa;
-	font-family:'Roboto', sans-serif;	
+	font-family:Tahoma, Geneva, sans-serif;	
 	z-index:2;
 }
 .menu-sidebar-more{
@@ -58,20 +60,6 @@ body{
 	background-color:transparent;
 	border:none;
 }
-.box {
-  width: 50%;
-}
-.article {
-  position: relative;
-}
-.masonry-container{
-	width:96%;
-	margin-top:25px;
-	position:relative;
-}
-.archive .masonry-container{
-	margin-top:60px;
-}
 a{
 	color: #5C5C5C;
 }
@@ -94,8 +82,7 @@ img{
 	margin-bottom:65px;
 }
 .logo a,
-.logo h1,
-.logo h2{
+.logo h1{
 	color: #545454;
     font-size: 14px;
     margin: 10px 0 0;
@@ -179,23 +166,11 @@ img{
 	-webkit-transform:rotate(0deg);
 }
 .social{	
-	padding: 0;
+	padding: 40px 20px 0px;
     text-align: center;
-    float: left;
-    width: 100%;
-    margin: 20px 0 10px 0;
-} 
-.besty-sidebar {
-    margin-top: 40px;
-}
-form.search-form.masonry-brick span {
-    color: #fff;
-}
-.search h3 {
-    color: #fff;
 }
 .social li{
-    display: inline-block;
+	display: inline;
     margin: 0 3px;
 }
 .copyright{
@@ -214,14 +189,8 @@ form.search-form.masonry-brick span {
 	float:left;
 	background:rgba(0,0,0,0.85);
 	margin-left:230px;
-	width:calc(100% - 230px);        
+	width:calc(100% - 230px);
 	z-index:1;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    /****** This code only safari ******/
-    ::i-block-chrome, .mini-content{        
-        width: 82.99999%;
-    }
 }
 .besty-homepage{
 	min-height:0px !important;
@@ -257,7 +226,7 @@ form.search-form.masonry-brick span {
 .slider-content h2{
 	border-bottom: 1px solid #676767;
     color: #f8f8f8;
-    font-family: 'Roboto',sans-serif;
+    font-family: Tahoma,Geneva,sans-serif;
     font-size: 16px;
     margin-bottom: 13px;
     padding-bottom: 10px;
@@ -313,7 +282,7 @@ form.search-form.masonry-brick span {
 .post-box a.blog-title{
 	color: #212121;
     float: left;
-    font-family: 'Roboto',sans-serif;
+    font-family: Tahoma,Geneva,sans-serif;
     font-size: 14px;
     font-weight: bold;
     margin: 15px 0;
@@ -390,7 +359,7 @@ form.search-form.masonry-brick span {
 	display: inline-block;
     font-size: 14px;
     list-style: none outside none;
-    padding: 8px 0px;
+    padding: 7px 0;
     width: 100%;
 }
 .besty-widget ul.children,
@@ -411,7 +380,7 @@ form.search-form.masonry-brick span {
 	content:'>';
 	padding-right:5px;
 	font-size:14px;
-	font-family:'Roboto', sans-serif;
+	font-family:Tahoma, Geneva, sans-serif;
 }
 .besty-widget li a{
 	color:#d8d8d8;	
@@ -431,7 +400,7 @@ form.search-form.masonry-brick span {
 }
 .latest-posts .latest-posts-link a.titel{
 	display:table;
-	font-family:'Roboto', sans-serif;
+	font-family:Tahoma, Geneva, sans-serif;
 	font-size:14px;
 	color:#d8d8d8;
 }
@@ -456,7 +425,7 @@ form.search-form.masonry-brick span {
 .single-box .blog-title{
 	color: #fafafa;
     float: left;
-    font-family: 'Roboto',sans-serif;
+    font-family: Tahoma,Geneva,sans-serif;
     font-size: 20px;
     margin: 15px 0;
     width: 100%;
@@ -518,15 +487,17 @@ form.search-form.masonry-brick span {
 	float:left;
 	margin-top:35px;
 	margin-right:15px;
-	width:40px;
 }
 .besty-comments .comment-author img{
 	border:4px solid #FFF;
 	width:40px;
 }
 .besty-comments .comment-content{
-	width:calc(100% - 55px);
+	width:92%;
 	float:left;
+}
+.besty-comments .children .comment-content{
+	width:91%;
 }
 .besty-comments .comment-metadata span{
 	color:#fafafa;
@@ -575,7 +546,7 @@ form.search-form.masonry-brick span {
 .besty-comments .form-submit{
 	float: left;
     margin: 20px 0 20px 27px;
-    width: 30.93%;
+    width: 31%;
 }
 .besty-comments .comment-form-author label,
 .besty-comments .comment-form-email label,
@@ -692,11 +663,6 @@ form.search-form.masonry-brick span {
 /*  Media screen for small device.
 /*
 /******************/
-@media (max-width: 1023px){
-    .shidebar-control{
-        display: none;
-    }
-}
 @media (max-width:768px){
 	.besty-comments .comment-content{
 		width:88%;
@@ -717,7 +683,7 @@ form.search-form.masonry-brick span {
 	.shidebar-control{
 		display:none;
 	}
-}   
+}
 @media (max-width:767px){
 	.menu-sidebar{
 		position:relative;
@@ -726,9 +692,6 @@ form.search-form.masonry-brick span {
 	.logo{
 		margin-bottom:0px;
 	}	
-        .besty-menu li a{
-            padding-left: 10px;
-        }
 	.besty-menu li ul{
 		position:relative;
 		display:block;
@@ -738,13 +701,15 @@ form.search-form.masonry-brick span {
 	}
 	.besty-menu ul ul {
 		padding-left:20px;
-                background-color: #ffffff;
 	}
 	.besty-menu li:hover > ul{
 		left:0px;		
 	}
 	.besty-menu ul ul:before{
 		content:'';
+	}
+	.besty-menu li ul li a{
+		background-color:#fafafa;
 	}
 	.besty-menu ul li.menu-item-has-children:after{
 		content:' ';
@@ -779,9 +744,6 @@ form.search-form.masonry-brick span {
 	.menu-sidebar-more{
 		display:none;
 	}
-        .custom-header-img{
-            margin-top: 25px;
-        }
 	
 }
 @media only screen and (min-width:1007px) and (max-width: 1200px){
@@ -801,7 +763,7 @@ form.search-form.masonry-brick span {
 		margin:20px 0 19px;
 	}
 }
-@media only screen and (min-width:768px) and (max-width: 800px){
+@media only screen and (min-width:700px) and (max-width: 800px){
 	.besty-menu li ul{
 		left:110%;
 	}
