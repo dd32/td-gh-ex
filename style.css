@@ -1,0 +1,272 @@
+/*
+Theme Name: Besty
+Theme URI: http://fasterthemes.com/themes/besty
+Description: Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got theme options to easily manage logo, social media links, footer text etc.
+Version: 1.0
+Author: FasterThemes
+Author URI: http://fasterthemes.com
+Tags: dark, custom-menu, right-sidebar, responsive-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: besty
+This theme, like WordPress, is licensed under the FasterThemes.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@charset "utf-8";
+/* CSS Document */
+.logged-in .menu-sidebar{
+	top:32px;
+}
+.custom-header-img{
+	text-align:center;
+}
+.wp-caption{
+	max-width:100%;
+}
+@media screen and ( max-width: 782px ) {
+.logged-in .menu-sidebar{
+	top:0px;
+}
+}
+html #wpadminbar{
+	position:fixed;
+}
+.besty-next-link{
+	float:right;
+}
+.besty-previous-link{
+	float:left;	
+}
+.besty-pagination a{
+	background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;	
+    color: #FFFFFF;
+	font-size:16px;
+    padding: 5px 20px;
+	display:inline-block;
+	margin:10px 0px;
+	
+	transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+}
+.besty-pagination a:hover,
+.besty-pagination a:focus{
+	background-color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+	color: #FFFFFF;
+}
+.wp-caption-text {
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 auto;
+	padding: 8px 0;
+	text-align: center;
+}
+.sticky .entry-date {
+	display: none;
+}
+.gallery-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+}
+.gallery-caption:before {
+	content: "";
+	height: 100%;
+	min-height: 49px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.bypostauthor > article .fn:before {
+	margin: 0 2px 0 -2px;
+	position: relative;
+	top: -1px;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em !important;
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+/**
+ besty gallery
+ * -----------------------------------------------------------------------------
+ */
+.gallery {
+	margin-bottom: 20px;
+}
+.gallery-item {
+	float: left;
+	margin: 0 4px 4px 0;
+	overflow: hidden;
+	position: relative;
+}
+.gallery-columns-1 .gallery-item {
+	max-width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 48%;
+	max-width: -webkit-calc(50% - 4px);
+	max-width:         calc(50% - 4px);
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 32%;
+	max-width: -webkit-calc(33.3% - 4px);
+	max-width:         calc(33.3% - 4px);
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 23%;
+	max-width: -webkit-calc(25% - 4px);
+	max-width:         calc(25% - 4px);
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 19%;
+	max-width: -webkit-calc(20% - 4px);
+	max-width:         calc(20% - 4px);
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 15%;
+	max-width: -webkit-calc(16.7% - 4px);
+	max-width:         calc(16.7% - 4px);
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 13%;
+	max-width: -webkit-calc(14.28% - 4px);
+	max-width:         calc(14.28% - 4px);
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 11%;
+	max-width: -webkit-calc(12.5% - 4px);
+	max-width:         calc(12.5% - 4px);
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 9%;
+	max-width: -webkit-calc(11.1% - 4px);
+	max-width:         calc(11.1% - 4px);
+}
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	margin-right: 0;
+}
+.gallery-columns-1.gallery-size-medium figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-1.gallery-size-thumbnail figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-2.gallery-size-thumbnail figure.gallery-item:nth-of-type(2n+1),
+.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) {
+	clear: left;
+}
+.gallery-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+}
+.gallery-caption:before {
+	content: "";
+	height: 100%;
+	min-height: 49px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
+.besty-post-content table{	
+	line-height: 1.2857142857;
+	margin-bottom: 24px;
+}
+.besty-post-content th{
+	font-weight: 700;
+	padding: 8px;
+	text-transform: uppercase;
+}
+.besty-post-content td{
+	padding: 8px;
+}
+.besty-post-content .edit-link {
+	clear: both;
+	display: block;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.3333333333;
+	text-transform: uppercase;
+}
+.besty-post-content .edit-link a {
+	color: #767676;
+	text-decoration: none;
+}
+.besty-post-content .edit-link a:hover {
+	color: #41a62a;
+}
+th {
+    border-width: 0 1px 1px 0;
+    font-weight: bold;
+}
+td {
+    border-width: 0 1px 1px 0;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+	line-height: 25px;
+    text-align: center;
+}
+embed, iframe, object, video{
+	max-width: 100%;
+}

@@ -1,0 +1,94 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Besty 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2014-08-13 22:06:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+
+#: 404.php:11
+msgid "Epic 404 - Article Not Found"
+msgstr ""
+
+#: 404.php:12
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr ""
+
+#: 404.php:14
+msgid "Whatever you were looking for was not found, but maybe try looking again or search using the form below."
+msgstr ""
+
+#: archive.php:15
+msgid "Monthly Archives"
+msgstr ""
+
+#: archive.php:17
+msgid "Yearly Archives"
+msgstr ""
+
+#: archive.php:19
+msgid "Archives"
+msgstr ""
+
+#: archive.php:13
+msgid "Daily Archives"
+msgstr ""
+
+#: author.php:10
+msgid "Author : All posts by"
+msgstr ""
+
+#: category.php:10
+msgid "Category"
+msgstr ""
+
+#: comments.php:14
+msgctxt "Comments"
+msgstr ""
+
+#: theme-default-setup.php:26
+msgid "Page"
+msgstr ""
+
+#: theme-default-setup.php:42
+msgid "Category"
+msgstr ""
+
+#: theme-default-setup.php:44
+msgid "Tags"
+msgstr ""
+
+#: theme-default-setup.php:52
+msgid "Post By"
+msgstr ""
+
+#: theme-default-setup.php:54
+msgid "View all posts by"
+msgstr ""
+
+#: theme-default-setup.php:54
+msgid "Comments"
+msgstr ""
+
+#: header.php:54
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:102
+msgid "Proudly Powered by WordPress"
+msgstr ""
+
+#: search.php:11
+msgid "Search Results for"
+msgstr ""
+
+#: tag.php:10
+msgid "Tag"
+msgstr ""
