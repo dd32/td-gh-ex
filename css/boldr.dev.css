@@ -488,6 +488,8 @@ or wrap each row of columns in a <div class="row"> */
 #logo {
 	float: left;
 	padding: 40px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #logo .site-title {
