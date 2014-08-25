@@ -44,6 +44,9 @@ function rams_load_javascript_files() {
 		
 		wp_enqueue_script( 'rams_flexslider' );
 		wp_enqueue_script( 'rams_global' );
+		
+		if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
+		
 	}
 }
 

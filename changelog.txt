@@ -1,6 +1,12 @@
 *** Rams changelog ***
 
 
+Version 1.07 (2014-08-21)
+-------------------------
+- Moved enqueue comment-reply to functions.php
+
+
+
 Version 1.06 (2014-08-21)
 -------------------------
 - Fixed an error in header.php
