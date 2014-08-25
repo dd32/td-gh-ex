@@ -60,6 +60,8 @@ function garfunkel_load_javascript_files() {
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'garfunkel_flexslider' );
 		wp_enqueue_script( 'garfunkel_global' );
+		
+		if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 	}
 }
 

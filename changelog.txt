@@ -1,5 +1,10 @@
 *** Garfunkel changelog ***
 
 
+Version 1.01 (2014-08-25)
+-------------------------
+- Moved enqueue of comment-reply to functions.php
+
+
 Version 1.0 (2014-07-XX)
 -------------------------
