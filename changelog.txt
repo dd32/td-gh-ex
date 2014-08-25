@@ -8,6 +8,14 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+----
+
+(8/25/2014) - 1.1.3
+[x] Removed verification.php
+[*] Included jQuery UI Smoothness in theme for customizer
+
+----
+
 (8/24/2014) - 1.1.2
 [+] Added support for WooCommerce
 [+] Added filter to output of fonts in css call
