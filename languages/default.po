@@ -1,0 +1,1942 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fgh\n"
+"POT-Creation-Date: 2014-07-10 20:42-0000\n"
+"PO-Revision-Date: 2014-07-10 20:42-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:10
+msgid "Sorry! We cant find that page!"
+msgstr ""
+
+#: ../404.php:13
+msgid "Why not try searching for the page you want?"
+msgstr ""
+
+#: ../archive.php:9 ../archive.php:11 ../archive.php:13
+#, php-format
+msgid "Posts for %s"
+msgstr ""
+
+#: ../archive.php:15
+msgid "Post Archive"
+msgstr ""
+
+#: ../author.php:9
+#, php-format
+msgid "All posts by %s"
+msgstr ""
+
+#: ../category.php:7
+#, php-format
+msgid "Posts On %s"
+msgstr ""
+
+#: ../comments.php:9
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:31 ../comments.php:50
+msgid "<span class=\"meta-nav\"></span> Older Comments"
+msgstr ""
+
+#: ../comments.php:32 ../comments.php:51
+msgid "Newer Comments <span class=\"meta-nav\"></span>"
+msgstr ""
+
+#: ../comments.php:59
+msgid "There are no comments yet."
+msgstr ""
+
+#: ../comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:71
+msgid "Your Name"
+msgstr ""
+
+#: ../comments.php:73
+msgid "Your name"
+msgstr ""
+
+#: ../comments.php:77
+msgid "Your Email"
+msgstr ""
+
+#: ../comments.php:79 ../includes/contact-form.php:12
+msgid "Your email address"
+msgstr ""
+
+#: ../comments.php:86
+msgid "Your comment:"
+msgstr ""
+
+#: ../comments.php:87
+msgid "Enter your comment"
+msgstr ""
+
+#: ../comments.php:90
+msgid "Leave a Comment"
+msgstr ""
+
+#: ../functions.php:169
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:176
+msgid "Blog Sidebar"
+msgstr ""
+
+#: ../functions.php:178
+msgid "Default blog sidebar stuff"
+msgstr ""
+
+#: ../functions.php:186
+msgid "Page Sidebar"
+msgstr ""
+
+#: ../functions.php:188
+msgid "Default page sidebar stuff"
+msgstr ""
+
+#: ../functions.php:196
+msgid "Contact Form Area"
+msgstr ""
+
+#: ../functions.php:198
+msgid "This is a widget that places content in the form area."
+msgstr ""
+
+#: ../functions.php:206
+msgid "Contact Section 1"
+msgstr ""
+
+#: ../functions.php:208
+msgid ""
+"This is the first block of content spanning 5 columns in the contact section"
+msgstr ""
+
+#: ../functions.php:216
+msgid "Contact Section 2"
+msgstr ""
+
+#: ../functions.php:218
+msgid ""
+"This is the second block of content spanning 12 columns in the contact area."
+msgstr ""
+
+#: ../functions.php:226
+msgid "Contact Map"
+msgstr ""
+
+#: ../functions.php:228
+msgid "This is the map area for the contact section"
+msgstr ""
+
+#: ../header.php:94
+msgid "Toggle navigation"
+msgstr ""
+
+#: ../search.php:11
+msgid "Search Results for"
+msgstr ""
+
+#: ../search.php:39
+msgid "Sorry, nothing was found. Please try again."
+msgstr ""
+
+#: ../framework/custom-posts.php:8 ../framework/custom-posts.php:9
+#: ../framework/metaboxes/work-meta.php:3
+msgid "Portfolio"
+msgstr ""
+
+#: ../framework/custom-posts.php:10 ../framework/custom-posts.php:11
+msgid "Add item"
+msgstr ""
+
+#: ../framework/custom-posts.php:12
+msgid "Edit item"
+msgstr ""
+
+#: ../framework/custom-posts.php:13
+msgid "New Portfolio Post"
+msgstr ""
+
+#: ../framework/custom-posts.php:14
+msgid "View Portfolio Post"
+msgstr ""
+
+#: ../framework/custom-posts.php:15
+msgid "Search Portfolio"
+msgstr ""
+
+#: ../framework/custom-posts.php:16 ../framework/custom-posts.php:48
+msgid "No items found"
+msgstr ""
+
+#: ../framework/custom-posts.php:17
+msgid "No portfolio items found in trash"
+msgstr ""
+
+#: ../framework/custom-posts.php:40 ../framework/custom-posts.php:41
+msgid "Testimonials"
+msgstr ""
+
+#: ../framework/custom-posts.php:42 ../framework/custom-posts.php:43
+msgid "Add Testimonial"
+msgstr ""
+
+#: ../framework/custom-posts.php:44
+msgid "Edit Testimonial"
+msgstr ""
+
+#: ../framework/custom-posts.php:45
+msgid "New Testimonial"
+msgstr ""
+
+#: ../framework/custom-posts.php:46
+msgid "View Testimonial"
+msgstr ""
+
+#: ../framework/custom-posts.php:47
+msgid "Search Testimonials"
+msgstr ""
+
+#: ../framework/custom-posts.php:49
+msgid "No testimonials found in trash"
+msgstr ""
+
+#: ../framework/framework.php:291 ../framework/framework.php:295
+#: ../framework/framework.php:1429 ../framework/options.php:171
+#: ../framework/options.php:175
+msgid "Options"
+msgstr ""
+
+#: ../framework/framework.php:1368 ../framework/framework.php:1369
+#: ../framework/framework.php:3455 ../framework/framework.php:3531
+msgid "System Info"
+msgstr ""
+
+#: ../framework/framework.php:1892
+#: ../framework/extensions/customizer/extension_customizer.php:452
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: ../framework/framework.php:1893
+#: ../framework/extensions/customizer/extension_customizer.php:453
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: ../framework/framework.php:1894
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: ../framework/framework.php:1895
+#: ../framework/extensions/customizer/extension_customizer.php:454
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../framework/framework.php:1896
+msgid "Please Wait"
+msgstr ""
+
+#: ../framework/framework.php:2043
+msgid "Hints"
+msgstr ""
+
+#: ../framework/framework.php:2044
+msgid "<p>"
+msgstr ""
+
+#: ../framework/framework.php:2168
+msgid "Default"
+msgstr ""
+
+#: ../framework/framework.php:3207
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: ../framework/framework.php:3281
+msgid "Expand"
+msgstr ""
+
+#: ../framework/framework.php:3283 ../framework/framework.php:3589
+msgid "Save Changes"
+msgstr ""
+
+#: ../framework/framework.php:3287 ../framework/framework.php:3593
+msgid "Reset Section"
+msgstr ""
+
+#: ../framework/framework.php:3289 ../framework/framework.php:3595
+msgid "Reset All"
+msgstr ""
+
+#: ../framework/framework.php:3294 ../framework/framework.php:3600
+msgid "Working..."
+msgstr ""
+
+#: ../framework/framework.php:3314
+msgid "Settings Imported!"
+msgstr ""
+
+#: ../framework/framework.php:3329
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../framework/framework.php:3343
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../framework/framework.php:3357
+msgid "Settings Saved!"
+msgstr ""
+
+#: ../framework/framework.php:3375
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: ../framework/framework.php:3383
+msgid "error(s) were found!"
+msgstr ""
+
+#: ../framework/framework.php:3391
+msgid "warning(s) were found!"
+msgstr ""
+
+#: ../framework/options.php:27
+#, php-format
+msgid "Customize &#8220;%s&#8221;"
+msgstr ""
+
+#: ../framework/options.php:46
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: ../framework/options.php:47
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: ../framework/options.php:48
+msgid "Tags"
+msgstr ""
+
+#: ../framework/options.php:52
+#, php-format
+msgid "This <a href=\"%1$s\">child theme</a> requires its parent theme, %2$s."
+msgstr ""
+
+#: ../framework/options.php:53
+msgid "http://codex.wordpress.org/Child_Themes"
+msgstr ""
+
+#: ../framework/options.php:223
+msgid "<p></p>"
+msgstr ""
+
+#: ../framework/options.php:274
+msgid "General Settings"
+msgstr ""
+
+#: ../framework/options.php:284
+msgid "Logo"
+msgstr ""
+
+#: ../framework/options.php:285
+msgid "Choose a retina friendly logo here."
+msgstr ""
+
+#: ../framework/options.php:292
+msgid "Width of the logo in pixels. "
+msgstr ""
+
+#: ../framework/options.php:293
+msgid "Just a number, for example 213"
+msgstr ""
+
+#: ../framework/options.php:294
+msgid ""
+"To make it retina friendly it needs to be at least half the width the actual "
+"size. For example, if your logo is 200px width, set the width here to 100 or "
+"less."
+msgstr ""
+
+#: ../framework/options.php:303
+msgid "Favicon (.gif format)"
+msgstr ""
+
+#: ../framework/options.php:310
+msgid "CSS Code"
+msgstr ""
+
+#: ../framework/options.php:311
+msgid "Paste your CSS code here."
+msgstr ""
+
+#: ../framework/options.php:320
+msgid "JS Code"
+msgstr ""
+
+#: ../framework/options.php:321
+msgid "Paste your JS code here."
+msgstr ""
+
+#: ../framework/options.php:330
+msgid "Footer Text"
+msgstr ""
+
+#: ../framework/options.php:331
+msgid ""
+"You can use the following shortcodes in your footer text: [current_year], "
+"[copyright]"
+msgstr ""
+
+#: ../framework/options.php:337
+msgid "Page scroll speed"
+msgstr ""
+
+#: ../framework/options.php:339
+msgid ""
+"You can choose different speeds for the page scroll. 1 is fastest, 5 is "
+"slowest."
+msgstr ""
+
+#: ../framework/options.php:345
+msgid "Loading text"
+msgstr ""
+
+#: ../framework/options.php:347
+msgid "This is the that is displayed when the pages are loading"
+msgstr ""
+
+#: ../framework/options.php:348
+msgid "Loading"
+msgstr ""
+
+#: ../framework/options.php:358
+msgid "Portfolio Settings"
+msgstr ""
+
+#: ../framework/options.php:363
+msgid "Portfolio style"
+msgstr ""
+
+#: ../framework/options.php:365
+msgid ""
+"You can make portfolio items appear in a new page, or open the content on "
+"the same page."
+msgstr ""
+
+#: ../framework/options.php:371
+msgid "How many items should be shown by default?"
+msgstr ""
+
+#: ../framework/options.php:373
+msgid "You can show from 1 to 6 items in the slider"
+msgstr ""
+
+#: ../framework/options.php:381
+msgid "animate the icon in?"
+msgstr ""
+
+#: ../framework/options.php:383
+msgid "You can choose to animate the icon or not. Animates by default."
+msgstr ""
+
+#: ../framework/options.php:384 ../framework/options.php:438
+#: ../framework/options.php:447 ../framework/options.php:456
+#: ../framework/options.php:465 ../framework/options.php:718
+#: ../framework/metaboxes/about-meta.php:7
+#: ../framework/metaboxes/parallax-meta.php:61
+#: ../framework/metaboxes/welcome-meta.php:88
+#: ../framework/metaboxes/welcome-meta.php:96
+msgid "Yes"
+msgstr ""
+
+#: ../framework/options.php:384 ../framework/options.php:438
+#: ../framework/options.php:447 ../framework/options.php:456
+#: ../framework/options.php:465 ../framework/options.php:718
+#: ../framework/metaboxes/about-meta.php:8
+#: ../framework/metaboxes/parallax-meta.php:60
+#: ../framework/metaboxes/welcome-meta.php:87
+#: ../framework/metaboxes/welcome-meta.php:97
+msgid "No"
+msgstr ""
+
+#: ../framework/options.php:391
+msgid "Hover Color"
+msgstr ""
+
+#: ../framework/options.php:392
+msgid "Pick a background color for the hover effect (default: #000)."
+msgstr ""
+
+#: ../framework/options.php:400
+msgid "Opacity of the hover color?"
+msgstr ""
+
+#: ../framework/options.php:402
+msgid ""
+"You can choose a value between 0 and 0.9 here to change the hover effect."
+msgstr ""
+
+#: ../framework/options.php:412
+msgid "Hover icon"
+msgstr ""
+
+#: ../framework/options.php:413
+msgid "You can choose an image to show when you hover over the slide. "
+msgstr ""
+
+#: ../framework/options.php:422
+msgid "Blog Options"
+msgstr ""
+
+#: ../framework/options.php:427
+msgid "Blog Pages Background Color"
+msgstr ""
+
+#: ../framework/options.php:428
+msgid "Pick a background color for blog, archive and search results"
+msgstr ""
+
+#: ../framework/options.php:435
+msgid "Show the author box on blog posts?"
+msgstr ""
+
+#: ../framework/options.php:444
+msgid "Show the post navigation under single posts?"
+msgstr ""
+
+#: ../framework/options.php:453
+msgid "Show the post tags under single posts?"
+msgstr ""
+
+#: ../framework/options.php:462
+msgid "Show the author bio on author pages?"
+msgstr ""
+
+#: ../framework/options.php:473
+msgid "Styling Options"
+msgstr ""
+
+#: ../framework/options.php:478
+msgid "Nav Background Color"
+msgstr ""
+
+#: ../framework/options.php:479
+msgid "Pick a background color for the primary navigation (default: #fff)."
+msgstr ""
+
+#: ../framework/options.php:486
+msgid "Nav Link Color"
+msgstr ""
+
+#: ../framework/options.php:498
+msgid "Body Background Color"
+msgstr ""
+
+#: ../framework/options.php:499
+msgid "Pick a background color for the theme (default: #fff)."
+msgstr ""
+
+#: ../framework/options.php:506
+msgid "Body Foreground Color"
+msgstr ""
+
+#: ../framework/options.php:507
+msgid "Pick a forground color for the theme (default: #565656)."
+msgstr ""
+
+#: ../framework/options.php:514
+msgid "General Link Color"
+msgstr ""
+
+#: ../framework/options.php:526
+msgid "Headings color"
+msgstr ""
+
+#: ../framework/options.php:535 ../framework/options.php:574
+msgid ""
+"The primary color are the parts that stand out, such as the footer, the "
+"default button color and blockquote post types."
+msgstr ""
+
+#: ../framework/options.php:540
+msgid "Primary Background Color"
+msgstr ""
+
+#: ../framework/options.php:542
+msgid ""
+"This is the main color of your theme. Used for footer, blockquote posts etc."
+msgstr ""
+
+#: ../framework/options.php:549
+msgid "Primary color foreground color"
+msgstr ""
+
+#: ../framework/options.php:558
+msgid "Links for Primary Background"
+msgstr ""
+
+#: ../framework/options.php:579
+msgid "Box background color"
+msgstr ""
+
+#: ../framework/options.php:581
+msgid ""
+"This is the color of box containers such as posts, sidebars, pagination bars "
+"etc."
+msgstr ""
+
+#: ../framework/options.php:588
+msgid "Box border color"
+msgstr ""
+
+#: ../framework/options.php:590 ../framework/options.php:608
+#: ../framework/options.php:626
+msgid "This is the border color of the above box"
+msgstr ""
+
+#: ../framework/options.php:597
+msgid "Background color for odd comments"
+msgstr ""
+
+#: ../framework/options.php:599
+msgid "This is the background for odd numbered comments"
+msgstr ""
+
+#: ../framework/options.php:606
+msgid "Border for odd comments"
+msgstr ""
+
+#: ../framework/options.php:615
+msgid "Background color for even comments"
+msgstr ""
+
+#: ../framework/options.php:617
+msgid "This is the background for even numbered comments"
+msgstr ""
+
+#: ../framework/options.php:624
+msgid "Border for even comments"
+msgstr ""
+
+#: ../framework/options.php:635
+msgid "Typography Options"
+msgstr ""
+
+#: ../framework/options.php:640
+msgid "Body Font"
+msgstr ""
+
+#: ../framework/options.php:641
+msgid "Specify the body font properties."
+msgstr ""
+
+#: ../framework/options.php:660
+msgid "Heading font options"
+msgstr ""
+
+#: ../framework/options.php:684
+msgid "Blockquote font options"
+msgstr ""
+
+#: ../framework/options.php:710
+msgid "Contact Options"
+msgstr ""
+
+#: ../framework/options.php:715
+msgid "Show the default contact form?"
+msgstr ""
+
+#: ../framework/options.php:717
+msgid ""
+"You can choose to include the default contact form or hide it if you want to "
+"use your own."
+msgstr ""
+
+#: ../framework/options.php:724
+msgid "Background color for contact section"
+msgstr ""
+
+#: ../framework/options.php:733
+msgid "Foreground color for contact section"
+msgstr ""
+
+#: ../framework/options.php:742 ../framework/inc/tracking.php:156
+#: ../includes/contact-form.php:11
+msgid "Email address"
+msgstr ""
+
+#: ../framework/options.php:744
+msgid "This is the email the built in contact form will deliver to"
+msgstr ""
+
+#: ../framework/options.php:746
+msgid "Please enter a valid email"
+msgstr ""
+
+#: ../framework/options.php:771
+msgid "<strong>Theme URL:</strong> "
+msgstr ""
+
+#: ../framework/options.php:772
+msgid "<strong>Author:</strong> "
+msgstr ""
+
+#: ../framework/options.php:773
+msgid "<strong>Version:</strong> "
+msgstr ""
+
+#: ../framework/options.php:776
+msgid "<strong>Tags:</strong> "
+msgstr ""
+
+#: ../framework/options.php:783 ../framework/options.php:813
+msgid "Documentation"
+msgstr ""
+
+#: ../framework/options.php:798
+msgid "Theme Information"
+msgstr ""
+
+#: ../framework/options.php:839
+msgid "Section via hook"
+msgstr ""
+
+#: ../framework/options.php:840
+msgid ""
+"<p class=\"description\">This is a section created by adding a filter to the "
+"sections array. Can be used by child themes to add/remove sections from the "
+"options.</p>"
+msgstr ""
+
+#: ../framework/extensions/customizer/extension_customizer.php:487
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: ../framework/extensions/customizer/extension_customizer.php:488
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: ../framework/extensions/customizer/extension_customizer.php:489
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../framework/inc/class.redux_functions.php:251
+msgid "Dismiss"
+msgstr ""
+
+#: ../framework/inc/debug.php:41 ../framework/inc/debug.php:69
+#: ../framework/inc/debug.php:76 ../framework/inc/debug.php:77
+msgid "Options Object"
+msgstr ""
+
+#: ../framework/inc/debug.php:54
+msgid "Show Object in Javascript Console Object"
+msgstr ""
+
+#: ../framework/inc/import_export.php:78
+msgid "Import / Export Options"
+msgstr ""
+
+#: ../framework/inc/import_export.php:81
+msgid "Import Options"
+msgstr ""
+
+#: ../framework/inc/import_export.php:82
+msgid "Import from file"
+msgstr ""
+
+#: ../framework/inc/import_export.php:82
+msgid "Import from URL"
+msgstr ""
+
+#: ../framework/inc/import_export.php:85
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: ../framework/inc/import_export.php:90
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: ../framework/inc/import_export.php:94
+msgid "Import"
+msgstr ""
+
+#: ../framework/inc/import_export.php:94
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: ../framework/inc/import_export.php:97
+msgid "Export Options"
+msgstr ""
+
+#: ../framework/inc/import_export.php:100
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: ../framework/inc/import_export.php:104
+msgid "Copy"
+msgstr ""
+
+#: ../framework/inc/import_export.php:104
+msgid "Download"
+msgstr ""
+
+#: ../framework/inc/import_export.php:104
+msgid "Copy Link"
+msgstr ""
+
+#: ../framework/inc/import_export.php:140
+#: ../framework/inc/import_export.php:149
+#: ../framework/inc/import_export.php:150
+msgid "Import / Export"
+msgstr ""
+
+#: ../framework/inc/tracking.php:128
+msgid "Help improve Our Panel"
+msgstr ""
+
+#: ../framework/inc/tracking.php:129
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test to ensure "
+"compatability."
+msgstr ""
+
+#: ../framework/inc/tracking.php:134
+msgid "Allow tracking"
+msgstr ""
+
+#: ../framework/inc/tracking.php:139
+msgid "Do not allow tracking"
+msgstr ""
+
+#: ../framework/inc/tracking.php:150
+msgid "Welcome to the Redux Demo Panel"
+msgstr ""
+
+#: ../framework/inc/tracking.php:151
+msgid "Getting Started"
+msgstr ""
+
+#: ../framework/inc/tracking.php:151
+#, php-format
+msgid ""
+"This panel demonstrates the many features of Redux.  Before digging in, we "
+"suggest you get up to speed by reviewing %1$s."
+msgstr ""
+
+#: ../framework/inc/tracking.php:151
+msgid "our documentation"
+msgstr ""
+
+#: ../framework/inc/tracking.php:152
+msgid "Redux Generator"
+msgstr ""
+
+#: ../framework/inc/tracking.php:152
+#, php-format
+msgid ""
+"Want to get a head start? Use the %1$s. It will create a customized "
+"boilerplate theme or a standalone admin folder complete with all things "
+"Redux (with the help of Underscores and TGM). Save yourself a headache and "
+"try it today."
+msgstr ""
+
+#: ../framework/inc/tracking.php:153
+msgid "Redux Extensions"
+msgstr ""
+
+#: ../framework/inc/tracking.php:153
+#, php-format
+msgid ""
+"Did you know we have extensions, which greatly enhance the features of "
+"Redux?  Visit our %1$s to learn more!"
+msgstr ""
+
+#: ../framework/inc/tracking.php:153
+msgid "extensions directory"
+msgstr ""
+
+#: ../framework/inc/tracking.php:154
+msgid "Like Redux?"
+msgstr ""
+
+#: ../framework/inc/tracking.php:154
+#, php-format
+msgid ""
+"If so, please %1$s and consider making a %2$s to keep development of Redux "
+"moving forward."
+msgstr ""
+
+#: ../framework/inc/tracking.php:154
+msgid "leave us a favorable review on WordPress.org"
+msgstr ""
+
+#: ../framework/inc/tracking.php:154
+msgid "donation"
+msgstr ""
+
+#: ../framework/inc/tracking.php:155
+msgid "Newsletter"
+msgstr ""
+
+#: ../framework/inc/tracking.php:155
+msgid ""
+"If you'd like to keep up to with all things Redux, please subscribe to our "
+"newsletter"
+msgstr ""
+
+#: ../framework/inc/tracking.php:156
+msgid "Subscribe"
+msgstr ""
+
+#: ../framework/inc/tracking.php:165 ../includes/primary-portfolio.php:52
+msgid "Close"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:124
+#: ../framework/inc/fields/color/field_color.php:72
+#: ../framework/inc/fields/color_gradient/field_color_gradient.php:78
+#: ../framework/inc/fields/color_gradient/field_color_gradient.php:90
+#: ../framework/inc/fields/color_rgba/field_color_rgba.php:77
+msgid "Transparent"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:141
+#: ../framework/metaboxes/parallax-meta.php:83
+#: ../framework/metaboxes/welcome-meta.php:101
+msgid "Background Repeat"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:157
+msgid "Background Clip"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:173
+msgid "Background Origin"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:188
+msgid "Background Size"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:203
+msgid "Background Attachment"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:223
+#: ../framework/metaboxes/parallax-meta.php:92
+#: ../framework/metaboxes/welcome-meta.php:110
+msgid "Background Position"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:277
+#: ../framework/inc/fields/media/field_media.php:112
+msgid "No media selected"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:314
+#: ../framework/inc/fields/media/field_media.php:154
+#: ../framework/inc/fields/slides/field_slides.php:126
+#: ../framework/inc/fields/slides/field_slides.php:188
+msgid "Upload"
+msgstr ""
+
+#: ../framework/inc/fields/background/field_background.php:321
+#: ../framework/inc/fields/media/field_media.php:161
+#: ../framework/inc/fields/multi_text/field_multi_text.php:68
+#: ../framework/inc/fields/multi_text/field_multi_text.php:72
+#: ../framework/inc/fields/multi_text/field_multi_text.php:75
+#: ../framework/inc/fields/slides/field_slides.php:133
+#: ../framework/inc/fields/slides/field_slides.php:190
+msgid "Remove"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:114
+#: ../framework/inc/fields/spacing/field_spacing.php:191
+msgid "All"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:127
+#: ../framework/inc/fields/spacing/field_spacing.php:215
+msgid "Top"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:134
+#: ../framework/inc/fields/spacing/field_spacing.php:222
+msgid "Right"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:141
+#: ../framework/inc/fields/spacing/field_spacing.php:229
+msgid "Bottom"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:148
+#: ../framework/inc/fields/spacing/field_spacing.php:236
+msgid "Left"
+msgstr ""
+
+#: ../framework/inc/fields/border/field_border.php:162
+msgid "Border style"
+msgstr ""
+
+#: ../framework/inc/fields/color_gradient/field_color_gradient.php:68
+msgid "From "
+msgstr ""
+
+#: ../framework/inc/fields/color_gradient/field_color_gradient.php:81
+msgid "To "
+msgstr ""
+
+#: ../framework/inc/fields/dimensions/field_dimensions.php:161
+msgid "Width"
+msgstr ""
+
+#: ../framework/inc/fields/dimensions/field_dimensions.php:177
+#: ../framework/inc/fields/typography/field_typography.php:423
+msgid "Height"
+msgstr ""
+
+#: ../framework/inc/fields/dimensions/field_dimensions.php:188
+#: ../framework/inc/fields/dimensions/field_dimensions.php:189
+#: ../framework/inc/fields/spacing/field_spacing.php:245
+#: ../framework/inc/fields/spacing/field_spacing.php:246
+msgid "Units"
+msgstr ""
+
+#: ../framework/inc/fields/gallery/field_gallery.php:73
+msgid "Add/Edit Gallery"
+msgstr ""
+
+#: ../framework/inc/fields/gallery/field_gallery.php:74
+msgid "Clear Gallery"
+msgstr ""
+
+#: ../framework/inc/fields/group/field_group.php:79
+msgid "New "
+msgstr ""
+
+#: ../framework/inc/fields/group/field_group.php:122
+msgid "Delete"
+msgstr ""
+
+#: ../framework/inc/fields/group/field_group.php:126
+msgid "Add"
+msgstr ""
+
+#: ../framework/inc/fields/link_color/field_link_color.php:87
+msgid "Regular"
+msgstr ""
+
+#: ../framework/inc/fields/link_color/field_link_color.php:91
+msgid "Hover"
+msgstr ""
+
+#: ../framework/inc/fields/link_color/field_link_color.php:95
+msgid "Visited"
+msgstr ""
+
+#: ../framework/inc/fields/link_color/field_link_color.php:99
+msgid "Active"
+msgstr ""
+
+#: ../framework/inc/fields/multi_text/field_multi_text.php:60
+msgid "Add More"
+msgstr ""
+
+#: ../framework/inc/fields/password/field_password.php:62
+msgid "Password"
+msgstr ""
+
+#: ../framework/inc/fields/password/field_password.php:63
+msgid "Username"
+msgstr ""
+
+#: ../framework/inc/fields/select/field_select.php:82
+#: ../framework/inc/fields/select_image/field_select_image.php:62
+msgid "Select an item"
+msgstr ""
+
+#: ../framework/inc/fields/select/field_select.php:126
+#: ../framework/inc/fields/select_image/field_select_image.php:143
+msgid "No items of this type were found."
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:68
+msgid "Slide"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:73
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:145
+#: ../framework/inc/fields/slides/field_slides.php:200
+msgid "Title"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:149
+#: ../framework/inc/fields/slides/field_slides.php:204
+msgid "Description"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:153
+#: ../framework/inc/fields/slides/field_slides.php:207
+msgid "URL"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:167
+#: ../framework/inc/fields/slides/field_slides.php:220
+#, php-format
+msgid "Delete %s"
+msgstr ""
+
+#: ../framework/inc/fields/slides/field_slides.php:223
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: ../framework/inc/fields/switch/field_switch.php:42
+msgid "On"
+msgstr ""
+
+#: ../framework/inc/fields/switch/field_switch.php:49
+msgid "Off"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:226
+msgid "Font Family"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:227
+msgid "Font family"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:252
+#: ../framework/inc/fields/typography/field_typography.php:253
+msgid "Backup Font Family"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:267
+#: ../framework/inc/fields/typography/field_typography.php:274
+msgid "Font style"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:268
+msgid "Font Weight &amp; Style"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:274
+msgid "Style"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:304
+msgid "Font subsets"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:305
+msgid "Font Subsets"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:306
+msgid "Subsets"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:306
+msgid "Font script"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:323
+#: ../framework/inc/fields/typography/field_typography.php:324
+#: ../framework/inc/fields/typography/field_typography.php:325
+msgid "Text Align"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:346
+#: ../framework/inc/fields/typography/field_typography.php:347
+#: ../framework/inc/fields/typography/field_typography.php:348
+msgid "Text Transform"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:369
+#: ../framework/inc/fields/typography/field_typography.php:370
+#: ../framework/inc/fields/typography/field_typography.php:371
+msgid "Font Variant"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:389
+#: ../framework/inc/fields/typography/field_typography.php:390
+#: ../framework/inc/fields/typography/field_typography.php:391
+msgid "Text Decoration"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:413
+#: ../framework/inc/fields/typography/field_typography.php:414
+msgid "Font Size"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:414
+msgid "Size"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:422
+#: ../framework/inc/fields/typography/field_typography.php:423
+msgid "Line Height"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:431
+#: ../framework/inc/fields/typography/field_typography.php:432
+msgid "Word Spacing"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:440
+#: ../framework/inc/fields/typography/field_typography.php:441
+msgid "Letter Spacing"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:459
+msgid "Font Color"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:461
+msgid "Font color"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:783
+msgid "Standard Fonts"
+msgstr ""
+
+#: ../framework/inc/fields/typography/field_typography.php:881
+msgid "Google Webfonts"
+msgstr ""
+
+#: ../framework/inc/validation/color/validation_color.php:15
+#: ../framework/inc/validation/colorrgba/validation_colorrgba.php:16
+#: ../framework/inc/validation/color_rgba/validation_color_rgba.php:14
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: ../framework/inc/validation/comma_numeric/validation_comma_numeric.php:16
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: ../framework/inc/validation/date/validation_date.php:16
+msgid "This field must be a valid date."
+msgstr ""
+
+#: ../framework/inc/validation/email/validation_email.php:16
+#: ../framework/inc/validation/email_not_empty/validation_email_not_empty.php:16
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: ../framework/inc/validation/not_empty/validation_not_empty.php:16
+msgid "This field cannot be empty. Please provide a value."
+msgstr ""
+
+#: ../framework/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: ../framework/inc/validation/no_special_chars/validation_no_special_chars.php:16
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: ../framework/inc/validation/numeric/validation_numeric.php:16
+#: ../framework/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: ../framework/inc/validation/url/validation_url.php:16
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
+#: ../framework/metaboxes/about-meta.php:3
+msgid "Show the team slider at the bottom of the about us page?"
+msgstr ""
+
+#: ../framework/metaboxes/about-meta.php:11
+#: ../framework/metaboxes/about-meta.php:13
+msgid "Manage Team"
+msgstr ""
+
+#: ../framework/metaboxes/about-meta.php:13
+msgid "The team slider is managed from here "
+msgstr ""
+
+#: ../framework/metaboxes/about-spec.php:6
+msgid "About Us Options"
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:3
+msgid "Section Button"
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:5
+msgid ""
+"If you would like to include a button at the bottom of this section then "
+"enter the options here."
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:7
+msgid "Link to:"
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:8
+msgid "You can enter a URL or an id of a section on your page to scroll to it."
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:14
+msgid "Button text:"
+msgstr ""
+
+#: ../framework/metaboxes/button-meta.php:20
+msgid "Button style:"
+msgstr ""
+
+#: ../framework/metaboxes/button-spec.php:6
+msgid "Button Options"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:2
+msgid "Audio / Video"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:3
+msgid ""
+"Would you like an audio or video file instead of the featured image? Place "
+"the URL here and it will be displayed instead of a featured image."
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:5
+msgid "Video or Audio URL (Works on audio, video and standard post types)"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:14
+msgid "Gallery"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:16
+msgid ""
+"For gallery post types you can add image here. They will appear above the "
+"post where the featured image would usually be."
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:22
+#: ../framework/metaboxes/parallax-meta.php:48
+#: ../framework/metaboxes/portfolio-meta.php:9
+#: ../framework/metaboxes/portfolio-meta.php:21
+#: ../framework/metaboxes/welcome-meta.php:11
+#: ../framework/metaboxes/welcome-meta.php:43
+msgid "Select This Image"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:25
+#: ../framework/metaboxes/parallax-meta.php:52
+#: ../framework/metaboxes/portfolio-meta.php:13
+#: ../framework/metaboxes/portfolio-meta.php:25
+#: ../framework/metaboxes/welcome-meta.php:15
+#: ../framework/metaboxes/welcome-meta.php:47
+msgid "Select an image"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:27
+msgid "Remove Image"
+msgstr ""
+
+#: ../framework/metaboxes/media-meta.php:32
+msgid "Add Image"
+msgstr ""
+
+#: ../framework/metaboxes/media-spec.php:6
+msgid "Audio / Video / Gallery Options"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:3
+msgid "Parallax Section Options"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:4
+msgid ""
+"You can choose to add a section after each page. Set up these sections here."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:6
+msgid "Content"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:29
+#: ../framework/metaboxes/welcome-meta.php:51
+msgid "Foreground Color"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:33
+#: ../framework/metaboxes/welcome-meta.php:55
+msgid "Enter a hex code, including # sign"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:36
+#: ../framework/metaboxes/welcome-meta.php:58
+msgid "Background Color"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:40
+#: ../framework/metaboxes/welcome-meta.php:62
+msgid "Used in stead of an image. Enter a hex code, including # sign."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:43
+msgid "Background Image"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:56
+#: ../framework/metaboxes/welcome-meta.php:83
+msgid "Enable parallax effect"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:63
+#: ../framework/metaboxes/welcome-meta.php:90
+msgid ""
+"Works best if the background is set to cover and background position is "
+"\"Center Center\"."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:65
+#: ../framework/metaboxes/welcome-meta.php:65
+msgid "Background attachment"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:69
+#: ../framework/metaboxes/welcome-meta.php:69
+msgid "Scroll"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:70
+#: ../framework/metaboxes/welcome-meta.php:70
+msgid "Fixed"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:72
+#: ../framework/metaboxes/welcome-meta.php:72
+msgid ""
+"If you have an image as the background you can choose to fix the position of "
+"the image. Only works if parallax scrolling is disabled."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:74
+#: ../framework/metaboxes/welcome-meta.php:74
+msgid "Background size"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:78
+#: ../framework/metaboxes/welcome-meta.php:78
+msgid "Auto"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:79
+#: ../framework/metaboxes/welcome-meta.php:79
+msgid "Cover"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:81
+#: ../framework/metaboxes/welcome-meta.php:81
+msgid "If cover is set, the image fills the container no matter how big it is."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:87
+#: ../framework/metaboxes/welcome-meta.php:105
+msgid "Repeat"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:88
+#: ../framework/metaboxes/welcome-meta.php:106
+msgid "No-Repeat"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:90
+#: ../framework/metaboxes/welcome-meta.php:108
+msgid "Choose to repeat the background or show it once."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:96
+#: ../framework/metaboxes/welcome-meta.php:114
+msgid "Center Center"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:97
+#: ../framework/metaboxes/welcome-meta.php:115
+msgid "Center Top"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:98
+#: ../framework/metaboxes/welcome-meta.php:116
+msgid "Center Bottom"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:99
+#: ../framework/metaboxes/welcome-meta.php:117
+msgid "Left Bottom"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:100
+#: ../framework/metaboxes/welcome-meta.php:118
+msgid "Left Top"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:101
+#: ../framework/metaboxes/welcome-meta.php:119
+msgid "Right Top"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:102
+#: ../framework/metaboxes/welcome-meta.php:120
+msgid "Right Bottom"
+msgstr ""
+
+#: ../framework/metaboxes/parallax-meta.php:104
+#: ../framework/metaboxes/welcome-meta.php:122
+msgid ""
+"Choose some basic positioning if using a background image. If parallax is "
+"enabled set to \"Center Center\" becuase the parallax animation starts from "
+"this position."
+msgstr ""
+
+#: ../framework/metaboxes/parallax-spec.php:6
+msgid "Parallax Options"
+msgstr ""
+
+#: ../framework/metaboxes/portfolio-meta.php:3
+msgid "Preview image"
+msgstr ""
+
+#: ../framework/metaboxes/portfolio-meta.php:17
+msgid "Main image"
+msgstr ""
+
+#: ../framework/metaboxes/portfolio-meta.php:30
+msgid "Link location:"
+msgstr ""
+
+#: ../framework/metaboxes/portfolio-meta.php:31
+msgid ""
+"If you would like to provide a link to the project below the description, "
+"enter it here."
+msgstr ""
+
+#: ../framework/metaboxes/portfolio-spec.php:6
+msgid "Portfolio Options"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:5
+msgid "Welcome Content"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:7
+msgid "Image"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:19
+msgid "Heading"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:23
+msgid "Enter some text that will be the main heading for the page."
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:26
+msgid "Tagline"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:30
+msgid "If you would like a tagline, enter it here."
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:35
+msgid "Background Options"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:37
+msgid ""
+"Upload an awesome image here to use as the background for the welcome "
+"screen. Or enter a URL. You can also use Wordpress default custom header but "
+"this setting will override it."
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:39
+msgid "Background image"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:92
+msgid "Enable fading effect"
+msgstr ""
+
+#: ../framework/metaboxes/welcome-meta.php:99
+msgid ""
+"This makes the content in parallax sections fade out as they go out of view. "
+"Enabled by default."
+msgstr ""
+
+#: ../framework/metaboxes/welcome-spec.php:6
+msgid "Welcome Page Options"
+msgstr ""
+
+#: ../framework/metaboxes/work-meta.php:4
+msgid "The portfolio is managed from the portfolio page."
+msgstr ""
+
+#: ../framework/metaboxes/work-meta.php:4
+#: ../framework/metaboxes/work-spec.php:6
+msgid "Manage Portfolio"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:12
+msgid "An address widget that displays address with microformat markup "
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:14
+msgid "themeora Address Widget"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:83
+msgid "Format:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:84
+msgid "Should the address be on 1 line or each part on a new line?"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:86
+msgid "New Line"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:87
+msgid "Inline"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:92
+#: ../framework/widgets/map-widget.php:53
+#: ../framework/widgets/search-widget.php:36
+#: ../framework/widgets/social-widget.php:92
+#: ../framework/widgets/video-widget.php:51
+msgid "Title:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:97
+msgid "Company:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:102
+msgid "Street Address:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:107
+msgid "Locality:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:112
+msgid "Region:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:117
+msgid "Postcode:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:122
+msgid "Country:"
+msgstr ""
+
+#: ../framework/widgets/address-widget.php:127
+msgid "Contact number:"
+msgstr ""
+
+#: ../framework/widgets/map-widget.php:12
+msgid "A map widget that takes a lat long and shows a Google map "
+msgstr ""
+
+#: ../framework/widgets/map-widget.php:14
+msgid "themeora Map Widget"
+msgstr ""
+
+#: ../framework/widgets/map-widget.php:50
+msgid ""
+"Find the latitude and longitude for your address and enter it here. Get help "
+"finding a latitude and longitude here - <a href=\"http://itouchmap.com/"
+"latlong.html\" target=\"_blank\">Find Lat / Long</a>"
+msgstr ""
+
+#: ../framework/widgets/map-widget.php:58
+msgid "Latitude:"
+msgstr ""
+
+#: ../framework/widgets/map-widget.php:63
+msgid "Longitude:"
+msgstr ""
+
+#: ../framework/widgets/search-widget.php:12
+msgid "An improved search widget"
+msgstr ""
+
+#: ../framework/widgets/search-widget.php:14
+msgid "themeora Search Widget"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:12
+msgid ""
+"An widget that allows you to set some popular social profiles up using fonts "
+"awesome icons"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:14
+msgid "themeora Social Widget"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:35
+msgid "Follow on Twitter"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:37
+msgid "Follow on Google +"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:39
+msgid "Follow on Facebook"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:41
+msgid "Follow on Dribble"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:64
+msgid "right"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:74
+msgid "Alignment:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:75
+msgid "Should the the buttons be aligned left, right or centered?"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:83
+msgid "Display:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:84
+msgid "Should the the buttons be inline, or full width?"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:97
+msgid "Twitter Profile:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:98
+#: ../framework/widgets/social-widget.php:103
+#: ../framework/widgets/social-widget.php:108
+#: ../framework/widgets/social-widget.php:113
+msgid "Enter URL:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:102
+msgid "Facebook Profile:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:107
+msgid "Google Plus Profile:"
+msgstr ""
+
+#: ../framework/widgets/social-widget.php:112
+msgid "Dribbble Profile:"
+msgstr ""
+
+#: ../framework/widgets/video-widget.php:12
+msgid "A simple video widget that makes it easy to add responsive videos "
+msgstr ""
+
+#: ../framework/widgets/video-widget.php:14
+msgid "themeora Video Widget"
+msgstr ""
+
+#: ../framework/widgets/video-widget.php:48
+msgid "Enter a title (if required) and embed URL of a video here:"
+msgstr ""
+
+#: ../framework/widgets/video-widget.php:56
+msgid "Video Embed Code:"
+msgstr ""
+
+#: ../includes/contact-form.php:7
+msgid "Full name"
+msgstr ""
+
+#: ../includes/contact-form.php:8
+msgid "Your full name"
+msgstr ""
+
+#: ../includes/contact-form.php:15 ../includes/contact-form.php:16
+msgid "Contact number"
+msgstr ""
+
+#: ../includes/contact-form.php:21
+msgid "Message"
+msgstr ""
+
+#: ../includes/contact-form.php:22
+msgid "Your message"
+msgstr ""
+
+#: ../includes/contact-form.php:24
+msgid "Send"
+msgstr ""
+
+#: ../includes/functions-templates.php:11
+msgid "Sticky"
+msgstr ""
+
+#: ../includes/functions-templates.php:15
+msgid "Posted on"
+msgstr ""
+
+#: ../includes/functions-templates.php:16
+msgid "by"
+msgstr ""
+
+#: ../includes/functions-templates.php:19
+msgid "in"
+msgstr ""
+
+#: ../includes/functions-templates.php:40
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: ../includes/functions-templates.php:91
+msgid "Tagged As"
+msgstr ""
+
+#: ../includes/functions-templates.php:107
+msgid "Author"
+msgstr ""
+
+#: ../includes/functions-templates.php:107
+msgid "Posts by "
+msgstr ""
+
+#: ../includes/functions-templates.php:112
+msgid "has"
+msgstr ""
+
+#: ../includes/functions-templates.php:115
+msgid "article"
+msgstr ""
+
+#: ../includes/functions-templates.php:115
+msgid "articles"
+msgstr ""
+
+#: ../includes/functions-templates.php:137
+msgid "Posts navigation"
+msgstr ""
+
+#: ../includes/functions-templates.php:141
+msgid "Newer posts <i class=\"fa fa-arrow-circle-left\"></i>"
+msgstr ""
+
+#: ../includes/functions-templates.php:145
+msgid "<i class=\"fa fa-arrow-circle-right\"></i> Older posts"
+msgstr ""
+
+#: ../includes/functions-templates.php:265
+msgid "...read more"
+msgstr ""
+
+#: ../includes/functions-templates.php:308
+msgid "No posts found"
+msgstr ""
+
+#: ../includes/functions-templates.php:357
+msgid "Please enter a valid name"
+msgstr ""
+
+#: ../includes/functions-templates.php:360
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: ../includes/functions-templates.php:363
+msgid "Please enter a valid contact number"
+msgstr ""
+
+#: ../includes/functions-templates.php:366
+msgid "Please enter a mesage"
+msgstr ""
+
+#: ../includes/functions-templates.php:372
+msgid " "
+msgstr ""
+
+#: ../includes/functions-templates.php:373
+msgid "The message is: "
+msgstr ""
+
+#: ../includes/functions-templates.php:374
+msgid "Name: "
+msgstr ""
+
+#: ../includes/functions-templates.php:375
+msgid "Email: "
+msgstr ""
+
+#: ../includes/functions-templates.php:376
+msgid "Contact number: "
+msgstr ""
+
+#: ../includes/functions-templates.php:377
+msgid "Message: "
+msgstr ""
+
+#: ../includes/functions-templates.php:382
+msgid "Thankyou for getting in touch"
+msgstr ""
+
+#: ../includes/functions-templates.php:385
+msgid "Oops, something went wrong sending the message."
+msgstr ""
+
+#: ../includes/primary-portfolio.php:50
+msgid "Launch Project"
+msgstr ""

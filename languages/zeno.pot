@@ -1,0 +1,2450 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: themeora\n"
+"POT-Creation-Date: 2014-05-18 16:33-0000\n"
+"PO-Revision-Date: 2014-05-21 19:38-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Sorry! We cant find that page!"
+msgstr ""
+
+#: 404.php:13
+msgid "Why not try searching for the page you want?"
+msgstr ""
+
+#: archive.php:9 archive.php:11 archive.php:13
+#, php-format
+msgid "Posts for %s"
+msgstr ""
+
+#: archive.php:15
+msgid "Post Archive"
+msgstr ""
+
+#: author.php:9
+#, php-format
+msgid "All posts by %s"
+msgstr ""
+
+#: category.php:7
+#, php-format
+msgid "Posts On %s"
+msgstr ""
+
+#: comments.php:9
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:31 comments.php:50
+msgid "<span class=\"meta-nav\"></span> Older Comments"
+msgstr ""
+
+#: comments.php:32 comments.php:51
+msgid "Newer Comments <span class=\"meta-nav\"></span>"
+msgstr ""
+
+#: comments.php:59
+msgid "There are no comments yet."
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:71
+msgid "Your Name"
+msgstr ""
+
+#: comments.php:73
+msgid "Your name"
+msgstr ""
+
+#: comments.php:77
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:79 includes/contact-form.php:12
+msgid "Your email address"
+msgstr ""
+
+#: comments.php:86
+msgid "Your comment:"
+msgstr ""
+
+#: comments.php:87
+msgid "Enter your comment"
+msgstr ""
+
+#: comments.php:90
+msgid "Leave a Comment"
+msgstr ""
+
+#: functions.php:169
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:176
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:178
+msgid "Default blog sidebar stuff"
+msgstr ""
+
+#: functions.php:186
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:188
+msgid "Default page sidebar stuff"
+msgstr ""
+
+#: functions.php:196
+msgid "Contact Section 1"
+msgstr ""
+
+#: functions.php:198
+msgid ""
+"This is the first block of content spanning 5 columns in the contact section"
+msgstr ""
+
+#: functions.php:206
+msgid "Contact Section 2"
+msgstr ""
+
+#: functions.php:208
+msgid ""
+"This is the second block of content spanning 7 columns in the contact area. "
+msgstr ""
+
+#: functions.php:216
+msgid "Contact Map"
+msgstr ""
+
+#: functions.php:218
+msgid "This is the map area for the contact section"
+msgstr ""
+
+#: header.php:80
+msgid "Toggle navigation"
+msgstr ""
+
+#: search.php:11
+msgid "Search Results for"
+msgstr ""
+
+#: search.php:39
+msgid "Sorry, nothing was found. Please try again."
+msgstr ""
+
+#: framework/custom-posts.php:8 framework/custom-posts.php:9
+#: framework/metaboxes/work-meta.php:3
+msgid "Portfolio"
+msgstr ""
+
+#: framework/custom-posts.php:10 framework/custom-posts.php:11
+msgid "Add item"
+msgstr ""
+
+#: framework/custom-posts.php:12
+msgid "Edit item"
+msgstr ""
+
+#: framework/custom-posts.php:13
+msgid "New Portfolio Post"
+msgstr ""
+
+#: framework/custom-posts.php:14
+msgid "View Portfolio Post"
+msgstr ""
+
+#: framework/custom-posts.php:15
+msgid "Search Portfolio"
+msgstr ""
+
+#: framework/custom-posts.php:16 framework/custom-posts.php:48
+msgid "No items found"
+msgstr ""
+
+#: framework/custom-posts.php:17
+msgid "No portfolio items found in trash"
+msgstr ""
+
+#: framework/custom-posts.php:40 framework/custom-posts.php:41
+msgid "Testimonials"
+msgstr ""
+
+#: framework/custom-posts.php:42 framework/custom-posts.php:43
+msgid "Add Testimonial"
+msgstr ""
+
+#: framework/custom-posts.php:44
+msgid "Edit Testimonial"
+msgstr ""
+
+#: framework/custom-posts.php:45
+msgid "New Testimonial"
+msgstr ""
+
+#: framework/custom-posts.php:46
+msgid "View Testimonial"
+msgstr ""
+
+#: framework/custom-posts.php:47
+msgid "Search Testimonials"
+msgstr ""
+
+#: framework/custom-posts.php:49
+msgid "No testimonials found in trash"
+msgstr ""
+
+#: framework/framework.php:122 framework/framework.php:128
+#: framework/framework.php:332 framework/framework.php:335
+#: framework/framework.php:1237 framework/options.php:178
+#: framework/options.php:182 framework/sample-config.php:177
+#: framework/sample-config.php:181
+msgid "Options"
+msgstr ""
+
+#: framework/framework.php:500
+msgid "Dismiss"
+msgstr ""
+
+#: framework/framework.php:1156 framework/framework.php:1157
+#: framework/framework.php:2741
+msgid "Import / Export"
+msgstr ""
+
+#: framework/framework.php:1168 framework/framework.php:1169
+#: framework/framework.php:2757 framework/framework.php:2872
+msgid "Options Object"
+msgstr ""
+
+#: framework/framework.php:1180 framework/framework.php:1181
+#: framework/framework.php:2771 framework/framework.php:2890
+msgid "System Info"
+msgstr ""
+
+#: framework/framework.php:1594
+#: framework/extensions/customizer/extension_customizer.php:402
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: framework/framework.php:1595
+#: framework/extensions/customizer/extension_customizer.php:403
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: framework/framework.php:1596
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: framework/framework.php:1597
+#: framework/extensions/customizer/extension_customizer.php:404
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: framework/framework.php:1828
+msgid "Hints"
+msgstr ""
+
+#: framework/framework.php:1829
+msgid "<p>"
+msgstr ""
+
+#: framework/framework.php:1933
+msgid "Default"
+msgstr ""
+
+#: framework/framework.php:2608
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: framework/framework.php:2670
+msgid "Expand"
+msgstr ""
+
+#: framework/framework.php:2672 framework/framework.php:2940
+msgid "Save Changes"
+msgstr ""
+
+#: framework/framework.php:2674 framework/framework.php:2942
+msgid "Reset Section"
+msgstr ""
+
+#: framework/framework.php:2676 framework/framework.php:2944
+msgid "Reset All"
+msgstr ""
+
+#: framework/framework.php:2679 framework/framework.php:2947
+msgid "Working..."
+msgstr ""
+
+#: framework/framework.php:2690
+msgid "Settings Imported!"
+msgstr ""
+
+#: framework/framework.php:2696
+msgid "Settings Saved!"
+msgstr ""
+
+#: framework/framework.php:2703
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: framework/framework.php:2704
+msgid "error(s) were found!"
+msgstr ""
+
+#: framework/framework.php:2705
+msgid "warning(s) were found!"
+msgstr ""
+
+#: framework/framework.php:2808
+msgid "Import / Export Options"
+msgstr ""
+
+#: framework/framework.php:2809
+msgid "Import Options"
+msgstr ""
+
+#: framework/framework.php:2810
+msgid "Import from file"
+msgstr ""
+
+#: framework/framework.php:2810
+msgid "Import from URL"
+msgstr ""
+
+#: framework/framework.php:2819
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: framework/framework.php:2833
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: framework/framework.php:2844
+msgid "Import"
+msgstr ""
+
+#: framework/framework.php:2844
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: framework/framework.php:2847
+msgid "Export Options"
+msgstr ""
+
+#: framework/framework.php:2853
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: framework/framework.php:2858
+msgid "Copy"
+msgstr ""
+
+#: framework/framework.php:2858
+msgid "Download"
+msgstr ""
+
+#: framework/framework.php:2858
+msgid "Copy Link"
+msgstr ""
+
+#: framework/framework.php:2879
+msgid "Show Object in Javascript Console Object"
+msgstr ""
+
+#: framework/options.php:33 framework/sample-config.php:33
+#, php-format
+msgid "Customize &#8220;%s&#8221;"
+msgstr ""
+
+#: framework/options.php:52 framework/sample-config.php:52
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: framework/options.php:53 framework/sample-config.php:53
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: framework/options.php:54 framework/sample-config.php:54
+msgid "Tags"
+msgstr ""
+
+#: framework/options.php:58 framework/sample-config.php:58
+#, php-format
+msgid "This <a href=\"%1$s\">child theme</a> requires its parent theme, %2$s."
+msgstr ""
+
+#: framework/options.php:59 framework/sample-config.php:59
+msgid "http://codex.wordpress.org/Child_Themes"
+msgstr ""
+
+#: framework/options.php:224 framework/sample-config.php:223
+msgid "Theme Information 1"
+msgstr ""
+
+#: framework/options.php:225 framework/options.php:230
+#: framework/sample-config.php:224 framework/sample-config.php:229
+msgid "<p>This is the tab content, HTML is allowed.</p>"
+msgstr ""
+
+#: framework/options.php:229 framework/sample-config.php:228
+msgid "Theme Information 2"
+msgstr ""
+
+#: framework/options.php:234 framework/sample-config.php:233
+msgid "<p>This is the sidebar content, HTML is allowed.</p>"
+msgstr ""
+
+#: framework/options.php:280 framework/sample-config.php:583
+msgid "General Settings"
+msgstr ""
+
+#: framework/options.php:289
+msgid "Logo"
+msgstr ""
+
+#: framework/options.php:290
+msgid "Choose a retina friendly logo here."
+msgstr ""
+
+#: framework/options.php:297
+msgid "Width of the logo in pixels. "
+msgstr ""
+
+#: framework/options.php:298
+msgid "Just a number, for example 213"
+msgstr ""
+
+#: framework/options.php:299
+msgid ""
+"To make it retina friendly it needs to be at least half the width the actual "
+"size. For example, if your logo is 200px width, set the width here to 100 or "
+"less."
+msgstr ""
+
+#: framework/options.php:307
+msgid "Favicon (.gif format)"
+msgstr ""
+
+#: framework/options.php:314 framework/sample-config.php:615
+msgid "CSS Code"
+msgstr ""
+
+#: framework/options.php:315 framework/sample-config.php:616
+msgid "Paste your CSS code here."
+msgstr ""
+
+#: framework/options.php:324 framework/sample-config.php:625
+msgid "JS Code"
+msgstr ""
+
+#: framework/options.php:325 framework/sample-config.php:626
+msgid "Paste your JS code here."
+msgstr ""
+
+#: framework/options.php:334 framework/sample-config.php:636
+msgid "Footer Text"
+msgstr ""
+
+#: framework/options.php:335
+msgid ""
+"You can use the following shortcodes in your footer text: [current_year], "
+"[copyright]"
+msgstr ""
+
+#: framework/options.php:341
+msgid "Page scroll speed"
+msgstr ""
+
+#: framework/options.php:343
+msgid ""
+"You can choose different speeds for the page scroll. 1 is fastest, 5 is "
+"slowest."
+msgstr ""
+
+#: framework/options.php:354
+msgid "Portfolio Settings"
+msgstr ""
+
+#: framework/options.php:359
+msgid "How many items should be shown by default?"
+msgstr ""
+
+#: framework/options.php:361
+msgid "You can show from 1 to 6 items in the slider"
+msgstr ""
+
+#: framework/options.php:369
+msgid "animate the icon in?"
+msgstr ""
+
+#: framework/options.php:371
+msgid "You can choose to animate the icon or not. Animates by default."
+msgstr ""
+
+#: framework/options.php:379
+msgid "Hover Color"
+msgstr ""
+
+#: framework/options.php:380
+msgid "Pick a background color for the hover effect (default: #000)."
+msgstr ""
+
+#: framework/options.php:388
+msgid "Opacity of the hover color?"
+msgstr ""
+
+#: framework/options.php:390
+msgid ""
+"You can choose a value between 0 and 0.9 here to change the hover effect."
+msgstr ""
+
+#: framework/options.php:399
+msgid "Hover icon"
+msgstr ""
+
+#: framework/options.php:400
+msgid "You can choose an image to show when you hover over the slide. "
+msgstr ""
+
+#: framework/options.php:409
+msgid "Blog Options"
+msgstr ""
+
+#: framework/options.php:414
+msgid "Blog Pages Background Color"
+msgstr ""
+
+#: framework/options.php:415
+msgid "Pick a background color for blog, archive and search results"
+msgstr ""
+
+#: framework/options.php:422
+msgid "Show the author box on blog posts?"
+msgstr ""
+
+#: framework/options.php:431
+msgid "Show the post navigation under single posts?"
+msgstr ""
+
+#: framework/options.php:440
+msgid "Show the post tags under single posts?"
+msgstr ""
+
+#: framework/options.php:449
+msgid "Show the author bio on author pages?"
+msgstr ""
+
+#: framework/options.php:460 framework/sample-config.php:655
+msgid "Styling Options"
+msgstr ""
+
+#: framework/options.php:465
+msgid "Nav Background Color"
+msgstr ""
+
+#: framework/options.php:466
+msgid "Pick a background color for the primary navigation (default: #fff)."
+msgstr ""
+
+#: framework/options.php:473
+msgid "Nav Link Color"
+msgstr ""
+
+#: framework/options.php:485 framework/sample-config.php:669
+msgid "Body Background Color"
+msgstr ""
+
+#: framework/options.php:486 framework/sample-config.php:670
+msgid "Pick a background color for the theme (default: #fff)."
+msgstr ""
+
+#: framework/options.php:493
+msgid "Body Foreground Color"
+msgstr ""
+
+#: framework/options.php:494
+msgid "Pick a forground color for the theme (default: #565656)."
+msgstr ""
+
+#: framework/options.php:501
+msgid "General Link Color"
+msgstr ""
+
+#: framework/options.php:513
+msgid "Headings color"
+msgstr ""
+
+#: framework/options.php:522 framework/options.php:561
+msgid ""
+"The primary color are the parts that stand out, such as the footer, the "
+"default button color and blockquote post types."
+msgstr ""
+
+#: framework/options.php:527
+msgid "Primary Background Color"
+msgstr ""
+
+#: framework/options.php:529
+msgid ""
+"This is the main color of your theme. Used for footer, blockquote posts etc."
+msgstr ""
+
+#: framework/options.php:536
+msgid "Primary color foreground color"
+msgstr ""
+
+#: framework/options.php:545
+msgid "Links for Primary Background"
+msgstr ""
+
+#: framework/options.php:566
+msgid "Box background color"
+msgstr ""
+
+#: framework/options.php:568
+msgid ""
+"This is the color of box containers such as posts, sidebars, pagination bars "
+"etc."
+msgstr ""
+
+#: framework/options.php:575
+msgid "Box border color"
+msgstr ""
+
+#: framework/options.php:577 framework/options.php:595
+#: framework/options.php:613
+msgid "This is the border color of the above box"
+msgstr ""
+
+#: framework/options.php:584
+msgid "Background color for odd comments"
+msgstr ""
+
+#: framework/options.php:586
+msgid "This is the background for odd numbered comments"
+msgstr ""
+
+#: framework/options.php:593
+msgid "Border for odd comments"
+msgstr ""
+
+#: framework/options.php:602
+msgid "Background color for even comments"
+msgstr ""
+
+#: framework/options.php:604
+msgid "This is the background for even numbered comments"
+msgstr ""
+
+#: framework/options.php:611
+msgid "Border for even comments"
+msgstr ""
+
+#: framework/options.php:622
+msgid "Typography Options"
+msgstr ""
+
+#: framework/options.php:627 framework/sample-config.php:754
+msgid "Body Font"
+msgstr ""
+
+#: framework/options.php:628 framework/sample-config.php:755
+msgid "Specify the body font properties."
+msgstr ""
+
+#: framework/options.php:647
+msgid "Heading font options"
+msgstr ""
+
+#: framework/options.php:671
+msgid "Blockquote font options"
+msgstr ""
+
+#: framework/options.php:697
+msgid "Contact Options"
+msgstr ""
+
+#: framework/options.php:702
+msgid "Background color for contact section"
+msgstr ""
+
+#: framework/options.php:711
+msgid "Foreground color for contact section"
+msgstr ""
+
+#: framework/options.php:720 includes/contact-form.php:11
+msgid "Email address"
+msgstr ""
+
+#: framework/options.php:722
+msgid "This is the email the built in contact form will deliver to"
+msgstr ""
+
+#: framework/options.php:724
+msgid "Please enter a valid email"
+msgstr ""
+
+#: framework/options.php:751 framework/sample-config.php:1244
+msgid "<strong>Theme URL:</strong> "
+msgstr ""
+
+#: framework/options.php:752 framework/sample-config.php:1245
+msgid "<strong>Author:</strong> "
+msgstr ""
+
+#: framework/options.php:753 framework/sample-config.php:1246
+msgid "<strong>Version:</strong> "
+msgstr ""
+
+#: framework/options.php:756 framework/sample-config.php:1249
+msgid "<strong>Tags:</strong> "
+msgstr ""
+
+#: framework/options.php:763 framework/options.php:797
+#: framework/sample-config.php:1256 framework/sample-config.php:1392
+msgid "Documentation"
+msgstr ""
+
+#: framework/options.php:782 framework/sample-config.php:1377
+msgid "Theme Information"
+msgstr ""
+
+#: framework/options.php:783 framework/sample-config.php:932
+#: framework/sample-config.php:1044 framework/sample-config.php:1275
+#: framework/sample-config.php:1378
+msgid ""
+"<p class=\"description\">This is the Description. Again HTML is allowed</p>"
+msgstr ""
+
+#: framework/options.php:823 framework/sample-config.php:1418
+msgid "Section via hook"
+msgstr ""
+
+#: framework/options.php:824 framework/sample-config.php:1419
+msgid ""
+"<p class=\"description\">This is a section created by adding a filter to the "
+"sections array. Can be used by child themes to add/remove sections from the "
+"options.</p>"
+msgstr ""
+
+#: framework/sample-config.php:243
+#, php-format
+msgid ""
+"<p>Did you know that Redux sets a global variable for you? To access any of "
+"your saved options from within your code you can use your global variable: "
+"<strong>$%1$s</strong></p>"
+msgstr ""
+
+#: framework/sample-config.php:245
+msgid ""
+"<p>This text is displayed above the options panel. It isn't required, but "
+"more info is always better! The intro_text field accepts all HTML.</p>"
+msgstr ""
+
+#: framework/sample-config.php:249
+msgid ""
+"<p>This text is displayed below the options panel. It isn't required, but "
+"more info is always better! The footer_text field accepts all HTML.</p>"
+msgstr ""
+
+#: framework/sample-config.php:280
+msgid "Home Settings"
+msgstr ""
+
+#: framework/sample-config.php:281
+msgid ""
+"Redux Framework was created with the developer in mind. It allows for any "
+"theme developer to have an advanced theme panel with most of the features a "
+"developer would need. For more information check out the Github repo at: <a "
+"href=\"https://github.com/ReduxFramework/Redux-Framework\">https://github."
+"com/ReduxFramework/Redux-Framework</a>"
+msgstr ""
+
+#: framework/sample-config.php:288
+msgid "Web Fonts"
+msgstr ""
+
+#: framework/sample-config.php:291 framework/sample-config.php:301
+msgid "Basic media uploader with disabled URL input field."
+msgstr ""
+
+#: framework/sample-config.php:292 framework/sample-config.php:302
+#: framework/sample-config.php:311 framework/sample-config.php:319
+msgid "Upload any media using the WordPress native uploader"
+msgstr ""
+
+#: framework/sample-config.php:298
+msgid "Media w/ URL"
+msgstr ""
+
+#: framework/sample-config.php:309
+msgid "Media w/o URL"
+msgstr ""
+
+#: framework/sample-config.php:310 framework/sample-config.php:318
+msgid ""
+"This represents the minimalistic view. It does not have the preview box or "
+"the display URL in an input box. "
+msgstr ""
+
+#: framework/sample-config.php:317
+msgid "Media No Preview"
+msgstr ""
+
+#: framework/sample-config.php:324
+#: framework/inc/fields/gallery/field_gallery.php:77
+msgid "Add/Edit Gallery"
+msgstr ""
+
+#: framework/sample-config.php:325
+msgid ""
+"Create a new Gallery by selecting existing or uploading new images using the "
+"WordPress native uploader"
+msgstr ""
+
+#: framework/sample-config.php:326 framework/sample-config.php:695
+#: framework/sample-config.php:703 framework/sample-config.php:720
+#: framework/sample-config.php:800 framework/sample-config.php:810
+#: framework/sample-config.php:821 framework/sample-config.php:828
+#: framework/sample-config.php:837 framework/sample-config.php:847
+#: framework/sample-config.php:857 framework/sample-config.php:876
+#: framework/sample-config.php:886 framework/sample-config.php:895
+#: framework/sample-config.php:904 framework/sample-config.php:913
+#: framework/sample-config.php:923 framework/sample-config.php:939
+#: framework/sample-config.php:947 framework/sample-config.php:956
+#: framework/sample-config.php:964 framework/sample-config.php:972
+#: framework/sample-config.php:981 framework/sample-config.php:989
+#: framework/sample-config.php:1019 framework/sample-config.php:1032
+#: framework/sample-config.php:1051 framework/sample-config.php:1061
+#: framework/sample-config.php:1091 framework/sample-config.php:1100
+#: framework/sample-config.php:1108 framework/sample-config.php:1117
+#: framework/sample-config.php:1125 framework/sample-config.php:1134
+#: framework/sample-config.php:1142 framework/sample-config.php:1151
+#: framework/sample-config.php:1159 framework/sample-config.php:1168
+#: framework/sample-config.php:1178 framework/sample-config.php:1186
+#: framework/sample-config.php:1195 framework/sample-config.php:1203
+#: framework/sample-config.php:1212 framework/sample-config.php:1283
+#: framework/sample-config.php:1294
+msgid "This is the description field, again good for additional info."
+msgstr ""
+
+#: framework/sample-config.php:331
+msgid "JQuery UI Slider Example 1"
+msgstr ""
+
+#: framework/sample-config.php:332
+msgid ""
+"JQuery UI slider description. Min: 1, max: 500, step: 3, default value: 45"
+msgstr ""
+
+#: framework/sample-config.php:342
+msgid "JQuery UI Slider Example 2 w/ Steps (5)"
+msgstr ""
+
+#: framework/sample-config.php:343
+msgid ""
+"JQuery UI slider description. Min: 0, max: 300, step: 5, default value: 75"
+msgstr ""
+
+#: framework/sample-config.php:352
+msgid "JQuery UI Spinner Example 1"
+msgstr ""
+
+#: framework/sample-config.php:353
+msgid ""
+"JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40"
+msgstr ""
+
+#: framework/sample-config.php:362
+msgid "Switch On"
+msgstr ""
+
+#: framework/sample-config.php:363 framework/sample-config.php:371
+#: framework/sample-config.php:1346
+msgid "Look, it's on!"
+msgstr ""
+
+#: framework/sample-config.php:370
+msgid "Switch Off"
+msgstr ""
+
+#: framework/sample-config.php:378
+msgid "Switch - Custom Titles"
+msgstr ""
+
+#: framework/sample-config.php:379
+msgid "Look, it's on! Also hidden child elements!"
+msgstr ""
+
+#: framework/sample-config.php:389
+msgid "Switch - With Hidden Items (NESTED!)"
+msgstr ""
+
+#: framework/sample-config.php:390
+msgid "Also called a \"fold\" parent."
+msgstr ""
+
+#: framework/sample-config.php:391
+msgid ""
+"Items set with a fold to this ID will hide unless this is set to the "
+"appropriate value."
+msgstr ""
+
+#: framework/sample-config.php:399
+msgid "Images Option (with pattern=>true)"
+msgstr ""
+
+#: framework/sample-config.php:400
+msgid "Select a background pattern."
+msgstr ""
+
+#: framework/sample-config.php:450 framework/sample-config.php:457
+msgid "Slides Options"
+msgstr ""
+
+#: framework/sample-config.php:451 framework/sample-config.php:458
+msgid "Unlimited slides with drag and drop sortings."
+msgstr ""
+
+#: framework/sample-config.php:452 framework/sample-config.php:528
+msgid ""
+"This field will store all slides values into a multidimensional array to use "
+"into a foreach loop."
+msgstr ""
+
+#: framework/sample-config.php:534
+msgid "Preset"
+msgstr ""
+
+#: framework/sample-config.php:535 framework/sample-config.php:537
+msgid ""
+"This allows you to set a json string or array to override multiple "
+"preferences in your theme."
+msgstr ""
+
+#: framework/sample-config.php:546
+msgid "Typography"
+msgstr ""
+
+#: framework/sample-config.php:561
+msgid "Typography option with each property can be called individually."
+msgstr ""
+
+#: framework/sample-config.php:589
+msgid "Main Layout"
+msgstr ""
+
+#: framework/sample-config.php:590
+msgid ""
+"Select main content and sidebar alignment. Choose between 1, 2 or 3 column "
+"layout."
+msgstr ""
+
+#: framework/sample-config.php:606
+msgid "Tracking Code"
+msgstr ""
+
+#: framework/sample-config.php:607
+msgid ""
+"Paste your Google Analytics (or other) tracking code here. This will be "
+"added into the footer template of your theme."
+msgstr ""
+
+#: framework/sample-config.php:637
+msgid ""
+"You can use the following shortcodes in your footer text: [wp-url] [site-"
+"url] [theme-url] [login-url] [logout-url] [site-title] [site-tagline] "
+"[current-year]"
+msgstr ""
+
+#: framework/sample-config.php:660
+msgid "Theme Stylesheet"
+msgstr ""
+
+#: framework/sample-config.php:661 framework/sample-config.php:1360
+msgid "Select your themes alternative color scheme."
+msgstr ""
+
+#: framework/sample-config.php:677
+msgid "Footer Background Color"
+msgstr ""
+
+#: framework/sample-config.php:678
+msgid "Pick a background color for the footer (default: #dd9933)."
+msgstr ""
+
+#: framework/sample-config.php:685
+msgid "Color RGBA - BETA"
+msgstr ""
+
+#: framework/sample-config.php:686
+msgid ""
+"Gives you the RGBA color. Still quite experimental. Use at your own risk."
+msgstr ""
+
+#: framework/sample-config.php:693
+msgid "Header Gradient Color Option"
+msgstr ""
+
+#: framework/sample-config.php:694 framework/sample-config.php:702
+#: framework/sample-config.php:718
+msgid "Only color validation can be done on this field type"
+msgstr ""
+
+#: framework/sample-config.php:701
+msgid "Links Color Option"
+msgstr ""
+
+#: framework/sample-config.php:717
+msgid "Header Border Option"
+msgstr ""
+
+#: framework/sample-config.php:736
+msgid "Padding/Margin Option"
+msgstr ""
+
+#: framework/sample-config.php:737
+msgid "Allow your users to choose the spacing or margin they want."
+msgstr ""
+
+#: framework/sample-config.php:738
+msgid ""
+"You can enable or disable any piece of this field. Top, Right, Bottom, Left, "
+"or Units."
+msgstr ""
+
+#: framework/sample-config.php:746
+msgid "Dimensions (Width/Height) Option"
+msgstr ""
+
+#: framework/sample-config.php:747
+msgid "Allow your users to choose width, height, and/or unit."
+msgstr ""
+
+#: framework/sample-config.php:748
+msgid ""
+"You can enable or disable any piece of this field. Width, Height, or Units."
+msgstr ""
+
+#: framework/sample-config.php:767
+msgid "Custom CSS"
+msgstr ""
+
+#: framework/sample-config.php:768
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: framework/sample-config.php:769
+msgid "This field is even CSS validated!"
+msgstr ""
+
+#: framework/sample-config.php:775
+msgid "Custom HTML"
+msgstr ""
+
+#: framework/sample-config.php:776
+msgid "Just like a text box widget."
+msgstr ""
+
+#: framework/sample-config.php:777
+msgid "This field is even HTML validated!"
+msgstr ""
+
+#: framework/sample-config.php:791
+msgid "Field Validation"
+msgstr ""
+
+#: framework/sample-config.php:792
+msgid "Validate ALL fields within Redux."
+msgstr ""
+
+#: framework/sample-config.php:793
+msgid ""
+"<p class=\"description\">This is the Description. Again HTML is allowed2</p>"
+msgstr ""
+
+#: framework/sample-config.php:798
+msgid "Text Option - Email Validated"
+msgstr ""
+
+#: framework/sample-config.php:799
+msgid ""
+"This is a little space under the Field Title in the Options table, "
+"additional info is good in here."
+msgstr ""
+
+#: framework/sample-config.php:808
+msgid "Text Option with Data Attributes"
+msgstr ""
+
+#: framework/sample-config.php:809
+msgid ""
+"You can also pass an options array if you want. Set the default to whatever "
+"you like."
+msgstr ""
+
+#: framework/sample-config.php:818
+msgid "Multi Text Option - Color Validated"
+msgstr ""
+
+#: framework/sample-config.php:820
+msgid ""
+"If you enter an invalid color it will be removed. Try using the text \"blue"
+"\" as a color.  ;)"
+msgstr ""
+
+#: framework/sample-config.php:826
+msgid "Text Option - URL Validated"
+msgstr ""
+
+#: framework/sample-config.php:827
+msgid "This must be a URL."
+msgstr ""
+
+#: framework/sample-config.php:835
+msgid "Text Option - Numeric Validated"
+msgstr ""
+
+#: framework/sample-config.php:836
+msgid "This must be numeric."
+msgstr ""
+
+#: framework/sample-config.php:845
+msgid "Text Option - Comma Numeric Validated"
+msgstr ""
+
+#: framework/sample-config.php:846
+msgid "This must be a comma separated string of numerical values."
+msgstr ""
+
+#: framework/sample-config.php:855
+msgid "Text Option - No Special Chars Validated"
+msgstr ""
+
+#: framework/sample-config.php:856
+msgid "This must be a alpha numeric only."
+msgstr ""
+
+#: framework/sample-config.php:864
+msgid "Text Option - Str Replace Validated"
+msgstr ""
+
+#: framework/sample-config.php:865 framework/sample-config.php:875
+#: framework/sample-config.php:885
+msgid "You decide."
+msgstr ""
+
+#: framework/sample-config.php:866
+msgid "This field's default value was changed by a filter hook!"
+msgstr ""
+
+#: framework/sample-config.php:874
+msgid "Text Option - Preg Replace Validated"
+msgstr ""
+
+#: framework/sample-config.php:884
+msgid "Text Option - Custom Callback Validated"
+msgstr ""
+
+#: framework/sample-config.php:893
+msgid "Textarea Option - No HTML Validated"
+msgstr ""
+
+#: framework/sample-config.php:894
+msgid "All HTML will be stripped"
+msgstr ""
+
+#: framework/sample-config.php:902
+msgid "Textarea Option - HTML Validated"
+msgstr ""
+
+#: framework/sample-config.php:903
+msgid "HTML Allowed (wp_kses)"
+msgstr ""
+
+#: framework/sample-config.php:911
+msgid "Textarea Option - HTML Validated Custom"
+msgstr ""
+
+#: framework/sample-config.php:912
+msgid "Custom HTML Allowed (wp_kses)"
+msgstr ""
+
+#: framework/sample-config.php:921
+msgid "Textarea Option - JS Validated"
+msgstr ""
+
+#: framework/sample-config.php:922
+msgid "JS will be escaped"
+msgstr ""
+
+#: framework/sample-config.php:931
+msgid "Radio/Checkbox Fields"
+msgstr ""
+
+#: framework/sample-config.php:937
+msgid "Checkbox Option"
+msgstr ""
+
+#: framework/sample-config.php:938 framework/sample-config.php:946
+#: framework/sample-config.php:955 framework/sample-config.php:963
+#: framework/sample-config.php:971 framework/sample-config.php:980
+#: framework/sample-config.php:988 framework/sample-config.php:1002
+#: framework/sample-config.php:1050 framework/sample-config.php:1060
+#: framework/sample-config.php:1090 framework/sample-config.php:1099
+#: framework/sample-config.php:1107 framework/sample-config.php:1116
+#: framework/sample-config.php:1124 framework/sample-config.php:1133
+#: framework/sample-config.php:1141 framework/sample-config.php:1150
+#: framework/sample-config.php:1158 framework/sample-config.php:1167
+#: framework/sample-config.php:1185 framework/sample-config.php:1194
+#: framework/sample-config.php:1202 framework/sample-config.php:1211
+#: framework/sample-config.php:1219 framework/sample-config.php:1282
+#: framework/sample-config.php:1293
+msgid "No validation can be done on this field type"
+msgstr ""
+
+#: framework/sample-config.php:945
+msgid "Multi Checkbox Option"
+msgstr ""
+
+#: framework/sample-config.php:954 framework/sample-config.php:979
+msgid "Multi Checkbox Option (with menu data)"
+msgstr ""
+
+#: framework/sample-config.php:962
+msgid "Multi Checkbox Option (with sidebar data)"
+msgstr ""
+
+#: framework/sample-config.php:970
+msgid "Radio Option"
+msgstr ""
+
+#: framework/sample-config.php:987
+msgid "Images Option"
+msgstr ""
+
+#: framework/sample-config.php:1001
+msgid "Images Option for Layout"
+msgstr ""
+
+#: framework/sample-config.php:1003
+msgid ""
+"This uses some of the built in images, you can use them for layout options."
+msgstr ""
+
+#: framework/sample-config.php:1017 framework/sample-config.php:1030
+msgid "Sortable Text Option"
+msgstr ""
+
+#: framework/sample-config.php:1018 framework/sample-config.php:1031
+msgid "Define and reorder these however you want."
+msgstr ""
+
+#: framework/sample-config.php:1043
+msgid "Select Fields"
+msgstr ""
+
+#: framework/sample-config.php:1049
+msgid "Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1059
+msgid "Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1070
+msgid "Select Image"
+msgstr ""
+
+#: framework/sample-config.php:1071
+msgid "A preview of the selected image will appear underneath the select box."
+msgstr ""
+
+#: framework/sample-config.php:1083
+msgid "You can easily add a variety of data from WordPress."
+msgstr ""
+
+#: framework/sample-config.php:1089
+msgid "Categories Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1098
+msgid "Categories Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1106
+msgid "Pages Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1115
+msgid "Pages Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1123
+msgid "Tags Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1132
+msgid "Tags Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1140
+msgid "Menus Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1149
+msgid "Menus Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1157
+msgid "Post Type Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1166
+msgid "Post Type Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1176
+msgid "Post Type Multi Select Option + Sortable"
+msgstr ""
+
+#: framework/sample-config.php:1177
+msgid "This field also has sortable enabled!"
+msgstr ""
+
+#: framework/sample-config.php:1184
+msgid "Posts Select Option2"
+msgstr ""
+
+#: framework/sample-config.php:1193
+msgid "Posts Multi Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1201
+msgid "User Role Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1210
+msgid "Capabilities Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1218
+msgid "Elusive Icons Select Option"
+msgstr ""
+
+#: framework/sample-config.php:1220
+msgid "Here's a list of all the elusive icons by name and icon."
+msgstr ""
+
+#: framework/sample-config.php:1274
+msgid "Additional Fields"
+msgstr ""
+
+#: framework/sample-config.php:1281
+msgid "Date Option"
+msgstr ""
+
+#: framework/sample-config.php:1292
+msgid "Button Set Option"
+msgstr ""
+
+#: framework/sample-config.php:1302
+msgid "This is the info field, if you want to break sections up."
+msgstr ""
+
+#: framework/sample-config.php:1308 framework/sample-config.php:1316
+msgid "This is a title."
+msgstr ""
+
+#: framework/sample-config.php:1309
+msgid "This is an info field with the warning style applied and a header."
+msgstr ""
+
+#: framework/sample-config.php:1317
+msgid ""
+"This is an info field with the success style applied, a header and an icon."
+msgstr ""
+
+#: framework/sample-config.php:1329
+msgid "Custom Field Callback"
+msgstr ""
+
+#: framework/sample-config.php:1330
+msgid "This is a completely unique field type"
+msgstr ""
+
+#: framework/sample-config.php:1331
+msgid ""
+"This is created with a callback function, so anything goes in this field. "
+"Make sure to define the function though."
+msgstr ""
+
+#: framework/sample-config.php:1337
+msgid "Group - BETA"
+msgstr ""
+
+#: framework/sample-config.php:1338
+msgid "Group any items together. Experimental. Use at your own risk."
+msgstr ""
+
+#: framework/sample-config.php:1339
+msgid "Group"
+msgstr ""
+
+#: framework/sample-config.php:1345
+msgid "testing fold with Group"
+msgstr ""
+
+#: framework/sample-config.php:1352
+msgid "Text"
+msgstr ""
+
+#: framework/sample-config.php:1353
+msgid "Here you put your subtitle"
+msgstr ""
+
+#: framework/sample-config.php:1359
+msgid "Testing select"
+msgstr ""
+
+#: framework/extensions/customizer/extension_customizer.php:435
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: framework/extensions/customizer/extension_customizer.php:436
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: framework/extensions/customizer/extension_customizer.php:437
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: framework/inc/tracking.php:63
+msgid "Help improve Our Panel"
+msgstr ""
+
+#: framework/inc/tracking.php:64
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test with."
+msgstr ""
+
+#: framework/inc/tracking.php:69
+msgid "Allow tracking"
+msgstr ""
+
+#: framework/inc/tracking.php:74
+msgid "Do not allow tracking"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:118
+#: framework/inc/fields/color/field_color.php:72
+#: framework/inc/fields/color_gradient/field_color_gradient.php:81
+#: framework/inc/fields/color_gradient/field_color_gradient.php:91
+#: framework/inc/fields/color_rgba/field_color_rgba.php:84
+msgid "Transparent"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:135
+#: framework/metaboxes/parallax-meta.php:81
+#: framework/metaboxes/welcome-meta.php:101
+msgid "Background Repeat"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:151
+msgid "Background Clip"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:167
+msgid "Background Origin"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:182
+msgid "Background Size"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:197
+msgid "Background Attachment"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:217
+#: framework/metaboxes/parallax-meta.php:90
+#: framework/metaboxes/welcome-meta.php:110
+msgid "Background Position"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:272
+#: framework/inc/fields/media/field_media.php:116
+msgid "No media selected"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:306
+#: framework/inc/fields/media/field_media.php:155
+#: framework/inc/fields/slides/field_slides.php:121
+#: framework/inc/fields/slides/field_slides.php:190
+msgid "Upload"
+msgstr ""
+
+#: framework/inc/fields/background/field_background.php:312
+#: framework/inc/fields/media/field_media.php:161
+#: framework/inc/fields/multi_text/field_multi_text.php:75
+#: framework/inc/fields/multi_text/field_multi_text.php:79
+#: framework/inc/fields/multi_text/field_multi_text.php:82
+#: framework/inc/fields/slides/field_slides.php:128
+#: framework/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:112
+#: framework/inc/fields/spacing/field_spacing.php:172
+msgid "All"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:125
+#: framework/inc/fields/spacing/field_spacing.php:196
+msgid "Top"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:132
+#: framework/inc/fields/spacing/field_spacing.php:203
+msgid "Right"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:139
+#: framework/inc/fields/spacing/field_spacing.php:210
+msgid "Bottom"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:146
+#: framework/inc/fields/spacing/field_spacing.php:217
+msgid "Left"
+msgstr ""
+
+#: framework/inc/fields/border/field_border.php:162
+msgid "Border style"
+msgstr ""
+
+#: framework/inc/fields/color_gradient/field_color_gradient.php:73
+msgid "From "
+msgstr ""
+
+#: framework/inc/fields/color_gradient/field_color_gradient.php:84
+msgid "To "
+msgstr ""
+
+#: framework/inc/fields/dimensions/field_dimensions.php:139
+msgid "Width"
+msgstr ""
+
+#: framework/inc/fields/dimensions/field_dimensions.php:155
+msgid "height"
+msgstr ""
+
+#: framework/inc/fields/dimensions/field_dimensions.php:168
+#: framework/inc/fields/dimensions/field_dimensions.php:169
+#: framework/inc/fields/spacing/field_spacing.php:227
+#: framework/inc/fields/spacing/field_spacing.php:228
+msgid "Units"
+msgstr ""
+
+#: framework/inc/fields/gallery/field_gallery.php:78
+msgid "Clear Gallery"
+msgstr ""
+
+#: framework/inc/fields/group/field_group.php:82
+msgid "New "
+msgstr ""
+
+#: framework/inc/fields/group/field_group.php:125
+msgid "Delete"
+msgstr ""
+
+#: framework/inc/fields/group/field_group.php:129
+msgid "Add"
+msgstr ""
+
+#: framework/inc/fields/link_color/field_link_color.php:86
+msgid "Regular"
+msgstr ""
+
+#: framework/inc/fields/link_color/field_link_color.php:90
+msgid "Hover"
+msgstr ""
+
+#: framework/inc/fields/link_color/field_link_color.php:94
+msgid "Visited"
+msgstr ""
+
+#: framework/inc/fields/link_color/field_link_color.php:98
+msgid "Active"
+msgstr ""
+
+#: framework/inc/fields/multi_text/field_multi_text.php:65
+msgid "Add More"
+msgstr ""
+
+#: framework/inc/fields/password/field_password.php:55
+msgid "Password"
+msgstr ""
+
+#: framework/inc/fields/password/field_password.php:56
+msgid "Username"
+msgstr ""
+
+#: framework/inc/fields/select/field_select.php:79
+#: framework/inc/fields/select_image/field_select_image.php:58
+msgid "Select an item"
+msgstr ""
+
+#: framework/inc/fields/select/field_select.php:120
+#: framework/inc/fields/select_image/field_select_image.php:133
+msgid "No items of this type were found."
+msgstr ""
+
+#: framework/inc/fields/slides/field_slides.php:133
+#: framework/inc/fields/slides/field_slides.php:197
+msgid "Title"
+msgstr ""
+
+#: framework/inc/fields/slides/field_slides.php:135
+#: framework/inc/fields/slides/field_slides.php:199
+msgid "Description"
+msgstr ""
+
+#: framework/inc/fields/slides/field_slides.php:137
+#: framework/inc/fields/slides/field_slides.php:201
+msgid "URL"
+msgstr ""
+
+#: framework/inc/fields/slides/field_slides.php:168
+#: framework/inc/fields/slides/field_slides.php:231
+msgid "Delete Slide"
+msgstr ""
+
+#: framework/inc/fields/slides/field_slides.php:234
+msgid "Add Slide"
+msgstr ""
+
+#: framework/inc/fields/switch/field_switch.php:42
+msgid "On"
+msgstr ""
+
+#: framework/inc/fields/switch/field_switch.php:49
+msgid "Off"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:158
+msgid "Font family"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:185
+msgid "Standard Fonts"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:193
+msgid "Custom WebFonts"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:228
+#: framework/inc/fields/typography/field_typography.php:232
+msgid "Font style"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:232
+msgid "Style"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:260
+msgid "Font subsets"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:261
+msgid "Subsets"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:261
+msgid "Font script"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:277
+msgid "Size"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:285
+msgid "Height"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:293
+msgid "Word Spacing"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:301
+msgid "Letter Spacing"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:309
+#: framework/inc/fields/typography/field_typography.php:310
+msgid "Text Align"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:337
+msgid "Backup Font Family"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:357
+msgid "Font color"
+msgstr ""
+
+#: framework/inc/fields/typography/field_typography.php:695
+msgid "Google Webfonts"
+msgstr ""
+
+#: framework/inc/validation/color/validation_color.php:15
+#: framework/inc/validation/colorrgba/validation_colorrgba.php:15
+#: framework/inc/validation/color_rgba/validation_color_rgba.php:15
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: framework/inc/validation/comma_numeric/validation_comma_numeric.php:15
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: framework/inc/validation/date/validation_date.php:15
+msgid "This field must be a valid date."
+msgstr ""
+
+#: framework/inc/validation/email/validation_email.php:15
+#: framework/inc/validation/email_not_empty/validation_email_not_empty.php:15
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: framework/inc/validation/not_empty/validation_not_empty.php:15
+msgid "This field cannot be empty. Please provide a value."
+msgstr ""
+
+#: framework/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: framework/inc/validation/no_special_chars/validation_no_special_chars.php:15
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: framework/inc/validation/numeric/validation_numeric.php:15
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: framework/inc/validation/url/validation_url.php:15
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
+#: framework/metaboxes/about-meta.php:3
+msgid "Show the team slider at the bottom of the about us page?"
+msgstr ""
+
+#: framework/metaboxes/about-meta.php:7
+#: framework/metaboxes/parallax-meta.php:50
+#: framework/metaboxes/parallax-meta.php:58
+#: framework/metaboxes/welcome-meta.php:88
+#: framework/metaboxes/welcome-meta.php:96
+msgid "Yes"
+msgstr ""
+
+#: framework/metaboxes/about-meta.php:8
+#: framework/metaboxes/parallax-meta.php:49
+#: framework/metaboxes/parallax-meta.php:59
+#: framework/metaboxes/welcome-meta.php:87
+#: framework/metaboxes/welcome-meta.php:97
+msgid "No"
+msgstr ""
+
+#: framework/metaboxes/about-meta.php:11 framework/metaboxes/about-meta.php:13
+msgid "Manage Team"
+msgstr ""
+
+#: framework/metaboxes/about-meta.php:13
+msgid "The team slider is managed from here "
+msgstr ""
+
+#: framework/metaboxes/about-spec.php:6
+msgid "About Us Options"
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:3
+msgid "Section Button"
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:5
+msgid ""
+"If you would like to include a button at the bottom of this section then "
+"enter the options here."
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:7
+msgid "Link to:"
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:8
+msgid "You can enter a URL or an id of a section on your page to scroll to it."
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:14
+msgid "Button text:"
+msgstr ""
+
+#: framework/metaboxes/button-meta.php:20
+msgid "Button style:"
+msgstr ""
+
+#: framework/metaboxes/button-spec.php:6
+msgid "Button Options"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:2
+msgid "Audio / Video"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:3
+msgid ""
+"Would you like an audio or video file instead of the featured image? Place "
+"the URL here and it will be displayed instead of a featured image."
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:5
+msgid "Video or Audio URL (Works on audio, video and standard post types)"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:14
+msgid "Gallery"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:16
+msgid ""
+"For gallery post types you can add image here. They will appear above the "
+"post where the featured image would usually be."
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:22
+#: framework/metaboxes/parallax-meta.php:37
+#: framework/metaboxes/portfolio-meta.php:9
+#: framework/metaboxes/portfolio-meta.php:21
+#: framework/metaboxes/welcome-meta.php:11
+#: framework/metaboxes/welcome-meta.php:43
+msgid "Select This Image"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:25
+#: framework/metaboxes/parallax-meta.php:41
+#: framework/metaboxes/portfolio-meta.php:13
+#: framework/metaboxes/portfolio-meta.php:25
+#: framework/metaboxes/welcome-meta.php:15
+#: framework/metaboxes/welcome-meta.php:47
+msgid "Select an image"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:27
+msgid "Remove Image"
+msgstr ""
+
+#: framework/metaboxes/media-meta.php:32
+msgid "Add Image"
+msgstr ""
+
+#: framework/metaboxes/media-spec.php:6
+msgid "Audio / Video / Gallery Options"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:3
+msgid "Parallax Section Options"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:4
+msgid ""
+"You can choose to add a section after each page. Set up these sections here."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:6
+msgid "Content"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:18
+#: framework/metaboxes/welcome-meta.php:51
+msgid "Foreground Color"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:22
+#: framework/metaboxes/welcome-meta.php:55
+msgid "Enter a hex code, including # sign"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:25
+#: framework/metaboxes/welcome-meta.php:58
+msgid "Background Color"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:29
+#: framework/metaboxes/welcome-meta.php:62
+msgid "Used in stead of an image. Enter a hex code, including # sign."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:32
+msgid "Background Image"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:45
+#: framework/metaboxes/welcome-meta.php:83
+msgid "Enable parallax effect"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:52
+#: framework/metaboxes/welcome-meta.php:90
+msgid ""
+"Works best if the background is set to cover and background position is "
+"\"Center Center\"."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:54
+msgid "Enable fade effect"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:61
+#: framework/metaboxes/welcome-meta.php:99
+msgid ""
+"This makes the content in parallax sections fade out as they go out of view. "
+"Enabled by default."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:63
+#: framework/metaboxes/welcome-meta.php:65
+msgid "Background attachment"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:67
+#: framework/metaboxes/welcome-meta.php:69
+msgid "Scroll"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:68
+#: framework/metaboxes/welcome-meta.php:70
+msgid "Fixed"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:70
+#: framework/metaboxes/welcome-meta.php:72
+msgid ""
+"If you have an image as the background you can choose to fix the position of "
+"the image. Only works if parallax scrolling is disabled."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:72
+#: framework/metaboxes/welcome-meta.php:74
+msgid "Background size"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:76
+#: framework/metaboxes/welcome-meta.php:78
+msgid "Auto"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:77
+#: framework/metaboxes/welcome-meta.php:79
+msgid "Cover"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:79
+#: framework/metaboxes/welcome-meta.php:81
+msgid "If cover is set, the image fills the container no matter how big it is."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:85
+#: framework/metaboxes/welcome-meta.php:105
+msgid "Repeat"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:86
+#: framework/metaboxes/welcome-meta.php:106
+msgid "No-Repeat"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:88
+#: framework/metaboxes/welcome-meta.php:108
+msgid "Choose to repeat the background or show it once."
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:94
+#: framework/metaboxes/welcome-meta.php:114
+msgid "Center Center"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:95
+#: framework/metaboxes/welcome-meta.php:115
+msgid "Center Top"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:96
+#: framework/metaboxes/welcome-meta.php:116
+msgid "Center Bottom"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:97
+#: framework/metaboxes/welcome-meta.php:117
+msgid "Left Bottom"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:98
+#: framework/metaboxes/welcome-meta.php:118
+msgid "Left Top"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:99
+#: framework/metaboxes/welcome-meta.php:119
+msgid "Right Top"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:100
+#: framework/metaboxes/welcome-meta.php:120
+msgid "Right Bottom"
+msgstr ""
+
+#: framework/metaboxes/parallax-meta.php:102
+#: framework/metaboxes/welcome-meta.php:122
+msgid ""
+"Choose some basic positioning if using a background image. If parallax is "
+"enabled set to \"Center Center\" becuase the parallax animation starts from "
+"this position."
+msgstr ""
+
+#: framework/metaboxes/parallax-spec.php:6
+msgid "Parallax Options"
+msgstr ""
+
+#: framework/metaboxes/portfolio-meta.php:3
+msgid "Preview image"
+msgstr ""
+
+#: framework/metaboxes/portfolio-meta.php:17
+msgid "Main image"
+msgstr ""
+
+#: framework/metaboxes/portfolio-meta.php:30
+msgid "Link location:"
+msgstr ""
+
+#: framework/metaboxes/portfolio-meta.php:31
+msgid ""
+"If you would like to provide a link to the project below the description, "
+"enter it here."
+msgstr ""
+
+#: framework/metaboxes/portfolio-spec.php:6
+msgid "Portfolio Options"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:5
+msgid "Welcome Content"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:7
+msgid "Image"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:19
+msgid "Heading"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:23
+msgid "Enter some text that will be the main heading for the page."
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:26
+msgid "Tagline"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:30
+msgid "If you would like a tagline, enter it here."
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:35
+msgid "Background Options"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:37
+msgid ""
+"Upload an awesome image here to use as the background for the welcome "
+"screen. Or enter a URL. You can also use Wordpress default custom header but "
+"this setting will override it."
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:39
+msgid "Background image"
+msgstr ""
+
+#: framework/metaboxes/welcome-meta.php:92
+msgid "Enable fading effect"
+msgstr ""
+
+#: framework/metaboxes/welcome-spec.php:6
+msgid "Welcome Page Options"
+msgstr ""
+
+#: framework/metaboxes/work-meta.php:4
+msgid "The portfolio is managed from the portfolio page."
+msgstr ""
+
+#: framework/metaboxes/work-meta.php:4 framework/metaboxes/work-spec.php:6
+msgid "Manage Portfolio"
+msgstr ""
+
+#: framework/widgets/address-widget.php:12
+msgid "An address widget that displays address with microformat markup "
+msgstr ""
+
+#: framework/widgets/address-widget.php:14
+msgid "themeora Address Widget"
+msgstr ""
+
+#: framework/widgets/address-widget.php:85
+msgid "Format:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:86
+msgid "Should the address be on 1 line or each part on a new line?"
+msgstr ""
+
+#: framework/widgets/address-widget.php:88
+msgid "New Line"
+msgstr ""
+
+#: framework/widgets/address-widget.php:89
+msgid "Inline"
+msgstr ""
+
+#: framework/widgets/address-widget.php:94 framework/widgets/map-widget.php:53
+#: framework/widgets/search-widget.php:36
+#: framework/widgets/social-widget.php:92
+#: framework/widgets/video-widget.php:51
+msgid "Title:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:99
+msgid "Company:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:104
+msgid "Street Address:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:109
+msgid "Locality:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:114
+msgid "Region:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:119
+msgid "Postcode:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:124
+msgid "Country:"
+msgstr ""
+
+#: framework/widgets/address-widget.php:129
+msgid "Contact number:"
+msgstr ""
+
+#: framework/widgets/map-widget.php:12
+msgid "A map widget that takes a lat long and shows a Google map "
+msgstr ""
+
+#: framework/widgets/map-widget.php:14
+msgid "themeora Map Widget"
+msgstr ""
+
+#: framework/widgets/map-widget.php:50
+msgid ""
+"Find the latitude and longitude for your address and enter it here. Get help "
+"finding a latitude and longitude here - <a href=\"http://itouchmap.com/"
+"latlong.html\" target=\"_blank\">Find Lat / Long</a>"
+msgstr ""
+
+#: framework/widgets/map-widget.php:58
+msgid "Latitude:"
+msgstr ""
+
+#: framework/widgets/map-widget.php:63
+msgid "Longitude:"
+msgstr ""
+
+#: framework/widgets/search-widget.php:12
+msgid "An improved search widget"
+msgstr ""
+
+#: framework/widgets/search-widget.php:14
+msgid "themeora Search Widget"
+msgstr ""
+
+#: framework/widgets/social-widget.php:12
+msgid ""
+"An widget that allows you to set some popular social profiles up using fonts "
+"awesome icons"
+msgstr ""
+
+#: framework/widgets/social-widget.php:14
+msgid "themeora Social Widget"
+msgstr ""
+
+#: framework/widgets/social-widget.php:35
+msgid "Follow on Twitter"
+msgstr ""
+
+#: framework/widgets/social-widget.php:37
+msgid "Follow on Google +"
+msgstr ""
+
+#: framework/widgets/social-widget.php:39
+msgid "Follow on Facebook"
+msgstr ""
+
+#: framework/widgets/social-widget.php:41
+msgid "Follow on Dribble"
+msgstr ""
+
+#: framework/widgets/social-widget.php:64
+msgid "right"
+msgstr ""
+
+#: framework/widgets/social-widget.php:74
+msgid "Alignment:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:75
+msgid "Should the the buttons be aligned left, right or centered?"
+msgstr ""
+
+#: framework/widgets/social-widget.php:83
+msgid "Display:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:84
+msgid "Should the the buttons be inline, or full width?"
+msgstr ""
+
+#: framework/widgets/social-widget.php:97
+msgid "Twitter Profile:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:98
+#: framework/widgets/social-widget.php:103
+#: framework/widgets/social-widget.php:108
+#: framework/widgets/social-widget.php:113
+msgid "Enter URL:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:102
+msgid "Facebook Profile:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:107
+msgid "Google Plus Profile:"
+msgstr ""
+
+#: framework/widgets/social-widget.php:112
+msgid "Dribbble Profile:"
+msgstr ""
+
+#: framework/widgets/video-widget.php:12
+msgid "A simple video widget that makes it easy to add responsive videos "
+msgstr ""
+
+#: framework/widgets/video-widget.php:14
+msgid "themeora Video Widget"
+msgstr ""
+
+#: framework/widgets/video-widget.php:48
+msgid "Enter a title (if required) and embed URL of a video here:"
+msgstr ""
+
+#: framework/widgets/video-widget.php:56
+msgid "Video Embed Code:"
+msgstr ""
+
+#: includes/contact-form.php:7
+msgid "Full name"
+msgstr ""
+
+#: includes/contact-form.php:8
+msgid "Your full name"
+msgstr ""
+
+#: includes/contact-form.php:15 includes/contact-form.php:16
+msgid "Contact number"
+msgstr ""
+
+#: includes/contact-form.php:21
+msgid "Message"
+msgstr ""
+
+#: includes/contact-form.php:22
+msgid "Your message"
+msgstr ""
+
+#: includes/contact-form.php:24
+msgid "Send"
+msgstr ""
+
+#: includes/functions-templates.php:11
+msgid "Sticky"
+msgstr ""
+
+#: includes/functions-templates.php:15
+msgid "Posted on"
+msgstr ""
+
+#: includes/functions-templates.php:16
+msgid "by"
+msgstr ""
+
+#: includes/functions-templates.php:19
+msgid "in"
+msgstr ""
+
+#: includes/functions-templates.php:40
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: includes/functions-templates.php:91
+msgid "Tagged As"
+msgstr ""
+
+#: includes/functions-templates.php:107
+msgid "Author"
+msgstr ""
+
+#: includes/functions-templates.php:107
+msgid "Posts by "
+msgstr ""
+
+#: includes/functions-templates.php:112
+msgid "has"
+msgstr ""
+
+#: includes/functions-templates.php:115
+msgid "article"
+msgstr ""
+
+#: includes/functions-templates.php:115
+msgid "articles"
+msgstr ""
+
+#: includes/functions-templates.php:137
+msgid "Posts navigation"
+msgstr ""
+
+#: includes/functions-templates.php:141
+msgid "Newer posts <i class=\"fa fa-arrow-circle-left\"></i>"
+msgstr ""
+
+#: includes/functions-templates.php:145
+msgid "<i class=\"fa fa-arrow-circle-right\"></i> Older posts"
+msgstr ""
+
+#: includes/functions-templates.php:265
+msgid "...read more"
+msgstr ""
+
+#: includes/functions-templates.php:308
+msgid "No posts found"
+msgstr ""
+
+#: includes/functions-templates.php:357
+msgid "Please enter a valid name"
+msgstr ""
+
+#: includes/functions-templates.php:360
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: includes/functions-templates.php:363
+msgid "Please enter a valid contact number"
+msgstr ""
+
+#: includes/functions-templates.php:366
+msgid "Please enter a mesage"
+msgstr ""
+
+#: includes/functions-templates.php:372
+msgid " "
+msgstr ""
+
+#: includes/functions-templates.php:373
+msgid "The message is: "
+msgstr ""
+
+#: includes/functions-templates.php:374
+msgid "Name: "
+msgstr ""
+
+#: includes/functions-templates.php:375
+msgid "Email: "
+msgstr ""
+
+#: includes/functions-templates.php:376
+msgid "Contact number: "
+msgstr ""
+
+#: includes/functions-templates.php:377
+msgid "Message: "
+msgstr ""
+
+#: includes/functions-templates.php:382
+msgid "Thankyou for getting in touch"
+msgstr ""
+
+#: includes/functions-templates.php:385
+msgid "Oops, something went wrong sending the message."
+msgstr ""
+
+#: includes/primary-portfolio.php:48
+msgid "Launch Project"
+msgstr ""
+
+#: includes/primary-portfolio.php:50
+msgid "Close"
+msgstr ""
