@@ -8,6 +8,16 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(8/24/2014) - 1.1.2
+[+] Added support for WooCommerce
+[+] Added filter to output of fonts in css call
+[*] Changed 404 layout to match other pages
+[+] Added filters to 404 title and content
+[!] Fixed bug when navigation in sidebar causing it to reach outside container
+[!] Fix text inputs and textareas on mobile
+[*] Reduced navigation dropdown hoverintent value
+[*] Removed center nav and center header options and replaced with alignment dropdowns
+
 ---- 
 
 (8/7/2014) - 1.1.1

@@ -95,14 +95,6 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	// $wp_customize->add_panel( 'colors_panel', array(
-		// 'priority'       => 10,
-		// 'capability'     => 'edit_theme_options',
-		// 'theme_supports' => '',
-		// 'title'          => __('Colors','generate'),
-		// 'description'    => '',
-	// ) );
-	
 	$wp_customize->add_section(
 		// ID
 		'body_section',
@@ -111,7 +103,6 @@ function generate_customize_register( $wp_customize ) {
 			'title' => __( 'Base Colors', 'generate' ),
 			'capability' => 'edit_theme_options',
 			'priority' => 40,
-			//'panel' => 'colors_panel'
 		)
 	);
 	
@@ -257,21 +248,34 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 
-		'generate_settings[center_header]', 
+	// Add navigation setting
+	$wp_customize->add_setting(
+		// ID
+		'generate_settings[header_alignment_setting]',
+		// Arguments array
 		array(
-			'default' => $defaults['center_header'],
+			'default' => $defaults['header_alignment_setting'],
 			'type' => 'option',
-			'sanitize_callback' => 'generate_sanitize_checkbox'
+			'sanitize_callback' => 'generate_sanitize_alignment'
 		)
 	);
 	
+	// Add navigation control
 	$wp_customize->add_control(
-		'generate_settings[center_header]',
+		// ID
+		'header_alignment_control',
+		// Arguments array
 		array(
-			'type' => 'checkbox',
-			'label' => __('Center header','generate'),
+			'type' => 'select',
+			'label' => __( 'Header Alignment', 'generate' ),
 			'section' => 'layout_section',
+			'choices' => array(
+				'left' => __( 'Left', 'generate' ),
+				'center' => __( 'Center', 'generate' ),
+				'right' => __( 'Right', 'generate' )
+			),
+			// This last one must match setting ID from above
+			'settings' => 'generate_settings[header_alignment_setting]',
 			'priority' => 10
 		)
 	);
@@ -342,21 +346,34 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 
-		'generate_settings[center_nav]', 
+	// Add navigation setting
+	$wp_customize->add_setting(
+		// ID
+		'generate_settings[nav_alignment_setting]',
+		// Arguments array
 		array(
-			'default' => $defaults['center_nav'],
+			'default' => $defaults['nav_alignment_setting'],
 			'type' => 'option',
-			'sanitize_callback' => 'generate_sanitize_checkbox'
+			'sanitize_callback' => 'generate_sanitize_alignment'
 		)
 	);
 	
+	// Add navigation control
 	$wp_customize->add_control(
-		'generate_settings[center_nav]',
+		// ID
+		'nav_alignment_control',
+		// Arguments array
 		array(
-			'type' => 'checkbox',
-			'label' => __('Center navigation','generate'),
+			'type' => 'select',
+			'label' => __( 'Navigation Alignment', 'generate' ),
 			'section' => 'layout_section',
+			'choices' => array(
+				'left' => __( 'Left', 'generate' ),
+				'center' => __( 'Center', 'generate' ),
+				'right' => __( 'Right', 'generate' )
+			),
+			// This last one must match setting ID from above
+			'settings' => 'generate_settings[nav_alignment_setting]',
 			'priority' => 22
 		)
 	);

@@ -3,8 +3,8 @@ Theme Name: GeneratePress
 Theme URI: http://generatepress.com
 Author: Thomas Usborne
 Author URI: http://edge22.com
-Description: GeneratePress is a lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website right before their eyes. Adjusting the layout and colors of your website couldn't be easier, simply use our options in the Customize section of the Dashboard and watch the changes happen. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English and German! See more at http://generatepress.com
-Version: 1.1.1
+Description: GeneratePress is a lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website right before their eyes. Adjusting the layout and colors of your website couldn't be easier, simply use our options in the Customize section of the Dashboard and watch the changes happen. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English and German/Deutsch! See more at http://generatepress.com
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: generate
@@ -119,6 +119,10 @@ textarea {
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
+	-webkit-transition:all 0.1s ease-in-out;
+	-moz-transition:all 0.1s ease-in-out;
+	-o-transition:all 0.1s ease-in-out;
+	transition:all 0.1s ease-in-out;
 }
 
 /* Headings */
@@ -292,6 +296,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
 textarea {
 	background: #FAFAFA;
 	color: #666;
@@ -301,11 +306,13 @@ textarea {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	max-width: 100%;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
+input[type="tel"]:focus,
 input[type="search"]:focus,
 textarea:focus {
 	color: #111;
@@ -964,6 +971,11 @@ h4, h5, h6 {
 .sf-menu.sf-arrows ul .sfHover > .sf-with-ul:after {
 	border-left-color:  inherit;
 	border-top-color: transparent;
+}
+
+.sidebar .grid-container {
+	max-width:100%;
+	width:100%;
 }
 
 /* Footer */

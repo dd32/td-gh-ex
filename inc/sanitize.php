@@ -55,6 +55,24 @@ function generate_sanitize_nav_layout( $input ) {
 }
 
 /**
+ * Sanitize navigation alignment
+ * @since 1.1.1
+ */
+function generate_sanitize_alignment( $input ) {
+    $valid = array(
+        'left' => __( 'Left', 'generate' ),
+		'center' => __( 'Center', 'generate' ),
+		'right' => __( 'Right', 'generate' )
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'left';
+    }
+}
+
+/**
  * Sanitize navigation position
  * @since 1.0.8
  */

@@ -4,7 +4,7 @@
  * The functions below are the same throughout all addons
  * @since 0.1
  */
- 
+
 if ( ! function_exists( 'generate_verify_email' ) ) :
 	add_action('generate_license_key_items','generate_verify_email', 0);
 	function generate_verify_email()
@@ -225,7 +225,8 @@ if ( !function_exists( 'generate_deactivate_customer_email' ) ) :
 						$api_params = array( 
 							'edd_action' => 'deactivate_license', 
 							'license' => $key['license'], 
-							'item_name' => urlencode( $key['name'] ) 
+							'item_name' => urlencode( $key['name'] ),
+							'url' => home_url()
 						);
 
 						$license_response = wp_remote_get( add_query_arg( $api_params, 'http://generatepress.com' ), array( 'timeout' => 60, 'sslverify' => false ) );
@@ -301,7 +302,8 @@ if ( !function_exists( 'generate_activate_all' ) ) :
 						$api_params = array( 
 							'edd_action' => 'activate_license', 
 							'license' => $key['license'], 
-							'item_name' => urlencode( $key['name'] ) 
+							'item_name' => urlencode( $key['name'] ),
+							'url' => home_url()
 						);
 
 						$license_response = wp_remote_get( add_query_arg( $api_params, 'http://generatepress.com' ), array( 'timeout' => 60, 'sslverify' => false ) );
@@ -383,7 +385,8 @@ if ( !function_exists( 'generate_check_all_addons' ) ) :
 					$api_params = array( 
 						'edd_action' => 'check_license', 
 						'license' => $key['license'], 
-						'item_name' => urlencode( $key['name'] ) 
+						'item_name' => urlencode( $key['name'] ),
+						'url' => home_url()
 					);
 
 					$license_response = wp_remote_get( add_query_arg( $api_params, 'http://generatepress.com' ), array( 'timeout' => 60, 'sslverify' => false ) );

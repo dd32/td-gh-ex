@@ -25,7 +25,7 @@ if ( !function_exists('generate_spacing_get_defaults') ) :
 			'header_bottom' => '40',
 			'header_left' => '40',
 			'menu_item' => '20',
-			'menu_item_height' => '50',
+			'menu_item_height' => '60',
 			'sub_menu_item_height' => '10',
 			'content_top' => '40',
 			'content_right' => '40',

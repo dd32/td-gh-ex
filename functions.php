@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.1.1');
+define( 'GENERATE_VERSION', '1.1.2');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -58,10 +58,16 @@ function generate_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
 	/**
+	 * Enable support WooCommerce
+	 */
+	add_theme_support( 'woocommerce' );
+	
+	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 */
 	if ( ! isset( $content_width ) )
 		$content_width = 1200; /* pixels */
+
 
 }
 endif; // generate_setup
@@ -77,8 +83,8 @@ function generate_get_defaults()
 		'logo' => '',
 		'container_width' => '1100',
 		'header_layout_setting' => 'fluid-header',
-		'center_header' => '',
-		'center_nav' => '',
+		'nav_alignment_setting' => 'left',
+		'header_alignment_setting' => 'left',
 		'nav_layout_setting' => 'fluid-nav',
 		'nav_position_setting' => 'nav-below-header',
 		'content_layout_setting' => 'separate-containers',
@@ -365,13 +371,13 @@ function generate_base_css()
 		
 		// Header 
 		'.site-header' => array(
-			'text-align' => ( !empty( $generate_settings['center_header'] ) ) ? 'center' : null
+			'text-align' => ( !empty( $generate_settings['header_alignment_setting'] ) ) ? $generate_settings['header_alignment_setting'] : null
 		),
 		
 		// Navigation 
 		'.nav-below-header .main-navigation,
 		.nav-above-header .main-navigation' => array(
-			'text-align' => ( !empty( $generate_settings['center_nav'] ) ) ? 'center' : null
+			'text-align' => ( !empty( $generate_settings['nav_alignment_setting'] ) ) ? $generate_settings['nav_alignment_setting'] : null
 		),
 		
 		// Navigation 
@@ -379,11 +385,11 @@ function generate_base_css()
 		.nav-below-header .main-navigation .sf-menu > li,
 		.nav-above-header .main-navigation .menu > li, 
 		.nav-above-header .main-navigation .sf-menu > li' => array(
-			'float' => ( !empty( $generate_settings['center_nav'] ) ) ? 'none' : null,
-			'display' => ( !empty( $generate_settings['center_nav'] ) ) ? 'inline-block' : null,
-			'margin-right' => ( !empty( $generate_settings['center_nav'] ) ) ? '-4px' : null,
-			'*display' => ( !empty( $generate_settings['center_nav'] ) ) ? 'inline' : null,
-			'*zoom' => ( !empty( $generate_settings['center_nav'] ) ) ? '1' : null,
+			'float' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'none' : null,
+			'display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline-block' : null,
+			'margin-right' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '-4px' : null,
+			'*display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline' : null,
+			'*zoom' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '1' : null,
 		),
 		
 	);
@@ -476,10 +482,27 @@ function generate_update_db_entries()
 {
 	$generate_settings = get_option('generate_settings');
 	
+	
 	//Grab options
 	$generate_hide_title = get_theme_mod( 'generate_title' );
 	$generate_hide_tagline = get_theme_mod( 'generate_tagline' );
 	$generate_logo = get_theme_mod( 'generate_logo' );
+	
+	if ( !empty( $generate_settings['center_nav'] ) ) :
+		$generate_new_alignment = array();
+		$generate_new_alignment['nav_alignment_setting'] = 'center';
+		$generate_new_alignment['center_nav'] = '';
+		$generate_new_alignment_settings = wp_parse_args( $generate_new_alignment, $generate_settings );
+		update_option( 'generate_settings', $generate_new_alignment_settings );
+	endif;
+	
+	if ( !empty( $generate_settings['center_header'] ) ) :
+		$generate_new_alignment = array();
+		$generate_new_alignment['header_alignment_setting'] = 'center';
+		$generate_new_alignment['center_header'] = '';
+		$generate_new_alignment_settings = wp_parse_args( $generate_new_alignment, $generate_settings );
+		update_option( 'generate_settings', $generate_new_alignment_settings );
+	endif;
 
 	if ( !empty( $generate_hide_title ) || !empty( $generate_hide_tagline ) || !empty( $generate_logo ) ) {
 	

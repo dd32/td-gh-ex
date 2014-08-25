@@ -199,26 +199,25 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 	 * @since 0.1
 	 */
 	add_action('wp_head','generate_display_google_fonts', 0);
-	function generate_display_google_fonts() {
+	function generate_display_google_fonts($google_fonts) {
 		
 		if ( is_admin() )
 			return;
 			
 		$not_google = array(
-			"inherit",
-			"Arial,+Helvetica,+sans-serif",
-			"Verdana,+Geneva,+sans-serif",
-			"Tahoma,+Geneva,+sans-serif",
-			"Georgia,+Times New Roman,+Times,+serif"
+			'inherit',
+			'Arial,+Helvetica,+sans-serif',
+			'Verdana,+Geneva,+sans-serif',
+			'Tahoma,+Geneva,+sans-serif',
+			'Georgia,+Times New Roman,+Times,+serif',
+			'Trebuchet MS,+Helvetica,+sans-serif'
 		);
 
-		// Force a check to see if the settings exist - if not, populate them.
-		$generate_settings = get_option( 'generate_settings' );
-		if ( !empty( $generate_settings['font_body'] ) ) :
-			$generate_settings = get_option( 'generate_settings', generate_get_default_fonts() );
-		else :
-			$generate_settings = generate_get_default_fonts();
-		endif;
+
+		$generate_settings = wp_parse_args( 
+			get_option( 'generate_settings', array() ), 
+			generate_get_default_fonts() 
+		);
 		
 		$google_fonts = array();
 		if ( !empty($generate_settings) ) :
@@ -234,6 +233,8 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 
 		$google_fonts = array_diff($google_fonts, $not_google);
 		$google_fonts = implode('|', $google_fonts);
+		
+		$google_fonts = apply_filters( 'generate_typography_google_fonts', $google_fonts );
 		
 		if ($google_fonts) { 
 			echo '<link rel="stylesheet" id="generate-fonts" type="text/css" href="//fonts.googleapis.com/css?family=' . $google_fonts . '" />' . "\n";

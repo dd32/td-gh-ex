@@ -121,16 +121,16 @@ function generate_mobile_navigation_position()
 		jQuery(document).ready(function($) {
 			var $window = $(window);
 
-			function checkWidth() {
+			function generateCheckWidth() {
 				var windowsize = $window.width();
-				if (windowsize < 767) {
-					$('.main-navigation').insertBefore('.container');
+				if (windowsize < 760) {
+					$('.main-navigation').insertAfter('.site-header');
 				} else {
 					$('.main-navigation').appendTo('.gen-sidebar-nav');
 				}
 			}
-			checkWidth();
-			$(window).resize(checkWidth);
+			generateCheckWidth();
+			$(window).resize(generateCheckWidth);
 		});
 	</script>
 	<?php

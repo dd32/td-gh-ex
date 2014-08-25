@@ -10,19 +10,20 @@ get_header(); ?>
 
 	<div id="primary" <?php generate_content_class(); ?>>
 		<main id="main" <?php generate_main_class(); ?> itemprop="mainContentOfPage" role="main">
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'generate' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<div class="inside-article">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'generate' ); ?></p>
-
-						<?php get_search_form(); ?>
-					</div><!-- .inside-article -->
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+			<div class="inside-article">
+				<?php do_action( 'generate_before_content'); ?>
+				<header class="entry-header">
+					<h1 class="entry-title" itemprop="headline"><?php echo apply_filters( 'generate_404_title', __( 'Oops! That page can&rsquo;t be found.', 'generate' ) ); ?></h1>
+				</header><!-- .entry-header -->
+				<?php do_action( 'generate_after_entry_header'); ?>
+				<div class="entry-content" itemprop="text">
+					<p>
+						<?php echo apply_filters( 'generate_404_text', __( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'generate' ) ); ?>
+					</p>
+					<?php get_search_form(); ?>
+				</div><!-- .entry-content -->
+				<?php do_action( 'generate_after_content'); ?>
+			</div><!-- .inside-article -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
