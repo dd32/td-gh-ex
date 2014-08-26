@@ -1,6 +1,6 @@
 <?php
 
-// register and enqueue all of the scripts used by Aside
+// register and enqueue all of the scripts used by Tracks
 function ct_tracks_load_javascript_files() {
 
     wp_register_style( 'ct-tracks-google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
@@ -25,7 +25,9 @@ function ct_tracks_load_javascript_files() {
         }
     }
     // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
-    if( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
+    if( is_singular() && comments_open() && get_option('thread_comments') ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
 
 add_action('wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
@@ -37,26 +39,24 @@ function ct_tracks_enqueue_admin_styles($hook){
     if ( 'appearance_page_tracks-options' == $hook) {
         wp_enqueue_style('style-admin', get_template_directory_uri() . '/style-admin.css');
     }
-}
-add_action('admin_enqueue_scripts',	'ct_tracks_enqueue_admin_styles' );
-
-function ct_tracks_enqueue_profile_image_uploader($hook) {
-
     // if is user profile page
     if('profile.php' == $hook || 'user-edit.php' == $hook){
 
-        // Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
+        // Enqueues all scripts, styles, settings, and templates necessary to use media JavaScript APIs.
         wp_enqueue_media();
 
         // enqueue the JS needed to utilize media uploader on profile image upload
-        wp_enqueue_script('ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js');
+        wp_enqueue_script('ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload');
     }
 }
-add_action('admin_enqueue_scripts', 'ct_tracks_enqueue_profile_image_uploader');
+add_action('admin_enqueue_scripts',	'ct_tracks_enqueue_admin_styles' );
 
-/* Load the core theme framework. */
-require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
-new Hybrid();
+/* enqueues scripts and styles used on customizer page */
+function ct_tracks_enqueue_customizer_styles(){
+    wp_enqueue_script('ct-customizer-js', get_template_directory_uri() . '/js/build/customizer.min.js#ct_tracks_asyncload');
+    wp_enqueue_style('ct-customizer-css', get_template_directory_uri() . '/style-customizer.css');
+}
+add_action('customize_controls_enqueue_scripts','ct_tracks_enqueue_customizer_styles');
 
 // load all scripts enqueued by theme asynchronously
 function ct_tracks_add_async_script($url) {
@@ -69,6 +69,10 @@ function ct_tracks_add_async_script($url) {
     return str_replace('#ct_tracks_asyncload', '', $url)."' async='async";
 }
 add_filter('clean_url', 'ct_tracks_add_async_script', 11, 1);
+
+/* Load the core theme framework. */
+require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
+new Hybrid();
 
 /* Do theme setup on the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'ct_tracks_theme_setup', 10 );
@@ -123,86 +127,6 @@ function ct_tracks_register_widget_areas(){
     ) );
 }
 add_action('widgets_init','ct_tracks_register_widget_areas');
-
-// Creates the next/previous post section below every post
-function ct_tracks_further_reading() {
-
-    global $post;
-
-    // gets the next & previous posts if they exist
-    $previous_blog_post = get_adjacent_post(false,'',true);
-    $next_blog_post = get_adjacent_post(false,'',false);
-
-    if(get_the_title($previous_blog_post)) {
-        $previous_title = get_the_title($previous_blog_post);
-    } else {
-        $previous_title = "The Previous Post";
-    }
-    if(get_the_title($next_blog_post)) {
-        $next_title = get_the_title($next_blog_post);
-    } else {
-        $next_title = "The Next Post";
-    }
-
-    echo "<nav class='further-reading'>";
-    if($previous_blog_post) {
-        echo "<p class='prev'>
-        		<span>Previous Post</span>
-        		<a href='".get_permalink($previous_blog_post)."'>".$previous_title."</a>
-	        </p>";
-    } else {
-        echo "<p class='prev'>
-                <span>This is the oldest post</span>
-        		<a href='".esc_url(home_url())."'>Return to Blog</a>
-        	</p>";
-    }
-    if($next_blog_post) {
-
-        echo "<p class='next'>
-        		<span>Next Post</span>
-        		<a href='".get_permalink($next_blog_post)."'>".$next_title."</a>
-	        </p>";
-    } else {
-        echo "<p class='next'>
-                <span>This is the newest post</span>
-        		<a href='".esc_url(home_url())."'>Return to Blog</a>
-        	 </p>";
-    }
-    echo "</nav>";
-}
-
-// Outputs the categories the post was included in with their names hyperlinked to their permalink
-// separator removed so links site tightly against each other
-function ct_tracks_category_display() {
-       
-    $categories = get_the_category();
-    $separator = ' ';
-    $output = '';
-    if($categories){
-	    echo "<p><span>Categories</span>";
-        foreach($categories as $category) {
-            $output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'tracks' ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
-        }
-        echo trim($output, $separator);
-	    echo "</p>";
-    }   
-}
-
-// Outputs the tags the post used with their names hyperlinked to their permalink
-function ct_tracks_tags_display() {
-       
-    $tags = get_the_tags();
-    $separator = ' ';
-    $output = '';
-    if($tags){
-        echo "<p><span>Tags</span>";
-        foreach($tags as $tag) {
-            $output .= '<a href="'.get_tag_link( $tag->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts tagged %s", 'tracks' ), $tag->name ) ) . '">'.$tag->name.'</a>'.$separator;
-        }
-        echo trim($output, $separator);
-	    echo "</p>";
-    }
-}
 
 /* added to customize the comments. Same as default except -> added use of gravatar images for comment authors */
 function ct_tracks_customize_comments( $comment, $args, $depth ) {
@@ -376,7 +300,7 @@ function ct_tracks_author_social_icons() {
 
     foreach ($social_sites as $key => $social_site) {
         if(get_the_author_meta( $social_site)) {
-            if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news") {
+            if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news" || $key == 'vk') {
                 echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key\"></i></a>";
             }
             elseif($key == 'googleplus'){
@@ -450,6 +374,9 @@ function ct_tracks_body_class( $classes ) {
     if ( ! is_front_page() ) {
         $classes[] = 'not-front';
     }
+    if (get_theme_mod('ct_tracks_header_color_setting') == 'dark'){
+        $classes[] = 'dark-header';
+    }
     if(get_theme_mod('premium_layouts_setting') == 'full-width'){
         $classes[] = 'full-width';
 
@@ -469,6 +396,12 @@ function ct_tracks_body_class( $classes ) {
     }
     elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
         $classes[] = 'two-column-images';
+    }
+    if(get_theme_mod( 'ct_tracks_background_image_setting')){
+        $classes[] = 'background-image-active';
+    }
+    if(get_theme_mod( 'ct_tracks_texture_display_setting') == 'yes'){
+        $classes[] = 'background-texture-active';
     }
     return $classes;
 }
@@ -562,7 +495,7 @@ function ct_tracks_image_zoom_settings_output(){
 add_action('wp_enqueue_scripts','ct_tracks_image_zoom_settings_output');
 
 // outputs linked social media icons from customizer
-function ct_tracks_social_icons_output() {
+function ct_tracks_customizer_social_icons_output() {
 
     // array of social media site names
     $social_sites = ct_tracks_social_site_list();
@@ -580,7 +513,7 @@ function ct_tracks_social_icons_output() {
         foreach ($active_sites as $active_site) { ?>
             <li>
             <a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
-                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news") { ?>
+                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == 'vk') { ?>
                     <i class="fa fa-<?php echo $active_site; ?>"></i> <?php
                 } else { ?>
                 <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php
@@ -595,10 +528,11 @@ function ct_tracks_social_icons_output() {
 // array of social media site names
 function ct_tracks_social_site_list(){
 
-    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam');
+    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk' );
     return $social_sites;
 }
 
+// for above the post titles
 function ct_tracks_category_link(){
     $category = get_the_category();
     $category_link = get_category_link( $category[0]->term_id );
@@ -661,5 +595,39 @@ function ct_tracks_custom_css_output(){
     }
 }
 add_action('wp_enqueue_scripts','ct_tracks_custom_css_output');
+
+
+function ct_tracks_background_image_output(){
+
+    $background_image = get_theme_mod( 'ct_tracks_background_image_setting');
+
+    if($background_image){
+
+        $background_image_css = "
+            .background-image {
+                background-image: url('$background_image');
+            }
+        ";
+        wp_add_inline_style('style', $background_image_css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_tracks_background_image_output');
+
+function ct_tracks_background_texture_output(){
+
+    $background_texture = get_theme_mod( 'ct_tracks_background_texture_setting');
+    $background_texture_display = get_theme_mod('ct_tracks_texture_display_setting');
+
+    if($background_texture && $background_texture_display == 'yes'){
+
+        $background_texture_css = "
+            .overflow-container {
+                background-image: url('" . get_template_directory_uri() . "/assets/images/textures/$background_texture.png');
+            }
+        ";
+        wp_add_inline_style('style', $background_texture_css);
+    }
+}
+add_action('wp_enqueue_scripts','ct_tracks_background_texture_output');
 
 ?>

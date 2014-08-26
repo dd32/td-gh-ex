@@ -150,7 +150,7 @@ function ct_tracks_customize_search_input( $wp_customize ) {
             'default'           => 'hide',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'ct_tracks_sanitize_return_top_settings' // reusing b/c same values
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings'
         )
     );
     /* control */
@@ -189,7 +189,7 @@ function ct_tracks_customize_post_meta_display( $wp_customize ) {
             'default'           => 'show',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            //'sanitize_callback' => 'ct_tracks_sanitize_tagline_display'
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings'
         )
     );
     /* control */
@@ -214,7 +214,7 @@ function ct_tracks_customize_post_meta_display( $wp_customize ) {
             'default'           => 'show',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            //'sanitize_callback' => 'ct_tracks_sanitize_tagline_display'
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings'
         )
     );
     /* control */
@@ -239,7 +239,7 @@ function ct_tracks_customize_post_meta_display( $wp_customize ) {
             'default'           => 'show',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            //'sanitize_callback' => 'ct_tracks_sanitize_tagline_display'
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings'
         )
     );
     /* control */
@@ -315,6 +315,67 @@ function ct_tracks_sanitize_tagline_display($input){
     }
 }
 
+// allow users to switch to a dark header
+function ct_tracks_customize_header_color( $wp_customize ) {
+
+    // only add if background images or textures active
+    $license_images = trim( get_option( 'ct_tracks_background_images_license_key_status' ) );
+    $license_textures = trim( get_option( 'ct_tracks_background_textures_license_key_status' ) );
+
+    if( $license_images == 'valid' || $license_textures == 'valid') {
+
+        /* section */
+        $wp_customize->add_section(
+            'ct_tracks_header_color',
+            array(
+                'title'      => esc_html__( 'Header Color', 'tracks' ),
+                'description' => esc_html__('Change to dark if your new background makes the menu hard to read.', 'tracks'),
+                'priority'   => 81,
+                'capability' => 'edit_theme_options'
+            )
+        );
+        /* setting */
+        $wp_customize->add_setting(
+            'ct_tracks_header_color_setting',
+            array(
+                'default'           => 'light',
+                'type'              => 'theme_mod',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'ct_tracks_sanitize_header_color_settings'
+            )
+        );
+        /* control */
+        $wp_customize->add_control(
+            'ct_tracks_header_color_setting',
+            array(
+                'type' => 'radio',
+                'label' => 'Light or dark header color?',
+                'section' => 'ct_tracks_header_color',
+                'setting' => 'ct_tracks_header_color_setting',
+                'choices' => array(
+                    'light' => 'Light',
+                    'dark' => 'Dark',
+                ),
+            )
+        );
+    }
+}
+add_action( 'customize_register', 'ct_tracks_customize_header_color' );
+
+/* sanitize input */
+function ct_tracks_sanitize_header_color_settings($input){
+    $valid = array(
+        'light' => 'Light',
+        'dark' => 'Dark',
+    );
+
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
 function ct_tracks_customizer_additional_options( $wp_customize ) {
 
     /* create custom control for number input */
@@ -330,6 +391,16 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
         <?php
         }
     }
+
+    /* section */
+    $wp_customize->add_section(
+        'ct_tracks_additional_options',
+        array(
+            'title'      => esc_html__( 'Additional Options', 'tracks' ),
+            'priority'   => 80,
+            'capability' => 'edit_theme_options'
+        )
+    );
     /* setting */
     $wp_customize->add_setting(
         'additional_options_excerpt_length_settings',
@@ -352,15 +423,6 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
             )
         )
     );
-    /* section */
-    $wp_customize->add_section(
-        'ct_tracks_additional_options',
-        array(
-            'title'      => esc_html__( 'Additional Options', 'tracks' ),
-            'priority'   => 80,
-            'capability' => 'edit_theme_options'
-        )
-    );
     /* setting */
     $wp_customize->add_setting(
         'additional_options_return_top_settings',
@@ -368,7 +430,7 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
             'default'           => 'show',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'ct_tracks_sanitize_return_top_settings',
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings',
         )
     );
     /* control */
@@ -392,7 +454,7 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
             'default'           => 'show',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'ct_tracks_sanitize_return_top_settings',
+            'sanitize_callback' => 'ct_tracks_sanitize_all_show_hide_settings',
         )
     );
     /* control */
@@ -439,7 +501,7 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
             'default'           => 'no',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'ct_tracks_sanitize_lazy_load_settings',
+            'sanitize_callback' => 'ct_tracks_all_yes_no_setting_sanitization',
         )
     );
     /* control */
@@ -459,7 +521,7 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
 add_action( 'customize_register', 'ct_tracks_customizer_additional_options' );
 
 /* sanitize radio button input */
-function ct_tracks_sanitize_return_top_settings($input){
+function ct_tracks_sanitize_all_show_hide_settings($input){
     $valid = array(
         'show' => 'Show',
         'hide' => 'Hide'
@@ -486,11 +548,127 @@ function ct_tracks_sanitize_image_zoom_settings($input){
     }
 }
 
-/* sanitize radio button input */
-function ct_tracks_sanitize_lazy_load_settings($input){
+function ct_tracks_textures_array(){
+
+    $textures = array(
+        'binding_dark'   => '',
+        'brickwall'   => '',
+        'congruent_outline'  => '',
+        'crossword'  => '',
+        'escheresque_ste'  => '',
+        'fabric_squares'  => '',
+        'geometry'  => '',
+        'grey_wash_wall'  => '',
+        'halftone'  => '',
+        'notebook'  => '',
+        'office'  => '',
+        'pixel_weave'  => '',
+        'sativa'  => '',
+        'shattered'  => '',
+        'skulls'  => '',
+        'snow'  => '',
+        'sos'  => '',
+        'sprinkles'  => '',
+        'squared_metal'  => '',
+        'stardust'  => '',
+        'tweed'  => '',
+        'small_steps'  => '',
+        'restaurant_icons'  => '',
+        'congruent_pentagon'  => '',
+        'photography'  => '',
+        'giftly'  => '',
+        'food'  => '',
+        'light_grey'  => '',
+        'diagonal_waves'  => '',
+        'otis_redding'  => '',
+        'wild_oliva'  => '',
+        'cream_dust'  => '',
+        'back_pattern'  => '',
+        'skelatal_weave'  => '',
+        'retina_wood'  => '',
+        'escheresque'  => '',
+        'greyfloral'  => '',
+        'diamond_upholstery'  => '',
+        'hexellence'  => ''
+    );
+
+    return $textures;
+}
+
+// Background texture section
+function ct_tracks_customize_background_texture($wp_customize){
+
+    $license = trim( get_option( 'ct_tracks_background_textures_license_key_status' ) );
+
+    // only add the background textures if license is valid
+    if($license == 'valid'){
+
+        /* section */
+        $wp_customize->add_section(
+            'ct_tracks_background_texture',
+            array(
+                'title'      => esc_html__( 'Background Texture', 'tracks' ),
+                'description' => esc_html__('Use the Header Color section above if your new texture makes the menu hard to read.', 'tracks'),
+                'priority'   => 83,
+                'capability' => 'edit_theme_options'
+            )
+        );
+        /* setting */
+        $wp_customize->add_setting(
+            'ct_tracks_texture_display_setting',
+            array(
+                'default'           => 'no',
+                'type'              => 'theme_mod',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'ct_tracks_all_yes_no_setting_sanitization'
+            )
+        );
+        /* control */
+        $wp_customize->add_control(
+            'ct_tracks_texture_display_setting',
+            array(
+                'type' => 'radio',
+                'label' => 'Enable background texture?',
+                'section' => 'ct_tracks_background_texture',
+                'setting' => 'ct_tracks_texture_display_setting',
+                'choices' => array(
+                    'yes' => 'Yes',
+                    'no' => 'No',
+                ),
+            )
+        );
+        /* setting */
+        $wp_customize->add_setting(
+            'ct_tracks_background_texture_setting',
+            array(
+                'type'              => 'theme_mod',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'ct_tracks_background_texture_setting_sanitization',
+            )
+        );
+        // textures from subtlepatterns.com
+        $textures = ct_tracks_textures_array();
+
+         /* control */
+        $wp_customize->add_control(
+            'ct_tracks_background_texture_setting',
+            array(
+                'label'          => __( 'Choose a Texture', 'tracks' ),
+                'section'        => 'ct_tracks_background_texture',
+                'settings'       => 'ct_tracks_background_texture_setting',
+                'type'           => 'radio',
+                'choices'        => $textures
+            )
+        );
+    }
+}
+add_action( 'customize_register', 'ct_tracks_customize_background_texture' );
+
+function ct_tracks_all_yes_no_setting_sanitization($input){
+
     $valid = array(
         'yes' => 'Yes',
-        'no' => 'No'
+        'no' => 'No',
     );
 
     if ( array_key_exists( $input, $valid ) ) {
@@ -500,22 +678,82 @@ function ct_tracks_sanitize_lazy_load_settings($input){
     }
 }
 
+function ct_tracks_background_texture_setting_sanitization($input){
+
+    $textures = ct_tracks_textures_array();
+
+    $valid = $textures;
+
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+// Background images section
+function ct_tracks_customize_background_image($wp_customize){
+
+    $license = trim( get_option( 'ct_tracks_background_images_license_key_status' ) );
+
+    // only add the background images if license is valid
+    if($license == 'valid'){
+
+        /* section */
+        $wp_customize->add_section(
+            'ct_tracks_background_image',
+            array(
+                'title'      => esc_html__( 'Background Image', 'tracks' ),
+                'description' => esc_html__('Use the Header Color section above if your new background image makes the menu hard to read.', 'tracks'),
+                'priority'   => 84,
+                'capability' => 'edit_theme_options'
+            )
+        );
+        /* setting */
+        $wp_customize->add_setting(
+            'ct_tracks_background_image_setting',
+            array(
+                'type'              => 'theme_mod',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'esc_url_raw',
+            )
+        );
+        /* control */
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize, 'ct_tracks_background_image_setting',
+                array(
+                    'label'    => __( 'Background image', 'tracks' ),
+                    'section'  => 'ct_tracks_background_image',
+                    'settings' => 'ct_tracks_background_image_setting'
+                )
+            )
+        );
+    }
+}
+add_action( 'customize_register', 'ct_tracks_customize_background_image' );
+
 
 // Premium Layouts section
 function ct_tracks_customize_premium_layouts( $wp_customize ) {
 
     $available_templates = array('standard' => 'Standard');
 
-    if(ct_tracks_full_width_check_license() == 'valid'){
+    $full_width = trim( get_option( 'ct_tracks_full_width_license_key_status' ) );
+    $full_width_images = trim( get_option( 'ct_tracks_full_width_images_license_key_status' ) );
+    $two_column = trim( get_option( 'ct_tracks_two_column_license_key_status' ) );
+    $two_column_images = trim( get_option( 'ct_tracks_two_column_images_license_key_status' ) );
+
+    if($full_width == 'valid'){
         $available_templates['full-width'] = 'Full-width';
     }
-    if(ct_tracks_full_width_images_check_license() == 'valid'){
+    if($full_width_images == 'valid'){
         $available_templates['full-width-images'] = 'Full-width Images';
     }
-    if(ct_tracks_two_column_check_license() == 'valid'){
+    if($two_column == 'valid'){
         $available_templates['two-column'] = 'Two-Column';
     }
-    if(ct_tracks_two_column_images_check_license() == 'valid'){
+    if($two_column_images == 'valid'){
         $available_templates['two-column-images'] = 'Two-Column Images';
     }
 
@@ -580,7 +818,7 @@ function ct_tracks_customize_premium_layouts( $wp_customize ) {
             'default'           => 'no',
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_full_posts'
+            'sanitize_callback' => 'ct_tracks_all_yes_no_setting_sanitization'
         )
     );
     /* control */
@@ -622,20 +860,6 @@ function ct_tracks_sanitize_premium_layouts_image_height($input){
     $valid = array(
         'image' => 'size based on image size',
         '2:1-ratio'   => '2:1 width/height ratio like posts'
-    );
-
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
-    } else {
-        return '';
-    }
-}
-
-/* sanitize radio button input */
-function ct_tracks_sanitize_premium_layouts_full_posts($input){
-    $valid = array(
-        'yes' => 'Yes',
-        'no'   => 'No'
     );
 
     if ( array_key_exists( $input, $valid ) ) {
@@ -759,7 +983,8 @@ function ct_tracks_social_array(){
         'digg' => 'digg_profile',
         'git' => 'git_profile',
         'hacker-news' => 'hacker-news_profile',
-        'steam' => 'steam_profile'
+        'steam' => 'steam_profile',
+        'steam' => 'vk_profile'
     );
     return $social_sites;
 }
