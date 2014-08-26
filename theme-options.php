@@ -3,13 +3,13 @@
 // Default options values
 
 $badeyes_options = array(
-'footer_copyright' => 'Copyright Since (add current year here) - ' . date('Y') . ' ' . get_bloginfo('name'),
+'footer_copyright' => 'Copyright Since (start date goes here)',
 'intro_text' => '<h1>Add Title Here</h1><p>put text here</p>',
 'featured_title' => 'Featured Content',
 'blog_title' => 'Latest Headlines',
 'side_heading' => 'Side Menu',
 'side_nav' => 'Side Menu',
-	'author_credits' => true );
+'author_credits' => true );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
@@ -48,7 +48,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 <table class="form-table">
 <tr valign="top"><th scope="row"><label for="footer_copyright">Footer Copyright Notice</label></th>
 <td>
-<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  esc_attr_e($settings['footer_copyright']); ?>" />
+<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  esc_attr_e($settings['footer_copyright']); ?> " />
 </td>
 </tr>
 <tr valign="top"><th scope="row"><label for="intro_text">Intro Text</label></th>
@@ -89,8 +89,8 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 </tr>
 
 </table>
-
 <p class="submit"><input type="submit" class="button-primary" value="Save Options" /></p>
+
 </form>
 <h1>Welcome to the Badeyes 2014 Child Theme</h1>
 <p>Important! This Theme requires that you have the TwentyFourteen Theme installed.</p>
@@ -127,10 +127,7 @@ $settings = get_option( 'badeyes_options', $badeyes_options );
 // We strip all tags from the text field, to avoid vulnerabilities like XSS
 
 $input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] );
-
-// We strip all tags from the text field, to avoid vulnerabilities like XSS
-
-$input['intro_text'] = wp_filter_post_kses( $input['intro_text'] );
+//$input['intro_text'] = wp_filter_post_kses( $input['intro_text'] );
 $input['featured_title'] = wp_filter_post_kses( $input['featured_title'] );
 $input['blog_title'] = wp_filter_post_kses( $input['blog_title'] );
 $input['side_title'] = wp_filter_post_kses( $input['blog_title'] );

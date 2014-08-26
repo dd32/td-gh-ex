@@ -3,7 +3,7 @@
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 
-function awesome_2014_customize_register() {
+function badeyes_2014_customize_register() {
 
 global $wp_customize;
 
@@ -38,9 +38,9 @@ $wp_customize->add_control( 'layout_mobile', array(
 ) );
 }
 
-add_action( 'customize_register', 'awesome_2014_customize_register' );
+add_action( 'customize_register', 'badeyes_2014_customize_register' );
 
-function awesome_2014_get_featured_posts( $posts ){
+function badeyes_2014_get_featured_posts( $posts ){
 
 $fc_options = (array) get_option( 'featured-content' );
 
@@ -71,7 +71,7 @@ return $posts;
 
 }
 
-add_filter( 'twentyfourteen_get_featured_posts', 'awesome_2014_get_featured_posts', 999, 1 );
+add_filter( 'twentyfourteen_get_featured_posts', 'badeyes_2014_get_featured_posts', 999, 1 );
 
  
 function my_child_theme_setup() {
@@ -101,9 +101,6 @@ function mytheme_setup() {
     set_post_thumbnail_size(300, 300, true);
 }
 add_action('after_setup_theme', 'mytheme_setup', 20);
-
-
-
 function twentyfourteen_paging_nav() {
 	global $wp_query;
 
@@ -161,8 +158,6 @@ function remove_twentyfourteen_widgets(){
 
 unregister_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
-
-
 unregister_sidebar( 'sidebar-1' );
 
 	unregister_sidebar( 'sidebar-2' );
@@ -173,7 +168,7 @@ unregister_sidebar( 'sidebar-1' );
 
 add_action( 'widgets_init', 'remove_twentyfourteen_widgets', 11 );
 
-function twentyfourteen_cms3_widgets_init() {	
+function twentyfourteen_badeyes_widgets_init() {	
 
 include get_stylesheet_directory() . '/inc/widgets.php';
 
@@ -240,5 +235,5 @@ register_sidebar( array(
 
 remove_action( 'widgets_init', 'twentyfourteen_widgets_init', 11 );
 
-add_action( 'widgets_init', 'twentyfourteen_cms3_widgets_init', 11 );
+add_action( 'widgets_init', 'twentyfourteen_badeyes_widgets_init', 11 );
 

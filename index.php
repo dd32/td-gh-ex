@@ -44,7 +44,10 @@ global $badeyes_options;
 
 <?php if( $badeyes_settings['intro_text'] != '' ) : ?>
 
-<?php echo $badeyes_settings['intro_text']; ?>
+<?php 
+echo $badeyes_settings['intro_text']; 
+?>
+
 <?php endif; ?>
 </div>
 
