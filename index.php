@@ -22,6 +22,10 @@ get_header() ?>
 
 		// get first 4 stickt posts
 		$sticky = get_option( 'sticky_posts' );
+
+        // ready for paginating custom query
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
 		$args = array(
 			'posts_per_page' => 4,
 			'post__in'  => $sticky,
@@ -53,7 +57,12 @@ get_header() ?>
 
 
 		// get posts that are not sticky
-		$query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) );
+		$query = new WP_Query( 
+			array( 
+				'post__not_in' => get_option( 'sticky_posts' ),
+				'paged' => $paged
+				) 
+			);
 
 
 		// loop throgh them

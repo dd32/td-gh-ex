@@ -9,3 +9,7 @@ initial realese
 
 version 1.0.1
 bug fixes
+
+version 1.0.2
+screenshot replaced
+bux fixes

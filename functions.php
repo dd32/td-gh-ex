@@ -31,7 +31,7 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 		register_nav_menu( 'primary', 'Primary Menu' );
 
 		// hide admin bar
-		show_admin_bar( false );
+		add_filter('show_admin_bar', '__return_false');
 
 	    // register sidebars
 	    // 
@@ -298,21 +298,43 @@ function beautiful_watermark($post_format) {
  */
 function beautiful_blog_post() {
 
-	if(get_the_post_thumbnail() != '') : ?>	
+	$thumb_id = get_post_thumbnail_id( );
+	$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'beautiful-box' );
+	if( ( '' != get_the_post_thumbnail() ) &&
+		( $thumb_url_array[1] == $thumb_url_array[2] ) &&
+		( $thumb_url_array[1] == 480 )) : ?>	
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post blog-thumbnail'); ?>>
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( the_permalink() ) ?>">
-
-				<?php the_post_thumbnail(); ?>
-
+				<?php the_post_thumbnail('beautiful-box'); ?>
 				<div class="box-caption animate">
-					<span class="animate"><?php the_title(); ?><br /><small class="continue animate"><?php _e("continue...", "beautiful") ?></small></span>
+					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
+					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
+				</div>
+
+			</a>
+		</div>
+	<?php elseif( ( '' != get_the_post_thumbnail() ) &&
+				( $thumb_url_array[1] != $thumb_url_array[2] ) ||
+				( $thumb_url_array[1] != 480 )) : ?>
+
+		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>" data-title="<?php the_title() ?>">
+				
+				<?php // just a transparent background ?>
+				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png">
+
+				<div class="box-caption">
+					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
 
 			</a>
 		</div>
 
+				
 	<?php else: ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
@@ -322,7 +344,8 @@ function beautiful_blog_post() {
 				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png">
 
 				<div class="box-caption">
-					<span><?php the_title(); ?><br /><small class="continue animate"><?php _e("continue...", "beautiful") ?></small></span>
+					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
 
