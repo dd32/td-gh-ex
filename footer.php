@@ -26,9 +26,9 @@
 	<div class="row copyright_menu_section">
 		<?php if($current_options['footer_customizations']!='') { ?>
 		<div class="col-md-6">			
-			<p> <?php echo $current_options['footer_customizations']; ?>
+			<p> <?php echo esc_html($current_options['footer_customizations']); ?>
 			 <?php if($current_options['created_by_webriti_text']!='') {   ?>
-			<a rel="nofollow" href="<?php if($current_options['created_by_link']!='') { echo $current_options['created_by_link']; } ?>"> <?php  echo $current_options['created_by_webriti_text'];  ?></a>
+			<a rel="nofollow" href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"> <?php  echo esc_html($current_options['created_by_webriti_text']);  ?></a>
 			<?php } ?>
 			</p>
 		</div>	

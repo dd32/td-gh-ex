@@ -4,21 +4,21 @@
 		<div class="row">
 			<div class="col-md-12">		
 			<h2><?php if($current_options['site_title_one'] !='') { ?>
-				<span><?php echo $current_options['site_title_one']; ?></span> 
+				<span><?php echo esc_html($current_options['site_title_one']); ?></span> 
 				<?php } 
 				if($current_options['site_title_two'] !='')
-				{  echo $current_options['site_title_two']; } ?>
+				{  echo esc_html($current_options['site_title_two']); } ?>
 				</h2>
 				<?php if($current_options['site_description'] !='') { ?>
-				<p><?php echo $current_options['site_description']; ?></p>
+				<p><?php echo esc_html($current_options['site_description']); ?></p>
 				<?php } ?>
 			</div>
 			<div class="homepage_top_callout_btntop">
 				<?php if($current_options['siteinfo_button_one_text'] !='') { ?>
-				<a href="#" class="btn_red"><?php echo $current_options['siteinfo_button_one_text']; ?></a>
+				<a href="#" class="btn_red"><?php echo esc_html($current_options['siteinfo_button_one_text']); ?></a>
 				<?php }
 				if($current_options['siteinfo_button_two_text'] !='') { ?>
-				<a href="#" class="btn_green"><?php echo $current_options['siteinfo_button_two_text']; ?></a>
+				<a href="#" class="btn_green"><?php echo esc_html($current_options['siteinfo_button_two_text']); ?></a>
 				<?php } ?>
 			</div>
 		</div>

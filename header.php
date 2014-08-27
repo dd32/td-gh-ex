@@ -30,9 +30,7 @@
 				{ echo "<div class=qua_title_head>" . get_bloginfo( ). "</div>"; }
 				else if($current_options['upload_image_logo']!='') 
 				{ ?>
-				<img src="<?php echo esc_url( $current_options['upload_image_logo'] ); ?>" style="height:<?php if($current_options['height']!='') { echo $current_options['height']; }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { echo $current_options['width']; }  else { "100"; } ?>px;" />
-				<?php } else { ?> 
-				<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/logo.png">
+				<img src="<?php echo esc_url( $current_options['upload_image_logo'] ); ?>" style="height:<?php if($current_options['height']!='') { echo esc_attr($current_options['height']); }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { echo esc_attr($current_options['width']); }  else { "100"; } ?>px;" />
 				<?php } ?>						
 				</a>
 			</div>

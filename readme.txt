@@ -54,6 +54,13 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.0.2
+1.	Add Theme Bundeled with resources.
+2.	Remove default logo.
+3.	copyright and license information added changed.
+4.	unescaped output or input issue fixed like(esc_url(), esc_html(), esc_ettr()).
+5.	Properly enqueue theme option page using admin_enqueue_scripts.
+
 @Version 1.0.1
 1.	copyright and license information added.
 2.	All issue fixed related to XHTML like remove unused meta tag and closing the meta tag.
@@ -68,7 +75,18 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 @Version 1.0
 released
 
-   Corpbiz Lite WordPress Theme, Copyright 2014 WordPress.org
-   Corpbiz Lite is distributed under the terms of the GNU GPL
+   Corpbiz WordPress Theme, Copyright 2014 PRIYANSHU MITTAL (webriti.com)
+   Corpbiz is distributed under the terms of the GNU GPL
+   
+ Theme Bundeled with following resources:-
+ 
+ 1. Bootstrap v3.1.1 (http://getbootstrap.com)	 
+ 2. Font Awesome 4.1.0 by @davegandy - http://fontawesome.io 	
+ 3. List Of Fonts Used:
+	3.1 Roboto Regular
+	3.2 Roboto Black
+	3.3 Roboto Light
+	3.4 Roboto Medium
+	3.5 Roboto Thin
 
 # --- EOF --- #
