@@ -1,9 +1,7 @@
 .wp-switch-editor {
 	display: none !important;
 }
-.wp-editor-tools {
-	display: none !important;
-}
+
 
 select#article-category {
 	width: 90%;
@@ -43,8 +41,7 @@ textarea.anno-meta {
 	width: 100%;
 }
 
-#body .inside,
-#appendices .inside {
+#body .inside {
 	margin: 0;
 	padding: 0;
 }
@@ -52,11 +49,6 @@ textarea.anno-meta {
 #appendices td.mceStatusbar {
 	color: #ff00ff;
 	border-bottom: 1px solid #DFDFDF;
-}
-
-#body .wp_themeSkin .mceStatusbar a.mceResize,
-#appendices .wp_themeSkin .mceStatusbar a.mceResize {
-	top: -2px;
 }
 
 #doi-deposit {
@@ -102,13 +94,28 @@ body .wp-dialog .ui-dialog-title {
 	padding: 0;
 	text-align: left;
 }
-body .wp-dialog .ui-dialog-titlebar-close,
-body .wp-dialog .ui-dialog-titlebar-close:hover {
-	background: url(../img/tinymce/tb-close.png) 0 0 no-repeat;
-	height: 15px;
-	right: 10px;
-	top: 6px;
-	width: 15px;
+body .wp-dialog .ui-state-default.ui-dialog-titlebar-close {
+	cursor: pointer;
+	float: right;
+	margin-right: -7px;
+	margin-top: 0;
+}
+body .ui-dialog-titlebar-close:before{
+	color: #fff;
+	content: 'x';
+	font-size: 15px;
+	font-weight: bold;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body .ui-dialog-titlebar-close.ui-button-icon-only .ui-icon {
+	margin-left: 0;
+}
+
+body .ui-dialog-titlebar-close .ui-button-text {
+	display: none;
 }
 body .ui-widget-overlay {
 	opacity: .75;
@@ -117,9 +124,15 @@ body .ui-widget-overlay {
 
 
 /** TinyMCE Popup Content
+ ** IDs and specificity needed to override jquery ui and editor styles
  -------------------------------------------------- */
-.anno-mce-popup {
+.ui-dialog {
+	z-index: 100101;
+}
+
+#anno-popup-source {
 	background-color: #f9f9f9;
+	padding: 20px;
 }
 .anno-mce-popup-fields {
 	background-color: #fff;
@@ -155,10 +168,11 @@ body .ui-widget-overlay {
 	margin: 0;
 }
 .anno-mce-popup input[type="button"],
-.anno-mce-popup input[type="submit"] {	
-	width: auto;
+.anno-mce-popup input[type="submit"] {
 	cursor: pointer;
+	margin-right: 8px;
 	min-width: 100px;
+	width: auto;
 }
 .anno-mce-popup input[type="button"].blue,
 .anno-mce-popup input[type="submit"].blue {
@@ -230,6 +244,25 @@ div.popup-error {
 	border-radius: 3px;
 	display: none;
 	font-weight: bold;
+}
+
+#validation-status {
+	background-color: #fdf3c3;
+	border: 1px solid #e7e7e7;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-bottom: 20px;
+	padding: 7px 10px 0;
+}
+
+.anno-mce-popup .CodeMirror {
+	line-height: 1.4;
+}
+
+.anno-mce-popup label span.reference-number {
+	width: auto;
+	display: inline;
+	float: none;
 }
 
 /** Tips
@@ -559,4 +592,153 @@ fieldset.snapshot-item h4 {
 	margin-top: 10px;
 	padding-top: 10px;
 	border-top: 1px solid #DFDFDF;
+}
+
+/** Media Editor **/
+.attachments-browser .media-toolbar-primary {
+	float: left;
+}
+.attachments-browser .media-toolbar-secondary {
+	display: none;
+}
+
+	/** make this greater than the tinyMCE fullscreen z-index **/
+div.media-modal {
+	z-index: 200002;
+}
+div.media-modal-backdrop {
+	z-index: 200001;
+}
+
+/** Publish Box **/
+.submitbox #minor-publishing-actions {
+	padding: 10px 10px;
+}
+
+/** Tree View
+ -------------------------------------------------- */
+.tree-pop-up {
+	background-color: #dde7e8;
+	border: 1px solid #aaaead;
+	-webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,.2);
+	box-shadow: 2px 2px 3px 0 rgba(0,0,0,.2);
+	font-family: sans-serif;
+	font-size: 12px;
+	line-height: 2.4;
+	padding: 5px;
+	position: absolute;
+	right: -246px;
+	top: 0;
+	width: 235px;
+	/*overflow-y: auto;*/
+}
+
+	#anno-tree-close {
+		background-color: #000;
+		-webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,.2);
+		box-shadow: 2px 2px 3px 0 rgba(0,0,0,.2);
+		color: #fff;
+		cursor: pointer;
+		height: 24px;
+		position: absolute;
+		right: -15px;
+		top: -15px;
+		width: 24px;
+		z-index: 1;
+	}
+
+		#anno-tree-close:before {
+			content: '\f00d';
+			font-family: FontAwesome;
+			height: 24px;
+			left: 0;
+			line-height: 24px;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 24px;
+		}
+
+	.fancytree-container {
+		margin: 0;
+	}
+
+		.fancytree-container ul {
+			margin-left: 8px;
+		}
+
+			.fancytree-container ul ul {
+				margin-left: 20px;
+			}
+
+@font-face {
+  font-family: "annotum-textorum";
+  src:url("../fonts/annotum-textorum.eot");
+  src:url("../fonts/annotum-textorum.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/annotum-textorum.woff") format("woff"),
+    url("../fonts/annotum-textorum.ttf") format("truetype"),
+    url("../fonts/annotum-textorum.svg#annotum-textorum") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+	padding-left: 20px;
+	position: relative;
+}
+
+.icon:before {
+  font-family: "annotum-textorum";
+  content: attr(data-icon);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  left: 0;
+  line-height: 1.2;
+  position: absolute;
+  speak: none;
+  text-transform: none;
+  top: 0;
+  width: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.folder:before {
+  content: "\e000";
+}
+.fig:before {
+  content: "\e001";
+}
+.table:before {
+  content: "\e002";
+}
+.para:before {
+  content: "\e003";
+  top: -2px;
+}
+
+.sec.icon {
+	background-color: #93c0cc;
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1;
+	margin: 0 0 6px;
+	padding: 6px 8px;
+	text-transform: uppercase;
+}
+
+.fancytree-node {
+	cursor: pointer;
+}
+
+#anno-tree-fullscreen-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 235px;
+	z-index: 200001;
+	height: 100%;
 }

@@ -1,6 +1,6 @@
-(function(){ 
+(function(){
     tinymce.create('tinymce.plugins.annoEquations', {
- 
+
         init : function(ed, url) {
             ed.addCommand('Anno_Equations', function() {
 				ed.windowManager.open({
@@ -8,18 +8,18 @@
 					width : 480,
 					height : 'auto',
 					wpDialog : true,
-					title : 'Insert Equation'
+					title: ed.getLang('annoequations.title')
 				}, {
 					plugin_url : url // Plugin absolute URL
 				});
             });
 
 			ed.addButton('annoequations', {
-				title : 'Equations',
-				//ed.getLang('advanced.references_desc'),
-				cmd : 'Anno_Equations',
+				title: ed.getLang('annoequations.title'),
+				cmd : 'Anno_Equations'
 			});
-    	},
+
+		},
 
         getInfo : function() {
             return {
@@ -35,16 +35,16 @@
     tinymce.PluginManager.add('annoEquations', tinymce.plugins.annoEquations);
 })();
 
-(function($){	
+(function($){
 	$(document).ready(function() {
 		// Reset the form every time the dialog is closed
 		$('#anno-popup-equations').bind('wpdialogclose', function() {
 			$('form#anno-tinymce-equations-form')[0].reset();
-			
+
 			// Reset the preview pane.
-			$('.ee-preview-container').html('');			
+			$('.ee-preview-container').html('');
 		});
-		
+
 		$('#anno-equations-insert').live('click', function() {
 			var caption, label, url, xml;
 			var form = 'form#anno-tinymce-equations-form';
@@ -58,7 +58,7 @@
 			if (url) {
 				if (display_type == 'inline') {
 					// Inserting for tinyMCE. is converted to XML on save.
-					xml = '<img src="'+ url + '" class="_inline_graphic" alt="'+ alt_text + '"/>';
+					xml = '<span class="inline-graphic" data-xmlel="inline-graphic" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+ url + '"></span><span> &nbsp;</span>';
 				}
 				else {
 					caption = $('#equation-caption').val();
@@ -67,22 +67,23 @@
 					description = $('#equation-description', form).val();
 					description = description == '' ? '<br />' : description;
 
-					xml = '<fig>'
-								+'<img src="' + url + '" />'
-								+'<lbl>' + label + '</lbl>'
-								+'<cap><para>' + caption + '</para></cap>'
-								+'<media xlink:href="' + url + '">'
-									+'<alt-text>' + alt_text + '</alt-text>'
-									+'<long-desc>' + description + '</long-desc>'
-								+'</media>'
-							+'</fig>'
-							+'<div _mce_bogus="1" class="clearfix"></div>';
-				}	
-				tinyMCEPopup.restoreSelection();
+					xml = '<div class="fig" data-xmlel="fig">'
+								+'<div class="label" data-xmlel="label">&#xA0;' + label + '</div>'
+								+'<div class="caption" data-xmlel="caption">'
+									+'<div class="p" data-xmlel="p">&#xA0;' + caption + '</div>'
+								+'</div>'
+								+'<div class="media" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + url + '" data-xmlel="media">'
+									+'<span class="alt-text" data-xmlel="alt-text">' + alt_text + '</span>'
+									+'<span class="long-desc" data-xmlel="long-desc">' + description + '</span>'
+								+'</div>'
+								+'<div _mce_bogus="1" class="clearfix"></div>'
+							+'</div>';
+				}
+				xml = win.tinymce.activeEditor.plugins.textorum.applyFilters('after_loadFromText', xml);
 				win.send_to_editor(xml);
 			}
 
-			win.tinyMCEPopup.close();		
+			win.tinymce.activeEditor.windowManager.close();
 			return false;
 		});
 	});

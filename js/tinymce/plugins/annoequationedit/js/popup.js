@@ -41,7 +41,7 @@ tinyMCEPopup = {
 		if (tinymce.isOpera)
 			t.getWin().setTimeout(close, 0);
 		else
-			close();
+		close();
 	},
 
 	execCommand : function(cmd, ui, val, a) {
@@ -113,9 +113,9 @@ annoEqEdit = {
 
 		if (el.nodeName != 'IMG')
 			return;
- 
+
 		url = ed.dom.getAttrib(el, 'src');
-		
+
 		if (url !== null && url.match(/^http(s)?:\/\/chart\.googleapis\.com/)) {
 			// Based on code from  http://stackoverflow.com/questions/901115/get-query-string-values-in-javascript
 			regexS = "[\\?&]" + 'chl' + "=([^&#]*)";
@@ -131,12 +131,12 @@ annoEqEdit = {
 
 		// Figure specific
 		if (t.isFig || (tinymce.isIE && t.isFigure())) {
-			mediaEl = ed.dom.getNext(el, 'media');
+			mediaEl = ed.dom.getNext(el, '.media');
 			if (mediaEl !== undefined) {
-				altEl = mediaEl.getElementsByTagName('alt-text');
-				descriptionEl = mediaEl.getElementsByTagName('long-desc');
+				altEl = ed.dom.select('.alt-text', mediaEl);
+				descriptionEl = ed.dom.select('.long-desc', mediaEl);
 
-				if (altEl !== undefined) {
+				if (altEl[0] !== undefined) {
 					// Really this should be innerText, but its not supported in IE8
 					form.alt.value = altEl[0].innerHTML;
 				}
@@ -148,6 +148,8 @@ annoEqEdit = {
 
 			// Remove the hidden class
 			$('#description-wrapper', form).removeClass('hidden');
+			$('#alt-wrapper', form).removeClass('hidden');
+			$('#figuremeta', form).removeClass('hidden');
 		}
 		else {
 			// Get alt attribute from image
@@ -156,7 +158,7 @@ annoEqEdit = {
 				form.alt.value = altText;
 			}
 		}
-		
+
 		// Show the form now its ready and populated with data
 		form.className = form.className.replace('hidden', '');
 		return;
@@ -167,7 +169,7 @@ annoEqEdit = {
 		var ed = tinyMCEPopup.editor;
 		var el = ed.selection.getNode();
 
-		figure = ed.dom.getParent(el, 'fig');
+		figure = ed.dom.getParent(el, '.fig');
 		if (figure === null) {
 			return false;
 		}
@@ -208,25 +210,22 @@ annoEqEdit = {
 		// IE Does a poor job at storing the property
 		if (t.isFig || (tinymce.isIE && t.isFigure())) {
 			// Update alt and description
-			mediaEl = ed.dom.getNext(el, 'media');
+			mediaEl = ed.dom.getNext(el, '.media');
 
 			if (mediaEl !== undefined) {
 				mediaEl.setAttribute('xlink:href', src);
 
-				altEl = mediaEl.getElementsByTagName('alt-text');
-				descriptionEl = mediaEl.getElementsByTagName('long-desc');
+				altEl = ed.dom.select('.alt-text', mediaEl);
+				descriptionEl = ed.dom.select('.long-desc', mediaEl);
 
 				// Set innerHTML, though the popup edits textContent - no tags allowed in here
-				if (altEl !== undefined) {
+				if (altEl[0] !== undefined) {
 					altEl[0].innerHTML = form.alt.value;
 				}
 				if (descriptionEl !== undefined) {
 					descriptionEl[0].textContent = form.description.value;
 				}
 			}
-		}
-		else {
-			el.setAttribute('alt', form.alt.value);
 		}
 
 		tinyMCEPopup.execCommand('mceEndUndoLevel');
@@ -244,16 +243,16 @@ annoEqEdit = {
 		tinyMCEPopup.execCommand('mceBeginUndoLevel');
 
 		tinyMCEPopup.restoreSelection();
-		
+
 		el = ed.selection.getNode();
 		if (el.nodeName != 'IMG') {
 			return;
 		}
-		
+
 		tinyMCEPopup.execCommand('mceBeginUndoLevel');
 
 		if (this.isFigure()) {
-			figureEl = ed.dom.getParent(el, 'fig');
+			figureEl = ed.dom.getParent(el, '.fig');
 			if (figure !== null) {
 				ed.dom.remove(figureEl);
 			}

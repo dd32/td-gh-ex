@@ -3,20 +3,22 @@ var annoReferences;
 (function($){
 	var inputs = {}, ed;
 
-	annoReferences = {	
+	annoReferences = {
 		keySensitivity: 100,
 		textarea : function() { return edCanvas; },
 
-		init : function() {
-
+		init : function(e) {
 			inputs.dialog = $('#anno-popup-references');
 			inputs.submit = $('#anno-references-submit');
-			
+			inputs.wrap = $('#wp-link-wrap');
+			inputs.dialog = $( '#wp-link' );
+			inputs.backdrop = $( '#wp-link-backdrop' );
+
 			inputs.checkboxes = $('#anno-popup-references input');
-			
+
 			// Bind event handlers
 			inputs.dialog.keyup( annoReferences.keyup );
-			
+
 			inputs.submit.click( function(e){
 				annoReferences.update();
 				e.preventDefault();
@@ -37,12 +39,11 @@ var annoReferences;
 					annoReferences.range.select();
 				}
 			}
-		
+
 			$('.anno-reference-edit').hide();
 		},
 
 		beforeOpen : function() {
-
 			annoReferences.range = null;
 
 			if ( ! annoReferences.isMCE() && document.selection ) {
@@ -51,30 +52,33 @@ var annoReferences;
 			}
 		},
 
-		
 		getCheckboxes : function() {
 			return $('#anno-popup-references input[type=checkbox]:checked');
 		},
-		
+
 		isMCE : function() {
-			return tinyMCEPopup && ( ed = tinyMCEPopup.editor ) && ! ed.isHidden();
+			//return tinyMCEPopup && ( ed = tinyMCEPopup.editor ) && ! ed.isHidden();
+			// This is unlikely to be used anywhere that tinyMCE is not enabled, hence returning tru
+			// tinymce 4 removed tinyMCEPopup as well.
+			return true;
 		},
 
 		close : function() {
-			tinyMCEPopup.close();
+			var ed = top.tinymce.activeEditor;
+			ed.windowManager.close();
+			ed.focus();
 		},
-		
+
 		update : function() {
-			var ed = tinyMCEPopup.editor;
+			var ed = tinymce.activeEditor;
 			var xml = '', checkboxes, id, text, validNodes, node;
+
 			validNodes = ['BODY', 'LABEL', 'CAP', 'LICENSE-P', 'PARA', 'TD', 'TH'];
-			
-			tinyMCEPopup.restoreSelection();
-			
+
 			node = ed.selection.getNode();
-			
+
 			// If we're in the middle of a link or something similar, we want to insert the references after the element
-			
+
 			if (!ed.dom.isBlock(node) && $.inArray(node.nodeName, validNodes) == -1 ) {
 				ed.selection.select(node);
 			}
@@ -83,12 +87,11 @@ var annoReferences;
 				id = $(checkbox).attr('id').replace('reference-checkbox-', '');
 				text = $('label[for="reference-checkbox-' + id + '"]').html();
 				id = parseInt(id) + 1;
-				xml += '<xref ref-type="bibr" rid="ref' + id + '">' + id + '</xref>&nbsp;';
+				xml += '<span class="xref" data-xmlel="xref" ref-type="bibr" rid="ref' + id + '">' + id + '</span>&nbsp;';
 			});
-			ed.selection.collapse();
-			
-			ed.execCommand('mceInsertContent', null, xml);
-			
+
+			ed.selection.collapse(false);
+			ed.insertContent(xml);
 			annoReferences.close();
 		},
 
@@ -108,5 +111,5 @@ var annoReferences;
 			event.preventDefault();
 		},
 	}
-	$(document).ready( annoReferences.init );	
+	$(document).ready( annoReferences.init );
 })(jQuery);

@@ -18,7 +18,7 @@ define('ANNO_VER', '1.1');
 include_once(CFCT_PATH.'carrington-core/carrington.php');
 include_once(CFCT_PATH.'functions/Anno_Keeper.php');
 include_once(CFCT_PATH.'functions/article-post-type.php');
-include_once(CFCT_PATH.'functions/appendix-repeater.php');
+//include_once(CFCT_PATH.'functions/appendix-repeater.php');
 include_once(CFCT_PATH.'functions/taxonomies.php');
 include_once(CFCT_PATH.'functions/capabilities.php');
 include_once(CFCT_PATH.'functions/featured-articles.php');
@@ -26,16 +26,35 @@ include_once(CFCT_PATH.'functions/template.php');
 include_once(CFCT_PATH.'functions/widgets.php');
 include_once(CFCT_PATH.'functions/profile.php');
 include_once(CFCT_PATH.'functions/tinymce.php');
-include_once(CFCT_PATH.'functions/tinymce-upload/tinymce-uploader.php');
-include_once(CFCT_PATH.'functions/tinymce-upload/image-popup.php');
 include_once(CFCT_PATH.'functions/phpquery/phpquery.php');
 include_once(CFCT_PATH.'functions/anno-xml-download.php');
 include_once(CFCT_PATH.'functions/subscribe.php');
 include_once(CFCT_PATH.'functions/snapshot.php');
+include_once(CFCT_PATH.'functions/anno-validation.php');
+include_once(CFCT_PATH.'functions/anno-admin-activity-widget.php');
+
+
+function anno_include_media_edit() {
+	global $pagenow;
+	if (
+		is_admin()
+		&& (
+			($pagenow == 'post.php' && isset($_REQUEST['post']) && get_post_type($_REQUEST['post']) == 'article')
+			|| ($pagenow == 'post-new.php' && isset($_REQUEST['post_type']) && $_REQUEST['post_type'] == 'article')
+			)
+		)
+	{
+		include_once(CFCT_PATH.'functions/media-editor/media-editor.php');
+	}
+	// Loaded for media functions has conditional checks withing the functions
+	include_once(CFCT_PATH.'functions/media-editor/media-ajax.php');
+}
+add_action('admin_init', 'anno_include_media_edit');
+
 
 function anno_setup() {
 	$path = trailingslashit(TEMPLATEPATH);
-	
+
 	// i18n support
 	load_theme_textdomain('anno', $path . 'languages');
 	$locale = get_locale();
@@ -43,24 +62,24 @@ function anno_setup() {
 	if ( is_readable( $locale_file ) ) {
 		require_once( $locale_file );
 	}
-	
+
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails', array( 'article', 'post' ) );
 	add_image_size( 'post-excerpt', 140, 120, true);
 	add_image_size( 'post-teaser', 100, 79, true);
 	add_image_size( 'featured', 270, 230, true);
 	add_image_size( 'header', 500, 500, false);
-	
+
 	$header_image = Anno_Keeper::retrieve('header_image');
 	$header_image->add_custom_image_header();
-	
+
 	$menus = array(
 		'main' => 'Main Menu (Header)',
 		'secondary' => 'Secondary Menu (Header)',
 		'footer' => 'Footer Menu',
 	);
 	register_nav_menus($menus);
-	
+
 	$sidebar_defaults = array(
 		'before_widget' => '<aside id="%1$s" class="widget clearfix %2$s">',
 		'after_widget' => '</aside>',
@@ -178,7 +197,7 @@ function anno_wp_nav_menu_args($args) {
 	if ($args['menu_class'] == 'menu') {
 		$args['menu_class'] = 'nav';
 	}
-	
+
 	return $args;
 }
 add_filter('wp_nav_menu_args', 'anno_wp_nav_menu_args');
@@ -190,7 +209,7 @@ add_filter('wp_nav_menu_args', 'anno_wp_nav_menu_args');
  */
 function anno_post_class($classes, $class) {
 	$has_img = 'has-featured-image';
-	
+
 	/* An array of classes that we want to create an additional faux compound class for.
 	This lets us avoid having to do something like
 	.article-excerpt.has-featured-image, which doesn't work in IE6.
@@ -199,30 +218,30 @@ function anno_post_class($classes, $class) {
 	$compoundify = array(
 		'article-excerpt'
 	);
-	
+
 	if (has_post_thumbnail()) {
 		$classes[] = $has_img;
-		
+
 		foreach ($compoundify as $compound_plz) {
 			if (in_array($compound_plz, $classes)) {
 				$classes[] = $compound_plz . '-' . $has_img;
 			}
 		}
 	}
-	
+
 	return $classes;
 }
 add_filter('post_class', 'anno_post_class', 10, 2);
 
 function anno_post_category_list($separator) {
 	$html = '';
-	
+
 	$cat_list = get_the_category_list( $separator);
 	if(!empty($cat_list)) {
 		$html.=' &middot; ' . $cat_list;
 	}
 	return $html;
-	
+
 }
 
 /**
@@ -233,13 +252,13 @@ function anno_comment_form_defaults($defaults) {
 	$req_attr = ( $req ? ' required' : '' );
 	$req_label = ( $req ? '<abbr class="required" title="'.__('Required', 'anno').'">*</abbr>' : '');
 	$commenter = wp_get_current_commenter();
-	
+
 	$fields = apply_filters('comment_form_default_fields', array(
 		'author' => '<p class="row author">' . '<label for="author">' . __('Your Name', 'anno') . $req_label . '</label> <input id="author" class="type-text" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '"' . $req_attr . '></p>',
 		'email' => '<p class="row email"><label for="email">' . __('Email Address', 'anno') . $req_label . '</label> <input id="email" class="type-text" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $req_attr . '></p>',
 		'url' => '<p class="row url"><label for="url">' . __( 'Website', 'anno' ) . '</label> <input id="url" class="type-text" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '"></p>'
 	));
-	
+
 	$new = array(
 		'comment_field' => '<p class="row"><label for="comment">' . _x('Comment', 'noun', 'anno') . '</label> <textarea id="comment" name="comment" required></textarea></p>',
 		'fields' => $fields,
@@ -250,7 +269,7 @@ function anno_comment_form_defaults($defaults) {
 		'comment_notes_after' => '',
 		'comment_notes_before' => ''
 	);
-	
+
 	return array_merge($defaults, $new);
 }
 add_filter('comment_form_defaults', 'anno_comment_form_defaults');
@@ -263,12 +282,12 @@ function anno_settings($settings) {
 	unset($settings['cfct']['fields']['copyright']);
 	unset($settings['cfct']['fields']['credit']);
 	unset($settings['cfct']['fields']['about']);
-	
+
 	$yn_options = array(
 		'1' => __('Yes', 'anno'),
 		'0' => __('No', 'anno')
 	);
-	
+
 	$anno_settings_top = array(
 		'anno_top' => array(
 			'label' => _x('Theme Settings', 'options heading', 'anno'),
@@ -307,12 +326,29 @@ function anno_settings($settings) {
 					'name' => 'anno_callouts[1][content]',
 					'label' => _x('Home Page Callout Right Content', 'Label text for settings screen', 'anno'),
 				),
-			),		
+			),
 		),
 	);
-	
+
 	$settings = array_merge($anno_settings_top, $settings);
-	
+
+	$anno_settings_article = array(
+		'anno_template' => array(
+			'label' => _x( 'Article Settings', 'options heading', 'anno' ),
+			'fields' => array(
+				'article_template' => array(
+					'label' => _x( 'New Article Template', 'options label', 'anno' ),
+					'name' => 'article_template',
+					'class' => 'cfct-text-long',
+					'type' => 'text',
+					'help' => __( '<div class="cfct-help">This option will create sections with defined titles on new articles. A comma delimits a new section; use <code>/,</code> to escape commas in a title. <div>Ex: <code>Intro, Body, Conclusion</code> will create three sections with titles \'Intro\', \'Body\' and \'Conclusion\' on new articles.</div>', 'anno' ),
+				),
+			),
+		),
+	);
+
+	$settings = array_merge($anno_settings_article, $settings);
+
 	$anno_settings_bottom = array(
 		'anno_bottom' => array(
 			'label' => '',
@@ -326,7 +362,7 @@ function anno_settings($settings) {
 						'post' => _x('Post', 'post type name for select option', 'anno'),
 					),
 				),
-			),		
+			),
 		),
 		'anno_ga' => array(
 			'label' =>  _x('Google Analytics', 'options heading', 'anno'),
@@ -440,9 +476,9 @@ function anno_settings($settings) {
 			),
 		),
 	);
-	
+
 	$settings = array_merge($settings, $anno_settings_bottom);
-	
+
 	return $settings;
 }
 add_filter('cfct_options', 'anno_settings');
@@ -484,7 +520,7 @@ add_action('pre_get_posts', 'anno_modify_home_query');
 
 /**
  * Register default option values
- */ 
+ */
 function anno_defaults($defaults) {
 	$defaults['anno_home_post_type'] = 'article';
 	$defaults['anno_workflow_settings'] = array(
@@ -499,7 +535,7 @@ add_filter('cfct_option_defaults', 'anno_defaults');
 
 /**
  * Override the default cfct prefix if we've already name spaced our options.
- */ 
+ */
 function anno_option_prefix($prefix) {
 	return 'anno';
 }
@@ -507,20 +543,20 @@ add_filter('cfct_option_prefix', 'anno_option_prefix', 10, 2);
 
 /**
  * Determines whether or not an email address is valid
- * 
+ *
  * @param string $email email to check
  * @return bool true if it is a valid email, false otherwise
- */ 
+ */
 function anno_is_valid_email($email) {
 	return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
 /**
  * Determines whether or not a username is valid
- * 
+ *
  * @param string $username username to check
  * @return bool true if it is a valid username, false otherwise
- */ 
+ */
 function anno_is_valid_username($username) {
 	return (strcasecmp($username, sanitize_user($username, true)) == 0);
 }
@@ -528,10 +564,10 @@ function anno_is_valid_username($username) {
 /**
  * Returns an appropriate link for editing a given user.
  * Based on code found in WP Core 3.2
- * 
+ *
  * @param int $user_id The id of the user to get the url for
  * @return string edit user url
- */ 
+ */
 function anno_edit_user_url($user_id) {
 	if ( get_current_user_id() == $user_id ) {
 		$edit_url = 'profile.php';
@@ -540,21 +576,8 @@ function anno_edit_user_url($user_id) {
 		$edit_url = admin_url(esc_url( add_query_arg( 'wp_http_referer', urlencode(stripslashes($_SERVER['REQUEST_URI'])), "user-edit.php?user_id=$user_id" )));
 	}
 	return $edit_url;
-	
-}
 
-/**
- * Function to limit front-end display of comments. 
- * Wrap this filter around comments_template();
- * 
- * @todo Update to WP_Comment_Query filter when WP updates core to use non-hardcoded queries.
- */
-function anno_internal_comments_query($query) {
-	$query = str_replace('WHERE', 'WHERE comment_type NOT IN (\'article_general\', \'article_review\') AND', $query);
-	return $query;
 }
-add_filter('comment_feed_where', 'anno_internal_comments_query');
-
 
 /**
  * Output Google Analytics Code if a GA ID is present
@@ -585,17 +608,17 @@ if (!is_admin()) {
 
 /**
  * Get a list of authors for a given post
- * 
+ *
  * @param int post_id post ID to retrieve users from
  * @return array Array of user IDs
- */ 
+ */
 function anno_get_authors($post_id) {
 	return array_unique(anno_get_post_users($post_id, 'author'));
 }
 
 /**
  * Get a list of reviewers for a given post
- * 
+ *
  * @param int post_id post ID to retrieve users from
  * @return array Array of user IDs
  */
@@ -604,7 +627,7 @@ function anno_get_reviewers($post_id) {
 }
 
 /**
- * Gets all user of a certain role for a given post 
+ * Gets all user of a certain role for a given post
  *
  * @param int $post_id ID of the post to check
  * @param string $type the type/role of user to get. Accepts meta key or role.
@@ -627,10 +650,10 @@ function anno_get_post_users($post_id, $type) {
 
 /**
  * Add author to meta co-author for more efficient author archive queries
- */ 
+ */
 function anno_wp_insert_post($post_id, $post) {
 	if (($post->post_type == 'article' || $post->post_type == 'post') && !in_array($post->post_status,  array('inherit', 'auto-draft'))) {
-		
+
 		$authors = get_post_meta($post_id, '_anno_author_order', true);
 		if (!is_array($authors)) {
 			update_post_meta($post_id, '_anno_author_order', array($post->post_author));
@@ -650,7 +673,7 @@ function anno_format_name($prefix, $first, $last, $suffix) {
 	$name = $first.' '.$last;
 	$name = ($prefix!='')?$prefix.' '.$name:$name;
 	$name = ($suffix!='')?$name.', '.$suffix:$name;
-	
+
 	return $name;
 }
 
@@ -658,26 +681,26 @@ function anno_format_name($prefix, $first, $last, $suffix) {
  * Sanitizes a string for insertion into DB
  * @param string $option The string to be sanitized
  * @return string Sanitized string
- */ 
+ */
 function anno_sanitize_string($option) {
 	$option = addslashes($option);
 	$option = wp_filter_post_kses($option); // calls stripslashes then addslashes
 	$option = stripslashes($option);
 	$option = esc_html($option);
-	
+
 	return $option;
 }
 
 /**
  * Exhaustive search for a post ID.
- * 
+ *
  * @return int Post ID
- */ 
+ */
 function anno_get_post_id() {
 	global $post_id;
-	
+
 	$local_post_id = 0;
-	
+
 	if (empty($post_id)) {
 		global $post;
 		if (isset($post->ID)) {
@@ -716,7 +739,7 @@ function anno_user_display($user) {
 	if (is_numeric($user)) {
 		$user = get_userdata(intval($user));
 	}
-	
+
 	return !empty($user->display_name) ? $user->display_name : '';
 }
 
@@ -735,28 +758,28 @@ function anno_user_email($user) {
 
 /**
  * Creates a new user, and sends that user an email. Returns a WP Error if the user was unable to be created.
- * 
+ *
  * @param string $username Username to create
  * @param string $email Email of user to create
- * @return int|WP_Error ID of new user, or, WP_Error 
- */ 
+ * @return int|WP_Error ID of new user, or, WP_Error
+ */
 function anno_invite_contributor($user_login, $user_email, $extra = array()) {
 	// Wish to be able to invite other contributors, so no create_user check
-	
+
 	$current_user = wp_get_current_user();
-	
+
 	// wp_insert_user handles all other errors
 	if (!anno_is_valid_email($user_email)) {
 		return new WP_Error('invalid_email', _x('Invalid email address', 'error for creating new user', 'anno'));
 	}
-	
+
 	// We don't want wp_insert_user to just sanitize the username stripping characters, the user should be alerted if the user input is wrong
 	if (!anno_is_valid_username($user_login)) {
 		return new WP_Error('invalid_username', _x('Invalid username', 'error for creating new user', 'anno'));
 	}
-		
+
 	// Create User
-	$user_pass = wp_generate_password();	
+	$user_pass = wp_generate_password();
 	$user_login = esc_sql($user_login);
 	$user_email = esc_sql($user_email);
 	$role = 'contributor';
@@ -767,8 +790,8 @@ function anno_invite_contributor($user_login, $user_email, $extra = array()) {
 	$user_id = wp_insert_user($userdata);
 
 	$blogname = get_bloginfo('name');
-	
-	// Send notifiction with PW, Username.	
+
+	// Send notifiction with PW, Username.
 	if (!is_wp_error($user_id)) {
 		$subject = sprintf(_x('You have been invited to join %s', 'email subject %s represents blogname', 'anno'), $blogname);
 		$message =  sprintf(_x(
@@ -779,7 +802,7 @@ Username: %s
 Password: %s
 %s', 'User creation email body. %s mapping: User who created this new user, blogname, username, password, profile url.', 'anno'),
 		$current_user->display_name, $blogname, $user_login, $user_pass, esc_url(admin_url('profile.php')));
-		
+
 		wp_mail($user_email, $subject, $message);
 	}
 
@@ -789,12 +812,12 @@ Password: %s
 /**
  * Get published post ids for a given post type
  *
- * @param array $posts_types 
+ * @param array $posts_types
  * @return array of post ids that are published for the posts types defined
  */
 function anno_get_published_posts($post_types = array('article')) {
 	$posts = array();
-		
+
 	// author will always be stored in post_meta
 	$query = new WP_Query(array(
 		'fields' => 'ids',
@@ -803,13 +826,13 @@ function anno_get_published_posts($post_types = array('article')) {
 		'cache_results' => false,
 		'posts_per_page' => -1,
 	));
-	
+
 	if (isset($query->posts) && is_array($query->posts)) {
 		$posts = $query->posts;
 	}
-	
+
 	wp_reset_query();
-	
+
 	return $posts;
 }
 
@@ -818,17 +841,17 @@ function anno_get_published_posts($post_types = array('article')) {
  *
  * @param int $user_id User id to look up, else uses current user id
  * @param array $post_type Post types to find posts for, defaults to article
- * @param array $post_stati Post statuses to look up 
+ * @param array $post_stati Post statuses to look up
  * @return array Empty array or array of post ids
  * @author Evan Anderson
  */
 function anno_get_owned_posts($user_id = false, $post_types = array('article'), $post_statuses = array('draft', 'pending', 'private', 'future')) {
 	$posts = array();
-	
+
 	if (empty($user_id)) {
 		$user_id = get_current_user_id();
 	}
-	
+
 	// author will always be stored in post_meta
 	$query = new WP_Query(array(
 		'fields' => 'ids',
@@ -838,91 +861,97 @@ function anno_get_owned_posts($user_id = false, $post_types = array('article'), 
 		'posts_per_page' => -1,
 		'author' => $user_id,
 	));
-	
+
 	if (isset($query->posts) && is_array($query->posts)) {
 		$posts = $query->posts;
 	}
-	
+
 	wp_reset_query();
-	
+
 	return $posts;
 }
 
-
 /**
- * Get a list of posts a user is the author or co-author on
+ * Get count of available articles that a user can see/edit. Useful when
+ * the Annotum workflow is enabled
  *
- * @param int $user_id User id to look up, else uses current user id
- * @param array $post_type Post types to find posts for, defaults to article
- * @param array $post_stati Post statuses to look up 
- * @return array Empty array or array of post ids
- * @author Evan Anderson
+ * @param array $status_types Array of status types to generate counts for
+ * @return array Array with indices of the status types and the values are the counts
  */
-function anno_get_authored_posts($user_id = false, $post_types = array('article'), $post_statuses = array('draft', 'pending', 'private', 'publish', 'future')) {
-	$posts = array();
-	
-	if (empty($user_id)) {
-		$user_id = get_current_user_id();
+function anno_wf_viewable_article_count( $status_types = array() ) {
+	global $wp_query;
+	$user_id = get_current_user_id();
+	$user = wp_get_current_user();
+	$counts = array();
+
+	foreach( $status_types as $type ) {
+		// Editors and Admins can view everyone's articles
+		if ( $user->has_cap( 'editor' ) || $user->has_cap( 'administrator' ) ) {
+			$meta_query = array(
+				array(
+					'key' => '_post_state',
+					'value' => $type
+				)
+			);
+		}
+		else {
+			$meta_query = array(
+				'relation' => 'AND',
+				array(
+					// Ignore review articles
+					'key' => '_anno_author_'.$user_id,
+				),
+				array(
+					'key' => '_post_state',
+					'value' => $type
+				)
+			);
+		}
+
+		$query = new WP_Query( array(
+			'post_type'   => 'article',
+			'post_status' => 'any',
+			'fields' => 'ids',
+			'posts_per_page' => -1,
+			'cache_results' => false,
+			'meta_query' => $meta_query,
+		) );
+
+		$counts[ $type ] = count( $query->posts );
+
+		wp_reset_query();
 	}
-	
-	// author will always be stored in post_meta
-	$query = new WP_Query(array(
-		'fields' => 'ids',
-		'post_type' => $post_types,
-		'post_status' => $post_statuses,
-		'cache_results' => false,
-		'posts_per_page' => -1,
-		'meta_query' => array(
-			'relation' => 'OR',
-			array(
-				'key' => '_anno_author_'.$user_id,
-			),
-			array(
-				'key' => '_anno_reviewer_'.$user_id,
-			),
-		),
-	));
-	
-	if (isset($query->posts) && is_array($query->posts)) {
-		$posts = $query->posts;
-	}
-	
-	wp_reset_query();
-	
-	return $posts;
+	return $counts;
 }
 
 /**
- * Get count of available articles that a user can see/edit
- * 
- * @param int $user_id ID of the user to count for, otherwise uses current user
- * @return object|int Object if user is admin or editor of all the states and counts. Single int count otherwise
+ * Get count of available articles that a user can see/edit. Useful when
+ * the Annotum workflow is disabled
+ *
+ * @param array $status_types Array of status types to generate counts for
+ * @return array Array with indices of the status types and the values are the counts
  */
-function anno_viewable_article_count($user_id = false) {	
-	$count = 0;
-	
-	if (empty($user_id)) {
-		$user = wp_get_current_user();
+function anno_viewable_article_count( $status_types = array() ) {
+	global $wp_query;
+	$user_id = get_current_user_id();
+	$user = wp_get_current_user();
+	$counts = array();
+
+	foreach( $status_types as $type ) {
+
+		$query = new WP_Query( array(
+			'post_type'   => 'article',
+			'post_status' => $type,
+			'fields' => 'ids',
+			'posts_per_page' => -1,
+			'cache_results' => false,
+		) );
+
+		$counts[ $type ] = count( $query->posts );
+
+		wp_reset_query();
 	}
-	else{
-		$user = get_user_by('id', (int) $user_id);
-	}
-	
-	if ($user) {
-		if ($user->has_cap('editor') || $user->has_cap('administrator')) {
-			return wp_count_posts('article', 'readable');
-		}
-		// The user is not an editor, nor an admin, so only count published posts and ones they are an author/co-author on.
-		else {
-			$author_posts = anno_get_authored_posts($user->ID);
-						
-			$count += count($author_posts);
-			
-			wp_reset_query();
-		}
-	}
-	
-	return $count;
+	return $counts;
 }
 
 /**
@@ -933,94 +962,80 @@ function anno_viewable_article_count($user_id = false) {
 function anno_activity_information() {
 	global $current_site, $avail_post_stati;
 	$article_post_type = 'article';
-	$status_text = array(
-		'publish' => array(
-			'i18n' 	=> __('Published', 'anno'),
-			'class' => 'approved',
-		),
-		'pending' => array(
-			'i18n' 	=> __('Pending', 'anno'),
-			'class' => 'waiting',
-		),
-		'draft' => array(
-			'i18n' 	=> __('Draft', 'anno'),
-			'class' => 'waiting',
-		),
-		'trash' => array(
-			'i18n' 	=> __('Trash', 'anno'),
-			'class' => 'spam',
-		),
-	);
-	
-	$num_posts = anno_viewable_article_count();
-	
-	if (!is_int($num_posts)) {
-	
-		// Get the absolute total of $num_posts
-		$total_records = array_sum( (array) $num_posts );
-		
-		// Subtract post types that are not included in the admin all list.
-		foreach (get_post_stati(array('show_in_admin_all_list' => false)) as $state) {
-			$total_records -= $num_posts->$state;
-		}
+	$base_edit_link = add_query_arg( array( 'post_type' => $article_post_type ), admin_url( 'edit.php' ) );
+	if ( anno_workflow_enabled() ) {
+		$statuses = array(
+			'published' => array(
+				'i18n' 	=> __( '%d Articles Published', 'anno' ),
+				'class' => 'approved',
+				'url' => $base_edit_link
+			),
+			'approved' => array(
+				'i18n' 	=> __( '%d Articles Approved', 'anno' ),
+				'class' => 'waiting',
+				'url' => $base_edit_link
+			),
+			'submitted' => array(
+				'i18n' 	=> __( '%d Articles In Review', 'anno' ),
+				'class' => 'waiting',
+				'url' => $base_edit_link
+			),
+			'draft' => array(
+				'i18n' 	=> __( '%d Draft Articles', 'anno' ),
+				'class' => 'waiting',
+				'url' => $base_edit_link
+			),
+		);
+
+		$post_counts = anno_wf_viewable_article_count( array_keys( $statuses ) );
 	}
 	else {
-		$total_records = $num_posts;
+		$statuses = array(
+			'publish' => array(
+				'i18n' 	=> __( '%d Articles Published', 'anno' ),
+				'class' => 'approved',
+				'url' => add_query_arg( 'post_status', 'publish', $base_edit_link )
+			),
+			'pending' => array(
+				'i18n' 	=> __( '%d Articles Pending Review', 'anno' ),
+				'class' => 'waiting',
+				'url' => add_query_arg( 'post_status', 'pending', $base_edit_link )
+			),
+			'draft' => array(
+				'i18n' 	=> __( '%d Draft Articles', 'anno' ),
+				'class' => 'waiting',
+				'url' => add_query_arg( 'post_status', 'draft', $base_edit_link )
+			),
+		);
+		$post_counts = anno_viewable_article_count( array_keys( $statuses ) );
 	}
-	
-	// Default
-	$detailed_counts = array();
-	
-	$base_edit_link = add_query_arg(array('post_type' => $article_post_type), admin_url('edit.php'));
-	
-	// Only build detailed string if user is an editor or administrator
-	if (current_user_can('editor') || current_user_can('administrator')) {
-		foreach (get_post_stati(array('show_in_admin_status_list' => true), 'objects') as $status) {
-			$status_slug = $status->name;
-			
-			// If this status is in our $status_text array
-			if (!in_array($status_slug, array_keys($status_text)))
-				continue;
-			
-			// If we don't have any, don't output...this is debatable
-			if ( empty( $num_posts->$status_slug ) )
-				continue;
-			
-			$detailed_counts[] = array(
-				'status_slug' 	=> $status->name,
-				'i18n' 			=> $status_text[$status_slug]['i18n'],
-				'count' 		=> $num_posts->$status_slug,
-				'url' 			=> add_query_arg(array('post_status' => $status_slug), $base_edit_link),
-				'class' 		=> $status_text[$status_slug]['class'],
-			);
-		}
-	}
-	?>
-	</table> <!-- /close up the other table -->
-		
-	<table>
-		<tr>
-			<td class="first b"><a href="<?php echo esc_url($base_edit_link); ?>"><?php echo number_format_i18n($total_records); ?></a></td>
-			<td class="t"><a href="<?php echo esc_url($base_edit_link); ?>"><?php _e('Articles', 'anno'); ?></a></td>
-		</tr>
-		<?php
-		foreach ($detailed_counts as $details) {
-			?>
-			<tr>
-				<td class="first b"><a href="<?php echo esc_url($details['url']); ?>"><?php echo esc_html(number_format_i18n($details['count'])); ?></a></td>
-				<td class="t"><a class="<?php echo esc_attr($details['class']); ?>" href="<?php echo esc_url($details['url']); ?>"><?php echo esc_html($details['i18n']); // already i18n'd ?></a></td>
-			</tr>
-			<?php
-		}
-		?>
-	<?php 
-}
-add_action('right_now_content_table_end', 'anno_activity_information');
 
+	$detailed_counts = array();
+
+	foreach ( $statuses as $status => $status_data ) {
+		$detailed_counts[ $status ] = array(
+			'status_slug' 	=> $status,
+			'i18n' 			=> $statuses[ $status ]['i18n'],
+			'count' 		=> $post_counts[ $status ],
+			'url' 			=> $statuses[ $status ]['url'],
+			'class' 		=> $statuses[ $status ]['class'],
+		);
+	}
+
+	foreach ( $detailed_counts as $name => $data ) {
+	?>
+	<style>#dashboard_right_now .article-count a:before { content: '\f119'; }</style>
+	<li class="article-count">
+		<a href="<?php echo esc_url( $data['url'] ); ?>"><?php echo esc_html( sprintf( $data['i18n'], $data['count'] ) ); ?></a>
+	</li>
+	<?php
+	}
+}
+add_action( 'dashboard_glance_items', 'anno_activity_information' );
 
 /**
  * Clear footer transient when we update the items in the menu it is currently using
- */ 
+ */
 function anno_update_nav_menu($menu_id) {
  	// Accounts for orphans where menu_id = 0
 	if (!empty($menu_id)) {
@@ -1050,7 +1065,7 @@ function anno_update_nav_menu_location() {
  * Display default menus if a given menu is empty
  * Handles the case where the theme location has a menu but it has no menu items
  * @see anno_build_default_menu() for other case
- */ 
+ */
 function anno_nav_menu_items($items, $args) {
 	if (empty($items)) {
 		$items = anno_default_menu_items($args->theme_location);
@@ -1061,7 +1076,7 @@ add_filter('wp_nav_menu_items', 'anno_nav_menu_items', 10, 2);
 
 /**
  * Build default nav menu items based on theme location
- */ 
+ */
 function anno_default_menu_items($location) {
 	$items = '';
 	$default_classes = 'menu-item menu-item-type-taxonomy menu-item-object-category';
@@ -1078,7 +1093,7 @@ function anno_default_menu_items($location) {
 		default:
 			break;
 	}
-	
+
 	return $items;
 }
 
@@ -1086,10 +1101,10 @@ function anno_default_menu_items($location) {
  * Build a default menu based on theme location
  * Handles the case where the theme location does not have a nav menu
  * @see anno_nav_menu_items() for other case
- */ 
+ */
 function anno_build_default_menu($args) {
 	$menu = '';
-	// The only arg that Annotum uses and cares about is menu_class and theme_location	
+	// The only arg that Annotum uses and cares about is menu_class and theme_location
 	if (!empty($args['theme_location'])) {
 		$items = anno_default_menu_items($args['theme_location']);
 		if (!empty($items)) {
@@ -1103,7 +1118,7 @@ function anno_build_default_menu($args) {
 
 /**
  * Output a nav menu or fall back to a constructed default one
- */ 
+ */
 function anno_nav_menu($args) {
 	$args['echo'] = false;
 	$menu = wp_nav_menu($args);
@@ -1117,7 +1132,7 @@ function anno_nav_menu($args) {
 /**
  * Display 'default' widgets (used when a sidebar is loaded but doesn't have widgets)
  * @see sidebar/sidebar-deafult.php
- */ 
+ */
 function anno_default_widgets() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['Anno_Widget_Recently'])) {
@@ -1130,14 +1145,14 @@ function anno_default_widgets() {
 
 /**
  * Print the article ID used in many JS scripts
- * 
- */ 
+ *
+ */
 function anno_js_post_id($hook_suffix) {
 	global $post;
 	if (($hook_suffix == 'post-new.php' || $hook_suffix == 'post.php') && (!empty($post->post_type) && $post->post_type == 'article')) {
 ?>
 <script type="text/javascript">var ANNO_POST_ID = <?php echo esc_js($post->ID); ?>;</script>
-<?php 
+<?php
 		// Popups don't load in iframes, so this needs to be loaded on every edit page
 		// This was previously done in  < WP 3.5 but now 3.5 conditionally loads it for the media popup
 		wp_enqueue_script( 'media-upload' );
@@ -1147,7 +1162,7 @@ add_action('admin_enqueue_scripts', 'anno_js_post_id', 0);
 
 /**
  * Determines whether or not a user can edit, based on the workflow being active or not
- */ 
+ */
 function anno_current_user_can_edit() {
 	// User must have the WP permissions
 	if (current_user_can('edit_article')) {
@@ -1170,19 +1185,12 @@ function anno_current_user_can_edit() {
 	return false;
 }
 
-// Remove autop, inserts unnecessary br tags in the nicely formatted HTML
-// Carlthewebmaster 15-Dec-11 - but only for Articles
-		global $post_type;
-		if ($post_type == 'article') {
-			remove_filter('the_content','wpautop');
-		}
-
 // Remove this filter which strips links from articles.
 remove_filter( 'content_save_pre', 'balanceTags', 50 );
 
 /**
  * Get the number of authors for an article via the snapshot.
- * @param int post_id ID of the post to get the number from 
+ * @param int post_id ID of the post to get the number from
  * @return Number of authors, 1 if no snapshot found (default WP)
  **/
 function anno_num_authors($post_id) {
@@ -1198,7 +1206,7 @@ function anno_num_authors($post_id) {
  /**
  * Typeahead user search AJAX handler. Based on code in WP Core 3.1.2
  * note this searches the entire users table - on multisite you can add existing users from other blogs to this one.
- */ 
+ */
 function anno_user_search() {
 	global $wpdb;
 	$s = stripslashes($_GET['q']);
@@ -1230,9 +1238,26 @@ function anno_edit_post_assets($hook_suffix) {
 		global $post;
 		$main =  trailingslashit(get_template_directory_uri()) . 'assets/main/';
 		if ($post->post_type == 'article') {
-			wp_enqueue_script('anno-article-admin', $main.'js/article-admin.js', array('jquery-ui-sortable'), ANNO_VER);
+			wp_enqueue_script('fancytree', $main.'js/jquery.fancytree-all.min.js', array('jquery', 'jquery-ui-core'), 'v2.0.0-6');
+			wp_enqueue_script('anno-validation', $main.'js/validation.js', array('jquery'), ANNO_VER);
+			wp_enqueue_script('anno-article-admin', $main.'js/article-admin.js', array('jquery-ui-sortable', 'wpdialogs', 'anno-validation', 'fancytree'), ANNO_VER);
+			$admin_i10n = array(
+				'validationAbstractMsg' => __('There is an xml error in the abstract. If this article is in a published state it will be transitioned into a non-published state until these are fixed.', 'anno'),
+				'validationBodyMsg' => __('There is an xml error in the body. If this article is in a published state it will be transitioned into a non-published state until these are fixed.', 'anno'),
+				'validationBothMsg' => __('There is an xml error in the abstract and body content. If this article is in a published state it will be transitioned into a non-published state until these are fixed.', 'anno'),
+				'deleteAppendixMsg' => __('Are you sure you want to delete this?', 'anno'),
+			);
+			wp_localize_script('anno-article-admin', 'annoArticle', $admin_i10n);
+
+			wp_enqueue_script('codemirror', trailingslashit(get_template_directory_uri()).'js/tinymce/plugins/annosource/codemirror/lib/codemirror.js', array('jquery'), ANNO_VER);
+			wp_enqueue_script('codemirror-xml', trailingslashit(get_template_directory_uri()).'js/tinymce/plugins/annosource/codemirror/mode/xml/xml.js', array('jquery', 'codemirror'), ANNO_VER);
+
 			if ($post->post_status == 'publish') {
 				wp_enqueue_script('anno-article-admin-snapshot', $main.'js/article-admin-snapshot.js', array('jquery', 'jquery-ui-sortable'), ANNO_VER);
+				$i10n = array(
+					'removeConfirmation' => __('Remove this author?', 'anno'),
+				);
+				wp_localize_script('anno-article-admin-snapshot', 'annoAAS', $i10n);
 			}
 		}
 	}
@@ -1241,13 +1266,14 @@ add_action('admin_enqueue_scripts', 'anno_edit_post_assets');
 
 /**
  * Print styles for article post type.
- */ 
+ */
 function anno_article_admin_print_styles() {
 	global $post;
 	if ((isset($post->post_type) && $post->post_type == 'article') || (isset($_GET['anno_action']) && $_GET['anno_action'] == 'image_popup')) {
 		$main =  trailingslashit(get_template_directory_uri()) . 'assets/main/';
 		wp_enqueue_style('article-admin', $main.'css/article-admin.css', array(), ANNO_VER);
 		wp_enqueue_style('article-admin-tinymce-ui', $main.'css/tinymce-ui.css', array(), ANNO_VER);
+		wp_enqueue_style('codemirror', trailingslashit(get_template_directory_uri()).'js/tinymce/plugins/annosource/codemirror/lib/codemirror.css', array(), ANNO_VER);
 	}
 }
 add_action('admin_print_styles', 'anno_article_admin_print_styles');
@@ -1323,3 +1349,46 @@ function anno_remove_user_from_post($type, $user_id, $post_id) {
 	return delete_post_meta($post_id, $type, $user_id);
 }
 
+function anno_process_xml_content($content) {
+	if (get_post_type() == 'article') {
+		remove_filter('the_content','wpautop');
+		$post = get_post();
+		$content = anno_xml_to_html($post->post_content_filtered);
+	}
+	return $content;
+}
+add_filter('the_content', 'anno_process_xml_content', 5);
+
+function anno_is_article($post_id) {
+	return get_post_type($post_id) == 'article';
+}
+
+/**
+ * Function to limit display of comments.
+ * By Default, this filters out all internal comments. Use remove_filter and add_filter where appropriate to show them
+ *
+ * @todo Update to WP_Comment_Query filter when WP updates core to use non-hardcoded queries.
+ */
+function anno_comment_type_filter($clauses) {
+	if (empty($clauses['where'])) {
+		$clauses['where'] = 'comment_type NOT IN (\'article_general\', \'article_review\')';
+	}
+	else {
+		$clauses['where'] .= ' AND comment_type NOT IN (\'article_general\', \'article_review\')';
+	}
+	return $clauses;
+}
+add_filter('comments_clauses', 'anno_comment_type_filter');
+
+
+/**
+ * Function to limit front-end display of comments.
+ * Wrap this filter around comments_template();
+ *
+ * @todo Update to WP_Comment_Query filter when WP updates core to use non-hardcoded queries.
+ */
+function anno_internal_comments_query($query) {
+	$query = str_replace('WHERE', 'WHERE comment_type NOT IN (\'article_general\', \'article_review\') AND', $query);
+	return $query;
+}
+add_filter('comment_feed_where', 'anno_internal_comments_query');

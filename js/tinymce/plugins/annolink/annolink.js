@@ -1,9 +1,10 @@
 var annoLink;
 
 (function($){
-	var inputs = {}, ed;
+	var inputs = {}, ed, storedRng = null;
 
-	annoLink = {	
+	annoLink = {
+		parentSelector: 'span[data-xmlel="ext-link"]',
 		keySensitivity: 100,
 		textarea: function() { return edCanvas; },
 
@@ -13,7 +14,7 @@ var annoLink;
 			inputs.url = $('#anno-link-url-field');
 			inputs.title = $('#anno-link-title-field');
 			inputs.alt = $('#anno-link-alt-field');
-			
+
 			// Bind event handlers
 			inputs.dialog.keydown( annoLink.keydown );
 			inputs.dialog.keyup( annoLink.keyup );
@@ -21,17 +22,16 @@ var annoLink;
 				annoLink.update();
 				e.preventDefault();
 			});
-			
+
 			$('#anno-link-cancel').click(annoLink.close);
 
-			inputs.dialog.bind('wpdialogrefresh', annoLink.refresh);
-			inputs.dialog.bind('wpdialogbeforeopen', annoLink.beforeOpen);
-			inputs.dialog.bind('wpdialogclose', annoLink.onClose);
+			inputs.dialog.on('wpdialogrefresh', annoLink.refresh);
+			inputs.dialog.on('wpdialogbeforeopen', annoLink.beforeOpen);
+			inputs.dialog.on('wpdialogclose', annoLink.onClose);
 		},
 
 		beforeOpen : function() {
 			annoLink.range = null;
-
 			if ( ! annoLink.isMCE() && document.selection ) {
 				annoLink.textarea().focus();
 				annoLink.range = document.selection.createRange();
@@ -39,7 +39,8 @@ var annoLink;
 		},
 
 		isMCE : function() {
-			return tinyMCEPopup && ( ed = tinyMCEPopup.editor ) && ! ed.isHidden();
+			return true; // Unlikely this will be used in a different context
+			//return tinyMCEPopup && ( ed = tinyMCEPopup.editor ) && ! ed.isHidden();
 		},
 
 		refresh : function() {
@@ -52,13 +53,14 @@ var annoLink;
 		},
 
 		mceRefresh : function() {
-			var e;
-			ed = tinyMCEPopup.editor;
+			var ed = top.tinymce.activeEditor;
 
-			tinyMCEPopup.restoreSelection();
-			
+			if (annoLink.range != null) {
+				ed.selection.setRng(annoLink.range);
+			}
+
 			// If link exists, select proper values.
-			if ( e = ed.dom.getParent(ed.selection.getNode(), 'EXT-LINK') ) {
+			if ( e = ed.dom.getParent(ed.selection.getNode(), this.parentSelector) ) {
 
 				inputs.url.val( ed.dom.getAttrib(e, 'xlink:href'));
 				inputs.title.val( ed.dom.getAttrib(e, 'title') );
@@ -70,11 +72,13 @@ var annoLink;
 				annoLink.setDefaultValues();
 			}
 
-			tinyMCEPopup.storeSelection();
+			annoLink.range = ed.selection.getRng();
 		},
 
 		close : function() {
-			tinyMCEPopup.close();
+			var ed = top.tinymce.activeEditor;
+			ed.windowManager.close();
+			ed.focus();
 		},
 
 		onClose: function() {
@@ -96,12 +100,13 @@ var annoLink;
 		},
 
 		update : function() {
-			var ed = tinyMCEPopup.editor,
-				attrs = annoLink.getAttrs(),
-				e, b;
+			var ed = top.tinymce.activeEditor,
+				attrs = annoLink.getAttrs(), e, b;
 
-			tinyMCEPopup.restoreSelection();
-			e = ed.dom.getParent(ed.selection.getNode(), 'EXT-LINK');
+			if (annoLink.range != null) {
+				ed.selection.setRng(annoLink.range);
+			}
+			e = ed.dom.getParent(ed.selection.getNode(), this.parentSelector);
 
 			// If the values are empty, unlink and return
 			if ( ! attrs['xlink:href'] || attrs['xlink:href'] == 'http://' ) {
@@ -110,22 +115,25 @@ var annoLink;
 					b = ed.selection.getBookmark();
 					ed.dom.remove(e, 1);
 					ed.selection.moveToBookmark(b);
-					tinyMCEPopup.execCommand("mceEndUndoLevel");
+					ed.execCommand("mceEndUndoLevel");
 					annoLink.close();
 				}
 				return;
 			}
 
-			tinyMCEPopup.execCommand("mceBeginUndoLevel");
+			ed.execCommand("mceBeginUndoLevel");
 			// Leverage the logic of CreateLink
 			if (e == null) {
-				tinyMCEPopup.execCommand("CreateLink", false, "#mce_temp_url#", {skip_undo : 1});
-				
+				ed.execCommand("CreateLink", false, "#mce_temp_url#", {skip_undo : 1});
+
 				tinymce.each(ed.dom.select("a"), function(n) {
 					if (ed.dom.getAttrib(n, 'href') == '#mce_temp_url#') {
-						var new_element = document.createElement('ext-link');
+						var new_element = document.createElement('span');
 					 	var old_innerHTML = n.innerHTML;
-					
+
+					 	attrs['class'] = 'ext-link';
+					 	attrs['data-xmlel'] = 'ext-link';
+					 	attrs['xmlns:xlink'] = 'http://www.w3.org/1999/xlink';
 						n.parentNode.replaceChild(new_element, n);
 						e = new_element;
 						ed.dom.setAttribs(e, attrs);
@@ -141,7 +149,7 @@ var annoLink;
 					e = null;
 				}
 
-			} 
+			}
 			else {
 				ed.dom.setAttribs(e, attrs);
 			}
@@ -151,10 +159,11 @@ var annoLink;
 				ed.focus();
 				ed.selection.select(e);
 				ed.selection.collapse(0);
-				tinyMCEPopup.storeSelection();
+
+				annoLink.range = ed.selection.getRng();
 			}
 
-			tinyMCEPopup.execCommand("mceEndUndoLevel");
+			ed.execCommand("mceEndUndoLevel");
 			annoLink.close();
 		},
 
@@ -163,7 +172,6 @@ var annoLink;
 			// Leave the new tab setting as-is.
 			inputs.url.val('http://');
 			inputs.title.val('');
-			inputs.alt.val('');
 		},
 
 		keyup: function( event ) {

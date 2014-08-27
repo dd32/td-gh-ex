@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * @package anno
@@ -16,11 +16,11 @@
 function anno_register_post_types() {
 	if (anno_workflow_enabled()) {
 		$capability_type = array('article', 'articles');
-	} 
+	}
 	else {
 		$capability_type = 'post';
 	}
-	
+
 	$labels = array(
 		'name' => _x('Articles', 'post type name', 'anno'),
 		'singular_name' => _x('Article', 'post type singular name', 'anno'),
@@ -45,7 +45,7 @@ function anno_register_post_types() {
 			'taxonomies' => array(),
 			'menu_position' => 5,
 			'capability_type' => $capability_type,
-			'menu_icon' => trailingslashit(get_template_directory_uri()).'assets/main/img/admin-menu-icon.png',
+			'menu_icon' => 'dashicons-welcome-write-blog',
 	);
 	register_post_type('article', $args);
 }
@@ -53,7 +53,7 @@ add_action('after_setup_theme', 'anno_register_post_types');
 
 /**
  * Request handler for post types (article)
- */ 
+ */
 function anno_post_type_requst_handler() {
 	// Converts Article to Post post type
 	if (isset($_POST['anno_convert'])) {
@@ -71,7 +71,7 @@ add_action('admin_init', 'anno_post_type_requst_handler', 0);
 
 /**
  * Display custom messages for articles. Based on WP high 3.1.2
- */ 
+ */
 function anno_post_updated_messages($messages) {
 	global $post;
 	// Based on message code in WP high 3.2
@@ -87,8 +87,9 @@ function anno_post_updated_messages($messages) {
 		8 => sprintf( _x('Article submitted. <a target="_blank" href="%s">Preview article</a>', 'Article updated message', 'anno'), esc_url(add_query_arg('preview', 'true', get_permalink($post->ID)))),
 		9 => sprintf( _x('Article scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview article</a>', 'Article updated message', 'anno'), date_i18n( _x( 'M j, Y @ G:i', 'Article updated future time format', 'anno' ), strtotime( $post->post_date )), esc_url( get_permalink($post->ID))),
 		10 => sprintf( _x('Article draft updated. <a target="_blank" href="%s">Preview article</a>', 'Article updated message', 'anno'), esc_url( add_query_arg('preview', 'true', get_permalink($post->ID)))),
-		11 => sprintf( _x('Article successfully cloned.', 'Article updated message', 'anno')),
-		12 => sprintf( _x('Unable to clone article.', 'Article updated message', 'anno')),
+		11 => _x('Article successfully cloned.', 'Article updated message', 'anno'),
+		12 => _x('Unable to clone article.', 'Article updated message', 'anno'),
+		13 => _x('Article unpublished; there was an error in validation.', 'Article updated message', 'anno'),
 	);
 
 	return $messages;
@@ -97,16 +98,21 @@ add_filter('post_updated_messages', 'anno_post_updated_messages');
 
 /**
  * Add DTD Meta Boxes
- */ 
+ */
 function anno_article_meta_boxes($article) {
+	$appendices = get_post_meta($article->ID, '_anno_appendices', true);
+
 	add_meta_box('subtitle', _x('Subtitle', 'Meta box title', 'anno'), 'anno_subtitle_meta_box', 'article', 'normal', 'high');
-	add_meta_box('abstract', _x('Abstract', 'Meta box title', 'anno'), 'anno_abstract_meta_box', 'article', 'normal', 'high');
-	add_meta_box('body', _x('Body', 'Meta box title', 'anno'), 'anno_body_meta_box', 'article', 'normal', 'high');
+	add_meta_box('excerpt-meta-box', _x('Abstract', 'Meta box title', 'anno'), 'anno_abstract_meta_box', 'article', 'normal', 'high');
+	add_meta_box('content-meta-box', _x('Article', 'Meta box title', 'anno'), 'anno_body_meta_box', 'article', 'normal', 'high');
 	add_meta_box('references', _x('References', 'Meta box title', 'anno'), 'anno_references_meta_box', 'article', 'normal', 'high');
 	add_meta_box('funding', _x('Funding Statement', 'Meta box title', 'anno'), 'anno_funding_meta_box', 'article', 'normal', 'high');
 	add_meta_box('acknowledgements', _x('Acknowledgements', 'Meta box title', 'anno'), 'anno_acknowledgements_meta_box', 'article', 'normal', 'high');
-	add_meta_box('appendices', _x('Appendices', 'Meta box title', 'anno'), 'anno_appendices_meta_box', 'article', 'normal', 'high');
 	add_meta_box('featured', _x('Featured', 'Meta box title', 'anno'), 'anno_featured_meta_box', 'article', 'side', 'default');
+
+	if (!empty($appendices)) {
+		add_meta_box('appendices', _x('Appendices', 'Meta box title', 'anno'), 'anno_appendices_meta_box', 'article', 'normal', 'high');
+	}
 
 	if (current_user_can('editor') || current_user_can('administrator')) {
 		add_meta_box('convert', _x('Convert To Post', 'Meta box title', 'anno'), 'anno_convert_meta_box', 'article', 'side', 'low');
@@ -128,26 +134,37 @@ function anno_subtitle_meta_box($post) {
 /**
  * Body meta box markup (stored in content)
  */
-function anno_body_meta_box($post) {
+function anno_body_meta_box( $post ) {
 	global $hook_suffix;
-	if (empty($post->post_content) || $hook_suffix == 'post-new.php') {		
-		$content = '<sec>
-			<heading></heading>
-			<para>&nbsp;</para>
-		</sec>';
+	if ( empty( $post->post_content ) || $hook_suffix == 'post-new.php' ) {
+		$article_template = trim( cfct_get_option( 'article_template' ) );
+		if ( ! empty( $article_template ) ) {
+			$content = anno_process_article_template( $article_template );
+		} else {
+			$content = '<sec>
+				<title></title>
+				<p>&#xA0;</p>
+			</sec>';
+		}
+	} else {
+		$content = $post->post_content;
+	}
+
+	if ( function_exists( 'wp_editor' ) ) {
+		anno_load_editor( anno_process_editor_content( $content ), 'content', array( 'textarea_name' => 'content' ) );
 	}
 	else {
-		// Note this is actually post_content_filtered in the db, see 'edit_post_content' filter
-		$content = anno_process_editor_content($post->post_content);
-	}
-	if (function_exists('wp_editor')) {
-		anno_load_editor($content, 'content', array('textarea_name' => 'content'));
-	}
-	else {
-		echo '<p style="padding:0 10px;">'.sprintf(_x('The Annotum editor requires at least WordPress 3.3. It appears you are using WordPress %s. ', 'WordPress version error message', 'anno'), get_bloginfo('version')).'</p>';
+		echo '<p style="padding:0 10px;">' . sprintf( _x( 'The Annotum editor requires at least WordPress 3.3. It appears you are using WordPress %s. ', 'WordPress version error message', 'anno' ), get_bloginfo( 'version' ) ) . '</p>';
 	}
 ?>
 
+<aside class="js-content-tree-pop-up tree-pop-up hidden">
+	<div id="anno-tree-close" class="js-anno-tree-close"></div>
+	<div id="anno-tree-excerpt">
+	</div>
+	<div id="anno-tree-content">
+	</div>
+</aside>
 <?php
 }
 
@@ -170,10 +187,24 @@ function anno_references_meta_box($post) {
  * Abstract meta box markup (stored in excerpt)
  */
 function anno_abstract_meta_box($post) {
-?>
-	<textarea class="anno-meta anno-meta-abstract" rows="8" name="excerpt"><?php echo esc_html($post->post_excerpt); ?></textarea>
-<?php
+	// FIXME: hack because excerpt comes out encoded
+	if (empty($post->post_excerpt)) {
+		$post->post_excerpt = '&lt;p&gt;&amp;#xA0;&lt;/p&gt;';
+	}
+	else if (html_entity_decode($post->post_excerpt) == $post->post_excerpt) {
+		$post->post_excerpt = '&lt;p&gt;'.$post->post_excerpt. '&lt;/p&gt;';
+	}
+
+	anno_load_editor(anno_process_editor_content(html_entity_decode($post->post_excerpt)), "excerpt",
+		array(
+			'editor_class' => esc_attr('anno-meta anno-meta-abstract'),
+			'textarea_name' => esc_attr('excerpt'),
+			'textarea_rows' => esc_attr('8')
+		)
+	);
 }
+add_filter('get_the_excerpt', 'anno_xml_to_html');
+
 
 /**
  * Funding meta box markup
@@ -197,18 +228,18 @@ function anno_acknowledgements_meta_box($post) {
 
 /**
  * Meta box markup for featuring an article in the featured carousel
- */ 
+ */
 function anno_featured_meta_box($post) {
 	$checked = get_post_meta($post->ID, '_anno_featured', true);
 ?>
 	<input id="anno-featured" type="checkbox" value="on" name="anno_featured"<?php checked($checked, 'on', true); ?> />
 	<label for="anno-featured"><?php _ex('Appear in the home page carousel', 'Featured post meta box label', 'anno'); ?></label>
-<?php	
+<?php
 }
 
 /**
- * Save post meta related to an article 
- */ 
+ * Save post meta related to an article
+ */
 function anno_article_save_post($post_id, $post) {
 	if ($post->post_type == 'article') {
 		$anno_meta = array(
@@ -218,8 +249,8 @@ function anno_article_save_post($post_id, $post) {
 			'anno_featured'
 		);
 		foreach ($anno_meta as $key) {
-			if (isset($_POST[$key])) {
-				switch ($key) {			
+			if ( isset($_POST[$key]) || $key == 'anno_featured' ) {
+				switch ($key) {
 					case 'anno_featured':
 						if (isset($_POST['anno_featured']) && $_POST['anno_featured'] == 'on') {
 							$value = 'on';
@@ -235,19 +266,19 @@ function anno_article_save_post($post_id, $post) {
 					case 'anno_subtitle':
 					case 'anno_funding':
 					case 'anno_acknowledgements':
-					default:	
+					default:
 						if (isset($_POST[$key])) {
 							$value = force_balance_tags($_POST[$key]);
 						}
 						else {
 							$value = '';
-						}		
+						}
 						break;
 				}
 				update_post_meta($post_id, '_'.$key, $value);
 			}
 		}
-		
+
 		$appendices = array();
 		if (isset($_POST['anno_appendix']) && is_array($_POST['anno_appendix'])) {
 			foreach ($_POST['anno_appendix'] as $appendix) {
@@ -255,7 +286,7 @@ function anno_article_save_post($post_id, $post) {
 					$appendices[] = addslashes(anno_validate_xml_content_on_save(stripslashes($appendix)));
 				}
 			}
-			update_post_meta($post_id, '_anno_appendices', $appendices);		
+			update_post_meta($post_id, '_anno_appendices', $appendices);
 		}
 	}
 }
@@ -263,26 +294,26 @@ add_action('wp_insert_post', 'anno_article_save_post', 10, 2);
 
 /**
  * Checks to see if a content block is empty or contains the default markup
- * 
+ *
  * @param string $appendix_content Content sent from the editor
  * @return bool true if there exists content other than the default, false otherwise.
- */ 
+ */
 function anno_is_appendix_empty($appendix_content) {
 	// Account for variations in how different browsers handle empty tags in tinyMCE
 	$appendix_content = str_replace(array(' ', ' ', '&nbsp', '\n', '<br>', '<br />'), '', $appendix_content);
-	if (empty($appendix_content) || $appendix_content == '<sec><heading></heading><para></para></sec>') {
+	if (empty($appendix_content) || $appendix_content == '<sec><title></title><p></p></sec>') {
 		return true;
 	}
-	
+
 	return false;
 }
 
 /**
  * Converts a post with the article post-type to the post post-type
- * 
+ *
  * @param int $post_id The ID of the post to convert
  * @return void
- */ 
+ */
 function anno_article_to_post($post_id) {
 	$post = get_post(absint($post_id), ARRAY_A);
 	if ($post['post_type'] != 'article') {
@@ -300,18 +331,18 @@ function anno_article_to_post($post_id) {
 
 	$post['post_type'] = 'post';
 	$post['post_category'] = wp_get_post_categories($post['ID']);
-	$post['tags_input'] = wp_get_post_tags($post['ID'], array('fields' => 'names'));	
+	$post['tags_input'] = wp_get_post_tags($post['ID'], array('fields' => 'names'));
 
 	$post_id = wp_insert_post($post);
 }
 
 /**
  * Converts a post's terms from one taxonomy to another.
- * 
+ *
  * @param int $post_id The id of the post to convert the terms for
  * @param String $from_tax The original taxonomy of the term
  * @param String $to_tax The taxonomy to convert the term to
- */ 
+ */
 function anno_convert_taxonomies($post_id, $from_tax, $to_tax) {
 	$post_terms = wp_get_object_terms($post_id, $from_tax);
 	if (is_array($post_terms)) {
@@ -327,12 +358,12 @@ function anno_convert_taxonomies($post_id, $from_tax, $to_tax) {
 
 /**
  * Converts a term and all its ancestors from one taxonomy to another
- * 
+ *
  * @param Term Object $term The original term to convert
  * @param String $from_tax The original taxonomy of the term
  * @param String $to_tax The taxonomy to convert the term to
- * @return int The ID of the newly converted term. 
- */ 
+ * @return int The ID of the newly converted term.
+ */
 function anno_convert_term($term, $from_tax, $to_tax) {
 	if (!empty($term->parent)) {
 		$parent_term = get_term($term->parent, $from_tax);
@@ -357,11 +388,11 @@ function anno_convert_term($term, $from_tax, $to_tax) {
 		}
 	}
 	return $term_id;
-} 
+}
 
 /**
  * Markup for the convert mechanism meta box
- */ 
+ */
 function anno_convert_meta_box($post) {
 ?>
 	<p>
@@ -371,18 +402,18 @@ function anno_convert_meta_box($post) {
 		<?php wp_nonce_field('anno_convert', 'anno_convert_nonce', true, true); ?>
 		<input type="submit" name="anno_convert" class="button-primary" value="Convert To Post" />
 	</p>
-	
+
 <?php
 }
 
 /**
- * Markup for depositing 
- */ 
+ * Markup for depositing
+ */
 function anno_deposit_doi_meta_box($post) {
 	$crossref_login = cfct_get_option('crossref_login');
 	$crossref_password = cfct_get_option('crossref_pass');
 	$crossref_registrant = cfct_get_option('registrant_code');
-	
+
 	if (empty($crossref_login) || empty($crossref_password) || empty($crossref_registrant)) {
 		$deposit_enabled = false;
 		$deposit_value = _x('CrossRef Credentials Required', 'disabled DOI lookup message', 'anno');
@@ -393,7 +424,7 @@ function anno_deposit_doi_meta_box($post) {
 		$deposit_value = anno_get_doi($post->ID);
 		$deposit_id = 'doi-deposit-submit';
 	}
-	
+
 ?>
 	<div id="doi-status"></div>
 	<input id="doi" type="text" name="doi-deposit" class="meta-doi-input" value="<?php echo $deposit_value; ?>"<?php disabled(true, true, true); ?> />
@@ -401,4 +432,70 @@ function anno_deposit_doi_meta_box($post) {
 	<!-- <input id="<?php echo $deposit_id; ?>" type="button" value="<?php _ex('Deposit', 'doi deposit button label', 'anno'); ?>"<?php disabled($deposit_enabled, false, true); ?> /> -->
 <?php
 }
-?>
+
+function anno_appendices_meta_box($post) {
+	echo '<div class="inside">
+			<p>'.__('Appendices have changed in Annotum 2.0, if you would like to continue using them please copy the appendix content below, open the code view
+		in the body section and paste it in at the bottom then delete that appendix. Please note that all content pasted into the body must be contained in a <code>&lt;sec&gt;  &lt;/sec&gt;</code> block.
+		 Appendices will continue to be output as normal if you do nothing.', 'anno').'</p>
+			<hr />';
+
+	$appendices = get_post_meta($post->ID, '_anno_appendices', true);
+	if (!empty($appendices) && is_array($appendices)) {
+		foreach ($appendices as $index => $content) {
+			echo '<div class="'.esc_attr('js-appendix-'.$index).'">';
+			echo '<h3>'.sprintf(__('Appendix %s - ', 'anno'), $index + 1).' <a href="#" class="js-delete-appendix" data-index="'.esc_attr($index).'">'._x('delete', 'delete appendix text', 'anno').'</a></h3>';
+			echo '<textarea class="js-textarea anno-meta" disabled rows="10">'.esc_textarea($content).'</textarea>';
+			echo '</div>';
+			//$html .= anno_appendix_box_content($index + 1, $content);
+		}
+		wp_nonce_field('appendex-delete-nonce', 'appendex-delete-nonce', false, true);
+	}
+	echo '</div>';
+}
+
+function anno_delete_appendix_ajax() {
+	$result = 'false';
+	if (check_ajax_referer('appendex-delete-nonce', 'nonce', false)) {
+		$appendix_index = isset($_POST['index']) ? $_POST['index'] : false;
+		$post_id = isset($_POST['post_id']) ? $_POST['post_id'] : false;
+		if ($appendix_index !== false && !empty($post_id)) {
+			$appendix_meta = get_post_meta($post_id, '_anno_appendices', true);
+			if (isset($appendix_meta[$appendix_index])) {
+				unset($appendix_meta[$appendix_index]);
+				if (update_post_meta($post_id, '_anno_appendices', $appendix_meta)) {
+					$result = 'true';
+				}
+			}
+		}
+	}
+	echo $result;
+	die();
+}
+add_action('wp_ajax_anno_delete_appendix', 'anno_delete_appendix_ajax');
+
+function anno_process_article_template( $article_template ) {
+	$markup = '';
+
+	// Catch the escaped commas
+	$escape_token = ' ####comma#### ';
+	$article_template = str_replace( '/,', $escape_token, $article_template );
+	$sections = explode( ',', $article_template );
+
+	foreach ( $sections as $section_title ) {
+		$markup .= '
+			<sec>
+				<title>' . str_replace( $escape_token, ',', trim( $section_title ) ) . '</title>
+				<p>&#xA0;</p>
+			</sec>';
+	}
+
+	if ( empty( $markup ) ) {
+		$markup = '<sec>
+				<title></title>
+				<p>&#xA0;</p>
+			</sec>';
+	}
+
+	return $markup;
+}

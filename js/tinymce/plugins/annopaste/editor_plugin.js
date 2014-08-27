@@ -14,9 +14,9 @@
 			paste_enable_default_filters : true,
 			paste_block_drop : false,
 			paste_retain_style_properties : 'none',
-			paste_strip_class_attributes : 'all',
+			paste_strip_class_attributes : false,
 			paste_remove_spans : false,
-			paste_remove_styles : false,
+			paste_remove_styles : true,
 			paste_remove_styles_if_webkit : true,
 			paste_convert_middot_lists : true,
 			paste_text_use_dialog : false,
@@ -38,7 +38,6 @@
 	tinymce.create('tinymce.plugins.AnnoPaste', {
 		init : function(ed, url) {
 			var t = this;
-
 			t.editor = ed;
 			t.url = url;
 
@@ -47,13 +46,13 @@
 			t.onPostProcess = new tinymce.util.Dispatcher(t);
 
 			// Register default handlers
-			t.onPreProcess.add(t._preProcess);
-			t.onPostProcess.add(t._postProcess);
+			t.editor.on('PastePreProcess', t._preProcess);
+			t.editor.on('PastePostProcess', t._postProcess);
 
 			// Register optional preprocess handler
 			t.onPreProcess.add(function(pl, o) {
 				ed.execCallback('paste_preprocess', pl, o);
-			}); 
+			});
 
 			// Register optional postprocess
 			t.onPostProcess.add(function(pl, o) {
@@ -62,8 +61,9 @@
 
 			ed.onKeyDown.addToTop(function(ed, e) {
 				// Block ctrl+v from adding an undo level since the default logic in tinymce.Editor will add that
-				if (((tinymce.isMac ? e.metaKey : e.ctrlKey) && e.keyCode == 86) || (e.shiftKey && e.keyCode == 45))
+				if (((tinymce.isMac ? e.metaKey : e.ctrlKey) && e.keyCode == 86) || (e.shiftKey && e.keyCode == 45)) {
 					return false; // Stop other listeners
+				}
 			});
 
 			// Initialize plain text flag
@@ -74,7 +74,7 @@
 			function process(o, force_rich) {
 				var dom = ed.dom, rng;
 				// Execute pre process handlers
-				t.onPreProcess.dispatch(t, o);
+				//t.onPreProcess.dispatch(t, o);
 
 				// Create DOM structure
 				o.node = dom.create('div', 0, o.content);
@@ -91,7 +91,7 @@
 				}
 
 				// Execute post process handlers
-				t.onPostProcess.dispatch(t, o);
+				//t.onPostProcess.dispatch(t, o);
 
 				// Serialize content
 				o.content = ed.serializer.serialize(o.node, {getInner : 1, forced_root_block : ''});
@@ -109,41 +109,35 @@
 				}
 			}
 
-			// Add command for external usage
-			ed.addCommand('AnnomceInsertClipboardContent', function(u, o) {
-				process(o, true);
-			});
+			function AnnomcePasteText() {
 
-			if (!getParam(ed, 'paste_text_use_dialog')) {
-				ed.addCommand('AnnomcePasteText', function(u, v) {
-					var cookie = tinymce.util.Cookie;
+				var cookie = tinymce.util.Cookie;
 
-					ed.pasteAsPlainText = !ed.pasteAsPlainText;
-					ed.controlManager.setActive('pastetext', ed.pasteAsPlainText);
+				ed.pasteAsPlainText = !ed.pasteAsPlainText;
+				this.active(ed.pasteAsPlainText);
 
-					if ((ed.pasteAsPlainText) && (!cookie.get('tinymcePasteText'))) {
-						if (getParam(ed, 'paste_text_sticky')) {
-							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
-						} else {
-							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
-						}
+				if ((ed.pasteAsPlainText) && (!cookie.get('tinymcePasteText'))) {
+					ed.windowManager.alert(	'Paste is now in plain text mode. Contents will now ' +
+					'be pasted as plain text until you toggle this option off.');
 
-						if (!getParam(ed, 'paste_text_notifyalways')) {
-							cookie.set('tinymcePasteText', '1', new Date(new Date().getFullYear() + 1, 12, 31))
-						}
+					if (!getParam(ed, 'paste_text_notifyalways')) {
+						cookie.set('tinymcePasteText', '1', new Date(new Date().getFullYear() + 1, 12, 31));
 					}
-				});
-			}
+				}
+			};
 
-			ed.addButton('annopastetext', {title: 'paste.paste_text_desc', cmd: 'AnnomcePasteText'});
-			ed.addButton('annoselectall', {title: 'paste.selectall_desc', cmd: 'Annoselectall'});
+			ed.addButton('annopastetext', {
+				title:  ed.getLang('annopaste.description'),
+				active: ed.pasteAsPlainText == true,
+				onclick: AnnomcePasteText
+			});
 
 			// This function grabs the contents from the clipboard by adding a
 			// hidden div and placing the caret inside it and after the browser paste
 			// is done it grabs that contents and processes that
 			function grabContent(e) {
 				var n, or, rng, oldRng, sel = ed.selection, dom = ed.dom, body = ed.getBody(), posY, textContent;
-				
+
 				// Check if browser supports direct plaintext access
 				if (e.clipboardData || dom.doc.dataTransfer) {
 					textContent = (e.clipboardData || dom.doc.dataTransfer).getData('Text');
@@ -264,7 +258,7 @@
 							});
 						} else {
 							// Found WebKit weirdness so force the content into plain text mode
-							h = '<preformat>' + dom.encode(textContent).replace(/\r?\n/g, '<br />') + '</preformat>';
+							h = '<div class="preformat" data-xmlel="preformat">' + dom.encode(textContent).replace(/\r?\n/g, '<br />') + '</div>';
 						}
 
 						// Remove the nodes
@@ -285,21 +279,21 @@
 				}
 			}
 
-			// Check if we should use the new auto process method			
-			if (getParam(ed, 'paste_auto_cleanup_on_paste')) {
-				// Is it's Opera or older FF use key handler
-				if (tinymce.isOpera || /Firefox\/2/.test(navigator.userAgent)) {
-					ed.onKeyDown.addToTop(function(ed, e) {
-						if (((tinymce.isMac ? e.metaKey : e.ctrlKey) && e.keyCode == 86) || (e.shiftKey && e.keyCode == 45))
-							grabContent(e);
-					});
-				} else {
-					// Grab contents on paste event on Gecko and WebKit
-					ed.onPaste.addToTop(function(ed, e) {
-						return grabContent(e);
-					});
-				}
-			}
+			// // Check if we should use the new auto process method
+			// if (getParam(ed, 'paste_auto_cleanup_on_paste')) {
+			// 	// Is it's Opera or older FF use key handler
+			// 	if (tinymce.isOpera || /Firefox\/2/.test(navigator.userAgent)) {
+			// 		ed.onKeyDown.addToTop(function(ed, e) {
+			// 			if (((tinymce.isMac ? e.metaKey : e.ctrlKey) && e.keyCode == 86) || (e.shiftKey && e.keyCode == 45))
+			// 				grabContent(e);
+			// 		});
+			// 	} else {
+			// 		// Grab contents on paste event on Gecko and WebKit
+			// 		ed.onPaste.addToTop(function(ed, e) {
+			// 			return grabContent(e);
+			// 		});
+			// 	}
+			// }
 
 			ed.onInit.add(function() {
 				ed.controlManager.setActive('pastetext', ed.pasteAsPlainText);
@@ -314,9 +308,6 @@
 					});
 				}
 			});
-
-			// Add legacy support
-			t._legacySupport();
 		},
 
 		getInfo : function() {
@@ -329,27 +320,22 @@
 			};
 		},
 
-		_preProcess : function(pl, o) {
-			var ed = this.editor,
-				h = o.content,
+		_preProcess : function(e) {
+			var ed = tinymce.activeEditor,
+				h = e.content,
 				grep = tinymce.grep,
 				explode = tinymce.explode,
 				trim = tinymce.trim,
-				len, stripClass,
-				dom = ed.dom;
+				len, stripClass;
 
 			function process(items) {
 				each(items, function(v) {
 					// Remove or replace
 					if (v.constructor == RegExp)
 						h = h.replace(v, '');
-					else 
-						h = h.replace(v[0], v[1]);						
+					else
+						h = h.replace(v[0], v[1]);
 				});
-			}
-			
-			if (ed.settings.paste_enable_default_filters == false) {
-				return;
 			}
 
 			// IE9 adds BRs before/after block elements when contents is pasted from word or for example another browser
@@ -366,8 +352,8 @@
 			}
 
 			// Detect Word content and process it more aggressive
-			if (/class="?Mso|style="[^"]*\bmso-|w:WordDocument/i.test(h) || o.wordContent) {
-				o.wordContent = true;			// Mark the pasted contents as word specific content
+			if (/class="?Mso|style="[^"]*\bmso-|w:WordDocument/i.test(h) || e.wordContent) {
+				e.wordContent = true;			// Mark the pasted contents as word specific content
 
 				// Process away some basic content
 				process([
@@ -375,17 +361,13 @@
 					/(&nbsp;|<br[^>]*>)+\s*$/gi		// &nbsp; entities at the end of contents
 				]);
 
-//				if (getParam(ed, "paste_convert_headers_to_strong")) {
-					h = h.replace(/<p [^>]*class="?MsoHeading"?[^>]*>(.*?)<\/p>/gi, '<heading>$1</heading>');
-//				}
+				h = h.replace(/<p [^>]*class="?MsoHeading"?[^>]*>(.*?)<\/p>/gi, tinymce.activeEditor.dom.create(ed.plugins.textorum.translateElement('title'), {'class': 'title', 'data-xmlel': 'title'}, '$1').toString());
 
-				if (getParam(ed, 'paste_convert_middot_lists')) {
-					process([
-						[/<!--\[if !supportLists\]-->/gi, '$&__MCE_ITEM__'],					// Convert supportLists to a list item marker
-						[/(<span[^>]+(?:mso-list:|:\s*symbol)[^>]+>)/gi, '$1__MCE_ITEM__'],		// Convert mso-list and symbol spans to item markers
-						[/(<p[^>]+(?:MsoListParagraph)[^>]+>)/gi, '$1__MCE_ITEM__']				// Convert mso-list and symbol paragraphs to item markers (FF)
-					]);
-				}
+				process([
+					[/<!--\[if !supportLists\]-->/gi, '$&__MCE_ITEM__'],					// Convert supportLists to a list item marker
+					[/(<span[^>]+(?:mso-list:|:\s*symbol)[^>]+>)/gi, '$1__MCE_ITEM__'],		// Convert mso-list and symbol spans to item markers
+					[/(<p[^>]+(?:MsoListParagraph)[^>]+>)/gi, '$1__MCE_ITEM__']				// Convert mso-list and symbol paragraphs to item markers (FF)
+				]);
 
 				process([
 					// Word comments like conditional comments etc
@@ -408,176 +390,13 @@
 					h = h.replace(/(<[a-z][^>]*\s)(?:id|name|language|type|on\w+|\w+:\w+)=(?:"[^"]*"|\w+)\s?/gi, '$1');
 				} while (len != h.length);
 
-				// Remove all spans if no styles is to be retained
-				if (getParam(ed, 'paste_retain_style_properties').replace(/^none$/i, '').length == 0) {
-					h = h.replace(/<\/?span[^>]*>/gi, '');
-				} else {
-					// We're keeping styles, so at least clean them up.
-					// CSS Reference: http://msdn.microsoft.com/en-us/library/aa155477.aspx
-
-					process([
-						// Convert <span style="mso-spacerun:yes">___</span> to string of alternating breaking/non-breaking spaces of same length
-						[/<span\s+style\s*=\s*"\s*mso-spacerun\s*:\s*yes\s*;?\s*"\s*>([\s\u00a0]*)<\/span>/gi,
-							function(str, spaces) {
-								return (spaces.length > 0)? spaces.replace(/./, ' ').slice(Math.floor(spaces.length/2)).split('').join('\u00a0') : '';
-							}
-						],
-
-						// Examine all styles: delete junk, transform some, and keep the rest
-						[/(<[a-z][^>]*)\sstyle="([^"]*)"/gi,
-							function(str, tag, style) {
-								var n = [],
-									i = 0,
-									s = explode(trim(style).replace(/&quot;/gi, "'"), ";");
-
-								// Examine each style definition within the tag's style attribute
-								each(s, function(v) {
-									var name, value,
-										parts = explode(v, ":");
-
-									function ensureUnits(v) {
-										return v + ((v !== "0") && (/\d$/.test(v)))? "px" : "";
-									}
-
-									if (parts.length == 2) {
-										name = parts[0].toLowerCase();
-										value = parts[1].toLowerCase();
-
-										// Translate certain MS Office styles into their CSS equivalents
-										switch (name) {
-											case "mso-padding-alt":
-											case "mso-padding-top-alt":
-											case "mso-padding-right-alt":
-											case "mso-padding-bottom-alt":
-											case "mso-padding-left-alt":
-											case "mso-margin-alt":
-											case "mso-margin-top-alt":
-											case "mso-margin-right-alt":
-											case "mso-margin-bottom-alt":
-											case "mso-margin-left-alt":
-											case "mso-table-layout-alt":
-											case "mso-height":
-											case "mso-width":
-											case "mso-vertical-align-alt":
-												n[i++] = name.replace(/^mso-|-alt$/g, "") + ":" + ensureUnits(value);
-												return;
-
-											case "horiz-align":
-												n[i++] = "text-align:" + value;
-												return;
-
-											case "vert-align":
-												n[i++] = "vertical-align:" + value;
-												return;
-
-											case "font-color":
-											case "mso-foreground":
-												n[i++] = "color:" + value;
-												return;
-
-											case "mso-background":
-											case "mso-highlight":
-												n[i++] = "background:" + value;
-												return;
-
-											case "mso-default-height":
-												n[i++] = "min-height:" + ensureUnits(value);
-												return;
-
-											case "mso-default-width":
-												n[i++] = "min-width:" + ensureUnits(value);
-												return;
-
-											case "mso-padding-between-alt":
-												n[i++] = "border-collapse:separate;border-spacing:" + ensureUnits(value);
-												return;
-
-											case "text-line-through":
-												if ((value == "single") || (value == "double")) {
-													n[i++] = "text-decoration:line-through";
-												}
-												return;
-
-											case "mso-zero-height":
-												if (value == "yes") {
-													n[i++] = "display:none";
-												}
-												return;
-										}
-
-										// Eliminate all MS Office style definitions that have no CSS equivalent by examining the first characters in the name
-										if (/^(mso|column|font-emph|lang|layout|line-break|list-image|nav|panose|punct|row|ruby|sep|size|src|tab-|table-border|text-(?!align|decor|indent|trans)|top-bar|version|vnd|word-break)/.test(name)) {
-											return;
-										}
-
-										// If it reached this point, it must be a valid CSS style
-										n[i++] = name + ":" + parts[1];		// Lower-case name, but keep value case
-									}
-								});
-
-								// If style attribute contained any valid styles the re-write it; otherwise delete style attribute.
-								if (i > 0) {
-									return tag + ' style="' + n.join(';') + '"';
-								} else {
-									return tag;
-								}
-							}
-						]
-					]);
-				}
+				// Remove all styles
+				h = h.replace(/<\/?span[^>]*>/gi, '');
 			}
-			
-			// Replace html lists with list tags defined by the DTD.
-			
-			process([
-				[/<ul>|<ul .*?>/gi, "<list list-type=\"bullet\">"],
-				[/<\/ul>|<\/ul .*?>/gi, "</list>"]
-			]);
-			
-			process([
-				[/<h[1-9]>|<h[1-9] .*?>/gi, "<heading>"],
-				[/<\/h[1-9]>|<\/h[1-9] .*?>/gi, "</heading>"]
-			]);
-		
-			process([
-				[/<ol>|<ol .*?>/gi, "<list list-type=\"order\">"],
-				[/<\/ol>|<\/ol .*?>/gi, "</list>"]
-			]);
 
-			process([
-				[/<li>|<li .*?>/gi, "<list-item>"],
-				[/<\/li>|<\/li .*?>/gi, "</list-item>"]
-			]);
-			
-			// Replace formatting with formatting tags defined by the DTD.
-			process([
-				[/<(b|strong)>/gi, "<bold>"],
-				[/<(\/strong|\/b)>/gi, "</bold>"]
-			]);
-
-			process([
-				[/<pre>/gi, "<preformat>"],
-				[/<\/pre>/gi, "</preformat>"]
-			]);
-
-			process([
-				[/<i>/gi, "<italic>"],
-				[/<\/i>/gi, "</italic>"]
-			]);
-		
-			process([
-				[/<u>/gi, "<underline>"],
-				[/<\/u>/gi, "</underline>"]
-			]);
-
-			process([
-				// Copy paste from Java like Open Office will produce this junk on FF
-				[/Version:[\d.]+\nStartHTML:\d+\nEndHTML:\d+\nStartFragment:\d+\nEndFragment:\d+/gi, '']
-			]);	
-			
 			// Class attribute options are: leave all as-is ("none"), remove all ("all"), or remove only those starting with mso ("mso").
 			// Note:-  paste_strip_class_attributes: "none", verify_css_classes: true is also a good variation.
-			stripClass = getParam(ed, "paste_strip_class_attributes");
+			stripClass = 'all' //getParam(ed, "paste_strip_class_attributes");
 
 			if (stripClass !== "none") {
 				function removeClasses(match, g1) {
@@ -596,134 +415,243 @@
 				h = h.replace(/ class="([^"]+)"/gi, removeClasses);
 				h = h.replace(/ class=([\-\w]+)/gi, removeClasses);
 			}
-
 			h = h.replace(/<\s*(\w+).*?>/gi, '<$1>');
 
-			// Remove spans option
-			if (getParam(ed, "paste_remove_spans")) {
-				h = h.replace(/<\/?span[^>]*>/gi, "");
-			}
-			
-			o.content = h;
+			// Replace formatting with formatting tags defined by the DTD.
+
+			h.replace(/<br\/><br>/gi, '<br />');
+
+			process([
+ 				[/<ul>|<ul .*?>/gi, '<div class="list" data-xmlel="list" list-type="bullet">'],
+ 				[/<\/ul>|<\/ul .*?>/gi, "</div>"]
+ 			]);
+
+ 			process([
+ 				[/<ol>|<ol .*?>/gi, '<div class="list" data-xmlel="list" list-type="order">'],
+ 				[/<\/ol>|<\/ol .*?>/gi, '</div>']
+ 			]);
+
+ 			process([
+ 				[/<li>|<li .*?>/gi, '<span class="list-item" data-xmlel="list-item">'],
+ 				[/<\/li>|<\/li .*?>/gi, '</span>']
+ 			]);
+
+			process([
+				[/<(b|strong)>/gi, '<span class="bold" data-xmlel="bold">'],
+				[/<(\/strong|\/b)>/gi, '</span>']
+			]);
+
+			process([
+				[/<pre>/gi, '<div class="preformat" data-xmlel="preformat">'],
+				[/<\/pre>/gi, '</div>']
+			]);
+
+			process([
+				[/<i>/gi, '<span class="italic" data-xmlel="italic">'],
+				[/<\/i>/gi, "</span>"]
+			]);
+
+			process([
+				[/<u>/gi, '<span class="underline" data-xmlel="underline">'],
+				[/<\/u>/gi, "</span>"]
+			]);
+
+			process([
+				[/<p>/gi, '<div class="p" data-xmlel="p">'],
+				[/<\/p>/gi, "</div>"]
+			]);
+
+			process([
+				// Copy paste from Java like Open Office will produce this junk on FF
+				[/Version:[\d.]+\nStartHTML:\d+\nEndHTML:\d+\nStartFragment:\d+\nEndFragment:\d+/gi, '']
+			]);
+			e.content = h;
 		},
 
 		/**
 		 * Various post process items.
 		 */
-		_postProcess : function(pl, o) {
-			var t = this, ed = t.editor, dom = ed.dom, styleProps;
-			if (ed.settings.paste_enable_default_filters == false) {
+		_postProcess : function(e) {
+			var ed = tinymce.activeEditor, dom = ed.dom, childNodes = e.node.childNodes, newElm, origIndex, innerContent, hasBr = false, hasBlock = false;
+
+			// SetContent event, the elements are not in place in the editor until this happens
+			ed.on('SetContent', tinymce.activeEditor.plugins.annoPaste._moveElements);
+
+			// Plain text yeah! As basic as possible.
+			if (ed.pasteAsPlainText) {
+				e.node.innerHTML = e.node.textContent;
 				return;
-			}	
-			
-			function removeAttributes(el) {
-				if (!!el) {
-			    	var curIndex = 0;
-					var whitelist = ['colspan', 'list-type']; 
-					var initialLength = el.attributes.length;
-					var whiteListCheck = false; 
-
-					for (var i = 0; i < initialLength; i++) {
-						var attr = el.attributes.item(curIndex);
-						 for(var j = 0; j < whitelist.length; j++) {
-							if(attr.nodeName === whitelist[j]) {
-								whiteListCheck = true;
-								// We know that there is an item at curIndex we want to keep, proceed to the next
-								curIndex++;
-								break;
-							}   
-						}
-						if(!whiteListCheck) {
-							el.removeAttribute(attr.nodeName);
-						}
-					}
-				}
 			}
-			
-			if (o.wordContent) {
-				if (getParam(ed, "paste_convert_middot_lists")) {
-					t._convertLists(pl, o);
+
+			//remove all other unrecognized nodes, leaving children
+			each(dom.select('*', e.node), function(el) {
+				if (
+						(( 'SPAN' != el.nodeName || 'DIV' != el.nodeName) && !el.className) &&
+						('BR' != el.nodeName && 'TABLE' != el.nodeName && 'TD' != el.nodeName && 'TR' != el.nodeName && 'TH' != el.nodeName && 'THEAD' != el.nodeName)
+					)
+					{
+					dom.remove(el, true);
+
+
 				}
-			}
-			
-			// Replace p tags with para tags. 
-			each(dom.select('p', o.node), function(el) {
-				dom.rename(el, 'para');
+				else if ('BR' == el.nodeName) {
+					hasBr = true;
+				}
+				else if ( 'TABLE' == el.nodeName || 'DIV' == el.nodeName) {
+					hasBlock = true;
+				}
 			});
 
-			// Replace blockquote tags with para tags. 
-			each(dom.select('blockquote', o.node), function(el) {
-				dom.rename(el, 'para');
-			});
+			// Pasting in plain text should just be inserted
+			if (hasBr || hasBlock) {
 
-			
-			each(dom.select('a', o.node), function(a) {
-				if (!a.href || a.href.indexOf('#_Toc') != -1)
-					dom.remove(a, 1);
-			});
+				for (var i = childNodes.length - 1; i >= 0; i--) {
+					origIndex = i;
 
-			// Process styles
-			styleProps = getParam(ed, "paste_retain_style_properties"); // retained properties
+					if (childNodes[i].nodeName == 'BR' || (3 === childNodes[i].nodeType || 'SPAN' == childNodes[i].nodeName)) {
+						innerContent = '';
 
-			// Process only if a string was specified and not equal to "all" or "*"
-			if ((tinymce.is(styleProps, "string")) && (styleProps !== "all") && (styleProps !== "*")) {
-				styleProps = tinymce.explode(styleProps.replace(/^none$/i, ""));
+						if (3 === childNodes[i].nodeType) {
+							innerContent = childNodes[origIndex].textContent;
+						}
+						else {
+							innerContent = childNodes[origIndex].outerHTML;
+						}
 
-				// Retains some style properties
-				each(dom.select('*', o.node), function(el) {
-					var newStyle = {}, npc = 0, i, sp, sv;
+						// Replace the current element with a paragraph
+						newEl = dom.create('div', { class: 'p', 'data-xmlel': 'p' }, innerContent);
+						dom.replace(newEl, childNodes[i]);
+						// Add attribute so the SetContent callback knows which content is ours
+						childNodes[i].setAttribute('annopastecleanup', '1');
 
-					// Store a subset of the existing styles
-					if (styleProps) {
-						for (i = 0; i < styleProps.length; i++) {
-							sp = styleProps[i];
-							sv = dom.getStyle(el, sp);
-
-							if (sv) {
-								newStyle[sp] = sv;
-								npc++;
+						// All inline and text siblings should also be wrapped in the newly created paragraph.
+						if (i > 0) {
+							--i;
+							while (i >= 0 && (3 === childNodes[i].nodeType || 'SPAN' == childNodes[i].nodeName)) {
+								childNodes[origIndex].insertBefore(childNodes[i], childNodes[origIndex].firstChild);
+								--origIndex;
+								--i;
 							}
+							// This index is not a span or text element, have to reincriment the decrement.
+							++i;
 						}
+
 					}
-
-					// Remove all of the existing styles
-					dom.setAttrib(el, 'style', '');
-
-					if (styleProps && npc > 0)
-						dom.setStyles(el, newStyle); // Add back the stored subset of styles
-					else // Remove empty span tags that do not have class attributes
-						if (el.nodeName == 'SPAN' && !el.className)
-							dom.remove(el, true);
-				});
+					// Top level
+					else {
+						// Add attribute so the SetContent callback knows which content is ours
+						childNodes[i].setAttribute('annopastecleanup', '1');
+					}
+				}
 			}
 
-			t._wrapTables(pl, o);
-
-			// Remove unwanted attributes. Colspan, list-type are the only one we care about.
-			// @todo Allow paste from other articles
-			each(dom.select('*', o.node), removeAttributes);
-			
+			tinymce.activeEditor.plugins.annoPaste._wrapTables(e);
+			tinymce.activeEditor.plugins.annoPaste._convertLists(e);
+			return;
 		},
-		
-		// Tables are expected to be wrapped with specific elements according to the DTD.
-		_wrapTables : function(pl, o) {
-			var dom = pl.editor.dom, listElm, li, lastMargin = -1, margin, levels = [], lastType, html;
+		_moveElements : function(e) {
+			// the setContent callback fires multiple times before actually setting whats being pasted in, hence the attribute checking
+			// Other setcontents are just bookmarks, they will never contain annopastecleanup
+			if (/annopastecleanup/.exec(e.content)) {
+				var ed = tinymce.activeEditor, dom = ed.dom, helper = ed.plugins.textorum.helper, br;
+				var nodes, lastParent, validElements, nodeName, tf = false, firstPara = false, remainingSiblings = [], lastInsertedEl;
+
+				ed.off('SetContent',  tinymce.activeEditor.plugins.annoPaste._moveElements);
+
+				// Loop through to find the first paragraph, if there is none, FANTASTIC
+
+				nodes = dom.select("[annopastecleanup='1']");
+				each(nodes, function(node) {
+					if (!firstPara && helper.getLocalName(node) == 'p') {
+						firstPara = node;
+					}
+					else if (firstPara) {
+						remainingSiblings.push(node);
+					}
+
+					// cleanup
+					node.removeAttribute('annopastecleanup');
+				});
+
+				// Do nothing, no paragraphs exist
+				if (!firstPara) {
+					return;
+				}
+
+				parentNode = firstPara.parentNode;
+
+				if (parentNode &&  /title|p/g.exec(helper.getLocalName(parentNode))) {
+					// TinyMCE removes a node if its empty when split
+					// Make sure the node isn't empty
+					br = ed.dom.create(
+						'br',
+						{'_mce_bogus': '1',},
+						''
+					);
+					parentNode.insertBefore(br, firstPara);
+
+					// Split the nodes!
+					dom.split(parentNode, firstPara);
+
+					// There are additional siblings, insert them after the split element
+					lastInsertedEl = firstPara;
+					if (remainingSiblings.length) {
+						remainingSiblings.map(function(sibling) {
+							dom.insertAfter(sibling, lastInsertedEl);
+							lastInsertedEl = sibling;
+						});
+					}
+
+					// Check if we've split a <title> if so, convert it to a paragraph, otherwise its invalid XML
+					if (lastInsertedEl.nextSibling && helper.getLocalName(lastInsertedEl.nextSibling) == 'title') {
+						lastInsertedEl.nextSibling.setAttribute('class', 'p');
+						lastInsertedEl.nextSibling.setAttribute('data-xmlel', 'p');
+					}
+
+					// Place Cursor at the end of the last inserted element
+					ed.selection.select(lastInsertedEl, true);
+					ed.selection.collapse(false);
+				}
+			}
+
+			return;
+		},
+		_wrapTables : function(e) {
+			var ed = tinymce.activeEditor, dom = ed.dom, listElm, li, lastMargin = -1, margin, levels = [], lastType, html;
+			var helper = ed.plugins.textorum.helper;
 			function hasTableWrap(el) {
-			    var parEl = el.parentNode;
-			    var count = 1;
-			    while(!!parEl && parEl.nodeName != 'TABLE-WRAP') {
-			        parEl = parEl.parentNode;
-			        count++;
-			    }
+				var parEl = el.parentNode, parElLocalName = helper.getLocalName(parEl);
+
+				if (typeof parElLocalName == 'string') {
+					parElLocalName = parElLocalName.toLowerCase();
+				}
+
+				while(!!parEl && parElLocalName != 'table-wrap') {
+					parEl = parEl.parentNode;
+					if (!!parEl) {
+						parElLocalName = helper.getLocalName(parEl);
+						if (typeof parElLocalName == 'string') {
+							parElLocalName = parElLocalName.toLowerCase();
+						}
+					}
+					else {
+						parElLocalName = '';
+					}
+				}
 				return !!parEl;
 			}
-					
-			each(dom.select('table', o.node), function(table) {
+
+			each(dom.select('table', e.node), function(table) {
 				if (!hasTableWrap(table)) {
-					//Wrap it!
-					tableWrap = dom.create('table-wrap');
-					dom.add(tableWrap, 'label');
-					dom.add(tableWrap, 'cap', null, '<para>&nbsp</para>');
+
+					tableWrap = ed.dom.create(
+						ed.plugins.textorum.translateElement('table-wrap'),
+						{'class': 'table-wrap', 'data-xmlel': 'table-wrap'},
+						''
+					);
+
+					dom.add(tableWrap, ed.plugins.textorum.translateElement('label'), {'class': 'label', 'data-xmlel': 'label'}, '&#xA0;');
+					dom.add(tableWrap, ed.plugins.textorum.translateElement('caption'), {'class': 'caption', 'data-xmlel': 'caption'}, '<div class="p" data-xmlel="p">&nbsp;</div>');
 					dom.add(tableWrap, 'table', null,  table.innerHTML);
 					dom.replace(tableWrap, table);
 				}
@@ -733,12 +661,15 @@
 		/**
 		 * Converts the most common bullet and number formats in Office into a real semantic UL/LI list.
 		 */
-		_convertLists : function(pl, o) {
-			var dom = pl.editor.dom, listElm, li, lastMargin = -1, margin, levels = [], lastType, html;
+		_convertLists : function(e) {
+			var ed = tinymce.activeEditor;
+			var dom = ed.dom, listElm, li, lastMargin = -1, margin, levels = [], lastType, html, listItem;
 
 			// Convert middot lists into real semantic lists
-			each(dom.select('p', o.node), function(p) {
+			each(dom.select('div[data-xmlel="p"]', e.node), function(p) {
 				var sib, val = '', type, html, idx, parents, listAttr = {};
+				listAttr['class'] = 'list';
+				listAttr['data-xmlel'] = 'list';
 
 				// Get text node value at beginning of paragraph
 				for (sib = p.firstChild; sib && sib.nodeType == 3; sib = sib.nextSibling)
@@ -753,7 +684,7 @@
 				// Detect ordered lists 1., a. or ixv.
 				if (/^__MCE_ITEM__\s*\w+\.\s*\u00a0+/.test(val))
 					type = 'order';
-					
+
 				// Check if node value matches the list pattern: o&nbsp;&nbsp;
 				if (type) {
 					margin = parseFloat(p.style.marginLeft || 0);
@@ -764,17 +695,17 @@
 
 					if (!listElm || type != lastType) {
 						listAttr['list-type'] = type;
-						listElm = dom.create('list', listAttr);
+						listElm = dom.create('div', listAttr);
 						dom.insertAfter(listElm, p);
 					} else {
 						// Nested list element
 						if (margin > lastMargin) {
 							listAttr['list-type'] = type;
-							listElm = li.appendChild(dom.create('list', listAttr));
+							listElm = li.appendChild(dom.create(ed.plugins.textorum.translateElement('list'), listAttr));
 						} else if (margin < lastMargin) {
 							// Find parent level based on margin value
 							idx = tinymce.inArray(levels, margin);
-							parents = dom.getParents(listElm.parentNode, 'list');
+							parents = dom.getParents(listElm.parentNode, 'div[data-xmlel="list"]');
 							listElm = parents[parents.length - 1 - idx] || listElm;
 						}
 					}
@@ -799,7 +730,13 @@
 						html = p.innerHTML.replace(/__MCE_ITEM__/g, '').replace(/^\s*\w+\.(&nbsp;|\u00a0)+\s*/, '');
 
 					// Create list-item and add paragraph data into the new list-item
-					li = listElm.appendChild(dom.create('list-item', 0, html));
+					listItem = dom.create(ed.plugins.textorum.translateElement('list-item'), {
+						'data-xmlel' : 'list-item',
+						'class' : 'list-item'
+					},
+					html);
+
+					li = listElm.appendChild(listItem);
 					dom.remove(p);
 
 					lastMargin = margin;
@@ -807,32 +744,48 @@
 				} else
 					listElm = lastMargin = 0; // End list element
 			});
-		
-			// Remove any left over makers
-			html = o.node.innerHTML;
-			if (html.indexOf('__MCE_ITEM__') != -1)
-				o.node.innerHTML = html.replace(/__MCE_ITEM__/g, '');
-		},
 
+			// Remove any left over makers
+			html = e.node.innerHTML;
+			if (html.indexOf('__MCE_ITEM__') != -1) {
+				e.node.innerHTML = html.replace(/__MCE_ITEM__/g, '');
+			}
+		},
 		/**
 		 * Inserts the specified contents at the caret position.
 		 */
 		_insert : function(h, skip_undo) {
-			var ed = this.editor, r = ed.selection.getRng();
-			// First delete the contents seems to work better on WebKit when the selection spans multiple list items or multiple table cells.
-			if (!ed.selection.isCollapsed() && r.startContainer != r.endContainer)
-				ed.getDoc().execCommand('Delete', false, null);
+			var ed = this.editor, r = ed.selection.getRng(), target, dummy;
 
-			ed.execCommand('mceInsertContent', false, h, {skip_undo : skip_undo});
-			
-			// Sometimes, pasted content will come wrapped in a div - in tinyMCE core. 
-			var rng = ed.selection.getRng();
-			ed.dom.remove(ed.dom.select('div'), true);
-		
-			// Remove bookmark spans
-			ed.dom.remove(ed.dom.select('span'), true);
-			
-			ed.selection.setRng(rng);
+			if (!ed.selection.isCollapsed() && r.startContainer != r.endContainer) {
+				ed.getDoc().execCommand('Delete', false, null);
+			}
+
+			if (/<div[^>]*data-xmlel="p"[^>]*>/i.test(h)) { // contains p tags
+
+				// Change selection to target the first parent node that allows for
+				// `p` tags
+				target = ed.dom.getParent(ed.selection.getNode(), function(node) {
+					return ed.plugins.textorum.validator.validElementsForNode(node, "inside", "array").indexOf('p') !== -1;
+				});
+
+				if (!target) {
+					alert("No valid target for a paragraphed (multi-lined) paste");
+					return;
+				}
+
+				dummy = document.createElement('div');
+				dummy.innerHTML = h;
+
+				tinymce.each(dummy.childNodes, function(node) {
+					if (node && node.className && node.className.toUpperCase() === 'P') {
+						ed.dom.add(target, node);
+					}
+				});
+			}
+			else {
+				ed.execCommand('mceInsertContent', false, h, {skip_undo : skip_undo});
+			}
 		},
 
 		/**
@@ -865,7 +818,7 @@
 
 			if ((typeof(h) === "string") && (h.length > 0)) {
 				// If HTML content with line-breaking tags, then remove all cr/lf chars because only tags will break a line
-				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center|para|list|list-item|sec|heading)[^>]*>/i.test(h)) {
+				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center|p|list|list-item|sec|title)[^>]*>/i.test(h)) {
 					process([
 						/[\n\r]+/g
 					]);
@@ -877,8 +830,8 @@
 				}
 
 				process([
-					[/<\/(?:p|h[1-6]|ul|ol|dl|table|div|blockquote|fieldset|pre|address|center|para|list|list-item|sec|heading)>/gi, "\n\n"],		// Block tags get a blank line after them
-					[/<br[^>]*>|<\/tr>/gi, "\n"],				// Single linebreak for <br /> tags and table rows
+					[/<\/(?:p|h[1-6]|ul|ol|dl|table|div|blockquote|fieldset|pre|address|center|p|list|list-item|sec|title)>/gi, "\n\n"],		// Block tags get a blank line after them
+				[/<br[^>]*>|<\/tr>/gi, "\n"],				// Single linebreak for <br /> tags and table rows
 					[/<\/t[dh]>\s*<t[dh][^>]*>/gi, "\t"],		// Table cells get tabs betweem them
 					/<[a-z!\/?][^>]*>/gi,						// Delete all remaining tags
 					[/&nbsp;/gi, " "],							// Convert non-break spaces to regular spaces (remember, *plain text*)
@@ -916,7 +869,7 @@
 				else {
 					process([
 						/^\s+|\s+$/g,
-						[/\n\n/g, "</p><p>"],
+						[/\n\n/g, '</div><div class="p" data-xmlel="p">&nbsp;</div>'],
 						[/\n/g, "<br />"]
 					]);
 				}
@@ -929,10 +882,10 @@
 				// "Para A" and "Para B".  This code solves a host of problems with the original plain text plugin and
 				// now handles styles correctly.  (Pasting plain text into a styled paragraph is supposed to make the
 				// plain text take the same style as the existing paragraph.)
-				if ((pos = h.indexOf("</p><p>")) != -1) {
-					rpos = h.lastIndexOf("</p><p>");
-					node = sel.getNode(); 
-					breakElms = [];		// Get list of elements to break 
+				if ((pos = h.indexOf("</div><div")) != -1) {
+					rpos = h.lastIndexOf("</div><div");
+					node = sel.getNode();
+					breakElms = [];		// Get list of elements to break
 
 					do {
 						if (node.nodeType == 1) {
@@ -991,37 +944,6 @@
 					}
 				}, 0);
 			}
-		},
-
-		/**
-		 * This method will open the old style paste dialogs. Some users might want the old behavior but still use the new cleanup engine.
-		 */
-		_legacySupport : function() {
-			var t = this, ed = t.editor;
-			// Register command(s) for backwards compatibility
-			ed.addCommand('AnnomcePasteWord', function() {
-				ed.windowManager.open({
-					file: t.url + '/pasteword.htm',
-					width: 483,
-					height: 450,
-					inline: 1,
-				});
-			});
-			
-			if (getParam(ed, 'paste_text_use_dialog')) {
-				ed.addCommand('AnnomcePasteText', function() {
-					ed.windowManager.open({
-						file : t.url + '/pastetext.htm',
-						width: 483,
-						height: 450,
-						inline: 1,
-					});
-				});
-			}
-
-			// Register button for backwards compatibility
-			ed.addButton('annopasteword', {title : 'paste.paste_word_desc', cmd : 'AnnomcePasteWord'});
-			ed.addButton('annopastetext', {title : 'paste.paste_text_desc', cmd : 'AnnomcePasteText'});
 		}
 	});
 
