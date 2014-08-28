@@ -1,11 +1,11 @@
 /*
 Theme Name: Universal
 Theme URI: http://themes.joedolson.com/universal/
-Version: 0.9.2
+Version: 0.9.3
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com
 Description: Universal is part of the Cities project, a project to create WordPress themes for accessible web sites. Universal includes extensive inline documentation about the accessibility features of the theme - use it to learn, to extend, or for your site's theme! Universal is responsive and flexible, helping you build the accessible web site you need for blogging or business.
-License: GPLv2 or later
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 */
@@ -60,6 +60,17 @@ body {
 
 a { 
 	color: #00d;
+	display: inline-block;
+}
+
+a img {
+	padding: 1px;
+	display: block;
+}
+
+a:hover img, a:focus img {
+	background: rgb( 50,50,50 );
+	background: rgba( 0,0,0,.2 );
 }
 
 a:hover, a:focus, a:active {
@@ -494,8 +505,8 @@ textarea[id=comment] { width: 100%; }
 
 /* Utility Classes */
 .clear:after { content: ''; display: table; clear: both; }
-.screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; }
-.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; }
+.screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; width: 1px; height: 1px; }
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; width: auto; height: auto; }
 .admin-bar .skiplink a:focus { margin-top: 32px; }
 
 /* Menu Toggle */
@@ -531,7 +542,7 @@ textarea[id=comment] { width: 100%; }
 	
 	.sticky {
 		padding: 2em;
-		margin: -2em -2em 0 -1em;
+		margin: -2em -2em 0 -2em;
 	}
 	
 	.header .site-title {
@@ -574,26 +585,26 @@ textarea[id=comment] { width: 100%; }
 	.home.page .sidebar, .page-template-page-full-width-php .sidebar {
 		width: 100%;
 	}
-	.home.page .sidebar .post-wrapper {
+	.home.page .sidebar .post-wrapper, .page-template-page-full-width-php .sidebar .post-wrapper {
 		padding-right: 1em;
 	}
-	.home.page .sidebar .widget {
+	.home.page .sidebar .widget, .page-template-page-full-width-php .sidebar .widget {
 		float: left;
 		vertical-align: top;
 	}
-	.home.page .sidebar .widgets-3 .widget {
+	.home.page .sidebar .widgets-3 .widget, .page-template-page-full-width-php .sidebar .widgets-3 .widget {
 		width: 33.333333%;
 	}
-	.home.page .sidebar .widgets-2 .widget {
+	.home.page .sidebar .widgets-2 .widget, .page-template-page-full-width-php .sidebar .widgets-2 .widget {
 		width: 50%;
 	}	
-	.home.page .sidebar .widgets-4 .widget {
+	.home.page .sidebar .widgets-4 .widget, .page-template-page-full-width-php .sidebar .widgets-4 .widget {
 		width: 25%;
 	}
-	.home.page .sidebar .widgets-5 .widget {
+	.home.page .sidebar .widgets-5 .widget, .page-template-page-full-width-php .sidebar .widgets-5 .widget {
 		width: 20%;
 	}
-	.home.page .sidebar .widget > h2 {
+	.home.page .sidebar .widget > h2, .page-template-page-full-width-php .sidebar .widget > h2 {
 		text-align: center;
 		background: rgba( 0,0,0,.05 );
 	}
