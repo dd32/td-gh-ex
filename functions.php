@@ -30,7 +30,7 @@ add_action('admin_enqueue_scripts',	'ct_ignite_enqueue_admin_styles' );
 function ct_ignite_enqueue_profile_image_uploader($hook) {
 
     // if is user profile page
-    if('profile.php' == $hook){
+    if('profile.php' == $hook || 'user-edit.php' == $hook){
 
         // Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
         wp_enqueue_media();
@@ -127,7 +127,7 @@ function ct_ignite_social_media_icons() {
 		foreach ($active_sites as $active_site) {?>
 			<li>
 				<a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
-                    <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news") { ?>
+                    <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == "vk") { ?>
 						<i class="fa fa-<?php echo $active_site; ?>"></i> <?php
 					} else { ?>
                     <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php
@@ -174,7 +174,7 @@ function ct_ignite_further_reading() {
     if($next_blog_post) {
 
         echo "<p class='next'>
-        		<span>" . __('Next', 'ignite') . "</span>
+        		<span>" . __('Next Post', 'ignite') . "</span>
         		<a href='".get_permalink($next_blog_post)."'>".$next_title."</a>
 	        </p>";
     } else {
@@ -231,24 +231,7 @@ function ct_ignite_customize_comments( $comment, $args, $depth ) {
                 <?php
                 // if is post author
                 if( $comment->user_id === $post->post_author ) {
-                    // if post author has profile image set
-                    if(get_the_author_meta('user_profile_image')) {
-
-                        echo "<div class='author-profile-image-comment'>";
-
-                        // get the id based on the image's URL
-                        $image_id = ct_ignite_get_image_id(get_the_author_meta('user_profile_image'));
-
-                        // retrieve the thumbnail size of profile image
-                        $image_thumb = wp_get_attachment_image($image_id, 'thumbnail');
-
-                        // display the image
-                        echo $image_thumb;
-
-                        echo "</div>";
-                    } else {
-                        echo get_avatar( get_comment_author_email(), 48 );
-                    }
+                    ct_ignite_profile_image_output();
                 } else {
                     echo get_avatar( get_comment_author_email(), 48 );
                 }
@@ -688,5 +671,28 @@ function ct_ignite_post_meta_comments(){
             </a>
         </p>
     <?php
+    }
+}
+
+// outputs the user's uploaded profile picture with Gravatar fallback
+function ct_ignite_profile_image_output(){
+
+    // if post author has profile image set
+    if(get_the_author_meta('user_profile_image')) {
+
+        echo "<div class='author-profile-image'>";
+
+        // get the id based on the image's URL
+        $image_id = ct_ignite_get_image_id(get_the_author_meta('user_profile_image'));
+
+        // retrieve the thumbnail size of profile image
+        $image_thumb = wp_get_attachment_image($image_id, 'thumbnail');
+
+        // display the image
+        echo $image_thumb;
+
+        echo "</div>";
+    } else {
+        echo get_avatar( get_the_author_meta( 'ID' ), 72 );
     }
 }

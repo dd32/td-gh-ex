@@ -5,7 +5,7 @@ if( is_single() ) { ?>
         <?php ct_ignite_featured_image(); ?>
         <div class="entry-meta-top">
             <?php
-            echo __('Published', 'ignite') . " " . get_the_date('F jS, Y') . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date() ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
             the_author_posts_link();
             ?>
         </div>
@@ -23,28 +23,7 @@ if( is_single() ) { ?>
             <?php
             if(get_theme_mod('ct_ignite_author_meta_settings') == 'show'){ ?>
                 <div class="author-meta">
-                    <?php
-
-                    // use User's profile image, else default to their Gravatar
-                    if(get_the_author_meta('user_profile_image')){
-
-                        // div needed to crop image into a square
-                        echo "<div class='author-profile-image'>";
-
-                        // get the id based on the image's URL
-                        $image_id = ct_ignite_get_image_id(get_the_author_meta('user_profile_image'));
-
-                        // retrieve the thumbnail size of profile image
-                        $image_thumb = wp_get_attachment_image($image_id, 'thumbnail');
-
-                        // display the image
-                        echo $image_thumb;
-
-                        echo "</div>";
-                    } else {
-                        echo get_avatar( get_the_author_meta( 'ID' ), 72 );
-                    }
-                    ?>
+                    <?php ct_ignite_profile_image_output(); ?>
                     <div class="name-container">
                         <h4>
                             <?php
@@ -75,7 +54,7 @@ if( is_single() ) { ?>
         <?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
             <?php
-            echo __('Published', 'ignite') . " " . get_the_date('F jS, Y') . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date() ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
             the_author_posts_link();
             ?>
         </div>
