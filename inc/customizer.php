@@ -14,7 +14,7 @@ function areview_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
     //Extends the customizer with a categories dropdown control.
-    class Categories_Dropdown extends WP_Customize_Control {
+    class aReview_Categories_Dropdown extends WP_Customize_Control {
         public function render_content() {
             $dropdown = wp_dropdown_categories(
                 array(
@@ -258,7 +258,7 @@ function areview_customize_register( $wp_customize ) {
         'sanitize_callback' => 'areview_sanitize_int',
     ) );
     
-    $wp_customize->add_control( new Categories_Dropdown( $wp_customize, 'carousel_cat', array(
+    $wp_customize->add_control( new aReview_Categories_Dropdown( $wp_customize, 'carousel_cat', array(
         'label'   => __('Select which category to show in the carousel', 'areview'),
         'section' => 'areview_carousel',
         'settings'   => 'carousel_cat',
