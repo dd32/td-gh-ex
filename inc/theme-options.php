@@ -65,7 +65,7 @@ function semplicemente_options_do_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'semplicemente' ) . "</h2>"; ?>
-		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'semplicemente' ); ?></p>
+		<p><?php _e( 'These options will let you setup the social icons at the top of the theme and tracking code. You can enter the URLs of your profiles to have the icons show up.', 'semplicemente' ); ?></p>
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'semplicemente' ); ?></strong></p></div>
 		<?php endif; ?>
@@ -124,7 +124,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Facebook URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[facebookurl]" class="regular-text" type="text" name="semplicemente_theme_options[facebookurl]" value="<?php echo esc_attr( $se_options['facebookurl'] ); ?>" />
+						<input id="semplicemente_theme_options[facebookurl]" class="regular-text" type="text" name="semplicemente_theme_options[facebookurl]" value="<?php if( isset( $se_options[ 'facebookurl' ] ) ) echo esc_url( $se_options[ 'facebookurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[facebookurl]"><?php _e( 'Leave blank to hide Facebook Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -136,7 +136,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Twitter URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[twitterurl]" class="regular-text" type="text" name="semplicemente_theme_options[twitterurl]" value="<?php echo esc_attr( $se_options['twitterurl'] ); ?>" />
+						<input id="semplicemente_theme_options[twitterurl]" class="regular-text" type="text" name="semplicemente_theme_options[twitterurl]" value="<?php if( isset( $se_options[ 'twitterurl' ] ) ) echo esc_url( $se_options[ 'twitterurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[twitterurl]"><?php _e( 'Leave blank to hide Twitter Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -148,7 +148,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Google + URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[googleplusurl]" class="regular-text" type="text" name="semplicemente_theme_options[googleplusurl]" value="<?php echo esc_attr( $se_options['googleplusurl'] ); ?>" />
+						<input id="semplicemente_theme_options[googleplusurl]" class="regular-text" type="text" name="semplicemente_theme_options[googleplusurl]" value="<?php if( isset( $se_options[ 'googleplusurl' ] ) ) echo esc_url( $se_options[ 'googleplusurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[googleplusurl]"><?php _e( 'Leave blank to hide Google + Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -160,7 +160,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Linkedin URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[linkedinurl]" class="regular-text" type="text" name="semplicemente_theme_options[linkedinurl]" value="<?php echo esc_attr( $se_options['linkedinurl'] ); ?>" />
+						<input id="semplicemente_theme_options[linkedinurl]" class="regular-text" type="text" name="semplicemente_theme_options[linkedinurl]" value="<?php if( isset( $se_options[ 'linkedinurl' ] ) ) echo esc_url( $se_options[ 'linkedinurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[linkedinurl]"><?php _e( 'Leave blank to hide Linkedin Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -172,7 +172,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Instagram URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[instagramurl]" class="regular-text" type="text" name="semplicemente_theme_options[instagramurl]" value="<?php echo esc_attr( $se_options['instagramurl'] ); ?>" />
+						<input id="semplicemente_theme_options[instagramurl]" class="regular-text" type="text" name="semplicemente_theme_options[instagramurl]" value="<?php if( isset( $se_options[ 'instagramurl' ] ) ) echo esc_url( $se_options[ 'instagramurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[instagramurl]"><?php _e( 'Leave blank to hide Instagram Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -184,7 +184,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your YouTube URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[youtubeurl]" class="regular-text" type="text" name="semplicemente_theme_options[youtubeurl]" value="<?php echo esc_attr( $se_options['youtubeurl'] ); ?>" />
+						<input id="semplicemente_theme_options[youtubeurl]" class="regular-text" type="text" name="semplicemente_theme_options[youtubeurl]" value="<?php if( isset( $se_options[ 'youtubeurl' ] ) ) echo esc_url( $se_options[ 'youtubeurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -196,7 +196,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Pinterest URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[pinteresturl]" class="regular-text" type="text" name="semplicemente_theme_options[pinteresturl]" value="<?php echo esc_attr( $se_options['pinteresturl'] ); ?>" />
+						<input id="semplicemente_theme_options[pinteresturl]" class="regular-text" type="text" name="semplicemente_theme_options[pinteresturl]" value="<?php if( isset( $se_options[ 'pinteresturl' ] ) ) echo esc_url( $se_options[ 'pinteresturl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[pinteresturl]"><?php _e( 'Leave blank to hide Pinterest Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -208,7 +208,7 @@ function semplicemente_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Tumblr URL', 'semplicemente' ); ?></th>
 					<td>
-						<input id="semplicemente_theme_options[tumblrurl]" class="regular-text" type="text" name="semplicemente_theme_options[tumblrurl]" value="<?php echo esc_attr( $se_options['tumblrurl'] ); ?>" />
+						<input id="semplicemente_theme_options[tumblrurl]" class="regular-text" type="text" name="semplicemente_theme_options[tumblrurl]" value="<?php if( isset( $se_options[ 'tumblrurl' ] ) ) echo esc_url( $se_options[ 'tumblrurl' ] ); ?>" />
 						<label class="description" for="semplicemente_theme_options[tumblrurl]"><?php _e( 'Leave blank to hide Tumblr Icon', 'semplicemente' ); ?></label>
 					</td>
 				</tr>
@@ -254,29 +254,28 @@ function semplicemente_options_validate( $input ) {
 	if ( ! isset( $input['hidesearch'] ) )
 		$input['hidesearch'] = null;
 		$input['hidesearch'] = ( $input['hidesearch'] == 1 ? 1 : 0 );
-
-	// Our text option must be safe text with no HTML tags
-	$input['twitterurl'] = wp_filter_nohtml_kses( $input['twitterurl'] );
-	$input['facebookurl'] = wp_filter_nohtml_kses( $input['facebookurl'] );
-	$input['googleplusurl'] = wp_filter_nohtml_kses( $input['googleplusurl'] );
-	$input['linkedinurl'] = wp_filter_nohtml_kses( $input['linkedinurl'] );
-	$input['instagramurl'] = wp_filter_nohtml_kses( $input['instagramurl'] );
-	$input['youtubeurl'] = wp_filter_nohtml_kses( $input['youtubeurl'] );
-	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
-	$input['tumblrurl'] = wp_filter_nohtml_kses( $input['tumblrurl'] );
 	
 	// Encode URLs
-	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
-	$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
-	$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
-	$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
-	$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
-	$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
-	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
-	$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	if( isset( $se_options[ 'twitterurl' ] ) )
+		$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
+	if( isset( $se_options[ 'facebookurl' ] ) )
+		$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
+	if( isset( $se_options[ 'googleplusurl' ] ) )
+		$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
+	if( isset( $se_options[ 'linkedinurl' ] ) )
+		$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
+	if( isset( $se_options[ 'instagramurl' ] ) )
+		$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
+	if( isset( $se_options[ 'youtubeurl' ] ) )
+		$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
+	if( isset( $se_options[ 'pinteresturl' ] ) )
+		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
+	if( isset( $se_options[ 'tumblrurl' ] ) )
+		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
 
 	// Tracking Code
-	$input['trackingcode'] = htmlentities(stripslashes( $input['trackingcode'] ));
+	if( isset( $se_options[ 'trackingcode' ] ) )
+		$input['trackingcode'] = wp_kses_stripslashes( $input['trackingcode'] );
 
 	return $input;
 }

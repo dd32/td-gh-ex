@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -37,35 +37,35 @@
 		<div class="site-social">
 			<div class="socialLine">
 			
-				<?php if ( $se_options['facebookurl'] != '' ) : ?>
+				<?php if ( $se_options['facebookurl'] ) : ?>
 					<a href="<?php echo $se_options['facebookurl']; ?>" title="Facebook" target="_blank"><i class="fa spaceLeftDouble fa-facebook"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['twitterurl'] != '' ) : ?>
+				<?php if ( $se_options['twitterurl'] ) : ?>
 					<a href="<?php echo $se_options['twitterurl']; ?>" title="Twitter" target="_blank"><i class="fa spaceLeftDouble fa-twitter"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['googleplusurl'] != '' ) : ?>
+				<?php if ( $se_options['googleplusurl'] ) : ?>
 					<a href="<?php echo $se_options['googleplusurl']; ?>" title="Google Plus" target="_blank"><i class="fa spaceLeftDouble fa-google-plus"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['linkedinurl'] != '' ) : ?>
+				<?php if ( $se_options['linkedinurl'] ) : ?>
 					<a href="<?php echo $se_options['linkedinurl']; ?>" title="Linkedin" target="_blank"><i class="fa spaceLeftDouble fa-linkedin"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['instagramurl'] != '' ) : ?>
+				<?php if ( $se_options['instagramurl'] ) : ?>
 					<a href="<?php echo $se_options['instagramurl']; ?>" title="Instagram" target="_blank"><i class="fa spaceLeftDouble fa-instagram"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['youtubeurl'] != '' ) : ?>
+				<?php if ( $se_options['youtubeurl'] ) : ?>
 					<a href="<?php echo $se_options['youtubeurl']; ?>" title="YouTube" target="_blank"><i class="fa spaceLeftDouble fa-youtube"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['pinteresturl'] != '' ) : ?>
+				<?php if ( $se_options['pinteresturl'] ) : ?>
 					<a href="<?php echo $se_options['pinteresturl']; ?>" title="Pinterest" target="_blank"><i class="fa spaceLeftDouble fa-pinterest"></i></a>
 				<?php endif; ?>
 				
-				<?php if ( $se_options['tumblrurl'] != '' ) : ?>
+				<?php if ( $se_options['tumblrurl'] ) : ?>
 					<a href="<?php echo $se_options['tumblrurl']; ?>" title="Tumblr" target="_blank"><i class="fa spaceLeftDouble fa-tumblr"></i></a>
 				<?php endif; ?>
 				
@@ -80,7 +80,7 @@
 			</div>
 				<?php if ( ! $se_options['hidesearch'] ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"><input type="text" name="s" class="search" placeholder="<?php _e('Type and hit enter...', 'simpatico'); ?>"></form>
+						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"><input type="text" name="s" class="search" placeholder="<?php _e('Type and hit enter...', 'semplicemente'); ?>"></form>
 				</div>
 				<?php endif; ?>
 		</div>
