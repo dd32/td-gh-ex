@@ -5,12 +5,7 @@
  * @package Simple Life
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800; /* pixels */
-}
+global $content_width;
 
 if ( ! function_exists( 'simple_life_setup' ) ) :
 /**
@@ -21,6 +16,13 @@ if ( ! function_exists( 'simple_life_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function simple_life_setup() {
+	global $content_width;
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	if ( ! isset( $content_width ) ) {
+		$content_width = 800; /* pixels */
+	}
 
 	/*
 	 * Make theme available for translation.
@@ -112,16 +114,15 @@ add_action( 'widgets_init', 'simple_life_widgets_init' );
  * Enqueue scripts and styles.
  */
 function simple_life_scripts() {
-  wp_enqueue_style( 'simple-life-style-open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans' );
-  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.1.1' );
-  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.min.css', false ,'4.1.0' );
-  wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu.min.css', false ,'2.0.6' );
+  wp_enqueue_style( 'simple-life-style-open-sans', '//fonts.googleapis.com/css?family=Open+Sans' );
+  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.css', false ,'3.2.0' );
+  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.css', false ,'4.2.0' );
+  wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu.css', false ,'2.0.6' );
 
 	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri() );
-  // wp_enqueue_style( 'simple-life-style-custom', get_template_directory_uri().'/css/custom.css', false ,'1.0.0' );
   wp_enqueue_style( 'simple-life-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'1.0.0' );
 
-	wp_enqueue_script( 'simple-life-meanmenu-script', get_template_directory_uri() . '/third-party/meanmenu/jquery.meanmenu.min.js', array('jquery'), '2.0.6', true );
+	wp_enqueue_script( 'simple-life-meanmenu-script', get_template_directory_uri() . '/third-party/meanmenu/jquery.meanmenu.js', array('jquery'), '2.0.6', true );
 	wp_enqueue_script( 'simple-life-custom', get_template_directory_uri() . '/js/custom.js', array('jquery','simple-life-meanmenu-script'), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -159,4 +160,9 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Thirt Party Compatibility.
+ */
+require get_template_directory() . '/support/woocommerce.php';
 

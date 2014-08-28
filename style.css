@@ -1,10 +1,10 @@
 /*
 Theme Name: Simple Life
-Theme URI: http://wordpress.org/themes/simple-life
+Theme URI:
 Author: Nilambar Sharma
-Author URI: http://nilambar.net/
+Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-life
@@ -372,7 +372,7 @@ a:active {
 .main-navigation ul ul {
 	visibility: hidden;
 	opacity: 0;
-	width: 180px;
+	min-width: 180px;
 	position: absolute;
 	top: 48px;
 	left: 0;
@@ -402,6 +402,7 @@ a:active {
 	float: none;
 	margin: 0;
 	border-top: 1px dashed rgba(0,0,0,0.1);
+	width: auto;
 }
 
 .main-navigation ul ul li:first-child {
@@ -412,9 +413,9 @@ a:active {
 	color: #656565;
 	display: block;
 	height: auto;
-    line-height: 1.5;
-    padding: 0.75em 1em;
-    background: #fff;
+  line-height: 1.5;
+  padding: 0.75em 1em;
+  background: #fff;
 }
 
 .main-navigation ul li:hover ul a,
@@ -1044,3 +1045,42 @@ footer#colophon a{
 header#masthead{
 	padding:0;
 }
+
+/*woocommerce starts*/
+.woocommerce .woocommerce-breadcrumb a,
+.woocommerce-page .woocommerce-breadcrumb a {
+    color: #0fa5d9;
+}
+.woocommerce #content div.product p.price del, .woocommerce #content div.product span.price del, .woocommerce div.product p.price del, .woocommerce div.product span.price del, .woocommerce-page #content div.product p.price del, .woocommerce-page #content div.product span.price del, .woocommerce-page div.product p.price del, .woocommerce-page div.product span.price del {
+    font-size: 0.9em;
+}
+
+.woocommerce-tabs ul.tabs{
+	margin-bottom: 0!important;
+}
+
+.woocommerce div.type-product{
+	background-color: #FFFFFF;
+	padding: 10px;
+}
+.woocommerce div.type-product h1.product_title{
+	font-size: 1.714em;
+	font-weight: bold;
+}
+.woocommerce h1.page-title{
+  font-size: 1.1em;
+	background-color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1em;
+}
+.woocommerce ul.products li.product{
+	background-color: #FFFFFF;
+	text-align: center;
+	padding-bottom: 5px;
+}
+.woocommerce ul.products li.product .price del, .woocommerce-page ul.products li.product .price del {
+    color: rgba(145, 145, 145, 0.5);
+    font-size: 0.9em;
+}
+/*woocommerce ends*/
