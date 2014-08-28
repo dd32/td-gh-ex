@@ -16,8 +16,8 @@
 			if(jQuery(this).children("ul").length > 0){
 				jQuery(this).append("<span class='indicator'></span>");
 			}
-		});
-	
+		});	
+
 	});
 	
 })(jQuery);

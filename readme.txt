@@ -2,7 +2,7 @@
 * by the CrestaProject team, http://crestaproject.com/
 
 == ABOUT Semplicemente ==
-Semplicemente is a simple and minimal Wordpress Theme  useful for blog or personal page.
+Semplicemente is a simple and minimal WordPress Theme  useful for blog or personal page.
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
@@ -16,6 +16,9 @@ Semplicemente is distributed under the terms of the GNU General Public License v
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
+
+Image used in Theme Screenshot
+	1. Picjumbo (http://picjumbo.com/morning-fog-in-dubai/) Free photos for commercial and personal works
 
 == Translation ==
 Semplicemente theme is translation ready. 
@@ -38,3 +41,6 @@ Version 1.0
 
 Version 1.1
 * Minor Bug Fixes
+
+Version 1.2
+* Monr Bug Fixes

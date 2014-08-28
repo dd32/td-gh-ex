@@ -131,21 +131,3 @@ function semplicemente_custom_css_styles() {
     <?php
 }
 add_action('wp_head', 'semplicemente_custom_css_styles');
-
-/**
- * Tracking Code
- */
-function semplicemente_footerCode() {
-	global $semplicemente_theme_options;
-	$se_options = get_option( 'semplicemente_theme_options', $semplicemente_theme_options );
-	
-	$theCode = html_entity_decode( $se_options['trackingcode'] );
-
-	if ( $se_options['trackingcode'] != '' ) {
-	echo "
-<!--Start Footer Code-->\n" . $theCode . "\n<!--End Footer Code-->
-	";
-	}
-	
-}
-add_action('wp_footer', 'semplicemente_footerCode');

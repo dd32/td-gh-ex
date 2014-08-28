@@ -13,8 +13,7 @@ $semplicemente_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
-	'tumblrurl' => '#',
-	'trackingcode' => ''
+	'tumblrurl' => '#'
 );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
@@ -37,35 +36,17 @@ function semplicemente_options_add_page() {
 }
 
 /**
- * Create arrays for sidebar position
- */
-$sidebar_position = array(
-	'sidebar_right' => array(
-		'value' => 'sidebar_right',
-		'label' => __( 'Sidebar Right', 'semplicemente' )
-	),
-	'sidebar_left' => array(
-		'value' => 'sidebar_left',
-		'label' => __( 'Sidebar Left', 'semplicemente' )
-	),
-	'sidebar_no' => array(
-		'value' => 'sidebar_no',
-		'label' => __( 'No Sidebar', 'semplicemente' )
-	)
-);
-
-/**
  * Create the options page
  */
 function semplicemente_options_do_page() {
-	global $semplicemente_theme_options, $sidebar_position;
+	global $semplicemente_theme_options;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 	?>
 	<div class="wrap">
 		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'semplicemente' ) . "</h2>"; ?>
-		<p><?php _e( 'These options will let you setup the social icons at the top of the theme and tracking code. You can enter the URLs of your profiles to have the icons show up.', 'semplicemente' ); ?></p>
+		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'semplicemente' ); ?></p>
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'semplicemente' ); ?></strong></p></div>
 		<?php endif; ?>
@@ -213,20 +194,6 @@ function semplicemente_options_do_page() {
 					</td>
 				</tr>
 				
-				<?php
-				/**
-				 * Tracking Code
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Tracking Code', 'semplicemente' ); ?></th>
-					<td>
-						<label class="description" for="semplicemente_theme_options[trackingcode]"><?php _e( 'Enter your analytics tracking code', 'semplicemente' ); ?></label>
-						<br />
-						<textarea id="semplicemente_theme_options[trackingcode]" name="semplicemente_theme_options[trackingcode]" rows="5" cols="36"><?php echo esc_attr( $se_options['trackingcode'] ); ?></textarea>
-					</td>
-				</tr>
-
-				
 			</table>
 
 			<p class="submit">
@@ -242,7 +209,7 @@ function semplicemente_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function semplicemente_options_validate( $input ) {
-	global $semplicemente_theme_options, $sidebar_position;
+	global $semplicemente_theme_options;
 	
 	$se_options = get_option( 'semplicemente_theme_options', $semplicemente_theme_options );
 
@@ -272,10 +239,6 @@ function semplicemente_options_validate( $input ) {
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $se_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
-
-	// Tracking Code
-	if( isset( $se_options[ 'trackingcode' ] ) )
-		$input['trackingcode'] = wp_kses_stripslashes( $input['trackingcode'] );
 
 	return $input;
 }
