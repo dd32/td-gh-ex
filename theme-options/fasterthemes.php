@@ -30,20 +30,18 @@ function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
 	wp_enqueue_style( 'fasterthemes_framework' );
-	wp_enqueue_style( 'wp-color-picker', get_template_directory_uri(). '/theme-options/css/color-picker.min.css' );
-	wp_enqueue_style( 'wp-color-picker' );
 	
 	// Enqueue colorpicker scripts for versions below 3.5 for compatibility
-	wp_enqueue_script( 'wp-color-picker', get_template_directory_uri(). '/theme-options/js/color-picker.min.js', array( 'jquery', 'iris' ) );
+	wp_enqueue_script( 'wp-color-picker', get_template_directory_uri(). '/theme-options/js/color-picker.min.js', array( 'jquery' ) );
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery','wp-color-picker' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery', 'iris' ) );		
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery' ) );		
 	wp_enqueue_script('media-uploader');
 }
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$customizable_menu = array(
-				'page_title' => __( 'Faster Themes Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
 				'menu_title' => __('FT Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
@@ -63,7 +61,7 @@ function fastertheme_framework_page(){
 		
 		screen_icon(); 
 		$customizable_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<h1><img src='".$customizable_image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".$customizable_image."' height='64px'  /> ". __( 'FasterThemes Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
 			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
 		endif; 
@@ -297,9 +295,32 @@ function fastertheme_framework_page(){
       
     </div>
     <!-- / #container --> 
-    
+          <br />
+          <div id="section-title" class="section">
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <h2>Enter your email to join our mailing list and we’ll keep you updated on new themes as they’re
+released and our exclusive special offers.</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email addresss  <span class="asterisk">*</span>
+            </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+
+          </div>  
   </div>
 </div>
+   
 <?php }
-
-

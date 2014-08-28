@@ -1,5 +1,5 @@
 /**
- * Prints out the inline javascript needed for the colorpicker and choosing
+ * Prints out the inline javascript needed
  * the tabs in the panel.
  */
 

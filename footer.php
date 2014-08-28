@@ -16,12 +16,12 @@
    if($customizable_options['footertext'] != '')
   {
 	  echo $customizable_options['footertext'].' ';
-	  echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";
+	  echo "<a href='http://fasterthemes.com/themes/customizable' target='_blank'>Customizable theme</a> by FasterThemes.";
 	}
 	else
 	{
 		echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>. ";
-		echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";
+		echo "<a href='http://fasterthemes.com/themes/customizable' target='_blank'>Customizable theme</a> by FasterThemes.";
 	}?></p>
     <?php wp_nav_menu(array('theme_location'  => 'secondary')); ?>
     </div>

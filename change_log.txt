@@ -22,3 +22,11 @@ Version 2.0.3
 Version 2.0.4
 
 	i)   Set State all licenses, Copyrights and details for all bundled resources.
+
+Version 2.0.5
+	
+	i) Some change editor-style.css 
+	ii) Change FT Options logo and remove space in Faster Themes.
+	iii) Set copy right text in footer.
+	iv) Delete useless image in images folder.
+	v) Remove colorpicker code in fasterthemes file.

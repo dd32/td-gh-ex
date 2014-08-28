@@ -10,7 +10,7 @@ function customizable_setup() {
 	$content_width = 750;
 	}
 
-	load_theme_textdomain( 'customizable', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'customizable', get_template_directory() );
 
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', customizable_font_url() ) );
