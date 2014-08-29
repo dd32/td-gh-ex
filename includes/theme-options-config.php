@@ -267,7 +267,17 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'default'       => 1,
                         'on' => 'Enable',
                         'off' => 'Disable',
-                        ),      
+                        ),
+
+                    array(
+                        'id'=>'animate',
+                        'type' => 'switch', 
+                        'title' => __('Enable Home page animation effects', 'abaris'),
+                        'subtitle'=> __('Check to enable home page css3 animation effects.', 'abaris'),
+                        'default'       => 1,
+                        'on' => 'Enable',
+                        'off' => 'Disable',
+                        ),
 
                     array(
                         'id'=>'layout',
@@ -776,7 +786,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 } else {
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
-               $this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
+               $this->args['intro_text'] = __('<p><a href="http://www.webulous.in/?add-to-cart=21" target="_blank" class="buttn button-primary">Buy Pro Version</a> <a href="http://wordpress.org/support/view/theme-reviews/abaris" class="buttn button-secondary">Rate Theme</a> <a href="http://demo.webulous.in/abaris/documentation/" class="buttn button-secondary" target="_blank">Documentation</a></p>', 'redux-framework-demo');
+               //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }
@@ -785,6 +796,20 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
             // Add content after the form.
             $this->args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo');
+           $this->args['footer_text'] .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">';
+           $this->args['footer_text'] .= '<input type="hidden" name="cmd" value="_donations">';
+           $this->args['footer_text'] .= '<input type="hidden" name="business" value="uma@codinggeek.om">';
+           $this->args['footer_text'] .= '<input type="hidden" name="lc" value="US">';
+           $this->args['footer_text'] .= '<input type="hidden" name="item_name" value="Theme">';
+           $this->args['footer_text'] .= '<input type="hidden" name="item_number" value="Abaris">';
+           $this->args['footer_text'] .= '<input type="hidden" name="no_note" value="0">';
+           $this->args['footer_text'] .= '<input type="hidden" name="currency_code" value="USD">';
+           $this->args['footer_text'] .= '<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">';
+           $this->args['footer_text'] .= '<p>Like this theme? Help me in further development ';
+           $this->args['footer_text'] .= '<input type="submit" value="Donate Now!" class="button button-primary" name="submit"></p>';
+           //$this->args['footer_text'] .= '<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"  style="float: right; margin-top: -20px;">';
+           //$this->args['footer_text'] .= '<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">';
+           $this->args['footer_text'] .= '</form>';
         }
 
     }

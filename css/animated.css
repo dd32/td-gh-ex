@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+#service1, 
+#service2, 
+#service3,
+.feature2 li,
+.skill-container,
+.flex-recent-posts .slides li:nth-of-type(1),
+.flex-recent-posts .slides li:nth-of-type(2),
+.flex-recent-posts .slides li:nth-of-type(3),
+.flex-recent-posts .slides li:nth-of-type(4) {
+  visibility: hidden;
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
