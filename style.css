@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -859,6 +859,9 @@ h2.site-description {
 .site-info {
 	font-size: 85%;
 }
+.comment-awaiting-moderation {
+	color: #ff0000;
+}
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -1070,6 +1073,19 @@ object {
 		width: 100%;
 		padding-right: 0em;
 	}
+	#secondary {
+		-webkit-column-count: 2;
+		-webkit-column-gap: 15px;
+		-moz-column-count: 2;
+		-moz-column-gap: 15px;
+		column-count: 2;
+		column-gap: 15px;
+	}
+	#secondary aside {
+		-webkit-column-break-inside: avoid;
+		-moz-column-break-inside: avoid;
+		column-break-inside: avoid;
+	}
 }
 @media all and (max-width: 767px) {
 	#page {
@@ -1078,6 +1094,19 @@ object {
 	}
 	.posted-on, .byline, .comments-link, .cat-links, .entry-format {
 		display: block;
+	}
+	#secondary {
+		-webkit-column-count: auto;
+		-webkit-column-gap: initial;
+		-moz-column-count: auto;
+		-moz-column-gap: initial;
+		column-count: auto;
+		column-gap: initial;
+	}
+	#secondary aside {
+		-webkit-column-break-inside: initial;
+		-moz-column-break-inside: initial;
+		column-break-inside: initial;
 	}
 }
 @media all and (max-width: 479px) {

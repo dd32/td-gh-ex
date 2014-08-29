@@ -13,6 +13,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Semplicemente WordPress Theme, Copyright 2012-2014 CrestaProject.com
 Semplicemente is distributed under the terms of the GNU General Public License v2 
 
+Semplicemente is derived from _S (Underscores) WordPress Theme, Copyright 2014.
+http://underscores.me/
+Licensed under GPLv2 or later
+
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
@@ -43,4 +47,7 @@ Version 1.1
 * Minor Bug Fixes
 
 Version 1.2
-* Monr Bug Fixes
+* Minor Bug Fixes
+
+Version 1.3
+* Minor Bug Fixes
