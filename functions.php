@@ -491,4 +491,44 @@ function anarcho_top_button() {
 add_action ('wp_footer','anarcho_top_button', 999);
 // END-Top Button
 
+// No Content
+/* The Message if no content */
+function anarcho_not_found() {
+	?>
+		<div class="no-results">
+			<h1><?php _e('Not Found', 'anarcho-notepad'); ?></h1>
+			<p><?php _e('Sorry, but you are looking for something that isn\'t here.', 'anarcho-notepad'); ?></p>
+		</div>
+	<?php
+}
+// END-Not Found
+
+// Entry Meta
+/* Display Entry Meta */
+function anarcho_entry_meta() {
+	?>
+           <div class="meta">
+	<?php
+		if ( is_page() ) {
+			if ((the_category() != '')) {
+				_e('Category: ', 'anarcho-notepad'); the_category(', ');
+			}
+			edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+		} elseif ( is_single() ) {
+			_e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category ', 'anarcho-notepad'); the_category(', '); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			?>
+			   <br/>
+			<?php
+			anarcho_author_bio();
+		} elseif ( is_home() || is_category() || is_archive() || is_search() ) {
+			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link('LEAVE A COMMENT'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+		} else {
+			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link('LEAVE A COMMENT'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+		}
+	?>
+           </div>
+	<?php
+}
+// END-Entry Meta
+
 ?>

@@ -2,7 +2,7 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.com/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 2.15
+Version: 2.16
 Author: Arthur (Berserkr) Gareginyan
 Author URI: http://mycyberuniverse.com/author.html
 Tags: black, white, light, two-columns, right-sidebar, fluid-layout, custom-header, custom-background, featured-images, rtl-language-support, translation-ready, theme-options, threaded-comments
@@ -25,39 +25,42 @@ Text Domain: anarcho-notepad
 	font-style: normal;
 }
 
-section, article, header, footer, nav, aside, hgroup {
-	display: block; }
+section,
+article,
+header,
+footer,
+nav,
+aside,
+hgroup { display: block; }
 
 [hidden] { display: none; }
 
 /* Links
 -------------------------------------------------------------- */
-/* Стиль для обычной не посещенной ссылки */
-a:link { text-decoration: none;
-	color: black;
- }
-
-/* Стиль для посещенной ссылки. */
+a:link {
+	text-decoration: none;
+	color: black; }
 a:visited {
 	text-decoration: none;
-	color: black;
- }
+	color: black; }
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: black; }
 
-/* Стиль для ссылки при наведении на нее мышью :hover    и 
-стиль для активной ссылки :active  Активной ссылка становится при нажатии на нее. */
-a:hover, a:active {
-	color: black;
-	font-weight: bold; }
-
+/* Align
+-------------------------------------------------------------- */
 .aligncenter,
 div.aligncenter {
 	display: block;
 	margin-left: auto;
-	margin-right: auto; }
+	margin-right: auto;
+	text-align: center; }
 .alignleft {
 	float: left; }
 .alignright {
 	float: right; }
+
 .wp-caption {
 	border: 1px solid #ddd;
 	text-align: center;
@@ -101,6 +104,7 @@ body {
 	overflow: hidden;
 	word-wrap: break-word; }
 #title a { color: #e5e5e5; }
+#title a:hover { text-decoration: none; }
 .logo { position: absolute; }
 .site-title {
 	font-size: 300%;
@@ -343,26 +347,15 @@ blockquote cite:before {
 /* END-Data-tab (Ribbons) */
 
 #content .col01 .post-inner p {
-	overflow: auto; }
-#content .col01 .post-inner a {
-	color:#000;
-	position:relative;
-	text-decoration:none;
-	border-bottom: 1px solid #868585; }
-#content .col01 .post-inner a:hover {
-	color:#000;
-	text-decoration:none;
-	font-weight: bold; }
+	overflow: visible; }
+#content .col01 .post-inner a { text-decoration: underline; }
 #content .col01 .thumbnail {
 	float:right;
 	margin:12px 0 12px 12px; }
 #content .col01 .meta a {
 	color:#000;
 	text-decoration:none; }
-#content .col01 .meta a:hover {
-	color:#000;
-	text-decoration:none;
-	font-weight: bold; }
+#content .col01 .meta a:hover { text-decoration: underline; }
 /* END-Content (Column 1) */
 
 /* Sidebar (Column 2)

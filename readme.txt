@@ -110,7 +110,11 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : footer modifications.
                          fixed : many more minor fixes and changes.
     2.14.1 (2014.7.28) - removed : option in customizer for header/footer scripts.
-    2.15   (2014.7.30) - language : slovenčina.                         
+    2.15   (2014.7.30) - language : slovenčina.
+    2.16   (2014.8.29) - fixed : image align.
+                         fixed : optimized decoration links.
+                         fixed : class aligncenter.
+                         fixed : many more minor fixes and changes.
 
 == Contact & Issues for Anarcho Notepad ==
 
