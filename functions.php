@@ -3,7 +3,7 @@
  * Aplos functions and definitions
  *
  * @package Aplos
- * @since Aplos 1.0.0
+ * @since Aplos 1.0.1
  */
  
  /**
@@ -102,7 +102,7 @@ function aplos_customize_register($wp_customize) {
 	//Layout settings
 	$wp_customize->add_setting( 'layout_choices',
          array(
-           'default' => 'onecol',
+           'default' => 'twocol',
          ) 
       );
 
@@ -141,8 +141,8 @@ function aplos_customize_register($wp_customize) {
             'label' => 'Select Layout',
             'section' => 'aplos_layout_choice_section',
        	    'choices' => array(
-            	'onecol' => 'One Column',
             	'twocol' => 'Two Columns',
+            	'threecol' => 'Three Columns',
         	),
          ) 
       );
@@ -196,74 +196,103 @@ function aplos_customize_register($wp_customize) {
 function aplos_customize_css() {
 	$layoutchoice = get_theme_mod('layout_choices');
 	switch($layoutchoice){
-			case 'onecol': ?>
-				<style type="text/css">
-#primary {
-	float: left;
-	margin: 0 -27% 0 0;
-	padding-top: 1em;
-	width: 90%;
-}
-#content {
-	margin: 0 19% 0 0;
-}
-#secondary,
-#tertiary {
-	background: #fff;
-   	float: right;
-   	margin: 0;
-    padding: 2em 2em 0;
-    position: relative;
-    width: 20%;
-	height: 100%;
-	margin-top: 1em;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-#tertiary {
-	padding-top: 0;
-}
-				</style> <?php
-				break;
 			case 'twocol': ?>
 				<style type="text/css">
-#primary {
-	float: left;
-	width: 90%;
-}
-#content {
-	margin: 0 25%;
-}
-
-#secondary {
-	float: left;
-	overflow: hidden;
-	width: 15%;
-	background: #fff;
-	height: 100%;
-	padding: 2em 2em 0;
-	position: relative;
-	margin: 0 0 0 -90%;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-#tertiary {
-	float: left;
-	overflow: hidden;
-	width: 15%;
-	background: #fff;
-	height: 100%;
-	padding: 2em 2em 0;
-	position: relative;
-	margin: 0 0 0 -20%;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
+                    #primary {
+                    	float: left;
+                    	margin: 0 -27% 0 0;
+                    	padding-top: 1em;
+                    	width: 90%;
+                    }
+                    #content {
+                    	margin: 0 19% 0 0;
+                    }
+                    #secondary,
+                    #tertiary {
+                    	background: #fff;
+                       	float: right;
+                       	margin: 0;
+                        padding: 2em 2em 0;
+                        position: relative;
+                        width: 20%;
+                    	height: 100%;
+                    	margin-top: 1em;
+                    	-moz-border-radius: 5px;
+                    	-webkit-border-radius: 5px;
+                    	border-radius: 5px;
+                    }
+                    #tertiary {
+                    	padding-top: 0;
+                    }
 				</style> <?php
 				break;
+			case 'threecol': ?>
+				<style type="text/css">
+                    #primary {
+                    	float: left;
+                    	width: 90%;
+                    }
+                    #content {
+                    	margin: 0 25%;
+                    }
+
+                    #secondary {
+                    	float: left;
+                    	overflow: hidden;
+                    	width: 15%;
+                    	background: #fff;
+                    	height: 100%;
+                    	padding: 2em 2em 0;
+                    	position: relative;
+                    	margin: 0 0 0 -90%;
+                    	-moz-border-radius: 5px;
+                    	-webkit-border-radius: 5px;
+                    	border-radius: 5px;
+                    }
+                    #tertiary {
+                    	float: left;
+                    	overflow: hidden;
+                    	width: 15%;
+                    	background: #fff;
+                    	height: 100%;
+                    	padding: 2em 2em 0;
+                    	position: relative;
+                    	margin: 0 0 0 -20%;
+                    	-moz-border-radius: 5px;
+                    	-webkit-border-radius: 5px;
+                    	border-radius: 5px;
+                    }
+				</style> <?php
+				break;
+                default: ?>
+                <style type="text/css">
+                    #primary {
+                        float: left;
+                        margin: 0 -27% 0 0;
+                        padding-top: 1em;
+                        width: 90%;
+                    }
+                    #content {
+                        margin: 0 19% 0 0;
+                    }
+                    #secondary,
+                    #tertiary {
+                        background: #fff;
+                        float: right;
+                        margin: 0;
+                        padding: 2em 2em 0;
+                        position: relative;
+                        width: 20%;
+                        height: 100%;
+                        margin-top: 1em;
+                        -moz-border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        border-radius: 5px;
+                    }
+                    #tertiary {
+                        padding-top: 0;
+                    }
+                </style> <?php
 			}
 
 	?>

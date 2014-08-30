@@ -1,9 +1,10 @@
 /*
 Theme Name: Aplos
+Theme URI: http://andynoelker.com/aplos
 Author: Andy Noelker
 Author URI: http://andynoelker.com/
 Description: Aplos is a simple, clean and responsive theme meant for personal blogs, featuring elegant typography. The color scheme is easy to customize and it contains multiple layouts to choose from.
-Version: 1.0.0
+Version: 1.0.1
 License: General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, red, dark, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats,  threaded-comments
@@ -809,7 +810,7 @@ object {
 article.comment,
 li.pingback {
 	overflow: hidden;
-	padding: 2.5em 0 0.7em;
+	padding: 2.5em;
     position: relative;
 }
 .children article.comment,
@@ -985,4 +986,65 @@ p.nocomments {
 #ie8 .widget img,
 #ie8 .wp-caption img {
 	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+
+
+/* =Customizable default values
+----------------------------------------------- */
+#primary {
+    float: left;
+    width: 90%;
+}
+#content {
+    margin: 0 25%;
+}
+
+#secondary {
+    float: left;
+    overflow: hidden;
+    width: 15%;
+    background: #fff;
+    height: 100%;
+    padding: 2em 2em 0;
+    position: relative;
+    margin: 0 0 0 -90%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#tertiary {
+    float: left;
+    overflow: hidden;
+    width: 15%;
+    background: #fff;
+    height: 100%;
+    padding: 2em 2em 0;
+    position: relative;
+    margin: 0 0 0 -20%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.site-title a, .site-title a:hover,
+.site-title a:visited, .site-title a:focus,
+.site-title a:active, .site-info a, .site-info a:visited {
+	color: #DC3D24;
+}
+
+.main-navigation li, .widget-title {
+	background: #DC3D24;
+}
+
+body, .site-header hgroup {
+	background: #232B2B;
+}
+
+a, a:visited {
+	color: #8F1E0C;
+}
+
+a:hover, a:focus, a:active,
+.site-info, .site-info a:hover, .site-info a:focus, .site-info a:active {
+	color: #EE6D59;
 }
