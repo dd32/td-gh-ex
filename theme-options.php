@@ -128,9 +128,9 @@ $settings = get_option( 'badeyes_options', $badeyes_options );
 
 $input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] );
 //$input['intro_text'] = wp_filter_post_kses( $input['intro_text'] );
-$input['featured_title'] = wp_filter_post_kses( $input['featured_title'] );
-$input['blog_title'] = wp_filter_post_kses( $input['blog_title'] );
-$input['side_title'] = wp_filter_post_kses( $input['blog_title'] );
+//$input['featured_title'] = wp_filter_post_kses( $input['featured_title'] );
+//$input['blog_title'] = wp_filter_post_kses( $input['blog_title'] );
+//$input['side_title'] = wp_filter_post_kses( $input['blog_title'] );
 
 // We select the previous value of the field, to restore it in case an invalid entry has been given
 

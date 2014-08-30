@@ -27,14 +27,10 @@
  * @since Twenty Fourteen 1.0
 
  */
-
-
-
 get_header(); ?>
 
 <div id="main-content" class="main-content">
 
-<div class="description">
 <?php
 global $badeyes_options;
 
@@ -43,7 +39,7 @@ global $badeyes_options;
 				?>
 
 <?php if( $badeyes_settings['intro_text'] != '' ) : ?>
-
+<div class="site-content">
 <?php 
 echo $badeyes_settings['intro_text']; 
 ?>
