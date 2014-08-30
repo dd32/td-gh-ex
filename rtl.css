@@ -1,0 +1,327 @@
+/*
+Theme Name: Searchlight
+Theme URI: http://d5creation.com/themes/searchlight/
+
+Author: D5 Creation
+Author URI: http://d5creation.com/
+
+Description: Searchlight is a CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can set any Layout ( Left Sidebar, Right Sidebar, Full Width ), set Theme Colors to your own, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
+
+Version: 1.0
+
+Tags: green, white, black, light, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Searchlight WordPress Theme, Copyright 2014: D5 Creation (www.d5creation.com)
+Searchlight is distributed under the terms of the GNU GPL
+
+Text Domain: searchlight
+
+*/
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align:right;
+}
+
+.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.wp-caption.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+
+img.site-logo,.site-title {
+	float:right;
+}
+
+#content {
+	float:right;
+}
+
+#left-sidebar {
+	float:left;
+}
+
+#searchlight-main-menu {
+	float:left;
+}
+
+#searchlight-main-menu li {
+	float:right;
+}
+
+#searchlight-main-menu li ul {
+	float:right;
+}
+
+#searchlight-main-menu ul ul,
+.sub-menu, .sub-menu ul ul {
+	float:right;
+	right:0;
+	left: auto;
+}
+
+#searchlight-main-menu ul ul ul {
+	right:100%;
+	left: auto;
+}
+
+#searchlight-main-menu ul ul a {
+	text-align:right;
+}
+
+#searchlight-main-menu .menu-item-has-children a, #searchlight-main-menu .page_item_has_children a {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+#searchlight-main-menu li.menu-item-has-children a:after, #searchlight-main-menu li.page_item_has_children a:after {
+	margin-right: 5px;
+	padding-right: 5px;
+	left: 3px;
+	right: auto;
+	padding-left: 0;
+	margin-left: auto;
+}
+
+#searchlight-top-menu {
+	float: left;
+}
+
+#searchlight-top-menu ul.menu {
+	float: left;
+}
+
+#searchlight-top-menu .menu li {
+	float:right;
+}
+
+#searchlight-top-menu .menu a:before {
+	padding: 0 0 0 5px;
+}
+
+#searchlight-top-menu #searchform {
+	float: left;
+}
+
+#searchlight-top-menu #searchsubmit {
+	margin-right: -5px;
+	margin-left: auto;
+}
+
+.connumber {
+	float: left;
+}
+
+.connumber:before {
+	padding-left: 5px;
+	float: right;
+	padding-right: 0;
+}
+
+.up-bottom-border span:before {
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+.post-meta span {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+#left-sidebar .widget ul, #left-sidebar .widget ul {
+	margin: 0 15px 10px 0;
+}
+
+#footer-sidebar .first-footer-widget {
+	float:right;
+}
+
+#footer-sidebar .footer-widgets {
+	margin-right: 4%;
+	float:right;
+	margin-left: auto;
+}
+
+#footer-sidebar .widget ul, #footer-sidebar .widget ul {
+	margin: 0 15px 10px 0;
+}
+
+ul, ol {
+	margin:0 25px 10px 0;
+}
+
+address {
+	text-align:left;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select {
+	border-right:1px solid #AAAAAA;
+	border-left:1px solid #FFFFFF;
+}
+
+#fpblog-box-item.bqpcontainer .featured-box {
+	border-left: 1px solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+}
+
+.bqpcontainer .tesheading .read-more {
+	left: 5%;
+	right: auto;
+}
+
+blockquote, q {
+	border-right:10px solid #CCCCCC;
+	border-left: none;
+}
+
+blockquote:before, q:before {
+	margin-left:.20em;
+	margin-right: auto;
+}
+
+blockquote:after, q:after {
+	margin-right:.20em;
+	margin-left: auto;
+}
+
+#container .attachment-thumbnail {
+	margin:0px 0 10px 15px;
+	float:right;
+}
+
+h1.page-title, h1.arc-post-title {
+	text-align:right;
+}
+
+h2.commentsbox:before {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.searchinfo h1.page-title:before {
+	margin-right: -110px;
+	margin-left: auto;
+}
+
+.searchinfo h3.arc-src, .searchinfo h1.page-title, .searchinfo #searchform, .searchinfo .backhome {
+	padding-right: 110px;
+	padding-left: 0;
+}
+
+.read-more {
+	margin: 11px 0 0 -7px;
+	float: left;
+}
+
+.read-more:after {
+	padding-right: 5px;
+	padding-left: 0;
+}
+
+.page-link:before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.floatright {
+	float:right;
+}
+
+.floatleft {
+	float:left;
+}
+
+.up-bottom-border .floatright {
+	text-align: right;
+}
+
+.up-bottom-border .floatleft {
+	text-align: left;
+}
+
+#page-nav .alignleft {
+	text-align:left;
+}
+
+#page-nav .alignright {
+	text-align:right;
+}
+
+#comments img.avatar {
+	right: 0;
+	left: auto;
+}
+
+.comment-body:after {
+	border-left: 15px solid #EEEEEE;
+	margin: 0 -25px 0 0;
+	border-right: none;
+}
+
+#comments .commentlist li.comment {
+	padding:20px 115px 0 0;
+}
+
+#comments .commentlist .children li {
+	margin:0 -25px 0 0;
+}
+
+#searchlight-main-menu.gobottom {
+	left: 5%;
+	right: auto;
+}
+
+.go-top {
+	left: 10px;
+	right: auto;
+}
+
+.social a {
+	float: right;
+}
+
+

@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: selfie\n"
+"POT-Creation-Date: 2014-08-30 23:42+0600\n"
+"PO-Revision-Date: 2014-08-30 23:42+0600\n"
+"Last-Translator: support@d5creation.com\n"
+"Language-Team: D5 Creation <support@d5creation.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ./\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../archive.php:14
+msgid "now browsing by category"
+msgstr ""
+
+#: ../archive.php:20
+msgid "now browsing by tag"
+msgstr ""
+
+#: ../archive.php:25
+msgid "now browsing by day"
+msgstr ""
+
+#: ../archive.php:28
+msgid "now browsing by month"
+msgstr ""
+
+#: ../archive.php:31
+msgid "now browsing by year"
+msgstr ""
+
+#: ../archive.php:34 ../archive.php:37 ../sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: ../archive.php:34
+msgid "now browsing by author"
+msgstr ""
+
+#: ../archive.php:37
+msgid "now browsing the general archives"
+msgstr ""
+
+#: ../comments.php:14
+msgid "No Comments"
+msgstr ""
+
+#: ../comments.php:14
+msgid "One Comment"
+msgstr ""
+
+#: ../comments.php:14
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:28
+msgid "Comments are Closed"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:33
+msgid "Searchlight Settings"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:34
+msgid "Here You can Set Some Specific Options of Searchlight Theme"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:52
+msgid "Fixed Header?"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:67
+msgid "Site Layout"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:71
+msgid "2 Column, Right Sidebar"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:76
+msgid "2 Column, Left Sidebar"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:80
+msgid "1 Column, No Sidebar"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:91
+msgid "(000) 111-222"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:98
+msgid "Header Contact Number"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:114
+msgid "Social Links"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:202
+msgid "Content Text Color"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:217
+msgid "Theme Color 01"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:232
+msgid "Theme Color 02"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:247
+msgid "Theme Color 03"
+msgstr ""
+
+#: ../functions.php:22
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:22
+msgid "Top Menu"
+msgstr ""
+
+#: ../functions.php:80
+msgid "Theme by:"
+msgstr ""
+
+#: ../functions.php:80
+msgid "Powered by:"
+msgstr ""
+
+#: ../functions.php:96 ../functions.php:102
+msgid "Read More"
+msgstr ""
+
+#: ../functions.php:116
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:126
+msgid "SORRY, NOT FOUND ANYTHING"
+msgstr ""
+
+#: ../functions.php:127
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: ../functions.php:129
+msgid "&laquo; Or Return to the Home Page"
+msgstr ""
+
+#: ../functions.php:139
+msgid "NEWER ENTRIES"
+msgstr ""
+
+#: ../functions.php:140
+msgid "OLDER ENTRIES"
+msgstr ""
+
+#: ../functions.php:149
+msgid "Primary Sidebar"
+msgstr ""
+
+#: ../functions.php:158
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: ../functions.php:167
+msgid "Footer Area One"
+msgstr ""
+
+#: ../functions.php:176
+msgid "Footer Area Two"
+msgstr ""
+
+#: ../functions.php:185
+msgid "Footer Area Three"
+msgstr ""
+
+#: ../functions.php:195
+msgid "Footer Area Four"
+msgstr ""
+
+#: ../post-content.php:35
+msgid "Previous Image"
+msgstr ""
+
+#: ../post-content.php:36
+msgid "Next Image"
+msgstr ""
+
+#: ../search.php:12
+msgid "SEARCH RESULTS"
+msgstr ""
+
+#: ../search.php:17
+msgid "Search Term:"
+msgstr ""
+
+#: ../search.php:18
+msgid "Number of Results:"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: ../searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:19
+msgid "Meta"
+msgstr ""

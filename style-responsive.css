@@ -1,0 +1,53 @@
+/* Searchlight Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1279px) {
+	body { min-width: 1000px; }
+	#searchlight-main-menu a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	#searchlight-top-menu input#s:focus { width: 100px; }
+}
+
+@media screen and (max-width: 1023px) {
+	body { min-width: 775px; }
+	#searchlight-main-menu a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	#searchlight-top-menu input#s:focus { width: 100px; }
+	#searchlight-top-menu { display: block; float: left; width: 100%; }
+	img.site-logo,.site-title { float: none; width: 45%; margin: 0 auto; display: block; }
+	#searchlight-top-menu ul.menu { display: block; float: left; margin: 0; }
+	#searchlight-main-menu { float: none; max-width: 100%; text-align: center; }
+	#searchlight-main-menu ul { display: inline-block; margin: 0; }
+	#searchlight-main-menu.gobottom { position: relative; right:auto; }
+	.featured-box, .bqpcontainer .featured-box { width: 42%; }
+	.bqpcontainer .fpthumb { max-height: 30vw; }
+}
+
+@media screen and (max-width: 799px) {
+	body { min-width: 575px; }
+	#searchlight-main-menu a { font-size: 13px; font-weight: 100; padding: 5px; }
+	img.site-logo,.site-title { max-width: 85%; }
+	#searchlight-main-menu ul ul ul { left: 15px;; top: 20px; }
+	#searchlight-top-menu { display: block; float: left; width: 100%; overflow: hidden; margin-left: -40000px; opacity: 0; }
+	#searchlight-top-menu ul.menu { display: block; float: left; margin: 0; }
+	.bqpcontainer .tesheading .read-more { position: relative; }
+	#content, #right-sidebar { width: 100%; float: left; }
+	.post-container .fpthumb { max-height: 40vw; }
+}
+
+
+@media screen and (max-width: 599px) {
+	body { min-width: 300px; }
+	#searchlight-main-menu.gobottom { position: relative; right:auto; }
+	img.site-logo,.site-title { width: 85%; }
+	.featured-box, .bqpcontainer .featured-box { width: 100%; }
+	.bqpcontainer .tesheading .read-more { position: relative; right: 0; }
+	.floatleft, .floatright { width: 100%; }
+	.bqpcontainer .fpthumb { max-height: 50vw; }
+	#header { position:relative; } 
+	.headerheight { display: none; }
+	#searchlight-main-menu a { margin: 3px auto; border-bottom: 1px solid #EEEEEE; padding: 10px; background: #EEEEEE; width: 100%; }
+	#searchlight-main-menu li { float: none; width: 220px; margin: 0 auto; }
+	#searchlight-main-menu ul ul a { margin: 0 auto; width: 100%; }
+}
