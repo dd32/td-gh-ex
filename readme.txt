@@ -60,6 +60,13 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.13
+* Call To action Section added
+* Option to show full content in the welcomepost added
+* Option to replace event section in homepage by widget added
+* Few changes in admin Interface
+* Dummy texts edited
+
 Version 2.12
 * Multiple content in Event category fixed
 * Translation Issue fixed

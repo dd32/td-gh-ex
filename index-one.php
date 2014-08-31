@@ -16,7 +16,7 @@ $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_even
 $big_icons = $accesspresslite_settings['big_icons'];
 
 if( $accesspresslite_layout !== 'Layout2') { ?>
-			
+<?php do_action('accesspresslite_call_to_action');?>			
 <section id="top-section" class="ak-container">
 <div id="welcome-text" class="clearfix">
 	<?php
@@ -41,10 +41,16 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 					<?php } ?>
 					
 					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
-					<p><?php echo accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char ) ?></p>
-					<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['welcome_post_readmore']; ?></a>
-						<?php } ?>
+					
+					<?php if($accesspresslite_settings['welcome_post_content'] == 0 || empty($accesspresslite_settings['welcome_post_content'])){ ?>
+						<p><?php echo accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char ) ?></p>
+						<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
+							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['welcome_post_readmore']; ?></a>
+						<?php } 
+					}else{ 
+						the_content();
+					} ?>
+					
 					</div>
 					
 				<?php endwhile;	
@@ -53,7 +59,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				
 				else{ ?>
 				
-				<h1><a href="#">Welcome Message</a></h1>
+				<h1><a href="#">About AccessPress Lite</a></h1>
 				<figure class="welcome-text-image">
 				<a href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/welcome-image.jpg" alt="welcome">
@@ -61,7 +67,9 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				</figure>
 
 				<div  class="welcome-detail">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<p>AccessPress Lite is a HTML5 & CSS3 Responsive WordPress Business Theme with clean, minimal yet highly professional design.</p>
+<p>With our years of experience, we’ve developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers – Anyone and Everyone!</p>
+<p>The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. You can use it to create your next superb website in no time and all for FREE.</p>
 				<a href="#" class="readmore bttn">Read More</a>
 				</div>
 
@@ -71,6 +79,9 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 <div id="latest-events">
 
 			<?php
+			if(is_active_sidebar('event-sidebar')) {
+				dynamic_sidebar('event-sidebar');
+			}else{
 				if(!empty($accesspresslite_event_category)){
 
 	            $loop = new WP_Query( array(
@@ -153,10 +164,10 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 		        		</div>
 		        	</div>
 		        <?php } 
-	        	} ?>
+	        	}
+	        } ?>
 </div>
 </section>
-
 
 <section id="mid-section" class="ak-container">
 <?php 
@@ -402,14 +413,17 @@ wp_reset_query(); ?>
         else:  
         ?>
         <aside id="text-3" class="widget widget_text">
-            <h3 class="widget-title">Why Us</h3>
+            <h3 class="widget-title">Why AccessPress?</h3>
             <div class="textwidget">
                 <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Donec id lacus tempor, bibendum nunc vitae, egestas nisl</li>
-                <li>Sed a dui sit amet lacus congue mattis</li>
-                <li>Nam sed dui cursus, accumsan diam sed, sodales metus.</li>
-                <li>Nulla scelerisque urna sit amet tortor tincidunt, sed bibendum lacus vestibulum.</li>
+                <li>Theme Options Panel</li>
+                <li>Responsive Design</li>
+                <li>Featured Slider</li>
+                <li>Sidebar & custom Logo/favicon Option</li>
+                <li>Multiple Homepage Layouts</li>
+                <li>Portfolio, Event/News Layout</li>
+                <li>CSS3 Animations</li>
+                <li>Many More</li>
                 </ul>
             </div>
         </aside>
@@ -422,7 +436,7 @@ wp_reset_query(); ?>
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
 		  <?php dynamic_sidebar( 'textblock-2' ); ?>
 		<?php elseif(!empty($gallery_code)): ?>	
-		<h3>Gallery</h3>
+		<h3><?php _e('Gallery','accesspresslite')?></h3>
         <?php 
         echo do_shortcode($gallery_code );
         else: ?>
@@ -517,25 +531,42 @@ wp_reset_query(); ?>
 	        
 	        <?php wp_reset_postdata(); 
 			}else{ 
-			$client_name=array("","Linda Lee","George Bailey","Micheal Warner","Rosey Partick");
 			?>
 			<h3 class="widget-title">Testimonials</h3>
 			<div class="testimonial-wrap">
 				<div class="testimonial-slider">
-				<?php for ($testimonial_count=1 ; $testimonial_count < 5 ; $testimonial_count++) { ?>
 					<div class="testimonial-slide">
 			        	<div class="testimonial-list clearfix">
 			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg' ?>" alt="<?php echo $client_name[$testimonial_count]; ?>">
+			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Yanetxys-Torreblanca.jpg">
 			        		</div>
 
-			        		<div class="testimonial-excerpt">
-			        			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
-			        		</div>
+			        		<div class="testimonial-excerpt">Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.</div>
 			        	</div>
-						<div class="testimoinal-client-name"><?php echo $client_name[$testimonial_count]; ?></div>
+						<div class="testimoinal-client-name">Yanetxys Torreblanca</div>
 					</div>
-				<?php } ?>
+
+					<div class="testimonial-slide">
+			        	<div class="testimonial-list clearfix">
+			        		<div class="testimonial-thumbnail">
+			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/David-Soriano.jpg">
+			        		</div>
+
+			        		<div class="testimonial-excerpt">Thank you very much the support team AccessPress lite for service, are really wonderful in their care and in the resolution of the problem.</div>
+			        	</div>
+						<div class="testimoinal-client-name">David Soriano</div>
+					</div>
+
+					<div class="testimonial-slide">
+			        	<div class="testimonial-list clearfix">
+			        		<div class="testimonial-thumbnail">
+			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Jotta-Lima.jpg">
+			        		</div>
+
+			        		<div class="testimonial-excerpt">Hello, I would say I am much satisfied! I tested installing the theme AccessPress Lite on my blog and found it very good. </div>
+			        	</div>
+						<div class="testimoinal-client-name">Jotta Lima</div>
+					</div>
 				</div>
 			</div>
 				<a class="all-testimonial" href="#">View All Testimonials</a>

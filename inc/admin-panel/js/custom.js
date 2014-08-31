@@ -3,8 +3,6 @@
  * and navigation tabs.
  */
 
-
-
 jQuery(document).ready(function($) {
 	function accesspresslite_tabs() {
 

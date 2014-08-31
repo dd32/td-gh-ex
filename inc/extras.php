@@ -116,6 +116,16 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Event Sidebar', 'accesspresslite' ),
+		'id'            => 'event-sidebar',
+		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspresslite' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1>',
+		'after_title'   => '</h1>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Blog Right Sidebar', 'accesspresslite' ),
 		'id'            => 'blog-sidebar',
 		'description'   => __( 'Display items for the blog category in the Right Sidebar of the inner pages', 'accesspresslite' ),
@@ -338,7 +348,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 
 	function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
-		$accesspresslite_striped_content = strip_tags($accesspresslite_content);
+		$accesspresslite_striped_content = strip_shortcodes($accesspresslite_content);
+		$accesspresslite_striped_content = strip_tags($accesspresslite_striped_content);
 		$accesspresslite_excerpt = mb_substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
 		if($accesspresslite_striped_content > $accesspresslite_excerpt){
 			$accesspresslite_excerpt .= "...";
@@ -425,7 +436,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
             	<div class="bx-slider">
 				<?php
 				$loop = new WP_Query(array(
-						'cat' => $accesspresslite_settings['slider_cat']
+						'cat' => $accesspresslite_settings['slider_cat'],
+						'posts_per_page' => -1
 					));
 					if($loop->have_posts()){ 
 					while($loop->have_posts()) : $loop-> the_post(); 
@@ -472,8 +484,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
                     <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">Learning from failure</h1>
-							<h2 class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</h2>
+							<h1 class="caption-title">AccessPress Lite</h1>
+							<h2 class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</h2>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -484,8 +496,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
                     <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">Key secret to Successful Business</h1>
-							<h2 class="caption-description">The secret of business is to know something that nobody else knows.</h2>
+							<h1 class="caption-title">Easy Customization</h1>
+							<h2 class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</h2>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -551,3 +563,20 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 	}
 
 	add_action('wp_footer','accesspresslite_custom_code');
+
+	function accesspresslite_call_to_action_cb(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+		if(!empty($accesspresslite_settings['action_text'])){
+		?>
+		<section id="call-to-action">
+		<div class="ak-container">
+			<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
+			<a class="action-btn" href="<?php echo $accesspresslite_settings['action_btn_link']; ?>"><?php echo $accesspresslite_settings['action_btn_text']; ?></a>
+		</div>
+		</section>
+		<?php
+		}
+	}
+
+	add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);

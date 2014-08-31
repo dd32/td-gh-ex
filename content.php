@@ -36,7 +36,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo $accesspresslite_event_day." ".$accesspresslite_event_month." , ".$accesspresslite_event_year ?></div>
 		    <div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspresslite')?></a>
+		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspresslite');?></a>
 	</div><!-- .entry-content -->
 </article>
 

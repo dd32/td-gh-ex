@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-lite/
 Author: Access Keys Team
 Author URI: http://accesspressthemes.com/
 Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. The Theme includes featured post with thumbnail or icon option, event section, portfolio section, testimonial section (all sections with different design layouts), multiple sidebar layouts select option for every post/pages and is ready to use with contact form 7. The updated version is also translation ready. Over all Accesspress Lite is a flexible theme with easy configuration in theme option panel.
-Version: 2.12
+Version: 2.13
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
@@ -467,6 +467,9 @@ a:active {
 	clear: both;
 }
 
+.clear{
+	clear:both;
+}
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
@@ -1148,6 +1151,7 @@ Slider
 --------------------------------------------------------------*/
 #slider-banner{ 
 	overflow: hidden;
+	background: #111;
 }
 /*All the css of the banner slider is includes in css/jquery.bxslider.css */
 
@@ -1543,9 +1547,12 @@ testimonial
 
 .testimoinal-client-name{ 
 	position: absolute;
-	bottom: -50px;
+	top: 100%;
 	left: 10px;
 	font-weight: 600;
+	margin-top: 20px;
+	max-width: 200px;
+	line-height: 1.2;
 }
 
 .testimonial-wrap .bx-viewport{
@@ -1554,7 +1561,7 @@ testimonial
 
 .testimonial-slider-wrap .all-testimonial{
 	float: right;
-	margin-top: 40px;
+	margin-top: 60px;
 	font-family: 'Lato', sans-serif;
 	font-weight: normal;
 	color: #FFF;
@@ -2181,6 +2188,39 @@ Footer form
 #top-footer input[type="submit"]{
     background:#EE5E3B;
     border-color:#293037;
+}
+
+/*--------------------------------------------------------------
+call To action
+--------------------------------------------------------------*/
+#call-to-action{
+	background: #00ABFF;
+	padding: 40px 0;
+	color:#FFF;
+}
+
+#call-to-action h4{
+	font-size: 24px;
+	margin-bottom: 0;
+	float: left;
+	color:#FFF;
+	font-weight: normal;
+	font-family: 'Open Sans',sans-serif;
+	max-width: 85%;
+}
+
+#call-to-action .action-btn{
+	float: right;
+	background: #353F47;
+	border:2px solid #282F35;
+	padding: 10px 20px;
+	color: #FFF;
+	line-height: 1;
+	border-radius:4px;
+}
+
+#call-to-action .action-btn:hover{
+	background: #282F35;
 }
 
 /* Chrome, Safari, Opera */

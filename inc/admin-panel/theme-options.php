@@ -7,13 +7,6 @@
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
-add_action( 'wp_ajax_my_action', 'my_action_function' );
-function my_action_function() {
-	//check_ajax_referer( 'my-special-string', 'security' );
-	echo 'got it';
-	die;
-}
-
 function accesspress_lite_admin_scripts() {
 	wp_enqueue_media();
 	wp_enqueue_script( 'accesspresslite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array( 'jquery' ) );
@@ -97,7 +90,13 @@ $accesspresslite_options = array(
     'view_all_text' =>'View All',
     'custom_css' => '',
     'custom_code' => '',
-    'featured_bar' => false
+    'featured_bar' => false,
+
+    'action_text' => 'Check Our AccessPress Pro Theme - A premium version of AccessPres Lite',
+    'action_btn_text' => 'Check Now',
+    'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
+    'welcome_post_content' => false
+
 );
 
 
@@ -355,6 +354,69 @@ function accesspresslite_theme_options_page() {
 					</select>
 					</td>
 					</tr>
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+					<tr><th scope="row"><label for="event_cat"><?php _e('Select the category to display as Events','accesspresslite'); ?></label></th>
+					<td>
+					<select id="event_cat" name="accesspresslite_options[event_cat]">
+					<?php
+					foreach ( $accesspresslite_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['event_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="testimonial_cat"><?php _e('Select the category to display as Testimonials','accesspresslite'); ?></label></th>
+					<td>
+					<select id="testimonial_cat" name="accesspresslite_options[testimonial_cat]">
+					<?php
+					foreach ( $accesspresslite_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="blog_cat"><?php _e('Select the category to display as Blog','accesspresslite'); ?></label></th>
+					<td>
+					<select id="blog_cat" name="accesspresslite_options[blog_cat]">
+					<?php
+					foreach ( $accesspresslite_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['blog_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="portfolio_cat"><?php _e('Select the category to display as Portfolio/Products','accesspresslite'); ?></label></th>
+					<td>
+					<select id="portfolio_cat" name="accesspresslite_options[portfolio_cat]">
+					<?php
+					foreach ( $accesspresslite_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['portfolio_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
+
+					<tr>
+						<td colspan="2">
+							<em><?php _e('You can show these categories in the menu by configuring','accesspresslite'); ?> <a target="_blank" href="<?php echo admin_url('nav-menus.php'); ?>">Menus</a> <?php _e('Page.','accesspresslite'); ?></em>
+						</td>
+					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
@@ -403,6 +465,15 @@ function accesspresslite_theme_options_page() {
 					</select>
 					</td>
 					</tr>
+
+					<tr>
+						<th><label for="full_content"><?php _e('Show Full Content?','accesspresslite'); ?></th>
+						<td>
+							<input type="checkbox" id="full_content" name="accesspresslite_options[welcome_post_content]" value="1" <?php checked( true, $settings['welcome_post_content'] ); ?> />
+							<label for="full_content"><?php _e('Check to enable','accesspresslite'); ?></label><br />
+						</td>
+					</tr>
+
 					<tr>
 						<th><label for="welcome_post_char"><?php _e('Welcome Post Excerpt Character','accesspresslite'); ?></label></th>
 						<td><input id="welcome_post_char" type="text" name="accesspresslite_options[welcome_post_char]" value="<?php if (isset($settings['welcome_post_char'])){ echo esc_attr($settings['welcome_post_char'],'accesspresslite'); } ?>"> <?php _e('Characters','accesspresslite'); ?></td>
@@ -413,9 +484,15 @@ function accesspresslite_theme_options_page() {
 						<td><input id="welcome_post_readmore" type="text" name="accesspresslite_options[welcome_post_readmore]" value="<?php if (isset($settings['welcome_post_readmore'])){ echo esc_attr($settings['welcome_post_readmore'],'accesspresslite'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
 
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
 					<tr>
 						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspresslite'); ?></label></th>
 						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number'],'accesspresslite'); } ?>"></td>
+					</tr>
+
+					<tr>
+						<td colspan="2"><em><?php _e('To replace the Event section in homepage, Go to', 'accesspresslite'); ?> <a href="<?php echo admin_url('widgets.php'); ?>"><?php _e('widget','accesspresslite'); ?></a> <?php _e('and drag widget item into the Event Sidebar Widget area.', 'accesspresslite' ); ?></em></td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -486,70 +563,6 @@ function accesspresslite_theme_options_page() {
 						<th><label for="featured_post_readmore"><?php _e('Read More Text','accesspresslite'); ?></label></th>
 						<td><input id="featured_post_readmore" type="text" name="accesspresslite_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){echo esc_attr($settings['featured_post_readmore'],'accesspresslite'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
-
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
-
-					<tr><th scope="row"><label for="event_cat"><?php _e('Select the category to display as Events','accesspresslite'); ?></label></th>
-					<td>
-					<select id="event_cat" name="accesspresslite_options[event_cat]">
-					<?php
-					foreach ( $accesspresslite_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['event_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="testimonial_cat"><?php _e('Select the category to display as Testimonials','accesspresslite'); ?></label></th>
-					<td>
-					<select id="testimonial_cat" name="accesspresslite_options[testimonial_cat]">
-					<?php
-					foreach ( $accesspresslite_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="blog_cat"><?php _e('Select the category to display as Blog','accesspresslite'); ?></label></th>
-					<td>
-					<select id="blog_cat" name="accesspresslite_options[blog_cat]">
-					<?php
-					foreach ( $accesspresslite_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['blog_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="portfolio_cat"><?php _e('Select the category to display as Portfolio/Products','accesspresslite'); ?></label></th>
-					<td>
-					<select id="portfolio_cat" name="accesspresslite_options[portfolio_cat]">
-					<?php
-					foreach ( $accesspresslite_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['portfolio_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr>
-						<td colspan="2">
-							<?php _e('You can show these categories in the menu by configuring','accesspresslite'); ?> <a target="_blank" href="<?php echo admin_url('nav-menus.php'); ?>">Menus</a> <?php _e('Page.','accesspresslite'); ?>
-						</td>
-					</tr>
                     
                     <tr><td colspan="2" class="seperator">&nbsp;</td></tr>
                     
@@ -562,7 +575,7 @@ function accesspresslite_theme_options_page() {
                     
                     <tr>
                         <td colspan="2">
-                        <?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></a>
+                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></em></a>
                         </td>
                     </tr>
 
@@ -573,6 +586,35 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<input type="checkbox" id="featured_bar" name="accesspresslite_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
 							<label for="featured_bar"><?php _e('Check to disable','accesspresslite'); ?></label><br />
+						</td>
+					</tr>
+
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+					<tr>
+						<th><label for="featured_bar"><?php _e('Call To action','accesspresslite'); ?></th>
+					</tr>
+
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Text','accesspresslite'); ?></th>
+						<td>
+							<textarea rows="4" cols="60" name="accesspresslite_options[action_text]" placeholder="Write Call to Action Text"><?php if(!empty($settings['action_text'])) echo $settings['action_text']; ?></textarea>
+						</td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspresslite'); ?></th>
+						<td>
+							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) echo $settings['action_btn_text']; ?>">
+						</td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Read More Button link','accesspresslite'); ?></th>
+						<td>
+							<input type="text" name="accesspresslite_options[action_btn_link]" value="<?php if(!empty($settings['action_btn_link'])) echo $settings['action_btn_link']; ?>">
 						</td>
 					</tr>
                 </table>
@@ -1035,6 +1077,8 @@ function accesspresslite_validate_options( $input ) {
     $input['featured_post_readmore'] = sanitize_text_field( $input['featured_post_readmore'] );
     $input['welcome_post_readmore'] = sanitize_text_field( $input['welcome_post_readmore'] );
     $input['view_all_text'] = sanitize_text_field( $input['view_all_text'] );
+    $input['action_text'] = sanitize_text_field( $input['action_text'] );
+    $input['action_btn_text'] = sanitize_text_field( $input['action_btn_text'] );
     $input['custom_css'] = wp_kses_stripslashes( $input['custom_css'] );
     $input['custom_code'] = wp_kses_stripslashes( $input[ 'custom_code' ] );
 
@@ -1162,6 +1206,10 @@ function accesspresslite_validate_options( $input ) {
 		$input['featured_bar'] = null;
 	$input['featured_bar'] = ( $input['featured_bar'] == 1 ? 1 : 0 );
 
+	if ( ! isset( $input['welcome_post_content'] ) )
+		$input['welcome_post_content'] = null;
+	$input['welcome_post_content'] = ( $input['welcome_post_content'] == 1 ? 1 : 0 );
+
 
 	 // data validation for Social Icons
 	if( isset( $input[ 'accesspresslite_facebook' ] ) ) {
@@ -1202,6 +1250,9 @@ function accesspresslite_validate_options( $input ) {
 	};
 	if( isset( $input[ 'accesspresslite_rss' ] ) ) {
 		$input[ 'accesspresslite_rss' ] = esc_url_raw( $input[ 'accesspresslite_rss' ] );
+	};
+	if( isset( $input[ 'action_btn_link' ] ) ) {
+		$input[ 'action_btn_link' ] = esc_url_raw( $input[ 'action_btn_link' ] );
 	};
 
     if( isset( $input[ 'header_text' ] ) ) {
