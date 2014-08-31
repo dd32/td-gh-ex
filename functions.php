@@ -497,3 +497,25 @@ if(is_admin()){
 }
 require_once( get_template_directory() . '/inc/theme-option-values.php' ); 
 
+
+global $wpdb;
+	$get_row_theme_option = "SELECT * FROM theme_option";
+	$get_row_theme_option_id = $wpdb->get_row($get_row_theme_option);
+if(!isset($get_row_theme_option_id)){
+	$create_table_db = "CREATE TABLE theme_option (
+												ID INT NOT NULL AUTO_INCREMENT,
+												PRIMARY KEY(ID),
+												Userfburl text,
+												Usertwitterurl text,
+												Usergplusurl text,
+												Userlikinurl text,
+												Useradsense728_90 longtext,
+												Useradsense200_200 longtext,
+												Useradsense180_150 longtext,
+												Usergoogleanalytic longtext
+											)";
+		$wpdb->query($create_table_db);
+		
+		$insert_fb_url_theme_option = "INSERT INTO theme_option (Userfburl, Usertwitterurl, Usergplusurl, Userlikinurl,Useradsense728_90, Useradsense200_200, Useradsense180_150, Usergoogleanalytic)VALUES (' ',' ',' ',' ',' ',' ',' ',' ') ";
+		$wpdb->query($insert_fb_url_theme_option);
+}

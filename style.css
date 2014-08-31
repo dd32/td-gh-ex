@@ -4,7 +4,7 @@ Theme URI: http://jathemes.com/artikler-theme/
 Author: JAThemes Team
 Author URI: http://www.jathemes.com/
 Description: Artikler theme create and design by JAThemes Team. Features include color customizations options, custom headers,custom background, multiple widget areas, an optional icon navigation menu and also include JATheme adsence widget.This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
-Version: 1.3
+Version: 1.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, theme-options
@@ -61,6 +61,7 @@ ul{margin:5px; list-style: inside;}
 ol{margin:5px; list-style:inside decimal;}
 br{line-height:20px;}
 input[type="submit"]{font-weight:bold;}
+input[type="text"]{font-size:12px; padding:2px;}
 /**************************************************/
 .main{width:990px; margin:15px auto; background:#FFF; padding:0 10px 10px 10px; box-shadow: 0 0 15px #999999; }
 .logo{float:left; margin:10px 10px 10px 0;}
@@ -139,7 +140,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .nav-menu ul li a{padding:10px; color:#333; display:block; line-height:20px; font-size:20px; text-transform:capitalize;}
 .nav-menu ul li a:hover{color:#222; text-decoration:none;/* background:rgba(232,232,232,0.7);*/}
 .nav-menu ul li a:active{}
-.main-navigation div{overflow:hidden;  /*margin:0 0 10px 0;*/ float:left; width:76%;}
+.main-navigation div{overflow:hidden;  /*margin:0 0 10px 0;*/ float:left; width:755px;}
 .main-navigation div+div{width:auto; margin:0px 0 0;}
 .main-navigation div ul {list-style:none; /*border:2px solid;*/  margin:0px; line-height:0;}
 .main-navigation div ul li{display:inline-block; overflow:hidden; margin:0px 0 0 0;}
@@ -184,7 +185,7 @@ background: -ms-linear-gradient(top,  rgba(192,192,192,1) 0%,rgba(223,229,215,1)
 background: linear-gradient(to bottom,  rgba(192,192,192,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#fcfff4',GradientType=0 );
 border-bottom:3px solid #c0c0c0;
- padding:10px 10px 8px;/*border:1px solid;*/ border-top-left-radius:10px; border-top-right-radius:10px;}
+ /*padding:10px 10px 8px;*//*border:1px solid;*/ border-top-left-radius:10px; border-top-right-radius:10px;}
 .content-title h1{font-size:24px; color:#333; margin:0 0 0 5px;}
 .content-post-main{overflow:hidden; border-bottom:7px solid #EAEAEA; margin:5px; padding:5px;}
 .content-post-main:hover{background:rgba(232,232,232,0.6);}

@@ -1,21 +1,5 @@
 <?php
-if(is_admin()){
-
 echo '<br />';
-global $wpdb; 
-$create_table_db = "CREATE TABLE theme_option (
-												ID INT NOT NULL AUTO_INCREMENT,
-												PRIMARY KEY(ID),
-												Userfburl text,
-												Usertwitterurl text,
-												Usergplusurl text,
-												Userlikinurl text,
-												Useradsense728_90 longtext,
-												Useradsense200_200 longtext,
-												Useradsense180_150 longtext,
-												Usergoogleanalytic longtext
-											)";
-$wpdb->query($create_table_db);
 
 $get_row_theme_option = "SELECT * FROM theme_option WHERE ID = 1";
 		$get_row_theme_option_id = $wpdb->get_row($get_row_theme_option);
@@ -30,7 +14,7 @@ $get_row_theme_option = "SELECT * FROM theme_option WHERE ID = 1";
 
 <table>
   <tr>
-    <th colspan="2">Social Media</th>
+    <th colspan="2">Social Media<br />Note:<b> if value show in textfield then values is save, if it doesnot please try again.</b></th>
   </tr>
 <form action="" method="post"> 
   <tr>
@@ -175,5 +159,3 @@ if(isset($_POST['user_submit_url'])){
 ?>
 
 <p style="text-align:right; margin:0 25px;"><a style="text-align:right; color:#F06; text-decoration:none; " href="http://jathemes.com/" target="_blank"><img src="http://jathemes.com/wp-content/uploads/2014/07/icon.png" width="30px" />JAThemes</a></p>
-
-<?php }?>
