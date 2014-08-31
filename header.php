@@ -81,7 +81,7 @@ global $badeyes_options;
 $header_image_att = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_content = '%s'",$header_image_URL ) );
 $header_image_att_id = $header_image_att->ID;
 $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_alt', true); ?>
-<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo $header_image_alt; ?>"/>
+<img src="<?php header_image(); ?>" alt="<?php echo $header_image_alt; ?>"/>
 </div>
 
 <?php endif; ?>
