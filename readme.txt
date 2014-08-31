@@ -18,7 +18,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Simple Life WordPress Theme, Copyright 2013 nilambar.net
 Simple Life is distributed under the terms of the GNU General Public License v3
-- Images used in the themes are licenced under GNU GPL v3.
+- The image used in screenshot of the theme is theme's author personal creation and is free for personal and commercial use.
 The exceptions to license are as follows:
 - Font Awesome is fully open source and is GPL friendly (http://fortawesome.github.io/Font-Awesome/)
 - jquery.meanmenu.js released by Chris Wharton (https://github.com/meanthemes/meanMenu) under GPLv3 license

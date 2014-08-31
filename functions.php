@@ -5,8 +5,6 @@
  * @package Simple Life
  */
 
-global $content_width;
-
 if ( ! function_exists( 'simple_life_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -17,6 +15,7 @@ if ( ! function_exists( 'simple_life_setup' ) ) :
  */
 function simple_life_setup() {
 	global $content_width;
+
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 */
@@ -80,6 +79,7 @@ function simple_life_setup() {
     global $simple_life_default_options;
 
     $simple_life_default_options = array(
+
 			'site_layout'    => 'content-sidebar',
 			'content_layout' => 'full',
 			'read_more_text' => 'read more',
@@ -162,7 +162,7 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Thirt Party Compatibility.
+ * Third Party Compatibility.
  */
 require get_template_directory() . '/support/woocommerce.php';
 
