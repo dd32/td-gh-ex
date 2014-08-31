@@ -1480,7 +1480,8 @@ function catchkathmandu_social_networks() {
 						$options[ 'social_goodreads' ],
 						$options[ 'social_skype' ],
 						$options[ 'social_soundcloud' ],
-						$options[ 'social_email']
+						$options[ 'social_email'],
+						$options[ 'social_xing' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1638,6 +1639,11 @@ function catchkathmandu_social_networks() {
 				$catchkathmandu_social_networks .=
 					'<li class="email"><a href="'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
 			}				
+			//Xing
+			if ( !empty( $options[ 'social_xing' ] ) ) {
+				$catchkathmandu_social_networks .=
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'.sprintf( esc_attr__( '%s on Xing', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Xing </a></li>';
+			}
 			
 			$catchkathmandu_social_networks .='
 		</ul>';
