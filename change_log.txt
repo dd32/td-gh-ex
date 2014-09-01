@@ -52,3 +52,9 @@ Version 1.09
 	iii) Remove space in Faster Themes.
 	iv) Set FT Options condition.
 	v) Set Widget css in Footer content area.
+
+Version 2.0
+
+	i) Set TGM for pagination.
+	ii) Change copyright text condition.
+	iii) Change theme author uri in style.css.		

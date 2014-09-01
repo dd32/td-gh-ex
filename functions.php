@@ -21,7 +21,7 @@ function mywiki_setup() {
 	 * Make mywiki theme available for translation.
 	 *
 	 */
-	 load_theme_textdomain( 'mywiki', get_template_directory() . '/languages' );
+	 load_theme_textdomain( 'mywiki');
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( 'css/editor-style.css' );
 	// Add RSS feed links to <head> for posts and comments.
@@ -42,8 +42,13 @@ function mywiki_setup() {
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
 endif; // redpro_setup
+
 // Implement Custom Header features.
 require get_template_directory() . '/function/custom-header.php';
+
+/*** TGM ***/
+require_once('function/tgm-plugins.php');
+
 add_action( 'after_setup_theme', 'mywiki_setup' );
 
 if ( ! function_exists( 'mywiki_entry_meta' ) ) :

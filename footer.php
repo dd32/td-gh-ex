@@ -37,8 +37,7 @@
 		{
 			echo $options['footertext'];
 		}
-		echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
-		echo " <a href='http://fasterthemes.com/themes/MyWiki' target='_blank'>MyWiki Theme</a> by FasterThemes.";				
+		echo " <a href='http://fasterthemes.com/wordpress-themes/MyWiki' target='_blank'>MyWiki</a> powered by WordPress.";				
 	?>
     </p>
   </div>
