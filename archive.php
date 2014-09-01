@@ -51,15 +51,26 @@ get_header(); ?>
           <?php endwhile; ?>
           <?php endif; ?>
         </div>
-            <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-            <nav class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination foodrecipes-nav"> 
-            <span class="foodrecipes-nav-previous">
-              <?php previous_posts_link(); ?>
-              </span> 
-              <span class="foodrecipes-nav-next">
-              <?php next_posts_link(); ?>
-              </span> </nav>
-            <?php } ?>
+         
+        <!--Pagination Start-->
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <nav class="col-md-12 foodrecipes-box-paging"> 
+            <?php faster_pagination();?>
+            </nav>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <nav class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination foodrecipes-nav"> 
+        <span class="foodrecipes-nav-previous">
+          <?php previous_posts_link(); ?>
+          </span> 
+          <span class="foodrecipes-nav-next">
+          <?php next_posts_link(); ?>
+          </span> </nav>
+        <?php } ?>
+        <?php }//is plugin active ?>
+        <!--Pagination End-->
+        
       </div>
         <?php get_sidebar(); ?>
     </div>

@@ -58,6 +58,9 @@ require_once('function/foodrecipes-post-widget.php');
 //foodrecipes theme theme option
 require_once('theme-option/fasterthemes.php');
 
+/*** TGM ***/
+require_once('function/tgm-plugins.php');
+
 /**
  * Add default menu style if menu is not set from the backend.
  */
