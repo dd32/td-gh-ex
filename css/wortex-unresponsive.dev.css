@@ -260,11 +260,16 @@ figure figcaption,
 	float: none;
 }
 
+
 #page-container .page-title { margin-top: 0px; }
 
 #page-container.with-sidebar { width: 760px; }
 #sidebar-container { width: 200px; margin: 0 20px; }
-#footer .one-fourth { width: 200px; display: inline-block; }
+
+#footer .container > ul > li {
+	width: 200px;
+	display: inline-block;
+}
 
 /* #Clearing */
 
@@ -360,7 +365,10 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 /* Logo */
-#logo { float: left; }
+#logo {
+	float: left;
+	max-width: 100%;
+}
 
 #logo .site-title {
 	font-family:'Open Sans';
@@ -524,7 +532,7 @@ or wrap each row of columns in a <div class="row"> */
 	margin-top: 0;
 }
 
-.type-page .thumbnail { max-width: 100%; text-align: center; }
+.type-page .thumbnail { text-align: center; }
 
 /* #Index */
 
@@ -577,6 +585,7 @@ or wrap each row of columns in a <div class="row"> */
 	float: left;
 	margin-bottom: 20px;
 	margin-right: 20px;
+	max-width: 100%;
 }
 
 h3.entry-title {
@@ -690,7 +699,6 @@ h3.entry-title {
 
 .single-post .thumbnail {
 	float: none;
-	max-width: 100%;
 	text-align: center;
 	margin-right: 0;
 }
@@ -1015,7 +1023,7 @@ p.comment-form-url
 	font-weight: bold;
 	margin-top: 0;
 	margin-bottom: 30px;
-	transform:uppercase;
+	text-transform: uppercase;
 }
 
 #footer .widget { margin-bottom: 40px; }

@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.9.1
-Stable tag: 1.1.0
+Tested up to: 3.9.2
+Stable tag: 1.1.1
 
 == ABOUT WORTEX LITE ==
 
@@ -55,6 +55,13 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.1 =
+September 1st, 2014
+* Fixed W3C validator error caused by the "X-UA-Compatible" meta tag. The theme now fully validates as HTML5.
+* Replaced (has_post_thumbnail()) with ('' != get_the_post_thumbnail()) (as per codex recommendation - fixes an occasional issue)
+* Fixed an odd glitch with footer widgets columns
+* Fixed CSS glitch in Firefox with large logo and featured images
 
 = 1.1.0 =
 June 30rd, 2014

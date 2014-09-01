@@ -20,7 +20,7 @@ while(have_posts()) : the_post();
 
 ?><div id="page-container" <?php post_class("with-sidebar"); ?>><?php
 
-	if (has_post_thumbnail()):
+	if ( '' != get_the_post_thumbnail() ) : // As recommended by the WP codex, has_post_thumbnail() is not reliable
 	?><div class="thumbnail"><?php
 		the_post_thumbnail('large', array('class' => 'scale-with-grid'));
 	?></div><?php
