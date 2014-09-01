@@ -30,3 +30,9 @@ Version 2.0.5
 	iii) Set copy right text in footer.
 	iv) Delete useless image in images folder.
 	v) Remove colorpicker code in fasterthemes file.
+	
+Version 2.0.6
+	
+	i) Set TGM for pagination.
+	ii) Change copyright text condition.
+	iii) Change theme author uri in style.css.

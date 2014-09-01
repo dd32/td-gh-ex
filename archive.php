@@ -3,7 +3,6 @@
  * The template for displaying Archive pages
 */
 get_header();?>
-
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
@@ -11,16 +10,12 @@ get_header();?>
         <?php
 						if ( is_day() ) :
 							printf( __( 'Daily Archives: %s', 'customizable' ), get_the_date() );
-
 						elseif ( is_month() ) :
 							printf( __( 'Monthly Archives: %s', 'customizable' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'customizable' ) ) );
-
 						elseif ( is_year() ) :
 							printf( __( 'Yearly Archives: %s', 'customizable' ), get_the_date( _x( 'Y', 'yearly archives date format', 'customizable' ) ) );
-
 						else :
 							_e( 'Archives', 'customizable' );
-
 						endif;
 					?>
       </h1>
@@ -50,12 +45,21 @@ get_header();?>
         <?php next_posts_link(); ?>
         </span> </nav>
       <!-- .nav-single -->
-      <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-      <div class="col-md-12 customizable-default-pagination">
-      		<span class="customizable-previous-link"><?php previous_posts_link(); ?></span>
+
+        <!--Pagination Start-->
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <div class="col-md-12 customizable-default-pagination">
+            <span class="customizable-previous-link"><?php previous_posts_link(); ?></span>
             <span class="customizable-next-link"><?php next_posts_link(); ?></span>
-      </div>
-      <?php } ?>
+        </div>
+        <?php } ?>
+        <?php }//is plugin active ?>
+		<!--Pagination End-->
+
       <?php
 		   else : 
 		   ?>
