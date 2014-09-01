@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simone\n"
-"POT-Creation-Date: 2014-08-10 17:13-0800\n"
-"PO-Revision-Date: 2014-08-12 15:41-0800\n"
+"POT-Creation-Date: 2014-08-27 10:00-0000\n"
+"PO-Revision-Date: 2014-08-27 11:14-0000\n"
 "Last-Translator: \n"
-"Language-Team: lynda.com <mrh@lynda.com>\n"
-"Language: nb\n"
+"Language-Team: \n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,183 +22,186 @@ msgstr ""
 #: archive.php:22
 #, php-format
 msgid "Posts in the %s category:"
-msgstr "Arikler i kategorien %s:"
+msgstr "Artigos na %s categoria:"
 
 #. translators: %s = single tag title
 #: archive.php:26
 #, php-format
 msgid "Posts with the %s tag"
-msgstr "Artikler med taggen %s:"
+msgstr "Artigos com a %s tag"
 
 #: archive.php:29
 #, php-format
 msgid "Author: %s"
-msgstr "Forfatter: %s"
+msgstr "Autor: %s"
 
 #: archive.php:33
 #, php-format
 msgctxt "archive for a day"
 msgid "Posts from %s"
-msgstr "Artikler publisert %s"
+msgstr "Artigos de %s "
 
 #: archive.php:33
 msgctxt "Daily archives date format"
 msgid "F j, Y"
-msgstr "j. F Y"
+msgstr "F j, Y "
 
 #: archive.php:36
 #, php-format
 msgctxt "archive for a month"
 msgid "Posts from %s"
-msgstr "Artikler publisert %s"
+msgstr "Artigos de %s"
 
 #: archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "F Y"
+msgstr "F Y "
 
 #: archive.php:39
 #, php-format
 msgctxt "archive for a year"
 msgid "Posts from %s"
-msgstr "Artikler publisert i %s"
+msgstr "Artigos de %s"
 
 #: archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr "Y"
+msgstr "Y "
 
 #: archive.php:42
 msgid "Asides"
-msgstr "Oppdateringer"
+msgstr "Apartes"
 
 #: archive.php:45
 msgid "Archives"
-msgstr "Arkiver"
+msgstr "Arquivos"
 
 #: comments.php:29
 #, php-format
 msgctxt "comments title"
 msgid "One comment:"
 msgid_plural "%1$s comments:"
-msgstr[0] "Én kommentar:"
-msgstr[1] "%1$s kommentarer:"
+msgstr[0] "Um coment&aacute;rio:"
+msgstr[1] "%1$s coment&aacute;rios:"
 
 #: comments.php:47
 msgid "Comment navigation"
-msgstr "Kommentarnavigasjon"
+msgstr "Navega&ccedil;&atilde;o coment&aacute;rios"
 
 #: comments.php:48
 msgid "Older Comments"
-msgstr "Eldre kommentarer"
+msgstr "coment&aacute;rios mais antigos"
 
 #: comments.php:49
 msgid "Newer Comments"
-msgstr "Nyere kommentarer"
+msgstr "coment&aacute;rios mais recentes"
 
 #: comments.php:59
 msgid "Comments are closed."
-msgstr "Lukket for kommentarer."
+msgstr "coment&aacute;rios est&atilde;o encerrados."
 
 #: content-aside.php:17 content-page.php:32 content-single.php:42
 #: content.php:61
 msgid "Edit"
-msgstr "Rediger"
+msgstr "Editar"
 
 #: content-none.php:16
 msgid "Page not available"
-msgstr "Siden er ikke tilgjengelig"
+msgstr "P&aacute;gina não est&aacute; acess&iacute;vel"
 
 #. translators: %s = search query
 #: content-none.php:20
 #, php-format
 msgid "Nothing found for %s"
-msgstr "Ingenting funnet for %s"
+msgstr "Nada encontrado para %s"
 
 #: content-none.php:22
 msgid "Nothing Found"
-msgstr "Ingenting funnet"
+msgstr "Nada Encontrado"
 
 #: content-none.php:31
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klar til å publisere din første artikkel? <a href=\"%1$s\">Start her!</a>."
+"Preparado para publicar o seu primeiro artigo? <a href=\"%1$s\">Comece aqui</"
+"a>."
 
 #: content-none.php:35
 msgid ""
 "You seem to be lost. To find what you are looking for check out the most "
 "recent articles below or try a search:"
 msgstr ""
-"Det ser ut til at du har gått deg vill. Ta en titt på de sist publiserte "
-"artiklene nedenfor eller prøv et søk for å finne det du leter etter:"
+"Parece estar perdido. Para encontrar o que deseja, veja os artigos mais "
+"recentes em baixo ou fa&ccedil;a uma pesquisa:"
 
 #: content-none.php:40
 msgid ""
 "Nothing matched your search terms. Check out the most recent articles below "
 "or try searching for something else:"
 msgstr ""
-"Ingenting ble funnet med søket ditt. Ta en titt på de sist publiserte "
-"artiklene nedenfor eller prøv et søk for å finne det du leter etter:"
+"Nada corresponde ao termos da sua pesquisa. Procure nos artigos mais "
+"recentes em baixo ou tente fazer outra pesquisa:"
 
 #: content-none.php:45
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Vi finner ikke det du leter etter. Prøv et søk og se om det hjelper."
+msgstr ""
+"Parece que n&atilde;o conseguimos encontrar aquilo que procura. Talvez "
+"pesquisar novamente ajude."
 
 #: content-none.php:56
 msgid "Most recent posts:"
-msgstr "Nyeste artikler:"
+msgstr "Artigos mais recentes:"
 
 #: content-page.php:27 content-single.php:50 image.php:48
 msgid "Pages:"
-msgstr "Sider:"
+msgstr "P&aacute;ginas:"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:25 content.php:43
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: content-single.php:38 content.php:57
 msgid "Leave a comment"
-msgstr "Legg igjen en kommentar"
+msgstr "Deixe um coment&aacute;rio"
 
 #: content-single.php:38 content.php:57
 msgid "1 Comment"
-msgstr "Én kommentar"
+msgstr "1 coment&aacute;rio"
 
 #: content-single.php:38 content.php:57
 msgid "% Comments"
-msgstr "% kommentarer"
+msgstr "% Coment&aacute;rios"
 
 #: content.php:13 content.php:26
 msgid "Read "
-msgstr "Les "
+msgstr "Ler"
 
 #: content.php:72
 msgctxt "First part of \"Read *article title* in title tag of Read more link"
 msgid "Read "
-msgstr "Les "
+msgstr "Ler"
 
 #: content.php:72
 msgid "Read <span aria-hidden=\"true\">the article</span>"
-msgstr "Les <span aria-hidden=\"true\">artikkelen</span>"
+msgstr "Ler <span aria-hidden=\"true\">o artigo</span>"
 
 #: content.php:79
 msgid "Continue Reading "
-msgstr "Les videre "
+msgstr "Continuar a Ler"
 
 #: content.php:79
 msgid "Continue Reading"
-msgstr "Les videre "
+msgstr "Continuar a Ler"
 
 #. translators: %s = text link: WordPress, URL: http://wordpress.org/
 #: footer.php:20
 #, php-format
 msgid "Proudly powered by %s"
-msgstr "Publisert med %s"
+msgstr "Orgulhosamente fornecido por %s"
 
 #: footer.php:21
 msgid "WordPress"
@@ -208,7 +211,7 @@ msgstr "WordPress"
 #: footer.php:27
 #, php-format
 msgid "Theme: %1$s by %2$s"
-msgstr "Tema: %1$s av %2$s"
+msgstr "Tema: %1$s por %2$s"
 
 #: footer.php:29
 msgid "mor10.com"
@@ -216,78 +219,80 @@ msgstr "mor10.com"
 
 #: functions.php:55
 msgid "Primary Menu"
-msgstr "Hovedmeny"
+msgstr "Menu Principal"
 
 #: functions.php:56
 msgid "Social Menu"
-msgstr "Sosialmeny"
+msgstr "Menu Social"
 
 #: functions.php:85
 msgid "Sidebar"
-msgstr "Sideområde"
+msgstr "Barra Lateral"
 
 #: functions.php:94
 msgid "Footer Widgets"
-msgstr "Bunnwidgeter"
+msgstr "Widgets de Rodap&eacute;"
 
 #: functions.php:95
 msgid ""
 "Footer widgets area appears, not surprisingly, in the footer of the site."
-msgstr "Bunnwidgeter vises i bunnområdet på siden."
+msgstr ""
+"A &aacute;rea dos Widgets do Rodap&eacute; aparecem, sem surpresas, no "
+"rodap&eacute; do site."
 
 #: header.php:25
 msgid "Skip to content"
-msgstr "Gå direkte til innholdet"
+msgstr "Saltar para o conte&uacute;do"
 
 #: header.php:47
 msgid "Menu"
-msgstr "Meny"
+msgstr "Menu"
 
 #: header.php:53
 msgid "Search"
-msgstr "Søk"
+msgstr "Procurar"
 
 #: image.php:25
 msgid "Featured in: "
-msgstr "Vist i: "
+msgstr "Entrou em:"
 
 #: image.php:26
 msgid "Full size image: "
-msgstr "Bilde i full størrelse: "
+msgstr "Imagem full size"
 
 #: image.php:27
 msgid "Edit attachment post"
-msgstr "Rediger vedleggspost"
+msgstr "Editar anexo do artigo"
 
 #: inc/author-box.php:10
 msgid "Hide Author Bio"
-msgstr "Gjem forfatterbiografien"
+msgstr "Esconder biografia do autor"
 
 #: inc/author-box.php:21
 #, php-format
 msgid "About %s"
-msgstr "Om %s"
+msgstr "Sobre %s"
 
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:29
 msgid "One article and counting. "
-msgstr "En artikkel så langt. "
+msgstr "Um artigo e a contar."
 
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:34
 #, php-format
 msgid "%s articles and counting. "
-msgstr "%s artikler så langt. "
+msgstr "%s artigos e a contar."
 
 #: inc/author-box.php:44
 #, php-format
 msgid "Follow %s on social media: "
-msgstr "Følg %s på sosiale medier: "
+msgstr "Siga %s nas redes sociais:"
 
 #: inc/author-box.php:46
 #, php-format
 msgid "Follow %s on Twitter"
-msgstr "Følg %s på Twitter"
+msgstr "Siga %s no Twitter"
 
 #: inc/author-box.php:46
 msgid "Twitter"
@@ -296,7 +301,7 @@ msgstr "Twitter"
 #: inc/author-box.php:49
 #, php-format
 msgid "Add %s to your Google+ circles"
-msgstr "Legg til %s i dine Google+ sirkler"
+msgstr "Adicione %s ao seu c&iacute;rculo do Google+"
 
 #: inc/author-box.php:49
 msgid "Google+"
@@ -305,7 +310,7 @@ msgstr "Google+"
 #: inc/author-box.php:52
 #, php-format
 msgid "Like %s on Facebook"
-msgstr "Lik %s på Facebook"
+msgstr "Like %s no Facebook"
 
 #: inc/author-box.php:52
 msgid "Facebook"
@@ -314,62 +319,62 @@ msgstr "Facebook"
 #: inc/author-box.php:65
 #, php-format
 msgid "All posts by %s"
-msgstr "Alle artikler skrevet av %s"
+msgstr "Todos os artigos de %s"
 
 #: inc/customizer.php:46
 msgid "Header Color"
-msgstr "Bakgrunnsfarge for toppområdet"
+msgstr "Cor do Cabe&ccedil;alho"
 
 #: inc/customizer.php:65
 msgid "Link Color"
-msgstr "Lenkefarge"
+msgstr "Cor do Link"
 
 #: inc/extras.php:63
 #, php-format
 msgid "Page %s"
-msgstr "Side %s"
+msgstr "P&aacute;gina %s"
 
 #: inc/template-tags.php:45
 msgid "&larr; Previous"
-msgstr "&larr; Forrige"
+msgstr "&larr; Anterior"
 
 #: inc/template-tags.php:46
 msgid "Next &rarr;"
-msgstr "Neste &rarr;"
+msgstr "Seguinte &rarr;"
 
 #: inc/template-tags.php:54
 msgid "Posts navigation"
-msgstr "Artikkelnavigasjon"
+msgstr "Navega&ccedil;&atilde;o de artigos"
 
 #: inc/template-tags.php:79 inc/template-tags.php:101
 msgid "Post navigation"
-msgstr "Artikkelnavigasjon"
+msgstr "Navega&ccedil;&atilde;o de artigos"
 
 #: inc/template-tags.php:82
 msgid "Previous Post:"
-msgstr "Forrige artikkel:"
+msgstr "Artigo Anterior:"
 
 #: inc/template-tags.php:83
 msgid "Next Post:"
-msgstr "Neste artikkel:"
+msgstr "Artigo Seguinte:"
 
 #: inc/template-tags.php:104
 msgid "Previous Image"
-msgstr "Forrige bilde"
+msgstr "Imagem Anterior"
 
 #: inc/template-tags.php:105
 msgid "Next Image"
-msgstr "Neste bilde"
+msgstr "Imagem Seguinte"
 
 #: inc/template-tags.php:126
 msgctxt "Public posted on date"
 msgid "F jS, Y"
-msgstr "j. F Y"
+msgstr "F jS, Y"
 
 #: inc/template-tags.php:128
 msgctxt "Public modified on date"
 msgid "F jS, Y"
-msgstr "j. F Y"
+msgstr "F jS, Y"
 
 #: inc/template-tags.php:131
 #, php-format
@@ -381,11 +386,11 @@ msgid ""
 "</span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">.</"
 "span>"
 msgstr ""
-"<span class=\"byline\">Skrevet av %1$s</span><span class=\"mobile-hide\">, </"
-"span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">.</"
-"span>"
+"<span class=\"byline\">Escrito por %1$s</span><span class=\"mobile-hide\"> "
+"em </span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">."
+"</span>"
 
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Søkeresultat for: %s"
+msgstr "Resultados da pesquisa para: %s"
