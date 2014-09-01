@@ -76,53 +76,48 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPLv2
            Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
 
-    [1.09] Item:        Masonry
-           Item URL:    https://github.com/desandro/masonry
-           Licence:     MIT
-           Licence URL: http://opensource.org/licenses/mit-license.html
-
-    [1.10] Item:        ImagesLoaded
+    [1.09] Item:        ImagesLoaded
            Item URL:    https://github.com/desandro/imagesloaded
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.11] Item:        Sticky
+    [1.10] Item:        Sticky
            Item URL:    https://github.com/garand/sticky
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.12] Item:        Waypoints
+    [1.11] Item:        Waypoints
            Item URL:    https://github.com/imakewebthings/jquery-waypoints
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.13] Item:        Retina js
+    [1.12] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.14] Item:        ResponsiveSlides
+    [1.13] Item:        ResponsiveSlides
            Item URL:    https://github.com/viljamis/ResponsiveSlides.js
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.15] Item:        Font Awesome
+    [1.14] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.16] Item:        Twitter Bootstrap
+    [1.15] Item:        Twitter Bootstrap
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.17] Item:        Elegant Icons
+    [1.16] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
 
-    [1.18] Item:        Elegant Media Icons
+    [1.17] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
@@ -131,6 +126,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.0.3
+- Updated: Font Awesome files v4.2.0 added instead of hotlinking.
+- Removed: Masonry script removed.
 
 Version 1.0.2
 - Fixed:   Read More text in featured homepage sections is now translation ready.
