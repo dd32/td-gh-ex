@@ -132,6 +132,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.2
+- Fixed:   Read More text in featured homepage sections is now translation ready.
+- Fixed:   get_page_link changed to get_permalink to ensure page links work correctly.
+- Updated: Font Awesome v4.2.0 added.
+- Updated: Translation .mo and .po files updated.
+
 Version 1.0.1
 - Fixed:   Header image code added to header.php.
 - Fixed:   Translation issue corrected. Language folder location changed from /lib/languages to /languages.

@@ -247,9 +247,9 @@ global $thinkup_homepage_section3_link;
 	$thinkup_homepage_section3_desc = 'Get a taste of our awesome ThinkUpThemes Framework and make changes to your site easily, without touching any code at all!';
 
 	// Get page names for links
-	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_page_link( $thinkup_homepage_section1_link );
-	if ( !empty( $thinkup_homepage_section2_link ) ) $thinkup_homepage_section2_link = get_page_link( $thinkup_homepage_section2_link );
-	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_page_link( $thinkup_homepage_section3_link );
+	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_permalink( $thinkup_homepage_section1_link );
+	if ( !empty( $thinkup_homepage_section2_link ) ) $thinkup_homepage_section2_link = get_permalink( $thinkup_homepage_section2_link );
+	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_permalink( $thinkup_homepage_section3_link );
 
 
 	if ( is_front_page() or is_thinkuphome() ) {
@@ -268,7 +268,7 @@ global $thinkup_homepage_section3_link;
 			echo	'</div>',
 					'<div class="entry-content">',
 					'<h3>' . $thinkup_homepage_section1_title . '</h3>' . wpautop( do_shortcode ( $thinkup_homepage_section1_desc ) ),
-					'<p><a href="' . $thinkup_homepage_section1_link . '" class="more-link themebutton">Read More</a></p>',
+					'<p><a href="' . $thinkup_homepage_section1_link . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></p>',
 					'</div>',
 					'</div>',
 				'</article>';
@@ -284,7 +284,7 @@ global $thinkup_homepage_section3_link;
 			echo	'</div>',
 					'<div class="entry-content">',
 					'<h3>' . $thinkup_homepage_section2_title . '</h3>' . wpautop( do_shortcode ( $thinkup_homepage_section2_desc ) ),
-					'<p><a href="' . $thinkup_homepage_section2_link . '" class="more-link themebutton">Read More</a></p>',
+					'<p><a href="' . $thinkup_homepage_section2_link . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></p>',
 					'</div>',
 					'</div>',
 				'</article>';
@@ -300,7 +300,7 @@ global $thinkup_homepage_section3_link;
 			echo	'</div>',
 					'<div class="entry-content">',
 					'<h3>' . $thinkup_homepage_section3_title . '</h3>' . wpautop( do_shortcode ( $thinkup_homepage_section3_desc ) ),
-					'<p><a href="' . $thinkup_homepage_section3_link . '" class="more-link themebutton">Read More</a></p>',
+					'<p><a href="' . $thinkup_homepage_section3_link . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></p>',
 					'</div>',
 					'</div>',
 				'</article>';
@@ -349,7 +349,7 @@ global $thinkup_homepage_introactioncustom;
 						</div>';
 				}
 			if ( $thinkup_homepage_introactionlink == 'option1' ) {
-				echo '<div class="action-button one_fourth last"><a href="' . get_page_link( $thinkup_homepage_introactionpage ) . '"><h4 class="themebutton">';
+				echo '<div class="action-button one_fourth last"><a href="' . get_permalink( $thinkup_homepage_introactionpage ) . '"><h4 class="themebutton">';
 				echo $thinkup_homepage_introactionbutton;
 				echo '</h4></a></div>';
 			} else if ( $thinkup_homepage_introactionlink == 'option2' ) {

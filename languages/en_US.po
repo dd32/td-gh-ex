@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Minamaze v1.0.0\n"
+"Project-Id-Version: Minamaze v1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-06-03 20:44:38+0000\n"
+"PO-Revision-Date: 2014-09-01 09:07:51+0000\n"
 "Last-Translator: localadmin <afzaal@thinkupthemes.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -662,68 +662,68 @@ msgstr ""
 msgid "Thumbs"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:282
-#: admin/main/options/01.general-settings.php:286
-#: admin/main/options/01.general-settings.php:308
+#: admin/main/options/01.general-settings.php:295
+#: admin/main/options/01.general-settings.php:299
+#: admin/main/options/01.general-settings.php:321
 #, php-format
 #@ lan-thinkupthemes
 msgid "%s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:284
+#: admin/main/options/01.general-settings.php:297
 #, php-format
 #@ lan-thinkupthemes
 msgid "Blog Post Image: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:288
+#: admin/main/options/01.general-settings.php:301
 #, php-format
 #@ lan-thinkupthemes
 msgid "Search Results: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:290
+#: admin/main/options/01.general-settings.php:303
 #@ lan-thinkupthemes
 msgid "Page Not Found"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:292
+#: admin/main/options/01.general-settings.php:305
 #, php-format
 #@ lan-thinkupthemes
 msgid "Category Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:294
+#: admin/main/options/01.general-settings.php:307
 #, php-format
 #@ lan-thinkupthemes
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:297
+#: admin/main/options/01.general-settings.php:310
 #, php-format
 #@ lan-thinkupthemes
 msgid "Author Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:300
+#: admin/main/options/01.general-settings.php:313
 #, php-format
 #@ lan-thinkupthemes
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:302
+#: admin/main/options/01.general-settings.php:315
 #, php-format
 #@ lan-thinkupthemes
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:304
+#: admin/main/options/01.general-settings.php:317
 #, php-format
 #@ lan-thinkupthemes
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:306
+#: admin/main/options/01.general-settings.php:319
 #: admin/main/options.php:1081
 #@ lan-thinkupthemes
 #@ redux-framework
@@ -846,6 +846,10 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
+#: admin/main/options/02.homepage.php:52
+#: admin/main/options/02.homepage.php:271
+#: admin/main/options/02.homepage.php:287
+#: admin/main/options/02.homepage.php:303
 #: admin/main/options/05.blog.php:128
 #@ lan-thinkupthemes
 msgid "Read More"
