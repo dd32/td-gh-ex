@@ -48,12 +48,21 @@ $generator_options = get_option( 'faster_theme_options' );
         </div>
       </div>
      <?php endwhile; endif; // end of the loop. ?>
-      <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-      <div class="col-md-12 generator-default-pagination">
-      		<span class="generator-previous-link"><?php previous_posts_link(); ?></span>
+     
+		<!--Pagination Start-->
+		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <div class="col-md-12 generator-default-pagination">
+            <span class="generator-previous-link"><?php previous_posts_link(); ?></span>
             <span class="generator-next-link"><?php next_posts_link(); ?></span>
-      </div>
-      <?php } ?>
+        </div>
+        <?php } ?>
+        <?php }//is plugin active ?>
+		<!--Pagination End-->
+
     </div>
 	<?php get_sidebar(); ?>
   </div>

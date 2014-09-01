@@ -35,3 +35,9 @@ Version: 2.0.7
 	i) Change FT Options logo.	
 	ii) Remove Space in Faster Themes.
 	
+Version 2.0.8
+	
+	i) Set TGM for pagination.
+	ii) Change copyright text condition.
+	iii) Change theme author uri in style.css.	
+	iv) Set css for pagination.

@@ -72,7 +72,6 @@ function generator_excerpt_length( $length ) {
     return (is_front_page()) ? 8 : 25;
 }
 add_filter( 'excerpt_length', 'generator_excerpt_length', 999 );
-
 /*** Enqueue css and js files ***/
 require_once('functions/enqueue-files.php');
 
@@ -87,3 +86,6 @@ require_once('theme-option/fasterthemes.php');
 
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
+
+/*** TGM ***/
+require_once('functions/tgm-plugins.php');

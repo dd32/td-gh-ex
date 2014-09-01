@@ -12,9 +12,8 @@
 	  	<?php if(!empty($generator_options['footertext'])) {
 			 	echo $generator_options['footertext'].' '; 
 			  } else {
-			  	echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.';
 			  }
-                echo"<span class='generator-poweredby'> <a href='http://fasterthemes.com/themes/generator'>Generator theme</a> by FasterThemes.</span>";
+                echo"<span class='generator-poweredby'> <a href='http://fasterthemes.com/wordpress-themes/generator'>Generator</a> powered by WordPress.</span>";
 		 ?>
       </div>
     </div>
