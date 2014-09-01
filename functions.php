@@ -98,12 +98,12 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.4' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.5' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
-	wp_enqueue_style( 'font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', '', '4.1.0' );
+	wp_enqueue_style( 'font-awesome-cdn', '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', '', '4.2.0' );
 	wp_enqueue_style( 'elusive-min', get_template_directory_uri() . '/lib/extentions/elusive-icons/elusive-webfont.css', '', '2.0' );
 
 	// Add theme scripts

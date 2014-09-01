@@ -136,9 +136,9 @@ global $thinkup_homepage_section3_link;
 	$thinkup_homepage_section3_desc = 'Link this entire box to any page on your site. There&#39;s even a smooth color change when a user hovers this box.';
 
 	// Get page names for links
-	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_page_link( $thinkup_homepage_section1_link );
-	if ( !empty( $thinkup_homepage_section2_link ) ) $thinkup_homepage_section2_link = get_page_link( $thinkup_homepage_section2_link );
-	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_page_link( $thinkup_homepage_section3_link );
+	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_permalink( $thinkup_homepage_section1_link );
+	if ( !empty( $thinkup_homepage_section2_link ) ) $thinkup_homepage_section2_link = get_permalink( $thinkup_homepage_section2_link );
+	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_permalink( $thinkup_homepage_section3_link );
 
 
 	if ( is_front_page() ) {
@@ -224,7 +224,7 @@ global $thinkup_homepage_introactioncustom;
 						</div>';
 				}
 			if ( $thinkup_homepage_introactionlink == 'option1' ) {
-				echo '<div class="action-button one_fourth last"><a href="' . get_page_link( $thinkup_homepage_introactionpage ) . '"><h4 class="themebutton">';
+				echo '<div class="action-button one_fourth last"><a href="' . get_permalink( $thinkup_homepage_introactionpage ) . '"><h4 class="themebutton">';
 				echo $thinkup_homepage_introactionbutton;
 				echo '</h4></a></div>';
 			} else if ( $thinkup_homepage_introactionlink == 'option2' ) {
