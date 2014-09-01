@@ -320,10 +320,10 @@ function beautiful_blog_post() {
 				( $thumb_url_array[1] != 480 )) : ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
-			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>" data-title="<?php the_title() ?>">
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
 				
 				<?php // just a transparent background ?>
-				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png">
+				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
 				<div class="box-caption">
 					<h1><span class="animate"><?php the_title() ?></span></h1>
@@ -338,10 +338,10 @@ function beautiful_blog_post() {
 	<?php else: ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
-			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>" data-title="<?php the_title() ?>">
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
 				
 				<?php // just a transparent background ?>
-				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png">
+				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
 				<div class="box-caption">
 					<h1><span class="animate"><?php the_title() ?></span></h1>

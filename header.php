@@ -17,14 +17,14 @@
 	<div id="main-wrapper" class="main-wrapper center-block row container-fluid">
 		<?php get_sidebar() ?>
 		<header class="row">
-			<header class="row center-block main-wrapper" id="search">
+			<div class="row center-block main-wrapper" id="search">
 				<div class="col-xs-1 search-close animate text-center">
 					<span><i class="fa fa-times"></i></span>
 				</div>
 				<div class="col-xs-11 search">
 					<?php get_search_form() ?>
 				</div>
-			</header>
+			</div>
 
 			<?php if( is_rtl() ) : ?>
 				<div class="col-md-1 col-xs-6 menu animate">

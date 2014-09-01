@@ -52,8 +52,6 @@ get_header(); ?>
 	endif; 
 	?>
 
-</section>
-
 <?php beautiful_blog_navigation(); ?>
 
 </section>

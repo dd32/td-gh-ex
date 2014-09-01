@@ -3,14 +3,27 @@ Beautiful
 
 Responsive colorful WordPress theme built with bootstrap 3
 
-<a href="http://wordpress.chakosh.ir/?theme=beautiful">DEMO</a>
+<a href="http://live.chakosh.ir/?theme=beautiful">Demo</a>
 
 ===============================================================
 
-change log
+Thanks for downloading Beautiful Theme
 
-Version 1.0
+More info always on http://chakosh.ir
+
+Thank you for supporting! @AmirMasoud32
+
+=== Change Log ===
+
+1.0
 initial realese
 
-version 1.0.1
+1.0.1
 bug fixes
+
+1.0.2
+bux fixes
+screenshot replaced
+
+1.0.3
+bux fixes
