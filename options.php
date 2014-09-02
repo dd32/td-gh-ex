@@ -230,6 +230,15 @@ function optionsframework_options() {
 		'type' 		=> 'checkbox'
 	);
 
+	// Disable slider in blog page
+	$options[] = array(
+		'name' 		=> __( 'Disable slider in Posts page', 'spacious' ),
+		'desc' 		=> __( 'Check to disable slider in Posts Page', 'spacious' ),
+		'id' 			=> 'spacious_blog_slider',
+		'std' 		=> '0',
+		'type' 		=> 'checkbox'
+	);
+
 	// Slide options
 	for( $i=1; $i<=5; $i++) {
 		$options[] = array(

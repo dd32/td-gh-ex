@@ -46,6 +46,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.3 =
+* Blog template removed as per WordPress guidelines.
+* Checkbox option added to disable the slider for posts page.
+* Slovak language file added. Thanks to Mr. Michal Kralik for providing the language files. 
+
 = Version 1.1.2 =
 * Blog page display type option added.
 * Function added to shift the page using blog template to posts page.
