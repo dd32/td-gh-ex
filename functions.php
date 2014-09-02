@@ -20,8 +20,8 @@
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); // all js and css file for rambo-pro	
   	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
-  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register	
-  	
+  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
+
   	//wp title tag starts here
   	function rambo_head( $title, $sep )
   	{	global $paged, $page;		
@@ -42,10 +42,12 @@
   	
   	add_action( 'after_setup_theme', 'rambo_setup' ); 	
   	function rambo_setup()
-  	{	//content width
-		if ( ! isset( $content_width ) ) $content_width = 770;
+  	{
+		//content width
+		if ( ! isset( $content_width ) ) $content_width = 770;	
 		// Load text domain for translation-ready
-  		load_theme_textdomain( 'rambo', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
+  		load_theme_textdomain( 'rambo', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );	
+  		
   		add_theme_support( 'post-thumbnails' ); //supports featured image
   		add_theme_support( 'automatic-feed-links' ); //feed links enabled
   		add_image_size('blog1_section_img',270,260,true);

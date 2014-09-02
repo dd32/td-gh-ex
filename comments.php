@@ -55,7 +55,8 @@
      'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'rambo' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'rambo').'</a>' . '</p>',
      'id_submit'            => 'comment_btn',
     'label_submit'         =>__( 'Post Comment','rambo'),
-    'comment_notes_after'  => '',	
+    'comment_notes_after'  => '',
+	'comment_notes_before'  => '',	
      'title_reply'       => '<div class="blog_single_post_head_title"><h3>'.__( 'Leave a Comment','rambo').'</h3></div>',
      'id_form'      => 'action'
     );
