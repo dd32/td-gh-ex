@@ -17,10 +17,15 @@ get_header();
 </section>
 
 <?php endwhile; // end of the loop. ?>    
+<?php 
+	global $paged;
+	if(empty($paged)) $paged = 1;
+?>
 <div class="container blog-background no-padding">
 	<div class="col-md-8 booster-post clearfix no-padding-left">
     <?php     $booster_args = array(
 				'paged'			   => $paged,
+				'posts_per_page'   => 10,
 				'orderby'          => 'post_date',
 				'order'            => 'DESC',
 				'post_type'        => 'post',
@@ -46,11 +51,23 @@ get_header();
                 
             </div>
         </article>  
-         <?php } ?>   
+         <?php } ?> 
+         
+<!--Pagination Start-->
+		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <div class="col-md-12 generator-default-pagination">
+            <span class="generator-previous-link"><?php previous_posts_link(); ?></span>
+            <span class="generator-next-link"><?php next_posts_link(); ?></span>
+        </div>
+        <?php } ?>
+        <?php }//is plugin active ?>
+		<!--Pagination End-->           
   <div class="booster-pagination-color">
-  	<?php 
-		 booster_pagination($booster_blog->max_num_pages);
-	?>
+  	<?php booster_pagination($booster_blog->max_num_pages);	?>
     </div>
           
     </div> 

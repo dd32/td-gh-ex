@@ -1,17 +1,17 @@
 == Booster ==
 Theme Name: Booster
-Theme URI: http://fasterthemes.com/themes/Booster
-Author: Faster Themes
+Theme URI: http://fasterthemes.com/wordpress-themes/Booster
+Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants
 and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
 social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
-Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
-version: 1.01
+Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style
+version: 1.02
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-This theme, like WordPress, is licensed under the Faster Themes.
+This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 Booster is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.

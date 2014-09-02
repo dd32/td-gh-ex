@@ -42,14 +42,14 @@ function fasterthemes_framework_load_scripts(){
 	wp_enqueue_style( 'fasterthemes_framework' );
 	
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery','wp-color-picker' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery', 'iris' ) );		
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery' ) );		
 	wp_enqueue_script('media-uploader');
 }
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$booster_menu = array(
-				'page_title' => __( 'Faster Themes Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
 				'menu_title' => __('FT Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
@@ -69,9 +69,9 @@ function fastertheme_framework_page(){
 		
 		screen_icon(); 
 		$booster_image=get_template_directory_uri().'/theme-option/images/logo.png';
-		echo "<h1><img src='".$booster_image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".$booster_image."' height='64px'  /> ". __( 'FasterThemes Options', 'booster' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
-			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
+			echo "<div><p><strong>"._e( 'Options saved', 'booster' )."</strong></p></div>";
 		endif; 
 ?>
 <div id="fasterthemes_framework-wrap" class="wrap">
@@ -102,7 +102,7 @@ function fastertheme_framework_page(){
                 <input id="welcome" class="upload" type="text" name="faster_theme_options[welcome-image]" value="<?php if(!empty($booster_options['welcome-image'])) { echo $booster_options['welcome-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="welcome-image">
-                      <?php if($booster_options['welcome-image'] != '') echo "<img src='".$booster_options['welcome-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['welcome-image'])) { echo "<img src='".$booster_options['welcome-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@ function fastertheme_framework_page(){
                 <input id="why-choose-us" class="upload" type="text" name="faster_theme_options[why-chooseus-image]" value="<?php if(!empty($booster_options['why-chooseus-image'])) { echo $booster_options['why-chooseus-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="logo-image">
-                      <?php if($booster_options['why-chooseus-image'] != '') echo "<img src='".$booster_options['why-chooseus-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['why-chooseus-image'])) { echo "<img src='".$booster_options['why-chooseus-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ function fastertheme_framework_page(){
                 <input id="first-slider" class="upload" type="text" name="faster_theme_options[first-slider-image]" value="<?php if(!empty($booster_options['first-slider-image'])) { echo $booster_options['first-slider-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="first-image">
-                      <?php if($booster_options['first-slider-image'] != '') echo "<img src='".$booster_options['first-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['first-slider-image'])) { echo "<img src='".$booster_options['first-slider-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                   </div>
                 <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
@@ -186,7 +186,7 @@ function fastertheme_framework_page(){
                 <input id="second-slider" class="upload" type="text" name="faster_theme_options[second-slider-image]" value="<?php if(!empty($booster_options['second-slider-image'])) { echo $booster_options['second-slider-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="second-image">
-                      <?php if($booster_options['second-slider-image'] != '') echo "<img src='".$booster_options['second-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['second-slider-image'])) { echo "<img src='".$booster_options['second-slider-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
                 <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
@@ -208,7 +208,7 @@ function fastertheme_framework_page(){
                 <input id="third-slider" class="upload" type="text" name="faster_theme_options[third-slider-image]" value="<?php if(!empty($booster_options['third-slider-image'])) { echo $booster_options['third-slider-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="third-image">
-                      <?php if($booster_options['third-slider-image'] != '') echo "<img src='".$booster_options['third-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['third-slider-image'])) { echo "<img src='".$booster_options['third-slider-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
                 <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
@@ -230,7 +230,7 @@ function fastertheme_framework_page(){
                 <input id="forth-slider" class="upload" type="text" name="faster_theme_options[forth-slider-image]" value="<?php if(!empty($booster_options['forth-slider-image'])) { echo $booster_options['forth-slider-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="forth-image">
-                      <?php if($booster_options['forth-slider-image'] != '') echo "<img src='".$booster_options['forth-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['forth-slider-image'])) { echo "<img src='".$booster_options['forth-slider-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
                 <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
@@ -252,7 +252,7 @@ function fastertheme_framework_page(){
                 <input id="fifth-slider" class="upload" type="text" name="faster_theme_options[fifth-slider-image]" value="<?php if(!empty($booster_options['fifth-slider-image'])) { echo $booster_options['fifth-slider-image']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                     <div class="screenshot" id="fifth-image">
-                      <?php if($booster_options['fifth-slider-image'] != '') echo "<img src='".$booster_options['fifth-slider-image']."' /><a class='remove-image'>Remove</a>" ?>
+                      <?php if(!empty($booster_options['fifth-slider-image'])) { echo "<img src='".$booster_options['fifth-slider-image']."' /><a class='remove-image'>Remove</a>"; } ?>
                     </div>
                 </div>
                 <div class="explain">Size of banner should be exactly 1200x400px for best results.</div>
@@ -280,7 +280,7 @@ function fastertheme_framework_page(){
                 <input id="main-logo" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($booster_options['logo'])) { echo $booster_options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="main-logo-image">
-                  <?php if($booster_options['logo'] != '') echo "<img src='".$booster_options['logo']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($booster_options['logo'])) { echo "<img src='".$booster_options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 250x125px for best results.</div>
@@ -293,7 +293,7 @@ function fastertheme_framework_page(){
                 <input id="logo" class="upload" type="text" name="faster_theme_options[fevicon]" value="<?php if(!empty($booster_options['fevicon'])) { echo $booster_options['fevicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($booster_options['fevicon'] != '') echo "<img src='".$booster_options['fevicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($booster_options['fevicon'])) { echo "<img src='".$booster_options['fevicon']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
@@ -358,7 +358,32 @@ function fastertheme_framework_page(){
       
     </div>
     <!-- / #container --> 
-    
+          <br />
+          <div id="section-title" class="section">
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <h2>Enter your email to join our mailing list and we’ll keep you updated on new themes as they’re
+released and our exclusive special offers.</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+
+          </div>  
   </div>
 </div>
+   
 <?php }

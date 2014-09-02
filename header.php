@@ -19,7 +19,7 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <?php if($booster_options['fevicon'] != '') { ?>
+    <?php if(!empty($booster_options['fevicon'])) { ?>
     <link rel="shortcut icon" href="<?php echo $booster_options['fevicon'];?>">
     <?php } ?>
 	<!--[if lt IE 9]>
@@ -38,7 +38,7 @@
 	</a>
     <?php } ?>
       <div class="col-md-3 no-padding text-left-menu">
-      		<?php if($booster_options['logo'] == '') { ?>
+      		<?php if(empty($booster_options['logo'])) { ?>
       			<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><?php echo get_bloginfo('name'); ?></a> 
             <?php } else { ?>
             	<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><img src="<?php echo $booster_options['logo']; ?>" alt="" class="img-responsive header-logo" /></a> 
@@ -83,9 +83,9 @@
       <div class="col-md-2 no-padding text-left-menu">
         <div class="">
           <ul class="social-icon">
-            <li><?php if($booster_options['fburl'] != '') { ?><a href="<?php echo $booster_options['fburl']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/fb.png" alt="" /></a><?php } ?></li>
-            <li><?php if($booster_options['twitter'] != '') { ?><a href="<?php echo $booster_options['twitter']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/tw.png" alt="" /></a><?php } ?></li>
-            <li><?php if($booster_options['linkedin'] != '') { ?><a href="<?php echo $booster_options['linkedin']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/in.png" alt="" /></a><?php } ?></li>         
+            <li><?php if(!empty($booster_options['fburl'])) { ?><a href="<?php echo $booster_options['fburl']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/fb.png" alt="" /></a><?php } ?></li>
+            <li><?php if(!empty($booster_options['twitter'])) { ?><a href="<?php echo $booster_options['twitter']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/tw.png" alt="" /></a><?php } ?></li>
+            <li><?php if(!empty($booster_options['linkedin'])) { ?><a href="<?php echo $booster_options['linkedin']; ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/in.png" alt="" /></a><?php } ?></li>         
           </ul>
         </div>
  

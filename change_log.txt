@@ -27,3 +27,11 @@ i) Grammatical Error on home page. Added 's' in the 'latest post' heading and ma
 
 Version 1.01
 i) Removed blank spaces from theme description in style.css so that it display properly on theme page in WordPress.org.
+
+Version 1.02
+
+	i) Set TGM for pagination.
+	ii) Change copyright text condition.
+	iii) Change theme author uri in style.css.	
+	iv) Set FT Options condition in all pages.
+	v) Change FT Options logo and remove space in FasterThemes.  

@@ -12,7 +12,7 @@ function booster_setup() {
 	/*
 	 * Make booster theme available for translation.
 	 */
-	load_theme_textdomain( 'booster', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'booster');
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', booster_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -144,6 +144,10 @@ add_action('wp_enqueue_scripts', 'booster_enqueue');
 /***************** Theme Option **********************/
 
 require_once('theme-option/fasterthemes.php');
+
+
+/*** TGM ***/
+require_once('functions/tgm-plugins.php');
 
 /***************** Breadcrumbs **********************/
 

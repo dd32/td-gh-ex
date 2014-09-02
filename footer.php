@@ -9,10 +9,10 @@
 <div class="copyright col-lg-12">
     <div class="container no-padding">
       <div class="col-md-7 footer-margin-top footer-center no-padding">
-	  		<?php if($booster_options['footertext'] != '') { 
+	  		<?php if(!empty($booster_options['footertext'])) { 
 						echo $booster_options['footertext'];
 					}
-		    echo " <a href='http://fasterthemes.com/themes/Booster' target='_blank'>Booster Theme</a> by Faster Themes.";				
+		    echo " <a href='http://fasterthemes.com/wordpress-themes/Booster' target='_blank'>Booster</a> powered by WordPress.";				
 			 ?>
       </div>
        <?php 

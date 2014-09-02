@@ -13,6 +13,7 @@ get_header(); ?>
 
 <!--========================= Carousel ========================= -->
 <?php 
+if(!empty($booster_options['first-slider-image']) || !empty($booster_options['second-slider-image']) || !empty($booster_options['third-slider-image']) || !empty($booster_options['forth-slider-image']) || !empty($booster_options['fifth-slider-image']) ) {
 $booster_slider = array(0 => $booster_options['first-slider-image'],1 => $booster_options['second-slider-image'],2 => $booster_options['third-slider-image'],3 => $booster_options['forth-slider-image'],4 => $booster_options['fifth-slider-image']);	
 $booster_link = array(0 => $booster_options['first-slider-link'], 1 => $booster_options['second-slider-link'],2 => $booster_options['third-slider-link'],								3 => $booster_options['forth-slider-link'],4 => $booster_options['fifth-slider-link']);										
 $booster_value = array_filter($booster_slider);
@@ -39,7 +40,7 @@ $booster_value = array_filter($booster_slider);
     	<a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
   		<a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
     </div>
-<?php } ?>  
+<?php }} ?>  
 <!-- /.carousel --> 
  
     </div>
@@ -47,10 +48,10 @@ $booster_value = array_filter($booster_slider);
 <section class="section-main back-img">
   <div class="container">
     <div class="col-md-12 no-padding">
-      <div class="col-md-4"> <?php if($booster_options['welcome-image'] != '') { ?><img class="img-banner welcome-image" src="<?php echo $booster_options['welcome-image']; ?>" alt=""  /><?php } ?></div>
+      <div class="col-md-4"> <?php if(!empty($booster_options['welcome-image'])) { ?><img class="img-banner welcome-image" src="<?php echo $booster_options['welcome-image']; ?>" alt=""  /><?php } ?></div>
       <div class="col-md-8 font-type font-color font-type-roboto">
-        <h1><?php echo $booster_options['welcome-title']; ?></h1>
-        <p class="font-type"><?php echo $booster_options['welcome-content']; ?> </p>
+        <h1><?php if(!empty($booster_options['welcome-title'])) { echo $booster_options['welcome-title']; } ?></h1>
+        <p class="font-type"><?php if(!empty($booster_options['welcome-content'])) { echo $booster_options['welcome-content']; } ?></p>
       </div>
     </div>
   </div>
@@ -92,10 +93,10 @@ $booster_value = array_filter($booster_slider);
 <div class="separator"></div>
 <section class="section-main container no-padding">
   <div class="col-md-12 no-padding-left">
-    <div class="col-lg-5 img-banner1"><?php  if($booster_options['why-chooseus-image'] != '') { ?><img src="<?php echo $booster_options['why-chooseus-image']; ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
+    <div class="col-lg-5 img-banner1"><?php  if(!empty($booster_options['why-chooseus-image'])) { ?><img src="<?php echo $booster_options['why-chooseus-image']; ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
     <div class="col-lg-7 font-type-roboto why-chooseus-content">
-      <h2 class="font-color-text"><?php echo $booster_options['why-chooseus-title']; ?></h2>
-      <p class="sp"><?php echo $booster_options['why-chooseus-content']; ?></p>
+      <h2 class="font-color-text"><?php if(!empty($booster_options['why-chooseus-title'])) { echo $booster_options['why-chooseus-title']; } ?></h2>
+      <p class="sp"><?php if(!empty($booster_options['why-chooseus-content'])) { echo $booster_options['why-chooseus-content']; } ?></p>
     </div>
   </div>
 </section>

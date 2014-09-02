@@ -46,10 +46,19 @@
           <div class="blog-hr-archive"></div> 
         <?php endwhile; ?>
         <?php endif; ?>
+	<!--Pagination Start-->
+		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <nav class="booster-nav">
                 <span class="booster-nav-previous"><?php previous_posts_link(); ?></span>
                 <span class="booster-nav-next"><?php next_posts_link(); ?></span>
 		</nav>
+        <?php } ?>
+        <?php }//is plugin active ?>
+		<!--Pagination End-->        
       </div>
       <div class="col-md-4  blog-col-2 main-sidebar">
       	<?php get_sidebar(); ?>
