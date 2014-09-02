@@ -1,2 +1,5 @@
 Version 1.0 (23rd Aug 2014)
 i) Theme submitted to WordPress.org
+
+Version: 1.0.1 (02nd Sept 2014)
+i) Theme URI Changes
