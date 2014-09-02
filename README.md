@@ -27,3 +27,8 @@ screenshot replaced
 
 1.0.3
 bux fixes
+
+1.0.4
+bug fixes
+search form redesigned
+textfill lib replaced with fittext lib

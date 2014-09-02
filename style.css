@@ -4,7 +4,7 @@ Theme URI: http://wordpress.chakosh.ir/?theme=beautiful
 Author: AmirMasoud Sheidayi
 Author URI: http://chakosh.ir/
 Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail, use this theme for your arts and photos, NOTICE: This theme will not show thumbnails that are less than 480×480 Pixel
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready, buddypress
@@ -405,8 +405,44 @@ header.row .col-md-8
 }
 
 /* Search in the header */
+.search-container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 15px;
+	top: -200px;
+	z-index: +9999;
+	color: #DDD;
+	background: #FAFAFA;	
+}
 
-#search
+.search-input
+{
+	border: 0;
+	width: 100%;
+	padding: 14px;
+	background: #fff;
+	padding: 28px 10px;
+	box-shadow: -2px 2px 5px 1px  #DDD inset;
+}
+
+.search-input:focus
+{
+	outline: 0;
+	color: #333;
+	text-shadow: 1px 1px 1px #FFF;
+	box-shadow: -2px 2px 5px 1px  #BBB inset;
+	border: 1px solid #DDD;
+}
+
+.menu:hover, .menu:focus,
+.search-icon:hover, .search-icon:focus,
+.search-close:hover,.search-close:focus {
+	color: #333;
+	cursor: pointer;
+}
+
+/*#searchform
 {
 	position: absolute;
 	left: 0;
@@ -415,7 +451,6 @@ header.row .col-md-8
 	top: -200px;
 	z-index: +9999;
 	color: #DDD;
-	/* border-right: 1px solid #DDD; */
 	background: #FAFAFA;
 
 }
@@ -423,14 +458,14 @@ header.row .col-md-8
 {
 	padding-top: 18px;			
 }
-#search input
+#searchform input
 {
 	border: 0;
 	width: 100%;
 	padding: 14px;
 	background: #fff;
 }
-#search input:focus
+#searchform input:focus
 {
 	outline: 0;
 	border-left: 1px solid #CCC;
@@ -442,7 +477,7 @@ header.row .col-md-8
 .search-close:hover,.search-close:focus {
 	color: #333;
 	cursor: pointer;
-}
+}*/
 
 /**
  * 5.0 - Navigation
@@ -1052,12 +1087,12 @@ header.row .col-md-8
 }
 
 #author {
-	border-radius: 5px 5px 0 0;
+	border-radius: 5px 0 0 0;
 	border-bottom: 0 !important;
 }
 
 #email {
-	border-radius: 0;
+	border-radius: 0 5px 0 0;
 	border-bottom: 0 !important;
 }
 
@@ -1130,6 +1165,7 @@ header.row .col-md-8
 .menu
 {
 	position: relative;
+	margin-bottom: 20px;
 }
 .menu .close-menu
 {

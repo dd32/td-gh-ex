@@ -25,7 +25,8 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 
 		// Enable support for Post Thumbnails, and declare one sizes.
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 480, 480, true );
+
+		add_image_size('beautiful-box', 480, 480, true);
 
 	    // register top navbar menu
 		register_nav_menu( 'primary', 'Primary Menu' );
@@ -140,14 +141,14 @@ function beautiful_scripts() {
 	// load bootstrap js
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
 
-	// load textfill js, for font size at front page
-	wp_enqueue_script( 'beautiful-textfill', get_template_directory_uri() . '/js/jquery.textfill.min.js');
+	// load fittext js, for font size at front page
+	wp_enqueue_script( 'beautiful-fittext', get_template_directory_uri() . '/js/jquery.fittext.js');
 
 	// load our custom js
 	if( !is_rtl() )
-		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions.js', array( 'beautiful-textfill', 'bootstrap-script' ) );
+		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions.js', array( 'beautiful-fittext', 'bootstrap-script' ) );
 	else
-		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions-rtl.js', array( 'beautiful-textfill', 'bootstrap-script' ) );
+		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions-rtl.js', array( 'beautiful-fittext', 'bootstrap-script' ) );
 
 
 }
@@ -169,7 +170,7 @@ function bootstrap3_comment_form_fields( $fields ) {
 	$fields = array(
 		'author' => '<div class="form-group comment-form-author col-md-6 col-xs-12">' . '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' placeholder="' . __( 'Name', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
 		'email' => '<div class="form-group comment-form-email col-md-6 col-xs-12"><input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' placeholder="' . __( 'Email', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
-		'url' => '<div class="form-group comment-form-url col-md-12 col-xs-12"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'url', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
+		'url' => '<div class="form-group comment-form-url col-md-12 col-xs-12"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'url', "beautiful" ) . '" /></div>',
 	);
 
 	return $fields;
@@ -308,7 +309,7 @@ function beautiful_blog_post() {
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( the_permalink() ) ?>">
 				<?php the_post_thumbnail('beautiful-box'); ?>
 				<div class="box-caption animate">
-					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<h1 class="animate"><?php the_title() ?></h1>
 					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
@@ -326,7 +327,7 @@ function beautiful_blog_post() {
 				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
 				<div class="box-caption">
-					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<h1 class="animate"><?php the_title() ?></h1>
 					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
@@ -344,7 +345,7 @@ function beautiful_blog_post() {
 				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
 				<div class="box-caption">
-					<h1><span class="animate"><?php the_title() ?></span></h1>
+					<h1 class="animate"><?php the_title() ?></h1>
 					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>

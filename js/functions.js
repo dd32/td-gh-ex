@@ -1,16 +1,13 @@
 jQuery(document).ready(function($){
 
-	// get height of the body for menu(sidebar)
-	var currentHeight = $("body").height();
-
 	/**
 	 * close search form
 	 * @return {null}
 	 */
 	var closeSearch = function()
 	{
-		$('#search').animate({top:"-150px"}, 300);
-		$('#search').removeClass("animated bounceInDown")
+		$('.search-container').animate({top:"-200px"}, 300);
+		$('.search-container').removeClass("animated bounceInDown")
 	}
 
 	/**
@@ -19,9 +16,9 @@ jQuery(document).ready(function($){
 	 */
 	var openSearch = function()
 	{
-		$('#search').animate({top:0}, 10);
-		$('#search').addClass("animated bounceInDown");
-		$('.search input').focus();
+		$('.search-container').animate({top:"0"}, 10);
+		$('.search-container').addClass("animated bounceInDown");
+		$('.search-input').focus();
 	}
 
 	/**
@@ -65,9 +62,6 @@ jQuery(document).ready(function($){
 	$("#searchform input").removeClass("form-control");
 	$("button").addClass("btn btn-default");
 	
-	// sidebar
-	$("aside.sidebar").css({"height": currentHeight});
-
 	// comment section
 	$("footer.comment-meta").addClass("row");
 	$(".comment-author, .comment-metadata").addClass("col-md-6");
@@ -82,7 +76,7 @@ jQuery(document).ready(function($){
 	$('.search-close').click(function(){
 		closeSearch();
 	});
-	$('.search').click(function(){
+	$('.search-icon').click(function(){
 		closeMenu();
 		openSearch();
 	});
@@ -99,7 +93,7 @@ jQuery(document).ready(function($){
 	// calcute font size for post title in front page based on width and heigh of the box
 	// and length of the post title
 	// default font size = 20px
-	$('.box-caption').textfill({ maxFontPixels: 36, minFontPixels: 20 });
+	$(".box-caption h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '50px' })
 
 	// color boxes of front page
 	$('.content-area .blog-post:nth-child(1n) .box-caption').css({"background":"rgba(129, 162, 87, 0.9)"});

@@ -28,8 +28,8 @@ get_header(); ?>
 	endif; 
 	?>
 
-<?php beautiful_blog_navigation(); ?>
-
 </section>
+
+<?php beautiful_blog_navigation(); ?>
 
 <?php get_footer() ?>

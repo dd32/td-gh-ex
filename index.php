@@ -83,8 +83,8 @@ get_header() ?>
 		wp_reset_query();
 	?>
 
-<?php beautiful_blog_navigation(); ?>
-
 </section>
+
+<?php beautiful_blog_navigation(); ?>
 
 <?php get_footer() ?>

@@ -17,11 +17,11 @@
 	<div id="main-wrapper" class="main-wrapper center-block row container-fluid">
 		<?php get_sidebar() ?>
 		<header class="row">
-			<div class="row center-block main-wrapper" id="search">
+			<div class="row center-block main-wrapper search-container">
 				<div class="col-xs-1 search-close animate text-center">
 					<span><i class="fa fa-times"></i></span>
 				</div>
-				<div class="col-xs-11 search">
+				<div class="col-xs-11 search-area">
 					<?php get_search_form() ?>
 				</div>
 			</div>
@@ -31,7 +31,7 @@
 					<span class="open-menu"><i class="fa fa-bars"></i></span>
 					<span class="close-menu"><i class="fa fa-times"></i></span>
 				</div>
-				<div class="col-md-1 col-xs-6 search animated text-center">
+				<div class="col-md-1 col-xs-6 search-icon animate text-center">
 					<span><i class="fa fa-search text-center"></i></span>
 				</div>
 				<div class="col-md-10 col-xs-12 animated">
@@ -40,12 +40,12 @@
 					</a>
 				</div>
 			<?php else : ?>
-				<div class="col-md-10 col-xs-12 animated">
+				<div class="col-md-10 col-xs-12 animate">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
 						<div class="logo animated"><?php bloginfo('name') ?></div>
 					</a>
 				</div>
-				<div class="col-md-1 col-xs-6 search animated text-center">
+				<div class="col-md-1 col-xs-6 search-icon animate text-center">
 					<span><i class="fa fa-search text-center"></i></span>
 				</div>
 				<div class="col-md-1 col-xs-6 menu animate">
