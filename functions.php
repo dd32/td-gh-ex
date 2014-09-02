@@ -7,14 +7,13 @@
   	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
   	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');	
   	define('WEBRITI_THEME_OPTIONS_PATH',WEBRITI_TEMPLATE_DIR_URI.'/functions/theme_options');
-  	
-  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); //Menu Walker Class
-  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');  //Menu Walker Class	
+  
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/new_Walker.php'); //NEW Walker Class Added.  		
   	require_once( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');     //Theme Scripts And Styles	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
-	
+		
   	//wp title tag starts here
   	function quality_head( $title, $sep )
   	{	global $paged, $page;		
@@ -35,7 +34,7 @@
   	
   	add_action( 'after_setup_theme', 'quality_setup' ); 	
   	function quality_setup()
-  	{	
+  	{
 		//content width
 		if ( ! isset( $content_width ) ) $content_width = 700;//In PX
 		// Load text domain for translation-ready

@@ -58,18 +58,29 @@
             </div>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <?php
-              wp_nav_menu( array(  
+          
+            <?php /*	wp_nav_menu( array(  
               		'theme_location' => 'primary',
               		'container'  => 'nav-collapse collapse navbar-inverse-collapse',
               		'menu_class' => 'nav navbar-nav navbar-right',
               		'fallback_cb' => 'quality_fallback_page_menu',
               		'walker' => new quality_nav_walker()
               		)
-              	);	
-              ?>
-          </div>
+              	); */	
+               wp_nav_menu( array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'collapse navbar-collapse',
+				'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );
+			  
+			  ?>
+         
           <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
