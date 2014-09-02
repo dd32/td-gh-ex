@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.6 =
+* Replaced the_title with the_title_attribute in attributes to avoid plugin conflict.
+* Hungarian language file added. Thanks to Mr. Ervin Gűth for providing the language files.
+
 = Version 1.0.5 =
 * Filter added to remove the more link redirecting to middle of content.
 * Polish language file added.

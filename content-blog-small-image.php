@@ -24,7 +24,7 @@
 				$image = '';        			
 	     		$title_attribute = get_the_title( $post->ID );
 	     		$image .= '<figure class="post-featured-image">';
-	  			$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
+	  			$image .= '<a href="' . get_permalink() . '" title="'.the_title_attribute( 'echo=0' ).'">';
 	  			$image .= get_the_post_thumbnail( $post->ID, 'featured-blog-small', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
 	  			$image .= '</figure>';
 	  			echo $image;
