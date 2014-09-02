@@ -27,10 +27,8 @@
       <div class="col-md-8 no-padding">
         <?php if(!empty($medics_options['footertext'])) {
 			 	echo '<p>'. $medics_options['footertext'].' ' ; 
-			  } else {
-			  	echo '<p>Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>';
-			  }
-                echo"<span class='medics-poweredby'> <a href='http://fasterthemes.com/themes/medics'>Medics theme</a> by FasterThemes.</span> </p>";
+			  } 
+			  echo"<span class='medics-poweredby'> <a href='http://fasterthemes.com/wordpress-themes/Medics'>Medics</a> powered by WordPress.</span> </p>";
 		 ?>
       </div>
       <div class="col-md-4 text-right no-padding">
