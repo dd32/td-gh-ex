@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.20
+Version: 1.21
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2139,15 +2139,6 @@ li.pingback:after {
 .dark-header .site-header .site-description {
   color: #222222;
 }
-.dark-header .menu-unset > ul a,
-.dark-header .menu-primary-items a {
-  color: #222222;
-}
-.dark-header .menu-unset > ul a:link, .dark-header .menu-unset > ul a:visited,
-.dark-header .menu-primary-items a:link,
-.dark-header .menu-primary-items a:visited {
-  color: #222222;
-}
 .dark-header .social-media-icons a {
   color: #222222;
 }
@@ -2171,6 +2162,18 @@ li.pingback:after {
 .dark-header .site-header .search-form-container i {
   color: #222222;
 }
+.dark-header .site-header.toggled .site-title a {
+  color: white;
+}
+.dark-header .site-header.toggled .site-title a:link, .dark-header .site-header.toggled .site-title a:visited, .dark-header .site-header.toggled .site-title a:hover, .dark-header .site-header.toggled .site-title a:active, .dark-header .site-header.toggled .site-title a:focus {
+  color: white;
+}
+.dark-header .site-header.toggled .toggle-navigation {
+  color: white;
+}
+.dark-header .site-header.toggled .site-header .site-description {
+  color: white;
+}
 
 /* 600px */
 @media all and (min-width: 37.5em) {
@@ -2183,6 +2186,15 @@ li.pingback:after {
 }
 /* 800px */
 @media all and (min-width: 50em) {
+  .dark-header .menu-unset > ul a,
+  .dark-header .menu-primary-items a {
+    color: #222222;
+  }
+  .dark-header .menu-unset > ul a:link, .dark-header .menu-unset > ul a:visited,
+  .dark-header .menu-primary-items a:link,
+  .dark-header .menu-primary-items a:visited {
+    color: #222222;
+  }
   .dark-header .menu-unset > ul > li:after,
   .dark-header .menu-primary-items > li:after {
     color: #222222;
