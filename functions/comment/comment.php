@@ -21,7 +21,7 @@
         <div class="mycomment-author">
           <?php printf(('%s'), get_comment_author_link()) ?>
           <span class="comment-date">
-          <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date(); ?> at <?php comment_time();?></a>
+          <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_date(); ?> at <?php comment_time();?></a>
           </span>
           <div class="reply">
             <?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply ,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
