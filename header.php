@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php $options = get_option( 'faster_theme_options' ); 
-if($options['fevicon'] != '') {
+if(!empty($options['fevicon'])) {
 ?>
 <link rel="shortcut icon" href="<?php echo $options['fevicon'];?>">
 <?php } ?>
@@ -25,7 +25,7 @@ if($options['fevicon'] != '') {
       <div class="navbar-header">
         <button id="menu-trigger" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         <a class="navbar-brand head_title" href="<?php echo site_url(); ?>">
-        <?php if('' == $options['logo']){
+        <?php if(empty($options['logo'])){
 			 bloginfo('name');
 		 }else{
            echo  "<img src='".$options['logo']."' class='img-responsive'/>";

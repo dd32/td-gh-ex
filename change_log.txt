@@ -73,11 +73,21 @@ Version 3.05
 Version 3.05.1 
  	i)  Modified sanitized PHP code for Theme Options for security reasons.
     ii)	Added Licensing terms of respond.min js file.
+
 Version	3.06
     i)  Applied Sanitization in all input fields.
+
 Version	3.07
     i)  Fixed copyright link
-Version	3.07
-    i)  Fixed stylesheet url	
 
+Version	3.08
+    i)  Fixed stylesheet url	
 	
+Version 3.09
+
+i)	Set TGM for pagination.
+ii)	Change copyright text condition.
+iii)Change theme author uri in style.css.		
+iv)	Set footer sidebar.
+v)  Remove useless colorpicker code.
+vi) Set FT Options logo and remove space in FasterThemes.

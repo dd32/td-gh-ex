@@ -18,20 +18,15 @@ function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
 	wp_enqueue_style( 'fasterthemes_framework' );
-	wp_enqueue_style( 'wp-color-picker', get_template_directory_uri(). '/theme-option/css/color-picker.min.css' );
-	wp_enqueue_style( 'wp-color-picker' );
-	
-	// Enqueue colorpicker scripts for versions below 3.5 for compatibility
-	wp_enqueue_script( 'wp-color-picker', get_template_directory_uri(). '/theme-option/js/color-picker.min.js', array( 'jquery', 'iris' ) );
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery','wp-color-picker' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery', 'iris' ) );		
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery') );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery') );		
 	wp_enqueue_script('media-uploader');
 }
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$menu = array(
-				'page_title' => __( 'Faster Themes Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
 				'menu_title' => __('FT Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
@@ -51,9 +46,9 @@ function fastertheme_framework_page(){
 		
 		screen_icon(); 
 		$image=get_template_directory_uri().'/theme-option/images/logo.png';
-		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'Faster Themes Options', 'customtheme' ) . "</h1>"; 
+		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'FasterThemes Options', 'redpro' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
-			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
+			echo "<div><p><strong>"._e( 'Options saved', 'redpro' )."</strong></p></div>";
 		endif; 
 ?>
 <div id="fasterthemes_framework-wrap" class="wrap">
@@ -76,10 +71,10 @@ function fastertheme_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" 
-                            value="<?php echo $options['logo']; ?>" placeholder="No file chosen" />
+                            value="<?php if(!empty($options['logo'])) { echo $options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['logo'] != '') echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($options['logo'])) { echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
@@ -90,10 +85,10 @@ function fastertheme_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="faster_theme_options[fevicon]" 
-                            value="<?php echo $options['fevicon']; ?>" placeholder="No file chosen" />
+                            value="<?php if(!empty($options['fevicon'])) { echo $options['fevicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['fevicon'] != '') echo "<img src='".$options['fevicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if(!empty($options['fevicon'])) { echo "<img src='".$options['fevicon']."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
@@ -103,17 +98,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-             	<?php $footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING); 
-				foreach($options as $key => $value)
-				{
-					if($key == "footertext"){
-						$value=$footertext_options;
-					}
-					$options[$key] = $value;
-				}
-				update_option('faster_theme_options',$options);				
-				?>
-                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php echo $options['footertext']; ?>">
+                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($options['footertext']))echo $options['footertext']; ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>
@@ -123,9 +108,9 @@ function fastertheme_framework_page(){
             <div class="option">
               <div class="controls">
                 <select name="faster_theme_options[bloglayout]">
-                  <option value="left" <?php if($options['bloglayout'] == 'left') { ?> selected="selected" <?php } ?>>Left Sidebar</option>
-                  <option value="right"  <?php if($options['bloglayout'] == 'right') { ?> selected="selected" <?php } ?>>Right Sidebar</option>
-                  <option value="full"  <?php if($options['bloglayout'] == 'full') { ?> selected="selected" <?php } ?>>Full Width</option>
+                  <option value="left" <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'left') { ?> selected="selected" <?php }} ?>>Left Sidebar</option>
+                  <option value="right"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'right') { ?> selected="selected" <?php }} ?>>Right Sidebar</option>
+                  <option value="full"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'full') { ?> selected="selected" <?php }} ?>>Full Width</option>
                 </select>
               </div>
               <div class="explain">Select Blog Page Layout.</div>
@@ -141,7 +126,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Facebook</h4>
             <div class="option">
               <div class="controls">
-                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php echo $options['fburl']; ?>" />
+                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($options['fburl'])) { echo $options['fburl']; } ?>" />
               </div>
               <div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>
             </div>
@@ -150,7 +135,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Twitter</h4>
             <div class="option">
               <div class="controls">
-                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php echo $options['twitter']; ?>" />
+                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($options['twitter'])) { echo $options['twitter']; } ?>" />
               </div>
               <div class="explain">Twitter profile or page URL i.e. http://twitter.com/username/</div>
             </div>
@@ -172,7 +157,32 @@ function fastertheme_framework_page(){
       
     </div>
     <!-- / #container --> 
-    
+          <br />
+          <div id="section-title" class="section">
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <h2>Enter your email to join our mailing list and we’ll keep you updated on new themes as they’re
+released and our exclusive special offers.</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+
+          </div>  
   </div>
 </div>
+   
 <?php }

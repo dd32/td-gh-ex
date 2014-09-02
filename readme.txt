@@ -1,16 +1,13 @@
 == RedPro ==
-
-
-
 Theme Name: RedPro
-Theme URI: http://fasterthemes.com/themes/redpro
-Author: Faster Themes
+Theme URI: http://fasterthemes.com/wordpress-themes/redpro
+Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: RedPro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 3.08
+Version: 3.09
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: Red,left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
+Tags: Red, left-sidebar, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style
 
 
 

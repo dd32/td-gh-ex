@@ -7,6 +7,7 @@ $options = get_option( 'faster_theme_options' );
     <!-- Example row of columns -->
     <div class="row">
       <?php
+	  if(!empty($options['bloglayout'])) {
 	 if($options['bloglayout'] == 'left'){	
         echo '<div class="col-md-3 sidebar">';
       		 get_sidebar(); 
@@ -17,6 +18,7 @@ $options = get_option( 'faster_theme_options' );
 	}else{
 		echo '<div class="col-md-8 main">';
 		}
+	  }
 	?>
       <?php 
 	  $post_per_page = get_option('posts_per_page');
@@ -73,15 +75,26 @@ $options = get_option( 'faster_theme_options' );
       </article>
       <?php endwhile; endif; ?>
       <?php wp_reset_query();?>
-      <ul class="pagecount">
-        <?php if (function_exists("redpro_paginate"))
-   		 redpro_paginate($query->max_num_pages); ?>		
-      </ul>
-      
+     
+        <!--Pagination Start-->
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+          <nav class="redpro-nav">
+                <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
+                <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
+			</nav>
+        <?php } ?>
+        <?php }//is plugin active ?>
+        <!--Pagination End-->
+
       <!--end / article--> 
     </div>
     <!--end / main-->
     <?php 
+	if(!empty($options['bloglayout'])) {
 	  if($options['bloglayout'] == 'right'){
 		echo '<div class="col-md-3 col-md-offset-1 sidebar">';
 	  get_sidebar();
@@ -91,7 +104,7 @@ $options = get_option( 'faster_theme_options' );
 		echo '<div class="col-md-3 col-md-offset-1 sidebar">';
 	  	get_sidebar();
 	  	echo '</div>';
-	  }?>
+	  } } ?>
   </div>
 </div>
 <?php get_footer(); ?>

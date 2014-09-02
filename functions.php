@@ -1,5 +1,8 @@
 <?php
 require_once('theme-option/fasterthemes.php');
+/*** TGM ***/
+require_once('functions/tgm-plugins.php');
+
 /**
  * Set up the content width value based on the theme's design.
  */
@@ -63,7 +66,7 @@ function redpro_setup() {
 	 * Make redpro theme available for translation.
 	 *
 	 */
-	load_theme_textdomain( 'redpro', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'redpro');
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', redpro_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -210,10 +213,30 @@ function redpro_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar', 'redpro' ),
-		'id' => 'footer-sidebar',
+		'name' => __( 'Footer Area One', 'redpro' ),
+		'id' => 'footer-area-1',
 		'description' => __( 'Appears on footer side', 'redpro' ),
-		'before_widget' => '<aside id="%1$s" class="col-md-3 footer-separator %2$s">',
+		'before_widget' => '<aside id="%1$s" class="%2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h6>',
+		'after_title' => '</h6>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Area Two', 'redpro' ),
+		'id' => 'footer-area-2',
+		'description' => __( 'Appears on footer side', 'redpro' ),
+		'before_widget' => '<aside id="%1$s" class="%2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h6>',
+		'after_title' => '</h6>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Area Three', 'redpro' ),
+		'id' => 'footer-area-3',
+		'description' => __( 'Appears on footer side', 'redpro' ),
+		'before_widget' => '<aside id="%1$s" class="%2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h6>',
 		'after_title' => '</h6>',
@@ -328,37 +351,3 @@ $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="navbar-right menu-ommune"', $new_markup);
 return $new_markup; } //}
 add_filter('wp_page_menu', 'redpro_add_menuid');
-/**
- * redpro custom pagination for posts 
- */
-function redpro_paginate($pages = '', $range = 1)
-{  
-     $showitems = ($range * 2)+1;  
-     global $paged;
-     if(empty($paged)) $paged = 1;
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     }   
-     if(1 != $pages)
-     {
-         echo "<div class='pagination'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li class='pagination-previous-all'><a href='".get_pagenum_link(1)."'><span class='sprite previous-all-icon'><<</span></a></li>";
-         if($paged > 1 && $showitems < $pages) echo "<li class='pagination-previous'><a href='".get_pagenum_link($paged - 1)."'><span class='sprite previous-icon'><</span></a></li>";
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                 echo ($paged == $i)? "<li><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-             }
-         }
-         if ($paged < $pages && $showitems < $pages) echo "<li class='pagination-next'><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'>></span></a></li>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li class='pagination-next-all'><a href='".get_pagenum_link($pages)."'><span class='sprite next-all-icon'>>></span></a></li>";
-         echo "</div>\n";
-     }
-}

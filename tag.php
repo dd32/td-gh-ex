@@ -76,10 +76,20 @@ get_header(); ?>
         <?php endif; ?>
         
         <!--end / article--> 
-         <nav class="redpro-nav">
+     
+        <!--Pagination Start-->
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+            <?php faster_pagination();?>
+        <?php }else { ?>
+        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+          <nav class="redpro-nav">
                 <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
                 <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
 			</nav>
+        <?php } ?>
+        <?php }//is plugin active ?>
+        <!--Pagination End-->
       </div>
       <!--end / main-->
       <div class="col-md-3 col-md-offset-1 sidebar">
