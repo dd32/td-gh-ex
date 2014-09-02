@@ -98,9 +98,7 @@
             <div class="copyright"><?php 
 			if(!empty($besty_options['footertext'])) {
 				echo $besty_options['footertext'];
-			} else {
-				echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.';
-			} echo '<br /><a href="http://fasterthemes.com/themes/besty" target="_blank">Besty</a> by FasterThemes.';
+			} echo '<br /><a href="http://fasterthemes.com/wordpress-themes/Besty" target="_blank">Besty</a> powered by WordPress.';
 				?>
                 
             
