@@ -44,7 +44,12 @@
   	$current_options['service_icon_four'] = sanitize_text_field($_POST['service_icon_four']);
   	$current_options['service_title_four'] = sanitize_text_field($_POST['service_title_four']);
   	$current_options['service_text_four'] = sanitize_text_field($_POST['service_text_four']);
-  	// services  section enabled yes ya no
+  	
+	
+	$current_options['service_link_btn'] = sanitize_text_field($_POST['service_link_btn']);
+	$current_options['service_button_value'] = sanitize_text_field($_POST['service_button_value']);
+
+	// services  section enabled yes ya no
   		if($_POST['enable_services'])
   		{ echo $current_options['enable_services']= sanitize_text_field($_POST['enable_services']); } 
   		else { echo $current_options['enable_services']="off"; }
@@ -292,7 +297,19 @@
   <span class="icon help">
   <span class="tooltip"><?php  _e('Enter description for service four','busi_prof');?></span></span>
   </span>
-  </p>			
+  </p>
+  <p><h4 class="heading"><?php _e('More Services Text','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_button_value']!='') { echo esc_attr($current_options['service_button_value']); } ?>" id="service_button_value" name="service_button_value" size="36" />
+  <span class="icon help">
+  <span class="tooltip"><?php  _e('More Service Button Text','busi_prof');?></span></span>
+  </span>
+  </p>
+  <p><h4 class="heading"><?php _e('More Services Link','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_link_btn']!='') { echo esc_attr($current_options['service_link_btn']); } ?>" id="service_link_btn" name="service_link_btn" size="36" />
+  <span class="icon help">
+  <span class="tooltip"><?php  _e('More Service Button Link','busi_prof');?></span></span>
+  </span>
+  </p>
   </div>	
   </div>	
   <!---DATA SAVE------>

@@ -70,8 +70,9 @@
         <?php } ?>	
       </div>
     </div>
-    <?php if($current_options['service_link_btn']!='') {?>
+    
     <div class="services_more_btn">
+	<?php if($current_options['service_link_btn']!='') {?>
       <a href="<?php echo $current_options['service_link_btn'] ?>">
       <?php } ?>	
       <?php if($current_options['service_button_value']!='') {?>

@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.6
+1. More Services Added.
 @Version: 1.4.2.5
 1. Small CSS Changes in Footer Widget.
 @Version: 1.4.2.4
