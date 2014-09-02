@@ -5,7 +5,7 @@ if( is_single() ) { ?>
         <?php ct_ignite_featured_image(); ?>
         <div class="entry-meta-top">
             <?php
-            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date() ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date('n/j/Y') ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
             the_author_posts_link();
             ?>
         </div>
@@ -21,7 +21,7 @@ if( is_single() ) { ?>
 		<div class='entry-meta-bottom'>
 			<?php ct_ignite_further_reading(); ?>
             <?php
-            if(get_theme_mod('ct_ignite_author_meta_settings') == 'show'){ ?>
+            if(get_theme_mod('ct_ignite_author_meta_settings') != 'hide'){ ?>
                 <div class="author-meta">
                     <?php ct_ignite_profile_image_output(); ?>
                     <div class="name-container">
@@ -54,7 +54,7 @@ if( is_single() ) { ?>
         <?php ct_ignite_featured_image(); ?>
         <div class="excerpt-meta-top">
             <?php
-            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date() ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
+            echo __('Published', 'ignite') . " " . date_i18n( get_option( 'date_format' ), strtotime( get_the_date('n/j/Y') ) ) . " " . _x('by', 'Published by whom?', 'ignite') . " ";
             the_author_posts_link();
             ?>
         </div>
