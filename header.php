@@ -7,7 +7,7 @@
 <?php $options = get_option( 'faster_theme_options' ); 
 if(!empty($options['fevicon'])) {
 ?>
-<link rel="shortcut icon" href="<?php echo $options['fevicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url_raw($options['fevicon']);?>">
 <?php } ?>
 <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -28,7 +28,7 @@ if(!empty($options['fevicon'])) {
         <?php if(empty($options['logo'])){
 			 bloginfo('name');
 		 }else{
-           echo  "<img src='".$options['logo']."' class='img-responsive'/>";
+           echo  "<img src='".esc_url_raw($options['logo'])."' class='img-responsive'/>";
 		 }?>
         </a> </div>
       <?php 

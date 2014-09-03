@@ -16,17 +16,17 @@
       <?php if(!empty($options['fburl']) || !empty($options['twitter'])) { ?>
         <h6>Follow Us</h6>
         <ul class=" list-unstyled social">
-          <?php if(!empty($options['fburl'])){ ?><li><a href="<?php echo $options['fburl']; ?>" target="_blank" class="sprite facebook-icon">facebook</a></li><?php } ?>
-          <?php if(!empty($options['twitter'])){ ?><li><a href="<?php echo $options['twitter']; ?>" target="_blank" class="sprite twitter-icon">twitter</a></li><?php } ?>
+          <?php if(!empty($options['fburl'])){ ?><li><a href="<?php echo esc_url_raw($options['fburl']); ?>" target="_blank" class="sprite facebook-icon">facebook</a></li><?php } ?>
+          <?php if(!empty($options['twitter'])){ ?><li><a href="<?php echo esc_url_raw($options['twitter']); ?>" target="_blank" class="sprite twitter-icon">twitter</a></li><?php } ?>
         </ul>
         <?php } ?>
         <div class="copyright"> <span>
           <?php 
 									if(!empty($options['footertext']))
 									{
-										echo $options['footertext'];
+										echo wp_filter_nohtml_kses($options['footertext']).'. ';
 									}
-										echo "<a href='http://fasterthemes.com/wordpress-themes/redpro' target='_blank'>RedPro</a> powered by WordPress.";													
+										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/redpro' target='_blank'>RedPro</a>.";													
 									?>
           </span> </div>
       </aside>

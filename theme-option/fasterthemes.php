@@ -27,7 +27,7 @@ add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$menu = array(
 				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('FT Options', 'fastertheme_framework'),
+				'menu_title' => __('Theme Options', 'fastertheme_framework'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
 				'callback' => 'fastertheme_framework_page'
@@ -74,7 +74,7 @@ function fastertheme_framework_page(){
                             value="<?php if(!empty($options['logo'])) { echo $options['logo']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($options['logo'])) { echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($options['logo'])) { echo "<img src='".esc_url_raw($options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
@@ -88,7 +88,7 @@ function fastertheme_framework_page(){
                             value="<?php if(!empty($options['fevicon'])) { echo $options['fevicon']; } ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($options['fevicon'])) { echo "<img src='".$options['fevicon']."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($options['fevicon'])) { echo "<img src='".esc_url_raw($options['fevicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
               <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
@@ -98,7 +98,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($options['footertext']))echo $options['footertext']; ?>">
+                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($options['footertext']))echo wp_filter_nohtml_kses($options['footertext']); ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>
@@ -126,7 +126,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Facebook</h4>
             <div class="option">
               <div class="controls">
-                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($options['fburl'])) { echo $options['fburl']; } ?>" />
+                <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($options['fburl'])) { echo esc_url_raw($options['fburl']); } ?>" />
               </div>
               <div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>
             </div>
@@ -135,7 +135,7 @@ function fastertheme_framework_page(){
             <h4 class="heading">Twitter</h4>
             <div class="option">
               <div class="controls">
-                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($options['twitter'])) { echo $options['twitter']; } ?>" />
+                <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($options['twitter'])) { echo esc_url_raw($options['twitter']); } ?>" />
               </div>
               <div class="explain">Twitter profile or page URL i.e. http://twitter.com/username/</div>
             </div>
