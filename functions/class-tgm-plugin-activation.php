@@ -1,3 +1,16 @@
+<?php
+/**
+ * Plugin installation and activation for WordPress themes.
+ *
+ * @package   TGM-Plugin-Activation
+ * @version   2.4.0
+ * @author    Thomas Griffin <thomasgriffinmedia.com>
+ * @author    Gary Jones <gamajo.com>
+ * @copyright Copyright (c) 2012, Thomas Griffin
+ * @license   http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ * @link      https://github.com/thomasgriffin/TGM-Plugin-Activation
+ */
+?>
 <?php if ( ! class_exists( 'booster_Plugin_Activation' ) ) {
     /*  Automatic plugin installation and activation library. */
     class booster_Plugin_Activation {

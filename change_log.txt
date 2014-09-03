@@ -35,3 +35,8 @@ Version 1.02
 	iii) Change theme author uri in style.css.	
 	iv) Set FT Options condition in all pages.
 	v) Change FT Options logo and remove space in FasterThemes.  
+
+Version	1.03
+    i)  Set Sanitization in all input fields.
+	ii)	Define TGM license and link in  readme.txt
+	iii) Set copyright text in footer.
