@@ -54,8 +54,12 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.0.2.1
+1. Corrected the license policy.
+2. function corpbiz_comment renamed to webriti_comment.
+3. Hard coded links removed from sidebar.php, instead, added widgets. 
 @Version 1.0.2
-1.	Add Theme Bundeled with resources.
+1.	Add Theme Bundled with resources.
 2.	Remove default logo.
 3.	copyright and license information added changed.
 4.	unescaped output or input issue fixed like(esc_url(), esc_html(), esc_ettr()).
@@ -75,18 +79,43 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 @Version 1.0
 released
 
-   Corpbiz WordPress Theme, Copyright 2014 PRIYANSHU MITTAL (webriti.com)
-   Corpbiz is distributed under the terms of the GNU GPL
-   
- Theme Bundeled with following resources:-
+    
  
- 1. Bootstrap v3.1.1 (http://getbootstrap.com)	 
- 2. Font Awesome 4.1.0 by @davegandy - http://fontawesome.io 	
- 3. List Of Fonts Used:
-	3.1 Roboto Regular
-	3.2 Roboto Black
-	3.3 Roboto Light
-	3.4 Roboto Medium
-	3.5 Roboto Thin
+Corpbiz WordPress Theme, Copyright 2014 Priyanshu Mittal
+Corpbiz is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see .
+
+
+Corpbiz WordPress Theme bundles the following third-party resources:
+
+Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
+
+Bootstrap v3.1.1 (http://getbootstrap.com) Copyright 2011-2014 Twitter, Inc.
+Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+Source: http://getbootstrap.com
+	
+List Of Roboto Fonts Used:
+1 Roboto Regular
+2 Roboto Black
+3 Roboto Light
+4 Roboto Medium
+5 Roboto Thin
+
+Roboto Fonts: http://www.google.com/fonts/specimen/Roboto) by Christian Robertson
+Licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html
 
 # --- EOF --- #

@@ -3,8 +3,7 @@
 * @Theme Name	:	Corpbiz
 * @file         :	functions.php
 * @package      :	Corpbiz
-* @author       :	Hari Maliya
-* @license      :	license.txt
+* @author       :	Priyanshu Mittal
 * @filesource   :	wp-content/themes/corpbiz/functions.php
 * Theme Core Functions and Codes
 */	

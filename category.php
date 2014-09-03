@@ -2,8 +2,7 @@
 /*	@Theme Name	:	Corpbiz
 * 	@file         :	category.php
 * 	@package      :	corpbiz
-* 	@author       :	Hari Maliya
-* 	@license      :	license.txt
+* 	@author       :	Priyanshu Mittal
 * 	@filesource   :	wp-content/themes/corpbiz/category.php
 */?>
 <?php get_header(); ?>

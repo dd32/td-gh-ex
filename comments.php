@@ -3,8 +3,7 @@
 * @Theme Name	:	Corpbiz
 * @file         :	comments.php
 * @package      :	Corpbiz
-* @author       :	Harish
-* @license      :	license.txt
+* @author       :	Priyanshu Mittal
 * @filesource   :	wp-content/themes/corpbiz/comments.php
 */
 ?>
@@ -14,8 +13,8 @@
 	
 	<?php
 		// code for comment
-		if ( ! function_exists( 'corpbiz_comment' ) ) {
-		function corpbiz_comment( $comment, $args, $depth ) 
+		if ( ! function_exists( 'webriti_comment' ) ) {
+		function webriti_comment( $comment, $args, $depth ) 
 		{
 		$GLOBALS['comment'] = $comment;
 		//get theme data
@@ -53,7 +52,7 @@
 <div class="comment_section">
 	<div class="comment_title"><h3><i class="fa fa-comments"></i> <?php comments_number('No Comments', '1 Comment','% Comments'); ?> </h3>
 	</div>
-	<?php wp_list_comments( array( 'callback' => 'corpbiz_comment' ) ); ?>
+	<?php wp_list_comments( array( 'callback' => 'webriti_comment' ) ); ?>
 </div> <!---comment_section--->
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>

@@ -1,12 +1,10 @@
 <?php
 /**
-	*Theme Name	: 	Corpbiz	
+ *Theme Name	: 	Corpbiz	
  * @file           searchform.php
  * @package        corpbiz
- * @author         Harish
+ * @author         Priyanshu Mittal
  * @copyright      2013 Webriti
- * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/searchform.php
 */
 ?>
 <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">

@@ -4,7 +4,7 @@ Theme URI:
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 1 beautifully designed page templates , Full-Width Page. It has beautifull portfolio section.
-Version:  1.0.2
+Version:  1.0.2.1
 Tags: white,pink,right-sidebar,responsive-layout,featured-images,full-width-template,theme-options,threaded-comments,custom-menu,two-columns,translation-ready,sticky-post
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -1168,7 +1168,7 @@ border-bottom: 0px solid #E0E4E6;
 .sidebar_widget_title {
     margin-bottom: 10px;
 }
-.sidebar_widget_title h2 {
+.sidebar_widget_title h2,.corpo_sidebar .widget h2 {
     border-bottom: 1px solid #E0E4E6;
     color: #3A4543;
     font-family: "RobotoLight";
@@ -1181,7 +1181,7 @@ border-bottom: 0px solid #E0E4E6;
 .sidebar_links {
 	display: block;
 }
-.sidebar_links p, .sidebar_widget > ul > li ,ul.menu li {
+.sidebar_links p, .sidebar_widget > ul > li ,ul.menu li,.corpo_sidebar .widget ul > li  {
     border-bottom: 1px solid #E0E4E6;
     display: block;
     font-family: 'RobotoRegular';
@@ -1206,13 +1206,13 @@ ul.sidebar_widget_tab li
     border-bottom: 0px;
 	margin-bottom: 0;
 }
-.sidebar_links p a, .sidebar_widget > ul > li > a,ul.menu li a{
+.sidebar_links p a, .sidebar_widget > ul > li > a,ul.menu li a,.corpo_sidebar .widget ul > li  a{
     color: #787878;
 	font-size: 16px;
     line-height: 20px;
     transition: all 0.4s ease 0s;
 }
-.sidebar_widget > ul {
+.sidebar_widget > ul,.corpo_sidebar .widget ul {
 	list-style: none;
 	padding-left: 0px;
 }
@@ -3007,7 +3007,7 @@ blockquote small {
     word-wrap: break-word;
 }
 /*Edit By Harish For Sidebar Tab*/
-.sidebar_widget, .sidebar_widget1 {
+.sidebar_widget, .sidebar_widget1,.corpo_sidebar .widget {
 	margin-bottom: 70px;
     margin-top: 0;
     overflow: hidden;

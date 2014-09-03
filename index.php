@@ -3,8 +3,7 @@
 * @Theme Name	:	Corpbiz
 * @file         :	index.php
 * @package      :	Corpbiz
-* @author       :	Hari Maliya
-* @license      :	license.txt
+* @author       :	Priyanshu Mittal
 * @filesource   :	wp-content/themes/corpbiz/index.php
 */
 get_header();

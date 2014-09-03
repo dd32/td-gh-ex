@@ -2,8 +2,7 @@
 /*	@Theme Name	:	Corpbiz
 * 	@file         :	tag.php
 * 	@package      :	corpbiz
-* 	@author       :	Harish
-* 	@license      :	license.txt
+* 	@author       :	Priyanshu Mittal
 * 	@filesource   :	wp-content/themes/corpbiz/tag.php
 */
 ?>

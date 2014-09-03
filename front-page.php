@@ -3,8 +3,7 @@
 * @Theme Name	:	Corpbiz
 * @file         :	front-page.php
 * @package      :	Corpbiz
-* @author       :	Hari Maliya
-* @license      :	license.txt
+* @author       :	Priyanshu Mittal
 * @filesource   :	wp-content/themes/corpbiz/front-page.php
 */
 	$current_options = get_option('corpbiz_options');
