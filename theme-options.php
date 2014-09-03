@@ -69,7 +69,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 </td>
 </tr>
 
-<tr valign="top"><th scope="row"><label for="side_title">Side Menu Heading</label></th>
+<tr valign="top"><th scope="row"><label for="side_heading">Side Menu Heading</label></th>
 <td>
 <input id="side_heading" name="badeyes_options[side_heading]" type="text" value="<?php  esc_attr_e($settings['side_heading']); ?>" />
 </td>
@@ -130,14 +130,14 @@ $input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] )
 //$input['intro_text'] = wp_filter_post_kses( $input['intro_text'] );
 //$input['featured_title'] = wp_filter_post_kses( $input['featured_title'] );
 //$input['blog_title'] = wp_filter_post_kses( $input['blog_title'] );
-//$input['side_title'] = wp_filter_post_kses( $input['blog_title'] );
+//$input['side_heading'] = wp_filter_post_kses( $input['blog_title'] );
 
 // We select the previous value of the field, to restore it in case an invalid entry has been given
 
 $prev = $settings['intro_text'];
 $prev = $settings['featured_title'];
 $prev = $settings['blog_title'];
-$prev = $settings['side_title'];
+$prev = $settings['side_heading'];
 
 // If the checkbox has not been checked, we void it
 
