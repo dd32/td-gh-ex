@@ -13,8 +13,7 @@ $storto_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
-	'tumblrurl' => '#',
-	'trackingcode' => ''
+	'tumblrurl' => '#'
 );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
@@ -37,28 +36,10 @@ function storto_options_add_page() {
 }
 
 /**
- * Create arrays for sidebar position
- */
-$sidebar_position = array(
-	'sidebar_right' => array(
-		'value' => 'sidebar_right',
-		'label' => __( 'Sidebar Right', 'storto' )
-	),
-	'sidebar_left' => array(
-		'value' => 'sidebar_left',
-		'label' => __( 'Sidebar Left', 'storto' )
-	),
-	'sidebar_no' => array(
-		'value' => 'sidebar_no',
-		'label' => __( 'No Sidebar', 'storto' )
-	)
-);
-
-/**
  * Create the options page
  */
 function storto_options_do_page() {
-	global $storto_theme_options, $sidebar_position;
+	global $storto_theme_options;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -124,7 +105,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Facebook URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[facebookurl]" class="regular-text" type="text" name="storto_theme_options[facebookurl]" value="<?php echo esc_attr( $se_options['facebookurl'] ); ?>" />
+						<input id="storto_theme_options[facebookurl]" class="regular-text" type="text" name="storto_theme_options[facebookurl]" value="<?php if( isset( $se_options[ 'facebookurl' ] ) ) echo esc_url( $se_options[ 'facebookurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[facebookurl]"><?php _e( 'Leave blank to hide Facebook Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -136,7 +117,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Twitter URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[twitterurl]" class="regular-text" type="text" name="storto_theme_options[twitterurl]" value="<?php echo esc_attr( $se_options['twitterurl'] ); ?>" />
+						<input id="storto_theme_options[twitterurl]" class="regular-text" type="text" name="storto_theme_options[twitterurl]" value="<?php if( isset( $se_options[ 'twitterurl' ] ) ) echo esc_url( $se_options[ 'twitterurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[twitterurl]"><?php _e( 'Leave blank to hide Twitter Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -148,7 +129,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Google + URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[googleplusurl]" class="regular-text" type="text" name="storto_theme_options[googleplusurl]" value="<?php echo esc_attr( $se_options['googleplusurl'] ); ?>" />
+						<input id="storto_theme_options[googleplusurl]" class="regular-text" type="text" name="storto_theme_options[googleplusurl]" value="<?php if( isset( $se_options[ 'googleplusurl' ] ) ) echo esc_url( $se_options[ 'googleplusurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[googleplusurl]"><?php _e( 'Leave blank to hide Google + Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -160,7 +141,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Linkedin URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[linkedinurl]" class="regular-text" type="text" name="storto_theme_options[linkedinurl]" value="<?php echo esc_attr( $se_options['linkedinurl'] ); ?>" />
+						<input id="storto_theme_options[linkedinurl]" class="regular-text" type="text" name="storto_theme_options[linkedinurl]" value="<?php if( isset( $se_options[ 'linkedinurl' ] ) ) echo esc_url( $se_options[ 'linkedinurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[linkedinurl]"><?php _e( 'Leave blank to hide Linkedin Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -172,7 +153,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Instagram URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[instagramurl]" class="regular-text" type="text" name="storto_theme_options[instagramurl]" value="<?php echo esc_attr( $se_options['instagramurl'] ); ?>" />
+						<input id="storto_theme_options[instagramurl]" class="regular-text" type="text" name="storto_theme_options[instagramurl]" value="<?php if( isset( $se_options[ 'instagramurl' ] ) ) echo esc_url( $se_options[ 'instagramurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[instagramurl]"><?php _e( 'Leave blank to hide Instagram Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -184,7 +165,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your YouTube URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[youtubeurl]" class="regular-text" type="text" name="storto_theme_options[youtubeurl]" value="<?php echo esc_attr( $se_options['youtubeurl'] ); ?>" />
+						<input id="storto_theme_options[youtubeurl]" class="regular-text" type="text" name="storto_theme_options[youtubeurl]" value="<?php if( isset( $se_options[ 'youtubeurl' ] ) ) echo esc_url( $se_options[ 'youtubeurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -196,7 +177,7 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Pinterest URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[pinteresturl]" class="regular-text" type="text" name="storto_theme_options[pinteresturl]" value="<?php echo esc_attr( $se_options['pinteresturl'] ); ?>" />
+						<input id="storto_theme_options[pinteresturl]" class="regular-text" type="text" name="storto_theme_options[pinteresturl]" value="<?php if( isset( $se_options[ 'pinteresturl' ] ) ) echo esc_url( $se_options[ 'pinteresturl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[pinteresturl]"><?php _e( 'Leave blank to hide Pinterest Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
@@ -208,24 +189,10 @@ function storto_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Tumblr URL', 'storto' ); ?></th>
 					<td>
-						<input id="storto_theme_options[tumblrurl]" class="regular-text" type="text" name="storto_theme_options[tumblrurl]" value="<?php echo esc_attr( $se_options['tumblrurl'] ); ?>" />
+						<input id="storto_theme_options[tumblrurl]" class="regular-text" type="text" name="storto_theme_options[tumblrurl]" value="<?php if( isset( $se_options[ 'tumblrurl' ] ) ) echo esc_url( $se_options[ 'tumblrurl' ] ); ?>" />
 						<label class="description" for="storto_theme_options[tumblrurl]"><?php _e( 'Leave blank to hide Tumblr Icon', 'storto' ); ?></label>
 					</td>
 				</tr>
-				
-				<?php
-				/**
-				 * Tracking Code
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Tracking Code', 'storto' ); ?></th>
-					<td>
-						<label class="description" for="storto_theme_options[trackingcode]"><?php _e( 'Enter your analytics tracking code', 'storto' ); ?></label>
-						<br />
-						<textarea id="storto_theme_options[trackingcode]" name="storto_theme_options[trackingcode]" rows="5" cols="36"><?php echo esc_attr( $se_options['trackingcode'] ); ?></textarea>
-					</td>
-				</tr>
-
 				
 			</table>
 
@@ -242,7 +209,7 @@ function storto_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function storto_options_validate( $input ) {
-	global $storto_theme_options, $sidebar_position;
+	global $storto_theme_options;
 	
 	$se_options = get_option( 'storto_theme_options', $storto_theme_options );
 
@@ -255,28 +222,23 @@ function storto_options_validate( $input ) {
 		$input['hidesearch'] = null;
 		$input['hidesearch'] = ( $input['hidesearch'] == 1 ? 1 : 0 );
 
-	// Our text option must be safe text with no HTML tags
-	$input['twitterurl'] = wp_filter_nohtml_kses( $input['twitterurl'] );
-	$input['facebookurl'] = wp_filter_nohtml_kses( $input['facebookurl'] );
-	$input['googleplusurl'] = wp_filter_nohtml_kses( $input['googleplusurl'] );
-	$input['linkedinurl'] = wp_filter_nohtml_kses( $input['linkedinurl'] );
-	$input['instagramurl'] = wp_filter_nohtml_kses( $input['instagramurl'] );
-	$input['youtubeurl'] = wp_filter_nohtml_kses( $input['youtubeurl'] );
-	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
-	$input['tumblrurl'] = wp_filter_nohtml_kses( $input['tumblrurl'] );
-	
 	// Encode URLs
-	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
-	$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
-	$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
-	$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
-	$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
-	$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
-	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
-	$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
-
-	// Tracking Code
-	$input['trackingcode'] = htmlentities(stripslashes( $input['trackingcode'] ));
+	if( isset( $se_options[ 'twitterurl' ] ) )
+		$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
+	if( isset( $se_options[ 'facebookurl' ] ) )
+		$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
+	if( isset( $se_options[ 'googleplusurl' ] ) )
+		$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
+	if( isset( $se_options[ 'linkedinurl' ] ) )
+		$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
+	if( isset( $se_options[ 'instagramurl' ] ) )
+		$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
+	if( isset( $se_options[ 'youtubeurl' ] ) )
+		$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
+	if( isset( $se_options[ 'pinteresturl' ] ) )
+		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
+	if( isset( $se_options[ 'tumblrurl' ] ) )
+		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
 
 	return $input;
 }

@@ -5,13 +5,6 @@
  * @package storto
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800; /* pixels */
-}
-
 if ( ! function_exists( 'storto_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -21,6 +14,14 @@ if ( ! function_exists( 'storto_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function storto_setup() {
+
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 800; /* pixels */
+	}
 
 	/*
 	 * Make theme available for translation.

@@ -29,7 +29,6 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
-		
 		<?php 
 			global $storto_theme_options;
 			$se_options = get_option( 'storto_theme_options', $storto_theme_options );
@@ -38,35 +37,35 @@
 			<div class="socialLine">
 			
 				<?php if ( $se_options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['facebookurl']; ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
+					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['twitterurl']; ?>" title="Twitter" target="_blank"><i class="fa spaceRightDouble fa-twitter"></i></a>
+					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter" target="_blank"><i class="fa spaceRightDouble fa-twitter"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['googleplusurl']; ?>" title="Google Plus" target="_blank"><i class="fa spaceRightDouble fa-google-plus"></i></a>
+					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus" target="_blank"><i class="fa spaceRightDouble fa-google-plus"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['linkedinurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['linkedinurl']; ?>" title="Linkedin" target="_blank"><i class="fa spaceRightDouble fa-linkedin"></i></a>
+					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin" target="_blank"><i class="fa spaceRightDouble fa-linkedin"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['instagramurl']; ?>" title="Instagram" target="_blank"><i class="fa spaceRightDouble fa-instagram"></i></a>
+					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram" target="_blank"><i class="fa spaceRightDouble fa-instagram"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['youtubeurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['youtubeurl']; ?>" title="YouTube" target="_blank"><i class="fa spaceRightDouble fa-youtube"></i></a>
+					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube" target="_blank"><i class="fa spaceRightDouble fa-youtube"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['pinteresturl'] != '' ) : ?>
-					<a href="<?php echo $se_options['pinteresturl']; ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
+					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['tumblrurl'] != '' ) : ?>
-					<a href="<?php echo $se_options['tumblrurl']; ?>" title="Tumblr" target="_blank"><i class="fa spaceRightDouble fa-tumblr"></i></a>
+					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr" target="_blank"><i class="fa spaceRightDouble fa-tumblr"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $se_options['hiderss'] ) : ?>

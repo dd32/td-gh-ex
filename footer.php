@@ -15,11 +15,11 @@
 				$url = home_url('/');
 				$year = date('Y');
 			?>
-			&copy; <?php echo $year ?> <a href="<?php echo $url ?>"><?php echo $name ?></a>
+			&copy; <?php echo $year ?> <a href="<?php echo esc_url($url); ?>"><?php echo $name ?></a>
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'storto' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'storto' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'storto' ), 'Storto', '<a title="Premium WP Themes" href="http://crestaproject.com/" rel="designer" target="_blank">Cresta Project Wordpress Themes</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s.', 'storto' ), 'Storto', '<a title="Cresta Project" href="http://crestaproject.com/" rel="designer" target="_blank">Cresta Project WordPress Themes</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	
