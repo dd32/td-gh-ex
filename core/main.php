@@ -292,6 +292,11 @@ function diarjolite_template($id) {
 		$span = $template[diarjolite_setting('diarjolite_home')];
 		$sidebar =  diarjolite_setting('diarjolite_home');
 		
+	} else if ( (is_search()) && (diarjolite_setting('diarjolite_search_layout')) ) {
+		
+		$span = $template[diarjolite_setting('diarjolite_search_layout')];
+		$sidebar =  diarjolite_setting('diarjolite_search_layout');
+		
 	} else if ( ( (is_single()) || (is_page()) ) && (diarjolite_postmeta('diarjolite_template')) ) {
 		
 		$span = $template[diarjolite_postmeta('diarjolite_template')];

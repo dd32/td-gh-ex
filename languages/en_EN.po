@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-12 14:25+0100\n"
-"PO-Revision-Date: 2014-05-12 14:25+0100\n"
-"Last-Translator: Alessandro <info@wpinprogress.com>\n"
+"POT-Creation-Date: 2014-09-03 21:12+0100\n"
+"PO-Revision-Date: 2014-09-03 21:12+0100\n"
+"Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -13,10 +13,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:11 archive-blog.php:63 home-blog.php:33 search.php:39
+#: 404.php:11 archive-blog.php:63 home-blog.php:33 search.php:53
 msgid "Content not found"
 msgstr ""
 
@@ -24,15 +24,15 @@ msgstr ""
 msgid "Oops, it is a little bit embarassing..."
 msgstr ""
 
-#: 404.php:31 search.php:41
+#: 404.php:31 search.php:55
 msgid "The page that you requested, was not found."
 msgstr ""
 
-#: 404.php:33 archive-blog.php:67 home-blog.php:37 search.php:43
+#: 404.php:33 archive-blog.php:67 home-blog.php:37 search.php:57
 msgid "What can i do?"
 msgstr ""
 
-#: 404.php:35 archive-blog.php:69 home-blog.php:39 search.php:45
+#: 404.php:35 archive-blog.php:69 home-blog.php:39 search.php:59
 msgid "Back to the homepage"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgid "Make a search, from the below form:"
 msgstr ""
 
 #: 404.php:44 404.php:45 archive-blog.php:76 archive-blog.php:77
-#: home-blog.php:46 home-blog.php:47 search.php:54 search.php:55
+#: home-blog.php:46 home-blog.php:47 search.php:68 search.php:69
 msgid "Search"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "No article found in this category."
 msgstr ""
 
-#: archive-blog.php:120 home-blog.php:89 sidebar.php:25
+#: archive-blog.php:120 home-blog.php:89 search.php:112 sidebar.php:25
 msgid "Calendar"
 msgstr ""
 
@@ -103,61 +103,19 @@ msgstr ""
 msgid "Leave a reply"
 msgstr ""
 
-#: footer.php:27
-msgid "Copyright"
-msgstr ""
-
-#: footer.php:29
-msgid "Theme by"
-msgstr ""
-
-#: footer.php:30
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: footer.php:30
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: home-blog.php:35
-msgid "No article found in this blog."
-msgstr ""
-
-#: search.php:11
-msgid "<span>Search </span> results for: "
-msgstr ""
-
-#: search.php:47
-msgid "Check the typed term"
-msgstr ""
-
-#: search.php:49
-msgid "Make a new search, from the below form:"
-msgstr ""
-
-#: core/main.php:66
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: core/main.php:421 core/admin/function_panel.php:16
+#: core/admin/function_panel.php:16
 msgid "Diarjo Options"
 msgstr ""
 
-#: core/main.php:423 core/admin/function_panel.php:17
+#: core/admin/function_panel.php:17
 msgid "Get Premium"
-msgstr ""
-
-#: core/admin/panel.php:30
-msgid "General Settings"
 msgstr ""
 
 #: core/admin/option/options.php:21 core/admin/option/options.php:100
 msgid "General"
 msgstr ""
 
-#: core/admin/option/options.php:21 core/admin/option/options.php:296
+#: core/admin/option/options.php:21 core/admin/option/options.php:307
 msgid "Fonts"
 msgstr ""
 
@@ -262,17 +220,20 @@ msgid "If you don't select a single page, select a layout for homepage"
 msgstr ""
 
 #: core/admin/option/options.php:107 core/admin/option/options.php:118
-#: core/metaboxes/page.php:40 core/metaboxes/post.php:34
+#: core/admin/option/options.php:129 core/metaboxes/page.php:40
+#: core/metaboxes/post.php:34
 msgid "Full Width"
 msgstr ""
 
 #: core/admin/option/options.php:108 core/admin/option/options.php:119
-#: core/metaboxes/page.php:41 core/metaboxes/post.php:35
+#: core/admin/option/options.php:130 core/metaboxes/page.php:41
+#: core/metaboxes/post.php:35
 msgid "Left Sidebar"
 msgstr ""
 
 #: core/admin/option/options.php:109 core/admin/option/options.php:120
-#: core/metaboxes/page.php:42 core/metaboxes/post.php:36
+#: core/admin/option/options.php:131 core/metaboxes/page.php:42
+#: core/metaboxes/post.php:36
 msgid "Right Sidebar"
 msgstr ""
 
@@ -286,309 +247,331 @@ msgid "Select a layout for category pages"
 msgstr ""
 
 #: core/admin/option/options.php:124
+#, fuzzy
+msgid "Search Layout"
+msgstr "Categorisa"
+
+#: core/admin/option/options.php:125
+msgid "Select a layout for search pages"
+msgstr ""
+
+#: core/admin/option/options.php:135
 msgid "Custom css"
 msgstr ""
 
-#: core/admin/option/options.php:125
+#: core/admin/option/options.php:136
 msgid "Insert your custom css code"
 msgstr ""
 
-#: core/admin/option/options.php:142
+#: core/admin/option/options.php:153
 msgid "Header"
 msgstr ""
 
-#: core/admin/option/options.php:144
+#: core/admin/option/options.php:155
 msgid "Custom Logo"
 msgstr ""
 
-#: core/admin/option/options.php:145
+#: core/admin/option/options.php:156
 msgid "Insert the url of custom logo"
 msgstr ""
 
-#: core/admin/option/options.php:151
+#: core/admin/option/options.php:162
 msgid "Custom Favicon"
 msgstr ""
 
-#: core/admin/option/options.php:152
+#: core/admin/option/options.php:163
 msgid "Insert the url of custom favicon"
 msgstr ""
 
-#: core/admin/option/options.php:171
+#: core/admin/option/options.php:182
 msgid "Footer"
 msgstr ""
 
-#: core/admin/option/options.php:173
+#: core/admin/option/options.php:184
 #, fuzzy
 msgid "Sidebar layout"
 msgstr "Categorisa"
 
-#: core/admin/option/options.php:174
+#: core/admin/option/options.php:185
 msgid "Select a layout for the bottom sidebar area"
 msgstr ""
 
-#: core/admin/option/options.php:178
+#: core/admin/option/options.php:189
 msgid "Two Columns"
 msgstr ""
 
-#: core/admin/option/options.php:179
+#: core/admin/option/options.php:190
 msgid "Three Columns"
 msgstr ""
 
-#: core/admin/option/options.php:180
+#: core/admin/option/options.php:191
 msgid "Four Columns"
 msgstr ""
 
-#: core/admin/option/options.php:184
+#: core/admin/option/options.php:195
 msgid "Copyright Text"
 msgstr ""
 
-#: core/admin/option/options.php:185
+#: core/admin/option/options.php:196
 msgid "Insert copyright text"
 msgstr ""
 
-#: core/admin/option/options.php:190
+#: core/admin/option/options.php:201
 msgid "Facebook Url"
 msgstr ""
 
-#: core/admin/option/options.php:191
+#: core/admin/option/options.php:202
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:196
+#: core/admin/option/options.php:207
 msgid "Twitter Url"
 msgstr ""
 
-#: core/admin/option/options.php:197
+#: core/admin/option/options.php:208
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:202
+#: core/admin/option/options.php:213
 msgid "Flickr Url"
 msgstr ""
 
-#: core/admin/option/options.php:203
+#: core/admin/option/options.php:214
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:208
+#: core/admin/option/options.php:219
 msgid "Google Url"
 msgstr ""
 
-#: core/admin/option/options.php:209
+#: core/admin/option/options.php:220
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:214
+#: core/admin/option/options.php:225
 msgid "Linkedin Url"
 msgstr ""
 
-#: core/admin/option/options.php:215
+#: core/admin/option/options.php:226
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:220
+#: core/admin/option/options.php:231
 msgid "Pinterest Url"
 msgstr ""
 
-#: core/admin/option/options.php:221
+#: core/admin/option/options.php:232
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:226
+#: core/admin/option/options.php:237
 msgid "Tumblr Url"
 msgstr ""
 
-#: core/admin/option/options.php:227
+#: core/admin/option/options.php:238
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:232
+#: core/admin/option/options.php:243
 msgid "Youtube Url"
 msgstr ""
 
-#: core/admin/option/options.php:233
+#: core/admin/option/options.php:244
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:238
+#: core/admin/option/options.php:249
 msgid "Skype Url"
 msgstr ""
 
-#: core/admin/option/options.php:239
+#: core/admin/option/options.php:250
 msgid ""
 "Insert Skype ID (empty if you want to hide the button), you can add "
 "<strong>'skype:'</strong>, after your ID (for example skype:alexvtn)"
 msgstr ""
 
-#: core/admin/option/options.php:244
+#: core/admin/option/options.php:255
 msgid "Instagram  Url"
 msgstr ""
 
-#: core/admin/option/options.php:245
+#: core/admin/option/options.php:256
 msgid "Insert Instagram Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:251
+#: core/admin/option/options.php:262
 msgid "Github  Url"
 msgstr ""
 
-#: core/admin/option/options.php:252
+#: core/admin/option/options.php:263
 msgid "Insert Github Url (empty if you want to hide the button)"
 msgstr ""
 
-#: core/admin/option/options.php:257
+#: core/admin/option/options.php:268
 msgid "Email Address"
 msgstr ""
 
-#: core/admin/option/options.php:258
+#: core/admin/option/options.php:269
 msgid ""
 "Insert Email Address (empty if you want to hide the button), you can add "
 "<strong>'mailto:</strong>', after your email (for example mailto:"
 "info@wpinprogress.com)"
 msgstr ""
 
-#: core/admin/option/options.php:263
+#: core/admin/option/options.php:274
 msgid "Feed Rss Button"
 msgstr ""
 
-#: core/admin/option/options.php:264
+#: core/admin/option/options.php:275
 msgid "You want display the Feed Rss button?"
 msgstr ""
 
-#: core/admin/option/options.php:298
+#: core/admin/option/options.php:309
 msgid "Font size"
 msgstr ""
 
-#: core/admin/option/options.php:299
+#: core/admin/option/options.php:310
 msgid "Select a size for logo"
 msgstr ""
 
-#: core/admin/option/options.php:320
+#: core/admin/option/options.php:331
 msgid "Menu font"
 msgstr ""
 
-#: core/admin/option/options.php:322
+#: core/admin/option/options.php:333
 msgid "Menu size"
 msgstr ""
 
-#: core/admin/option/options.php:323
+#: core/admin/option/options.php:334
 msgid "Select a size for menu"
 msgstr ""
 
-#: core/admin/option/options.php:341
+#: core/admin/option/options.php:352
 msgid "Content font"
 msgstr ""
 
-#: core/admin/option/options.php:343
+#: core/admin/option/options.php:354
 msgid "Content size"
 msgstr ""
 
-#: core/admin/option/options.php:344
+#: core/admin/option/options.php:355
 msgid "Select a size for the content"
 msgstr ""
 
-#: core/admin/option/options.php:362
+#: core/admin/option/options.php:373
 msgid "Headline font sizes"
 msgstr ""
 
-#: core/admin/option/options.php:364
+#: core/admin/option/options.php:375
 msgid "H1 headline"
 msgstr ""
 
-#: core/admin/option/options.php:365
+#: core/admin/option/options.php:376
 msgid "Select a size for H1 elements"
 msgstr ""
 
-#: core/admin/option/options.php:371
+#: core/admin/option/options.php:382
 msgid "H2 headline"
 msgstr ""
 
-#: core/admin/option/options.php:372
+#: core/admin/option/options.php:383
 msgid "Select a size for H2 elements"
 msgstr ""
 
-#: core/admin/option/options.php:378
+#: core/admin/option/options.php:389
 msgid "H3 headline"
 msgstr ""
 
-#: core/admin/option/options.php:379
+#: core/admin/option/options.php:390
 msgid "Select a size for H3 elements"
 msgstr ""
 
-#: core/admin/option/options.php:385
+#: core/admin/option/options.php:396
 msgid "H4 headline"
 msgstr ""
 
-#: core/admin/option/options.php:386
+#: core/admin/option/options.php:397
 msgid "Select a size for H4 elements"
 msgstr ""
 
-#: core/admin/option/options.php:392
+#: core/admin/option/options.php:403
 msgid "H5 headline"
 msgstr ""
 
-#: core/admin/option/options.php:393
+#: core/admin/option/options.php:404
 msgid "Select a size for H5 elements"
 msgstr ""
 
-#: core/admin/option/options.php:399
+#: core/admin/option/options.php:410
 msgid "H6 headline"
 msgstr ""
 
-#: core/admin/option/options.php:400
+#: core/admin/option/options.php:411
 msgid "Select a size for H6 elements"
 msgstr ""
 
-#: core/admin/option/options.php:434
+#: core/admin/option/options.php:445
 msgid "General colors"
 msgstr ""
 
-#: core/admin/option/options.php:436 core/admin/option/options.php:477
+#: core/admin/option/options.php:447 core/admin/option/options.php:488
 msgid "Text color"
 msgstr ""
 
-#: core/admin/option/options.php:437
+#: core/admin/option/options.php:448
 msgid "Select a color for general text"
 msgstr ""
 
-#: core/admin/option/options.php:442
+#: core/admin/option/options.php:453
 msgid "Link color"
 msgstr ""
 
-#: core/admin/option/options.php:443
+#: core/admin/option/options.php:454
 msgid "Select a color for link"
 msgstr ""
 
-#: core/admin/option/options.php:448
+#: core/admin/option/options.php:459
 msgid "Link color hover"
 msgstr ""
 
-#: core/admin/option/options.php:449
+#: core/admin/option/options.php:460
 msgid "Select a color for link hover"
 msgstr ""
 
-#: core/admin/option/options.php:469
+#: core/admin/option/options.php:480
 msgid "Header, Sidebar and Footer"
 msgstr ""
 
-#: core/admin/option/options.php:471
+#: core/admin/option/options.php:482
 msgid "Background color"
 msgstr ""
 
-#: core/admin/option/options.php:472
+#: core/admin/option/options.php:483
 msgid "Select a color for the background"
 msgstr ""
 
-#: core/admin/option/options.php:478
+#: core/admin/option/options.php:489
 msgid "Select a color for the text"
 msgstr ""
 
-#: core/admin/option/options.php:483
+#: core/admin/option/options.php:494
 msgid "Borders color"
 msgstr ""
 
-#: core/admin/option/options.php:484
+#: core/admin/option/options.php:495
 msgid "Select a color for the borders"
+msgstr ""
+
+#: core/admin/panel.php:30
+msgid "General Settings"
+msgstr ""
+
+#: core/admin/panel.php:50
+msgid "Get premium version"
+msgstr ""
+
+#: core/main.php:59
+#, php-format
+msgid "Page %s"
 msgstr ""
 
 #: core/metaboxes/page.php:17 core/metaboxes/page.php:25
@@ -622,6 +605,39 @@ msgstr ""
 
 #: core/templates/after-content.php:34
 msgid " by "
+msgstr ""
+
+#: footer.php:27
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:29
+msgid "Theme by"
+msgstr ""
+
+#: footer.php:30
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:30
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: home-blog.php:35
+msgid "No article found in this blog."
+msgstr ""
+
+#: search.php:11
+msgid "<span>Search </span> results for: "
+msgstr ""
+
+#: search.php:61
+msgid "Check the typed term"
+msgstr ""
+
+#: search.php:63
+msgid "Make a new search, from the below form:"
 msgstr ""
 
 #, fuzzy

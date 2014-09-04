@@ -121,6 +121,17 @@ array( "type" => "begintab",
 		   ),
 	       "std" => "right-sidebar"),
 
+	array( "name" => __( "Search Layout","diarjolite"),
+	       "desc" => __( "Select a layout for search pages","diarjolite"),
+	       "id" => $shortname."_search_layout",
+	       "type" => "select",
+	       "options" => array(
+		   "full" => __( "Full Width","diarjolite"),
+	   	   "left-sidebar" => __( "Left Sidebar","diarjolite"),
+	   	   "right-sidebar" => __( "Right Sidebar","diarjolite"),
+		   ),
+	       "std" => "right-sidebar"),
+
 	array( "name" => __( "Custom css","diarjolite"),
 	       "desc" => __( "Insert your custom css code","diarjolite"),
 	       "id" => $shortname."_custom_css_code",
