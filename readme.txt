@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.5.6
+- Removed: Recommended plugins removed due to plugin errors with WordPress4.0 update.
+
 Version 1.5.5
 - Fixed:   get_page_link changed to get_permalink to ensure links work correctly for call to action.
 - Fixed:   get_page_link changed to get_permalink to ensure links work correctly for homepage featured content.
