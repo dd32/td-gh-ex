@@ -5,6 +5,7 @@
 $badeyes_options = array(
 'footer_copyright' => 'Copyright Since (start date goes here)',
 'intro_text' => '<h1>Add Title Here</h1><p>put text here</p>',
+'header_style' => '',
 'featured_title' => 'Featured Content',
 'blog_title' => 'Latest Headlines',
 'side_heading' => 'Side Menu',
@@ -43,44 +44,57 @@ $_REQUEST['updated'] = false; // This checks whether the form has just been subm
 /* This function outputs some hidden fields required by the form,
 including a nonce, a unique number used to ensure the form has been submitted from the admin page
  important for security */ ?>
-
-
+<h2>CSS Styles</h2>
+<p>If you know how to write css then use the area below to overwrite the classes with the new values.</p>
+<p>Note: Remember that any color schemes you use might impact the "High Contrast" style sheet so make sure it doesn't impact appearance.</p>
 <table class="form-table">
-<tr valign="top"><th scope="row"><label for="footer_copyright">Footer Copyright Notice</label></th>
+<tr valign="top"><th scope="row"><label for="header_style">CSS Styles:</label></th>
 <td>
-<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  esc_attr_e($settings['footer_copyright']); ?> " />
+<textarea id="header_style" name="badeyes_options[header_style]" rows="5" cols="30"><?php echo stripslashes($settings['header_style']); ?></textarea>
 </td>
 </tr>
+</table>
+<h2>Introduction Text</h2>
+<p>Use the area below to add a description for the Blog area, as stated above you can use html, for accessibility reasons leave the heading if you use one at an H1.</p> 
+<table class="form-table">
 <tr valign="top"><th scope="row"><label for="intro_text">Intro Text</label></th>
 <td>
 <textarea id="intro_text" name="badeyes_options[intro_text]" rows="5" cols="30"><?php echo stripslashes($settings['intro_text']); ?></textarea>
 </td>
 </tr>
-
+</table>
+<h2>Rewrite Titles</h2>
+<p>Use the edit fields below to change or remove the corresponding text.</p>
+<table class="form-table">
 <tr valign="top"><th scope="row"><label for="featured_title">Featured Heading Title</label></th>
 <td>
 <input id="featured_title" name="badeyes_options[featured_title]" type="text" value="<?php  esc_attr_e($settings['featured_title']); ?>" />
 </td>
 </tr>
-
 <tr valign="top"><th scope="row"><label for="blog_title">Blog Heading Title</label></th>
 <td>
 <input id="blog_title" name="badeyes_options[blog_title]" type="text" value="<?php  esc_attr_e($settings['blog_title']); ?>" />
 </td>
 </tr>
-
 <tr valign="top"><th scope="row"><label for="side_heading">Side Menu Heading</label></th>
 <td>
 <input id="side_heading" name="badeyes_options[side_heading]" type="text" value="<?php  esc_attr_e($settings['side_heading']); ?>" />
 </td>
 </tr>
-
 <tr valign="top"><th scope="row"><label for="side_nav">Side Menu Link(change the name of the skip link at top of page)</label></th>
 <td>
 <input id="side_nav" name="badeyes_options[side_nav]" type="text" value="<?php  esc_attr_e($settings['side_nav']); ?>" />
 </td>
 </tr>
+</table>
+<h2>Miscellaneous</h2>
+<table class="form-table">
 
+<tr valign="top"><th scope="row"><label for="footer_copyright">Footer Copyright Notice</label></th>
+<td>
+<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  esc_attr_e($settings['footer_copyright']); ?> " />
+</td>
+</tr>
 <tr valign="top"><th scope="row">Author Credits</th>
 <td>
 <input type="checkbox" id="author_credits" name="badeyes_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />

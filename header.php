@@ -39,7 +39,22 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
+
 <?php wp_head(); ?>
+<?php
+global $badeyes_options;
+
+					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
+
+				?>
+
+<?php if( $badeyes_settings['header_style'] != '' ) : ?>
+<?php 
+echo "<style type=\"text/css\">";
+echo $badeyes_settings['header_style']; 
+echo "</style>";
+?>
+<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="center;" role="navigation" aria-label="Page">
@@ -86,7 +101,6 @@ $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_al
 
 <?php endif; ?>
 </div>
-
 
 <div class="center" style="margin-top: 5px; margin-bottom: 5px;" role="banner">
 <div class="header-main">
