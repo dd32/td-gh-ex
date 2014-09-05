@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.5
+- Fixed:   Function thinkup_input_sliderhome() updated to correct "Uninitialized string offset" error.
+
 Version 1.0.4
 - Removed: Recommended plugins removed due to plugin errors with WordPress4.0 update.
 
