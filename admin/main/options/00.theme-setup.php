@@ -42,16 +42,6 @@ add_action( 'tgmpa_register', 'thinkup_theme_register_required_plugins' );
 function thinkup_theme_register_required_plugins() {
  
     $plugins = array(
-	array(
-		'name' 		=> 'Contact Form 7',
-		'slug' 		=> 'contact-form-7',
-		'required' 	=> false,
-	),
-	array(
-		'name' 		=> 'Google Maps',
-		'slug' 		=> 'comprehensive-google-map-plugin',
-		'required' 	=> false,
-	),
     );
 
     // Change this to your theme text domain, used for internationalising strings

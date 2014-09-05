@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.4
+- Removed: Recommended plugins removed due to plugin errors with WordPress4.0 update.
+
 Version 1.0.3
 - Updated: Font Awesome files v4.2.0 added instead of hotlinking.
 - Removed: Masonry script removed.
