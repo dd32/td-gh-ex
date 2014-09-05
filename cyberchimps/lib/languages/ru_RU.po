@@ -3,603 +3,312 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-03-19 13:52-0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2014-08-22 08:07:28 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Russian, Russia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../functions.php
-msgid "View all posts by"
-msgstr "Просмотреть все сообщения"
+msgid "Posted on %s"
+msgstr "Опубликовано %s"
 
 #: ../../functions.php
-msgid "Posted on "
-msgstr "Опубликовано "
+msgid "View all posts by %s"
+msgstr "Посмотреть все сообщения от %s"
 
 #: ../../functions.php
-msgid " by "
-msgstr "-"
+msgid "by %s"
+msgstr "По %s"
 
 #: ../../functions.php
-msgid "Posted in"
-msgstr "Опубликовано в"
+msgid "Posted in %s"
+msgstr "Опубликовано в %s"
 
 #: ../../functions.php
-msgid "Tags:"
-msgstr "Теги"
+msgid "Tags: %s"
+msgstr "Теги: %s"
 
+#: ../../functions.php
 #: ../../functions.php
 msgid "Leave a comment"
-msgstr "Отзыв об упражнении"
+msgstr "Оставить комментарий"
 
 #: ../../functions.php
 msgid "1 Comment"
-msgstr "1 комментарий"
+msgstr "1 Комментарий"
 
-#: ../../options/options-core.php ../../functions.php
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
-msgstr "Примечания"
+msgstr "Комментарии"
 
 #: ../../functions.php
 msgid "Permalink to %s"
 msgstr "Постоянная ссылка на %s"
 
 #: ../../functions.php
-msgid "Category Archives:"
-msgstr "Категория Архивы:"
+msgid "Category Archives: %s"
+msgstr "Архив категорий: %s"
 
 #: ../../functions.php
-msgid "Tag Archives:"
-msgstr "Тег Архивы:"
+msgid "Tag Archives: %s"
+msgstr "Тег Архивы: %s"
 
 #: ../../functions.php
 msgid "Author Archives"
-msgstr "Автор архивы"
+msgstr "Архивы автора"
 
 #: ../../functions.php
-msgid "Daily Archives:"
-msgstr "Ежедневные архивы:"
+msgid "Daily Archives: %s"
+msgstr "Архивы за день: %s"
 
 #: ../../functions.php
-msgid "Monthly Archives:"
-msgstr "Архив по месяцам:"
+msgid "Monthly Archives: %s"
+msgstr "Архив за месяц: %s"
 
 #: ../../functions.php
-msgid "Yearly Archives:"
-msgstr "Ежегодные архивы:"
+msgid "Yearly Archives: %s"
+msgstr "Архивы за год: %s"
+
+#: ../../functions.php
+msgid "Shop"
+msgstr "Магазин"
 
 #: ../../functions.php
 msgid "Archives"
-msgstr "Архив"
-
-#: ../../inc/meta-box.php ../../functions.php
-msgid "Page"
-msgstr "Страница"
+msgstr "Архивы"
 
 #: ../../functions.php
-msgid "Continue Reading"
-msgstr "Продолжить чтение"
+msgid "Search for &quot; %s &quot;"
+msgstr "Поиск «%s»"
 
 #: ../../functions.php
-msgid "Welcome"
-msgstr "Приветствие"
+msgid "Not Found"
+msgstr "не найдено"
 
 #: ../../functions.php
-msgid "Congratulations you have successfully installed"
-msgstr "Поздравляем, Вы успешно установили"
+msgid "Page %s"
+msgstr "Страница %s"
 
 #: ../../functions.php
-msgid "Your website is important to us, so please read the"
-msgstr "Ваш сайт очень важна для нас, поэтому, пожалуйста, прочитайте"
+#: ../../functions.php
+msgid "Read More..."
+msgstr "Подробнее..."
 
 #: ../../functions.php
-msgid "instructions"
-msgstr "Инструкции"
-
-#: ../../functions.php
-msgid "to learn how to use"
-msgstr "чтобы узнать, как использовать"
-
-#: ../../functions.php
-msgid "If you have any questions please post in our"
-msgstr "Если у Вас возникли вопросы, пожалуйста, сообщение в нашей"
-
-#: ../../functions.php
-msgid "support forum"
-msgstr "Форум поддержки"
-
-#: ../../functions.php
-msgid "and we will get back to you as soon as we can"
-msgstr "и мы свяжемся с Вами, как только мы можем"
-
-#: ../../functions.php
-msgid "Thank you for choosing CyberChimps Professional WordPress Themes"
-msgstr "Благодарим вас за выбор CyberChimps Профессиональные WordPress Themes"
-
-#: ../../options/options-core.php ../../functions.php
-msgid "Pro"
-msgstr "Про"
-
-#: ../../functions.php
-msgid "Complete Installation"
-msgstr "Полная установка"
-
-#: ../../options/options-init.php ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
 msgstr "Инструкции"
 
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
 msgstr "Поддержка"
 
 #: ../../functions.php
-msgid "Upgrade to"
-msgstr "Обновление до"
+msgid "Upgrade to %1$s"
+msgstr "Обновление до %1$ s"
 
 #: ../../functions.php
-msgid "If you want even more amazing new features upgrade to"
-msgstr "Если вы хотите еще более удивительные новые функции обновления до"
+msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
+msgstr "Для еще более удивительные новые функции обновите %1$ s, которая включает в себя слайдер с настраиваемые функции, изображение карусель, widgetized коробки, раздел выноски, расширенной типографии (включая Google шрифты), дополнительный цвет шкуры и много более мощных новых функций. Посетите %2$ s чтобы узнать больше!"
 
 #: ../../functions.php
-msgid ""
-"which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, "
-"Callout Section, expanded typography including Google Fonts, more color "
-"skins, and many more powerful new features. Please visit"
-msgstr ""
-"который включает в себя пользовательский Slider характеристики, изображения "
-"Карусель, виджеты коробки, Выноска раздел, расширенный типографии в том "
-"числе Google шрифты, более шкуры цвет, и многие другие мощные новые "
-"возможности. Пожалуйста, посетите"
+msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
+msgstr "Добро пожаловать на %1$ s! Узнайте больше сейчас около обновление до %2$ s сегодня."
 
 #: ../../functions.php
-msgid "to learn more!"
-msgstr "чтобы узнать больше!"
-
-#: ../../functions.php
-msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "Добро пожаловать на %1$s ! Узнать больше сейчас об обновлении до"
-
-#: ../../functions.php
-msgid "today."
-msgstr "сегодня."
-
-#: ../../options/options-init.php ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
-msgstr "Опции"
+msgstr "Параметры"
 
 #: ../../functions.php
-msgid " Options"
-msgstr "Опции"
+msgid "Add Ons"
+msgstr "Добавить дополнений"
+
+#: ../../functions.php
+msgid "The Events Calendar"
+msgstr "Календарь событий"
+
+#: ../../functions.php
+#: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Цифровые загрузки"
+
+#: ../../functions.php
+msgid "Events"
+msgstr "События"
+
+#: ../../functions.php
+msgid "Events Plugin Options"
+msgstr "События плагин вариантов"
+
+#: ../../functions.php
+msgid "Please activate The Events Calendar plugin"
+msgstr "Пожалуйста, активируйте плагин календарь событий"
+
+#: ../../functions.php
+msgid "Install Events Calendar Plugin"
+msgstr "Установить плагин календарь событий"
+
+#: ../../functions.php
+msgid "Digital Downloads Settings"
+msgstr "Параметры цифровых загрузок"
+
+#: ../../functions.php
+msgid "Please activate Easy Digital Downloads plugin"
+msgstr "Пожалуйста, активируйте плагин календарь событий"
+
+#: ../../functions.php
+msgid "Install Easy Digital Downloads Plugin"
+msgstr "Установить плагин календарь событий"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Lite"
+msgstr "Слайдер Lite"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Boxes"
+msgstr "Коробки"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Page"
+msgstr "Пост страница"
+
+#: ../../hooks/blog-hooks.php
+msgid "Our Blog"
+msgstr "Блог"
+
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Logo + Icons"
+msgstr "Логотип + значки"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Или выбрать один из CyberChimps фоновых изображений"
 
 #: ../../init.php
 msgid "Primary Menu"
-msgstr "Первичное меню"
+msgstr "Основное меню"
 
 #: ../../init.php
 msgid "Sidebar Left"
-msgstr "Левая боковая панель"
+msgstr "Боковая панель слева"
 
 #: ../../init.php
 msgid "Sidebar Right"
 msgstr "Правая боковая панель"
 
-#: ../../options/options-core.php ../../init.php
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
-msgstr "Footer Виджеты"
+msgstr "Виджеты нижней части сайта"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
-msgid "Slider Lite"
-msgstr "Слайдер Lite"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
-msgid "Boxes"
-msgstr "[Окна]"
-
-#: ../../options/options-core.php ../../hooks/blog-hooks.php
-msgid "Post Page"
-msgstr "Сообщение страницу"
-
-#: ../../options/options-core.php ../../hooks/header-hooks.php
-msgid "Logo + Icons"
-msgstr "Логотип + Иконки"
-
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "Или выбрать один из CyberChimps фоновые изображения"
-
-#: ../../inc/meta-box-class.php
-msgid "Uploaded files"
-msgstr "Загруженные файлы"
-
-#: ../../inc/meta-box-class.php
-msgid "Upload new files"
-msgstr "Загрузите новые файлы"
-
-#: ../../inc/meta-box-class.php
-msgid "Add more file"
-msgstr "Добавить еще файл"
-
-#: ../../inc/meta-box-class.php
-msgid "Uploaded images"
-msgstr "Загруженные изображения"
-
-#: ../../inc/meta-box-class.php
-msgid "Upload new images (Make sure to publish the post to save)"
-msgstr ""
-"Загрузить новое изображение (Убедитесь в том, чтобы опубликовать сообщение в "
-"сохранение)"
-
-#: ../../inc/meta-box-class.php
-msgid "Select a color"
-msgstr "Выбрать цвет"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../inc/meta-box-class.php
-msgid "Upload"
-msgstr "Файл"
-
-#: ../../inc/meta-box-class.php
-msgid "or enter URL"
-msgstr "или введите URL"
-
-#: ../../inc/meta-box.php
-msgid "Slider Options"
-msgstr "Slider параметры"
-
-#: ../../inc/meta-box.php
-msgid "Slider Image"
-msgstr "Слайдер изображений"
-
-#: ../../inc/meta-box.php
-msgid "Slider Caption"
-msgstr "Ползунок заголовок"
-
-#: ../../inc/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Пользовательские ссылки слайдов"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Title"
-msgstr "Раздел"
-
-#: ../../inc/meta-box.php
-msgid "Caption"
-msgstr "Подпись"
-
-#: ../../inc/meta-box.php
-msgid "Need Help?"
-msgstr "Нужна помощь?"
-
-#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Select Page Layout"
-msgstr "Выберите Page Layout"
+msgstr "Выберите макет страницы"
 
-#: ../../inc/meta-box.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Название страницы"
 
-#: ../../inc/meta-box.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Элементы страницы"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Страница"
+
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Portfolio Lite"
 msgstr "Портфолио Lite"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Twitter Bar"
 msgstr "Twitter Бар"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Meta Data"
-msgstr "Мета-данные"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Рекомендуемые изображение"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Category"
-msgstr "Категория"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "You need to create a Category"
-msgstr "Вам нужно создать категории"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Number of Columns"
-msgstr "Количество столбцов"
-
-#: ../../inc/meta-box.php
-msgid "Number of Posts"
-msgstr "Количество должностей"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Wide Posts Below Magazine"
-msgstr "Широкий должностей ниже журнал"
-
-#: ../../inc/meta-box.php
-msgid "Number of Wide Posts "
-msgstr "Количество должностей, широкий "
-
-#: ../../inc/meta-box.php
-msgid "Slide One Image"
-msgstr "Вставьте один Изображение"
-
-#: ../../inc/meta-box.php
-msgid "Slide One Link"
-msgstr "Слайд One Link"
-
-#: ../../inc/meta-box.php
-msgid "Slide Two Image"
-msgstr "Презентация два изображения"
-
-#: ../../inc/meta-box.php
-msgid "Slide Two Link"
-msgstr "Вставьте два Link"
-
-#: ../../inc/meta-box.php
-msgid "Slide Three Image"
-msgstr "Вставьте три изображения"
-
-#: ../../inc/meta-box.php
-msgid "Slide Three Link"
-msgstr "Вставьте три Link"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Slider Size"
-msgstr "Слайдер Размеры"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Full"
-msgstr "полное"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Half"
-msgstr "Половина"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Slider Type"
-msgstr "Слайдер Тип"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Custom"
-msgstr "Другая"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Posts"
-msgstr "Записи"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Post Categories"
-msgstr "Сообщение категории"
-
-#: ../../inc/meta-box.php
-msgid "All"
-msgstr "Все"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Custom Categories"
-msgstr "Пользовательские категории"
-
-#: ../../inc/meta-box.php
-msgid "Number of Featured Posts"
-msgstr "Количество Лучшие сообщения"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Slider Height"
-msgstr "Слайдер высоты"
-
-#: ../../inc/meta-box.php
-msgid "Slider Speed"
-msgstr "Slider скорость"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Slider Arrows"
-msgstr "Slider Стрелки"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Callout Title"
-msgstr "Выноска Название"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "%1$s's Call Out Element"
-msgstr "%1$s »с Call Out Элемент"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Callout Text"
-msgstr "Выноска текст"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Используйте %1$s »с Call Out раздела на любой странице, где вы хотите, чтобы "
-"доставить важное сообщение для вашего клиента или клиента."
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Callout Button"
-msgstr "Выноска Button"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Callout Button Text"
-msgstr "Выноска текста кнопки"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Callout Button URL"
-msgstr "Выноска кнопка URL"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Custom Callout Options"
-msgstr "Пользовательские параметры Выноска"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Image"
-msgstr "Custom Image Button"
-
-#: ../../inc/meta-box.php
-msgid "Custom Background Color"
-msgstr "Пользовательский цвет фона"
-
-#: ../../inc/meta-box.php
-msgid "Custom Title Color"
-msgstr "Custom Color Название"
-
-#: ../../inc/meta-box.php
-msgid "Custom Text Color"
-msgstr "Custom Color текст"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Color"
-msgstr "Custom Color Button"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Text Color"
-msgstr "Пользовательский цвет текста кнопки"
-
-#: ../../inc/meta-box.php
-msgid "Need help?"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
 msgstr "Нужна помощь?"
 
-#: ../../inc/meta-box.php
-msgid "Custom HTML"
-msgstr "Особый HTML"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr "Посетите руководство параметры страницы %s"
 
-#: ../../inc/meta-box.php
-msgid "Enter your custom html here"
-msgstr "Введите ваш пользовательский HTML здесь"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Сохранить параметры"
 
-#: ../../inc/meta-box.php
-msgid "Images per row"
-msgstr "Изображения в строке"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Изображения ползунок"
 
-#: ../../inc/meta-box.php
-msgid "Two"
-msgstr "Два"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Ползунок заголовок"
 
-#: ../../inc/meta-box.php
-msgid "Three"
-msgstr "три"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Ссылка слайдов"
 
-#: ../../inc/meta-box.php
-msgid "Four"
-msgstr "четыре"
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "Название"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Portfolio Category"
-msgstr "Портфолио категории"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Подпись"
 
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Portfolio Title"
-msgstr "Портфолио Название"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Пользовательские категории"
 
-#: ../../inc/meta-box.php
-msgid "Portfolio"
-msgstr "Наше видео"
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Убрать"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "First Portfolio Image"
-msgstr "Первая картинка Портфолио"
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Add"
+msgstr "Добавить дополнений"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "First Portfolio Image Caption"
-msgstr "Первый заголовок изображения Портфолио"
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr "К сожалению, вы не можете загрузить этот тип файла для этого поля."
 
-#: ../../inc/meta-box.php
-msgid "Image 1"
-msgstr "Изображение 1"
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Загрузить"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "First Porfolio Link"
-msgstr "Первая ссылка портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Link URL"
-msgstr "Ссылка"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Second Portfolio Image"
-msgstr "Второе изображение Портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Second Portfolio Image Caption"
-msgstr "Второй заголовок изображения Портфолио"
-
-#: ../../inc/meta-box.php
-msgid "Image 2"
-msgstr "Изображение 2"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Second Porfolio Link"
-msgstr "Вторая ссылка портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Third Portfolio Image"
-msgstr "Третье изображение Портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Third Portfolio Image Caption"
-msgstr "Третий Caption изображения Портфолио"
-
-#: ../../inc/meta-box.php
-msgid "Image 3"
-msgstr "Изображение 3"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Third Porfolio Link"
-msgstr "Третья ссылка портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Fourth Portfolio Image"
-msgstr "Четвертое изображение Портфолио"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Fourth Portfolio Image Caption"
-msgstr "Четвертый Caption изображения Портфолио"
-
-#: ../../inc/meta-box.php
-msgid "Image 4"
-msgstr "Изображение 4."
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Fourth Porfolio Link"
-msgstr "Четвертый Link портфолио"
-
-#: ../../inc/meta-box.php
-msgid "Post Category"
-msgstr "Сообщение категории"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Images"
-msgstr "Картинки"
-
-#: ../../inc/meta-box.php
-msgid "Carousel Category"
-msgstr "Карусель Категория"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Twitter Handle"
-msgstr "Twitter ручкой"
-
-#: ../../inc/meta-box.php
-msgid "Enter your Twitter handle if using the Twitter bar"
-msgstr "Введите свой Twitter ручки при использовании бар Twitter"
-
-#: ../../inc/meta-box.php
-msgid "Boxes Category"
-msgstr "Коробки категории"
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "или введите URL-адрес"
 
 #: ../../options/options-core.php
 msgid "Help"
-msgstr "Помощь"
+msgstr "Справка"
 
 #: ../../options/options-core.php
 msgid "Design"
@@ -619,15 +328,15 @@ msgstr "Шаблоны"
 
 #: ../../options/options-core.php
 msgid "Footer"
-msgstr "Подвал"
+msgstr "Нижний колонтитул"
 
 #: ../../options/options-core.php
 msgid "Layout Options"
-msgstr "Варианты формата"
+msgstr "Параметры макета"
 
 #: ../../options/options-core.php
 msgid "Custom Colors"
-msgstr "Настройка цвета"
+msgstr "Пользовательские цвета"
 
 #: ../../options/options-core.php
 msgid "Typography"
@@ -635,31 +344,31 @@ msgstr "Типография"
 
 #: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr "Перетащите заголовок и выпадения"
+msgstr "Перетащите заголовок & Drop"
 
 #: ../../options/options-core.php
 msgid "Header Options"
-msgstr "Header параметры"
+msgstr "Варианты заголовка"
 
 #: ../../options/options-core.php
 msgid "Social Icons"
-msgstr "Социальные иконки"
+msgstr "Социальная иконки"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr "Перетащите и Отбросьте"
+msgstr "Перетащить &"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
-msgstr "Настройки Блога"
+msgstr "Блог опции"
 
 #: ../../options/options-core.php
 msgid "Blog Slider Lite"
-msgstr "Блог Slider Lite"
+msgstr "Блог слайдер Lite"
 
 #: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr "Портфолио Lite параметры"
+msgstr "Портфолио Lite опции"
 
 #: ../../options/options-core.php
 msgid "Boxes Lite"
@@ -667,55 +376,47 @@ msgstr "Коробки Lite"
 
 #: ../../options/options-core.php
 msgid "Blog Slider"
-msgstr "Блог Slider"
+msgstr "Блог слайдер"
 
 #: ../../options/options-core.php
 msgid "Callout Options"
-msgstr "Выноска параметры"
+msgstr "Выноска опции"
 
 #: ../../options/options-core.php
 msgid "HTML Box Options"
-msgstr "Параметры HTML-Box"
+msgstr "Параметры HTML"
 
 #: ../../options/options-core.php
 msgid "Carousel Options"
-msgstr "Карусель параметры"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Журнал опции"
+msgstr "Карусель опции"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
-msgstr "Портфолио Pro Опции"
+msgstr "Портфолио про опции"
 
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
-msgstr "Последние Опции сообщения"
-
-#: ../../options/options-core.php
-msgid "Twitterbar Options"
-msgstr "TwitterBar параметры"
+msgstr "Недавние сообщения опции"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
-msgstr "Коробки параметры"
+msgstr "Варианты коробки"
 
 #: ../../options/options-core.php
 msgid "Single Post"
-msgstr "Одна запись"
+msgstr "Один пост"
 
 #: ../../options/options-core.php
 msgid "Archive"
-msgstr "Архивировать"
+msgstr "Архив"
 
 #: ../../options/options-core.php
 msgid "Search"
-msgstr "поиск"
+msgstr "Поиск"
 
 #: ../../options/options-core.php
 msgid "Footer Options"
-msgstr "Footer опции"
+msgstr "Опции нижнего колонтитула"
 
 #: ../../options/options-core.php
 msgid "Author"
@@ -723,7 +424,7 @@ msgstr "Автор"
 
 #: ../../options/options-core.php
 msgid "Categories"
-msgstr "Рубрики"
+msgstr "Категории"
 
 #: ../../options/options-core.php
 msgid "Date"
@@ -734,20 +435,20 @@ msgid "Tags"
 msgstr "Теги"
 
 #: ../../options/options-core.php
-msgid "Cyberchimps Help"
-msgstr "Cyberchimps Помощь"
-
-#: ../../options/options-core.php
-msgid "Welcome Note"
-msgstr "Приветствуем Вас"
+msgid "CyberChimps Help"
+msgstr "Cyberchimps помощь"
 
 #: ../../options/options-core.php
 msgid "Responsive Design"
-msgstr "Отзывчивый Design"
+msgstr "Чутко дизайн"
 
 #: ../../options/options-core.php
 msgid "Responsive Videos"
-msgstr "Отзывчивый Видео"
+msgstr "Чутко видео"
+
+#: ../../options/options-core.php
+msgid "Gallery Lightbox"
+msgstr "Лайтбокс Галерея"
 
 #: ../../options/options-core.php
 msgid "Wide Sidebar"
@@ -757,9 +458,10 @@ msgstr "Широкий боковой панели"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Работает только на макеты с 1 боковой панели"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
-msgstr "Макс. ширина"
+msgstr "Макс ширина"
 
 #: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
@@ -769,53 +471,69 @@ msgstr "Введите ширину вашего сайта в пикселях"
 msgid "Select a Skin Color"
 msgstr "Выберите цвет кожи"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
 msgstr "Цвет текста"
 
 #: ../../options/options-core.php
 msgid "Select text color"
-msgstr "Выбрать цвет текста"
+msgstr "Выберите цвет текста"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
-msgstr "Цвет ссылки"
+msgstr "Цвет ссылок"
 
 #: ../../options/options-core.php
 msgid "Select link color"
-msgstr "Выберите цвет ссылки"
+msgstr "Выберите цвет ссылок"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
-msgstr "Цвет Link Hover"
+msgstr "Цвет ссылок при наведении"
 
 #: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr "Выберите цвет ссылки при наведении"
+msgstr "Выберите цвет ссылок при наведении"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
-msgstr "Типография параметры"
+msgstr "Типография опции"
 
 #: ../../options/options-core.php
-msgid "Google fonts"
-msgstr "Google шрифтов"
-
-#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Enter Google font"
-msgstr "Введите Google шрифтов"
+msgstr "Введите Google шрифт"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Google font names are case sensitive"
+msgstr "Google шрифт имена чувствительны к регистру"
 
 #: ../../options/options-core.php
 msgid "Demo Text"
 msgstr "Демо текст"
 
 #: ../../options/options-core.php
+#: ../../options/options-customizer.php
+msgid "Font Family for headings"
+msgstr "Семейство шрифтов для заголовков"
+
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
+msgid "Google font for headings"
+msgstr "Google шрифты"
+
+#: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr "Перетащите заголовок / Drop"
+msgstr "Перетаскивание заголовка"
 
 #: ../../options/options-core.php
 msgid "Logo + Search"
-msgstr "Логотип + поиск"
+msgstr "Логотип + Поиск"
 
 #: ../../options/options-core.php
 msgid "Logo"
@@ -823,31 +541,43 @@ msgstr "Логотип"
 
 #: ../../options/options-core.php
 msgid "Custom Logo URL"
-msgstr "URL персонализированного логотипа"
+msgstr "URL-адрес пользовательского логотипа"
 
 #: ../../options/options-core.php
 msgid "URL"
-msgstr "URL:"
+msgstr "URL-АДРЕС"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
-msgstr "Введите Url"
+msgstr "Введите URL-адрес"
 
 #: ../../options/options-core.php
 msgid "Custom Logo"
-msgstr "Собственный Logo"
+msgstr "Логотип"
 
 #: ../../options/options-core.php
 msgid "Logo Image"
-msgstr "Изображение логотипа"
+msgstr "Изображения логотипа"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr "Введите URL или загрузить файл"
+msgstr "Введите URL-адрес или загрузить файл"
 
 #: ../../options/options-core.php
 msgid "Custom Favicon"
-msgstr "Пользовательские Favicon"
+msgstr "Пользовательские иконки"
 
 #: ../../options/options-core.php
 msgid "Favicon URL"
@@ -855,7 +585,7 @@ msgstr "Значок URL-адрес"
 
 #: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr "Пользовательские Apple, нажмите иконку"
+msgstr "Пользовательский значок touch Apple"
 
 #: ../../options/options-core.php
 msgid "Apple Touch URL"
@@ -867,23 +597,23 @@ msgstr "Google Analytics"
 
 #: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr "Скопируйте и вставьте код Google Analytics здесь"
+msgstr "Скопируйте и вставьте ваш Google Analytics код здесь"
 
 #: ../../options/options-core.php
 msgid "Searchbar"
 msgstr "Searchbar"
 
 #: ../../options/options-core.php
+msgid "Header Scripts"
+msgstr "Header параметры"
+
+#: ../../options/options-core.php
+msgid "Please add script tags"
+msgstr "Пожалуйста, добавьте теги сценария"
+
+#: ../../options/options-core.php
 msgid "Choose your icon style"
-msgstr "Выберите икона стиля"
-
-#: ../../options/options-core.php
-msgid "Twitter"
-msgstr "Твиттер"
-
-#: ../../options/options-core.php
-msgid "Twitter URL"
-msgstr "Щебетать URL"
+msgstr "Выберите свой стиль значок"
 
 #: ../../options/options-core.php
 msgid "Facebook"
@@ -891,7 +621,15 @@ msgstr "Facebook"
 
 #: ../../options/options-core.php
 msgid "Facebook URL"
-msgstr "Facebook URL"
+msgstr "Facebook URL-адрес"
+
+#: ../../options/options-core.php
+msgid "Twitter"
+msgstr "Щебетать"
+
+#: ../../options/options-core.php
+msgid "Twitter URL"
+msgstr "Щебетать URL"
 
 #: ../../options/options-core.php
 msgid "Google+"
@@ -900,6 +638,22 @@ msgstr "Google +"
 #: ../../options/options-core.php
 msgid "Google+ URL"
 msgstr "Google + URL-адрес"
+
+#: ../../options/options-core.php
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: ../../options/options-core.php
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL-адрес"
+
+#: ../../options/options-core.php
+msgid "YouTube"
+msgstr "YouTube"
+
+#: ../../options/options-core.php
+msgid "YouTube URL"
+msgstr "YouTube URL"
 
 #: ../../options/options-core.php
 msgid "Flickr"
@@ -915,23 +669,23 @@ msgstr "Pinterest"
 
 #: ../../options/options-core.php
 msgid "Pinterest URL"
-msgstr "Pinterest URL"
+msgstr "Pinterest URL-адрес"
 
 #: ../../options/options-core.php
-msgid "LinkedIn"
-msgstr "LinkedIn"
+msgid "Google Maps"
+msgstr "Карты Google"
 
 #: ../../options/options-core.php
-msgid "LinkedIn URL"
-msgstr "LinkedIn URL"
+msgid "Google Maps URL"
+msgstr "URL-адрес карты Google"
 
 #: ../../options/options-core.php
-msgid "YouTube"
-msgstr "YouTube"
+msgid "Email"
+msgstr "Отправить по электронной почте"
 
 #: ../../options/options-core.php
-msgid "YouTube URL"
-msgstr "YouTube URL"
+msgid "Email Address"
+msgstr "Адрес электронной почты"
 
 #: ../../options/options-core.php
 msgid "RSS"
@@ -939,196 +693,346 @@ msgstr "RSS"
 
 #: ../../options/options-core.php
 msgid "RSS URL"
-msgstr "URL источника RSS"
+msgstr "RSS URL"
 
 #: ../../options/options-core.php
-msgid "Email"
-msgstr "E-mail"
+msgid "Instagram"
+msgstr "Instagram"
 
 #: ../../options/options-core.php
-msgid "Email Address"
-msgstr "Адрес E-mail"
-
-#: ../../options/options-core.php
-msgid "Google Maps"
-msgstr "Карта Google"
-
-#: ../../options/options-core.php
-msgid "Google Maps URL"
-msgstr "URL-адрес карты Google"
+msgid "Instagram URL"
+msgstr "URL-адрес Instagram"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr "Перетащите и Отбросьте блоге Elements"
+msgstr "Перетащите & блог элементы"
 
 #: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Боковая панель Опции"
+msgid "Blog Title"
+msgstr "Название страницы"
+
+#: ../../options/options-core.php
+msgid "Blog Title Text"
+msgstr "Название блога текст"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr "Сообщение форматы Иконки"
+msgstr "Пост форматы иконок"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr "Сообщение Выдержки"
+msgstr "После выдержки"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
-msgstr "Подробнее текста"
+msgstr "Читать больше текста"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr "Выдержки длина"
+msgstr "Длина выдержки"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
-msgstr "Избранные изображения"
+msgstr "Популярные изображения"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr "Сообщение Автор Byline"
+msgstr "Пост Byline автора"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
-msgstr "Сообщение Byline категории"
+msgstr "Пост Byline категории"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr "Сообщение Byline дате"
+msgstr "Дата подписи автора"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr "Сообщение Byline Комментарии"
+msgstr "Почтовые автор сообщения комментарии"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr "Сообщение Byline тегов"
+msgstr "Пост Byline Теги"
 
 #: ../../options/options-core.php
 msgid "Boxes Upgrade"
-msgstr "Коробки обновления"
+msgstr "Обновление полей"
 
 #: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Коробки Lite ограничивает вас в общей сложности 3 коробки на протяжении "
-"всего сайта в целом. Переход на %1$s , чтобы иметь возможность создать "
-"столько ящиков, как вам нравится. Классифицировать их и отображения каждой "
-"категории на другую страницу."
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Коробки Lite ограничивает вас в общей сложности 3 коробки на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько коробки, как вам нравится. Классифицировать их и отображения каждой категории на другой странице."
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Pro"
+msgstr "Про"
+
+#: ../../options/options-core.php
+msgid "First Box Image"
+msgstr "Первое поле изображение"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Link URL"
+msgstr "URL-адрес ссылки"
+
+#: ../../options/options-core.php
+msgid "First Box Text"
+msgstr "Первый текст в окне"
+
+#: ../../options/options-core.php
+msgid "Second Box Image"
+msgstr "Второе поле изображение"
+
+#: ../../options/options-core.php
+msgid "Second Box Text"
+msgstr "Второй текст в окне"
+
+#: ../../options/options-core.php
+msgid "Third Box Image"
+msgstr "Третье поле изображение"
+
+#: ../../options/options-core.php
+msgid "Third Box Text"
+msgstr "Третье поле текст"
 
 #: ../../options/options-core.php
 msgid "Portfolio Upgrade"
-msgstr "Портфолио обновления"
+msgstr "Обновление портфолио"
 
 #: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Портфолио Lite ограничивает вас в общей сложности 4 пунктов на протяжении "
-"всего сайта в целом. Переход на %1$s , чтобы иметь возможность создать много "
-"элементов портфеля, как вам нравится. Классифицировать их и отображения "
-"каждой категории на другую страницу."
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Портфолио Lite ограничивает вас в общей сложности 4 пунктов на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько элементов портфолио, как вам нравится. Классифицировать их и отображения каждой категории на другой странице."
+
+#: ../../options/options-core.php
+msgid "First Portfolio Image"
+msgstr "Первое изображение портфолио"
+
+#: ../../options/options-core.php
+msgid "First Portfolio Image Caption"
+msgstr "Первый заголовок изображения портфолио"
+
+#: ../../options/options-core.php
+msgid "First Porfolio Link"
+msgstr "Первая ссылка портфель"
+
+#: ../../options/options-core.php
+msgid "Second Portfolio Image"
+msgstr "Вторая портфель изображения"
+
+#: ../../options/options-core.php
+msgid "Second Portfolio Image Caption"
+msgstr "Второй подписи изображения портфолио"
+
+#: ../../options/options-core.php
+msgid "Second Porfolio Link"
+msgstr "Вторая ссылка портфель"
+
+#: ../../options/options-core.php
+msgid "Third Portfolio Image"
+msgstr "Третье изображение портфолио"
+
+#: ../../options/options-core.php
+msgid "Third Portfolio Image Caption"
+msgstr "Третий подписи изображения портфолио"
+
+#: ../../options/options-core.php
+msgid "Third Porfolio Link"
+msgstr "Третья ссылка портфель"
+
+#: ../../options/options-core.php
+msgid "Fourth Portfolio Image"
+msgstr "Четвертое изображение портфолио"
+
+#: ../../options/options-core.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Четвертый подписи изображения портфолио"
+
+#: ../../options/options-core.php
+msgid "Fourth Porfolio Link"
+msgstr "Четвертый портфель ссылка"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Portfolio Title"
+msgstr "Портфолио название"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
-msgstr "Slider обновления"
+msgstr "Слайдер обновления"
 
 #: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Slider Lite ограничивает вас в общей сложности 3 изображения на протяжении "
-"всего сайта в целом. Переход на %1$s , чтобы иметь возможность создать "
-"несколько изображений. Классифицировать их и отображения каждой категории на "
-"другую страницу."
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Ползунок Lite ограничивает вас в общей сложности 3 изображения на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать более изображений. Классифицировать их и отображения каждой категории на другой странице."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
-msgstr "Slider Изображение 1"
+msgstr "Ползунок изображение 1"
 
 #: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr "Слайд 1 URL"
+msgstr "Слайд 1 URL-адрес"
 
 #: ../../options/options-core.php
 msgid "Slider Image 2"
-msgstr "Slider Изображение 2"
+msgstr "Ползунок изображение 2"
 
 #: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr "Слайд 2 URL"
+msgstr "URL-адрес слайд 2"
 
 #: ../../options/options-core.php
 msgid "Slider Image 3"
-msgstr "Slider Изображение 3"
+msgstr "Ползунок изображение 3"
 
 #: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr "Слайд 3 URL"
+msgstr "Слайд 3 URL-адрес"
 
 #: ../../options/options-core.php
 msgid "Images per Row"
 msgstr "Изображения в строке"
 
 #: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Рекомендуемые Выдержки длина"
+#: ../../options/options-core.php
+msgid "Portfolio Category"
+msgstr "Портфолио Категория"
 
 #: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Количество строк"
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "You need to create a Category"
+msgstr "Вам необходимо создать категорию"
 
 #: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Широкий пост отрывок длина"
+msgid "Slider Size"
+msgstr "Размер Slider"
 
 #: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Количество должностей, широкий"
+msgid "Full"
+msgstr "Полный"
+
+#: ../../options/options-core.php
+msgid "Half"
+msgstr "Половина"
+
+#: ../../options/options-core.php
+msgid "Slider Type"
+msgstr "Тип Slider"
+
+#: ../../options/options-core.php
+msgid "Posts"
+msgstr "Сообщения"
+
+#: ../../options/options-core.php
+msgid "Custom"
+msgstr "Пользовательские"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Categories"
+msgstr "Пост категории"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Custom Categories"
+msgstr "Пользовательские категории"
 
 #: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
-msgstr "Количество Популярные записи в блоге"
+msgstr "Количество Рекомендуемые блога"
+
+#: ../../options/options-core.php
+msgid "Slider Height"
+msgstr "Ползунок высота"
 
 #: ../../options/options-core.php
 msgid "Slider Speed "
-msgstr "Slider скорость"
+msgstr "Ползунок скорость "
+
+#: ../../options/options-core.php
+msgid "Slider Arrows"
+msgstr "Ползунок стрелы"
+
+#: ../../options/options-core.php
+msgid "Callout Title"
+msgstr "Выноска название"
+
+#: ../../options/options-core.php
+msgid "%1$s's Call Out Element"
+msgstr "%1$ сек вызов элемента"
+
+#: ../../options/options-core.php
+msgid "Callout Text"
+msgstr "Текст выноски"
+
+#: ../../options/options-core.php
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Используйте %1$ сек вызова из секции на любой странице, где вы хотите доставить важное сообщение для вашего клиента или клиента."
+
+#: ../../options/options-core.php
+msgid "Callout Button"
+msgstr "Выноска кнопка"
+
+#: ../../options/options-core.php
+msgid "Callout Button Text"
+msgstr "Текст выноски кнопки"
 
 #: ../../options/options-core.php
 msgid "Click Here"
-msgstr "Нажмите Сюда"
+msgstr "Нажмите здесь"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Button"
-msgstr "Пользовательские кнопки Выноска"
+msgid "Callout Button URL"
+msgstr "Выноска кнопку URL-адрес"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Background Color"
-msgstr "Пользовательские Выноска цвет фона"
+msgid "Custom Callout Options"
+msgstr "Параметры пользовательских выноска"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Title Color"
-msgstr "Пользовательские Выноска Название цвета"
+msgid "Button"
+msgstr "Пользовательские выноска кнопка"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Text Color"
-msgstr "Пользовательские Выноска Цвет текста"
+msgid "Background Color"
+msgstr "Цвет фона пользовательской выноска"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Button Color"
-msgstr "Пользовательские Выноска цвет кнопки"
+msgid "Title Color"
+msgstr "Цвет заголовка настраиваемого выноска"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Button Text Color"
-msgstr "Пользовательские Выноска цвет текста кнопки"
+msgid "Button Color"
+msgstr "Цвет кнопки пользовательские выноска"
+
+#: ../../options/options-core.php
+msgid "Button Text Color"
+msgstr "Цвет текста кнопки пользовательские выноска"
 
 #: ../../options/options-core.php
 msgid "HTML Box"
@@ -1136,49 +1040,69 @@ msgstr "Поле HTML"
 
 #: ../../options/options-core.php
 msgid "Enter your custom HTML code here"
-msgstr "Введите ваш пользовательский код HTML здесь"
+msgstr "Введите пользовательские HTML-код здесь"
 
 #: ../../options/options-core.php
 msgid "Custom Title"
-msgstr "Подпись под"
+msgstr "Пользовательский заголовок"
 
+#: ../../options/options-core.php
+msgid "Images"
+msgstr "Изображения"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Select a Category"
-msgstr "Выбрать категорию"
+msgstr "Выберите категорию"
 
 #: ../../options/options-core.php
+msgid "Number of boxes per row"
+msgstr "Количество коробок в строке"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Опции панели"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Images for layout."
-msgstr "Изображения для разметки."
+msgstr "Образы для макета."
 
 #: ../../options/options-core.php
 msgid "Post title"
-msgstr "Сообщение название"
+msgstr "Название должности"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Format Icons"
-msgstr "Сообщение значки формата"
+msgstr "Сообщение формата иконки"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Title"
-msgstr "Подпись под 404"
+msgstr "Название пользовательского 404"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Content"
-msgstr "Пользовательский контент 404"
+msgstr "Пользовательские 404 содержание"
 
 #: ../../options/options-core.php
 msgid "Footer Copyright Text"
-msgstr "Footer текста Copyright"
+msgstr "Текст нижнего колонтитула авторского права"
 
 #: ../../options/options-customizer.php
 msgid "Customize"
 msgstr "Настроить"
 
 #: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
-"убедитесь, что Вы удалили изображение выше, прежде чем выбрать одну из этих"
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "Убедитесь, что вы удалили изображение выше прежде чем выбрать один из этих"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -1186,15 +1110,15 @@ msgstr "Цвет кожи"
 
 #: ../../options/options-customizer.php
 msgid "Typography Size"
-msgstr "Типография размер"
-
-#: ../../options/options-customizer.php
-msgid "Typography Face"
-msgstr "Типография лица"
+msgstr "Типографии размер"
 
 #: ../../options/options-customizer.php
 msgid "Typography Style"
 msgstr "Типография стиль"
+
+#: ../../options/options-customizer.php
+msgid "Typography Face"
+msgstr "Типография лицо"
 
 #: ../../options/options-customizer.php
 msgid "Background Image"
@@ -1202,72 +1126,63 @@ msgstr "Фоновое изображение"
 
 #: ../../options/options-init.php
 msgid "Theme Options Page"
-msgstr "Страница настроек темы"
+msgstr "Страница Параметры тема"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
-msgstr "Настройки темы"
+msgstr "Тема опции"
 
 #: ../../options/options-init.php
 msgid "Buy Themes"
 msgstr "Купить темы"
 
 #: ../../options/options-init.php
-msgid "Open All"
-msgstr "Открыть все"
-
 #: ../../options/options-init.php
-msgid "Collapse All"
-msgstr "Свернуть вс"
-
-#: ../../options/options-init.php
-msgid "Restore Defaults"
-msgstr "Сбросить настройки"
-
-#: ../../options/options-init.php
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "Нажмите OK для сброса. Любая тема настройки будут утеряны!"
-
 #: ../../options/options-init.php
 msgid "Save Options"
-msgstr "Сохранить параметры"
+msgstr "Параметры сохранения"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
-msgstr "CyberChimps Wordpress Темы"
+#: ../../options/options-init.php
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Нажмите кнопку ОК, чтобы сбросить. Любые параметры темы будут потеряны!"
 
 #: ../../options/options-init.php
-msgid "Link to Events plugin settings"
-msgstr "Ссылка на настройки плагина события"
+#: ../../options/options-init.php
+msgid "Restore Defaults"
+msgstr "Восстановить настройки по умолчанию"
 
 #: ../../options/options-init.php
-msgid "Insert custom events info and insert install link"
-msgstr ""
-"Вставьте пользовательских информации событий и включить установку ссылку"
+#: ../../options/options-init.php
+msgid "CyberChimps WordPress Themes"
+msgstr "CyberChimps Wordpress темы"
 
 #: ../../options/options-init.php
 msgid "Default Field"
-msgstr "По умолчанию поле"
+msgstr "Поля по умолчанию"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Options Imported"
-msgstr "Параметры импортного"
+msgstr "Параметры импорта"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Invalid Data for Import"
-msgstr "Неверные данные для импорта"
+msgstr "Недопустимые данные для импорта"
 
 #: ../../options/options-init.php
 msgid "Default options restored."
-msgstr "Настройки по умолчанию восстановлены."
+msgstr "Восстановить параметры по умолчанию."
 
 #: ../../options/options-init.php
 msgid "Options saved."
-msgstr "Настройки сохранены"
+msgstr "Параметры сохраняются."
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
-msgstr "Тема Функции СМИ"
+msgstr "Тема вариантов средства массовой информации"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1279,7 +1194,7 @@ msgstr "Галерея"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Previously Uploaded"
-msgstr "Ранее Загружен"
+msgstr "Ранее загружены"
 
 #: ../../options/options-sanitize.php
 msgid "No Repeat"
@@ -1287,72 +1202,77 @@ msgstr "Не повторять"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Horizontally"
-msgstr "Повторять горизонтально"
+msgstr "Повторить по горизонтали"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Vertically"
-msgstr "Повторите Вертикально"
+msgstr "Повторять вертикально"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat All"
-msgstr "Повтор"
+msgstr "Повторить все"
 
 #: ../../options/options-sanitize.php
 msgid "Top Left"
-msgstr "Влево вверх"
+msgstr "Верхний левый"
 
 #: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr "Лучшие центр"
+msgstr "Топ центр"
 
 #: ../../options/options-sanitize.php
 msgid "Top Right"
-msgstr "Вправо вверх"
+msgstr "Вверху справа"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Left"
-msgstr "Ближний левый"
+msgstr "Посередине слева"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Center"
-msgstr "Ближний центр"
+msgstr "Центр среднего"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Right"
-msgstr "Посередине Справа"
+msgstr "Ближний право"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Left"
-msgstr "Влево вниз"
+msgstr "Внизу слева"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Center"
-msgstr "От центра снизу"
+msgstr "Внизу, в центре"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Right"
-msgstr "Вправо вниз"
+msgstr "Внизу справа"
 
 #: ../../options/options-sanitize.php
 msgid "Scroll Normally"
-msgstr "Выделите нормально"
+msgstr "Прокрутки обычно"
 
 #: ../../options/options-sanitize.php
 msgid "Fixed in Place"
-msgstr "Зафиксированы на месте"
+msgstr "Исправлено в место"
 
 #: ../../options/options-sanitize.php
 msgid "Normal"
-msgstr "обычный"
+msgstr "Нормальный"
 
 #: ../../options/options-sanitize.php
 msgid "Italic"
-msgstr "курсив"
+msgstr "Курсив"
 
 #: ../../options/options-sanitize.php
 msgid "Bold"
-msgstr "Жирн."
+msgstr "Жирный"
 
 #: ../../options/options-sanitize.php
 msgid "Bold Italic"
 msgstr "Полужирный курсив"
+
+#: ../../options/theme-upsell.php
+msgid "Themes You Can Trust"
+msgstr "Темы, которой можно доверять"
+
