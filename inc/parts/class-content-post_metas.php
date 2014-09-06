@@ -34,9 +34,9 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
             $post_metas_bool            = ( tc__f('__is_home') || is_404() || 'page' == $post -> post_type ) ? false : true ;
             $post_metas_bool            = apply_filters('tc_show_post_metas', $post_metas_bool ); 
             
-            if (!$post_metas_bool)
+            if ( ! $post_metas_bool )
                 return;
-            
+
             ob_start();
             ?>
 
@@ -46,7 +46,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
                     $metadata       = wp_get_attachment_metadata();
                     printf( '%1$s <span class="entry-date"><time class="entry-date updated" datetime="%2$s">%3$s</time></span> %4$s %5$s',
                         '<span class="meta-prep meta-prep-entry-date">'.__('Published' , 'customizr').'</span>',
-                        esc_attr( get_the_date( 'c' ) ),
+                        apply_filters('tc_use_the_post_modified_date' , false ) ? esc_attr( get_the_date( 'c' ) ) : esc_attr( get_the_modified_date('c') ),
                         esc_html( get_the_date() ),
                         ( isset($metadata['width']) && isset($metadata['height']) ) ? __('at dimensions' , 'customizr').'<a href="'.esc_url( wp_get_attachment_url() ).'" title="'.__('Link to full-size image' , 'customizr').'"> '.$metadata['width'].' &times; '.$metadata['height'].'</a>' : '',
                         __('in' , 'customizr').'<a href="'.esc_url( get_permalink( $post->post_parent ) ).'" title="'.__('Return to ' , 'customizr').esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ).'" rel="gallery"> '.get_the_title( $post->post_parent ).'</a>.'
@@ -63,7 +63,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
                                         sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s">%4$s</time></a>' ,
                                             esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ),
                                             esc_attr( get_the_time() ),
-                                            esc_attr( get_the_date( 'c' ) ),
+                                            apply_filters('tc_use_the_post_modified_date' , false ) ? esc_attr( get_the_date( 'c' ) ) : esc_attr( get_the_modified_date('c') ),
                                             esc_html( get_the_date() )
                                         )
                     );//end filter
@@ -77,6 +77,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
                     );//end filter
 
                     // Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
+                    $utility_text       = '';
                     if ( $tag_list ) {
                         $utility_text   = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.' , 'customizr' );
                         } elseif ( $categories_list ) {
@@ -185,7 +186,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
             //filter the post taxonomies
             while ( $el = current($tax_list) ) {
                 //skip the post format taxinomy
-                if ( in_array( key($tax_list) , apply_filters( 'tc_exclude_taxonomies_from_metas' , array('post_format') , $post_type , tc__f('__ID') ) ) ) {
+                if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , tc__f('__ID') ) ) ) ) {
                     next($tax_list);
                     continue;
                 }

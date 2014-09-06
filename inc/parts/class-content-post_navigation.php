@@ -34,7 +34,7 @@ if ( ! class_exists( 'TC_post_navigation' ) ) :
         //2) + filter conditions
         $post_navigation_bool         = is_page( tc__f ( '__ID' ) ) ? false : true ;
 
-        if( !apply_filters('tc_show_post_navigation', $post_navigation_bool ) )
+        if( ! apply_filters( 'tc_show_post_navigation' , $post_navigation_bool ) )
           return;
         
         global $wp_query;

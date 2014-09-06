@@ -87,7 +87,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
 
     			</div><!-- .container -->
 
-          <?php  echo !tc__f( '__is_home_empty') ? apply_filters( 'tc_after_fp_separator', '<hr class="featurette-divider '.current_filter().'">' ) : ''; ?>
+          <?php  echo ! tc__f( '__is_home_empty') ? apply_filters( 'tc_after_fp_separator', '<hr class="featurette-divider '.current_filter().'">' ) : ''; ?>
 
          <?php
           $html = ob_get_contents();
@@ -108,9 +108,16 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
         * @todo better area definition : dynamic
         */
         function tc_fp_single_display( $fp_single_id,$show_img) {
-          //holder declaration
-          $fp_holder_img                      = apply_filters ('fp_holder_img' , '<img data-src="holder.js/270x250" alt="Holder Thumbnail" />' );
-
+          $_skin_color                        = TC_utils::$instance -> tc_get_skin_color();
+          $fp_holder_img                      = apply_filters (
+            'tc_fp_holder_img' , 
+            sprintf('<img class="tc-holder-img" data-src="holder.js/270x250/%1$s:%2$s" alt="Holder Thumbnail" />',
+              ( '#E4E4E4' != $_skin_color ) ? '#EEE' : '#5A5A5A',
+              $_skin_color
+            ) 
+          );
+          $featured_page_id                   = 0;
+          
           //if fps are not set
           if ( null == tc__f( '__get_option' , 'tc_featured_page_'.$fp_single_id ) || ! tc__f( '__get_option' , 'tc_featured_page_'.$fp_single_id ) ) {
               //admin link if user logged in
@@ -119,7 +126,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
               
               //rendering
               $featured_page_id               =  null;
-              $featured_page_title            =  apply_filters( 'tc_fp_title', __( 'Featured page' , 'customizr' ) );
+              $featured_page_title            =  apply_filters( 'tc_fp_title', __( 'Featured page' , 'customizr' ), $fp_single_id, $featured_page_id);
               $text                           =  apply_filters( 
                                                   'tc_fp_text', 
                                                   sprintf( __( 'Featured page description text : use the page excerpt or set your own custom text in the Customizr screen%s.' , 'customizr' ),
@@ -128,7 +135,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
                                                   $fp_single_id,
                                                   $featured_page_id
                                                 );
-              $fp_img                         =  apply_filters ('fp_img_src' , $fp_holder_img );
+              $fp_img                         =  apply_filters ('fp_img_src' , $fp_holder_img, $fp_single_id , $featured_page_id );
 
           }
             
@@ -154,14 +161,15 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
               $text                           = ( empty($text) && !post_password_required($featured_page_id) ) ? strip_tags(apply_filters( 'the_content' , $page->post_content )) : $text ;
 
               //limit text to 200 car
-              $default_fp_text_length         = apply_filters( 'tc_fp_text_length', 200 );
+              $default_fp_text_length         = apply_filters( 'tc_fp_text_length', 200, $fp_single_id, $featured_page_id );
               $text                           = ( strlen($text) > $default_fp_text_length ) ? substr( $text , 0 , strpos( $text, ' ' , $default_fp_text_length) ). ' ...' : $text;
                 
               //set the image : uses thumbnail if any then >> the first attached image then >> a holder script
-              $fp_img_size                    = apply_filters( 'tc_fp_img_size' , 'tc-thumb' );
-              $fp_img_id                      = apply_filters( 'fp_img_id', false , $fp_single_id , $featured_page_id );
+              $fp_img_size                    = apply_filters( 'tc_fp_img_size' , 'tc-thumb', $fp_single_id, $featured_page_id );
+              //allow user to specify a custom image id
+              $fp_custom_img_id               = apply_filters( 'fp_img_id', false , $fp_single_id , $featured_page_id );
 
-              if ( has_post_thumbnail( $featured_page_id ) && ! $fp_img_id ) {
+              if ( has_post_thumbnail( $featured_page_id ) && ! $fp_custom_img_id ) {
                     $fp_img_id                = get_post_thumbnail_id( $featured_page_id );
 
                     //check if tc-thumb size exists for attachment and return large if not
@@ -185,7 +193,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
                       'post_mime_type'        =>  array( 'image/jpeg' , 'image/gif' , 'image/jpg' , 'image/png' )
                       ); 
 
-                      $attachments            =  ! $fp_img_id ? get_posts( $tc_args) : get_post( $fp_img_id );
+                      $attachments            =  ! $fp_custom_img_id ? get_posts( $tc_args) : get_post( $fp_custom_img_id );
 
                       if ( $attachments) {
 
@@ -220,7 +228,9 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
                                                       $featured_page_link,
                                                       $featured_page_title
                                                     ) , 
-                                  $fp_single_id ),
+                                  $fp_single_id,
+                                  $featured_page_id
+                                  ),
                      $fp_img
                   );
                 }//end if image enabled check
@@ -228,21 +238,21 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
 
                 //title block
                 $tc_fp_title_block  = sprintf('<%1$s>%2$s %3$s</%1$s>',
-                                    apply_filters( 'tc_fp_title_tag' , 'h2' ),
+                                    apply_filters( 'tc_fp_title_tag' , 'h2', $fp_single_id, $featured_page_id ),
                                     $featured_page_title,
                                     ( isset($edit_enabled) && $edit_enabled )? sprintf('<span class="edit-link btn btn-inverse btn-mini"><a class="post-edit-link" href="%1$s" title="%2$s" target="_blank">%2$s</a></span>',
                                               get_edit_post_link(),
                                               __( 'Edit' , 'customizr' )
                                               ) : ''
                 );
-                echo apply_filters( 'tc_fp_title_block' , $tc_fp_title_block , $featured_page_title );
+                echo apply_filters( 'tc_fp_title_block' , $tc_fp_title_block , $featured_page_title , $fp_single_id, $featured_page_id );
 
                 //text block
                 $tc_fp_text_block   = sprintf('<p class="fp-text-%1$s">%2$s</p>',
                                     $fp_single_id,
                                     $text
                 );
-                echo apply_filters( 'tc_fp_text_block' , $tc_fp_text_block , $fp_single_id , $text);
+                echo apply_filters( 'tc_fp_text_block' , $tc_fp_text_block , $fp_single_id , $text, $featured_page_id);
 
                 //button block
                 $tc_fp_button_block = sprintf('<a class="%1$s" href="%2$s" title="%3$s">%4$s</a>',
@@ -251,7 +261,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
                                     $featured_page_title,
                                     apply_filters( 'tc_fp_button_text' , esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) , $fp_single_id )
                 );
-                echo apply_filters( 'tc_fp_button_block' , $tc_fp_button_block , $featured_page_link , $featured_page_title , $fp_single_id );
+                echo apply_filters( 'tc_fp_button_block' , $tc_fp_button_block , $featured_page_link , $featured_page_title , $fp_single_id, $featured_page_id );
 
               ?>
 
@@ -260,7 +270,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
             <?php
             $html = ob_get_contents();
             if ($html) ob_end_clean();
-            return apply_filters( 'tc_fp_single_display' , $html, $fp_single_id, $show_img, $fp_img, $featured_page_link, $featured_page_title, $text );
+            return apply_filters( 'tc_fp_single_display' , $html, $fp_single_id, $show_img, $fp_img, $featured_page_link, $featured_page_title, $text, $featured_page_id );
         }//end of function
 
    }//end of class

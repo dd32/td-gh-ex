@@ -34,54 +34,49 @@ endif;
 */
 if ( ! class_exists( 'TC___' ) ) :
     class TC___ {
-        
         //Access any method or var of the class with classname::$instance -> var or method():
         static $instance;
-
         public $tc_core;
-
         function __construct () {
-
             self::$instance =& $this;
-
             //this is the structure of the Customizr code : groups => ('path' , 'class_suffix')
             $this -> tc_core = apply_filters( 'tc_core',
-                            array(
-                                'fire'      =>   array(
-                                                array('inc' , 'init'),//defines default values (layout, socials, default slider...) and theme supports (after_setup_theme)
-                                                array('inc' , 'resources'),//loads style (skins) and scripts
-                                                array('inc' , 'utils'),//those are helpers used everywhere
-                                                array('inc' , 'widgets'),//widget factory
-                                                array('inc/admin' , 'admin_init'),//fires the customizer and the metaboxes for slider and layout options
-                                            ),
-                                //the following files/classes define the action hooks for front end rendering : header, main content, footer
-                                'header'    =>   array(
-                                                array('inc/parts' , 'header_main'),
-                                                array('inc/parts' , 'menu'),
-                                                array('inc/parts' , 'nav_walker'),
-                                            ),
-                                'content'   =>  array(
-                                                array('inc/parts', '404'),
-                                                array('inc/parts', 'attachment'),
-                                                array('inc/parts', 'breadcrumb'),
-                                                array('inc/parts', 'comments'),
-                                                array('inc/parts', 'featured_pages'),
-                                                array('inc/parts', 'gallery'),
-                                                array('inc/parts', 'headings'),
-                                                array('inc/parts', 'no_results'),
-                                                array('inc/parts', 'page'),
-                                                array('inc/parts', 'post'),
-                                                array('inc/parts', 'post_list'),
-                                                array('inc/parts', 'post_metas'),
-                                                array('inc/parts', 'post_navigation'),
-                                                array('inc/parts', 'sidebar'),
-                                                array('inc/parts', 'slider'),
-                                            ),
-                                'footer'    => array(
-                                                array('inc/parts', 'footer_main'),
-                                            ),
-                                'addons'    => apply_filters('tc_addons_classes' , array() )
-                            )//end of array                         
+                array(
+                    'fire'      =>   array(
+                                    array('inc' , 'init'),//defines default values (layout, socials, default slider...) and theme supports (after_setup_theme)
+                                    array('inc' , 'utils'),//helpers used everywhere
+                                    array('inc' , 'resources'),//loads style (skins) and scripts
+                                    array('inc' , 'widgets'),//widget factory
+                                    array('inc/admin' , 'admin_init'),//fires the customizer and the metaboxes for slider and layout options
+                                ),
+                    //the following files/classes define the action hooks for front end rendering : header, main content, footer
+                    'header'    =>   array(
+                                    array('inc/parts' , 'header_main'),
+                                    array('inc/parts' , 'menu'),
+                                    array('inc/parts' , 'nav_walker'),
+                                ),
+                    'content'   =>  array(
+                                    array('inc/parts', '404'),
+                                    array('inc/parts', 'attachment'),
+                                    array('inc/parts', 'breadcrumb'),
+                                    array('inc/parts', 'comments'),
+                                    array('inc/parts', 'featured_pages'),
+                                    array('inc/parts', 'gallery'),
+                                    array('inc/parts', 'headings'),
+                                    array('inc/parts', 'no_results'),
+                                    array('inc/parts', 'page'),
+                                    array('inc/parts', 'post'),
+                                    array('inc/parts', 'post_list'),
+                                    array('inc/parts', 'post_metas'),
+                                    array('inc/parts', 'post_navigation'),
+                                    array('inc/parts', 'sidebar'),
+                                    array('inc/parts', 'slider'),
+                                ),
+                    'footer'    => array(
+                                    array('inc/parts', 'footer_main'),
+                                ),
+                    'addons'    => apply_filters('tc_addons_classes' , array() )
+                )//end of array                         
             );//end of filter
             
             /* GETS INFORMATIONS FROM STYLE.CSS */
@@ -106,30 +101,22 @@ if ( ! class_exists( 'TC___' ) ) :
                  $tc_base_data['prefix']      = $tc_base_data['title'];
               }
 
-            /* CUSTOMIZR_VER is the Version */
-            if( ! defined( 'CUSTOMIZR_VER' ) )      { define( 'CUSTOMIZR_VER' , $tc_base_data['version'] ); }
-
-            /* TC_BASE is the root server path of the parent theme */
-            if( ! defined( 'TC_BASE' ) )            { define( 'TC_BASE' , get_template_directory().'/' ); }
-
-            /* TC_BASE_CHILD is the root server path of the child theme */
-            if( ! defined( 'TC_BASE_CHILD' ) )      { define( 'TC_BASE_CHILD' , get_stylesheet_directory().'/' ); }
-
-            /* TC_BASE_URL http url of the loaded parent theme*/
-            if( ! defined( 'TC_BASE_URL' ) )        { define( 'TC_BASE_URL' , get_template_directory_uri() . '/' ); }
-
-            /* TC_BASE_URL_CHILD http url of the loaded child theme*/
-            if( ! defined( 'TC_BASE_URL_CHILD' ) )  { define( 'TC_BASE_URL_CHILD' , get_stylesheet_directory_uri() . '/' ); }
-
-            /* THEMENAME contains the Name of the currently loaded theme */
-            if( ! defined( 'THEMENAME' ) )          { define( 'THEMENAME' , $tc_base_data['title'] ); }
-
-            /* TC_WEBSITE is the home website of Customizr */
-            if( ! defined( 'TC_WEBSITE' ) )         { define( 'TC_WEBSITE' , $tc_base_data['authoruri'] ); }
-
-            /* theme class groups instanciation */
+            //CUSTOMIZR_VER is the Version
+            if( ! defined( 'CUSTOMIZR_VER' ) )      define( 'CUSTOMIZR_VER' , $tc_base_data['version'] );
+            //TC_BASE is the root server path of the parent theme 
+            if( ! defined( 'TC_BASE' ) )            define( 'TC_BASE' , get_template_directory().'/' );
+            //TC_BASE_CHILD is the root server path of the child theme
+            if( ! defined( 'TC_BASE_CHILD' ) )      define( 'TC_BASE_CHILD' , get_stylesheet_directory().'/' );
+            //TC_BASE_URL http url of the loaded parent theme
+            if( ! defined( 'TC_BASE_URL' ) )        define( 'TC_BASE_URL' , get_template_directory_uri() . '/' );
+            //TC_BASE_URL_CHILD http url of the loaded child theme
+            if( ! defined( 'TC_BASE_URL_CHILD' ) )  define( 'TC_BASE_URL_CHILD' , get_stylesheet_directory_uri() . '/' ); 
+            //THEMENAME contains the Name of the currently loaded theme
+            if( ! defined( 'THEMENAME' ) )          define( 'THEMENAME' , $tc_base_data['title'] );
+            //TC_WEBSITE is the home website of Customizr
+            if( ! defined( 'TC_WEBSITE' ) )         define( 'TC_WEBSITE' , $tc_base_data['authoruri'] );
+            //theme class groups instanciation
             $this -> tc__ ( $this -> tc_core );
-
         }//end of __construct()
 
 
@@ -203,10 +190,8 @@ if ( ! class_exists( 'TC___' ) ) :
                 $tc_theme       = get_theme_data( get_stylesheet_directory() . '/style.css' );
                 $is_child       = ( ! empty($tc_theme['Template']) ) ? true : false;
             }
-
             return $is_child;
         }
-
     }//end of class
 endif;
 

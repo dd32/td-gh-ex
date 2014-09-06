@@ -176,7 +176,15 @@ if ( ! class_exists( 'TC_slider' ) ) :
       <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
 
           <div class="carousel-inner">
-                
+
+            <?php if ( 1 == esc_attr( tc__f( '__get_option' , 'tc_center_slides') ) && apply_filters( 'tc_display_slider_loader' , true ) ) : ?>
+              <div class="tc-slider-loader-wrapper">
+                <div class="tc-img-gif-loader">
+                  <img src="<?php echo apply_filters('tc_slider_loader_src' , sprintf( '%1$s/%2$s' , TC_BASE_URL , 'inc/assets/img/slider-loader.gif') ) ?>">
+                </div>
+              </div>
+            <?php endif; ?>
+
             <?php foreach ($slides as $id => $data) : ?>
               <?php 
                 $slide_class = sprintf('%1$s %2$s',
@@ -188,22 +196,22 @@ if ( ! class_exists( 'TC_slider' ) ) :
 
                 <?php
                   printf('<div class="%1$s %2$s">%3$s</div>',
-                    apply_filters( 'tc_slider_content_class', 'carousel-image' ),
+                    apply_filters( 'tc_slide_content_class', 'carousel-image' ),
                     $img_size,
-                    apply_filters( 'tc_slide_background', $data['slide_background'], $data['link_url'], $id )
+                    apply_filters( 'tc_slide_background', $data['slide_background'], $data['link_url'], $id, $slider_name_id )
                   );
                 ?>
 
                 <?php 
                   if ( $data['title'] != null || $data['text'] != null || $data['button_text'] != null ) {
                     //apply filters first
-                    $data['title']          = isset($data['title']) ? apply_filters( 'tc_slide_title', $data['title'] , $id ) : '';
-                    $data['text']           = isset($data['text']) ? esc_html( apply_filters( 'tc_slide_text', $data['text'], $id ) ) : '';
-                    $data['color_style']    = apply_filters( 'tc_slide_color', $data['color_style'], $id );
-                    $data['link_id']        = apply_filters( 'tc_slide_link_id', $data['link_id'], $id );
+                    $data['title']          = isset($data['title']) ? apply_filters( 'tc_slide_title', $data['title'] , $id, $slider_name_id ) : '';
+                    $data['text']           = isset($data['text']) ? esc_html( apply_filters( 'tc_slide_text', $data['text'], $id, $slider_name_id ) ) : '';
+                    $data['color_style']    = apply_filters( 'tc_slide_color', $data['color_style'], $id, $slider_name_id );
+                    $data['link_id']        = apply_filters( 'tc_slide_link_id', $data['link_id'], $id, $slider_name_id );
                     $data['link_url']       = ( 'demo' == $slider_name_id && is_null($data['link_url']) ) ? admin_url().'customize.php' : $data['link_url'];
-                    $data['link_url']       = apply_filters( 'tc_slide_link_url', $data['link_url'], $id );
-                    $data['button_text']    = isset($data['button_text']) ? apply_filters( 'tc_slide_button_text', $data['button_text'], $id ) : '';
+                    $data['link_url']       = apply_filters( 'tc_slide_link_url', $data['link_url'], $id, $slider_name_id );
+                    $data['button_text']    = isset($data['button_text']) ? apply_filters( 'tc_slide_button_text', $data['button_text'], $id, $slider_name_id ) : '';
 
                     //computes the link
                     $button_link            = ( !is_user_logged_in() && 'demo' == $slider_name_id ) ? 'javascript:void(0)' : $data['link_url'];
@@ -212,7 +220,7 @@ if ( ! class_exists( 'TC_slider' ) ) :
                     printf('<div class="carousel-caption">%1$s %2$s %3$s</div>',
                       //title
                       ( $data['title'] != null ) ? sprintf('<%1$s %2$s>%3$s</%1$s>',
-                                            apply_filters( 'tc_slide_title_tag', 'h1' ),
+                                            apply_filters( 'tc_slide_title_tag', 'h1', $slider_name_id ),
                                             $data['color_style'],
                                             $data['title']
                                           ) : '',
@@ -223,7 +231,7 @@ if ( ! class_exists( 'TC_slider' ) ) :
                                           ) : '',
                       //button call to action
                       ( $data['button_text'] != null) ? sprintf('<a class="%1$s" href="%2$s">%3$s</a>',
-                                                  apply_filters( 'tc_slide_button_class', 'btn btn-large btn-primary' ),
+                                                  apply_filters( 'tc_slide_button_class', 'btn btn-large btn-primary', $slider_name_id ),
                                                   $button_link,
                                                   $data['button_text']
                                                 ) : ''
@@ -261,7 +269,7 @@ if ( ! class_exists( 'TC_slider' ) ) :
         <?php
         $html = ob_get_contents();
         if ($html) ob_end_clean();
-        echo apply_filters( 'tc_slider_display', $html );
+        echo apply_filters( 'tc_slider_display', $html, $slider_name_id );
       }
   } //end of class
 endif;

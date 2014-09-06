@@ -21,6 +21,7 @@ if ( ! class_exists( 'TC_init' ) ) :
       public $slider_full_size;
       public $slider_size;
       public $skins;
+      public $skin_color_map;
       public $fp_ids;
       public $socials;
       public $sidebar_widgets;
@@ -73,23 +74,44 @@ if ( ! class_exists( 'TC_init' ) ) :
 
           //Default skins array
           $this -> skins              =  array( 
-                                      'blue.css'        =>  __( 'Blue' , 'customizr' ),
-                                      'blue2.css'       =>  __( 'Light blue ' , 'customizr' ),
-                                      'blue3.css'       =>  __( 'Green blue' , 'customizr'),
-                                      'green.css'       =>  __( 'Green' , 'customizr' ),
-                                      'green2.css'      =>  __( 'Light green' , 'customizr'),
-                                      'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
-                                      'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
-                                      'orange.css'      =>  __( 'Orange' , 'customizr' ),
-                                      'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
-                                      'red.css'         =>  __( 'Red' , 'customizr' ),
-                                      'red2.css'        =>  __( 'Flat red' , 'customizr' ),
-                                      'purple.css'      =>  __( 'Purple' , 'customizr' ),
-                                      'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
-                                      'grey.css'        =>  __( 'Grey' , 'customizr' ),
-                                      'grey2.css'       =>  __( 'Ligth grey' , 'customizr' ),
-                                      'black.css'       =>  __( 'Black' , 'customizr' ),
-                                      'black2.css'      =>  __( 'Flat black' , 'customizr' )
+                'blue.css'        =>  __( 'Blue' , 'customizr' ),
+                'blue2.css'       =>  __( 'Light blue ' , 'customizr' ),
+                'blue3.css'       =>  __( 'Green blue' , 'customizr'),
+                'green.css'       =>  __( 'Green' , 'customizr' ),
+                'green2.css'      =>  __( 'Light green' , 'customizr'),
+                'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
+                'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
+                'orange.css'      =>  __( 'Orange' , 'customizr' ),
+                'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
+                'red.css'         =>  __( 'Red' , 'customizr' ),
+                'red2.css'        =>  __( 'Flat red' , 'customizr' ),
+                'purple.css'      =>  __( 'Purple' , 'customizr' ),
+                'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
+                'grey.css'        =>  __( 'Grey' , 'customizr' ),
+                'grey2.css'       =>  __( 'Ligth grey' , 'customizr' ),
+                'black.css'       =>  __( 'Black' , 'customizr' ),
+                'black2.css'      =>  __( 'Flat black' , 'customizr' )
+          );
+
+          //Main skin color array
+          $this -> skin_color_map     = array(
+                'blue.css'        =>  '#08c',
+                'blue2.css'       =>  '#27CBCD',
+                'blue3.css'       =>  '#27CDA5',
+                'green.css'       =>  '#9db668',
+                'green2.css'      =>  '#26CE61',
+                'yellow.css'      =>  '#e9a825',
+                'yellow2.css'     =>  '#d2d62a',
+                'orange.css'      =>  '#F78C40',
+                'orange2.css'     =>  '#E79B5D',
+                'red.css'         =>  '#e10707',
+                'red2.css'        =>  '#e7797a',
+                'purple.css'      =>  '#e67fb9',
+                'purple2.css'     =>  '#8183D8',
+                'grey.css'        =>  '#5A5A5A',
+                'grey2.css'       =>  '#E4E4E4',
+                'black.css'       =>  '#000',
+                'black2.css'      =>  '#394143'               
           );
 
           //Default featured pages ids
@@ -120,6 +142,16 @@ if ( ! class_exists( 'TC_init' ) ) :
                                       'tc_instagram'      => array(
                                                               'link_title'    => __( 'Follow me on Instagram' , 'customizr' ),
                                                               'option_label'  => __( 'Instagram profile url' , 'customizr' ),
+                                                              'default'       => null
+                                                            ),
+                                      'tc_tumblr'       => array(
+                                                              'link_title'    => __( 'Follow me on Tumblr' , 'customizr' ),
+                                                              'option_label'  => __( 'Tumblr url' , 'customizr' ),
+                                                              'default'       => null
+                                                            ),
+                                      'tc_flickr'       => array(
+                                                              'link_title'    => __( 'Follow me on Flickr' , 'customizr' ),
+                                                              'option_label'  => __( 'Flickr url' , 'customizr' ),
                                                               'default'       => null
                                                             ),
                                       'tc_wordpress'      => array(
@@ -277,7 +309,8 @@ if ( ! class_exists( 'TC_init' ) ) :
       function tc_customizr_setup() {
         /* Set default content width for post images and media. */
         global $content_width;
-        if( ! isset( $content_width ) )   { $content_width = apply_filters( 'tc_content_width' , 1170 ); }
+        if (! isset( $content_width ) )
+          $content_width = apply_filters( 'tc_content_width' , 1170 );
 
         /*
          * Makes Customizr available for translation.
@@ -383,10 +416,7 @@ if ( ! class_exists( 'TC_init' ) ) :
         /* JETPACK */
         //adds compatibilty with the jetpack image carousel
         if ( current_theme_supports( 'jetpack' ) && is_plugin_active('jetpack/jetpack.php') ) {
-          add_filter( 'tc_gallery_bool', 'disable_for_jetpack' );
-          function disable_for_jetpack() {
-            return false;
-          }
+          add_filter( 'tc_gallery_bool', '__return_false' );
         }
 
 

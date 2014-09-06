@@ -38,7 +38,7 @@ if ( ! class_exists( 'TC_nav_walker' ) ) :
           //makes top menu not clickable (default bootstrap behaviour)
           $search         = '<a';
           $replace        = ( 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? $search : '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"';
-          $replace        = apply_filters( 'menu_open_on_click', $replace , $search );
+          $replace        = apply_filters( 'tc_menu_open_on_click', $replace , $search );
           $item_html      = str_replace( $search , $replace , $item_html);
 
           //adds arrows down

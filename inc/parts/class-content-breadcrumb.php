@@ -578,7 +578,7 @@ class TC_breadcrumb {
 			$trail[] = sprintf( __( 'Page %d' , 'customizr' ), absint( get_query_var( 'page' ) ) );
 
 		/* Allow devs to step in and filter the $trail array. */
-		return apply_filters( 'breadcrumb_trail_items' , $trail, $args );
+		return apply_filters( 'tc_breadcrumb_trail_items' , $trail, $args );
 	}
 
 	/**

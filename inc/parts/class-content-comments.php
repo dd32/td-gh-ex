@@ -35,7 +35,7 @@ if ( ! class_exists( 'TC_comments' ) ) :
         //By default not displayed on home, for protected posts, and if no comments for page option is checked
         $comments_bool    =  ( post_password_required() || tc__f( '__is_home' ) || ( is_page() && 1 != esc_attr( tc__f( '__get_option' , 'tc_page_comments' )) ) ) ? false : true;
         
-        if ( !apply_filters('tc_show_comments', $comments_bool ) )
+        if ( ! apply_filters('tc_show_comments', $comments_bool ) )
           return;
 
         comments_template( '' , true );

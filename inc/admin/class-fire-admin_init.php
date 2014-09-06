@@ -34,7 +34,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
         //enqueue additional styling for admin screens
         add_action ( 'admin_init'                          , array( $this , 'tc_admin_style' ));
         //changelog
-        add_action ( 'changelog'                           , array( $this , 'tc_extract_changelog' ));
+        add_action ( '__changelog'                           , array( $this , 'tc_extract_changelog' ));
       }
 
 
@@ -249,7 +249,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
           
           <h3><?php printf( __( 'Changelog in version %1$s' , 'customizr' ) , CUSTOMIZR_VER ); ?></h3>
 
-            <p><?php do_action('changelog'); ?></p>
+            <p><?php do_action( '__changelog' ); ?></p>
         
         </div>
 
@@ -285,10 +285,10 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
      */
       function tc_extract_changelog() {
         
-        if( !file_exists(TC_BASE."readme.txt") ) {
+        if( ! file_exists(TC_BASE."readme.txt") ) {
           return;
         }
-        if( !is_readable(TC_BASE."readme.txt") ) {
+        if( ! is_readable(TC_BASE."readme.txt") ) {
           echo '<p>The changelog in readme.txt is not readable.</p>';
           return;
         }
@@ -309,7 +309,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
             echo $line.'<br/>';
           }
           //we skip all lines before the current version changelog
-          if ($line != strpos($line, '= '.CUSTOMIZR_VER.' =')) {
+          if ($line != strpos($line, '= '.CUSTOMIZR_VER)) {
             if ($i == 0) {
               $read = false;
             }

@@ -29,7 +29,7 @@ if ( ! class_exists( 'TC_page' ) ) :
          * @since Customizr 3.0
          */
         function tc_page_content() {
-            if ( 'page' != tc__f('__post_type') || !is_singular() || tc__f( '__is_home_empty') )
+            if ( 'page' != tc__f('__post_type') || ! is_singular() || tc__f( '__is_home_empty') )
                 return;
             
             ob_start();

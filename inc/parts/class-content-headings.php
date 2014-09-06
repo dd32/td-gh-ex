@@ -236,10 +236,8 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
               //renders the full title
               $html = sprintf('<%1$s class="entry-title %2$s">%3$s %4$s %5$s</%1$s>',
-                              is_singular() ? apply_filters( 'tc_content_title_tag' , 'h1' ) : apply_filters( 'tc_content_title_tag' , 'h2' ),
-
+                              apply_filters( 'tc_content_title_tag' , is_singular() ? 'h1' : 'h2' ),
                               apply_filters( 'tc_content_title_icon', 'format-icon' ),
-
                               $tc_heading_title,
 
                               //checks if comments are opened AND if there are any comments to display

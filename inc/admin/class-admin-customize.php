@@ -155,11 +155,11 @@ if ( ! class_exists( 'TC_customize' ) ) :
 					foreach( $args['settings'] as $set => $set_value) {
 						if ( $set == 'setting_type' ) {
 							$option_settings['type'] = isset( $options['setting_type']) ?  $options['setting_type'] : $args['settings'][$set];
-							$option_settings['type'] = apply_filters( $f_option_name .'_customizer_set', $option_settings['type'] , $set );
+							$option_settings['type'] = apply_filters( "{$f_option_name}_customizer_set", $option_settings['type'] , $set );
 						}
 						else {
 							$option_settings[$set] = isset( $options[$set]) ?  $options[$set] : $args['settings'][$set];
-							$option_settings[$set] = apply_filters( $f_option_name .'_customizer_set' , $option_settings[$set] , $set );
+							$option_settings[$set] = apply_filters( "{$f_option_name}_customizer_set" , $option_settings[$set] , $set );
 						}
 					}
 

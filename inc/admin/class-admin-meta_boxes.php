@@ -709,11 +709,9 @@ if ( ! class_exists( 'TC_meta_boxes' ) ) :
                 
 
                 <?php
-                  if (isset( $current_post_slides)) {
-
+                  if ( isset( $current_post_slides) ) {
                     $current_attachement_id = $postid;
-
-                    do_action( '__show_slides' ,$current_post_slides,$current_attachement_id);
+                    do_action( '__show_slides' ,$current_post_slides, $current_attachement_id);
                   }
                 ?>
             

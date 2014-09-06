@@ -26,6 +26,8 @@ if ( ! class_exists( 'TC_controls' ) ) :
 	    public $min;
 
 	    public function render_content()  {
+	    	do_action( '__before_setting_control' , $this-> id );
+	    	
 	        switch ( $this -> type) {
 	        	case 'hr':
 	        		echo '<hr class="tc-customizer-separator" />';
@@ -140,6 +142,7 @@ if ( ! class_exists( 'TC_controls' ) ) :
 	        		screen_icon( $this -> type );
 	        		break;
 	        }//end switch
+	        do_action( '__after_setting_control' , $this -> id );
 		 }//end function
 	}//end of class
 endif;

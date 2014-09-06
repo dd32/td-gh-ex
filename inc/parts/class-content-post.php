@@ -34,7 +34,7 @@ if ( ! class_exists( 'TC_post' ) ) :
         global $post;
         $tc_show_single_post_content = isset($post) && 'page' != $post -> post_type && 'attachment' != $post -> post_type && is_singular() && !tc__f( '__is_home_empty');
 
-        if ( !apply_filters( 'tc_show_single_post_content', $tc_show_single_post_content ) )
+        if ( ! apply_filters( 'tc_show_single_post_content', $tc_show_single_post_content ) )
             return;
 
         //display an icon for div if there is no title
@@ -72,10 +72,10 @@ if ( ! class_exists( 'TC_post' ) ) :
         global $post;
         $tc_show_single_post_footer =  'page' != $post -> post_type && 'attachment' != $post -> post_type && is_singular();
         
-        if ( !apply_filters( 'tc_show_single_post_footer', $tc_show_single_post_footer ) )
+        if ( ! apply_filters( 'tc_show_single_post_footer', $tc_show_single_post_footer ) )
             return;
 
-        if ( !is_singular() || !get_the_author_meta( 'description' ) || !apply_filters( 'tc_show_author_metas_in_post', true ) )
+        if ( ! is_singular() || ! get_the_author_meta( 'description' ) || ! apply_filters( 'tc_show_author_metas_in_post', true ) )
           return;
 
         $html = sprintf('<footer class="entry-meta">%1$s<div class="author-info"><div class="%2$s">%3$s %4$s</div></div></footer>',

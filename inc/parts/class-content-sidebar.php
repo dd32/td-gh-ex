@@ -72,7 +72,7 @@ if ( ! class_exists( 'TC_sidebar' ) ) :
                     <?php get_sidebar( $position ) ?>
                   <?php endif; ?>
                 <?php do_action( "__after_{$position}_sidebar" ); ?>
-            </div><!-- #left -->
+            </div><!-- #left or #right-->
         </div><!--.tc-sidebar -->
 
         <?php
@@ -112,7 +112,7 @@ if ( ! class_exists( 'TC_sidebar' ) ) :
         <?php
         $html = ob_get_contents();
         if ($html) ob_end_clean();
-        echo apply_filters( 'tc_social_in_sidebar', $html );
+        echo apply_filters( 'tc_social_in_sidebar', $html, current_filter() );
       }
   }//end of class
 endif;

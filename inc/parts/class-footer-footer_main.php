@@ -51,20 +51,21 @@ if ( ! class_exists( 'TC_footer_main' ) ) :
 			?>
 				<div class="container footer-widgets <?php echo $skin_class ?>">
 					<div class="row widget-area" role="complementary">
-						
+						<?php do_action("__before_footer_widgets") ?>
 						<?php foreach ( $footer_widgets as $key => $area )  : ?>
-
-							<?php if ( is_active_sidebar( $key ) ) : ?>
-								
-								<div id="<?php echo $key; ?>" class="<?php echo apply_filters( "{$key}_widget_class", "span4" ) ?>">
-									<?php do_action("__before_{$key}_widgets"); ?>
+							
+							<div id="<?php echo $key; ?>" class="<?php echo apply_filters( "{$key}_widget_class", "span4" ) ?>">
+								<?php do_action("__before_{$key}_widgets"); ?>
+								<?php if ( is_active_sidebar( $key ) ) : ?>
+									
 										<?php dynamic_sidebar( $key ); ?>
-									<?php do_action("__after_{$key}_widgets"); ?>
-								</div>
-
-							<?php endif; ?>
+									
+								<?php endif; ?>
+								<?php do_action("__after_{$key}_widgets"); ?>
+							</div><!-- .{$key}_widget_class -->
 
 						<?php endforeach; ?>
+						<?php do_action("__after_footer_widgets") ?>
 					</div><!-- .row.widget-area -->
 				</div><!--.footer-widgets -->
 			<?php
@@ -139,16 +140,13 @@ if ( ! class_exists( 'TC_footer_main' ) ) :
 		 * @since Customizr 3.0.6
 		 */
 	    function tc_colophon_center_block() {
-	    	
 	    	echo apply_filters(
 	    		'tc_credits_display',
 	    		sprintf('<div class="%1$s">%2$s</div>',
 		    		apply_filters( 'tc_colophon_center_block_class', 'span4 credits' ),
-		    		sprintf( '<p> &middot; &copy; %1$s <a href="%2$s" title="%3$s" rel="bookmark">%3$s</a> &middot; Designed by %4$s &middot;</p>',
-						    esc_attr( date( 'Y' ) ),
-						    esc_url( home_url() ),
-						    esc_attr(get_bloginfo()),
-						    '<a href="'.TC_WEBSITE.'">Themes &amp; Co</a>'
+		    		sprintf( '<p>%1$s %2$s</p>',
+						    apply_filters( 'tc_copyright_link', sprintf( '&middot; &copy; %1$s <a href="%2$s" title="%3$s" rel="bookmark">%3$s</a>', esc_attr( date( 'Y' ) ), esc_url( home_url() ), esc_attr( get_bloginfo() ) ) ),
+						    apply_filters( 'tc_credit_link', sprintf( '&middot; Designed by %1$s &middot;', '<a href="'.TC_WEBSITE.'">Themes &amp; Co</a>' ) )
 					)
 	    		)
 	    	);

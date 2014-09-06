@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v3.1.22\n"
-"POT-Creation-Date: 2014-08-08 23:47+0100\n"
-"PO-Revision-Date: 2014-08-08 23:48+0100\n"
+"Project-Id-Version: * Customizr v3.1.23\n"
+"POT-Creation-Date: 2014-09-05 10:28+0100\n"
+"PO-Revision-Date: 2014-09-05 10:28+0100\n"
 "Last-Translator: Nicolas <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: uk\n"
@@ -37,164 +37,217 @@ msgid "Blue"
 msgstr "Блакитний"
 
 #: ../class-fire-init.php:77
+msgid "Light blue "
+msgstr ""
+
+#: ../class-fire-init.php:78
+#, fuzzy
+msgid "Green blue"
+msgstr "Зеленый"
+
+#: ../class-fire-init.php:79
 msgid "Green"
 msgstr "Зеленый"
 
-#: ../class-fire-init.php:78
+#: ../class-fire-init.php:80
+msgid "Light green"
+msgstr ""
+
+#: ../class-fire-init.php:81
 msgid "Yellow"
 msgstr "Жовтий"
 
-#: ../class-fire-init.php:79
+#: ../class-fire-init.php:82
+msgid "Flat yellow"
+msgstr ""
+
+#: ../class-fire-init.php:83
 msgid "Orange"
 msgstr "Помаранчевий"
 
-#: ../class-fire-init.php:80
+#: ../class-fire-init.php:84
+msgid "Flat orange"
+msgstr ""
+
+#: ../class-fire-init.php:85
 msgid "Red"
 msgstr "Червоний"
 
-#: ../class-fire-init.php:81
+#: ../class-fire-init.php:86
+msgid "Flat red"
+msgstr ""
+
+#: ../class-fire-init.php:87
 msgid "Purple"
 msgstr "Пурпуровий"
 
-#: ../class-fire-init.php:82
+#: ../class-fire-init.php:88
+msgid "Flat purple"
+msgstr ""
+
+#: ../class-fire-init.php:89
 msgid "Grey"
 msgstr "Сірий"
 
-#: ../class-fire-init.php:83
+#: ../class-fire-init.php:90
+msgid "Ligth grey"
+msgstr ""
+
+#: ../class-fire-init.php:91
 msgid "Black"
 msgstr "Чорний"
 
 #: ../class-fire-init.php:92
+msgid "Flat black"
+msgstr ""
+
+#: ../class-fire-init.php:101
 msgid "Subscribe to my rss feed"
 msgstr "Підписатися на RSS"
 
-#: ../class-fire-init.php:93
+#: ../class-fire-init.php:102
 msgid "RSS feed (default is the wordpress feed)"
 msgstr "RSS стрічка ( за замовчуванням wordpress feed )"
 
-#: ../class-fire-init.php:97
+#: ../class-fire-init.php:106
 msgid "Follow me on Twitter"
 msgstr "Стежити у Twitter"
 
-#: ../class-fire-init.php:98
+#: ../class-fire-init.php:107
 msgid "Twitter profile url"
 msgstr "URL профіля в Twitter"
 
-#: ../class-fire-init.php:102
+#: ../class-fire-init.php:111
 msgid "Follow me on Facebook"
 msgstr "Сторінка Facebook"
 
-#: ../class-fire-init.php:103
+#: ../class-fire-init.php:112
 msgid "Facebook profile url"
 msgstr "URL профіля в Facebook"
 
-#: ../class-fire-init.php:107
+#: ../class-fire-init.php:116
 msgid "Follow me on Google+"
 msgstr "Сторінка на Google+"
 
-#: ../class-fire-init.php:108
+#: ../class-fire-init.php:117
 msgid "Google+ profile url"
 msgstr "URL профіля в Google+"
 
-#: ../class-fire-init.php:112
+#: ../class-fire-init.php:121
 msgid "Follow me on Instagram"
 msgstr "Фотки в Instagram"
 
-#: ../class-fire-init.php:113
+#: ../class-fire-init.php:122
 msgid "Instagram profile url"
 msgstr "URL профіля в Instagram"
 
-#: ../class-fire-init.php:117
+#: ../class-fire-init.php:126
+msgid "Follow me on Tumblr"
+msgstr "Мої проекти на Tumblr"
+
+#: ../class-fire-init.php:127
+msgid "Tumblr url"
+msgstr ""
+
+#: ../class-fire-init.php:131
+msgid "Follow me on Flickr"
+msgstr "Сторінка Flickr"
+
+#: ../class-fire-init.php:132
+msgid "Flickr url"
+msgstr ""
+
+#: ../class-fire-init.php:136
 msgid "Follow me on WordPress"
 msgstr "Стежити на WordPress"
 
-#: ../class-fire-init.php:118
+#: ../class-fire-init.php:137
 msgid "WordPress profile url"
 msgstr "URL профіля в  WordPress"
 
-#: ../class-fire-init.php:122
+#: ../class-fire-init.php:141
 msgid "Follow me on Youtube"
 msgstr "Відео на Youtube"
 
-#: ../class-fire-init.php:123
+#: ../class-fire-init.php:142
 msgid "Youtube profile url"
 msgstr "URL профіля в Youtube"
 
-#: ../class-fire-init.php:127
+#: ../class-fire-init.php:146
 msgid "Pin me on Pinterest"
 msgstr "Зображення на Pinterest"
 
-#: ../class-fire-init.php:128
+#: ../class-fire-init.php:147
 msgid "Pinterest profile url"
 msgstr "URL профіля в Pinterest"
 
-#: ../class-fire-init.php:132
+#: ../class-fire-init.php:151
 msgid "Follow me on Github"
 msgstr "Мої проекти на Github"
 
-#: ../class-fire-init.php:133
+#: ../class-fire-init.php:152
 msgid "Github profile url"
 msgstr "URL профіля в Github"
 
-#: ../class-fire-init.php:137
+#: ../class-fire-init.php:156
 msgid "Follow me on Dribbble"
 msgstr "Стежити на Dribbble"
 
-#: ../class-fire-init.php:138
+#: ../class-fire-init.php:157
 msgid "Dribbble profile url"
 msgstr "URL профіля в Dribbble"
 
-#: ../class-fire-init.php:142
+#: ../class-fire-init.php:161
 msgid "Follow me on LinkedIn"
 msgstr "Резюме на LinkedIn"
 
-#: ../class-fire-init.php:143
+#: ../class-fire-init.php:162
 msgid "LinkedIn profile url"
 msgstr "URL профіля в LinkedIn"
 
-#: ../class-fire-init.php:152
+#: ../class-fire-init.php:171
 msgid "Right Sidebar"
 msgstr "Правий сайдбар"
 
-#: ../class-fire-init.php:153 ../class-fire-init.php:157
+#: ../class-fire-init.php:172 ../class-fire-init.php:176
 msgid "Appears on posts, static pages, archives and search pages"
 msgstr "Видимий в дописах, на статичних сторінках, архівах та сторінках пошуку"
 
-#: ../class-fire-init.php:156
+#: ../class-fire-init.php:175
 msgid "Left Sidebar"
 msgstr "Лівий сайдбар"
 
-#: ../class-fire-init.php:164
+#: ../class-fire-init.php:183
 msgid "Footer Widget Area One"
 msgstr "Віджет у футері №1"
 
-#: ../class-fire-init.php:165 ../class-fire-init.php:169
-#: ../class-fire-init.php:173
+#: ../class-fire-init.php:184 ../class-fire-init.php:188
+#: ../class-fire-init.php:192
 msgid "Just use it as you want !"
 msgstr "Тут може бути що завгодно!"
 
-#: ../class-fire-init.php:168
+#: ../class-fire-init.php:187
 msgid "Footer Widget Area Two"
 msgstr "Віджет у футері №2"
 
-#: ../class-fire-init.php:172
+#: ../class-fire-init.php:191
 msgid "Footer Widget Area Three"
 msgstr "Віджет у футері №3"
 
-#: ../class-fire-init.php:190
+#: ../class-fire-init.php:209
 msgid "Speaking the Truth in times of universal deceit is a revolutionary act."
 msgstr "Кажучи правду в часи загального обману ви робите революцію."
 
-#: ../class-fire-init.php:191
+#: ../class-fire-init.php:210
 msgid "George Orwell"
 msgstr "Джордж Орвелл"
 
-#: ../class-fire-init.php:192
+#: ../class-fire-init.php:211
 msgid ""
 "Sorry, but the requested page is not found. You might try a search below."
 msgstr "На жаль, потрібну сторінку не знайдено. Спробуйте здійснити пошук"
 
-#: ../class-fire-init.php:197
+#: ../class-fire-init.php:216
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
@@ -202,26 +255,26 @@ msgstr ""
 "Успіх - це здатність витримувати одну невдачу за іншою не втрачаючи при "
 "цьому ентузіазму..."
 
-#: ../class-fire-init.php:198
+#: ../class-fire-init.php:217
 msgid "Sir Winston Churchill"
 msgstr "Сер Уінстон Черчилль"
 
-#: ../class-fire-init.php:199
+#: ../class-fire-init.php:218
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 "На жаль, ми не змогли знайти нічого за цим критерієм. Спробуйте інші слова."
 
-#: ../class-fire-init.php:214
+#: ../class-fire-init.php:233
 msgid "Customizr is a clean responsive theme"
 msgstr "Customizr - це зручно!"
 
-#: ../class-fire-init.php:219 ../class-fire-init.php:228
+#: ../class-fire-init.php:238 ../class-fire-init.php:247
 msgid "Style your WordPress site live!"
 msgstr "Стилізуйте Ваш WordPress сайт швидше!"
 
-#: ../class-fire-init.php:220
+#: ../class-fire-init.php:239
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
@@ -229,15 +282,15 @@ msgstr ""
 "Багато налаштувань об'єктів та опцій можна знайти у панелі кастомайзера "
 "WordPress: спостерігайте зміни у реальному часі!"
 
-#: ../class-fire-init.php:221
+#: ../class-fire-init.php:240
 msgid "Just try it!"
 msgstr "Просто спробуй!"
 
-#: ../class-fire-init.php:233 ../class-fire-init.php:242
+#: ../class-fire-init.php:252 ../class-fire-init.php:261
 msgid "Create beautiful sliders"
 msgstr "Створи чудовий слайдер!"
 
-#: ../class-fire-init.php:234
+#: ../class-fire-init.php:253
 msgid ""
 "Customizr comes with a cool slider generator : add a slider to any post or "
 "page!"
@@ -245,31 +298,31 @@ msgstr ""
 "У комплекті Customizr є кльовий генератор слайдерів: додай слайдер на будь-"
 "яку сторінку чи у будь-який допис!"
 
-#: ../class-fire-init.php:235
+#: ../class-fire-init.php:254
 msgid "Discover the features"
 msgstr "Дізнатися більше!"
 
-#: ../class-fire-init.php:296
+#: ../class-fire-init.php:316
 msgid "Main Menu"
 msgstr "Головне Меню"
 
-#: ../class-fire-init.php:678
+#: ../class-fire-init.php:695
 msgid "Customiz'it!"
 msgstr "Customiz'it!"
 
-#: ../class-fire-init.php:681
+#: ../class-fire-init.php:698
 msgid "Customize your website at any time!"
 msgstr "Кастомізуйте свій сайт коли забажаєте!"
 
-#: ../class-fire-init.php:700
+#: ../class-fire-init.php:717
 msgid "Help"
 msgstr "Допомога"
 
-#: ../class-fire-init.php:703
+#: ../class-fire-init.php:720
 msgid "Need help with Customizr? Click here!"
 msgstr "Потребуєте допомоги з Customizr? Клікніть тут!"
 
-#: ../class-fire-utils.php:336
+#: ../class-fire-utils.php:337
 #, php-format
 msgid "Page %s"
 msgstr "Сторінка %s"
@@ -815,7 +868,7 @@ msgstr "Цей слайдер буде видалено (зображення т
 msgid "Delete slider"
 msgstr "Видалити слайдер"
 
-#: ../admin/class-admin-meta_boxes.php:345 ../admin/class-controls.php:85
+#: ../admin/class-admin-meta_boxes.php:345 ../admin/class-controls.php:87
 msgid ""
 "You haven't create any slider yet. Go to the media library, edit your images "
 "and add them to your sliders."
@@ -856,11 +909,11 @@ msgid "No link"
 msgstr "Немає схожих"
 
 #: ../admin/class-admin-meta_boxes.php:694
-#: ../admin/class-admin-meta_boxes.php:725
+#: ../admin/class-admin-meta_boxes.php:723
 msgid "Add a slider"
 msgstr "Додати слайдер"
 
-#: ../admin/class-admin-meta_boxes.php:723
+#: ../admin/class-admin-meta_boxes.php:721
 msgid ""
 "You haven't create any slider yet. Write a slider name and click on the "
 "button to add you first slider."
@@ -868,7 +921,7 @@ msgstr ""
 "Ви не створили жодного слайдера. Напишіть ім'я слайдера і натисніть кнопку "
 "для створення."
 
-#: ../admin/class-admin-meta_boxes.php:840
+#: ../admin/class-admin-meta_boxes.php:838
 msgid ""
 "This slider has not slides to show. Go to the media library and start adding "
 "images to it."
@@ -876,50 +929,51 @@ msgstr ""
 "Цей слайдер не містить слайдів. Перейдіть у медіа-бібліотеку і додайте сюди "
 "зображення"
 
-#: ../admin/class-admin-meta_boxes.php:850
+#: ../admin/class-admin-meta_boxes.php:848
 msgid "Slide Image"
 msgstr "Зображення слайду"
 
-#: ../admin/class-admin-meta_boxes.php:851
+#: ../admin/class-admin-meta_boxes.php:849
 msgid "Title"
 msgstr "Назва"
 
-#: ../admin/class-admin-meta_boxes.php:852
+#: ../admin/class-admin-meta_boxes.php:850
 msgid "Slide Text"
 msgstr "Текст слайду"
 
-#: ../admin/class-admin-meta_boxes.php:853
+#: ../admin/class-admin-meta_boxes.php:851
 msgid "Button Text"
 msgstr "Текст кнопки"
 
-#: ../admin/class-admin-meta_boxes.php:854
+#: ../admin/class-admin-meta_boxes.php:852
 msgid "Button Link"
 msgstr "Посилання кнопки"
 
-#: ../admin/class-admin-meta_boxes.php:855
+#: ../admin/class-admin-meta_boxes.php:853
 #: ../parts/class-content-breadcrumb.php:622
 #: ../parts/class-content-breadcrumb.php:655
 #: ../parts/class-content-breadcrumb.php:670
 #: ../parts/class-content-breadcrumb.php:698
 #: ../parts/class-content-comments.php:156
-#: ../parts/class-content-headings.php:255
-#: ../parts/class-content-slider.php:239
+#: ../parts/class-content-featured_pages.php:238
+#: ../parts/class-content-headings.php:253
+#: ../parts/class-content-slider.php:247
 msgid "Edit"
 msgstr "Редагувати"
 
-#: ../admin/class-admin-meta_boxes.php:896
+#: ../admin/class-admin-meta_boxes.php:894
 msgid "No Image Selected"
 msgstr "Не вибрано жодного зображення"
 
-#: ../admin/class-admin-meta_boxes.php:922
+#: ../admin/class-admin-meta_boxes.php:920
 msgid "Edit this slide"
 msgstr "Редагувати слайд"
 
-#: ../admin/class-admin-meta_boxes.php:924
+#: ../admin/class-admin-meta_boxes.php:922
 msgid "Current slide"
 msgstr "Поточний слайд"
 
-#: ../admin/class-controls.php:85
+#: ../admin/class-controls.php:87
 msgid "Create a slider"
 msgstr "Створити слайдер"
 
@@ -1266,7 +1320,7 @@ msgstr ""
 "Текст опису сторінки під слайдером: використовуйте анотацію з існуючої "
 "сторінки або введіть власний текст у панелі Кастомайзера%s."
 
-#: ../parts/class-content-gallery.php:188
+#: ../parts/class-content-gallery.php:187
 msgid "Missing Attachment"
 msgstr "Відсутній вкладений файл"
 
@@ -1328,7 +1382,7 @@ msgstr "{no title}  Читати допис &raquo;"
 msgid "Permalink to %s"
 msgstr "Пермалінк на %s"
 
-#: ../parts/class-content-headings.php:248
+#: ../parts/class-content-headings.php:246
 msgid "Comment(s) on"
 msgstr "Коментар (і) до"
 
@@ -1372,7 +1426,7 @@ msgstr "Назад до"
 msgid "View all posts by %s"
 msgstr "Переглянути всі пости автора:  %s"
 
-#: ../parts/class-content-post_metas.php:81
+#: ../parts/class-content-post_metas.php:82
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
@@ -1381,7 +1435,7 @@ msgstr ""
 "Цей допис було зроблено  %1$s і позначено %2$s в %3$s<span class=\"автором"
 "\"> автором %4$s</span>."
 
-#: ../parts/class-content-post_metas.php:83
+#: ../parts/class-content-post_metas.php:84
 #, php-format
 msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
@@ -1390,14 +1444,14 @@ msgstr ""
 "Цей допис було зроблено   %1$s в %3$s<span class=\"автором\"> автором %4$s</"
 "span>."
 
-#: ../parts/class-content-post_metas.php:85
+#: ../parts/class-content-post_metas.php:86
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 "Цей допис було зроблено на %3$s<span class=\"автором\"> автором %4$s</span>."
 
-#: ../parts/class-content-post_metas.php:127
-#: ../parts/class-content-post_metas.php:156
+#: ../parts/class-content-post_metas.php:128
+#: ../parts/class-content-post_metas.php:158
 #, php-format
 msgid "View all posts in %s"
 msgstr "Дивитися всі дописи в %s"
@@ -1415,7 +1469,7 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Старі дописи"
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Нові дописи  <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-footer-footer_main.php:170
+#: ../parts/class-footer-footer_main.php:168
 msgid "Back to top"
 msgstr "Вгору"
 

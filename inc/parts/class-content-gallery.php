@@ -24,18 +24,17 @@ if ( ! class_exists( 'TC_gallery' ) ) :
 
 
       /**
-       * Gallery filter to enable lightbox navigation (based on the WP oroginal gallery function)
+       * Gallery filter to enable lightbox navigation (based on the WP original gallery function)
        * 
        * @package Customizr
        * @since Customizr 3.0.5
        */
       function tc_fancybox_gallery_filter( $output, $attr) {
 
-          if( !apply_filters('tc_gallery_bool', true ) )
+          if( ! apply_filters( 'tc_gallery_bool', true ) )
             return $output;
           
           
-
           //add a filter for link markup 
           //add_filter( 'wp_get_attachment_link', array($this, 'tc_modify_attachment_link') , 20, 6 );
 

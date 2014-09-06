@@ -17,6 +17,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
       //Access any method or var of the class with classname::$instance -> var or method():
       static $instance;
       public $default_options;
+      public $skin_color;
       public $options;//not used in customizer context only
       public $is_customizing;
 
@@ -50,6 +51,18 @@ if ( ! class_exists( 'TC_utils' ) ) :
           $this -> default_options  = $this -> tc_get_default_options();
       }
 
+      /**
+      * Returns the current skin's primary color 
+      *
+      * @package Customizr
+      * @since Customizr 3.1.23
+      */
+      function tc_get_skin_color() {
+          $_skin_map    = TC_init::$instance -> skin_color_map;
+          $_active_skin =  str_replace('.min.', '.', basename( TC_init::$instance -> tc_active_skin() ) );
+          //falls back to blue ( default #08c ) if not defined
+        return ( false != $_active_skin && isset($_skin_map[$_active_skin]) ) ? $_skin_map[$_active_skin] : '#08c';
+      }
 
 
       /**
@@ -142,6 +155,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
 
 
+
       /**
       * Get the saved options in Customizer Screen, merge them with the default theme options array and return the updated global options array
       * @package Customizr
@@ -189,9 +203,17 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @since Customizr 1.0
       */
       function tc_get_the_ID()  {
-          $queried_object   = get_queried_object();
-          $tc_id            = get_post() ? get_the_ID() : null;
-          $tc_id            = ( isset ($queried_object -> ID) ) ? $queried_object -> ID : $tc_id;
+          global $wp_version;
+          if ( version_compare( $wp_version, '3.4.1', '<=' ) )
+            {
+              $tc_id            = get_the_ID();
+            } 
+            else 
+            {
+              $queried_object   = get_queried_object();
+              $tc_id            = ! is_null( get_post() ) ? get_the_ID() : null;
+              $tc_id            = ( isset ($queried_object -> ID) ) ? $queried_object -> ID : $tc_id;
+            }
           return ( is_404() || is_search() || is_archive() ) ? null : $tc_id;
       }
 
@@ -366,7 +388,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
       *
       */
       function tc_is_home_empty() {
-        
         //check if the users has choosen the "no posts or page" option for home page
         return ( (is_home() || is_front_page() ) && 'nothing' == get_option( 'show_on_front' ) ) ? true : false;
       }
@@ -383,7 +404,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
       function tc_get_post_type() {
         global $post;
 
-        
         if ( !isset($post) )
           return;
         
@@ -499,7 +519,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
                   apply_filters( 'tc_social_link_class',
                                 sprintf('social-icon icon-%1$s' ,
                                   ( $key == 'tc_rss' ) ? 'feed' : str_replace('tc_', '', $key)
-                                  )
+                                ),
+                                $key
                   ),
                   esc_url( $__options[$key]),
                   isset($data['link_title']) ?  call_user_func( '__' , $data['link_title'] , 'customizr' ) : '' ,

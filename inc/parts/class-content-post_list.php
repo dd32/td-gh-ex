@@ -236,13 +236,12 @@ if ( ! class_exists( 'TC_post_list' ) ) :
               }
             }
           }
-         
-          return apply_filters( 'tc_get_post_list_thumbnail', array($tc_thumb, $tc_thumb_width, $tc_thumb_height) );
+
+          //the current post id is included in the array of parameters for a better granularity.
+          return apply_filters( 'tc_get_post_list_thumbnail' , array( $tc_thumb, $tc_thumb_width, $tc_thumb_height ), tc__f('__ID') );
 
         }//end of function
           
-
-
 
 
 
@@ -254,16 +253,15 @@ if ( ! class_exists( 'TC_post_list' ) ) :
         * @since Customizr 3.0.10
         */
         function tc_post_list_thumbnail( $thumb_data , $layout ) {
-
           $thumb_img                  = !isset( $thumb_data) ? false : $thumb_data[0];
-          $thumb_img                  = apply_filters( 'tc_post_thumb_img', $thumb_img );
-          if ( !$thumb_img )
+          $thumb_img                  = apply_filters( 'tc_post_thumb_img', $thumb_img, tc__f('__ID') );
+          if ( ! $thumb_img )
             return;
 
           //handles the case when the image dimensions are too small
-          $thumb_size                 = apply_filters( 'tc_thumb_size' , TC_init::$instance -> tc_thumb_size );
+          $thumb_size                 = apply_filters( 'tc_thumb_size' , TC_init::$instance -> tc_thumb_size, tc__f('__ID')  );
           $no_effect_class            = ( isset($thumb_data[0]) && isset($thumb_data[1]) && ( $thumb_data[1] < $thumb_size['width']) ) ? 'no-effect' : '';
-          $no_effect_class            = apply_filters( 'tc_no_round_thumb', $no_effect_class );
+          $no_effect_class            = apply_filters( 'tc_no_round_thumb', $no_effect_class, tc__f('__ID') );
 
           //default hover effect
           $thumb_wrapper              = sprintf('<div class="thumb-wrapper %1$s"><div class="round-div"></div><a class="round-div %1$s" href="%2$s" title="%3$s"></a>%4$s</div>',
@@ -272,7 +270,7 @@ if ( ! class_exists( 'TC_post_list' ) ) :
                                         get_the_title( get_the_ID() ),
                                         $thumb_img
           );
-          $thumb_wrapper              = apply_filters( 'tc_post_thumb_wrapper', $thumb_wrapper, $thumb_img );
+          $thumb_wrapper              = apply_filters_ref_array( 'tc_post_thumb_wrapper', array( $thumb_wrapper, $thumb_img, tc__f('__ID') ) );
 
           //renders the thumbnail
           $html = sprintf('<section class="tc-thumbnail %1$s">%2$s</section>',
@@ -280,7 +278,7 @@ if ( ! class_exists( 'TC_post_list' ) ) :
             $thumb_wrapper
           );
 
-          echo apply_filters( 'tc_post_list_thumbnail', $html, $thumb_data, $layout );
+          echo apply_filters_ref_array( 'tc_post_list_thumbnail', array( $html, $thumb_data, $layout ) );
 
         }//end of function
 

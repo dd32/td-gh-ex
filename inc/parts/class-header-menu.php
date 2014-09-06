@@ -94,7 +94,7 @@ if ( ! class_exists( 'TC_menu' ) ) :
           );
           $menu_wrapper_class   = ( 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? 'nav-collapse collapse tc-hover-menu-wrapper' : 'nav-collapse collapse';
           printf('<div class="%1$s">%2$s</div>',
-              apply_filters( 'menu_wrapper_class', $menu_wrapper_class ),
+              apply_filters( 'tc_menu_wrapper_class', $menu_wrapper_class ),
               wp_nav_menu( $menu_args )
           );
 
