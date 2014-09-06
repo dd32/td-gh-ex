@@ -14,12 +14,14 @@ Features:
 Activate license keys and reset your Visual settings.
 
 == Appearance > Widgets ==
-GeneratePress has up to 7 widgets. 1 in your header, 1 for each sidebar and up to 4 in your footer.
+GeneratePress has up to 8 widget area. 1 in your header, 1 for each sidebar and up to 5 in your footer.
 
 == Appearance > Customize ==
-	- Header: Hide your site title or tagline, and upload your own header.
+	- Header Content: Hide your site title or tagline, and upload your own header.
 	- Layout: Change things like your container width, header layout, navigation layout, sidebar layout and much more.
+	- Typography: Choose your default body font.
 	- Base Colors: Easily change your background color, text color and link color.
+	- Blog: Show the full post or excerpt.
 	- Addons are available for further customization.
 
 == Page Headers ==
@@ -35,5 +37,6 @@ More details here: http://www.gnu.org/licenses/gpl-2.0.html
 
 Screenshot images are all licensed under CC0 1.0 Universal - http://creativecommons.org/publicdomain/zero/1.0/deed.en
 http://pixabay.com/en/road-asphalt-space-sky-clouds-220058/
-http://pixabay.com/en/chicago-skyline-tall-buildings-343941/
-http://pixabay.com/en/water-wave-drip-liquid-321847/
+http://pixabay.com/en/way-clouds-seat-belts-direction-427984/
+http://pixabay.com/en/home-office-workstation-office-336378/
+http://pixabay.com/en/departure-platform-subway-371218/

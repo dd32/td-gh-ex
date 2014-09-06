@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.1.3');
+define( 'GENERATE_VERSION', '1.1.4');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -87,6 +87,7 @@ function generate_get_defaults()
 		'header_alignment_setting' => 'left',
 		'nav_layout_setting' => 'fluid-nav',
 		'nav_position_setting' => 'nav-below-header',
+		'nav_search' => 'disable',
 		'content_layout_setting' => 'separate-containers',
 		'layout_setting' => 'right-sidebar',
 		'blog_layout_setting' => 'right-sidebar',
@@ -221,6 +222,11 @@ require get_template_directory() . '/inc/addons.php';
 add_action( 'wp_enqueue_scripts', 'generate_scripts' );
 function generate_scripts() {
 
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
+
 	// Generate stylesheets
 	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/style.css', false, GENERATE_VERSION, 'all' );
@@ -238,6 +244,10 @@ function generate_scripts() {
 	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
 
+	if ( 'enable' == $generate_settings['nav_search'] ) {
+		wp_enqueue_script( 'generate-navigation-search', get_template_directory_uri() . '/js/navigation-search.js', array('jquery'), GENERATE_VERSION, true );
+	}
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -380,6 +390,11 @@ function generate_base_css()
 			'text-align' => ( !empty( $generate_settings['nav_alignment_setting'] ) ) ? $generate_settings['nav_alignment_setting'] : null
 		),
 		
+		// Remove whitespace between inline elements
+		'.main-navigation ul' => array(
+			'font-size' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '0px' : null,
+		),
+		
 		// Navigation 
 		'.nav-below-header .main-navigation .menu > li, 
 		.nav-below-header .main-navigation .sf-menu > li,
@@ -387,7 +402,6 @@ function generate_base_css()
 		.nav-above-header .main-navigation .sf-menu > li' => array(
 			'float' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'none' : null,
 			'display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline-block' : null,
-			'margin-right' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '-4px' : null,
 			'*display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline' : null,
 			'*zoom' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '1' : null,
 		),
@@ -428,12 +442,14 @@ function generate_base_css()
 function generate_featured_page_header_area($class)
 {
 	global $post;
+	$page_header_image_info = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 	$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
-	$page_header_image_width = 1200;
+	$page_header_image_width = $page_header_image_info[1];
+	$page_header_image_height = $page_header_image_info[2];
 		
 	if ( !empty($page_header_image) ) :
 		echo '<div class="' . $class . ' grid-container grid-parent">';
-			echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" alt="" />';
+			echo '<img src="' . $page_header_image . '" width="' . $page_header_image_width . '" height="' . $page_header_image_height . '" alt="" />';
 		echo '</div>';
 	endif;
 }

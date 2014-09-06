@@ -130,6 +130,19 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 				'background-color' => $generate_settings['navigation_background_color']
 			),
 			
+			// Navigation search input
+			'.navigation-search input[type="search"],
+			.navigation-search input[type="search"]:active' => array(
+				'color' => $generate_settings['navigation_background_hover_color'],
+				'background-color' => $generate_settings['navigation_background_hover_color']
+			),
+			
+			// Navigation search input on focus
+			'.navigation-search input[type="search"]:focus' => array(
+				'color' => $generate_settings['navigation_text_hover_color'],
+				'background-color' => $generate_settings['navigation_background_hover_color']
+			),
+			
 			// Sub-Navigation background
 			'.main-navigation ul ul' => array(
 				'background-color' => $generate_settings['subnavigation_background_color']
@@ -409,9 +422,8 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 		}
 		
 		$widget_padding = '';
-		if ( $generate_settings['sidebar_widget_background_color'] !== $generate_settings['content_background_color'] && 
-			$generate_settings['content_layout_setting'] == 'one-container' ) :
-			$widget_padding = '.widget{padding:30px;}';
+		if ( $generate_settings['sidebar_widget_background_color'] !== $generate_settings['content_background_color'] ) :
+			$widget_padding = '.one-container .widget{padding:30px;}';
 		endif;
 		
 		$output = str_replace(array("\r", "\n"), '', $output);

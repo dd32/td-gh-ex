@@ -6,6 +6,47 @@
  *
  * @package Generate
  */
+if ( ! function_exists( 'generate_paging_nav' ) ) :
+	function generate_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+
+		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+		$pagenum_link = html_entity_decode( get_pagenum_link() );
+		$query_args   = array();
+		$url_parts    = explode( '?', $pagenum_link );
+
+		if ( isset( $url_parts[1] ) ) {
+			wp_parse_str( $url_parts[1], $query_args );
+		}
+
+		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+
+		$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+		$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+
+		// Set up paginated links.
+		$links = paginate_links( array(
+			'base'     => $pagenum_link,
+			'format'   => $format,
+			'total'    => $GLOBALS['wp_query']->max_num_pages,
+			'current'  => $paged,
+			'mid_size' => 1,
+			'add_args' => array_map( 'urlencode', $query_args ),
+			'prev_text' => __( '&larr; Previous', 'generate' ),
+			'next_text' => __( 'Next &rarr;', 'generate' ),
+		) );
+
+		if ( $links ) :
+
+			echo $links; 
+
+		endif;
+	}
+endif;
 
 if ( ! function_exists( 'generate_content_nav' ) ) :
 /**
@@ -50,6 +91,8 @@ function generate_content_nav( $nav_id ) {
 		<?php if ( get_previous_posts_link() ) : ?>
 		<div class="nav-next"><span class="next" title="<?php _e('Next','generate');?>"><?php previous_posts_link( __( 'Newer posts', 'generate' ) ); ?></span></div>
 		<?php endif; ?>
+		
+		<?php generate_paging_nav(); ?>
 
 	<?php endif; ?>
 
@@ -240,5 +283,30 @@ if ( ! function_exists( 'generate_post_image' ) ) :
 			</div>
 		<?php
 		}
+	}
+endif;
+
+/**
+ * Add the search bar to the navigation
+ * @since 1.1.4
+ */
+if ( ! function_exists( 'generate_navigation_search' ) ) :
+	add_action( 'generate_inside_navigation','generate_navigation_search');
+	function generate_navigation_search()
+	{
+		$generate_settings = wp_parse_args( 
+			get_option( 'generate_settings', array() ), 
+			generate_get_defaults() 
+		);
+		
+		if ( 'enable' !== $generate_settings['nav_search'] )
+			return;
+			
+		?>
+		<form role="search" method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search for:', 'label', 'generate' ); ?>">
+		</form>
+
+		<?php
 	}
 endif;

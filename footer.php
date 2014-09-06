@@ -24,7 +24,7 @@
 		$stored_meta = get_post_meta( $post->ID, '_generate-footer-widget-meta', true );
 	endif;
 	
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['footer_widget_setting'] = $stored_meta;
 	endif;
 	
@@ -111,6 +111,7 @@
 		</div>
 	<?php
 	endif;
+	do_action('generate_after_footer_widgets');
 	?>
 	<footer class="site-info" itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
 		<div class="inside-site-info grid-container grid-parent">

@@ -31,7 +31,7 @@ if ( !function_exists('generate_spacing_get_defaults') ) :
 			'content_right' => '40',
 			'content_bottom' => '40',
 			'content_left' => '40',
-			'separator' => '30',
+			'separator' => '20',
 			'left_sidebar_width' => '25',
 			'right_sidebar_width' => '25',
 			'widget_top' => '40',
@@ -42,9 +42,9 @@ if ( !function_exists('generate_spacing_get_defaults') ) :
 			'footer_widget_container_right' => '0',
 			'footer_widget_container_bottom' => '40',
 			'footer_widget_container_left' => '0',
-			'footer_top' => '40',
+			'footer_top' => '20',
 			'footer_right' => '0',
-			'footer_bottom' => '40',
+			'footer_bottom' => '20',
 			'footer_left' => '0',
 		);
 		
@@ -110,6 +110,14 @@ if ( !function_exists('generate_spacing_css') ) :
 			
 			'.main-navigation ul ul' => array(
 				'top' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null
+			),
+			
+			'.navigation-search' => array(
+				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+			),
+			
+			'.navigation-search input' => array(
+				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
 			),
 			
 			'.separate-containers .widget-area .widget' => array(

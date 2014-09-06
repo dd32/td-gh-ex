@@ -95,6 +95,18 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
+	if ( class_exists( 'WP_Customize_Panel' ) ) :
+		if ( ! $wp_customize->get_panel( 'generate_colors_panel' ) ) {
+			$wp_customize->add_panel( 'generate_colors_panel', array(
+				'priority'       => 30,
+				'capability'     => 'edit_theme_options',
+				'theme_supports' => '',
+				'title'          => __( 'Colors','generate' ),
+				'description'    => '',
+			) );
+		}
+	endif;
+	
 	$wp_customize->add_section(
 		// ID
 		'body_section',
@@ -102,7 +114,8 @@ function generate_customize_register( $wp_customize ) {
 		array(
 			'title' => __( 'Base Colors', 'generate' ),
 			'capability' => 'edit_theme_options',
-			'priority' => 40,
+			'priority' => 30,
+			'panel' => 'generate_colors_panel'
 		)
 	);
 	
@@ -190,7 +203,7 @@ function generate_customize_register( $wp_customize ) {
 			'title' => __( 'Layout', 'generate' ),
 			'capability' => 'edit_theme_options',
 			'description' => __( 'Allows you to edit your theme\'s layout.', 'generate' ),
-			'priority' => 30
+			'priority' => 25
 		)
 	);
 	
@@ -375,6 +388,37 @@ function generate_customize_register( $wp_customize ) {
 			// This last one must match setting ID from above
 			'settings' => 'generate_settings[nav_alignment_setting]',
 			'priority' => 22
+		)
+	);
+	
+	// Add navigation setting
+	$wp_customize->add_setting(
+		// ID
+		'generate_settings[nav_search]',
+		// Arguments array
+		array(
+			'default' => $defaults['nav_search'],
+			'type' => 'option',
+			'sanitize_callback' => 'generate_sanitize_nav_search'
+		)
+	);
+	
+	// Add navigation control
+	$wp_customize->add_control(
+		// ID
+		'nav_search_control',
+		// Arguments array
+		array(
+			'type' => 'select',
+			'label' => __( 'Navigation Search', 'generate' ),
+			'section' => 'layout_section',
+			'choices' => array(
+				'enable' => __( 'Enabled', 'generate' ),
+				'disable' => __( 'Disabled', 'generate' )
+			),
+			// This last one must match setting ID from above
+			'settings' => 'generate_settings[nav_search]',
+			'priority' => 23
 		)
 	);
 	
@@ -589,7 +633,7 @@ function generate_customize_register( $wp_customize ) {
 			'title' => __( 'Blog', 'generate' ),
 			'capability' => 'edit_theme_options',
 			'description' => '',
-			'priority' => 200
+			'priority' => 100
 		)
 	);
 	

@@ -57,6 +57,23 @@
 		float: none;
 		max-width: 100%;
 	}
+	.main-navigation, 
+	.main-navigation {
+		text-align:left;
+	}
+	.navigation-search,
+	.navigation-search input {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.main-navigation li.search-item {
+		z-index: 19;
+	}
+
+	.main-navigation li.search-item .fa-times {
+		text-indent: -9999px;
+	}
 }
 
 @media screen and (max-width: 767px) {

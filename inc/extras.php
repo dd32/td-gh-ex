@@ -16,13 +16,6 @@ function generate_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'generate_page_menu_args' );
 
-// Remove navigation container
-function generate_wp_nav_menu_args( $args = '' ) {
-	$args['container'] = false;
-	return $args;
-}
-add_filter( 'wp_nav_menu_args', 'generate_wp_nav_menu_args' );
-
 /**
  * Adds custom classes to the array of body classes.
  * @since 0.1
@@ -53,7 +46,7 @@ function generate_body_classes( $classes ) {
 	endif;
 	
 	// If a layout is set on the page, replace value with the metabox value
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
@@ -125,7 +118,7 @@ function generate_right_sidebar_classes( $classes )
 		$layout = $generate_settings['single_layout_setting'];
 	endif;
 	
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$layout = $stored_meta;
 	endif;
 	
@@ -204,7 +197,7 @@ function generate_left_sidebar_classes( $classes )
 		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
 	
@@ -270,7 +263,7 @@ function generate_content_classes( $classes )
 		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
 	
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
 	

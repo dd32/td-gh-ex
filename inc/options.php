@@ -30,7 +30,8 @@ function generate_create_menu()
 		'generate_disable_elements' => 'gen_disable_elements_license_key_status',
 		'generate_blog_get_defaults' => 'gen_blog_license_key_status',
 		'generate_hooks_setup' => 'gen_hooks_license_key_status',
-		'generate_spacing_setup' => 'gen_spacing_license_key_status'
+		'generate_spacing_setup' => 'gen_spacing_license_key_status',
+		'generate_secondary_nav_setup' => 'gen_secondary_nav_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -179,6 +180,14 @@ function generate_settings_page()
 												'license' => 'gen_backgrounds_license_key_status',
 												'url' => esc_url('http://www.generatepress.com/downloads/generate-backgrounds/'),
 												'img' => get_template_directory_uri() . '/images/admin/backgrounds.png'
+										),
+										'11' => array(
+												'name' => __('Secondary Nav','generate'),
+												'version' => ( function_exists('generate_secondary_nav_setup') ) ? GENERATE_SECONDARY_NAV_VERSION : '',
+												'id' => 'generate_secondary_nav_setup',
+												'license' => 'gen_secondary_nav_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-secondary-nav/'),
+												'img' => get_template_directory_uri() . '/images/admin/secondarynav.png'
 										)
 									);
 									
@@ -188,7 +197,7 @@ function generate_settings_page()
 										else :
 										
 											if ( get_option($addon['license']) !== 'valid' ) :
-												echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please add your license key below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+												echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please activate below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
 											else :
 												echo '<span class="addon-active"><a title="' . $addon['name'] . ': ' . __('Activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
 											endif;

@@ -72,6 +72,13 @@ function generate_add_navigation_before_left_sidebar()
 	endif;
 	
 }
+
+/**
+ *
+ * Build the navigation
+ * @since 0.1
+ *
+ */
 function generate_navigation_position()
 {
 	?>
@@ -80,25 +87,40 @@ function generate_navigation_position()
 			<?php do_action('generate_inside_navigation'); ?>
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'generate' ); ?></h3>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'generate' ); ?>"><?php _e( 'Skip to content', 'generate' ); ?></a></div>
-				<div class="main-nav">
-					<ul <?php generate_menu_class(); ?>>
-						<?php 
-						if ( has_nav_menu( 'primary' ) ) :
-							wp_nav_menu( array( 
-								'theme_location' => 'primary',
-								'container_class' => 'main-nav',
-								'menu_class' => 'menu',
-								'items_wrap' => '%3$s'
-							) );
-						else :
-							wp_list_pages('sort_column=menu_order&title_li=');
-						endif;
-						?>
-					</ul>
-				</div><!-- .main-nav -->
+			<?php 
+			wp_nav_menu( 
+				array( 
+					'theme_location' => 'primary',
+					'container' => 'div',
+					'container_class' => 'main-nav',
+					'menu_class' => '',
+					'fallback_cb' => 'generate_menu_fallback',
+					'items_wrap' => '<ul id="%1$s" class="%2$s ' . join( ' ', generate_get_menu_class() ) . '">%3$s</ul>'
+				) 
+			);
+			?>
 		</div><!-- .inside-navigation -->
 	</nav><!-- #site-navigation -->
 	<?php
+}
+
+
+/**
+ * Menu fallback. 
+ *
+ * @param  array $args
+ * @return string
+ * @since 1.1.4
+ */
+function generate_menu_fallback( $args )
+{ 
+?>
+	<div class="main-nav">
+		<ul <?php generate_menu_class(); ?>>
+			<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
+		</ul>
+	</div><!-- .main-nav -->
+<?php 
 }
 
 /**

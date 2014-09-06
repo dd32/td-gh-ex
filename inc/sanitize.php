@@ -73,6 +73,23 @@ function generate_sanitize_alignment( $input ) {
 }
 
 /**
+ * Sanitize navigation alignment
+ * @since 1.1.1
+ */
+function generate_sanitize_nav_search( $input ) {
+    $valid = array(
+        'enable' => __( 'Enabled', 'generate' ),
+		'disable' => __( 'Disabled', 'generate' )
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'disable';
+    }
+}
+
+/**
  * Sanitize navigation position
  * @since 1.0.8
  */
