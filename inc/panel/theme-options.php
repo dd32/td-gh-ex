@@ -1307,7 +1307,15 @@ function catchkathmandu_theme_options_do_page() {
                                 <div class="col col-2">
                                     <input type="text" size="45" name="catchkathmandu_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                 </div>
-                            </div><!-- .row --> 
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Contact', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="catchkathmandu_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->
                             <div class="row">
                                 <div class="col col-1">
                                     <?php _e( 'Xing', 'catchkathmandu' ); ?>
@@ -1710,6 +1718,9 @@ function catchkathmandu_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_email' ] ) ) {
 		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	}	
+	if( isset( $input[ 'social_contact' ] ) ) {
+		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
 	}	
 	if( isset( $input[ 'social_xing' ] ) ) {
 		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );

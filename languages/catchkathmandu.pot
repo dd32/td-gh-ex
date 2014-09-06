@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 00:07+0545\n"
-"PO-Revision-Date: 2014-09-01 00:07+0545\n"
+"POT-Creation-Date: 2014-09-06 10:57+0545\n"
+"PO-Revision-Date: 2014-09-06 10:57+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -287,152 +287,151 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../inc/catchkathmandu-functions.php:1510
-#, php-format
-msgid "%s on Facebook"
+#: ../inc/catchkathmandu-functions.php:1510 ../inc/panel/theme-options.php:107
+#: ../inc/panel/theme-options.php:1097
+msgid "Facebook"
 msgstr ""
 
-#: ../inc/catchkathmandu-functions.php:1515
-#, php-format
-msgid "%s on Twitter"
+#: ../inc/catchkathmandu-functions.php:1515 ../inc/panel/theme-options.php:108
+#: ../inc/panel/theme-options.php:1105
+msgid "Twitter"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1520
-#, php-format
-msgid "%s on Google+"
+#: ../inc/panel/theme-options.php:1113
+msgid "Google+"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1525
-#, php-format
-msgid "%s on Linkedin"
+msgid "LinkedIn"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1530
-#, php-format
-msgid "%s on Pinterest"
+#: ../inc/panel/theme-options.php:1121
+msgid "Pinterest"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1535
-#, php-format
-msgid "%s on YouTube"
+msgid "YouTube"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1540
-#, php-format
-msgid "%s on Vimeo"
+#: ../inc/panel/theme-options.php:1137
+msgid "Vimeo"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1545
-#, php-format
-msgid "%s on Slideshare"
+msgid "SlideShare"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1550
-#, php-format
-msgid "%s on Foursquare"
+msgid "FourSquare"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1555
-#, php-format
-msgid "%s on Flickr"
+#: ../inc/panel/theme-options.php:1169
+msgid "Flickr"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1560
-#, php-format
-msgid "%s on Tumblr"
+#: ../inc/panel/theme-options.php:1177
+msgid "Tumblr"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1565
-#, php-format
-msgid "%s on deviantART"
+#: ../inc/panel/theme-options.php:1185
+msgid "deviantART"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1570
-#, php-format
-msgid "%s on Dribbble"
+#: ../inc/panel/theme-options.php:1193
+msgid "Dribbble"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1575
-#, php-format
-msgid "%s on MySpace"
+#: ../inc/panel/theme-options.php:1201
+msgid "MySpace"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1580
-#, php-format
-msgid "%s on WordPress"
+#: ../inc/panel/theme-options.php:1209 ../inc/panel/theme-options.php:1933
+msgid "WordPress"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1585
-#, php-format
-msgid "%s on RSS"
+#: ../inc/panel/theme-options.php:1217
+msgid "RSS"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1590
-#, php-format
-msgid "%s on Delicious"
+#: ../inc/panel/theme-options.php:1225
+msgid "Delicious"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1595
-#, php-format
-msgid "%s on Last.fm"
+#: ../inc/panel/theme-options.php:1233
+msgid "Last.fm"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1600
-#, php-format
-msgid "%s on Instagram"
+#: ../inc/panel/theme-options.php:1241
+msgid "Instagram"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1605
-#, php-format
-msgid "%s on GitHub"
+#: ../inc/panel/theme-options.php:1249
+msgid "GitHub"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1610
-#, php-format
-msgid "%s on Vkontakte"
+#: ../inc/panel/theme-options.php:1257
+msgid "Vkontakte"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1615
-#, php-format
-msgid "%s on My World"
+#: ../inc/panel/theme-options.php:1265
+msgid "My World"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1620
-#, php-format
-msgid "%s on Odnoklassniki"
+#: ../inc/panel/theme-options.php:1273
+msgid "Odnoklassniki"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1625
-#, php-format
-msgid "%s on Goodreads"
+msgid "GoodReads"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1630
-#, php-format
-msgid "%s on Skype"
+#: ../inc/panel/theme-options.php:1289
+msgid "Skype"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1635
-#, php-format
-msgid "%s on Soundcloud"
+msgid "SoundCloud"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1640
-#, php-format
-msgid "%s on Email"
+#: ../inc/panel/theme-options.php:1305
+msgid "Email"
 msgstr ""
 
 #: ../inc/catchkathmandu-functions.php:1645
-#, php-format
-msgid "%s on Xing"
+#: ../inc/panel/theme-options.php:1313
+msgid "Contact"
 msgstr ""
 
-#: ../inc/catchkathmandu-functions.php:1740
+#: ../inc/catchkathmandu-functions.php:1650
+#: ../inc/panel/theme-options.php:1321
+msgid "Xing"
+msgstr ""
+
+#: ../inc/catchkathmandu-functions.php:1745
 msgid "ID"
 msgstr ""
 
-#: ../inc/catchkathmandu-functions.php:1764
-#: ../inc/catchkathmandu-functions.php:1777
+#: ../inc/catchkathmandu-functions.php:1769
+#: ../inc/catchkathmandu-functions.php:1782
 msgid "Menu"
 msgstr ""
 
@@ -568,19 +567,19 @@ msgstr ""
 msgid "Catch Kathmandu Logo"
 msgstr ""
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:104
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:105
 msgid "Copyright"
 msgstr ""
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:104
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:105
 msgid "All Rights Reserved"
 msgstr ""
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:104
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:105
 msgid "Powered by"
 msgstr ""
 
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:104
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:105
 msgid "Theme"
 msgstr ""
 
@@ -644,20 +643,12 @@ msgstr ""
 msgid "Like Catch Themes on Facebook"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:1097
-msgid "Facebook"
-msgstr ""
-
 #: ../inc/panel/theme-options.php:108
 msgid "https://twitter.com/catchthemes/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:108
 msgid "Follow Catch Themes on Twitter"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:1105
-msgid "Twitter"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:109
@@ -721,7 +712,7 @@ msgstr ""
 #: ../inc/panel/theme-options.php:840 ../inc/panel/theme-options.php:933
 #: ../inc/panel/theme-options.php:968 ../inc/panel/theme-options.php:993
 #: ../inc/panel/theme-options.php:1026 ../inc/panel/theme-options.php:1082
-#: ../inc/panel/theme-options.php:1320 ../inc/panel/theme-options.php:1350
+#: ../inc/panel/theme-options.php:1328 ../inc/panel/theme-options.php:1358
 msgid "Save Changes"
 msgstr ""
 
@@ -1311,20 +1302,8 @@ msgstr ""
 msgid "Predefine Social Icons"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1113
-msgid "Google+"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1121
-msgid "Pinterest"
-msgstr ""
-
 #: ../inc/panel/theme-options.php:1129
 msgid "Youtube"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1137
-msgid "Vimeo"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:1145
@@ -1339,111 +1318,43 @@ msgstr ""
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1169
-msgid "Flickr"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1177
-msgid "Tumblr"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1185
-msgid "deviantART"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1193
-msgid "Dribbble"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1201
-msgid "MySpace"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1209 ../inc/panel/theme-options.php:1922
-msgid "WordPress"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1217
-msgid "RSS"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1225
-msgid "Delicious"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1233
-msgid "Last.fm"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1241
-msgid "Instagram"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1249
-msgid "GitHub"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1257
-msgid "Vkontakte"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1265
-msgid "My World"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1273
-msgid "Odnoklassniki"
-msgstr ""
-
 #: ../inc/panel/theme-options.php:1281
 msgid "Goodreads"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1289
-msgid "Skype"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:1297
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1305
-msgid "Email"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1313
-msgid "Xing"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:1331
+#: ../inc/panel/theme-options.php:1339
 msgid "Header and Footer Codes"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1335
+#: ../inc/panel/theme-options.php:1343
 msgid "Code to display on Header"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1338
+#: ../inc/panel/theme-options.php:1346
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1343
+#: ../inc/panel/theme-options.php:1351
 msgid "Code to display on Footer"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1346
+#: ../inc/panel/theme-options.php:1354
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1901
+#: ../inc/panel/theme-options.php:1912
 msgid "Y"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1932
+#: ../inc/panel/theme-options.php:1943
 msgid "Catch Kathmandu"
 msgstr ""
 

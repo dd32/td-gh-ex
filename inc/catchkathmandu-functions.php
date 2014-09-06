@@ -1507,143 +1507,148 @@ function catchkathmandu_social_networks() {
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Twitter
 			if ( !empty( $options[ 'social_twitter' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Google+
 			if ( !empty( $options[ 'social_googleplus' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Google+', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Linkedin
 			if ( !empty( $options[ 'social_linkedin' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'LinkedIn', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Pinterest
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'catchkathmandu' ) .'</a></li>';
 			}				
-			//Youtube
+			//YouTube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Vimeo
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'SlideShare', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'catchkathmandu' ) .'</a></li>';
 			}				
-			//Foursquare
+			//FourSquare
 			if ( !empty( $options[ 'social_foursquare' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'. esc_attr__( 'FourSquare', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Flickr
 			if ( !empty( $options[ 'social_flickr' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Tumblr
 			if ( !empty( $options[ 'social_tumblr' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'catchkathmandu' ) .'</a></li>';
 			}
 			//deviantART
 			if ( !empty( $options[ 'social_deviantart' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Dribbble
 			if ( !empty( $options[ 'social_dribbble' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'catchkathmandu' ) .'</a></li>';
 			}
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'catchkathmandu' ) .'</a></li>';
 			}
 			//WordPress
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
+					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'RSS', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Delicious
 			if ( !empty( $options[ 'social_delicious' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'. esc_attr__( 'Delicious', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//Last.fm
 			if ( !empty( $options[ 'social_lastfm' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'. esc_attr__( 'Last.fm', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'catchkathmandu' ) .'</a></li>';
 			}
 			//GitHub
 			if ( !empty( $options[ 'social_github' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'catchkathmandu' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
+					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'GitHub', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'catchkathmandu' ) .'</a></li>';
 			}	
 			//Vkontakte
 			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
+					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'. esc_attr__( 'Vkontakte', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//My World
 			if ( !empty( $options[ 'social_myworld' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
+					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'. esc_attr__( 'My World', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'My World', 'catchkathmandu' ) .'</a></li>';
 			}				
 			//Odnoklassniki
 			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
+					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'. esc_attr__( 'Odnoklassniki', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Goodreads
 			if ( !empty( $options[ 'social_goodreads' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
+					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'. esc_attr__( 'GoodReads', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Skype', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Soundcloud
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'SoundCloud', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'catchkathmandu' ) .'</a></li>';
 			}
 			//Email
 			if ( !empty( $options[ 'social_email' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="email"><a href="'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
-			}				
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Email', 'catchkathmandu' ) .'</a></li>';
+			}	
+			//Contact
+			if ( !empty( $options[ 'social_contact' ] ) ) {
+				$catchkathmandu_social_networks .=
+					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catchkathmandu' ) .'">'. esc_attr__( 'Contact', 'catchkathmandu' ) .'</a></li>';
+			}			
 			//Xing
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchkathmandu_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'.sprintf( esc_attr__( '%s on Xing', 'catchkathmandu' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Xing </a></li>';
-			}
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catchkathmandu' ) .'</a></li>';
+			}	
 			
 			$catchkathmandu_social_networks .='
 		</ul>';

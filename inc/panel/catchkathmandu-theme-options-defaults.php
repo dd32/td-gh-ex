@@ -98,6 +98,7 @@ $catchkathmandu_options_defaults = array(
 	'social_skype'							=> '',
 	'social_soundcloud'						=> '',
 	'social_email'							=> '',
+	'social_contact'						=> '',
 	'social_xing'							=> '',
  	'analytic_header'						=> '',
  	'analytic_footer'						=> '',

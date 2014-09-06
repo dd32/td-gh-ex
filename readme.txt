@@ -18,6 +18,7 @@ Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@lichtundmusik.ch)
 Added Translation for Japanese - Key Saito (key@keyspace.info)
 Added Translation for Dutch - Yoshi van den Akker (yoshivda@gmail.com)
+Added Translation for Turkish - Dr. Hakan Gur (dilderslerisitesi@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -79,10 +80,15 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
-2.1
+Version 2.2
+* Added Turkish translation tr_TR.po and tr_TR.mo
+* Fixed Email social icon link issue (Reported by Michaela)
+* Added Contact link option
+
+Version 2.1
 * Added Dutch translation nl_NL.po and nl_NL.mo
 * Added Xing Social link option
-* Fixed scroll up issue in mobile deveices
+* Fixed scroll up issue in mobile devices
 
 Version 2.0.1
 * Fixed undefined index of feed_url
