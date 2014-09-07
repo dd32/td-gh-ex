@@ -1,6 +1,6 @@
 <?php
 /* Small Business Theme's Search Form
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */

@@ -1,24 +1,15 @@
 <?php
 /* 	Small Business Theme's Functions
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
   
-  	add_theme_support( 'automatic-feed-links' );
-  	register_nav_menus( array( 
-    	'main-menu' => "Main Menu",
-    	'top-menu' => "Top Menu"
-	) );
-
-//	Set the content width based on the theme's design and stylesheet.
-	if ( ! isset( $content_width ) ) $content_width = 650;
 
 // Load the D5 Framework Optios Page and Meta Page
-	if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	function smallbusiness_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
-	require_once get_template_directory() . '/inc/options-framework.php';}
+	require_once get_template_directory() . '/inc/options-framework.php';
 
 // 	Tell WordPress for wp_title in order to modify document title content
 	function smallbusiness_filter_wp_title( $title ) {
@@ -27,6 +18,14 @@
     return $filtered_title;
 	}
 	add_filter( 'wp_title', 'smallbusiness_filter_wp_title' );
+	
+	function smallbusiness_setup() {
+	add_theme_support( 'automatic-feed-links' );
+  	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
+
+//	Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 650;
 	
 	add_editor_style('editor-style.css');
 
@@ -62,8 +61,8 @@
 	'admin-head-callback'    => '',
 	'admin-preview-callback' => '',
 	);
-	add_theme_support( 'custom-header', $smallbusiness_custom_header );
-
+	add_theme_support( 'custom-header', $smallbusiness_custom_header ); }
+	add_action( 'after_setup_theme', 'smallbusiness_setup' );
 
 // 	Functions for adding script
 	function smallbusiness_enqueue_scripts() {

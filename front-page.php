@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	smallbusiness Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
@@ -22,8 +22,8 @@
 
 <?php get_template_part( 'featured-box' );  ?><br />
 
-			<div id="content">
- <?php if (have_posts()) : while (have_posts()) : the_post();?><div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div id="content">
+<?php if (have_posts()) : while (have_posts()) : the_post();?><div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 <a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title();?></h2><?php the_post_thumbnail('thumbnail'); ?></a><?php if (is_page()): the_content(); else: $sbExcerptLength=60; the_excerpt(); endif; ?>
 </div> 
 <br /><div class="clear"> </div>
