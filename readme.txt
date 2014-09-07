@@ -1,7 +1,7 @@
 ----------------------------------
 Small Business
 ----------------------------------
-Version: 	1.9
+Version: 	2.0
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -25,3 +25,8 @@ Some styling change
 Changelog 1.9
 ----------------------------------
 Options Framework Updated
+
+
+Changelog 2.0
+----------------------------------
+Unnecessary Image Files deleted
