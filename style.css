@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: Searchlight is a CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can set any Layout ( Left Sidebar, Right Sidebar, Full Width ), set Theme Colors to your own, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
-Version: 1.0
+Version: 1.1
 
 Tags: green, white, black, light, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -161,7 +161,8 @@ padding: 5px 20px;  text-indent: -90000px; margin-left: -5px; }
 
 .widget{display:block;word-wrap:break-word;}
 #right-sidebar .widget{background:#EEEEEE;margin-bottom:20px;padding:15px; border-radius: 5px; }
-.widget h3{color:#05d24d;padding-bottom:5px;text-transform:uppercase; font-weight: 500;}
+.widget .widget-title{color:#05d24d;padding-bottom:5px;text-transform:uppercase; font-weight: 500;}
+#right-sidebar .widget-title { margin: -15px -15px 5px; padding: 7px; color: #FFFFFF; text-align: center; }
 #right-sidebar .widget,
 #right-sidebar .widget li,
 #right-sidebar .widget a {color:#555555;text-decoration:none;}
@@ -302,7 +303,8 @@ blockquote p, q p {display:inline;}
 #container .attachment-thumbnail{border:1px solid #AAAAAA;border-radius:3px 3px 3px 3px;margin:0px 15px 10px 0;padding:3px;float:left;}
 #container .gallery .attachment-thumbnail{float:none;margin:5px auto;}
 
-h1.page-title, h1.arc-post-title{font-size:40px;text-shadow:-1px -1px 3px #FFFFFF;text-align:left;color:#149755; font-weight: 500;}
+h1.page-title, h1.arc-post-title{font-size:40px;text-align:left;color:#149755; font-weight: 500;}
+.entrytext h1.page-title { color: #FFFFFF; margin: -25px -20px 15px; padding: 5px 20px; text-align: center; }
 h2.post-title, h2.commentsbox, h3#reply-title, h2.post-title-color{font-size:35px;}
 h2.commentsbox:before { font-size: 35px; padding-right: 10px; }
 

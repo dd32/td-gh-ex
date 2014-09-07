@@ -241,9 +241,7 @@ echo '
 	#header, .bqpcontainer .featured-box, .vidtitle span { border-color: '.$color1.'; }
 	#searchlight-top-menu #searchsubmit, .heading2 em, .read-more, .page-link a, .flex-direction-nav li a:hover:before { background-color: '.$color1.'; }
 	a, .widget h3, #heading1 em, .heading-desc3, .vidtitle h2, .vidtitle span:before, .statitem  h3, .boxtopicon, .flexslider.main-slider .flex-direction-nav li a:hover:before, .bqpcontainer .featured-box:hover h3.ftitle { color: '.$color1.';}
-	
 	#searchlight-main-menu a{color:'.$color2.';}
-
 	#searchlight-main-menu .menu-item-home a:hover,
 	#searchlight-main-menu a:hover,
 	#searchlight-main-menu .selected a,
@@ -253,24 +251,32 @@ echo '
 	#searchlight-main-menu .current_page_ancestor > a,
 	#searchlight-main-menu ul ul,
 	.sub-menu, .sub-menu ul ul, .go-top {background-color: '.$color2.';}
-
 	button,
 	input[type="reset"],
 	input[type="button"],
 	input[type="submit"],
 	.contactcontainer input[type="submit"]{  background: '.$color2.'; background-image: -webkit-linear-gradient(top, '.$color2.', '.$color3.'); background-image: 	-moz-linear-gradient(top, '.$color2.', '.$color3.');   background-image: -ms-linear-gradient(top, '.$color2.', '.$color3.'); background-image: -o-linear-gradient(top, '.$color2.', '.$color3.'); background-image: linear-gradient(to bottom, '.$color2.', '.$color3.'); }
-
 	button:hover,
 	input[type="reset"]:hover,
 	input[type="button"]:hover,
 	input[type="submit"]:hover,
 	.contactcontainer input[type="submit"]:hover { background: '.$color3.'; background-image: -webkit-linear-gradient(top, '.$color3.', '.$color2.'); background-image: 	-moz-linear-gradient(top, '.$color3.', '.$color2.');   background-image: -ms-linear-gradient(top, '.$color3.', '.$color2.'); background-image: -o-linear-gradient(top, '.$color3.', '.$color2.'); background-image: linear-gradient(to bottom, '.$color3.', '.$color2.'); }
-
 	a:hover, h1.page-title, h1.arc-post-title, h3.arc-src, #comments .comment-author cite a, #respond .required { color:'.$color3.'; }
 	.bqpcontainer .featured-box:hover { border-color: '.$color3.'; }
 	.bqpcontainer .featured-box:hover .read-more, .read-more:hover, .flex-direction-nav li a:before {  background-color: '.$color3.'; }
+	#right-sidebar .widget{ background: -webkit-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -moz-inear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -o-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -ms-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background-size: 100% 100%; }
+	#footer{ background: -webkit-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -moz-inear-gradient(-45deg, #252525 50%, #373737 50%); background: -o-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -ms-linear-gradient(-45deg, #252525 50%, #373737 50%); background: linear-gradient(-45deg, #252525 50%, #373737 50%); background-size: 100% 100%; }
+	.social a { background: -webkit-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -moz-inear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); 	background: -o-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -ms-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background-size: 100% 100%; }
 	
-	
+	#right-sidebar .widget-title, h1.page-title { background: ' . $color3 . ';
+	background: -webkit-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
+	background: -moz-inear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
+	background: -o-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
+	background: -ms-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
+	background: linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
+	background-size: 110% 100%;
+	}
+
 
 ';
 	if ($searchlight_options['field_header'] != '1') : echo '#header { z-index:99991; position:relative; } .headerheight { display: none; }' ; endif;

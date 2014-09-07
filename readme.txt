@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.0
+Version: 	1.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -17,21 +17,22 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 
 License of the Images used in the screenshot.png
 ----------------------------------------------------
-1. 	Author:		alsudiz
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girl-photoshoot-park-greens-68504/
 
-2. 	Author:		A_Werdan
+1. 	Author:		Comfreak
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girls-summer-sun-stroll-dandelion-380620/
+	Source:		http://pixabay.com/en/apple-fruit-sweet-delicious-356037/
 
-3. 	Author:		olga-gordeeva
+2. 	Author:		LoggaWiggler
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girl-nature-green-377228/
+	Source:		http://pixabay.com/en/rose-apple-fruits-tree-leaves-95997/
 
-4. 	Author:		alsudiz
+3. 	Author:		PublicDomainPictures
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girl-photoshoot-park-greens-lilac-68503/
+	Source:		http://pixabay.com/en/citrus-food-fresh-fruit-green-2272/
+
+4. 	Author:		weinstock
+	License:	Public Domain CC0
+	Source:		http://pixabay.com/en/glass-marble-colorful-green-pearl-96237/
 
 
 Theme_Customizer_Boilerplate, License: GPL-2.0+, Author and Copyright: Slobodan Manic
