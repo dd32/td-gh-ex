@@ -169,7 +169,7 @@ function generate_customize_register( $wp_customize ) {
 		);
 	}
 	
-	if ( !function_exists( 'generate_colors_customize_register' ) ) {
+	if ( !function_exists( 'generate_colors_customize_register' ) && ! defined( 'GP_PREMIUM_VERSION' ) ) {
 
 		$wp_customize->add_control(
 			new Generate_Customize_Misc_Control(
@@ -668,7 +668,7 @@ function generate_customize_register( $wp_customize ) {
 		)
 	);
 	
-	if ( !function_exists( 'generate_blog_customize_register' ) ) {
+	if ( !function_exists( 'generate_blog_customize_register' ) && ! defined( 'GP_PREMIUM_VERSION' ) ) {
 
 		$wp_customize->add_control(
 			new Generate_Customize_Misc_Control(
@@ -723,7 +723,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
  *
  * @since 1.0.7
  */
-if ( class_exists( 'WP_Customize_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Customize_Misc_Control' ) ) {
 	class Generate_Customize_Misc_Control extends WP_Customize_Control {
 		public $settings = 'blogname';
 		public $description = '';

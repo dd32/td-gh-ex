@@ -6,6 +6,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * A class to create a dropdown for all google fonts
  */
+if ( ! class_exists( 'Generate_Google_Font_Dropdown_Custom_Control' ) ) :
 class Generate_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
 {
     private $fonts = false;
@@ -52,8 +53,9 @@ class Generate_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
     }
     
 }
+endif;
 
-
+if ( ! class_exists( 'Generate_Font_Weight_Custom_Control' ) ) :
 /**
  * A class to create a dropdown for font weight
  */
@@ -94,7 +96,9 @@ class Generate_Font_Weight_Custom_Control extends WP_Customize_Control
         <?php
     }
 }
+endif;
 
+if ( ! class_exists( 'Generate_Text_Transform_Custom_Control' ) ) :
 /**
  * A class to create a dropdown for text-transform
  */
@@ -128,6 +132,7 @@ class Generate_Text_Transform_Custom_Control extends WP_Customize_Control
         <?php
     }
 }
+endif;
 
 /***********************
 /*

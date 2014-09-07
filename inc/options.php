@@ -182,17 +182,33 @@ function generate_settings_page()
 									);
 									
 									foreach ( $addons as $addon ) {
-										if ( !function_exists( $addon['id'] ) ) :
-											echo '<span class="addon-inactive"><a title="' . $addon['name'] . ': ' . __('Not activated.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
-										else :
-										
-											if ( get_option($addon['license']) !== 'valid' && get_option('gen_package_license_key_status') !== 'valid' ) :
-												echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please activate below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+										// If GP Premium is installed
+										if ( defined( 'GP_PREMIUM_VERSION' ) ) {
+											if ( !function_exists( $addon['id'] ) ) :
+												echo '<span class="addon-inactive"><a title="' . $addon['name'] . ': ' . __('Not activated.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
 											else :
-												echo '<span class="addon-active"><a title="' . $addon['name'] . ': ' . __('Activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+
+												if ( get_option( 'generate_package_secondary_nav' ) !== 'activated' ) :
+													echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please activate below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+												else :
+													echo '<span class="addon-active"><a title="' . $addon['name'] . ': ' . __('Activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+												endif;
+											
 											endif;
-										
-										endif;
+										// If GP Premium isn't installed
+										} else {
+											if ( !function_exists( $addon['id'] ) ) :
+												echo '<span class="addon-inactive"><a title="' . $addon['name'] . ': ' . __('Not activated.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+											else :
+											
+												if ( get_option($addon['license']) !== 'valid' ) :
+													echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please activate below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+												else :
+													echo '<span class="addon-active"><a title="' . $addon['name'] . ': ' . __('Activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
+												endif;
+											
+											endif;
+										}
 									}
 									?>
 											

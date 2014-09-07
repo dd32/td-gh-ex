@@ -355,7 +355,7 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 			)
 		);
 		
-		if ( !function_exists( 'generate_fonts_customize_register' ) ) {
+		if ( !function_exists( 'generate_fonts_customize_register' ) && ! defined( 'GP_PREMIUM_VERSION' ) ) {
 
 			$wp_customize->add_control(
 				new Generate_Customize_Misc_Control(

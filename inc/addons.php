@@ -26,7 +26,7 @@ require get_template_directory() . '/inc/addons/spacing.php';
  */
 function generate_addons_available()
 {
-	if ( defined( 'GENERATE_PACKAGE_VERSION' ) )
+	if ( defined( 'GP_PREMIUM_VERSION' ) )
 		return false;
 		
 	if ( !function_exists('generate_fonts_setup') ||
@@ -52,7 +52,7 @@ function generate_addons_available()
  */
 function generate_no_addons()
 {
-	if ( defined( 'GENERATE_PACKAGE_VERSION' ) )
+	if ( defined( 'GP_PREMIUM_VERSION' ) )
 		return false;
 		
 	if ( !function_exists('generate_fonts_setup') &&

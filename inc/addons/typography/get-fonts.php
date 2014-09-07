@@ -6,6 +6,7 @@
  *
  * @return String
  */
+if ( ! function_exists( 'generate_get_fonts' ) ) :
 add_action( 'admin_init','generate_get_fonts' );
 function generate_get_fonts( $amount = 1000 )
 {
@@ -27,3 +28,4 @@ function generate_get_fonts( $amount = 1000 )
 	set_transient('generate_get_fonts', $content->items, WEEK_IN_SECONDS);
 
 }
+endif;

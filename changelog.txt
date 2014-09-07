@@ -10,6 +10,12 @@ Changelog Legend:
 
 ----
 
+(9/6/2014) - 1.1.6
+[*] Added some function_exists checks to some important places
+[*] Disable some of the addon notices if GP Premium is installed
+
+----
+
 (9/6/2014) - 1.1.5
 [*] FontAwesome updated to latest version
 [*] Some addon changes
