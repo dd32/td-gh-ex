@@ -60,6 +60,12 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.14
+* Welcome Image text Changed with own building
+* Option to show/hide event date added
+* Css for Captilized text in headertext removed.
+* Tested compatibility with WordPress 4.0
+
 Version 2.13
 * Call To action Section added
 * Option to show full content in the welcomepost added

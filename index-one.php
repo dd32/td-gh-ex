@@ -112,7 +112,9 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
 						
-						<?php if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
+						<?php 
+						if($accesspresslite_settings['show_eventdate'] == 1){
+						if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
 						<div class="event-date">
 							<span class="event-date-day"><?php echo $accesspresslite_event_day; ?> <?php echo $accesspresslite_event_month; ?></span>
 							<span class="event-date-month"><?php echo $accesspresslite_event_year; ?></span>
@@ -122,7 +124,8 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
 							<span class="event-date-month"><?php echo get_the_date('M'); ?></span>
 							</div>
-						<?php } ?>
+						<?php } 
+						}?>
 						</a>
 					</figure>	
 

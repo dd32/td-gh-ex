@@ -44,7 +44,7 @@
 				<?php else:
                 if(!empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])){ ?>
                     
-                    <h3 class="widget-title">Find Us</h3>
+                    <h3 class="widget-title"><?php _e('Find Us','accesspresslite')?></h3>
 				    <?php if(!empty($accesspresslite_settings['google_map'])) { ?>
 
                         <div class="ak-google-map"><?php echo $accesspresslite_settings['google_map']; ?></div>

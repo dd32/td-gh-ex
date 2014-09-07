@@ -95,7 +95,8 @@ $accesspresslite_options = array(
     'action_text' => 'Check Our AccessPress Pro Theme - A premium version of AccessPres Lite',
     'action_btn_text' => 'Check Now',
     'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
-    'welcome_post_content' => false
+    'welcome_post_content' => false,
+    'show_eventdate' => true
 
 );
 
@@ -489,6 +490,14 @@ function accesspresslite_theme_options_page() {
 					<tr>
 						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspresslite'); ?></label></th>
 						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number'],'accesspresslite'); } ?>"></td>
+					</tr>
+
+					<tr>
+						<th><label for="show_eventdate"><?php _e('Show Event Date?','accesspresslite'); ?></th>
+						<td>
+							<input type="checkbox" id="show_eventdate" name="accesspresslite_options[show_eventdate]" value="1" <?php checked( true, $settings['show_eventdate'] ); ?> />
+							<label for="show_eventdate"><?php _e('Check to enable','accesspresslite'); ?></label>
+						</td>
 					</tr>
 
 					<tr>
@@ -1209,6 +1218,10 @@ function accesspresslite_validate_options( $input ) {
 	if ( ! isset( $input['welcome_post_content'] ) )
 		$input['welcome_post_content'] = null;
 	$input['welcome_post_content'] = ( $input['welcome_post_content'] == 1 ? 1 : 0 );
+
+	if ( ! isset( $input['show_eventdate'] ) )
+		$input['show_eventdate'] = null;
+	$input['show_eventdate'] = ( $input['show_eventdate'] == 1 ? 1 : 0 );
 
 
 	 // data validation for Social Icons
