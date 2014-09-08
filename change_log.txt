@@ -40,3 +40,9 @@ Version	1.03
     i)  Set Sanitization in all input fields.
 	ii)	Define TGM license and link in  readme.txt
 	iii) Set copyright text in footer.
+
+Version	1.04
+    i)  Set WordPress link in footer.
+	ii)	Delete useless image.
+	iii) Set css for sidebar.	
+	iv) esc_url_raw replace with esc_url.

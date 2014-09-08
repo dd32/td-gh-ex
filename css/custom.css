@@ -665,7 +665,7 @@ body {
 	width: 100%;
 }
 .main-sidebar .search-form label {
-	width: 100%;
+	width: 69%;
 	padding-top: 10px;
 }
 .main-sidebar select {
@@ -688,7 +688,7 @@ body {
 	color: #E7E5E5;
 	font-size: 15px;
 	margin-top: 0px;
-	padding: 5px 40px !important;
+	padding: 5px 25px !important;
 }
 .main-sidebar .search-field {
 	border: 1px solid #999;

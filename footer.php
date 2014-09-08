@@ -12,7 +12,7 @@
 	  		<?php if(!empty($booster_options['footertext'])) { 
 						echo wp_filter_nohtml_kses($booster_options['footertext']).'. ';
 					}
-		    echo "Powered by <a href=http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/Booster' target='_blank'>Booster</a>.";
+		    echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/Booster' target='_blank'>Booster</a>.";
 			 ?>
       </div>
        <?php 
