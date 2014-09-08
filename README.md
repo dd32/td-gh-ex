@@ -36,12 +36,15 @@ Released under the MIT License.
 Change Log 
 ---------------------
 
-#### 1.0.0
-* Initial release.
+#### 1.0.2
+* Removed further incorrect theme tags.
 
 #### 1.0.1
 * Updated Author URI
-* Removed accessibility-ready theme tag.
+* Removed Accessibility Ready theme tag.
+
+#### 1.0.0
+* Initial release.
 
 
 
