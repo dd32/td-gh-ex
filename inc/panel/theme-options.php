@@ -772,6 +772,16 @@ function catcheverest_theme_options_do_page() {
                                     <th scope="row"><h4><?php _e( 'Email', 'catcheverest' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catcheverest_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                     </td>
+                                </tr>   
+                                <tr>
+                                    <th scope="row"><?php _e( 'Contact', 'catcheverest' ); ?></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th scope="row"><?php _e( 'Xing', 'catcheverest' ); ?></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_xing]" value="<?php echo esc_attr( $options[ 'social_xing' ] ); ?>" />
+                                    </td>
                                 </tr>                                                                 
                             </tbody>
                         </table>                           
@@ -1063,6 +1073,12 @@ function catcheverest_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_email' ] ) ) {
 		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	}	
+	if( isset( $input[ 'social_contact' ] ) ) {
+		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
+	}	
+	if( isset( $input[ 'social_xing' ] ) ) {
+		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
 	}		
 		
 	//Webmaster Tool Verification

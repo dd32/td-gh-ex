@@ -30,7 +30,9 @@ function catcheverest_scripts() {
 	 */
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
-	// Add Genericons font, used in the main stylesheet.
+	/**
+	 * Add Genericons font, used in the main stylesheet.
+	 */	
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
 	
 	/**
@@ -1065,7 +1067,9 @@ function catcheverest_social_networks() {
 						$options[ 'social_goodreads' ],
 						$options[ 'social_skype' ],
 						$options[ 'social_soundcloud' ],
-						$options[ 'social_email' ]
+						$options[ 'social_email' ],
+						$options[ 'social_contact' ],
+						$options[ 'social_xing' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1091,138 +1095,148 @@ function catcheverest_social_networks() {
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Facebook', 'catcheverest' ) .'</a></li>';
 			}
 			//Twitter
 			if ( !empty( $options[ 'social_twitter' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Twitter', 'catcheverest' ) .'</a></li>';
 			}
 			//Google+
 			if ( !empty( $options[ 'social_googleplus' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Google+', 'catcheverest' ) .'</a></li>';
 			}
 			//Linkedin
 			if ( !empty( $options[ 'social_linkedin' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'LinkedIn', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'LinkedIn', 'catcheverest' ) .'</a></li>';
 			}
 			//Pinterest
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Pinterest', 'catcheverest' ) .'</a></li>';
 			}				
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'YouTube', 'catcheverest' ) .'</a></li>';
 			}
 			//Vimeo
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Vimeo', 'catcheverest' ) .'</a></li>';
 			}				
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'SlideShare', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'SlideShare', 'catcheverest' ) .'</a></li>';
 			}				
 			//Foursquare
 			if ( !empty( $options[ 'social_foursquare' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+					'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'. esc_attr__( 'FourSquare', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'FourSquare', 'catcheverest' ) .'</a></li>';
 			}
 			//Flickr
 			if ( !empty( $options[ 'social_flickr' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Flickr', 'catcheverest' ) .'</a></li>';
 			}
 			//Tumblr
 			if ( !empty( $options[ 'social_tumblr' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Tumblr', 'catcheverest' ) .'</a></li>';
 			}
 			//deviantART
 			if ( !empty( $options[ 'social_deviantart' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'deviantART', 'catcheverest' ) .'</a></li>';
 			}
 			//Dribbble
 			if ( !empty( $options[ 'social_dribbble' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Dribbble', 'catcheverest' ) .'</a></li>';
 			}
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'MySpace', 'catcheverest' ) .'</a></li>';
 			}
 			//WordPress
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'WordPress', 'catcheverest' ) .'</a></li>';
 			}				
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
+					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'RSS', 'catcheverest' ) .'</a></li>';
 			}
 			//Delicious
 			if ( !empty( $options[ 'social_delicious' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+					'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'. esc_attr__( 'Delicious', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Delicious', 'catcheverest' ) .'</a></li>';
 			}				
 			//Last.fm
 			if ( !empty( $options[ 'social_lastfm' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
-			}	
+					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'. esc_attr__( 'Last.fm', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Last.fm', 'catcheverest' ) .'</a></li>';
+			}				
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
-			}	
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Instagram', 'catcheverest' ) .'</a></li>';
+			}
 			//GitHub
 			if ( !empty( $options[ 'social_github' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
-			}				
+					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'. esc_attr__( 'GitHub', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'GitHub', 'catcheverest' ) .'</a></li>';
+			}	
 			//Vkontakte
 			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
+					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'. esc_attr__( 'Vkontakte', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Vkontakte', 'catcheverest' ) .'</a></li>';
 			}				
 			//My World
 			if ( !empty( $options[ 'social_myworld' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
+					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'. esc_attr__( 'My World', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'My World', 'catcheverest' ) .'</a></li>';
 			}				
 			//Odnoklassniki
 			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
+					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'. esc_attr__( 'Odnoklassniki', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Odnoklassniki', 'catcheverest' ) .'</a></li>';
 			}
 			//Goodreads
 			if ( !empty( $options[ 'social_goodreads' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
+					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'. esc_attr__( 'GoodReads', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'GoodReads', 'catcheverest' ) .'</a></li>';
 			}
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'catcheverest' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Skype', 'catcheverest' ) .'</a></li>';
 			}
 			//Soundcloud
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
-			}	
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'SoundCloud', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'SoundCloud', 'catcheverest' ) .'</a></li>';
+			}
 			//Email
 			if ( !empty( $options[ 'social_email' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
-			}				
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Email', 'catcheverest' ) .'</a></li>';
+			}			
+			//Contact
+			if ( !empty( $options[ 'social_contact' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catcheverest' ) .'">'. esc_attr__( 'Contact', 'catcheverest' ) .'</a></li>';
+			}
+			//Xing
+			if ( !empty( $options[ 'social_xing' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catcheverest' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catcheverest' ) .'</a></li>';
+			}			
 			
 			$catcheverest_social_networks .='
 		</ul>';
