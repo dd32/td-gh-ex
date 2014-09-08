@@ -94,25 +94,35 @@ function boldr_settings_machine($options) {
 			$output .= '<p>Unleash the full potential of BoldR by upgrading to BoldR Pro!</p>';
 			$output .= '<p>The Pro version comes with a great set of awesome features:</p>';		
 			$output .= '<ul>
-							<li>Fully <strong>Responsive Design</strong></li>
+							<li>(Lite & Pro) Fully <strong>Responsive Design</strong></li>
+							<li>(Lite & Pro) <strong>Translation Ready</strong> (.POT file included)</li>
+							<li>(Lite & Pro) <strong>Child Theme</strong> support</li>
+							<li>(Lite & Pro) 2 <strong>Widgetized areas</strong> (Sidebar and Footer)</li>
+							<li>(Lite & Pro) <strong>Custom background</strong></li>
+							<li>(Pro Only) <strong>Unlimited sidebars and footers</strong> with different widgets for different pages</li>
 							<li>(Pro Only) Quick Setup <strong>Page Templates</strong></li>
-							<li>(Pro Only) <strong>Unlimited Slideshows</strong></li>
+							<li>(Pro Only) <strong>Right, Left or Dual Sidebar or Full Width</strong> templates for pages and blog.</li>
+							<li>(Pro Only) <strong>Built-in Slider</strong> for <strong>Unlimited Slideshows</strong></li>
 							<li>(Pro Only) <strong>Wide</strong> or <strong>Boxed</strong> layout</li>
-							<li>(Pro Only) <strong>Unlimited colors</strong> and <strong>backgrounds</strong></li>
-							<li>(Pro Only) Revolutionary <strong>WYSIWYG Layout Builder</strong></li>
-							<li>(Pro Only) <strong>Visual Shortcodes</strong>, fully integrated in WordPress\' Visual editor (no coding skills needed!)</li>
+							<li>(Pro Only) <strong>Portfolio</strong> section</li>
+							<li>(Pro Only) <strong>Unlimited colors</strong></li>
+							<li>(Pro Only) <strong>650 Webfonts</strong> to choose from</li>
+							<li>(Pro Only) <strong>Comprehensive settings panel</strong> with dozens of options</li>
+							<li>(Pro Only) <strong>Sticky (fixed) Navbar or Header</strong> for enhanced navigation</li>
+							<li>(Pro Only) jQuery <strong>"Slide-in" mobile menu</strong> in responsive mode</li>
+							<li>(Pro Only) Enhanced <strong>WYSIWYG Layout Builder</strong> in WP Visual Editor</li>
+							<li>(Pro Only) <strong>Visual Shortcodes</strong>, fully integrated in WordPress\' Visual editor (no coding!)</li>
 							<li>(Pro Only) Powerful <strong>shortcodes</strong> and <strong>custom widgets</strong></li>
-							<li>(Pro Only)<strong> Portfolio</strong> section</li>
 							<li>(Pro Only)<strong> Partners and/or Clients\' logos</strong> carousel</li>
 							<li>(Pro Only) <strong>Clients\' testimonials</strong> carousel</li>
-							<li>(Pro Only) <strong>Unlimited sidebars</strong></li>
-							<li>(Pro Only) <strong>600+ Webfonts</strong> to choose from</li>
 							<li>(Pro Only) One click setup <strong>AJAX contact form</strong></li>
 							<li>(Pro Only) <strong>Google Maps</strong> API v3 integration</li>
+							<li>(Pro Only) <strong>Custom CSS</strong> support for even more advanced layout customizations</li>
 							<li>(Pro Only) <strong>Pro dedicated support forum</strong> access</li>
 							<li><a href="http://www.gnu.org/licenses/" target="_blank">GPL License</a> : Buy once, use as many times as you wish!</li>
 							<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera (note: IE7 and older are no longer supported.)</li>
 							<li>Lifetime <strong>free updates</strong> and continued support for the <strong>latest WordPress versions</strong></li>
+							<li>Currently supports <strong>WordPress from 3.5 up to 4.0</strong></strong></li>
 							</ul>';
 			$output .= '<a href="http://www.iceablethemes.com/shop/boldr-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=boldr_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
 		}

@@ -3,13 +3,13 @@
 Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.9.2
-Stable tag: 1.1.40
+Tested up to: 4.0
+Stable tag: 1.1.41
 
 == ABOUT BOLDR LITE ==
 
-BoldR Lite is a bold, responsive, magazine style theme for WordPress. Perfect for tech or design oriented blogs and creative business websites.
-It features two widgetizable areas (sidebar and optional footer).
+BoldR Lite is a Bold, Responsive, Magazine-style theme for WordPress. Suitable for any website and perfect for tech or design oriented blogs and creative business websites.
+It features two widgetizable areas (Sidebar and optional Footer), two menu locations (Navbar and Footer), optional Tagline display, custom Logo and Favicon, Custom Header Image and Custom Background.
 
 BoldR Lite is the lite version of BoldR Pro, which comes with many additional features and access to premium class pro support forum and can be found at http://www.iceablethemes.com
 
@@ -60,6 +60,12 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.41 =
+September 8th, 2014
+* Tested with WordPress 4.0
+* Updated Polish (pl_PL) translation (Update by nitr0 - dreambyte.pl)
+* Updated Theme Options page and upgrade description
 
 = 1.1.40 =
 September 1st, 2014
