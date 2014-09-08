@@ -175,7 +175,7 @@ add_action( 'customize_register', 'ct_ignite_customize_logo_size' );
 function ct_ignite_customizer_social_media_array() {
 
 	// store social site names in array
-	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk');
+	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'email', 'vk');
 	
 	return $social_sites;
 
@@ -209,24 +209,51 @@ function ct_ignite_add_social_sites_customizer($wp_customize) {
 	
 	foreach($social_sites as $social_site) {
 
-		$wp_customize->add_setting( "$social_site", array(
+        if( $social_site == 'email' ) {
+
+            $wp_customize->add_setting( "$social_site", array(
                 'type'              => 'theme_mod',
                 'capability'        => 'edit_theme_options',
-                'sanitize_callback' => 'esc_url_raw'
-		) );
+                'sanitize_callback' => 'ct_ignite_sanitize_email'
+            ) );
 
-		$wp_customize->add_control(
-            new ct_ignite_url_input_control(
-            $wp_customize, $social_site, array(
-				'label'   => $social_site . " " . __("url:", 'ignite' ),
-				'section' => 'ct_ignite_social_settings',
-				'priority'=> $priority,
-		    )
-            )
-        );
+            $wp_customize->add_control(
+                $social_site, array(
+                    'label'   => $social_site . " " . __("address:", 'ignite' ),
+                    'section' => 'ct_ignite_social_settings',
+                    'priority'=> $priority,
+                )
+            );
+
+        } else {
+
+            $wp_customize->add_setting( "$social_site", array(
+                    'type'              => 'theme_mod',
+                    'capability'        => 'edit_theme_options',
+                    'sanitize_callback' => 'esc_url_raw'
+            ) );
+
+            $wp_customize->add_control(
+                new ct_ignite_url_input_control(
+                $wp_customize, $social_site, array(
+                    'label'   => $social_site . " " . __("url:", 'ignite' ),
+                    'section' => 'ct_ignite_social_settings',
+                    'priority'=> $priority,
+                )
+                )
+            );
+        }
 	
 		$priority = $priority + 5;
 	}
+}
+
+// sanitize proper email address url
+function ct_ignite_sanitize_email( $input ) {
+
+    esc_url_raw( $input, array('mailto:') );
+
+    return $input;
 }
 
 /* show/hide the post author info after posts */
@@ -471,8 +498,73 @@ function ct_ignite_additional_options( $wp_customize ) {
             )
         )
     );
+
+    class ct_ignite_Multi_Checkbox_Control extends WP_Customize_Control {
+        public $type = 'multi-checkbox';
+
+        public function render_content() {
+
+            if ( empty( $this->choices ) )
+                return;
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select id="comment-display-control" <?php $this->link(); ?> multiple="multiple" style="height: 100%;">
+                    <?php
+                    foreach ( $this->choices as $value => $label ) {
+                        $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+                        echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
+                    }
+                    ?>
+                </select>
+            </label>
+        <?php }
+    }
+
+    /* setting */
+    $wp_customize->add_setting(
+        'ct_ignite_comments_setting',
+        array(
+            'default'           => 'none',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_ignite_sanitize_comments_setting',
+        )
+    );
+    /* control */
+    $wp_customize->add_control(
+        new ct_ignite_Multi_Checkbox_Control(
+            $wp_customize,
+            'ct_ignite_comments_setting',
+            array(
+                'label'          => __( 'Show comments on:', 'ignite' ),
+                'section'        => 'ct-additional-options',
+                'settings'       => 'ct_ignite_comments_setting',
+                'type'           => 'multi-checkbox',
+                'choices'        => array(
+                    'posts'   => __('Posts', 'ignite'),
+                    'pages'  => __('Pages', 'ignite'),
+                    'attachments'  => __('Attachments', 'ignite'),
+                    'none'  => __('Do not show', 'ignite')
+                )
+            )
+        )
+    );
 }
 add_action( 'customize_register', 'ct_ignite_additional_options' );
+
+// sets comment display values on new sites or sites updating to new version with this feature
+function compete_themes_set_comment_display_values() {
+
+    // get the current value
+    $current_settings = get_theme_mod( 'ct_ignite_comments_setting' );
+
+    // if empty, set to all
+    if( empty( $current_settings ) ) {
+        set_theme_mod( 'ct_ignite_comments_setting', array( 'posts', 'pages', 'attachments', 'none' ) );
+    }
+}
+add_action( 'init', 'compete_themes_set_comment_display_values' );
 
 /* sanitize the radio button input */
 function ct_ignite_sanitize_show_full_post_setting($input){
@@ -486,6 +578,30 @@ function ct_ignite_sanitize_show_full_post_setting($input){
     } else {
         return '';
     }
+}
+
+/* sanitize comment display multi-check */
+function ct_ignite_sanitize_comments_setting($input){
+
+    // valid data
+    $valid = array(
+        'posts'   => __('Posts', 'ignite'),
+        'pages'  => __('Pages', 'ignite'),
+        'attachments'  => __('Attachments', 'ignite'),
+        'none'  => __('Do not show', 'ignite')
+    );
+
+    // loop through array
+    foreach( $input as $selection ) {
+
+        // if it's in the valid data, return it
+        if ( array_key_exists( $selection, $valid ) ) {
+            return $input;
+        } else {
+            return '';
+        }
+    }
+
 }
 
 /* Custom CSS Section */
@@ -797,6 +913,42 @@ function ct_ignite_customize_background_options( $wp_customize ) {
     );
 }
 add_action( 'customize_register', 'ct_ignite_customize_background_options' );
+
+/* Footer Text Section */
+function ct_ignite_customizer_footer_text( $wp_customize ) {
+
+    // section
+    $wp_customize->add_section(
+        'ct-footer-text',
+        array(
+            'title'      => __( 'Footer Text', 'ignite' ),
+            'priority'   => 95,
+            'capability' => 'edit_theme_options'
+        )
+    );
+
+    // setting
+    $wp_customize->add_setting(
+        'ct_ignite_footer_text_setting',
+        array(
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
+    // control
+    $wp_customize->add_control(
+        new ct_ignite_Textarea_Control(
+            $wp_customize,
+            'ct_ignite_footer_text_setting',
+            array(
+                'label'          => __( 'Edit the text in your footer', 'ignite' ),
+                'section'        => 'ct-footer-text',
+                'settings'       => 'ct_ignite_footer_text_setting',
+            )
+        ) );
+}
+add_action( 'customize_register', 'ct_ignite_customizer_footer_text' );
 
 function ct_ignite_user_profile_image_setting( $user ) { ?>
 
