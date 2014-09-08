@@ -251,8 +251,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 	add_action( 'customize_register', 'generate_default_fonts_customize_register' );
 	function generate_default_fonts_customize_register( $wp_customize ) {
 			
-		require_once GENERATE_DIR . '/inc/addons/typography/get-fonts.php';
-		require_once GENERATE_DIR . '/inc/addons/typography/google-font-dropdown-custom-control.php';
+		require_once get_template_directory() . '/inc/addons/typography/get-fonts.php';
+		require_once get_template_directory() . '/inc/addons/typography/google-font-dropdown-custom-control.php';
 
 		$defaults = generate_get_default_fonts();
 

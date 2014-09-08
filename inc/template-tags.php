@@ -304,7 +304,7 @@ if ( ! function_exists( 'generate_navigation_search' ) ) :
 			
 		?>
 		<form role="search" method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search for:', 'label', 'generate' ); ?>">
+			<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search', 'label', 'generate' ); ?>">
 		</form>
 
 		<?php

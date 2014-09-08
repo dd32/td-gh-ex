@@ -16,8 +16,8 @@ function generate_customize_register( $wp_customize ) {
 	$defaults = generate_get_defaults();
 
 	// Load custom controls
-	require_once GENERATE_DIR . '/inc/controls.php';
-	require_once GENERATE_DIR . '/inc/sanitize.php';
+	require_once get_template_directory() . '/inc/controls.php';
+	require_once get_template_directory() . '/inc/sanitize.php';
 	
 	// $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
