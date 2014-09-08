@@ -5,33 +5,26 @@
 	Since Easy 1.0
 */
    
-  
-  	add_theme_support( 'automatic-feed-links' );
-  	register_nav_menus( array( 
-    	'main-menu' => "Main Menu",
-    	'footer-menu' => "Footer Menu"
-	) );
-
-
-//	Set the content width based on the theme's design and stylesheet.
-	if ( ! isset( $content_width ) ) $content_width = 650;
-
-
-
-// Load the D5 Framework Optios Page and Meta Page
-	if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once get_template_directory() . '/inc/options-framework.php'; }
-	function easy_ppp() { return ( 'post_type=post&&posts_per_page=2&&ignore_sticky_posts=1' );}
-	
-
-// 	Tell WordPress for wp_title in order to modify document title content
+  	// 	Tell WordPress for wp_title in order to modify document title content
 	function easy_filter_wp_title( $title ) {
     $site_name = get_bloginfo( 'name' );
     $filtered_title = $site_name . $title;
     return $filtered_title;
 	}
 	add_filter( 'wp_title', 'easy_filter_wp_title' );
+	
+ 	// Load the D5 Framework Optios Page and Meta Page
+
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once get_template_directory() . '/inc/options-framework.php';
+	function easy_ppp() { return ( 'post_type=post&&posts_per_page=2&&ignore_sticky_posts=1' );} 	
+
+	function easy_setup() {
+//	Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 650;
+	add_theme_support( 'automatic-feed-links' );
+  	register_nav_menus( array( 'main-menu' => "Main Menu", 'footer-menu' => "Footer Menu" ) );
 	
 	add_editor_style('editor-style.css');
 
@@ -63,8 +56,8 @@
 	'admin-head-callback'    => '',
 	'admin-preview-callback' => '',
 	);
-	add_theme_support( 'custom-header', $easy_custom_header );
-
+	add_theme_support( 'custom-header', $easy_custom_header ); }
+	add_action( 'after_setup_theme', 'easy_setup' );
 
 // 	Functions for adding script
 	function easy_enqueue_scripts() {
