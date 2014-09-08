@@ -15,18 +15,17 @@ jQuery(document).ready(function() {
 			jQueryform.toggleClass( 'displaynone' );
 		} );
 		
-		if ( jQuery.fn.waypoint ) {
-			jQuery('#main-wrapper').waypoint( {
-				offset: 10,
-				handler : function( direction ) {
-					if ( direction === 'down' ) {
-						jQuery('#masthead').addClass( 'fixed-header' );
-					} else {
-						jQuery('#masthead').removeClass( 'fixed-header' );
-					}
-				}
-			} );
-		}
+		jQuery( "#main-wrapper" )
+		.waypoint( function( direction ) {
+			if( direction == 'down' ) {
+			   jQuery('#masthead').addClass( 'fixed-header' );
+			}
+		})
+		.waypoint( function( direction ) { // has offset on the way up
+			if( direction == 'up' ) {
+				jQuery('#masthead').removeClass( 'fixed-header' );
+			}
+		}, {offset: -1});
 		
 		adventurous_mobile_menu( jQuery('#header-menu ul.menu'), jQuery('#header-mobile-menu .mobile-nav'), 'header-mobile-menu-block', 'mobile-menu' );
 		adventurous_mobile_menu( jQuery('#access-secondary ul.menu'), jQuery('#secondary-mobile-menu .mobile-nav'), 'secondary-mobile-menu-block', 'mobile-menu' );

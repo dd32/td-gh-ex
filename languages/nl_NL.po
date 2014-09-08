@@ -1,102 +1,98 @@
-# Copyright (C) 2012 the Catch Themes Team
-# This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-09 02:27+0545\n"
-"PO-Revision-Date: 2014-09-09 02:27+0545\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
-"Language: pt_BR\n"
+"Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.6.9\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ops! Essa página não pode ser encontrada."
+msgstr "Oeps! Die pagina kan niet worden gevonden."
 
 #: ../404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Parece que nada foi encontrado que se relacione com sua pesquisa. Como "
-"sugestão, tente um dos links abaixo ou faça uma nova pesquisa, com novo "
-"termo, semelhante, seja a solução?"
+"Het lijkt erop dat er niks gevonden is op deze locatie. Misschien zoekt u "
+"een van de links hieronder?"
 
 #: ../404.php:28
 msgid "Most Used Categories"
-msgstr "As categorias mais utilizadas"
+msgstr "Meest gebruikte categorieën"
 
 #: ../404.php:36
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Tente procurar nos arquivos mensais. %1$s"
+msgstr "Probeer eens te zoeken in de maandelijkse archieven. %1$s"
 
 #: ../archive.php:23
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Arquivos da categoria: %s"
+msgstr "Archieven naar categorie: %s"
 
 #: ../archive.php:26
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "Arquivos da tag: %s"
+msgstr "Archieven naar tags: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Arquivos do autor: %s"
+msgstr "Archieven naar auteurs: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Arquivos diários: %s"
+msgstr "Dagelijkse archieven: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Arquivos mensais: %s"
+msgstr "Maandelijkse archieven: %s"
 
 #: ../archive.php:47
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Arquivos anuais: %s"
+msgstr "Jaarlijkse archieven: %s"
 
 #: ../archive.php:50 ../sidebar.php:72
 msgid "Archives"
-msgstr "Arquivos"
+msgstr "Archieven"
 
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Um Comentário para: &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Comentários para: &ldquo;%2$s&rdquo;"
+msgstr[0] "Een gedachte over  &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachten over  &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Navegação dos comentários"
+msgstr "Navigatie door reacties"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Comentários mais antigos"
+msgstr "&larr; Eerdere reacties"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Comentários mais recentes &rarr;"
+msgstr "Nieuwere reacties %rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "Os comentários estão fechados."
+msgstr "Reacties zijn gesloten."
 
 #: ../content-aside.php:21 ../content-audio.php:21 ../content-chat.php:22
 #: ../content-gallery.php:25 ../content-gallery.php:42
@@ -105,7 +101,7 @@ msgstr "Os comentários estão fechados."
 #: ../inc/adventurous-functions.php:183
 #, php-format
 msgid "Permalink to %s"
-msgstr "Link permanente para: %s"
+msgstr "Link naar %s"
 
 #: ../content-aside.php:27 ../content-audio.php:33 ../content-chat.php:34
 #: ../content-gallery.php:49 ../content-image.php:35 ../content-link.php:30
@@ -113,27 +109,27 @@ msgstr "Link permanente para: %s"
 #: ../content-status.php:34 ../content-video.php:36 ../content.php:52
 #: ../image.php:101
 msgid "Pages:"
-msgstr "Páginas:"
+msgstr "Pagina's:"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
 #: ../content-video.php:49 ../content.php:66
 msgid "Leave a reply"
-msgstr "Deixe um Comentário!"
+msgstr "Reageer"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-single.php:46 ../content-status.php:46
 #: ../content-video.php:49 ../content.php:66
 msgid "1 Reply"
-msgstr "<b>1</b> Comentário"
+msgstr "1 reactie"
 
 #: ../content-aside.php:40 ../content-audio.php:46 ../content-chat.php:47
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-status.php:46 ../content-video.php:49
 msgid "% Replies;"
-msgstr "<b>%</b> Comentários"
+msgstr "% reacties;"
 
 #: ../content-aside.php:42 ../content-audio.php:48 ../content-chat.php:49
 #: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
@@ -141,19 +137,19 @@ msgstr "<b>%</b> Comentários"
 #: ../content-status.php:48 ../content-video.php:51 ../content.php:69
 #: ../image.php:47 ../image.php:120 ../inc/adventurous-template-tags.php:190
 msgid "Edit"
-msgstr "Editar"
+msgstr "Bewerken"
 
 #: ../content-audio.php:22
 msgid "All Audio Posts"
-msgstr "Todas as postagens de áudio"
+msgstr "Alle geluidsberichten"
 
 #: ../content-audio.php:22
 msgid "Audio"
-msgstr "Áudio"
+msgstr "Geluid"
 
 #: ../content-chat.php:23
 msgid "All Chat Posts"
-msgstr "Todas as postagens do chat"
+msgstr "Alle chatberichten"
 
 #: ../content-chat.php:23
 msgid "Chat"
@@ -161,52 +157,53 @@ msgstr "Chat"
 
 #: ../content-gallery.php:26
 msgid "All Gallery Posts"
-msgstr "Todas as postagens da galeria"
+msgstr "Alle galerijberichten"
 
 #: ../content-gallery.php:26
 msgid "Gallery"
-msgstr "Galeria"
+msgstr "Galerij"
 
 #: ../content-gallery.php:43
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Esta galeria contém <a %1$s>%2$s fotografia</a>."
-msgstr[1] "Esta galeria contém <a %1$s>%2$s fotografias</a>."
+msgstr[0] "Deze galerij bevat <a %1$s>%2$s foto</a>"
+msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto's</a>"
 
 #: ../content-image.php:24
 msgid "All Image Posts"
-msgstr "Todas as postagens com imagem"
+msgstr "Alle fotoberichten"
 
 #: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:826
 msgid "Image"
-msgstr "Imagem"
+msgstr "Foto"
 
 #: ../content-link.php:24
 msgid "All Link Posts"
-msgstr "Todas as postagens com link"
+msgstr "Alle linkberichten"
 
 #: ../content-link.php:24
 msgid "Link"
-msgstr "Link"
+msgstr "Links"
 
 #: ../content-single.php:46 ../content.php:66
 msgid "% Replies"
-msgstr "<b>%</b> Comentários"
+msgstr "% Reacties"
 
 #: ../content-single.php:62 ../content.php:76
 #, php-format
 msgid "About %s"
-msgstr "Sobre %s"
+msgstr "Over %s"
 
 #: ../content-single.php:66 ../content.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Ver todas as postagens de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+"Bekijk alle berichten gesorteerd op %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:28
 msgid "All Status Posts"
-msgstr "O status de todas as postagens"
+msgstr "Alle statusberichten"
 
 #: ../content-status.php:28
 msgid "Status"
@@ -214,23 +211,23 @@ msgstr "Status"
 
 #: ../content-video.php:25
 msgid "All Video Posts"
-msgstr "Todas as postagens com vídeo"
+msgstr "Alle videoberichten"
 
 #: ../content-video.php:25
 msgid "Video"
-msgstr "Vídeo"
+msgstr "Video"
 
 #: ../content.php:24
 msgid "Featured post"
-msgstr "Postagens em destaque"
+msgstr "Uitgelicht bericht"
 
 #: ../functions.php:104
 msgid "Header Right Menu"
-msgstr "Menu do cabeçalho à direita"
+msgstr "Header rechtse zijbalk"
 
 #: ../functions.php:105
 msgid "Header Secondary Menu"
-msgstr "Menu do cabeçalho secundário"
+msgstr "Header Secondary Menu"
 
 #: ../image.php:37
 #, php-format
@@ -240,18 +237,18 @@ msgid ""
 "size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
 "\" rel=\"gallery\">%7$s</a>"
 msgstr ""
-"Publicado <span class=\"entry-date\"><time class=\"entry-date\" datetime="
-"\"%1$s\" pubdate>%2$s</time></span> em <a href=\"%3$s\" title=\"Link para a "
-"imagem em tamanho grande\">%4$s &times; %5$s</a> na <a href=\"%6$s\" title="
-"\"Retornar para %7$s\" rel=\"gallery\">%7$s</a>"
+"Gepubliceerd op<span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\" pubdate>%2$s</time></span> om <a href=\"%3$s\" title="
+"\"Link naar volledige afbeelding\">%4$s &times; %5$s</a> in <a href=\"%6$s\" "
+"title=\"Terug naar %7$s\" rel=\"gallery\">%7$s</a> "
 
 #: ../image.php:51
 msgid "&larr; Previous"
-msgstr "&larr; Anterior"
+msgstr "&larr; Vorige"
 
 #: ../image.php:52
 msgid "Next &rarr;"
-msgstr "Próximo &rarr;"
+msgstr "Volgende &rarr;"
 
 #: ../image.php:112
 #, php-format
@@ -260,10 +257,10 @@ msgid ""
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Enviar um comentário"
-"\">Postar um comentário</a> ou deixar um trackback: <a class=\"trackback-link"
-"\" href=\"%s\" title=\"URL Trackback para a sua postagem\" rel=\"trackback"
-"\">URL Trackback </a>."
+"<a class=\"comment-link\" href=\"#respond\" title=\"Plaats een reactie"
+"\">Plaats een reactie</a> of een trackback: <a class=\"trackback-link\" href="
+"\"%s\" title=\"Trackback URL voor dit bericht\" rel=\"trackback\">Trackback "
+"URL</a>. "
 
 #: ../image.php:114
 #, php-format
@@ -272,25 +269,25 @@ msgid ""
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
-"Os comentários estão fechados, mas você pode deixar um trackback: <a class="
-"\"trackback-link\" href=\"%s\" title=\"URL Trackback para a sua postagem\" "
-"rel=\"trackback\">URL Trackback </a>."
+"Reacties zijn gesloten, maar u kunt een trackback achterlaten: <a class="
+"\"trackback-link\" href=\"%s\" title=\"Trackback URL voor dit bericht\" rel="
+"\"trackback\">Trackback URL</a>."
 
 #: ../image.php:116
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"Trackbacks estão fechados, mas você pode <a class=\"comment-link\" href="
-"\"#respond\" title=\"Enviar um comentário\">Adicionar um comentário</a>."
+"Trackbacks zijn gesloten, maar u kunt <a class=\"comment-link\" href="
+"\"#respond\" title=\"Plaats een reactie\">een reactie plaatsen</a>."
 
 #: ../image.php:118
 msgid "Both comments and trackbacks are currently closed."
-msgstr "Ambos os comentários e trackbacks estão atualmente fechados."
+msgstr "Zowel reacties als trackbacks zijn gesloten."
 
 #: ../inc/adventurous-custom-header.php:45
 msgid "Highway"
-msgstr "Rodovia"
+msgstr "Highway"
 
 #: ../inc/adventurous-custom-header.php:51
 msgid "Buddha"
@@ -299,7 +296,7 @@ msgstr "Buddha"
 #: ../inc/adventurous-functions.php:257
 #, php-format
 msgid "Page %s"
-msgstr "Página %s"
+msgstr "Pagina %s"
 
 #: ../inc/adventurous-functions.php:742
 #: ../inc/panel/adventurous-theme-options.php:105
@@ -316,7 +313,7 @@ msgstr "Twitter"
 #: ../inc/adventurous-functions.php:752
 #: ../inc/panel/adventurous-theme-options.php:1077
 msgid "Google+"
-msgstr "Google +"
+msgstr "Google+"
 
 #: ../inc/adventurous-functions.php:757
 msgid "LinkedIn"
@@ -357,7 +354,7 @@ msgstr "Tumblr"
 #: ../inc/adventurous-functions.php:797
 #: ../inc/panel/adventurous-theme-options.php:1149
 msgid "deviantART"
-msgstr "Deviantart"
+msgstr "deviantART"
 
 #: ../inc/adventurous-functions.php:802
 #: ../inc/panel/adventurous-theme-options.php:1157
@@ -373,7 +370,7 @@ msgstr "MySpace"
 #: ../inc/panel/adventurous-theme-options.php:1173
 #: ../inc/panel/adventurous-theme-options.php:1772
 msgid "WordPress"
-msgstr "WordPress"
+msgstr "Wordpress"
 
 #: ../inc/adventurous-functions.php:817
 #: ../inc/panel/adventurous-theme-options.php:1181
@@ -449,32 +446,32 @@ msgstr "ID"
 
 #: ../inc/adventurous-menus.php:11
 msgid "Primary Menu"
-msgstr "Menu Principal"
+msgstr "Hoofdmenu"
 
 #: ../inc/adventurous-menus.php:12
 msgid "Skip to content"
-msgstr "Ir para o conteúdo"
+msgstr "Doorgaan naar inhoud"
 
 #: ../inc/adventurous-menus.php:45
 msgid "Secondary Menu"
-msgstr "Menu Secundário"
+msgstr "Submenu"
 
 #: ../inc/adventurous-metabox.php:14
 #: ../inc/panel/adventurous-theme-options.php:1782
 msgid "Adventurous"
-msgstr "Adventurous (Aventureiro)"
+msgstr "Adventurous"
 
 #: ../inc/adventurous-metabox.php:20
 msgid "Adventurous Options"
-msgstr "Opções do Adventurous"
+msgstr "Adventurous Options"
 
 #: ../inc/adventurous-metabox.php:34
 msgid "Default"
-msgstr "Padrão"
+msgstr "Standaard"
 
 #: ../inc/adventurous-metabox.php:39
 msgid "Enable"
-msgstr "Ativar"
+msgstr "Inschakelen"
 
 #: ../inc/adventurous-metabox.php:44
 #: ../inc/panel/adventurous-theme-options.php:337
@@ -482,67 +479,67 @@ msgstr "Ativar"
 #: ../inc/panel/adventurous-theme-options.php:762
 #: ../inc/panel/adventurous-theme-options.php:918
 msgid "Disable"
-msgstr "Desativar"
+msgstr "Uitschakelen"
 
 #: ../inc/adventurous-metabox.php:55 ../inc/adventurous-metabox.php:86
 msgid "Default Layout Set in"
-msgstr "Layout padrão situado em:"
+msgstr "Standaard layout geselecteerd in"
 
 #: ../inc/adventurous-metabox.php:55 ../inc/adventurous-metabox.php:86
 #: ../inc/panel/adventurous-theme-options.php:41
 #: ../inc/panel/adventurous-theme-options.php:42
 #: ../inc/panel/adventurous-theme-options.php:116
 msgid "Theme Options"
-msgstr "Opções do tema"
+msgstr "Thema-opties"
 
 #: ../inc/adventurous-metabox.php:61
 msgid "Right sidebar"
-msgstr "Barra lateral direita"
+msgstr "Rechtse sidebar"
 
 #: ../inc/adventurous-metabox.php:67
 msgid "Left sidebar"
-msgstr "Barra lateral esquerda"
+msgstr "Linkse sidebar"
 
 #: ../inc/adventurous-metabox.php:73
 msgid "No sidebar"
-msgstr "Sem barra lateral"
+msgstr "Geen sidebar"
 
 #: ../inc/adventurous-metabox.php:91
 #: ../inc/panel/adventurous-theme-options.php:355
 #: ../inc/panel/adventurous-theme-options.php:438
 msgid "Featured Image"
-msgstr "Imagem em destaque"
+msgstr "Uitgelichte afbeelding"
 
 #: ../inc/adventurous-metabox.php:96
 #: ../inc/panel/adventurous-theme-options.php:347
 #: ../inc/panel/adventurous-theme-options.php:442
 msgid "Full Image"
-msgstr "Imagem completa"
+msgstr "Volledige afbeelding"
 
 #: ../inc/adventurous-metabox.php:101
 #: ../inc/panel/adventurous-theme-options.php:351
 #: ../inc/panel/adventurous-theme-options.php:446
 msgid "Slider Image"
-msgstr "Slider imagem"
+msgstr "Slider afbeelding"
 
 #: ../inc/adventurous-metabox.php:106
 #: ../inc/panel/adventurous-theme-options.php:450
 msgid "Disable Image"
-msgstr "Desativar imagem"
+msgstr "Afbeelding uitschakelen"
 
 #: ../inc/adventurous-metabox.php:123
 msgid "Sidebar Layout"
-msgstr "Disposição da barra lateral"
+msgstr "Sidebar-layout"
 
 #: ../inc/adventurous-metabox.php:153
 #: ../inc/panel/adventurous-theme-options.php:303
 msgid "Header Featured Image Options"
-msgstr "Opções da imagem em destaque no cabeçalho (Header)"
+msgstr "Opties voor uitgelichte afbeelding in de header"
 
 #: ../inc/adventurous-metabox.php:181
 #: ../inc/panel/adventurous-theme-options.php:430
 msgid "Content Featured Image Options"
-msgstr "Opções de conteúdo de imagem em destaque"
+msgstr "Opties voor uitgelichte afbeelding in berichten"
 
 #: ../inc/adventurous-slider.php:240
 msgid ""
@@ -550,9 +547,9 @@ msgid ""
 "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
 "Options\""
 msgstr ""
-"Você selecionou exibir Slider na postagem, mas você não adicionou o ID da "
-"postagem em: \"Aparência => Opções do Tema => Slider em destaque => Opções "
-"de Slider em destaque na postagem\""
+"You have selected Post Slider but you haven't added the Post ID in "
+"\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
+"Options\""
 
 #: ../inc/adventurous-slider.php:248
 msgid ""
@@ -560,36 +557,36 @@ msgid ""
 "\"Appearance => Theme Options => Featured Slider => Featured Category Slider "
 "Options\""
 msgstr ""
-"Você selecionou exibir Slider na categoria, mas você não selecionou nenhum "
-"categorias em: \"Aparência => Opções do Tema => Slider em destaque => Opções "
-"de Slider em destaque na categoria\""
+"You have selected Category Slider but you haven't selected any categories in "
+"\"Appearance => Theme Options => Featured Slider => Featured Category Slider "
+"Options\""
 
 #: ../inc/adventurous-template-tags.php:51
 #: ../inc/adventurous-template-tags.php:109
 msgid "Post navigation"
-msgstr "Navegação das postagens"
+msgstr "Berichtennavigatie"
 
 #: ../inc/adventurous-template-tags.php:55
 #: ../inc/adventurous-template-tags.php:113
 msgctxt "Previous post link"
 msgid "&larr;"
-msgstr "&larr; Postagem anterior"
+msgstr "&larr;"
 
 #: ../inc/adventurous-template-tags.php:56
 #: ../inc/adventurous-template-tags.php:114
 msgctxt "Next post link"
 msgid "&rarr;"
-msgstr "Próximo postagem &rarr;"
+msgstr "&rarr;"
 
 #: ../inc/adventurous-template-tags.php:65
 #: ../inc/adventurous-template-tags.php:123
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Postagens mais antigas"
+msgstr "<span class=\"meta-nav\">&larr;</span> Oudere berichten"
 
 #: ../inc/adventurous-template-tags.php:69
 #: ../inc/adventurous-template-tags.php:127
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Postagens mais recentes <span class=\"meta-nav\">&rarr;</span"
+msgstr "Nieuwere berichten <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/adventurous-template-tags.php:158
 msgid "Pingback:"
@@ -597,30 +594,30 @@ msgstr "Pingback:"
 
 #: ../inc/adventurous-template-tags.php:158
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr "(Bewerken)"
 
 #: ../inc/adventurous-template-tags.php:173
 msgid "Post author"
-msgstr "Resposta do autor"
+msgstr "Auteur van dit bericht:"
 
 #: ../inc/adventurous-template-tags.php:179
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s às %2$s"
+msgstr "%1$s op %2$s"
 
 #: ../inc/adventurous-template-tags.php:185
 msgid "Your comment is awaiting moderation."
-msgstr "Seu comentário está aguardando moderação."
+msgstr "Jouw reactie wacht op moderatie."
 
 #: ../inc/adventurous-template-tags.php:194
 msgid "Reply"
-msgstr "Responder"
+msgstr "Reageren"
 
 #: ../inc/adventurous-template-tags.php:223
 #: ../inc/adventurous-template-tags.php:296
 #, php-format
 msgid "View all posts by %s"
-msgstr "Ver todas as postagens de %s"
+msgstr "Bekijk alle berichten op %s"
 
 #: ../inc/adventurous-template-tags.php:228
 #, php-format
@@ -628,8 +625,8 @@ msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
 "%2$s</span>"
 msgstr ""
-"<span class=\"on-date\">Postado em: %1$s</span><span class=\"by-author\"> "
-"por: %2$s</span>"
+"<span class=\"on-date\">Geplaatst op %1$s</span><span class=\"by-author\"> "
+"door %2$s</span>"
 
 #: ../inc/adventurous-template-tags.php:250
 #: ../inc/adventurous-template-tags.php:253
@@ -644,13 +641,13 @@ msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">Tagged %2$s</span>"
 msgstr ""
-"<span class=\"in-category\">Postado em: %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">com as Tags: %2$s</span>"
+"<span class=\"in-category\">Geplaatst in %1$s</span><span class=\"sep\"> | </"
+"span><span class=\"in-tag\">Tags %2$s</span> "
 
 #: ../inc/adventurous-template-tags.php:260
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
-msgstr "<span class=\"in-category\">Postado em: %1$s</span>"
+msgstr "<span class=\"in-category\">Geplaatst in %1$s</span>"
 
 #: ../inc/adventurous-template-tags.php:302
 #, php-format
@@ -660,10 +657,10 @@ msgid ""
 "%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
 "span>"
 msgstr ""
-"<span class=\"on-date\">Postado em: %3$s</span><span class=\"in-category\"> "
-"sob: %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">com as "
-"Tags: %2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"por: %4$s</span>"
+"<span class=\"on-date\">Geplaatst op %3$s</span><span class=\"in-category\"> "
+"in %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tags "
+"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> Door "
+"%4$s</span>"
 
 #: ../inc/adventurous-template-tags.php:304
 #, php-format
@@ -672,9 +669,9 @@ msgid ""
 "under in %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">Postado em: %3$s</span><span class=\"in-category\"> "
-"sob a: %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"por: %4$s</span>."
+"<span class=\"on-date\">Geplaatst op %3$s</span><span class=\"in-category\"> "
+"in %1$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> Door "
+"%4$s</span>. "
 
 #: ../inc/adventurous-template-tags.php:306
 #, php-format
@@ -682,44 +679,44 @@ msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
 "span><span class=\"by-author\"> By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">Postado em: %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> por: %4$s</span>."
+"<span class=\"on-date\">Geplaatst op %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> Door %4$s</span>."
 
 #: ../inc/adventurous-widgets.php:14
 msgid "Main Sidebar"
-msgstr "Barra Lateral Principal"
+msgstr "Standaard sidebar"
 
 #: ../inc/adventurous-widgets.php:16
 msgid "Shows the Widgets at the side of Content"
-msgstr "Mostra os Widgets nos lados do conteúdo"
+msgstr "Toont de widgets naast de content"
 
 #: ../inc/adventurous-widgets.php:25
 msgid "Footer Area One"
-msgstr "Área do Rodapé - Um"
+msgstr "Footerruimte 1"
 
 #: ../inc/adventurous-widgets.php:27 ../inc/adventurous-widgets.php:38
 #: ../inc/adventurous-widgets.php:49 ../inc/adventurous-widgets.php:60
 msgid "An optional widget area for your site footer"
-msgstr "Uma área Widget opcional para o rodapé do site"
+msgstr "Een optionele widgetruimte voor de footer van uw site"
 
 #: ../inc/adventurous-widgets.php:36
 msgid "Footer Area Two"
-msgstr "Área do Rodapé - Dois"
+msgstr "Footerruimte 2"
 
 #: ../inc/adventurous-widgets.php:47
 msgid "Footer Area Three"
-msgstr "Área do Rodapé - Três"
+msgstr "Footerruimte 3"
 
 #: ../inc/adventurous-widgets.php:58
 msgid "Footer Area Four"
-msgstr "Área do Rodapé - Quatro"
+msgstr "Footerruimte 4"
 
 #: ../inc/adventurous-widgets.php:88
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
-"Utilize esta ferramenta para adicionar ícones sociais, configurando os "
-"ícones sociais como um widget."
+"Gebruik deze widget om de social media-iconen uit '\"Social-media iconen\" "
+"toe te voegen"
 
 #: ../inc/adventurous-widgets.php:89
 msgid "1. Adventurous: Social"
@@ -727,62 +724,59 @@ msgstr "1. Adventurous: Social"
 
 #: ../inc/adventurous-widgets.php:102
 msgid "Title (optional):"
-msgstr "Título (opcional):"
+msgstr "Titel (optioneel):"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:21
 msgid "Adventurous is a Simple, Clean and Responsive WordPress Theme"
-msgstr ""
-"O tema WordPress Aventureiro (Adventurous) é simples, limpo e totalmente "
-"responsivo."
+msgstr "Adventurous is a Simple, Clean and Responsive WordPress Theme"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:22
 msgid ""
 "This is Promotion Headline. You can edit this from \"Appearance => Theme "
 "Options => Promotion Headline Options\""
 msgstr ""
-"Esta é a Promoção da Manchete. E você pode editar a partir de: \"Aparência "
-"=> Opções do Tema => Opções da frase de apresentação (Manchete) da página "
-"inicial\""
+"This is Promotion Headline. You can edit this from \"Appearance => Theme "
+"Options => Promotion Headline Options\""
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:23
 msgid "Reviews"
-msgstr "Revisões"
+msgstr "Reviews"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:39
 msgid "Continue Reading &rarr;"
-msgstr "Continuar a leitura &rarr;"
+msgstr "Lees verder &rarr;"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:42
 msgid "Search &hellip;"
-msgstr "Pesquisar..."
+msgstr "Zoek &hellip;"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:97
 msgid "Copyright"
-msgstr "Direitos Autorais"
+msgstr "Copyright"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:97
 msgid "All Rights Reserved"
-msgstr "Todos os Direitos são Reservados"
+msgstr "Alle rechten voorbehouden"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:97
 msgid "Powered by"
-msgstr "Desenvolvido por"
+msgstr "Mogelijk gemaakt door"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:97
 msgid "Theme"
-msgstr "Tema"
+msgstr "Thema"
 
 #: ../inc/panel/adventurous-theme-options.php:82
 msgid "Options Saved"
-msgstr "Configurações salvas"
+msgstr "Instellingen opgeslagen"
 
 #: ../inc/panel/adventurous-theme-options.php:88
 msgid "Theme Options By"
-msgstr "Opções do tema por:"
+msgstr "Thema-opties op"
 
 #: ../inc/panel/adventurous-theme-options.php:90
 msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgstr "http://catchthemes.com"
 
 #: ../inc/panel/adventurous-theme-options.php:90
 #: ../inc/panel/adventurous-theme-options.php:91
@@ -795,7 +789,7 @@ msgstr "http://catchthemes.com/themes/adventurous-pro/"
 
 #: ../inc/panel/adventurous-theme-options.php:97
 msgid "Upgrade to Adventurous Pro"
-msgstr "Faça upgrade para Adventurous Pro"
+msgstr "Upgrade naar Adventurous Pro"
 
 #: ../inc/panel/adventurous-theme-options.php:102
 msgid "http://catchthemes.com/donate/"
@@ -803,11 +797,11 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/adventurous-theme-options.php:102
 msgid "Donate to Adventurous"
-msgstr "Doação para Adventurous"
+msgstr "Doneer aan Adventurous"
 
 #: ../inc/panel/adventurous-theme-options.php:102
 msgid "Donate Now"
-msgstr "Gostou do tema Adventurous? Faça uma Doação Agora!"
+msgstr "Doneer nu"
 
 #: ../inc/panel/adventurous-theme-options.php:103
 msgid "http://catchthemes.com/support/"
@@ -815,7 +809,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/adventurous-theme-options.php:103
 msgid "Support"
-msgstr "Suporte"
+msgstr "Support"
 
 #: ../inc/panel/adventurous-theme-options.php:104
 msgid "http://catchthemes.com/theme-instructions/adventurous-pro/"
@@ -823,15 +817,15 @@ msgstr "http://catchthemes.com/theme-instructions/adventurous-pro/"
 
 #: ../inc/panel/adventurous-theme-options.php:104
 msgid "Theme Instruction"
-msgstr "Instruções do tema"
+msgstr "Thema-instructies"
 
 #: ../inc/panel/adventurous-theme-options.php:105
 msgid "https://www.facebook.com/catchthemes/"
-msgstr "https://www.facebook.com/catchthemes/"
+msgstr "https://facebook.com/catchthemes"
 
 #: ../inc/panel/adventurous-theme-options.php:105
 msgid "Like Catch Themes on Facebook"
-msgstr "Dê um Curtir no Facebook para o Catch Themes"
+msgstr "Vind Cath Themes leuk op Facebook"
 
 #: ../inc/panel/adventurous-theme-options.php:106
 msgid "https://twitter.com/catchthemes/"
@@ -839,7 +833,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/adventurous-theme-options.php:106
 msgid "Follow Catch Themes on Twitter"
-msgstr "Siga o Catch Themes no Twitter"
+msgstr "Volg Catch Themes op Twitter"
 
 #: ../inc/panel/adventurous-theme-options.php:107
 msgid "http://wordpress.org/support/view/theme-reviews/adventurous"
@@ -847,33 +841,31 @@ msgstr "http://wordpress.org/support/view/theme-reviews/adventurous"
 
 #: ../inc/panel/adventurous-theme-options.php:107
 msgid "Rate us 5 Star on WordPress"
-msgstr ""
-"Seu apoio é muito importante para nós. Classifique-nos com 5 Estrelas no "
-"WordPress - Obrigado!"
+msgstr "Geef ons 5 sterren op Wordpress"
 
 #: ../inc/panel/adventurous-theme-options.php:107
 msgid "5 Star Rating"
-msgstr "Classifique-nos com 5 Estrelas!"
+msgstr "5-sterrenwaardering"
 
 #: ../inc/panel/adventurous-theme-options.php:117
 msgid "Featured Content"
-msgstr "Conteúdo em destaque"
+msgstr "Uitgelichte content"
 
 #: ../inc/panel/adventurous-theme-options.php:118
 msgid "Featured Slider"
-msgstr "Slider em destaque"
+msgstr "Uitgelichte slider"
 
 #: ../inc/panel/adventurous-theme-options.php:119
 msgid "Social Links"
-msgstr "Links das Redes Sociais"
+msgstr "Sociale links"
 
 #: ../inc/panel/adventurous-theme-options.php:127
 msgid "Favicon"
-msgstr "Configurações do Favicon"
+msgstr "Favicon"
 
 #: ../inc/panel/adventurous-theme-options.php:131
 msgid "Disable Favicon?"
-msgstr "Você quer <strong>desativar</strong> o Favicon?"
+msgstr "Favicon uitschakelen?"
 
 #: ../inc/panel/adventurous-theme-options.php:135
 #: ../inc/panel/adventurous-theme-options.php:179
@@ -883,26 +875,26 @@ msgstr "Você quer <strong>desativar</strong> o Favicon?"
 #: ../inc/panel/adventurous-theme-options.php:552
 #: ../inc/panel/adventurous-theme-options.php:928
 msgid "Check to disable"
-msgstr "Marque aqui para desativar"
+msgstr "Vink aan om uit te schakelen"
 
 #: ../inc/panel/adventurous-theme-options.php:140
 msgid "Fav Icon URL:"
-msgstr "URL do seu ícone Favicon:"
+msgstr "Favicon URL:"
 
 #: ../inc/panel/adventurous-theme-options.php:144
 msgid "Change Fav Icon"
-msgstr "Adicionar/Mudar o seu Favicon"
+msgstr "Verander Favicon"
 
 #: ../inc/panel/adventurous-theme-options.php:146
 msgid "Upload Fav Icon"
-msgstr "Fazer upload do Favicon"
+msgstr "Upload Favicon"
 
 #: ../inc/panel/adventurous-theme-options.php:152
 #: ../inc/panel/adventurous-theme-options.php:197
 #: ../inc/panel/adventurous-theme-options.php:274
 #: ../inc/panel/adventurous-theme-options.php:376
 msgid "Preview"
-msgstr "Pré-visualização"
+msgstr "Preview"
 
 #: ../inc/panel/adventurous-theme-options.php:165
 #: ../inc/panel/adventurous-theme-options.php:213
@@ -923,23 +915,23 @@ msgstr "Pré-visualização"
 #: ../inc/panel/adventurous-theme-options.php:1046
 #: ../inc/panel/adventurous-theme-options.php:1292
 msgid "Save Changes"
-msgstr "Salvar Alterações"
+msgstr "wijzigingen opslaan"
 
 #: ../inc/panel/adventurous-theme-options.php:171
 msgid "Web Clip Icon Options"
-msgstr "Opções de web clipe ícone"
+msgstr "Opties voor Web Clip Icon"
 
 #: ../inc/panel/adventurous-theme-options.php:175
 msgid "Disable Web Clip Icon?"
-msgstr "Você quer <strong>desativar</strong> web clipe ícone?"
+msgstr "Web Clip Icon uitschakelen?"
 
 #: ../inc/panel/adventurous-theme-options.php:184
 msgid "Web Clip Icon URL:"
-msgstr "URL na Web ou local do seu ícone "
+msgstr "Web Clip URL:"
 
 #: ../inc/panel/adventurous-theme-options.php:192
 msgid "Change Web Clip Icon"
-msgstr "Adicionar/Mudar o seu ícone"
+msgstr "Verander Web Clip Icon"
 
 #: ../inc/panel/adventurous-theme-options.php:210
 msgid ""
@@ -947,25 +939,25 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Nota: Web Clip Ícone para dispositivos da Apple. Tamanho recomendado - "
-"largura 144px e altura 144px, que irá suportar dispositivos de alta "
-"resolução, como iPad de Retina."
+"Web Clip Icon voor Apple-apparaten. Aangeraden grootte: 144px bij 144px, "
+"zodat ook iPad Retina en andere apparaten met een hoge resolutie ondersteund "
+"worden."
 
 #: ../inc/panel/adventurous-theme-options.php:220
 msgid "Menu Options"
-msgstr "Opções de menu"
+msgstr "Menu Options"
 
 #: ../inc/panel/adventurous-theme-options.php:224
 msgid "Custom Menus"
-msgstr "Menus personalizados"
+msgstr "Custom Menus"
 
 #: ../inc/panel/adventurous-theme-options.php:227
 msgid "Click to Create Custom Menus"
-msgstr "Clique para criar os menus personalizados"
+msgstr "Click to Create Custom Menus"
 
 #: ../inc/panel/adventurous-theme-options.php:232
 msgid "Assign Locations"
-msgstr "Atribua as localizações"
+msgstr "Assign Locations"
 
 #: ../inc/panel/adventurous-theme-options.php:233
 msgid ""
@@ -973,317 +965,295 @@ msgid ""
 "Header Secondary Menu Location. This will replace the WordPress default page "
 "menu"
 msgstr ""
-"Nota: É possível atribuir posicionamento ao seu menu personalizado para que "
-"se localize do lado direito no cabeçalho e, também a localização do seu menu "
-"secundário. Isso irá substituir o menu padrão nas páginas do WordPress."
+"Note: You can assign your custom menu to Header Right Menu Location and "
+"Header Secondary Menu Location. This will replace the WordPress default page "
+"menu"
 
 #: ../inc/panel/adventurous-theme-options.php:236
 msgid "Click to Manage Menu Locations"
-msgstr "Clique para gerenciar os locais dos menus"
+msgstr "Click to Manage Menu Locations"
 
 #: ../inc/panel/adventurous-theme-options.php:246
 msgid "Header Options"
-msgstr "Opções de cabeçalho"
+msgstr "Header opties"
 
 #: ../inc/panel/adventurous-theme-options.php:250
 msgid "Disable Logo?"
-msgstr "Você quer desativar o logotipo?"
+msgstr "Disable Logo?"
 
 #: ../inc/panel/adventurous-theme-options.php:259
 msgid "Logo url"
-msgstr "URL do logotipo"
+msgstr "Logo url"
 
 #: ../inc/panel/adventurous-theme-options.php:269
 msgid "Change Logo"
-msgstr "Alterar logotipo"
+msgstr "Change Logo"
 
 #: ../inc/panel/adventurous-theme-options.php:288
 msgid "Disable Header Right Section?"
-msgstr "Você quer desativar a seção do cabeçalho?"
+msgstr "Disable Header Right Section?"
 
 #: ../inc/panel/adventurous-theme-options.php:292
 #: ../inc/panel/adventurous-theme-options.php:570
 msgid "Check to Disable"
-msgstr "Marque aqui para desativar"
+msgstr "Vink aan om uit te schakelen"
 
 #: ../inc/panel/adventurous-theme-options.php:307
 msgid "Enable Featured Header Image"
-msgstr "Ativar a imagem em destaque no cabeçalho (Header)"
+msgstr "Schakel uitgelichte afbeeldingen header in"
 
 #: ../inc/panel/adventurous-theme-options.php:312
 #: ../inc/panel/adventurous-theme-options.php:470
 #: ../inc/panel/adventurous-theme-options.php:754
 #: ../inc/panel/adventurous-theme-options.php:910
 msgid "Homepage"
-msgstr "Página Inicial (Homepage)"
+msgstr "Homepagina"
 
 #: ../inc/panel/adventurous-theme-options.php:317
 msgid "Excluding Homepage"
-msgstr "Excluindo a página inicial"
+msgstr "Homepagina uitgezonderd"
 
 #: ../inc/panel/adventurous-theme-options.php:322
 #: ../inc/panel/adventurous-theme-options.php:475
 #: ../inc/panel/adventurous-theme-options.php:758
 #: ../inc/panel/adventurous-theme-options.php:914
 msgid "Entire Site"
-msgstr "Todo o Site"
+msgstr "Gehele site"
 
 #: ../inc/panel/adventurous-theme-options.php:327
 msgid "Entire Site, Page/Post Featured Image"
-msgstr "Incluir imagem em destaque em página/postagens do site todo"
+msgstr "Gehele site, uitgelichte afbeeldingen van pagina/bericht"
 
 #: ../inc/panel/adventurous-theme-options.php:332
 msgid "Pages & Posts"
-msgstr "Páginas & Postagens"
+msgstr "Pagina's en berichten"
 
 #: ../inc/panel/adventurous-theme-options.php:343
 msgid "Page/Post Featured Image Size"
-msgstr "Tamanho da imagem em destaque em página/postagem"
+msgstr "Grootte uitgelichte afbeelding pagina/berichten"
 
 #: ../inc/panel/adventurous-theme-options.php:361
 msgid "Header Image"
-msgstr "Imagem de cabeçalho"
+msgstr "Hoofding Afbeelding"
 
 #: ../inc/panel/adventurous-theme-options.php:367
 msgid "Click here to change header image"
-msgstr "Clique aqui para alterar imagem do cabeçalho"
+msgstr "Click here to change header image"
 
 #: ../inc/panel/adventurous-theme-options.php:367
 msgid "Click here to change Header Image"
-msgstr "Clique aqui para alterar Imagem do Cabeçalho"
+msgstr "Click here to change Header Image"
 
 #: ../inc/panel/adventurous-theme-options.php:369
 msgid "Click here to add header image"
-msgstr "Clique aqui para adicionar imagem do cabeçalho"
+msgstr "Click here to add header image"
 
 #: ../inc/panel/adventurous-theme-options.php:369
 msgid "Click here to add Header Image"
-msgstr "Clique aqui para adicionar Imagem no Cabeçalho"
+msgstr "Click here to add Header Image"
 
 #: ../inc/panel/adventurous-theme-options.php:383
 msgid "There is no Header Image"
-msgstr "Não há nenhuma imagem de cabeçalho para visualizar..."
+msgstr "There is no Header Image"
 
 #: ../inc/panel/adventurous-theme-options.php:390
 msgid "Featured Header Image Alt/Title Tag"
-msgstr "Descrevendo a imagem do cabeçalho com as tags alt/title"
+msgstr "Header uitgelichte afbeelding alt/title tag"
 
 #: ../inc/panel/adventurous-theme-options.php:398
 msgid "Featured Header Image Link URL"
-msgstr "Atribuindo um link URL para a imagem do cabeçalho"
+msgstr "Header uitgelichte afbeelding link URL:"
 
 #: ../inc/panel/adventurous-theme-options.php:406
 #: ../inc/panel/adventurous-theme-options.php:843
 msgid "Target. Open Link in New Window?"
-msgstr "Como quer abrir o link (target). Abrir link em uma nova janela/aba?"
+msgstr "Open in een nieuw venster?"
 
 #: ../inc/panel/adventurous-theme-options.php:410
 #: ../inc/panel/adventurous-theme-options.php:525
 #: ../inc/panel/adventurous-theme-options.php:847
 msgid "Check to open in new window"
-msgstr "Marcar para abrir em uma nova janela/aba"
+msgstr "Vink aan om te openen in een nieuw venster"
 
 #: ../inc/panel/adventurous-theme-options.php:416
 msgid "Reset Header Featured Image Options?"
-msgstr ""
-"Você quer voltar à configuração padrão (resetar) as opções da imagem em "
-"destaque?"
+msgstr "Reset opties voor header uitgelichte afbeeldingen?"
 
 #: ../inc/panel/adventurous-theme-options.php:420
 #: ../inc/panel/adventurous-theme-options.php:653
 #: ../inc/panel/adventurous-theme-options.php:705
 msgid "Check to reset"
-msgstr "Marque para redefinir (resetar)"
+msgstr "Vink aan om te resetten"
 
 #: ../inc/panel/adventurous-theme-options.php:434
 msgid "Content Featured Image Size"
-msgstr "Tamanho da imagem quando apresentada no conteúdo"
+msgstr "Content uitgelichte afbeelding grootte"
 
 #: ../inc/panel/adventurous-theme-options.php:461
 msgid "Promotion Headline Options"
-msgstr "Opções da frase de apresentação (Manchete) da página inicial"
+msgstr "Promotion Headline Options"
 
 #: ../inc/panel/adventurous-theme-options.php:465
 msgid "Enable Promotion"
-msgstr "Ativar a frase de apresentação (Manchete)"
+msgstr "Enable Promotion"
 
 #: ../inc/panel/adventurous-theme-options.php:486
 msgid "Headline Text"
-msgstr "Texto da frase de apresentação (Manchete) da página inicial"
+msgstr "Headline Text"
 
 #: ../inc/panel/adventurous-theme-options.php:487
 msgid "The appropriate length for Headine is around 10 words."
-msgstr ""
-"O comprimento adequado para a Frase de Apresentação (Manchete) é cerca de 10 "
-"palavras."
+msgstr "De geschikte lengte voor de titel is ongeveer 10 woorden."
 
 #: ../inc/panel/adventurous-theme-options.php:495
 msgid "Subheadline Text"
-msgstr "Subtítulo da manchete da página inicial"
+msgstr "Subheadline Text"
 
 #: ../inc/panel/adventurous-theme-options.php:496
 msgid "The appropriate length for Headine is around 15 words."
-msgstr ""
-"O comprimento adequado para a Frase de Apresentação (manchete) é cerca de 15 "
-"palavras."
+msgstr "De geschikte lengte voor een ondertitel is ongeveer 15 woorden."
 
 #: ../inc/panel/adventurous-theme-options.php:504
 msgid "Button Text"
-msgstr "Texto do botão"
+msgstr "Button Text"
 
 #: ../inc/panel/adventurous-theme-options.php:505
 msgid "The appropriate length for Headine is around 3 words."
-msgstr ""
-"O comprimento adequado para a Frase de Apresentação (manchete) é cerca de 3 "
-"palavras."
+msgstr "De geschikte lengte voor de tekst op de knop is ongeveer 3 woorden."
 
 #: ../inc/panel/adventurous-theme-options.php:513
 msgid "Button Link"
-msgstr "Link do botão"
+msgstr "Button Link"
 
 #: ../inc/panel/adventurous-theme-options.php:521
 msgid "Target. Open Link in New Window? "
-msgstr "Como quer abrir o link (target). Abrir link em uma nova janela/aba?"
+msgstr "Open in een nieuw venster?"
 
 #: ../inc/panel/adventurous-theme-options.php:530
 msgid "Disable Headline?"
-msgstr "Disativar a frase de apresentação (Manchete) da página inicial?"
+msgstr "Disable Headline?"
 
 #: ../inc/panel/adventurous-theme-options.php:539
 msgid "Disable Subheadline?"
-msgstr "Desativar o subtítulo da manchete da página inicial?"
+msgstr "Disable Subheadline?"
 
 #: ../inc/panel/adventurous-theme-options.php:548
 msgid "Disable Button?"
-msgstr "Desativar a frase de apresentação no botão da página inicial?"
+msgstr "Disable Button?"
 
 #: ../inc/panel/adventurous-theme-options.php:562
 msgid "Homepage / Frontpage Settings"
-msgstr ""
-"Configurações da página inicial (Homepage) e da página de entrada estática "
-"(Frontpage)"
+msgstr "Homepagina-opties"
 
 #: ../inc/panel/adventurous-theme-options.php:566
 msgid "Disable Latest Posts?"
-msgstr "Você quer desativar suas postagens mais recentes?"
+msgstr "Disable Latest Posts?"
 
 #: ../inc/panel/adventurous-theme-options.php:575
 msgid "Add Page instead of Latest Posts"
-msgstr "Adicionar uma página estática ao invés de postagens mais recentes"
+msgstr "Voeg een statische pagina toe in plaats van meest recente berichten"
 
 #: ../inc/panel/adventurous-theme-options.php:578
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
 msgstr ""
-"Clique aqui para determinar como estática a primeira página, em vez de "
-"postagens mais recentes"
+"Klik hier om een statische homepagina in te stellen in plaats van de recente "
+"berichten weer te geven"
 
 #: ../inc/panel/adventurous-theme-options.php:583
 msgid "Homepage posts categories:"
-msgstr "Categoria principal das postagens:"
+msgstr "Homepagina categorieën voor berichten:"
 
 #: ../inc/panel/adventurous-theme-options.php:584
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Somente as postagens que pertencem às categorias selecionadas aqui, serão "
-"exibidos na primeira página."
+"Alleen berichten die in deze categorieën geplaatst zijn worden op de "
+"homepagina getoond."
 
 #: ../inc/panel/adventurous-theme-options.php:588
 #: ../inc/panel/adventurous-theme-options.php:1028
 msgid "--Disabled--"
-msgstr "- Desativado -"
+msgstr "--Uitgeschakeld--"
 
 #: ../inc/panel/adventurous-theme-options.php:599
 #: ../inc/panel/adventurous-theme-options.php:1039
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
-"Você pode selecionar várias categorias, mantendo pressionada a tecla CTRL."
+"Je kunt meerdere categorieën selecteren door de CTRL-toets ingedrukt te "
+"houden"
 
 #: ../inc/panel/adventurous-theme-options.php:609
 msgid "Layout Options"
-msgstr "Opções de layout"
+msgstr "Layout-opties"
 
 #: ../inc/panel/adventurous-theme-options.php:613
 msgid "Sidebar Layout Options"
-msgstr "Opções da disposição (Layout) da barra lateral"
+msgstr "Sidebar layout-opties"
 
 #: ../inc/panel/adventurous-theme-options.php:618
 msgid "Right Sidebar"
-msgstr "Barra lateral direita"
+msgstr "Rechter sidebar"
 
 #: ../inc/panel/adventurous-theme-options.php:623
 msgid "Left Sidebar"
-msgstr "Barra lateral esquerda"
+msgstr "Linker sidebar"
 
 #: ../inc/panel/adventurous-theme-options.php:628
 msgid "No Sidebar"
-msgstr "Sem barra lateral"
+msgstr "Geen sidebar"
 
 #: ../inc/panel/adventurous-theme-options.php:634
 msgid "Content Layout"
-msgstr "Layout do Conteúdo"
+msgstr "Content layout"
 
 #: ../inc/panel/adventurous-theme-options.php:638
 msgid "Full Content Display"
-msgstr "Mostrar o conteúdo completo no blog"
+msgstr "Volledige content-weergave"
 
 #: ../inc/panel/adventurous-theme-options.php:642
 msgid "Excerpt/Blog Display"
-msgstr "Trecho ou resumo do conteúdo para exibição no blog"
+msgstr "Blog-weergave"
 
 #: ../inc/panel/adventurous-theme-options.php:649
 msgid "Reset Layout?"
-msgstr "Redefinir (resetar) o Layout?"
+msgstr "Layout resetten?"
 
 #: ../inc/panel/adventurous-theme-options.php:663
 msgid "Search Text Settings"
-msgstr "Configurações da caixa de texto Pesquisar..."
+msgstr "Zoeken-tekstinstellingen"
 
 #: ../inc/panel/adventurous-theme-options.php:667
 msgid "Default Display Text in Search"
-msgstr "A exibição do texto padrão na caixa Pesquisar é:"
+msgstr "Standaard tekst in Zoek-balk"
 
 #: ../inc/panel/adventurous-theme-options.php:680
 msgid "Excerpt / More Tag Settings"
-msgstr "Excerpt - Configuração da tag - Leia Mais &rarr;"
+msgstr "Afbreken/meer-tag opties"
 
 #: ../inc/panel/adventurous-theme-options.php:684
 msgid "More Tag Text"
-msgstr "Coloque o texto no campo ao lado para a tag - <b>Leia Mais &rarr;</b> "
+msgstr "Meer-tag tekst"
 
 #: ../inc/panel/adventurous-theme-options.php:692
 msgid "Excerpt length(words)"
-msgstr ""
-"Quantidade de palavras (excerpt) que serão usadas para apresentar o resumo "
-"da postagem, em páginas que usarem esse recurso. ( exemplo: home, "
-"categorias, etc...)"
+msgstr "Afbreken na ... woorden"
 
 #: ../inc/panel/adventurous-theme-options.php:701
 msgid "Reset Excerpt?"
-msgstr "Você quer resetar o resumo das postagens?"
+msgstr "Afbreekaantal resetten?"
 
 #: ../inc/panel/adventurous-theme-options.php:715
 msgid "Custom CSS"
-msgstr "Personalizar a sua folha de estilo em cascata - CSS"
+msgstr "Aangepaste CSS"
 
 #: ../inc/panel/adventurous-theme-options.php:719
 msgid "Enter your custom CSS styles."
-msgstr ""
-"Coloque aqui a sua folha de estilo em cascata personalizada - CSS -<br/> "
-"Nota: colocando aqui sua estilização, ela será preservada de modificações "
-"futuras, quando o tema for atualizado pelo desenvolvedor."
+msgstr "Voer je eigen CSS in."
 
 #: ../inc/panel/adventurous-theme-options.php:727
 msgid "CSS Tutorial from W3Schools."
-msgstr ""
-"Aprenda tudo que você precisa saber a respeito da apresentação das folhas de "
-"estilo em cascata <strong>CSS</strong>  (<strong>C</strong>ascading "
-"<strong>S</strong>tyle <strong>S</strong>heet - Folha de Estilo em Cascata) "
-"com os tutoriais dinâmicos da escola <strong>W3Schools</strong>. (em inglês, "
-"contudo, vale o seu esforço em traduzir, para aprender esse "
-"<strong>Ensinamento Gratuito</strong> e apresentar o seu website/blog a seu "
-"gosto para o público alvo na internet!)"
+msgstr "CSS tutorial van W3Schools."
 
 #: ../inc/panel/adventurous-theme-options.php:730
 msgid "http://www.w3schools.com/css/default.asp"
@@ -1291,263 +1261,251 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/adventurous-theme-options.php:730
 msgid "CSS Tutorial"
-msgstr ""
-"W3Schools - Tutoriais para aprender CSS (Cascading Style Sheet - Folha de "
-"Estilo em Cascata)"
+msgstr "CSS tutorial"
 
 #: ../inc/panel/adventurous-theme-options.php:730
 msgid "Click Here to Read"
-msgstr "Clique aqui para aprender"
+msgstr "Klik hier om te lezen"
 
 #: ../inc/panel/adventurous-theme-options.php:745
 msgid "Featured Settings"
-msgstr "Configurações em destaque"
+msgstr "Featured Settings"
 
 #: ../inc/panel/adventurous-theme-options.php:749
 msgid "Enable Featured Content"
-msgstr "Ativar o conteúdo em destaque"
+msgstr "Enable Featured Content"
 
 #: ../inc/panel/adventurous-theme-options.php:768
 msgid "Featured Content Headline Text"
-msgstr "Texto de apresentação da manchete na página inicial"
+msgstr "Featured Content Headline Text"
 
 #: ../inc/panel/adventurous-theme-options.php:769
 msgid "Leave empty if you want to remove headline."
-msgstr ""
-"Deixe em branco se você quiser remover a frase de apresentação (manchete) da "
-"página inicial"
+msgstr "Leave empty if you want to remove headline."
 
 #: ../inc/panel/adventurous-theme-options.php:777
 msgid "Featured Content Subheadline Text"
-msgstr "Subtítulo da manchete da página inicial"
+msgstr "Featured Content Subheadline Text"
 
 #: ../inc/panel/adventurous-theme-options.php:778
 msgid "eave empty if you want to remove Subheadline"
-msgstr ""
-"Deixe em branco se você quiser remover o subtítulo de apresentação (manchete)"
+msgstr "eave empty if you want to remove Subheadline"
 
 #: ../inc/panel/adventurous-theme-options.php:786
 msgid "Number of Featured Content"
-msgstr "Quantidade de conteúdo em destaque"
+msgstr "Aantal uitgelichte berichten"
 
 #: ../inc/panel/adventurous-theme-options.php:794
 msgid "Featured Content Layout"
-msgstr "Disposição do conteúdo em destaque"
+msgstr "Layout uitgelichte content"
 
 #: ../inc/panel/adventurous-theme-options.php:799
 msgid "3 Columns"
-msgstr "3 colunas"
+msgstr "3 kolommen"
 
 #: ../inc/panel/adventurous-theme-options.php:804
 msgid "4 Columns"
-msgstr "4 colunas"
+msgstr "4 kolommen"
 
 #: ../inc/panel/adventurous-theme-options.php:817
 msgid "Featured Content Options"
-msgstr "Opções de conteúdo apresentado na página inicial"
+msgstr "Featured Content Options"
 
 #: ../inc/panel/adventurous-theme-options.php:823
 #, php-format
 msgid "Featured Content #%s"
-msgstr "Conteúdo em destaque #%s"
+msgstr "Uitgelichte content #%s"
 
 #: ../inc/panel/adventurous-theme-options.php:830
 msgid "Change Image"
-msgstr "Alterar imagem"
+msgstr "Verander afbeelding"
 
 #: ../inc/panel/adventurous-theme-options.php:830
 msgid "Add Image"
-msgstr "Adicionar imagem"
+msgstr "Afbeelding toevoegen"
 
 #: ../inc/panel/adventurous-theme-options.php:835
 msgid "Link URL"
-msgstr "URL do Link"
+msgstr "Link URL"
 
 #: ../inc/panel/adventurous-theme-options.php:838
 msgid "Add in the Target URL for the content"
-msgstr "Adicionar a URL de destino para o conteúdo"
+msgstr "Voeg de link toe aan dit bericht"
 
 #: ../inc/panel/adventurous-theme-options.php:852
 msgid "Title"
-msgstr "Titulo"
+msgstr "Titel"
 
 #: ../inc/panel/adventurous-theme-options.php:855
 msgid "Leave empty if you want to remove title"
-msgstr "Deixe em branco se você deseja remover o título"
+msgstr "Laat leeg als je de titel wilt weghalen"
 
 #: ../inc/panel/adventurous-theme-options.php:860
 msgid "Content"
-msgstr "Conteúdo"
+msgstr "Korte beschrijving"
 
 #: ../inc/panel/adventurous-theme-options.php:861
 msgid "The appropriate length for Content is around 10 words."
-msgstr "O comprimento adequado para conteúdo (texto) é cerca de 10 palavras."
+msgstr "De geschikte lengte voor de beschrijving is ongeveer 10 woorden"
 
 #: ../inc/panel/adventurous-theme-options.php:880
 msgid "Slider Options"
-msgstr "Opções de Slider"
+msgstr "Slider opties"
 
 #: ../inc/panel/adventurous-theme-options.php:884
 msgid "Select Slider Type"
-msgstr "Selecione o tipo de Slider Show"
+msgstr "Selecteer slidertype"
 
 #: ../inc/panel/adventurous-theme-options.php:889
 msgid "Demo Slider"
-msgstr "Demontração do Slider Show"
+msgstr "Demo Slider"
 
 #: ../inc/panel/adventurous-theme-options.php:893
 msgid "Post Slider"
-msgstr "Slider Show nas postagens"
+msgstr "Berichtenslider"
 
 #: ../inc/panel/adventurous-theme-options.php:898
 msgid "Category Slider"
-msgstr "Slider Show nas categorias"
+msgstr "Categorieslider"
 
 #: ../inc/panel/adventurous-theme-options.php:905
 msgid "Enable Slider"
-msgstr "Ativar Slider Show"
+msgstr "Slider inschakelen"
 
 #: ../inc/panel/adventurous-theme-options.php:924
 msgid "Disable Text in Slider?"
-msgstr "Você quer desativar o texto no Slider?"
+msgstr "Disable Text in Slider?"
 
 #: ../inc/panel/adventurous-theme-options.php:933
 msgid "Number of Slides"
-msgstr "Escolha o número de Slides!"
+msgstr "Aantal slides"
 
 #: ../inc/panel/adventurous-theme-options.php:941
 msgid "Transition Effect:"
-msgstr "Escolha o efeito de transição:"
+msgstr "Overgangseffect:"
 
 #: ../inc/panel/adventurous-theme-options.php:945
 msgid "fade"
-msgstr "Efeito desaparecer gradualmente"
+msgstr "vervagen"
 
 #: ../inc/panel/adventurous-theme-options.php:946
 msgid "wipe"
-msgstr "Efeito limpar"
+msgstr "vegen"
 
 #: ../inc/panel/adventurous-theme-options.php:947
 msgid "scrollUp"
-msgstr "Efeito rolar para cima"
+msgstr "scrollen omhoog"
 
 #: ../inc/panel/adventurous-theme-options.php:948
 msgid "scrollDown"
-msgstr "Efeito rolar para baixo"
+msgstr "scrollen omlaag"
 
 #: ../inc/panel/adventurous-theme-options.php:949
 msgid "scrollLeft"
-msgstr "Efeito rolar para a esquerda"
+msgstr "scrollen links"
 
 #: ../inc/panel/adventurous-theme-options.php:950
 msgid "scrollRight"
-msgstr "Efeito rolar para a direita"
+msgstr "scrollen rechts"
 
 #: ../inc/panel/adventurous-theme-options.php:951
 msgid "blindX"
-msgstr "Efeito persiana no eixo X"
+msgstr "blinderen X"
 
 #: ../inc/panel/adventurous-theme-options.php:952
 msgid "blindY"
-msgstr "Efeito persiana no eixo Y"
+msgstr "blinderen Y"
 
 #: ../inc/panel/adventurous-theme-options.php:953
 msgid "blindZ"
-msgstr "Efeito persiana no eixo Z"
+msgstr "blinderen Z"
 
 #: ../inc/panel/adventurous-theme-options.php:954
 msgid "cover"
-msgstr "Efeito sobrepor"
+msgstr "bedekken"
 
 #: ../inc/panel/adventurous-theme-options.php:955
 msgid "shuffle"
-msgstr "Efeito micelânia"
+msgstr "willekeurig"
 
 #: ../inc/panel/adventurous-theme-options.php:961
 msgid "Transition Delay"
-msgstr "Regular o tempo de exposição do Slide, para leitura do texto."
+msgstr "Overgangstijd"
 
 #: ../inc/panel/adventurous-theme-options.php:965
 #: ../inc/panel/adventurous-theme-options.php:974
 msgid "second(s)"
-msgstr ""
-"segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23,  enfim... o "
-"número é para sua livre escolha!<br/>Teste qualquer número que você quiser e "
-"escolha o que fique melhor para a visualização e leitura do texto em questão!"
+msgstr "seconde(n)"
 
 #: ../inc/panel/adventurous-theme-options.php:970
 msgid "Transition Length"
-msgstr "Regular a velocidade da transição entre os Slides."
+msgstr "Duur van overgang"
 
 #: ../inc/panel/adventurous-theme-options.php:985
 msgid "Featured Post Slider Options"
-msgstr "Opções do Slider Show da postagem em destaque"
+msgstr "Uitgelichte berichten-slider opties"
 
 #: ../inc/panel/adventurous-theme-options.php:989
 msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
-"Você quer excluir da página inicial das postagens (Homepage), a apresentação "
-"em Slide Show?"
+msgstr "Posts in de slider niet meer weergeven op de homepagina?"
 
 #: ../inc/panel/adventurous-theme-options.php:993
 msgid "Check to exclude"
-msgstr "Marque para excluir"
+msgstr ""
+"Klik aan om de posts in de slider niet meer weer te geven bij de recente "
+"berichten"
 
 #: ../inc/panel/adventurous-theme-options.php:1000
 #, php-format
 msgid "Featured Post Slider #%s"
-msgstr "Postagens em destaque no Slider Show #%s"
+msgstr "Uitgelicht bericht #%s"
 
 #: ../inc/panel/adventurous-theme-options.php:1004
 msgid "Click Here To Edit"
-msgstr "Clique aqui para editar"
+msgstr "Klik hier om te bewerken"
 
 #: ../inc/panel/adventurous-theme-options.php:1010
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"<strong>Nota:</strong> Aqui você pode colocar as identificações únicas "
-"(<b>IDs</b>) de suas postagens que seram exibidas na página inicial como "
-"Slider Show."
+"Hier kun je de ID's van de berichten die in de slider moeten komen "
+"neerzetten."
 
 #: ../inc/panel/adventurous-theme-options.php:1019
 msgid "Featured Category Slider Options"
-msgstr "Opções do Slider Show nas categorias em destaque"
+msgstr "Uitgelichte categorie-slider opties"
 
 #: ../inc/panel/adventurous-theme-options.php:1023
 msgid "Select Slider Categories"
-msgstr "Selecionar as categorias do Slider Show"
+msgstr "Selecteer categorieën voor de slider"
 
 #: ../inc/panel/adventurous-theme-options.php:1024
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
 msgstr ""
-"Use esta, só se você deseja exibir os tópicos específicos das Categorias em "
-"slider em destaque"
+"Gebruik dit alleen als je slechts berichten uit bepaalde categorieën in de "
+"slider wilt hebben"
 
 #: ../inc/panel/adventurous-theme-options.php:1043
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
 msgstr ""
-"<strong>Nota:</strong> Aqui você pode selecionar as categorias, a partir das "
-"quais, todos as postagens nelas contidas, serão exibidos em slider em "
-"destaque."
+"Je kunt hier categorieën selecteren waaruit de meest recente berichten in de "
+"slider moeten komen"
 
 #: ../inc/panel/adventurous-theme-options.php:1057
 msgid "Predefine Social Icons"
-msgstr ""
-"Predefinir ícones das Redes Sociais - coloque o endereço URL (link) da(s) "
-"sua(s) Rede(s) Social(is) preferida(s) na caixa de texto."
+msgstr "Stel sociale iconen in"
 
 #: ../inc/panel/adventurous-theme-options.php:1093
 msgid "Youtube"
-msgstr "Youtube"
+msgstr "YouTube"
 
 #: ../inc/panel/adventurous-theme-options.php:1109
 msgid "Linkedin"
-msgstr "LinkedIn"
+msgstr "Linkedin"
 
 #: ../inc/panel/adventurous-theme-options.php:1117
 msgid "Slideshare"
@@ -1571,41 +1529,39 @@ msgstr "Y"
 
 #: ../no-results.php:15
 msgid "Nothing Found"
-msgstr "Infelizmente sua pesquisa não gerou um resultado válido!"
+msgstr "Geen resultaten gevonden"
 
 #: ../no-results.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Pronto para publicar o seu primeiro post? <a href=\"%1$s\">Comece aqui</a>."
+"Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>. "
 
 #: ../no-results.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Desculpe-nos, mas nada foi encontrado que respeitem os critérios de sua "
-"pesquisa. Por favor, tente novamente, na caixa de pesquisa abaixo, mas, com "
-"alguma palavras-chave diferente, use também a semelhança entre as palavras "
-"procuradas."
+"Sorry, maar er zijn geen overeenkomsten gevonden met deze zoektermen. "
+"Probeer het nog eens met andere zoektermen."
 
 #: ../no-results.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Parece que não consegue encontrar o que você está procurando. Talvez o campo "
-"Pesquisar poderá ajudar em sua busca, tente!."
+"Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien helpt het "
+"om te zoeken in de zoek-balk."
 
 #: ../search.php:18
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Resultados da Pesquisa para: %s"
+msgstr "Zoekresultaten voor: %s"
 
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
-msgstr "Pesquisar"
+msgstr "Zoeken"
 
 #: ../searchform.php:18
 #, php-format
@@ -1613,85 +1569,223 @@ msgid "%s"
 msgstr "%s"
 
 #~ msgid "%s on Facebook"
-#~ msgstr "%s no Facebook"
+#~ msgstr "%s op Facebook"
 
 #~ msgid "%s on Twitter"
-#~ msgstr "%s no Twitter"
+#~ msgstr "%s op Twitter"
 
 #~ msgid "%s on Google+"
-#~ msgstr "%s no Google+"
+#~ msgstr "%s op Google+"
 
 #~ msgid "%s on Linkedin"
-#~ msgstr "%s no Linkedin"
+#~ msgstr "%s op Linkedin"
 
 #~ msgid "%s on Pinterest"
-#~ msgstr "%s no Pinterest"
+#~ msgstr "%s op Pinterest"
 
 #~ msgid "%s on Vimeo"
-#~ msgstr "%s no Vimeo"
+#~ msgstr "%s op Vimeo"
 
 #~ msgid "%s on Slideshare"
-#~ msgstr "%s no Slideshare"
+#~ msgstr "%s op Slideshare"
 
 #~ msgid "%s on Foursquare"
-#~ msgstr "%s no Foursquare"
+#~ msgstr "%s op Foursquare"
 
 #~ msgid "%s on Flickr"
-#~ msgstr "%s no Flickr"
+#~ msgstr "%s op Flickr"
 
 #~ msgid "%s on Tumblr"
-#~ msgstr "%s no Tumblr"
+#~ msgstr "%s op Tumblr"
 
 #~ msgid "%s on deviantART"
-#~ msgstr "%s no deviantART"
+#~ msgstr "%s op deviantART"
 
 #~ msgid "%s on Dribbble"
-#~ msgstr "%s no Dribbble"
+#~ msgstr "%s op Dribbble"
 
 #~ msgid "%s on MySpace"
-#~ msgstr "%s no MySpace"
+#~ msgstr "%s op MySpace"
 
 #~ msgid "%s on WordPress"
-#~ msgstr "%s no WordPress"
+#~ msgstr "%s op WordPress"
 
 #~ msgid "%s on RSS"
-#~ msgstr "%s no RSS"
+#~ msgstr "%s op RSS"
 
 #~ msgid "%s on Delicious"
-#~ msgstr "%s no Delicious"
+#~ msgstr "%s op Delicious"
 
 #~ msgid "%s on Last.fm"
-#~ msgstr "%s no Last.fm"
+#~ msgstr "%s op Last.fm"
 
 #~ msgid "%s on Instagram"
-#~ msgstr "%s no Instagram"
+#~ msgstr "%s op Instagram"
 
 #~ msgid "%s on GitHub"
-#~ msgstr "%s no GitHub"
+#~ msgstr "%s op GitHub"
 
 #~ msgid "%s on Vkontakte"
-#~ msgstr "%s no Vkontakte"
+#~ msgstr "%s op Vkontakte"
 
 #~ msgid "%s on My World"
-#~ msgstr "%s no My World"
+#~ msgstr "%s op My World"
 
 #~ msgid "%s on Odnoklassniki"
-#~ msgstr "%s no Odnoklassniki"
+#~ msgstr "%s op Odnoklassniki"
 
 #~ msgid "%s on Goodreads"
-#~ msgstr "%s no Goodreads"
+#~ msgstr "%s op Goodreads"
 
 #~ msgid "%s on Skype"
-#~ msgstr "%s no Skype"
+#~ msgstr "%s op Skype"
 
 #~ msgid "%s on Soundcloud"
-#~ msgstr "%s no Soundcloud"
+#~ msgstr "%s op Soundcloud"
 
 #~ msgid "%s on Email"
-#~ msgstr "%s no Email"
+#~ msgstr "%s op E-mail"
 
-#~ msgid "http://facebook.com/catchthemes"
-#~ msgstr "http://facebook.com/catchthemes"
+#~ msgid "Menu"
+#~ msgstr "Menu"
 
-#~ msgid "https://twitter.com/catchthemes"
-#~ msgstr "https://twitter.com/catchthemes/"
+#~ msgid "Catch Kathmandu Options"
+#~ msgstr "Catch Kathmandu opties"
+
+#~ msgid "Shows the Widgets at the Top Right Side of Header"
+#~ msgstr "Toont de widgets rechtsboven de header"
+
+#~ msgid "1. Catch Kathmandu: Social"
+#~ msgstr "1. Catch Kathmandu: Social media"
+
+#~ msgid "Default Logo"
+#~ msgstr "Standaard logo"
+
+#~ msgid "Catch Kathmandu Logo"
+#~ msgstr "Catch Kathmandu logo"
+
+#~ msgid "Donate to Catch Kathmandu"
+#~ msgstr "Doneer aan Catch Kathmandu"
+
+#~ msgid "Tools"
+#~ msgstr "Overige instellingen"
+
+#~ msgid "Responsive Design"
+#~ msgstr "Responsive design"
+
+#~ msgid "Disable Responsive Design?"
+#~ msgstr "Responsive design uitschakelen?"
+
+#~ msgid "Enable Secondary Menu in Mobile Devices?"
+#~ msgstr "Submenu inschakelen op mobiele apparaten?"
+
+#~ msgid "Check to enable"
+#~ msgstr "Vink aan om in te schakelen"
+
+#~ msgid "Custom Header: Logo & Site Details"
+#~ msgstr "Aangepaste header: logo & site details"
+
+#~ msgid "Click Here to Add/Replace Header Logo & Site Details"
+#~ msgstr ""
+#~ "Klik hier om een header logo & site details toe te voegen/te vervangen"
+
+#~ msgid "Widgets"
+#~ msgstr "Widgets"
+
+#~ msgid "Color Options"
+#~ msgstr "Kleuropties"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Standaard kleurschema"
+
+#~ msgid "Light"
+#~ msgstr "Licht"
+
+#~ msgid "Dark"
+#~ msgstr "Donker"
+
+#~ msgid "Custom Background Color:"
+#~ msgstr "Aangepaste achtergrondkleur:"
+
+#~ msgid "Custom Header: "
+#~ msgstr "Aangepaste header:"
+
+#~ msgid "Click Here to change Site Title and Tagline Color"
+#~ msgstr "Klik hier om de title- en taglinekleur te veranderen"
+
+#~ msgid "Feed Redirect"
+#~ msgstr "Feed redirect"
+
+#~ msgid "Feed Redirect URL"
+#~ msgstr "Feed redirect UR:"
+
+#~ msgid "Add in the Feedburner URL"
+#~ msgstr "Voeg toe aan de Feedburner URL"
+
+#~ msgid "Homepage Subheadline Headline"
+#~ msgstr "Homepagina ondertitel"
+
+#~ msgid "Homepage Headline Button Text"
+#~ msgstr "Homepagina-knop tekst"
+
+#~ msgid "Headine Link"
+#~ msgstr "Homepagina-knop link"
+
+#~ msgid "Disable Homepage Featured Content?"
+#~ msgstr "Uitgelichte content op de homepagina uitschakelen?"
+
+#~ msgid "Check to Enable"
+#~ msgstr "Vink aan om in te schakelen"
+
+#~ msgid "Move above Homepage Featured Content?"
+#~ msgstr "Verplaatsen naar boven de uitgelichte content?"
+
+#~ msgid "Check to Move"
+#~ msgstr "Vink aan om te verplaatsen"
+
+#~ msgid "Featured Page Slider Options"
+#~ msgstr "Uitgelichte pagina-slider opties"
+
+#~ msgid "Featured Page Slider #%s"
+#~ msgstr "Uitgelichte pagina #%S"
+
+#~ msgid ""
+#~ "Note: Here You can put your Page IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Hier kun je de ID's van de pagina's die in de slider moeten komen "
+#~ "neerzetten."
+
+#~ msgid "Featured Image Slider Options"
+#~ msgstr "Uitgelichte afbeeldingen-slider opties"
+
+#~ msgid "Featured Image Slider #%s"
+#~ msgstr "Uitgelichte afbeelding #%s"
+
+#~ msgid "Upload"
+#~ msgstr "Uploaden"
+
+#~ msgid "Header and Footer Codes"
+#~ msgstr "Header- en footercodes"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Code om weer te geven in de header"
+
+#~ msgid ""
+#~ "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
+#~ "This etc. which will load on Header"
+#~ msgstr ""
+#~ "Je kunt hier scripts van onder andere Google, Facebook, Twitter en Add "
+#~ "This toevoegen, ze zullen laden onder Header"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Code om weer te geven in de footer"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Twitter, Add This "
+#~ "etc. which will load on footer"
+#~ msgstr ""
+#~ "Je kunt hier scripts van onder andere Google, Facebook, Twitter en Add "
+#~ "This toevoegen, ze zullen laden onder Footer"
+
+#~ msgid "Catch Kathmandu"
+#~ msgstr "Catch Kathmandu"

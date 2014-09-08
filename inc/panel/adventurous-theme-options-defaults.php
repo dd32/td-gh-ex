@@ -19,7 +19,7 @@ $adventurous_options_defaults = array(
 	'featured_logo_header'					=> get_template_directory_uri().'/images/logo.png',
 	'enable_promotion'						=> 'homepage',
 	'homepage_headline'						=> __( 'Adventurous is a Simple, Clean and Responsive WordPress Theme', 'adventurous' ),
-	'homepage_subheadline'					=> __( 'This is Promotion Headine. You can edit this from "Appearance => Theme Options => Promotion Headeline Options"', 'adventurous' ),
+	'homepage_subheadline'					=> __( 'This is Promotion Headline. You can edit this from "Appearance => Theme Options => Promotion Headline Options"', 'adventurous' ),
 	'homepage_headline_button'				=> __( 'Reviews', 'adventurous' ),
 	'homepage_headline_url'					=> esc_url( 'http://wordpress.org/support/view/theme-reviews/adventurous' ),
 	'homepage_headline_target'				=> '1',
@@ -92,6 +92,8 @@ $adventurous_options_defaults = array(
 	'social_skype'							=> '',
 	'social_soundcloud'						=> '',
 	'social_email'							=> '',
+	'social_contact'						=> '',
+	'social_xing'							=> '',
 	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Powered by', 'adventurous' ) . ': [wp-link] | '. esc_attr__( 'Theme', 'adventurous' ) . ': [theme-link]</div>',
 	'reset_footer'							=> '2'
 );

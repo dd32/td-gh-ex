@@ -289,7 +289,7 @@ function adventurous_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='adventurous_options[disable_header_right_sidebar]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[disable_header_right_sidebar]" value="1" <?php checked( '1', $options['disable_header_right_sidebar'] ); ?> /> <?php _e('Check to Disable', 'catchthemes'); ?>
+                                    <input type="checkbox" id="headerlogo" name="adventurous_options[disable_header_right_sidebar]" value="1" <?php checked( '1', $options['disable_header_right_sidebar'] ); ?> /> <?php _e('Check to Disable', 'adventurous'); ?>
                            		</div>
                          	</div><!-- .row -->                              
 							<div class="row">
@@ -407,7 +407,7 @@ function adventurous_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">         
                                 	<input type="hidden" value="0" name="adventurous_options[featured_header_image_base]"> 
-                                    <input type="checkbox" id="header-image-base" name="adventurous_options[featured_header_image_base]" value="1" <?php checked( '1', $options['featured_header_image_base'] ); ?> /> <?php _e('Check to open in new window', 'catchthemes'); ?>
+                                    <input type="checkbox" id="header-image-base" name="adventurous_options[featured_header_image_base]" value="1" <?php checked( '1', $options['featured_header_image_base'] ); ?> /> <?php _e('Check to open in new window', 'adventurous'); ?>
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -421,7 +421,7 @@ function adventurous_theme_options_do_page() {
                               	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row --> 
 						</div><!-- .option-content --> 
                  	</div><!-- .option-container -->    
@@ -452,7 +452,7 @@ function adventurous_theme_options_do_page() {
                                	</div>
                             </div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->   
@@ -553,7 +553,7 @@ function adventurous_theme_options_do_page() {
                              	</div>
                           	</div><!-- .row -->                                             
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
@@ -654,7 +654,7 @@ function adventurous_theme_options_do_page() {
                               	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->                             
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                                                                            
@@ -671,7 +671,7 @@ function adventurous_theme_options_do_page() {
                              	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
@@ -706,7 +706,7 @@ function adventurous_theme_options_do_page() {
                               	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->   
@@ -731,7 +731,7 @@ function adventurous_theme_options_do_page() {
                             	</div>
                           	</div><!-- .row -->                            
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
@@ -807,7 +807,7 @@ function adventurous_theme_options_do_page() {
                                 </div>
                           	</div><!-- .row -->
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                             </div><!-- .row -->
                   		</div><!-- .option-content -->
                   	</div><!-- .option-container -->      
@@ -867,7 +867,7 @@ function adventurous_theme_options_do_page() {
                                 </div><!-- .repeat-content-wrap -->                           
                             <?php endfor; ?>    
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchthemes' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                                     
@@ -1271,7 +1271,23 @@ function adventurous_theme_options_do_page() {
                                 <div class="col col-2">
                                     <input type="text" size="45" name="adventurous_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                 </div>
-                            </div><!-- .row -->                            
+                            </div><!-- .row -->  
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Contact', 'adventurous' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="adventurous_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                </div>
+                            </div><!-- .row --> 
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Xing', 'adventurous' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="adventurous_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->                          
                             <div class="row">
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
                            	</div><!-- .row -->
@@ -1595,6 +1611,12 @@ function adventurous_theme_options_validate( $options ) {
 	if( isset( $input[ 'social_email' ] ) ) {
 		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
 	}
+	if( isset( $input[ 'social_contact' ] ) ) {
+		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
+	}	
+	if( isset( $input[ 'social_xing' ] ) ) {
+		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
+	}	
 	
     // Layout settings verification
 	if( isset( $input[ 'sidebar_layout' ] ) ) {

@@ -225,7 +225,7 @@ and (orientation : landscape) {
 		width: 100%;
 	}
 	#header-right .widget {
-		width: 660px;
+		display: none;
 	}
 	#homepage-message .left-section {
 		width: 540px;	

@@ -3,8 +3,8 @@ Theme Name: Adventurous
 Theme URI: http://catchthemes.com/themes/adventurous
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese and Hungarian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
-Version: 1.0
+Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian and Dutch. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
@@ -982,6 +982,8 @@ img#wpstats {
 	cursor: pointer;
 	background-color: #fff;
 	border-radius: 24px;
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
 	color: #333;
 	font-weight: 600;
 	line-height:24px;
@@ -1608,6 +1610,7 @@ a#scrollup {
 	vertical-align: top;
 	opacity: 0.5;
 	filter:alpha(opacity=50); /* For IE8 and earlier */
+	z-index: 999;
 }
 a#scrollup:before {
 	content: '\f432';
@@ -2009,6 +2012,18 @@ ul.social-profile li.email a {
 }
 ul.social-profile li.email a:hover {
 	background-position: -1119px -43px;
+}
+ul.social-profile li.contactus a {
+	background-position: -1119px 0;
+}
+ul.social-profile li.contactus a:hover {
+	background-position: -1119px -43px;
+}
+ul.social-profile li.xing a {
+	background-position: -1162px 0;
+}
+ul.social-profile li.xing a:hover {
+	background-position: -1162px -43px;
 }
 ul.social-profile li.custom-social a {
 	background: none;

@@ -5,7 +5,7 @@ Adventurous Theme by Catch Themes team, http://catchthemes.com/
 
 == About Adventurous ==
 
-Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese and Hungarian. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
+Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian and Dutch. Check out Theme Instructions at http://catchthemes.com/theme-instructions/adventurous/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/adventurous/ 
 
 
 == Tags ==
@@ -18,6 +18,7 @@ black, blue, gray, green, white, dark,light, one-column, two-columns, left-sideb
 Adventurous theme is translation ready. 
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
 Added Translation for Hungarian by Dinnye ( Email: pdinnye@gmail.com )
+Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
 
 
 == License ==
@@ -97,6 +98,13 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/adven
 
 
 == Changelog ==
+
+Version 1.1
+* Added Dutch translation nl_NL.po and nl_NL.mo
+* Added contact social links options
+* Added Xing in social links options
+* Fixed fixed header scroll issue
+* Fixed scroll up issue in mobile deveices
 
 Version 1.0
 * Added email in social link option
