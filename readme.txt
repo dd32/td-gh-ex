@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.1
+Version: 	1.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -14,23 +14,21 @@ License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
 
 
+	banner.jpg
+	Author:		shreeshphotography
+	License:	Public Domain CC0
+	Source:		http://pixabay.com/en/fashion-portrait-floral-beauty-279612/
+
 
 License of the Images used in the screenshot.png
 ----------------------------------------------------
 
-1. 	Author:		Comfreak
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/apple-fruit-sweet-delicious-356037/
 
-2. 	Author:		LoggaWiggler
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/rose-apple-fruits-tree-leaves-95997/
-
-3. 	Author:		PublicDomainPictures
+1. 	Author:		PublicDomainPictures
 	License:	Public Domain CC0
 	Source:		http://pixabay.com/en/citrus-food-fresh-fruit-green-2272/
 
-4. 	Author:		weinstock
+2. 	Author:		weinstock
 	License:	Public Domain CC0
 	Source:		http://pixabay.com/en/glass-marble-colorful-green-pearl-96237/
 

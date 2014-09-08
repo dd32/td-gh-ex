@@ -8,7 +8,10 @@
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header(); global $searchlight_options; if ( $searchlight_options['field_banner'] != '' ) : ?>
+<div class="clear"></div>
+<div class="bannerimage"><img src="<?php echo esc_url($searchlight_options['field_banner']); ?>" /></div>
+<?php endif; ?>
 <div class="clear"></div>
 <?php if ( 'posts' == get_option( 'show_on_front' ) ): ?>
 <div id="fpblog-box-item" class="box100 bqpcontainer" >

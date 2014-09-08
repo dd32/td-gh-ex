@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: selfie\n"
-"POT-Creation-Date: 2014-08-30 23:42+0600\n"
-"PO-Revision-Date: 2014-08-30 23:42+0600\n"
+"POT-Creation-Date: 2014-09-08 14:03+0600\n"
+"PO-Revision-Date: 2014-09-08 14:03+0600\n"
 "Last-Translator: support@d5creation.com\n"
 "Language-Team: D5 Creation <support@d5creation.com>\n"
 "Language: en\n"
@@ -76,46 +76,50 @@ msgid "Fixed Header?"
 msgstr ""
 
 #: ../customizer-boilerplate/options.php:67
+msgid "Banner Image"
+msgstr ""
+
+#: ../customizer-boilerplate/options.php:82
 msgid "Site Layout"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:71
+#: ../customizer-boilerplate/options.php:86
 msgid "2 Column, Right Sidebar"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:76
+#: ../customizer-boilerplate/options.php:91
 msgid "2 Column, Left Sidebar"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:80
+#: ../customizer-boilerplate/options.php:95
 msgid "1 Column, No Sidebar"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:91
+#: ../customizer-boilerplate/options.php:106
 msgid "(000) 111-222"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:98
+#: ../customizer-boilerplate/options.php:113
 msgid "Header Contact Number"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:114
+#: ../customizer-boilerplate/options.php:129
 msgid "Social Links"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:202
+#: ../customizer-boilerplate/options.php:217
 msgid "Content Text Color"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:217
+#: ../customizer-boilerplate/options.php:232
 msgid "Theme Color 01"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:232
+#: ../customizer-boilerplate/options.php:247
 msgid "Theme Color 02"
 msgstr ""
 
-#: ../customizer-boilerplate/options.php:247
+#: ../customizer-boilerplate/options.php:262
 msgid "Theme Color 03"
 msgstr ""
 

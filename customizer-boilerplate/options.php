@@ -55,6 +55,21 @@ function thsp_cbp_get_fields() {
 					)
 				),	
 				
+				
+				'field_banner' => array(
+					'setting_args' => array(
+						'default' => get_template_directory_uri() . '/images/banner.jpg',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),					
+					'control_args' => array(
+						'label' => __( 'Banner Image', 'searchlight' ),
+						'type' => 'image', 
+						'priority' => 1
+					)
+				),	
+				
 			
 				'site_layout' => array(
 					'setting_args' => array(

@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: Searchlight is a CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can set any Layout ( Left Sidebar, Right Sidebar, Full Width ), set Theme Colors to your own, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
-Version: 1.1
+Version: 1.2
 
 Tags: green, white, black, light, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -268,6 +268,9 @@ input#s{width:70%;min-width:235px;}
 #content-full img{height:auto;max-width:100%;vertical-align:middle;}
 #content img.wp-smiley,
 #content-full img.wp-smiley{border:none;box-shadow:none;}
+
+.bannerimage{ margin: 20px auto; width: 90%; }
+.bannerimage img{ width: 100%; }
 
 .featured-boxs{padding:0 0 10px;display:block; margin: 70px -2.4% 0; text-align:center;}
 .featured-box{width:21.5%; background: #FFFFFF; min-width: 200px; margin:0 1.5% 20px; display:inline-block; text-align:justify; vertical-align:top;border: 1px solid #EEEEEE; padding: 8px; border-radius: 5px; ransition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; }
