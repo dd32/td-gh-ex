@@ -7,18 +7,17 @@
 get_header(); ?>
             <div id="content-wide-page" role="main">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
                 <section class="content-area-left">
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
-                            <hgroup>
-                                <div class="entry-date"><a href="<?php the_permalink() ?>"><?php the_date(); ?></a></div>
+                            <div class="entry-date">
+                                <a href="<?php the_permalink() ?>"><?php the_date(); ?></a>
+                            </div>
                                 <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark">
                                 <?php the_title(); ?></a></h1>
-                            </hgroup>
                                 <div class="metadata">
                                     <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p>
-                                    <?php edit_post_link(__( 'Edit This', 'betilu' )); ?>
+                                    <?php edit_post_link( __( 'Edit This', 'betilu' ) ); ?>
                                 </div>
                         </header>
                             <article class="entry-lead">
@@ -28,16 +27,17 @@ get_header(); ?>
                 	        echo '<div></div>';
                                     } ?>
                                     <?php the_content(''); ?>
-                                        <p><?php wp_link_pages(); ?></p>
+                                        <div class="pagination">
+                                            <?php wp_link_pages( array(
+                                                                 'before' => '<p>' . __( 'Pages: &nbsp; ', 'betilu'),
+                                                                 'after' => '</p>' ) ); ?>
+                                        </div>
                                                 <?php get_template_part( 'social', 'content' ); ?><br>
-                                                    <?php comments_template(); ?>
-                                        
+                                                    <?php comments_template(); ?>         
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
-
                     </div> <!-- ends post -->  
                 </section><!-- ends content-area-lead -->
-
             <?php endwhile; else: ?>
                     <section class="content-area-left">
                         <article class="entry-lead">
@@ -46,13 +46,8 @@ get_header(); ?>
                      </section><!-- ends content-left -->
             <?php endif; ?>
                 <div id="right-sidebar-absolute">
-                <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-                    <aside>
-                        <?php dynamic_sidebar( 'sidebar-1' ); ?>
-                    </aside>
-                <?php endif; ?>
+                    <?php get_sidebar(); ?>
                 </div>
-
             </div><!-- ends content wide container -->
                           <div class="breaker"></div>
 <?php get_footer(); ?>

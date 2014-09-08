@@ -25,8 +25,8 @@ function betilu_setup() {
 
     // This theme uses wp_nav_menu in one location.
     register_nav_menus(array(
-        'primary' => __('Primary Navigation', 'betilu'),
-        'secondary' => __('Secondary Top Navigation', 'betilu')
+        'primary' => __('Primary Navigation - below header', 'betilu'),
+        'secondary' => __('Secondary Top Navigation - NO DROPDOWNS', 'betilu')
         ));  
 }
 add_action('after_setup_theme', 'betilu_setup');
@@ -35,6 +35,7 @@ function betilu_add_theme_scripts() {
    
     // Loads default main stylesheet.
     wp_enqueue_style( 'style', get_stylesheet_uri() ); 
+
     /**
      * Adds JavaScript to pages with the comment form to support
      * sites with threaded comments (when in use).
@@ -76,8 +77,8 @@ function betilu_add_ie_html5_shim () {
     
 	'default-image'          => get_template_directory_uri() . '/images/default-header.png',
 	'random-default'         => false,
- 	'width'                  => 192,
-	'height'                 => 192,
+ 	'width'                  => 176,
+	'height'                 => 176,
 	'flex-height'            => true,
  	'flex-width'             => true,
         'repeat'                 => 'no-repeat',

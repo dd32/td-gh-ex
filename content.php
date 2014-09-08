@@ -2,10 +2,9 @@
 /*
  * content part - aka the loop!
  * Please note that trackback rdf must stay in comment for XHTML 
- * to work with HTML. Do not remove comment element.
+ * to work with HTML. Do not remove its comment element.
 */
 ?>
-
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <section class="content-left">
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,8 +26,7 @@
                             } ?>
                                 <?php the_content(''); ?>
                                     <p><?php the_tags(); ?></p>
-                            </article>
-                            
+                            </article>  
             <!--
             <?php trackback_rdf(); ?>
             -->

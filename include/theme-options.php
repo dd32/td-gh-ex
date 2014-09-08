@@ -11,8 +11,6 @@ $betilu_theme_options = array(
   'betilu_email'    => '',
   'facebook'        => '',
   'twitter'         => ''
-
-
   );
 
     add_action( 'admin_menu', 'betilu_options_add_page' ); 
@@ -147,7 +145,4 @@ function betilu_styles_method() {
     wp_add_inline_style( 'custom-style', $custom_css );
 }
 add_action( 'wp_enqueue_scripts', 'betilu_styles_method' );
-
-
- 
 ?>

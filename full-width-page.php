@@ -1,23 +1,24 @@
 <?php
 /*
- * index.php
+ * Template Name: Full-Width-Page
  * @betilu
- * The main template.
+ * The full width page template.
  */ 
 get_header(); ?>
-            <div id="content-wide-lead" role="main"><b class="clearfix">index</b>
+            <div id="full-width" role="main">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <section class="content-area-left">
+            
+                <section class="content-wide-content">
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
-                                <div class="entry-date"><a href="<?php the_permalink() ?>"><?php the_date(); ?></a></div>
+                            <div class="entry-date"><a href="<?php the_permalink() ?>"><?php the_date(); ?></a></div>
                                 <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark">
                                 <?php the_title(); ?></a></h1>
                                 <div class="metadata">
                                     <?php _e( 'Filed under: ', 'betilu' ); ?>
                                     <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p>
                                     <?php edit_post_link(__( 'Edit This', 'betilu' )); ?>
-                                </div>
+                            </div>
                         </header>
                             <article class="entry-lead">
                                 <?php if ( has_post_thumbnail() ) { 
@@ -30,18 +31,10 @@ get_header(); ?>
                                         <?php comments_template(); ?>
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
-                    </div> <!-- ends post one -->  
+
+                    </div> <!-- ends post one -->   <div class="breaker"></div>
                 </section><!-- ends content-area-lead -->
-            <?php endwhile; else: ?>
-                    <section class="content-area-left">
-                        <article class="entry-lead">
-                            <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
-                        </article>
-                     </section><!-- ends content-left -->
-            <?php endif; ?>
-                <div id="right-sidebar-absolute">
-                    <?php get_sidebar(); ?>
-                </div>
-            </div><!-- ends content wide container -->
-                          <div class="breaker"></div>
+
+            <?php endwhile; endif; ?>
+            </div><!-- ends content wide container --> <div class="breaker"></div>
 <?php get_footer(); ?>

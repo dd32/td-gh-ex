@@ -1,5 +1,4 @@
-<div id="footer-widget-area" role="complementary">
-
+    <div id="footer-widget-area" role="complementary">
     <?php if (is_active_sidebar('first-footer-widget-area')) : ?>
         <div id="first" class="widget-area">
             <ul>
@@ -25,11 +24,9 @@
             <?php endif; ?>
                 <?php if (is_active_sidebar('fourth-footer-widget-area')) : ?>
                     <div id="fourth" class="widget-area">
-                        <ul class="xoxo">
+                        <ul>
                 <?php dynamic_sidebar('fourth-footer-widget-area'); ?>
                         </ul>
                     </div>
                 <?php endif; ?>
-
-              
-</div>
+    </div>

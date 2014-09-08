@@ -1,7 +1,7 @@
 <?php
 /*
  * comments.php
- * @tswframer
+ * @betilu
  */
     if ( post_password_required() )
         return;
@@ -9,9 +9,10 @@
     <section id="comments">
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title"><?php get_the_title() ?></h2>
-            
                 <ol class="commentlist">
-                <?php wp_list_comments(); ?>
+                <?php wp_list_comments( array( 
+                                        'reply_text' => __( 'Reply to this thread', 'betilu' ))
+                ); ?>
                 </ol><!-- ends commentlist -->
                 <div class="navigation">
                   <p><?php previous_comments_link() ?><span><?php next_comments_link() ?></span></p>

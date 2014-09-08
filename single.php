@@ -4,11 +4,11 @@
  * @betilu
  * The single post template. Used when a single post is queried. 
  * For this and all other query templates, index.php is used if the query template is not present. 
+ * 
  */    
 get_header(); ?>
-            <div id="content-wide-left" role="main">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
+            <div id="content-wide-page" role="main">
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <section class="content-area-left">
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
@@ -19,7 +19,7 @@ get_header(); ?>
                             </hgroup>
                                 <div class="metadata"> 
                                     <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p> 
-                                        <?php edit_post_link(__( 'Edit This', 'betilu' )); ?> 
+                                        <?php edit_post_link(__( 'Edit This', 'betilu' )); ?>
                                 </div>
                         </header>
                             <article class="entry-lead">
@@ -37,7 +37,6 @@ get_header(); ?>
                                     <span class="linkcat"><?php _e( 'Filed under: ', 'betilu' ); ?> <?php the_category(', ') ?> </span>
                                         <p class="taglink"><?php the_tags(); ?></p>
                                 </div>
-                                    
                                         <?php comments_template(); ?>
                                             <?php get_template_part( 'social', 'content' ); ?><br>
                                                 <div class="navigation">
@@ -45,22 +44,11 @@ get_header(); ?>
                                                 </div>
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
-
                     </div> <!-- ends post one -->   <div class="breaker"></div>
-                </section><!-- ends content-area-lead -->
-
-            <?php endwhile; ?>
-          
-            <?php endif; ?>
-
-                <div>
-                <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-                    <div id="right-sidebar">
-                        <?php dynamic_sidebar( 'sidebar-1' ); ?>
-                    </div>
-                <?php endif; ?>
-
-            </div>
-
-            </div><!-- ends content wide container -->                          <div class="breaker"></div>
+                </section><!-- ends content-area-left -->
+            <?php endwhile; endif; ?>
+                <div id="right-sidebar">
+                <?php get_sidebar(); ?>
+                </div>
+            </div><!-- ends content wide container --> <div class="breaker"></div>
 <?php get_footer(); ?>
