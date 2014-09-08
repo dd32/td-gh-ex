@@ -65,6 +65,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
+= Version 1.0.7 =
+* html5shiv.js file updated to version 3.7.2
+* Removed the white gap appearring issue above the menu in small devices.
+
 = Version 1.0.6 =
 * Menu design adjustment for smaller devices.
 * Russian language file added. Thanks to Mr. Максим Лойко for providing the language files.
