@@ -4,7 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to jatheme_comment() which is
+ * handled by a callback to artikler_theme_comment() which is
  * located in the functions.php file.
  *
  * @package WordPress
@@ -29,7 +29,7 @@ if ( post_password_required() )
 	<div class="comments-title"><h3 class="comment-title">  <?php comments_number( 'No Comment', 'One Comment', '% Comment' ); ?> on "<?php single_post_title(); ?>"</h3></div>
 
 		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => 'JATheme_comment', 'style' => 'ol' ) ); ?>
+			<?php wp_list_comments( array( 'callback' => 'artikler_theme_comment', 'style' => 'ol' ) ); ?>
 		</ol><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>

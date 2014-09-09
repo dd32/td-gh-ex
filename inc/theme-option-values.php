@@ -84,10 +84,4 @@ function values_get_ad_180_150(){
 			echo $get_row_theme_option_id_li;
 		}
 }
-function values_get_googleanalytic(){
-	global $wpdb;
- 		$get_row_theme_option = "SELECT * FROM theme_option WHERE ID = 1";
-		$get_row_theme_option_id = $wpdb->get_row($get_row_theme_option);
-		$get_row_theme_option_id_li = $get_row_theme_option_id->Usergoogleanalytic;
-}
 ?>

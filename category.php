@@ -62,7 +62,7 @@ get_header(); ?>
 <?php
 			endwhile;
 
-			JATheme_content_nav( 'nav-below' );
+			artikler_theme_content_nav( 'nav-below' );
 			?>
 
 		<?php else : ?>

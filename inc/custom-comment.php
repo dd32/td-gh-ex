@@ -1,4 +1,4 @@
-<?php function JATheme_comment( $comment, $args, $depth ) {
+<?php function artikler_theme_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :

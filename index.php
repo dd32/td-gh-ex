@@ -54,7 +54,7 @@ get_header(); ?>
                  </div>
 			<?php endwhile; ?>
 
-			<?php JATheme_content_nav( 'nav-below' ); ?>
+			<?php artikler_theme_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 <div class="no-found">

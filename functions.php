@@ -41,7 +41,7 @@ if ( ! isset( $content_width ) )
  *
  * @since JATheme 1.0
  */
-function jatheme_setup() {
+function artikler_theme_setup() {
 	/*
 	 * Makes JATheme available for translation.
 	 *
@@ -75,7 +75,7 @@ function jatheme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
-add_action( 'after_setup_theme', 'jatheme_setup' );
+add_action( 'after_setup_theme', 'artikler_theme_setup' );
 
 /**
  * Add support for a custom header image.
@@ -92,7 +92,7 @@ require( get_template_directory() . '/inc/custom-header.php' );
  *
  * @return string Font stylesheet or empty string if disabled.
  */
-function jatheme_get_font_url() {
+function artikler_theme_get_font_url() {
 	$font_url = '';
 
 	/* translators: If there are characters in your language that are not supported
@@ -129,7 +129,7 @@ function jatheme_get_font_url() {
  *
  * @since JATheme 1.0
  */
-function jatheme_scripts_styles() {
+function artikler_theme_scripts_styles() {
 	global $wp_styles;
 
 	/*
@@ -142,7 +142,7 @@ function jatheme_scripts_styles() {
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	wp_enqueue_script( 'jatheme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20140318', true );
 
-	$font_url = jatheme_get_font_url();
+	$font_url = artikler_theme_get_font_url();
 	if ( ! empty( $font_url ) )
 		wp_enqueue_style( 'jatheme-fonts', esc_url_raw( $font_url ), array(), null );
 
@@ -153,22 +153,22 @@ function jatheme_scripts_styles() {
 	wp_enqueue_style( 'jatheme-ie', get_template_directory_uri() . '/css/ie.css', array( 'jatheme-style' ), '20121010' );
 	$wp_styles->add_data( 'jatheme-ie', 'conditional', 'lt IE 9' );
 }
-add_action( 'wp_enqueue_scripts', 'jatheme_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'artikler_theme_scripts_styles' );
 
 /**
  * Filter TinyMCE CSS path to include Google Fonts.
  *
  * Adds additional stylesheets to the TinyMCE editor if needed.
  *
- * @uses jatheme_get_font_url() To get the Google Font stylesheet URL.
+ * @uses artikler_theme_get_font_url() To get the Google Font stylesheet URL.
  *
  * @since JATheme 1.0
  *
  * @param string $mce_css CSS path to load in TinyMCE.
  * @return string Filtered CSS path.
  */
-function jatheme_mce_css( $mce_css ) {
-	$font_url = jatheme_get_font_url();
+function artikler_theme_mce_css( $mce_css ) {
+	$font_url = artikler_theme_get_font_url();
 
 	if ( empty( $font_url ) )
 		return $mce_css;
@@ -180,7 +180,7 @@ function jatheme_mce_css( $mce_css ) {
 
 	return $mce_css;
 }
-add_filter( 'mce_css', 'jatheme_mce_css' );
+add_filter( 'mce_css', 'artikler_theme_mce_css' );
 
 /**
  * Filter the page title.
@@ -194,7 +194,7 @@ add_filter( 'mce_css', 'jatheme_mce_css' );
  * @param string $sep Optional separator.
  * @return string Filtered title.
  */
-function jatheme_wp_title( $title, $sep ) {
+function artikler_theme_wp_title( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() )
@@ -214,7 +214,7 @@ function jatheme_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'jatheme_wp_title', 10, 2 );
+add_filter( 'wp_title', 'artikler_theme_wp_title', 10, 2 );
 
 /**
  * Filter the page menu arguments.
@@ -223,12 +223,12 @@ add_filter( 'wp_title', 'jatheme_wp_title', 10, 2 );
  *
  * @since JATheme 1.0
  */
-function jatheme_page_menu_args( $args ) {
+function artikler_theme_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'jatheme_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'artikler_theme_page_menu_args' );
 
 /**
  * Register sidebars.
@@ -237,7 +237,7 @@ add_filter( 'wp_page_menu_args', 'jatheme_page_menu_args' );
  *
  * @since JATheme 1.0
  */
-function jatheme_widgets_init() {
+function artikler_theme_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'jatheme' ),
 		'id' => 'sidebar-1',
@@ -268,14 +268,14 @@ function jatheme_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'jatheme_widgets_init' );
+add_action( 'widgets_init', 'artikler_theme_widgets_init' );
 
 /**
  * Displays navigation to next/previous pages when applicable.
  *
  * @since JATheme 1.0
  */
-function JATheme_content_nav( $html_id ) {
+function artikler_theme_content_nav( $html_id ) {
 	global $wp_query;
 
 	$html_id = esc_attr( $html_id );
@@ -292,17 +292,17 @@ function JATheme_content_nav( $html_id ) {
 require( get_template_directory() . '/inc/custom-comment.php' );
 
 
-if ( ! function_exists( 'jatheme_entry_meta' ) ) :
+if ( ! function_exists( 'artikler_theme_entry_meta' ) ) :
 /**
  * Set up post entry meta.
  *
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  *
- * Create your own jatheme_entry_meta() to override in a child theme.
+ * Create your own artikler_theme_entry_meta() to override in a child theme.
  *
  * @since JATheme 1.0
  */
-function jatheme_entry_meta() {
+function artikler_theme_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'jatheme' ) );
 
@@ -358,7 +358,7 @@ endif;
  * @param array $classes Existing class values.
  * @return array Filtered class values.
  */
-function jatheme_body_class( $classes ) {
+function artikler_theme_body_class( $classes ) {
 	$background_color = get_background_color();
 	$background_image = get_background_image();
 
@@ -389,7 +389,7 @@ function jatheme_body_class( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'jatheme_body_class' );
+add_filter( 'body_class', 'artikler_theme_body_class' );
 
 /**
  * Adjust content width in certain contexts.
@@ -399,13 +399,13 @@ add_filter( 'body_class', 'jatheme_body_class' );
  *
  * @since JATheme 1.0
  */
-function jatheme_content_width() {
+function artikler_theme_content_width() {
 	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
 		global $content_width;
 		$content_width = 960;
 	}
 }
-add_action( 'template_redirect', 'jatheme_content_width' );
+add_action( 'template_redirect', 'artikler_theme_content_width' );
 
 /**
  * Register postMessage support.
@@ -416,12 +416,12 @@ add_action( 'template_redirect', 'jatheme_content_width' );
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
-function jatheme_customize_register( $wp_customize ) {
+function artikler_theme_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'jatheme_customize_register' );
+add_action( 'customize_register', 'artikler_theme_customize_register' );
 
 /**
  * Enqueue Javascript postMessage handlers for the Customizer.
@@ -430,10 +430,10 @@ add_action( 'customize_register', 'jatheme_customize_register' );
  *
  * @since JATheme 1.0
  */
-function jatheme_customize_preview_js() {
+function artikler_theme_customize_preview_js() {
 	wp_enqueue_script( 'jatheme-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20130301', true );
 }
-add_action( 'customize_preview_init', 'jatheme_customize_preview_js' );
+add_action( 'customize_preview_init', 'artikler_theme_customize_preview_js' );
 
 function custom_excerpt_length( $length ) {
 	return 20;
@@ -498,8 +498,8 @@ if(is_admin()){
 require_once( get_template_directory() . '/inc/theme-option-values.php' ); 
 
 
-global $wpdb;
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
+function myactivationfunction($oldname, $oldtheme=false) {
+	global $wpdb;
 	$create_table_db = "CREATE TABLE theme_option (
 												ID INT NOT NULL AUTO_INCREMENT,
 												PRIMARY KEY(ID),
@@ -514,8 +514,24 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
 											)";
 		$wpdb->query($create_table_db);
 		
-		$insert_fb_url_theme_option = "INSERT INTO theme_option (Userfburl, Usertwitterurl, Usergplusurl, Userlikinurl,Useradsense728_90, Useradsense200_200, Useradsense180_150, Usergoogleanalytic)VALUES (' ',' ',' ',' ',' ',' ',' ',' ') ";
-		$wpdb->query($insert_fb_url_theme_option);
+		$insert_fb_url_theme_option = "INSERT INTO theme_option (Userfburl, Usertwitterurl, Usergplusurl, Userlikinurl,Useradsense728_90, Useradsense200_200, Useradsense180_150, Usergoogleanalytic)VALUES ('#','#','#','#',' ',' ',' ',' ') ";
+		$wpdb->query($insert_fb_url_theme_option);	
+ 
 }
+add_action("after_switch_theme", "myactivationfunction", 10 , 2);
+function mydeactivationfunction($newname, $newtheme) {
+		global $wpdb;
+		$delete_table_db = 'DROP TABLE theme_option'; 
+ 		$wpdb->query($delete_table_db);
+
+}
+add_action("switch_theme", "mydeactivationfunction", 10 , 2); 
 
 
+
+function add_ie_html5_shim () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
+    echo '<![endif]-->';
+}
+add_action('wp_head', 'add_ie_html5_shim');

@@ -22,7 +22,7 @@ get_header(); ?>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'jatheme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header>
 
-			<?php JATheme_content_nav( 'nav-above' ); ?>
+			<?php artikler_theme_content_nav( 'nav-above' ); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
                  </div>
 			<?php endwhile; ?>
 
-			<?php JATheme_content_nav( 'nav-below' ); ?>
+			<?php artikler_theme_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

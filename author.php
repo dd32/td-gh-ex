@@ -43,7 +43,7 @@ get_header(); ?>
 				rewind_posts();
 			?>
 
-			<?php jatheme_content_nav( 'nav-above' ); ?>
+			<?php artikler_theme_content_nav( 'nav-above' ); ?>
 
 			<?php
 			// If a user has filled out their description, show a bio on their entries.
@@ -58,7 +58,7 @@ get_header(); ?>
 					 *
 					 * @param int $size The height and width of the avatar in pixels.
 					 */
-					$author_bio_avatar_size = apply_filters( 'jatheme_author_bio_avatar_size', 68 );
+					$author_bio_avatar_size = apply_filters( 'artikler_theme_author_bio_avatar_size', 68 );
 					echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 					?>
 				</div><!-- .author-avatar -->
@@ -87,7 +87,7 @@ get_header(); ?>
                  </div>
 			<?php endwhile; ?>
 
-			<?php JATheme_content_nav( 'nav-below' ); ?>
+			<?php artikler_theme_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
