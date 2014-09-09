@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 		$('.sc_tabs a').click(function (e) {e.preventDefault(); $(this).tab('show'); });
 		
 		$(".videofit").fitVids();
-		$('#archive-orderby').customSelect();
+		$('.woocommerce-ordering .orderby').customSelect();
 		$('.kad-select').customSelect();
 
 		// Lightbox

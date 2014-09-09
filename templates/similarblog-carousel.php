@@ -12,6 +12,7 @@
 				  $wp_query = null; 
 				  $wp_query = new WP_Query();
 				  $wp_query->query(array(
+				  	'orderby' =>'rand',
 					'category__in' => $category_ids,
 					'post__not_in' => array($post->ID),
 					'posts_per_page'=>6));

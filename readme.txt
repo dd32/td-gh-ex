@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.4 =
+* Update for Woocommerce 2.2
+* Fix for image title tag
+* Fix for IE9 Images
+* Randomize Similar posts
+* Small undefined variable fix.
+* Update comment form for better filters use.
+
 = Version: 2.2.3 =
 * Update Screenshot.
 * Fix favicon issue.

@@ -11,7 +11,7 @@ function kadence_register_required_plugins() {
 
 	$plugins = array(
 		array(
-			'name'     				=> 'Virtue Toolkit', // The plugin name
+			'name'     				=> 'Virtue/Pinnacle Toolkit', // The plugin name
 			'slug'     				=> 'virtue-toolkit', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch

@@ -64,18 +64,20 @@
           </p>
         <?php else : ?>
         <div class="row">
-          <div class="col-md-4">
-            <label for="author"><?php _e('Name', 'virtue'); if ($req) _e(' <span>*</span>', 'virtue'); ?></label>
-            <input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" <?php if ($req) echo 'aria-required="true"'; ?>>
-          </div>
-          <div class="col-md-4">
-            <label for="email"><?php _e('Email (will not be published)', 'virtue'); if ($req) _e(' <span>*</span>', 'virtue'); ?></label>
-            <input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" <?php if ($req) echo 'aria-required="true"'; ?>>
-          </div>
-          <div class="col-md-4">
-            <label for="url"><?php _e('Website', 'virtue'); ?></label>
-            <input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>">
-          </div>
+        <?php $fields   =  array(
+            'author' => '<div class="col-md-4">' . '<label for="author">' . __('Name', 'virtue') . ( $req ? ' <span class="comment-required">*</span>' : '' ) . '</label> ' .
+                        '<input id="author" name="author" type="text" value="' . esc_attr( $comment_author ) . '" ' . ( $req ? 'aria-required="true"' : '') . ' /></div>',
+            'email'  => '<div class="col-md-4"><label for="email">' . __( 'Email (will not be published)', 'virtue') . ( $req ? ' <span class="comment-required">*</span>' : '' ) . '</label> ' .
+                        '<input type="email" class="text" name="email" id="email" value="' . esc_attr(  $comment_author_email ) . '" ' . ( $req ? 'aria-required="true"' : '') . ' /></div>',
+            'url'    => '<div class="col-md-4"><label for="url">' . __( 'Website', 'virtue' ) . '</label> ' .
+                        '<input id="url" name="url" type="url" value="' . esc_attr( $comment_author_url ) . '" /></div>',
+          );
+          $fields = apply_filters( 'comment_form_default_fields', $fields ); 
+          do_action( 'comment_form_before_fields' );
+          foreach ( $fields as $name => $field ) {
+            echo apply_filters( "comment_form_field_{$name}", $field ) . "\n";
+          }
+          do_action( 'comment_form_after_fields' );?>
         </div>
         <?php endif; ?>
         <label for="comment"><?php _e('Comment', 'virtue'); ?></label>

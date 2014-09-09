@@ -25,6 +25,8 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 
 	<?php
 		if ( has_post_thumbnail() ) {
+			$image_title 		= esc_attr( get_the_title( get_post_thumbnail_id() ) );
+			$image_link  		= wp_get_attachment_url( get_post_thumbnail_id() );
 			if($presizeimage == 1){
 					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
 					$product_image_url = $product_image[0]; 
@@ -36,8 +38,6 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 				'title' => $image_title
 				) );
 			}
-			$image_title 		= esc_attr( get_the_title( get_post_thumbnail_id() ) );
-			$image_link  		= wp_get_attachment_url( get_post_thumbnail_id() );
 			$attachment_count   = count( $product->get_gallery_attachment_ids() );
 
 			if ( $attachment_count > 0 ) {

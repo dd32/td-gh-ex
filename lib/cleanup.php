@@ -99,7 +99,7 @@ add_filter('the_content', 'my_addlightboxrel');
 function my_addlightboxrel($content) {
        global $post;
        $pattern ="/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-       $replacement = '<a$1href=$2$3.$4$5 rel="lightbox" title="'.$post->post_title.'"$6>';
+       $replacement = '<a$1href=$2$3.$4$5 rel="lightbox" $6>';
        $content = preg_replace($pattern, $replacement, $content);
        return $content;
 }
