@@ -1,7 +1,7 @@
 <?php
 
 /* 	COLORFUL Theme'sSingle Page to display Single Page or Post
-	Copyright: 2012, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Since COLORFUL 1.0
 */
 

@@ -1,7 +1,7 @@
 ----------------------------------
 Theme:		D5 COLORFUL
 ----------------------------------
-Version: 	1.4
+Version: 	1.5
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -16,3 +16,11 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation.
 All the PHP Code, Images and other particulars included with this product are licensed under the same License: GNU General Public License v2 or later.
 
 Limitation: You can add only two widgets in the footer sidebar. The footer sidebar's hight is fixed. So, please consider the limitation of height during using the Widgets.
+
+
+
+Changelog: 1.5
+==================
+- Some Functions Updated
+- Unnecessary Functions Removed
+- Necssary updates for the Latest WordPress
