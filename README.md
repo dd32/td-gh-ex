@@ -32,3 +32,6 @@ bux fixes
 bug fixes
 search form redesigned
 textfill lib replaced with fittext lib
+
+1.0.5
+bug fixes

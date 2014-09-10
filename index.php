@@ -77,7 +77,17 @@ get_header() ?>
 
 			endwhile;
 
-		endif;
+		else:
+			?>
+
+			<h1 class="page-title text-center not-found"><i class="fa fa-fire-extinguisher red"></i> <?php _e( 'Ready to Bloging?', 'beautiful' ); ?></h1>
+			<p class="text-center">
+				<?php _e( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beautiful' ); ?>
+				<br />
+			</p>
+			
+			<?php
+		endif; 
 
 		// reset previous query
 		wp_reset_query();
