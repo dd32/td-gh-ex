@@ -8,6 +8,10 @@ function fukasawa_setup() {
 	// Automatic feed
 	add_theme_support( 'automatic-feed-links' );
 	
+	// Set content-width
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 620;
+	
 	// Post thumbnails
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size ( 88, 88, true );
@@ -103,10 +107,6 @@ require_once (get_template_directory() . "/widgets/video-widget.php");
      unregister_widget('WP_Widget_Recent_Posts');
  }
  add_action('widgets_init', 'fukasawa_unregister_default_widgets', 11);
-
-
-// Set content-width
-if ( ! isset( $content_width ) ) $content_width = 620;
 
 
 // Check whether the browser supports javascript
@@ -378,10 +378,10 @@ endif;
 // Add and save meta boxes for posts
 add_action( 'add_meta_boxes', 'cd_meta_box_add' );
 function cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'fukasawa'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
+	add_meta_box( 'post-video-url', __('Video URL', 'fukasawa'), 'fukasawa_cd_meta_box_video_url', 'post', 'side', 'high' );
 }
 
-function cd_meta_box_video_url( $post ) {
+function fukasawa_cd_meta_box_video_url( $post ) {
 	$values = get_post_custom( $post->ID );
 	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
 	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
@@ -392,8 +392,8 @@ function cd_meta_box_video_url( $post ) {
 	<?php		
 }
 
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id ) {
+add_action( 'save_post', 'fukasawa_cd_meta_box_save' );
+function fukasawa_cd_meta_box_save( $post_id ) {
 	// Bail if we're doing an auto save
 	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	
@@ -419,7 +419,7 @@ function cd_meta_box_save( $post_id ) {
 
 
 // Hide/show meta boxes depending on the post format selected
-function meta_box_post_format_toggle()
+function fukasawa_meta_box_post_format_toggle()
 {
     wp_enqueue_script( 'jquery' );
 
@@ -449,7 +449,7 @@ function meta_box_post_format_toggle()
 
     return print $script;
 }
-add_action( 'admin_footer', 'meta_box_post_format_toggle' );
+add_action( 'admin_footer', 'fukasawa_meta_box_post_format_toggle' );
 
 
 // Fukasawa theme options
