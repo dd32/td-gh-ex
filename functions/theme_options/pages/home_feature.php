@@ -17,7 +17,7 @@
 		if($_POST['webriti_settings_save_2'] == 2) 
 		{
 			
-			$current_options['home_feature']= WEBRITI_TEMPLATE_DIR_URI .'/images/slider/slide1.jpg';				
+			$current_options['home_feature']= QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide1.jpg';				
 			update_option('quality_options',$current_options);
 		}
 	}  ?>

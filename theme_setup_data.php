@@ -9,15 +9,15 @@
 */
 function theme_data_setup()
 {	
-	$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/project_thumb.png';
+	$project_img = QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png';
 	return $theme_options=array(
 			//Logo and Fevicon header			
 			'front_page'  => 'on',
-			'home_feature' => WEBRITI_TEMPLATE_DIR_URI .'/images/slider/slide.png',
+			'home_feature' => QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide.png',
 			'upload_image_logo'=>'',
 			'height'=>'80',
 			'width'=>'200',
-			'text_title'=>'on',
+			'text_title'=>'off',
 			'upload_image_favicon'=>'',	
 			
 			'service_title'=>'What We Do',

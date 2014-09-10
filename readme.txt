@@ -84,10 +84,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
-@version 1.0.5
-1. NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3.
+@version 1.0.6
+1. Default-Logo Will appear
 2. Changes for Custom CSS.
 3. Content Width Issue Fixed.
+@version 1.0.5
+1.	NEW WLAKER CLASS ADDED FOR BOOTSTRAP-3. 
 @version 1.0.4
 1.	Small Changes in Comment Form
 @version 1.0.3

@@ -30,7 +30,7 @@
 		}	
 		if($_POST['webriti_settings_save_4'] == 2) 
 		{	
-			$project_img = WEBRITI_TEMPLATE_DIR_URI .'/images/projects_thumb.png';
+			$project_img = QUALITY_TEMPLATE_DIR_URI .'/images/projects_thumb.png';
 			$current_options['home_projects_enabled']="on";			
 			
 			$current_options['project_heading_one']="Featured Portfolio Projects";
