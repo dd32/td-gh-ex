@@ -5,9 +5,9 @@ Theme URI: http://d5creation.com/2012/08/06/colorful/
 Author: D5 Creation
 Author URI: http://d5creation.com/
 
-Description: COLORFUL is a simple blog theme with colorful background and designed with colorful ancient matters. It is a FREE theme developed from D5 Creation (www.d5creation.com). You can use this theme for your blog.  Left and Footer Sidebar will show your WidGets.
+Description: COLORFUL is a simple blog theme with colorful background and designed with colorful ancient matters. You can use this theme for your blog.  Left and Footer Sidebar will show your WidGets.
 
-Version: 1.5
+Version: 1.5.1
 
 Tags: brown, pink, purple, red, dark, two-columns, left-sidebar, fixed-layout, custom-menu, threaded-comments, sticky-post 
 
@@ -205,8 +205,8 @@ h1.site-title {
 
 #content {
 	float: right;
-    margin: -230px 123px 0 0;
-    width: 500px;
+    margin: -230px 90px 0 0;
+    width: 550px;
 }
 
 .content-ver-sep {
@@ -510,6 +510,9 @@ margin:0;
 	width: 100%;		
 }
 
+#searchform .screen-reader-text { display: none; }
+
+
 /* Design Elements 
 ------------------------------------------------------------- */
 h1, h2, h2 a, h2 a:visited, h3, h4, h5, h6 {
@@ -550,7 +553,7 @@ a {
 	text-decoration:none;	
 }
 
-displaynone {
+.displaynone {
 	display: none;
 }
 
@@ -643,10 +646,10 @@ input#s {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
     color: #555555;
-    margin-left: 120px;
-    margin-top: 125px;
+    margin-left: 125px;
+    margin-top: 130px;
     position: absolute;
-    width: 153px;
+    width: 145px;
 }
 
 #header input[type="submit"] {
@@ -1157,7 +1160,6 @@ h3#reply-title,
 h2.post-title-color {
     color: #FF4200;
     text-shadow: -1px -1px 3px #FFFFFF;
-	background: url("images/post-title-image.jpg") no-repeat scroll 0 0 transparent;
 }
 h2.post-title a, 
 h2.post-title a:hover, 

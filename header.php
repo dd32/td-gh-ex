@@ -35,7 +35,7 @@ wp_head(); ?>
       <a class="feedlink" target="_blank" href="<?php echo get_feed_link( '' ); ?>"> </a>
        	<!-- Site Titele and Description Goes Here -->
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><h1 class="site-title"><?php bloginfo( 'name' ); ?></h1></a>
-        <displaynone><?php bloginfo('description'); ?></displaynone>
+        <h2 class="displaynone"><?php bloginfo('description'); ?></h2>
         <!-- Site Main Menu Goes Here -->
         <nav id="colorful-main-menu">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>

@@ -43,7 +43,7 @@
 		
 // 	Functions for adding script
 	function colorful_enqueue_scripts() {
-	wp_enqueue_style('colorful-style', get_stylesheet_uri(), false, '1.5');
+	wp_enqueue_style('colorful-style', get_stylesheet_uri(), false, '1.5.1');
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
