@@ -85,11 +85,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
-@Version: 1.2.3
-1. Small Fix in Comment-Form.
+@Version: 1.2.4
+1. Small LOGO CSS added.
 2. Changes for Custom CSS.
 3. Content Width Issue Fixed.
-
+@Version: 1.2.3
+1. Small Fix in Comment-Form.
 @Version: 1.2.2
 1. comment_time fixed.
 @Version: 1.2.1

@@ -40,11 +40,11 @@
   	}	
   	add_filter( 'wp_title', 'rambo_head', 10,2 );
   	
-  	add_action( 'after_setup_theme', 'rambo_setup' ); 	
+  		add_action( 'after_setup_theme', 'rambo_setup' ); 	
   	function rambo_setup()
   	{
 		//content width
-		if ( ! isset( $content_width ) ) $content_width = 770;	
+		if ( ! isset( $content_width ) ) $content_width = 770;
 		// Load text domain for translation-ready
   		load_theme_textdomain( 'rambo', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );	
   		

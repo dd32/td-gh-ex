@@ -119,6 +119,7 @@ a {
 /*-- Logo css --*/
 .logo-title {
     color: #db2723;
+	padding-top: 2px;
 }
 .logo-title small{
     color: #4d4e4f;
