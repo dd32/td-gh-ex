@@ -57,8 +57,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version:1.4.4.7
+1. Tag-Line of Pink-Banner else text removed .
 @Version:1.4.4.6
-1. Comment Date function Changed used-> comment_date() 
+1.	Comment Date Function Used.
 @Version:1.4.4.5
 1. All files Properly Indented.
 @Version:1.4.4.4

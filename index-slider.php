@@ -11,10 +11,14 @@
               <div class="row-fluid">
                 <div class="span3" id="slidedescription">
                   <dl class="pink_title">
-                    <dt><?php echo ($current_options['line_one']); ?></dt>
-                    <dt>
+                   <?php if($current_options['line_one'] !=''){ ?> 
+				   <dt><?php echo ($current_options['line_one']); ?></dt>
+                    <?php } ?>
+					<?php if($current_options['line_two'] !=''){ ?> 
+					<dt>
                       <div class="pink-head"><?php echo ($current_options['line_two']); ?></div>
                     </dt>
+					<?php } ?>
                     <dd></dd>
                   </dl>
                 </div>

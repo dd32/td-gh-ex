@@ -11,8 +11,9 @@
     <div class="row-fluid">
       <div class="span3" id="pink_strip">
         <dl class="pink_title">
-          <dt><?php if($h1!=''){ echo $h1; } else{ 
-            _e("GET YOURSELF",'sis_spa');} ?></dt>
+         <dt><?php if($h1!=''){ echo $h1; } else{ 
+		  _e("GET YOURSELF",'sis_spa');} ?>
+		  </dt>
           <dt>
             <div class="pink-head"><?php if($h2!='') { echo $h2;} else{ 
               _e("REFRESHED",'sis_spa');} ?></div>
