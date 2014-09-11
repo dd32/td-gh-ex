@@ -1,0 +1,358 @@
+# Copyright (C) 2014 Andy Noelker
+# This file is distributed under the General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Aplos 1.1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/aplos\n"
+"POT-Creation-Date: 2014-09-11 04:44:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:16
+msgid "Oh no! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: archive.php:20
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:23
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:30
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:38
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:41
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:44
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:47 sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#: comments.php:26
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:33 comments.php:53
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:34 comments.php:54
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:35 comments.php:55
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#: content-aside.php:12 content-aside.php:27 content.php:10
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-aside.php:21
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content-aside.php:22 content-page.php:17 content-single.php:19
+#: content.php:26 image.php:86
+msgid "Pages:"
+msgstr ""
+
+#: content-aside.php:30 content.php:56
+msgid "Leave a comment"
+msgstr ""
+
+#: content-aside.php:30 content.php:56
+msgid "1 Comment"
+msgstr ""
+
+#: content-aside.php:30 content.php:56
+msgid "% Comments"
+msgstr ""
+
+#: content-aside.php:33 content-page.php:18 content-single.php:54
+#: content.php:59 image.php:34 image.php:100
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+
+#: content-single.php:24 content.php:34 content.php:44
+msgid ", "
+msgstr ""
+
+#: content-single.php:30
+msgid "Filed Under: %1$s Tagged: %2$s"
+msgstr ""
+
+#: content-single.php:32 content.php:38
+msgid "Filed Under: %1$s"
+msgstr ""
+
+#: content-single.php:38
+msgid "Filed under: %1$s Tagged: %2$s"
+msgstr ""
+
+#: content-single.php:40
+msgid "Filed under: %1$s"
+msgstr ""
+
+#: content.php:25
+msgid "Read More <span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: content.php:49
+msgid "Tagged: %1$s"
+msgstr ""
+
+#: footer.php:17
+msgid "A Semantic Personal Publishing Platform"
+msgstr ""
+
+#: footer.php:17
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:44
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:61
+msgid "Primary Widget Area"
+msgstr ""
+
+#: functions.php:70
+msgid "Secondary Widget Area"
+msgstr ""
+
+#: functions.php:99
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:111
+msgid "Layout"
+msgstr ""
+
+#: functions.php:113
+msgid "Allows you to customize page layout."
+msgstr ""
+
+#: functions.php:118
+msgid "Fonts"
+msgstr ""
+
+#: functions.php:120
+msgid "Allows you to change the font of post titles (Verdana is suggested for languagues with characters other than the basic Latin alphabet)."
+msgstr ""
+
+#: functions.php:171
+msgid "Select Layout"
+msgstr ""
+
+#: functions.php:174
+msgid "Two Columns"
+msgstr ""
+
+#: functions.php:175
+msgid "Three Columns"
+msgstr ""
+
+#: functions.php:185
+msgid "Title Color"
+msgstr ""
+
+#: functions.php:196
+msgid "Select Post Title Font"
+msgstr ""
+
+#: functions.php:199
+msgid "Theme Default"
+msgstr ""
+
+#: functions.php:200
+msgid "Verdana"
+msgstr ""
+
+#: functions.php:209
+msgid "Background Color"
+msgstr ""
+
+#: functions.php:220
+msgid "Link Color"
+msgstr ""
+
+#: functions.php:231
+msgid "Link Hover Color"
+msgstr ""
+
+#: header.php:32
+msgid "Menu"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:24
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:92
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:94
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:96
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: inc/template-tags.php:16
+msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:22
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:99
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:100
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:105
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:109
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:134
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:134 inc/template-tags.php:157
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:144
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+
+#: inc/template-tags.php:155
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: no-results.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:22
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: no-results.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr ""
+#. Theme Name of the plugin/theme
+msgid "Aplos"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://andynoelker.com/aplos/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Aplos is a simple, clean and responsive theme meant for personal blogs, featuring elegant typography. The color scheme is easy to customize and it contains multiple layouts to choose from."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Andy Noelker"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://andynoelker.com/"
+msgstr ""
