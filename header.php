@@ -89,21 +89,18 @@ global $badeyes_options;
 
 <div id="page" class="hfeed site">
 
-<div class="center">
-<?php if ( get_header_image() ) : ?>
 <div class="site-header">
+<?php if ( get_header_image() ) : ?>
+<div class="center">
 <?php $header_image_URL = get_header_image();
 $header_image_att = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_content = '%s'",$header_image_URL ) );
 $header_image_att_id = $header_image_att->ID;
 $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_alt', true); ?>
 <img src="<?php header_image(); ?>" alt="<?php echo $header_image_alt; ?>"/>
 </div>
-
 <?php endif; ?>
-</div>
-
 <div class="center" style="margin-top: 5px; margin-bottom: 5px;" role="banner">
-<div class="header-main">
+
 <span class="logo"><?php bloginfo( 'name' ); ?></span>
 	<?php
 		$description = get_bloginfo( 'description', 'display' );
