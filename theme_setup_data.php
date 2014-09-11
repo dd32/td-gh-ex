@@ -42,6 +42,7 @@ function theme_data_setup()
 			'home_projects_enabled' => 'on',
 			'project_heading_one' => 'Featured Portfolio Projects',
 			'project_tagline' => 'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			
 			'project_one_thumb' => $project_img,
 			'project_one_title' => 'Lorem Ipsum',
 			
@@ -50,8 +51,8 @@ function theme_data_setup()
 			'project_two_title' => 'Postao je popularan',
 			
 			
-			'project_four_thumb' => $project_img,
-			'project_four_title' => 'kojekakve promjene s',
+			'project_three_thumb' => $project_img,
+			'project_three_title' => 'kojekakve promjene s',
 			
 			
 			'project_four_thumb' => $project_img,
