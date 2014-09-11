@@ -1,0 +1,940 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wal\n"
+"POT-Creation-Date: 2014-09-10 17:55+0530\n"
+"PO-Revision-Date: 2014-09-10 17:55+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress-dev\\wp-content\\themes"
+"\\wallstreet_lite\n"
+
+#: ../404.php:29
+msgid "Error 404"
+msgstr ""
+
+#: ../404.php:30
+msgid "Oops! Page not found"
+msgstr ""
+
+#: ../404.php:31
+msgid "We`re sorry, but the page you are looking for doesn`t exist."
+msgstr ""
+
+#: ../404.php:32
+msgid "Go to Homepage"
+msgstr ""
+
+#: ../archive.php:19
+msgid "Daily Archives:"
+msgstr ""
+
+#: ../archive.php:21
+msgid "Monthly Archives:"
+msgstr ""
+
+#: ../archive.php:23
+msgid "Yearly Archives:"
+msgstr ""
+
+#: ../archive.php:25
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:57
+#: ../author.php:47
+#: ../category.php:48
+#: ../index.php:49
+#: ../tag.php:48
+msgid "Read More"
+msgstr ""
+
+#: ../archive.php:58
+#: ../author.php:48
+#: ../category.php:49
+#: ../index.php:50
+#: ../single.php:51
+#: ../tag.php:49
+msgid "Pages:"
+msgstr ""
+
+#: ../author.php:17
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../comments.php:11
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:23
+msgid "Reply"
+msgstr ""
+
+#: ../comments.php:32
+msgid "Posted on &nbsp;"
+msgstr ""
+
+#: ../comments.php:34
+msgid "Edit"
+msgstr ""
+
+#: ../comments.php:40
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:60
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:71
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:71
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:71
+msgid "to post a comment"
+msgstr ""
+
+#: ../comments.php:89
+msgid "Logged in as "
+msgstr ""
+
+#: ../comments.php:89
+msgid " Log out?"
+msgstr ""
+
+#: ../comments.php:91
+msgid "Send Message"
+msgstr ""
+
+#: ../comments.php:94
+msgid "Leave a Comment"
+msgstr ""
+
+#: ../footer.php:45
+msgid "About"
+msgstr ""
+
+#: ../footer.php:45
+msgid ""
+"It is a long established fact that a read will be distracted by the readable "
+"cont of a page when looking at its layout. point of using Lorem Ipsum is "
+"that\n"
+"\n"
+"it has less normal distribution letters, as opposed to using content here."
+msgstr ""
+
+#: ../functions.php:27
+#: ../functions/breadcrumbs/breadcrumbs.php:108
+msgid "Page"
+msgstr ""
+
+#: ../functions.php:43
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:85
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:87
+msgid "The left sidebar widget area"
+msgstr ""
+
+#: ../functions.php:95
+msgid "Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:97
+msgid "footer widget area"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:87
+msgid "Sr. No."
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:88
+msgid "Features"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:89
+msgid "Free"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:90
+msgid "Premium"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:95
+msgid "Home Page Sections "
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:101
+msgid "Responsive Home Page Slider"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:106
+msgid "In-Built Color Schemes "
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:112
+msgid "Blog Layout Variations"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:118
+msgid "Page Templates"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:123
+msgid "About Us Template, Portfolio Template, Services Template...   "
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:129
+msgid "Custom Typography"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:135
+msgid "In-Built Contact Form"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:141
+msgid "Custom Widgets,Shortcodes.."
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:147
+msgid "Layout Type"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:148
+msgid "Wide"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:149
+msgid "Wide And Boxed"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:153
+msgid "Theme Support "
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:154
+msgid "Via Wordpress Forums"
+msgstr ""
+
+#: ../functions/theme_options/pages/UpgradeToPro.php:155
+msgid "Private Forums with Email Support"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:28
+msgid "Footer Customizations"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:30
+#: ../functions/theme_options/pages/footer_social_media_links.php:47
+#: ../functions/theme_options/pages/head_titles.php:44
+#: ../functions/theme_options/pages/home_page_settings.php:43
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:65
+#: ../functions/theme_options/pages/home_service_settings.php:57
+#: ../functions/theme_options/pages/home_slider_settings.php:39
+msgid "Options data successfully Saved"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:31
+#: ../functions/theme_options/pages/footer_social_media_links.php:48
+#: ../functions/theme_options/pages/head_titles.php:45
+#: ../functions/theme_options/pages/home_page_settings.php:44
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:66
+#: ../functions/theme_options/pages/home_service_settings.php:58
+#: ../functions/theme_options/pages/home_slider_settings.php:40
+msgid "Options data successfully reset"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:42
+msgid "footer customizations text"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:44
+msgid "Enter the footer customizations text"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:47
+msgid "Created By Webriti text"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:49
+msgid "Enter the created by webriti text"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:53
+msgid "Created By Link"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_copyright_settings.php:55
+msgid "Enter the Call Out Button Link"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:45
+msgid "Social Media Links Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:59
+msgid "Enable social media links:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:60
+msgid "Enable social media links on header section."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:61
+msgid "Enable social media links on footer section."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:64
+msgid "Twitter Profile Link:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:66
+msgid "Enter twitter link."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:69
+msgid "Facebook Profile Link:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:71
+msgid "Enter facebook link."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:74
+msgid "Google Plus Profile Link:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:76
+msgid "Enter google plus link."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:79
+msgid "Linkedin Profile Link:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:81
+msgid "Enter linkedin link."
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:84
+msgid "Youtube Profile Link:"
+msgstr ""
+
+#: ../functions/theme_options/pages/footer_social_media_links.php:86
+msgid "Enter youtube profile link."
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:41
+#: ../functions/theme_options/webriti_option_pannel.php:30
+msgid "Section Headings"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:58
+msgid "Enable Contact Information On Front Page"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:60
+msgid "Enable Contact Information On Front Page."
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:63
+msgid "Contact Phone Number on Front Page:"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:67
+msgid "Contact Email on Front Page:"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:71
+msgid "Service Tag Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:74
+msgid "Services Title"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:76
+msgid "Enter the services title."
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:79
+msgid "Services Description"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:81
+msgid "Enter the services description."
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:84
+msgid "Portfolio Tag Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:87
+msgid "Portfolio Title"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:89
+msgid "Enter the Portfolio Title."
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:92
+msgid "Portfolio Description"
+msgstr ""
+
+#: ../functions/theme_options/pages/head_titles.php:94
+msgid "Enter the Portfolio Description."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:40
+msgid "Quick Start Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:55
+msgid "Enable Front Page"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:56
+msgid "Enable front page ."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:60
+msgid "Custom Logo"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:61
+msgid "Add custom logo from here suggested size is 150X50 px"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:71
+msgid "Logo Height"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:72
+msgid ""
+"Default Logo Height : 50px, if you want to increase than specify your value"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:77
+msgid "Logo Width"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:78
+msgid ""
+"Default Logo Width : 150px, if you want to increase than specify your value"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:83
+msgid "Text Title"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:84
+msgid "Enable text-based Site Title.   Setup title"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:84
+msgid "Click Here"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:87
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:88
+msgid "Make sure you upload .icon image type which is not more then 25X25 px."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:97
+msgid "Custom css"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_page_settings.php:99
+msgid ""
+"This is a powerful feature provided here. No need to use custom css plugin, "
+"just paste your css code and see the magic."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:63
+msgid "Portfolio "
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:78
+msgid "Enable Portfolio Section :"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:79
+msgid "Enable portfolio section on home page(project section)."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:83
+msgid "Portfolio One Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:86
+msgid "Portfolio Title One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:88
+msgid "Enter the Portfolio Title One."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:91
+msgid "Portfolio Description One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:93
+msgid "Enter the Portfolio Description One ."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:96
+msgid "Portfolio Image One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:97
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:117
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:137
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:157
+#: ../functions/theme_options/pages/home_service_settings.php:89
+#: ../functions/theme_options/pages/home_service_settings.php:109
+#: ../functions/theme_options/pages/home_service_settings.php:129
+msgid "Add a image with size of 250 X 250 px. "
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:103
+msgid "Portfolio Two Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:106
+msgid "Portfolio Title Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:108
+msgid "Enter the Portfolio Title Two."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:111
+msgid "Portfolio Description Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:113
+msgid "Enter the Portfolio Description Two."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:116
+msgid "Portfolio Image Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:123
+msgid "Portfolio Three Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:126
+msgid "Portfolio Title Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:128
+msgid "Enter the Portfolio Title Three."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:131
+msgid "Portfolio Description Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:133
+msgid "Enter the Portfolio Description Three."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:136
+msgid "Portfolio Image Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:143
+msgid "Portfolio Four Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:146
+msgid "Portfolio Title Four"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:148
+msgid "Enter the Portfolio Title Four."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:151
+msgid "Portfolio Description Four"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:153
+msgid "Enter the Portfolio Description Four."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_project_portfolio_settings.php:156
+msgid "Portfolio Image Four"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:55
+msgid "Service Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:70
+msgid "Enable Service Section"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:72
+msgid "Enable Service Section on front page."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:75
+msgid "Service One Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:78
+msgid "Service Title One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:80
+msgid "Enter the service title one."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:83
+msgid "Service Description One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:85
+#: ../functions/theme_options/pages/home_service_settings.php:105
+msgid "Enter the service description one."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:88
+msgid "Service Image One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:95
+msgid "Service Two Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:98
+msgid "Service Title Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:100
+msgid "Enter the service title two."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:103
+msgid "Service Description Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:108
+msgid "Service Image Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:115
+msgid "Service Three Settings"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:118
+msgid "Service Title Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:120
+msgid "Enter the service title three."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:123
+msgid "Service Description Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:125
+msgid "Enter the service description three."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_service_settings.php:128
+msgid "Service Image Three"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:37
+msgid "Home Feature Image Setting"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:51
+msgid "Enable Home Banner"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:53
+msgid "Enable Home Banner on front page."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:56
+msgid "Slider Title One"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:58
+msgid "Enter the slider title one."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:61
+msgid "Slider Title Two"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:63
+msgid "Enter the slider title two."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:66
+msgid "Slider Description"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:68
+msgid "Enter the slider description."
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:71
+msgid "Home Feature Image"
+msgstr ""
+
+#: ../functions/theme_options/pages/home_slider_settings.php:72
+msgid "Add a image with size of 1600 X 750 px. "
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:8
+msgid "wallstreet"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:10
+msgid "Support Desk"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:11
+msgid "Theme Documentation"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:12
+msgid "View Changelog"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:22
+msgid "Home Page"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:23
+msgid "Quick Start"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:24
+msgid "Featured Image Setting"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:25
+msgid "Service Setting"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:26
+msgid "Project Portfolio"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:33
+msgid "Social Media Links"
+msgstr ""
+
+#: ../functions/theme_options/webriti_option_pannel.php:36
+msgid "Footer Customization"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:20
+msgid "Quality Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:22
+msgid ""
+"Quality is a Responsive WordPress Theme. It is ideal for Corporate Sector , "
+"Business Website.Very Cleaned Design."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:23
+msgid ""
+"Quality is designed with Readability Flexibility in mind. It is suitable for "
+"Business website and other corporate website owner."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:24
+msgid "You can build an effective online presence for your business"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:26
+msgid "Buy Quality Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:27
+#: ../functions/theme_options/webriti_theme.php:45
+#: ../functions/theme_options/webriti_theme.php:63
+#: ../functions/theme_options/webriti_theme.php:82
+#: ../functions/theme_options/webriti_theme.php:101
+msgid "View Demo"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:28
+msgid "New Theme"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:38
+msgid "Health Centre Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:40
+msgid ""
+"Health Centre is a Responsive WordPress Theme. It is ideal for Gym/Health "
+"Healing Centre Owner.Very Cleaned Design."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:41
+msgid ""
+"Health Centre is designed with Readability Flexibility in mind. It is "
+"suitable for Dentists, Doctors , Surgeons, hospitals and other type of "
+"Medical Websites."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:42
+msgid "Build an effective online presence with HealthCentre"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:44
+msgid "Buy Health Centre Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:56
+msgid "wallstreet Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:58
+msgid ""
+"wallstreet is a Responsive Multi-Purpose Wordpress Theme. It is ideal for "
+"creating a corporate website. It boasts of a highy functional Home Page ."
+"Very Cleaned Design."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:59
+msgid ""
+"wallstreet is designed with Readability Flexibility in mind. Customize it to "
+"your hearts content with Sortable Project Areas, Services Areas and Call Out "
+"Section.Use these great features to build an effective online presence for "
+"your business."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:60
+msgid ""
+"All of our Theme contain Responsive frameworks that adapt to Mobile Devices."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:62
+msgid "Buy wallstreet Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:74
+msgid "Busiprof Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:76
+msgid ""
+"A Beautiful and FLexible Responsive Businees Theme. It is ideal for creating "
+"a corporate website. It boasts of a highy functional Home Page and "
+"Widgetized Footer. Build an effective online presence with BusiProf."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:77
+msgid ""
+"Busiprof is designed with Flexibility in mind. Customize it to your hearts "
+"content with Sortable Project Areas, Services Areas and Testimonial "
+"Section. . Use these great features to build an effective online presence "
+"for your business"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:78
+msgid ""
+"The majority of our themes contain responsive frameworks that adapt to "
+"Mobile Devices."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:81
+msgid "Buy busiprof Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:93
+msgid "Spasalon Pro"
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:95
+msgid ""
+"A responsive theme for SPA SALON and BEAUTY SALON type of business that uses "
+"multiple nav menus, Right-sidebar, Featured Slider and Beautifully designed "
+"home page all manage via option panel."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:96
+msgid ""
+"Spasalon is designed with content flexibility and Intuitive features in "
+"mind. Use these great core features to grow your business."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:97
+msgid ""
+"The majority of our themes contain responsive frameworks that mold perfectly "
+"to fit all your mobile and Apple devices."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:98
+msgid ""
+"A responsive theme for SPA SALON and BEAUTY SALON type of business that uses "
+"multiple nav menus, Right-sidebar, Featured Slider."
+msgstr ""
+
+#: ../functions/theme_options/webriti_theme.php:100
+msgid "Buy Spasalon Pro"
+msgstr ""
+
+#: ../search.php:31
+#, php-format
+msgid "Search Results For: %s"
+msgstr ""
+
+#: ../search.php:49
+msgid "Read more"
+msgstr ""
+
+#: ../search.php:69
+msgid "Nothing Found"
+msgstr ""
+
+#: ../search.php:71
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../tag.php:18
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
