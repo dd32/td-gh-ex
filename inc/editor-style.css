@@ -1,0 +1,20 @@
+/*
+Theme Name: The Box
+Description: Used to style the TinyMCE editor.
+*/
+
+
+/* Body */
+
+html .mceContentBody {
+	font-size: 100%;
+	max-width: 600px;
+}
+
+body {
+	color: #333;
+	font-family: "Oxygen", Helvetica, sans-serif;
+	line-height: 1.5;
+	text-rendering: optimizeLegibility;
+	vertical-align: baseline;
+}

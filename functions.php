@@ -32,20 +32,19 @@ require( get_template_directory() . '/inc/jetpack.php' );
 if ( ! function_exists( 'thebox_setup' ) ) :
 
 function thebox_setup() {
-		
+	
+	// Make theme available for translation. Translations can be filed in the /languages/ directory
+	load_theme_textdomain( 'thebox', get_template_directory() . '/languages' );
+	
 	// Custom functions
 	require( get_template_directory() . '/inc/extras.php' );
 
 	// Customizer additions
 	require( get_template_directory() . '/inc/customizer.php' );
 	
-	
 	// Load the Theme Options Page for social media icons
 	require( get_template_directory() . '/inc/theme-options.php' );
 	
-	// Make theme available for translation. Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'thebox', get_template_directory() . '/languages' );
-
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -71,12 +70,15 @@ add_action( 'after_setup_theme', 'thebox_setup' );
  */
  
 function thebox_scripts() {
-
-	// Add Icons fonts, used in the main stylesheet.
-	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icon-fonts.css', array(), '1.1' );
-
-	// Loads our main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '2014-07-24' );
+	
+	// Add Google Fonts, used in the main stylesheet.
+	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
+	
+	// Add Icons Font, used in the main stylesheet.
+	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.2' );
+		
+	// Loads main stylesheet.
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '2014-09-11' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -93,17 +95,46 @@ add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
 
 
 /**
- * Load Google Fonts
+ * Return the Google font stylesheet URL, if available.
+ *
+ * @return string Font stylesheet or empty string if disabled.
  *
  */
- 
-function load_fonts() {
+function thebox_fonts_url() {
+	$fonts_url = '';
 	
-	wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Oxygen:400,300,700|Source+Sans+Pro:400,300,400italic,700');
-	wp_enqueue_style( 'googleFonts');
+	/* Translators: If there are characters in your language that are not
+	 * supported by the font, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$heading_font = _x( 'on', 'Source Sans Pro font: on or off', 'thebox' );
+	
+	/* Translators: If there are characters in your language that are not
+	 * supported by the font, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$text_font = _x( 'on', 'Oxygen font: on or off', 'thebox' );
 
+
+	if ( 'off' !== $heading_font || 'off' !== $text_font ) {
+		$font_families = array();
+
+		if ( 'off' !== $heading_font )
+			$font_families[] = 'Source Sans Pro:400,700,400italic,700italic';
+
+		if ( 'off' !== $text_font )
+			$font_families[] = 'Oxygen:300,400,700';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
 }
-add_action('wp_print_styles', 'load_fonts');
+
 
 
 /**
