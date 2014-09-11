@@ -1,13 +1,13 @@
 /*
 Theme Name: Aplos
-Theme URI: http://andynoelker.com/aplos
+Theme URI: http://andynoelker.com/aplos/
 Author: Andy Noelker
 Author URI: http://andynoelker.com/
 Description: Aplos is a simple, clean and responsive theme meant for personal blogs, featuring elegant typography. The color scheme is easy to customize and it contains multiple layouts to choose from.
-Version: 1.0.1
+Version: 1.1.0
 License: General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gray, red, dark, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats,  threaded-comments
+Tags: gray, red, dark, two-columns, three-columns, right-sidebar, left-sidebar, fluid-layout, custom-background, custom-header, flexible-header, microformats, post-formats, threaded-comments, translation-ready
 
 
 /* =Reset
@@ -568,6 +568,7 @@ article {
     	font-size: 2.8rem;
 	font-family: 'Conv_BEBAS', Verdana, sans-serif;
 	word-spacing: 2px;
+	text-transform: uppercase;
 	margin: 0 0 0.2em;
 }
 .entry-title a,
@@ -942,8 +943,26 @@ p.nocomments {
 
 /* =Responsiveness
 ----------------------------------------------- */
+@media only screen and (max-width: 820px) {
+	#primary {
+		width: 55%;
+	}
 
-@media only screen and (max-width: 800px) {
+	#secondary,
+	#tertiary {
+		width: 35%;
+	}
+
+	#main {
+		padding: 0.8em;
+	}
+
+	.site-navigation {
+        padding: 0 0.8em;
+    }
+}
+
+@media only screen and (max-width: 580px) {
 
 	#main {
 		overflow: visible;
@@ -993,37 +1012,30 @@ p.nocomments {
 ----------------------------------------------- */
 #primary {
     float: left;
-    width: 90%;
+    margin: 0;
+    padding: 1em 0 0 0;
+    width: 73%;
 }
 #content {
-    margin: 0 25%;
+    margin: 0 2% 0 0;
 }
-
-#secondary {
-    float: left;
-    overflow: hidden;
-    width: 15%;
+#secondary,
+#tertiary {
     background: #fff;
-    height: 100%;
+    float: right;
+    margin: 0;
     padding: 2em 2em 0;
     position: relative;
-    margin: 0 0 0 -90%;
+    width: 20%;
+    height: 100%;
+    margin-top: 1em;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
+     border-radius: 5px;
+     clear: right;
 }
 #tertiary {
-    float: left;
-    overflow: hidden;
-    width: 15%;
-    background: #fff;
-    height: 100%;
-    padding: 2em 2em 0;
-    position: relative;
-    margin: 0 0 0 -20%;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    padding-top: 0;
 }
 
 .site-title a, .site-title a:hover,

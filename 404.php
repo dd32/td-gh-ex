@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package Aplos
- * @since Aplos 1.0.1
+ * @since Aplos 1.1.0
  */
  
 get_header(); ?>

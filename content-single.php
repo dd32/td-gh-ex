@@ -21,14 +21,11 @@
  
     <footer class="entry-meta">
         <?php
-            /* translators: used between list items, there is a space after the comma */
             $category_list = get_the_category_list( __( ', ', 'aplos' ) );
- 
-            /* translators: used between list items, there is a space after the comma */
             $tag_list = get_the_tag_list( '', ', ' );
  
             if ( ! aplos_categorized_blog() ) {
-                // This blog only has 1 category so we just need to worry about tags in the meta text
+                // Blog with 1 category
                 if ( '' != $tag_list ) {
                     $meta_text = __( 'Filed Under: %1$s Tagged: %2$s', 'aplos' );
                 } else {
@@ -36,7 +33,7 @@
                 }
  
             } else {
-                // But this blog has loads of categories so we should probably display them here
+                // Blog with multiple categories gets displayed
                 if ( '' != $tag_list ) {
                     $meta_text = __( 'Filed under: %1$s Tagged: %2$s', 'aplos' );
                 } else {

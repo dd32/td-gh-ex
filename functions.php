@@ -3,27 +3,12 @@
  * Aplos functions and definitions
  *
  * @package Aplos
- * @since Aplos 1.0.1
+ * @since Aplos 1.1.0
  */
  
- /**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since Aplos 1.0.0
- */
-if ( ! isset( $content_width ) )
-    $content_width = 654; /* pixels */
     
 if ( ! function_exists( 'aplos_setup' ) ):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- *
- * @since Aplos 1.0.0
- */
+
 function aplos_setup() {
  
     /**
@@ -38,9 +23,7 @@ function aplos_setup() {
  
     /**
      * Make theme available for translation
-     * Translations can be filed in the /languages/ directory
-     * If you're building a theme based on aplos, use a find and replace
-     * to change 'aplos' to the name of your theme in all the template files
+     * Translations should be filed in the /languages/ directory
      */
     load_theme_textdomain( 'aplos', get_template_directory() . '/languages' );
  
@@ -60,6 +43,10 @@ function aplos_setup() {
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'aplos' ),
     ) );
+
+    if ( ! isset( $content_width ) ) {
+        $content_width = 654;
+    }
 }
 endif; // aplos_setup
 add_action( 'after_setup_theme', 'aplos_setup' );
@@ -88,9 +75,36 @@ function aplos_widgets_init() {
         'after_title' => '</h1>',
     ) );
 }
-add_action( 'widgets_init', 'aplos_widgets_init' );  
+add_action( 'widgets_init', 'aplos_widgets_init' ); 
 
-//add color selectors to Appearance menu
+// Filter the wp_title tag
+function aplos_wp_title($title, $sep){
+    if(is_feed()){
+        return $title;
+    }
+
+    global $page, $paged;
+
+    // Add blog name
+    $title .= get_bloginfo('name','display');
+
+    //Add blog description for home page
+    $site_description = get_bloginfo('description','display');
+    if ( $site_description && ( is_home() || is_front_page() ) ) {
+        $title .= " $sep $site_description";
+    }
+
+    // Add page number
+    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+        $title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+    }
+
+    return $title;
+}
+add_filter('wp_title','aplos_wp_title',10,2);
+
+
+//Add color selectors to Appearance menu
 function aplos_customize_register($wp_customize) {
 	//Layout Section
 	$wp_customize->add_section( 'aplos_layout_choice_section' , array(
@@ -99,10 +113,25 @@ function aplos_customize_register($wp_customize) {
 		'description' => __('Allows you to customize page layout.', 'aplos'),
 	) );
 
+    //Fonts Section
+    $wp_customize->add_section( 'aplos_fonts_choice_section' , array(
+            'title'      => __( 'Fonts', 'aplos' ),
+            'priority'   => 30,
+        'description' => __('Allows you to change the font of post titles (Verdana is suggested for languagues with characters other than the basic Latin alphabet).', 'aplos'),
+    ) );
+
 	//Layout settings
 	$wp_customize->add_setting( 'layout_choices',
          array(
            'default' => 'twocol',
+         ) 
+      );
+
+  //Fonts settings
+  $wp_customize->add_setting( 'fonts_choices',
+         array(
+           'default' => 'bebas',
+           'type' => 'theme_mod',
          ) 
       );
 
@@ -134,34 +163,48 @@ function aplos_customize_register($wp_customize) {
             'type' => 'theme_mod',
          ) 
       );
+
 	//Layout Controls
 	$wp_customize->add_control( 'layout_choices',
          array(
             'type' => 'radio',
-            'label' => 'Select Layout',
+            'label' => __('Select Layout', 'aplos'),
             'section' => 'aplos_layout_choice_section',
        	    'choices' => array(
-            	'twocol' => 'Two Columns',
-            	'threecol' => 'Three Columns',
+            	'twocol' => __('Two Columns', 'aplos'),
+            	'threecol' => __('Three Columns', 'aplos'),
         	),
          ) 
       );
 
 	//Color Controls
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-         $wp_customize, //Pass the $wp_customize object (required)
+         $wp_customize,
          'aplos_title_color', //Set a unique ID for the control
          array(
             'label' => __( 'Title Color', 'aplos' ), //Admin-visible name of the control
-            'section' => 'colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+            'section' => 'colors', //ID of section
             'settings' => 'title_color', //Which setting to load and manipulate (serialized is okay)
             'priority' => 10, //Determines the order this control appears in for the specified section
          ) 
       ) );
 
+    //Fonts Controls
+    $wp_customize->add_control( 'fonts_choices',
+         array(
+            'type' => 'select',
+            'label' => __('Select Post Title Font', 'aplos'),
+            'section' => 'aplos_fonts_choice_section',
+            'choices' => array(
+                'bebas' => __('Theme Default', 'aplos'),
+                'verdana' => __('Verdana', 'aplos'),
+            ),
+         ) 
+      );
+
 	$wp_customize->add_control( new WP_Customize_Color_Control(
          $wp_customize,
-         'aplos_themebg_color', //Set a unique ID for the control
+         'aplos_themebg_color',
          array(
             'label' => __( 'Background Color', 'aplos' ),
             'section' => 'colors',
@@ -172,7 +215,7 @@ function aplos_customize_register($wp_customize) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control(
          $wp_customize,
-         'aplos_link_color', //Set a unique ID for the control
+         'aplos_link_color',
          array(
             'label' => __( 'Link Color', 'aplos' ),
             'section' => 'colors',
@@ -183,7 +226,7 @@ function aplos_customize_register($wp_customize) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control(
          $wp_customize,
-         'aplos_link_hover_color', //Set a unique ID for the control
+         'aplos_link_hover_color',
          array(
             'label' => __( 'Link Hover Color', 'aplos' ),
             'section' => 'colors',
@@ -194,18 +237,19 @@ function aplos_customize_register($wp_customize) {
 }
 
 function aplos_customize_css() {
+  //Layout choices
 	$layoutchoice = get_theme_mod('layout_choices');
 	switch($layoutchoice){
 			case 'twocol': ?>
 				<style type="text/css">
                     #primary {
                     	float: left;
-                    	margin: 0 -27% 0 0;
-                    	padding-top: 1em;
-                    	width: 90%;
+                    	margin: 0;
+                    	padding: 1em 0 0 0;
+                    	width: 73%;
                     }
                     #content {
-                    	margin: 0 19% 0 0;
+                    	margin: 0 2% 0 0;
                     }
                     #secondary,
                     #tertiary {
@@ -220,9 +264,28 @@ function aplos_customize_css() {
                     	-moz-border-radius: 5px;
                     	-webkit-border-radius: 5px;
                     	border-radius: 5px;
+                      clear: right;
                     }
                     #tertiary {
                     	padding-top: 0;
+                    }
+                    @media only screen and (max-width: 820px) {
+                      #primary {
+                        width: 55%;
+                      }
+
+                      #secondary,
+                      #tertiary {
+                        width: 35%;
+                      }
+
+                      #main {
+                        padding: 0.8em;
+                      }
+
+                      .site-navigation {
+                        padding: 0 0.8em;
+                      }
                     }
 				</style> <?php
 				break;
@@ -233,7 +296,7 @@ function aplos_customize_css() {
                     	width: 90%;
                     }
                     #content {
-                    	margin: 0 25%;
+                    	margin: 0 26%;
                     }
 
                     #secondary {
@@ -244,7 +307,7 @@ function aplos_customize_css() {
                     	height: 100%;
                     	padding: 2em 2em 0;
                     	position: relative;
-                    	margin: 0 0 0 -90%;
+                    	margin: 1em 0 0 -90%;
                     	-moz-border-radius: 5px;
                     	-webkit-border-radius: 5px;
                     	border-radius: 5px;
@@ -257,23 +320,41 @@ function aplos_customize_css() {
                     	height: 100%;
                     	padding: 2em 2em 0;
                     	position: relative;
-                    	margin: 0 0 0 -20%;
+                    	margin: 1em 0 0 -20%;
                     	-moz-border-radius: 5px;
                     	-webkit-border-radius: 5px;
                     	border-radius: 5px;
                     }
+                    @media only screen and (max-width: 820px) {
+                      #content {
+                        margin: 0 22% 0 31%;
+                      }
+
+                      #main {
+                        padding: 0.8em;
+                      }
+
+                      #tertiary {
+                        margin: 1em 0 0 -16%;
+                      }
+
+                      .site-navigation {
+                            padding: 0 0.8em;
+                        }
+                  }
+
 				</style> <?php
 				break;
                 default: ?>
                 <style type="text/css">
                     #primary {
                         float: left;
-                        margin: 0 -27% 0 0;
+                        margin: 0;
                         padding-top: 1em;
-                        width: 90%;
+                        width: 73%;
                     }
                     #content {
-                        margin: 0 19% 0 0;
+                        margin: 0 2% 0 0;
                     }
                     #secondary,
                     #tertiary {
@@ -288,15 +369,68 @@ function aplos_customize_css() {
                         -moz-border-radius: 5px;
                         -webkit-border-radius: 5px;
                         border-radius: 5px;
+                        clear: right;
                     }
                     #tertiary {
                         padding-top: 0;
                     }
+                    @media only screen and (max-width: 820px) {
+                      #primary {
+                        width: 55%;
+                      }
+
+                      #secondary,
+                      #tertiary {
+                        width: 35%;
+                      }
+
+                      #main {
+                        padding: 0.8em;
+                      }
+
+                      .site-navigation {
+                        padding: 0 0.8em;
+                      }
+                    }
                 </style> <?php
 			}
 
+      //Fonts choices
+      $fontschoice = get_theme_mod('fonts_choices');
+      switch($fontschoice){
+          case 'bebas': ?>
+            <style type="text/css">
+                .entry-title,
+                .page-title {
+                  font-family: 'Conv_BEBAS', Verdana, sans-serif;
+                  word-spacing: 2px;
+                }
+            </style> <?php
+            break;
+          case 'verdana': ?>
+            <style type="text/css">
+                .entry-title,
+                .page-title {
+                  font-family: Verdana, sans-serif;
+                  word-spacing: normal;
+                  font-weight: bold;
+                }
+            </style> <?php
+            break;
+            default: ?>
+              <style type="text/css">
+                .entry-title,
+                .page-title {
+                  font-family: 'Conv_BEBAS', Verdana, sans-serif;
+                  word-spacing: 2px;
+                }
+              </style> <?php
+      }
+
+
+      //Color choices
 	?>
-      		<style type="text/css">
+      <style type="text/css">
            		.site-title a, .site-title a:hover, .site-title a:visited, .site-title a:focus, .site-title a:active { color:<?php echo get_theme_mod('title_color'); ?>; }
 			.main-navigation li { background:<?php echo get_theme_mod('title_color'); ?>; }
 			.widget-title { background:<?php echo get_theme_mod('title_color'); ?>; }
