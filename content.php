@@ -20,25 +20,28 @@
 		</h2>		
 	</header><!-- .entry-header -->
 
-	<?php if ( is_home() || is_search() || is_archive() ) : // Only display Excerpts for Homepage and Search ?>
+	<?php if ( is_home() || is_search() || is_archive() ) : // Only display Excerpts for Homepage, Archive and Search, if is active option1 ?>
 
 		<div class="entry-summary">
 			
-			<?php if ( get_post_format() ) : ?>
 
+			<?php if ( get_post_format() )  : ?>
+				
 				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thebox' ) ); ?>
-						
-  			<?php else : ?>
-  			
-  				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+				
+			<?php else : ?>
+			
+				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<div class="post-thumbnail">
-						<?php the_post_thumbnail(); ?>
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thebox' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+							<?php the_post_thumbnail(); ?>
+						</a>
 					</div>
 				<?php endif; ?>
 				<?php thebox_excerpt(40); ?>
 				
 			<?php endif; // End if get_post_format() ?>
-
+			
 		</div><!-- .entry-summary -->
 
 	<?php else : ?>

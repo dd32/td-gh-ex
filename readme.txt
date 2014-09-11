@@ -24,6 +24,8 @@ The Box supports widgetized areas in the sidebar and footer. These areas will be
 # Responsive #
 THe Box has been fully optimised for small screen display. Your content will look beautiful whether it's viewed on a desktop, a tablet or a smartphone.
 
+# Languages #
+Dutch translation by Theo Muys
 
 # Copyright, License & Other info #
 The Box theme, Copyright 2014 Fabio Rubioglio (http://design.altervista.org/)
@@ -40,3 +42,8 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 # Changelog #
 1.0.0
 - initial release
+
+1.3.3
+- Updated Mobile Menu js
+- New Social Media links
+- Added Dutch translation by Theo Muys

@@ -1,25 +1,41 @@
 <?php
+/**
+ * The Box Theme Options
+ *
+ * @package thebox
+ * @since thebox 1.0
+ */
+
 
 add_action( 'admin_init', 'thebox_options_init' );
 add_action( 'admin_menu', 'thebox_options_add_page' );
 
+
 /**
  * Init plugin options to white list our options
+ *
  */
+ 
 function thebox_options_init(){
 	register_setting( 'thebox_options', 'thebox_theme_options', 'thebox_options_validate' );
 }
 
+
 /**
  * Load up the menu page
+ *
  */
+ 
 function thebox_options_add_page() {
 	add_theme_page( __( 'Theme Options', 'thebox' ), __( 'Theme Options', 'thebox' ), 'edit_theme_options', 'theme_options', 'thebox_options_do_page' );
 }
 
+
 /**
  * Create the options page
+ *
  */
+ 
 function thebox_options_do_page() {
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
@@ -115,6 +131,42 @@ function thebox_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * YouTube
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your YoyTube URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[youtubeurl]" class="regular-text" type="text" name="thebox_theme_options[youtubeurl]" value="<?php echo esc_attr( $options['youtubeurl'] ); ?>" />
+						<label class="description" for="thebox_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'thebox' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Pinterest
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your Pinterest URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[pinteresturl]" class="regular-text" type="text" name="thebox_theme_options[pinteresturl]" value="<?php echo esc_attr( $options['pinteresturl'] ); ?>" />
+						<label class="description" for="thebox_theme_options[pinteresturl]"><?php _e( 'Leave blank to hide Pinterest Icon', 'thebox' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * StumbleUpon
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your StumbleUpon URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[stumbleuponurl]" class="regular-text" type="text" name="thebox_theme_options[stumbleuponurl]" value="<?php echo esc_attr( $options['stumbleuponurl'] ); ?>" />
+						<label class="description" for="thebox_theme_options[stumbleuponurl]"><?php _e( 'Leave blank to hide StumbleUpon Icon', 'thebox' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -126,9 +178,12 @@ function thebox_options_do_page() {
 	<?php
 }
 
+
 /**
  * Sanitize and validate input. Accepts an array, return a sanitized array.
+ *
  */
+ 
 function thebox_options_validate( $input ) {
 
 	// Our checkbox value is either 0 or 1
@@ -141,12 +196,18 @@ function thebox_options_validate( $input ) {
 	$input['facebookurl'] = wp_filter_nohtml_kses( $input['facebookurl'] );
 	$input['googleplusurl'] = wp_filter_nohtml_kses( $input['googleplusurl'] );
 	$input['instagramurl'] = wp_filter_nohtml_kses( $input['instagramurl'] );
+	$input['youtubeurl'] = wp_filter_nohtml_kses( $input['youtubeurl'] );
+	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
+	$input['stumbleuponurl'] = wp_filter_nohtml_kses( $input['stumbleuponurl'] );
 	
 	// Encode URLs
 	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
 	$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
 	$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
 	$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
+	$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
+	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
+	$input['stumbleuponurl'] = esc_url_raw( $input['stumbleuponurl'] );
 	
 	return $input;
 }

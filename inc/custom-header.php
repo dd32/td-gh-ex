@@ -9,6 +9,7 @@
  * @since thebox 1.0
  */
 
+
 /**
  * Set up the WordPress core custom header arguments and settings.
  *
@@ -17,8 +18,8 @@
  * @uses thebox_admin_header_style() to style wp-admin form.
  * @uses thebox_admin_header_image() to add custom markup to wp-admin form.
  *
- * @since thebox 1.0
  */
+ 
 function thebox_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
@@ -47,21 +48,20 @@ function thebox_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'thebox_custom_header_setup' );
 
+
 /**
  * Load our special font CSS file.
  *
- * @since thebox 1.0
- *
- * @return void
  */
+ 
 
 /**
  * Style the header text displayed on the blog.
  *
  * get_header_textcolor() options: 515151 is default, hide text (returns 'blank'), or any hex value.
  *
- * @since thebox 1.0
  */
+ 
 function thebox_header_style() {
 	$text_color = get_header_textcolor();
 
@@ -95,11 +95,12 @@ function thebox_header_style() {
 	<?php
 }
 
+
 /**
  * Style the header image displayed on the Appearance > Header admin panel.
  *
- * @since thebox 1.0
  */
+ 
 function thebox_admin_header_style() {
 ?>
 	<style type="text/css" id="thebox-admin-header-css">
@@ -135,13 +136,14 @@ function thebox_admin_header_style() {
 <?php
 }
 
+
 /**
  * Output markup to be displayed on the Appearance > Header admin panel.
  *
  * This callback overrides the default markup displayed there.
  *
- * @since thebox 1.0
  */
+ 
 function thebox_admin_header_image() {
 	?>
 	<div id="headimg">

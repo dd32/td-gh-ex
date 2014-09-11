@@ -24,14 +24,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="two-col">
+
+<div id="page">
 
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header clearfix" role="banner">
 		<div class="site-brand clearfix">
+		
 			<hgroup>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<span class="site-description"><?php bloginfo( 'description' ); ?></span>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title='<?php bloginfo( 'name' ); ?>' rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>	
 			</hgroup>
 			
 			<?php $options = get_option( 'thebox_theme_options' ); ?>
@@ -47,11 +49,23 @@
 				<?php endif; ?>
 
 				<?php if ( $options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo $options['googleplusurl']; ?>" class="googleplus" alt="google plus"><span class="icon-google-plus"></span></a>
+					<a href="<?php echo $options['googleplusurl']; ?>" class="googleplus" alt="google plus"><span class="icon-googleplus"></span></a>
 				<?php endif; ?>
 				
 				<?php if ( $options['instagramurl'] != '' ) : ?>
 					<a href="<?php echo $options['instagramurl']; ?>" class="instagram" alt="instagram"><span class="icon-instagram"></span></a>
+				<?php endif; ?>
+				
+				<?php if ( $options['youtubeurl'] != '' ) : ?>
+					<a href="<?php echo $options['youtubeurl']; ?>" class="youtube" alt="youtube"><span class="icon-youtube"></span></a>
+				<?php endif; ?>
+				
+				<?php if ( $options['pinteresturl'] != '' ) : ?>
+					<a href="<?php echo $options['pinteresturl']; ?>" class="pinterest" alt="pinterest"><span class="icon-pinterest"></span></a>
+				<?php endif; ?>
+				
+				<?php if ( $options['stumbleuponurl'] != '' ) : ?>
+					<a href="<?php echo $options['stumbleuponurl']; ?>" class="stumbleupon" alt="stumble upon"><span class="icon-stumbleupon"></span></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $options['hiderss'] ) : ?>
@@ -61,15 +75,12 @@
 			</div><!-- .social-links-->
 			
 		</div>	
-		<nav role="navigation" class="site-navigation main-navigation clearfix">
-			<h1 class="assistive-text"><?php // _e( 'Menu', 'thebox' ); ?></h1>
-			<div class="assistive-text skip-link">
-				<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'thebox' ); ?>">
-					<?php _e( 'Skip to content', 'thebox' ); ?>
-				</a>
-			</div>
+		
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle"><?php _e( 'Primary Menu', 'design-news' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation .main-navigation -->
+		</nav><!-- #site-navigation -->
+		
 	</header><!-- #masthead .site-header -->
 
 	<div id="main" class="site-main clearfix">

@@ -20,8 +20,8 @@
 		<?php endif; // end footer widget area ?>
 		
 		<p class="credits">
-			<?php do_action( 'thebox_credits' ); ?>
 			&copy; <?php the_time('Y') ?> by <?php bloginfo( 'name' ); ?>
+			
 			<span class="sep"> / </span>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'thebox' ); ?>" rel="generator">
 				<?php printf( __( 'Proudly powered by %s', 'thebox' ), 'WordPress' ); ?>
