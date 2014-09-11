@@ -57,6 +57,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.8
+1.	Small Change in sidebar.php
+2. escape url function added.
 @Version: 1.4.2.7
 1.	 Full-width Page Added
 @Version: 1.4.2.6
