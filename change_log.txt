@@ -65,3 +65,5 @@ Version 1.4
 	ii) Replace esc_url_raw with esc_url.	
 	iii) Change Theme Options layout.
 	iv) Remove ABSPATH.
+Version 1.4.1
+    i) Variable name changes in media-uploader.js

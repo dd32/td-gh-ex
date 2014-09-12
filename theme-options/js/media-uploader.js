@@ -1,7 +1,7 @@
 (function($) {
 	$(document).ready(function() {
 
-		function wix_add_file(event, selector) {
+		function foodrecipes_add_file(event, selector) {
 		
 			var upload = $(".uploaded-file"), frame;
 			var $el = $(this);
@@ -41,7 +41,7 @@
 				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button');
 				selector.find('.of-background-properties').slideDown();
 				selector.find('.remove-image, .remove-file').on('click', function() {
-					wix_remove_file( $(this).parents('.section') );
+					foodrecipes_remove_file( $(this).parents('.section') );
 				});
 			});
 
@@ -49,7 +49,7 @@
 			frame.open();
 		}
         
-		function wix_remove_file(selector) {
+		function foodrecipes_remove_file(selector) {
 			selector.find('.remove-image').hide();
 			selector.find('.upload').val('');
 			selector.find('.of-background-properties').hide();
@@ -61,16 +61,16 @@
 				$('.upload-button').remove();
 			}
 			selector.find('.upload-button').live('click', function() {
-				wix_add_file(event, $(this).parents('.section'));
+				foodrecipes_add_file(event, $(this).parents('.section'));
 			});
 		}
 		
 		$('.remove-image, .remove-file').live('click', function() {
-			wix_remove_file( $(this).parents('.section') );
+			foodrecipes_remove_file( $(this).parents('.section') );
         });
         
         $('.upload-button').live('click', function( event ) {
-        	wix_add_file(event, $(this).parents('.section'));
+        	foodrecipes_add_file(event, $(this).parents('.section'));
         });
         
     });
@@ -91,7 +91,7 @@ jQuery(document).ready( function(){
         _custom_media = true;
         wp.media.editor.send.attachment = function(props, attachment){
             if ( _custom_media  ) { 
-               jQuery('.wix_media_url').val(attachment.url);
+               jQuery('.foodrecipes_media_url').val(attachment.url);
             } else {
                 return _orig_send_attachment.apply( button_id, [props, attachment] );
             }
@@ -100,7 +100,7 @@ jQuery(document).ready( function(){
         return false;
     });
 }
-media_upload( '.wix_media_upload');
+media_upload( '.foodrecipes_media_upload');
 });
 
 

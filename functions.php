@@ -56,7 +56,7 @@ require get_template_directory() . '/function/custom-header.php';
 require_once('function/foodrecipes-post-widget.php');
 
 //foodrecipes theme theme option
-require_once('theme-option/fasterthemes.php');
+require_once('theme-options/fasterthemes.php');
 
 /*** TGM ***/
 require_once('function/tgm-plugins.php');

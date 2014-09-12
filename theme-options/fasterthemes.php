@@ -18,11 +18,11 @@ function ft_options_validate($input)
 }
 function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
-	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
+	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
 	wp_enqueue_style( 'fasterthemes_framework' );	
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-option/js/fasterthemes-custom.js', array( 'jquery' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-option/js/media-uploader.js', array( 'jquery') );		
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
 	wp_enqueue_script('media-uploader');
 }
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
@@ -51,7 +51,7 @@ function fastertheme_framework_page(){
   <div class="fasterthemes-header">
     <div class="logo">
       <?php
-		$foodrecipes_image=get_template_directory_uri().'/theme-option/images/logo.png';
+		$foodrecipes_image=get_template_directory_uri().'/theme-options/images/logo.png';
 		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$foodrecipes_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
@@ -170,10 +170,10 @@ function fastertheme_framework_page(){
           <!-------------- Third group ----------------->
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
-          	<img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/pro-featured.png" />
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
           </div>
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
@@ -182,8 +182,8 @@ function fastertheme_framework_page(){
 	<div class="fasterthemes-footer">
       	<ul>
         	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a></li>
+            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
+            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
         </ul>
     </div>
