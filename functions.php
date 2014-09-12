@@ -72,7 +72,7 @@ function anarcho_add_ie_html5_shim () {
 }
 add_action('wp_head', 'anarcho_add_ie_html5_shim');
 
-// This feature enables sidebar.
+// This feature enables widgets area in the sidebar.
 function anarcho_widgets_init() {
 	register_sidebar(array(
 			'name' => __('Sidebar Area 1', 'anarcho-notepad'),
@@ -112,6 +112,38 @@ function anarcho_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'anarcho_widgets_init' );
+
+// This feature enables widgets area in the footer.
+function anarcho_widgets_footer_init() {
+	register_sidebar(array(
+			'name' => __('Footer Area 1', 'anarcho-notepad'),
+			'id' => 'footer-1',
+			'description' => __('Widgets in this area will be shown left.', 'anarcho-notepad'),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	));
+		register_sidebar(array(
+			'name' => __('Footer Area 2', 'anarcho-notepad'),
+			'id' => 'footer-2',
+			'description' => __('Widgets in this area will be shown center.', 'anarcho-notepad'),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	));
+		register_sidebar(array(
+			'name' => __('Footer Area 3', 'anarcho-notepad'),
+			'id' => 'footer-3',
+			'description' => __('Widgets in this area will be shown right.', 'anarcho-notepad'),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	));
+}
+add_action( 'widgets_init', 'anarcho_widgets_footer_init' );
 
 // Adds a custom default avatar
 function anarcho_avatar( $avatar_defaults ) {
