@@ -2,7 +2,7 @@
 /**
  * The Header template for our theme
  */
-  $foodrecipes_options = get_option( 'food_recipes_options' );
+  $foodrecipes_options = get_option( 'foodrecipes_theme_options' );
 ?>
 <!DOCTYPE html>
 <!--[if IE 7]>

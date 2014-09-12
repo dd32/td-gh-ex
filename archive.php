@@ -53,12 +53,11 @@ get_header(); ?>
         </div>
          
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+        <?php if(function_exists('faster_pagination')) { ?> 
             <nav class="col-md-12 foodrecipes-box-paging"> 
             <?php faster_pagination();?>
             </nav>
-        <?php }else { ?>
+        <?php } else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <nav class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination foodrecipes-nav"> 
         <span class="foodrecipes-nav-previous">

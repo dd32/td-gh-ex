@@ -1,7 +1,7 @@
 (function($) {
 	$(document).ready(function() {
 
-		function foodrecipes_add_file(event, selector) {
+		function wix_add_file(event, selector) {
 		
 			var upload = $(".uploaded-file"), frame;
 			var $el = $(this);
@@ -38,10 +38,10 @@
 				if ( attachment.attributes.type == 'image' ) {
 					selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image">Remove</a>').slideDown('fast');
 				}
-				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button').val(foodrecipes_l10n.remove);
+				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button');
 				selector.find('.of-background-properties').slideDown();
 				selector.find('.remove-image, .remove-file').on('click', function() {
-					foodrecipes_remove_file( $(this).parents('.section') );
+					wix_remove_file( $(this).parents('.section') );
 				});
 			});
 
@@ -49,33 +49,60 @@
 			frame.open();
 		}
         
-		function foodrecipes_remove_file(selector) {
+		function wix_remove_file(selector) {
 			selector.find('.remove-image').hide();
 			selector.find('.upload').val('');
 			selector.find('.of-background-properties').hide();
 			selector.find('.screenshot').slideUp();
-			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file').val(foodrecipes_l10n.upload);
+			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file');
 			// We don't display the upload button if .upload-notice is present
 			// This means the user doesn't have the WordPress 3.5 Media Library Support
 			if ( $('.section-upload .upload-notice').length > 0 ) {
 				$('.upload-button').remove();
 			}
-			selector.find('.upload-button').on('click', function() {
-				foodrecipes_add_file(event, $(this).parents('.section'));
+			selector.find('.upload-button').live('click', function() {
+				wix_add_file(event, $(this).parents('.section'));
 			});
 		}
 		
-		$('.remove-image, .remove-file').on('click', function() {
-			foodrecipes_remove_file( $(this).parents('.section') );
+		$('.remove-image, .remove-file').live('click', function() {
+			wix_remove_file( $(this).parents('.section') );
         });
         
-        $('.upload-button').click( function( event ) {
-        	foodrecipes_add_file(event, $(this).parents('.section'));
+        $('.upload-button').live('click', function( event ) {
+        	wix_add_file(event, $(this).parents('.section'));
         });
         
     });
 	
 })(jQuery);
+
+jQuery(document).ready( function(){
+ function media_upload( button_class) {
+    var _custom_media = true,
+    _orig_send_attachment = wp.media.editor.send.attachment;
+    jQuery('body').on('click',button_class, function(e) {
+        var button_id ='#'+jQuery(this).attr('id');
+        /* console.log(button_id); */
+        var self = jQuery(button_id);
+        var send_attachment_bkp = wp.media.editor.send.attachment;
+        var button = jQuery(button_id);
+        var id = button.attr('id').replace('_button', '');
+        _custom_media = true;
+        wp.media.editor.send.attachment = function(props, attachment){
+            if ( _custom_media  ) { 
+               jQuery('.wix_media_url').val(attachment.url);
+            } else {
+                return _orig_send_attachment.apply( button_id, [props, attachment] );
+            }
+        }
+        wp.media.editor.open(button);
+        return false;
+    });
+}
+media_upload( '.wix_media_upload');
+});
+
 
  var fnames = new Array();var ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';
             try {
