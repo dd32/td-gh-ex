@@ -91,29 +91,58 @@ function ct_tracks_customize_social_icons($wp_customize) {
 
     foreach($social_sites as $social_site) {
 
-        /* setting */
-        $wp_customize->add_setting(
-            "$social_site",
-            array(
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw'
-        ) );
+        if( $social_site == 'email' ) {
 
-        /* control */
-        $wp_customize->add_control(
-            new ct_tracks_url_input_control(
-                $wp_customize, $social_site, array(
+            /* setting */
+            $wp_customize->add_setting(
+                "$social_site",
+                array(
+                    'type'              => 'theme_mod',
+                    'capability'        => 'edit_theme_options',
+                    'sanitize_callback' => 'ct_tracks_sanitize_email'
+                ) );
+
+            /* control */
+            $wp_customize->add_control(
+                $social_site, array(
                     'label'   => $social_site, // brand name so no internationalization required
                     'section' => 'ct_tracks_social_icons',
                     'priority'=> $priority,
                 )
-            )
-        );
-        $priority = $priority + 5;
+            );
+            $priority = $priority + 5;
+        } else {
+
+            /* setting */
+            $wp_customize->add_setting(
+                "$social_site",
+                array(
+                'type'              => 'theme_mod',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'esc_url_raw'
+            ) );
+
+            /* control */
+            $wp_customize->add_control(
+                new ct_tracks_url_input_control(
+                    $wp_customize, $social_site, array(
+                        'label'   => $social_site, // brand name so no internationalization required
+                        'section' => 'ct_tracks_social_icons',
+                        'priority'=> $priority,
+                    )
+                )
+            );
+            $priority = $priority + 5;
+        }
     }
 }
 add_action('customize_register', 'ct_tracks_customize_social_icons');
+
+// sanitize proper email address url
+function ct_tracks_sanitize_email( $input ) {
+
+    return sanitize_email( $input );
+}
 
 /* sanitize radio button input */
 function ct_tracks_sanitize_social_icons_display($input){
@@ -517,8 +546,73 @@ function ct_tracks_customizer_additional_options( $wp_customize ) {
             ),
         )
     );
+
+    class ct_tracks_Multi_Checkbox_Control extends WP_Customize_Control {
+        public $type = 'multi-checkbox';
+
+        public function render_content() {
+
+            if ( empty( $this->choices ) )
+                return;
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select id="comment-display-control" <?php $this->link(); ?> multiple="multiple" style="height: 100%;">
+                    <?php
+                    foreach ( $this->choices as $value => $label ) {
+                        $selected = ( in_array( $value, $this->value() ) ) ? selected( 1, 1, false ) : '';
+                        echo '<option value="' . esc_attr( $value ) . '"' . $selected . '>' . $label . '</option>';
+                    }
+                    ?>
+                </select>
+            </label>
+        <?php }
+    }
+
+    /* setting */
+    $wp_customize->add_setting(
+        'ct_tracks_comments_setting',
+        array(
+            'default'           => 'none',
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'ct_tracks_sanitize_comments_setting',
+        )
+    );
+    /* control */
+    $wp_customize->add_control(
+        new ct_tracks_Multi_Checkbox_Control(
+            $wp_customize,
+            'ct_tracks_comments_setting',
+            array(
+                'label'          => __( 'Show comments on:', 'tracks' ),
+                'section'        => 'ct_tracks_additional_options',
+                'settings'       => 'ct_tracks_comments_setting',
+                'type'           => 'multi-checkbox',
+                'choices'        => array(
+                    'posts'   => __('Posts', 'tracks'),
+                    'pages'  => __('Pages', 'tracks'),
+                    'attachments'  => __('Attachments', 'tracks'),
+                    'none'  => __('Do not show', 'tracks')
+                )
+            )
+        )
+    );
 }
 add_action( 'customize_register', 'ct_tracks_customizer_additional_options' );
+
+// sets comment display values on new sites or sites updating to new version with this feature
+function ct_tracks_set_comment_display_values() {
+
+    // get the current value
+    $current_settings = get_theme_mod( 'ct_tracks_comments_setting' );
+
+    // if empty, set to all
+    if( empty( $current_settings ) ) {
+        set_theme_mod( 'ct_tracks_comments_setting', array( 'posts', 'pages', 'attachments', 'none' ) );
+    }
+}
+add_action( 'init', 'ct_tracks_set_comment_display_values' );
 
 /* sanitize radio button input */
 function ct_tracks_sanitize_all_show_hide_settings($input){
@@ -547,6 +641,30 @@ function ct_tracks_sanitize_image_zoom_settings($input){
         return '';
     }
 }
+
+/* sanitize comment display multi-check */
+function ct_tracks_sanitize_comments_setting($input){
+
+    // valid data
+    $valid = array(
+        'posts'   => __('Posts', 'tracks'),
+        'pages'  => __('Pages', 'tracks'),
+        'attachments'  => __('Attachments', 'tracks'),
+        'none'  => __('Do not show', 'tracks')
+    );
+
+    // loop through array
+    foreach( $input as $selection ) {
+
+        // if it's in the valid data, return it
+        if ( array_key_exists( $selection, $valid ) ) {
+            return $input;
+        } else {
+            return '';
+        }
+    }
+}
+
 
 function ct_tracks_textures_array(){
 
@@ -917,7 +1035,50 @@ function ct_tracks_customizer_custom_css( $wp_customize ) {
 }
 add_action( 'customize_register', 'ct_tracks_customizer_custom_css' );
 
+/* Footer Text Section */
+function ct_tracks_customizer_footer_text( $wp_customize ) {
+
+    // section
+    $wp_customize->add_section(
+        'ct-footer-text',
+        array(
+            'title'      => __( 'Footer Text', 'tracks' ),
+            'priority'   => 95,
+            'capability' => 'edit_theme_options'
+        )
+    );
+
+    // setting
+    $wp_customize->add_setting(
+        'ct_tracks_footer_text_setting',
+        array(
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'wp_kses_post',
+        )
+    );
+    // control
+    $wp_customize->add_control(
+        new ct_tracks_Textarea_Control(
+            $wp_customize,
+            'ct_tracks_footer_text_setting',
+            array(
+                'label'          => __( 'Edit the text in your footer', 'tracks' ),
+                'section'        => 'ct-footer-text',
+                'settings'       => 'ct_tracks_footer_text_setting',
+            )
+        ) );
+}
+add_action( 'customize_register', 'ct_tracks_customizer_footer_text' );
+
 function ct_tracks_user_profile_image_setting( $user ) { ?>
+
+    <?php
+        $user_id = get_current_user_id();
+
+        // only added for contributors and above
+        if ( ! current_user_can( 'edit_posts', $user_id ) ) return false;
+    ?>
 
     <table id="profile-image-table" class="form-table">
 
@@ -946,10 +1107,10 @@ add_action( 'edit_user_profile', 'ct_tracks_user_profile_image_setting' );
 function ct_tracks_save_user_profile_image( $user_id ) {
 
     // only saves if the current user can edit user profiles
-    if ( !current_user_can( 'edit_user', $user_id ) )
+    if ( ! current_user_can( 'edit_user', $user_id ) )
         return false;
 
-    update_user_meta( $user_id, 'user_profile_image', $_POST['user_profile_image'] );
+    update_user_meta( $user_id, 'user_profile_image', esc_url_raw( $_POST['user_profile_image'] ) );
 }
 
 add_action( 'personal_options_update', 'ct_tracks_save_user_profile_image' );
@@ -984,7 +1145,8 @@ function ct_tracks_social_array(){
         'git' => 'git_profile',
         'hacker-news' => 'hacker-news_profile',
         'steam' => 'steam_profile',
-        'steam' => 'vk_profile'
+        'steam' => 'vk_profile',
+        'email' => 'email_profile'
     );
     return $social_sites;
 }
@@ -993,6 +1155,11 @@ function ct_tracks_social_array(){
 function ct_tracks_add_social_profile_settings($user) {
 
     $social_sites = ct_tracks_social_array();
+
+    $user_id = get_current_user_id();
+
+    // only added for contributors and above
+    if ( ! current_user_can( 'edit_posts', $user_id ) ) return false;
 
 	?>	
     <table class="form-table">
@@ -1003,13 +1170,20 @@ function ct_tracks_add_social_profile_settings($user) {
         	foreach($social_sites as $key => $social_site) {
   				?>      	
         		<tr>
-					<td>
-						<label for="<?php echo $key; ?>-profile"><?php echo ucfirst($key); ?> Profile:</label>
-					</td>
-					<td>
-						<input type='url' id='<?php echo $key; ?>-profile' class='regular-text' name='<?php echo $key; ?>-profile' value='<?php echo esc_url_raw(get_the_author_meta($social_site, $user->ID )); ?>' />
-					</td>
-					</td>
+                    <th>
+                        <?php if( $key == 'email' ) : ?>
+                            <label for="<?php echo $key; ?>-profile"><?php echo ucfirst($key); ?> <?php _e('Address:', 'tracks'); ?></label>
+                        <?php else : ?>
+                            <label for="<?php echo $key; ?>-profile"><?php echo ucfirst($key); ?> <?php _e('Profile:', 'tracks'); ?></label>
+                        <?php endif; ?>
+                    </th>
+                    <td>
+                        <?php if( $key == 'email' ) : ?>
+                            <input type='text' id='<?php echo $key; ?>-profile' class='regular-text' name='<?php echo $key; ?>-profile' value='<?php echo is_email(get_the_author_meta($social_site, $user->ID )); ?>' />
+                        <?php else : ?>
+                            <input type='url' id='<?php echo $key; ?>-profile' class='regular-text' name='<?php echo $key; ?>-profile' value='<?php echo esc_url(get_the_author_meta($social_site, $user->ID )); ?>' />
+                        <?php endif; ?>
+                    </td>
 				</tr>
         	<?php }	?>
     </table>
@@ -1026,9 +1200,16 @@ function ct_tracks_save_social_profiles($user_id) {
 	$social_sites = ct_tracks_social_array();
    	
    	foreach ($social_sites as $key => $social_site) {
-		if( isset( $_POST["$key-profile"] ) ){
-			update_user_meta( $user_id, $social_site, esc_url_raw( $_POST["$key-profile"] ) );
-		}
+        if( $key == 'email' ) {
+            // if email, only accept 'mailto' protocol
+            if( isset( $_POST["$key-profile"] ) ){
+                update_user_meta( $user_id, $social_site, sanitize_email( $_POST["$key-profile"] ) );
+            }
+        } else {
+            if( isset( $_POST["$key-profile"] ) ){
+                update_user_meta( $user_id, $social_site, esc_url_raw( $_POST["$key-profile"] ) );
+            }
+        }
 	}
 }
 

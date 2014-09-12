@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.21
+Version: 1.22
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,7 @@ body {
 .main {
   background: #222222;
   padding-bottom: 1.5em;
+  margin: 0 auto;
 }
 
 p {
@@ -373,7 +374,11 @@ a img {
 .blog .main,
 .archive .main {
   width: 88.89%;
-  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.entry {
+  max-width: 1280px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
@@ -391,6 +396,10 @@ a img {
 .site-header {
   padding: 0.75em 5.55%;
   background-color: #222222;
+}
+.site-header .container {
+  margin: 0 auto;
+  max-width: 1280px;
 }
 .site-header:after {
   content: ".";
@@ -433,17 +442,14 @@ a img {
 }
 
 .toggle-navigation {
-  position: absolute;
-  right: 0;
+  position: relative;
+  float: right;
   z-index: 29;
   border: none;
   background: none;
   font-size: 1em;
   margin: 0;
-  width: 4.5em;
-  text-align: right;
-  padding: 0.75em 5.55% 0 0;
-  top: 0;
+  padding: 0 0 0 1.5em;
   color: white;
   opacity: 0.6;
   -webkit-transition: opacity 0.2s ease;
@@ -459,8 +465,7 @@ a img {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
   position: absolute;
   top: 0;
   padding-top: 6em;
@@ -476,7 +481,7 @@ a img {
   /* this is a 24px baseline grid */
   text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 
 .menu-primary-tracks {
@@ -502,8 +507,7 @@ a img {
   opacity: 0.6;
   margin: 1.5em 0 0.75em 0;
   -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .menu-unset > ul a:only-child,
 .menu-primary-items a:only-child {
@@ -1200,6 +1204,7 @@ a img {
 .comments {
   background: white;
   padding-bottom: 3em;
+  max-width: 1280px;
 }
 
 .comments-number {
@@ -1646,6 +1651,18 @@ li.pingback:after {
 .top-navigation ~ button {
   top: 2.25em;
 }
+.top-navigation .container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+.top-navigation .container:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
 
 /* 600px */
 @media all and (min-width: 37.5em) {
@@ -1954,6 +1971,11 @@ li.pingback:after {
   height: 100%;
 }
 
+@media all and (min-width: 1500px) {
+  .top-navigation .social-media-icons {
+    margin-right: 0px !important;
+  }
+}
 /* gallery styles copied from Hybrid Core */
 /**
  * Cleaner Gallery Stylesheet
@@ -2171,7 +2193,7 @@ li.pingback:after {
 .dark-header .site-header.toggled .toggle-navigation {
   color: white;
 }
-.dark-header .site-header.toggled .site-header .site-description {
+.dark-header .site-header.toggled .site-description {
   color: white;
 }
 
@@ -2298,5 +2320,60 @@ li.pingback:after {
 @media all and (min-width: 75em) {
   #disqus_thread {
     padding: 1.5em 19.75% 3em;
+  }
+}
+/* bbpress Styles */
+.entry-bbpress {
+  padding-top: 3em;
+}
+.entry-bbpress .entry-container {
+  padding: 0 11.11%;
+}
+
+#wp-bbp_topic_content-editor-container input,
+#wp-bbp_reply_content-editor-container input {
+  width: auto;
+  padding: 6px 24px !important;
+}
+#wp-bbp_topic_content-editor-container textarea,
+#wp-bbp_reply_content-editor-container textarea {
+  outline: solid 1px #222222;
+  margin-top: 1.5em !important;
+}
+
+#bbp_topic_tags {
+  max-width: 500px;
+  font-size: 13px;
+}
+
+#bbp_topic_title {
+  max-width: none;
+}
+
+.bbp-submit-wrapper button {
+  background: #222222;
+  color: white;
+  max-width: 22.2em !important;
+  min-width: 11.1em;
+  padding: 0.8em;
+  min-height: 45px;
+  outline: none;
+  border: none;
+  font-family: "raleway", sans-serif;
+  font-size: 0.813em;
+  line-height: 1.85;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+.bbp-submit-wrapper button:hover, .bbp-submit-wrapper button:active, .bbp-submit-wrapper button:focus {
+  cursor: pointer;
+  background: black;
+}
+
+@media all and (min-width: 62.5em) {
+  #bbp_topic_title {
+    width: 70%;
   }
 }

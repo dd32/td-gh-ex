@@ -53,6 +53,10 @@ add_action('admin_enqueue_scripts',	'ct_tracks_enqueue_admin_styles' );
 
 /* enqueues scripts and styles used on customizer page */
 function ct_tracks_enqueue_customizer_styles(){
+
+    wp_enqueue_script('multiple-select', get_template_directory_uri() . '/js/build/multiple-select.min.js',array('jquery'),'',true);
+    wp_enqueue_style('multiple-select-styles', get_template_directory_uri() . '/styles/multiple-select.css');
+
     wp_enqueue_script('ct-customizer-js', get_template_directory_uri() . '/js/build/customizer.min.js#ct_tracks_asyncload');
     wp_enqueue_style('ct-customizer-css', get_template_directory_uri() . '/style-customizer.css');
 }
@@ -312,6 +316,9 @@ function ct_tracks_author_social_icons() {
             elseif($key == 'googleplus'){
                 echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-google-plus-square\"></i></a>";
             }
+            elseif($key == 'email'){
+                echo "<a href='mailto:".is_email(get_the_author_meta( $social_site))."'><i class=\"fa fa-envelope\"></i></a>";
+            }
             else {
                 echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key-square\"></i></a>";
             }
@@ -518,13 +525,20 @@ function ct_tracks_customizer_social_icons_output() {
         echo "<ul class='social-media-icons'>";
         foreach ($active_sites as $active_site) { ?>
             <li>
-            <a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
+                <?php if( $active_site == 'email' ) : ?>
+                    <a target="_blank" href="mailto:<?php echo is_email(get_theme_mod( $active_site )); ?>">
+                <?php else : ?>
+                    <a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
+                <?php endif; ?>
+
                 <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == 'vk') { ?>
-                    <i class="fa fa-<?php echo $active_site; ?>"></i> <?php
-                } else { ?>
-                <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php
+                    <i class="fa fa-<?php echo $active_site; ?>"></i>
+                <?php } elseif( $active_site == 'email' ) { ?>
+                    <i class="fa fa-envelope"></i>
+                <?php } else { ?>
+                    <i class="fa fa-<?php echo $active_site; ?>-square"></i><?php
                 } ?>
-            </a>
+                </a>
             </li><?php
         }
         echo "</ul>";
@@ -534,7 +548,7 @@ function ct_tracks_customizer_social_icons_output() {
 // array of social media site names
 function ct_tracks_social_site_list(){
 
-    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk' );
+    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk', 'email' );
     return $social_sites;
 }
 
