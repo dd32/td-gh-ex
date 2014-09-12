@@ -175,7 +175,7 @@ add_action( 'customize_register', 'ct_ignite_customize_logo_size' );
 function ct_ignite_customizer_social_media_array() {
 
 	// store social site names in array
-	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'email', 'vk');
+	$social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk', 'academia', 'email');
 	
 	return $social_sites;
 
@@ -251,9 +251,7 @@ function ct_ignite_add_social_sites_customizer($wp_customize) {
 // sanitize proper email address url
 function ct_ignite_sanitize_email( $input ) {
 
-    esc_url_raw( $input, array('mailto:') );
-
-    return $input;
+    return sanitize_email( $input );
 }
 
 /* show/hide the post author info after posts */
@@ -601,7 +599,6 @@ function ct_ignite_sanitize_comments_setting($input){
             return '';
         }
     }
-
 }
 
 /* Custom CSS Section */
@@ -952,6 +949,13 @@ add_action( 'customize_register', 'ct_ignite_customizer_footer_text' );
 
 function ct_ignite_user_profile_image_setting( $user ) { ?>
 
+    <?php
+    $user_id = get_current_user_id();
+
+    // only added for contributors and above
+    if ( ! current_user_can( 'edit_posts', $user_id ) ) return false;
+    ?>
+
     <table id="profile-image-table" class="form-table">
 
         <tr>
@@ -979,10 +983,10 @@ add_action( 'edit_user_profile', 'ct_ignite_user_profile_image_setting' );
 function ct_ignite_save_user_profile_image( $user_id ) {
 
     // only saves if the current user can edit user profiles
-    if ( !current_user_can( 'edit_user', $user_id ) )
+    if ( ! current_user_can( 'edit_user', $user_id ) )
         return false;
 
-    update_user_meta( $user_id, 'user_profile_image', $_POST['user_profile_image'] );
+    update_user_meta( $user_id, 'user_profile_image', esc_url_raw( $_POST['user_profile_image'] ) );
 }
 
 add_action( 'personal_options_update', 'ct_ignite_save_user_profile_image' );
