@@ -31,18 +31,6 @@
 			$( '.logo-text' ).css('line-height',  newval + 'px' );
 		} );
 	} );
-	
-	wp.customize( 'filter_header', function( value ) {
-		value.bind( function( newval ) {
-			$( 'ul#filter h3' ).html( newval );
-		} );
-	} );
-
-	wp.customize( 'filter_text', function( value ) {
-		value.bind( function( newval ) {
-			$( 'ul#filter p' ).html( newval );
-		} );
-	} );
 		
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( newval ) {

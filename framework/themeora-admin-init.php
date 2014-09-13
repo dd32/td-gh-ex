@@ -17,9 +17,9 @@ function themeora_admin_styles() {
         wp_enqueue_style('themeora-meta-css', THEMEORA_FRAMEWORK_CSS_URL . '/themeora-meta.css');
     }
     //DISPLAY ADMIN STYLESHEET IF TRUE (CUSTOM CSS TO MAKE THINGS LOOK A BIT BETTER)
-    if (themeora_theme_supports('primary', 'adminstyles')) {
-        wp_enqueue_style('themeora-admin-css', THEMEORA_FRAMEWORK_CSS_URL . '/themeora-admin.css');
-    }
+    //if (themeora_theme_supports('primary', 'adminstyles')) {
+        //wp_enqueue_style('themeora-admin-css', THEMEORA_FRAMEWORK_CSS_URL . '/themeora-admin.css');
+    //}
 }
 
 /* =================================================================== */

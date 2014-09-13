@@ -51,6 +51,7 @@ var themeoraApp = {
         $('#commentform #submit').addClass('btn btn-primary btn-lg');
         $('.post-password-form input[type="submit"]').addClass('btn btn-primary btn-lg');
         $('.search-form .search-submit').addClass('btn btn-success');
+        $('.wpcf7-submit').addClass('btn btn-success');
     }
 
 }

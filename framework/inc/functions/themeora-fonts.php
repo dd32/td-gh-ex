@@ -94,7 +94,7 @@ function themeora_enqueue_google_fonts($font) {
     $font = str_replace(" ", "+", $font);
 
     //CSS ENQUEUE
-    wp_enqueue_style("themeora-google-$font", "http://fonts.googleapis.com/css?family=$font", false, null, 'all');
+    wp_enqueue_style("themeora-google-$font", "https://fonts.googleapis.com/css?family=$font", false, null, 'all');
 }
 
 //END themeora_enqueue_google_fonts($font)

@@ -28,22 +28,6 @@
 <body <?php body_class(array('page-' . str_replace(' ','-', strtolower( wp_title('',false,'')) ) )); ?> data-spy="scroll" data-target="#nav-spy" data-offset="200">
 
 <div class="page-wrapper" data-scroll-speed="<?php echo !empty($themeora_options['themeora_scroll_speed']) ? $themeora_options['themeora_scroll_speed'] : '500' ?>">
-    <!--<div class="mask-color">
-        <div id="preview-area">
-            <div class="spinner">
-                <div class="spinner-text">
-                    <?php 
-                    if ( !empty($themeora_options['themeora_loading_text']) ) {
-                        echo $themeora_options['themeora_loading_text'];
-                    } 
-                    ?>
-                </div>
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-            </div>
-        </div>
-    </div>-->
-    
     <!-- BEGIN NAV -->
     <nav class="primary-navigation navbar" role="navigation">
         <div class="container">

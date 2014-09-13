@@ -37,8 +37,8 @@ a, .column, .columns, .widget, .widget input, .row, a.sidebar-advert img {
 /* =Primary header
 -------------------------------------------------------------- */
 
-header.primary-header {
-    
+header#primary-header {
+    text-align: center;
 }
 
 /* =Primary navigation
@@ -283,25 +283,39 @@ span.featured-post { /* for sticky posts */
 
 /* Quote Post formats */
 
-article.format-quote .quote-content {
-    padding: 30px 30px 10px 30px;
+.quote-content {
+    padding: 30px 30px 15px 30px;
+}
+
+article.format-quote .quote-content, 
+.format-quote p {
     text-align: left;
-    color: #fff;
-    font-size: 1.8em !important;
+    font-size: 32px !important;
+    line-height: 38px !important;
+    font-weight: 300 !important;
 }
 
-article.format-quote .quote-content,
-article.format-quote .quote-content blockquote,
-article.format-quote .quote-content blockquote p
-{
-    font-size: 18px !important;
-    line-height: 30px !important;
-}
 
-article.format-quote blockquote {
-    margin: 0 0 20px 0;
+.format-quote blockquote {
+    margin: 0 0 15px 0;
     border: none !important;
     padding: 0;
+}
+
+.format-quote strong, 
+.format-quote cite, 
+.format-quote blockquote strong, 
+.format-quote strong   {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    font-weight: 300 !important;
+    width: 100%;
+    margin-top: 20px;
+    color: #565656;
+}
+
+.quote-content a:hover {
+    text-decoration: none;
 }
 
 /* Image Post formats */
@@ -1287,6 +1301,15 @@ article iframe {
 
 /* bootstrap provides an awesome framework but we want our own look and feel. Override anything you need here */
 
+/* navbar */
+.container > .navbar-header, 
+.container-fluid > .navbar-header, 
+.container > .navbar-collapse, 
+.container-fluid > .navbar-collapse {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* buttons */
 .btn, 
 .btn:visited { /* the default button is the themes primary color */
@@ -1492,6 +1515,7 @@ input[type="color"],
     margin-bottom: 10px;
     padding: 15px 2%;
     vertical-align: middle;
+    border: 1px solid #ddd;
 }
 
 select:focus, 
@@ -1559,7 +1583,7 @@ blockquote cite {
 
 /* lists */
 
-/* we need to stop defualt styling on lists that use font awesome for icons. These can be set via shotcodes */
+/* we need to stop defualt styling on lists that use font awesome for icons.  */
 
 ul.font-awesome-list {
     list-style: none;

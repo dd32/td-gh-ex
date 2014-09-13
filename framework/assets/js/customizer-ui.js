@@ -48,18 +48,18 @@ jQuery(document).ready(function($) {
 /*===================================================================*/
 	function toolsDOC() 
 	{
-		themeoratools.append('<a id="tools_doc" class="button themeora-ui-button" href="http://docs.themethemeoras.com/macho" target="_blank" title="Access your theme help guide">Help Guide</a>');
+		themeoratools.append('<a id="tools_doc" class="button themeora-ui-button" href="" target="_blank" title="Access your theme help guide">Help Guide</a>');
 
-	}	toolsDOC();	
+	}	//toolsDOC();	
 
 /*===================================================================*/                						
 /*  HELP DOC LINK			                							
 /*===================================================================*/
 	function helloexpirationAPPD() 
 	{
-		helloexpiration.append(' <a id="expiration_help" class="info-link" href="http://help.themethemeoras.com/customer/portal/articles/1507733" target="_blank" >( ? )</a>');
+		helloexpiration.append(' <a id="expiration_help" class="info-link" href="" target="_blank" >( ? )</a>');
 
-	}	helloexpirationAPPD();	
+	}	//helloexpirationAPPD();	
 
 
 

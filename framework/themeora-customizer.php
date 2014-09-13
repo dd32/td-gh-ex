@@ -323,7 +323,7 @@ function Themeora_Customize_Register($wp_customize) {
                 )
         );
 
-        $wp_customize->add_setting('type_select_headings', array('default' => 'Source Sans Pro'));
+        $wp_customize->add_setting('type_select_headings', array('default' => ''));
         $wp_customize->add_control('type_select_headings', array(
             'type' => 'select',
             'label' => __('Header Font', 'themeora'),
@@ -633,7 +633,5 @@ CSS for Beginners: http://www.w3schools.com/css/
     $wp_customize->get_setting('img-upload-logo-width')->transport = 'postMessage';
     $wp_customize->get_setting('type_logo_size')->transport = 'postMessage';
     $wp_customize->get_setting('type_logo_lineheight')->transport = 'postMessage';
-    $wp_customize->get_setting('filter_text')->transport = 'postMessage';
-    $wp_customize->get_setting('filter_header')->transport = 'postMessage';
     $wp_customize->get_setting('footer_copyright')->transport = 'postMessage';
 }

@@ -11,7 +11,7 @@ function themeora_entry_meta($shorten = false) {
 	if ( is_sticky() && is_home() && ! is_paged() )
 		echo '<span class="featured-post">' . __( 'Sticky', THEMEORA_THEME_NAME ) . '</span>';
 
-	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() ) {
+	if ( 'post' == get_post_type() ) {
         echo '<div class="meta">';
             echo __('Posted on', THEMEORA_THEME_NAME) . ' ';
             echo get_the_time('jS') . ' ' . get_the_time('F') . ', ' . __('by', THEMEORA_THEME_NAME) . ' ' ;
@@ -20,7 +20,8 @@ function themeora_entry_meta($shorten = false) {
                 echo ' ' . __('in', THEMEORA_THEME_NAME) . ' '; 
                 the_category(', ') . ' ' ;
             }
-        echo '</div>';
+            ?>
+        <?php echo '</div>';
     }
 }
 
@@ -160,57 +161,14 @@ function themeora_paging() {
  * @return html for the post media
  */
 function themeora_post_media( $postId, $size = null ){
-    //check custom meta options for media settings
-    global $media_metabox;
-    //$meta = $media_metabox->the_meta();
-    $embed_url = isset($meta['media-url']) ? $meta['media-url'] : '';
-
-    $has_gallery = false;
-    if ( isset($meta['gallery']) ) {
-        $has_gallery = true;
-    }
-    
     //check for a featured image
-    if ( has_post_thumbnail( $postId ) && get_post_format($postId) != "gallery" ) : ?>
+    if ( has_post_thumbnail( $postId ) ) : ?>
         <div class="featured-image">
             <?php if ( is_single() ) : ?>
                 <?php echo get_the_post_thumbnail( $postId, $size ); ?>
             <?php else : ?>
                 <a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $postId, $size ); ?></a>
             <?php endif; ?>
-        </div>
-    <?php endif; ?>
-    
-    <?php  //if audio or video and no featured image is set, show the audio / video embed
-    if ( $embed_url != '' && !has_post_thumbnail( $postId ) ) : ?>
-        <?php if ( get_post_format($postId) == "video" || get_post_format($postId) == "audio" ) : ?>
-            <div class="featured-media">
-                <div class="<?php get_post_format($postId) == "video" ? print "embed-container" : '' ?>">
-                <?php
-                    //run the oEmbed process from Wordpres
-                    if ( isset($GLOBALS['wp_embed'] ))
-                        $media = $GLOBALS['wp_embed']->autoembed($embed_url);
-                        echo do_shortcode( $media );
-                ?>
-                </div>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
-    
-    <?php 
-    //if gallery check for gallery
-    if ( $has_gallery && get_post_format($postId) == "gallery") : ?>
-        <div class="featured-gallery">
-            <ul>
-                <?php while($media_metabox->have_fields('gallery')) : ?>
-                    <?php $image_url = $media_metabox->get_the_value('gallery_img_url'); ?>
-                    <li><img src="<?php echo $image_url ?>" alt="" /></li>
-                <?php endwhile; ?>
-            </ul>
-            <div class="featured-gallery-nav">
-                <a href="#" class="galleryNextItem"><i class="fa fa-angle-right"></i></a>
-                <a href="#" class="galleryPrevItem"><i class="fa fa-angle-left"></i></a>
-            </div>
         </div>
     <?php endif; ?>
 <?php
@@ -230,6 +188,8 @@ function themeora_load_content( $post ){
     //load the content for galleries
     elseif ( get_post_format($post) == "gallery" )
         include 'content-gallery.php';
+    elseif ( get_post_format($post) == "link" )
+        include 'content-link.php';
     //load content for any other post type
     else
         include 'content-standard.php';
@@ -296,6 +256,25 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
         </div><!-- end container -->
     </div><!-- end main-content-area -->
 <?php }
+
+/**
+ * Return the post URL.
+ *
+ * @uses get_url_in_content() to get the URL in the post meta (if it exists) or
+ * the first link found in the post content.
+ *
+ * Falls back to the post permalink if no URL is found in the post.
+ *
+ * @since Twenty Thirteen 1.0
+ *
+ * @return string The Link format URL.
+ */
+function themeora_get_link_url() {
+	$content = get_the_content();
+	$has_url = get_url_in_content( $content );
+
+	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+}
 
 /* Add retina support
 ------------------------------------------------------------------------------ */

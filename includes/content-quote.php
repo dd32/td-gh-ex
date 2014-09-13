@@ -6,12 +6,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-teaser styled-box'); ?>>
-    <?php 
-    //load the post media depending on what kinf of post it is
-    themeora_post_media( $post, 'thumbnail-span-8' ); 
-    ?>
+    <?php themeora_post_media( $post, 'thumbnail-span-8' ); ?>
     
-    <div class="quote-content primary-background">
+    <div class="quote-content">
         <?php if ( is_single() ) : ?>
             <?php 
             echo the_content(); 

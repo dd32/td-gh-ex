@@ -14,7 +14,7 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 add_theme_support( 'custom-background' );
-add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'quote', 'video' ) );
+add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'quote', 'video', 'link' ) );
 
 $defaults = array(
 	'default-image'          => '',
@@ -37,7 +37,7 @@ add_theme_support( 'custom-header', $defaults );
 ------------------------------------------------------------------------------ */
 
 if ( ! isset( $content_width ) ) $content_width = 1170;
-set_post_thumbnail_size( 740, 400, true ); //this is wide enough for 8 cols of the bootstrap grid system
+set_post_thumbnail_size( 750, 500, true ); //this is wide enough for 8 cols of the bootstrap grid system
 /* add custom image sizes */
 add_image_size( 'thumbnail-span-4', 360, 190, true ); //spans 4 cols of the bootstrap grid
 add_image_size( 'single-post-thumbnail', 750, 9999 );
