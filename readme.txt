@@ -5,6 +5,11 @@ Aplos is a simple, clean and responsive theme meant for personal blogs, featurin
 
 A good portion of the basic functionality is based on code found in the underscores theme (http://underscores.me/).
 
+Fonts license
+--------------
+
+Bebas Neue font is licensed under the SIL Open Font License, Version 1.1
+This license, with FAQ, is availabe at http://scripts.sil.org/OFL
 
 Install Steps
 --------------
@@ -33,22 +38,3 @@ Change post title fonts:
 2. Click on the 'Fonts' section from the available menu
 3. Select either the theme default font or Verdana from the drop-down menu (Verdana is recommended if using characters not in the Latin alphabet)
 4. Save changes
-
-
-Changelog
---------------
-
-= 1.1.0 =
-* Added fonts choices for posts titles (addresses the issue of Bebas font not containing many characters found in foreign languages)
-* Added Theme URI
-* Reworked responsive styling to look and work much better on tablets and mobile devices
-* Changed layout choices to "Two Columns" and "Three Columns" to better reperesent design
-* Made the theme translation ready
-* Properly filtered the wp_title function in compliance with Wordpress standards
-* Properly escaped home_url in header
-* Fixed issue where customizable layout values initialize with no values and break layout design
-* Added more padding around comments
-* Fixed minor typo on 404 page
-
-= 1.0.0 =
-* Initial release
