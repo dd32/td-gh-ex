@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: selfie\n"
-"POT-Creation-Date: 2014-07-15 02:18+0600\n"
-"PO-Revision-Date: 2014-07-15 02:18+0600\n"
+"POT-Creation-Date: 2014-09-13 20:44+0600\n"
+"PO-Revision-Date: 2014-09-13 20:44+0600\n"
 "Last-Translator: support@d5creation.com\n"
 "Language-Team: D5 Creation <support@d5creation.com>\n"
 "Language: en\n"
@@ -63,6 +63,10 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
+#: ../front-page.php:21
+msgid "Learn More"
+msgstr ""
+
 #: ../functions.php:26
 msgid "Main Menu"
 msgstr ""
@@ -119,15 +123,15 @@ msgstr ""
 msgid "Footer Area One"
 msgstr ""
 
-#: ../functions.php:203
+#: ../functions.php:202
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../functions.php:213
+#: ../functions.php:211
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../functions.php:224
+#: ../functions.php:221
 msgid "Footer Area Four"
 msgstr ""
 
@@ -179,8 +183,8 @@ msgstr ""
 #: ../inc/options.php:28
 msgid ""
 "is a Revolutionary One Page Theme with Hundreds of Features and "
-"Opportunities including Slides, Portfolio, Gallery, Services, Videos etc for "
-"Self Hosted WordPress Sites. Try"
+"Opportunities including Slides, Portfolio, Gallery, Services, Videos, Color "
+"Changing etc for Self Hosted WordPress Sites. Try"
 msgstr ""
 
 #: ../inc/options.php:28
@@ -199,11 +203,38 @@ msgstr ""
 msgid "Set Your Contact Number"
 msgstr ""
 
-#: ../inc/options.php:42
+#: ../inc/options.php:40
+msgid "Banner Image"
+msgstr ""
+
+#: ../inc/options.php:41
+msgid ""
+"Upload an image for the Front Page Banner. 2000px X 900px image is "
+"recommended. If you do not want to show anything here leave the box blank."
+msgstr ""
+
+#: ../inc/options.php:48
+msgid "Front Page Heading"
+msgstr ""
+
+#: ../inc/options.php:49
+msgid "Input your heading text here.  Please limit it within 30 Letters."
+msgstr ""
+
+#: ../inc/options.php:56
+msgid "Front Page Heading Description"
+msgstr ""
+
+#: ../inc/options.php:57
+msgid ""
+"Input your heading description here. Please limit it within 100 Letters."
+msgstr ""
+
+#: ../inc/options.php:66
 msgid "Social Link - "
 msgstr ""
 
-#: ../inc/options.php:43
+#: ../inc/options.php:67
 msgid ""
 "Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
 "d5creation</b>.  If you do not want to show anything here leave the box "

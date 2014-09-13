@@ -192,7 +192,6 @@ function selfie_creditline () {
 	register_sidebar( array(
 		'name' => __('Footer Area One', 'selfie'), 
 		'id' => 'sidebar-3',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -202,7 +201,6 @@ function selfie_creditline () {
 	register_sidebar( array(
 		'name' =>  __('Footer Area Two', 'selfie'), 
 		'id' => 'sidebar-4',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -212,7 +210,6 @@ function selfie_creditline () {
 	register_sidebar( array(
 		'name' => __('Footer Area Three', 'selfie'), 
 		'id' => 'sidebar-5',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -223,7 +220,6 @@ function selfie_creditline () {
 	register_sidebar( array(
 		'name' => __('Footer Area Four', 'selfie'), 
 		'id' => 'sidebar-6',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',

@@ -1,7 +1,7 @@
 ----------------------------------
 Selfie
 ----------------------------------
-Version: 	1.01
+Version: 	1.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -15,31 +15,24 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 
 
 
-License of the Images used in the screenshot.png
+License of the Images used : 
 ----------------------------------------------------
-1. 	Author:		PublicDomainPictures
+1. 	Author:		Mariamichelle
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/beautiful-young-girl-women-lay-71493
+	Source:		http://pixabay.com/en/oia-santorini-greece-sunset-island-416136/
 
-2. 	Author:		eliasfalla
+2. 	Author:		Ben_Kerckx
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girl-joy-smiling-face-model-206146
+	Source:		http://pixabay.com/en/wine-glass-holiday-parasol-391674/
 
-3. 	Author:		jura-photography
+3. 	Author:		dMz
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/sensual-sexy-glamur-fashion-beauty-239447
+	Source:		http://pixabay.com/en/santorini-sea-greece-stairs-home-360216/
 
-4. 	Author:		Andi_Graf
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/woman-young-laugh-happy-good-mood-314142
 
-5. 	Author:		serdze85
+4. 	Author:		danigeza
 	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/beauty-woman-flowered-hat-cap-354565
-
-6. 	Author:		Unsplash
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/girl-hay-bale-woman-summer-349535 
+	Source:		http://pixabay.com/en/hand-phone-red-174283/
 
 
 Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
@@ -51,6 +44,13 @@ No Sub Menus will be shown in the Top Menu
 You can set your Social Page Links and the Top Phone Number from Appearance > Selfie Options
 
 
+Changelog
+==================
+
+Version 1.2
+___________________
+- Extra Features added, Banner Image, Banner Heading
+- Some Images changed
 
 
 

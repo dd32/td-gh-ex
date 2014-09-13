@@ -25,7 +25,7 @@ function optionsframework_options() {
 		
 	$options[] = array(
 		'desc' => '<div class="infohead"><span class="donation">'. __('If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our', 'selfie') . ' <a href="'.$selfie_author_uri.'donate/" target="_blank"><strong>' . __('DONATION PAGE', 'selfie').'</strong></a> '. __('and Take your decision.', 'selfie').'</span><br /><br /><span class="donation"> '.__('We appreciate an', 'selfie').' <a href="http://wordpress.org/support/view/theme-reviews/selfie" target="_blank">'. __('Honest Review', 'selfie').'</a> '. __('of this Theme if you Love our Work.', 'selfie').'</span><br /> 
-		<span class="donation">Selfie Extend '.__('is a Revolutionary One Page Theme with Hundreds of Features and Opportunities including Slides, Portfolio, Gallery, Services, Videos etc for Self Hosted WordPress Sites. Try', 'selfie').' <a href="'.$selfie_theme_uri.'" target="_blank"><strong>Selfie Extend</strong></a>.</span><br /> <br /><span class="donation"> '.__('You can Visit the', 'selfie').' Selfie Extend <a href="http://demo.'.$selfie_author_uri_clean.'/themes/?theme=Selfie" target="_blank"><strong>'.__('Demo Here', 'selfie').'</strong></a>.</span><a href="'.$selfie_theme_uri.'" target="_blank" class="extendlink"> </a></div>',
+		<span class="donation">Selfie Extend '.__('is a Revolutionary One Page Theme with Hundreds of Features and Opportunities including Slides, Portfolio, Gallery, Services, Videos, Color Changing etc for Self Hosted WordPress Sites. Try', 'selfie').' <a href="'.$selfie_theme_uri.'" target="_blank"><strong>Selfie Extend</strong></a>.</span><br /> <br /><span class="donation"> '.__('You can Visit the', 'selfie').' Selfie Extend <a href="http://demo.'.$selfie_author_uri_clean.'/themes/?theme=Selfie" target="_blank"><strong>'.__('Demo Here', 'selfie').'</strong></a>.</span><a href="'.$selfie_theme_uri.'" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
 
 	$options[] = array(
@@ -35,6 +35,30 @@ function optionsframework_options() {
 		'std' => '(000) 111-222',
 		'type' => 'text',
 		'class' => 'mini');	
+		
+	$options[] = array(
+		'name' => __('Banner Image', 'selfie'),
+		'desc' => __('Upload an image for the Front Page Banner. 2000px X 900px image is recommended. If you do not want to show anything here leave the box blank.', 'selfie'), 
+		'id' => 'banner-image',
+		'std' => get_template_directory_uri() . '/images/banner-image.jpg',
+		'type' => 'upload');
+		
+
+	$options[] = array(
+		'name' => __('Front Page Heading', 'selfie'), 
+		'desc' => __('Input your heading text here.  Please limit it within 30 Letters.', 'selfie'), 
+		'id' => 'heading_text1',
+		'std' => 'WordPress is web <em>software you can use to create websites!</em> ',
+		'type' => 'text' );
+		
+	
+	$options[] = array(
+		'name' => __('Front Page Heading Description', 'selfie'), 
+		'desc' => __('Input your heading description here. Please limit it within 100 Letters.', 'selfie'), 
+		'id' => 'heading_des1',
+		'std' => 'It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to power the place on the web.',
+		'type' => 'text');
+	
 		
 	foreach (range(1, 5 ) as $numslinksn) {
 		
