@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MultiColors version 1.5 - september 2014 
+- fixed bug in editor styles
+
 MultiColors version 1.4 - august 2014 
 - first stable release
 
