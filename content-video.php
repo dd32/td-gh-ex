@@ -9,14 +9,14 @@
 				<?php if (strpos($video_url,'.mp4') !== false) : ?>
 					
 					<video controls>
-					  <source src="<?php echo $video_url; ?>" type="video/mp4">
+					  <source src="<?php echo esc_url( $video_url); ?>" type="video/mp4">
 					</video>
 																			
 				<?php else : ?>
 					
 					<?php 
 					
-						$embed_code = wp_oembed_get($video_url); 
+						$embed_code = wp_oembed_get( $video_url ); 
 						
 						echo $embed_code;
 						

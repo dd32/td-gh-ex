@@ -273,12 +273,8 @@ function fukasawa_flexslider($size) {
 			<ul class="slides">
 	
 				<?php foreach($images as $image) { 
-					
-					$default_attr = array(
-						'alt'   => trim(strip_tags( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) )),
-					);
 				
-					$attimg = wp_get_attachment_image($image->ID, $size, $default_attr); ?>
+					$attimg = wp_get_attachment_image($image->ID, $size); ?>
 					
 					<li>
 						<?php echo $attimg; ?>
@@ -376,8 +372,8 @@ endif;
 
 
 // Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add() {
+add_action( 'add_meta_boxes', 'fukasawa_cd_meta_box_add' );
+function fukasawa_cd_meta_box_add() {
 	add_meta_box( 'post-video-url', __('Video URL', 'fukasawa'), 'fukasawa_cd_meta_box_video_url', 'post', 'side', 'high' );
 }
 
