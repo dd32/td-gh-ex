@@ -1,12 +1,12 @@
 <?php if ( of_get_option('digital_latest' ) =='1') { ?>
 <div class="productlist"><?php echo'<div class="posthd">'; digital_tiltechange(); echo'</div>';?>
 <?php 
-$args = array( 
+$digital_argsl = array( 
  'ignore_sticky_posts' => true,
  'showposts' => of_get_option( 'digital_latestpostnumber'),
  'cat' => of_get_option( 'select_categories', '1' ),
 'orderby' => 'date',  );
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query( $digital_argsl );
  if ( $the_query->have_posts() ) :
 while ( $the_query->have_posts() ) : $the_query->the_post();
 			 ?>
@@ -32,12 +32,12 @@ while ( $the_query->have_posts() ) : $the_query->the_post();
 <?php if ( of_get_option('digital_latest2' ) =='1') { ?>
 			<div class="productlist"><?php echo'<div class="posthd2">'; digital_tiltechange2(); echo'</div>';?>
 <?php 
-$args = array( 
+$digitalargs = array( 
  'ignore_sticky_posts' => true,
  'showposts' => of_get_option( 'digital_latestpostnumber2'),
  'cat' => of_get_option( 'select_categories2', '1' ),
 'orderby' => 'date',  );
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query( $digitalargs );
  if ( $the_query->have_posts() ) :
 while ( $the_query->have_posts() ) : $the_query->the_post();
 			 ?>

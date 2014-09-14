@@ -3,7 +3,8 @@ define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 
 include_once('baztro.php');
-add_theme_support( 'woocommerce' );
+include_once('includes/installs.php');
+include_once('includes/core/core.php');
 function digital_scripts() {
 		wp_enqueue_style( 'digital-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'digital-nivo-slider', get_template_directory_uri() . '/js/nivo.slider.js', array('jquery') );
@@ -102,30 +103,33 @@ function digital_theme_setup() {
 		add_image_size( 'popularpost', 75, 75 , true );
 		add_image_size( 'latestpost', 125, 120 , true );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
-	  add_editor_style();
+		add_editor_style();
 	  
-// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'digital_custom_background_args', array(
+		// Setup the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'digital_custom_background_args', array(
 		'default-color' => 'f7f7f7',
 		'default-image' => '',
-	) ) );
+			) ) );
 	
         add_theme_support('automatic-feed-links');
-		}
+		
 		// This theme uses wp_nav_menu() location.
 		register_nav_menus(
 			array(
- 				'digital-navigation' => __('Navigation', 'digital'),
- 				'primary' => __('Primary', 'digital'),
+ 				'primary' => __('Top Navigation', 'digital'),
+				'digital-navigation' => __('Navigation', 'digital'),
 				)		
-		);
+				);
 		
 		global $content_width;
 		if ( ! isset( $content_width ) ) {
 		$content_width = 670;
+		}
+		//woocommerce theme support
+		add_theme_support( 'woocommerce' );
+		
 	}
-	
-	add_action( 'after_setup_theme', 'digital_theme_setup' );
+add_action( 'after_setup_theme', 'digital_theme_setup' );
 
 /* Excerpt ********************************************/
 

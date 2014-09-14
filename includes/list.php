@@ -8,7 +8,7 @@
 } ?>
 	</div>			<div class="entry">
 <?php digital_excerpt('digital_excerptlength_index', 'digital_excerptmore'); ?>
-			</div><a href="<?php the_permalink(); ?>"><span class="readmore">Continue reading &raquo;</span></a>
+			</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'digital'); ?></span></a>
 	</article>
 <?php else : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,7 +16,7 @@
 			
 		<div class="entry">
 		<?php digital_excerpt('digital_excerptlength_index', 'digital_excerptmore'); ?>
-		</div><a href="<?php the_permalink(); ?>"><span class="readmore">Continue reading &raquo;</span></a>
+		</div><a href="<?php the_permalink(); ?>"><span class="readmore"><?php _e('Continue reading &raquo;', 'digital'); ?></span></a>
 	</article>
 <?php endif; ?>
 <span class="postmeta_box">

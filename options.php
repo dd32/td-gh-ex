@@ -399,7 +399,7 @@ $options[] = array(
 
 		
 $options[] = array(
-		'name' => __('Advance Options', 'digital'),
+		'name' => __('Advance (Pro Only)', 'digital'),
 		'type' => 'heading');
 				
 		$options[] = array(
@@ -461,8 +461,8 @@ $options[] = array(
 						));
 
 		$options[] = array(
-		'name' => __('Post Hover Effect', 'wrockmetro'),
-		'desc' => __('Show or Hide post hover effect on every post .', 'wrockmetro'),
+		'name' => __('Post Hover Effect', 'digital'),
+		'desc' => __('Show or Hide post hover effect on every post .', 'digital'),
 		'id' => 'digital_countinue',
 		'std' => 'on',
 		'type' => 'radio',
@@ -478,7 +478,7 @@ $options[] = array(
 		'type' => 'info');
 				
 		$options[] = array(	
-		'name' => __('Top Menu Colors Customize', 'digital'),
+		'name' => __('Top Menu Color Customize', 'digital'),
 		'desc' => __('Top menu background.', 'digital'),
 		'id' => 'digital_botborder',
 		'std' => '#303030',
@@ -496,7 +496,7 @@ $options[] = array(
 		'type' => 'color' );
 		
 		$options[] = array(
-		'name' => __('Main Navigation Colors Customize', 'digital'),
+		'name' => __('Main Navigation Color Customize', 'digital'),
 		'desc' => __('Main Navigation Background.', 'digital'),
 		'id' => 'digital_mainnavibg',
 		'std' => '#424242',
@@ -566,7 +566,7 @@ $options[] = array(
 		
 		$options[] = array(
 		'name' => __('Edit Categories & date/author stamp from thumbnail', 'digital'),
-		'desc' => __('Show or Hode Date & Author Stamp from Thumbnail in index and other archive pages .', 'digital'),
+		'desc' => __('Show or Hide Date & Author Stamp from Thumbnail in index and other archive pages .', 'digital'),
 		'id' => 'digital_authstamp',
 		'std' => 'on',
 		'type' => 'radio',
@@ -576,7 +576,7 @@ $options[] = array(
 						));
 		
 		$options[] = array(				
-		'desc' => __('Show or Hode Categories Button from Thumbnail in index and other archive pages .', 'digital'),
+		'desc' => __('Show or hide Categories Button from Thumbnail in index and other archive pages .', 'digital'),
 		'id' => 'digital_homecat',
 		'std' => 'on',
 		'type' => 'radio',
@@ -665,7 +665,7 @@ $options[] = array(
 						));
 		$options[] = array(
 		'name' => __('Show or Hide Copy Right Text', 'digital'),
-		'desc' => __('Show or Hode Copyright Text and Link.', 'digital'),
+		'desc' => __('Show or hide Copyright Text and Link.', 'digital'),
 		'id' => 'digital_copyright',
 		'std' => 'on',
 		'type' => 'radio',

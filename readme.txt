@@ -36,8 +36,14 @@ Custom Css:
 
 == Change log ==
 
+= 1.0.3 =
+*Fixed comment.php file security issue
+*Calendar widger css updated
+*Fixed some minor issue
+*Theme install note added
+
 = 1.0.2 =
-*Fixed theme repoted issue
+*Fixed theme reported issue
 
 = 1.0.1 =
 *Initial Release @ 1.0
