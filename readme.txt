@@ -9,8 +9,8 @@ Esteem is a clean multipurpose responsive WordPress theme designed to fit busine
 Resources packed within the theme. 
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
-* Images in the screenshot is from http://wefunction.com/free-high-res-photos/ link: 
-	http://wefunction.com/wordpress/wp-content/uploads/2013/09/003.jpg
+* Image in the screenshot is under CC0 License from http://www.pexels.com/photo/1402/ link: 
+	http://static.pexels.com/wp-content/uploads/2014/06/evening-lake-people-1402.jpg
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -43,6 +43,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+
+= Version 1.1 =
+* Testimonial bug fixed.
+* Screenshot changed.
 
 = Version 1.0 =
 * All brand new.

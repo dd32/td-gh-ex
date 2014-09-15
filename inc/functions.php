@@ -88,7 +88,12 @@ function esteem_sidebar_select() {
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, '_esteem_layout', true ); }
 	
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true ); 
+	}
+	
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$esteem_default_layout = of_get_option( 'esteem_default_layout', 'right_sidebar' );
 
 	$esteem_default_page_layout = of_get_option( 'esteem_pages_default_layout', 'right_sidebar' );
@@ -121,8 +126,13 @@ function esteem_body_class( $classes ) {
 	global $post;
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, '_esteem_layout', true ); }
+	
+	if( is_home() ) {
+		$queried_id = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true ); 
+	}
 
-	if( empty( $layout_meta ) || is_archive() || is_search() || is_home() ) { $layout_meta = 'default_layout'; }
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$esteem_default_layout = of_get_option( 'esteem_default_layout', 'right_sidebar' );
 
 	$esteem_default_page_layout = of_get_option( 'esteem_pages_default_layout', 'right_sidebar' );

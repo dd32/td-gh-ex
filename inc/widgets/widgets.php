@@ -544,7 +544,7 @@ class esteem_testimonial_widget extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('image1'); ?>"><?php _e( 'Image link:', 'esteem' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('image1'); ?>" name="<?php echo $this->get_field_name('image1'); ?>" type="text" value="<?php echo esc_attr($image1); ?>" /></p>
 
-		<?php _e( 'Testimonial Description1','esteem'); ?>
+		<?php _e( 'Testimonial Description','esteem'); ?>
 		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text1'); ?>" name="<?php echo $this->get_field_name('text1'); ?>"><?php echo $text1; ?></textarea>
 
 		<p><label for="<?php echo $this->get_field_id('byline1'); ?>"><?php _e( 'Byline:', 'esteem' ); ?></label>
@@ -562,8 +562,8 @@ class esteem_testimonial_widget extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('image2'); ?>"><?php _e( 'Image link:', 'esteem' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('image2'); ?>" name="<?php echo $this->get_field_name('image2'); ?>" type="text" value="<?php echo esc_attr($image2); ?>" /></p>
 
-		<?php _e( 'Testimonial Description1','esteem'); ?>
-		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text2'); ?>" name="<?php echo $this->get_field_name('text2'); ?>"><?php echo $text1; ?></textarea>
+		<?php _e( 'Testimonial Description','esteem'); ?>
+		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text2'); ?>" name="<?php echo $this->get_field_name('text2'); ?>"><?php echo $text2; ?></textarea>
 
 		<p><label for="<?php echo $this->get_field_id('byline2'); ?>"><?php _e( 'Byline:', 'esteem' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('byline2'); ?>" name="<?php echo $this->get_field_name('byline2'); ?>" type="text" value="<?php echo esc_attr($byline2); ?>" /></p>
