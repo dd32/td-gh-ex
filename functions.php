@@ -118,7 +118,7 @@ function anarcho_widgets_footer_init() {
 	register_sidebar(array(
 			'name' => __('Footer Area 1', 'anarcho-notepad'),
 			'id' => 'footer-1',
-			'description' => __('Widgets in this area will be shown left.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown first.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -127,7 +127,7 @@ function anarcho_widgets_footer_init() {
 		register_sidebar(array(
 			'name' => __('Footer Area 2', 'anarcho-notepad'),
 			'id' => 'footer-2',
-			'description' => __('Widgets in this area will be shown center.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown second.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -136,7 +136,7 @@ function anarcho_widgets_footer_init() {
 		register_sidebar(array(
 			'name' => __('Footer Area 3', 'anarcho-notepad'),
 			'id' => 'footer-3',
-			'description' => __('Widgets in this area will be shown right.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown third.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',

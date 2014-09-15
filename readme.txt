@@ -116,7 +116,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : class aligncenter.
                          fixed : many more minor fixes and changes.
     2.17   (2014.9.12) - added : widget areas in the footer.
-
+    2.18   (2014.9.15) - fixed : widget areas in the footer.
 
 == Contact & Issues for Anarcho Notepad ==
 
