@@ -4,7 +4,7 @@ Theme URI: http://woothemes.com/storefront
 Author: WooThemes
 Author URI: http://woothemes.com
 Description: Storefront is the perfect theme for your next eCommerce project. Designed and developed by WooThemes, it features a deep integration with their market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storefront
@@ -139,11 +139,9 @@ a img {
   0%, 100% {
     -webkit-transform: translateX(0);
     transform: translateX(0); }
-
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: translateX(-10px);
     transform: translateX(-10px); }
-
   20%, 40%, 60%, 80% {
     -webkit-transform: translateX(10px);
     transform: translateX(10px); } }
@@ -152,12 +150,10 @@ a img {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0); }
-
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: translateX(-10px);
     -ms-transform: translateX(-10px);
     transform: translateX(-10px); }
-
   20%, 40%, 60%, 80% {
     -webkit-transform: translateX(10px);
     -ms-transform: translateX(10px);
@@ -170,7 +166,7 @@ a img {
  * Global styles
  */
 body {
-  background-color: #fcfcfc; }
+  background-color: #FCFCFC; }
 
 /**
  * Header
@@ -182,6 +178,9 @@ body {
   background-position: center center; }
   .site-header .site-logo-anchor {
     display: block; }
+    .site-header .site-logo-anchor img {
+      max-height: 2.618em;
+      width: auto; }
   .site-header .site-branding,
   .site-header .site-logo-anchor {
     margin-bottom: 1.618em; }
@@ -195,7 +194,8 @@ body {
   .site-branding h1 a {
     font-weight: 700; }
 .site-branding .site-description {
-  font-size: .857em; }
+  font-size: .857em;
+  display: none; }
 
 /**
  * Footer
@@ -674,7 +674,8 @@ fieldset {
     .site-header .site-branding img,
     .site-header .site-logo-anchor img {
       height: auto;
-      max-width: 100%; }
+      max-width: 100%;
+      max-height: none; }
 
   .woocommerce-active .site-header .secondary-navigation {
     display: block;
@@ -721,8 +722,9 @@ fieldset {
     margin-left: 0;
     margin-bottom: 0; }
 
-  .site-description {
-    margin-bottom: 0; }
+  .site-branding .site-description {
+    margin-bottom: 0;
+    display: block; }
 
   .site-branding,
   .site-search,
@@ -901,6 +903,9 @@ fieldset {
 /**
  * General Menu Styles
  */
+.main-navigation {
+  clear: both; }
+
 .secondary-navigation {
   display: none; }
 
@@ -909,8 +914,12 @@ fieldset {
   margin: 1.618em auto;
   display: block;
   width: 100%;
-  text-align: left;
-  padding: 1.387em 1.618em; }
+  text-align: left; }
+  .menu-toggle:before {
+    font-family: "FontAwesome";
+    font-weight: 400;
+    content: "\f0c9";
+    margin-right: .53em; }
 
 .menu-toggle,
 .main-navigation.toggled .nav-menu {
@@ -920,8 +929,11 @@ fieldset {
   display: none;
   margin-left: 0;
   list-style: none; }
+  .main-navigation ul ul {
+    display: block;
+    margin-left: 1.387em; }
   .main-navigation ul li a {
-    padding: 1em 1.618em;
+    padding: .857em 1.387em;
     display: block; }
     .main-navigation ul li a:before {
       font-family: "FontAwesome";
@@ -948,7 +960,7 @@ fieldset {
       .secondary-navigation ul li {
         position: relative;
         display: inline-block;
-        float: left; }
+        text-align: left; }
         .main-navigation ul li a,
         .secondary-navigation ul li a {
           display: block; }
@@ -1004,7 +1016,8 @@ fieldset {
       line-height: 1; }
     .main-navigation ul.menu ul,
     .main-navigation ul.nav-menu ul {
-      background-color: #2c2d33; }
+      background-color: #2c2d33;
+      margin-left: 0; }
       .main-navigation ul.menu ul li,
       .main-navigation ul.nav-menu ul li {
         background-color: rgba(0, 0, 0, 0.025); }
@@ -1378,11 +1391,15 @@ object {
   margin-bottom: 4.236em;
   clear: both;
   padding: 1.618em;
-  background-color: rgba(0, 0, 0, 0.0125); }
+  background-color: rgba(0, 0, 0, 0.0125);
+  border-top: 0.236em solid rgba(0, 0, 0, 0.025); }
   #respond .comment-form-author input,
   #respond .comment-form-email input,
   #respond .comment-form-url input {
     width: 100%; }
+  #respond .form-submit,
+  #respond form {
+    margin-bottom: 0; }
 
 @media screen and (min-width: 768px) {
   .comment-list:after {
@@ -1432,13 +1449,8 @@ object {
     .comment-list #respond .comment-form-author,
     .comment-list #respond .comment-form-email,
     .comment-list #respond .comment-form-url {
-      width: 30.75%;
-      margin-right: 3.8%;
-      float: left; }
-    .comment-list #respond .comment-form-url {
+      width: 100%;
       margin-right: 0; }
-    .comment-list #respond .comment-form-comment {
-      clear: both; }
   .comment-list .reply {
     clear: both; }
   .comment-list ol.children {
@@ -1581,7 +1593,18 @@ object {
             margin-right: 4%;
             margin-right: 0; }
           .comment-list ol.children ol.children ol.children ol.children #respond {
-            float: right; } }
+            float: right; }
+
+  #respond .comment-form-author,
+  #respond .comment-form-email,
+  #respond .comment-form-url {
+    width: 30.75%;
+    margin-right: 3.8%;
+    float: left; }
+  #respond .comment-form-url {
+    margin-right: 0; }
+  #respond .comment-form-comment {
+    clear: both; } }
 /**
  * Widgets
  */

@@ -18,17 +18,18 @@
 	} );
 	wp.customize( 'storefront_text_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'body' ).css( 'color', to );
+			$( 'body, .widget-area .widget a' ).css( 'color', to );
 		} );
 	} );
 	wp.customize( 'storefront_heading_color', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6' ).css( 'color', to );
+			$( '.hentry .entry-header' ).css( 'border-color', to );
 		} );
 	} );
 	wp.customize( 'storefront_header_text_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'p.site-description, ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li a' ).css( 'color', to );
+			$( 'p.site-description, ul.menu li.current-menu-item > a, .secondary-navigation ul.menu li a, .secondary-navigation ul.menu a, .site-header-cart .widget_shopping_cart, .site-header .product_list_widget li .quantity' ).css( 'color', to );
 		} );
 	} );
 	wp.customize( 'storefront_header_link_color', function( value ) {
