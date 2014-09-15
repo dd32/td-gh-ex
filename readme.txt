@@ -60,6 +60,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.15
+* Theme Screenshot Changed
+* About AccessPress Theme Tab content Updated
+* Alt tag added to slider Images
+
 Version 2.14
 * Welcome Image text Changed with own building
 * Option to show/hide event date added

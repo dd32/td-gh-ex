@@ -413,7 +413,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 						?>
 						<div class="slides">
 							
-								<img src="<?php echo $image[0]; ?>">
+								<img alt="<?php echo get_the_title(); ?>" src="<?php echo $image[0]; ?>">
 								
 								<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 								<div class="slider-caption">
@@ -445,7 +445,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					?>
 					<div class="slides">
 							
-						<img src="<?php echo $image[0]; ?>">
+						<img alt="<?php echo get_the_title(); ?>" src="<?php echo $image[0]; ?>">
 								
 						<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 						<div class="slider-caption">

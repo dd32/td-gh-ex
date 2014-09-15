@@ -1025,7 +1025,7 @@ function accesspresslite_theme_options_page() {
 
 			<!-- About Accesspress Lite -->
 			<div id="options-group-7" class="group" style="display: none;">
-			<h3><?php _e('Know more about AccessPress Lite','accesspresslite'); ?></h3>
+			<h3><?php _e('Know more about AccessPress Themes','accesspresslite'); ?></h3>
 				<table class="form-table">
 					<tr>
 					<td colspan="2">
@@ -1040,8 +1040,36 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 <p><?php _e('Check out Premium version of AccessPress Lite','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>">here</a></p>	
 
 <p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-<p><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/contact/'); ?>">Contact us</a> for Direct support</p>				
-					</td>
+
+<hr />
+
+<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
+
+<p>
+<?php _e('If you’ve any question/feedback, please get in touch:','accesspresslite'); ?><br/>
+<?php _e('General enquiries:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
+<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
+<?php _e('Sales:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>
+</p>
+
+<hr />
+
+<h4><?php _e('Get social','accesspresslite'); ?></h4>
+
+<p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
+
+<p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
+<iframe style="border: none; overflow: hidden; width: 600px; height: 150px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=600&amp;height=150&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="600" height="150" frameborder="0" scrolling="no"></iframe>
+
+<hr />
+
+<h4><?php _e('Other social profiles:','accesspresslite'); ?></h4>
+<p><?php _e('Google+:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://plus.google.com/106385805875992204629/'); ?>">https://plus.google.com/106385805875992204629/</a><br/>
+<?php _e('Pinterest:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://www.pinterest.com/accesspresswp/'); ?>">http://www.pinterest.com/accesspresswp/</a><br/>
+<?php _e('Flicker:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.flickr.com/photos/accesspressthemes/'); ?>">https://www.flickr.com/photos/accesspressthemes/</a><br/>
+<?php _e('Twitter:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://twitter.com/apthemes'); ?>">https://twitter.com/apthemes</a>
+</p>		
+</td>
 					</tr>
 				</table>
 			</div>

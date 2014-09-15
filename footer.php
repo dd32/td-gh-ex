@@ -69,11 +69,11 @@
 		
 		<div id="bottom-footer">
 		<div class="ak-container">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspresslite' ) ); ?>"><?php printf( __( 'Powered by %s', 'accesspresslite' ), 'WordPress' ); ?></a>
+			<h1 class="site-info">
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspresslite' ) ); ?>"><?php _e( 'Free WordPress Theme', 'accesspresslite' ); ?></a>
 				<span class="sep"> | </span>
-				<?php _e( 'Theme:', 'accesspresslite' ) ?> <a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
-			</div><!-- .site-info -->
+				<a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
+			</h1><!-- .site-info -->
 
 			<div class="copyright">
 				Copyright &copy; <?php echo date('Y') ?> 
