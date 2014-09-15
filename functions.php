@@ -142,14 +142,23 @@ function wrap_embed_with_div($html, $url, $attr) {
 // WordPress Widgets start right here.
 add_action('widgets_init', 'adventure_widgets_init');
 function adventure_widgets_init() {
-	register_sidebars(1, array(
-		'name' => __('sidebar', 'localize_adventure'),
-		'id' => 'adventure_widget',
-		'description' => __('Widgets in this area will appear to the right of the content, normally.', 'localize_adventure'),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>', )); }
+	register_sidebar( array(
+		'name'          => __('sidebar', 'localize_adventure'),
+		'id'            => 'adventure_widget',
+		'description'   => __('Widgets in this area will appear to the right of the content, normally.', 'localize_adventure'),
+		'before_widget' => '<aside>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',));
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget Area', 'localize_adventure' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Appears in the footer section of the site.', 'localize_adventure' ),
+		'before_widget' => '<aside>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',));}
 
 
 // Checks if the Widgets are active
@@ -1312,6 +1321,10 @@ function adventure_theme_options_do_page() { ?>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>4.1</th>
+                            <td><?php _e('Added another sidebar location to the theme, Thank tek428 for this option.', 'localize_adventure'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.9</th>
                             <td><?php _e('Another bug in the code fixed, unrelated to the Adenture+ bug.', 'localize_adventure'); ?></td>

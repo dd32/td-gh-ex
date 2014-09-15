@@ -1,12 +1,14 @@
     </div>
 
-    <?php if (adventure_is_sidebar_active('adventure_widget')) : ?>
-    <aside>
-        <?php if (!dynamic_sidebar('sidebar')) : ?><?php endif; ?>
-    </aside>
-    <?php endif; ?>
+    <?php if (adventure_is_sidebar_active('adventure_widget')) : if (!dynamic_sidebar('sidebar')) : endif; endif; ?>
 
-    <div class="finishing"></div>
+    <div class="finishing">
+
+        <?php if (adventure_is_sidebar_active('sidebar-1')) : if (!dynamic_sidebar('Footer Widget 1 of 3')) : ?><?php endif; endif; ?>
+        <?php if (adventure_is_sidebar_active('sidebar-2')) : if (!dynamic_sidebar('Footer Widget 1 of 3')) : ?><?php endif; endif; ?>
+        <?php if (adventure_is_sidebar_active('sidebar-3')) : if (!dynamic_sidebar('Footer Widget 1 of 3')) : ?><?php endif; endif; ?>
+        
+    </div>
     
 </main>    
 

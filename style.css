@@ -10,7 +10,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support and Enjoy!
 
-Version: 3.9
+Version: 4.1
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -481,12 +481,6 @@ main {
 	height:18em;
 	width:100%;}
 
-.finishing {
-	clear:both;
-	height:20%;
-	min-height:75px;
-	width:100%;}
-
 /* The Content
 ------------------------------------------------------------------*/
 .content_fix {
@@ -540,11 +534,12 @@ aside {
 	border:none;
 	border-radius:2px;
 	box-shadow:-1px -1px 2px #111;
+    clear:right;
 	color:rgb(204, 203, 196);
 	float:right;
 	font-size:.95em;
 	margin:0 0 3em;
-    padding:2%;
+    padding:0% 2% 2%;
 	text-align:left;
 	text-shadow:0 0 1px #666;
 	width:27%;}
@@ -604,6 +599,26 @@ aside th {
 
 aside tr:nth-child(odd) {
     background:none;}
+
+
+/* Widgets layout for the footer sytle.
+------------------------------------------------------------------*/
+
+.finishing {
+	clear:both;
+	min-height:4em;
+    text-align:center;}
+
+.finishing aside {
+    display: inline-block;
+    float:none;
+	margin:0 0 3em;
+    padding:0% 2% 2%;
+    vertical-align:top;
+	width:27%;}
+
+.finishing aside:nth-child(3n+2) {margin:0 3.3333% 2em;}
+
 
 /* Footer
 ------------------------------------------------------------------*/
@@ -783,8 +798,9 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
         float:none;
         width:98%;}
     
-    aside {
+    aside, .finishing aside, .finishing aside:nth-child(3n+2) {
         background: rgba(0,0, 0, .9);
+        margin:0 0 2em;
         width:95%;}
 
     .comment-meta {display:none;} }
