@@ -10,10 +10,9 @@
     <div class="container container-generator">
       <div class="col-md-12 footer-margin-top text-center">
 	  	<?php if(!empty($generator_options['footertext'])) {
-			 	echo $generator_options['footertext'].' '; 
-			  } else {
+			 	echo esc_attr($generator_options['footertext']).' '; 
 			  }
-                echo"<span class='generator-poweredby'> <a href='http://fasterthemes.com/wordpress-themes/generator'>Generator</a> powered by WordPress.</span>";
+			echo "<span class='generator-poweredby'>Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/generator' target='_blank'>Generator</a>.</span>";
 		 ?>
       </div>
     </div>

@@ -3,6 +3,7 @@
  * The Header template for our theme
  */
  $generator_options = get_option( 'faster_theme_options' );
+# print_r($generator_options);
 ?><!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -20,7 +21,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php if(!empty($generator_options['favicon'])) { ?>
-    <link rel="shortcut icon" href="<?php echo $generator_options['favicon'];?>">
+    <link rel="shortcut icon" href="<?php echo esc_url($generator_options['favicon']);?>">
     <?php } ?>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
@@ -32,17 +33,17 @@
   <div class="container container-generator ">
     <div class="col-md-12 margin-top-8 font-color no-padding">
       <div class="col-md-6  margin-top-8 no-padding header-icon">
-        <div class="col-md-5 no-padding header-icon"><?php if(!empty($generator_options['email'])) { ?> <i class="fa fa-envelope"></i> <span class="icon-email-phone"> <?php echo $generator_options['email'];?> </span> <?php } ?> </div>
-        <div class="col-md-7 no-padding header-icon"><?php if(!empty($generator_options['phone'])) { ?> <i class="fa fa-phone"></i> <span class="icon-email-phone"><?php echo $generator_options['phone'];?></span> <?php } ?> </div>
+        <div class="col-md-5 no-padding header-icon"><?php if(!empty($generator_options['email'])) { ?> <i class="fa fa-envelope"></i> <span class="icon-email-phone"> <?php echo esc_attr($generator_options['email']);?> </span> <?php } ?> </div>
+        <div class="col-md-7 no-padding header-icon"><?php if(!empty($generator_options['phone'])) { ?> <i class="fa fa-phone"></i> <span class="icon-email-phone"><?php echo esc_attr($generator_options['phone']);?></span> <?php } ?> </div>
       </div>
       <div class="col-md-6 text-right no-padding">
         <div class="col-md-8 icon-menu  margin-top-8 no-padding  ">
           <ul class="list-inline padding-right-10 no-padding-right" >
-          <?php if(!empty($generator_options['twitter'])){ ?><li><a href="<?php echo $generator_options['twitter'];?>"><i class="fa fa-twitter-square"></i></a></li> <?php } ?>
-          <?php if(!empty($generator_options['fburl'])){ ?><li><a href="<?php echo $generator_options['fburl'];?>"><i class="fa fa-facebook-square"></i></a></li> <?php } ?>
-          <?php if(!empty($generator_options['dribbble'])){ ?><li><a href="<?php echo $generator_options['dribbble'];?>"><i class="fa fa-dribbble"></i></a></li> <?php } ?>
-          <?php if(!empty($generator_options['linkedin'])){ ?><li><a href="<?php echo $generator_options['linkedin'];?>" ><i class="fa fa-linkedin"></i></a></li> <?php } ?>
-          <?php if(!empty($generator_options['rss'])){ ?><li><a href="<?php echo $generator_options['rss'];?>" ><i class="fa fa-rss"></i></a></li> <?php }?>
+          <?php if(!empty($generator_options['twitter'])){ ?><li><a href="<?php echo esc_url($generator_options['twitter']);?>"><i class="fa fa-twitter-square"></i></a></li> <?php } ?>
+          <?php if(!empty($generator_options['fburl'])){ ?><li><a href="<?php echo esc_url($generator_options['fburl']);?>"><i class="fa fa-facebook-square"></i></a></li> <?php } ?>
+          <?php if(!empty($generator_options['dribbble'])){ ?><li><a href="<?php echo esc_url($generator_options['dribbble']);?>"><i class="fa fa-dribbble"></i></a></li> <?php } ?>
+          <?php if(!empty($generator_options['linkedin'])){ ?><li><a href="<?php echo esc_url($generator_options['linkedin']);?>" ><i class="fa fa-linkedin"></i></a></li> <?php } ?>
+          <?php if(!empty($generator_options['rss'])){ ?><li><a href="<?php echo esc_url($generator_options['rss']);?>" ><i class="fa fa-rss"></i></a></li> <?php }?>
           </ul>
         </div>
         <div class="col-md-4 no-padding center-search ">
@@ -60,7 +61,7 @@
         	<?php if(empty($generator_options['logo'])) { ?>
         		<h1 class="generator-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
             <?php } else { ?>
-        		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo $generator_options['logo']; ?>" alt="" class="logo-center" /></a>
+        		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo esc_url($generator_options['logo']); ?>" alt="" class="logo-center" /></a>
             <?php } ?> 
         </div>
         <div class="navbar-header">

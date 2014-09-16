@@ -13,9 +13,9 @@ $generator_options = get_option( 'faster_theme_options' );
     <?php if(!empty($generator_options['slider-img-'.$generator_loop])){ ?>
     <li>
       <?php if(!empty($generator_options['slidelink-'.$generator_loop])) {?>
-      <a href="<?php echo $generator_options['slidelink-'.$generator_loop];?>" target="_blank"><img src="<?php echo $generator_options['slider-img-'.$generator_loop]; ?>" alt="" /></a>
+      <a href="<?php echo esc_url($generator_options['slidelink-'.$generator_loop]);?>" target="_blank"><img src="<?php echo $generator_options['slider-img-'.$generator_loop]; ?>" alt="" /></a>
       <?php }else{?>
-      <img src="<?php echo $generator_options['slider-img-'.$generator_loop]; ?>" alt="" />
+      <img src="<?php echo esc_url($generator_options['slider-img-'.$generator_loop]); ?>" alt="" />
       <?php } ?>
     </li>
     <?php } ?>
@@ -25,10 +25,10 @@ $generator_options = get_option( 'faster_theme_options' );
 <div class="generator-single-blog section-main front-main">
   <div class=" container-generator container homepage-theme-title">
     <h2>
-      <?php if(!empty($generator_options['home-title'])) { echo $generator_options['home-title']; } ?>
+      <?php if(!empty($generator_options['home-title'])) { echo esc_attr($generator_options['home-title']); } ?>
     </h2>
     <h3>
-      <?php if(!empty($generator_options['home-content'])) { echo $generator_options['home-content']; } ?>
+      <?php if(!empty($generator_options['home-content'])) { echo esc_attr($generator_options['home-content']); } ?>
     </h3>
   </div>
 </div>
@@ -42,7 +42,7 @@ $generator_options = get_option( 'faster_theme_options' );
     <div class="col-md-12 no-padding next-prev">
       <div class="back-radius"> <i class="fa fa-pencil project-icon-size"></i> </div>
       <span class="project-tag">
-      <?php if(!empty($generator_options['post-title'])) { echo $generator_options['post-title']; }else{ echo 'Recent Post'; }?>
+      <?php if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); }else{ echo 'Recent Post'; }?>
       </span> </div>
     <div class="project1-line"></div>
     <div class="row margin-top-8 text-center no-padding">

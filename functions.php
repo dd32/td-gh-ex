@@ -82,7 +82,7 @@ require_once('functions/theme-default-setup.php');
 require_once('functions/breadcrumbs.php');
 
 /*** Theme Option ***/
-require_once('theme-option/fasterthemes.php');
+require_once('theme-options/fasterthemes.php');
 
 /*** Custom Header ***/
 require_once('functions/custom-header.php');

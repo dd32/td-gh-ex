@@ -44,8 +44,7 @@ get_header();
       <?php endwhile; ?> 
      
 		<!--Pagination Start-->
-		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+        <?php   if (function_exists('faster_pagination') ) {?>
             <?php faster_pagination();?>
         <?php }else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>

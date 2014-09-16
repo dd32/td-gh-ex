@@ -1,0 +1,388 @@
+<?php
+function fasterthemes_options_init(){
+ register_setting( 'ft_options', 'faster_theme_options','ft_options_validate');
+} 
+add_action( 'admin_init', 'fasterthemes_options_init' );
+function ft_options_validate($input)
+{
+	 $input['logo'] = esc_url( $input['logo'] );
+	 $input['favicon'] = esc_url( $input['favicon'] );
+	 $input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+	 $input['email'] = wp_filter_nohtml_kses( $input['email'] );
+	 $input['phone'] = wp_filter_nohtml_kses( $input['phone'] );
+	 $input['home-title'] = wp_filter_nohtml_kses( $input['home-title'] );
+	 $input['home-content'] = wp_filter_nohtml_kses( $input['home-content'] );
+	 $input['post-title'] = wp_filter_nohtml_kses( $input['post-title'] );
+	 
+	 $input['twitter'] = esc_url( $input['twitter'] );
+	 $input['fburl'] = esc_url( $input['fburl'] );
+	 $input['dribbble'] = esc_url( $input['dribbble'] );
+	 $input['linkedin'] = esc_url( $input['linkedin'] );
+	 $input['rss'] = esc_url( $input['rss'] );
+	 
+	 for($generator_i=1; $generator_i <=5 ;$generator_i++ ):
+	 $input['slider-img-'.$generator_i] = esc_url( $input['slider-img-'.$generator_i] );
+	 $input['slidelink-'.$generator_i] = esc_url( $input['slidelink-'.$generator_i]);
+	 endfor;
+	 
+	 for($generator_section_i=1; $generator_section_i <=4 ;$generator_section_i++ ):
+	 $input['home-icon-'.$generator_section_i] = esc_url( $input['home-icon-'.$generator_section_i]);
+	 $input['section-title-'.$generator_section_i] = wp_filter_nohtml_kses($input['section-title-'.$generator_section_i]);
+	 $input['section-content-'.$generator_section_i] = wp_filter_nohtml_kses($input['section-content-'.$generator_section_i]);
+	 endfor;
+    return $input;
+}
+function fasterthemes_framework_load_scripts(){
+	wp_enqueue_media();
+	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
+	wp_enqueue_style( 'fasterthemes_framework' );	
+	// Enqueue custom option panel JS
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
+	wp_enqueue_script('media-uploader');
+}
+add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
+function fasterthemes_framework_menu_settings() {
+	$generator_menu = array(
+				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
+				'menu_title' => __('Theme Options', 'fastertheme_framework'),
+				'capability' => 'edit_theme_options',
+				'menu_slug' => 'fasterthemes_framework',
+				'callback' => 'fastertheme_framework_page'
+				);
+	return apply_filters( 'fasterthemes_framework_menu', $generator_menu );
+}
+add_action( 'admin_menu', 'theme_options_add_page' ); 
+function theme_options_add_page() {
+	$generator_menu = fasterthemes_framework_menu_settings();
+   	add_theme_page($generator_menu['page_title'],$generator_menu['menu_title'],$generator_menu['capability'],$generator_menu['menu_slug'],$generator_menu['callback']);
+} 
+function fastertheme_framework_page(){ 
+		global $select_options; 
+		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
+		$_REQUEST['settings-updated'] = false;		
+
+?>
+<div class="fasterthemes-themes">
+	<form method="post" action="options.php" id="form-option" class="theme_option_ft">
+  <div class="fasterthemes-header">
+    <div class="logo">
+      <?php
+		$generator_image=get_template_directory_uri().'/theme-options/images/logo.png';
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$generator_image."' alt='FasterThemes' /></a>";
+		?>
+    </div>
+    <div class="header-right">
+      <?php
+			echo "<h1>". __( 'Theme Options', 'generator' ) . "</h1>"; 			
+			echo "<div class='btn-save'><input type='submit' class='button-primary' value='Save Options' /></div>";			
+			?>
+    </div>
+  </div>
+  <div class="fasterthemes-details">
+    <div class="fasterthemes-options">
+      <div class="right-box">
+        <div class="nav-tab-wrapper">
+          <ul>
+            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a></li>
+            <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="Home Page Settings" href="#options-group-2">Home Page Settings</a></li>
+            <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-3">Social Settings</a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4">PRO Theme Features</a></li>
+
+  		  </ul>
+        </div>
+      </div>
+      <div class="right-box-bg"></div>
+      <div class="postbox left-box"> 
+        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+          <?php settings_fields( 'ft_options' );  
+		$generator_options = get_option( 'faster_theme_options' );
+		 ?>
+        
+            <!-------------- Header group ----------------->
+          <div id="options-group-1" class="group faster-inner-tabs">   
+                 
+          	<div class="section theme-tabs theme-logo">
+            <a class="heading faster-inner-tab active" href="javascript:void(0)">Site Logo</a>
+            <div class="faster-inner-tab-group active">
+              	<div class="ft-control">
+                <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" 
+                            value="<?php if(!empty($generator_options['logo'])) { echo esc_url($generator_options['logo']); } ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                <div class="screenshot" id="logo-image">
+                  <?php if(!empty($generator_options['logo'])) { echo "<img src='".esc_url($generator_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+            <div class="section theme-tabs theme-favicon">
+              <a class="heading faster-inner-tab" href="javascript:void(0)">Favicon</a>
+              <div class="faster-inner-tab-group">
+              	<div class="explain">Size of favicon should be exactly 32x32px for best results.</div>
+                <div class="ft-control">
+                  <input id="favicon-img" class="upload" type="text" name="faster_theme_options[favicon]" 
+                            value="<?php if(!empty($generator_options['favicon'])) { echo esc_url($generator_options['favicon']); } ?>" placeholder="No file chosen" />
+                  <input id="upload_image_button1" class="upload-button button" type="button" value="Upload" />
+                  <div class="screenshot" id="favicon-image">
+                    <?php  if(!empty($generator_options['favicon'])) { echo "<img src='".esc_url($generator_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  </div>
+                </div>
+                
+              </div>
+            </div>     
+            <div id="section-footertext" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Copyright Text</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>                
+                  	<input type="text" id="footertext" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($generator_options['footertext'])) { echo esc_attr($generator_options['footertext']); } ?>">
+                </div>                
+              </div>
+            </div>
+
+            <div id="section-email" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Email</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Enter e-mail id for your site , you would like to display in the Top Header.</div>                
+                  	<input type="text" id="email" class="of-input" name="faster_theme_options[email]" size="32"  value="<?php if(!empty($generator_options['email'])) { echo esc_attr($generator_options['email']); } ?>">
+                </div>                
+              </div>
+            </div>
+
+            <div id="section-phone" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Phone</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Enter phone number for your site , you would like to display in the Top Header.</div>                
+                  	<input type="text" id="phone" class="of-input" name="faster_theme_options[phone]" size="32"  value="<?php if(!empty($generator_options['phone'])) { echo esc_attr($generator_options['phone']); } ?>">
+                </div>                
+              </div>
+            </div>
+                        
+          </div>          
+          <!-------------- Home Page group ----------------->
+          <div id="options-group-2" class="group faster-inner-tabs">
+          <h3>Banner Slider</h3>
+			<?php for($generator_i=1; $generator_i <= 5 ;$generator_i++ ):?> 
+            <div class="section theme-tabs theme-slider-img">
+            <a class="heading faster-inner-tab" href="javascript:void(0)">Slider <?php echo $generator_i;?></a>
+            <div class="faster-inner-tab-group">
+                <div class="ft-control">
+                <input id="slider-img-<?php echo $generator_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $generator_i;?>]" 
+                            value="<?php if(!empty($generator_options['slider-img-'.$generator_i])) { echo esc_url($generator_options['slider-img-'.$generator_i]); } ?>" placeholder="No file chosen" />
+                <input id="1upload_image_button" class="upload-button button" type="button" value="Upload" />
+                <div class="screenshot" id="slider-img-<?php echo $generator_i;?>">
+                  <?php if(!empty($generator_options['slider-img-'.$generator_i])) { echo "<img src='".esc_url($generator_options['slider-img-'.$generator_i])."' /><a class='remove-image'>Remove</a>"; } ?>
+                </div>
+              </div>
+            
+                <div class="ft-control">
+                    <input type="text" placeholder="Slide<?php echo $generator_i; ?> Link" id="slidelink-<?php echo $generator_i;?>" class="of-input" name="faster_theme_options[slidelink-<?php echo $generator_i;?>]" size="32"  value="<?php if(!empty($generator_options['slidelink-'.$generator_i])) { echo esc_attr($generator_options['slidelink-'.$generator_i]); } ?>">
+              </div>
+                              
+            </div>
+            
+            </div>
+            <?php endfor; ?>
+            <h3>Title Bar</h3>
+            <div id="section-title" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Title</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Enter home page title for your site , you would like to display in the Home Page.</div>                
+                  	<input id="title" class="of-input" name="faster_theme_options[home-title]" type="text" size="50" value="<?php if(!empty($generator_options['home-title'])) { echo esc_attr($generator_options['home-title']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            <div class="section theme-tabs theme-short_description">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Short Description</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+                <div class="explain">Enter home content for your site , you would like to display in the Home Page.</div>
+              <textarea name="faster_theme_options[home-content]" rows="6" id="home-content1" class="of-input"><?php if(!empty($generator_options['home-content'])) { echo $generator_options['home-content']; } ?></textarea>
+                </div>                
+              </div>
+            </div>
+			<h3>First Section</h3>
+          <?php for($generator_section_i=1; $generator_section_i <=4 ;$generator_section_i++ ): ?>
+            <div class="section theme-tabs theme-slider-img">
+            <a class="heading faster-inner-tab" href="javascript:void(0)">Tab <?php echo $generator_section_i; ?></a>
+            <div class="faster-inner-tab-group">
+                <div class="ft-control">
+                <input id="first-image-<?php echo $generator_section_i;?>" class="upload" type="text" name="faster_theme_options[home-icon-<?php echo $generator_section_i;?>]" 
+                            value="<?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { echo esc_url($generator_options['home-icon-'.$generator_section_i]); } ?>" placeholder="No file chosen" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                <div class="screenshot" id="first-img-<?php echo $generator_section_i;?>">
+                  <?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { echo "<img src='".esc_url($generator_options['home-icon-'.$generator_section_i])."' /><a class='remove-image'>Remove</a>"; } ?>
+                </div>
+              </div>
+            
+                <div class="ft-control">
+                <div class="explain">Enter secion title for your home template , you would like to display in the Home Page.</div>
+                    <input type="text" placeholder="Enter title here" id="title-<?php echo $generator_section_i;?>" class="of-input" name="faster_theme_options[section-title-<?php echo $generator_section_i;?>]" size="32"  value="<?php if(!empty($generator_options['section-title-'.$generator_section_i])) { echo esc_attr($generator_options['section-title-'.$generator_section_i]); } ?>">
+              </div>
+				<div class="ft-control">
+                 <div class="explain">Enter section content for home template , you would like to display in the Home Page.</div>
+              <textarea name="faster_theme_options[section-content-<?php echo $generator_section_i; ?>]" rows="6" id="content-<?php echo $generator_section_i; ?>" placeholder="Enter Content here" class="of-input"><?php if(!empty($generator_options['section-content-'.$generator_section_i])) { echo $generator_options['section-content-'.$generator_section_i]; } ?></textarea>
+              
+              </div>                              
+            </div>
+            
+            </div>
+            <?php endfor; ?>
+            <h3>Second Section</h3>
+            <div id="section-recent-title" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Recent Post Title</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Enter recent post title for your site , you would like to display in the Home Page.</div>                
+                  	<input id="post" class="of-input" name="faster_theme_options[post-title]" type="text" size="50" value="<?php if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            <div class="section theme-tabs theme-short_description">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Category</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+                <select name="faster_theme_options[post-category]" id="category">
+                  <option value=""><?php echo esc_attr(__('Select Category','generator')); ?></option>
+                  <?php 
+				$generator_args = array(
+				'meta_query' => array(
+									array(
+									'key' => '_thumbnail_id',
+									'compare' => 'EXISTS'
+										),
+									)
+								);  
+				$generator_post = new WP_Query( $generator_args );
+				$generator_cat_id=array();
+				while($generator_post->have_posts()){
+				$generator_post->the_post();
+				$generator_post_categories = wp_get_post_categories( get_the_id());   
+				$generator_cat_id[]=$generator_post_categories[0];
+				}
+				$generator_cat_id=array_unique($generator_cat_id);
+				$generator_args = array(
+				'orderby' => 'name',
+				'parent' => 0,
+				'include'=>$generator_cat_id
+				);
+				$generator_categories = get_categories($generator_args); 
+                  foreach ($generator_categories as $generator_category) {
+					  if($generator_category->term_id == $generator_options['post-category'])
+					  	$generator_selected="selected=selected";
+					  else
+					  	$generator_selected='';
+                    $generator_option = '<option value="'.$generator_category->term_id .'" '.$generator_selected.'>';
+                    $generator_option .= $generator_category->cat_name;
+                    $generator_option .= '</option>';
+                    echo $generator_option;
+                  }
+                 ?>
+                </select>
+                </div>                
+              </div>
+            </div>
+          </div>    
+          <!-------------- Social group ----------------->
+          <div id="options-group-3" class="group faster-inner-tabs">            
+            <div id="section-facebook" class="section theme-tabs">
+            	<a class="heading faster-inner-tab active" href="javascript:void(0)">Facebook</a>
+              <div class="faster-inner-tab-group active">
+              	<div class="ft-control">
+              		<div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>                
+                  	<input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($generator_options['fburl'])) { echo esc_url($generator_options['fburl']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            <div id="section-twitter" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Twitter</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Twitter profile or page URL i.e. http://www.twitter.com/username/</div>                
+                  	<input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($generator_options['twitter'])) { echo esc_url($generator_options['twitter']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            <div id="section-dribbble" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Dribbble</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Dribbble profile or page URL i.e. https://dribbble.com/username/</div>                
+                  	 <input id="dribbble" class="of-input" name="faster_theme_options[dribbble]" type="text" size="30" value="<?php if(!empty($generator_options['dribbble'])) { echo esc_url($generator_options['dribbble']); } ?>" />
+                </div>                
+              </div>
+            </div>
+
+			<div id="section-linkedin" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">Linkedin</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">Linkedin profile or page URL i.e. https://linkedin.com/username/</div>                
+                  	 <input id="linkedin" class="of-input" name="faster_theme_options[linkedin]" type="text" size="30" value="<?php if(!empty($generator_options['linkedin'])) { echo esc_url($generator_options['linkedin']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            <div id="section-rss" class="section theme-tabs">
+            	<a class="heading faster-inner-tab" href="javascript:void(0)">RSS</a>
+              <div class="faster-inner-tab-group">
+              	<div class="ft-control">
+              		<div class="explain">RSS profile or page URL i.e. https://www.rss.com/username/</div>                
+                  	<input id="rss" class="of-input" name="faster_theme_options[rss]" type="text" size="30" value="<?php if(!empty($generator_options['rss'])) { echo esc_url($generator_options['rss']); } ?>" />
+                </div>                
+              </div>
+            </div>
+            
+          </div>
+          <!-------------- Social group ----------------->          
+          <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
+          	<div class="fasterthemes-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Generator" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro_features.png" />
+          </div>   
+        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+      </div>
+     </div>
+	</div>
+	<div class="fasterthemes-footer">
+      	<ul>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
+            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
+            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
+            <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
+        </ul>
+    </div>
+    </form>    
+</div>
+<div class="save-options"><h2>Options saved successfully.</h2></div>
+<div class="newsletter">    
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <h2>Enter your email to join our mailing list and we'll keep you updated on new themes as they're
+            released and our exclusive special offers.</h2>          
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label>
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;">
+            <input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value="">
+          </div>
+          <div class="clear">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div>
+        </form>
+      </div>
+      <!--End mc_embed_signup--> 
+    </div>
+<?php } ?>
