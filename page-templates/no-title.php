@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php if ( has_post_thumbnail() ) : ?>
+					<?php if ( has_post_thumbnail() && siteorigin_setting('pages_page_featured_image') ) : ?>
 						<div class="entry-thumbnail">
 							<?php the_post_thumbnail(); ?>
 						</div>			
@@ -32,7 +32,7 @@ get_header(); ?>
 							) );
 						?>
 					</div><!-- .entry-content -->
-					<?php edit_post_link( __( 'Edit', 'puro' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+					<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); } ?>
 				</article><!-- #post-## -->
 
 				<?php

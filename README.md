@@ -1,13 +1,12 @@
 Puro WordPress Theme
-=====================
+====================
 
-A content focussed minimalist theme, perfect for your blog, portfolio or small business site. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms, WP PageNavi, MetaSlider and SiteOrigin Page Builder. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages. 
-
+A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and MetaSlider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages. 
 
 License
 ---------------------
 
-Puro WordPress Theme, Copyright 2013 Andrew Misplon. Puro is distributed under the terms of the GNU GPL.
+Puro WordPress Theme, Copyright 2014 Andrew Misplon. Puro is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -19,8 +18,7 @@ Puro WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012
 
 All Javascript is located in js/ with license headers where appropriate.
 
-
-Bundled Resources 
+Bundled Resources
 ---------------------
 
 FontAwesome by Dave Gandy 
@@ -29,12 +27,19 @@ Font released under the SIL OFL 1.1, CSS released under the MIT License.
 FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
 Released under the WTFPL license.
 
-SASS Elements, Copyright 2006–2014 Hampton Catlin, Nathan Weizenbaum, Chris Eppstein, and numerous contributors
+SASS Elements, Copyright 2006 - 2014 Hampton Catlin, Nathan Weizenbaum, Chris Eppstein, and numerous contributors
 Released under the MIT License.
 
-
-Change Log 
+SiteOrigin Extras
 ---------------------
+
+This theme makes use of the SiteOrigin Extras Framework contained in the folder extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
+
+Change Log
+---------------------
+
+#### 1.0.3
+* Added theme options.
 
 #### 1.0.2
 * Removed further incorrect theme tags.

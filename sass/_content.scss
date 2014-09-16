@@ -97,11 +97,6 @@ article {
 		}
 	}			
 }
-.archive, .search-results {
-	.entry-header h1.entry-title {
-		@include adjust-font-size-to(26px);
-	}
-}
 .sticky .entry-header .entry-meta .entry-date {
 	display: none; // Hide the entry date of sticky posts
 }

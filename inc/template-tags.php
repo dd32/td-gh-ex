@@ -81,30 +81,81 @@ function puro_posted_on() {
 		echo '<span class="featured-post">' . __( 'Sticky', 'puro' ) . '</span>';
 	}
 
-	if ( is_home() || is_archive() ) {
+	if ( is_home() || is_archive() && siteorigin_setting('blog_post_date') ) {
 		echo '<span class="entry-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( 'j F Y' ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span></a>';
 	}
 
-	if ( is_single() ) {
+	if ( is_single() && siteorigin_setting('blog_post_date') ) {
 		echo '<span class="entry-date"><time class="published" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date( 'j F Y' ) ) . '</time><time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( get_the_modified_date() ) . '</time></span>';
 	}
 
-	echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
-	
-	if ( has_category() ) {
+	if ( siteorigin_setting('blog_post_author') ) {
+		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
+	}
+
+	if ( has_category() && siteorigin_setting('blog_post_cats') ) {
 		echo '<span class="cat-links">' . get_the_category_list( __( ', ', 'puro' ) ) . '</span>';
 	}
 
-	if ( has_tag() ) {
+	if ( has_tag() && siteorigin_setting('blog_post_tags') ) {
 		echo '<span class="tags-links">' . get_the_tag_list( '', __( ', ', 'puro' ) ) . '</span>';
 	}
 
-	if ( comments_open() ) { 
+	if ( comments_open() && siteorigin_setting('blog_post_comment_count') ) { 
 		echo '<span class="comments-link">';
   		comments_popup_link( __( 'Leave a comment', 'puro' ), __( '1 Comment', 'puro' ), __( '% Comments', 'puro' ) );
   		echo '</span>';
 	}
 
+}
+endif;
+
+if(!function_exists('puro_display_logo')):
+/**
+ * Display the logo.
+ */
+function puro_display_logo(){
+	$logo = siteorigin_setting( 'header_image' );
+	$logo = apply_filters('puro_logo_image_id', $logo);
+
+	if( empty($logo) ) {
+		// Just display the site title
+		$logo_html = '<h1 class="site-title">'.get_bloginfo( 'name' ).'</h1>';
+		$logo_html = apply_filters('puro_logo_text', $logo_html);
+	}
+	else {
+		// load the logo image
+		if(is_array($logo)) {
+			list ($src, $height, $width) = $logo;
+		}
+		else {
+			$image = wp_get_attachment_image_src($logo, 'full');
+			$src = $image[0];
+			$height = $image[2];
+			$width = $image[1];
+		}
+
+		// Add all the logo attributes
+		$logo_attributes = apply_filters('puro_logo_image_attributes', array(
+			'src' => $src,
+			'width' => round($width),
+			'height' => round($height),
+			'alt' => sprintf( __('%s Logo', 'puro'), get_bloginfo('name') ),
+		) );
+
+		$logo_attributes_str = array();
+		if( !empty( $logo_attributes ) ) {
+			foreach($logo_attributes as $name => $val) {
+				if( empty($val) ) continue;
+				$logo_attributes_str[] = $name.'="'.esc_attr($val).'" ';
+			}
+		}
+
+		$logo_html = apply_filters('puro_logo_image', '<img '.implode( ' ', $logo_attributes_str ).' />');
+	}
+
+	// Echo the image
+	echo apply_filters('puro_logo_html', $logo_html);
 }
 endif;
 

@@ -15,12 +15,10 @@
 	margin-bottom: 3.375em;
 }
 #secondary .widget, #colophon .widget {
+	@include adjust-font-size-to(14px);
 	h3.widget-title {
-		@include adjust-font-size-to(16px);
+		@include adjust-font-size-to(18px);
 		margin-bottom: 0.8438em; 
-		~ * {
-			@include adjust-font-size-to(14px);	
-		}
 		a {
 			color: $heading-color;
 			&:hover {

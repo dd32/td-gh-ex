@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail(); ?>
@@ -42,6 +42,6 @@
 	<?php endif; ?>
 	
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

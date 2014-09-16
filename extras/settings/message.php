@@ -1,0 +1,2 @@
+<?php
+printf( __("Hi! I'm Andrew from Puro. I hope you enjoy using our inaugural theme. Sign up to <a href='%s' target='_blank'>our newsletter</a> if you'd like more free themes and exclusive offers.", 'puro'), 'http://eepurl.com/0Ou6D');

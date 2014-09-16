@@ -1,14 +1,15 @@
 /*!
 Theme Name: Puro
-Author: Andrew Misplon
-Author URI: http://profiles.wordpress.org/misplon/
-Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms, WP PageNavi, MetaSlider and SiteOrigin Page Builder. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages.   
-Version: 1.0.2
+Author: Puro
+Author URI: http://purothemes.com/
+Theme URI: http://wordpress.org/themes/puro/
+Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and MetaSlider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages.  
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
 Domain Path: /languages/
-Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -20,6 +21,7 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 3.0 - Typography
 4.0 - Elements
 5.0 - Forms
+
 6.0 - Navigation
 	6.1 - Links
 	6.2 - Main Menu
@@ -976,19 +978,19 @@ img.alignnone {
 #colophon .widget {
   margin-bottom: 3.375em; }
 
-#secondary .widget h3.widget-title, #colophon .widget h3.widget-title {
-  font-size: 1em;
-  line-height: 1.6875em;
-  margin-bottom: 0.8438em; }
-  #secondary .widget h3.widget-title ~ *, #colophon .widget h3.widget-title ~ * {
-    font-size: 0.875em;
-    line-height: 1.92857em; }
-  #secondary .widget h3.widget-title a, #colophon .widget h3.widget-title a {
-    color: #333333; }
-    #secondary .widget h3.widget-title a:hover, #colophon .widget h3.widget-title a:hover {
-      color: #2ac176; }
-  #secondary .widget h3.widget-title:first-of-type, #colophon .widget h3.widget-title:first-of-type {
-    margin-top: 0; }
+#secondary .widget, #colophon .widget {
+  font-size: 0.875em;
+  line-height: 1.92857em; }
+  #secondary .widget h3.widget-title, #colophon .widget h3.widget-title {
+    font-size: 1.125em;
+    line-height: 1.5em;
+    margin-bottom: 0.8438em; }
+    #secondary .widget h3.widget-title a, #colophon .widget h3.widget-title a {
+      color: #333333; }
+      #secondary .widget h3.widget-title a:hover, #colophon .widget h3.widget-title a:hover {
+        color: #2ac176; }
+    #secondary .widget h3.widget-title:first-of-type, #colophon .widget h3.widget-title:first-of-type {
+      margin-top: 0; }
 
 #secondary .widget ul, #colophon .widget ul {
   list-style: none;
@@ -1191,10 +1193,6 @@ article {
     @media (max-width: 30rem) {
       .entry-header .entry-meta .author, .entry-header .entry-meta .cat-links, .entry-header .entry-meta .tags-links, .entry-header .entry-meta .comments-link, .entry-header .entry-meta .edit-link {
         display: none; } }
-
-.archive .entry-header h1.entry-title, .search-results .entry-header h1.entry-title {
-  font-size: 1.625em;
-  line-height: 2.07692em; }
 
 .sticky .entry-header .entry-meta .entry-date {
   display: none; }
