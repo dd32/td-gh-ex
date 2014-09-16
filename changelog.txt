@@ -1,12 +1,17 @@
 *** Hoffman changelog ***
 
 
+
+Version 1.07 (2014-09-16)
+-------------------------
+- Fixed a critical bug which caused the quote content and attribution boxes to malfunction
+
+
 Version 1.06 (2014-08-21)
 -------------------------
 - Escaped URLs
 - Added function prefixes
 - Misc bug fixes
-
 
 
 Version 1.05 (2014-08-18)
