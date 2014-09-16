@@ -2056,7 +2056,175 @@ function moesia_customize_register( $wp_customize ) {
             'section' => 'moesia_typography',
             'choices' => $font_choices
         )
-    );    
+    );
+    //H1 size
+    $wp_customize->add_setting(
+        'h1_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '36',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h1_size', array(
+        'type'        => 'number',
+        'priority'    => 11,
+        'section'     => 'moesia_typography',
+        'label'       => __('H1 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //H2 size
+    $wp_customize->add_setting(
+        'h2_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '30',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h2_size', array(
+        'type'        => 'number',
+        'priority'    => 12,
+        'section'     => 'moesia_typography',
+        'label'       => __('H2 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //H3 size
+    $wp_customize->add_setting(
+        'h3_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '24',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h3_size', array(
+        'type'        => 'number',
+        'priority'    => 13,
+        'section'     => 'moesia_typography',
+        'label'       => __('H3 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //h4 size
+    $wp_customize->add_setting(
+        'h4_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '18',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h4_size', array(
+        'type'        => 'number',
+        'priority'    => 14,
+        'section'     => 'moesia_typography',
+        'label'       => __('H4 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //h5 size
+    $wp_customize->add_setting(
+        'h5_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '14',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h5_size', array(
+        'type'        => 'number',
+        'priority'    => 15,
+        'section'     => 'moesia_typography',
+        'label'       => __('H5 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //h6 size
+    $wp_customize->add_setting(
+        'h6_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '12',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'h6_size', array(
+        'type'        => 'number',
+        'priority'    => 16,
+        'section'     => 'moesia_typography',
+        'label'       => __('H6 font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 60,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //body
+    $wp_customize->add_setting(
+        'body_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '14',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'body_size', array(
+        'type'        => 'number',
+        'priority'    => 17,
+        'section'     => 'moesia_typography',
+        'label'       => __('Body font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 24,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //___Pro___//
+    $wp_customize->add_section(
+        'moesia_pro',
+        array(
+            'title' => __('Moesia Pro', 'moesia'),
+            'priority' => 99,
+            'description' => __('If you like Moesia and you want to see the Moesia Pro offers, have a look ', 'moesia') . '<a href="http://athemes.com/theme/moesia-pro">here</a>',
+        )
+    );  
+    //***Services section
+    $wp_customize->add_setting('moesia_options[info]', array(
+            'type' => 'info_control',
+            'capability' => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( new Moesia_Info( $wp_customize, 'pro_section', array(
+        'section' => 'moesia_pro',
+        'settings' => 'moesia_options[info]',
+        'priority' => 10
+        ) )
+    );        
 }
 add_action( 'customize_register', 'moesia_customize_register' );
 

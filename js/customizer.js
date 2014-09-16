@@ -327,5 +327,41 @@
 		value.bind( function( newval ) {
 			$('.footer-widget-area, .site-footer').css('background-color', newval );
 		} );
+	});
+	// Font sizes
+	wp.customize('h1_size',function( value ) {
+		value.bind( function( newval ) {
+			$('h1').css('font-size', newval + 'px' );
+		} );
 	});	
+    wp.customize('h2_size',function( value ) {
+        value.bind( function( newval ) {
+            $('h2').css('font-size', newval + 'px' );
+        } );
+    });	
+    wp.customize('h3_size',function( value ) {
+        value.bind( function( newval ) {
+            $('h3').css('font-size', newval + 'px' );
+        } );
+    });
+    wp.customize('h4_size',function( value ) {
+        value.bind( function( newval ) {
+            $('h4').css('font-size', newval + 'px' );
+        } );
+    });
+    wp.customize('h5_size',function( value ) {
+        value.bind( function( newval ) {
+            $('h5').css('font-size', newval + 'px' );
+        } );
+    });
+    wp.customize('h6_size',function( value ) {
+        value.bind( function( newval ) {
+            $('h6').css('font-size', newval + 'px' );
+        } );
+    });
+    wp.customize('body_size',function( value ) {
+        value.bind( function( newval ) {
+            $('body').css('font-size', newval + 'px' );
+        } );
+    }); 		
 } )( jQuery );
