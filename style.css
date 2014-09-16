@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.22
+Version: 1.23
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1387,6 +1387,12 @@ li.pingback:after {
     padding: 0 19.435% 3em;
   }
 }
+/* 1445px */
+@media all and (min-width: 1445px) {
+  .comments {
+    padding: 0 284px 3em;
+  }
+}
 .site-footer {
   color: #8c8c8c;
   text-align: center;
@@ -2145,7 +2151,6 @@ li.pingback:after {
 
 /* Styles for when user selects a dark header */
 .dark-header {
-  /* Social Icons */
   /* Secondary Nav */
   /* Search Icon */
 }
@@ -2161,13 +2166,13 @@ li.pingback:after {
 .dark-header .site-header .site-description {
   color: #222222;
 }
-.dark-header .social-media-icons a {
+.dark-header .site-header .social-media-icons a {
   color: #222222;
 }
-.dark-header .social-media-icons a:link, .dark-header .social-media-icons a:visited {
+.dark-header .site-header .social-media-icons a:link, .dark-header .site-header .social-media-icons a:visited {
   color: #222222;
 }
-.dark-header .social-media-icons a:hover, .dark-header .social-media-icons a:active, .dark-header .social-media-icons a:focus {
+.dark-header .site-header .social-media-icons a:hover, .dark-header .site-header .social-media-icons a:active, .dark-header .site-header .social-media-icons a:focus {
   color: #222222;
 }
 .dark-header .toggle-secondary-navigation {
@@ -2323,6 +2328,11 @@ li.pingback:after {
   }
 }
 /* bbpress Styles */
+.bbpress.archive .main {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
 .entry-bbpress {
   padding-top: 3em;
 }
@@ -2375,5 +2385,14 @@ li.pingback:after {
 @media all and (min-width: 62.5em) {
   #bbp_topic_title {
     width: 70%;
+  }
+}
+#bbpress-forums div.bbp-search-form {
+  margin: 1px 0 12px 0;
+}
+
+@media all and (min-width: 43.75em) {
+  #bbpress-forums #bbp-search-form #bbp_search {
+    width: 500px !important;
   }
 }
