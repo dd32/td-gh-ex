@@ -1,0 +1,13 @@
+Diarjo Lite Changelog
+
+Version 1.0.8 - Released: 16.09.2014
+
+Fixed : Removed the “Post format” tab, from the post settings (It was not necessary).
+
+Version 1.0.7 - Released: 04.09.2014
+
+Added : Search sidebar.
+
+Version 1.0.6 - Released: 09.06.2014
+
+Fixed : Pagination for archive and tag pages.

@@ -14,7 +14,7 @@ $diarjolite_new_metaboxes = new diarjolite_metaboxes ('post', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","diarjolite") , "postformats" => __( "Post Formats","diarjolite")),   
+       "item" => array( "setting" => __( "Setting","diarjolite")),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
