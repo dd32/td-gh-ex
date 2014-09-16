@@ -2,13 +2,13 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Evolution\n"
+"Project-Id-Version: Catch Evoluion Pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-16 19:40+0545\n"
 "PO-Revision-Date: 2014-09-16 19:40+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
-"Language: sv_SE\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,45 +21,45 @@ msgstr ""
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Error 404 - Sidan kunde inte hittas."
+msgstr "Error 404 - Pagina niet gevonden."
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr "Det verkar som att vi kan inte hitta det du letar efter."
+msgstr "We kunnen blijkbaar niet vinden wat je zoekt."
 
 #: ../404.php:19
 msgid "This might be because:"
-msgstr "Det kan bero på:"
+msgstr "Mogelijke redenen:"
 
 #: ../404.php:20
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Du kan ha skrivit en felaktig adress , eller den sida du söker kan ha "
-"flyttats, uppdateras eller tagits bort."
+"Je hebt het webadres foutief ingegeven, of de pagina die je wou bezoeken is "
+"verplaatst, aangepast of verwijderd."
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
-msgstr "Försök med följande alternativ istället:"
+msgstr "Gelieve volgende opties te proberen:"
 
 #: ../404.php:22
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box below."
 msgstr ""
-"Kontrollera felaktig URL, tryck sedan på uppdateringsknappen i din "
-"webbläsare eller Använd sökrutan nedan."
+"Controleer op een foutief ingegeven URL, klik vervolgens op de verversknop "
+"in je  browser of gebruik de zoekoptie hieronder."
 
 #: ../archive.php:22
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Dagligt Arkiv: %s"
+msgstr "Dagelijkse archieven: %s"
 
 #: ../archive.php:24
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Månad Arkiv: %s"
+msgstr "Maandelijkse archieven: %s"
 
 #: ../archive.php:24
 msgctxt "monthly archives date format"
@@ -69,7 +69,7 @@ msgstr "F Y"
 #: ../archive.php:26
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Årliga Arkiv: %s"
+msgstr "Jaarlijkse archieven: %s"
 
 #: ../archive.php:26
 msgctxt "yearly archives date format"
@@ -78,12 +78,12 @@ msgstr "Y"
 
 #: ../archive.php:28
 msgid "Blog Archives"
-msgstr "Blogg Arkiv"
+msgstr "Bericht archieven"
 
 #: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
 #: ../page-blog.php:65 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
-msgstr "Inget funnet"
+msgstr "Niets gevonden"
 
 #: ../archive.php:56 ../author.php:73 ../category.php:49 ../index.php:36
 #: ../page-blog.php:69 ../tag.php:49
@@ -91,52 +91,53 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Ursäkta, men inga resultat hittades för det efterfrågade arkivet. Kanske en "
-"sökning kommer att hjälpa till att hitta en relaterad post."
+"Excuses, maar er werden geen resultaten gevonden voor het gevraagde archief. "
+"Wellicht zal een zoekactie je aan een gerelateerd berichten helpen."
 
 #: ../author.php:25
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Författar Arkiv: %s"
+msgstr "Auteur archieven: %s"
 
 #: ../author.php:44 ../content-single.php:76
 #, php-format
 msgid "About %s"
-msgstr "Om %s"
+msgstr "Over %s"
 
 #: ../category.php:16
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Kategori Arkiv: %s"
+msgstr "Categorie archieven: %s"
 
 #: ../comments.php:17
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Den här posten är lösenordsskyddad. Skriv lösenord för att se kommentarer."
+"Dit bericht is beschermd met een wachtwoord. Geef het wachtwoord op om "
+"reacties te zien."
 
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s tankar om &ldquo;%2$s&rdquo;"
+msgstr[0] "Een gedachte over  &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gedachten over  &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Kommentar navigering"
+msgstr "Reacties navigatie"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Äldre kommentarer"
+msgstr "&larr; Oudere reacties"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Nyare kommentarer &rarr;"
+msgstr "Recentere reacties &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "Kommentarer är avstängda."
+msgstr "Reacties zijn gesloten."
 
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
@@ -145,11 +146,11 @@ msgstr "Kommentarer är avstängda."
 #: ../content.php:63 ../inc/catchevolution-functions.php:641
 #, php-format
 msgid "Permalink to %s"
-msgstr "Direktlänk till %s"
+msgstr "Permalink naar %s"
 
 #: ../content-aside.php:17
 msgid "Aside"
-msgstr "Aside"
+msgstr "Terzijde"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -157,7 +158,7 @@ msgstr "Aside"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "Leave a reply"
-msgstr "Lämna ett svar"
+msgstr "Laat een reactie achter"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -165,7 +166,7 @@ msgstr "Lämna ett svar"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "1 Comment &darr;"
-msgstr "1 Kommentar &darr;"
+msgstr "1 reactie &darr;"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -173,19 +174,19 @@ msgstr "1 Kommentar &darr;"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "% Comments &darr;"
-msgstr "% Kommentarer &darr;"
+msgstr "% reacties &darr;"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-link.php:33
 #: ../content-quote.php:36 ../content-status.php:34
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Läs vidare <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:35 ../content-featured.php:24
 #: ../content-gallery.php:55 ../content-image.php:28 ../content-link.php:35
 #: ../content-page.php:19 ../content-quote.php:38 ../content-single.php:31
 #: ../content-status.php:36 ../content.php:77 ../image.php:87
 msgid "Pages:"
-msgstr "Sidor:"
+msgstr "Pagina's"
 
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:73 ../content-link.php:50
@@ -194,7 +195,7 @@ msgstr "Sidor:"
 #: ../inc/catchevolution-functions.php:390
 #: ../inc/catchevolution-functions.php:418
 msgid "Edit"
-msgstr "Redigera"
+msgstr "Wijzig"
 
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:68 ../content-gallery.php:78 ../content-image.php:52
@@ -202,7 +203,7 @@ msgstr "Redigera"
 #: ../content-single.php:42 ../content-single.php:45 ../content.php:91
 #: ../content.php:101
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-featured.php:37
 #, php-format
@@ -210,8 +211,9 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat i %1$s och taggat %2$s. Bokmärk <a href=\"%3$s\" "
-"title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
+"Dit artikel werd geplaatst in  %1$s en getagged als %2$s. Markeer de <a href="
+"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a> als "
+"favoriet."
 
 #: ../content-featured.php:39
 #, php-format
@@ -219,35 +221,35 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat i %1$s. Bokmärk  <a href=\"%3$s\" title=\"Permalänken "
-"till %4$s\" rel=\"bookmark\">permalänken</a>. "
+"Dit artikel werd geplaatst in %1$s. Markeer de <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a> als favoriet."
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "Galleri"
+msgstr "Galerij"
 
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Detta album inneh&aring;ller <a %1$s>%2$s bild</a>"
-msgstr[1] "Detta album inneh&aring;ller <a %1$s>%2$s bilder</a>"
+msgstr[0] "Deze galerij bevat <a %1$s>%2$s foto</a>."
+msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto's</a>."
 
 #: ../content-gallery.php:72 ../content-image.php:56 ../content-quote.php:55
 #: ../content.php:95
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Postat i</span> %2$s"
+msgstr "<span class=\"%1$s\">Geplaatst in</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:64 ../content-quote.php:67
 #: ../content.php:107
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Taggad</span> %2$s"
+msgstr "<span class=\"%1$s\">Getagged als</span> %2$s"
 
 #: ../content-image.php:16
 msgid "Image"
-msgstr "Bild"
+msgstr "Afbeelding"
 
 #: ../content-image.php:26 ../content.php:75
 #: ../inc/catchevolution-functions.php:248
@@ -265,21 +267,21 @@ msgid ""
 msgstr ""
 "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date updated\" "
 "datetime=\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span "
-"class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
-"href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+"class=\"sep\"> door </span> <span class=\"author vcard\"><a class=\"url fn n"
+"\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 #: ../content-image.php:44 ../inc/catchevolution-functions.php:467
 #, php-format
 msgid "View all posts by %s"
-msgstr "Visa alla poster av %s"
+msgstr "Bekijk alle berichten door %s"
 
 #: ../content-link.php:17
 msgid "Link"
-msgstr "Länk"
+msgstr "Link"
 
 #: ../content-quote.php:15
 msgid "Quote"
-msgstr "Citat"
+msgstr "Citaat"
 
 #: ../content-single.php:47
 #, php-format
@@ -288,9 +290,9 @@ msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat i %1$s och taggat %2$s av <a href=\"%6$s\">%5$s</a>. "
-"Bokmärk <a href=\"%3$s\" title=\"Permalänken till %4$s\" rel=\"bookmark"
-"\">permalänken</a>."
+"Dit bericht werd geplaatst in %1$s en getagged als %2$s door <a href=\"%6$s"
+"\">%5$s</a>. Markeer de <a href=\"%3$s\" title=\"Permalink to %4$s\" rel="
+"\"bookmark\">permalink</a> als favoriet."
 
 #: ../content-single.php:49
 #, php-format
@@ -298,8 +300,9 @@ msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat i %1$s av <a href=\"%6$s\">%5$s</a>. Bokmärk <a href="
-"\"%3$s\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
+"Dit bericht werd geplaatst in %1$s door <a href=\"%6$s\">%5$s</a>. Markeer "
+"de <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</"
+"a> als favoriet."
 
 #: ../content-single.php:51
 #, php-format
@@ -307,13 +310,14 @@ msgid ""
 "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
 "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat av <a href=\"%6$s\">%5$s</a>. Bokmärk <a href=\"%3$s"
-"\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
+"Dit bericht werd geplaatst door <a href=\"%6$s\">%5$s</a>. Markeer de <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a> als "
+"favoriet."
 
 #: ../content-single.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Visa alla inlägg av %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Bekijk alle berichten door %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:16
 msgid "Status"
@@ -321,35 +325,35 @@ msgstr "Status"
 
 #: ../content.php:28
 msgid "Featured"
-msgstr "Utvalda"
+msgstr "Uitgelicht"
 
 #: ../functions.php:126
 msgid "Fixed Header Top Menu"
-msgstr "Fixerad Toppmeny Sidhuvud"
+msgstr "Hoofding Bovenmenu"
 
 #: ../functions.php:127
 msgid "Primary Menu"
-msgstr "Primär Meny"
+msgstr "Hoofdmenu"
 
 #: ../functions.php:128
 msgid "Secondary Menu"
-msgstr "Sekundär Meny"
+msgstr "Secondair menu"
 
 #: ../functions.php:129
 msgid "Footer Menu"
-msgstr "Sidfot Meny"
+msgstr "Voettekst menu"
 
 #: ../image.php:15
 msgid "Image navigation"
-msgstr "Bild Navigering"
+msgstr "Afbeelding navigatie"
 
 #: ../image.php:16
 msgid "&larr; Previous"
-msgstr "&larr; Föregående"
+msgstr "&larr; Vorige"
 
 #: ../image.php:17
 msgid "Next &rarr;"
-msgstr "Nästa &rarr;"
+msgstr "Volgende &rarr;"
 
 #: ../image.php:27
 #, php-format
@@ -359,28 +363,27 @@ msgid ""
 "at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> "
 "in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
-"<span class=\"meta-prep meta-prep-entry-date\">Publicerad </span> <span "
+"<span class=\"meta-prep meta-prep-entry-date\">Gepubliceerd </span> <span "
 "class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></"
-"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
-"%5$s</a> in <a href=\"%6$s\" title=\"Återgå till %7$s\" rel=\"gallery\">"
-"%8$s</a>"
+"span>om<a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</"
+"a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 
 #: ../inc/catchevolution-functions.php:101
 #, php-format
 msgid "Page %s"
-msgstr "Sida %s"
+msgstr "Pagina %s"
 
 #: ../inc/catchevolution-functions.php:303 ../single.php:15
 msgid "Post navigation"
-msgstr "Inläggsnavigering"
+msgstr "Berichten navigatie"
 
 #: ../inc/catchevolution-functions.php:311
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Äldre poster"
+msgstr "<span class=\"meta-nav\">&larr;</span> Oudere berichten"
 
 #: ../inc/catchevolution-functions.php:312
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nyare poster <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Recentere berichten <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/catchevolution-functions.php:390
 msgid "Pingback:"
@@ -389,20 +392,20 @@ msgstr "Pingback:"
 #: ../inc/catchevolution-functions.php:407
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
-msgstr "%1$s on %2$s <span class=\"säger\">sade:</span>"
+msgstr "%1$s op %2$s <span class=\"says\">zei:</span>"
 
 #: ../inc/catchevolution-functions.php:413
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s at %2$s"
+msgstr "%1$s om %2$s"
 
 #: ../inc/catchevolution-functions.php:422
 msgid "Your comment is awaiting moderation."
-msgstr "Din kommentar väntar på moderering."
+msgstr "Je commentaar wacht op goedkeuring."
 
 #: ../inc/catchevolution-functions.php:431
 msgid "Reply <span>&darr;</span>"
-msgstr "Svara <span>&darr;</span>"
+msgstr "Reactie <span>&darr;</span>"
 
 #: ../inc/catchevolution-functions.php:461
 #, php-format
@@ -413,9 +416,9 @@ msgid ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
-"<span class=\"sep\">Postat den </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"<span class=\"sep\">Geplaatst op </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>"
-"%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> av </span> "
+"%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> door </span> "
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
@@ -425,7 +428,7 @@ msgstr "ID"
 
 #: ../inc/catchevolution-functions.php:815
 msgid "Name"
-msgstr "Namn"
+msgstr "Naam"
 
 #: ../inc/catchevolution-functions.php:817
 #: ../inc/catchevolution-functions.php:1030
@@ -548,74 +551,73 @@ msgstr "Meetup"
 
 #: ../inc/catchevolution-functions.php:1378
 msgid "Footer menu"
-msgstr "Sidfot Meny"
+msgstr "Voettekst menu"
 
 #: ../inc/catchevolution-metabox.php:14 ../inc/catchevolution-metabox.php:20
 msgid "Catch Evolution Options"
-msgstr "Catch Evolution alternativ"
+msgstr "Catch Evolution Options"
 
 #: ../inc/catchevolution-metabox.php:34
 #, php-format
 msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr "Ställ in Standardlayout <a href=\"%s\">Theme Settings</a>"
+msgstr "Standaard layout geselecteerd in <a href=\"%s\">Thema opties</a>"
 
 #: ../inc/catchevolution-metabox.php:40
 msgid "Right sidebar"
-msgstr "Höger sidofält"
+msgstr "Rechter zijpaneel"
 
 #: ../inc/catchevolution-metabox.php:46
 msgid "Left sidebar"
-msgstr "Vänster sidofält"
+msgstr "Linker zijpaneel"
 
 #: ../inc/catchevolution-metabox.php:52
 msgid "No sidebar"
-msgstr "Inget sidofält"
+msgstr "Geen zijpaneel"
 
 #: ../inc/catchevolution-metabox.php:58 ../inc/panel/theme-options.php:417
 msgid "Three Columns"
-msgstr "Tre kolumner"
+msgstr "3 kolommen"
 
 #: ../inc/catchevolution-metabox.php:74
 msgid "Sidebar Layout Options"
-msgstr "Sidofält layoutalternativ"
+msgstr "Zijpaneel opmaak opties"
 
 #: ../inc/catchevolution-widgets.php:17
 msgid "Main Sidebar"
-msgstr "Huvudsakligt Sidfält"
+msgstr "Hoofd zijpaneel"
 
 #: ../inc/catchevolution-widgets.php:27
 msgid "Third Column Sidebar"
-msgstr "Tredje Kolumn Sidfält"
+msgstr "derde  kolommen sidebar"
 
 #: ../inc/catchevolution-widgets.php:37
 msgid "Header Right Sidebar"
-msgstr "Sidhuvud Höger Sidfält"
+msgstr "Hoofding rechter zijpaneel"
 
 #: ../inc/catchevolution-widgets.php:48
 msgid "WooCommerce Sidebar"
-msgstr "WooCommerce Sidfält"
+msgstr "WooCommerce Zijpaneel"
 
 #: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
-msgstr "Sidfot Område Ett"
+msgstr "Voettekst gebied één"
 
 #: ../inc/catchevolution-widgets.php:61 ../inc/catchevolution-widgets.php:72
 #: ../inc/catchevolution-widgets.php:83
 msgid "An optional widget area for your site footer"
-msgstr "Ett valfritt widget-område för din webbplats sidfot"
+msgstr "Een optioneel widget gebied voor je website voettekst"
 
 #: ../inc/catchevolution-widgets.php:70
 msgid "Footer Area Two"
-msgstr "Sidfot Område Två"
+msgstr "Voettekst gebied twee"
 
 #: ../inc/catchevolution-widgets.php:81
 msgid "Footer Area Three"
-msgstr "Sidfot Område Tre"
+msgstr "Voettekst gebied drie"
 
 #: ../inc/catchevolution-widgets.php:111
 msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr ""
-"Använd denna widget för att lägga till någon typ av annons som en widget."
+msgstr "Use this widget to add any type of Advertisement as a widget."
 
 #: ../inc/catchevolution-widgets.php:112
 msgid "1. Catch Evolution Adspace Widget"
@@ -624,79 +626,79 @@ msgstr "1. Catch Evolution Adspace Widget"
 #: ../inc/catchevolution-widgets.php:130 ../inc/catchevolution-widgets.php:255
 #: ../inc/catchevolution-widgets.php:334
 msgid "Title (optional):"
-msgstr "Titel (valfritt):"
+msgstr "Titel (optioneel):"
 
 #: ../inc/catchevolution-widgets.php:135
 msgid "Ad Code:"
-msgstr "Annons Kod:"
+msgstr "Ad Code:"
 
 #: ../inc/catchevolution-widgets.php:141
 msgid "Image Url:"
-msgstr "Bild Url:"
+msgstr "Afbeelding URL:"
 
 #: ../inc/catchevolution-widgets.php:145
 msgid "Link URL:"
-msgstr "Länk URL:"
+msgstr "Link URL:"
 
 #: ../inc/catchevolution-widgets.php:149
 msgid "Open Link in New Window"
-msgstr "Öppna Länk i Nytt Fönster"
+msgstr "Open Link in nieuw venster"
 
 #: ../inc/catchevolution-widgets.php:153
 msgid "Alt text:"
-msgstr "Alt text:"
+msgstr "Alt tekst:"
 
 #: ../inc/catchevolution-widgets.php:241
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
-"Använd denna widget för att lägga till sociala ikoner från Sociala Ikoner "
-"Inställningar som en widget."
+"Gebruik deze widget om sociale iconen van de Sociale Iconen Instellingen als "
+"een widget toe te voegen."
 
 #: ../inc/catchevolution-widgets.php:242
 msgid "2. Catch Evolution Social Widget"
-msgstr "2. Catch Evolution Social Widget"
+msgstr "2. Catch Evolution Sociale Widget"
 
 #: ../inc/catchevolution-widgets.php:320
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget. "
 msgstr ""
-"Använd denna widget för att lägga till sociala ikoner från Sociala Ikoner "
-"Inställningar & Sök som en widget."
+"Use this widget to add Social Icons from Social Icons Settings & Search  as "
+"a widget. "
 
 #: ../inc/catchevolution-widgets.php:321
 msgid "3. Catch Evolution Social & Seach Widget"
-msgstr "3. Catch Evolution Social & Sök Widget"
+msgstr "3. Catch Evolution Social & Seach Widget"
 
 #: ../inc/custom-header.php:441
 msgid "Primary menu"
-msgstr "Primär meny"
+msgstr "Hoofdmenu"
 
 #: ../inc/custom-header.php:443 ../inc/custom-header.php:476
 msgid "Skip to primary content"
-msgstr "Hoppa till huvudinnehåll"
+msgstr "Spring naar hoofd inhoud"
 
 #: ../inc/custom-header.php:444 ../inc/custom-header.php:477
 msgid "Skip to secondary content"
-msgstr "Hoppa till sekundärt innehåll"
+msgstr "Spring naar secondaire inhoud"
 
 #: ../inc/custom-header.php:474
 msgid "Secondary menu"
-msgstr "Sekundär meny"
+msgstr "Secondair menu"
 
 #: ../inc/panel/theme-options.php:37 ../inc/panel/theme-options.php:38
 #: ../inc/panel/theme-options.php:113
 msgid "Theme Options"
-msgstr "Tema Inställningar"
+msgstr "Thema opties"
 
 #: ../inc/panel/theme-options.php:79
 msgid "Options Saved"
-msgstr "Inställningar Sparade"
+msgstr "Opties bewaard"
 
 #: ../inc/panel/theme-options.php:85
 msgid "Theme Options By"
-msgstr "Tema Alternativ Av"
+msgstr "Theme opties door"
 
 #: ../inc/panel/theme-options.php:87
 msgid "http://catchthemes.com/"
@@ -712,7 +714,7 @@ msgstr "http://catchthemes.com/themes/catch-evolution-pro/"
 
 #: ../inc/panel/theme-options.php:94
 msgid "Upgrade to Catch Evolution Pro"
-msgstr "Uppgradera till Catch Evolution Pro"
+msgstr "Upgraden naar Catch Evolution Pro"
 
 #: ../inc/panel/theme-options.php:99
 msgid "http://catchthemes.com/donate/"
@@ -720,11 +722,11 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:99
 msgid "Donate to Catch Evolution"
-msgstr "Donera till Catch Evolution"
+msgstr "Donate to Catch Evolution"
 
 #: ../inc/panel/theme-options.php:99
 msgid "Donate Now"
-msgstr "Donera Nu"
+msgstr "Donneer"
 
 #: ../inc/panel/theme-options.php:100
 msgid "http://catchthemes.com/theme-instructions/catch-evolution/"
@@ -732,7 +734,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:100
 msgid "Theme Instruction"
-msgstr "Tema Instruktioner"
+msgstr "Thema instructies"
 
 #: ../inc/panel/theme-options.php:101
 msgid "http://catchthemes.com/support/"
@@ -740,7 +742,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:101
 msgid "Support"
-msgstr "Support"
+msgstr "Ondersteuning"
 
 #: ../inc/panel/theme-options.php:102
 msgid "https://www.facebook.com/catchthemes/"
@@ -748,7 +750,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:102
 msgid "Like Catch Themes on Facebook"
-msgstr "Gilla Catch Themes på Facebook"
+msgstr "Like Catch Themes op Facebook"
 
 #: ../inc/panel/theme-options.php:103
 msgid "https://twitter.com/catchthemes/"
@@ -756,7 +758,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:103
 msgid "Follow Catch Themes on Twitter"
-msgstr "Följ Catch Themes på Twitter"
+msgstr "Volg Catch Themes op Twitter"
 
 #: ../inc/panel/theme-options.php:104
 msgid "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
@@ -764,7 +766,7 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:104
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Geef ons 5 Sterren op WordPress"
 
 #: ../inc/panel/theme-options.php:104
 msgid "5 Star Rating"
@@ -772,30 +774,30 @@ msgstr "5 Star Rating"
 
 #: ../inc/panel/theme-options.php:114
 msgid "Featured Post Slider"
-msgstr "Framhävda Inlägg Bildspel"
+msgstr "Uitgelicht bericht diashow"
 
 #: ../inc/panel/theme-options.php:115
 msgid "Social Links"
-msgstr "Sociala Länkar"
+msgstr "Sociale Links"
 
 #: ../inc/panel/theme-options.php:117
 msgid "Webmaster Tools"
-msgstr "Webmaster Verktyg"
+msgstr "Webmaster Tools"
 
 #: ../inc/panel/theme-options.php:125
 msgid "Favicon Options"
-msgstr "Favicon Inställningar"
+msgstr "Favicon opties"
 
 #: ../inc/panel/theme-options.php:130
 msgid "Disable Favicon?"
-msgstr "Avaktivera Favicon?"
+msgstr "Favicon uitzetten?"
 
 #: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:171
 #: ../inc/panel/theme-options.php:211 ../inc/panel/theme-options.php:223
 #: ../inc/panel/theme-options.php:252 ../inc/panel/theme-options.php:257
 #: ../inc/panel/theme-options.php:315
 msgid "Check to disable"
-msgstr "Markera för att avaktivera"
+msgstr "Vink aan om uit te zetten"
 
 #: ../inc/panel/theme-options.php:135
 msgid "Fav Icon URL:"
@@ -803,11 +805,11 @@ msgstr "Fav Icon URL:"
 
 #: ../inc/panel/theme-options.php:141
 msgid "Change Fav Icon"
-msgstr "Ändra Fav Icon"
+msgstr "Verander Fav Icon"
 
 #: ../inc/panel/theme-options.php:146 ../inc/panel/theme-options.php:185
 msgid "Preview: "
-msgstr "Förhandsgranska:"
+msgstr "Voorbeeld:"
 
 #: ../inc/panel/theme-options.php:159 ../inc/panel/theme-options.php:199
 #: ../inc/panel/theme-options.php:278 ../inc/panel/theme-options.php:388
@@ -817,15 +819,15 @@ msgstr "Förhandsgranska:"
 #: ../inc/panel/theme-options.php:647 ../inc/panel/theme-options.php:786
 #: ../inc/panel/theme-options.php:819
 msgid "Save Changes"
-msgstr "Spara Ändringar"
+msgstr "Bewaar aanpassingen"
 
 #: ../inc/panel/theme-options.php:164
 msgid "Web Clip Icon Options"
-msgstr "Web Clip Icon Inställningar"
+msgstr "Web Clip Icon Opties"
 
 #: ../inc/panel/theme-options.php:169
 msgid "Disable Web Clip Icon?"
-msgstr "Avaktivera Web Clip Icon?"
+msgstr "Web Clip Icon uitzetten?"
 
 #: ../inc/panel/theme-options.php:174
 msgid "Web Clip Icon URL:"
@@ -833,7 +835,7 @@ msgstr "Web Clip Icon URL:"
 
 #: ../inc/panel/theme-options.php:180
 msgid "Change Web Clip Icon"
-msgstr "Ändra Web Clip Icon"
+msgstr "Verander Web Clip Icon"
 
 #: ../inc/panel/theme-options.php:198
 msgid ""
@@ -841,81 +843,81 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Notering: Web Clip Icon för Apple-enheter. Rekommenderad storlek - Bredd "
-"144px och höjd 144px , vilket kommer att stödja högupplösta enheter som iPad "
-"Retina."
+"Noot: Web Clip Icon voor Apple apparatuur. Aanbevolen grootte - Breedte "
+"144px en Hoogte 144px, zal de Hoge Resolutie Apparaten zoals de iPad Retina "
+"ondersteunen."
 
 #: ../inc/panel/theme-options.php:204
 msgid "Header Options"
-msgstr "Header Inställningar"
+msgstr "Hoofding opties"
 
 #: ../inc/panel/theme-options.php:209
 msgid "Disable Header?"
-msgstr "Avaktivera Header"
+msgstr "Uitschakelen Header?"
 
 #: ../inc/panel/theme-options.php:215
 msgid "Change Custom Header Image (Buddha)?"
-msgstr "Ändra Custom Header Bild (Buddha)?"
+msgstr "Change Custom Header Image (Buddha)?"
 
 #: ../inc/panel/theme-options.php:217
 msgid "Click here to change header image"
-msgstr "Klicka här för att ändra headerns bild"
+msgstr "Click here to change header image"
 
 #: ../inc/panel/theme-options.php:221
 msgid "Disable Header Logo?"
-msgstr "Avaktivera Headerns Logga?"
+msgstr "Disable Header Logo?"
 
 #: ../inc/panel/theme-options.php:226
 msgid "Logo url:"
-msgstr "Loggans url:"
+msgstr "Logo url:"
 
 #: ../inc/panel/theme-options.php:234
 msgid "Change Header Logo"
-msgstr "Ändra Headerns Logga"
+msgstr "Change Header Logo"
 
 #: ../inc/panel/theme-options.php:238
 msgid "Preview:"
-msgstr "Förhandsgranska:"
+msgstr "Voorbeeld:"
 
 #: ../inc/panel/theme-options.php:250
 msgid "Disable Site Title?"
-msgstr "Avaktivera Sidans Titel?"
+msgstr "Disable Site Title?"
 
 #: ../inc/panel/theme-options.php:255
 msgid "Disable Site Description (Tagline)?"
-msgstr "Inaktivera Sidans Beskrivning (Undertitel)?"
+msgstr "Site beschrijving(tagline) uitschakelen?"
 
 #: ../inc/panel/theme-options.php:260
 msgid "Move Site Title and Tagline?"
-msgstr "Flytta Sidans Titel och Undertitel?"
+msgstr "Site-titel en -beschrijving verplaatsen?"
 
 #: ../inc/panel/theme-options.php:262
 msgid "Check to move before the Logo"
-msgstr "Markera för att lägga före Loggan"
+msgstr "Vink aan om voor het logo te plaatsen"
 
 #: ../inc/panel/theme-options.php:265
 msgid "Seperate Logo and Site Details?"
-msgstr "Separera Logotyp och Sidans Detaljer?"
+msgstr "Seperate Logo and Site Details?"
 
 #: ../inc/panel/theme-options.php:267
 msgid "Check to move down"
-msgstr "Markera för att flytta ner"
+msgstr "Check to move down"
 
 #: ../inc/panel/theme-options.php:270
 msgid "Enable Header Right Sidebar?"
-msgstr "Aktivera Sidhuvudets Högra Sidopanel"
+msgstr "Enable Header Right Sidebar?"
 
 #: ../inc/panel/theme-options.php:272
 msgid "Just add Widgets in Header Right Sidebar"
-msgstr "Lägg bara till Widgets i Sidhuvudets Högra Sidopanel"
+msgstr "Just add Widgets in Header Right Sidebar"
 
 #: ../inc/panel/theme-options.php:284
 msgid "Menu Options"
-msgstr "Meny Inställningar"
+msgstr "Menu opties"
 
 #: ../inc/panel/theme-options.php:289 ../inc/panel/theme-options.php:291
 msgid "Menu Tutorial"
-msgstr "Meny Handledning"
+msgstr "Menu Tutorial"
 
 #: ../inc/panel/theme-options.php:291
 msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
@@ -923,187 +925,189 @@ msgstr "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
 
 #: ../inc/panel/theme-options.php:291
 msgid "Click Here to Read Menu Tutorial"
-msgstr "Klicka Här för att Läsa Meny Handledning"
+msgstr "Klik hier om te lezen menu tutorial"
 
 #: ../inc/panel/theme-options.php:295 ../inc/panel/theme-options.php:297
 msgid "Create Menu"
-msgstr "Skapa Meny"
+msgstr "Create Menu"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Click Here to Create Menu"
-msgstr "Klicka Här för att Skapa Meny"
+msgstr "Click Here to Create Menu"
 
 #: ../inc/panel/theme-options.php:301
 msgid "Assign Menu to Respective Location"
-msgstr "Tilldela Meny till respektive plats"
+msgstr "Assign Menu to Respective Location"
 
 #: ../inc/panel/theme-options.php:303
 msgid "Assign Menu Location"
-msgstr "Tilldela Meny Placering"
+msgstr "Assign Menu Location"
 
 #: ../inc/panel/theme-options.php:303
 msgid "Click Here to Assign Menu Location"
-msgstr "Klicka Här för att Tilldela Menyns Placering"
+msgstr "Click Here to Assign Menu Location"
 
 #: ../inc/panel/theme-options.php:307
 msgid "Add Menu in Header Right Sidebar"
-msgstr "Lägg till Meny i Sidhuvudets Högra Sidofält"
+msgstr "Add Menu in Header Right Sidebar"
 
 #: ../inc/panel/theme-options.php:309
 msgid "Add Menu Widget in Header Right Sidebar"
-msgstr "Lägg till Meny Widget i Sidhuvudets Högra Sidofält"
+msgstr "Add Menu Widget in Header Right Sidebar"
 
 #: ../inc/panel/theme-options.php:313
 msgid "Disable Primary & Secondary Menu?"
-msgstr "Avaktivera Primär & Sekundär Meny"
+msgstr "Disable Primary & Secondary Menu?"
 
 #: ../inc/panel/theme-options.php:319 ../inc/panel/theme-options.php:337
 msgid "Save"
-msgstr "Spara"
+msgstr "Bewaar"
 
 #: ../inc/panel/theme-options.php:325
 msgid "Search Options"
-msgstr "Sök Inställningar"
+msgstr "Zoek opties"
 
 #: ../inc/panel/theme-options.php:330
 msgid "Default Display Text in Search"
-msgstr "Standardtext i Sök"
+msgstr "Standaard voorbeeld tekst in zoekveld"
 
 #: ../inc/panel/theme-options.php:343
 msgid "Color Options"
-msgstr "Färg Inställningar"
+msgstr "Kleur opties"
 
 #: ../inc/panel/theme-options.php:348
 msgid "Default Color Scheme"
-msgstr "Standardfärgschema"
+msgstr "Standaard Kleurenschama"
 
 #: ../inc/panel/theme-options.php:352
 msgid "Light"
-msgstr "Ljus"
+msgstr "Helder"
 
 #: ../inc/panel/theme-options.php:356
 msgid "Dark"
-msgstr "Mörk"
+msgstr "Donker"
 
 #: ../inc/panel/theme-options.php:364
 msgid "Main Background Color:"
-msgstr "Bakgrundsfärg"
+msgstr "Standaard achtergrondkleur:"
 
 #: ../inc/panel/theme-options.php:369
 msgid "Click Here to change Main Background Image/Color"
-msgstr "Klicka här för att ändra Bakgrundens Bild / Färg"
+msgstr "Klik hier om het standaard achtergrondafbeelding/kleur aan te passen"
 
 #: ../inc/panel/theme-options.php:376
 msgid "Site Title Color:"
-msgstr "Sidans Bild för Sidhuvud"
+msgstr "Site Title Color:"
 
 #: ../inc/panel/theme-options.php:381
 msgid "Click Here to change Site Title Color"
-msgstr "Klicka Här för att ändra Bild för Sidhuvud"
+msgstr "Click Here to change Site Title Color"
 
 #: ../inc/panel/theme-options.php:393
 msgid "Layout Options"
-msgstr "Layout Inställningar"
+msgstr "Layout Options"
 
 #: ../inc/panel/theme-options.php:398
 msgid "Default Layout"
-msgstr "Standard Layout"
+msgstr "Standaard opmaak"
 
 #: ../inc/panel/theme-options.php:402
 msgid "Right Sidebar"
-msgstr "Höger Sidopanel"
+msgstr "Rechter zijpaneel"
 
 #: ../inc/panel/theme-options.php:407
 msgid "Left Sidebar"
-msgstr "Vänster Sidopanel"
+msgstr "Linker zijpaneel"
 
 #: ../inc/panel/theme-options.php:412
 msgid "No Sidebar"
-msgstr "Ingen Sidopanel"
+msgstr "Geen zijpaneel"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Content Layout"
-msgstr "Innehåll Layout"
+msgstr "inhoud opmaak"
 
 #: ../inc/panel/theme-options.php:427
 msgid "Excerpt/Blog Display"
-msgstr "Visa Utdrag Blogginlägg "
+msgstr "Uittreksel/bericht vertoon"
 
 #: ../inc/panel/theme-options.php:431
 msgid "Full Content Display"
-msgstr "Visa Hela Blogginlägg "
+msgstr "Volledige Inhoud vertoon"
 
 #: ../inc/panel/theme-options.php:438
 msgid "Reset Layout?"
-msgstr "Återställ Layout?"
+msgstr "Reset Layout?"
 
 #: ../inc/panel/theme-options.php:440 ../inc/panel/theme-options.php:500
 msgid "Check to reset"
-msgstr "Markera för återställning"
+msgstr "Klik om te herstellen"
 
 #: ../inc/panel/theme-options.php:449
 msgid "Homepage / Frontpage Category Setting"
-msgstr "Hemsida / Framsida Kategori Inställningar"
+msgstr "Startpagina/eerstepagina categorie instellingen"
 
 #: ../inc/panel/theme-options.php:455
 msgid "Front page posts categories:"
-msgstr "Framsida Inlägg Kategorier"
+msgstr "Startpagina categorieën van berichten:"
 
 #: ../inc/panel/theme-options.php:457
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Endast inlägg som hör till de kategorier som väljs här kommer att visas på "
-"första sidan"
+"Alleen berichten die behoren tot de geselecteerde categorieën zullen "
+"vertoond worden op de startpagina."
 
 #: ../inc/panel/theme-options.php:462
 msgid "--Disabled--"
-msgstr "--Inaktiverad--"
+msgstr "--Uitgezet--"
 
 #: ../inc/panel/theme-options.php:473
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Du kan välja flera kategorier genom att hålla ned CTRL-tangenten."
+msgstr ""
+"Je kan meerdere categorieën selecteren door de CTRL-toets ingedrukt te "
+"houden."
 
 #: ../inc/panel/theme-options.php:483
 msgid "Excerpt / More Tag Settings"
-msgstr "Utdrag / Mer Etikett Inställningar"
+msgstr "Uittreksel / \"Lees meer\" instellingen"
 
 #: ../inc/panel/theme-options.php:488
 msgid "More Tag Text"
-msgstr "Mera Ettikett Text"
+msgstr "\"Lees meer\" Tekst"
 
 #: ../inc/panel/theme-options.php:493
 msgid "Excerpt length(words)"
-msgstr "Utdragets längd (ord)"
+msgstr "Uittreksellengte in woorden"
 
 #: ../inc/panel/theme-options.php:498
 msgid "Reset?"
-msgstr "Återställa?"
+msgstr "resetten?"
 
 #: ../inc/panel/theme-options.php:509
 msgid "Feed Redirect"
-msgstr "Feed Omdirigering"
+msgstr "Feed Redirect"
 
 #: ../inc/panel/theme-options.php:514
 msgid "Feed Redirect URL"
-msgstr "Omdirigera Feed URL"
+msgstr "Feed Redirect URL"
 
 #: ../inc/panel/theme-options.php:515
 msgid "Add in the Feedburner URL"
-msgstr "Lägg till i Feedburner URL"
+msgstr "Voeg toe in de Feedburner URL"
 
 #: ../inc/panel/theme-options.php:527
 msgid "Custom CSS"
-msgstr "Anpassad CSS"
+msgstr "Aangepaste CSS"
 
 #: ../inc/panel/theme-options.php:532
 msgid "Enter your custom CSS styles."
-msgstr "Lägg till anpassade CSS-stilar."
+msgstr "Voer je aangepaste CSS styles in."
 
 #: ../inc/panel/theme-options.php:539
 msgid "CSS Tutorial from W3Schools."
-msgstr "CSS Handledning ifrån W3Schools."
+msgstr "CSS Tutorial van de W3Schools."
 
 #: ../inc/panel/theme-options.php:541
 msgid "http://www.w3schools.com/css/default.asp"
@@ -1111,99 +1115,99 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:541
 msgid "CSS Tutorial"
-msgstr "CSS Handledning"
+msgstr "CSS Tutorial"
 
 #: ../inc/panel/theme-options.php:541
 msgid "Click Here to Read"
-msgstr "Klicka Här för att Läsa"
+msgstr "Klik hier om te lezen"
 
 #: ../inc/panel/theme-options.php:555
 msgid "Slider Options"
-msgstr "Inställningar Bildspel"
+msgstr "Diashow Opties"
 
 #: ../inc/panel/theme-options.php:559
 msgid "Enable Sidebar"
-msgstr "Aktivera Sidopanel"
+msgstr "Zet zijpaneel aan"
 
 #: ../inc/panel/theme-options.php:563
 msgid "Homepage / Frontpage"
-msgstr "Hemsida / Framsida"
+msgstr "Startpagina / Frontpage"
 
 #: ../inc/panel/theme-options.php:567
 msgid "Entire Site"
-msgstr "Hela Sidan"
+msgstr "Volledige website"
 
 #: ../inc/panel/theme-options.php:571
 msgid "Disable"
-msgstr "Avaktivera"
+msgstr "Uitzetten"
 
 #: ../inc/panel/theme-options.php:576
 msgid "Number of Slides"
-msgstr "Antal i Bildspel"
+msgstr "Aantal dia's:"
 
 #: ../inc/panel/theme-options.php:582
 msgid "Transition Effect:"
-msgstr "Övergångseffekt:"
+msgstr "Overgangseffect:"
 
 #: ../inc/panel/theme-options.php:586
 msgid "fade"
-msgstr "tona"
+msgstr "vervagen"
 
 #: ../inc/panel/theme-options.php:587
 msgid "wipe"
-msgstr "sudda"
+msgstr "vegen"
 
 #: ../inc/panel/theme-options.php:588
 msgid "scrollUp"
-msgstr "scrollUp"
+msgstr "naar boven"
 
 #: ../inc/panel/theme-options.php:589
 msgid "scrollDown"
-msgstr "scrollDown"
+msgstr "naar beneden"
 
 #: ../inc/panel/theme-options.php:590
 msgid "scrollLeft"
-msgstr "scrollLeft"
+msgstr "naar links"
 
 #: ../inc/panel/theme-options.php:591
 msgid "scrollRight"
-msgstr "scrollRight"
+msgstr "naar rechts"
 
 #: ../inc/panel/theme-options.php:592
 msgid "blindX"
-msgstr "blindX"
+msgstr "lamellenX"
 
 #: ../inc/panel/theme-options.php:593
 msgid "blindY"
-msgstr "blindY"
+msgstr "lamellenY"
 
 #: ../inc/panel/theme-options.php:594
 msgid "blindZ"
-msgstr "blindZ"
+msgstr "lamellenZ"
 
 #: ../inc/panel/theme-options.php:595
 msgid "cover"
-msgstr "täcka"
+msgstr "bedek"
 
 #: ../inc/panel/theme-options.php:596
 msgid "shuffle"
-msgstr "blanda"
+msgstr "shuffle"
 
 #: ../inc/panel/theme-options.php:601
 msgid "Transition Delay"
-msgstr "Övergång Fördröjning"
+msgstr "Overgangsvertraging"
 
 #: ../inc/panel/theme-options.php:604 ../inc/panel/theme-options.php:611
 msgid "second(s)"
-msgstr "sekund(er)"
+msgstr "seconde(n)"
 
 #: ../inc/panel/theme-options.php:608
 msgid "Transition Length"
-msgstr "Övergång Tid"
+msgstr "Overloop lengte"
 
 #: ../inc/panel/theme-options.php:621
 msgid "Featured Post Slider Options"
-msgstr "Framhävda Inlägg Bildspel Inställningar"
+msgstr "Uitgelicht bericht diashow opties"
 
 #: ../inc/panel/theme-options.php:625 ../inc/panel/theme-options.php:627
 msgid "Post Slider Tutorial"
@@ -1223,43 +1227,42 @@ msgstr "Click Here to Read Post Slider Tutorial"
 
 #: ../inc/panel/theme-options.php:631
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "Exkludera Bildspel Inlägg från Startsidans inlägg?"
+msgstr "Vertoon diashow berichten niet tussen de startpagina berichten?"
 
 #: ../inc/panel/theme-options.php:633
 msgid "Check to exclude"
-msgstr "Markera för att exludera"
+msgstr "Vink aan om uit te sluiten"
 
 #: ../inc/panel/theme-options.php:638
 msgid "Featured Slider Post #"
-msgstr "Framhävt Bildspel Inlägg#"
+msgstr "Uitgelicht diashow bericht #"
 
 #: ../inc/panel/theme-options.php:640
 msgid "Click Here To Edit"
-msgstr "Klicka Här för att Redigera"
+msgstr "Klik hier om te wijzigen"
 
 #: ../inc/panel/theme-options.php:646
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Notering: Här kan du sätta dina inläggs-ID som ska visas som bildspel på "
-"hemsidan."
+"Noot: Hier kun je de berichten ID's plaatsen die vertoond worden als diashow "
+"op de startpagina"
 
 #: ../inc/panel/theme-options.php:658
 msgid "Enable Social Icons in Header Right Sidebar?"
-msgstr "Aktivera Sociala Ikoner i Sidhuvudets Högra Sidpanel?"
+msgstr "Enable Social Icons in Header Right Sidebar?"
 
 #: ../inc/panel/theme-options.php:660
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
-msgstr ""
-"Lägg bara till Catch Evolution Social Widget i Sidhuvudets Högra Sidpanel"
+msgstr "Just add Catch Evolution Social Widget in Header Right Sidebar"
 
 #: ../inc/panel/theme-options.php:664
 msgid "Enable Social Icons in Footer?"
-msgstr "Aktivera Sociala Ikoner i Sidfoten?"
+msgstr "Enable Social Icons in Footer?"
 
 #: ../inc/panel/theme-options.php:666
 msgid "Check to enable"
-msgstr "Markera för att aktivera"
+msgstr "Aanvinken om aan te zetten"
 
 #: ../inc/panel/theme-options.php:689
 msgid "Youtube"
@@ -1267,31 +1270,31 @@ msgstr "Youtube"
 
 #: ../inc/panel/theme-options.php:793
 msgid "Header and Footer Codes"
-msgstr "Koder för Sidhuvud och Sidfot"
+msgstr "Hoofding en voettekst codes"
 
 #: ../inc/panel/theme-options.php:798
 msgid "Code to display on Header"
-msgstr "Kod att lägga in i Sidhuvud"
+msgstr "Code om te vertonen in de Hoofding"
 
 #: ../inc/panel/theme-options.php:804
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Notering: Här kan du lägga skript från Google, Facebook etc som laddas i "
-"Headern"
+"Noot: Hier kun je scripts van Google, Facebook enz. plaatsen die zullen "
+"geladen in de hoofding"
 
 #: ../inc/panel/theme-options.php:807
 msgid "Code to display on Footer"
-msgstr "Kod att lägga in i sidfot"
+msgstr "Code te vertonen in de voettekst"
 
 #: ../inc/panel/theme-options.php:814
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Notera: Här kan du lägga skript från Google, Facebook etc som laddas i "
-"sidfoten"
+"Noot: Hier kun je scripts van Google, Facebook enz. plaatsen die zullen "
+"geladen worden in de voettekst"
 
 #: ../inc/panel/theme-options.php:1171
 msgid "Y"
@@ -1304,89 +1307,702 @@ msgstr "Catch Evolution"
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Sökresultat för: %s"
+msgstr "Zoek resultaten voor: %s"
 
 #: ../search.php:43
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
-"Ledsen, men inget matchade dina sökkriterier. Försök igen med något annat "
-"sökord."
+"Sorry, maar niks gevonden wat aan die zoekcriteria voldeed. Probeer opnieuw "
+"met andere zoektermen."
 
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
-msgstr "Sök"
+msgstr "Zoek"
 
 #: ../single.php:16
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Föregående"
+msgstr "<span class=\"meta-nav\">&larr;</span> Vorige"
 
 #: ../single.php:17
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nästa <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Volgende <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../tag.php:16
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "Tagg Arkiv: %s"
+msgstr "Tag archieven: %s"
 
-#~ msgid "%s in Facebook"
-#~ msgstr "%s på Facebook"
+#~ msgid "Default"
+#~ msgstr "Standaard"
 
-#~ msgid "%s in Twitter"
-#~ msgstr "%s på Twitter"
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
 
-#~ msgid "%s in Google+"
-#~ msgstr "%s på Google+"
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "Geen zijpaneel, één kolom"
 
-#~ msgid "%s in Linkedin"
-#~ msgstr "%s på Linkedin"
+#~ msgid "No sidebar, Full Width"
+#~ msgstr "Geen zijpaneel, volledige breedte"
 
-#~ msgid "%s in Pinterest"
-#~ msgstr "%s på Pinterest"
+#~ msgid "Three Columns Sidebar"
+#~ msgstr "drie kolommen sidebar"
 
-#~ msgid "%s in Vimeo"
-#~ msgstr "%s på Vimeo"
+#~ msgid "Default Sidebar"
+#~ msgstr "Standaard zijpaneel"
 
-#~ msgid "%s in Slideshare"
-#~ msgstr "%s på Slideshare"
+#~ msgid "Optional Sidebar One"
+#~ msgstr "Optioneel zijpaneel één"
 
-#~ msgid "%s in Foursquare"
-#~ msgstr "%s på Foursquare"
+#~ msgid "Optional Sidebar Two"
+#~ msgstr "Optioneel zijpaneel twee"
 
-#~ msgid "%s in Flickr"
-#~ msgstr "%s på Flickr"
+#~ msgid "Optional Sidebar three"
+#~ msgstr "Optioneel zijpaneel drie"
 
-#~ msgid "%s in Tumblr"
-#~ msgstr "%s på Tumblr"
+#~ msgid "Select Sidebar"
+#~ msgstr "Selecteer zijpaneel"
 
-#~ msgid "%s in deviantART"
-#~ msgstr "%s på deviantART"
+#~ msgid "Header Featured Image Options"
+#~ msgstr "Opties voor uitgelichte afbeelding in de header"
 
-#~ msgid "%s in Dribbble"
-#~ msgstr "%s på Dribbble"
+#~ msgid "Header Top Sidebar"
+#~ msgstr "Hoofding bovenste zijpaneel"
 
-#~ msgid "%s in WordPress"
-#~ msgstr "%s på WordPress"
+#~ msgid "Homepage Sidebar"
+#~ msgstr "Startpagina zijpaneel"
 
-#~ msgid "%s in RSS"
-#~ msgstr "%s på RSS"
+#~ msgid "Archive Sidebar"
+#~ msgstr "Archief zijpaneel"
 
-#~ msgid "%s in Instagram"
-#~ msgstr "%s på Instagram"
+#~ msgid "Page Sidebar"
+#~ msgstr "Pagina zijpaneel"
 
-#~ msgid "%s in Skype"
-#~ msgstr "%s på Skype"
+#~ msgid "Post Sidebar"
+#~ msgstr "Bericht zijpaneel"
 
-#~ msgid "Menu Tutorial from WordPress.com"
-#~ msgstr "Meny Handledning från WordPress.com"
+#~ msgid "Optional Sidebar Three"
+#~ msgstr "Optioneel zijpaneel drie"
 
-#~ msgid "http://en.support.wordpress.com/menus/"
-#~ msgstr "http://en.support.wordpress.com/menus/"
+#~ msgid "Continue Reading"
+#~ msgstr "Lees verder"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "All Rights Reserved"
+#~ msgstr "Alle rechten voorbehouden"
+
+#~ msgid "Powered by"
+#~ msgstr "Mogelijk gemaakt door"
+
+#~ msgid "Theme"
+#~ msgstr "Thema"
+
+#~ msgid ""
+#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
+#~ msgstr ""
+#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
+
+#~ msgid "Support Forum"
+#~ msgstr "Ondersteuningsforum"
+
+#~ msgid "Featured Slider"
+#~ msgstr "Uitgelichte diashow"
+
+#~ msgid "Responsive Design"
+#~ msgstr "Responsive Design"
+
+#~ msgid "Disable Responsive Design?"
+#~ msgstr "Responsive Design uitzetten?"
+
+#~ msgid "Enable Secondary & Footer Menu in Mobile Devices?"
+#~ msgstr "Secundaire & Voet menu aanzetten bij mobiele apparaten?"
+
+#~ msgid "Disable Header Content?"
+#~ msgstr "Disable Header Content?"
+
+#~ msgid ""
+#~ "Custom Header Image can be managed from Header Featured Image Options"
+#~ msgstr ""
+#~ "Custom Header Image can be managed from Header Featured Image Options"
+
+#~ msgid "Header Top Margin"
+#~ msgstr "Hoofding Bovenmarge"
+
+#~ msgid "Header Bottom Margin"
+#~ msgstr "Hoofding Ondermarge"
+
+#~ msgid "Reset Header Margin?"
+#~ msgstr "Herstel Hoofding marges?"
+
+#~ msgid "Enable Featured Header Image"
+#~ msgstr "Schakel uitgelichte afbeeldingen header in"
+
+#~ msgid "Homepage"
+#~ msgstr "Homepagina"
+
+#~ msgid "Entire Site, Page/Post Featured Image"
+#~ msgstr "Gehele site, uitgelichte afbeeldingen van pagina/bericht"
+
+#~ msgid "Pages & Posts"
+#~ msgstr "Pagina's en berichten"
+
+#~ msgid "Page/Post Featured Image Size"
+#~ msgstr "Grootte uitgelichte afbeelding pagina/berichten"
+
+#~ msgid "Full Image"
+#~ msgstr "Volledige afbeelding"
+
+#~ msgid "Full Width Slider Image"
+#~ msgstr "Full Width Slider Image"
+
+#~ msgid "Normal Width Slider Image"
+#~ msgstr "Normal Width Slider Image"
+
+#~ msgid "Featured Header Image Position"
+#~ msgstr "Positie uitgelichte headerafbeelding"
+
+#~ msgid "Before Menu"
+#~ msgstr "Before Menu"
+
+#~ msgid "After Menu"
+#~ msgstr "After Menu"
+
+#~ msgid "Before Header"
+#~ msgstr "Voor Header"
+
+#~ msgid "After Top Sidebar"
+#~ msgstr "After Top Sidebar"
+
+#~ msgid "Header Image:"
+#~ msgstr "Hoofding Afbeelding"
+
+#~ msgid "Click here to change Header Image"
+#~ msgstr "Click here to change Header Image"
+
+#~ msgid "Click here to add Header Image"
+#~ msgstr "Click here to add Header Image"
+
+#~ msgid "There is no Header Image"
+#~ msgstr "There is no Header Image"
+
+#~ msgid "Featured Header Image Alt/Title Tag"
+#~ msgstr "Featured Header Image Alt/Title Tag"
+
+#~ msgid "Featured Header Image Link URL"
+#~ msgstr "Featured Header Image Link URL"
+
+#~ msgid "Target. Open Link in New Window?"
+#~ msgstr "Doel. Open link in nieuw venster?"
+
+#~ msgid "Check to open in new window"
+#~ msgstr "Vink aan om te openen in een nieuw venster"
+
+#~ msgid "Reset Header Featured Image Options?"
+#~ msgstr "Reset opties voor header uitgelichte afbeeldingen?"
+
+#~ msgid "Logo in Fixed Header Top Menu:"
+#~ msgstr "Logo in Fixed Header Top Menu:"
+
+#~ msgid ""
+#~ "Note: This image will be displayed only after you assign Menu in Fixed "
+#~ "Header Top Menu"
+#~ msgstr ""
+#~ "Note: This image will be displayed only after you assign Menu in Fixed "
+#~ "Header Top Menu"
+
+#~ msgid "Add/Change Image"
+#~ msgstr "Voeg/Verander Afbeelding"
+
+#~ msgid "Blue"
+#~ msgstr "Blauw"
+
+#~ msgid "Green"
+#~ msgstr "Groen"
+
+#~ msgid "Header Background:"
+#~ msgstr "Hoofding achtergrond:"
+
+#~ msgid "Slider Background Color:"
+#~ msgstr "Diashow achtergrondkleur:"
+
+#~ msgid "Content Background Color:"
+#~ msgstr "Inhoud achtergrondkleur:"
+
+#~ msgid "Article Background Color:"
+#~ msgstr "Bericht achtergrondkleur:"
+
+#~ msgid " Footer Background Color:"
+#~ msgstr "Voettekst achtergrondkleur:"
+
+#~ msgid " Footer Sidebar Background Color:"
+#~ msgstr "Voettekst zijpaneel achtergrondkleur:"
+
+#~ msgid "Widget Background Color:"
+#~ msgstr "Widget achtergrondkleur:"
+
+#~ msgid "Footer Widget Background Color:"
+#~ msgstr "Footer Widget Background Color:"
+
+#~ msgid "Menu Background Color:"
+#~ msgstr "Menu achtergrondkleur:"
+
+#~ msgid "Menu Hover Background Color:"
+#~ msgstr "Menu 'zweven over' achtergrondkleur:"
+
+#~ msgid "Menu Active Background Color:"
+#~ msgstr "Menu aktief element achtergrondkleur:"
+
+#~ msgid "Sub-Menu Background Color:"
+#~ msgstr "SubMenu achtergrondkleur:"
+
+#~ msgid "Site Title Hover Color:"
+#~ msgstr "'Zweven over' de titel kleur:"
+
+#~ msgid "Site Tagline Color:"
+#~ msgstr "Site Tagline Color:"
+
+#~ msgid "Title Color:"
+#~ msgstr "Titelkleur:"
+
+#~ msgid "Title Hover Color:"
+#~ msgstr "Title zweefkleur:"
+
+#~ msgid "Slider Text Color:"
+#~ msgstr "Diashow tekstkleur:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Meta beschrijvingkleur:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Tekstkleur:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Linkkleur:"
+
+#~ msgid "Sidebar Widget Title Color:"
+#~ msgstr "Zijpaneel widget titelkleur:"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Zijpaneel widget tekstkleur:"
+
+#~ msgid "Sidebar Widget Link Color:"
+#~ msgstr "Sidebar Widget Link Color:"
+
+#~ msgid "Menu Text Color:"
+#~ msgstr "Menu tekstkleur:"
+
+#~ msgid "Menu Hover Text Color:"
+#~ msgstr "Menu 'zweven over' tekstkleur:"
+
+#~ msgid "Menu Active Text Color:"
+#~ msgstr "Menu aktief element tekstkleur:"
+
+#~ msgid "Sub-Menu Text Color:"
+#~ msgstr "SubMenu tekstKleur:"
+
+#~ msgid "Reset Color?"
+#~ msgstr "Herstel kleuren?"
+
+#~ msgid "Font Family Options"
+#~ msgstr "Fontfamilie opties"
+
+#~ msgid "Default Font Family"
+#~ msgstr "Standaard fontfamilie"
+
+#~ msgid "Site Title & Description Font Family"
+#~ msgstr "Website titel & beschrijving fontfamilie"
+
+#~ msgid "Headings Font Family"
+#~ msgstr "Hoofding Fontfamilie"
+
+#~ msgid "Content Font Family"
+#~ msgstr "Inhoud Fontfamilie"
+
+#~ msgid "Reset Fonts?"
+#~ msgstr "Herstel Fonts?"
+
+#~ msgid "Font Size Options"
+#~ msgstr "Fontgrootte opties"
+
+#~ msgid "Default Font Size"
+#~ msgstr "Standaard fontgrootte"
+
+#~ msgid "Default Line Height"
+#~ msgstr "Standaard lijnhoogte"
+
+#~ msgid "Site Title Font Size"
+#~ msgstr "Website titel fontgrootte"
+
+#~ msgid "Site Title Line Height"
+#~ msgstr "Website titel lijnhoogte"
+
+#~ msgid "Site Description Font Size"
+#~ msgstr "Website beschrijving fontgrootte"
+
+#~ msgid "Site Description Line Height"
+#~ msgstr "Website beschrijving lijnhoogte"
+
+#~ msgid "H1 Font Size"
+#~ msgstr "H1 fontgrootte"
+
+#~ msgid "H2 Font Size"
+#~ msgstr "H2 fontgrootte"
+
+#~ msgid "H3 Font Size"
+#~ msgstr "H3 fontgrootte"
+
+#~ msgid "H4 Font Size"
+#~ msgstr "H4 fontgrootte"
+
+#~ msgid "Headings Line Height"
+#~ msgstr "Hoofding lijnhoogte"
+
+#~ msgid "Content Font Size"
+#~ msgstr "Inhoud fontgrootte"
+
+#~ msgid "Content Line Height"
+#~ msgstr "Inhoud fonthoogte"
+
+#~ msgid "Reset Font Size?"
+#~ msgstr "Herstel fontgrootte?"
+
+#~ msgid "No Sidebar, Full Width"
+#~ msgstr "Geen zijpaneel, volledige breedte"
+
+#~ msgid "Comments Options"
+#~ msgstr "Reacties opties"
+
+#~ msgid "Commenting"
+#~ msgstr "Reageren"
+
+#~ msgid "Use WordPress Settings"
+#~ msgstr "Gebruik WordPress instellingen"
+
+#~ msgid "Disabled for Pages"
+#~ msgstr "Uitgezet voor pagina's"
+
+#~ msgid "Disabled Completely"
+#~ msgstr "Volledig uitgezet"
+
+#~ msgid "Footer Editor Option"
+#~ msgstr "Voettekst editor optie"
+
+#~ msgid "Footer Editor"
+#~ msgstr "Voettekst editor"
+
+#~ msgid ""
+#~ "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+#~ "acronym> and/or shortcodes, which will be automatically inserted into "
+#~ "your theme.<br />Some shorcodes: [footer-image], [the-year], [site-link], "
+#~ "[wp-link] for current year, your site link, wordpress site link "
+#~ "respectively."
+#~ msgstr ""
+#~ "Je kan aangepaste <acronym title=\"Hypertext Markup Language\">HTML</"
+#~ "acronym> en/of shortcodes toevoegen, die automatisch in je thema "
+#~ "opgenomen zullen worden.<br />Enkele shortcodes: [footer-image], [the-"
+#~ "year], [site-link], [wp-link] resp. voor huidig jaar, je website link, "
+#~ "wordpress site link."
+
+#~ msgid "Reset Footer?"
+#~ msgstr "Herstel voettekst?"
+
+#~ msgid "Update Notifier"
+#~ msgstr "Update signaleren"
+
+#~ msgid "Disable Update Notifier?"
+#~ msgstr "Uitzetten update signaleren?"
+
+#~ msgid "Select Slider Type"
+#~ msgstr "Selecteer diashow type"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Uitgelichte pagina diashow"
+
+#~ msgid "Featured Category Slider"
+#~ msgstr "Uitgelicht categorie diashow"
+
+#~ msgid "Featured Image Slider"
+#~ msgstr "Uitgelicht afbeelding diashow"
+
+#~ msgid "Slider Layout"
+#~ msgstr "Diashow opmaak"
+
+#~ msgid "Normal Width Slider"
+#~ msgstr "Normale breedte diashow"
+
+#~ msgid "Full Width Slider"
+#~ msgstr "Diashow over volledige breedte"
+
+#~ msgid "Featured Image Slider Options"
+#~ msgstr "Uitgelichte afbeelding diashow opties"
+
+#~ msgid "Image Slider Tutorial"
+#~ msgstr "Image Slider Tutorial"
+
+#~ msgid ""
+#~ "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-"
+#~ "image-slider/"
+#~ msgstr ""
+#~ "http://catchthemes.com/blog/videos-blog/video-series-adding-featured-"
+#~ "image-slider/"
+
+#~ msgid "Click Here to Read Image Slider Tutorial"
+#~ msgstr "Click Here to Read Image Slider Tutorial"
+
+#~ msgid "Featured Slide"
+#~ msgstr "Uitgelichte slider"
+
+#~ msgid "Upload"
+#~ msgstr "Upload"
+
+#~ msgid "Title"
+#~ msgstr "Title"
+
+#~ msgid "Content"
+#~ msgstr "Content"
+
+#~ msgid "Featured Page Slider Options"
+#~ msgstr "Uitgelichte pagina diashow opties"
+
+#~ msgid "Featured Slider Page #"
+#~ msgstr "Uitgelichte diashow pagina #"
+
+#~ msgid ""
+#~ "Note: Here You can put your Page IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Noot: Hier kun je de pagina ID's plaatsen die vertoond worden als diashow "
+#~ "op de startpagina"
+
+#~ msgid "Featured Category Slider Options"
+#~ msgstr "Uitgelichte categorie diashow opties"
+
+#~ msgid "Select Slider Categories"
+#~ msgstr "Selecteer diashow categorieën"
+
+#~ msgid ""
+#~ "Use this only is you want to display posts from Specific Categories in "
+#~ "Featured Slider"
+#~ msgstr ""
+#~ "Gebruik dit alleen als je slechts berichten uit bepaalde categorieën in "
+#~ "de slider wilt hebben"
+
+#~ msgid ""
+#~ "Note: Here you can select the categories from which latest posts will "
+#~ "display on Featured Slider."
+#~ msgstr ""
+#~ "Noot: Hier kun je de categorieën selecteren waarvan de recentste "
+#~ "berichten vertoond worden in de uitgelichte diashow"
+
+#~ msgid "Site Verification"
+#~ msgstr "Site Verification"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site Verification ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Geef enkel je Google ID nummer in"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site Verification ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Geef enkel je Yahoo ID nummer in"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing Site Verification ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Geef enkel je Bing ID nummer in"
+
+#~ msgid "Google+ "
+#~ msgstr "Google+ "
+
+#~ msgid "Foursquare"
+#~ msgstr "Foursquare"
+
+#~ msgid "SpecificFeeds"
+#~ msgstr "SpecificFeeds"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Adverteer Code:"
+
+#~ msgid "Add Advertisement Code or Image URL"
+#~ msgstr "Voeg adverteer code of afbeelding URL in"
+
+#~ msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+#~ msgstr "<a class=\"button\" href=\"%s\">Klik hier</a>"
+
+#~ msgid "Need to Customize Header Right Sidebar?"
+#~ msgstr "Hoofding Rechter zijpaneel aanpassen?"
+
+#~ msgid "Header Right Margin"
+#~ msgstr "Hoofding Rechtermarge"
+
+#~ msgid "Header Left Margin"
+#~ msgstr "Hoofding Linkermarge"
+
+#~ msgid "Homepage Content Options"
+#~ msgstr "Startpagina inhoud opties"
+
+#~ msgid "Scroll Up"
+#~ msgstr "Scroll Up"
+
+#~ msgid "Disable Scroll Up?"
+#~ msgstr "Disable Scroll Up?"
+
+#~ msgid "Color Scheme"
+#~ msgstr "Kleurschema"
+
+#~ msgid "Red"
+#~ msgstr "Rood"
+
+#~ msgid "Brown"
+#~ msgstr "Bruin"
+
+#~ msgid "Orange"
+#~ msgstr "Oranje"
+
+#~ msgid "Custom Colors"
+#~ msgstr "Aangepaste kleuren"
+
+#~ msgid "Site Title & Description Color:"
+#~ msgstr "Website titel & beschrijving kleur:"
+
+#~ msgid "Scroll Up Background Color:"
+#~ msgstr "Scroll Up Background Color:"
+
+#~ msgid "Scroll Up Text Color:"
+#~ msgstr "Scroll Up Text Color:"
+
+#~ msgid "Featued Slider"
+#~ msgstr "Featued Slider"
+
+#~ msgid "Enable SpecificFeeds?"
+#~ msgstr "Enable SpecificFeeds?"
 
 #~ msgid "http://facebook.com/catchthemes"
 #~ msgstr "http://facebook.com/catchthemes"
 
 #~ msgid "https://twitter.com/catchthemes"
 #~ msgstr "https://twitter.com/catchthemes"
+
+#~ msgid "Update"
+#~ msgstr "Update"
+
+#~ msgid "%s Theme Updates"
+#~ msgstr "%s Thema Updates"
+
+#~ msgid "There is a new version of the %s theme available."
+#~ msgstr "Er is een nieuwe versie van het %s thema beschikbaar."
+
+#~ msgid "You have version %1$s installed. Update to version %2$s"
+#~ msgstr "Je hebt versie %1$s geïnstalleerd. Update naar versie  %2$s"
+
+#~ msgid "Update Instruction"
+#~ msgstr "Update richtlijnen"
+
+#~ msgid "Please note:"
+#~ msgstr "Noteer:"
+
+#~ msgid "make a "
+#~ msgstr "maak een"
+
+#~ msgid "backup"
+#~ msgstr "back-up"
+
+#~ msgid "of the Theme inside your WordPress installation folder"
+#~ msgstr "van het Thema in je Wordpress installatie map"
+
+#~ msgid "/wp-content/themes/%s"
+#~ msgstr "/wp-content/themes/%s"
+
+#~ msgid "To update the Theme, login to your account at"
+#~ msgstr "Om het thema te updaten, log in met je account op"
+
+#~ msgid "download"
+#~ msgstr "download"
+
+#~ msgid "the zip copy of %s Theme from your account."
+#~ msgstr "de zip kopie van het %s thema van je account."
+
+#~ msgid "Manual Update using FTP:"
+#~ msgstr "Manuele update via FTP:"
+
+#~ msgid "Now unzip the theme file %1$s.%2$s.zip"
+#~ msgstr "Pak nu het themabestand %1$s.%2$s.zip uit"
+
+#~ msgid ""
+#~ "and use your FTP client to access your host web server. Go to /wp-content/"
+#~ "themes/ and upload the extracted folder %s "
+#~ msgstr ""
+#~ "en gebruik je FTP cliënt om je webhoster te benaderen. Ga naar /wp-"
+#~ "content/themes/ en upload de uitgepakte map %s "
+
+#~ msgid "Update using the WordPress Administration Panel"
+#~ msgstr "Update via het het WordPress Adminstratie Paneel"
+
+#~ msgid ""
+#~ "If you want to update through your WordPress Dashboard without using FTP, "
+#~ "then you have to activate any other default theme and then delete the "
+#~ "older version of %s Theme. After that you can upload the current version "
+#~ "following the new theme installation process."
+#~ msgstr ""
+#~ "Indien je wenst te updaten via je WordPress Dashboard zonder gebruik te "
+#~ "maken van FTP, dan moet je eerst eender welk andere standaard thema "
+#~ "activeren en dan de map van de oudere versie van het %s thema "
+#~ "verwijderen. Pas dan kun je de huidige versie uploaden zoals beschreven "
+#~ "in het nieuw thema installatie proces."
+
+#~ msgid "Changelog"
+#~ msgstr "Overzicht wijzigingen"
+
+#~ msgid "%s in Facebook"
+#~ msgstr "%s in Facebook"
+
+#~ msgid "%s in Twitter"
+#~ msgstr "%s in Twitter"
+
+#~ msgid "%s in Google+"
+#~ msgstr "%s in Google+"
+
+#~ msgid "%s in Linkedin"
+#~ msgstr "%s in Linkedin"
+
+#~ msgid "%s in Pinterest"
+#~ msgstr "%s in Pinterest"
+
+#~ msgid "%s in Vimeo"
+#~ msgstr "%s in Vimeo"
+
+#~ msgid "%s in Slideshare"
+#~ msgstr "%s in Slideshare"
+
+#~ msgid "%s in Flickr"
+#~ msgstr "%s in Flickr"
+
+#~ msgid "%s in Tumblr"
+#~ msgstr "%s in Tumblr"
+
+#~ msgid "%s in deviantART"
+#~ msgstr "%s in deviantART"
+
+#~ msgid "%s in Dribbble"
+#~ msgstr "%s in Dribbble"
+
+#~ msgid "%s in WordPress"
+#~ msgstr "%s in WordPress"
+
+#~ msgid "%s in RSS"
+#~ msgstr "%s in RSS"
+
+#~ msgid "%s in Instagram"
+#~ msgstr "%s in Instagram"
+
+#~ msgid "%s in Skype"
+#~ msgstr "%s in Skype"
+
+#~ msgid "%s in Soundcloud"
+#~ msgstr "%s in Soundcloud"

@@ -767,10 +767,20 @@ function catchevolution_theme_options_do_page() {
                                     </td>
                                 </tr> 
                                 <tr>
+                                    <th scope="row"><h4><?php _e( 'Contact', 'catchevolution' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catchevolution_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                    </td>
+                                </tr> 
+                                <tr>
                                     <th scope="row"><h4><?php _e( 'Xing', 'catchevolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
                                     </td>
-                                </tr>                                                                 
+                                </tr> 
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Meetup', 'catchevolution' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catchevolution_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
+                                    </td>
+                                </tr>                                                                
                             </tbody>
                         </table>                           
                         <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p>
@@ -1067,8 +1077,14 @@ function catchevolution_theme_options_validate( $options ) {
 	if( isset( $input[ 'social_email' ] ) &&  isset( $input[ 'social_email' ] )  ) {
 		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
 	}	
+	if( isset( $input[ 'social_contact' ] ) ) {
+		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
+	}
 	if( isset( $input[ 'social_xing' ] ) ) {
 		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
+	}
+	if( isset( $input[ 'social_meetup' ] ) ) {
+		$input_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );
 	}	
 
 		

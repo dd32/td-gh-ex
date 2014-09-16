@@ -36,7 +36,7 @@
 		<footer class="entry-meta">
 			<div class="entry-meta">
 				<?php
-					printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'catchevolution' ),
+					printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date updated" datetime="%2$s" pubdate>%3$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'catchevolution' ),
 						esc_url( get_permalink() ),
 						get_the_date( 'c' ),
 						get_the_date(),

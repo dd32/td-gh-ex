@@ -17,6 +17,7 @@ Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose R
 Added Translation for Czech by Marek Pridal (Email: m.pridal29@gmail.com)
 Added translation for Bosnian
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
+Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -57,11 +58,15 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Changelog ==
 
+2.1
+* Added Dutch translation nl_NL.po and nl_NL.mo
+* Added Meetup and Contact social icon
+* Fixed Social & Search Widget and added search in catchevolution_social_search transient ( Reported by Adam & Consciousness )
+
 2.0
 * Added Xing social icon
 * Added post slider tutorial
 * Fixed header image showing small line at the bottom
-* Fixed 3. Catch Evolution: Social & Search Widget not showing social icons
 * Changed menu tutorial link
 
 1.9

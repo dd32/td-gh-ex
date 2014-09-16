@@ -3,8 +3,8 @@ Theme Name: Catch Evolution
 Theme URI: http://catchthemes.com/themes/catch-evolution
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to http://catchthemes.com/support/
-Version: 2.0
+Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian, Brazilian Portuguese and Dutch. If you need support with this theme, please go to http://catchthemes.com/support/
+Version: 2.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
@@ -851,7 +851,7 @@ a:hover {
 ----------------------------------------------- */
 
 #branding .widget_search #s,
-.widget_catchevolution_social_search_widget #social-search #s {
+.widget_catchevolution_social_search_widget .social-search #s {
 	float: right;
 	-webkit-transition-duration: 400ms;
 	-webkit-transition-property: width, background;
@@ -867,37 +867,32 @@ a:hover {
 #branding .widget_search #s {
 	width: 72px;	
 }
-.widget_catchevolution_social_search_widget #social-search #s {
+.widget_catchevolution_social_search_widget .social-search #s {
 	background: url("images/search-icon.png") no-repeat scroll 9px 7px #999;
 	border: 1px solid #999;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	height: 25px;
-	margin-left: 10px;
 	padding-left: 24px;
 	text-indent: -99999px;
 	width: 0;
 }
-.widget_catchevolution_social_search_widget #social-search {
-	margin-bottom: 10px;
-	float: right;
-}
 #branding .widget_search #s:focus,
-.widget_catchevolution_social_search_widget #social-search #s:focus {
+.widget_catchevolution_social_search_widget .social-search #s:focus {
 	background-color: #f9f9f9;
 }
 #branding .widget_search #s:focus {
 	background-color: #f9f9f9;
 	width: 196px;
 }
-.widget_catchevolution_social_search_widget #social-search #s:focus {
+.widget_catchevolution_social_search_widget .social-search #s:focus {
 	background-position: 9px -29px;
 	padding-left: 35px;
 	text-indent: 0;
 	width: 196px;
 }
-.widget_catchevolution_social_search_widget #social-search #searchsubmit,
+.widget_catchevolution_social_search_widget .social-search #searchsubmit,
 #branding .widget_search #searchsubmit {
 	display: none;
 }
@@ -2669,9 +2664,6 @@ p.comment-form-comment {
 }
 .widget .social-profile {
     margin-left: -10px;
-}
-.widget_catchevolution_social_search_widget .social-profile {
-	float: right;
 }
 .social-profile ul li a {
 	display: block;

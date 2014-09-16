@@ -363,10 +363,6 @@ and (orientation : landscape) {
 		text-indent: 0;
 		float: none;
 	}
-	#branding .widget_search #s,
-	.widget_catchevolution_social_search_widget #social-search #s {
-		color: #fff;
-	}
 	.widget_catchevolution_social_search_widget #social-search #s:focus {
 		color: #373737;
 		width: 200px;
@@ -535,10 +531,9 @@ and (orientation : landscape) {
 		float: none;
 		text-align: center;
 	}
-	.social-profile ul li {
+	#colophon .social-profile ul li {
 		display: inline-block;
 		float: none;
-		margin: 0 0 10px 10px;
 	}
 	#site-generator .copyright, #site-generator .powered {
 		display: block;

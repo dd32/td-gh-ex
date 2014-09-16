@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-15 01:53+0545\n"
-"PO-Revision-Date: 2014-08-15 01:53+0545\n"
+"POT-Creation-Date: 2014-09-16 19:38+0545\n"
+"PO-Revision-Date: 2014-09-16 19:39+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -244,15 +244,15 @@ msgstr "%s"
 #: content-image.php:39
 #, php-format
 msgid ""
-"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
-"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
-"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s"
-"\" rel=\"author\">%6$s</a></span></span>"
+"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date updated\" "
+"datetime=\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span "
+"class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
+"href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
-"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
-"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
-"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s"
-"\" rel=\"author\">%6$s</a></span></span>"
+"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date updated\" "
+"datetime=\"%2$s\" pubdate>%3$s</time></a><span class=\"by-author\"> <span "
+"class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
+"href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 #: content-image.php:44 inc/catchevolution-functions.php:467
 #, php-format
@@ -409,7 +409,7 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: inc/catchevolution-functions.php:1357
+#: inc/catchevolution-functions.php:1378
 msgid "Footer menu"
 msgstr "Menu pied de page"
 
@@ -1116,7 +1116,7 @@ msgstr "deviantART"
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: inc/panel/theme-options.php:735 inc/panel/theme-options.php:1176
+#: inc/panel/theme-options.php:735 inc/panel/theme-options.php:1192
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -1145,18 +1145,26 @@ msgid "Email"
 msgstr "E-mail"
 
 #: inc/panel/theme-options.php:770
+msgid "Contact"
+msgstr "Contact"
+
+#: inc/panel/theme-options.php:775
 msgid "Xing"
 msgstr "Xing"
 
-#: inc/panel/theme-options.php:783
+#: inc/panel/theme-options.php:780
+msgid "Meetup"
+msgstr "Meetup"
+
+#: inc/panel/theme-options.php:793
 msgid "Header and Footer Codes"
 msgstr "Codes En-tête et pied de page"
 
-#: inc/panel/theme-options.php:788
+#: inc/panel/theme-options.php:798
 msgid "Code to display on Header"
 msgstr "Code pour affichage sur en-tête"
 
-#: inc/panel/theme-options.php:794
+#: inc/panel/theme-options.php:804
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1164,11 +1172,11 @@ msgstr ""
 "Notez : Ici vous pouvez mettre des scripts de Google, Facebook etc... qui "
 "chargera sur l'En-tête"
 
-#: inc/panel/theme-options.php:797
+#: inc/panel/theme-options.php:807
 msgid "Code to display on Footer"
 msgstr "Code pour affichage sur pied de page"
 
-#: inc/panel/theme-options.php:804
+#: inc/panel/theme-options.php:814
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1176,11 +1184,11 @@ msgstr ""
 "Notez : Ici vous pouvez mettre des scripts de Google, Facebook, etc... qui "
 "chargera sur le pied de page"
 
-#: inc/panel/theme-options.php:1155
+#: inc/panel/theme-options.php:1171
 msgid "Y"
 msgstr "Y"
 
-#: inc/panel/theme-options.php:1186
+#: inc/panel/theme-options.php:1202
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
 
