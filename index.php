@@ -74,7 +74,7 @@ if ( have_posts() ) :
             }
         }
         /* bbPress */
-        elseif( is_bbpress() ) {
+        elseif( function_exists( 'is_bbpress' ) && is_bbpress() ) {
             get_template_part( 'content/bbpress' );
         }
         /* Custom Post Type */
