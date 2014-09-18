@@ -885,7 +885,8 @@ span + .edit-link:before,
 }
 
 .site-header {
-	background-color: #000;
+	background-color: #FFFFE5;
+color: black;
 	max-width: 1260px;
 	position: relative;
 	width: 100%;
@@ -4360,16 +4361,9 @@ font-family: "small verdana", arial, sans-serif;
 
 }
 
-
-
 .logo {
 
 font-size: 30px;
-
-background-color: black;
-
-color: white;
-
 padding: 4px;
 
 font-family: Georgia;
@@ -4377,28 +4371,18 @@ font-family: Georgia;
 }
 
 .slogan {
-
 font-size: 20px;
 
 }
 
-
-
 #default {
-
 display: none;
-
 }
 
-
-
 .center {
-
 text-align: center;
 
 }
-
-
 
 .custom_widget_menu {
 
@@ -4411,12 +4395,3 @@ display: inline-block;
 margin-right:5px;
 
 }
-
-
-
-
-
-
-
-
-

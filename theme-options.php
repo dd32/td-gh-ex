@@ -5,6 +5,8 @@
 $badeyes_options = array(
 'footer_copyright' => 'Copyright Since (start date goes here)',
 'intro_text' => '<h1>Add Title Here</h1><p>put text here</p>',
+'single_text' => '<h1>Add Title Here</h1><p>put text here</p>',
+'page_text' => '<h1>Add Title Here</h1><p>put text here</p>',
 'header_style' => '',
 'featured_title' => 'Featured Content',
 'blog_title' => 'Latest Headlines',
@@ -55,11 +57,21 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 </tr>
 </table>
 <h2>Introduction Text</h2>
-<p>Use the area below to add a description for the Blog area, as stated above you can use html, for accessibility reasons leave the heading if you use one at an H1.</p> 
+<p>Use the area below to add a description, Advertisement, Google Ads or any other relevant text  to the top of the Blog, Single Post and Page area , as stated above you can use html, for accessibility reasons leave the heading if you use one at an H1.</p> 
 <table class="form-table">
-<tr valign="top"><th scope="row"><label for="intro_text">Intro Text</label></th>
+<tr valign="top"><th scope="row"><label for="intro_text">Blog Introduction</label></th>
 <td>
 <textarea id="intro_text" name="badeyes_options[intro_text]" rows="5" cols="30"><?php echo stripslashes($settings['intro_text']); ?></textarea>
+</td>
+</tr>
+<tr valign="top"><th scope="row"><label for="single_text">Single Post Introduction</label></th>
+<td>
+<textarea id="single_text" name="badeyes_options[single_text]" rows="5" cols="30"><?php echo stripslashes($settings['single_text']); ?></textarea>
+</td>
+</tr>
+<tr valign="top"><th scope="row"><label for="page_text">Page Introduction</label></th>
+<td>
+<textarea id="page_text" name="badeyes_options[page_text]" rows="5" cols="30"><?php echo stripslashes($settings['page_text']); ?></textarea>
 </td>
 </tr>
 </table>
@@ -149,6 +161,8 @@ $input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] )
 // We select the previous value of the field, to restore it in case an invalid entry has been given
 
 $prev = $settings['intro_text'];
+$prev = $settings['single_text'];
+$prev = $settings['page_text'];
 $prev = $settings['featured_title'];
 $prev = $settings['blog_title'];
 $prev = $settings['side_heading'];

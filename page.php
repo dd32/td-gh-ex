@@ -22,6 +22,20 @@ get_header(); ?>
 	}
 ?>
 	<div id="primary" class="content-area">
+<?php
+global $badeyes_options;
+
+					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
+
+				?>
+
+<?php if( $badeyes_settings['page_text'] != '' ) : ?>
+
+<?php 
+echo $badeyes_settings['page_text']; 
+?>
+
+<?php endif; ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php

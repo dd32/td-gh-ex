@@ -60,9 +60,6 @@
  */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 
-background-color: black;
-
-color: white;
 
 	border: 0;
 
@@ -132,9 +129,7 @@ textarea {
 
 body {
 background-color: black;
-
 color: white;
-
 }
 
 a {
@@ -1581,7 +1576,7 @@ span + .edit-link:before,
 
 .site {
 
-	background-color: #fff;
+	background-color: #000000;
 
 	max-width: 1260px;
 
@@ -1595,8 +1590,6 @@ span + .edit-link:before,
 	width: 100%;
 
 }
-
-
 
 
 
@@ -1633,15 +1626,11 @@ span + .edit-link:before,
 
 
 .site-header {
-
 	background-color: #000;
-
-	max-width: 1260px;
-
+color: #FFFFFF;
+max-width: 1260px;
 	position: relative;
-
 	width: 100%;
-
 	z-index: 4;
 
 }

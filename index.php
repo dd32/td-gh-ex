@@ -32,22 +32,6 @@ get_header(); ?>
 <div id="main-content" class="main-content">
 
 <?php
-global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-
-				?>
-
-<?php if( $badeyes_settings['intro_text'] != '' ) : ?>
-<div class="site-content">
-<?php 
-echo $badeyes_settings['intro_text']; 
-?>
-
-<?php endif; ?>
-</div>
-
-<?php
 if (is_home() && twentyfourteen_has_featured_posts() ) {
 
 		// Include the featured content template.
@@ -59,7 +43,20 @@ get_template_part( 'featured-content' );
 ?>
 
 <div id="primary" class="content-area">
+<?php
+global $badeyes_options;
 
+					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
+
+				?>
+
+<?php if( $badeyes_settings['intro_text'] != '' ) : ?>
+
+<?php 
+echo $badeyes_settings['intro_text']; 
+?>
+
+<?php endif; ?>
 		<div id="content" class="site-content" role="main">
 <?php
 global $badeyes_options;
