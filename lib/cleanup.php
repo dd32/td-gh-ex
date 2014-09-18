@@ -67,17 +67,6 @@ function kadence_body_class($classes) {
 }
 add_filter('body_class', 'kadence_body_class');
 
-/**
- * Wrap embedded media as suggested by Readability
- *
- * @link https://gist.github.com/965956
- * @link http://www.readability.com/publishers/guidelines#publisher
- */
-function kadence_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
-  return '<div class="entry-content-asset">' . $cache . '</div>';
-}
-add_filter('embed_oembed_html', 'kadence_embed_wrap', 10, 4);
-add_filter('embed_googlevideo', 'kadence_embed_wrap', 10, 2);
 
 /**
  * Add class="thumbnail" to attachment items

@@ -49,6 +49,12 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.5 =
+* Theme options Update
+* Add Math question to contact form
+* Update language files
+* Remove old update path for versions pre 1.5.6 (speed up theme options).
+
 = Version: 2.2.4 =
 * Update for Woocommerce 2.2
 * Fix for image title tag

@@ -78,8 +78,15 @@ Template Name: Contact
 			</script>
 		    <?php echo '<style type="text/css" media="screen">#map_address {height:'.$mapheight.'px; margin-bottom:20px;}</style>'; ?>
     <?php } ?>
-<?php global $virtue;
+<?php global $virtue, $post;
+	$form_math = get_post_meta( $post->ID, '_kad_contact_form_math', true );
 	if(isset($_POST['submitted'])) {
+		if(isset($form_math) && $form_math == 'yes') {
+			if(md5($_POST['kad_captcha']) != $_POST['hval']) {
+				$kad_captchaError = __('Check your math.', 'virtue');
+				$hasError = true;
+			}
+		}
 	if(trim($_POST['contactName']) === '') {
 		$nameError = __('Please enter your name.', 'virtue');
 		$hasError = true;
@@ -185,7 +192,17 @@ Template Name: Contact
 								<?php } ?>
 								<textarea name="comments" id="commentsText" rows="10" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
 							</p>
-
+							<?php if(isset($form_math) && $form_math == 'yes') { ?>
+							<?php   $one = rand(5, 50);
+									$two = rand(1, 9);
+									$result = md5($one + $two); ?>
+									<p>
+									<label for="kad_captcha"><b><?php echo $one.' + '.$two; ?> = </b></label>
+									<input type="text" name="kad_captcha" id="kad_captcha" class="required requiredField kad_captcha kad-quarter" />
+									<?php if(isset($kad_captchaError)) { ?><label class="error"><?php echo $kad_captchaError;?></label><?php } ?>
+									<input type="hidden" name="hval" id="hval" value="<?php echo $result;?>" />
+								</p>
+							<?php } ?>
 							<p>
 								<input type="submit" class="kad-btn kad-btn-primary" id="submit" tabindex="5" value="<?php _e('Send Email', 'virtue'); ?>" ></input>
 							</p>

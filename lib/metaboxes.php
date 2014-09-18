@@ -576,6 +576,16 @@ $meta_boxes[] = array(
 				'type' => 'text',
 			),
 			array(
+                'name' => __('Use Simple Math Question', 'virtue'),
+                'desc' => 'Adds a simple math question to form.',
+                'id' => $prefix .'contact_form_math',
+                'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+				),
+			),
+			array(
                 'name' => __('Use Map', 'virtue'),
                 'desc' => '',
                 'id' => $prefix .'contact_map',
