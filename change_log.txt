@@ -5,3 +5,7 @@ Version 1.0.1
  i) wp_footer() add before body tag.
  ii) Change copyright tag in footer.
  iii) Add alt in home icon.
+
+Version 1.0.2
+ i) Spelling fix in readme.txt
+

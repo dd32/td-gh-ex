@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-optionss
@@ -22,7 +22,7 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, custom header, custom 
 
 == Tags ==
 
-right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-optionss
+right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
 
 == Installation ==
 
