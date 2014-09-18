@@ -100,7 +100,7 @@ class Moesia_Clients extends WP_Widget {
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
 			'post_type' 		  => 'clients',
-			'posts_per_page'	  => -1
+			'posts_per_page'	  => -1	
 		) ) );
 
 		if ($r->have_posts()) :

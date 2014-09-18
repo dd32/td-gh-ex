@@ -99,8 +99,7 @@ class Moesia_Testimonials extends WP_Widget {
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'post_type' 		  => 'testimonials',
-			'posts_per_page'	  => -1
+			'post_type' 		  => 'testimonials'
 		) ) );
 
 		if ($r->have_posts()) :
