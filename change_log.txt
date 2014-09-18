@@ -48,3 +48,8 @@ Version 2.1
 	ii) Replace esc_url_raw with esc_url. 
 	iii) Change Theme Options layout.
 	iv) Remove ABSPATH.	
+	
+Version 2.1.1
+
+	i) Add screenshot image license in readme.txt 
+	ii) Add editor-style.css in css folder.	
