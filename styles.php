@@ -222,13 +222,13 @@ function moesia_custom_styles($custom) {
     $latest_news_see_all = esc_html(get_theme_mod( 'latest_news_see_all' ));
 
     if ( isset($latest_news_bg) && ( $latest_news_bg != '#fff' ) ) {
-        $custom .= ".latest_news-area { background-color: {$latest_news_bg} !important; }"."\n";
+        $custom .= ".latest-news-area { background-color: {$latest_news_bg} !important; }"."\n";
     }
     if ( isset($latest_news_title) && ( $latest_news_title != '#444' ) ) {
-        $custom .= ".latest_news-area .widget-title { color: {$latest_news_title}; }"."\n";
+        $custom .= ".latest-news-area .widget-title { color: {$latest_news_title}; }"."\n";
     }
     if ( isset($latest_news_title_dec) && ( $latest_news_title_dec != '#ff6b53' ) ) {
-        $custom .= ".latest_news-area .widget-title:after { border-color: {$latest_news_title_dec}; }"."\n";
+        $custom .= ".latest-news-area .widget-title:after { border-color: {$latest_news_title_dec}; }"."\n";
     }
     if ( isset($latest_news_post_title) && ( $latest_news_post_title != '#444' ) ) {
         $custom .= ".latest-news-area .entry-title a { background-color: {$latest_news_post_title}; }"."\n";
@@ -338,41 +338,7 @@ function moesia_custom_styles($custom) {
 		$font_pieces = explode(":", $body_font);
 		$custom .= "body { font-family: {$font_pieces[0]}; }"."\n";
 	}
-	//H1 size
-	$h1_size = get_theme_mod( 'h1_size' );
-	if ( get_theme_mod( 'h1_size' )) {
-		$custom .= "h1 { font-size:" . intval($h1_size) . "px; }"."\n";
-	}
-    //H2 size
-    $h2_size = get_theme_mod( 'h2_size' );
-    if ( get_theme_mod( 'h2_size' )) {
-        $custom .= "h2 { font-size:" . intval($h2_size) . "px; }"."\n";
-    }
-    //H3 size
-    $h3_size = get_theme_mod( 'h3_size' );
-    if ( get_theme_mod( 'h3_size' )) {
-        $custom .= "h3 { font-size:" . intval($h3_size) . "px; }"."\n";
-    }
-    //H4 size
-    $h4_size = get_theme_mod( 'h4_size' );
-    if ( get_theme_mod( 'h4_size' )) {
-        $custom .= "h4 { font-size:" . intval($h4_size) . "px; }"."\n";
-    }
-    //H5 size
-    $h5_size = get_theme_mod( 'h5_size' );
-    if ( get_theme_mod( 'h5_size' )) {
-        $custom .= "h5 { font-size:" . intval($h5_size) . "px; }"."\n";
-    }
-    //H6 size
-    $h6_size = get_theme_mod( 'h6_size' );
-    if ( get_theme_mod( 'h6_size' )) {
-        $custom .= "h6 { font-size:" . intval($h6_size) . "px; }"."\n";
-    }
-    //Body size
-    $body_size = get_theme_mod( 'body_size' );
-    if ( get_theme_mod( 'body_size' )) {
-        $custom .= "body { font-size:" . intval($body_size) . "px; }"."\n";
-    }  		
+	
 	//Output all the styles
 	wp_add_inline_style( 'moesia-style', $custom );	
 }

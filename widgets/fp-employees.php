@@ -98,7 +98,8 @@ class Moesia_Employees extends WP_Widget {
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'post_type' 		  => 'employees'
+			'post_type' 		  => 'employees',
+			'posts_per_page'	  => -1
 		) ) );
 
 		if ($r->have_posts()) :

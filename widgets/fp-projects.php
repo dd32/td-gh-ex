@@ -98,7 +98,8 @@ class Moesia_Projects extends WP_Widget {
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'post_type' 		  => 'projects'
+			'post_type' 		  => 'projects',
+			'posts_per_page'	  => -1
 		) ) );
 
 		if ($r->have_posts()) :

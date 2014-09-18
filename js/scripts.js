@@ -122,8 +122,3 @@ jQuery(function($) {
 jQuery(function($) {
 	$('.top-bar').waypoint('sticky');
 });
-
-//Better support for third party widgets
-jQuery(function($) {
-    $('.panel.widget').addClass('container');
-}); 

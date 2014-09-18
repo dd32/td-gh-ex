@@ -98,7 +98,8 @@ class Moesia_Services extends WP_Widget {
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'post_type' 		  => 'services'
+			'post_type' 		  => 'services',
+			'posts_per_page'	  => -1
 		) ) );
 
 		if ($r->have_posts()) :
