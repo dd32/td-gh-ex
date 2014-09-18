@@ -613,7 +613,15 @@ add_filter( 'embed_oembed_html', 'alx_embed_wmode_transparent', 10, 3 );
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_embed_html' ) ) {
 
-	function alx_embed_html( $html ) {
+	function alx_embed_html( $html, $url ) {
+	
+		$pattern    = '/^https?:\/\/(www\.)?twitter\.com/';
+		$is_twitter = preg_match( $pattern, $url );
+		
+		if ( 1 === $is_twitter ) {
+			return $html;
+		}
+	
 		return '<div class="video-container">' . $html . '</div>';
 	}
 
@@ -767,32 +775,33 @@ add_action( 'wp_footer', 'alx_ie_js_footer', 20 );
 if ( ! function_exists( 'alx_plugins' ) ) {
 	
 	function alx_plugins() {
-		
-		// Add the following plugins
-		$plugins = array(
-			array(
-				'name' 				=> 'Regenerate Thumbnails',
-				'slug' 				=> 'regenerate-thumbnails',
-				'required'			=> false,
-				'force_activation' 	=> false,
-				'force_deactivation'=> false,
-			),
-			array(
-				'name' 				=> 'WP-PageNavi',
-				'slug' 				=> 'wp-pagenavi',
-				'required'			=> false,
-				'force_activation' 	=> false,
-				'force_deactivation'=> false,
-			),
-			array(
-				'name' 				=> 'Contact Form 7',
-				'slug' 				=> 'contact-form-7',
-				'required'			=> false,
-				'force_activation' 	=> false,
-				'force_deactivation'=> false,
-			)
-		);	
-		tgmpa( $plugins );
+		if ( ot_get_option('recommended-plugins') != 'off' ) {
+			// Add the following plugins
+			$plugins = array(
+				array(
+					'name' 				=> 'Regenerate Thumbnails',
+					'slug' 				=> 'regenerate-thumbnails',
+					'required'			=> false,
+					'force_activation' 	=> false,
+					'force_deactivation'=> false,
+				),
+				array(
+					'name' 				=> 'WP-PageNavi',
+					'slug' 				=> 'wp-pagenavi',
+					'required'			=> false,
+					'force_activation' 	=> false,
+					'force_deactivation'=> false,
+				),
+				array(
+					'name' 				=> 'Contact Form 7',
+					'slug' 				=> 'contact-form-7',
+					'required'			=> false,
+					'force_activation' 	=> false,
+					'force_deactivation'=> false,
+				)
+			);	
+			tgmpa( $plugins );
+		}
 	}
 	
 }
