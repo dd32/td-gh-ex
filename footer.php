@@ -5,7 +5,6 @@
  $topmag_options = get_option( 'topmag_theme_options' );
 ?>
 <!-- footer -->
-
 <div class="col-md-12 footer-post"> 
   <!-- Recent Posts -->
   <div class="col-md-4 no-padding-left">
@@ -21,16 +20,14 @@
 <footer>
   <div class="copyright col-lg-12">
     <div class="col-md-7 no-padding">
-      <?php if(!empty($topmag_options['footertext'])) { 
-               	 echo '<p>'.wp_filter_nohtml_kses($topmag_options['footertext']); 
-			}else{
-				echo '<p>Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>.';
+      <p><?php if(!empty($topmag_options['footertext'])) { 
+               	 echo wp_filter_nohtml_kses($topmag_options['footertext']).' '; 
 			}
-			echo ' <a href="http://fasterthemes.com/themes/topmag">Top Mag theme</a> by FasterThemes.</p>';
-		?>
+				echo '<p>Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/topmag">Top Mag</a>.';
+		?></p>
     </div>
   </div>
 </footer>
-<?php wp_footer(); ?>
 </div>
+<?php wp_footer(); ?>
 </body></html>

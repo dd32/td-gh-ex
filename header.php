@@ -39,7 +39,7 @@ $topmag_options = get_option( 'topmag_theme_options' );
     <div class="col-md-12 no-padding ">
       <div class="col-md-4 header-logo">
         <?php if(empty($topmag_options['logo'])) { echo '<div class="topmag_site_name"><a href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo('name').'</a></div>';  } else { ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($topmag_options['logo']); ?>" class="img-responsive" /></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($topmag_options['logo']); ?>" alt="site logo" class="img-responsive" /></a>
         <?php } ?>
         <p class="topmag_tagline">
           <?php if(!empty($topmag_options['logo-tagline'])) { echo get_bloginfo('description'); } ?>
@@ -60,7 +60,7 @@ $topmag_options = get_option( 'topmag_theme_options' );
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only">
           <?php _e('Toggle navigation','topmag'); ?>
           </span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a href="<?php echo site_url(); ?>" class="home-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/home.png" /></a> </div>
+          <a href="<?php echo site_url(); ?>" class="home-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/home.png" alt="home icon" /></a> </div>
         <!-- Collection of nav links and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse menu">
           <?php

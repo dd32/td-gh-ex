@@ -1,2 +1,7 @@
 Version 1.0
  i) Initial Release
+ 
+Version 1.0.1
+ i) wp_footer() add before body tag.
+ ii) Change copyright tag in footer.
+ iii) Add alt in home icon.

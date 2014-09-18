@@ -61,4 +61,4 @@ require_once('functions/custom-header.php');
 require_once('functions/ft-setup.php');
 
 /*** Theme Options ***/
-require_once('theme-option/fasterthemes.php');
+require_once('theme-options/fasterthemes.php');
