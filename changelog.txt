@@ -1,5 +1,8 @@
 *** agency Changelog ***
 
+20-09-2014 - version 1.2.8
+*Screenshot size changed...
+
 07-08-2014 - version 1.2.7
 *Readme.txt file updated...
 
