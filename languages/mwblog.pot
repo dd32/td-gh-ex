@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mwblog 1.0.0\n"
+"POT-Creation-Date: 2014-09-03 23:41+0100\n"
+"PO-Revision-Date: 2014-09-03 23:41+0100\n"
+"Last-Translator: mk <michalv2@o2.pl>\n"
+"Language-Team: MW Themes <info@mwthemes.net>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:16
+msgid "It looks like nothing was found at this location. Maybe try our search?"
+msgstr ""
+
+#: ../archive.php:22
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../archive.php:25
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../archive.php:28
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../archive.php:31
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../archive.php:34
+msgid "Galleries"
+msgstr ""
+
+#: ../archive.php:37
+msgid "Images"
+msgstr ""
+
+#: ../archive.php:40
+msgid "Videos"
+msgstr ""
+
+#: ../archive.php:43
+msgid "Quotes"
+msgstr ""
+
+#: ../archive.php:46
+msgid "Links"
+msgstr ""
+
+#: ../archive.php:49
+msgid "Statuses"
+msgstr ""
+
+#: ../archive.php:52
+msgid "Audios"
+msgstr ""
+
+#: ../archive.php:55
+msgid "Archives"
+msgstr ""
+
+#: ../comments.php:32 ../comments.php:51
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:33 ../comments.php:52
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:34 ../comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:61
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-audio.php:49 ../content-gallery.php:54 ../content-image.php:31
+#: ../content-link.php:12 ../content-quote.php:16 ../content-single.php:76
+#: ../content-video.php:56 ../content.php:35
+msgid "[...]"
+msgstr ""
+
+#: ../content-audio.php:60 ../content-gallery.php:65 ../content-image.php:42
+#: ../content-video.php:67 ../content.php:48
+msgid "Read more"
+msgstr ""
+
+#: ../content-none.php:10
+msgid "Nothing Found"
+msgstr ""
+
+#: ../content-none.php:16
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../content-none.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../content-none.php:25
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../content-page.php:15 ../content-single.php:77 ../content.php:37
+msgid "Pages:"
+msgstr ""
+
+#: ../content-page.php:17
+msgid "Edit"
+msgstr ""
+
+#: ../footer.php:26
+msgid "Copyright"
+msgstr ""
+
+#: ../footer.php:26
+msgid "All Rights Reserved."
+msgstr ""
+
+#: ../footer.php:29
+msgid "Proudly powered by"
+msgstr ""
+
+#: ../footer.php:30
+msgid "Theme by"
+msgstr ""
+
+#: ../functions.php:42
+msgid "Main Navigation"
+msgstr ""
+
+#: ../functions.php:143
+msgid "Older posts"
+msgstr ""
+
+#: ../functions.php:147
+msgid "Newer posts"
+msgstr ""
+
+#: ../functions.php:179
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: ../inc/customizer.php:19
+msgid "Logo"
+msgstr ""
+
+#: ../inc/customizer.php:30
+msgid "Upload logo"
+msgstr ""
+
+#: ../inc/customizer.php:36
+msgid "Social icon profiles"
+msgstr ""
+
+#: ../inc/customizer.php:47
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/customizer.php:58
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/customizer.php:69
+msgid "Google+"
+msgstr ""
+
+#: ../inc/customizer.php:81
+msgid "Header Background Color"
+msgstr ""
+
+#: ../inc/customizer.php:88
+msgid "Info Theme"
+msgstr ""
+
+#: ../inc/customizer.php:89
+#, php-format
+msgid ""
+"<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><br/><a target=\"_blank\" "
+"href=\"%3$s\" class=\"button button-primary\">Facebook</a> | <a target="
+"\"_blank\" href=\"%4$s\" class=\"button button-primary\">Twitter</a><br/><br/"
+"><a target=\"_blank\" href=\"%5$s\" class=\"button button-primary\">Donate</"
+"a>"
+msgstr ""
+
+#: ../inc/customizer.php:90
+msgid "http://mwthemes.net"
+msgstr ""
+
+#: ../inc/customizer.php:91
+msgid "If you need assistance, please do not hesitate to contact us"
+msgstr ""
+
+#: ../inc/customizer.php:92
+msgid "http://facebook.com/mwthemes"
+msgstr ""
+
+#: ../inc/customizer.php:93
+msgid "https://twitter.com/mwthemes"
+msgstr ""
+
+#: ../inc/customizer.php:94
+msgid ""
+"https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
+"xclick&hosted_button_id=UEV9GM57HQUHA"
+msgstr ""
+
+#: ../inc/metabox.php:16
+msgid "Link Video"
+msgstr ""
+
+#: ../inc/metabox.php:20
+msgid "Link Audio"
+msgstr ""
+
+#: ../search.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "<i class=\"fa fa-search\"></i>"
+msgstr ""
+
+#: ../sidebar.php:10
+msgid "Categories"
+msgstr ""
+
+#: ../sidebar.php:17
+msgid "Recent Posts"
+msgstr ""
