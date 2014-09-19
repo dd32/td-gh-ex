@@ -25,7 +25,7 @@ Go to settings - reading and select A static page as option for front page displ
 Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
 
 = Where can I get support for the theme? =
-Support is available at the http://antthemes.com/forum/.
+Support is available at the http://antthemes.com/?page_id=56
 
 = How to use menus =
 For Menus: Use wordpress Menu system under Appearance tab.
@@ -33,9 +33,6 @@ For Menus: Use wordpress Menu system under Appearance tab.
 = How to use image as Logo =
 Use wordpress Header system under Appearance tab.
 Appearance/Header
-
-= How to setup Blog page =
-Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Blog as the page template. And publish the page.
 
 
 Thanks for downloading the discover theme.
