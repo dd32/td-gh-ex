@@ -66,6 +66,10 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
+= 1.0.5 =
+* WP 4.0.0 Compatible.
+* Fixed Font Awesome issue.
+
 = 1.0.4 =
 * Added Breadcrumb Settings in theme options(Breadcrumb Settings enable/disable,pagetitle color etc.)
 * updated Version of Font Awesome 4.1.0 .
