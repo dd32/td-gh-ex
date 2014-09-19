@@ -36,7 +36,7 @@ Custom Css:
 
 == Change log ==
 
-= 1.0.4 =
+= 1.0.5 =
 *Updated image license 
 
 = 1.0.3 =
@@ -60,4 +60,8 @@ Custom Css:
 *Fonts Open Sans: Designed by Steve Matteson Director of Ascender Corp. Styled by: https://profiles.google.com/107777320916704234605/about License: Apache License, version 2.0 with GPL
 *This theme uses Nivo Slider, which is under the MIT License. More details: http://dev7studios.com/nivo-slider/
 *Image used in screenshot picture are from Pixabay.com read license terms http://pixabay.com/en/service/terms/
+-http://pixabay.com/en/gathering-mushroom-rac-448866/
+-http://pixabay.com/en/lake-taupo-new-zealand-north-island-50919/
+-http://pixabay.com/en/flower-child-hippie-flower-people-336658/
+
 **This theme and file are created by me & publish under GPL
