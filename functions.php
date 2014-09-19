@@ -45,7 +45,7 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$selfie_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,

@@ -58,6 +58,13 @@ function optionsframework_options() {
 		'id' => 'heading_des1',
 		'std' => 'It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to power the place on the web.',
 		'type' => 'text');
+		
+	$options[] = array(
+		'name' => __('Front Page Heading Button Link', 'selfie'), 
+		'desc' => __('Input the Heading Button URL here.', 'selfie'), 
+		'id' => 'heading_btn1_link',
+		'std' => '#',
+		'type' => 'text');
 	
 		
 	foreach (range(1, 5 ) as $numslinksn) {
