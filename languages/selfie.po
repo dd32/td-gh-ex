@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: selfie\n"
-"POT-Creation-Date: 2014-09-13 20:44+0600\n"
-"PO-Revision-Date: 2014-09-13 20:44+0600\n"
+"POT-Creation-Date: 2014-09-20 02:48+0600\n"
+"PO-Revision-Date: 2014-09-20 02:48+0600\n"
 "Last-Translator: support@d5creation.com\n"
 "Language-Team: D5 Creation <support@d5creation.com>\n"
 "Language: en\n"
@@ -230,11 +230,19 @@ msgid ""
 "Input your heading description here. Please limit it within 100 Letters."
 msgstr ""
 
-#: ../inc/options.php:66
+#: ../inc/options.php:63
+msgid "Front Page Heading Button Link"
+msgstr ""
+
+#: ../inc/options.php:64
+msgid "Input the Heading Button URL here."
+msgstr ""
+
+#: ../inc/options.php:73
 msgid "Social Link - "
 msgstr ""
 
-#: ../inc/options.php:67
+#: ../inc/options.php:74
 msgid ""
 "Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
 "d5creation</b>.  If you do not want to show anything here leave the box "
