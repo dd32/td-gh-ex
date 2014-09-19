@@ -1,9 +1,5 @@
 <?php
 
-// Set Content Width
-if ( ! isset( $content_width ) )
-	$content_width = 675;
-
 /*==================================== THEME SETUP ====================================*/
 
 
@@ -12,6 +8,11 @@ add_action( 'after_setup_theme', 'rubine_setup' );
 
 function rubine_setup() {
 
+	// Set Content Width
+	global $content_width;
+	if ( ! isset( $content_width ) )
+		$content_width = 675;
+		
 	// init Localization
 	load_theme_textdomain('rubine-lite', get_template_directory() . '/languages' );
 
