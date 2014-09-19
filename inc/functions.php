@@ -295,7 +295,7 @@ function spacious_custom_css() {
 			.single #content .tags a:hover { color: '.$primary_color.'; }
 			.widget_testimonial .testimonial-icon:before { color: '.$primary_color.'; }
 			a#scroll-up { background-color: '.$primary_color.'; }
-			#search-form span { background-color: '.$primary_color.'; }';
+			.search-form span { background-color: '.$primary_color.'; }';
 	}
 
 	if( !empty( $spacious_internal_css ) ) {

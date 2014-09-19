@@ -46,6 +46,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.4 =
+* W3C validation error fixed.
+* Catalan language file added. Thanks to Mr. Jordi Flamarich for providing the language files. 
+
 = Version 1.1.3 =
 * Blog template removed as per WordPress guidelines.
 * Checkbox option added to disable the slider for posts page.
