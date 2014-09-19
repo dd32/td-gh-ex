@@ -144,13 +144,24 @@
 .so-settings-widget-form .siteorigin-widget-help-link {
   margin-bottom: 0 !important;
 }
-#siteorigin-theme-feature-suggestions {
-  font-size: 0.85em;
-  display: inline-block;
-  color: #999999;
-  margin-left: 10px;
-  text-decoration: none;
+#siteorigin-settings-submit {
+  display: block;
+  float: left;
 }
-#siteorigin-theme-feature-suggestions:hover {
+#siteorigin-settings-submit:active,
+#siteorigin-settings-submit:focus {
+  outline: none;
+}
+#siteorigin-theme-support {
+  font-size: 0.9em;
+  display: block;
   color: #666666;
+  margin-left: 1em;
+  text-decoration: none;
+  float: left;
+  margin-top: 0.45em;
+}
+#siteorigin-theme-support:hover {
+  color: #444444;
+  text-decoration: underline;
 }
