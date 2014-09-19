@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.3' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.4' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){

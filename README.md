@@ -3,6 +3,7 @@ Puro WordPress Theme
 
 A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and MetaSlider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages. 
 
+
 License
 ---------------------
 
@@ -18,6 +19,13 @@ Puro WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012
 
 All Javascript is located in js/ with license headers where appropriate.
 
+
+Images
+---------------------
+
+Screenshot Waves and Rocks image sourced from http://unsplash.com by Angelina Odemchuk licensed under CC0 1.0 Universal (CC0 1.0) (http://creativecommons.org/publicdomain/zero/1.0/).
+
+
 Bundled Resources
 ---------------------
 
@@ -30,13 +38,18 @@ Released under the WTFPL license.
 SASS Elements, Copyright 2006 - 2014 Hampton Catlin, Nathan Weizenbaum, Chris Eppstein, and numerous contributors
 Released under the MIT License.
 
+
 SiteOrigin Extras
 ---------------------
 
 This theme makes use of the SiteOrigin Extras Framework contained in the folder extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
+
 Change Log
 ---------------------
+
+#### 1.0.4
+* Updated README.md with screenshot image license information. 
 
 #### 1.0.3
 * Added theme options.
