@@ -39,16 +39,8 @@ get_header();?>
           <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a> </div>
       </article>
       <?php endwhile;?>
-      <nav class="customizable-nav"> <span class="customizable-nav-previous pull-left">
-        <?php previous_posts_link(); ?>
-        </span> <span class="customizable-nav-next pull-right">
-        <?php next_posts_link(); ?>
-        </span> </nav>
-      <!-- .nav-single -->
-
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+        <?php if(function_exists('faster_pagination')) { ?> 
             <?php faster_pagination();?>
         <?php }else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>

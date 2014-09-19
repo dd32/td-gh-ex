@@ -22,7 +22,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
  <?php  global $customizable_options; $customizable_options = get_option( 'faster_theme_options' ); if(!empty($customizable_options['favicon'])){?>
-<link rel="shortcut icon" href="<?php echo $customizable_options['favicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url($customizable_options['favicon']);?>">
 <?php } ?>
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
@@ -35,7 +35,7 @@
   <div class="top_header">
     <div class="container customize-container">
       <div class="logo"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-      <?php if(empty($customizable_options['logo'])){?><h1><?php bloginfo( 'name' ); ?></h1><?php }else{echo  "<img src='".$customizable_options['logo']."' class='img-responsive'/>";}?>
+      <?php if(empty($customizable_options['logo'])){?><h1><?php bloginfo( 'name' ); ?></h1><?php }else{echo  "<img src='".esc_url($customizable_options['logo'])."' class='img-responsive'/>";}?>
       
         </a>
         <h6 class="site-description">

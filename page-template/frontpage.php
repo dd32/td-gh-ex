@@ -1,37 +1,27 @@
 <?php
 /*
-* Template:Home Page
+* Template Name: Home Page
 */
-?>
-<?php
-if ( 'page' != get_option( 'show_on_front' ) ) {
-	include( get_home_template() );
-	exit;
-}
 ?>
 <?php get_header(); 
 $customizable_options = get_option( 'faster_theme_options' );
 ?>
-
 <section class="main_section">
 <div class="callbacks_container">
 <ul class="rslides" id="slider4">
 <?php for($customizable_loop=1 ; $customizable_loop <5 ; $customizable_loop++):?>
 	<?php if(!empty($customizable_options['slider-img-'.$customizable_loop])){ ?>
-    	<li><?php if(!empty($customizable_options['slidelink-'.$customizable_loop])) {?><a href="<?php echo $customizable_options['slidelink-'.$customizable_loop];?>" target="_blank"><img src="<?php echo $customizable_options['slider-img-'.$customizable_loop]; ?>" alt="" /></a><?php }else{?><img src="<?php echo $customizable_options['slider-img-'.$customizable_loop]; ?>" alt="" /><?php } ?></li>
+    	<li><?php if(!empty($customizable_options['slidelink-'.$customizable_loop])) {?><a href="<?php echo esc_url($customizable_options['slidelink-'.$customizable_loop]);?>" target="_blank"><img src="<?php echo esc_url($customizable_options['slider-img-'.$customizable_loop]); ?>" alt="" /></a><?php }else{?><img src="<?php echo $customizable_options['slider-img-'.$customizable_loop]; ?>" alt="" /><?php } ?></li>
     <?php } ?>
 <?php endfor;?>
 </ul>
 </div>
 <div class="container customize-container"> 
-	
-	
     <div class="col-md-12 customizable-home-title">
         	<?php if(!empty($customizable_options['sectionhead'])){ ?>
 		<h1>
-			<?php echo $customizable_options['sectionhead'];?>
-           <h6><span><img src="<?php echo get_template_directory_uri(); ?>/images/line-logo.png" /></span></h6>
-           
+			<?php echo wp_filter_nohtml_kses($customizable_options['sectionhead']);?>
+           <h6><span><img src="<?php echo get_template_directory_uri(); ?>/images/line-logo.png" /></span></h6>      
         </h1>
         <?php } ?>
     </div>
@@ -43,11 +33,11 @@ $customizable_options = get_option( 'faster_theme_options' );
 	 ?>
 		<div class="col-md-4 customizable-post">
         	 <div class="back-icon">	
-	            <img class="fa icon-center" src="<?php echo $customizable_options['section-icon-'.$customizable_l] ?>" />
+	            <img class="fa icon-center" src="<?php echo esc_url($customizable_options['section-icon-'.$customizable_l]); ?>" />
              </div>   
              <div>
-             	<h1><?php echo $customizable_options['sectiontitle'.$customizable_l] ?></h1>
-				<p><?php echo $customizable_options['sectiondesc-'.$customizable_l] ?></p>
+             	<h1><?php if(!empty($customizable_options['sectiontitle'.$customizable_l])) echo wp_filter_nohtml_kses($customizable_options['sectiontitle'.$customizable_l]); ?></h1>
+				<p><?php if(!empty($customizable_options['sectiondesc-'.$customizable_l])) echo wp_filter_nohtml_kses($customizable_options['sectiondesc-'.$customizable_l]); ?></p>
              </div>
         </div>	 
 	 <?php
@@ -61,7 +51,7 @@ $customizable_options = get_option( 'faster_theme_options' );
 <!-- LATEST POST -->
 	<div class="col-md-12 customizable-home-title">
        	<?php if(!empty($customizable_options['post-title'])){ ?>
-    	<h1><?php echo $customizable_options['post-title']; ?></h1>
+    	<h1><?php echo wp_filter_nohtml_kses($customizable_options['post-title']); ?></h1>
         <h6><span><img src="<?php echo get_template_directory_uri(); ?>/images/line-logo.png" /></span></h6>
         <?php } ?>
         
@@ -123,15 +113,14 @@ $customizable_options = get_option( 'faster_theme_options' );
 <div class="col-md-12 no-padding download-theme">
  <div class="container customize-container">
     	<div class="col-md-10 buttone-left no-padding">
-        	<p><?php if(!empty($customizable_options['downloadcaption'])) echo $customizable_options['downloadcaption']; ?></p>
+        	<p><?php if(!empty($customizable_options['downloadcaption'])) echo wp_filter_nohtml_kses($customizable_options['downloadcaption']); ?></p>
         </div>
         <div class="col-md-2 btn-group no-padding">
         <?php if(!empty($customizable_options['downloadlink'])){ ?>
-		  <a href="<?php echo $customizable_options['downloadlink']; ?>" class="btn btn-default download-button">Download </a>
+		  <a href="<?php echo esc_url($customizable_options['downloadlink']); ?>" class="btn btn-default download-button">Download </a>
           <?php } ?>
         </div>
     </div>
     </div>
 </section>
-
 <?php get_footer();?>

@@ -36,3 +36,10 @@ Version 2.0.6
 	i) Set TGM for pagination.
 	ii) Change copyright text condition.
 	iii) Change theme author uri in style.css.
+	
+Version 2.1
+
+	 i) Define TGM license in readme.txt
+	 ii) Replace esc_url_raw with esc_url. 
+	 iii) Change Theme Options layout.
+	 iv) Remove ABSPATH.	

@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/customizable
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Pro version is a paid version which has several other options like 6 color schemes, different page templates, more Google Fonts options etc.
-Version: 2.0.6
+Version: 2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post
@@ -1226,17 +1226,19 @@ li.menu-divider:last-child {display:none;}
 }
 
 .customizable-home-icom .back-icon{
-	background-image:url(images/back-icon-logo.png);
-	background-repeat: no-repeat;
-	margin:0px auto;
-	width:18%;
-	padding: 9px 0;
-        margin-bottom: 15px;
+    background-color: rgb(0, 190, 224);
+    height: 50px;
+    margin: 21px auto;
+    padding: 2px 0;
+    transform: rotate(45deg);
+    width: 50px;
 }
 .customizable-home-icom .back-icon img{
-    max-height: 25px;
-    max-width: 25px;
-	margin-right: 5px !important;
+    color: rgb(118, 118, 118);
+    height: 20px;
+    margin: 12px auto;
+    transform: rotate(-45deg);
+    width: 20px;
 }
 .icon-center {
     color: #767676;

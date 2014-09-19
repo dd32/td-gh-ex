@@ -13,16 +13,16 @@
     <div class="container customize-container">
       <p><?php
   global $customizable_options;
-   if($customizable_options['footertext'] != '')
+   if(!empty($customizable_options['footertext']))
   {
-	  echo $customizable_options['footertext'].' ';
-	  echo "<a href='http://fasterthemes.com/wordpress-themes/customizable' target='_blank'>Customizable</a> powered by WordPress.";
+	  echo wp_filter_nohtml_kses($customizable_options['footertext']).' ';
+	  echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/customizable' target='_blank'>Customizable</a>.";
 	}
 	else
 	{
-		echo "<a href='http://fasterthemes.com/wordpress-themes/customizable' target='_blank'>Customizable</a> powered by WordPress.";
+		echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/customizable' target='_blank'>Customizable</a>.";
 	}?></p>
-    <?php wp_nav_menu(array('theme_location'  => 'secondary')); ?>
+    <?php wp_nav_menu(array('theme_location'  => 'secondary', 'fallback_cb' => false)); ?>
     </div>
   </div>
 </footer>
