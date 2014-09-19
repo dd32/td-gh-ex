@@ -64,6 +64,8 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.0.8 =
+* Swedish language file added. Thanks to Mr. Magnus Sjöberg for providing the language files.
 
 = Version 1.0.7 =
 * html5shiv.js file updated to version 3.7.2
