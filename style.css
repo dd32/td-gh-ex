@@ -2,11 +2,11 @@
 * Theme Name: Spasalon
   Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
-It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.4.4.7
+It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site. Very recently added a support for woocommerce plugin. Now you create an effective online shop presence with the help of this woocommerce support i.e we have styled this theme in such a manner so that the woocommerce pages/templates looks very similar to the theme styles.
+* Version: 1.5
 * Author: webriti
 * Author URI: http://www.webriti.com
-* Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout
+* Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout,featured-images
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 * Copyright (c) 2013 webriti. All rights reserved.
@@ -31,10 +31,10 @@ body {
     font-smooth:always;
     color: #959595;
     font-family: "Trebuchet MS","Arial","Helvetica","Verdana","sans-serif";
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: normal;
-	line-height:20px;
+	line-height:24px;
 	margin:0px;
 }
 
@@ -71,9 +71,9 @@ margin-top:15px; width:auto; margin-left:25px;
 }
 .home_service_para p{
 	font-family: roboto;
-	font-size: 13px;
+	font-size: 14px;
 	color: #626668;
-	text-align:justify;
+	text-align:left;
 	word-wrap:break-word;
 	word-break:normal;
 }
@@ -107,10 +107,8 @@ margin-top:15px; width:auto; margin-left:25px;
 }
 .flex_btn{
   display: block;
-  *display: block;
   padding: 4px 23px;
   margin-bottom: 0;
-  *margin-left: .3em;
   font-size: 12px;
   line-height: 24px;
   color: #ffffff;
@@ -118,9 +116,7 @@ margin-top:15px; width:auto; margin-left:25px;
   vertical-align: middle;
   cursor: pointer;
   background-color: #4b453f;
-  *background-color: #4b453f;
   border: 0px;
-  *border: 0;
   -webkit-border-radius: 0px;
      -moz-border-radius: 0px;
           border-radius: 0px;
@@ -137,7 +133,6 @@ margin-top:15px; width:auto; margin-left:25px;
 .flex_btn[disabled] {
   color: #333333;
   background-color: #e6e6e6;
-  *background-color: #d9d9d9;
 }
 
 /* Products Thumbnail css here for Home Page----------------------------------------------------------------------------------Shahid */
@@ -148,7 +143,7 @@ margin-top:15px; width:auto; margin-left:25px;
 #product_slide{padding:0px;}
 #slide_desc{margin-top:20px;}
 .slide_content{height:auto;position:relative;}
-#comment {color: #f22853; font-family:roboto;font-size:14px;} 
+#comment {color: #555555; font-family:roboto;font-size:14px;} 
 #spa_form{margin-left:0px;}
 #spa_address_area{margin-top: 10px margin-left:0px;}
 #menu_position{position: static;}
@@ -1204,7 +1199,7 @@ margin-bottom:10px;
 }
 
 
-#blog-form-post {
+#blog-form-post,a.add_to_cart_button {
 	background-color: #F22853;
     border: 0 none;
     border-radius: 2px 2px 2px 2px;
@@ -1937,9 +1932,9 @@ ul.redarrow, ul.arrow, ul.upper {
     padding: 0 0 25px;
 }
 .fullwidth-content p {
-	font-size:12px;
+	font-size:14px;
 	font-family:roboto;
-	line-height:20px;
+	line-height:24px;
 	
 	
 }
@@ -2577,7 +2572,7 @@ footer p{
      
 	font-family: roboto;
 	color: #626668;
-	font-size: 13px;
+	font-size: 14px;
 }
 footer{
     /* border-top: 1px solid #e5e5e5; */
@@ -2712,8 +2707,6 @@ fieldset p{
 
   color: #989495;
     font-family: roboto;
-    font-size: 12px;
-    line-height: 20px;
 	font-weight: normal;
 }.comment-date
 {   color: #AAAAAA;
@@ -2813,12 +2806,12 @@ border-top:1px solid #DEDEDE;
     margin-bottom: 9px;
     margin-left: 0;
     padding-left: 25px;
+	font-family: roboto;
+	line-height:24px;
 }
 .blog-detail-content ol li{
 	color: #848B8F;
     font-family: roboto;
-    font-size: 12px;
-    line-height: 24px;
     list-style: decimal outside none;
     margin-bottom: 9px;
     margin-left: 5px;
@@ -2966,8 +2959,8 @@ article.sticky .featured-post {
 
 /*css for widget */
 
-#sidebar ul li a,.textwidget{ color:#7A8082; font-family:roboto;font-size:12px; }
-#sidebar ul li a:hover{ font-family:roboto;font-size:12px;}
+#sidebar ul li a,.textwidget{ color:#7A8082; font-family:roboto;font-size:14px; line-height:24px;}
+#sidebar ul li a:hover{ font-family:roboto;font-size:14px;}
 .widget_archive ul,#sidebar ul,.widget_categories ul,.widget_recent_comments  ul{ margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; ms-word-wrap: break-word;}
 
 /*css for table*/
@@ -3010,3 +3003,44 @@ text-align: center;
 vertical-align: top;
 border: 1px solid #dddddd;
 }
+
+/* Woocommerce styles*/
+
+.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+     font-family: roboto !important;
+    font-size: 16px !important;
+}
+
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price {
+    color: #f22853;
+     font-family: roboto;
+    font-size: 16px;
+    font-weight: 600 !important;    
+}
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 100px !important;
+}
+.woocommerce table td{line-height:60px !important;}
+.woocommerce table.shop_table, .woocommerce-page table.shop_table {
+    border-collapse: separate;
+    text-align: center !important;
+}
+
+.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before{ background-color:#f22853 !important;}
+
+.woocommerce .woocommerce-message, .woocommerce-page .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
+    border-top: 3px solid #f22853 !important;
+}
+div.tab-reviews textbox#comment{color: #555555;}
+
+div.product h1 {
+ font-family: roboto;
+ color: #353c3f;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 21px;
+    margin-bottom: 0;
+    margin-top: 6px !important;
+    padding-bottom: 15px !important;
+}
+div#payment label{display:inline-block;}

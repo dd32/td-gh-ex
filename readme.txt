@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5
+1. woocommerce support added
+2. Sidebar formatting issues fixed.
+3. other formatting managed.
+4. sidebar managed
 @Version:1.4.4.7
 1. Tag-Line of Pink-Banner else text removed .
 @Version:1.4.4.6

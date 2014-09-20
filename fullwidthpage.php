@@ -1,7 +1,9 @@
 <?php 
-    // Template Name: Full Width Template
+    // Template Name: fullwidthpage
     ?>
-<?php get_template_part('pink','header')?>
+<?php get_template_part('pink','header'); ?>
+
+
 <!-- Container for products -->
 <div class="container">
     <!-- Main --> 
