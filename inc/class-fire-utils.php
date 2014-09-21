@@ -315,18 +315,16 @@ if ( ! class_exists( 'TC_utils' ) ) :
       function tc_fancybox_content_filter( $content) {
         $tc_fancybox = esc_attr( tc__f( '__get_option' , 'tc_fancybox' ) );
 
-        if ( 1 == $tc_fancybox ) 
-        {
-            global $post;
-            if ( !isset($post) )
-              return;
-            $pattern ="/<a(.*?)href=( '|\")(.*?).(bmp|gif|jpeg|jpg|png)( '|\")(.*?)>/i";
-            $replacement = '<a$1href=$2$3.$4$5 class="grouped_elements" rel="tc-fancybox-group'.$post -> ID.'"$6>';
-            $content = preg_replace( $pattern, $replacement, $content);
-        }
+        if ( 1 != $tc_fancybox )
+          return $content;
 
-        
+        global $post;
+        if ( ! isset($post) )
+          return $content;
 
+        $pattern ="/<a(.*?)href=( '|\")(.*?).(bmp|gif|jpeg|jpg|png)( '|\")(.*?)>/i";
+        $replacement = '<a$1href=$2$3.$4$5 class="grouped_elements" rel="tc-fancybox-group'.$post -> ID.'"$6>';
+        $content = preg_replace( $pattern, $replacement, $content);
         return apply_filters( 'tc_fancybox_content_filter', $content );
       }
 
@@ -686,8 +684,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
      * @since Customizr 3.0.1
      */
     function tc_slider_choices() {
-        $__options    =   get_option('tc_theme_options');
-        $slider_names   =   isset($__options['tc_sliders']) ? $__options['tc_sliders'] : array();
+      $__options    =   get_option('tc_theme_options');
+      $slider_names   =   isset($__options['tc_sliders']) ? $__options['tc_sliders'] : array();
 
       $slider_choices = array( 
         0     =>  __( '&mdash; No slider &mdash;' , 'customizr' ),
@@ -1241,6 +1239,14 @@ if ( ! class_exists( 'TC_utils' ) ) :
                                 'section'     => 'tc_image_settings' ,
                                 'type'        => 'checkbox' ,
                                 'notice'    => __( 'If enabled, your website will include support for high resolution devices.' , 'customizr' ),
+              ),
+               'tc_theme_options[tc_display_slide_loader]'  =>  array(
+                                'default'       => 0,
+                                'control'   => 'TC_controls' ,
+                                'label'       => __( "Sliders : display on loading icon before rendering the slides" , "customizr" ),
+                                'section'     => 'tc_image_settings' ,
+                                'type'        => 'checkbox' ,
+                                'notice'    => __( 'When checked, this option displays a loading icon when the slides are beeing setup.' , 'customizr' ),
               )
       );//end of images options
       $images_option_map = apply_filters( 'tc_images_option_map', $images_option_map , $get_default );
@@ -1283,6 +1289,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
                                 'type'        => 'checkbox' ,
                                 'notice'    => __( 'This option centers your slider (carousel) pictures vertically and horizontally on any devices when displayed in full width mode' , 'customizr' ),
               )
+
       );//end of links options
       $responsive_option_map = apply_filters( 'tc_responsive_option_map', $responsive_option_map , $get_default );
 

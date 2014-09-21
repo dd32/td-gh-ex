@@ -174,17 +174,14 @@ if ( ! class_exists( 'TC_slider' ) ) :
       ob_start();
       ?>
       <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
-
-          <div class="carousel-inner">
-
-            <?php if ( 1 == esc_attr( tc__f( '__get_option' , 'tc_center_slides') ) && apply_filters( 'tc_display_slider_loader' , true ) ) : ?>
-              <div class="tc-slider-loader-wrapper">
-                <div class="tc-img-gif-loader">
-                  <img src="<?php echo apply_filters('tc_slider_loader_src' , sprintf( '%1$s/%2$s' , TC_BASE_URL , 'inc/assets/img/slider-loader.gif') ) ?>">
-                </div>
+          <?php if ( 'demo' == $slider_name_id || ( 1 == esc_attr( tc__f( '__get_option' , 'tc_display_slide_loader') ) && apply_filters( 'tc_display_slider_loader' , true ) ) ) : ?>
+            <div class="tc-slider-loader-wrapper">
+              <div class="tc-img-gif-loader">
+                <img src="<?php echo apply_filters('tc_slider_loader_src' , sprintf( '%1$s/%2$s' , TC_BASE_URL , 'inc/assets/img/slider-loader.gif') ) ?>">
               </div>
-            <?php endif; ?>
-
+            </div>
+          <?php endif; ?>
+          <div class="carousel-inner">
             <?php foreach ($slides as $id => $data) : ?>
               <?php 
                 $slide_class = sprintf('%1$s %2$s',

@@ -390,7 +390,7 @@ if ( ! class_exists( 'TC_init' ) ) :
         $remote_path    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/assets/css/' : $remote_path ;
         $remote_path    = ( !$remote_path && file_exists(TC_BASE .'inc/assets/css/' . $skin) ) ? TC_BASE_URL .'inc/assets/css/' : $remote_path ;
         //Checks if there is a rtl version of the selected skin if needed
-        if ('ar' == WPLANG || 'he_IL' == WPLANG) {
+        if ( defined( 'WPLANG' ) && ( 'ar' == WPLANG || 'he_IL' == WPLANG ) ) {
           $remote_path   = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/assets/css/rtl/' : $remote_path ;
           $remote_path   = ( !TC___::$instance -> tc_is_child() && file_exists(TC_BASE .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL .'inc/assets/css/rtl/' : $remote_path ;
         } 

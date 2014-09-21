@@ -105,7 +105,6 @@ if ( ! class_exists( 'TC_resources' ) ) :
 			          	'RightSidebarClass' 	=> $right_sb_class,
 			          	'LoadBootstrap' 		=> apply_filters( 'tc_load_bootstrap' , true ),
 			          	'LoadModernizr' 		=> apply_filters( 'tc_load_modernizr' , true ),
-			          	'LoadHolderJs' 			=> apply_filters( 'tc_load_holderjs' , true ),
 			          	'LoadRetina' 			=> ( 1 == tc__f( '__get_option' , 'tc_retina_support' ) ) ? true : false,
 			          	'LoadCustomizrScript' 	=> apply_filters( 'tc_load_customizr_script' , true )
 		        	),
@@ -116,6 +115,13 @@ if ( ! class_exists( 'TC_resources' ) ) :
 		    //fancybox style
 		    if ( $tc_fancybox )
 		      	wp_enqueue_style( 'fancyboxcss' , TC_BASE_URL . 'inc/assets/js/fancybox/jquery.fancybox-1.3.4.min.css' );
+
+		    //holder.js is loaded when featured pages are enabled AND FP are set to show images
+		    $tc_show_featured_pages 	    = esc_attr( tc__f( '__get_option' , 'tc_show_featured_pages' ) );
+      		$tc_show_featured_pages_img     = esc_attr( tc__f( '__get_option' , 'tc_show_featured_pages_img' ) );
+      		if ( 0 != $tc_show_featured_pages && 0 != $tc_show_featured_pages_img ) {
+		    	wp_enqueue_script( 'holder' ,TC_BASE_URL . 'inc/assets/js/holder.min.js' ,array( 'jquery' ),null, $in_footer = true);
+		    }
 		}
 
 
