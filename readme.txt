@@ -1,7 +1,7 @@
 ----------------------------------
 Selfie
 ----------------------------------
-Version: 	1.2.2
+Version: 	1.2.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -47,9 +47,10 @@ You can set your Social Page Links and the Top Phone Number from Appearance > Se
 Changelog
 ==================
 
-Version 1.2.1
+Version 1.2.3
 ___________________
 - Missing Options Added
+- Template Name removed from front-page.php
 
 
 Version 1.2
