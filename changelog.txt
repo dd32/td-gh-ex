@@ -10,6 +10,22 @@ Changelog Legend:
 
 ----
 
+(9/20/2014) - 1.1.8
+[x] Remove login from footer
+[!] Fix mobile bug with alignleft and alignright classes
+[*] Make Google Fonts call more robust
+[*] Tweak made to navigation search bar
+[+] Add BuddyPress compatibility
+[+] Translation files updated
+[+] Addon constants added for ease of translating
+
+----
+
+(9/8/2014) - 1.1.7
+[+] Remove use of constants for template directory
+
+----
+
 (9/6/2014) - 1.1.6
 [*] Added some function_exists checks to some important places
 [*] Disable some of the addon notices if GP Premium is installed

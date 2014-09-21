@@ -426,7 +426,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			$widget_padding = '.one-container .widget{padding:30px;}';
 		endif;
 		
-		$output = str_replace(array("\r", "\n"), '', $output);
+		$output = str_replace(array("\r", "\n", "\t"), '', $output);
 		return $output . $widget_padding;
 	}
 	

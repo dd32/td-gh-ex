@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2014-09-06 08:53-0800\n"
-"PO-Revision-Date: 2014-09-06 08:53-0800\n"
+"POT-Creation-Date: 2014-09-20 09:53-0800\n"
+"PO-Revision-Date: 2014-09-20 09:55-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -116,11 +116,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:79 inc/addons.php:102
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/options.php:96
+#: comments.php:80 inc/options.php:75
 msgid "Website"
 msgstr ""
 
@@ -236,24 +236,20 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: functions.php:326 inc/options.php:137
+#: functions.php:338 inc/options.php:120
 msgid "Copyright"
 msgstr ""
 
-#: functions.php:334 inc/options.php:45 inc/options.php:68
+#: functions.php:346 inc/options.php:24 inc/options.php:47
 msgid "GeneratePress"
 msgstr ""
 
-#: functions.php:334
+#: functions.php:346
 msgid "Proudly powered by WordPress"
 msgstr ""
 
-#: functions.php:334
+#: functions.php:346
 msgid "WordPress"
-msgstr ""
-
-#: functions.php:334
-msgid "Log in"
 msgstr ""
 
 #: image.php:24
@@ -299,40 +295,86 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
-#: inc/addons/typography.php:264 inc/options.php:113
+#: inc/addons.php:81
+msgid "verified"
+msgstr ""
+
+#: inc/addons.php:84
+msgid "unverified"
+msgstr ""
+
+#: inc/addons.php:87
+msgid "Activate"
+msgstr ""
+
+#: inc/addons.php:90
+msgid "Activate All"
+msgstr ""
+
+#: inc/addons.php:93
+msgid "Deactivate"
+msgstr ""
+
+#: inc/addons.php:96
+msgid ""
+"Please activate the email you purchased your addons with below in order to "
+"receive future updates."
+msgstr ""
+
+#: inc/addons.php:99
+msgid "Addon"
+msgstr ""
+
+#: inc/addons.php:105
+msgid "Status"
+msgstr ""
+
+#: inc/addons.php:108
+msgid "Action"
+msgstr ""
+
+#: inc/addons.php:111
+msgid "Verify Email"
+msgstr ""
+
+#: inc/addons.php:114
+msgid "Refresh"
+msgstr ""
+
+#: inc/addons/typography.php:271 inc/options.php:93
 msgid "Typography"
 msgstr ""
 
-#: inc/addons/typography.php:285
+#: inc/addons/typography.php:292
 msgid "Body"
 msgstr ""
 
-#: inc/addons/typography.php:306
+#: inc/addons/typography.php:313
 msgid "Font weight"
 msgstr ""
 
-#: inc/addons/typography.php:328
+#: inc/addons/typography.php:335
 msgid "Text transform"
 msgstr ""
 
-#: inc/addons/typography.php:350
+#: inc/addons/typography.php:357
 msgid "Font size"
 msgstr ""
 
-#: inc/addons/typography.php:367 inc/customizer.php:181 inc/customizer.php:680
+#: inc/addons/typography.php:374 inc/customizer.php:181 inc/customizer.php:680
 msgid "More Settings"
 msgstr ""
 
-#: inc/addons/typography.php:370
+#: inc/addons/typography.php:377
 #, php-format
 msgid "Looking to add more typography settings?<br /> %s."
 msgstr ""
 
-#: inc/addons/typography.php:374
+#: inc/addons/typography.php:381
 msgid "Check out Generate Typography"
 msgstr ""
 
-#: inc/addons/typography/google-font-dropdown-custom-control.php:48
+#: inc/addons/typography/google-font-dropdown-custom-control.php:49
 msgid "Font family"
 msgstr ""
 
@@ -364,7 +406,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:104 inc/options.php:104
+#: inc/customizer.php:104 inc/options.php:83
 msgid "Colors"
 msgstr ""
 
@@ -545,7 +587,7 @@ msgstr ""
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/customizer.php:633 inc/options.php:153
+#: inc/customizer.php:633 inc/options.php:138
 msgid "Blog"
 msgstr ""
 
@@ -582,7 +624,7 @@ msgstr ""
 msgid "Addons Available! Take a look"
 msgstr ""
 
-#: inc/extras.php:365
+#: inc/extras.php:387
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -653,114 +695,110 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/options.php:41
-msgid "Activate your addons"
-msgstr ""
-
-#: inc/options.php:78
+#: inc/options.php:57
 msgid "Import successful."
 msgstr ""
 
-#: inc/options.php:82
+#: inc/options.php:61
 msgid "Settings removed."
 msgstr ""
 
-#: inc/options.php:86
+#: inc/options.php:65
 msgid "Settings saved."
 msgstr ""
 
-#: inc/options.php:91
+#: inc/options.php:70
 msgid "Information"
 msgstr ""
 
-#: inc/options.php:94
+#: inc/options.php:73
 msgid "Version"
 msgstr ""
 
-#: inc/options.php:95
+#: inc/options.php:74
 msgid "Author"
 msgstr ""
 
-#: inc/options.php:99 inc/options.php:216
+#: inc/options.php:78 inc/options.php:222
 msgid "Addons"
 msgstr ""
 
-#: inc/options.php:121
+#: inc/options.php:102
 msgid "Page Header"
 msgstr ""
 
-#: inc/options.php:129
+#: inc/options.php:111
 msgid "Import / Export"
 msgstr ""
 
-#: inc/options.php:145
+#: inc/options.php:129
 msgid "Disable Elements"
 msgstr ""
 
-#: inc/options.php:161
+#: inc/options.php:147
 msgid "Hooks"
 msgstr ""
 
-#: inc/options.php:169
+#: inc/options.php:156
 msgid "Spacing"
 msgstr ""
 
-#: inc/options.php:177
+#: inc/options.php:165
 msgid "Backgrounds"
 msgstr ""
 
-#: inc/options.php:185
+#: inc/options.php:174
 msgid "Secondary Nav"
 msgstr ""
 
-#: inc/options.php:196
+#: inc/options.php:188 inc/options.php:201
 msgid "Not activated."
 msgstr ""
 
-#: inc/options.php:200
+#: inc/options.php:192 inc/options.php:205
 msgid "Activated and unverified. Please activate below."
 msgstr ""
 
-#: inc/options.php:202
+#: inc/options.php:194 inc/options.php:207
 msgid "Activated and verified."
 msgstr ""
 
-#: inc/options.php:214
+#: inc/options.php:220
 msgid "Customizer"
 msgstr ""
 
-#: inc/options.php:218
+#: inc/options.php:224
 msgid ""
 "Please help support development of the GeneratePress by buying me a coffee :)"
 msgstr ""
 
-#: inc/options.php:218
+#: inc/options.php:224
 msgid "Buy me a coffee :)"
 msgstr ""
 
-#: inc/options.php:226
-msgid "Product Activation"
+#: inc/options.php:232
+msgid "Addon Activation"
 msgstr ""
 
-#: inc/options.php:231
+#: inc/options.php:237
 msgid "Looks like you don't have any Addons! <a href=\""
 msgstr ""
 
-#: inc/options.php:248
+#: inc/options.php:254
 msgid "Delete Customizer Settings"
 msgstr ""
 
-#: inc/options.php:251
+#: inc/options.php:257
 msgid ""
 "<strong>Warning:</strong> Clicking this button will delete your settings set "
 "in the <a href=\""
 msgstr ""
 
-#: inc/options.php:252
+#: inc/options.php:258
 msgid "You may want to export your settings before deleting them forever."
 msgstr ""
 
-#: inc/options.php:257
+#: inc/options.php:263
 msgid "Delete Default Customizer Settings"
 msgstr ""
 
@@ -822,9 +860,9 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: inc/template-tags.php:307 searchform.php:10 searchform.php:11
+#: inc/template-tags.php:307
 msgctxt "label"
-msgid "Search for:"
+msgid "Search"
 msgstr ""
 
 #: no-results.php:13
@@ -852,6 +890,11 @@ msgstr ""
 #: search.php:15
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10 searchform.php:11
+msgctxt "label"
+msgid "Search for:"
 msgstr ""
 
 #: searchform.php:11

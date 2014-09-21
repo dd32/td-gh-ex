@@ -74,6 +74,11 @@
 	.main-navigation li.search-item .fa-times {
 		text-indent: -9999px;
 	}
+	.alignleft,
+	.alignright {
+		float: none;
+		display: block;
+	}
 }
 
 @media screen and (max-width: 767px) {

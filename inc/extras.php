@@ -112,8 +112,19 @@ function generate_right_sidebar_classes( $classes )
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
+	// Is BuddyPress active on this page?
+	$buddypress = false;
+	if ( function_exists( 'is_buddypress' ) ) :
+		if ( is_buddypress() ) {
+			$buddypress = true;
+		} else {
+			$buddypress = false;
+		}
+	endif;
+	
 	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
+	// And if we're not on a BuddyPress page - fixes a bug where BP thinks is_single() is true
+	if ( is_single() && ! $buddypress  ) :
 		$layout = null;
 		$layout = $generate_settings['single_layout_setting'];
 	endif;
@@ -191,8 +202,19 @@ function generate_left_sidebar_classes( $classes )
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
+	// Is BuddyPress active on this page?
+	$buddypress = false;
+	if ( function_exists( 'is_buddypress' ) ) :
+		if ( is_buddypress() ) {
+			$buddypress = true;
+		} else {
+			$buddypress = false;
+		}
+	endif;
+	
 	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
+	// And if we're not on a BuddyPress page - fixes a bug where BP thinks is_single() is true
+	if ( is_single() && ! $buddypress ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;

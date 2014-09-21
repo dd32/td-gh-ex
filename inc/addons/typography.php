@@ -219,7 +219,6 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			'Trebuchet MS,+Helvetica,+sans-serif'
 		);
 
-
 		$generate_settings = wp_parse_args( 
 			get_option( 'generate_settings', array() ), 
 			generate_get_default_fonts() 
@@ -241,8 +240,16 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 		$google_fonts = implode('|', $google_fonts);
 		
 		$google_fonts = apply_filters( 'generate_typography_google_fonts', $google_fonts );
-		if ($google_fonts) { 
-			wp_enqueue_style('generate-fonts', '//fonts.googleapis.com/css?family=' . $google_fonts, false, GENERATE_VERSION, 'all' );
+		
+		$font_args = array(
+            'family' => $google_fonts,
+            'subset' => urlencode( 'latin,latin-ext' ),
+        );
+ 
+        $fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
+		
+		if ( $google_fonts ) { 
+			wp_enqueue_style('generate-fonts', $fonts_url, false, GENERATE_VERSION, 'all' );
 		}
 	}
 endif;

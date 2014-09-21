@@ -36,7 +36,7 @@ function generate_options_styles()
 {
      wp_enqueue_style( 
         'generate-options', 
-        GENERATE_URI . '/inc/css/style.css'
+        get_template_directory_uri() . '/inc/css/style.css'
     );
 }
 
@@ -229,7 +229,7 @@ function generate_settings_page()
 						<?php do_action('generate_inside_options_form'); ?>
 						
 						<div class="postbox generate-metabox" id="gen-license-keys">
-							<h3 class="hndle"><?php _e('Product Activation','generate');?></h3>
+							<h3 class="hndle"><?php _e('Addon Activation','generate');?></h3>
 							<div class="inside">
 							
 								<?php

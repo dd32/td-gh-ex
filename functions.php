@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.1.7');
+define( 'GENERATE_VERSION', '1.1.8');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -277,14 +277,25 @@ function generate_contruct_sidebars()
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
+	// Is BuddyPress active on this page?
+	$buddypress = false;
+	if ( function_exists( 'is_buddypress' ) ) :
+		if ( is_buddypress() ) {
+			$buddypress = true;
+		} else {
+			$buddypress = false;
+		}
+	endif;
+
 	// If we're on the single post page, use appropriate setting
-	if ( is_single() ) :
+	// And if we're not on a BuddyPress page - fixes a bug where BP thinks is_single() is true
+	if ( is_single() && ! $buddypress ) :
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['single_layout_setting'];
 	endif;
-	
+
 	// If the metabox is set, use it instead of the global settings
-	if ( '' !== $stored_meta ) :
+	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
 	endif;
 	
@@ -301,13 +312,13 @@ function generate_contruct_sidebars()
 		$generate_settings['layout_setting'] = null;
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
 	endif;
-
+	
 	// When to show the right sidebar
 	$rs = array('right-sidebar','both-sidebars','both-right','both-left');
 
 	// When to show the left sidebar
 	$ls = array('left-sidebar','both-sidebars','both-right','both-left');
-
+	
 	// If right sidebar, show it
 	if ( in_array( $generate_settings['layout_setting'], $rs ) ) :
 		get_sidebar(); 
@@ -317,6 +328,7 @@ function generate_contruct_sidebars()
 	if ( in_array( $generate_settings['layout_setting'], $ls ) ) :
 		get_sidebar('left'); 
 	endif;
+	
 }
 
 add_action('generate_credits','generate_add_footer_info');
@@ -331,7 +343,7 @@ add_action('generate_copyright_line','generate_add_login_attribution');
 function generate_add_login_attribution()
 {
 	?>
-	&#x000B7; <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank" title="<?php _e('GeneratePress','generate');?>"><?php _e('GeneratePress','generate');?></a> &#x000B7; <a href="http://wordpress.org" target="_blank" title="<?php _e('Proudly powered by WordPress','generate');?>"><?php _e('WordPress','generate');?></a> &#x000B7; <a href="<?php echo wp_login_url(); ?>" title="<?php _e('Log in','generate');?>"><?php _e('Log in','generate');?></a>
+	&#x000B7; <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank" title="<?php _e('GeneratePress','generate');?>"><?php _e('GeneratePress','generate');?></a> &#x000B7; <a href="http://wordpress.org" target="_blank" title="<?php _e('Proudly powered by WordPress','generate');?>"><?php _e('WordPress','generate');?></a>
 	<?php
 }
 
