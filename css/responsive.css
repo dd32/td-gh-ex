@@ -119,7 +119,6 @@
 	}	
 	#secondary-menu ul.menu a {
 		line-height: 40px;		
-		line-height: 4rem;
 		padding: 0 10px;		
 	}	
 	.header-sidebar .widget ul.menu ul, 
@@ -139,13 +138,11 @@
 	textarea,
 	#homepage-message p {
 		font-size: 13px;
-		font-size: 1.3rem;
 	}	
 	#site-title,
 	#slider-nav .slide-previous:before,
 	#slider-nav .slide-next:before {
 		font-size: 22px;
-		font-size: 2.2rem;	
 	}	
 	#main-slider .entry-header .entry-title,
 	.entry-header .entry-title, 
@@ -157,38 +154,31 @@
 	.entry-content h2,
 	.comment-content h2 {
 		font-size: 18px;
-		font-size: 1.8rem;
 	}	
 	#homepage-message h2, 
 	.widget-title {
-		font-size: 16px;
-		font-size: 1.6rem;		
+		font-size: 16px;	
 	}
 	.entry-content h1,
 	.comment-content h1 {
 		font-size: 22px;
-		font-size: 2.2rem;
 	}
 	.entry-content h3,
 	.comment-content h3 { 
 		font-size: 16px;
-		font-size: 1.6rem;
 	}
 	.entry-content h4,
 	.comment-content h4 { 
 		font-size: 15px;
-		font-size: 1.5rem;
 	}
 	#main-slider .entry-content,
 	.entry-content h5,
 	.comment-content h5 { 
 		font-size: 14px;
-		font-size: 1.4rem;
 	}
 	.entry-content h6,
 	.comment-content h6 { 
 		font-size: 13px;
-		font-size: 1.3rem;
 	}	
 	#homepage-message .right-section a {
 		padding: 5px 20px;	
@@ -299,7 +289,6 @@ and (orientation : landscape) {
 	}
 	#site-generator .site-info {
 		font-size: 12px;
-		font-size: 1.2rem;
 		padding: 20px 0;
 	}
 	#site-generator .copyright,
@@ -318,13 +307,11 @@ and (orientation : landscape) {
 	#site-title,
 	#masthead.fixed-header #site-title {
 		font-size: 16px;
-		font-size: 1.6rem;
 		line-height: 1.1;
 	}
 	#site-description,
 	#masthead.fixed-header #site-description{
 		font-size: 11px;
-		font-size: 1.1rem;
 		line-height: 1;
 	}
 	#masthead #site-logo img,
@@ -444,7 +431,6 @@ and (orientation : portrait) {
 	}
 	#main-slider .entry-header .entry-title {
 		font-size: 16px;
-		font-size: 1.6rem;
 		font-weight: normal;
 	}
 	#main-slider .entry-container .entry-content {
@@ -513,7 +499,6 @@ and (orientation : portrait) {
 	}
 	#slider-nav a {
 		font-size: 18px;
-		font-size: 1.8rem;
 		line-height: 1.4;
 		padding: 0 5px;
 	}
@@ -521,7 +506,6 @@ and (orientation : portrait) {
 	#homepage-message,
 	.comments-title, #reply-title {
 		font-size: 16px;
-		font-size: 1.6rem;
 	}
 	.commentlist .children {
 		margin-left: 0;
@@ -577,7 +561,6 @@ and (orientation : portrait) {
 	#homepage-message .right-section a, 
 	#featured-post #feature-heading {
 		font-size: 16px;		
-		font-size: 1.6rem;
 	}	
 } 
 

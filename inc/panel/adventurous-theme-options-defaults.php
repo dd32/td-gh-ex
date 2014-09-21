@@ -94,7 +94,8 @@ $adventurous_options_defaults = array(
 	'social_email'							=> '',
 	'social_contact'						=> '',
 	'social_xing'							=> '',
-	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Powered by', 'adventurous' ) . ': [wp-link] | '. esc_attr__( 'Theme', 'adventurous' ) . ': [theme-link]</div>',
+	'social_meetup'							=> '',
+	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Adventurous Theme By ', 'adventurous' ) . '[theme-link]</div>',
 	'reset_footer'							=> '2'
 );
 global $adventurous_options_settings;

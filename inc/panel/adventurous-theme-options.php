@@ -1055,7 +1055,7 @@ function adventurous_theme_options_do_page() {
                 <div id="sociallinks">
            			<div class="option-container">
                 		<h3 class="option-toggle"><a href="#"><?php _e( 'Predefine Social Icons', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
+                        <div class="option-content show inside">
                             <div class="row">
                                 <div class="col col-1">
                                     <?php _e( 'Facebook', 'adventurous' ); ?>
@@ -1286,6 +1286,14 @@ function adventurous_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                     <input type="text" size="45" name="adventurous_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                </div>
+                            </div><!-- .row --> 
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Meetup', 'adventurous' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="adventurous_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
                                 </div>
                             </div><!-- .row -->                          
                             <div class="row">
@@ -1616,7 +1624,10 @@ function adventurous_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_xing' ] ) ) {
 		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
-	}	
+	}
+    if( isset( $input[ 'social_meetup' ] ) ) {
+        $input_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );
+    }
 	
     // Layout settings verification
 	if( isset( $input[ 'sidebar_layout' ] ) ) {
@@ -1779,5 +1790,5 @@ function adventurous_wp_link_shortcode() {
  * @return string
  */
 function adventurous_theme_link_shortcode() {
-	return '<a href="http://catchthemes.com/themes/adventurous" target="_blank" title="' . esc_attr__( 'Adventurous', 'adventurous' ) . '"><span>' . __( 'Adventurous', 'adventurous' ) . '</span></a>';
+	return '<a href="http://catchthemes.com/" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
 }

@@ -634,7 +634,6 @@ function adventurous_footer_content() {
 		global $adventurous_options_settings;
    	 	$options = $adventurous_options_settings;
 		
-       // $adventurous_footer_content = $options[ 'footer_code' ];
 		$adventurous_footer_content = $options[ 'footer_code' ];
 		
     	set_transient( 'adventurous_footer_content', $adventurous_footer_content, 86940 );
@@ -880,6 +879,11 @@ function adventurous_social_networks() {
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$adventurous_social_networks .=
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Xing', 'adventurous' ) .'</a></li>';
+			}
+			//Xing
+			if ( !empty( $options[ 'social_meetup' ] ) ) {
+				$adventurous_social_networks .=
+					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Meetup', 'adventurous' ) .'</a></li>';
 			}
 			
 			$adventurous_social_networks .='

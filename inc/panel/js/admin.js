@@ -32,6 +32,7 @@ jQuery( document ).ready( function() {
 jQuery(document).ready(function($){
 	
 	jQuery(".option-content").hide();
+	jQuery(".option-content.show").show();
 
 	jQuery("h3.option-toggle").click(function(){
 	jQuery(this).toggleClass("option-active").next().slideToggle("fast");
