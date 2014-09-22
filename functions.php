@@ -166,7 +166,7 @@ require get_template_directory() . "/widgets/contact-info.php";
  */
 function moesia_scripts() {
 
-	wp_enqueue_style( 'moesia-bootstrap', get_template_directory_uri() . '/bootstrap/bootstrap.min.css', array(), true );
+	wp_enqueue_style( 'moesia-bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), true );
 	
 	wp_enqueue_style( 'moesia-style', get_stylesheet_uri() );
 
@@ -200,7 +200,7 @@ function moesia_scripts() {
 
 	}	
 
-	if ( is_front_page() ) {
+	if ( is_page_template('page_front-page.php') ) {
 	
 		wp_enqueue_script( 'moesia-carousel', get_template_directory_uri() .  '/js/slick.min.js', array( 'jquery' ), true );
 					
@@ -210,7 +210,17 @@ function moesia_scripts() {
 
 		wp_enqueue_script( 'moesia-pretty-photo-js', get_template_directory_uri() .  '/inc/prettyphoto/js/jquery.prettyPhoto.min.js', array(), true );	
 
-		wp_enqueue_script( 'moesia-pretty-photo-init', get_template_directory_uri() .  '/inc/prettyphoto/js/prettyphoto-init.js', array(), true );			
+		wp_enqueue_script( 'moesia-pretty-photo-init', get_template_directory_uri() .  '/inc/prettyphoto/js/prettyphoto-init.js', array(), true );
+
+	}
+
+	if ( get_theme_mod('moesia_animate') != 1 ) {
+		
+		wp_enqueue_script( 'moesia-wow', get_template_directory_uri() .  '/js/wow.min.js', array( 'jquery' ), true );
+
+		wp_enqueue_style( 'moesia-animations', get_template_directory_uri() . '/css/animate/animate.min.css' );
+
+		wp_enqueue_script( 'moesia-wow-init', get_template_directory_uri() .  '/js/wow-init.js', array( 'jquery' ), true );
 
 	}
 
@@ -268,7 +278,10 @@ add_filter( 'user_contactmethods', 'moesia_contactmethods', 10, 1);
  * Change the excerpt length
  */
 function moesia_excerpt_length( $length ) {
-	return 30;
+	
+	$excerpt = get_theme_mod('exc_lenght', '30');
+	return $excerpt;
+
 }
 add_filter( 'excerpt_length', 'moesia_excerpt_length', 999 );
 /**

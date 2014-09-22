@@ -107,7 +107,7 @@ class Moesia_Clients extends WP_Widget {
 ?>
 		<section id="clients" class="clients-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<div class="carousel clearfix slider">
 					<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 						<div class="clearfix">	

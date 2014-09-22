@@ -26,7 +26,7 @@ function moesia_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'moesia_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
 		'width'                  => 1920,
-		'height'                 => 550,
+		'height'                 => 650,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'moesia_header_style',
 		'admin-head-callback'    => 'moesia_admin_header_style',
@@ -47,18 +47,20 @@ if ( ! function_exists( 'moesia_header_style' ) ) :
 
 			?>
 			<style type="text/css">
-				.has-banner:after {
-				    content : "";
-				    display: block;
-				    position: absolute;
-				    top: 0;
-				    left: 0;
-				    background: url(<?php echo get_header_image(); ?>) no-repeat;
-				    background-position: center top;
-				    background-attachment: fixed;
-				    background-size: cover;
-				    width: 100%;
-				    height: 100%;
+				@media only screen and (min-width: 1025px) {	
+					.has-banner:after {
+					    content : "";
+					    display: block;
+					    position: absolute;
+					    top: 0;
+					    left: 0;
+					    background: url(<?php echo get_header_image(); ?>) no-repeat;
+					    background-position: center top;
+					    background-attachment: fixed;
+					    background-size: cover;
+					    width: 100%;
+					    height: 100%;
+					}
 				}		
 			</style>
 	<?php }

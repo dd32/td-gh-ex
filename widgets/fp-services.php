@@ -106,13 +106,13 @@ class Moesia_Services extends WP_Widget {
 ?>
 		<section id="services" class="services-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php $icon = get_post_meta( get_the_ID(), 'wpcf-service-icon', true ); ?>
 					<div class="service col-md-4 col-sm-6 col-xs-6">
-						<span class="service-icon"><?php echo '<i class="fa ' . $icon . '"></i>'; ?></span>
-						<h4 class="service-title"><?php the_title(); ?></h4>
-						<div class="service-desc"><?php the_content(); ?></div>
+						<span class="service-icon wow zoomInDown"><?php echo '<i class="fa ' . $icon . '"></i>'; ?></span>
+						<h4 class="service-title wow fadeInUp"><?php the_title(); ?></h4>
+						<div class="service-desc wow fadeInUp"><?php the_content(); ?></div>
 					</div>
 				<?php endwhile; ?>
 			</div>

@@ -33,7 +33,11 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+			<?php if ( (get_theme_mod('full_content') == 1) && is_home() ) : ?>
+				<?php the_content(); ?>
+			<?php else : ?>
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">

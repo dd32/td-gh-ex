@@ -103,17 +103,17 @@ class Moesia_Blockquote extends WP_Widget {
 ?>
 		<section id="blockquote" class="blockquote-area">
 			<div class="container">			
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($image_uri !='') : ?>
-					<div class="bq-img col-md-6 col-sm-6 col-xs-6">
+					<div class="bq-img col-md-6 col-sm-6 col-xs-6 wow fadeInLeft">
 						<img src="<?php echo esc_url($image_uri); ?>" />
 					</div>
 					<div class="bq-text col-md-6 col-sm-6 col-xs-6">
 				<?php else : ?>
 					<div class="bq-text col-md-12">
 				<?php endif; ?>
-					<blockquote><?php echo esc_textarea($blockquote); ?></blockquote>
-					<cite><?php echo esc_html($cite); ?></cite>
+					<blockquote class="wow fadeInRight"><?php echo $blockquote; ?></blockquote>
+					<cite class="wow fadeInRight"><?php echo esc_html($cite); ?></cite>
 				</div>	
 			</div>		
 		</section>		

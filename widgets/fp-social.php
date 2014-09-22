@@ -23,10 +23,9 @@
 
 		<?php
 		if ( !empty($instance['title']) )
-			echo $args['before_title'] . $instance['title'] . $args['after_title'];
-
+			echo $args['before_title'] . '<span class="wow bounce">' . $instance['title'] . '</span>' . $args['after_title'];
 		?>
-			<div class="container">
+			<div class="container wow zoomInUp">
 				<?php wp_nav_menu(
 					array( 
 						'fallback_cb' => false,

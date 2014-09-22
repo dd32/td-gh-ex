@@ -43,20 +43,27 @@
 			<header id="masthead" class="site-header" role="banner">
 		<?php else : ?>
 			<header id="masthead" class="site-header has-banner" role="banner">
+			<?php if ( get_theme_mod('mobile_header') ) : ?>
+				<img class="header-image" src="<?php echo esc_url( get_theme_mod('mobile_header') ); ?>">
+			<?php else : ?>
+				<img class="header-image" src="<?php echo esc_url(get_header_image()); ?>">
+			<?php endif; ?>
 		<?php endif; ?>
 		<?php if ( (get_theme_mod('moesia_banner') == 1 && is_front_page()) ||  (get_theme_mod('moesia_banner') != 1)) : ?>
 			<?php if ( get_theme_mod('header_overlay') != 1 ) : ?>
 				<div class="overlay"></div>
 			<?php endif; ?>
-			<?php if ( get_theme_mod('header_title') ) : ?>
-				<div class="welcome-title"><?php echo esc_attr(get_theme_mod('header_title')); ?></div>
-			<?php endif; ?>
-			<?php if ( get_theme_mod('header_desc') ) : ?>
-				<div class="welcome-desc"><?php echo esc_html(get_theme_mod('header_desc')); ?></div>
-			<?php endif; ?>
-			<?php if (get_theme_mod('header_btn_text') && get_theme_mod('header_btn_link')) : ?>
-				<a href="<?php echo esc_url(get_theme_mod('header_btn_link')); ?>" class="welcome-button"><?php echo esc_html(get_theme_mod('header_btn_text')); ?></a>
-			<?php endif; ?>
+			<div class="welcome-info">
+				<?php if ( get_theme_mod('header_title') ) : ?>
+					<div class="welcome-title wow bounceInDown"><?php echo esc_attr(get_theme_mod('header_title')); ?></div>
+				<?php endif; ?>
+				<?php if ( get_theme_mod('header_desc') ) : ?>
+					<div class="welcome-desc wow bounceInRight" data-wow-delay="0.2s"><?php echo esc_html(get_theme_mod('header_desc')); ?></div>
+				<?php endif; ?>
+				<?php if (get_theme_mod('header_btn_text') && get_theme_mod('header_btn_link')) : ?>
+					<a href="<?php echo esc_url(get_theme_mod('header_btn_link')); ?>" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html(get_theme_mod('header_btn_text')); ?></a>
+				<?php endif; ?>
+			</div>
 		<?php endif; ?>
 		</header><!-- #masthead -->
 		<div class="top-bar">

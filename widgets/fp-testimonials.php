@@ -106,11 +106,11 @@ class Moesia_Testimonials extends WP_Widget {
 ?>
 		<section id="testimonials" class="testimonials-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php $function = get_post_meta( get_the_ID(), 'wpcf-client-function', true ); ?>
 					<?php $photo = get_post_meta( get_the_ID(), 'wpcf-client-photo', true ); ?>
-					<div class="testimonial col-md-6 col-sm-6">
+					<div class="testimonial col-md-6 col-sm-6 fadeInUp">
 						<div class="testimonial-body"><?php the_content(); ?></div>
 						<?php if ($photo != '') : ?>
 							<img class="client-photo col-md-4" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">

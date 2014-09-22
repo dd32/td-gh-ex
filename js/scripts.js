@@ -1,11 +1,21 @@
 //Sets the header image height
 jQuery(function($) {
-	var height = $(window).height(); 
-	$('.has-banner, .overlay').css('height', height);
-	$(window).resize(function() {
+	if ( $(window).width() > 1024 ) {
 		var height = $(window).height(); 
 		$('.has-banner, .overlay').css('height', height);
-	});	
+		$(window).resize(function() {
+			var height = $(window).height(); 
+			$('.has-banner, .overlay').css('height', height);
+		});
+	}
+	$(window).resize(function(){	
+		if ($(".header-image").css("display") == "none" ){
+			var height = $(window).height(); 
+			$('.has-banner, .overlay').css('height', height);
+		} else {
+			$('.has-banner, .overlay').css('height', 'auto');
+		}
+	});
 });
 
 //Page loader
@@ -72,48 +82,6 @@ jQuery(function($) {
 	},	
 	{
 	  offset: '90%',
-	  triggerOnce: true
-	});
-	$('.service').waypoint(function(down) {
-		$('.service').addClass('scaleIn');
-	},	
-	{
-	  offset: '100%',
-	  triggerOnce: true
-	});
-	$('.employee').waypoint(function(down) {
-		$('.employee').addClass('scaleIn');
-	},	
-	{
-	  offset: '100%',
-	  triggerOnce: true
-	});
-	$('.project').waypoint(function(down) {
-		$('.project').addClass('scaleIn');
-	},	
-	{
-	  offset: '100%',
-	  triggerOnce: true
-	});
-	$('.blog-post').waypoint(function(down) {
-		$('.blog-post').addClass('scaleIn');
-	},	
-	{
-	  offset: '100%',
-	  triggerOnce: true
-	});		
-	$('.testimonial').waypoint(function(down) {
-		$('.testimonial').addClass('scaleIn');
-	},	
-	{
-	  offset: '100%',
-	  triggerOnce: true
-	});	
-	$('.site-header').waypoint(function(down) {
-		$('.welcome-button, .welcome-title, .welcome-desc').addClass('welcome-slide');
-	},	
-	{
-	  offset: '80%',
 	  triggerOnce: true
 	});			
 });	

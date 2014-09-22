@@ -154,29 +154,29 @@ class Moesia_Facts extends WP_Widget {
 ?>
 		<section id="facts" class="facts-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($fact_one !='') : ?>
 					<div class="col-md-3 col-sm-3 col-xs-6">
-						<span class="fact" id="<?php echo absint($fact_one_max); ?>">0</span>
-						<div class="fact-name"><?php echo esc_html($fact_one); ?></div>
+						<span class="fact wow rotateIn" id="<?php echo absint($fact_one_max); ?>">0</span>
+						<div class="fact-name wow fadeInUp"><?php echo esc_html($fact_one); ?></div>
 					</div>
 				<?php endif; ?>
 				<?php if ($fact_two !='') : ?>
 					<div class="col-md-3 col-sm-3 col-xs-6">
-						<span class="fact" id="<?php echo absint($fact_two_max); ?>">0</span>
-						<div class="fact-name"><?php echo esc_html($fact_two); ?></div>
+						<span class="fact wow rotateIn" id="<?php echo absint($fact_two_max); ?>">0</span>
+						<div class="fact-name wow fadeInUp"><?php echo esc_html($fact_two); ?></div>
 					</div>
 				<?php endif; ?>
 				<?php if ($fact_three !='') : ?>
 					<div class="col-md-3 col-sm-3 col-xs-6">
-						<span class="fact" id="<?php echo absint($fact_three_max); ?>">0</span>
-						<div class="fact-name"><?php echo esc_html($fact_three); ?></div>
+						<span class="fact wow rotateIn" id="<?php echo absint($fact_three_max); ?>">0</span>
+						<div class="fact-name wow fadeInUp"><?php echo esc_html($fact_three); ?></div>
 					</div>
 				<?php endif; ?>
 				<?php if ($fact_four !='') : ?>
 					<div class="col-md-3 col-sm-3 col-xs-6">
-						<span class="fact" id="<?php echo absint($fact_four_max); ?>">0</span>
-						<div class="fact-name"><?php echo esc_html($fact_four); ?></div>
+						<span class="fact wow rotateIn" id="<?php echo absint($fact_four_max); ?>">0</span>
+						<div class="fact-name wow fadeInUp"><?php echo esc_html($fact_four); ?></div>
 					</div>
 				<?php endif; ?>																			
 			</div>

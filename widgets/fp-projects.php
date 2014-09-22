@@ -106,11 +106,11 @@ class Moesia_Projects extends WP_Widget {
 ?>
 		<section id="projects" class="projects-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				
 				<?php $c = 1; ?>				
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
-					<div class="project col-md-4 col-sm-6 col-xs-6">
+					<div class="project col-md-4 col-sm-6 col-xs-6 wow zoomIn">
 						<div class="project-image">
 							<?php the_post_thumbnail('project-image'); ?>
 							<a class="link-icon" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>

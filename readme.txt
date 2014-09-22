@@ -92,6 +92,18 @@ Resource URI: http://pixabay.com/en/photographer-photography-window-349921/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
+l) animate.css
+Copyright: daneden
+Resource URI: http://daneden.github.io/animate.css/
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+
+m) WOW.js
+Copyright: Matthieu Aussaguel
+Resource URI: http://mynameismatthieu.com/WOW/
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+
 III. Documentation 
 
 Theme documentation is available on http://athemes.com/documentation/moesia/

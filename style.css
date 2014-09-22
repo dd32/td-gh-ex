@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.06
+Version: 1.07
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -822,6 +822,8 @@ Structure
 }
 .site-content {
 	margin-top: 60px;
+	position: relative;
+	z-index: 9999;
 }
 .content-area {
 	width: 750px;
@@ -867,6 +869,7 @@ Front page widgets
 	z-index: 999;
 	background-color: #fff;
 	border-bottom: 1px solid #ebebeb;
+	overflow: hidden;
 }
 .page-template-page_front-page-php section:first-of-type {
 	margin-top: -60px;
@@ -1188,6 +1191,13 @@ section .widget-title:after {
 	opacity: 1;
 }
 /* Call to action */
+.call-to-action {
+	position: relative;
+	z-index: 9999;
+	display: table;
+	margin: 0 auto;
+	padding: 0 30px;
+}
 .action-text {
 	margin-bottom: 60px;
 	font-size: 30px;
@@ -1229,6 +1239,7 @@ Header
 }
 .site-header {
 	position: relative;
+	overflow: hidden;
 }
 .top-bar {
 	position: relative;
@@ -1272,31 +1283,38 @@ Header
 /*--------------------------------------------------------------
 Welcome area
 --------------------------------------------------------------*/
-.welcome-title,
-.welcome-desc,
-.welcome-button,
-.call-to-action {
-	position: relative;
+.welcome-info {
+	position: absolute;
 	z-index: 9999;
 	display: table;
 	margin: 0 auto;
 	padding: 0 30px;
+	top: 100px;
+	text-align: center;
+	width: 100%;
 }
 .welcome-title {
-	top: 100px;
 	font-size: 80px;
 	color: #fff;
+	width: 100%;
+	text-align: center;		
 	text-shadow: 0 0 2px #222, 0 0 2px #222;
 	font-weight: 700;
+	margin-bottom: 30px;
+	line-height: 1.2;
 }
 .welcome-desc {
-	top: 100px;
 	font-size: 28px;
+	width: 100%;
+	text-align: center;		
 	color: #D8D8D8;
 	text-shadow: 0 0 2px #222, 0 0 2px #222;
+	margin-bottom: 30px;
 }
 .welcome-button {
-	top: 150px;
+	width: 100%;
+	text-align: center;
+	position: relative;	
 }
 .welcome-button,
 .call-to-action {
@@ -1312,7 +1330,7 @@ Welcome area
 }
 .welcome-button:active,
 .call-to-action:active {
-	margin-top: 3px;
+	top: 3px;
 	box-shadow: 0 2px 0 #C2503D;
 }
 .welcome-button:hover,
@@ -1321,54 +1339,6 @@ Welcome area
 .call-to-action:active {
 	color: #fff;
 	text-decoration: none;
-}
-
-/*--------------------------------------------------------------
-Animations
---------------------------------------------------------------*/
-.welcome-slide {
-	left: -400px;
-	-webkit-animation: slidein 1s;
-	animation: slidein 1s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;	
-}
-@-webkit-keyframes slidein
-{
-	from {
-		opacity: 0;
-		left: -400px;
-	}
-	to {
-		opacity: 1;
-		left: 0;
-	}
-}
-@keyframes slidein
-{
-	from {
-		opacity: 0;
-		left: -400px;
-	}
-	to {
-		opacity: 1;
-		left: 0;
-	}
-}
-.service,
-.employee,
-.testimonial,
-.project,
-.blog-post {
-	-webkit-transform: scale(0);
-	transform: scale(0);
-	-webkit-transition: all 0.7s;
-	transition: all 0.7s;
-}
-
-.scaleIn {
-	-webkit-transform: scale(1);
-	transform: scale(1);	
 }
 
 /*--------------------------------------------------------------
@@ -1415,6 +1385,11 @@ Carousel
 /*--------------------------------------------------------------
 Responsive
 --------------------------------------------------------------*/
+@media only screen and (min-width: 1025px) {	
+	.header-image {
+		display: none;
+	}
+}
 @media only screen and (max-width: 1199px) {
 	.content-area {
 		width: 550px;
@@ -1422,6 +1397,9 @@ Responsive
 
 }
 @media only screen and (max-width: 991px) {
+	.welcome-info {
+		top: 30px;
+	}
 	.project:nth-of-type(2n+1),
 	.service:nth-of-type(2n+1),
 	.employee:nth-of-type(2n+1) {
@@ -1468,6 +1446,10 @@ Responsive
 	}
 	.entry-title {
 		font-size: 25px;
+	}
+	.welcome-desc,
+	.welcome-button {
+		display: none;
 	}
 }
 @media only screen and (max-width: 499px) {
@@ -1531,6 +1513,14 @@ Responsive
 	.main-navigation.toggled .nav-menu {
 		display: block;
 	}
+	.main-navigation.toggled {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.main-navigation ul {
+		float: none;
+	}
 	.toggled .menu-toggle {
 		margin: 0;
 	}
@@ -1576,6 +1566,9 @@ Responsive
 		-webkit-background-size: auto !important;
 		-moz-background-size: auto !important;
 		background-size: auto !important;
+	}
+	.widget-title:after {
+		display: none;
 	}
 }
 

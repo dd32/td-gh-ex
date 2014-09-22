@@ -179,28 +179,28 @@ class Moesia_Skills extends WP_Widget {
 ?>
 		<section id="skills" class="skills-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($skills_desc !='') : ?>				
-					<div class="skills-desc col-md-6 col-sm-6">
+					<div class="skills-desc col-md-6 col-sm-6 wow fadeInLeft">
 						<?php echo esc_textarea($skills_desc); ?>
 					</div>
 				<?php endif; ?>
 				<div class="skills-list col-md-6 col-sm-6">
 					<?php 
 						if ($skill_one !='') {
-							echo '<div class="col-md-2">' . esc_html($skill_one) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_one_max) . '"><div></div></div>';
+							echo '<div class="col-md-2 wow fadeIn">' . esc_html($skill_one) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_one_max) . '"><div></div></div>';
 						}
 						if ($skill_two !='') {
-							echo '<div class="col-md-2">' . esc_html($skill_two) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_two_max) . '"><div></div></div>';
+							echo '<div class="col-md-2 wow fadeIn">' . esc_html($skill_two) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_two_max) . '"><div></div></div>';
 						}
 						if ($skill_three !='') {
-							echo '<div class="col-md-2">' . esc_html($skill_three) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_three_max) . '"><div></div></div>';
+							echo '<div class="col-md-2 wow fadeIn">' . esc_html($skill_three) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_three_max) . '"><div></div></div>';
 						}
 						if ($skill_four !='') {
-							echo '<div class="col-md-2">' . esc_html($skill_four) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_four_max) . '"><div></div></div>';
+							echo '<div class="col-md-2 wow fadeIn">' . esc_html($skill_four) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_four_max) . '"><div></div></div>';
 						}
 						if ($skill_five !='') {
-							echo '<div class="col-md-2">' . esc_html($skill_five) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_five_max) . '"><div></div></div>';
+							echo '<div class="col-md-2 wow fadeIn">' . esc_html($skill_five) . ':</div><div class="skill-bar col-md-10" id="' . absint($skill_five_max) . '"><div></div></div>';
 						}
 					?>								
 				</div>

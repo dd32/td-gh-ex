@@ -104,19 +104,19 @@ class Moesia_Latest_News extends WP_Widget {
 ?>
 		<section id="latest-news" class="latest-news-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<div class="clearfix">
 					<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 						<div class="blog-post col-md-4 col-sm-6 col-xs-6">
 							<?php if ( has_post_thumbnail() ) : ?>
-								<div class="entry-thumb">
+								<div class="entry-thumb wow fadeInDown">
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
 										<?php the_post_thumbnail('moesia-thumb'); ?>
 									</a>			
 								</div>	
 							<?php endif; ?>						
 							<?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
-							<div class="entry-summary"><?php the_excerpt(); ?></div>
+							<div class="entry-summary wow fadeInUp"><?php the_excerpt(); ?></div>
 						</div>
 					<?php endwhile; ?>
 				</div>

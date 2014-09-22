@@ -170,7 +170,24 @@ function moesia_customize_register( $wp_customize ) {
 			'section' => 'moesia_general',
             'priority' => 15,			
 		)
-	);   
+	);
+    //Animations
+    $wp_customize->add_setting(
+        'moesia_animate',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'moesia_animate',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Check this box if you want to disable the animations.', 'moesia'),
+            'section' => 'moesia_general',
+            'priority' => 16,           
+        )
+    );       
     //___Single posts___//
     $wp_customize->add_section(
         'moesia_singles',
@@ -255,6 +272,44 @@ function moesia_customize_register( $wp_customize ) {
             ),
         )
     );
+    //Full content posts
+    $wp_customize->add_setting(
+      'full_content',
+      array(
+        'sanitize_callback' => 'moesia_sanitize_checkbox',
+        'default' => 0,     
+      )   
+    );
+    $wp_customize->add_control(
+        'full_content',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Check this box to display the full content of your posts on the home page.', 'moesia'),
+            'section' => 'blog_options',
+            'priority' => 11,
+        )
+    );
+    //Excerpt
+    $wp_customize->add_setting(
+        'exc_lenght',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '30',
+        )       
+    );
+    $wp_customize->add_control( 'exc_lenght', array(
+        'type'        => 'number',
+        'priority'    => 12,
+        'section'     => 'blog_options',
+        'label'       => __('Excerpt lenght', 'moesia'),
+        'description' => __('Choose your excerpt length here. Default: 30 words', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 200,
+            'step'  => 5,
+            'style' => 'padding: 15px;',
+        ),
+    ) );       
 	//___Welcome area___//
     $wp_customize->add_section(
         'moesia_header',
@@ -2210,10 +2265,10 @@ function moesia_customize_register( $wp_customize ) {
         array(
             'title' => __('Moesia Pro', 'moesia'),
             'priority' => 99,
-            'description' => __('If you like Moesia and you want to see the Moesia Pro offers, have a look ', 'moesia') . '<a href="http://athemes.com/theme/moesia-pro">here</a>',
+            'description' => __('If you like Moesia and you want to see what Moesia Pro offers, have a look ', 'moesia') . '<a href="http://athemes.com/theme/moesia-pro">here</a>',
         )
     );  
-    //***Services section
+    //Pro
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
@@ -2224,7 +2279,28 @@ function moesia_customize_register( $wp_customize ) {
         'settings' => 'moesia_options[info]',
         'priority' => 10
         ) )
-    );        
+    );
+    //___Mobile header image___//
+    $wp_customize->add_setting(
+        'mobile_header',
+        array(
+            'default-image' => '',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'mobile_header',
+            array(
+               'label'          => __( 'Small screens header image', 'moesia' ),
+               'type'           => 'image',
+               'section'        => 'header_image',
+               'settings'       => 'mobile_header',
+               'description'    => __( 'You can add below a smaller version of your header image and it will be displayed at screen widths below 1024px. This is important in case iPhones don\'t display your header image because of it being too big. You can also add a completely different image if you want, in case you have one that will look better on small screens. Recommended width: 1024px', 'moesia' ),
+               'priority'       => 10,
+            )
+        )
+    );          
 }
 add_action( 'customize_register', 'moesia_customize_register' );
 

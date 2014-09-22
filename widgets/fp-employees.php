@@ -107,7 +107,7 @@ class Moesia_Employees extends WP_Widget {
 
 		<section id="employees" class="employees-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php //Get the custom field values
 						$photo = get_post_meta( get_the_ID(), 'wpcf-photo', true );
@@ -119,15 +119,15 @@ class Moesia_Employees extends WP_Widget {
 					?>
 					<div class="employee col-md-4 col-sm-6 col-xs-6">
 						<?php if ($photo != '') : ?>
-							<img class="employee-photo" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">
+							<img class="employee-photo wow zoomInDown" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">
 						<?php endif; ?>
-						<h4 class="employee-name"><?php the_title(); ?></h4>
+						<h4 class="employee-name wow fadeInUp"><?php the_title(); ?></h4>
 						<?php if ($position != '') : ?>
-							<span class="employee-position"><?php echo esc_html($position); ?></span>
+							<span class="employee-position wow fadeInUp"><?php echo esc_html($position); ?></span>
 						<?php endif; ?>
-						<div class="employee-desc"><?php the_content(); ?></div>
+						<div class="employee-desc wow fadeInUp"><?php the_content(); ?></div>
 						<?php if ( ($facebook != '') || ($twitter != '') || ($google != '') || ($linkedin != '') ) : ?>
-							<div class="employee-social">
+							<div class="employee-social wow fadeInUp">
 								<?php if ($facebook != '') : ?>
 									<a href="<?php echo esc_url($facebook); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 								<?php endif; ?>

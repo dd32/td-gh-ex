@@ -110,14 +110,14 @@ class Moesia_Action extends WP_Widget {
 ?>
 		<section id="call-to-action" class="action-area">
 			<div class="container">
-				<?php if ( $title ) echo $before_title . $title . $after_title; ?>
+				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($action_text !='') : ?>				
-					<div class="action-text">
+					<div class="action-text wow zoomIn">
 						<?php echo esc_textarea($action_text); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ($action_btn_link !='') : ?>	
-					<a href="<?php echo esc_url($action_btn_link); ?>" class="call-to-action"><?php echo esc_html($action_btn_text); ?></a>
+					<a href="<?php echo esc_url($action_btn_link); ?>" class="call-to-action wow zoomInUp"><?php echo esc_html($action_btn_text); ?></a>
 				<?php endif; ?>
 			</div>
 		<?php if ($image_uri != '') : ?>
