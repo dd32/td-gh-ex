@@ -10,13 +10,15 @@ wp_enqueue_script( 'general',  get_template_directory_uri() . '/js/general.js');
 wp_localize_script( 'general', 'my_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
-/* content width */
-if ( ! isset( $content_width ) ) {
-	$content_width = 900;
-}
 /* mywiki theme starts */
 if ( ! function_exists( 'mywiki_setup' ) ) :
 function mywiki_setup() {
+	/* content width */
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 900;
+	}
+
 	/*
 	 * Make mywiki theme available for translation.
 	 *
@@ -41,7 +43,7 @@ function mywiki_setup() {
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
-endif; // redpro_setup
+endif; // mywiki_setup
 
 // Implement Custom Header features.
 require get_template_directory() . '/function/custom-header.php';
@@ -58,32 +60,32 @@ if ( ! function_exists( 'mywiki_entry_meta' ) ) :
  * Meta information for current post: categories, tags, permalink, author, and date.
  **/
 function mywiki_entry_meta() {
-	$category_list = get_the_category_list( __( ', ', 'mywiki' ) );
-	$tag_list = get_the_tag_list( '', __( ', ', 'mywiki' ) );
-	$date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
+	$mywiki_category_list = get_the_category_list( __( ', ', 'mywiki' ) );
+	$mywiki_tag_list = get_the_tag_list( '', __( ', ', 'mywiki' ) );
+	$mywiki_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-	$author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
+	$mywiki_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'mywiki' ), get_the_author() ) ),
 		get_the_author()
 	);
-	if ( $tag_list ) {
-		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
-	} elseif ( $category_list ) {
-		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
+	if ( $mywiki_tag_list ) {
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
+	} elseif ( $mywiki_category_list ) {
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
 	} else {
-		$utility_text = __( 'Posted %3$s by %4$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
 	}
 	printf(
-		$utility_text,
-		$category_list,
-		$tag_list,
-		$date,
-		$author
+		$mywiki_utility_text,
+		$mywiki_category_list,
+		$mywiki_tag_list,
+		$mywiki_date,
+		$mywiki_author
 	);
 }
 endif;
@@ -91,12 +93,12 @@ endif;
  * Add default menu style if menu is not set from the backend.
  */
 function mywiki_add_menuclass ($page_markup) {
-preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
-$replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
-$new_markup = str_replace($toreplace,$replace, $page_markup);
-$new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right mywiki-header-menu"', $new_markup);
-return $new_markup; } //}
+preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $mywiki_matches);
+$mywiki_toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
+$mywiki_replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
+$mywiki_new_markup = str_replace($mywiki_toreplace,$mywiki_replace, $page_markup);
+$mywiki_new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right mywiki-header-menu"', $mywiki_new_markup);
+return $mywiki_new_markup; } //}
 add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
@@ -104,13 +106,13 @@ register_nav_menus(
 			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
 		)
 	);
-function mywiki_category_widget_function($args) {
-   extract($args);
+function mywiki_category_widget_function($mywiki_args) {
+   extract($mywiki_args);
    echo $before_widget;
    echo $before_title . '<p class="wid-category"><span>Categories</span></p>' . $after_title;
    echo $after_widget;
    // print some HTML for the widget to display here
-  $cat = array(
+  $mywiki_cat = array(
 			'child_of'                 => 0,
 			'parent'                   => '',
 			'orderby'                  => 'name',
@@ -124,11 +126,11 @@ function mywiki_category_widget_function($args) {
 			'pad_counts'               => false
 			 );
 	 
-	 $cat = get_categories( $cat );
+	 $mywiki_cat = get_categories( $mywiki_cat );
 	 echo "<div class='wid-cat-container'><ul>";
-	 foreach ($cat as $categories) {
+	 foreach ($mywiki_cat as $mywiki_categories) {
 		 ?>
-<li><a href="<?php echo get_category_link( $categories->term_id );?>" class="wid-cat-title"><?php echo $categories->name ;?>
+<li><a href="<?php echo get_category_link( $mywiki_categories->term_id );?>" class="wid-cat-title"><?php echo $mywiki_categories->name ;?>
 </a></li>
 <?php }
 echo "</ul></div>";
@@ -151,13 +153,13 @@ register_widget( 'mywiki_recentpost_widget' );
 class mywiki_popular_widget extends WP_Widget {
 function mywiki_popular_widget() {
 /* Widget settings. */
-$widget_ops = array( 'classname' => 'widget_popular', 'description' => 'Displays most popular posts by comment count' );
+$mywiki_widget_ops = array( 'classname' => 'widget_popular', 'description' => 'Displays most popular posts by comment count' );
  
 /* Widget control settings. */
-$control_ops = array( 'id_base' => 'popular-widget' );
+$mywiki_control_ops = array( 'id_base' => 'popular-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'popular-widget', 'Popular Posts', $widget_ops, $control_ops );
+$this->WP_Widget( 'popular-widget', 'Popular Posts', $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 // Limit to last 30 days
@@ -195,16 +197,16 @@ function update( $new_instance, $old_instance ) {
 $instance = $old_instance;
  
 /* Strip tags (if needed) and update the widget settings. */
-$instance['title'] = esc_attr( $new_instance['title'] );
-$instance['count'] = (int) $new_instance['count'];
-$instance['days'] = (int) $new_instance['days'];
+$mywiki_instance['title'] = esc_attr( $new_instance['title'] );
+$mywiki_instance['count'] = (int) $new_instance['count'];
+$mywiki_instance['days'] = (int) $new_instance['days'];
 return $instance;
 }
  
 function form( $instance ) {
 /* Set up some default widget settings. */
-$defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
-$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+$mywiki_defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
+$instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 <p>
   <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
   <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
@@ -225,26 +227,26 @@ $instance = wp_parse_args( (array) $instance, $defaults ); ?>
 class mywiki_recentpost_widget extends WP_Widget {
 function mywiki_recentpost_widget() {
 /* Widget settings. */
-$widget_ops = array( 'classname' => 'widget_recentpost', 'description' => 'Displays most recent posts by post count' );
+$mywiki_widget_ops = array( 'classname' => 'widget_recentpost', 'description' => 'Displays most recent posts by post count' );
  
 /* Widget control settings. */
-$control_ops = array( 'id_base' => 'recent-widget' );
+$mywiki_control_ops = array( 'id_base' => 'recent-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'recent-widget', 'Recent Posts', $widget_ops, $control_ops );
+$this->WP_Widget( 'recent-widget', 'Recent Posts', $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 function widget( $args, $instance ) {
 extract( $args );
 echo $before_widget;
 if( !empty( $instance['title'] ) ) echo $before_title .'<p class="wid-category"><span>'.$instance['title'].'</span></p>' . $after_title;
-$loop_args = array(
+$mywiki_loop_args = array(
 'posts_per_page' => (int) $instance['count'],
 'orderby' => 'DESC'
 );
-$loop = new WP_Query( $loop_args );
+$mywiki_loop = new WP_Query( $mywiki_loop_args );
 echo "<div class='wid-cat-container'><ul>";
-if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post(); global $post;
+if( $mywiki_loop->have_posts() ): while( $mywiki_loop->have_posts() ): $mywiki_loop->the_post(); global $post;
 ?><li>
 <a href="<?php echo get_permalink();?>" class="wid-cat-title wid-popular-post"><?php the_title() ;?></a></li>
 <?php endwhile; endif; wp_reset_query();
@@ -253,18 +255,18 @@ echo $after_widget;
 }
  
 function update( $new_instance, $old_instance ) {
-$instance = $old_instance;
+$mywiki_instance = $old_instance;
  
 /* Strip tags (if needed) and update the widget settings. */
-$instance['title'] = esc_attr( $new_instance['title'] );
-$instance['count'] = (int) $new_instance['count'];
-return $instance;
+$mywiki_instance['title'] = esc_attr( $new_instance['title'] );
+$mywiki_instance['count'] = (int) $new_instance['count'];
+return $mywiki_instance;
 }
  
 function form( $instance ) {
 /* Set up some default widget settings. */
-$defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
-$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+$mywiki_defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
+$instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 <p>
   <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
   <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
@@ -323,97 +325,97 @@ if ( function_exists( 'add_image_size' ) ) {
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
 function mywiki_custom_breadcrumbs() {
   
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '&raquo;'; // delimiter between crumbs
-  $home = 'Home'; // text for the 'Home' link
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="current">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
+  $mywiki_showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+  $mywiki_delimiter = '&raquo;'; // delimiter between crumbs
+  $mywiki_home = 'Home'; // text for the 'Home' link
+  $mywiki_showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
+  $mywiki_before = '<span class="current">'; // tag before the current crumb
+  $mywiki_after = '</span>'; // tag after the current crumb
   
   global $post;
-  $homeLink = esc_url( home_url( '/' ) );
+  $mywiki_homeLink = esc_url( home_url( '/' ) );
   
   if (is_home() || is_front_page()) {
   
-    if ($showOnHome == 1) echo '<div id="crumbs" class="mywiki_breadcrumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($mywiki_showOnHome == 1) echo '<div id="crumbs" class="mywiki_breadcrumbs"><a href="' . $mywiki_homeLink . '">' . $mywiki_home . '</a></div>';
   
   } else {
   
-    echo '<div id="crumbs" class="mywiki_breadcrumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    echo '<div id="crumbs" class="mywiki_breadcrumbs"><a href="' . $mywiki_homeLink . '">' . $mywiki_home . '</a> ' . $mywiki_delimiter . ' ';
   
     if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+      $mywiki_thisCat = get_category(get_query_var('cat'), false);
+      if ($mywiki_thisCat->parent != 0) echo get_category_parents($mywiki_thisCat->parent, TRUE, ' ' . $mywiki_delimiter . ' ');
+      echo $mywiki_before . 'Archive by category "' . single_cat_title('', false) . '"' . $mywiki_after;
   
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+      echo $mywiki_before . 'Search results for "' . get_search_query() . '"' . $mywiki_after;
   
     } elseif ( is_day() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
+      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $mywiki_delimiter . ' ';
+      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $mywiki_delimiter . ' ';
+      echo $mywiki_before . get_the_time('d') . $mywiki_after;
   
     } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
+      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $mywiki_delimiter . ' ';
+      echo $mywiki_before . get_the_time('F') . $mywiki_after;
   
     } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
+      echo $mywiki_before . get_the_time('Y') . $mywiki_after;
   
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+        $mywiki_post_type = get_post_type_object(get_post_type());
+        $mywiki_slug = $mywiki_post_type->rewrite;
+        echo '<a href="' . $mywiki_homeLink . '/' . $mywiki_slug['slug'] . '/">' . $mywiki_post_type->labels->singular_name . '</a>';
+        if ($mywiki_showCurrent == 1) echo ' ' . $mywiki_delimiter . ' ' . $mywiki_before . get_the_title() . $mywiki_after;
       } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        $mywiki_cat = get_the_category(); $mywiki_cat = $mywiki_cat[0];
+        $mywiki_cats = get_category_parents($mywiki_cat, TRUE, ' ' . $mywiki_delimiter . ' ');
+        if ($mywiki_showCurrent == 0) $mywiki_cats = preg_replace("#^(.+)\s$mywiki_delimiter\s$#", "$1", $mywiki_cats);
+        echo $mywiki_cats;
+        if ($mywiki_showCurrent == 1) echo $mywiki_before . get_the_title() . $mywiki_after;
       }
   
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      $mywiki_post_type = get_post_type_object(get_post_type());
+      echo $mywiki_before . $mywiki_post_type->labels->singular_name . $mywiki_after;
   
     } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      $mywiki_parent = get_post($post->post_parent);
+      $mywiki_cat = get_the_category($mywiki_parent->ID); $mywiki_cat = $mywiki_cat[0];
+      echo get_category_parents($mywiki_cat, TRUE, ' ' . $mywiki_delimiter . ' ');
+      echo '<a href="' . get_permalink($mywiki_parent) . '">' . $mywiki_parent->post_title . '</a>';
+      if ($mywiki_showCurrent == 1) echo ' ' . $mywiki_delimiter . ' ' . $mywiki_before . get_the_title() . $mywiki_after;
   
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+      if ($mywiki_showCurrent == 1) echo $mywiki_before . get_the_title() . $mywiki_after;
   
     } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
+      $mywiki_parent_id  = $post->post_parent;
+      $mywiki_breadcrumbs = array();
+      while ($mywiki_parent_id) {
+        $mywiki_page = get_page($mywiki_parent_id);
+        $mywiki_breadcrumbs[] = '<a href="' . get_permalink($mywiki_page->ID) . '">' . get_the_title($mywiki_page->ID) . '</a>';
+        $mywiki_parent_id  = $mywiki_page->post_parent;
       }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
+      $mywiki_breadcrumbs = array_reverse($mywiki_breadcrumbs);
+      for ($mywiki_i = 0; $mywiki_i < count($mywiki_breadcrumbs); $mywiki_i++) {
+        echo $mywiki_breadcrumbs[$mywiki_i];
+        if ($mywiki_i != count($mywiki_breadcrumbs)-1) echo ' ' . $mywiki_delimiter . ' ';
       }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      if ($mywiki_showCurrent == 1) echo ' ' . $mywiki_delimiter . ' ' . $mywiki_before . get_the_title() . $mywiki_after;
   
     } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+      echo $mywiki_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $mywiki_after;
   
     } elseif ( is_author() ) {
        global $author;
-      $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      $$mywiki_userdata = get_userdata($author);
+      echo $mywiki_before . 'Articles posted by ' . $$mywiki_userdata->display_name . $mywiki_after;
   
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+      echo $mywiki_before . 'Error 404' . $mywiki_after;
     }
   
     if ( get_query_var('paged') ) {
@@ -436,9 +438,9 @@ function mywiki_wp_title( $title, $sep ) {
 	// Add the site name.
 	$title .= get_bloginfo( 'name' );
 	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	$mywiki_site_description = get_bloginfo( 'description', 'display' );
+	if ( $mywiki_site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $mywiki_site_description";
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'mywiki' ), max( $paged, $page ) );
@@ -448,35 +450,31 @@ add_filter( 'wp_title', 'mywiki_wp_title', 10, 2 );
 /* ===========================================================
 				T H E M E  O P T I O N S
 =============================================================*/
-require_once('theme-option/fasterthemes.php'); 
+require_once('theme-options/fasterthemes.php'); 
 /**
  * Wikki search
  */
 function mywiki_search() {
 	global $wpdb;
-	$title=trim($_POST['queryString']);
-	$args = array('posts_per_page' => -1, 'order'=> 'ASC', "orderby"=> "title", "post_type" => "post",'post_status'=>'publish', "s" => $title);
-    $posts = get_posts( $args );
-	$output='';
-	if($posts){
-		 $h=0;
-		/* $output.=' <div class="scrollbar" id="style-1">';*/
-		 $output.='<ul id="search-result">';
-		 foreach ( $posts as $p ) 
+	$mywiki_title=trim($_POST['queryString']);
+	$mywiki_args = array('posts_per_page' => -1, 'order'=> 'ASC', "orderby"=> "title", "post_type" => "post",'post_status'=>'publish', "s" => $mywiki_title);
+    $mywiki_posts = get_posts( $mywiki_args );
+	$mywiki_output='';
+	if($mywiki_posts){
+		 $mywiki_h=0;
+		 $mywiki_output.='<ul id="search-result">';
+		 foreach ( $mywiki_posts as $mywiki_post ) 
 		 { 
-		     //echo $posts[$h]->post_title;
-			 $output.='<li class="que-icn">';
-             $output.='<a href="'.$posts[$h]->guid.'">'.$posts[$h]->post_title.'</a>';
-             $output.='</li>';
-			 $h++;
+			 $mywiki_output.='<li class="que-icn">';
+             $mywiki_output.='<a href="'.$mywiki_posts[$mywiki_h]->guid.'">'.$mywiki_posts[$mywiki_h]->post_title.'</a>';
+             $mywiki_output.='</li>';
+			 $mywiki_h++;
 		 }
-		 $output.='</ul>';
-		 /*$output.='<div class="force-overflow"></div>
-    </div>';*/
-		 echo $output;
+		 $mywiki_output.='</ul>';
+		 echo $mywiki_output;
 	}else{
-	     $output.='no';
-        echo $output;
+	     $mywiki_output.='no';
+        echo $mywiki_output;
 	}
 	die();
 }
@@ -498,9 +496,9 @@ function mywiki_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 		// Proceed with normal comments.
 		global $post;
-	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+	$mywiki_tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 ?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+		<?php echo $mywiki_tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>
     	<article class="div-comment-<?php comment_ID(); ?>" id="div-comment-1">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
@@ -531,16 +529,16 @@ endif;
 add_action('wp_ajax_mywiki_header', 'mywiki_header_image_function');
 add_action('wp_ajax_nopriv_mywiki_header', 'mywiki_header_image_function' );
 function mywiki_header_image_function(){
-	$return['header'] = get_header_image();
-	echo json_encode($return);
+	$mywiki_return['header'] = get_header_image();
+	echo json_encode($mywiki_return);
 	die;
 }
 
 /* 
 Adding Read More
 */
-function mywiki_trim_excerpt($text) {
- $text = substr($text,0,-10); 
+function mywiki_trim_excerpt($mywiki_text) {
+ $text = substr($mywiki_text,0,-10); 
  return $text.'..<div class="clear-fix"></div><a href="'.get_permalink().'" title="read more....">Read more</a>';
 }
 add_filter('get_the_excerpt', 'mywiki_trim_excerpt');

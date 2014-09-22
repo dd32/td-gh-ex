@@ -907,9 +907,9 @@ function mywiki_load_bulk_installer() {
                     return $results;
                 }
                 /* Performs the actual installation of each plugin. */
-                public function run( $options ) {
+                public function run( $mywiki_options ) {
                     // Default config options.
-                    $defaults = array(
+                    $mywiki_defaults = array(
                         'package'           => '',
                         'destination'       => '',
                         'clear_destination' => false,
@@ -918,8 +918,8 @@ function mywiki_load_bulk_installer() {
                         'hook_extra'        => array(),
                     );
                     // Parse default options with config options from $this->bulk_upgrade and extract them.
-                    $options = wp_parse_args( $options, $defaults );
-                    extract( $options );
+                    $mywiki_options = wp_parse_args( $mywiki_options, $mywiki_defaults );
+                    extract( $mywiki_options );
                     // Connect to the Filesystem.
                     $res = $this->fs_connect( array( WP_CONTENT_DIR, $destination ) );
                     if ( ! $res ) { return false;}
@@ -1034,14 +1034,14 @@ function mywiki_load_bulk_installer() {
                 /* Integer to use for iteration through each plugin installation.*/
                 public $i = 0;
                 /* Constructor. Parses default args with new ones and extracts them for use.*/
-                public function __construct( $args = array() ) {
+                public function __construct( $mywiki_args = array() ) {
                     // Parse default and new args.
-                    $defaults = array( 'url' => '', 'nonce' => '', 'names' => array() );
-                    $args     = wp_parse_args( $args, $defaults );
+                    $mywiki_defaults = array( 'url' => '', 'nonce' => '', 'names' => array() );
+                    $mywiki_args     = wp_parse_args( $mywiki_args, $mywiki_defaults );
                     // Set plugin names to $this->plugin_names property.
-                    $this->plugin_names = $args['names'];
+                    $this->plugin_names = $mywiki_args['names'];
                     // Extract the new args.
-                    parent::__construct( $args );
+                    parent::__construct( $mywiki_args );
                 }
                 /* Sets install skin strings for each individual plugin. */
                 public function add_strings() {

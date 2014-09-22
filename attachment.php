@@ -20,10 +20,10 @@
 							      <a href="<?php echo wp_get_attachment_url($post->ID); ?>">
 							      							      
 							      <?php 
-							      	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
+							      	$mywiki_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
 							       
-								      if ($image) : ?>
-								          <img src="<?php echo $image[0]; ?>" alt="" />
+								      if ($mywiki_image) : ?>
+								          <img src="<?php echo $mywiki_image[0]; ?>" alt="" />
 								      <?php endif; ?>
 							      
 							      </a>

@@ -5,7 +5,7 @@ Description: MyWiki is simple, lightweight and faster WordPress Theme for indivi
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: responsive-layout, custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style
-version: 2.0
+version: 2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -60,3 +60,10 @@ License and Copyrights for Resources used in this theme
 	
 	
 	For any help you can mail us at support[at]fasterthemes.com
+
+---------------------------------------------------------
+TGM Plugin license and link
+---------------------------------------------------------
+
+ license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation	

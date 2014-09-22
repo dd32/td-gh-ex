@@ -1,6 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-$options = get_option( 'faster_theme_options' );
+$mywiki_options = get_option( 'faster_theme_options' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -8,14 +7,13 @@ $options = get_option( 'faster_theme_options' );
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php if(!empty($options['favicon'])) { ?>
-<link rel="shortcut icon" href="<?php echo $options['favicon'];?>">
+<?php if(!empty($mywiki_options['favicon'])) { ?>
+<link rel="shortcut icon" href="<?php echo esc_url($mywiki_options['favicon']);?>">
 <?php } ?>
 <!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<?php $blogname = get_option('blogname'); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -28,7 +26,7 @@ $options = get_option( 'faster_theme_options' );
           <nav role="navigation">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              <a class="navbar-brand logo" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if(!empty($options['logo'])) { echo '<img src='.$options['logo'].'  height="101" width="250" alt="logo" />'; } else { echo'<p><span class="header-text">'.bloginfo("name").'</span></p>'; } ?></a>
+              <a class="navbar-brand logo" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if(!empty($mywiki_options['logo'])) { echo '<img src='.esc_url($mywiki_options['logo']).'  height="101" width="250" alt="logo" />'; } else { echo'<p><span class="header-text">'.bloginfo("name").'</span></p>'; } ?></a>
             </div>
             
             <!-- end .navbar-header --> 
@@ -37,7 +35,7 @@ $options = get_option( 'faster_theme_options' );
         </div>
         <div class="navbar-collapse collapse top-menu">
           <?php
-			$defaults = array(
+			$mywiki_defaults = array(
 					'theme_location'  => 'primary',
 					'container'       => 'div',
 					'container_class' => '',
@@ -54,7 +52,7 @@ $options = get_option( 'faster_theme_options' );
 					'depth'           => 0,
 					'walker'          => ''
 					);
-			wp_nav_menu( $defaults );?>
+			wp_nav_menu( $mywiki_defaults );?>
         </div>
         <!-- end .nav-container --> 
       </div>

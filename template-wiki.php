@@ -13,7 +13,7 @@ get_header();
         </div>
       </header>
         <?php
-	$cat = array(
+	$mywiki_cat = array(
 			'child_of'                 => 0,
 			'parent'                   => '',
 			'orderby'                  => 'name',
@@ -27,39 +27,39 @@ get_header();
 			'pad_counts'               => false
 			 );
 	 
-	 $cat = get_categories( $cat ); 
-		$i=0;
-		foreach ($cat as $categories) {
-			$i++;
-			if($i<5)$cat_id="cat-id"; else $cat_id='';
-			if($i % 2 == 1)
+	 $mywiki_cat = get_categories( $mywiki_cat ); 
+		$mywiki_i=0;
+		foreach ($mywiki_cat as $mywiki_categories) {
+			$mywiki_i++;
+			if($mywiki_i<5)$mywiki_cat_id="cat-id"; else $mywiki_cat_id='';
+			if($mywiki_i % 2 == 1)
 			{				
 				echo"<div class='border-bottom' style='float:left;'>";
 			}
 			
 			?>
         
-        <div class="cat-main-section <?php echo $cat_id?>">
+        <div class="cat-main-section <?php echo $mywiki_cat_id?>">
           <header>
-           <a href="<?php echo get_category_link( $categories->term_id );?>"> <h4> <?php echo $categories->name ;?> <span>(<?php echo $categories->count?>)</span></h4> </a>
+           <a href="<?php echo get_category_link( $mywiki_categories->term_id );?>"> <h4> <?php echo $mywiki_categories->name ;?> <span>(<?php echo $mywiki_categories->count?>)</span></h4> </a>
           </header>
           <?php
-								$args = array(
+								$mywiki_args = array(
 'posts_per_page' => 5,
 	'tax_query' => array(
 		'relation' => 'AND',
 		array(
 		'taxonomy' => 'category',
 			'field' => 'id',
-			'terms' => array($categories->term_id),
+			'terms' => array($mywiki_categories->term_id),
 			
 		),
 	)
-); $cat_post = new WP_Query( $args );
-if ( $cat_post->have_posts() ) :?>
+); $mywiki_cat_post = new WP_Query( $mywiki_args );
+if ( $mywiki_cat_post->have_posts() ) :?>
           <div class="content-according">
           	<ul>
-            <?php while ( $cat_post->have_posts() ):$cat_post->the_post(); ?>
+            <?php while ( $mywiki_cat_post->have_posts() ):$mywiki_cat_post->the_post(); ?>
             <li><a href="<?php echo get_permalink($post->ID)?>">
               <?php the_title();?>
             </a></li>
@@ -69,12 +69,12 @@ if ( $cat_post->have_posts() ) :?>
           <?php endif;?>
         </div>
         <?php 	
-		if($i % 2 ==0)
+		if($mywiki_i % 2 ==0)
 			{
 				echo"</div>";
 			}
 		}
-		if($i % 2 ==1)
+		if($mywiki_i % 2 ==1)
 			{
 				echo"</div>";
 			}

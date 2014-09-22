@@ -8,7 +8,7 @@
  */
 function mywiki_custom_header_setup() {
 	/**
-	 *     @param array $args {
+	 *     @param array $mywiki_args {
 	 *     An array of custom-header support arguments.
 	 *
 	 *     @type bool   $header_text            Whether to display custom header text. Default false.
@@ -40,9 +40,9 @@ if ( ! function_exists( 'mywiki_header_style' ) ) :
  *
  */
 function mywiki_header_style() {
-	$text_color = get_header_textcolor();
+	$mywiki_text_color = get_header_textcolor();
 	// If no custom color for text is set, let's bail.
-	if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
+	if ( display_header_text() && $mywiki_text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 	// If we get this far, we have custom styles.
 	?>
@@ -59,10 +59,10 @@ function mywiki_header_style() {
 		}
 	<?php
 		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+		elseif ( $mywiki_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
 	?>
 		.site-title a {
-			color: #<?php echo esc_attr( $text_color ); ?>;
+			color: #<?php echo esc_attr( $mywiki_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>

@@ -6,7 +6,7 @@
       <header>
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
-				<?php printf( __( 'Search : %s', 'redpro' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __( 'Search : %s', 'mywiki' ), '<span>' . get_search_query() . '</span>' ); ?>
             </h4>
          </div>
       </header>
@@ -37,8 +37,7 @@
 	  <?php endif; ?>
      
 		<!--Pagination Start-->
-		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+        <?php   if (function_exists('faster_pagination') ) {?>
             <?php faster_pagination();?>
         <?php }else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>

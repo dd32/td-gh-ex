@@ -38,8 +38,7 @@
 	  <?php endif; ?>
      
 		<!--Pagination Start-->
-		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
+        <?php   if (function_exists('faster_pagination') ) {?>
             <?php faster_pagination();?>
         <?php }else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
@@ -48,7 +47,7 @@
             <span class="mywiki-nav-next"><?php next_posts_link(); ?></span>
         </nav>
          <?php } ?>
-        <?php }//is plugin active ?>
+        <?php } ?>
 		<!--Pagination End-->
       
     </div>
