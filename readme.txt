@@ -60,7 +60,7 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
-Version 2.16
+Version 2.17
 * Theme Screenshot Changed
 * Video tutorial link added in Theme Option Panel
 * Tumblr and Myspace Social link added 

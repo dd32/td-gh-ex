@@ -1054,14 +1054,14 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 
 <hr />
 <?php
-$other_product  = "<h4>".__('Other products by AccessPressThemes','accesspress_parallax')."</h4>";
+$other_product  = "<h4>".__('Other products by AccessPressThemes','accesspresslite')."</h4>";
 $other_product .= "<div class='product clearfix'>";
 $other_product .= "<div class='logo-product'>";
 $other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-pro.png'>";
 $other_product .= "</div>";
 $other_product .= "<div class='productext'>";
-$other_product .= __('AccessPress Pro - Premium version of AccessPress lite','accesspress_parallax')."</br />";
-$other_product .= __('See Demo ','accesspress_parallax')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'>".__('Here','accesspress_parallax')."</a>";
+$other_product .= __('AccessPress Pro - Premium version of AccessPress lite','accesspresslite')."</br />";
+$other_product .= __('See Demo ','accesspresslite')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'>".__('Here','accesspresslite')."</a>";
 $other_product .= "</div>";
 $other_product .= "</div>";
 
@@ -1070,8 +1070,8 @@ $other_product .= "<div class='logo-product'>";
 $other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-anonymous-post.png'>";
 $other_product .= "</div>";
 $other_product .= "<div class='productext'>";
-$other_product .= __('AccessPress Anonymous Post - A Free WordPress Plugin, available in WordPress.org','accesspress_parallax')."</br />";
-$other_product .= __('Download ','accesspress_parallax')."<a target='_blank' href='".esc_url('https://wordpress.org/plugins/accesspress-anonymous-post/')."'>".__('Here','accesspress_parallax')."</a>";
+$other_product .= __('AccessPress Anonymous Post - A Free WordPress Plugin, available in WordPress.org','accesspresslite')."</br />";
+$other_product .= __('Download ','accesspresslite')."<a target='_blank' href='".esc_url('https://wordpress.org/plugins/accesspress-anonymous-post/')."'>".__('Here','accesspresslite')."</a>";
 $other_product .= "</div>";
 $other_product .= "</div>";
 
