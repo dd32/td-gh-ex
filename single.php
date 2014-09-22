@@ -1,10 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * Single posts Template
  */
 
 get_header(); ?>

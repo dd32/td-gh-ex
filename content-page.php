@@ -1,10 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * Page content Template
  */
 ?>
 

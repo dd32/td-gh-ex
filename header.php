@@ -1,12 +1,6 @@
 <?php
 /**
- * The Header template for our theme
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ *Header template
  */
 ?>
 <!DOCTYPE html>
@@ -27,10 +21,11 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
-<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
+<link href='<?php echo get_template_directory_uri(); ?>/style.css' rel='stylesheet' type='text/css'>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
+<script src="<?php echo get_template_directory_uri(); ?>/js/navigation.js" type="text/javascript"></script>
 <?php wp_head(); ?>
 </head>
 
@@ -41,9 +36,6 @@
 <header class="site-header" role="banner">
 		
         <div class="logo">
-		<?php /*?><?php if ( is_home() || is_single() || is_page() || is_category() || is_tag() || is_archive() || is_search ) :
-			 ?> <a href=" <?php bloginfo('url') ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/jathemelogo.png"</a>
-		<?php else : ?><?php */?>
         <hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</hgroup>
@@ -51,18 +43,9 @@
 <?php */?></div>
 
 <div class="header-ads-img">
-		<?php values_get_ad_180_150(); ?>
+		 
 </div>
 
-<div class="social">
-<ul>
-
-<li><a class="faceb" href="<?php values_get_fb();?>" target="_blank">F</a></li>
-<li><a class="twit" href="<?php values_get_tw();?>" target="_blank">T</a></li>
-<li><a class="googlep" href="<?php values_get_gp();?>" target="_blank">G</a></li>
-<li><a class="linki" href="<?php values_get_li();?>" target="_blank">IN</a></li>
-</ul>
-</div>
 <div class="clear"></div>
 
 		<nav class="main-navigation" role="navigation">

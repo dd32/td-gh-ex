@@ -1,21 +1,13 @@
 <?php
 /**
- * The template for displaying Author Archive pages
- *
- * Used to display archive-type pages for posts by an author.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ *Author Archive pages Template
  */
 
 get_header(); ?>
 
 	<section id="primary" class="site-content">
     
-    		<?php values_get_ad_728_90(); ?>
+    		 
 
 		<div id="content" role="main">
 
@@ -36,9 +28,7 @@ get_header(); ?>
 			</header><!-- .archive-header -->
 
 			<?php
-				/* Since we called the_post() above, we need to
-				 * rewind the loop back to the beginning that way
-				 * we can run the loop properly, in full.
+				/*we can run the loop properly, in full.
 				 */
 				rewind_posts();
 			?>
@@ -53,10 +43,6 @@ get_header(); ?>
 					<?php
 					/**
 					 * Filter the author bio avatar size.
-					 *
-					 * @since JATheme 1.0
-					 *
-					 * @param int $size The height and width of the avatar in pixels.
 					 */
 					$author_bio_avatar_size = apply_filters( 'artikler_theme_author_bio_avatar_size', 68 );
 					echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );

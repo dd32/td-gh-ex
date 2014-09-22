@@ -1,12 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area
- *
- * If no active widgets are in the sidebar, hide it completely.
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * The sidebar Template containing the main widget area
  */
 ?>
 

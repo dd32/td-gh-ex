@@ -1,5 +1,5 @@
 Theme Name : Artikler
-Version : 1.3.3
+Version : 1.3.3.1
 Author : JAThemes Team
 Author URI : http://www.jathemes.com/
 Theme URI : http://jathemes.com/artikler-theme/
@@ -33,3 +33,11 @@ navigation.js
 Copyright 2011 Google Inc. All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License").
 https://domsnitch.googlecode.com/svn-history/r39/trunk/ui/config/Navigation.js
+
+Pot file
+========
+language.pot
+-------------
+Copyright (C) 2014 WordPress
+This file is distributed under the same license as the WordPress package.
+http://svn.automattic.com/wordpress-i18n/pot/trunk/wordpress.pot

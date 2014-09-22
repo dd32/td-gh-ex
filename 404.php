@@ -1,17 +1,13 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found)
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * 404 pages (Not Found) Template
  */
 
 get_header(); ?>
 
 	<div id="primary" class="site-content">
     
-     		<?php values_get_ad_728_90(); ?>
+     		 
 		<div id="content" role="main">
 
 			<article id="post-0" class="post error404 no-results not-found">

@@ -1,17 +1,13 @@
 <?php
 /**
- * The template for displaying Search Results pages
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ *Search Results pages Template
  */
 
 get_header(); ?>
 
 	<section id="primary" class="site-content">
     
-    		<?php values_get_ad_728_90(); ?>
+    		 
 
 
 		<div id="content" role="main">

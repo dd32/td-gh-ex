@@ -1,21 +1,13 @@
 <?php
 /**
- * The template for displaying Tag pages
- *
- * Used to display archive-type pages for posts in a tag.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * Tag pages Template
  */
 
 get_header(); ?>
 
 	<section id="primary" class="site-content">
     
-    		<?php values_get_ad_728_90(); ?>
+    		 
 
 		<div id="content" role="main">
 

@@ -4,7 +4,7 @@ Theme URI: http://jathemes.com/artikler-theme/
 Author: JAThemes Team
 Author URI: http://www.jathemes.com/
 Description: Artikler theme created and designed by JAThemes Team. Features include custom headers,custom background, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
-Version: 1.3.3
+Version: 1.3.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, theme-options
@@ -54,12 +54,12 @@ input[type="submit"]{font-weight:bold;}
 input[type="text"]{font-size:12px; padding:2px;}
 /**************************************************/
 .main{width:990px; margin:15px auto; background:#FFF; padding:0 10px 10px 10px; box-shadow: 0 0 15px #999999; }
-.logo{float:left; margin:10px 10px 10px 0;}
+.logo{text-align:center; float:left; margin:10px 0;}
 .logo img{width:276px;}
 .logo img:hover{opacity:0.9;}
-.site-title{width:276px; font-family:'tangerine'; padding:20px 0 0 0;  text-shadow: 3px 1px 0px #eaeaea, 3px 3px 0 #ccc;}
+.site-title{ font-family:'tangerine'; padding:20px 0 0 0;  text-shadow: 3px 1px 0px #eaeaea, 3px 3px 0 #ccc;}
 .site-title:active{text-shadow: 2px 2px 0px #2c2e38, 2px 2px 0px #5c5f72; transition:0.1s;}
-.site-title a{text-decoration:none; font-size:50px; color:#333; font-weight:bolder;}
+.site-title a{text-decoration:none; font-size:70px; color:#333; font-weight:bolder;}
 .social{float:right; margin:5px 10px; }
 .social ul{list-style:none;}
 .social ul li{display:inline-block; border:2px solid #cecece; border-radius:12px;margin:7px 3px; box-shadow:3px 3px 0 #2c2e38, 3px 3px 0 #5c5f72;}
@@ -274,6 +274,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .comment-form-url{margin:3px 0 0 0px;}
 .comment-form-comment{}
 .comment-reply-title{ background: none repeat scroll 0 0 #F3F3F3; color:#444;padding: 5px; margin:5pX;}
+commentlist .bypostauthor {border-top: 10px solid #666;}
+.commentlist li ul.children li.bypostauthor {border-top: 10px solid #666;}
 /*********************************Category*********************/
 .archive-title{ background: #fcfcfc; /* Old browsers */
 background: -moz-linear-gradient(top,  #fcfcfc 0%, #cecece 47%, #ffcfcfc 100%); /* FF3.6+ */
@@ -300,6 +302,8 @@ border-bottom:3px solid #c0c0c0; margin:0 0 5px 0; padding:10px 10px 8px; font-s
 .site-info{display:inline;}
 .site-info img{width:20px}
 /******************************nav***************************/
+.navigation{overflow:hidden; background:#e0e0e0; font-size:14px; text-align:center; font-weight:bold; }
+.navigation a{color:#000; margin:0 8px 0; text-decoration:none;}
 .nav-single{overflow:hidden; border:1px groove #EAEAEA; margin:1px 0 0 0;}
 .nav-single a{text-decoration:none; font-size:11px; padding:0px; margin:0 5px; font-weight:600;}
 .nav-single a:hover{margin:0px;}
@@ -322,5 +326,4 @@ border-bottom:3px solid #c0c0c0; margin:0 0 5px 0; padding:10px 10px 8px; font-s
 .alignright{float:right;}
 .alignleft{float:left;}
 .wp-caption-text{text-align:center; font-size:12px; background:#efefef;}
-.navigation{overflow:hidden; background:#e0e0e0; font-size:12px; }
-.navigation a{color:#000; margin:0 8px 0}
+

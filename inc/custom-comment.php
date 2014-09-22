@@ -51,3 +51,4 @@
 		break;
 	endswitch; // end comment_type check
 }
+?>

@@ -1,12 +1,6 @@
 <?php
 /**
- * The default template for displaying content
- *
- * Used for both single and index/archive/search.
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ *Content Template
  */
 ?>
 
@@ -40,9 +34,7 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-        <div class="content-post-adsense"><?php values_get_ad_200_200(); ?>
-
-        </div><div class="clear"></div>
+         <div class="clear"></div>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jatheme' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jatheme' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->

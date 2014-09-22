@@ -1,10 +1,6 @@
 <?php
 /**
- * The template for displaying a "No posts found" message
- *
- * @package WordPress
- * @subpackage JATheme
- * @since JATheme 1.0
+ * "No posts found" Template
  */
 ?>
 
@@ -14,7 +10,7 @@
 		</header>
 
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'jatheme' ); ?></p>
+			<p><?php _e( 'Not found.', 'jatheme' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-0 -->
