@@ -10,8 +10,8 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-<?php
-global $badeyes_options;
+		<div id="content" class="site-content" role="main">
+<?php global $badeyes_options;
 
 					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 
@@ -24,9 +24,7 @@ echo $badeyes_settings['single_text'];
 ?>
 
 <?php endif; ?>
-		<div id="content" class="site-content" role="main">
-			<?php
-				// Start the Loop.
+<?php 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 					/*
 					 * Include the post format-specific template for the content. If you want to

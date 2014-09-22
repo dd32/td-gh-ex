@@ -17,6 +17,7 @@
 ?>
 
 <div id="secondary">
+
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
 <h1 class="screen-reader-text">Left Hand Sidebar</h1>
@@ -57,6 +58,3 @@ echo "</h2>";
 	<?php endif; ?>
 
 </div><!-- #secondary -->
-
-
-

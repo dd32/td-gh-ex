@@ -22,6 +22,7 @@ get_header(); ?>
 	}
 ?>
 	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 <?php
 global $badeyes_options;
 
@@ -36,9 +37,7 @@ echo $badeyes_settings['page_text'];
 ?>
 
 <?php endif; ?>
-		<div id="content" class="site-content" role="main">
-
-			<?php
+<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 
