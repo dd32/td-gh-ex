@@ -353,3 +353,16 @@
 	width: 50px;
 }
 .social-bttns{ white-space: nowrap;}
+#optionsframework .product{
+	background: #EEE;
+	padding: 10px;
+	border: 1px solid #CCC;
+	margin-bottom: 15px;
+	line-height: 1.5;
+}
+#optionsframework .logo-product{
+	float: left;
+}
+#optionsframework .productext{
+	padding-left: 200px;
+}

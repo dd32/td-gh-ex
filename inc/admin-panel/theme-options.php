@@ -76,6 +76,8 @@ $accesspresslite_options = array(
 	'accesspresslite_sound_cloud' => '',
 	'accesspresslite_skype' => '',
 	'accesspresslite_rss' => '',
+	'accesspresslite_tumblr' => '',
+	'accesspresslite_myspace' =>'',
 	'show_social_header'=>'',
 	'show_social_footer'=>'',
 
@@ -981,6 +983,18 @@ function accesspresslite_theme_options_page() {
 					</td>
 					</tr>
 
+					<tr><th scope="row"><label for="accesspresslite_skype">Tumblr</label></th>
+					<td>
+					<input id="accesspresslite_tumblr" name="accesspresslite_options[accesspresslite_tumblr]" type="text" value="<?php echo esc_attr($settings['accesspresslite_tumblr']); ?>" />
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="accesspresslite_skype">Myspace</label></th>
+					<td>
+					<input id="accesspresslite_myspace" name="accesspresslite_options[accesspresslite_myspace]" type="text" value="<?php echo esc_attr($settings['accesspresslite_myspace']); ?>" />
+					</td>
+					</tr>
+
 					<tr><th scope="row"><label for="accesspresslite_rss">RSS</label></th>
 					<td>
 					<input id="accesspresslite_rss" name="accesspresslite_options[accesspresslite_rss]" type="text" value="<?php echo esc_url($settings['accesspresslite_rss']); ?>" />
@@ -1035,14 +1049,35 @@ function accesspresslite_theme_options_page() {
 <p><?php _e('We want to give "a little beautiful thing" - back to the community.
 With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
 
-<p><?php _e('You will find features in a premium theme yet no nonsense!','accesspresslite'); ?></p>	
-
-<p><?php _e('Check out Premium version of AccessPress Lite','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>">here</a></p>	
-
 <p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 
 <hr />
+<?php
+$other_product  = "<h4>".__('Other products by AccessPressThemes','accesspress_parallax')."</h4>";
+$other_product .= "<div class='product clearfix'>";
+$other_product .= "<div class='logo-product'>";
+$other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-pro.png'>";
+$other_product .= "</div>";
+$other_product .= "<div class='productext'>";
+$other_product .= __('AccessPress Pro - Premium version of AccessPress lite','accesspress_parallax')."</br />";
+$other_product .= __('See Demo ','accesspress_parallax')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'>".__('Here','accesspress_parallax')."</a>";
+$other_product .= "</div>";
+$other_product .= "</div>";
 
+$other_product .= "<div class='product clearfix'>";
+$other_product .= "<div class='logo-product'>";
+$other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-anonymous-post.png'>";
+$other_product .= "</div>";
+$other_product .= "<div class='productext'>";
+$other_product .= __('AccessPress Anonymous Post - A Free WordPress Plugin, available in WordPress.org','accesspress_parallax')."</br />";
+$other_product .= __('Download ','accesspress_parallax')."<a target='_blank' href='".esc_url('https://wordpress.org/plugins/accesspress-anonymous-post/')."'>".__('Here','accesspress_parallax')."</a>";
+$other_product .= "</div>";
+$other_product .= "</div>";
+
+echo $other_product;
+?>
+<hr />
 <h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
 <p>
@@ -1059,16 +1094,7 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 <p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
 
 <p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
-<iframe style="border: none; overflow: hidden; width: 600px; height: 150px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=600&amp;height=150&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="600" height="150" frameborder="0" scrolling="no"></iframe>
-
-<hr />
-
-<h4><?php _e('Other social profiles:','accesspresslite'); ?></h4>
-<p><?php _e('Google+:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://plus.google.com/106385805875992204629/'); ?>">https://plus.google.com/106385805875992204629/</a><br/>
-<?php _e('Pinterest:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://www.pinterest.com/accesspresswp/'); ?>">http://www.pinterest.com/accesspresswp/</a><br/>
-<?php _e('Flicker:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.flickr.com/photos/accesspressthemes/'); ?>">https://www.flickr.com/photos/accesspressthemes/</a><br/>
-<?php _e('Twitter:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://twitter.com/apthemes'); ?>">https://twitter.com/apthemes</a>
-</p>		
+<iframe style="border: none; overflow: hidden; width: 780px; height: 250px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=780&amp;height=250&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="780" height="250" frameborder="0" scrolling="no"></iframe>	
 </td>
 					</tr>
 				</table>
@@ -1288,6 +1314,12 @@ function accesspresslite_validate_options( $input ) {
 	};
 	if( isset( $input[ 'accesspresslite_skype' ] ) ) {
 		$input[ 'accesspresslite_skype' ] = esc_attr( $input[ 'accesspresslite_skype' ] );
+	};
+	if( isset( $input[ 'accesspresslite_tumblr' ] ) ) {
+		$input[ 'accesspresslite_tumblr' ] = esc_url_raw( $input[ 'accesspresslite_tumblr' ] );
+	};
+	if( isset( $input[ 'accesspresslite_myspace' ] ) ) {
+		$input[ 'accesspresslite_myspace' ] = esc_url_raw( $input[ 'accesspresslite_myspace' ] );
 	};
 	if( isset( $input[ 'accesspresslite_rss' ] ) ) {
 		$input[ 'accesspresslite_rss' ] = esc_url_raw( $input[ 'accesspresslite_rss' ] );

@@ -310,6 +310,14 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		<a href="<?php echo "skype:".esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
 
+		<?php if(!empty($accesspresslite_settings['accesspresslite_tumblr'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_tumblr']); ?>" class="tumblr" title="Tumblr"><span class="font-icon-social-tumblr"></span></a>
+		<?php } ?>
+
+		<?php if(!empty($accesspresslite_settings['accesspresslite_myspace'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_myspace']); ?>" class="myspace" title="Myspace"><span class="font-icon-social-myspace"></span></a>
+		<?php } ?>
+
 		<?php if(!empty($accesspresslite_settings['accesspresslite_rss'])){ ?>
 		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
 		<?php } ?>

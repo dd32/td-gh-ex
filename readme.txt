@@ -60,6 +60,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.16
+* Theme Screenshot Changed
+* Video tutorial link added in Theme Option Panel
+* Tumblr and Myspace Social link added 
+
 Version 2.15
 * Theme Screenshot Changed
 * About AccessPress Theme Tab content Updated
