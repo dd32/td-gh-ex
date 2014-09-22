@@ -39,8 +39,8 @@ function airballoon_enqueue_scripts() {
 	wp_enqueue_script('airballoon-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
 	
 	// Register and Enqueue default fonts
-	wp_enqueue_style('airballoon-lite-default-font', '//fonts.googleapis.com/css?family=Muli');
-	wp_enqueue_style('airballoon-lite-title-font', '//fonts.googleapis.com/css?family=Istok+Web');
+	wp_enqueue_style('airballoon-lite-default-font', '//fonts.googleapis.com/css?family=Fjalla+One');
+	wp_enqueue_style('airballoon-lite-title-font', '//fonts.googleapis.com/css?family=Lato');
 	
 }
 endif;
@@ -98,9 +98,6 @@ add_action( 'after_setup_theme', 'airballoon_add_image_sizes' );
 
 if ( ! function_exists( 'airballoon_add_image_sizes' ) ):
 function airballoon_add_image_sizes() {
-
-	// Add Custom Header Image Size
-	add_image_size( 'custom_header_image', 1260, 250, true);
 
 	// Add Featured Image Size
 	add_image_size( 'featured_image', 300, 200, true);
@@ -204,7 +201,7 @@ function airballoon_credit_link() {
 // Change Excerpt Length
 add_filter('excerpt_length', 'airballoon_excerpt_length');
 function airballoon_excerpt_length($length) {
-    return 58;
+    return 48;
 }
 
 

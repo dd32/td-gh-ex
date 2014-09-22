@@ -67,8 +67,8 @@ html[xmlns] .zeeslides {display: block;}
 
 #frontpage-slider .zeeslide .slide-entry .slide-title {
 	display: inline-block;
-	font-family: 'Istok Web', Tahoma, Verdana, Arial;
-	font-size: 2.0em;
+	font-family: 'Fjalla One', Tahoma, Verdana, Arial;
+	font-size: 2.5em;
 	color: #fff;
 	line-height: 1.4em;
 	-ms-word-wrap: break-word;
@@ -199,21 +199,11 @@ html[xmlns] .zeeslides {display: block;}
 }
 
 /* Media Queries */
-#frontpage-slider .zeeslide .slide-entry {
-	width: 80%;
-}
-
-#frontpage-slider .zeeslide .slide-entry .slide-title {
-	font-size: 2.0em;
-}
-#frontpage-slider .zeeslide .slide-entry .slide-excerpt span {
-	font-size: 1.5em;
-}
 
 /* Tablets (landscape) | <960px */
 @media only screen and (max-width: 60em) {
 	#frontpage-slider .zeeslide .slide-entry .slide-title {
-		font-size: 1.8em;
+		font-size: 2.0em;
 	}
 	#frontpage-slider .zeeslide .slide-entry .slide-excerpt span {
 		font-size: 1.4em;
@@ -226,7 +216,7 @@ html[xmlns] .zeeslides {display: block;}
 		left: 1.4em;
 	}
 	#frontpage-slider .zeeslide .slide-entry .slide-title {
-		font-size: 1.6em;
+		font-size: 1.7em;
 	}
 	#frontpage-slider .zeeslide .slide-entry .slide-excerpt span {
 		font-size: 1.3em;
@@ -240,9 +230,6 @@ html[xmlns] .zeeslides {display: block;}
 	#frontpage-slider .zeeslide .slide-entry .slide-excerpt {
 		display: none;
 	}
-	#frontpage-slider .zeeslide .slide-entry .slide-title {
-		font-size: 1.2em;
-	}
 }
 /* Phablets (portrait) | <400px */
 @media only screen and (max-width: 25em) {
@@ -251,6 +238,6 @@ html[xmlns] .zeeslides {display: block;}
 		left: 0;
 	}
 	#frontpage-slider .zeeslide .slide-entry .slide-title {
-		font-size: 1.0em;
+		font-size: 1.1em;
 	}
 }

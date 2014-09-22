@@ -1,0 +1,14 @@
+===================================
+Air Balloon Lite Changelog
+===================================
+
+Version 1.0.1
+-----------------------------------
+[added] image size for featured custom header image
+[changed] new default fonts and main color
+[changed] icon style of services widget
+[changed] tweaked styling of buttons and content area
+
+Version 1.0
+-----------------------------------
+Final Version

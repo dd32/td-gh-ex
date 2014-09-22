@@ -28,7 +28,7 @@ if ( ! function_exists( 'airballoon_display_custom_header' ) ):
 		if( is_page() && has_post_thumbnail() ) :
 		?>
 			<div id="custom-header">
-				<?php the_post_thumbnail('custom_header_image'); ?>
+				<?php the_post_thumbnail('frontpage_slider_image'); ?>
 			</div>
 <?php
 		// Check if there is a custom header image
