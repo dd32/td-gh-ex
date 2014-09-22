@@ -39,6 +39,8 @@ body#tinymce.wp-editor img {
 	height: auto;
 }
 
+body#tinymce.wp-editor img[data-wp-more] { height: 16px; }
+
 body#tinymce.wp-editor hr {
 	border: none;
 	width: 100%;

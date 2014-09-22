@@ -1,6 +1,11 @@
 *** Fukasawa changelog ***
 
 
+Version 1.03 (2014-09-22)
+-------------------------
+- Fixed an issue with the read more image in the post editor being too big
+
+
 Version 1.02 (2014-09-13)
 -------------------------
 - Added missing function prefix in functions.php
