@@ -14,10 +14,10 @@ get_header(); ?>
                     <h1><?php the_title(); ?></h1>
 
                     <div class="left">
-                        <?php dynamic_sidebar('contact'); ?>
+                        <?php the_content(); ?>
                     </div>
                     <div class="rights">
-                        <?php the_content(); ?>
+                        <?php dynamic_sidebar('contact'); ?>
                     </div>
                 </div>
             </div>

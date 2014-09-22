@@ -112,6 +112,12 @@
         top: 0;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .searchform #s{
+        width: 135px;
+    }
+}
 @media only screen and (max-width: 700px) {
     .welcome-box .wrap .content {
         padding-bottom: 25px;
@@ -177,6 +183,29 @@
         margin: 10px 0 0 -80px;
     }
 
+    .search-field {
+        float: right;
+        margin-left: 0;
+        margin-top: 12px;
+        width: 45%;
+    }
+
+    .search-field #searchform{
+        float: right;
+    }
+
+    .contact-us {
+        color: #fff;
+        float: left;
+        margin-top: 20px;
+        width: 50%;
+        height: 34px;
+    }
+
+    .social{
+        height: 100px;
+    }
+
 }
 @media only screen and (max-width: 620px) {
     .contacts-box .left {
@@ -234,7 +263,40 @@
         left: 50%;
         margin: 10px 0 0 -90px;
     }
+
+    .header-wrap{
+        margin-bottom: 0;
+    }
+
+    .home-about-section h1.title{
+        padding-top: 0 !important;
+        margin-top: -10px;
+    }
+
+    .news .post25{
+        width: 48%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
 }
+
+@media only screen and (max-width: 480px) {
+    .search-field {
+        float: right;
+        margin-left: 0;
+        margin-top: 12px;
+        width: 62%;
+    }
+
+    .contact-us{
+        width: 100%;
+    }
+
+    .contact-us{
+        height: 25px;
+    }
+}
+
 @media only screen and (max-width: 360px) {
     .widget-cont {
         float: left;
@@ -256,6 +318,26 @@
     .header .wrap .logo {
         left: 50%;
         margin: 10px 0 0 -100px;
+    }
+
+    .news.infos .box-news{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .news .post25 {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+
+    .search-field, .search-field form{
+        display: none;
+    }
+
+    .soc{
+        float: left;
     }
 }
 @media only screen and (max-width: 320px) {

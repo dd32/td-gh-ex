@@ -262,8 +262,9 @@ function optionsframework_page() {
 
 	<div id="optionsframework-wrap" class="wrap">
 	<div class="proversion">
-	  <h3>You are using Pro version!</h3>
-	   <a href="http://wpmodern.com/all-themes/" target="_blank" class="upgradepro">More Themes</a>
+	  <h3>Upgrade to Pro version!</h3>
+	   <a href="http://www.wpmodern.com" target="_blank" class="upgradepro">Upgrade to Pro</a>
+	   <a href="http://wpmodern.com/themes/avrora" target="_blank" class="donate">Demo</a>
 	  <p>If you need assistance, please do not hesitate to <a href="http://wpmodern.com/contact-us" target="_blank">contact us</a></p>
 	</div>
     <div class="logooption"><img src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/wpmodern.png"/></div>
