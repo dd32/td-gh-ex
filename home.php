@@ -8,25 +8,25 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package URVR
+ * @package ABARIS
  */
-global $urvr;
+global $abaris;
 get_header(); ?>
 <?php if( is_front_page() ) : ?>
 	<div id="content" class="site-content container">
 <?php endif; ?>
 	<div class="row">
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
 	<div id="primary" class="content-area two-thirds column span9">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( $urvr['breadcrumb'] && function_exists( 'urvr_breadcrumbs' ) ) : ?>			
+		<?php if ( $abaris['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			
 			<div id="breadcrumb" role="navigation">
-				<?php urvr_breadcrumbs(); ?>
+				<?php abaris_breadcrumbs(); ?>
 			</div>
 		<?php endif; ?>
 				
@@ -46,10 +46,10 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php 
-				if( $urvr['pagenavi'] && function_exists( 'urvr_pagination' ) ) : 
-					urvr_pagination();
+				if( $abaris['pagenavi'] && function_exists( 'abaris_pagination' ) ) : 
+					abaris_pagination();
 				else :
-					urvr_posts_nav();
+					abaris_posts_nav();
 				endif; 
 			?>
 
@@ -62,12 +62,12 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
-	<?php if( ! isset( $urvr['layout'] ) ) : ?>
+	<?php if( ! isset( $abaris['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
-		
+
 <?php get_footer(); ?>

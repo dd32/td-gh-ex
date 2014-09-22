@@ -4,9 +4,9 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package URVR
+ * @package ABARIS
  */
-global $urvr;
+global $abaris;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -14,28 +14,28 @@ global $urvr;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
-<?php if( isset( $urvr['ipad-icon-retina'] ) ) : ?>
+<?php if( isset( $abaris['ipad-icon-retina'] ) ) : ?>
 	<!-- For third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $urvr['ipad-icon-retina']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $abaris['ipad-icon-retina']['url']; ?>">
 <?php endif; ?>
 
-<?php if( isset( $urvr['iphone-icon-retina'] ) ) : ?>
+<?php if( isset( $abaris['iphone-icon-retina'] ) ) : ?>
 	<!-- For iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $urvr['iphone-icon-retina']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $abaris['iphone-icon-retina']['url']; ?>">
 <?php endif; ?>
 
-<?php if( isset( $urvr['ipad-icon'] ) ) : ?>
+<?php if( isset( $abaris['ipad-icon'] ) ) : ?>
 	<!-- For first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $urvr['ipad-icon']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $abaris['ipad-icon']['url']; ?>">
 <?php endif; ?>
 
-<?php if( isset( $urvr['iphone-icon'] ) ) : ?>
+<?php if( isset( $abaris['iphone-icon'] ) ) : ?>
 	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="<?php echo $urvr['iphone-icon']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" href="<?php echo $abaris['iphone-icon']['url']; ?>">
 <?php endif; ?>
 
-<?php if( isset( $urvr['favicon'] ) ) : ?>
-	<link rel="icon" href="<?php echo $urvr['favicon']['url']; ?>">
+<?php if( isset( $abaris['favicon'] ) ) : ?>
+	<link rel="icon" href="<?php echo $abaris['favicon']['url']; ?>">
 <?php endif; ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -54,15 +54,12 @@ global $urvr;
 			<div class="row">
 				<div class="span3">
 					<div class="logo site-branding">
-						<?php if( isset( $urvr['site-title'] ) && isset( $urvr['custom-logo'] ) && $urvr['site-title'] ) : ?>
-							<img src="<?php echo $urvr['custom-logo']['url']; ?>" alt="logo" >
+						<?php if( isset( $abaris['site-title'] ) && isset( $abaris['custom-logo'] ) && $abaris['site-title'] ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $abaris['custom-logo']['url']; ?>" alt="logo" ></a></h1>
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php if( isset( $urvr['site-description'] ) && $urvr['site-description'] != 0 ) : ?>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-							<?php endif; ?>
 						<?php endif; ?>
-						<?php if( ! isset( $urvr['site-description'] ) ) : ?>
+						<?php if( isset( $abaris['site-description'] ) && $abaris['site-description'] != 0 ) : ?>
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php endif; ?>
 					</div>
@@ -70,8 +67,7 @@ global $urvr;
 
 				<div class="span9">
 					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<h1 class="menu-toggle"><?php _e( 'Menu', TEXTDOMAIN ); ?></h1>
-						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', TEXTDOMAIN ); ?></a>
+						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'abaris' ); ?></a>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #site-navigation -->
 				</div>

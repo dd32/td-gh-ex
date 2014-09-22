@@ -2,13 +2,13 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package URVR
+ * @package ABARIS
  */
 
 get_header(); ?>
 <div class="row">
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
@@ -18,7 +18,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', TEXTDOMAIN ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'abaris' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -29,10 +29,10 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php 
-				if( $urvr['pagenavi'] && function_exists( 'urvr_pagination' ) ) : 
-					urvr_pagination();
+				if( $abaris['pagenavi'] && function_exists( 'abaris_pagination' ) ) : 
+					abaris_pagination();
 				else :
-					urvr_posts_nav();
+					abaris_posts_nav();
 				endif; 
 			?>
 
@@ -41,17 +41,17 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-		<h3><?php //_e( 'Can\'t find what you\'re looking for? Search again!', TEXTDOMAIN ); ?></h3>
+		<h3><?php //_e( 'Can\'t find what you\'re looking for? Search again!', 'abaris' ); ?></h3>
 		<?php //get_search_form(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
-	<?php if( ! isset( $urvr['layout'] ) ) : ?>
+	<?php if( ! isset( $abaris['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 	

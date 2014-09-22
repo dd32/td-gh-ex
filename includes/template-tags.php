@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package URVR
+ * @package ABARIS
  */
 
 /*
@@ -17,10 +17,10 @@
   * Generates Breadcrumb Navigation
   */
  
- if( ! function_exists( 'urvr_breadcrumbs' )) {
+ if( ! function_exists( 'abaris_breadcrumbs' )) {
  
-	function urvr_breadcrumbs() {
-		global $urvr;
+	function abaris_breadcrumbs() {
+		global $abaris;
 		/* === OPTIONS === */
 		$text['home']     = '<i class="el-icon-home"></i>'; // text for the 'Home' link
 		$text['category'] = 'Archive by Category "%s"'; // text for a category page
@@ -31,9 +31,9 @@
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-		//$delimiter   = ( isset( $urvr['breadcrumb-char'] ) && $urvr['breadcrumb-char'] != '' ) ? $urvr['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
-		if ( isset( $urvr['breadcrumb-char'] ) && $urvr['breadcrumb-char'] != '' ) {
-		 switch ( $urvr['breadcrumb-char']) {
+		//$delimiter   = ( isset( $abaris['breadcrumb-char'] ) && $abaris['breadcrumb-char'] != '' ) ? $abaris['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
+		if ( isset( $abaris['breadcrumb-char'] ) && $abaris['breadcrumb-char'] != '' ) {
+		 switch ( $abaris['breadcrumb-char']) {
 		 	case '2' :
 		 		$delimiter = ' / ';
 		 		break;
@@ -153,39 +153,39 @@
 
 			if ( get_query_var('paged') ) {
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-				echo __('Page', TEXTDOMAIN ) . ' ' . get_query_var('paged');
+				echo __('Page', 'abaris' ) . ' ' . get_query_var('paged');
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 			}
 
 			echo '</div>';
 
 		}
-	} // end urvr_breadcrumbs()
+	} // end abaris_breadcrumbs()
 
 }
 
-if ( ! function_exists( 'urvr_posts_nav' ) ) :
+if ( ! function_exists( 'abaris_posts_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function urvr_posts_nav() {
+function abaris_posts_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', TEXTDOMAIN ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'abaris' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', TEXTDOMAIN ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'abaris' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', TEXTDOMAIN ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'abaris' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -194,13 +194,13 @@ function urvr_posts_nav() {
 }
 endif;
 
-if ( ! function_exists( 'urvr_post_nav' ) ) :
+if ( ! function_exists( 'abaris_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @return void
  */
-function urvr_post_nav() {
+function abaris_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -210,11 +210,11 @@ function urvr_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', TEXTDOMAIN ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'abaris' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', TEXTDOMAIN ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     TEXTDOMAIN ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'abaris' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'abaris' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -222,12 +222,12 @@ function urvr_post_nav() {
 }
 endif;
 
-if( ! function_exists( 'urvr_pagination' )) {
+if( ! function_exists( 'abaris_pagination' )) {
 	/**
 	 * Generates Pagination without WP-PageNavi Plugin
 	 */
 	
-	function urvr_pagination($before = '', $after = '') {
+	function abaris_pagination($before = '', $after = '') {
 		global $wpdb, $wp_query;
 		$request = $wp_query->request;
 		$posts_per_page = intval(get_query_var('posts_per_page'));
@@ -257,9 +257,9 @@ if( ! function_exists( 'urvr_pagination' )) {
 		if($start_page <= 0) {
 			$start_page = 1;
 		}
-		echo $before.'<nav class="page-navigation"><ol class="urvr_page_navi clearfix">'."";
+		echo $before.'<nav class="page-navigation"><ol class="abaris_page_navi clearfix">'."";
 		if ($start_page >= 2 && $pages_to_show < $max_page) {
-			$first_page_text = __( "First", TEXTDOMAIN );
+			$first_page_text = __( "First", 'abaris' );
 			echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 		}
 		echo '<li class="bpn-prev-link">';
@@ -276,27 +276,27 @@ if( ! function_exists( 'urvr_pagination' )) {
 		next_posts_link('>>');
 		echo '</li>';
 		if ($end_page < $max_page) {
-			$last_page_text = __( "Last", TEXTDOMAIN );
+			$last_page_text = __( "Last", 'abaris' );
 			echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 		}
 		echo '</ol></nav>'.$after."";
 	}
 }
 
-if ( ! function_exists( 'urvr_comment' ) ) :
+if ( ! function_exists( 'abaris_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function urvr_comment( $comment, $args, $depth ) {
+function abaris_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', TEXTDOMAIN ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', TEXTDOMAIN ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'abaris' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'abaris' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -306,20 +306,20 @@ function urvr_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<span class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s', TEXTDOMAIN ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s', 'abaris' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</span><!-- .comment-author -->
 
 				<span class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '- %1$s at %2$s', '1: date, 2: time', TEXTDOMAIN ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '- %1$s at %2$s', '1: date, 2: time', 'abaris' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', TEXTDOMAIN ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'abaris' ), '<span class="edit-link">', '</span>' ); ?>
 				</span><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', TEXTDOMAIN ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'abaris' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -341,13 +341,13 @@ function urvr_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for urvr_comment()
+endif; // ends check for abaris_comment()
 
-if ( ! function_exists( 'urvr_posted_on' ) ) :
+if ( ! function_exists( 'abaris_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function urvr_posted_on() {
+function abaris_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -360,7 +360,7 @@ function urvr_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span><span class="byline"> %2$s</span>', TEXTDOMAIN ),
+	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span><span class="byline"> %2$s</span>', 'abaris' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
@@ -371,18 +371,18 @@ function urvr_posted_on() {
 		)
 	);
 	if ( ! post_password_required() && ( comments_open() ) ) : ?>
-		<span class="comments-link"><i class="el-icon-comment-alt"></i> <?php comments_popup_link( __( 'Leave a comment', TEXTDOMAIN ), __( '1 Comment', TEXTDOMAIN ), __( '% Comments', TEXTDOMAIN ) ); ?></span>
+		<span class="comments-link"><i class="el-icon-comment-alt"></i> <?php comments_popup_link( __( 'Leave a comment', 'abaris' ), __( '1 Comment', 'abaris' ), __( '% Comments', 'abaris' ) ); ?></span>
 	<?php
 	endif;
 	?>
 	
-	<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', TEXTDOMAIN ), '', '' ); ?>
+	<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', 'abaris' ), '', '' ); ?>
 	<?php
 		if (! is_single() ) { 
-			printf( __('<span class="read-more-link"><i class="el-icon-link"></i> %1$s</span>', TEXTDOMAIN ),
+			printf( __('<span class="read-more-link"><i class="el-icon-link"></i> %1$s</span>', 'abaris' ),
 				sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>', 
 					esc_url( get_permalink() ), 
-					__( 'More', TEXTDOMAIN ) 
+					__( 'More', 'abaris' ) 
 				) 
 			);
 		}
@@ -391,11 +391,11 @@ function urvr_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'urvr_post_date' ) ) :
+if ( ! function_exists( 'abaris_post_date' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function urvr_post_date() {
+function abaris_post_date() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -408,7 +408,7 @@ function urvr_post_date() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span>', TEXTDOMAIN ),
+	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span>', 'abaris' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
@@ -420,7 +420,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category.
  */
-function urvr_categorized_blog() {
+function abaris_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -434,69 +434,71 @@ function urvr_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so urvr_categorized_blog should return true.
+		// This blog has more than 1 category so abaris_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so urvr_categorized_blog should return false.
+		// This blog has only 1 category so abaris_categorized_blog should return false.
 		return false;
 	}
 }
 
 // Recent Posts with featured Images to be displayed on home page
-function urvr_recent_posts() {
-	$output = '';
-	$output .= '<div class="flex-recent-posts">';
-  $output .= '<ul class="slides">';
-	// WP_Query arguments
-	$args = array (
-		'post_type'              => 'post',
-		'post_status'            => 'publish',
-		'posts_per_page'         => '10',
-		'ignore_sticky_posts'    => true,
-		'order'                  => 'DESC',
-	);
+if( ! function_exists( 'abaris_recent_posts' )) {
+	function abaris_recent_posts() {
+		$output = '';
+		$output .= '<div class="flex-recent-posts">';
+	  $output .= '<ul class="slides">';
+		// WP_Query arguments
+		$args = array (
+			'post_type'              => 'post',
+			'post_status'            => 'publish',
+			'posts_per_page'         => get_option('posts_per_page'),
+			'ignore_sticky_posts'    => true,
+			'order'                  => 'DESC',
+		);
 
-	// The Query
-	$query = new WP_Query( $args );
+		// The Query
+		$query = new WP_Query( $args );
 
-	// The Loop
-	if ( $query->have_posts() ) {
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			$output .= '<li>';
-			$output .= '<div class="recent-post">';
-			$output .= '<div class="rp-thumb">';
-			if ( has_post_thumbnail() ) {
-				$output .= get_the_post_thumbnail();
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$output .= '<li>';
+				$output .= '<div class="recent-post">';
+				$output .= '<div class="rp-thumb">';
+				if ( has_post_thumbnail() ) {
+					$output .= get_the_post_thumbnail();
+				}
+				else {
+					$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
+				}
+				$output .= '</div><!-- .rp-thumb -->';
+				$output .= '<div class="rp-content">';
+				$output .= '<h3>'. get_the_title() . '</h3>';
+				$output .= get_the_excerpt();
+				$output .= '</div><!-- .rp-content -->';
+				$output .= '</div>';
+				$output .= '</li>';
 			}
-			else {
-				$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
-			}
-			$output .= '</div><!-- .rp-thumb -->';
-			$output .= '<div class="rp-content">';
-			$output .= '<h3>'. get_the_title() . '</h3>';
-			$output .= get_the_excerpt();
-			$output .= '</div><!-- .rp-content -->';
-			$output .= '</div>';
-			$output .= '</li>';
-		}
-	} 
+		} 
 
-	// Restore original Post Data
-	wp_reset_postdata();
-  $output .= '</ul>';
-	$output .= '</div>';
-	echo $output;
+		// Restore original Post Data
+		wp_reset_postdata();
+	  $output .= '</ul>';
+		$output .= '</div>';
+		echo $output;
+	}
 }
 
 /**
- * Flush out the transients used in urvr_categorized_blog.
+ * Flush out the transients used in abaris_categorized_blog.
  */
-function urvr_category_transient_flusher() {
+function abaris_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'urvr_category_transient_flusher' );
-add_action( 'save_post',     'urvr_category_transient_flusher' );
+add_action( 'edit_category', 'abaris_category_transient_flusher' );
+add_action( 'save_post',     'abaris_category_transient_flusher' );
 
 

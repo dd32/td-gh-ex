@@ -2,22 +2,22 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package URVR
+ * @package ABARIS
  */
 
 get_header(); ?>
 <div class="row">
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
 	<div id="primary" class="content-area two-thirds column span9">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( $urvr['breadcrumb'] && function_exists( 'urvr_breadcrumbs' ) ) : ?>			
+		<?php if ( $abaris['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			
 			<div id="breadcrumb" role="navigation">
-				<?php urvr_breadcrumbs(); ?>
+				<?php abaris_breadcrumbs(); ?>
 			</div>
 		<?php endif; ?>
 		
@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php urvr_post_nav(); ?>
+			<?php abaris_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -39,11 +39,11 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
-	<?php if( ! isset( $urvr['layout'] ) ) : ?>
+	<?php if( ! isset( $abaris['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 	

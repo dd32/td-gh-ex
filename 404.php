@@ -2,13 +2,13 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package URVR
+ * @package ABARIS
  */
 
 get_header(); ?>
 	<div class="row">
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
@@ -17,11 +17,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><i class="el-icon-tags"></i><?php _e( 'Oops! That page can&rsquo;t be found.', TEXTDOMAIN ); ?></h1>
+					<h1 class="page-title"><i class="el-icon-tags"></i><?php _e( 'Oops! That page can&rsquo;t be found.', 'abaris' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', TEXTDOMAIN ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'abaris' ); ?></p>
 
 					<?php get_search_form(); ?>
 
@@ -31,11 +31,11 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
+	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
-	<?php if( ! isset( $urvr['layout'] ) ) : ?>
+	<?php if( ! isset( $abaris['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 		

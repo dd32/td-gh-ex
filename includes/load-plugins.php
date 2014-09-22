@@ -21,7 +21,7 @@
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'urvr_register_required_plugins' );
+add_action( 'tgmpa_register', 'abaris_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -34,7 +34,7 @@ add_action( 'tgmpa_register', 'urvr_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function urvr_register_required_plugins() {
+function abaris_register_required_plugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
@@ -44,11 +44,9 @@ function urvr_register_required_plugins() {
 
         // This is an example of how to include a plugin pre-packaged with a theme.
         array(
-            'name'               => 'Redux Framework', // The plugin name.
+            'name'               => 'ReduxFramework', // The plugin name.
             'slug'               => 'redux-framework', // The plugin slug (typically the folder name).
-            'source'             => URVR_INCLUDES_DIR . '/plugins/redux-framework.3.1.8.zip', // The plugin source.
             'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '3.1.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
         ),
 
 

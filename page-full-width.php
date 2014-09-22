@@ -1,23 +1,12 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Full Width
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package ABARIS
  */
-
 get_header(); ?>
 <div class="row">
 
-	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
-		<?php get_sidebar(); ?>
-	<?php endif; ?>
-
-	<div id="primary" class="content-area two-thirds column span9">
+	<div id="primary" class="content-area span12">
 		<main id="main" class="site-main" role="main">
 			
 			<?php if ( $abaris['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			
@@ -42,12 +31,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
-		<?php get_sidebar(); ?>
-	<?php endif; ?>
-
-	<?php if( ! isset( $abaris['layout'] ) ) : ?>
-		<?php get_sidebar(); ?>
-	<?php endif; ?>
-	
 <?php get_footer(); ?>
