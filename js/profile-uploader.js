@@ -31,6 +31,7 @@ jQuery(document).ready(function($){
 
             // Do something with attachment.id and/or attachment.url here
             $('#user_profile_image').val(attachment.url);
+
             $('#image-preview').attr('src', attachment.url);
         });
 

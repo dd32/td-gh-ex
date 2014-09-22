@@ -83,8 +83,7 @@
 })( window.jQuery || window.Zepto );
 jQuery(function($){
 
-    $(".entry-content").fitVids();
-    $(".excerpt-content").fitVids();
+    $('.entry-content, .excerpt-content, .featured-video').fitVids();
 
     // bind the tap event on the menu icon
     $('#toggle-navigation').bind('click', onTap);
@@ -216,10 +215,12 @@ jQuery(function($){
     function displayLayoutOptions(){
 
         var imageHeightOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height');
+        var imageStyleOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_style');
         var fullPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_full_post');
         var contentDisplayOption = $('html', window.parent.document).find('#customize-control-premium_layouts_two_column_images_content_display');
 
         imageHeightOption.hide();
+        imageStyleOption.hide();
         fullPostOption.hide();
         contentDisplayOption.hide();
 
@@ -227,6 +228,7 @@ jQuery(function($){
         $('html', window.parent.document).find('#customize-control-premium_layouts_setting option').each(function(){
             if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width-images'){
                 imageHeightOption.show();
+                imageStyleOption.show();
             }
             if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width'){
                 fullPostOption.show();
@@ -258,6 +260,7 @@ jQuery(function($){
 
     $(window).on('resize', function(){
         separatePostImage();
+        videoHeightAdjust();
     });
 
     /* ===== IE9 full-width image text positioning ===== */
@@ -360,6 +363,43 @@ jQuery(function($){
         }
     }
     positionSiteDescription();
+
+    // get videos on the blog to better fit with the standard layout
+    function videoHeightAdjust() {
+
+        // only if side-by-side layout active
+        if( $(window).width() > 899 ) {
+
+            // only if standard layout
+            if( $('body').hasClass('standard') ) {
+
+                // foreach excerpt with a video
+                $('.excerpt.has-video').each( function() {
+
+                    // get the video height
+                    var videoHeight = $(this).find('.fluid-width-video-wrapper').outerHeight();
+
+                    // set excerpt min-height to the video's height
+                    $(this).css('min-height', videoHeight );
+
+                    // get current height of excerpt content
+                    var contentHeight = $(this).find('.excerpt-container').outerHeight();
+
+                    if( videoHeight > contentHeight ) {
+                        var difference = (videoHeight - contentHeight) / 2;
+                    } else {
+                        var difference = 0;
+                    }
+
+                    var padding = difference + 'px 5.55%';
+
+                    // center excerpt container
+                    $(this).find('.excerpt-container').css('padding', padding );
+                });
+            }
+        }
+    }
+    videoHeightAdjust();
 
 });
 

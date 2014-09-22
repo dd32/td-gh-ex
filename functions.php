@@ -6,7 +6,7 @@ function ct_tracks_load_javascript_files() {
     wp_register_style( 'ct-tracks-google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
 
     if(! is_admin() ) {
-        wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js#ct_tracks_asyncload', array('jquery'),'', true);
+        wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
         wp_enqueue_style('ct-tracks-google-fonts');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
         wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
@@ -35,10 +35,15 @@ add_action('wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
 /* enqueue styles used on theme options page */
 function ct_tracks_enqueue_admin_styles($hook){
 
-    // enqueue dashboard page styles
-    if ( 'appearance_page_tracks-options' == $hook) {
-        wp_enqueue_style('style-admin', get_template_directory_uri() . '/style-admin.css');
+    // enqueue on Theme Options and Post Editor
+    if ( 'appearance_page_tracks-options' == $hook || 'post.php' == $hook ) {
+        wp_enqueue_style('style-admin', get_template_directory_uri() . '/styles/style-admin.css');
     }
+	// enqueue Fitvids in Post Editor for Video Post upgrade
+	if ( 'post.php' == $hook ) {
+		wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/fitvids.js', array('jquery'),'', true);
+		wp_enqueue_script('admin', get_template_directory_uri() . '/js/build/admin.min.js', array('jquery'),'', true);
+	}
     // if is user profile page
     if('profile.php' == $hook || 'user-edit.php' == $hook){
 
@@ -58,7 +63,7 @@ function ct_tracks_enqueue_customizer_styles(){
     wp_enqueue_style('multiple-select-styles', get_template_directory_uri() . '/styles/multiple-select.css');
 
     wp_enqueue_script('ct-customizer-js', get_template_directory_uri() . '/js/build/customizer.min.js#ct_tracks_asyncload');
-    wp_enqueue_style('ct-customizer-css', get_template_directory_uri() . '/style-customizer.css');
+    wp_enqueue_style('ct-customizer-css', get_template_directory_uri() . '/styles/style-customizer.css');
 }
 add_action('customize_controls_enqueue_scripts','ct_tracks_enqueue_customizer_styles');
 
@@ -109,7 +114,11 @@ function ct_tracks_theme_setup() {
     {
         include $filename;
     }
-
+	// add license/functions folder files
+	foreach (glob(trailingslashit( get_template_directory() ) . 'licenses/functions/*.php') as $filename)
+	{
+		include $filename;
+	}
     // add inc folder files
     foreach (glob(trailingslashit( get_template_directory() ) . 'inc/*.php') as $filename)
     {
@@ -381,30 +390,39 @@ function ct_tracks_add_homepage_title( $title )
 
 /* add conditional classes for premium layouts */
 function ct_tracks_body_class( $classes ) {
-    if ( ! is_front_page() ) {
+
+	$premium_layout_setting = get_theme_mod('premium_layouts_setting');
+
+	if ( ! is_front_page() ) {
         $classes[] = 'not-front';
     }
     if (get_theme_mod('ct_tracks_header_color_setting') == 'dark'){
         $classes[] = 'dark-header';
     }
-    if(get_theme_mod('premium_layouts_setting') == 'full-width'){
+	if( empty( $premium_layout_setting ) || $premium_layout_setting == 'standard') {
+		$classes[] = 'standard';
+	}
+    if( $premium_layout_setting == 'full-width'){
         $classes[] = 'full-width';
 
         if(get_theme_mod('premium_layouts_full_width_full_post') == 'yes'){
             $classes[] = 'full-post';
         }
     }
-    elseif(get_theme_mod('premium_layouts_setting') == 'full-width-images'){
+    elseif( $premium_layout_setting == 'full-width-images'){
         $classes[] = 'full-width-images';
 
         if(get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
             $classes[] = 'ratio';
         }
+	    if(get_theme_mod('premium_layouts_full_width_image_style') == 'title'){
+		    $classes[] = 'title-below';
+	    }
     }
-    elseif(get_theme_mod('premium_layouts_setting') == 'two-column'){
+    elseif( $premium_layout_setting == 'two-column'){
         $classes[] = 'two-column';
     }
-    elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
+    elseif( $premium_layout_setting == 'two-column-images'){
         $classes[] = 'two-column-images';
     }
     if(get_theme_mod( 'ct_tracks_background_image_setting')){
@@ -426,15 +444,18 @@ function ct_tracks_wp_page_menu() {
 }
 
 function ct_tracks_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
+    add_editor_style( 'styles/custom-editor-style.css' );
 }
 add_action( 'init', 'ct_tracks_add_editor_styles' );
 
 function ct_tracks_post_class_update($classes){
 
+	global $post;
+
     $remove = array();
     $remove[] = 'entry';
 
+	// remove 'entry' class newer version of Hybrid Core adds
     if ( ! is_singular() ) {
         foreach ( $classes as $key => $class ) {
 
@@ -444,6 +465,20 @@ function ct_tracks_post_class_update($classes){
             }
         }
     }
+	// add class for posts with Featured Videos
+	if( get_post_meta( $post->ID, 'ct_tracks_video_key', true ) ) {
+
+		// only add on blog/archive if enabled
+		if( is_home() || is_archive() ) {
+			// if post has video enabled on blog
+			if( get_post_meta( $post->ID, 'ct_tracks_video_display_key', true ) == 'both' ) {
+				$classes[] = 'has-video';
+			}
+		} else {
+			$classes[] = 'has-video';
+		}
+	}
+
     return $classes;
 }
 add_filter( 'post_class', 'ct_tracks_post_class_update' );
@@ -646,5 +681,33 @@ function ct_tracks_background_texture_output(){
     }
 }
 add_action('wp_enqueue_scripts','ct_tracks_background_texture_output');
+
+// green checkmark icon used in Post Video input
+function ct_tracks_green_checkmark_svg() {
+
+	$svg = '<svg width="12px" height="13px" viewBox="0 0 12 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+				<title>Green Checkmark</title>
+				<desc>green checkmark icon</desc>
+				<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				    <path d="M12.0000143,5.99999404 C12.0000143,2.68749009 9.3125111,-1.31130219e-05 6.00000715,-1.31130219e-05 C2.6875032,-1.31130219e-05 0,2.68749009 0,5.99999404 C0,9.31249799 2.6875032,12.0000012 6.00000715,12.0000012 C9.3125111,12.0000012 12.0000143,9.31249799 12.0000143,5.99999404 Z M10.031262,4.73436753 C10.031262,4.86718019 9.9843869,4.99218034 9.89063679,5.08593045 L5.64844423,9.32812301 C5.55469412,9.42187312 5.42188146,9.47656068 5.28906881,9.47656068 C5.16406866,9.47656068 5.031256,9.42187312 4.93750589,9.32812301 L2.10937751,6.49999464 C2.0156274,6.40624452 1.96875235,6.28124437 1.96875235,6.14843172 C1.96875235,6.01561906 2.0156274,5.8828064 2.10937751,5.78905629 L2.82031586,5.08593045 C2.91406597,4.99218034 3.03906612,4.93749277 3.17187878,4.93749277 C3.30469144,4.93749277 3.42969159,4.99218034 3.5234417,5.08593045 L5.28906881,6.85155755 L8.4765726,3.67186626 C8.57032272,3.57811615 8.69532287,3.52342859 8.82813552,3.52342859 C8.96094818,3.52342859 9.08594833,3.57811615 9.17969844,3.67186626 L9.89063679,4.3749921 C9.9843869,4.46874221 10.031262,4.60155487 10.031262,4.73436753 Z" id="" fill="#43C591"></path>
+				</g>
+			</svg>';
+
+	return $svg;
+}
+
+// loading indicator used in Post Video input
+function ct_tracks_loading_indicator_svg() {
+
+	$svg = '<svg width="47px" height="50px" viewBox="0 0 47 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+			    <title>Loading video</title>
+			    <desc>loading icon</desc>
+			    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <path d="M14.9464464,39.2142788 C14.9464464,36.8035617 12.9877387,34.8749879 10.6071555,34.8749879 C8.19643834,34.8749879 6.26786461,36.8035617 6.26786461,39.2142788 C6.26786461,41.624996 8.19643834,43.5535697 10.6071555,43.5535697 C12.9877387,43.5535697 14.9464464,41.624996 14.9464464,39.2142788 Z M27.9643191,45 C27.9643191,42.8604885 26.2466831,41.1428525 24.1071716,41.1428525 C21.9676601,41.1428525 20.2500241,42.8604885 20.2500241,45 C20.2500241,47.1395115 21.9676601,48.8571475 24.1071716,48.8571475 C26.2466831,48.8571475 27.9643191,47.1395115 27.9643191,45 Z M9.64286864,25.7142627 C9.64286864,23.0624738 7.47322319,20.8928284 4.82143432,20.8928284 C2.16964544,20.8928284 0,23.0624738 0,25.7142627 C0,28.3660516 2.16964544,30.535697 4.82143432,30.535697 C7.47322319,30.535697 9.64286864,28.3660516 9.64286864,25.7142627 Z M40.9821917,39.2142788 C40.9821917,37.345973 39.4754935,35.8392748 37.6071877,35.8392748 C35.7388819,35.8392748 34.2321837,37.345973 34.2321837,39.2142788 C34.2321837,41.0825846 35.7388819,42.5892828 37.6071877,42.5892828 C39.4754935,42.5892828 40.9821917,41.0825846 40.9821917,39.2142788 Z M15.9107333,12.2142466 C15.9107333,9.29125207 13.5301501,6.91066888 10.6071555,6.91066888 C7.68416095,6.91066888 5.30357775,9.29125207 5.30357775,12.2142466 C5.30357775,15.1372412 7.68416095,17.5178244 10.6071555,17.5178244 C13.5301501,17.5178244 15.9107333,15.1372412 15.9107333,12.2142466 Z M29.8928928,6.42852545 C29.8928928,3.23432521 27.3013718,0.642804265 24.1071716,0.642804265 C20.9129714,0.642804265 18.3214504,3.23432521 18.3214504,6.42852545 C18.3214504,9.62272568 20.9129714,12.2142466 24.1071716,12.2142466 C27.3013718,12.2142466 29.8928928,9.62272568 29.8928928,6.42852545 Z M46.2857695,25.7142627 C46.2857695,24.1171626 44.990009,22.8214021 43.3929089,22.8214021 C41.7958088,22.8214021 40.5000483,24.1171626 40.5000483,25.7142627 C40.5000483,27.3113628 41.7958088,28.6071233 43.3929089,28.6071233 C44.990009,28.6071233 46.2857695,27.3113628 46.2857695,25.7142627 Z M40.0179048,12.2142466 C40.0179048,10.8883522 38.9330821,9.80352947 37.6071877,9.80352947 C36.2812933,9.80352947 35.1964705,10.8883522 35.1964705,12.2142466 C35.1964705,13.5401411 36.2812933,14.6249638 37.6071877,14.6249638 C38.9330821,14.6249638 40.0179048,13.5401411 40.0179048,12.2142466 Z" id="" fill="#FFFFFF"></path>
+			    </g>
+			</svg>';
+
+	return $svg;
+}
 
 ?>
