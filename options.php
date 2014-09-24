@@ -76,9 +76,21 @@ function optionsframework_options() {
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Banner Image', 'options_framework_theme'),
-        'desc' => __('Recommended image sizes 1920X412', 'options_framework_theme'),
-        'id' => 'banner',
+        'name' => __('Slide 1', 'options_framework_theme'),
+        'desc' => __('Recommended image sizes 940X400', 'options_framework_theme'),
+        'id' => 'slide1',
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Slide 2', 'options_framework_theme'),
+        'desc' => __('Recommended image sizes 940X400', 'options_framework_theme'),
+        'id' => 'slide2',
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Slide 3', 'options_framework_theme'),
+        'desc' => __('Recommended image sizes 940X400', 'options_framework_theme'),
+        'id' => 'slide3',
         'type' => 'upload');
 
     $options[] = array(
