@@ -1,6 +1,10 @@
 *** Hoffman changelog ***
 
 
+Version 1.08 (2014-09-24)
+-------------------------
+- Fixed the same bug for the video post format meta boxes (for real this time)
+
 
 Version 1.07 (2014-09-16)
 -------------------------

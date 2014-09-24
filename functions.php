@@ -444,7 +444,7 @@ endif;
 // Add and save meta boxes for posts
 add_action( 'add_meta_boxes', 'hoffman_cd_meta_box_add' );
 function hoffman_cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'hoffman'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
+	add_meta_box( 'post-video-url', __('Video URL', 'hoffman'), 'hoffman_cd_meta_box_video_url', 'post', 'side', 'high' );
 	add_meta_box( 'post-quote-content-box', __('Quote content', 'hoffman'), 'hoffman_cd_meta_box_quote_content', 'post', 'normal', 'core' );
 	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'hoffman'), 'hoffman_cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
 }
