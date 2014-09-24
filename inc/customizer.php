@@ -92,12 +92,14 @@ function hex2rgb($hex) {
  * Add CSS in <head> for styles handled by the theme customizer
  *
  */
-
 function add_color_styles() { ?>
 
-<?php 
+<?php
 
-	$color_primary = get_option('color_primary'); ?>
+	$color_primary = get_option('color_primary'); 
+	
+	if ( $color_primary != '' ) {
+	?>
 
 	<style type="text/css">
 
@@ -141,6 +143,7 @@ function add_color_styles() { ?>
 	</style>
 
 <?php
+	}
 }
 
 add_action('wp_head', 'add_color_styles');

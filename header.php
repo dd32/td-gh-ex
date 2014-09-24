@@ -52,6 +52,10 @@
 					<a href="<?php echo $options['googleplusurl']; ?>" class="googleplus" alt="google plus"><span class="icon-googleplus"></span></a>
 				<?php endif; ?>
 				
+				<?php if ( $options['linkedinurl'] != '' ) : ?>
+					<a href="<?php echo $options['linkedinurl']; ?>" class="linkedin" alt="instagram"><span class="icon-linkedin"></span></a>
+				<?php endif; ?>
+				
 				<?php if ( $options['instagramurl'] != '' ) : ?>
 					<a href="<?php echo $options['instagramurl']; ?>" class="instagram" alt="instagram"><span class="icon-instagram"></span></a>
 				<?php endif; ?>

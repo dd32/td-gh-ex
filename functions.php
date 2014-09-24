@@ -11,7 +11,6 @@
  * Set the content width based on the theme's design and stylesheet.
  *
  */
- 
 if ( ! isset( $content_width ) )
 	$content_width = 600; /* pixels */
 
@@ -20,7 +19,6 @@ if ( ! isset( $content_width ) )
  * Load Jetpack compatibility file.
  *
  */
- 
 require( get_template_directory() . '/inc/jetpack.php' );
 
 
@@ -28,7 +26,6 @@ require( get_template_directory() . '/inc/jetpack.php' );
  * The Box Theme setup
  *
  */
-
 if ( ! function_exists( 'thebox_setup' ) ) :
 
 function thebox_setup() {
@@ -44,6 +41,9 @@ function thebox_setup() {
 	
 	// Load the Theme Options Page for social media icons
 	require( get_template_directory() . '/inc/theme-options.php' );
+	
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style( array( 'inc/editor-style.css', thebox_fonts_url() ) );
 	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -68,7 +68,6 @@ add_action( 'after_setup_theme', 'thebox_setup' );
  * Enqueue scripts and styles for the front end.
  *
  */
- 
 function thebox_scripts() {
 	
 	// Add Google Fonts, used in the main stylesheet.
@@ -136,12 +135,20 @@ function thebox_fonts_url() {
 }
 
 
+/**
+ * Enqueue Google fonts style to admin screen for custom header display.
+ *
+ */
+function thebox_admin_fonts() {
+	wp_enqueue_style( 'thebox-admin-fonts', thebox_fonts_url(), array(), null );
+}
+add_action( 'admin_print_scripts-appearance_page_custom-header', 'thebox_admin_fonts' );
+
 
 /**
  * Setup the WordPress core custom background feature.
  *
  */
- 
 function thebox_register_custom_background() {
 	$args = array(
 		'default-color' => 'f0f3f5',
@@ -209,3 +216,16 @@ function thebox_excerpt($num) {
 	$excerpt = implode(" ",$excerpt)."... <br><a class=\"more-link\" href='" .get_permalink($post->ID) ." '>".__('Read more', 'thebox')." &raquo;</a>";
 	echo $excerpt;
     }
+
+
+/*
+ * Prints Credits in the Footer
+ *
+ */
+function thebox_credits() {
+	$website_credits = '';
+	$website_author = get_bloginfo('name');
+	$website_date =  date ('Y');
+	$website_credits = esc_attr( '&copy; ' . $website_date . ' ' . $website_author );	
+	echo $website_credits;
+}

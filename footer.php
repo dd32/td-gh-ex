@@ -20,14 +20,11 @@
 		<?php endif; // end footer widget area ?>
 		
 		<p class="credits">
-			&copy; <?php the_time('Y') ?> by <?php bloginfo( 'name' ); ?>
-			
+			<?php thebox_credits(); ?>
 			<span class="sep"> / </span>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'thebox' ); ?>" rel="generator">
-				<?php printf( __( 'Proudly powered by %s', 'thebox' ), 'WordPress' ); ?>
-			</a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'thebox' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'thebox' ), 'WordPress' ); ?></a>
 			<span class="sep"> / </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'thebox' ), 'thebox', '<a href="http://design.altervista.org" rel="designer">design news</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s', 'thebox' ), 'The Box', '<a href="http://design.altervista.org" rel="designer">design lab</a>' ); ?>
 		</p>
 
 	</footer><!-- #colophon .site-footer -->

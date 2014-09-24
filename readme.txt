@@ -45,5 +45,10 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 
 1.3.3
 - Updated Mobile Menu js
-- New Social Media links
+- Added New Social Icons
 - Added Dutch translation by Theo Muys
+
+1.3.5
+- Fix Preview Live
+- Added LinkedIn to Social Icons
+- Added Editor Styles

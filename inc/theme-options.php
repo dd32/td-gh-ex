@@ -121,6 +121,18 @@ function thebox_options_do_page() {
 				
 				<?php
 				/**
+				 * LinkedIn
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your LinkedIn URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[linkedinurl]" class="regular-text" type="text" name="thebox_theme_options[linkedinurl]" value="<?php echo esc_attr( $options['linkedinurl'] ); ?>" />
+						<label class="description" for="thebox_theme_options[linkedinurl]"><?php _e( 'Leave blank to hide LinkedIn Icon', 'thebox' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
 				 * Instagram
 				 */
 				?>
@@ -136,7 +148,7 @@ function thebox_options_do_page() {
 				 * YouTube
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your YoyTube URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your YouTube URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[youtubeurl]" class="regular-text" type="text" name="thebox_theme_options[youtubeurl]" value="<?php echo esc_attr( $options['youtubeurl'] ); ?>" />
 						<label class="description" for="thebox_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'thebox' ); ?></label>
@@ -185,7 +197,7 @@ function thebox_options_do_page() {
  */
  
 function thebox_options_validate( $input ) {
-
+		
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['hiderss'] ) )
 		$input['hiderss'] = null;
@@ -195,6 +207,7 @@ function thebox_options_validate( $input ) {
 	$input['twitterurl'] = wp_filter_nohtml_kses( $input['twitterurl'] );
 	$input['facebookurl'] = wp_filter_nohtml_kses( $input['facebookurl'] );
 	$input['googleplusurl'] = wp_filter_nohtml_kses( $input['googleplusurl'] );
+	$input['linkedinurl'] = wp_filter_nohtml_kses( $input['linkedinurl'] );
 	$input['instagramurl'] = wp_filter_nohtml_kses( $input['instagramurl'] );
 	$input['youtubeurl'] = wp_filter_nohtml_kses( $input['youtubeurl'] );
 	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
@@ -204,6 +217,7 @@ function thebox_options_validate( $input ) {
 	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
 	$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
 	$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
+	$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
 	$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
 	$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
 	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
