@@ -25,6 +25,10 @@ get_header();
 					?><span class="month"><?php the_time('M'); ?></span><?php
 					?><span class="day"><?php the_time('d'); ?></span><?php
 					?><span class="year"><?php the_time('Y'); ?></span><?php
+
+					// Echo published and updated dates for hatom-feed - not to be displayed on front end
+					?><span class="published"><?php the_time(get_option('date_format')); ?></span><?php
+					?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
 				?></a></span><?php
 
 				if ( ( comments_open() || get_comments_number()!=0 ) && !post_password_required() ):
@@ -34,7 +38,10 @@ get_header();
 				?></span><?php
 				endif;
 
-				?><span class="meta-author"><span><?php _e('by ', 'boldr'); the_author(); ?></span></span><?php
+				?><span class="meta-author vcard author"><?php
+					_e('by ', 'boldr');
+					?><span class="fn"><?php the_author(); ?></span><?php
+				?></span><?php
 
 				edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span>');
 

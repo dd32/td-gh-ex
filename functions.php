@@ -237,6 +237,16 @@ function boldr_scripts() {
 }
 add_action('wp_enqueue_scripts', 'boldr_scripts');
 
+/*
+ * Remove hentry class from static pages
+ */
+function boldr_remove_hentry( $classes ) {
+	if ( is_page() ):
+		$classes = array_diff($classes, array('hentry'));
+	endif;
+	return $classes;
+}
+add_filter('post_class','boldr_remove_hentry');
 
 /*
  * Remove "rel" tags in category links (HTML5 invalid)

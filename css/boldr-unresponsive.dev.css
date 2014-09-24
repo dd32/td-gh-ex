@@ -758,6 +758,11 @@ h1.entry-title {
 	font-size: 16px;
 }
 
+.meta-date .updated,
+.meta-date .published {
+	display: none;
+}
+
 .meta-comments {
 	background: #333;
 	color: #ccc;
