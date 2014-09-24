@@ -1,6 +1,12 @@
 *** Hoffman changelog ***
 
 
+Version 1.09 (2014-09-24)
+-------------------------
+- Fixed a bug that prevented post videos from being displayed on index.php
+- Added a fixed -webkit-font-smoothing parameter to style.css
+
+
 Version 1.08 (2014-09-24)
 -------------------------
 - Fixed the same bug for the video post format meta boxes (for real this time)

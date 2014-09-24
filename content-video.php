@@ -1,13 +1,13 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php $video_url = get_post_meta($post->ID, 'video_url', true); if ( $video_url != '' ) : ?>
-	
+				
 		<div class="featured-media">
 		
 			<?php if (strpos($video_url,'.mp4') !== false) : ?>
 				
 				<video controls>
-				  <source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
+				  <source src="<?php echo $video_url; ?>" type="video/mp4">
 				</video>
 																		
 			<?php else : ?>
@@ -16,7 +16,7 @@
 				
 					$embed_code = wp_oembed_get($video_url); 
 					
-					echo esc_url( $embed_code );
+					echo $embed_code;
 					
 				?>
 					
