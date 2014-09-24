@@ -493,8 +493,6 @@ or wrap each row of columns in a <div class="row"> */
 	background: #fff;
 }
 
-.fa.fa-close:after { content: "\2716"; }
-
 #searchform label { display: none; }
 #searchform #searchsubmit { display: none; }
 
@@ -581,6 +579,8 @@ or wrap each row of columns in a <div class="row"> */
 	padding-left: 0;
 	border: none;
 }
+
+.postmetadata .updated, .hatom-feed { display: none; }
 
 .thumbnail {
 	float: left;

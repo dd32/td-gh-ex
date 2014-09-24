@@ -213,7 +213,7 @@ function wortex_styles() {
 	wp_enqueue_style( 'open-sans', "//fonts.googleapis.com/css?family=Open+Sans:300italic,,400italic,700italic,300,400,700&subset=latin,latin-ext", array(), null );
 
 	// Font Awesome
-	wp_enqueue_style( 'font-awesome', "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", array(), null );
+	wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", array(), null );
 }
 add_action('wp_enqueue_scripts', 'wortex_styles');
 
@@ -235,6 +235,17 @@ function wortex_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'wortex_scripts');
+
+/*
+ * Remove hentry class from static pages
+ */
+function wortex_remove_hentry( $classes ) {
+	if ( is_page() ):
+		$classes = array_diff($classes, array('hentry'));
+	endif;
+	return $classes;
+}
+add_filter('post_class','wortex_remove_hentry');
 
 /*
  * Remove "rel" tags in category links (HTML5 invalid)

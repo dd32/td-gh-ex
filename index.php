@@ -85,7 +85,9 @@ get_header();
 	
 	if ( get_post_type() == 'post' ):
 
-		?><span class="meta-date post-date updated"><i class="fa fa-calendar"></i><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_time( get_option('date_format') ); ?></a></span><?php
+		?><span class="meta-date published"><i class="fa fa-calendar"></i><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_time( get_option('date_format') ); ?></a></span><?php
+		// Echo updated date for hatom-feed - not to be displayed on front end
+		?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
 		$author = sprintf( ' <a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'wortex' ), get_the_author() ) ),

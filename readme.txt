@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.9.2
-Stable tag: 1.1.1
+Tested up to: 4.0
+Stable tag: 1.1.2
 
 == ABOUT WORTEX LITE ==
 
@@ -55,6 +55,14 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.2 =
+September 24th, 2014
+* Tested with WP 4.0
+* Fixed hAtom structured data (Errors like Missing required field "entry-title" / "updated" / hCard "author" in Google Webmaster tools)
+* Updated hAtom structured data: using post date as "published" and modified_date as "updated"
+* Removed hentry class from pages (hentry is irrelevant for static content)
+* Updated Font-Awesome from 4.0.3 to 4.2.0
 
 = 1.1.1 =
 September 1st, 2014

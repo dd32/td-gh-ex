@@ -16,13 +16,13 @@ while(have_posts()) : the_post();
 
 ?><div id="page-title"><div class="container"><h2><?php the_title(); ?></h2><?php
 	?><div class="postmetadata"><?php
-		?><span class="meta-date post-date updated"><i class="fa fa-calendar"></i><?php the_time( get_option('date_format') ); ?></span><?php
-		$author = sprintf( ' <a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>',
+		?><span class="meta-date"><i class="fa fa-calendar"></i><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_time( get_option('date_format') ); ?></a></span><?php
+		$author = sprintf( ' <a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'wortex' ), get_the_author() ) ),
 			get_the_author()
 		);
-		?><span class="meta-author author vcard"><i class="fa fa-user"></i><?php _e('by', 'wortex'); echo $author; ?></span><?php
+		?><span class="meta-author"><i class="fa fa-user"></i><?php _e('by', 'wortex'); echo $author; ?></span><?php
 		?><span class="meta-category"><i class="fa fa-tag"></i><?php the_category(', '); ?></span><?php
 		if (comments_open() || get_comments_number()!=0 ):
 			?><span class="meta-comments"><i class="fa fa-comment"></i><?php 
@@ -37,6 +37,16 @@ while(have_posts()) : the_post();
 	?><div id="page-container" class="left with-sidebar"><?php
 
 	?><div id="post-<?php the_ID(); ?>" <?php post_class("single-post"); ?>><?php
+
+	// The post title and meta data displayed on the front end are outside of the hentry div by design.
+	// Repeating the structured data here, inside .hentry div, to respect hAtom standards
+	// This div will not be displayed on the front end.
+	?><div class="hatom-feed"><?php
+		?><span class="entry-title"><?php the_title(); ?></span><?php
+		?><span class="published"><?php the_time( get_option('date_format') ); ?></span><?php
+		?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
+		?><span class="meta-author author vcard"><span class="fn"><?php the_author(); ?></a></span><?php
+	?></div><?php
 
 	if ( '' != get_the_post_thumbnail() ) : // As recommended by the WP codex, has_post_thumbnail() is not reliable
 	?><div class="thumbnail"><?php
