@@ -221,6 +221,7 @@ function accesspresslite_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
 	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
+	wp_enqueue_style( 'woo-commerce-style', get_template_directory_uri() . '/css/woocommerce.css' );
 	wp_enqueue_style( 'accesspresslite-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery'); 

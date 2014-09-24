@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.18
+* Made Woocommerce compatible
+
 Version 2.17
 * Theme Screenshot Changed
 * Video tutorial link added in Theme Option Panel
