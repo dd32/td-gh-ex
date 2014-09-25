@@ -496,9 +496,9 @@ function mywiki_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 		// Proceed with normal comments.
 		global $post;
-	$mywiki_tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+	$mywiki_tag = ( 'div' === $args['style'] ) ? '<div' : '<li';
 ?>
-		<?php echo $mywiki_tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>
+		<?php echo $mywiki_tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> >
     	<article class="div-comment-<?php comment_ID(); ?>" id="div-comment-1">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
