@@ -54,7 +54,7 @@
 		
 			<div class="post-meta">
 			
-				<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<div class="genericon genericon-time"></div>
 					<?php the_time( get_option('date_format') ); ?>
 				</a>
