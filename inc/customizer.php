@@ -74,21 +74,24 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
 
     /***** Add Panels *****/
 
-    // Logo panel
-    $wp_customize->add_panel( 'ct_ignite_logo_panel', array(
-        'priority'       => 30,
-        'capability'     => 'edit_theme_options',
-        'title'          => __('Logo', 'ignite'),
-        'description'    => __('Upload, position, and resize your logo', 'ignite' )
-    ) );
+	if( method_exists( 'WP_Customize_Manager', 'add_panel' ) ) {
 
-    // Font panel
-    $wp_customize->add_panel( 'ct_ignite_font_panel', array(
-        'priority'       => 50,
-        'capability'     => 'edit_theme_options',
-        'title'          => __('Font', 'ignite'),
-        'description'    => __('Choose a font family and font weight.', 'ignite')
-    ) );
+		// Logo panel
+		$wp_customize->add_panel( 'ct_ignite_logo_panel', array(
+			'priority'    => 30,
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Logo', 'ignite' ),
+			'description' => __( 'Upload, position, and resize your logo', 'ignite' )
+		) );
+
+		// Font panel
+		$wp_customize->add_panel( 'ct_ignite_font_panel', array(
+			'priority'    => 50,
+			'capability'  => 'edit_theme_options',
+			'title'       => __( 'Font', 'ignite' ),
+			'description' => __( 'Choose a font family and font weight.', 'ignite' )
+		) );
+	}
 
 	/***** Logo Upload *****/
 
@@ -362,6 +365,42 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         'priority'   => 70,
         'capability' => 'edit_theme_options'
     ) );
+	// setting - date
+	$wp_customize->add_setting( 'ct_ignite_post_meta_date_settings', array(
+		'default'           => 'show',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'ct_ignite_sanitize_show_hide_setting',
+	) );
+	// control - date
+	$wp_customize->add_control( 'ct_ignite_post_meta_date_settings', array(
+		'label'          => __( 'Show date before posts?', 'ignite' ),
+		'section'        => 'ct-post-meta',
+		'settings'       => 'ct_ignite_post_meta_date_settings',
+		'type'           => 'radio',
+		'choices'        => array(
+			'show'   => __('Show', 'ignite'),
+			'hide'  => __('Hide', 'ignite')
+		)
+	) );
+	// setting - author
+	$wp_customize->add_setting( 'ct_ignite_post_meta_author_settings', array(
+		'default'           => 'show',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'ct_ignite_sanitize_show_hide_setting',
+	) );
+	// control - author
+	$wp_customize->add_control( 'ct_ignite_post_meta_author_settings', array(
+		'label'          => __( 'Show author before posts?', 'ignite' ),
+		'section'        => 'ct-post-meta',
+		'settings'       => 'ct_ignite_post_meta_author_settings',
+		'type'           => 'radio',
+		'choices'        => array(
+			'show'   => __('Show', 'ignite'),
+			'hide'  => __('Hide', 'ignite')
+		)
+	) );
     // setting - category
     $wp_customize->add_setting( 'ct_ignite_post_meta_categories_settings', array(
         'default'           => 'show',
