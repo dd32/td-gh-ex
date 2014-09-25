@@ -2,7 +2,7 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.com/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 2.18
+Version: 2.19
 Author: Arthur (Berserkr) Gareginyan
 Author URI: http://mycyberuniverse.com/author.html
 Tags: black, white, light, two-columns, right-sidebar, fluid-layout, custom-header, custom-background, featured-images, rtl-language-support, translation-ready, theme-options, threaded-comments
@@ -234,15 +234,12 @@ blockquote cite:before {
 	color:#000;
 	text-decoration:none; }
 #content .col01 h1 a:hover { font-weight: bold; }
-#content .col01 h4 {
-	font-size:112%;
-	line-height:100%;
-	font-weight:normal;
-	font-family: Forum, Times New Roman, Times, Georgia, serif;
-	margin:0;
-	padding:0 0 16px;
-	overflow: hidden;
-	background:url(images/line.gif) repeat-x bottom; }
+#content .col01 h2,
+#content .col01 h3,
+#content .col01 h4,
+#content .col01 h5,
+#content .col01 h6 {
+	text-align: center; }
 #content .col01 .post {
 	padding-top:5px;
 	padding-bottom:30px; }
@@ -468,6 +465,7 @@ blockquote cite:before {
 
 /* Links Box */
 #sidebar .links-box {
+	text-align: center;
 	background:url(images/links_box.gif) no-repeat 50% 8px;
 	padding:30px 10px 20px; }
 #sidebar .links-box ul {
@@ -534,7 +532,7 @@ video {
 -------------------------------------------------------------- */
 img { }
 
-/* Image handling
+/* Wrapping text around images
 -------------------------------------------------------------- */
 img.centered {
 	display: block;
@@ -542,14 +540,23 @@ img.centered {
 	margin-right: auto; }
 img.alignright {
 	padding: 4px;
-	margin: 0 0 2px 7px;
+	margin: 0 0 2px 15px;
 	display: inline; }
 img.alignleft {
 	padding: 4px;
-	margin: 0 7px 2px 0;
+	margin: 0 15px 2px 0;
 	display: inline; }
-.alignright { float: right; }
-.alignleft { float: left }
+
+/* Miniatures
+-------------------------------------------------------------- */
+.wp-post-image {
+	margin:10px auto 3px;
+	display: block;
+	border-bottom: 5px solid #bbb;
+	background: #fff;
+	border: 1px #ccc solid;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
 /* Footer
 -------------------------------------------------------------- */
@@ -837,17 +844,6 @@ img.alignleft {
 #back-top:hover { opacity: 1; }
 /* End-Up button */
 /************************** END-Navigation **************************/
-
-/* Miniatures
--------------------------------------------------------------- */
-.wp-post-image {
-	margin:10px auto 3px;
-	display: block;
-	border-bottom: 5px solid #bbb;
-	background: #fff;
-	border: 1px #ccc solid;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-	box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
 /* Sitemap Page
 -------------------------------------------------------------- */

@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.14.1
+ * @since	2.17
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -95,7 +95,7 @@ function anarcho_widgets_init() {
 	register_sidebar(array(
 			'name' => __('Sidebar Area 3', 'anarcho-notepad'),
 			'id' => 'sidebar-3',
-			'description' => __('Widgets in this area will be shown below "Frends & Links".', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown below "Friends & Links".', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -118,7 +118,7 @@ function anarcho_widgets_footer_init() {
 	register_sidebar(array(
 			'name' => __('Footer Area 1', 'anarcho-notepad'),
 			'id' => 'footer-1',
-			'description' => __('Widgets in this area will be shown first.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown left.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -127,7 +127,7 @@ function anarcho_widgets_footer_init() {
 		register_sidebar(array(
 			'name' => __('Footer Area 2', 'anarcho-notepad'),
 			'id' => 'footer-2',
-			'description' => __('Widgets in this area will be shown second.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown center.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -136,7 +136,7 @@ function anarcho_widgets_footer_init() {
 		register_sidebar(array(
 			'name' => __('Footer Area 3', 'anarcho-notepad'),
 			'id' => 'footer-3',
-			'description' => __('Widgets in this area will be shown third.', 'anarcho-notepad'),
+			'description' => __('Widgets in this area will be shown right.', 'anarcho-notepad'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -553,9 +553,9 @@ function anarcho_entry_meta() {
 			<?php
 			anarcho_author_bio();
 		} elseif ( is_home() || is_category() || is_archive() || is_search() ) {
-			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link('LEAVE A COMMENT'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
 		} else {
-			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link('LEAVE A COMMENT'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			_e('Category: ', 'anarcho-notepad'); the_category(', '); ?> | <?php comments_popup_link(__('LEAVE A COMMENT', 'anarcho-notepad' )); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
 		}
 	?>
            </div>

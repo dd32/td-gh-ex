@@ -101,13 +101,13 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		        'label'				=> __( 'Disable box "What is this place?"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
-		// Disable box "Frends & Links"
+		// Disable box "Friends & Links"
 		$wp_customize->add_setting('disable_links_box', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'disable_links_box', array(
 			'priority'			=> 4,
 		        'type'				=> 'checkbox',
-		        'label'				=> __( 'Disable box "Frends & Links"', 'anarcho-notepad' ),
+		        'label'				=> __( 'Disable box "Friends & Links"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
 		// Enable Year in Red Data Ribbons
