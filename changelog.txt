@@ -1,10 +1,14 @@
 *** Rams changelog ***
 
 
+Version 1.08 (2014-09-25)
+-------------------------
+- Added a Search Page Template per user requests
+
+
 Version 1.07 (2014-08-21)
 -------------------------
 - Moved enqueue comment-reply to functions.php
-
 
 
 Version 1.06 (2014-08-21)
