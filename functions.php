@@ -184,5 +184,6 @@
 		) ) );
 
 	} 
+	add_action('customize_register', 'multicolors_theme_customizer');
 
 ?>
