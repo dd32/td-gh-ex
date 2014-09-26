@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.26
+Version: 1.27
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -411,7 +411,7 @@ a img {
 }
 
 .title-info {
-  display: inline-block;
+  float: left;
   position: relative;
   z-index: 29;
 }
@@ -574,7 +574,6 @@ a img {
   }
 
   .title-info {
-    float: left;
     margin-top: -0.75em;
   }
 
@@ -1963,6 +1962,8 @@ li.pingback:after {
   margin: 0 0.375em;
   color: white;
   opacity: 0.4;
+  position: relative;
+  z-index: 9;
 }
 .social-media-icons a:link, .social-media-icons a:visited {
   color: white;
