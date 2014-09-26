@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.2.6.9 - Released: 26.09.2014
+
+-- Added : New default skin.
+
 - Version 1.2.6.8 - Released: 16.05.2014
 
 -- Fixed : Text formatting with the tag more.
