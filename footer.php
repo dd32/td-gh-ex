@@ -16,7 +16,7 @@
 */
 ?>
 
-<div style="text-align: center;">
+<div style="text-align: center;" class="navlist">
 
 <a href="#top">Back to top</a>
 </div>
@@ -47,7 +47,7 @@ $badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 <?php echo $badeyes_settings['footer_copyright']; 
 echo("".date('Y').", ");
     bloginfo('name');
-echo "All rights reserved";
+echo "&nbsp;All rights reserved";
 ?>
 
 </a>

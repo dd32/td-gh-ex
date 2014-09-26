@@ -63,7 +63,7 @@ echo $badeyes_settings['intro_text'];
 				?>
 <?php if( $badeyes_settings['blog_title'] != '' ) : ?>
 <?php 
-echo "<h1>";
+echo "<h1 class=\"entry-title\">";
 echo $badeyes_settings['blog_title']; 
 echo "</h1>";
 ?>

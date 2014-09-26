@@ -4,9 +4,9 @@
 
 $badeyes_options = array(
 'footer_copyright' => 'Copyright Since (start date goes here)',
-'intro_text' => '<h1>Add Title Here</h1><p>put text here</p>',
-'single_text' => '<h1>Add Title Here</h1><p>put text here</p>',
-'page_text' => '<h1>Add Title Here</h1><p>put text here</p>',
+'intro_text' => '<h1 class="entry-title">Add Title Here</h1><p>put text here.</p>',
+'single_text' => '<h1 class="entry-title">Add Title Here</h1><p>put text here</p>',
+'page_text' => '<h1 class="entry-title">Add Title Here</h1><p>put text here</p>',
 'header_style' => '',
 'featured_title' => 'Featured Content',
 'blog_title' => 'Latest Headlines',
@@ -57,7 +57,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 </tr>
 </table>
 <h2>Introduction Text</h2>
-<p>Use the area below to add a description, Advertisement, Google Ads or any other relevant text  to the top of the Blog, Single Post and Page area , as stated above you can use html, for accessibility reasons leave the heading if you use one at an H1.</p> 
+<p>Use the area below to add a description, Advertisement, Google Ads or any other relevant text  to the top of the Blog, Single Post and Page area , as stated above you can use html, for accessibility reasons leave the heading if you use one at an H1 and make sure you keep the 'entry-title' class.</p> 
 <table class="form-table">
 <tr valign="top"><th scope="row"><label for="intro_text">Blog Introduction</label></th>
 <td>
@@ -135,9 +135,6 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 <p>This Child Theme has 3 possible Menus, there is a custom menu an Primary one, both are situated horizontally under the Header section and the Secondary one or "Side Menu" located in the left hand sidebar.</p>
 <p>Neither These menus nor their corresponding "Skip Links" will appear unless you create and manage them in the Menus area.</p> 
 <p>You can see examples at <a href="http://www.badeyes.com/2014/" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a></p>
-<h2>Post Teaser Plugin</h2>
-<p>For accessibility reasons the Post Teaser Plugin comes bundled with this Theme and is edited accordingly so there is no need to install it again, you can however edit it as you would any other Plugin in the Admin area.</p>
-<p>If you already have it installed then it shouldn't be a problem but we suggest you deactivate and use our preset one.</p>
 <h2>WordPress for Bad Eyes</h2>
 <p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href="http://www.wordpressforbadeyes.com" target=_blank">www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>
 

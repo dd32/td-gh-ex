@@ -55,6 +55,7 @@ echo $badeyes_settings['header_style'];
 echo "</style>";
 ?>
 <?php endif; ?>
+
 </head>
 <body <?php body_class(); ?>>
 <div class="center;" role="navigation" aria-label="Page">

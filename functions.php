@@ -92,10 +92,6 @@ function be_exclude_post_formats_from_blog( $query ) {
 
 }
 add_action( 'pre_get_posts', 'be_exclude_post_formats_from_blog' );
-if (!class_exists('post_teaser')) {
-include_once(get_stylesheet_directory() . '/post-teaser/post-teaser.php' );
-}
-
 function mytheme_setup() {
     set_post_thumbnail_size(300, 300, true);
 }
@@ -141,7 +137,7 @@ function twentyfourteen_post_nav() {
 		return;
 	?>
 	<div class="navigation post-navigation" role="navigation">
-		<h2><?php _e( 'Post navigation', 'twentythirteen' ); ?></h2>
+		<h3><?php _e( 'Post navigation', 'twentythirteen' ); ?></h3>
 		<div class="nav-links">
 
 			<?php previous_post_link( 'Previous Post %link', _x( '<span class="meta-nav"></span> %title', 'Previous post link', 'twentythirteen' ) ); ?>

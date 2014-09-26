@@ -25,8 +25,8 @@ endif;
 				the_title( '<h1 class="entry-title">', '</h1>' );
  				edit_post_link( __( 'Edit', 'badeyes' ), '<span class="edit-link">', '</span>' );
 			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
+the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );			
+endif;
 		?>
 
 		<div class="entry-meta">
