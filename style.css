@@ -4,7 +4,7 @@ Author: Ivan Zavalin
 Theme URI: http://wpmodern.com/all-themes/avrora-responsive-wordpress-theme
 Author URI: http://www.wpmodern.com
 Description: Avrora is a fully responsive WordPress theme. This WordPress Theme can easily adapts on your mobile and desktop or any other device. Avrora is SEO Optimize and works with all popular plugins. Theme have very good options panel.
-Version: 1.2
+Version: 1.3
 Tags: red, gray, white, light, one-column, two-columns, right-sidebar, responsive-layout, fixed-layout, custom-menu, custom-background,  featured-images, full-width-template, theme-options, threaded-comments
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,7 +98,7 @@ body {
     min-width: 1024px;
     font-size: 13px;
     color: #676767;
-    background: #ffffff;
+    background: url("images/body-bg.png");
     font-weight: 300;
     overflow-x: hidden;
     overflow-y: visible;

@@ -33,7 +33,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php include 'styles.php';?>
 <div class="social">
     <div class="wrap">
         <ul class="contact-us">
