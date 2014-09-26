@@ -103,21 +103,3 @@ function storto_custom_css_styles() {
     <?php
 }
 add_action('wp_head', 'storto_custom_css_styles');
-
-/**
- * Tracking Code
- */
-function storto_footerCode() {
-	global $storto_theme_options;
-	$se_options = get_option( 'storto_theme_options', $storto_theme_options );
-	
-	$theCode = html_entity_decode( $se_options['trackingcode'] );
-
-	if ( $se_options['trackingcode'] != '' ) {
-	echo "
-<!--Start Footer Code-->\n" . $theCode . "\n<!--End Footer Code-->
-	";
-	}
-	
-}
-add_action('wp_footer', 'storto_footerCode');

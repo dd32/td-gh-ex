@@ -20,7 +20,7 @@ Licensed under GPLv2 or later
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-	3. Theia Sticky Sidebar script (https://github.com/liviucmg/theia-sticky-sidebar) licensed under MIT
+	3. HC-Sticky script (https://github.com/somewebmedia/hc-sticky) licensed under MIT
 
 Image used in Theme Screenshot
 	1. Picjumbo (http://picjumbo.com/morning-musli/) Free photos for commercial and personal works
@@ -45,4 +45,8 @@ Version 1.0
 * Initial Release
 
 Version 1.1
+* Minor Bug Fixes
+
+Version 1.2
+* Changed JS for sticky sidebar
 * Minor Bug Fixes

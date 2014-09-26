@@ -53,9 +53,7 @@
 			/*-----------------------------------------------------------------------------------*/
 			/*  Sticky Sidebar
 			/*-----------------------------------------------------------------------------------*/ 
-				$('.site-header, .site-content').theiaStickySidebar({
-				  additionalMarginTop: 48
-				});
+				$('.site-header').hcSticky();
 			
 		} // End detect mobile browser
 	
