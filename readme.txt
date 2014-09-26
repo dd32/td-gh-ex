@@ -50,3 +50,6 @@ Version 1.1
 Version 1.2
 * Changed JS for sticky sidebar
 * Minor Bug Fixes
+
+Version 1.2.1
+* Little Error
