@@ -184,6 +184,5 @@
 		) ) );
 
 	} 
-	add_action('customize_register', 'knowledgebase_theme_customizer');
 
 ?>

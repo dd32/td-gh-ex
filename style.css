@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 1.0
+Version: 1.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Weblink Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -95,7 +95,8 @@ small {font-size:0.75em;}
 big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
+blockquote {padding:2px 0 2px 45px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/quote-dark.png') no-repeat;}
+address {padding:2px 0 2px 35px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/address-dark.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
@@ -142,7 +143,7 @@ select {max-width:100%;}
 .nav-head {width:65%; float:right; text-align:right;background:none; margin:25px 0 0; padding:0; border:0;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0;}
-.nav-head ul li {list-style-type: none; display: inline-block; position: relative; margin:0 10px 0 0;}
+.nav-head ul li {list-style-type: none; display: inline-block; position: relative; margin:0 0 0 10px;}
 .nav-head ul li a {text-decoration: none; background: none; padding:0 0 5px; display: inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}

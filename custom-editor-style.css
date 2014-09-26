@@ -32,7 +32,8 @@ small {font-size:0.75em;}
 big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; padding:10px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
+blockquote {padding:2px 0 2px 45px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/quote-dark.png') no-repeat;}
+address {padding:2px 0 2px 35px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/address-dark.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
