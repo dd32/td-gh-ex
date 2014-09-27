@@ -1,0 +1,75 @@
+/* Writing Board Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1279px) {
+	body { min-width: 1000px; }
+	.m-menu a { font-size: 13px; font-weight: 300; margin: 0px 5px 0px; }
+	.m-menu li:hover > a,
+	.m-menu .current-menu-item  > a,
+	.m-menu .current-menu-parent > a,
+	.m-menu .current-menu-ancestor ul > a,
+	.m-menu .current_page_item ul > a,
+	.m-menu .current_page_ancestor  ul > a { margin: 20px 5px 0px; }
+	.social a { font-size: 20px; height: 30px; width: 30px; }
+	.social a::before { font-size: 20px;}
+	.main-slider { height: 300px; }
+	.fslidersubtitle { font-size: 19px; }
+	.fslidedescription { font-size: 13px; }
+	.main-slider .flex-control-paging li a { width: 7px; height: 7px; }
+	h3{font-size:19px;}
+	h4{font-size:17px;}
+	.clntback .clientslider ul li img { padding: 0 10px; }
+	.m-menu ul li:hover > ul { left: 10px; top: 10px; }
+	.m-menu ul ul { top: 10px; }
+	#right-sidebar .widget.widget_archive li, #right-sidebar #archives.widget li, #right-sidebar .widget li.cat-item { width: auto; margin-right: 0; float: none; }
+}
+
+@media screen and (max-width: 1023px) {
+	body { min-width: 775px; }
+	img.site-logo,.site-title { float: none; width: 50%; margin: 0 auto; display: block; }
+	#top-menu-container { height: 120px; }
+	#main-menu { float: none; max-width: 100%; margin-top: -20px; text-align: center;}
+	.m-menu { display: inline-block; max-width: 100%; float: none; width: auto; }
+	.main-slider { height: 250px; }
+}
+
+@media screen and (max-width: 799px) {
+	body { min-width: 575px; }
+	#top-menu-container { height: 150px; }
+	img.site-logo,.site-title { max-width: 85%; }
+	#content, #right-sidebar { width: 100%; float: left; }
+	#right-sidebar form#searchform, #right-sidebar .widget,.social { width: 40%; float: none; vertical-align: top; display:inline-block; margin-right: 5%; margin-bottom: 10px; padding: 10px; }
+	.fslidelink { font-size: 15px; }
+	.main-slider  .flex-control-nav { display: none; }
+}
+
+
+@media screen and (max-width: 699px) {
+	img.site-logo,.site-title { width: 85%; }
+	#main-menu { margin: 0; float: left; }
+	.m-menu a,
+	.m-menu li:hover > a,
+	.m-menu .current-menu-item  > a,
+	.m-menu .current-menu-parent > a,
+	.m-menu .current-menu-ancestor ul > a,
+	.m-menu .current_page_item ul > a,
+	.m-menu .current_page_ancestor  ul > a { margin: 3px 5px; padding: 15px 20px; background: #0398e5; }
+	.m-menu a { width: 200px;  }
+	.m-menu li { float: none; width: 220px; margin: 0 auto; }
+	.m-menu li { padding: 0; }
+	.m-menu .menu-parent-item:after { right: 10px; top: -20px; }
+	.m-menu li:hover > ul { top: 30px; }
+}
+
+@media screen and (max-width: 599px) {
+	body { min-width: 300px; }
+	#top-menu-container { height: 90px; }
+	.main-slider { display: none; }
+	#heading { border-radius: 3px; }
+	.floatleft, .floatright { width: 100%; }
+	#right-sidebar form#searchform, #right-sidebar .widget,.social { width: 90%; float: none; margin: 10px auto; min-width: 200px; } 
+	.featuredfp { float: none; width: 97%; }
+}

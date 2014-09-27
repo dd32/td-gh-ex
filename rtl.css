@@ -1,0 +1,369 @@
+/*
+Theme Name: Writing Board
+Theme URI: http://d5creation.com/theme/writing-board/
+
+Author: D5 Creation
+Author URI: http://d5creation.com/
+
+Description: Writing Board is perfect for Personal or Corporate Blogs, Tutorial or Learning Sites and of course Multipurpose usages. Modern CSS3 and HTML 5 based design will make your site different from others. Writing Board WordPress Theme is super Elegant and Professional which will expand you widely. RESPONSIVE Layout will make your site available to all devices. The Slider will show the featured images and contents of posts automatically.  Front Page, Right and Footer Sidebar will be usable for showing the Widgets and Plugin items. Full Wide page can be used for showing showcase or other pages. You can visit the Theme Page Here: <a href=" http:// d5creation.com/theme/writing-board" target="_blank"><strong>http:// d5creation.com/theme/writing-board</strong></a>
+
+You can also find the Theme Live at <a href=" http://demo.d5creation.com/themes/?theme=Writing Board" target="_blank"><strong>http://demo.d5creation.com/themes/?theme=Writing Board </strong></a> 
+
+Version: 1.0
+
+Tags: blue, white, black, two-columns, right-sidebar, fixed-layout, fluid-layout, custom-header, custom-menu, threaded-comments, sticky-post, rtl-language-support, full-width-template, theme-options  
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Writing Board WordPress Theme, Copyright 2014: D5 Creation (www.d5creation.com)
+Writing Board is distributed under the terms of the GNU GPL
+
+
+Text Domain: writingboard
+
+*/
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align: right;
+}
+
+/* =WordPress Core and Addition
+-------------------------------------------------------------- */
+.alignnone,
+#content .alignnone,
+#content-full .alignnone,
+div .alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+.alignleft,
+#content .alignleft,
+#content-full .alignleft,
+div .alignleft {
+	float:left;
+	margin: 5px 20px 20px 0;
+}
+
+.alignright,
+#content .alignright,
+#content-full .alignright,
+div .alignright {
+	float:right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float:left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignright {
+	float:right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.wp-caption.alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin: 5px 20px 20px 0;
+}
+
+/* =Structure
+----------------------------------------------- */
+
+#left-sidebar input#s, #footer-sidebar input#s {
+	background: url("images/search.png") no-repeat scroll left 50% rgba(51, 51, 51, 0.7);
+}
+
+img.site-logo, h1.site-title {
+	float: right;
+}
+
+#content {
+	float: right;
+}
+
+#left-sidebar {
+	float: left;
+}
+
+#creditline {
+	text-align: right;
+}
+
+/* Common Elements 
+------------------------------------------------------------- */
+ol, 
+ul {
+	padding: 0 20px 10px 0;
+}
+
+address {
+	text-align: right;
+}
+
+/* Menu Elements 
+------------------------------------------------------------- */
+#main-menu {
+	float: left;
+}
+
+.m-menu {
+	float: right;
+}
+
+.m-menu li {
+	float: right;
+}
+
+.m-menu li:parent {
+	float: right;
+}
+
+.m-menu .menu-parent-item:after {
+	left: 0;
+	border-right: 0;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	right: auto;
+}
+
+.m-menu ul .menu-parent-item:after {
+	left: 0;
+	border-right: 0;
+	border-left: 11px solid #FFFFFF;
+	right: auto;
+}
+
+/* IE6 */
+
+.m-menu ul li:hover > ul {
+	right: 220px;
+	left: auto;
+}
+
+/* Sub-menu */
+
+.m-menu ul {
+	right: 0px;
+	left: auto;
+}
+
+.m-menu ul ul {
+	right: 270px;
+	left: auto;
+}
+
+.m-menu ul a {
+	text-align:right;
+}
+
+/* IE6 */
+
+/* IE7 */
+
+.m-menu ul li:first-child > a:after {
+	right: 30px;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	left: auto;
+}
+
+.m-menu ul ul li:first-child > a:after {
+	right: -8px;
+	border-right: 0;
+	border-left: 8px solid #0398e5;
+	left: auto;
+}
+
+.m-menu ul ul li:first-child a:hover:after {
+	border-left-color: #045a86;
+}
+
+/* Clear floated elements */
+
+/* IE6 */
+
+/* IE7 */
+
+.f-menu li {
+	float: right;
+}
+
+/* Wedget Elements 
+------------------------------------------------------------- */
+
+.widget ul,
+.widget ol {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+#left-sidebar .widget.widget_archive li, #left-sidebar #archives.widget li, #left-sidebar .widget li.cat-item {
+	margin-left: 4%;
+	float: right;
+	margin-right: auto;
+}
+
+.footer-widget1, .footer-widget2, .footer-widget3, .footer-widget4 {
+	float:right;
+	background: url("images/wline.png") no-repeat scroll right top transparent;
+}
+
+.footer-widget1 {
+	padding: 0px 0 0 20px;
+}
+
+.footer-widget4 {
+	padding: 0px 20px 0 0px;
+}
+
+/* Design Elements 
+------------------------------------------------------------- */
+
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select {
+	border-right:1px solid #AAAAAA;
+	border-left:1px solid #FFFFFF;
+}
+
+.page-link {
+	float: left;
+	text-align: left;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+blockquote:before,
+q:before {
+	margin-left:.20em;
+	margin-right: auto;
+}
+
+blockquote:after,
+q:after {
+	margin-right:.20em;
+	margin-left: auto;
+}
+
+.fpage-quote {
+	border-right: 10px solid #0867bf;
+	border-left: 10px solid #0867bf;
+}
+
+#container .attachment-thumbnail, #container .attachment-category-thumb {
+	float: right;
+	margin: 5px 0 5px 15px;
+}
+
+h1.page-title, 
+h1.arc-post-title {
+	text-align: right;
+}
+
+h2.post-title, 
+h2.comments, 
+h3#reply-title, 
+h2.post-title-color {
+	text-align: right;
+}
+
+.searchinfo h1.page-title:before {
+	margin-right: -110px;
+	margin-left: auto;
+}
+
+.searchinfo h3.arc-src, .searchinfo h1.page-title, .searchinfo #searchform, .searchinfo .backhome {
+	padding-right: 110px;
+	padding-left: 0;
+}
+
+.read-more:before {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.read-more:after {
+	padding-right: 10px;
+	padding-left: 0;
+}
+
+.up-bottom-border {
+	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #EEEEEE));
+}
+
+.floatright {
+	float: right;
+	text-align:right;
+}
+
+.floatleft {
+	float: left;
+	text-align:left;
+}
+
+#page-nav .alignleft {
+	text-align:left;
+	padding: 0 0 0 10px;
+}
+
+#page-nav .alignright {
+	text-align:right;
+	padding: 0 10px 0 0;
+}
+
+#commentsbox .commentlist {
+	margin: 0 -25px 0 0;
+}
+
+#commentsbox img.avatar {
+	left: -5px;
+	right: auto;
+}
+
+#commentsbox ul.children {
+	padding: 5px 20px 0 0;
+}
+
+#content .clntback img, #content-full .clntback img {
+	float: right;
+}
+
+.conwidth  a, .conwidth  a:hover {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.featuredfp {
+	float: right;
+	margin-left: 3%;
+	margin-right: auto;
+}
+
+#content .editorschoice .edchoice {
+	float: right;
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.social a {
+	float: right;
+}
+
