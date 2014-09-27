@@ -85,9 +85,9 @@ Item: address-dark.png
 Item: address-light.png
 Item: quote-dark.png
 Item: quote-light.png
-Copyright author: Clker.com
+Author: Clker.com
 Author URI: http://www.clker.com
-License: Clker.com
+License: none (public domain) 
 License URI: http://www.clker.com/disclaimer.html
 
 

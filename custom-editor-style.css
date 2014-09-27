@@ -5,9 +5,11 @@ Used to style the post and page TinyMCE editor.
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 body {font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 
+/* RESET STYLESHEET */
+
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-em, img, q, small, strong, dl, dt, dd, ol, ul, li,
+a, abbr, acronym, address, big, cite, code, ins, mark,
+em, img, q, small, strong, b, dl, dt, dd, ol, ul, li,
 table, caption, tr, th, td {
 	margin: 0;
 	padding: 0;
@@ -16,6 +18,23 @@ table, caption, tr, th, td {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* GENERAL */
 
 h1 {font-size:3.0em; line-height:1.2em;}
 h2 {font-size:2.5em; line-height:1.2em;}
@@ -27,13 +46,14 @@ h6 {font-size:0.75em; line-height:2em;}
 a {text-decoration:none; color:#08a0ff;}
 a:hover {text-decoration:underline;}
 
-strong {font-weight: bold;}
+strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
-pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; padding:10px; word-wrap: break-word;}
-code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote {padding:2px 0 2px 45px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/quote-dark.png') no-repeat;}
-address {padding:2px 0 2px 35px; font-size:1.2em; line-height:1.5em; font-style:italic; background: url('images/address-dark.png') no-repeat;}
+ins, mark {font-weight:bold; background:none; color:#08a0ff;}
+cite, em, abbr, acronym {font-style:italic;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; background:#f8f8f8; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
+address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
