@@ -104,7 +104,8 @@ function twentyfourteen_paging_nav() {
 		return;
 	?>
 	<div class="navigation paging-navigation" role="navigation">
-		<h3><?php _e( 'Posts navigation', 'twentythirteen' ); ?></h3>
+<div class="center">
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'twentythirteen' ); ?></h3>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -114,7 +115,7 @@ function twentyfourteen_paging_nav() {
 			<?php if ( get_previous_posts_link() ) : ?>
 			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"></span>', 'twentythirteen' ) ); ?></div>
 			<?php endif; ?>
-
+</div>
 		</div><!-- .nav-links -->
 	</div><!-- .navigation -->
 	<?php
@@ -137,17 +138,18 @@ function twentyfourteen_post_nav() {
 		return;
 	?>
 	<div class="navigation post-navigation" role="navigation">
-		<h3><?php _e( 'Post navigation', 'twentythirteen' ); ?></h3>
+<div class="center">
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'twentythirteen' ); ?></h3>
 		<div class="nav-links">
 
 			<?php previous_post_link( 'Previous Post %link', _x( '<span class="meta-nav"></span> %title', 'Previous post link', 'twentythirteen' ) ); ?>
 			<?php next_post_link( 'Next Post %link', _x( '%title <span class="meta-nav"></span>', 'Next post link', 'twentythirteen' ) ); ?>
 
 		</div><!-- .nav-links -->
+</div>
 	</div><!-- .navigation -->
 	<?php
 }
-
 
 function remove_twentyfourteen_widgets(){
 

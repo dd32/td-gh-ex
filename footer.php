@@ -36,7 +36,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 
 <div class="site-info">
-
+<div class="center">
 <?php 
 global $badeyes_options;
 $badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
@@ -51,6 +51,7 @@ echo "&nbsp;All rights reserved";
 ?>
 
 </a>
+</div>
 </div><!-- .site-info -->
 
 			<div id="site-generator">
@@ -58,8 +59,8 @@ echo "&nbsp;All rights reserved";
 				<?php do_action( 'twentyten_credits' ); ?>
 
                 <?php if( $badeyes_settings['author_credits'] ) : ?>
-
-<p>This Accessible 2014 Child Theme created by<a href="http://www.badeyes.com">Badeyes Design &amp; Consulting</a>            <?php endif; ?>
+<div class="center"><p>This Accessible 2014 Child Theme created by<a href="http://www.badeyes.com">Badeyes Design &amp; Consulting</a></p></div>
+<?php endif; ?>
 
 			</div><!-- #site-generator -->
 </footer><!-- #colophon -->

@@ -36,7 +36,7 @@ global $badeyes_options;
 
 <?php if( $badeyes_settings['side_heading'] != '' ) : ?>
 <?php 
-echo "<h2>";
+echo "<h2 class=\"sidebarH2\">";
 echo $badeyes_settings['side_heading']; 
 echo "</h2>";
 ?>
