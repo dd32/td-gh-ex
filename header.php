@@ -30,7 +30,7 @@
 <div id="top-bar" class="top-bar home-border<?php get_header_fixed_class(); ?>">
 
 	<div class="row">
-		<div class="columns large-4 medium-3  small-6">
+		<div class="columns large-4 medium-6  small-8">
             <?php
             /**
              * Add Theme logo : template_tags
@@ -40,7 +40,7 @@
     </div>
 
 
-		<div class="columns large-12 medium-13 small-10">
+		<div class="columns large-12 medium-10 small-8">
 			<!--falayout search menu-->
 			<?php harmonux_searchmenu(); //display search menu ?>
 
