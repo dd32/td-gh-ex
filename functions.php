@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.0' );
+define( 'KAIRA_THEME_VERSION' , '1.1' );
 
 // Adding the Redux Framework
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) {

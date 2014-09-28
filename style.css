@@ -1,10 +1,10 @@
 /*
 Theme Name: Electa
-Theme URI: http://wordpress.org/themes/electa
+Theme URI: http://wordpress.org/themes/electa/
 Author: Kaira
-Author URI: http://profiles.wordpress.org/kaira
+Author URI: http://www.kairaweb.com/
 Description: A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, Site Origins Page Builder and more, making it very simple to build a nice website.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -1882,4 +1882,17 @@ object {
         display: none;
     }
     
+}
+
+body,
+.conica-banner-heading h5,
+.conica-carousel-block,
+.conica-heading-text {
+    font-family: 'OpenSans', sans-serif;
+    color: #666666;
+}
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2A2A2A;
 }
