@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a colorful free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Primary sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, custom header-image, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -93,12 +93,14 @@ h6 {font-size:0.75em; line-height:2em;}
 a {text-decoration:underline; color:#eee;}
 a:hover {text-decoration:none;}
 
-strong {font-weight: bold;}
+strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
-pre {margin: 5px 0; border: 1px solid #eee; background: #f8f8f8; color:#333; padding:10px; word-wrap: break-word;}
-code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
+ins, mark {font-weight:bold; background:none; color:#333;}
+cite, em, abbr, acronym {font-style:italic;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; color:#333; background:#f8f8f8; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-light.png') no-repeat;}
+address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
