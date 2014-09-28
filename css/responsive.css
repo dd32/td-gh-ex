@@ -98,14 +98,14 @@
 		margin-right: 5%;
 	}
 
-	#bottom-section .testimonial-slider, 
+	#bottom-section .testimonial-slider-wrap, 
 	#bottom-section .thumbnail-gallery, 
 	#bottom-section .text-box{
 		width: 31%; 
 		margin-right: 3.5%
 	}
     
-    #bottom-section .testimonial-slider{
+    #bottom-section .testimonial-slider-wrap{
         margin-right:0;
     }
 
@@ -159,7 +159,7 @@
 		float: none;
 	}
 
-	#bottom-section .testimonial-slider, 
+	#bottom-section .testimonial-slider-wrap, 
 	#bottom-section .gallery, 
 	#bottom-section .subscribe{
 		width: auto;

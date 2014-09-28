@@ -27,17 +27,4 @@ jQuery(function(){
     
     jQuery(".fancybox-gallery").nivoLightbox();
 
-    if(jQuery(window).width() > 940 ){
-    var totalWidth = 0;
-    var wrapperWidth = jQuery('#site-navigation .menu').width()-100;
-    jQuery('#site-navigation .menu > li').each(function(){
-    totalWidth = jQuery(this).outerWidth(true) + totalWidth;
-    if(totalWidth > wrapperWidth){
-      jQuery(this).addClass('more-item');
-    }
-    });
-  jQuery('#site-navigation .menu .more-item').wrapAll('<li class="menu-item-has-children more-menu-item"><ul></ul></li>');
-  jQuery('.more-menu-item').prepend('<a href=#>More</a>');
-    }
-
  });
