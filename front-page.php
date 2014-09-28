@@ -1,6 +1,9 @@
-<?php get_header(); ?>
-<?php get_template_part('home','slideshow'); ?>
-<?php get_template_part('home','services'); ?>
-<?php get_template_part('home','portfolio'); ?>
-<?php get_template_part('home','blog'); ?>
-<?php get_footer(); ?>
+<?php get_header(); 
+get_template_part('home','slideshow'); 
+get_template_part('home','services'); 
+$wl_theme_options = get_option('enigma_options');
+if($wl_theme_options['portfolio_home'] != "off") {
+get_template_part('home','portfolio'); 
+}
+get_template_part('home','blog'); 
+get_footer(); ?>

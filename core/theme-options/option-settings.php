@@ -297,7 +297,10 @@ $site ="http://www.weblizar.com" ;?>
 			</table>			
 		</div>
 		<div class="section">
-					
+			<h3><?php _e('Enable Portfolio on Home','weblizar'); ?></h3>
+			<input type="checkbox" <?php if($wl_theme_options['portfolio_home']=='on') echo "checked='checked'"; ?> id="portfolio_home" name="portfolio_home" > <span class="explain"><?php _e('Enable Portfolio On Home.','weblizar');?></span>
+		</div>
+		<div class="section">					
 		<h3><?php _e('Portfolio Section Heading','weblizar'); ?></h3>
 		<input  class="weblizar_inpute" type="text" name="port_heading" id="port_heading"  value="<?php if($wl_theme_options['port_heading']!='') { echo esc_attr($wl_theme_options['port_heading']); } ?>" >	
 		<span class="explain"><?php  _e('Type here your Portfolio heading','weblizar');?></span>

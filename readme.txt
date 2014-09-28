@@ -5,6 +5,11 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.1 [27/09/14]
+1) comment_function Issue fixed.
+2) White Space Issue Fixed.
+3) Portfolio Check box Enable.
+
 @Version: 1.0 [06/08/14]
 Rest all issue fixed.
 @Version 0.99 [03/08/14]

@@ -10,15 +10,13 @@ function weblizar_comment( $comment, $args, $depth )
 	//translations
 	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
 	__('Reply','weblizar'); ?>
-	 
-        
-        <div class="media enigma_comment_box">
+    <div class="media enigma_comment_box">
 			<a class="pull_left_comment">
             <?php echo get_avatar($comment,$size = '60'); ?>
             </a>
            <div class="media-body">
 			    <div class="enigma_comment_detail">
-				<h4 class="enigma_comment_detail_title"><?php the_author();?></h4>
+				<h4 class="enigma_comment_detail_title"><?php comment_author();?></h4>
 				
 				<span class="enigma_comment_date"><?php comment_date('F j, Y');?><?php _e('at','weblizar');?>&nbsp;<?php comment_time('g:i a'); ?></span>
 				<?php comment_text() ; ?>				
@@ -33,9 +31,8 @@ function weblizar_comment( $comment, $args, $depth )
 				<?php endif; ?>
 				</div>
 			</div>							
-		</div>		
+	</div>		
 <?php
 }
 endif;
-
 ?>

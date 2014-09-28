@@ -54,7 +54,10 @@
 			{
 				$wl_theme_options[$key]=sanitize_text_field($_POST[$key]);	
 			}
-			
+			if($_POST['portfolio_home']){
+				echo $wl_theme_options['portfolio_home']=sanitize_text_field($_POST['portfolio_home']); } 
+				else
+				{ echo $wl_theme_options['portfolio_home']="off"; } 
 			update_option('enigma_options', stripslashes_deep($wl_theme_options));
 			
 		}	

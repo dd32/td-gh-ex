@@ -69,6 +69,7 @@ function weblizar_default_settings()
 			'service_3_link'=>"#",			
 
 			//Portfolio Settings:
+			'portfolio_home'=>'off',
 			'port_heading' => 'Recent Works',
 			'port_1_img'=> $ImageUrl4,
 			'port_1_title'=>'modsætning',
@@ -144,7 +145,7 @@ function reset_portfolio_setting()
 	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
 	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
 	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
-	
+	$wl_theme_options['portfolio_home'] = "off";
 	$wl_theme_options['port_heading']="Recent Works";
 	$wl_theme_options['port_1_img']=$ImageUrl4;
 	$wl_theme_options['port_2_img']=$ImageUrl5;
