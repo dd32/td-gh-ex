@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+BlueGray version 2.0 - october 2014
+- added and adjusted text markup tags
+- several minor adjustments 
+
 BlueGray version 1.9 - july 2014
 - added several adjustments for better responsive layout
 - text-align justify for content area, sidebar and footer
