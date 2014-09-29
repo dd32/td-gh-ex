@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.1.8');
+define( 'GENERATE_VERSION', '1.1.9');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -606,4 +606,19 @@ function generate_dequeue_mobile_scripts() {
 	$styles = 'body .grid-container {width:' . $generate_settings['container_width'] . 'px;max-width:' . $generate_settings['container_width'] . 'px}';
 	$styles .= '.menu-toggle {display:none;}';
 	wp_add_inline_style( 'generate-style', $styles );
+}
+
+/** 
+ * Add compatibility for IE8 and lower
+ * @since 1.1.9
+ */
+add_action('wp_head','generate_ie_compatibility');
+function generate_ie_compatibility()
+{
+?>
+	<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri();?>/js/html5shiv.js"></script>
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/ie.css" />
+	<![endif]-->
+<?php
 }

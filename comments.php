@@ -66,13 +66,8 @@ if ( post_password_required() )
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'generate' ); ?></p>
-	<?php endif; ?>
+	<?php endif;
 
-	<?php 
-	$singular_comment_label_var = apply_filters('singular_comment_label', __('Comment','generate'));
-	$plural_comment_label_var = apply_filters('plural_comment_label', __('Comments','generate'));
-	$singular_lower_comment_label_var = apply_filters('singular_lower_comment_label',__('comment','generate'));
-	$plural_lower_comment_label_var = apply_filters('plural_lower_comment_label',__('comments','generate'));
 	$commenter = wp_get_current_commenter();
 	$fields = array(
 		'author' => '<input placeholder="' . __( 'Name','generate' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />',
@@ -82,16 +77,16 @@ if ( post_password_required() )
 	$defaults = array(
 		'fields'		=> apply_filters( 'comment_form_default_fields', $fields ),
 		'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
-		'must_log_in' 	=> '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%1$s">logged in</a> to post a %2$s.','generate' ), wp_login_url( get_permalink() ), $singular_lower_comment_label_var ) . '</p>',
+		'must_log_in' 	=> '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%1$s">logged in</a> to post a comment.','generate' ), wp_login_url( get_permalink() ) ) . '</p>',
 		'logged_in_as'	=> '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','generate' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 		'comment_notes_before' => null,
 		'comment_notes_after'  => null,
 		'id_form'              => 'commentform',
 		'id_submit'            => 'submit',
-		'title_reply'          => sprintf(__( 'Leave a %s','generate' ), $singular_comment_label_var),
-		'title_reply_to'       => __( 'Leave a Reply to %s','generate' ),
-		'cancel_reply_link'    => __( 'Cancel reply','generate' ),
-		'label_submit'         => sprintf( __( 'Post %s','generate' ), $singular_comment_label_var ),
+		'title_reply'          => apply_filters( 'generate_leave_comment', __( 'Leave a Comment','generate' ) ),
+		'title_reply_to'       => apply_filters( 'generate_leave_reply', __( 'Leave a Reply to %s','generate' ) ),
+		'cancel_reply_link'    => apply_filters( 'generate_cancel_reply', __( 'Cancel reply','generate' ) ),
+		'label_submit'         => apply_filters( 'generate_post_comment', __( 'Post Comment','generate' ) ),
 	);
 	comment_form($defaults); 
 	?>

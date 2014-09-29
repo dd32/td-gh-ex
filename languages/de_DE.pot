@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Generate\n"
-"POT-Creation-Date: 2014-09-20 09:55-0800\n"
-"PO-Revision-Date: 2014-09-20 09:56-0800\n"
+"POT-Creation-Date: 2014-09-28 16:32-0800\n"
+"PO-Revision-Date: 2014-09-28 16:33-0800\n"
 "Last-Translator: Marc Haunschild <mh@mhis.de>\n"
 "Language-Team: GeneratePress Development\n"
 "Language: de_DE\n"
@@ -88,41 +88,26 @@ msgstr "Neuere Kommentare &rarr;"
 msgid "Comments are closed."
 msgstr "Die Kommentarfunktion ist geschlossen."
 
-#: ../comments.php:72
-msgid "Comment"
-msgstr "Kommentar"
-
 #: ../comments.php:73
-msgid "Comments"
-msgstr "Kommentare"
-
-#: ../comments.php:74
-msgid "comment"
-msgstr "kommentiert"
-
-#: ../comments.php:75
-msgid "comments"
-msgstr "kommentiert"
-
-#: ../comments.php:78
 msgid "Name"
 msgstr "Name"
 
-#: ../comments.php:79 ../inc/addons.php:102
+#: ../comments.php:74 ../inc/addons.php:102
 msgid "Email"
 msgstr "Email"
 
-#: ../comments.php:80 ../inc/options.php:75
+#: ../comments.php:75 ../inc/options.php:75
 msgid "Website"
 msgstr "Website"
 
-#: ../comments.php:85
+#: ../comments.php:80
 #, php-format
-msgid "You must be <a href=\"%1$s\">logged in</a> to post a %2$s."
+msgid "You must be <a href=\"%1$s\">logged in</a> to post a comment."
 msgstr ""
-"Sie müssen  <a href=\"%1$s\">sich anmelden</a> um einen  %2$s zu verfassen."
+"Sie müssen  <a href=\"%1$s\">sich anmelden</a> um einen Kommentar zu "
+"verfassen."
 
-#: ../comments.php:86
+#: ../comments.php:81
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -131,24 +116,24 @@ msgstr ""
 "Sie haben sich als <a href=\"%1$s\">%2$s</a> angemeldet. <a href=\"%3$s\" "
 "title=\"Von diesem Konto abmelden\">Abmelden?</a>"
 
-#: ../comments.php:91
-#, php-format
-msgid "Leave a %s"
-msgstr "Hinterlasse einen %s"
+#: ../comments.php:86
+#, fuzzy
+msgid "Leave a Comment"
+msgstr "Kommentar verfassen"
 
-#: ../comments.php:92
+#: ../comments.php:87
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Antworten auf %s"
 
-#: ../comments.php:93
+#: ../comments.php:88
 msgid "Cancel reply"
 msgstr "Antworten abbrechen"
 
-#: ../comments.php:94
-#, php-format
-msgid "Post %s"
-msgstr "Verfasse %s"
+#: ../comments.php:89
+#, fuzzy
+msgid "Post Comment"
+msgstr "1 Kommentar"
 
 #: ../content-page.php:20 ../content-single.php:22 ../content.php:36
 #: ../image.php:56
@@ -165,10 +150,6 @@ msgstr "Bearbeiten"
 #: ../content.php:57
 msgid ", "
 msgstr ", "
-
-#: ../content.php:33
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Mehr lesen <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content.php:51 ../content.php:61
 #, php-format
@@ -939,6 +920,27 @@ msgstr "Suchergebnisse für: %s"
 #: ../sidebar-left.php:30 ../sidebar.php:30
 msgid "Meta"
 msgstr "Meta"
+
+#~ msgid "Comment"
+#~ msgstr "Kommentar"
+
+#~ msgid "Comments"
+#~ msgstr "Kommentare"
+
+#~ msgid "comment"
+#~ msgstr "kommentiert"
+
+#~ msgid "comments"
+#~ msgstr "kommentiert"
+
+#~ msgid "Leave a %s"
+#~ msgstr "Hinterlasse einen %s"
+
+#~ msgid "Post %s"
+#~ msgstr "Verfasse %s"
+
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Mehr lesen <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "Log in"
 #~ msgstr "Anmelden"

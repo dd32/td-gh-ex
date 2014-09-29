@@ -391,7 +391,15 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'button:hover, 
 			html input[type="button"]:hover, 
 			input[type="reset"]:hover, 
-			input[type="submit"]:hover' => array(
+			input[type="submit"]:hover,
+			button:focus, 
+			html input[type="button"]:focus, 
+			input[type="reset"]:focus, 
+			input[type="submit"]:focus,
+			button:active, 
+			html input[type="button"]:active, 
+			input[type="reset"]:active, 
+			input[type="submit"]:active' => array(
 				'background-color' => $generate_settings['form_button_background_color_hover'],
 				'color' => $generate_settings['form_button_text_color_hover']
 			)

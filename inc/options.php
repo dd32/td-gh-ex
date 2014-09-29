@@ -188,7 +188,7 @@ function generate_settings_page()
 												echo '<span class="addon-inactive"><a title="' . $addon['name'] . ': ' . __('Not activated.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
 											else :
 
-												if ( get_option( 'generate_package_secondary_nav' ) !== 'activated' ) :
+												if ( get_option( $addon['package'] ) !== 'activated' ) :
 													echo '<span class="addon-inactive need-license"><a title="' . $addon['name'] . ': ' . __('Activated and unverified. Please activate below.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';
 												else :
 													echo '<span class="addon-active"><a title="' . $addon['name'] . ': ' . __('Activated and verified.','generate') . '" href="' . $addon['url'] . '" target="_blank"><img src="' . $addon['img'] . '" alt="' . $addon['name'] . '" /></a></span>';

@@ -10,6 +10,15 @@ Changelog Legend:
 
 ----
 
+(9/28/2014) - 1.1.9
+[!] Active/focus styles added to form button CSS
+[*] Fix messed up layout in IE8 and below
+[+] Add filters to search widget
+[+] Filters added to comment labels
+[*] Translation file updated
+
+----
+
 (9/20/2014) - 1.1.8
 [x] Remove login from footer
 [!] Fix mobile bug with alignleft and alignright classes

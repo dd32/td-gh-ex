@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2014-09-20 09:53-0800\n"
-"PO-Revision-Date: 2014-09-20 09:55-0800\n"
+"POT-Creation-Date: 2014-09-28 16:31-0800\n"
+"PO-Revision-Date: 2014-09-28 16:32-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -96,63 +96,45 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:72
-msgid "Comment"
-msgstr ""
-
 #: comments.php:73
-msgid "Comments"
-msgstr ""
-
-#: comments.php:74
-msgid "comment"
-msgstr ""
-
-#: comments.php:75
-msgid "comments"
-msgstr ""
-
-#: comments.php:78
 msgid "Name"
 msgstr ""
 
-#: comments.php:79 inc/addons.php:102
+#: comments.php:74 inc/addons.php:102
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/options.php:75
+#: comments.php:75 inc/options.php:75
 msgid "Website"
 msgstr ""
 
-#: comments.php:85
+#: comments.php:80
 #, php-format
-msgid "You must be <a href=\"%1$s\">logged in</a> to post a %2$s."
+msgid "You must be <a href=\"%1$s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:86
+#: comments.php:81
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:91
-#, php-format
-msgid "Leave a %s"
+#: comments.php:86
+msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:92
+#: comments.php:87
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:93
+#: comments.php:88
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:94
-#, php-format
-msgid "Post %s"
+#: comments.php:89
+msgid "Post Comment"
 msgstr ""
 
 #: content-page.php:20 content-single.php:22 content.php:36 image.php:56
@@ -167,10 +149,6 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:31 content-single.php:34 content.php:47 content.php:57
 msgid ", "
-msgstr ""
-
-#: content.php:33
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: content.php:51 content.php:61
