@@ -1,0 +1,169 @@
+/*
+Theme Name: 14-Glassy
+Theme URI: https://github.com/kcyeu/14-glassy
+Description: Derived from WordPress 2014 official theme, fine-tuned for mobile devices to improve readability.
+Author: Kuo-Cheng Yeu
+Author URI: http://mikuru.tw/
+Template: twentyfourteen
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: twentyfourteen-child
+
+*/
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+/**
+ * Table of Contents:
+ * 5.0 - Navigation
+ *   6.2 - Entry Header
+ * 9.0 - Featured Content
+ * 11.0 - Media Queries
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 5.0 Nagivation
+ * -----------------------------------------------------------------------------
+ */
+
+.menu-toggle {
+	background-color: transparent;
+}
+
+
+/**
+ * 6.2 Entry Header
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-header {
+	z-index: 2; /* to avoid touch scroll malfunction when small screen */
+}
+
+.site-content .entry-header {
+    opacity: 0.75; /* title of post*/
+	background-color: #fff;
+	padding: 0 10px 12px;
+}
+
+
+
+/**
+ * 9.0 Featured Content
+ * -----------------------------------------------------------------------------
+ */
+
+.featured-content .entry-header {
+    bottom: 0;
+    opacity: 0.75;
+    position: relative;
+}
+
+.slider-control-paging {
+	//background-color: #0a4958;  /* hard-code hack */
+	background-color: transparent;
+    margin: -48px 0 0 0;
+}
+
+/**
+ * 11.0 Media Queries
+ * -----------------------------------------------------------------------------
+ */
+@media screen and (max-width: 400px) {
+    .grid .featured-content .entry-header,
+    .ie8 .grid .featured-content .entry-header {
+    //    position: relative;
+    }
+
+    .slider .featured-content .entry-header,
+    .ie8 .slider .featured-content .entry-header {
+        position: absolute;
+    }
+
+    .featured-content .entry-header {
+        width: 100%;        /* enhance readability */
+        min-height: 72px;
+        padding: 8px 0px 16px 8px; /* small screen height */
+    }
+
+    .featured-content a {
+        white-space: nowrap;
+    }
+
+    .site-info,
+    .entry-meta {
+        display: none;  /* not show category when small screen */
+    }
+}
+
+@media screen and (min-width: 401px) {
+    .grid .featured-content .entry-header,
+    .ie8 .grid .featured-content .entry-header {
+    //    position: relative;
+    }
+
+    .slider .featured-content .entry-header,
+    .ie8 .slider .featured-content .entry-header {
+        position: absolute;
+    }
+
+	a.post-thumbnail:hover img {
+		opacity: 1.0;
+	}
+
+    .featured-content .entry-header {
+        width: 100%;        /* enhance readability */
+        padding: 12px 10px; /* small screen height */
+    }
+
+    .featured-content a {
+        white-space: nowrap;
+    }
+}
+
+/* transition */
+@media screen and (min-width: 594px) {
+    .featured-content a {
+    }
+}
+
+/* mid large screen */
+@media screen and (min-width: 673px) {
+    .grid .featured-content .hentry:nth-child( 2n+1 ):last-child {                       
+        display: none;
+    }
+
+    .featured-content a.post-thumbnail:hover img {
+		opacity: 0.85;
+	}
+
+    .slider .featured-content .entry-header {
+        width: 66%;
+    }
+
+    .slider-control-paging {
+        width: 66%;
+    }
+
+    .slider-direction-nav li {
+        opacity: 0.75
+    }
+
+    .featured-content a {
+        white-space: normal;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .grid .featured-content .hentry:nth-child( 2n+1 ):last-child {
+        display: block;
+    }
+}
+
