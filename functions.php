@@ -5,8 +5,7 @@
  * @package Conica
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.0.0' );
-define( 'KAIRA_THEME_ENDPOINT' , 'http://kairaweb.com/themes/' );
+define( 'KAIRA_THEME_VERSION' , '1.1' );
 
 // Adding the Redux Framework
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) {
@@ -27,7 +26,7 @@ include get_template_directory() . '/includes/widgets.php';
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( 'kaira_setup_theme' ) ) :
+if ( ! function_exists( 'conica_setup_theme' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -200,21 +199,21 @@ add_action('wp_head', 'conica_print_styles', 11);
 function conica_scripts() {
     wp_enqueue_style( 'conica-google-font-default', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic');
     wp_enqueue_style( 'conica-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
-	wp_enqueue_style( 'conica-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
-	wp_enqueue_script( 'conica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-	wp_enqueue_script( 'conica-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'conica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
+	wp_enqueue_script( 'conica-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
     
-	wp_enqueue_script( 'conica-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'conica-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
     
-	wp_enqueue_script( 'conica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
+	wp_enqueue_script( 'conica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), KAIRA_THEME_VERSION, true );
     
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'kaira-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), '1.0' );
+		wp_enqueue_script( 'kaira-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), KAIRA_THEME_VERSION );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'conica_scripts' );

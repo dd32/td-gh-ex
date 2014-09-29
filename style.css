@@ -1,10 +1,10 @@
 /*
 Theme Name: Conica
-Theme URI: http://kairaweb.com/
+Theme URI: http://wordpress.org/themes/conica/
 Author: Kaira
-Author URI: http://profiles.wordpress.org/kaira
+Author URI: http://www.kairaweb.com/
 Description: Conica is a powerful multi-purpose Wordpress theme that integrates nicely with some powerful Wordpress plugins such as WooCommerce, Page Builder, Contact Form 7 and more. The Conica theme is very customizable and easy to use, and is 100% responsive, adapting to all screen sizes.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -1121,10 +1121,6 @@ a {
     box-sizing: border-box;
 }
 
-.content-area-full {
-    width: 100%;
-    padding: 30px 0;
-}
 .site-boxed .content-area-full {
     padding: 30px 20px;
 }
@@ -1138,6 +1134,7 @@ a {
 }
 
 .woocommerce-page .content-area,
+.page-template .content-area,
 .archive .content-area,
 .single .content-area,
 .search .content-area,
@@ -1156,6 +1153,7 @@ a {
 }
 
 .woocommerce-page .widget-area,
+.page-template .widget-area,
 .archive .widget-area,
 .single .widget-area,
 .search .widget-area,
@@ -1208,6 +1206,13 @@ a {
     padding: 30px 20px;
     max-width: 1240px;
     box-shadow: none;
+}
+
+.page-template .content-area-full,
+.content-area-full {
+    box-shadow: none;
+    width: 100%;
+    padding: 30px 0;
 }
 
 .woocommerce #content {
