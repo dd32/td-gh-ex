@@ -1,4 +1,4 @@
-# Copyright (C) 2014 Alba
+# Copyright (C) 2014 Albar
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""

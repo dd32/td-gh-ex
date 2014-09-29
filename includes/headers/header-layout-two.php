@@ -44,7 +44,7 @@ global $cx_framework_options; ?>
                             <?php endif; ?>
                         </div>
                         <nav id="site-navigation" class="navigation-main" role="navigation">
-                            <h1 class="menu-toggle"><?php _e( 'Menu', 'alba' ); ?></h1>
+                            <h1 class="menu-toggle"><?php _e( 'Menu', 'albar' ); ?></h1>
                             <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
                         </nav><!-- #site-navigation -->
                     </div>

@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package kaira
+ * @package albar
  */
 
 if ( ! function_exists( 'kaira_content_nav' ) ) :
@@ -31,21 +31,21 @@ function kaira_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'alba' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'albar' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alba' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alba' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'albar' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'albar' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'alba' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'albar' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'alba' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'albar' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -68,7 +68,7 @@ function kaira_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'alba' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'alba' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'albar' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'albar' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -78,20 +78,20 @@ function kaira_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'alba' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'albar' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'alba' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'albar' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'alba' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'albar' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'alba' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'albar' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -177,12 +177,12 @@ function kaira_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a><span class="byline"><span class="author vcard"> <i class="fa fa-user"></i> <a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'alba' ),
+	printf( __( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a><span class="byline"><span class="author vcard"> <i class="fa fa-user"></i> <a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'albar' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		$time_string,
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'alba' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'albar' ), get_the_author() ) ),
 		get_the_author()
 	);
 }

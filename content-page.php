@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package alba
+ * @package albar
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -11,10 +11,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'alba' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'albar' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'alba' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'albar' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

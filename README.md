@@ -1,51 +1,40 @@
-Alba Theme
----------------
-Alba is a multipurpose WordPress theme, based on _s with integration into cxThemes's extras framework using Redux Framework.
+=== Electa ===
+Contributors: Kaira
+Donate link:
+Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
+Tested up to: 3.9
+Stable tag: 3.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Alba is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+== Description ==
+
+Alba is a responsive multipurpose Wordpress theme. You can use Alba to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
+
+* Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
+
+== Installation ==
+
+1. In your admin panel, go to Appearance -> Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+Electa divides the footer by the amount of widgets added to the Footer Widget Area. Configure these areas by going to Appearance â†’ Widgets in your Dashboard.
+
+Albar's Settings:
+
+All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
+View the settings under Appearance -> ALBA Settings.
+
+= Quick Specs (all measurements in pixels) =
+
+1. The footer widget area widths vary depending on the number of widgets added.
+3. Featured Images work best at a minimum of 1000 wide and 600 high.
+
+== Changelog ==
 
 
-License
----------------
 
-Alba WordPress Theme, Copyright 2014 cxThemes
-Alba is distributed under the terms of the GNU GPL
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see http://www.gnu.org/copyleft/gpl.html.
-
-Alba WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012 Automattic http://underscores.me/
-Underscores WordPress Theme is distributed under the terms of the GNU GPL
-
-Alba WordPress Theme bundles the following third-party resources:
-
-Redux Framework, Copyright Redux Framework
-Redux is 100% open source, licensed under the Version 2 of the GNU General Public License
-Source: http://reduxframework.com
-
-Caroufredsel, Copyright 2013 Fred Heusschen
-Free to use under the GPL license.
-Source: www.frebsite.nl
-
-FontAwesome Copyright 2012 Dave Gandy
-licensed under SIL OFL 1.1 <http://scripts.sil.org/OFL>
-
-
-Demo Photos
----------------
-This theme contains the following demo photos.
-
-* 
-
-
-cxThemes Extras
----------------
-All code is licensed under GPL 2.0 and copyright cxThemes unless otherwise stated in the file header.
+* Initial release.

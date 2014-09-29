@@ -23,8 +23,8 @@ global $cx_framework_options; ?>
 						<p><?php echo wp_kses_post( $cx_framework_options['cx-options-site-msg-forofor'] ) ?></p>
 						
 						<div class="not-found-options">
-                            <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php esc_html_e( 'Return Home', 'alba' ) ?></a>
-                            <a class="alba-button search-button"><?php esc_html_e( 'Search', 'alba' ) ?></a>
+                            <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php esc_html_e( 'Return Home', 'albar' ) ?></a>
+                            <a class="alba-button search-button"><?php esc_html_e( 'Search', 'albar' ) ?></a>
                         </div>
 						
 					</div><!-- .entry-content -->

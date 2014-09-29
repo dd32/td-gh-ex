@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Displays an Alba Icon
+ * Displays an Albar Icon
  ****************************************************************************************************** */
 class alba_icon extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'alba_icon',
-			__( 'Alba Icon', 'alba' ),
+			__( 'Albar Icon', 'albar' ),
 			array(
-				'description' => __( 'Displays a Font Awesome Icon of your choice.', 'alba' ),
+				'description' => __( 'Displays a Font Awesome Icon of your choice.', 'albar' ),
 			)
 		);
 	}
@@ -45,51 +45,51 @@ class alba_icon extends WP_Widget {
 		) );
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php _e( 'Icon Name', 'alba' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php _e( 'Icon Name', 'albar' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'alba' ) ?></span>
+            <span class="widgets-desc"><?php _e( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'albar' ) ?></span>
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php _e( 'Icon Background Color', 'alba' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php _e( 'Icon Background Color', 'albar' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_bg_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>" value="<?php echo esc_attr( $instance['icon_bg_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'alba' ) ?></span>
+            <span class="widgets-desc"><?php _e( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php _e( 'Icon Color', 'alba' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php _e( 'Icon Color', 'albar' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_color' ) ?>" value="<?php echo esc_attr( $instance['icon_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'alba' ) ?></span>
+            <span class="widgets-desc"><?php _e( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php _e( 'Icon Size', 'alba' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php _e( 'Icon Size', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_size' ) ?>" id="<?php echo $this->get_field_id( 'icon_size' ) ?>">
-				<option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'alba' ) ?></option>
-				<option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'alba' ) ?></option>
-                <option value="34" <?php selected( $instance['icon_size'], '34' ) ?>><?php esc_html_e( '34px', 'alba' ) ?></option>
-                <option value="48" <?php selected( $instance['icon_size'], '48' ) ?>><?php esc_html_e( '48px', 'alba' ) ?></option>
-                <option value="66" <?php selected( $instance['icon_size'], '66' ) ?>><?php esc_html_e( '66px', 'alba' ) ?></option>
-                <option value="86" <?php selected( $instance['icon_size'], '86' ) ?>><?php esc_html_e( '86px', 'alba' ) ?></option>
-                <option value="100" <?php selected( $instance['icon_size'], '100' ) ?>><?php esc_html_e( '100px', 'alba' ) ?></option>
+				<option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'albar' ) ?></option>
+				<option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'albar' ) ?></option>
+                <option value="34" <?php selected( $instance['icon_size'], '34' ) ?>><?php esc_html_e( '34px', 'albar' ) ?></option>
+                <option value="48" <?php selected( $instance['icon_size'], '48' ) ?>><?php esc_html_e( '48px', 'albar' ) ?></option>
+                <option value="66" <?php selected( $instance['icon_size'], '66' ) ?>><?php esc_html_e( '66px', 'albar' ) ?></option>
+                <option value="86" <?php selected( $instance['icon_size'], '86' ) ?>><?php esc_html_e( '86px', 'albar' ) ?></option>
+                <option value="100" <?php selected( $instance['icon_size'], '100' ) ?>><?php esc_html_e( '100px', 'albar' ) ?></option>
 			</select>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php _e( 'Icon Style', 'alba' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php _e( 'Icon Style', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_style' ) ?>" id="<?php echo $this->get_field_id( 'icon_style' ) ?>">
-                <option value="none" <?php selected( $instance['icon_style'], 'none' ) ?>><?php esc_html_e( 'None', 'alba' ) ?></option>
-				<option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'alba' ) ?></option>
-				<option value="square" <?php selected( $instance['icon_style'], 'square' ) ?>><?php esc_html_e( 'Square', 'alba' ) ?></option>
+                <option value="none" <?php selected( $instance['icon_style'], 'none' ) ?>><?php esc_html_e( 'None', 'albar' ) ?></option>
+				<option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'albar' ) ?></option>
+				<option value="square" <?php selected( $instance['icon_style'], 'square' ) ?>><?php esc_html_e( 'Square', 'albar' ) ?></option>
 			</select>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php _e( 'Icon Alignment', 'alba' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php _e( 'Icon Alignment', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_align' ) ?>" id="<?php echo $this->get_field_id( 'icon_align' ) ?>">
-				<option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'alba' ) ?></option>
-				<option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'alba' ) ?></option>
-				<option value="right" <?php selected( $instance['icon_align'], 'right' ) ?>><?php esc_html_e( 'Right', 'alba' ) ?></option>
+				<option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'albar' ) ?></option>
+				<option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'albar' ) ?></option>
+				<option value="right" <?php selected( $instance['icon_align'], 'right' ) ?>><?php esc_html_e( 'Right', 'albar' ) ?></option>
 			</select>
 		</p>
 		<?php

@@ -50,7 +50,7 @@ if ( have_posts() ) : ?>
                                 <i class="fa fa-calendar"></i> <?php kaira_posted_on(); ?>
                             <?php endif; ?>
                             <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-                                <span class="comments-link"><i class="fa fa-comments"></i>  <?php comments_popup_link( __( '0 comments', 'alba' ), __( '1 Comment', 'alba' ), __( '% Comments', 'alba' ) ); ?></span>
+                                <span class="comments-link"><i class="fa fa-comments"></i>  <?php comments_popup_link( __( '0 comments', 'albar' ), __( '1 Comment', 'albar' ), __( '% Comments', 'albar' ) ); ?></span>
                             <?php endif; ?>
                         </div>
                     </header>
@@ -62,23 +62,23 @@ if ( have_posts() ) : ?>
                     <footer class="alba-blog-standard-post-footer">
                         <div class="alba-blog-standard-post-footer-left">
                             <?php
-                            $categories_list = get_the_category_list( __( ', ', 'alba' ) );
+                            $categories_list = get_the_category_list( __( ', ', 'albar' ) );
                             if ( $categories_list && kaira_categorized_blog() ) : ?>
                             <span class="cat-links">
-                                <i class="fa fa-list"></i> <?php printf( __( 'Posted in %1$s', 'alba' ), $categories_list ); ?>
+                                <i class="fa fa-list"></i> <?php printf( __( 'Posted in %1$s', 'albar' ), $categories_list ); ?>
                             </span>
                             <?php endif; ?>
 
                             <?php
-                            $tags_list = get_the_tag_list( '', __( ', ', 'alba' ) );
+                            $tags_list = get_the_tag_list( '', __( ', ', 'albar' ) );
                             if ( $tags_list ) : ?>
                             <span class="tags-links">
-                                <i class="fa fa-tags"></i> <?php printf( __( 'Tags %1$s', 'alba' ), $tags_list ); ?>
+                                <i class="fa fa-tags"></i> <?php printf( __( 'Tags %1$s', 'albar' ), $tags_list ); ?>
                             </span>
                             <?php endif; ?>
                         </div>
                         <div class="alba-blog-standard-post-footer-right">
-                            <a href="<?php the_permalink(); ?>" class="alba-blog-permalink-btn"><?php _e( 'Read More', 'alba' ); ?></a>
+                            <a href="<?php the_permalink(); ?>" class="alba-blog-permalink-btn"><?php _e( 'Read More', 'albar' ); ?></a>
                         </div>
                         <div class="clearboth"></div>
                     </footer>

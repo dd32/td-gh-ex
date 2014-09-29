@@ -20,7 +20,7 @@ get_header(); ?>
                  * what author we're dealing with (if that is the case).
                 */
                 the_post();
-                printf( __( 'Author: %s', 'alba' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+                printf( __( 'Author: %s', 'albar' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
                 /* Since we called the_post() above, we need to
                  * rewind the loop back to the beginning that way
                  * we can run the loop properly, in full.
@@ -28,31 +28,31 @@ get_header(); ?>
                 rewind_posts();
                 
             elseif ( is_day() ) :
-                printf( __( 'Day: %s', 'alba' ), '<span>' . get_the_date() . '</span>' );
+                printf( __( 'Day: %s', 'albar' ), '<span>' . get_the_date() . '</span>' );
                 
             elseif ( is_month() ) :
-                printf( __( 'Month: %s', 'alba' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+                printf( __( 'Month: %s', 'albar' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
                 
             elseif ( is_year() ) :
-                printf( __( 'Year: %s', 'alba' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+                printf( __( 'Year: %s', 'albar' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
                 
             elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-                _e( 'Asides', 'alba' );
+                _e( 'Asides', 'albar' );
                 
             elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-                _e( 'Images', 'alba');
+                _e( 'Images', 'albar');
                 
             elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-                _e( 'Videos', 'alba' );
+                _e( 'Videos', 'albar' );
                 
             elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-                _e( 'Quotes', 'alba' );
+                _e( 'Quotes', 'albar' );
                 
             elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-                _e( 'Links', 'alba' );
+                _e( 'Links', 'albar' );
                 
             else :
-                _e( 'Archives', 'alba' );
+                _e( 'Archives', 'albar' );
                 
             endif; ?>
             

@@ -13,7 +13,7 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package alba
+ * @package albar
  */
 
 /**
@@ -23,7 +23,7 @@
  * @uses kaira_admin_header_style()
  * @uses kaira_admin_header_image()
  *
- * @package alba
+ * @package albar
  */
 function kaira_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'kaira_custom_header_args', array(
