@@ -77,3 +77,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Fixed https Google font issue.
 * Added Sitemap page template.
 * Admin css fix.
+
+== 1.20 ==
+* Add more social icon.
+* Replace image icon with font icon.

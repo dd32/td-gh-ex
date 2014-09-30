@@ -152,6 +152,55 @@ function optionsframework_options() {
 		'id' => 'pinterest_url',
 		'std' => '',
 		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Tumblr url', 'base'),
+		'desc' => __('Add the url of your Tumblr page', 'base'),
+		'id' => 'tumblr_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Instagram url', 'base'),
+		'desc' => __('Add the url of your Instagram page', 'base'),
+		'id' => 'instagram_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Linkedin url', 'base'),
+		'desc' => __('Add the url of your Linkedin page', 'base'),
+		'id' => 'linkedin_url',
+		'std' => '',
+		'type' => 'text');
+		
+	$options[] = array(
+		'name' => __('Dribbble url', 'base'),
+		'desc' => __('Add the url of your Dribbble page', 'base'),
+		'id' => 'dribbble_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Vimeo url', 'base'),
+		'desc' => __('Add the url of your Vimeo page', 'base'),
+		'id' => 'vimeo_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('Youtube url', 'base'),
+		'desc' => __('Add the url of your Youtube page', 'base'),
+		'id' => 'youtube_url',
+		'std' => '',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => __('RSS url', 'base'),
+		'desc' => __('Add the url of your RSS', 'base'),
+		'id' => 'rss_url',
+		'std' => '',
+		'type' => 'text');
 		
 	$options[] = array( "name" => __('Advanced', 'base'),
 		"type" => "heading" );	
@@ -229,15 +278,39 @@ add_action('optionsframework_after','optionscheck_display_sidebar', 100);
 function optionscheck_display_sidebar() { ?>
     <div class="metabox-holder upgrade">
         <div class="postbox">
-            <h3><?php echo __('Upgrade to premium version', "base"); ?></h3>
+            <h3><?php echo __('Upgrade to premium', "base"); ?></h3>
                 <div class="inside">
-                    <p><?php echo __('Upgrade to the premium version to get access to advanced options.', "base"); ?></p>
+                    <p><?php echo __('Upgrade to the premium version to get access to advanced options and priority support.', "base"); ?></p>
                     <a title="Upgrade to premium version" href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank">
                     <span class="upgrade-button">Upgrade to premium</span>
                     </a>
-					<p><?php echo __('With premium version you have access to priority support.',  "base"); ?></p>
 					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
                 </div>
         </div>
+         <div class="inside">
+                    <h3><?php echo __('Iografica Themes', "base"); ?></h3>
+                    <a title="Facebook" href="https://www.facebook.com/themes.iografica" target="_blank">
+                    <span class="facebook"><?php echo __('Facebook', "base"); ?></span>
+                    </a>
+                    <?php echo __(' | ', "base"); ?>
+					<a title="Twitter" href="https://twitter.com/iograficathemes" target="_blank">
+                    <span class="twitter"><?php echo __('Twitter', "base"); ?></span>
+                    </a>
+                    <?php echo __(' | ', "base"); ?>
+					<a title="Iografica Themes" href="http://themes.iografica.it/" target="_blank">
+                    <span class="website"><?php echo __('Website', "base"); ?></span>
+                    </a>
+                    <?php echo __(' | ', "base"); ?>
+					<a title="Themes Showcase" href="http://themes.iografica.it/showcase-submit/" target="_blank">
+                    <span class="website"><?php echo __('Showcase', "base"); ?></span>
+                    </a>
+					<p><?php echo __('Sign up to our newsletter and get a discount coupon.',  "base"); ?></p>
+                    <div id="mc_embed_signup">
+					<form action="//iografica.us2.list-manage.com/subscribe/post?u=14e09f1fb92769d69dfd5ea17&amp;id=5fd8564ba4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    				<div id="mc_embed_signup_scroll">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					</form>
+                </div>
     </div>
 <?php }
