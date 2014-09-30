@@ -10,6 +10,12 @@
 .navbar .nav > li > a {
   color: #74838B;
 }
+.navbar .nav > .open >  a,
+.navbar .nav > .open >  a:hover,
+.navbar .nav > .open >  a:focus {
+  color: #ffffff;
+  background-color: #DB2723;
+}
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   color: #fff !important;

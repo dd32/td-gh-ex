@@ -11,9 +11,7 @@
   	define('WEBRITI_TEMPLATE_DIR_URI',get_template_directory_uri());
   	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
   	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
-  	
-  	
-  	
+	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
   	
@@ -40,7 +38,7 @@
   	}	
   	add_filter( 'wp_title', 'rambo_head', 10,2 );
   	
-  		add_action( 'after_setup_theme', 'rambo_setup' ); 	
+  	add_action( 'after_setup_theme', 'rambo_setup' ); 	
   	function rambo_setup()
   	{
 		//content width
