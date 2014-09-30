@@ -1,13 +1,13 @@
-<?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	page.php
-  * 	@package      :	Quality
-  * 	@author       :	VibhorPurandare
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/page.php
-  */	
-  ?>
-<?php get_header(); ?>
+<?php 
+  /**
+  * @Theme Name	:	Quality
+  * @file         :	index.php
+  * @package      :	Quality
+  * @author       :	Vibhor
+  * @license      :	license.txt
+  * @filesource   :	wp-content/themes/quality/index.php
+  */
+  get_header(); ?>
 <div class="page-seperator"></div>
 <div class="container">
   <div class="row">
@@ -19,25 +19,29 @@
 </div>
 <div class="container">
   <div class="row qua_blog_wrapper">
-    <div class="col-md-8">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
       <?php the_post(); ?>
-      <div class="qua_blog_detail_section">
-        <?php $defalt_arg =array('class' => "img-responsive"); ?>
-        <?php if(has_post_thumbnail()): ?>
-        <div class="qua_blog_post_img">	
+	  <div class="qua_blog_section" >
+        <div class="qua_blog_post_img">
+          <?php $defalt_arg =array('class' => "img-responsive"); ?>
+          <?php if(has_post_thumbnail()): ?>
           <a  href="<?php the_permalink(); ?>">
           <?php the_post_thumbnail('quality_blog_img', $defalt_arg); ?>
           </a>
+          <?php endif; ?>	
         </div>
-        <?php endif; ?>	
+        <div class="qua_post_date">
+          <span class="date"><?php echo get_the_date('j'); ?></span>
+          <h6><?php echo the_time('M'); ?></h6>
+        </div>
         <div class="clear"></div>
         <div class="qua_blog_post_content">
-          <?php the_content( __( 'Read More' , 'quality' ) ); ?>
-        </div>
+          <?php the_content(); ?>
+		</div>
       </div>
-      <?php comments_template('',true); ?>
+	  <?php comments_template('',true); ?>
     </div>
-    <?php get_sidebar();  ?>
+    <?php get_sidebar(); ?>		
   </div>
 </div>
 <?php get_footer(); ?>

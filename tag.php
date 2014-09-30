@@ -1,4 +1,4 @@
-<?php
+t<?php
   /*	@Theme Name	:	Quality
   * 	@file         :	tag.php
   * 	@package      :	Quality
@@ -24,7 +24,7 @@
 <div class="container">
   <div class="row qua_blog_wrapper">
     <!--Blog Content-->
-    <div class="col-md-8">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
       <?php if ( have_posts() ) : ?>
       <?php while(have_posts()): the_post(); ?>
       <div class="qua_blog_section"  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

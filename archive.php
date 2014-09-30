@@ -35,7 +35,7 @@
 <div class="container">
   <div class="row qua_blog_wrapper">
     <!--Blog Content-->
-    <div class="col-md-8">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
       <?php while(have_posts()):the_post();
         global $more;
         $more = 0; ?>
@@ -67,6 +67,7 @@
         <div class="clear"></div>
         <div class="qua_blog_post_content">
           <p><?php the_content( __( 'Read More' , 'quality' ) ); ?></p>
+		  <?php wp_link_pages( ); ?>
         </div>
       </div>
       <?php endwhile ?>
@@ -82,7 +83,7 @@
         <?php if(wp_link_pages()) { wp_link_pages();  } ?>
       </div>
     </div>
-    <?php wp_link_pages();?>	
+    	
     <!--/Blog Content-->
     <?php get_sidebar(); ?>			
   </div>

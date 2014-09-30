@@ -84,6 +84,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@version 1.0.6.2
+1. the_excerpt filter called to add class to default paragraph tag.
+2. Description text added over the banner.
+3. Setting for adding content in the banner description.
+4. Page layouts managed, page/posts/  goes to full width when sidebar is not active.
+5. Project bug fixed as indicated by the users.
 @version 1.0.6
 1. Default-Logo Will appear
 2. Changes for Custom CSS.

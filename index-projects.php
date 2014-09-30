@@ -89,7 +89,7 @@ if($current_options['home_projects_enabled']=="on")
 				</div>
 				<?php } ?>
 			</div>
-			
+			<div class="clearfix"></div>
 			
 			<div class="qua_proejct_button">
 			<a href=""> View All Projects </a>

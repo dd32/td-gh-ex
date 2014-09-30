@@ -13,12 +13,12 @@
 				
 				$current_options['project_one_thumb']=sanitize_text_field($_POST['project_one_thumb']);
 				$current_options['project_two_thumb']=sanitize_text_field($_POST['project_two_thumb']);
-				$current_options['project_four_thumb']=sanitize_text_field($_POST['project_four_thumb']);
+				$current_options['project_three_thumb']=sanitize_text_field($_POST['project_three_thumb']);
 				$current_options['project_four_thumb']=sanitize_text_field($_POST['project_four_thumb']);
 				
 				$current_options['project_one_title']=sanitize_text_field($_POST['project_one_title']);
 				$current_options['project_two_title']=sanitize_text_field($_POST['project_two_title']);
-				$current_options['project_four_title']=sanitize_text_field($_POST['project_four_title']);
+				$current_options['project_three_title']=sanitize_text_field($_POST['project_three_title']);
 				$current_options['project_four_title']=sanitize_text_field($_POST['project_four_title']);
 							
 				if($_POST['home_projects_enabled'])
@@ -44,8 +44,8 @@
 			$current_options['project_two_title']="Postao je popularan";
 			
 			
-			$current_options['project_four_thumb']=$project_img;			
-			$current_options['project_four_title']="kojekakve promjene s";
+			$current_options['project_three_thumb']=$project_img;			
+			$current_options['project_three_title']="kojekakve promjene s";
 			
 			
 			$current_options['project_four_thumb']=$project_img;			
@@ -123,14 +123,14 @@
 			<h3><?php _e('Home Project Three','quality'); ?></h3>
 			<hr>
 			<h3><?php _e('Project Three Title','quality'); ?></h3>
-			<input class="webriti_inpute" type="text" value="<?php if(isset($current_options['project_four_title'])) { echo $current_options['project_four_title']; } ?>" id="project_four_title" name="project_four_title" size="36" />
+			<input class="webriti_inpute" type="text" value="<?php if(isset($current_options['project_three_title'])) { echo $current_options['project_three_title']; } ?>" id="project_three_title" name="project_three_title" size="36" />
 			<span class="icons help"><span class="tooltip"><?php  _e('Enter Project Title','quality');?></span></span>
 		
 			<h3><?php _e('Project Three Thumbnail','quality'); ?><span class="icons help"><span class="tooltip"><?php  _e('Enter Project Thumbnail','quality');?></span></span></h3>
-			<input class="webriti_inpute"  type="text" name="project_four_thumb" id="project_four_thumb" value="<?php if( isset($current_options['project_four_thumb'])) echo $current_options['project_four_thumb']; ?>" >
+			<input class="webriti_inpute"  type="text" name="project_three_thumb" id="project_three_thumb" value="<?php if( isset($current_options['project_three_thumb'])) echo $current_options['project_three_thumb']; ?>" >
 			<input type="button" id="upload_button" value="Add Thumb Three" class="upload_image_button" />			
-			<?php if(isset($current_options['project_four_thumb'])) { ?>
-			<p><img class="webriti_home_slide" src="<?php echo $current_options['project_four_thumb'];  ?>" /></p>
+			<?php if(isset($current_options['project_three_thumb'])) { ?>
+			<p><img class="webriti_home_slide" src="<?php echo $current_options['project_three_thumb'];  ?>" /></p>
 			<?php } ?>
 			
 		</div>

@@ -20,6 +20,12 @@ function theme_data_setup()
 			'text_title'=>'off',
 			'upload_image_favicon'=>'',	
 			
+			/* Home Image */
+			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
+			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),
+			
+			
+			
 			'service_title'=>'What We Do',
 			'service_description' =>'We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.',
 			

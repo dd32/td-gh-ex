@@ -39,8 +39,8 @@
 <div class="qua_comment_form_section">
   <?php  
     $fields=array(
-    'author' => '<div class="qua_form_group"><label>Name<small>*</small></label><input class="qua_con_input_control" name="author" id="author" value="" type="text"/></div>',
-    'email' => '<div class="qua_form_group"><label>Email<small>*</small></label><input class="qua_con_input_control" name="email" id="email" value=""   type="email" ></div>',		
+    'author' => '<div class="qua_form_group"><label>' .__('Name','quality').'<small>*</small></label><input class="qua_con_input_control" name="author" id="author" value="" type="text"/></div>',
+    'email' => '<div class="qua_form_group"><label>'.__('Email','quality').'<small>*</small></label><input class="qua_con_input_control" name="email" id="email" value=""   type="email" ></div>',		
     );
     function my_fields($fields) { 
     return $fields;
@@ -48,7 +48,7 @@
     add_filter('comment_form_default_fields','my_fields');
     $defaults = array(
     'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
-    'comment_field'=> '<div class="qua_form_group"><label>Comment</label>
+    'comment_field'=> '<div class="qua_form_group"><label>'.__('Comment','quality').'</label>
     <textarea id="comments" rows="5" class="qua_con_textarea_control" name="comment"></textarea></div>',		
     'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'quality' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'quality').'</a>' . '</p>',
     'id_submit'=> 'qua_send_button',

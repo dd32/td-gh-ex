@@ -4,7 +4,7 @@ Theme URI: http://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version:  1.0.6.1
+Version:  1.0.6.2
 Tags: white, red,pink , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post,featured-images,theme-options,responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -116,9 +116,9 @@ margin-top:70px;
 	width: 100%;
 	margin: 0 0 80px;
 }
-
 .carousel{
-	/* height: 600px; */
+	width: 100%; 
+	height: auto;
 }
 
 .slide_icon {
@@ -147,7 +147,7 @@ margin-top:70px;
     left: 0;
 	right: 0;
     position: absolute;
-    top: 17%;
+    top: 25%;
 	margin: 0px auto;
 	text-align: center;
     width: 1120px;
@@ -157,51 +157,47 @@ margin-top:70px;
     float: none;
 }
 .flex-slider-center h2 {
-    color: #FFFFFF;
-    font-family: 'OpenSansLight';
-    font-size: 70px;
-    font-weight: normal;
+	color: #FFFFFF;
+	font-family: 'OpenSansLight';
+	font-size: 55px;
+	font-weight: normal;
 	line-height: 70px;
-    letter-spacing: 0;
-	text-transform: uppercase;
+	letter-spacing: 0;
 	display: inline-block;
 	text-align: center;
-    margin: 0px 0px 20px;
+	margin: 0px 0px 20px;
 	text-shadow: 0 3px 2px rgba(0, 0, 0, 0.9);
 }
-.flex-slider-center span{ 
-	background-color: rgba(248, 80, 75, 0.7);
+.flex-slider-center span {
+	background-color: rgba(248,80,75,0.7);
 	color: #FFFFFF;
 	margin: 0px 0px 20px;
-    font-family: 'OpenSansLight';
+	font-family: 'OpenSansLight';
 	padding: 0px 15px 5px 15px;
-    font-size: 70px;
-    font-weight: normal;
+	font-size: 55px;
+	font-weight: normal;
 	text-align: center;
 	line-height: 70px;
-    letter-spacing: 0;
-	text-transform: uppercase;
+	letter-spacing: 0;
 	display: inline-block;
 	text-shadow: 0 3px 2px rgba(0, 0, 0, 0.9);
 }
-.flex-slider-center p{ 
+.flex-slider-center p {
 	color: #FFFFFF;
-    font-family: 'OpenSansRegular';
+	font-family: 'OpenSansRegular';
 	padding: 0px 15px 5px 15px;
-    font-size: 30px;
-    font-weight: normal;
+	font-size: 30px;
+	font-weight: normal;
 	line-height: 35px;
-    letter-spacing: 0;
-	text-transform: uppercase;
+	letter-spacing: 0;
 	display: inline-block;
-    margin: 0px 0px 20px;
-	text-shadow: 0 3px 2px rgba(0, 0, 0, 0.9);
+	margin: 0px 0px 20px;
+	text-shadow: 0 3px 2px rgba(0,0,0,0.9);
 }
 .flex_btn_div{
 	text-align:center;
 	display:block;
 }
-
 .flex_btn {
     font-family: 'OpenSansRegular';
 	color: #FFFFFF;
@@ -1504,7 +1500,7 @@ max-width: 100%;
 .qua_blog_post_content  h6,.qua_blog_post_content h6,.qua_blog_post_content h6{	font-size:20px;line-height:30px;}
 
 */
-.qua_blog_post_content  ul  li,.qua_blog_post_content ul  li{list-style:disc outside none;list-style-position: inside;}
+.qua_blog_post_content  ul  li,.qua_blog_post_content ul  li{list-style:disc outside none;list-style-position: inside;color:#767676;}
 .qua_blog_post_content  ol  li,.qua_blog_post_content ol  li{list-style:decimal outside none;list-style-position: inside;}
 .qua_blog_post_content cite,.qua_blog_post_content cite{font-style: italic;}
 .qua_blog_post_content h1,.qua_blog_post_content h2,.qua_blog_post_content h3,.qua_blog_post_content h4,.qua_blog_post_content h5,.qua_blog_post_content h6{font-family: 'OpenSansRegular';}
@@ -1937,4 +1933,12 @@ font-size: 13px;
 font-family: 'OpenSansSemiBold';
 transition: all 0.3s ease 0s;
 margin: 0;
+}
+
+/* Aside Box Style for after testing Qulity Lite 1.0.6.1 */
+#post-559 {	
+	padding: 24px 24px 0;
+	padding: 1.714285714rem;
+	background: #f9f9f9;
+	border-left: 22px solid #dddcdc;
 }

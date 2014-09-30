@@ -610,25 +610,25 @@
     left: 0;
 	right: 0;
     position: absolute;
-    top: 20%;
+    top: 22%;
 	margin: 0px auto;
 	text-align: center;
     width: auto;
 	height: auto;
 	z-index: 0;
-	padding: 20px;
+	padding: 10px;
     float: none;
 }
 .flex-slider-center h2 {
-    font-size: 20px;
-	line-height: 24px;
-    margin: 0px 20% 6px;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0px 10% 5px;
 }
 .flex-slider-center span{ 
-	margin: 0px auto 6px;
-	padding: 0px 15px 5px 15px;
-    font-size: 20px;
-	line-height: 24px;
+	margin: 0px auto 5px;
+	padding: 0px 7px 3px 7px;
+	font-size: 16px;
+	line-height: 20px;
 }
 .flex-slider-center p{ 
 	display:none;
@@ -640,68 +640,6 @@
 	padding: 5px 10px;
    
 }
-	
-
-
-	
-/*Flex Slider left Alignment*/
-.flex-slider-left {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: left;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-left h2 {
-    font-size: 20px;
-	line-height: 24px;
-    margin: 0px 0px 6px;
-}
-.flex-slider-left span{ 
-	margin: 0px auto 6px;
-	padding: 0px 15px 5px 15px;
-    font-size: 20px;
-	line-height: 24px;
-}
-.flex-slider-left p{ 
-	display:none;
-}	
-
-/*Flex Slider Right Alignment*/
-.flex-slider-right {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: right;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-right h2 {
-    font-size: 20px;
-	line-height: 24px;
-    margin: 0px 0px 6px;
-}
-.flex-slider-right span{ 
-	margin: 0px auto 6px;
-	padding: 0px 15px 5px 15px;
-    font-size: 20px;
-	line-height: 24px;
-}
-.flex-slider-right p{ 
-	display:none;
-}	
-
 /* Homepage Testimonials */
 .caroufredsel_wrapper {
 	height: 500px !important;
@@ -710,7 +648,6 @@
 	float: left;
 	
 }
-
 /* Comment Section */
 .qua_comment_box .media-body {
 	float: left;

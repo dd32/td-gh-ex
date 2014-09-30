@@ -30,7 +30,7 @@
 							</div>
 							<?php } ?>
 						</div>
-						<p class="qua-blog-post-description"><?php the_excerpt(); ?></p>
+						<?php the_excerpt(); ?>
 						
 						<div class="qua-blog-date-cm">
 							<span class="left"><?php echo get_the_date('M j,Y'); ?></span><span class="right"><a href="#"><?php comments_number( 'No Comments', 'one comments', '% comments' ); ?></a></span>

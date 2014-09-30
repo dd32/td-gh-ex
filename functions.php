@@ -67,4 +67,9 @@
   	   return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"qua_blog_btn\">Read More<i class='fa fa-long-arrow-right'></i></a>";
   	}   
   	add_filter( 'the_content_more_link', 'quality_new_content_more' );
+	add_filter( "the_excerpt", "webriti_add_class_to_excerpt" );
+	function webriti_add_class_to_excerpt( $excerpt ) {
+    return str_replace('<p', '<p class="qua-blog-post-description"', $excerpt);
+	}
+
   ?>

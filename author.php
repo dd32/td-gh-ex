@@ -21,7 +21,7 @@
 <div class="container">
   <div class="row qua_blog_wrapper">
     <!--Blog Content-->
-    <div class="col-md-8">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
       <?php while(have_posts()):the_post();
         global $more;
         $more = 0; ?>
