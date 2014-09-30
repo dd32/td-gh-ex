@@ -279,6 +279,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'powered_by',
 			array(
 				'default' => '',
+				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
 		 
@@ -607,7 +608,7 @@ class wpnewsstreamNavMenuWalker extends Walker_Nav_Menu {
 	}
 	
 
-	$classes[] = ($args->has_children) ? 'dropdown' : '';
+	$classes[] = isset($args->has_children) ? 'dropdown' : '';
 	$classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
 	$classes[] = 'menu-item-' . $item->ID;
 
@@ -624,7 +625,7 @@ class wpnewsstreamNavMenuWalker extends Walker_Nav_Menu {
 	$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
 	$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
 	$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
-	$attributes .= ($args->has_children) ? ' class="dropdown-toggle"  ' : '';
+	$attributes .= isset($args->has_children) ? ' class="dropdown-toggle"  ' : '';
 	$item_output = $args->before;
 	$item_output .= '<a'. $attributes .'>';
 	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
