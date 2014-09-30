@@ -636,7 +636,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 
             $this->sections[] = array(
                 'title'     => __('ALBA Premium', 'albar'),
-                'desc'      => __('View some of the extra features you can have with the <a href="http://sllwi.re/p/Eu" target="_blank">ALBA premium Wordpress theme</a>', 'albar'),
+                'desc'      => __('View some of the extra features you can have with the <a href="http://sllwi.re/p/Eu" target="_blank">Albar premium Wordpress theme</a>', 'albar'),
                 'class'     => 'cx-upsell-section',
                 'icon'      => 'el-icon-plus-sign',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
@@ -692,8 +692,8 @@ if (!class_exists('Redux_Framework_sample_config')) {
                 'display_version'   => $theme->get('Version'),  // Version that appears at the top of your panel
                 'menu_type'         => 'menu',                  // Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
                 'allow_sub_menu'    => false,                   // Show the sections below the admin menu item or not
-                'menu_title'        => __('ALBA Settings', 'albar'),
-                'page_title'        => __('ALBA Settings', 'albar'),
+                'menu_title'        => __('ALBAR Settings', 'albar'),
+                'page_title'        => __('ALBAR Settings', 'albar'),
                 
                 // You will need to generate a Google API key to use this feature.
                 // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth

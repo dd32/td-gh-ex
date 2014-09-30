@@ -4,7 +4,7 @@ Theme URI: http://wordpress.org/themes/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Alba is a responsive multipurpose Wordpress theme. You can use Alba to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -1516,7 +1516,10 @@ body.admin-bar .stuck {
     padding: 30px 0;
 }
 .blog .site-content-full {
-    padding: 30px 0;
+    padding: 0 20px;
+}
+.page-template-template-full-width-php .content-area-full {
+    padding: 0 20px;
 }
 
 .content-area-right {
@@ -1535,7 +1538,7 @@ body.admin-bar .stuck {
     float: left;
     padding: 30px 20px 20px 0;
 }
-.woocommerce-page .site-boxed .content-area,
+
 .page-template-template-right-nav-sidebar-php .site-boxed .content-area,
 .page-template-default .site-boxed .content-area {
     padding: 30px 20px 20px 20px;

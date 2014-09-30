@@ -1,4 +1,4 @@
-=== Electa ===
+=== Albar ===
 Contributors: Kaira
 Donate link:
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -7,11 +7,11 @@ Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Alba is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Albar is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 == Description ==
 
-Alba is a responsive multipurpose Wordpress theme. You can use Alba to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
+Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
 
 * Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
 

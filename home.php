@@ -8,7 +8,7 @@ global $cx_framework_options; ?>
 <?php endif; ?>
 
 <div class="site-body site-pad">
-	<div class="site-container <?php echo $cx_framework_options['cx-options-blog-layout']; ?>">
+	<div class="site-container blog-standard-layout">
 		
 		<div id="primary" class="content-area content-area-full">
 			<div id="content" class="site-content site-content-full" role="main">
