@@ -1,8 +1,3 @@
-<?php if(!is_active_sidebar('sidebar-primary')){
-require('fullwidthpage.php');
-} else {
-?>
-
 <?php get_template_part('pink','header');?>
 <!-- Container for products -->
 <div class="container">
@@ -10,7 +5,7 @@ require('fullwidthpage.php');
   <div class="_blank"></div>
   <div class="row-fluid">
     <!-- Spa-Saloon main Content -->	
-    <div class="span8">
+    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>">
       <!-- Blog-post-detail 1--> 
       <?php the_post();?>
       <h2 class="blog_detail_head"><?php the_title(); ?></h2>
@@ -41,4 +36,3 @@ require('fullwidthpage.php');
   </div>
 </div>
 <?php get_footer();?>
-<?php } ?>

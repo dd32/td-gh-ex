@@ -42,7 +42,8 @@
   		wp_enqueue_style('thickbox');
   		wp_enqueue_style('farbtasticss',get_template_directory_uri().'/option_pannel/css/farbtasticss.css');
   		wp_enqueue_style('spa-bootstrap',get_template_directory_uri().'/option_pannel/css/assets/css/spa-bootstrap.css');
-  		wp_enqueue_script('my-color-picker-script', get_template_directory_uri().'/option_pannel/js/my-color-picker-script.js', array( 'wp-color-picker' ), false, true );
+  		//wp_enqueue_script('my-color-picker-script', get_template_directory_uri().'/option_pannel/js/my-color-picker-script.js', array( 'wp-color-picker' ), false, true );
+		
   	}	
   } 
   ?>

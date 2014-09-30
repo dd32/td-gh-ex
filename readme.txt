@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.1
+1. sidebar managed properly. If no widget added than page automatically goes to full width.
+2. Default widgets removed from sdiebar.
+3. Banner configuration module added. With this you can edit banner content in category,archive,404,search and tag templates. 
+4. Strings added in the pot files.
 @version 1.5
 1. woocommerce support added
 2. Sidebar formatting issues fixed.

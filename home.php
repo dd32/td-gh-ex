@@ -3,7 +3,7 @@
   <div class="_blank"></div>
   <div class="row-fluid">
     <!-- Spa-Saloon main Content --> 
-    <div class="span8" id="main-content">
+    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" id="main-content">
       <?php  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array( 'post_type' => 'post','paged'=>$paged); 	
           

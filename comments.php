@@ -24,18 +24,18 @@
 </nav>
 <?php endif;  ?>
 <?php elseif ( ! comments_open()  && post_type_supports( get_post_type(), 'comments' ) ) :
-  _e('<p id="comment">comments are closed</p>','sis_spa');?>
+  _e('<p id="comment">'.__('comments are closed','sis_sps'),'</p>','sis_spa');?>
 <?php endif; ?>
 <?php if ('open' == $post->comment_status) : ?>
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p><?php _e('You must be','sis_spa' ); ?><a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','sis_spa');?></a> <?php _e('to post a comment.','sis_spa');?></p>
 <?php else : ?>
 <?php $fields=array(
-  'author' => '<label for="author" class="blog-form-feild">Name*</label>
+  'author' => '<label for="author" class="blog-form-feild">'.__('Name','sis_spa'),'*</label>
                <input type="text" name="author" id="author" value=""   placeholder="Name" class="span8 cmt_input_bg" tabindex="1" />',
-  'email'  => '<label for="email" class="blog-form-feild">Mail* (will not be published)</label>
+  'email'  => '<label for="email" class="blog-form-feild">'.__('Mail','sis_spa').__('will not be published','sis_spa'),'</label>
                <input type="text" name="email" id="email" value="" placeholder="email"  tabindex="2" class="span8 cmt_input_bg" />',
-  'url'    => ' <label for="url" class="blog-form-feild">Website</label>
+  'url'    => ' <label for="url" class="blog-form-feild">'.__('Website','sis_spa'),'</label>
                 <input type="text" name="url" id="url" value="" placeholder="website"  tabindex="3" class="span8 cmt_input_bg" />'
   );
   
@@ -49,7 +49,7 @@
    'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
   'comment_field'        => ' <label for="url" class="blog-form-feild">Comment</label><p class="comment-form-comment"><textarea name="comment" id="comment" rows="3" placeholder="Comment" class="span8 cmt_input_bg" tabindex="4"></textarea></p>',
   
-  'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'sis_spa' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'sis_spa').'</a>' . '</p>',
+  'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'sis_spa' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__('Log out?','sis_spa').'</a>' . '</p>',
   'comment_notes_after'  => '<dl class="form-allowed-tags"></dl>',
   'id_form'              => 'commentform',
   'id_submit'            => 'blog-form-post',

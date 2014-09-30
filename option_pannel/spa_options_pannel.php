@@ -1,4 +1,9 @@
 <?php wp_enqueue_script('modal-form',get_template_directory_uri('template_directory').'/option_pannel/js/bootstrap-modal.js'); ?> 
+<?php wp_enqueue_script('jquery-ui-accordion'); ?> 
+<?php wp_enqueue_style('jquery-ui-css',get_template_directory_uri('template_directory').'/option_pannel/css/jquery-ui.css'); ?>
+<?php wp_enqueue_script('jquery-ui-js',get_template_directory_uri('template_directory').'/option_pannel/js/jquery-ui.js'); ?> 
+
+ 	 
 <div id="wpbody">
   <div id="wpbody-content">
     <!-- header div is start -->
@@ -202,9 +207,11 @@
         <a href="#spasalon-option-homepage"  class="nav-tab nav-tab-active" id="spasalon-option-homepage-tab"><?php _e("Home",'sis_spa') ; ?></a>
         <a href="#spasalon-option-general"  class="nav-tab"  id="spasalon-option-general-tab"><?php _e("General",'sis_spa') ; ?></a>
         <a href="#spasalon-option-typography" class="nav-tab" id="spasalon-option-typography-tab"><?php _e("Typography",'sis_spa') ; ?></a>
+		<a href="#spasalon-banner" class="nav-tab" id="spasalon-banner-tab"><?php _e("Banner Customization",'sis_spa') ; ?></a>
         <a href="#spasalon-option-footercustmization" class="nav-tab" id="spasalon-option-footercustmization-tab"><?php _e("Footer Custmization",'sis_spa') ; ?></a>
         <a href="#spasalon-help" class="nav-tab" id="spasalon-help-tab"><?php _e("Help & Support",'sis_spa') ; ?></a>
         <a href="#spasalon-subscribe" class="nav-tab" id="spasalon-subscribe-tab"><?php _e("Subscribe a New Letter",'sis_spa') ; ?></a>
+		
       </h2>
       <div class="updated" >
         <p><strong></strong></p>
@@ -244,6 +251,12 @@
             <br>
             <?php require_once('subscribe.php')?>
           </div>
+		  <div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-banner"  >
+            <h2><?php _e("Settings for configuring the banner header for category,archive,tags and 404 page templates",'sis_spa') ; ?></h2>
+            <br>
+            <?php require_once('banner.php')?>
+          </div>
+		  
         </div>
       </div>
       <div id="busiprof_optionsframework-sidebar">

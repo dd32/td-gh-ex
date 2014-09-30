@@ -3,7 +3,7 @@
   <div class="_blank"></div>
   <!-- Main --> 
   <div class="row-fluid">
-    <div class="span8" >
+    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" >
       <h2 class="blog_detail_head">
         <?php if ( is_day() ) : ?>
         <?php  _e( "Daily Archives:", 'sis_spa' ); echo (get_the_date()); ?>
@@ -32,7 +32,7 @@
           <h4 ><a  class="blog-heading" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a>
           </h4>
           <div class="blog_content">
-            <p><?php echo get_the_other_excerpt();?></p>
+            <p><?php echo spa_get_the_other_excerpt();?></p>
           </div>
           <br>
         </div>

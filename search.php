@@ -1,8 +1,8 @@
-<?php get_header();?>
+<?php get_template_part('pink','header'); ?>
 <div class="container">
   <div class="_blank"></div>
   <div class="row-fluid">
-    <div class="span8" id="main-content">
+    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" id="main-content">
       <?php if ( have_posts() ) : ?>
       <h2><?php printf( __( "Search Results for:", 'sis_spa' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
       <?php /* Start the Loop */ ?>

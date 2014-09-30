@@ -55,3 +55,11 @@ jQuery(document).ready(function($) {
 			}		
 	   });
 	}
+  jQuery(function() {
+    jQuery( "#accordion" ).accordion({
+	heightStyle: "content",
+	collapsible: true
+	});
+  });
+	
+	

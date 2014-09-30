@@ -3,7 +3,7 @@
   <div class="_blank"></div>
   <!---main-->
   <div class="row-fluid">
-    <div class="span8" >
+    <div class="<?php if(!is_active_sidebar('sidebar-primary')){ echo 'span12'; }else { echo 'span8'; } ?>" >
       <?php if ( have_posts() ) : ?>
       <?php the_post(); ?>
       <h2 class="blog_detail_head">
