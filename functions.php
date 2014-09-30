@@ -135,6 +135,8 @@ function base_scripts() {
 	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css' );
 	
 	wp_enqueue_style( 'layout', get_template_directory_uri().'/css/layout.css' );
+	
+	wp_enqueue_style( 'icon', get_template_directory_uri().'/inc/icon/style.css' );
 
 	wp_enqueue_script( 'base-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

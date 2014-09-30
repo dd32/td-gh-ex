@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Base WP v1.19\n"
+"Project-Id-Version: Base WP v1.20\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-08-04 09:08:08+0000\n"
+"PO-Revision-Date: 2014-09-30 11:43:25+0000\n"
 "Last-Translator: iografica <info@iografica.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -527,7 +527,7 @@ msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: options.php:41
-#: options.php:193
+#: options.php:242
 #@ base
 msgid "Logo Upload"
 msgstr "Carica Logo"
@@ -585,37 +585,22 @@ msgstr "Mostra i ringraziamenti"
 msgid "Meta Slider"
 msgstr ""
 
-#: options.php:160
+#: options.php:209
 #@ base
 msgid "Custom css"
 msgstr "Css personalizzato"
 
-#: options.php:165
+#: options.php:214
 #@ base
 msgid "Footer code"
 msgstr "Codice piè di pagina"
 
-#: options.php:211
+#: options.php:260
 #@ base
 msgid "Favicon"
 msgstr ""
 
-#: options.php:232
-#@ base
-msgid "Upgrade to premium version"
-msgstr "Aggiorna alla versione premium"
-
-#: options.php:234
-#@ base
-msgid "Upgrade to the premium version to get access to advanced options."
-msgstr "Aggiorna il tema alla versione premium per avere accesso alle impostazioni avanzate."
-
-#: options.php:238
-#@ base
-msgid "With premium version you have access to priority support."
-msgstr "Con la versione premium hai diritto al servizio di assistenza."
-
-#: options.php:239
+#: options.php:287
 #@ base
 msgid "We offer a 7 day full refund if you are not happy with your purchase."
 msgstr "Ti offriamo un rimborso completo entro 7 giorni se non sei soddisfatto del tuo acquisto."
@@ -764,7 +749,7 @@ msgstr "Indirizzo Pinterest"
 msgid "Add the url of your Pinterest page"
 msgstr "Inserisci l'indirizzo della tua pagina Pinterest"
 
-#: options.php:156
+#: options.php:205
 #@ base
 msgid "Advanced"
 msgstr "Avanzate"
@@ -793,4 +778,121 @@ msgstr "Autori"
 #@ base
 msgid "Categories"
 msgstr "Categorie"
+
+#: options.php:157
+#@ base
+msgid "Tumblr url"
+msgstr ""
+
+#: options.php:158
+#@ base
+msgid "Add the url of your Tumblr page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Tumblr"
+
+#: options.php:164
+#@ base
+msgid "Instagram url"
+msgstr ""
+
+#: options.php:165
+#@ base
+msgid "Add the url of your Instagram page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Instagram"
+
+#: options.php:171
+#@ base
+msgid "Linkedin url"
+msgstr ""
+
+#: options.php:172
+#@ base
+msgid "Add the url of your Linkedin page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Linkedin"
+
+#: options.php:178
+#@ base
+msgid "Dribbble url"
+msgstr ""
+
+#: options.php:179
+#@ base
+msgid "Add the url of your Dribbble page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Dribble"
+
+#: options.php:185
+#@ base
+msgid "Vimeo url"
+msgstr ""
+
+#: options.php:186
+#@ base
+msgid "Add the url of your Vimeo page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Vimeo"
+
+#: options.php:192
+#@ base
+msgid "Youtube url"
+msgstr ""
+
+#: options.php:193
+#@ base
+msgid "Add the url of your Youtube page"
+msgstr "Aggiungi l'indirizzo della tua pagina di Youtube"
+
+#: options.php:199
+#@ base
+msgid "RSS url"
+msgstr ""
+
+#: options.php:200
+#@ base
+msgid "Add the url of your RSS"
+msgstr "Aggiungi l'indirizzo dei tuoi RSS"
+
+#: options.php:281
+#@ base
+msgid "Upgrade to premium"
+msgstr ""
+
+#: options.php:283
+#@ base
+msgid "Upgrade to the premium version to get access to advanced options and priority support."
+msgstr "Aggiorna il tema alla versione premium per avere accesso al supporto prioritario e a tutte le opzioni avanzate."
+
+#: options.php:291
+#@ base
+msgid "Iografica Themes"
+msgstr ""
+
+#: options.php:293
+#@ base
+msgid "Facebook"
+msgstr ""
+
+#: options.php:295
+#: options.php:299
+#: options.php:303
+#@ base
+msgid " | "
+msgstr ""
+
+#: options.php:297
+#@ base
+msgid "Twitter"
+msgstr ""
+
+#: options.php:301
+#@ base
+msgid "Website"
+msgstr ""
+
+#: options.php:305
+#@ base
+msgid "Showcase"
+msgstr ""
+
+#: options.php:307
+#@ base
+msgid "Sign up to our newsletter and get a discount coupon."
+msgstr "Iscriviti alla nostra newsletter e ottieni un buono sconto."
 
