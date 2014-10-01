@@ -74,16 +74,16 @@ function artikler_theme_content_nav( $html_id ) {
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
 			<?php global $wp_query;
 
-$big = 999999999999; // need an unlikely integer
+$big = 9999999; // need an unlikely integer
 
 echo paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
-	'current' => max( 1, get_query_var('paged') ),
+	'current' => max( 0, get_query_var('paged') ),
 	'total' => $wp_query->max_num_pages,
 	'show_all'     => false,
-	'end_size'     => 1,
-	'mid_size'     => 2,
+	'end_size'     => 2,
+	'mid_size'     => 3,
 	'type'         => 'plain',
 	'add_args'     => false,
 	'add_fragment' => '',
@@ -136,51 +136,6 @@ function artikler_theme_entry_meta() {
 endif;
 
 
-class JAThemeadsense extends WP_Widget {
-
-    // Create Widget
-    function JAThemeadsense() {
-        parent::WP_Widget(false, $name = 'JATheme Adsense', array('description' => ''));
-    }
-
-    // Widget Content
-    function widget($args, $instance) { 
-        extract( $args );
-
-        $simple_text = strip_tags($instance['simple_text']);
-        ?>
-            <div id="latest-box">
-                <span class="latest-text">
-                    <?php echo $simple_text; ?>
-                </span> <!-- text -->
-
-            </div> <!-- box -->
-        <?php
-     }
-
-    // Update and save the widget
-    function update($new_instance, $old_instance) {
-        return $new_instance;
-    }
-
-    // If widget content needs a form
-    function form($instance) {
-        //widgetform in backend
-        $simple_text = strip_tags($instance['simple_text']);
-        ?>
-           
-            <p>
-                <label for="<?php echo $this->get_field_id('simple_text'); ?>">Text: </label>
-                <textarea class="widefat" id="<?php echo $this->get_field_id('simple_text'); ?>" name="<?php echo $this->get_field_name('simple_text'); ?>"><?php echo  esc_attr($simple_text); ?></textarea>
-            </p>
-<?php
-
-    }
-
-}
-
-register_widget('JAThemeadsense');
-
 //Excerpt Length.
 function custom_excerpt_length( $length ) {
 	return 40;
@@ -222,12 +177,12 @@ function artikler_theme_get_font_url() {
 //Style and Scriprt.
 function artikler_scripts() {
 	global $wp_styles;
-	wp_register_style( 'style-sheet', get_stylesheet_uri() . '/style.css' );
-	wp_register_script( 'script-html5', get_template_directory_uri() . '/js/html5.js', array(), '1.0.0', true );
-	wp_register_script( 'script-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
-	wp_enqueue_style( 'style-sheet' );
-	wp_enqueue_script( 'script-html5' );
-	wp_enqueue_script( 'script-navigation' );
+	wp_enqueue_style( 'style-sheet', get_stylesheet_uri() );
+	wp_enqueue_script( 'script-html5', get_template_directory_uri() . '/js/html5.js', array(), '1.0.0', true );
+	wp_register_style('googleFontsOpen+Sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+       wp_enqueue_style( 'googleFontsOpen+Sans');
+	wp_register_style('googleFontsTangerine', 'http://fonts.googleapis.com/css?family=Tangerine');
+       wp_enqueue_style( 'googleFontsTangerine');
 	$font_url = artikler_theme_get_font_url();
 	if ( ! empty( $font_url ) )
 		wp_enqueue_style( 'jatheme-fonts', esc_url_raw( $font_url ), array(), null );
@@ -305,5 +260,39 @@ function artikler_theme_add_editor_styles() {
     add_editor_style( get_stylesheet_uri() );
 }
 add_action( 'after_setup_theme', 'artikler_theme_add_editor_styles' );
+
+function get_all_posts(){
+			 /* Start the Loop */ 
+			while ( have_posts() ) : the_post(); ?>
+                 
+                 <div class="content-post-main">
+                 <div class="content-post-img">
+				 <?php if ( has_post_thumbnail()) : ?>
+                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array(150,150) ); ?></a>			
+                 <?php else : ?>
+                 <a href="<?php the_permalink(); ?>" id="no-image-yet"><div>No Image Yet</div></a>
+                 <?php endif; ?>
+                 </div>
+                 
+                 <div class="content-post-tilte-excerpt">
+                 <h4><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
+                 <small class="content-authore-excerpt"><b><?php _e( 'Posted by', 'artikler' ); ?></b> <?php the_author(); ?>.&nbsp;|&nbsp;<b> <?php _e( 'Published on', 'artikler' ); ?></b> <?php get_option('jS F Y') ?></small>
+                 <div class="post_expert_index">
+                 <?php the_excerpt(); ?><br />
+                 </div>
+                 <?php $com_num = get_comments_number( ); ?>
+				 <?php if( $com_num == 0 ): ?>
+                  <small class="content-comment_no"><?php _e( 'No Comment', 'artikler' ); ?></small>
+                 <?php elseif($com_num == 1): ?>
+                 <small class="content-comment_no"><?php _e( '1 Comment', 'artikler' ); ?></small>
+                 <?php else:  ?>
+                 <small class="content-comment_no"><?php echo $com_num . _e( 'Comments', 'artikler' );?></small>
+                 <?php endif; ?>
+                 
+                 </div>
+                 </div>
+			<?php endwhile; 
+
+}
 
 require( get_template_directory() . '/inc/custom-comment.php' );

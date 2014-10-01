@@ -1,5 +1,5 @@
 Theme Name : Artikler
-Version : 1.3.3.1
+Version : 1.3.3.2
 Author : JAThemes Team
 Author URI : http://www.jathemes.com/
 Theme URI : http://jathemes.com/artikler-theme/
@@ -9,30 +9,17 @@ Description : Artikler theme create and design by JAThemes Team. Features includ
 Copyright © All Rights Reserved.
 Note : Html, Css, php and js are used in theme.
 
-Images:
-======
-One images used in theme.
-1)No image.(This image present in images folder)
-https://www.flickr.com/photos/67619700@N02/6222732938
-
 Font:
 =====
 'Tangerine' font used in theme. (https://www.google.com/fonts#UsePlace:use/Collection:Tangerine)
 SIL Open Font License, 1.1
 
-Js:
+Js file:
 ===
 html5.js
 --------
 HTML5 Shiv v3.7.0 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 http://html5shim.googlecode.com/svn/trunk/html5.js
-
-
-navigation.js
--------------
-Copyright 2011 Google Inc. All Rights Reserved.
-Licensed under the Apache License, Version 2.0 (the "License").
-https://domsnitch.googlecode.com/svn-history/r39/trunk/ui/config/Navigation.js
 
 Pot file
 ========

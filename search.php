@@ -20,23 +20,8 @@ get_header(); ?>
 
 			<?php artikler_theme_content_nav( 'nav-above' ); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<div class="cat-content-post-main">
-                 <div class="cat-content-post-img">
-				 <?php if ( has_post_thumbnail()) : ?>
-                 <a href="<?php echo get_permalink(); ?>"><img src="<?php wp_get_attachment_image_src( 'thumbnail' ); ?>" /></a>			
-                 <?php else : ?>
-                 <a href="<?php echo get_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg"  width="150px" 				height="150px" /></a>
-                 <?php endif; ?>
-                 </div>
-                 
-                 <div class="cat-content-post-tilte-excerpt">
-                 <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
-                 <?php the_excerpt(); ?>
-                 </div>
-                 </div>
-			<?php endwhile; ?>
+				<?php get_all_posts(); ?>
+
 
 			<?php artikler_theme_content_nav( 'nav-below' ); ?>
 

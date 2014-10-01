@@ -1,4 +1,4 @@
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="search-form">
-	<input type="text" name="s" id="site_search" placeholder="Type and hit enter" />
+	<input type="text" name="s" id="site_search" placeholder="<?php _e( 'Type and hit enter', 'twentytwelve' ); ?>" />
     <input type="submit" value="Search" />
 </form>
