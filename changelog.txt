@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+SimplyBlack Version 2.2 - october 2014
+- added and adjusted text markup tags
+
 SimplyBlack Version 2.1 - june 2014
 - forgot to reset the content_width in previous version
 - changed size of featured and single page image
