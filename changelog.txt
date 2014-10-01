@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+Medical version 1.7 - october 2014
+- added and adjusted text markup tags
+- several minor adjustments 
+
 Medical version 1.6 - july 2014
 - added featured image on single page
 - added several adjustments for better responsive layout
