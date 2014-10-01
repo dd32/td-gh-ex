@@ -1170,69 +1170,92 @@ function catchkathmandu_homepage_featured_content() {
 			$catchkathmandu_homepage_featured_content = '<section id="featured-post" class="' . $classes . '">';
 			
 			if ( !empty( $headline ) ) {
-				$catchkathmandu_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catchkathmandu' ) , $headline ) . '</h1>';
+				$catchkathmandu_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . $headline . '</h1>';
 			}
 			
 			$catchkathmandu_homepage_featured_content .= '<div class="featued-content-wrap">';
 			
 				for ( $i = 1; $i <= $quantity; $i++ ) {
 					
-	
-					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
-						$target = '_blank';
-					} else {
-						$target = '_self';
-					}
 					
 					//Checking Link
 					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
-						$link = $options[ 'homepage_featured_url' ][ $i ];
+						//support qTranslate plugin
+						if ( function_exists( 'qtrans_convertURL' ) ) {
+							$link = qtrans_convertURL($options[ 'homepage_featured_url' ][ $i ]);
+						}
+						else {
+							$link = $options[ 'homepage_featured_url' ][ $i ];
+						}
+						if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
+							$target = '_blank';
+						}
+						else {
+							$target = '_self';	
+						}
 					} else {
-						$link = '#';
+						$link = '';
+						$target = '';
 					}
-					
+						
 					//Checking Title
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
-						$title = sprintf( __( '%s', 'catchkathmandu' ) , $options[ 'homepage_featured_title' ][ $i ] );
+						$title = $options[ 'homepage_featured_title' ][ $i ];
 					} else {
 						$title = '';
 					}			
 					
-	
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
 						$catchkathmandu_homepage_featured_content .= '
 						<article id="featured-post-'.$i.'" class="post hentry">';
 							if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
-								$catchkathmandu_homepage_featured_content .= '
-								<figure class="featured-homepage-image">
-									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
-										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
-									</a>
-								</figure>';  
+								$catchkathmandu_homepage_featured_content .= '<figure class="featured-homepage-image">';
+									
+									if ( !empty ( $link ) ) {
+										$catchkathmandu_homepage_featured_content .= '
+										<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
+											<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
+										</a>';
+									}
+									else {
+										$catchkathmandu_homepage_featured_content .= '
+										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">';
+									}
+
+								$catchkathmandu_homepage_featured_content .= '</figure>';  
 							}
 							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
-								$catchkathmandu_homepage_featured_content .= '
-								<div class="entry-container">';
+								$catchkathmandu_homepage_featured_content .= '<div class="entry-container">';
 								
-									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) { 
+									if ( !empty ( $title ) ) { 
+										
 										$catchkathmandu_homepage_featured_content .= '
 										<header class="entry-header">
-											<h1 class="entry-title">
-												<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>
+											<h1 class="entry-title">';
+												if ( !empty ( $link ) ) {
+													$catchkathmandu_homepage_featured_content .= '<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>';
+												}
+												else {
+													$catchkathmandu_homepage_featured_content .= $title;
+												}
+											$catchkathmandu_homepage_featured_content .= '
 											</h1>
 										</header>';
+
 									}
 									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
+										
 										$catchkathmandu_homepage_featured_content .= '
 										<div class="entry-content">
-											' . sprintf( __( '%s', 'catchkathmandu' ) , $options[ 'homepage_featured_content' ][ $i ] ) . '
+											' . $options[ 'homepage_featured_content' ][ $i ] . '
 										</div>';
+										
 									}
 								$catchkathmandu_homepage_featured_content .= '
 								</div><!-- .entry-container -->';	
 							}
 						$catchkathmandu_homepage_featured_content .= '			
-						</article><!-- .slides -->'; 	
+						</article><!-- .post -->'; 	
 					}
 			
 				}
@@ -1481,7 +1504,8 @@ function catchkathmandu_social_networks() {
 						$options[ 'social_skype' ],
 						$options[ 'social_soundcloud' ],
 						$options[ 'social_email'],
-						$options[ 'social_xing' ]
+						$options[ 'social_xing' ],
+						$options[ 'social_meetup' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1648,6 +1672,11 @@ function catchkathmandu_social_networks() {
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchkathmandu_social_networks .=
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Xing', 'catchkathmandu' ) .'</a></li>';
+			}	
+			//Meetup
+			if ( !empty( $options[ 'social_meetup' ] ) ) {
+				$catchkathmandu_social_networks .=
+					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catchkathmandu' ) .'" target="_blank">'. esc_attr__( 'Meetup', 'catchkathmandu' ) .'</a></li>';
 			}	
 			
 			$catchkathmandu_social_networks .='

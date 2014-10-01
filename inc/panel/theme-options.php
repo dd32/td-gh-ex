@@ -1091,7 +1091,7 @@ function catchkathmandu_theme_options_do_page() {
                 <div id="sociallinks">
            			<div class="option-container">
                 		<h3 class="option-toggle"><a href="#"><?php _e( 'Predefine Social Icons', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
+                        <div class="option-content inside show">
                             <div class="row">
                                 <div class="col col-1">
                                     <?php _e( 'Facebook', 'catchkathmandu' ); ?>
@@ -1322,6 +1322,14 @@ function catchkathmandu_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                     <input type="text" size="45" name="catchkathmandu_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                </div>
+                            </div><!-- .row --> 
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Meetup', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="catchkathmandu_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
                                 </div>
                             </div><!-- .row -->                                                         
                             <div class="row">
@@ -1724,7 +1732,10 @@ function catchkathmandu_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_xing' ] ) ) {
 		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
-	}	
+	}
+    if( isset( $input[ 'social_meetup' ] ) ) {
+        $input_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );
+    }	
 
 	// data validation for Custom Social Icons 
 	if ( isset( $input[ 'social_custom_qty' ] ) ) {
