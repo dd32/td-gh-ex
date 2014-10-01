@@ -175,8 +175,12 @@ function siteorigin_settings_add_field( $section, $id, $type, $title = null, $ar
 		'field' => $id,
 		'type' => $type,
 	) );
-
 	add_settings_field( $id, $title, 'siteorigin_settings_field', 'theme_settings', $section, $args );
+
+	if ( is_admin() && $type == 'editor' && !empty($args['editor_style_formats']) ) {
+		global $siteorigin_settings_editor_style_formats;
+		$siteorigin_settings_editor_style_formats[$section . '_' . $id] = $args['editor_style_formats'];
+	}
 }
 
 /**
@@ -372,6 +376,14 @@ function siteorigin_settings_field( $args ) {
 			<?php
 			break;
 
+		case 'editor' :
+			$editor_settings = wp_parse_args( !empty($args['settings']) ? $args['settings'] : array(), array(
+				'textarea_name' => $field_name,
+				'textarea_rows' => 8,
+			) );
+			wp_editor( $current, $field_id, $editor_settings );
+			break;
+
 		case 'widget' :
 			if(empty($args['widget_class'])) break;
 
@@ -381,21 +393,17 @@ function siteorigin_settings_field( $args ) {
 			}
 
 			if( !class_exists($args['widget_class']) ) {
+				// Display the message prompting the user to install the widget plugin from WordPress.org
 				?><div class="so-settings-widget-form"><?php
-				printf( __('This field requires the %s plugin. ', 'influence'), $args['plugin_name']);
+				printf( __('This field requires the %s plugin. ', 'vantage'), $args['plugin_name']);
 				if( function_exists('siteorigin_plugin_activation_install_url') ) {
 					$install_url = siteorigin_plugin_activation_install_url($args['plugin'], $args['plugin_name']);
-					printf( __('<a href="%s" target="_blank">Install %s</a> now. ', 'influence'), $install_url, $args['plugin_name']);
+					printf( __('<a href="%s" target="_blank">Install %s</a> now. ', 'vantage'), $install_url, $args['plugin_name']);
 				}
 				?></div>
 				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" value="<?php echo esc_attr( serialize( $current ) ) ?>" /><?php
 			}
 			else {
-				global $siteorigin_settings_widget_forms;
-				if(is_null($siteorigin_settings_widget_forms)) {
-					$siteorigin_settings_widget_forms = array();
-				}
-
 				// Render the widget form
 				$the_widget = new $args['widget_class']();
 				$the_widget->id = $field_id;
@@ -586,6 +594,41 @@ function siteorigin_settings_media_view_strings($strings, $post){
 	return $strings;
 }
 add_filter('media_view_strings', 'siteorigin_settings_media_view_strings', 10, 2);
+
+/**
+ * Add editor formats for theme settings page
+ */
+function siteorigin_settings_add_editor_formats( $init_array ){
+	// This ensures that we're in the admin. Not adding this line can cause problems with some plugins
+	if( !function_exists('get_current_screen') ) return $init_array;
+
+	// Make sure we're on the theme settings page
+	$screen = get_current_screen();
+	if( $screen->base == 'appearance_page_theme_settings_page' ) {
+		global $siteorigin_settings_editor_style_formats;
+		if( isset( $siteorigin_settings_editor_style_formats[ $init_array['body_class'] ] ) ) {
+			$init_array['style_formats'] = json_encode( $siteorigin_settings_editor_style_formats[ $init_array['body_class'] ] );
+		}
+	}
+
+	return $init_array;
+}
+add_filter('tiny_mce_before_init', 'siteorigin_settings_add_editor_formats');
+
+function siteorigin_settings_add_editor_styles_button($buttons){
+	// This ensures that we're in the admin. Not adding this line can cause problems with some plugins
+	if( !function_exists('get_current_screen') ) return $buttons;
+
+	// Make sure we're on the theme settings page
+	$screen = get_current_screen();
+	if( $screen->base == 'appearance_page_theme_settings_page' ) {
+		array_unshift($buttons, 'styleselect');
+	}
+
+
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'siteorigin_settings_add_editor_styles_button');
 
 /**
  * Settings validators.
