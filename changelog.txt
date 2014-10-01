@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+Shipyard version 2.3 - october 2014
+- added and adjusted text markup tags
+
 Shipyard version 2.2 - june 2014
 - forgot to reset the content_width in previous version
 - changed size of featured and single page image
