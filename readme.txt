@@ -52,7 +52,7 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 Scripts
 =======
 Script: nav.js
-Script: nav-secondary
+Script: nav-secondary.js
 Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
 Copyright author: John Hartley
 Author URI: http://maxfoundry.com/blog/author/johnbhartley 
@@ -67,6 +67,15 @@ Copyright author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Item: address-dark.png
+Item: address-light.png
+Item: quote-dark.png
+Item: quote-light.png
+Author: Clker.com
+Author URI: http://www.clker.com
+License: none (public domain) 
+License URI: http://www.clker.com/disclaimer.html
 
 
 CREDITS

@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 2.4
+Version: 2.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, header navigation and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -89,12 +89,14 @@ h6 {font-size:0.75em; line-height:2em;}
 a {text-decoration:none; color:#0066ff;}
 a:hover {text-decoration:underline;}
 
-strong {font-weight: bold;}
+strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
-pre {margin: 5px 0; border: 1px solid #ccc; background: #f8f8f8; padding:10px; word-wrap: break-word;}
-code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
+ins, mark {font-weight:bold; background:none; color:#0066ff;}
+cite, em, abbr, acronym {font-style:italic;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc; background:#f8f8f8; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
+address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}

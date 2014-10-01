@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 2.5 - october 2014
+- added and adjusted text markup tags
+
 PrivateBusiness version 2.4 - june 2014
 - added single level header navigation
 - added featured image on single page
