@@ -1,84 +1,5 @@
 <?php
 
-// register and enqueue all of the scripts used by Tracks
-function ct_tracks_load_javascript_files() {
-
-    wp_register_style( 'ct-tracks-google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
-
-    if(! is_admin() ) {
-        wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
-        wp_enqueue_style('ct-tracks-google-fonts');
-        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
-        wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
-
-        if(get_theme_mod('premium_layouts_setting') == 'full-width'){
-            wp_enqueue_style('ct-tracks-full-width', get_template_directory_uri() . '/licenses/css/full-width.min.css');
-        }
-        elseif(get_theme_mod('premium_layouts_setting') == 'full-width-images'){
-            wp_enqueue_style('ct-tracks-full-width-images', get_template_directory_uri() . '/licenses/css/full-width-images.min.css');
-        }
-        elseif(get_theme_mod('premium_layouts_setting') == 'two-column'){
-            wp_enqueue_style('ct-tracks-two-column', get_template_directory_uri() . '/licenses/css/two-column.min.css');
-        }
-        elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
-            wp_enqueue_style('ct-tracks-two-column-images', get_template_directory_uri() . '/licenses/css/two-column-images.min.css');
-        }
-    }
-    // enqueues the comment-reply script on posts & pages.  This script is included in WP by default
-    if( is_singular() && comments_open() && get_option('thread_comments') ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
-}
-
-add_action('wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
-
-/* enqueue styles used on theme options page */
-function ct_tracks_enqueue_admin_styles($hook){
-
-    // enqueue on Theme Options and Post Editor
-    if ( 'appearance_page_tracks-options' == $hook || 'post.php' == $hook ) {
-        wp_enqueue_style('style-admin', get_template_directory_uri() . '/styles/style-admin.css');
-    }
-	// enqueue Fitvids in Post Editor for Video Post upgrade
-	if ( 'post.php' == $hook ) {
-		wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/fitvids.js', array('jquery'),'', true);
-		wp_enqueue_script('admin', get_template_directory_uri() . '/js/build/admin.min.js', array('jquery'),'', true);
-	}
-    // if is user profile page
-    if('profile.php' == $hook || 'user-edit.php' == $hook){
-
-        // Enqueues all scripts, styles, settings, and templates necessary to use media JavaScript APIs.
-        wp_enqueue_media();
-
-        // enqueue the JS needed to utilize media uploader on profile image upload
-        wp_enqueue_script('ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload');
-    }
-}
-add_action('admin_enqueue_scripts',	'ct_tracks_enqueue_admin_styles' );
-
-/* enqueues scripts and styles used on customizer page */
-function ct_tracks_enqueue_customizer_styles(){
-
-    wp_enqueue_script('multiple-select', get_template_directory_uri() . '/js/build/multiple-select.min.js',array('jquery'),'',true);
-    wp_enqueue_style('multiple-select-styles', get_template_directory_uri() . '/styles/multiple-select.css');
-
-    wp_enqueue_script('ct-customizer-js', get_template_directory_uri() . '/js/build/customizer.min.js#ct_tracks_asyncload');
-    wp_enqueue_style('ct-customizer-css', get_template_directory_uri() . '/styles/style-customizer.css');
-}
-add_action('customize_controls_enqueue_scripts','ct_tracks_enqueue_customizer_styles');
-
-// load all scripts enqueued by theme asynchronously
-function ct_tracks_add_async_script($url) {
-
-    // if async parameter not present, do nothing
-    if (strpos($url, '#ct_tracks_asyncload') === false){
-        return $url;
-    }
-    // if async parameter present, add async attribute
-    return str_replace('#ct_tracks_asyncload', '', $url)."' async='async";
-}
-add_filter('clean_url', 'ct_tracks_add_async_script', 11, 1);
-
 /* Load the core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
@@ -94,7 +15,6 @@ function ct_tracks_theme_setup() {
 	/* Theme-supported features go here. */
     add_theme_support( 'hybrid-core-template-hierarchy' );
     add_theme_support( 'loop-pagination' );
-    add_theme_support( 'hybrid-core-widgets' );
 
     // from WordPress core not theme hybrid
     add_theme_support( 'post-thumbnails' );
@@ -124,6 +44,9 @@ function ct_tracks_theme_setup() {
     {
         include $filename;
     }
+
+	// load text domain
+	load_theme_textdomain('tracks', get_template_directory() . '/languages');
 }
 
 function ct_tracks_register_widget_areas(){
@@ -189,22 +112,22 @@ function ct_tracks_update_fields($fields) {
 
     $fields['author'] =
         '<p class="comment-form-author">
-            <label class="screen-reader-text">Your Name</label>
-            <input required placeholder="Your Name*" id="author" name="author" type="text" aria-required="true" value="' . esc_attr( $commenter['comment_author'] ) .
+            <label class="screen-reader-text">' . __("Your Name", "tracks") . '</label>
+            <input required placeholder="' . __("Your Name*", "tracks") . '" id="author" name="author" type="text" aria-required="true" value="' . esc_attr( $commenter['comment_author'] ) .
         '" size="30"' . $aria_req . ' />
     	</p>';
 
     $fields['email'] =
         '<p class="comment-form-email">
-            <label class="screen-reader-text">Your Email</label>
-            <input required placeholder="Your Email*" id="email" name="email" type="email" aria-required="true" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            <label class="screen-reader-text">' . __("Your Email", "tracks") . '</label>
+            <input required placeholder="' . __("Your Email*", "tracks") . '" id="email" name="email" type="email" aria-required="true" value="' . esc_attr(  $commenter['comment_author_email'] ) .
         '" size="30"' . $aria_req . ' />
     	</p>';
 
     $fields['url'] =
         '<p class="comment-form-url">
-            <label class="screen-reader-text">Your Website URL</label>
-            <input placeholder="Your URL" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            <label class="screen-reader-text">' . __("Your Website URL", "tracks") . '</label>
+            <input placeholder="' . __("Your URL", "tracks") . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
         '" size="30" />
             </p>';
 
@@ -216,8 +139,8 @@ function ct_tracks_update_comment_field($comment_field) {
 	
 	$comment_field =
         '<p class="comment-form-comment">
-            <label class="screen-reader-text">Your Comment</label>
-            <textarea required placeholder="Enter Your Comment&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            <label class="screen-reader-text">' . __("Your Comment", "tracks") . '</label>
+            <textarea required placeholder="' . __("Enter Your Comment", "tracks") . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </p>';
 	
 	return $comment_field;
@@ -259,7 +182,7 @@ function ct_tracks_excerpt() {
     }
     // use the read more link if present
     elseif($ismore) {
-        the_content("Read More <span class='screen-reader-text'>" . get_the_title() . "</span>");
+        the_content( __('Read More', 'tracks') . "<span class='screen-reader-text'>" . get_the_title() . "</span>");
     }
     // otherwise the excerpt is automatic, so output it
     else {
@@ -270,7 +193,7 @@ function ct_tracks_excerpt() {
 // filter the link on excerpts
 function ct_tracks_excerpt_read_more_link($output) {
 	global $post;
-	return $output . "<p><a class='more-link' href='". get_permalink() ."'>Read the Post <span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+	return $output . "<p><a class='more-link' href='". get_permalink() ."'>" . __('Read the Post', 'tracks') . "<span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
 }
 
 add_filter('the_excerpt', 'ct_tracks_excerpt_read_more_link');
@@ -316,7 +239,7 @@ function ct_tracks_author_social_icons() {
 
     foreach ($social_sites as $key => $social_site) {
         if(get_the_author_meta( $social_site)) {
-            if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news" || $key == 'vk') {
+            if( $key ==  "flickr" || $key ==  "dribbble" || $key ==  "instagram" || $key ==  "soundcloud" || $key ==  "spotify" || $key ==  "vine" || $key ==  "yahoo" || $key ==  "codepen" || $key ==  "delicious" || $key ==  "stumbleupon" || $key ==  "deviantart" || $key ==  "digg" || $key ==  "hacker-news" || $key == 'vk' || $key == 'weibo' || $key == 'tencent-weibo') {
                 echo "<a href='".esc_url(get_the_author_meta( $social_site))."'><i class=\"fa fa-$key\"></i></a>";
             }
             elseif($key == 'googleplus'){
@@ -510,19 +433,6 @@ function ct_tracks_odd_even_post_class( $classes ) {
 add_filter ( 'post_class' , 'ct_tracks_odd_even_post_class' );
 
 /* css output for hiding the scroll to top link */
-function ct_tracks_return_top_settings_output(){
-
-    $setting = get_theme_mod('additional_options_return_top_settings');
-
-    /* if 'hide' is selected, hide it */
-    if($setting == 'hide') {
-        $css = "#return-top { display: none; }";
-        wp_add_inline_style('style', $css);
-    }
-}
-add_action('wp_enqueue_scripts','ct_tracks_return_top_settings_output');
-
-/* css output for hiding the scroll to top link */
 function ct_tracks_image_zoom_settings_output(){
 
     $setting = get_theme_mod('additional_options_image_zoom_settings');
@@ -563,7 +473,7 @@ function ct_tracks_customizer_social_icons_output() {
                     <a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
                 <?php endif; ?>
 
-                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == 'vk') { ?>
+                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == 'vk' || $active_site == 'weibo' || $active_site == 'tencent-weibo') { ?>
                     <i class="fa fa-<?php echo $active_site; ?>"></i>
                 <?php } elseif( $active_site == 'email' ) { ?>
                     <i class="fa fa-envelope"></i>
@@ -580,7 +490,7 @@ function ct_tracks_customizer_social_icons_output() {
 // array of social media site names
 function ct_tracks_social_site_list(){
 
-    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk', 'email' );
+    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'git', 'hacker-news', 'steam', 'vk', 'weibo', 'tencent-weibo', 'email' );
     return $social_sites;
 }
 
@@ -710,4 +620,16 @@ function ct_tracks_loading_indicator_svg() {
 	return $svg;
 }
 
+// set the date format for new users
+function ct_tracks_set_date_format() {
+
+	// immediately set the date format
+	if( get_option('ct_tracks_date_format_origin') != 'updated' ) {
+		update_option('date_format', 'F j');
+
+		// add option so never updates date format again. Allows users to change format.
+		add_option('ct_tracks_date_format_origin', 'updated');
+	}
+}
+add_action( 'init', 'ct_tracks_set_date_format' );
 ?>

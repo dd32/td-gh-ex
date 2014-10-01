@@ -75,7 +75,9 @@ function ct_tracks_social_array(){
         'git' => 'git_profile',
         'hacker-news' => 'hacker-news_profile',
         'steam' => 'steam_profile',
-        'steam' => 'vk_profile',
+        'vk' => 'vk_profile',
+        'weibo' => 'weibo_profile',
+        'tencent-weibo' => 'tencent_weibo_profile',
         'email' => 'email_profile'
     );
     return $social_sites;
@@ -94,7 +96,7 @@ function ct_tracks_add_social_profile_settings($user) {
     ?>
     <table class="form-table">
         <tr>
-            <th><h3>Social Profiles</h3></th>
+            <th><h3><?php _e('Social Profiles', 'tracks'); ?></h3></th>
         </tr>
         <?php
         foreach($social_sites as $key => $social_site) {
