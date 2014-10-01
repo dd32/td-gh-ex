@@ -46,6 +46,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.5 =
+* Hungarian language file added. Thanks to Mr. Tamás for providing the language files.
+
 = Version 1.1.4 =
 * W3C validation error fixed.
 * Catalan language file added. Thanks to Mr. Jordi Flamarich for providing the language files. 
