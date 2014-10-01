@@ -64,6 +64,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.0.9 =
+* Dutch language file added. Thanks to Mr. Bram Brambring for providing the language files.
+
 = Version 1.0.8 =
 * Swedish language file added. Thanks to Mr. Magnus Sjöberg for providing the language files.
 
