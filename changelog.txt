@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.6 - october 2014
+- added and adjusted text markup tags
+
 GridBulletin version 1.5 - june 2014
 - removed featured image on single post
 - added several adjustments for better responsive layout
