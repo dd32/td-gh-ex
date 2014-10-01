@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.6
+Version: 1.1.7
 Requires at least: 3.0.1
-Tested up to: 3.9.1
+Tested up to: 4.0
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -61,6 +61,10 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.7 - 01.10.2014 =
+* Rel-designer label on the link in the footer is included.
+* Screenshot is modified to avoid responsive label.
 
 = 1.1.6 - 06.08.2014 =
 * Address data is sorted in the footer.
