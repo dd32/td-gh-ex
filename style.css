@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.47
+	Version: 1.48
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom accent color, custom logo upload, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, custom-colors, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -433,7 +433,7 @@ a.more-link,
 }
 
 .single-post .post,
-.single-page .post,
+.page .post,
 .post:last-child,
 .page:last-child { padding-bottom: 0; border-bottom: 0; margin-bottom: 0; }
 
@@ -792,7 +792,7 @@ a.post-nav-newer { float: right; text-align: right; }
 .post-content *:last-child { margin-bottom: 0; }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-	margin: 50px 0 20px;
+	margin: 50px 0 25px;
 	color: #444;
 	line-height: 120%;
 }
@@ -820,7 +820,7 @@ a.post-nav-newer { float: right; text-align: right; }
 .post-content h4+h1, .post-content h4+h2, .post-content h4+h3, .post-content h4+h4, .post-content h4+h5, .post-content h4+h6,
 .post-content h5+h1, .post-content h5+h2, .post-content h5+h3, .post-content h5+h4, .post-content h5+h5, .post-content h5+h6,
 .post-content h6+h1, .post-content h6+h2, .post-content h6+h3, .post-content h6+h4, .post-content h6+h5, .post-content h6+h6 {
-	margin-top: 30px;
+	margin-top: 25px;
 }
 
 .post-content blockquote {
@@ -922,6 +922,12 @@ code, kbd, pre {
 	line-height: 170%;
 }
 
+.post-content li ol li:first-child,
+.post-content li ul li:first-child {
+	margin-top: 0.5em;
+}
+
+
 .post-content ol > li:last-child,
 .post-content ul > li:last-child {
 	margin-bottom: 0;
@@ -947,6 +953,9 @@ code, kbd, pre {
 /* Post media --------------------------------------- */
 
 
+.wp-caption a,
+.wp-caption img { display: block; }
+
 img.alignleft,
 .alignleft img,
 img.aligncenter,
@@ -962,6 +971,7 @@ img.alignright,
 .post-content .alignleft,
 .post-content .alignright {
 	margin-bottom: 1.2em;
+	max-width: 40%;
 }
 
 .post-content .wp-caption .alignleft,
@@ -988,8 +998,9 @@ img.alignright,
 
 .post-content .wp-caption-text,
 .post-content .gallery-caption {
-	font-size: 0.85em;
 	padding-top: 0.5em;
+	font-size: 0.85em;
+	font-style: italic;
 	color: #888;
 	text-align: center;
 }
@@ -1073,6 +1084,7 @@ img.alignright,
 .post-content input[type="text"],
 .post-content input[type="tel"],
 .post-content input[type="url"],
+.post-content input[type="email"],
 .post-content input[type="password"],
 .post-content textarea {
 	width: 100%;
@@ -1099,6 +1111,7 @@ img.alignright,
 .post-content input[type="text"]:focus,
 .post-content input[type="tel"]:focus,
 .post-content input[type="url"]:focus,
+.post-content input[type="email"]:focus,
 .post-content input[type="password"]:focus,
 .post-content textarea:focus {
 	outline: none;
@@ -2157,19 +2170,6 @@ img#wpstats { display: none; }
 		margin-top: 30px;
 		margin-bottom: 10px;
 	}
-	
-	.post-content .alignleft,
-	.post-content .alignright { 
-		float: none; 
-		width: auto;
-		margin: 0 auto 1.2em auto;
-	}
-	
-	.post-content .alignleft img,
-	.post-content .alignright img { 
-		display: block;
-		margin: 0 auto;
-	}
 		
 	/* Comments --------------------------------------- */
 	
@@ -2326,6 +2326,21 @@ img#wpstats { display: none; }
 	.archive .format-quote .post-content blockquote cite,
 	.search .format-quote .post-content blockquote cite {
 		font-size: 0.75rem;
+	}
+	
+	/* Post content --------------------------------------- */
+	
+	.post-content .alignleft,
+	.post-content .alignright { 
+		float: none; 
+		max-width: 100%;
+		margin: 0 auto 1.2em auto;
+	}
+	
+	.post-content .alignleft img,
+	.post-content .alignright img { 
+		display: block;
+		margin: 0 auto;
 	}
 	
 	/* Comments --------------------------------------- */

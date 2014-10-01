@@ -1,6 +1,13 @@
 *** Hemingway changelog ***
 
 
+
+Version 1.48 (2014-10-01)
+-------------------------
+- Added a width attribute in the inline style of images in posts (thanks, RavanH!)
+- Added styling of input elements of the email type to style.css (Ibid)
+
+
 Version 1.47 (2014-08-06)
 -------------------------
 - Added missing form/input elements to the custom accent color control

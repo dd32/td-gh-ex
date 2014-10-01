@@ -221,7 +221,7 @@ function hemingway_fixed_img_caption_shortcode($attr, $content = null) {
 	if ( 1 > (int) $width || empty($caption) )
 	return $content;
 	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
+	return '<div ' . $id . 'style="width:'.$width.'px" class="wp-caption ' . esc_attr($align) . '" >'
 	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 
@@ -335,7 +335,7 @@ function cd_meta_box_save( $post_id ) {
 	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
 	
 	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
+	if( !current_user_can( 'edit_post', $post_id ) ) return;
 	
 	// now we can actually save the data
 	$allowed = array( 
