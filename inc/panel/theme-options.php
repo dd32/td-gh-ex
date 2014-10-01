@@ -114,7 +114,7 @@ function catchevolution_theme_options_do_page() {
                     <li><a href="#slidersettings"><?php _e( 'Featured Post Slider', 'catchevolution' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchevolution' );?></a></li>
                     <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
-                    	<li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'catchevolution' );?></a></li>
+                    	<li><a href="#webmaster"><?php _e( 'Tools', 'catchevolution' );?></a></li>
                    	<?php endif; ?>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
@@ -1088,7 +1088,7 @@ function catchevolution_theme_options_validate( $options ) {
 	}	
 
 		
-	//Webmaster Tool Verification
+	//Tool Verification
 	if( isset( $input[ 'analytic_header' ] ) ) {
 		$input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
 	}

@@ -181,6 +181,9 @@ and (orientation : landscape) {
 	.wrapper {
 		width: 700px;
 	}
+	.has-header-top #branding {
+	    padding-top: 42px;
+	}
 	.one-column.no-sidebar .site,
 	.one-column.no-sidebar #fixed-header-top {
 		width: 754px;

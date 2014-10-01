@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 19:37+0545\n"
-"PO-Revision-Date: 2014-09-16 19:37+0545\n"
+"POT-Creation-Date: 2014-10-02 00:27+0545\n"
+"PO-Revision-Date: 2014-10-02 00:28+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: bs\n"
@@ -784,8 +784,8 @@ msgid "Social Links"
 msgstr "Social Links"
 
 #: ../inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
+msgid "Tools"
+msgstr "Tools"
 
 #: ../inc/panel/theme-options.php:125
 msgid "Favicon Options"
@@ -1333,6 +1333,9 @@ msgstr "Sljedeća <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Arhive oznaka: %s"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster Tools"
 
 #~ msgid "%s in Facebook"
 #~ msgstr "%s Facebook"

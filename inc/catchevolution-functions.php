@@ -1040,7 +1040,7 @@ function catchevolution_social_networks() {
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catchevolution' ).'</a></li>';
 			}
 			//Meetup
-			if ( !empty( $options[ 'social_xing' ] ) ) {
+			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$catchevolution_social_networks .=
 					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catchevolution' ).'</a></li>';
 			}
@@ -1244,7 +1244,7 @@ function catchevolution_social_search() {
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catchevolution' ).'</a></li>';
 			}	
 			//Meetup
-			if ( !empty( $options[ 'social_xing' ] ) ) {
+			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$catchevolution_social_search .=
 					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catchevolution' ).'</a></li>';
 			}	

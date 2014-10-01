@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 19:37+0545\n"
-"PO-Revision-Date: 2014-09-16 19:37+0545\n"
+"POT-Creation-Date: 2014-10-02 00:27+0545\n"
+"PO-Revision-Date: 2014-10-02 00:27+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -736,7 +736,7 @@ msgid "Social Links"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
+msgid "Tools"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:125

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evoluion Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 19:40+0545\n"
-"PO-Revision-Date: 2014-09-16 19:40+0545\n"
+"POT-Creation-Date: 2014-10-02 00:31+0545\n"
+"PO-Revision-Date: 2014-10-02 00:31+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -781,8 +781,8 @@ msgid "Social Links"
 msgstr "Sociale Links"
 
 #: ../inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
+msgid "Tools"
+msgstr "Tools"
 
 #: ../inc/panel/theme-options.php:125
 msgid "Favicon Options"
@@ -1333,6 +1333,9 @@ msgstr "Volgende <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Tag archieven: %s"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Webmaster Tools"
 
 #~ msgid "Default"
 #~ msgstr "Standaard"

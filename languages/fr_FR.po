@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 19:38+0545\n"
-"PO-Revision-Date: 2014-09-16 19:39+0545\n"
+"POT-Creation-Date: 2014-10-02 00:30+0545\n"
+"PO-Revision-Date: 2014-10-02 00:31+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -633,7 +633,7 @@ msgid "Social Links"
 msgstr "Liens socials"
 
 #: inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
+msgid "Tools"
 msgstr "Outils Webmaster"
 
 #: inc/panel/theme-options.php:125
@@ -1221,6 +1221,9 @@ msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archives des Tags: %s"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Outils Webmaster"
 
 #~ msgid "Menu Tutorial from WordPress.com"
 #~ msgstr "Tutoriel du menu de WP"

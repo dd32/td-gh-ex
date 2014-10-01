@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 19:39+0545\n"
-"PO-Revision-Date: 2014-09-16 19:39+0545\n"
+"POT-Creation-Date: 2014-10-02 00:32+0545\n"
+"PO-Revision-Date: 2014-10-02 00:32+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -791,7 +791,7 @@ msgid "Social Links"
 msgstr "Links das Redes Sociais"
 
 #: ../inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
+msgid "Tools"
 msgstr "Ferramenta para Webmaster"
 
 #: ../inc/panel/theme-options.php:125
@@ -1362,6 +1362,9 @@ msgstr "Próximo <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Arquivos da Tag: %s"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Ferramenta para Webmaster"
 
 #~ msgid "%s in Facebook"
 #~ msgstr "%s in Facebook"

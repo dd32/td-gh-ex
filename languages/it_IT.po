@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
-"POT-Creation-Date: 2014-09-16 19:39+0545\n"
+"POT-Creation-Date: 2014-10-02 00:31+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -780,7 +780,7 @@ msgid "Social Links"
 msgstr "Link sociali"
 
 #: ../inc/panel/theme-options.php:117
-msgid "Webmaster Tools"
+msgid "Tools"
 msgstr "Strumenti del Webmaster"
 
 #: ../inc/panel/theme-options.php:125
@@ -1337,6 +1337,9 @@ msgstr "Successivi <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archivio tag: %s"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Strumenti del Webmaster"
 
 #~ msgid "%s in Facebook"
 #~ msgstr "%s su Facebook"
