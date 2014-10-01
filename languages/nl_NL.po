@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v2.1\n"
+"Project-Id-Version: OneColumn v2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-05-24 21:52:38+0000\n"

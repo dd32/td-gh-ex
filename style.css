@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 2.1
+Version: 2.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. 2 widget-areas in footer and 2 underneath header-image on homepage. Custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -89,12 +89,14 @@ h6 {font-size:0.75em; line-height:2em;}
 a {text-decoration:none; color:#f26535;}
 a:hover {text-decoration:underline;}
 
-strong {font-weight: bold;}
+strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
-pre {margin: 5px 0; border: 1px solid #ccc; background: #fff; padding:10px; word-wrap: break-word;}
-code, cite, em, abbr, acronym, q {font-style:italic;}
-blockquote, address {padding:5px; font-size:1.2em; font-style:italic;}
+ins, mark {font-weight:bold; background:none; color:#f26535;}
+cite, em, abbr, acronym {font-style:italic;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc; background:#fff; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
+address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}

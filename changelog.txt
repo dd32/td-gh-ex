@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+OneColumn Version 2.2 - october 2014
+- added and adjusted text markup tags
+
 OneColumn Version 2.1 - june 2014
 - added several adjustments for better responsive layout
 - text-align justify for content area, sidebar and footer
