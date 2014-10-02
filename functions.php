@@ -225,7 +225,12 @@ function adamos_theme_customizer( $wp_customize ) {
     'description' => 'Upload a logo to replace the default site name and description in the header',
 ) );
 
-   $wp_customize->add_setting( 'adamos_logo' );
+   $wp_customize->add_setting( 
+   		'adamos_logo',
+		array(
+			'sanitize_callback' => 'adamos_sanitize_filename',
+		)
+	);
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'adamos_logo', array(
     'label'    => __( 'Logo', 'adamos' ),
@@ -461,7 +466,6 @@ $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
 $excerpt = strip_shortcodes($excerpt);
 $excerpt = strip_tags($excerpt);
 $excerpt = substr($excerpt, 0, 150);
-$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
 return $excerpt;
 }

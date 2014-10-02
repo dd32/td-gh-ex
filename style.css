@@ -3,8 +3,8 @@ Theme Name: Adamos
 Theme URI: http://www.templateexpress.com/adamos-theme/
 Author: Ossie Heffell
 Author URI: http://www.templateexpress.com/
-Description: Adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add and edit your own logo, header, featured slider, featured areas and much more.
-Version: 1.7
+Description: Adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add and edit your own logo, header, featured slider, featured areas and much more. This theme is WPML compatible.
+Version: 1.8
 License: GNU General Public License v2.0
 License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, responsive-layout, black
@@ -556,12 +556,12 @@ a:active {
 .site-header .site-introduction {
 	float: left;
 	width: 30%;
-	padding-top: 10px;
+	padding-top: 16px;
 	
 }
 .site-title {
-	font-size: 22px;
-	font-size: 2.2rem;
+	font-size: 16px;
+	font-size: 1.6rem;
 	font-family: 'open_sansbold', sans-serif;
 	padding-left: 6px;
 }
@@ -601,8 +601,7 @@ a:active {
 	margin: 0;
 	padding-left: 16px;
 	padding-right: 16px;
-	float: left;
-	
+	float: right;
 }
 .main-navigation li {
 	float: left;
@@ -634,7 +633,7 @@ a:active {
 
 .main-navigation ul ul a {
 	padding: 0 0.5em 0 0.5em;
-	width: 100px;
+	width: 170px;
 	color: #CCC;
 }
 .main-navigation ul ul li {
@@ -832,7 +831,8 @@ body.archive .page-title {
 }
 .entry-content ul li {
 	list-style-type: square;
-	list-style-position: inside;
+	list-style-position: outside;
+	margin-left: 1em;
 }
 .entry-content ol {
 	list-style: decimal;
@@ -1397,7 +1397,16 @@ MEDIA QUERIES
 	.header_container {
 	height: 100%;
 	width: 100%;
-}
+	}
+	.site-header .site-introduction {
+	text-align: center;
+	width: 100%;
+	padding: 10px 0;
+	}
+	.site-logo {
+	float: none;
+	text-align: center;
+	}
 }
 
 /* for 980px or less */
@@ -1413,7 +1422,6 @@ MEDIA QUERIES
 }
 #masthead .site-introduction {
 		float: none;
-		padding: 0;
 		width: 100%;
 	}
 }
