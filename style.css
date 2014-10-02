@@ -1,14 +1,14 @@
 /*
 Theme Name: Top Mag
-Theme URI: http://fasterthemes.com/themes/topmag
+Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.0.2
+Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
+Version: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: right-sidebar, one-column, two-columns, responsive-layout, theme-options
-Text Domain: topmag
+Tags: red, right-sidebar, one-column, two-columns, responsive-layout, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
+Text Domain: top-mag
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
@@ -73,11 +73,11 @@ body {
 .top-header .search-form label {
 	margin-bottom: 0;
 }
-.topmag_site_name {
+.top-mag-site-name {
 	font-size: 37px;
 	margin: 23px 0 0;
 }
-.topmag_tagline {
+.top-mag-tagline {
 	font-size: 14px;
 	margin-bottom: 23px;
 }
@@ -142,11 +142,10 @@ header .menu li a {
 	font-family: Tahoma;
 	text-transform: none;
 }
-.topmag-menu li a {
+.top-mag-menu li a {
 	color: #fffffe !important;
 	font-size: 12px;
 	font-family: Tahoma;
-	border-right: 1px solid #6B0000;
 	border-bottom: 2px solid rgba(0, 0, 0, 0);
 	margin-bottom: -2px;
 	text-transform: uppercase !important;
@@ -536,7 +535,7 @@ header .top-header-menu-left .menu li a {
 }
 .blogpost h2 {
 	font-size: 18px;
-	color: #4e0000;
+	color: #1f1f1f;
 	margin: 0 0 5px;
 }
 .blogpost p {
@@ -778,16 +777,16 @@ header .top-header-menu-left .menu li a {
 	border-bottom: 2px solid rgb(47, 47, 47);
 	margin: 0 !important;
 }
-.topmag_previous_pagination a, .topmag_next_pagination a {
+.top-mag-previous-pagination a, .top-mag-next-pagination a {
 	color: #4E0000
 }
-.topmag_previous_pagination {
+.top-mag-previous_pagination {
 	float: left;
 }
-.topmag_next_pagination {
+.top-mag-next-pagination {
 	float: right;
 }
-.topmag-custom-widget {
+.top-mag-custom-widget {
 	display: table;
 	margin-bottom: 20px;
 }
@@ -1136,42 +1135,54 @@ embed, iframe, object, video {
 	color: rgb(239, 203, 1);
 	text-decoration: underline;
 }
+.pagination a {
+	color: #666;
+	border:1px solid #666;
+}
+.pagination .active a,
+.pagination ul li a:hover {
+	color:rgb(78, 0, 0);
+	border: 1px solid rgb(78, 0, 0);
+}
+.post-comments a {
+	color:rgb(78, 0, 0);
+}
 /********** Menu ****************/
 
-.topmag-menu, .topmag-menu ul {
+.top-mag-menu, .top-mag-menu ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.topmag-menu:before, .topmag-menu:after {
+.top-mag-menu:before, .top-mag-menu:after {
 	content: "";
 	display: table;
 }
-.topmag-menu:after {
+.top-mag-menu:after {
 	clear: both;
 }
-.topmag-menu {
+.top-mag-menu {
 	zoom: 1;
 }
-.topmag-menu li {
+.top-mag-menu li {
 	float: left !important;
 	position: relative;
 }
-.topmag-menu a {
+.top-mag-menu a {
 	float: left;
 	text-decoration: none;
 }
-.topmag-menu a:hover, .topmag-menu a:focus {
+.top-mag-menu a:hover, .top-mag-menu a:focus {
 	color: rgb(253, 67, 38);
 }
-.topmag-menu li:hover > a {
+.top-mag-menu li:hover > a {
 	color: rgb(253, 67, 38);
 	text-decoration: none;
 }
-*html .topmag-menu li a:hover { /* IE6 only */
+*html .top-mag-menu li a:hover { /* IE6 only */
 	color: #fafafa;
 }
-.topmag-menu ul {
+.top-mag-menu ul {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -1185,12 +1196,12 @@ embed, iframe, object, video {
 	transition: all .2s ease-in-out;
 	background-color: rgba(31, 31, 31,0.95);
 }
-.topmag-menu li:hover > ul {
+.top-mag-menu li:hover > ul {
 	opacity: 1;
 	visibility: visible;
 	margin: 0;
 }
-.topmag-menu ul ul {
+.top-mag-menu ul ul {
 	top: 0;
 	margin: 0 0 0 0px;
 	_margin: 0; /*IE6 only*/
@@ -1200,25 +1211,25 @@ embed, iframe, object, video {
 	left: 100%;
 	width: 100%;
 }
-.topmag-menu ul li a {
+.top-mag-menu ul li a {
 	color: #000 !important;
 	text-decoration: none;
 }
-.topmag-menu ul li a:hover, .topmag-menu ul li a:focus, .topmag-menu ul li a:active {
+.top-mag-menu ul li a:hover, .top-mag-menu ul li a:focus, .top-mag-menu ul li a:active {
 	color: rgb(239, 203, 1) !important;
 }
-.topmag-menu ul li {
+.top-mag-menu ul li {
 	float: none;
 	display: block;
 	border: 0;
 	_line-height: 0; /*IE6 only*/
 }
-.topmag-menu ul li:last-child {
+.top-mag-menu ul li:last-child {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.topmag-menu ul a {
+.top-mag-menu ul a {
 	padding: 10px;
 	width: 140px;
 	_height: 10px; /*IE6 only*/
@@ -1227,25 +1238,26 @@ embed, iframe, object, video {
 	text-transform: none;
 	text-align: left;
 }
-.topmag-menu ul li:first-child > a {
+.top-mag-menu ul li:first-child > a {
 	-moz-border-radius: 3px 3px 0 0;
 	-webkit-border-radius: 3px 3px 0 0;
 	border-radius: 3px 3px 0 0;
 }
-.topmag-menu ul li:first-child a:hover:after {
+.top-mag-menu ul li:first-child a:hover:after {
 	border-bottom-color: #fff;
 }
-.topmag-menu ul ul li:first-child a:hover:after {
+.top-mag-menu ul ul li:first-child a:hover:after {
 	border-right-color: rgb(253, 67, 38);
 	border-bottom-color: transparent;
 }
-.topmag-menu ul li:last-child > a {
+.top-mag-menu ul li:last-child > a {
 	-moz-border-radius: 0 0 3px 3px;
 	-webkit-border-radius: 0 0 3px 3px;
 	border-radius: 0 0 3px 3px;
 }
-.topmag-menu li ul li {
+.top-mag-menu li ul li {
 	border-bottom: 1px solid #ccc;
+	width:100%;
 }
 #menu-trigger {
 	display: none;
@@ -1264,10 +1276,10 @@ embed, iframe, object, video {
 	color: rgb(221, 221, 221) !important;
 	border-bottom: none;
 }
-.topmag-menu ul li a:hover, .topmag-menu ul li a:focus, .topmag-menu ul li a:active {
+.top-mag-menu ul li a:hover, .top-mag-menu ul li a:focus, .top-mag-menu ul li a:active {
 	border-bottom: none;
 }
-.topmag-post-widget {
+.top-mag-post-widget {
 	width: 100px;
 	height: 75px;
 }
@@ -1381,6 +1393,30 @@ strong {
 	border: 1px solid rgb(239, 203, 1);
 	color: rgb(239, 203, 1);
 }
+.single-pagination a {
+	color:#4e0000;
+}
+.single-pagination {
+	margin-bottom:20px;
+}
+.main-sidebar .search-submit {
+	background-color: rgb(78, 0, 0);
+    border: medium none;
+    display: inline-table;
+    margin: 2px;
+    padding: 5px 10px;
+    color:#FFF;
+    border-radius:6px;
+}
+.footer-post .search-submit {
+	background-color: #EEE;
+    border: medium none;
+    display: inline-table;
+    margin: 2px;
+    padding: 5px 10px;
+    color:#212121;
+    border-radius:6px;
+}
 /********* Media CSS Start *********/
 
 @media (max-width:767px) {
@@ -1462,19 +1498,19 @@ strong {
 	display: block;
 	height: 40px;
 }
-.topmag-menu:after {
+.top-mag-menu:after {
 	content: '';
 	position: absolute;
 	left: 25px;
 }
-.topmag-menu a:hover, .topmag-menu a:focus {
+.top-mag-menu a:hover, .top-mag-menu a:focus {
 	color: rgb(253, 67, 38) !important;
 }
-.topmag-menu li:hover > a {
+.top-mag-menu li:hover > a {
 	color: rgb(253, 67, 38);
 	text-decoration: none;
 }
-.topmag-menu ul {
+.top-mag-menu ul {
 	position: static;
 	visibility: visible;
 	opacity: 1;
@@ -1483,13 +1519,13 @@ strong {
 	border: none;
 	padding: 4px 3px 2px 4px;
 }
-.topmag-menu ul ul {
+.top-mag-menu ul ul {
 	margin: 0 0 0 20px !important;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.topmag-menu li {
+.top-mag-menu li {
 	position: static;
 	display: block;
 	float: none;
@@ -1501,35 +1537,35 @@ strong {
 	width: 90%;
 	text-align: left;
 }
-.topmag-menu ul li {
+.top-mag-menu ul li {
 	margin-left: 20px;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.topmag-menu a {
+.top-mag-menu a {
 	display: block;
 	float: none;
 	padding: 0px 15px !important;
 	color: rgb(24, 24, 24);
 }
-.topmag-menu a:hover, .topmag-menu a:focus {
+.top-mag-menu a:hover, .top-mag-menu a:focus {
 	color: #fafafa;
 }
-.topmag-menu ul a {
+.top-mag-menu ul a {
 	padding: 0;
 	width: auto;
 }
-.topmag-menu ul a:hover {
+.top-mag-menu ul a:hover {
 	background: none;
 }
-.topmag-menu ul li:first-child a:after, .topmag-menu ul ul li:first-child a:after {
+.top-mag-menu ul li:first-child a:after, .top-mag-menu ul ul li:first-child a:after {
 	border: 0;
 }
-.topmag-menu li {
+.top-mag-menu li {
 	float: left !important;
 }
-.topmag-menu ul li a {
+.top-mag-menu ul li a {
 	text-align: left;
 }
 .navbar-collapse ul ul li a {
@@ -1538,24 +1574,24 @@ strong {
 .nav > li > a:hover, .nav > li > a:focus {
 	border: none;
 }
-.topmag-menu li > a:hover {
+.top-mag-menu li > a:hover {
 	color: rgb(255, 255, 255) !important;
 }
-.topmag-menu li a {
+.top-mag-menu li a {
 	border-right: none;
 }
-.topmag-menu li ul li {
+.top-mag-menu li ul li {
 	border-bottom: none;
 }
-.topmag-menu ul li {
+.top-mag-menu ul li {
 	background: none;
 }
-.topmag-menu li> a {
+.top-mag-menu li> a {
 	color: rgb(24, 24, 24);
 	padding: 0 0 10px !important;
 	border-bottom: none;
 }
-.topmag-menu li> a:hover {
+.top-mag-menu li> a:hover {
 	color: rgb(253, 67, 38);
 	border-bottom: none;
 }
@@ -1563,10 +1599,10 @@ strong {
 	padding-bottom: 2px !important;
 	padding-top: 2px !important;
 }
-.topmag_site_name {
+.top-mag-site-name {
 	text-align: center;
 }
-.topmag_tagline {
+.top-mag-tagline {
 	text-align: center;
 }
 .single-post-image {

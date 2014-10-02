@@ -1,6 +1,6 @@
 html .mceContentBody {
 	font-size: 100%;
-	max-width: 474px;
+	max-width: 100%;
 }
 body {
 	color: #2b2b2b;
@@ -167,11 +167,11 @@ hr {
 /** Links **/
 
 a {
-	color: #24890d;
+	color: rgb(78, 0, 0);
 	text-decoration: none;
 }
 a:visited {
-	color: #24890d;
+	color: rgb(78, 0, 0);
 }
 a:focus {
 	outline: thin dotted;
@@ -399,7 +399,7 @@ img {
 	background: #fff;
 }
 .mejs-controls .mejs-time-rail .mejs-time-current {
-	background: #24890d;
+	background: rgb(78, 0, 0);
 }
 .mejs-controls .mejs-time-rail .mejs-time-total, .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
 	background: rgba(255, 255, 255, .33);

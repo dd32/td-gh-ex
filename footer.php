@@ -2,7 +2,7 @@
 /**
  * the footer template file.
  */
- $topmag_options = get_option( 'topmag_theme_options' );
+ $top_mag_options = get_option( 'topmag_theme_options' );
 ?>
 <!-- footer -->
 <div class="col-md-12 footer-post"> 
@@ -20,10 +20,10 @@
 <footer>
   <div class="copyright col-lg-12">
     <div class="col-md-7 no-padding">
-      <p><?php if(!empty($topmag_options['footertext'])) { 
-               	 echo wp_filter_nohtml_kses($topmag_options['footertext']).' '; 
+      <p><?php if(!empty($top_mag_options['footertext'])) { 
+               	 echo esc_attr($top_mag_options['footertext']).' '; 
 			}
-				echo '<p>Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/topmag">Top Mag</a>.';
+				echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/topmag">Top Mag</a>.';
 		?></p>
     </div>
   </div>

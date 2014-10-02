@@ -2,8 +2,8 @@
 /*
  * Set up the content width value based on the theme's design.
  */
-if ( ! function_exists( 'topmag_setup' ) ) :
-function topmag_setup() {
+if ( ! function_exists( 'top_mag_setup' ) ) :
+function top_mag_setup() {
 	
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
@@ -12,9 +12,9 @@ function topmag_setup() {
 	/*
 	 * Make topmag theme available for translation.
 	 */
-	load_theme_textdomain( 'topmag' );
+	load_theme_textdomain( 'top-mag' );
 	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style( array( 'css/editor-style.css', topmag_font_url() ) );
+	add_editor_style( array( 'css/editor-style.css', top_mag_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// This theme uses wp_nav_menu() in two locations.
@@ -24,7 +24,7 @@ function topmag_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary'   => __( 'Header menu', 'topmag' )
+		'primary'   => __( 'Header menu', 'top-mag' )
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -33,32 +33,29 @@ function topmag_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
-	add_theme_support( 'custom-background', apply_filters( 'topmag_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'top_mag_custom_background_args', array(
 	'default-color' => 'f5f5f5',
 	) ) );
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
-		'featured_content_filter' => 'topmag_get_featured_posts',
+		'featured_content_filter' => 'top_mag_get_featured_posts',
 		'max_posts' => 6,
 	) );
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
 
-endif; // topmag_setup
-add_action( 'after_setup_theme', 'topmag_setup' );
+endif; // top_mag_setup
+add_action( 'after_setup_theme', 'top_mag_setup' );
 
-/*** Custom Header ***/
+/*** Enqueue files ***/
 require_once('functions/enqueue-files.php');
 
 /*** Theme Default Setup ***/
 require_once('functions/theme-default-setup.php');
 
-/*** Custom Header ***/
-require_once('functions/custom-header.php');
-
-/*** Social Media ***/
-require_once('functions/ft-setup.php');
-
 /*** Theme Options ***/
-require_once('theme-options/fasterthemes.php');
+require_once('theme-options/topmagtheme.php');
+
+/***** TGM *****/
+require_once('functions/tgm-plugins.php');

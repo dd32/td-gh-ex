@@ -2,7 +2,7 @@
 /**
  * The attechment template file.
 **/
-$topmag_options = get_option( 'topmag_theme_options' );
+$top_mag_options = get_option( 'topmag_theme_options' );
 get_header(); ?>
 <div class="col-md-12">
   <div class="col-md-8 single-blog no-padding-left clearfix">
@@ -12,13 +12,13 @@ get_header(); ?>
         <?php the_title(); ?>
       </h1>
       <div class="blogpost-comment">
-        <?php topmag_entry_meta(); ?>
+        <?php top_mag_entry_meta(); ?>
       </div>
     </div>
     <div class="col-md-12 singleblog-img no-padding singleblog-contan">
-      <?php $topmag_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
-			 if($topmag_featured_image != '') { ?>
-      <img src="<?php echo $topmag_featured_image[0]; ?>" class="img-responsive" />
+      <?php $top_mag_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
+			 if($top_mag_featured_image != '') { ?>
+      <img src="<?php echo $top_mag_featured_image[0]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
       <div class="caption-wrap-topimg">
         <div class="caption-date"><span><?php echo get_the_date('d M'); ?></span></div>
         <div class="caption-time"><i class="fa fa-clock-o"></i> <?php echo get_the_date('g:i'); ?></div>

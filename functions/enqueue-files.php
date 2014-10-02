@@ -2,7 +2,7 @@
 /*
  * topmag Enqueue css and js files
 */
-function topmag_enqueue()
+function top_mag_enqueue()
 {
 	wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css',array());
 	wp_enqueue_style('tickercss',get_template_directory_uri().'/css/ticker-style.css',array());
@@ -19,4 +19,4 @@ function topmag_enqueue()
 	wp_enqueue_script('default',get_template_directory_uri().'/js/default.js',array('jquery'));
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
-add_action('wp_enqueue_scripts', 'topmag_enqueue');
+add_action('wp_enqueue_scripts', 'top_mag_enqueue');

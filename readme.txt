@@ -1,20 +1,20 @@
 == Top Mag ==
 Theme Name: Top Mag
-Theme URI: http://fasterthemes.com/themes/topmag
+Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.0.2
+Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
+Version: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-optionss
-Text Domain: topmag
+Tags: red, right-sidebar, one-column, two-columns, responsive-layout, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
+Text Domain: top-mag
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 == Theme Description ==
 
-Top Mag is a premium style Magazine WordPress theme. It Includes ample of options and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
+Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
 
 == Features ==
 
@@ -22,25 +22,25 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, custom header, custom 
 
 == Tags ==
 
-right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options
+red, right-sidebar, one-column, two-columns, responsive-layout, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
 
 == Installation ==
 
 1. Primary:
  = Login to your wp-admin account and go to Appearance -> Themes.
  = Select "Install" tab and click on the "Upload" link.
- = Select "topmag.zip" and click on "Install Now" button.
+ = Select "top-mag.zip" and click on "Install Now" button.
  = In case of errors, use an alternate method.
  
 2. Alternate:
- = Unzip the template file (topmag.zip) that you have downloaded.
- = Upload the entire folder (topmag) to your server via FTP and place it in the /wp-content/themes/ folder.
+ = Unzip the template file (top-mag.zip) that you have downloaded.
+ = Upload the entire folder (top-mag) to your server via FTP and place it in the /wp-content/themes/ folder.
  = Do not change the directory name.
- = The template files should be there now: /wp-content/themes/topmag/index.php (example).
+ = The template files should be there now: /wp-content/themes/top-mag/index.php (example).
  
 3. Log into your WP admin panel and click on "Appearance". Go to "Themes" tab.
 
-4. Now click on "topmag" to activate the theme.
+4. Now click on "top-mag" to activate the theme.
 
 5. Complete all of the required inputs in the theme Options page (in the WP admin panel) and click "Save".
 
@@ -112,3 +112,10 @@ http://pixabay.com/en/girl-red-human-lady-people-woman-200883/ - Public Domain C
  
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)
+
+---------------------------------------------------------
+TGM Plugin license and link
+---------------------------------------------------------
+
+ license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation

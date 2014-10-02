@@ -9,3 +9,14 @@ Version 1.0.1
 Version 1.0.2
  i) Spelling fix in readme.txt
 
+Version 1.1
+ i) Change theme options layout.
+ ii) Set editor style css.
+ 
+Version 1.2
+ i) Set pagination using TGM and TGM licences added in readme.txt
+ ii) Changed theme options layout.
+ iii) Changed Text Domain topmag to top-mag.
+ iv) Set variables and functions name using theme slug.
+ v) Removed custom header and set banner in header using theme options.
+ vi) Removed admin bar customized code.
