@@ -81,10 +81,10 @@ if ( ! isset( $content_width ) ) $content_width = 672;
 
 
 // Check whether the browser supports javascript
-function html_js_class () {
+function rams_html_js_class () {
     echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
-add_action( 'wp_head', 'html_js_class', 1 );
+add_action( 'wp_head', 'rams_html_js_class', 1 );
 
 
 // Custom title function
@@ -365,7 +365,7 @@ function cd_meta_box_save( $post_id ) {
 	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
 	
 	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
+	if( !current_user_can( 'edit_post', $post_id ) ) return;
 	
 	// now we can actually save the data
 	$allowed = array( 

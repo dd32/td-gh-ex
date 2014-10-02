@@ -1,6 +1,11 @@
 *** Rams changelog ***
 
 
+Version 1.09 (2014-10-02)
+-------------------------
+- Added a missing function prefix to functions.php
+
+
 Version 1.08 (2014-09-25)
 -------------------------
 - Added a Search Page Template per user requests
