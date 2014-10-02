@@ -3,31 +3,33 @@
  * The template for displaying the footer.
  *
  * @package	Anarcho Notepad
- * @since	2.2
+ * @since	2.17
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
 <footer id="footer" role="contentinfo">
 
-<div class="notepad-bottom"></div>
+  <div class="notepad-bottom"></div>
 
-<div class="site-info">
-<?php echo esc_html(get_theme_mod('site-info')); ?><br/>
+  <div class="site-info">
 
-<?php if(get_theme_mod('show_info_line') == 'true') {  ?>
-<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds / <?php echo round(memory_get_usage()/1024/1024, 2); ?> mb<br/>
-<?php }  ?>
-</div>
+	<div id="footer-widgets">
+		<span><?php dynamic_sidebar( 'footer-1' ); ?></span>
+		<span><?php dynamic_sidebar( 'footer-2' ); ?></span>
+		<span><?php dynamic_sidebar( 'footer-3' ); ?></span>
+	</div>
+	<br clear="all">
 
-<?php echo get_theme_mod('script_footer'); ?>
+	<?php echo get_theme_mod('site-info'); ?>
+  </div>
 
-<a id="back-top" href="#top"><i class="fa fa-arrow-up fa-lg"></i></a>
-
-<?php wp_footer(); ?>
+  <div class="footer">
+	<?php wp_footer(); ?>
+  </div>
 
 </footer>
 </body>

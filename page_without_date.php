@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying Home page.
+ * The template for displaying pages without date.
+ *
+ * Template Name: Page without date
  *
  * @package	Anarcho Notepad
  * @since	2.16
@@ -15,31 +17,27 @@
 
 <section id="content" role="main">
   <div class="col01">
-
+  <?php anarcho_breadcrumbs(); ?>
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-      <?php anarcho_ribbons(); ?>
-
-      <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+      <h1><?php the_title(); ?></h1>
       <div class="post-inner">
 
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+	        <?php the_post_thumbnail(); ?>
 
 		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
-
       </div>
 
       <?php anarcho_entry_meta(); ?>
-
     </article>
+    <?php comments_template(); ?>
     <?php endwhile; ?>
 
-    <?php anarcho_page_nav(); ?>
-
     <?php else : anarcho_not_found(); endif; ?>
+
   </div>
 
    <?php get_sidebar(); ?>

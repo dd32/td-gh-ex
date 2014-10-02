@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: Anarcho Notepad v2.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-09-14 20:41:41+0000\n"
-"Last-Translator: Ivan Ratinoff Fortea\n"
+"PO-Revision-Date: 2014-09-14 20:16:38+0000\n"
+"Last-Translator: MadriVictor\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: CSL v1.x\n"
-"X-Poedit-Language: \n"
-"X-Poedit-Country: \n"
+"X-Poedit-Language: Afrikaans\n"
+"X-Poedit-Country: SOUTH AFRICA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: \n"
+"X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
@@ -23,22 +23,22 @@ msgstr ""
 #: 404.php:21
 #@ anarcho-notepad
 msgid "Page Not Found"
-msgstr "Página no encontrada"
+msgstr "Jammer, ons kry nie die bladsy nie"
 
 #: 404.php:22
 #@ anarcho-notepad
 msgid "We're very sorry, but the page you requested has not been found! It may have been moved or deleted."
-msgstr "¡Lo sentimos mucho pero la página solicitada no se ha encontrado! Puede que se haya movido o eliminado."
+msgstr "Ons is baie jammer, maar ons kry nie die bladsy wat jy soek nie. Dit is dalk geskuif of uitgevee."
 
 #: 404.php:23
 #@ anarcho-notepad
 msgid "I'm not blaming you, but have you checked your address bar? There might be a typo in the URL."
-msgstr "No le culpo, pero ¿ha comprobado la barra de direcciones? Puede haber un error tipográfico en la URL."
+msgstr "Ek sê nie dis jou skuld nie, maar het jy die adresbalk nagegaan? Dalk het jy 'n spelfout in die URL gemaak."
 
 #: 404.php:24
 #@ anarcho-notepad
 msgid "If there isn't, you could try searching my website for the content you were looking for:"
-msgstr "Si no esta, puedes probar a buscar en mi sitio web el contenido que estabas buscando:"
+msgstr "As jy dit nie hier opspoor nie, kan jy probeer om op my webwerf te kyk vir die inligting waarvoor jy soek:"
 
 #: archive.php:31
 #: category.php:33
@@ -50,7 +50,7 @@ msgstr "Si no esta, puedes probar a buscar en mi sitio web el contenido que esta
 #: single.php:35
 #@ anarcho-notepad
 msgid "Continue reading"
-msgstr "Continúa leyendo"
+msgstr "Lees verder"
 
 #: functions.php:546
 #: functions.php:556
@@ -58,231 +58,225 @@ msgstr "Continúa leyendo"
 #: sitemap.php:52
 #@ anarcho-notepad
 msgid "Category: "
-msgstr "Categoría: "
+msgstr "Kategorie: "
 
 #: functions.php:531
 #@ anarcho-notepad
 msgid "Not Found"
-msgstr "No se ha encontrado"
+msgstr "Jammer, ons kry dit nie"
 
 #: functions.php:532
 #@ anarcho-notepad
 msgid "Sorry, but you are looking for something that isn't here."
-msgstr "Disculpe, pero lo que estás buscando no se encuentra aquí."
+msgstr "Jammer, maar jy soek iets wat nie hier is nie."
 
 #: author-bio.php:19
 #@ anarcho-notepad
 msgid "About the Author"
-msgstr "Sobre el Autor"
+msgstr "Wie is ek?"
 
 #: comments.php:42
 #@ anarcho-notepad
 msgid "Comment navigation"
-msgstr "Navegación por los comentarios"
+msgstr "Boodskap navigasie"
 
 #: comments.php:53
 #@ anarcho-notepad
 msgid "Comments are closed."
-msgstr "Los comentarios están cerrados."
+msgstr "Boodskappe is nou gesluit."
 
 #: functions.php:50
 #@ anarcho-notepad
 msgid "Primary"
-msgstr "Principal"
+msgstr "Primêr"
 
 #: functions.php:78
 #@ anarcho-notepad
 msgid "Sidebar Area 1"
-msgstr "Barra lateral Área 1"
+msgstr "Kantblok area 1"
 
 #: functions.php:80
 #@ anarcho-notepad
 msgid "Widgets in this area will be shown below \"Pages\"."
-msgstr "Los Widgets en este área se mostraran a continuación \"Páginas\"."
+msgstr "Koppelvlakelement (widget) in hierdie gedeelte sal onder \"Bladsye\" wys."
 
 #: functions.php:87
 #@ anarcho-notepad
 msgid "Sidebar Area 2"
-msgstr "Barra lateral Área 2"
+msgstr "Kantblok area 2"
 
 #: functions.php:89
 #@ anarcho-notepad
 msgid "Widgets in this area will be shown below \"What is this place\"."
-msgstr "Los Widgets en este área se mostraran a continuación \"¿Qué es este lugar?\""
+msgstr "Koppelvlakelement (widget) in hierdie gedeelte sal onder \"Wat gaan hier aan\" wys."
 
 #: functions.php:96
 #@ anarcho-notepad
 msgid "Sidebar Area 3"
-msgstr "Barra lateral Área 3"
+msgstr "Kantblok area 3"
 
 #: functions.php:105
 #@ anarcho-notepad
 msgid "Sidebar Area 4"
-msgstr "Barra lateral Área 4"
+msgstr "Kantblok area 4"
 
 #: functions.php:107
 #@ anarcho-notepad
 msgid "Widgets in this area will be shown below \"Recent Posts\"."
-msgstr "Los Widgets en este área se mostraran a continuación \"Artículos Recientes\"."
+msgstr "Koppelvlakelement (widget) in hierdie gedeelte sal onder \"Onlangse inskrywingsplakker\" wys."
 
 #: functions.php:231
 #@ anarcho-notepad
 msgid "Archive by category "
-msgstr "Archivo por categoría "
+msgstr "Argieveer volgens categorie "
 
 #: functions.php:235
 #@ anarcho-notepad
 msgid "Archive by date "
-msgstr "Archivo por fecha "
+msgstr "Argieveer volgens datum "
 
 #: functions.php:238
 #@ anarcho-notepad
 msgid "Archive by month "
-msgstr "Archivo por mes "
+msgstr "Argieveer volgens maand "
 
 #: functions.php:240
 #@ anarcho-notepad
 msgid "Archive by year "
-msgstr "Archivo por año "
+msgstr "Argieveer volgens jaar "
 
 #: functions.php:250
 #: functions.php:278
 #@ anarcho-notepad
 msgid "You currently reading "
-msgstr "Estás leyendo actualmente "
+msgstr "Jy lees tans "
 
 #: functions.php:280
 #@ anarcho-notepad
 msgid "Search results for "
-msgstr "Resultados de búsqueda para "
+msgstr "Soektogresultate vir "
 
 #: functions.php:282
 #@ anarcho-notepad
 msgid "Archive by tag "
-msgstr "Archivo por etiqueta "
+msgstr "Argieveer volgens tag "
 
 #: functions.php:286
 #@ anarcho-notepad
 msgid "Articles posted by "
-msgstr "Artículo publicados por "
+msgstr "Artikels opgelaaid deur "
 
 #: functions.php:288
 #@ anarcho-notepad
 msgid "You got it "
-msgstr "Ya lo tienes "
+msgstr "Jy het dit! "
 
 #: functions.php:314
 #@ anarcho-notepad
 msgid "Previous page"
-msgstr "Página anterior"
+msgstr "Vorige bladsy"
 
 #: functions.php:315
 #@ anarcho-notepad
 msgid "Next page"
-msgstr "Página siguiente"
+msgstr "Volgende bladsy"
 
 #: functions.php:317
 #@ anarcho-notepad
 msgid "Page "
-msgstr "Página "
+msgstr "Bladsy "
 
 #: functions.php:317
 #@ anarcho-notepad
 msgid " of the "
-msgstr " de la "
+msgstr "van die "
 
 #: functions.php:329
 #@ anarcho-notepad
 msgid "Posts navigation"
-msgstr "Navegación de artículos"
+msgstr "Navigeer inskrywings"
 
 #: functions.php:360
 #@ anarcho-notepad
 msgid "Post navigation"
-msgstr "Navegación de artículo"
+msgstr "Navigeer inskrywing"
 
 #: functions.php:392
 #@ anarcho-notepad
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr "Terug pieng:"
 
 #: functions.php:392
 #@ anarcho-notepad
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr "(Verander)"
 
 #: functions.php:407
 #@ anarcho-notepad
 msgid "(Post author) "
-msgstr "(Autor del artículo) "
+msgstr "(Inskrywing deur my) "
 
 #. translators: 1: date, 2: time
 #: functions.php:419
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
-msgstr "Tu comentario está esperando ser moderado."
+msgstr "Jou boodskap word goedgekeur."
 
 #: functions.php:424
 #@ anarcho-notepad
 msgid "Edit"
-msgstr "Editar"
+msgstr "Verander"
 
 #: functions.php:428
 #@ anarcho-notepad
 msgid "Reply"
-msgstr "Responder"
+msgstr "Antwoord"
 
 #: functions.php:445
 #@ anarcho-notepad
 msgid "Name:"
-msgstr "Nombre:"
+msgstr "Naam:"
 
 #: functions.php:446
 #@ anarcho-notepad
 msgid "Name"
-msgstr "Nombre"
+msgstr "Naam"
 
 #: functions.php:447
 #@ anarcho-notepad
 msgid "Email:"
-msgstr "Email:"
+msgstr "E-pos:"
 
 #: functions.php:448
 #@ anarcho-notepad
 msgid "Email"
-msgstr "Email"
+msgstr "E-pos"
 
 #: functions.php:449
 #@ anarcho-notepad
 msgid "Website:"
-msgstr "Sitio Web:"
+msgstr "Webwerf:"
 
 #: functions.php:450
 #@ anarcho-notepad
 msgid "Website"
-msgstr "Sitio Web"
+msgstr "Webwerf"
 
 #: functions.php:454
 #@ anarcho-notepad
 msgctxt "noun"
 msgid "Comment:"
-msgstr "Comentario:"
+msgstr "Boodskap:"
 
 #: functions.php:454
 #@ anarcho-notepad
 msgid "Comment"
-msgstr "Comentario"
+msgstr "Boodskap"
 
 #: functions.php:456
 #@ anarcho-notepad
 msgid "Leave a Comment"
-msgstr "Deja un comentario"
-
-#: functions.php:482
-#, php-format
-#@ anarcho-notepad
-msgid "Page %s"
-msgstr "Página %s"
+msgstr "Los \\'n boodskap"
 
 #: inc/customizer.php:32
 #@ anarcho-notepad
@@ -292,294 +286,305 @@ msgstr "Meta"
 #: inc/customizer.php:37
 #@ anarcho-notepad
 msgid "Paste here small text about You and/or about site"
-msgstr "Añade aquí un pequeño texto sobre ti y/o sobre el sitio"
+msgstr "Sit hier \\'n kort stukkie oor jou en/of die webwerf"
 
 #: inc/customizer.php:40
 #@ anarcho-notepad
 msgid "About box - \"What is this place?\""
-msgstr "Caja Acerca de - \"¿Qué es este lugar?\""
+msgstr "Meer oor boksie - \"Wat gaan hier aan?\""
 
 #: inc/customizer.php:49
 #@ anarcho-notepad
 msgid "Copyright after post"
-msgstr "Copyright tras el artículo"
+msgstr "Kopiereg na die inskrywing"
 
 #: inc/customizer.php:58
 #@ anarcho-notepad
 msgid "Site-info in footer"
-msgstr "Información del sitio en el pie de página"
+msgstr "Webbladinligting in die footer"
 
 #: inc/customizer.php:68
 #@ anarcho-notepad
 msgid "Disable copyright of the author of theme in footer"
-msgstr "Deshabilitar copyright del autor del tema en el pie de página"
+msgstr "De-aktiveer die kopiereg van die outeur van die tema in die footer"
 
 #: inc/customizer.php:74
 #@ anarcho-notepad
 msgid "Stuff"
-msgstr "Stuff"
+msgstr "Allerande dinge"
 
 #: inc/customizer.php:83
 #@ anarcho-notepad
 msgid "Enable \"Title animation\""
-msgstr "Habilitar \"Animación del título\""
+msgstr "Aktiveer \"Titel animasie\""
 
 #: inc/customizer.php:92
 #@ anarcho-notepad
 msgid "Disable \"Paper Search\""
-msgstr "Deshabilitar \"Buscador de papel\""
+msgstr "De-aktiveer \"Papier soektog\""
 
 #: inc/customizer.php:101
 #@ anarcho-notepad
 msgid "Disable box \"What is this place?\""
-msgstr "Deshabiltar caja - \"¿Qué es este lugar?\""
+msgstr "De-aktiveer die boksie \"Wat gaan hier aan?\""
 
 #: inc/customizer.php:128
 #@ anarcho-notepad
 msgid "Disable \"Red Data Ribbons\""
-msgstr "Deshabiltar \"Cintas rojas de datos\""
+msgstr "De-aktiveer \"Rooi Data Linte\""
 
 #: inc/customizer.php:137
 #@ anarcho-notepad
 msgid "Disable \"Recent Posts Sticker\""
-msgstr "Deshabilitar \"Pegatinas de artículos recientes\""
+msgstr "De-aktiveer \"Onlangse inskrywingsplakker\""
 
 #: inc/customizer.php:146
 #@ anarcho-notepad
 msgid "Enable \"Breadcrumbs\""
-msgstr "Habilitar \"Breadcrumbs\""
+msgstr "Aktiveer \"Breadcrumbs\""
 
 #: inc/customizer.php:155
 #@ anarcho-notepad
 msgid "Enable \"Page Navigation\""
-msgstr "Habilitar \"Página de Navegación\""
+msgstr "Aktiveer \"Bladsy navigasie\""
 
 #: inc/customizer.php:173
 #@ anarcho-notepad
 msgid "Disable button \"To Top\""
-msgstr "Deshabiltar botón \"Arriba\""
+msgstr "De-aktiveer die knoppie \"Na Bo\""
 
 #: inc/customizer.php:182
 #@ anarcho-notepad
 msgid "Show info line in footer"
-msgstr "Mostrar línea de información en el pie de página"
+msgstr "Wys inligtingslyn in die footer"
 
 #: inc/customizer.php:187
 #@ anarcho-notepad
 msgid "Scripts"
-msgstr "Scripts"
+msgstr "Kodes"
 
 #: inc/customizer.php:188
 #@ anarcho-notepad
 msgid "Put here your scripts"
-msgstr "Ponga aquí sus scripts"
+msgstr "Sit jou kode hier"
 
 #: inc/customizer.php:195
 #@ anarcho-notepad
 msgid "Scripts before posts"
-msgstr "Scripts antes del artículo"
+msgstr "Kode voor inskrywings"
 
 #: inc/customizer.php:203
 #@ anarcho-notepad
 msgid "Scripts at the beginning of the posts"
-msgstr "Scripts al inicio de los artículos"
+msgstr "Kode aan die begin van inskrywings"
 
 #: inc/customizer.php:211
 #@ anarcho-notepad
 msgid "Scripts at the end of the posts"
-msgstr "Scripts al final de los artículos"
+msgstr "Kode aan die einde van inskrywings"
 
 #: inc/customizer.php:219
 #@ anarcho-notepad
 msgid "Scripts after posts"
-msgstr "Script tras los artículos"
+msgstr "Kode na inskrywings"
 
 #: inc/customizer.php:225
 #@ anarcho-notepad
 msgid "Post"
-msgstr "Artículo"
-
-#: inc/customizer.php:245
-#@ anarcho-notepad
-msgid "Font size of posts"
-msgstr "Tamaño de la fuente del artículo"
+msgstr "Inskrywing"
 
 #: inc/customizer.php:552
 #@ anarcho-notepad
 msgid "Font of posts (Google Webfonts)"
-msgstr "Fuente del artículo (Google Webfonts)"
+msgstr "Lettertipe van inskrywings (Google Webfonts)"
 
 #: inc/customizer.php:570
 #@ anarcho-notepad
 msgid "Site Title font (Google Webfonts)"
-msgstr "Fuente del título del sitio (Google Webfonts)"
+msgstr "Lettertipe van webwerf titel (Google Webfonts)"
 
 #: inc/customizer.php:582
 #@ anarcho-notepad
 msgid "Site Tagline font (Google Webfonts)"
-msgstr "Fuente del lema del sitio (Google Webfonts)"
+msgstr "Lettertipe van webwerf etiket (Google Webfonts)"
 
 #: inc/customizer.php:595
 #@ anarcho-notepad
 msgid "Site Title color"
-msgstr "Color del título del sitio"
+msgstr "Kleur van webwerf titel"
 
 #: inc/customizer.php:607
 #@ anarcho-notepad
 msgid "Site Tagline color"
-msgstr "Color del lema del sitio"
+msgstr "Webwerf etiket kleur"
 
 #: inc/customizer.php:617
 #@ anarcho-notepad
 msgid "Site Title Position"
-msgstr "Posición del título del sitio"
+msgstr "Posisie van webwerf titel"
 
 #: inc/customizer.php:623
 #@ anarcho-notepad
 msgid "Left"
-msgstr "Izquierda"
+msgstr "Links"
 
 #: inc/customizer.php:624
 #@ anarcho-notepad
 msgid "Center"
-msgstr "Centrado"
+msgstr "Middel"
 
 #: inc/customizer.php:636
 #@ anarcho-notepad
 msgid "Background Color"
-msgstr "Color de fondo"
+msgstr "Agtergrond kleur"
 
 #: inc/customizer.php:644
 #@ anarcho-notepad
 msgid "Background Size"
-msgstr "Tamaño del fondo"
+msgstr "Agtergrond grootte"
 
 #: inc/customizer.php:650
 #@ anarcho-notepad
 msgid "Auto (Default)"
-msgstr "Auto (Por defecto)"
+msgstr "Outomaties (Default)"
 
 #: inc/customizer.php:651
 #@ anarcho-notepad
 msgid "Contain"
-msgstr "Contiene"
+msgstr "Bevat"
 
 #: inc/customizer.php:652
 #@ anarcho-notepad
 msgid "Cover"
-msgstr "Cubierta"
-
-#: inc/theme_info.php:33
-#@ anarcho-notepad
-msgid "If you liked the theme \"Anarcho Notepad\", then I'll be glad if you consider donating:"
-msgstr "Si te gusta el tema \"Anarcho Notepad\", entonces estaré encantado si te planteas realizar una donación:"
-
-#: inc/theme_info.php:36
-#@ anarcho-notepad
-msgid "or if you leave feedback about the \"Anarcho Notepad\" on the site wordpress.org:"
-msgstr "o si me envías tus impresiones sobre \"Anarcho Notepad\" en la web wordpress.org:"
-
-#: inc/theme_info.php:41
-#@ anarcho-notepad
-msgid "If you have any questions or suggestions for improving and adding new features, feel free to contact me at support at:"
-msgstr "Si tienes alguna pregunta o sugerencia para mejorar y añadir nuevas funcionalidades, no dudes en ponerte en contacto conmigo en soporte a:"
-
-#: inc/theme_info.php:45
-#@ anarcho-notepad
-msgid "or at my website:"
-msgstr "o en mi sitio web:"
+msgstr "Aangesig"
 
 #: inc/theme_info.php:54
 #@ anarcho-notepad
 msgid "The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language."
-msgstr "El tema está en proceso de traducción a otros idiomas. Si quieres puedes ayudarme a traducirlo a tu idioma nativo."
+msgstr "Ek is besig om die tema in ander tale van die wêreld te vertaal. As jy graag wil, kan jy my help deur dit in jou moedertaal te vertaal."
 
-#: inc/theme_info.php:70
+#: inc/theme_info.php:41
 #@ anarcho-notepad
-msgid "Please consider making a donation"
-msgstr "Por favor plantéate realizar una donación"
+msgid "If you have any questions or suggestions for improving and adding new features, feel free to contact me at support at:"
+msgstr "Indien jy enige vrae of voorstelle het om die tema te verbeter, of nuwe funksies wil byvoeg, kontak my gerus vir bystand:"
+
+#: inc/theme_info.php:75
+#@ anarcho-notepad
+msgid "Happy to enjoy the Anarcho-Notepad?"
+msgstr "Is jy gelukkig met die tema Anarcho Notepad?"
 
 #: inc/theme_info.php:76
 #@ anarcho-notepad
-msgid "Happy to enjoy the Anarcho-Notepad?"
-msgstr "¿Feliz de disfrutar de Anarcho-Notepad?"
-
-#: inc/theme_info.php:77
-#@ anarcho-notepad
 msgid "Leave a comment"
-msgstr "Deja un comentario"
-
-#: inc/theme_info.php:81
-#@ anarcho-notepad
-msgid "Follow me :"
-msgstr "Sígueme :"
-
-#: inc/theme_info.php:105
-#: inc/theme_info.php:106
-#@ anarcho-notepad
-msgid "Theme Info"
-msgstr "Información del tema"
-
-#: inc/theme_info.php:121
-#@ anarcho-notepad
-msgid "Help"
-msgstr "Ayuda"
-
-#: inc/theme_info.php:124
-#@ anarcho-notepad
-msgid "Need help with Anarcho-Notepad? Click here!"
-msgstr "¿Necesitas ayuda con Anarcho-Notepad? ¡Haz click aquí!"
+msgstr "Los 'n boodskap"
 
 #: search.php:46
 #@ anarcho-notepad
 msgid "Sorry for your result nothing found"
-msgstr "Lo siento por el resultado no se encontró nada"
+msgstr "Jammer, ons kry niks vir jou soektog nie"
 
 #: searchform.php:18
 #@ anarcho-notepad
 msgid "Write your search and hit Enter"
-msgstr "Escriba su búsqueda y pulse Enter"
+msgstr "Tik jou soektog en kliek Enter"
 
 #: single.php:36
 #: sitemap.php:39
 #@ anarcho-notepad
 msgid "Pages:"
-msgstr "Páginas:"
+msgstr "Bladsye:"
 
 #: functions.php:550
 #@ anarcho-notepad
 msgid "Posted "
-msgstr "Publicado "
+msgstr "Inskrywing "
 
 #: functions.php:550
 #@ anarcho-notepad
 msgid " by "
-msgstr " por "
+msgstr "deur "
 
 #: functions.php:550
 #@ anarcho-notepad
 msgid " in category "
-msgstr " en la categoría "
+msgstr "in Kategorie "
 
 #: sitemap.php:32
 #@ anarcho-notepad
 msgid "Author(s):"
-msgstr "Autor(es):"
+msgstr "Outeur(s):"
 
 #: sitemap.php:46
 #@ anarcho-notepad
 msgid "Posts:"
-msgstr "Artículos:"
+msgstr "Inskrywings:"
 
 #: sitemap.php:74
 #@ anarcho-notepad
 msgid "Archives:"
-msgstr "Archivos:"
+msgstr "Argief:"
+
+#: inc/theme_info.php:80
+#@ anarcho-notepad
+msgid "Follow me :"
+msgstr "Volg my :"
+
+#: functions.php:482
+#, php-format
+#@ anarcho-notepad
+msgid "Page %s"
+msgstr "Bladsy %s"
+
+#: inc/customizer.php:245
+#@ anarcho-notepad
+msgid "Font size of posts"
+msgstr "Lettergrootte poste"
+
+#: inc/theme_info.php:33
+#@ anarcho-notepad
+msgid "If you liked the theme \"Anarcho Notepad\", then I'll be glad if you consider donating:"
+msgstr "As jy graag die tema \"Anarcho Notepad\", dan sal ek bly wees as jy dit oorweeg skenk:"
+
+#: inc/theme_info.php:36
+#@ anarcho-notepad
+msgid "or if you leave feedback about the \"Anarcho Notepad\" on the site wordpress.org:"
+msgstr "of as jy laat terugvoer oor die \"Anarcho Notepad\" op die webwerf wordpress.org:"
+
+#: inc/theme_info.php:45
+#@ anarcho-notepad
+msgid "or at my website:"
+msgstr "of by my webwerf:"
+
+#: inc/theme_info.php:69
+#@ anarcho-notepad
+msgid "Please consider making a donation"
+msgstr "Oorweeg dit asseblief om \\'n skenking"
+
+#: inc/theme_info.php:104
+#: inc/theme_info.php:105
+#@ anarcho-notepad
+msgid "Theme Info"
+msgstr "Tema Info"
+
+#: inc/theme_info.php:120
+#@ anarcho-notepad
+msgid "Help"
+msgstr "Help"
+
+#: inc/theme_info.php:123
+#@ anarcho-notepad
+msgid "Need help with Anarcho-Notepad? Click here!"
+msgstr "Het jy hulp nodig met Anarcho-Notepad? Klik hier!"
 
 #: inc/theme_info.php:29
 #@ anarcho-notepad
 msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
-msgstr "Inspirado por la idea de la Anarquía, he diseñado este tema para tus blogs y diarios personales. \"Anarcho Notepad\" se puede personalizar facilmente. Utiliza la última versión de HTML 5, CSS3 y las funciones nativas de Wordpress para crear algo genial que se verá bien en cualquier navegador. Estoy constantemente añadiendo nuevas funcionalidades que te permitirán personalizarlo según tus necesidades. Si quieres una nueva funcionalidad o  quieres cambiar algo, simplemente pídemelo y estaré encantando de añadirlo para tí. Gracias por tu apoyo. Visita  la URL de este tema para ver el historial de actualizaciones y ¡disfrútulo!"
+msgstr "Die idee van Anargie het my inspireer om hierdie tema vir jou persoonlike blogs en dagboekinskrywings te ontwikkel. \"Anarcho Notepad\" kan maklik verpersoonlik word. Dit gebruik die nuutste HTML 5, CSS3 en wordpress narratief funksies om hierdie briljante blad, wat op elke webleser goed lyk, te ontwikkel. Ek voeg gereeld nuwe funksies by sodat jy dit maklik kan verpersoonlik. Indien jy 'n spesifieke funksie of verandering wil hê, vra my\\; ek verander of voeg dit met graagte by. Baie dankie vir jou ondersteuning. Besoek die Tema URI vir die opdatteerde geskiedenis en geniet dit!"
+
+#: functions.php:98
+#@ anarcho-notepad
+msgid "Widgets in this area will be shown below \"Friends & Links\"."
+msgstr "Koppelvlakelement (widget) in hierdie gedeelte sal onder \"Vriende en skakels\" wys."
 
 #: functions.php:119
 #@ anarcho-notepad
@@ -632,7 +637,12 @@ msgstr ""
 #: functions.php:558
 #@ anarcho-notepad
 msgid "&#9998; EDIT"
-msgstr "&#9998; EDITAR"
+msgstr ""
+
+#: inc/customizer.php:110
+#@ anarcho-notepad
+msgid "Disable box \"Friends & Links\""
+msgstr "De-aktiveer die boksie \"Vriende en skakels\""
 
 #: inc/customizer.php:119
 #@ anarcho-notepad
@@ -649,34 +659,18 @@ msgstr ""
 msgid "Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org."
 msgstr ""
 
+#: inc/theme_info.php:53
+#@ anarcho-notepad
+msgid "Languages"
+msgstr ""
+
 #: inc/theme_info.php:56
 #@ anarcho-notepad
 msgid "\"Anarcho-Notepad\" written in English and translated into:"
 msgstr ""
 
-#: inc/theme_info.php:64
+#: inc/theme_info.php:63
 #@ anarcho-notepad
 msgid "Thanks to all who helped me translate \"Anarcho-Notepad\" into other languages!"
-msgstr ""
-
-#: functions.php:98
-#@ anarcho-notepad
-msgid "Widgets in this area will be shown below \"Friends & Links\"."
-msgstr "Los Widgets en este área se mostraran a continuación \"Friends & Links\"."
-
-#: inc/customizer.php:110
-#@ anarcho-notepad
-msgid "Disable box \"Friends & Links\""
-msgstr "Deshabilitar caja \"Friends & Links\""
-
-#: functions.php:556
-#: functions.php:558
-#@ anarcho-notepad
-msgid "LEAVE A COMMENT"
-msgstr "DEJA UN COMENTARIO"
-
-#: inc/theme_info.php:53
-#@ anarcho-notepad
-msgid "Translation"
 msgstr ""
 
