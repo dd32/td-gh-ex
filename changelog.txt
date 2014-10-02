@@ -1,2 +1,26 @@
-== Changelog ==
-Version 1.2 = Initial Release== 7/15/2013 ==Version 1.6 =-Fixed search results pages, misc. issues.==12/31/2013==Version 1.7 =-Fixed child theme issue
+/* Changelog */
+
+* Version 1.2 *
+- initial release
+
+* Version 1.6 *
+- fixed search results pages
+
+* Version 1.7 *
+- fixed child theme issues
+
+* Version 2.0 *
+-Added comment-class.js
+-Added infinite scroll
+-Revamped options page
+-Re-worked index.php for options and three-column layout
+-added optional site description to header
+-Added excerpt length option
+-Added logo upload
+-Added fallback post thumbnail upload
+-Added custom background support
+-Changed menu styling
+-Cleaned up mobile views
+-Added post type support
+-Fixed attachment view
+-Added searchform.php

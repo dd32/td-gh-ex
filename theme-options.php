@@ -1,9 +1,92 @@
 <?php
-// Default options values
-$bartleby_options = array(
+/**
+ * Bartleby Theme Options Panel
+ *
+ * @package bartleby
+ * @since bartleby 1.0
+ */
+function bartleby_theme_options_init() {
+	register_setting(
+		'bartleby_options', // Options group, see settings_fields() call in bartleby_theme_options_render_page()
+		'bartleby_theme_options', // Database option, see bartleby_get_theme_options()
+		'bartleby_theme_options_validate' // The sanitization callback, see bartleby_theme_options_validate()
+	);
+	// Register our settings field group
+	add_settings_section(
+		'header', // Unique identifier for the settings section
+		'Header Options', // Section title (we don't want one)
+		'__return_false', // Section callback (we don't want anything)
+		'bartleby_theme_options' // Menu slug, used to uniquely identify the page; see bartleby_theme_options_add_page()
+	);
+	add_settings_section(
+		'display', // Unique identifier for the settings section
+		'Display Options', // Section title (we don't want one)
+		'__return_false', // Section callback (we don't want anything)
+		'bartleby_theme_options' // Menu slug, used to uniquely identify the page; see bartleby_theme_options_add_page()
+	);
+	// Register our individual settings fields
+	// header
+	add_settings_field('bartleby_logo', __( 'Site Logo', 'bartleby' ), 'bartleby_settings_field_bartleby_logo', 'bartleby_theme_options', 'header' );
+	add_settings_field('social_bar', __( 'Social Bar', 'bartleby' ), 'bartleby_settings_field_social_bar', 'bartleby_theme_options', 'header' );
+	add_settings_field('facebook_link', __( 'Facebook', 'bartleby' ), 'bartleby_settings_field_facebook_link', 'bartleby_theme_options', 'header' );
+	add_settings_field('twitter_link', __( 'Twitter', 'bartleby' ), 'bartleby_settings_field_twitter_link', 'bartleby_theme_options', 'header');
+	add_settings_field('gplus_link', __( 'Google Plus', 'bartleby' ), 'bartleby_settings_field_gplus_link', 'bartleby_theme_options', 'header');
+	add_settings_field('linkedin_link', __( 'LinkedIn', 'bartleby' ), 'bartleby_settings_field_linkedin_link', 'bartleby_theme_options', 'header');
+	add_settings_field('github_link', __( 'Github', 'bartleby' ), 'bartleby_settings_field_github_link', 'bartleby_theme_options', 'header');
+	add_settings_field('pinterest_link', __( 'Pinterest', 'bartleby' ), 'bartleby_settings_field_pinterest_link', 'bartleby_theme_options', 'header');
+	add_settings_field('feed_link', __( 'RSS Feed', 'bartleby' ), 'bartleby_settings_field_feed_link', 'bartleby_theme_options', 'header');
+
+	// display
+	add_settings_field( 'home_headline', __( 'Home Headline', 'bartleby' ), 'bartleby_settings_field_home_headline', 'bartleby_theme_options', 'display' );
+	add_settings_field('column_posts', __( 'Column Posts', 'bartleby' ), 'bartleby_settings_field_column_posts', 'bartleby_theme_options', 'display');
+	add_settings_field( 'elength', __( 'Excerpt Length', 'bartleby' ), 'bartleby_settings_field_elength', 'bartleby_theme_options', 'display' );
+	add_settings_field('post_default_image', __( 'Post Default Image', 'bartleby' ), 'bartleby_settings_field_post_default_image', 'bartleby_theme_options', 'display');
+	add_settings_field('infinite_scroll_disable', __( 'Infinite Scroll', 'bartleby' ), 'bartleby_settings_field_infinite_scroll_disable', 'bartleby_theme_options', 'display');	
+	add_settings_field( 'footer_link', __( 'Footer Link', 'bartleby' ), 'bartleby_settings_field_footer_link', 'bartleby_theme_options', 'display' );
+}
+add_action( 'admin_init', 'bartleby_theme_options_init' );
+
+function bartleby_option_page_capability( $capability ) {
+	return 'edit_theme_options';
+}
+add_filter( 'option_page_capability_bartleby_options', 'bartleby_option_page_capability' );
+/**
+ * Adds page to the admin menu
+ */
+function bartleby_theme_options_add_page() {
+	$theme_page = add_theme_page(
+		__( 'Bartleby Theme Options', 'bartleby' ),   // Name of page
+		__( 'Theme Options', 'bartleby' ),   // Label in menu
+		'edit_theme_options',          // Capability required
+		'bartleby_theme_options',               // Menu slug, used to uniquely identify the page
+		'bartleby_theme_options_render_page' // Function that renders the options page
+	);
+}
+add_action( 'admin_menu', 'bartleby_theme_options_add_page' );
+
+function bartleby_settings_column_posts() {
+	$bartleby_settings_column_posts = array(
+		'one-column' => array(
+			'value' => '3',
+			'label' => __( 'Blog Style', 'bartleby' )
+		),
+		'two-column' => array(
+			'value' => '1',
+			'label' => __( 'Two Column', 'bartleby' )
+		),
+		'three-column' => array(
+			'value' => '2',
+			'label' => __( 'Three Column', 'bartleby' )
+		)
+	);
+	return apply_filters( 'bartleby_settings_column_posts', $bartleby_settings_column_posts );
+}
+function bartleby_get_theme_options() {
+	$saved = (array) get_option( 'bartleby_theme_options' );
+	$defaults = array(
 	'home_headline' => '',
 	'bartleby_logo' => '',
-	'social_bar' => true,
+	'social_bar' => 'off',
 	'facebook_link' => '',
 	'twitter_link' => '',
 	'gplus_link' => '',
@@ -11,152 +94,260 @@ $bartleby_options = array(
 	'github_link' => '',
 	'pinterest_link' => '',
 	'feed_link' => '',
-	'footer_link' => true,
-	'column_posts' => true
-);
-if ( is_admin() ) : // Load only if we are viewing an admin page
-function bartleby_register_settings() {
-	// Register settings and call sanitation functions
-	register_setting( 'bartleby_theme_options', 'bartleby_options', 'bartleby_validate_options' );
-}add_action( 'admin_init', 'bartleby_register_settings' );
-function bartleby_theme_options() {
-	// Add theme options page to the addmin menu
-	add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'theme_options', 'bartleby_theme_options_page' );
-}add_action( 'admin_menu', 'bartleby_theme_options' );
-// Function to generate options page
-function bartleby_theme_options_page() {
-	global $bartleby_options, $bartleby_categories, $bartleby_layouts;
-	if ( ! isset( $_REQUEST['updated'] ) )
-		$_REQUEST['updated'] = false; // This checks whether the form has just been submitted. ?>
-	<div class="wrap">
-	<?php screen_icon(); echo "<h2>" . __( 'bartleby Theme Options', 'bartleby' ) . "</h2>";
-	// This shows the page's name and an icon if one has been provided ?>
-	<?php if ( false !== $_REQUEST['updated'] ) : ?>
-	<div class="updated fade"><p><strong><?php esc_attr_e( 'Options saved' , 'bartleby' ); ?></strong></p></div>
-	<?php endif; // If the form has just been submitted, this shows the notification ?>
-	<form method="post" action="options.php">
-	<?php $options = get_option( 'bartleby_options', $bartleby_options ); ?>
-	
-	<?php settings_fields( 'bartleby_theme_options' );
-	/* This function outputs some hidden fields required by the form,
-	including a nonce, a unique number used to ensure the form has been submitted from the admin page
-	and not somewhere else, very important for security */ ?>
-<table class="form-table">
-<h3><?php esc_attr_e('Site Logo' , 'bartleby' ); ?></h3>
-	<p><?php esc_attr_e('Enter the URL for your custom logo here.' , 'bartleby'); ?></p>
-	<tr valign="top"><th scope="row"><label for="bartleby_logo">Custom Logo</label></th>
-	<td>
-	<input id="barlteby_logo" name="bartleby_options[bartleby_logo]" type="url" size="60" value="<?php esc_attr_e($options['bartleby_logo']); ?>" />
-<label class="description" for="bartleby_options[bartleby_logo]"><?php esc_attr_e( 'Leave blank to use the site title', 'bartleby' ); ?></label>
-	</td>
-	</tr>
-</table>
-<table class="form-table">
-<h3><?php esc_attr_e('Home Page Headline' , 'bartleby' ); ?></h3>
-	<p><?php esc_attr_e('This headline will be displayed above the slider on the home page.' , 'bartleby'); ?></p>
-	<tr valign="top"><th scope="row"><label for="home_headline">Home Page Headline</label></th>
-	<td>
-	<input id="home_headline" name="bartleby_options[home_headline]" type="text" size="40" value="<?php echo($options['home_headline']); ?>" />
-	<label class="description" for="bartleby_options[home_headline]"><?php esc_attr_e( 'Leave blank to disable', 'bartleby' ); ?></label>
-	</td>
-	</tr>
-</table>
-<table class="form-table">
-	<h3><?php esc_attr_e('Social Media Bar Settings' , 'bartleby' ); ?></h3>
-	<p><?php esc_attr_e('Disable the bar if desired, or add your custom profile/page links.' , 'bartleby'); ?></p>
-	<tr valign="top"><th scope="row">Social Media Bar</th>
-	<td>
-	<input type="checkbox" id="social_bar" name="bartleby_options[social_bar]" value="1" <?php checked( true, $options['social_bar'] ); ?> />
-	<label for="social_bar">Check to use the social media bar. Leave URL fields blank to disable specific icons.</label>
-	</td>
-	</tr>
-	<tr valign="top"><th scope="row"><label for="facebook_link">Facebook URL</label></th>
-	<td>
-<input id="facebook_link" name="bartleby_options[facebook_link]" type="url" size="60" value="<?php esc_attr_e($options['facebook_link']); ?>" />
-</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="twitter_link">Twitter URL</label></th>
-	<td>
-	<input id="twitter_link" name="bartleby_options[twitter_link]" type="url" size="60" value="<?php esc_attr_e($options['twitter_link']); ?>" />
-	</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="gplus_link">Google+ URL</label></th>
-	<td>
-	<input id="gplus_link" name="bartleby_options[gplus_link]" type="url" size="60" value="<?php esc_attr_e($options['gplus_link']); ?>" />
-	</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="linkedin_link">LinkedIn URL</label></th>
-	<td>
-	<input id="linkedin_link" name="bartleby_options[linkedin_link]" type="url" size="60" value="<?php esc_attr_e($options['linkedin_link']); ?>" />
-	</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="Github URL">Github URL</label></th>
-	<td>
-	<input id="github_link" name="bartleby_options[github_link]" type="url" size="60" value="<?php esc_attr_e($options['github_link']); ?>" />
-	</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="Pinterest URL">Pinterest URL</label></th>
-	<td>
-	<input id="pinterest_link" name="bartleby_options[pinterest_link]" type="url" size="60" value="<?php esc_attr_e($options['pinterest_link']); ?>" />
-	</td>
-	</tr>
-<tr valign="top"><th scope="row"><label for="RSS Feed URL">RSS Feed URL</label></th>
-	<td>
-	<input id="feed_link" name="bartleby_options[feed_link]" type="url" size="60" value="<?php esc_attr_e($options['feed_link']); ?>" />
-	</td>
-	</tr>
-	</table>
-<table class="form-table">
-	<h3><?php esc_attr_e('Footer Link' , 'bartleby' ); ?></h3>
-	<p><?php esc_attr_e('Disable the footer link.' , 'bartleby'); ?></p>
-	<tr valign="top"><th scope="row">Footer Credit Link</th>
-	<td>
-	<input type="checkbox" id="footer_link" name="bartleby_options[footer_link]" value="1" <?php checked( true, $options['footer_link'] ); ?> />
-	<label for="footer_link">De-select to remove the footer credit link.</label>
-	</td>
-	</tr>
-</table>
-<table class="form-table">
-	<h3><?php esc_attr_e('Homepage Column Posts' , 'bartleby' ); ?></h3>
-	<tr valign="top"><th scope="row">Column Post Layout</th>
-	<td>
-	<input type="checkbox" id="column_posts" name="bartleby_options[column_posts]" value="1" <?php checked( true, $options['column_posts'] ); ?> />
-	<label for="column_posts">Uncheck to disable the home-page column post layout.</label>
-	</td>
-	</tr>
-</table>
-	<p class="submit"><input type="submit" class="button-primary" value="Save Options" /></p>
-	</form>
-<p>
-<?php esc_attr_e('Thank you for using bartleby. A lot of time went into development. Donations small or large always appreciated.' , 'bartleby'); ?></p>
-<form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="QD8ECU2CY3N8J">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-<a href="http://www.edwardrjenkins.com/themes/bartleby/" target="_blank"><?php esc_attr_e('Bartleby Documentation' , 'bartleby' ); ?></a>
+	'footer_link' => 'off',
+	'column_posts' => '2',
+	'infinite_scroll_disable' => 'off',
+	'elength' => '20',
+	'post_default_image' => ''
+	);
+	$defaults = apply_filters( 'bartleby_default_theme_options', $defaults );
+	$bartleby_options = wp_parse_args( $saved, $defaults );
+	$bartleby_options = array_intersect_key( $bartleby_options, $defaults );
+	return $bartleby_options;
+}
+function bartleby_settings_field_post_default_image() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<input type="url" name="bartleby_theme_options[post_default_image]" size="80" id="post-default-image" value="<?php echo esc_url( $bartleby_options['post_default_image'] ); ?>" />
+	<input id="upload_post_default" type="button" value="Upload Image" /><br>
+	<label class="description" for="post-default-image"><?php _e( 'Used as a default post thumbnail if the post has no set featured image.', '_s' ); ?></label>
+	<?php
+}
+function bartleby_settings_field_column_posts() {
+	$bartleby_options = bartleby_get_theme_options();
+	foreach ( bartleby_settings_column_posts() as $button ) {
+	?>
+	<div class="layout">
+		<label class="description">
+			<input type="radio" name="bartleby_theme_options[column_posts]" value="<?php echo esc_attr( $button['value'] ); ?>" <?php checked( $bartleby_options['column_posts'], $button['value'] ); ?> />
+			<?php echo $button['label']; ?>
+		</label>
+	</div>
+	<?php
+	} ?>
+	<br>
+	<label class="description">
+	<?php _e( 'If using the three-column layout, you may want to set your posts to 9 or 12 posts per page in Settings->Reading to prevent the last post in a feed from sitting on its own line.', '_s' ); ?>
+	</label>
+	<?php
+}
+function bartleby_settings_social_bar() {
+	$bartleby_settings_field_social_bar = array(
+		'on' => array(
+			'value' => 'on',
+			'label' => __( 'On', 'bartleby' )
+		),
+		'off' => array(
+			'value' => 'off',
+			'label' => __( 'Off', 'bartleby' )
+		)
+	);
+	return apply_filters( 'bartleby_settings_social_bar', $bartleby_settings_field_social_bar );
+}
+function bartleby_settings_infinite_scroll_disable() {
+	$bartleby_settings_infinite_scroll_disable = array(
+		'on' => array(
+			'value' => 'on',
+			'label' => __( 'On', 'bartleby' )
+		),
+		'off' => array(
+			'value' => 'off',
+			'label' => __( 'Off', 'bartleby' )
+		)
+	);
+	return apply_filters( 'bartleby_settings_infinite_scroll_disable', $bartleby_settings_infinite_scroll_disable );
+}
+function bartleby_settings_footer_link() {
+	$bartleby_settings_footer_link = array(
+		'on' => array(
+			'value' => 'on',
+			'label' => __( 'On', 'bartleby' )
+		),
+		'off' => array(
+			'value' => 'off',
+			'label' => __( 'Off', 'bartleby' )
+		)
+	);
+	return apply_filters( 'bartleby_settings_footer_link', $bartleby_settings_footer_link );
+}
+function bartleby_settings_field_bartleby_logo() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_site_logo" name="bartleby_theme_options[bartleby_logo]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['bartleby_logo'] ); ?>" />
+			<input id="upload_bartleby_logo" type="button" value="Upload Image" />
+		</label>
 	</div>
 	<?php
 }
-function bartleby_validate_options( $input ) {
-	global $bartleby_options;
-	$options = get_option( 'bartleby_options', $bartleby_options );
-	$input['home_headline'] = esc_attr( $input['home_headline'] );
-	$input['bartleby_logo'] = esc_url( $input['bartleby_logo'] );
-	$input['facebook_link'] = esc_url( $input['facebook_link'] );
-	$input['twitter_link'] = esc_url( $input['twitter_link'] );
-	$input['gplus_link'] = esc_url( $input['gplus_link'] );
-	$input['linkedin_link'] = esc_url( $input['linkedin_link'] );
-	$input['github_link'] = esc_url( $input['github_link'] );
-	$input['pinterest_link'] = esc_url( $input['pinterest_link'] );
-	$input['feed_link'] = esc_url( $input['feed_link'] );
-	if ( ! isset( $input['social_bar'] ) )
-	$input['social_bar'] = null;
-	if ( ! isset( $input['footer_link'] ) )
-	$input['footer_link'] = null;
-	if ( ! isset( $input['column_posts'] ) )
-	$input['column_posts'] = null;
-	return $input;
+function bartleby_settings_field_facebook_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_facebook_link" name="bartleby_theme_options[facebook_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['facebook_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
 }
-endif;  // EndIf is_admin()
+function bartleby_settings_field_twitter_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_twitter_link" name="bartleby_theme_options[twitter_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['twitter_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_linkedin_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_linkedin_link" name="bartleby_theme_options[linkedin_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['linkedin_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_gplus_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_gplus_link" name="bartleby_theme_options[gplus_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['gplus_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_pinterest_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_pinterest_link" name="bartleby_theme_options[pinterest_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['pinterest_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_github_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_github_link" name="bartleby_theme_options[github_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['github_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_feed_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<div class="layout">
+		<label class="description">
+			<input id="bartleby_feed_link" name="bartleby_theme_options[feed_link]" type="url" size="60" value="<?php esc_attr_e( $bartleby_options['feed_link'] ); ?>" />
+		</label>
+	</div>
+	<?php
+}
+function bartleby_settings_field_social_bar() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<label class="description">
+		<input type="checkbox" name="bartleby_theme_options[social_bar]" id="social_bar" <?php checked( 'on', $bartleby_options['social_bar'] ); ?> />
+		<?php _e( 'Check this box to activate the social bar.', '_s' ); ?>
+	</label>
+	<?php
+}
+function bartleby_settings_field_infinite_scroll_disable() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<label class="description">
+		<input type="checkbox" name="bartleby_theme_options[infinite_scroll_disable]" id="infinite_scroll" <?php checked( 'on', $bartleby_options['infinite_scroll_disable'] ); ?> />
+		<?php _e( 'Check this box to deactivate infinite scroll.', '_s' ); ?>
+	</label>
+	<?php
+}
+function bartleby_settings_field_elength() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<label class="description">
+		<input type="number" size="80" min="0" max="100" name="bartleby_theme_options[elength]" value='<?php echo $bartleby_options['elength']; ?>' />
+		<?php _e( 'Set the length of the post excerpt.', '_s' ); ?>
+	</label>
+	<?php
+}
+function bartleby_settings_field_footer_link() {
+	$bartleby_options = bartleby_get_theme_options();
+	?>
+	<label class="description">
+		<input type="checkbox" name="bartleby_theme_options[footer_link]" id="footer_link" <?php checked( 'on', $bartleby_options['footer_link'] ); ?> />
+		<?php _e( 'Check to add a small credit link in your footer to the theme author\'s site. This is a great way to show support in lieu of a donation.', '_s' ); ?>
+	</label>
+	<?php
+}
+function bartleby_settings_field_home_headline() {
+	$bartleby_options = bartleby_get_theme_options(); ?>
+	<input id="home_headline" name="bartleby_theme_options[home_headline]" type="text" size="40" value="<?php echo($bartleby_options['home_headline']); ?>" />
+	<label class="description" for="bartleby_theme_options[home_headline]"><?php esc_attr_e( 'Leave blank to disable', 'bartleby' ); ?></label>
+	<?php
+	}
+/**
+ * Renders the admin screen
+ */
+function bartleby_theme_options_render_page() { ?>
+	<div class="wrap">
+		<?php screen_icon(); ?>
+		<?php $theme_name = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_current_theme(); ?>
+		<h2><?php printf( __( '%s Theme Options', 'bartleby' ), $theme_name ); ?></h2>
+		<?php settings_errors(); ?>
+		<form method="post" action="options.php">
+			<?php
+				settings_fields( 'bartleby_options' );
+				do_settings_sections( 'bartleby_theme_options' );
+				submit_button();
+			?>
+		</form>
+	</div>
+	<?php
+}
+/**
+ * Sanitize and validate form input
+ */
+function bartleby_theme_options_validate( $input ) {
+	$output = array();
+	if ( isset ( $input['home_headline'] ) )
+	$output['home_headline'] = esc_attr( $input['home_headline'] );
+	if ( isset ( $input['bartleby_logo'] ) )
+	$output['bartleby_logo'] = esc_url( $input['bartleby_logo'] );
+	if ( isset ( $input['facebook_link'] ) )
+	$output['facebook_link'] = esc_url( $input['facebook_link'] );
+	if ( isset ( $input['twitter_link'] ) )
+	$output['twitter_link'] = esc_url( $input['twitter_link'] );
+	if ( isset ( $input['gplus_link'] ) )
+	$output['gplus_link'] = esc_url( $input['gplus_link'] );
+	if ( isset ( $input['linkedin_link'] ) )
+	$output['linkedin_link'] = esc_url( $input['linkedin_link'] );
+	if ( isset ( $input['github_link'] ) )
+	$output['github_link'] = esc_url( $input['github_link'] );
+	if ( isset ( $input['pinterest_link'] ) )
+	$output['pinterest_link'] = esc_url( $input['pinterest_link'] );
+	if ( isset ( $input['feed_link'] ) )
+	$output['feed_link'] = esc_url( $input['feed_link'] );
+	if ( isset ( $input['column_posts'] ) )
+	$output['column_posts'] = esc_attr ( $input['column_posts'] );
+	if ( isset ( $input['elength'] ) && !empty ($input['elength'] ) )
+	$output['elength'] = esc_attr ( $input['elength'] );
+	if ( isset( $input['elength'] ) && ! empty( $input['elength'] ) )
+		$output['elength'] = wp_filter_nohtml_kses( $input['elength'] );
+	if ( isset( $input['social_bar'] ) )
+	$output['social_bar'] = 'on';
+	if ( ! isset ( $input['post_default_image'] ) )
+	$output['post_default_image'] = null;
+	if ( isset( $input['footer_link'] ) )
+	$output['footer_link'] = 'on';
+	if ( isset( $input['infinite_scroll_disable'] ) )
+	$output['infinite_scroll_disable'] = 'on';
+	return apply_filters( 'bartleby_theme_options_validate', $output, $input );
+}

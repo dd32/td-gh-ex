@@ -11,31 +11,45 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <!-- Header and Nav -->
-  <div class="row">
-<div class="sixteen columns">
-	<div class="ten columns">
-<div id="logo">
-<a href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	<?php get_template_part ('logo'); ?>
-	</a>
+<div class="row container">
+<div class="row collapse">
+	<div class="sixteen columns">
+		<div class="ten columns">
+			<div id="logo">
+				<a href="<?php echo esc_url(home_url()); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<?php get_template_part ('logo'); ?>
+				</a>
+			</div>
+		</div>
+	<?php 	$bartleby_options = bartleby_get_theme_options(); ?>
+	<?php if( $bartleby_options['social_bar'] == 'on' ) : ?>
+		<div class="six columns">
+			<?php get_template_part( 'social' , 'block' ); ?>
+		</div>
+	<?php endif; ?>
+	<?php
+		// checks for site tagline
+		if ( get_bloginfo('description') != '' ) { ?>
+		<div class="row">
+			<div class="sixteen columns">
+				<h6 id="site-description"><?php bloginfo('description'); ?></h6>
+			</div>
+		</div>
+		<?php } ?>
 	</div>
 </div>
-<?php global $bartleby_options; $bartleby_settings = get_option( 'bartleby_options', $bartleby_options ); ?>
-<?php if( $bartleby_settings['social_bar'] ) : ?>
-	<div class="six columns">
-<?php get_template_part( 'social' , 'block' ); ?>
-	</div>
-<?php endif; ?>
-  </div>
-</div>
-  <!-- End Header and Nav -->
 <div class="row">
-<div class="sixteen columns">
-<nav id="site-navigation" class="main-navigation" role="navigation">
-<h3 class="menu-toggle"><?php esc_attr_e( 'Menu', 'bartleby' ); ?></h3>
-<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'bartleby' ); ?>"><?php esc_attr_e( 'Skip to content', 'bartleby' ); ?></a>
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu') ); ?>
-</nav><!-- #site-navigation -->
-</div>
+	<div class="sixteen columns">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<hr class="bartleby-sep">
+			<h3 class="menu-toggle">
+				<?php esc_attr_e( 'Menu', 'bartleby' ); ?>
+			</h3>
+			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'bartleby' ); ?>">
+				<?php esc_attr_e( 'Skip to content', 'bartleby' ); ?>
+			</a>
+			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu') ); ?>
+			<hr class="bartleby-sep">
+		</nav>
+	</div>
 </div>

@@ -1,64 +1,37 @@
-<?php get_header(); ?>
-<?php global $bartleby_options;
-$bartleby_settings = get_option( 'bartleby_options', $bartleby_options );
-?>
-<?php if ( $bartleby_settings['home_headline'] !='' && is_home() && !is_paged() ) { ?>
+<?php
+// generic index template
+get_header();
+$bartleby_options = bartleby_get_theme_options(); ?>
+<?php if ( $bartleby_options['home_headline'] !='' && is_home() && !is_paged() ) { ?>
 <div class="row">
-<div class="sixteen columns">
-<h1 class="big-headline">
-<?php echo $bartleby_settings['home_headline']; ?>
-</h1>
-</div>
+	<div class="sixteen columns">
+		<h2 class="big-headline">
+			<?php echo $bartleby_options['home_headline']; ?>
+		</h2>
+	</div>
 </div>
 <?php } ?>
-<?php if( $bartleby_settings['column_posts']) : ?>
+
+<?php if( $bartleby_options['column_posts'] == '1' ) {
+		get_template_part ('inc/two', 'columns' );
+		} elseif
+			( $bartleby_options['column_posts'] == '2' ) {
+				get_template_part ('inc/three', 'columns' );
+				} elseif
+					( $bartleby_options['column_posts'] == '3' ) {
+						get_template_part ('inc/no', 'columns' );
+						}
+						?>
 <div class="row">
-<div class="sixteen columns">
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<div class="eight columns">
-<div class="column-post">
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<h5 class="latest-title">
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h5>
-<div class="bartleby-excerpt">
-<?php the_excerpt(); ?>
+	<div id="infinite-scroll" class="three columns centered">
+		<a class="secondary button" id="infinite-target"><?php _e('Load More Posts', 'bartleby'); ?></a>
+	</div>
 </div>
-</article>
-</div>
-</div>
-<?php endwhile; ?>
-</div>
-</div>
-<?php endif; ?>
 <div class="row">
-<div class="ten columns centered">
-<section id="post-nav">
-<?php posts_nav_link(); ?>
-</section><!--End Navigation-->
+	<div class="ten columns centered">
+		<div id="post-nav">
+				<?php posts_nav_link(' ', '<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>'); ?>
+		</div>
+	</div>
 </div>
-</div>
-<?php else: ?>
-<div class="row">
-<div class="sixteen columns">
-<div class="twelve columns">
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<h5 class="latest-title">
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h5>
-<?php the_excerpt(); ?>
-</article>
-<?php endwhile; ?>
-</div>
-<?php get_sidebar(); ?>
-</div>
-</div>
-<?php endif; ?>
-<div class="row">
-<div class="ten columns centered">
-<section id="post-nav" role="navigation">
-<?php posts_nav_link(); ?>
-</section><!--End Navigation-->
-</div>
-</div>
-<?php endif; ?>
 <?php get_footer(); ?>
