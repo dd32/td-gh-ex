@@ -96,6 +96,15 @@ function siteorigin_settings_enqueue_scripts( $prefix ) {
 	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/js/settings.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/css/settings.css', array(), SITEORIGIN_THEME_VERSION );
 
+	wp_localize_script( 'siteorigin-settings', 'siteoriginSettings', array(
+		'premium' => array(
+			'hasPremium' => has_filter('siteorigin_premium_content'),
+			'premiumUrl' => admin_url('themes.php?page=premium_upgrade'),
+			'isPremium' => defined('SITEORIGIN_IS_PREMIUM'),
+			'name' => apply_filters('siteorigin_premium_theme_name', ucfirst( get_option( 'template' ) ) . ' ' . __( 'Premium', 'origami' ) ),
+		)
+	) );
+
 	if( wp_script_is( 'wp-color-picker', 'registered' ) ){
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker' );
@@ -237,8 +246,10 @@ function siteorigin_settings_field( $args ) {
 	switch ( $args['type'] ) {
 		case 'checkbox' :
 			?>
-			<input id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" type="checkbox" <?php checked( $current ) ?> />
-			<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'origami' ) ) ?></label>
+			<div class="checkbox-wrapper">
+				<input id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" type="checkbox" <?php checked( $current ) ?> />
+				<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'origami' ) ) ?></label>
+			</div>
 			<?php
 			break;
 		case 'text' :
@@ -247,11 +258,11 @@ function siteorigin_settings_field( $args ) {
 			<input
 				id="<?php echo esc_attr( $field_id ) ?>"
 				name="<?php echo esc_attr( $field_name ) ?>"
-				class="<?php echo esc_attr( $args['type'] == 'number' ? 'small-text' : 'regular-text' ) ?>"
+				class="<?php echo esc_attr( $args['type'] == 'number' ? 'small-text' : 'regular-text' ); if( !empty($args['options']) ) echo ' siteorigin-settings-has-options'; ?>"
 				size="25"
 				type="<?php echo esc_attr( $args['type'] ) ?>"
 				value="<?php echo esc_attr( $current ) ?>" />
-			<?php if(!empty($args['options'])) : ?>
+			<?php if( !empty( $args['options'] ) ) : $args['options'] = apply_filters('siteorigin_setting_options_'.$field_id, $args['options']); ?>
 				<select class="input-field-select">
 					<option></option>
 					<?php foreach($args['options'] as $value => $label) : ?>
@@ -262,6 +273,7 @@ function siteorigin_settings_field( $args ) {
 			break;
 
 		case 'select' :
+			$args['options'] = apply_filters('siteorigin_setting_options_'.$field_id, $args['options']);
 			?>
 			<select id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>">
 				<?php foreach ( $args['options'] as $option_id => $label ) : ?>
@@ -449,7 +461,11 @@ function siteorigin_settings_validate( $values ) {
 	foreach ( $wp_settings_fields['theme_settings'] as $section_id => $fields ) {
 		foreach ( $fields as $field_id => $field ) {
 			$name = $section_id . '_' . $field_id;
-			
+
+			if( !empty($field['args']['options']) ){
+				$field['args']['options'] = apply_filters('siteorigin_setting_options_'.$name, $field['args']['options']);
+			}
+
 			switch($field['args']['type']){
 				case 'checkbox' :
 					// Only allow true or false values
@@ -466,6 +482,13 @@ function siteorigin_settings_validate( $values ) {
 					if( $values[ $name ] != -1 ) {
 						$attachment = get_post( $values[ $name ] );
 						if(empty($attachment) || $attachment->post_type != 'attachment') $values[ $name ] = '';
+					}
+					break;
+
+				case 'select':
+					if( !empty($field['args']['options']) && is_array($field['args']['options']) ) {
+						// Make sure the value is in the options.
+						if( !isset($field['args']['options'][ $values[$name] ]) ) $values[$name] = '';
 					}
 					break;
 
@@ -629,6 +652,43 @@ function siteorigin_settings_add_editor_styles_button($buttons){
 	return $buttons;
 }
 add_filter('mce_buttons_2', 'siteorigin_settings_add_editor_styles_button');
+
+function siteorigin_settings_add_slider_options($options){
+	// Add all Meta Sliders
+	if( class_exists('MetaSliderPlugin') ){
+		$sliders = get_posts(array(
+			'post_type' => 'ml-slider',
+			'numberposts' => 100,
+
+		));
+
+		foreach($sliders as $slider) {
+			$options['[metaslider id="'.$slider->ID.'"]'] = __('Meta Slider: ', 'origami').$slider->post_title;
+		}
+	}
+
+	// Add all the Revolution sliders
+	if( function_exists('rev_slider_shortcode') ) {
+		global $wpdb;
+		$sliders = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}revslider_sliders ORDER BY title");
+
+		foreach($sliders as $slider) {
+			$options['[rev_slider '.$slider->alias.']'] = __('Revolution Slider: ', 'origami').$slider->title;
+		}
+	}
+
+	// Add any LayerSlider Sliders
+	if( function_exists('layerslider') ) {
+		global $wpdb;
+		$sliders = $wpdb->get_results("SELECT id,name FROM {$wpdb->prefix}layerslider ORDER BY name");
+
+		foreach($sliders as $slider) {
+			$options['[layerslider id="'.$slider->id.'"]'] = __('LayerSlider: ', 'origami').$slider->name;
+		}
+	}
+
+	return $options;
+}
 
 /**
  * Settings validators.

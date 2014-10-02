@@ -1,11 +1,14 @@
 <div class="wrap">
 	<div id="icon-options-general" class="icon32"><br></div>
 	<?php $theme = wp_get_theme(); ?>
-	<h2><?php printf(__( '%s Theme Settings', 'origami' ), $theme->get('Name')) ?></h2>
+	<h2 id="theme-settings-title">
+		<img src="<?php echo esc_url( apply_filters('siteorigin_settings_page_icon', get_template_directory_uri() . '/extras/settings/images/icon.png' ) ) ?>">
+		<?php printf(__( '%s Theme Settings', 'origami' ), $theme->get('Name')) ?>
+	</h2>
 
 	<?php siteorigin_settings_change_message(); ?>
 	
-	<form action="options.php" method="post">
+	<form action="options.php" method="post" id="siteorigin-settings-form">
 		<?php settings_fields( 'theme_settings' ); ?>
 		<?php do_settings_sections( 'theme_settings' ) ?>
 
