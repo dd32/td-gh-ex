@@ -350,7 +350,7 @@ function setup_framework_options(){
 				'subtitle' => __('Input a message to display as your site title. Leave blank to display your default site title.', 'redux-framework'),
 				'id'=>'thinkup_general_sitetitle',
 				'type' => 'text',
-				'validate' => 'no_special_chars',
+				'validate' => 'html',
 				),
 
 			array(
@@ -358,7 +358,7 @@ function setup_framework_options(){
 				'subtitle' => __('Input a message to display as site description. Leave blank to display default site description.', 'redux-framework'),
 				'id'=>'thinkup_general_sitedescription',
 				'type' => 'text',
-				'validate' => 'no_special_chars',
+				'validate' => 'html',
 				),
 
 			array(

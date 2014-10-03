@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.6
+- Fixed:   Sanitization of Site Title and Site Description in theme options panel changed to allow non-english alphabet charachters.
+
 Version 1.0.5
 - Fixed:   Function thinkup_input_sliderhome() updated to correct "Uninitialized string offset" error.
 
