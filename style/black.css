@@ -1315,24 +1315,14 @@ img.aligncenter,
 
 
 .wp-caption-text {
-
-	-webkit-box-sizing: border-box;
-
-	-moz-box-sizing:    border-box;
-
-	box-sizing:         border-box;
-
-	font-size: 12px;
-
-	font-style: italic;
-
-	line-height: 1.5;
-
-	margin: 9px 0;
-
+-webkit-box-sizing: border-box;
+-moz-box-sizing:    border-box;
+box-sizing:         border-box;
+font-size: 12px;
+font-style: italic;
+line-height: 1.5;
+margin: 9px 0;
 }
-
-
 
 div.wp-caption .wp-caption-text {
 
@@ -1505,35 +1495,20 @@ left: -9999999px;
 
 
 .bypostauthor > article .fn:before,
-
 .comment-edit-link:before,
-
 .comment-reply-link:before,
-
 .comment-reply-login:before,
-
 .comment-reply-title small a:before,
-
 .contributor-posts-link:before,
-
 .menu-toggle:before,
-
 .search-toggle:before,
-
 .slider-direction-nav a:before,
-
 .widget_twentyfourteen_ephemera .widget-title:before {
-
-	-webkit-font-smoothing: antialiased;
-
-	display: inline-block;
-
-	font: normal 16px/1 Genericons;
-
-	text-decoration: inherit;
-
-	vertical-align: text-bottom;
-
+-webkit-font-smoothing: antialiased;
+display: inline-block;
+font: normal 16px/1 Genericons;
+text-decoration: inherit;
+vertical-align: text-bottom;
 }
 
 

@@ -82,9 +82,8 @@ global $badeyes_options;
 <?php echo $badeyes_settings['side_nav']; ?>
 <?php endif; ?></a></li>
 <?php endif; ?>
-<li id="default"><a href="<?php bloginfo('stylesheet_directory'); ?>/styleswitcher.php?SETSTYLE=0" title="Click here to set Style 0"><span class="white">Default colours</span></a></li>
-
-<li id="high"><a href="<?php bloginfo('stylesheet_directory'); ?>/styleswitcher.php?SETSTYLE=1" title="Click here to set Style 1"><span class="black">High Contrast</span></a></li></ul>
+<li id="default"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/styleswitcher.php?SETSTYLE=0" title="Click here to set Style 0"><span class="white">Default colours</span></a></li>
+<li id="high"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/styleswitcher.php?SETSTYLE=1" title="Click here to set Style 1"><span class="black">High Contrast</span></a></li></ul>
 </div>
 
 
