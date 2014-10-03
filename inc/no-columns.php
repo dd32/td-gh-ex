@@ -1,5 +1,5 @@
 <?php // blog-style index layout
-$bartleby_options = get_option ('bartleby_options'); ?>
+$bartleby_options = bartleby_get_theme_options(); ?>
 <div class="row">
 		<div class="twelve columns" id="content">
 		<?php if (have_posts()) : ?>
@@ -25,7 +25,6 @@ $bartleby_options = get_option ('bartleby_options'); ?>
 					<?php } ?>
 		
 					<?php
-						$bartleby_options = get_option( 'bartleby_options' );
 						if ( $bartleby_options['elength'] != '0' ) { ?>
 						<div class="bartleby-excerpt">
 							<?php the_excerpt(); ?>

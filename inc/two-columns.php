@@ -1,5 +1,5 @@
 <?php // template for display the two-column post layout
-$bartleby_options = get_option ('bartleby_options'); ?>
+$bartleby_options = bartleby_get_theme_options(); ?>
 <div class="row">
 	<div id="content" class="sixteen columns">
 		<?php if (have_posts()) : ?>

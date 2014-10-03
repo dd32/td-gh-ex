@@ -343,8 +343,8 @@ function bartleby_theme_options_validate( $input ) {
 		$output['elength'] = wp_filter_nohtml_kses( $input['elength'] );
 	if ( isset( $input['social_bar'] ) )
 	$output['social_bar'] = 'on';
-	if ( ! isset ( $input['post_default_image'] ) )
-	$output['post_default_image'] = null;
+	if ( isset ( $input['post_default_image'] ) )
+	$output['post_default_image'] = esc_url( $input['post_default_image'] );
 	if ( isset( $input['footer_link'] ) )
 	$output['footer_link'] = 'on';
 	if ( isset( $input['infinite_scroll_disable'] ) )

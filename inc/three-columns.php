@@ -1,5 +1,5 @@
 <?php // template for display the three-column post layout
-$bartleby_options = get_option ('bartleby_options'); ?>
+$bartleby_options = bartleby_get_theme_options(); ?>
 <div class="row">
 	<div id="content" class="sixteen columns">
 		<?php if (have_posts()) : ?>
@@ -17,14 +17,13 @@ $bartleby_options = get_option ('bartleby_options'); ?>
 						<?php the_post_thumbnail('medium', array ('class' => 'aligncenter bartleby-thumbnail') ); ?>
 					</a>
 					<?php } 
-						if ( !has_post_thumbnail() && $bartleby_options['post_default_image'] != '' ) { ?>
+						if ( $bartleby_options['post_default_image'] != '' && !has_post_thumbnail()  ) { ?>
 						<a href="<?php the_permalink(); ?>">
 							<img src="<?php echo $bartleby_options['post_default_image']; ?>" alt="<?php the_title(); ?>"
 								class="aligncenter bartleby-thumbnail" />
 						</a>
 					<?php } ?>
 					<?php
-					$bartleby_options = get_option( 'bartleby_options' );
 					if ( $bartleby_options['elength'] != '0' ) { ?>
 					<div class="bartleby-excerpt">
 						<?php the_excerpt(); ?>

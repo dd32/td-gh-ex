@@ -24,3 +24,7 @@
 -Added post type support
 -Fixed attachment view
 -Added searchform.php
+
+* Version 2.0.1 *
+- fixed duplicate variable assignment in column posts
+- fixed default thumbnail save issue
