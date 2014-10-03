@@ -7,7 +7,7 @@ function artikler_theme_setup() {
 	$content_width = 728;
 	
 	/* Makes Artikler available for translation.*/
-	load_theme_textdomain( 'jatheme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'aetikler', get_template_directory() . '/languages' );
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -144,7 +144,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 //Excerpt More.
 function new_excerpt_more( $more ) {
-	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'your-text-domain') . '</a>';
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'artikler') . '</a>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
@@ -179,8 +179,7 @@ function artikler_scripts() {
 	global $wp_styles;
 	wp_enqueue_style( 'style-sheet', get_stylesheet_uri() );
 	wp_enqueue_script( 'script-html5', get_template_directory_uri() . '/js/html5.js', array(), '1.0.0', true );
-	wp_register_style('googleFontsOpen+Sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700');
-       wp_enqueue_style( 'googleFontsOpen+Sans');
+	wp_enqueue_style('googleFontsOpen+Sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 	wp_register_style('googleFontsTangerine', 'http://fonts.googleapis.com/css?family=Tangerine');
        wp_enqueue_style( 'googleFontsTangerine');
 	$font_url = artikler_theme_get_font_url();
@@ -276,7 +275,7 @@ function get_all_posts(){
                  
                  <div class="content-post-tilte-excerpt">
                  <h4><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
-                 <small class="content-authore-excerpt"><b><?php _e( 'Posted by', 'artikler' ); ?></b> <?php the_author(); ?>.&nbsp;|&nbsp;<b> <?php _e( 'Published on', 'artikler' ); ?></b> <?php get_option('jS F Y') ?></small>
+                 <small class="content-authore-excerpt"><b><?php _e( 'Posted by', 'artikler' ); ?></b> <?php the_author(); ?>.&nbsp;|&nbsp;<b> <?php _e( 'Posted on', 'artikler' ); ?></b> <?php the_time( 'F j, Y' ); ?></small>
                  <div class="post_expert_index">
                  <?php the_excerpt(); ?><br />
                  </div>
