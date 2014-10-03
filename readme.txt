@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.5.7
+- Fixed:   Sanitization of Site Title and Site Description in theme options panel changed to allow non-english alphabet charachters.
+
 Version 1.5.6
 - Removed: Recommended plugins removed due to plugin errors with WordPress4.0 update.
 
