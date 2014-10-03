@@ -13,7 +13,7 @@
 				$current_options['rambo_copy_rights_text']=sanitize_text_field($_POST['rambo_copy_rights_text']);
 				$current_options['rambo_designed_by_head']=sanitize_text_field($_POST['rambo_designed_by_head']);
 				$current_options['rambo_designed_by_text']=sanitize_text_field($_POST['rambo_designed_by_text']);
-				$current_options['rambo_designed_by_link']=sanitize_text_field($_POST['rambo_designed_by_link']);
+				$current_options['rambo_designed_by_link']=esc_url_raw($_POST['rambo_designed_by_link']);
 				
 				
 				

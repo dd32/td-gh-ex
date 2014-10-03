@@ -77,6 +77,51 @@ $$$$ Footer Setting $$$$$
 
 2. Credit Links:-  From the footer settings you can set the credit links like copyright, powered bye tc. If you dont want to use designed by link
 		   than leave that option as blank. 
+		   
+		   
+		   
+License
+-------
+
+Rambo WordPress Theme, Copyright 2014 Priyanshu Mittal
+Rambo is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see .
+
+Rambo WordPress Theme bundles the following third-party resources:
+
+FontAwesome the iconic font designed for Bootstrap
+FontAwesome are licensed under the terms SIL Open-Font License
+Source: http://fontawesome.io
+
+CSS/Fonts
+		1. Font Awesome Icons and CSS => http://fortawesome.github.io/Font-Awesome/
+		2. Open-Sans (GoogleWeb Fonts) Fonts => http://www.google.com/fonts/specimen/Open+Sans
+		3. Roboto (GoogleWeb Fonts) Fonts => https://www.google.com/fonts/specimen/Roboto
+		4. Raleway (GoogleWeb Fonts) Fonts =>https://www.google.com/fonts/specimen/Raleway
+
+JavaScripts		
+		1. Bootstrap.min.js => https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
+		
+	Images
+		1. Static Home Feature Image => http://dummyimage.com/1600x600/deb6de/1f2136
+		2. Image in the screenshot are provided by Matthew Wiebe(https://unsplash.com/matthewwiebe) taken from the link(https://unsplash.com/photos/nOhUx3tiaQQ/download)
+		   unsplash.com images are licensed under GPL.
+		   
+CSS Tooltips by Adam Whitcroft
+https://github.com/AdamWhitcroft/CSS.Tooltips
+----------------------------------------------------------------------		   
 
 
 Support
@@ -85,6 +130,17 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.2.6
+1. Sidebar managed properly.
+2. Default sidebar widgets removed.
+3. All Language Support Translation.
+4. Minor bug fixed: all the title in category,author,Tag Archive will now been displayed accordingly.
+5. Sidebar managed, now if no sidebar is active than the pages layout will automatically shift to one columns.
+6. Overflow hide in Discription.
+7. Image pagination managed properly.
+8. Change Aside Box layout.
+9. All the resources license mentioned.
+10. esc_url_raw used in instead of sanitize_text_field for links validation. 
 @Version: 1.2.5
 1. Hover for Sub-Menus added.
 2. Changes for Custom CSS.

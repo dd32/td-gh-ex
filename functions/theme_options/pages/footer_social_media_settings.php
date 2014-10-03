@@ -9,10 +9,10 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{		
-				$current_options['social_media_twitter_link']=sanitize_text_field($_POST['social_media_twitter_link']);
-				$current_options['social_media_facebook_link']=sanitize_text_field($_POST['social_media_facebook_link']);
-				$current_options['social_media_linkedin_link']=sanitize_text_field($_POST['social_media_linkedin_link']);
-				$current_options['social_media_google_plus']=sanitize_text_field($_POST['social_media_google_plus']);	
+				$current_options['social_media_twitter_link']=esc_url_raw($_POST['social_media_twitter_link']);
+				$current_options['social_media_facebook_link']=esc_url_raw($_POST['social_media_facebook_link']);
+				$current_options['social_media_linkedin_link']=esc_url_raw($_POST['social_media_linkedin_link']);
+				$current_options['social_media_google_plus']=esc_url_raw($_POST['social_media_google_plus']);	
 			
 				// footer section enabled yes ya on
 				if($_POST['footer_social_media_enabled'])

@@ -36,10 +36,10 @@
 <div class="row-fluid comment_section">
   <?php  
     $fields=array(
-       'author' => '<lable>Name</lable><span>*<span><br/>
+       'author' => '<lable>'.__('Name','rambo'),'</lable><span>*<span><br/>
     			<input class="span9 leave_comment_field" name="author" id="author" value="" type="text"/><br/>',
-       'email'  => '<lable>Email</lable><br/><input class="" name="email" id="email" value=""   type="text" ><br/>',
-    'website'=>	'<lable>Website</lable><br/><input class="span9 leave_comment_field" name="email" id="email" value=""   type="text" ><br/>',
+       'email'  => '<lable>'.__('Email','rambo'),'</lable><br/><input class="" name="email" id="email" value=""   type="text" ><br/>',
+    'website'=>	'<lable>'.__('Website','rambo'),'</lable><br/><input class="span9 leave_comment_field" name="email" id="email" value=""   type="text" ><br/>',
     );
     
     function my_fields($fields) {
