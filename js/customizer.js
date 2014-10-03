@@ -363,5 +363,5 @@
         value.bind( function( newval ) {
             $('body').css('font-size', newval + 'px' );
         } );
-    }); 		
+    });		
 } )( jQuery );

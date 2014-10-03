@@ -231,7 +231,7 @@ function moesia_custom_styles($custom) {
         $custom .= ".latest-news-area .widget-title:after { border-color: {$latest_news_title_dec}; }"."\n";
     }
     if ( isset($latest_news_post_title) && ( $latest_news_post_title != '#444' ) ) {
-        $custom .= ".latest-news-area .entry-title a { background-color: {$latest_news_post_title}; }"."\n";
+        $custom .= ".latest-news-area .entry-title a { color: {$latest_news_post_title}; }"."\n";
     }
     if ( isset($latest_news_body_text) && ( $latest_news_body_text != '#aaa' ) ) {
         $custom .= ".blog-post { color: {$latest_news_body_text}; }"."\n";

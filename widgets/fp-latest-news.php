@@ -124,7 +124,7 @@ class Moesia_Latest_News extends WP_Widget {
 			</div>
 		<?php if ($image_uri != '') : ?>
 			<style type="text/css">
-				.latest_news-area {
+				.latest-news-area {
 				    display: block;			    
 					background: url(<?php echo $image_uri; ?>) no-repeat;
 					background-position: center top;
