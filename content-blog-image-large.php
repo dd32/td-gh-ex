@@ -13,9 +13,9 @@
 		if( has_post_thumbnail() ) {
 			$image = '';     
 			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');   			
-     		$title_attribute = get_the_title( $post->ID );
+     		$title_attribute = the_title_attribute( 'echo=0' );
      		$image .= '<figure class="post-featured-image">';
-  			$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
+  			$image .= '<a href="' . get_permalink() . '" title="'.the_title_attribute( 'echo=0' ).'">';
   			$image .= get_the_post_thumbnail( $post->ID, 'large', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
   			$image .= '<div class="mask">
   						<div class="image-icon-wrap">

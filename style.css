@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/esteem/
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Esteem is a clean multipurpose responsive WordPress theme designed to fit business, portfolio, blogging or any type of site. The theme supports custom header, custom background, custom widgets, page templates and has built in options panel to configure primary color, site logo, slider, sidebar layout and 3 blog layout. It's also fully compatible with popular plugins like contact Form 7, WP PageNavi and Breadcrumb Navxt and is translation ready. Get free support at http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/esteem/.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats
@@ -659,6 +659,10 @@ input[type="password"] {
 
 /* =BODY 
 ----------------------------------------------- */
+body {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
 #main {
 	padding-top: 44px;
 	margin-bottom: 30px;
@@ -668,6 +672,10 @@ input[type="password"] {
 	max-width: 1038px;
 	margin: 0 auto;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.wide {
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 .wide #page {
 	max-width: 100%;

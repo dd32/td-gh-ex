@@ -44,6 +44,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
+= Version 1.1.1 =
+* the_title changed with the_title_attribute to prevent plugin conflict.
+* Boxed layout padding issue fixed.
+
 = Version 1.1 =
 * Testimonial bug fixed.
 * Screenshot changed.
