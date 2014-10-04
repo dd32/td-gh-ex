@@ -1,0 +1,8 @@
+= Version 1.1 =
+1.Issues with Comment section resolved.
+2.Image path removed form the Calendar widget css.
+3.License for images declared in readme.txt.
+
+= Version 1.0 =
+August 23, 2014 - Initial release
+
