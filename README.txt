@@ -1,5 +1,5 @@
 Theme Name : Artikler
-Version : 1.3.3.3
+Version : 1.3.3.4
 Author : JAThemes Team
 Author URI : http://www.jathemes.com/
 Theme URI : http://jathemes.com/artikler-theme/

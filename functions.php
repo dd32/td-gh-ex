@@ -7,7 +7,7 @@ function artikler_theme_setup() {
 	$content_width = 728;
 	
 	/* Makes Artikler available for translation.*/
-	load_theme_textdomain( 'aetikler', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'artikler', get_template_directory() . '/languages' );
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );

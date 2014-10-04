@@ -1,0 +1,286 @@
+# Copyright (C) 2014 JAThemes Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Artikler 1.3.3.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/artikler\n"
+"POT-Creation-Date: 2014-10-03 21:14:44+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-10-04 12:18+0500\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.6.9\n"
+
+#: 404.php:15
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: archive.php:19
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:21
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:21
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:23
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:23
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:25
+msgid "Archives"
+msgstr ""
+
+#: author.php:27
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:48 content.php:56
+msgid "About %s"
+msgstr ""
+
+#: category.php:17
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:22
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:23
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:24
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:32
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:9 search.php:32
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:13
+msgid "Not found."
+msgstr ""
+
+#: content-page.php:14 content.php:39
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:17 content.php:45 inc/custom-comment.php:43
+msgid "Edit"
+msgstr ""
+
+#: content.php:10
+msgid "Featured post"
+msgstr ""
+
+#: content.php:27
+msgid "Leave a reply"
+msgstr ""
+
+#: content.php:27
+msgid "1 Reply"
+msgstr ""
+
+#: content.php:27
+msgid "% Replies"
+msgstr ""
+
+#: content.php:38
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:60
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:19
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:58
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:60
+msgid ""
+"Appears on posts and pages except the optional Front Page template, which "
+"has its own widgets"
+msgstr ""
+
+#: functions.php:102 functions.php:104
+msgid ", "
+msgstr ""
+
+#: functions.php:115
+msgid "View all posts by %s"
+msgstr ""
+
+#: functions.php:121
+msgid ""
+"Category: %1$s | Tag: %2$s | Date: %3$s | <span class=\"by-author\"> Author: "
+"%4$s</span>."
+msgstr ""
+
+#: functions.php:123
+msgid ""
+"Category: %1$s | Date: %3$s | <span class=\"by-author\"> Author: %4$s</span>."
+msgstr ""
+
+#: functions.php:125
+msgid "Date: %3$s | <span class=\"by-author\"> Author: %4$s</span>."
+msgstr ""
+
+#: functions.php:147
+msgid "Read More"
+msgstr ""
+
+#: functions.php:154
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:157
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: functions.php:278
+msgid "Posted by"
+msgstr ""
+
+#: functions.php:278
+msgid "Posted on"
+msgstr ""
+
+#: functions.php:284
+msgid "No Comment"
+msgstr ""
+
+#: functions.php:286
+msgid "1 Comment"
+msgstr ""
+
+#: functions.php:288
+msgid "Comments"
+msgstr ""
+
+#: header.php:45
+msgid "Menu"
+msgstr ""
+
+#: header.php:46
+msgid "Skip to content"
+msgstr ""
+
+#: inc/custom-comment.php:9
+msgid "Pingback:"
+msgstr ""
+
+#: inc/custom-comment.php:9
+msgid "(Edit)"
+msgstr ""
+
+#: inc/custom-comment.php:25
+msgid "Post author"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: inc/custom-comment.php:31
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/custom-comment.php:38
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/custom-comment.php:47
+msgid "Reply"
+msgstr ""
+
+#: index.php:20
+msgid "No Post Found"
+msgstr ""
+
+#: index.php:21
+msgid "Search Other Post"
+msgstr ""
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:36
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: searchform.php:2
+msgid "Type and hit enter"
+msgstr ""
+
+#: single.php:16
+msgid "Post navigation"
+msgstr ""
+
+#: single.php:17
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: single.php:18
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: tag.php:16
+msgid "Tag Archives: %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Artikler"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://jathemes.com/artikler-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Artikler theme created and designed by JAThemes Team. Features include "
+"custom headers,custom background, multiple widget areas, an optional icon "
+"navigation menu. This theme is perfect for article sites.More detail for "
+"this theme visit http://www.jathemes.com/."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "JAThemes Team"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.jathemes.com/"
+msgstr ""
