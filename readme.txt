@@ -101,15 +101,15 @@ along with this program.  If not, see .
 
 Rambo WordPress Theme bundles the following third-party resources:
 
-FontAwesome the iconic font designed for Bootstrap
-FontAwesome are licensed under the terms SIL Open-Font License
-Source: http://fontawesome.io
-
-CSS/Fonts
-		1. Font Awesome Icons and CSS => http://fortawesome.github.io/Font-Awesome/
-		2. Open-Sans (GoogleWeb Fonts) Fonts => http://www.google.com/fonts/specimen/Open+Sans
-		3. Roboto (GoogleWeb Fonts) Fonts => https://www.google.com/fonts/specimen/Roboto
-		4. Raleway (GoogleWeb Fonts) Fonts =>https://www.google.com/fonts/specimen/Raleway
+* Font Awesome http://fontawesome.github.io/Font-Awesome/
+ * Font License
+    Applies to all desktop and webfont files in the following directory: font-awesome/fonts/.
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
+ * Code License
+    Applies to all CSS and LESS files in the following directories: font-awesome/css/, font-awesome/less/, and font-awesome/scss/.
+    License: MIT License
+    URL: http://opensource.org/licenses/mit-license.html
 
 JavaScripts		
 		1. Bootstrap.min.js => https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
@@ -130,6 +130,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.2.6.1
+Proper copyright attribution added.
+
 @version 1.2.6
 1. Sidebar managed properly.
 2. Default sidebar widgets removed.
