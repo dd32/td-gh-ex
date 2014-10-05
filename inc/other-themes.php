@@ -3,11 +3,20 @@
 <div id="blogdescription">Here you can find other themes from us.</div>
 
 <div id="theme">
+<img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/manra.png'; ?>" width="584">
+<div id="name">Manra</div>
+<div id="info">Manra contains Fimply's most advanced version of Responsive Design. The theme is optimized to look just beautiful on mobile and desktop devices. It is a powerful theme that does not need tons of options. We focussed on the most important ones. Upload a logo, a favicon and you’re done. Its that simple!
+
+<p><a href="http://fimply.de/themes/manra" target="_blank">Go to the Fimply Store and get it for just $12</a></p></div>
+
+</div>
+
+<div id="theme">
 <img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/tautira_banner@2x.png'; ?>" width="584">
-<div id="name">Tautira Premium Theme</div>
+<div id="name">Tautira</div>
 <div id="info">Tautira is a Premium Business Theme - it's very easy to create a professional website with it. We integrated Jetpack by WordPress.com for the first time in one of our themes, so it gets even more powerful. Tautira looks great on every device because of its Responsive Design.
 
-<p><a href="http://fimply.de/themes/tautira" target="_blank">Go to the Fimply Store</a></p></div>
+<p><a href="http://fimply.de/themes/tautira" target="_blank">Go to the Fimply Store and get it for just $12</a></p></div>
 
 </div>
 
@@ -17,7 +26,7 @@
 <div id="name">elegantWhite Pro</div>
 <div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one best WordPress themes on the planet!
 
-<p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Go to the Fimply Store</a></p></div>
+<p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Go to the Fimply Store and get it for just $12</a></p></div>
 
 </div>
 
