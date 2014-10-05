@@ -1,4 +1,4 @@
-<?php  $wl_theme_options = get_option('enigma_options'); 
+<?php  $wl_theme_options = weblizar_get_options(); 
 $get_pro ="GET PREMIUM"; 
 $get_pro_url ="http://weblizar.com/themes/enigma-premium/";
 $site ="http://www.weblizar.com" ;?>

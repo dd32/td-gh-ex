@@ -101,21 +101,12 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 					<?php require_once('option-settings.php'); ?>	
 				</div>		
 			</div>
-			<div class="weblizar-header" style="margin-top:0px; border-radius: 0px 0px 6px 6px;">			
+			 <div class="weblizar-header" style="margin-top:0px; border-radius: 0px 0px 6px 6px;">			
 				<div class="weblizar-submenu-links" style="margin-top:15px;">
-				<form method="POST">
-					<input type="submit" onclick="return confirm( 'Click OK to reset theme data. Theme settings will be lost!' );" value="Restore All Defaults" name="restore_all_defaults" id="restore_all_defaults" class="button">
-				<form>
-				</div><!-- weblizar-submenu-links -->
-			</div>
+			
+				</div>
+			</div> 
 			<div class="clear"></div>
 		</div>
 	</div>
-<?php
-	// Restore all defaults
-	if(isset($_POST['restore_all_defaults'])) {
-		$weblizar_theme_options = save_wl_default_settings();	
-		update_option('enigma_options',$weblizar_theme_options);
-	}
-}
-?>
+<?php } ?>

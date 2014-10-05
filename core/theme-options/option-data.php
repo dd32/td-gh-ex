@@ -1,4 +1,4 @@
-<?php $wl_theme_options = get_option('enigma_options');
+<?php $wl_theme_options = weblizar_get_options();
 	/*
 	* Home slider settings save
 	*/

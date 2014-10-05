@@ -8,7 +8,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>        
       </ol>
       <div class="carousel-inner">
-	  <?php $wl_theme_options = get_option('enigma_options');
+	  <?php $wl_theme_options = weblizar_get_options();
 		$ImageUrl1 = WL_TEMPLATE_DIR_URI ."/images/1.png";
 		$ImageUrl2 = WL_TEMPLATE_DIR_URI ."/images/2.png";
 		$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";  ?>

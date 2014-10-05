@@ -1,5 +1,4 @@
-<?php        
-/*	*Theme Name	: Enigma
+<?php /*	*Theme Name	: Enigma
 	*Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
@@ -13,6 +12,102 @@
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/flickr-widget.php' );
 	
+	//Sane Defaults
+	function weblizar_default_settings()
+{
+	$ImageUrl = WL_TEMPLATE_DIR_URI ."/images/1.png";
+	$ImageUrl2 = WL_TEMPLATE_DIR_URI ."/images/2.png";
+	$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";
+	$ImageUrl4 = WL_TEMPLATE_DIR_URI ."/images/portfolio1.png";
+	$ImageUrl5 = WL_TEMPLATE_DIR_URI ."/images/portfolio2.png";
+	$ImageUrl6 = WL_TEMPLATE_DIR_URI ."/images/portfolio3.png";
+	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
+	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
+	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
+	$wl_theme_options=array(
+			//Logo and Fevicon header			
+			'upload_image_logo'=>'',
+			'height'=>'55',
+			'width'=>'150',
+			'text_title'=>'off',
+			'upload_image_favicon'=>'',			
+			'custom_css'=>'',
+			'slide_image_1' => $ImageUrl,
+			'slide_title_1' => 'Slide Title',
+			'slide_desc_1' => 'tudi v priljubljenih programih za namizno založništvo kot',
+			'slide_btn_text_1' => 'Read More',
+			'slide_btn_link_1' => '#',
+			'slide_image_2' => $ImageUrl2,
+			'slide_title_2' => 'Lorem Ipsuma',
+			'slide_desc_2' => 'kombinacijo znakov neznani tiskar združil v vzorčno',
+			'slide_btn_text_2' => 'Read More',
+			'slide_btn_link_2' => '#',
+			'slide_image_3' => $ImageUrl3,
+			'slide_title_3' => ' zgolj naključno e',
+			'slide_desc_3' => 'nenačrtovano ali namenoma, z različnimi š',
+			'slide_btn_text_3' => 'Read More',
+			'slide_btn_link_3' => '#',			
+			'blog_title'=>'Latest Blog',			
+			'fc_title' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+			'fc_btn_txt' => 'More Features',
+			'fc_btn_link' =>'#',
+			//Social media links
+			'header_social_media_in_enabled'=>'on',
+			'footer_section_social_media_enbled'=>'on',
+			'twitter_link' =>"https://twitter.com/",
+			'fb_link' =>"https://facebook.com",
+			'linkedin_link' =>"http://linkedin.com/",
+			'youtube_link' =>"https://youtube.com/",
+			
+			'email_id' => 'enigma@mymail.com',
+			'phone_no' => '0159753586',
+			'footer_customizations' => ' &#169; 2014 Enigma Theme',
+			'developed_by_text' => 'Theme Developed By',
+			'developed_by_weblizar_text' => 'Weblizar Themes',
+			'developed_by_link' => 'http://weblizar.com/',
+			
+			'home_service_heading' => 'Our Services',
+			'service_1_title'=>"Idea",
+			'service_1_icons'=>"fa fa-google",
+			'service_1_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_1_link'=>"#",
+			
+			'service_2_title'=>"Records",
+			'service_2_icons'=>"fa fa-database",
+			'service_2_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_2_link'=>"#",
+			
+			'service_3_title'=>"WordPress",
+			'service_3_icons'=>"fa fa-wordpress",
+			'service_3_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_3_link'=>"#",			
+
+			//Portfolio Settings:
+			'portfolio_home'=>'off',
+			'port_heading' => 'Recent Works',
+			'port_1_img'=> $ImageUrl4,
+			'port_1_title'=>'modsætning',
+			'port_1_link'=>'#',
+			'port_2_img'=> $ImageUrl5,			
+			'port_2_title'=>'udgaver',
+			'port_2_link'=>'#',
+			'port_3_img'=> $ImageUrl6,
+			'port_3_title'=>'udgaver',
+			'port_3_link'=>'#',
+			'port_4_img'=> $ImageUrl7,
+			'port_4_title'=>'udgaver',
+			'port_4_link'=>'#'
+			
+		);
+		return apply_filters( 'enigma_options', $wl_theme_options );
+}
+	function weblizar_get_options() {
+    // Options API
+    return wp_parse_args( 
+        get_option( 'enigma_options', array() ), 
+        weblizar_default_settings() 
+    );    
+	}
 	//wp title tag starts here
 	function weblizar_head( $title, $sep )
 	{	global $paged, $page;		
@@ -48,19 +143,8 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args); 
 		add_theme_support( 'automatic-feed-links'); 
-		require_once('enigma-default-settings.php');
-		require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
-		
-		// setup admin pannel defual data for index page		
-		$weblizar_default_theme_settings = weblizar_default_settings();	
-		
-		$weblizar_saved_theme_settings = get_option('enigma_options'); // get existing option data 		
-		if($weblizar_saved_theme_settings) {
-			$weblizar_saved_theme_settings = array_merge($weblizar_default_theme_settings, $weblizar_saved_theme_settings);
-			update_option('enigma_options', $weblizar_saved_theme_settings);	// Set existing and new option data			
-		} else {
-			add_option('enigma_options', $weblizar_default_theme_settings);  // set New option data 
-		}
+		require_once('options-reset.php');//Reset Theme Options Here
+		require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel		
 	}
 	
 

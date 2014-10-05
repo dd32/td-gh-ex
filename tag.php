@@ -15,4 +15,3 @@ get_template_part('breadcrums'); ?>
 	</div>
 </div>
 <?php get_footer(); ?>
-	

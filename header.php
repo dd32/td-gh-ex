@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php $wl_theme_options=get_option('enigma_options'); ?>
+	<?php $wl_theme_options = weblizar_get_options(); ?>
 	<?php if($wl_theme_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo $wl_theme_options['upload_image_favicon']; ?>" /> 
 	<?php } ?>	

@@ -1,5 +1,5 @@
 <!-- enigma Callout Section -->
-<?php $wl_theme_options=get_option('enigma_options'); ?>
+<?php $wl_theme_options = weblizar_get_options(); ?>
 <!-- Footer Widget Secton -->
 <div class="enigma_footer_widget_area">	
 	<div class="container">

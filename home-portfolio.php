@@ -1,5 +1,5 @@
 <!-- portfolio section -->
-<?php $wl_theme_options=get_option('enigma_options'); ?>
+<?php $wl_theme_options = weblizar_get_options(); ?>
 <div class="enigma_project_section">
 <?php if($wl_theme_options['port_heading'] !='') { ?>
 	<div class="container">
