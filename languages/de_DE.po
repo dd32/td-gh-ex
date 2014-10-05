@@ -1,366 +1,446 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Simone\n"
-"POT-Creation-Date: 2014-08-10 17:08-0800\n"
-"PO-Revision-Date: 2014-08-10 17:09-0800\n"
-"Last-Translator: \n"
-"Language-Team: lynda.com <mrh@lynda.com>\n"
-"Language: en\n"
+"Project-Id-Version: Simone v1.0.7.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-12 08:24+0100\n"
+"PO-Revision-Date: 2014-08-12 08:25+0100\n"
+"Last-Translator: Caspar Huebinger <c.huebinger@inpsyde.com>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
+# @ simone
 #. translators: %s = single category title
 #: archive.php:22
 #, php-format
 msgid "Posts in the %s category:"
-msgstr ""
+msgstr "Beiträge der Kategorie %s:"
 
+# @ simone
 #. translators: %s = single tag title
 #: archive.php:26
 #, php-format
 msgid "Posts with the %s tag"
-msgstr ""
+msgstr "Beiträge mit dem Schlagwort %s"
 
+# @ simone
 #: archive.php:29
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
+# @ simone
 #: archive.php:33
 #, php-format
 msgctxt "archive for a day"
 msgid "Posts from %s"
-msgstr ""
+msgstr "Beiträge des %s"
 
+#: archive.php:33
+msgctxt "Daily archives date format"
+msgid "F j, Y"
+msgstr "j. F Y"
+
+# @ simone
 #: archive.php:36
 #, php-format
 msgctxt "archive for a month"
 msgid "Posts from %s"
-msgstr ""
+msgstr "Beiträge vom %s"
 
+# @ simone
 #: archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
+# @ simone
 #: archive.php:39
 #, php-format
 msgctxt "archive for a year"
 msgid "Posts from %s"
-msgstr ""
+msgstr "Beiträge im Jahr %s"
 
+# @ simone
 #: archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
+# @ simone
 #: archive.php:42
 msgid "Asides"
-msgstr ""
+msgstr "Notizen"
 
+# @ simone
 #: archive.php:45
 msgid "Archives"
-msgstr ""
+msgstr "Archive"
 
+# @ simone
 #: comments.php:29
 #, php-format
 msgctxt "comments title"
 msgid "One comment:"
 msgid_plural "%1$s comments:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ein Kommentar:"
+msgstr[1] "%1$s Kommentare:"
 
+# @ simone
 #: comments.php:47
 msgid "Comment navigation"
-msgstr ""
+msgstr "Kommentarnavigation"
 
+# @ simone
 #: comments.php:48
 msgid "Older Comments"
-msgstr ""
+msgstr "Ältere Kommentare"
 
+# @ simone
 #: comments.php:49
 msgid "Newer Comments"
-msgstr ""
+msgstr "Neuere Kommentare"
 
+# @ simone
 #: comments.php:59
 msgid "Comments are closed."
-msgstr ""
+msgstr "Kommentare geschlossen."
 
+# @ simone
 #: content-aside.php:17 content-page.php:32 content-single.php:42
 #: content.php:61
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
+# @ simone
 #: content-none.php:16
 msgid "Page not available"
-msgstr ""
+msgstr "Seite nicht verfügbar"
 
+# @ simone
 #. translators: %s = search query
 #: content-none.php:20
 #, php-format
 msgid "Nothing found for %s"
-msgstr ""
+msgstr "Nichts gefunden zu %s"
 
+# @ simone
 #: content-none.php:22
 msgid "Nothing Found"
-msgstr ""
+msgstr "Nichts gefunden"
 
+# @ simone
 #: content-none.php:31
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"<a href=\"%1$s\">Hier</a> kannst du deinen ersten Beitrag veröffentlichen."
 
+# @ simone
 #: content-none.php:35
 msgid ""
 "You seem to be lost. To find what you are looking for check out the most "
 "recent articles below or try a search:"
 msgstr ""
+"Du scheinst dich verirrt zu haben. Um zu finden, wonach du suchst, sieh dir "
+"die jüngsten Beiträgen weiter unten an, oder probier’s mal mit einer Suche:"
 
+# @ simone
 #: content-none.php:40
 msgid ""
 "Nothing matched your search terms. Check out the most recent articles below "
 "or try searching for something else:"
 msgstr ""
+"Keine Übereinstimmungen mit deinen Suchbegriffen. Sieh dir die jüngsten "
+"Beiträgen weiter unten an, oder versuche es mit anders formulierten "
+"Suchbegriffen:"
 
+# @ simone
 #: content-none.php:45
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Offenbar ist das Gewünschte nicht zu finden. Vielleicht hilft eine Suche?"
 
+# @ simone
 #: content-none.php:56
 msgid "Most recent posts:"
-msgstr ""
+msgstr "Aktuelle Beiträge:"
 
+# @ simone
 #: content-page.php:27 content-single.php:50 image.php:48
 msgid "Pages:"
-msgstr ""
+msgstr "Seiten:"
 
+# @ simone
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:25 content.php:43
 msgid ", "
-msgstr ""
+msgstr ", "
 
+# @ simone
 #: content-single.php:38 content.php:57
 msgid "Leave a comment"
-msgstr ""
+msgstr "Kommentieren"
 
+# @ simone
 #: content-single.php:38 content.php:57
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Kommentar"
 
+# @ simone
 #: content-single.php:38 content.php:57
 msgid "% Comments"
-msgstr ""
+msgstr "% Kommentare"
 
+# @ simone
 #: content.php:13 content.php:26
 msgid "Read "
-msgstr ""
+msgstr "Lies "
 
+# @ simone
 #: content.php:72
 msgctxt "First part of \"Read *article title* in title tag of Read more link"
 msgid "Read "
-msgstr ""
+msgstr "Lies "
 
+# @ simone
 #: content.php:72
 msgid "Read <span aria-hidden=\"true\">the article</span>"
-msgstr ""
+msgstr "<span aria-hidden=\"true\">Den Beitrag </span>Lesen"
 
+# @ simone
 #: content.php:79
 msgid "Continue Reading "
-msgstr ""
+msgstr "Weiterlesen"
 
+# @ simone
 #: content.php:79
 msgid "Continue Reading"
-msgstr ""
+msgstr "Weiterlesen"
 
+# @ simone
 #. translators: %s = text link: WordPress, URL: http://wordpress.org/
 #: footer.php:20
 #, php-format
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Mit %s betrieben."
 
-#: footer.php:21
-msgid "WordPress"
-msgstr ""
-
+# @ simone
 #. translators: %1$s = text link: Simone, URL: http://wordpress.org/themes/simone/, %2$s = text link: mor10.com, URL: http://mor10.com/
 #: footer.php:27
 #, php-format
 msgid "Theme: %1$s by %2$s"
-msgstr ""
+msgstr "Theme: %1$s von %2$s"
 
-#: footer.php:29
-msgid "mor10.com"
-msgstr ""
-
+# @ simone
 #: functions.php:55
 msgid "Primary Menu"
-msgstr ""
+msgstr "Primäres Menü"
 
+# @ simone
 #: functions.php:56
 msgid "Social Menu"
-msgstr ""
+msgstr "Social Menü"
 
+# @ simone
 #: functions.php:85
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
+# @ simone
 #: functions.php:94
 msgid "Footer Widgets"
-msgstr ""
+msgstr "Footer Widgets"
 
+# @ simone
 #: functions.php:95
 msgid ""
 "Footer widgets area appears, not surprisingly, in the footer of the site."
 msgstr ""
+"Der „Footer“ Widget-Bereich erscheint, wenig überraschend, im Footer der "
+"Site."
 
+# @ simone
 #: header.php:25
 msgid "Skip to content"
-msgstr ""
+msgstr "Weiter zum Inhalt"
 
+# @ simone
 #: header.php:47
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
+# @ simone
 #: header.php:53
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
+# @ simone
 #: image.php:25
 msgid "Featured in: "
-msgstr ""
+msgstr "Empfohlen in: "
 
+# @ simone
 #: image.php:26
 msgid "Full size image: "
-msgstr ""
+msgstr "Bild in voller Größe: "
 
+# @ simone
 #: image.php:27
 msgid "Edit attachment post"
-msgstr ""
+msgstr "Anhang bearbeiten"
 
+# @ simone
 #: inc/author-box.php:10
 msgid "Hide Author Bio"
-msgstr ""
+msgstr "Autorenbiografie verbergen"
 
+# @ simone
 #: inc/author-box.php:21
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Über %s"
 
+# @ simone
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:29
 msgid "One article and counting. "
-msgstr ""
+msgstr "Ein Beitrag, Tendenz steigend. "
 
+# @ simone
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:34
 #, php-format
 msgid "%s articles and counting. "
-msgstr ""
+msgstr "%s Beiträge, Tendenz steigend. "
 
+# @ simone
 #: inc/author-box.php:44
 #, php-format
 msgid "Follow %s on social media: "
-msgstr ""
+msgstr "Folge %s in Sozialen Medien: "
 
+# @ simone
 #: inc/author-box.php:46
 #, php-format
 msgid "Follow %s on Twitter"
-msgstr ""
+msgstr "Folge %s bei Twitter"
 
+# @ simone
 #: inc/author-box.php:46
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
+# @ simone
 #: inc/author-box.php:49
 #, php-format
 msgid "Add %s to your Google+ circles"
-msgstr ""
+msgstr "Füge %s zu deinen Kreisen bei Google+ hinzu"
 
+# @ simone
 #: inc/author-box.php:49
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
+# @ simone
 #: inc/author-box.php:52
 #, php-format
 msgid "Like %s on Facebook"
-msgstr ""
+msgstr "Teile bei Facebook, dass  %s dir gefällt"
 
+# @ simone
 #: inc/author-box.php:52
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
+# @ simone
 #: inc/author-box.php:65
 #, php-format
 msgid "All posts by %s"
-msgstr ""
+msgstr "Alle Beiträge von %s"
 
+# @ simone
 #: inc/customizer.php:46
 msgid "Header Color"
-msgstr ""
+msgstr "Header-Farbe"
 
+# @ simone
 #: inc/customizer.php:65
 msgid "Link Color"
-msgstr ""
+msgstr "Link-Farbe"
 
+# @ simone
 #: inc/extras.php:63
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Seite %s"
 
+# @ simone
 #: inc/template-tags.php:45
 msgid "&larr; Previous"
-msgstr ""
+msgstr "&larr; Vorherige"
 
+# @ simone
 #: inc/template-tags.php:46
 msgid "Next &rarr;"
-msgstr ""
+msgstr "Nächste &rarr;"
 
+# @ simone
 #: inc/template-tags.php:54
 msgid "Posts navigation"
-msgstr ""
+msgstr "Beitragsnavigation"
 
+# @ simone
 #: inc/template-tags.php:79 inc/template-tags.php:101
 msgid "Post navigation"
-msgstr ""
+msgstr "Beitragsnavigation"
 
+# @ simone
 #: inc/template-tags.php:82
 msgid "Previous Post:"
-msgstr ""
+msgstr "Vorheriger Beitrag:"
 
+# @ simone
 #: inc/template-tags.php:83
 msgid "Next Post:"
-msgstr ""
+msgstr "Nächster Beitrag:"
 
+# @ simone
 #: inc/template-tags.php:104
 msgid "Previous Image"
-msgstr ""
+msgstr "Vorheriges Bild"
 
+# @ simone
 #: inc/template-tags.php:105
 msgid "Next Image"
-msgstr ""
+msgstr "Nächstes Bild"
 
+# @ simone
 #: inc/template-tags.php:126
 msgctxt "Public posted on date"
 msgid "F jS, Y"
-msgstr ""
+msgstr "j. F Y"
 
+# @ simone
 #: inc/template-tags.php:128
 msgctxt "Public modified on date"
 msgid "F jS, Y"
-msgstr ""
+msgstr "j. F Y"
 
+# @ simone
 #: inc/template-tags.php:131
 #, php-format
 msgctxt ""
@@ -371,8 +451,12 @@ msgid ""
 "</span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">.</"
 "span>"
 msgstr ""
+"<span class=\"byline\">Geschrieben von %1$s</span><span class=\"mobile-hide"
+"\"> am </span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide"
+"\">.</span>"
 
+# @ simone
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Suchergebnisse für: %s"
