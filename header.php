@@ -51,7 +51,7 @@
               <?php 
                 } else if($current_options['upload_image_logo']!='') 
                 	{ ?>
-              <a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo $current_options['upload_image_logo']; ?>" style="height:<?php if($current_options['height']!='') { echo $current_options['height']; }  else { "80"; } ?>px; width:<?php if($current_options['width']!='') { echo $current_options['width']; }  else { "200"; } ?>px;" /></a>
+              <a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo $current_options['height']; }  else { "80"; } ?>px; width:<?php if($current_options['width']!='') { echo $current_options['width']; }  else { "200"; } ?>px;" /></a>
               <?php } else { ?> 
               <a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo QUALITY_TEMPLATE_DIR_URI; ?>/images/logo.png"></a>
               <?php } ?>			

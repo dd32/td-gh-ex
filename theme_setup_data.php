@@ -13,7 +13,7 @@ function theme_data_setup()
 	return $theme_options=array(
 			//Logo and Fevicon header			
 			'front_page'  => 'on',
-			'home_feature' => QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide.png',
+			'home_feature' => QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide.jpg',
 			'upload_image_logo'=>'',
 			'height'=>'80',
 			'width'=>'200',
@@ -21,11 +21,10 @@ function theme_data_setup()
 			'upload_image_favicon'=>'',	
 			
 			/* Home Image */
-			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
-			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),
-			
-			
-			
+			'home_image_title' => __('Theme Feature Goes Here!','quality'),
+			'home_image_sub_title' => __('Wordpress Premium Theme','quality'),
+			'home_image_description' => __('Fully Responsive Theme Amazing Design.','quality'),
+
 			'service_title'=>'What We Do',
 			'service_description' =>'We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.',
 			
@@ -52,14 +51,11 @@ function theme_data_setup()
 			'project_one_thumb' => $project_img,
 			'project_one_title' => 'Lorem Ipsum',
 			
-		
 		    'project_two_thumb' => $project_img,
 			'project_two_title' => 'Postao je popularan',
 			
-			
 			'project_three_thumb' => $project_img,
 			'project_three_title' => 'kojekakve promjene s',
-			
 			
 			'project_four_thumb' => $project_img,
 			'project_four_title' => 'kojekakve promjene s',

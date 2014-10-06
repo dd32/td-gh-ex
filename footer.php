@@ -13,7 +13,9 @@
   <div class="container">
     <div class="col-md-12">
       <p><?php if($current_options['footer_customizations']!='') { echo $current_options['footer_customizations']; } ?>
-        <a target="_blank" rel="nofollow" href="<?php if($current_options['created_by_link']!='') { echo $current_options['created_by_link']; } ?>"><?php if($current_options['created_by_link']!='') { echo $current_options['created_by_link'];} ?></a>
+	  <?php if(is_home() && $current_options['created_by_webriti_text']!=''){?>
+        <a target="_blank" rel="nofollow" href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"><?php echo $current_options['created_by_webriti_text']; ?></a>
+		<?php } else { echo $current_options['created_by_webriti_text']; }?>
       </p>
     </div>
   </div>
@@ -21,7 +23,7 @@
 <?php
   if($current_options['quality_custom_css']!='') {  ?>
 <style>
-  <?php echo $current_options['quality_custom_css']; ?>
+  <?php echo htmlspecialchars_decode($current_options['quality_custom_css']); ?>
 </style>
 <?php } ?>	
 <!-- /Footer Widget Secton -->

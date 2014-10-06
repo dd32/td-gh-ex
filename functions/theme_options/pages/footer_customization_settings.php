@@ -11,7 +11,7 @@
 			{		
 				$current_options['footer_customizations']=sanitize_text_field($_POST['footer_customizations']);
 				$current_options['created_by_webriti_text']=sanitize_text_field($_POST['created_by_webriti_text']);
-				$current_options['created_by_link']=sanitize_text_field($_POST['created_by_link']);
+				$current_options['created_by_link']=esc_url_raw($_POST['created_by_link']);
 				update_option('quality_options',$current_options);
 			}
 		}	

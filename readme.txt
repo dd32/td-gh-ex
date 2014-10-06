@@ -76,6 +76,51 @@ $$$$ Footer Setting $$$$$
 
 2. Credit Links:-  From the footer settings you can set the credit links like copyright, powered bye tc. If you dont want to use designed by link
 		   than leave that option as blank. 
+		   
+		   
+		   
+License
+-------
+
+Quality WordPress Theme, Copyright 2014 Priyanshu Mittal
+Quality is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see .
+
+Quality WordPress Theme bundles the following third-party resources:
+
+* Font Awesome http://fontawesome.github.io/Font-Awesome/
+ * Font License
+    Applies to all desktop and webfont files in the following directory: font-awesome/fonts/.
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
+ * Code License
+    Applies to all CSS and LESS files in the following directories: font-awesome/css/, font-awesome/less/, and font-awesome/scss/.
+    License: MIT License
+    URL: http://opensource.org/licenses/mit-license.html
+
+JavaScripts		
+		1. Bootstrap.min.js => https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
+		
+	Images
+		1. Static Home Feature Image => https://unsplash.com/photos/X1g8f20v97I/download
+		2. Image in the screenshot are provided by Caroline Gutman(https://unsplash.com/carolinegutman) taken from the link(https://unsplash.com/photos/X1g8f20v97I/download)
+		   unsplash.com images are licensed under GPL.
+		   
+CSS Tooltips by Adam Whitcroft
+https://github.com/AdamWhitcroft/CSS.Tooltips
+----------------------------------------------------------------------			
 
 
 Support
@@ -84,6 +129,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@version 1.0.6.3
+1. css in footer passed through html special chars funcitons
+2. esc url called wherever required.
+3. license added for the image shown in screenshot.
+4. Added sub title on banner.
 @version 1.0.6.2
 1. the_excerpt filter called to add class to default paragraph tag.
 2. Description text added over the banner.

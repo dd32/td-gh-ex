@@ -10,6 +10,7 @@
 			{	
 				$current_options['home_feature']=sanitize_text_field($_POST['home_feature']);				
 				$current_options['home_image_title']=sanitize_text_field($_POST['home_image_title']);
+				$current_options['home_image_sub_title']=sanitize_text_field($_POST['home_image_sub_title']);
 				$current_options['home_image_description']=sanitize_text_field($_POST['home_image_description']);
 				
 				update_option('quality_options',$current_options);
@@ -18,9 +19,10 @@
 		if($_POST['webriti_settings_save_2'] == 2) 
 		{
 			
-			$current_options['home_feature']= QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide1.jpg';				
-			$current_options['home_image_title']="Fully Responsive Theme !";
-			$current_options['home_image_description']="Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.";
+			$current_options['home_feature']= QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide.jpg';				
+			$current_options['home_image_title']="Theme Feature Goes Here!";
+			$current_options['home_image_sub_title']="Wordpress Premium Theme";
+			$current_options['home_image_description']='Fully Responsive Theme Amazing Design.';
 			
 			update_option('quality_options',$current_options);
 		}
@@ -54,16 +56,21 @@
 			<p><img style="height:250px;width:1100px;" src="<?php if($current_options['home_feature']!='') { echo esc_attr($current_options['home_feature']); } ?>" /></p>
 			<?php } ?>
 		</div>
-<div class="section">
+			<div class="section">
 				<h3><?php _e('Banner Title','quality'); ?></h3>
 				<input class="webriti_inpute"  type="text" name="home_image_title" id="home_image_title" value="<?php if( isset($current_options['home_image_title'])) echo $current_options['home_image_title']; ?>" >
 				<span class="icons help"><span class="tooltip"><?php  _e('Enter Banner title','quality');?></span></span>
-				</div>
-				<div class="section">
+			</div>
+			<div class="section">
+				<h3><?php _e('Banner Sub Title','quality'); ?></h3>
+				<input class="webriti_inpute"  type="text" name="home_image_sub_title" id="home_image_sub_title" value="<?php if( isset($current_options['home_image_sub_title'])) echo $current_options['home_image_sub_title']; ?>" >
+				<span class="icons help"><span class="tooltip"><?php  _e('Enter Banner Sub Title','quality');?></span></span>
+			</div>
+			<div class="section">
 				<h3><?php _e('Banner Description','quality'); ?></h3>
 				<textarea rows="5" cols="8" id="home_image_description" name="home_image_description"  class="textbox1" ><?php if(isset($current_options['home_image_description'])) { echo esc_attr($current_options['home_image_description']); } ?></textarea>
 				<div class=""><?php _e('Enter Banner description text less then 150 character .','quality'); ?><br></div>
-				</div>		
+			</div>		
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_2" name="webriti_settings_save_2" />
 			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('2');">
