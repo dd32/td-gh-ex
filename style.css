@@ -4,7 +4,7 @@ Theme URI: http://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://www.competethemes.com/
 Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.28
+Version: 1.29
 Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -1870,7 +1870,7 @@ li.pingback:after {
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
 }
-.site-header .search-form-container button:hover i, .site-header .search-form-container button:active i, .site-header .search-form-container button:focus i {
+.site-header .search-form-container button:hover i, .site-header .search-form-container button:active i {
   opacity: 1;
 }
 .site-header .search-form-container button:hover {
@@ -1951,6 +1951,8 @@ li.pingback:after {
 .social-media-icons {
   list-style: none;
   margin: 0;
+  -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.2s ease-in-out;
+          transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 .social-media-icons li,
 .social-media-icons a {
@@ -1977,6 +1979,13 @@ li.pingback:after {
 .site-header .social-media-icons {
   float: right;
   height: 100%;
+}
+
+.search-open .site-header .social-media-icons {
+  opacity: 0;
+  -webkit-transform: translateX(12px);
+      -ms-transform: translateX(12px);
+          transform: translateX(12px);
 }
 
 @media all and (min-width: 1500px) {
