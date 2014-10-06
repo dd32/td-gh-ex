@@ -84,11 +84,21 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
+
+Version 1.1
+bug fixing below:
+ footer.php
+ header.php
+ function.php
+ style.css
+
 Version 1.0.3
- * Further bug fixing functions.php
+* Further bug fixing functions.php
 
 Version 1.0.2
- * Fixes to functions.php
+* Fixes to functions.php
 
 Version 1.0.1
- * First public release
+* First public release
+
+

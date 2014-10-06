@@ -1,19 +1,36 @@
 /*
 Theme Name: WP FanZone
-Theme URI: http://wpfanzone.com
+Theme URI: http://hostmarks.com/fanzone-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com
 Description: WP Fan Zone was designed orginally with sports fans and bloggers in mind, but it could easily be used for any type of blog or magazine style site that wants to feature images and content. It is fully responsive, comes with two main menus, and widget areas for all page types. It also has customization options for social media links, color scheme and author bios, plus a simple banner widget for putting ads in the header.
-Version: 1.0.3
+Version: 1.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, full-width-template, post-formats
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
 */
-@import url(http://fonts.googleapis.com/css?family=Lato);
-@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+/*--------------------------------------------------------------
+TABLE OF CONTENTS:
+----------------------------------------------------------------
+ * 1.0 - Basic Elements
+ * 2.0 - widget
+ * 3.0 - Calendar
+ * 4.0 - Comment
+ * 5.0 - Search widget
+ * 6.0 - IMAGE STYLES
+ * 7.0 - Media Queries
+
+ * -----------------------------------------------------------------------------
+ */
 
 /*==================================================================================================================================*/
+/* 1.0 Basic Elements */
+
 .top-bar{background:#252525; padding:0; border-top:5px solid #339390;}
 .top-tittle h5{color: #ffffff; margin: 0; padding: 10px 20px; background: #339390; display: inline-block;}
 .top-tittle:after{
@@ -75,6 +92,7 @@ p.live-news{
 	margin-bottom: 0; 
 	padding-top:7px;
 	}
+
 .nav_container{
 	background:#2e2e2e; 
 	margin-bottom:20px; 
@@ -190,7 +208,7 @@ a.btn-info {
   opacity: 0.7;
 }
 
-/*widget*/
+/*2.0 widget*/
 #sidebar aside{
 	margin-bottom:20px;
 	padding-bottom: 10px;
@@ -244,7 +262,7 @@ aside ul li a:hover{
 	}
 
 
-/*comments */
+/*3.0 comments */
 #respond {
 	background-color: #fefefe;
 	padding: 40px;
@@ -375,9 +393,7 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
 	}
 
 
-/******************************************************************
-Calendar
-******************************************************************/
+/* 4.0 Calendar */
 .widget_calendar table {
 	line-height: 2;
 	margin: 0;
@@ -470,9 +486,7 @@ footer .widget{
 	}
 
 
-/******************************************************************
-Search widget
-******************************************************************/
+/* 5.0 Search widget */
 
 #searchform { 
 	background:#F8F8F8; 
@@ -505,9 +519,7 @@ input#search-button{
 }
 
 
-/******************************************************************
-IMAGE STYLES
-******************************************************************/
+/* 6.0 IMAGE STYLES */
 .post-content img {
 	margin-top: 12px; /* for ie8 & below */ 
 	margin-top: 1.2rem;
@@ -579,6 +591,8 @@ img.size-medium,
 	color:#707070;
 	}
 
+
+/* 7.0 Media Queries */
 @media (min-width: 768px) and (max-width: 1018px) {
   .widget_calendar td,
   .widget_calendar td {

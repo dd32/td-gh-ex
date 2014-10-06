@@ -1,5 +1,5 @@
 <ul class="pgwSlider">
-<?php  $slider_cat = get_theme_mod( 'powered_by'); ?>	
+<?php  $slider_cat = get_theme_mod( 'wp_fanzone_category'); ?>	
 <?php
 //query posts
 query_posts(

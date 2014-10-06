@@ -37,22 +37,20 @@
 
 <?php wp_footer(); ?>
 
-<script>
-$(document).ready(function() {
-$.getScript('<?php echo get_template_directory_uri(); ?>/js/jquery.imagesloaded.min.js',function(){
-	$.getScript('<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js',function(){
-	  /* activate jquery isotope */
-	  $('#posts').imagesLoaded( function(){
-		$('#posts').isotope({
-		  itemSelector : '.item'
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$.getScript('<?php echo get_template_directory_uri(); ?>/js/jquery.imagesloaded.min.js',function(){
+		$.getScript('<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js',function(){
+		  /* activate jquery isotope */
+		  $('#posts').imagesLoaded( function(){
+			$('#posts').isotope({
+			  itemSelector : '.item'
+			});
+		  }); 
+		
 		});
-	  }); 
-	
 	});
-});
-});
-/*Slider*/
-$(document).ready(function() {
+	/*Slider*/
 	$('.pgwSlider').pgwSlider({
 	<?php if ( get_theme_mod( 'wp_fanzone_slider_speed' ) ) : ?>
 		intervalDuration :<?php echo get_theme_mod( 'wp_fanzone_slider_speed' ) ; ?>

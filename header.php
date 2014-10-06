@@ -12,7 +12,8 @@
 <title><?php wp_title('|', true, 'left'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php wp_head(); ?>
+
+
 
  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -29,7 +30,7 @@
     <![endif]-->
 
 <!-- WP Head -->
-
+<?php wp_head(); ?>
 </head>
 
 
@@ -74,28 +75,18 @@
                                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
             
                                   <?php
-            
-                                        $args = array(
-            
-                                        'theme_location' => 'top-menu',
-            
-                                        'depth'	=> 3,
-            
-                                        'container'	=> false,
-            
-                                        'menu_class'	=> 'top-menu',
-            
-                                        'walker'	=> new wpfanzoneNavMenuWalker()
-            
-                                        );						 
+            							if (has_nav_menu('top-menu')) {
+										  wp_nav_menu( array(
+											  'theme_location' => 'top-menu',
+											  'walker'         => new wpfanzoneNavMenuWalker,
+											  'depth'	=> 3,            
+                                        	  'container'	=> false,
+											  'menu_class'	=> 'top-menu',
+										  ) );
+										}                                      
             
             
-            
-                                        wp_nav_menu($args);
-            
-            
-            
-                                        ?>           
+            					?>           
                                   
             
                                 </div><!-- /.navbar-collapse -->
@@ -111,7 +102,7 @@
 
                         <?php if ( get_theme_mod( 'wp_fanzone_email' ) ) : ?>
 
-                        	<a href="<?php _e('mailto:', 'wp_fanzone_email'); echo sanitize_email( get_theme_mod( 'wp_fanzone_email' ) ); ?>" class="btn btn-default btn-xs" title="Email"><span class="fa fa-envelope"></span></a>
+                        	<a href="<?php _e('mailto:', 'wp-fanzone'); echo sanitize_email( get_theme_mod( 'wp_fanzone_email' ) ); ?>" class="btn btn-default btn-xs" title="Email"><span class="fa fa-envelope"></span></a>
 
                         <?php endif; ?>
 

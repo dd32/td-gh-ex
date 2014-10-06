@@ -1,14 +1,22 @@
 <?php
-require('includes/excerpts.php');
-require('includes/pagination.php');
+
+require_once( trailingslashit( get_template_directory() ) . 'includes/excerpts.php');
+require_once( trailingslashit( get_template_directory() ) . 'includes/pagination.php');
+
+
 
 add_action('after_setup_theme', 'wp_fanzone_theme_setup');
-function wp_fanzone_theme_setup(){
-    load_theme_textdomain('wp-fanzone', get_template_directory() . '/languages');
+if ( ! function_exists( 'wp_fanzone_theme_setup' ) ) {
+	function wp_fanzone_theme_setup(){
+		load_theme_textdomain('wp-fanzone', get_template_directory() . '/languages');		
+		add_editor_style();
+	}
+}
+
+if ( function_exists( 'add_theme_support' ) ){
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'custom-header' );
 	add_theme_support( 'custom-background') ;
-	add_editor_style();
 }
 
 if ( ! function_exists( 'wp_fanzone_content_width' ) ) :
@@ -25,18 +33,22 @@ add_action( 'after_setup_theme', 'wp_fanzone_content_width' );
  */
 if ( ! function_exists( 'wp_fanzone_custom_scripts' ) ) :
 	function wp_fanzone_custom_scripts() {
-		if (!is_admin()) {
-		wp_register_script( 'wp_fanzone_jquery', get_template_directory_uri() . '/js/jquery-1.9.1.min.js' );
-		wp_enqueue_script('wp_fanzone_jquery');
+		
+		//wp_register_script( 'wp_fanzone_jquery', get_template_directory_uri() . '/js/jquery-1.9.1.min.js' );
+		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'wp_fanzone_responsive_js', get_template_directory_uri() . '/js/responsive.js' );
 		wp_enqueue_script( 'wp_fanzone_slider_js', get_template_directory_uri() . '/js/slider.js' );
 		wp_enqueue_style( 'wp_fanzone_slider', get_template_directory_uri() .'/css/slider.css', array(), false ,'screen' );
 		wp_enqueue_style( 'wp_fanzone_responsive', get_template_directory_uri() .'/css/responsive.css', array(), false ,'screen' );
 		wp_enqueue_style( 'wp_fanzone_font_awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css' );
 		wp_enqueue_style( 'wp_fanzone_style', get_stylesheet_uri() );
-		}
+		wp_register_style('wp_fanzone_googleFonts', '//fonts.googleapis.com/css?family=Lato|Oswald');
+        wp_enqueue_style( 'wp_fanzone_googleFonts');
+
+
 	}
 endif;
+
 add_action('wp_enqueue_scripts', 'wp_fanzone_custom_scripts');
 
 /*******************************************************************
@@ -209,7 +221,7 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 			'priority'    => 111,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_fanzone_email', array (
+		$wp_customize->add_setting( 'wp_fanzone_email', array (			
 			'sanitize_callback' => 'sanitize_email',
 		) );
 		
@@ -217,6 +229,7 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 			'label'    => __( 'Enter your email address', 'wp-fanzone' ),
 			'section'  => 'wp_fanzone_social_section',
 			'settings' => 'wp_fanzone_email',
+			'type' => 'email',
 			'priority'    => 112,
 		) ) );
 		
@@ -257,20 +270,21 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 		//  Select Box               
 		//  =============================
 		$wp_customize->add_section('wp_fanzone_slider', array(
-        'title'    => __('Slider Option', 'wp_fanzone'),
+        'title'    => __('Slider Option', 'wp-fanzone'),
         'priority' => 114,
 		));
 		 
 		
 		$wp_customize->add_setting(
-			'powered_by',
+			'wp_fanzone_category',
 			array(
 				'default' => '',
+				'sanitize_callback' => 'wp_fanzone_sanitize_category',
 			)
 		);
 		 
 		$wp_customize->add_control(
-			'powered_by',
+			'wp_fanzone_category',
 			array(
 				'type' => 'select',
 				'label' => 'Select Category:',
@@ -296,6 +310,27 @@ if ( ! function_exists( 'wp_fanzone_theme_customizer' ) ) :
 endif;
 add_action('customize_register', 'wp_fanzone_theme_customizer');
 
+if ( ! function_exists( 'wp_fanzone_sanitize_category' ) ){
+	function wp_fanzone_sanitize_category( $input ) {
+		$categories = get_categories();
+		$cats = array();
+		$i = 0;
+		foreach($categories as $category){
+			if($i==0){
+				$default = $category->slug;
+				$i++;
+			}
+			$cats[$category->slug] = $category->name;
+		}
+		$valid = $cats;
+	 
+		if ( array_key_exists( $input, $valid ) ) {
+			return $input;
+		} else {
+			return '';
+		}
+	}
+}
 /**
  * Sanitize integer input
  */
@@ -359,22 +394,23 @@ endif;
 add_action( 'wp_head', 'wp_fanzone_apply_color' );
 
 // register navigation menus
-register_nav_menus(
-	array(
-	'main-menu'=>__('Main Menu'),
-	'top-menu'=>__('Top Menu')
-	)
-
-);
-function wp_fanzone_menu() {
-
-	require_once (TEMPLATEPATH . '/includes/wp_fanzone_menu.php');
-
+if ( function_exists( 'register_nav_menus' ) ){
+	register_nav_menus(
+		array(
+		'main-menu'=>__('Main Menu'),
+		'top-menu'=>__('Top Menu')
+		)
+	
+	);
 }
-if ( function_exists( 'add_theme_support' ) ){
-
-	add_theme_support( 'post-thumbnails' );
+if ( !function_exists( 'wp_fanzone_menu' ) ){
+	function wp_fanzone_menu() {
+	
+		require_once (trailingslashit( get_template_directory() ) . '/includes/wp_fanzone_menu.php');
+	
+	}
 }
+
 
 
 if ( function_exists( 'add_image_size' ) ) {
@@ -586,7 +622,7 @@ class wpfanzoneNavMenuWalker extends Walker_Nav_Menu {
 	}
 	
 
-	$classes[] = isset($args->has_children) ? 'dropdown' : '';
+	$classes[] = ($args->has_children) ? 'dropdown' : '';
 	$classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
 	$classes[] = 'menu-item-' . $item->ID;
 
@@ -603,12 +639,12 @@ class wpfanzoneNavMenuWalker extends Walker_Nav_Menu {
 	$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
 	$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
 	$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
-	$attributes .= isset($args->has_children) ? ' class="dropdown-toggle"  ' : '';
-	$item_output = isset($args->before);
+	$attributes .= ($args->has_children) ? ' class="dropdown-toggle"  ' : '';
+	$item_output = $args->before;
 	$item_output .= '<a'. $attributes .'>';
-	$item_output .= isset($args->link_before) . apply_filters( 'the_title', $item->title, $item->ID ) . isset($args->link_after);
-	$item_output .= ($depth == 0 && isset($args->has_children)) ? ' <b class="caret"></b></a>' : '</a>';
-	$item_output .= isset($args->after);
+	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+	$item_output .= ($depth == 0 && $args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
+	$item_output .= $args->after;
 	$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 
 }
