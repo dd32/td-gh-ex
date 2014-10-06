@@ -19,6 +19,9 @@ http://twitter.com/_Fimply
 Become a fan of us on Facebook!
 http://facebook.com/fimply.themes
 
+=== Images ===
+
+All images in Aura are licensed under the terms of the GNU GPL. 
 
 
 === SUPPORT ===
