@@ -208,7 +208,7 @@ class Smart_Project_Customizer{
 	public static function generate_layout_css(){
 
 		$width = self::get_project_option( 'project_layout_width' );
-        $sidebar_width = 340;
+        $sidebar_width = 320;
     //layout resize
 		$layout_width = ! empty($width)?$width:1280;
 		echo '@media only screen and (min-width: '.($layout_width+25).'px){'."\n";
@@ -737,6 +737,8 @@ class Smart_Project_Customizer{
         $wp_customize->add_setting(  self::$option_key .'[social_button_facebook]', array(
             'capability' => 'edit_theme_options',
             'type'       => 'option',
+             'sanitize_callback' => array($this, 'sanitize_string')
+
         ) );
 
         $wp_customize->add_control( self::$option_key . '_social_button_facebook', array(
@@ -750,6 +752,7 @@ class Smart_Project_Customizer{
         $wp_customize->add_setting( self::$option_key . '[social_button_twitter]', array(
             'capability' => 'edit_theme_options',
             'type'       => 'option',
+                                                                                       'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( self::$option_key . '_social_button_twitter', array(
@@ -763,6 +766,7 @@ class Smart_Project_Customizer{
         $wp_customize->add_setting( self::$option_key . '[social_button_gplus]', array(
             'capability' => 'edit_theme_options',
             'type'       => 'option',
+                                                                                     'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( self::$option_key . '_social_button_gplus', array(
@@ -776,6 +780,7 @@ class Smart_Project_Customizer{
         $wp_customize->add_setting( self::$option_key . '[social_button_pinterest]', array(
             'capability' => 'edit_theme_options',
             'type'       => 'option',
+                                                                                         'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( self::$option_key . '_social_button_pinterest', array(
@@ -861,6 +866,7 @@ class Smart_Project_Customizer{
             'default'    => 320,
             'type'       => 'option',
             'capability' => 'edit_theme_options',
+                                                                                        'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( new project_Customize_Range_Control( $wp_customize,'maxflat_project_sidebar_resize', array(
@@ -875,6 +881,7 @@ class Smart_Project_Customizer{
 
             'type'       => 'option',
             'capability' => 'edit_theme_options',
+                                                                                                   'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( self::$option_key . '_project_menu_fonts', array(
@@ -891,12 +898,14 @@ class Smart_Project_Customizer{
             'default'    => '',
             'type'       => 'option',
             'capability' => 'edit_theme_options',
+                                                                                    'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_setting( self::$option_key . '[custom_code_footer]', array(
             'default'    => '',
             'type'       => 'option',
             'capability' => 'edit_theme_options',
+                                                                                    'sanitize_callback' => array($this, 'sanitize_string')
         ) );
 
         $wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_header', array(
@@ -929,6 +938,7 @@ class Smart_Project_Customizer{
             $wp_customize->add_setting( self::$option_key . '[promo_'.$section.']', array(
                 'capability' => 'edit_theme_options',
                 'type'       => 'option',
+                                                                                        'sanitize_callback' => array($this, 'sanitize_string')
             ) );
 
             $wp_customize->add_control( new Smart_Customize_ColorReadonly_Control( $wp_customize,$section, array(

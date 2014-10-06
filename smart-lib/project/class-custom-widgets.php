@@ -378,12 +378,13 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 			'twitter',
 			'youtube',
 			'pinterest',
-			'linkedin'
+			'linkedin',
+            'specificfeeds'
 		);
 	}
 
 	function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
+		$title = isset($instance['title'])?apply_filters( 'widget_title', $instance['title'] ):'';
 
 		extract( $args );
 		echo $before_widget;
@@ -394,7 +395,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		foreach ( $this->form_args as $row ) {
 			if ( isset( $instance[$row] ) && ! empty( $instance[$row] ) && $row != 'title' ) {
 				$class_name = __MAXFLAT::layout()->get_awesome_icon_class($row .'_large');
-				?>
+                ?>
 				<li class="maxflat_social_<?php echo $row ?>"><a href="<?php echo $instance[$row]  ?>"><i class="<?php echo $class_name ?>"></i></a></li>
 				<?php
 			}
@@ -428,6 +429,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		}
 
 		?>
+            <p>[<?php _e( 'Paste  your own links', 'maxflat'); ?>]</p>
 	<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Short Title:', 'maxflat'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $form_values['title']; ?>" /></label>
@@ -462,7 +464,11 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'LinkedIn:', 'maxflat'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" type="text" value="<?php echo $form_values['linkedin']; ?>" /></label>
 	</p>
-
+        <p>
+		<label for="<?php echo $this->get_field_id( 'specificfeeds' ); ?>"><?php _e( 'SpecificFeeds:', 'maxflat'); ?>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'specificfeeds' ); ?>" name="<?php echo $this->get_field_name( 'specificfeeds' ); ?>" type="text" value="<?php echo $form_values['specificfeeds']; ?>" /></label>
+	</p>
+    <p><a href="http://www.specificfeeds.com/" target="_blank" style="clear: both; display: block; padding-top: 15px"><?php _e('How to promote your blog using SpecificFeeds?', 'smartadapt') ?></a></p>
 
 	<?php
 	}
@@ -855,6 +861,108 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 	}
 
 }
+
+/**
+ * Add default widgets after theme activation
+ * @param $old_theme
+ * @param null $WP_theme
+ * @return void
+ */
+function maxflat_add_theme_widgets($old_theme, $WP_theme = null) {
+
+
+
+
+    /*reset widgets only if theme not install before*/
+
+     update_option( 'sidebars_widgets', array());
+
+    /*reset widgets*/
+
+     update_option( 'sidebars_widgets', array());
+
+maxflat_pre_set_widget( 'sidebar-1', 'smartlib-social-icons',
+    array(
+        'title' => __('Follow us','maxflat'),
+        'specificfeeds'  => 'http://specificfeeds.com/follow',
+        'facebook' => 'https://www.facebook.com/',
+		'twitter'=> 'https://twitter.com/',
+		'youtube'=> 'https://www.youtube.com/',
+		'pinterest'=> 'http://www.pinterest.com/',
+
+    )
+);
+
+maxflat_pre_set_widget( 'sidebar-1', 'search',
+    array(
+        'title' => __('Search Form','maxflat')
+
+    )
+);
+
+maxflat_pre_set_widget( 'sidebar-1', 'smartlib-recent-posts',
+    array(
+        'title' => __('Last Articles','maxflat')
+
+    )
+);
+
+maxflat_pre_set_widget( 'sidebar-1', 'smartlib-recent-gallery-widget',
+    array(
+        'title' => __('Last Galeries','maxflat'),
+         'gallery_limit' => 4,
+    )
+);
+
+
+
+}
+
+add_action('after_switch_theme', 'maxflat_add_theme_widgets', 10, 2);
+
+/**
+ * Pre-configure and save a widget, designed for plugin and theme activation.
+ *
+ * @link    http://wordpress.stackexchange.com/q/138242/1685
+ *
+ * @param   string  $sidebar    The database name of the sidebar to add the widget to.
+ * @param   string  $name       The database name of the widget.
+ * @param   mixed   $args       The widget arguments (optional).
+ */
+function maxflat_pre_set_widget( $sidebar, $name, $args = array() ) {
+    if ( ! $sidebars = get_option( 'sidebars_widgets' ) )
+        $sidebars = array();
+
+    // Create the sidebar if it doesn't exist.
+    if ( ! isset( $sidebars[ $sidebar ] ) )
+        $sidebars[ $sidebar ] = array();
+
+
+    // Check for existing saved widgets.
+    if ( $widget_opts = get_option( "widget_$name" ) ) {
+        // Get next insert id.
+        ksort( $widget_opts );
+        end( $widget_opts );
+        $insert_id = key( $widget_opts );
+    } else {
+        // None existing, start fresh.
+        $widget_opts = array( '_multiwidget' => 1 );
+        $insert_id = 0;
+    }
+
+
+    $widget_opts = array( '_multiwidget' => 1 );
+    $insert_id = 0;
+
+    // Add our settings to the stack.
+    $widget_opts[ ++$insert_id ] = $args;
+    // Add our widget!
+    $sidebars[ $sidebar ][] = "$name-$insert_id";
+
+    update_option( 'sidebars_widgets', $sidebars );
+    update_option( "widget_$name", $widget_opts );
+}
+
 
 
 

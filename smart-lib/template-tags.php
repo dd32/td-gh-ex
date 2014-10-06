@@ -271,7 +271,7 @@ function maxflat_searchform() {
  *
 */
 
-function  smartlib_mobile_menu( $args = array() ) {
+function  maxflat_mobile_menu( $args = array() ) {
 
 
 	$defaults = array(
@@ -281,7 +281,7 @@ function  smartlib_mobile_menu( $args = array() ) {
 
 	$args = wp_parse_args( $args, $defaults );
 
-	$menu_item = __SMARTLIB::layout()->wp_nav_menu_select( $args );
+	$menu_item = __MAXFLAT::layout()->wp_nav_menu_select( $args );
 
 	if ( $menu_item ) {
 		?>
