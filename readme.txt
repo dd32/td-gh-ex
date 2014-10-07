@@ -52,6 +52,9 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.0.2 =
+* Update responsive layout tag.
+
 = Version 1.0.1 =
 * Update Theme options.
 * Fix small css issue in IE for menu.
