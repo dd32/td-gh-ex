@@ -41,14 +41,14 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$searchlight_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,
 	'flex-height'            => false,
 	'flex-width'             => false,
 	'default-text-color'     => '03d56b',
-	'header-text'            => true,
+	'header-text'            => false,
 	'uploads'                => true,
 	'wp-head-callback' 		 => '',
 	'admin-head-callback'    => '',
@@ -123,10 +123,10 @@ function searchlight_creditline () {
 	function searchlight_not_found() { ?>
 	<br /><br />
         <div class="searchinfo">
-        <h1 class="page-title fa-times-circle"><?php __('SORRY, NOT FOUND ANYTHING', 'searchlight'); ?></h1>
-		<h3 class="arc-src"><span><?php __('You Can Try Another Search...', 'searchlight'); ?></span></h3>
+        <h1 class="page-title"><?php echo __('SORRY, NOT FOUND ANYTHING', 'searchlight'); ?></h1>
+		<h3 class="arc-src"><span><?php echo __('You Can Try Another Search...', 'searchlight'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p class="backhome"><a href="<?php echo home_url(); ?>" ><?php __('&laquo; Or Return to the Home Page', 'searchlight'); ?></a></p>
+		<p class="backhome"><a href="<?php echo home_url(); ?>" ><?php echo __('&laquo; Or Return to the Home Page', 'searchlight'); ?></a></p>
         </div>
         <br />
 	
@@ -214,9 +214,8 @@ function searchlight_creditline () {
         }
     }
 	
-require( get_stylesheet_directory() . '/customizer-boilerplate/customizer.php' );
-// 	Functions for adding some custom code within the head tag of site
-
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 	function searchlight_custom_code() { 
 ?>
 	
@@ -224,23 +223,19 @@ require( get_stylesheet_directory() . '/customizer-boilerplate/customizer.php' )
 	.site-title, 
 	.site-title:active, 
 	.site-title:hover { color: #<?php echo get_header_textcolor(); ?>; }
+	}
 			
 	<?php 
-	global $searchlight_options;
-	$searchlight_options = thsp_cbp_get_options_values();
-	$searchlight_options_fields = thsp_cbp_get_fields();
-	
-	$content_text_color = $searchlight_options['searchlight_content_text_color'];
-	$color1 = $searchlight_options['searchlight_color01'];
-	$color2 = $searchlight_options['searchlight_color02'];
-	$color3 = $searchlight_options['searchlight_color03'];
+	if (esc_html(of_get_option('colorcssaccept', '0')) == '1') :
+	$color1 = esc_html(of_get_option('color1', '#149755'));
+	$color2 = esc_html(of_get_option('color2', '#05D24D'));
+	$color3 = esc_html(of_get_option('color3', '#03D56B'));
 	
 echo ' 
 
-	body, #right-sidebar .widget a, caption { color: '. $content_text_color . ';}
 	#header, .bqpcontainer .featured-box, .vidtitle span { border-color: '.$color1.'; }
 	#searchlight-top-menu #searchsubmit, .heading2 em, .read-more, .page-link a, .flex-direction-nav li a:hover:before { background-color: '.$color1.'; }
-	a, .widget h3, #heading1 em, .heading-desc3, .vidtitle h2, .vidtitle span:before, .statitem  h3, .boxtopicon, .flexslider.main-slider .flex-direction-nav li a:hover:before, .bqpcontainer .featured-box:hover h3.ftitle { color: '.$color1.';}
+	a, .widget h3, #heading1 em, .heading-desc3, .vidtitle h2, .vidtitle span:before, .statitem  h3, .boxtopicon, .flexslider.main-slider .flex-direction-nav li a:hover:before, .bqpcontainer .featured-box:hover h3.ftitle, .searchinfo h1.page-title { color: '.$color1.';}
 	#searchlight-main-menu a{color:'.$color2.';}
 	#searchlight-main-menu .menu-item-home a:hover,
 	#searchlight-main-menu a:hover,
@@ -261,13 +256,9 @@ echo '
 	input[type="button"]:hover,
 	input[type="submit"]:hover,
 	.contactcontainer input[type="submit"]:hover { background: '.$color3.'; background-image: -webkit-linear-gradient(top, '.$color3.', '.$color2.'); background-image: 	-moz-linear-gradient(top, '.$color3.', '.$color2.');   background-image: -ms-linear-gradient(top, '.$color3.', '.$color2.'); background-image: -o-linear-gradient(top, '.$color3.', '.$color2.'); background-image: linear-gradient(to bottom, '.$color3.', '.$color2.'); }
-	a:hover, h1.page-title, h1.arc-post-title, h3.arc-src, #comments .comment-author cite a, #respond .required { color:'.$color3.'; }
+	a:hover, h1.page-title, h1.arc-post-title, h3.arc-src, #comments .comment-author cite a, #respond .required,.site-title, .site-title:active, .site-title:hover { color:'.$color3.'; }
 	.bqpcontainer .featured-box:hover { border-color: '.$color3.'; }
 	.bqpcontainer .featured-box:hover .read-more, .read-more:hover, .flex-direction-nav li a:before {  background-color: '.$color3.'; }
-	#right-sidebar .widget{ background: -webkit-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -moz-inear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -o-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -ms-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background-size: 100% 100%; }
-	#footer{ background: -webkit-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -moz-inear-gradient(-45deg, #252525 50%, #373737 50%); background: -o-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -ms-linear-gradient(-45deg, #252525 50%, #373737 50%); background: linear-gradient(-45deg, #252525 50%, #373737 50%); background-size: 100% 100%; }
-	.social a { background: -webkit-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -moz-inear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); 	background: -o-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -ms-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background-size: 100% 100%; }
-	
 	#right-sidebar .widget-title, h1.page-title { background: ' . $color3 . ';
 	background: -webkit-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
 	background: -moz-inear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
@@ -279,10 +270,24 @@ echo '
 
 
 ';
-	if ($searchlight_options['field_header'] != '1') : echo '#header { z-index:99991; position:relative; } .headerheight { display: none; }' ; endif;
-	if ($searchlight_options['site_layout'] == '1col-fixed') : echo '#content { width: 100%; } #right-sidebar { display: none; } .bqpcontainer .featured-box { width: 29.7%; }' ; endif; 
-	if ($searchlight_options['site_layout'] == '2c-l-fixed') : echo '#content { float: right; } #right-sidebar { float: left; }' ; endif; 
+endif;
+	
+	echo '
+	#right-sidebar .widget{ background: -webkit-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -moz-inear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -o-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -ms-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background-size: 100% 100%; }
+	#footer{ background: -webkit-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -moz-inear-gradient(-45deg, #252525 50%, #373737 50%); background: -o-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -ms-linear-gradient(-45deg, #252525 50%, #373737 50%); background: linear-gradient(-45deg, #252525 50%, #373737 50%); background-size: 100% 100%; }
+	.social a { background: -webkit-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -moz-inear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); 	background: -o-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -ms-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background-size: 100% 100%; }
+	#right-sidebar .widget-title, h1.page-title { background: #05d24d; background: -webkit-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -moz-inear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -o-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -ms-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: linear-gradient(-45deg, #05d24d 50%, #149755 50%); background-size: 110% 100%; }
+	';
+	
+	
+	if (esc_html(of_get_option('header-fixed', '1')) != '1') : echo '#header { z-index:99991; position:relative; } .headerheight { display: none; }' ; endif; 
+	if (esc_html(of_get_option('site-layout', '2c-r-fixed')) == '1col-fixed') : echo '#content { width: 100%; } #right-sidebar { display: none; } .bqpcontainer .featured-box { width: 29.7%; }' ; endif; 
+	if (esc_html(of_get_option('site-layout', '2c-r-fixed')) == '2c-l-fixed') : echo '#content { float: right; } #right-sidebar { float: left; }' ; endif; 
+	echo '.heading3container { background-image: url("'. of_get_option('heading3back', get_template_directory_uri() . '/images/heading3back.png') .'"); }' ; 
 	if ( 'posts' != get_option( 'show_on_front' )): echo '.f-blog-page h1.page-title { display: none; }'; endif; 
+	if ( is_admin_bar_showing() && esc_html(of_get_option('header-fixed', '1')) == '1' ): echo '#header { top: 32px; }'; endif;
+
+	
 
 	?> 
 	</style>
@@ -292,4 +297,11 @@ echo '
 	}
 	
 	add_action('wp_head', 'searchlight_custom_code');
+	
+	
+	
+	
+	
+	
+	
 	

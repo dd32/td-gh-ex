@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.2
+Version: 	1.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -16,12 +16,12 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 
 	banner.jpg
 	Author:		shreeshphotography
-	License:	Public Domain CC0
+	License:		Public Domain CC0
 	Source:		http://pixabay.com/en/fashion-portrait-floral-beauty-279612/
 
 
 License of the Images used in the screenshot.png
-----------------------------------------------------
+---------------------------------------------------------------------------
 
 
 1. 	Author:		PublicDomainPictures
@@ -33,7 +33,7 @@ License of the Images used in the screenshot.png
 	Source:		http://pixabay.com/en/glass-marble-colorful-green-pearl-96237/
 
 
-Theme_Customizer_Boilerplate, License: GPL-2.0+, Author and Copyright: Slobodan Manic
+Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
 Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
@@ -41,19 +41,15 @@ NB: No Sub Menus will be shown in the Top Menu
 
 ================================================================
 
-You can set Site Title or Logo from Appearance > Header
+You can set Site Logo from Appearance > Header
 
-You can use the Appearance > Customize to set the following:
+You can use the Appearance > Searchlight Options to set the following:
+-	Banner Image
 -	Set/Unset Fixed Header (Logo, Menus etc.)
 -	Header Contact Number
 -	Social Links
--	Site Title and Tagline
 -	Set Colors for your Website.
--	Set Logo
--	Set Background Color and/or Image
--	Navigation Menus
--	Set Front Page display Settings
--	Set the WidGets/Sidebars
+
 
 
 ================================================================

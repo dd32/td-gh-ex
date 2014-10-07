@@ -13,7 +13,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title() ?></title>
+<title><?php wp_title(); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -30,9 +30,8 @@
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo esc_attr(bloginfo( 'name' )); ?></h1><?php endif; ?></a>
                 
 		<h2 class="site-title-hidden"><?php echo esc_attr( bloginfo( 'description' )); ?></h2>
-        <?php global $searchlight_options; ?>
-        <nav id="searchlight-top-menu">
-		<?php get_search_form(); echo '<div class="connumber">' .  esc_attr($searchlight_options['searchlight_phone']) . '</div>'; ?>
+	    <nav id="searchlight-top-menu">
+		<?php get_search_form(); if (of_get_option ('contactnumber', '(000) 111-222') != ''):echo '<div class="connumber">'.  esc_attr(of_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
 		<?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?>
         </nav>
         <!-- Site Main Menu Goes Here -->

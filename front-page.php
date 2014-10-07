@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Front Page
+	Searchlight Theme's Front Page
 	Searchlight Theme's Front Page to Display the Home Page if Selected
 	Copyright: 2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
@@ -8,10 +8,9 @@
 */
 ?>
 
-<?php get_header(); global $searchlight_options; if ( $searchlight_options['field_banner'] != '' ) : ?>
+<?php get_header(); ?>
 <div class="clear"></div>
-<div class="bannerimage"><img src="<?php echo esc_url($searchlight_options['field_banner']); ?>" /></div>
-<?php endif; ?>
+<div class="bannerimage"><img src="<?php echo esc_url(of_get_option('banner-image', get_template_directory_uri() . '/images/banner.jpg')); ?>" /></div>
 <div class="clear"></div>
 <?php if ( 'posts' == get_option( 'show_on_front' ) ): ?>
 <div id="fpblog-box-item" class="box100 bqpcontainer" >

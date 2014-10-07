@@ -9,13 +9,13 @@ get_header(); ?>
 <div id="container" >
 	<?php if (have_posts()) : ?>
 	<div id="content" class="searchinfo">
-        <h1 class="page-title fa-search-plus"><?php __('SEARCH RESULTS', 'searchlight'); ?></h1>
+        <h1 class="page-title fa-search-plus"><?php echo __('SEARCH RESULTS', 'searchlight'); ?></h1>
 		<?php $counter = 0; global $more; $more = 0; ?>
 		<?php while (have_posts()) : the_post();
 			if($counter == 0) { 
 				$numposts = $wp_query->found_posts; // count # of SEARCH RESULTS ?>
-				<h3 class="arc-src"><span><?php __('Search Term:', 'searchlight');?> </span><?php the_search_query(); ?></h3>
-				<h3 class="arc-src"><span><?php __('Number of Results:', 'searchlight');?> </span><?php echo $numposts; ?></h3><br />
+				<h3 class="arc-src"><span><?php echo __('Search Term:', 'searchlight');?> </span><?php the_search_query(); ?></h3>
+				<h3 class="arc-src"><span><?php echo __('Number of Results:', 'searchlight');?> </span><?php echo $numposts; ?></h3><br />
 				<?php } //endif ?>
 			
             	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
