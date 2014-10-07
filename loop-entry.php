@@ -11,7 +11,7 @@
                     </div>                                                       
                     <p class="post_desc"><?php echo excerpt('30'); ?></p>
                     <div class="clearfix"></div>
-                    <a href="<?php the_permalink('') ?>" class="btn btn-info read_more">Read More >></a>
+                    <a href="<?php the_permalink('') ?>" class="btn btn-info read_more"><?php _e( 'Read More >>', 'wp-fanzone' ); ?></a>
                     <div class="clearfix"></div>
             </div>
          </div> 

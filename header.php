@@ -56,7 +56,7 @@
             
                                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
             
-                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>
             
                                     <span class="icon-bar"></span>
             
@@ -231,9 +231,7 @@
                         </div>               
 						                 
 
-                        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('top-right-widget') ) : ?>
-
-    					<?php endif; ?>
+                        <?php dynamic_sidebar('top-right-widget'); ?>
 
                     </div>
 

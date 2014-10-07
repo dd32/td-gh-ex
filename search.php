@@ -17,7 +17,7 @@
                                 ?>
                                 <?php if (have_posts()) : ?>
                                 	
-										<div class="col-md-12"><h1 class="post_title">Search Results For: <?php the_search_query(); ?></h1></div>
+										<div class="col-md-12"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-fanzone' ); ?><?php the_search_query(); ?></h1></div>
                                             
                                 	<?php while (have_posts()) : the_post(); ?>  
                                         <div class="col-md-12"> 
@@ -25,7 +25,7 @@
                                                 <div class="post_box">
                                                     <h4 class="post_title"><?php the_title(); ?></h4> 
                                                     <div class="row">                                                    
-                                                    <?php if ( '' != get_the_post_thumbnail() ) { ?>	
+                                                    <?php if (has_post_thumbnail()) { ?>	
                                                         <div class="col-md-6">
                                                             <a href="<?php the_permalink('') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
                                                             <div class="meta-info row">
@@ -51,7 +51,7 @@
                                                      <?php } ?> 
                                                      <div class="clearfix"></div>                                 
                                                     </div>
-                                                    <a href="<?php the_permalink('') ?>" class="btn btn-info read_more">Read More >></a>
+                                                    <a href="<?php the_permalink('') ?>" class="btn btn-info read_more"><?php _e( 'Read More >>', 'wp-fanzone' ); ?></a>
                                                 </div>
                                             </div>
                                          </div> 
@@ -60,7 +60,7 @@
                               <?php else : ?>
         
                                     
-                                    <div class="col-md-12"><h1 class="post_title">Search Results For "<?php the_search_query(); ?>"</h1></div>
+                                    <div class="col-md-12"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-fanzone' ); ?>"<?php the_search_query(); ?>"</h1></div>
                                     
                                     <!-- END page-heading -->
                                     

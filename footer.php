@@ -2,16 +2,13 @@
 	<div class="container">
         <div class="row">
             <div class="col-md-4">
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-one') ) : ?>
-                <?php endif; ?>
+                <?php dynamic_sidebar('footer-one'); ?>
             </div>
             <div class="col-md-4">
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-two') ) : ?>
-                <?php endif; ?>
+                <?php dynamic_sidebar('footer-two'); ?>
             </div>
             <div class="col-md-4">
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-three') ) : ?>
-                <?php endif; ?>
+                <?php dynamic_sidebar('footer-three'); ?>
             </div>
         </div>
 	</div>
@@ -34,22 +31,14 @@
 </footer>
 
 <!-- WP Footer -->
-
-<?php wp_footer(); ?>
-
 <script type="text/javascript">
-jQuery(document).ready(function($) {
-	$.getScript('<?php echo get_template_directory_uri(); ?>/js/jquery.imagesloaded.min.js',function(){
-		$.getScript('<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js',function(){
-		  /* activate jquery isotope */
+jQuery(document).ready(function($) {	
 		  $('#posts').imagesLoaded( function(){
 			$('#posts').isotope({
 			  itemSelector : '.item'
 			});
 		  }); 
-		
-		});
-	});
+
 	/*Slider*/
 	$('.pgwSlider').pgwSlider({
 	<?php if ( get_theme_mod( 'wp_fanzone_slider_speed' ) ) : ?>
@@ -58,5 +47,6 @@ jQuery(document).ready(function($) {
 	});
 });
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>

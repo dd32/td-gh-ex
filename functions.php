@@ -10,14 +10,22 @@ if ( ! function_exists( 'wp_fanzone_theme_setup' ) ) {
 	function wp_fanzone_theme_setup(){
 		load_theme_textdomain('wp-fanzone', get_template_directory() . '/languages');		
 		add_editor_style();
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'custom-background') ;
+		/* Set image sizes*/	
+		add_image_size( 'widget-post-thumb',  70, 70, true );
+		add_image_size( 'post-thumb',  400, '200' , true );
+		add_image_size( 'slide-small-thumb',  130, 135 , true );
+		add_image_size( 'slide-medium-thumb',  265, 135 , true );
+		add_image_size( 'slide-large-image',  849, 424, true );
+		
 	}
 }
 
-if ( function_exists( 'add_theme_support' ) ){
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'custom-background') ;
-}
+
+
+
 
 if ( ! function_exists( 'wp_fanzone_content_width' ) ) :
 	function wp_fanzone_content_width() {
@@ -38,6 +46,8 @@ if ( ! function_exists( 'wp_fanzone_custom_scripts' ) ) :
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'wp_fanzone_responsive_js', get_template_directory_uri() . '/js/responsive.js' );
 		wp_enqueue_script( 'wp_fanzone_slider_js', get_template_directory_uri() . '/js/slider.js' );
+		wp_enqueue_script( 'wp_fanzone_imagesloaded_js', get_template_directory_uri() . '/js/jquery.imagesloaded.min.js' );
+		wp_enqueue_script( 'wp_fanzone_isotope_js', get_template_directory_uri() . '/js/isotope.pkgd.min.js' );
 		wp_enqueue_style( 'wp_fanzone_slider', get_template_directory_uri() .'/css/slider.css', array(), false ,'screen' );
 		wp_enqueue_style( 'wp_fanzone_responsive', get_template_directory_uri() .'/css/responsive.css', array(), false ,'screen' );
 		wp_enqueue_style( 'wp_fanzone_font_awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css' );
@@ -397,8 +407,8 @@ add_action( 'wp_head', 'wp_fanzone_apply_color' );
 if ( function_exists( 'register_nav_menus' ) ){
 	register_nav_menus(
 		array(
-		'main-menu'=>__('Main Menu'),
-		'top-menu'=>__('Top Menu')
+		'main-menu'=>__('Main Menu', 'wp-fanzone'),
+		'top-menu'=>__('Top Menu', 'wp-fanzone')
 		)
 	
 	);
@@ -410,19 +420,6 @@ if ( !function_exists( 'wp_fanzone_menu' ) ){
 	
 	}
 }
-
-
-
-if ( function_exists( 'add_image_size' ) ) {
-	
-	add_image_size( 'widget-post-thumb',  70, 70, true );
-	add_image_size( 'post-thumb',  400, '200' , true );
-	add_image_size( 'slide-small-thumb',  130, 135 , true );
-	add_image_size( 'slide-medium-thumb',  265, 135 , true );
-	add_image_size( 'slide-large-image',  849, 424, true );
-
-}
- 
 
 
 // Register widgetized area and update sidebar with default widgets

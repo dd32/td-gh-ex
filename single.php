@@ -15,7 +15,7 @@
                     <h1 class="single-title"><?php the_title(); ?></h1>
                     
                     <p class="meta-info"><span><em>
-                Posted <?php _e('By', 'FanZone'); ?> <?php the_author_posts_link(); ?> on <?php the_time( get_option( 'date_format' ) ); ?>
+                <?php _e('Posted By', 'wp-fanzone'); ?> <?php the_author_posts_link(); ?> <?php _e(' on ', 'wp-fanzone'); ?> <?php the_time( get_option( 'date_format' ) ); ?>
                 </em></span></p>
                     <!-- END post-meta --> 
                 

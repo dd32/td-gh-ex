@@ -85,8 +85,18 @@ This theme uses Bootstrap as a design tool
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 
+Version 1.1.1
+bug fixes below:
+ archive.php
+ function.php
+ footer.php
+ header.php
+ loop-entry.php
+ search.php
+ single.php
+
 Version 1.1
-bug fixing below:
+bug fixes below:
  footer.php
  header.php
  function.php
