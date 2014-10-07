@@ -52,5 +52,13 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.0.1 =
+* Update Theme options.
+* Fix small css issue in IE for menu.
+* Fix some page title issues.
+* Update languages.
+* Fix sidebar issues.
+* Few updates for new theme check.
+
 = Version 1.0.0 =
 * Initial Release

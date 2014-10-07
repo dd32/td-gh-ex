@@ -10,8 +10,8 @@ if(!empty($post_header_title)) {
 	$page_title_title = $post_header_title;
 } else {
 	if(isset($pinnacle['single_portfolio_header_title']) && $pinnacle['single_portfolio_header_title'] == 'custom') {
-		if(isset($pinnacle['portfoloi_header_title_text'])) {$page_title_title = $pinnacle['portfoloi_header_title_text']; } else { $page_title_title = '';}
-		$bsub = $pinnacle['portfoloi_header_subtitle_text'];
+		if(isset($pinnacle['portfolio_header_title_text'])) {$page_title_title = $pinnacle['portfolio_header_title_text']; } else { $page_title_title = '';}
+		$bsub = $pinnacle['portfolio_header_subtitle_text'];
 	} else if (isset($pinnacle['single_portfolio_header_title']) && $pinnacle['single_portfolio_header_title'] == 'posttitle') {
 		$page_title_title =  get_the_title();
 	} else {

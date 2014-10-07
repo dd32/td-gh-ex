@@ -1,6 +1,6 @@
 <?php
 /**
- * @category Virtue Theme
+ * @category Pinnacle Theme
  * @package  Metaboxes
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
@@ -971,51 +971,51 @@ $meta_boxes[] = array(
 				'type' => 'text',
 			),
 			array(
-                'name' => __('Use Simple Math Question', 'virtue'),
+                'name' => __('Use Simple Math Question', 'pinnacle'),
                 'desc' => 'Adds a simple math question to form.',
                 'id' => $prefix .'contact_form_math',
                 'type'    => 'select',
 				'options' => array(
-					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
-					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+					array( 'name' => __('Yes', 'pinnacle'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'pinnacle'), 'value' => 'no', ),
 				),
 			),
 			array(
-                'name' => __('Use Map', 'virtue'),
+                'name' => __('Use Map', 'pinnacle'),
                 'desc' => '',
                 'id' => $prefix .'contact_map',
                 'type'    => 'select',
 				'options' => array(
-					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
-					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'pinnacle'), 'value' => 'no', ),
+					array( 'name' => __('Yes', 'pinnacle'), 'value' => 'yes', ),
 				),
 			),
 			array(
-				'name' => __('Address', 'virtue'),
-				'desc' => __('Enter your Location', 'virtue'),
+				'name' => __('Address', 'pinnacle'),
+				'desc' => __('Enter your Location', 'pinnacle'),
 				'id'   => $prefix . 'contact_address',
 				'type' => 'text',
 			),
 			array(
-				'name'    => __('Map Type', 'virtue'),
+				'name'    => __('Map Type', 'pinnacle'),
 				'desc'    => '',
 				'id'      => $prefix . 'contact_maptype',
 				'type'    => 'select',
 				'options' => array(
-					array( 'name' => __('ROADMAP', 'virtue'), 'value' => 'ROADMAP', ),
-					array( 'name' => __('HYBRID', 'virtue'), 'value' => 'HYBRID', ),
-					array( 'name' => __('TERRAIN', 'virtue'), 'value' => 'TERRAIN', ),
-					array( 'name' => __('SATELLITE', 'virtue'), 'value' => 'SATELLITE', ),
+					array( 'name' => __('ROADMAP', 'pinnacle'), 'value' => 'ROADMAP', ),
+					array( 'name' => __('HYBRID', 'pinnacle'), 'value' => 'HYBRID', ),
+					array( 'name' => __('TERRAIN', 'pinnacle'), 'value' => 'TERRAIN', ),
+					array( 'name' => __('SATELLITE', 'pinnacle'), 'value' => 'SATELLITE', ),
 				),
 			),
 			array(
-				'name' => __('Map Zoom Level', 'virtue'),
-				'desc' => __('A good place to start is 15', 'virtue'),
+				'name' => __('Map Zoom Level', 'pinnacle'),
+				'desc' => __('A good place to start is 15', 'pinnacle'),
 				'id'   => $prefix . 'contact_zoom',
 				'std'  => '15',
 				'type'    => 'select',
 				'options' => array(
-					array( 'name' => __('1 (World View)', 'virtue'), 'value' => '1', ),
+					array( 'name' => __('1 (World View)', 'pinnacle'), 'value' => '1', ),
 					array( 'name' => '2', 'value' => '2', ),
 					array( 'name' => '3', 'value' => '3', ),
 					array( 'name' => '4', 'value' => '4', ),
@@ -1035,39 +1035,15 @@ $meta_boxes[] = array(
 					array( 'name' => '18', 'value' => '18', ),
 					array( 'name' => '19', 'value' => '19', ),
 					array( 'name' => '20', 'value' => '20', ),
-					array( 'name' => __('21 (Street View)', 'virtue'), 'value' => '21', ),
+					array( 'name' => __('21 (Street View)', 'pinnacle'), 'value' => '21', ),
 					),
 			),
 			array(
-				'name' => __('Map Height', 'virtue'),
-				'desc' => __('Default is 300', 'virtue'),
+				'name' => __('Map Height', 'pinnacle'),
+				'desc' => __('Default is 300', 'pinnacle'),
 				'id'   => $prefix . 'contact_mapheight',
 				'type' => 'text_small',
 			),
-			array(
-				'name' => __('Address Two', 'virtue'),
-				'desc' => __('Enter your Location', 'virtue'),
-				'id'   => $prefix . 'contact_address2',
-				'type' => 'text',
-			),
-			array(
-				'name' => __('Address Three', 'virtue'),
-				'desc' => __('Enter a Location', 'virtue'),
-				'id'   => $prefix . 'contact_address3',
-				'type' => 'text',
-			),
-			array(
-				'name' => __('Address Four', 'virtue'),
-				'desc' => __('Enter a Location', 'virtue'),
-				'id'   => $prefix . 'contact_address4',
-				'type' => 'text',
-			),
-			array(
-				'name' => __('Map Center', 'virtue'),
-				'desc' => __('Enter a Location', 'virtue'),
-				'id'   => $prefix . 'contact_map_center',
-				'type' => 'text',
-			),	
 			));
 			$meta_boxes[] = array(
 				'id'         => 'page_sidebar',

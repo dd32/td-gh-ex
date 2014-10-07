@@ -1,5 +1,6 @@
 <?php global $pinnacle; 
 ?>
+<div class="home_calltoaction home-margin clearfix home-padding">
 <div class="kt-home-call-to-action panel-row-style-wide-feature">
 	<div class="container">
 		<div class="kt-cta">
@@ -12,3 +13,4 @@
 		</div>
 	</div><!--container-->
 </div><!--call class-->
+</div>

@@ -62,7 +62,7 @@
 								  } else if(isset($pinnacle['home_post_summery']) && $pinnacle['home_post_summery'] == 'grid'){
 								        if(isset($pinnacle['home_post_grid_columns'])) {$blog_grid_column = $pinnacle['home_post_grid_columns'];} else {$blog_grid_column = '3';}
 								        if(isset($pinnacle['pinnacle_animate_in']) && $pinnacle['pinnacle_animate_in'] == 1) {$animate = 1;} else {$animate = 0;} 
-								        $summary = 'grid'; $postclass = 'postlist'; $contentid = 'kad-blog-grid';
+								        $summary = 'grid'; $postclass = 'postlist'; $contentid = 'kad-blog-grid-case';
 								        if ($blog_grid_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $postcolumn = '2';} 
 								        else if ($blog_grid_column == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $postcolumn = '3';} 
 								        else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $postcolumn = '4';}

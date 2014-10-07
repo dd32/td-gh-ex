@@ -1,4 +1,4 @@
-/* global jQuery, document, redux, redux.args, confirm, relid:true, console, jsonView */
+/* global confirm, relid:true, jsonView */
 
 (function( $ ) {
     'use strict';
@@ -50,11 +50,14 @@
 
         $( '#toplevel_page_' + redux.args.slug + ' .wp-submenu a, #wp-admin-bar-' + redux.args.slug + ' a.ab-item' ).click(
             function( e ) {
-                if ( $( '#toplevel_page_' + redux.args.slug ).hasClass( 'wp-menu-open' ) || $( this ).hasClass( 'ab-item' ) ) {
-                    e.preventDefault();
 
+                if ( ( $( '#toplevel_page_' + redux.args.slug ).hasClass( 'wp-menu-open' ) || $( this ).hasClass( 'ab-item' ) ) && !$(this ).parents('ul.ab-submenu:first' ).hasClass('ab-sub-secondary') ) {
+                    e.preventDefault();
                     var url = $( this ).attr( 'href' ).split( '&tab=' );
                     $( '#' + url[1] + '_section_group_li_a' ).click();
+                    $( this ).parents( 'ul:first' ).find('.current' ).removeClass( 'current' );
+                    $( this ).addClass( 'current' );
+                    $( this ).parent().addClass( 'current' );
                     return false;
                 }
             }
@@ -290,16 +293,23 @@
     $.redux.tabCheck = function() {
         $( '.redux-group-tab-link-a' ).click(
             function() {
-                var el = $( this ).parents( '.redux-container:first' );
-                var relid = $( this ).data( 'rel' ); // The group ID of interest
+                var link = $( this );
+                if ( link.parent().hasClass( 'empty_section' ) && link.parent().hasClass( 'hasSubSections' ) ) {
+                    var elements = $( this ).closest( 'ul' ).find( '.redux-group-tab-link-a' );
+                    var index = elements.index( this );
+                    link = elements.slice( index + 1, index + 2 );
+                }
+                var el = link.parents( '.redux-container:first' );
+                var relid = link.data( 'rel' ); // The group ID of interest
                 var oldid = el.find( '.redux-group-tab-link-li.active .redux-group-tab-link-a' ).data( 'rel' );
+
 
                 if ( oldid === relid ) {
                     return;
                 }
 
                 $( '#currentSection' ).val( relid );
-                if ( !$( this ).parents( '.postbox-container:first' ).length ) {
+                if ( !link.parents( '.postbox-container:first' ).length ) {
                     // Set the proper page cookie
                     $.cookie(
                         'redux_current_tab', relid, {
@@ -360,6 +370,8 @@
                                 'fast', function() {
                                     el.find( '#' + oldid + '_section_group_li' ).removeClass( 'active' );
                                     el.find( '#' + oldid + '_section_group_li' ).parents( '.redux-group-tab-link-li' ).removeClass( 'active' ).removeClass( 'activeChild' );
+                                    el.find( '#' + relid + '_section_group_li' ).parents( '.redux-group-tab-link-li' ).addClass( 'activeChild' ).find( 'ul.subsection' ).slideDown();
+                                    el.find( '#' + relid + '_section_group_li' ).addClass( 'active' );
                                 }
                             );
                         } else {
@@ -387,6 +399,8 @@
                         $.redux.initFields();
                     }
                 );
+                $('#toplevel_page_'+redux.args.slug ).find('.current' ).removeClass('current');
+
             }
         );
 
@@ -863,7 +877,7 @@
     };
 
     $.redux.stickyInfo = function() {
-        var stickyWidth = $( '#info_bar' ).width() - 2;
+        var stickyWidth = $( '#info_bar' ).width() - 4;
 
         if ( !$( '#info_bar' ).isOnScreen() && !$( '#redux-footer-sticky' ).isOnScreen() ) {
             $( '#redux-sticky' ).addClass( 'sticky-save-warn' );
@@ -898,7 +912,7 @@
 
     $.redux.expandOptions = function( parent ) {
         var trigger = parent.find( '.expand_options' );
-        var width = parent.find( '.redux-sidebar' ).width();
+        var width = parent.find( '.redux-sidebar' ).width()-1;
         var id = $( '.redux-group-menu .active a' ).data( 'rel' ) + '_section_group';
 
         if ( trigger.hasClass( 'expanded' ) ) {
@@ -914,7 +928,9 @@
             parent.find( '.redux-main' ).stop().animate(
                 {
                     'margin-left': width
-                }, 500
+                }, 500, function() {
+                    parent.find( '.redux-main' ).attr('style', '');
+                }
             );
 
             parent.find( '.redux-group-tab' ).each(
@@ -931,13 +947,13 @@
 
             parent.find( '.redux-sidebar' ).stop().animate(
                 {
-                    'margin-left': -width - 102
+                    'margin-left': -width - 113
                 }, 500
             );
 
             parent.find( '.redux-main' ).stop().animate(
                 {
-                    'margin-left': '0px'
+                    'margin-left': '-1px'
                 }, 500
             );
 

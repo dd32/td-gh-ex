@@ -60,7 +60,12 @@
               wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footermenu'));
             ?></div><?php
         	endif;?>
-        	<?php if(!empty($pinnacle['footer_text'])) { echo '<p>'. do_shortcode($pinnacle['footer_text']).'</p>';} ?>
+        	<?php if(!empty($pinnacle['footer_text'])) { $footerstring = $pinnacle['footer_text'];get_bloginfo('name');
+        		$footerstring = str_replace('[copyright]','&copy;',$footerstring);
+        		$footerstring = str_replace('[the-year]',date('Y'),$footerstring);
+        		$footerstring = str_replace('[site-name]',get_bloginfo('name'),$footerstring);
+        		$footerstring = str_replace('[theme-credit]','- Wordpress Theme by <a href="http://www.kadencethemes.com/" target="_blank">Kadence Themes</a>',$footerstring);
+        		echo '<p>'. do_shortcode($footerstring).'</p>';} ?>
     	</div><!-- credits -->
     </div><!-- container -->
 </footer>

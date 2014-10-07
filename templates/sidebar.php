@@ -26,7 +26,7 @@
 				} 
 		} elseif( class_exists('woocommerce') and (is_account_page())) {
 				    get_template_part('templates/account', 'sidebar');
-		} elseif( is_page_template('page-blog.php') || is_page_template('page-blog-grid.php') || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || is_single() ) {
+		} elseif(is_page() || is_single() ) {
 		global $post; $sidebar = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
 	 		if (!empty($sidebar)) {
 					dynamic_sidebar($sidebar);

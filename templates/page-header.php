@@ -20,7 +20,7 @@
 			<div class="row">
 				<div class="col-md-12">
 				  	<h1 class="kad-page-title"><?php echo kadence_title(); ?></h1>
-					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.$bsub.' </p>'; } ?>
+					  <?php if(!empty($bsub)) { echo '<div class="subtitle"> '.$bsub.' </div>'; } ?>
 				</div>
 			</div>
 		</div>

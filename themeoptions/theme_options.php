@@ -677,8 +677,8 @@ $this->sections[] = array(
        array(
             "id" => "homepage_layout",
             "type" => "sorter",
-            "title" => __("Homepage Layout Manager", "virtue"),
-            "subtitle" => __("Organize how you want the layout to appear on the homepage", "virtue"),  
+            "title" => __("Homepage Layout Manager", 'pinnacle'),
+            "subtitle" => __("Organize how you want the layout to appear on the homepage", 'pinnacle'),  
             'options' => array(
               "disabled" => array(
                     "placebo" => "placebo", //REQUIRED!
@@ -1274,7 +1274,7 @@ $this->sections[] = array(
             'default' => 'posttitle',
             ),
          array(
-            'id'=>'portfolo_header_title_text',
+            'id'=>'portfolio_header_title_text',
             'type' => 'text',
             'title' => __('Post Default Title', 'pinnacle'),
             'subtitle' => __('Example: My Shop', 'pinnacle'),
@@ -2109,7 +2109,7 @@ $this->sections[] = array(
             'id'=>'pinnacle_gallery',
             'type' => 'switch', 
             'title' => __('Enable Pinnacle Galleries to override Wordpress', 'pinnacle'),
-            'subtitle' => __('Disable this if using a plugin to customize galleries, for example jetpack tiled gallery.', 'pinnacle'),
+            'subtitle' => __('You must have virtue/pinnacle toolkit installed to use.', 'pinnacle'),
             "default" => 1,
             ),
     ),

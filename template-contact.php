@@ -6,6 +6,10 @@ Template Name: Contact
 
 	<script type="text/javascript">
 	jQuery(document).ready(function ($) {
+		$.extend($.validator.messages, {
+	        required: "<?php echo __('This field is required.', 'pinnacle'); ?>",
+			email: "<?php echo __('Please enter a valid email address.', 'pinnacle'); ?>",
+		 });
 		$("#contactForm").validate();
 	});
 	</script>
@@ -83,8 +87,7 @@ Template Name: Contact
 	$form_math = get_post_meta( $post->ID, '_kad_contact_form_math', true );
 	if(isset($_POST['submitted'])) {
 		if(isset($form_math) && $form_math == 'yes') {
-			$kad_captcha = trim($_POST['kad_captcha']);
-			if(!preg_match("/7/", $kad_captcha)) {
+			if(md5($_POST['kad_captcha']) != $_POST['hval']) {
 				$kad_captchaError = __('Check your math.', 'pinnacle');
 				$hasError = true;
 			}
@@ -124,7 +127,7 @@ Template Name: Contact
 			$emailTo = get_option('admin_email');
 		}
 		$sitename = get_bloginfo('name');
-		$subject = '['.$sitename . __(" Contact", "pinnacle").'] '. __("From ", "pinnacle"). $name;
+		$subject = '['.$sitename . ' ' . __("Contact", "pinnacle").'] '. __("From", "pinnacle") . ' '. $name;
 		$body = __('Name', 'pinnacle').": $name \n\nEmail: $email \n\nComments: $comments";
 		$headers = __("From", "pinnacle").': '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 
@@ -170,7 +173,7 @@ Template Name: Contact
 						<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 							<div class="contactform">
 							<p>
-								<label for="contactName"><b><?php _e('Name: ', 'pinnacle');?></b></label><?php if(isset($nameError)) { ?>
+								<label for="contactName"><b><?php _e('Name:', 'pinnacle');?></b></label><?php if(isset($nameError)) { ?>
 									<span class="error"><?php $nameError;?></span>
 								<?php } ?>
 								
@@ -179,22 +182,26 @@ Template Name: Contact
 							</p>
 
 							<p>
-								<label for="email"><b><?php _e('Email: ', 'pinnacle'); ?></b></label> <?php if(isset($emailError)) { ?>
+								<label for="email"><b><?php _e('Email:', 'pinnacle'); ?></b></label> <?php if(isset($emailError)) { ?>
 									<span class="error"><?php $emailError;?></span>
 								<?php } ?>
 								<input type="text" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email full" />
 							</p>
 
-							<p><label for="commentsText"><b><?php _e('Message: ', 'pinnacle'); ?></b></label>	<?php if(isset($commentError)) { ?>
+							<p><label for="commentsText"><b><?php _e('Message:', 'pinnacle'); ?></b></label>	<?php if(isset($commentError)) { ?>
 									<span class="error"><?php $commentError;?></span>
 								<?php } ?>
 								<textarea name="comments" id="commentsText" rows="10" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
 							</p>
 							<?php if(isset($form_math) && $form_math == 'yes') { ?>
-								<p>
-									<label for="kad_captcha"><b>5 + 2 = </b></label>
+								<?php   $one = rand(5, 50);
+									$two = rand(1, 9);
+									$result = md5($one + $two); ?>
+									<p>
+									<label for="kad_captcha"><b><?php echo $one.' + '.$two; ?> = </b></label>
 									<input type="text" name="kad_captcha" id="kad_captcha" class="required requiredField kad_captcha kad-quarter" />
 									<?php if(isset($kad_captchaError)) { ?><label class="error"><?php echo $kad_captchaError;?></label><?php } ?>
+									<input type="hidden" name="hval" id="hval" value="<?php echo $result;?>" />
 								</p>
 							<?php } ?>
 							<p>

@@ -58,7 +58,11 @@ if(!empty($pinnacle['header_overlay_background_transparency'])) {
 } else {
   $header_overlay_background_transparency = '';
 }
-
+if(!empty($pinnacle['pageheader_background']) && !empty($pinnacle['pageheader_background']['background-color'])) {
+  $pageheader_color = '.titleclass {background:'.$pinnacle['pageheader_background']['background-color'].';}';
+} else {
+  $pageheader_color = '';
+}
 if(!empty($pinnacle['footerfont_color'])) {
   $color_footerfont = '#containerfooter h3, #containerfooter, .footercredits p, .footerclass a, .footernav ul li a, #containerfooter .menu li a, .footerclass h5, .footerclass h2 .footerclass .kadence_social_widget a, .footerclass .widget-title {color:'.$pinnacle['footerfont_color'].';}.footerclass .widget-title:after{background: '.$pinnacle['footerfont_color'].';}';
 } else {
@@ -176,7 +180,7 @@ if (!empty($pinnacle['custom_css'])) {
   $custom_css = '';
 }
 
-$kad_custom_css = '<style type="text/css">'.$topbar_height.$topbar_iconmenu_fontsize.$header_border_color.$htoppadding.$header_overlay_background_transparency.$font_family.$color_primary30.$color_grayfont.$color_footerfont.$posttitle.$home_action_padding.$sitewide_action_padding.$pagetitle_align_right.$color_primary.$pagetitle_align.$show_posttag.$x2logo.$x2logo_white.$ptitle_minheight.$animate.$topbar_layout.$topbar_mobile_hide.$hbg_color.$scrolling_background.$show_author.$show_postedin.$show_comment.$page_max_width.$show_date.$mobile_color
+$kad_custom_css = '<style type="text/css">'.$topbar_height.$topbar_iconmenu_fontsize.$header_border_color.$htoppadding.$header_overlay_background_transparency.$pageheader_color.$font_family.$color_primary30.$color_grayfont.$color_footerfont.$posttitle.$home_action_padding.$sitewide_action_padding.$pagetitle_align_right.$color_primary.$pagetitle_align.$show_posttag.$x2logo.$x2logo_white.$ptitle_minheight.$animate.$topbar_layout.$topbar_mobile_hide.$hbg_color.$scrolling_background.$show_author.$show_postedin.$show_comment.$page_max_width.$show_date.$mobile_color
 .$custom_css.'</style>';
 
   echo $kad_custom_css;

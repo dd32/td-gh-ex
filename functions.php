@@ -12,11 +12,10 @@ require_once locate_template('/lib/sidebar.php');         		// Sidebar class
 require_once locate_template('/lib/config.php');          		// Configuration
 require_once locate_template('/lib/cleanup.php');        		// Cleanup
 require_once locate_template('/lib/nav.php');            		// Custom nav modifications
-require_once locate_template('/lib/cmb_gallery_metabox.php');     	// Custom metaboxes
+require_once locate_template('/lib/cmb_gallery_metabox.php');   // Gallery metaboxes
 require_once locate_template('/lib/metaboxes.php');     		// Custom metaboxes
 require_once locate_template('/lib/comments.php');        		// Custom comments modifications
-require_once locate_template('/lib/shortcodes.php');      		// Shortcodes
-require_once locate_template('/lib/gallery.php');      			// Gallery Shortcode
+require_once locate_template('/lib/shortcodes.php');      		// Shortcodes clean-up
 require_once locate_template('/lib/widgets.php');         		// Sidebars and widgets
 require_once locate_template('/lib/mobile_detect.php');        	// Mobile Detect
 require_once locate_template('/lib/aq_resizer.php');      		// Resize on the fly
