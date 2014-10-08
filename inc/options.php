@@ -24,14 +24,14 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	add_filter( 'wp_default_editor', create_function('', 'return "html";') );
+	// add_filter( 'wp_default_editor', create_function('', 'return "html";') ); 
 	
 	$options[] = array(
 		'name' => 'Design Theme Options',
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/design/" target="_blank"><strong>Design Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the Design Extend Demo <a href="http://demo.d5creation.com/wp/themes/design/" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/design/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">If you like this FREEE Theme You can consider for a 5 Star Rating and Review at <a href="https://wordpress.org/support/view/theme-reviews/d5-design" target="_blank"><strong>Design Theme Page</strong></a>.</span><br /><br /><span class="donation"> Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/design/" target="_blank"><strong>Design Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the Design Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Design" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/design/" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
 		
 	$options[] = array(

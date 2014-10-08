@@ -1,20 +1,17 @@
 <?php
 /* 	Design Theme's Functions
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
    
   
-  	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
-//	Set the content width based on the theme's design and stylesheet.
-	if ( ! isset( $content_width ) ) $content_width = 584;
+  	
 
 // Load the D5 Framework Optios Page
-	if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once get_template_directory() . '/inc/options-framework.php';
-	}
+
 
 // 	Tell WordPress for wp_title in order to modify document title content
 	function design_filter_wp_title( $title ) {
@@ -24,9 +21,15 @@
 	}
 	add_filter( 'wp_title', 'design_filter_wp_title' );
 	
+function design_setup() {	
 // 	Tell WordPress for the Feed Link
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
+	
+	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
+//	Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 584;
 	
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	if ( function_exists( 'add_theme_support' ) ) { 
@@ -44,7 +47,7 @@
 	
 // 	WordPress 3.4 Custom Header Support				
 	$design_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 70,
@@ -58,38 +61,24 @@
 	'admin-preview-callback' => '',
 	);
 	add_theme_support( 'custom-header', $design_custom_header );
-
+	}
+	add_action( 'after_setup_theme', 'design_setup' );
 
 // 	Functions for adding script
 	function design_enqueue_scripts() { 
-	wp_enqueue_style('design-style', get_stylesheet_uri(), false);	?>
-    
-	<!--[if lt IE 9]>
-	<?php wp_enqueue_script( 'html5forie', get_template_directory_uri(). '/js/html5.js'); ?>
-	<![endif]-->
-	<?php
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		wp_enqueue_script( 'comment-reply' ); 
-	}
+	wp_enqueue_style('design-style', get_stylesheet_uri(), false);
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 	
-	wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'design-menu-style', get_template_directory_uri(). '/js/menu.js' );
-	wp_enqueue_style('design-gfonts1', '//fonts.googleapis.com/css?family=Marvel:400', false );
+	wp_enqueue_script( 'design-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
+	wp_register_style('design-gfonts1', '//fonts.googleapis.com/css?family=Marvel:400', false );
+	wp_enqueue_style('design-gfonts1');
 	}
 	add_action( 'wp_enqueue_scripts', 'design_enqueue_scripts' );
 		
-//	Enqueue comment replay script
-	function design_enqueue_comment_reply() {
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		wp_enqueue_script( 'comment-reply' ); 
-	}
-	}
-	add_action( 'wp_enqueue_scripts', 'design_enqueue_comment_reply' );
-
 // 	Functions for adding some custom code within the head tag of site
 	function design_custom_code() {
-	if ( of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/slide-image/thumb-back.jpg') != '' ) : 
-	echo '<style>#container .thumb { background: url("' . of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/thumb-back.jpg') . '") no-repeat scroll 0 0 #CCCCCC; }</style>' ;
+	if ( esc_url(of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/slide-image/thumb-back.jpg')) != '' ) : 
+	echo '<style>#container .thumb { background: url("' . esc_url(of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/thumb-back.jpg')) . '") no-repeat scroll 0 0 #CCCCCC; }</style>' ;
 	endif;
 	}	
 	add_action('wp_head', 'design_custom_code');

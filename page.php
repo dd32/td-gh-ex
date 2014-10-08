@@ -1,6 +1,6 @@
 <?php
 /* Design Theme's General Page to display all Pages
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
@@ -14,7 +14,7 @@
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 		<h1 class="page-title"><?php the_title(); ?></h1>
 			<div class="entrytext">
- <?php if (of_get_option('tpage', '') != '1' ): ?><div class="thumb"><?php the_post_thumbnail(); ?></div><?php endif; ?>
+ <?php if (esc_html(of_get_option('tpage', '')) != '1' ): ?><div class="thumb"><?php the_post_thumbnail(); ?></div><?php endif; ?>
  <?php the_content('<span class="read-more">Read the rest of this page &raquo;</span>'); ?>
 
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>

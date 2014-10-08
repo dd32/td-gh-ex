@@ -1,15 +1,11 @@
 <?php
 /* Design Theme's Comments Area for Single Pages
-	Copyright: 2012-2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
 
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	if ( post_password_required() ) { ?>
-<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-<?php
+	if ( post_password_required() ) {
 		return;
 	}
 ?>
