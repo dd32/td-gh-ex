@@ -20,3 +20,7 @@ Version 1.2
  iv) Set variables and functions name using theme slug.
  v) Removed custom header and set banner in header using theme options.
  vi) Removed admin bar customized code.
+
+Version 1.3
+ i) Add loading.gif in images folder.
+ ii) set condition for JavaScript error. 
