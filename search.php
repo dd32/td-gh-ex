@@ -7,7 +7,7 @@ get_header();
 
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
-    <h1><?php printf( __( 'Search Results for :<span> %s </span>', 'medics' ), ' ' . get_search_query() . ' ' ); ?></h1>
+    <h1><?php printf( __( 'Search Results for : <span> %s </span>', 'medics' ), ' ' . get_search_query() . ' ' ); ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('medics_custom_breadcrumbs')) medics_custom_breadcrumbs(); ?>
@@ -45,11 +45,12 @@ get_header();
       </div>
       <?php endwhile; ?>
       <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-      <div class="col-md-12 medics-default-pagination"> <span class="medics-previous-link">
+      <div class="col-md-12 medics-default-pagination"><?php if(function_exists('faster_pagination')) { faster_pagination('',1); } else { ?> 
+		  <span class="medics-previous-link">
         <?php previous_posts_link(); ?>
         </span> <span class="medics-next-link">
         <?php next_posts_link(); ?>
-        </span> </div>
+        </span> <?php } ?> </div>
       <?php } ?>
     </div>
     <?php get_sidebar(); ?>

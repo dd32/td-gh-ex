@@ -18,10 +18,10 @@ $medics_options = get_option( 'medics_theme_options' );
 <div class="section-main front-main">
   <div class=" container-medics container homepage-theme-title">
     <h2>
-      <?php if(!empty($medics_options['home-title'])) { echo $medics_options['home-title']; } ?>
+      <?php if(!empty($medics_options['home-title'])) { echo esc_attr($medics_options['home-title']); } ?>
     </h2>
     <h3>
-      <?php if(!empty($medics_options['home-content'])) { echo $medics_options['home-content']; } ?>
+      <?php if(!empty($medics_options['home-content'])) { echo esc_attr($medics_options['home-content']); } ?>
     </h3>
     <?php if((!empty($medics_options['home-content'])) || (!empty($medics_options['home-title']))) { ?>
     <div class="center-welcome-line text-center"></div>
@@ -36,13 +36,13 @@ $medics_options = get_option( 'medics_theme_options' );
     <?php for($medics_section_i=1; $medics_section_i <=3 ;$medics_section_i++ ): ?>
     <div class="col-md-4 technology-blog">
       <div class="screenshot" id="first-img-<?php echo $medics_section_i; ?>">
-        <?php if(!empty($medics_options['home-icon-'.$medics_section_i])) {  echo "<img src='".$medics_options['home-icon-'.$medics_section_i]."' alt=''  />"; } ?>
+        <?php if(!empty($medics_options['home-icon-'.$medics_section_i])) {  echo "<img src='".esc_url($medics_options['home-icon-'.$medics_section_i])."' alt=''  />"; } ?>
       </div>
       <h1>
-        <?php if(!empty($medics_options['section-title-'.$medics_section_i])) { echo $medics_options['section-title-'.$medics_section_i]; } ?>
+        <?php if(!empty($medics_options['section-title-'.$medics_section_i])) { echo esc_attr($medics_options['section-title-'.$medics_section_i]); } ?>
       </h1>
       <p>
-        <?php if(!empty($medics_options['section-content-'.$medics_section_i])) { echo $medics_options['section-content-'.$medics_section_i]; } ?>
+        <?php if(!empty($medics_options['section-content-'.$medics_section_i])) { echo esc_attr($medics_options['section-content-'.$medics_section_i]); } ?>
       </p>
     </div>
     <?php endfor; ?>
@@ -53,7 +53,7 @@ $medics_options = get_option( 'medics_theme_options' );
   <?php if(!empty($medics_options['post-category'])){ ?>
   <div class="col-md-12 main-title no-padding clearfix">
     <h1>
-       <?php if(!empty($medics_options['homeblogtitle'])) { echo $medics_options['homeblogtitle']; }else{ echo 'FROM THE BLOG '; }?>
+       <?php if(!empty($medics_options['homeblogtitle'])) { echo esc_attr($medics_options['homeblogtitle']); }else{ echo 'FROM THE BLOG '; }?>
       <span id="next1" class="next black-box next3"><i class="fa fa-caret-right"></i></span> <span id="prev1" class="prev black-box prev3"><i class="fa fa-caret-left"></i> </span> </h1>
     <div class="full-line-title"></div>
   </div>
@@ -110,11 +110,11 @@ $medics_options = get_option( 'medics_theme_options' );
   <div class="container container-medics twiterpost ">
     <div class="icon-msg">
       <p>
-        <?php  echo $medics_options['home-download-text'];  ?>
+        <?php  echo esc_attr($medics_options['home-download-text']);  ?>
       </p>
     </div>
     <?php if(!empty($medics_options['home-download-link'])) { ?>
-    <div class="midecs-download-link pull-right"> <a href="<?php  echo $medics_options['home-download-link'];  ?>">Download</a> </div>
+    <div class="midecs-download-link pull-right"> <a href="<?php  echo esc_url($medics_options['home-download-link']); ?>">Download</a> </div>
     <?php } ?>
   </div>
 </div>

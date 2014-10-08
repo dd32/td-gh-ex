@@ -65,7 +65,7 @@ function medics_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area One', 'medics' ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Footer Area One that appears on the left.', 'medics' ),
+		'description'   => __( 'Footer Area One that appears on footer.', 'medics' ),
 		'before_widget' => '<aside id="%1$s" class="widget footer-widget footer-widget-1 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="footer-blogs">',
@@ -75,8 +75,8 @@ function medics_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Two', 'medics' ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Footer Area Two that appears on the left.', 'medics' ),
-		'before_widget' => '<aside id="%1$s" class="widget footer-widget %2$s">',
+		'description'   => __( 'Footer Area Two that appears on footer.', 'medics' ),
+		'before_widget' => '<aside id="%1$s" class="widget footer-widget footer-widget-2 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="footer-blogs">',
 		'after_title'   => '</h1><div class="footer-title-line"></div>',
@@ -85,7 +85,7 @@ function medics_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Three', 'medics' ),
 		'id'            => 'footer-3',
-		'description'   => __( 'Footer Area Three that appears on the left.', 'medics' ),
+		'description'   => __( 'Footer Area Three that appears on footer.', 'medics' ),
 		'before_widget' => '<aside id="%1$s" class="widget footer-widget footer-widget-3 no-padding %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="footer-blogs">',
@@ -95,8 +95,8 @@ function medics_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Area Four', 'medics' ),
 		'id'            => 'footer-4',
-		'description'   => __( 'Footer Area Four that appears on the left.', 'medics' ),
-		'before_widget' => '<aside id="%1$s" class="widget footer-widget %2$s">',
+		'description'   => __( 'Footer Area Four that appears on footer.', 'medics' ),
+		'before_widget' => '<aside id="%1$s" class="widget footer-widget footer-widget-4 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="footer-blogs">',
 		'after_title'   => '</h1><div class="footer-title-line"></div>',

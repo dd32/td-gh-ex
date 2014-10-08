@@ -6,7 +6,7 @@ Description: Used to style the TinyMCE editor.
 
 html .mceContentBody {
 	font-size: 100%;
-	max-width: 474px;
+	max-width: 100%;
 }
 
 body {
@@ -353,7 +353,7 @@ blockquote.alignright p {
 
 img {
 	height: auto;
-	max-width: 474px;
+	max-width: 100%;
 	vertical-align: middle;
 }
 
@@ -362,7 +362,7 @@ img {
 	border: none;
 	color: #767676;
 	margin: 0 0 24px 0;
-	max-width: 474px;
+	max-width: 100%;
 	padding: 0;
 	text-align: left;
 }

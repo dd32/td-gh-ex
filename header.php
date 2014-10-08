@@ -27,7 +27,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if(!empty($medics_options['favicon'])) { ?>
-<link rel="shortcut icon" href="<?php echo $medics_options['favicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url($medics_options['favicon']);?>">
 <?php } ?>
 <?php wp_head(); ?>
 </head>
@@ -35,30 +35,30 @@
 <!-- header -->
 <header> 
   <!-- TOP HEADER -->
-  <?php if(!empty($medics_options['phone']) || !empty($medics_options['email']) || !empty($medics_options['fburl']) || !empty($medics_options['twitter']) || !empty($medics_options['googleplus'])) {  ?>
+  <?php if(!empty($medics_options['helpline']) || !empty($medics_options['phone']) || !empty($medics_options['email']) || !empty($medics_options['fburl']) || !empty($medics_options['twitter']) || !empty($medics_options['googleplus'])) {  ?>
   <div class="col-md-12 top-header no-padding ">
     <div class="container container-medics">
       <div class="col-md-6 help-line no-padding">
         <?php if(!empty($medics_options['phone'])) { ?>
-        <span>Help Line : <?php echo $medics_options['phone'];?> </span>
+        <span><?php echo esc_attr($medics_options['helpline']).' '.esc_attr($medics_options['phone']);?> </span>
         <?php } ?>
       </div>
       <div class="col-md-6 top-email-id no-padding">
         <div class="header-col-1 no-padding">
           <?php if(!empty($medics_options['email'])) { ?>
-          <span> E-mail : <a href="<?php echo $medics_options['email'];?>"> <?php echo $medics_options['email'];?> </a> </span>
+          <span> E-mail : <a href="mailto:<?php echo is_email($medics_options['email']);?>"><?php echo is_email($medics_options['email']);?></a></span>
           <?php } ?>
         </div>
         <div class="header-col-2 social-icons no-padding">
           <ul class="list-inline no-padding">
             <?php if(!empty($medics_options['fburl'])){ ?>
-            <li><a href="<?php echo $medics_options['fburl'];?>"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="<?php echo esc_url($medics_options['fburl']);?>"><i class="fa fa-facebook"></i></a></li>
             <?php } ?>
             <?php if(!empty($medics_options['twitter'])){ ?>
-            <li><a href="<?php echo $medics_options['twitter'];?>"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="<?php echo esc_url($medics_options['twitter']);?>"><i class="fa fa-twitter"></i></a></li>
             <?php } ?>
             <?php if(!empty($medics_options['googleplus'])){ ?>
-            <li><a href="<?php echo $medics_options['googleplus'];?>"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="<?php echo esc_url($medics_options['googleplus']);?>"><i class="fa fa-google-plus"></i></a></li>
             <?php } ?>
           </ul>
         </div>
@@ -73,7 +73,7 @@
         <?php if(empty($medics_options['logo'])) { ?>
         <h1 class="medics-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
         <?php } else { ?>
-        <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $medics_options['logo']; ?>" alt="" class="logo-center" /></a>
+        <a href="<?php echo get_site_url(); ?>"><img src="<?php echo esc_url($medics_options['logo']); ?>" alt="" class="logo-center" /></a>
         <?php } ?>
       </div>
       <div class="col-md-9 no-padding clearfix">

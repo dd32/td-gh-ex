@@ -72,7 +72,7 @@ require_once('functions/enqueue-files.php');
 require_once('functions/theme-default-setup.php');
 
 /*** Theme Option ***/
-require_once('theme-option/fasterthemes.php');
+require_once('theme-options/medicstheme.php');
 
 /*** Recent Post Widget ***/
 require_once('functions/recent-post-widget.php');
@@ -82,3 +82,6 @@ require_once('functions/breadcrumbs.php');
 
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
+
+/*** TGM ***/
+require_once('functions/tgm-plugins.php');

@@ -38,7 +38,7 @@
 				if ( attachment.attributes.type == 'image' ) {
 					selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image">Remove</a>').slideDown('fast');
 				}
-				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button').val(medics_l10n.remove);
+				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button');
 				selector.find('.of-background-properties').slideDown();
 				selector.find('.remove-image, .remove-file').on('click', function() {
 					medics_remove_file( $(this).parents('.section') );
@@ -54,7 +54,7 @@
 			selector.find('.upload').val('');
 			selector.find('.of-background-properties').hide();
 			selector.find('.screenshot').slideUp();
-			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file').val(medics_l10n.upload);
+			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file');
 			// We don't display the upload button if .upload-notice is present
 			// This means the user doesn't have the WordPress 3.5 Media Library Support
 			if ( $('.section-upload .upload-notice').length > 0 ) {
@@ -76,6 +76,34 @@
     });
 	
 })(jQuery);
+
+jQuery(document).ready( function(){
+ function media_upload( button_class) {
+    var _custom_media = true,
+    _orig_send_attachment = wp.media.editor.send.attachment;
+    jQuery('body').on('click',button_class, function(e) {
+        var button_id ='#'+jQuery(this).attr('id');
+        /* console.log(button_id); */
+        var self = jQuery(button_id);
+        var send_attachment_bkp = wp.media.editor.send.attachment;
+        var button = jQuery(button_id);
+        var id = button.attr('id').replace('_button', '');
+        _custom_media = true;
+        wp.media.editor.send.attachment = function(props, attachment){
+            if ( _custom_media  ) { 
+               jQuery('.medics_media_url').val(attachment.url);
+            } else {
+                return _orig_send_attachment.apply( button_id, [props, attachment] );
+            }
+        }
+        wp.media.editor.open(button);
+        return false;
+    });
+}
+media_upload( '.medics_media_upload');
+});
+
+
  var fnames = new Array();var ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';
             try {
                 var jqueryLoaded=jQuery;

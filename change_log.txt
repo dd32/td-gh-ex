@@ -3,3 +3,11 @@ i) Initial Release
 
 Version: 1.0.1 (02nd Sept 2014)
 i) Changed Theme URI
+
+Version: 1.2 (08 Oct 2014)
+i) Change theme options layout
+ii) Remove @import font in css and enqueue it
+iii) Set backend control for phone title
+iv) Mention about home page settings in readme.txt
+v) Set Pagination plugin using tgm and tgm license define in readme.txt 
+vi) Add bootstrap.css.map file in css folder
