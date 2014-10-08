@@ -24,8 +24,8 @@ $wp_query = new WP_Query(array( 'type' => 'post', 'paged' => ( get_query_var('pa
  <?php endwhile; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('&laquo; Previous Entries') ?></div>
-<div class="alignright"><?php next_posts_link('Next Entries &raquo;','') ?></div>
+<div class="alignleft"><?php previous_posts_link('&laquo; Newer Entries') ?></div>
+<div class="alignright"><?php next_posts_link('Older Entries &raquo;','') ?></div>
 </div>
   
  
