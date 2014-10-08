@@ -95,3 +95,8 @@ jQuery(function($) {
 jQuery(function($) {
     $('.panel.widget').addClass('container');
 }); 
+
+//Open social links in a new tab
+jQuery(function($) {
+     $( '.social-area li a, .social-widget a' ).attr( 'target','_blank' );
+});

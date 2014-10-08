@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.08
+Version: 1.09
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -70,7 +70,7 @@ cite {
 	padding: 0 20px;
 }
 .nicescroll-rails {
-	z-index: 9999;
+	z-index: 9999 !important;
 }
 code {
 	white-space: pre-wrap;
@@ -470,7 +470,7 @@ Posts and pages
 .entry-content,
 .entry-summary {
 }
-.entry-content img {
+.hentry .entry-content img {
 	margin-bottom: 10px;
 }
 .page-links {
@@ -824,7 +824,9 @@ Structure
 .site-content {
 	margin-top: 60px;
 	position: relative;
-	z-index: 9999;
+}
+.page-template-page_front-page-php .site-content {
+	margin-top: 0;
 }
 .content-area {
 	width: 750px;
@@ -836,6 +838,7 @@ Structure
 	background-color: #fff;
 	padding: 30px;
 	border: 4px double #ebebeb;
+	margin-bottom: 30px;
 }
 .site-footer {
 	padding: 30px 0;
@@ -871,9 +874,6 @@ Front page widgets
 	background-color: #fff;
 	border-bottom: 1px solid #ebebeb;
 	overflow: hidden;
-}
-.page-template-page_front-page-php section:first-of-type {
-	margin-top: -60px;
 }
 .page-template-page_front-page-php section:last-of-type {
 	border-bottom: 0;
@@ -1059,6 +1059,26 @@ section .widget-title:after {
 .social-area a[href*="tumblr.com"]::before {
 	content: '\f174';
 }
+.social-widget a[href*="behance.net"]::before ,
+.social-area a[href*="behance.net"]::before {
+	content: '\f1b4';
+}
+.social-widget a[href*="deviantart.com"]::before ,
+.social-area a[href*="deviantart.com"]::before {
+	content: '\f1bd';
+}
+.social-widget a[href*="soundcloud.com"]::before ,
+.social-area a[href*="soundcloud.com"]::before {
+	content: '\f1be';
+}
+.social-widget a[href*="spotify.com"]::before ,
+.social-area a[href*="spotify.com"]::before {
+	content: '\f1bc';
+}
+.social-widget a[href*="weibo.com"]::before ,
+.social-area a[href*="weibo.com"]::before {
+	content: '\f18a';
+}
 
 /* Blockquote */
 .blockquote-area .widget-title {
@@ -1237,14 +1257,14 @@ Header
 .has-banner,
 .overlay {
 	width: 100%;
+	overflow: hidden;
 }
 .site-header {
 	position: relative;
-	overflow: hidden;
 }
 .top-bar {
 	position: relative;
-	z-index: 9999;
+	z-index: 99999;
 	background-color: #222;
 	opacity: 0.9;	
 }
@@ -1303,6 +1323,10 @@ Welcome area
 	font-weight: 700;
 	margin-bottom: 30px;
 	line-height: 1.2;
+}
+.welcome-logo {
+	max-width: 200px;
+	margin-bottom: 30px;
 }
 .welcome-desc {
 	font-size: 28px;
@@ -1415,16 +1439,13 @@ Responsive
 	.employee:nth-of-type(3n+1) {
 		clear: none;
 	}
-	.content-area {
+	.content-area,
+	.widget-area {
 		width: 100%;
-	}
-	.widget-area,
-	.footer-widget-area {
-		display: none;
 	}
 	.stuck {
 		position: relative;
-	}		
+	}	
 }
 @media only screen and (max-width: 767px) {
 	.blog-post:nth-of-type(3) {
@@ -1470,6 +1491,9 @@ Responsive
 	}
 	.welcome-title {
 		font-size: 24px;
+	}
+	.welcome-logo {
+		max-width: 100px;
 	}
 	.welcome-desc {
 		font-size: 20px;

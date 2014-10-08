@@ -187,7 +187,41 @@ function moesia_customize_register( $wp_customize ) {
             'section' => 'moesia_general',
             'priority' => 16,           
         )
-    );       
+    );
+    //Sidebar widgets
+    $wp_customize->add_setting(
+        'sidebar_widgets',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'sidebar_widgets',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Check this box to hide the sidebar widgets on screen widths below 1024px', 'moesia'),
+            'section' => 'moesia_general',
+            'priority' => 17,           
+        )
+    ); 
+    //Footer widgets
+    $wp_customize->add_setting(
+        'footer_widgets',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'footer_widgets',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Check this box to hide the footer widgets on screen widths below 1024px', 'moesia'),
+            'section' => 'moesia_general',
+            'priority' => 18,           
+        )
+    );            
     //___Single posts___//
     $wp_customize->add_section(
         'moesia_singles',
@@ -335,6 +369,26 @@ function moesia_customize_register( $wp_customize ) {
 	        'priority' => 13
 	    )
 	);
+    //Welcome logo
+    $wp_customize->add_setting(
+        'header_logo',
+        array(
+            'default-image' => '',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'header_logo',
+            array(
+               'label'          => __( 'Welcome logo. Displayed instead of the welcome title from the previous option.', 'moesia' ),
+               'type'           => 'image',
+               'section'        => 'moesia_header',
+               'settings'       => 'header_logo',
+               'priority'       => 14,
+            )
+        )
+    );    
    //Header description
 	$wp_customize->add_setting(
 	    'header_desc',
@@ -349,7 +403,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'Welcome message (not the site description)', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 14
+	        'priority' => 15
 	    )
 	);	
    //Header button text 
@@ -366,7 +420,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'The text for the call to action button', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 15
+	        'priority' => 16
 	    )
 	);
    //Header button link 
@@ -383,7 +437,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'The link for the call to action button', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 16
+	        'priority' => 17
 	    )
 	);
     //Activate
@@ -400,7 +454,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box if you want to disable the header image and text on all pages except the front page.', 'moesia'),
             'section' => 'moesia_header',
-            'priority' => 17,            
+            'priority' => 18,            
         )
     );
     //Overlay
@@ -417,7 +471,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box if you want to disable the header overlay pattern.', 'moesia'),
             'section' => 'moesia_header',
-            'priority' => 18,            
+            'priority' => 19,            
         )
     );
     //Title color
@@ -437,7 +491,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Welcome title color', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_title_color',
-                'priority' => 19
+                'priority' => 20
             )
         )
     );    
@@ -458,7 +512,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Welcome message color', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_desc_color',
-                'priority' => 20
+                'priority' => 21
             )
         )
     );    
@@ -479,7 +533,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Button background', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_btn_bg',
-                'priority' => 21
+                'priority' => 22
             )
         )
     );   
@@ -500,7 +554,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Button box shadow', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_btn_bs',
-                'priority' => 22
+                'priority' => 23
             )
         )
     );     	

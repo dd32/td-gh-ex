@@ -3,7 +3,7 @@
 
 	function __construct() {
 		$widget_ops = array( 'description' => __('Add your social profile.', 'moesia') );
-		parent::__construct( 'nav_menu', __('Moesia FP: Social Profile', 'moesia'), $widget_ops );
+		parent::__construct( 'fp_social', __('Moesia FP: Social Profile', 'moesia'), $widget_ops );
 	}
 
 	function widget($args, $instance) {

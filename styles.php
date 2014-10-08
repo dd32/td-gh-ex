@@ -372,7 +372,18 @@ function moesia_custom_styles($custom) {
     $body_size = get_theme_mod( 'body_size' );
     if ( get_theme_mod( 'body_size' )) {
         $custom .= "body { font-size:" . intval($body_size) . "px; }"."\n";
-    }  		
+    }
+
+    //Widgets display on small screens
+    //1. Sidebar
+    if ( get_theme_mod( 'sidebar_widgets' ) == 1 ) {
+        $custom .= "@media only screen and (max-width: 991px) { .widget-area { display: none; } }"."\n";
+    }
+    //2. Footer
+    if ( get_theme_mod( 'footer_widgets' ) == 1 ) {
+        $custom .= "@media only screen and (max-width: 991px) { .footer-widget-area { display: none; } }"."\n";
+    }
+
 	//Output all the styles
 	wp_add_inline_style( 'moesia-style', $custom );	
 }

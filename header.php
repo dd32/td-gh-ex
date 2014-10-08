@@ -54,7 +54,9 @@
 				<div class="overlay"></div>
 			<?php endif; ?>
 			<div class="welcome-info">
-				<?php if ( get_theme_mod('header_title') ) : ?>
+				<?php if ( get_theme_mod('header_logo') ) : ?>
+					<img class="welcome-logo wow bounceInDown" src="<?php echo esc_url(get_theme_mod('header_logo')); ?>" />
+				<?php elseif ( get_theme_mod('header_title') ) : ?>
 					<div class="welcome-title wow bounceInDown"><?php echo esc_attr(get_theme_mod('header_title')); ?></div>
 				<?php endif; ?>
 				<?php if ( get_theme_mod('header_desc') ) : ?>
