@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.2.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.2.3' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -35,6 +35,7 @@ include get_template_directory() . '/inc/metaslider.php';
 include get_template_directory() . '/inc/widgets.php';
 include get_template_directory() . '/inc/menu.php';
 include get_template_directory() . '/inc/woocommerce.php';
+include get_template_directory() . '/tour/tour.php';
 
 
 if ( ! function_exists( 'vantage_setup' ) ) :
