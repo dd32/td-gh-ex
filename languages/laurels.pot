@@ -1,0 +1,107 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Laurels 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2013-09-25 22:06:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+
+#: 404.php:9
+msgid "Epic 404 - Article Not Found"
+msgstr ""
+
+#: 404.php:10
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr ""
+
+#: 404.php:12
+msgid "Whatever you were looking for was not found, but maybe try looking again or search using the form below."
+msgstr ""
+
+#: archive.php:11
+msgid "Archives"
+msgstr ""
+
+#: author.php:10
+msgid "Author : All posts by"
+msgstr ""
+
+#: category.php:13
+msgid "Category"
+msgstr ""
+
+#: comments.php:14
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: footer.php:32
+msgid "Powered by WordPress Laurels"
+msgstr ""
+
+#: breadcrumbs.php:9
+msgid "Home"
+msgstr ""
+
+#: breadcrumbs.php:28
+msgid "Archive by category"
+msgstr ""
+
+#: breadcrumbs.php:31
+msgid "Search results for"
+msgstr ""
+
+#: breadcrumbs.php:89
+msgid "Posts tagged"
+msgstr ""
+
+#: breadcrumbs.php:94
+msgid "Articles posted by"
+msgstr ""
+
+#: breadcrumbs.php:97
+msgid "Error 404"
+msgstr ""
+
+#: theme-default-setup.php:131
+msgid "Read more"
+msgstr ""
+
+#: theme-default-setup.php:46
+msgid "Posted in"
+msgid "Tags"
+msgid "Comments"
+msgstr ""
+
+#: theme-default-setup.php:48
+msgid "Posted in"
+msgid "Tags"
+msgid "Comments"
+msgstr ""
+
+#: theme-default-setup.php:50
+msgid "Posted on"
+msgid "Tags"
+msgid "Comments"
+msgstr ""
+
+#: header.php:81
+msgid "Toggle navigation"
+msgstr ""
+
+#: search.php:10
+msgid "Search Results for"
+msgstr ""
+
+#: tag.php:11
+msgid "Tag"
+msgstr ""
