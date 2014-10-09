@@ -113,7 +113,7 @@ class Smart_Project_Layout {
 
 		$option = $this->obj_project->get_project_option( 'project_layout' );
 
-      var_dump($option);
+
 		if ( isset( $this->layout_class_array[$option][$component] ) )
 			return $this->layout_class_array[$option][$component];
 		else

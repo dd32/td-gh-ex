@@ -29,8 +29,6 @@ __HARMONUX::init();
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 
-if (!isset($content_width))
-    $content_width = 625;
 
 /**
  * Sets up theme defaults and registers the various WordPress features
@@ -39,6 +37,7 @@ if (!isset($content_width))
  if ( ! function_exists( 'harmonux_setup' ) ) :
  
 function harmonux_setup(){
+   global $content_width;
     /*
              * Load textdomain.
              */
@@ -85,7 +84,12 @@ function harmonux_setup(){
 	  add_image_size('medium-square', 350, 350, true);
 
 	add_action( 'tgmpa_register', 'harmonux_theme_register_required_plugins' );
-}
+
+
+
+    if ( ! isset( $content_width ) ){
+        $content_width = 640;
+    }}
 endif; // harmonux_setup
 add_action('after_setup_theme', 'harmonux_setup');
 
