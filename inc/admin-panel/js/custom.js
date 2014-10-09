@@ -69,6 +69,10 @@ jQuery(document).ready(function($) {
 	if ( $('.nav-tab-wrapper').length > 0 ) {
 		accesspresslite_tabs();
 	}
+
+	$('.ap-popup-bg, .ap-popup-close').click(function(){
+		$('.ap-popup-bg, .ap-popup-wrapper').fadeOut();
+	});
 });
 
 

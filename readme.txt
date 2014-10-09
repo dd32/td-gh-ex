@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.20
+* FontAwesome icons updated to v4.20
+* Small customization in Theme Option panel
+
 Version 2.19
 * Testimonial section responsive bug fixed
 * Main Navigation Jquery bug fixed

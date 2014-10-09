@@ -366,3 +366,46 @@
 #optionsframework .productext{
 	padding-left: 200px;
 }
+
+.ap-popup-bg{
+	position: fixed;
+	background: #000;
+	background: rgba(0,0,0,0.4);
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}
+.ap-popup-wrapper{
+	position: fixed;
+	width: 340px;
+	left: 50%;
+	top:50%;
+	margin-left: -170px;
+	margin-top: -140px;
+	z-index: 99999999;
+	background: #FFF;
+	padding: 10px;
+}
+.ap-popup-close{
+	position: absolute;
+	right: -10px;
+	top:-10px;
+	background: #000;
+	height: 26px;
+	width: 26px;
+	text-align: center;
+	line-height: 26px;
+	color: #FFF;
+	font-size:20px;
+	cursor: pointer;
+}
+.ap-popup-wrapper h4{
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	margin: 2px 0 10px;
+	color: #00ABFF;
+	line-height:16px;
+}

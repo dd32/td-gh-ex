@@ -513,7 +513,7 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<input type="checkbox" id="show_fontawesome" name="accesspresslite_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
 							<label for="show_fontawesome"><?php _e('Check to enable','accesspresslite'); ?></label><br />
-                            <em class="f13"><?php _e('(If enabled the featured image will be replaced by Font Awesome Icon. For lists of icons click','accesspresslite'); ?> <a href="<?php esc_url('http://fontawesome.io/icons/'); ?>" target="_blank"><?php _e('here','accesspresslite'); ?></a>)</em>
+                            <em class="f13"><?php _e('(If enabled the featured image will be replaced by Font Awesome Icon. For lists of icons click','accesspresslite'); ?> <a href="<?php echo esc_url('http://fontawesome.io/icons/'); ?>" target="_blank"><?php _e('here','accesspresslite'); ?></a>)</em>
 						</td>
 					</tr>
                     
@@ -1010,14 +1010,14 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><label for="google_map"><?php _e('Google Map Iframe','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="google_map" name="accesspresslite_options[google_map]" rows="5" cols="40"><?php echo $settings['google_map']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in contact us page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
+						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="contact_address"><?php _e('Contact Address','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="contact_address" name="accesspresslite_options[contact_address]" rows="5" cols="40"><?php echo $settings['contact_address']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Contact Address<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
+						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
 						</td>
 					</tr>
 
@@ -1094,7 +1094,7 @@ echo $other_product;
 <p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
 
 <p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
-<iframe style="border: none; overflow: hidden; width: 780px; height: 250px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=780&amp;height=250&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="780" height="250" frameborder="0" scrolling="no"></iframe>	
+<iframe style="border: none; overflow: hidden; width: 780px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=780&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="780" height="230" frameborder="0" scrolling="no"></iframe>	
 </td>
 					</tr>
 				</table>
@@ -1109,6 +1109,16 @@ echo $other_product;
 
 	</div><!-- #optionsframework-metabox -->
 
+	<?php 
+	$settings_array = get_option( 'accesspresslite_options' );
+	if(empty($settings_array)): ?>
+	<div class="ap-popup-wrapper">
+		<div class="ap-popup-close">&times;</div>
+		<h4><?php _e('Like our Facebook page and don\'t miss any updates!','accesspresslite'); ?></h4>
+		<iframe style="border: none; overflow: hidden; width: 340px; height: 260px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=340&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="340" height="260" frameborder="0" scrolling="no"></iframe>
+	</div>
+	<div class="ap-popup-bg"></div>
+	<?php endif; ?>
 	</div>
 
 	<?php
