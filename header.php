@@ -58,7 +58,7 @@ echo "</style>";
 
 </head>
 <body <?php body_class(); ?>>
-<div class="center;" role="navigation" aria-label="Page">
+<div id="access_bar" role="navigation" aria-label="Page">
 <ul class="navlist">
 
 <li id="top"><a href="#content">Main Content</a></li>
@@ -126,6 +126,3 @@ $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_al
 <?php endif; ?>
 </div>
 <div id="main" class="site-main">
-
-
-

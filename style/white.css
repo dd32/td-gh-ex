@@ -183,104 +183,39 @@ h6 {
 	margin: 36px 0 12px;
 
 }
-
 h1 {
-
-
-
-	font-size: 150%;
-
-
-
+font-size: 150%;
 font-size: 1.15rem;
-
-
-
-	line-height: 1.3846153846;
-
-
-
+line-height: 1.3846153846;
 }
 
 h2 {
-
-
-
-	font-size: 140%;
-
-
-
+font-size: 140%;
 font-size: 1.05rem;
-
-
-
-	line-height: 1;
-
-
-
+line-height: 1;
 }
 
 h3 {
-
-
-
-	font-size: 130%;
-
-
-
+font-size: 130%;
 font-size: .95rem;
-
-
-
-	line-height: 1.0909090909;
-
-
-
+line-height: 1.0909090909;
 }
 
 h4 {
-
-
-
-	font-size: 120%;
-
-
-
+font-size: 120%;
 font-size: .90rem;
-
-
-
-	line-height: 1.2;
-
-
-
+line-height: 1.2;
 }
 
 h5 {
-
-
-
-	font-size: 18px;
-
-
-
-	line-height: 1.3333333333;
-
-
-
+font-size: 18px;
+line-height: 1.3333333333;
 }
 
 h6 {
-
 font-size: 16px;
-
 line-height: 1.5;
-
-
-
 }
-
-
 
 address {
 
@@ -8462,4 +8397,9 @@ margin-right:5px;
 }
 .sidebarH2 {
 font-size: 12px;
+}
+#access_bar {
+position: relative; 
+z-index: 5; 
+text-align: center;
 }

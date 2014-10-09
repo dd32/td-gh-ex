@@ -47,7 +47,7 @@ $badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
 <?php echo $badeyes_settings['footer_copyright']; 
 echo("".date('Y').", ");
     bloginfo('name');
-echo "&nbsp;All rights reserved";
+echo "All rights reserved";
 ?>
 
 </a>

@@ -4399,3 +4399,9 @@ margin-right:5px;
 .sidebarH2 {
 font-size: 12px;
 }
+#access_bar {
+position: relative; 
+z-index: 5; 
+text-align: center;
+}
+

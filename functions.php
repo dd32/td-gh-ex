@@ -79,7 +79,6 @@ function my_child_theme_setup() {
 add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
 function be_exclude_post_formats_from_blog( $query ) {
-
 	if( $query->is_main_query() && $query->is_home() ) {
 		$tax_query = array( array(
 			'taxonomy' => 'post_format',
@@ -190,8 +189,7 @@ register_sidebar( array(
 	) );
 
 	register_sidebar( array(
-
-		'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
+'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
 
 		'id'            => 'sidebar-2',
 
