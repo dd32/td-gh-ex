@@ -9,8 +9,8 @@ $betilu_theme_options = array(
   'top_backgrnd'    => '',
   'phonenumber'     => '',
   'betilu_email'    => '',
-  'facebook'        => '',
-  'twitter'         => ''
+  'facebookurl'        => '',
+  'twitterurl'         => ''
   );
 
     add_action( 'admin_menu', 'betilu_options_add_page' ); 
@@ -84,10 +84,16 @@ value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_
             <hr>
                 <h3>Add your Phone and eMail plus social media links here</h3>
                 <table class="options-table">
-                <tr><td><label>Phone Number</label> </td><td><input type="text" name="betilu_theme_options[phonenumber]" size="40" value="<?php echo $options['phonenumber']; ?>" /></td></tr>
-                <tr><td><label>Facebook</label> </td><td><input type="text" name="betilu_theme_options[facebookurl]" size="40" value="<?php echo $options['facebookurl']; ?>" /></td</tr>
-                <tr><td><label>Twitter</label> </td><td><input type="text" name="betilu_theme_options[twitterurl]" size="40" value="<?php echo $options['twitterurl']; ?>" /></td</tr>
-                <tr><td><label>E-Mail</label> </td><td><input type="text" name="betilu_theme_options[betilu_email]" size="40" value="<?php echo $options['betilu_email']; ?>" /></td</tr> 
+<tr>
+<?php $options = get_option( 'betilu_theme_options' ); ?>
+<td><label>Phone Number</label> </td><td><input type="text" name="betilu_theme_options[phonenumber]" size="40" 
+value="<?php if( !empty( $options['phonenumber'] ) ) echo $options['phonenumber']; ?>" /></td></tr>
+<tr><td><label>Facebook</label> </td><td><input type="text" name="betilu_theme_options[facebookurl]" size="40" 
+value="<?php if( !empty( $options['facebookurl'] ) ) echo $options['facebookurl']; ?>" /></td</tr>
+<tr><td><label>Twitter</label> </td><td><input type="text" name="betilu_theme_options[twitterurl]" size="40" 
+value="<?php if( !empty( $options['twitterurl'] ) ) echo $options['twitterurl']; ?>" /></td</tr>
+<tr><td><label>E-Mail</label> </td><td><input type="text" name="betilu_theme_options[betilu_email]" size="40" 
+value="<?php if( !empty( $options['betily_email'] ) ) echo $options['betilu_email']; ?>" /></td</tr> 
                 </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Appears under Single Post Ariticles. Type only id for Twitter and url without the <code>https://</code> for facebook.</p>
             <hr>
@@ -98,7 +104,7 @@ value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_
 }
 
 function betilu_validate_options( $input ) {    
-        // We strip all tags from the text field, to avoid vulnerablilties like XSS
+        // Strip all tags from the text field, and other inputs to avoid vulnerablilties like XSS
 
         $input['border_radius']   = sanitize_text_field( $input['border_radius'] );
         $input['betilu_new_text'] = sanitize_text_field( $input['betilu_new_text'] );
@@ -106,7 +112,7 @@ function betilu_validate_options( $input ) {
         $input['phonenumber']     = wp_filter_post_kses( $input['phonenumber'] );
         $input['facebookurl']     = wp_filter_post_kses( $input['facebookurl'] );
         $input['twitterurl']      = wp_filter_post_kses( $input['twitterurl'] );
-        $input['googleurl']       = wp_filter_post_kses( $input['betilu_email'] );
+        $input['betilu_email']    = wp_filter_post_kses( $input['betilu_email'] );
            return $input;
     }
 

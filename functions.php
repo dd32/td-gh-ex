@@ -17,9 +17,6 @@ function betilu_setup() {
     // Add default posts and comments RSS feed links to head
     add_theme_support('automatic-feed-links');
 
-    // add tag support to pages
-    register_taxonomy_for_object_type('post_tag', 'page');
-
     // language support - add your translation
     load_theme_textdomain('betilu', get_template_directory() . '/languages');
 
