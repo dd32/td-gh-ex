@@ -10,44 +10,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title('|', true, 'left'); ?></title>
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid +Sans|Lobster|Ubuntu:400,700|Lato|Oswald">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
-
- <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-    <!--[if lt IE 9]>
-
-      <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
-
-      <script src="<?php echo get_template_directory_uri(); ?>/js/ie-responsive.min.js"></script>
-
-      
-
-    <![endif]-->
-<!-- WP Head -->
-<script>
-jQuery(document).ready(function(){
-			jQuery('#wpslide').skdslider({
-			<?php if ( get_theme_mod( 'wp_newsstream_slider_speed' ) ) : ?>
-				'delay' :<?php echo get_theme_mod( 'wp_newsstream_slider_speed' ) ; ?>,
-			<?php endif; ?>
-			'animationSpeed': 2000,
-			'showNextPrev':false,
-			'showPlayButton':false,
-			'autoSlide':true,
-			'animationType':'fading'
-			});		
-			
-});
-</script>
 </head>
-
-
-
 <body <?php body_class(); ?>>
 
 <div id="wrapper" class="container">
@@ -59,7 +25,7 @@ jQuery(document).ready(function(){
                 <div class="col-md-12 fan-sociel-media">  
 					<?php if ( get_theme_mod( 'wp_newsstream_email' ) ) : ?>
     
-                        <a href="<?php _e('mailto:', 'wp_newsstream_email'); echo sanitize_email( get_theme_mod( 'wp_newsstream_email' ) ); ?>" class="btn" title="Email"><span class="fa fa-envelope"></span></a>    
+                        <a href="<?php _e('mailto:', 'wp-newsstream'); echo sanitize_email( get_theme_mod( 'wp_newsstream_email' ) ); ?>" class="btn" title="Email"><span class="fa fa-envelope"></span></a>    
                     <?php endif; ?>
                     
     
@@ -170,9 +136,7 @@ jQuery(document).ready(function(){
                         </div>               
 						                 
 
-                        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('top-right-widget') ) : ?>
-
-    					<?php endif; ?>
+                        <?php dynamic_sidebar('top-right-widget'); ?>
 
                     </div>
 
@@ -196,7 +160,7 @@ jQuery(document).ready(function(){
 
                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-newsstream' ); ?></span>
 
                         <span class="icon-bar"></span>
 

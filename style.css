@@ -1,17 +1,33 @@
 /*
 Theme Name: WP News Stream
-Theme URI: http://wpnewsstream.com
+Theme URI: http://hostmarks.com/wp-news-stream/
 Author: Hostmarks
 Author URI: http://hostmarks.com
 Description: WP News Stream is a responsive blog style theme, with some handy customization options to make it your own. The primary theme color, background color and image can be easily controlled via the admin. Upload your own logo, set your social media links and choose whether to display author bios. The home page slider will display posts from the category of your choice. There's also a widget space in the header so you can easily add your own banner code.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, full-width-template, post-formats
 
-*/
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*--------------------------------------------------------------
+TABLE OF CONTENTS:
+----------------------------------------------------------------
+ * 1.0 - Basic Elements
+ * 2.0 - widget
+ * 3.0 - Comment
+ * 4.0 - Calendar 
+ * 5.0 - Search widget
+ * 6.0 - IMAGE STYLES
+ * 7.0 - Media Queries
+
+ * -----------------------------------------------------------------------------
+ */
 /*==================================================================================================================================*/
+/* 1.0 Basic Elements */
 body{
 background-image: url('images/bg_pattern.png');
 background-repeat: repeat;
@@ -222,7 +238,7 @@ blockquote{
 
 
 
-/*widget*/
+/*2.0 widget*/
 #sidebar aside{
 	margin-bottom:16px;
 	padding-bottom: 10px;
@@ -292,7 +308,7 @@ aside ul li a:hover{
 	}
 
 
-/*comments */
+/* 3.0 comments */
 #comments{
 	margin-top:40px;
 	}
@@ -441,7 +457,7 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
 
 
 /******************************************************************
-Calendar
+4.0 Calendar
 ******************************************************************/
 .widget_calendar table {
 	line-height: 2;
@@ -530,7 +546,7 @@ footer .widget{
 
 
 /******************************************************************
-Search widget
+5.0 Search widget
 ******************************************************************/
 
 #searchform { 
@@ -565,7 +581,7 @@ input#search-button{
 
 
 /******************************************************************
-IMAGE STYLES
+6.0 IMAGE STYLES
 ******************************************************************/
 .post-content img {
 	margin-top: 12px; /* for ie8 & below */ 
@@ -638,6 +654,8 @@ img.size-medium,
 	color:#707070;
 	}
 
+
+/* 7.0 Media Queries */
 @media (min-width: 768px) and (max-width: 1018px) {
   .widget_calendar td,
   .widget_calendar td {

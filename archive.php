@@ -6,21 +6,20 @@
 			<?php wp_newsstream_breadcrumb(); ?>
         </div>
 			<?php if (have_posts()) : ?>
-            
             <div id="page-heading">
                 <?php $post = $posts[0]; ?>
                 <?php if (is_category()) { ?>
                 <h1><?php single_cat_title(); ?></h1>
                 <?php  } elseif (is_author()) { ?>
-                <h1>Author: <?php the_author(); ?></h1>
+                <h1><?php _e( 'Author: ', 'wp-newsstream' ); ?><?php the_author(); ?></h1>
                 <?php } elseif( is_tag() ) { ?>
-                <h1>Posts Tagged &quot;<?php single_tag_title(); ?>&quot;</h1>
+                <h1><?php _e( 'Posts Tagged: ', 'wp-newsstream' ); ?><?php single_tag_title(); ?></h1>
                 <?php  } elseif (is_day()) { ?>
-                <h1>Daily Archive: <?php the_time( get_option( 'date_format' ) ); ?></h1>
+                <h1><?php _e( 'Daily Archive: ', 'wp-newsstream' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></h1>
                 <?php  } elseif (is_month()) { ?>
-                <h1>Monthly Archive: <?php single_month_title(' '); ?></h1>
+                <h1><?php _e( 'Monthly Archive: ', 'wp-newsstream' ); ?><?php single_month_title(' '); ?></h1>
                 <?php  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-                <h1>Blog Archives</h1>
+                <h1><?php _e( 'Blog Archives: ', 'wp-newsstream' ); ?></h1>
                 <?php } ?>
             </div>
             <!-- END page-heading -->

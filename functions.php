@@ -1,16 +1,23 @@
 <?php
-require('includes/excerpts.php');
-require('includes/pagination.php');
+require_once( trailingslashit( get_template_directory() ) . 'includes/excerpts.php');
+require_once( trailingslashit( get_template_directory() ) . 'includes/pagination.php');
 
 add_action('after_setup_theme', 'wp_newsstream_theme_setup');
-function wp_newsstream_theme_setup(){
-    load_theme_textdomain('wp-newsstream', get_template_directory() . '/languages');
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'custom-header' );
-	add_theme_support( 'custom-background') ;
-	add_editor_style();
-}
-
+if ( ! function_exists( 'wp_newsstream_theme_setup' ) ) :
+	function wp_newsstream_theme_setup(){
+		load_theme_textdomain('wp-newsstream', get_template_directory() . '/languages');		
+		add_editor_style();
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'custom-background') ;
+		add_theme_support( 'post-thumbnails' );
+		
+		add_image_size( 'widget-post-thumb',  70, 70, true );
+		add_image_size( 'post-thumb',  905, 380 , true );
+		add_image_size( 'slide-small-thumb',  130, 135 , true );
+		add_image_size( 'slide-medium-thumb',  265, 135 , true );
+		add_image_size( 'slide-large-image',  1256, 450, true );
+	}
+endif;
 if ( ! function_exists( 'wp_newsstream_content_width' ) ) :
 	function wp_newsstream_content_width() {
 		global $content_width;
@@ -26,19 +33,30 @@ add_action( 'after_setup_theme', 'wp_newsstream_content_width' );
 if ( ! function_exists( 'wp_newsstream_custom_scripts' ) ) :
 	function wp_newsstream_custom_scripts() {
 		if (!is_admin()) {
-		wp_register_script( 'wp_newsstream_jquery', get_template_directory_uri() . '/js/jquery-1.9.1.min.js' );
-		wp_enqueue_script('wp_newsstream_jquery');
+		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'wp_newsstream_skdslider_js', get_template_directory_uri() . '/js/skdslider.js' );
-		wp_enqueue_script( 'wp_newsstream_custom_js', get_template_directory_uri() . '/js/custom.js' );
 		wp_enqueue_style( 'wp_newsstream_skdslider', get_template_directory_uri() .'/css/skdslider.css', array(), false ,'screen' );
 		wp_enqueue_script( 'wp_newsstream_responsive_js', get_template_directory_uri() . '/js/responsive.js' );		
 		wp_enqueue_style( 'wp_newsstream_responsive', get_template_directory_uri() .'/css/responsive.css', array(), false ,'screen' );		
 		wp_enqueue_style( 'wp_newsstream_font_awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css' );
 		wp_enqueue_style( 'wp_newsstream_style', get_stylesheet_uri() );
+		wp_register_style('wp_fanzone_googleFonts', '//fonts.googleapis.com/css?family=Droid +Sans|Lobster|Ubuntu:400,700|Lato|Oswald');
+        wp_enqueue_style( 'wp_fanzone_googleFonts');
 		}
 	}
 endif;
 add_action('wp_enqueue_scripts', 'wp_newsstream_custom_scripts');
+
+if(!function_exists('load_ie_script')){
+	function load_ie_script(){
+		$ret_val = '<!--[if lt IE 9]>';
+		$ret_val .= '<script src="' . get_template_directory_uri().'/js/html5shiv.js"></script>';      
+		$ret_val .= '<script src="'. get_template_directory_uri(). '/js/ie-responsive.min.js"></script>';
+		$ret_val .= '<![endif]-->'; 
+		 echo $ret_val; 
+	}
+}
+add_action('wp_head', 'load_ie_script');
 
 /*******************************************************************
 * These are settings for the Theme Customizer in the admin panel. 
@@ -46,9 +64,7 @@ add_action('wp_enqueue_scripts', 'wp_newsstream_custom_scripts');
 if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 	function wp_newsstream_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
-
-		
+		$wp_customize->remove_section( 'title_tagline');		
 		/* logo option */
 		$wp_customize->add_section( 'wp_newsstream_logo_section' , array(
 			'title'       => __( 'Site Logo', 'wp-newsstream' ),
@@ -270,21 +286,21 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 		//  Select Box               
 		//  =============================
 		$wp_customize->add_section('wp_newsstream_slider', array(
-        'title'    => __('Slider Option', 'wp_newsstream'),
+        'title'    => __('Slider Option', 'wp-newsstream'),
         'priority' => 114,
 		));
 		 
 		
 		$wp_customize->add_setting(
-			'powered_by',
+			'wp_newsstream_category',
 			array(
 				'default' => '',
-				'sanitize_callback' => 'esc_url_raw',
+				'sanitize_callback' => 'wp_newsstream_sanitize_category',
 			)
 		);
 		 
 		$wp_customize->add_control(
-			'powered_by',
+			'wp_newsstream_category',
 			array(
 				'type' => 'select',
 				'label' => 'Select Category:',
@@ -310,6 +326,28 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 	}
 endif;
 add_action('customize_register', 'wp_newsstream_theme_customizer');
+
+if ( ! function_exists( 'wp_newsstream_sanitize_category' ) ){
+	function wp_newsstream_sanitize_category( $input ) {
+		$categories = get_categories();
+		$cats = array();
+		$i = 0;
+		foreach($categories as $category){
+			if($i==0){
+				$default = $category->slug;
+				$i++;
+			}
+			$cats[$category->slug] = $category->name;
+		}
+		$valid = $cats;
+	 
+		if ( array_key_exists( $input, $valid ) ) {
+			return $input;
+		} else {
+			return '';
+		}
+	}
+}
 
 /**
  * Sanitize integer input
@@ -382,111 +420,102 @@ endif;
 add_action( 'wp_head', 'wp_newsstream_apply_color' );
 
 // register navigation menus
-register_nav_menus(
-	array(
-	'main-menu'=>__('Main Menu')
-	)
-
-);
-function wp_newsstream_menu() {
-
-	require_once (TEMPLATEPATH . '/includes/wp_newsstream_menu.php');
-
-}
-if ( function_exists( 'add_theme_support' ) ){
-
-	add_theme_support( 'post-thumbnails' );
-}
-
-
-if ( function_exists( 'add_image_size' ) ) {
+if ( function_exists( 'register_nav_menus' ) ){
+	register_nav_menus(
+		array(
+		'main-menu'=>__('Main Menu', 'wp-newsstream')
+		)
 	
-	add_image_size( 'widget-post-thumb',  70, 70, true );
-	add_image_size( 'post-thumb',  905, 380 , true );
-	add_image_size( 'slide-small-thumb',  130, 135 , true );
-	add_image_size( 'slide-medium-thumb',  265, 135 , true );
-	add_image_size( 'slide-large-image',  1256, 450, true );
-
+	);
 }
- 
+
+if ( !function_exists( 'wp_newsstream_menu' ) ){
+	function wp_newsstream_menu() {
+	
+		require_once (trailingslashit( get_template_directory() ) . '/includes/wp_newsstream_menu.php');
+	
+	}
+}
+
 
 
 // Register widgetized area and update sidebar with default widgets
-function wp_newsstream_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar', 'wp-newsstream' ),
-		'id' => 'defaul-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title"><h4>',
-		'after_title' => '</h4></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Post Sidebar', 'wp-newsstream' ),
-		'id' => 'post-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title"><h4>',
-		'after_title' => '</h4></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Page Sidebar', 'wp-newsstream' ),
-		'id' => 'page-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title"><h4>',
-		'after_title' => '</h4></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Archives Sidebar', 'wp-newsstream' ),
-		'id' => 'archives-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<div class="widget-title"><h4>',
-		'after_title' => '</h4></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Banner Widget', 'wp-newsstream' ),
-		'description' => 'Enter your banner code into this text widget.',
-		'id' => 'top-right-widget',
-		'before_widget' => '<div id="top-widget">',
-		'after_widget' => "</div>",
-		'before_title' => '',
-		'after_title' => '',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer 1', 'wp-newsstream' ),
-		'id' => 'footer-one',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<div class="widget-title"><h3>',
-		'after_title' => '</h3></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer 2', 'wp-newsstream' ),
-		'id' => 'footer-two',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<div class="widget-title"><h3>',
-		'after_title' => '</h3></div>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer 3', 'wp-newsstream' ),
-		'id' => 'footer-three',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => "</div>",
-		'before_title' => '<div class="widget-title"><h3>',
-		'after_title' => '</h3></div>',
-	) );
-	
-}
+if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
+	function wp_newsstream_widgets_init() {
+		register_sidebar( array(
+			'name' => __( 'Homepage Sidebar', 'wp-newsstream' ),
+			'id' => 'defaul-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</aside>",
+			'before_title' => '<div class="widget-title"><h4>',
+			'after_title' => '</h4></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Post Sidebar', 'wp-newsstream' ),
+			'id' => 'post-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</aside>",
+			'before_title' => '<div class="widget-title"><h4>',
+			'after_title' => '</h4></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Page Sidebar', 'wp-newsstream' ),
+			'id' => 'page-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</aside>",
+			'before_title' => '<div class="widget-title"><h4>',
+			'after_title' => '</h4></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Archives Sidebar', 'wp-newsstream' ),
+			'id' => 'archives-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</aside>",
+			'before_title' => '<div class="widget-title"><h4>',
+			'after_title' => '</h4></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Banner Widget', 'wp-newsstream' ),
+			'description' => 'Enter your banner code into this text widget.',
+			'id' => 'top-right-widget',
+			'before_widget' => '<div id="top-widget">',
+			'after_widget' => "</div>",
+			'before_title' => '',
+			'after_title' => '',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Footer 1', 'wp-newsstream' ),
+			'id' => 'footer-one',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div>",
+			'before_title' => '<div class="widget-title"><h3>',
+			'after_title' => '</h3></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Footer 2', 'wp-newsstream' ),
+			'id' => 'footer-two',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div>",
+			'before_title' => '<div class="widget-title"><h3>',
+			'after_title' => '</h3></div>',
+		) );
+		
+		register_sidebar( array(
+			'name' => __( 'Footer 3', 'wp-newsstream' ),
+			'id' => 'footer-three',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div>",
+			'before_title' => '<div class="widget-title"><h3>',
+			'after_title' => '</h3></div>',
+		) );
+		
+}	}
 add_action( 'widgets_init', 'wp_newsstream_widgets_init' );
 
 if ( ! function_exists( 'wp_newsstream_comment' ) ) :
@@ -546,40 +575,41 @@ function wp_newsstream_comment( $comment, $args, $depth ) {
 endif;
 
 //====================================Breadcrumbs=============================================================================================
-function wp_newsstream_breadcrumb() {
-    global $post;
-    echo '<ul id="breadcrumbs">';
-    if (!is_home()) {
-        echo '<li><a href="';
-        echo home_url();
-        echo '">';
-        echo '<i class="fa fa-home"></i>Home';
-        echo '</a></li><li class="separator"> / </li>';
-        if (is_category() || is_single()) {
-            echo '<li>';
-            the_category(' </li><li class="separator"> / </li><li> ');
-            if (is_single()) {
-                echo '</li><li class="separator"> / </li><li>';
-                the_title();
-                echo '</li>';
-            }
-        } elseif (is_page()) {
-            if($post->post_parent){
-                $newsstream_act = get_post_ancestors( $post->ID );
-                $title = get_the_title();
-                foreach ( $newsstream_act as $newsstream_inherit ) {
-                    $output = '<li><a href="'.get_permalink($newsstream_inherit).'" title="'.get_the_title($newsstream_inherit).'">'.get_the_title($newsstream_inherit).'</a></li> <li class="separator">/</li>';
-                }
-                echo $output;
-                echo '<strong title="'.$title.'"> '.$title.'</strong>';
-            } else {
-                echo '<li><strong> '.get_the_title().'</strong></li>';
-            }
-        }
-    }
-    echo '</ul>';
+if ( ! function_exists( 'wp_newsstream_breadcrumb' ) ) {
+	function wp_newsstream_breadcrumb() {
+		global $post;
+		echo '<ul id="breadcrumbs">';
+		if (!is_home()) {
+			echo '<li><a href="';
+			echo home_url();
+			echo '">';
+			echo '<i class="fa fa-home"></i>Home';
+			echo '</a></li><li class="separator"> / </li>';
+			if (is_category() || is_single()) {
+				echo '<li>';
+				the_category(' </li><li class="separator"> / </li><li> ');
+				if (is_single()) {
+					echo '</li><li class="separator"> / </li><li>';
+					the_title();
+					echo '</li>';
+				}
+			} elseif (is_page()) {
+				if($post->post_parent){
+					$newsstream_act = get_post_ancestors( $post->ID );
+					$title = get_the_title();
+					foreach ( $newsstream_act as $newsstream_inherit ) {
+						$output = '<li><a href="'.get_permalink($newsstream_inherit).'" title="'.get_the_title($newsstream_inherit).'">'.get_the_title($newsstream_inherit).'</a></li> <li class="separator">/</li>';
+					}
+					echo $output;
+					echo '<strong title="'.$title.'"> '.$title.'</strong>';
+				} else {
+					echo '<li><strong> '.get_the_title().'</strong></li>';
+				}
+			}
+		}
+		echo '</ul>';
+	}
 }
-
 //=================================start BootstrapNavMenuWalker================================================================================
 
 class wpnewsstreamNavMenuWalker extends Walker_Nav_Menu {
@@ -608,7 +638,7 @@ class wpnewsstreamNavMenuWalker extends Walker_Nav_Menu {
 	}
 	
 
-	$classes[] = isset($args->has_children) ? 'dropdown' : '';
+	$classes[] = ($args->has_children) ? 'dropdown' : '';
 	$classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
 	$classes[] = 'menu-item-' . $item->ID;
 
@@ -625,7 +655,7 @@ class wpnewsstreamNavMenuWalker extends Walker_Nav_Menu {
 	$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
 	$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
 	$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
-	$attributes .= isset($args->has_children) ? ' class="dropdown-toggle"  ' : '';
+	$attributes .= ($args->has_children) ? ' class="dropdown-toggle"  ' : '';
 	$item_output = $args->before;
 	$item_output .= '<a'. $attributes .'>';
 	$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -693,8 +723,9 @@ call_user_func_array(array(&$this, 'end_el'), $cb_args);
 
 // Register 'newsstream Recent Posts' widget
 add_action( 'widgets_init', 'init_wp_newsstream_recent_posts' );
-function init_wp_newsstream_recent_posts() { return register_widget('wp_newsstream_recent_posts'); }
-
+if ( ! function_exists( 'init_wp_newsstream_recent_posts' ) ) {
+	function init_wp_newsstream_recent_posts() { return register_widget('wp_newsstream_recent_posts'); }
+}
 class wp_newsstream_recent_posts extends WP_Widget {
 	/** constructor */
 	function wp_newsstream_recent_posts() {

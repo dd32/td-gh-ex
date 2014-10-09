@@ -15,7 +15,7 @@
                                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 									query_posts($query_string .'&posts_per_page=10&paged=' . $paged);
                                 ?>
-                         	<div id="page-heading"><h1 class="post_title">Search Results For: <?php the_search_query(); ?></h1></div>
+                         	<div id="page-heading"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-newsstream' ); ?><?php the_search_query(); ?></h1></div>
                             <div id="post" class="row">                                    
 
                                 <?php if (have_posts()) : ?>
