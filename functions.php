@@ -2,7 +2,6 @@
 
 /*==================================== THEME SETUP ====================================*/
 
-
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'rubine_setup' );
 
@@ -54,9 +53,6 @@ add_action('wp_enqueue_scripts', 'rubine_enqueue_scripts');
 
 function rubine_enqueue_scripts() {
 
-	// Get Theme Options from Database
-	$theme_options = rubine_theme_options();
-	
 	// Register and Enqueue Stylesheet
 	wp_enqueue_style('rubine-lite-stylesheet', get_stylesheet_uri());
 	
@@ -172,7 +168,7 @@ function rubine_credit_link() {
 	
 	printf(__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
 			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'rubine-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'rubine-lite', 'rubine-lite' ) )
+			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'Rubine Theme', 'rubine-lite' ) )
 		);
 
 }

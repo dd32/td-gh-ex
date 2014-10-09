@@ -2,6 +2,13 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+[added] new customizer panel for theme options
+[moved] all theme settings and sections to the new panel
+[fixed] styling of search field for Safari
+[added] option to display social icons on footer line
+
 Version 1.0.1
 -----------------------------------
 [fixed] set content_width in theme setup function

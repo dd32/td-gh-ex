@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.0.1
+Version: 1.0.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -926,6 +926,7 @@ embed, iframe, object, video {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	-webkit-appearance: none;
 }
 .search-form .search-submit {
 	position: absolute;
@@ -1057,6 +1058,25 @@ embed, iframe, object, video {
 /* Header Social Icons */
 #header-social-icons {
 	float: right;
+}
+
+/* Footer Social Icons */
+#footer-social-icons {
+	float: right;
+}
+#footer-social-icons .social-icons-menu li {
+	margin: 0;
+}
+#footer-social-icons .social-icons-menu li a {
+	padding: 0.9em;
+	background: none;
+}
+#footer-social-icons .social-icons-menu li a:before {
+	color: #eee;
+	font-size: 16px;
+}
+#footer-social-icons .social-icons-menu li a:hover {
+	background: rgba(0,0,0,0.2);
 }
 
 
@@ -1674,6 +1694,15 @@ embed, iframe, object, video {
 	}
 	.post-title .subtitle {
 		font-size: 0.6em;
+	}
+	#footer-social-icons {
+		float: none;
+		text-align: center;
+	}
+	#footer-social-icons .social-icons-menu li {
+		float: none;
+		display: inline-block;
+		margin: 0 -2px 2px 0;
 	}
 	#footer #credit-link {
 		float: none;

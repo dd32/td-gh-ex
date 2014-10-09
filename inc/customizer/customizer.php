@@ -7,15 +7,30 @@
 // Load Customizer Helper Functions
 require( get_template_directory() . '/inc/customizer/customizer-functions.php' );
 
+// Load Customizer Settings
+require( get_template_directory() . '/inc/customizer/customizer-header.php' );
+require( get_template_directory() . '/inc/customizer/customizer-upgrade.php' );
+
+
 // Add Theme Options section to Customizer
 add_action( 'customize_register', 'rubine_customize_register_options' );
 
 function rubine_customize_register_options( $wp_customize ) {
 
+	// Add Theme Options Panel
+	$wp_customize->add_panel( 'rubine_options_panel', array(
+		'priority'       => 180,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title'          => __( 'Theme Options', 'rubine-lite' ),
+		'description'    => '',
+	) );
+
 	// Add Section for Theme Options
-	$wp_customize->add_section( 'rubine_section_options', array(
-        'title'    => __( 'Theme Options', 'rubine-lite' ),
-        'priority' => 180
+	$wp_customize->add_section( 'rubine_section_general', array(
+        'title'    => __( 'General Settings', 'rubine-lite' ),
+        'priority' => 10,
+		'panel' => 'rubine_options_panel' 
 		)
 	);
 	
@@ -29,7 +44,7 @@ function rubine_customize_register_options( $wp_customize ) {
 	);
     $wp_customize->add_control( 'rubine_control_layout', array(
         'label'    => __( 'Theme Layout', 'rubine-lite' ),
-        'section'  => 'rubine_section_options',
+        'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[layout]',
         'type'     => 'radio',
 		'priority' => 1,
@@ -40,53 +55,37 @@ function rubine_customize_register_options( $wp_customize ) {
 		)
 	);
 
-	// Add Header Content Header
-	$wp_customize->add_setting( 'rubine_theme_options[header_content]', array(
+	// Add Footer Content Header
+	$wp_customize->add_setting( 'rubine_theme_options[footer_content]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         )
     );
-    $wp_customize->add_control( new Rubine_Lite_Customize_Header_Control(
-        $wp_customize, 'rubine_control_header_content', array(
-            'label' => __( 'Header Content', 'rubine-lite' ),
-            'section' => 'rubine_section_options',
-            'settings' => 'rubine_theme_options[header_content]',
-            'priority' => 	3
+    $wp_customize->add_control( new Rubine_Customize_Header_Control(
+        $wp_customize, 'rubine_control_footer_content', array(
+            'label' => __( 'Footer Content', 'rubine-lite' ),
+            'section' => 'rubine_section_general',
+            'settings' => 'rubine_theme_options[footer_content]',
+            'priority' => 2
             )
         )
     );
 
-	// Add Settings and Controls for Header
-	$wp_customize->add_setting( 'rubine_theme_options[header_search]', array(
+	// Add Footer Settings
+	$wp_customize->add_setting( 'rubine_theme_options[footer_icons]', array(
         'default'           => false,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'rubine_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'rubine_control_header_search', array(
-        'label'    => __( 'Display search field on header area', 'rubine-lite' ),
-        'section'  => 'rubine_section_options',
-        'settings' => 'rubine_theme_options[header_search]',
+    $wp_customize->add_control( 'rubine_control_footer_icons', array(
+        'label'    => __( 'Display Social Icons in footer line.', 'rubine-lite' ),
+        'section'  => 'rubine_section_general',
+        'settings' => 'rubine_theme_options[footer_icons]',
         'type'     => 'checkbox',
-		'priority' => 4
-		)
-	);
-
-	$wp_customize->add_setting( 'rubine_theme_options[header_icons]', array(
-        'default'           => false,
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'rubine_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control( 'rubine_control_header_icons', array(
-        'label'    => __( 'Display Social Icons on header area', 'rubine-lite' ),
-        'section'  => 'rubine_section_options',
-        'settings' => 'rubine_theme_options[header_icons]',
-        'type'     => 'checkbox',
-		'priority' => 5
+		'priority' => 3
 		)
 	);
 	
@@ -97,6 +96,10 @@ function rubine_customize_register_options( $wp_customize ) {
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = 'Background';
+	
+	// Change Featured Content Section
+	$wp_customize->get_section( 'featured_content'  )->panel = 'rubine_options_panel';
+	$wp_customize->get_section( 'featured_content'  )->priority = 30;
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'rubine_theme_options[header_tagline]', array(
@@ -122,6 +125,15 @@ add_action( 'customize_preview_init', 'rubine_customize_preview_js' );
 
 function rubine_customize_preview_js() {
 	wp_enqueue_script( 'rubine-lite-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140312', true );
+}
+
+
+// Embed CSS styles for Theme Customizer
+add_action( 'customize_controls_print_styles', 'rubine_customize_preview_css' );
+
+function rubine_customize_preview_css() {
+	wp_enqueue_style( 'rubine-lite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
+
 }
 
 
