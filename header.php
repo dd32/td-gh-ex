@@ -23,7 +23,7 @@
     <!-- Theme Css -->
     <?php $current_options=get_option('quality_options'); ?>
     <?php if($current_options['upload_image_favicon']!=''){ ?>
-    <link rel="shortcut icon" href="<?php  echo $current_options['upload_image_favicon']; ?>" />
+    <link rel="shortcut icon" href="<?php  echo esc_url($current_options['upload_image_favicon']); ?>" />
     <?php } ?>
     <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
     <?php wp_head(); ?>

@@ -112,6 +112,7 @@ Quality WordPress Theme bundles the following third-party resources:
 
 JavaScripts		
 		1. Bootstrap.min.js => https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip
+                   Code and documentation copyright 2011-2014 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 		
 	Images
 		1. Static Home Feature Image => https://unsplash.com/photos/X1g8f20v97I/download
@@ -120,6 +121,7 @@ JavaScripts
 		   
 CSS Tooltips by Adam Whitcroft
 https://github.com/AdamWhitcroft/CSS.Tooltips
+Licensed under â˜º License.
 ----------------------------------------------------------------------			
 
 
@@ -129,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@verison 1.0.6.4
+1. copyright attribution corrected
+2. Escaped favicon url.
 @version 1.0.6.3
 1. css in footer passed through html special chars funcitons
 2. esc url called wherever required.

@@ -11,7 +11,7 @@
 				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
-				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
+				$current_options['upload_image_favicon']=esc_url_raw($_POST['upload_image_favicon']);
 				$current_options['quality_custom_css'] =$_POST['quality_custom_css'];
 				$current_options['front_page']=$_POST['front_page'];
 				if($_POST['text_title'])
