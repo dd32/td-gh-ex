@@ -1,6 +1,14 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.4.4
+Version : 1.4.5
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+October 10 2014 - 1.4.5
+===========================================================
+- Disabled all post formats with additional meta fields, as required
+- Updated documentation
+- Added option to turn off sidebar top boxes
+- Fixed gallery format post slider, downgraded to flexslider 2.1 instead of 2.2
+- Re-fixed responsive Jetpack embeds
 
 September 18 2014 - 1.4.4
 ===========================================================
