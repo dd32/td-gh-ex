@@ -11,11 +11,11 @@ get_header();
         
         <?php $besty_options = get_option( 'besty_theme_options' );
 		
-		echo (!empty($besty_options['welcome-title']) ? '<h2>'.$besty_options['welcome-title'].'</h2>' : '');
+		echo (!empty($besty_options['welcome-title']) ? '<h2>'.esc_attr($besty_options['welcome-title']).'</h2>' : '');
 		
-		echo (!empty($besty_options['welcome-img']) ? '<img src="'.$besty_options['welcome-img'] .'" class="img-responsive" alt="'.$besty_options['welcome-title'].'" />' : '');
+		echo (!empty($besty_options['welcome-img']) ? '<img src="'.esc_url($besty_options['welcome-img']).'" class="img-responsive" alt="'.$besty_options['welcome-title'].'" />' : '');
 		echo (!empty($besty_options['welcome_details']) ? apply_filters('the_content', $besty_options['welcome_details']) : '');
-		
+
 		?>
         </div>
 	</div>

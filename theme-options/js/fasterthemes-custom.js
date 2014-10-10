@@ -1,14 +1,15 @@
 /**
- * 
+ * Prints out the inline javascript needed for the colorpicker and choosing
  * the tabs in the panel.
  */
+
 jQuery(document).ready(function($) {
 	$('.remove-image').click(function(e) {
         $('#logo').val('');
     });
 	
 	// Fade out the save message
-	$('.fade').delay(1000).fadeOut(1000);	
+	$('.fade').delay(1000).fadeOut(1000);
 	
 	// Switches option sections
 	$('.group').hide();
@@ -77,14 +78,54 @@ jQuery(document).ready(function($) {
            					
 		}
 	}
-	
-	// Image Options
-	$('.of-radio-img-img').click(function(){
-		$(this).parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
-		$(this).addClass('of-radio-img-selected');		
-	});
 		
-	$('.of-radio-img-label').hide();
-	$('.of-radio-img-img').show();
-	$('.of-radio-img-radio').hide();
+	(function($) {
+		var allPanels = $('.faster-inner-tabs .faster-inner-tab-group').hide();
+		$('.faster-inner-tabs .faster-inner-tab-group.active').show();
+		var allPanelsThis = $('.faster-inner-tabs .faster-inner-tab');
+		
+		$('.faster-inner-tabs .faster-inner-tab').click(function() {
+			$this = $(this);
+			$targetThis =  $this;
+			$target =  $this.next();
+			
+		if(!$target.hasClass('active')){			
+			allPanels.removeClass('active').slideUp();
+			allPanelsThis.removeClass('active');
+			$target.addClass('active').slideDown();
+			$targetThis.addClass('active');
+		}		
+		return false;
+		});
+	})(jQuery);
+	//callback handler for form submit
+jQuery("#form-option").submit(function(e)
+{
+	var postData = jQuery(this).serializeArray();
+	var formURL = jQuery(this).attr("action");
+	jQuery.ajax(
+	{
+		url : formURL,
+		type: "POST",
+		data : postData,
+		async:false,
+		success:function(data, textStatus, jqXHR)
+		{
+		//data: return data from server
+		jQuery('.save-options').fadeIn();
+		setTimeout(function () {
+            jQuery('.save-options').fadeOut();
+        }, 1500);
+	},
+	error: function(jqXHR, textStatus, errorThrown)
+		{
+		//if fails
+		}
+	});
+	
+	e.preventDefault(); //STOP default action
+	});
+	
+	jQuery("#ajaxform").submit(); //Submit the FORM
 });	
+

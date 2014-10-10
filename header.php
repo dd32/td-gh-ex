@@ -20,7 +20,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php if(!empty($besty_options['favicon'])) {?>
-    <link rel="shortcut icon" href="<?php echo $besty_options['favicon'];?>">
+    <link rel="shortcut icon" href="<?php echo esc_url($besty_options['favicon']); ?>">
     <?php } ?>
     <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
@@ -34,11 +34,11 @@
         	<?php if(empty($besty_options['logo'])) { ?>
         		<h1 class="besty-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
             <?php } else { ?>
-        		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo $besty_options['logo']; ?>" alt="" class="logo-center" /></a>
+        		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo esc_url($besty_options['logo']); ?>" alt="" class="logo-center" /></a>
             <?php }
 			if(!empty($besty_options['tagline']))
 			{
-				printf( '<h1>%1$s</h1>',$besty_options['tagline']);
+				printf( '<h1>%1$s</h1>',esc_attr($besty_options['tagline']));
 			}
             ?>            
         </div>
@@ -83,22 +83,22 @@
         	<ul class="social">
             <?php
 			if(!empty($besty_options['fburl'])) {?>
-            	<li><a href="<?php echo $besty_options['fburl'];?>" data-toggle="tooltip" class="sprite icon-facebook besty-tooltip" data-original-title="Facebook"></a></li>
+            	<li><a href="<?php echo esc_url($besty_options['fburl']);?>" data-toggle="tooltip" class="sprite icon-facebook besty-tooltip" data-original-title="Facebook"></a></li>
             <?php }
 			if(!empty($besty_options['twitter'])) {?>
-                <li><a href="<?php echo $besty_options['twitter'];?>" data-toggle="tooltip" class="sprite icon-twitter besty-tooltip" data-original-title="Twitter"></a></li>
+                <li><a href="<?php echo esc_url($besty_options['twitter']); ?>" data-toggle="tooltip" class="sprite icon-twitter besty-tooltip" data-original-title="Twitter"></a></li>
            	<?php }
 			if(!empty($besty_options['googleplus'])) {?>
-                <li><a href="<?php echo $besty_options['googleplus'];?>" data-toggle="tooltip" class="sprite icon-google besty-tooltip" data-original-title="Google Plus"></a></li>
+                <li><a href="<?php echo esc_url($besty_options['googleplus']); ?>" data-toggle="tooltip" class="sprite icon-google besty-tooltip" data-original-title="Google Plus"></a></li>
            	<?php }
 			if(!empty($besty_options['linkedin'])) {?>
-                <li><a href="<?php echo $besty_options['linkedin'];?>" data-toggle="tooltip" class="sprite icon-linkedin besty-tooltip" data-original-title="Linkedin"></a></li>
+                <li><a href="<?php echo esc_url($besty_options['linkedin']);?>" data-toggle="tooltip" class="sprite icon-linkedin besty-tooltip" data-original-title="Linkedin"></a></li>
             <?php }?>
 			</ul>
             <div class="copyright"><?php 
 			if(!empty($besty_options['footertext'])) {
-				echo $besty_options['footertext'];
-			} echo '<br /><a href="http://fasterthemes.com/wordpress-themes/Besty" target="_blank">Besty</a> powered by WordPress.';
+				echo esc_attr($besty_options['footertext']);
+			} echo '<br />Powered by <a target="_blank" href="http://wordpress.org">WordPress</a> and <a target="_blank" href="http://fasterthemes.com/wordpress-themes/besty" target="_blank">Besty</a>.';
 				?>
                 
             
