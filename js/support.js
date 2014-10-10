@@ -86,12 +86,16 @@ jQuery(document).ready(function () {
 
 });
 
- jQuery(window).scroll(function(){
+ /*jQuery(window).scroll(function(){
     var sticky =  jQuery('.header'),
         scroll =  jQuery(window).scrollTop();
 
-    if (scroll >= 61) sticky.addClass('fixed');
+    if (scroll >= 120) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
+});*/
+jQuery("header").before(jQuery("header").clone().addClass("fixed"));
+jQuery(window).on("scroll", function () {
+    jQuery("body").toggleClass("down", (jQuery(window).scrollTop() > 160));
 });
 
 // clear cf7 error msg on mouseover

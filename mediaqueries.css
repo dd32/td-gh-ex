@@ -206,6 +206,14 @@
         height: 100px;
     }
 
+    .fixed.header .wrap .logo{
+        display: none;
+    }
+
+    .header .main-menu, .header .menu{
+        float: left;
+    }
+
 }
 @media only screen and (max-width: 620px) {
     .contacts-box .left {
@@ -260,8 +268,8 @@
     .right-part{ width: 100%;}
     .left-part{ width: 100%;}
     .header .wrap .logo {
-        left: 50%;
-        margin: 10px 0 0 -90px;
+        left: 0%;
+        margin: 10px 0 0 0px;
     }
 
     .header-wrap{
@@ -295,6 +303,11 @@
     .contact-us{
         height: 25px;
     }
+
+    .contact-us li{
+        margin-bottom: 7px;
+    }
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -315,15 +328,15 @@
     .welcome-box .wrap .content img{
         margin: 0;
     }
-    .header .wrap .logo {
-        left: 50%;
-        margin: 10px 0 0 -100px;
-    }
+
 
     .news.infos .box-news{
+        border-right: 0 none;
+        margin-left: 7%;
+        margin-right: 7%;
         width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 15px;
     }
 
     .news .post25 {
@@ -338,6 +351,20 @@
 
     .soc{
         float: left;
+    }
+
+    .soc-cover{
+        float: left;
+        left: 50%;
+        margin-left: -85px;
+        padding-top: 0;
+        position: relative;
+    }
+
+    .contact-us li {
+        float: left;
+        margin-right: 5%;
+        width: 38%;
     }
 }
 @media only screen and (max-width: 320px) {

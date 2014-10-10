@@ -36,14 +36,16 @@
 <div class="social">
     <div class="wrap">
         <ul class="contact-us">
-            <li><span class="phone">+1 234 567 987</span></li>
-            <li><a href="mailto:ivan.zavalin@gmail.com" class="mail">support@gmail.com</a></li>
+            <?php if ( of_get_option('tell') ) { ?><li><span class="phone"><?php echo of_get_option('tell'); ?></span></li><?php } ?>
+            <?php if ( of_get_option('email') ) { ?><li><a href="mailto:<?php echo of_get_option('email'); ?>" class="mail"><?php echo of_get_option('email'); ?></a></li><?php } ?>
         </ul>
         <div class="search-field"> <?php get_search_form(); ?></div>
-        <a href="" target="_blank" class="soc linkedin">Linkedin</a>
-        <a href="" target="_blank" class="soc google">Google+</a>
-        <a href="" target="_blank" class="soc twitter">Twitter</a>
-        <a href="" target="_blank" class="soc facebook">Facebook</a>
+        <div class="soc-cover">
+            <?php if ( of_get_option('soc4') ) { ?><a href="<?php echo of_get_option('soc4'); ?>" target="_blank" class="soc linkedin">Linkedin</a><?php } ?>
+            <?php if ( of_get_option('soc3') ) { ?><a href="<?php echo of_get_option('soc3'); ?>" target="_blank" class="soc google">Google+</a><?php } ?>
+            <?php if ( of_get_option('soc2') ) { ?><a href="<?php echo of_get_option('soc2'); ?>" target="_blank" class="soc twitter">Twitter</a><?php } ?>
+            <?php if ( of_get_option('soc1') ) { ?><a href="<?php echo of_get_option('soc1'); ?>" target="_blank" class="soc facebook">Facebook</a><?php } ?>
+        </div>
 
     </div>
 </div>

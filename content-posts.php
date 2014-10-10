@@ -19,7 +19,6 @@
                 } ?></a></h2>
 
         <div class="share_block">
-            <span class="posted"><?php _e('Posted on', 'avrora'); ?>: </span> &nbsp; | &nbsp;
             <span><?php _e('Categories:', 'avrora'); ?></span> <?php the_category(', '); ?>&nbsp; | &nbsp;
             <?php echo get_the_tag_list('<span>Tags: </span>', ', '); ?>
         </div>
@@ -34,5 +33,6 @@
             </div>
 
         </div>
+
     </div>
 </article>

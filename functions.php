@@ -8,11 +8,10 @@ if (!function_exists('optionsframework_init')) {
 if (!function_exists('avrora_setup')) :
     function avrora_setup()
     {
-        global $content_width;
-        if (!isset($content_width)) {
-            $content_width = 1014;
+        if ( is_page_template( 'page.php' ) || is_attachment()) {
+            global $content_width;
+            $content_width = 940;
         }
-        load_theme_textdomain( 'booster', get_template_directory() . '/languages' );
         register_nav_menu('primary', __('Top Menu', "avrora"));
         add_theme_support('automatic-feed-links');
         add_theme_support('post-thumbnails');
@@ -29,17 +28,17 @@ endif;
 add_action('after_setup_theme', 'avrora_setup');
 
 if ( ! function_exists( 'avrora_paginate_page' ) ) :
-    function indigos_paginate_page() {
+    function avrora_paginate_page() {
         wp_link_pages( array( 'before' => '<div class="pagination">', 'after' => '</div><div class="clear"></div>', 'link_before' => '<span class="current_pag">','link_after' => '</span>' ) );
     }
 endif;
 
 function avrora_load_fonts()
 {
-    wp_register_style('oswald', 'http://fonts.googleapis.com/css?family=Oswald:300,400,700');
+    wp_register_style('oswald', '//fonts.googleapis.com/css?family=Oswald:300,400,700');
     wp_enqueue_style('oswald');
 
-    wp_register_style('lato', 'http://fonts.googleapis.com/css?family=Oswaldo');
+    wp_register_style('lato', '//fonts.googleapis.com/css?family=Oswaldo');
     wp_enqueue_style('lato');
 }
 
@@ -133,7 +132,7 @@ add_action('widgets_init', 'avrora_widgets_init');
 if (!function_exists('avrora_credits')) :
     function avrora_credits()
     {
-        $text = 'Theme created by <a href="' . esc_url('http://www.wpmodern.com/') . '">WPModern</a>. Powered by <a href="' . esc_url('http://wordpress.org/') . '">WordPress.org</a>';
+        $text = 'Theme created by <a href="' . esc_url('http://wpmodern.com/') . '">WPModern</a>. Powered by <a href="' . esc_url('http://wordpress.org/') . '">WordPress.org</a>';
         echo apply_filters('avrora_credits_text', $text);
     }
 endif;

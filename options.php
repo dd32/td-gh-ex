@@ -72,6 +72,42 @@ function optionsframework_options() {
         'type' => 'upload');
 
     $options[] = array(
+        'name' => __('Tell. Number', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'tell',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Email', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'email',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Facebook', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'soc1',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Twitter', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'soc2',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Google', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'soc3',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Linkedin', 'options_framework_theme'),
+        'desc' => __('', 'options_framework_theme'),
+        'id' => 'soc4',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Home Page', 'options_framework_theme'),
         'type' => 'heading');
 

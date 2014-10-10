@@ -4,10 +4,12 @@ Author: Ivan Zavalin
 Theme URI: http://wpmodern.com/all-themes/avrora-responsive-wordpress-theme
 Author URI: http://www.wpmodern.com
 Description: Avrora is a fully responsive WordPress theme. This WordPress Theme can easily adapts on your mobile and desktop or any other device. Avrora is SEO Optimize and works with all popular plugins. Theme have very good options panel.
-Version: 1.3
+Version: 1.4
 Tags: red, gray, white, light, one-column, two-columns, right-sidebar, responsive-layout, fixed-layout, custom-menu, custom-background,  featured-images, full-width-template, theme-options, threaded-comments
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Avrora WordPress Theme, Copyright 2014 wpmodern.com
+Avrora WordPress Theme is distributed under the terms of the GNU GPL
 */
 
 * {
@@ -124,10 +126,10 @@ body {
     margin-right: 20px;
 }
 
-.contact-us li span, .contact-us li a {
+.contact-us li span, .contact-us li a.mail {
     padding-left: 24px;
     float: left;
-    color: #fff;
+    color: #fff !important;
     height: 14px;
     line-height: 14px;
 }
@@ -136,8 +138,13 @@ body {
     background: url("img/phone.png") no-repeat;
 }
 
+.contact-us .phone a{
+    color: #fff;
+}
+
 .contact-us .mail {
     background: url("img/letter.png") no-repeat;
+    color: #fff !important;
 }
 
 .social {
@@ -184,16 +191,33 @@ body {
 }
 
 .fixed {
-    position: fixed;
-    top: 0;
+    position:fixed;
+    top:-60px;
     left: 0;
-    width: 100%;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    right: 0;
+    z-index:999;
     background: url("img/header-bg.png");
     z-index: 10;
+}
+
+/*header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #000;
+    color: #fff;
+}*/
+header.fixed {
+    position:fixed;
+    top:-160px;
+    left: 0;
+    right: 0;
+    z-index:999;
+    transition:0.4s top cubic-bezier(.3, .73, .3, .74);
+}
+body.down header.fixed {
+    top:0;
 }
 
 .fixed .header-wrap {
@@ -473,7 +497,7 @@ body {
     width: 30%;
 }
 
-.sing-post, article.post {
+.sing-post, article.post, .sing-post, article.page {
     float: left;
     width: 100%;
     margin: 20px 0px;
@@ -647,23 +671,24 @@ h2.post-titles, h2.post-titles a {
 }
 
 .content blockquote {
+    background: none repeat scroll 0 0 #ececec;
+    border-left: 5px solid #f96e5b;
     float: left;
-    padding: 10px 5%;
-    width: 90%;
-    border-right: 1px solid #f96e5b;
     margin-bottom: 15px;
+    padding: 10px 4.5%;
+    width: 90%;
 }
 
 table {
-    border-left: 1px solid #BFD6E4;
-    border-top: 1px solid #BFD6E4;
+    border-left: 1px solid #f96e5b;
+    border-top: 1px solid #f96e5b;
     margin-bottom: 15px;
     width: 99.5%;
 }
 
 table td, table th {
-    border-right: 1px solid #BFD6E4;
-    border-bottom: 1px solid #BFD6E4;
+    border-right: 1px solid #f96e5b;
+    border-bottom: 1px solid #f96e5b;
     padding: 5px;
 }
 
@@ -722,7 +747,7 @@ pre {
 }
 
 .sticky {
-    background-color: #FFFFFF;
+    background-color: #dfdfdf;
     padding: 18px !important;
 }
 
@@ -733,6 +758,14 @@ pre {
 .content .post ul, .content .post dl, .post-cont ul, .post-cont dl {
     margin-bottom: 15px;
     list-style: disc inside none;
+}
+
+.meta{
+    float: left;
+    width: 100%;
+    margin-top: -20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
 }
 
 .post-right {
@@ -932,6 +965,19 @@ ul.commentlist, ul.commentlist .children, .post-cont .children {
     padding: 10px 3%;
     width: 27%;
     text-align: center;
+}
+
+a.read-full{
+    font-weight: bold;
+    position: relative;
+    float: left;
+    width: 70px;
+    background: #f96e5b;
+    color: #fff;
+    padding: 5px 10px;
+    left: 50%;
+    margin-left: -35px;
+    margin-top: 7px;
 }
 
 .news .post25 {
