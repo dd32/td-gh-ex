@@ -1,3 +1,7 @@
+= Version 1.2 =
+Change the globle js path in theme customizer.
+
+
 = Version 1.1 =
 1.Issues with Comment section resolved.
 2.Image path removed form the Calendar widget css.
