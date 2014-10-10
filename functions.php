@@ -136,12 +136,14 @@ function besty_widgets_init() {
 }
 add_action( 'widgets_init', 'besty_widgets_init' );
 /*** Enqueue css and js files ***/
-require_once('functions/enqueue-files.php');
+require get_template_directory() . '/functions/enqueue-files.php';
 /*** Theme Default Setup ***/
-require_once('functions/theme-default-setup.php');
+require get_template_directory() . '/functions/theme-default-setup.php';
 /*** Latest Posts Widgets ***/
-require_once('functions/besty-latest-posts.php');
+require get_template_directory() . '/functions/besty-latest-posts.php';
 /*** Theme Option ***/
-require_once('theme-option/fasterthemes.php');
+require get_template_directory() . '/theme-options/fasterthemes.php';
 /*** Custom Header ***/
-require_once('functions/custom-header.php');
+require get_template_directory() . '/functions/custom-header.php';
+/*** TGM ***/
+require get_template_directory() . '/functions/tgm-plugins.php';

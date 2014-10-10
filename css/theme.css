@@ -359,7 +359,7 @@ img{
 	display: inline-block;
     font-size: 14px;
     list-style: none outside none;
-    padding: 7px 0;
+    padding: 8px 0px 0px;
     width: 100%;
 }
 .besty-widget ul.children,
@@ -487,17 +487,15 @@ img{
 	float:left;
 	margin-top:35px;
 	margin-right:15px;
+	width:40px;
 }
 .besty-comments .comment-author img{
 	border:4px solid #FFF;
 	width:40px;
 }
 .besty-comments .comment-content{
-	width:92%;
+	width:calc(100% - 55px);
 	float:left;
-}
-.besty-comments .children .comment-content{
-	width:91%;
 }
 .besty-comments .comment-metadata span{
 	color:#fafafa;

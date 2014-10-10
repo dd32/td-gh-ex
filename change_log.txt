@@ -3,3 +3,10 @@ i) Theme submitted to WordPress.org
 
 Version: 1.0.1 (02nd Sept 2014)
 i) Theme URI Changes
+
+Version: 1.2 (10 oct 2014)
+i) Enqueue Scripts and Styles properly.
+ii) Solve screen_icon() error.
+iii) Set new theme options and set sanitization.
+iv) set require file using get_template_directory.
+v) Set Pagination using tgm and mention license in readme.txt

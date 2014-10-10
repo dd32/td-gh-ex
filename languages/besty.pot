@@ -1,11 +1,11 @@
 # Copyright (C) 2014 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
+# This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Besty 1.0\n"
+"Project-Id-Version: Besty 1.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2014-08-13 22:06:45+00:00\n"
-"MIME-Version: 1.0\n"
+"MIME-Version: 1.2\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
