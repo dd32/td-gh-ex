@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DarkElements v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-10-05 20:18:08+0000\n"
+"Last-Translator: Guido van der Leest\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:9
+#: search.php:37
+#@ darkelements
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: 404.php:10
+#: archive.php:48
+#: index.php:39
+#: search.php:38
+#@ darkelements
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sorry, er zijn helaas geen berichten gevonden."
+
+#: archive.php:12
+#@ darkelements
+msgid "Archive"
+msgstr "Archief"
+
+#: archive.php:14
+#@ darkelements
+msgid "Daily Archives"
+msgstr "Dag Archieven"
+
+#: archive.php:16
+#@ darkelements
+msgid "Monthly Archives"
+msgstr "Maand Archieven"
+
+#: archive.php:18
+#@ darkelements
+msgid "Yearly Archives"
+msgstr "Jaar Archieven"
+
+#: archive.php:20
+#@ darkelements
+msgid "Author Archives"
+msgstr "Auteur Archieven"
+
+#: archive.php:22
+#@ darkelements
+msgid "Tag Archives"
+msgstr "Tag Archieven"
+
+#: archive.php:52
+#: index.php:43
+#: search.php:44
+#@ darkelements
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:53
+#: index.php:44
+#: search.php:45
+#@ darkelements
+msgid "Newer posts &raquo;"
+msgstr "Nieuwere berichten &raquo;"
+
+#: functions.php:108
+#@ darkelements
+msgid "Primary Sidebar"
+msgstr "Hoofd Sidebar"
+
+#: functions.php:110
+#: functions.php:120
+#: functions.php:130
+#: functions.php:140
+#@ darkelements
+msgid "Select widgets from the right-hand side."
+msgstr "Selecteer widgets van de rechterkant."
+
+#: archive.php:44
+#: index.php:35
+#: search.php:32
+#@ darkelements
+msgid "Read More &raquo;"
+msgstr "Lees Meer &raquo;"
+
+#: functions.php:40
+#@ darkelements
+msgid "Boats"
+msgstr "Boten"
+
+#: index.php:14
+#@ darkelements
+msgid "Featured post"
+msgstr "Aanbevolen bericht"
+
+#: page.php:24
+#: single.php:38
+#@ darkelements
+msgid "Edit"
+msgstr "Bewerk"
+
+#: search.php:11
+#, php-format
+#@ darkelements
+msgid "Search Results for: %s"
+msgstr "Zoekresultaat voor: %s"
+
+#: comments.php:38
+#@ darkelements
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Oudere Reacties"
+
+#: comments.php:39
+#@ darkelements
+msgid "Newer Comments &raquo;"
+msgstr "Nieuwere Reacties &raquo;"
+
+#: comments.php:45
+#@ darkelements
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
+
+#: functions.php:118
+#@ darkelements
+msgid "Footer Sidebar Right"
+msgstr "Footer Sidebar Rechts"
+
+#: functions.php:138
+#@ darkelements
+msgid "Footer Sidebar Left"
+msgstr "Footer Sidebar Links"
+
+#: functions.php:19
+#@ darkelements
+msgid "Primary Navigation"
+msgstr "Hoofdmenu"
+
+#: comments.php:18
+#, php-format
+#@ darkelements
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
+
+#: functions.php:168
+#: functions.php:174
+#@ darkelements
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:170
+#@ darkelements
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: archive.php:35
+#: index.php:26
+#: search.php:23
+#: single.php:20
+#@ darkelements
+msgid "Leave a response"
+msgstr "Plaats een reactie"
+
+#: archive.php:35
+#: index.php:26
+#: search.php:23
+#: single.php:20
+#@ darkelements
+msgid "% responses"
+msgstr "% reacties"
+
+#: archive.php:35
+#: index.php:26
+#: search.php:23
+#: single.php:20
+#@ darkelements
+msgid "1 response"
+msgstr "1 reactie"
+
+#: footer.php:46
+#@ darkelements
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:47
+#@ darkelements
+msgid "WordPress Blog Platform"
+msgstr "WordPress Blog Platform"
+
+#: footer.php:47
+#@ darkelements
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:17
+#, php-format
+#@ darkelements
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: archive.php:33
+#: index.php:24
+#: search.php:21
+#: single.php:18
+#, php-format
+#@ darkelements
+msgid "By %s"
+msgstr "Door %s"
+
+#: single.php:27
+#: single.php:28
+#@ darkelements
+msgid ", "
+msgstr ", "
+
+#: single.php:27
+#, php-format
+#@ darkelements
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: single.php:28
+#, php-format
+#@ darkelements
+msgid "Tags: %s"
+msgstr "Tags %s"
+
+#: archive.php:28
+#: index.php:19
+#: search.php:16
+#, php-format
+#@ darkelements
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: functions.php:128
+#@ darkelements
+msgid "Footer Sidebar Middle"
+msgstr "Footer Sidebar Midden"
+
+#: header.php:42
+#@ darkelements
+msgid "Navigation"
+msgstr "Navigatie"
+
