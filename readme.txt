@@ -5,6 +5,14 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.3 [11/10/14]
+1.	Top Menu Implementation.
+2.	Woo-commerce Ready.
+3.	Full-Width Page.
+4.	Telephone Icon Issue Fixed.
+5. 	Search URL issue Fixed.
+6.  Admin side Image Added.
+
 @Version: 1.2 [05/10/14]
 1. Sane Default Concept added.
 @Version: 1.1 [27/09/14]

@@ -45,8 +45,8 @@
 				<div class="col-md-6 col-sm-12">
 				<?php if($wl_theme_options['email_id'] || $wl_theme_options['phone_no'] !='') { ?>
 				<ul class="head-contact-info">
-						<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $wl_theme_options['email_id']; ?>"><?php echo $wl_theme_options['email_id']; ?></a></li>
-						<li><i class="fa fa-phone"></i><?php echo $wl_theme_options['phone_no']; ?></li>				
+						<?php if($wl_theme_options['email_id'] !='') { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $wl_theme_options['email_id']; ?>"><?php echo $wl_theme_options['email_id']; ?></a></li><?php } ?>
+						<?php if($wl_theme_options['phone_no'] !='') { ?><li><i class="fa fa-phone"></i><?php echo $wl_theme_options['phone_no']; ?></li><?php } ?>
 				</ul>
 				<?php } ?>
 					<ul class="social">
@@ -80,8 +80,7 @@
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>
 					</button>
-				</div>				
-				
+				</div>
 				<?php wp_nav_menu( array(
 	            'menu'              => 'primary',
 	            'theme_location'    => 'primary',               
@@ -92,7 +91,6 @@
 				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 				'walker'            => new wp_bootstrap_navwalker())
 				); ?>
-				
 			</nav>
 		</div>
 	</div>

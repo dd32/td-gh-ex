@@ -4,7 +4,7 @@ $wl_theme_options = weblizar_get_options();
 * General Settings
 */
 
-function reset_general_setting()
+function wl_reset_general_setting()
 {
 	$wl_theme_options['upload_image_logo']="";
 	$wl_theme_options['height']=55;
@@ -19,7 +19,7 @@ function reset_general_setting()
 * Slide image Settings
 */
 
-function reset_slide_image_setting()
+function wl_reset_slide_image_setting()
 {
 	$ImageUrl = get_template_directory_uri()."/images/1.png";
 	$ImageUrl2 = get_template_directory_uri()."/images/2.png";
@@ -48,7 +48,7 @@ function reset_slide_image_setting()
 * Site into Settings
 */
 
-function reset_portfolio_setting()
+function wl_reset_portfolio_setting()
 {	
 	$ImageUrl4 = WL_TEMPLATE_DIR_URI ."/images/portfolio1.png";
 	$ImageUrl5 = WL_TEMPLATE_DIR_URI ."/images/portfolio2.png";
@@ -81,7 +81,7 @@ function reset_portfolio_setting()
 * Service Settings
 */
 
-function reset_service_setting()
+function wl_reset_service_setting()
 {
 	$wl_theme_options['service_1_title']="Idea";
 	$wl_theme_options['service_1_icons']="icon-lightbulb";
@@ -120,7 +120,7 @@ function reset_service_setting()
 * Social Settings
 */
 
-function reset_social_setting()
+function wl_reset_social_setting()
 {
 	$wl_theme_options['footer_section_social_media_enbled']="on";
 	$wl_theme_options['header_social_media_in_enabled']="on";	
@@ -138,7 +138,7 @@ function reset_social_setting()
 * footer customizations Settings
 */
 
-function reset_footer_customizations_setting()
+function wl_reset_footer_customizations_setting()
 {
 	$wl_theme_options['footer_customizations']="@ 2014 Weblizar Theme";
 	$wl_theme_options['developed_by_text']="Theme Developed By";
@@ -147,7 +147,7 @@ function reset_footer_customizations_setting()
 	update_option('enigma_options',$wl_theme_options);
 }
 
-function reset_footer_footercall_setting () {
+function wl_reset_footer_footercall_setting () {
 	$wl_theme_options['blog_title']="Latest Blog";
 	$wl_theme_options['fc_title']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ";
 	$wl_theme_options['fc_btn_txt']="Weblizar";

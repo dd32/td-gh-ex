@@ -83,7 +83,7 @@
 			'service_3_link'=>"#",			
 
 			//Portfolio Settings:
-			'portfolio_home'=>'off',
+			'portfolio_home'=>'on',
 			'port_heading' => 'Recent Works',
 			'port_1_img'=> $ImageUrl4,
 			'port_1_title'=>'modsætning',

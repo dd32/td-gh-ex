@@ -20,7 +20,7 @@
 		}	
 		if($_POST['weblizar_settings_save_general'] == 2) 
 		{
-			reset_general_setting();
+			wl_reset_general_setting();
 		}
 	}
 	/*
@@ -39,7 +39,7 @@
 		}	
 		if($_POST['weblizar_settings_save_home-image'] == 2) 
 		{	
-			reset_slide_image_setting();
+			wl_reset_slide_image_setting();
 		}
 	}
 	/*
@@ -63,7 +63,7 @@
 		}	
 		if($_POST['weblizar_settings_save_portfolio-settings'] == 2) 
 		{
-			reset_portfolio_setting();
+			wl_reset_portfolio_setting();
 		}
 	}
 	/*
@@ -82,7 +82,7 @@
 		}	
 		if($_POST['weblizar_settings_save_home-service'] == 2) 
 		{	
-			reset_service_setting();
+			wl_reset_service_setting();
 		}
 	}
 	/*
@@ -113,7 +113,7 @@
 		}	
 		if($_POST['weblizar_settings_save_social'] == 2) 
 		{
-			reset_social_setting();
+			wl_reset_social_setting();
 		}
 	}
 	/*
@@ -132,7 +132,7 @@
 		}	
 		if($_POST['weblizar_settings_save_footer'] == 2) 
 		{
-			reset_footer_customizations_setting();
+			wl_reset_footer_customizations_setting();
 		}
 	}
 	/*
@@ -151,7 +151,7 @@
 		}	
 		if($_POST['weblizar_settings_save_footercall'] == 2) 
 		{
-			reset_footer_footercall_setting();
+			wl_reset_footer_footercall_setting();
 		}
 	}
 ?>

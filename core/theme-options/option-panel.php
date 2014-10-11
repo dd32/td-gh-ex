@@ -18,7 +18,7 @@ function weblizar_admin_enqueue_script() {
 	wp_enqueue_style('thickbox');
 	wp_enqueue_style('dashicons');		
 	wp_enqueue_style('weblizar-option-style', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/weblizar-option-style.css');
-	wp_enqueue_style('op-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+	wp_enqueue_style('op-bootstrap', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/bootstrap.css');
 	wp_enqueue_style('weblizar-bootstrap-responsive', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/bootstrap-responsive.css');
 	wp_enqueue_style('font-awesome-op', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 	wp_enqueue_style('Respo-pricing-table', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/pricing-table-responsive.css');
@@ -34,35 +34,38 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 	<div class="wrap" id="weblizar_wrap" >
 		<div class="wbl-notify" id="wbl-notify">
 			<div class="col-md-12">
-				<div class="col-md-3">
-					<h1 style="text-decoration:underline"><?php echo $theme_name; ?></h1>
-					<h3 style="margin-top:30px;text-decoration:underline"><?php echo $get_theme; ?></h3>
-				</div>
-				
-				<div class="col-md-3" style="padding-top:20px; text-align:right;">
+				<div class="col-md-2 col-sm-6">
+					<h1 style="text-decoration:underline;margin-bottom:40px;"><?php echo $theme_name; ?></h1>
 					<a style="margin-bottom:20px" href="<?php echo $purchase; ?>" target="blank" class="btn btn-success btn-lg"><?php _e('View Enigma Pro Demo','weblizar'); ?> </a>
 					<a href="<?php echo $purchase; ?>" target="_blank" class="btn btn-danger btn-lg" ><?php _e('Upgrade to Enigma Pro','weblizar'); ?></a>
-				</div>
-				<div class="col-md-3">
-				<h3 style="margin-top:5px;margin-left: 40px;text-decoration:underline">Features</h3>
+				</div>				
+				<div class="col-md-3 col-sm-6">
+				<h3 style="margin-top:30px;margin-left: 40px;text-decoration:underline;color:#fff;">Features</h3>
 					<ul style="padding-top:20px">
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','weblizar'); ?> </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','weblizar'); ?> </li>						
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('More than 13 Templates','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('12 types Themes Colors Scheme','weblizar'); ?>  </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Different Types of Blog Templates','weblizar'); ?> </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('6 Types of Portfolio Templates','weblizar'); ?></li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('12 types Themes Colors Scheme','weblizar'); ?></li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Patterns Background','weblizar'); ?>   </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>
+						
 					</ul>
 				</div>
-				<div class="col-md-3">
-					<h3 style="margin-top:5px;text-decoration:underline;color:#333333">Features</h3>
-					<ul style="padding-top:20px">	
+				<div class="col-md-3 col-sm-6">					
+					<ul style="padding-top:47px">
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>	
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Ultimate Portfolio layout with Isotope effect','weblizar'); ?> </li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Rich Short codes','weblizar'); ?> </li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Translation Ready','weblizar'); ?> </li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Coming Soon Mode','weblizar'); ?>  </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Google Fonts','weblizar'); ?>  </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Extreme Gallery Design Layout','weblizar'); ?>  </li>
 					</ul>
-				</div>				
+				</div>
+				<div class="col-md-4 col-sm-6">
+				<img class="enigma_img_responsive " src="<?php echo WL_TEMPLATE_DIR_URI .'/core/theme-options/images/Enig.png'?>">
+				
+				</div>	
 			</div>
 		</div><h2><span></span></h2>
 		<div id="content_wrap">			

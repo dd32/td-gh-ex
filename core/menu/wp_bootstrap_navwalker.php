@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Class Name: wp_bootstrap_navwalker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
@@ -20,7 +21,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu multilevel\">\n";
 	}
 
 	/**
@@ -60,12 +61,13 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$classes[] = 'menu-item-' . $item->ID;
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-
-			if ( $args->has_children )
-				if($depth === 0){
+			if($depth === 0)
+			{	
+				if ( $args->has_children )
 					$class_names .= ' dropdown';
-				}
+			}
 				else{
+					if ( $args->has_children )
 					$class_names .= ' dropdown-submenu';
 				}
 
@@ -119,7 +121,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$item_output .= '<a'. $attributes .'>';
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <b class="fa fa-angle-down"></b></a>' : '</a>';
+			$item_output .= ( $args->has_children && 0 === $depth ) ? '</a><i id="parent_menu" class="fa fa-chevron-down" data-toggle="dropdown"></i>' : '</a>';
 			$item_output .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
