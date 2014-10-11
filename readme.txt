@@ -18,7 +18,7 @@ For more information about the Underscores (_s) starter theme visit: http://unde
 	iii) images within screenshot.png are my original artwork and are under GPL v2.  
   iv) all theme fonts are websafe fonts contained within the end-users browser software.
 	
-Everything else used in this theme has been created by me, especially for enrichmg theme and is distributed under GPLv3 license.
+Everything else used in this theme has been created by me, especially for enrichmg theme and is distributed under GPLv2 or later license.
 
 = FAQ =
 

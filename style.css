@@ -3,8 +3,8 @@ Theme Name: enrichmg
 Author: Terry East
 Author URI: http://www.designs2site.com
 Theme URI: http://www.designs2site.com/enrichmg
-Description: Magazine format suitable for professional association website. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
-Version: 1.2.4 
+Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
+Version: 1.2.5 
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: enrichmg
@@ -26,6 +26,7 @@ additional copyright and licensing information contained within the readme.txt f
 Version 1.2.1 changes: 
 				fixed custom background color bug
 				CSS appearance ajustments to sidebar
+
 Version 1.2.2 changes:
 				updated footer credits
 
@@ -35,6 +36,11 @@ Version 1.2.3 changes:
 Version 1.2.4 changes:
 				removal of redundant code within function.php
 				improved licensing information within readme.txt
+
+Version 1.2.5 changes:
+				CSS fixes - default body background color
+									- increased header font-size for .sticky class
+				customer header bug fix
 
 */
 
@@ -66,9 +72,11 @@ html {
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
 body {
-	background: #fff;
+	background: #dd3333;
 }
+
 article,
 aside,
 details,
@@ -616,7 +624,7 @@ object {
     max-width:1000px;            
 } 
 #content {
-   background-color:#ffffff; 
+   background-color:#ffffff;
 }              
 
 #site-navigation {
@@ -780,17 +788,17 @@ h1.site-title {
 	line-height:90%;
 }
 h1.site-title a {
-	color:#000000;
+	/* color:#000000; */
 	text-decoration:none;
 } 
 
 h2.site-description {
 	margin-left:.5em;
 	font-size:.65em;
-	color:#000000;
+	/* color:#000000; */
 } 
 #primary #main article.sticky h1, #primary #main article.sticky h1 a {
-	font-size:1.5em;
+	font-size:1.75em;
 	line-height:100%;
 }                                                             
 #primary h1.entry-title {
