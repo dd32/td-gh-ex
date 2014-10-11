@@ -14,6 +14,10 @@ The exceptions to this license are as follows:
 
 == Changelog ==
 
+= 1.4.6 =
+* nicer mobile view
+* changed pingback/trackback template
+
 = 1.4.5 =
 * improved editor-style
 
@@ -80,3 +84,4 @@ The exceptions to this license are as follows:
 ** fr_FR: Julien Pierré - http://www.jp-software.fr/en/
 ** id_ID: Sugeng TiGeFa - http://tigefa4u.github.io
 ** nb_NO: Kristoffer Risanger - https://twitter.com/kristofferR
+** ko_KR: CARLITO - http://www.calitosway.net
