@@ -34,6 +34,12 @@ function ct_ignite_theme_setup() {
     {
         include $filename;
     }
+
+	// add widget folder files
+	foreach (glob(trailingslashit( get_template_directory() ) . 'inc/widgets/*.php') as $filename)
+	{
+		include $filename;
+	}
     // adds theme options page
     require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
 
@@ -56,45 +62,6 @@ function ct_ignite_register_menu() {
     register_nav_menu('primary', __('Primary', 'ignite'));
 }
 add_action('init', 'ct_ignite_register_menu');
-
-// takes user input from the customizer and outputs linked social media icons
-function ct_ignite_social_media_icons() {
-    
-    $social_sites = ct_ignite_customizer_social_media_array();
-    	
-    // any inputs that aren't empty are stored in $active_sites array
-    foreach($social_sites as $social_site) {
-        if( strlen( get_theme_mod( $social_site ) ) > 0 ) {
-            $active_sites[] = $social_site;
-        }
-    }
-    
-    // for each active social site, add it as a list item 
-    if(!empty($active_sites)) {
-        echo "<ul class='social-media-icons'>";
-		foreach ($active_sites as $active_site) {?>
-			<li>
-                <?php if( $active_site == 'email' ) : ?>
-                    <a target="_blank" href="mailto:<?php echo is_email( get_theme_mod( $active_site ) ); ?>">
-                <?php else : ?>
-				        <a target="_blank" href="<?php echo esc_url(get_theme_mod( $active_site )); ?>">
-                <?php endif; ?>
-
-                <?php if( $active_site ==  "flickr" || $active_site ==  "dribbble" || $active_site ==  "instagram" || $active_site ==  "soundcloud" || $active_site ==  "spotify" || $active_site ==  "vine" || $active_site ==  "yahoo" || $active_site ==  "codepen" || $active_site ==  "delicious" || $active_site ==  "stumbleupon" || $active_site ==  "deviantart" || $active_site ==  "digg" || $active_site ==  "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo') { ?>
-                    <i class="fa fa-<?php echo $active_site; ?>"></i>
-                <?php } elseif( $active_site == 'email' ) { ?>
-                    <i class="fa fa-envelope"></i>
-                <?php } elseif( $active_site == 'academia' ) { ?>
-                    <i class="fa fa-graduation-cap"></i>
-                <?php } else { ?>
-                    <i class="fa fa-<?php echo $active_site; ?>-square"></i>
-                <?php } ?>
-				</a>
-			</li><?php
-		}
-		echo "</ul>";
-	}
-}
 
 /* added to customize the comments. Same as default except -> added use of gravatar images for comment authors */
 function ct_ignite_customize_comments( $comment, $args, $depth ) {
@@ -137,28 +104,40 @@ function ct_ignite_customize_comments( $comment, $args, $depth ) {
 /* added HTML5 placeholders for each default field */
 function ct_ignite_update_fields($fields) {
 
+	// get commenter object
     $commenter = wp_get_current_commenter();
+
+	// are name and email required?
     $req = get_option( 'require_name_email' );
+
+	// required or optional label to be added
+	if( $req == 1 ) {
+		$label = '*';
+	} else {
+		$label = ' (optional)';
+	}
+
+	// adds aria required tag if required
     $aria_req = ( $req ? " aria-required='true'" : '' );
 
     $fields['author'] =
         '<p class="comment-form-author">
             <label class="screen-reader-text">' . __('Your Name', 'ignite') . '</label>
-			<input required placeholder="' . __('Your Name*', 'ignite') . '" id="author" name="author" type="text" aria-required="true" value="' . esc_attr( $commenter['comment_author'] ) .
+			<input placeholder="' . __('Your Name', 'ignite') . $label . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
         '" size="30"' . $aria_req . ' />
     	</p>';
 
     $fields['email'] =
         '<p class="comment-form-email">
             <label class="screen-reader-text">' . __('Your Email', 'ignite') . '</label>
-    		<input required placeholder="' . __('Your Email*', 'ignite') . '" id="email" name="email" type="email" aria-required="true" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+    		<input placeholder="' . __('Your Email', 'ignite') . $label . '" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
         '" size="30"' . $aria_req . ' />
     	</p>';
 
     $fields['url'] =
         '<p class="comment-form-url">
             <label class="screen-reader-text">' . __('Your Website URL', 'ignite') . '</label>
-			<input placeholder="' . __('Your URL', 'ignite') . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
+			<input placeholder="' . __('Your URL', 'ignite') . ' (optional)" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
         '" size="30" />
             </p>';
 
@@ -331,6 +310,10 @@ function ct_ignite_body_class( $classes ) {
     if($layout == 'left') {
         $classes[] = 'sidebar-left';
     }
+
+	if( get_theme_mod('ct_ignite_parent_menu_icon_settings') == 'show' ) {
+		$classes[] = 'parent-icons';
+	}
 
     return $classes;
 }
@@ -548,4 +531,73 @@ function ct_ignite_profile_image_output(){
     } else {
         echo get_avatar( get_the_author_meta( 'ID' ), 72 );
     }
+}
+
+function ct_ignite_toolbar_link( $wp_admin_bar ) {
+
+	// Create parent nod
+	$args = array(
+		'id'    => 'ct_ignite_dashboard',
+		'title' => __('Ignite Dashboard', 'ignite'),
+		'href'  => admin_url() . 'themes.php?page=ignite-options',
+		'meta'  => array( 'class' => 'ignite-dashboard' )
+	);
+	$wp_admin_bar->add_node( $args );
+
+	// Customize
+	$args = array(
+		'id'    => 'ct_ignite_dashboard_customize',
+		'title' => __('Customize', 'ignite'),
+		'parent' => 'ct_ignite_dashboard',
+		'href'  => admin_url() . 'customize.php',
+		'meta'  => array( 'class' => 'ignite-dashboard-customize' )
+	);
+	$wp_admin_bar->add_node( $args );
+
+	// Support
+	$args = array(
+		'id'    => 'ct_ignite_dashboard_support',
+		'title' => __('Support', 'ignite'),
+		'parent' => 'ct_ignite_dashboard',
+		'href'  => 'http://www.competethemes.com/documentation/ignite-support-center/',
+		'meta'  => array( 'class' => 'ignite-dashboard-support', 'target' => '_blank' )
+	);
+	$wp_admin_bar->add_node( $args );
+
+	// Upgrade
+	$args = array(
+		'id'    => 'ct_ignite_dashboard_upgrade',
+		'title' => __('Ignite Plus', 'ignite'),
+		'parent' => 'ct_ignite_dashboard',
+		'href'  => 'https://www.competethemes.com/ignite-plus/',
+		'meta'  => array( 'class' => 'ignite-dashboard-support', 'target' => '_blank' )
+	);
+	$wp_admin_bar->add_node( $args );
+
+}
+add_action( 'admin_bar_menu', 'ct_ignite_toolbar_link', 999 );
+
+function ct_tracks_compete_themes_logo_svg() {
+
+	$svg = '<svg width="130px" height="131px" viewBox="0 0 130 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+			    <title>logo</title>
+			    <desc>logo emblem</desc>
+			    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="final">
+			            <g id="logo-pattern-4" transform="translate(0.000000, 0.059226)">
+			                <rect id="Rectangle-124" fill="#3A9CAB" transform="translate(18.298256, 65.077014) rotate(-45.000000) translate(-18.298256, -65.077014) " x="5.39281551" y="52.2550923" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-123" fill="#3A9CAB" transform="translate(64.932418, 18.221023) rotate(-45.000000) translate(-64.932418, -18.221023) " x="52.0269773" y="5.39910088" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-135" fill="#3A9CAB" transform="translate(88.014847, 41.699442) rotate(-45.000000) translate(-88.014847, -41.699442) " x="75.2576899" y="29.0248437" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-141" fill="#3A9CAB" transform="translate(64.715755, 111.834692) rotate(-45.000000) translate(-64.715755, -111.834692) " x="51.9585979" y="99.1600937" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-139" fill="#3A9CAB" transform="translate(87.929878, 88.483689) rotate(-45.000000) translate(-87.929878, -88.483689) " x="75.1727209" y="75.8090915" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-138" fill="#3A9CAB" transform="translate(110.877822, 65.024312) rotate(-45.000000) translate(-110.877822, -65.024312) " x="98.1206645" y="52.3497141" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-140" fill="#3A9CAB" transform="translate(41.027017, 88.548659) rotate(-45.000000) translate(-41.027017, -88.548659) " x="28.0976324" y="75.7661985" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="Rectangle-136" fill="#3A9CAB" transform="translate(41.038668, 41.764751) rotate(-45.000000) translate(-41.038668, -41.764751) " x="28.1332277" y="28.942829" width="25.8108813" height="25.6438435"></rect>
+			                <rect id="middle" fill="#4BCBDE" transform="translate(64.793850, 65.087699) rotate(-45.000000) translate(-64.793850, -65.087699) " x="56.1546698" y="56.5044288" width="17.4791955" height="17.3660771"></rect>
+			            </g>
+			        </g>
+			    </g>
+			</svg>';
+
+	return $svg;
 }

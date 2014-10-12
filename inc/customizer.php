@@ -595,6 +595,24 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
             'hide'  => __('Hide', 'ignite')
         )
     ) );
+	// setting - parent menu icon
+	$wp_customize->add_setting( 'ct_ignite_parent_menu_icon_settings', array(
+		'default'           => 'hide',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'ct_ignite_sanitize_show_hide_setting',
+	) );
+	// control - parent menu icon
+	$wp_customize->add_control( 'ct_ignite_parent_menu_icon_settings', array(
+		'label'          => __( 'Add icon to parent menu items?', 'ignite' ),
+		'section'        => 'ct-additional-options',
+		'settings'       => 'ct_ignite_parent_menu_icon_settings',
+		'type'           => 'radio',
+		'choices'        => array(
+			'show'   => __('Show', 'ignite'),
+			'hide'  => __('Hide', 'ignite')
+		)
+	) );
     // setting - excerpt length
     $wp_customize->add_setting( 'ct_ignite_excerpt_length_settings', array(
         'default'           => 30,
@@ -828,3 +846,11 @@ function ct_ignite_get_available_font_weights(){
 
     return $font_weights;
 }
+
+function ct_ignite_customize_preview_js() { ?>
+	<script>
+		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="<?php echo esc_url('https://www.competethemes.com/ignite-plus/');?>" target="_blank"><?php _e('Premium Upgrade Available!','ignite');?> <span>&rarr;</span></a></div>');
+	</script>
+<?php }
+
+add_action('customize_controls_print_footer_scripts', 'ct_ignite_customize_preview_js');
