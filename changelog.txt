@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.4
+* Added support for WooCommerce plugin
+
 Version 2.3
 * Added meetup social icon
 * Added changelog.txt file which list the theme change log

@@ -172,10 +172,11 @@ endif; // catchkathmandu_background_callback
  * Adds support for WooCommerce Plugin
  */
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	
 	/**
 	 * Add Suport for WooCommerce Plugin
 	 */
-	add_theme_support( 'woocommerce' );	
-
+	add_theme_support( 'woocommerce' );	 
+	
+	require( get_template_directory() . '/inc/catchkathmandu-woocommerce.php' );
 }
+ 
