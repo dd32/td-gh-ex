@@ -162,19 +162,20 @@
 
 // Theme Customizer (option to add logo)
 	function darkelements_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'darkelements_logo_section' , array( 
-		'title' => __( 'Logo', 'darkelements' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'darkelements' ),
+			'title' => __( 'Logo', 'darkelements' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'darkelements' ),
 		) );
-		$wp_customize->add_setting( 'darkelements_logo' );
+		$wp_customize->add_setting( 'darkelements_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'darkelements_logo', array( 
-		'label' => __( 'Logo', 'darkelements' ), 
-		'section' => 'darkelements_logo_section', 
-		'settings' => 'darkelements_logo', 
+			'label' => __( 'Logo', 'darkelements' ), 
+			'section' => 'darkelements_logo_section', 
+			'settings' => 'darkelements_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'darkelements_theme_customizer');
 

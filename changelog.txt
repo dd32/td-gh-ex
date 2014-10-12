@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-DarkElements version 1.0 - october 2014 
+DarkElements version 1.1 - october 2014 
 - first stable release
 
 
