@@ -28,9 +28,9 @@
 
 <div id="header-first">
 	<div class="logo"> 
-		<?php if ( get_theme_mod( 'knowledgebase_logo' ) ) : ?> 
+		<?php if ( get_theme_mod( 'myknowledgebase_logo' ) ) : ?> 
 			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-			<img src='<?php echo esc_url( get_theme_mod( 'knowledgebase_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
+			<img src='<?php echo esc_url( get_theme_mod( 'myknowledgebase_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
 		<?php else : ?> 
 			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
 			<h5><?php bloginfo('description'); ?></h5> 
@@ -63,7 +63,7 @@
 <?php } ?>
 
 <div id="header-third"> 
-	<h4 class="search-title"><?php _e( 'Search website', 'knowledgebase' ); ?></h4>
+	<h4 class="search-title"><?php _e( 'Search website', 'myknowledgebase' ); ?></h4>
 	<?php get_search_form(); ?>
 </div>
 

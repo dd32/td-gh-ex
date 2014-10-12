@@ -1,14 +1,14 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 1.3
+Version: 1.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Weblink Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: knowledgebase
+Text Domain: myknowledgebase
 
 MyKnowledgeBase, Copyright 2014, Guido van der Leest
 MyKnowledgeBase is licensed under the GPL
@@ -202,7 +202,7 @@ select {max-width:100%;}
 .postmetadata {clear:both; margin:10px 0 15px; padding:5px 10px; background: #f8f8f8; border:1px solid #eee;}
 .more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #eee;}
 .more:after {content:''; display:block; clear:both;}
-a.readmore {float:right; padding: 2px 10px; background: #08a0ff; color:#fff;}
+a.readmore {float:right; padding: 2px 10px; background: #08a0ff; color:#fff; text-decoration:none;}
 a.readmore:hover {background: #333; text-decoration:none;}
 .post-nav {padding: 5px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
@@ -243,14 +243,15 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #eee; font-weight:normal; margin: 20px 0; padding: 0 15px 0;}
 #comments .children {list-style:none; background: #f8f8f8; margin: 0; padding: 0 0 0 15px;}
 .comment-body {border-left:2px solid #08a0ff; padding: 0 0 0 15px; margin:20px 0;}
-.comment-notes, .form-allowed-tags {font-size:0.75em; padding:0;}
+.comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
+.form-allowed-tags code {padding:0; border:none;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
 .bypostauthor {color:#333;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em;} 
+#commentform input[type="submit"]{width:9em; padding:2px 5px;} 
 
 
 /* SIDEBAR AND WIDGETS */
@@ -263,7 +264,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* FOOTER */
 #footer {clear:both; background:#08a0ff; color:#fff; padding:0 20px; margin:0;}
 #footer .site-info {text-align:center; clear:both; padding:15px 0;}
-#footer .widget {margin:15px 0 0;}
+#footer .widget {margin:15px 0 0; border-bottom:1px solid #fff;}
 #footer a {color:#fff;}
 #footer .widgettitle {color:#fff;}
 

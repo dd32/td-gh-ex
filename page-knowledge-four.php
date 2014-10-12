@@ -10,25 +10,25 @@
 
 <div id="categories-four">
 
-<?php  $cats = get_categories('hide_empty=0&orderby=name&order=asc');
+<?php  $myknowledgebase_cats = get_categories('hide_empty=0&orderby=name&order=asc');
 
 
-foreach ($cats as $cat) :
+foreach ($myknowledgebase_cats as $cat) :
 
 	echo '<ul class="cat-list-four"><li class="cat-name"><a href="' . get_category_link( $cat->term_id ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
 
-$args = array(
+$myknowledgebase_args = array(
 	'posts_per_page' => -1, // max number of post per category
 	'cat' => $cat->term_id
 );
 
-query_posts($args); 
+query_posts($myknowledgebase_args); 
 
 if (have_posts()) :
 
 	while (have_posts()) : the_post(); ?>
 		<li class="post-name">
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'knowledgebase'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a>
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'myknowledgebase'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a>
 		</li>
 	<?php endwhile;
 endif;

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MyKnowledgeBase v1.3\n"
+"Project-Id-Version: MyKnowledgeBase v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-08-15 15:52:31+0000\n"
+"PO-Revision-Date: 2014-10-12 11:57:19+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: 404.php:9
 #: search.php:38
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
@@ -30,139 +30,139 @@ msgstr "Niets gevonden"
 #: archive.php:48
 #: index.php:39
 #: search.php:39
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
 
 #: archive.php:12
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Archive"
 msgstr "Archief"
 
 #: archive.php:14
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Daily Archives"
 msgstr "Dag Archieven"
 
 #: archive.php:16
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Monthly Archives"
 msgstr "Maand Archieven"
 
 #: archive.php:18
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Yearly Archives"
 msgstr "Jaar Archieven"
 
 #: archive.php:20
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Author Archives"
 msgstr "Auteur Archieven"
 
 #: archive.php:22
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
 #: archive.php:52
 #: index.php:43
 #: search.php:45
-#@ knowledgebase
+#@ myknowledgebase
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:53
 #: index.php:44
 #: search.php:46
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:106
-#@ knowledgebase
+#: functions.php:105
+#@ myknowledgebase
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:108
-#: functions.php:118
-#: functions.php:128
-#: functions.php:138
-#: functions.php:148
-#@ knowledgebase
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
+#: functions.php:147
+#@ myknowledgebase
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
 #: archive.php:44
 #: index.php:35
 #: search.php:33
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
 #: functions.php:40
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Boats"
 msgstr "Boten"
 
 #: page-full.php:25
 #: page.php:24
 #: single.php:38
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Edit"
 msgstr "Bewerk"
 
 #: search.php:11
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
 #: comments.php:39
-#@ knowledgebase
+#@ myknowledgebase
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
 #: comments.php:40
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
 #: comments.php:46
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:126
-#@ knowledgebase
+#: functions.php:125
+#@ myknowledgebase
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:146
-#@ knowledgebase
+#: functions.php:145
+#@ myknowledgebase
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
 
 #: functions.php:19
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
 
 #: comments.php:18
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:176
-#: functions.php:182
-#@ knowledgebase
+#: functions.php:174
+#: functions.php:180
+#@ myknowledgebase
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:178
-#@ knowledgebase
+#: functions.php:176
+#@ myknowledgebase
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
@@ -170,7 +170,7 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 #: index.php:26
 #: search.php:24
 #: single.php:20
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Leave a response"
 msgstr "Plaats een reactie"
 
@@ -178,7 +178,7 @@ msgstr "Plaats een reactie"
 #: index.php:26
 #: search.php:24
 #: single.php:20
-#@ knowledgebase
+#@ myknowledgebase
 msgid "% responses"
 msgstr "% reacties"
 
@@ -186,27 +186,27 @@ msgstr "% reacties"
 #: index.php:26
 #: search.php:24
 #: single.php:20
-#@ knowledgebase
+#@ myknowledgebase
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:43
-#@ knowledgebase
+#: footer.php:25
+#@ myknowledgebase
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:44
-#@ knowledgebase
+#: footer.php:26
+#@ myknowledgebase
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:44
-#@ knowledgebase
+#: footer.php:26
+#@ myknowledgebase
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: functions.php:116
-#@ knowledgebase
+#: functions.php:115
+#@ myknowledgebase
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
 
@@ -216,7 +216,7 @@ msgstr "Homepage Sidebar"
 #: page-knowledge-three.php:31
 #: search.php:17
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
@@ -225,7 +225,7 @@ msgstr "Permalink naar %s"
 #: search.php:21
 #: single.php:17
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Posted on %s"
 msgstr "Geplaatst op %s"
 
@@ -234,40 +234,40 @@ msgstr "Geplaatst op %s"
 #: search.php:22
 #: single.php:18
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "By %s"
 msgstr "Door %s"
 
-#: functions.php:136
-#@ knowledgebase
+#: functions.php:135
+#@ myknowledgebase
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
 #: index.php:14
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
 #: single.php:27
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Posted in %s"
 msgstr "Geplaatst in %s"
 
 #: single.php:27
 #: single.php:28
-#@ knowledgebase
+#@ myknowledgebase
 msgid ", "
 msgstr ", "
 
 #: single.php:28
 #, php-format
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Tags: %s"
 msgstr "Tags: %s"
 
 #: header.php:66
-#@ knowledgebase
+#@ myknowledgebase
 msgid "Search website"
 msgstr "Doorzoek website"
 
