@@ -180,8 +180,9 @@ ul.products {
 		form.cart {
 			@include clearfix;
 			margin-bottom: 1.618em;
-			padding: 1em;
-			background-color: rgba(0,0,0,0.0125);
+			padding: 1.618em 0;
+			border-top: 3px solid rgba(0,0,0,0.025);
+			border-bottom: 3px solid rgba(0,0,0,0.025);
 
 			.quantity {
 				float: left;
@@ -356,28 +357,6 @@ ul.products {
 	color: lighten( $color_body, 20% );
 	margin-top: -2.618em;
 	border-bottom: 1px solid rgba(0,0,0,0.05);
-
-	.separator {
-		display: inline-block;
-		width: 1em;
-		height: 1em;
-		position: relative;
-		text-indent: -999em;
-		margin: 0 .618em;
-
-		&:before {
-			content: "\f105";
-			font-family: "FontAwesome";
-			font-weight: 400;
-			position: absolute;
-			top: 0;
-			left: 0;
-			text-indent: 0;
-			text-align: center;
-			width: 100%;
-			opacity: 0.5;
-		}
-	}
 
 	a.home {
 		&:before {
@@ -594,6 +573,21 @@ table.cart {
 	}
 }
 
+.wc-proceed-to-checkout {
+	@include clearfix;
+	margin-bottom: 1.618em;
+
+	.button {
+		display: block;
+		text-align: center;
+		margin-bottom: 1em;
+
+		&.checkout-button {
+			font-size: 1.387em;
+		}
+	}
+}
+
 ul#shipping_method {
 	margin: 0;
 	list-style: none;
@@ -652,6 +646,7 @@ form.checkout {
 				float: right;
 				border: 0;
 				padding: 0;
+				max-height: 1.618em;
 			}
 
 			&:last-child {
@@ -998,17 +993,15 @@ p.stars {
 }
 
 .onsale {
-	display: block;
-	width: 10em;
-	color: #fff;
-	background-color: $color_body;
-	padding: 1em 0;
-	text-align: center;
-	position: absolute;
-	top: 0;
-	left: -3.2em;
-	@include transform(rotate(-45deg));
+	border: 2px solid;
+	border-color: $color_body;
+	color: $color_body;
+	padding: .202em .618em;
+	font-size: .857em;
+	text-transform: uppercase;
 	font-weight: 700;
+	display: inline-block;
+	margin-bottom: 1em;
 }
 
 .quantity {
@@ -1114,7 +1107,9 @@ p.no-comments {
 		box-shadow: none;
 		line-height: 1.618;
 		padding-left: 1em;
-		border-left: 1px solid rgba(255,255,255,0.25);
+		border-left-width: 1px;
+		border-left-style: solid;
+		border-left-color: rgba(255,255,255,0.25) !important;
 		border-radius: 0;
 
 		&:hover {
@@ -1179,7 +1174,7 @@ dl.variation {
 	.woocommerce-active {
 		.site-branding,
 		.site-logo-anchor {
-			margin-right: 0;
+			margin-right: gs-gutter(c, false, true);
 		}
 	}
 
@@ -1389,6 +1384,8 @@ dl.variation {
 				margin-bottom: 3.631em;
 
 				.thumbnails {
+					@include clearfix;
+
 					a.zoom {
 						@include gs-span(c, 1, 1, (1, 4));
 						@include gs-float(c, left);
@@ -1589,7 +1586,6 @@ dl.variation {
 		.cart-collaterals {
 			.cross-sells {
 				@include gs-span(c, 1, 6);
-				@include gs-float(c, right);
 				ul.products {
 			  		li.product {
 			  			@include gs-span(c, 1, 3, (1, 6));

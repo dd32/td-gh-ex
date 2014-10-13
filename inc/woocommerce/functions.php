@@ -84,7 +84,6 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
  */
 function storefront_woocommerce_scripts() {
 	wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css' );
-	wp_enqueue_script( 'storefront-woocommerce-script', get_template_directory_uri() . '/inc/woocommerce/js/woocommerce.min.js' );
 }
 
 /**
@@ -107,7 +106,7 @@ function storefront_related_products_args( $args ) {
  * @since  1.0.0
  */
 function storefront_thumbnail_columns() {
-	return 4;
+	return apply_filters( 'storefront_product_thumbnail_columns', 4 );
 }
 
 /**
@@ -117,15 +116,4 @@ function storefront_thumbnail_columns() {
  */
 function storefront_products_per_page() {
 	return apply_filters( 'storefront_products_per_page', 12 );
-}
-
-/**
- * Breadcrum delimeter
- * @param  array $defaults default breadcrumb args
- * @return array $detaults modified args
- * @since  1.0.0
- */
-function storefront_breadcrumb_delimeter( $defaults ) {
-	$defaults['delimiter'] = '<span class="separator">&gt;</span>';
-	return $defaults;
 }

@@ -1,5 +1,4 @@
-Storefront
-==========
+# Storefront [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 *Storefront* is a robust and flexible [WordPress](http://wordpress.org) theme, designed by WooCommerce creators [WooThemes](http://woothemes.com/) to help you make the most out of using [WooCommerce](http://woothemes.com/woocommerce/) to power your online store. It's available to download for free at the WordPress [theme repository](https://wordpress.org/themes/storefront/).
 
@@ -22,4 +21,6 @@ You can view detailed Storefront documentation on the [WooThemes documentation w
 WooThemes customers can get support at the [WooThemes support portal](https://support.woothemes.com/). Otherwise you can try posting on the [WordPress support forums](https://wordpress.org/support/theme/storefront/). Please remember, github is for bug reports and contributions, _not_ support.
 
 ## Contributing to Storefront
-Github is the place to discuss new features and possible changes to the Storefront codebase. Create an issue to discuss any code related queries and if you want to send a pull request, please do so to the latest release branch.
+If you have an idea or feature request please take a look at the [Storefront Roadmap](https://trello.com/b/i2Yxx45p/storefront-roadmap) to see if it's already been suggested, planned, or is under development.
+
+Github is the place to discuss possible changes to the Storefront codebase. Create an issue to discuss any code related queries and if you want to send a pull request, please do so to the latest release branch.

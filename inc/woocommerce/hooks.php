@@ -30,8 +30,11 @@ add_action( 'storefront_content_top', 				'woocommerce_breadcrumb', 					10 );
  * Products
  * @see  storefront_upsell_display()
  */
-remove_action( 'woocommerce_after_single_product_summary', 	'woocommerce_upsell_display', 		15 );
-add_action( 'woocommerce_after_single_product_summary', 	'storefront_upsell_display', 		15 );
+remove_action( 'woocommerce_after_single_product_summary', 	'woocommerce_upsell_display', 				15 );
+add_action( 'woocommerce_after_single_product_summary', 	'storefront_upsell_display', 				15 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 	'woocommerce_show_product_loop_sale_flash', 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', 		'woocommerce_show_product_loop_sale_flash', 6 );
+
 
 /**
  * Header
@@ -57,4 +60,3 @@ add_filter( 'woocommerce_product_thumbnails_columns', 	'storefront_thumbnail_col
 add_filter( 'woocommerce_output_related_products_args', 'storefront_related_products_args' );
 add_filter( 'loop_shop_per_page', 						'storefront_products_per_page' );
 add_filter( 'loop_shop_columns', 						'storefront_loop_columns' );
-add_filter( 'woocommerce_breadcrumb_defaults', 			'storefront_breadcrumb_delimeter' );
