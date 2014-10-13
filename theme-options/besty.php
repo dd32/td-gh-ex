@@ -1,8 +1,8 @@
 <?php
-function fasterthemes_options_init(){
+function besty_options_init(){
  register_setting( 'theme_options', 'besty_theme_options', 'theme_options_validate');
 } 
-add_action( 'admin_init', 'fasterthemes_options_init' );
+add_action( 'admin_init', 'besty_options_init' );
 function theme_options_validate( $input ) {
  
 	 $input['logo'] = esc_url_raw( $input['logo'] );
@@ -21,33 +21,33 @@ function theme_options_validate( $input ) {
 
     return $input;
 }
-function fasterthemes_framework_load_scripts(){
+function besty_framework_load_scripts(){
 	wp_enqueue_media();
-	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'fasterthemes_framework' );
+	wp_enqueue_style( 'besty_framework', get_template_directory_uri(). '/theme-options/css/besty_framework.css' ,false, '1.0.0');
+	wp_enqueue_style( 'besty_framework' );
 
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array('jquery'), '20120106', true );
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/besty-custom.js', array('jquery'), '20120106', true );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery'), '20120206', true  );		
 	wp_enqueue_script('media-uploader');
 }
-add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
-function fasterthemes_framework_menu_settings() {
+add_action( 'admin_enqueue_scripts', 'besty_framework_load_scripts' );
+function besty_framework_menu_settings() {
 	$besty_menu = array(
-				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('Theme Options', 'fastertheme_framework'),
+				'page_title' => __( 'Besty Options', 'bestytheme_framework'),
+				'menu_title' => __('Theme Options', 'bestytheme_framework'),
 				'capability' => 'edit_theme_options',
-				'menu_slug' => 'fasterthemes_framework',
-				'callback' => 'fastertheme_framework_page'
+				'menu_slug' => 'besty_framework',
+				'callback' => 'bestytheme_framework_page'
 				);
-	return apply_filters( 'fasterthemes_framework_menu', $besty_menu );
+	return apply_filters( 'besty_framework_menu', $besty_menu );
 }
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 function theme_options_add_page() {
-	$besty_menu = fasterthemes_framework_menu_settings();
+	$besty_menu = besty_framework_menu_settings();
    	add_theme_page($besty_menu['page_title'],$besty_menu['menu_title'],$besty_menu['capability'],$besty_menu['menu_slug'],$besty_menu['callback']);
 } 
-function fastertheme_framework_page(){ 
+function bestytheme_framework_page(){ 
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;
