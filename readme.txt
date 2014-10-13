@@ -46,6 +46,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.6 =
+* html5shiv updated to version 3.7.2
+* Fixed goolge font loading issue in ssl.
+* Responsive menu h1 tag changed to h3.
+
 = Version 1.1.5 =
 * Hungarian language file added. Thanks to Mr. Tamás for providing the language files.
 
