@@ -39,10 +39,8 @@ jQuery(document).ready(function() {
 		  // Your other code to run on DOM ready...
 		  init();
 		});
-
 		jQuery(window).resize(init);
-			   
-	   
-	});
-	
-	  
+		jQuery('#parent_menu').click( function (){
+			jQuery('.dropdown-submenu > .dropdown-menu').show();		
+		});
+});

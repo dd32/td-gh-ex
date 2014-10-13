@@ -1,3 +1,11 @@
+@media only screen and (min-width: 100px) and (max-width:980px )
+{	#parent_menu { float: right; padding-right: 10%; margin-top: -25px; }
+	#navbar-header { float:none; padding-right:5%;  }
+	.navbar-collapse ul li a { height:38px;}
+	.navbar-default .navbar-nav > li > a { width:80%; }
+	ul.dropdown-menu > li > a { width:80%; }
+	
+}
 @media (min-width:1200px) {
 	.enigma_gallery_page .col-md-3{
 	width:25%;

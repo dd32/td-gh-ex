@@ -11,13 +11,14 @@
 	background-color: #fff;
 	border-top:2px solid #31A3DD;
 }
-
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus,
 .dropdown-menu .active a {	
 	background-color: #31A3DD;
 }
 .collapse ul.nav li.current-menu-parent .dropdown-toggle, .collapse ul.nav li.current-menu-item .dropdown-toggle,
 .navbar-default .navbar-collapse ul.nav li.current-menu-parent .dropdown-toggle,.navbar-default .navbar-collapse ul.nav li.current-menu-item .dropdown-toggle
+.collapse ul.nav li.current_page_ancestor .dropdown-toggle,.collapse ul.nav li.current_page_ancestor .dropdown-toggle,
+.navbar-default .navbar-collapse ul.nav li.current_page_ancestor .dropdown-toggle,.navbar-default .navbar-collapse ul.nav li.current_page_ancestor .dropdown-toggle
 {
 	background-color: #31A3DD;
 	box-shadow: 3px 3px 0 rgba(201, 201, 201, 1);
