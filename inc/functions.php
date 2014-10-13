@@ -58,7 +58,7 @@ function esteem_scripts_styles_method() {
     */
 	$esteem_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$esteem_user_agent)) {
-		wp_enqueue_script( 'html5', ESTEEM_JS_URL . '/html5.js', true ); 
+		wp_enqueue_script( 'html5', ESTEEM_JS_URL . '/html5shiv.min.js', true );
 	}
 
 	wp_enqueue_script( 'esteem-navigation', ESTEEM_JS_URL . '/navigation.js', array( 'jquery' ), false, true );

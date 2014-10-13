@@ -44,9 +44,13 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
+= Version 1.1.2 =
+* CSS added to support Recent Posts Widget Extended Plugin.
+* html5shiv updated to version 3.7.2
+
 = Version 1.1.1 =
 * the_title changed with the_title_attribute to prevent plugin conflict.
-* Boxed layout padding issue fixed.
+* Boxed layout padding issue
 
 = Version 1.1 =
 * Testimonial bug fixed.
