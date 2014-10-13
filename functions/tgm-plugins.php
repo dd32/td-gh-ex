@@ -1,6 +1,5 @@
 <?php
-require_once('class-tgm-plugin-activation.php');
-
+require dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 add_action( 'besty_register', 'besty_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function besty_theme_register_plugins() {

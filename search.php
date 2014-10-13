@@ -21,7 +21,7 @@ get_header();
 			  echo $besty_featured_image;
 			}
 			?>             
-            <a href="<?php echo get_the_permalink(); ?>" class="blog-title"><?php the_title();?></a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" class="blog-title"><?php the_title();?></a>
             <ul class="post-box-link">
                 <?php besty_entry_meta();?> 
             </ul>                        

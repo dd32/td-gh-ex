@@ -13,11 +13,17 @@ get_header();
             <?php $besty_featured_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));?>
             <?php 
 			if($besty_featured_image){
-				echo'<img src="'.$besty_featured_image.'" class="img-responsive" alt="'.get_the_title().'">';
+				echo'<img src="'.esc_url($besty_featured_image).'" class="img-responsive" alt="'.get_the_title().'">';
 			}
 			?>            
             <div class="blog-title"><?php the_title();?></div>
             <div class="besty-post-content"><?php the_content(); ?>
+             <?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+					'after' => '</div>',
+				) );
+			?>
             </div>            
             </div>            
          <?php

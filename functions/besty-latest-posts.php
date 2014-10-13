@@ -51,16 +51,16 @@ class besty_latest_post_widget extends WP_Widget {
             <?php 
 			$besty_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 			if($besty_feat_image!="")
-				echo'<div class="latest-posts-img"><a href="'.get_permalink().'" title="Post Page"> <img src="'.$besty_feat_image.'" /></a></div>';
+				echo'<div class="latest-posts-img"><a href="'.esc_url( get_permalink() ).'" title="Post Page"> <img src="'.$besty_feat_image.'" /></a></div>';
 			else			
-				echo'<div class="latest-posts-img"><a href="'.get_permalink().'" title="Post Page"> <img src="'.get_template_directory_uri().'/images/no-image-sidebar.png" alt="'.get_the_title().'" /> </a></div>';
+				echo'<div class="latest-posts-img"><a href="'.esc_url( get_permalink() ).'" title="Post Page"> <img src="'.get_template_directory_uri().'/images/no-image-sidebar.png" alt="'.get_the_title().'" /> </a></div>';
 				
 				$besty_year = get_the_time( 'Y');
 				$besty_month = get_the_time( 'm');
 				$besty_day = get_the_time( 'd');
 			?>
             <div class="latest-posts-link">
-            	<a class="titel" href="<?php the_permalink();?>" title="Post Page"><?php the_title(); ?></a> <a href="<?php echo esc_url( get_day_link( $besty_year, $besty_month, $besty_day )); ?>"><?php echo get_the_date('j M, Y'); ?></a>
+            	<a class="titel" href="<?php echo esc_url( get_permalink() ); ?>" title="Post Page"><?php the_title(); ?></a> <a href="<?php echo esc_url( get_day_link( $besty_year, $besty_month, $besty_day )); ?>"><?php echo get_the_date('j M, Y'); ?></a>
                 
             </div>
           </li>

@@ -4,8 +4,8 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Besty
 Description: Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got theme options to easily manage logo, social media links, footer text etc.
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Tags: black, dark, custom-menu, right-sidebar, full-width-template, responsive-layout, fixed-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns, translation-ready
-Version: 1.2
+Tags: black, dark, custom-menu, right-sidebar, full-width-template, responsive-layout, fixed-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns
+Version: 1.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.

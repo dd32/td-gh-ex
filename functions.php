@@ -12,7 +12,7 @@ function besty_setup() {
 	/*
 	 * Make besty theme available for translation.
 	 */
-	load_theme_textdomain( 'besty', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'besty' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', besty_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -137,13 +137,18 @@ function besty_widgets_init() {
 add_action( 'widgets_init', 'besty_widgets_init' );
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
+
 /*** Theme Default Setup ***/
 require get_template_directory() . '/functions/theme-default-setup.php';
+
 /*** Latest Posts Widgets ***/
 require get_template_directory() . '/functions/besty-latest-posts.php';
+
 /*** Theme Option ***/
-require get_template_directory() . '/theme-options/fasterthemes.php';
+require get_template_directory() . '/theme-options/besty.php';
+
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
+
 /*** TGM ***/
 require get_template_directory() . '/functions/tgm-plugins.php';

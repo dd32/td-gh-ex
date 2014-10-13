@@ -14,7 +14,7 @@ get_header();
                     <p>Whatever you were looking for was not found, but maybe try looking again or search using the form below.</p>
                     <div class="row">
                         <div class="col-sm-12">
-                            <?php get_search_form(); ?>									
+                            <?php echo get_search_form(); ?>									
                         </div>
                 	</div>
 				</section>

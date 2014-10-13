@@ -32,9 +32,9 @@
 	<div class="menu-sidebar">
     	<div class="logo">
         	<?php if(empty($besty_options['logo'])) { ?>
-        		<h1 class="besty-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+        		<h1 class="besty-site-name"><a href="<?php echo esc_url( get_site_url() ); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
             <?php } else { ?>
-        		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo esc_url($besty_options['logo']); ?>" alt="" class="logo-center" /></a>
+        		<a href="<?php echo esc_url( get_site_url() ); ?>"><img src="<?php echo esc_url($besty_options['logo']); ?>" alt="" class="logo-center" /></a>
             <?php }
 			if(!empty($besty_options['tagline']))
 			{
