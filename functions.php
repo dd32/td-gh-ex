@@ -98,8 +98,9 @@
   	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 	// them e check plugin 	
   	wp_enqueue_script('spa_menu', get_template_directory_uri().'/js/menu/menu.js',array('jquery'));
   	wp_enqueue_script('spa-boot-menus', get_template_directory_uri().'/js/menu/bootstrap.min.js'); 
+	if(is_front_page()){
   	wp_enqueue_script('spa_flexmain', get_template_directory_uri().'/js/flex/jquery.flexslider.js');
   	wp_enqueue_script('spa_flexslider-setting', get_template_directory_uri().'/js/flex/flexslider-setting.js'); 
-    
+    }
   }
   ?>

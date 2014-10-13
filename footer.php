@@ -15,7 +15,11 @@
     <div class="row-fluid show-grid">
       <footer>
         <div class="span7">
-          <p><?php echo $current_options['footer_tagline'] ; ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php echo $current_options['footer_url'] ?>"><?php echo $current_options['footer_designedby'] ?></a><?php } ?></p>
+          <p><?php echo $current_options['footer_tagline'] ; ?>
+		  <?php if($current_options['footer_designedby'] != '' && is_home() || is_front_page()) { ?>
+		  &nbsp;<a target="_blank" rel="nofollow" href="<?php echo esc_url($current_options['footer_url']);?>">
+		  <?php echo $current_options['footer_designedby']; ?></a>
+		  <?php } else{ echo $current_options['footer_designedby']; } ?></p>
         </div>
         <div class="span5">
           <ul class="footer_nav_links pull-right">

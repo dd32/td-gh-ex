@@ -56,9 +56,9 @@
   								'call_us_text'=>'Call us on',									
   								 
   							  	'home_feature'=> $template_uri.'/images/default/home_banner.jpg',							   
-  								'first_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
-  								'second_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
-  								'third_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
+  								'first_thumb_image'=>$template_uri.'/images/default/home_thumb3.jpg',
+  								'second_thumb_image'=>$template_uri.'/images/default/home_thumb1.jpg',
+  								'third_thumb_image'=>$template_uri.'/images/default/home_thumb2.jpg',
   								'enable_services' => 'yes', 
   								'service1_title'=>__('Spa Treatment','sis_spa'),
   								'service1_image'=>$template_uri.'/images/default/home_service_thumb.jpg',
