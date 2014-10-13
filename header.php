@@ -26,7 +26,7 @@
       $busiprof_current_options=get_option('busiprof_theme_options');
       }
       if($busiprof_current_options['upload_image_favicon']!=''){?>
-    <link rel="shortcut icon" href="<?php  echo $busiprof_current_options['upload_image_favicon']; ?>" />
+    <link rel="shortcut icon" href="<?php  echo esc_url($busiprof_current_options['upload_image_favicon']); ?>" />
     <?php } ?>	
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
@@ -44,7 +44,7 @@
             </a>
             <?php 	if($busiprof_current_options['upload_image']!='') { ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand">
-            <img src="<?php echo $busiprof_current_options['upload_image']; ?>"  alt="Logo" class="logo-img" />
+            <img src="<?php echo esc_url($busiprof_current_options['upload_image']); ?>"  alt="Logo" class="logo-img" />
             </a>
             <?php   } else { ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand">

@@ -6,26 +6,26 @@ $template_uri=get_template_directory_uri(). '/images/default' ;
 	<div class="row">
 		<div class="span6 testimonial_mn">
 				<?php if($current_options['testimonials_title']!='') {?>
-				<h2><?php echo $current_options['testimonials_title']; ?>
-				<?php } ?><br><span><?php if($current_options['testimonials_text']!='') { echo $current_options['testimonials_text'];  } ?></span></h2>
+				<h2><?php esc_html($current_options['testimonials_title']); ?>
+				<?php } ?><br><span><?php if($current_options['testimonials_text']!='') { echo $current_options['testimonials_text']);  } ?></span></h2>
 				<div id="testimonial_mn_cols" class="media">
-					<img alt="webriti" src="<?php if($current_options['testimonials_image_one']!='') { echo $current_options['testimonials_image_one'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
+					<img alt="webriti" src="<?php if($current_options['testimonials_image_one']!='') { echo esc_url($current_options['testimonials_image_one']);} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
 					<div class="media-body">
-					<p><?php if($current_options['testimonials_text_one']!='') { echo $current_options['testimonials_text_one'];} ?></p>
-					<a href="#"><?php if($current_options['testimonials_name_one']!='') { echo $current_options['testimonials_name_one'];} ?> <span>(<?php if($current_options['testimonials_designation_one']!='') { echo $current_options['testimonials_designation_one'];} ?>)</span></a>
+					<p><?php if($current_options['testimonials_text_one']!='') { esc_html($current_options['testimonials_text_one']);} ?></p>
+					<a href="#"><?php if($current_options['testimonials_name_one']!='') { esc_html($current_options['testimonials_name_one']);} ?> <span>(<?php if($current_options['testimonials_designation_one']!='') { esc_html($current_options['testimonials_designation_one']);} ?>)</span></a>
 					</div>
 				</div>
 				
 				<div id="testimonial_mn_cols" class="media">
-					<img alt="webriti" src="<?php if($current_options['testimonials_image_two']!='') { echo $current_options['testimonials_image_two'];} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
+					<img alt="webriti" src="<?php if($current_options['testimonials_image_two']!='') { echo esc_url($current_options['testimonials_image_two']);} ?>"  class="media-object img-circle pull-left recent_blog_thumb">
 					<div class="media-body">
-					<p><?php if($current_options['testimonials_text_two']!='') { echo $current_options['testimonials_text_two'];} ?></p>
-					<a href="#"><?php if($current_options['testimonials_name_two']!='') { echo $current_options['testimonials_name_two'];} ?> <span>(<?php if($current_options['testimonials_designation_two']!='') { echo $current_options['testimonials_designation_two'];} ?>)</span></a>
+					<p><?php if($current_options['testimonials_text_two']!='') { esc_html($current_options['testimonials_text_two']);} ?></p>
+					<a href="#"><?php if($current_options['testimonials_name_two']!='') { esc_html($current_options['testimonials_name_two']);} ?> <span>(<?php if($current_options['testimonials_designation_two']!='') { esc_html($current_options['testimonials_designation_two']);} ?>)</span></a>
 					</div>
 				</div>
 		</div>
 		<div class="span6 recent_blog">			
-			<h2><?php if($current_options['recent_blog_title']!='') { echo $current_options['recent_blog_title'];} ?><br><span><?php if($current_options['recent_blog_description']!='') { echo $current_options['recent_blog_description'];} ?></span></h2>
+			<h2><?php if($current_options['recent_blog_title']!='') { esc_html($current_options['recent_blog_title']);} ?><br><span><?php if($current_options['recent_blog_description']!='') { esc_html($current_options['recent_blog_description']);} ?></span></h2>
 			<div class="row">
 				<?php	$args = array( 'numberposts' => '4' );
 						$recent_posts = wp_get_recent_posts( $args );

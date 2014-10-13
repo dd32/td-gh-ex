@@ -9,9 +9,7 @@
    * @license        license.txt
    * @filesource     wp-content/themes/Busiprof/footer.php
   */
-  
-  
-  ?>
+?>
 <div class="widget_section">
   <div class="container">
     <div class="row-fluid">
@@ -37,16 +35,18 @@
 </div>
 <!--closing of the footer widgets area-->
 <?php $current_options = get_option('busiprof_theme_options' );?>
-<?php if($current_options['busiprof_custom_css']!='')
-  { echo "<style type='text/css'>".$current_options['busiprof_custom_css']."</style>"; }
-  ?>
+<?php if($current_options['busiprof_custom_css']!='') { ?>
+<style>  
+<?php echo htmlspecialchars_decode($current_options['busiprof_custom_css']); ?>
+</style>
+<?php } ?>
 <div class="footer-section">
   <div class="container">
     <div class="row">
       <div class="span8">
         <?php _e(' Powered by ', 'busi_prof'); ?>
-        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
-        <?php echo $current_options['busiprof_copy_rights_text'] ; ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php echo $current_options['footer_url'] ?>"><?php echo $current_options['footer_designedby'] ?></a><?php } ?>
+        <a href="<?php echo esc_url( 'http://wordpress.org/', 'busi_prof' ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
+        <?php esc_html($current_options['busiprof_copy_rights_text']); ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php esc_url($current_options['footer_url']); ?>"><?php esc_html($current_options['footer_designedby']); ?></a><?php } ?>
       </div>
     </div>
   </div>

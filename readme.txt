@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.2.9
+1. Added esc validation wherever is required.
 @Version: 1.4.2.8
 1.	Small Change in sidebar.php
 2. escape url function added.
