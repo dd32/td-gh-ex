@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.21
+* Image added in the admin section
+
 Version 2.20
 * FontAwesome icons updated to v4.20
 * Small customization in Theme Option panel

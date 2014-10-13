@@ -1051,7 +1051,7 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 
 <p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 <p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-
+<img src="<?php echo get_template_directory_uri()?>/inc/admin-panel/images/offer.jpg">
 <hr />
 <?php
 $other_product  = "<h4>".__('Other products by AccessPressThemes','accesspresslite')."</h4>";
