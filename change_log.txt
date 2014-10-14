@@ -17,3 +17,6 @@ ii) set esc_url sanitization in all files.
 iii) wp_link_pages set in full width template and in page.php
 iv) Require file set properly
 v) Remove Theme Text Translation and remove translation-ready tag in style.css and readme.txt
+
+Version: 1.2.1 (14 oct 2014)
+i) Remove newsletter code from theme options and remove newsletter script and css from js and css files.
