@@ -53,3 +53,7 @@ Version 1.2
 
 Version 1.2.1
 * Little Error
+
+Version 1.3
+* Added hover effect on featured images
+* Minor Bug Fixes

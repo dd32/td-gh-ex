@@ -43,7 +43,7 @@ function storto_options_init(){
  * Load up the menu page
  */
 function storto_options_add_page() {
-	add_theme_page( __( 'Theme Options', 'storto' ), __( 'Theme Options', 'storto' ), 'edit_theme_options', 'theme_options', 'storto_options_do_page' );
+	add_theme_page( __( 'Theme Options', 'storto' ), __( 'Storto Theme Options', 'storto' ), 'edit_theme_options', 'theme_options', 'storto_options_do_page' );
 }
 
 /**
@@ -56,27 +56,36 @@ function storto_options_do_page() {
 		$_REQUEST['settings-updated'] = false;
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'storto' ) . "</h2>"; ?>
+		<?php echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'storto' ) . "</h2>"; ?>
+			
+		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
+			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Upgrade to Gigante WordPress Theme!</h3>
+			<p>Get <b>Gigante</b> WordPress Theme for only <b>24,90&euro;</b> <i>(One Time Fee)</i></p>
+			<div class="blogghiamoLeft" style="float:left; width: 30%; text-align: center;">
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/gigante/" target="_blank"><div class="dashicons dashicons-visibility"></div> Watch the demo</a>
+				<br />
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/gigante/" target="_blank"><div class="dashicons dashicons-heart"></div> Get Gigante Theme</a>
+			</div>
+			<div class="blogghiamoRight" style="float:right; width: 70%;">
+			<ul>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Advanced Theme Options</b> (Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font switcher and much more...)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Logo and Favicon Upload</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Unlimited Colors and Skin</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post views counter</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post format</b> (Standard, Gallery, Audio, Link, Video, Quote)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>7 Shortcodes</b> (Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>12 Exclusive Widgets</b> (Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Related Posts Box</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Information About Author Box</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>And much more...</b></li>
+			<ul>
+			</div>
+		</div>	
+		
 		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'storto' ); ?></p>
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'storto' ); ?></strong></p></div>
 		<?php endif; ?>
-			
-		<div class="updated" style="background:#E9F7DF;">
-			<table class="form-table">
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Support Storto Theme', 'storto' ); ?></strong></th>
-					<td>
-						<p><?php _e( 'If you enjoy <strong>Storto Theme</strong>, please consider making a secure <strong>donation</strong> using the PayPal button. Anything is appreciated!', 'storto' ); ?></p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="KLXV5HUDPJK5W">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form>
-					</td>
-				</tr>
-			</table>		
-		</div>	
 
 		<form method="post" action="options.php">
 		<?php $se_options = get_option( 'storto_theme_options', $storto_theme_options ); ?>
