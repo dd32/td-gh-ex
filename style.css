@@ -4,8 +4,8 @@ Author: Terry East
 Author URI: http://www.designs2site.com
 Theme URI: http://www.designs2site.com/enrichmg
 Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
-Version: 1.2.5 
-License: GNU General Public License v2
+Version: 1.2.6
+License: GPU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: enrichmg
 Domain Path: /languages/
@@ -21,7 +21,7 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 
-additional copyright and licensing information contained within the readme.txt file.
+All images supplied with erichmg theme are the work products of the author and licensed by GPL v2. Additional copyright and licensing information contained within the readme.txt file.
 
 Version 1.2.1 changes: 
 				fixed custom background color bug
@@ -37,7 +37,7 @@ Version 1.2.4 changes:
 				removal of redundant code within function.php
 				improved licensing information within readme.txt
 
-Version 1.2.5 changes:
+Version 1.2.6 changes:
 				CSS fixes - default body background color
 									- increased header font-size for .sticky class
 				customer header bug fix
