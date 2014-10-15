@@ -10,6 +10,11 @@ Changelog Legend:
 
 ----
 
+(10/14/2014) - 1.2.1
+[x] Remove class added to <body> by mistake
+
+----
+
 (10/14/2014) - 1.2.0
 [!] Fix bug that takes footer widget setting from latest post and applies to the blog
 [*] Tweaks made to .alignleft and .alignright on mobile
