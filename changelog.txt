@@ -10,6 +10,25 @@ Changelog Legend:
 
 ----
 
+(10/14/2014) - 1.2.0
+[!] Fix bug that takes footer widget setting from latest post and applies to the blog
+[*] Tweaks made to .alignleft and .alignright on mobile
+[*] Include FontAwesome in theme instead of CDN
+[+] Add sanitization for typography options
+[*] Change separator spacing from padding to margin
+[+] Added French translation
+[+] Added filters for widget titles: generate_start_widget_title and generate_end_widget_title
+[*] When navigation search is clicked, move close icon to far right if navigation is centered
+[+] Classes added to <body> for header and navigation alignment
+[*] Cleaned up some code
+[+] Added hook after starting <main> tag and before closing </main> tag
+[*] Allow sidebar and footer widget metabox on all post types
+[+] New Hook: generate_paging_navigation
+[*] Change navigation search from line-height to height to fix Chrome issue
+[*] Header/Logo upload uses Media Library
+
+----
+
 (9/28/2014) - 1.1.9
 [!] Active/focus styles added to form button CSS
 [*] Fix messed up layout in IE8 and below

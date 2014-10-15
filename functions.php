@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.1.9');
+define( 'GENERATE_VERSION', '1.2.0');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -115,64 +115,64 @@ function generate_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Left Sidebar', 'generate' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Header', 'generate' ),
 		'id'            => 'header',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget 1', 'generate' ),
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget 2', 'generate' ),
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget 3', 'generate' ),
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget 4', 'generate' ),
 		'id'            => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget 5', 'generate' ),
 		'id'            => 'footer-5',
 		'before_widget' => '<aside id="%1$s" class="widget inner-padding %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => apply_filters( 'generate_start_widget_title', '<h4 class="widget-title">' ),
+		'after_title'   => apply_filters( 'generate_end_widget_title', '</h4>' ),
 	) );
 }
 
@@ -236,7 +236,7 @@ function generate_scripts() {
 		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, GENERATE_VERSION, 'all' );
 	endif;
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	// Generate scripts
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
@@ -389,34 +389,7 @@ function generate_base_css()
 		// Grid container
 		'body .grid-container' => array(
 			'max-width' => $generate_settings['container_width'] . 'px'
-		),
-		
-		// Header 
-		'.site-header' => array(
-			'text-align' => ( !empty( $generate_settings['header_alignment_setting'] ) ) ? $generate_settings['header_alignment_setting'] : null
-		),
-		
-		// Navigation 
-		'.nav-below-header .main-navigation,
-		.nav-above-header .main-navigation' => array(
-			'text-align' => ( !empty( $generate_settings['nav_alignment_setting'] ) ) ? $generate_settings['nav_alignment_setting'] : null
-		),
-		
-		// Remove whitespace between inline elements
-		'.main-navigation ul' => array(
-			'font-size' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '0px' : null,
-		),
-		
-		// Navigation 
-		'.nav-below-header .main-navigation .menu > li, 
-		.nav-below-header .main-navigation .sf-menu > li,
-		.nav-above-header .main-navigation .menu > li, 
-		.nav-above-header .main-navigation .sf-menu > li' => array(
-			'float' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'none' : null,
-			'display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline-block' : null,
-			'*display' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? 'inline' : null,
-			'*zoom' => ( 'left' !== $generate_settings['nav_alignment_setting'] ) ? '1' : null,
-		),
+		)
 		
 	);
 	
@@ -453,6 +426,10 @@ function generate_base_css()
  */
 function generate_featured_page_header_area($class)
 {
+	// Don't run the function unless we're on a page it applies to
+	if ( ! is_singular() )
+		return;
+		
 	global $post;
 	$page_header_image_info = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 	$page_header_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );

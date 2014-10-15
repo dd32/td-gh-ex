@@ -30,13 +30,9 @@ function generate_body_classes( $classes ) {
 		generate_get_defaults() 
 	);
 	$stored_meta = '';
-	$page_header_image = '';
-	$page_header_slideshow = '';
 	
 	if ( isset( $post ) ) :
 		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
-		$page_header_image = get_post_meta( get_the_ID(), '_meta-generate-page-header-image', true );
-		$page_header_slideshow = get_post_meta( get_the_ID(), '_meta-generate-page-header-slideshow', true );
 	endif;
 	
 	// If we're on the single post page, use appropriate setting
@@ -65,15 +61,39 @@ function generate_body_classes( $classes ) {
 		$generate_settings['layout_setting'] = $generate_settings['blog_layout_setting'];
 	endif;
 	
-	// Let us know if a page header is being used
-	if ( '' !== $page_header_image || '' !== $page_header_slideshow ) :
-		$classes[] = 'page-header-active';
+	// Let us know if a featured image is being used
+	if ( has_post_thumbnail() ) :
+		$classes[] = 'featured-image-active';
 	endif;
 	
+	// Layout classes
 	$classes[] = ( $generate_settings['layout_setting'] ) ? $generate_settings['layout_setting'] : 'right-sidebar';
 	$classes[] = ( $generate_settings['nav_position_setting'] ) ? $generate_settings['nav_position_setting'] : 'nav-below-header';
+	$classes[] = ( $generate_settings['nav_alignment_setting'] ) ? $generate_settings['nav_alignment_setting'] : 'nav-below-header';
 	$classes[] = ( $generate_settings['header_layout_setting'] ) ? $generate_settings['header_layout_setting'] : 'fluid-header';
 	$classes[] = ( $generate_settings['content_layout_setting'] ) ? $generate_settings['content_layout_setting'] : 'separate-containers';
+	
+	// Navigation alignment class
+	if ( $generate_settings['nav_alignment_setting'] == 'left' ) :
+		$classes[] = 'nav-aligned-left';
+	elseif ( $generate_settings['nav_alignment_setting'] == 'center' ) :
+		$classes[] = 'nav-aligned-center';
+	elseif ( $generate_settings['nav_alignment_setting'] == 'right' ) :
+		$classes[] = 'nav-aligned-right';
+	else :
+		$classes[] = 'nav-aligned-left';
+	endif;
+	
+	// Header alignment class
+	if ( $generate_settings['header_alignment_setting'] == 'left' ) :
+		$classes[] = 'header-aligned-left';
+	elseif ( $generate_settings['header_alignment_setting'] == 'center' ) :
+		$classes[] = 'header-aligned-center';
+	elseif ( $generate_settings['header_alignment_setting'] == 'right' ) :
+		$classes[] = 'header-aligned-right';
+	else :
+		$classes[] = 'header-aligned-left';
+	endif;
 	
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
@@ -521,20 +541,8 @@ function generate_footer_classes( $classes )
 add_filter( 'generate_main_class', 'generate_main_classes');
 function generate_main_classes( $classes )
 {
+
 	$classes[] = 'site-main';
-
-	// Get theme options
-	// $generate_settings = wp_parse_args( 
-		// get_option( 'generate_settings', array() ), 
-		// generate_get_defaults() 
-	// );
-	// $footer_layout = $generate_settings['footer_layout_setting'];
-	
-	// if ( $footer_layout == 'contained-footer' ) :
-		// $classes[] = 'grid-container';
-		// $classes[] = 'grid-parent';
-	// endif;
-
 	return $classes;
 	
 }

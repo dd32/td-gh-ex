@@ -280,7 +280,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 			'generate_settings[font_body]', 
 			array(
 				'default' => $defaults['font_body'],
-				'type' => 'option'
+				'type' => 'option',
+				'sanitize_callback' => 'generate_sanitize_typography'
 			)
 		);
 			
@@ -301,7 +302,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 			'generate_settings[body_font_weight]', 
 			array(
 				'default' => $defaults['body_font_weight'],
-				'type' => 'option'
+				'type' => 'option',
+				'sanitize_callback' => 'generate_sanitize_font_weight'
 			)
 		);
 			
@@ -323,7 +325,9 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 			'generate_settings[body_font_transform]', 
 			array(
 				'default' => $defaults['body_font_transform'],
-				'type' => 'option'
+				'type' => 'option',
+				'sanitize_callback' => 'generate_sanitize_text_transform'
+				
 			)
 		);
 			
@@ -345,7 +349,8 @@ if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 			'generate_settings[body_font_size]', 
 			array(
 				'default' => $defaults['body_font_size'],
-				'type' => 'option'
+				'type' => 'option',
+				'sanitize_callback' => 'generate_sanitize_integer'
 			)
 		);
 			

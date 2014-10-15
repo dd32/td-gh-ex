@@ -55,6 +55,69 @@ function generate_sanitize_nav_layout( $input ) {
 }
 
 /**
+ * Sanitize typography dropdown
+ * @since 1.1.10
+ */
+function generate_sanitize_typography( $input ) 
+{
+
+	$valid = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : '' );
+	
+    if ( in_array( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'Open Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic';
+    }
+}
+
+/**
+ * Sanitize font weight
+ * @since 1.1.10
+ */
+function generate_sanitize_font_weight( $input ) {
+
+    $valid = array(
+        'normal',
+		'bold',
+		'100',
+		'200',
+		'300',
+		'400',
+		'500',
+		'600',
+		'700',
+		'800',
+		'900'
+    );
+ 
+    if ( in_array( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'normal';
+    }
+}
+
+/**
+ * Sanitize text transform
+ * @since 1.1.10
+ */
+function generate_sanitize_text_transform( $input ) {
+
+    $valid = array(
+        'none',
+		'capitalize',
+		'uppercase',
+		'lowercase'
+    );
+ 
+    if ( in_array( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'none';
+    }
+}
+
+/**
  * Sanitize navigation alignment
  * @since 1.1.1
  */

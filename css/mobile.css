@@ -22,8 +22,9 @@
 		margin-bottom:20px;
 	}
 	.site-main {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		margin-bottom: 0 !important;
 	}
 	.fluid-header .inside-header {
 		text-align: center;
@@ -75,6 +76,12 @@
 	.alignright {
 		float: none;
 		display: block;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.main-navigation li.search-item.current-menu-item {
+		position: relative;
+		right: auto;
 	}
 }
 

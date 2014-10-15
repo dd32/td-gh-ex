@@ -10,6 +10,7 @@ get_header(); ?>
 
 	<div id="primary" <?php generate_content_class(); ?>>
 		<main id="main" <?php generate_main_class(); ?> itemprop="mainContentOfPage" role="main">
+			<?php do_action('generate_before_main_content'); ?>
 			<div class="inside-article">
 				<?php do_action( 'generate_before_content'); ?>
 				<header class="entry-header">
@@ -24,6 +25,7 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 				<?php do_action( 'generate_after_content'); ?>
 			</div><!-- .inside-article -->
+			<?php do_action('generate_after_main_content'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

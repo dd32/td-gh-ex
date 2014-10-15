@@ -24,7 +24,7 @@ class Generate_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
     public function render_content()
     {
 		$fonts = ( get_transient('generate_get_fonts') ? get_transient('generate_get_fonts') : '' );
-		
+
         if(!empty($fonts))
         {
             ?>

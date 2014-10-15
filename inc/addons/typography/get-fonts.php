@@ -28,3 +28,23 @@ function generate_get_fonts( $amount = 1000 )
 
 }
 endif;
+
+if ( ! function_exists( 'generate_font_list' ) ) :
+add_action( 'admin_init','generate_font_list' );
+function generate_font_list()
+{
+	if ( get_transient('generate_font_list') )
+		return;
+		
+	$fonts = ( get_transient('generate_get_fonts') ? get_transient('generate_get_fonts') : '' );
+	
+	$font = array();
+	foreach ( $fonts as $k => $fam ) {
+		$var = join(',', $fam->variants);
+		$font[] = $fam->family . ':' . $var;
+	}
+
+	set_transient('generate_font_list', $font, WEEK_IN_SECONDS);
+
+}
+endif;

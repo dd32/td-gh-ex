@@ -93,6 +93,7 @@ function generate_content_nav( $nav_id ) {
 		<?php endif; ?>
 		
 		<?php generate_paging_nav(); ?>
+		<?php do_action('generate_paging_navigation'); ?>
 
 	<?php endif; ?>
 
@@ -273,6 +274,7 @@ if ( ! function_exists( 'generate_post_image' ) ) :
 	add_action( 'generate_after_entry_header', 'generate_post_image' );
 	function generate_post_image()
 	{
+		
 		if ( !has_post_thumbnail() )
 			return;
 			

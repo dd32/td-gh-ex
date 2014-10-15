@@ -112,3 +112,12 @@ if ( ! defined( 'GP_VERIFY_EMAIL' ) )
 	
 if ( ! defined( 'GP_REFRESH' ) )
 	define( 'GP_REFRESH', __( 'Refresh','generate' ) );
+	
+if ( ! defined( 'GP_ADDON_VERSION' ) )
+	define( 'GP_ADDON_VERSION', __( 'Version','generate' ) );
+	
+if ( ! defined( 'GP_DISABLE' ) )
+	define( 'GP_DISABLE', __( 'Disable','generate' ) );
+	
+if ( ! defined( 'GP_ENABLE' ) )
+	define( 'GP_ENABLE', __( 'Enable','generate' ) );

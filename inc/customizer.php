@@ -19,11 +19,6 @@ function generate_customize_register( $wp_customize ) {
 	require_once get_template_directory() . '/inc/controls.php';
 	require_once get_template_directory() . '/inc/sanitize.php';
 	
-	// $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
-	// Change title tagline title to Setup
 	$wp_customize->get_section('title_tagline')->title = __( 'Header Content', 'generate' );
 	$wp_customize->get_control('blogdescription')->priority = 3;
 	$wp_customize->get_control('blogname')->priority = 1;
@@ -33,8 +28,6 @@ function generate_customize_register( $wp_customize ) {
 	$wp_customize->get_section('nav')->title = __( 'Set Navigation', 'generate' );
 	$wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
-	//$wp_customize->remove_section('static_front_page');
-	//$wp_customize->remove_section('nav');
 	
 	// Remove title
 	$wp_customize->add_setting( 
@@ -79,12 +72,13 @@ function generate_customize_register( $wp_customize ) {
 		'generate_settings[logo]', 
 		array(
 			'default' => $defaults['logo'],
-			'type' => 'option'
+			'type' => 'option',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
  
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new Generate_Upload_Control(
 			$wp_customize,
 			'generate_settings[logo]',
 			array(

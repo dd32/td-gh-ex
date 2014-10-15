@@ -10,7 +10,7 @@ get_header();
 
 	<div id="primary" <?php generate_content_class('image-attachment'); ?>>
 		<main id="main" class="site-main" role="main">
-
+		<?php do_action('generate_before_main_content'); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -88,7 +88,7 @@ get_header();
 			?>
 
 		<?php endwhile; // end of the loop. ?>
-
+		<?php do_action('generate_after_main_content'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

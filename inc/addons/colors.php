@@ -72,7 +72,7 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'form_border_color' => '#CCCCCC',
 			'form_border_color_focus' => '#BFBFBF',
 			'form_button_background_color' => '#666666',
-			'form_button_background_color_hover' => '#606060',
+			'form_button_background_color_hover' => '#3F3F3F',
 			'form_button_text_color' => '#FFFFFF',
 			'form_button_text_color_hover' => '#FFFFFF'
 		);
@@ -382,7 +382,9 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			'button, 
 			html input[type="button"], 
 			input[type="reset"], 
-			input[type="submit"]' => array(
+			input[type="submit"],
+			.button,
+			.button:visited' => array(
 				'background-color' => $generate_settings['form_button_background_color'],
 				'color' => $generate_settings['form_button_text_color']
 			),
@@ -392,14 +394,17 @@ if ( !function_exists('generate_get_color_defaults') && !function_exists('genera
 			html input[type="button"]:hover, 
 			input[type="reset"]:hover, 
 			input[type="submit"]:hover,
+			.button:hover,
 			button:focus, 
 			html input[type="button"]:focus, 
 			input[type="reset"]:focus, 
 			input[type="submit"]:focus,
+			.button:focus,
 			button:active, 
 			html input[type="button"]:active, 
 			input[type="reset"]:active, 
-			input[type="submit"]:active' => array(
+			input[type="submit"]:active,
+			.button:active' => array(
 				'background-color' => $generate_settings['form_button_background_color_hover'],
 				'color' => $generate_settings['form_button_text_color_hover']
 			)

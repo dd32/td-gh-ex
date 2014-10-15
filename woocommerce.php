@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" <?php generate_content_class();?>>
 		<main id="main" <?php generate_main_class(); ?> itemprop="mainContentOfPage" role="main">
-			
+			<?php do_action('generate_before_main_content'); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="inside-article">
 					<div class="entry-content" itemprop="text">
@@ -21,7 +21,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</div><!-- .inside-article -->
 			</article><!-- #post-## -->
-
+			<?php do_action('generate_after_main_content'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

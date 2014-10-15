@@ -3,8 +3,8 @@ Theme Name: GeneratePress
 Theme URI: http://generatepress.com
 Author: Thomas Usborne
 Author URI: http://edge22.com
-Description: GeneratePress is a fast, lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website with ease. Using the Customizer you can transform GeneratePress to meet your needs in minutes. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible (including IE8+), WooCommerce compatible, BuddyPress compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English and German/Deutsch! See more at http://generatepress.com
-Version: 1.1.9
+Description: GeneratePress is a fast, lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website with ease. Using the Customizer you can transform GeneratePress to meet your needs in minutes. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible (including IE8+), WooCommerce compatible, BuddyPress compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English, German/Deutsch and French/Francais! See more at http://generatepress.com
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: generate
@@ -249,7 +249,7 @@ input[type="submit"] {
 	color: rgba(0, 0, 0, .8);*/
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	padding: 10px 15px;
+	padding: 10px 20px;
 	color: #FFF;
 }
 button:hover,
@@ -267,6 +267,11 @@ html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
 	background: #606060;
+}
+.button {
+	padding: 10px 20px;
+	display: inline-block;
+	*display: inline;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -319,6 +324,13 @@ textarea {
 	padding: 7px
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
+}
+
+input[type="file"] {
+	max-width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Links */
@@ -469,12 +481,27 @@ a:active {
 .nav-float-right .main-navigation {
 	float:right;
 }
+
 .site-header {
 	position:relative;
 }
+
+.header-aligned-left .site-header {
+	text-align: left;
+}
+
+.header-aligned-center .site-header {
+	text-align: center;
+}
+
+.header-aligned-right .site-header {
+	text-align: right;
+}
+
 .site-header .header-image {
 	vertical-align: middle;
 }
+
 .main-navigation .main-nav ul ul li a, .nav-float-right .main-navigation .main-nav ul ul li a {
 	line-height: normal;
 }
@@ -487,6 +514,11 @@ a:active {
 .main-navigation li.search-item {
 	float: right;
 	z-index: 21;
+}
+
+.nav-aligned-center .main-navigation li.search-item.current-menu-item {
+	position: absolute;
+	right: 0;
 }
 
 .main-navigation li.search-item i {
@@ -506,7 +538,8 @@ a:active {
 	border: 0;
 	vertical-align: bottom;
 	padding: 0 15px;
-	line-height: 50px;
+	line-height: 0;
+	height: 50px;
 	opacity: 0.9;
 	width: 100%;
 	z-index: 20;
@@ -524,6 +557,40 @@ a:active {
 
 .navigation-search input:focus {
 	outline: 0;
+}
+
+.nav-aligned-right.nav-below-header .main-navigation .menu > li, 
+.nav-aligned-right.nav-below-header .main-navigation .sf-menu > li,
+.nav-aligned-right.nav-above-header .main-navigation .menu > li, 
+.nav-aligned-right.nav-above-header .main-navigation .sf-menu > li,
+.nav-aligned-center.nav-below-header .main-navigation .menu > li, 
+.nav-aligned-center.nav-below-header .main-navigation .sf-menu > li,
+.nav-aligned-center.nav-above-header .main-navigation .menu > li, 
+.nav-aligned-center.nav-above-header .main-navigation .sf-menu > li {
+	float: none;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.nav-aligned-right .main-navigation ul,
+.nav-aligned-center .main-navigation ul {
+	font-size: 0px;
+}
+
+.nav-aligned-left.nav-below-header .main-navigation,
+.nav-aligned-left.nav-above-header .main-navigation {
+	text-align: left;
+}
+
+.nav-aligned-center.nav-below-header .main-navigation,
+.nav-aligned-center.nav-above-header .main-navigation {
+	text-align: center;
+}
+
+.nav-aligned-right.nav-below-header .main-navigation,
+.nav-aligned-right.nav-above-header .main-navigation {
+	text-align: right;
 }
 
 
@@ -828,69 +895,69 @@ h4, h5, h6 {
 
 /* Layout spacing */
 .right-sidebar .site-main {
-	padding: 30px 30px 30px 0;
+	margin: 30px 30px 30px 0;
 }
 .left-sidebar .site-main {
-	padding: 30px 0 30px 30px;
+	margin: 30px 0 30px 30px;
 }
 .both-sidebars.separate-containers .site-main {
-	padding: 30px;
+	margin: 30px;
 }
 .both-right.separate-containers .site-main {
-	padding: 30px 30px 30px 0;
+	margin: 30px 30px 30px 0;
 }
 .both-left.separate-containers .site-main {
-	padding: 30px 0px 30px 30px;
+	margin: 30px 0px 30px 30px;
 }
 .both-left .inside-left-sidebar {
-	padding-right: 15px;
+	margin-right: 15px;
 }
 .both-left .inside-right-sidebar {
-	padding-left: 15px;
+	margin-left: 15px;
 }
 .both-right .inside-left-sidebar {
-	padding-right: 15px;
+	margin-right: 15px;
 }
 .both-right .inside-right-sidebar {
-	padding-left: 15px;
+	margin-left: 15px;
 }
 .site-main {
-	padding: 30px 0;
+	margin: 30px 0;
 }
 .separate-containers .site-main > *:last-child {
 	margin-bottom: 0;
 }
 .inside-right-sidebar,
 .inside-left-sidebar {
-	padding: 30px 0;
+	margin: 30px 0;
 }
 .one-container .site-main {
-	padding-top: 0;
-	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .one-container .site-content {
 	padding: 40px;
 }
 .one-container .site-main {
-	padding-top: 0;
-	padding-left: 0;
-	padding-right: 0;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 .one-container.both-right .site-main,
 .one-container.right-sidebar .site-main {
-	padding-right: 60px;
+	margin-right: 60px;
 }
 .one-container.both-left .site-main,
 .one-container.left-sidebar .site-main {
-	padding-left: 60px;
+	margin-left: 60px;
 }
 .one-container.both-sidebars .site-main {
-	padding-left: 60px;
-	padding-right: 60px;
+	margin-left: 60px;
+	margin-right: 60px;
 }
 .one-container .inside-right-sidebar,
 .one-container .inside-left-sidebar {
-	padding-top: 0;
+	margin-top: 0;
 }
 .one-container .inside-article {
 	padding: 0 0 30px 0;
@@ -1092,7 +1159,7 @@ h4, h5, h6 {
 	color:#1E73BE;
 }*/
 footer.entry-meta {
-	margin-top: 20px;
+	margin-top: 2em;
 }
 
 .cat-links:before {
@@ -1178,10 +1245,6 @@ footer.entry-meta {
 	margin-bottom: 0;
 }
 
-.paging-navigation {
-	font-size: 80%;
-}
-
 .paging-navigation:before,
 .paging-navigation:after {
 	content: ".";
@@ -1247,7 +1310,7 @@ footer.entry-meta {
 }
 
 .post-image {
- margin: 1.5em 0 0;
+ margin: 2em 0 0;
 }
 
 /* Page Header Addon */
@@ -1279,6 +1342,6 @@ footer.entry-meta {
 .separate-containers .inside-article .page-header-content,
 .one-container .inside-article .page-header-image, 
 .one-container .inside-article .page-header-content  {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 	margin-top: 0;
 }

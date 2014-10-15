@@ -113,11 +113,13 @@ if ( !function_exists('generate_spacing_css') ) :
 			),
 			
 			'.navigation-search' => array(
-				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+				'height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+				'line-height' => '0px'
 			),
 			
 			'.navigation-search input' => array(
-				'line-height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+				'height' => ( isset( $spacing_settings['menu_item_height'] ) ) ? $spacing_settings['menu_item_height'] . 'px' : null,
+				'line-height' => '0px'
 			),
 			
 			'.separate-containers .widget-area .widget' => array(
@@ -142,33 +144,38 @@ if ( !function_exists('generate_spacing_css') ) :
 			),
 			
 			'.right-sidebar.separate-containers .site-main' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-left' => '0px',
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-left' => '0px',
+				'padding' => '0px'
 			),
 			
 			'.left-sidebar.separate-containers .site-main' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-right' => '0px',
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-right' => '0px',
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding' => '0px'
 			),
 			
 			'.both-sidebars.separate-containers .site-main' => array(
-				'padding' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding' => '0px'
 			),
 			
 			'.both-right.separate-containers .site-main' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-left' => '0px',
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-left' => '0px',
+				'padding' => '0px'
 			),
 			
 			'.separate-containers .site-main' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding' => '0px'
 			),
 			
 			'.separate-containers .page-header-image, .separate-containers .page-header-content, .separate-containers .page-header-image-single, .separate-containers .page-header-content-single' => array(
@@ -176,15 +183,18 @@ if ( !function_exists('generate_spacing_css') ) :
 			),
 			
 			'.both-left.separate-containers .site-main' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-right' => '0px',
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-right' => '0px',
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding' => '0px'
 			),
 			
 			'.separate-containers .inside-right-sidebar, .inside-left-sidebar' => array(
-				'padding-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
-				'padding-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null
+				'margin-top' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
+				'padding-top' => '0px',
+				'padding-bottom' => '0px'
 			),
 			
 			'.separate-containers .widget, .separate-containers .hentry, .separate-containers .page-header, .widget-area .main-navigation' => array(
@@ -192,19 +202,23 @@ if ( !function_exists('generate_spacing_css') ) :
 			),
 			
 			'.both-left.separate-containers .inside-left-sidebar' => array(
-				'padding-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'margin-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'padding-right' => '0px'
 			),
 			
 			'.both-left.separate-containers .inside-right-sidebar' => array(
-				'padding-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'padding-left' => '0px'
 			),
 			
 			'.both-right.separate-containers .inside-left-sidebar' => array(
-				'padding-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'margin-right' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'padding-right' => '0px'
 			),
 
 			'.both-right.separate-containers .inside-right-sidebar' => array(
-				'padding-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'margin-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
+				'padding-left' => '0px'
 			),
 			
 		);

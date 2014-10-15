@@ -9,6 +9,7 @@ get_header(); ?>
 
 	<section id="primary" <?php generate_content_class(); ?>>
 		<main id="main" <?php generate_main_class(); ?> itemtype="http://schema.org/SearchResultsPage" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
+		<?php do_action('generate_before_main_content'); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -29,6 +30,7 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'search' ); ?>
 
 		<?php endif; ?>
+		<?php do_action('generate_after_main_content'); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

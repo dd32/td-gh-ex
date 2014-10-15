@@ -4,7 +4,7 @@
  * @since 0.1
  */
 function generate_add_layout_meta_box() {  
-	$post_types = array('page','post');
+	$post_types = get_post_types();
 	foreach ($post_types as $type) {
 		add_meta_box
 		(  
@@ -101,7 +101,7 @@ add_action('save_post', 'generate_save_layout_meta');
  * @since 0.1
  */
 function generate_add_footer_widget_meta_box() {  
-	$post_types = array('page','post');
+	$post_types = get_post_types();
 	foreach ($post_types as $type) {
 		add_meta_box
 		(  

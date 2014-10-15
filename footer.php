@@ -24,6 +24,11 @@
 		$stored_meta = get_post_meta( $post->ID, '_generate-footer-widget-meta', true );
 	endif;
 	
+	// Don't run the function unless we're on a page it applies to
+	if ( ! is_singular() ) :
+		$stored_meta = '';
+	endif;
+	
 	if ( '' !== $stored_meta && false !== $stored_meta ) :
 		$generate_settings['footer_widget_setting'] = $stored_meta;
 	endif;

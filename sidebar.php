@@ -37,5 +37,5 @@ $generate_settings = wp_parse_args(
 				<?php endif; ?>
 			<?php endif; // end sidebar widget area ?>
 			<?php do_action( 'generate_after_right_sidebar_content' ); ?>
-		</div>
+		</div><!-- .inside-right-sidebar -->
 	</div><!-- #secondary -->
