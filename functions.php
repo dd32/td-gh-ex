@@ -26,17 +26,11 @@ __MAXFLAT::init();
 
 
 /**
- * Sets up the content width value based on the theme's design and stylesheet.
- */
-
-if (!isset($content_width))
-    $content_width = 625;
-
-/**
  * Sets up theme defaults and registers the various WordPress features
  */
 
 function maxflat_setup(){
+     global $content_width;
     /*
              * Load textdomain.
              */
@@ -83,6 +77,15 @@ function maxflat_setup(){
 	  add_image_size('medium-square', 350, 350, true);
 
 
+
+/**
+ * Sets up the content width value based on the theme's design and stylesheet.
+ */
+
+
+    if ( ! isset( $content_width ) ){
+        $content_width = 640;
+    }
 }
 
 add_action('after_setup_theme', 'maxflat_setup');
