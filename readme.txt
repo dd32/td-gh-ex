@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.8 =
+* Updated Options framework to 1.8.0
+
 = Version 1.0.7 =
 * html5shiv updated to version 3.7.2
 * Fixed goolge font load issue in ssl.
