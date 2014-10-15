@@ -29,11 +29,13 @@ $medics_options = get_option( 'medics_theme_options' );
           <div class="blog-comment"> <i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?> </div>
         </div>
         <div class="blog-contan-col-2">
-          <?php if($medics_image != "") { ?>
-          <img src="<?php echo $medics_image; ?>" class="img-responsive medics-featured-image" alt="" />
-          <?php } ?>
+          <?php 
+			if($medics_image){
+				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
+			}
+		?>
        
-              <h1><a href=<?php echo get_permalink(); ?>>
+              <h1><a href=<?php echo esc_url( get_permalink() ); ?>>
                 <?php the_title(); ?>
                 </a></h1>
               <div class="dr-name-icon">

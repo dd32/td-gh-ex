@@ -30,10 +30,12 @@ get_header();
       </div>
       <div class="blog-contan-col-2">
         <?php $medics_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-        <?php if($medics_image != "") { ?>
-        <img src="<?php echo $medics_image; ?>" class="img-responsive medics-featured-image" />
-        <?php } ?>
-        <h1><a href="<?php echo get_permalink(); ?>" class="medics-link">
+        <?php 
+			if($medics_image){
+				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
+			}
+		?>
+        <h1><a href="<?php echo esc_url( get_permalink() ); ?>" class="medics-link">
           <?php the_title(); ?>
           </a></h1>
         <div class="dr-name-icon"> <i class="fa fa-user"></i><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a> <i class="fa fa-tags"></i> <span>

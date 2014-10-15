@@ -79,9 +79,11 @@ $medics_options = get_option( 'medics_theme_options' );
       </div>
       <div class="col-md-10 no-padding blog-contan">
         <div class="medics-home-blog-img">
-          <?php if($medics_image != "") { ?>
-          <img src="<?php echo $medics_image; ?>" class="img-responsive medics-featured-image" alt="" />
-          <?php } ?>
+          <?php 
+			if($medics_image){
+				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
+			}
+			?>
         </div>
         <h1><a href=<?php echo get_permalink(); ?>>
           <?php the_title(); ?>

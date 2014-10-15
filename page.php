@@ -28,14 +28,22 @@ get_header();
           <div class="blog-comment"> <i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?> </div>
         </div>
         <div class="blog-contan-col-2">
-          <?php if($medics_image != "") { ?>
-          <img src="<?php echo $medics_image; ?>" class="img-responsive medics-featured-image" alt="" />
-          <?php } ?>
+          <?php 
+			if($medics_image){
+				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
+			}
+		?>
           <h1>
             <?php the_title(); ?>
           </h1>
           <div class="medics-contant">
-            <?php the_content(); ?>
+            <?php the_content(); 
+            
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'medics' ),
+					'after' => '</div>',
+				) );
+			?>
           </div>
         </div>
       </div>

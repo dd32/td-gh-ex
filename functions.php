@@ -12,7 +12,7 @@ function medics_setup() {
 	/*
 	 * Make medics theme available for translation.
 	 */
-	load_theme_textdomain( 'medics', get_template_directory() . '/languages' );
+
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', medics_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -66,22 +66,22 @@ function medics_font_url() {
 }
 
 /*** Enqueue css and js files ***/
-require_once('functions/enqueue-files.php');
+require get_template_directory() . '/functions/enqueue-files.php';
 
 /*** Theme Default Setup ***/
-require_once('functions/theme-default-setup.php');
+require get_template_directory() . '/functions/theme-default-setup.php';
 
 /*** Theme Option ***/
-require_once('theme-options/medicstheme.php');
+require get_template_directory() . '/theme-options/medicstheme.php';
 
 /*** Recent Post Widget ***/
-require_once('functions/recent-post-widget.php');
+require get_template_directory() . '/functions/recent-post-widget.php';
 
 /*** Breadcrumbs ***/
-require_once('functions/breadcrumbs.php');
+require get_template_directory() . '/functions/breadcrumbs.php';
 
 /*** Custom Header ***/
-require_once('functions/custom-header.php');
+require get_template_directory() . '/functions/custom-header.php';
 
 /*** TGM ***/
-require_once('functions/tgm-plugins.php');
+require get_template_directory() . '/functions/tgm-plugins.php';

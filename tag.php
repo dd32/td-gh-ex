@@ -31,9 +31,11 @@ get_header();
       </div>
       <div class="blog-contan-col-2">
         <?php $medics_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-        <?php if($medics_image != "") { ?>
-        <img src="<?php echo $medics_image; ?>" class="img-responsive medics-featured-image" />
-        <?php } ?>
+        <?php 
+			if($medics_image){
+				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
+			}
+		?>
         <h1><a href="<?php echo get_permalink(); ?>" class="medics-link">
           <?php the_title(); ?>
           </a></h1>

@@ -28,7 +28,7 @@
         <?php if(!empty($medics_options['footertext'])) {
 			 	echo '<p>'.esc_attr($medics_options['footertext']).' ' ; 
 			  } 
-			  echo'<span class="medics-poweredby">Powered by <a target="_blank" href="http://wordpress.org">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/Medics" target="_blank">Medics</a>.</span> </p>';
+			  _e('<span class="medics-poweredby">Powered by <a target="_blank" href="http://wordpress.org">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/Medics" target="_blank">Medics</a>.</span> </p>','medics');
 		 ?>
       </div>
       <div class="col-md-4 text-right no-padding">

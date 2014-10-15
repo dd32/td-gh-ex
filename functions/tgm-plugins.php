@@ -1,6 +1,5 @@
 <?php
-require_once('class-tgm-plugin-activation.php');
-
+require dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 add_action( 'medics_register', 'medics_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function medics_theme_register_plugins() {

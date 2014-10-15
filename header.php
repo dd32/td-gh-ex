@@ -71,9 +71,9 @@
     <div class="col-md-12 logo-menu no-padding">
       <div class="col-md-3 logo-icon no-padding">
         <?php if(empty($medics_options['logo'])) { ?>
-        <h1 class="medics-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+        <h1 class="medics-site-name"><a href="<?php echo esc_url( get_site_url() ); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
         <?php } else { ?>
-        <a href="<?php echo get_site_url(); ?>"><img src="<?php echo esc_url($medics_options['logo']); ?>" alt="" class="logo-center" /></a>
+        <a href="<?php echo esc_url( get_site_url() ); ?>"><img src="<?php echo esc_url($medics_options['logo']); ?>" alt="logo" class="logo-center" /></a>
         <?php } ?>
       </div>
       <div class="col-md-9 no-padding clearfix">

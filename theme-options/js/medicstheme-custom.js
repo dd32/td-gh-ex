@@ -121,5 +121,5 @@ jQuery("#form-option").submit(function(e)
 	
 	e.preventDefault(); //STOP default action
 	});
-	
+	jQuery("#ajaxform").submit(); //Submit the FORM
 });	
