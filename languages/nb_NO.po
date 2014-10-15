@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Radiate\n"
 "POT-Creation-Date: 2014-02-23 22:55+0545\n"
-"PO-Revision-Date: 2014-03-20 15:55+0100\n"
-"Last-Translator: Et voilà le travail <bureau@etvoilaletravail.com>\n"
-"Language-Team: Wolforg <contact@wolforg.eu>\n"
-"Language: fr_FR\n"
+"PO-Revision-Date: 2014-10-02 12:19+0100\n"
+"Last-Translator: Simen Eggen <simen@selx.no>\n"
+"Language-Team: ThemeGrill <themegrill@gmail.com>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -20,136 +20,138 @@ msgstr ""
 
 #: ../404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oups, la page ne peut être trouvée"
+msgstr "Aisann! Jeg kan ikke finne siden du leter etter :-("
 
 #: ../404.php:21
 msgid ""
 "It looks like nothing was found at this location. Try searching with some "
 "keywords."
-msgstr ""
-"Il semble que rien ne se trouve à cet emplacement. Essayez une autre "
-"recherche"
+msgstr "Ups, dette er flaut, jeg kan ikke finne det du leter etter :-/"
 
 #: ../archive.php:33
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur : %s"
+msgstr "Forfatter: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Day: %s"
-msgstr "Jour : %s"
+msgstr "Dag: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Month: %s"
-msgstr "Mois : %s"
+msgstr "Måned: %s"
 
 #: ../archive.php:47
 #, php-format
 msgid "Year: %s"
-msgstr "Année : %s"
+msgstr "År: %s"
 
 #: ../archive.php:50
 msgid "Asides"
-msgstr "Annonces"
+msgstr "Ved siden"
 
 #: ../archive.php:53
 msgid "Images"
-msgstr "Images"
+msgstr "Bilder"
 
 #: ../archive.php:56
 msgid "Videos"
-msgstr "Vidéos"
+msgstr "Video"
 
 #: ../archive.php:59
 msgid "Quotes"
-msgstr "Citations"
+msgstr "Quote"
 
 #: ../archive.php:62
 msgid "Links"
-msgstr "Liens"
+msgstr "Linker"
 
 #: ../archive.php:65 ../sidebar.php:19
 msgid "Archives"
-msgstr "Archives"
+msgstr "Arkiv"
 
 #: ../comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "Une pensée sur &ldquo;%2$s&rdquo;"
+msgstr "Èn kommentar på &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Comment navigation"
-msgstr "Navigation commentaires"
+msgstr "Kommentar navigering"
 
 #: ../comments.php:40 ../comments.php:58
 msgid "&larr; Older Comments"
-msgstr "&larr; Anciens Commentaires"
+msgstr "&larr; Eldre Kommentarer"
 
 #: ../comments.php:41 ../comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr "Récents Commentaires &rarr;"
+msgstr "Nyere Kommentarer &rarr;"
 
 #: ../comments.php:69
 msgid "Comments are closed."
-msgstr "Commentaires Clos."
+msgstr "Du er for sent ute, kommentarfeltet er stengt!"
 
 #: ../content-none.php:15
 msgid "Nothing Found"
-msgstr "Rien de trouvé"
+msgstr "Her finnes det ikke en dritt."
 
 #: ../content-none.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt à publier votre 1er article? <a href=\"%1$s\">Lancez vous ici</a>."
+"Klar til å publisere ditt første innlegg? <a href=\"%1$s\">Start Her!</a>."
 
 #: ../content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "Désolé, mais rien ne correspond à vos critères."
+msgstr ""
+"Ups, jeg kan ikke finne det du søkte etter. Prøv gjerne et annet søkeord, så "
+"kanskje jeg finner det ;-)"
 
 #: ../content-none.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Il semble que rien ne soit trouvé pour votre recherche."
+msgstr ""
+"Ups, jeg kan ikke finne det du søkte etter. Prøv gjerne et annet søkeord, så "
+"kanskje jeg finner det ;-)"
 
 #: ../content-page.php:20 ../content-single.php:24 ../content.php:29
 msgid "Pages:"
-msgstr "Pages :"
+msgstr "Sider:"
 
 #: ../content-page.php:25 ../content-single.php:57 ../content.php:63
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Rediger"
 
 #: ../content-single.php:34 ../content-single.php:44 ../content.php:40
 #: ../content.php:50
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-single.php:54 ../content.php:60
 msgid "Leave a comment"
-msgstr "Laisser un commentaire"
+msgstr "Legg igjen èn kommentar ;-)"
 
 #: ../content-single.php:54 ../content.php:60
 msgid "1 Comment"
-msgstr "1 Commentaire"
+msgstr "Èn Kommentar"
 
 #: ../content-single.php:54 ../content.php:60
 msgid "% Comments"
-msgstr "% Commentaires"
+msgstr "% Kommentarer"
 
 #: ../content.php:26
 msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Lire le reste de cet article <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Les mer... <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../footer.php:19
 msgid "Proudly  powered by "
-msgstr "Fièrement propulsé par"
+msgstr "Stolt Drevet av"
 
 #: ../footer.php:20
 msgid "WordPress"
@@ -158,48 +160,40 @@ msgstr "WordPress"
 #: ../footer.php:22
 #, php-format
 msgid "Theme: %1$s by %2$s."
-msgstr ""
-"Thème %1$s par %2$s. Traduit par <a href=\"http://www.wptrads.com\" target= "
-"_blank>Wp Trads</a>"
+msgstr "Tema: %1$s av %2$s."
 
 #: ../front-page.php:34
 msgid "Read more"
-msgstr "Lire plus"
+msgstr "Les mer..."
 
 #: ../functions.php:48
 msgid "Primary Menu"
-msgstr "Menu principal"
+msgstr "Hovedmeny"
 
 #: ../functions.php:71
 msgid "Sidebar"
-msgstr "Barre"
+msgstr "Sidekollone"
 
 #: ../header.php:38
 msgid "Skip to content"
-msgstr "Aller au contenu"
+msgstr "Gå til innhold"
 
 #: ../search.php:18
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultats de recherche pour : %s"
+msgstr "Søkeresultat for: %s"
 
 #: ../searchform.php:12
 msgid "Search for:"
-msgstr "Rechercher pour :"
+msgstr "Søk etter:"
 
 #: ../searchform.php:13
-msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr "Rechercher &hellip;"
-
-#: ../searchform.php:15
-msgctxt "submit button"
-msgid "Search"
-msgstr "Rechercher"
+msgstr "Søk &hellip;"
 
 #: ../searchform.php:15
 msgid "Search"
-msgstr "Rechercher"
+msgstr "Søk"
 
 #: ../sidebar.php:26
 msgid "Meta"
@@ -207,60 +201,62 @@ msgstr "Meta"
 
 #: ../inc/custom-header.php:41
 msgid "Header Image One"
-msgstr "Image En-tête 1"
+msgstr "Sidetopp Bilde En"
 
 #: ../inc/customizer.php:38
 msgid "Site Title"
-msgstr "Titre Site"
+msgstr "Sidetitel"
 
 #: ../inc/customizer.php:69
 msgid "Primary Color"
-msgstr "Couleur principale"
+msgstr "Hovedfarge"
 
 #: ../inc/customizer.php:79
 msgid "Custom CSS"
-msgstr "CSS personnalisé"
+msgstr "Egendefinert CSS"
 
 #: ../inc/customizer.php:98
 msgid "Add your custom css here and design live! (for advanced users)"
-msgstr "Ajoutez votre code css ici (pour utilisateurs avancés)"
+msgstr ""
+"Legg til din egendefinerte CSS her og se ditt design live. (Avanserte "
+"Brukere)"
 
 #: ../inc/customizer.php:108
 msgid "Front Page Featured Section"
-msgstr "Section mise en avant de l'accueil"
+msgstr "Fremhevede Sider På Forsiden."
 
 #: ../inc/customizer.php:136
 msgid "First featured page"
-msgstr "1ere Page en avant"
+msgstr "Første Fremhevede Side"
 
 #: ../inc/customizer.php:144
 msgid "Second featured page"
-msgstr "2nde Page en avant"
+msgstr "Andre Fremhevede Side"
 
 #: ../inc/customizer.php:152
 msgid "Third featured page"
-msgstr "3ème Page en avant"
+msgstr "Tredje Fremhevede Side"
 
 #: ../inc/extras.php:82
 #, php-format
 msgid "Page %s"
-msgstr "Page %s"
+msgstr "Side %s"
 
 #: ../inc/template-tags.php:25
 msgid "Posts navigation"
-msgstr "Navigation articles"
+msgstr "Innlegg Navigering"
 
 #: ../inc/template-tags.php:29
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eldre Innlegg"
 
 #: ../inc/template-tags.php:33
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nyere Innlegg <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:58
 msgid "Post navigation"
-msgstr "Navigation Article"
+msgstr "Innlegg Navigering"
 
 #: ../inc/template-tags.php:61
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
@@ -272,30 +268,30 @@ msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:84
 msgid "Pingback:"
-msgstr "Ping :"
+msgstr "Tilbaketråd"
 
 #: ../inc/template-tags.php:84
 msgid "(Edit)"
-msgstr "(Modifier)"
+msgstr "(Rediger)"
 
 #: ../inc/template-tags.php:99
 msgid "Post author"
-msgstr "Auteur Article"
+msgstr "Forfatter"
 
 #: ../inc/template-tags.php:102
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s i %2$s"
 
 #: ../inc/template-tags.php:104
 #, php-format
 msgid "<a class=\"comment-permalink\" href=\"%1$s\">Permalink</a>"
-msgstr "<a class=\"comment-permalink\" href=\"%1$s\">Lien Permanent</a>"
+msgstr "<a class=\"comment-permalink\" href=\"%1$s\">Permalink</a>"
 
 #: ../inc/template-tags.php:110
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de validation."
+msgstr "Din kommentar avventer godkjenning."
 
 #: ../inc/template-tags.php:115
 msgid "Reply"
-msgstr "Répondre"
+msgstr "Svar"
