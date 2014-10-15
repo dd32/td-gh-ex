@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.7
+- Fixed:   Blog posts now allow for custom date format to be used. Picks up fromat from Settings -> General.
+- Updated: Language file updated to include new translatable strings added in v1.6.0.
+
 Version 1.0.6
 - Fixed:   Sanitization of Site Title and Site Description in theme options panel changed to allow non-english alphabet charachters.
 
