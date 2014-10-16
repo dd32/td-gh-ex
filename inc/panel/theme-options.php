@@ -21,11 +21,12 @@ function catchkathmandu_admin_scripts() {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	
 	wp_enqueue_script( 'catchkathmandu_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-	wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
 	
-	wp_enqueue_script( 'catchkathmandu_color', get_template_directory_uri().'/inc/panel/js/color_picker.min.js', array( 'farbtastic' ) );
-	
-	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.min.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
+    wp_enqueue_media();
+    
+    wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.min.js', array( 'jquery' ) );
+
+	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.min.css', '', '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catchkathmandu_admin_scripts');
@@ -173,12 +174,13 @@ function catchkathmandu_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                 	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" /> <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catchkathmandu' );?>" />
+                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
                                     <?php } else { ?>
-                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" /> <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload Fav Icon','catchkathmandu' );?>" />
-                                    <?php }  ?> 
+                                        <input class="upload-url" size="65" type="text" name="catchkathmandu_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                    <?php }  ?>
+                                    <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catchkathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catchkathmandu' );?>" />
                                 </div>
-                          	</div><!-- .row -->                            
+                            </div><!-- .row -->
                        		<div class="row">
                             	<div class="col col-1">
                                 	<?php _e( 'Preview', 'catchkathmandu' ); ?>
@@ -221,7 +223,7 @@ function catchkathmandu_theme_options_do_page() {
                                     <?php } else { ?>
                                         <input size="65" type="text" name="catchkathmandu_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                     <?php }  ?> 
-                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchkathmandu' );?>" />
+                                    <input  ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catchkathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchkathmandu' );?>" />
                               	</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -343,7 +345,7 @@ function catchkathmandu_theme_options_do_page() {
                                 	<?php _e( 'Featured Header Image URL', 'catchkathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">         
-                                	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options [ 'featured_header_image' ] ); ?>" /> <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Image','catchkathmandu' );?>" />
+                                	<input class="upload-url" size="65" type="text" name="catchkathmandu_options[featured_header_image]" value="<?php echo esc_url( $options [ 'featured_header_image' ] ); ?>" /> <input ref="<?php esc_attr_e( 'Insert as Featured Header Image','catchkathmandu' );?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Image','catchkathmandu' );?>" />
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -695,7 +697,7 @@ function catchkathmandu_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_featured]'>
-                                    <input type="checkbox" id="favicon" name="catchkathmandu_options[disable_homepage_featured]" value="1" <?php checked( '1', $options['disable_homepage_featured'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
+                                    <input type="checkbox" name="catchkathmandu_options[disable_homepage_featured]" value="1" <?php checked( '1', $options['disable_homepage_featured'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
                              	</div>
                           	</div><!-- .row -->
                          	<div class="row">
@@ -741,7 +743,7 @@ function catchkathmandu_theme_options_do_page() {
                                         </div>
                                         <div class="col col-2">
                                             <input class="upload-url" size="70" type="text" name="catchkathmandu_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catchkathmandu' ); } else { esc_attr_e( 'Add Image','catchkathmandu' ); } ?>" />
+                                            <input  ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catchkathmandu' ), $i ); ?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catchkathmandu' ); } else { esc_attr_e( 'Add Image','catchkathmandu' ); } ?>" />
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -933,9 +935,8 @@ function catchkathmandu_theme_options_do_page() {
         						<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
                           	</div><!-- .row --> 
                         </div><!-- .option-content -->
-            		</div><!-- .option-container --> 
-              
-            
+            		</div><!-- .option-container -->              
+                    
             		<div id="featured-post-slider" class="option-container post-slider">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'catchkathmandu' ); ?></a></h3>
                         <div class="option-content inside">
@@ -968,33 +969,8 @@ function catchkathmandu_theme_options_do_page() {
                             	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
                            	</div><!-- .row -->      
                         </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                    
-            		<div id="featured-page-slider" class="option-container page-slider">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Page Slider Options', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
-                                <div class="repeat-content-wrap">
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php printf( esc_attr__( 'Featured Page Slider #%s', 'catchkathmandu' ), $i ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input type="text" name="catchkathmandu_options[featured_slider_page][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider_page', $options ) && array_key_exists( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider_page', $options ) && array_key_exists ( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchkathmandu' ); ?></a>
-                                        </div>
-                                    </div><!-- .row -->
-                                </div><!-- .repeat-content-wrap -->  
-                         	<?php endfor; ?>
-                            <div class="row">
-                           		<?php _e( 'Note: Here You can put your Page IDs which displays on Homepage as slider.', 'catchkathmandu' ); ?>
-                            </div><!-- .row --> 
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                           	</div><!-- .row -->       
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->   
-                    
+                    </div><!-- .option-container -->
+
                     <div id="featured-category-slider" class="option-container category-slider">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Category Slider Options', 'catchkathmandu' ); ?></a></h3>
                         <div class="option-content inside">
@@ -1026,65 +1002,8 @@ function catchkathmandu_theme_options_do_page() {
                                 <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
                             </div><!-- .row -->    
                         </div><!-- .option-content -->
-                	</div><!-- .option-container -->                       
-                    
-            		<div id="featured-image-slider" class="option-container image-slider">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Image Slider Options', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                             <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
-                                <div class="repeat-content-wrap">
-                                	<h2 class="title"><?php printf( esc_attr__( 'Featured Image Slider #%s', 'catchkathmandu' ), $i ); ?></h2>
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Image', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input size="70" type="text" class="upload-url" name="catchkathmandu_options[featured_image_slider_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'featured_image_slider_image', $options ) && array_key_exists( $i, $options[ 'featured_image_slider_image' ] ) ) echo esc_url( $options[ 'featured_image_slider_image' ][ $i ] ); ?>" />
-                                          	<input id="st_upload_button" class="st_upload_button button" name="upload_button" type="button" value="<?php esc_attr_e( 'Upload','catchkathmandu' ); ?>" />
-                                        </div>
-                                    </div><!-- .row -->
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Link URL', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input size="70" type="text" name="catchkathmandu_options[featured_image_slider_link][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_image_slider_link', $options ) && array_key_exists( $i, $options[ 'featured_image_slider_link' ] ) ) echo esc_url( $options[ 'featured_image_slider_link' ][ $i ] ); ?>" />
-                                        </div>
-                                    </div><!-- .row -->  
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Target. Open Link in New Window?', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input type='hidden' value='0' name='catchkathmandu_options[featured_image_slider_base][<?php echo absint( $i ); ?>]'>
-                                            <input type="checkbox" name="catchkathmandu_options[featured_image_slider_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'featured_image_slider_base', $options ) && array_key_exists( $i, $options[ 'featured_image_slider_base' ] ) ) checked( '1', $options[ 'featured_image_slider_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catchkathmandu' ); ?>
-                                        </div>
-                                    </div><!-- .row -->
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Title', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input size="70" type="text" name="catchkathmandu_options[featured_image_slider_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_image_slider_title', $options ) && array_key_exists( $i, $options[ 'featured_image_slider_title' ] ) ) echo esc_attr( $options[ 'featured_image_slider_title' ][ $i ] ); ?>" />
-                                        </div>
-                                    </div><!-- .row --> 
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Content', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <textarea name="catchkathmandu_options[featured_image_slider_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'featured_image_slider_content', $options ) && array_key_exists( $i, $options[ 'featured_image_slider_content' ] ) ) echo esc_html( $options[ 'featured_image_slider_content' ][ $i ] ); ?></textarea>
-                                        </div>
-                                    </div><!-- .row -->                                                                                                             
-                                </div><!-- .repeat-content-wrap -->  
-                         	<?php endfor; ?>
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                           	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                                   
-				</div><!-- #slidersettings -->
+                	</div><!-- .option-container -->
+                </div><!-- #slidersettings -->
                 
   
               	<!-- Options for Social Links -->
@@ -1889,16 +1808,15 @@ add_action( 'save_post', 'catchkathmandu_post_invalidate_caches' );
  */
 function catchkathmandu_add_shortcodes() {
 	/* Add theme-specific shortcodes. */
-	add_shortcode( 'footer-image', 'catchkathmandu_footer_image_shortcode' );
-	add_shortcode( 'the-year', 'catchkathmandu_the_year_shortcode' );
-	add_shortcode( 'site-link', 'catchkathmandu_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'catchkathmandu_wp_link_shortcode' );
-	add_shortcode( 'theme-link', 'catchkathmandu_theme_link_shortcode' );
-	
+    add_shortcode( 'footer-image', 'catchkathmandu_footer_image_shortcode' );
+    add_shortcode( 'the-year', 'catchkathmandu_the_year_shortcode' );
+    add_shortcode( 'site-link', 'catchkathmandu_site_link_shortcode' );
+    add_shortcode( 'wp-link', 'catchkathmandu_wp_link_shortcode' );
+    add_shortcode( 'theme-link', 'catchkathmandu_theme_link_shortcode' );
+    add_shortcode( 'shop-link', 'catchkathmandu_shop_link_shortcode' );
 }
 /* Register shortcodes. */
 add_action( 'init', 'catchkathmandu_add_shortcodes' );
-
 
 /**
  * Shortcode to display Footer Image.
@@ -1907,11 +1825,10 @@ add_action( 'init', 'catchkathmandu_add_shortcodes' );
  * @return string
  */
 function catchkathmandu_footer_image_shortcode() {
-	if( function_exists( 'catchkathmandu_footerlogo' ) ) :
-    	return catchkathmandu_footerlogo(); 
+    if( function_exists( 'catchkathmandu_footerlogo' ) ) :
+        return catchkathmandu_footerlogo(); 
     endif;
 }
-
 
 /**
  * Shortcode to display the current year.
@@ -1941,7 +1858,7 @@ function catchkathmandu_site_link_shortcode() {
  * @return string
  */
 function catchkathmandu_wp_link_shortcode() {
-	return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catchkathmandu' ) . '"><span>' . __( 'WordPress', 'catchkathmandu' ) . '</span></a>';
+    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catchkathmandu' ) . '"><span>' . __( 'WordPress', 'catchkathmandu' ) . '</span></a>';
 }
 
 
@@ -1951,5 +1868,15 @@ function catchkathmandu_wp_link_shortcode() {
  * @return string
  */
 function catchkathmandu_theme_link_shortcode() {
-	return '<a href="http://catchthemes.com/themes/catch-kathmandu" target="_blank" title="' . esc_attr__( 'Catch Kathmandu', 'catchkathmandu' ) . '"><span>' . __( 'Catch Kathmandu', 'catchkathmandu' ) . '</span></a>';
+    return '<a href="http://catchthemes.com/themes/catch-kathmandu-pro" target="_blank" title="' . esc_attr__( 'Catch Kathmandu Pro', 'catchkathmandu' ) . '"><span>' . __( 'Catch Kathmandu Pro', 'catchkathmandu' ) . '</span></a>';
+}
+
+
+/**
+ * Shortcode to display a link to catchthemes.com.
+ *
+ * @return string
+ */
+function catchkathmandu_shop_link_shortcode() {
+    return '<a href="http://catchthemes.com" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchkathmandu' ) . '"><span>' . __( 'Catch Themes', 'catchkathmandu' ) . '</span></a>';
 }

@@ -1,7 +1,15 @@
 == Changelog ==
+Version 2.5
+* Changed default footer text and link to Author URI
+* Removed unnessary files
+ * catch-kathmandu/inc/panel/js/color_picker.js
+ * catch-kathmandu/inc/panel/js/color_picker.min.js
+* Removed unnessary catchkathmandu_color enqueue
+* Removed unused codes
+* Updated media uploader to new version in theme options
 
-Version 2.4
-* Added support for WooCommerce plugin
+Version 2.4 
+* Added support for WooCommerce plugin 
 
 Version 2.3
 * Added meetup social icon
