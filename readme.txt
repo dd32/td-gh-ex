@@ -120,8 +120,11 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.18   (2014.9.15) - fixed : widget areas in the footer.
     2.19   (2014.9.25) - translation : spanish.
                          fixed : many more minor fixes and changes.
-    2.20   (2014.9.30) - translation : poland.
+    2.20   (2014.9.30) - translation : polish.
                          added : rss-feed icon by specificfeeds.
+                         fixed : many more minor fixes and changes.
+    2.21  (2014.10.16) - translation : german.
+                         fixed : google fonts on https websites.
                          fixed : many more minor fixes and changes.
 
 == Contact & Issues for Anarcho Notepad ==

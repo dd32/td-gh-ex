@@ -3,7 +3,7 @@
  * Theme Information Page
  *
  * @package	Anarcho Notepad
- * @since	2.19
+ * @since	2.21
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -56,6 +56,8 @@ function anarcho_theme_options_do_page() { ?>
              <li><strong>Slovenčina</strong> (translated by <strong>Martin Petrus</strong>)</li>
              <li><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
              <li><strong>Español</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
+             <li><strong>Polski</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
+             <li><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
            </ul>
 	   <em><b><?php _e('Thanks to all who helped me translate "Anarcho-Notepad" into other languages!', 'anarcho-notepad'); ?></b></em>
 	   <em><b><?php _e('Thank you very much for your contribution!', 'anarcho-notepad'); ?></b></em>
