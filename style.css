@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/wp-news-stream/
 Author: Hostmarks
 Author URI: http://hostmarks.com
 Description: WP News Stream is a responsive blog style theme, with some handy customization options to make it your own. The primary theme color, background color and image can be easily controlled via the admin. Upload your own logo, set your social media links and choose whether to display author bios. The home page slider will display posts from the category of your choice. There's also a widget space in the header so you can easily add your own banner code.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, full-width-template, post-formats
@@ -97,7 +97,7 @@ p.live-news{
 	margin-bottom:0px; 
 	border-top:5px solid #d10000;
 	}
-.dropdown-menu .sub-menu a{
+ul.dropdown-menu .sub-menu a, .dropdown-menu > li{
 	background-color: #ff3333;
 }
 .fan-sociel-media{

@@ -47,8 +47,8 @@ if ( ! function_exists( 'wp_newsstream_custom_scripts' ) ) :
 endif;
 add_action('wp_enqueue_scripts', 'wp_newsstream_custom_scripts');
 
-if(!function_exists('load_ie_script')){
-	function load_ie_script(){
+if(!function_exists('wp_newsstream_load_ie_script')){
+	function wp_newsstream_load_ie_script(){
 		$ret_val = '<!--[if lt IE 9]>';
 		$ret_val .= '<script src="' . get_template_directory_uri().'/js/html5shiv.js"></script>';      
 		$ret_val .= '<script src="'. get_template_directory_uri(). '/js/ie-responsive.min.js"></script>';
@@ -56,7 +56,7 @@ if(!function_exists('load_ie_script')){
 		 echo $ret_val; 
 	}
 }
-add_action('wp_head', 'load_ie_script');
+add_action('wp_head', 'wp_newsstream_load_ie_script');
 
 /*******************************************************************
 * These are settings for the Theme Customizer in the admin panel. 
