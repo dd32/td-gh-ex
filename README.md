@@ -35,3 +35,6 @@ textfill lib replaced with fittext lib
 
 1.0.5
 bug fixes
+
+1.0.6
+bug fixes
