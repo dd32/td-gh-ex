@@ -1,4 +1,4 @@
-# Storefront [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Storefront [![Designed for WooCommerce](http://img.shields.io/badge/Designed%20for-WooCommerce-a46497.svg)](http://woothemes.com/woocommerce/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 *Storefront* is a robust and flexible [WordPress](http://wordpress.org) theme, designed by WooCommerce creators [WooThemes](http://woothemes.com/) to help you make the most out of using [WooCommerce](http://woothemes.com/woocommerce/) to power your online store. It's available to download for free at the WordPress [theme repository](https://wordpress.org/themes/storefront/).
 
@@ -12,7 +12,7 @@ It features deep integration with WooCommerce core plus several of the most popu
 For developers, Storefront is the perfect starting point for your project. It's lean and extensible codebase will allow you to easily add functionality to your site via child theme and/or custom plugin(s).
 
 ## Storefront extensions
-Looking to take your storefront powered store to the next level? Be sure to checkout the premium Storefront extensions.
+Looking to take your storefront powered store to the next level? Be sure to checkout the premium [Storefront extensions](http://www.woothemes.com/product-category/plugins/storefront/).
 
 ## Storefront Documentation
 You can view detailed Storefront documentation on the [WooThemes documentation web site](http://docs.woothemes.com/documentation/themes/storefront/).
