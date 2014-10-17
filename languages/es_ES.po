@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-16 22:33+0545\n"
-"PO-Revision-Date: 2014-10-16 22:33+0545\n"
+"POT-Creation-Date: 2014-10-17 09:57+0545\n"
+"PO-Revision-Date: 2014-10-17 09:57+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -366,7 +366,7 @@ msgid "MySpace"
 msgstr "MySpace"
 
 #: ../inc/catchkathmandu-functions.php:1604
-#: ../inc/panel/theme-options.php:1128 ../inc/panel/theme-options.php:1861
+#: ../inc/panel/theme-options.php:1128 ../inc/panel/theme-options.php:1860
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -609,7 +609,7 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
-#: ../inc/panel/theme-options.php:1881
+#: ../inc/panel/theme-options.php:1870
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1368,13 +1368,9 @@ msgstr ""
 "Nota: Aquí puedes poner scripts de Google, Facebook, Twitter, Add This, "
 "etc...  que se cargaran en el Footer"
 
-#: ../inc/panel/theme-options.php:1840
+#: ../inc/panel/theme-options.php:1839
 msgid "Y"
 msgstr "Y"
-
-#: ../inc/panel/theme-options.php:1871
-msgid "Catch Kathmandu Pro"
-msgstr "Catch Kathmandu Pro"
 
 #: ../inc/template-tags.php:51 ../inc/template-tags.php:112
 msgid "Post navigation"
@@ -1524,6 +1520,9 @@ msgstr "Resultados de la busqueda para: %s"
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
 msgstr "Buscar"
+
+#~ msgid "Catch Kathmandu Pro"
+#~ msgstr "Catch Kathmandu Pro"
 
 #~ msgid "Powered by"
 #~ msgstr "Desarrollado por"

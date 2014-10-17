@@ -13,8 +13,8 @@ add_action( 'admin_menu', 'catchkathmandu_options_menu' );
 /**
  * Enqueue admin script and styles
  *
- * @uses wp_register_script, wp_enqueue_script and wp_enqueue_style
- * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable, media-upload, thickbox, farbtastic, colorpicker
+ * @uses wp_register_script, wp_enqueue_script, wp_enqueue_media and wp_enqueue_style
+ * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable
  */
 function catchkathmandu_admin_scripts() {
 	//jQuery Cookie
@@ -1813,7 +1813,6 @@ function catchkathmandu_add_shortcodes() {
     add_shortcode( 'site-link', 'catchkathmandu_site_link_shortcode' );
     add_shortcode( 'wp-link', 'catchkathmandu_wp_link_shortcode' );
     add_shortcode( 'theme-link', 'catchkathmandu_theme_link_shortcode' );
-    add_shortcode( 'shop-link', 'catchkathmandu_shop_link_shortcode' );
 }
 /* Register shortcodes. */
 add_action( 'init', 'catchkathmandu_add_shortcodes' );
@@ -1868,15 +1867,5 @@ function catchkathmandu_wp_link_shortcode() {
  * @return string
  */
 function catchkathmandu_theme_link_shortcode() {
-    return '<a href="http://catchthemes.com/themes/catch-kathmandu-pro" target="_blank" title="' . esc_attr__( 'Catch Kathmandu Pro', 'catchkathmandu' ) . '"><span>' . __( 'Catch Kathmandu Pro', 'catchkathmandu' ) . '</span></a>';
-}
-
-
-/**
- * Shortcode to display a link to catchthemes.com.
- *
- * @return string
- */
-function catchkathmandu_shop_link_shortcode() {
     return '<a href="http://catchthemes.com" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchkathmandu' ) . '"><span>' . __( 'Catch Themes', 'catchkathmandu' ) . '</span></a>';
 }

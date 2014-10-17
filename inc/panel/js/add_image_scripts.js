@@ -10,12 +10,6 @@ jQuery(document).ready(function($){
         this_selector 	= $(this); //For later use
 
         button_text 	= $(this).attr("ref");
-
-        //If the uploader object has already been created, reopen the dialog
-        if ( custom_uploader ) {
-            custom_uploader.open();
-            return;
-        }
  
         //Extend the wp.media object
         custom_uploader = wp.media.frames.file_frame = wp.media({
