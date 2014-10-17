@@ -3,11 +3,10 @@
  * The template part for displaying a message that posts cannot be found.
  *
  */
-global $cx_framework_options; ?>
-
+?>
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php _e( 'Nothing Found', 'albar' ); ?></h1>
+		<h1 class="entry-title"><?php echo __( 'Nothing Found', 'albar' ); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -17,20 +16,20 @@ global $cx_framework_options; ?>
 			
 		<?php elseif ( is_search() ) : ?>
 			
-			<p><?php echo $cx_framework_options['cx-options-site-msg-nosearch']; ?></p>
+			<p><?php echo kaira_theme_option( 'kra-website-nosearch-msg' ); ?></p>
 			
             <div class="not-found-options">
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php _e( 'Return Home', 'albar' ); ?></a>
-                <a class="alba-button search-button"><?php _e( 'Search', 'albar' ); ?></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php echo __( 'Return Home', 'albar' ); ?></a>
+                <a class="alba-button search-button"><?php echo __( 'Search', 'albar' ); ?></a>
             </div>
 			
 		<?php else : ?>
 			
-			<p><?php echo $cx_framework_options['cx-options-site-msg-nosearch']; ?></p>
+			<p><?php echo kaira_theme_option( 'kra-website-nosearch-msg' ); ?></p>
             
             <div class="not-found-options">
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php _e( 'Return Home', 'albar' ); ?></a>
-                <a class="alba-button search-button"><?php _e( 'Search', 'albar' ); ?></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button"><?php echo __( 'Return Home', 'albar' ); ?></a>
+                <a class="alba-button search-button"><?php echo __( 'Search', 'albar' ); ?></a>
             </div>
 			
 		<?php endif; ?>

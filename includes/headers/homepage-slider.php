@@ -1,9 +1,11 @@
 <?php
 $slider_cats = kaira_theme_option( 'kra-slider-categories' );
 
-if( $slider_cats ) : ?>
+if( $slider_cats ) :
 
-<?php if ( have_posts() ) : ?>
+$slider_query = new WP_Query( 'cat=' . $slider_cats . '&posts_per_page=-1&orderby=date&order=DESC' ); ?>
+
+<?php if ( $slider_query->have_posts() ) : ?>
 
     <div id="alba-home-slider-wrapper" class="alba-slider alba-home-slider-remove"<?php echo ( kaira_theme_option( 'kra-slider-auto-scroll' ) ) ? ' data-auto="4000"' : ' data-auto="false"'; ?><?php echo ( kaira_theme_option( 'kra-circular-slider' ) ) ? ' data-circular="true"' : ' data-circular="false"'; ?><?php echo ( kaira_theme_option( 'kra-infinite-slider' ) ) ? ' data-infinite="true"' : ' data-infinite="false"'; ?>>
         <div id="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
@@ -11,9 +13,7 @@ if( $slider_cats ) : ?>
         
         <div id="alba-home-slider">
             
-            <?php
-            query_posts ( 'cat=' . $slider_cats . '&posts_per_page=-1&orderby=date&order=DESC' );
-            while ( have_posts() ) : the_post(); ?>
+            <?php while ( $slider_query->have_posts() ) : $slider_query->the_post(); ?>
             
                 <div>
                     

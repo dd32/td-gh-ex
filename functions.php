@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3' );
+define( 'KAIRA_THEME_VERSION' , '1.4' );
 
 if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' ) ) {
     require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' );
