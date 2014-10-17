@@ -228,7 +228,7 @@ function adamos_theme_customizer( $wp_customize ) {
    $wp_customize->add_setting( 
    		'adamos_logo',
 		array(
-			'sanitize_callback' => 'adamos_sanitize_filename',
+			'sanitize_callback' => 'adamos_sanitize_upload',
 		)
 	);
 
@@ -479,6 +479,10 @@ return $excerpt;
 
 function adamos_sanitize_url( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
+}
+
+function adamos_sanitize_upload($input){
+	return esc_url_raw($input);	
 }
 
 
