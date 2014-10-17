@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 @Version: 1.4 [13/10/14]
+1. Child theme ready.
+2. Social media link modify with #. ( Advise by gpriday )
+
+@Version: 1.4 [13/10/14]
 1. Menu Implementation for mobiles.
 
 @Version: 1.3 [11/10/14]

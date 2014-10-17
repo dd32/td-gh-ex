@@ -54,10 +54,10 @@
 			//Social media links
 			'header_social_media_in_enabled'=>'on',
 			'footer_section_social_media_enbled'=>'on',
-			'twitter_link' =>"https://twitter.com/",
-			'fb_link' =>"https://facebook.com",
-			'linkedin_link' =>"http://linkedin.com/",
-			'youtube_link' =>"https://youtube.com/",
+			'twitter_link' =>"#",
+			'fb_link' =>"#",
+			'linkedin_link' =>"#",
+			'youtube_link' =>"#",
 			
 			'email_id' => 'enigma@mymail.com',
 			'phone_no' => '0159753586',

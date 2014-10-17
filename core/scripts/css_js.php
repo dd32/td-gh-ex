@@ -1,5 +1,5 @@
 <?php function weblizar_scripts()
-        {       wp_enqueue_style('stylsheet', WL_TEMPLATE_DIR_URI . '/style.css');
+        {       wp_enqueue_style( 'enigma-style', get_stylesheet_uri() );
                 wp_enqueue_style('bootstrap', WL_TEMPLATE_DIR_URI .'/css/bootstrap.css');
                 wp_enqueue_style('default', WL_TEMPLATE_DIR_URI . '/css/default.css');
                 wp_enqueue_style('enigma-theme', WL_TEMPLATE_DIR_URI . '/css/enigma-theme.css');

@@ -124,11 +124,11 @@ function wl_reset_social_setting()
 {
 	$wl_theme_options['footer_section_social_media_enbled']="on";
 	$wl_theme_options['header_social_media_in_enabled']="on";	
-	$wl_theme_options['twitter_link']="https://twitter.com/";
-	$wl_theme_options['fb_link']="https://facebook.com/";
-	$wl_theme_options['linkedin_link']="https://linkedin.com/";
-	$wl_theme_options['youtube_link']="https://youtube.com/";
-	$wl_theme_options['dribble_link'] = "https://dribble.com/";
+	$wl_theme_options['twitter_link']="#";
+	$wl_theme_options['fb_link']="#";
+	$wl_theme_options['linkedin_link']="#";
+	$wl_theme_options['youtube_link']="#";
+	$wl_theme_options['dribble_link'] = "#";
 	$wl_theme_options['email_id'] ="enigma@mymail.com";
 	$wl_theme_options['phone_no'] ="0159753586";
 	update_option('enigma_options', $wl_theme_options);
