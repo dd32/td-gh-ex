@@ -1,18 +1,19 @@
 <?php
-global $cx_framework_options;
-
-$blog_cats_set = alba_load_selected_categories( $cx_framework_options['cx-options-blog-cats'] );
-$blog_posts_per_page = $cx_framework_options['cx-options-blog-per-page'];
-
+$blog_cats_set = '';
+if ( kaira_theme_option( 'kra-blog-excl-categories' ) ) {
+    $blog_cats_set = 'cat=' . kaira_theme_option( 'kra-blog-excl-categories' ) . '&';
+}
+$blog_posts_per_page = kaira_theme_option( 'kra-blog-ppp' );
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-query_posts( 'cat=' . $blog_cats_set . '&posts_per_page=' . $blog_posts_per_page . '&paged=' . $paged );
-if ( have_posts() ) : ?>
+
+$blog_query = new WP_Query( $blog_cats_set . 'posts_per_page=' . $blog_posts_per_page . '&paged=' . $paged );
+
+if ( $blog_query->have_posts() ) : ?>
     
     <div class="blog-list-wrap">
     
         <?php
-        $count = 0;
-        while ( have_posts() ) : the_post(); ?>
+        while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
             
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'alba-blog-standard-block ' ); ?>>
                 
@@ -41,6 +42,7 @@ if ( have_posts() ) : ?>
                     
                 </div>
                 <?php endif; ?>
+                
                 <div class="alba-blog-standard-block-content alba-blog-standard-<?php echo ( $images ) ? 'has-images' : 'no-images'; ?>">
                     
                     <header class="entry-header">
@@ -88,7 +90,6 @@ if ( have_posts() ) : ?>
             </article>
             
         <?php
-        $count++;
         endwhile; ?>
         
     </div>

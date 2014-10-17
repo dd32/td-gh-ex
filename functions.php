@@ -5,26 +5,14 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.2' );
+define( 'KAIRA_THEME_VERSION' , '1.3' );
 
-// Adding the Redux Framework
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' );
+if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' ) ) {
+    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' );
 }
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/framework/cx-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/cx-config.php' );
-}
-
-global $cx_framework_options;
 
 // Theme Widgets
 include get_template_directory() . '/includes/widgets.php';
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -35,6 +23,12 @@ if ( ! function_exists( 'kaira_setup_theme' ) ) :
  * support post thumbnails.
  */
 function alba_setup_theme() {
+    
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+     */
+    if ( ! isset( $content_width ) )
+        $content_width = 870; /* pixels */
 
 	/**
 	 * Make theme available for translation
@@ -102,7 +96,6 @@ function alba_widgets_init() {
 		'id' => 'site-footer',
 	));
 	
-    register_widget( 'alba_banner' );
     register_widget( 'alba_carousel' );
     register_widget( 'alba_heading' );
     register_widget( 'alba_icon' );
@@ -132,12 +125,33 @@ endif;
 add_filter('dynamic_sidebar_params', 'alba_footer_widget_params');
 
 function alba_print_styles(){
-    global $cx_framework_options;
-    $custom_css = $cx_framework_options['cx-options-custom-css'];
+    $custom_css = '';
+    if ( kaira_theme_option( 'kra-custom-css' ) ) {
+        $custom_css = kaira_theme_option( 'kra-custom-css' );
+    }
     
-    $primary_color = $cx_framework_options['cx-options-primary-color'];
-    $primary_color_hover = $cx_framework_options['cx-options-primary-hover-color']; ?>
+    $body_font = kaira_theme_option( 'kra-body-google-font-name' );
+    $body_font_color = kaira_theme_option( 'kra-body-google-font-color' );
+    $h_font = kaira_theme_option( 'kra-heading-google-font-name' );
+    $h_font_color = kaira_theme_option( 'kra-heading-google-font-color' );
+    
+    $primary_color = kaira_theme_option( 'kra-primary-color' );
+    $primary_color_hover = kaira_theme_option( 'kra-primary-color-hover' ); ?>
     <style type="text/css" media="screen">
+        body,
+        .page-header h1,
+        .alba-banner-heading h5,
+        .alba-carousel-block,
+        .alba-heading-text {
+            color: <?php echo $body_font_color; ?>;
+            <?php echo ( $body_font ) ? $body_font : 'font-family: \'Open Sans\', sans-serif;'; ?>
+        }
+        h1, h2, h3, h4, h5, h6,
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+            color: <?php echo $h_font_color; ?>;
+            <?php echo ( $h_font ) ? $h_font : 'font-family: \'Roboto\', sans-serif;'; ?>
+        }
+        
         .alba-button,
         .post .alba-blog-permalink-btn,
         .search article.page .alba-blog-permalink-btn,
@@ -207,7 +221,7 @@ function alba_print_styles(){
         .sidebar-navigation-right .current_page_item {
             box-shadow: -3px 0 0 <?php echo $primary_color; ?> inset;
         }
-        <?php echo ($custom_css) ? $custom_css : ''; ?>
+        <?php echo $custom_css; ?>
     </style>
     <?php
 }
@@ -217,17 +231,26 @@ add_action('wp_head', 'alba_print_styles', 11);
  * Enqueue scripts and styles
  */
 function alba_scripts() {
-    wp_enqueue_style( 'alba-google-font-default', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300|Roboto:400,300,300italic,400italic,500,500italic,700,700italic');
-    wp_enqueue_style( 'alba-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
-	wp_enqueue_style( 'alba-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
-
-	wp_enqueue_script( 'alba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
-	wp_enqueue_script( 'alba-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
-    wp_enqueue_script( 'alba-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    if( kaira_theme_option( 'kra-body-google-font' ) ) {
+        wp_enqueue_style( 'albar-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
+    } else {
+        wp_enqueue_style( 'albar-google-body-font-default', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
+    }
+    if( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
+        wp_enqueue_style( 'albar-google-font-heading', kaira_theme_option( 'kra-heading-google-font-url' ), array(), KAIRA_THEME_VERSION );
+    } else {
+        wp_enqueue_style( 'albar-google-heading-font-default', 'http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
+    }
     
-	wp_enqueue_script( 'alba-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
+	wp_enqueue_style( 'albar-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
     
-	wp_enqueue_script( 'alba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), KAIRA_THEME_VERSION, true );
+	wp_enqueue_script( 'albar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
+	wp_enqueue_script( 'albar-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    
+	wp_enqueue_script( 'albar-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    
+	wp_enqueue_script( 'albar-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), KAIRA_THEME_VERSION, true );
     
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -238,11 +261,6 @@ function alba_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'alba_scripts' );
-
-function load_alba_wp_admin_style() {
-    wp_enqueue_style( 'alba-admin-css', get_template_directory_uri() . '/includes/admin/admin-style.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'load_alba_wp_admin_style' );
 
 /**
  * Custom template tags for this theme.
@@ -260,26 +278,6 @@ require get_template_directory() . '/includes/inc/extras.php';
 require get_template_directory() . '/includes/inc/customizer.php';
 
 /**
- * Custom function sets categories for blog list & homepage slider.
- *
- * @param $cats
- */
-function alba_load_selected_categories($cats) {
-    $the_cats_count = count( $cats );
-    
-    $cats_set = '';
-    $cats_counter = 1;
-    if( $cats ) {
-        foreach ( $cats as $cat ) {
-            $cats_set .= $cat . ',';
-            $cats_counter++;
-        }
-    }
-    $cats_set = substr($cats_set, 0, -1);
-    return $cats_set;
-}
-
-/**
  * Add Alba wrappers around WooCommerce pages content.
  */
 add_action('woocommerce_before_main_content', 'alba_wrap_woocommerce_start', 10);
@@ -292,7 +290,7 @@ function alba_wrap_woocommerce_end() {
 }
 
 /**
- * Add Alba WP Updates code.
+ * Add Albar WP Updates code.
  */
 require get_template_directory() . '/wp-updates-theme.php';
-new WPUpdatesThemeUpdater_960( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+new WPUpdatesThemeUpdater_953( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

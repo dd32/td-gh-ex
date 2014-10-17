@@ -45,25 +45,25 @@ class alba_icon extends WP_Widget {
 		) );
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php _e( 'Icon Name', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php echo __( 'Icon Name', 'albar' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'albar' ) ?></span>
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php _e( 'Icon Background Color', 'albar' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php echo __( 'Icon Background Color', 'albar' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_bg_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>" value="<?php echo esc_attr( $instance['icon_bg_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php _e( 'Icon Color', 'albar' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php echo __( 'Icon Color', 'albar' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_color' ) ?>" value="<?php echo esc_attr( $instance['icon_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'albar' ) ?></span>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php _e( 'Icon Size', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php echo __( 'Icon Size', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_size' ) ?>" id="<?php echo $this->get_field_id( 'icon_size' ) ?>">
 				<option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'albar' ) ?></option>
 				<option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'albar' ) ?></option>
@@ -76,7 +76,7 @@ class alba_icon extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php _e( 'Icon Style', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php echo __( 'Icon Style', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_style' ) ?>" id="<?php echo $this->get_field_id( 'icon_style' ) ?>">
                 <option value="none" <?php selected( $instance['icon_style'], 'none' ) ?>><?php esc_html_e( 'None', 'albar' ) ?></option>
 				<option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'albar' ) ?></option>
@@ -85,7 +85,7 @@ class alba_icon extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php _e( 'Icon Alignment', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php echo __( 'Icon Alignment', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_align' ) ?>" id="<?php echo $this->get_field_id( 'icon_align' ) ?>">
 				<option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'albar' ) ?></option>
 				<option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'albar' ) ?></option>

@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package alba
+ * @package albar
  */ ?>
 	
 	<?php do_action( 'before_sidebar' ); ?>

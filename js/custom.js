@@ -1,5 +1,5 @@
 /**
- * Alba Theme Custom Functionality
+ * Albar Theme Custom Functionality
  *
  */
 ( function( $ ) {
@@ -34,8 +34,6 @@
     });
     
     $(window).resize(function () {
-        // Banner height setter
-        $(".banner-full-width-on").parent().addClass("banner-full-width-on-parent").css("height", $(".banner-full-width-on").height());
         
         // Function to make the Icon always be square
         $('.alba-icon-inner').each(function(c) {
@@ -83,51 +81,6 @@
                 },
                 prev: '#'+this_carousel_id+' .alba-carousel-arrow-prev',
                 next: '#'+this_carousel_id+' .alba-carousel-arrow-next'
-            });
-        });
-    }
-    
-    function alba_filmstrip() {
-        $(".alba-filmstrip-wrapper").each(function(f) {
-            var this_filmstrip = $(this);
-            var this_filmstrip_id = 'alba-filmstrip-id-' + f;
-            var filmstrip_size = this_filmstrip.data('size');
-            if (filmstrip_size == "small") {
-                filmstrip_size = 14;
-            } else if (filmstrip_size == "medium") {
-                filmstrip_size = 8;
-            } else {
-                filmstrip_size = 5;
-            }
-            if(this_filmstrip.hasClass('filmstrip-full-on')) {
-                this_filmstrip.parent().addClass('full-width-filmstrip');
-            }
-            this_filmstrip.attr('id', this_filmstrip_id);
-            $('#'+this_filmstrip_id+' .alba-filmstrip').carouFredSel({
-                responsive: true,
-                scroll: null,
-                circular: false,
-                infinite: false,
-                align: 'center',
-                auto: false,
-                onCreate: function(items) {
-                    this_filmstrip.removeClass('alba-filmstrip-remove-load');
-                    $('#'+this_filmstrip_id+' .alba-filmstrip').removeClass('alba-filmstrip-remove');
-                    $('.full-width-filmstrip').css('height', $('.alba-filmstrip').height());
-                },
-                items: {
-                    width: 75,
-                    height: '50px',
-                    visible: {
-                        min: 2,
-                        max: filmstrip_size
-                    }
-                },
-                pagination: {
-                    container: '#'+this_filmstrip_id+' .alba-filmstrip-pagination'
-                },
-                prev: '#'+this_filmstrip_id+' .alba-filmstrip-arrow-prev',
-                next: '#'+this_filmstrip_id+' .alba-filmstrip-arrow-next'
             });
         });
     }

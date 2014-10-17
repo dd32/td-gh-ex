@@ -1,22 +1,18 @@
 <?php
-global $cx_framework_options;
+$slider_cats = kaira_theme_option( 'kra-slider-categories' );
 
-$slider_cats = $cx_framework_options[ 'cx-options-home-slider-cats' ];
-
-if( $slider_cats ) :
-    
-$slider_cats_set = alba_load_selected_categories( $slider_cats ); ?>
+if( $slider_cats ) : ?>
 
 <?php if ( have_posts() ) : ?>
 
-    <div id="alba-home-slider-wrapper" class="alba-slider alba-home-slider-remove"<?php echo ( $cx_framework_options['cx-options-home-slider-auto-scroll'] ) ? ' data-auto="4000"' : ' data-auto="false"'; ?><?php echo ( $cx_framework_options['cx-options-home-slider-circular'] ) ? ' data-circular="true"' : ' data-circular="false"'; ?><?php echo ( $cx_framework_options['cx-options-home-slider-infinite'] ) ? ' data-infinite="true"' : ' data-infinite="false"'; ?>>
+    <div id="alba-home-slider-wrapper" class="alba-slider alba-home-slider-remove"<?php echo ( kaira_theme_option( 'kra-slider-auto-scroll' ) ) ? ' data-auto="4000"' : ' data-auto="false"'; ?><?php echo ( kaira_theme_option( 'kra-circular-slider' ) ) ? ' data-circular="true"' : ' data-circular="false"'; ?><?php echo ( kaira_theme_option( 'kra-infinite-slider' ) ) ? ' data-infinite="true"' : ' data-infinite="false"'; ?>>
         <div id="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
         <div id="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
         
         <div id="alba-home-slider">
             
             <?php
-            query_posts ( 'cat=' . $slider_cats_set . '&posts_per_page=-1&orderby=date&order=DESC' );
+            query_posts ( 'cat=' . $slider_cats . '&posts_per_page=-1&orderby=date&order=DESC' );
             while ( have_posts() ) : the_post(); ?>
             
                 <div>
@@ -28,7 +24,7 @@ $slider_cats_set = alba_load_selected_categories( $slider_cats ); ?>
                     <?php endif; ?>
                     
                     <h3>
-                        <?php if ( $cx_framework_options[ 'cx-options-home-slider-link' ] ) : ?>
+                        <?php if ( kaira_theme_option( 'kra-slider-links' ) ) : ?>
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         <?php else: ?>
                             <?php the_title(); ?>
@@ -40,7 +36,7 @@ $slider_cats_set = alba_load_selected_categories( $slider_cats ); ?>
             <?php endwhile; ?>
             
         </div>
-        <?php if ( $cx_framework_options[ 'cx-options-home-slider-pagination-show' ] ) : ?>
+        <?php if ( kaira_theme_option( 'kra-enable-slider-pagination' ) ) : ?>
         <div id="alba-home-slider-pager"></div>
         <?php endif; ?>
     </div>

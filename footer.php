@@ -1,5 +1,3 @@
-<?php
-global $cx_framework_options; ?>
 <div class="clearboth"></div>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
@@ -18,7 +16,7 @@ global $cx_framework_options; ?>
 		<div class="site-container">
 			<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
 			<div class="footer-left">
-                <?php echo wp_kses_post( 'Built with the <a href="http://wordpress.org/themes/albar" target="_blank">Albar Theme</a>' ) ?>
+                <?php echo wp_kses_post( 'Built with the <a href="http://wordpress.org/themes/albar" target="_blank">Albar WordPress Theme</a>' ) ?>
 			</div>
 			<div class="footer-right">
 				<?php get_template_part( '/includes/inc/social-links' ); ?>
@@ -28,7 +26,7 @@ global $cx_framework_options; ?>
 	</div>
 </footer><!-- #colophon -->
 
-<?php if ( $cx_framework_options[ 'cx-options-site-type' ] == 'site-layout-boxed' ) : ?>
+<?php if ( kaira_theme_option( 'kra-website-layout' ) == 'site-layout-boxed' ) : ?>
 </div>
 <?php endif; ?>
 

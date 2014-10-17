@@ -1,6 +1,6 @@
 <?php
 /**
- * albar Theme Customizer
+ * alba Theme Customizer
  *
  * @package albar
  */

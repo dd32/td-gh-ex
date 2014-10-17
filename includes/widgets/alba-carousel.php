@@ -14,15 +14,13 @@ class alba_carousel extends WP_Widget {
 	}
 
 	function widget( $args, $instance ) {
-        global $cx_framework_options;
         
-        if ($instance['category']) {
+        if ( $instance['category'] ) {
             $carousel_cats = 'cat=' . $instance['category'] . '&';
         }
         
         $query = new WP_Query( $carousel_cats . 'posts_per_page=-1' );
         
-		//if ( empty( $instance['title'] ) ) return;
 		$output = '';
 		$output .= $args['before_widget'];
 		$output .= $args['before_title'];
@@ -73,7 +71,7 @@ $output .= '<div class="alba-carousel-wrapper columns-' . esc_attr( $instance['c
                         if($instance['show-excerpt'] == 'on') :
                             
                             if ( get_the_excerpt() > $instance['excerpt-length'] ) :
-                    $output .= '<p>' . substr(strip_tags(get_the_excerpt()), 0, $instance['excerpt-length'])."</p>";
+                    $output .= '<p>' . substr( strip_tags( get_the_excerpt() ), 0, $instance['excerpt-length'] )."</p>";
                             else:
             		$output .= '<p>' . get_the_excerpt() . '</p>';
                             endif;
@@ -89,6 +87,7 @@ $output .= '<div class="alba-carousel-wrapper columns-' . esc_attr( $instance['c
 				elseif ($instance['carousel-pagination'] == 'dots') :
     $output .= '<div class="alba-carousel-pagination alba-dots-pagination"></div>';
                 endif;
+    $output .= '<div class="clearboth"></div>';
 $output .= '</div>';
 			
 			$output .= $args['after_title'];
@@ -109,13 +108,13 @@ $output .= '</div>';
 			'carousel-pagination' => 'dots'
 		) ); ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php _e( 'Category', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php echo __( 'Category', 'albar' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'category' ) ?>" id="<?php echo $this->get_field_id( 'category' ) ?>" value="<?php echo esc_attr( $instance['category'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the ID\'s of the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the ID\'s of the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'albar' ) ?></span>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'columns' ) ?>"><?php _e( 'Columns', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'columns' ) ?>"><?php echo __( 'Columns', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'columns' ) ?>" id="<?php echo $this->get_field_id( 'columns' ) ?>">
 				<option value="1" <?php selected( $instance['columns'], '1' ) ?>><?php esc_html_e( '1', 'albar' ) ?></option>
 				<option value="2" <?php selected( $instance['columns'], '2' ) ?>><?php esc_html_e( '2', 'albar' ) ?></option>
@@ -125,7 +124,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-featured-image' ) ?>"><?php _e( 'Show Featured Image', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-featured-image' ) ?>"><?php echo __( 'Show Featured Image', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-featured-image' ) ?>" id="<?php echo $this->get_field_id( 'show-titfeatured-imagele' ) ?>">
 				<option value="on" <?php selected( $instance['show-featured-image'], 'on' ) ?>><?php esc_html_e( 'On', 'albar' ) ?></option>
 				<option value="off" <?php selected( $instance['show-featured-image'], 'off' ) ?>><?php esc_html_e( 'Off', 'albar' ) ?></option>
@@ -133,7 +132,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-title' ) ?>"><?php _e( 'Show Title', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-title' ) ?>"><?php echo __( 'Show Title', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-title' ) ?>" id="<?php echo $this->get_field_id( 'show-title' ) ?>">
 				<option value="on" <?php selected( $instance['show-title'], 'on' ) ?>><?php esc_html_e( 'On', 'albar' ) ?></option>
 				<option value="off" <?php selected( $instance['show-title'], 'off' ) ?>><?php esc_html_e( 'Off', 'albar' ) ?></option>
@@ -141,7 +140,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-excerpt' ) ?>"><?php _e( 'Show Post Excerpt', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-excerpt' ) ?>"><?php echo __( 'Show Post Excerpt', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-excerpt' ) ?>" id="<?php echo $this->get_field_id( 'show-excerpt' ) ?>">
 				<option value="on" <?php selected( $instance['show-excerpt'], 'on' ) ?>><?php esc_html_e( 'On', 'albar' ) ?></option>
 				<option value="off" <?php selected( $instance['show-excerpt'], 'off' ) ?>><?php esc_html_e( 'Off', 'albar' ) ?></option>
@@ -149,13 +148,13 @@ $output .= '</div>';
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php _e( 'Excerpt Length', 'albar' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php echo __( 'Excerpt Length', 'albar' ) ?></label>
             <input type="number" class="widefat" name="<?php echo $this->get_field_name( 'excerpt-length' ) ?>" id="<?php echo $this->get_field_id( 'excerpt-length' ) ?>" value="<?php echo esc_attr( $instance['excerpt-length'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the character length you want the excerpt to be. Default is 200 characters.', 'albar' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the character length you want the excerpt to be. Default is 200 characters.', 'albar' ) ?></span>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-meta' ) ?>"><?php _e( 'Show Post Meta', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-meta' ) ?>"><?php echo __( 'Show Post Meta', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-meta' ) ?>" id="<?php echo $this->get_field_id( 'show-meta' ) ?>">
 				<option value="on" <?php selected( $instance['show-meta'], 'on' ) ?>><?php esc_html_e( 'On', 'albar' ) ?></option>
 				<option value="off" <?php selected( $instance['show-meta'], 'off' ) ?>><?php esc_html_e( 'Off', 'albar' ) ?></option>
@@ -163,7 +162,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>"><?php _e( 'Carousel Pagination', 'albar' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>"><?php echo __( 'Carousel Pagination', 'albar' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'carousel-pagination' ) ?>" id="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>">
 				<option value="numbers" <?php selected( $instance['carousel-pagination'], 'numbers' ) ?>><?php esc_html_e( 'Numbers', 'albar' ) ?></option>
 				<option value="dots" <?php selected( $instance['carousel-pagination'], 'dots' ) ?>><?php esc_html_e( 'Dots', 'albar' ) ?></option>

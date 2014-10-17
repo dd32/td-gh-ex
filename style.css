@@ -3,8 +3,8 @@ Theme Name: Albar
 Theme URI: http://wordpress.org/themes/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
-Description: Alba is a responsive multipurpose Wordpress theme. You can use Alba to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.2
+Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -36,7 +36,7 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #fff;
+	background: #F1F1F1;
 }
 article,
 aside,
@@ -513,8 +513,10 @@ a:active {
 }
 .hentry {
 	border-bottom: 1px solid #EBEBEB;
-    margin: 0 0 60px;
-    padding: 0 0 60px;
+    
+	margin: 0 0 60px;
+    
+	padding: 0 0 60px;
 }
 .hentry:last-child {
     border-bottom: 0;
@@ -1519,7 +1521,10 @@ body.admin-bar .stuck {
     padding: 0 20px;
 }
 .page-template-template-full-width-php .content-area-full {
-    padding: 0 20px;
+    padding: 20px 0;
+}
+.page-template-template-full-width-php .site-boxed .content-area-full {
+    padding: 30px 20px;
 }
 
 .content-area-right {
@@ -1538,7 +1543,6 @@ body.admin-bar .stuck {
     float: left;
     padding: 30px 20px 20px 0;
 }
-
 .page-template-template-right-nav-sidebar-php .site-boxed .content-area,
 .page-template-default .site-boxed .content-area {
     padding: 30px 20px 20px 20px;
@@ -1884,6 +1888,7 @@ body.admin-bar .stuck {
     min-width: 240px;
     position: relative;
     width: 100%;
+    margin-bottom: 40px;
 }
 .alba-home-slider-remove { 
     height: 570px !important;
@@ -3340,18 +3345,4 @@ div.wpcf7 {
 		padding: 4px 0 15px;
 		text-align: center;
 	}
-}
-
-body,
-.page-header h1,
-.alba-banner-heading h5,
-.alba-carousel-block,
-.alba-heading-text {
-    font-family: 'Open Sans', sans-serif;
-    color: #7B7D80;
-}
-h1, h2, h3, h4, h5, h6,
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    font-family: 'Roboto', sans-serif;
-    color: #5A5A5A;
 }

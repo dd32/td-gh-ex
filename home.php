@@ -1,5 +1,4 @@
-<?php get_header();
-global $cx_framework_options; ?>
+<?php get_header(); ?>
 
 <?php if ( is_home() ) : ?>
     
@@ -16,8 +15,10 @@ global $cx_framework_options; ?>
 			<?php if ( have_posts() ) : ?>
                 
                 <?php if ( is_home() ) : ?>
-                    
-                    <?php get_template_part( '/includes/blog/blog-standard' ); ?>
+                
+                        <?php
+                        // Standard Layout
+                        get_template_part( '/includes/blog/blog-standard' ); ?>
 				
                 <?php else: ?>
                     

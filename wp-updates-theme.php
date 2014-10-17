@@ -6,14 +6,14 @@ v2.0
 
 Example Usage:
 require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_960( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
+new WPUpdatesThemeUpdater_953( 'http://wp-updates.com/api/2/theme', basename(get_template_directory()) );
 */
 
-if( !class_exists('WPUpdatesThemeUpdater_960') ) {
-    class WPUpdatesThemeUpdater_960 {
+if( !class_exists('WPUpdatesThemeUpdater_953') ) {
+    class WPUpdatesThemeUpdater_953 {
     
         var $api_url;
-    	var $theme_id = 960;
+    	var $theme_id = 953;
     	var $theme_slug;
     	var $license_key;
     
