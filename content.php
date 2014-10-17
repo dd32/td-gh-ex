@@ -64,4 +64,7 @@
 				</div><!-- .author-info -->
 			<?php endif; ?>
 		</footer><!-- .entry-meta -->
+        
+        <?php get_random_post(); ?>
+        
 	</article><!-- #post -->

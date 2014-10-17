@@ -29,12 +29,20 @@
 <header class="site-header" role="banner">
 		
         <div class="logo">
+        <?php 
+		$options = get_option('theme_options');
+		$logourl = $options['logo_url'];
+		if(!empty($logourl)){ ?>
+			<div class="site-title logo-img"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo $logourl; ?>" alt="<?php bloginfo( 'name' ); ?>"></a></div>
+		<?php }
+		else{
+		?>
         <hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</hgroup>
-<?php /*?><?php endif; ?>
-<?php */?></div>
-
+<?php } ?>
+</div>
+<div class="menu_search"><?php get_search_form(); ?></div>
 <div class="header-ads-img">
 		 
 </div>
@@ -45,7 +53,6 @@
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'jatheme' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'jatheme' ); ?>"><?php _e( 'Skip to content', 'jatheme' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-            <div class="menu_search"><?php get_search_form(); ?></div>
 		</nav><!-- #site-navigation -->
         
 <div class="clear"></div>
@@ -56,7 +63,5 @@
         </div>
 	</header><!-- site-header -->
     <div class="clear"></div>
-    
-    
 <div class="wrapper">
 

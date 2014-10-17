@@ -1,5 +1,7 @@
 <?php
-
+/*
+	Theme Functions
+*/
 function artikler_theme_setup() {
 	global $content_width;
 	// Set up the content width value.
@@ -52,6 +54,7 @@ function artikler_theme_setup() {
 }
 add_action( 'after_setup_theme', 'artikler_theme_setup' );
 
+/*********All Sidebar*************/
 //Register sidebars(Main Sidebar).
 function artikler_theme_widgets_init() {
 	register_sidebar( array(
@@ -61,6 +64,36 @@ function artikler_theme_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	//@since 1.3.4
+	register_sidebar( array(
+		'name' => __( 'Footer Sidebar 1', 'jatheme' ),
+		'id' => 'sidebar-2',
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-footer-title">',
+		'after_title' => '</h3>',
+	) );
+	//@since 1.3.4
+	register_sidebar( array(
+		'name' => __( 'Footer Sidebar 2', 'jatheme' ),
+		'id' => 'sidebar-3',
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-footer-title">',
+		'after_title' => '</h3>',
+	) );
+	//@since 1.3.4
+	register_sidebar( array(
+		'name' => __( 'Footer Sidebar 3', 'jatheme' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-footer-title">',
 		'after_title' => '</h3>',
 	) );
 }
@@ -260,6 +293,7 @@ function artikler_theme_add_editor_styles() {
 }
 add_action( 'after_setup_theme', 'artikler_theme_add_editor_styles' );
 
+/*********Get Lastest Posts*************/
 function get_all_posts(){
 			 /* Start the Loop */ 
 			while ( have_posts() ) : the_post(); ?>
@@ -294,4 +328,65 @@ function get_all_posts(){
 
 }
 
+//@since 1.3.4
+/*********Get Random Posts*************/
+function get_random_post(){
+	$post_id = get_the_ID();
+		$args = array(
+   			'orderby' => 'rand',
+   			'posts_per_page' => 5,
+   			'post__not_in' => array( $post_id ),
+		);
+	$rand_query = new WP_Query( $args ); ?>
+		<ul class="rand-post-main">
+        <h4>More Articles</h4>
+			<?php while ( $rand_query->have_posts() ) : $rand_query->the_post(); ?>
+   			<li>
+             <div class="content-post-rand">
+                 <div class="content-post-rand-img">
+				 <?php if ( has_post_thumbnail()) : ?>
+                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail( array(120,120) ); ?></a>			
+                 <?php else : ?>
+                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" id="no-image-yet-rand"><div>No Image Yet</div></a>
+                 <?php endif; ?>
+                 <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"> <?php the_title() ?></a>
+                 </div>
+                 </li>
+			<?php endwhile; ?>
+		</ul>
+	<?php wp_reset_postdata();
+}
+
+//@since 1.3.4
+/***Footer About and Follow us***/
+if(!is_admin()){
+	function get_themeoptions_value() {
+		$options = get_option('theme_options');
+		$options_aboutus = $options['aboutus'];
+		echo '<div class="footer-right">';
+		if(!empty($options_aboutus)){
+		echo '<h3 class="widget-footer-title">About us</h3>';
+		echo '<p class="aboutus-p">' . $options_aboutus . '</p>';
+		}
+		echo '<h3 class="widget-footer-title">Follow us</h3>';
+		echo '<div class="follow-us fb"><a href="' . $options['facebookurl'] . '" alt="f" target="_blank">f</a></div>' . '<div class="follow-us go"><a href="' . $options['googleurl'] . '" alt="g" target="_blank">g</a></div>' . '<div class="follow-us tw"><a href="' . $options['twitterurl'] . '" alt="t" target="_blank">t</a></div>';
+		echo '</div>';
+	}
+}
+
+//@since 1.3.4
+/***Footer Sidebar***/
+function sidebar_footer(){ ?>
+	<div id="secondary" class="footer-sidebar">
+			 <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-2' ) ?> </div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-3' ) ?> '</div> <div class="footer-left"> <?php dynamic_sidebar( 'sidebar-4' ) ?> </div> <?php get_themeoptions_value(); ?>
+            </div><!-- #secondary -->
+<?php }
+
 require( get_template_directory() . '/inc/custom-comment.php' );
+
+//@since 1.3.4
+if(is_admin()){
+require( get_template_directory() . '/inc/theme-options.php' );
+}
+
+
