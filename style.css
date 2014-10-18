@@ -4,7 +4,7 @@ Theme URI: http://tradesouthwest.net/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media.
-Version: 0.4
+Version: 0.5
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -281,8 +281,10 @@ section.content-area-left { /* left single post or page article background conta
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     padding:       0.5em;
     float:         right;
-    overflow-y:    hidden;
+    overflow-y:    auto;
+/* you can change overflow to hidden to avoid scolling */
 }
+/*
 .post-right:after {
     content:       "";
     display:       block;
@@ -297,6 +299,7 @@ section.content-area-left { /* left single post or page article background conta
     border-radius: 4px;
     z-index:       2222;
 }
+*/
 #content-secondary { /* null container for four posts row */
     width:         99.8992%;
     margin:        0 auto;
@@ -739,15 +742,22 @@ margin-bottom: 0.5em;
     padding:            0;
     list-style:         none;
     z-index:            1000;
-    height:             2.482222em;
+    height:             2.2222em;
 }
 #access ul li  {
-    margin: 0;
+    margin:             0;
     padding:            0;
     position:           relative;
+    top:                -1px;
     float:              left;
     text-align:         center;
     width:              149px;
+    
+}
+#access li {
+    max-height:         2.2222em;
+    position:           relative;
+    top:                0;
 }
 #access a {
     min-height:         1.5em;
@@ -814,14 +824,14 @@ margin-bottom: 0.5em;
 #access ul li.current-menu-ancestor > a,
 #access ul li.current-menu-item > a,
 #access ul li.current-menu-parent > a {
-    color:              #adfecf;
-    text-shadow:        0 1px 1px #f0f0c0;
+    color:              #adfeff;
+    text-shadow- 0 1px 1px #000;
 }
 .menu-item {}
 /* This class is added to every menu item. */ 
 .menu-item-has-children {}
 /* This class is added to menu item which has sub-items */ 
-#access .current-menu-item {}
+#access .current-menu-item { color: #aaddee; }
 .no-access {
     display:            block;
     width:              72.66663%;
@@ -996,8 +1006,8 @@ blockquote.right {
 .gallery dd {}
 .gallery dl a {}
 .gallery dl img {}
-/* gallery Thanks chinola */
 .gallery {
+ width: 98.8992%;
  display: block;
  clear: both;
  overflow: hidden;
@@ -1307,6 +1317,13 @@ ul.children {}
 }
 #footer-widget-area a {
     color:              #f1fdff;
+}
+#footer-widget-area img {
+    width: 100%;
+    height: auto;
+}
+.widget_nav_menu {
+    padding-top:.522em;
 }
 #wp-calendar {
     color: #666;

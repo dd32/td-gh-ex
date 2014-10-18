@@ -12,6 +12,14 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 0.5 =
+* created fallback callbacks for default menus
+* fixed footer widget img width
+* fixed footer margins
+* changed footer color of text on some  elements
+* created overflow for top sidebar
+* fixed gallery width
+* fixed menu pull down attributes
 
 = 0.4 =
 * fixed semantics in header nav
