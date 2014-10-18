@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+19-10-2014 - version 1.7.26
+*sidebar-footer.php file updated with translation..
+
 20-09-2014 - version 1.7.25
 *Readme.txt file updated...
 
