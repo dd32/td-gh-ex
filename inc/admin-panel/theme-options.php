@@ -265,7 +265,7 @@ function accesspresslite_theme_options_page() {
 	<a id="options-group-7-tab" class="nav-tab" href="#options-group-7"><?php _e('About AccessPress Lite','accesspresslite'); ?></a>
 	</div>
 
-	<div id="optionsframework-metabox" class="metabox-holder">
+	<div id="optionsframework-metabox" class="metabox-holder clearfix">
 		<div id="optionsframework" class="postbox">
 			<form id="form_options" method="post" action="options.php">
 
@@ -313,8 +313,8 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<div class="accesspresslite_fav_icon">
 							  <input type="text" name="accesspresslite_options[media_upload]" id="accesspresslite_media_upload" value="<?php if(!empty($settings['media_upload'])){ echo $settings['media_upload']; }?>" />
-							  <input class="button" name="media_upload_button" id="accesspresslite_media_upload_button" value="<?php _e('Upload','accesspresslite'); ?>" type="button" />
-							  <em class="f13">&nbsp;&nbsp;<?php _e('Upload favicon(.png) with size of 16px X 16px', 'accesspresslite'); ?></em>
+							  <input class="button" name="media_upload_button" id="accesspresslite_media_upload_button" value="<?php _e('Upload','accesspresslite'); ?>" type="button" /><br />
+							  <em class="f13"><?php _e('Upload favicon(.png) with size of 16px X 16px', 'accesspresslite'); ?></em>
 
 							  <?php if(!empty($settings['media_upload'])){ ?>
 							  <div id="accesspresslite_media_image">
@@ -662,7 +662,7 @@ function accesspresslite_theme_options_page() {
 
 					<tbody class="post-as-slider">
 					<tr>
-						<td colspan="2" style="padding-left:0"><em class="f13"><?php _e('Select the post that you want to display as a Slider','accesspresslite'); ?></em></td>
+						<td colspan="2"><em class="f13"><?php _e('Select the post that you want to display as a Slider','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr>
@@ -746,7 +746,7 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 					
 					<tr>
-						<td colspan="2" style="padding-left:0"><em class="f13"><?php _e('Adjust the slider as per your need.','accesspresslite'); ?></em></td>
+						<td colspan="2"><em class="f13"><?php _e('Adjust the slider as per your need.','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr><th scope="row"><?php _e('Show Slider','accesspresslite'); ?></th>
@@ -823,7 +823,7 @@ function accesspresslite_theme_options_page() {
 			<h3><?php _e('Sidebar Settings','accesspresslite'); ?></h3>
 				<table class="form-table">
 				<tr>
-					<td style="padding:0">
+					<td>
 						<table>
 						<tbody>
 						<tr><th colspan="2" class="line"><?php _e('Left Sidebar Options','accesspresslite'); ?></th></tr>
@@ -849,7 +849,7 @@ function accesspresslite_theme_options_page() {
 						</table>
 
 					</td>
-					<td style="padding:0">
+					<td>
 						<table>
 						<tr><th colspan="2" class="line"><?php _e('Right Sidebar Options','accesspresslite'); ?></th></tr>
 						<tr>
@@ -892,7 +892,7 @@ function accesspresslite_theme_options_page() {
 			<h3><?php _e('Social links - Put your social url','accesspresslite'); ?></h3>
 				<table class="form-table social-urls">
 					<tr>
-						<td colspan="2" style="padding-left:0"><em class="f13"><?php _e('Put your social url below.. Leave blank if you don\'t want to show it.','accesspresslite'); ?></em></td>
+						<td colspan="2"><em class="f13"><?php _e('Put your social url below.. Leave blank if you don\'t want to show it.','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr>
@@ -1043,59 +1043,65 @@ function accesspresslite_theme_options_page() {
 				<table class="form-table">
 					<tr>
 					<td colspan="2">
-<p><?php _e('AccessPress Lite - is a FREE WordPress theme by','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspresslite'); ?>
-<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspresslite'); ?></p>
+						<p><?php _e('AccessPress Lite - is a FREE WordPress theme by','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspresslite'); ?>
+						<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspresslite'); ?></p>
 
-<p><?php _e('We want to give "a little beautiful thing" - back to the community.
-With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
+						<p><?php _e('We want to give "a little beautiful thing" - back to the community.
+						With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
 
-<p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-<img src="<?php echo get_template_directory_uri()?>/inc/admin-panel/images/offer.jpg">
-<hr />
-<?php
-$other_product  = "<h4>".__('Other products by AccessPressThemes','accesspresslite')."</h4>";
-$other_product .= "<div class='product clearfix'>";
-$other_product .= "<div class='logo-product'>";
-$other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-pro.png'>";
-$other_product .= "</div>";
-$other_product .= "<div class='productext'>";
-$other_product .= __('AccessPress Pro - Premium version of AccessPress lite','accesspresslite')."</br />";
-$other_product .= __('See Demo ','accesspresslite')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'>".__('Here','accesspresslite')."</a>";
-$other_product .= "</div>";
-$other_product .= "</div>";
+						<p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<hr />
+						<?php
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'><img alt='AccessPress Pro' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-pro.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div>";
 
-$other_product .= "<div class='product clearfix'>";
-$other_product .= "<div class='logo-product'>";
-$other_product .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspress-anonymous-post.png'>";
-$other_product .= "</div>";
-$other_product .= "<div class='productext'>";
-$other_product .= __('AccessPress Anonymous Post - A Free WordPress Plugin, available in WordPress.org','accesspresslite')."</br />";
-$other_product .= __('Download ','accesspresslite')."<a target='_blank' href='".esc_url('https://wordpress.org/plugins/accesspress-anonymous-post/')."'>".__('Here','accesspresslite')."</a>";
-$other_product .= "</div>";
-$other_product .= "</div>";
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-ray/')."'><img alt='AccessPress Ray' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-ray.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div></div>";
 
-echo $other_product;
-?>
-<hr />
-<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-parallax/')."'><img alt='AccessPress Parallax' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-parallax.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div></div>";
 
-<p>
-<?php _e('If you’ve any question/feedback, please get in touch:','accesspresslite'); ?><br/>
-<?php _e('General enquiries:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
-<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
-<?php _e('Sales:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>
-</p>
+						$other_product .= "<div class='clearfix'></div>";
 
-<hr />
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-anonymous-post/')."'><img alt='AccessPress Anonymous Post' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-anonymous-post.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div>";
 
-<h4><?php _e('Get social','accesspresslite'); ?></h4>
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-anonymous-post-premium/')."'><img alt='AccessPress Anonymous Post Pro' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-anonymous-post-pro.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div></div>";
 
-<p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
+						$other_product .= "<div class='clearfix'></div>";
+						echo $other_product;
+						?>
+						<hr />
+						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
-<p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
-<iframe style="border: none; overflow: hidden; width: 780px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=780&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="780" height="230" frameborder="0" scrolling="no"></iframe>	
-</td>
+						<p>
+						<?php _e('If you’ve any question/feedback, please get in touch:','accesspresslite'); ?><br/>
+						<?php _e('General enquiries:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
+						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
+						<?php _e('Sales:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>
+						</p>
+
+						<hr />
+
+						<h4><?php _e('Get social','accesspresslite'); ?></h4>
+
+						<p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
+
+						<p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
+						<iframe style="border: none; overflow: hidden; width: 740px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=740&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="740" height="230" frameborder="0" scrolling="no"></iframe>	
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -1106,7 +1112,22 @@ echo $other_product;
 
 			</form>
 		</div><!-- #optionsframework -->
+		<div class="update-banner">
+			<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-top.jpg">
+			<div class="button-link">
+				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspresslite-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
+			</div>
+			<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-bottom.jpg">
+			<div class="button-link">
+				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspresslite-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
+			</div>
 
+			<div class="any-question">
+				Any question!! Click <a href="<?php echo esc_url('https://accesspressthemes.com/contact/'); ?>" target="_blank">here</a> for Live Chat.
+			</div>
+		</div>
 	</div><!-- #optionsframework-metabox -->
 
 	<?php 

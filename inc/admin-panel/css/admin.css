@@ -1,6 +1,28 @@
 #optionsframework {
-    max-width:840px;
+    width:760px;
     background:#fff;
+    float: left;
+}
+#optionsframework .form-table, #optionsframework .form-table table{
+	width: 100%;
+}
+#optionsframework .form-table td,
+#optionsframework .form-table th{
+	padding: 15px 10px;
+}
+#optionsframework .form-table table th{
+	width: 150px;
+}
+#optionsframework-metabox img{
+	vertical-align: middle;
+}
+#optionsframework-metabox a{
+	box-shadow: none;
+}
+.update-banner{
+	float: left;
+	margin-left: 10px;
+	width: 300px;
 }
 #optionsframework h3 {
 	cursor: default;
@@ -15,143 +37,16 @@
 	padding:10px 10px 0;
 }
 #optionsframework .group {
-	padding-bottom:40px;
+	padding:0 0 30px;
 }
 
-#optionsframework table{margin:15px;}
-#optionsframework .section .controls {
-	float: left;
-	min-width:350px;
-	width: 54%;
-	padding-right:2%;
-}
-#optionsframework .section .explain {
-	max-width:38%;
-	float: left;
-	font-size: 12px;
-	line-height:16px;
-	color: #777;
-}
 #optionsframework .controls input[type=text] {
 	width:100%;
-}
-#optionsframework .section-checkbox .controls {
-	width: 98%;
-}
-#optionsframework .section-checkbox .explain {
-	max-width:94%;
-}
-#optionsframework .controls select, #optionsframework .controls textarea {
-	margin-bottom:10px;
-	width:100%;
-}
-#optionsframework .section-radio label, #optionsframework .section-multicheck label {
-	float:left;
-	max-width:90%;
-	line-height: 16px;
-	margin-bottom: 5px;
-}
-#optionsframework input.checkbox, #optionsframework input.of-radio {
-	margin: 0 10px 5px 0;
-	float:left;
-	clear:both;
-}
-#optionsframework .section-typography .controls {
-	float:none;
-	width:auto;
-}
-#optionsframework .section-typography .explain {
-	float:none;
-	width:auto;
-}
-#optionsframework .controls .of-typography-size {
-	width:80px;
-	float:left
-}
-#optionsframework .controls .of-typography-unit {
-	width:50px;
-	margin-left:5px;
-	float:left
-}
-#optionsframework .controls .of-typography-face {
-	width:100px;
-	margin-left:5px;
-	float:left
-}
-#optionsframework .controls .of-typography-style {
-	width:80px;
-	margin-left:5px;
-	margin-right:5px;
-	float:left
-}
-#optionsframework .of-background-properties {
-	clear:both;
-	margin-top: 18px;
-}
-#optionsframework .controls .of-background-repeat {
-	width:125px;
-	margin-right:5px;
-	float:left
-}
-#optionsframework .controls .of-background-position {
-	width:125px;
-	margin-right:5px;
-	float:left
-}
-#optionsframework .controls .of-background-attachment {
-	width:125px;
-	margin-right:5px;
-	float:left
-}
-#optionsframework .section-background .wp-picker-container {
-	margin-bottom:10px;
-}
-#optionsframework .controls .of-radio-img-img {
-	border:3px solid #f9f9f9;
-	margin:0 5px 10px 0;
-	display:none;
-	cursor:pointer;
-	float:left;
-}
-#optionsframework .controls .of-radio-img-selected {
-	border:3px solid #ccc
-}
-#optionsframework .controls .of-radio-img-img:hover {
-	opacity:.8;
-}
-#optionsframework .controls .of-border-width {
-	width:80px;
-	float:left
-}
-#optionsframework .controls .of-border-style {
-	width:120px;
-	float:left
 }
 #optionsframework .hide {
 	display:none;
 }
-#optionsframework .of-option-image {
-	max-width:340px;
-	margin:3px 0 18px 0;
-}
-#optionsframework .mini .controls select, #optionsframework .section .mini .controls {
-	width: 140px;
-}
-#optionsframework .mini .controls input, #optionsframework .mini .controls {
-	min-width:140px;
-	width: 140px;
-}
-#optionsframework .mini .explain {
-	max-width:74%;
-}
-
 /* Editor */
-
-#optionsframework .section-editor .explain {
-	max-width: 98%;
-	float:none;
-	margin-bottom:5px;
-}
 #optionsframework input[type="email"], 
 #optionsframework input[type="number"], 
 #optionsframework input[type="password"], 
@@ -163,7 +58,6 @@
 }
 
 /* Image Uploader */
-
 #optionsframework .controls input.upload {
 	width:80%;
 }
@@ -216,11 +110,11 @@
 	background-color: #f1f1f1;
 }
 
-#optionsframework .section:after {
+#optionsframework .section:after , .clearfix:after {
 	content: "";
 	display: table;
 }
-#optionsframework .section:after {
+#optionsframework .section:after , .clearfix:after{
 	clear: both;
 }
 
@@ -247,7 +141,6 @@
 	left: 110%; 
 	top:0;
 }
-
 .f13{
 	font-size: 13px !important; 
 	line-height: 16px
@@ -314,7 +207,6 @@
 #optionsframework .form-table table{ 
 	margin: 0; 
 	background:#EEE;
-	padding: 0 15px;
 }
 
 #optionsframework .form-table table th.line{ 
@@ -352,21 +244,42 @@
 #welcome_post_char, #show_event_number{
 	width: 50px;
 }
-.social-bttns{ white-space: nowrap;}
+.social-bttns{ 
+	white-space: nowrap;
+}
+#optionsframework .product img{
+	vertical-align: middle;
+}
 #optionsframework .product{
 	background: #EEE;
-	padding: 10px;
+	padding: 5px;
 	border: 1px solid #CCC;
 	margin-bottom: 15px;
 	line-height: 1.5;
-}
-#optionsframework .logo-product{
 	float: left;
+	margin-right: 10px;
+	position: relative;
+	overflow: hidden;
 }
-#optionsframework .productext{
-	padding-left: 200px;
+#optionsframework .product img{
+	width: 100%;
 }
-
+#optionsframework .product .view-detail{
+	position: absolute;
+	bottom: -40px;
+	width: 100%;
+	height: 32px;
+	text-align: center;
+	color: #FFF;
+	line-height: 32px;
+	background: rgba(0,0,0,0.6);
+	transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-webkit-transition:all 0.3s ease;
+}
+#optionsframework .product:hover .view-detail{
+	bottom:0;
+}
 .ap-popup-bg{
 	position: fixed;
 	background: #000;
@@ -408,4 +321,18 @@
 	margin: 2px 0 10px;
 	color: #00ABFF;
 	line-height:16px;
+}
+.button-link{
+	background: #FFF;
+	padding: 10px;
+	text-align: center;
+	border-left: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+}
+.any-question{
+	background: #FFF;
+	padding:15px 10px;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+	font-size: 14px;
 }

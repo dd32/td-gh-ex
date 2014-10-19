@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.22
+* Minor changes in Theme Option Interface
+* Minor CSS bug fixed
+
 Version 2.21
 * Image added in the admin section
 
