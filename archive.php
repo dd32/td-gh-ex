@@ -90,15 +90,15 @@ get_header(); ?>
 						endif;
 					?>
 				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .page-header -->
 
+			</header><!-- .page-header -->
+            <?php
+                // Show an optional term description.
+                $term_description = term_description();
+                if ( ! empty( $term_description ) ) :
+                    printf( '<div class="taxonomy-description">%s</div>', $term_description );
+                endif;
+            ?>
 			<?php /* Start the Loop */
 				$counter = 0;
 			 ?>

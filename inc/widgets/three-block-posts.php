@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Displays latest, category wised posts in a 3 block layout.
+ * Displays latest or category wised posts in a 3 block layout.
  */
 
 class awaken_three_block_posts extends WP_Widget {
@@ -11,7 +11,7 @@ class awaken_three_block_posts extends WP_Widget {
 		parent::__construct(
 			'three_block_widget', // Base ID
 			__( 'Awaken: Three Block Posts Widget', 'awaken' ), // Name
-			array( 'description' => __( 'Displays posts in a full width layout', 'awaken' ), ) // Args
+			array( 'description' => __( 'Displays posts by three blocks per row.', 'awaken' ), ) // Args
 		);
 	}
 
@@ -104,8 +104,8 @@ class awaken_three_block_posts extends WP_Widget {
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
 		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] )  : 5; 
-		$sticky_posts = ( ! empty( $instance['sticky_posts'] ) ) ? (bool)$instance['sticky_posts'] : false;
-		$category = ( ! empty( $instance['category'] ) ) ? $instance['category'] : 'all';
+		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : false;
+		$category = $instance['category'];
 		$offset = ( ! empty( $instance['offset'] ) ) ? absint( $instance['offset'] ) : 0;
 		// Latest Posts
 		$latest_posts = new WP_Query( 
@@ -127,28 +127,31 @@ class awaken_three_block_posts extends WP_Widget {
 		<div class="awaken-3latest">
 			<div class="row">
 				<?php $i = 1; ?>
-				<?php while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
+				<?php 
+				if ( $latest_posts -> have_posts() ) :
+					while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
 
 					<div class="col-xs-12 col-sm-4 col-md-4">
-						<?php if ( has_post_thumbnail() ) { ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
-						<?php } else { ?>
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
-						<?php } ?>
+						<div class="awaken-block-post">
+							<?php if ( has_post_thumbnail() ) { ?>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
+							<?php } else { ?>
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="<?php the_title(); ?>" /></a>
+							<?php } ?>
 
-					<?php the_title( sprintf( '<h1 class="genpost-entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>						
-					<?php if ( 'post' == get_post_type() ) : ?>
-						<div class="genpost-entry-meta">
-							<?php awaken_posted_on(); ?>
+							<?php the_title( sprintf( '<h1 class="genpost-entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>						
+							<?php if ( 'post' == get_post_type() ) : ?>
+								<div class="genpost-entry-meta">
+									<?php awaken_posted_on(); ?>
 
-							<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-								<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'awaken' ), __( '1 Comment', 'awaken' ), __( '% Comments', 'awaken' ) ); ?></span>
+									<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+										<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'awaken' ), __( '1 Comment', 'awaken' ), __( '% Comments', 'awaken' ) ); ?></span>
+									<?php endif; ?>
+								</div><!-- .entry-meta -->
 							<?php endif; ?>
-						</div><!-- .entry-meta -->
-					<?php endif; ?>
 
-					<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>
-
+							<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>
+						</div><!-- .awaken-block-post-->
 					</div><!-- .bootstrap-cols -->
 
 					<?php if( $i%3 == 0 ) {
@@ -156,7 +159,7 @@ class awaken_three_block_posts extends WP_Widget {
 					} ?>
 					<?php $i++; ?>
 				<?php endwhile; ?>
-
+				<?php endif; ?>
 			</div><!-- .row -->
 		</div>
 

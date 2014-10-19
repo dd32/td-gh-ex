@@ -29,23 +29,23 @@
 	<footer class="single-entry-footer">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list();
+			$category_list = get_the_category_list( __( ' ', 'awaken' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list();
+			$tag_list = get_the_tag_list( '', __( ' ', 'awaken' ) );
 
 			if ( awaken_categorized_blog() ) {
-				echo '<span class="categorized-under">';
+				echo '<div class="categorized-under">';
 					_e( 'Posted Under', 'awaken' );
-				echo '</span>';
+				echo '</div>';
 				echo '<div class="awaken-category-list">' . $category_list . '</div>';
 				echo '<div class="clearfix"></div>';
 			}
 
 			if ( '' != $tag_list ) {
-				echo '<span class="tagged-under">';
+				echo '<div class="tagged-under">';
 					_e( 'Tagged', 'awaken' );
-				echo '</span>';
+				echo '</div>';
 				echo '<div class="awaken-tag-list">' . $tag_list . '</div>';
 				echo '<div class="clearfix"></div>';	
 			}

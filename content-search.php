@@ -31,9 +31,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="genpost-entry-summary">
+	<div class="genpost-entry-content">
 		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	</div><!-- .entry-content-->
 <!--
 	<footer class="entry-footer">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>

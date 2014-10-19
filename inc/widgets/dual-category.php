@@ -141,13 +141,13 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 
 		$title1 = ( ! empty( $instance['title1'] ) ) ? $instance['title1'] : '';
 		$number_posts1 = ( ! empty( $instance['number_posts1'] ) ) ? absint( $instance['number_posts1'] )  : 5; 
-		$sticky_posts1 = ( ! empty( $instance['sticky_posts1'] ) ) ? (bool)$instance['sticky_posts1'] : false;
-		$category1 = ( ! empty( $instance['category1'] ) ) ? $instance['category1'] : 'all';
+		$sticky_posts1 = ( isset( $instance['sticky_posts1'] ) ) ? $instance['sticky_posts1'] : false;
+		$category1 = $instance['category1'];
 		$offset1 = ( ! empty( $instance['offset1'] ) ) ? absint( $instance['offset1'] ) : 0;
 		$title2 = ( ! empty( $instance['title2'] ) ) ? $instance['title2'] : '';
 		$number_posts2 = ( ! empty( $instance['number_posts2'] ) ) ? absint( $instance['number_posts2'] )  : 5; 
-		$sticky_posts2 = ( ! empty( $instance['sticky_posts2'] ) ) ? (bool)$instance['sticky_posts2'] : false;
-		$category2 = ( ! empty( $instance['category2'] ) ) ? $instance['category2'] : 'all';
+		$sticky_posts2 = ( isset( $instance['sticky_posts2'] ) ) ? $instance['sticky_posts2'] : false;
+		$category2 = $instance['category2'];
 		$offset2 = ( ! empty( $instance['offset2'] ) ) ? absint( $instance['offset2'] ) : 0;
 
 		// Latest Posts 1
@@ -185,7 +185,9 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 				}
 			?>
 				<?php $j = 1; ?>
-				<?php while ( $latest_posts1 -> have_posts() ) : $latest_posts1 -> the_post(); ?>
+				<?php 
+					if ( $latest_posts1 -> have_posts() ) :
+					while ( $latest_posts1 -> have_posts() ) : $latest_posts1 -> the_post(); ?>
 					<?php if( $j == 1) { ?>
 						<div>
 							<?php if ( has_post_thumbnail() ) { ?>
@@ -198,13 +200,9 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-
-								<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-									<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'awaken' ), __( '1 Comment', 'awaken' ), __( '% Comments', 'awaken' ) ); ?></span>
-								<?php endif; ?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
-						<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>
+						<div class="genpost-entry-content dmag-summary"><?php the_excerpt(); ?></div>
 						</div>
 
 					<?php } else { ?>
@@ -224,6 +222,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 					<?php } ?>
 					<?php $j++ ?>
 				<?php endwhile; ?>
+				<?php endif; ?>
 
 			</div>
 		</div><!-- bootstrap cols -->
@@ -239,7 +238,9 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 			?>
 			<?php $j = 1 ?>
 				
-				<?php while ( $latest_posts2 -> have_posts() ) : $latest_posts2 -> the_post(); ?>
+				<?php 
+				if ( $latest_posts2 -> have_posts() ) :				
+				while ( $latest_posts2 -> have_posts() ) : $latest_posts2 -> the_post(); ?>
 					<?php if( $j == 1) { ?>
 						<div>
 							<?php if ( has_post_thumbnail() ) { ?>
@@ -252,13 +253,9 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-
-								<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-									<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'awaken' ), __( '1 Comment', 'awaken' ), __( '% Comments', 'awaken' ) ); ?></span>
-								<?php endif; ?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
-						<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>
+						<div class="genpost-entry-content dmag-summary"><?php the_excerpt(); ?></div>
 						</div>
 
 					<?php } else { ?>
@@ -278,6 +275,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 					<?php } ?>
 					<?php $j++ ?>
 				<?php endwhile; ?>
+				<?php endif; ?>
 
 			</div>
 		</div><!-- bootstrap cols -->

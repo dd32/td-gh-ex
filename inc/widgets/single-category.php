@@ -82,7 +82,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 		extract($args);
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';	
-		$category = ( ! empty( $instance['category'] ) ) ? $instance['category'] : 'all';
+		$category = $instance['category'];
 		// Latest Posts
 		$latest_posts = new WP_Query( 
 			array(
@@ -102,8 +102,9 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 		<div class="awaken-one-category">
 			<div class="row">
 				<?php $i = 1 ?>
-				<?php while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
-
+				<?php 
+					if ( $latest_posts -> have_posts() ) :
+					while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
 
 					<?php if( $i == 1 ) { ?>
 
@@ -124,7 +125,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 								<?php endif; ?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
-						<div class="genpost-entry-content"><?php the_excerpt(); ?></div>
+						<div class="genpost-entry-content mag-summary"><?php the_excerpt(); ?></div>
 	
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-6">
@@ -146,6 +147,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 					<?php $i++ ?>
 				<?php endwhile; ?>
 						</div><!-- .bootstrap cols -->
+				<?php endif; ?>
 			</div><!-- .row -->
 		</div>
 

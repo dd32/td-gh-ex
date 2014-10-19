@@ -1,9 +1,6 @@
 jQuery(function() {
 	jQuery('.nav-tabs a:first').tab('show');
 });
-
-
-jQuery
 /* SEARCH BOX */
 
 jQuery(document).ready(function(){

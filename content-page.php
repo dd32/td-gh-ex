@@ -11,7 +11,7 @@
 		<?php the_title( '<h1 class="page-entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="page-entry-content">
+	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

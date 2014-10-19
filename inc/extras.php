@@ -87,15 +87,3 @@ function awaken_setup_author() {
 	}
 }
 add_action( 'wp', 'awaken_setup_author' );
-
-/**
- * Sets the post excerpt length to 70 words.
- *
- * function tied to the excerpt_length filter hook.
- *
- * @uses filter excerpt_length
- */
-function awaken_excerpt_length( $length ) {
-	return 25;
-}
-add_filter( 'excerpt_length', 'awaken_excerpt_length' );

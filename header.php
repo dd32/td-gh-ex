@@ -14,14 +14,6 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<?php 
-	global $awaken_options;
-	$header_code = $awaken_options['awaken-header-code']; 
-	if ( isset($header_code) ) {
-		echo $header_code;
-	}
-?>
 <?php wp_head(); ?>
 </head>
 
@@ -32,16 +24,16 @@
 		<div class="top-nav">
 			<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-8 col-md-8">
+			<div class="col-xs-12 col-sm-6 col-md-8">
 				<nav id="top-navigation" class="top-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
 				</nav><!-- #site-navigation -->	
 				<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Top Menu', 'awaken' ); ?></a>
 				<div class="responsive-topnav"></div>			
-			</div><!-- col-xs-12 col-sm-8 col-md-8 -->
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				
-			</div><!-- col-xs-12 col-sm-4 col-md-4 -->
+			</div><!-- col-xs-12 col-sm-6 col-md-8 -->
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<?php awaken_socialmedia(); ?>
+			</div><!-- col-xs-12 col-sm-6 col-md-4 -->
 		</div><!-- row -->
 	</div>
 </div>
@@ -50,33 +42,32 @@
 		<div class="container">
 			<div class="site-brand-container">
 				<?php  
+					global $awaken_options;
 					$logo = $awaken_options['logo-uploader']['url'];
 					$title_option = $awaken_options['site-title-option'];
 
 					if ( $title_option == 'logo-only' && isset($logo) ) { ?>
-					<div class="site-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
-					</div>
-				<?php } 
+						<div class="site-logo">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+						</div>
+					<?php } 
 
 					if ( $title_option == 'text-logo' && isset($logo) ) { ?>
-					<div class="site-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
-					</div>
-					<div class="site-title-text">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					</div>
-				<?php } 
+						<div class="site-logo">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+						</div>
+						<div class="site-title-text">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+						</div>
+					<?php } 
 
-					if ( $title_option == 'text-only' ) { ?>
-					<div class="site-title-text">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					</div>
+					if ( !isset($title_option) || $title_option == 'text-only' ) { ?>
+						<div class="site-title-text">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+						</div>
 				<?php } ?>
-
-			
 			</div><!-- .site-brand-container -->
 		</div>
 	</div>
@@ -101,7 +92,6 @@
 		</div><!-- .awaken-navigation-container-->
 	</div><!-- .container -->
 	</header><!-- #masthead -->
-</div>
 
 	<div id="content" class="site-content">
 		<div class="container">
