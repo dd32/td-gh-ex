@@ -4,7 +4,7 @@ Theme URI: http://tradesouthwest.net/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media.
-Version: 0.5
+Version: 0.6
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,7 @@ strong, sub, sup, tt, var, legend, fieldset, figure {
     padding: 0;
     word-wrap: break-word;
 }
+pre { display: block; max-width: 98%; margin: 0 auto; word-wrap: break-word; white-space: pre-wrap;}
 /* set html5 elements to block */
 article, aside, details, figcaption, figure, footer, header, menu, nav, section { 
     display: block;
@@ -108,6 +109,8 @@ body {
     z-index:       1; /* only needed when #access menu overlay used */
     background:    rgba( 250, 250, 250, 0.95 );
     border:        1px solid rgba( 100, 100, 100, 0.3 );
+    min-height:    480px;
+
 }
 .toprow { /* top secondary menu container */
     width:         99%;
@@ -184,7 +187,7 @@ body.single .site-header {
     display:       inline-block;
     width:         96.5222%;
     margin:        3.12% 0 0 1.12%;
-}
+} 
 #full-width {
     display:       block;
     position:      relative;
@@ -264,7 +267,7 @@ section.content-area-left { /* left single post or page article background conta
     border-left:   4px solid #d5e6e7;
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     position:      relative;
-    top:           0;
+    top:           0; 
 }
 .post-right { /* sidebar container next to lead article */
     position:      relative;
@@ -364,6 +367,7 @@ section.content-area-left { /* left single post or page article background conta
     background:    #11223f;
     border:        1px solid #8a839c;
     border-top:    5px solid #fafaaa;
+    z-index:       5;
 }
 .site-footer:before {
     content:       "";
@@ -432,6 +436,7 @@ footer#colophon > div {
     padding:       5px 9px;
     margin-bottom: 1.444em;
     float:         right;
+    z-index:       800;
 }
 #right-sidebar-absolute {
     position:      absolute;
@@ -446,6 +451,16 @@ footer#colophon > div {
     border-left:   4px solid #d5e6e7;
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     padding:       5px 9px;
+    z-index:       700;
+    background:    #fafafa;
+
+}
+.sidebar-absolute-breaker {
+    display: block;
+    width: 100%;
+    min-height: 2em;
+    border: 5px solid transparent;
+    clear: both;
 }
 #main img {
     max-width:     100%;
@@ -1223,8 +1238,14 @@ h3#reply-title {
 .post-categories a {
     font-weight:     200 !important;
 }
+.post-categories {
+display: inline; 
+position: relative;
+top: 1em;
+left: -2em;
+}
 /* set margins here */
-li.categories {}  
+li.categories {display: inline; margin-left: 3px;}  
 li.cat-item {}
 li.cat-item-{id} {}
 li.current-cat {}

@@ -31,7 +31,7 @@ add_action('after_setup_theme', 'betilu_setup');
 function betilu_add_theme_scripts() {    
    
     // Loads default main stylesheet.
-    wp_enqueue_style( 'style', get_stylesheet_uri() ); 
+    wp_enqueue_style( 'style', get_stylesheet_uri() );
 
     /**
      * Adds JavaScript to pages with the comment form to support
@@ -41,6 +41,7 @@ function betilu_add_theme_scripts() {
 	wp_enqueue_script( 'comment-reply' );  
 }
     add_action( 'wp_enqueue_scripts', 'betilu_add_theme_scripts' );
+
 
     // add ie conditional html5 shim to header
 function betilu_add_ie_html5_shim () {

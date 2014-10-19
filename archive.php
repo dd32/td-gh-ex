@@ -28,8 +28,8 @@ get_header(); ?>
                         </article>
                     </section><!-- ends content-left -->
             <?php endif; ?> 
-                        <div id="right-sidebar-absolute">
+                        <div id="right-sidebar">
                            <?php get_sidebar(); ?>
                         </div>    
-            </div><!-- ends wide-lead -->  <div class="breaker"></div>
+            </div><!-- ends wide-lead --> <div class="breaker">&nbsp;</div>
 <?php get_footer(); ?>
