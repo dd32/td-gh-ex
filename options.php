@@ -179,7 +179,7 @@ $options[] = array(
    	
 		
 $options[] = array(
-		'name' => __('Advance Options', 'optimize'),
+		'name' => __('Advance Options (Pro Only)', 'optimize'),
 		'type' => 'heading');
 			
 				

@@ -461,3 +461,7 @@ border-bottom: 1px solid #f1f1f1;
 background: none !important;
 color: #000;
 }
+
+
+.advanceoptions, #optimize_bottomheading_size, #optimize_bottomheading_style, #optimize_bottomdesc_size, #optimize_bottomdesc_style, .wp-color-result, #optimize_wooproductscol, #optimize_moreinfo, #optimize_wooproducts{
+opacity: 0.4;}

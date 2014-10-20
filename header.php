@@ -1,5 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<?php
+// Header Template
+// Copyright 2014 InsertCart
+// Author: sandeep
+// Theme: Optimize
+
+?>
+
+
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
 <head>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>

@@ -4,7 +4,7 @@ Author: InsertCart
 Author URI: http://www.insertcart.com
 Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.5
+Version: 1.5.1
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
@@ -1168,23 +1168,18 @@ box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 	opacity: 0.5;
 }
 /* ===================== calendar ===================== */
-table#wp-calendar {
-	width: 100%;
-	text-transform: none;
-	padding-top: 0;
-	margin-top: 0;
-}
-table#wp-calendar caption {
-	padding: 0 10px 10px;
-}
-table#wp-calendar th {
-	padding: 0;
-	text-align: center;
-}
-table#wp-calendar td {
-	padding: 0;
-	text-align: center;
-}
+#wp-calendar {width: 100%; }
+#wp-calendar caption { text-align: center; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px;background: #f5f5f5;padding: 10px;font-weight: bold; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { margin-bottom: 8px;background: #f5f5f5;border-right: 1px solid #fff;padding: 10px;color: #333; }
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tbody .pad { background: #f5f5f5; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+#wp-calendar tbody td#today{background: none repeat scroll 0% 0% #2D89A7;color: #fff;}
+
 /* ===================== comments ===================== */
 .comments {
 	margin: 10px 0;

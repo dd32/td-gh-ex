@@ -1,7 +1,10 @@
 <?php
+
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
+include_once('includes/installs.php');
+include_once('includes/core/core.php');
 
 function optimize_scripts() {
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
