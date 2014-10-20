@@ -2,9 +2,8 @@
 /**
  * Kaira Settings theme class
  * 
- * @package Kaira
  */
-class Kaira_options {
+class Kaira_theme_settings {
 	
 	private $sections;
 	private $checkboxes;
@@ -666,12 +665,10 @@ class Kaira_options {
 	* jQuery Tabs
 	*/
 	public function load_kaira_scripts() {
-        wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/framework/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'kaira-iris', 'wp-color-picker' ), false, 1 );
-        
+        wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/framework/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
         wp_enqueue_script( 'kaira-theme-admin-js' );
-        wp_enqueue_script( 'kaira-iris', get_template_directory_uri().'/framework/js/iris.min.js' );
-		wp_print_scripts( 'jquery-ui-tabs' );
-        
+        wp_enqueue_script( 'wp-color-picker' );
+        wp_print_scripts( 'jquery-ui-tabs' );
         wp_enqueue_media();
 	}
 	
@@ -680,9 +677,8 @@ class Kaira_options {
 	*/
 	public function load_kaira_styles() {
         wp_enqueue_style( 'wp-color-picker' );
-		
-		wp_register_style( 'kaira-theme-admin-css', get_stylesheet_directory_uri() . '/framework/css/kaira-admin.css' );
-		wp_enqueue_style( 'kaira-theme-admin-css' );
+        wp_register_style( 'kaira-theme-admin-css', get_stylesheet_directory_uri() . '/framework/css/kaira-admin.css' );
+        wp_enqueue_style( 'kaira-theme-admin-css' );
 	}
 	
 	/**
@@ -706,7 +702,7 @@ class Kaira_options {
 	
 }
 
-$theme_options = new Kaira_options();
+$theme_options = new Kaira_theme_settings();
 
 function kaira_theme_option( $option ) {
 	$options = get_option( 'kaira_theme_options' );

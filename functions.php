@@ -5,10 +5,10 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.4' );
+define( 'KAIRA_THEME_VERSION' , '1.5' );
 
-if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' ) ) {
-    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-options.php' );
+if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' ) ) {
+    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' );
 }
 
 // Theme Widgets
@@ -22,7 +22,7 @@ if ( ! function_exists( 'kaira_setup_theme' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function alba_setup_theme() {
+function kaira_setup_theme() {
     
     /**
      * Set the content width based on the theme's design and stylesheet.
@@ -77,12 +77,12 @@ function alba_setup_theme() {
     add_theme_support( 'woocommerce' );
 }
 endif; // kaira_setup
-add_action( 'after_setup_theme', 'alba_setup_theme' );
+add_action( 'after_setup_theme', 'kaira_setup_theme' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function alba_widgets_init() {
+function kaira_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'albar' ),
 		'id'            => 'sidebar-1',
@@ -100,9 +100,9 @@ function alba_widgets_init() {
     register_widget( 'alba_heading' );
     register_widget( 'alba_icon' );
 }
-add_action( 'widgets_init', 'alba_widgets_init' );
+add_action( 'widgets_init', 'kaira_widgets_init' );
 
-if(!function_exists('alba_footer_widget_params')):
+if(!function_exists('kaira_footer_widget_params')):
 /**
  * Set the widths of the footer widgets
  *
@@ -111,7 +111,7 @@ if(!function_exists('alba_footer_widget_params')):
  * 
  * @filter dynamic_sidebar_params
  */
-function alba_footer_widget_params($params){
+function kaira_footer_widget_params($params){
 	// Check that this is the footer
 	if($params[0]['id'] != 'site-footer') return $params;
 
@@ -122,9 +122,9 @@ function alba_footer_widget_params($params){
 	return $params;
 }
 endif;
-add_filter('dynamic_sidebar_params', 'alba_footer_widget_params');
+add_filter('dynamic_sidebar_params', 'kaira_footer_widget_params');
 
-function alba_print_styles(){
+function kaira_print_styles(){
     $custom_css = '';
     if ( kaira_theme_option( 'kra-custom-css' ) ) {
         $custom_css = kaira_theme_option( 'kra-custom-css' );
@@ -225,12 +225,12 @@ function alba_print_styles(){
     </style>
     <?php
 }
-add_action('wp_head', 'alba_print_styles', 11);
+add_action('wp_head', 'kaira_print_styles', 11);
 
 /**
  * Enqueue scripts and styles
  */
-function alba_scripts() {
+function kaira_scripts() {
     if( kaira_theme_option( 'kra-body-google-font' ) ) {
         wp_enqueue_style( 'albar-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
@@ -260,7 +260,7 @@ function alba_scripts() {
 		wp_enqueue_script( 'kaira-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), KAIRA_THEME_VERSION );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'alba_scripts' );
+add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -280,12 +280,12 @@ require get_template_directory() . '/includes/inc/customizer.php';
 /**
  * Add Alba wrappers around WooCommerce pages content.
  */
-add_action('woocommerce_before_main_content', 'alba_wrap_woocommerce_start', 10);
-add_action('woocommerce_after_main_content', 'alba_wrap_woocommerce_end', 10);
-function alba_wrap_woocommerce_start() {
+add_action('woocommerce_before_main_content', 'kaira_wrap_woocommerce_start', 10);
+add_action('woocommerce_after_main_content', 'kaira_wrap_woocommerce_end', 10);
+function kaira_wrap_woocommerce_start() {
     echo '<div id="primary" class="content-area content-area-full">';
 }
-function alba_wrap_woocommerce_end() {
+function kaira_wrap_woocommerce_end() {
     echo '</div>';
 }
 
