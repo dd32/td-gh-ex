@@ -2,9 +2,30 @@
 /**
  * Custom functions
  */
+global $virtue;
+
 function virtue_img_placeholder() {
   return get_template_directory_uri() . '/assets/img/placement.png';
 }
+function virtue_post_widget_default_placeholder() {
+   return apply_filters('kadence_post_default_widget_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard-80x50.jpg');
+}
+function virtue_post_default_placeholder() {
+   return apply_filters('kadence_post_default_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard.jpg');
+}
+
+function virtue_post_default_placeholder_override() {
+  global $virtue;
+  $custom_image = $virtue['post_summery_default_image']['url'];
+  return $custom_image;
+}
+
+if (isset($virtue['post_summery_default_image']) && !empty($virtue['post_summery_default_image']['url'])) {
+add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeholder_override');
+add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
+}
+
+
 
 function detect_mobile()
 {

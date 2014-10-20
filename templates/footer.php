@@ -59,7 +59,12 @@
               wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footermenu'));
             ?></div><?php
         	endif;?>
-        	<p><?php if(isset($virtue['footer_text'])) { $footertext = $virtue['footer_text'];} else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';} echo do_shortcode($footertext); ?></p>
+        	<p><?php if(isset($virtue['footer_text'])) { $footertext = $virtue['footer_text'];} else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';}
+        		$footertext = str_replace('[copyright]','&copy;',$footertext);
+        		$footertext = str_replace('[the-year]',date('Y'),$footertext);
+        		$footertext = str_replace('[site-name]',get_bloginfo('name'),$footertext);
+        		$footertext = str_replace('[theme-credit]','- WordPress Theme by <a href="http://www.kadencethemes.com/" target="_blank">Kadence Themes</a>',$footertext);
+        		 echo do_shortcode($footertext); ?></p>
     	</div>
 
   </div>

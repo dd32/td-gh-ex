@@ -23,28 +23,55 @@
                               <div class="col-md-12">
                                   <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                      <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                      <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
                                   </div>
                               </div>
-                              <?php $image = null; $thumbnailURL = null; }  ?>
+                              <?php $image = null; $thumbnailURL = null; 
+                              } else {
+                                  $thumbnailURL = virtue_post_default_placeholder();
+                                  $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+                                  if(empty($image)) { $image = $thumbnailURL; } ?>
+                                  <div class="col-md-12">
+                                  <div class="imghoverclass img-margin-center">
+                                    <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+                                            <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                        </a> 
+                                     </div>
+                                 </div>
+                                <?php $image = null; $thumbnailURL = null; 
+                                }  ?>
 
                       <?php } elseif($postsummery == 'img_portrait') { 
                             $textsize = 'col-md-7'; 
                             if (has_post_thumbnail( $post->ID ) ) {
-                            $image_url = wp_get_attachment_image_src( 
-                            get_post_thumbnail_id( $post->ID ), 'full' ); 
-                            $thumbnailURL = $image_url[0]; 
-                            $image = aq_resize($thumbnailURL, 365, 365, true);
-                            if(empty($image)) { $image = $thumbnailURL; } ?>
-                            <div class="col-md-5">
-                                <div class="imghoverclass img-margin-center">
-                                    <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
-                                    </a> 
+                                $image_url = wp_get_attachment_image_src( 
+                                get_post_thumbnail_id( $post->ID ), 'full' ); 
+                                $thumbnailURL = $image_url[0]; 
+                                $image = aq_resize($thumbnailURL, 365, 365, true);
+                                if(empty($image)) { $image = $thumbnailURL; } ?>
+                                <div class="col-md-5">
+                                    <div class="imghoverclass img-margin-center">
+                                        <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+                                            <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                        </a> 
+                                     </div>
                                  </div>
-                             </div>
-                            <?php $image = null; $thumbnailURL = null; } ?>
+                                <?php $image = null; $thumbnailURL = null; 
+                                } else {
+                                  $thumbnailURL = virtue_post_default_placeholder();
+                                  $image = aq_resize($thumbnailURL, 365, 365, true);
+                                  if(empty($image)) { $image = $thumbnailURL; } ?>
+                                  <div class="col-md-5">
+                                    <div class="imghoverclass img-margin-center">
+                                        <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+                                            <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                        </a> 
+                                     </div>
+                                 </div>
+                                <?php $image = null; $thumbnailURL = null; 
+                                
+                                } ?>
 
                       <?php } elseif($postsummery == 'slider_landscape') {
                             $textsize = 'col-md-12'; ?>
@@ -62,7 +89,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -78,7 +105,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -118,7 +145,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -134,7 +161,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -161,7 +188,7 @@
                            $textsize = 'col-md-12'; ?>
                             <div class="col-md-12">
                                 <div class="videofit">
-                                    <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                                    <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                                 </div>
                             </div>
 

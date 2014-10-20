@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
 "POT-Creation-Date: 2014-08-09 13:47-0700\n"
-"PO-Revision-Date: 2014-08-09 13:56-0700\n"
+"PO-Revision-Date: 2014-09-22 13:51-0700\n"
 "Last-Translator: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language-Team: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -418,7 +418,7 @@ msgstr "Votre panier d'achats"
 
 #: ../lib/custom.php:366 ../templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr "Billet précédant"
+msgstr "Billet précédent"
 
 #: ../lib/custom.php:366 ../templates/entry-post-links.php:6
 msgid "Next Post"
@@ -584,8 +584,8 @@ msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
-"La valeur par défaut est 700 ou 1140 pour les billets pleine-largeur <b>"
-"(Note : entrez juste un nombre, exemple : 650, ne s'applique pas au "
+"La valeur par défaut est 700 ou 1140 pour les billets pleine-largeur "
+"<b>(Note : entrez juste un nombre, exemple : 650, ne s'applique pas au "
 "carrousel)</b>"
 
 #: ../lib/metaboxes.php:118
@@ -2624,21 +2624,6 @@ msgstr "De retour à"
 msgid "Sale!"
 msgstr "Vente !"
 
-#~ msgid "Shop"
-#~ msgstr "la boutique"
-
-#~ msgid "Virtue: About with Image"
-#~ msgstr "Virtue : À propos avec image"
-
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Panneau d'options créé avec %1$s"
-
-#~ msgid "Redux Framework"
-#~ msgstr "Infrastructure d'application Redux"
-
-#~ msgid "Options"
-#~ msgstr "Options"
-
 #~ msgid ""
 #~ "You have changes that are not saved. Would you like to save them now?"
 #~ msgstr ""
@@ -2650,17 +2635,47 @@ msgstr "Vente !"
 #~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
 #~ "personnalisées."
 
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-#~ "personnalisées dans cette section."
-
 #~ msgid ""
 #~ "Your current options will be replaced with the values of this preset. "
 #~ "Would you like to proceed?"
 #~ msgstr ""
 #~ "Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
 #~ "Voulez-vous continuer ?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have changes that are not saved.  Would you like to save them now?"
+#~ msgstr ""
+#~ "Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous "
+#~ "les enregistrer maintenant ?"
+
+#, fuzzy
+#~ msgid "Are you sure?  Resetting will lose all custom values."
+#~ msgstr ""
+#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+#~ "personnalisées."
+
+#, fuzzy
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset.  "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
+#~ "Voulez-vous continuer ?"
+
+#~ msgid "Options panel created using %1$s"
+#~ msgstr "Panneau d'options créé avec %1$s"
+
+#~ msgid "Redux Framework"
+#~ msgstr "Infrastructure d'application Redux"
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "Are you sure? Resetting will lose all custom values in this section."
+#~ msgstr ""
+#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+#~ "personnalisées dans cette section."
 
 #, fuzzy
 #~ msgid "Please Wait"
@@ -2705,80 +2720,207 @@ msgstr "Vente !"
 #~ msgid "System Info"
 #~ msgstr "Informations du système"
 
-#, fuzzy
-#~ msgid ""
-#~ "You have changes that are not saved.  Would you like to save them now?"
-#~ msgstr ""
-#~ "Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous "
-#~ "les enregistrer maintenant ?"
+#~ msgid "Transparent"
+#~ msgstr "Transparent"
+
+#~ msgid "Background Repeat"
+#~ msgstr "Répétition du fond"
+
+#~ msgid "Background Clip"
+#~ msgstr "Recadrage du fond"
+
+#~ msgid "Background Origin"
+#~ msgstr "Origine du fond"
+
+#~ msgid "Background Size"
+#~ msgstr "Taille du fond"
+
+#~ msgid "Background Attachment"
+#~ msgstr "Fixation du fond"
+
+#~ msgid "Background Position"
+#~ msgstr "Position du fond"
+
+#~ msgid "No media selected"
+#~ msgstr "Aucun média sélectioné"
+
+#~ msgid "Add More"
+#~ msgstr "Ajouter plus"
+
+#~ msgid "Select an item"
+#~ msgstr "Choisir un item"
+
+#~ msgid "No items of this type were found."
+#~ msgstr "Aucun item de ce type disponible."
 
 #, fuzzy
-#~ msgid "Are you sure?  Resetting will lose all custom values."
-#~ msgstr ""
-#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-#~ "personnalisées."
+#~ msgid "Font Family"
+#~ msgstr "Famille de polices"
+
+#~ msgid "Font family"
+#~ msgstr "Famille de polices"
+
+#~ msgid "Backup Font Family"
+#~ msgstr "Famille de police de remplacement"
+
+#~ msgid "Font style"
+#~ msgstr "Style de la police"
+
+#~ msgid "Style"
+#~ msgstr "Style"
+
+#~ msgid "Font subsets"
+#~ msgstr "Sous-ensembles de police"
 
 #, fuzzy
+#~ msgid "Font Subsets"
+#~ msgstr "Sous-ensembles de police"
+
+#~ msgid "Subsets"
+#~ msgstr "Sous-ensembles"
+
+#~ msgid "Font script"
+#~ msgstr "Système d'écriture de la police"
+
+#, fuzzy
+#~ msgid "Font Variant"
+#~ msgstr "Système d'écriture de la police"
+
+#, fuzzy
+#~ msgid "Text Decoration"
+#~ msgstr "Réinitialiser la section"
+
+#, fuzzy
+#~ msgid "Font Size"
+#~ msgstr "Style de la police"
+
+#~ msgid "Size"
+#~ msgstr "Taille"
+
+#, fuzzy
+#~ msgid "Line Height"
+#~ msgstr "Hauteur"
+
+#~ msgid "Height"
+#~ msgstr "Hauteur"
+
+#~ msgid "Word Spacing"
+#~ msgstr "Espacement des mots"
+
+#~ msgid "Letter Spacing"
+#~ msgstr "Espacement des lettres"
+
+#, fuzzy
+#~ msgid "Font Color"
+#~ msgstr "Couleur de police"
+
+#~ msgid "Font color"
+#~ msgstr "Couleur de police"
+
+#~ msgid "Standard Fonts"
+#~ msgstr "Polices standards"
+
+#~ msgid "Google Webfonts"
+#~ msgstr "Polices web de Google"
+
+#~ msgid "Import / Export Options"
+#~ msgstr "Options d'importation et d'exportation"
+
+#~ msgid "Import Options"
+#~ msgstr "Options d'importation"
+
+#~ msgid "Import from file"
+#~ msgstr "Importation depuis un fichier"
+
+#~ msgid "Import from URL"
+#~ msgstr "Importation depuis une URL"
+
 #~ msgid ""
-#~ "Your current options will be replaced with the values of this preset.  "
-#~ "Would you like to proceed?"
+#~ "Input your backup file below and hit Import to restore your sites options "
+#~ "from a backup."
 #~ msgstr ""
-#~ "Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
-#~ "Voulez-vous continuer ?"
-
-#~ msgid "%s review for %s"
-#~ msgid_plural "%s reviews for %s"
-#~ msgstr[0] "%s avis pour %s"
-#~ msgstr[1] "%s avis pour %s"
-
-#~ msgid "Reviews"
-#~ msgstr "Avis"
-
-#~ msgid "There are no reviews yet."
-#~ msgstr "Il n'y a pas encore d'avis."
-
-#~ msgid "Add a review"
-#~ msgstr "Ajouter un avis"
-
-#~ msgid "Be the first to review"
-#~ msgstr "Soyez le premier à écrire un avis."
-
-#~ msgid "Email"
-#~ msgstr "Courriel"
-
-#~ msgid "Submit"
-#~ msgstr "Envoyer"
-
-#~ msgid "Your Rating"
-#~ msgstr "Votre cote"
-
-#~ msgid "Rate&hellip;"
-#~ msgstr "Cotez..."
-
-#~ msgid "Perfect"
-#~ msgstr "Parfait"
-
-#~ msgid "Good"
-#~ msgstr "Bien"
-
-#~ msgid "Average"
-#~ msgstr "Moyen"
-
-#~ msgid "Not that bad"
-#~ msgstr "Pas mal"
-
-#~ msgid "Very Poor"
-#~ msgstr "Très pauvre"
-
-#~ msgid "Your Review"
-#~ msgstr "Votre avis"
+#~ "Choisissez votre fichier de sauvegarde ci-dessous et cliquez Importation "
+#~ "pour restaurer vos options de site à partir d'une sauvegarde."
 
 #~ msgid ""
-#~ "Only logged in customers who have purchased this product may leave a "
-#~ "review."
+#~ "Input the URL to another sites options set and hit Import to load the "
+#~ "options from that site."
 #~ msgstr ""
-#~ "Seules les personnes identifiées qui ont acheté ce produit peuvent "
-#~ "laisser un avis."
+#~ "Indiquez l'URL vers un ensemble d'options de site et cliquez Importation "
+#~ "pour charger les options à partir de ce site."
+
+#~ msgid "Import"
+#~ msgstr "Importation"
+
+#~ msgid ""
+#~ "WARNING! This will overwrite all existing option values, please proceed "
+#~ "with caution!"
+#~ msgstr ""
+#~ "ATTENTION ! Cela écrasera toutes les valeurs d'options existantes, s'il "
+#~ "vous plaît procéder avec prudence !"
+
+#~ msgid "Export Options"
+#~ msgstr "Options d'exportation"
+
+#~ msgid ""
+#~ "Here you can copy/download your current option settings. Keep this safe "
+#~ "as you can use it as a backup should anything go wrong, or you can use it "
+#~ "to restore your settings on this site (or any other site)."
+#~ msgstr ""
+#~ "Ici vous pouvez copier / télécharger vos paramètres d'options actuels. "
+#~ "Conservez en lieu sûr car vous pourrez l'utiliser comme une sauvegarde en "
+#~ "cas de problème, ou vous pouvez l'utiliser pour restaurer vos paramètres "
+#~ "sur ce site (ou tout autre site)."
+
+#~ msgid "Copy"
+#~ msgstr "Copier"
+
+#~ msgid "Copy Link"
+#~ msgstr "Copier le lien"
+
+#~ msgid "Import / Export"
+#~ msgstr "Importation et Exportation"
+
+#~ msgid "This field must be a valid color value."
+#~ msgstr "Ce champ doit contenir une valeur de couleur valide."
+
+#~ msgid ""
+#~ "You must provide a comma separated list of numerical values for this "
+#~ "option."
+#~ msgstr ""
+#~ "Vous devez fournir une liste séparée par des virgules de valeurs "
+#~ "numériques pour cette option."
+
+#~ msgid "This field must be a valid date."
+#~ msgstr "Ce champ doit contenir une date valide."
+
+#~ msgid "You must provide a valid email for this option."
+#~ msgstr ""
+#~ "Vous devez fournir une adresse de courriel valide pour cette option."
+
+#~ msgid ""
+#~ "You must not enter any HTML in this field, all HTML tags have been "
+#~ "removed."
+#~ msgstr ""
+#~ "Vous ne devez pas entrer de code HTML dans ce champ, toutes les balises "
+#~ "HTML ont été supprimées."
+
+#~ msgid ""
+#~ "You must not enter any special characters in this field, all special "
+#~ "characters have been removed."
+#~ msgstr ""
+#~ "Vous ne devez pas entrer des caractères spéciaux dans ce champ, tous les "
+#~ "caractères spéciaux ont été supprimés."
+
+#, fuzzy
+#~ msgid "This field cannot be empty. Please provide a value."
+#~ msgstr "Ce champ doit contenir une valeur de couleur valide."
+
+#~ msgid "You must provide a numerical value for this option."
+#~ msgstr "Vous devez fournir une valeur numérique pour cette option."
+
+#~ msgid "You must provide a valid URL for this option."
+#~ msgstr "Vous devez fournir une URL valide pour cette option."
 
 #~ msgid "Cart Totals"
 #~ msgstr "Total du panier d'achats"
@@ -2858,6 +3000,160 @@ msgstr "Vente !"
 #~ msgstr "Mettre à jour les totaux"
 
 #~ msgid ""
+#~ "To track your order please enter your Order ID in the box below and press "
+#~ "return. This was given to you on your receipt and in the confirmation "
+#~ "email you should have received."
+#~ msgstr ""
+#~ "Pour vérifier votre commande, veuillez entrer votre numéro de commande "
+#~ "dans la case ci-dessous et appuyez sur Entrée. Il vous a été donné sur "
+#~ "votre reçu et dans le courriel de confirmation que vous devriez avoir "
+#~ "reçu."
+
+#~ msgid "Order ID"
+#~ msgstr "Numéro de commande"
+
+#~ msgid "Found in your order confirmation email."
+#~ msgstr "Trouvé dans votre courriel de confirmation."
+
+#~ msgid "Billing Email"
+#~ msgstr "Adresse de courriel de facturation"
+
+#~ msgid "Email you used during checkout."
+#~ msgstr "Adresse courriel utilisée lors de votre commande."
+
+#~ msgid "Track"
+#~ msgstr "Vérification"
+
+#~ msgid "%s review for %s"
+#~ msgid_plural "%s reviews for %s"
+#~ msgstr[0] "%s avis pour %s"
+#~ msgstr[1] "%s avis pour %s"
+
+#~ msgid "Reviews"
+#~ msgstr "Avis"
+
+#~ msgid "There are no reviews yet."
+#~ msgstr "Il n'y a pas encore d'avis."
+
+#~ msgid "Add a review"
+#~ msgstr "Ajouter un avis"
+
+#~ msgid "Be the first to review"
+#~ msgstr "Soyez le premier à écrire un avis."
+
+#~ msgid "Email"
+#~ msgstr "Courriel"
+
+#~ msgid "Submit"
+#~ msgstr "Envoyer"
+
+#~ msgid "Your Rating"
+#~ msgstr "Votre cote"
+
+#~ msgid "Rate&hellip;"
+#~ msgstr "Cotez..."
+
+#~ msgid "Perfect"
+#~ msgstr "Parfait"
+
+#~ msgid "Good"
+#~ msgstr "Bien"
+
+#~ msgid "Average"
+#~ msgstr "Moyen"
+
+#~ msgid "Not that bad"
+#~ msgstr "Pas mal"
+
+#~ msgid "Very Poor"
+#~ msgstr "Très pauvre"
+
+#~ msgid "Your Review"
+#~ msgstr "Votre avis"
+
+#~ msgid ""
+#~ "Only logged in customers who have purchased this product may leave a "
+#~ "review."
+#~ msgstr ""
+#~ "Seules les personnes identifiées qui ont acheté ce produit peuvent "
+#~ "laisser un avis."
+
+#~ msgid "Shop"
+#~ msgstr "la boutique"
+
+#~ msgid "Choose an option"
+#~ msgstr "Choisissez une option"
+
+#~ msgid "Clear selection"
+#~ msgstr "Effacer la sélection"
+
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "Ce produit est actuellement en rupture de stock et indisponible."
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Classé %s sur 5"
+
+#~ msgid "out of 5"
+#~ msgstr "sur 5"
+
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s avis de la clientèle"
+#~ msgstr[1] "%s avis de la clientèle"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Classé %d sur 5"
+
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Votre commentaire est en attente d'approbation"
+
+#~ msgid "verified owner"
+#~ msgstr "propriétaire vérifié"
+
+#~ msgid "Default sorting"
+#~ msgstr "Tri par défaut"
+
+#~ msgid "Sort by popularity"
+#~ msgstr "Trier par popularité"
+
+#~ msgid "Sort by average rating"
+#~ msgstr "Tri par cote moyenne"
+
+#~ msgid "Sort by newness"
+#~ msgstr "Tri par récence"
+
+#~ msgid "Sort by price: low to high"
+#~ msgstr "Tri par prix croissant"
+
+#~ msgid "Sort by price: high to low"
+#~ msgstr "Tri par prix décroissant"
+
+#~ msgid "Order Details"
+#~ msgstr "Détails de la commande"
+
+#~ msgid "Download file%s"
+#~ msgstr "Téléchargez le fichier %s"
+
+#~ msgid "Customer details"
+#~ msgstr "Informations sur le client ou la cliente"
+
+#, fuzzy
+#~ msgid "Telephone:"
+#~ msgstr "Téléphone :"
+
+#~ msgid "Billing Address"
+#~ msgstr "Adresse de facturation"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "Shipping Address"
+#~ msgstr "Adresse de livraison"
+
+#~ msgid "Virtue: About with Image"
+#~ msgstr "Virtue : À propos avec image"
+
+#~ msgid ""
 #~ "Unfortunately your order cannot be processed as the originating bank/"
 #~ "merchant has declined your transaction."
 #~ msgstr ""
@@ -2893,75 +3189,14 @@ msgstr "Vente !"
 #~ msgid "No products found which match your selection."
 #~ msgstr "Aucun produit ne correspond à votre sélection."
 
-#~ msgid "Default sorting"
-#~ msgstr "Tri par défaut"
-
-#~ msgid "Sort by popularity"
-#~ msgstr "Trier par popularité"
-
-#~ msgid "Sort by average rating"
-#~ msgstr "Tri par cote moyenne"
-
-#~ msgid "Sort by newness"
-#~ msgstr "Tri par récence"
-
-#~ msgid "Sort by price: low to high"
-#~ msgstr "Tri par prix croissant"
-
-#~ msgid "Sort by price: high to low"
-#~ msgstr "Tri par prix décroissant"
-
 #~ msgid "Showing the single result"
 #~ msgstr "Affichage du résultat"
 
 #~ msgid "Showing all %d results"
 #~ msgstr "Affichage des %d résultats"
 
-#~ msgid ""
-#~ "To track your order please enter your Order ID in the box below and press "
-#~ "return. This was given to you on your receipt and in the confirmation "
-#~ "email you should have received."
-#~ msgstr ""
-#~ "Pour vérifier votre commande, veuillez entrer votre numéro de commande "
-#~ "dans la case ci-dessous et appuyez sur Entrée. Il vous a été donné sur "
-#~ "votre reçu et dans le courriel de confirmation que vous devriez avoir "
-#~ "reçu."
-
-#~ msgid "Order ID"
-#~ msgstr "Numéro de commande"
-
-#~ msgid "Found in your order confirmation email."
-#~ msgstr "Trouvé dans votre courriel de confirmation."
-
-#~ msgid "Billing Email"
-#~ msgstr "Adresse de courriel de facturation"
-
-#~ msgid "Email you used during checkout."
-#~ msgstr "Adresse courriel utilisée lors de votre commande."
-
-#~ msgid "Track"
-#~ msgstr "Vérification"
-
-#~ msgid "Order Details"
-#~ msgstr "Détails de la commande"
-
-#~ msgid "Download file%s"
-#~ msgstr "Téléchargez le fichier %s"
-
 #~ msgid "Order Again"
 #~ msgstr "Commander de nouveau"
-
-#~ msgid "Customer details"
-#~ msgstr "Informations sur le client ou la cliente"
-
-#~ msgid "Billing Address"
-#~ msgstr "Adresse de facturation"
-
-#~ msgid "N/A"
-#~ msgstr "N/A"
-
-#~ msgid "Shipping Address"
-#~ msgstr "Adresse de livraison"
 
 #~ msgid "Products tagged &ldquo;"
 #~ msgstr "Produits étiquetés &ldquo;"
@@ -2990,35 +3225,6 @@ msgstr "Vente !"
 #~ msgid "Lost Password?"
 #~ msgstr "Mot de passe perdu ?"
 
-#~ msgid "Rated %s out of 5"
-#~ msgstr "Classé %s sur 5"
-
-#~ msgid "out of 5"
-#~ msgstr "sur 5"
-
-#~ msgid "%s customer review"
-#~ msgid_plural "%s customer reviews"
-#~ msgstr[0] "%s avis de la clientèle"
-#~ msgstr[1] "%s avis de la clientèle"
-
-#~ msgid "Rated %d out of 5"
-#~ msgstr "Classé %d sur 5"
-
-#~ msgid "Your comment is awaiting approval"
-#~ msgstr "Votre commentaire est en attente d'approbation"
-
-#~ msgid "verified owner"
-#~ msgstr "propriétaire vérifié"
-
-#~ msgid "Choose an option"
-#~ msgstr "Choisissez une option"
-
-#~ msgid "Clear selection"
-#~ msgstr "Effacer la sélection"
-
-#~ msgid "This product is currently out of stock and unavailable."
-#~ msgstr "Ce produit est actuellement en rupture de stock et indisponible."
-
 #~ msgid "Additional Information"
 #~ msgstr "Informations complémentaires"
 
@@ -3028,66 +3234,8 @@ msgstr "Vente !"
 #~ msgid "Select an Option"
 #~ msgstr "Choisissez une option"
 
-#~ msgid "Import / Export"
-#~ msgstr "Importation et Exportation"
-
 #~ msgid "Options Object"
 #~ msgstr "Objet d'options"
-
-#~ msgid "Import / Export Options"
-#~ msgstr "Options d'importation et d'exportation"
-
-#~ msgid "Import Options"
-#~ msgstr "Options d'importation"
-
-#~ msgid "Import from file"
-#~ msgstr "Importation depuis un fichier"
-
-#~ msgid "Import from URL"
-#~ msgstr "Importation depuis une URL"
-
-#~ msgid ""
-#~ "Input your backup file below and hit Import to restore your sites options "
-#~ "from a backup."
-#~ msgstr ""
-#~ "Choisissez votre fichier de sauvegarde ci-dessous et cliquez Importation "
-#~ "pour restaurer vos options de site à partir d'une sauvegarde."
-
-#~ msgid ""
-#~ "Input the URL to another sites options set and hit Import to load the "
-#~ "options from that site."
-#~ msgstr ""
-#~ "Indiquez l'URL vers un ensemble d'options de site et cliquez Importation "
-#~ "pour charger les options à partir de ce site."
-
-#~ msgid "Import"
-#~ msgstr "Importation"
-
-#~ msgid ""
-#~ "WARNING! This will overwrite all existing option values, please proceed "
-#~ "with caution!"
-#~ msgstr ""
-#~ "ATTENTION ! Cela écrasera toutes les valeurs d'options existantes, s'il "
-#~ "vous plaît procéder avec prudence !"
-
-#~ msgid "Export Options"
-#~ msgstr "Options d'exportation"
-
-#~ msgid ""
-#~ "Here you can copy/download your current option settings. Keep this safe "
-#~ "as you can use it as a backup should anything go wrong, or you can use it "
-#~ "to restore your settings on this site (or any other site)."
-#~ msgstr ""
-#~ "Ici vous pouvez copier / télécharger vos paramètres d'options actuels. "
-#~ "Conservez en lieu sûr car vous pourrez l'utiliser comme une sauvegarde en "
-#~ "cas de problème, ou vous pouvez l'utiliser pour restaurer vos paramètres "
-#~ "sur ce site (ou tout autre site)."
-
-#~ msgid "Copy"
-#~ msgstr "Copier"
-
-#~ msgid "Copy Link"
-#~ msgstr "Copier le lien"
 
 #~ msgid "Show Object in Javascript Console Object"
 #~ msgstr "Afficher l'objet dans l'objet Javascript Console"
@@ -3113,30 +3261,6 @@ msgstr "Vente !"
 
 #~ msgid "Do not allow tracking"
 #~ msgstr "Interdire le suivi"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparent"
-
-#~ msgid "Background Repeat"
-#~ msgstr "Répétition du fond"
-
-#~ msgid "Background Clip"
-#~ msgstr "Recadrage du fond"
-
-#~ msgid "Background Origin"
-#~ msgstr "Origine du fond"
-
-#~ msgid "Background Size"
-#~ msgstr "Taille du fond"
-
-#~ msgid "Background Attachment"
-#~ msgstr "Fixation du fond"
-
-#~ msgid "Background Position"
-#~ msgstr "Position du fond"
-
-#~ msgid "No media selected"
-#~ msgstr "Aucun média sélectioné"
 
 #~ msgid "Top"
 #~ msgstr "Au-dessus"
@@ -3189,99 +3313,11 @@ msgstr "Vente !"
 #~ msgid "Active"
 #~ msgstr "Actif"
 
-#~ msgid "Add More"
-#~ msgstr "Ajouter plus"
-
 #~ msgid "Password"
 #~ msgstr "Mot de passe"
 
 #~ msgid "Username"
 #~ msgstr "Identifiant"
-
-#~ msgid "Select an item"
-#~ msgstr "Choisir un item"
-
-#~ msgid "No items of this type were found."
-#~ msgstr "Aucun item de ce type disponible."
-
-#~ msgid "Font family"
-#~ msgstr "Famille de polices"
-
-#~ msgid "Standard Fonts"
-#~ msgstr "Polices standards"
-
-#~ msgid "Font style"
-#~ msgstr "Style de la police"
-
-#~ msgid "Style"
-#~ msgstr "Style"
-
-#~ msgid "Font subsets"
-#~ msgstr "Sous-ensembles de police"
-
-#~ msgid "Subsets"
-#~ msgstr "Sous-ensembles"
-
-#~ msgid "Font script"
-#~ msgstr "Système d'écriture de la police"
-
-#~ msgid "Size"
-#~ msgstr "Taille"
-
-#~ msgid "Height"
-#~ msgstr "Hauteur"
-
-#~ msgid "Word Spacing"
-#~ msgstr "Espacement des mots"
-
-#~ msgid "Letter Spacing"
-#~ msgstr "Espacement des lettres"
-
-#~ msgid "Backup Font Family"
-#~ msgstr "Famille de police de remplacement"
-
-#~ msgid "Font color"
-#~ msgstr "Couleur de police"
-
-#~ msgid "Google Webfonts"
-#~ msgstr "Polices web de Google"
-
-#~ msgid "This field must be a valid color value."
-#~ msgstr "Ce champ doit contenir une valeur de couleur valide."
-
-#~ msgid ""
-#~ "You must provide a comma separated list of numerical values for this "
-#~ "option."
-#~ msgstr ""
-#~ "Vous devez fournir une liste séparée par des virgules de valeurs "
-#~ "numériques pour cette option."
-
-#~ msgid "This field must be a valid date."
-#~ msgstr "Ce champ doit contenir une date valide."
-
-#~ msgid "You must provide a valid email for this option."
-#~ msgstr ""
-#~ "Vous devez fournir une adresse de courriel valide pour cette option."
-
-#~ msgid ""
-#~ "You must not enter any HTML in this field, all HTML tags have been "
-#~ "removed."
-#~ msgstr ""
-#~ "Vous ne devez pas entrer de code HTML dans ce champ, toutes les balises "
-#~ "HTML ont été supprimées."
-
-#~ msgid ""
-#~ "You must not enter any special characters in this field, all special "
-#~ "characters have been removed."
-#~ msgstr ""
-#~ "Vous ne devez pas entrer des caractères spéciaux dans ce champ, tous les "
-#~ "caractères spéciaux ont été supprimés."
-
-#~ msgid "You must provide a numerical value for this option."
-#~ msgstr "Vous devez fournir une valeur numérique pour cette option."
-
-#~ msgid "You must provide a valid URL for this option."
-#~ msgstr "Vous devez fournir une URL valide pour cette option."
 
 #~ msgid "SKU:"
 #~ msgstr "UGS (SKU) : "

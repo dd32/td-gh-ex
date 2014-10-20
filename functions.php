@@ -16,7 +16,6 @@ require_once locate_template('/lib/metaboxes.php');     			// Custom metaboxes
 require_once locate_template('/lib/gallery_metabox.php');     		// Custom metaboxes
 require_once locate_template('/lib/comments.php');        			// Custom comments modifications
 require_once locate_template('/lib/shortcodes.php');      			// Shortcodes
-require_once locate_template('/lib/gallery.php');      				// Gallery Shortcode
 require_once locate_template('/lib/widgets.php');         			// Sidebars and widgets
 require_once locate_template('/lib/aq_resizer.php');      			// Resize on the fly
 require_once locate_template('/lib/scripts.php');        			// Scripts and stylesheets

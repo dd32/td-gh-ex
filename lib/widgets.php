@@ -223,7 +223,7 @@ class Kadence_Contact_Widget extends WP_Widget {
     <div class="vcard">
       
       <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo $instance['company']; ?></h5><?php endif;?>
-      <?php if(!empty($instance['name'])):?><p class="vcard-name"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
+      <?php if(!empty($instance['name'])):?><p class="vcard-name" class="fn" rel="author"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
       <?php if(!empty($instance['street_address']) || !empty($instance['locality']) || !empty($instance['region']) ):?>
         <p class="vcard-address"><i class="icon-map-marker"></i><?php echo $instance['street_address']; ?>
        <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>
@@ -553,7 +553,10 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
           <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
             the_post_thumbnail( 'widget-thumb' ); 
           } else { 
-            $theme_url = get_template_directory_uri(); echo '<img width="80" height="50" src="'.$theme_url.'/assets/img/post_standard-80x50.jpg" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
+            $image_url = virtue_post_widget_default_placeholder();
+            $image = aq_resize($image_url, 80, 50, true);
+            if(empty($image)) { $image = $image_url; }
+            echo '<img width="80" height="50" src="'.esc_attr($image).'" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_title"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a>
         <span class="recentpost_date"><?php echo get_the_date(get_option( 'date_format' )); ?></span>
         </li>

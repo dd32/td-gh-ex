@@ -22,11 +22,24 @@
                           <div class="col-md-12">
                               <div class="imghoverclass img-margin-center">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                  <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                  <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                 </a> 
                               </div>
                           </div>
-                          <?php $image = null; $thumbnailURL = null; }?>
+                          <?php $image = null; $thumbnailURL = null;
+                           } else {
+                              $thumbnailURL = virtue_post_default_placeholder();
+                              $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+                              if(empty($image)) { $image = $thumbnailURL; } ?>
+                          <div class="col-md-12">
+                              <div class="imghoverclass img-margin-center">
+                                <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+                                  <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                </a> 
+                              </div>
+                          </div>
+                          <?php $image = null; $thumbnailURL = null; 
+                          }?>
 
                       <?php } elseif($postsummery == 'img_portrait') { 
                             $textsize = 'col-md-8'; 
@@ -39,11 +52,24 @@
                                 <div class="col-md-4">
                                   <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                      <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                      <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
                                   </div>
                                 </div>
-                              <?php $image = null; $thumbnailURL = null; } ?>
+                              <?php $image = null; $thumbnailURL = null; 
+                            } else {
+                              $thumbnailURL = virtue_post_default_placeholder();
+                               $image = aq_resize($thumbnailURL, 360, 360, true); 
+                              if(empty($image)) { $image = $thumbnailURL; } ?>
+                          <div class="col-md-4">
+                              <div class="imghoverclass img-margin-center">
+                                <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+                                  <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                </a> 
+                              </div>
+                          </div>
+                          <?php $image = null; $thumbnailURL = null; 
+                          }?>
 
                       <?php } elseif($postsummery == 'slider_landscape') {
                             $textsize = 'col-md-12'; ?>
@@ -61,7 +87,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -77,7 +103,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -117,7 +143,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -133,7 +159,7 @@
                                                       if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -161,7 +187,7 @@
                         $textsize = 'col-md-12'; ?>
                         <div class="col-md-12">
                             <div class="videofit">
-                              <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                              <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                             </div>
                         </div>
 

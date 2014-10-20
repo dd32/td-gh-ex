@@ -16,7 +16,7 @@
                                 $attachment_url = wp_get_attachment_url($attachment , 'full');
                                 $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                   if(empty($image)) {$image = $attachment_url;}
-                                echo '<li><img src="'.$image.'"/></li>';
+                                echo '<li><img src="'.esc_attr($image).'"/></li>';
                               }
                             }
                           } else {
@@ -27,7 +27,7 @@
                                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
                                   $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                     if(empty($image)) {$image = $attachment_url;}
-                                  echo '<li><img src="'.$image.'"/></li>';
+                                  echo '<li><img src="'.esc_attr($image).'"/></li>';
                                 }
                               } 
                           } ?>                             
@@ -51,7 +51,7 @@
         <?php } else if ($headcontent == 'video') { ?>
         <section class="postfeat">
           <div class="videofit">
-              <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+              <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
           </div>
         </section>
         <?php } else if ($headcontent == 'image') {           
@@ -61,7 +61,7 @@
                      if(empty($image)) { $image = $img_url; } 
                     ?>
                     <?php if($image) : ?>
-                      <div class="imghoverclass"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
+                      <div class="imghoverclass"><a href="<?php echo esc_attr($img_url); ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" /></a></div>
                     <?php endif; ?>
         <?php } ?>
     <?php get_template_part('templates/post', 'date'); ?>             

@@ -119,7 +119,7 @@ $this->sections[] = array(
             'output' => array('header #logo a.brand', ".logofont"),
             'subtitle'=> __("Choose size and style your sitename, if you don't use an image logo.", 'virtue'),
             'default'=> array(
-                'font-family'=>'Pacifico',
+                'font-family'=>'Lato',
                 'color'=>"", 
                 'font-style'=>'400',
                 'font-size'=>'32px', 
@@ -527,14 +527,14 @@ $this->sections[] = array(
             'options' => array(
             	"disabled" => array(
                     "placebo" => "placebo", //REQUIRED!
-                    "block_five"  => __("Latest Blog Posts", 'virtue'),
+                    "block_one"   => __("Page Title", 'virtue'),
+                    "block_four"  => __("Page Content", 'virtue'),
                     "block_six"   => __("Portfolio Carousel", 'virtue'),
                     "block_seven" => __("Icon Menu", 'virtue'),
                 ),
                 "enabled" => array(
                     "placebo" => "placebo", //REQUIRED!
-                    "block_one"   => __("Page Title", 'virtue'),
-                    "block_four"  => __("Page Content", 'virtue'),
+                    "block_five"  => __("Latest Blog Posts", 'virtue'),
                 ),
             ),
         ),
@@ -808,6 +808,7 @@ $this->sections[] = array(
             'default' => '',
             'transparent'=>false,
             'validate' => 'color',
+            'customizer' => true,
             ),
     	  array(
             'id'=>'primary20_color',
@@ -817,6 +818,7 @@ $this->sections[] = array(
             'default' => '',
             'transparent'=>false,
             'validate' => 'color',
+            'customizer' => true,
             ),
     	  array(
             'id'=>'gray_font_color',
@@ -826,6 +828,7 @@ $this->sections[] = array(
             'default' => '',
             'transparent'=>false,
             'validate' => 'color',
+            'customizer' => true,
             ),
     	  array(
             'id'=>'footerfont_color',
@@ -835,6 +838,7 @@ $this->sections[] = array(
             'default' => '',
             'transparent'=>false,
             'validate' => 'color',
+            'customizer' => true,
             ),
       ),
 );
@@ -847,9 +851,10 @@ $this->sections[] = array(
     	array(
             'id'=>'content_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Content Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_content_bg_img',
@@ -886,9 +891,10 @@ $this->sections[] = array(
     	array(
             'id'=>'topbar_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Topbar Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_topbar_bg_img',
@@ -928,6 +934,7 @@ $this->sections[] = array(
             'title' => __('Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_header_bg_img',
@@ -964,9 +971,10 @@ $this->sections[] = array(
     	array(
             'id'=>'menu_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Secondary menu Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_menu_bg_img',
@@ -1003,9 +1011,10 @@ $this->sections[] = array(
     	array(
             'id'=>'mobile_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Mobile Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_mobile_bg_img',
@@ -1042,9 +1051,10 @@ $this->sections[] = array(
     	array(
             'id'=>'footer_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Footer Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_footer_bg_img',
@@ -1081,9 +1091,10 @@ $this->sections[] = array(
     	array(
             'id'=>'boxed_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Body Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
+            'customizer' => true,
             ),
     	array(
             'id'=>'bg_boxed_bg_img',
@@ -1412,7 +1423,7 @@ $this->sections[] = array(
             'id'=>'hide_image_border',
             'type' => 'switch', 
             'title' => __('Hide Image Border', 'virtue'),
-            'subtitle' => __('Choose to show or hide image border', 'virtue'),
+            'subtitle' => __('Choose to show or hide image border for images added in pages or posts', 'virtue'),
             "default" => 0,
             ),
       array(
@@ -1477,7 +1488,15 @@ $this->sections[] = array(
             'title' => __('Blog Post Summary Default', 'virtue'), 
             'options' => array('text' => 'Text', 'img_portrait' => 'Portrait Image', 'img_landscape' => 'Landscape Image', 'slider_portrait' => 'Portrait Image Slider' , 'slider_landscape' => 'Landscape Image Slider'),
             'width' => 'width:60%',
-            'default' => 'text',
+            'default' => 'img_portrait',
+            ),
+         array(
+            'id'=>'post_summery_default_image',
+            'type' => 'media', 
+            'url'=> true,
+            'title' => __('Defualt post summary feature Image', 'virtue'),
+            'compiler' => 'true',
+            'subtitle' => __('Replace theme default feature image for posts without a featured image', 'virtue'),
             ),
         array(
             'id'=>'post_head_default',

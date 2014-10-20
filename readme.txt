@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.6 =
+* Fix fn class
+* add customizer options.
+* Remove basic site name shortcodes.
+* Remove gallery override (now in plugin).
+* Add default feature image option.
+* Clean up default view.
+
 = Version: 2.2.5 =
 * Theme options Update
 * Add Math question to contact form

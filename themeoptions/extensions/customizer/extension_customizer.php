@@ -276,7 +276,17 @@
                         $option['id'] = $this->parent->args['opt_name'] . '[' . $option['id'] . ']';
 
                         if ( $option['type'] != "heading" || ! empty( $option['type'] ) ) {
-                            $wp_customize->add_setting( $option['id'], $customSetting );
+                            $wp_customize->add_setting( $option['id'], array(
+                            'default'        => $option['default'],
+                            'type'           => 'option',
+                            'capabilities'   => 'edit_theme_options',
+                            //'capabilities'   => $this->parent->args['page_permissions'],
+                            'transport'      => 'refresh',
+                            'theme_supports' => '',
+                            'sanitize_callback' => '__return_false',
+                            //'sanitize_callback' => array( $this, '_field_validation' ),
+                            //'sanitize_js_callback' =>array( &$parent, '_field_input' ),
+                        ) );
                         }
 
                         if ( ! empty( $option['data'] ) && empty( $option['options'] ) ) {

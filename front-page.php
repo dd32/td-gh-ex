@@ -4,7 +4,7 @@
 			} else {
 				$mobile_slider = '';
 			}
-			if(!empty($virtue['choose_slider'])) {
+			if(isset($virtue['choose_slider'])) {
 				$slider = $virtue['choose_slider'];
 			} else {
 				$slider = 'mock_flex';
