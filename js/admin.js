@@ -1,7 +1,9 @@
 jQuery(function($) {
 
-    // add fitvid to Post Video preview div
-    $('#ct_tracks_video_preview_container').fitVids();
+    // add fitvid to Post Video preview
+    if( typeof $.fn.fitVids === 'function' ) {
+        $('#ct_tracks_video_preview_container').fitVids();
+    }
 
     // if there is a video saved already, add has-vid class
     if( $('#ct_tracks_video_preview_container').children('div').length > 0 ) {
@@ -60,5 +62,19 @@ jQuery(function($) {
                 $('#ct_tracks_video_preview_container, .ct_tracks_video_input_container').removeClass('has-vid');
             }
         });
+    }
+
+    // if not already on Bold template
+    if( $('#page_template').val() != 'templates/bold.php' ) {
+        $('#page_template').on('change', boldTemplateMessage);
+    }
+
+    function boldTemplateMessage() {
+
+        if( $(this).val() == 'templates/bold.php' ) {
+            $('.wrap h2').after('<div style="padding: 12px;" class="updated bold-template-message">Please save/update your page to load the new template options.</div>');
+        } else {
+            $('.bold-template-message').remove();
+        }
     }
 });

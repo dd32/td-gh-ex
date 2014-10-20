@@ -7,7 +7,7 @@ function ct_tracks_load_javascript_files() {
 	wp_register_style( 'ct-tracks-google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700');
 
 	// if front-end
-	if(! is_admin() ) {
+	if (! is_admin() ) {
 
 		// enqueue main JS file
 		wp_enqueue_script('ct-tracks-production', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
@@ -34,6 +34,11 @@ function ct_tracks_load_javascript_files() {
 		elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
 			wp_enqueue_style('ct-tracks-two-column-images', get_template_directory_uri() . '/licenses/css/two-column-images.min.css');
 		}
+
+		// enqueue page template stylesheet
+		if( is_page_template( 'templates/bold.php') ) {
+			wp_enqueue_style('ct-tracks-bold-template', get_template_directory_uri() . '/licenses/templates/bold/dynamic-styles.php');
+		}
 	}
 	// enqueue the comment-reply script on posts & pages if comments open (included in WP by default)
 	if( is_singular() && comments_open() && get_option('thread_comments') ) {
@@ -46,27 +51,62 @@ add_action( 'wp_enqueue_scripts', 'ct_tracks_load_javascript_files' );
 function ct_tracks_enqueue_admin_styles($hook){
 
 	// Theme Options and Post Editor
-	if ( 'appearance_page_tracks-options' == $hook || 'post.php' == $hook ) {
+	if ( 'appearance_page_tracks-options' == $hook ) {
 
 		// admin stylesheet
 		wp_enqueue_style('style-admin', get_template_directory_uri() . '/styles/style-admin.css');
 	}
-	// Post Editor
-	if ( 'post.php' == $hook ) {
 
-		// query database to get featured video license status
-		$license_status = trim( get_option( 'ct_tracks_featured_videos_license_key_status' ) );
+	// Featured Videos
+	if( trim( get_option( 'ct_tracks_featured_videos_license_key_status' ) ) == 'valid' ) {
 
-		// enqueue only if license is valid
-		if( $license_status == 'valid' ) {
+		// Post Editor
+		if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
 
 			// enqueue fitvids
-			wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/fitvids.js', array('jquery'),'', true);
+			wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.js', array( 'jquery' ), '', true );
 
 			// enqueue admin JS file
-			wp_enqueue_script('admin', get_template_directory_uri() . '/js/build/admin.min.js', array('jquery'),'', true);
+			wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/js/build/admin.min.js', array( 'jquery', 'fitvids' ), '', true );
+
+			// admin stylesheet
+			wp_enqueue_style( 'style-admin', get_template_directory_uri() . '/styles/style-admin.css' );
+
+			// Enqueues all scripts, styles, settings, and templates necessary to use media JavaScript APIs.
+			wp_enqueue_media();
+
+			// enqueue the JS needed to utilize media uploader on profile image upload
+			wp_enqueue_script( 'ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload' );
 		}
 	}
+
+	// Bold Template
+	if( trim( get_option( 'ct_tracks_bold_template_license_key_status' ) ) == 'valid' ) {
+
+		// Post Editor
+		if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+
+			// admin stylesheet
+			wp_enqueue_style( 'style-admin', get_template_directory_uri() . '/styles/style-admin.css' );
+
+			// enqueue admin JS file
+			wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/js/build/admin.min.js', array( 'jquery' ), '', true );
+
+			global $post;
+
+			// don't enqueue unless bold template is active
+			if( get_post_meta( $post->ID, '_wp_page_template', TRUE ) == 'templates/bold.php' ) {
+
+				// Enqueues all scripts, styles, settings, and templates necessary to use media JavaScript APIs.
+				wp_enqueue_media();
+
+				// enqueue the JS needed to utilize media uploader on profile image upload
+				wp_enqueue_script( 'ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload' );
+			}
+
+		}
+	}
+
 	// Profile (and edit other user)
 	if('profile.php' == $hook || 'user-edit.php' == $hook){
 
