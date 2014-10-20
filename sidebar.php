@@ -1,10 +1,10 @@
-<?php //
+<?php 
 
 /**
  * @package Astoned
  */
 ?>
-<ul class="sidebar-main">
+<div class="sidebar-main">
    
 <?php 
 if(!dynamic_sidebar('sidebar-1')):?> 
@@ -26,4 +26,4 @@ if(!dynamic_sidebar('sidebar-1')):?>
 
 <?php endif;?>
    
-</ul>
+</div>

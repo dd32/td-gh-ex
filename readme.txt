@@ -3,10 +3,16 @@
       -by Yash karnad
 
 =About=
+Astoned is an easy to use, but elegant looking theme for blogs of any size or niche.
 
-Astoned is a theme with simple but easy to use functionality, which makes it the ideal theme for aspiring bloggers on a budget.
-The theme is in its early beta phase but it does have important features like customizable widgets, a well developed pagination etc, which
-will get better and grow over time.
+Astoned is distributed under the GNU General Public License v2
 
+==Changelog==
 
-==Last edit 24th July 2014==
+v1.1
+Minor bug fixes and improved scalability on tablet and mobile devices
+==
+
+v1.0
+Initial Public release
+==

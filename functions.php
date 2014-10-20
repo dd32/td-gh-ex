@@ -1,31 +1,26 @@
-<?php 
+ <?php
 /**
  * @package Astoned
  * Theme Functions
  */
 
-?>
-
-<?php
 
 // Set the content width based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) )
 	$content_width = 384;
 
-/*
- * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
- */
-add_action( 'after_setup_theme', 'theme_setup' );
+add_action( 'after_setup_theme', 'astoned_theme_setup' );
 
-if ( ! function_exists( 'theme_setup' ) ):
-function theme_setup() {
+if ( ! function_exists( 'astoned_theme_setup' ) ):
+function astoned_theme_setup() {
+    $default_background_color='#ffffff';
 
     load_theme_textdomain( 'astoned', get_template_directory() . '/languages' );
 
 	
 	add_editor_style();
 
-		// Add default posts and comments RSS feed links to <head>.
+ // Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -46,10 +41,18 @@ function theme_setup() {
         
 
 }
-endif; // Theme setup
+endif; 
 
 
-function init_sidebar() {
+
+function astoned_scripts(){
+    
+    wp_enqueue_style( 'astoned', get_stylesheet_uri() );
+}
+
+add_action( 'wp_enqueue_scripts', 'astoned_scripts' );
+
+function astoned_init_sidebar() {
 
 	
 
@@ -65,9 +68,9 @@ function init_sidebar() {
 
 	
 }
-add_action( 'widgets_init', 'init_sidebar' );
+add_action( 'widgets_init', 'astoned_init_sidebar' );
 
-function post_comment( $comment, $args, $depth ) {
+function astoned_post_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -124,10 +127,10 @@ function post_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 
-add_action( 'wp_enqueue_scripts', 'myscript_enqueue' );
+add_action( 'wp_enqueue_scripts', 'astoned_myscript_enqueue' );
 
 //Initialize Jquery
-function myscript_enqueue() {
+function astoned_myscript_enqueue() {
   $ss_url = get_stylesheet_directory_uri();
   wp_enqueue_script('jquery', "{$ss_url}/js/jquery.js");
    
@@ -140,7 +143,7 @@ function myscript_enqueue() {
   
 
 //Setup the pagination
- function paging_nav() {
+ function astoned_paging_nav() {
 
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -176,10 +179,14 @@ function myscript_enqueue() {
 	if ( $page_links ) :
 
 	?>
-	
+
+
+<nav class="paging-nav" role="navigation">
+		
 		<div class="pagination-links">
 			<?php echo $page_links; ?>
-		</div><!-- .pagination -->
+		</div>
+	</nav>
 	
 	<?php
 	endif;
@@ -188,8 +195,31 @@ function myscript_enqueue() {
 require( get_template_directory() . '/inc/header-customize.php' );
 
 
+function astoned_wp_title( $title, $sep ) {
+	global $paged, $page;
 
-?>
+	if ( is_feed() ) {
+		return $title;
+	}
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name', 'display' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $site_description";
+	}
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'astoned' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'astoned_wp_title', 10, 2 );
+
 
 
  

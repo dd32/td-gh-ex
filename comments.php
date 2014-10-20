@@ -7,8 +7,8 @@
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
 		<?php
-//			
-                     echo "<div id=comment-number>You have ".  get_comments_number()." Comments</div>";
+			
+        printf( __( 'You have: %s', 'Astoned' ), get_comments_number() );
 		?>
 	<?php elseif ( post_password_required() ) : ?>
 		<?php _e( 'This post is password protected. Enter the password to view any comments.', 'Astoned' ); ?>
@@ -31,7 +31,7 @@
 		<?php endif; // check for comment navigation ?>
 	<?php endif; ?>
 
-       <?php wp_list_comments( array( 'callback' => 'post_comment' ) );?>
+       <?php wp_list_comments( array( 'callback' => 'astoned_post_comment' ) );?>
         
 	<?php if ( comments_open() ) : ?>
 		<?php comment_form(array('comment_notes_after' => ' ')); ?>

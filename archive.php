@@ -6,13 +6,14 @@
 ?>
 
 <?php get_header(); ?>
+
 <div class="archives">
-    <div class="sidebar"><?php get_sidebar();?></div>
+   
     
     <?php if(have_posts()):?>
     <?php if (is_date() ) : ?>
 
-    <p id="archive-choice"><?php print ('Archives for').': ' .get_the_date(); ?></p>
+    <p id="archive-choice"><?php printf( __( 'Archives for: %s', 'Astoned' ), get_the_date() ); ?></p>
 
     <?php endif; ?>
 
@@ -24,6 +25,8 @@
    <p><?php _e('Sorry, no posts matched your criteria.','Astoned'); ?></p> 
  <?php endif;?>
     
-<?php get_footer();?>
+
 </div>
+ <?php get_sidebar();?>
+<?php get_footer();?>
 

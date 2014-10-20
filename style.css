@@ -1,22 +1,27 @@
 /* 
-  Theme Name: Astoned
+Theme Name: Astoned
+Astoned WordPress Theme, Copyright 2014 Yash Karnad
 Theme URI: http://wordpress.org/themes/astoned/
 Author: Yash karnad
-Author URI: http://wordpress.org/
+Author URI: http://www.fissionbyte.com/
+Author Email:yashkarnad@gmail.com
 Description: This theme, while lacking any fancy functionality,makes up for it in prompt responsiveness and easy to use user interface thus making it the ideal choice for personal bloggers wanting to make their bones on a budget.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:white, black, one-column,two-columns,right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images,full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+Tags:white, black, one-column,two-columns,right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style,featured-images,post-formats
 */
+
+
 
 body{
     overflow-x: hidden;
-
+   
 }
 
 a{
     color:black;
+    
 }
 
 .current-menu-item a{
@@ -41,6 +46,17 @@ a{
 	margin-right: auto;
 }
 
+ .alignnone {
+	display: block;
+	margin: 0 0 1.75em 0;
+}
+
+.full-page,.archives,.Sample-Page,.search-part{
+    float: left;
+    margin: 0 -26.4% 0 0;
+   width: 60%;
+   
+}
 
 .content-editor,#searchsubmit,.pg-footer,.side1 li,.widget-title,#menu-links,#submit,#menu-links ul ul a,.pagination-links a,.comment-reply-link{
 color: #ffffff;
@@ -140,8 +156,9 @@ color: #ffffff;
      border-radius: 20px;
  }
  
- //Captions
-  .wp-caption,.gallery-caption{
+/* Captions*/
+  
+.wp-caption,.gallery-caption{
 	background: #eee;
 	margin-bottom: 1.625em;
 	max-width: 96%;
@@ -203,7 +220,7 @@ color: #ffffff;
 	letter-spacing: 0.2em;
 	height:200px;
 	padding: 40px 10px 15px 60px;
-       width: 78.5em;
+       width: auto;
        position: relative;
        
        text-align: center;
@@ -293,7 +310,10 @@ float: left;
 
 /*Sidebar.php*/
 .sidebar-main{
-   float:right;
+   
+   float: right;
+   
+  
 }
 
 .side1{
@@ -333,7 +353,7 @@ float: left;
 /*Content.php*/
 .main-content-style{
    padding-top: 20px;
-   
+  
   
 }
 
@@ -346,6 +366,7 @@ p a{
 
 #post-content{
     padding-top: 20px;
+    
 }
  
 input[type="text"],
@@ -410,16 +431,18 @@ textarea{
 /*Footer Styling*/
 .pg-footer a{
    color:white;
-   padding-left: 30em;
+  
   
 }
 
 .pg-footer{
-    height: 35px;
-     padding-top:10px;
-     float: none;
-    margin-right: 0;
-   clear: both;
+   float: none;
+   margin-right: 0;
+  clear: both;
+  font-size: 12px;
+  line-height: 2.2em;
+  padding: 2.2em 0.5em;
+  text-align: center;
     
 }
 
@@ -472,5 +495,78 @@ textarea{
 .page-numbers:hover {
 	color:#ff3333;
          padding: 10px 20px 10px 20px;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+@media (max-width: 800px) {
+	/* Simplify the basic layout */
+	.main-header {
+        height: 150px;	
+        width: auto;
+	}
+        
+        .sidebar-main {
+		float: none;
+		margin: 0 7.6%;
+		width: auto;
+	}
+        
+        .full-page,.archives,.Sample-Page,.search-part{
+   
+   width: 100%;
+   
+}
+        
+       .site-title a{
+            font-size: 40px;
+        }
+        
+        #menu-links{
+            padding-left: 4em;
+            width: auto;
+        }
+        
+        #menu-links ul{
+            font-size: 12px;
+           
+        }
+       
+        
+        #nav-below {
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 1.625em;
+	}
+	
+        .pagination-links{
+    position: relative;
+    left:1em;
+    margin: 48px 0;
+    
+}
+
+.paging-nav .loop-pagination {
+	margin-top: -5px;
+	text-align: center;
+}
+
+.paging-nav .page-numbers {
+	display: inline-block;
+	font-size: 14px;
+	margin-right: 1px;
+        margin-top: 10px;
+	padding: 7px 16px;
+	
+}
+
+.paging-nav a {
+	color: white;
+}
+
 }
 

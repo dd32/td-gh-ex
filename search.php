@@ -6,10 +6,10 @@
 
 <?php get_header();?>
 
-<div class="search_part">
-    <div class="side1"><?php get_sidebar();?></div>
+<div class="search-part">
+  
      
-        <p id="search-topic"><?php print('Your search results'). ': ' .get_search_query();?></p>
+        <p id="search-topic"><?php printf( __( 'Search Results for: %s', 'Astoned' ), get_search_query() );?></p>
         
             <?php if(have_posts()): ?>
 <?php while(have_posts()): the_post();?>
@@ -19,5 +19,7 @@
 <p><?php _e('Sorry, no search matched your criteria.','Astoned'); ?></p>
 <?php endif;?>
 
- <?php get_footer();?>
+ 
 </div>
+ <?php get_sidebar();?>
+<?php get_footer();?>

@@ -9,10 +9,10 @@ get_header(); ?>
 			<div class="Sample-Page">
 
 			<?php if ( have_posts() ) : ?>
-                        <?php get_sidebar(); ?>
+                        
 				
 					<p id="category-choice"><?php
-			print( 'Category Archives').': ' .single_cat_title( '', false );
+			printf( __( 'Category Archives: %s', 'Astoned' ), single_cat_title( '', false ) );
                         ?></p>
 
 					
@@ -33,21 +33,21 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				
+                        <article>
 					
-					<?php _e( 'Nothing Found', 'astoned' ); ?>
+					<?php _e( 'Nothing Found', 'Astoned' ); ?>
 					
 
 					<div class="entry-content">
-						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'astoned' ); ?></p>
+						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'Astoned' ); ?></p>
 						<?php get_search_form(); ?>
 		
-				</article
+                                        </article>
 
 			<?php endif; ?>
-
+                                        </div>
 			
 	
 
-
+<?php get_sidebar();?>
 <?php get_footer(); ?>
