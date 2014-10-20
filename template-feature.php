@@ -2,6 +2,7 @@
 /*
 Template Name: Feature
 */
+get_header();
  global $post; 
  	$headoption = get_post_meta( $post->ID, '_kad_page_head', true ); if(isset($headoption)) {$headoption = $headoption;} else {$headoption = 'pagetitle';}
 				if ($headoption == 'flex') {
@@ -32,3 +33,8 @@ Template Name: Feature
 				<?php get_template_part('templates/content', 'page'); ?>
 				</div>
 			</div><!-- /.main -->
+			<?php get_sidebar(); ?>
+			      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

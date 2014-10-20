@@ -52,6 +52,15 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.0.3 = 
+* Few small changes in home page title.
+* Update for page selected as latest post page.
+* Fix header background color.
+* Fix language/translation issues.
+* Remove template wrapper.
+* Fix/add some esc_attr.
+* Fix home blog unfdifined index.
+
 = Version 1.0.2 =
 * Update responsive layout tag.
 

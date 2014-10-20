@@ -1,4 +1,7 @@
-<?php	
+ <?php if (kadence_display_sidebar()) : ?>
+      <aside class="<?php echo kadence_sidebar_class(); ?>" role="complementary">
+        <div class="sidebar">
+		<?php	
 		if(is_front_page()) {
 				global $pinnacle; $sidebar = $pinnacle['home_sidebar'];
 				if (!empty($sidebar)) {
@@ -80,3 +83,6 @@
 		dynamic_sidebar('sidebar-primary');
 	}
 ?>
+        </div><!-- /.sidebar -->
+      </aside><!-- /aside -->
+    <?php endif; ?>

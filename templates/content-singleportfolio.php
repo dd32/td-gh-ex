@@ -62,7 +62,7 @@
         												$caption = get_post($attachment)->post_excerpt;
         												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													       if(empty($image)) {$image = $attachment_url;}
-												      echo '<li><a href="'.$attachment_url.'" rel="lightbox" title="'.$caption.'"><img src="'.$image.'" alt="'.$caption.'" /></a></li>';
+												      echo '<li><a href="'.esc_attr($attachment_url).'" rel="lightbox" title="'.esc_attr($caption).'"><img src="'.esc_attr($image).'" alt="'.esc_attr($caption).'" /></a></li>';
 											        }
 										      }
                     			
@@ -86,7 +86,7 @@
 				} else if ($ppost_type == 'video') { ?>
 					
 					<div class="videofit">
-                  		<?php  $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                  		<?php  echo get_post_meta( $post->ID, '_kad_post_video', true );?>
                   	</div>
 				<?php 
 			} else if ($ppost_type == 'carousel') { ?>
@@ -106,8 +106,8 @@
 					                    	if(empty($image)) {$image = array($attachment_url, $slidewidth, $slideheight);} 
 					                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
 					                        echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-					                        echo '<a href="'.$attachment_url.'" rel="lightbox" title="'.esc_attr($caption).'">';
-					                        echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'"  />';
+					                        echo '<a href="'.esc_attr($attachment_url).'" rel="lightbox" title="'.esc_attr($caption).'">';
+					                        echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'"  />';
 					                        echo '</a>'; ?>
 					                      </div>
 					                    </div>
@@ -125,7 +125,7 @@
                     var $wcontainer = jQuery('.carousel_slider_outer');
                     var $container = jQuery('.carousel_slider_outer .carousel_slider');
                       var align = 'center';
-                      var carheight = <?php echo $slideheight; ?>;
+                      var carheight = <?php echo esc_attr($slideheight); ?>;
                           function setWidths() {
                             var unitWidth = $container.width();
                             $container.children().css({ width: unitWidth });
@@ -170,8 +170,8 @@
 						if(empty($image)) {$image = $img_url;} 
 							if($image) : ?>
                                     <div class="imghoverclass portfolio-single-img">
-                                    	<a href="<?php echo $img_url ?>" rel="lightbox" class="lightboxhover">
-                                    		<img src="<?php echo $image ?>" alt="<?php echo get_post($post_id)->post_excerpt; ?>"  />
+                                    	<a href="<?php echo esc_attr($img_url); ?>" rel="lightbox" class="lightboxhover">
+                                    		<img src="<?php echo esc_attr($image); ?>" alt="<?php echo esc_attr(get_post($post_id)->post_excerpt); ?>"  />
                                     	</a>
                                     </div>
                             <?php endif; ?>
@@ -204,7 +204,7 @@
     				    <?php if (!empty($project_v2t)) echo '<li class="pdetails"><span>'.$project_v2t.'</span> '.$project_v2d.'</li>'; ?>
     				    <?php if (!empty($project_v3t)) echo '<li class="pdetails"><span>'.$project_v3t.'</span> '.$project_v3d.'</li>'; ?>
     				    <?php if (!empty($project_v4t)) echo '<li class="pdetails"><span>'.$project_v4t.'</span> '.$project_v4d.'</li>'; ?>
-    				    <?php if (!empty($project_v5t)) echo '<li class="pdetails"><span>'.$project_v5t.'</span> <a href="'.$project_v5d.'" target="_new">'.$project_v5d.'</a></li>'; ?>
+    				    <?php if (!empty($project_v5t)) echo '<li class="pdetails"><span>'.$project_v5t.'</span> <a href="'.esc_attr($project_v5d).'" target="_new">'.$project_v5d.'</a></li>'; ?>
   				    </ul><!--Portfolio-content-->
 				    </div>
             <?php }?>

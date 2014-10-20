@@ -1,4 +1,5 @@
-			<?php get_template_part('templates/page', 'header'); ?>
+<?php get_header(); ?>
+	<?php get_template_part('templates/page', 'header'); ?>
 	
    <div id="content" class="container">
    		<div class="row">
@@ -14,3 +15,8 @@
 	<p><?php _e("You can return back to the site's homepage and see if you can find what you are looking for or use the search form below.", 'pinnacle'); ?></p>
 	<div class="search_form_404"><?php get_search_form(); ?></div>
 </div>
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

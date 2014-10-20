@@ -49,7 +49,7 @@ if(!empty($pinnacle['gray_font_color'])) {
 }
 if(!empty($pinnacle['header_background_choice']) && $pinnacle['header_background_choice'] == 'simple' && !empty($pinnacle['header_background_color'])) {
     $head_bgcolor = kt_hex2rgb($pinnacle['header_background_color']); 
-  $hbg_color = '.is-sticky .headerclass {background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$pinnacle['header_background_transparency'].');}';
+  $hbg_color = '.is-sticky .headerclass, .none-trans-header .headerclass {background: rgba('.$head_bgcolor[0].', '.$head_bgcolor[1].', '.$head_bgcolor[2].', '.$pinnacle['header_background_transparency'].');}';
 } else {
   $hbg_color = '';
 }

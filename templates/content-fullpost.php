@@ -53,7 +53,7 @@
                                 $attachment_url = wp_get_attachment_url($attachment , 'full');
                                 $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
                                   if(empty($image)) {$image = $attachment_url;}
-                                echo '<li><a href="'.$attachment_url.'" rel="lightbox"><img src="'.$image.'"/></a></li>';
+                                echo '<li><a href="'.esc_attr($attachment_url).'" rel="lightbox"><img src="'.esc_attr($image).'"/></a></li>';
                               }
                             }
                           }?>                            
@@ -89,7 +89,7 @@
                                     if(empty($image)) {$image = array($attachment_url,$slidewidth,$slideheight);} 
                                     echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
                                     echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-                                    echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
+                                    echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" />';
                                       ?>
                                     </div>
                                   </div>
@@ -146,7 +146,7 @@
         <?php } else if ($headcontent == 'video') { ?>
             <section class="postfeat">
                 <div class="videofit" style="max-width: <?php echo $slidewidth;?>px; margin-left: auto; margin-right: auto;">
-                    <?php $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                    <?php echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                 </div>
             </section>
         <?php } else if ($headcontent == 'image') {           
@@ -156,7 +156,7 @@
                     if(empty($image)) { $image = $img_url; }
                       if($image) : ?>
                       <section class="postfeat">
-                        <div class="imghoverclass post-single-img"><a href="<?php echo $img_url ?>" rel="lightbox" class=""><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
+                        <div class="imghoverclass post-single-img"><a href="<?php echo esc_attr($img_url); ?>" rel="lightbox" class=""><img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" /></a></div>
                       </section>
                       <?php endif; ?>
         <?php } ?>

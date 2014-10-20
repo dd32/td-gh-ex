@@ -3,7 +3,8 @@
 Template Name: Portfolio Grid
 */
 ?>
-			<?php get_template_part('templates/page', 'header'); ?>
+	<?php get_header(); ?>
+		<?php get_template_part('templates/page', 'header'); ?>
 	
       	<?php global $post, $pinnacle;
 	      	$portfolio_category = get_post_meta( $post->ID, '_kad_portfolio_type', true );
@@ -151,3 +152,8 @@ Template Name: Portfolio Grid
                     ?>
                     <?php wp_reset_query(); ?>
 </div><!-- /.main -->
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

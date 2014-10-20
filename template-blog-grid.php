@@ -3,8 +3,8 @@
 Template Name: Blog Grid
 */
 ?>
-
-			<?php get_template_part('templates/page', 'header'); ?>
+	<?php get_header(); ?>
+		<?php get_template_part('templates/page', 'header'); ?>
 		<div id="content" class="container">
    		<div class="row">
    			<?php global $post, $pinnacle, $postcolumn;
@@ -64,3 +64,8 @@ Template Name: Blog Grid
 				<?php wp_reset_query(); ?>
 <script type="text/javascript">jQuery( window ).load(function () {var $container = jQuery('#kad-blog-grid');$container.masonry({itemSelector: '.b_item'});});</script>
 </div><!-- /.main -->
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

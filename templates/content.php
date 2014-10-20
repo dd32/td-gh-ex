@@ -58,7 +58,7 @@
                               <div class="col-md-12">
                                   <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                      <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                      <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
                                   </div>
                               </div>
@@ -75,7 +75,7 @@
                             <div class="<?php echo $portraitimg;?>">
                                 <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                        <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                        <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
                                  </div>
                              </div>
@@ -97,7 +97,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>">
-                                                        <img src="<?php echo $image ?>" class="" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" alt="<?php esc_attr($attachment_post->post_excerpt);?>" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -137,7 +137,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -164,7 +164,7 @@
                            $textsize = 'col-md-12'; ?>
                             <div class="col-md-12">
                                 <div class="videofit">
-                                    <?php $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                                    <?php echo get_post_meta( $post->ID, '_kad_post_video', true );?>
                                 </div>
                             </div>
 

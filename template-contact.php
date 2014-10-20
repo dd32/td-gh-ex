@@ -3,7 +3,7 @@
 Template Name: Contact
 */
 ?>
-
+	<?php get_header(); ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function ($) {
 		$.extend($.validator.messages, {
@@ -213,3 +213,8 @@ Template Name: Contact
 				<?php } ?>
       </div><!--contactform-->
       <?php } ?>
+      <?php get_sidebar(); ?>
+            </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

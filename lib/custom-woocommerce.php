@@ -15,8 +15,6 @@ if (class_exists('woocommerce')) {
   add_filter( 'woocommerce_enqueue_styles', '__return_false' );
   // Disable WooCommerce Lightbox
   update_option( 'woocommerce_enable_lightbox', false );
-   // Makes the product finder plugin work.
-    remove_action( 'template_redirect' , array( 'WooCommerce_Product_finder' , 'load_template' ) );
     
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);

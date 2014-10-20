@@ -14,9 +14,9 @@
                                  $image = aq_resize($attachment_url, null, $slideheight, false, false);
                                   if(empty($image)) {$image = array($slide['url'],$slidewidth,$slideheight);} 
 
-                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
+                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.esc_attr($image[2]).'px;">';
                         echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-                        echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />'; ?>
+                        echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" />'; ?>
                       </div>
                     </div>
                   <?php endforeach; 

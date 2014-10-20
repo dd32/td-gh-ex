@@ -1,3 +1,4 @@
+	<?php get_header(); ?>
 	<?php get_template_part('templates/page', 'header'); ?>
 		 <?php global $pinnacle;
 		 if(isset($pinnacle['portfolio_style_default'])) {
@@ -114,3 +115,8 @@
                     ?>
                     <?php wp_reset_query(); ?>
 </div><!-- /.main -->
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

@@ -71,18 +71,18 @@
 									<div class="portfolio-imagepadding">
 										<div class="portfolio-hoverclass">
 											<a href="<?php the_permalink() ?>" class="">
-	                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="kad-lightboxhover">
+	                                       <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="kad-lightboxhover">
 	                                       <div class="portfolio-hoverover"></div>
 	                                       <div class="portfolio-table">
 	                                       		<div class="portfolio-cell">
 	                                       			<?php if($pstyleclass == "padded_style" ) { ?>
 		                                       				<a href="<?php the_permalink() ?>" class="kad-btn kad-btn-primary"><?php echo __('View details', 'pinnacle');?></a>
-		                                       				<?php if($plb) {?><a href="<?php echo $thumbnailURL; ?>" class="kad-btn kad-btn-primary plightbox-btn" title="<?php the_title();?>" rel="lightbox"><i class="kt-icon-search4"></i></a><?php } ?>
+		                                       				<?php if($plb) {?><a href="<?php echo esc_attr($thumbnailURL); ?>" class="kad-btn kad-btn-primary plightbox-btn" title="<?php the_title();?>" rel="lightbox"><i class="kt-icon-search4"></i></a><?php } ?>
 		                                       		<?php } elseif($pstyleclass == "flat-no-margin" || $pstyleclass == "flat-w-margin" ) { ?>
 		                                       				<h5><?php the_title();?></h5>
                            									<?php if($portfolio_item_types == true) { $terms = get_the_terms( $post->ID, 'portfolio-type' ); if ($terms) {?> <p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p> <?php } } ?>
 		                                       				<?php if($showexcerpt) {?> <p class="p_excerpt"><?php echo pinnacle_excerpt(16); ?></p> <?php } ?>
-		                                       				<?php if($plb) {?><a href="<?php echo $thumbnailURL; ?>" class="kad-btn kad-btn-primary plightbox-btn" title="<?php the_title();?>" rel="lightbox"><i class="kt-icon-search4"></i></a><?php }?>
+		                                       				<?php if($plb) {?><a href="<?php echo esc_attr($thumbnailURL); ?>" class="kad-btn kad-btn-primary plightbox-btn" title="<?php the_title();?>" rel="lightbox"><i class="kt-icon-search4"></i></a><?php }?>
 		                                       		<?php } ?>
 		                                       </div>
 	                                       </div>

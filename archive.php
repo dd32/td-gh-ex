@@ -1,4 +1,4 @@
-
+  <?php get_header(); ?>
       <?php get_template_part('templates/page', 'header'); ?>
 
        <?php if(kadence_display_sidebar()) {$display_sidebar = true; $fullclass = '';} else {$display_sidebar = false; $fullclass = 'fullwidth';}
@@ -69,3 +69,8 @@
         <?php endif; ?>
 
 </div><!-- /.main -->
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

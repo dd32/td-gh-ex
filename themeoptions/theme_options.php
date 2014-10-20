@@ -30,6 +30,8 @@ if ( !class_exists( "Redux_Framework_pinnacle_config" ) ) {
 
                 }
                 public function initSettings() {
+
+                load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
                   // Create the sections and fields
                   $this->setSections();
                   // Set the default arguments
@@ -1697,7 +1699,7 @@ $this->sections[] = array(
       array(
         'id'        => 'header_background',
         'type'      => 'background',
-        'output'    => array('.is_sticky .headerclass', '.headerclass'),
+        'output'    => array('.is_sticky .headerclass', '.none-trans-header .headerclass'),
         'title'     => __('Header Background', 'pinnacle'),
         'required' => array('header_background_choice','=','full'),
         ),

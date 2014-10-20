@@ -279,7 +279,7 @@ function kadence_pagetitle_behind_header() {
                   $pageheaderbg = true;
                 }
       } elseif(is_page() || is_single() || is_singular() ) {
-        global $post;
+        global $post, $pinnacle;
               $hs_behind = get_post_meta( $post->ID, '_kad_pagetitle_behind_head', true );
               if(isset($hs_behind) && $hs_behind == 'true') {
                 $pageheaderbg = true;
@@ -293,6 +293,7 @@ function kadence_pagetitle_behind_header() {
                 }
               }
       } else {
+        global $pinnacle;
         if(isset($pinnacle['pagetitle_intoheader']) && $pinnacle['pagetitle_intoheader'] == '0') {
                   $pageheaderbg = false;
                 } else {
@@ -336,8 +337,8 @@ function kadence_header_height() {
     }
     return $output;
   }
-add_filter('body_class','layout_body_class');
-function layout_body_class($classes) {
+add_filter('body_class','kad_layout_body_class');
+function kad_layout_body_class($classes) {
  global $pinnacle;
   if(kadence_pagetitle_behind_header()) {
     $pagetitlebg = 'trans-header';

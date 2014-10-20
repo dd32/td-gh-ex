@@ -1,6 +1,6 @@
 
 <?php global $pinnacle; 
-	if(isset($pinnacle['home_page_title'])) {$homepagetitle = $pinnacle['home_page_title'];} else {$home_page_title = '';}
+	if(isset($pinnacle['home_page_title'])) {$homepagetitle = $pinnacle['home_page_title'];} else {$homepagetitle = '';}
 	if(isset($pinnacle['home_page_sub_title'])) {$bsub = $pinnacle['home_page_sub_title'];} else {$bsub = '';} 
 	if(isset($pinnacle['home_page_title_ptop'])) {$tpadding = 'padding-top:'.$pinnacle['home_page_title_ptop'].'px;';} else {$tpadding = '';}
 	if(isset($pinnacle['home_page_title_pbottom'])) {$bpadding = 'padding-bottom:'.$pinnacle['home_page_title_pbottom'].'px;';} else {$bpadding = '';}
@@ -30,6 +30,12 @@
 			$bg_style = '';
 		}
 	}
+	if(!empty($homepagetitle)) {
+        		$homepagetitle = str_replace('[site-name]',get_bloginfo('name'),$homepagetitle);
+        	}
+        	if(!empty($bsub)) {
+        		$bsub = str_replace('[site-tagline]',get_bloginfo('description'),$bsub);
+        	}
 ?>
 <div id="pageheader" class="titleclass home-title-class" style="<?php echo $bg_style.' '.$bg_repeat.' '.$bg_size.' '.$bg_position.' '.$bg_attachment; ?>">
 <div class="header-color-overlay"></div>

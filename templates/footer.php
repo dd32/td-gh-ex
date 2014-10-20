@@ -60,7 +60,7 @@
               wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footermenu'));
             ?></div><?php
         	endif;?>
-        	<?php if(!empty($pinnacle['footer_text'])) { $footerstring = $pinnacle['footer_text'];get_bloginfo('name');
+        	<?php if(!empty($pinnacle['footer_text'])) { $footerstring = $pinnacle['footer_text'];
         		$footerstring = str_replace('[copyright]','&copy;',$footerstring);
         		$footerstring = str_replace('[the-year]',date('Y'),$footerstring);
         		$footerstring = str_replace('[site-name]',get_bloginfo('name'),$footerstring);

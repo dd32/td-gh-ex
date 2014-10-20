@@ -2,7 +2,10 @@
 /*-----------------------------------------------------------------------------------*/
 /* Include Theme Functions */
 /*-----------------------------------------------------------------------------------*/
+function pinnacle_lang_setup() {
 load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
+}
+add_action( 'after_setup_theme', 'pinnacle_lang_setup' );
 require_once locate_template('/themeoptions/options_assets/pinnacle_extension.php');          		// Options framework
 require_once locate_template('/themeoptions/redux/framework.php');          		// Options framework
 require_once locate_template('/themeoptions/theme_options.php');          		// Options framework

@@ -1,4 +1,5 @@
-	<?php global $pinnacle; 
+	<?php get_header(); ?>
+<?php global $pinnacle; 
 	$detect = new Mobile_Detect_pinnacle; if($detect->isMobile() && !$detect->isTablet() && $pinnacle['mobile_switch'] == '1') {
 		 		$m_home_header = $pinnacle['choose_mobile_slider'];
 				if ($m_home_header == "flex") {
@@ -135,5 +136,9 @@
 }
 endif; ?>   
 
-
 </div><!-- /.main -->
+<?php get_sidebar(); ?>
+      </div><!-- /.row-->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php get_footer(); ?>

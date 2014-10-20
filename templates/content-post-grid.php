@@ -51,7 +51,7 @@
                               ?>
                                   <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-                                      <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
+                                      <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
                                   </div>
                               <?php $image = null; $thumbnailURL = null;   ?>
@@ -70,7 +70,7 @@
                                                     if(empty($image)) {$image = $attachment_url;} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                        <img src="<?php echo $image ?>" class="" />
+                                                        <img src="<?php echo esc_attr($image); ?>" class="" />
                                                       </a>
                                                     </li>
                                                 <?php 
@@ -96,7 +96,7 @@
                     <?php } elseif($postsummery == 'video') {?>
                           <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
                                 <div class="videofit">
-                                    <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                                    <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                                 </div>
 
                     <?php } else {?>

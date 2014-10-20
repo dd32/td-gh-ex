@@ -279,6 +279,7 @@
                      *
                      * @param object $this ReduxFramework
                      */
+
                     do_action( 'redux/construct', $this );
 
                     $this->filesystem = new Redux_Filesystem( $this );
@@ -298,8 +299,7 @@
                     // Grab database values
                     $this->get_options();
 
-                    // Tracking
-                    //$this->_tracking();
+                    // Tracking removed
 
                     // Set option with defaults
                     //add_action( 'init', array( &$this, '_set_default_options' ), 101 );
@@ -448,7 +448,7 @@
                     'page_title'                => '',
                     // option page title
                     'page_slug'                 => '_options',
-                    'page_permissions'          => 'manage_options',
+                    'page_permissions'          => 'edit_theme_options',
                     'menu_type'                 => 'menu',
                     // ('menu'|'submenu')
                     'page_parent'               => 'themes.php',
@@ -624,11 +624,7 @@
                 return self::$instance;
             } // get_instance()
 
-            private function _tracking() {
-                include_once( dirname( __FILE__ ) . '/inc/tracking.php' );
-                $tracking = Redux_Tracking::get_instance();
-                $tracking->load( $this );
-            } // _tracking()
+            //Tracking removed
 
             /**
              * ->_get_default(); This is used to return the default value if default_show is set
