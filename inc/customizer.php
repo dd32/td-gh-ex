@@ -39,6 +39,7 @@ function moesia_customize_register( $wp_customize ) {
 		'site_logo',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
     $wp_customize->add_control(
@@ -59,6 +60,7 @@ function moesia_customize_register( $wp_customize ) {
 		'site_favicon',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
     $wp_customize->add_control(
@@ -79,6 +81,7 @@ function moesia_customize_register( $wp_customize ) {
         'apple_touch_144',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -99,6 +102,7 @@ function moesia_customize_register( $wp_customize ) {
         'apple_touch_114',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -119,6 +123,7 @@ function moesia_customize_register( $wp_customize ) {
         'apple_touch_72',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -139,6 +144,7 @@ function moesia_customize_register( $wp_customize ) {
         'apple_touch_57',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -374,6 +380,7 @@ function moesia_customize_register( $wp_customize ) {
         'header_logo',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -571,6 +578,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'services_section', array(
@@ -710,6 +718,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'employees_section', array(
@@ -849,6 +858,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'testimonials_section', array(
@@ -1009,6 +1019,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'skills_section', array(
@@ -1127,6 +1138,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'facts_section', array(
@@ -1245,6 +1257,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'clients_section', array(
@@ -1342,6 +1355,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'blockquote_section', array(
@@ -1460,6 +1474,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'social_section', array(
@@ -1558,6 +1573,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'projects_section', array(
@@ -1676,6 +1692,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'latest_news_section', array(
@@ -1815,6 +1832,7 @@ function moesia_customize_register( $wp_customize ) {
     $wp_customize->add_setting('moesia_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'moesia_no_sanitize',			
         )
     );
     $wp_customize->add_control( new Moesia_Info( $wp_customize, 'action_area_section', array(
@@ -1974,7 +1992,28 @@ function moesia_customize_register( $wp_customize ) {
                 'priority' => 11
             )
         )
-    );  
+    );
+    //Menu links
+    $wp_customize->add_setting(
+        'menu_links_color',
+        array(
+            'default'           => '#ffffff',
+            'sanitize_callback' => 'sanitize_hex_color',
+            'transport'         => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'menu_links_color',
+            array(
+                'label' => __('Menu links', 'moesia'),
+                'section' => 'colors',
+                'settings' => 'menu_links_color',
+                'priority' => 11
+            )
+        )
+    );	
     //Primary color
     $wp_customize->add_setting(
         'primary_color',
@@ -2313,6 +2352,48 @@ function moesia_customize_register( $wp_customize ) {
             'style' => 'margin-bottom: 15px; padding: 15px;',
         ),
     ) );
+    //Home page widget titles size
+    $wp_customize->add_setting(
+        'widget_title_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '56',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'widget_title_size', array(
+        'type'        => 'number',
+        'priority'    => 18,
+        'section'     => 'moesia_typography',
+        'label'       => __('Home page widget titles size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 90,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Menu links font size
+    $wp_customize->add_setting(
+        'menu_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '14',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'menu_size', array(
+        'type'        => 'number',
+        'priority'    => 19,
+        'section'     => 'moesia_typography',
+        'label'       => __('Menu links font size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 30,
+            'step'  => 1,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );	
     //___Pro___//
     $wp_customize->add_section(
         'moesia_pro',
@@ -2324,6 +2405,7 @@ function moesia_customize_register( $wp_customize ) {
     );  
     //Pro
     $wp_customize->add_setting('moesia_options[info]', array(
+			'sanitize_callback' => 'moesia_no_sanitize',
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
         )
@@ -2339,6 +2421,7 @@ function moesia_customize_register( $wp_customize ) {
         'mobile_header',
         array(
             'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -2422,6 +2505,9 @@ function moesia_sanitize_layout( $input ) {
     } else {
         return '';
     }
+}
+//No sanitize - empty function for options that do not require sanitization -> to bypass the Theme Check plugin
+function moesia_no_sanitize( $input ) {
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

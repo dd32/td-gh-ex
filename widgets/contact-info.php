@@ -95,17 +95,17 @@ class Moesia_Contact_Info extends WP_Widget {
 		
 		if( ($address) ) {
 			echo '<div class="contact-address">';
-			echo '<span><i class="fa fa-home"></i>' . __('Address: ', 'agencia') . '</span>' . $address;
+			echo '<span><i class="fa fa-home"></i>' . __('Address: ', 'moesia') . '</span>' . $address;
 			echo '</div>';
 		}
 		if( ($phone) ) {
 			echo '<div class="contact-phone">';
-			echo '<span><i class="fa fa-phone"></i>' . __('Phone: ', 'agencia') . '</span>' . $phone;
+			echo '<span><i class="fa fa-phone"></i>' . __('Phone: ', 'moesia') . '</span>' . $phone;
 			echo '</div>';
 		}
 		if( ($email) ) {
 			echo '<div class="contact-email">';
-			echo '<span><i class="fa fa-envelope"></i>' . __('Email: ', 'agencia') . '</span>' . '<a href="mailto:' . $email . '">' . $email . '</a>';
+			echo '<span><i class="fa fa-envelope"></i>' . __('Email: ', 'moesia') . '</span>' . '<a href="mailto:' . $email . '">' . $email . '</a>';
 			echo '</div>';
 		}				
 

@@ -297,7 +297,13 @@
 		value.bind( function( newval ) {
 			$('.top-bar').css('background-color', newval );
 		} );
-	});	
+	});
+	// Menu Links
+	wp.customize('menu_links_color',function( value ) {
+		value.bind( function( newval ) {
+			$('.main-navigation a').css('color', newval );
+		} );
+	});		
 	// Site title
 	wp.customize('site_title_color',function( value ) {
 		value.bind( function( newval ) {
@@ -363,5 +369,15 @@
         value.bind( function( newval ) {
             $('body').css('font-size', newval + 'px' );
         } );
-    });		
+    });
+    wp.customize('widget_title_size',function( value ) {
+        value.bind( function( newval ) {
+            $('section .widget-title, .panel.widget .widget-title').css('font-size', newval + 'px' );
+        } );
+    });
+    wp.customize('menu_size',function( value ) {
+        value.bind( function( newval ) {
+            $('.main-navigation li').css('font-size', newval + 'px' );
+        } );
+    });	
 } )( jQuery );

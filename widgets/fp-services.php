@@ -109,11 +109,18 @@ class Moesia_Services extends WP_Widget {
 				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php $icon = get_post_meta( get_the_ID(), 'wpcf-service-icon', true ); ?>
+					<?php $link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
 					<div class="service col-md-4 col-sm-6 col-xs-6">
 						<?php if ($icon) : ?>
-							<span class="service-icon wow zoomInDown"><?php echo '<i class="fa ' . $icon . '"></i>'; ?></span>
+							<span class="service-icon wow zoomInDown"><?php echo '<i class="fa ' . esc_html($icon) . '"></i>'; ?></span>
 						<?php endif; ?>
-						<h4 class="service-title wow fadeInUp"><?php the_title(); ?></h4>
+						<h4 class="service-title wow fadeInUp">
+							<?php if ($link) : ?>
+								<a href="<?php echo esc_url($link); ?>"><?php the_title(); ?></a>
+							<?php else : ?>
+								<?php the_title(); ?>
+							<?php endif; ?>
+						</h4>
 						<div class="service-desc wow fadeInUp"><?php the_content(); ?></div>
 					</div>
 				<?php endwhile; ?>

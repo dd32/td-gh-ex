@@ -320,6 +320,11 @@ function moesia_custom_styles($custom) {
 	if ( isset($menu_bg) && ( $menu_bg != '#222' )) {
 		$custom .= ".top-bar { background-color: {$menu_bg}; }"."\n";
 	}
+	//Menu links
+	$menu_links_color = esc_html(get_theme_mod( 'menu_links_color' ));
+	if ( isset($menu_links_color) && ( $menu_links_color != '#ffffff' )) {
+		$custom .= ".main-navigation a { color: {$menu_links_color}; }"."\n";
+	}	
 	//Footer background
 	$footer_bg = esc_html(get_theme_mod( 'footer_color' ));
 	if ( isset($footer_bg) && ( $footer_bg != '#222' )) {
@@ -373,6 +378,17 @@ function moesia_custom_styles($custom) {
     if ( get_theme_mod( 'body_size' )) {
         $custom .= "body { font-size:" . intval($body_size) . "px; }"."\n";
     }
+    //Widget titles size
+    $widget_title_size = get_theme_mod( 'widget_title_size' );
+    if ( get_theme_mod( 'widget_title_size' )) {
+        $custom .= "section .widget-title, .panel.widget .widget-title { font-size:" . intval($widget_title_size) . "px; }"."\n";
+    }
+    //Menu links font size
+    $menu_size = get_theme_mod( 'menu_size' );
+    if ( get_theme_mod( 'menu_size' )) {
+        $custom .= ".main-navigation li { font-size:" . intval($menu_size) . "px; }"."\n";
+    }	
+	
 
     //Widgets display on small screens
     //1. Sidebar

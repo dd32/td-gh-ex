@@ -104,7 +104,7 @@
 	</header><!-- #masthead -->
 	<?php endif; ?>
 
-	<?php if (!is_front_page() || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
+	<?php if (!is_page_template('page_front-page.php') || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
 		<?php $container = "container"; ?>
 	<?php else : ?>
 		<?php $container = ""; ?>
