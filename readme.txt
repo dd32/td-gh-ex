@@ -49,6 +49,9 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.7 =
+* add greek po and mo
+
 = Version: 2.2.6 =
 * Fix fn class
 * add customizer options.
