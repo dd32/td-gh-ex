@@ -7,7 +7,7 @@
     jQuery( document ).ready( function() {
         
         // Insert up arrow for navigation
-        $( '.navigation-main ul li a' ).wrapInner( '<span class="nav-span"></span>' );
+        $( '.navigation-main ul.menu > li a' ).wrapInner( '<span class="nav-span"></span>' );
         $( '.navigation-main ul.sub-menu' ).prepend( '<span class="nav-arrow"></span>' );
         
 		// Adding padding to the footer widgets
@@ -38,8 +38,6 @@
     });
     
     $(window).resize(function () {
-        // Banner height setter
-        $(".banner-full-width-on").parent().addClass("banner-full-width-on-parent").css("height", $(".banner-full-width-on").height());
         
         // Function to make the Icon always be square
         $('.conica-icon-inner').each(function(c) {

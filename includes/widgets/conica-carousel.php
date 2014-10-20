@@ -14,7 +14,6 @@ class conica_carousel extends WP_Widget {
 	}
 
 	function widget( $args, $instance ) {
-        global $cx_framework_options;
         
         if ($instance['category']) {
             $carousel_cats = 'cat=' . $instance['category'] . '&';
@@ -43,7 +42,7 @@ $output .= '<div class="conica-carousel-wrapper columns-' . esc_attr( $instance[
                                 
             		$output .= '<div class="conica-carousel-block-img">';
             				
-            				$output .= '<a href="' . get_permalink() . '" class="conica-carousel-block-img-a"><i class="conica-carousel-block-img-a-fa fa fa-search-plus"></i></a>';
+            				$output .= '<a href="' . get_permalink() . '" class="conica-carousel-block-img-a"></a>';
                             
             				$output .= $carouselimage;
             		$output .= '</div>';
@@ -74,7 +73,7 @@ $output .= '<div class="conica-carousel-wrapper columns-' . esc_attr( $instance[
                             if($instance['show-excerpt'] == 'on') :
                                 
                                 if ( get_the_excerpt() > $instance['excerpt-length'] ) :
-                        $output .= '<p>' . substr(strip_tags(get_the_excerpt()), 0, $instance['excerpt-length'])."</p>";
+                        $output .= '<p>' . substr( strip_tags( get_the_excerpt() ), 0, $instance['excerpt-length'] )."</p>";
                                 else:
                 		$output .= '<p>' . get_the_excerpt() . '</p>';
                                 endif;
@@ -112,13 +111,13 @@ $output .= '</div>';
 			'carousel-pagination' => 'dots'
 		) ); ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php _e( 'Category', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php echo __( 'Category', 'conica' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'category' ) ?>" id="<?php echo $this->get_field_id( 'category' ) ?>" value="<?php echo esc_attr( $instance['category'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the ID\'s of the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the ID\'s of the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you want to show in this carousel. Eg: "4,6,8". Or leave blank to show ALL posts.', 'conica' ) ?></span>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'columns' ) ?>"><?php _e( 'Columns', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'columns' ) ?>"><?php echo __( 'Columns', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'columns' ) ?>" id="<?php echo $this->get_field_id( 'columns' ) ?>">
 				<option value="1" <?php selected( $instance['columns'], '1' ) ?>><?php esc_html_e( '1', 'conica' ) ?></option>
 				<option value="2" <?php selected( $instance['columns'], '2' ) ?>><?php esc_html_e( '2', 'conica' ) ?></option>
@@ -128,7 +127,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-featured-image' ) ?>"><?php _e( 'Show Featured Image', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-featured-image' ) ?>"><?php echo __( 'Show Featured Image', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-featured-image' ) ?>" id="<?php echo $this->get_field_id( 'show-titfeatured-imagele' ) ?>">
 				<option value="on" <?php selected( $instance['show-featured-image'], 'on' ) ?>><?php esc_html_e( 'On', 'conica' ) ?></option>
 				<option value="off" <?php selected( $instance['show-featured-image'], 'off' ) ?>><?php esc_html_e( 'Off', 'conica' ) ?></option>
@@ -136,7 +135,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-title' ) ?>"><?php _e( 'Show Title', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-title' ) ?>"><?php echo __( 'Show Title', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-title' ) ?>" id="<?php echo $this->get_field_id( 'show-title' ) ?>">
 				<option value="on" <?php selected( $instance['show-title'], 'on' ) ?>><?php esc_html_e( 'On', 'conica' ) ?></option>
 				<option value="off" <?php selected( $instance['show-title'], 'off' ) ?>><?php esc_html_e( 'Off', 'conica' ) ?></option>
@@ -144,7 +143,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-excerpt' ) ?>"><?php _e( 'Show Post Excerpt', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-excerpt' ) ?>"><?php echo __( 'Show Post Excerpt', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-excerpt' ) ?>" id="<?php echo $this->get_field_id( 'show-excerpt' ) ?>">
 				<option value="on" <?php selected( $instance['show-excerpt'], 'on' ) ?>><?php esc_html_e( 'On', 'conica' ) ?></option>
 				<option value="off" <?php selected( $instance['show-excerpt'], 'off' ) ?>><?php esc_html_e( 'Off', 'conica' ) ?></option>
@@ -152,13 +151,13 @@ $output .= '</div>';
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php _e( 'Excerpt Length', 'conica' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'category' ) ?>"><?php echo __( 'Excerpt Length', 'conica' ) ?></label>
             <input type="number" class="widefat" name="<?php echo $this->get_field_name( 'excerpt-length' ) ?>" id="<?php echo $this->get_field_id( 'excerpt-length' ) ?>" value="<?php echo esc_attr( $instance['excerpt-length'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the character length you want the excerpt to be. Default is 200 characters.', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the character length you want the excerpt to be. Default is 200 characters.', 'conica' ) ?></span>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'show-meta' ) ?>"><?php _e( 'Show Post Meta', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show-meta' ) ?>"><?php echo __( 'Show Post Meta', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'show-meta' ) ?>" id="<?php echo $this->get_field_id( 'show-meta' ) ?>">
 				<option value="on" <?php selected( $instance['show-meta'], 'on' ) ?>><?php esc_html_e( 'On', 'conica' ) ?></option>
 				<option value="off" <?php selected( $instance['show-meta'], 'off' ) ?>><?php esc_html_e( 'Off', 'conica' ) ?></option>
@@ -166,7 +165,7 @@ $output .= '</div>';
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>"><?php _e( 'Carousel Pagination', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>"><?php echo __( 'Carousel Pagination', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'carousel-pagination' ) ?>" id="<?php echo $this->get_field_id( 'carousel-pagination' ) ?>">
 				<option value="numbers" <?php selected( $instance['carousel-pagination'], 'numbers' ) ?>><?php esc_html_e( 'Numbers', 'conica' ) ?></option>
 				<option value="dots" <?php selected( $instance['carousel-pagination'], 'dots' ) ?>><?php esc_html_e( 'Dots', 'conica' ) ?></option>

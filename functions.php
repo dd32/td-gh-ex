@@ -5,28 +5,16 @@
  * @package Conica
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1' );
+define( 'KAIRA_THEME_VERSION' , '1.2' );
 
-// Adding the Redux Framework
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' );
+if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' ) ) {
+    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' );
 }
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/framework/cx-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/cx-config.php' );
-}
-
-global $cx_framework_options;
 
 // Theme Widgets
 include get_template_directory() . '/includes/widgets.php';
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-
-if ( ! function_exists( 'conica_setup_theme' ) ) :
+if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -34,7 +22,13 @@ if ( ! function_exists( 'conica_setup_theme' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function conica_setup_theme() {
+function kaira_setup_theme() {
+    
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+     */
+    if ( ! isset( $content_width ) )
+        $content_width = 870; /* pixels */
 
 	/**
 	 * Make theme available for translation
@@ -83,12 +77,12 @@ function conica_setup_theme() {
     add_theme_support( 'woocommerce' );
 }
 endif; // kaira_setup
-add_action( 'after_setup_theme', 'conica_setup_theme' );
+add_action( 'after_setup_theme', 'kaira_setup_theme' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function conica_widgets_init() {
+function kaira_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'conica' ),
 		'id'            => 'sidebar-1',
@@ -102,14 +96,13 @@ function conica_widgets_init() {
 		'id' => 'site-footer',
 	));
 	
-    register_widget( 'conica_banner' );
     register_widget( 'conica_carousel' );
     register_widget( 'conica_heading' );
     register_widget( 'conica_icon' );
 }
-add_action( 'widgets_init', 'conica_widgets_init' );
+add_action( 'widgets_init', 'kaira_widgets_init' );
 
-if(!function_exists('conica_footer_widget_params')):
+if(!function_exists('kaira_footer_widget_params')):
 /**
  * Set the widths of the footer widgets
  *
@@ -118,7 +111,7 @@ if(!function_exists('conica_footer_widget_params')):
  * 
  * @filter dynamic_sidebar_params
  */
-function conica_footer_widget_params($params){
+function kaira_footer_widget_params($params){
 	// Check that this is the footer
 	if($params[0]['id'] != 'site-footer') return $params;
 
@@ -129,19 +122,39 @@ function conica_footer_widget_params($params){
 	return $params;
 }
 endif;
-add_filter('dynamic_sidebar_params', 'conica_footer_widget_params');
+add_filter('dynamic_sidebar_params', 'kaira_footer_widget_params');
 
-function conica_print_styles(){
-    global $cx_framework_options;
-    $custom_css = $cx_framework_options['cx-options-custom-css'];
+function kaira_print_styles(){
+    $custom_css = '';
+    if ( kaira_theme_option( 'kra-custom-css' ) ) {
+        $custom_css = kaira_theme_option( 'kra-custom-css' );
+    }
     
-    $primary_color = $cx_framework_options['cx-options-primary-color'];
-    $primary_color_hover = $cx_framework_options['cx-options-primary-hover-color']; ?>
+    $body_font = kaira_theme_option( 'kra-body-google-font-name' );
+    $body_font_color = kaira_theme_option( 'kra-body-google-font-color' );
+    $h_font = kaira_theme_option( 'kra-heading-google-font-name' );
+    $h_font_color = kaira_theme_option( 'kra-heading-google-font-color' );
+    
+    $primary_color = kaira_theme_option( 'kra-primary-color' );
+    $primary_color_hover = kaira_theme_option( 'kra-primary-color-hover' ); ?>
     <style type="text/css" media="screen">
+        body,
+        .conica-banner-heading h5,
+        .conica-carousel-block,
+        .conica-heading-text {
+            color: <?php echo $body_font_color; ?>;
+            <?php echo ( $body_font ) ? $body_font : 'font-family: \'PT Sans\', sans-serif;'; ?>
+        }
+        h1, h2, h3, h4, h5, h6,
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+            color: <?php echo $h_font_color; ?>;
+            <?php echo ( $h_font ) ? $h_font : 'font-family: \'Droid Sans\', sans-serif;'; ?>
+        }
         .conica-button,
         .post .conica-blog-permalink-btn,
         .search article.page .conica-blog-permalink-btn,
         .wpcf7-submit,
+        .search-block .search-submit,
         
         .navigation-main li:hover > a span,
         li.current_page_item > a span,
@@ -152,9 +165,6 @@ function conica_print_styles(){
         #conica-home-slider-pager a.selected span,
         .conica-carousel-arrow-prev,
         .conica-carousel-arrow-next {
-            background-color: <?php echo $primary_color; ?>;
-        }
-        .search-block .search-submit {
             background-color: <?php echo $primary_color; ?>;
         }
         .site-title a,
@@ -187,17 +197,26 @@ function conica_print_styles(){
         .widget ul li a:hover {
             color: <?php echo $primary_color_hover; ?>;
         }
-        <?php echo ($custom_css) ? $custom_css : ''; ?>
+        <?php echo $custom_css; ?>
     </style>
     <?php
 }
-add_action('wp_head', 'conica_print_styles', 11);
+add_action('wp_head', 'kaira_print_styles', 11);
 
 /**
  * Enqueue scripts and styles
  */
-function conica_scripts() {
-    wp_enqueue_style( 'conica-google-font-default', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic');
+function kaira_scripts() {
+    if( kaira_theme_option( 'kra-body-google-font' ) ) {
+        wp_enqueue_style( 'conica-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
+    } else {
+        wp_enqueue_style( 'conica-google-body-font-default', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic', array(), KAIRA_THEME_VERSION );
+    }
+    if( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
+        wp_enqueue_style( 'conica-google-font-heading', kaira_theme_option( 'kra-heading-google-font-url' ), array(), KAIRA_THEME_VERSION );
+    } else {
+        wp_enqueue_style( 'conica-google-heading-font-default', 'http://fonts.googleapis.com/css?family=Droid+Sans:400,700', array(), KAIRA_THEME_VERSION );
+    }
     wp_enqueue_style( 'conica-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
 	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
@@ -216,12 +235,7 @@ function conica_scripts() {
 		wp_enqueue_script( 'kaira-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), KAIRA_THEME_VERSION );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'conica_scripts' );
-
-function load_conica_wp_admin_style() {
-    wp_enqueue_style( 'conica-admin-css', get_template_directory_uri() . '/includes/admin/admin-style.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'load_conica_wp_admin_style' );
+add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -239,34 +253,14 @@ require get_template_directory() . '/includes/inc/extras.php';
 require get_template_directory() . '/includes/inc/customizer.php';
 
 /**
- * Custom function sets categories for blog list & homepage slider.
- *
- * @param $cats
- */
-function conica_load_selected_categories($cats) {
-    $the_cats_count = count( $cats );
-    
-    $cats_set = '';
-    $cats_counter = 1;
-    if( $cats ) {
-        foreach ( $cats as $cat ) {
-            $cats_set .= $cat . ',';
-            $cats_counter++;
-        }
-    }
-    $cats_set = substr($cats_set, 0, -1);
-    return $cats_set;
-}
-
-/**
  * Add Conica wrappers around WooCommerce pages content.
  */
-add_action('woocommerce_before_main_content', 'conica_wrap_woocommerce_start', 10);
-add_action('woocommerce_after_main_content', 'conica_wrap_woocommerce_end', 10);
-function conica_wrap_woocommerce_start() {
+add_action('woocommerce_before_main_content', 'kaira_wrap_woocommerce_start', 10);
+add_action('woocommerce_after_main_content', 'kaira_wrap_woocommerce_end', 10);
+function kaira_wrap_woocommerce_start() {
     echo '<div id="primary" class="content-area content-area-full">';
 }
-function conica_wrap_woocommerce_end() {
+function kaira_wrap_woocommerce_end() {
     echo '</div>';
 }
 

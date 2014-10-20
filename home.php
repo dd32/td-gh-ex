@@ -1,5 +1,4 @@
-<?php get_header();
-global $cx_framework_options; ?>
+<?php get_header(); ?>
 
 <?php if ( is_home() ) : ?>
     
@@ -8,7 +7,7 @@ global $cx_framework_options; ?>
 <?php endif; ?>
 
 <div class="site-body site-pad">
-	<div class="site-container">
+	<div class="site-container blog-standard-layout">
 		
 		<div id="primary" class="content-area content-area-full">
 			<div id="content" class="site-content site-content-full" role="main">
@@ -17,7 +16,9 @@ global $cx_framework_options; ?>
                 
                 <?php if ( is_home() ) : ?>
                     
-                        <?php get_template_part( '/includes/blog/blog-standard' ); ?>
+                    <?php
+                    // Standard Layout
+                    get_template_part( '/includes/blog/blog-standard' ); ?>
 				
                 <?php else: ?>
                     

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Displays an Conica Icon
  ****************************************************************************************************** */
@@ -42,28 +41,27 @@ class conica_icon extends WP_Widget {
             'icon_size' => '20',
             'icon_style' => 'round',
             'icon_align' => 'center'
-		) );
-		?>
+		) ); ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php _e( 'Icon Name', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php echo __( 'Icon Name', 'conica' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'conica' ) ?></span>
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php _e( 'Icon Background Color', 'conica' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php echo __( 'Icon Background Color', 'conica' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_bg_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>" value="<?php echo esc_attr( $instance['icon_bg_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the hash value for the background color of the icon. Eg: "#000000" (Include the "#"")', 'conica' ) ?></span>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php _e( 'Icon Color', 'conica' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_color' ) ?>"><?php echo __( 'Icon Color', 'conica' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_color' ) ?>" value="<?php echo esc_attr( $instance['icon_color'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'conica' ) ?></span>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php _e( 'Icon Size', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php echo __( 'Icon Size', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_size' ) ?>" id="<?php echo $this->get_field_id( 'icon_size' ) ?>">
 				<option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'conica' ) ?></option>
 				<option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'conica' ) ?></option>
@@ -76,7 +74,7 @@ class conica_icon extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php _e( 'Icon Style', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php echo __( 'Icon Style', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_style' ) ?>" id="<?php echo $this->get_field_id( 'icon_style' ) ?>">
                 <option value="none" <?php selected( $instance['icon_style'], 'none' ) ?>><?php esc_html_e( 'None', 'conica' ) ?></option>
 				<option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'conica' ) ?></option>
@@ -85,13 +83,13 @@ class conica_icon extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php _e( 'Icon Alignment', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php echo __( 'Icon Alignment', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_align' ) ?>" id="<?php echo $this->get_field_id( 'icon_align' ) ?>">
 				<option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'conica' ) ?></option>
 				<option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'conica' ) ?></option>
 				<option value="right" <?php selected( $instance['icon_align'], 'right' ) ?>><?php esc_html_e( 'Right', 'conica' ) ?></option>
 			</select>
 		</p>
-		<?php
+	<?php
 	}
 } ?>

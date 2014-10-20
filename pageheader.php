@@ -1,14 +1,11 @@
-<?php
-global $cx_framework_options;
-
-if ( !is_front_page() ) : ?>
+<?php if ( !is_front_page() ) : ?>
 	
     <div class="page-header">
         <div class="site-container">
             <h1>
                 <?php if ( is_home() ) : ?>
                     
-                    <?php echo $cx_framework_options['cx-options-blog-title']; ?>
+                    <?php echo kaira_theme_option( 'kra-blog-title' ); ?>
                     
                 <?php else: ?>
                     

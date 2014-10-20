@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Displays an Conica Heading
  ****************************************************************************************************** */
@@ -46,27 +45,26 @@ class conica_heading extends WP_Widget {
 			'style' => 'lined',
 			'size' => 'medium',
 			'align' => 'left'
-		) );
-		?>
+		) ); ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php _e( 'Icon Name', 'conica' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php echo __( 'Icon Name', 'conica' ) ?></label>
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'conica' ) ?></span>
         </p>
         
 		<p>
-			<label for="<?php echo $this->get_field_id( 'heading' ) ?>"><?php _e( 'Heading Text', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'heading' ) ?>"><?php echo __( 'Heading Text', 'conica' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'heading' ) ?>" id="<?php echo $this->get_field_id( 'heading' ) ?>" value="<?php echo esc_attr( $instance['heading'] ) ?>" />
-            <span class="widgets-desc"><?php _e( 'Add <a href="http://www.tizag.com/htmlT/htmlbold.php" target="_blank">Bold Tags</a> around words to make them take on the theme main color', 'conica' ) ?></span>
+            <span class="widgets-desc"><?php echo __( 'Add <a href="http://www.tizag.com/htmlT/htmlbold.php" target="_blank">Bold Tags</a> around words to make them take on the theme main color', 'conica' ) ?></span>
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php _e( 'Heading Text', 'conica' ) ?></label>
+            <label for="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php echo __( 'Heading Text', 'conica' ) ?></label>
             <textarea class="widefat" name="<?php echo $this->get_field_name( 'heading-text' ) ?>" id="<?php echo $this->get_field_id( 'heading-text' ) ?>"><?php echo esc_attr( $instance['heading-text'] ) ?></textarea>
         </p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'style' ) ?>"><?php _e( 'Style', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'style' ) ?>"><?php echo __( 'Style', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'style' ) ?>" id="<?php echo $this->get_field_id( 'style' ) ?>">
 				<option value="lined" <?php selected( $instance['style'], 'lined' ) ?>><?php esc_html_e( 'Lined heading', 'conica' ) ?></option>
 				<option value="title" <?php selected( $instance['style'], 'title' ) ?>><?php esc_html_e( 'Title heading', 'conica' ) ?></option>
@@ -74,7 +72,7 @@ class conica_heading extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'size' ) ?>"><?php _e( 'Size', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'size' ) ?>"><?php echo __( 'Size', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'size' ) ?>" id="<?php echo $this->get_field_id( 'size' ) ?>">
 				<option value="small" <?php selected( $instance['size'], 'small' ) ?>><?php esc_html_e( 'Small', 'conica' ) ?></option>
 				<option value="medium" <?php selected( $instance['size'], 'medium' ) ?>><?php esc_html_e( 'Medium', 'conica' ) ?></option>
@@ -84,13 +82,13 @@ class conica_heading extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php _e( 'Alignment', 'conica' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php echo __( 'Alignment', 'conica' ) ?></label>
 			<select class="widefat" name="<?php echo $this->get_field_name( 'align' ) ?>" id="<?php echo $this->get_field_id( 'align' ) ?>">
 				<option value="left" <?php selected( $instance['align'], 'left' ) ?>><?php esc_html_e( 'Left', 'conica' ) ?></option>
 				<option value="center" <?php selected( $instance['align'], 'center' ) ?>><?php esc_html_e( 'Center', 'conica' ) ?></option>
 				<option value="right" <?php selected( $instance['align'], 'right' ) ?>><?php esc_html_e( 'Right', 'conica' ) ?></option>
 			</select>
 		</p>
-		<?php
+	<?php
 	}
 } ?>
