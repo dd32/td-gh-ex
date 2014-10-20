@@ -39,6 +39,12 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.2.1 October 20th 2014 =
+* fixed (css) Featured pages recentering for max-width 979px
+* fixed (css) Sticky header menu background
+* improved (js, tc-scripts.js) Scroll event timer only for ie
+
+
 = 3.2.0 October 20th 2014 =
 * added (php, class-content-slider.php) New action hooked : __after_carousel_inner. Used to render the slider controls.
 * added (js) slider swipe support with hammer.js. Controls not renderd for mobile devices.

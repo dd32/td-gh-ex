@@ -440,28 +440,34 @@ jQuery(function ($) {
 	//var windowHeight = $(window).height();  
 	var triggerHeight = 20; //0.5 * windowHeight;
 
+	function _scrolling_actions() {
+		_set_header_top_offset();
+		_set_no_title_logo_class();
+		//process scrolling actions
+		if ( $(window).scrollTop() > triggerHeight ) {
+		    $('body').addClass("sticky-enabled").removeClass("sticky-disabled");
+		}
+		else {
+		    $('body').removeClass("sticky-enabled").addClass("sticky-disabled");
+		    setTimeout( function() { _refresh();} , 
+		    	$('body').hasClass('is-customizing') ? 100 : 20
+		    );
+		}
+	}
+
 	$(window).scroll(function() {
 		if ( ! _is_sticky_enabled() )
 			return;
-
+		//use a timer for ie
 		if ( timer) {
 	        window.clearTimeout(timer);
 	    }
-
-	    timer = window.setTimeout(function() {
-	    	_set_header_top_offset();
-			_set_no_title_logo_class();
-			//process scrolling actions
-			if ( $(window).scrollTop() > triggerHeight ) {
-			    $('body').addClass("sticky-enabled").removeClass("sticky-disabled");
-			}
-			else {
-			    $('body').removeClass("sticky-enabled").addClass("sticky-disabled");
-			    setTimeout( function() { _refresh();} , 
-			    	$('body').hasClass('is-customizing') ? 100 : 20
-			    );
-			}
-	    }, 50);
-		
+	    if ( $('body').hasClass('ie') ) {
+		    timer = window.setTimeout(function() {
+		    	_scrolling_actions()
+		    }, 50);
+		} else {
+			_scrolling_actions()
+		}
 	});//end of window.scroll()
 });
