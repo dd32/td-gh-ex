@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a photography or portfolio website and more. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -102,7 +102,7 @@ blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em
 address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px; border-collapse:collapse; border-radius:5px;-moz-border-radius:5px;}
 table, th, td {border: 1px solid #ddd; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -187,7 +187,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
-.search-field {width:50%;}
+.search-field {width:50%; margin:0 5px 0 0;}
 .screen-reader-text {display:none;}
 
 /* COMMENTS */
@@ -203,7 +203,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
-#commentform textarea, #commentform input {width: 90%; padding:5px;}
+#commentform textarea, #commentform input {width: 90%; padding:2px 5px;}
 #commentform input[type="submit"]{width:9em; padding:2px 5px; background:#ddd; color:#333;} 
 #commentform input[type="submit"]:hover {background:#e77776; color:#ddd;}
 
@@ -216,6 +216,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* FOOTER */
 #footer {width:68%; padding: 0 2%; margin: 20px 0 0; float:right; background:#333 url('images/back.png'); opacity:0.9;filter:alpha(opacity=90);}
 #footer .widget {padding:0; margin: 10px 0 0;}
+#footer .site-info {text-align:center; font-size:0.75em; clear:both; padding:10px 0;}
 
 #footer-widgets {width: 100%; margin:0 auto 0; color:#ddd;}
 #footer-widgets:after {content:''; display:block; clear:both;}
@@ -224,11 +225,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .footer-middle {float: left; width: 30%; margin:10px 3%; padding:0; word-wrap: break-word;}
 .footer-right {float: right; width: 30%; margin:10px 0 0 0; padding:0; word-wrap: break-word;}
 
-#footer .site-info {text-align:center; font-size:0.75em; clear:both; padding:10px 0;}
-
-/* Ipad */
+/* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) { 
-	body.custom-background {background-position: 50% 0% !important; -webkit-backgound-size: 100% auto !important; background-size: 100% auto !important;}
+	body.custom-background {background-position: 50% 0% !important; -webkit-backgound-size: 100% auto !important; -moz-backround-size: 100% auto !important; -o-background-size: 100% auto !important; background-size: 100% auto !important;}
 	#container {margin: 50px auto 20px;}
 }
 

@@ -56,7 +56,7 @@ blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em
 address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px; border-collapse:collapse; border-radius:5px;-moz-border-radius:5px;}
 table, th, td {border: 1px solid #ddd; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
