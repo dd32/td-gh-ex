@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 1.2
+Version: 1.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a photography or portfolio website and more. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -102,7 +102,7 @@ blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em
 address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse; border-radius:5px;-moz-border-radius:5px;}
+table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ddd; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
