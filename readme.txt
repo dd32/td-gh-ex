@@ -43,3 +43,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 == Changelog ==
 Version 1.0
 * Initial Release
+
+Version 1.0.1
+* Minor bug fixes

@@ -4,12 +4,12 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
 Domain Path: /languages/
-Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style
+Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style
 */
 
 /*--------------------------------------------------------------
@@ -578,7 +578,7 @@ a:active {
 .main-navigation .current-menu-item a {
 }
 
-.main-navigation ul li:hover > a, .main-navigation li.current-menu-item > a, .main-navigation li.current-menu-parent > a, .main-navigation li.current-page-ancestor > a {
+.main-navigation ul li:hover > a, .main-navigation li.current-menu-item > a, .main-navigation li.current-menu-parent > a, .main-navigation li.current-page-ancestor > a, .main-navigation .current_page_item > a {
 	background: rgba(0,0,0,.03);
 }
 
@@ -1001,7 +1001,7 @@ span.overlay-img {
 	background: #f7c322;
 	padding: 4px 8px;
 	color: #ffffff;
-	margin: 1px;
+	margin: 1px 0;
 	font-weight: 300;
 	display: inline-block;
 	border-radius: 2px;
@@ -1020,7 +1020,7 @@ span.overlay-img {
 	-webkit-transition: all 0s ease-in-out;
 	transition: all 0s ease-in-out;
 }
-.hentry .edit-link {
+.edit-link {
 	display: block;
 }
 .entry-meta {

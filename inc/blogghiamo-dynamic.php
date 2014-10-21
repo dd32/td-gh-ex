@@ -52,8 +52,8 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 		$color['slug'], array(
 			'default' => $color['default'],
 			'type' => 'option', 
-			'capability' => 
-			'edit_theme_options'
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability' => 'edit_theme_options'
 		)
 	);
 	// CONTROLS
@@ -67,60 +67,6 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 		)
 	);
 	}
-	
-	// SECTIONS
-	$wp_customize->add_section(
-		'blogghiamo_pro', array('title' => __('Upgrade to Blogghiamo PRO', 'blogghiamo'), 'priority' => 999)
-	);
-	
-	//SETTINGS
-	$wp_customize->add_setting(
-		'bl_options[premium_version_label]', array('default' => '', 'type' => 'option')
-	);
-	$wp_customize->add_setting(
-		'bl_options[premium_version_text]', array('default' => '', 'type' => 'option')
-	);
-	$wp_customize->add_setting(
-		'bl_options[premium_version_button]', array('default' => '', 'type' => 'option')
-	);
-	$wp_customize->add_setting(
-		'bl_options[premium_version_button_demo]', array('default' => '', 'type' => 'option')
-	);
-
-	class BL_Customize_Header_Control extends WP_Customize_Control {
-        public function render_content() { ?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
-			</label> <?php
-        }
-    }
-
-	class BL_Customize_Text_Control extends WP_Customize_Control {
-        public function render_content() { ?>
-			<span class="textfield"><?php echo esc_html($this->label); ?></span> <?php
-        }
-    }
-
-    class BL_Customize_Button_Control extends WP_Customize_Control {
-        public function render_content() {  ?>
-			<p>
-				<a target="_blank" href="http://crestaproject.com/downloads/blogghiamo/" class="button button-primary"><?php echo esc_html($this->label); ?></a>
-			</p> <?php
-        }
-    }
-	
-	class BL_Customize_Button_Control_Demo extends WP_Customize_Control {
-        public function render_content() {  ?>
-			<p>
-				<a target="_blank" href="http://crestaproject.com/demo/blogghiamo-pro/" class="button button-primary"><?php echo esc_html($this->label); ?></a>
-			</p> <?php
-        }
-    }
-	
-	$wp_customize->add_control(new BL_Customize_Header_Control($wp_customize, 'premium_version_label', array('label' => __('Need more features and options?', 'blogghiamo'), 'section' => 'blogghiamo_pro', 'settings' => 'bl_options[premium_version_label]', 'priority' => 1)));
-	$wp_customize->add_control(new BL_Customize_Text_Control($wp_customize, 'premium_version_text', array('label' => __('Check out the Premium Version of Blogghiamo WP Theme which comes with additional features and advanced customization options.', 'blogghiamo'), 'section' => 'blogghiamo_pro', 'settings' => 'bl_options[premium_version_text]', 'priority' => 2)));
-	$wp_customize->add_control(new BL_Customize_Button_Control($wp_customize, 'premium_version_button', array('label' => __('Learn more about Blogghiamo PRO', 'blogghiamo'), 'section' => 'blogghiamo_pro', 'settings' => 'bl_options[premium_version_button]', 'priority' => 3)));
-	$wp_customize->add_control(new BL_Customize_Button_Control_Demo($wp_customize, 'premium_version_button_demo', array('label' => __('See  the Demo (Blogghiamo PRO)', 'blogghiamo'), 'section' => 'blogghiamo_pro', 'settings' => 'bl_options[premium_version_button_demo]', 'priority' => 4)));
 	
 }
 add_action( 'customize_register', 'blogghiamo_color_primary_register' );

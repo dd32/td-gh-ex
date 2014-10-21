@@ -102,6 +102,27 @@ function blogghiamo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'blogghiamo_scripts' );
 
+/* Display a notice that can be dismissed */
+add_action('admin_notices', 'blogghiamo_admin_notice');
+function blogghiamo_admin_notice() {
+	global $current_user ;
+        $user_id = $current_user->ID;
+	if ( ! get_user_meta($user_id, 'blogghiamo_ignore_notice') ) {
+        echo '<div class="updated" style="background: #E9F7DF; border-left: 4px solid #1fa67a;"><p>'; 
+        printf(__('Thank you for installing <b>Blogghiamo</b> WordPress Theme! <a href="%2$s"><b>Click here to go to the Theme Options</b></a>  | <a href="%1$s">Hide Notice</a>'), '?blogghiamo_nag_ignore=0', 'themes.php?page=theme_options');
+        echo "</p></div>";
+	}
+}
+
+add_action('admin_init', 'blogghiamo_nag_ignore');
+function blogghiamo_nag_ignore() {
+	global $current_user;
+        $user_id = $current_user->ID;
+        if ( isset($_GET['blogghiamo_nag_ignore']) && '0' == $_GET['blogghiamo_nag_ignore'] ) {
+             add_user_meta($user_id, 'blogghiamo_ignore_notice', 'true', true);
+	}
+}
+
 /**
  * Custom template tags for this theme.
  */
