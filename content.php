@@ -25,7 +25,7 @@
 				<?php awaken_posted_on(); ?>
 
 				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'awaken' ), __( '1 Comment', 'awaken' ), __( '% Comments', 'awaken' ) ); ?></span>
+					<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
 				<?php endif; ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

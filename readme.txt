@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.0.1
+Version    : 1.0.2
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -25,8 +25,8 @@ Resources packed within the theme.
   Font Awesome is fully open source and is GPL friendly. http://fortawesome.github.io/Font-Awesome/license/
 * Bootstrap by twitter.
   Bootstrap is Licensed under the MIT License. https://github.com/twbs/bootstrap/blob/master/LICENSE.
-* cycle2 jquery plugin by malsup. http://jquery.malsup.com/cycle2/
-  cycle2 by malsup is Licensed under the MIT. http://malsup.github.io/mit-license.txt
+* FlexSlider by woothemes.
+  FlexSlider is Licensed under the GPLv2 license. http://www.gnu.org/licenses/gpl-2.0.html
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * Redux Framework by reduxframework.com licensed under the GPLv3 license https://github.com/ReduxFramework/redux-framework/blob/master/license.txt
 * TGM Plugin activation library by Thomas Griffin is licensed under the GPL-2.0 or later license.http://tgmpluginactivation.com/#license
@@ -116,5 +116,10 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 ==== THEME CHANGELOG ====
 
 - Version 1.0.1
+Fixed a issue in mobile menu.
 Added social media feature.
-Change redux framework embeded option to plugin option.
+Changed redux framework embeded option to plugin option.
+
+
+- Version 1.0.2
+Fixed a issue in featured slider.

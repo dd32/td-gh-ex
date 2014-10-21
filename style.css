@@ -4,10 +4,10 @@ Theme URI: http://themezhut.com/themes/awaken
 Author: ThemezHut
 Author URI: http://themezhut.com/
 Description: Awaken WordPress theme is an elegant magazine/news WordPress theme. It has a magazine layout with two main widget areas. And the the theme is featured with three post widgets to display posts in different styles. This theme consists with a responsive layout which is created using twitter bootstrap. Some of the main features of this theme are theme options panel, featured slider, ad widgets, youtube video widget and social media. Find more information about this theme at http://www.themezhut.com/themes/awaken.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: Awaken
+Text Domain: awaken
 Tags: red,two-columns,two-columns,custom-background,featured-images,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -1123,7 +1123,7 @@ a:hover, a:focus, a:active {
   font-weight: 500;
   height: 32px;
   line-height: 32px;
-  margin: 0 0 0.1em 0;
+  margin: 0 0 1px 0;
   padding: 0 1.2em;
   text-transform: uppercase;
 }
@@ -1148,7 +1148,7 @@ a:hover, a:focus, a:active {
   font-weight: 500;
   height: 32px;
   line-height: 32px;
-  margin: 0 0 0.1em 0;
+  margin: 0 0 1px 0;
   padding: 0 1.2em;
   text-transform: uppercase;
 }
@@ -1270,12 +1270,12 @@ a:hover, a:focus, a:active {
 
 .awaken-slider-details-container {
   color: #f5f5f5;
-  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0;
+  left: 0;
   line-height: 1.4;
-  margin: 30px 30px 35px 30px;
-  max-width: 70%;
+  margin: 0;
+  width: 100%;
   display: inline-block;
   text-shadow: 0px 1px 1px #000;
 }
@@ -1294,7 +1294,7 @@ a:hover, a:focus, a:active {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 24px;
   font-size: 2.4rem;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.5;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1302,10 +1302,23 @@ a:hover, a:focus, a:active {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   margin: 0;
-  padding: 5px 20px;
+  padding: 30px 32px;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  /* W3C */
+  text-shadow: 0px 1px 1px #000;
 }
 .awaken-slider-title:hover {
-  background: #fa5742;
+  color: #fa5742;
   text-shadow: none;
 }
 @media screen and (max-width: 766px) {

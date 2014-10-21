@@ -20,17 +20,11 @@ function awaken_featured_posts() {
 		<div class="awaken-featured-container">
 		<div class="awaken-featured-slider">
 			<section class="slider">
-				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-loader="true" data-cycle-timeout="6000" data-cycle-slides="div.slide" data-cycle-speed="500" data-cycle-pause-on-hover="true" id="homepage-slider">
-					<div class="cycle-prev">
-						<a href="#"><i class="fa fa-angle-left"></i></a>
-					</div> <!-- end cycle-prev -->
-
-					<div class="cycle-next">
-						<a href="#"><i class="fa fa-angle-right"></i></a>
-					</div> <!-- end cycle-next -->
+				<div class="flexslider">
+					<ul class="slides">
 					<?php while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
 
-						<div class="slide">
+						<li>
 							<div class="awaken-slider-container">
 								<?php if ( has_post_thumbnail() ) { ?>
 									<?php the_post_thumbnail( 'featured-slider' ); ?>
@@ -42,10 +36,10 @@ function awaken_featured_posts() {
 									<a href="<?php the_permalink(); ?>" rel="bookmark"><h1 class="awaken-slider-title"><?php the_title(); ?></h1></a>
 								</div>
 							</div>
-						</div><!--.slide-->
-						
+						</li>
+
 					<?php endwhile; ?>
-					<div id="progress"></div>
+					</ul>
 				</div>
 			</section>
 		</div><!-- .awaken-slider -->

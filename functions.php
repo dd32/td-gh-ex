@@ -237,11 +237,6 @@ function awaken_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	wp_enqueue_script( 'cycle2', get_template_directory_uri() . '/js/jquery.cycle2.min.js', array('jquery'), false, true );
-
-	wp_enqueue_script( 'awaken-slider', get_template_directory_uri() . '/js/awaken.slider.js', array('jquery'), false, true );
-
 }
 add_action( 'wp_enqueue_scripts', 'awaken_scripts' );
 
@@ -319,6 +314,20 @@ function awaken_favicon() {
 }
 add_action( 'admin_head', 'awaken_favicon' );
 add_action( 'wp_head', 'awaken_favicon' );
+
+/**
+* Add flex slider.
+*/
+function awaken_flex_scripts() {
+    
+    wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), false, true );
+    wp_register_script( 'add-awaken-flex-js', get_template_directory_uri() . '/js/awaken.slider.js', array(), '', true );
+	wp_enqueue_script( 'add-awaken-flex-js' );    
+    wp_register_style( 'add-flex-css', get_template_directory_uri() . '/css/flexslider.css','','', 'screen' );
+    wp_enqueue_style( 'add-flex-css' );
+
+}
+add_action( 'wp_enqueue_scripts', 'awaken_flex_scripts' );
 
 /**
  * Implement the Custom Header feature.

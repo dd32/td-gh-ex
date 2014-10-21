@@ -281,7 +281,7 @@
                             'subtitle' => __( 'Give a read more text for posts.', 'awaken' ),
                             'desc'     => __( 'You can use html if you want.', 'awaken' ),
                             'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
-                            'default'  => '...'
+                            'default'  => '[...]'
                         ),
                         array(
                             'id'       => 'favicon-display-checkbox',
