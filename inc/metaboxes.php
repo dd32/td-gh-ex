@@ -3,7 +3,15 @@
  * Generate the layout metabox
  * @since 0.1
  */
-function generate_add_layout_meta_box() {  
+function generate_add_layout_meta_box() { 
+	
+	// Set user role - make filterable
+	$allowed = apply_filters( 'generate_metabox_capability', 'activate_plugins' );
+	
+	// If not an administrator, don't show the metabox
+	if ( ! current_user_can( $allowed ) )
+		return;
+		
 	$post_types = get_post_types();
 	foreach ($post_types as $type) {
 		add_meta_box
@@ -101,6 +109,14 @@ add_action('save_post', 'generate_save_layout_meta');
  * @since 0.1
  */
 function generate_add_footer_widget_meta_box() {  
+
+	// Set user role - make filterable
+	$allowed = apply_filters( 'generate_metabox_capability', 'activate_plugins' );
+	
+	// If not an administrator, don't show the metabox
+	if ( ! current_user_can( $allowed ) )
+		return;
+		
 	$post_types = get_post_types();
 	foreach ($post_types as $type) {
 		add_meta_box

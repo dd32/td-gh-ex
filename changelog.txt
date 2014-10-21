@@ -10,6 +10,13 @@ Changelog Legend:
 
 ----
 
+(10/21/2014) - 1.2.2
+[+] Spanish translation added
+[+] Only admins can see Sidebar and Footer Widget metaboxes - capability is filterable (generate_metabox_capability)
+[!] Fix bug causing non-Google fonts to be ignored when chosen
+
+----
+
 (10/14/2014) - 1.2.1
 [x] Remove class added to <body> by mistake
 

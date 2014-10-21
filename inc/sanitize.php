@@ -61,7 +61,18 @@ function generate_sanitize_nav_layout( $input ) {
 function generate_sanitize_typography( $input ) 
 {
 
-	$valid = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : '' );
+	$google_fonts = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : '' );
+	
+	$not_google = array(
+		'inherit',
+		'Arial, Helvetica, sans-serif',
+		'Verdana, Geneva, sans-serif',
+		'Tahoma, Geneva, sans-serif',
+		'Georgia, Times New Roman, Times, serif',
+		'Trebuchet MS, Helvetica, sans-serif'
+	);
+	
+	$valid = array_merge( $google_fonts, $not_google );
 	
     if ( in_array( $input, $valid ) ) {
         return $input;

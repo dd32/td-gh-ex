@@ -216,7 +216,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			'Verdana,+Geneva,+sans-serif',
 			'Tahoma,+Geneva,+sans-serif',
 			'Georgia,+Times New Roman,+Times,+serif',
-			'Trebuchet MS,+Helvetica,+sans-serif'
+			'Trebuchet+MS,+Helvetica,+sans-serif'
 		);
 
 		$generate_settings = wp_parse_args( 
