@@ -53,7 +53,17 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
-@Version 1.0
+@Version 0.2
+1. wp_link_pages called within the loop after the content.
+2. Always make footer credit link visible only on front page. On the other templates only the text is displayed.
+3. Removed default widgets and also managed layout accordingly widgets.
+4. Recommended code quality improvement in index-service.php file, index-portfolio.php and index-static-banner.php file.
+5. remove all inline css from all templates.
+6. Remove custom jquery.
+7. Called esc_attr_e wherever required.
+8. Called home_url instead of get_bloginfo in breadcrumb.php file.
+
+@Version 0.1
 released
 
 Wallstreet WordPress Theme, Copyright 2014 Priyanshu Mittal
@@ -74,6 +84,11 @@ along with this program.  If not, see .
 
 
 Wallstreet WordPress Theme bundles the following third-party resources:
+
+Screenshot: Image used in screenshot By Andrew Ruiz
+URL: https://unsplash.com/photos/bI2j1olMXUA/download
+Source: http://unsplash.com
+License: GPL
 
 Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

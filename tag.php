@@ -28,7 +28,7 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-md-8">
+		<div class="<?php if(is_active_sidebar('sidebar_primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 			<?php if ( have_posts() ) { 
 			while(have_posts()){ the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('blog-section-right'); ?>>
@@ -74,7 +74,6 @@
 				<?php next_posts_link(); ?>
 				<?php endif; ?>
 			</div>
-			<?php if(wp_link_pages()) { wp_link_pages();  } ?>
 		</div><!--/Blog Area-->
 		<?php get_sidebar(); ?>
 	</div>

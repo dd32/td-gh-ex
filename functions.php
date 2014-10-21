@@ -101,7 +101,6 @@ register_sidebar( array(
 		'after_title' => '</h2>',
 	) );
 }
-
 /* Added By Harish */
 	/*===================================================================================
 	 * Add Author Links
@@ -121,9 +120,7 @@ register_sidebar( array(
 	}
 	
 	add_filter('get_avatar','webriti_add_gravatar_class');
-?>
 
-<?php
 function webriti_scripts()
 {	
 	$current_options = get_option('wallstreet_lite_options');	

@@ -4,16 +4,13 @@ Theme URI:
 Author: Webriti
 Author URI: http://webriti.com/
 Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 3 beautifully designed page templates , Home, Blog and full width Page.
-Version:  0.1
+Version:  0.2
 Tags: green,black,gray,dark, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post,responsive-layout,right-sidebar,featured-images
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: wallstreet
-* wallstreet Center Css created By Shahid - Scientech IT
 */
-/*!
- * style created by Shahid (Scientech) Starting on 13 June, 2014***************************************
- */
+
 
 body {
     background-color: #2a2c33;
@@ -4163,3 +4160,12 @@ article.format-aside .aside {
 .post_sidebar_img,.sidebar-pull-img img{margin-right:10px;}
 .bypostauthor{}
 
+.service-effect img.service-box-image{
+	height: 200px;
+	width: 200px;
+}
+
+.home-portfolio-showcase-media img.home-portfolio-img{
+	width:263px;
+	height:243px;
+}

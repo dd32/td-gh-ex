@@ -27,7 +27,7 @@ get_header();
 <div class="container">
 	<div class="row">		
 		<!--Blog Area-->
-		<div class="col-md-8">
+		<div class="<?php if(is_active_sidebar('sidebar_primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 		<?php
 		the_post();
 		?>

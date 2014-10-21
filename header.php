@@ -74,7 +74,7 @@
 				{ echo "<div class=wallstreet_title_head>" . get_bloginfo( ). "</div>"; }
 				else if($current_options['upload_image_logo']!='') 
 				{ ?>
-				<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo esc_html($current_options['height']); }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { echo esc_html($current_options['width']); }  else { "250"; } ?>px;" alt="logo" />
+				<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { esc_attr_e($current_options['height']); }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { esc_attr_e($current_options['width']); }  else { "250"; } ?>px;" alt="logo" />
 				<?php } ?>
 			</a>
 		</a><!-- /logo -->

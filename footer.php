@@ -56,9 +56,9 @@ it has less normal distribution letters, as opposed to using content here.','wal
 			<?php if($current_options['footer_customizations']) { ?>
 				<div class="footer-copyright">
 					<p> <?php echo esc_html($current_options['footer_customizations']);?>
-					 <?php if($current_options['created_by_webriti_text']!='') {   ?>
-					<a href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"><?php  echo esc_html($current_options['created_by_webriti_text']);  ?></a>
-					<?php } ?>
+					 <?php if(is_home() && $current_options['created_by_webriti_text']!='') {   ?>
+					<a href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"><?php echo esc_html($current_options['created_by_webriti_text']);  ?></a>
+					<?php } else { echo $current_options['created_by_webriti_text']; }?>
 					</p>
 				</div>
 			<?php } ?>

@@ -11,10 +11,6 @@
 <!-- wallstreet Main Slider --->
 <?php
 $current_options = get_option('wallstreet_lite_options');
-$slider_title_one= $current_options['slider_title_one'];
-$slider_title_two=$current_options['slider_title_two'];
-$slider_description=$current_options['slider_description'];
-$slider_image=$current_options['slider_image'];
 ?>
 <!-- /Slider Section -->
 <div class="homepage_mycarousel">

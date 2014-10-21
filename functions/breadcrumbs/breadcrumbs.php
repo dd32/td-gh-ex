@@ -8,7 +8,7 @@ function webriti_custom_breadcrumbs() {
   $after = '</li>'; // tag after the current crumb
  
   global $post;
-  $homeLink = get_bloginfo('url');
+  $homeLink = home_url('/');
  
   if (is_home() || is_front_page()) {
  
@@ -95,7 +95,7 @@ function webriti_custom_breadcrumbs() {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
-      echo ' ( ' . __('Page') . '' . get_query_var('paged'). ' )';
+      echo ' ( ' . __('Page','wallstreet') . '' . get_query_var('paged'). ' )';
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
     }
  
