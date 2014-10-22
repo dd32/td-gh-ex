@@ -1,6 +1,9 @@
-
-<?php  $slider_cat = get_theme_mod( 'wp_newsstream_category'); ?>	
-<?php
+<?php 
+/**
+ * The template for displaying featured image
+ *
+ */
+$slider_cat = get_theme_mod( 'wp_newsstream_category'); 
 //query posts
 query_posts(
 	array(
@@ -20,21 +23,14 @@ query_posts(
 ));
 
 ?>
-
-                        
-<?php //echo $slider_cat; ?>
 <?php if (have_posts()) : ?>           
 	<?php while (have_posts()) : the_post(); ?> 
     	<ul id="wpslide">
-    	<?php
-			
+    	<?php			
 			if ( '' != get_the_post_thumbnail()) { 
 				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-large-image');
 				$medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-medium-thumb');
-				$small_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-small-thumb');
-				
-							
-				
+				$small_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slide-small-thumb');			
 		?>
         <li>
         	<img src="<?php echo $large_image_url[0] ?>" />
@@ -44,13 +40,9 @@ query_posts(
                     <p><?php echo excerpt('30'); ?></p>
               </div>
         </li>
-        <?php	
-				
-				
-			}
-			
-		 ?>
-    
+        <?php				
+			}			
+		 ?>    
     <?php endwhile; ?> 
 <?php endif; ?> 
 <?php wp_reset_query(); ?>

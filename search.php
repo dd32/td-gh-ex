@@ -1,7 +1,11 @@
-<?php get_header(); ?>
-
-	
-        
+<?php
+/**
+ * The template for displaying Search Results pages
+ *
+ */
+ 
+ ?>
+<?php get_header(); ?>        
         <div id="content">
             <div id="content" class="content">
                 <div  class="row">           		
@@ -16,17 +20,10 @@
 									query_posts($query_string .'&posts_per_page=10&paged=' . $paged);
                                 ?>
                          	<div id="page-heading"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-newsstream' ); ?><?php the_search_query(); ?></h1></div>
-                            <div id="post" class="row">                                    
-
-                                <?php if (have_posts()) : ?>
-                                	
-										
-                                       <?php get_template_part( 'loop', 'entry' ); ?>     
-                                	
-                              <?php else : ?>
-        
-                                    
-                                                                      
+                            <div id="post" class="row">                             
+								<?php if (have_posts()) : ?>
+                                	<?php get_template_part( 'loop', 'entry' ); ?>                               	
+                              	<?php else : ?>
                                     <!-- END page-heading -->
                                     <div class="post_box" >
                                     <div id="post" class="post clearfix">
@@ -35,18 +32,15 @@
                                     <!-- END post  -->
                                      </div>
 								<?php endif; ?> 		 
-                                <?php wp_reset_query(); ?> 
-                               
+                                <?php wp_reset_query(); ?>                                
                              </div> <!--end class="row"-->
                               
                              <div class="clearfix"></div>
                              <?php if (function_exists("wp_newsstream_pagination")) {
-									wp_newsstream_pagination(); 
-								
+									wp_newsstream_pagination(); 								
 								}
 								?>
-                        </div> <!--end id="inner_content"-->
-                       
+                        </div> <!--end id="inner_content"-->                      
                         
                     </div> <!--end class="col-md-9"-->
                     <div class="col-md-3">
@@ -57,6 +51,4 @@
                 </div> <!--end <div class="row"> -->
             </div> <!--end <div id="content" class="content">-->
         </div>
-
-
 <?php get_footer(' '); ?>

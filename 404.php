@@ -1,6 +1,11 @@
+<?php
+/**
+ * The template for displaying 404 pages (Not Found)
+ *
+ */
+?>
 <?php get_header(); ?>
 <div id="content">
-
 	<div class="row">
 		<article class="col-md-9">
 			<div class="row breadcrumb-container">
@@ -11,15 +16,13 @@
             </div>
             <!-- END page-heading -->
             <div class="post_box" >
-                <div class="post clearfix">
-                
+                <div class="post clearfix">                
                     <div class="entry clearfix">	
                     <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'wp-newsstream' ); ?>.</p>
                     <?php get_search_form(); ?>                  
                     </div>
                     <!-- END entry -->
-                    <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-                    
+                    <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>                    
                 </div>
 			</div>
         </article>	  

@@ -1,3 +1,10 @@
+<?php
+/**
+ * The template for displaying Archive pages
+ *
+ */
+?>
+
 <?php get_header(); ?>
 <div id="content">
 	<div class="row">

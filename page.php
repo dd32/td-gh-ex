@@ -1,3 +1,8 @@
+<?php
+/**
+ * The template for displaying all pages by default
+ */
+?>
 <?php get_header(); ?>
 <div id="content">
 	<div class="row">

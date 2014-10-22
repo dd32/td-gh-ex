@@ -1,4 +1,9 @@
 <?php
+/**
+* WP Newsstream Excerpt Limit Functionality
+*
+*/
+
 function excerpt($limit) {
 	$excerpt = explode(' ', get_the_excerpt(), $limit);
 	if (count($excerpt)>=$limit) {

@@ -1,3 +1,9 @@
+ <?php
+ /**
+ * The template for displaying the footer
+ *
+ */
+ ?>       
         <footer id="footer">
                 <div class="row">
                     <div class="col-md-4">
@@ -10,7 +16,6 @@
                         <?php dynamic_sidebar('footer-three'); ?>
                     </div>
                 </div>
-
             
             <div id="copyright">
                     <div class="row">
@@ -29,22 +34,6 @@
 	</div> <!--end id main-container-->
 </div> <!--end id wrapper-->
 
-<script>
-jQuery(document).ready(function($){
-			$('#wpslide').skdslider({
-			<?php if ( get_theme_mod( 'wp_newsstream_slider_speed' ) ) : ?>
-				'delay' :<?php echo get_theme_mod( 'wp_newsstream_slider_speed' ) ; ?>,
-			<?php endif; ?>
-			'animationSpeed': 2000,
-			'showNextPrev':false,
-			'showPlayButton':false,
-			'autoSlide':true,
-			'animationType':'fading'
-			});		
-			
-});
-</script>
 <?php wp_footer(); ?>
-
 </body>
 </html>

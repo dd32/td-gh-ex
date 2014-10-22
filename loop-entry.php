@@ -1,5 +1,10 @@
+<?php 
+/**
+* The template for displaying all loop entry
+*
+*/
+?>
 <?php while (have_posts()) : the_post(); ?>
-
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>  
             <div class="post_box">
@@ -21,6 +26,5 @@
                     </div>
                     <div class="clearfix"></div>                     
             </div>
-         </div> 
-  
+         </div>  
 <?php endwhile; ?>
