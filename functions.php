@@ -5,10 +5,10 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.5' );
+define( 'KAIRA_THEME_VERSION' , '1.5.1' );
 
-if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' ) ) {
-    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' );
+if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
+    require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
 }
 
 // Theme Widgets
@@ -27,6 +27,7 @@ function kaira_setup_theme() {
     /**
      * Set the content width based on the theme's design and stylesheet.
      */
+    global $content_width;
     if ( ! isset( $content_width ) )
         $content_width = 870; /* pixels */
 
@@ -47,8 +48,7 @@ function kaira_setup_theme() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'main-menu' => __( 'Main Menu', 'albar' ),
-        'header-bar-menu' => __( 'Header Bar Menu (Header Layout Two)', 'albar' )
+		'main-menu' => __( 'Main Menu', 'albar' )
 	) );
 
 	add_theme_support('post-thumbnails');
@@ -221,7 +221,7 @@ function kaira_print_styles(){
         .sidebar-navigation-right .current_page_item {
             box-shadow: -3px 0 0 <?php echo $primary_color; ?> inset;
         }
-        <?php echo $custom_css; ?>
+        <?php echo htmlspecialchars_decode( $custom_css ); ?>
     </style>
     <?php
 }
@@ -234,12 +234,12 @@ function kaira_scripts() {
     if( kaira_theme_option( 'kra-body-google-font' ) ) {
         wp_enqueue_style( 'albar-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
-        wp_enqueue_style( 'albar-google-body-font-default', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'albar-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
     if( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
         wp_enqueue_style( 'albar-google-font-heading', kaira_theme_option( 'kra-heading-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
-        wp_enqueue_style( 'albar-google-heading-font-default', 'http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
     
     wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
@@ -288,9 +288,3 @@ function kaira_wrap_woocommerce_start() {
 function kaira_wrap_woocommerce_end() {
     echo '</div>';
 }
-
-/**
- * Add Albar WP Updates code.
- */
-require get_template_directory() . '/wp-updates-theme.php';
-new WPUpdatesThemeUpdater_953( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

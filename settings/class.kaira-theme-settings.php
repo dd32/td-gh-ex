@@ -16,7 +16,7 @@ class Kaira_theme_settings {
 		// To keep track of the checkbox options for the validate_kaira_settings function.
 		$this->checkboxes = array();
 		$this->settings = array();
-		$this->get_option();
+		$this->get_kaira_option();
 		
 		$this->sections['general']   = __( 'General Settings', 'albar' );
         $this->sections['slider']   = __( 'Slider Settings', 'albar' );
@@ -28,12 +28,37 @@ class Kaira_theme_settings {
 		$this->sections['premium']     = __( 'Kaira', 'albar' );
 		
 		add_action( 'admin_menu', array( &$this, 'kaira_add_pages' ) );
+        
 		add_action( 'admin_init', array( &$this, 'kaira_register_settings' ) );
 		
-		if ( ! get_option( 'kaira_theme_options' ) )
-			$this->kaira_initialize_settings();
-        
 	}
+    
+    /**
+     * Set defaults by the std value without saving to the db
+     */
+    public function kaira_get_options_with_defaults() {
+
+        $options_set_before = get_option( 'kaira_theme_options');
+
+        // defaults
+        $dafaults_array = array();
+        foreach ($this->settings as $settings_key => $settings_array) {
+            if( isset($settings_array['std']) ){
+                if( !$options_set_before ){
+                    $dafaults_array[ $settings_key ] = $settings_array['std'];
+                }
+            }
+        }
+
+        // Options API
+        $options = wp_parse_args(
+            get_option( 'kaira_theme_options', array() ),
+            $dafaults_array
+        );
+
+        return $options;
+
+    }
 	
 	/**
 	 * Add an options page
@@ -124,8 +149,8 @@ class Kaira_theme_settings {
 	 * Description for the Premium Tab section
 	 */
 	public function display_kaira_premium_section() {
-		// This displays the upsell page located in 'framework/tpl/'
-		locate_template( 'framework/tpl/upsell-page.php', true, false );
+		// This displays the upsell page located in 'settings/tpl/'
+		locate_template( 'settings/tpl/upsell-page.php', true, false );
 	}
 	
 	/**
@@ -135,80 +160,78 @@ class Kaira_theme_settings {
 		
         extract( $args );
 		
-		$options = get_option( 'kaira_theme_options' );
-		
-		if ( ! isset( $options[$id] ) && $type != 'checkbox' )
-			$options[$id] = $std;
-		elseif ( ! isset( $options[$id] ) )
-			$options[$id] = 0;
+		$options = $this->kaira_get_options_with_defaults();
 		
 		$field_class = '';
 		if ( $class != '' )
 			$field_class = ' ' . $class;
+        
+        if ( ! isset( $options[$id] ) )
+            $options[$id] = '';
 		
 		switch ( $type ) {
 			
 			case 'heading':
-				echo '</td></tr><tr valign="top"><td colspan="2" class="kaira-heading-td"><h4>' . $desc . '</h4>';
-				break;
-			
-			case 'checkbox':
-				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="kaira_theme_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label class="option-description" for="' . $id . '">' . $desc . '</label>';
-				break;
-			
-			case 'select':
-				echo '<select class="kaira-select' . $field_class . '" name="kaira_theme_options[' . $id . ']">';
-				
-				foreach ( $choices as $value => $label )
-					echo '<option value="' . esc_attr( $value ) . '"' . selected( $options[$id], $value, false ) . '>' . $label . '</option>';
-				
-				echo '</select>';
-				
-				if ( $desc != '' )
-					echo '<br /><span class="description">' . $desc . '</span>';
-				
-				break;
-			
-			case 'radio':
-				$i = 0;
-				foreach ( $choices as $value => $label ) {
-					echo '<div class="radio-option"><input class="radio' . $field_class . '" type="radio" name="kaira_theme_options[' . $id . ']" id="' . $id . $i . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . '> <label class="option-description" for="' . $id . $i . '">' . $label . '</label></div>';
-					$i++;
-				}
-				
-				if ( $desc != '' )
-					echo '<br /><span class="description">' . $desc . '</span>';
-				
-				break;
-			
-			case 'textarea':
-				echo '<textarea class="kaira-textarea ' . $field_class . '" id="' . $id . '" name="kaira_theme_options[' . $id . ']" rows="5" cols="30">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
-				
-				if ( $desc != '' )
-					echo '<br /><span class="description">' . $desc . '</span>';
-				
-				break;
+                echo '</td></tr><tr valign="top"><td colspan="2" class="kaira-heading-td"><h4>' . esc_html( $desc ) . '</h4>';
+                break;
+            
+            case 'checkbox':
+                echo '<input class="checkbox' . esc_attr( $field_class ) . '" type="checkbox" id="' . esc_attr( $id ) . '" name="kaira_theme_options[' . esc_attr( $id ) . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label class="option-description" for="' . esc_attr( $id ) . '">' . wp_kses_post( $desc ) . '</label>';
+                break;
+            
+            case 'select':
+                echo '<select class="kaira-select' . esc_attr( $field_class ) . '" name="kaira_theme_options[' . esc_attr( $id ) . ']">';
+                
+                foreach ( $choices as $value => $label )
+                    echo '<option value="' . esc_attr( $value ) . '"' . selected( $options[$id], $value, false ) . '>' . esc_attr( $label ) . '</option>';
+                
+                echo '</select>';
+                
+                if ( $desc != '' )
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span>';
+                
+                break;
+            
+            case 'radio':
+                $i = 0;
+                foreach ( $choices as $value => $label ) {
+                    echo '<div class="radio-option"><input class="radio' . esc_attr( $field_class ) . '" type="radio" name="kaira_theme_options[' . esc_attr( $id ) . ']" id="' . esc_attr( $id ) . esc_attr( $i ) . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . '> <label class="option-description" for="' . esc_attr( $id ) . esc_attr( $i ) . '">' . esc_attr( $label ) . '</label></div>';
+                    $i++;
+                }
+                
+                if ( $desc != '' )
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span>';
+                
+                break;
+            
+            case 'textarea':
+                echo '<textarea class="kaira-textarea ' . esc_attr( $field_class ) . '" id="' . esc_attr( $id ) . '" name="kaira_theme_options[' . esc_attr( $id ) . ']" rows="5" cols="30">' . esc_textarea( $options[$id] ) . '</textarea>';
+                
+                if ( $desc != '' )
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span>';
+                
+                break;
                 
             case 'number':
-                echo '<input type="number" id="' . $id . '" class="kaira-number" min="" max="" step="any" name="kaira_theme_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" placeholder="">';
+                echo '<input type="number" id="' . esc_attr( $id ) . '" class="kaira-number" min="" max="" step="any" name="kaira_theme_options[' . esc_attr( $id ) . ']" value="' . esc_attr( $options[$id] ) . '" placeholder="">';
                 
                 break;
                 
             case 'media':
-                echo '<input id="' . $id . '" class="kaira-media-upload" name="kaira_theme_options[' . $id . ']" type="text" value="' . esc_attr( $options[$id] ) . '" />
-                      <input id="' . $id . '_button" class="media_upload_button" name="' . $id . '_button" type="text" value="Upload" />';
+                echo '<input id="' . esc_attr( $id ) . '" class="kaira-media-upload" name="kaira_theme_options[' . esc_attr( $id ) . ']" type="text" value="' . esc_attr( $options[$id] ) . '" />
+                      <input id="' . esc_attr( $id ) . '_button" class="media_upload_button" name="' . esc_attr( $id ) . '_button" type="text" value="Upload" />';
                 if ( $desc != '' )
-                    echo '<br /><span class="description">' . $desc . '</span></label>';
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span></label>';
             
                 break;
                 
             case 'color':
-                echo '<div class="color-picker-wrapper" id="' . $id . '">
+                echo '<div class="color-picker-wrapper" id="' . esc_attr( $id ) . '">
                         <span class="color-indicator" style="background-color: ' . esc_attr( $options[$id] ) . '"></span>
-                        <input type="text" name="kaira_theme_options[' . $id . ']" class="color_picker" value="' . esc_attr( $options[$id] ) . '" data-default-color="' . esc_attr( $options[$id] ) . '" />
+                        <input type="text" name="kaira_theme_options[' . esc_attr( $id ) . ']" class="color_picker" value="' . esc_attr( $options[$id] ) . '" data-default-color="' . esc_attr( $options[$id] ) . '" />
                       </div>';
                 if ( $desc != '' )
-                    echo '<br /><span class="description">' . $desc . '</span></label>';
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span></label>';
             
                 break;
                 
@@ -218,13 +241,13 @@ class Kaira_theme_settings {
                 break;
 						
 			case 'text':
-			default:
-		 		echo '<input class="kaira-text' . $field_class . '" type="text" id="' . $id . '" name="kaira_theme_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
-		 		
-		 		if ( $desc != '' )
-		 			echo '<br /><span class="description">' . $desc . '</span>';
-		 		
-		 		break;
+            default:
+                echo '<input class="kaira-text' . esc_attr( $field_class ) . '" type="text" id="' . esc_attr( $id ) . '" name="kaira_theme_options[' . esc_attr( $id ) . ']" value="' . esc_attr( $options[$id] ) . '" />';
+                
+                if ( $desc != '' )
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span>';
+                
+                break;
 		 	
 		}
 		
@@ -233,7 +256,7 @@ class Kaira_theme_settings {
 	/**
 	 * Settings and defaults
 	 */
-	public function get_option() {
+	public function get_kaira_option() {
 		
 		/* General Settings
 		===========================================*/
@@ -304,7 +327,7 @@ class Kaira_theme_settings {
         $this->settings['kra-slider-categories'] = array(
             'section' => 'slider',
             'title'   => __( 'Slider Categories', 'albar' ),
-            'desc'    => __( 'Select the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you\'d like to display in the Homepage Slider, separated by a comma (,)<br />Eg: "13, 17, 19"', 'albar' ),
+            'desc'    => __( 'Enter the ID of the <a href="'. admin_url('edit-tags.php?taxonomy=category') . '" target="_blank">post categories</a> you\'d like to display in the Homepage Slider, separated by a comma (,) -> Eg: "13, 17, 19"', 'albar' ),
             'type'    => 'text',
             'std'     => ''
         );
@@ -378,14 +401,14 @@ class Kaira_theme_settings {
         $this->settings['kra-body-google-font-url'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font URL', 'albar' ),
-            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> http://fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
+            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> //fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
             'type'    => 'text',
-            'std'     => 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
+            'std'     => '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
         );
         $this->settings['kra-body-google-font-name'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font name', 'albar' ),
-            'desc'    => __( 'Enter the FULL name. Eg: <b><big>font-family: \'Open Sans\', sans-serif;</big></b>', 'albar' ),
+            'desc'    => __( 'Enter the FULL name. Eg:<b><big> font-family: \'Open Sans\', sans-serif; </big></b>', 'albar' ),
             'type'    => 'text',
             'std'     => 'font-family: \'Open Sans\', sans-serif;'
         );
@@ -399,14 +422,14 @@ class Kaira_theme_settings {
         $this->settings['kra-heading-google-font-url'] = array(
             'section' => 'styling',
             'title'   => __( 'Heading font URL', 'albar' ),
-            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> http://fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
+            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> //fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
             'type'    => 'text',
-            'std'     => 'http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic'
+            'std'     => '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic'
         );
         $this->settings['kra-heading-google-font-name'] = array(
             'section' => 'styling',
             'title'   => __( 'Heading font name', 'albar' ),
-            'desc'    => __( 'Enter the FULL name. Eg: <b><big>font-family: \'Roboto\', sans-serif;</big></b>', 'albar' ),
+            'desc'    => __( 'Enter the FULL name. Eg:<b><big> font-family: \'Roboto\', sans-serif; </big></b>', 'albar' ),
             'type'    => 'text',
             'std'     => 'font-family: \'Roboto\', sans-serif;'
         );
@@ -446,7 +469,7 @@ class Kaira_theme_settings {
         $this->settings['kra-blog-excl-categories'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Categories', 'albar' ),
-            'desc'    => __( 'Select the <a href="' . admin_url( 'edit-tags.php?taxonomy=category' ) . '" target="_blank">post categories</a> you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in that category.<br />Eg: "-13, -17, -19"', 'albar' ),
+            'desc'    => __( 'Enter the ID of the <a href="'. admin_url('edit-tags.php?taxonomy=category') . '" target="_blank">post categories</a> you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in that category.<br />Eg: "-13, -17, -19"', 'albar' ),
             'type'    => 'text',
             'std'     => ''
         );
@@ -455,7 +478,7 @@ class Kaira_theme_settings {
             'title'   => __( 'Blog Page Title', 'albar' ),
             'desc'    => __( 'Enter the title you want for the blog page.', 'albar' ),
             'type'    => 'text',
-            'std'     => ''
+            'std'     => 'Blog'
         );
         $this->settings['kra-blog-ppp'] = array(
             'section' => 'blog',
@@ -624,21 +647,6 @@ class Kaira_theme_settings {
 	}
 	
 	/**
-	 * Initialize settings to their default values
-	 */
-	public function kaira_initialize_settings() {
-		
-		$default_settings = array();
-		foreach ( $this->settings as $id => $setting ) {
-			if ( $setting['type'] != 'heading' )
-				$default_settings[$id] = $setting['std'];
-		}
-		
-		update_option( 'kaira_theme_options', $default_settings );
-		
-	}
-	
-	/**
 	* Register settings
 	*/
 	public function kaira_register_settings() {
@@ -652,7 +660,7 @@ class Kaira_theme_settings {
 				add_settings_section( $slug, $title, array( &$this, 'kaira_display_section' ), 'kaira-theme-options' );
 		}
 		
-		$this->get_option();
+		// $this->get_kaira_option();
 		
 		foreach ( $this->settings as $id => $setting ) {
 			$setting['id'] = $id;
@@ -665,9 +673,8 @@ class Kaira_theme_settings {
 	* jQuery Tabs
 	*/
 	public function load_kaira_scripts() {
-        wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/framework/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
+        wp_register_script( 'kaira-theme-admin-js', get_stylesheet_directory_uri() . '/settings/js/kaira-admin.js', array( 'jquery', 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch', 'iris', 'wp-color-picker' ), false, 1 );
         wp_enqueue_script( 'kaira-theme-admin-js' );
-        wp_enqueue_script( 'wp-color-picker' );
         wp_print_scripts( 'jquery-ui-tabs' );
         wp_enqueue_media();
 	}
@@ -677,7 +684,7 @@ class Kaira_theme_settings {
 	*/
 	public function load_kaira_styles() {
         wp_enqueue_style( 'wp-color-picker' );
-        wp_register_style( 'kaira-theme-admin-css', get_stylesheet_directory_uri() . '/framework/css/kaira-admin.css' );
+        wp_register_style( 'kaira-theme-admin-css', get_stylesheet_directory_uri() . '/settings/css/kaira-admin.css' );
         wp_enqueue_style( 'kaira-theme-admin-css' );
 	}
 	
@@ -687,7 +694,7 @@ class Kaira_theme_settings {
 	public function validate_kaira_settings( $input ) {
 		
 		if ( ! isset( $input['reset_theme'] ) ) {
-			$options = get_option( 'kaira_theme_options' );
+			$options = $this->kaira_get_options_with_defaults();
 			
 			foreach ( $this->checkboxes as $id ) {
 				if ( isset( $options[$id] ) && ! isset( $input[$id] ) )
@@ -705,9 +712,12 @@ class Kaira_theme_settings {
 $theme_options = new Kaira_theme_settings();
 
 function kaira_theme_option( $option ) {
-	$options = get_option( 'kaira_theme_options' );
-	if ( isset( $options[$option] ) )
-		return $options[$option];
-	else
-		return false;
+    if ( ! isset ( $theme_options ) )
+        $theme_options = new Kaira_theme_settings();
+    
+    $options = $theme_options->kaira_get_options_with_defaults();
+    if ( isset( $options[$option] ) )
+        return $options[$option];
+    else
+        return false;
 } ?>

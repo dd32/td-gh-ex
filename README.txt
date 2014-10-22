@@ -7,22 +7,25 @@ Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Alba is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
 == Description ==
 
 Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
 
+== License ==
+
+Albar WordPress Theme, Copyright 2014 Zack Viljoen.
+Albar is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/copyleft/gpl.html.
+Albar WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012 Automattic http://underscores.me/ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
+All Javascript is located in /js/ with license headers where appropriate.
+
 == Bundled Licenses ==
-
-Iris color picker - Included in WordPress 3.5+
-Copyright (c) 2012–2013 Automattic. Licensed under the GPLv2 license.
-https://github.com/Automattic/Iris
-
-Masonry - v3.1.5
-Cascading grid layout library
-by David DeSandro
-http://desandro.mit-license.org/
 
 jQuery Waypoints - v2.0.3
 Copyright (c) 2011-2013 Caleb Troughton
