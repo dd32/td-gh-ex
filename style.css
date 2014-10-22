@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.10
+Version: 1.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -868,15 +868,14 @@ Page builder
 Front page widgets
 --------------------------------------------------------------*/
 /* General */
-.page-template-page_front-page-php section {
+.panel-grid-cell section {
 	padding: 80px 0;
 	z-index: 999;
 	background-color: #fff;
-	border-bottom: 1px solid #ebebeb;
 	overflow: hidden;
 }
-.page-template-page_front-page-php section:last-of-type {
-	border-bottom: 0;
+.panel-grid {
+	border-bottom: 1px solid #ebebeb;
 }
 section .widget-title {
 	position: relative;
@@ -1366,6 +1365,33 @@ Welcome area
 	text-decoration: none;
 }
 
+/* Better support for third party widgets */
+.panel.widget .widget-title {
+	position: relative;
+	margin-bottom: 60px;
+	padding: 0;
+	border-bottom: 0;
+	text-align: center;
+	font-size: 56px !important;
+	text-transform: uppercase;
+}
+.panel.widget .widget-title:after {
+	position: absolute;
+	left: calc(50% - 35px);
+	width: 70px;
+	content: "";
+	border-bottom: 6px double #ff6b53;
+	bottom: -10px;
+}
+.panel.widget {
+	margin: 0 auto;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.fullwidth {
+	width: 100%;
+}
+
 /*--------------------------------------------------------------
 Carousel
 --------------------------------------------------------------*/
@@ -1473,6 +1499,11 @@ Responsive
 	.welcome-button {
 		display: none;
 	}
+	.panel-grid-cell section,   
+	.panel.widget {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}	
 }
 @media only screen and (max-width: 499px) {
 	.project,
@@ -1597,28 +1628,27 @@ Responsive
 	}
 }
 
-/* Better support for third party widgets */
-.panel.widget .widget-title {
-	position: relative;
-	margin-bottom: 60px;
-	padding: 0;
-	border-bottom: 0;
-	text-align: center;
-	font-size: 56px !important;
-	text-transform: uppercase;
+/* Multi columns support */
+.container {
+  width: 100% !important;	
 }
-.panel.widget .widget-title:after {
-	position: absolute;
-	left: calc(50% - 35px);
-	width: 70px;
-	content: "";
-	border-bottom: 6px double #ff6b53;
-	bottom: -10px;
+.widget .container,
+section .container {
+  padding-left: 30px;
+  padding-right: 30px;
 }
-.panel.widget {
-	margin: 0 auto;
-	padding: 80px 0;
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
 }
-.fullwidth {
-	width: 100%;
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
 }
