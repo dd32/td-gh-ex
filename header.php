@@ -11,6 +11,7 @@
 <head>
 	<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php 
 		/*
 		 *	The important thing in the viewport is what's not here: zoom control. Limiting or disallowing zoom on mobile prevents
@@ -30,18 +31,18 @@
 		 * 	Most of the time, role=complementary will be most appropriate, but each case should be treated differently.
 		 */
 		?>
-		<?php apply_filters( 'universal_before_header_role', '' ); ?>
+		<?php echo apply_filters( 'universal_before_header_role', '' ); ?>
 		<div id="header" class='header'>
 			<header role="banner">
-				<?php apply_filters( 'universal_top_of_header', '' ); ?>								
+				<?php echo apply_filters( 'universal_top_of_header', '' ); ?>								
 				<div class="text-header">
 					<div class='site-title'><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
 					<div class='site-description'><?php bloginfo('description'); ?></div>
 				</div>
-				<?php apply_filters( 'universal_end_of_header', '' ); ?>	
+				<?php echo apply_filters( 'universal_end_of_header', '' ); ?>	
 			</header>
 		</div>
-		<?php apply_filters( 'universal_before_primary_menu_role', '' ); ?>		
+		<?php echo apply_filters( 'universal_before_primary_menu_role', '' ); ?>		
 		<div class='primary-menu'>
 			<?php
 				/*
@@ -55,9 +56,9 @@
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
 			</nav>
 		</div>
-		<?php apply_filters( 'universal_after_primary_menu_role', '' ); ?>
-		<div id="page" class='page-wrapper clear'>
-			<div id="content" class="content clear" tabindex="-1">
+		<?php echo apply_filters( 'universal_after_primary_menu_role', '' ); ?>
+		<div id="page" class="page-wrapper universal-clear">
+			<div id="content" class="content universal-clear" tabindex="-1">
 				<main role="main">
 					<div class='post-wrapper'>
-					<?php apply_filters( 'universal_before_posts', '' ); ?>
+					<?php echo apply_filters( 'universal_before_posts', '' ); ?>

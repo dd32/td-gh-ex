@@ -1,10 +1,10 @@
 === Universal ===
 Contributors: joedolson
-Donate link: http://www.joedolson.com/donate.php
+Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
-Tested up to: 3.9.1
-Stable tag: 0.9.3
+Tested up to: 4.0
+Stable tag: 0.9.4
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -37,6 +37,15 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.4 =
+
+* Bug fix: style issue with sticky posts overlayed by sidebar.
+* Changed: all output from apply_filters() is now echoed, so filters can alter output of earlier filters.
+* Support added for WooCommerce.
+* Added XFN profile reference (required by Theme Guidelines; missed in review)
+* Bug fix: forgot to revert getting a11y.php from child theme, needed for demo.
+* Bug fix: if wrapper background colors are defined and internal colors aren't, link colors break.
 
 = 0.9.3 =
 
