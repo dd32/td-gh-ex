@@ -152,15 +152,11 @@ if( themeora_theme_supports( 'primary', 'fonts' ))
      $customfonts = ''; 
 }
 
-/*  Get the custom CSS
---------------------------------------------------------------------- */
-$customcss = get_theme_mod( 'themeora_tools_css' );
-
 
 /*  Build the final output
 --------------------------------------------------------------------- */
 
-$customizer_final_output = $customfonts .$customizations . $customcss;
+$customizer_final_output = $customfonts .$customizations;
 
 $final_output = preg_replace('#/\*.*?\*/#s', '', $customizer_final_output);
 $final_output = preg_replace('/\s*([{}|:;,])\s+/', '$1', $final_output);

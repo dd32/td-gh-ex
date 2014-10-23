@@ -100,17 +100,23 @@ function Themeora_Customize_Register($wp_customize) {
     );
 
     if (themeora_theme_supports('primary', 'fonts')) {
-        $wp_customize->add_setting('type_select_logo', array('default' => 'Open Sans'));
+        $wp_customize->add_setting('type_select_logo', array(
+            'default' => 'Open Sans',
+            'sanitize_callback' => 'themeora_sanitize_fonts',
+         ));
         $wp_customize->add_control('type_select_logo', array(
             'type' => 'select',
             'label' => __('Logo Font', 'themeora'),
             'section' => 'logo',
             'priority' => 3,
             'choices' => $fonts
-                )
+            )
         );
 
-        $wp_customize->add_setting('type_logo_size', array('default' => '20'));
+        $wp_customize->add_setting('type_logo_size', array(
+            'default' => '20',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_logo_size', array(
             'type' => 'slider',
             'label' => __('Logo Size', 'themeora'),
@@ -120,7 +126,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_size_range
         )));
 
-        $wp_customize->add_setting('type_logo_lineheight', array('default' => '26'));
+        $wp_customize->add_setting('type_logo_lineheight', array(
+            'default' => '26',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_logo_lineheight', array(
             'type' => 'slider',
             'label' => __('Logo Line Height', 'themeora'),
@@ -130,7 +139,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_lineheight_range
         )));
 
-        $wp_customize->add_setting('type_logo_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_logo_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_logo_letterspacing', array(
             'type' => 'slider',
             'label' => __('Logo Letter Spacing', 'themeora'),
@@ -151,7 +163,9 @@ function Themeora_Customize_Register($wp_customize) {
             )
     );
 
-    $wp_customize->add_setting('img-upload-login-logo', array());
+    $wp_customize->add_setting('img-upload-login-logo', array(
+        'sanitize_callback' => 'esc_url',
+    ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img-upload-login-logo', array(
         'label' => __('Login Logo', 'themeora'),
         'section' => 'image_logo_settings',
@@ -159,7 +173,9 @@ function Themeora_Customize_Register($wp_customize) {
         'priority' => 2
      )));
 
-    $wp_customize->add_setting('img-upload-logo', array());
+    $wp_customize->add_setting('img-upload-logo', array(
+        'sanitize_callback' => 'esc_url',
+    ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img-upload-logo', array(
         'label' => __('Logo', 'themeora'),
         'section' => 'image_logo_settings',
@@ -167,7 +183,10 @@ function Themeora_Customize_Register($wp_customize) {
         'priority' => 1
      )));
 
-    $wp_customize->add_setting('img-upload-logo-width', array('default' => ''));
+    $wp_customize->add_setting('img-upload-logo-width', array(
+        'default' => '',
+        'sanitize_callback' => 'themeora_sanitize_int',
+    ));
     $wp_customize->add_control('img-upload-logo-width', array(
         'label' => __('Logo width (px)', 'themeora'),
         'section' => 'image_logo_settings',
@@ -183,10 +202,12 @@ function Themeora_Customize_Register($wp_customize) {
     $wp_customize->add_section('general_settings', array(
         'title' => __('General Settings', 'themeora'),
         'priority' => 3,
-            )
+       )
     );
      
-    $wp_customize->add_setting('img-upload-favicon', array());
+    $wp_customize->add_setting('img-upload-favicon', array(
+        'sanitize_callback' => 'esc_url',
+    ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img-upload-favicon', array(
         'label' => __('Favicon', 'themeora'),
         'section' => 'general_settings',
@@ -194,7 +215,9 @@ function Themeora_Customize_Register($wp_customize) {
         'priority' => 4
      )));
 
-    $wp_customize->add_setting('img-upload-apple_touch', array());
+    $wp_customize->add_setting('img-upload-apple_touch', array(
+        'sanitize_callback' => 'esc_url',
+    ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img-upload-apple_touch', array(
         'label' => __('Apple Touch Icon', 'themeora'),
         'section' => 'general_settings',
@@ -203,7 +226,10 @@ function Themeora_Customize_Register($wp_customize) {
     )));
 
 
-    $wp_customize->add_setting('footer_copyright', array('default' => ''));
+    $wp_customize->add_setting('footer_copyright', array(
+        'default' => '',
+        'sanitize_callback' => 'themeora_sanitize_text_field',
+    ));
     $wp_customize->add_control(new Themeora_Customize_Textarea_Control($wp_customize, 'footer_copyright', array(
         'label' => __('Footer Copyright Text', 'themeora'),
         'section' => 'general_settings',
@@ -211,30 +237,13 @@ function Themeora_Customize_Register($wp_customize) {
         'priority' => 7
     )));
 
-    $wp_customize->add_setting('google_analytics', array('default' => ''));
-    $wp_customize->add_control(new Themeora_Customize_Textarea_Control($wp_customize, 'google_analytics', array(
-        'label' => __('Google Analytics Script', 'themeora'),
-        'section' => 'general_settings',
-        'settings' => 'google_analytics',
-        'priority' => 8
-    )));
-    
-    
-    /* Divider settings
-    ---------------------------------------------------------------------------------------------------- */
-
-    $wp_customize->add_section('divider1', array('priority' => 4));
-    $wp_customize->add_setting('divider1');
-    $wp_customize->add_control('divider1', array('section' => 'divider1'));
-
-
     /* Background settings
       ---------------------------------------------------------------------------------------------------- */
 
     $wp_customize->add_section('background', array(
         'title' => __('Background', 'themeora'),
         'priority' => 5,
-            )
+      )
     );
 
     /* Colour settings
@@ -242,23 +251,25 @@ function Themeora_Customize_Register($wp_customize) {
     $wp_customize->add_section('custom_styles', array(
         'title' => __('Custom Styles', 'themeora'),
         'priority' => 6,
-            )
+        )
     );
 
     // Accent colour
     $wp_customize->add_setting('theme_accent_color', array(
         'default' => '#428BCA',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme_accent_color', array(
-                'label' => __('Accent Color', 'themeora'),
-                'section' => 'custom_styles',
-                'settings' => 'theme_accent_color',
-                'priority' => 1
-                    )));
+        'label' => __('Accent Color', 'themeora'),
+        'section' => 'custom_styles',
+        'settings' => 'theme_accent_color',
+        'priority' => 1
+    )));
 
     // Colour for headings
     $wp_customize->add_setting('header_text_color', array(
         'default' => '#414142',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_text_color', array(
         'label' => __('Header Font Color', 'themeora'),
@@ -270,6 +281,7 @@ function Themeora_Customize_Register($wp_customize) {
     // Colour for body text
     $wp_customize->add_setting('body_text_color', array(
         'default' => '#565656',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'body_text_color', array(
         'label' => __('Body Font Color', 'themeora'),
@@ -281,6 +293,7 @@ function Themeora_Customize_Register($wp_customize) {
     // Body secondary colour
     $wp_customize->add_setting('body_sec_text_color', array(
         'default' => '#B7B7B7',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'body_sec_text_color', array(
         'label' => __('Body Secondary Font Color', 'themeora'),
@@ -292,6 +305,7 @@ function Themeora_Customize_Register($wp_customize) {
     // Button standard color
     $wp_customize->add_setting('button_primary_color', array(
         'default' => '#3498db',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'button_primary_color', array(
         'label' => __('Button color', 'themeora'),
@@ -303,6 +317,7 @@ function Themeora_Customize_Register($wp_customize) {
     // Button hover colour
     $wp_customize->add_setting('button_primary_hover_color', array(
         'default' => '#4bb0f4',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'button_primary_hover_color', array(
         'label' => __('Button hover color', 'themeora'),
@@ -320,20 +335,26 @@ function Themeora_Customize_Register($wp_customize) {
         $wp_customize->add_section('custom_heading_typography', array(
             'title' => __('Heading Typography', 'themeora'),
             'priority' => 7,
-                )
+           )
         );
 
-        $wp_customize->add_setting('type_select_headings', array('default' => ''));
+        $wp_customize->add_setting('type_select_headings', array(
+            'default' => '',
+            'sanitize_callback' => 'themeora_sanitize_fonts',
+        ));
         $wp_customize->add_control('type_select_headings', array(
             'type' => 'select',
             'label' => __('Header Font', 'themeora'),
             'section' => 'custom_heading_typography',
             'priority' => 1,
             'choices' => $fonts
-                )
+          )
         );
 
-        $wp_customize->add_setting('type_heading_weight', array('default' => 'bold'));
+        $wp_customize->add_setting('type_heading_weight', array(
+            'default' => 'bold',
+            'sanitize_callback' => 'themeora_sanitize_text',
+        ));
         $wp_customize->add_control('type_heading_weight', array(
             'type' => 'select',
             'label' => __('Heading Font Weight', 'themeora'),
@@ -343,57 +364,75 @@ function Themeora_Customize_Register($wp_customize) {
                 )
         );
 
-        $wp_customize->add_setting('type_slider_h1_size', array('default' => '46'));
+        $wp_customize->add_setting('type_slider_h1_size', array(
+            'default' => '46',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h1_size', array(
-                    'type' => 'slider',
-                    'label' => __('H1 Size', 'themeora'),
-                    'section' => 'custom_heading_typography',
-                    'settings' => 'type_slider_h1_size',
-                    'priority' => 2,
-                    'choices' => $font_size_range
-                        )));
+            'type' => 'slider',
+            'label' => __('H1 Size', 'themeora'),
+            'section' => 'custom_heading_typography',
+            'settings' => 'type_slider_h1_size',
+            'priority' => 2,
+            'choices' => $font_size_range
+        )));
 
-        $wp_customize->add_setting('type_slider_h1_lineheight', array('default' => '54'));
+        $wp_customize->add_setting('type_slider_h1_lineheight', array(
+            'default' => '54',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h1_lineheight', array(
-                    'type' => 'slider',
-                    'label' => __('H1 Line Height', 'themeora'),
-                    'section' => 'custom_heading_typography',
-                    'settings' => 'type_slider_h1_lineheight',
-                    'priority' => 3,
-                    'choices' => $font_lineheight_range
-                        )));
+            'type' => 'slider',
+            'label' => __('H1 Line Height', 'themeora'),
+            'section' => 'custom_heading_typography',
+            'settings' => 'type_slider_h1_lineheight',
+            'priority' => 3,
+            'choices' => $font_lineheight_range
+        )));
 
-        $wp_customize->add_setting('type_slider_h1_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_h1_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h1_letterspacing', array(
-                    'type' => 'slider',
-                    'label' => __('H1 Letter Spacing', 'themeora'),
-                    'section' => 'custom_heading_typography',
-                    'settings' => 'type_slider_h1_letterspacing',
-                    'priority' => 4,
-                    'choices' => $font_letterspacing_range
-                        )));
+            'type' => 'slider',
+            'label' => __('H1 Letter Spacing', 'themeora'),
+            'section' => 'custom_heading_typography',
+            'settings' => 'type_slider_h1_letterspacing',
+            'priority' => 4,
+            'choices' => $font_letterspacing_range
+        )));
 
-        $wp_customize->add_setting('type_slider_h2_size', array('default' => '28'));
+        $wp_customize->add_setting('type_slider_h2_size', array(
+            'default' => '28',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h2_size', array(
-                    'type' => 'slider',
-                    'label' => __('H2 Size', 'themeora'),
-                    'section' => 'custom_heading_typography',
-                    'settings' => 'type_slider_h2_size',
-                    'priority' => 5,
-                    'choices' => $font_size_range
-                        )));
+            'type' => 'slider',
+            'label' => __('H2 Size', 'themeora'),
+            'section' => 'custom_heading_typography',
+            'settings' => 'type_slider_h2_size',
+            'priority' => 5,
+            'choices' => $font_size_range
+        )));
 
-        $wp_customize->add_setting('type_slider_h2_lineheight', array('default' => '32'));
+        $wp_customize->add_setting('type_slider_h2_lineheight', array(
+            'default' => '32',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h2_lineheight', array(
-                    'type' => 'slider',
-                    'label' => __('H2 Line Height', 'themeora'),
-                    'section' => 'custom_heading_typography',
-                    'settings' => 'type_slider_h2_lineheight',
-                    'priority' => 6,
-                    'choices' => $font_lineheight_range
-                        )));
+            'type' => 'slider',
+            'label' => __('H2 Line Height', 'themeora'),
+            'section' => 'custom_heading_typography',
+            'settings' => 'type_slider_h2_lineheight',
+            'priority' => 6,
+            'choices' => $font_lineheight_range
+        )));
 
-        $wp_customize->add_setting('type_slider_h2_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_h2_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h2_letterspacing', array(
             'type' => 'slider',
             'label' => __('H2 Letter Spacing', 'themeora'),
@@ -403,7 +442,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_letterspacing_range
         )));
 
-        $wp_customize->add_setting('type_slider_h3_size', array('default' => '22'));
+        $wp_customize->add_setting('type_slider_h3_size', array(
+            'default' => '22',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h3_size', array(
             'type' => 'slider',
             'label' => __('H3 Size', 'themeora'),
@@ -413,7 +455,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_size_range
         )));
 
-        $wp_customize->add_setting('type_slider_h3_lineheight', array('default' => '32'));
+        $wp_customize->add_setting('type_slider_h3_lineheight', array(
+            'default' => '32',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h3_lineheight', array(
             'type' => 'slider',
             'label' => __('H3 Line Height', 'themeora'),
@@ -423,7 +468,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_lineheight_range
         )));
 
-        $wp_customize->add_setting('type_slider_h3_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_h3_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h3_letterspacing', array(
             'type' => 'slider',
             'label' => __('H3 Letter Spacing', 'themeora'),
@@ -433,7 +481,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_letterspacing_range
          )));
 
-        $wp_customize->add_setting('type_slider_h4_size', array('default' => '20'));
+        $wp_customize->add_setting('type_slider_h4_size', array(
+            'default' => '20',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h4_size', array(
             'type' => 'slider',
             'label' => __('H4 Size', 'themeora'),
@@ -443,7 +494,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_size_range
          )));
 
-        $wp_customize->add_setting('type_slider_h4_lineheight', array('default' => '30'));
+        $wp_customize->add_setting('type_slider_h4_lineheight', array(
+            'default' => '30',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h4_lineheight', array(
             'type' => 'slider',
             'label' => __('H4 Line Height', 'themeora'),
@@ -453,7 +507,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_lineheight_range
          )));
 
-        $wp_customize->add_setting('type_slider_h4_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_h4_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h4_letterspacing', array(
             'type' => 'slider',
             'label' => __('H4 Letter Spacing', 'themeora'),
@@ -463,7 +520,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_letterspacing_range
          )));
 
-        $wp_customize->add_setting('type_slider_h5_size', array('default' => '16'));
+        $wp_customize->add_setting('type_slider_h5_size', array(
+            'default' => '16',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h5_size', array(
             'type' => 'slider',
             'label' => __('H5 Size', 'themeora'),
@@ -473,7 +533,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_size_range
         )));
 
-        $wp_customize->add_setting('type_slider_h5_lineheight', array('default' => '28'));
+        $wp_customize->add_setting('type_slider_h5_lineheight', array(
+            'default' => '28',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h5_lineheight', array(
             'type' => 'slider',
             'label' => __('H5 Line Height', 'themeora'),
@@ -483,7 +546,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_lineheight_range
          )));
 
-        $wp_customize->add_setting('type_slider_h5_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_h5_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_h5_letterspacing', array(
             'type' => 'slider',
             'label' => __('H5 Letter Spacing', 'themeora'),
@@ -503,7 +569,10 @@ function Themeora_Customize_Register($wp_customize) {
                 )
         );
 
-        $wp_customize->add_setting('type_select_body', array('default' => 'Open Sans'));
+        $wp_customize->add_setting('type_select_body', array(
+            'default' => 'Open Sans',
+            'sanitize_callback' => 'themeora_sanitize_fonts',
+        ));
         $wp_customize->add_control('type_select_body', array(
             'type' => 'select',
             'label' => __('Body Font', 'themeora'),
@@ -513,7 +582,10 @@ function Themeora_Customize_Register($wp_customize) {
                 )
         );
 
-        $wp_customize->add_setting('type_slider_body_size', array('default' => '16'));
+        $wp_customize->add_setting('type_slider_body_size', array(
+            'default' => '16',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_body_size', array(
             'type' => 'slider',
             'label' => __('Body Size', 'themeora'),
@@ -523,7 +595,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_size_range
         )));
 
-        $wp_customize->add_setting('type_slider_body_lineheight', array('default' => '28'));
+        $wp_customize->add_setting('type_slider_body_lineheight', array(
+            'default' => '28',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_body_lineheight', array(
             'type' => 'slider',
             'label' => __('Body Line Height', 'themeora'),
@@ -533,7 +608,10 @@ function Themeora_Customize_Register($wp_customize) {
             'choices' => $font_lineheight_range
         )));
 
-        $wp_customize->add_setting('type_slider_body_letterspacing', array('default' => '0'));
+        $wp_customize->add_setting('type_slider_body_letterspacing', array(
+            'default' => '0',
+            'sanitize_callback' => 'themeora_sanitize_int',
+        ));
         $wp_customize->add_control(new Themeora_Customize_Slider_Control($wp_customize, 'type_slider_body_letterspacing', array(
             'type' => 'slider',
             'label' => __('Body Letter Spacing', 'themeora'),
@@ -544,12 +622,6 @@ function Themeora_Customize_Register($wp_customize) {
         )));
     }
 
-    /* Divider
-      ---------------------------------------------------------------------------------------------------- */
-
-    $wp_customize->add_section('divider2', array('priority' => 8));
-    $wp_customize->add_setting('divider2');
-    $wp_customize->add_control('divider2', array('section' => 'divider2'));
 
 
     /* Blog settings
@@ -558,20 +630,25 @@ function Themeora_Customize_Register($wp_customize) {
     $wp_customize->add_section('blog_settings', array(
         'title' => __('Blog Settings', 'themeora'),
         'priority' => 11,
-            )
+        )
     );
 
-    $wp_customize->add_setting('post_pagination', array('default' => true,));
+    $wp_customize->add_setting('post_pagination', array(
+        'default' => true,
+        'sanitize_callback' => 'themeora_sanitize_checkbox',
+    ));
     $wp_customize->add_control('post_pagination', array(
         'type' => 'checkbox',
         'label' => __('Enable Post Pagination', 'themeora'),
         'section' => 'blog_settings',
         'priority' => 1,
-            )
+        )
     );
 
-
-    $wp_customize->add_setting('show_tags', array('default' => false,));
+    $wp_customize->add_setting('show_tags', array(
+        'default' => false,
+        'sanitize_callback' => 'themeora_sanitize_checkbox',
+    ));
     $wp_customize->add_control('show_tags', array(
         'type' => 'checkbox',
         'label' => __('Display Single Post Tags', 'themeora'),
@@ -580,7 +657,10 @@ function Themeora_Customize_Register($wp_customize) {
             )
     );
     
-    $wp_customize->add_setting('show_author_bio', array('default' => false,));
+    $wp_customize->add_setting('show_author_bio', array(
+        'default' => false,
+        'sanitize_callback' => 'themeora_sanitize_checkbox',
+    ));
     $wp_customize->add_control('show_author_bio', array(
         'type' => 'checkbox',
         'label' => __('Show author block under post', 'themeora'),
@@ -589,49 +669,54 @@ function Themeora_Customize_Register($wp_customize) {
             )
     );
 
-
-    /* Divider
-      ---------------------------------------------------------------------------------------------------- */
-
-    $wp_customize->add_section('divider3', array('priority' => 201));
-    $wp_customize->add_setting('divider3');
-    $wp_customize->add_control('divider3', array('section' => 'divider3'));
-
-
-    /* Custom CSS
-      ---------------------------------------------------------------------------------------------------- */
-
-    $wp_customize->add_section('tools', array(
-        'title' => __('Tools CSS', 'themeora'),
-        'priority' => 200,
-            )
-    );
-
-    $default_css =
-            '/*
-List your Custom CSS in this textarea. All your styles will be 
-minimized and printed in the theme header. 
-You are free to remove this note. Enjoy! 
-
-CSS for Beginners: http://www.w3schools.com/css/
-*/
-';
-
-    $wp_customize->add_setting('themeora_tools_css', array('default' => $default_css));
-    $wp_customize->add_control(new Themeora_Customize_Textarea_Control($wp_customize, 'themeora_tools_css', array(
-        'label' => __('Custom CSS Editor', 'themeora'),
-        'section' => 'tools',
-        'settings' => 'themeora_tools_css',
-        'priority' => 8
-    )));
-
-
     /* Transport for live previews
-      ---------------------------------------------------------------------------------------------------- */
+    ---------------------------------------------------------------------------------------------------- */
 
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('img-upload-logo-width')->transport = 'postMessage';
     $wp_customize->get_setting('type_logo_size')->transport = 'postMessage';
     $wp_customize->get_setting('type_logo_lineheight')->transport = 'postMessage';
     $wp_customize->get_setting('footer_copyright')->transport = 'postMessage';
+}
+
+/* Sanetize callbacks
+---------------------------------------------------------------------------------------------------- */
+
+function themeora_sanitize_checkbox( $input ) {
+	if ( $input == 1 ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
+
+//Integers
+function themeora_sanitize_int( $input ) {
+    if( is_numeric( $input ) ) {
+        return intval( $input );
+    }
+}
+
+//Text
+function themeora_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
+//Url
+function themeora_sanitize_url( $input ) {
+    return esc_url( $input );
+}
+
+function themeora_sanitize_text_field( $input ) {
+    wp_kses_post( $input );
+}
+
+//Fonts
+function themeora_sanitize_fonts( $input ) {
+    $valid = themeora_fonts();
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
 }

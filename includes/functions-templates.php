@@ -1,6 +1,6 @@
 <?php
 
-
+if ( ! function_exists( 'themeora_entry_meta' ) ) :
 /**
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  * @since themeora 1.0
@@ -24,7 +24,9 @@ function themeora_entry_meta($shorten = false) {
         <?php echo '</div>';
     }
 }
+endif;
 
+if ( ! function_exists( 'themeora_entry_date' ) ) :
 /**
  * Prints HTML with date information for current post.
  * @since themeora 1.0
@@ -49,7 +51,10 @@ function themeora_entry_date( $echo = true ) {
 
 	return $date;
 }
+endif;
 
+
+if ( ! function_exists( 'themeora_post_nav' ) ) :
 /**
 * Displays navigation to next/previous post when applicable.
 * @since themeora 1.0
@@ -57,7 +62,6 @@ function themeora_entry_date( $echo = true ) {
 */
 function themeora_post_nav() {
 	global $post;
-    global $themeora_options;
     if( get_theme_mod( 'post_pagination' ) == true ) {
         // Don't print empty markup if there's nowhere to navigate.
         $previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -79,7 +83,10 @@ function themeora_post_nav() {
 	<?php
     }
 }
+endif;
 
+
+if ( ! function_exists( 'themeora_post_tags' ) ) :
 /**
 * Displays post tags
 * @since themeora 1.0
@@ -87,21 +94,22 @@ function themeora_post_nav() {
 */
 function themeora_post_tags() {
 	global $post;
-    global $themeora_options;
     if( get_theme_mod( 'show_tags' ) == true && has_tag() && is_singular() ) {
         echo '<div class="styled-box post-tags">';
         echo the_tags( '<h3>' . __('Tagged As', THEMEORA_THEME_NAME) . '</h3>', '', '' );
         echo '</div>';
     }
 }
+endif;
 
+
+if ( ! function_exists( 'themeora_post_author_meta' ) ) :
 /**
  * Displays author information under posts
 *  @since themeora 1.0
 *  @return block of html to display author info
 */
 function themeora_post_author_meta() {
-    global $themeora_options;
     if( get_theme_mod( 'show_author_bio' ) == true ) {
         if ( 'post' == get_post_type() && get_the_author_meta('first_name') != '' && get_the_author_meta('last_name') != '') { ?>
             <div class="post-author styled-box">
@@ -121,7 +129,10 @@ function themeora_post_author_meta() {
         }
     }
 }
+endif;
 
+
+if ( ! function_exists( 'themeora_paging' ) ) :
 /**
  * Displays navigation to next/previous set of posts when applicable.
  * @since themeora 1.0
@@ -152,7 +163,10 @@ function themeora_paging() {
     </div>
 	<?php
 }
+endif;
 
+
+if ( ! function_exists( 'themeora_post_media' ) ) :
 /**
  * Displays the correct media above a post, featured, image, gallery, video or audio
  * @since themeora 1.0
@@ -173,8 +187,10 @@ function themeora_post_media( $postId, $size = null ){
     <?php endif; ?>
 <?php
 }
+endif;
 
 
+if ( ! function_exists( 'themeora_load_content' ) ) :
 /**
  * Checks the post type and loads the right content from the includes folder
  * @since themeora 1.0
@@ -184,17 +200,19 @@ function themeora_post_media( $postId, $size = null ){
 function themeora_load_content( $post ){
     //load the content for quotes
     if ( get_post_format($post) == "quote" )
-        include 'content-quote.php';
+        get_template_part('includes/content', 'quote');
     //load the content for galleries
     elseif ( get_post_format($post) == "gallery" )
-        include 'content-gallery.php';
+        get_template_part('includes/content', 'gallery');
     elseif ( get_post_format($post) == "link" )
-        include 'content-link.php';
+        get_template_part('includes/content', 'link');
     //load content for any other post type
     else
-        include 'content-standard.php';
+        get_template_part('includes/content', 'standard');
 }
+endif;
 
+if ( ! function_exists( 'themeora_excerpt_more' ) ) :
 /**
  * Add our own read more link to the except
  * @return block of html for a read more link
@@ -203,8 +221,12 @@ function themeora_load_content( $post ){
 function themeora_excerpt_more() {
 	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. __('...read more', THEMEORA_THEME_NAME) . '</a>';
 }
+endif;
+
 add_filter( 'excerpt_more', 'themeora_excerpt_more' );
 
+
+if ( ! function_exists( 'themeora_default_page_loop' ) ) :
 /**
  * Default loop
  *
@@ -218,7 +240,7 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
     $col_span = $sidebar === true ? 'col-md-8' : 'col-md-12';
     $template = get_page_template_slug( $page );
     ?>
-    <div class="full-width-container individual-page <?php echo $template; ?>">
+    <div class="full-width-container <?php echo $template; ?>">
         <div class="container">
             <div class="row">
                 <div class="<?php echo $col_span ?>">
@@ -239,7 +261,6 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
                     <!-- begin comments -->
                     <?php if ( comments_open() || get_comments_number() ) : ?>
                         <div class="blog-comments styled-box mobile-stack">
-                            <?php next_comments_link(); previous_comments_link(); ?>
                             <?php comments_template(); ?>
                         </div>
                     <?php endif; ?>
@@ -248,7 +269,7 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
                 </div>
                 <?php 
                 if ( $sidebar === true ) {
-                    include 'sidebar-page.php';
+                    get_sidebar('page');
                 }
                 ?>
 
@@ -256,7 +277,10 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
         </div><!-- end container -->
     </div><!-- end main-content-area -->
 <?php }
+endif;
 
+
+if ( ! function_exists( 'themeora_get_link_url' ) ) :
 /**
  * Return the post URL.
  *
@@ -264,9 +288,7 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
  * the first link found in the post content.
  *
  * Falls back to the post permalink if no URL is found in the post.
- *
  * @since Twenty Thirteen 1.0
- *
  * @return string The Link format URL.
  */
 function themeora_get_link_url() {
@@ -275,71 +297,4 @@ function themeora_get_link_url() {
 
 	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
 }
-
-/* Add retina support
------------------------------------------------------------------------------- */
-
-/**
- * Retina images
- * This function is attached to the 'wp_generate_attachment_metadata' filter hook.
- */
-function themeora_retina_support_attachment_meta( $metadata, $attachment_id ) {
-    foreach ( $metadata as $key => $value ) {
-        if ( is_array( $value ) ) {
-            foreach ( $value as $image => $attr ) {
-                if ( is_array( $attr ) )
-                    themeora_retina_support_create_images( get_attached_file( $attachment_id ), $attr['width'], $attr['height'], true );
-            }
-        }
-    }
-    return $metadata;
-}
-add_filter( 'wp_generate_attachment_metadata', 'themeora_retina_support_attachment_meta', 10, 2 );
-
-/**
- * Create retina-ready images
- * Referenced via retina_support_attachment_meta().
- */
-function themeora_retina_support_create_images( $file, $width, $height, $crop = false ) {
-    if ( $width || $height ) {
-        $resized_file = wp_get_image_editor( $file );
-        if ( ! is_wp_error( $resized_file ) ) {
-            $filename = $resized_file->generate_filename( $width . 'x' . $height . '@2x' );
- 
-            $resized_file->resize( $width * 2, $height * 2, $crop );
-            $resized_file->save( $filename );
- 
-            $info = $resized_file->get_size();
- 
-            return array(
-                'file' => wp_basename( $filename ),
-                'width' => $info['width'],
-                'height' => $info['height'],
-            );
-        }
-    }
-    return false;
-}
-
-/**
- * Delete retina-ready images
- * This function is attached to the 'delete_attachment' filter hook.
- */
-function themeora_delete_retina_support_images( $attachment_id ) {
-    $meta = wp_get_attachment_metadata( $attachment_id );
-    if ( $meta ){
-        $upload_dir = wp_upload_dir();
-        $path = pathinfo( $meta['file'] );
-        foreach ( $meta as $key => $value ) {
-            if ( 'sizes' === $key ) {
-                foreach ( $value as $sizes => $size ) {
-                    $original_filename = $upload_dir['basedir'] . '/' . $path['dirname'] . '/' . $size['file'];
-                    $retina_filename = substr_replace( $original_filename, '@2x.', strrpos( $original_filename, '.' ), strlen( '.' ) );
-                    if ( file_exists( $retina_filename ) )
-                        unlink( $retina_filename );
-                }
-            }
-        }
-    }
-}
-add_filter( 'delete_attachment', 'themeora_delete_retina_support_images' );
+endif;

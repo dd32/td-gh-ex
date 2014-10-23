@@ -16,8 +16,8 @@ if ( !function_exists('themeora_admin_favicon') )
 {
 	function themeora_admin_favicon() 
 	{ 
-		if( get_theme_mod( 'img-upload-favicon' ) ) { 
-			$favicon = get_theme_mod( 'img-upload-favicon');
+		if ( get_theme_mod( 'img-upload-favicon' ) ) { 
+			$favicon = esc_html( get_theme_mod( 'img-upload-favicon') );
 		} else { 	
 			$favicon = THEMEORA_FRAMEWORK_IMAGES_URL.'/favicon.ico';
 		} 
@@ -39,9 +39,9 @@ if ( !function_exists('themeora_custom_login') )
 	function themeora_custom_login() 
 	{
 		
-		if( get_theme_mod( 'img-upload-login-logo' ) ) { 
+		if ( get_theme_mod( 'img-upload-login-logo' ) ) { 
 			//GET DEFAULT IMAGE IF UPLOADED
-			$login_logo = get_theme_mod( 'img-upload-login-logo');
+			$login_logo = esc_html( get_theme_mod( 'img-upload-login-logo') );
 		} else {
 			//GET DEFAULT IMAGES IF NO UPLOADED IMAGE
 			$framwork_logo = TRUE;
@@ -87,7 +87,7 @@ if ( !function_exists('themeora_add_favicon') )
 	//Favicon
 	if( get_theme_mod( 'img-upload-favicon' ) ) 
 	{ 
-		$favicon = get_theme_mod( 'img-upload-favicon');
+		$favicon = esc_html( get_theme_mod( 'img-upload-favicon') );
 	} else { 
 		$favicon = '';
 	} 
@@ -95,7 +95,7 @@ if ( !function_exists('themeora_add_favicon') )
 	//Apple touch icon
 	if ( get_theme_mod( 'img-upload-apple_touch' ) ) 
 	{ 
-		$appleicon = get_theme_mod( 'img-upload-apple_touch');
+		$appleicon = esc_html( get_theme_mod( 'img-upload-apple_touch') );
 	} else { 
 		$appleicon = '';
 	}

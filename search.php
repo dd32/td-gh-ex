@@ -28,7 +28,7 @@
                 <?php if ( have_posts() ) : ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class('post-teaser styled-box'); ?>>
-                            <?php themeora_post_media( $post->ID, 'thumbnail-span-8' ); ?>
+                            <?php themeora_post_media( $post->ID, 'themeora-thumbnail-span-8' ); ?>
                             <div class="content">
                                 <h2 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                 <?php themeora_entry_meta(); ?>
@@ -41,7 +41,7 @@
     			<!-- end page content -->
 			</div><!-- end span8 -->
 
-            <?php include 'includes/sidebar.php'; ?>
+            <?php get_sidebar(); ?>
 
         </div><!-- end row -->
     </div> <!-- end container -->

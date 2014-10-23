@@ -5,29 +5,21 @@
 <!--[if IE 9 ]>    <html class="no-js ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-    <title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
+    <title><?php wp_title(); ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <?php wp_head(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-    <script src="<?php echo get_template_directory_uri();?>/js/modernizr.custom.js"></script>
     
-    <!--[if lt IE 9]>
-      <script src="<?php echo get_template_directory_uri();?>/js/html5shiv.js"></script>
-      <script src="<?php echo get_template_directory_uri();?>/js/respond.js"></script>
-    <![endif]-->
-    
-    <?php echo get_theme_mod( 'google_analytics' ); ?>
+    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(array('page-' . str_replace(' ','-', strtolower( wp_title('',false,'')) ) )); ?> data-spy="scroll" data-target="#nav-spy" data-offset="200">
+<body <?php body_class(array('page-' . str_replace(' ','-', strtolower( wp_title('',false,'')) ) )); ?>>
 
-<div class="page-wrapper" data-scroll-speed="<?php echo !empty($themeora_options['themeora_scroll_speed']) ? $themeora_options['themeora_scroll_speed'] : '500' ?>">
+<div class="page-wrapper">
     <!-- BEGIN NAV -->
     <nav class="primary-navigation navbar" role="navigation">
         <div class="container">
@@ -35,12 +27,12 @@
                 <?php 
                 //logo image
                 if( get_theme_mod( 'img-upload-logo' )) { // CUSTOMIZER LOGO ?>  
-                <a href="<?php echo home_url(); ?>" title="<?php echo bloginfo( 'name' ); ?>" rel="<?php _e( 'home', THEMEORA_THEME_NAME ) ?>"><img style="width:<?php echo get_theme_mod('img-upload-logo-width'); ?>px;" src="<?php echo get_theme_mod( 'img-upload-logo' )?>" class="logo-uploaded" alt="<?php echo bloginfo( 'name' ); ?>" /></a>
+                <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="<?php _e( 'home', THEMEORA_THEME_NAME ) ?>"><img style="width:<?php echo esc_html( get_theme_mod( 'img-upload-logo-width' ) ); ?>px;" src="<?php echo esc_html( get_theme_mod( 'img-upload-logo' ) )?>" class="logo-uploaded" alt="<?php echo get_bloginfo( 'name' ); ?>" /></a>
                 <?php }
 
                 //typography logo
                 else { ?>  
-                    <a href="<?php echo home_url(); ?>" title="<?php echo bloginfo( 'name' ); ?>" rel="<?php _e( 'home', THEMEORA_THEME_NAME ) ?>"><div class="logo-text" style="font-size: <?php echo get_theme_mod( 'type_logo_size' ); ?>px; line-height: <?php echo get_theme_mod( 'type_logo_lineheight' )?>px"><?php bloginfo( 'name' ); ?></div></a>
+                    <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="<?php _e( 'home', THEMEORA_THEME_NAME ) ?>"><div class="logo-text" style="font-size: <?php echo esc_html( get_theme_mod( 'type_logo_size' ) ); ?>px; line-height: <?php echo esc_html( get_theme_mod( 'type_logo_lineheight' ) )?>px"><?php bloginfo( 'name' ); ?></div></a>
                 <?php } ?>
                 
                 <?php 

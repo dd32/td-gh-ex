@@ -22,14 +22,14 @@
 
                         <!-- begin comments -->
                         <div class="blog-comments styled-box mobile-stack">
-                            <?php next_comments_link(); previous_comments_link(); ?>
                             <?php comments_template(); ?>
                         </div>
                         <!-- end comments -->
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div><!-- end col-md-8 -->
-            <?php include 'includes/sidebar.php'; ?>
+            
+            <?php get_sidebar(); ?>
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end full-width-container -->

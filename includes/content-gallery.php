@@ -8,7 +8,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-teaser styled-box'); ?>>
     <?php 
     //load the post media depending on what kind of post it is
-    themeora_post_media( $post, 'thumbnail-span-8'); 
+    themeora_post_media( $post->ID, 'themeora-thumbnail-span-8'); 
     ?>
     <div class="content">
         <?php if ( is_single() ) : ?>

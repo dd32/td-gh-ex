@@ -5,7 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-teaser styled-box'); ?>>
-    <?php themeora_post_media( $post, 'thumbnail-span-8' ); ?>
+    <?php themeora_post_media( $post->ID, 'themeora-thumbnail-span-8' ); ?>
     <div class="content">
         <?php if ( is_single() ) : ?>
             <h1 class="title"><?php the_title(); ?></h1>

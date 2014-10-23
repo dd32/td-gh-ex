@@ -35,7 +35,7 @@
                 <?php themeora_paging(); ?>
             </div><!-- end 8 cols -->
 
-            <?php include 'includes/sidebar.php'; ?>
+            <?php get_sidebar(); ?>
 
         </div><!-- end row -->
     </div><!-- end Container -->

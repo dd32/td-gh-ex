@@ -35,7 +35,7 @@ class themeora_Video_Widget extends WP_Widget {
         echo $before_widget;
         
         if ( $title )
-            echo $before_title . $title . $after_title;
+            echo $before_title . esc_html( $title ) . $after_title;
         
         if ( $url )
             echo '<div class="embed-container">'. $url . '</div>';

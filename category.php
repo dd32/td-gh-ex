@@ -20,7 +20,7 @@
                 <?php themeora_paging(); ?>                
             </div>
 
-            <?php include 'includes/sidebar.php'; ?>
+            <?php get_sidebar(); ?>
 
         </div><!-- end row -->
     </div><!-- end Container -->
