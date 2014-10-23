@@ -4,7 +4,7 @@ Theme URI: http://wordpress.chakosh.ir/?theme=beautiful
 Author: AmirMasoud Sheidayi
 Author URI: http://chakosh.ir/
 Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail, use this theme for your arts and photos, NOTICE: This theme will not show thumbnails that are less than 480×480 Pixel
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready, buddypress
@@ -496,6 +496,17 @@ header.row .col-md-8
 #navigation li.active a {
 	background: #FFF;
 }
+
+/* Add the following to your stylesheet */
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:active>.dropdown-menu, .dropdown-submenu:hover>.dropdown-menu {
+display: block;
+}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:active>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
 /**
  * 6.0 - Content
@@ -1006,6 +1017,13 @@ header.row .col-md-8
 	padding: 20px 12px;
 }
 /*Comment Output*/
+#comments {
+	padding: 0 30px 15px 30px;
+	margin-top: 50px;
+	background-color: #fff;
+border-bottom: 1px solid #DDD;
+background: #FFF;
+}
 #comments>h2
 {
 	text-align: center;
@@ -1067,12 +1085,6 @@ header.row .col-md-8
 .comment-content
 {
 	padding: 20px 0;
-}
-.comment-list
-{
-	padding: 0 30px 15px 30px;
-	margin-top: 50px;
-	background-color: #fff;
 }
 .comment-notes, .form-allowed-tags
 {

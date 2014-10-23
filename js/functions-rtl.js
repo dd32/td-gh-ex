@@ -127,5 +127,4 @@ jQuery(document).ready(function($){
 	// so we don't need inline style
 	$(".blog-thumbnail img").removeAttr("width");
 	$(".blog-thumbnail img").removeAttr("height");
-
 });

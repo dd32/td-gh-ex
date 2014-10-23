@@ -38,3 +38,6 @@ bug fixes
 
 1.0.6
 bug fixes
+
+1.0.7
+bug fixes

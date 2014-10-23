@@ -128,4 +128,6 @@ jQuery(document).ready(function($){
 	$(".blog-thumbnail img").removeAttr("width");
 	$(".blog-thumbnail img").removeAttr("height");
 
+
+
 });

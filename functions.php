@@ -2,38 +2,12 @@
 // bootstrap walker for navigation
 require_once('inc/wp_bootstrap_navwalker.php');
 
-if( ! function_exists( 'beautiful_setup' ) ) :
 
-	function beautiful_setup() {
-
-		/*
-		 * Make beautiful for translation.
-		 *
-		 * Translations can be added to the /languages/ directory.
-	     * 
-		 */
-		load_theme_textdomain( 'beautiful', get_template_directory() . '/languages' );
-
-		// This theme styles the visual editor to resemble the theme style.
-		add_editor_style( array( 'css/editor-style.css' ) );
-
-		// Add RSS feed links to <head> for posts and comments.
-		add_theme_support( 'automatic-feed-links' );
-
-		// theme suport for for serach from
-		add_theme_support( 'html5', array( 'search-form' ) );
-
-		// Enable support for Post Thumbnails, and declare one sizes.
-		add_theme_support( 'post-thumbnails' );
-
-		add_image_size('beautiful-box', 480, 480, true);
-
-	    // register top navbar menu
-		register_nav_menu( 'primary', 'Primary Menu' );
-
-		// hide admin bar
-		add_filter('show_admin_bar', '__return_false');
-
+/**
+ * register sidebars
+ * @return null
+ */
+function beautiful_register_sidebar() {
 	    // register sidebars
 	    // 
 	    // index page sidebar
@@ -88,6 +62,41 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 	        'after_title'   => '</h1>',
 	    ) );
 
+}
+
+add_action( 'widgets_init', 'beautiful_register_sidebar' );
+
+
+if( ! function_exists( 'beautiful_setup' ) ) :
+
+	function beautiful_setup() {
+
+		/*
+		 * Make beautiful for translation.
+		 *
+		 * Translations can be added to the /languages/ directory.
+	     * 
+		 */
+		load_theme_textdomain( 'beautiful', get_template_directory() . '/languages' );
+
+		// This theme styles the visual editor to resemble the theme style.
+		add_editor_style( array( 'css/editor-style.css' ) );
+
+		// Add RSS feed links to <head> for posts and comments.
+		add_theme_support( 'automatic-feed-links' );
+
+		// theme suport for for serach from
+		add_theme_support( 'html5', array( 'search-form' ) );
+
+		// Enable support for Post Thumbnails, and declare one sizes.
+		add_theme_support( 'post-thumbnails' );
+
+		add_image_size('beautiful-box', 480, 480, true);
+
+		// hide admin bar
+		add_filter('show_admin_bar', '__return_false');
+
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -140,6 +149,9 @@ function beautiful_scripts() {
 
 	// load bootstrap js
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
+
+	// multi level menu
+	wp_enqueue_script( 'bootstrap-multi-level', get_template_directory_uri() . '/js/bootstrap-multi-level-menu.js', array( 'jquery' ) );
 
 	// load fittext js, for font size at front page
 	wp_enqueue_script( 'beautiful-fittext', get_template_directory_uri() . '/js/jquery.fittext.js');
