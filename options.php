@@ -1,26 +1,13 @@
 <?php
 /**
- * The theme option name is set as 'options-theme-customizer' here.
- * In your own project, you should use a different option name.
- * I'd recommend using the name of your theme.
- *
- * This option name will be used later when we set up the options
- * for the front end theme customizer.
+ * A unique identifier is defined to store the options in the database and reference them from the theme.
  */
 
 function optionsframework_option_name() {
 
-	$optionsframework_settings = get_option('optionsframework');
-	
-	// Edit 'options-theme-customizer' and set your own theme name instead
-	$optionsframework_settings['id'] = 'options_theme_customizer';
-	update_option('optionsframework', $optionsframework_settings);
+	// Change this to use your theme slug
+	return 'base';
 }
-
-/**
- * Defines an array of options that will be used to generate the settings page and be saved in the database.
- * When creating the "id" fields, make sure to use all lowercase and no spaces.
- */
 
 function optionsframework_options() {
 	
@@ -42,6 +29,42 @@ function optionsframework_options() {
 		"desc" =>  __('Upload your logo', 'base'),
 		"id" => "logo_uploader",
 		"type" => "upload" );
+	
+	$options['icon_iphone'] = array(
+		"name" => __('iPhone icon', 'base'),
+		"desc" =>  __('Apple touch icon iphone (57x57 px)', 'base'),
+		"id" => "icon_iphone",
+		"type" => "upload" );
+	
+	$options['icon_ipad'] = array(
+		"name" => __('iPad icon', 'base'),
+		"desc" =>  __('Apple touch icon ipad (76x76 px)', 'base'),
+		"id" => "icon_ipad",
+		"type" => "upload" );
+	
+	$options['icon_iphone_retina'] = array(
+		"name" => __('iPhone retina icon', 'base'),
+		"desc" =>  __('Apple touch icon iphone retina (120x120 px)', 'base'),
+		"id" => "icon_iphone_retina",
+		"type" => "upload" );
+	
+	$options['icon_ipad_retina'] = array(
+		"name" => __('iPad retina icon', 'base'),
+		"desc" =>  __('Apple touch icon ipad retina (152x152 px)', 'base'),
+		"id" => "icon_ipad_retina",
+		"type" => "upload" );
+	
+	$options['win_tile_image'] = array(
+		"name" => __('Windows 8 pinned image', 'base'),
+		"desc" =>  __('Pinned site Windows 8 (144x144 px)', 'base'),
+		"id" => "win_tile_image",
+		"type" => "upload" );
+	
+	$options['win_tile_color'] = array(
+		"name" => __('Windows 8 pinned image color', 'base'),
+		"desc" =>  __('Pinned site Windows 8 color', 'base'),
+		"id" => "win_tile_color",
+		"type" => "color" );
 	
 	$options[] = array(
 		'name' => __('Meta Slider', 'base'),
@@ -244,13 +267,14 @@ function options_theme_customizer_register($wp_customize) {
 	) );
 	
 	$wp_customize->add_setting( 'options_theme_customizer[logo_uploader]', array(
-		'type' => 'option'
+		'type' => 'option',
+        'sanitize_callback' => 'esc_url_raw',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_uploader', array(
 		'label' => $options['logo_uploader']['name'],
 		'section' => 'options_theme_customizer_logo',
-		'settings' => 'options_theme_customizer[logo_uploader]'
+		'settings' => 'options_theme_customizer[logo_uploader]',
 	) ) );	
 	
 	
@@ -262,14 +286,15 @@ function options_theme_customizer_register($wp_customize) {
 	) );
 	
 	$wp_customize->add_setting( 'options_theme_customizer[favicon_uploader]', array(
-		'type' => 'option'
+		'type' => 'option',
+        'sanitize_callback' => 'esc_url_raw',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'favicon_uploader', array(
 		'label' => $options['favicon_uploader']['name'],
 		'section' => 'options_theme_customizer_favicon',
-		'settings' => 'options_theme_customizer[favicon_uploader]'
-	) ) );	
+		'settings' => 'options_theme_customizer[favicon_uploader]',
+	) ) );
 }
 
 
@@ -307,7 +332,6 @@ function optionscheck_display_sidebar() { ?>
 					<p><?php echo __('Sign up to our newsletter and get a discount coupon.',  "base"); ?></p>
                     <div id="mc_embed_signup">
 					<form action="//iografica.us2.list-manage.com/subscribe/post?u=14e09f1fb92769d69dfd5ea17&amp;id=5fd8564ba4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    				<div id="mc_embed_signup_scroll">
 					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 					</form>

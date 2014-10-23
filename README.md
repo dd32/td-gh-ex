@@ -1,6 +1,6 @@
 === Base WP ===
 
-Base WP is a basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugin or for support and documentation visit our website (http://themes.iografica.it).
+Base WP is a basic blog or business WordPress theme, based on underscores with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugins or for support and documentation visit our website (http://themes.iografica.it).
 
 
 === License ===
@@ -85,3 +85,9 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 
 == 1.21 ==
 * Minor fix.
+
+== 1.22 ==
+* Added apple touch icon for iPhone and iPad.
+* Added Windows 8 pinned image option.
+* Add sanitization for Customizer.
+* Fix id for options, option will be lost after update. Please marks your options in another place and then restore it.

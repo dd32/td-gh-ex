@@ -270,7 +270,27 @@ function BaseBreadcrumb() {
  */
  
 function base_favicon() { ?>
-    <link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_uploader', 'no entry' ); ?>" />
+<?php if ( of_get_option('favicon_uploader')) { ?>
+    <link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_uploader', '' ); ?>" />
+<?php } ?>
+<?php if ( of_get_option('icon_iphone')) { ?>
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo of_get_option( 'icon_iphone', '' ); ?>">
+<?php } ?>
+<?php if ( of_get_option('icon_ipad')) { ?>
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo of_get_option( 'icon_ipad', '' ); ?>">
+<?php } ?>
+<?php if ( of_get_option('icon_iphone_retina')) { ?>
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo of_get_option( 'icon_iphone_retina', '' ); ?>">
+<?php } ?>
+<?php if ( of_get_option('icon_ipad_retina')) { ?>
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo of_get_option( 'icon_ipad_retina', '' ); ?>">
+<?php } ?>
+<?php if ( of_get_option('win_tile_image')) { ?>
+    <meta name="msapplication-TileImage" content="<?php echo of_get_option( 'win_tile_image', '' ); ?>"/>
+<?php } ?>
+<?php if ( of_get_option('win_tile_color')) { ?>
+	<meta name="msapplication-TileColor" content="<?php echo of_get_option( 'win_tile_color', '' ); ?>"/>
+<?php } ?>
 <?php }
 add_action('wp_head', 'base_favicon');
 
