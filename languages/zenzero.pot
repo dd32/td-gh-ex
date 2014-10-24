@@ -1,0 +1,455 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0-wpcom\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2014-09-11 00:43:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:21
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: archive.php:24
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: archive.php:27
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:33
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:36
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:39
+msgid "Asides"
+msgstr ""
+
+#: archive.php:42
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:45
+msgid "Images"
+msgstr ""
+
+#: archive.php:48
+msgid "Videos"
+msgstr ""
+
+#: archive.php:51
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:54
+msgid "Links"
+msgstr ""
+
+#: archive.php:57
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:60
+msgid "Audios"
+msgstr ""
+
+#: archive.php:63
+msgid "Chats"
+msgstr ""
+
+#: archive.php:66
+msgid "Archives"
+msgstr ""
+
+#: comments.php:28
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39
+msgid "Reply"
+msgstr ""
+
+#: comments.php:46
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:60
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:69
+msgid "Name *"
+msgstr ""
+
+#: comments.php:70
+msgid "Email *"
+msgstr ""
+
+#: comments.php:71
+msgid "Website"
+msgstr ""
+
+#: comments.php:73
+msgid " Required fields are marked "
+msgstr ""
+
+#: comments.php:77
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:78
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:79
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:80
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:81
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:82
+msgid "Cancel reply"
+msgstr ""
+
+#: comments.php:83
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:84
+msgid "Comment *"
+msgstr ""
+
+#: comments.php:85
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-page.php:26
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:33 content-search.php:35 content.php:31
+#: inc/template-tags.php:124
+msgid "Edit"
+msgstr ""
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:15
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:17
+#, php-format
+msgid "%1$s by %2$s."
+msgstr ""
+
+#: footer.php:70
+msgid "Type here and hit enter..."
+msgstr ""
+
+#: footer.php:72
+msgid "Close"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:74
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:112
+#, php-format
+msgid ""
+"Thank you for installing <b>Zenzero</b> WordPress Theme! <a href=\"%2$s"
+"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
+"Notice</a>"
+msgstr ""
+
+#: header.php:34
+msgid "Main Menu"
+msgstr ""
+
+#: inc/extras.php:63
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgid "Previous Post"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgctxt "Previous post link"
+msgid ""
+"<i class=\"fa prevNext fa-lg fa-angle-left\"></i> <div class=\"meta-nav"
+"\"><small>"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgctxt "Next post link"
+msgid "<div class=\"meta-nav\"><small>"
+msgstr ""
+
+#: inc/template-tags.php:82
+#, php-format
+msgctxt "post date"
+msgid "<i class=\"fa fa-clock-o spaceLeftRight\"></i> %s"
+msgstr ""
+
+#: inc/template-tags.php:87
+#, php-format
+msgctxt "post author"
+msgid "<i class=\"fa fa-user spaceLeftRight\"></i> %s"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid " / "
+msgstr ""
+
+#: inc/template-tags.php:97
+#, php-format
+msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i> %1$s"
+msgstr ""
+
+#: inc/template-tags.php:103
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:103
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:103
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:120
+#, php-format
+msgid "<i class=\"fa fa-tags spaceRight\"></i> %1$s"
+msgstr ""
+
+#: inc/theme-options.php:24 inc/theme-options.php:47
+msgid "Zenzero Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:60
+msgid " Free Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:87
+msgid ""
+"These options will let you setup the social icons at the bottom of the "
+"theme. You can enter the URLs of your profiles to have the icons show up."
+msgstr ""
+
+#: inc/theme-options.php:89
+msgid "Options saved"
+msgstr ""
+
+#: inc/theme-options.php:104
+msgid "Hide RSS Icon?"
+msgstr ""
+
+#: inc/theme-options.php:107
+msgid "Hide the RSS feed icon?"
+msgstr ""
+
+#: inc/theme-options.php:116
+msgid "Hide Search Button?"
+msgstr ""
+
+#: inc/theme-options.php:119
+msgid "Hide the Search button?"
+msgstr ""
+
+#: inc/theme-options.php:128
+msgid "Enter your Facebook URL"
+msgstr ""
+
+#: inc/theme-options.php:131
+msgid "Leave blank to hide Facebook Icon"
+msgstr ""
+
+#: inc/theme-options.php:140
+msgid "Enter your Twitter URL"
+msgstr ""
+
+#: inc/theme-options.php:143
+msgid "Leave blank to hide Twitter Icon"
+msgstr ""
+
+#: inc/theme-options.php:152
+msgid "Enter your Google + URL"
+msgstr ""
+
+#: inc/theme-options.php:155
+msgid "Leave blank to hide Google + Icon"
+msgstr ""
+
+#: inc/theme-options.php:164
+msgid "Enter your Linkedin URL"
+msgstr ""
+
+#: inc/theme-options.php:167
+msgid "Leave blank to hide Linkedin Icon"
+msgstr ""
+
+#: inc/theme-options.php:176
+msgid "Enter your Instagram URL"
+msgstr ""
+
+#: inc/theme-options.php:179
+msgid "Leave blank to hide Instagram Icon"
+msgstr ""
+
+#: inc/theme-options.php:188
+msgid "Enter your YouTube URL"
+msgstr ""
+
+#: inc/theme-options.php:191
+msgid "Leave blank to hide YouTube Icon"
+msgstr ""
+
+#: inc/theme-options.php:200
+msgid "Enter your Pinterest URL"
+msgstr ""
+
+#: inc/theme-options.php:203
+msgid "Leave blank to hide Pinterest Icon"
+msgstr ""
+
+#: inc/theme-options.php:212
+msgid "Enter your Tumblr URL"
+msgstr ""
+
+#: inc/theme-options.php:215
+msgid "Leave blank to hide Tumblr Icon"
+msgstr ""
+
+#: inc/theme-options.php:222
+msgid "Save Options"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:34
+msgid "Box Text Color"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:40
+msgid "Box Background Color"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:46
+msgid "Header / Footer / Sidebar Background Color"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:52
+msgid "Header / Footer / Sidebar Text Color"
+msgstr ""
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
