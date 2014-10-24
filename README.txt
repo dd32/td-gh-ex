@@ -20,6 +20,25 @@ copyright   Copyright (c) 2010-2012, Tenman
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+This theme using  TGM-Plugin-Activation license below
+
+    version   2.4.0
+    author    Thomas Griffin <thomasgriffinmedia.com>
+    author    Gary Jones <gamajo.com>
+    copyright Copyright (c) 2012, Thomas Griffin
+    license   http://opensource.org/licenses/gpl-2.0.php GPL v2
+    link      https://github.com/thomasgriffin/TGM-Plugin-Activation
+
+	Plugins license
+		Breadcrumb NavXT
+			Contributors: mtekk, hakre
+			License: GPLv2 or later
+		WP-PageNavi
+			Contributors: GamerZ, scribu
+			License: GPLv2 or later
+		Quick Cache (Speed Without Compromise)
+			Contributors: WebSharks, JasWSInc, raamdev, anguz
+			License: GPLv2 or later
 
 Special Thanks for Contribution
 
@@ -91,7 +110,7 @@ ver 1.245
         Link Color Set #8d91bc
         Complementary Link Color For Entry Title set yes
         link color done
-    3. Set Pinup Widget 
+    3. Set Pinup Widget
         Creat a new post.
             Set your entry title
             Click Add Media Button
@@ -113,8 +132,8 @@ ver 1.245
             Pinup entries dragg and drop Extra Sidebar
 
             Past the copied Post ID  to Post ID field
-        
-            Save 
+
+            Save
 
             Pinup widget done.
     4. Set Category New Post
