@@ -7,24 +7,27 @@ Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Conica is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
 == Description ==
 
 Conica is a powerful multi-purpose Wordpress theme that integrates nicely with some powerful Wordpress plugins such as WooCommerce, Page Builder, Contact Form 7 and more. The Conica theme is very customizable and easy to use, and is 100% responsive, adapting to all screen sizes.
 
+== License ==
+
+Conica WordPress Theme, Copyright 2014 Zack Viljoen.
+Conica is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/copyleft/gpl.html.
+Conica WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012 Automattic http://underscores.me/ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
+All Javascript is located in /js/ with license headers where appropriate.
+
 == Bundled Licenses ==
 
-Iris color picker - Included in WordPress 3.5+
-Copyright (c) 2012–2013 Automattic. Licensed under the GPLv2 license.
-https://github.com/Automattic/Iris
-
-Masonry - v3.1.5 -- In Premium version --
-Cascading grid layout library
-by David DeSandro
-http://desandro.mit-license.org/
-
-jQuery Waypoints - v2.0.3 -- In Premium version --
+jQuery Waypoints - v2.0.3
 Copyright (c) 2011-2013 Caleb Troughton
 https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
@@ -51,7 +54,7 @@ Conica divides the footer by the amount of widgets added to the Footer Widget Ar
 
 Conica's Settings:
 ---------------
-This theme is built around Kaira's own settings framework contained in the folder /framework/. All code is licensed under GPL 2.0 and copyright Kaira unless otherwise specified.
+This theme is built around Kaira's own settings contained in the folder /settings/. All code is licensed under GPL 2.0 and copyright Kaira unless otherwise specified.
 
 All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
 View the settings under Appearance -> CONICA Settings.

@@ -7,8 +7,8 @@
     jQuery( document ).ready( function() {
         
         // Insert up arrow for navigation
-        $( '.navigation-main ul.menu > li a' ).wrapInner( '<span class="nav-span"></span>' );
-        $( '.navigation-main ul.sub-menu' ).prepend( '<span class="nav-arrow"></span>' );
+        $( '.navigation-main ul > li a' ).wrapInner( '<span class="nav-span"></span>' );
+        $( '.navigation-main ul ul' ).prepend( '<span class="nav-arrow"></span>' );
         
 		// Adding padding to the footer widgets
 		$('.footer-widgets .widget').wrapInner('<div class="footer-widgets-pad" />');

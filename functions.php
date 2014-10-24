@@ -5,10 +5,10 @@
  * @package Conica
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.2' );
+define( 'KAIRA_THEME_VERSION' , '1.2.1' );
 
-if ( file_exists( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' ) ) {
-    require_once( get_stylesheet_directory() . '/framework/class.kaira-theme-settings.php' );
+if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
+    require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
 }
 
 // Theme Widgets
@@ -27,6 +27,7 @@ function kaira_setup_theme() {
     /**
      * Set the content width based on the theme's design and stylesheet.
      */
+    global $content_width;
     if ( ! isset( $content_width ) )
         $content_width = 870; /* pixels */
 
@@ -47,8 +48,7 @@ function kaira_setup_theme() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'main-menu' => __( 'Main Menu', 'conica' ),
-        'header-bar-menu' => __( 'Header Bar Menu (Header Layout Two)', 'conica' )
+		'main-menu' => __( 'Main Menu', 'conica' )
 	) );
 
 	add_theme_support('post-thumbnails');
@@ -197,7 +197,7 @@ function kaira_print_styles(){
         .widget ul li a:hover {
             color: <?php echo $primary_color_hover; ?>;
         }
-        <?php echo $custom_css; ?>
+        <?php echo htmlspecialchars_decode( $custom_css ); ?>
     </style>
     <?php
 }
@@ -210,12 +210,12 @@ function kaira_scripts() {
     if( kaira_theme_option( 'kra-body-google-font' ) ) {
         wp_enqueue_style( 'conica-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
-        wp_enqueue_style( 'conica-google-body-font-default', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'conica-google-body-font-default', '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic', array(), KAIRA_THEME_VERSION );
     }
     if( kaira_theme_option( 'kra-heading-google-font-url' ) ) {
         wp_enqueue_style( 'conica-google-font-heading', kaira_theme_option( 'kra-heading-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
-        wp_enqueue_style( 'conica-google-heading-font-default', 'http://fonts.googleapis.com/css?family=Droid+Sans:400,700', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'conica-google-heading-font-default', '//fonts.googleapis.com/css?family=Droid+Sans:400,700', array(), KAIRA_THEME_VERSION );
     }
     wp_enqueue_style( 'conica-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
 	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
@@ -263,9 +263,3 @@ function kaira_wrap_woocommerce_start() {
 function kaira_wrap_woocommerce_end() {
     echo '</div>';
 }
-
-/**
- * Add Conica WP Updates code.
- */
-require get_template_directory() . '/wp-updates-theme.php';
-new WPUpdatesThemeUpdater_966( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
