@@ -4,7 +4,7 @@ Theme URI: http://competethemes.com/ignite/
 Author: Compete Themes
 Author URI: http://competethemes.com/
 Description: Ignite is a responsive blog theme. It includes logo tools, social media icons, a left- or right-sidebar layout, five fonts, custom background colors, and many additional display options. There is also a premium upgrade for Ignite called Ignite Plus. See our fully-setup live demo at http://www.competethemes.com/ignite-live-demo/
-Version: 1.39
+Version: 1.40
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -700,6 +700,10 @@ a img {
   .menu-unset ul .current_page_ancestor > a:after {
     color: white !important;
   }
+  #menu-primary-items.clear,
+  .menu-unset ul.clear {
+    clear: left;
+  }
 
   /* because .menu-primary-items is a 'ul' this needs to be declared separately */
   .menu-unset:after {
@@ -734,13 +738,16 @@ a img {
     left: 100%;
   }
 
+  .parent-icons .menu-item-has-children > a {
+    padding: 0 1.5em 0 0.75em;
+  }
   .parent-icons .menu-item-has-children > a:after {
     content: '\25BE';
     font-family: 'Arial', 'sans-serif';
     color: #373b41;
     margin-left: 4px;
-    position: relative;
-    top: -1px;
+    position: absolute;
+    top: -2px;
   }
   .parent-icons .menu-item-has-children ul .menu-item-has-children > a:after {
     content: '\25B8';
@@ -781,7 +788,7 @@ a img {
 /* 1000px */
 @media all and (min-width: 62.5em) {
   .menu-primary p {
-    margin: 1.0625em 3em 0 -3em;
+    margin: 1.0625em 3em 8px -3em;
     display: inline-block;
     line-height: 2;
     color: #7c7d7f;
