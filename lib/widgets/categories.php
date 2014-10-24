@@ -30,18 +30,18 @@ class thinkup_widget_categories extends WP_Widget {
 		$directionswitch = $instance['directionswitch'];
 		$exclude         = $instance['exclude'];
 
-		echo '<p><label for="' . $this->get_field_id('title') . '">Title: <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 95px;margin-left: 98px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 95px;margin-left: 98px;" /></label></p>';
 				
-		echo '<p><label for="' . $this->get_field_id('postswitch') . '">Show post count:</label>&nbsp;<input id="' . $this->get_field_id('postswitch') . '" name="' . $this->get_field_name('postswitch') . '" type="checkbox" '; ?><?php if($postswitch == "on") { echo 'checked=checked'; } ?><?php echo ' style="margin-left: 110px;" /></p>';
+		echo '<p><label for="' . $this->get_field_id('postswitch') . '">' . __( 'Show post count', 'lan-thinkupthemes' ) . ':</label>&nbsp;<input id="' . $this->get_field_id('postswitch') . '" name="' . $this->get_field_name('postswitch') . '" type="checkbox" '; ?><?php if($postswitch == "on") { echo 'checked=checked'; } ?><?php echo ' style="margin-left: 110px;" /></p>';
 
-		echo '<p><label for="' . $this->get_field_id('displayswitch') . '" >Display type:
+		echo '<p><label for="' . $this->get_field_id('displayswitch') . '" >' . __( 'Display type', 'lan-thinkupthemes' ) . ':
 			<select name="' . $this->get_field_name('displayswitch') . '" id="' . $this->get_field_id('displayswitch') . '" style="margin-left: 56px;width: 95px;" >
 			<option '; ?><?php if($displayswitch == "1") { echo "selected"; } ?><?php echo ' value="1">list</option>
 			<option '; ?><?php if($displayswitch == "2") { echo "selected"; } ?><?php echo ' value="2">dropdown</option>
 			</select>
 		</label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('orderswitch') . '">Order by: 
+		echo '<p><label for="' . $this->get_field_id('orderswitch') . '">' . __( 'Order by', 'lan-thinkupthemes' ) . ': 
 			<select name="' . $this->get_field_name('orderswitch') . '" id="' . $this->get_field_id('orderswitch') . '" style="margin-left: 76px;width: 96px;" >
 			<option '; ?><?php if($orderswitch == "1") { echo "selected"; } ?><?php echo ' value="1">name</option>
 			<option '; ?><?php if($orderswitch == "2") { echo "selected"; } ?><?php echo ' value="2">posts</option>
@@ -50,14 +50,14 @@ class thinkup_widget_categories extends WP_Widget {
 			</select>
 		</label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('directionswitch') . '">Order direction: 
+		echo '<p><label for="' . $this->get_field_id('directionswitch') . '">' . __( 'Order direction', 'lan-thinkupthemes' ) . ': 
 			<select name="' . $this->get_field_name('directionswitch') . '" id="' . $this->get_field_id('directionswitch') . '" style="margin-left: 41px;" >
 			<option '; ?><?php if($directionswitch == "1") { echo "selected"; } ?><?php echo ' value="1">ascending</option>
 			<option '; ?><?php if($directionswitch == "2") { echo "selected"; } ?><?php echo ' value="2">descending</option>
 			</select>
 		</label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('exclude') . '">Exclude categories: <input class="widefat" id="' . $this->get_field_id('exclude') . '" name="' . $this->get_field_name('exclude') . '" type="text" value="' . esc_attr($exclude) . '" style="width: 95px;margin-left: 20px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('exclude') . '">' . __( 'Exclude categories', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('exclude') . '" name="' . $this->get_field_name('exclude') . '" type="text" value="' . esc_attr($exclude) . '" style="width: 95px;margin-left: 20px;" /></label></p>';
 	}
 
 	/* Assign variable values. */
@@ -141,6 +141,8 @@ class thinkup_widget_categories extends WP_Widget {
 	  }
 
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("thinkup_widget_categories");') );
 
+add_action( 'widgets_init', function(){
+     register_widget( 'thinkup_widget_categories' );
+});
 ?>

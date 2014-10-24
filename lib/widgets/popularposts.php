@@ -32,15 +32,15 @@ class thinkup_widget_popularposts extends WP_Widget {
 		if ($excerpt == 'on')  { $excerpt_check = 'checked=checked'; }
 		if ($comments == 'on') { $comments_check = 'checked=checked'; }
 	
-		echo '<p><label for="' . $this->get_field_id('title') . '">Title: <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 106px;margin-left: 88px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 106px;margin-left: 88px;" /></label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('postcount') . '">Number of posts: <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 106px;margin-left: 20px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('postcount') . '">' . __( 'Number of posts', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 106px;margin-left: 20px;" /></label></p>';
 	
-		echo '<p><label for="' . $this->get_field_id('excerpt') . '">Show excerpt?</label>&nbsp;<input id="' . $this->get_field_id('excerpt') . '" name="' . $this->get_field_name('excerpt') . '" type="checkbox" ' . $excerpt_check . ' style="margin-left: 125px;" /></p>';
+		echo '<p><label for="' . $this->get_field_id('excerpt') . '">' . __( 'Show excerpt', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('excerpt') . '" name="' . $this->get_field_name('excerpt') . '" type="checkbox" ' . $excerpt_check . ' style="margin-left: 125px;" /></p>';
 
-		echo '<p><label for="' . $this->get_field_id('excerptlength') . '">Excerpt length: <input class="widefat" id="' . $this->get_field_id('excerptlength') . '" name="' . $this->get_field_name('excerptlength') . '" type="text" value="' . $excerptlength . '" style="width: 106px;margin-left: 35px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('excerptlength') . '">' . __( 'Excerpt length', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('excerptlength') . '" name="' . $this->get_field_name('excerptlength') . '" type="text" value="' . $excerptlength . '" style="width: 106px;margin-left: 35px;" /></label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('comments') . '">Show Comments?</label>&nbsp;<input id="' . $this->get_field_id('comments') . '" name="' . $this->get_field_name('comments') . '" type="checkbox" ' . $comments_check . ' style="margin-left: 104px;" /></p>';	
+		echo '<p><label for="' . $this->get_field_id('comments') . '">' . __( 'Show Comments', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('comments') . '" name="' . $this->get_field_name('comments') . '" type="checkbox" ' . $comments_check . ' style="margin-left: 104px;" /></p>';	
 
 	}
 
@@ -92,7 +92,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 				$commentnumber_input = $comment_count . ' Comments';
 			}
 			if ( $instance['comments'] == 'on' ) {
-				$comment_input = get_comments_popup_link( __( 'No Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ), 'comment' );
+				$comment_input = thinkup_get_comments_popup_link( __( 'No Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ), 'comment' );
 			}				
 
 			/* HTML output */
@@ -114,13 +114,14 @@ class thinkup_widget_popularposts extends WP_Widget {
 						'</div>';
 				}
 			echo '</div>';
-		endwhile; wp_reset_query();
+		endwhile;
 
 		echo $after_widget;
 	}
 
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("thinkup_widget_popularposts");') );
 
-
+add_action( 'widgets_init', function(){
+     register_widget( 'thinkup_widget_popularposts' );
+});
 ?>

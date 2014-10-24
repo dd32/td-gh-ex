@@ -127,6 +127,32 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.8
+- Updated: post_class() Added to relevant templates.
+- Updated: Custom css gets sanitized using wp_kses_post.
+- Updated: All custom functions now prefixed with thinkup_.
+- Updated: Renamed to Browser class to thinkup_redux_Browser.
+- Updated: home.php updated to include same code as archive.php.
+- Updated: Custom css gets sanitized using wp_filter_nohtml_kses.
+- Updated: All instances of user input data is escaped on output.
+- Updated: index.php updated to include same code as archive.php.
+- Updated: Translation text-domain added to all translation functions.
+- Updated: Open Sans Google Font added using Frank Klein recommened method. (http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/)
+- Updated: Function Walker_Nav_Menu_Responsive renamed to thinkup_Walker_Nav_Menu_Responsive.
+- Updated: Renamed to thinkup_get_comments_popup_link as the function is used in the popular posts widget.
+- Updated: All translatable strings checked and wrapped in appropriate translation function (i.e. __, _e, _n).
+- Updated: Renamed to thinkup_get_comments_number_str as the function is used in the thefunction get_comments_popup_link function. 
+- Removed: front-page.php removed.
+- Removed: All empty PHP files removed.
+- Removed: Simple_System_Info removed from redux framework.
+- Removed: TGM plugin removed as no plugins are being used.
+- Removed: Unnecessary instances of wp_reset_query() removed.
+- Removed: taxonomies_for_pages() removed as this is plugin territory.
+- Removed: Recent comments widget removed. Removed from current version.
+- Removed: is_thinkuphome() function removed as it dulicated core functionality.
+- Removed: All instances of create_function  removed. Function was present in framework.php and widgets files.
+- Removed: thinkup_input_readmore custom functions removed. The excerpt read more text is now controlled using the new function thinkup_new_excerpt_more().
+
 Version 1.0.7
 - Fixed:   Blog posts now allow for custom date format to be used. Picks up fromat from Settings -> General.
 - Updated: Language file updated to include new translatable strings added in v1.6.0.

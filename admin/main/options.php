@@ -94,7 +94,7 @@ function setup_framework_options(){
 				</ul>
 				<p class="theme-description"><?php echo $ct->display('Description'); ?></p>
 				<?php if ( $ct->parent() ) {
-					printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>',
+					printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'redux-framework' ) . '</p>',
 						__( 'http://codex.wordpress.org/Child_Themes', 'redux-framework' ),
 						$ct->parent()->display( 'Name' ) );
 				} ?>
@@ -445,6 +445,7 @@ function setup_framework_options(){
 				'subtitle' => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'redux-framework'),
 				'id'=>'thinkup_general_customjavafront',
 				'type' => 'textarea',
+				'validate' => 'html',
 				),
 
 			array(
@@ -511,7 +512,7 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('Enable Homepage Slider', 'redux-framework-demo'), 
+				'title' => __('Enable Homepage Slider', 'redux-framework'), 
 				'subtitle' => __('Switch on to enable home page slider.', 'redux-framework'),
 				'id'=>'thinkup_homepage_sliderswitch',
 				'type' => 'button_set',
@@ -532,14 +533,14 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('Built-In Slider', 'redux-framework-demo'),
-				'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
+				'title' => __('Built-In Slider', 'redux-framework'),
+				'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework'),
 				'id'=>'thinkup_homepage_sliderpreset',
 				'type' => 'slides',
 				),
 
 			array(
-                'title' => __('Enable Full-Width Slider', 'redux-framework-demo'),
+                'title' => __('Enable Full-Width Slider', 'redux-framework'),
 				'subtitle' => __('Switch on to enable full-width slider.', 'redux-framework'),
 				'id'=>'thinkup_homepage_sliderpresetwidth',
 				'type' => 'switch',
@@ -550,7 +551,7 @@ function setup_framework_options(){
 				'id'=>'thinkup_homepage_sliderpresetheight',
 				'type' => 'slider', 
 				'title' => __('Slider Height (Max)', 'redux-framework-demo'),
-				'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework-demo'),
+				'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework'),
 				"default" => "350",
 				"min"     => "200",
 				"step"    => "5",

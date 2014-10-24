@@ -31,13 +31,13 @@ class thinkup_widget_recentposts extends WP_Widget {
 		if ($imageswitch == 'on') { $imageswitch_check = 'checked=checked'; }
 		if ($postdate == 'on') { $postdate_check = 'checked=checked'; }
 
-		echo '<p><label for="' . $this->get_field_id('title') . '">Title: <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 80px;margin-left: 114px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 80px;margin-left: 114px;" /></label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('postcount') . '">Number of posts: <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 80px;margin-left: 46px;" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('postcount') . '">' . __( 'Number of posts', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 80px;margin-left: 46px;" /></label></p>';
 
-		echo '<p><label for="' . $this->get_field_id('imageswitch') . '">Enable post thumbnail?</label>&nbsp;<input id="' . $this->get_field_id('imageswitch') . '" name="' . $this->get_field_name('imageswitch') . '" type="checkbox" ' . $imageswitch_check . ' style="margin-left: 74px;" /></p>';	
+		echo '<p><label for="' . $this->get_field_id('imageswitch') . '">' . __( 'Enable post thumbnail', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('imageswitch') . '" name="' . $this->get_field_name('imageswitch') . '" type="checkbox" ' . $imageswitch_check . ' style="margin-left: 74px;" /></p>';	
 
-		echo '<p><label for="' . $this->get_field_id('postdate') . '">Show post date?</label>&nbsp;<input id="' . $this->get_field_id('postdate') . '" name="' . $this->get_field_name('postdate') . '" type="checkbox" ' . $postdate_check . ' style="margin-left: 113px;" /></p>';
+		echo '<p><label for="' . $this->get_field_id('postdate') . '">' . __( 'Show post date', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('postdate') . '" name="' . $this->get_field_name('postdate') . '" type="checkbox" ' . $postdate_check . ' style="margin-left: 113px;" /></p>';
 	}
 
 	/* Assign variable values. */
@@ -86,13 +86,14 @@ class thinkup_widget_recentposts extends WP_Widget {
 						'</div>';
 				}
 			echo '</div>';
-		endwhile; wp_reset_query();
+		endwhile;
 
 		echo $after_widget;
 	}
 	 
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("thinkup_widget_recentposts");') );
 
-
+add_action( 'widgets_init', function(){
+     register_widget( 'thinkup_widget_recentposts' );
+});
 ?>

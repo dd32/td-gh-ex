@@ -24,18 +24,11 @@ if ( ! isset( $content_width ) )
 	require_once( get_template_directory() . '/admin/main/options/03.header.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/04.footer.php' );
 	require_once( get_template_directory() . '/admin/main/options/05.blog.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/06.portfolio.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/07.contact-page.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/08.special-pages.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/09.notification-bar.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/10.seo.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/11.typography.php' ); 
-	require_once( get_template_directory() . '/admin/main/options/12.custom-styling.php' );
 
 	// Add widget features.
 	include_once( get_template_directory() . '/lib/widgets/categories.php' ); 
 	include_once( get_template_directory() . '/lib/widgets/popularposts.php' ); 
-	include_once( get_template_directory() . '/lib/widgets/recentcomments.php' ); 
 	include_once( get_template_directory() . '/lib/widgets/recentposts.php' ); 
 	include_once( get_template_directory() . '/lib/widgets/searchfield.php' ); 
 	include_once( get_template_directory() . '/lib/widgets/tagscloud.php' );
@@ -84,7 +77,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	/* Register theme stylesheets. */
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.0.7' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.0.8' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
@@ -126,7 +119,7 @@ function thinkup_frontscripts() {
 		}
 
 		// Add ThinkUpSlider scripts
-		if ( is_front_page() or is_thinkuphome() ) {
+		if ( is_front_page() ) {
 			wp_enqueue_script( 'thinkupslider', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides.min.js', array( 'jquery' ), '1.54' );
 		wp_enqueue_script( 'thinkupslider-call', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides-call.js', array( 'jquery' ) );
 		}

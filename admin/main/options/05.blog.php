@@ -40,18 +40,8 @@ global $thinkup_blog_postswitch;
 	/* Output post thumbnail / featured media */
 	if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
 		the_excerpt();
-	} else if ( $thinkup_blog_postswitch == 'option2' ) {
-
-		/* Allow user to user <!--more--> HTML tag */
-		$more = 0;
-
-		/* Remove all HMTL from the_content - Only allow specified tags */
-		ob_start();
-		the_content('');
-		$old_content = ob_get_clean();
-		$new_content = strip_tags($old_content, '<p><a><b><br/><br /><input><form><textarea><li><ol><ul><table><h1><h2><h3><h4><h5><h6>');
-		echo $new_content;
-
+	} else if ( $thinkup_blog_postswitch == 'option2' ) {		
+		echo the_content( '<p><a href="'. get_permalink($post->ID) . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes') . '</a></p>' );
 	}
 }
 
@@ -119,13 +109,6 @@ function thinkup_input_blogauthor() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'lan-thinkupthemes' ), get_the_author() ) ),
 		get_the_author()
 	);
-}
-
-/* Input 'Read more' link */
-function thinkup_input_readmore() {
-global $post;
-
-	echo '<p><a href="'. get_permalink($post->ID) . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes') . '</a></p>';
 }
 
 
