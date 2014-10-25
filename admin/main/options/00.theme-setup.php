@@ -477,13 +477,14 @@ function thinkup_input_excerptbyid($post_id){
 
 
 //----------------------------------------------------------------------------------
-//	CUSTOM READ MORE FOR POST EXCERPTS.
+//	CUSTOM READ MORE FOR the_content() AND the_excerpt().
 //----------------------------------------------------------------------------------
 
-function thinkup_new_excerpt_more( $more ) {
+function thinkup_modify_read_more_link() {
 	return '<p><a href="'. get_permalink( get_the_ID() ) . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes') . '</a></p>';
 }
-add_filter( 'excerpt_more', 'thinkup_new_excerpt_more' );
+add_filter( 'excerpt_more', 'thinkup_modify_read_more_link' );
+add_filter( 'the_content_more_link', 'thinkup_modify_read_more_link' );
 
 
 //----------------------------------------------------------------------------------
@@ -494,7 +495,7 @@ function thinkup_googlefonts_url() {
     $fonts_url = '';
 
     // Translators: Translate thsi to 'off' if there are characters in your language that are not supported by Open Sans
-    $open_sans = _x( 'on', 'Open Sans font: on or off', 'theme-slug' );
+    $open_sans = _x( 'on', 'Open Sans font: on or off', 'lan-thinkupthemes' );
  
     if ( 'off' !== $open_sans ) {
         $font_families = array();

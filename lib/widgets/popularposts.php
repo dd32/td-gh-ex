@@ -29,19 +29,17 @@ class thinkup_widget_popularposts extends WP_Widget {
 		$excerptlength = $instance['excerptlength'];
 		$comments      = $instance['comments'];
 
-		if ($excerpt == 'on')  { $excerpt_check = 'checked=checked'; }
-		if ($comments == 'on') { $comments_check = 'checked=checked'; }
+	?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'lan-thinkupthemes' ); ?>: <input class="widefat" id="><?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" style="width: 106px;margin-left: 88px;" /></label></p>
+
+		<p><label for="<?php echo $this->get_field_id('postcount'); ?>"><?php _e( 'Number of posts', 'lan-thinkupthemes' ); ?>: <input class="widefat" id="<?php echo $this->get_field_id('postcount'); ?>" name="<?php echo $this->get_field_name('postcount'); ?>" type="text" value="<?php echo $postcount; ?>" style="width: 106px;margin-left: 20px;" /></label></p>
 	
-		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 106px;margin-left: 88px;" /></label></p>';
+		<p><label for="<?php echo $this->get_field_id('excerpt'); ?>"><?php _e( 'Show excerpt', 'lan-thinkupthemes' ); ?>?</label>&nbsp;<input id="<?php echo $this->get_field_id('excerpt'); ?>" name="<?php echo $this->get_field_name('excerpt'); ?>" type="checkbox" <?php checked( $excerpt, "on" ); ?> style="margin-left: 125px;" /></p>
 
-		echo '<p><label for="' . $this->get_field_id('postcount') . '">' . __( 'Number of posts', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 106px;margin-left: 20px;" /></label></p>';
-	
-		echo '<p><label for="' . $this->get_field_id('excerpt') . '">' . __( 'Show excerpt', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('excerpt') . '" name="' . $this->get_field_name('excerpt') . '" type="checkbox" ' . $excerpt_check . ' style="margin-left: 125px;" /></p>';
+		<p><label for="<?php echo $this->get_field_id('excerptlength'); ?>"><?php _e( 'Excerpt length', 'lan-thinkupthemes' ); ?>: <input class="widefat" id="<?php echo $this->get_field_id('excerptlength'); ?>" name="<?php echo $this->get_field_name('excerptlength'); ?>" type="text" value="<?php echo $excerptlength; ?>" style="width: 106px;margin-left: 35px;" /></label></p>
 
-		echo '<p><label for="' . $this->get_field_id('excerptlength') . '">' . __( 'Excerpt length', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('excerptlength') . '" name="' . $this->get_field_name('excerptlength') . '" type="text" value="' . $excerptlength . '" style="width: 106px;margin-left: 35px;" /></label></p>';
-
-		echo '<p><label for="' . $this->get_field_id('comments') . '">' . __( 'Show Comments', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('comments') . '" name="' . $this->get_field_name('comments') . '" type="checkbox" ' . $comments_check . ' style="margin-left: 104px;" /></p>';	
-
+		<p><label for="<?php echo $this->get_field_id('comments'); ?>"><?php _e( 'Show Comments', 'lan-thinkupthemes' ); ?>?</label>&nbsp;<input id="<?php echo $this->get_field_id('comments'); ?>" name="<?php echo $this->get_field_name('comments'); ?>" type="checkbox" <?php checked( $comments, "on" ); ?> style="margin-left: 104px;" /></p>
+	<?php
 	}
 
 	/* Assign variable values. */

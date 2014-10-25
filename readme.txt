@@ -127,6 +127,19 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.9
+- Fixed:   WordPress core checked() and selected() functions used where required.
+- Updated: post_class() added to to content.php.
+- Updated: Screenshot increased to 880x660 pixels.
+- Updated: All functions preixed with redux_ in admin/main/options.php.
+- Updated: Text domain added to translation functin thinkup_googlefonts_url().
+- Updated: English text made translation ready in comments.php, content-single.php, image.php, sidebar.php, template-archive.php, template-sitemap.php, template-tags.php and extras.php.
+- Removed: $more and $post globals removed from thinkup_input_blogtext()
+- Removed: Typography field removed from Redux framework as it's not being used.
+- Removed: require_once(ABSPATH .'/wp-admin/includes/file.php') removed from admin/main/options.php.
+- Removed: home.php removed as index.php contains the same code, as such is no longer required.
+- Removed: HTML removed from the_content(). Read more button html is now added using function thinkup_modify_read_more_link().
+
 Version 1.0.8
 - Updated: post_class() Added to relevant templates.
 - Updated: Custom css gets sanitized using wp_kses_post.

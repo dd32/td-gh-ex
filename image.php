@@ -72,7 +72,7 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 						
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . 'Pages:', 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages', 'lan-thinkupthemes') . ':', 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 				</article><!-- #post-<?php the_ID(); ?> -->

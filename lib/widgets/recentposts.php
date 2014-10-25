@@ -28,16 +28,15 @@ class thinkup_widget_recentposts extends WP_Widget {
 		$imageswitch = $instance['imageswitch'];
 		$postdate = $instance['postdate'];
 
-		if ($imageswitch == 'on') { $imageswitch_check = 'checked=checked'; }
-		if ($postdate == 'on') { $postdate_check = 'checked=checked'; }
+	?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title', 'lan-thinkupthemes' ); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" style="width: 80px;margin-left: 114px;" /></label></p>
 
-		echo '<p><label for="' . $this->get_field_id('title') . '">' . __( 'Title', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . esc_attr($title) . '" style="width: 80px;margin-left: 114px;" /></label></p>';
+		<p><label for="<?php echo $this->get_field_id('postcount'); ?>"><?php _e( 'Number of posts', 'lan-thinkupthemes' ); ?>: <input class="widefat" id="<?php echo $this->get_field_id('postcount'); ?>" name="<?php echo $this->get_field_name('postcount'); ?>" type="text" value="<?php echo $postcount; ?>" style="width: 80px;margin-left: 46px;" /></label></p>
 
-		echo '<p><label for="' . $this->get_field_id('postcount') . '">' . __( 'Number of posts', 'lan-thinkupthemes' ) . ': <input class="widefat" id="' . $this->get_field_id('postcount') . '" name="' . $this->get_field_name('postcount') . '" type="text" value="' . $postcount . '" style="width: 80px;margin-left: 46px;" /></label></p>';
+		<p><label for="<?php echo $this->get_field_id('imageswitch'); ?>"><?php _e( 'Enable post thumbnail', 'lan-thinkupthemes' ); ?>?</label>&nbsp;<input id="<?php echo $this->get_field_id('imageswitch'); ?>" name="<?php echo $this->get_field_name('imageswitch'); ?>" type="checkbox" <?php checked( $imageswitch, "on" ); ?> style="margin-left: 74px;" /></p>
 
-		echo '<p><label for="' . $this->get_field_id('imageswitch') . '">' . __( 'Enable post thumbnail', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('imageswitch') . '" name="' . $this->get_field_name('imageswitch') . '" type="checkbox" ' . $imageswitch_check . ' style="margin-left: 74px;" /></p>';	
-
-		echo '<p><label for="' . $this->get_field_id('postdate') . '">' . __( 'Show post date', 'lan-thinkupthemes' ) . '?</label>&nbsp;<input id="' . $this->get_field_id('postdate') . '" name="' . $this->get_field_name('postdate') . '" type="checkbox" ' . $postdate_check . ' style="margin-left: 113px;" /></p>';
+		<p><label for="<?php echo $this->get_field_id('postdate'); ?>"><?php _e( 'Show post date', 'lan-thinkupthemes' ); ?>?</label>&nbsp;<input id="<?php echo $this->get_field_id('postdate'); ?>" name="<?php echo $this->get_field_name('postdate'); ?>" type="checkbox" <?php checked( $postdate, "on" ); ?> style="margin-left: 113px;" /></p>
+	<?php
 	}
 
 	/* Assign variable values. */

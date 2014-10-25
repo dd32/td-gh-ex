@@ -47,7 +47,7 @@
 	?>
 
 		<div id="nocomments" class="notification info">
-			<div class="icon"><?php echo 'Comments are closed.'; ?></div>
+			<div class="icon"><?php _e( 'Comments are closed.', 'lan-thinkupthemes' ); ?></div>
 		</div>
 
 	<?php endif; ?>

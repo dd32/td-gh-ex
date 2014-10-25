@@ -290,6 +290,7 @@ return $output;
 
 /* Select Page Title */
 function thinkup_title_select() {
+	global $post;
 
 	if ( is_page() ) {
 		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );

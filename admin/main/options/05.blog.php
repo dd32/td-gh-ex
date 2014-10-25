@@ -33,15 +33,13 @@ global $post;
 
 /* Input post excerpt / content to blog page */
 function thinkup_input_blogtext() {
-global $more;
-global $post;
 global $thinkup_blog_postswitch;
 
 	/* Output post thumbnail / featured media */
 	if ( $thinkup_blog_postswitch == 'option1' or empty( $thinkup_blog_postswitch ) ) {
 		the_excerpt();
 	} else if ( $thinkup_blog_postswitch == 'option2' ) {		
-		echo the_content( '<p><a href="'. get_permalink($post->ID) . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes') . '</a></p>' );
+		the_content();
 	}
 }
 
