@@ -11,7 +11,7 @@
                 <?php $top_icons = $pinnacle['topbar_icon_menu'];
                 foreach ($top_icons as $top_icon) {
                   if(!empty($top_icon['target']) && $top_icon['target'] == 1) {$target = '_blank';} else {$target = '_self';}
-                  echo '<li class="kad-tbicon-links"><a href="'.$top_icon['link'].'" class="kad-color-'.$top_icon['icon_o'].'" data-toggle="tooltip" data-placement="bottom" target="'.$target.'" data-original-title="'.esc_attr($top_icon['title']).'">';
+                  echo '<li class="kad-tbicon-links"><a href="'.esc_attr($top_icon['link']).'" class="kad-color-'.$top_icon['icon_o'].'" data-toggle="tooltip" data-placement="bottom" target="'.$target.'" data-original-title="'.esc_attr($top_icon['title']).'">';
                   if($top_icon['url'] != '') echo '<img src="'.esc_url($top_icon['url']).'"/>' ; else echo '<i class="'.$top_icon['icon_o'].'"></i>';
                   echo '</a></li>';
                 } ?>

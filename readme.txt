@@ -52,6 +52,9 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.0.4 = 
+* Fix/add some esc_attr.
+
 = Version 1.0.3 = 
 * Few small changes in home page title.
 * Update for page selected as latest post page.

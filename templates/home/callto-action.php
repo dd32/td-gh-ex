@@ -8,7 +8,7 @@
 				<h1 class="kad-call-title"><?php if(isset($pinnacle['home_action_text'])) echo $pinnacle['home_action_text'];?></h1>
 			</div>
 			<div class="col-md-2 kad-call-button-case">
-			<a href="<?php if(isset($pinnacle['home_action_link'])) echo $pinnacle['home_action_link'];?>" class="kad-btn-primary kad-btn lg-kad-btn"><?php if(isset($pinnacle['home_action_text_btn'])) echo $pinnacle['home_action_text_btn'];?></a>   	
+			<a href="<?php if(isset($pinnacle['home_action_link'])) echo esc_attr($pinnacle['home_action_link']);?>" class="kad-btn-primary kad-btn lg-kad-btn"><?php if(isset($pinnacle['home_action_text_btn'])) echo $pinnacle['home_action_text_btn'];?></a>   	
 			</div>
 		</div>
 	</div><!--container-->

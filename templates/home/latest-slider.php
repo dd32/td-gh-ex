@@ -22,7 +22,7 @@
                     ?>
                       <li> 
                         <a href="<?php the_permalink(); ?>">
-                          <img src="<?php echo $image; ?>" alt="<?php the_title(); ?>" />
+                          <img src="<?php echo esc_attr($image); ?>" alt="<?php the_title(); ?>" />
                                 <div class="flex-caption">
                                 <div class="captiontitle headerfont"><?php the_title(); ?></div>
                                 </div> 

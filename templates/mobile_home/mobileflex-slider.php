@@ -12,8 +12,8 @@
                           $image = aq_resize($slide['url'], $slidewidth, $slideheight, true);
                           if(empty($image)) {$image = $slide['url'];} ?>
                             <li> 
-                            <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'">'; ?>
-                              <img src="<?php echo $image; ?>" alt="<?php echo $slide['description']?>" title="<?php echo $slide['title'] ?>" />
+                            <?php if($slide['link'] != '') echo '<a href="'.esc_attr($slide['link']).'">'; ?>
+                              <img src="<?php echo esc_attr($image); ?>" alt="<?php echo esc_attr($slide['description']);?>" title="<?php echo esc_attr($slide['title']); ?>" />
                                   <?php if ($captions == '1') { ?> 
                                     <div class="flex-caption">
                                     <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>

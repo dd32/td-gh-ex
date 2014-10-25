@@ -14,7 +14,7 @@
                         <?php if(!empty($icon['target']) && $icon['target'] == 1) {$target = '_blank';} else {$target = '_self';} ?>
                             <div class="<?php echo $itemsize;?> home-iconmenu <?php echo 'homeitemcount'.$counter;?>">
                                 <?php if(!empty($icon['link'])) {?> 
-	                            <a href="<?php echo $icon['link']; ?>" target="<?php echo $target; ?>"  title="<?php echo esc_attr($icon['title']); ?>" class="home-icon-item">
+	                            <a href="<?php echo esc_attr($icon['link']); ?>" target="<?php echo $target; ?>"  title="<?php echo esc_attr($icon['title']); ?>" class="home-icon-item">
                                <?php } else { ?>
                                 <div class="home-icon-item">
                                 <?php } 

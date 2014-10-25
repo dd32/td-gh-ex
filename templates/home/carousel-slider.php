@@ -14,8 +14,8 @@
                     if(empty($image)) {$image = array($slide['url'],$slidewidth,$slideheight);} 
                         echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
                         echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-                        if($slide['link'] != '') echo '<a href="'.$slide['link'].'" target="'.$target.'">';
-                        echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
+                        if($slide['link'] != '') echo '<a href="'.esc_attr($slide['link']).'" target="'.$target.'">';
+                        echo '<img src="'.esc_attr($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" />';
                         if ($captions == '1') { ?> 
                                 <div class="flex-caption">
                                 <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>

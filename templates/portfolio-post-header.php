@@ -39,7 +39,7 @@ if(!empty($post_header_title)) {
 				   		<?php 
 							previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'in_same_tax' => false, 'format' => '%link', 'link' => '<i class="icon-angle-left"></i>') );
 				   			$parent_link = get_post_meta( $post->ID, '_kad_portfolio_parent', true ); if(!empty($parent_link) && ($parent_link != 'default')) {$parent_id = $parent_link;} else {$parent_id = $pinnacle['portfolio_link'];}
-				   			if( !empty($parent_id)){ ?><a href="<?php echo get_page_link($parent_id); ?>" ><?php } ?><i class="icon-th-large"></i></a> 
+				   			if( !empty($parent_id)){ ?><a href="<?php echo esc_attr(get_page_link($parent_id)); ?>" ><?php } ?><i class="icon-th-large"></i></a> 
 					   	<?php next_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'in_same_tax' => false, 'format' => '%link', 'link' => '<i class="icon-angle-right"></i>') ); ?>
 					   </div>
 					   <?php } ?>

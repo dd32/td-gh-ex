@@ -18,7 +18,7 @@
                                <?php } else { ?>
                                 <div class="home-icon-item">
                                 <?php } 
-	                           if(!empty($icon['url'])) echo '<i><img src="'.$icon['url'].'"/></i>' ; else echo '<i class="'.$icon['icon_o'].'"></i>'; 
+	                           if(!empty($icon['url'])) echo '<i><img src="'.esc_attr($icon['url']).'"/></i>' ; else echo '<i class="'.$icon['icon_o'].'"></i>'; 
 	                            if ($icon['title'] != '') echo '<h4>'.$icon['title'].'</h4>'; 
                                 if (!empty($icon['description'])) echo '<p>'.$icon['description'].'</p>'; 
                                  if(!empty($iconbtn)) echo '<div class="kad-btn sm-kad-btn kad-btn-primary">'.$iconbtn.'</div>';
