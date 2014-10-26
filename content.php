@@ -1,5 +1,5 @@
 		
-	<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('archive-post clearfix'); ?>>
 
 		<div class="postmeta-wrap clearfix">
 			

@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.0.2
+Version: 1.0.3
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -351,11 +351,12 @@ input, textarea, select {
 	font-size: 1.0em;
 	font-weight: bold;
 	font-family: 'Carme', Tahoma, Verdana, Arial;
-	padding: 1.2em 1em;
+	padding: 1em;
 	margin: -1.5em -1.5em 1.5em -1.5em;
 	color: #333;
 	background: #f8f8f8;
 	border-bottom: 1px solid #e5e5e5;
+	line-height: 1.5em;
 }
 .widget .textwidget {
 	line-height: 1.5em;
@@ -431,22 +432,12 @@ input, textarea, select {
 .type-post {
 	background: #f8f8f8;
 }
-.type-post .post-content {
-	margin-left: 33%;
-	border-left: 1px solid #e5e5e5;
-	width: 67%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+.post-content {
+	border-top: 1px solid #e5e5e5;
 }
-.type-post .postmeta-wrap {
-	float: left;
-	width: 33%;
-	padding: 0.8em 0.8em 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
+
+
+/* Titles */
 .page-title, .post-title {
 	font-family: 'Francois One', Tahoma, Verdana, Arial;
 	color: #cc1111;
@@ -490,14 +481,16 @@ input, textarea, select {
 }
 
 /* Postmeta */
+.postmeta-wrap {
+	padding: 1em 0.6em;
+}
 .postmeta {
-	margin-top: 1em;
 	line-height: 1.5em;
 	font-size: 1.0em;
 }
 .postmeta span {
-	display: block;
-	padding: 0.3em 0;
+	display: inline-block;
+	padding: 0 0.6em;
 }
 .postmeta a:link, .postmeta a:visited  {
 	color: #333;
@@ -505,10 +498,10 @@ input, textarea, select {
 .postmeta span:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
-	font: normal 24px/1 'Genericons';
-	vertical-align: middle;
+	font: normal 24px 'Genericons';
+	vertical-align: top;
 	color: #333;
-	margin-right: 0.2em;
+	margin: 0 0.2em -0.2em 0;
 }
 .postmeta .meta-date:before{
 	content: '\f307';
@@ -526,6 +519,31 @@ input, textarea, select {
 	content: '\f302';
 }
 
+/* Archive Post Layout */
+.archive-post.has-post-thumbnail .post-content {
+	border-top: none;
+	margin-left: 33%;
+	border-left: 1px solid #e5e5e5;
+	width: 67%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.archive-post.has-post-thumbnail .postmeta-wrap {
+	float: left;
+	width: 33%;
+	padding: 0.8em 0.8em 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.archive-post.has-post-thumbnail .postmeta {
+	margin-top: 1em;
+}
+.archive-post.has-post-thumbnail .postmeta span {
+	display: block;
+	padding: 0.3em 0;
+}
 
 /* Post Tags */
 .meta-tags {
@@ -597,10 +615,11 @@ input, textarea, select {
 .archive-title {
 	font-weight: bold;
 	color: #222;
-	padding: 1.2em 1em;
+	padding: 1em;
 	margin-bottom: 1em;
 	border: 1px solid #e5e5e5;
 	background: #f8f8f8;
+	line-height: 1.5em;
 }
 
 /* Content Pagination */
@@ -1087,11 +1106,12 @@ embed, iframe, object, video {
 }
 #comments .comments-title, #respond #reply-title {
 	margin-bottom: 1em;
-	padding: 1.2em 1em;
+	padding: 1em;
 	font-weight: bold;
 	color: #222;
 	border: 1px solid #e5e5e5;
 	background: #f8f8f8;
+	line-height: 1.5em;
 }
 #respond #reply-title {
 	margin-bottom: 0;
@@ -1340,23 +1360,23 @@ embed, iframe, object, video {
 	#featured-content .featured-post:nth-child(2n + 1) {
 		clear: left;
 	}
-	.type-post .post-content, .commentlist .comment .comment-content {
+	.archive-post.has-post-thumbnail .post-content, .commentlist .comment .comment-content {
 		margin-left: 0;
 		border-left: none;
 		border-top: 1px solid #e5e5e5;
 		width: 100%;
 	}
-	.type-post .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
 		float: none;
 		width: 100%;
 		padding: 0.8em;
 	}
-	.type-post .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		float: left;
 		margin-right: 2em;
 		max-width: 50%;
 	}
-	.postmeta {
+	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 0.5em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1403,23 +1423,23 @@ embed, iframe, object, video {
 		margin: 0 -2px 2px 0;
 		line-height: 1.5em;
 	}
-	.type-post .post-content, .commentlist .comment .comment-content {
+	.archive-post.has-post-thumbnail .post-content, .commentlist .comment .comment-content {
 		margin-left: 33%;
 		border-left: 1px solid #e5e5e5;
 		border-top: none;
 		width: 67%;
 	}
-	.type-post .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
 		float: left;
 		width: 33%;
 		padding: 0.8em 0.8em 0;
 	}
-	.type-post .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		float: none;
 		margin-right: 0;
 		max-width: 100%;
 	}
-	.postmeta {
+	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 1em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1618,23 +1638,23 @@ embed, iframe, object, video {
 	#logo .site-title {
 		font-size: 2.3em;
 	}
-	.type-post .post-content, .commentlist .comment .comment-content {
+	.archive-post.has-post-thumbnail .post-content, .commentlist .comment .comment-content {
 		margin-left: 0;
 		border-left: none;
 		border-top: 1px solid #e5e5e5;
 		width: 100%;
 	}
-	.type-post .postmeta-wrap, .commentlist .comment .comment-meta  {
+	.archive-post.has-post-thumbnail .postmeta-wrap, .commentlist .comment .comment-meta  {
 		float: none;
 		width: 100%;
 		padding: 0.8em;
 	}
-	.type-post .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		float: left;
 		margin-right: 2em;
 		max-width: 50%;
 	}
-	.postmeta {
+	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 0.5em;
 	}
 	.comment-meta .commentmetadata p {
@@ -1722,11 +1742,11 @@ embed, iframe, object, video {
 		padding: 0;
 		float: none;
 	}
-	.type-post .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		max-width: 45%;
 		margin-right: 1em;
 	}
-	.postmeta {
+	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 0;
 	}
 	.comment-meta .commentmetadata p {
@@ -1778,12 +1798,12 @@ embed, iframe, object, video {
 
 /* Smartphones | <480px */
 @media only screen and (max-width: 28em) {
-	.type-post .postmeta-wrap .wp-post-image {
+	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		float: none;
 		margin-right: 0;
 		max-width: 100%;
 	}
-	.postmeta {
+	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 1em;
 	}
 }

@@ -22,6 +22,7 @@ function rubine_customize_register_header_settings( $wp_customize ) {
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_attr'
         )
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
