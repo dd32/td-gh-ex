@@ -3,7 +3,7 @@
 * @Theme Name	:	Wallstreet
 * @file         :	404.php
 * @package      :	wallstreet
-@author       :	webriti
+* @author       :	Harish Lodha
 * @filesource   :	wp-content/themes/wallstreet/404.php
 */
 get_header();

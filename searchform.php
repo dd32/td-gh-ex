@@ -1,7 +1,6 @@
 <?php
 /**
-*Theme Name	: Wallstreet
-	
+ *Theme Name	: Wallstreet
  * @file           searchform.php
  * @package        wallstreet
  * @author         Harish Lodha

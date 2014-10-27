@@ -3,7 +3,7 @@
 * @Theme Name	:	Wallstreet
 * @file         :	comments.php
 * @package      :	wallstreet
-@author       :	Harish Lodha
+* @author       :	Harish Lodha
 * @filesource   :	wp-content/themes/wallstreet/comments.php
 */
 ?>
@@ -31,7 +31,7 @@
 				<div class="comment-detail">
 					<h4 class="comment-detail-title"><?php comment_author(); ?><span class="comment-date"><a href="<?php echo get_comment_link( $comment->comment_ID );?>"><?php _e('Posted on &nbsp;', 'wallstreet'); ?><?php echo comment_time('g:i a'); ?><?php echo " - "; echo comment_date('M j, Y');?></a></span></h4>
 					<?php comment_text(); ?>
-					<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'wallstreet' ), '<p class="edit-link">', '</p>' ); ?>
 					<div class="reply">
 						<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
 					</div>
@@ -68,7 +68,7 @@
 	} ?>
 	<?php if ('open' == $post->comment_status) { ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
-<p><?php _e("You must be",'wallstreet'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'wallstreet')?></a> <?php _e("to post a comment",'wallstreet'); ?>
+<p><?php _e('You must be','wallstreet'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','wallstreet')?></a> <?php _e('to post a comment','wallstreet'); ?>
 </p>
 <?php } else { 
 ?>
@@ -76,7 +76,7 @@
 	<?php  
 	 $fields=array(
 		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="Name:" /></div>',
-		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="Email:" /></div>',
+		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value="" type="email" placeholder="Email:" /></div>',
 		);
 		function my_fields($fields) { 
 			return $fields;

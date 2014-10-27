@@ -53,6 +53,14 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 0.3
+1. Service and portfolio issue fixed.
+2. option Panel CSS issue fixed.
+3. Remove meta tag from header.php.
+4. Add text domain wherever required.
+5. Added missing *(star) in all templates.
+6. All GPL image added.
+
 @Version 0.2
 1. wp_link_pages called within the loop after the content.
 2. Always make footer credit link visible only on front page. On the other templates only the text is displayed.
@@ -89,6 +97,26 @@ Screenshot: Image used in screenshot By Andrew Ruiz
 URL: https://unsplash.com/photos/bI2j1olMXUA/download
 Source: http://unsplash.com
 License: GPL
+
+Portfolio Image
+URL: http://pixabay.com/en/hunger-hungry-eating-cookie-413685/
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
+Service Image
+URL: http://pixabay.com/en/adult-background-business-computer-15700/
+Source:pixabay.com
+License: CC0 Public Domain
+
+Slider Image
+URL: https://unsplash.com/photos/bI2j1olMXUA/download
+Source: http://unsplash.com
+License: GPL
+
+Page Header Image
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
 
 Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

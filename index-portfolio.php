@@ -3,14 +3,16 @@
 * @Theme Name	:	wallstreet
 * @file         :	index-portfolio.php
 * @package      :	wallstreet
-@author       :	Harish Lodha
+* @author       :	Harish Lodha
 * @filesource   :	wp-content/themes/wallstreet/index-portfolio.php
 */
 ?>
 <!-- AddThis Button END -->
+<?php $current_options=get_option('wallstreet_lite_options'); ?>
+<?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
 <div class="portfolio-section">
 	<div class="container">
-		<?php $current_options=get_option('wallstreet_lite_options'); ?>
+
 		<div class="row">
 			<div class="section_heading_title">
 				<?php if($current_options['portfolio_title']) { ?>
@@ -23,7 +25,6 @@
 			</div>
 		</div>
 		<div class="row">
-		<?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
@@ -111,8 +112,9 @@
 					</div>
 				</div>
 			</div>
-			<?php } ?>
+
 		</div>
 </div>	
 </div>
+<?php } ?>
 <!-- /wallstreet Portfolio Section ---->

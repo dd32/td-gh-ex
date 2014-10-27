@@ -3,14 +3,15 @@
 * @Theme Name	:	wallstreet
 * @file         :	index-service.php
 * @package      :	wallstreet
-@author       :	Harish Lodha
+* @author       :	Harish Lodha
 * @filesource   :	wp-content/themes/wallstreet/index-service.php
 */
 ?>
+<?php $current_options=get_option('wallstreet_lite_options'); ?>
+<?php if($current_options['service_section_enabled'] == 'on') { ?>
 <!-- wallstreet Service Section ---->
 <div class="service-section">
 <div class="container">
-	<?php $current_options=get_option('wallstreet_lite_options'); ?>
 	<div class="row">
 		<div class="section_heading_title">
 		<?php if($current_options['service_title']) { ?>
@@ -23,7 +24,6 @@
 		</div>
 	</div>	
 	<div class="row">
-	<?php if($current_options['service_section_enabled'] == 'on') { ?>
 		<div class="col-md-4 col-sm-6 service-effect">
 			<?php if($current_options['service_image_one']) { ?>
 			<div class="service-box">
@@ -71,8 +71,9 @@
 			<?php } ?>
 			</div><!-- / service-area -->
 		</div> <!-- / service-effect column -->
-		<?php } ?>
+		
 	</div>	
 </div>
 </div>
+<?php } ?>
 <!-- /wallstreet Service Section ---->

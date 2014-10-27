@@ -58,7 +58,7 @@ it has less normal distribution letters, as opposed to using content here.','wal
 					<p> <?php echo esc_html($current_options['footer_customizations']);?>
 					 <?php if(is_home() && $current_options['created_by_webriti_text']!='') {   ?>
 					<a href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"><?php echo esc_html($current_options['created_by_webriti_text']);  ?></a>
-					<?php } else { echo $current_options['created_by_webriti_text']; }?>
+					<?php } else { echo esc_html($current_options['created_by_webriti_text']); }?>
 					</p>
 				</div>
 			<?php } ?>
@@ -70,7 +70,7 @@ it has less normal distribution letters, as opposed to using content here.','wal
 <?php
 if($current_options['webrit_custom_css']!='') {  ?>
 <style>
-<?php echo esc_html($current_options['webrit_custom_css']); ?>
+<?php echo htmlspecialchars_decode($current_options['webrit_custom_css']); ?>
 </style>
 <?php } ?>
 </div> <!-- end of wrapper -->

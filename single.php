@@ -3,7 +3,7 @@
 * @Theme Name	:	Wallstreet
 * @file         :	single.php
 * @package      :	wallstreet
-@author       :	Harish Lodha
+* @author       :	Harish Lodha
 * @filesource   :	wp-content/themes/wallstreet/single.php
 */
 ?>

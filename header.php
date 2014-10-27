@@ -4,17 +4,15 @@
 	<!--[if IE]>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
-	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php $current_options = get_option('wallstreet_lite_options'); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url( $current_options['upload_image_favicon'] ); ?>" /> 
-	<?php } ?>	
-	<link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />	
+	<?php } ?>
+	<link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
 	<?php wp_head(); ?>	
 </head>
 <body <?php body_class(); ?>>
