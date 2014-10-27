@@ -155,7 +155,13 @@ td.kaira-heading-td {
     background-color: #F1F1F1;
     border: 1px solid #C0C0C0;
 }
-.kaira-theme-options-wrap .kaira-text {
+.kaira-theme-options-wrap .media_upload_img_preview {
+    max-width: 150px;
+    height: auto;
+    vertical-align: top;
+}
+.kaira-theme-options-wrap .kaira-text,
+.kaira-theme-options-wrap .kaira-url {
     padding: 3px 10px;
     border-radius: 3px;
     background-color: #F5F5F5;

@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.5.1' );
+define( 'KAIRA_THEME_VERSION' , '1.5.2' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -58,11 +58,11 @@ function kaira_setup_theme() {
 	
 	// The custom header is used for the logo
 	add_theme_support('custom-header', array(
-        'default-image' => get_template_directory_uri() . '/images/albar_logo.png',
-		'width'         => 300,
+        'default-image' => '',
+		'width'         => 290,
 		'height'        => 110,
-		'flex-width' => true,
-		'flex-height' => true,
+		'flex-width' => false,
+		'flex-height' => false,
 		'header-text' => false,
 	));
 	

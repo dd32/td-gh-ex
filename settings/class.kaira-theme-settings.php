@@ -218,11 +218,22 @@ class Kaira_theme_settings {
                 break;
                 
             case 'media':
-                echo '<input id="' . esc_attr( $id ) . '" class="kaira-media-upload" name="kaira_theme_options[' . esc_attr( $id ) . ']" type="text" value="' . esc_attr( $options[$id] ) . '" />
+                echo '<input id="' . esc_attr( $id ) . '" class="kaira-media-upload" name="kaira_theme_options[' . esc_attr( $id ) . ']" type="text" value="' . esc_url_raw( $options[$id] ) . '" />
                       <input id="' . esc_attr( $id ) . '_button" class="media_upload_button" name="' . esc_attr( $id ) . '_button" type="text" value="Upload" />';
+                      
                 if ( $desc != '' )
                     echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span></label>';
+                if ( $options[$id] != '' )
+                    echo '<img src="' . esc_url( $options[$id] ) . '" class="media_upload_img_preview" />';
             
+                break;
+                
+            case 'url':
+                echo '<input class="kaira-url' . esc_attr( $field_class ) . '" type="text" id="' . esc_attr( $id ) . '" name="kaira_theme_options[' . esc_attr( $id ) . ']" value="' . esc_url_raw( $options[$id] ) . '" />';
+                
+                if ( $desc != '' )
+                    echo '<br /><span class="description">' . wp_kses_post( $desc ) . '</span>';
+                
                 break;
                 
             case 'color':
@@ -402,7 +413,7 @@ class Kaira_theme_settings {
             'section' => 'styling',
             'title'   => __( 'Body font URL', 'albar' ),
             'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> //fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
         );
         $this->settings['kra-body-google-font-name'] = array(
@@ -423,7 +434,7 @@ class Kaira_theme_settings {
             'section' => 'styling',
             'title'   => __( 'Heading font URL', 'albar' ),
             'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> //fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic'
         );
         $this->settings['kra-heading-google-font-name'] = array(
@@ -495,77 +506,77 @@ class Kaira_theme_settings {
             'section' => 'social',
             'title'   => __( 'Email Address', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-skype'] = array(
             'section' => 'social',
             'title'   => __( 'Skype', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-facebook'] = array(
             'section' => 'social',
             'title'   => __( 'Facebook', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-twitter'] = array(
             'section' => 'social',
             'title'   => __( 'Twitter', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-google-plus'] = array(
             'section' => 'social',
             'title'   => __( 'Google Plus', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-youtube'] = array(
             'section' => 'social',
             'title'   => __( 'YouTube', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-instagram'] = array(
             'section' => 'social',
             'title'   => __( 'Instagram', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-pinterest'] = array(
             'section' => 'social',
             'title'   => __( 'Pinterest', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-linkedin'] = array(
             'section' => 'social',
             'title'   => __( 'LinkedIn', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-tumblr'] = array(
             'section' => 'social',
             'title'   => __( 'Tumblr', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         $this->settings['kra-social-flickr'] = array(
             'section' => 'social',
             'title'   => __( 'Flickr', 'albar' ),
             'desc'    => __( '', 'albar' ),
-            'type'    => 'text',
+            'type'    => 'url',
             'std'     => ''
         );
         
