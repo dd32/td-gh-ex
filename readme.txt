@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.8
+Version: 1.1.9
 Requires at least: 3.0.1
 Tested up to: 4.0
 Author: Miguel Angel Rico
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.9 - 27.10.2014 =
+* Structured data error is repaired.
 
 = 1.1.8 - 19.10.2014 =
 * Fixed bug in update of structured data.
