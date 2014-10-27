@@ -1,0 +1,1 @@
+[15-Oct-2014 04:56:47 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/gcollis/public_html/2014/wp-content/themes/badeyes/index.php on line 30
