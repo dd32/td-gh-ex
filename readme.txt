@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.1.42
+Stable tag: 1.1.43
 
 == ABOUT BOLDR LITE ==
 
@@ -38,13 +38,13 @@ Please refer to license.txt for more information.
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
 * hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
-* ru_RU, de_DE, es_ES and pt_BR translation files: see below.
+* ru_RU, de_DE, es_ES, pt_BR, pl_PL and it_IT translation files: see below.
 
-All other files are copyright 2013-2014 Iceable Media.
+All other files are copyright 2013-2014 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
-Currently available translations:
+Currently available translations (GNU GPLv2 Licensed):
 
 * French (fr_FR) translation: by Iceable Media
 * Russian (ru_RU) translation: Thanks to Dmitriy Skalubo - http://wordpress.crimea.ua/
@@ -52,6 +52,7 @@ Currently available translations:
 * Spanish (es_ES) translation: por Chema Masip Diaz – http://www.pedaleapormadrid.es/ – chmadi@gmail.com
 * Brazilian Portuguese (pt_BR) translation: Thanks to Rafael de Oliveira Stephano - http://rstephano.com.br - rafael@rstephano.com.br
 * Polish (pl_PL) translation: Thanks to nitr0 - dreambyte.pl
+* Italian (it_IT) translation: Thanks to Manuel Valentino - brisma@gmail.com - http://www.brisma.it/
 
 Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
 If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
@@ -60,6 +61,11 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.43 =
+October 27th, 2014
+* Added it_IT translation files
+* Updated de_DE translation files
 
 = 1.1.42 =
 September 24th, 2014
