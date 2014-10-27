@@ -35,8 +35,8 @@ function semplicemente_color_primary_register( $wp_customize ) {
 		$color['slug'], array(
 			'default' => $color['default'],
 			'type' => 'option', 
-			'capability' => 
-			'edit_theme_options'
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability' => 'edit_theme_options'
 		)
 	);
 	// CONTROLS

@@ -16,6 +16,17 @@ $semplicemente_theme_options = array(
 	'tumblrurl' => '#'
 );
 
+function semplicemente_toolbar_link_to_mypage( $wp_admin_bar ) {
+	$args = array(
+		'id'    => 'semplicemente_theme_options',
+		'parent' => 'site-name',
+		'title' => __('Semplicemente Theme Options', 'semplicemente' ),
+		'href'  => admin_url('themes.php?page=theme_options')
+	);
+	$wp_admin_bar->add_node( $args );
+}
+add_action( 'admin_bar_menu', 'semplicemente_toolbar_link_to_mypage', 999 );
+
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'semplicemente_options_init' );
@@ -45,27 +56,36 @@ function semplicemente_options_do_page() {
 		$_REQUEST['settings-updated'] = false;
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'semplicemente' ) . "</h2>"; ?>
+		<?php echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'semplicemente' ) . "</h2>"; ?>
+			
+		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Use CrestaProject Premium WordPress Theme!</h3>
+			<p>Get <b>CrestaProject</b> Premium WordPress Theme from <b>19,90&euro;</b> <i>(One Time Fee)</i></p>
+			<div class="semplicementeLeft" style="float:left; width: 30%; text-align: center;">
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/themes/" target="_blank"><div class="dashicons dashicons-visibility"></div> Go to CrestaProject WP Themes</a>
+			</div>
+			<div class="semplicementeRight" style="float:right; width: 70%;">
+			<ul>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Advanced Theme Options</b> (Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font switcher and much more...)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Logo and Favicon Upload</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Unlimited Colors and Skin</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post views counter</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post format</b> (Standard, Gallery, Audio, Link, Video, Quote)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Shortcodes</b> (Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Exclusive Widgets</b> (Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)</li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Slider</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Breadcrumb</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Related Posts Box</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Information About Author Box</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>And much more...</b></li>
+			<ul>
+			</div>
+		</div>	
+		
 		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'semplicemente' ); ?></p>
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'semplicemente' ); ?></strong></p></div>
 		<?php endif; ?>
-			
-		<div class="updated" style="background:#E9F7DF;">
-			<table class="form-table">
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Support Semplicemente Theme', 'semplicemente' ); ?></strong></th>
-					<td>
-						<p><?php _e( 'If you enjoy <strong>Semplicemente Theme</strong>, please consider making a secure <strong>donation</strong> using the PayPal button. Anything is appreciated!', 'semplicemente' ); ?></p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="KLXV5HUDPJK5W">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form>
-					</td>
-				</tr>
-			</table>		
-		</div>	
 
 		<form method="post" action="options.php">
 		<?php $se_options = get_option( 'semplicemente_theme_options', $semplicemente_theme_options ); ?>

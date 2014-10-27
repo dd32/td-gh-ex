@@ -17,6 +17,20 @@
 				jQuery(this).append("<span class='indicator'></span>");
 			}
 		});	
+		
+		/*-----------------------------------------------------------------------------------*/
+		/*  Overlay Effect for Featured Image
+		/*-----------------------------------------------------------------------------------*/ 	
+			$(".overlay-img").hover(function () {
+				$(this).stop().animate({
+					opacity: .5
+				}, 300);
+			},
+			function () {
+				$(this).stop().animate({
+					opacity: 0
+				}, 300);
+			});
 
 	});
 	
