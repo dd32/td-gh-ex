@@ -6,7 +6,7 @@ function webriti_admin_menu_pannel()
  }
 function webriti_admin_enqueue_script($hook)
 {
-	if('appearance_page_webriti' != $hook){
+	if('appearance_page_webriti' == $hook){
 	wp_enqueue_script('tab',get_template_directory_uri().'/functions/theme_options/js/option-panel-js.js',array('media-upload','jquery-ui-sortable'));
 	wp_enqueue_style('thickbox');
 	wp_enqueue_style('option',get_template_directory_uri().'/functions/theme_options/css/style-option.css');

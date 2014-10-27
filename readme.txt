@@ -52,7 +52,12 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 0.3.1
+1. Option panel scripts properly enqueued only in the option panel pages
+2. MOnster widgets styles fixed
+3. No debug errors i found
+4. Page title corrected with proper seperator.
+5. page for posts called correctly
 @Version 0.3
 1. Service and portfolio issue fixed.
 2. option Panel CSS issue fixed.

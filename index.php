@@ -12,9 +12,11 @@
 	<div class="page-title-col">
 		<div class="container">
 			<div class="row">
-				<div class="page-header-title">
-					<h1><?php the_title(); ?></h1>		
-				</div>
+			<?php if( is_home() && get_option('page_for_posts') ) : ?>
+		<div class="page-header-title">
+			<h1><?php echo apply_filters('the_title',get_page( get_option('page_for_posts') )->post_title); ?></h1>
+		</div>
+		<?php endif; ?>				
 			</div>	
 		</div>
 		<?php get_template_part('index', 'breadcrumb'); ?>
