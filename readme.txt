@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.5.8
+- Fixed:   Blog posts now allow for custom date format to be used. Picks up fromat from Settings -> General.
+- Removed: sysinfo.php removed from Redux framework as it is not required.
+- Removed: TGM plugin activation removed as no plugins are currently recommended for installation.
+
 Version 1.5.7
 - Fixed:   Sanitization of Site Title and Site Description in theme options panel changed to allow non-english alphabet charachters.
 

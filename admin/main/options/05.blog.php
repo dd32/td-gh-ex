@@ -98,7 +98,7 @@ function thinkup_input_blogdate() {
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'M j, Y' ) )
+		esc_html( get_the_date() )
 	);
 }
 

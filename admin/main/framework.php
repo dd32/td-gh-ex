@@ -2190,20 +2190,6 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 echo '</div>';
             }
 
-            if( $this->args['system_info'] === true ) {
-                require_once 'inc/sysinfo.php';
-                $system_info = new Simple_System_Info();
-
-                echo '<div id="system_info_default_section_group' . '" class="redux-group-tab">';
-                echo '<h3>' . __( 'System Info', 'redux-framework' ) . '</h3>';
-
-                echo '<div id="redux-system-info">';
-                echo $system_info->get( true );
-                echo '</div>';
-
-                echo '</div>';
-            }
-
             do_action( 'redux-page-after-sections-' . $this->args['opt_name'], $this );
 
             echo '<div class="clear"></div>';
