@@ -77,7 +77,7 @@ function of_sanitize_checkbox( $input ) {
 	if ( $input ) {
 		$output = '1';
 	} else {
-		$output = false;
+		$output = ' ';
 	}
 	return $output;
 }

@@ -6,7 +6,7 @@
 <?php 
 $post_date = of_get_option('post_date');
 $post_footer = of_get_option('post_footer');
-$post_date_class = ($post_date == 0 || has_post_thumbnail()) ? "no-date" : "";
+$post_date_class = ((!empty($post_date) && $post_date == ' ') || has_post_thumbnail()) ? " no-date" : "";
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
