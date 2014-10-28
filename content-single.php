@@ -21,7 +21,7 @@
 					$top_cat_list = implode(", ", $top_cat_final);
 
 					echo '<h3 class="category-list">' . $top_cat_list . '</h3>'; ?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">

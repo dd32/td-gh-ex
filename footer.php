@@ -15,7 +15,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'beluga' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'beluga' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'beluga' ), 'Beluga', '<a href="http://basilosaur.us" rel="designer" target="_blank">basilosaur.us</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'beluga' ), 'Beluga', '<a href="http://basilosaur.us" target="_blank">basilosaur.us</a>' ); ?>
 			<br><?php beluga_license_info('echo') ?>
 		</div><!-- .site-info -->
 		</div>

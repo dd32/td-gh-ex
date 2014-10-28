@@ -44,21 +44,26 @@ function beluga_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'beluga_theme_settings[featured_frontpage]' , array(
 	    'default'			=> 1,
 	    'type'			=> 'option',
+	    'sanitize_callback' => 'sanitize_null'
 	) );
 	//FEATURED IMAGE IN THE HEADER - SETTING
 	$wp_customize->add_setting( 'beluga_theme_settings[featured_header]' , array(
 	    'default'			=> 1,
 	    'type'			=> 'option',
+	    'sanitize_callback' => 'sanitize_null'
 	) );
 	//HEADER IMAGE OPACITY - SETTING
 	$wp_customize->add_setting( 'beluga_theme_settings[header_opacity]' , array(
 	    'default'			=> '0',
 	    'type'			=> 'option',
+	    'transport' 		=> 'postMessage',
+	    'sanitize_callback' => 'sanitize_null'
 	) );
 	//SITE LICENSE INFORMATION - SETTING
 	$wp_customize->add_setting( 'beluga_theme_settings[site_license]' , array(
 	    'default'			=> '',
 	    'type'			=> 'option',
+	    'sanitize_callback' => 'sanitize_textbox'
 	) );
 
 	//SITE LICENSE INFORMATION - CONTROL
@@ -111,3 +116,19 @@ function beluga_customize_preview_js() {
 	wp_enqueue_script( 'beluga_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'beluga_customize_preview_js' );
+
+/**
+ * Passthrough function for settings that don't require sanitizing
+ */
+function sanitize_null($i) {
+	return $i;
+}
+/**
+ * Sanitizes textboxes by adding <br> tags between lines, running wptexturize
+ */
+function sanitize_textbox($i) {
+	$i = str_replace( array("\n", "\r", "\r\n", "\n\r"), '<br />', $i );
+	$i = wptexturize( $i );
+
+	return $i;
+}

@@ -4,7 +4,7 @@ Theme URI: https://basilosaur.us/wordpress/themes/beluga/
 Author: Basilosaur.us
 Author URI: https://basilosaur.us/
 Description: Beluga is a blogging theme that offers a modern minimalist sensibility with an emphasis on text layout and readability, and just enough JavaScript to complement your content without getting in its way.  Beluga has all the WordPress accouterments – search boxes, widget areas, and the works. But it keeps them out of sight unless the user makes them visible, making them secondary to what's really important:  your words, your images, and what you've created.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beluga
@@ -1165,7 +1165,7 @@ a:active {
 	position: relative;
 	top:2px;
 	left: 0;
-	content: '\f305';
+	content: '\f304';
 	display: inline-block;
 	position: relative;
 	-webkit-font-smoothing: antialiased;

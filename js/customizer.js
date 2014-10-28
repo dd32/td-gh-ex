@@ -33,4 +33,10 @@
 			}
 		} );
 	} );
+	// Header Opacity
+	wp.customize( 'beluga_theme_settings[header_opacity]', function( value ) {
+		value.bind( function( to ) {
+			$("#masthead .masthead-opacity").css({'opacity' : to});
+		} );
+	} );
 } )( jQuery );
