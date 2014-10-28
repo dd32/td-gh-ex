@@ -30,8 +30,10 @@ Custom Css:
 
 == Change log ==
 
-= 1.5.1 =
+= 1.5.2 =
 * Fixed minor bugs
+* Credit link change
+* Calender CSS code update
 
 = 1.5 =
 * Comment security loop removed
