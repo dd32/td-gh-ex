@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * @package Astoned
  * Theme Functions

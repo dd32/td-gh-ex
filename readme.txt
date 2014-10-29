@@ -9,6 +9,10 @@ Astoned is distributed under the GNU General Public License v2
 
 ==Changelog==
 
+v1.2
+More bug fixes to the sidebar widgets to improve responsiveness 
+==
+
 v1.1
 Minor bug fixes and improved scalability on tablet and mobile devices
 ==
