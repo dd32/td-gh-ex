@@ -49,6 +49,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.8 =
+* scripts update
+* Add esc_url
+
 = Version: 2.2.7 =
 * add greek po and mo
 

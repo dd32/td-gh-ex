@@ -56,8 +56,8 @@
           <div class="<?php echo $logocclass; ?>  clearfix kad-header-left">
             <div id="logo" class="logocase">
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
-                      <?php global $virtue; if (!empty($virtue['x1_virtue_logo_upload']['url'])) { ?> <div id="thelogo"><img src="<?php echo $virtue['x1_virtue_logo_upload']['url']; ?>" alt="<?php  bloginfo('name');?>" class="kad-standard-logo" />
-                         <?php if(!empty($virtue['x2_virtue_logo_upload']['url'])) {?> <img src="<?php echo $virtue['x2_virtue_logo_upload']['url'];?>" class="kad-retina-logo" style="max-height:<?php echo $virtue['x1_virtue_logo_upload']['height'];?>px" /> <?php } ?>
+                      <?php global $virtue; if (!empty($virtue['x1_virtue_logo_upload']['url'])) { ?> <div id="thelogo"><img src="<?php echo esc_url($virtue['x1_virtue_logo_upload']['url']); ?>" alt="<?php  bloginfo('name');?>" class="kad-standard-logo" />
+                         <?php if(!empty($virtue['x2_virtue_logo_upload']['url'])) {?> <img src="<?php echo esc_url($virtue['x2_virtue_logo_upload']['url']);?>" class="kad-retina-logo" style="max-height:<?php echo $virtue['x1_virtue_logo_upload']['height'];?>px" /> <?php } ?>
                         </div> <?php } else { bloginfo('name'); } ?>
                         </a>
               <?php if (isset($virtue['logo_below_text'])) { ?> <p class="kad_tagline belowlogo-text"><?php echo $virtue['logo_below_text']; ?></p> <?php }?>
@@ -100,5 +100,5 @@
     </div><!--close container-->
     </section>
     <?php endif; ?> 
-     <?php global $virtue; if (!empty($virtue['virtue_banner_upload']['url'])) { ?> <div class="container"><div class="virtue_banner"><img src="<?php echo $virtue['virtue_banner_upload']['url']; ?>" /></div></div> <?php } ?>
+     <?php global $virtue; if (!empty($virtue['virtue_banner_upload']['url'])) { ?> <div class="container"><div class="virtue_banner"><img src="<?php echo esc_url($virtue['virtue_banner_upload']['url']); ?>" /></div></div> <?php } ?>
 </header>

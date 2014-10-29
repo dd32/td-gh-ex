@@ -1495,7 +1495,6 @@ $this->sections[] = array(
             'type' => 'media', 
             'url'=> true,
             'title' => __('Defualt post summary feature Image', 'virtue'),
-            'compiler' => 'true',
             'subtitle' => __('Replace theme default feature image for posts without a featured image', 'virtue'),
             ),
         array(
