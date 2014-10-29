@@ -30,3 +30,11 @@ Version 1.0.7
 2. Added Full Width Page Template
 3. Added Sticky Navigation for mobiles
 4. Added option to show site description with logo
+
+Version 1.0.11
+1. Fixing Menu hover disappear problem. z-index issue.
+
+
+Version 1.0.12
+1. Nested Author comments turns to white bg. Fixed.
+2. screen_icon() in class-tgm-plugin-activation.php removed.
