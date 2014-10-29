@@ -551,7 +551,7 @@ function ct_tracks_background_texture_output(){
 
         $background_texture_css = "
             .overflow-container {
-                background-image: url('" . get_template_directory_uri() . "/assets/images/textures/$background_texture.png');
+                background-image: url('" . plugins_url() . "/tracks-background-textures/textures/$background_texture.png');
             }
         ";
         wp_add_inline_style('style', $background_texture_css);

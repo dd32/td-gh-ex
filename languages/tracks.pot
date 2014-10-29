@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Tracks 1.30\n"
+"Project-Id-Version: Tracks 1.30.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2014-10-20 15:07:26+00:00\n"
+"POT-Creation-Date: 2014-10-29 15:43:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Read the Post"
 msgstr ""
 
-#: header.php:15
+#: header.php:16
 msgid "Skip to content"
 msgstr ""
 
@@ -739,31 +739,31 @@ msgstr ""
 msgid "Deactivate License"
 msgstr ""
 
-#: theme-options.php:146
+#: theme-options.php:148
 msgid ""
 "You can now add a background image using the \"Background Image\" section "
 "in the <a href=\"%s\">Customizer</a>"
 msgstr ""
 
-#: theme-options.php:148
+#: theme-options.php:150
 msgid ""
-"You can now add a background texture using the \"Background Texture\" "
-"section in the <a href=\"%s\">Customizer</a>"
+"If you haven't already, please upload and activate the <a "
+"href='%s'>Background Texture plugin</a>"
 msgstr ""
 
-#: theme-options.php:150
+#: theme-options.php:152
 msgid ""
 "You can now add videos to posts. Use the Featured Videos box under the Post "
 "Editor to get started"
 msgstr ""
 
-#: theme-options.php:152
+#: theme-options.php:154
 msgid ""
 "You can now use the Bold template! Choose a Page and use the \"Template\" "
 "dropdown on the right-side of the screen to select the Bold template"
 msgstr ""
 
-#: theme-options.php:154
+#: theme-options.php:156
 msgid ""
 "You can now switch to your new layout in the \"Premium Layouts\" section in "
 "the <a href=\"%s\">Customizer</a>"
