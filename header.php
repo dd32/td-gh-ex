@@ -50,8 +50,8 @@
 <div class="clear"></div>
 
 		<nav class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'jatheme' ); ?></h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'jatheme' ); ?>"><?php _e( 'Skip to content', 'jatheme' ); ?></a>
+			<h3 class="menu-toggle"><?php _e( 'Menu', 'artikler' ); ?></h3>
+			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'artikler' ); ?>"><?php _e( 'Skip to content', 'artikler' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
         

@@ -18,7 +18,7 @@ function artikler_theme_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'jatheme' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'artikler' ) );
 
 	 //This theme supports custom background color and image,
 	 add_theme_support( 'custom-background', array(
@@ -58,9 +58,9 @@ add_action( 'after_setup_theme', 'artikler_theme_setup' );
 //Register sidebars(Main Sidebar).
 function artikler_theme_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'jatheme' ),
+		'name' => __( 'Main Sidebar', 'artikler' ),
 		'id' => 'sidebar-1',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'artikler' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -68,9 +68,9 @@ function artikler_theme_widgets_init() {
 	) );
 	//@since 1.3.4
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar 1', 'jatheme' ),
+		'name' => __( 'Footer Sidebar 1', 'artikler' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'artikler' ),
 		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-footer-title">',
@@ -78,9 +78,9 @@ function artikler_theme_widgets_init() {
 	) );
 	//@since 1.3.4
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar 2', 'jatheme' ),
+		'name' => __( 'Footer Sidebar 2', 'artikler' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'artikler' ),
 		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-footer-title">',
@@ -88,9 +88,9 @@ function artikler_theme_widgets_init() {
 	) );
 	//@since 1.3.4
 	register_sidebar( array(
-		'name' => __( 'Footer Sidebar 3', 'jatheme' ),
+		'name' => __( 'Footer Sidebar 3', 'artikler' ),
 		'id' => 'sidebar-4',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'jatheme' ),
+		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'artikler' ),
 		'before_widget' => '<aside id="%1$s" class="footer-aside widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-footer-title">',
@@ -132,9 +132,9 @@ if ( ! function_exists( 'artikler_theme_entry_meta' ) ) :
 /* Meta information for current post: categories, tags, permalink, author, and date. */
 function artikler_theme_entry_meta() {
 
-	$categories_list = get_the_category_list( __( ', ', 'jatheme' ) );
+	$categories_list = get_the_category_list( __( ', ', 'artikler' ) );
 
-	$tag_list = get_the_tag_list( '', __( ', ', 'jatheme' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'artikler' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -145,17 +145,17 @@ function artikler_theme_entry_meta() {
 
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'jatheme' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'artikler' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	//1 = category, 2 = tag, 3 = the date and 4 = author's name.
 	if ( $tag_list ) {
-		$full_text = __( 'Category: %1$s | Tag: %2$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'jatheme' );
+		$full_text = __( 'Category: %1$s | Tag: %2$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
 	} elseif ( $categories_list ) {
-		$full_text = __( 'Category: %1$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'jatheme' );
+		$full_text = __( 'Category: %1$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
 	} else {
-		$full_text = __( 'Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'jatheme' );
+		$full_text = __( 'Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
 	}
 
 	printf(
@@ -184,10 +184,10 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 //Support Google font stylesheet URL
 function artikler_theme_get_font_url() {
 	$font_url = '';
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'jatheme' ) ) {
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'artikler' ) ) {
 		$subsets = 'latin,latin-ext';
 
-		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'jatheme' );
+		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'artikler' );
 
 		if ( 'cyrillic' == $subset )
 			$subsets .= ',cyrillic,cyrillic-ext';
@@ -217,7 +217,7 @@ function artikler_scripts() {
        wp_enqueue_style( 'googleFontsTangerine');
 	$font_url = artikler_theme_get_font_url();
 	if ( ! empty( $font_url ) )
-		wp_enqueue_style( 'jatheme-fonts', esc_url_raw( $font_url ), array(), null );
+		wp_enqueue_style( 'artikler-fonts', esc_url_raw( $font_url ), array(), null );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
