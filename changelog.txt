@@ -1,4 +1,8 @@
 == Changelog ==
 
+Version 1.1
+* Fixed edit action issue in page slider options
+* Fixed width overflow of button, input, select and textarea
+
 Version 1.0
 * Initial Release

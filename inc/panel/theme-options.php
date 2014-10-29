@@ -799,7 +799,7 @@ function catchflames_theme_options_do_page() {
                                                wp_dropdown_pages( $catchflames_args ); 
                                             ?>
                                         <?php if( isset( $options[ 'featured_slider_page' ][ $i ] ) && $options[ 'featured_slider_page' ][ $i ] > 0 ) : ?>
-                                            <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider_page', $options ) && array_key_exists ( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>&act0on=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchflames' ); ?></a>
+                                            <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider_page', $options ) && array_key_exists ( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchflames' ); ?></a>
                                         <?php endif; ?>
                                         </div>
                                     </div><!-- .row -->
@@ -1439,7 +1439,7 @@ function catchflames_theme_name() {
  */
 function catchflames_theme_author() {
 	
-    return '<span class="theme-author"><a href="http://catchthemes.com/" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchflames' ) . '">' . __( 'Catch Themes', 'catchflames' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchflames' ) . '">' . __( 'Catch Themes', 'catchflames' ) . '</a></span>';
 
 }
 

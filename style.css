@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-flames
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as it's default layout and can be changed to Two Columns or One Column as per your need. This theme can be consider as the successor of our popular Catch Box theme, as this theme is well crafted after numerous feedback from our existing users. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible. Make your beautiful yet professional website in no time. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-flames/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-flames/
-Version: 1.0
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, gray, tan, white, dark, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
@@ -344,6 +344,20 @@ a.genericon:hover {
 /* =Global
 ----------------------------------------------- */
 
+html {
+	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+*,
+*:before,
+*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+	box-sizing:         border-box;
+}
+
 body, 
 input, 
 textarea {
@@ -481,6 +495,12 @@ sub {
 }
 
 /* Forms */
+button, 
+input, 
+select, 
+textarea {
+    max-width: 100%;
+}
 input[type="text"],
 input[type="email"],
 input[type="url"],
