@@ -1,11 +1,14 @@
 == Changelog ==
 
-Version 2.5.1 
-* Code cleaning in theme options panel
+Version 2.5.2
+* Fixed footer credit link
+* Replaced get_bloginfo() with admin_url() that links to Theme Options
+* Removed shortcodes
 
-Version 2.5
+Version 2.5.1 & Version 2.5 (Merged)
+* Code cleaning in theme options panel
 * Changed default footer text and link to Author URI
-* Removed unnessary files
+* Removed unnecessary files
  * catch-kathmandu/inc/panel/js/color_picker.js
  * catch-kathmandu/inc/panel/js/color_picker.min.js
 * Removed unnessary catchkathmandu_color enqueue

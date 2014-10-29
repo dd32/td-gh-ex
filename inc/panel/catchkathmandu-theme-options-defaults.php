@@ -103,7 +103,7 @@ $catchkathmandu_options_defaults = array(
 	'social_meetup'							=> '',
  	'analytic_header'						=> '',
  	'analytic_footer'						=> '',
-	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'catchkathmandu' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'catchkathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catchkathmandu' ) . ' [shop-link]</div>',
+	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'catchkathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'catchkathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catchkathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>',
 	'reset_footer'							=> '2'
 );
 global $catchkathmandu_options_settings;
@@ -114,4 +114,33 @@ function catchkathmandu_options_set_defaults( $catchkathmandu_options_defaults )
 	return $catchkathmandu_options_settings;
 }
 
-?>
+/**
+ * Returns the current year.
+ *
+ * @uses date() Gets the current year.
+ * @return string
+ */
+function catchkathmandu_the_year() {
+	return date( __( 'Y', 'catchkathmandu' ) );
+}
+
+
+/**
+ * Returns a link back to the site.
+ *
+ * @uses get_bloginfo() Gets the site link
+ * @return string
+ */
+function catchkathmandu_site_link() {
+	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+
+/**
+ * Returns a link to Theme Shop.
+ *
+ * @return string
+ */
+function catchkathmandu_shop_link() {
+	return '<a href="'. esc_url( __( 'http://catchthemes.com', 'catchkathmandu' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchkathmandu' ) . '"><span>' . __( 'Catch Themes', 'catchkathmandu' ) . '</span></a>';
+}

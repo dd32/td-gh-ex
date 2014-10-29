@@ -1801,71 +1801,22 @@ add_action( 'save_post', 'catchkathmandu_post_invalidate_caches' );
 
 
 /**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
+ * Change the footer_code saved in theme options
  *
- * @uses add_shortcode() to create new shortcodes.
+ * @uses catchkathmandu_the_year(), catchkathmandu_site_link(), catchkathmandu_shop_link(), delete_transient, update_option
  */
-function catchkathmandu_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-    add_shortcode( 'footer-image', 'catchkathmandu_footer_image_shortcode' );
-    add_shortcode( 'the-year', 'catchkathmandu_the_year_shortcode' );
-    add_shortcode( 'site-link', 'catchkathmandu_site_link_shortcode' );
-    add_shortcode( 'wp-link', 'catchkathmandu_wp_link_shortcode' );
-    add_shortcode( 'theme-link', 'catchkathmandu_theme_link_shortcode' );
+function catchkathmandu_make_footer_modifications() {
+	global $catchkathmandu_options_settings;
+    
+    $new_footer_code = '<div class="copyright">'. esc_attr__( 'Copyright', 'catchkathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'catchkathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catchkathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>';
+
+    //Check if new footer code and old footer code match, if they don't perform following
+    if( $new_footer_code != $catchkathmandu_options_settings['footer_code'] ) {
+        delete_transient( 'catchkathmandu_footer_content' ); // Footer Content
+        
+        $catchkathmandu_options_settings['footer_code'] = $new_footer_code;
+
+        update_option( 'catchkathmandu_options', $catchkathmandu_options_settings );
+    }
 }
-/* Register shortcodes. */
-add_action( 'init', 'catchkathmandu_add_shortcodes' );
-
-/**
- * Shortcode to display Footer Image.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function catchkathmandu_footer_image_shortcode() {
-    if( function_exists( 'catchkathmandu_footerlogo' ) ) :
-        return catchkathmandu_footerlogo(); 
-    endif;
-}
-
-/**
- * Shortcode to display the current year.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function catchkathmandu_the_year_shortcode() {
-	return date( __( 'Y', 'catchkathmandu' ) );
-}
-
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @uses get_bloginfo() Gets the site link
- * @return string
- */
-function catchkathmandu_site_link_shortcode() {
-	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function catchkathmandu_wp_link_shortcode() {
-    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catchkathmandu' ) . '"><span>' . __( 'WordPress', 'catchkathmandu' ) . '</span></a>';
-}
-
-
-/**
- * Shortcode to display a link to Theme Link.
- *
- * @return string
- */
-function catchkathmandu_theme_link_shortcode() {
-    return '<a href="http://catchthemes.com" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchkathmandu' ) . '"><span>' . __( 'Catch Themes', 'catchkathmandu' ) . '</span></a>';
-}
+add_action( 'init', 'catchkathmandu_make_footer_modifications' );

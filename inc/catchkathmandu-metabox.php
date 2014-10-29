@@ -52,7 +52,7 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'catchkathmandu-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
+						'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
 						'thumbnail' => ' '
         			),
        'right-sidebar' => array(
@@ -82,7 +82,7 @@ $featuredimage_options = array(
 	'default' => array(
 		'id'		=> 'catchkathmandu-featured-image',
 		'value' 	=> 'default',
-		'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
+		'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
 	),							   
 	'featured' => array(
 		'id'		=> 'catchkathmandu-featured-image',

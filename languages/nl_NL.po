@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
-"POT-Creation-Date: 2014-10-17 09:57+0545\n"
+"POT-Creation-Date: 2014-10-28 23:18-0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -32,6 +32,7 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr "Meest gebruikte categorieën"
 
+#. translators: %1$s: smilie
 #: ../404.php:43
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
@@ -364,7 +365,7 @@ msgid "MySpace"
 msgstr "MySpace"
 
 #: ../inc/catchkathmandu-functions.php:1604
-#: ../inc/panel/theme-options.php:1128 ../inc/panel/theme-options.php:1860
+#: ../inc/panel/theme-options.php:1128
 msgid "WordPress"
 msgstr "Wordpress"
 
@@ -576,25 +577,43 @@ msgstr "1. Catch Kathmandu: Social media"
 msgid "Title (optional):"
 msgstr "Titel (optioneel):"
 
+#. translators: header image description
 #: ../inc/custom-header.php:71
 msgid "Default Logo"
 msgstr "Standaard logo"
 
+#. translators: header image description
 #: ../inc/custom-header.php:77
 msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu logo"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
+#: ../inc/panel/theme-options.php:1811
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
+#: ../inc/panel/theme-options.php:1811
 msgid "All Rights Reserved"
 msgstr "Alle rechten voorbehouden"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
+#: ../inc/panel/theme-options.php:1811
 msgid "Catch Kathmandu by"
 msgstr "Catch Kathmandu by"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:124
+msgid "Y"
+msgstr "Y"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:145
+msgid "http://catchthemes.com"
+msgstr "http://catchthemes.com"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:145
+#: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
+msgid "Catch Themes"
+msgstr "Catch Themes"
 
 #: ../inc/panel/theme-options.php:85
 msgid "Options Saved"
@@ -607,11 +626,6 @@ msgstr "Thema-opties op"
 #: ../inc/panel/theme-options.php:93
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com"
-
-#: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
-#: ../inc/panel/theme-options.php:1870
-msgid "Catch Themes"
-msgstr "Catch Themes"
 
 #: ../inc/panel/theme-options.php:100
 msgid "http://catchthemes.com/themes/catch-kathmandu-pro/"
@@ -1372,10 +1386,6 @@ msgstr ""
 "Je kunt hier scripts van onder andere Google, Facebook, Twitter en Add This "
 "toevoegen, ze zullen laden onder Footer"
 
-#: ../inc/panel/theme-options.php:1839
-msgid "Y"
-msgstr "Y"
-
 #: ../inc/template-tags.php:51 ../inc/template-tags.php:112
 msgid "Post navigation"
 msgstr "Berichtennavigatie"
@@ -1410,6 +1420,7 @@ msgstr "(Bewerken)"
 msgid "Post author"
 msgstr "Auteur van dit bericht:"
 
+#. translators: 1: date, 2: time
 #: ../inc/template-tags.php:185
 #, php-format
 msgid "%1$s at %2$s"
