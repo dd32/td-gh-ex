@@ -7,6 +7,7 @@ Base WP is a basic blog or business WordPress theme, based on underscores with i
 
 This theme, like WordPress, is licensed under the GPL 2.0. Use it to make something cool, have fun, and share what you've learned with others.
 This theme was built using _s.(http://underscores.me)
+Options were built using options framework plugin.(http://wptheming.com/options-framework-plugin)
 All Javascript is located in /js/ with license headers where appropriate.
 Screenshot images are licensed under Creative Commons Deed CC0.
 
@@ -91,3 +92,8 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 * Added Windows 8 pinned image option.
 * Add sanitization for Customizer.
 * Fix id for options, option will be lost after update. Please marks your options in another place and then restore it.
+
+== 1.23 ==
+* Add attribution for option framework.
+* Fix theme homepage.
+* Change readme in txt format.
