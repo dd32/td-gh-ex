@@ -2,7 +2,7 @@
 /**
 * Menu action
 *
-*
+* 
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0
@@ -19,12 +19,12 @@ if ( ! class_exists( 'TC_menu' ) ) :
           //body > header > navbar action ordered by priority
           add_action ( '__navbar'                   , array( $this , 'tc_menu_display' ), 30, 1);
           add_filter ( 'wp_page_menu'               , array( $this , 'tc_add_menuclass' ));
-
+          
           //Set menu customizer options (since 3.2.0)
           add_action ( 'init'                       , array( $this , 'tc_set_menu_options') );
       }
 
-
+      
 
 
 
@@ -38,16 +38,13 @@ if ( ! class_exists( 'TC_menu' ) ) :
         if ( 1 != esc_attr( tc__f( '__get_option' , 'tc_display_boxed_navbar') ) )
           add_filter( 'body_class'                  , array( $this, 'tc_set_no_navbar' ) );
         add_filter( 'tc_social_header_block_class'  , array( $this, 'tc_set_social_header_class') );
-
+        
         //add a 100% wide container just after the sticky header to reset margin top
         if ( 1 == esc_attr( tc__f( '__get_option' , 'tc_sticky_header' ) ) )
           add_action( '__after_header'                , array( $this, 'tc_reset_margin_top_after_sticky_header'), 0 );
         add_filter( 'tc_navbar_wrapper_class'       , array( $this, 'tc_set_menu_style_options'), 0 );
-
-        if ( apply_filters( 'tc_menu_item_style_first_letter' , true ) )
-          //Set thumbnail specific design based on user options
-          add_filter( 'tc_user_options_style'   , array( $this , 'tc_menu_item_style_first_letter_css') );
       }
+
 
 
       /*
@@ -58,9 +55,9 @@ if ( ! class_exists( 'TC_menu' ) ) :
       * @since Customizr 3.2.0
       */
       function tc_set_menu_style_options( $_classes ) {
-        $_classes = ( ! wp_is_mobile() && 0 != esc_attr( tc__f( '__get_option', 'tc_menu_submenu_fade_effect') ) ) ? array_merge( $_classes, array( 'tc-submenu-fade' ) ) : $_classes;
+        $_classes = ( 0 != esc_attr( tc__f( '__get_option', 'tc_menu_submenu_fade_effect') ) ) ? array_merge( $_classes, array( 'tc-submenu-fade' ) ) : $_classes;
         $_classes = ( 0 != esc_attr( tc__f( '__get_option', 'tc_menu_submenu_item_move_effect') ) ) ? array_merge( $_classes, array( 'tc-submenu-move' ) ) : $_classes;
-        $_classes = ( ! wp_is_mobile() && 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? array_merge( $_classes, array( 'tc-open-on-hover' ) ) : array_merge( $_classes, array( 'tc-open-on-click' ) );
+        $_classes = ( 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? array_merge( $_classes, array( 'tc-open-on-hover' ) ) : array_merge( $_classes, array( 'tc-open-on-click' ) );
         return array_merge( $_classes, array(esc_attr( tc__f( '__get_option', 'tc_menu_position') ) ) );
       }
 
@@ -130,10 +127,10 @@ if ( ! class_exists( 'TC_menu' ) ) :
           $after,
           $link_after
         );
-
+        
         // We have a list
         $link = ( FALSE !== stripos( $items_wrap, '<ul' ) || FALSE !== stripos( $items_wrap, '<ol' ) ) ? '<li>' . $link . '</li>' : $link;
-
+       
         $output = sprintf( $items_wrap, $menu_id, $menu_class, $link );
         $output = ( ! empty ( $container ) ) ? sprintf('<%1$s class="%2$s" id="%3$s">%4$s</%1$s>',
                                                   $container,
@@ -165,16 +162,16 @@ if ( ! class_exists( 'TC_menu' ) ) :
           }
 
           //renders the menu
-          $menu_args = apply_filters( 'tc_menu_args',
+          $menu_args = apply_filters( 'tc_menu_args', 
                       array(
                         'theme_location'  => 'main',
-                        'menu_class'      => ( ! wp_is_mobile() && 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? 'nav tc-hover-menu' : 'nav',
-                        'fallback_cb'     => array( $this , 'tc_link_to_menu_editor' ),
+                        'menu_class'      => ( 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? 'nav tc-hover-menu' : 'nav', 
+                        'fallback_cb'     => array( $this , 'tc_link_to_menu_editor' ), 
                         'walker'          => TC_nav_walker::$instance,
                         'echo'            => false,
                     )
           );
-          $menu_wrapper_class   = ( ! wp_is_mobile() && 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? 'nav-collapse collapse tc-hover-menu-wrapper' : 'nav-collapse collapse';
+          $menu_wrapper_class   = ( 'hover' == esc_attr( tc__f( '__get_option' , 'tc_menu_type' ) ) ) ? 'nav-collapse collapse tc-hover-menu-wrapper' : 'nav-collapse collapse';
           printf('<div class="%1$s">%2$s</div>',
               apply_filters( 'tc_menu_wrapper_class', $menu_wrapper_class ),
               wp_nav_menu( $menu_args )
@@ -198,23 +195,6 @@ if ( ! class_exists( 'TC_menu' ) ) :
       function tc_add_menuclass( $ulclass) {
         $html =  preg_replace( '/<ul>/' , '<ul class="nav">' , $ulclass, 1);
         return apply_filters( 'tc_add_menuclass', $html );
-      }
-
-
-      /**
-      * Adds a specific style to the first letter of the menu item
-      * hook : tc_user_options_style
-      *
-      * @package Customizr
-      * @since Customizr 3.2.11
-      */
-      function tc_menu_item_style_first_letter_css( $_css ) {
-        return sprintf("%s\n%s",
-          $_css,
-          ".navbar .nav > li > a:first-letter {
-            font-size: 17px;
-          }\n"
-        );
       }
   }//end of class
 endif;

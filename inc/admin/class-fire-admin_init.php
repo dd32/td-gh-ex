@@ -2,7 +2,7 @@
 /**
 * Init admin actions : loads the meta boxes,
 *
-*
+* 
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0
@@ -17,54 +17,25 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
       function __construct () {
         self::$instance =& $this;
         global $wp_version;
-        //check WP version to include customizer functions, must be >= 3.4
-        if ( version_compare( $wp_version, '3.4' , '>=' ) ) {
+          //check WP version to include customizer functions, must be >= 3.4
+        if (version_compare( $wp_version, '3.4' , '>=' ) ) {
             //require_once( TC_BASE.'inc/admin/tc_customize.php' );
             TC___::$instance -> tc__( array ('admin' => array( array( 'inc/admin' , 'customize'))) );
         }
         else {
               //adds an information page if version < 3.4
-              add_action( 'admin_menu'                    , array( $this , 'tc_add_fallback_page' ));
+              add_action ( 'admin_menu'                      , array( $this , 'tc_add_fallback_page' ));
         }
         //load the meta boxes
-        add_action( 'admin_init'                          , array( $this , 'tc_load_meta_boxes' ));
+        add_action ( 'admin_init'                          , array( $this , 'tc_load_meta_boxes' ));
         //enqueue additional styling for admin screens
-        add_action( 'admin_init'                          , array( $this , 'tc_admin_style' ) );
-
-        //Load the editor-style specific (post formats and RTL), the active skin, the user style.css
-        //add user defined fonts in the editor style (@see the query args add_editor_style below)
-        add_action( 'after_setup_theme'                   , array( $this, 'tc_add_editor_style') );
-
-        add_filter( 'tiny_mce_before_init'                , array( $this, 'tc_user_defined_tinymce_css') );
+        add_action ( 'admin_init'                          , array( $this , 'tc_admin_style' ));
       }
-
-
-      /*
-      * @return css string
-      *
-      * @package Customizr
-      * @since Customizr 3.2.10
-      */
-      function tc_maybe_add_gfonts_to_editor() {
-        $_font_pair         = esc_attr( tc__f( '__get_option' , 'tc_fonts' ) );
-        $_all_font_pairs    = TC_init::$instance -> font_pairs;
-        if ( false === strpos($_font_pair,'_g_') )
-          return;
-        //Commas in a URL need to be encoded before the string can be passed to add_editor_style.
-        return array(
-          str_replace(
-            ',',
-            '%2C',
-            sprintf( '//fonts.googleapis.com/css?family=%s', TC_utils::$instance -> tc_get_font( 'single' , $_font_pair ) )
-          )
-        );
-      }
-
 
 
       /**
       *  load the meta boxes for pages, posts and attachment
-      *
+      * 
       * @package Customizr
       * @since Customizr 3.0.4
       */
@@ -138,12 +109,12 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
      * @since Customizr 3.0.4
      */
       function tc_welcome_panel() {
-
+        
         $is_help = isset($_GET['help'])  ?  true : false;
 
         ?>
         <div class="wrap about-wrap">
-
+          
             <?php if ($is_help) : ?>
               <h1 class="need-help-title"><?php _e( 'Need help with Customizr ?','customizr' ) ?></h1>
             <?php else : ?>
@@ -155,7 +126,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
             <div class="changelog">
               <div class="about-text tc-welcome">
               <?php printf( __( 'You can start by watching the <a href="%1$s" target="_blank">introduction video</a> or by reading <a href="%2$s" target="_blank">the documentation</a>.<br/> If you don\'t find an answer to your issue, don\'t panic! Since Customizr is used by a growing community of webmasters reporting bugs and making continuous improvements, you will probably find a solution to your problem either in the FAQ or in the user forum.','customizr' ),
-               TC_WEBSITE,
+               TC_WEBSITE, 
                TC_WEBSITE.'customizr'
                ); ?>
                </div>
@@ -178,16 +149,16 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
                  </div>
               </div><!-- .two-col -->
             </div><!-- .changelog -->
-
+          
           <?php else: ?>
-
+          
             <div class="about-text tc-welcome">
               <?php printf( __( 'Thank you for using Customizr! Customizr %1$s has more features, is safer and more stable than ever <a href="#customizr-changelog">(see the changelog)</a> to help you build an awesome website. Watch the <a href="%2$s" target="_blank">introduction video</a> and find inspiration in the <a href="#showcase">showcase</a>.<br/>Enjoy it! ','customizr' ),
                CUSTOMIZR_VER,
                TC_WEBSITE
                ); ?>
             </div>
-
+          
           <?php endif; ?>
 
           <?php if ( TC___::$instance -> tc_is_child() ) : ?>
@@ -195,11 +166,11 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
 
             <div class="tc-upgrade-notice">
               <p>
-              <?php
+              <?php 
                 printf( __('You are using a child theme of Customizr %1$s : always check the %2$s after upgrading to see if a function or a template has been deprecated.' , 'customizr'),
                   'v'.CUSTOMIZR_VER,
                   '<strong><a href="#customizr-changelog">changelog</a></strong>'
-                  );
+                  ); 
                 ?>
               </p>
             </div>
@@ -244,7 +215,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
             </p>
             <p style="text-align: left"><?php _e("Customizr's extensions are installed and upgraded from your WordPress admin, like any other WordPress plugins. Well documented and easily extendable with hooks, they come with a dedicated support forum on themesandco.com." , 'customizr') ?>
             </p>
-            <p style="text-align:left">
+            <p style="text-align:left">    
                 <a class="button-primary review-customizr" title="<?php _e("Visit the extension's page",'customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr/extend/" target="_blank"><?php _e("Visit the extension's page",'customizr') ?> &raquo;</a>
             </p>
           </div>
@@ -260,18 +231,18 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
             </p>
             <p style="text-align: right"><?php _e('Do you think you made an awesome website that can inspire people? Submitting a site for review is quick and easy to do.' , 'customizr') ?></br>
             </p>
-            <p style="text-align:right">
+            <p style="text-align:right">    
                 <a class="button-primary review-customizr" title="<?php _e('Visit the showcase','customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr/showcase/" target="_blank"><?php _e('Visit the showcase','customizr') ?> &raquo;</a>
             </p>
           </div>
         </div>
 
         <div id="customizr-changelog" class="changelog">
-
+          
           <h3><?php printf( __( 'Changelog in version %1$s' , 'customizr' ) , CUSTOMIZR_VER ); ?></h3>
 
             <p><?php do_action( '__changelog' ); ?></p>
-
+        
         </div>
 
 
@@ -285,19 +256,17 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
       }
 
 
+
       /**
      * enqueue additional styling for admin screens
      * @package Customizr
      * @since Customizr 3.0.4
      */
       function tc_admin_style() {
-        wp_enqueue_style(
-          'tc-admincss',
-          sprintf('%1$sinc/admin/css/tc_admin%2$s.css' , TC_BASE_URL, ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
-          array(),
-          CUSTOMIZR_VER
-        );
+         wp_enqueue_style( 'admincss' , TC_BASE_URL.'inc/admin/css/tc_admin.css' );
       }
+
+
 
 
 
@@ -307,7 +276,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
      * @since Customizr 3.0.5
      */
       function tc_extract_changelog() {
-
+        
         if( ! file_exists(TC_BASE."readme.txt") ) {
           return;
         }
@@ -315,7 +284,7 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
           echo '<p>The changelog in readme.txt is not readable.</p>';
           return;
         }
-
+        
         $stylelines = explode("\n", implode('', file(TC_BASE."readme.txt")));
         $read = false;
         $i = 0;
@@ -344,60 +313,5 @@ if ( ! class_exists( 'TC_admin_init' ) ) :
           }
         }
       }
-
-
-      /**
-      * Customizr styles the visual editor to resemble the theme style,
-      * Loads the editor-style specific (post formats and RTL), the active skin, the user style.css, the user_defined fonts
-      * @package Customizr
-      * @since Customizr 3.2.11
-      *
-      */
-      function tc_add_editor_style() {
-        $_stylesheets = array(
-            TC_BASE_URL.'inc/admin/css/editor-style.css',
-            TC_init::$instance -> tc_active_skin() , get_stylesheet_uri()
-        );
-
-        if ( apply_filters( 'tc_add_custom_fonts_to_editor' , false != $this -> tc_maybe_add_gfonts_to_editor() ) )
-          $_stylesheets = array_merge( $_stylesheets , $this -> tc_maybe_add_gfonts_to_editor() );
-
-        add_editor_style( $_stylesheets );
-      }
-
-
-
-
-      /**
-      * Extend TinyMCE config with a setup function.
-      * See http://www.tinymce.com/wiki.php/API3:event.tinymce.Editor.onInit
-      * http://wordpress.stackexchange.com/questions/120831/how-to-add-custom-css-theme-option-to-tinymce
-      * @package Customizr
-      * @since Customizr 3.2.11
-      *
-      */
-      function tc_user_defined_tinymce_css( $init ) {
-        if ( ! apply_filters( 'tc_add_custom_fonts_to_editor' , true ) )
-          return $init;
-
-        $_css = TC_resources::$instance -> tc_write_fonts_inline_css( '', 'mce-content-body');
-       ?>
-
-          <script type="text/javascript">
-            function add_user_defined_CSS( ed ) {
-              //http://www.tinymce.com/wiki.php/Tutorial:Migration_guide_from_3.x
-                ed.on('init', function() {
-                    tinyMCE.activeEditor.dom.addStyle(<?php echo json_encode($_css) ?>);
-                } );
-            };
-          </script>
-
-          <?php
-          if (wp_default_editor() == 'tinymce')
-              $init['setup'] = 'add_user_defined_CSS';
-
-          return $init;
-      }
-
-  }//end of class
+  }//end of class       
 endif;

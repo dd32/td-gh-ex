@@ -4,6 +4,7 @@
  * @package Customizr
  * @since Customizr 1.0
  */
+
 jQuery(document).ready(function(){
       jQuery( 'input#slider_check_field, select#post_slider_field' ).live("change",function(){
         jQuery( '#tc_slider_list .spinner' ).show();

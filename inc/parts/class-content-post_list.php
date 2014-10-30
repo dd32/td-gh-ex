@@ -50,8 +50,7 @@ if ( ! class_exists( 'TC_post_list' ) ) :
       * @since Customizr 3.0.10
       */
       function tc_post_list_display() {
-        global $post;
-        if ( ! isset($post) || empty($post) || ! apply_filters( 'tc_show_post_in_post_list', $this -> tc_post_list_controller() , $post ) )
+        if ( ! $this -> tc_post_list_controller() )
           return;
 
         global $wp_query;
