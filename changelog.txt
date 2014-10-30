@@ -1,0 +1,6 @@
+Changelog
+
+30 Oct 2014
+--------------------------------------
+- Fix for Safari layout issue
+- Created changelog.txt
