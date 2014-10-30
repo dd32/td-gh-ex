@@ -168,7 +168,8 @@ function sparkling_social(){
       'dribbble'    => 'Dribbble',
       'skype'       => 'Skype',
       'foursquare'  => 'Foursquare',
-      'soundcloud'  => 'SoundCloud'
+      'soundcloud'  => 'SoundCloud',
+      'github'      => 'GitHub'
       );
 
     echo '<div class="social-icons">';
@@ -184,7 +185,10 @@ function sparkling_social(){
 }
 endif;
 
-// header menu (should you choose to use one)
+if ( ! function_exists( 'sparkling_header_menu' ) ) :
+/**
+ * Header menu (should you choose to use one)
+ */
 function sparkling_header_menu() {
         // display the WordPress Custom Menu if available
         wp_nav_menu(array(
@@ -198,8 +202,12 @@ function sparkling_header_menu() {
                     'walker'            => new wp_bootstrap_navwalker()
         ));
 } /* end header menu */
+endif;
 
-// footer menu (should you choose to use one)
+if ( ! function_exists( 'sparkling_footer_links' ) ) :
+/**
+ * Footer menu (should you choose to use one)
+ */
 function sparkling_footer_links() {
         // display the WordPress Custom Menu if available
         wp_nav_menu(array(
@@ -216,6 +224,8 @@ function sparkling_footer_links() {
                 'fallback_cb' => 'sparkling_footer_links_fallback'  // fallback function
         ));
 } /* end sparkling footer link */
+endif;
+
 
 if ( ! function_exists( 'sparkling_call_for_action' ) ) :
 /**
@@ -441,6 +451,15 @@ function sparkling_caption($output, $attr, $content) {
   return $output;
 }
 add_filter('img_caption_shortcode', 'sparkling_caption', 10, 3);
+
+/**
+ * Skype URI support for social media icons
+ */
+function sparkling_allow_skype_protocol( $protocols ){
+    $protocols[] = 'skype';
+    return $protocols;
+}
+add_filter( 'kses_allowed_protocols' , 'sparkling_allow_skype_protocol' );
 
 /*
  * This one shows/hides the an option when a checkbox is clicked.
