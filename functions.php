@@ -27,11 +27,11 @@ if ( ! isset( $content_width ) )
 	require_once( get_template_directory() . '/admin/main/options/08.special-pages.php' ); 
 
 	// Add widget features.
-	include_once( get_template_directory() . '/lib/widgets/categories.php' ); 
-	include_once( get_template_directory() . '/lib/widgets/popularposts.php' ); 
-	include_once( get_template_directory() . '/lib/widgets/recentposts.php' ); 
-	include_once( get_template_directory() . '/lib/widgets/searchfield.php' ); 
-	include_once( get_template_directory() . '/lib/widgets/tagscloud.php' );
+//	include_once( get_template_directory() . '/lib/widgets/categories.php' ); 
+//	include_once( get_template_directory() . '/lib/widgets/popularposts.php' ); 
+//	include_once( get_template_directory() . '/lib/widgets/recentposts.php' ); 
+//	include_once( get_template_directory() . '/lib/widgets/searchfield.php' ); 
+//	include_once( get_template_directory() . '/lib/widgets/tagscloud.php' );
 
 /* ----------------------------------------------------------------------------------
 	Assign Theme Specific Functions
@@ -77,7 +77,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	/* Register theme stylesheets. */
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.0.9' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.0' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );

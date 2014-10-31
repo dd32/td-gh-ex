@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.0
+- Removed: All Think Up Themes widgets removed. Emergency update to correct "unexpected T_FUNCTION" error. Widgets will be added back in later version.
+
 Version 1.0.9
 - Fixed:   WordPress core checked() and selected() functions used where required.
 - Updated: post_class() added to to content.php.
