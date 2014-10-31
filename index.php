@@ -1,12 +1,3 @@
-<?php 
-/**
-* @Theme Name	:	Wallstreet
-* @file         :	index.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/index.php
-*/
-?>
 <?php get_header(); ?>
 <div class="page-mycarousel">
 	<div class="page-title-col">
@@ -43,7 +34,7 @@
 				<?php } ?>
 				<div class="clear"></div>
 				<div class="blog-post-title">
-					<div class="blog-post-date"><span class="date"><?php echo get_the_date('j'); ?> <small><?php echo get_the_date('M'); ?></small></span>
+					<div class="blog-post-date"><span class="date"><a href="<?php the_permalink();?>"><?php echo get_the_date('j'); ?> <small><?php echo get_the_date('M'); ?></small></a></span>
 						<span class="comment"><i class="fa fa-comment"></i><?php comments_number('0', '1','%'); ?></span>
 					</div>
 					<div class="blog-post-title-wrapper">

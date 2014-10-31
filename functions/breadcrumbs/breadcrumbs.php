@@ -4,8 +4,8 @@ function webriti_custom_breadcrumbs() {
   $delimiter = ''; // delimiter between crumbs
   $home = __('Home','wallstreet'); // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<li class="active">'; // tag before the current crumb
-  $after = '</li>'; // tag after the current crumb
+  $before = '<a class="active">'; // tag before the current crumb
+  $after = '</a>'; // tag after the current crumb
  
   global $post;
   $homeLink = home_url('/');
@@ -77,7 +77,7 @@ function webriti_custom_breadcrumbs() {
       $breadcrumbs = array_reverse($breadcrumbs);
       for ($i = 0; $i < count($breadcrumbs); $i++) {
         echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . '&nbsp &#47; &nbsp';
+        if ($i != count($breadcrumbs)) echo ' ' . $delimiter . '&nbsp &#47; &nbsp';
       }
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  

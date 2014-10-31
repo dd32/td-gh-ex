@@ -3,7 +3,7 @@ Theme Name: Wallstreet
 Author: Webriti
 Author URI: http://webriti.com/
 Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 3 beautifully designed page templates , Home, Blog and full width Page.
-Version:  0.3.1
+Version:  0.3.2
 Tags: green,black,gray,dark, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post,responsive-layout,right-sidebar,featured-images
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -1221,7 +1221,7 @@ body {
 	color: #ffffff;
 	text-decoration: none;
 }
-.breadcrumbs > .active {
+.breadcrumbs > li >.active {
 	color: #00c2a9;
 }
 
@@ -1526,7 +1526,7 @@ body {
 	margin-bottom: 25px;
     width: 60px;
 }
-.blog-post-date span.date {
+.blog-post-date span.date a {
 	background-color: #00c2a9;
 	font-family: 'RobotoRegular';
     color: #FFFFFF;
@@ -1537,7 +1537,7 @@ body {
 	padding: 2px 0 3px;
 	text-align: center;
 }
-.blog-post-date span.date > small{
+.blog-post-date span.date >a small{
     display: block;
     font-size: 16px;
     line-height: 20px;
@@ -1563,6 +1563,8 @@ body {
 .blog-post-title-wrapper {
     float: left;
     width: 86.5%;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 .blog-post-title-wrapper-full {
     float: left;

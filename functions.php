@@ -74,8 +74,7 @@
 		return '<div class=\"blog-btn-col\"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn\">Read More</a></div>";
 	}   
 	add_filter( 'the_content_more_link', 'new_content_more' );
-?>
-<?php
+
 	/********** Image Resize *************/
 	if ( function_exists( 'add_image_size' ) ) 
 	{
@@ -139,8 +138,6 @@ function webriti_scripts()
 	wp_enqueue_script('menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
 	wp_enqueue_script('bootstrap', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
 }	
-?>
-	<?php
 		// code for comment
 		if ( ! function_exists( 'wallstreet_comment' ) ) {
 		function wallstreet_comment( $comment, $args, $depth ) 
@@ -150,9 +147,7 @@ function webriti_scripts()
 		global $comment_data;
 		//translations
 		$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','wallstreet');
-	?>	
-	
-		<div <?php comment_class('media comment_box'); ?> id="comment-<?php comment_ID(); ?>">
+	?><div <?php comment_class('media comment_box'); ?> id="comment-<?php comment_ID(); ?>">
 			<a class="pull-left-comment" href="<?php the_author_meta('user_url'); ?>">
 			<?php echo get_avatar( $comment , 70); ?>		
 			</a>
@@ -163,13 +158,11 @@ function webriti_scripts()
 					<?php edit_comment_link( __( 'Edit', 'wallstreet' ), '<p class="edit-link">', '</p>' ); ?>
 					<div class="reply">
 						<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
-					</div>
-					
+					</div>					
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'wallstreet' ); ?></em>
 					<br/>
-					<?php endif; ?>
-				
+					<?php endif; ?>				
 				</div>
 			</div>
 		</div>

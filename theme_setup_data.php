@@ -13,8 +13,7 @@ function theme_data_setup()
 	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio.jpg";
 	
 	return $theme_options=array(
-			//Logo and Fevicon header			
-			'front_page'  => 'on',			
+			//Logo and Fevicon header					
 			'upload_image_logo'=>'',
 			'height'=>'50',
 			'width'=>'250',

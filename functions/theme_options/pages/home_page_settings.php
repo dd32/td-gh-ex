@@ -7,8 +7,7 @@
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
-			{	$current_options['front_page'] = sanitize_text_field($_POST['front_page']);				
-				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
+			{	$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
@@ -22,8 +21,7 @@
 			}
 		}	
 		if($_POST['webriti_settings_save_1'] == 2) 
-		{
-			$current_options['front_page'] = "on" ;								
+		{									
 			$current_options['upload_image_logo']="";
 			$current_options['height']=50;
 			$current_options['width']=250;
@@ -32,8 +30,7 @@
 			$current_options['webrit_custom_css']="";		
 			update_option('wallstreet_lite_options',$current_options);
 		}
-	}  ?>
-	<?php $current_options['front_page']; ?>
+	}  ?>	
 	<form method="post" id="webriti_theme_options_1">
 		<div id="heading">
 			<table style="width:100%;"><tr>
@@ -52,10 +49,11 @@
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
 		<div class="section">
-			<h3><?php _e('Enable Front Page','wallstreet'); ?>  </h3>
-			<input type="checkbox" <?php if($current_options['front_page']=='on') echo "checked='checked'"; ?> id="front_page" name="front_page" > <span class="explain"><?php _e('Enable front page .','wallstreet'); ?></span>
-		</div>	
-		
+			<h3><?php _e('To enable Themes Custom front page, create a page using this', 'wallstreet'); ?> <a href="<?php echo admin_url(); ?>post-new.php?post_type=page"><?php _e('link.', 'wallstreet'); ?></a> <?php _e('and assign a template "custom front page".', 'wallstreet'); ?>
+			<?php _e('After assigning custom front page template Go To Settings >> Reading >> Select this page as a static front page.', 'wallstreet'); ?>
+			<?php _e('Follow this ', 'wallstreet'); ?><a href="<?php echo admin_url(); ?>options-reading.php"><?php _e('link.', 'wallstreet'); ?></a>
+			</h3>
+		</div>
 		<div class="section">
 			<h3><?php _e('Custom Logo','wallstreet'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Add custom logo from here suggested size is 150X50 px','wallstreet');?></span></span>

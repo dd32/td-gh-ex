@@ -52,6 +52,12 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@version 0.3.2
+1. Remove front-page.php created a template Custom Front Page instead.
+2. All the date box linked with this respective post permalink, which provides a way for post without title.
+3. Support for long title in post/page.
+4. Breadcrumbs issue fixed.
 @version 0.3.1
 1. Option panel scripts properly enqueued only in the option panel pages
 2. MOnster widgets styles fixed
