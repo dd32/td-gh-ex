@@ -1,0 +1,1 @@
+After activating this Child Theme visit the Dashboard for details on changes.
