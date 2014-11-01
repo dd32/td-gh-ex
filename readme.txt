@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.1
+- New:     is_thinkuphome() function added back to theme. Renamed to thinkup_check_ishome.
+
 Version 1.1.0
 - Removed: All Think Up Themes widgets removed. Emergency update to correct "unexpected T_FUNCTION" error. Widgets will be added back in later version.
 

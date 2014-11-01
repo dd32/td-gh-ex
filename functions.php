@@ -77,7 +77,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	/* Register theme stylesheets. */
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.0' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.1' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
@@ -119,7 +119,7 @@ function thinkup_frontscripts() {
 		}
 
 		// Add ThinkUpSlider scripts
-		if ( is_front_page() ) {
+		if ( is_front_page() or thinkup_check_ishome() ) {
 			wp_enqueue_script( 'thinkupslider', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides.min.js', array( 'jquery' ), '1.54' );
 		wp_enqueue_script( 'thinkupslider-call', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides-call.js', array( 'jquery' ) );
 		}

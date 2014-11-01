@@ -321,6 +321,34 @@ add_filter( 'wp_page_menu_args', 'thinkup_menu_homelink' );
 
 
 //----------------------------------------------------------------------------------
+//	ADD FUNCTION TO GET CURRENT PAGE URL
+//----------------------------------------------------------------------------------
+
+function thinkup_check_ishome() {
+	$pageURL = 'http';
+	if( isset($_SERVER["HTTPS"]) ) {
+		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+	}
+	$pageURL .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	} else {
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	}
+	$pageURL = rtrim($pageURL, '/') . '/';
+
+	$pageURL = str_replace( "www.", "", $pageURL );
+	$siteURL = str_replace( "www.", "", site_url( '/' ) );
+
+	if ( $pageURL == $siteURL ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+//----------------------------------------------------------------------------------
 //	ADD CUSTOM 'thinkup_get_comments_popup_link' FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
 //----------------------------------------------------------------------------------
 
