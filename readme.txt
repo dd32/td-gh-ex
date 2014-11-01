@@ -1,7 +1,7 @@
 ----------------------------------
 Writing Board 
 ----------------------------------
-Version: 	1.0
+Version: 	1.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 Theme URI: 	http://d5creation.com/theme/writing-board

@@ -4,7 +4,7 @@
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
- * @copyright 2013 WP Theming
+ * @copyright 2010-2014 WP Theming
  */
 
 class Options_Framework_Admin {
@@ -54,11 +54,11 @@ class Options_Framework_Admin {
      */
     function settings_init() {
 
-    	// Load Options Framework Settings
-        $optionsframework_settings = get_option( 'optionsframework' );
+		// Get the option name
+	    $name = Options_Framework::get_option_name();
 
 		// Registers the settings fields and callback
-		register_setting( 'optionsframework', $optionsframework_settings['id'],  array ( $this, 'validate_options' ) );
+		register_setting( 'optionsframework', $name, array ( $this, 'validate_options' ) );
 
 		// Displays notice after options save
 		add_action( 'optionsframework_after_validate', array( $this, 'save_options_notice' ) );
@@ -66,7 +66,7 @@ class Options_Framework_Admin {
     }
 
 	/*
-	 * Define menu options (still limited to appearance section)
+	 * Define menu options
 	 *
 	 * Examples usage:
 	 *
@@ -82,10 +82,21 @@ class Options_Framework_Admin {
 	static function menu_settings() {
 
 		$menu = array(
-			'page_title' => 'Writing Board Options',
+
+			// Modes: submenu, menu
+            'mode' => 'submenu',
+
+            // Submenu default settings
+            'page_title' => 'Writing Board Options',
 			'menu_title' => 'Writing Board Options',
 			'capability' => 'edit_theme_options',
-			'menu_slug' => 'options-framework'
+			'menu_slug' => 'options-framework',
+            'parent_slug' => 'themes.php',
+
+            // Menu default settings
+            'icon_url' => 'dashicons-admin-generic',
+            'position' => '61'
+
 		);
 
 		return apply_filters( 'optionsframework_menu', $menu );
@@ -99,7 +110,19 @@ class Options_Framework_Admin {
 	function add_custom_options_page() {
 
 		$menu = $this->menu_settings();
-		$this->options_screen = add_theme_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ) );
+
+		// If you want a top level menu, see this Gist:
+		// https://gist.github.com/devinsays/884d6abe92857a329d99
+
+		// Code removed because it conflicts with .org theme check.
+
+		$this->options_screen = add_theme_page(
+            $menu['page_title'],
+            $menu['menu_title'],
+            $menu['capability'],
+            $menu['menu_slug'],
+            array( $this, 'options_page' )
+        );
 
 	}
 
@@ -108,8 +131,13 @@ class Options_Framework_Admin {
      *
      * @since 1.7.0
      */
-	function enqueue_admin_styles() {
-		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(), Options_Framework::VERSION );
+
+	function enqueue_admin_styles( $hook ) {
+
+		if ( $this->options_screen != $hook )
+	        return;
+
+		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(),  Options_Framework::VERSION );
 		wp_enqueue_style( 'wp-color-picker' );
 	}
 
@@ -120,9 +148,7 @@ class Options_Framework_Admin {
      */
 	function enqueue_admin_scripts( $hook ) {
 
-		$menu = $this->menu_settings();
-
-		if ( 'appearance_page_' . $menu['menu_slug'] != $hook )
+		if ( $this->options_screen != $hook )
 	        return;
 
 		// Enqueue custom option panel JS
@@ -168,8 +194,8 @@ class Options_Framework_Admin {
 				<?php settings_fields( 'optionsframework' ); ?>
 				<?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
 				<div id="optionsframework-submit">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options'); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults'); ?>" onclick="return confirm( '<?php print esc_js( 'Click OK to reset. Any theme settings will be lost!' ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="Save Options" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="Restore Defaults" onclick="return confirm( '<?php print esc_js( 'Click OK to reset. Any theme settings will be lost!' ); ?>' );" />
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -269,7 +295,6 @@ class Options_Framework_Admin {
 	 * @return array Re-keyed options configuration array.
 	 *
 	 */
-
 	function get_default_values() {
 		$output = array();
 		$config = & Options_Framework::_optionsframework_options();
@@ -297,14 +322,23 @@ class Options_Framework_Admin {
 	function optionsframework_admin_bar() {
 
 		$menu = $this->menu_settings();
+
 		global $wp_admin_bar;
 
-		$wp_admin_bar->add_menu( array(
+		if ( 'menu' == $menu['mode'] ) {
+			$href = admin_url( 'admin.php?page=' . $menu['menu_slug'] );
+		} else {
+			$href = admin_url( 'themes.php?page=' . $menu['menu_slug'] );
+		}
+
+		$args = array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => 'Writing Board Options',
-			'href' => admin_url( 'themes.php?page=' . $menu['menu_slug'] )
-		) );
+			'title' => $menu['menu_title'],
+			'href' => $href
+		);
+
+		$wp_admin_bar->add_menu( apply_filters( 'optionsframework_admin_bar', $args ) );
 	}
 
 }

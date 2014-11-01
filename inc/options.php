@@ -11,11 +11,8 @@
 
 function optionsframework_option_name() {
 
-	// This gets the theme name from the stylesheet
-	$themename = 'writingboard';
-	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename;
-	update_option( 'optionsframework', $optionsframework_settings );
+	// Change this to use your theme slug
+	return 'writingboard';
 }
 
 /**
@@ -38,7 +35,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/writing-board" target="_blank"><strong>Review Here</strong></a>.</span><br /><br /><span class="donation"> Need More Features and Options including Unlimited Slides and 100+ Advanced Features and Controls? Try <a href="http://d5creation.com/theme/writing-board/" target="_blank"><strong>Writing Board Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the Writing Board Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Writing%20Board" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/writing-board/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/writing-board" target="_blank"><strong>Review Here</strong></a></span><br /><br /><span class="donation"> Need More Features and Options including Unlimited Slides and 100+ Advanced Features and Controls? Try <a href="http://d5creation.com/theme/writing-board/" target="_blank"><strong>Writing Board Extend</strong></a></span><br /> <br /><span class="donation"> You can Visit the Writing Board Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Writing%20Board" target="_blank"><strong>Here</strong></a></span><a href="http://d5creation.com/theme/writing-board/" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
 		
 	$options[] = array(
