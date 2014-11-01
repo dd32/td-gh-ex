@@ -396,3 +396,61 @@ function beautiful_post_navigation() {
 	<?php
 	endif;
 }// function beautiful_post_navigation
+
+
+/**
+ * showing/hiding header items
+ * @return menu/search
+ */
+function beautiful_header_sh() {
+	// if sidebar is not empty
+	if( is_active_sidebar( 'sidebar-1' ) ) :
+		if( is_rtl() ) : ?>
+			<div class="col-md-1 col-xs-6 menu animate">
+				<span class="open-menu"><i class="fa fa-bars"></i></span>
+				<span class="close-menu"><i class="fa fa-times"></i></span>
+			</div>
+			<div class="col-md-1 col-xs-6 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-10 col-xs-12 animated">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+		<?php else : ?>
+			<div class="col-md-10 col-xs-12 animate">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+			<div class="col-md-1 col-xs-6 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-1 col-xs-6 menu animate">
+				<span class="open-menu"><i class="fa fa-bars"></i></span>
+				<span class="close-menu"><i class="fa fa-times"></i></span>
+			</div>
+		<?php endif;
+	else:
+		if( is_rtl() ) : ?>
+			<div class="col-md-2 col-xs-12 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-10 col-xs-12 animated">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+		<?php else : ?>
+			<div class="col-md-10 col-xs-12 animate">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+			<div class="col-md-2 col-xs-12 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+		<?php endif;
+	endif;
+}

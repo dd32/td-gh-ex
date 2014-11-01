@@ -41,3 +41,7 @@ bug fixes
 
 1.0.7
 bug fixes
+
+1.0.8
+bug fixes
+[show sidebar if it's not empty]
