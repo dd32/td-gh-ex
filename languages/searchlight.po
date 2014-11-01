@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: selfie\n"
-"POT-Creation-Date: 2014-10-07 18:16+0600\n"
-"PO-Revision-Date: 2014-10-07 18:16+0600\n"
+"POT-Creation-Date: 2014-11-02 02:18+0600\n"
+"PO-Revision-Date: 2014-11-02 02:18+0600\n"
 "Last-Translator: support@d5creation.com\n"
 "Language-Team: D5 Creation <support@d5creation.com>\n"
 "Language: en\n"
@@ -131,120 +131,230 @@ msgstr ""
 msgid "Footer Area Four"
 msgstr ""
 
-#: ../inc/includes/class-options-framework-admin.php:85
-#: ../inc/includes/class-options-framework-admin.php:86 ../inc/options.php:20
+#: ../inc/includes/class-options-framework-admin.php:90
+#: ../inc/includes/class-options-framework-admin.php:91 ../inc/options.php:17
 #: ../options.php:18
 msgid "Searchlight Options"
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/includes/class-options-framework-admin.php:198
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:229
+msgid "Default options restored."
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:283
+msgid "Options saved."
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:61
+msgid "No file chosen"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:64
+#: ../inc/includes/class-options-media-uploader.php:117
+msgid "Upload"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:66
+#: ../inc/includes/class-options-media-uploader.php:118
+msgid "Remove"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:69
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:93
+msgid "View File"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:316
+msgid "No Repeat"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:317
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:318
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:319
+msgid "Repeat All"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:331
+msgid "Top Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:332
+msgid "Top Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:333
+msgid "Top Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:334
+msgid "Middle Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:335
+msgid "Middle Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:336
+msgid "Middle Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:337
+msgid "Bottom Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:338
+msgid "Bottom Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:339
+msgid "Bottom Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:351
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:352
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:424
+msgid "Normal"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:425
+msgid "Italic"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:426
+msgid "Bold"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:427
+msgid "Bold Italic"
+msgstr ""
+
+#: ../inc/options.php:21
 msgid ""
 "A Theme is an effort of many sleepless nights of Developers. You can "
 "contribute on this development translating this theme in your Language. You "
 "can send your translation/language file to us, "
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid "Contact Us."
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid "You can inspire us writing a "
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid "Positive Review"
 msgstr ""
 
-#: ../inc/options.php:24
-msgid "of our Theme."
+#: ../inc/options.php:21
+msgid "of our Theme"
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid ""
 "Need More Features and Options including Exciting Multi Layer Slide, "
 "Unlimited Slides with layered Effects, Unlimited Featured Boxes, Color "
 "Changing Options, Easy Translation Option and 100+ Advanced Features? Try"
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid "You can Visit the Searchlight Extend Demo "
 msgstr ""
 
-#: ../inc/options.php:24
+#: ../inc/options.php:21
 msgid "Here"
 msgstr ""
 
-#: ../inc/options.php:29
+#: ../inc/options.php:26
 msgid "Banner Image"
 msgstr ""
 
-#: ../inc/options.php:30
+#: ../inc/options.php:27
 msgid "You can upload a Banner Image for your site here"
 msgstr ""
 
-#: ../inc/options.php:36 ../options.php:31
+#: ../inc/options.php:33 ../options.php:31
 msgid "Fixed Header?"
 msgstr ""
 
-#: ../inc/options.php:37
+#: ../inc/options.php:34
 msgid ""
 "Uncheck it if you do not want to show the Header Fixed. Default is Fixed."
 msgstr ""
 
-#: ../inc/options.php:43
+#: ../inc/options.php:40
 msgid "Site Layout"
 msgstr ""
 
-#: ../inc/options.php:44
+#: ../inc/options.php:41
 msgid "You can set the Site Layout for Whole the Site."
 msgstr ""
 
-#: ../inc/options.php:55
+#: ../inc/options.php:52
 msgid "Contact Number"
 msgstr ""
 
-#: ../inc/options.php:56
+#: ../inc/options.php:53
 msgid "Set Your Contact Number"
 msgstr ""
 
-#: ../inc/options.php:66
+#: ../inc/options.php:63
 msgid "Site Colors"
 msgstr ""
 
-#: ../inc/options.php:70
+#: ../inc/options.php:67
 msgid "Use This Customized Design"
 msgstr ""
 
-#: ../inc/options.php:71
+#: ../inc/options.php:68
 msgid "Check this box if you want to use the following Custom Style Code"
 msgstr ""
 
-#: ../inc/options.php:77
+#: ../inc/options.php:74
 msgid "Color 01"
 msgstr ""
 
-#: ../inc/options.php:78 ../inc/options.php:85 ../inc/options.php:92
+#: ../inc/options.php:75 ../inc/options.php:82 ../inc/options.php:89
 msgid "Change the Color"
 msgstr ""
 
-#: ../inc/options.php:84
+#: ../inc/options.php:81
 msgid "Color 02"
 msgstr ""
 
-#: ../inc/options.php:91
+#: ../inc/options.php:88
 msgid "Color 03"
 msgstr ""
 
-#: ../inc/options.php:100
+#: ../inc/options.php:97
 msgid "Social Links"
 msgstr ""
 
-#: ../inc/options.php:107
+#: ../inc/options.php:104
 msgid "Social Link - "
 msgstr ""
 
-#: ../inc/options.php:108
+#: ../inc/options.php:105
 msgid ""
 "Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
 "d5creation</b>.  If you do not want to show anything here leave the box "
