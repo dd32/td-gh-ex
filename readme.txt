@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.4
+Version: 	1.5
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
