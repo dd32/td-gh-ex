@@ -1,5 +1,22 @@
 <?php
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+// Add support for featured content.
+function twentyfourteen_child_setup () {
+  // This will remove support for featured content in the parent theme  
+  remove_theme_support( 'featured-content' );
+  
+  //This adds support for featured content in child theme 
+  //with a different max_posts value of 3 instead of default 6  
+  add_theme_support( 'featured-content', array(
+    'featured_content_filter' => 'twentyfourteen_get_featured_posts',
+	'max_posts' => 3,
+  ) );
+}
+
+//Action hook for theme support 
+add_action( 'after_setup_theme', 'twentyfourteen_child_setup', 11);
+
 function my_child_theme_setup() {
 	load_child_theme_textdomain( '2014child', get_stylesheet_directory() . '/languages' );
 }
