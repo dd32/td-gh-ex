@@ -131,6 +131,19 @@ foreach( $accesspresslite_posts as $accesspresslite_post ) :
 endforeach;
 wp_reset_postdata();
 
+// Store Pages in array
+$arg = array('posts_per_page'   => -1);
+$accesspresslite_pages = get_pages($arg);
+foreach( $accesspresslite_pages as $accesspresslite_page ) :
+	$accesspresslite_pagelist[$accesspresslite_page->ID] = array(
+		'value' => $accesspresslite_page->ID,
+		'label' => $accesspresslite_page->post_title
+	);
+endforeach;
+wp_reset_postdata();
+
+$accesspresslite_postpagelist = array_merge($accesspresslite_postlist, $accesspresslite_pagelist);
+
 // Store categories in array
 $accesspresslite_catlist[0] = array(
 	'value' => 0,
@@ -221,7 +234,7 @@ $accesspresslite_slider_caption = array(
 
 // Function to generate options page
 function accesspresslite_theme_options_page() {
-	global $accesspresslite_options, $accesspresslite_postlist, $accesspresslite_slider, $accesspresslite_slider_show_pager, $accesspresslite_slider_show_controls, $accesspresslite_slider_mode, $accesspresslite_slider_auto, $accesspresslite_slider_caption, $accesspresslite_catlist;
+	global $accesspresslite_options, $accesspresslite_postlist, $accesspresslite_postpagelist, $accesspresslite_slider, $accesspresslite_slider_show_pager, $accesspresslite_slider_show_controls, $accesspresslite_slider_mode, $accesspresslite_slider_auto, $accesspresslite_slider_caption, $accesspresslite_catlist;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false; // This checks whether the form has just been submitted. ?>
@@ -460,7 +473,7 @@ function accesspresslite_theme_options_page() {
 					<td>
 					<select id="welcome_post" name="accesspresslite_options[welcome_post]">
 					<?php
-					foreach ( $accesspresslite_postlist as $single_post ) :
+					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
 						<option value="<?php echo $single_post['value'] ?>" <?php selected( $single_post['value'], $settings['welcome_post'] ); ?>><?php echo $label; ?></option>
 					<?php endforeach;
@@ -529,7 +542,7 @@ function accesspresslite_theme_options_page() {
 					<td>
 					<select id="featured_post1" name="accesspresslite_options[featured_post1]">
 					<?php
-					foreach ( $accesspresslite_postlist as $single_post ) :
+					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
 						<option value="<?php echo $single_post['value'] ?>" <?php selected( $single_post['value'], $settings['featured_post1'] ); ?>><?php echo $label; ?></option>
 					<?php 
@@ -544,7 +557,7 @@ function accesspresslite_theme_options_page() {
 					<td>
 					<select id="featured_post2" name="accesspresslite_options[featured_post2]">
 					<?php
-					foreach ( $accesspresslite_postlist as $single_post ) :
+					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
 						<option value="<?php echo $single_post['value'] ?>" <?php selected( $single_post['value'], $settings['featured_post2'] ); ?>><?php echo $label; ?></option>
 					<?php
@@ -559,7 +572,7 @@ function accesspresslite_theme_options_page() {
 					<td>
 					<select id="featured_post3" name="accesspresslite_options[featured_post3]">
 					<?php
-					foreach ( $accesspresslite_postlist as $single_post ) :
+					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
 						<option value="<?php echo $single_post['value'] ?>" <?php selected( $single_post['value'], $settings['featured_post3'] ); ?>><?php echo $label; ?></option>
 					<?php 
@@ -1178,18 +1191,7 @@ function accesspresslite_validate_options( $input ) {
 
     // We select the previous value of the field, to restore it in case an invalid entry has been given
 	$prev = $settings['featured_post1'];
-	// We verify if the given value exists in the layouts array
-	if ( !array_key_exists( $input['featured_post1'], $accesspresslite_postlist ) )
-		$input['featured_post1'] = $prev;
-
-	$prev = $settings['featured_post2'];
-	if ( !array_key_exists( $input['featured_post2'], $accesspresslite_postlist ) )
-		$input['featured_post2'] = $prev;
-        
-    $prev = $settings['featured_post3'];
-	if ( !array_key_exists( $input['featured_post3'], $accesspresslite_postlist ) )
-		$input['featured_post3'] = $prev;
-	
+	// We verify if the given value exists in the layouts array	
 	
 	$prev = $settings['show_slider'];
 	if ( !array_key_exists( $input['show_slider'], $accesspresslite_slider ) )

@@ -22,8 +22,13 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	<?php
 		
 			if(!empty($accesspresslite_welcome_post_id)){
-			
-			$query1 = new WP_Query( 'p='.$accesspresslite_welcome_post_id );
+			$posttype = get_post_type($accesspresslite_welcome_post_id);
+			$postparam = ($posttype == 'page') ? 'page_id': 'p';
+			$args = array(
+				'post_type' => $posttype,
+				$postparam => $accesspresslite_welcome_post_id
+				);
+			$query1 = new WP_Query( $args );
 				while ($query1->have_posts()) : $query1->the_post(); ?>
 					 
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -179,7 +184,13 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div id="featured-post-1" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			
 			<?php
-				$query2 = new WP_Query( 'p='.$featured_post1 );
+				$posttype = get_post_type($featured_post1);
+				$postparam = ($posttype == 'page') ? 'page_id': 'p';
+				$args = array(
+					'post_type' => $posttype,
+					$postparam => $featured_post1
+				);
+				$query2 = new WP_Query( $args );
 				// the Loop
 				while ($query2->have_posts()) : $query2->the_post(); 
 					
@@ -231,7 +242,13 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div id="featured-post-2" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			
 			<?php
-				$query3 = new WP_Query( 'p='.$featured_post2 );
+				$posttype = get_post_type($featured_post2);
+				$postparam = ($posttype == 'page') ? 'page_id': 'p';
+				$args = array(
+					'post_type' => $posttype,
+					$postparam => $featured_post2
+				);
+				$query3 = new WP_Query( $args );
 				// the Loop
 				while ($query3->have_posts()) : $query3->the_post();
 					
@@ -282,7 +299,13 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 	if(!empty($featured_post3)) { ?>
 		<div id="featured-post-3" class="featured-post<?php if($big_icons == 1){ echo ' big-icon'; } ?>">
 			<?php
-				$query4 = new WP_Query( 'p='.$featured_post3 );
+				$posttype = get_post_type($featured_post3);
+				$postparam = ($posttype == 'page') ? 'page_id': 'p';
+				$args = array(
+					'post_type' => $posttype,
+					$postparam => $featured_post3
+				);
+				$query4 = new WP_Query( $args );
 				// the Loop
 				while ($query4->have_posts()) : $query4->the_post(); 
 					if( $show_fontawesome_icon == 0 ){

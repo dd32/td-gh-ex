@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.23
+* Options for Page added in Welcome and Featured Post
+* Previously only Post can be added.
+
 Version 2.22
 * Minor changes in Theme Option Interface
 * Minor CSS bug fixed
