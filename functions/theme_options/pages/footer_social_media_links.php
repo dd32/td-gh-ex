@@ -15,12 +15,12 @@
 				$current_options['social_media_youtube_link']=sanitize_text_field($_POST['social_media_youtube_link']);
 				
 				// social media in contact page yes ya on
-				if($_POST['header_social_media_enabled'])
+				if(isset($_POST['header_social_media_enabled']))
 				{ echo $current_options['header_social_media_enabled']= sanitize_text_field($_POST['header_social_media_enabled']); } 
 				else { echo $current_options['header_social_media_enabled']="off"; }
 
 				// social media in contact page yes ya on
-				if($_POST['footer_social_media_enabled'])
+				if(isset($_POST['footer_social_media_enabled']))
 				{ echo $current_options['footer_social_media_enabled']= sanitize_text_field($_POST['footer_social_media_enabled']); } 
 				else { echo $current_options['footer_social_media_enabled']="off"; } 
 				

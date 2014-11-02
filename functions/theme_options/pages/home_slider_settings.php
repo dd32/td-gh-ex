@@ -13,7 +13,7 @@
 				$current_options['slider_description']= sanitize_text_field($_POST['slider_description']);
 				$current_options['slider_image']= sanitize_text_field($_POST['slider_image']);
 				// slider section enabled yes ya on
-				if($_POST['home_banner_enabled'])
+				if(isset($_POST['home_banner_enabled']))
 				{ echo $current_options['home_banner_enabled']= sanitize_text_field($_POST['home_banner_enabled']); } 
 				else { echo $current_options['home_banner_enabled']="off"; } 
 				

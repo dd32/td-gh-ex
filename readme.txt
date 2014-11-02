@@ -52,7 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 0.3.3
+1. Removed Undefined errors.
 @version 0.3.2
 1. Remove front-page.php created a template Custom Front Page instead.
 2. All the date box linked with this respective post permalink, which provides a way for post without title.

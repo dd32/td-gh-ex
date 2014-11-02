@@ -19,9 +19,9 @@
 				$current_options['service_title_three'] = sanitize_text_field($_POST['service_title_three']);
 				$current_options['service_description_three'] = sanitize_text_field($_POST['service_description_three']);
 				$current_options['service_image_three']= sanitize_text_field($_POST['service_image_three']);
-
+				
 				// Other Service Section in Service Template
-				if($_POST['service_section_enabled'])
+				if(isset($_POST['service_section_enabled']))
 				{ echo $current_options['service_section_enabled']= sanitize_text_field($_POST['service_section_enabled']); } 
 				else { echo $current_options['service_section_enabled']="off"; }
 				

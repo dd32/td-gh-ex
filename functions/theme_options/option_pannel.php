@@ -1,7 +1,7 @@
 <?php
 add_action('admin_menu', 'webriti_admin_menu_pannel');  
 function webriti_admin_menu_pannel()
- {	add_theme_page( 'theme', 'Option Panel', 'edit_theme_options', 'webriti', 'webriti_option_panal_function' ); 
+ {	add_theme_page( 'Wallstreet Option Panel', 'Option Panel', 'edit_theme_options', 'webriti', 'webriti_option_panal_function' ); 
  	add_action('admin_enqueue_scripts', 'webriti_admin_enqueue_script');
  }
 function webriti_admin_enqueue_script($hook)

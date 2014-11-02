@@ -24,7 +24,10 @@
 				$current_options['portfolio_description_four']= sanitize_text_field($_POST['portfolio_description_four']);
 				$current_options['portfolio_image_four'] = sanitize_text_field($_POST['portfolio_image_four']);
 				
-				if($_POST['portfolio_section_enabled'])
+				
+				
+				
+				if(isset($_POST['portfolio_section_enabled']))
 				{ echo $current_options['portfolio_section_enabled']=sanitize_text_field($_POST['portfolio_section_enabled']); } 
 				else
 				{ echo $current_options['portfolio_section_enabled']="off"; } 

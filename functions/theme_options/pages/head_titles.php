@@ -16,7 +16,7 @@
 				$current_options['portfolio_description']= sanitize_text_field($_POST['portfolio_description']);
 				
 				// Contact Heading Section Enabled on Home Page
-				if($_POST['contact_header_settings'])
+				if(isset($_POST['contact_header_settings']))
 				{ echo $current_options['contact_header_settings']= sanitize_text_field($_POST['contact_header_settings']); } 
 				else { echo $current_options['contact_header_settings']="off"; }
 				
