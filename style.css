@@ -4,7 +4,7 @@ Theme URI: http://tradesouthwest.net/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media.
-Version: 0.6
+Version: 1.0
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -109,17 +109,17 @@ body {
     z-index:       1; /* only needed when #access menu overlay used */
     background:    rgba( 250, 250, 250, 0.95 );
     border:        1px solid rgba( 100, 100, 100, 0.3 );
-    min-height:    480px;
-
 }
-.toprow { /* top secondary menu container */
+.toprow {
+    display:       inline-block;
+ height:        2.6185em;
     width:         99%;
     background:    #11223f;
     margin:        0;
     position:      relative;
     left:          -3px;
     box-shadow:    0 2px 3px #9c9c9c;
-    height:        2.6185em;
+
     overflow:      hidden;
 }
 .site-header {
@@ -862,7 +862,7 @@ margin-bottom: 0.5em;
     background:         #e9e9e9;
     display:            inline-block;
     width:              97.9898%;
-    margin:             0 auto;
+    margin:             1em auto 0 auto;
     text-align:         center;
     float:              left;
     position:           relative;
@@ -899,6 +899,15 @@ margin-bottom: 0.5em;
     float:              right;
     width:              48%;
     border-left:        1px solid black;
+}
+.navigation ul {
+    position: relative;
+    list-style: none;
+    padding: 9px 0;
+    font-size: 1.15em;
+}
+.navigation ul li {
+    display: inline;
 }
 .pagination p {
     padding:            0;
@@ -1089,6 +1098,24 @@ figure.entry-attachment img {
     margin:            0 auto;
     height:            auto;
 }
+table th,
+table tfoot {
+    background: #c8daea;
+    font-weight: bold;
+    text-align:center;
+    border-bottom: 1px solid #999;
+    padding: 3px 7px; 
+}
+table tr {
+    background: #f9f9f9;
+    font-weight: normal;
+    text-align:left;
+    border-bottom: 1px solid #fff;
+}
+table td {
+    padding: 3px 7px;
+}
+
 /* comments 
 --------------------------------------- */
 #comments {

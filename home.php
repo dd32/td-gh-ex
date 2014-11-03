@@ -80,8 +80,7 @@ get_header(); ?>
                                         } else {
                 	                echo '<div></div>';
                                         } ?>
-                                            <?php the_excerpt(''); ?>
-                                                <p class="pagination"><?php wp_link_pages(); ?></p>         
+                                            <?php the_excerpt(''); ?>  
                                     </article>
                                     <!-- <?php trackback_rdf(); ?> -->
                                         <?php comments_template(); ?>
@@ -93,15 +92,9 @@ get_header(); ?>
                             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
                         </section>            
                     <?php endif; ?>
-                           <div class="navigation">
-                               <p><?php if (!empty($prevID)) : ?><a href="<?php echo get_permalink($prevID); ?>" title="<?php echo get_the_title($prevID); ?>">Previous</a>
-                                   <?php else : ?><a href="#"> &#8647; </a><?php endif; ?>
-                               <span>
-                                   <?php if (!empty($nextID)) : ?><a href="<?php echo get_permalink($nextID); ?>" title="<?php echo get_the_title($nextID); ?>">Next</a>
-                                   <?php else : ?><a href="#"> &#8649; </a><span>
-                                   <?php endif; ?>
-                               </p>
-                           </div>
+                        
+                            <?php betilu_numeric_posts_nav(); ?>
+                         
                 </div> <!-- ends content-wide --> <div class="breaker"></div>
                     <div class="midbar">
                         <?php $options = get_option( 'betilu_theme_options' ); ?>

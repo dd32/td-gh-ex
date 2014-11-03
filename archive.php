@@ -14,12 +14,12 @@ get_header(); ?>
                                 <a href="<?php the_permalink() ?>"><?php the_date(); ?></a>
                             </div>
                                 <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-                                <h5 class="linkcat"><?php _e( 'Archived Categories: ', 'betilu' ); echo '<span>'; the_category(); echo '</span>'; ?></h5>
+                                <h5 class="linkcat"><?php _e( 'Archived Categories: ', 'betilu' ); echo '<span>'; the_category(); echo '</span>'; ?></h5><br>
                         </header>
                             <article class="entry-lead">
                                 <?php the_excerpt(); ?>
                             </article>
-                    </div><!-- ends post -->                                     
+                    </div><!-- ends post -->
                 </section><!-- ends content-area-left -->
             <?php endwhile; else: ?>
                     <section class="content-area-left">
@@ -27,8 +27,9 @@ get_header(); ?>
                             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
                         </article>
                     </section><!-- ends content-left -->
-            <?php endif; ?> 
-                        <div id="right-sidebar">
+            <?php endif; ?>
+                    <div class="num-nav"><?php betilu_numeric_posts_nav(); ?></div>
+                        <div id="right-sidebar-absolute">
                            <?php get_sidebar(); ?>
                         </div>    
             </div><!-- ends wide-lead --> <div class="breaker">&nbsp;</div>

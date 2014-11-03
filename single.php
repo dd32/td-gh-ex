@@ -29,8 +29,10 @@ get_header(); ?>
                 	        echo '<div></div>';
                                     } ?>
                                     <?php the_content(''); ?>
-                                        <div class="pagination"> 
-                                            <?php wp_link_pages(); ?>
+                                        <div class="pagination">
+                                            <?php wp_link_pages( array(
+                                                  'before' => '<p>' . __( 'Pages: &nbsp; ', 'betilu'),
+                                                  'after' => '</p>' ) ); ?>
                                         </div>
                                         <br>
                                 <div class="metadata"> 
@@ -38,10 +40,10 @@ get_header(); ?>
                                         <p class="taglink"><?php the_tags(); ?></p>
                                 </div>
                                         <?php comments_template(); ?>
-                                            <?php get_template_part( 'social', 'content' ); ?><br>
-                                                <div class="navigation">
-                                                    <p><?php previous_post_link(); ?><span><?php next_post_link(); ?></span></p>
-                                                </div>
+                       <?php get_template_part( 'social', 'content' ); ?><br>
+                                        <div class="navigation">
+                                            <p><?php previous_post_link(); ?><span><?php next_post_link(); ?></span></p>
+                                        </div>              
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
                     </div> <!-- ends post one -->   <div class="breaker"></div>

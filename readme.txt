@@ -12,6 +12,21 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.0 =
+* added navigation to archive based pages
+* added pagination to blog page
+* fixed margins on navigation footer
+* removed ghost navigation on pages without navigation
+* removed nav page link from pages not using such
+* created fallback default for navigation menus (note that wp support is only for "first" menu called)
+* fixed sidebar in archives based page
+* added conditional statements to social block to only show when active
+* added overflow fix to sidebar
+* created default styles for tables
+* added padding for tables without borders
+* changed home page navigation above footer
+* reworked title tag in archive based pages
+
 = 0.6 =
 * fixed archived categories link alignment
 * fixed small page overflow into footer

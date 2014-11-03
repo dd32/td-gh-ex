@@ -31,6 +31,7 @@ get_header(); ?>
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
                     </div> <!-- ends post one -->  
+                        <?php betilu_numeric_posts_nav(); ?>
                 </section><!-- ends content-area-lead -->
             <?php endwhile; else: ?>
                     <section class="content-area-left">

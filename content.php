@@ -34,14 +34,7 @@
                     <div class="navigation">
                         <p><?php posts_nav_link(); ?></p>
                     </div>
-                        <aside>
-                            <ul class="social-block"><?php $options = get_option( 'betilu_theme_options' ); ?>
-                <li><img src="<?php echo get_template_directory_uri() . '/images/phone.png'; ?>" /> <span>Telephone:</span> <?php echo $options['phonenumber']; ?></li>
-                <li><img src="<?php echo get_template_directory_uri() . '/images/facebook.png'; ?>" /> <span>Facebook:</span> <a href="https://<?php echo $options['facebookurl']; ?>" target="_blank"><?php echo $options['facebookurl']; ?></a></li>
-                <li><img src="<?php echo get_template_directory_uri() . '/images/twitter.png'; ?>" /> <span>Twitter:</span> <a href="http://twitter.com/<?php echo $options['twitterurl']; ?>" target="_blank"><?php echo $options['twitterurl']; ?></a></li>
-                <li><img src="<?php echo get_template_directory_uri() . '/images/mail.png'; ?>" /> <span>E-Mail:</span> <a href="https://<?php echo $options['betilu_email']; ?>" target="_blank"><?php echo $options['betilu_email']; ?></a></li>
-                </ul>
-                        </aside> 
+                       <?php get_template_part( 'social', 'content' ); ?>
             <?php endwhile; else: ?>
             <section class="content-area">
             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>

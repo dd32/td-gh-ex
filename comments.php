@@ -14,10 +14,7 @@
                                         'reply_text' => __( 'Reply to this thread', 'betilu' ))
                 ); ?>
                 </ol><!-- ends commentlist -->
-                <div class="navigation">
-                  <p><?php previous_comments_link() ?><span><?php next_comments_link() ?></span></p>
-                </div><br>
-                
+                               
         <?php else : // this is displayed if there are no comments so far ?>
 	    <?php if ( comments_open() ) : ?>
 		<small><?php _e( 'No Comments yet, be the first to reply', 'betilu' ); ?></small>
@@ -26,7 +23,7 @@
 	        <small><?php _e( 'Comments are Closed on this Post', 'betilu' ); ?></small>
 	    <?php endif;
     endif; ?>
-        <div><br>
+        <div><div><?php paginate_comments_links(); ?></div><br>
         <?php comment_form(); ?>
         </div>
     </section><!-- #comments .comments-area -->
