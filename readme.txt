@@ -57,3 +57,6 @@ Version 1.4
 * Add sub menu fade effect;
 * Fixed search form;
 * Minor bug fixes;
+
+Version 1.4.1
+* Fixed little bug
