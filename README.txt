@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like Page Builder, WooCommerce, Contact Form 7 and more.
+Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
 
 == License ==
 
@@ -67,5 +67,10 @@ View the settings under Appearance -> ALBAR Settings.
 == Changelog ==
 
 
+#### 1.5.4
+* Add demo slides for if there are no categories selected yet, to display a demo slider.
+* Set the Slider enabled setting to be true by default.
+* Add "SiteOrigin Page Builder" to the mentioned Plugins we integrate with.
 
+#### 1.5.3
 * Initial release.

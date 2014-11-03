@@ -326,7 +326,7 @@ class Kaira_theme_settings {
             'title'   => __( 'Enable Slider', 'albar' ),
             'desc'    => __( 'Click to enable the default homepage slider', 'albar' ),
             'type'    => 'checkbox',
-            'std'     => 0 // Set to 1 to be checked by default
+            'std'     => 1 // Set to 1 to be checked by default
         );
         
         $this->settings['kra-heading-two'] = array(
