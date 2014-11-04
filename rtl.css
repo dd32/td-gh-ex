@@ -1,0 +1,328 @@
+/*
+Theme Name: Weaver X
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+/* =Reset reset
+----------------------------------------------- */
+
+caption, th, td {
+	text-align: right;
+}
+
+/* =Structure
+----------------------------------------------- */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+/* Text elements */
+
+
+ol, ul {
+	margin-right:1.5em;
+}
+
+.ltr ul, .ltr ol {
+	margin: 0 0 1.5em  2em;
+}
+
+blockquote {
+	font-family: Arial, sans-serif;
+}
+
+
+/* Forms */
+textarea {
+	padding-left: 0;
+	padding-right: 3px;
+}
+
+
+/* Assistive text */
+.menu_bar a.assistive-text:active,
+.menu_bar a.assistive-text:focus {
+	left: auto;
+	right: 7.6%;
+}
+
+/* =Header
+----------------------------------------------- */
+
+
+#site-title {
+	margin: 1% 7% 0 0;
+}
+
+#site-tagline {
+	margin: 0 10% 0 1%;
+}
+
+#header-search {
+    float: right;
+}
+
+#header-search .search-form {
+	position: absolute;
+	left: 10px;
+    right:auto;
+	top: 5px;
+}
+
+#nav-header-mini {
+    display:inline-block;
+    float: left;
+    margin:0 5px 0 0;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+.menu-toggle-button {
+  float: right;
+}
+
+#infobar {
+    margin-left:1em;
+    margin-right:1em;
+}
+
+.menu-add {float:left;}
+
+.infobar_right{float:left;}
+
+/* =Content
+----------------------------------------------- */
+
+.content-title,
+.entry-header .entry-meta {
+	padding-right: 0;
+	padding-left: 0;
+}
+.entry-content td,
+.comment-content td {
+	padding: 6px 0 6px 10px;
+}
+
+.entry-meta .edit-link a {
+	float: left;
+}
+/* Images */
+.post-avatar-status {float:left !important;}
+.entry-meta .post-avatar{float:none !important;}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	font-family: Arial, sans-serif;
+}
+.wp-caption .wp-caption-text {
+	padding: 10px 40px 5px 0px;
+}
+.wp-caption .wp-caption-text:before {
+	margin-right: 0;
+	margin-left: 5px;
+	left: auto;
+	right: 10px;
+}
+
+#content .gallery-columns-4 .gallery-item {
+	padding-right:0;
+	padding-left:2%;
+}
+
+/* Author Info */
+
+
+
+#author-info {
+    font-size:90%;
+	margin:1.5em;
+	padding:0 .5em 1em 0;
+    bordexr:1px solid green;
+}
+
+#author-avatar {
+	float: right;
+    margin:0;
+    padding:0 0 .5em 1em;
+}
+
+
+#author-avatar img {	/* no setting available to change this... */
+    float:right;
+	padding: 0;
+}
+
+.ie8 img.avatar {
+	width:auto;	/* fix for max-width bug in IE8 */
+}
+
+#author-description {
+    margin-right:1em;
+}
+
+/* Comments link */
+.comments-bubble a {
+	background-image: url(assets/css/icons/comment-bubble-rtl.png);
+    background-size:    28px 28px;
+	right: auto;
+	left: 0;
+}
+
+.ie8 .comments-bubble a {
+	background-image: url(assets/css/icons/comment-bubble-rtl-ie8.png);
+}
+
+/*
+	Post Formats Headings
+*/
+
+/* =Gallery
+----------------------------------------------- */
+#content .attachment-thumbnail {
+	float: right;
+}
+#content .attachment-thumbnail-single {
+	float: right;
+	margin-right: 12px;
+	margin-bottom: 25px;
+}
+
+.format-gallery .gallery-thumb {
+	float: right;
+	margin: .375em 0 0 1.625em;
+}
+
+
+/* =Status
+----------------------------------------------- */
+
+.format-status img.avatar {
+	float: right;
+	margin: 4px 0 2px 10px;
+}
+
+
+/* =Image
+----------------------------------------------- */
+
+.indexed.format-image div.entry-meta {
+	float: right;
+}
+
+
+/**** Masonry ****/
+
+.blog-post {
+	float: right;
+}
+
+
+/* =Footer
+----------------------------------------------- */
+#site-info {
+	float: right;
+    padding-right:1em;
+}
+
+#site-generator {
+	font-style: italic;
+    float: left;
+    padding-left:1em;
+}
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.nav-previous {
+	float: right;
+}
+.nav-next {
+	float: left;
+	text-align: left;
+}
+
+/* =Widgets
+----------------------------------------------- */
+#footer-widget-area .widget,
+#header-widget-area .widget {
+    float:right;
+}
+
+.widget ul ul {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+.widget-horiz {
+    float: right;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-reply-link {margin-right:3em;}
+
+.commentlist .comment-author .comment {
+    float: left;
+}
+
+.commentlist li.comment .comment-author img.avatar {
+	float:right;
+	left:10px;
+	top:-10px;
+}
+.comments-bubble a {
+    float:left;
+}
+
+#comments-title {	/* wii_comment_headings_color */
+	padding:0px .5em 1.5em 0;
+}
+
+.edit-link {float:left !important;}
+
+/* Site Generator Line */
+#site-generator .sep {
+	background-position: right center;
+}
+
+
+/* =Print
+----------------------------------------------- */
+
+@media print {
+	#container {
+		float: right;
+	}
+	/* Comments */
+	.commentlist .avatar {
+		left: auto;
+		right: 2.2em;
+	}
+	.commentlist li.comment .comment-meta {
+		margin-left: 0;
+		margin-right: 50px;
+	}
+}
+
+/* =IE7
+----------------------------------------------- */
+
+.ie8 section.recent-posts {
+	margin-right: 0;
+	margin-left: 7.6%;
+}
