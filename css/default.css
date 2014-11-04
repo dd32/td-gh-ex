@@ -226,21 +226,21 @@
 .enigma_blog_thumb_date li i{
 	color: #31A3DD;
 }
-.enigma_tags a{
+.enigma_tags a ,.enigma_cats a{
 	background-size: 100% 200%;
 	background-color:#edf0f2;
     background-image: linear-gradient(to bottom, #edf0f2 50%, #31A3DD 50%);
  }
 
-.enigma_tags a:hover{
+.enigma_tags a:hover , .enigma_cats a:hover{
 	color:#fff;
 	background-position: 0 -100%;
 	background-color:#31A3DD;
 }
-.enigma_tags a i{
+.enigma_tags a i ,.enigma_cats a i{
 	color:#31A3DD;
 }
-.enigma_tags a:hover i{
+.enigma_tags a:hover i ,.enigma_cats a:hover i{
 	color:#fff;
 }
 

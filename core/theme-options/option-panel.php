@@ -12,7 +12,7 @@ function weblizar_admin_menu_pannel() {
  * Weblizar Admin Menu CSS
  */
 function weblizar_admin_enqueue_script() {		
-	wp_enqueue_script('bootjs', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');	
+	wp_enqueue_script('bootjs', WL_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');	
 	wp_enqueue_script('weblizar-tab-js', WL_TEMPLATE_DIR_URI .'/core/theme-options/js/option-js.js',array('media-upload', 'jquery-ui-sortable'));	
 	
 	wp_enqueue_style('thickbox');
@@ -20,7 +20,7 @@ function weblizar_admin_enqueue_script() {
 	wp_enqueue_style('weblizar-option-style', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/weblizar-option-style.css');
 	wp_enqueue_style('op-bootstrap', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/bootstrap.css');
 	wp_enqueue_style('weblizar-bootstrap-responsive', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/bootstrap-responsive.css');
-	wp_enqueue_style('font-awesome-op', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+	wp_enqueue_style('font-awesome-op', WL_TEMPLATE_DIR_URI . '/css/font-awesome-4.2.0/css/font-awesome.min.css');
 	wp_enqueue_style('Respo-pricing-table', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/pricing-table-responsive.css');
 	wp_enqueue_style('pricing-table', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/pricing-table.css');
 }

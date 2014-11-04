@@ -17,12 +17,12 @@
 
 	//	LOCAL
 
-	if ( $.fn.carouFredSel )
+	if ( $.fn.wl_caroufredsel )
 	{
 		return;
 	}
 
-	$.fn.caroufredsel = $.fn.carouFredSel = function(options, configs)
+	$.fn.wl_caroufredsel = $.fn.wl_caroufredsel = function(options, configs)
 	{
 
 		//	no element
@@ -36,7 +36,7 @@
 		if (this.length > 1)
 		{
 			return this.each(function() {
-				$(this).carouFredSel(options, configs);
+				$(this).wl_caroufredsel(options, configs);
 			});
 		}
 
@@ -68,10 +68,10 @@
 
 			if (setOrig)
 			{
-				opts_orig = $.extend(true, {}, $.fn.carouFredSel.defaults, o);
+				opts_orig = $.extend(true, {}, $.fn.wl_caroufredsel.defaults, o);
 			}
 
-			opts = $.extend(true, {}, $.fn.carouFredSel.defaults, o);
+			opts = $.extend(true, {}, $.fn.wl_caroufredsel.defaults, o);
 			opts.d = cf_getDimensions(opts);
 
 			crsl.direction = (opts.direction == 'up' || opts.direction == 'left') ? 'next' : 'prev';
@@ -81,7 +81,7 @@
 
 			if (is_true(opts.cookie))
 			{
-				opts.cookie = 'caroufredsel_cookie_' + conf.serialNumber;
+				opts.cookie = 'wl_caroufredsel_cookie_' + conf.serialNumber;
 			}
 
 			opts.maxDimension = ms_getMaxDimension(opts, avail_primary);
@@ -2105,7 +2105,7 @@
 				}
 				if (!is_string(sel))
 				{
-					sel = 'a.caroufredsel';
+					sel = 'a.wl_caroufredsel';
 				}
 
 				$con.find(sel).each(function() {
@@ -2612,7 +2612,7 @@
 				'onAfter'		: []
 			},
 			queu = [],
-			conf = $.extend(true, {}, $.fn.carouFredSel.configs, configs),
+			conf = $.extend(true, {}, $.fn.wl_caroufredsel.configs, configs),
 			opts = {},
 			opts_orig = $.extend(true, {}, options),
 			$wrp = (conf.wrapper == 'parent')
@@ -2621,7 +2621,7 @@
 
 
 		conf.selector		= $cfs.selector;
-		conf.serialNumber	= $.fn.carouFredSel.serialNumber++;
+		conf.serialNumber	= $.fn.wl_caroufredsel.serialNumber++;
 
 		conf.transition = (conf.transition && $.fn.transition) ? 'transition' : 'animate';
 
@@ -2703,8 +2703,8 @@
 
 	//	GLOBAL PUBLIC
 
-	$.fn.carouFredSel.serialNumber = 1;
-	$.fn.carouFredSel.defaults = {
+	$.fn.wl_caroufredsel.serialNumber = 1;
+	$.fn.wl_caroufredsel.defaults = {
 		'synchronise'	: false,
 		'infinite'		: true,
 		'circular'		: true,
@@ -2721,7 +2721,7 @@
 			'queue'			: false
 		}
 	};
-	$.fn.carouFredSel.configs = {
+	$.fn.wl_caroufredsel.configs = {
 		'debug'			: false,
 		'transition'	: false,
 		'onWindowResize': 'throttle',
@@ -2731,18 +2731,18 @@
 		},
 		'wrapper'		: {
 			'element'		: 'div',
-			'classname'		: 'caroufredsel_wrapper'
+			'classname'		: 'wl_caroufredsel_wrapper'
 		},
 		'classnames'	: {}
 	};
-	$.fn.carouFredSel.pageAnchorBuilder = function(nr) {
+	$.fn.wl_caroufredsel.pageAnchorBuilder = function(nr) {
 		return '<a href="#"><span>'+nr+'</span></a>';
 	};
-	$.fn.carouFredSel.progressbarUpdater = function(perc) {
+	$.fn.wl_caroufredsel.progressbarUpdater = function(perc) {
 		$(this).css('width', perc+'%');
 	};
 
-	$.fn.carouFredSel.cookie = {
+	$.fn.wl_caroufredsel.cookie = {
 		get: function(n) {
 			n += '=';
 			var ca = document.cookie.split(';');
@@ -2771,7 +2771,7 @@
 			document.cookie = n + '=' + v + e + '; path=/';
 		},
 		remove: function(n) {
-			$.fn.carouFredSel.cookie.set(n, "", -1);
+			$.fn.wl_caroufredsel.cookie.set(n, "", -1);
 		}
 	};
 
@@ -3155,7 +3155,7 @@
 			{
 				if (!is_function(obj.progress.updater))
 				{
-					obj.progress.updater = $.fn.carouFredSel.progressbarUpdater;
+					obj.progress.updater = $.fn.wl_caroufredsel.progressbarUpdater;
 				}
 				if (!is_number(obj.progress.interval))
 				{
@@ -3237,7 +3237,7 @@
 		}
 		if (!is_function(obj.anchorBuilder) && !is_false(obj.anchorBuilder))
 		{
-			obj.anchorBuilder = $.fn.carouFredSel.pageAnchorBuilder;
+			obj.anchorBuilder = $.fn.wl_caroufredsel.pageAnchorBuilder;
 		}
 		if (!is_number(obj.deviation))
 		{
@@ -3972,11 +3972,11 @@
 		if (n)
 		{
 			var v = $c.triggerHandler(cf_e('currentPosition', c));
-			$.fn.carouFredSel.cookie.set(n, v);
+			$.fn.wl_caroufredsel.cookie.set(n, v);
 		}
 	}
 	function cf_getCookie(n) {
-		var c = $.fn.carouFredSel.cookie.get(n);
+		var c = $.fn.wl_caroufredsel.cookie.get(n);
 		return (c == '') ? 0 : c;
 	}
 
@@ -4223,11 +4223,11 @@
 	
 			if (is_string(m))
 			{
-				m = 'carouFredSel'+s+': ' + m;
+				m = 'wl_caroufredsel'+s+': ' + m;
 			}
 			else
 			{
-				m = ['carouFredSel'+s+':', m];
+				m = ['wl_caroufredsel'+s+':', m];
 			}
 			window.console.log(m);
 		}

@@ -1,14 +1,14 @@
-<?php /*	*Theme Name	: Enigma
-	*Theme Core Functions and Codes
+<?php
+/** Theme Name	: Enigma
+* Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
 	define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 	define('WL_TEMPLATE_DIR', get_template_directory());
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 	
-	require( WL_TEMPLATE_DIR_CORE . '/menu/wp_bootstrap_navwalker.php' );
+	require( WL_TEMPLATE_DIR_CORE . '/menu/wlkr_bootstrap_navwalker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
-	require( WL_TEMPLATE_DIR_CORE . '/image_crop.php'); //Resize Images
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/flickr-widget.php' );
 	
@@ -34,17 +34,17 @@
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
 			'slide_title_1' => 'Slide Title',
-			'slide_desc_1' => 'tudi v priljubljenih programih za namizno založništvo kot',
+			'slide_desc_1' => 'Lorem Ipsum is simply dummy text of the printing',
 			'slide_btn_text_1' => 'Read More',
 			'slide_btn_link_1' => '#',
 			'slide_image_2' => $ImageUrl2,
-			'slide_title_2' => 'Lorem Ipsuma',
-			'slide_desc_2' => 'kombinacijo znakov neznani tiskar združil v vzorčno',
+			'slide_title_2' => 'variations of passages',
+			'slide_desc_2' => 'Contrary to popular belief, Lorem Ipsum is not simply random text',
 			'slide_btn_text_2' => 'Read More',
 			'slide_btn_link_2' => '#',
 			'slide_image_3' => $ImageUrl3,
-			'slide_title_3' => ' zgolj naključno e',
-			'slide_desc_3' => 'nenačrtovano ali namenoma, z različnimi š',
+			'slide_title_3' => 'Contrary to popular ',
+			'slide_desc_3' => 'Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi',
 			'slide_btn_text_3' => 'Read More',
 			'slide_btn_link_3' => '#',			
 			'blog_title'=>'Latest Blog',			
@@ -86,16 +86,16 @@
 			'portfolio_home'=>'on',
 			'port_heading' => 'Recent Works',
 			'port_1_img'=> $ImageUrl4,
-			'port_1_title'=>'modsætning',
+			'port_1_title'=>'Bonorum',
 			'port_1_link'=>'#',
 			'port_2_img'=> $ImageUrl5,			
-			'port_2_title'=>'udgaver',
+			'port_2_title'=>'Content',
 			'port_2_link'=>'#',
 			'port_3_img'=> $ImageUrl6,
-			'port_3_title'=>'udgaver',
+			'port_3_title'=>'dictionary',
 			'port_3_link'=>'#',
 			'port_4_img'=> $ImageUrl7,
-			'port_4_title'=>'udgaver',
+			'port_4_title'=>'randomised',
 			'port_4_link'=>'#'
 			
 		);
@@ -108,6 +108,7 @@
         weblizar_default_settings() 
     );    
 	}
+	require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
 	//wp title tag starts here
 	function weblizar_head( $title, $sep )
 	{	global $paged, $page;		
@@ -133,6 +134,12 @@
 		//content width
 		if ( ! isset( $content_width ) ) $content_width = 550; //px
 	
+	    //Blog Thumb Image Sizes
+		add_image_size('home_post_thumb',340,210,true);
+		//Blogs thumbs
+		add_image_size('wl_page_thumb',730,350,true);	
+		add_image_size('blog_2c_thumb',570,350,true);
+		
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'weblizar', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
@@ -143,22 +150,20 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args); 
 		add_theme_support( 'automatic-feed-links'); 
-		require_once('options-reset.php');//Reset Theme Options Here
-		require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel		
+		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
 	}
 	
 
 	// Read more tag to formatting in blog page 
 	function weblizar_content_more($more)
-	{  global $post;							
+	{  							
 	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>Read More</a></div>';
 	}   
 	add_filter( 'the_content_more_link', 'weblizar_content_more' );
 	
 	
 	// Replaces the excerpt "more" text by a link
-	function weblizar_excerpt_more($more) {
-       global $post;
+	function weblizar_excerpt_more($more) {      
 	return '';
 	}
 	add_filter('excerpt_more', 'weblizar_excerpt_more');
@@ -192,7 +197,7 @@
 	/* Breadcrumbs  */
 	function weblizar_breadcrumbs() {
     $delimiter = '';
-    $home = 'Home'; // text for the 'Home' link
+    $home = __('Home', 'weblizar' ); // text for the 'Home' link
     $before = '<li>'; // tag before the current crumb
     $after = '</li>'; // tag after the current crumb
     echo '<ul class="breadcrumb">';
@@ -207,7 +212,7 @@
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
             echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+        echo $before . ' _e("Archive by category","weblizar") "' . single_cat_title('', false) . '"' . $after;
     } elseif (is_day()) {
         echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
         echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
@@ -254,23 +259,17 @@
             echo $crumb . ' ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_search()) {
-        echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+        echo $before . '_e("Search results for","weblizar") "' . get_search_query() . '"' . $after;
     } elseif (is_tag()) {
-        echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+        echo $before . '_e("Posts tagged","weblizar") "' . single_tag_title('', false) . '"' . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+        echo $before . '_e("Articles posted by","weblizar") ' . $userdata->display_name . $after;
     } elseif (is_404()) {
-        echo $before . 'Error 404' . $after;
+        echo $before . '_e("Error 404","weblizar")' . $after;
     }
-    if (get_query_var('paged')) {
-        if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
-            echo ' (';
-        //echo __('Page', 'weblizar') . ' ' . get_query_var('paged');
-        if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
-            echo ')';
-    }
+    
     echo '</ul>';
 	}
 	
@@ -317,10 +316,10 @@
 	* =================================================================================*/
 	function weblizar_author_profile( $contactmethods ) {	
 	
-	$contactmethods['youtube_profile'] = 'Youtube Profile URL';	
-	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
-	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
-	$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+	$contactmethods['youtube_profile'] = __('Youtube Profile URL','weblizar');	
+	$contactmethods['twitter_profile'] = __('Twitter Profile URL','weblizar');
+	$contactmethods['facebook_profile'] = __('Facebook Profile URL','weblizar');
+	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','weblizar');
 	
 	return $contactmethods;
 	}
@@ -341,5 +340,20 @@
 	<?php posts_nav_link(); ?>
 	</div>
 	</div>
-	<?php }	
+	<?php }
+
+	/****--- Navigation for Single ---***/
+	function weblizar_navigation_posts() { ?>
+	<div class="navigation_en">
+	<nav id="wblizar_nav"> 
+	<span class="nav-previous">
+	<?php previous_post_link('&laquo; %link'); ?>
+	</span>
+	<span class="nav-next">
+	<?php next_post_link('%link &raquo;'); ?>
+	</span> 
+	</nav>
+	</div>	
+<?php 
+	}	
 ?>

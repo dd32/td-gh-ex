@@ -1,10 +1,8 @@
-  var caroufredsel = function () {
+  var wl_caroufredsel = function () {
 				 
-			   // jQuery CarouFredSel  For blog
-           
-                
+			   // jQuery CarouFredSel  For blog               
 				
-				jQuery('#enigma_blog_section').carouFredSel({
+				jQuery('#enigma_blog_section').wl_caroufredsel({
 					width: '100%',
                     responsive: true,
                    scroll : {
@@ -41,8 +39,8 @@
 			
 		}
 		jQuery(window).resize(function () {
-                caroufredsel();
+                wl_caroufredsel();
             });   
 			jQuery(window).load(function () {
-                caroufredsel();
+                wl_caroufredsel();
             });		

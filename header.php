@@ -33,7 +33,7 @@
 					{ echo get_bloginfo('name'); }
 					else if($wl_theme_options['upload_image_logo']!='') 
 					{ ?>
-					<img src="<?php echo $wl_theme_options['upload_image_logo']; ?>" style="height:<?php if($wl_theme_options['height']!='') { echo $wl_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($wl_theme_options['width']!='') { echo $wl_theme_options['width']; }  else { "200"; } ?>px;" />
+					<img class="img-responsive" src="<?php echo $wl_theme_options['upload_image_logo']; ?>" style="height:<?php if($wl_theme_options['height']!='') { echo $wl_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($wl_theme_options['width']!='') { echo $wl_theme_options['width']; }  else { "200"; } ?>px;" />
 					<?php } else { ?> 
 					Enigma
 					<?php } ?>
@@ -88,10 +88,9 @@
 				'container_class'   => 'collapse navbar-collapse',
 				'container_id'      => 'menu',
 				'menu_class'        => 'nav navbar-nav',
-				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				'walker'            => new wp_bootstrap_navwalker())
+				'fallback_cb'       => 'wlkr_bootstrap_navwalker::fallback',
+				'walker'            => new wlkr_bootstrap_navwalker())
 				); ?>
 			</nav>
 		</div>
 	</div>
-	<!-- /Navigation  menus -->

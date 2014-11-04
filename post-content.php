@@ -24,14 +24,36 @@
 		<?php endif; ?>
 		<div class="enigma_fuul_blog_detail_padding">
 		<h2><?php if(!is_single()) {?><a href="<?php the_permalink(); ?>"><?php } ?><?php the_title(); ?></a></h2>
+		<div class="row">
+		<div class="col-md-6 col-sm-3">
 		<?php if(get_the_tag_list() != '') { ?>
-		<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
+		<p class="enigma_tags"><?php the_tags( __('Tags : ','weblizar'), '', '<br />'); ?></p>
 		<?php } ?>
-		<?php the_content( __( 'Read More' , 'weblizar' ) ); ?>		
-		<?php wp_link_pages(); ?>		
+		</div>
+		<div class="col-md-6 col-sm-3">
+		<?php if(get_the_category_list() != '') { ?>
+		<p class="enigma_cats"><?php echo __("Category : ",'weblizar');
+		the_category(' , '); ?></p>
+		<?php } ?>
+		</div>
+		</div>
+		<?php the_content( __( 'Read More' , 'weblizar' ) ); 
+		$defaults = array(
+              'before'           => '<div class="enigma_blog_pagination"><div class="enigma_blog_pagi">' . __( 'Pages:','weblizar'  ),
+              'after'            => '</div></div>',
+	          'link_before'      => '',
+	          'link_after'       => '',
+	          'next_or_number'   => 'number',
+	          'separator'        => ' ',
+	          'nextpagelink'     => __( 'Next page'  ,'weblizar' ),
+	          'previouspagelink' => __( 'Previous page' ,'weblizar'),
+	          'pagelink'         => '%',
+	          'echo'             => 1
+	          );
+	          wp_link_pages( $defaults ); ?>
 		</div>
 	</div>
-</div>			
+</div>	
 <div class="push-right">
 <hr class="blog-sep header-sep">
 </div>

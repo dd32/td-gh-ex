@@ -14,23 +14,23 @@
 		$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";  ?>
         <div class="item active">
 			<?php if($wl_theme_options['slide_image_1']!='') {  ?>
-          <img src="<?php echo $wl_theme_options['slide_image_1']; ?>" class="img-responsive" alt="First slide">
+          <img src="<?php echo esc_url($wl_theme_options['slide_image_1']); ?>" class="img-responsive" alt="<?php echo esc_attr($wl_theme_options['slide_title_1']); ?>">
           <?php } else { ?>
-		  <img src="<?php echo $ImageUrl1 ?>" class="img-responsive" alt="First slide">
+		  <img src="<?php echo esc_url($ImageUrl1); ?>" class="img-responsive" alt="First slide">
 		  <?php } ?>		  
 		  <div class="container">
             <div class="carousel-caption">
 			<?php if($wl_theme_options['slide_title_1']!='') {  ?>
 			<div class="carousel-text">
-            <h1 class="animated bounceInRight"><?php echo $wl_theme_options['slide_title_1']; ?></h1>			
+            <h1 class="animated bounceInRight"><?php echo esc_attr($wl_theme_options['slide_title_1']); ?></h1>			
 			<?php  	
 			 if($wl_theme_options['slide_desc_1']!='') {  ?>
 			  <ul class="list-unstyled carousel-list">
-			 <li class="animated bounceInLeft"><?php echo $wl_theme_options['slide_desc_1']; ?></li>
+			 <li class="animated bounceInLeft"><?php echo esc_attr($wl_theme_options['slide_desc_1']); ?></li>
 			 </ul>
 			 <?php }
 			if($wl_theme_options['slide_btn_text_1']!='') { ?>
-            <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_1']!='') { echo $wl_theme_options['slide_btn_link_1']; } ?>" role="button"><?php echo $wl_theme_options['slide_btn_text_1']; ?></a>
+            <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_1']!='') { echo esc_url($wl_theme_options['slide_btn_link_1']); } ?>" role="button"><?php echo esc_attr($wl_theme_options['slide_btn_text_1']); ?></a>
 			<?php } ?>
             </div>
 			<?php } ?>
@@ -39,23 +39,23 @@
         </div>		
         <div class="item">		
 			<?php if($wl_theme_options['slide_image_2']!='') {  ?>
-          <img src="<?php echo $wl_theme_options['slide_image_2']; ?>" class="img-responsive" alt="Second slide">
+          <img src="<?php echo esc_url($wl_theme_options['slide_image_2']); ?>" class="img-responsive" alt="<?php echo esc_attr($wl_theme_options['slide_title_2']); ?>">
           <?php } else { ?>
-		  <img src="<?php echo $ImageUrl2 ?>" class="img-responsive" alt="Second slide">
+		  <img src="<?php echo esc_url($ImageUrl2); ?>" class="img-responsive" alt="Second slide">
 		  <?php } ?>
           <div class="container">
             <div class="carousel-caption">			
 			<?php if($wl_theme_options['slide_title_2']!='') {  ?>
 			<div class="carousel-text">
-              <h1 class="animated bounceInRight"><?php echo $wl_theme_options['slide_title_2']; ?></h1>
+              <h1 class="animated bounceInRight"><?php echo esc_attr($wl_theme_options['slide_title_2']); ?></h1>
 			<?php 	
 			 if($wl_theme_options['slide_desc_2']!='') {  ?>
 			 <ul class="list-unstyled carousel-list">
-			 <li class="animated bounceInLeft"><?php echo $wl_theme_options['slide_desc_2']; ?></li>
+			 <li class="animated bounceInLeft"><?php echo esc_attr($wl_theme_options['slide_desc_2']); ?></li>
 			 </ul>
 			 <?php }
 			if($wl_theme_options['slide_btn_text_2']!='') { ?>
-             <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_2']!='') { echo $wl_theme_options['slide_btn_link_2']; } ?>" role="button"><?php echo $wl_theme_options['slide_btn_text_2']; ?></a>
+             <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_2']!='') { echo esc_attr($wl_theme_options['slide_btn_link_2']); } ?>" role="button"><?php echo esc_attr($wl_theme_options['slide_btn_text_2']); ?></a>
 			  <?php } ?>
             </div>
 			<?php } ?>
@@ -64,23 +64,23 @@
         </div>
 		<div class="item">		
 			<?php if($wl_theme_options['slide_image_3']!='') {  ?>
-          <img src="<?php echo $wl_theme_options['slide_image_3']; ?>" class="img-responsive" alt="Third slide">
+          <img src="<?php echo esc_url($wl_theme_options['slide_image_3']); ?>" class="img-responsive" alt="<?php echo esc_attr($wl_theme_options['slide_title_3']); ?>">
           <?php } else { ?>
-		  <img src="<?php echo $ImageUrl3 ?>" class="img-responsive" alt="Third slide">
+		  <img src="<?php echo esc_url($ImageUrl3); ?>" class="img-responsive" alt="Third slide">
 		  <?php } ?>
           <div class="container">
             <div class="carousel-caption">
 			<?php if($wl_theme_options['slide_title_3']!='') {  ?>
 			<div class="carousel-text">
-              <h1 class="animated bounceInRight"><?php echo $wl_theme_options['slide_title_3']; ?></h1>
+              <h1 class="animated bounceInRight"><?php echo esc_attr($wl_theme_options['slide_title_3']); ?></h1>
 			<?php  	
 			 if($wl_theme_options['slide_desc_3']!='') {  ?>
 			 <ul class="list-unstyled carousel-list">
-			 <li class="animated bounceInLeft"><?php echo $wl_theme_options['slide_desc_3']; ?></li>
+			 <li class="animated bounceInLeft"><?php echo esc_attr($wl_theme_options['slide_desc_3']); ?></li>
 			 </ul>
 			 <?php }
 			if($wl_theme_options['slide_btn_text_3']!='') { ?>
-            <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_3']!='') { echo $wl_theme_options['slide_btn_link_3']; } ?>" role="button"><?php echo $wl_theme_options['slide_btn_text_3']; ?></a>
+            <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_3']!='') { echo esc_url($wl_theme_options['slide_btn_link_3']); } ?>" role="button"><?php echo esc_attr($wl_theme_options['slide_btn_text_3']); ?></a>
 			  <?php } ?>
             </div>
 			<?php } ?>

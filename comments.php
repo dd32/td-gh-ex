@@ -3,7 +3,7 @@
 	<?php return; endif; ?>
     <?php if ( have_comments() ) : ?>
 	<div class="enigma_comment_section">		
-	<div class="enigma_comment_title"><h3><i class="fa fa-comments"></i><?php echo comments_number('No Comments', '1 Comment', '% Comments'); ?></h3></div>
+	<div class="enigma_comment_title"><h3><i class="fa fa-comments"></i><?php echo comments_number(__('No Comments','weblizar'), __('1 Comment','weblizar'), '% Comments'); ?></h3></div>
 	<?php wp_list_comments( array( 'callback' => 'weblizar_comment' ) ); ?>		
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment-nav-below">
@@ -16,20 +16,16 @@
 	<?php endif; ?>
 <?php if ( comments_open() ) : ?>
 	<div class="enigma_comment_form_section">
-	
-							
-	<?php  
-	 $fields=array(
+	<?php $fields=array(
 		'author' => '<div class="enigma_form_group"><label for="exampleInputEmail1">Name<small>*</small></label><input name="author" id="name" type="text" id="exampleInputEmail1" class="enigma_con_input_control"></div>',
 		'email' => '<div class="enigma_form_group"><label for="exampleInputPassword1">Email<small>*</small></label><input  name="email" id="email" type="text" class="enigma_con_input_control"></div>',
-		
-		);
+	);
 	function my_fields($fields) { 
 		return $fields;
 	}
-	add_filter('comment_form_default_fields','my_fields');
+	add_filter('wl_comment_form_default_fields','my_fields');
 		$defaults = array(
-		'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
+		'fields'=> apply_filters( 'wl_comment_form_default_fields', $fields ),
 		'comment_field'=> '<div class="enigma_form_group"><label for="message"> Message *</label>
 		<textarea id="comment" name="comment" class="enigma_con_textarea_control" rows="5"></textarea></div>',		
 		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'weblizar' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'weblizar').'</a>' . '</p>',
@@ -45,4 +41,3 @@
 		
 </div>
 <?php endif; // If registration required and not logged in ?>
-<?php //endif;  ?>

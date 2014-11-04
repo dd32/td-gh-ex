@@ -18,7 +18,8 @@ jQuery(document).ready(function() {
 		  if (bMobile) {
 			// Disable hover events for mobile
 			oMenus.off();
-		  } else {
+		  } else {		  
+			if(jQuery(window).width() > 1000) {
 			// Set up menu hover for desktop mode
 			oMenus.on({
 			  'mouseenter touchstart': function(event) {
@@ -34,6 +35,7 @@ jQuery(document).ready(function() {
 			  }
 			});
 		  }
+		}
 		}
 		jQuery(document).ready(function() {
 		  // Your other code to run on DOM ready...
