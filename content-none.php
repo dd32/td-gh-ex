@@ -18,12 +18,12 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', false ) ) ?></p>
+			<p><?php echo wp_kses_post( kaira_theme_option( 'kra-website-nosearch-msg' ) ) ?></p>
             
 			<div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>
                 
-                <?php if ( get_theme_mod( 'kra-header-search', false ) ) : ?>
+                <?php if ( kaira_theme_option( 'kra-header-search' ) ) : ?>
                     <a class="electa-button search-btn"><?php _e( 'Search', 'electa' ); ?></a>
                 <?php endif; ?>
                 
@@ -31,12 +31,12 @@
 
 		<?php else : ?>
 
-			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', false ) ) ?></p>
+			<p><?php echo wp_kses_post( kaira_theme_option( 'kra-website-nosearch-msg' ) ) ?></p>
             
 			<div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>
                 
-                <?php if ( get_theme_mod( 'kra-header-search', false ) ) : ?>
+                <?php if ( kaira_theme_option( 'kra-header-search' ) ) : ?>
                     <a class="electa-button search-btn"><?php _e( 'Search', 'electa' ); ?></a>
                 <?php endif; ?>
                 

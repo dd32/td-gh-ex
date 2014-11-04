@@ -27,12 +27,16 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == Bundled Licenses ==
 
+jQuery carouFredSel 6.2.1
+Copyright (c) 2013 Fred Heusschen
+http://en.wikipedia.org/wiki/MIT_License
+http://en.wikipedia.org/wiki/GNU_General_Public_License
+
 FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
 
 * Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
 Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 https://unsplash.com/license
 
@@ -43,50 +47,18 @@ https://unsplash.com/license
 3. Click Activate to use your new theme right away.
 
 
-Electa's Customizer Settings:
+Electa's Settings:
 ---------------
-The theme settings are built into the WordPress Customizer using "Customizer Library" by Devin Price, situated in /customizer/.
-license: GPL 2.0+
-https://github.com/devinsays/customizer-library/blob/master/composer.json
-
-The Electa Premium upgrade situated in /upgrade/ displays the features that the premium version includes.
-Electa Premium version is licensed under GPL 2.0+
+This theme is built around Kaira's own settings framework contained in the folder /settings/. All code is licensed under GPL 2.0 and copyright Kaira unless otherwise specified.
 
 All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
-View the theme settings under "Appearance" -> Customize.
+View the settings under Appearance -> ELECTA Settings.
 
 = Quick Specs (all measurements in pixels) =
 
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
-
-#### 1.1.11
-* Added Theme URI link to stylesheet.
-
-#### 1.1.9
-* Changed kaira-admin.css to only load on upgrade page.
-* Changed /customizer-library/customizer.css to only load within customizer preview.
-
-#### 1.1.8
-* Remove code causing issues.
-
-#### 1.1.7
-* Style tweaks
-
-#### 1.1.6
-* Sanitized more widget settings.
-
-#### 1.1.5
-* Changed & Sanitized widget settings in electa-carousel.php and electa-icon.php.
-* Changed custom styling to use Customizer Library styles.
-
-#### 1.1.4
-* Changed settings to use "Customizer Library" by Devin Price.
-* Removed old settings.
-* Added a page under "Appearance" linking to Kaira website.
-* Added sanitization to the widgets - Electa Carousel & Electa Icon.
-* Added an upgrade to premium page under Appearance.
 
 
 * Initial release.

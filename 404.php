@@ -12,7 +12,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-                    <h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-head', false ) ) ?></h1>
+                    <h1 class="page-title"><?php echo wp_kses_post( kaira_theme_option( 'kra-website-error-head' ) ) ?></h1>
                     
                     <?php if ( function_exists( 'bcn_display' ) ) : ?>
                         <div class="cx-breadcrumbs">
@@ -24,12 +24,12 @@ get_header(); ?>
                 
                 <i class="fa fa-ban"></i>
                 
-                <p><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-msg', false ) ) ?></p>
+                <p><?php echo wp_kses_post( kaira_theme_option( 'kra-website-error-msg' ) ) ?></p>
                 
                 <div class="not-found-options">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>
                     
-                    <?php if ( get_theme_mod( 'kra-header-search', false ) ) : ?>
+                    <?php if ( kaira_theme_option( 'kra-header-search' ) ) : ?>
                         <a class="electa-button search-btn"><?php _e( 'Search', 'electa' ); ?></a>
                     <?php endif; ?>
                     
