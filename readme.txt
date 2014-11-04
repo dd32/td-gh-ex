@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 0.4
+1. the_title replaced with get_search_query in search.php
 @version 0.3.3
 1. Removed Undefined errors.
 @version 0.3.2
