@@ -173,19 +173,20 @@
 
 // Theme Customizer (option to add logo)
 	function privatebusiness_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'privatebusiness_logo_section' , array( 
-		'title' => __( 'Logo', 'privatebusiness' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'privatebusiness' ),
+			'title' => __( 'Logo', 'privatebusiness' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'privatebusiness' ),
 		) );
-		$wp_customize->add_setting( 'privatebusiness_logo' );
+		$wp_customize->add_setting( 'privatebusiness_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'privatebusiness_logo', array( 
-		'label' => __( 'Logo', 'privatebusiness' ), 
-		'section' => 'privatebusiness_logo_section', 
-		'settings' => 'privatebusiness_logo', 
+			'label' => __( 'Logo', 'privatebusiness' ), 
+			'section' => 'privatebusiness_logo_section', 
+			'settings' => 'privatebusiness_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'privatebusiness_theme_customizer');
 

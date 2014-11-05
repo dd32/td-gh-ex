@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v2.5\n"
+"Project-Id-Version: PrivateBusiness v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-06-18 16:53:45+0000\n"
+"PO-Revision-Date: 2014-11-05 15:21:36+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,16 +78,16 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:107
+#: functions.php:108
 #@ privatebusiness
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:109
-#: functions.php:119
-#: functions.php:129
-#: functions.php:139
-#: functions.php:149
+#: functions.php:110
+#: functions.php:120
+#: functions.php:130
+#: functions.php:140
+#: functions.php:150
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -137,12 +137,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:137
+#: functions.php:138
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:147
+#: functions.php:148
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -161,7 +161,7 @@ msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
 #: functions.php:177
-#: functions.php:183
+#: functions.php:186
 #@ privatebusiness
 msgid "Logo"
 msgstr "Logo"
@@ -171,12 +171,12 @@ msgstr "Logo"
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: functions.php:117
+#: functions.php:118
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:127
+#: functions.php:128
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
@@ -205,17 +205,17 @@ msgstr "% reacties"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:32
+#: footer.php:24
 #@ privatebusiness
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:33
+#: footer.php:25
 #@ privatebusiness
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:33
+#: footer.php:25
 #@ privatebusiness
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
