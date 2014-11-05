@@ -131,6 +131,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@ verision 1.2.6.3
+Added  woocommerce support
 @version 1.2.6.1
 Proper copyright attribution added.
 

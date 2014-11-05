@@ -4,8 +4,8 @@ Theme URI:  http://webriti.com/rambo-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Tags: white,blue, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post,responsive-layout
-Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version: 1.2.6.2
+Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 2 beautifully designed page templates , Home and Blog Page.Supports popular plugin WooCommerce
+Version: 1.2.6.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: 'rambo'
@@ -347,7 +347,6 @@ a.featured_port_projects_btn:hover{
     margin: 7px 0;
 	font-size: 30px;
 	word-wrap: break-word;
-	word-break: break-all;
 }
 .about_space{
 	margin-top: 0;
@@ -2592,3 +2591,74 @@ overflow:hidden;
 .blog_section2  blockquote > p{
 	text-align: right;
 }
+
+
+/* Woocommerce styles*/
+
+.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+     font-family: roboto !important;
+    font-size: 16px !important;
+}
+
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price {
+    color: #DC2623;
+     font-family: roboto;
+    font-size: 16px;
+    font-weight: 600 !important;    
+}
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 100px !important;
+}
+.woocommerce table td{line-height:60px !important;}
+.woocommerce table.shop_table, .woocommerce-page table.shop_table {
+    border-collapse: separate;
+    text-align: center !important;
+}
+
+.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before{ background-color:#DC2623 !important;}
+
+.woocommerce .woocommerce-message, .woocommerce-page .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
+    border-top: 3px solid #DC2623 !important;
+}
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea, .woocommerce-page form .form-row input.input-text, .woocommerce-page form .form-row textarea {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+margin: 0;
+outline: 0;
+line-height: 1em;
+height: 30px;
+}
+
+.woocommerce table.shop_table th,
+.woocommerce-page table.shop_table th
+{font-weight:bold;line-height:18px;padding:9px 12px;text-align:center;}
+
+.woocommerce .cart-collaterals .cart_totals table th,
+.woocommerce-page .cart-collaterals .cart_totals table th
+{padding: 19px 12px 11px 25px;width:25%;text-align:center;}
+
+.woocommerce table.cart input,.woocommerce #content table.cart input,.woocommerce-page table.cart input,.woocommerce-page #content table.cart input
+{
+	margin:80px;
+	vertical-align:middle;
+	line-height:1em;
+}
+.payment_methods label
+{
+ display:inline;
+}
+
+.blog_single_post h2, .blog_section2 h2, .blog_section h2 
+{
+font-size: 26px;
+line-height: 30px;
+color: hsl(200, 7%, 49%);
+margin-left: -428px;
+}
+
+.woocommerce #payment ul.payment_methods li, .woocommerce-page #payment.payment_methods {
+display: block;
+}
+

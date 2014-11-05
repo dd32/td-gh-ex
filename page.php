@@ -21,8 +21,7 @@
         <a  href="<?php the_permalink(); ?>" class="pull-left blog_pull_img2">
         <?php the_post_thumbnail('media-object', $defalt_arg); ?>
         </a>
-        <?php endif;?>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php endif;?>       
         <p><?php  the_content( __( 'Read More' , 'rambo' ) ); ?></p>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'rambo' ), 'after' => '</div>' ) ); ?>
       </div>

@@ -19,7 +19,7 @@
   	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
-
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
   	//wp title tag starts here
   	function rambo_head( $title, $sep )
   	{	global $paged, $page;		
@@ -45,7 +45,7 @@
 		if ( ! isset( $content_width ) ) $content_width = 770;
 		// Load text domain for translation-ready
   		load_theme_textdomain( 'rambo', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );	
-  		
+  		add_theme_support( 'woocommerce' );
   		add_theme_support( 'post-thumbnails' ); //supports featured image
   		add_theme_support( 'automatic-feed-links' ); //feed links enabled
   		add_image_size('blog1_section_img',270,260,true);
@@ -64,6 +64,7 @@
   		$rambo_theme_options=theme_data_setup(); 		
   		add_option('rambo_theme_options',$rambo_theme_options); 
   	}
+	
   	
   	function custom_excerpt_more( $more ) {
   	return '';
