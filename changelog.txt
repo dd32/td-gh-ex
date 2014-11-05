@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-LeftSide version 1.4 - november 2014 
+LeftSide version 1.5 - november 2014 
 - file functions: added sanitize_callback to logo upload
 - file footer: removed double if statement
 - several css adjustments
