@@ -16,7 +16,7 @@
 		<div class="site-container">
 			<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
 			<div class="footer-left">
-                <?php echo wp_kses_post( 'Built with the <a href="http://wordpress.org/themes/albar" target="_blank">Albar WordPress Theme</a>' ) ?>
+                <?php echo wp_kses_post( 'Albar theme, by <a href="http://www.kairaweb.com/">Kaira</a>' ) ?>
 			</div>
 			<div class="footer-right">
 				<?php get_template_part( '/includes/inc/social-links' ); ?>
