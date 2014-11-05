@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SimplyBlack v2.2\n"
+"Project-Id-Version: SimplyBlack v2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 13:40:27+0000\n"
+"PO-Revision-Date: 2014-11-05 17:06:35+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,15 +78,15 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:104
+#: functions.php:105
 #@ simplyblack
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:136
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
 #@ simplyblack
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -108,8 +108,8 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:20
-#: page.php:19
+#: page-full.php:25
+#: page.php:24
 #: single.php:38
 #@ simplyblack
 msgid "Edit"
@@ -131,12 +131,12 @@ msgstr "&laquo; Oudere Reacties"
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: functions.php:114
+#: functions.php:115
 #@ simplyblack
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:134
+#: functions.php:135
 #@ simplyblack
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -155,12 +155,12 @@ msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
 #: functions.php:158
-#: functions.php:164
+#: functions.php:167
 #@ simplyblack
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:124
+#: functions.php:125
 #@ simplyblack
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
@@ -199,17 +199,17 @@ msgstr "1 reactie"
 msgid "% responses"
 msgstr "% reacties"
 
-#: footer.php:40
+#: footer.php:24
 #@ simplyblack
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:41
+#: footer.php:25
 #@ simplyblack
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:41
+#: footer.php:25
 #@ simplyblack
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
