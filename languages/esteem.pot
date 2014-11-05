@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Esteem\n"
-"POT-Creation-Date: 2014-07-11 20:48+0545\n"
-"PO-Revision-Date: 2014-07-11 20:48+0545\n"
+"POT-Creation-Date: 2014-11-05 16:12+0545\n"
+"PO-Revision-Date: 2014-11-05 16:12+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -246,24 +246,27 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: inc/functions.php:281
+#: inc/functions.php:257
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:290
+#: inc/functions.php:259
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:299
-msgid "Copyright &copy; "
+#: inc/functions.php:261
+#, php-format
+msgid "Copyright &copy; %1$s %2$s."
 msgstr ""
 
-#: inc/functions.php:299
-msgid "Theme by: "
+#: inc/functions.php:261
+#, php-format
+msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:299
-msgid "Powered by: "
+#: inc/functions.php:261
+#, php-format
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: inc/header-functions.php:47
@@ -426,7 +429,7 @@ msgid "Image link:"
 msgstr ""
 
 #: inc/widgets/widgets.php:547 inc/widgets/widgets.php:565
-msgid "Testimonial Description1"
+msgid "Testimonial Description"
 msgstr ""
 
 #: inc/widgets/widgets.php:550 inc/widgets/widgets.php:568

@@ -43,6 +43,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.3 =
+* Removed blank spaces at the end of some files that caused site to show as a blank page in some cases.
+* Shortcodes previously used for footer copyright text now completely removed.
+* Footer credit link previously Author URI now changed to Theme URI.
+* Language pot file updated to include new strings.
 
 = Version 1.1.2 =
 * CSS added to support Recent Posts Widget Extended Plugin.

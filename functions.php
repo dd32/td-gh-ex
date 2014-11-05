@@ -160,3 +160,4 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/options/' );
 	require_once( ESTEEM_ADMIN_DIR . '/options/options-framework.php' );
 }
+?>

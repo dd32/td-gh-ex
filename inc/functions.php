@@ -246,68 +246,22 @@ function esteem_custom_css() {
 
 /**************************************************************************************/
 
-/* Register shortcodes. */
-add_action( 'init', 'esteem_add_shortcodes' );
-/**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function esteem_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'the-year', 'esteem_the_year_shortcode' );
-	add_shortcode( 'site-link', 'esteem_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'esteem_wp_link_shortcode' );
-	add_shortcode( 'tg-link', 'esteem_themegrill_link_shortcode' );
-}
-
-/**
- * Shortcode to display the current year.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function esteem_the_year_shortcode() {
-   return date( 'Y' );
-}
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @uses get_bloginfo() Gets the site link
- * @return string
- */
-function esteem_site_link_shortcode() {
-   return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function esteem_wp_link_shortcode() {
-   return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'esteem' ) . '"><span>' . __( 'WordPress', 'esteem' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to esteem.com.
- *
- * @return string
- */
-function esteem_themegrill_link_shortcode() {
-   return '<a href="'.esc_url( 'http://themegrill.com' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'esteem' ).'" ><span>'.__( 'ThemeGrill', 'esteem') .'</span></a>';
-}
-
 add_action( 'esteem_footer_copyright', 'esteem_footer_copyright', 10 );
 /**
  * function to show the footer info, copyright information
  */
 if ( ! function_exists( 'esteem_footer_copyright' ) ) :
 function esteem_footer_copyright() {
-	$esteem_footer_copyright = '<div class="copyright">'.__( 'Copyright &copy; ', 'esteem' ).'[the-year] [site-link] '.__( 'Theme by: ', 'esteem' ).'[tg-link] '.__( 'Powered by: ', 'esteem' ).'[wp-link]'.'</div>';
-	echo do_shortcode( $esteem_footer_copyright );
+	$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+
+	$wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'esteem' ) . '"><span>' . __( 'WordPress', 'esteem' ) . '</span></a>';
+
+	$tg_link =  '<a href="'.esc_url( 'http://themegrill.com/themes/esteem' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'esteem' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'esteem') .'</span></a>';
+
+	$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'esteem' ), date( 'Y' ), $site_link ).' '.sprintf( __( 'Powered by %s.', 'esteem' ), $wp_link ).' '.sprintf( __( 'Theme: %1$s by %2$s.', 'esteem' ), 'Esteem', $tg_link );
+
+	$esteem_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
+	echo $esteem_footer_copyright;
 }
 endif;
 
@@ -334,5 +288,4 @@ function esteem_posts_listing_display_type_select() {
 	return $format;
 }
 endif;
-
-/****************************************************************************************/
+?>

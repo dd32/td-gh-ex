@@ -46,3 +46,4 @@ function esteem_admin_header_image() {
 <?php
 }
 endif; // esteem_admin_header_image
+?>

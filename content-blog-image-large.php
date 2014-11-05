@@ -57,4 +57,3 @@
 
 	<?php do_action( 'esteem_after_post_content' ); ?>
 </article>
-

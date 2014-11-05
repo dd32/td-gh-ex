@@ -290,3 +290,4 @@ function esteem_options_display_sidebar() { ?>
 	</div><!-- #optionsframework-sidebar -->
 <?php
 }
+?>

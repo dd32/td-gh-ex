@@ -179,3 +179,4 @@ function esteem_save_custom_meta( $post_id ) {
     } // end foreach
 }
 add_action('pre_post_update', 'esteem_save_custom_meta');
+?>
