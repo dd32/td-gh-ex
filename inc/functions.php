@@ -421,68 +421,22 @@ endif;
 
 /**************************************************************************************/
 
-/* Register shortcodes. */
-add_action( 'init', 'spacious_add_shortcodes' );
-/**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function spacious_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'the-year', 'spacious_the_year_shortcode' );
-	add_shortcode( 'site-link', 'spacious_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'spacious_wp_link_shortcode' );
-	add_shortcode( 'tg-link', 'spacious_themegrill_link_shortcode' );
-}
-
-/**
- * Shortcode to display the current year.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function spacious_the_year_shortcode() {
-   return date( 'Y' );
-}
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @uses get_bloginfo() Gets the site link
- * @return string
- */
-function spacious_site_link_shortcode() {
-   return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function spacious_wp_link_shortcode() {
-   return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'spacious' ) . '"><span>' . __( 'WordPress', 'spacious' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to spacious.com.
- *
- * @return string
- */
-function spacious_themegrill_link_shortcode() {
-   return '<a href="'.esc_url( 'http://themegrill.com' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'spacious' ).'" ><span>'.__( 'ThemeGrill', 'spacious') .'</span></a>';
-}
-
 add_action( 'spacious_footer_copyright', 'spacious_footer_copyright', 10 );
 /**
  * function to show the footer info, copyright information
  */
 if ( ! function_exists( 'spacious_footer_copyright' ) ) :
 function spacious_footer_copyright() {
-	$spacious_footer_copyright = '<div class="copyright">'.__( 'Copyright &copy; ', 'spacious' ).'[the-year] [site-link] '.__( 'Theme by: ', 'spacious' ).'[tg-link] '.__( 'Powered by: ', 'spacious' ).'[wp-link]'.'</div>';
-	echo do_shortcode( $spacious_footer_copyright );
+	$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+
+	$wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'spacious' ) . '"><span>' . __( 'WordPress', 'spacious' ) . '</span></a>';
+
+	$tg_link =  '<a href="'.esc_url( 'http://themegrill.com/themes/spacious' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'spacious' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'spacious') .'</span></a>';
+
+	$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'spacious' ), date( 'Y' ), $site_link ).' '.sprintf( __( 'Powered by %s.', 'spacious' ), $wp_link ).' '.sprintf( __( 'Theme: %1$s by %2$s.', 'spacious' ), 'Spacious', $tg_link );
+
+	$spacious_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
+	echo $spacious_footer_copyright;
 }
 endif;
 

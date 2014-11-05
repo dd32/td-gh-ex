@@ -30,4 +30,3 @@
 	do_action( 'spacious_after_post_content' );
    ?>
 </article>
-

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spacious\n"
-"POT-Creation-Date: 2014-07-13 14:25+0545\n"
-"PO-Revision-Date: 2014-07-13 14:25+0545\n"
+"POT-Creation-Date: 2014-11-05 14:01+0545\n"
+"PO-Revision-Date: 2014-11-05 14:01+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -237,74 +237,77 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: inc/functions.php:325
+#: inc/functions.php:341
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:329 navigation.php:42
+#: inc/functions.php:345 navigation.php:42
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:330 navigation.php:43
+#: inc/functions.php:346 navigation.php:43
 msgid "&rarr;"
 msgstr ""
 
-#: inc/functions.php:335
+#: inc/functions.php:351
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:339
+#: inc/functions.php:355
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:365
+#: inc/functions.php:381
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:365
+#: inc/functions.php:381
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:380
+#: inc/functions.php:396
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:383
+#: inc/functions.php:399
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:385
+#: inc/functions.php:401
 #, php-format
 msgid "<a class=\"comment-permalink\" href=\"%1$s\">Permalink</a>"
 msgstr ""
 
-#: inc/functions.php:391
+#: inc/functions.php:407
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:396
+#: inc/functions.php:412
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:450
+#: inc/functions.php:432
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:459
+#: inc/functions.php:434
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:468
-msgid "Copyright &copy; "
+#: inc/functions.php:436
+#, php-format
+msgid "Copyright &copy; %1$s %2$s."
 msgstr ""
 
-#: inc/functions.php:468
-msgid "Theme by: "
+#: inc/functions.php:436
+#, php-format
+msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:468
-msgid "Powered by: "
+#: inc/functions.php:436
+#, php-format
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: inc/header-functions.php:47
@@ -364,7 +367,7 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/header-functions.php:214
+#: inc/header-functions.php:218
 msgid "You are here:"
 msgstr ""
 
@@ -648,7 +651,7 @@ msgstr ""
 msgid "Need to replace Header Image?"
 msgstr ""
 
-#: options.php:62 options.php:167
+#: options.php:62 options.php:181
 #, php-format
 msgid "<a href=\"%1$s\">Click Here</a>"
 msgstr ""
@@ -732,120 +735,154 @@ msgid ""
 "single posts unless unique layout is set for specific post."
 msgstr ""
 
+#: options.php:144
+msgid "Blog Posts display type"
+msgstr ""
+
 #: options.php:145
+msgid ""
+"Choose the display type for the latests posts view or posts page view "
+"(static front page)."
+msgstr ""
+
+#: options.php:150
+msgid "Blog Image Large"
+msgstr ""
+
+#: options.php:151
+msgid "Blog Image Medium"
+msgstr ""
+
+#: options.php:152
+msgid "Blog Image Alternate Medium"
+msgstr ""
+
+#: options.php:153
+msgid "Blog Full Content"
+msgstr ""
+
+#: options.php:159
 msgid "Primary color option"
 msgstr ""
 
-#: options.php:146
+#: options.php:160
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to match "
 "your site."
 msgstr ""
 
-#: options.php:154
+#: options.php:168
 msgid "Color Skin"
 msgstr ""
 
-#: options.php:155
+#: options.php:169
 msgid "Choose the light or dark skin. This will be reflected in whole site."
 msgstr ""
 
-#: options.php:166
+#: options.php:180
 msgid "Need to replace default background?"
 msgstr ""
 
-#: options.php:167
+#: options.php:181
 msgid ""
 "Note: The background will only be seen if you choose any of the boxed layout "
 "option in site layout option."
 msgstr ""
 
-#: options.php:172
+#: options.php:186
 msgid "Custom CSS"
 msgstr ""
 
-#: options.php:173
+#: options.php:187
 msgid "Write your custom css."
 msgstr ""
 
-#: options.php:182
+#: options.php:196
 msgid "Additional"
 msgstr ""
 
-#: options.php:188
+#: options.php:202
 msgid "Activate favicon"
 msgstr ""
 
-#: options.php:189
+#: options.php:203
 msgid "Check to activate favicon. Upload fav icon from below option"
 msgstr ""
 
-#: options.php:197
+#: options.php:211
 msgid "Upload favicon"
 msgstr ""
 
-#: options.php:198
+#: options.php:212
 msgid "Upload favicon for your site."
 msgstr ""
 
-#: options.php:206
+#: options.php:220
 msgid "Slider"
 msgstr ""
 
-#: options.php:212
+#: options.php:226
 msgid "Activate slider"
 msgstr ""
 
-#: options.php:213
+#: options.php:227
 msgid "Check to activate slider."
 msgstr ""
 
-#: options.php:222
+#: options.php:235
+msgid "Disable slider in Posts page"
+msgstr ""
+
+#: options.php:236
+msgid "Check to disable slider in Posts Page"
+msgstr ""
+
+#: options.php:245
 #, php-format
 msgid "Image Upload #%1$s"
 msgstr ""
 
-#: options.php:223
+#: options.php:246
 msgid "Upload slider image."
 msgstr ""
 
-#: options.php:228
+#: options.php:251
 msgid "Enter title for your slider."
 msgstr ""
 
-#: options.php:234
+#: options.php:257
 msgid "Enter your slider description."
 msgstr ""
 
-#: options.php:240
+#: options.php:263
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: options.php:259
+#: options.php:282
 msgid "About Spacious"
 msgstr ""
 
-#: options.php:261
+#: options.php:284
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: options.php:262
+#: options.php:285
 msgid "Free Support"
 msgstr ""
 
-#: options.php:263
+#: options.php:286
 msgid "Documentation"
 msgstr ""
 
-#: options.php:264
+#: options.php:287
 msgid "View Demo"
 msgstr ""
 
-#: options.php:265
+#: options.php:288
 msgid "Rate this theme"
 msgstr ""
 
-#: options.php:268
+#: options.php:291
 msgid "If you like our work. Buy us a beer."
 msgstr ""
 
