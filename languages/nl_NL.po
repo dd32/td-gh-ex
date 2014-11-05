@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v1.6\n"
+"Project-Id-Version: GridBulletin v1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-04 15:36:22+0000\n"
+"PO-Revision-Date: 2014-11-05 10:47:57+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -106,9 +106,9 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:21
-#: page.php:20
-#: single.php:47
+#: page-full.php:26
+#: page.php:25
+#: single.php:43
 #@ gridbulletin
 msgid "Edit"
 msgstr "Bewerk"
@@ -147,13 +147,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:196
-#: functions.php:202
+#: functions.php:195
+#: functions.php:204
 #@ gridbulletin
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:198
+#: functions.php:197
 #@ gridbulletin
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -161,7 +161,7 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 #: archive.php:51
 #: index.php:36
 #: search.php:38
-#: single.php:30
+#: single.php:26
 #@ gridbulletin
 msgid "Leave a response"
 msgstr "Plaats reactie"
@@ -169,7 +169,7 @@ msgstr "Plaats reactie"
 #: archive.php:51
 #: index.php:36
 #: search.php:38
-#: single.php:30
+#: single.php:26
 #@ gridbulletin
 msgid "% responses"
 msgstr "% reacties"
@@ -207,25 +207,25 @@ msgstr "Footer Home Links"
 #: archive.php:51
 #: index.php:36
 #: search.php:38
-#: single.php:30
+#: single.php:26
 #@ gridbulletin
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer-home.php:44
-#: footer.php:44
+#: footer-home.php:42
+#: footer.php:28
 #@ gridbulletin
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer-home.php:45
-#: footer.php:45
+#: footer-home.php:43
+#: footer.php:29
 #@ gridbulletin
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer-home.php:45
-#: footer.php:45
+#: footer-home.php:43
+#: footer.php:29
 #@ gridbulletin
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
@@ -241,7 +241,7 @@ msgstr "Permalink naar %s"
 #: archive.php:48
 #: index.php:33
 #: search.php:35
-#: single.php:27
+#: single.php:23
 #, php-format
 #@ gridbulletin
 msgid "Posted on %s"
@@ -250,25 +250,25 @@ msgstr "Geplaatst op %s"
 #: archive.php:49
 #: index.php:34
 #: search.php:36
-#: single.php:28
+#: single.php:24
 #, php-format
 #@ gridbulletin
 msgid "By %s"
 msgstr "Door %s"
 
-#: single.php:31
+#: single.php:27
 #, php-format
 #@ gridbulletin
 msgid "Posted in %s"
 msgstr "Geplaatst in %s"
 
-#: single.php:31
-#: single.php:32
+#: single.php:27
+#: single.php:28
 #@ gridbulletin
 msgid ", "
 msgstr ", "
 
-#: single.php:32
+#: single.php:28
 #, php-format
 #@ gridbulletin
 msgid "Tags: %s"

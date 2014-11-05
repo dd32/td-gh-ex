@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.7 - november 2014
+- file functions: added sanitize_callback to logo upload
+- file footer: removed double if statement
+- several css adjustments
+
 GridBulletin version 1.6 - october 2014
 - added and adjusted text markup tags
 

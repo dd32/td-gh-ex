@@ -191,19 +191,20 @@
 
 // Theme Customizer (option to add logo)
 	function gridbulletin_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'gridbulletin_logo_section' , array( 
-		'title' => __( 'Logo', 'gridbulletin' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'gridbulletin' ),
+			'title' => __( 'Logo', 'gridbulletin' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'gridbulletin' ),
 		) );
-		$wp_customize->add_setting( 'gridbulletin_logo' );
+		$wp_customize->add_setting( 'gridbulletin_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'gridbulletin_logo', array( 
-		'label' => __( 'Logo', 'gridbulletin' ), 
-		'section' => 'gridbulletin_logo_section', 
-		'settings' => 'gridbulletin_logo', 
+			'label' => __( 'Logo', 'gridbulletin' ), 
+			'section' => 'gridbulletin_logo_section', 
+			'settings' => 'gridbulletin_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'gridbulletin_theme_customizer');
 
