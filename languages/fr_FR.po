@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v2.3\n"
+"Project-Id-Version: Shipyard v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-13 17:56:41+0000\n"
+"PO-Revision-Date: 2014-11-05 16:52:46+0000\n"
 "Last-Translator: admin <gjvdleest@yahoo.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -158,17 +158,17 @@ msgstr "Commentaires plus récents &raquo;"
 msgid "Comments are closed"
 msgstr "Les commentaires sont fermés"
 
-#: footer.php:31
+#: footer.php:20
 #@ shipyard
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:32
+#: footer.php:21
 #@ shipyard
 msgid "WordPress Blog Platform"
 msgstr "Plateforme de blog WordPress"
 
-#: footer.php:32
+#: footer.php:21
 #@ shipyard
 msgid "Proudly powered by WordPress"
 msgstr "Fièrement propulsé par WordPress"
@@ -205,13 +205,13 @@ msgstr "Pied de page à droite"
 msgid "Footer Sidebar Left"
 msgstr "Pied de page à gauche"
 
-#: functions.php:150
-#: functions.php:156
+#: functions.php:149
+#: functions.php:158
 #@ shipyard
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:152
+#: functions.php:151
 #@ shipyard
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Télécharger un logo pour remplacer le nom du blog et sa description dans l'en-tête"

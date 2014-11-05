@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v2.3\n"
+"Project-Id-Version: Shipyard v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-24 10:24:57+0000\n"
+"PO-Revision-Date: 2014-11-05 16:52:21+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,14 +78,14 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:104
+#: functions.php:106
 #@ shipyard
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
 #@ shipyard
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -107,8 +107,8 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:20
-#: page.php:19
+#: page-full.php:25
+#: page.php:24
 #: single.php:38
 #@ shipyard
 msgid "Edit"
@@ -130,12 +130,12 @@ msgstr "&laquo; Oudere Reacties"
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: functions.php:114
+#: functions.php:116
 #@ shipyard
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:124
+#: functions.php:126
 #@ shipyard
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -153,13 +153,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:148
-#: functions.php:154
+#: functions.php:149
+#: functions.php:158
 #@ shipyard
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:150
+#: functions.php:151
 #@ shipyard
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -188,17 +188,17 @@ msgstr "1 reactie"
 msgid "% responses"
 msgstr "% reacties"
 
-#: footer.php:31
+#: footer.php:20
 #@ shipyard
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:32
+#: footer.php:21
 #@ shipyard
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:32
+#: footer.php:21
 #@ shipyard
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"

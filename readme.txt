@@ -36,7 +36,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menu's.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch translation included). 
+This theme is translation-ready (Dutch and French translation included). 
 You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
 
 

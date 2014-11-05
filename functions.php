@@ -145,19 +145,20 @@
 
 // Theme Customizer (option to add logo)
 	function shipyard_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'shipyard_logo_section' , array( 
-		'title' => __( 'Logo', 'shipyard' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'shipyard' ),
+			'title' => __( 'Logo', 'shipyard' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'shipyard' ),
 		) );
-		$wp_customize->add_setting( 'shipyard_logo' );
+		$wp_customize->add_setting( 'shipyard_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shipyard_logo', array( 
-		'label' => __( 'Logo', 'shipyard' ), 
-		'section' => 'shipyard_logo_section', 
-		'settings' => 'shipyard_logo', 
+			'label' => __( 'Logo', 'shipyard' ), 
+			'section' => 'shipyard_logo_section', 
+			'settings' => 'shipyard_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'shipyard_theme_customizer');
 
