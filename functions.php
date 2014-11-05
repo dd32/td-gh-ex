@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.5.4' );
+define( 'KAIRA_THEME_VERSION' , '1.5.5' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -231,7 +231,7 @@ add_action('wp_head', 'kaira_print_styles', 11);
  * Enqueue scripts and styles
  */
 function kaira_scripts() {
-    if( kaira_theme_option( 'kra-body-google-font' ) ) {
+    if( kaira_theme_option( 'kra-body-google-font-url' ) ) {
         wp_enqueue_style( 'albar-google-font-body', kaira_theme_option( 'kra-body-google-font-url' ), array(), KAIRA_THEME_VERSION );
     } else {
         wp_enqueue_style( 'albar-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );

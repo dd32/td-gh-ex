@@ -50,7 +50,7 @@ if( $slider_cats ) :
         <div id="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
         
         <div id="alba-home-slider">
-            
+                
                 <div>
                     
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/dummy_img_01.jpg" alt="<?php esc_attr_e('Demo Slide One', 'albar') ?>" />

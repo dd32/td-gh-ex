@@ -1,10 +1,10 @@
 /*
 Theme Name: Albar
-Theme URI: http://www.kairaweb.com/themes/
+Theme URI: http://demo.kairaweb.com/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.5.4
+Version: 1.5.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -1528,7 +1528,7 @@ body.admin-bar .stuck {
 }
 
 .content-area-right {
-	box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 1px 0 0 #eaeaea inset;
     width: 74.2%;
 }
 
@@ -1538,11 +1538,15 @@ body.admin-bar .stuck {
 .search .content-area,
 .page-template-template-right-nav-sidebar-php .content-area,
 .page-template-default .content-area {
-    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 1px 0 0 #eaeaea;
     width: 74.2%;
     float: left;
     padding: 30px 20px 20px 0;
 }
+.woocommerce-page .site-boxed .content-area,
+.archive .site-boxed .content-area,
+.single .site-boxed .content-area,
+.search .site-boxed .content-area,
 .page-template-template-right-nav-sidebar-php .site-boxed .content-area,
 .page-template-default .site-boxed .content-area {
     padding: 30px 20px 20px 20px;
@@ -1556,6 +1560,7 @@ body.admin-bar .stuck {
 .page-template-default .widget-area {
     margin: 0 0 35px;
     padding: 0 0 10px 0;
+    box-shadow: 1px 0 0 #eaeaea inset;
 }
 
 .woocommerce-page .widget-area .widget,
@@ -1577,7 +1582,7 @@ body.admin-bar .stuck {
 
 .page-template-template-left-nav-sidebar-php .content-area,
 .page-template-template-left-sidebar-php .content-area {
-    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset;
+    box-shadow: 1px 0 0 #eaeaea inset;
     width: 74.2%;
     float: left;
     padding: 30px 0 20px 20px;
@@ -1591,6 +1596,7 @@ body.admin-bar .stuck {
 .page-template-template-left-sidebar-php .widget-area {
     margin: 0 0 35px;
     padding: 0 0 10px 0;
+    box-shadow: 1px 0 0 #eaeaea;
 }
 
 .page-template-template-left-nav-sidebar-php .widget-area .widget,
@@ -1888,11 +1894,15 @@ body.admin-bar .stuck {
     min-width: 240px;
     position: relative;
     width: 100%;
-    margin-bottom: 40px;
 }
 .alba-home-slider-remove { 
-    height: 570px !important;
+    height: 403px !important;
     overflow: hidden;
+    background-image: url(images/loader.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.alba-home-slider-remove #alba-home-slider { 
     visibility: hidden;
 }
 #alba-home-slider div {
@@ -2307,6 +2317,7 @@ body.admin-bar .stuck {
     font-weight: 600;
     height: 20px;
     width: 15px;
+    text-decoration: none;
 }
 .alba-numbers-pagination .selected {
     color: #333333;
@@ -3194,7 +3205,8 @@ div.wpcf7 {
 		width: 100% !important;
 		float: none !important;
 		box-shadow: none !important;
-        padding: 30px 0 20px !important;
+        
+		padding: 30px 20px 20px !important;
 	}
 	
 	.widget-area {

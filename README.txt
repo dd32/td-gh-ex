@@ -40,7 +40,9 @@ FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
 
-* Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
+* All Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
+* All Photos in the Slider Demo are from unsplash.com and licensed Creative Commons 0 (CC0)
+* All Photos in the Albar Demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
 Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 https://unsplash.com/license
 
