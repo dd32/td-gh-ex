@@ -195,19 +195,20 @@
 
 // Theme Customizer (option to add logo)
 	function multicolors_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'multicolors_logo_section' , array( 
-		'title' => __( 'Logo', 'multicolors' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'multicolors' ),
+			'title' => __( 'Logo', 'multicolors' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'multicolors' ),
 		) );
-		$wp_customize->add_setting( 'multicolors_logo' );
+		$wp_customize->add_setting( 'multicolors_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'multicolors_logo', array( 
-		'label' => __( 'Logo', 'multicolors' ), 
-		'section' => 'multicolors_logo_section', 
-		'settings' => 'multicolors_logo', 
+			'label' => __( 'Logo', 'multicolors' ), 
+			'section' => 'multicolors_logo_section', 
+			'settings' => 'multicolors_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'multicolors_theme_customizer');
 
