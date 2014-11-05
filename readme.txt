@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.4.3 [05/11/14]
+1. DATE Format Issue Fixed.
+
+
 @Version: 1.4.2 [13/10/14]
 1.)All Issue Raised By Reviewer Fixed.
 2.) iPAD menu Issue Fixed.

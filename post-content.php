@@ -1,6 +1,12 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('enigma_blog_full'); ?>>
 	<ul class="blog-date-left">
-		<li class="enigma_post_date"><span class="date"><?php echo get_the_date('d'); ?></span><h6><?php echo get_the_date('M  y'); ?></h6></li>
+		<li class="enigma_post_date">
+		<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
+		<span class="date"><?php echo get_the_date('d'); ?></span><h6><?php echo get_the_date('M  y'); ?></h6>
+		<?php else : ?>
+		<span class="date"><?php echo get_the_date(); ?></span>
+		<?php endif; ?>
+		</li>
 		<li class="enigma_post_author"><?php echo get_avatar(get_the_author_meta( 'ID' ),96); ?></li>
 		<li class="enigma_blog_comment"><i class="fa fa-comments-o"></i><h6><?php comments_popup_link( '0', '1', '%', '', '-'); ?></h6></li>
 	</ul>

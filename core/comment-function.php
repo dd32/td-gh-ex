@@ -15,7 +15,13 @@ function weblizar_comment( $comment, $args, $depth )
 			    <div class="enigma_comment_detail">
 				<h4 class="enigma_comment_detail_title"><?php comment_author();?></h4>
 				
-				<span class="enigma_comment_date"><?php comment_date('F j, Y');?><?php _e('at','weblizar');?>&nbsp;<?php comment_time('g:i a'); ?></span>
+				<span class="enigma_comment_date">
+				<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>				
+				<?php comment_date('F j, Y');?>
+				<?php else : ?>
+				<?php comment_date(); ?>
+				<?php endif; ?>
+				<?php _e('at','weblizar');?>&nbsp;<?php comment_time('g:i a'); ?></span>
 				<?php comment_text() ; ?>				
 				<div class="reply">
 				<a href=""><i class="fa fa-mail-reply"></i><?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>

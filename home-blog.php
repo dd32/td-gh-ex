@@ -42,7 +42,13 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
 						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
-						<li><i class="fa fa-clock-o"></i><?php echo get_the_date('F d ,Y'); ?></li>
+						<li><i class="fa fa-clock-o"></i>
+						<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
+						<?php echo get_the_date('F d ,Y'); ?>
+						<?php else : ?>
+						<?php echo get_the_date(); ?>
+						<?php endif; ?>
+						</li>
 						<li><i class="fa fa-comments-o"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></li>
 					</ul>
 				</div>
