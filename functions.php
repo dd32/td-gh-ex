@@ -161,19 +161,20 @@
 
 // Theme Customizer (option to add logo)
 	function leftside_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'leftside_logo_section' , array( 
-		'title' => __( 'Logo', 'leftside' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'leftside' ),
+			'title' => __( 'Logo', 'leftside' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'leftside' ),
 		) );
-		$wp_customize->add_setting( 'leftside_logo' );
+		$wp_customize->add_setting( 'leftside_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'leftside_logo', array( 
-		'label' => __( 'Logo', 'leftside' ), 
-		'section' => 'leftside_logo_section', 
-		'settings' => 'leftside_logo', 
+			'label' => __( 'Logo', 'leftside' ), 
+			'section' => 'leftside_logo_section', 
+			'settings' => 'leftside_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'leftside_theme_customizer');
 

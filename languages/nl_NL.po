@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: LeftSide v1.3\n"
+"Project-Id-Version: LeftSide v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-15 16:09:51+0000\n"
+"PO-Revision-Date: 2014-11-05 11:07:31+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,15 +78,15 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
+#: functions.php:106
 #@ leftside
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
 #@ leftside
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -108,7 +108,7 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page.php:19
+#: page.php:24
 #: single.php:38
 #@ leftside
 msgid "Edit"
@@ -135,12 +135,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:115
+#: functions.php:116
 #@ leftside
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:135
+#: functions.php:136
 #@ leftside
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -159,7 +159,7 @@ msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
 #: functions.php:165
-#: functions.php:171
+#: functions.php:174
 #@ leftside
 msgid "Logo"
 msgstr "Logo"
@@ -252,7 +252,7 @@ msgstr "Tags %s"
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
-#: functions.php:125
+#: functions.php:126
 #@ leftside
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
