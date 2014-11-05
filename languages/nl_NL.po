@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Medical v1.7\n"
+"Project-Id-Version: Medical v1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-05 22:09:31+0000\n"
+"PO-Revision-Date: 2014-11-05 11:21:27+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,16 +78,16 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:104
+#: functions.php:106
 #@ medical
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
+#: functions.php:148
 #@ medical
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -104,8 +104,8 @@ msgstr "Lees Meer &raquo;"
 msgid "Boats"
 msgstr "Boten"
 
-#: page-full.php:21
-#: page.php:19
+#: page-full.php:25
+#: page.php:24
 #: single.php:38
 #@ medical
 msgid "Edit"
@@ -132,12 +132,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:124
+#: functions.php:126
 #@ medical
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:144
+#: functions.php:146
 #@ medical
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -155,13 +155,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:168
-#: functions.php:174
+#: functions.php:175
+#: functions.php:184
 #@ medical
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:170
+#: functions.php:177
 #@ medical
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -190,22 +190,22 @@ msgstr "% reacties"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:44
+#: footer.php:24
 #@ medical
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:45
+#: footer.php:25
 #@ medical
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:45
+#: footer.php:25
 #@ medical
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: functions.php:114
+#: functions.php:116
 #@ medical
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
@@ -236,7 +236,7 @@ msgstr "Geplaatst op %s"
 msgid "By %s"
 msgstr "Door %s"
 
-#: functions.php:134
+#: functions.php:136
 #@ medical
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"

@@ -171,19 +171,20 @@
 
 // Theme Customizer (option to add logo)
 	function medical_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'medical_logo_section' , array( 
-		'title' => __( 'Logo', 'medical' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'medical' ),
+			'title' => __( 'Logo', 'medical' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'medical' ),
 		) );
-		$wp_customize->add_setting( 'medical_logo' );
+		$wp_customize->add_setting( 'medical_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'medical_logo', array( 
-		'label' => __( 'Logo', 'medical' ), 
-		'section' => 'medical_logo_section', 
-		'settings' => 'medical_logo', 
+			'label' => __( 'Logo', 'medical' ), 
+			'section' => 'medical_logo_section', 
+			'settings' => 'medical_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'medical_theme_customizer');
 
