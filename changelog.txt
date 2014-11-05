@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkOrange Version 2.4 - november 2014
+- file functions: added sanitize_callback to logo upload
+- several css adjustments
+
 DarkOrange Version 2.3 - october 2014
 - added and adjusted text markup tags
 

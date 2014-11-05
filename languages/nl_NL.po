@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v2.3\n"
+"Project-Id-Version: DarkOrange v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-24 22:43:21+0000\n"
+"PO-Revision-Date: 2014-11-05 09:34:22+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,15 +78,15 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
+#: functions.php:108
 #@ darkorange
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
+#: functions.php:110
+#: functions.php:120
+#: functions.php:130
+#: functions.php:140
 #@ darkorange
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -103,8 +103,8 @@ msgstr "Lees Meer &raquo;"
 msgid "Boats"
 msgstr "Boten"
 
-#: page-full.php:22
-#: page.php:19
+#: page-full.php:27
+#: page.php:24
 #: single.php:38
 #@ darkorange
 msgid "Edit"
@@ -131,12 +131,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:125
+#: functions.php:128
 #@ darkorange
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:135
+#: functions.php:138
 #@ darkorange
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -146,7 +146,7 @@ msgstr "Footer Sidebar Links"
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
 
-#: functions.php:115
+#: functions.php:118
 #@ darkorange
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
@@ -156,13 +156,13 @@ msgstr "Homepage Sidebar"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: functions.php:159
-#: functions.php:165
+#: functions.php:161
+#: functions.php:170
 #@ darkorange
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:161
+#: functions.php:163
 #@ darkorange
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -199,17 +199,17 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: footer.php:30
+#: footer.php:24
 #@ darkorange
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:31
+#: footer.php:25
 #@ darkorange
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:31
+#: footer.php:25
 #@ darkorange
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"

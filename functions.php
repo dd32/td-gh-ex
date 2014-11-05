@@ -157,19 +157,20 @@ function darkorange_widgets_init() {
 
 // Theme Customizer (option to add logo)
 	function darkorange_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'darkorange_logo_section' , array( 
-		'title' => __( 'Logo', 'darkorange' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
+			'title' => __( 'Logo', 'darkorange' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
 		) );
-		$wp_customize->add_setting( 'darkorange_logo' );
+		$wp_customize->add_setting( 'darkorange_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'darkorange_logo', array( 
-		'label' => __( 'Logo', 'darkorange' ), 
-		'section' => 'darkorange_logo_section', 
-		'settings' => 'darkorange_logo', 
+			'label' => __( 'Logo', 'darkorange' ), 
+			'section' => 'darkorange_logo_section', 
+			'settings' => 'darkorange_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'darkorange_theme_customizer');
 
