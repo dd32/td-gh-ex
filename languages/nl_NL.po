@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MyKnowledgeBase v1.4\n"
+"Project-Id-Version: MyKnowledgeBase v1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-10-12 11:57:19+0000\n"
+"PO-Revision-Date: 2014-11-05 15:44:08+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -156,7 +156,7 @@ msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
 #: functions.php:174
-#: functions.php:180
+#: functions.php:183
 #@ myknowledgebase
 msgid "Logo"
 msgstr "Logo"

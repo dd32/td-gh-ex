@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 1.5 - november 2014 
+- several css adjustments
+
 MyKnowledgeBase version 1.4 - october 2014 
 - first stable release
 
