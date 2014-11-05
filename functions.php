@@ -186,19 +186,20 @@
 
 // Theme Customizer (option to add logo)
 	function bluegray_theme_customizer( $wp_customize ) { 
-
 		$wp_customize->add_section( 'bluegray_logo_section' , array( 
-		'title' => __( 'Logo', 'bluegray' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'bluegray' ),
+			'title' => __( 'Logo', 'bluegray' ), 
+			'priority' => 30, 
+			'description' => __( 'Upload a logo to replace blogname and description in header', 'bluegray' ),
 		) );
-		$wp_customize->add_setting( 'bluegray_logo' );
+		$wp_customize->add_setting( 'bluegray_logo', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'esc_url_raw', 
+		) ); 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bluegray_logo', array( 
-		'label' => __( 'Logo', 'bluegray' ), 
-		'section' => 'bluegray_logo_section', 
-		'settings' => 'bluegray_logo', 
+			'label' => __( 'Logo', 'bluegray' ), 
+			'section' => 'bluegray_logo_section', 
+			'settings' => 'bluegray_logo', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'bluegray_theme_customizer');
 

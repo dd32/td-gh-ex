@@ -12,33 +12,15 @@
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
 
 	<div class="footer-left"> 
-
-		<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-left' ); ?>
-
-		<?php else : ?> 
-		<?php endif; ?> 
 	</div>
 
 	<div class="footer-middle"> 
-
-		<?php if ( is_active_sidebar( 'footer-middle' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-middle' ); ?>
-
-		<?php else : ?> 
-		<?php endif; ?> 
 	</div>
 
 	<div class="footer-right"> 
-
-		<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
-	
 		<?php dynamic_sidebar( 'footer-right' ); ?>
-
-		<?php else : ?> 
-		<?php endif; ?> 
 	</div>
 
 	<?php } ?>	

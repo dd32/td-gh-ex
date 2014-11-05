@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueGray v2.0\n"
+"Project-Id-Version: BlueGray v2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-27 12:26:35+0000\n"
+"PO-Revision-Date: 2014-11-05 09:17:36+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:36
+#: search.php:35
 #@ bluegray
 msgid "Nothing Found"
 msgstr "Niets gevonden"
@@ -29,7 +29,7 @@ msgstr "Niets gevonden"
 #: 404.php:10
 #: archive.php:47
 #: index.php:39
-#: search.php:37
+#: search.php:36
 #@ bluegray
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -66,44 +66,44 @@ msgstr "Tag Archieven"
 
 #: archive.php:27
 #: index.php:19
-#: search.php:15
+#: search.php:14
 #@ bluegray
 msgid "Permalink to "
 msgstr "Permalink naar "
 
 #: archive.php:51
 #: index.php:43
-#: search.php:43
+#: search.php:42
 #@ bluegray
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:52
 #: index.php:44
-#: search.php:44
+#: search.php:43
 #@ bluegray
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:104
+#: functions.php:106
 #@ bluegray
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:137
-#: functions.php:147
-#: functions.php:157
-#: functions.php:167
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:139
+#: functions.php:149
+#: functions.php:159
+#: functions.php:169
 #@ bluegray
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
 #: archive.php:43
 #: index.php:35
-#: search.php:31
+#: search.php:30
 #@ bluegray
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
@@ -118,8 +118,8 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:20
-#: page.php:19
+#: page-full.php:25
+#: page.php:24
 #: single.php:38
 #@ bluegray
 msgid "Edit"
@@ -146,12 +146,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:145
+#: functions.php:147
 #@ bluegray
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:165
+#: functions.php:167
 #@ bluegray
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -169,30 +169,30 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:189
-#: functions.php:195
+#: functions.php:190
+#: functions.php:199
 #@ bluegray
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:191
+#: functions.php:192
 #@ bluegray
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: functions.php:114
+#: functions.php:116
 #@ bluegray
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:135
+#: functions.php:137
 #@ bluegray
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
 #: archive.php:34
 #: index.php:26
-#: search.php:22
+#: search.php:21
 #: single.php:20
 #@ bluegray
 msgid "Leave a response"
@@ -200,7 +200,7 @@ msgstr "Plaats een reactie"
 
 #: archive.php:34
 #: index.php:26
-#: search.php:22
+#: search.php:21
 #: single.php:20
 #@ bluegray
 msgid "% responses"
@@ -208,40 +208,40 @@ msgstr "% reacties"
 
 #: archive.php:34
 #: index.php:26
-#: search.php:22
+#: search.php:21
 #: single.php:20
 #@ bluegray
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:47
+#: footer.php:29
 #@ bluegray
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:48
+#: footer.php:30
 #@ bluegray
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:48
+#: footer.php:30
 #@ bluegray
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: functions.php:124
+#: functions.php:126
 #@ bluegray
 msgid "Homepage Sidebar Middle"
 msgstr "Homepage Sidebar Midden"
 
-#: functions.php:155
+#: functions.php:157
 #@ bluegray
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
 #: archive.php:31
 #: index.php:23
-#: search.php:19
+#: search.php:18
 #: single.php:17
 #, php-format
 #@ bluegray
@@ -250,7 +250,7 @@ msgstr "Geplaatst op %s"
 
 #: archive.php:32
 #: index.php:24
-#: search.php:20
+#: search.php:19
 #: single.php:18
 #, php-format
 #@ bluegray
