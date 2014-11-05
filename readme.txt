@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.9
+Version: 1.2.0
 Requires at least: 3.0.1
 Tested up to: 4.0
 Author: Miguel Angel Rico
@@ -24,6 +24,7 @@ Theme Athenea uses:
 * Genericons library (http://genericons.com/) licensed under GNU General Public License v2.0 or later
 * Frameworks Bootstrap 3.0 under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * wp_bootstrap_navwalker under the GPL-2.0+ license (http://www.gnu.org/licenses/gpl-2.0.txt)
+* Options-Frameworks under the GPL-2.0+ license (http://www.gnu.org/licenses/gpl-2.0.txt)
 * ContentMultimedia-theme-WP-Athenea (http://www.gnu.org/licenses/gpl-3.0.txt) and (https://www.safecreative.org/work/1402100112703-contentmultimedia-theme-wp-atenea)
 
 
@@ -61,6 +62,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.0 - 04.11.2014 =
+* Attribution license-framework option is added.
 
 = 1.1.9 - 27.10.2014 =
 * Structured data error is repaired.
