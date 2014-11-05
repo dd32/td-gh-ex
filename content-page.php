@@ -31,4 +31,3 @@
 
 	<?php do_action( 'accelerate_after_post_content' ); ?>
 </article>
-

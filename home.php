@@ -41,6 +41,3 @@
 	<?php do_action( 'accelerate_after_body_content' ); ?>
 
 <?php get_footer(); ?>
-
-
-

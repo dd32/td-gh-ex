@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Accelerate\n"
-"POT-Creation-Date: 2014-06-25 02:08+0545\n"
-"PO-Revision-Date: 2014-06-25 02:08+0545\n"
+"POT-Creation-Date: 2014-11-05 15:54+0545\n"
+"PO-Revision-Date: 2014-11-05 15:54+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:44
+#: functions.php:45
 msgid "Primary/Main Menu"
 msgstr ""
 
-#: functions.php:45
+#: functions.php:46
 msgid "Footer Menu"
 msgstr ""
 
@@ -134,29 +134,28 @@ msgstr ""
 msgid "No Sidebar Content Centered"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:85
-#: inc/admin/options/includes/class-options-framework-admin.php:86
-#: inc/admin/options/includes/class-options-framework-admin.php:307
+#: inc/admin/options/includes/class-options-framework-admin.php:90
+#: inc/admin/options/includes/class-options-framework-admin.php:91
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:173
+#: inc/admin/options/includes/class-options-framework-admin.php:197
 msgid "Save Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
+#: inc/admin/options/includes/class-options-framework-admin.php:198
 msgid "Restore Defaults"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
+#: inc/admin/options/includes/class-options-framework-admin.php:198
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:205
+#: inc/admin/options/includes/class-options-framework-admin.php:229
 msgid "Default options restored."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:259
+#: inc/admin/options/includes/class-options-framework-admin.php:283
 msgid "Options saved."
 msgstr ""
 
@@ -182,171 +181,174 @@ msgstr ""
 msgid "View File"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:241
+#: inc/admin/options/includes/class-options-sanitization.php:316
 msgid "No Repeat"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:242
+#: inc/admin/options/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:243
+#: inc/admin/options/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:244
+#: inc/admin/options/includes/class-options-sanitization.php:319
 msgid "Repeat All"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:257
+#: inc/admin/options/includes/class-options-sanitization.php:331
 msgid "Top Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:258
+#: inc/admin/options/includes/class-options-sanitization.php:332
 msgid "Top Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:259
+#: inc/admin/options/includes/class-options-sanitization.php:333
 msgid "Top Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:260
+#: inc/admin/options/includes/class-options-sanitization.php:334
 msgid "Middle Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:261
+#: inc/admin/options/includes/class-options-sanitization.php:335
 msgid "Middle Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:262
+#: inc/admin/options/includes/class-options-sanitization.php:336
 msgid "Middle Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:263
+#: inc/admin/options/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:264
+#: inc/admin/options/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:265
+#: inc/admin/options/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:278
+#: inc/admin/options/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:279
+#: inc/admin/options/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:353
+#: inc/admin/options/includes/class-options-sanitization.php:424
 msgid "Normal"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:354
+#: inc/admin/options/includes/class-options-sanitization.php:425
 msgid "Italic"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:355
+#: inc/admin/options/includes/class-options-sanitization.php:426
 msgid "Bold"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:356
+#: inc/admin/options/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
 msgstr ""
 
-#: inc/functions.php:240 inc/functions.php:281
+#: inc/functions.php:248 inc/functions.php:289
 msgid ", "
 msgstr ""
 
-#: inc/functions.php:241
+#: inc/functions.php:249
 #, php-format
 msgid ""
 "<span class=\"cat-links\"><i class=\"fa fa-folder-open\"></i>%1$s</span>"
 msgstr ""
 
-#: inc/functions.php:285
+#: inc/functions.php:293
 msgid "<i class=\"fa fa-comment\"></i> 0 Comment"
 msgstr ""
 
-#: inc/functions.php:285
+#: inc/functions.php:293
 msgid "<i class=\"fa fa-comment\"></i> 1 Comment"
 msgstr ""
 
-#: inc/functions.php:285
+#: inc/functions.php:293
 msgid "<i class=\"fa fa-comments\"></i> % Comments"
 msgstr ""
 
-#: inc/functions.php:288
+#: inc/functions.php:296
 msgid "Edit"
 msgstr ""
 
-#: inc/functions.php:366
+#: inc/functions.php:391
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:370 navigation.php:42
+#: inc/functions.php:395 navigation.php:42
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:371 navigation.php:43
+#: inc/functions.php:396 navigation.php:43
 msgid "&rarr;"
 msgstr ""
 
-#: inc/functions.php:376
+#: inc/functions.php:401
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:380
+#: inc/functions.php:405
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:406
+#: inc/functions.php:431
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:406
+#: inc/functions.php:431
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:421
+#: inc/functions.php:446
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:424
+#: inc/functions.php:449
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:432
+#: inc/functions.php:457
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:437
+#: inc/functions.php:462
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:491
+#: inc/functions.php:482
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:500
+#: inc/functions.php:484
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:511
-msgid "Copyright &copy; "
+#: inc/functions.php:486
+#, php-format
+msgid "Copyright &copy; %1$s %2$s."
 msgstr ""
 
-#: inc/functions.php:511
-msgid "Theme by: "
+#: inc/functions.php:486
+#, php-format
+msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:511
-msgid "Powered by: "
+#: inc/functions.php:486
+#, php-format
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: inc/header-functions.php:47
@@ -432,7 +434,7 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/widgets.php:145 inc/widgets/widgets.php:353
-#: inc/widgets/widgets.php:578
+#: inc/widgets/widgets.php:579
 msgid "Title:"
 msgstr ""
 
@@ -441,7 +443,7 @@ msgid "Displays the title of the Page if title input is empty."
 msgstr ""
 
 #: inc/widgets/widgets.php:151 inc/widgets/widgets.php:360
-#: inc/widgets/widgets.php:462
+#: inc/widgets/widgets.php:463
 msgid "Page"
 msgstr ""
 
@@ -494,20 +496,20 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: inc/widgets/widgets.php:444
+#: inc/widgets/widgets.php:445
 msgid ""
 "Display some pages as services. Best for Business Top or Bottom sidebar."
 msgstr ""
 
-#: inc/widgets/widgets.php:446
+#: inc/widgets/widgets.php:447
 msgid "TG: Image Services"
 msgstr ""
 
-#: inc/widgets/widgets.php:545
+#: inc/widgets/widgets.php:546
 msgid "Custom Tag Cloud"
 msgstr ""
 
-#: inc/widgets/widgets.php:547
+#: inc/widgets/widgets.php:548
 msgid "TG: Custom Tag Cloud"
 msgstr ""
 
@@ -795,15 +797,23 @@ msgid "Accelerate"
 msgstr ""
 
 #: options.php:279
-msgid "Support Forum"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: options.php:280
-msgid "Documentation"
+msgid "Support Forum"
 msgstr ""
 
 #: options.php:281
+msgid "Documentation"
+msgstr ""
+
+#: options.php:282
 msgid "View Demo"
+msgstr ""
+
+#: options.php:283
+msgid "Rate this theme"
 msgstr ""
 
 #: searchform.php:11 searchform.php:12

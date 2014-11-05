@@ -41,3 +41,4 @@ function accelerate_admin_header_image() {
 <?php
 }
 endif; // accelerate_admin_header_image
+?>

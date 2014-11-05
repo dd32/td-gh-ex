@@ -107,3 +107,4 @@ function accelerate_save_custom_meta( $post_id ) {
 		} 
 	} // end foreach   
 }
+?>

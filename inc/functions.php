@@ -471,70 +471,22 @@ endif;
 
 /**************************************************************************************/
 
-/* Register shortcodes. */
-add_action( 'init', 'accelerate_add_shortcodes' );
-/**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function accelerate_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'the-year', 'accelerate_the_year_shortcode' );
-	add_shortcode( 'site-link', 'accelerate_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'accelerate_wp_link_shortcode' );
-	add_shortcode( 'tg-link', 'accelerate_themegrill_link_shortcode' );
-}
-
-/**
- * Shortcode to display the current year.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function accelerate_the_year_shortcode() {
-   return date( 'Y' );
-}
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @uses get_bloginfo() Gets the site link
- * @return string
- */
-function accelerate_site_link_shortcode() {
-   return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function accelerate_wp_link_shortcode() {
-   return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'accelerate' ) . '"><span>' . __( 'WordPress', 'accelerate' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to accelerate.com.
- *
- * @return string
- */
-function accelerate_themegrill_link_shortcode() {
-   return '<a href="'.esc_url( 'http://themegrill.com' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'accelerate' ).'" ><span>'.__( 'ThemeGrill', 'accelerate') .'</span></a>';
-}
-
-/**************************************************************************************/
-
 add_action( 'accelerate_footer_copyright', 'accelerate_footer_copyright', 10 );
 /**
  * function to show the footer info, copyright information
  */
 if ( ! function_exists( 'accelerate_footer_copyright' ) ) :
 function accelerate_footer_copyright() {
-	$accelerate_footer_copyright = '<div class="copyright">'.__( 'Copyright &copy; ', 'accelerate' ).'[the-year] [site-link] '.__( 'Theme by: ', 'accelerate' ).'[tg-link] '.__( 'Powered by: ', 'accelerate' ).'[wp-link]'.'</div>';
-	echo do_shortcode( $accelerate_footer_copyright );
+	$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+
+	$wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'accelerate' ) . '"><span>' . __( 'WordPress', 'accelerate' ) . '</span></a>';
+
+	$tg_link =  '<a href="'.esc_url( 'http://themegrill.com/themes/accelerate' ).'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'accelerate' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'accelerate') .'</span></a>';
+
+	$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'accelerate' ), date( 'Y' ), $site_link ).' '.sprintf( __( 'Powered by %s.', 'accelerate' ), $wp_link ).' '.sprintf( __( 'Theme: %1$s by %2$s.', 'accelerate' ), 'Accelerate', $tg_link );
+
+	$accelerate_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
+	echo $accelerate_footer_copyright;
 }
 endif;
 
