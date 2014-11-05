@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v2.2\n"
+"Project-Id-Version: OneColumn v2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-24 21:52:38+0000\n"
+"PO-Revision-Date: 2014-11-05 15:06:10+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -163,13 +163,13 @@ msgstr "Homepage Sidebar Rechts"
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
-#: functions.php:167
-#: functions.php:173
+#: functions.php:166
+#: functions.php:175
 #@ onecolumn
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:169
+#: functions.php:168
 #@ onecolumn
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"

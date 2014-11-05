@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+OneColumn Version 2.3 - november 2014
+- file functions: added sanitize_callback to logo upload
+- file sidebar and file header: removed double if statement
+- several css adjustments
+
 OneColumn Version 2.2 - october 2014
 - added and adjusted text markup tags
 
