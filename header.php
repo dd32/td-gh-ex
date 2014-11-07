@@ -54,7 +54,7 @@ endif; ?>
         </div>
         <?php endif; ?>
     </div>
-    <?php echo apply_filters( 'electa_footer_attribution', '<div class="site-info">' . sprintf( __('A <a href="%s">Kaira</a> Theme', 'electa'), 'http://www.kairaweb.com') . '</div>' ) ?>
+    <?php echo apply_filters( 'electa_footer_attribution', '<div class="site-info">' . sprintf( __('Electa theme, by <a href="%s">Kaira</a>', 'electa'), 'http://www.kairaweb.com') . '</div>' ) ?>
 </header><!-- #masthead -->
 
 <div id="content" class="site-content">

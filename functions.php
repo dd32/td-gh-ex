@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.2' );
+define( 'KAIRA_THEME_VERSION' , '1.1.3' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -89,8 +89,6 @@ function kaira_setup_theme() {
 		'default-color' => 'F6F6F6',
 		'default-image' => '',
 	) ) );
-    
-    add_editor_style();
     
     add_theme_support( 'woocommerce' );
 }

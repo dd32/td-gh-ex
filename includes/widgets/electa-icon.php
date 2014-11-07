@@ -25,10 +25,10 @@ class electa_icon extends WP_Widget {
 		$output .= $args['before_widget'];
 		$output .= $args['before_title'];
 		
-		$output .= '<div class="electa-icon electa-icon-size-' . $instance['icon_size'] . ' electa-icon-style-' . $instance['icon_style'] . ' electa-icon-align-' . $instance['icon_align'] . '">';
-            $output .= '<a' . $icon_link . ' class="electa-icon-inner" target="' . $instance['icon_link_target'] . '" style="background-color: ' . $instance['icon_bg_color'] . '; color: ' . $instance['icon_color'] . '; font-size: ' . $instance['icon_size'] . 'px;">';
+		$output .= '<div class="electa-icon electa-icon-size-' . esc_attr( $instance['icon_size'] ) . ' electa-icon-style-' . esc_attr( $instance['icon_style'] ) . ' electa-icon-align-' . esc_attr( $instance['icon_align'] ) . '">';
+            $output .= '<a' . esc_url( $icon_link ) . ' class="electa-icon-inner" target="' . esc_attr( $instance['icon_link_target'] ) . '" style="background-color: ' . esc_attr( $instance['icon_bg_color'] ) . '; color: ' . esc_attr( $instance['icon_color'] ) . '; font-size: ' . esc_attr( $instance['icon_size'] ) . 'px;">';
 		
-			    $output .= '<i class="fa ' . $instance['icon_name'] . '"></i>';
+			    $output .= '<i class="fa ' . esc_attr( $instance['icon_name'] ) . '"></i>';
                 
             $output .= '</a>';
 		$output .= '</div>';
@@ -100,7 +100,7 @@ class electa_icon extends WP_Widget {
         
         <p>
             <label for="<?php echo $this->get_field_id( 'icon_link' ) ?>"><?php echo __( 'Icon Link', 'electa' ) ?></label>
-            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_link' ) ?>" id="<?php echo $this->get_field_id( 'icon_link' ) ?>" value="<?php echo esc_attr( $instance['icon_link'] ) ?>" />
+            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_link' ) ?>" id="<?php echo $this->get_field_id( 'icon_link' ) ?>" value="<?php echo esc_url_raw( $instance['icon_link'] ) ?>" />
             <span class="widgets-desc"><?php echo __( 'Enter the link url for the icon. Don\'t forget the "http://"', 'electa' ) ?></span>
         </p>
         

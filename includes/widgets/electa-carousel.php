@@ -19,7 +19,9 @@ class electa_carousel extends WP_Widget {
             $carousel_cats = 'cat=' . $instance['category'] . '&';
         }
         
-        $query = new WP_Query( $carousel_cats . 'posts_per_page=-1' );
+        $carousel_query = new WP_Query( $carousel_cats . 'posts_per_page=-1' );
+        
+        $thumbnail_img = get_template_directory_uri() . '/images/blank_img.png';
         
 		//if ( empty( $instance['title'] ) ) return;
 		$output = '';
@@ -32,20 +34,23 @@ $output .= '<div class="electa-carousel-wrapper columns-' . esc_attr( $instance[
 				
 				<div id="" class="electa-carousel electa-carousel-remove">';
 				
-                    while ( $query->have_posts() ) : $query->the_post();
-                        if ( has_post_thumbnail() )
+                    while ( $carousel_query->have_posts() ) : $carousel_query->the_post();
+                        $thumbnail = '';
+                        if ( has_post_thumbnail() ) {
                             $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'blog_standard_img' );
+                            $thumbnail_img = $thumbnail[0];
+                        }
                     
         	$output .= '<div class="electa-carousel-block">';
                 $output .= '<div class="electa-carousel-block-inner">';
             
             				if ( $instance['show-featured-image'] == 'on' ) :
                                 
-            		$output .= '<div class="electa-carousel-block-img" style="background-image: url(' . $thumbnail[0] . ');">';
+            		$output .= '<div class="electa-carousel-block-img" style="background-image: url(' . esc_url( $thumbnail_img ) . ');">';
             				
             				$output .= '<a href="' . esc_url( get_permalink() ) . '" class="electa-carousel-block-img-a"></a>';
                             
-            				$output .= '<img src="' . $thumbnail[0] . '" />';
+            				$output .= '<img src="' . esc_url( $thumbnail_img ) . '" />';
             		$output .= '</div>';
             						
                             endif;
@@ -71,10 +76,10 @@ $output .= '<div class="electa-carousel-wrapper columns-' . esc_attr( $instance[
             		$output .= '</div>';
             				endif;
             						
-                            if($instance['show-excerpt'] == 'on') :
+                            if( $instance['show-excerpt'] == 'on' ) :
                                 
                                 if ( get_the_excerpt() > $instance['excerpt-length'] ) :
-                        $output .= '<p>' . substr(strip_tags(get_the_excerpt()), 0, $instance['excerpt-length'])."</p>";
+                        $output .= '<p>' . substr( strip_tags( get_the_excerpt() ), 0, $instance['excerpt-length'] )."</p>";
                                 else:
                 		$output .= '<p>' . get_the_excerpt() . '</p>';
                                 endif;
@@ -87,9 +92,9 @@ $output .= '<div class="electa-carousel-wrapper columns-' . esc_attr( $instance[
 				    endwhile;
 					
 	$output .= '</div>';
-				if($instance['carousel-pagination'] == 'numbers') :
+				if( $instance['carousel-pagination'] == 'numbers' ) :
 	$output .= '<div class="electa-carousel-pagination electa-numbers-pagination"></div>';
-				elseif ($instance['carousel-pagination'] == 'dots') :
+				elseif ( $instance['carousel-pagination'] == 'dots' ) :
     $output .= '<div class="electa-carousel-pagination electa-dots-pagination"></div>';
                 endif;
 $output .= '</div>';
