@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.12
+Version: 1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -286,13 +286,17 @@ Alignments
 /*--------------------------------------------------------------
 Widgets
 --------------------------------------------------------------*/
-.widget {
+.footer-widget-area .widget,
+.widget-area .widget {
 	margin: 0 0 30px;
 }
-.widget,
-.widget a {
+.footer-widget-area .widget,
+.footer-widget-area .widget a,
+.widget-area .widget,
+.widget-area .widget a {
 	color: #aaa;
 }
+.footer-widget-area .widget:last-of-type,
 .widget-area .widget:last-of-type {
 	margin: 0;
 }
@@ -302,14 +306,17 @@ Widgets
 	padding-bottom: 15px;
 	border-bottom: 4px double #ebebeb;
 }
-.widget ul {
+.footer-widget-area .widget ul,
+.widget-area .widget ul {
 	list-style: none;
 	padding: 0;
 }
-.widget .children {
+.footer-widget-area .widget .children,
+.widget-area .widget .children {
 	padding-left: 20px;
 }
-.widget li:before {
+.footer-widget-area .widget li:before,
+.widget-area .widget li:before {
 	font-family: FontAwesome;
 	content: "\f192";
 	margin-right: 10px;
@@ -336,7 +343,7 @@ Widgets
 }
 .moesia_recent_posts_widget li:before,
 .moesia_recent_comments li:before {
-	content: "";
+	content: "" !important;
 	margin: 0;
 }
 .moesia_recent_comments .avatar {
@@ -393,8 +400,8 @@ Widgets
 	padding: 8px;
 }
 .social-widget li:before {
-	content: '';
-	margin: 0;
+	content: '' !important;
+	margin: 0 !important;
 }
 .social-widget li a {
 	text-decoration: none;
@@ -529,6 +536,7 @@ Posts and pages
 	margin-top: 15px;
 	padding-top: 15px;
 	border-top: 4px double #ebebeb;
+	clear: both;
 }
 .hentry .post-content,
 .single .hentry,
@@ -871,11 +879,10 @@ Front page widgets
 .panel-grid-cell section {
 	padding: 80px 0;
 	z-index: 999;
-	background-color: #fff;
-	overflow: hidden;
 }
 .panel-grid {
 	border-bottom: 1px solid #ebebeb;
+	background-color: #fff;
 }
 section .widget-title {
 	position: relative;
@@ -929,7 +936,8 @@ section .widget-title:after {
 .service-icon .fa {
 	margin-top: 12px;
 }
-.service-title {
+.service-title,
+.service-title a {
 	color: #ff6b53;	
 }
 /* Employees */
@@ -1119,6 +1127,9 @@ section .widget-title:after {
 	color: #ff6b53;
 }
 /* Testimonials */
+.testimonials {
+	margin: 15px 0;
+}
 .testimonial {
 	margin-bottom: 30px;
 }
@@ -1263,6 +1274,7 @@ Header
 }
 .top-bar {
 	position: relative;
+	width: 100%;
 	z-index: 99999;
 	background-color: #222;
 	opacity: 0.9;	
@@ -1385,8 +1397,7 @@ Welcome area
 }
 .panel.widget {
 	margin: 0 auto;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding: 80px 30px;
 }
 .fullwidth {
 	width: 100%;
@@ -1434,6 +1445,27 @@ Carousel
 .slick-next:before { content: "\f105"; }
 
 /*--------------------------------------------------------------
+Page Builder visual styles
+--------------------------------------------------------------*/
+.panel-row-style {
+	display: block;			    
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+	.panel-row-style {
+		background-attachment: scroll !important;
+		background-position: center top !important;
+		-webkit-background-size: auto !important;
+		-moz-background-size: auto !important;
+		background-size: auto !important;
+	}
+}
+/*--------------------------------------------------------------
 Responsive
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1025px) {	
@@ -1445,7 +1477,9 @@ Responsive
 	.content-area {
 		width: 550px;
 	}	
-
+	.fullwidth {
+		width: 100%;
+	}
 }
 @media only screen and (max-width: 991px) {
 	.welcome-info {
@@ -1503,7 +1537,12 @@ Responsive
 	.panel.widget {
 		padding-top: 40px;
 		padding-bottom: 40px;
-	}	
+	}
+	.service,
+	.employee {
+		padding-left: 0;
+		padding-right: 0;
+	}		
 }
 @media only screen and (max-width: 499px) {
 	.project,
@@ -1511,7 +1550,7 @@ Responsive
 	.employee,
 	.bq-text,
 	.bq-img {
-		width: auto;		
+		width: 100%;		
 	}
 	.project img {
 		display: block;
@@ -1555,6 +1594,11 @@ Responsive
 	}
 	.social-area a:before {
 		font-size: 65px;
+	}
+	.page-template-page_services-php .service,
+	.page-template-page_testimonials-php .testimonial {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 /* Small menu */
@@ -1613,7 +1657,11 @@ Responsive
 		margin: 0 auto;
 	}
 }
-
+@media screen and (max-width: 320px) {
+	.menu-toggle {
+		margin: 0 auto;
+	}
+}
 @media screen and (max-width: 1024px) {
 	.has-banner:after,
 	section {
@@ -1630,7 +1678,7 @@ Responsive
 
 /* Multi columns support */
 .container {
-  width: 100% !important;	
+  width: auto !important;	
 }
 .widget .container,
 section .container {
@@ -1651,7 +1699,4 @@ section .container {
   .container {
     max-width: 1170px;
   }
-}
-.sticky-wrapper {
-	height: 100% !important;
 }

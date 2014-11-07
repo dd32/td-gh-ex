@@ -190,8 +190,6 @@ function moesia_scripts() {
 
 	wp_enqueue_script( 'moesia-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), true );
 
-	wp_enqueue_script( 'moesia-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), true );
-
 	if ( get_theme_mod('moesia_scroller') != 1 )  {
 		
 		wp_enqueue_script( 'moesia-nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array('jquery'), true );	
@@ -214,7 +212,7 @@ function moesia_scripts() {
 
 	}
 
-	if ( get_theme_mod('moesia_animate') != 1 ) {
+	if ( get_theme_mod('moesia_animate') != true ) {
 		
 		wp_enqueue_script( 'moesia-wow', get_template_directory_uri() .  '/js/wow.min.js', array( 'jquery' ), true );
 
@@ -312,6 +310,10 @@ require get_template_directory() . '/inc/jetpack.php';
  * Dynamic styles
  */
 require get_template_directory() . '/styles.php';
+/**
+ * Page builder styles
+ */
+require get_template_directory() . '/inc/rows.php';
 
 /**
  *TGM Plugin activation.

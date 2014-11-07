@@ -25,7 +25,7 @@ function moesia_custom_styles($custom) {
 		$custom .= ".service-icon { background-color: {$services_icon_bg}; }"."\n";
 	}
 	if ( isset($services_item_title) && ( $services_item_title != '#ff6b53' ) ) {
-		$custom .= ".service-title { color: {$services_item_title}; }"."\n";
+		$custom .= ".service-title, .service-title a { color: {$services_item_title}; }"."\n";
 	}
 	if ( isset($services_body_text) && ( $services_body_text!= '#aaa' ) ) {
 		$custom .= ".service-desc { color: {$services_body_text}; }"."\n";

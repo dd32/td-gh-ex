@@ -38,7 +38,15 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'moesia' ); ?></a>
 
-	<?php if ( get_header_image() ) : ?>
+	<?php //Single page header image data
+		$himage  = get_post_meta( get_the_ID(), 'wpcf-header-image', true );
+		$htitle  = get_post_meta( get_the_ID(), 'wpcf-header-title', true );
+		$htext 	 = get_post_meta( get_the_ID(), 'wpcf-header-text', true );
+		$hbutton = get_post_meta( get_the_ID(), 'wpcf-header-button-title', true );
+		$hlink 	 = get_post_meta( get_the_ID(), 'wpcf-header-button-link', true );
+	?>
+
+	<?php if ( get_header_image() && $himage == '' ) : ?>
 		<?php if ( get_theme_mod('moesia_banner') == 1 && !is_front_page() ) : ?>
 			<header id="masthead" class="site-header" role="banner">
 		<?php else : ?>
@@ -68,24 +76,23 @@
 			</div>
 		<?php endif; ?>
 		</header><!-- #masthead -->
-		<div class="top-bar">
-			<div class="container">
-				<div class="site-branding col-md-4">
-					<?php if ( get_theme_mod('site_logo') ) : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
-					<?php else : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					<?php endif; ?>
-				</div>
-				<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">
-					<button class="menu-toggle btn"><i class="fa fa-bars"></i></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</nav><!-- #site-navigation -->
-			</div>
-		</div>			
-	<?php else : ?>
-		<header id="masthead" class="site-header top-bar" role="banner">
+	<?php elseif ( $himage != '' ) : ?>	
+		<header id="masthead" class="site-header has-banner" role="banner">
+			<img class="header-image" src="<?php echo esc_url($himage); ?>">
+			<div class="welcome-info">
+				<?php if ( $htitle ) : ?>
+					<div class="welcome-title wow bounceInDown"><?php echo esc_html($htitle); ?></div>
+				<?php endif; ?>
+				<?php if ( $htext ) : ?>
+					<div class="welcome-desc wow bounceInRight" data-wow-delay="0.2s"><?php echo esc_html($htext); ?></div>
+				<?php endif; ?>
+				<?php if ($hbutton && $hlink) : ?>
+					<a href="<?php echo esc_url($hlink); ?>" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html($hbutton); ?></a>
+				<?php endif; ?>
+			</div>			
+		</header><!-- #masthead -->		
+	<?php endif; ?>
+	<div class="top-bar">
 		<div class="container">
 			<div class="site-branding col-md-4">
 				<?php if ( get_theme_mod('site_logo') ) : ?>
@@ -95,14 +102,12 @@
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php endif; ?>
 			</div>
-
 			<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">
 				<button class="menu-toggle btn"><i class="fa fa-bars"></i></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
-		</div>	
-	</header><!-- #masthead -->
-	<?php endif; ?>
+		</div>
+	</div>	
 
 	<?php if (!is_page_template('page_front-page.php') || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
 		<?php $container = "container"; ?>

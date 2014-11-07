@@ -88,7 +88,26 @@ jQuery(function($) {
 
 //Make the menu sticky
 jQuery(function($) {
-	$('.top-bar').waypoint('sticky');
+	var stickyNavTop = $('.top-bar').offset().top;
+
+	var stickyNav = function(){
+	var scrollTop = $(window).scrollTop();
+	     
+	if (scrollTop > stickyNavTop) { 
+	    $('.top-bar').addClass('stuck');
+	} else {
+	    $('.top-bar').removeClass('stuck'); 
+	}
+	};
+
+	stickyNav();
+
+	$(window).scroll(function() {
+		stickyNav();
+	});
+	$(window).resize(function(){	
+		stickyNav();
+	});	
 });
 
 //Better support for third party widgets
@@ -99,4 +118,20 @@ jQuery(function($) {
 //Open social links in a new tab
 jQuery(function($) {
      $( '.social-area li a, .social-widget a' ).attr( 'target','_blank' );
+});
+
+//Smooth scrolling
+jQuery(function($) {
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+			$('html,body').animate({
+			scrollTop: target.offset().top
+			}, 800);
+			return false;
+			}
+		}
+	});
 });

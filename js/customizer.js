@@ -52,7 +52,7 @@
 	});	
 	wp.customize('services_item_title',function( value ) {
 		value.bind( function( newval ) {
-			$('.service-title').css('color', newval );
+			$('.service-title, .service-title a').css('color', newval );
 		} );
 	});
 	wp.customize('services_body_text',function( value ) {

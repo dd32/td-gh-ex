@@ -42,7 +42,7 @@ if ( ! function_exists( 'moesia_header_style' ) ) :
  * @see moesia_custom_header_setup().
  */
 	function moesia_header_style() {
-
+$himage = get_post_meta( get_the_ID(), 'wpcf-header-image', true );
 		if ( get_header_image() ) {	
 
 			?>
@@ -54,7 +54,11 @@ if ( ! function_exists( 'moesia_header_style' ) ) :
 					    position: absolute;
 					    top: 0;
 					    left: 0;
-					    background: url(<?php echo get_header_image(); ?>) no-repeat;
+					    <?php if ( is_page() && $himage != '' ) : ?>
+					    	background: url(<?php echo esc_url($himage); ?>) no-repeat;
+					    <?php else : ?>
+					    	background: url(<?php echo get_header_image(); ?>) no-repeat;
+					    <?php endif; ?>
 					    background-position: center top;
 					    background-attachment: fixed;
 					    background-size: cover;
