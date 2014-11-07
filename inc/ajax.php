@@ -1,4 +1,5 @@
 <?php
+	if ( isset($_REQUEST) ) {
 	
 	$parallax_section_array = get_option('accesspress_parallax_count');
 	
@@ -120,4 +121,4 @@
 <div class="remove-parallax button-primary">Remove</div>
 </div>
 </div>
-
+<?php } ?>

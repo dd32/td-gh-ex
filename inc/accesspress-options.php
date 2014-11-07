@@ -101,13 +101,15 @@ function optionsframework_options() {
 	$about_content = "<p>".__('AccessPress Parallax - is a FREE WordPress theme by','accesspress_parallax')." <a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress_parallax')."</p>"; 
     $about_content .= "<p>".__(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspress_parallax')."</p>";
     $about_content .= "<p>".__('AccessPress Parallax is multi-purpose, is suitable for  travel, corporate, portfolio, photography, green thinking, nature, health, small biz, personal,  and any other creative and minimalistic style website, corporate, agencies, bloggers anyone and everyone. ','accesspress_parallax')."</p><br />";
+    //$about_content .= "<p>".__('Check out Premium version of AccessPress Lite','accesspress_parallax')." <a target='blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'>here</a></p>";
+    //$about_content .= "<p>".__('For documentation, click','accesspress_parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/')."'>".__('here','accesspress_parallax')."</a></p>";
     $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress_parallax')."</h4>";
     $about_content .= "<div class='product clearfix'>";
     $about_content .= "<div class='logo-product'>";
 	$about_content .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspresslite.png'>";
 	$about_content .= "</div>";
 	$about_content .= "<div class='productext'>";
-	$about_content .= __('AccessPress Lite - Free WordPress theme, available in WordPress.org','accesspress_parallax')."</br />";
+	$about_content .= __('AccessPress Lite - A very popular Free WordPress theme, available in WordPress.org','accesspress_parallax')."</br />";
 	$about_content .= __('See Demo ','accesspress_parallax')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-lite/')."'>".__('Here','accesspress_parallax')."</a>";
 	$about_content .= "</div>";
     $about_content .= "</div>";
@@ -127,6 +129,11 @@ function optionsframework_options() {
     $about_content .= __('General enquiries:','accesspress_parallax')." <a href='mailto:".esc_url('info@accesspressthemes.com')."'>info@accesspressthemes.com</a><br /><br />";
     $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:".esc_url('support@accesspressthemes.com')."'>support@accesspressthemes.com</a><br /><br />";
     $about_content .= __('Sales:','accesspress_parallax')." <a href='mailto:".esc_url('sales@accesspressthemes.com')."'>sales@accesspressthemes.com</a><br/><br /><br />";
+    $about_content .= "<h4>".__('Like us on facebook:','accesspress_parallax')."</h4>";
+    $about_content .= '<iframe style="border: none; overflow: hidden; width: 800px; height: 260px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=800&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="800" height="260" frameborder="0" scrolling="no"></iframe>';
+    
+
+
 
 	// Pull all the categories into an array
 	$options_categories = array();
