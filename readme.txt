@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.0.2
+Version    : 1.0.3
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -123,3 +123,6 @@ Changed redux framework embeded option to plugin option.
 
 - Version 1.0.2
 Fixed a issue in featured slider.
+
+- Version 1.0.3
+Added a method to remove footer credit links.

@@ -13,8 +13,7 @@ function awaken_featured_posts() {
 
 		$slider_posts = new WP_Query( array(
 			'posts_per_page' => 5,
-			'cat'	=>	$category,
-			'ignore_sticky_posts' => 1
+			'cat'	=>	$category
 			)
 		); ?>
 		<div class="awaken-featured-container">

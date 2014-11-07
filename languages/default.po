@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: awaken.1.0.2\n"
-"POT-Creation-Date: 2014-10-21 12:36+0530\n"
-"PO-Revision-Date: 2014-10-21 12:36+0530\n"
+"Project-Id-Version: awaken.1.0.3\n"
+"POT-Creation-Date: 2014-11-07 21:58+0530\n"
+"PO-Revision-Date: 2014-11-07 21:59+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__;_x\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -160,16 +160,16 @@ msgstr ""
 msgid "Tagged"
 msgstr ""
 
-#: footer.php:53
+#: footer.php:58
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:56
+#: footer.php:61
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:56
+#: footer.php:61
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
@@ -366,152 +366,162 @@ msgid ""
 "added into the header of your theme."
 msgstr ""
 
-#: inc/options/admin-config.php:336
+#: inc/options/admin-config.php:334
+msgid "Footer Text"
+msgstr ""
+
+#: inc/options/admin-config.php:335
+msgid ""
+"Enter your text here. If you want to align the text, center or right simply "
+"do that using the editor"
+msgstr ""
+
+#: inc/options/admin-config.php:343
 msgid "Home Settings"
 msgstr ""
 
-#: inc/options/admin-config.php:337
+#: inc/options/admin-config.php:344
 msgid "Use this tab to set the homepage settings of your site"
 msgstr ""
 
-#: inc/options/admin-config.php:345
+#: inc/options/admin-config.php:352
 msgid "Activate Slider"
 msgstr ""
 
-#: inc/options/admin-config.php:346
+#: inc/options/admin-config.php:353
 msgid "Check the checkbox to activate the slider"
 msgstr ""
 
-#: inc/options/admin-config.php:354
+#: inc/options/admin-config.php:361
 msgid "Select the slider category"
 msgstr ""
 
-#: inc/options/admin-config.php:355
+#: inc/options/admin-config.php:362
 msgid ""
 "Post thumbnails of the posts from selected category will be displayed in the "
 "slider"
 msgstr ""
 
-#: inc/options/admin-config.php:356 inc/options/admin-config.php:364
+#: inc/options/admin-config.php:363 inc/options/admin-config.php:371
 msgid ""
 "Do not select a category or close the current category if you want to "
 "display latest posts."
 msgstr ""
 
-#: inc/options/admin-config.php:362
+#: inc/options/admin-config.php:369
 msgid "Select the featured posts category"
 msgstr ""
 
-#: inc/options/admin-config.php:363
+#: inc/options/admin-config.php:370
 msgid ""
 "Post thumbnails of the posts from selected category will be displayed as "
 "featured posts"
 msgstr ""
 
-#: inc/options/admin-config.php:372
+#: inc/options/admin-config.php:379
 msgid "Styling Options"
 msgstr ""
 
-#: inc/options/admin-config.php:373
+#: inc/options/admin-config.php:380
 msgid "Use this tab to set the style settings of the site"
 msgstr ""
 
-#: inc/options/admin-config.php:382
+#: inc/options/admin-config.php:389
 msgid "Body Background"
 msgstr ""
 
-#: inc/options/admin-config.php:383
+#: inc/options/admin-config.php:390
 msgid "Body background with image, color, etc."
 msgstr ""
 
-#: inc/options/admin-config.php:389
+#: inc/options/admin-config.php:396
 msgid "Custom CSS Code"
 msgstr ""
 
-#: inc/options/admin-config.php:390
+#: inc/options/admin-config.php:397
 msgid "Add your CSS code here."
 msgstr ""
 
-#: inc/options/admin-config.php:399
+#: inc/options/admin-config.php:406
 msgid "Social Media"
 msgstr ""
 
-#: inc/options/admin-config.php:400
+#: inc/options/admin-config.php:407
 msgid "Use this tab to set the social media settings of the site"
 msgstr ""
 
-#: inc/options/admin-config.php:407
+#: inc/options/admin-config.php:414
 msgid "Display social media icons."
 msgstr ""
 
-#: inc/options/admin-config.php:408
+#: inc/options/admin-config.php:415
 msgid "Check the checkbox to activate social icons."
 msgstr ""
 
-#: inc/options/admin-config.php:415
+#: inc/options/admin-config.php:422
 msgid "Facebook Link"
 msgstr ""
 
-#: inc/options/admin-config.php:416 inc/options/admin-config.php:425
-#: inc/options/admin-config.php:434 inc/options/admin-config.php:443
-#: inc/options/admin-config.php:452 inc/options/admin-config.php:461
-#: inc/options/admin-config.php:470
+#: inc/options/admin-config.php:423 inc/options/admin-config.php:432
+#: inc/options/admin-config.php:441 inc/options/admin-config.php:450
+#: inc/options/admin-config.php:459 inc/options/admin-config.php:468
+#: inc/options/admin-config.php:477
 msgid "This must be a URL."
 msgstr ""
 
-#: inc/options/admin-config.php:424
+#: inc/options/admin-config.php:431
 msgid "Twitter Link"
 msgstr ""
 
-#: inc/options/admin-config.php:433
+#: inc/options/admin-config.php:440
 msgid "Google Plus Link"
 msgstr ""
 
-#: inc/options/admin-config.php:442
+#: inc/options/admin-config.php:449
 msgid "RSS Link"
 msgstr ""
 
-#: inc/options/admin-config.php:451
+#: inc/options/admin-config.php:458
 msgid "Instagram Link"
 msgstr ""
 
-#: inc/options/admin-config.php:460
+#: inc/options/admin-config.php:467
 msgid "Flickr Link"
 msgstr ""
 
-#: inc/options/admin-config.php:469
+#: inc/options/admin-config.php:476
 msgid "Youtube Link"
 msgstr ""
 
-#: inc/options/admin-config.php:486
+#: inc/options/admin-config.php:493
 msgid "Import / Export"
 msgstr ""
 
-#: inc/options/admin-config.php:487
+#: inc/options/admin-config.php:494
 msgid "Import and Export your Redux Framework settings from file, text or URL."
 msgstr ""
 
-#: inc/options/admin-config.php:502
+#: inc/options/admin-config.php:509
 msgid "Theme Information"
 msgstr ""
 
-#: inc/options/admin-config.php:520
+#: inc/options/admin-config.php:527
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/options/admin-config.php:521 inc/options/admin-config.php:527
+#: inc/options/admin-config.php:528 inc/options/admin-config.php:534
 msgid "<p>This is the tab content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:526
+#: inc/options/admin-config.php:533
 msgid "Theme Information 2"
 msgstr ""
 
-#: inc/options/admin-config.php:531
+#: inc/options/admin-config.php:538
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:554 inc/options/admin-config.php:555
+#: inc/options/admin-config.php:561 inc/options/admin-config.php:562
 msgid "Awaken Options"
 msgstr ""
 
@@ -551,6 +561,7 @@ msgid "Plugin activated successfully."
 msgstr ""
 
 #: inc/options/tgm/class-tgm-plugin-activation.php:178
+#: inc/options/tgm/class-tgm-plugin-activation.php:1636
 msgid "The following plugin was activated successfully:"
 msgstr ""
 

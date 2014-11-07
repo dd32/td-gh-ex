@@ -328,6 +328,13 @@
                             'desc'     => 'Validate that it\'s javascript!',
 							'default'  => ''
                         ),
+                        array(
+                            'id'       => 'awaken-footer-text',
+                            'type'     => 'editor',
+                            'title'    => __( 'Footer Text', 'awaken' ),
+                            'subtitle' => __( 'Enter your text here. If you want to align the text, center or right simply do that using the editor', 'awaken' ),
+                            'default'  => '',
+                        ),
                     ),
                 );
 
