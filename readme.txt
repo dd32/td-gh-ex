@@ -26,8 +26,6 @@ You can add your own logo in stead of blogname and description via  WordPress Da
 HOW TO CHANGE BACKGROUND
 ========================
 You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
-Note: this theme looks best with 1 big background image. That's why I have adjusted the dashboard position settings of background image (in file style).
-Background image will now cover whole screen. For sharp image on large screens too I advice you to use a background image of at least 1600px wide and 1200px high.
 
 
 HOW TO SET MENU
