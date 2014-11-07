@@ -7,17 +7,16 @@
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
-			{	$current_options['front_page'] = sanitize_text_field($_POST['front_page']); 
+			{	
+			$current_options['front_page']=sanitize_text_field(isset($_POST['front_page'])); 
 				
 				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
 				$current_options['webrit_custom_css'] =$_POST['webrit_custom_css'];				
-				if($_POST['text_title'])
-				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
-				else
-				{ echo $current_options['text_title']="off"; } 
+				$current_options['text_title']=sanitize_text_field(isset($_POST['text_title']));
+				
 				
 				update_option('corpbiz_options', stripslashes_deep($current_options));
 			}
