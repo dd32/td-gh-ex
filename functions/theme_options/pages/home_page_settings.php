@@ -13,11 +13,10 @@
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=esc_url_raw($_POST['upload_image_favicon']);
 				$current_options['quality_custom_css'] =$_POST['quality_custom_css'];
-				$current_options['front_page']=$_POST['front_page'];
-				if($_POST['text_title'])
-				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
-				else
-				{ echo $current_options['text_title']="off"; } 
+				//front page on setting
+				$current_options['front_page']=sanitize_text_field(isset($_POST['front_page']));
+				//text title on setting
+				$current_options['text_title']=sanitize_text_field(isset($_POST['text_title']));
 				
 				update_option('quality_options',$current_options);
 			}

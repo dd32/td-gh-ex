@@ -7,8 +7,9 @@
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
-			{		
-				$current_options['service_enable'] = sanitize_text_field($_POST['service_enable']);
+			{	
+                //service enabled setting			
+				$current_options['service_enable']=sanitize_text_field(isset($_POST['service_enable']));
 				$current_options['service_title'] = sanitize_text_field($_POST['service_title']);
 				$current_options['service_description'] = sanitize_text_field($_POST['service_description']);
 				$current_options['service_one_title'] = sanitize_text_field($_POST['service_one_title']);

@@ -1,4 +1,4 @@
-Qality Theme README.
+﻿Qality Theme README.
 
 A Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. 
@@ -131,6 +131,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.0.6.5
+1. Remove all undefined index errors
 @verison 1.0.6.4
 1. copyright attribution corrected
 2. Escaped favicon url.

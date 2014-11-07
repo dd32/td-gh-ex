@@ -10,11 +10,8 @@
 			{		
 				
 				$current_options['blog_heading']=sanitize_text_field($_POST['blog_heading']);
-							
-				if($_POST['home_blog_enabled'])
-				{ echo $current_options['home_blog_enabled']= sanitize_text_field($_POST['home_blog_enabled']); } 
-				else
-				{ echo $current_options['home_blog_enabled']="off"; } 
+				//blog enabled setting			
+				$current_options['home_blog_enabled']=sanitize_text_field(isset($_POST['home_blog_enabled']));
 				update_option('quality_options',$current_options);
 			}
 		}	
