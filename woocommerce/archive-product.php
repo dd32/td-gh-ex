@@ -26,7 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		
 		<?php endif; ?>
 
+		<div class="clearfix">
 		<?php do_action( 'woocommerce_archive_description' ); ?>
+		</div>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -39,18 +41,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				 */
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
+
+			<div class="clearfix rowtight product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
 	  		
 			<?php woocommerce_product_loop_start(); ?>
-
-				<div class="clearfix product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
-				<div id="product_masonry">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php woocommerce_get_template_part( 'content', 'product' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
-				</div>
 
 			<?php woocommerce_product_loop_end(); ?>
 

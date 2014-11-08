@@ -49,6 +49,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.9 =
+* Css fix for shop, cart.
+* Updated for woo support
+* Read more for full posts.
+
 = Version: 2.2.8 =
 * scripts update
 * Add esc_url

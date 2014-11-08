@@ -10,7 +10,7 @@
 </div>
 	<script type="text/javascript">
              jQuery( window ).load(function () {	
-             	var $container = jQuery('#product_masonry');
+             	var $container = jQuery('.kt-masonry-init');
 					// initialize
 					$container.masonry({
 					  itemSelector: '.kad_product'

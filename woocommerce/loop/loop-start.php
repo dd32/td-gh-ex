@@ -13,4 +13,4 @@ if ( empty( $woocommerce_loop['columns'] ) ) $woocommerce_loop['columns'] = appl
       } else {
 			$columns = "shopcolumn".$woocommerce_loop['columns']." shopfullwidth"; 
       } ?>
-<div id="product_wrapper" class="products rowtight <?php echo $columns; ?>">
+<div id="product_wrapper" class="products kt-masonry-init rowtight <?php echo $columns; ?>">

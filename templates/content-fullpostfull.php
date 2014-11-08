@@ -70,7 +70,9 @@
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
     </header>
     <div class="entry-content">
-      <?php the_content(); ?>
+    <?php global $more; $more = 0; ?>
+    <?php $readmore = __('Continued', 'virtue');
+      the_content($readmore); ?>
     </div>
     <footer class="single-footer">
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>

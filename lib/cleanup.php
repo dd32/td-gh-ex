@@ -139,6 +139,12 @@ function kadence_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }
 
+function kad_remove_more_link_scroll( $link ) {
+  $link = preg_replace( '|#more-[0-9]+|', '', $link );
+  return $link;
+}
+add_filter( 'the_content_more_link', 'kad_remove_more_link_scroll' );
+
 function kadence_excerpt_more($more) {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'virtue') . '</a>';
 }
