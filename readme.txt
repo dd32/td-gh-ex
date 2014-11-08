@@ -1,7 +1,7 @@
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
-AccessPress Lite is distributed under the terms of the GNU GPL v3
+AccessPress Parallax WordPress Theme, Copyright 2014 AccessPress Themes
+AccessPress Parallax is distributed under the terms of the GNU GPL v3
 
 
 Install Steps:

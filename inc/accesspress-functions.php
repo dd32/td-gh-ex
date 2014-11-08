@@ -361,9 +361,6 @@ function accesspress_letter_count($content, $limit) {
 	return $limit_content;
 }
 
-add_filter('widget_text', 'do_shortcode');
-
-
 
 function optionsframework_custom_scripts() { ?>
 
