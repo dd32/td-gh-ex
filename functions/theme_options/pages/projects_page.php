@@ -26,14 +26,9 @@
 				$current_options['project_two_text']=sanitize_text_field($_POST['project_two_text']);
 				$current_options['project_three_text']=sanitize_text_field($_POST['project_three_text']);
 				$current_options['project_four_text']=sanitize_text_field($_POST['project_four_text']);
-				
-				
-				if($_POST['home_projects_enabled'])
-				{ echo $current_options['home_projects_enabled']= sanitize_text_field($_POST['home_projects_enabled']); } 
-				else
-				{ echo $current_options['home_projects_enabled']="off"; } 
-				
-				
+				 if(isset($_POST['home_projects_enabled']))
+				{ echo $current_options['home_projects_enabled']=sanitize_text_field($_POST['home_projects_enabled']); } 
+                //$current_options['front_page']=sanitize_text_field(isset($_POST['front_page']));				
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	

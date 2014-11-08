@@ -13,12 +13,10 @@
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);				
 				$current_options['rambo_custom_css']=$_POST['rambo_custom_css'];	
-				$current_options['front_page']=$_POST['front_page'];				
-				
-				if($_POST['rambo_texttitle'])
-				{ echo $current_options['rambo_texttitle']=sanitize_text_field($_POST['rambo_texttitle']); } 
-				else
-				{ echo $current_options['rambo_texttitle']="off"; } 
+				if(isset($_POST['front_page']))
+				{ echo $current_options['front_page']=sanitize_text_field($_POST['front_page']); } 
+                //$current_options['front_page']=sanitize_text_field(isset($_POST['front_page']));
+                $current_options['hc_texttitle']=sanitize_text_field(isset($_POST['rambo_texttitle']));
 				
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}

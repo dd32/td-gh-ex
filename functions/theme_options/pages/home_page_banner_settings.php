@@ -14,11 +14,8 @@
 				$current_options['home_image_description']=sanitize_text_field($_POST['home_image_description']);
 				
 				// home_banner section enabled yes OR no
-				if($_POST['home_banner_enabled'])
-				{ echo $current_options['home_banner_enabled']= sanitize_text_field($_POST['home_banner_enabled']); } 
-				else { echo $current_options['home_banner_enabled']="off"; } 
-			
-				
+				if(isset($_POST['home_banner_enabled']))
+				{ echo $current_options['home_banner_enabled']=sanitize_text_field($_POST['home_banner_enabled']); } 
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	
