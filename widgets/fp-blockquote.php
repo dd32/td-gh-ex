@@ -105,7 +105,7 @@ class Moesia_Blockquote extends WP_Widget {
 			<div class="container">			
 				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($image_uri !='') : ?>
-					<div class="bq-img col-md-6 col-sm-6 col-xs-6 wow fadeInLeft">
+					<div class="bq-img col-md-6 col-sm-6 col-xs-6 wow fadeInUp">
 						<img src="<?php echo esc_url($image_uri); ?>" />
 					</div>
 					<div class="bq-text col-md-6 col-sm-6 col-xs-6">

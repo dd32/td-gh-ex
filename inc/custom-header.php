@@ -42,8 +42,8 @@ if ( ! function_exists( 'moesia_header_style' ) ) :
  * @see moesia_custom_header_setup().
  */
 	function moesia_header_style() {
-$himage = get_post_meta( get_the_ID(), 'wpcf-header-image', true );
-		if ( get_header_image() ) {	
+		$himage = get_post_meta( get_the_ID(), 'wpcf-header-image', true );
+		if ( get_header_image() || $himage !='' ) {	
 
 			?>
 			<style type="text/css">
