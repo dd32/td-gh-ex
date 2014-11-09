@@ -1,7 +1,7 @@
 ----------------------------------
 Writing Board 
 ----------------------------------
-Version: 	1.2
+Version: 	1.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 Theme URI: 	http://d5creation.com/theme/writing-board
@@ -15,7 +15,9 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 1. Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
 2. jQuery FlexSlider v2.2.2, License: GPLv2, Copyright: WooThemes,  Author: Tyler Smith, Source: https://github.com/woothemes/FlexSlider
 3. FontAwesome, GPL friendly Licenses, Source: http://fortawesome.github.io/Font-Awesome
-4. sample-featured.jpg,  License: CC0 Public Domain, Author: robynm, Source: http://pixabay.com/en/iceberg-antarctica-polar-blue-ice-404966
+4. sample-featured.jpg, screenshot.png and all thumbnail images of screenshot.png, License: CC0 Public Domain, Author: robynm, Source: http://pixabay.com/en/iceberg-antarctica-polar-blue-ice-404966
+5. Part of logo.png, screenshot.png, License: CC0 Public Domain, Author: OpenClips, Source: http://pixabay.com/en/notepad-memo-pencil-writing-note-117597/
+
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
   
 
