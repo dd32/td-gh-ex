@@ -131,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+
+@VErsion 1.0.6.6
+1. Managed Front Page.
 @Version 1.0.6.5
 1. Remove all undefined index errors
 @verison 1.0.6.4

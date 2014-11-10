@@ -21,8 +21,11 @@
 				$current_options['project_three_title']=sanitize_text_field($_POST['project_three_title']);
 				$current_options['project_four_title']=sanitize_text_field($_POST['project_four_title']);
 			    
-				//project enabled setting				
-				$current_options['home_projects_enabled']=sanitize_text_field(isset($_POST['home_projects_enabled']));
+				//project enabled setting	
+                if(isset($_POST['home_projects_enabled']))
+				{ echo $current_options['home_projects_enabled']="on"; }
+				else 				
+				{ echo $current_options['home_projects_enabled']="off"; }
 				
 				update_option('quality_options',$current_options);
 			}

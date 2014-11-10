@@ -14,7 +14,11 @@
 				$current_options['upload_image_favicon']=esc_url_raw($_POST['upload_image_favicon']);
 				$current_options['quality_custom_css'] =$_POST['quality_custom_css'];
 				//front page on setting
-				$current_options['front_page']=sanitize_text_field(isset($_POST['front_page']));
+				if(isset($_POST['front_page']))
+				{ echo $current_options['front_page']="on"; }
+				else
+			    { echo $current_options['front_page']="off"; }
+				
 				//text title on setting
 				$current_options['text_title']=sanitize_text_field(isset($_POST['text_title']));
 				

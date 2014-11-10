@@ -8,8 +8,11 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{	
-                //service enabled setting			
-				$current_options['service_enable']=sanitize_text_field(isset($_POST['service_enable']));
+			if(isset($_POST['service_enable']))
+				{ echo $current_options['service_enable']="on"; } 
+                else 
+                { echo $current_options['service_enable']="off"; }				
+				
 				$current_options['service_title'] = sanitize_text_field($_POST['service_title']);
 				$current_options['service_description'] = sanitize_text_field($_POST['service_description']);
 				$current_options['service_one_title'] = sanitize_text_field($_POST['service_one_title']);
