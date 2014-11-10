@@ -46,3 +46,8 @@ Version 1.0
 
 Version 1.0.1
 * Minor bug fixes
+
+Version 1.1
+* Updated overlay images
+* Fixed sub menu effect
+* Minor bug fixes
