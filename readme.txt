@@ -53,6 +53,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.0.2.3
+1. Front managed.
 @Version 1.0.2.2
 1. Remove all undefined index errors.
 
