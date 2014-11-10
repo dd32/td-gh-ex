@@ -61,6 +61,10 @@ Images
 
 == Changelog ==
 Version 2.23
+* Small bug fixed in for array warning in Theme Option
+* Three new Translation Language added
+
+Version 2.23
 * Options for Page added in Welcome and Featured Post
 * Previously only Post can be added.
 

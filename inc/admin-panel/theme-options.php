@@ -132,6 +132,10 @@ endforeach;
 wp_reset_postdata();
 
 // Store Pages in array
+$accesspresslite_pagelist[0] = array(
+	'value' => 0,
+	'label' => '--choose--'
+);
 $arg = array('posts_per_page'   => -1);
 $accesspresslite_pages = get_pages($arg);
 foreach( $accesspresslite_pages as $accesspresslite_page ) :
