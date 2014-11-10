@@ -18,8 +18,8 @@
 				
 				
 				// latest news section enabled yes ya on
-				if($_POST['footer_widgets_enabled'])
-				{ echo $current_options['footer_widgets_enabled']= sanitize_text_field($_POST['footer_widgets_enabled']); } 
+				if(isset($_POST['footer_widgets_enabled']))
+				{ echo $current_options['footer_widgets_enabled']= "on"; } 
 				else { echo $current_options['footer_widgets_enabled']="off"; } 
 				
 				update_option('rambo_theme_options',stripslashes_deep($current_options));

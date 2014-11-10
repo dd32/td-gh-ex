@@ -15,8 +15,8 @@
 				$current_options['social_media_google_plus']=esc_url_raw($_POST['social_media_google_plus']);	
 			
 				// footer section enabled yes ya on
-				if($_POST['footer_social_media_enabled'])
-				{ echo $current_options['footer_social_media_enabled']= sanitize_text_field($_POST['footer_social_media_enabled']); } 
+				if(isset($_POST['footer_social_media_enabled']))
+				{ echo $current_options['footer_social_media_enabled']= "on"; } 
 				else { echo $current_options['footer_social_media_enabled']="off"; } 
 				
 				update_option('rambo_theme_options',stripslashes_deep($current_options));

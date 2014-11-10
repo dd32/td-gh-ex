@@ -25,12 +25,11 @@
 				$current_options['home_service_fourth_title']=sanitize_text_field($_POST['home_service_fourth_title']);
 				$current_options['home_service_fourth_description']=sanitize_text_field($_POST['home_service_fourth_description']);
 				if(isset($_POST['home_service_enabled']))
-				{ echo $current_options['home_service_enabled']=sanitize_text_field($_POST['home_service_enabled']); }
-				
-				 
-				
-				
-				
+				{ echo $current_options['home_service_enabled']="on"; }
+				else
+				{
+				echo $current_options['home_service_enabled']="off";
+				}
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	

@@ -8,16 +8,25 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{			
-				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
-				$current_options['height']=sanitize_text_field($_POST['height']);
+				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);	$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);				
 				$current_options['rambo_custom_css']=$_POST['rambo_custom_css'];	
 				if(isset($_POST['front_page']))
-				{ echo $current_options['front_page']=sanitize_text_field($_POST['front_page']); } 
+				{ 
+				echo $current_options['front_page']="on"; 
+				} 
+				else
+				{ echo $current_options['front_page']="off"; 
+				} 
                 //$current_options['front_page']=sanitize_text_field(isset($_POST['front_page']));
-                $current_options['hc_texttitle']=sanitize_text_field(isset($_POST['rambo_texttitle']));
-				
+                if(isset($_POST['rambo_texttitle']))
+				{ 
+				echo $current_options['rambo_texttitle']="on"; 
+				} 
+				else
+				{ echo $current_options['rambo_texttitle']="off"; 
+				}
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	

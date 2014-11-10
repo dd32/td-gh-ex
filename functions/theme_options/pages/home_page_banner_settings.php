@@ -15,7 +15,12 @@
 				
 				// home_banner section enabled yes OR no
 				if(isset($_POST['home_banner_enabled']))
-				{ echo $current_options['home_banner_enabled']=sanitize_text_field($_POST['home_banner_enabled']); } 
+				{ 
+				echo $current_options['home_banner_enabled']="on"; 
+				} 
+				else
+				{ echo $current_options['home_banner_enabled']="off"; 
+				}
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	
