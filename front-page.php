@@ -15,7 +15,7 @@
 			<ul class="slides">
 			
             <?php
-			$writingboard_thumb = 'category-thumb'; 
+			$writingboard_thumb = 'writingboard-category-thumb'; 
 			$writingboard_args = writingboard_ppp();
 			$writingboard_query = new WP_Query( $writingboard_args );
 

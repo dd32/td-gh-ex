@@ -15,7 +15,7 @@
  <h1 id="post-<?php the_ID(); ?>" class="page-title"><?php the_title();?></h1>
  <div class="content-ver-sep"> </div>
  <div class="entrytext">
- <?php the_post_thumbnail('category-thumb'); ?>
+ <?php the_post_thumbnail('writingboard-category-thumb'); ?>
  <?php writingboard_content(); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>

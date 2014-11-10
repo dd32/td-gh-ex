@@ -36,11 +36,11 @@
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
 
 	// additional image sizes
-	add_image_size( 'category-thumb', 750, 350 ); 
-	add_image_size( 'slide-thumb', 1100, 550 ); //for featured sliders
+	add_image_size( 'writingboard-category-thumb', 750, 350 ); 
+	add_image_size( 'writingboard-slide-thumb', 1100, 550 ); //for featured sliders
 	
 		
-// 	WordPress 3.4 Custom Background Support	
+// 	WordPress Custom Background Support	
 	$writingboard_custom_background = array(
 	'default-color'          => 'bbe8ff',
 	'default-image'          => get_template_directory_uri() . '/images/background.png'
@@ -48,7 +48,7 @@
 	add_theme_support( 'custom-background', $writingboard_custom_background );
 	
 	
-// 	WordPress 3.4 Custom Header Support				
+// 	WordPress Custom Header Support				
 	$writingboard_custom_header = array(
 	'default-image'          => '',
 	'random-default'         => false,

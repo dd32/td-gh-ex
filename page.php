@@ -14,7 +14,7 @@
         <h1 class="page-title"><?php the_title(); ?></h1>
 			<div class="content-ver-sep"> </div>
             <div class="entrytext">
- <?php the_post_thumbnail('category-thumb'); writingboard_content(); ?>
+ <?php the_post_thumbnail('writingboard-category-thumb'); writingboard_content(); ?>
  
 
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>

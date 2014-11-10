@@ -81,7 +81,7 @@ html[xmlns] .slides {display: block;}
 /* Main Site */
 .main-slider  { height: 350px; overflow: hidden; width: 100%; border-radius: 3px 3px 0 0; }
 .main-slider  .flexslider { border: none; }
-.main-slider img.attachment-slide-thumb, .main-slider img.attachment-category-thumb { position:absolute; width: 100%; margin: 0; padding: 0; border: none; }
+.main-slider img.attachment-writingboard-slide-thumb, .main-slider img.attachment-writingboard-category-thumb { position:absolute; width: 100%; margin: 0; padding: 0; border: none; }
 .main-slider  .flex-control-nav { font-size: 0; right: 30px; top: 25px; width: auto; z-index: 3; }
 .main-slider .flex-control-nav li { display: block; margin: 11px 0; }
 .main-slider .flex-control-paging li a { background: transparent; border: 1px solid #FFFFFF; border-radius: 20px; cursor: pointer; display: block; height: 15px; text-indent: -9999px; width: 15px; }

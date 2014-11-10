@@ -14,7 +14,7 @@ get_header(); ?><div id="container">
             <p class="postmetadataw">Posted by: <?php the_author_posts_link() ?> |  <?php the_time('F j, Y'); ?></p> 
                         
             <div class="content-ver-sep"> </div>
-            <div class="entrytext"><?php the_post_thumbnail('category-thumb'); ?>
+            <div class="entrytext"><?php the_post_thumbnail('writingboard-category-thumb'); ?>
 			<?php the_content(); ?>
             
             <div class="clear"> </div>

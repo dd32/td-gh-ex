@@ -1,7 +1,7 @@
 ----------------------------------
 Writing Board 
 ----------------------------------
-Version: 	1.4
+Version: 	1.5
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 Theme URI: 	http://d5creation.com/theme/writing-board
@@ -19,5 +19,12 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 5. Part of logo.png, screenshot.png, License: CC0 Public Domain, Author: OpenClips, Source: http://pixabay.com/en/notepad-memo-pencil-writing-note-117597/
 
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
-  
+
+===============
+Changelog
+===============
+
+Version 1.5
+---------------------------
+- Prefix added for add_image_size handelers name
 
