@@ -189,7 +189,7 @@ require $template_directory . '/inc/admin.php';
  *
  * @param $loc string - left or right
  */
-function get_altitude_sidebar( $loc ) {
+function altitude_get_sidebar( $loc ) {
 	$location = get_theme_mod( 'altitude_sidebar' );
 	$location = $location ? $location : 'right';
 
@@ -199,24 +199,14 @@ function get_altitude_sidebar( $loc ) {
 }
 
 /**
- * Register Styles
- */
-function altitude_register_styles() {
-	wp_register_style( 'altitude-sourcesanspro', altitude_google_font_url(), array(), null );
-	wp_register_style( 'altitude-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-}
-
-add_action( 'init', 'altitude_register_styles' );
-
-/**
  * Enqueue Styles
  */
-function altitude_load_styles( $hook_suffix ) {
-	wp_enqueue_style( 'altitude-sourcesanspro' );
-	wp_enqueue_style( 'altitude-fontawesome' );
+function altitude_load_styles() {
+	wp_enqueue_style( 'altitude-sourcesanspro', altitude_google_font_url(), array(), null );
+	wp_enqueue_style( 'altitude-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 }
 
-add_action( 'wp_print_styles', 'altitude_load_styles' );
+add_action( 'wp_enqueue_scripts', 'altitude_load_styles' );
 
 /**
  * Enqueue Admin Scripts for custom headers
@@ -226,8 +216,8 @@ function altitude_admin_scripts( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style( 'altitude-sourcesanspro' );
-	wp_enqueue_style( 'altitude-fontawesome' );
+	wp_enqueue_style( 'altitude-sourcesanspro', altitude_google_font_url(), array(), null );
+	wp_enqueue_style( 'altitude-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 }
 
 add_action( 'admin_enqueue_scripts', 'altitude_admin_scripts' );
