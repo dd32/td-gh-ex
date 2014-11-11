@@ -27,7 +27,7 @@
     <div class="container multishop-container">
       <div class="col-md-6 foot-copy-right no-padding-lr">
         <?php if(!empty($multishop_options['footertext'])) {
-			 	echo '<p>'. $multishop_options['footertext'].' '; 
+			 	echo '<p>'. esc_attr($multishop_options['footertext']).' '; 
 			  } else {
 			  	echo '<p>Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a>';
 			  }

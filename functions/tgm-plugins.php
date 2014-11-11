@@ -1,5 +1,5 @@
 <?php
-require_once('class-tgm-plugin-activation.php');
+require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
 
 add_action( 'multishop_register', 'multishop_theme_register_plugins' );
 /* Register the required plugins for this theme. */

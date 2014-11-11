@@ -39,9 +39,9 @@
       <div class="col-md-3 no-padding-lr">
         <div class="heder-logo">
           <?php if(empty($multishop_options['logo'])) { ?>
-          <h1 class="multishop-site-name"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+          <h1 class="multishop-site-name"><a href="<?php echo esc_url(get_site_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
           <?php } else { ?>
-          <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $multishop_options['logo']; ?>" alt="" class="logo-center" /></a>
+          <a href="<?php echo esc_url(get_site_url()); ?>"><img src="<?php echo esc_url($multishop_options['logo']); ?>" alt="" class="logo-center" /></a>
           <?php } ?>
         </div>
       </div>

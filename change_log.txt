@@ -1,3 +1,16 @@
 Version 1.0
 
 i)   Theme Submitted for approval
+
+Version: 1.1 (11 Nov 2014)
+
+i) Enqueue Scripts and Styles properly.
+ii) set esc_url sanitization in all files.
+iii) wp_link_pages set in full width template and in page.php
+iv) Require file set properly
+v) Remove Theme Text Translation and remove translation-ready tag in style.css and readme.txt
+vi) Remove newsletter code from theme options and remove newsletter script and css from js and css files
+
+Version: 1.0.1 (11 Nov 2014)
+
+i) Fixed screen_icon error.

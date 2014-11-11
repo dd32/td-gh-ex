@@ -32,7 +32,7 @@ get_header();
           <?php } ?>
         </div>
         <?php if($multishop_image != "") { ?>
-        <img src="<?php echo $multishop_image; ?>" class="single-image img-responsive" />
+        <img src="<?php echo esc_url($multishop_image); ?>" class="single-image img-responsive" />
         <?php } ?>
         <div class="multishop-single-content">
           <?php the_content(); 

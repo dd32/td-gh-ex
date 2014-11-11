@@ -20,10 +20,10 @@ get_header();
     <div class="media blog-box padding-top-0">
       <?php $multishop_image = wp_get_attachment_link(get_post_thumbnail_id(get_the_id()),'multishop-blog-image'); ?>
       <?php if(get_post_thumbnail_id(get_the_ID())) { ?>
-      <div class="blog-image"> <?php echo $multishop_image; ?> </div>
+      <div class="blog-image"> <?php echo esc_url($multishop_image); ?> </div>
       <?php }  ?>
       <div class="media-body blog-body">
-        <h4 class="media-heading"><a href=<?php echo get_permalink(); ?>>
+        <h4 class="media-heading"><a href=<?php echo esc_url(get_permalink()); ?>>
           <?php the_title(); ?>
           </a></h4>
         <div class="multishop-tags">

@@ -20,7 +20,7 @@ get_header();
     <div class="col-md-12 clearfix">
       <div class="media blog-box singleblog-box padding-top-0">
         <?php if($multishop_image != "") { ?>
-        <img src="<?php echo $multishop_image; ?>" class="single-image img-responsive" />
+        <img src="<?php echo esc_url($multishop_image); ?>" class="single-image img-responsive" />
         <?php } ?>
         <div class="media-body blog-body single-blog-body">
           <h4><?php echo get_the_title(); ?></h4>
@@ -35,7 +35,11 @@ get_header();
             <?php } ?>
           </div>
           <p class="multishop-content-p">
-            <?php the_content(); ?>
+            <?php the_content();
+			 wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+					'after' => '</div>',
+				) ); ?>
           </p>
         </div>
       </div>

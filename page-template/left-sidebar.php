@@ -35,10 +35,14 @@ get_header();
             </div>
             
              <?php if($multishop_image != "") { ?>
-          <img src="<?php echo $multishop_image; ?>" class="single-image img-responsive" />
+          <img src="<?php echo esc_url($multishop_image); ?>" class="single-image img-responsive" />
           <?php } ?>
             <div>
-              <?php the_content(); ?>
+              <?php the_content();
+			  wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+					'after' => '</div>',
+				) ); ?>
             </div>
           </div>
         </div>

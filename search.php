@@ -23,7 +23,7 @@ get_header();
       <div class="blog-image"> <?php echo $multishop_image; ?> </div>
       <?php }  ?>
       <div class="media-body blog-body">
-        <h4 class="media-heading"><a href=<?php echo get_permalink(); ?>>
+        <h4 class="media-heading"><a href=<?php echo esc_url(get_permalink()); ?>>
           <?php the_title(); ?>
           </a></h4>
         <div class="multishop-tags">

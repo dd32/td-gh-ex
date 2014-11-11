@@ -21,19 +21,19 @@ $multishop_options = get_option( 'multishop_theme_options' );
         <div class="home-section1">
           <div class="ImageWrapper chrome-fix">
             <?php if(!empty($multishop_options['img-section-1'])) { ?>
-            <img src="<?php echo $multishop_options['img-section-1']; ?>" alt="" class="img-responsive" />
+            <img src="<?php echo esc_url($multishop_options['img-section-1']); ?>" alt="" class="img-responsive" />
             <?php } ?>
             <div class="ImageOverlayC"></div>
             <div class="Buttons StyleH">
               <div class="WhiteRounded">
                 <h2>
                   <?php if(!empty($multishop_options['text-section-1'])) { ?>
-                  <?php echo $multishop_options['text-section-1'];?>
+                  <?php echo esc_attr($multishop_options['text-section-1']);?>
                   <?php } ?>
                 </h2>
                 <p>
                   <?php if(!empty($multishop_options['discount-section-1'])) { ?>
-                  <?php echo $multishop_options['discount-section-1'];?>
+                  <?php echo esc_attr($multishop_options['discount-section-1']);?>
                   <?php } ?>
                 </p>
               </div>
@@ -45,19 +45,19 @@ $multishop_options = get_option( 'multishop_theme_options' );
         <div class="home-section2">
           <div class="ImageWrapper chrome-fix">
             <?php if(!empty($multishop_options['img-section-2'])) { ?>
-            <img src="<?php echo $multishop_options['img-section-2']; ?>" alt="" class="img-responsive" />
+            <img src="<?php echo esc_url($multishop_options['img-section-2']); ?>" alt="" class="img-responsive" />
             <?php } ?>
             <div class="ImageOverlayC"></div>
             <div class="Buttons StyleH">
               <div class="WhiteRounded">
                 <h2>
                   <?php if(!empty($multishop_options['text-section-2'])) { ?>
-                  <?php echo $multishop_options['text-section-2'];?>
+                  <?php echo esc_attr($multishop_options['text-section-2']);?>
                   <?php } ?>
                 </h2>
                 <p>
                   <?php if(!empty($multishop_options['discount-section-2'])) { ?>
-                  <?php echo $multishop_options['discount-section-2'];?>
+                  <?php echo esc_attr($multishop_options['discount-section-2']);?>
                   <?php } ?>
                 </p>
               </div>
@@ -69,19 +69,19 @@ $multishop_options = get_option( 'multishop_theme_options' );
         <div class="home-section1">
           <div class="ImageWrapper chrome-fix">
             <?php if(!empty($multishop_options['img-section-3'])) { ?>
-            <img src="<?php echo $multishop_options['img-section-3']; ?>" alt="" class="img-responsive" />
+            <img src="<?php echo esc_url($multishop_options['img-section-3']); ?>" alt="" class="img-responsive" />
             <?php } ?>
             <div class="ImageOverlayC"></div>
             <div class="Buttons StyleH">
               <div class="WhiteRounded">
                 <h2>
                   <?php if(!empty($multishop_options['text-section-3'])) { ?>
-                  <?php echo $multishop_options['text-section-3'];?>
+                  <?php echo esc_attr($multishop_options['text-section-3']);?>
                   <?php } ?>
                 </h2>
                 <p>
                   <?php if(!empty($multishop_options['discount-section-3'])) { ?>
-                  <?php echo $multishop_options['discount-section-3'];?>
+                  <?php echo esc_attr($multishop_options['discount-section-3']);?>
                   <?php } ?>
                 </p>
               </div>
@@ -111,14 +111,14 @@ $multishop_options = get_option( 'multishop_theme_options' );
           <?php $multishop_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  ?>
           <div class="main-border">
             <?php if($multishop_feat_image!="") { ?>
-            <img src="<?php echo $multishop_feat_image; ?>" alt="Banner" class="img-responsive"  />
+            <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="Banner" class="img-responsive"  />
             <?php } ?>
             <div class="product-details"> <span><?php echo $product->get_price_html(); ?></span>
               <h5>
                 <?php the_title(); ?>
               </h5>
               
-              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
+              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
             </div>
           </div>
         </div>

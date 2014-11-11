@@ -88,7 +88,7 @@ get_header( 'shop' ); ?>
             <?php $multishop_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  ?>
             <div class="main-border">
               <?php if($multishop_feat_image!="") { ?>
-              <img src="<?php echo $multishop_feat_image; ?>" alt="Banner" class="img-responsive"  />
+              <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="Banner" class="img-responsive"  />
               <?php } ?>
               <div class="product-details"> 
               <div class="product-text">
@@ -96,7 +96,7 @@ get_header( 'shop' ); ?>
               	<span><?php echo $product->get_price_html(); ?></span>
                 <h5>  <?php the_title(); ?> </h5>
                </div> 
-                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
+                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
               </div>
             </div>
           </div>
