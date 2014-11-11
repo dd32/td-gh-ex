@@ -4,7 +4,7 @@ Theme URI: http://tradesouthwest.net/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media.
-Version: 1.0
+Version: 1.1
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -73,12 +73,14 @@ blockquote {
 .breaker {
     content:"";
     clear: both;
-    margin-top: 5px;
-    padding: 0.3333336em;
-    height: 5px;
-    border: 5px solid transparent;
+    margin: 5px auto;
+    padding: 0.333em;
+    height: 1px;
+    border: 1px solid transparent;
     width: 100%;
     display: block;
+    position: relative;
+    top: .5em;
 }
 .clearfix {
     background: transparent;
@@ -105,14 +107,23 @@ body {
     width:         90%;
     padding-left:  0.91812em;
     margin:        0 auto;
-    padding-bottom:1em;
-    z-index:       1; /* only needed when #access menu overlay used */
+    padding-bottom: 1em;
+    /* z-index: 1; only needed when access menu overlay used */
     background:    rgba( 250, 250, 250, 0.95 );
     border:        1px solid rgba( 100, 100, 100, 0.3 );
+   
+
+overflow: hidden;
+border-bottom: 1px solid green;
+min-height: 100%;
+height: auto;
+max-height: 100%;
+
 }
+
 .toprow {
     display:       inline-block;
- height:        2.6185em;
+    height:        2.6185em;
     width:         99%;
     background:    #11223f;
     margin:        0;
@@ -184,10 +195,15 @@ body.single .site-header {
     left:          9px;  
 }
 #content-wide-page { /* container for all pages other than 4-wide and lead */ 
-    display:       inline-block;
-    width:         96.5222%;
-    margin:        3.12% 0 0 1.12%;
+   width:         96.5222%;
+   margin:        3.12% 0 0 1.12%;
+   min-height:    100%;
+   overflow: hidden;
 } 
+#content-wide-page:after {
+    content: "";
+    clear: both;
+}
 #full-width {
     display:       block;
     position:      relative;
@@ -231,8 +247,8 @@ section.content-area-lead { /* lead article background container */
     border-left:   4px solid #d5e6e7;
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     position:      relative;
-    top:           0;
-    left:          0.4444em;
+    top:           2px;
+    left:          0.45em;
 }
 .content-area-lead .entry-lead { /* lead article entry under header box */
     position:      relative;
@@ -271,7 +287,7 @@ section.content-area-left { /* left single post or page article background conta
 }
 .post-right { /* sidebar container next to lead article */
     position:      relative;
-    top:           0;
+    top:           2px;
     left:          -0.6518em;
     min-height:    40em;
     height:        auto;
@@ -319,7 +335,7 @@ section.content-area-left { /* left single post or page article background conta
     padding:       5px;
     float:         left;
     display:       inline;
-    box-shadow:    1px 2px 2px 2px #c8c8c8, 0 -1px 2px 1px #a6a6a6;
+    box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7); 
     border-top:    3px solid #f2f2f2;
 }
 .midbar { /* text banner below lead article */
@@ -360,14 +376,12 @@ section.content-area-left { /* left single post or page article background conta
     font-weight:   700;
 }
 .site-footer {
-    clear:         both;
     width:         91.1218%;
     margin:        0 auto;
     min-height:    100px;
     background:    #11223f;
     border:        1px solid #8a839c;
     border-top:    5px solid #fafaaa;
-    z-index:       5;
 }
 .site-footer:before {
     content:       "";
@@ -376,6 +390,7 @@ section.content-area-left { /* left single post or page article background conta
     height:        1px;
     width:         99.1582%;
     margin:        0 auto;
+clear: both;
 }
 .site-info { /* lower part of footer */ 
     margin-top:    1em;
@@ -425,9 +440,9 @@ footer#colophon > div {
 #right-sidebar {
     position:      relative;
     top:           0;
-    right:         1em;
+    right:         .4445em;
     min-height:    10em;
-    width:         23.28%;
+    width:         24%;
     border-top:    4px solid #d5e6e7;
     border-right:  4px solid #d5e6e7;
     border-bottom: 4px solid #d5e6e7;
@@ -436,31 +451,31 @@ footer#colophon > div {
     padding:       5px 9px;
     margin-bottom: 1.444em;
     float:         right;
-    z-index:       800;
 }
 #right-sidebar-absolute {
     position:      absolute;
-    top:           16.605em;
-    left:          69.88888%;
-    margin-right:  0.8782em;
+    top:           16.3338em;   
+    left:          70.4125%; 
     min-height:    10em;
-    width:         20.3858%;
+    width:         21%;
+    margin-bottom: .5em; 
     border-top:    4px solid #d5e6e7;
     border-right:  4px solid #d5e6e7;
     border-bottom: 4px solid #d5e6e7;
     border-left:   4px solid #d5e6e7;
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     padding:       5px 9px;
-    z-index:       700;
     background:    #fafafa;
-
+    float:         right;
+z-index: 7;
 }
-.sidebar-absolute-breaker {
+#right-sidebar-breaker {
     display: block;
-    width: 100%;
-    min-height: 2em;
-    border: 5px solid transparent;
-    clear: both;
+    width: 96.2%;
+    margin: 0 auto
+    height: 1em;
+    margin-top: 1px;
+    padding: 1px;
 }
 #main img {
     max-width:     100%;
@@ -481,7 +496,7 @@ footer#colophon > div {
     line-height:    1.24;
 }
 body.blog .entry {
-    border-bottom:  thin solid #aaa;
+    border-bottom:  thin solid #ddd;
 }
 .entry img {
     position:       relative;

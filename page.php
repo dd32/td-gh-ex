@@ -38,16 +38,21 @@ get_header(); ?>
                                 <!-- <?php trackback_rdf(); ?> -->
                     </div> <!-- ends post -->  
                 </section><!-- ends content-area-lead -->
+           
             <?php endwhile; else: ?>
                     <section class="content-area-left">
                         <article class="entry-lead">
                             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
                         </article>
                      </section><!-- ends content-left -->
+           
             <?php endif; ?>
-                <div id="right-sidebar-absolute">
+
+                <div id="right-sidebar">
                     <?php get_sidebar(); ?>
-                </div>
-            </div><!-- ends content wide container -->
-                          <div class="breaker"></div>
+                </div> 
+
+ </div><div id="right-sidebar-breaker"></div>
+ 
+                      
 <?php get_footer(); ?>

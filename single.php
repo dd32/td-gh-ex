@@ -27,7 +27,7 @@ get_header(); ?>
                                 the_post_thumbnail(); 
                                 } else {
                 	        echo '<div></div>';
-                                    } ?>
+                                    } ?>                               
                                     <?php the_content(''); ?>
                                         <div class="pagination">
                                             <?php wp_link_pages( array(
@@ -39,10 +39,10 @@ get_header(); ?>
                                     <span class="linkcat"><?php _e( 'Filed under: ', 'betilu' ); ?> <?php the_category(', ') ?> </span>
                                         <p class="taglink"><?php the_tags(); ?></p>
                                 </div>
-                                        <?php comments_template(); ?>
-                       <?php get_template_part( 'social', 'content' ); ?><br>
-                                        <div class="navigation">
-                                            <p><?php previous_post_link(); ?><span><?php next_post_link(); ?></span></p>
+                                    <?php comments_template(); ?>
+                                        <?php get_template_part( 'social', 'content' ); ?><br>
+                                    <div class="navigation">
+                                        <p><?php previous_post_link(); ?><span><?php next_post_link(); ?></span></p>
                                         </div>              
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
