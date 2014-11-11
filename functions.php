@@ -138,34 +138,34 @@ add_action( 'widgets_init', 'jobile_widgets_init' );
  */
 function jobile_scripts() {
 	wp_enqueue_style( 'jobile-lato', jobile_font_url(), array(), null );
-	wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.min.css',array(),'','');
-	wp_enqueue_style('font-awesome',get_template_directory_uri().'/css/font-awesome.css',array(),'','');
+	wp_enqueue_style('jobile-bootstrap',get_template_directory_uri().'/css/bootstrap.min.css',array(),'','');
+	wp_enqueue_style('jobile-font-awesome',get_template_directory_uri().'/css/font-awesome.css',array(),'','');
 	wp_enqueue_style('style',get_stylesheet_uri(),array(),'','');
-	wp_enqueue_style('media-css',get_template_directory_uri().'/css/media.css',array(),'','');
-	wp_enqueue_script('script-js',get_template_directory_uri().'/js/script.js',array('jquery'));
-	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'));
-	wp_enqueue_script( 'owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array( 'jquery' ), '', true );
+	wp_enqueue_style('jobile-media-css',get_template_directory_uri().'/css/media.css',array(),'','');
+	wp_enqueue_script('jobile-script-js',get_template_directory_uri().'/js/script.js',array('jquery'));
+	wp_enqueue_script('jobile-bootstrapjs',get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'));
+	wp_enqueue_script( 'jobile-owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array( 'jquery' ), '', true );
 	
-	wp_enqueue_script('nstslider',get_template_directory_uri().'/js/nstSlider.js',array('jquery'));
+	wp_enqueue_script('jobile-nstslider',get_template_directory_uri().'/js/nstSlider.js',array('jquery'));
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
 add_action( 'wp_enqueue_scripts', 'jobile_scripts' );	
 /*
  * TGM 
  */
-require_once('inc/tgm-plugins.php');
+require get_template_directory() . '/inc/tgm-plugins.php';
 /*
  * image description widget 
  */
-require_once('inc/jobile-image-description.php');
+require get_template_directory() . '/inc/jobile-image-description.php';
 /*
  * social icon widget 
  */
-require_once('inc/social-widget.php');
+require get_template_directory() . '/inc/social-widget.php';
 /*
  * theme options
  */
-require_once('theme-options/jobilethemes.php');
+require get_template_directory() . '/theme-options/jobilethemes.php';
 /*
  * For class add in jobile Category list.
  */

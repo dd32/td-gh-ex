@@ -25,10 +25,15 @@ get_header(); ?>
 							<h4 class="jobile-page-title"><?php the_title(); ?></h4>
 						</div>
 						<div class="article-row2 profile-title">
-							<?php the_content(); ?>
+							<?php the_content(); 
+							wp_link_pages( array(
+											'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+											'after' => '</div>',
+										) );
+							?>
 							<?php $jobile_feature_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
 								 if($jobile_feature_image) { ?>
-								 <img src="<?php echo $jobile_feature_image; ?>" class="img-responsive" />
+								 <img src="<?php echo  esc_url($jobile_feature_image); ?>" class="img-responsive" />
 							<?php } ?>
 						</div>
 					   </div>

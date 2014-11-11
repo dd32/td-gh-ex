@@ -31,7 +31,7 @@
             <div class="col-md-4 no-padding-lr">
 				<?php if(empty($jobile_options['logo'])) { ?> 				
 					 <div class="header-sitename">
-						<a href="<?php echo site_url(); ?>" class="jobile-header-title"><?php echo get_bloginfo('name'); ?></a>
+						<a href="<?php echo  esc_url(site_url()); ?>" class="jobile-header-title"><?php echo get_bloginfo('name'); ?></a>
   					 </div>
 				<?php } else { ?>
 					<div class="header-logo header-logo2">

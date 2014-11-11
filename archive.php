@@ -35,7 +35,7 @@ get_header(); ?>
                                     </div>
                                     <div class="col-md-10 no-padding-lr">
                                    		<div class="col-md-8 col-sm-8 col-xs-8 no-padding-lr job-status resp-grid1 job-status-3">
-                                        <span class="per-name grey-color"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></span>
+                                        <span class="per-name grey-color"><a href="<?php echo  esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a></span>
                                     </div>
                                     	<div class="col-md-4 col-sm-4 col-xs-4 job-status resp-grid1 job-status-3">
                                         <p class="grey-color"><?php echo get_the_time('j F, Y'); ?></p>
@@ -47,7 +47,7 @@ get_header(); ?>
                                         </div>
                                      </div>
                                         <div class="col-md-12 no-padding-lr">
-                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo get_permalink(); ?>" class="color-068587">Read More</a></p>
+                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587">Read More</a></p>
                                     </div>
                                     </div>
                                 </div>
