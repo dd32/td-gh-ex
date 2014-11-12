@@ -4,7 +4,7 @@ Theme URI: http://tradesouthwest.net/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media.
-Version: 1.1
+Version: 1.2
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1466,58 +1466,84 @@ ul.children {}
 }
 /* Media Queries 
 ------------------------------------------------------ */
-
-@media all and (min-width: 860px) and (max-width: 1024px) {
-#access ul { position: relative; top: -11.6666667em; z-index: 9999; }
-}
-
-@media all only (min-width: 1010px) and (max-width: 1020px) {
-#access ul { position: absolute; [if Webkit] top: -11.6666667em; z-index: 999; width: 90%;}
-#content-wide-lead { z-index: -11; }
-}
 @media all and (min-width: 322px) and (max-width: 860px) {
     section.content-area-lead { min-width: 98%; width: auto; max-width: 98%; display: block; margin: -4em auto 5px auto; }
     .post-right {  min-width: 95.425%; width: auto; max-width: 95.425%; display: block; margin: 5px auto; float: left; 
     position: relative; top: 1em; left: 0; }
-    .midbar { position: relative; top: 1em; left: 4px; }
+    .midbar {display: none; margin: 0; }
 }
-@media all and (min-width: 832px) and (max-width: 860px) {
-#access ul { position: relative; top: -11.6666667em; z-index: 9999; }
-#content-wide-lead { width: 100%; display: table; }
-.post-right {float: none; width: 100%; clear: left; margin: 0; }
+
+@media all and (min-width: 760px) and (max-width: 940px) {
+#access ul { position: relative; top: .0285em; z-index: 9999; }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 740px) and (max-width: 831px) {
 #access ul { position: relative; top: -11.3333339em; z-index: 9999; }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 625px) and (max-width: 739px) {
 #access ul { position: relative; top: -12.3333339em; z-index: 9999; }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 541px) and (max-width: 624px) {
 #access ul { position: relative; top: -12.3333339em; z-index: 9999; }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 480px) and (max-width: 540px) {
 #access ul { position: relative; top: -0.77778em; z-index: 9999; }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
 #logo-right { display: none; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 451px) and (max-width: 479px) {
 #access ul { position: relative; top: -0.666669em; z-index: 9999;  }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
 #access ul li {display: block; }
 #logo-right { display: none; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 366px) and (max-width: 450px) {
 #access ul { position: relative; top: -0.333338em; z-index: 9999;  }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
 #access ul li {display: block; }
 #logo-right { display: none; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 340px) and (max-width: 365px) {
 #access ul { position: relative; top: -1.333338em; z-index: 9999;  }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
 #access ul li {display: block; }
 #logo-right { display: none; }
+.midbar {display: none; margin: 0; }
 }
 @media all and (min-width: 320px) and (max-width: 339px) {
 #access ul { position: relative; top: -1.666669em; z-index: 9999;  }
+#content-wide-lead, .content-area-left { overflow: visible; width: 100%; margin: 0 auto; display: block; clear: left; }
+.post-right, #right-sidebar {display: block; width: 98%; margin: 0 auto;  clear: both; 
+position: relative; left: 0; top: .5em; }
 #access ul li {display: block; }
 #logo-right { display: none; }
+.midbar {display: none; margin: 0; }
 }
 
 
