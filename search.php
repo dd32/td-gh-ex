@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-		<header>
+		<header class="page-header">
 			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', '_tk' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 		</header><!-- .page-header -->
 
