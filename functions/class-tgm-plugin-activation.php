@@ -142,9 +142,6 @@
                 return;
             } ?>
 <div class="medium wrap">
-  <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {
-                    screen_icon( apply_filters( 'medium_default_screen_icon', 'themes' ) );
-  } ?>
   <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
   <?php if ( isset( $this->message ) ) {
@@ -783,7 +780,6 @@ if ( ! class_exists( 'mediumPA_List_Table' ) ) {
                 // Wrap the install process with the appropriate HTML.
                 echo '<div class="medium wrap">';
                     if ( version_compare( medium_Plugin_Activation::$instance->wp_version, '3.8', '<' ) ) {
-                        screen_icon( apply_filters( 'medium_default_screen_icon', 'themes' ) );
                     }
                     echo '<h2>' . esc_html( get_admin_page_title() ) . '</h2>';
                     // Process the bulk installation submissions.

@@ -35,17 +35,17 @@ get_header();
                     <div class="blog-left">
                     	<?php                        
                             if(!empty($medium_featured_image[0])) {
-                                echo '<a href="'.get_permalink().'"><img src="'.$medium_featured_image[0].'" class="img-responsive" alt="'.get_the_title().'" /></a>';
+                                echo '<a href="'.esc_url(get_permalink()).'"><img src="'.$medium_featured_image[0].'" class="img-responsive" alt="'.get_the_title().'" /></a>';
 				}
                         ?>
                         <div class="block-content">
-                            <a href="<?php echo get_permalink();?>" class="block-title"><?php echo get_the_title(); ?></a>
+                            <a href="<?php echo esc_url(get_permalink());?>" class="block-title"><?php echo get_the_title(); ?></a>
                             <div class="block-details">
                                 <ul>
                                     <?php medium_entry_meta();?>
                                 </ul>
                             </div>
-                            <a href="<?php echo get_permalink();?>" class="read-more"><?php _e('Read More...','medium'); ?></a>
+                            <a href="<?php echo esc_url(get_permalink());?>" class="read-more"><?php _e('Read More...','medium'); ?></a>
                         </div>    
                     </div>
                 </div>

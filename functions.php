@@ -12,7 +12,7 @@ function medium_setup() {
 	/*
 	 * Make medium theme available for translation.
 	 */
-	load_theme_textdomain( 'medium', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'medium' );
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );	
 	// This theme styles the visual editor to resemble the theme style.
@@ -107,14 +107,14 @@ function medium_font_url() {
 function medium_scripts() {
 	
 	global $medium_options;
-	wp_enqueue_style( 'style-bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );
-	wp_enqueue_style( 'style-font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
+	wp_enqueue_style( 'medium-bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );
+	wp_enqueue_style( 'medium-font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
 	wp_enqueue_style( 'style', get_stylesheet_uri());
 	wp_enqueue_style( 'medium-theme', get_stylesheet_directory_uri().'/css/theme.css' );	
-	wp_enqueue_style( 'style-media', get_stylesheet_directory_uri().'/css/media.css' );        
+	wp_enqueue_style( 'medium-media', get_stylesheet_directory_uri().'/css/media.css' );        
 	
-	wp_enqueue_script( 'script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0' );	
-	wp_enqueue_script( 'default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
+	wp_enqueue_script( 'medium-script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0' );	
+	wp_enqueue_script( 'medium-default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
         
         wp_localize_script( 'default', 'admin_url', admin_url( 'admin-ajax.php'));
         
@@ -125,7 +125,7 @@ function medium_scripts() {
 add_action( 'wp_enqueue_scripts', 'medium_scripts');
 
 /*************** Theme option ***********************/
-require_once('theme-options/fasterthemes.php');
+require get_template_directory() . '/theme-options/fasterthemes.php';
 
 
 function medium_favicon() {
@@ -275,7 +275,7 @@ endif;
 
 
 /*** Custom Header ***/
-require_once('functions/custom-header.php');
+require get_template_directory() . '/functions/custom-header.php';
 
 /*** TGM ***/
-require_once('functions/tgm-plugins.php');
+require get_template_directory() . '/functions/tgm-plugins.php';

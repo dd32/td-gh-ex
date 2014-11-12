@@ -58,9 +58,9 @@
               <?php 
               $medium_options = get_option( 'medium_theme_options' );
               if(empty($medium_options['logo'])) { ?>
-        		<a href="<?php echo site_url(); ?>"><?php echo get_bloginfo('name'); ?></a>
+        		<a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a>
             <?php } else { ?>
-                <a href="<?php echo site_url(); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="" class="logo-center img-responsive" /></a>
+                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="" class="logo-center img-responsive" /></a>
             <?php }
             ?>
            </div>
