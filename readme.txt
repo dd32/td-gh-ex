@@ -60,3 +60,9 @@ Version 1.4
 
 Version 1.4.1
 * Fixed little bug
+
+Version 1.5
+* Fixed Overlay Featured Images
+* Fixed Main Menu effect
+* Added rich snippets on single pages
+* Minor bug fixes

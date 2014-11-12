@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/semplicemente/
-Version: 1.4.1
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -387,7 +387,15 @@ a:active {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.main-navigation ul li:hover > a, .main-navigation li.current-menu-item > a, .main-navigation li.current-menu-parent > a, .main-navigation li.current-page-ancestor > a {
+.main-navigation ul li:hover > a, 
+.main-navigation li.current-menu-item > a, 
+.main-navigation li.current-menu-parent > a, 
+.main-navigation li.current-page-ancestor > a,
+.main-navigation .current_page_item > a, 
+.main-navigation .current_page_parent > a, 
+.main-navigation ul > li:hover .indicator, 
+.main-navigation li.current-menu-parent .indicator, 
+.main-navigation li.current-menu-item .indicator {
 	background: rgba(0,0,0,.03);
 }
 .main-navigation {
@@ -482,7 +490,7 @@ a:active {
 	.main-navigation.toggled .nav-menu {
 		display: block;
 		width: 100%;
-		border-radius: 0px;
+		border-radius: 4px;
 		background: #36c1c8;
 		color: #ffffff;
 		text-align: left;
@@ -755,6 +763,12 @@ footer.entry-footer {
 .entry-featuredImg img {
 	display: block;
 	width:100%;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 }
 span.overlay-img {
 	background:url(./images/goto.png) center center no-repeat black;
@@ -762,10 +776,13 @@ span.overlay-img {
 	position: absolute;
 	width: 100%;
 	z-index: 10;	
-	-webkit-box-shadow: 0px 0px 4px #000;
-	-moz-box-shadow: 0px 0px 4px  #000;
-	box-shadow: 0px 0px 4px  #000; 
 	opacity: 0;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 }
 aside ul {
 	margin: 0;
@@ -841,16 +858,16 @@ h2.site-description {
 }
 .topSearchForm input {
 	width:100%;
-	border: 0;
+	border: 1px solid rgba(0,0,0,.1);
 	border-bottom: 2px solid rgba(0,0,0,.1);
-	border-radius: 0px;
+	border-radius: 4px;
 	outline: none;
 }
 .topSearchForm input[type="submit"] {
 	display: none;
 }
 .topSearchForm input:focus {
-	border: 0px;
+	border: 1px solid rgba(0,0,0,.1);
 	border-bottom: 2px solid rgba(0,0,0,.1);
 }
 .top-search {
@@ -888,8 +905,10 @@ h2.site-description {
 }
 .page-content {
 	background: #ffffff;
-	border-bottom: 3px solid rgba(0,0,0,.1);
 	padding: 1.5em !important;
+	border: 1px solid rgba(0,0,0,.1);
+	border-bottom: 2px solid rgba(0,0,0,.1);
+	border-radius: 4px;
 }
 .taxonomy-description {
 	margin-top: 1.5em;
