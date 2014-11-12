@@ -28,7 +28,7 @@ __MAXFLAT::init();
 /**
  * Sets up theme defaults and registers the various WordPress features
  */
-
+if ( ! function_exists( 'maxflat_setup' ) ) :
 function maxflat_setup(){
      global $content_width;
     /*
@@ -87,7 +87,7 @@ function maxflat_setup(){
         $content_width = 640;
     }
 }
-
+endif;
 add_action('after_setup_theme', 'maxflat_setup');
 
 /**
