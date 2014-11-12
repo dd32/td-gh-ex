@@ -38,3 +38,6 @@ Version 1.0.11
 Version 1.0.12
 1. Nested Author comments turns to white bg. Fixed.
 2. screen_icon() in class-tgm-plugin-activation.php removed.
+
+Version 1.0.13
+1. Support for JigoShop eCommerce Plugin
