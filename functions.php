@@ -12,7 +12,7 @@ function laurels_setup() {
 	/*
 	 * Make laurels theme available for translation.
 	 */
-	load_theme_textdomain( 'laurels', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'laurels' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', laurels_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -145,19 +145,19 @@ function laurels_scripts() {
 add_action( 'wp_enqueue_scripts', 'laurels_scripts' );	
 
 /*** Enqueue css and js files ***/
-require_once('functions/enqueue-files.php');
+require get_template_directory() . '/functions/enqueue-files.php';
 
 /*** Theme Default Setup ***/
-require_once('functions/theme-default-setup.php');
+require get_template_directory() . '/functions/theme-default-setup.php';
 
 /*** Theme Option ***/
-require_once('theme-options/fasterthemes.php');
+require get_template_directory() . '/theme-options/fasterthemes.php';
 
 /*** Breadcrumbs ***/
-require_once('functions/breadcrumbs.php');
+require get_template_directory() . '/functions/breadcrumbs.php';
 
 /************ Widget For Subscribe ***********/
-require_once('functions/recent-post-widget.php');
+require get_template_directory() . '/functions/recent-post-widget.php';
 
 /*** TGM ***/
-require_once('functions/tgm-plugins.php');
+require get_template_directory() . '/functions/tgm-plugins.php';

@@ -28,7 +28,7 @@ get_header();
                             <h3><?php echo get_the_date('M'); ?></h3>
                         </div>
                         <div class="blog-info">
-                            <a href="<?php echo get_permalink(); ?>" class="heading"><?php the_title(); ?></a>
+                            <a href="<?php echo esc_url(get_permalink()); ?>" class="heading"><?php the_title(); ?></a>
                             <ol class="breadcrumb blog-breadcumb">
                                <?php laurels_entry_meta(); ?>   
                             </ol>
@@ -36,7 +36,7 @@ get_header();
                         
                         <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-							<img src="<?php echo $laurels_image; ?>" class="img-responsive" alt="<?php the_title(); ?>"/>
+							<img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>"/>
 						</div>
                     <?php } ?>
                         

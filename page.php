@@ -34,11 +34,15 @@ get_header(); ?>
                         </div>
                         
                         <div class="blog-rightsidebar-img">
-					<?php if(!empty($laurels_image)) { ?><img src="<?php echo $laurels_image; ?>" class="img-responsive" alt="<?php the_title(); ?>" /><?php } ?>
+					<?php if(!empty($laurels_image)) { ?><img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" /><?php } ?>
                     </div>
                         
                         <div class="blog-content">
-                            <p><?php the_content(); ?></p>
+                            <p><?php the_content();
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+										'after' => '</div>',
+									) ); ?></p>
                         </div>
                     </div>
                 </div> 

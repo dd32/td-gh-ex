@@ -62,18 +62,18 @@ echo $before_title . $laurels_title . $after_title;;
 			<div class="media blog-media ">	  
             <?php $laurels_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 			if($laurels_feat_image!="") { ?>
-					<a href="<?php the_permalink();?>" title="Post Page" class="pull-left"> 
-						<img src="<?php echo $laurels_feat_image; ?>" class="media-object" />
+					<a href="<?php echo esc_url(get_permalink());?>" title="Post Page" class="pull-left"> 
+						<img src="<?php echo esc_url($laurels_feat_image); ?>" class="media-object" />
 					</a>
             <?php }else{ ?>
-					<a href="<?php the_permalink();?>" title="Post Page"  class="pull-left"> 
+					<a href="<?php echo esc_url(get_permalink());?>" title="Post Page"  class="pull-left"> 
 						<img src="<?php echo get_template_directory_uri(); ?>/images/img-not-available.jpg" class="media-object" /> 
 					</a>
             <?php } ?>
             
             <div class="media-body">
 					<p class="clearfix">
-						<a class="media-heading" href="<?php the_permalink();?>" title="Post Page">
+						<a class="media-heading" href="<?php echo esc_url(get_permalink());?>" title="Post Page">
 							<?php the_title(); ?>
 						</a>
 					</p>

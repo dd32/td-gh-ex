@@ -16,11 +16,11 @@ function laurels_custom_breadcrumbs() {
 
   if (is_home() || is_front_page()) {
 
-    if ($laurels_showonhome == 1) echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . $laurels_homelink . '">' . $laurels_home . '</a></div>';
+    if ($laurels_showonhome == 1) echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a></div>';
 
   } else {
 
-    echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . $laurels_homelink . '">' . $laurels_home . '</a> ' . $laurels_delimiter . ' ';
+    echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a> ' . $laurels_delimiter . ' ';
 
     if ( is_category() ) {
       $laurels_thisCat = get_category(get_query_var('cat'), false);
@@ -64,7 +64,7 @@ function laurels_custom_breadcrumbs() {
       $laurels_parent = get_post($post->post_parent);
       $laurels_cat = get_the_category($laurels_parent->ID); $laurels_cat = $laurels_cat[0];
       echo get_category_parents($laurels_cat, TRUE, ' ' . $laurels_delimiter . ' ');
-      echo '<a href="' . get_permalink($laurels_parent) . '">' . $laurels_parent->post_title . '</a>';
+      echo '<a href="' . esc_url(get_permalink($laurels_parent)) . '">' . $laurels_parent->post_title . '</a>';
       if ($laurels_showcurrent == 1) echo ' ' . $laurels_delimiter . ' ' . $laurels_before . get_the_title() . $laurels_after;
 
     } elseif ( is_page() && !$post->post_parent ) {
@@ -75,7 +75,7 @@ function laurels_custom_breadcrumbs() {
       $laurels_breadcrumbs = array();
       while ($laurels_parent_id) {
         $laurels_page = get_page($laurels_parent_id);
-        $laurels_breadcrumbs[] = '<a href="' . get_permalink($laurels_page->ID) . '">' . get_the_title($laurels_page->ID) . '</a>';
+        $laurels_breadcrumbs[] = '<a href="' . esc_url(get_permalink($laurels_page->ID)) . '">' . get_the_title($laurels_page->ID) . '</a>';
         $laurels_parent_id  = $laurels_page->post_parent;
       }
       $laurels_breadcrumbs = array_reverse($laurels_breadcrumbs);

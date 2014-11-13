@@ -53,7 +53,7 @@ $laurels_options = get_option( 'laurels_theme_options' );
                    </ul>                       
                 </div>              
                 <div class="col-md-2 col-sm-3  no-padding search-box">       	
-					<form method="get" id="searchform" action="<?php  echo home_url(); ?>/">
+					<form method="get" id="searchform" action="<?php  echo esc_url(home_url()); ?>/">
                 	<input type="text" class="input-medium search-query search-input" name="s" placeholder="Search.." id="s" value="<?php the_search_query(); ?>">
 						<button type="submit" class="add-on" id="searchsubmit">
 							<span class="fa fa-search"></span>
@@ -69,7 +69,7 @@ $laurels_options = get_option( 'laurels_theme_options' );
                 <div class="header_menu">    
                     <div class="col-sm-2 col-md-2 logo-display  no-padding">
 				<?php if(empty($laurels_options['logo'])) { ?>
-					<h1 class="laurels-site-name"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+					<h1 class="laurels-site-name"><a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
 				<?php } else { ?>
 					<a href="<?php echo site_url(); ?>"><img src="<?php echo esc_url($laurels_options['logo']); ?>" alt="Theme Logo" class="img-responsive logo" /></a>
 				<?php } ?> 

@@ -128,7 +128,7 @@ endif;
  
 
 function laurels_read_more() {
-return '<a class="color_txt readmore" href="'. get_permalink() . '" > READ MORE </a>';
+return '<a class="color_txt readmore" href="'. esc_url(get_permalink()) . '" > READ MORE </a>';
  }
 add_filter( 'excerpt_more', 'laurels_read_more' ); 
 

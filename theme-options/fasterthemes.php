@@ -89,6 +89,7 @@ function laurels_framework_page(){
             <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a></li>
             <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-3">Social Settings</a></li>
             <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="Homepage Settings" href="#options-group-2">Home page Settings</a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4">PRO Theme Features</a></li>
   		  </ul>
         </div>
       </div>
@@ -342,11 +343,12 @@ function laurels_framework_page(){
           <!-------------- Social group ----------------->          
           <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Laurels" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/laurels_logopro_features.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Laurels" target="_blank">
+			  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
-          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro_features.png" />
-          </div>   
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/laurels_pro_features.png" />
+          </div> 
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
@@ -362,29 +364,10 @@ function laurels_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2>Options saved successfully.</h2></div>
-<div class="newsletter">    
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <h2>Enter your email to join our mailing list and we'll keep you updated on new themes as they're
-            released and our exclusive special offers.</h2>          
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label>
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-          </div>
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value="">
-          </div>
-          <div class="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup--> 
-    </div>
+<div class="newsletter"> 
+  <!-- Begin MailChimp Signup Form -->
+  <h1>Subscribe with us</h1>
+  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://eepurl.com/SP2nP" target="_blank">Click here to join</a></p>
+  <!--End mc_embed_signup--> 
+</div>
 <?php } ?>

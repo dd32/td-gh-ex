@@ -35,7 +35,7 @@ get_header(); ?>
                         
                         <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-							<img src="<?php echo $laurels_image; ?>" class="img-responsive" alt="<?php the_title(); ?>" />
+							<img src="<?php echo  esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
 						</div>
                         <?php } ?>
                         

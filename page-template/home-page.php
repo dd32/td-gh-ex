@@ -99,7 +99,7 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
                                 <div class="gallery-img-hover">            
                                     <div class="mask"></div>              
                                     <ul>          	
-                                    	<li> <a class="fa fa-search" href="<?php echo get_permalink(); ?>"></a></li>
+                                    	<li> <a class="fa fa-search" href="<?php echo esc_url(get_permalink()); ?>"></a></li>
                                     </ul>                                             
                                 </div>           
                             </div>

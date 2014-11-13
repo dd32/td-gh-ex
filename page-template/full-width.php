@@ -22,7 +22,7 @@ get_header(); ?>
                 <div class="blog">                
                     <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-							<img src="<?php echo $laurels_image; ?>" class="img-responsive" alt="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
 						</div>
                     <?php } ?>
                     <div class="blog-data">
@@ -37,7 +37,11 @@ get_header(); ?>
                             </ol>
                         </div>
                         <div class="blog-content">
-                            <p><?php the_content(); ?></p>
+                            <p><?php the_content(); 
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+										'after' => '</div>',
+									) ); ?></p>
                         </div>
                     </div>
                 </div> 
