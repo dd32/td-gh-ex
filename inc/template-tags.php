@@ -204,6 +204,22 @@ function simone_social_menu() {
 }
 
 
+/**
+ * Capture the custom background color and pass it to the background of featured images on single pages
+ */
+
+function simone_background_style() {
+    if ( is_single() && has_post_thumbnail() ) {
+        $background_color = get_background_color();
+        
+        echo '<style type="text/css">';
+        echo '.single-post-thumbnail { background-color: #' . $background_color . '; }';
+        echo '</style>';
+        
+    }
+}
+add_action('wp_head', 'simone_background_style');
+
 if ( ! function_exists( 'simone_the_attached_image' ) ) :
 /**
  * Print the attached image with a link to the next attached image.
@@ -278,11 +294,11 @@ function simone_the_responsive_thumbnail($post_id) {
     
     echo '<picture>';
     echo '<!--[if IE 9]><video style="display: none;"><![endif]-->';
-    echo '<source srcset="' . $thumb_data['thumb_large'] . ', ' . $thumb_data['thumb_original'] . ' x2" media="(min-width: 800px)">';
-    echo '<source srcset="' . $thumb_data['thumb_medium'] . ', ' . $thumb_data['thumb_large'] . ' x2" media="(min-width: 400px)">'; 
-    echo '<source srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' x2">'; 
+    echo '<source srcset="' . $thumb_data['thumb_large'] . ', ' . $thumb_data['thumb_original'] . ' 2x" media="(min-width: 800px)">';
+    echo '<source srcset="' . $thumb_data['thumb_medium'] . ', ' . $thumb_data['thumb_large'] . ' 2x" media="(min-width: 400px)">'; 
+    echo '<source srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' 2x">'; 
     echo '<!--[if IE 9]></video><![endif]-->';
-    echo '<img srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' x2" alt="' . $thumb_data['thumb_alt'] . '">';
+    echo '<img srcset="' . $thumb_data['thumb_small'] . ', ' . $thumb_data['thumb_medium'] . ' 2x" alt="' . $thumb_data['thumb_alt'] . '">';
     echo '</picture>';
 }
 
