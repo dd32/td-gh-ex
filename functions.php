@@ -4,9 +4,6 @@
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
 
-/* Do theme setup on the 'after_setup_theme' hook. */
-add_action( 'after_setup_theme', 'ct_tracks_theme_setup', 10 );
-
 function ct_tracks_theme_setup() {
 	
     /* Get action/filter hook prefix. */
@@ -51,7 +48,6 @@ function ct_tracks_theme_setup() {
 		define( 'BOLD_TEMPLATE_ACTIVE', true );
 		define( 'TEMPLATE_ACTIVE', true );
 	}
-
 	// include Bold Template files
 	if( defined( 'BOLD_TEMPLATE_ACTIVE' ) ) {
 		include get_template_directory() . '/licenses/templates/bold/meta-boxes.php';
@@ -65,6 +61,15 @@ function ct_tracks_theme_setup() {
 	// load text domain
 	load_theme_textdomain('tracks', get_template_directory() . '/languages');
 }
+add_action( 'after_setup_theme', 'ct_tracks_theme_setup', 10 );
+
+function ct_tracks_remove_cleaner_gallery() {
+
+	if( class_exists( 'Jetpack' ) && ( Jetpack::is_module_active( 'carousel' ) || Jetpack::is_module_active( 'tiled-gallery' ) ) ) {
+		remove_theme_support( 'cleaner-gallery' );
+	}
+}
+add_action( 'after_setup_theme', 'ct_tracks_remove_cleaner_gallery', 11 );
 
 function ct_tracks_register_widget_areas(){
 
@@ -81,6 +86,15 @@ function ct_tracks_register_widget_areas(){
         'id'           => 'after-page-content',
         'description'  => __( 'Widgets in this area will be shown after page content', 'tracks' )
     ) );
+
+	/* register footer widget area */
+	hybrid_register_sidebar( array(
+		'name'         => __( 'Footer', 'tracks' ),
+		'id'           => 'footer',
+		'description'  => __( 'Widgets in this area will be shown in the footer', 'tracks' ),
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
+	) );
 }
 add_action('widgets_init','ct_tracks_register_widget_areas');
 
@@ -270,7 +284,7 @@ function ct_tracks_featured_image() {
 
     if (has_post_thumbnail( $post->ID ) ) {
 
-        if( is_archive() || is_home() && $premium_layout != 'full-width' ) {
+        if( ( is_archive() || is_home() ) && $premium_layout != 'full-width' && $premium_layout != 'full-width-images' ) {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
         } else {
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
@@ -281,16 +295,8 @@ function ct_tracks_featured_image() {
     if ($has_image == true) {
 
         // for layouts using img
-        if($premium_layout == 'two-column-images' || ($premium_layout == 'full-width-images' && get_theme_mod('premium_layouts_full_width_image_height') == 'image')){
-
-            // if it's an archive page and the two-column-images layout, switch to a potentially smaller version
-            if(is_archive() || is_home() && $premium_layout == 'two-column-images'){
-                $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-                $image = $image[0];
-            }
-            ?>
-             <img class="featured-image" src='<?php echo $image; ?>' />
-            <?php
+        if($premium_layout == 'two-column-images' || ( $premium_layout == 'full-width-images' && get_theme_mod('premium_layouts_full_width_image_height') == 'image') ){ ?>
+             <img class="featured-image" src='<?php echo $image; ?>' /><?php
         }
         // otherwise, output the src as a bg image
         else {
@@ -392,6 +398,12 @@ function ct_tracks_post_class_update($classes){
                 $classes[] = 'excerpt';
             }
         }
+
+	    // add image zoom class
+	    $setting = get_theme_mod('additional_options_image_zoom_settings');
+	    if( $setting != 'no-zoom' ) {
+		    $classes[] = 'zoom';
+	    }
     }
 	// add class for posts with Featured Videos
 	if( get_post_meta( $post->ID, 'ct_tracks_video_key', true ) ) {
@@ -436,23 +448,6 @@ function ct_tracks_odd_even_post_class( $classes ) {
     return $classes;
 }
 add_filter ( 'post_class' , 'ct_tracks_odd_even_post_class' );
-
-/* css output for hiding the scroll to top link */
-function ct_tracks_image_zoom_settings_output(){
-
-    $setting = get_theme_mod('additional_options_image_zoom_settings');
-
-    /* if 'hide' is selected, hide it */
-    if($setting == 'no-zoom') {
-        $css = "
-            .featured-image-link:hover .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
-            .featured-image-link:active .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
-            .featured-image-link:focus .featured-image { -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none;}
-        ";
-        wp_add_inline_style('style', $css);
-    }
-}
-add_action('wp_enqueue_scripts','ct_tracks_image_zoom_settings_output');
 
 // array of social media site names
 function ct_tracks_social_site_list(){
@@ -677,3 +672,12 @@ function ct_tracks_remove_page_templates( $templates ) {
 	return $templates;
 }
 add_filter( 'theme_page_templates', 'ct_tracks_remove_page_templates' );
+
+function ct_tracks_wp_backwards_compatibility() {
+
+	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
+	if( get_bloginfo('version') < 3.9 ) {
+		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
+	}
+}
+add_action('init', 'ct_tracks_wp_backwards_compatibility');

@@ -3,9 +3,9 @@ Theme Name: Tracks
 Theme URI: http://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: http://www.competethemes.com/
-Description: A bold & beautiful blog theme. Great for personal blogs, magazines, and photography websites. See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
-Version: 1.30.3
-Tags: black, gray, silver, white, dark, one-column, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: http://www.competethemes.com/tracks-live-demo/
+Version: 1.31
+Tags: black, gray, silver, white, dark, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -761,11 +761,11 @@ a img {
           transition: transform 0.3s ease;
 }
 
-.featured-image-link {
+.zoom .featured-image-link {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.featured-image-link:hover .featured-image, .featured-image-link:active .featured-image, .featured-image-link:focus .featured-image {
+.zoom .featured-image-link:hover .featured-image, .zoom .featured-image-link:active .featured-image, .zoom .featured-image-link:focus .featured-image {
   -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
           transform: scale(1.05);
@@ -849,13 +849,12 @@ a img {
   right: 0;
   margin: 0 auto;
   -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+          transition: all 0.2s ease;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .loop-pagination {
@@ -919,35 +918,28 @@ a img {
     opacity: 0.8;
     -webkit-transition: opacity 0.2s ease;
             transition: opacity 0.2s ease;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
   }
   .excerpt .featured-image {
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
     /* fixes FF glitch where image focuses & unfocuses */
     width: 50%;
+    width: calc(50% + 2px);
     height: 100%;
     padding-bottom: 0;
     position: absolute;
-    right: 0;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    right: -1px;
   }
   .excerpt:hover {
     opacity: 1;
-  }
-
-  .excerpt.odd .excerpt-container {
-    width: calc(50% + 1px);
   }
 
   .excerpt.even .excerpt-container {
     float: right;
   }
   .excerpt.even .featured-image {
-    right: 50%;
-    right: calc(50% - 1px);
+    right: auto;
+    left: -1px;
   }
   .excerpt.even:after {
     content: ".";
@@ -987,6 +979,12 @@ a img {
 
 .entry-content {
   margin: 3em 0;
+}
+.entry-content img.full-width {
+  position: relative;
+  max-width: none;
+  width: 113%;
+  left: -6.5%;
 }
 
 .further-reading span,
@@ -1117,6 +1115,11 @@ a img {
     padding-left: 5.55%;
     padding-right: 5.55%;
   }
+
+  .entry-content img.full-width {
+    width: 128.6%;
+    left: -14.3%;
+  }
 }
 /* 900px */
 @media all and (min-width: 56.25em) {
@@ -1163,6 +1166,10 @@ a img {
     line-height: 0;
     height: 0;
   }
+  .entry-content img.full-width {
+    width: 150%;
+    left: -25%;
+  }
 }
 /* 1100px */
 @media all and (min-width: 68.75em) {
@@ -1175,6 +1182,11 @@ a img {
   .entry-container {
     padding: 0 19.435%;
     position: relative;
+  }
+
+  .entry-content img.full-width {
+    width: 163.6%;
+    left: -31.8%;
   }
 
   .entry-meta-bottom.float .entry-tags,
@@ -1199,6 +1211,11 @@ a img {
 @media all and (min-width: 75em) {
   .entry-container {
     padding: 0 22.22%;
+  }
+
+  .entry-content img.full-width {
+    width: 179.9%;
+    left: -39.95%;
   }
 }
 .comments {
@@ -1422,17 +1439,35 @@ li.pingback:after {
   opacity: 0.4;
 }
 
+.sidebar-footer {
+  background: #1a1a1a;
+  margin-bottom: -48px;
+  padding: 1.5em 5.55%;
+}
+.sidebar-footer .widget {
+  margin: 3em 0;
+}
+.sidebar-footer .widget:first-child {
+  margin-top: 1.5em;
+}
+.sidebar-footer .widget a:hover, .sidebar-footer .widget a:active, .sidebar-footer .widget a:focus {
+  color: #ededed;
+}
+.sidebar-footer .widget-title {
+  margin-bottom: 12px;
+}
+
 .design-credit {
   background: #111111;
-  color: #4d4d4d;
+  color: #8c8c8c;
   padding: 0.75em 0;
-  margin-top: 4.5em;
+  margin-top: 48px;
 }
 .design-credit a {
-  color: #4d4d4d;
+  color: #8c8c8c;
 }
 .design-credit a:link, .design-credit a:visited {
-  color: #4d4d4d;
+  color: #8c8c8c;
 }
 .design-credit a:hover, .design-credit a:active, .design-credit a:focus {
   color: #aaaaaa;
@@ -1482,8 +1517,34 @@ li.pingback:after {
     top: -6px;
   }
 
+  .sidebar-footer {
+    margin-bottom: -72px;
+  }
+
   .design-credit {
-    margin-top: 6em;
+    margin-top: 72px;
+  }
+}
+/* 700px */
+@media all and (min-width: 43.75em) {
+  .sidebar-footer {
+    margin-top: 3em;
+  }
+  .sidebar-footer:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  .sidebar-footer:not(.active-1) .widget {
+    width: 47%;
+    float: left;
+  }
+  .sidebar-footer:not(.active-1) .widget:nth-child(odd) {
+    margin-right: 3%;
   }
 }
 /* 900px */
@@ -1491,6 +1552,20 @@ li.pingback:after {
   .site-footer h3 {
     font-size: 2.625em;
     line-height: 1.143;
+  }
+}
+/* 1000px */
+@media all and (min-width: 62.5em) {
+  .sidebar-footer:not(.active-1):not(.active-2) .widget {
+    width: 31%;
+    margin-right: 0;
+    margin-top: 1.5em;
+  }
+  .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n - 2), .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n - 1) {
+    margin-right: 3%;
+  }
+  .sidebar-footer:not(.active-1):not(.active-2) .widget:nth-child(3n + 4) {
+    clear: left;
   }
 }
 /* page */
@@ -1522,7 +1597,7 @@ li.pingback:after {
 }
 
 .archive-header {
-  padding: 1.5em 5.55%;
+  padding: 1.5em 0;
   text-transform: uppercase;
   color: #8c8c8c;
 }
@@ -1547,10 +1622,6 @@ li.pingback:after {
 @media all and (min-width: 37.5em) {
   .search .excerpt {
     background: white;
-  }
-
-  .archive-header {
-    padding-left: 0;
   }
 }
 /* 900px */
