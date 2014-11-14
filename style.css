@@ -5,7 +5,7 @@ Description: Derived from WordPress 2014 official theme, fine-tuned for mobile d
 Author: Kuo-Cheng Yeu
 Author URI: http://mikuru.tw/
 Template: twentyfourteen
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
@@ -66,7 +66,6 @@ Text Domain: twentyfourteen-child
 }
 
 .slider-control-paging {
-	//background-color: #0a4958;  /* hard-code hack */
 	background-color: transparent;
     margin: -48px 0 0 0;
 }
@@ -78,7 +77,6 @@ Text Domain: twentyfourteen-child
 @media screen and (max-width: 400px) {
     .grid .featured-content .entry-header,
     .ie8 .grid .featured-content .entry-header {
-    //    position: relative;
     }
 
     .slider .featured-content .entry-header,
@@ -105,7 +103,6 @@ Text Domain: twentyfourteen-child
 @media screen and (min-width: 401px) {
     .grid .featured-content .entry-header,
     .ie8 .grid .featured-content .entry-header {
-    //    position: relative;
     }
 
     .slider .featured-content .entry-header,

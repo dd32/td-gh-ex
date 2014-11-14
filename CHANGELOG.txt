@@ -1,0 +1,9 @@
+Version 1.0.2
+ * Added README.txt and CHANGELOG.txt
+ * Rebuilt screenshot with native color scheme.
+
+Version 1.0.1
+ * Updated screenshot by using CC0 images.
+
+Version 1.0.0
+ * Debut.
