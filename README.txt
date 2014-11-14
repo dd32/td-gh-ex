@@ -37,6 +37,7 @@ License: MIT License
 http://fontawesome.io/license/
 
 * Photos in the screenshot are from unsplash.com and licensed Creative Commons 0 (CC0)
+* Photos in the demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
 Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 https://unsplash.com/license
 
@@ -47,18 +48,31 @@ https://unsplash.com/license
 3. Click Activate to use your new theme right away.
 
 
-Electa's Settings:
+Electa's Customizer Settings:
 ---------------
-This theme is built around Kaira's own settings framework contained in the folder /settings/. All code is licensed under GPL 2.0 and copyright Kaira unless otherwise specified.
+The theme settings are built into the WordPress Customizer using "Customizer Library" by Devin Price, situated in /customizer/.
+license: GPL 2.0+
+https://github.com/devinsays/customizer-library/blob/master/composer.json
+
+The Electa Premium upgrade situated in /upgrade/ displays the features that the premium version includes.
+Electa Premium version is licensed under GPL 2.0+
 
 All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
-View the settings under Appearance -> ELECTA Settings.
+View the theme settings under "Appearance" -> Customize.
 
 = Quick Specs (all measurements in pixels) =
 
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+
+#### 10.1.1
+* Changed settings to use "Customizer Library" by Devin Price.
+* Removed old settings.
+* Added a page under "Appearance" linking to Kaira website.
+* Added sanitization to the widgets - Electa Carousel & Electa Icon.
+* Added an upgrade to premium page under Appearance.
 
 
 * Initial release.

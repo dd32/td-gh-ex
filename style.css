@@ -4,7 +4,7 @@ Theme URI:
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, Site Origin's Page Builder and more, making it very simple to build a nice website.
-Version: 1.1.3
+Version: 1.1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -118,7 +118,7 @@ q:after {
 blockquote,
 q {
 	quotes: "" "";
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 a:focus {
@@ -596,7 +596,7 @@ a:active {
     font-size: 13px;
 }
 .main-navigation a:hover {
-    background-color: #ddd;
+    background-color: #f6f6f6;
     color: #111 !important;
 }
 
@@ -718,7 +718,7 @@ a:active {
     box-shadow: -1px 0 8px rgba(0, 0, 0, 0.3);
     background-color: #FFF;
     width: 280px;
-    height: 100%;
+    position: relative;
     padding: 10px 0 50px;
 }
 .site-branding {
@@ -1074,21 +1074,9 @@ header:hover .search-button {
     opacity: 1;
 }
 
-.home-loop-columns-two .electa-blocks-post {
-    width: 50%;
-}
-.home-loop-columns-three .electa-blocks-post {
-    width: 33.333%;
-}
 .home-loop-columns-four .electa-blocks-post {
     width: 25%;
     background-position: center center;
-}
-.home-loop-columns-five .electa-blocks-post {
-    width: 20%;
-}
-.home-loop-columns-six .electa-blocks-post {
-    width: 16%;
 }
 
 /* -------- Blog Standard Layout -------- */

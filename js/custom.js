@@ -19,9 +19,6 @@
     });
     
     $(window).resize(function () {
-        // Set the header height to the window height
-        $(".site-header-stuck").height( $( window ).height() );
-        $(".site-content").width( $( window ).width() - 280 );
         
         
     }).resize();

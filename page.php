@@ -12,15 +12,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_front_page() ) && ( kaira_theme_option( 'kra-home-blocks-enable' ) == 1 ) ) ? ' content-area-full' : ''; ?>">
+	<div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ? ' content-area-full' : ''; ?>">
 		<main id="main" class="site-main" role="main">
             
-            <?php if ( ( is_front_page() ) && ( kaira_theme_option( 'kra-home-blocks-enable' ) == 1 ) ) : ?>
+            <?php if ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) : ?>
             
                 <?php
                 $home_cats_set = '';
-                if ( kaira_theme_option( 'kra-home-blocks-categories' ) ) {
-                    $home_cats_set = 'cat=' . kaira_theme_option( 'kra-home-blocks-categories' ) . '';
+                if ( get_theme_mod( 'kra-home-cats', false ) ) {
+                    $home_cats_set = 'cat=' . get_theme_mod( 'kra-home-cats' ) . '';
                 } else {
                     $home_cats_set = 'post_type=post';
                 }
@@ -69,7 +69,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
     
-    <?php if ( ( is_front_page() ) && ( kaira_theme_option( 'kra-home-blocks-enable' ) == 1 ) ) : ?>
+    <?php if ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) : ?>
     
         <!-- Do Nothing -->
     

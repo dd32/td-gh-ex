@@ -3,44 +3,29 @@
  * Displays an Electa Icon
  ****************************************************************************************************** */
 class electa_icon extends WP_Widget {
-	function __construct() {
-		parent::__construct(
-			'electa_icon',
-			__( 'Electa Icon', 'electa' ),
-			array(
-				'description' => __( 'Displays a Font Awesome Icon of your choice.', 'electa' ),
-			)
-		);
-	}
-
-	function widget( $args, $instance ) {
-		if ( empty( $instance['icon_name'] ) ) return;
+    /**
+     * Sets up the widgets name etc
+     */
+    function __construct() {
+        parent::__construct(
+            'electa_icon',
+            __( 'Electa Icon', 'electa' ),
+            array(
+                'description' => __( 'Displays a Font Awesome Icon of your choice.', 'electa' ),
+            )
+        );
+    }
+    
+    /**
+     * Outputs the content of the widget
+     *
+     * @param array $args
+     * @param array $instance
+     */
+    function widget( $args, $instance ) {
         
-        $icon_link = '';
-        if ( $instance['icon_link'] ) :
-            $icon_link = ' href="' . esc_url( $instance['icon_link'] ) . '"';
-        endif;
-		
-		$output = '';
-		$output .= $args['before_widget'];
-		$output .= $args['before_title'];
-		
-		$output .= '<div class="electa-icon electa-icon-size-' . esc_attr( $instance['icon_size'] ) . ' electa-icon-style-' . esc_attr( $instance['icon_style'] ) . ' electa-icon-align-' . esc_attr( $instance['icon_align'] ) . '">';
-            $output .= '<a' . esc_url( $icon_link ) . ' class="electa-icon-inner" target="' . esc_attr( $instance['icon_link_target'] ) . '" style="background-color: ' . esc_attr( $instance['icon_bg_color'] ) . '; color: ' . esc_attr( $instance['icon_color'] ) . '; font-size: ' . esc_attr( $instance['icon_size'] ) . 'px;">';
-		
-			    $output .= '<i class="fa ' . esc_attr( $instance['icon_name'] ) . '"></i>';
-                
-            $output .= '</a>';
-		$output .= '</div>';
-		$output .= $args['after_title'];
-		$output .= $args['after_widget'];
-		
-		echo $output;
-	}
-
-	function form( $instance ) {
-		$instance = wp_parse_args( $instance, array(
-			'icon_name' => 'fa-home',
+        $instance = wp_parse_args( $instance, array(
+            'icon_name' => 'fa-home',
             'icon_bg_color' => 'transparent',
             'icon_color' => '#000000',
             'icon_size' => '20',
@@ -48,12 +33,53 @@ class electa_icon extends WP_Widget {
             'icon_align' => 'center',
             'icon_link' => '',
             'icon_link_target' => '_self',
-		) ); ?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php echo __( 'Icon Name', 'electa' ) ?></label>
-			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
+        ) );
+        
+        if ( empty( $instance['icon_name'] ) ) return;
+        
+        $icon_link = '';
+        if ( $instance['icon_link'] ) :
+            $icon_link = ' href="' . esc_url( $instance['icon_link'] ) . '"';
+        endif;
+        
+        $output = '';
+        $output .= $args['before_widget'];
+        $output .= $args['before_title'];
+        
+        $output .= '<div class="electa-icon electa-icon-size-' . esc_attr( $instance['icon_size'] ) . ' electa-icon-style-' . esc_attr( $instance['icon_style'] ) . ' electa-icon-align-' . esc_attr( $instance['icon_align'] ) . '">';
+            $output .= '<a' . $icon_link . ' class="electa-icon-inner" target="' . esc_attr( $instance['icon_link_target'] ) . '" style="background-color: ' . esc_attr( $instance['icon_bg_color'] ) . '; color: ' . esc_attr( $instance['icon_color'] ) . '; font-size: ' . esc_attr( $instance['icon_size'] ) . 'px;">';
+        
+                $output .= '<i class="fa ' . esc_attr( $instance['icon_name'] ) . '"></i>';
+                
+            $output .= '</a>';
+        $output .= '</div>';
+        $output .= $args['after_title'];
+        $output .= $args['after_widget'];
+        
+        echo $output;
+    }
+    
+    /**
+     * Outputs the options form on admin
+     *
+     * @param array $instance The widget options
+     */
+    function form( $instance ) {
+        $instance = wp_parse_args( $instance, array(
+            'icon_name' => 'fa-home',
+            'icon_bg_color' => 'transparent',
+            'icon_color' => '#000000',
+            'icon_size' => '20',
+            'icon_style' => 'round',
+            'icon_align' => 'center',
+            'icon_link' => '',
+            'icon_link_target' => '_self',
+        ) ); ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'icon_name' ) ?>"><?php echo __( 'Icon Name', 'electa' ) ?></label>
+            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_name' ) ?>" id="<?php echo $this->get_field_id( 'icon_name' ) ?>" value="<?php echo esc_attr( $instance['icon_name'] ) ?>" />
             <span class="widgets-desc"><?php echo __( 'Select the icon from <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_blank">Font Awesome</a>, select the text name and add it here. Eg: "fa-glass".', 'electa' ) ?></span>
-		</p>
+        </p>
         
         <p>
             <label for="<?php echo $this->get_field_id( 'icon_bg_color' ) ?>"><?php echo __( 'Icon Background Color', 'electa' ) ?></label>
@@ -66,37 +92,37 @@ class electa_icon extends WP_Widget {
             <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'icon_color' ) ?>" id="<?php echo $this->get_field_id( 'icon_color' ) ?>" value="<?php echo esc_attr( $instance['icon_color'] ) ?>" />
             <span class="widgets-desc"><?php echo __( 'Enter the hash value for the color of the icon. Eg: "#000000" (Include the "#"")', 'electa' ) ?></span>
         </p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php echo __( 'Icon Size', 'electa' ) ?></label>
-			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_size' ) ?>" id="<?php echo $this->get_field_id( 'icon_size' ) ?>">
-				<option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'electa' ) ?></option>
-				<option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'electa' ) ?></option>
+        
+        <p>
+            <label for="<?php echo $this->get_field_id( 'icon_size' ) ?>"><?php echo __( 'Icon Size', 'electa' ) ?></label>
+            <select class="widefat" name="<?php echo $this->get_field_name( 'icon_size' ) ?>" id="<?php echo $this->get_field_id( 'icon_size' ) ?>">
+                <option value="18" <?php selected( $instance['icon_size'], '18' ) ?>><?php esc_html_e( '18px', 'electa' ) ?></option>
+                <option value="26" <?php selected( $instance['icon_size'], '26' ) ?>><?php esc_html_e( '26px', 'electa' ) ?></option>
                 <option value="34" <?php selected( $instance['icon_size'], '34' ) ?>><?php esc_html_e( '34px', 'electa' ) ?></option>
                 <option value="48" <?php selected( $instance['icon_size'], '48' ) ?>><?php esc_html_e( '48px', 'electa' ) ?></option>
                 <option value="66" <?php selected( $instance['icon_size'], '66' ) ?>><?php esc_html_e( '66px', 'electa' ) ?></option>
                 <option value="86" <?php selected( $instance['icon_size'], '86' ) ?>><?php esc_html_e( '86px', 'electa' ) ?></option>
                 <option value="100" <?php selected( $instance['icon_size'], '100' ) ?>><?php esc_html_e( '100px', 'electa' ) ?></option>
-			</select>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php echo __( 'Icon Style', 'electa' ) ?></label>
-			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_style' ) ?>" id="<?php echo $this->get_field_id( 'icon_style' ) ?>">
+            </select>
+        </p>
+        
+        <p>
+            <label for="<?php echo $this->get_field_id( 'icon_style' ) ?>"><?php echo __( 'Icon Style', 'electa' ) ?></label>
+            <select class="widefat" name="<?php echo $this->get_field_name( 'icon_style' ) ?>" id="<?php echo $this->get_field_id( 'icon_style' ) ?>">
                 <option value="none" <?php selected( $instance['icon_style'], 'none' ) ?>><?php esc_html_e( 'None', 'electa' ) ?></option>
-				<option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'electa' ) ?></option>
-				<option value="square" <?php selected( $instance['icon_style'], 'square' ) ?>><?php esc_html_e( 'Square', 'electa' ) ?></option>
-			</select>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php echo __( 'Icon Alignment', 'electa' ) ?></label>
-			<select class="widefat" name="<?php echo $this->get_field_name( 'icon_align' ) ?>" id="<?php echo $this->get_field_id( 'icon_align' ) ?>">
-				<option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'electa' ) ?></option>
-				<option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'electa' ) ?></option>
-				<option value="right" <?php selected( $instance['icon_align'], 'right' ) ?>><?php esc_html_e( 'Right', 'electa' ) ?></option>
-			</select>
-		</p>
+                <option value="round" <?php selected( $instance['icon_style'], 'round' ) ?>><?php esc_html_e( 'Round', 'electa' ) ?></option>
+                <option value="square" <?php selected( $instance['icon_style'], 'square' ) ?>><?php esc_html_e( 'Square', 'electa' ) ?></option>
+            </select>
+        </p>
+        
+        <p>
+            <label for="<?php echo $this->get_field_id( 'icon_align' ) ?>"><?php echo __( 'Icon Alignment', 'electa' ) ?></label>
+            <select class="widefat" name="<?php echo $this->get_field_name( 'icon_align' ) ?>" id="<?php echo $this->get_field_id( 'icon_align' ) ?>">
+                <option value="left" <?php selected( $instance['icon_align'], 'left' ) ?>><?php esc_html_e( 'Left', 'electa' ) ?></option>
+                <option value="center" <?php selected( $instance['icon_align'], 'center' ) ?>><?php esc_html_e( 'Center', 'electa' ) ?></option>
+                <option value="right" <?php selected( $instance['icon_align'], 'right' ) ?>><?php esc_html_e( 'Right', 'electa' ) ?></option>
+            </select>
+        </p>
         
         <p>
             <label for="<?php echo $this->get_field_id( 'icon_link' ) ?>"><?php echo __( 'Icon Link', 'electa' ) ?></label>
@@ -111,6 +137,27 @@ class electa_icon extends WP_Widget {
                 <option value="_blank" <?php selected( $instance['icon_link_target'], '_blank' ) ?>><?php esc_html_e( 'Open in a new tab', 'electa' ) ?></option>
             </select>
         </p>
-	<?php
-	}
+    <?php
+    }
+    
+    /**
+     * Processing widget options on save
+     *
+     * @param array $new_instance The new options
+     * @param array $old_instance The previous options
+     */
+    function update( $new_instance, $old_instance ) {
+        $instance = $old_instance;
+        
+        $instance['icon_name'] = sanitize_text_field( $new_instance['icon_name'] );
+        $instance['icon_bg_color'] = strip_tags( $new_instance['icon_bg_color'] );
+        $instance['icon_color'] = strip_tags( $new_instance['icon_color'] );
+        $instance['icon_size'] = strip_tags( $new_instance['icon_size'] );
+        $instance['icon_style'] = sanitize_html_class( $new_instance['icon_style'] );
+        $instance['icon_align'] = sanitize_html_class( $new_instance['icon_align'] );
+        $instance['icon_link'] = strip_tags( $new_instance['icon_link'] );
+        $instance['icon_link_target'] = strip_tags( $new_instance['icon_link_target'] );
+        
+        return $instance;
+    }
 } ?>
