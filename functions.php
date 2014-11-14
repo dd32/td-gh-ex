@@ -44,7 +44,7 @@ function interface_constants() {
 	define( 'INTERFACE_JS_DIR', INTERFACE_PARENT_DIR . '/js' );
 	define( 'INTERFACE_CSS_DIR', INTERFACE_PARENT_DIR . '/css' );	
 	define( 'INTERFACE_FUNCTIONS_DIR', INTERFACE_INC_DIR . '/functions' );
-	define( 'INTERFACE_SHORTCODES_DIR', INTERFACE_INC_DIR . '/shortcodes' );
+	define( 'INTERFACE_SHORTCODES_DIR', INTERFACE_INC_DIR . '/footer_info' );
 	define( 'INTERFACE_STRUCTURE_DIR', INTERFACE_INC_DIR . '/structure' );
 	if ( ! defined( 'INTERFACE_LANGUAGES_DIR' ) ) /** So we can define with a child theme */
 		define( 'INTERFACE_LANGUAGES_DIR', INTERFACE_PARENT_DIR . '/languages' );
@@ -62,7 +62,7 @@ function interface_constants() {
 	define( 'INTERFACE_JS_URL', INTERFACE_PARENT_URL . '/js' );
 	define( 'INTERFACE_CSS_URL', INTERFACE_PARENT_URL . '/css' );
 	define( 'INTERFACE_FUNCTIONS_URL', INTERFACE_INC_URL . '/functions' );
-	define( 'INTERFACE_SHORTCODES_URL', INTERFACE_INC_URL . '/shortcodes' );
+	define( 'INTERFACE_SHORTCODES_URL', INTERFACE_INC_URL . '/footer_info' );
 	define( 'INTERFACE_STRUCTURE_URL', INTERFACE_INC_URL . '/structure' );
 	if ( ! defined( 'INTERFACE_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
 		define( 'INTERFACE_LANGUAGES_URL', INTERFACE_PARENT_URL . '/languages' );
@@ -95,7 +95,7 @@ function interface_load_files() {
 	
 
 	/** Load Shortcodes */
-	require_once( INTERFACE_SHORTCODES_DIR . '/interface-shortcodes.php' );
+	require_once( INTERFACE_SHORTCODES_DIR . '/interface-footer_info.php' );
 
 	/** Load Structure */
 	require_once( INTERFACE_STRUCTURE_DIR . '/header-extensions.php' );

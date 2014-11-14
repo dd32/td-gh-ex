@@ -222,7 +222,7 @@ function interface_headercontent_details() {
 											<ul>';
 		if ( !empty($options['social_phone'] )){ 
 		
-		$interface_footer_infoblog .= '<li class=' .'"phone-number"'. '><a title='.__( '" Call Us "').' '. 'href=' .'"tel:' ;
+		$interface_footer_infoblog .= '<li class=' .'"phone-number"'. '><a title='.__( '" Call Us "', 'interface' ).' '. 'href=' .'"tel:' ;
 		$interface_footer_infoblog .=  preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]) ; 
 		
 		$interface_footer_infoblog .= '">';
@@ -232,7 +232,7 @@ function interface_headercontent_details() {
 				} if (!empty($options['social_email'] )){ 
 		
 		
-		$interface_footer_infoblog .='<li class=' .'"email"'. '><a title=' .__('" Mail Us "'). ' ' . 'href=' .'"mailto:';
+		$interface_footer_infoblog .='<li class=' .'"email"'. '><a title=' .__( '" Mail Us "', 'interface' ). ' ' . 'href=' .'"mailto:';
 		$interface_footer_infoblog .=  is_email($options[ 'social_email'] );
 		$interface_footer_infoblog .='">';
 		$interface_footer_infoblog .=  is_email($options[ 'social_email'] ); 
@@ -421,7 +421,13 @@ if (1 != $options['disable_top']) {
 		    		if( function_exists( 'interface_breadcrumb' ) )
 						interface_breadcrumb();
 					?>
+				<?php if( is_page() ) {
+		if( is_page_template('page-templates/page-template-blog-full-content.php') || is_page_template('page-templates/page-template-blog-image-large.php') || is_page_template('page-templates/page-template-blog-image-medium.php') || is_page_template('page-templates/page-template-business.php') || is_page_template('page-templates/page-template-contact.php' )) { ?>
     <h1 class="page-title"><?php echo interface_header_title(); ?></h1>
+    <?php }else { ?>
+	<h1 class="page-title" id="entry-title"><?php echo interface_header_title(); ?></h1>
+    <?php }
+    } ?>
     <!-- .page-title --> 
   </div>
 </div>

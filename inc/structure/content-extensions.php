@@ -142,11 +142,11 @@ function interface_theloop_for_archive() {
       <!-- .entry-title -->
        <?php if (get_the_author() !=''){?>
       <div class="entry-meta clearfix">
-        <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" 
+        <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" 
                         title="<?php  esc_attr(the_author()); ?>">
           <?php the_author(); ?>
-          </a></div>
-        <div class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
+          </a></span></div>
+        <div class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
           <?php the_time( get_option( 'date_format' ) ); ?>
           </a></div>
         <?php if ( comments_open() ) { ?>
@@ -302,10 +302,10 @@ function interface_theloop_for_single() {
       </h1>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
-        <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
+        <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
           <?php the_author(); ?>
-          </a></div>
-        <div class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
+          </a></span></div>
+        <div class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
           <?php the_time( get_option( 'date_format' ) ); ?>
           </a></div>
         <?php if ( comments_open() ) { ?>
@@ -481,10 +481,10 @@ function interface_theloop_for_template_blog_image_large() {
         </a> </h1>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
-        <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
+        <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
           <?php the_author(); ?>
-          </a></div>
-        <div class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
+          </a></span></div>
+        <div class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
           <?php the_time( get_option( 'date_format' ) ); ?>
           </a></div>
         <?php if ( comments_open() ) { ?>
@@ -595,10 +595,10 @@ function interface_theloop_for_template_blog_image_medium() {
         </a> </h1>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
-        <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php  esc_attr(the_author()); ?>">
+        <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php  esc_attr(the_author()); ?>">
           <?php the_author(); ?>
-          </a></div>
-        <div class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
+          </a></span></div>
+        <div class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
           <?php the_time( get_option( 'date_format' ) ); ?>
           </a></div>
         <?php if ( comments_open() ) { ?>
@@ -720,10 +720,10 @@ function interface_theloop_for_template_blog_full_content() {
         </a> </h1>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
-        <div class="by-author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
+        <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
           <?php the_author(); ?>
-          </a></div>
-        <div class="date"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
+          </a></span></div>
+        <div class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>">
           <?php the_time( get_option( 'date_format' ) ); ?>
           </a></div>
         <?php if ( comments_open() ) { ?>

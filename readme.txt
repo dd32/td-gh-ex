@@ -61,6 +61,13 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.3 =
+ - Missing translation added
+ - Pot file updated
+ - Removed shortcodes plugin-territory function
+ - get_bloginfo('url') changed to esc_url( home_url() )
+ - Google structure data testing issue fixed
+
 = 1.2 =
  - Previous/Next post link issue fixed in specific blog article
 

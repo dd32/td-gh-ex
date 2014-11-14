@@ -35,7 +35,7 @@ $sidebar_layout = array(
 							'default-sidebar' 		=> array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'default',
-															'label' 		=> __( 'Default Layout Set in', 'interface' ).' '.'<a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'interface' ).'</a>',
+															'label' 		=> __( 'Default Layout Set in', 'interface' ).' '.'<a href="'.esc_url( home_url() ).'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'interface' ).'</a>',
 															'thumbnail' => ' '
 															),
 							'no-sidebar' 				=> array(
