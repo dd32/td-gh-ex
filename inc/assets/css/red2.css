@@ -1,5 +1,5 @@
 /*!
- * Customizr v3.2.4
+ * Customizr v3.2.5
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -5992,6 +5992,7 @@ footer#footer .colophon .social-block a {
   text-decoration: none;
   opacity: .9;
   filter: alpha(opacity=90);
+  outline: none;
 }
 .tc-slider-controls {
   position: absolute;
