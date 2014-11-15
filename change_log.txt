@@ -53,3 +53,6 @@ Version 2.1.1
 
 	i) Add screenshot image license in readme.txt 
 	ii) Add editor-style.css in css folder.	
+
+Version 2.1.2 (15 Nov 2014)
+    i) i) Fixed issue with fasterthemes-custom.js file which was causing broken admin menu 

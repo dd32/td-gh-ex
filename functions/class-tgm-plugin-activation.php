@@ -142,8 +142,7 @@
                 return;
             } ?>
 <div class="generator wrap">
-  <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {
-                    screen_icon( apply_filters( 'generator_default_screen_icon', 'themes' ) );
+  <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {                    
   } ?>
   <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
@@ -782,8 +781,7 @@ if ( ! class_exists( 'generatorPA_List_Table' ) ) {
                 $installer = new generator_Bulk_Installer( $skin = new generator_Bulk_Installer_Skin( compact( 'url', 'nonce', 'names' ) ) );
                 // Wrap the install process with the appropriate HTML.
                 echo '<div class="generator wrap">';
-                    if ( version_compare( generator_Plugin_Activation::$instance->wp_version, '3.8', '<' ) ) {
-                        screen_icon( apply_filters( 'generator_default_screen_icon', 'themes' ) );
+                    if ( version_compare( generator_Plugin_Activation::$instance->wp_version, '3.8', '<' ) ) {                        
                     }
                     echo '<h2>' . esc_html( get_admin_page_title() ) . '</h2>';
                     // Process the bulk installation submissions.
