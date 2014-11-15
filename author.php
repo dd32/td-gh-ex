@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="col-md-12 bread-row">
             <div class="container jobile-container">
             	<div class="col-md-6 no-padding-lr bread-left">
-                   <h2>Author : All posts by <?php echo get_the_author();?></h2>
+                   <h2><?php _e('Author : All posts by '.get_the_author().'', 'jobile'); ?></h2>
                 </div>
                 <div class="col-md-6 no-padding-lr">
                		<ol class="breadcrumb site-breadcumb">
@@ -46,7 +46,7 @@ get_header(); ?>
                                         </div>
                                      </div>
                                         <div class="col-md-12 no-padding-lr">
-                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587">Read More</a></p>
+                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587"><?php _e('Read More','jobile'); ?></a></p>
                                     </div>
                                     </div>
                                 </div>

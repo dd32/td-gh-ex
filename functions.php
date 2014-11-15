@@ -9,9 +9,6 @@ function jobile_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 720;
 	}
-	/*
-	 * Make jobile theme available for translation.
-	 */
 	load_theme_textdomain( 'jobile' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', jobile_font_url() ) );

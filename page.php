@@ -36,7 +36,7 @@ get_header(); ?>
 									?>
 			<?php $jobile_feature_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
 										 if($jobile_feature_image) { ?>
-										 <img src="<?php echo  esc_url($jobile_feature_image); ?>" class="img-responsive" />
+										 <img src="<?php echo esc_url($jobile_feature_image); ?>" class="img-responsive" />
 									<?php } ?>
                                 </div>
                                </div>

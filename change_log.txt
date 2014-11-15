@@ -11,3 +11,7 @@ iv) Require file set properly
 v) Remove Theme Text Translation and remove translation-ready tag in style.css and readme.txt
 vi) Remove newsletter code from theme options and remove newsletter script and css from js and css files.
 vi) Fixed screen_icon() error.
+
+Version: 1.1.1 (15 Nov 2014)
+
+i) Remove Text domain and translation ready tag in style.css

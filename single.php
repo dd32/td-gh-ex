@@ -26,9 +26,9 @@ get_header(); ?>
                         	<div class="col-md-12 top-pagination no-padding-lr clearfix">
                             	<div class="col-md-6 col-xs-6 no-padding-lr">
 									<?php if(get_option('page_for_posts')) { $jobile_blog = get_option('page_for_posts'); ?>
-                            		<a href="<?php echo  esc_url(get_permalink($jobile_blog)); ?>">Back to Listings</a>
+                            		<a href="<?php echo  esc_url(get_permalink($jobile_blog)); ?>"><?php _e('Back to Listings','jobile'); ?></a>
                             		<?php } else { ?>
-                            		<a href="<?php echo  esc_url(site_url()); ?>">Back to Listings</a>
+                            		<a href="<?php echo  esc_url(site_url()); ?>"><?php _e('Back to Listings','jobile'); ?></a>
 									<?php } ?>
                                 </div>
                                 <div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">
