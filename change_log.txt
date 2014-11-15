@@ -28,3 +28,6 @@ Version 1.3
 Version 1.4
  i) Solve theme check error screen_icon()
  ii) Add bootstrap.css.map in css folder 
+ 
+Version 1.4.1
+ i) Fix Javascript error in admin menu area.
