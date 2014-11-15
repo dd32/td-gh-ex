@@ -749,8 +749,7 @@ h6 {
   font-weight: normal;
   /* font-weight: bold; Shahid */
   line-height: 20px;
-  color: inherit;
-  text-rendering: optimizelegibility;
+  color: inherit;  
 }
 
 h1 small,

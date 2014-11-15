@@ -2,9 +2,9 @@
 add_action('admin_menu', 'rambo_admin_menu_pannel');  
 function rambo_admin_menu_pannel()
  {	$page=add_theme_page( 'theme', 'Option Panel', 'edit_theme_options', 'rambo', 'rambo_option_panal_function' ); 
- 	$page2=add_theme_page( 'webriti_themes', 'Webriti Themes', 'edit_theme_options', 'webriti_themes', 'webriti_themes_function' );
+ 	$page2=add_theme_page( 'webriti_themes', 'Webriti Themes', 'edit_theme_options', 'webriti_themes', 'rambo_themes_function' );
 	add_action('admin_print_styles-'.$page, 'rambo_admin_enqueue_script');
-	add_action('admin_print_styles-'.$page2, 'webriti_theme_admin_enqueue_script');
+	add_action('admin_print_styles-'.$page2, 'rambo_theme_admin_enqueue_script');
  }
 function rambo_admin_enqueue_script()
 {	
@@ -22,12 +22,12 @@ function rambo_option_panal_function()
 	require_once('webriti_option_pannel.php');
 }
 
-function webriti_themes_function ()
+function rambo_themes_function ()
 	{	
 		require_once('webriti_theme.php');
 	}
 //Theme pages css and js
-	function webriti_theme_admin_enqueue_script()
+	function rambo_theme_admin_enqueue_script()
 	{ 	
 		
 		wp_enqueue_style('responsive',get_template_directory_uri().'/css/bootstrap-responsive.css'); 

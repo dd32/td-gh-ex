@@ -47,20 +47,20 @@
 			$current_options['project_tagline']="Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.";
 			
 			$current_options['project_one_thumb']=$project_img;			
-			$current_options['project_one_title']="Lorem Ipsum";
-			$current_options['project_one_text']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ";
+			$current_options['project_one_title']="Product One";
+			$current_options['project_one_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
 			$current_options['project_two_thumb']=$project_img;			
-			$current_options['project_two_title']="Postao je popularan";
-			$current_options['project_two_text']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ";
+			$current_options['project_two_title']="Product Two";
+			$current_options['project_two_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
 			$current_options['project_three_thumb']=$project_img;			
-			$current_options['project_three_title']="kojekakve promjene s";
-			$current_options['project_three_text']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ";
+			$current_options['project_three_title']="Product Three";
+			$current_options['project_three_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
 			$current_options['project_four_thumb']=$project_img;			
-			$current_options['project_four_title']="kojekakve promjene s";
-			$current_options['project_four_text']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ";
+			$current_options['project_four_title']="Product Four";
+			$current_options['project_four_text']="A set of pieces of creative work collected to be shown to potential customers or employers.the artist had put together a portfolio of his work";
 			
 			
 			update_option('rambo_theme_options',$current_options);

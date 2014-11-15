@@ -131,7 +131,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
-
+@version 1.2.6.5
+1. Fixed some issues.
 @version 1.2.6.5
 1. Front page issue fixed.
 @version 1.2.6.4

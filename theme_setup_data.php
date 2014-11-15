@@ -5,7 +5,7 @@
  * @copyright      	2013 rambo
  * @license        	license.txt
  * @author       	webriti
- * @filesource     	wp-content/themes/rambo-pro/theme_setup_data.php
+ * @filesource     	wp-content/themes/rambo/theme_setup_data.php
  *	Admin  & front end default data file 
  *-----------------------------------------------------------------------------------*/ 
 function theme_data_setup()
@@ -33,19 +33,19 @@ function theme_data_setup()
 			'home_service_enabled'=>'on',
 			'home_service_one_icon'=>'fa-tachometer',
 			'home_service_one_title'=>__('Service One','rambo'),
-			'home_service_one_description'=>__('Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem','rambo'),
+			'home_service_one_description'=>__('This is service one, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.  ','rambo'),
 			
 			'home_service_two_icon'=>'fa-film',
 			'home_service_two_title'=>__('Service Two','rambo'),
-			'home_service_two_description'=>__('Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem','rambo'),
+			'home_service_two_description'=>__('This is service two, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.','rambo'),
 			
 			'home_service_three_icon'=>'fa-fighter-jet',
 			'home_service_three_title'=>__('Service Three','rambo'),
-			'home_service_three_description'=>__('Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem','rambo'),
+			'home_service_three_description'=>__('This is service Three, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.','rambo'),
 			
 			'home_service_fourth_icon'=>'fa-flag-checkered',
 			'home_service_fourth_title'=>__('Service Four','rambo'),
-			'home_service_fourth_description'=>__('Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem','rambo'),
+			'home_service_fourth_description'=>__('This is service Four, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.','rambo'),
 			
 			// footer customization
 			'footer_widgets_enabled'=>'on',
@@ -64,23 +64,23 @@ function theme_data_setup()
 			
 			//Projects Section Settings
 			'home_projects_enabled' => 'on',
-			'project_heading_one' => 'Featured Portfolio Projects',
-			'project_tagline' => 'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
+			'project_heading_one' => __('Featured Portfolio Projects','rambo'),
+			'project_tagline' => __('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			'project_one_thumb' => $project_img,
-			'project_one_title' => 'Lorem Ipsum',
-			'project_one_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			'project_two_title' => __('Product one','rambo'),
+			'project_one_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		
 		    'project_two_thumb' => $project_img,
-			'project_two_title' => 'Postao je popularan',
-			'project_two_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			'project_two_title' => __('Product two','rambo'),
+			'project_Two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
 			'project_three_thumb' => $project_img,
-			'project_three_title' => 'kojekakve promjene s',
-			'project_three_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			'project_two_title' => __('Product Three','rambo'),
+			'project_three_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
 			'project_four_thumb' => $project_img,
-			'project_four_title' => 'kojekakve promjene s',
-			'project_four_text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ',
+			'project_two_title' => __('Product Four','rambo'),
+			'project_four_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		);
 }
 ?>

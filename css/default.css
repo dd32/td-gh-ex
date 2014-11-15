@@ -238,7 +238,7 @@ a.featured_port_projects_btn:hover{
   background: #db2723;
   color: #ffffff;
 }
-.search-btn {
+.search-btn,#searchsubmit {
   background: #db2723;
   color: #ffffff;
 }

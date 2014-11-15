@@ -10,21 +10,19 @@
   	/**Includes reqired resources here**/
   	define('WEBRITI_TEMPLATE_DIR_URI',get_template_directory_uri());
   	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
-  	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
-	
+  	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
-  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus	
-  	
-  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); // all js and css file for rambo-pro	
-  	
+  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/rambo_nav_walker.php' ); // for Custom Menus  	
+  	require( WEBRITI_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' ); // all js and css file for rambo  	
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
   	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
   	//wp title tag starts here
   	function rambo_head( $title, $sep )
-  	{	global $paged, $page;		
+  	{	
+		global $paged, $page;		
   		if ( is_feed() )
-  			return $title;
+  			return trim($title);
   		// Add the site name.
   		$title .= get_bloginfo( 'name' );
   		// Add the site description for the home/front page.
@@ -34,7 +32,7 @@
   		// Add a page number if necessary.
   		if ( $paged >= 2 || $page >= 2 )
   			$title = "$title $sep " . sprintf( _e( 'Page', 'rambo' ), max( $paged, $page ) );
-  		return $title;
+  		return trim($title);
   	}	
   	add_filter( 'wp_title', 'rambo_head', 10,2 );
   	
@@ -66,8 +64,8 @@
   	}
 	
   	
-  	function custom_excerpt_more( $more ) {
+  	function rambo_custom_excerpt_more( $more ) {
   	return '';
   	}
-  	add_filter( 'excerpt_more', 'custom_excerpt_more' );
+  	add_filter( 'excerpt_more', 'rambo_custom_excerpt_more' );
   ?>

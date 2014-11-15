@@ -39,20 +39,20 @@
 			$current_options['home_service_enabled']="on";			
 			
 			$current_options['home_service_one_icon']="fa-tachometer";
-			$current_options['home_service_one_title']="fa-tachometer ";
-			$current_options['home_service_one_description']="Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem";
+			$current_options['home_service_one_title']="Service One ";
+			$current_options['home_service_one_description']="This is service one, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.";
 			
 			$current_options['home_service_two_icon']="fa-film";
-			$current_options['home_service_two_title']="fa-film";
-			$current_options['home_service_two_description']="Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem";
+			$current_options['home_service_two_title']="Service Two";
+			$current_options['home_service_two_description']="This is service two, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.";
 			
 			$current_options['home_service_three_icon']="fa-fighter-jet";
-			$current_options['home_service_three_title']="fa-fighter-jet";
-			$current_options['home_service_three_description']="Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem";
+			$current_options['home_service_three_title']="Service Three";
+			$current_options['home_service_three_description']="This is service Three, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.";
 			
 			$current_options['home_service_fourth_icon']="fa-flag-checkered";
-			$current_options['home_service_fourth_title']="fa-flag-checkered";
-			$current_options['home_service_fourth_description']="Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem";
+			$current_options['home_service_fourth_title']="Service Four";
+			$current_options['home_service_fourth_description']="This is service Four, reliable to user and comfortable to operate. You can easily manage all sub services using one instance.";
 			
 			
 			
