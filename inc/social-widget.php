@@ -47,23 +47,23 @@ class jobile_social_widget extends WP_Widget {
     } function form( $jobile_social_instance ) {
 ?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'jobile_social'); ?></label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
     <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($jobile_social_instance['title'])) { echo $jobile_social_instance['title']; } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e('Facebook url:', 'jobile_social'); ?></label>
+    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>">Facebook url:</label>
     <input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php if(!empty($jobile_social_instance['facebook'])) { echo esc_url($jobile_social_instance['facebook']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e('Twitter url:', 'jobile_social'); ?></label>
+    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter url:</label>
     <input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php if(!empty($jobile_social_instance['twitter'])) { echo esc_url($jobile_social_instance['twitter']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e('Linkedin url:', 'jobile_social'); ?></label>
+    <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>">Linkedin url:</label>
     <input id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" value="<?php if(!empty($jobile_social_instance['linkedin'])) { echo esc_url($jobile_social_instance['linkedin']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'google' ); ?>"><?php _e('Google+ url:', 'jobile_social'); ?></label>
+    <label for="<?php echo $this->get_field_id( 'google' ); ?>">Google+ url:</label>
     <input id="<?php echo $this->get_field_id( 'google' ); ?>" name="<?php echo $this->get_field_name( 'google' ); ?>" value="<?php if(!empty($jobile_social_instance['google'])) { echo esc_url($jobile_social_instance['google']); } ?>" style="width:100%;" />
 </p>     
 <?php } } ?>

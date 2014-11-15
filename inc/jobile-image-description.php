@@ -33,13 +33,13 @@ class jobile_image_widget extends WP_Widget {
     }
     function form( $jobile_image_instance ) { ?>
     <p class="section">
-        <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e('Image:', 'jobile_image'); ?></label><br />
+        <label for="<?php echo $this->get_field_id( 'image' ); ?>">Image:</label><br />
         <input id="<?php echo $this->get_field_id( 'image' ); ?>"  type="text" class="widefat jobile_media_url upload" name="<?php echo $this->get_field_name( 'image' ); ?>" value="<?php if(!empty($jobile_image_instance['image'])) { echo $jobile_image_instance['image']; } ?>" placeholder="No file chosen" style="width:75%;" />
         <input id="jobile_image_uploader"  class="upload-button button" type="button" value="Upload" /><br /><br />
 		<?php if(!empty($jobile_image_instance['image'])) { ?><img src="<?php echo esc_url($jobile_image_instance['image']); ?>" style='max-width:100%;' /><?php } ?>         
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e('Content:', 'jobile_image'); ?></label>
+        <label for="<?php echo $this->get_field_id( 'content' ); ?>">Content:</label>
         <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { echo $jobile_image_instance['content']; } ?></textarea>
     </p>  
 <?php }} ?>

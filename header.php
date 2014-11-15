@@ -43,7 +43,7 @@
                 	<nav class="jobile-nav jobile-nav2">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon jobile-btn collapsed" data-toggle="collapse" data-target=".navbar-collapse"> 
-                              		<span class="sr-only"><?php _e('Toggle navigation','jobile'); ?></span> 
+                              		<span class="sr-only">Menu</span> 
                                     <span class="icon-bar"></span> 
                                     <span class="icon-bar"></span> 
                                     <span class="icon-bar"></span>

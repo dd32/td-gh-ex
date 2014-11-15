@@ -63,7 +63,7 @@ $jobile_options = get_option( 'jobile_theme_options' ); ?>
                                         </div>
                                      </div>
                                         <div class="col-md-12 no-padding-lr">
-                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587"><?php _e('Read More','jobile'); ?></a></p>
+                                    <p class="result-btm-text"><?php echo get_the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587">Read More</a></p>
                                     </div>
                                     </div>
                                 </div>

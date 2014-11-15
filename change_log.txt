@@ -15,3 +15,7 @@ vi) Fixed screen_icon() error.
 Version: 1.1.1 (15 Nov 2014)
 
 i) Remove Text domain and translation ready tag in style.css
+
+Version: 1.1.2 (15 Nov 2014)
+
+i) Fixed changes which we made accidently in earlier version.
