@@ -14,3 +14,7 @@ vi) Remove newsletter code from theme options and remove newsletter script and c
 Version: 1.0.1 (11 Nov 2014)
 
 i) Fixed screen_icon error.
+
+Version: 1.0.2 (15 Nov 2014)
+
+i) Fixed small issue with fasterthemes-custom.js file.
