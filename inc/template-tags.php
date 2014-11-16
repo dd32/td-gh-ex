@@ -54,8 +54,6 @@ if ( ! function_exists( 'generate_content_nav' ) ) :
  */
 function generate_content_nav( $nav_id ) {
 
-	if ( 'post' !== get_post_type() ) 
-		return;
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.

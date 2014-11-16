@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2014-10-21 14:32-0800\n"
-"PO-Revision-Date: 2014-10-21 14:33-0800\n"
+"POT-Creation-Date: 2014-11-03 15:10-0800\n"
+"PO-Revision-Date: 2014-11-03 15:10-0800\n"
 "Last-Translator: Martin Lepadusch <mlepadusch@googlemail.com>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -71,7 +71,7 @@ msgstr "Zitate"
 msgid "Links"
 msgstr "Links"
 
-#: archive.php:64 sidebar-left.php:23 sidebar.php:23
+#: archive.php:64 sidebar-left.php:39 sidebar.php:38
 msgid "Archives"
 msgstr "Archive"
 
@@ -931,24 +931,23 @@ msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
 #: searchform.php:10 searchform.php:11
-#, fuzzy
+msgctxt "label"
 msgid "Search for:"
 msgstr "Suchen:"
 
 #: searchform.php:11
-#, fuzzy
+msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Suchen &hellip;"
 
 #: searchform.php:13
-#, fuzzy
+msgctxt "submit button"
 msgid "Search"
 msgstr "Suchen"
 
-#: sidebar-left.php:30 sidebar.php:30
+#: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr "Meta"
 
-#~ msgctxt "submit button"
 #~ msgid "Search"
 #~ msgstr "Suchen"

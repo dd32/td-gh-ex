@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2014-11-03 10:02-0800\n"
-"PO-Revision-Date: 2014-11-03 10:02-0800\n"
+"POT-Creation-Date: 2014-11-03 15:11-0800\n"
+"PO-Revision-Date: 2014-11-03 15:12-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -31,22 +31,22 @@ msgstr ""
 #: archive.php:32
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "關於 %s"
 
 #: archive.php:40
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "日: %s"
 
 #: archive.php:43
 #, php-format
 msgid "Month: %s"
-msgstr ""
+msgstr "月: %s"
 
 #: archive.php:46
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "年: %s"
 
 #: archive.php:49
 msgid "Asides"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: comments.php:37 comments.php:57
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; 較早迴響"
 
 #: comments.php:38 comments.php:58
 msgid "Newer Comments &rarr;"
@@ -203,16 +203,16 @@ msgstr ""
 #: functions.php:114 inc/customizer.php:347 inc/metaboxes.php:57
 #: inc/sanitize.php:176
 msgid "Right Sidebar"
-msgstr ""
+msgstr "右邊欄"
 
 #: functions.php:122 inc/customizer.php:346 inc/metaboxes.php:61
 #: inc/sanitize.php:175
 msgid "Left Sidebar"
-msgstr ""
+msgstr "左邊欄"
 
 #: functions.php:130
 msgid "Header"
-msgstr ""
+msgstr "頂部"
 
 #: functions.php:338 inc/options.php:120
 msgid "Copyright"
@@ -220,15 +220,15 @@ msgstr ""
 
 #: functions.php:346 inc/options.php:24 inc/options.php:47
 msgid "GeneratePress"
-msgstr ""
+msgstr "GeneratePress"
 
 #: functions.php:346
 msgid "Proudly powered by WordPress"
-msgstr ""
+msgstr "採用 WordPress"
 
 #: functions.php:346
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: image.php:24
 #, php-format
@@ -555,7 +555,7 @@ msgstr ""
 #: inc/customizer.php:473 inc/customizer.php:508 inc/customizer.php:543
 #: inc/sanitize.php:211
 msgid "Content / Sidebar"
-msgstr ""
+msgstr "內容/邊欄"
 
 #: inc/customizer.php:474 inc/customizer.php:509 inc/customizer.php:544
 #: inc/metaboxes.php:67 inc/sanitize.php:212
@@ -695,7 +695,7 @@ msgstr ""
 
 #: inc/navigation.php:88
 msgid "Menu"
-msgstr ""
+msgstr "選單"
 
 #: inc/navigation.php:89
 msgid "Skip to content"
@@ -719,7 +719,7 @@ msgstr ""
 
 #: inc/options.php:74
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: inc/options.php:78 inc/options.php:222
 msgid "Addons"
@@ -818,11 +818,11 @@ msgstr ""
 
 #: inc/template-tags.php:88
 msgid "Older posts"
-msgstr ""
+msgstr "較早文章"
 
 #: inc/template-tags.php:92
 msgid "Newer posts"
-msgstr ""
+msgstr "較新文章"
 
 #: inc/template-tags.php:119
 msgid "Pingback:"
@@ -848,24 +848,25 @@ msgstr ""
 msgid ""
 "<span class=\"posted-on\">%1$s</span> <span class=\"byline\">%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\">%1$s</span> <span class=\"byline\">%2$s</span>"
 
 #: inc/template-tags.php:250
 msgid "by"
-msgstr ""
+msgstr "作者"
 
 #: inc/template-tags.php:252
 #, php-format
 msgid "View all posts by %s"
-msgstr ""
+msgstr "查看 %s 的所有文章"
 
 #: inc/template-tags.php:266
 msgid "Read more"
-msgstr ""
+msgstr "查閱全文"
 
 #: inc/template-tags.php:309
 msgctxt "label"
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: no-results.php:13
 msgid "Nothing Found"
@@ -892,20 +893,26 @@ msgstr ""
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "搜尋結果: %s"
 
 #: searchform.php:10 searchform.php:11
+msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "搜尋"
 
 #: searchform.php:11
+msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "搜尋 &hellip;"
 
 #: searchform.php:13
+msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
 msgstr ""
+
+#~ msgid "Search"
+#~ msgstr "搜尋"

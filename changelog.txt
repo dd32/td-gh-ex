@@ -10,6 +10,20 @@ Changelog Legend:
 
 ----
 
+(11/16/2014) - 1.2.3
+[*] Hide default widgets if Secondary Navigation is set to that sidebar
+[*] Unsemantic CSS structure cleaned up considerably
+[!] Translation files updated so search placeholder is correctly translated
+[*] Adjust mobile breakpoints to include portrait tablets
+[+] Add Disqus compatibility
+[*] Alter look of no-results.php to match other pages
+[+] Russian translation added
+[!] Mobile bug fixed when menu is centered
+[!] Fix bug that causes pagination not to show up sometimes
+[*] Screenshot updated
+
+----
+
 (10/21/2014) - 1.2.2
 [+] Spanish translation added
 [+] Only admins can see Sidebar and Footer Widget metaboxes - capability is filterable (generate_metabox_capability)

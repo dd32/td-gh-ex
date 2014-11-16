@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.2');
+define( 'GENERATE_VERSION', '1.2.3');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -228,7 +228,7 @@ function generate_scripts() {
 	);
 
 	// Generate stylesheets
-	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/unsemantic-grid.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/style.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'generate-mobile-style', get_template_directory_uri() . '/css/mobile.css', false, GENERATE_VERSION, 'all' );
 	wp_add_inline_style( 'generate-style', generate_base_css() );
@@ -576,8 +576,8 @@ function generate_dequeue_mobile_scripts() {
 	wp_dequeue_style( 'generate-style-grid' );
 	wp_dequeue_script( 'generate-navigation' );
 	
-	// Add in mobile grid (no min-width)
-	wp_enqueue_style( 'generate-style-mobile-grid', get_template_directory_uri() . '/css/mobile-structure.css', false, GENERATE_VERSION, 'all' );
+	// Add in mobile grid (no min-width on line 100)
+	wp_enqueue_style( 'generate-style-grid-no-mobile', get_template_directory_uri() . '/css/unsemantic-grid-no-mobile.css', false, GENERATE_VERSION, 'all' );
   
    // Add necessary styles to kill mobile resposive features
 	$styles = 'body .grid-container {width:' . $generate_settings['container_width'] . 'px;max-width:' . $generate_settings['container_width'] . 'px}';
