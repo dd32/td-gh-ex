@@ -46,11 +46,14 @@ ie-responsive.min.js Copyright/License Info
 
 
 ============================================
-isotope.pkgd.min.js Copyright/License Info
+masonry.pkgd.min.js Copyright/License Info
 ============================================
- * Isotope PACKAGED v2.0.0 
- * Copyright (c) (http://isotope.metafizzy.co/)
- * Licensed under http://choosealicense.com/licenses/gpl-3.0/
+ * Masonry PACKAGED v3.1.5
+ * Cascading grid layout library
+ * http://masonry.desandro.com
+ * MIT License
+ * by David DeSandro
+ * Masonry is released under the MIT License
 
 
 ============================================
@@ -84,6 +87,9 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
+
+Version 2.0
+ WP FanZone is now based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Version 1.1.1
 bug fixes below:

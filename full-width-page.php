@@ -5,7 +5,6 @@
  */
  ?>
 <?php get_header(); ?>
-<div id="content" class="container">
 <div class="row breadcrumb-container">
 	<?php wp_fanzone_breadcrumb(); ?>
 </div>
@@ -33,5 +32,4 @@
             <?php endif; ?>
         </article>	  
 	</div>
-</div>
 <?php get_footer(); ?>

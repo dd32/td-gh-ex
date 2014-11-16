@@ -1,8 +1,12 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * The sidebar containing the main widget area.
+ *
+ * @package WP FanZone
  */
+
 ?>
+
 <div id="sidebar" class="clearfix">
 
 	<?php if(is_archive()){ ?>

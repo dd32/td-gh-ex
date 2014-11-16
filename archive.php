@@ -1,79 +1,114 @@
+<?php
+/**
+ * The template for displaying archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WP FanZone
+ */
+?>
 <?php get_header(); ?>
-<div id="content" class="container">
 <div class="row breadcrumb-container">
 	<?php wp_fanzone_breadcrumb(); ?>
 </div>
-	<div class="row">
-		<article class="col-md-9">
-			<?php if (have_posts()) : ?>
-            
-            <div id="page-heading">
-                <?php $post = $posts[0]; ?>
-                <?php if (is_category()) { ?>
-                <h1><?php single_cat_title(); ?></h1>
-                <?php  } elseif (is_author()) { ?>
-                <h1><?php _e( 'Author: ', 'wp-fanzone' ); ?><?php the_author(); ?></h1>
-                <?php } elseif( is_tag() ) { ?>
-                <h1><?php _e( 'Posts Tagged: ', 'wp-fanzone' ); ?><?php single_tag_title(); ?></h1>
-                <?php  } elseif (is_day()) { ?>
-                <h1><?php _e( 'Daily Archive: ', 'wp-fanzone' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></h1>
-                <?php  } elseif (is_month()) { ?>
-                <h1><?php _e( 'Monthly Archive: ', 'wp-fanzone' ); ?><?php single_month_title(' '); ?></h1>
-                <?php  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-                <h1><?php _e( 'Blog Archives: ', 'wp-fanzone' ); ?></h1>
-                <?php } ?>
-            </div>
-            <!-- END page-heading -->
-            
-            <div id="post" class="post clearfix">   
-                <?php while (have_posts()) : the_post(); ?>  
-                    <div class="col-md-12">
-                        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>  
-                            <div id="post_archive" class="post_box">
-                                <div class="row">
-                                    <div class="col-md-12"><h4 class="post_title"><?php the_title(); ?></h4></div>
-                                <?php if ( has_post_thumbnail()) { ?>	
-                                    <div class="col-md-6">
-                                        <a href="<?php the_permalink('') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a>
-                                        <div class="meta-info row">
-                                            <div class="col-md-6"><i class="fa fa-clock-o"></i><?php the_time( get_option( 'date_format' ) ); ?></div>
-                                            <div class="col-md-6"><a href="<?php comments_link(); ?>" class="meta-comment"><i class="fa fa-comments"></i><?php comments_number( '0 comment', '1 comment', '% comments' ); ?></a> </div>
-                                        </div> 
-                                    </div>                               
-                                    <div class="col-md-6">                                                           
-                                        <p class="post_desc"><?php echo excerpt('70'); ?></p>
-                                        <div class="clearfix"></div>
-                                    </div> 
-                                 <?php } else { ?>
-                                    <div class="col-md-12">                                                           
-                                        <p class="post_desc"><?php echo excerpt('70'); ?></p>
-                                    </div>
-                                     <div class="meta-info row">
-                                        <div class="col-md-6"> 
-                                            <div class="col-md-6"><i class="fa fa-clock-o"></i><?php the_time( get_option( 'date_format' ) ); ?></div>
-                                            <div class="col-md-6"><a href="<?php comments_link(); ?>" class="meta-comment"><i class="fa fa-comments"></i><?php comments_number( '0 comment', '1 comment', '% comments' ); ?></a></div> 
-                                        </div>                                 
-                                        
-                                    </div> 
-                                 <?php } ?>                                  
-                                </div>
-                                <a href="<?php the_permalink('') ?>" class="btn btn-info read_more"><?php _e( 'Read More >>', 'wp-fanzone' ); ?></a>
-                                </div>
-                        </div>
-                     </div>   
-                <?php endwhile; ?>               	     
-                <div class="clearfix"></div>
-					 <?php if (function_exists("wp_fanzone_pagination")) {
-                                wp_fanzone_pagination(); 
-                    }
-                    ?>
-            </div>
-            <!-- END post -->
-            <?php endif; ?>
-		</article>            
-	    <aside class="col-md-3">         
-			<?php get_sidebar(); ?>
-        </aside>
-	</div>
-</div>   
-<?php get_footer(' '); ?>
+<div class="row">
+	<section id="primary" class="content-area col-md-9">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+						if ( is_category() ) :
+							single_cat_title();
+
+						elseif ( is_tag() ) :
+							single_tag_title();
+
+						elseif ( is_author() ) :
+							printf( __( 'Author: %s', 'wp-fanzone' ), '<span class="vcard">' . get_the_author() . '</span>' );
+
+						elseif ( is_day() ) :
+							printf( __( 'Day: %s', 'wp-fanzone' ), '<span>' . get_the_date() . '</span>' );
+
+						elseif ( is_month() ) :
+							printf( __( 'Month: %s', 'wp-fanzone' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'wp-fanzone' ) ) . '</span>' );
+
+						elseif ( is_year() ) :
+							printf( __( 'Year: %s', 'wp-fanzone' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'wp-fanzone' ) ) . '</span>' );
+
+						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+							_e( 'Asides', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
+							_e( 'Galleries', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+							_e( 'Images', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+							_e( 'Videos', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+							_e( 'Quotes', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+							_e( 'Links', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
+							_e( 'Statuses', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
+							_e( 'Audios', 'wp-fanzone' );
+
+						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
+							_e( 'Chats', 'wp-fanzone' );
+
+						else :
+							_e( 'Archives', 'wp-fanzone' );
+
+						endif;
+					?>
+				</h1>
+				<?php
+					// Show an optional term description.
+					$term_description = term_description();
+					if ( ! empty( $term_description ) ) :
+						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					endif;
+				?>
+			</header><!-- .page-header -->
+
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', 'search' );
+				?>
+
+			<?php endwhile; ?>
+			<div class="clearfix"></div>
+			<?php if (function_exists("wp_fanzone_pagination")) {
+						wp_fanzone_pagination();							
+					}
+			?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; ?>
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+	<aside id="widget" class="widget-container col-md-3 ">
+        <?php get_sidebar(); ?>
+    </aside>
+</div> 
+<?php get_footer(); ?>

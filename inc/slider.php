@@ -2,8 +2,7 @@
 <?php  $slider_cat = get_theme_mod( 'wp_fanzone_category'); ?>	
 <?php
 //query posts
-query_posts(
-	array(
+$args =	array(
 	'offset'           => 0,
 	'category_name' => $slider_cat,
 	'orderby'          => 'post_date',
@@ -17,14 +16,15 @@ query_posts(
 	'post_parent'      => '',
 	'post_status'      => 'publish',
 	'suppress_filters' => true
-));
+);
 $counter = 1;
+$the_query = new WP_Query( $args );
 ?>
 
                         
 <?php //echo $slider_cat; ?>
-<?php if (have_posts()) : ?>           
-	<?php while (have_posts()) : the_post(); ?> 
+<?php if ($the_query->have_posts()) : ?>           
+	<?php while ($the_query->have_posts()) : $the_query->the_post(); ?> 
     	<?php
 			
 			if ( '' != get_the_post_thumbnail() && $counter < 6) { 
@@ -39,7 +39,7 @@ $counter = 1;
 				}				
 				
 		?>
-        <li><a href="<?php the_permalink('') ?>"><img src="<?php echo $img_thumb; ?>" alt="<?php the_title(); ?>" data-large-src="<?php echo $large_image_url[0] ?>" data-description="<?php echo excerpt('50'); ?>" /></a></li>
+        <li><a href="<?php the_permalink('') ?>"><img src="<?php echo $img_thumb; ?>" alt="<?php the_title(); ?>" data-large-src="<?php echo $large_image_url[0] ?>" data-description="<?php the_excerpt(); ?>" /></a></li>
         <?php	$counter++;
 				
 				
