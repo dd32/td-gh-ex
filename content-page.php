@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 ?>
 
@@ -12,9 +12,9 @@
 	<div class="entry-content clearfix">
 		<?php
 		the_content();
-		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwblog' ), 'after' => '</div>' ) ); ?>
+		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwsmall' ), 'after' => '</div>' ) ); ?>
 		<div class="clear"></div>
-		<?php edit_post_link( __( 'Edit', 'mwblog' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'mwsmall' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

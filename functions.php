@@ -1,17 +1,17 @@
 <?php
 
-if ( ! function_exists( 'mwblog_setup' ) ):
+if ( ! function_exists( 'mwsmall_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
-function mwblog_setup() {
+function mwsmall_setup() {
 	global $content_width;
 	
 	if ( ! isset( $content_width ) ) {
 		$content_width = 870;
 	}
 	
-	load_theme_textdomain( 'mwblog', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mwsmall', get_template_directory() . '/languages' );
 	
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -19,7 +19,7 @@ function mwblog_setup() {
 	add_image_size( 'blog_img', 870, 400, true );
 	set_post_thumbnail_size( 55, 55, true );
 	
-	add_theme_support( 'custom-background', apply_filters( 'mwblog_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'mwsmall_custom_background_args', array(
 		'default-color' => 'f5f5f5',
 		'default-image' => '',
 	) ) );
@@ -39,18 +39,17 @@ function mwblog_setup() {
 	add_theme_support( 'post-formats', array( 'image', 'gallery', 'video', 'quote', 'link', 'audio', 'status' ) );
 	
 	register_nav_menus( array(
-		'primary'		=>	__( 'Main Navigation', 'mwblog' ),
-		//'footer-menu' 	=>	__( 'Footer Menu', 'mwblog' )
+		'primary'		=>	__( 'Main Navigation', 'mwsmall' )
 	) );
 	
 } 
 endif;
-add_action( 'after_setup_theme', 'mwblog_setup' );
+add_action( 'after_setup_theme', 'mwsmall_setup' );
 
 /**
  * Enqueue scripts and styles
  */
-function mwblog_scripts() {
+function mwsmall_scripts() {
 	
 	wp_enqueue_style( 'blog-icons', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
@@ -63,15 +62,20 @@ function mwblog_scripts() {
 
 	wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '201408', true  );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ) );
-	wp_enqueue_script( 'mwblog-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '201408', true  );
-	wp_enqueue_script( 'mwblog-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '201408', true  );
-	wp_enqueue_script( 'mwblog-js', get_template_directory_uri() . '/js/jquery-1.11.1.min.js', array( 'jquery' ), '201408', true  );
+	wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '201408', true  );
+	wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '201408', true  );
+	wp_enqueue_script( 'mwsmall-js', get_template_directory_uri() . '/js/jquery-1.11.1.min.js', array( 'jquery' ), '201408', true  );
 	wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '201408', true  );
 
 }
-add_action( 'wp_enqueue_scripts', 'mwblog_scripts' );
+add_action( 'wp_enqueue_scripts', 'mwsmall_scripts' );
 
-function mwblog_post_icon() {
+function mwsmall_add_editor_styles() {
+    add_editor_style( 'editor-style.css' );
+}
+add_action( 'after_setup_theme', 'mwsmall_add_editor_styles' );
+
+function mwsmall_post_icon() {
 
  	if ( get_post_format() === 'quote' ) {
  		$post_icon = '<i class="fa fa-2x fa-quote-right"></i>';
@@ -98,10 +102,11 @@ function mwblog_post_icon() {
 	echo $output;
 }
 
-//REGISTER WIDGET AREAS
-if ( function_exists('register_sidebars') ) {
+/* Register Widget Areas
+----------------------------------- */
+function mwsmall_widgets_init() {
 	register_sidebar(array(
-		'name' => 'Blog Widget',
+		'name' => __( 'Blog Widget', 'mwsmall' ),
 		'id' => 'blog-widget',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -109,7 +114,7 @@ if ( function_exists('register_sidebars') ) {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => 'Footer Widget 1',
+		'name' => __( 'Footer Widget 1', 'mwsmall' ),
 		'id' => 'footer1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -117,7 +122,7 @@ if ( function_exists('register_sidebars') ) {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => 'Footer Widget 2',
+		'name' => __( 'Footer Widget 2', 'mwsmall' ),
 		'id' => 'footer2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -125,7 +130,7 @@ if ( function_exists('register_sidebars') ) {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => 'Footer Widget 3',
+		'name' => __( 'Footer Widget 3', 'mwsmall' ),
 		'id' => 'footer3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -133,18 +138,19 @@ if ( function_exists('register_sidebars') ) {
 		'after_title' => '</h3>',
 	));
 }
+add_action( 'widgets_init', 'mwsmall_widgets_init');
 
-function mwblog_pagination_nav(){
+function mwsmall_pagination_nav(){
 	global $wp_query, $post;
 	
 	if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'mwblog' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'mwsmall' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mwblog' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mwsmall' ) ); ?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -155,7 +161,7 @@ function mwblog_pagination_nav(){
 
 /*  Custom Comments Callback
 ----------------------------------- */
-function mwblog_comment($comment, $args, $depth) {
+function mwsmall_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 	
 ?>
@@ -176,7 +182,7 @@ function mwblog_comment($comment, $args, $depth) {
 
 			
 			<?php if($comment->comment_approved == '0') : ?>
-				<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mwblog'); ?></div>
+				<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mwsmall'); ?></div>
 			<?php endif; ?>
 		</div>
 		
@@ -207,14 +213,32 @@ function set_number_tags($args) {
 }
 add_filter('widget_tag_cloud_args','set_number_tags');
 
+/*  Page title
+----------------------------------- */
+function mwsmall_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'mwsmall' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'mwsmall_wp_title', 10, 2 );
+
 /**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- *  Metabox
- */
-require get_template_directory() . '/inc/metabox.php';
-
 ?>

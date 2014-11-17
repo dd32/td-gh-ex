@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 
 get_header(); ?>
@@ -10,7 +10,7 @@ get_header(); ?>
 		
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header">
-				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'mwblog' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'mwsmall' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			</header><!-- .page-header -->
 			<?php while ( have_posts() ) : the_post(); ?>
 			
@@ -18,7 +18,7 @@ get_header(); ?>
 				
 			<?php endwhile; ?>
 			
-			<?php mwblog_pagination_nav(); ?>
+			<?php mwsmall_pagination_nav(); ?>
 			
 		<?php else : ?>
 

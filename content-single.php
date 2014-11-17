@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 ?>
 
@@ -62,10 +62,12 @@
 
 		<div class="mw_title">
 			<div class="entry-time">
-				<span><?php the_time('j') ?></span> <?php the_time('M Y') ?>
+				<span class="day"><?php the_time( 'j' ); ?></span>
+				<span class="month"><?php the_time( 'M' ); ?></span> /
+				<span class="year"><?php the_time( 'Y' ); ?></span>
 			</div>
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><?php the_title(); ?></h1>
-			<?php mwblog_post_icon(); ?>
+			<?php mwsmall_post_icon(); ?>
 
 		</div><!-- .entry-title -->
 
@@ -73,8 +75,8 @@
 
 	<div class="entry-content clearfix">
 		<?php
-		the_content( __( '[...]', 'mwblog' ) );
-		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwblog' ), 'after' => '</div>' ) ); ?>
+		the_content( __( '[...]', 'mwsmall' ) );
+		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwsmall' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	
 	<footer class="entry-meta">

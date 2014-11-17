@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: mwblog 1.0.0\n"
-"POT-Creation-Date: 2014-09-03 23:41+0100\n"
-"PO-Revision-Date: 2014-09-03 23:41+0100\n"
+"Project-Id-Version: mwsmall1.0.0\n"
+"POT-Creation-Date: 2014-11-17 17:01+0100\n"
+"PO-Revision-Date: 2014-11-17 17:03+0100\n"
 "Last-Translator: mk <michalv2@o2.pl>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -92,14 +92,14 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-audio.php:49 ../content-gallery.php:54 ../content-image.php:31
-#: ../content-link.php:12 ../content-quote.php:16 ../content-single.php:76
-#: ../content-video.php:56 ../content.php:35
+#: ../content-audio.php:51 ../content-gallery.php:57 ../content-image.php:34
+#: ../content-link.php:12 ../content-quote.php:16 ../content-single.php:78
+#: ../content-video.php:58 ../content.php:39
 msgid "[...]"
 msgstr ""
 
-#: ../content-audio.php:60 ../content-gallery.php:65 ../content-image.php:42
-#: ../content-video.php:67 ../content.php:48
+#: ../content-audio.php:62 ../content-gallery.php:68 ../content-image.php:45
+#: ../content-video.php:69 ../content.php:52
 msgid "Read more"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content-page.php:15 ../content-single.php:77 ../content.php:37
+#: ../content-page.php:15 ../content-single.php:79 ../content.php:41
 msgid "Pages:"
 msgstr ""
 
@@ -133,19 +133,19 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../footer.php:26
+#: ../footer.php:32
 msgid "Copyright"
 msgstr ""
 
-#: ../footer.php:26
+#: ../footer.php:32
 msgid "All Rights Reserved."
 msgstr ""
 
-#: ../footer.php:29
+#: ../footer.php:35
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../footer.php:30
+#: ../footer.php:36
 msgid "Theme by"
 msgstr ""
 
@@ -153,51 +153,72 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: ../functions.php:143
+#: ../functions.php:104
+msgid "Blog Widget"
+msgstr ""
+
+#: ../functions.php:112
+msgid "Footer Widget 1"
+msgstr ""
+
+#: ../functions.php:120
+msgid "Footer Widget 2"
+msgstr ""
+
+#: ../functions.php:128
+msgid "Footer Widget 3"
+msgstr ""
+
+#: ../functions.php:144
 msgid "Older posts"
 msgstr ""
 
-#: ../functions.php:147
+#: ../functions.php:148
 msgid "Newer posts"
 msgstr ""
 
-#: ../functions.php:179
+#: ../functions.php:180
 msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: ../functions.php:229
+#, php-format
+msgid "Page %s"
 msgstr ""
 
 #: ../inc/customizer.php:19
 msgid "Logo"
 msgstr ""
 
-#: ../inc/customizer.php:30
+#: ../inc/customizer.php:31
 msgid "Upload logo"
 msgstr ""
 
-#: ../inc/customizer.php:36
+#: ../inc/customizer.php:37
 msgid "Social icon profiles"
 msgstr ""
 
-#: ../inc/customizer.php:47
+#: ../inc/customizer.php:49
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/customizer.php:58
+#: ../inc/customizer.php:61
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/customizer.php:69
+#: ../inc/customizer.php:73
 msgid "Google+"
 msgstr ""
 
-#: ../inc/customizer.php:81
+#: ../inc/customizer.php:85
 msgid "Header Background Color"
 msgstr ""
 
-#: ../inc/customizer.php:88
+#: ../inc/customizer.php:92
 msgid "Info Theme"
 msgstr ""
 
-#: ../inc/customizer.php:89
+#: ../inc/customizer.php:93
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><br/><a target=\"_blank\" "
@@ -207,23 +228,23 @@ msgid ""
 "a>"
 msgstr ""
 
-#: ../inc/customizer.php:90
+#: ../inc/customizer.php:94
 msgid "http://mwthemes.net"
 msgstr ""
 
-#: ../inc/customizer.php:91
+#: ../inc/customizer.php:95
 msgid "If you need assistance, please do not hesitate to contact us"
 msgstr ""
 
-#: ../inc/customizer.php:92
+#: ../inc/customizer.php:96
 msgid "http://facebook.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:93
+#: ../inc/customizer.php:97
 msgid "https://twitter.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:94
+#: ../inc/customizer.php:98
 msgid ""
 "https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
 "xclick&hosted_button_id=UEV9GM57HQUHA"

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 
  get_header();?>

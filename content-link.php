@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 ?>
 
@@ -9,11 +9,11 @@
 	<header class="entry-header post-link">
 		
 		<div class="entry-content post-link clearfix">
-			<?php the_content( __( '[...]', 'mwblog' ) );	?>
+			<?php the_content( __( '[...]', 'mwsmall' ) );	?>
 		</div><!-- .entry-content -->
 		<div class="mw_title">
 
-			<?php mwblog_post_icon(); ?>
+			<?php mwsmall_post_icon(); ?>
 			<?php if( is_sticky() ) { ?> <span class="sticky-post"><i class="fa fa-star-o fa-2x"></i></span> <?php } ?>
 
 		</div><!-- .entry-title -->

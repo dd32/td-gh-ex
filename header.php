@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+/**
+ * @package mwsmall
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -7,7 +12,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
@@ -20,8 +25,8 @@
 			<div class="header-main container">
 				<h1 class="site-title">
 					<?php 
-						$customize_logo = get_theme_mod('logo_mwblog');
-						if ( get_theme_mod('logo_mwblog')) { ?>
+						$customize_logo = get_theme_mod('logo_mwsmall');
+						if ( get_theme_mod('logo_mwsmall')) { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $customize_logo; ?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"></a>
 						
 					<?php					

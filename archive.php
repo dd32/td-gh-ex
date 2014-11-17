@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 
 get_header(); ?>
@@ -19,40 +19,40 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'mwblog' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'mwsmall' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'mwblog' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'mwsmall' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'mwblog' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mwblog' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'mwsmall' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mwsmall' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'mwblog' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mwblog' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'mwsmall' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mwsmall' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'mwblog');
+							_e( 'Galleries', 'mwsmall');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'mwblog');
+							_e( 'Images', 'mwsmall');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'mwblog' );
+							_e( 'Videos', 'mwsmall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'mwblog' );
+							_e( 'Quotes', 'mwsmall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'mwblog' );
+							_e( 'Links', 'mwsmall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'mwblog' );
+							_e( 'Statuses', 'mwsmall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'mwblog' );
+							_e( 'Audios', 'mwsmall' );
 
 						else :
-							_e( 'Archives', 'mwblog' );
+							_e( 'Archives', 'mwsmall' );
 
 						endif;
 					?>
@@ -64,7 +64,7 @@ get_header(); ?>
 				
 			<?php endwhile; ?>
 			
-			<?php mwblog_pagination_nav(); ?>
+			<?php mwsmall_pagination_nav(); ?>
 			
 		<?php else : ?>
 

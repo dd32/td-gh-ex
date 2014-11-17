@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MWBlog
+ * @package mwsmall
  */
 ?>
 
@@ -13,10 +13,13 @@
 
 		<div class="mw_title">
 			<div class="entry-time">
-				<span><?php the_time('j') ?></span> <?php the_time('M Y') ?>
+				<span class="day"><?php the_time( 'j' ); ?></span>
+				<span class="month"><?php the_time( 'M' ); ?></span> /
+				<span class="year"><?php the_time( 'Y' ); ?></span>
+				<!--<?php the_time( get_option( 'date_format' ) ); ?>-->
 			</div>
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			<?php mwblog_post_icon(); ?>
+			<?php mwsmall_post_icon(); ?>
 			<?php if( is_sticky() ) { ?> <span class="sticky-post"><i class="fa fa-star-o fa-2x"></i></span> <?php } ?>
 
 		</div><!-- .entry-title -->
@@ -33,9 +36,9 @@
 			if ( get_post_format() == 'gallery' ){
 				// no content
 			}else{			
-				the_content( __( '[...]', 'mwblog' ) );	
+				the_content( __( '[...]', 'mwsmall' ) );	
 			}?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwsmall' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 	
@@ -46,7 +49,7 @@
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 		<span class="comments-link fa fa-comments"></span><?php comments_popup_link('0', '1', '%', 'comments-link', ''); ?>
 		<?php endif; ?>
-		<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e( 'Read more', 'mwblog' ); ?><span> &rarr;</span></a>
+		<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e( 'Read more', 'mwsmall' ); ?><span> &rarr;</span></a>
 	</footer><!-- #entry-meta -->
 	
 	
