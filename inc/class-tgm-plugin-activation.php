@@ -142,8 +142,7 @@
                 return;
             } ?>
 <div class="customizable wrap">
-  <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {
-                    screen_icon( apply_filters( 'customizable_default_screen_icon', 'themes' ) );
+  <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {               
   } ?>
   <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
@@ -783,7 +782,6 @@ if ( ! class_exists( 'customizablePA_List_Table' ) ) {
                 // Wrap the install process with the appropriate HTML.
                 echo '<div class="customizable wrap">';
                     if ( version_compare( customizable_Plugin_Activation::$instance->wp_version, '3.8', '<' ) ) {
-                        screen_icon( apply_filters( 'customizable_default_screen_icon', 'themes' ) );
                     }
                     echo '<h2>' . esc_html( get_admin_page_title() ) . '</h2>';
                     // Process the bulk installation submissions.

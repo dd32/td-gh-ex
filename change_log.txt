@@ -42,4 +42,8 @@ Version 2.1
 	 i) Define TGM license in readme.txt
 	 ii) Replace esc_url_raw with esc_url. 
 	 iii) Change Theme Options layout.
-	 iv) Remove ABSPATH.	
+	 iv) Remove ABSPATH.
+
+Version 2.1.1
+    i) Fixed JS error which was appearing in admin panel. 
+ 	ii) Removed screen_icon() found in the file class-tgm-plugin-activation.php as it's deprecated. 
