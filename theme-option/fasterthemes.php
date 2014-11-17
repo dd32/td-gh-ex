@@ -66,8 +66,6 @@ function fastertheme_framework_page(){
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;
-		
-		screen_icon(); 
 		$booster_image=get_template_directory_uri().'/theme-option/images/logo.png';
 		echo "<h1><img src='".$booster_image."' height='64px'  /> ". __( 'FasterThemes Options', 'booster' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :

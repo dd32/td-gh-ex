@@ -46,3 +46,7 @@ Version	1.04
 	ii)	Delete useless image.
 	iii) Set css for sidebar.	
 	iv) esc_url_raw replace with esc_url.
+	
+Version	1.05
+    i) Fixed JS error which was appearing in admin panel. 
+ 	ii) Removed screen_icon() found in the files class-tgm-plugin-activation.php and fasterthemes.php as it's deprecated. 
