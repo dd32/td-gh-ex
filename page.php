@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="Sample-Page">
+<div class="sample-Page">
 
 
 <?php while(have_posts()): the_post();?>

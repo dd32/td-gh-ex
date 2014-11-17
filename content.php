@@ -4,13 +4,14 @@
  */
 ?>
 
-<article id="single-" <?php the_ID();?>>
+<article id="single-"<?php the_ID();?>>
 
 
 
     <div class="main-content-style">
         <h2 id="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-<small><?php the_time('F jS, Y') ?> by <div id="content-author"><?php the_author_posts_link(); ?></div></small>
+       
+        <small><?php astoned_date_time(); ?> by <div id="content-author"><?php the_author_posts_link(); ?></div></small>
  <?php
   if(comments_open()):
      echo '<div id="comment-state">';
@@ -23,7 +24,7 @@
  
 
   <?php
-				/* translators: used between list items, there is a space after the comma. */
+				
 				$tags_list = get_the_tag_list( '', __( ', ', 'Astoned' ) );
 				if ( $tags_list ) :
 			?>

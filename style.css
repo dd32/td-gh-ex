@@ -1,11 +1,10 @@
 /* 
 Theme Name: Astoned
 Astoned WordPress Theme, Copyright 2014 Yash Karnad
-Theme URI: http://wordpress.org/themes/astoned/
 Author: Yash karnad
 Author Email:yashkarnad@gmail.com
 Description: This theme, while lacking any fancy functionality,makes up for it in prompt responsiveness and easy to use user interface thus making it the ideal choice for personal bloggers wanting to make their bones on a budget.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:white, black, one-column,two-columns,right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style,featured-images,post-formats
@@ -50,14 +49,14 @@ a{
 	margin: 0 0 1.75em 0;
 }
 
-.full-page,.archives,.Sample-Page,.search-part{
+.full-page,.archives,.sample-Page,.search-part{
     float: left;
     margin: 0 -26.4% 0 0;
    width: 60%;
    
 }
 
-.content-editor,#searchsubmit,.pg-footer,.side1 li,.widget-title,#menu-links,#submit,#menu-links ul ul a,.pagination-links a,.comment-reply-link{
+.content-editor,#submit-search,.pg-footer,.side1 li,.widget-title,#menu-links,#submit,#menu-links ul ul a,.pagination-links a,.comment-reply-link{
 color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #363636;
@@ -163,14 +162,38 @@ color: #ffffff;
 	max-width: 96%;
 	padding: 9px;
 }
-.wp-caption img {
+.wp-caption img,embed,
+iframe,
+object {
 	max-width: 100%;
+        border-color: #eee;
 }
 .wp-caption-text {
 	color: #989eae;
 	display: block;
 	font-size: 12px;
 	line-height: 1.4;
+}
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto;  
+}
+img.size-full,
+img.size-large {
+	max-width: 97.5%;
+	width: auto;  
+	height: auto; 
+}
+
+
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery .gallery-icon img {
+	border: 1px solid #ddd;
+	padding: 6px;
+	max-width: 97.5%;
 }
  
 .sticky{
@@ -423,7 +446,7 @@ textarea{
     height: 200px;
 }
 
-#searchsubmit{
+#submit-search{
     position: relative;
     bottom:3px;
 }
@@ -497,6 +520,7 @@ textarea{
          padding: 10px 20px 10px 20px;
 }
 
+
 @-ms-viewport {
 	width: device-width;
 }
@@ -517,7 +541,7 @@ textarea{
 		width: auto;
 	}
         
-        .full-page,.archives,.Sample-Page,.search-part{
+        .full-page,.archives,.sample-Page,.search-part{
    
    width: 100%;
    

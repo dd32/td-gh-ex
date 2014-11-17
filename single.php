@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 
-<div class="Sample-Page"> 
+<div class="sample-Page"> 
     <?php if(have_posts()): ?>
   
 <?php while(have_posts()): the_post();?>

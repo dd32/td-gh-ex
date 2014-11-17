@@ -131,8 +131,7 @@ add_action( 'wp_enqueue_scripts', 'astoned_myscript_enqueue' );
 
 //Initialize Jquery
 function astoned_myscript_enqueue() {
-  $ss_url = get_stylesheet_directory_uri();
-  wp_enqueue_script('jquery', "{$ss_url}/js/jquery.js");
+  
    
   if ( is_singular() ) {
        wp_enqueue_script( "comment-reply" ); 
@@ -220,6 +219,20 @@ function astoned_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'astoned_wp_title', 10, 2 );
 
+function astoned_date_time(){
+    $update_time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
+    $time_string = sprintf( $update_time_string,
+		
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+	$posted_on = sprintf(
+		_x( 'Posted on %s', 'post date', '_s' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+	
+	echo $posted_on;
+}
 
  

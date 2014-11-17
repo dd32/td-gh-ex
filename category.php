@@ -6,7 +6,7 @@
 get_header(); ?>
 
 		
-			<div class="Sample-Page">
+			<div class="sample-Page">
 
 			<?php if ( have_posts() ) : ?>
                         
@@ -29,7 +29,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php // twentyeleven_content_nav( 'nav-below' ); ?>
+				
 
 			<?php else : ?>
 
