@@ -12,6 +12,8 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.3 =
+* updates on small screen sizes
 = 1.2 =
 * updated responsive media calls
 = 1.1 =
