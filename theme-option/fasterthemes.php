@@ -43,8 +43,6 @@ function fastertheme_framework_page(){
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;
-		
-		screen_icon(); 
 		$image=get_template_directory_uri().'/theme-option/images/logo.png';
 		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'FasterThemes Options', 'redpro' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :

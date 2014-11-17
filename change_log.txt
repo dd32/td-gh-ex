@@ -96,3 +96,8 @@ Version	4.0
     i)  Set Sanitization in all input fields.
 	ii) Define TGM license and link in  readme.txt 
 	iii) Set copyright text in footer.
+	
+Version	4.0.1 (17th Nov 2014)
+    i) Fixed JS error which was appearing in admin panel.   
+ 	ii) Removed screen_icon() found in the files class-tgm-plugin-activation.php and fasterthemes.php as it's deprecated. 
+    
