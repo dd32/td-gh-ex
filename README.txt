@@ -67,7 +67,11 @@ View the theme settings under "Appearance" -> Customize.
 == Changelog ==
 
 
-#### 10.1.1
+#### 1.1.5
+* Changed & Sanitized widget settings in electa-carousel.php and electa-icon.php.
+* Changed custom styling to use Customizer Library styles.
+
+#### 1.1.4
 * Changed settings to use "Customizer Library" by Devin Price.
 * Removed old settings.
 * Added a page under "Appearance" linking to Kaira website.

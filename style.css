@@ -4,7 +4,7 @@ Theme URI:
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, Site Origin's Page Builder and more, making it very simple to build a nice website.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -938,7 +938,7 @@ header:hover .search-button {
     float: left;
     padding: 20px;
 }
-.widget-area .widget-title {
+.widget-area .widget .widget-title {
     font-size: 14px;
     text-transform: uppercase;
     margin: 25px 0 8px;
@@ -1249,6 +1249,7 @@ header:hover .search-button {
     display: block;
     float: left;
     padding: 0 1px;
+    text-transform: none;
 }
 .electa-carousel-block-inner {
     padding: 0;
@@ -1793,6 +1794,65 @@ object {
 .so-masonry-container .masonry-brick {
     height: auto !important;
 }
+
+
+/*--------------------------------------------------------------
+Fallback CSS for Customizer Library Styles
+--------------------------------------------------------------*/
+body,
+.page-header h1,
+.alba-banner-heading h5,
+.alba-carousel-block,
+.alba-heading-text {
+    color: #7B7D80;
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #5A5A5A;
+    font-family: 'Roboto', sans-serif;
+}
+
+a,
+.pc-text a,
+.site-branding a,
+.entry-content a,
+.entry-footer a,
+.search-btn,
+.search-button .fa-search,
+.widget ul li a {
+    color: #4965A0;
+}
+.pc-bg,
+.electa-button,
+#comments .form-submit #submit,
+.main-navigation li.current-menu-item > a,
+.main-navigation li.current_page_item > a,
+.main-navigation li.current-menu-parent > a,
+.main-navigation li.current_page_parent > a,
+.main-navigation li.current-menu-ancestor > a,
+.main-navigation li.current_page_ancestor > a,
+.main-navigation button,
+.wpcf7-submit {
+    background-color: #4965A0 !important;
+}
+a:hover,
+.pc-text a:hover,
+.entry-content a:hover,
+.entry-footer a:hover,
+.search-btn:hover,
+.search-button .fa-search:hover,
+.widget ul li a:hover {
+    color: #3e578b;
+}
+.pc-bg:hover,
+.electa-button:hover,
+.main-navigation button:hover,
+#comments .form-submit #submit:hover,
+.wpcf7-submit:hover {
+    background-color: #3e578b !important;
+}
+
 
 /* = Media Query targeting screens less than 960px wide
 ----------------------------------------------- */

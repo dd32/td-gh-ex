@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.4' );
+define( 'KAIRA_THEME_VERSION' , '1.1.5' );
 
 // Include Electa Widgets
 include get_template_directory() . '/includes/widgets.php';
@@ -146,78 +146,17 @@ add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
 /**
  * Print Electa styling settings.
  */
-function kaira_print_styles(){
+function kaira_custom_css_styles(){
     $custom_css = '';
     if ( get_theme_mod( 'kra-custom-css', false ) ) {
         $custom_css = get_theme_mod( 'kra-custom-css' );
-    }
-    
-    $body_font = get_theme_mod( 'kra-body-font', false );
-    $body_font_color = get_theme_mod( 'kra-body-font-color', false );
-    $h_font = get_theme_mod( 'kra-heading-font', false );
-    $h_font_color = get_theme_mod( 'kra-heading-font-color', false );
-    
-    $primary_color = get_theme_mod( 'kra-main-color', false );
-    $primary_color_hover = get_theme_mod( 'kra-main-color-hover', false ); ?>
+    } ?>
     <style type="text/css" media="screen">
-        body,
-        .page-header h1,
-        .alba-banner-heading h5,
-        .alba-carousel-block,
-        .alba-heading-text {
-            color: <?php echo ( $body_font_color ) ? $body_font_color : '#7B7D80'; ?>;
-            <?php echo ( $body_font ) ? 'font-family: "' . $body_font . '", sans-serif;' : 'font-family: \'Open Sans\', sans-serif;'; ?>
-        }
-        h1, h2, h3, h4, h5, h6,
-        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-            color: <?php echo ( $h_font_color ) ? $h_font_color : '#5A5A5A'; ?>;
-            <?php echo ( $h_font ) ? 'font-family: "' . $h_font . '", sans-serif;' : 'font-family: \'Roboto\', sans-serif;'; ?>
-        }
-        
-        a,
-        .pc-text a,
-        .site-branding a,
-        .entry-content a,
-        .entry-footer a,
-        .search-btn,
-        .search-button .fa-search,
-        .widget ul li a {
-            color: <?php echo ( $primary_color ) ? $primary_color : '#4965A0'; ?>;
-        }
-        .pc-bg,
-        .electa-button,
-        #comments .form-submit #submit,
-        .main-navigation li.current-menu-item > a,
-        .main-navigation li.current_page_item > a,
-        .main-navigation li.current-menu-parent > a,
-        .main-navigation li.current_page_parent > a,
-        .main-navigation li.current-menu-ancestor > a,
-        .main-navigation li.current_page_ancestor > a,
-        .main-navigation button,
-        .wpcf7-submit {
-            background-color: <?php echo ( $primary_color ) ? $primary_color : '#4965A0'; ?> !important;
-        }
-        a:hover,
-        .pc-text a:hover,
-        .entry-content a:hover,
-        .entry-footer a:hover,
-        .search-btn:hover,
-        .search-button .fa-search:hover,
-        .widget ul li a:hover {
-            color: <?php echo ( $primary_color_hover ) ? $primary_color_hover : '#3e578b'; ?>;
-        }
-        .pc-bg:hover,
-        .electa-button:hover,
-        .main-navigation button:hover,
-        #comments .form-submit #submit:hover,
-        .wpcf7-submit:hover {
-            background-color: <?php echo ( $primary_color_hover ) ? $primary_color_hover : '#3e578b'; ?> !important;
-        }
         <?php echo htmlspecialchars_decode( $custom_css ); ?>
     </style>
     <?php
 }
-add_action( 'wp_head', 'kaira_print_styles', 11 );
+add_action( 'wp_head', 'kaira_custom_css_styles', 11 );
 
 /**
  * Enqueue electa admin stylesheet.
@@ -301,9 +240,3 @@ if ( is_plugin_active( 'ml-slider/ml-slider.php' ) ) {
     add_filter('metaslider_hoplink', 'metaslider_hoplink', 10, 1);
     
 }
-
-/**
- * Add Conica WP Updates code.
- */
-require get_template_directory() . '/wp-updates-theme.php';
-new WPUpdatesThemeUpdater_980( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

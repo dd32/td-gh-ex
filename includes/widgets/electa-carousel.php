@@ -27,11 +27,11 @@ class electa_carousel extends WP_Widget {
         $instance = wp_parse_args( $instance, array(
             'category' => '',
             'columns' => '4',
-            'show-featured-image' => 'on',
-            'show-title' => 'on',
-            'show-excerpt' => 'on',
+            'show-featured-image' => 1,
+            'show-title' => 1,
+            'show-excerpt' => 1,
             'excerpt-length' => 200,
-            'show-meta' => 'on',
+            'show-meta' => 1,
             'carousel-pagination' => 'dots'
         ) );
         
@@ -66,7 +66,7 @@ class electa_carousel extends WP_Widget {
                     $output .= '<div class="electa-carousel-block">';
                         $output .= '<div class="electa-carousel-block-inner">';
                     
-                                    if ( $instance['show-featured-image'] == 'on' ) :
+                                    if ( $instance['show-featured-image'] == 1 ) :
                                         
                             $output .= '<div class="electa-carousel-block-img" style="background-image: url(' . esc_url( $thumbnail_img ) . ');">';
                                     
@@ -77,13 +77,13 @@ class electa_carousel extends WP_Widget {
                                             
                                     endif;
                                     
-                                    if( $instance['show-title'] == 'on' ) :
+                                    if( $instance['show-title'] == 1 ) :
                             
                             $output .= '<h3 class="pc-text"><a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a></h3>';
                                     
                                     endif;
                                     
-                                    if( $instance['show-meta'] == 'on' ) :
+                                    if( $instance['show-meta'] == 1 ) :
                             
                             $output .= '<div class="electa-carousel-block-meta">';
                                             
@@ -98,7 +98,7 @@ class electa_carousel extends WP_Widget {
                             $output .= '</div>';
                                     endif;
                                             
-                                    if( $instance['show-excerpt'] == 'on' ) :
+                                    if( $instance['show-excerpt'] == 1 ) :
                                         
                                         if ( get_the_excerpt() > $instance['excerpt-length'] ) :
                                 $output .= '<p>' . substr( strip_tags( get_the_excerpt() ), 0, $instance['excerpt-length'] )."</p>";
@@ -136,11 +136,11 @@ class electa_carousel extends WP_Widget {
         $instance = wp_parse_args( $instance, array(
             'category' => '',
             'columns' => '4',
-            'show-featured-image' => 'on',
-            'show-title' => 'on',
-            'show-excerpt' => 'on',
+            'show-featured-image' => 1,
+            'show-title' => 1,
+            'show-excerpt' => 1,
             'excerpt-length' => 200,
-            'show-meta' => 'on',
+            'show-meta' => 1,
             'carousel-pagination' => 'dots'
         ) ); ?>
         <p>
@@ -160,27 +160,18 @@ class electa_carousel extends WP_Widget {
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'show-featured-image' ) ?>"><?php echo __( 'Show Featured Image', 'electa' ) ?></label>
-            <select class="widefat" name="<?php echo $this->get_field_name( 'show-featured-image' ) ?>" id="<?php echo $this->get_field_id( 'show-titfeatured-imagele' ) ?>">
-                <option value="on" <?php selected( $instance['show-featured-image'], 'on' ) ?>><?php esc_html_e( 'On', 'electa' ) ?></option>
-                <option value="off" <?php selected( $instance['show-featured-image'], 'off' ) ?>><?php esc_html_e( 'Off', 'electa' ) ?></option>
-            </select>
+            <input id="<?php echo $this->get_field_id('show-featured-image'); ?>" name="<?php echo $this->get_field_name('show-featured-image'); ?>" type="checkbox" value="1" <?php checked( '1', $instance['show-featured-image'] ); ?> />
+            <label for="<?php echo $this->get_field_id('show-featured-image'); ?>"><?php echo __('Show Featured Image', 'electa'); ?></label>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'show-title' ) ?>"><?php echo __( 'Show Title', 'electa' ) ?></label>
-            <select class="widefat" name="<?php echo $this->get_field_name( 'show-title' ) ?>" id="<?php echo $this->get_field_id( 'show-title' ) ?>">
-                <option value="on" <?php selected( $instance['show-title'], 'on' ) ?>><?php esc_html_e( 'On', 'electa' ) ?></option>
-                <option value="off" <?php selected( $instance['show-title'], 'off' ) ?>><?php esc_html_e( 'Off', 'electa' ) ?></option>
-            </select>
+            <input id="<?php echo $this->get_field_id('show-title'); ?>" name="<?php echo $this->get_field_name('show-title'); ?>" type="checkbox" value="1" <?php checked( '1', $instance['show-title'] ); ?> />
+            <label for="<?php echo $this->get_field_id('show-title'); ?>"><?php echo __('Show Title', 'electa'); ?></label>
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'show-excerpt' ) ?>"><?php echo __( 'Show Post Excerpt', 'electa' ) ?></label>
-            <select class="widefat" name="<?php echo $this->get_field_name( 'show-excerpt' ) ?>" id="<?php echo $this->get_field_id( 'show-excerpt' ) ?>">
-                <option value="on" <?php selected( $instance['show-excerpt'], 'on' ) ?>><?php esc_html_e( 'On', 'electa' ) ?></option>
-                <option value="off" <?php selected( $instance['show-excerpt'], 'off' ) ?>><?php esc_html_e( 'Off', 'electa' ) ?></option>
-            </select>
+            <input id="<?php echo $this->get_field_id('show-excerpt'); ?>" name="<?php echo $this->get_field_name('show-excerpt'); ?>" type="checkbox" value="1" <?php checked( '1', $instance['show-excerpt'] ); ?> />
+            <label for="<?php echo $this->get_field_id('show-excerpt'); ?>"><?php echo __('Show Post Excerpt', 'electa'); ?></label>
         </p>
         
         <p>
@@ -190,11 +181,8 @@ class electa_carousel extends WP_Widget {
         </p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'show-meta' ) ?>"><?php echo __( 'Show Post Meta', 'electa' ) ?></label>
-            <select class="widefat" name="<?php echo $this->get_field_name( 'show-meta' ) ?>" id="<?php echo $this->get_field_id( 'show-meta' ) ?>">
-                <option value="on" <?php selected( $instance['show-meta'], 'on' ) ?>><?php esc_html_e( 'On', 'electa' ) ?></option>
-                <option value="off" <?php selected( $instance['show-meta'], 'off' ) ?>><?php esc_html_e( 'Off', 'electa' ) ?></option>
-            </select>
+            <input id="<?php echo $this->get_field_id('show-meta'); ?>" name="<?php echo $this->get_field_name('show-meta'); ?>" type="checkbox" value="1" <?php checked( '1', $instance['show-meta'] ); ?> />
+            <label for="<?php echo $this->get_field_id('show-meta'); ?>"><?php echo __('Show Post Meta', 'electa'); ?></label>
         </p>
         
         <p>
@@ -219,12 +207,12 @@ class electa_carousel extends WP_Widget {
         
         $instance['category'] = strip_tags( $new_instance['category'] );
         $instance['columns'] = strip_tags( $new_instance['columns'] );
-        $instance['show-featured-image'] = strip_tags( $new_instance['show-featured-image'] );
-        $instance['show-title'] = strip_tags( $new_instance['show-title'] );
-        $instance['show-excerpt'] = strip_tags( $new_instance['show-excerpt'] );
-        $instance['excerpt-length'] = strip_tags( $new_instance['excerpt-length'] );
-        $instance['show-meta'] = strip_tags( $new_instance['show-meta'] );
-        $instance['carousel-pagination'] = strip_tags( $new_instance['carousel-pagination'] );
+        $instance['show-featured-image'] = intval( $new_instance['show-featured-image'] );
+        $instance['show-title'] = intval( $new_instance['show-title'] );
+        $instance['show-excerpt'] = intval( $new_instance['show-excerpt'] );
+        $instance['excerpt-length'] = absint( $new_instance['excerpt-length'] );
+        $instance['show-meta'] = intval( $new_instance['show-meta'] );
+        $instance['carousel-pagination'] = sanitize_text_field( $new_instance['carousel-pagination'] );
         
         return $instance;
     }

@@ -152,12 +152,13 @@ class electa_icon extends WP_Widget {
         $instance['icon_name'] = sanitize_text_field( $new_instance['icon_name'] );
         $instance['icon_bg_color'] = strip_tags( $new_instance['icon_bg_color'] );
         $instance['icon_color'] = strip_tags( $new_instance['icon_color'] );
-        $instance['icon_size'] = strip_tags( $new_instance['icon_size'] );
+        $instance['icon_size'] = intval( $new_instance['icon_size'] );
         $instance['icon_style'] = sanitize_html_class( $new_instance['icon_style'] );
         $instance['icon_align'] = sanitize_html_class( $new_instance['icon_align'] );
-        $instance['icon_link'] = strip_tags( $new_instance['icon_link'] );
+        $instance['icon_link'] = esc_url_raw( $new_instance['icon_link'] );
         $instance['icon_link_target'] = strip_tags( $new_instance['icon_link_target'] );
         
         return $instance;
     }
+    
 } ?>
