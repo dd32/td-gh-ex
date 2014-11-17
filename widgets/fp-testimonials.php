@@ -20,6 +20,7 @@ class Moesia_Testimonials extends WP_Widget {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$image_uri = isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';	
 		$number    = isset( $instance['number'] ) ? intval( $instance['number'] ) : -1;
+		$category   = isset( $instance['category '] ) ? esc_attr( $instance['category '] ) : '';
 		$see_all   = isset( $instance['see_all'] ) ? esc_url_raw( $instance['see_all'] ) : '';				
 	?>
 	
@@ -42,6 +43,8 @@ class Moesia_Testimonials extends WP_Widget {
 	<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
     <p><label for="<?php echo $this->get_field_id('see_all'); ?>"><?php _e('Enter the URL for your testimonials page. Useful if you want to show here just a few testimonials, then send your visitors to a page that uses the testimonials page template.', 'moesia'); ?></label>
 	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all' ); ?>" name="<?php echo $this->get_field_name( 'see_all' ); ?>" type="text" value="<?php echo $see_all; ?>" size="3" /></p>	
+	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show all testimonials.', 'moesia' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>
 	
 
 	<?php
@@ -53,7 +56,9 @@ class Moesia_Testimonials extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number'] = strip_tags($new_instance['number']);
 	    $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );	
-		$instance['see_all'] = esc_url_raw( $new_instance['see_all'] );		    		
+		$instance['see_all'] = esc_url_raw( $new_instance['see_all'] );	
+		$instance['category'] = strip_tags($new_instance['category']);
+
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
@@ -98,12 +103,14 @@ class Moesia_Testimonials extends WP_Widget {
 		$number = ( ! empty( $instance['number'] ) ) ? intval( $instance['number'] ) : -1;
 		if ( ! $number )
 			$number = -1;			
+		$category = isset( $instance['category'] ) ? esc_attr($instance['category']) : '';
 
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
 			'post_type' 		  => 'testimonials',
-			'posts_per_page'	  => $number
+			'posts_per_page'	  => $number,
+			'category_name'		  => $category			
 		) ) );
 
 		if ($r->have_posts()) :

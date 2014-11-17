@@ -1,5 +1,12 @@
 Changelog
 
+17 Nov 2014
+--------------------------------------
+- added jquery.sticky.js
+- changed old sticky menu js code from scripts.js to jquery.sticky
+- changed CSS for the sticky menu
+- added license details in readme.txt for jquery.sticky.js
+- added category_name argument for services/testimonials/projects/employees widgets
 
 11 Nov 2014
 --------------------------------------

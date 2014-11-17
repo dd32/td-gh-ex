@@ -104,6 +104,13 @@ Resource URI: http://mynameismatthieu.com/WOW/
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
+n) Sticky.js
+Copyright: 2014 Anthony Garand
+Resource URI: https://github.com/garand/sticky
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+
+
 III. Documentation 
 
 Theme documentation is available on http://athemes.com/documentation/moesia/

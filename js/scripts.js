@@ -88,26 +88,7 @@ jQuery(function($) {
 
 //Make the menu sticky
 jQuery(function($) {
-	var stickyNavTop = $('.top-bar').offset().top;
-
-	var stickyNav = function(){
-	var scrollTop = $(window).scrollTop();
-	     
-	if (scrollTop > stickyNavTop) { 
-	    $('.top-bar').addClass('stuck');
-	} else {
-	    $('.top-bar').removeClass('stuck'); 
-	}
-	};
-
-	stickyNav();
-
-	$(window).scroll(function() {
-		stickyNav();
-	});
-	$(window).resize(function(){	
-		stickyNav();
-	});	
+	$(".top-bar").sticky({topSpacing:0});
 });
 
 //Better support for third party widgets
