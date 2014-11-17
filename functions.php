@@ -110,9 +110,6 @@ Author URI: http://alisiddique.com/
 //	=================================================================
 	require_once( 'library/custom-header.php' );
 
-//	Plugin install script
-//	=================================================================
-	require_once( 'inc/TGM-Plugin-Activation/config-plugin.php' );
 	
 //	Custom Functions
 //	=================================================================
