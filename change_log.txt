@@ -65,5 +65,10 @@ Version 1.4
 	ii) Replace esc_url_raw with esc_url.	
 	iii) Change Theme Options layout.
 	iv) Remove ABSPATH.
+	
 Version 1.4.1
     i) Variable name changes in media-uploader.js
+
+Version 1.4.2 (17th Nov. 2014)
+   i) Fixed JS error which was appearing in admin panel.  
+   ii) Removed screen_icon() found in the file class-tgm-plugin-activation.php as it's deprecated.  
