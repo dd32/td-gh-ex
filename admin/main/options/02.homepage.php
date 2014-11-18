@@ -97,8 +97,10 @@ global $thinkup_homepage_sliderswitch;
 global $thinkup_homepage_sliderpresetwidth;
 
 global $post;
-$_thinkup_meta_slider     = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
-$_thinkup_meta_sliderpage = get_post_meta( $post->ID, '_thinkup_meta_sliderimages', true ); 
+if ( ! empty( $post->ID ) ) {
+	$_thinkup_meta_slider     = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
+	$_thinkup_meta_sliderpage = get_post_meta( $post->ID, '_thinkup_meta_sliderimages', true );
+}
 
 	if ( is_front_page() or thinkup_check_ishome() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
@@ -138,6 +140,10 @@ global $thinkup_homepage_section3_image;
 global $thinkup_homepage_section3_title;
 global $thinkup_homepage_section3_desc;
 global $thinkup_homepage_section3_link;
+global $thinkup_homepage_section4_image;
+global $thinkup_homepage_section4_title;
+global $thinkup_homepage_section4_desc;
+global $thinkup_homepage_section4_link;
 
 	// Set default values for images
 	if ( ! empty( $thinkup_homepage_section1_image ) )
@@ -149,33 +155,40 @@ global $thinkup_homepage_section3_link;
 	if ( ! empty( $thinkup_homepage_section3_image ) )
 		$thinkup_homepage_section3_image = wp_get_attachment_image_src($thinkup_homepage_section3_image, 'column3-1/3');
 
+	if ( ! empty( $thinkup_homepage_section4_image ) )
+		$thinkup_homepage_section4_image = wp_get_attachment_image_src($thinkup_homepage_section4_image, 'column3-1/3');
+
 	// Set default values for titles
 	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = 'Perfect For All';
 	if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = '100% Responsive';
-	if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = 'Powerful Framework';
+	if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = 'Theme Options';
+	if ( empty( $thinkup_homepage_section4_title ) ) $thinkup_homepage_section4_title = 'Modern Design';
 
 	// Set default values for descriptions
 	if ( empty( $thinkup_homepage_section1_desc ) ) 
-	$thinkup_homepage_section1_desc = 'The modern design of Renden makes it the perfect choice for any website. Business, charity, blog, well everything!';
+	$thinkup_homepage_section1_desc = 'Renden makes it the perfect choice for any website. Business, charity, blog, well everything!';
 
 	if ( empty( $thinkup_homepage_section2_desc ) ) 
-	$thinkup_homepage_section2_desc = 'Renden is 100% responsive. It looks great on all devices, from mobile to desktops and everything in between!';
+	$thinkup_homepage_section2_desc = 'Renden is 100% responsive. It looks great on all devices, from mobiles to desktops!';
 
 	if ( empty( $thinkup_homepage_section3_desc ) ) 
-	$thinkup_homepage_section3_desc = 'Get a taste of our awesome ThinkUpThemes Framework and make changes to your site easily, without touching any code at all!';
+	$thinkup_homepage_section3_desc = 'Get a taste of our awesome ThinkUpThemes Framework. Make changes without touching code!';
+
+	if ( empty( $thinkup_homepage_section4_desc ) ) 
+	$thinkup_homepage_section4_desc = 'Designed with beauty in mind. Renden is truly stunning you won&#39;t believe it&#39;s free!';
 
 	// Get page names for links
 	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_permalink( $thinkup_homepage_section1_link );
 	if ( !empty( $thinkup_homepage_section2_link ) ) $thinkup_homepage_section2_link = get_permalink( $thinkup_homepage_section2_link );
 	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_permalink( $thinkup_homepage_section3_link );
-
+	if ( !empty( $thinkup_homepage_section4_link ) ) $thinkup_homepage_section4_link = get_permalink( $thinkup_homepage_section4_link );
 
 	if ( is_front_page() or thinkup_check_ishome() ) {
 		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
 
-			echo '<article class="section1 one_third">',
+			echo '<article class="section1 one_fourth">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section1_image ) ) {
@@ -191,7 +204,7 @@ global $thinkup_homepage_section3_link;
 					'</div>',
 				'</article>';
 
-			echo '<article class="section2 one_third">',
+			echo '<article class="section2 one_fourth">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section2_image ) ) {
@@ -207,7 +220,7 @@ global $thinkup_homepage_section3_link;
 					'</div>',
 				'</article>';
 
-			echo '<article class="section3 one_third last">',
+			echo '<article class="section3 one_fourth">',
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section3_image ) ) {
@@ -219,6 +232,22 @@ global $thinkup_homepage_section3_link;
 					'<div class="entry-content">',
 					'<h3>' . esc_html( $thinkup_homepage_section3_title ) . '</h3>' . wpautop( do_shortcode ( esc_html( $thinkup_homepage_section3_desc ) ) ),
 					'<p><a href="' . esc_url( $thinkup_homepage_section3_link ) . '" class="more-link">' . __( 'Read More', 'renden' ) . '</a></p>',
+					'</div>',
+					'</div>',
+				'</article>';
+
+			echo '<article class="section4 one_fourth last">',
+					'<div class="section">',
+					'<div class="entry-header">';
+					if ( empty( $thinkup_homepage_section4_image ) ) {
+						echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured4.png' . '"  alt="" />';
+					} else {
+						echo '<img src="' . $thinkup_homepage_section4_image[0] . '"  alt="" />';
+					}
+			echo	'</div>',
+					'<div class="entry-content">',
+					'<h3>' . esc_html( $thinkup_homepage_section4_title ) . '</h3>' . wpautop( do_shortcode ( esc_html( $thinkup_homepage_section4_desc ) ) ),
+					'<p><a href="' . esc_url( $thinkup_homepage_section4_link ) . '" class="more-link">' . __( 'Read More', 'renden' ) . '</a></p>',
 					'</div>',
 					'</div>',
 				'</article>';
@@ -266,11 +295,11 @@ global $thinkup_homepage_introactioncustom1;
 				echo '<div class="action-link one_third last">';
 					// Add call to action button 1
 					if ( $thinkup_homepage_introactionlink1 == 'option1' ) {
-						echo '<a class="themebutton" href="' . usc_url( get_permalink( $thinkup_homepage_introactionpage1 ) ) . '">',
+						echo '<a class="themebutton" href="' . esc_url( get_permalink( $thinkup_homepage_introactionpage1 ) ) . '">',
 						esc_html( $thinkup_homepage_introactiontext1 ),
 						'</a>';
 					} else if ( $thinkup_homepage_introactionlink1 == 'option2' ) {
-						echo '<a class="themebutton" href="' . usc_url( $thinkup_homepage_introactioncustom1 ) . '">',
+						echo '<a class="themebutton" href="' . esc_url( $thinkup_homepage_introactioncustom1 ) . '">',
 						esc_html( $thinkup_homepage_introactiontext1 ),
 						'</a>';
 					}

@@ -103,5 +103,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.1
+- New:     Featured content areas increased to 4 from 3.
+- New:     Additional image size added so that images fit nicely in new layout.
+- Fixed:   php notice errors fixed for initial theme activation.
+- Updated: Screenshot updated to better reflect updated theme design.
+- Updated: Redux global variable changed from thinkup_redux_variables to redux.
+
 Version 1.0.0
 - Initial release.

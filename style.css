@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/renden-free/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Renden is the free version of the multi-purpose professional theme (Renden Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: black, dark, red, one-column, two-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
@@ -1970,16 +1970,18 @@ a.themebutton4 {
 }
 #section-home .entry-content {
 	color: #888;
-	padding: 20px 20px 0px;
+	padding: 15px 10px 0px;
 }
 #section-home h3 {
 	font-size: 15px;
 	font-weight: 600;
 	text-transform: uppercase;
-	margin-bottom: 20px;
+}
+#section-home h3,
+#section-home p {
+	margin-bottom: 15px;
 }
 #section-home .more-link {
-	padding: 5px 10px;
 }
 #section-home .more-link:after {
 	font-family: FontAwesome;

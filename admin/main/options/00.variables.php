@@ -14,7 +14,7 @@
 function thinkup_reduxvariables() { 
 
 	// Fetch options stored in $data.
-	global $thinkup_redux_variables;
+	global $redux;
 
 	//  1.1.     General settings.
 	$GLOBALS['thinkup_general_logoswitch']                  = thinkup_var ( 'thinkup_general_logoswitch' );
@@ -59,6 +59,10 @@ function thinkup_reduxvariables() {
 	$GLOBALS['thinkup_homepage_section3_title']             = thinkup_var ( 'thinkup_homepage_section3_title' );
 	$GLOBALS['thinkup_homepage_section3_desc']              = thinkup_var ( 'thinkup_homepage_section3_desc' );	
 	$GLOBALS['thinkup_homepage_section3_link']              = thinkup_var ( 'thinkup_homepage_section3_link' );
+	$GLOBALS['thinkup_homepage_section4_image']             = thinkup_var ( 'thinkup_homepage_section4_image', 'id' );
+	$GLOBALS['thinkup_homepage_section4_title']             = thinkup_var ( 'thinkup_homepage_section4_title' );
+	$GLOBALS['thinkup_homepage_section4_desc']              = thinkup_var ( 'thinkup_homepage_section4_desc' );	
+	$GLOBALS['thinkup_homepage_section4_link']              = thinkup_var ( 'thinkup_homepage_section4_link' );
 
 	//  1.3.     Header
 	$GLOBALS['thinkup_header_searchswitch']                 = thinkup_var ( 'thinkup_header_searchswitch' );

@@ -260,6 +260,7 @@ function thinkup_input_addimagesizes() {
 
 	/* 3 Column Layout */
 	add_image_size( 'column3-1/1', 380, 380, true );
+	add_image_size( 'column3-1/3', 320, 107, true );
 	add_image_size( 'column3-2/5', 380, 152, true );	
 	add_image_size( 'column3-2/3', 380, 254, true );
 	add_image_size( 'column3-3/4', 380, 285, true );
@@ -287,6 +288,7 @@ function thinkup_input_showimagesizes($sizes) {
 
 	// 3 Column Layout
 	$sizes['column3-1/1'] = 'Third - 1:1';
+	$sizes['column3-1/3'] = 'Third - 1:3';
 	$sizes['column3-2/5'] = 'Third - 2:5';
 	$sizes['column3-2/3'] = 'Third - 2:3';
 	$sizes['column3-3/4'] = 'Third - 3:4';

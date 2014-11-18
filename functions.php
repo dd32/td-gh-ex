@@ -82,7 +82,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
 	wp_enqueue_style( 'prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.5' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.1.0' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.0.1' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
@@ -101,7 +101,7 @@ function thinkup_frontscripts() {
 
 	// Add Masonry scripts to Blog & Testimonials pag
 	if ( thinkup_check_isblog() ) {
-//		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/lib/scripts/plugins/masonry/masonry.js', array( 'jquery' ), '3.1.2', true );
+		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/lib/scripts/plugins/masonry/masonry.js', array( 'jquery' ), '3.1.2', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

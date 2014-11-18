@@ -75,7 +75,9 @@ global $thinkup_woocommerce_layout;
 global $thinkup_woocommerce_layoutproduct;
 
 global $post;
-$_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
+if ( ! empty( $post->ID ) ) {
+	$_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
+}
 
 	if ( is_front_page() ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
@@ -213,7 +215,9 @@ global $thinkup_woocommerce_layout;
 global $thinkup_woocommerce_layoutproduct;
 
 global $post;
-$_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
+if ( ! empty( $post->ID ) ) {
+	$_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
+}
 
 do_action('thinkup_sidebar_html');
 

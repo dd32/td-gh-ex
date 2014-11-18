@@ -31,8 +31,8 @@ if( file_exists( dirname(__FILE__) . '/options.php' )) {
 // Assign custom function to fetch variable values
 if ( !function_exists( 'thinkup_var' ) ) :
 function thinkup_var( $name, $key = false ) {
-  global $thinkup_redux_variables;
-  $options = $thinkup_redux_variables;
+  global $redux;
+  $options = $redux;
 
   // Set this to your preferred default value
   $var = '';
@@ -58,7 +58,7 @@ endif;
 // Custom function to fetch variable values if they cannot be collected from database
 if ( !function_exists( 'thinkup_var_cookie' ) ) :
 function thinkup_var_cookie( $variable ) {
-	$thinkup_get_reduxvariables 	= get_option( 'thinkup_redux_variables' );
+	$thinkup_get_reduxvariables 	= get_option( 'redux' );
 	if ( isset( $_COOKIE['thinkup_get_reduxvariables'] ) ) :
 		$thinkup_get_reduxvariables = $_COOKIE['thinkup_get_reduxvariables'];
 	endif;

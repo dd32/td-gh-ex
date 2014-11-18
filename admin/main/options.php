@@ -135,7 +135,7 @@ function redux_setup_framework_options(){
     $args['dev_mode_icon_class'] = 'icon-large';
 
     // Set a custom option name. Don't forget to replace spaces with underscores!
-    $args['opt_name'] = 'thinkup_redux_variables';
+    $args['opt_name'] = 'redux';
 
     // Setting system info to true allows you to view info useful for debugging.
     // Default: true
@@ -698,6 +698,39 @@ function redux_setup_framework_options(){
 
 			array(
 				'id'=>'thinkup_homepage_section3_link',
+				'desc' => __('Link to a page', 'redux-framework'), 
+				'type' => 'select',
+				'data' => 'pages',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'title'=> __('Content Area 4', 'redux-framework'),
+				'desc'=> __('Add an image for the section background.', 'redux-framework'),
+				'id'=>'thinkup_homepage_section4_image',
+				'type' => 'media',
+				'url'=> true,
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section4_title',
+				'desc' => __('Add a title to the section.', 'redux-framework'),
+				'type' => 'text',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section4_desc',
+				'desc' => __('Add some text to featured section 4.', 'redux-framework'),
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section4_link',
 				'desc' => __('Link to a page', 'redux-framework'), 
 				'type' => 'select',
 				'data' => 'pages',
