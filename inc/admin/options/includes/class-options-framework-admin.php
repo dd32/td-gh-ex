@@ -54,11 +54,12 @@ class Options_Framework_Admin {
      */
     function settings_init() {
 
-    	// Load Options Framework Settings
-        $optionsframework_settings = get_option( 'optionsframework' );
+		// Get the option name
+		$options_framework = new Options_Framework;
+	    $name = $options_framework->get_option_name();
 
 		// Registers the settings fields and callback
-		register_setting( 'optionsframework', $optionsframework_settings['id'],  array ( $this, 'validate_options' ) );
+		register_setting( 'optionsframework', $name, array ( $this, 'validate_options' ) );
 
 		// Displays notice after options save
 		add_action( 'optionsframework_after_validate', array( $this, 'save_options_notice' ) );
@@ -87,8 +88,8 @@ class Options_Framework_Admin {
             'mode' => 'submenu',
 
             // Submenu default settings
-            'page_title' => __( 'Theme Options', 'textdomain'),
-			'menu_title' => __('Theme Options', 'textdomain'),
+            'page_title' => __( 'Theme Options', 'accelerate' ),
+			'menu_title' => __( 'Theme Options', 'accelerate' ),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'options-framework',
             'parent_slug' => 'themes.php',
@@ -117,11 +118,11 @@ class Options_Framework_Admin {
 		// Code removed because it conflicts with .org theme check.
 
 		$this->options_screen = add_theme_page(
-            	$menu['page_title'],
-            	$menu['menu_title'],
-            	$menu['capability'],
-            	$menu['menu_slug'],
-            	array( $this, 'options_page' )
+            $menu['page_title'],
+            $menu['menu_title'],
+            $menu['capability'],
+            $menu['menu_slug'],
+            array( $this, 'options_page' )
         );
 
 	}
@@ -194,8 +195,8 @@ class Options_Framework_Admin {
 				<?php settings_fields( 'optionsframework' ); ?>
 				<?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
 				<div id="optionsframework-submit">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'textdomain' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'textdomain' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'textdomain' ) ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'accelerate' ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'accelerate' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'accelerate' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -226,7 +227,7 @@ class Options_Framework_Admin {
 		 */
 
 		if ( isset( $_POST['reset'] ) ) {
-			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'textdomain' ), 'updated fade' );
+			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'accelerate' ), 'updated fade' );
 			return $this->get_default_values();
 		}
 
@@ -280,7 +281,7 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'textdomain' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'accelerate' ), 'updated fade' );
 	}
 
 	/**
@@ -295,7 +296,6 @@ class Options_Framework_Admin {
 	 * @return array Re-keyed options configuration array.
 	 *
 	 */
-
 	function get_default_values() {
 		$output = array();
 		$config = & Options_Framework::_optionsframework_options();

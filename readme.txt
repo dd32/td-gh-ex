@@ -50,6 +50,13 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1 =
+* Options Framework updated to 1.9.0
+* Options Framework textdomain 'textdomain' changed to 'accelerate'. 
+* Some wrong textdomain corrected.
+* Language pot file updated.
+* Few CSS adjustments.
+
 = Version 1.0.9 =
 * Removed blank spaces at the end of some files that caused site to show as a blank page in some cases.
 * Shortcodes previously used for footer copyright text now completely removed.

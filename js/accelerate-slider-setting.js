@@ -10,7 +10,6 @@ if(slides <= 1) {
 } else {
    jQuery('.slider-nav').css("display", "visible");
 }
-jQuery('.slider-rotate').on('cycle-initialized', function (e, opts, API) {});
  
 jQuery(window).load(function() {
 jQuery('.slider-rotate').cycle({ 
