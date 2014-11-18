@@ -4,7 +4,7 @@ Theme URI:
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, Site Origin's Page Builder and more, making it very simple to build a nice website.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -1138,7 +1138,6 @@ header:hover .search-button {
     padding: 12px 0 20px;
 }
 .post .entry-content p {
-    margin: 0;
     padding: 0;
 }
 
@@ -1221,7 +1220,7 @@ header:hover .search-button {
 .electa-carousel-arrow-next i {
     font-size: 0.8em;
     position: relative;
-    top: -3px;
+    top: 0px;
 }
 .electa-carousel-arrow-prev:hover,
 .electa-carousel-arrow-next:hover {
@@ -1261,6 +1260,7 @@ header:hover .search-button {
     background-position: center center;
     position: relative;
     
+    margin-bottom: 2px;
     -webkit-transition: background-size 0.2s linear 0s;
      -moz-transition: background-size 0.2s linear 0s;
       -ms-transition: background-size 0.2s linear 0s;
@@ -1298,8 +1298,8 @@ header:hover .search-button {
 }
 .electa-carousel-block h3 {
     font-size: 24px;
-    margin: 0;
-    padding: 12px 4px 4px;
+    padding: 0;
+    margin: 12px 4px 4px;
 }
 .electa-carousel-block h3 a {
     text-decoration: none;
@@ -1307,6 +1307,7 @@ header:hover .search-button {
 .electa-carousel-block-meta {
     font-size: 11px;
     padding: 0 4px;
+    margin: 4px 0 2px;
 }
 .electa-carousel-block-meta i {
     margin: 0 4px 0 0;

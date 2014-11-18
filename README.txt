@@ -66,6 +66,8 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.7
+* Style tweaks
 
 #### 1.1.6
 * Sanitized more widget settings
