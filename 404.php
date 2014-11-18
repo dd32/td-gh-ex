@@ -4,6 +4,15 @@
 
 <?php
 	$options = get_option( 'fkidd_tishonator_notfound_settings' );
+	if ( $options === false ) {
+		// get default Not Found settings
+		$options = array (  
+					'tishonator_notfound_image'	=> get_stylesheet_directory_uri().'/images/404.png',
+					'tishonator_notfound_title'	=> 'Error 404: Not Found',
+					'tishonator_notfound_content'	=> '<p>Sorry. The page you are looking for does not exist.</p>',
+					);
+	}
+	
 ?>
 <div id="main-content-wrapper">
 	<div id="main-content-full">

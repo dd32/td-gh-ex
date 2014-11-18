@@ -59,7 +59,7 @@ function tishonator_widgets_init() {
 						'description'	 =>  __( 'The sidebar widget area', 'tishonator' ),
 						'before_widget'	 =>  '',
 						'after_widget'	 =>  '',
-						'before_title'	 =>  '<h3 class="sidebar-title">',
+						'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',
 						'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 					) );
 }
