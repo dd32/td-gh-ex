@@ -19,7 +19,7 @@ class wp_fanzone_recent_posts extends WP_Widget {
 		$title 	 = apply_filters('widget_title', $instance['title'] ); // Title		
 		/*$cpt 	 = $instance['types'];*/ // Post type(s) 		
 	    $types   = 'post';
-		$number	 = $instance['number']; // Number of posts to show
+		$number	 = absint($instance['number']); // Number of posts to show
 		
         // Output
 		echo $before_widget;
@@ -57,21 +57,18 @@ class wp_fanzone_recent_posts extends WP_Widget {
 
 	/** Widget control update */
 	function update( $new_instance, $old_instance ) {
-		$instance    = $old_instance;
-		
+		$instance    = $old_instance;	
 		
 		//Let's turn that array into something the Wordpress database can store
-		$types       = 'post';
-		$instance['title']  = strip_tags( $new_instance['title'] );
-		$instance['types']  = $types;
-		$instance['number'] = strip_tags( $new_instance['number'] );
-		$instance['display_featured_image'] = $new_instance['display_featured_image'];
+		$instance['title']  = esc_html( $new_instance['title'] );
+		$instance['types'] = ( in_array( $new['types'], array( 'posts', 'pages' ) ) ) ? $new['types'] : 'posts';
+		$instance['number'] = absint( $new_instance['number'] );
+		$instance['display_featured_image'] = (bool) $new_instance['display_featured_image'];
 		return $instance;
 	}
 	
 	
-	// Widget settings
-	
+	// Widget settings	
 	function form( $instance ) {	
 			$number = 5;
 			$display_featured_image = 0;
@@ -79,8 +76,8 @@ class wp_fanzone_recent_posts extends WP_Widget {
 		    if ( $instance ) {
 				$title  = $instance['title'];
 		        $types  = $instance['types'];
-		        $number = wp_fanzone_sanitize_integer($instance['number']);
-				$display_featured_image = $instance['display_featured_image'];
+		        $number = absint($instance['number']);
+				$display_featured_image = (bool) $instance['display_featured_image'];
 		    } 
 			
 			//Let's turn $types into an array

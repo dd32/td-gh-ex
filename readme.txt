@@ -88,6 +88,16 @@ This theme uses Bootstrap as a design tool
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 
+Version 2.0.1
+bug fixes below:
+ style.css
+ function.php
+ header.php
+ inc/widget.php
+ inc/customizer.php
+file removed:
+ inc/wpfanzoneNavMenuWalker.php
+
 Version 2.0
  WP FanZone is now based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 

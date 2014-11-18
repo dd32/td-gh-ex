@@ -315,7 +315,7 @@ if ( ! function_exists( 'wp_fanzone_apply_color' ) ) :
 	?>
 	<style id="color-settings">
 	<?php if ( get_theme_mod('wp_fanzone_theme_color') ) : ?>
-		.btn-info, .btn-default, #copyright, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .dropdown-menu, .dropdown-menu .sub-menu, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], .widget-title h4, .pagination .fa, #footer .widget_calendar thead tr, .navbar-default .navbar-toggle .icon-bar, .site-info, footer .widget_calendar thead tr{
+		.btn-info, .btn-default, .main-navigation li:hover > a, .main-navigation ul ul a, .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a, .navbar-toggle .icon-bar, .main-navigation .current_page_ancestor > a, #copyright, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], .widget-title h4, .pagination .fa, #footer .widget_calendar thead tr, .site-info, footer .widget_calendar thead tr{
 			background-color:<?php echo get_theme_mod('wp_fanzone_theme_color'); ?>;
 			}
 		.top-bar, .btn-info, .nav_container, #footer, .navbar-default .navbar-toggle, footer#colophon{

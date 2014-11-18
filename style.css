@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/fanzone-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com
 Description: WP Fan Zone was designed orginally with sports fans and bloggers in mind, but it could easily be used for any type of blog or magazine style site that wants to feature images and content. It is fully responsive, comes with two main menus, and widget areas for all page types. It also has customization options for social media links, color scheme and author bios, plus a simple banner widget for putting ads in the header.
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-fanzone
@@ -64,11 +64,18 @@ WP FanZone is based on Underscores http://underscores.me/, (C) 2012-2014 Automat
 }
 .navbar-toggle{
 	background-color:#eeeeee;
+	z-index:99999;
 }
-ul.top-menu li, .top-menu ul{
+.navbar-toggle .icon-bar{
+	background-color: #339390;
+}
+#top-nav ul.menu li, #top-nav .nav-menu ul{
 	float:left;
-	padding:10px;
+	padding:0 10px;
 	list-style:none;
+}
+#top-nav ul.nav-menu{
+	margin-top:10px;
 }
 ul.top-menu li a{
 	color:#FFFFFF;
@@ -155,38 +162,64 @@ header .logo, header .logo h1{
 	margin: 0;
 	padding-left: 0;
 }
+.main-navigation ul > li{
+	border-right: 1px solid #222222;
+	text-transform: uppercase;
+}
+.main-navigation ul > li:last-child{
+	border-right:none;
+}
 .main-navigation li {
 	float: left;
 	position: relative;
 }
+.top-nav a{
+	color:#ffffff;
+}
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 10px 15px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 18px;
+	color:#ffffff;
+	border-left: 1px solid #383838;
 }
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 3.3em;
 	left: -999em;
 	z-index: 99999;
+	background:#2e2e2e;	
 }
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+	min-width: 250px;
+	font-size: 16px;
+	background:#339390;
+	padding:10px 15px;
 }
 
 .main-navigation ul ul li {
-
+	border:none;
+	overflow:hidden;
 }
 
 .main-navigation li:hover > a {
+	background:#339390;
 }
-
-.main-navigation ul ul :hover > a {
+.main-navigation ul ul.children >li > a, .main-navigation ul ul.sub-menu >li > a, .main-navigation li:first-child > a{
+	border:none;
+}
+.main-navigation ul ul.children >li > a:hover, .main-navigation ul ul.sub-menu >li > a:hover {
+	background:#ebebeb;
+	color:#2e2e2e;
 }
 
 .main-navigation ul ul a:hover {
@@ -203,22 +236,14 @@ header .logo, header .logo h1{
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+	background:#339390;
 }
+
 /* Small menu */
 .menu-toggle {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
 
 /*--------------------------------------------------------------
 2.0 Content
@@ -1222,42 +1247,23 @@ object {
 
 }
 @media screen and (min-width: 768px) {
-	.dropdown-menu, .dropdown-menu .sub-menu{
-		background:#339390;
-		border-radius:0;
-		border:none;
-		}
 	#top-widget{
 		/*float:right;*/
 		margin-top:20px;
 		/*display:block;*/
 		}
-	.dropdown-menu > li > a, .dropdown-menu .sub-menu a{
-		color:#fff;
-		font-size:16px;
-		font-family:'Oswald', sans-serif;
-		}
-	.dropdown-menu .sub-menu  {
-		left: 100%;
-		position: absolute;
-		top: 0;
-		visibility: hidden;
-		margin-top: -1px;		
-		}
-
-	.dropdown-menu li:hover .sub-menu {
-		visibility: visible;
-		}
-
-	.dropdown:hover .dropdown-menu {
-		display: block;
-		}
-
-	.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
-		margin-top: 0;
-		}
-
-	.navbar .sub-menu:before {
+	#site-navigation ul.nav-menu > li.menu-item-has-children > a:after, #site-navigation ul.nav-menu > li.page_item_has_children > a:after{
+		content:"";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		margin-left: 5px;
+		vertical-align: middle;
+		border-top: 4px solid;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+	}
+	.navbar .children:before, .navbar .sub-menu:before {
 		border-bottom: 7px solid transparent;
 		border-left: none;
 		border-right: 7px solid rgba(0, 0, 0, 0.2);
@@ -1265,7 +1271,7 @@ object {
 		left: -7px;
 		top: 10px;
 		}
-	.navbar .sub-menu:after {
+	.navbar .children:after, .navbar .sub-menu:after {
 		border-top: 6px solid transparent;
 		border-left: none;
 		border-right: 6px solid #fff;
@@ -1274,12 +1280,13 @@ object {
 		top: 11px;
 		left: -6px;
 		}
+		
 	.fan-sociel-media .btn{
 		margin-right:5px;
 		float:
 		right;
 		}
-	nav .container-fluid, nav .navbar-collapse{
+	nav.container-fluid, nav .navbar-collapse{
 		padding:0;
 		}
 	.pgwSlider .ps-current{
@@ -1310,6 +1317,16 @@ object {
 	h6 {
 		font-size: 13px;
 		}
+	.main-navigation ul, .top-nav ul {
+		display: none;
+	}
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu, .top-nav.toggled .nav-menu {
+		display: block;
+	}
+	.top-nav.toggled ul.nav-menu{
+		clear:both;
+	}
 	.navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
 		border:0;
 		}
@@ -1325,30 +1342,31 @@ object {
 	ul.pgwSlider > li span, .pgwSlider > ul > li span{
 		display:none;
 		}
-
-	.dropdown-menu{
-		display: block;
-		border: none;
-		border-radius: 0;
-		width: 100%;
-		position: relative;
-		box-shadow: none;
-		background:#464646 !important;
-		overflow:hidden;	
-		}
+	ul ul.children, ul ul ul.children, ul ul.sub-menu, ul ul ul.sub-menu{
+		float:none;
+		position:initial;
+		display:block;
+		margin:0;
+		box-shadow:none;
+	}
+	ul.children > li, ul.sub-menu > li{
+		padding-left:10px;
+	}
+	.main-navigation ul ul.children >li > a, .main-navigation ul ul.sub-menu >li > a {
+		background:#2e2e2e;
+		color:#ffffff;
+	}
+	.main-navigation ul > li, .main-navigation ul ul.children >li > a, .main-navigation ul ul.sub-menu >li > a{
+		border:none;
+		background:#464646;
+	}
 	.navbar-nav{
 		overflow:hidden;
 		}
-	ul.dropdown-menu{
-		padding-left:10px;
-		}
-	ul.dropdown-menu a{
-		font-family: 'Oswald', sans-serif;
-		color:#FFFFFF;
-		}
-	.depth_0{
-		margin-bottom:10px;
-		}
+	.main-navigation li{
+		float:none;
+	}
+	
 }
 
 

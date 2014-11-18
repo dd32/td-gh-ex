@@ -28,40 +28,22 @@
             	<div class="row">
                 	<div class="col-md-7">
 							<p style="display:inline-block; color:#fff; vertical-align: top; padding-top:10px; float:left; margin-right:10px;"><?php echo date_i18n( get_option( 'date_format' )); ?></p>
-                            <div id="top-nav">
-                            	<div class="navbar-default">                             
-                                	<!-- Home and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">            
-                                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">            
-                                        <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>            
-                                        <span class="icon-bar"></span>            
-                                        <span class="icon-bar"></span>            
-                                        <span class="icon-bar"></span>          
-                                      </button>            
-                                    </div>   
-                                   	<!-- Collect the nav links, forms, and other content for toggling -->            
-                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">            
-                                      	<?php
-                                            if (has_nav_menu('top-menu')) {
-                                              wp_nav_menu( array(
-                                                  'theme_location' => 'top-menu',
-                                                  'walker'         => new wpfanzoneNavMenuWalker,
-                                                  'depth'	=> 3,            
-                                                  'container'	=> false,
-                                                  'menu_class'	=> 'top-menu',
-                                              ) );
-                                            }                                      
-                
-                
-                                    	?>                     
-                					</div><!-- /.navbar-collapse -->
-								</div>
+                            <?php if (has_nav_menu('top-menu')) { ?>
+                            <div id="top-nav" role="navigation" class="top-nav clearfix">
+                            	 <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
+                                    <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>            
+                                    <span class="icon-bar"></span>            
+                                    <span class="icon-bar"></span>            
+                                    <span class="icon-bar"></span>
+                                  </button>
+                                <?php wp_nav_menu( array( 'theme_location' => 'top-menu','depth' => 1, 'container'	=> false ) ); ?>                            	
 							</div>
+                             <?php } ?>
 					</div>
                     <div class="col-md-5 fan-sociel-media">
 						<?php if ( get_theme_mod( 'wp_fanzone_email' ) ) : ?>
-                        	<a href="<?php _e('mailto:', 'wp-fanzone'); echo sanitize_email( get_theme_mod( 'wp_fanzone_email' ) ); ?>" class="btn btn-default btn-xs" title="Email"><span class="fa fa-envelope"></span></a>
-
+                        	<a href="<?php _e('mailto:', 'wp-fanzone'); echo sanitize_email( get_theme_mod( 'wp_fanzone_email' ) ); ?>" class="btn btn-default btn-xs" title="Email"><span class="fa fa-envelope"></span>
+                            </a>
                         <?php endif; ?>             	
                         <?php if ( get_theme_mod( 'wp_fanzone_rss' ) ) : ?>
                         	<a href="<?php echo esc_url( get_theme_mod( 'wp_fanzone_rss' ) ); ?>" class="btn btn-default btn-xs" title="RSS"><span class="fa fa-rss"></span></a>
@@ -126,40 +108,14 @@
 
 		<div class="nav_container">
             <div class="container">
-                <nav class="navbar navbar-default" role="navigation">
-                  <div class="container-fluid">
-                    <!-- Home and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-
-                        <span class="sr-only">Toggle navigation</span>
-
-                        <span class="icon-bar"></span>
-
-                        <span class="icon-bar"></span>
-
-                        <span class="icon-bar"></span>
-
-                      </button>
-                    </div>     
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-collapse">
-                      <?php
-							$args = array(
-							'theme_location' => 'primary',
-							'depth'	=> 3,
-							'container'	=> false,
-							'fallback_cb' => 'wp_fanzone_menu',
-							'menu_class'	=> 'nav navbar-nav',
-							'walker'	=> new wpfanzoneNavMenuWalker()
-							);
-							wp_nav_menu($args);
-						?>                   
-
-                    </div><!-- /.navbar-collapse -->
-
-                  </div><!-- /.container-fluid -->
+                <nav id="site-navigation" class="main-navigation container-fluid" role="navigation">
+                  <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
+                  	<span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>            
+                    <span class="icon-bar"></span>            
+                    <span class="icon-bar"></span>            
+                    <span class="icon-bar"></span>
+                  </button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'wp_fanzone_menu' ) ); ?>
 
                 </nav>
 

@@ -4,7 +4,6 @@
  *
  * @package WP FanZone
  */
-require get_template_directory() . '/inc/wpfanzoneNavMenuWalker.php';
 require get_template_directory() . '/inc/pagination.php';
 require get_template_directory() . '/inc/widget.php';
 /**
@@ -28,7 +27,6 @@ if ( ! function_exists( 'wp_fanzone_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function wp_fanzone_setup() {
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -36,7 +34,6 @@ function wp_fanzone_setup() {
 	 * to change 'wp-fanzone' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'wp-fanzone', get_template_directory() . '/languages' );
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 	add_editor_style();
@@ -46,7 +43,6 @@ function wp_fanzone_setup() {
 	add_image_size( 'slide-small-thumb',  130, 135 , true );
 	add_image_size( 'slide-medium-thumb',  265, 135 , true );
 	add_image_size( 'slide-large-image',  849, 424, true );
-
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -66,7 +62,7 @@ function wp_fanzone_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
 	/*
