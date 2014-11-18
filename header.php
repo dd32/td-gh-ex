@@ -55,14 +55,16 @@
 	          </div>
 	      </div>
           <div class="col-md-6 col-sm-6 col-xs-6 header-logo">
+              <div class="site-title">
               <?php 
               $medium_options = get_option( 'medium_theme_options' );
               if(empty($medium_options['logo'])) { ?>
         		<a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a>
             <?php } else { ?>
-                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="" class="logo-center img-responsive" /></a>
+                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="<?php echo get_bloginfo('name'); ?>" class="logo-center img-responsive" /></a>
             <?php }
             ?>
+              </div>
            </div>
        
               
@@ -71,7 +73,7 @@
              </div>   
           	<div class="header-search">
 	          <div class="search-column">
-               <form method="post" action="#" name="Search-form">
+               <form method="post" action="javascript:void(0);" name="Search-form">
 		          <input type="search" placeholder="Search" autofocus class="pop-search">
                </form>
                

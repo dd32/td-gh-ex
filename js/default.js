@@ -48,6 +48,9 @@ jQuery(document).ready(function($){
 			$(this).removeClass(".fa fa-search");
 		}
 	});
+        
+        var wheight = (jQuery(window).height()-122);
+        jQuery('.home-section').css({'min-height':wheight});
 });
 jQuery(document).ready(function($) {
 	jQuery('.pop-search').keyup(function(e) {

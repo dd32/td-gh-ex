@@ -2,6 +2,7 @@
 /**
  * Implemention of Custom Header 
  */
+
 /**
  * Set up the WordPress core custom header settings.
  *
@@ -32,6 +33,7 @@ function medium_custom_header_setup() {
 	) ) );
 }
 add_action( 'after_setup_theme', 'medium_custom_header_setup' );
+
 if ( ! function_exists( 'medium_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
@@ -41,10 +43,12 @@ if ( ! function_exists( 'medium_header_style' ) ) :
  */
 function medium_header_style() {
 	$medium_text_color = get_header_textcolor();
-	// If no custom color for text is set, let's bail.
+	
+        // If no custom color for text is set, let's bail.
 	if ( display_header_text() && $medium_text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
-	// If we get this far, we have custom styles.
+	
+        // If we get this far, we have custom styles.
 	?>
 	<style type="text/css" id="medium-header-css">
 	<?php
@@ -69,6 +73,8 @@ function medium_header_style() {
 	<?php
 }
 endif; // medium_header_style
+
+
 if ( ! function_exists( 'medium_admin_header_style' ) ) :
 /**
  * Style the header image displayed on the Appearance > Header screen.
@@ -101,6 +107,7 @@ function medium_admin_header_style() {
 <?php
 }
 endif; // medium_admin_header_style
+
 if ( ! function_exists( 'medium_admin_header_image' ) ) :
 /**
  * Create the custom header image markup displayed on the Appearance > Header screen.

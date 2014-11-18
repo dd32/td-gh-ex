@@ -5,8 +5,10 @@ function medium_options_init(){
 add_action( 'admin_init', 'medium_options_init' );
 function medium_options_validate($input)
 {
-	$input['logo'] = esc_url_raw( $input['logo'] );
-	$input['favicon'] = esc_url_raw( $input['favicon'] );
+        //print(medium_image_validation(esc_url_raw( $input['logo'])));die;
+        $input['logo'] = medium_image_validation(esc_url_raw( $input['logo']));
+        
+        $input['favicon'] = medium_image_validation(esc_url_raw( $input['favicon'] ));
 	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
         $input['scmessage'] = wp_filter_nohtml_kses( $input['scmessage'] );
 	
@@ -20,6 +22,19 @@ function medium_options_validate($input)
 		
     return $input;
 }
+
+function medium_image_validation($medium_imge_url){
+    $medium_filetype = wp_check_filetype($medium_imge_url);
+    
+    $medium_supported_image = array('gif','jpg','jpeg','png','ico');
+    
+    if (in_array($medium_filetype['ext'], $medium_supported_image)) {
+        return $medium_imge_url;
+    } else {
+        return '';
+    }   
+}
+
 function medium_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'medium_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');

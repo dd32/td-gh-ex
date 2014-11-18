@@ -10,3 +10,6 @@ iii) Require file set properly
 iv) Remove Theme Text Translation
 v) Remove newsletter code from theme options and remove newsletter script and css from js and css files.
 vi) Images folder is deleted.
+
+Version 1.1.1 (18-11-2014)
+i) Fixed JS and CSS issues.
