@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/fanzone-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com
 Description: WP Fan Zone was designed orginally with sports fans and bloggers in mind, but it could easily be used for any type of blog or magazine style site that wants to feature images and content. It is fully responsive, comes with two main menus, and widget areas for all page types. It also has customization options for social media links, color scheme and author bios, plus a simple banner widget for putting ads in the header.
-Version: 2.0.1
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-fanzone
@@ -69,7 +69,7 @@ WP FanZone is based on Underscores http://underscores.me/, (C) 2012-2014 Automat
 .navbar-toggle .icon-bar{
 	background-color: #339390;
 }
-#top-nav ul.menu li, #top-nav .nav-menu ul{
+#top-nav ul.nav-menu li, #top-nav .nav-menu ul{
 	float:left;
 	padding:0 10px;
 	list-style:none;
@@ -208,7 +208,6 @@ header .logo, header .logo h1{
 
 .main-navigation ul ul li {
 	border:none;
-	overflow:hidden;
 }
 
 .main-navigation li:hover > a {
