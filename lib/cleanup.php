@@ -84,8 +84,8 @@ add_filter('wp_get_attachment_link', 'kadence_attachment_link_class', 10, 1);
  * Add-rel-lighbox
  */
 
-add_filter('the_content', 'my_addlightboxrel');
-function my_addlightboxrel($content) {
+add_filter('the_content', 'kadence_addlightboxrel');
+function kadence_addlightboxrel($content) {
        global $post;
        $pattern ="/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
        $replacement = '<a$1href=$2$3.$4$5 rel="lightbox" $6>';
@@ -139,11 +139,11 @@ function kadence_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }
 
-function kad_remove_more_link_scroll( $link ) {
+function kadence_remove_more_link_scroll( $link ) {
   $link = preg_replace( '|#more-[0-9]+|', '', $link );
   return $link;
 }
-add_filter( 'the_content_more_link', 'kad_remove_more_link_scroll' );
+add_filter( 'the_content_more_link', 'kadence_remove_more_link_scroll' );
 
 function kadence_excerpt_more($more) {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'virtue') . '</a>';

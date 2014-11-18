@@ -4,14 +4,14 @@
  * http://wordpress.org/plugins/easy-image-gallery/
  */
 
-function kad_image_gallery_add_meta_box() {
-        add_meta_box( 'virtue_post_gallery', __('Post Slider Images', 'virtue' ), 'kad_image_gallery_metabox', 'post', 'normal', 'high' );
-        add_meta_box( 'virtue_portfolio_gallery', __('Portfolio Slider Images', 'virtue' ), 'kad_image_gallery_metabox', 'portfolio', 'normal', 'high' );
-        add_meta_box( 'virtue_page_gallery', __('Feature Page Slider Images', 'virtue' ), 'kad_image_gallery_metabox', 'page', 'normal', 'high' );
+function kadence_image_gallery_add_meta_box() {
+        add_meta_box( 'virtue_post_gallery', __('Post Slider Images', 'virtue' ), 'kadence_image_gallery_metabox', 'post', 'normal', 'high' );
+        add_meta_box( 'virtue_portfolio_gallery', __('Portfolio Slider Images', 'virtue' ), 'kadence_image_gallery_metabox', 'portfolio', 'normal', 'high' );
+        add_meta_box( 'virtue_page_gallery', __('Feature Page Slider Images', 'virtue' ), 'kadence_image_gallery_metabox', 'page', 'normal', 'high' );
 }
-    add_action( 'add_meta_boxes', 'kad_image_gallery_add_meta_box' );
+    add_action( 'add_meta_boxes', 'kadence_image_gallery_add_meta_box' );
 
-function kad_image_gallery_metabox() {
+function kadence_image_gallery_metabox() {
         global $post; ?>
 
     <div id="gallery_images_container" class="kad_image_gallery">
@@ -152,7 +152,7 @@ function kad_image_gallery_metabox() {
     </script>
 
     <?php }
-function kad_image_gallery_save_post( $post_id ) {
+function kadence_image_gallery_save_post( $post_id ) {
 
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
         return;
@@ -190,7 +190,7 @@ function kad_image_gallery_save_post( $post_id ) {
         delete_post_meta( $post_id, '_kad_image_gallery' );
     }
 
-    do_action( 'kad_image_gallery_save_post', $post_id );
+    do_action( 'kadence_image_gallery_save_post', $post_id );
 }
-add_action( 'save_post', 'kad_image_gallery_save_post' );
+add_action( 'save_post', 'kadence_image_gallery_save_post' );
 

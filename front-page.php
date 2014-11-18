@@ -9,7 +9,7 @@
 			} else {
 				$slider = 'mock_flex';
 			}
-			if(detect_mobile() && $mobile_slider == '1') {
+			if(kadence_detect_mobile() && $mobile_slider == '1') {
 		 		$slider = $virtue['choose_mobile_slider'];
 					 if ($slider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');

@@ -49,6 +49,9 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.0 =
+* prefix updates.
+
 = Version: 2.2.9 =
 * Css fix for shop, cart.
 * Updated for woo support

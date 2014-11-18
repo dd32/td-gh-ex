@@ -3,14 +3,14 @@
 		<div class="container">
 			<div class="page-header">
 				<div class="portfolionav clearfix">
-   			<?php previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-left"></i>') ); ?>
+   			<?php kadence_previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-left"></i>') ); ?>
    			<?php global $virtue; if( !empty($virtue['portfolio_link'])){ ?>
 					 <a href="<?php echo get_page_link($virtue["portfolio_link"]); ?>">
 				<?php } else {?> 
 				<a href="../">
 				<?php } ?>
    				<i class="icon-th"></i></a> 
-   				<?php next_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-right"></i>') ); ?>
+   				<?php kadence_next_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-right"></i>') ); ?>
    				<span>&nbsp;</span>
    			</div>
 			<h1 class="entry-title"><?php the_title(); ?></h1>

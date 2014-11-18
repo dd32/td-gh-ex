@@ -134,8 +134,8 @@ function kadence_display_topbar_widget() {
   }
 
 // Add body class for wide or boxed layout
-add_filter('body_class','layout_class_names');
-function layout_class_names($classes) {
+add_filter('body_class','kadence_layout_class_names');
+function kadence_layout_class_names($classes) {
   global $virtue;
   // add 'class-name' to the $classes array
   if(isset($virtue['boxed_layout'])) {

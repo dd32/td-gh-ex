@@ -70,6 +70,7 @@
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
     </header>
     <div class="entry-content">
+      <?php global $more; $more = 0; ?>
       <?php $readmore =  __('Continued', 'virtue');
       the_content($readmore); ?>
     </div>

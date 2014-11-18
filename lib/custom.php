@@ -27,7 +27,7 @@ add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default
 
 
 
-function detect_mobile()
+function kadence_detect_mobile()
 {
     if(preg_match('/(alcatel|amoi|android|avantgo|blackberry|benq|cell|cricket|docomo|elaine|htc|iemobile|iphone|ipad|ipaq|ipod|j2me|java|midp|mini|mmp|mobi|motorola|nec-|nokia|palm|panasonic|philips|phone|playbook|sagem|sharp|sie-|silk|smartphone|sony|symbian|t-mobile|telus|up\.browser|up\.link|vodafone|wap|webos|wireless|xda|xoom|zte)/i', $_SERVER['HTTP_USER_AGENT']))
         return true;
@@ -35,7 +35,7 @@ function detect_mobile()
     else
         return false;
 }
-function kad_hex2rgb($hex) {
+function kadence_hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
 
    if(strlen($hex) == 3) {
@@ -96,7 +96,7 @@ Author: ambrosite
 Link: http://www.ambrosite.com/plugins
 */
 
-function get_adjacent_post_plus($r, $previous = true ) {
+function kadence_get_adjacent_post_plus($r, $previous = true ) {
   global $post, $wpdb;
 
   extract( $r, EXTR_SKIP );
@@ -295,8 +295,8 @@ function get_adjacent_post_plus($r, $previous = true ) {
  * @param array|string $args Optional. Override default arguments.
  * @return bool True if previous post link is found, otherwise false.
  */
-function previous_post_link_plus($args = '') {
-  return adjacent_post_link_plus($args, '&laquo; %link', true);
+function kadence_previous_post_link_plus($args = '') {
+  return kadence_adjacent_post_link_plus($args, '&laquo; %link', true);
 }
 
 /**
@@ -307,8 +307,8 @@ function previous_post_link_plus($args = '') {
  * @param array|string $args Optional. Override default arguments.
  * @return bool True if next post link is found, otherwise false.
  */
-function next_post_link_plus($args = '') {
-  return adjacent_post_link_plus($args, '%link &raquo;', false);
+function kadence_next_post_link_plus($args = '') {
+  return kadence_adjacent_post_link_plus($args, '%link &raquo;', false);
 }
 
 /**
@@ -322,7 +322,7 @@ function next_post_link_plus($args = '') {
  * @param bool $previous Optional, default is true. Whether display link to previous post.
  * @return bool True if next/previous post is found, otherwise false.
  */
-function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previous = true) {
+function kadence_adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previous = true) {
   $defaults = array(
     'order_by' => 'post_date', 'order_2nd' => 'post_date', 'meta_key' => '', 'post_type' => '',
     'loop' => false, 'end_post' => false, 'thumb' => false, 'max_length' => 0,
@@ -349,7 +349,7 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
     $posts = array();
     $posts[] = & get_post($GLOBALS['post']->post_parent);
   } else
-    $posts = get_adjacent_post_plus($r, $previous);
+    $posts = kadence_get_adjacent_post_plus($r, $previous);
 
 //  If there is no next/previous post, return false so themes may conditionally display inactive link text.
   if ( !$posts )
@@ -467,10 +467,10 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
   return true;
 }
 //User Addon
-add_action( 'show_user_profile', 'kad_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'kad_show_extra_profile_fields' );
+add_action( 'show_user_profile', 'kadence_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'kadence_show_extra_profile_fields' );
 
-function kad_show_extra_profile_fields( $user ) { ?>
+function kadence_show_extra_profile_fields( $user ) { ?>
 
 <h3>Extra profile information</h3>
 
@@ -540,10 +540,10 @@ function kad_show_extra_profile_fields( $user ) { ?>
   </tr>
 </table>
 <?php }
-add_action( 'personal_options_update', 'kad_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'kad_save_extra_profile_fields' );
+add_action( 'personal_options_update', 'kadence_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'kadence_save_extra_profile_fields' );
 
-function kad_save_extra_profile_fields( $user_id ) {
+function kadence_save_extra_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
   update_user_meta( $user_id, 'occupation', $_POST['occupation'] );
