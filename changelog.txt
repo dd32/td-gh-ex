@@ -1,6 +1,11 @@
 Changelog
 
-17 Nov 2014
+17 Nov 2014 - 1.16
+--------------------------------------
+- small addition to style.css
+
+
+17 Nov 2014 - 1.15
 --------------------------------------
 - added jquery.sticky.js
 - changed old sticky menu js code from scripts.js to jquery.sticky
