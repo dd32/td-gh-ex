@@ -13,7 +13,12 @@ function tishonator_show_social_sites( $before,
 
 	$options = get_option( 'fgymm_tishonator_social_settings' );
 	if ( $options === false ) {
-		return;
+		$options = array (  
+				'tishonator_social_facebook'   => 	'https://www.facebook.com/tishonator',
+				'tishonator_social_googleplus' => 	'https://plus.google.com/+tishonator',
+				'tishonator_social_rss' 	   => 	get_bloginfo( 'rss2_url' ),
+				'tishonator_social_youtube'    => 	'http://www.youtube.com/',	
+			  );
 	}
 	
 	echo $before;
@@ -68,20 +73,31 @@ function tishonator_show_single_social_site( $separatorBefore,
 /**
  * Display website's logo image
  */
-function tishonator_show_website_logo_image() {
+function tishonator_show_website_logo_image_or_title() {
 
 	$options = get_option( 'fgymm_tishonator_header_settings' );
-	if ( $options === false ) {
-		return;
-	}
 
-	if ( array_key_exists( 'tishonator_header_logo', $options )
+	if ( $options !== false && array_key_exists( 'tishonator_header_logo', $options )
 		 && $options[ 'tishonator_header_logo' ] != '' ) {
-	
+		 
+		echo '<a href="'.home_url().'" title="'.get_bloginfo('name').'">';
+		
 		$logoImgPath = $options[ 'tishonator_header_logo' ];
 		$siteTitle = get_bloginfo( 'name' );
 		
 		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' />";
+	
+		echo '</a>';
+
+	} else {
+	
+		echo '<a href="'.home_url().'" title="'.get_bloginfo('name').'">';
+		
+		echo '<h1>'.get_bloginfo('name').'</h1>';
+		
+		echo '</a>';
+		
+		echo '<strong>'.get_bloginfo('description').'</strong>';
 	}
 }
 
@@ -144,7 +160,19 @@ function tishonator_display_slider() {
 
 		$options = get_option( 'fgymm_tishonator_slider_settings' );
 		if ( $options === false ) {
-			return;
+			$options = array(
+				// Slide #1 default settings
+				'tishonator_slider_slide1_content' 	   		=> '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
+				'tishonator_slider_slide1_image'	   		=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
+				
+				// Slide #2 default settings
+				'tishonator_slider_slide2_content' 	   		=> '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
+				'tishonator_slider_slide2_image'	   		=> get_stylesheet_directory_uri().'/images/slider/2.jpg',
+				
+				// Slide #3 default settings
+				'tishonator_slider_slide3_content' 	   		=> '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
+				'tishonator_slider_slide3_image' 	   		=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
+			);
 		}
 	 ?>
 	 

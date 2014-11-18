@@ -17,9 +17,7 @@
 						<?php tishonator_show_header_top(); ?>
 					</div>
 					<div id="header-logo">
-						<a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
-							<?php tishonator_show_website_logo_image(); ?>
-						</a>
+						<?php tishonator_show_website_logo_image_or_title(); ?>
 					</div>
 					<nav id="navmain">
 						<?php wp_nav_menu( array( 'container_class' => 'menu-all-pages-container',

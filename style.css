@@ -4,7 +4,7 @@ Description: fGymm is a Gym Fitness WordPress theme. It is fully responsive, cus
 Theme URI: http://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: http://tishonator.com
-Version: 1.0.0
+Version: 1.2.0
 Tags: black, white, green, light, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,10 +43,6 @@ body {
 
 input, select, textarea, button, #container .button {
 	font-family:inherit;
-}
-
-button {
-	cursor:pointer;
 }
 
 body:before {
@@ -130,19 +126,23 @@ h6 {
 	padding:2px 0 1px 0;
 }
 
-ul {
-	padding:0;
+ul > li {
+	padding:3px 0;
+	margin:0;
+	list-style-type:none;
+}
+
+ol > li {
+	padding:3px 0;
 	margin:0;
 }
 
 ol {
-	padding:0 0 0 25px;
+	padding:0 0 0 30px;
 }
 
-ul li {
-	padding:0;
-	margin:0;
-	list-style-type:none;
+ul {
+	padding:0 0 0 15px;
 }
 
 /* header */
@@ -171,6 +171,14 @@ ul li {
 
 #header-content-wrapper {
 	padding:0 2% 0 2%;
+}
+
+#header-logo h1 {
+		padding:0;
+	}
+
+dt.gallery-icon:before {
+	content:'';
 }
 
 .item-arrow-down:after,
@@ -296,8 +304,56 @@ ul li {
 	text-decoration:none;
 }
 
+#navmain li {
+	padding:0;
+}
+
 .page-title {
 	padding:5px 0 10px 10px !important;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+	border:1px solid #555555;
+}
+
+td, th {
+	padding:10px;
+}
+
+#wp-calendar,
+#wp-calendar th,
+#wp-calendar td {
+	border:none;
+}
+
+#wp-calendar td,
+#wp-calendar th {
+	padding:0;
+}
+
+embed,
+iframe,
+object,
+video {
+	margin-bottom: 24px;
+	max-width: 100%;
+}
+
+p > embed,
+p > iframe,
+p > object,
+span > embed,
+span > iframe,
+span > object {
+	margin-bottom: 0;
+}
+
+#sidebar select{
+	max-width:100%;
 }
 
 /* main content */
@@ -325,8 +381,8 @@ ul li {
 	padding:5px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) li:before,
-article ul li:before {
+#sidebar ul:not(.social-widget) > li:before,
+article ul > li:before {
 	content:"\f0da";
 	font-family:'FontAwesome';
 	display:inline-block;
@@ -378,7 +434,7 @@ article ul li:before {
 	margin-left:10px;
 }
 
-article ul li:before {
+article ul > li:before {
 	font-family:'FontAwesome';
 	content:"\f105";
 	display:inline-block;
@@ -450,7 +506,7 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) li:before {
+.col ul:not(.social-widget) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -563,13 +619,12 @@ textarea {
 	border-radius:3px;
 }
 
-input[type="submit"],
-button {
+input[type="submit"] {
 	font-size:14px;
 }
 
 input[type="submit"],
-button,
+.search-button,
 .btn,
 #container .button {
 	padding:8px 12px;
@@ -593,7 +648,7 @@ button,
 }
 
 input[type="submit"]:hover,
-button:hover,
+.search-button:hover,
 #container .button:hover,
 .btn:hover {
 	color:#ffffff;
@@ -1250,6 +1305,10 @@ img.wp-post-image {
 	margin-bottom:-2px;
 }
 
+.sidebar-before-title {
+	clear:both;
+}
+
 .sidebar-after-title {
 	clear:both;
 	height:1px;
@@ -1316,7 +1375,11 @@ img.wp-post-image {
 	
 	#header-logo {
 		float:left;
-		margin-top:15px;
+		margin-top:5px;
+	}
+	
+	#header-logo img{
+		margin-top:10px;
 	}
 
 	#navmain div {
@@ -1640,7 +1703,7 @@ img.wp-post-image {
 		margin-top:5px;
 	}
 	
-	article ul li:before {
+	article ul > li:before {
 		margin-top:1px !important;
 	}
 
@@ -1741,7 +1804,7 @@ img.wp-post-image {
 	}
 
 	input[type="submit"],
-	button,
+	.search-button,
 	.btn,
 	#container .button {
 		padding:6px 8px;
@@ -1767,7 +1830,7 @@ img.wp-post-image {
 		margin-right:7px;
 	}
 
-	article ul li:before {
+	article ul > li:before {
 		margin-top:1px !important;
 	}
 
