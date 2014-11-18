@@ -34,7 +34,7 @@
 			$se_options = get_option( 'storto_theme_options', $storto_theme_options );
 		?>
 
-			<div class="socialLine">
+			<div class="socialLine smallPart">
 			
 				<?php if ( $se_options['facebookurl'] != '' ) : ?>
 					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>

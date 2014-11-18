@@ -15,7 +15,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
+		<div class="entry-meta smallPart">
 			<?php storto_posted_on(); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 				<span class="comments-link"><i class="fa fa-comments-o spaceRight"></i><?php comments_popup_link( __( 'Leave a comment', 'storto' ), __( '1 Comment', 'storto' ), __( '% Comments', 'storto' ) ); ?></span>
@@ -33,7 +33,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer smallPart">
 		<?php
 			$category_list = get_the_category_list( ' ' );
 

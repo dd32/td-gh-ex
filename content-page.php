@@ -27,7 +27,9 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<footer class="entry-footer">
+	<span style="display:none" class="updated"><?php the_time(get_option('date_format')); ?></span>
+	<div style="display:none" class="vcard author"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></div>
+	<footer class="entry-footer smallPart">
 		<?php edit_post_link( __( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

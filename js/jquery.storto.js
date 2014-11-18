@@ -38,11 +38,16 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Menu Effect
 		/*-----------------------------------------------------------------------------------*/ 
-		$('.main-navigation ul > li.menu-item-has-children').hover(function() {
-			$(this).find('> ul.sub-menu').slideDown();
-		}, function() {
-			$(this).find('> ul.sub-menu').slideUp();
-		});
+		var hoverTimeout;
+				$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').hover(function() {
+					var $self = $(this);
+					hoverTimeout = setTimeout(function() {
+						$self.find('> ul.sub-menu, > ul.children').slideDown(400);
+					}, 300);
+				}, function() {
+					clearTimeout(hoverTimeout);
+					$(this).find('> ul.sub-menu, > ul.children').slideUp(200);
+				});
 		
 		/*-----------------------------------------------------------------------------------*/
 		/*  Sidebar for mobile

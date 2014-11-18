@@ -9,7 +9,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		<div class="site-info smallPart">
 			<?php
 				$name = get_bloginfo('name');
 				$url = home_url('/');
@@ -19,7 +19,7 @@
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'storto' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'storto' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'storto' ), 'Storto', '<a title="Cresta Project" href="http://crestaproject.com/" rel="designer" target="_blank">Cresta Project WordPress Themes</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s.', 'storto' ), 'Storto', '<a title="CrestaProject" href="http://crestaproject.com/" rel="designer" target="_blank">CrestaProject WordPress Themes</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	

@@ -57,3 +57,10 @@ Version 1.2.1
 Version 1.3
 * Added hover effect on featured images
 * Minor Bug Fixes
+
+Version 1.3.1
+* Added markup in page.php
+* Fixed main menu effect
+* Fixed featured image effect
+* Edit font size
+* Minor bug fixes
