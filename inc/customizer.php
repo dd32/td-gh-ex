@@ -108,6 +108,7 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'postMessage'
     ) );
     // control
 	$wp_customize->add_control(
@@ -132,12 +133,14 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
     // setting - logo positioning top/bottom
     $wp_customize->add_setting( 'logo_positioning_updown_setting', array(
         'default' => 0,
-        'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        'sanitize_callback' => 'ct_ignite_sanitize_integer',
+	    'transport'         => 'postMessage'
     ) );
     // setting - logo positioning left/right
     $wp_customize->add_setting( 'logo_positioning_leftright_setting', array(
         'default' => 0,
-        'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        'sanitize_callback' => 'ct_ignite_sanitize_integer',
+        'transport'         => 'postMessage'
     ) );
     // control - logo positioning top/bottom
     $wp_customize->add_control( new ct_ignite_number_input_control(
@@ -170,12 +173,14 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
     // setting - logo increase/decrease width
     $wp_customize->add_setting( 'logo_size_width_setting', array(
         'default' => 0,
-        'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        'sanitize_callback' => 'ct_ignite_sanitize_integer',
+	    'transport'         => 'postMessage'
     ) );
     // setting - logo increase/decrease height
     $wp_customize->add_setting( 'logo_size_height_setting', array(
         'default' => 0,
-        'sanitize_callback' => 'ct_ignite_sanitize_integer'
+        'sanitize_callback' => 'ct_ignite_sanitize_integer',
+        'transport'         => 'postMessage'
     ) );
     // control - logo increase/decrease width
     $wp_customize->add_control( new ct_ignite_number_input_control(
@@ -455,6 +460,24 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
             'hide'  => __('Hide', 'ignite')
         )
     ) );
+	// setting - further reading
+	$wp_customize->add_setting( 'ct_ignite_post_meta_further_reading_settings', array(
+		'default'           => 'show',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'ct_ignite_sanitize_show_hide_setting',
+	) );
+	// control - further reading
+	$wp_customize->add_control( 'ct_ignite_post_meta_further_reading_settings', array(
+		'label'          => __( 'Show prev/next post links after posts?', 'ignite' ),
+		'section'        => 'ct-post-meta',
+		'settings'       => 'ct_ignite_post_meta_further_reading_settings',
+		'type'           => 'radio',
+		'choices'        => array(
+			'show'   => __('Show', 'ignite'),
+			'hide'  => __('Hide', 'ignite')
+		)
+	) );
 
     /***** Comments Display *****/
 

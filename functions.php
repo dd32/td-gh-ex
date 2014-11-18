@@ -40,12 +40,21 @@ function ct_ignite_theme_setup() {
 	{
 		include $filename;
 	}
+
     // adds theme options page
     require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
 
     // load text domain
     load_theme_textdomain('ignite', get_template_directory() . '/languages');
 }
+
+function ct_ignite_remove_cleaner_gallery() {
+
+	if( class_exists( 'Jetpack' ) && ( Jetpack::is_module_active( 'carousel' ) || Jetpack::is_module_active( 'tiled-gallery' ) ) ) {
+		remove_theme_support( 'cleaner-gallery' );
+	}
+}
+add_action( 'after_setup_theme', 'ct_ignite_remove_cleaner_gallery', 11 );
 
 /* register primary sidebar */
 function ct_ignite_register_sidebar(){
@@ -261,7 +270,7 @@ function ct_ignite_featured_image() {
         } else {
             echo "
                 <div class='featured-image' style=\"background-image: url('".$image."')\">
-                    <a href='" . get_the_permalink() ."'>" . get_the_title() . "</a>
+                    <a href='" . get_permalink() ."'>" . get_the_title() . "</a>
                 </div>
                 ";
         }
@@ -333,6 +342,15 @@ function ct_ignite_post_class_update($classes){
             }
         }
     }
+	// if 3.8 or lower
+	if( get_bloginfo('version') < 3.9 ) {
+
+		// add the has-post-thumbnail class
+		if( has_post_thumbnail() ) {
+			$classes[] = 'has-post-thumbnail';
+		}
+	}
+
     return $classes;
 }
 add_filter( 'post_class', 'ct_ignite_post_class_update' );
@@ -532,3 +550,12 @@ function ct_ignite_profile_image_output(){
         echo get_avatar( get_the_author_meta( 'ID' ), 72 );
     }
 }
+
+function ct_ignite_wp_backwards_compatibility() {
+
+	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
+	if( get_bloginfo('version') < 3.9 ) {
+		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
+	}
+}
+add_action('init', 'ct_ignite_wp_backwards_compatibility');
