@@ -5,10 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.7' );
-
-// Include Electa Widgets
-include get_template_directory() . '/includes/widgets.php';
+define( 'KAIRA_THEME_VERSION' , '1.1.8' );
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -106,9 +103,6 @@ function kaira_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-    
-    register_widget( 'electa_carousel' );
-    register_widget( 'electa_icon' );
 }
 add_action( 'widgets_init', 'kaira_widgets_init' );
 
@@ -126,7 +120,6 @@ function kaira_scripts() {
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
 	wp_enqueue_script( 'electa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
-    wp_enqueue_script( 'electa-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
     
     if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
         wp_enqueue_script( 'jquery-masonry' );

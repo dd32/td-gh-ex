@@ -27,11 +27,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == Bundled Licenses ==
 
-jQuery carouFredSel 6.2.1
-Copyright (c) 2013 Fred Heusschen
-http://en.wikipedia.org/wiki/MIT_License
-http://en.wikipedia.org/wiki/GNU_General_Public_License
-
 FontAwesome - Copyright 2012 Dave Gandy
 License: MIT License
 http://fontawesome.io/license/
@@ -65,6 +60,9 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.1.8
+* Removed Carousel widget and icon widget for this version.
 
 #### 1.1.7
 * Style tweaks
