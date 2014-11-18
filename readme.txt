@@ -43,6 +43,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.5 =
+* Language pot file updated.
+
 = Version 1.1.4 =
 * Options framework updated to 1.9.0
 
