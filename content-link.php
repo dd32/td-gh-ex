@@ -23,10 +23,21 @@
 				</div>
 
 	<?php else : ?>
+
 				<div class="content">
+
 					<?php tishonator_the_content(); ?>
+
 				</div>
+
 	<?php endif; ?>
+<?php if ( !is_single() && get_the_title() === '' ) :
+			
+				echo '<strong><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="'.__( 'Read More', 'tishonator' ).'">'.__( 'Read More', 'tishonator' ).'</a></strong>';
+	
+		  endif;
+	?>
+
 	<div class="after-content">
 		<span class="author-icon">
 			<?php the_author_posts_link(); ?>
