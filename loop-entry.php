@@ -11,7 +11,7 @@
             		<h2 class="post_title post_box_inner"><a href="<?php the_permalink('') ?>"><?php the_title(); ?></a></h2>
                     <a href="<?php the_permalink('') ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('post-thumb'); ?></a> 
                     <div class="post_box_inner">               
-                        <p class="post_desc"><?php echo excerpt('30'); ?></p>                    
+                        <p class="post_desc"><?php echo wp_newsstream_excerpt('30'); ?></p>                    
                         <div class="col-md-4">
                             <a href="<?php the_permalink('') ?>" class="btn btn-info"><?php _e( 'Read More', 'wp-newsstream' ); ?></a>
                         </div>

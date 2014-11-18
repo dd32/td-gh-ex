@@ -37,7 +37,7 @@ query_posts(
                     <!--Slider Description example-->
              <div class="slide-desc">
                     <h2><a class="more" href="<?php the_permalink('') ?>"><?php the_title(); ?></a></h2>
-                    <p><?php echo excerpt('30'); ?></p>
+                    <p><?php echo wp_newsstream_excerpt('30'); ?></p>
               </div>
         </li>
         <?php				

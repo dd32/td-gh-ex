@@ -280,7 +280,7 @@ if ( ! function_exists( 'wp_newsstream_apply_color' ) ) :
 	?>
 	<style id="color-settings">
 	<?php if ( get_theme_mod('wp_newsstream_theme_color') ) : ?>
-		.btn-default, .navbar-default .navbar-toggle .icon-bar, .nav_container, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], #footer .widget_calendar thead tr, #copyright, .btn-info, .pagination .fa, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a, .dropdown-menu .sub-menu a, .navbar-default .navbar-nav > li{
+		.btn-default, .navbar-default .navbar-toggle .icon-bar, .nav_container, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button], #footer .widget_calendar thead tr, #copyright, .btn-info, .pagination .fa, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a, .dropdown-menu .sub-menu a, .navbar-default .navbar-nav > li, .main-navigation, .main-navigation ul ul a, .navbar-toggle .icon-bar, .main-navigation ul > li, .main-navigation ul ul.children >li > a, .main-navigation ul ul.sub-menu >li > a, .skdslider ul.slide-navs li.current-slide{
 			background-color:<?php echo get_theme_mod('wp_newsstream_theme_color'); ?>;
 			}
 		.btn-info, .nav_container, #footer, .navbar-default .navbar-toggle, .post_box{

@@ -34,14 +34,14 @@
 
 .skdslider ul.slide-navs li {
     float: left;
-	background: url("image/slide-bg.png") no-repeat scroll 0 0 transparent;
+	background: #ffffff;
 	height:12px;
 	width:12px;
 	margin-right:4px;
 	cursor:pointer;
 }
 .skdslider ul.slide-navs li.current-slide {
-  background: url("image/slide-bg-active.png") no-repeat scroll 0 0 transparent;
+  background:#ff3333;
 }
 
 .skdslider .slide-desc {

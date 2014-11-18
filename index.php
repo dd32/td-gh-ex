@@ -9,9 +9,8 @@
         <div id="content" >
         	<div class="row slide_container">
                 <div class="col-md-12">
-        			<?php get_template_part( 'includes/slider' ) ?>                
+        			<?php get_template_part( 'includes/slider' ) ?>           
                     
-
     			</div>
         	</div>
             <div id="content" class="content">

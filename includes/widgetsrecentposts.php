@@ -59,11 +59,10 @@ class wp_newsstream_recent_posts extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance    = $old_instance;		
 		//Let's turn that array into something the Wordpress database can store
-		$types       = 'post';
-		$instance['title']  = strip_tags( $new_instance['title'] );
-		$instance['types']  = $types;
-		$instance['number'] = strip_tags( $new_instance['number'] );
-		$instance['display_featured_image'] = $new_instance['display_featured_image'];
+		$instance['title']  = esc_html( $new_instance['title'] );
+		$instance['types'] = ( in_array( $new['types'], array( 'posts', 'pages' ) ) ) ? $new['types'] : 'posts';
+		$instance['number'] = absint( $new_instance['number'] );
+		$instance['display_featured_image'] = (bool) $new_instance['display_featured_image'];
 		return $instance;
 	}
 	
@@ -88,7 +87,7 @@ class wp_newsstream_recent_posts extends WP_Widget {
 			<input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php if(isset($title)) { echo $title; } ?>" class="widefat" />
 			</p>
 			<p>
-            	<input type="checkbox" name="<?php echo $this->get_field_name('display_featured_image'); ?>"  <?php checked('true', $display_featured_image); ?> value="true" /> 			
+            	<input type="checkbox" name="<?php echo $this->get_field_name('display_featured_image'); ?>"  <?php checked( $display_featured_image, 1 ); ?> value="1" /> 			
                 <label for="<?php echo $this->get_field_id('display_featured_image'); ?>">Display Thumbnail</label>
             </p>
 			<p>

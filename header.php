@@ -67,47 +67,28 @@
                 	<div class="col-md-12">
                     	<div class="logo">
                         	<?php if ( get_theme_mod( 'wp_newsstream_logo' ) ) : ?>
-                <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'wp_newsstream_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a></div>
-                <?php else : ?>
-                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p id="description"><?php bloginfo('description'); ?></p>
-				<?php endif; ?>
+                                <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'wp_newsstream_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a></div>
+                                <?php else : ?>
+                                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                <p id="description"><?php bloginfo('description'); ?></p>
+                           <?php endif; ?>
                         </div>
 						<?php dynamic_sidebar('top-right-widget'); ?>
                     </div>
                 </div>
             </div>
+         <div class="nav_container">
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                  <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
+                  	<span class="sr-only"><?php _e( 'Toggle navigation', 'wp-newsstream' ); ?></span>            
+                    <span class="icon-bar"></span>            
+                    <span class="icon-bar"></span>            
+                    <span class="icon-bar"></span>
+                  </button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'wp_newsstream_menu' ) ); ?>
+
+                </nav>
+        </div> <!--end nav_container-->
         </header>
 
-        <div class="nav_container">
-            <div>
-                <nav class="navbar navbar-default" role="navigation">
-                  <div class="container-fluid">
-                    <!-- Home and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                        <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-newsstream' ); ?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                    </div>               
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-collapse">
-                      <?php
-							$args = array(
-							'theme_location' => 'main-menu',
-							'depth'	=> 3,
-							'container'	=> false,
-							'fallback_cb' => 'wp_newsstream_menu',
-							'menu_class'	=> 'nav navbar-nav',
-							'walker'	=> new wpnewsstreamNavMenuWalker()
-							);
-							wp_nav_menu($args);
-							?>                
-					</div><!-- /.navbar-collapse -->
-                  </div><!-- /.container-fluid -->
-                </nav>
-            </div>
-        </div> <!--end nav_container-->
+        <div class="clearfix"></div>
