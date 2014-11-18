@@ -150,13 +150,26 @@ class electa_icon extends WP_Widget {
         $instance = $old_instance;
         
         $instance['icon_name'] = sanitize_text_field( $new_instance['icon_name'] );
-        $instance['icon_bg_color'] = strip_tags( $new_instance['icon_bg_color'] );
-        $instance['icon_color'] = strip_tags( $new_instance['icon_color'] );
-        $instance['icon_size'] = intval( $new_instance['icon_size'] );
-        $instance['icon_style'] = sanitize_html_class( $new_instance['icon_style'] );
-        $instance['icon_align'] = sanitize_html_class( $new_instance['icon_align'] );
+        $instance['icon_bg_color'] = sanitize_hex_color( $new_instance['icon_bg_color'] );
+        $instance['icon_color'] = sanitize_hex_color( $new_instance['icon_color'] );
+        
+        if( in_array( $new_instance['icon_size'], array('18', '26', '34', '48', '66', '86', '100' ) ) ) {
+            $instance['icon_size'] = intval( $new_instance['icon_size'] );
+        }
+        
+        if( in_array( $new_instance['icon_style'], array('none', 'round', 'square' ) ) ) {
+            $instance['icon_style'] = sanitize_html_class( $new_instance['icon_style'] );
+        }
+        
+        if( in_array( $new_instance['icon_align'], array('left', 'center', 'right' ) ) ) {
+            $instance['icon_align'] = sanitize_html_class( $new_instance['icon_align'] );
+        }
+        
         $instance['icon_link'] = esc_url_raw( $new_instance['icon_link'] );
-        $instance['icon_link_target'] = strip_tags( $new_instance['icon_link_target'] );
+        
+        if( in_array( $new_instance['icon_link_target'], array('_self', '_blank' ) ) ) {
+            $instance['icon_link_target'] = strip_tags( $new_instance['icon_link_target'] );
+        }
         
         return $instance;
     }

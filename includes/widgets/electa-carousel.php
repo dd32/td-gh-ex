@@ -206,13 +206,20 @@ class electa_carousel extends WP_Widget {
         $instance = $old_instance;
         
         $instance['category'] = strip_tags( $new_instance['category'] );
-        $instance['columns'] = strip_tags( $new_instance['columns'] );
-        $instance['show-featured-image'] = intval( $new_instance['show-featured-image'] );
-        $instance['show-title'] = intval( $new_instance['show-title'] );
-        $instance['show-excerpt'] = intval( $new_instance['show-excerpt'] );
+        
+        if( in_array( $new_instance['columns'], array('1', '2', '3', '4' ) ) ) {
+            $instance['columns'] = intval( $new_instance['columns'] );
+        }
+        
+        $instance['show-featured-image'] = customizer_library_sanitize_checkbox( $new_instance['show-featured-image'] );
+        $instance['show-title'] = customizer_library_sanitize_checkbox( $new_instance['show-title'] );
+        $instance['show-excerpt'] = customizer_library_sanitize_checkbox( $new_instance['show-excerpt'] );
         $instance['excerpt-length'] = absint( $new_instance['excerpt-length'] );
-        $instance['show-meta'] = intval( $new_instance['show-meta'] );
-        $instance['carousel-pagination'] = sanitize_text_field( $new_instance['carousel-pagination'] );
+        $instance['show-meta'] = customizer_library_sanitize_checkbox( $new_instance['show-meta'] );
+        
+        if( in_array( $new_instance['carousel-pagination'], array('numbers', 'dots', 'none' ) ) ) {
+            $instance['carousel-pagination'] = strip_tags( $new_instance['carousel-pagination'] );
+        }
         
         return $instance;
     }

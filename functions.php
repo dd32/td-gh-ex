@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.5' );
+define( 'KAIRA_THEME_VERSION' , '1.1.6' );
 
 // Include Electa Widgets
 include get_template_directory() . '/includes/widgets.php';

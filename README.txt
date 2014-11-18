@@ -67,6 +67,9 @@ View the theme settings under "Appearance" -> Customize.
 == Changelog ==
 
 
+#### 1.1.6
+* Sanitized more widget settings
+
 #### 1.1.5
 * Changed & Sanitized widget settings in electa-carousel.php and electa-icon.php.
 * Changed custom styling to use Customizer Library styles.
