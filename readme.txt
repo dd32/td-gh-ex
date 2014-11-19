@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.5.1 [19/11/14]
+1. Minor FIX in blog file
+2. Log image to add css for mobile view
+
 @Version: 1.5 [05/11/14]
 1. Minor FIX
 

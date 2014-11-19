@@ -225,6 +225,7 @@
 
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+.logo img{ margin-left:35%; }
 .navbar-header #parent_menu .fa{float:right;}
 .logo{
 	text-align:center;
@@ -366,6 +367,7 @@
 } 
 
 @media only screen and (min-width: 200px) and (max-width: 600px) {
+.logo img{ margin-left:35%; }
 	.carousel-list li {
 	display:none;
 	

@@ -17,7 +17,7 @@
 			<div class="enigma_blog-img">
 			<?php the_post_thumbnail('blog_2c_thumb',$img); ?>						
 			</div>
-			<?php if (is_home() && have_posts()) :?>
+			<?php if (is_home()) : ?>
 			<div class="enigma_blog_thumb_wrapper_showcase_overlay">
 			<div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
 				<div class="enigma_blog_thumb_wrapper_showcase_icons">
