@@ -8,8 +8,10 @@ get_header();
 	$generator_category_id = $generator_categories[0]->cat_ID;
 ?>
 <div class="generator-single-blog section-main">
-  <div class=" container-generator container">
-    <h1>Category : <?php echo $generator_category_name;?></h1>
+  <div class=" container-generator container">     
+	<h1>
+	<?php _e('Category','generator'); echo ": ". $generator_category_name; ?>
+	</h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('generator_custom_breadcrumbs')) generator_custom_breadcrumbs(); ?>

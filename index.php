@@ -44,7 +44,7 @@ $generator_options = get_option( 'faster_theme_options' );
 	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
          <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
           <?php the_excerpt(); ?>
-          <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button">READ MORE</button></a>
+          <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button"><?php _e('READ MORE','generator') ?></button></a>
         </div>
       </div>
      <?php endwhile; endif; // end of the loop. ?>

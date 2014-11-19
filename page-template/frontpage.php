@@ -42,7 +42,10 @@ $generator_options = get_option( 'faster_theme_options' );
     <div class="col-md-12 no-padding next-prev">
       <div class="back-radius"> <i class="fa fa-pencil project-icon-size"></i> </div>
       <span class="project-tag">
-      <?php if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); }else{ echo 'Recent Post'; }?>
+      <?php if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); }
+	  else{  
+	  _e('Recent Posts','generator')
+	  ?>
       </span> </div>
     <div class="project1-line"></div>
     <div class="row margin-top-8 text-center no-padding">
@@ -74,7 +77,9 @@ $generator_query=new $wp_query($generator_args); ?>
         </div>
         <?php } ?>
       </div>
-      <?php } else { echo '<p>no posts found</p>'; } ?>
+      <?php } else { ?>
+	  <p><?php _e('No posts found','generator') ?></p> 
+	  <?php } ?>
     </div>
   </div>
   <?php } ?>

@@ -6,8 +6,13 @@ get_header();
 ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
-    <h1><?php if ( have_posts() ) : printf( __( '<p class="generator-post-title">Archives : %s', 'generator' ), '' . get_the_date('M-Y') . '</p>' );
-		endif; ?></h1>
+    <h1>
+	<?php if ( have_posts() ) : ?> 
+	    <p class="generator-post-title">
+		<?php _e('Archives','generator'); echo ": ". get_the_date('M-Y'); ?>
+		</p>
+		<?php endif; ?>
+	</h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('generator_custom_breadcrumbs')) generator_custom_breadcrumbs(); ?>
@@ -38,7 +43,7 @@ get_header();
 	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
          <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
           <?php the_excerpt(); ?>
-          <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button">READ MORE</button></a>
+          <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button"><?php _e('READ MORE','generator') ?></button></a>
         </div>
       </div>
       <?php endwhile; ?> 

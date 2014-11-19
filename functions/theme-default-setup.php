@@ -131,15 +131,15 @@ function generator_entry_meta() {
 
 
 	if ( $generator_tag_list ) {
-		$generator_utility_text = __( '<div class="generator-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'generator' );
+		$generator_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'generator' );
 	} elseif ( $generator_category_list ) {
-		$generator_utility_text = __( '<div class="generator-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'generator' );
+		$generator_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'generator' );
 	} else {
-		$generator_utility_text = __( '<div class="generator-entry-meta"> Posted on : %3$s by : %4$s </div>', 'generator' );
+		$generator_utility_text = __( 'Posted on : %3$s by : %4$s', 'generator' );		
 	}
 
 	printf(
-		$generator_utility_text,
+		'<div class="generator-entry-meta">'. $generator_utility_text . '</div>',
 		$generator_category_list,
 		$generator_tag_list,
 		$generator_date,
@@ -193,8 +193,8 @@ function generator_comment( $comment, $generator_args, $depth ) {
                             <?php
                                 
                                 echo '<span>'.get_comment_date().'</span>';
-                                echo '<a href="#">'.comment_reply_link( array_merge( $generator_args, array( 'reply_text' => __( '<div class="pull-right color-red">Reply</div>', 'generator' ), 'after' => '', 'depth' => $depth, 'max_depth' => $generator_args['max_depth'] ) ) ).'</a>';
-                                
+							    echo '<a href="#">'.comment_reply_link( array_merge( $generator_args, array( 'reply_text' => __( 'Reply', 'generator' ), 'after' => '', 'depth' => $depth, 'max_depth' => $generator_args['max_depth'] ) ) ).'</a>';
+                                                         
                             ?>
                          <div class="blog-post-comment-text comment">
                               <?php comment_text(); ?>

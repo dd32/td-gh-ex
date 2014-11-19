@@ -5,10 +5,10 @@ Theme URI: http://fasterthemes.com/wordpress-themes/generator
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Generator is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel.
-Version: 2.1.2
+Version: 2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: orange, left-sidebar, right-sidebar, full-width-template, one-column, two-columns, responsive-layout, theme-options, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, post-formats
+Tags: orange, left-sidebar, right-sidebar, full-width-template, one-column, two-columns, responsive-layout, theme-options, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, post-formats , translation-ready
 Text Domain: generator
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
