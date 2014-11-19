@@ -61,6 +61,9 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.4 =
+ - Page title issue fixed
+
 = 1.3 =
  - Missing translation added
  - Pot file updated

@@ -427,7 +427,9 @@ if (1 != $options['disable_top']) {
     <?php }else { ?>
 	<h1 class="page-title" id="entry-title"><?php echo interface_header_title(); ?></h1>
     <?php }
-    } ?>
+    } else{ ?>
+    <h1 class="page-title"><?php echo interface_header_title(); ?></h1>
+    <?php	}?>
     <!-- .page-title --> 
   </div>
 </div>
