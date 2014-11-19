@@ -65,6 +65,57 @@ function advertica_display_upsell() {
 		</div>
     </div>
     <div id="upsell_themes" class="clearfix row-fluid">
+
+    <!-- -------------- Rational Pro ------------------- -->
+
+        <div id="Rational" class="row-fluid">
+            <div class="theme-container">
+                <div class="theme-image span3">
+                    <a href="http://www.sketchthemes.com/themes/rational-impressive-one-pager-responsive-business-wordpress-theme/" target="_blank">
+                        <img src="<?php echo $directory_uri; ?>/SketchBoard/includes/images/Rational.png" width="300px"/>
+                    </a>
+                </div>
+                <div class="theme-info span9">
+                    <a class="theme-name" href="http://www.sketchthemes.com/themes/rational-impressive-one-pager-responsive-business-wordpress-theme/" target="_blank"><h4><?php _e('Rational – Impressive One Pager Responsive Business WordPress Theme','advertica-lite');?></h4></a>
+
+                    <div class="theme-description">
+                        <p><?php _e("Every business requires an approach that shows the logic behind floating the trade and the exact objective with which the venture is initiated.Adding a rational approach to every business in the first place, the Rational – One Pager Responsive Business WordPress Theme certainly promises to better user’s experience.",'advertica-lite'); ?></p>
+
+                    </div>
+
+                    <a class="free btn btn-success" href="https://wordpress.org/themes/download/rational-lite.1.0.0.zip?nostats=1" target="_blank"><?php _e( 'Try Rational Free', 'advertica-lite' ); ?></a>
+                    <a class="buy  btn btn-info" href="http://sketchthemes.com/samples/incart-responsive-woocommerce-demo/" target="_blank"><?php _e( 'View Demo', 'advertica-lite' ); ?></a>
+                    <a class="buy btn btn-primary" href="http://www.sketchthemes.com/themes/rational-impressive-one-pager-responsive-business-wordpress-theme/" target="_blank"><?php _e( 'Buy Rational Pro', 'advertica-lite' ); ?></a>
+                    
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- -------------- Incart Pro ------------------- -->
+
+        <div id="Incart" class="row-fluid">
+            <div class="theme-container">
+                <div class="theme-image span3">
+                    <a href="http://www.sketchthemes.com/themes/incart-responsive-woocommerce-wordpress-theme/" target="_blank">
+                        <img src="<?php echo $directory_uri; ?>/SketchBoard/includes/images/Incart.png" width="300px"/>
+                    </a>
+                </div>
+                <div class="theme-info span9">
+                    <a class="theme-name" href="http://www.sketchthemes.com/themes/incart-responsive-woocommerce-wordpress-theme/" target="_blank"><h4><?php _e('InCart - Responsive WooCommerce WordPress Theme','advertica-lite');?></h4></a>
+
+                    <div class="theme-description">
+                        <p><?php _e("SketchThemes continues the legacy of best multipurpose responsive business WordPress themes. Here we are gearing up to introduce a new WooCommerce WordPress theme which keeps it at the top priority for the customers to proliferate their business. This classy theme is fully WooCommerce compatible, SEO optimized and fully responsive so forget the fear of screen sizes, SEO optimization, just go and grab it.",'advertica-lite'); ?></p>
+
+                    </div>
+
+                    <a class="free btn btn-success" href="https://wordpress.org/themes/download/incart-lite.1.0.3.zip?nostats=1" target="_blank"><?php _e( 'Try Incart Free', 'advertica-lite' ); ?></a>
+                    <a class="buy  btn btn-info" href="http://sketchthemes.com/samples/incart-responsive-woocommerce-demo/" target="_blank"><?php _e( 'View Demo', 'advertica-lite' ); ?></a>
+                    <a class="buy btn btn-primary" href="http://www.sketchthemes.com/themes/incart-responsive-woocommerce-wordpress-theme/" target="_blank"><?php _e( 'Buy Incart Pro', 'advertica-lite' ); ?></a>
+                    
+                </div>
+            </div>
+        </div>
 	
 	<!-- -------------- Convac Pro ------------------- -->
 
@@ -82,7 +133,7 @@ function advertica_display_upsell() {
 					<p><?php _e("Convac is elegant WordPress theme solely designed for web bloggers. The main aim of theme is to improve blog’s appearance for the end users and making blog posting a cakewalk task for bloggers. The theme has options and features which can customize blog as per your user and interest. Design for bloggers, theme is equipped with integrated features such as- post share, post like, subscription widget, supports to all post formats and many more.",'advertica-lite'); ?></p>
 				</div>
 
-				<a class="free btn btn-success" href="http://wordpress.org/themes/convac-lite/?ref=advlite" target="_blank"><?php _e( 'Try Convac Free', 'advertica-lite' ); ?></a>
+				<a class="free btn btn-success" href="http://wordpress.org/themes/advertica-lite/?ref=advlite" target="_blank"><?php _e( 'Try Convac Free', 'advertica-lite' ); ?></a>
 				<a class="buy  btn btn-info" href="http://sketchthemes.com/samples/convac-multi-author-blogging-demo/?ref=advlite" target="_blank"><?php _e( 'View Demo', 'advertica-lite' ); ?></a>
 				<a class="buy btn btn-primary" href="http://www.sketchthemes.com/members/signup.php?price_group=67&product_id=67&paysys_id=twocheckout_r/?ref=advlite" target="_blank"><?php _e( 'Buy Convac Pro', 'advertica-lite' ); ?></a>
 				

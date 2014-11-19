@@ -88,8 +88,6 @@ function advertica_theme_setup() {
 	 * Enable support for Post Formats
 	 */
 	set_post_thumbnail_size( 600, 220, true );
-	add_image_size( 'homepage-slider',1024,520); //remove if slider is not needed
-	add_image_size( 'advertica_featuredbox_image',250,114); //remove if slider is not needed
 	add_image_size( 'advertica_standard_img',770,365,true); //standard size
 	
 	// This theme uses wp_nav_menu() in one location.
@@ -129,20 +127,16 @@ function advertica_untitled($title) {
 /*---------------------------------------------------------------------------*/
 /* ADMIN SCRIPT: Enqueue scripts in back-end
 /*---------------------------------------------------------------------------*/
-if( !function_exists('skt_page_admin_enqueue_scripts') ){
-    add_action('admin_enqueue_scripts','skt_page_admin_enqueue_scripts');
+
+if( !function_exists('advertica_page_admin_enqueue_scripts') ){
+    add_action('admin_print_scripts-appearance_page_options-framework','advertica_page_admin_enqueue_scripts');
     /**
      * Register scripts for admin panel
      * @return void
      */
-    function skt_page_admin_enqueue_scripts(){	
-		wp_enqueue_script('media-upload');
-		wp_enqueue_script('thickbox');
-		wp_register_script('my-upload', get_template_directory_uri() .'/SketchBoard/js/admin-jqery.js', array('jquery','media-upload','thickbox'));
-		wp_enqueue_script('my-upload');
-		wp_enqueue_style('thickbox');
-		wp_register_style( 'skt-admin-stylesheet', get_template_directory_uri().'/SketchBoard/css/sketch-admin.css', false);
-		wp_enqueue_style( 'skt-admin-stylesheet' );
+    function advertica_page_admin_enqueue_scripts(){	
+		wp_enqueue_script('my-upload', get_template_directory_uri() .'/SketchBoard/js/admin-jqery.js', array('jquery','media-upload','thickbox'));
+		wp_enqueue_style( 'advertica-admin-stylesheet', get_template_directory_uri().'/SketchBoard/css/sketch-admin.css', false);
     }
 }
 

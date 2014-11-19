@@ -34,7 +34,7 @@
 							<!-- #logo -->
 							<div id="logo" class="span4">
 								<?php if(sketch_get_option($advertica_shortname."_logo_img")){ ?>
-									<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" ><img class="logo" src="<?php echo sketch_get_option($advertica_shortname."_logo_img"); ?>" alt="<?php echo sketch_get_option($advertica_shortname."_logo_alt"); ?>" /></a>
+									<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" ><img class="logo" src="<?php echo esc_url(sketch_get_option($advertica_shortname."_logo_img")); ?>" alt="<?php echo esc_attr(sketch_get_option($advertica_shortname."_logo_alt")); ?>" /></a>
 								<?php } else{ ?>
 								<!-- #description -->
 								<div id="site-title" class="logo_desp">
@@ -49,7 +49,7 @@
 							<div class="top-nav-menu span8">
 							<?php 
 								if( function_exists( 'has_nav_menu' ) && has_nav_menu( 'Header' ) ) {
-									wp_nav_menu(array( 'container_class' => 'ske-menu', 'container_id' => 'skenav', 'menu_id' => 'menu-main','menu' => 'Primary Menu','theme_location' => 'Header' )); 
+									wp_nav_menu(array( 'container_class' => 'ske-menu', 'container_id' => 'skenav', 'menu_id' => 'menu-main','theme_location' => 'Header' )); 
 								} else {
 								?>
 								<div class="ske-menu" id="skenav">

@@ -47,8 +47,8 @@ function optionsframework_options() {
 	);
 
 	$bread_type = array(
-		'brimage' => __('Image', 'advertica'),
-		'brcolor' => __('Color', 'advertica')
+		'brimage' => __('Image', 'advertica-lite'),
+		'brcolor' => __('Color', 'advertica-lite')
 	);
 
 	// Pull all the categories into an array
@@ -135,7 +135,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$options[] = array(
-			'name' => __('Breadcrumb Enable/Disable', 'advertica'),
+			'name' => __('Breadcrumb Enable/Disable', 'advertica-lite'),
 			'desc' => __('', 'advertica-lite'),
 			'id' => $advertica_shortname.'_hide_bread',
 			'std' => 'true',
@@ -193,8 +193,8 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'name' => __('Home page Image:', 'invert'),
-		'desc' => __('Choose image for home page. Size: Width 1600px and Height 500px.', 'invert'),
+		'name' => __('Home page Image:', 'advertica-lite'),
+		'desc' => __('Choose image for home page. Size: Width 1600px and Height 500px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_frontslider_stype',
 		'std' => $imagepath.'advertica-header.png',
 		'type' => 'upload');

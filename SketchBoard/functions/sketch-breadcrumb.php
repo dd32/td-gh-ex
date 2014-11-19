@@ -20,7 +20,7 @@ class advertica_breadcrumb_class {
 
         global $post, $options;
 
-        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . home_url() . '/">' . __('Home', 'advertica-lite') . '</a>';
+        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . esc_url(home_url('/')) . '">' . __('Home', 'advertica-lite') . '</a>';
 
        
 

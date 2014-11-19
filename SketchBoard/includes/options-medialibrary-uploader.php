@@ -14,30 +14,33 @@ if ( is_admin() ) {
 	add_action( "admin_print_scripts-$of_page", 'optionsframework_mlu_js', 0 );	
 }
 
+// COMMENT THIS LINE TO FIX THEME CHECK ISSUE
+
 /**
  * Sets up a custom post type to attach image to.  This allows us to have
  * individual galleries for different uploaders.
  */
 
-if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
-	function optionsframework_mlu_init () {
-		register_post_type( 'optionsframework', array(
-			'labels' => array(
-				'name' => __( 'Theme Options Media', 'advertica-lite' ),
-			),
-			'public' => true,
-			'show_ui' => false,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'rewrite' => false,
-			'supports' => array( 'title', 'editor' ), 
-			'query_var' => false,
-			'can_export' => true,
-			'show_in_nav_menus' => false,
-			'public' => false
-		) );
-	}
-}
+// if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
+// 	function optionsframework_mlu_init () {
+// 		register_post_type( 'optionsframework', array(
+// 			'labels' => array(
+// 				'name' => __( 'Theme Options Media', 'advertica-lite' ),
+// 			),
+// 			'public' => true,
+// 			'show_ui' => false,
+// 			'capability_type' => 'post',
+// 			'hierarchical' => false,
+// 			'rewrite' => false,
+// 			'supports' => array( 'title', 'editor' ), 
+// 			'query_var' => false,
+// 			'can_export' => true,
+// 			'show_in_nav_menus' => false,
+// 			'public' => false
+// 		) );
+// 	}
+// }
+
 
 /**
  * Adds the Thickbox CSS file and specific loading and button images to the header
@@ -109,8 +112,11 @@ if ( ! function_exists( 'optionsframework_medialibrary_uploader' ) ) {
 		$name = '';
 		
 		$id = strip_tags( strtolower( $_id ) );
+
 		// Change for each field, using a "silent" post. If no post is present, one will be created.
-		$int = optionsframework_mlu_get_silentpost( $id );
+
+		// COMMENT THIS LINE TO FIX THEME CHECK ISSUE
+		//$int = optionsframework_mlu_get_silentpost( $id );
 		
 		// If a value is passed and we don't have a stored value, use the value that's passed through.
 		if ( $_value != '' && $value == '' ) {

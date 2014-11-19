@@ -39,7 +39,8 @@ function optionsframework_rolescheck () {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_menu', 'optionsframework_add_page');
 		add_action( 'admin_init', 'optionsframework_init' );
-		add_action( 'admin_init', 'optionsframework_mlu_init' );
+		// COMMENT THIS LINE TO FIX THEME CHECK ISSUE
+		//add_action( 'admin_init', 'optionsframework_mlu_init' );
 		add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
 	}
 }
@@ -229,11 +230,16 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 
 	<div class="donate-info">
 		<strong><?php _e( 'To Activate All Features, Please Upgrade to Pro version!', 'advertica-lite' ); ?></strong><br/>
-		<?php $sktlink = "http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/"; ?>
+		<?php 
+			$sktlink = "http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/"; 
+			$skttest_drive = "http://trial.sketchthemes.com/wp-signup.php";
+
+		?>
 		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'advertica-lite' ); ?>" href="<?php echo esc_url($sktlink); ?>" target="_blank" class="upgrade"><?php _e( 'Upgrade to Pro', 'advertica-lite' ); ?></a>
 		<a title="<?php esc_attr_e( 'Setup Instructions', 'advertica-lite' ); ?>" href="<?php echo get_template_directory_uri().'/Installation_Instructions.txt'; ?>" target="_blank" class="donate"><?php _e( 'Setup Instructions', 'advertica-lite' ); ?></a>
 		<?php $sktratelink = "http://wordpress.org/support/view/theme-reviews/advertica-lite"; ?>
 		<a title="<?php esc_attr_e( 'Rate Advertica Lite', 'advertica-lite' ); ?>" href="<?php echo esc_url($sktratelink); ?>" target="_blank" class="review"><?php _e( 'Rate Advertica Lite', 'advertica-lite' ); ?></a>
+		<a title="<?php _e( 'Test Drive', 'convac-lite' ); ?>" href="<?php echo esc_url($skttest_drive); ?>" target="_blank" class="review"><?php _e( 'Theme Test Drive', 'convac-lite' );?></a>
 		<div id="social-share">
 		<div class="fb-like">
 			<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSketchThemes&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=333709623346310" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
@@ -257,7 +263,7 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 	
 	<?php if(isset($advertica_themename)){?>
 	
-    <?php screen_icon( 'themes' ); ?><h2><?php _e('Theme Options ','advertica-lite');?><?php echo $advertica_themename;?></h2>  
+   <h2><?php _e('Theme Options ','advertica-lite');?><?php echo $advertica_themename;?></h2>  
 	
 	<?php } ?>
 	

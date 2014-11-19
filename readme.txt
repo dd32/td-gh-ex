@@ -19,6 +19,11 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 * Icon Set: FontAwesome is licensed under MIT License· (http://fortawesome.github.io/Font-Awesome/)
 * Google Webfonts: Open Sans is licensed under Apache License, version 2.0.(http://www.google.com/fonts/specimen/Open+Sans)
 
+--------------------- CSS Credits "Advertica Lite WordPress Theme" ---------------------
+* The CSS bootstrap-responsive.css is licensed under the Apache License v2.0.
+* The CSS font-awesome.css is licensed under the MIT License.
+* The CSS superfish.css is licensed under  MIT and GPL.
+
 
 --------------------- Image credits "Advertica Lite WordPress Theme" ---------------------
 
@@ -59,12 +64,17 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 * Foodeez-Theme.png
 	http://pixabay.com/en/restaurant-dinner-tables-yowani-237060/
 
-* All other images were created by SketchThemes as per requirement.
+* All other images were created by SketchThemes as per requirement is licensed under the GPL.
 
 
 
 
 == Changelog ==
+
+= 1.0.6 =
+* Fixed Theme Check issue(register_post_type and screen_icon).
+* Added url escaping.
+* Fixed load unnessary scripts on other admin pages.
 
 = 1.0.5 =
 * WP 4.0.0 Compatible.
