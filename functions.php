@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.8' );
+define( 'KAIRA_THEME_VERSION' , '1.1.9' );
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -152,15 +152,6 @@ function kaira_custom_css_styles(){
 add_action( 'wp_head', 'kaira_custom_css_styles', 11 );
 
 /**
- * Enqueue electa admin stylesheet.
- */
-function load_kaira_admin_style() {
-    wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/css/customizer.css' );
-    wp_enqueue_style( 'electa-admin-css', get_template_directory_uri() . '/upgrade/css/kaira-admin.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'load_kaira_admin_style' );
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -198,7 +189,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * @action admin_menu
  */
 function kaira_premium_admin_menu() {
-    add_theme_page( 'Electa Premium', 'Electa Premium', 'edit_theme_options', 'premium_upgrade', 'kaira_upgrade_page_render' );
+    global $kaira_upgrade_page;
+    $kaira_upgrade_page = add_theme_page( 'Electa Premium', 'Electa Premium', 'edit_theme_options', 'premium_upgrade', 'kaira_upgrade_page_render' );
 }
 
 add_action( 'admin_menu', 'kaira_premium_admin_menu' );
@@ -209,6 +201,27 @@ add_action( 'admin_menu', 'kaira_premium_admin_menu' );
 function kaira_upgrade_page_render() {
     locate_template( 'upgrade/kaira-upgrade-page.php', true, false );
 }
+
+/**
+ * Enqueue electa admin stylesheet only on upgrade page.
+ */
+function load_kaira_admin_style($hook) {
+    global $kaira_upgrade_page;
+ 
+    if( $hook != $kaira_upgrade_page ) 
+        return;
+    
+    wp_enqueue_style( 'electa-admin-css', get_template_directory_uri() . '/upgrade/css/kaira-admin.css' );
+}    
+add_action( 'admin_enqueue_scripts', 'load_kaira_admin_style' );
+
+/**
+ * Enqueue electa custom customizer styling.
+ */
+function load_kaira_customizer_style() {
+    wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
+}    
+add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
 
 // add category nicenames in body and post class
 function kaira_add_body_home_class( $home_add_class ) {

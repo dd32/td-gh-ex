@@ -61,14 +61,18 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.9
+* Changed kaira-admin.css to only load on upgrade page.
+* Changed /customizer-library/customizer.css to only load within customizer preview.
+
 #### 1.1.8
-* Removed Carousel widget and icon widget for this version.
+* Remove code causing issues.
 
 #### 1.1.7
 * Style tweaks
 
 #### 1.1.6
-* Sanitized more widget settings
+* Sanitized more widget settings.
 
 #### 1.1.5
 * Changed & Sanitized widget settings in electa-carousel.php and electa-icon.php.
