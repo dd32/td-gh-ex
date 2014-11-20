@@ -6,7 +6,8 @@
       <header>
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
-				<?php printf( __( 'Search : %s', 'mywiki' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<span><?php _e('Search','mywiki'); echo " : "?></span>
+				<?php echo get_search_query(); ?>
             </h4>
          </div>
       </header>

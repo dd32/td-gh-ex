@@ -71,3 +71,7 @@ Version 2.0.3 (17th Nov. 2014)
 
 	i) Fixed JS error which was appearing in admin panel.
     ii) Removed screen_icon() found in the file class-tgm-plugin-activation.php as it's deprecated.
+
+Version 2.1 (20th Nov. 2014)
+
+	i) Made the theme translation-ready.

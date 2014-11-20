@@ -6,8 +6,10 @@
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
 				<?php if ( have_posts() ) : 
-                	printf( __( '<span>Archives : </span>%s', 'mywiki' ),' '. get_the_date('F-Y') );
-                endif; ?>
+				?>
+				<span><?php _e('Archives','mywiki'); echo " : "?></span>
+				<?php echo get_the_date('F-Y'); 
+				endif; ?>
             </h4>
          </div>
       </header>

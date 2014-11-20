@@ -60,8 +60,8 @@ if ( ! function_exists( 'mywiki_entry_meta' ) ) :
  * Meta information for current post: categories, tags, permalink, author, and date.
  **/
 function mywiki_entry_meta() {
-	$mywiki_category_list = get_the_category_list( __( ', ', 'mywiki' ) );
-	$mywiki_tag_list = get_the_tag_list( '', __( ', ', 'mywiki' ) );
+	$mywiki_category_list = get_the_category_list( __( ' , ', 'mywiki' ) );
+	$mywiki_tag_list = get_the_tag_list( '', __( ' , ', 'mywiki' ) );
 	$mywiki_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -78,7 +78,7 @@ function mywiki_entry_meta() {
 	} elseif ( $mywiki_category_list ) {
 		$mywiki_utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
 	} else {
-		$mywiki_utility_text = __( 'Posted %3$s by %4$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
+		$mywiki_utility_text = __( 'Posted %3$s by %4$s Comments:'.get_comments_number().'.', 'mywiki' );
 	}
 	printf(
 		$mywiki_utility_text,
@@ -102,14 +102,15 @@ return $mywiki_new_markup; } //}
 add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
-			'primary' => __( 'The Main Menu', 'MyWiki' ),   // main nav in header
+			'primary' => __( 'The Main Menu', 'MyWiki' ),  // main nav in header
 			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
 		)
 	);
 function mywiki_category_widget_function($mywiki_args) {
    extract($mywiki_args);
    echo $before_widget;
-   echo $before_title . '<p class="wid-category"><span>Categories</span></p>' . $after_title;
+  echo $before_title . '<p class="wid-category"><span>'.__('Categories','mywiki').'</span></p>' . $after_title;
+
    echo $after_widget;
    // print some HTML for the widget to display here
   $mywiki_cat = array(
@@ -136,12 +137,12 @@ function mywiki_category_widget_function($mywiki_args) {
 echo "</ul></div>";
 }
 wp_register_sidebar_widget(
-    'Category Widget',        // your unique widget id
-    'Category Widget',          // widget name
+    __('Category Widget','mywiki'),        // your unique widget id
+    __('Category Widget','mywiki'),          // widget name
     'mywiki_category_widget_function',  // callback function
     array(                  // options
-        'description' => 'Category Widget Shows Category'
-    )
+        'description' => __('Category Widget Shows Category','mywiki')
+    )	
 );
 add_action( 'widgets_init', 'mywiki_popular_load_widgets' );
 function mywiki_popular_load_widgets() {
@@ -153,13 +154,13 @@ register_widget( 'mywiki_recentpost_widget' );
 class mywiki_popular_widget extends WP_Widget {
 function mywiki_popular_widget() {
 /* Widget settings. */
-$mywiki_widget_ops = array( 'classname' => 'widget_popular', 'description' => 'Displays most popular posts by comment count' );
+$mywiki_widget_ops = array( 'classname' => 'widget_popular', 'description' => __('Displays most popular posts by comment count','mywiki'));
  
 /* Widget control settings. */
 $mywiki_control_ops = array( 'id_base' => 'popular-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'popular-widget', 'Popular Posts', $mywiki_widget_ops, $mywiki_control_ops );
+$this->WP_Widget( 'popular-widget', __('Popular Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 // Limit to last 30 days
@@ -208,18 +209,18 @@ function form( $instance ) {
 $mywiki_defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
 $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 <p>
-  <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+  <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'mywiki') ?>:</label>
   <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'count' ); ?>">Number of Posts:</label>
+  <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e('Number of Posts', 'mywiki') ?>:</label>
   <input id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" size="3" value="<?php echo $instance['count']; ?>" />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'days' ); ?>">Posted in the past X days:</label>
+  <label for="<?php echo $this->get_field_id( 'days' ); ?>"><?php _e('Posted in the past X days', 'mywiki') ?>:</label>
   <input id="<?php echo $this->get_field_id( 'days' ); ?>" name="<?php echo $this->get_field_name( 'days' ); ?>" size="3" value="<?php echo $instance['days']; ?>" />
 </p>
-<p class="description">Use 0 for no time limit.</p>
+<p class="description"><?php _e('Use 0 for no time limit.', 'mywiki') ?></p>
 <?php
 }
  
@@ -227,13 +228,13 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 class mywiki_recentpost_widget extends WP_Widget {
 function mywiki_recentpost_widget() {
 /* Widget settings. */
-$mywiki_widget_ops = array( 'classname' => 'widget_recentpost', 'description' => 'Displays most recent posts by post count' );
+$mywiki_widget_ops = array( 'classname' => 'widget_recentpost', 'description' => __('Displays most recent posts by post count','mywiki') );
  
 /* Widget control settings. */
 $mywiki_control_ops = array( 'id_base' => 'recent-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'recent-widget', 'Recent Posts', $mywiki_widget_ops, $mywiki_control_ops );
+$this->WP_Widget( 'recent-widget', __('Recent Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 function widget( $args, $instance ) {
@@ -268,11 +269,11 @@ function form( $instance ) {
 $mywiki_defaults = array( 'title' => '', 'count' => 5, 'days' => 30 );
 $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 <p>
-  <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+  <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'mywiki') ?>:</label>
   <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'count' ); ?>">Number of Posts:</label>
+  <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e('Number of Posts', 'mywiki') ?>:</label>
   <input id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" size="3" value="<?php echo $instance['count']; ?>" />
 </p>
 <?php
@@ -280,8 +281,8 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
 }
     register_sidebar(array(
     	'id' => 'sidebar1',
-    	'name' => 'Main Sidebar',
-    	'description' => 'Used on every page.',
+    	'name' => __('Main Sidebar','mywiki'),
+    	'description' => __('Used on every page.','mywiki'),
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -289,8 +290,8 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
     ));
 	    register_sidebar(array(
     	'id' => 'footer1',
-    	'name' => 'Footer Content Area 1',
-    	'description' => 'Used on Footer.',
+    	'name' => __('Footer Content Area 1','mywiki'),
+    	'description' => __('Used on Footer.','mywiki'),
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -298,8 +299,8 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
     ));
 	    register_sidebar(array(
     	'id' => 'footer2',
-    	'name' => 'Footer Content Area 2',
-    	'description' => 'Used on Footer.',
+    	'name' => __('Footer Content Area 2','mywiki'),
+    	'description' => __('Used on Footer.','mywiki'),
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -307,8 +308,8 @@ $instance = wp_parse_args( (array) $instance, $mywiki_defaults ); ?>
     ));
 	    register_sidebar(array(
     	'id' => 'footer3',
-    	'name' => 'Footer Content Area 3',
-    	'description' => 'Used on Footer.',
+    	'name' => __('Footer Content Area 3','mywiki'),
+    	'description' => __('Used on Footer.','mywiki'),
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -346,10 +347,10 @@ function mywiki_custom_breadcrumbs() {
     if ( is_category() ) {
       $mywiki_thisCat = get_category(get_query_var('cat'), false);
       if ($mywiki_thisCat->parent != 0) echo get_category_parents($mywiki_thisCat->parent, TRUE, ' ' . $mywiki_delimiter . ' ');
-      echo $mywiki_before . 'Archive by category "' . single_cat_title('', false) . '"' . $mywiki_after;
+      echo $mywiki_before . _e('Archive by category ','mywiki'). single_cat_title('', false) . '"' . $mywiki_after;
   
     } elseif ( is_search() ) {
-      echo $mywiki_before . 'Search results for "' . get_search_query() . '"' . $mywiki_after;
+      echo $mywiki_before . _e('Search results for ','mywiki') . get_search_query() . '"' . $mywiki_after;
   
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $mywiki_delimiter . ' ';
@@ -407,15 +408,15 @@ function mywiki_custom_breadcrumbs() {
       if ($mywiki_showCurrent == 1) echo ' ' . $mywiki_delimiter . ' ' . $mywiki_before . get_the_title() . $mywiki_after;
   
     } elseif ( is_tag() ) {
-      echo $mywiki_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $mywiki_after;
+      echo $mywiki_before ._e('Posts tagged ','mywiki') . single_tag_title('', false) . '"' . $mywiki_after;
   
     } elseif ( is_author() ) {
        global $author;
       $$mywiki_userdata = get_userdata($author);
-      echo $mywiki_before . 'Articles posted by ' . $$mywiki_userdata->display_name . $mywiki_after;
+      echo $mywiki_before . _e('Articles posted by ','mywiki'). $$mywiki_userdata->display_name . $mywiki_after;
   
     } elseif ( is_404() ) {
-      echo $mywiki_before . 'Error 404' . $mywiki_after;
+      echo $mywiki_before . _e('Error 404 ','mywiki'). $mywiki_after;
     }
   
     if ( get_query_var('paged') ) {
@@ -503,15 +504,15 @@ function mywiki_comment( $comment, $args, $depth ) {
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-						<?php printf( __( '%s <span class="says">says:</span>' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
-                    </div><!-- .comment-author -->
+					<b class="fn">	<?php printf( __( '%s says:' ), sprintf( '%s', get_comment_author_link() ) ); ?></b>
+					</div><!-- .comment-author -->
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
 								<?php printf( __( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
-						<?php edit_comment_link( _( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( __( 'Edit','mywiki' ), '<span class="edit-link">', '</span>' ); ?>
                     </div><!-- .comment-metadata -->
 				</footer><!-- .comment-meta -->
 				<div class="comment-content">
@@ -539,7 +540,7 @@ Adding Read More
 */
 function mywiki_trim_excerpt($mywiki_text) {
  $text = substr($mywiki_text,0,-10); 
- return $text.'..<div class="clear-fix"></div><a href="'.get_permalink().'" title="read more....">Read more</a>';
+ return $text.'..<div class="clear-fix"></div><a href="'.get_permalink().'" title="'.__('read more...','mywiki').'">'.__('Read more','mywiki').'</a>';
 }
 add_filter('get_the_excerpt', 'mywiki_trim_excerpt');
 

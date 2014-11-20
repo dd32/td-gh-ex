@@ -30,11 +30,7 @@
 							</div>							
 						</section> <!-- end article section -->
 						
-						<footer>
-			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags", "mywiki") . ':</span> ', ' ', '</p>'); ?>
-							
-						</footer> <!-- end article footer -->
+						<!-- end article footer -->
 					
 					</article> <!-- end article -->
 					

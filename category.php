@@ -6,7 +6,8 @@
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
 				<?php if ( have_posts() ) : 
-                	printf( __( '<span>Category : </span>%s', 'mywiki' ),' '.single_cat_title( '', false ) );
+                	?><span><?php _e('Category','mywiki'); echo " : "?></span>
+				<?php echo single_cat_title( '', false );
                 endif; ?>
             </h4>
          </div>

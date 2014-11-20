@@ -9,7 +9,7 @@ get_header();
     <div id="home-main" class="home-main home">
       <header>
         <div class="page-catheader">
-          <h2 class="page-title">Article Categories</h2>          
+          <h2 class="page-title"><?php _e('Article Categories','mywiki'); ?></h2>          
         </div>
       </header>
         <?php

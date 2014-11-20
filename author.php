@@ -6,7 +6,8 @@
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
 				<?php if ( have_posts() ) : 
-                	printf( __( '<span>Author : </span>%s', 'mywiki' ),' '. get_the_author() );
+                	?><span><?php _e('Author','mywiki'); echo " : "?></span>
+				<?php echo get_the_author(); 
                 endif; ?>
             </h4>
          </div>

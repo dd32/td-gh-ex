@@ -7,7 +7,9 @@
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
 				<?php if ( have_posts() ) : 
-                	printf( __( '<span>Tag : </span>%s', 'mywiki' ),' '. single_tag_title( '', false ) );
+                	?>
+				<span><?php _e('Tag','mywiki'); echo " : "?></span>
+				<?php echo single_tag_title( '', false );
                 endif; ?>
             </h4>
          </div>

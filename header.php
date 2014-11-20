@@ -67,7 +67,7 @@ $mywiki_options = get_option( 'faster_theme_options' );
   <div class="search-main container" id="search-main">
     <form class="navbar-form navbar-right form-inline asholder" role="search" method="get" id="searchformtop" action="<?php echo site_url(); ?>">
       <div class="input-group" id="suggest">
-        <input name="s" id="s" type="text" onKeyUp="suggest(this.value);" onBlur="fill();" class="search-query form-control pull-right" autocomplete="off" placeholder="Have a Question? Write here and press enter" data-provide="typeahead" data-items="4" data-source=''>
+        <input name="s" id="s" type="text" onKeyUp="suggest(this.value);" onBlur="fill();" class="search-query form-control pull-right" autocomplete="off" placeholder="<?php _e('Have a Question? Write here and press enter','mywiki') ?>" data-provide="typeahead" data-items="4" data-source=''>
         <div class="suggestionsbox" id="suggestions" style="display: none;"> <img src="<?php echo get_template_directory_uri().'/img/arrow1.png'; ?>" height="18" width="27" class="upArrow" alt="upArrow" />
           <div class="suggestionlist" id="suggestionslist"></div>
         </div>

@@ -19,15 +19,15 @@
         <nav class="footer-menu-nav">
      	<ul class="footer-nav nav navbar-nav">
         	<?php if((!empty($mywiki_options['fburl'])) || (!empty($mywiki_options['twitter'])) || (!empty($mywiki_options['googleplus'])) || (!empty($mywiki_options['linkedin']))) { ?>
-        	<li><a>Follow Us :</a></li>
+        	<li><a><?php _e('Follow Us :'); ?></a></li>
             <?php } if(!empty($mywiki_options['fburl'])) { ?>
-        	<li class="facebook_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['fburl']); ?>" target="_blank">facebook</a></li>
+        	<li class="facebook_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['fburl']); ?>" target="_blank"></a></li>
             <?php } if(!empty($mywiki_options['twitter'])) { ?>
-            <li class="twitter_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['twitter']); ?>">twitter</a></li>
+            <li class="twitter_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['twitter']); ?>" target="_blank"></a></li>
             <?php } if(!empty($mywiki_options['googleplus'])) { ?>
-            <li class="google_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['googleplus']); ?>">google+</a></li>
+            <li class="google_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['googleplus']); ?>" target="_blank"></a></li>
             <?php } if(!empty($mywiki_options['linkedin'])) { ?>
-            <li class="linkedin_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['linkedin']); ?>">linkedin</a></li>
+            <li class="linkedin_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['linkedin']); ?>" target="_blank"></a></li>
             <?php } ?>
         </ul>
     </nav>
@@ -35,15 +35,13 @@
 	<?php 
 		if(!empty($mywiki_options['footertext']))
 			echo esc_attr($mywiki_options['footertext']).' ';
-
-		echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/MyWiki' target='_blank'>MyWiki</a>.";
-		
-	?>
+		printf( __( 'Powered by %1$s and %2$s.', 'mywiki' ), 'WordPress', '<a href="http://fasterthemes.com/wordpress-themes/generator" target="_blank">MyWiki</a>' );
+	?> 
+</footer>
     </p>
   </div>
   <!-- end #inner-footer --> 
-  
-</footer>
+ 
 <!-- end footer -->
 <!-- end #maincont .container --> 
 <?php wp_footer(); // js scripts are inserted using this function ?>

@@ -49,8 +49,8 @@
       <?php endwhile; ?>
       <?php endif; ?>
        <nav class="mywiki-nav">
-                <span class="mywiki-nav-previous"><?php previous_post_link( '%link', '<span>' . _x( '<<', 'Previous post link', 'twentytwelve' ) . '</span> %title' ); ?></span>
-                <span class="mywiki-nav-next"><?php next_post_link( '%link', '%title <span>' . _x( '>>', 'Next post link', 'twentytwelve' ) . '</span>' ); ?></span>
+                <span class="mywiki-nav-previous"><?php previous_post_link( '%link', '<span>' . _x( '<<', 'Previous post link', 'mywiki' ) . '</span> %title' ); ?></span>
+                <span class="mywiki-nav-next"><?php next_post_link( '%link', '%title <span>' . _x( '>>', 'Next post link', 'mywiki' ) . '</span>' ); ?></span>
 		</nav>
     </div>
 	<?php comments_template( '', true ); ?>
