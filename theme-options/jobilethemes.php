@@ -8,10 +8,6 @@ function theme_options_validate($input)
 	$input['logo'] = esc_url_raw( $input['logo'] );
 	$input['favicon'] = esc_url_raw( $input['favicon'] );
 	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
-	
-	$input['front-lefttitle'] = wp_filter_nohtml_kses( $input['front-lefttitle'] );
-	$input['front-righttitle'] = wp_filter_nohtml_kses( $input['front-righttitle'] );
-	$input['google-map-address'] = wp_filter_nohtml_kses( $input['google-map-address'] );
     return $input;
 }
 function jobiletheme_framework_load_scripts(){
@@ -67,8 +63,7 @@ function jobile_framework_page(){
         <div class="nav-tab-wrapper">
           <ul>
             <li><a id="options-group-1-tab" class="nav-tab generalsettings-tab" title="General Settings" href="#options-group-1">General Settings</a></li>
-            <li><a id="options-group-2-tab" class="nav-tab frontpagesettings-tab" title="Front Page Settings" href="#options-group-2">Front Page Settings</a></li>
-  		  </ul>
+ 		  </ul>
         </div>
       </div>
       <div class="right-box-bg"></div>
@@ -115,33 +110,7 @@ function jobile_framework_page(){
               </div>
             </div>
           </div>
-          <!-------------- First group ----------------->
-          <div id="options-group-2" class="group jobile-inner-tabs">
-			  <div id="section-left-title" class="section theme-tabs"> <a class="heading jobile-inner-tab active" href="javascript:void(0)">Left title text</a>
-              <div class="jobile-inner-tab-group active">
-                <div class="ft-control">
-                  <div class="explain">Some text regarding front page left title, you would like to display in the frontpage.</div>
-                  <input type="text" id="front-lefttitle" class="of-input" name="jobile_theme_options[front-lefttitle]" size="46"  value="<?php if(!empty($jobile_options['front-lefttitle'])) { echo esc_attr($jobile_options['front-lefttitle']); } ?>">
-                </div>
-              </div>
-            </div>
-			<div id="section-right-title" class="section theme-tabs"> <a class="heading jobile-inner-tab" href="javascript:void(0)">Right title text</a>
-              <div class="jobile-inner-tab-group">
-                <div class="ft-control">
-                  <div class="explain">Some text regarding front page right title, you would like to display in the frontpage.</div>
-                  <input type="text" id="front-righttitle" class="of-input" name="jobile_theme_options[front-righttitle]" size="46"  value="<?php if(!empty($jobile_options['front-righttitle'])) { echo esc_attr($jobile_options['front-righttitle']); } ?>">
-                </div>
-              </div>
-            </div>
-            <div id="section-google-address" class="section theme-tabs"> <a class="heading jobile-inner-tab" href="javascript:void(0)">Google map address</a>
-              <div class="jobile-inner-tab-group">
-                <div class="ft-control">
-                  <div class="explain">Some text regarding front page right title, you would like to display in the frontpage.</div>
-                  <textarea id="google-map-address" class="of-input" name="jobile_theme_options[google-map-address]"><?php if(!empty($jobile_options['google-map-address'])) { echo esc_attr($jobile_options['google-map-address']); } ?></textarea>
-                </div>
-              </div>
-            </div>
-		  </div>						
+     
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>

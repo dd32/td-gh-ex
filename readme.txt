@@ -35,7 +35,15 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	ii) Jobile image description widget for dispay image and description in sidebar or footer.
 	
 6. Theme Options :
-	You can manage here site logo,favicon and footer copyright text and in front page you can manage title and google map address.	
+	You can manage here site logo,favicon and footer copyright text. 
+
+7. Google Maps:
+
+	You can manage google map address by following.
+	i)  Maps -> My first map [edit] -> Markers ->  Address/GPS:(Enter the address)  ->  Add Marker
+	ii) Your Markers -> It will display below "Your Markers"
+	iii) Added Google map will be visible to your main blog page.
+		
 		
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme

@@ -9,12 +9,19 @@ $jobile_options = get_option( 'jobile_theme_options' ); ?>
         <div class="col-md-12 bread-row">
             <div class="container jobile-container">
             	<div class="col-md-6 no-padding-lr bread-left">
-                    <h2><?php if(!empty($jobile_options['front-lefttitle'])) { echo esc_attr($jobile_options['front-lefttitle']); } else { _e('Available Jobs ('.wp_count_posts()->publish.')','jobile'); } ?></h2>
+                    <h2><?php _e('Available Jobs ('.wp_count_posts()->publish.')','jobile');  ?></h2>
                 </div>
                 <div class="col-md-6 no-padding-lr">
-               		<ol class="breadcrumb site-breadcumb">
-                      <li><?php if(!empty($jobile_options['front-righttitle'])) { echo esc_attr($jobile_options['front-righttitle']); } else { _e('Welcome to Jobile','jobile'); } ?></li>
-                	</ol>
+					<ol class="breadcrumb site-breadcumb">
+							<a href="<?php echo  esc_url(site_url()); ?>"><?php _e('Home','jobile'); ?></a>
+							<li>
+								<?php global $paged;
+								if ($paged > 1) {
+								echo "/ Page ".$paged; 
+								}	
+								?>
+							</li>	
+	              	</ol>
                 </div>    
             </div>
         </div>
@@ -25,10 +32,12 @@ $jobile_options = get_option( 'jobile_theme_options' ); ?>
                     <?php get_sidebar(); ?>
                     <div class="col-md-8">
                         <article class="clearfix">
-                        	<div class="col-md-12 no-padding-lr">
-                            	<div class="gmap-jobplace">
-                                        <iframe width="640" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?php if(!empty($jobile_options['google-map-address'])) { echo esc_attr($jobile_options['google-map-address']); } ?>&output=embed"></iframe>
-                                </div>
+                        	<div class="col-md-12 no-padding-lr ">
+								<?php 
+								if ( is_plugin_active( 'wp-google-maps/wpGoogleMaps.php' ) ) {
+										echo do_shortcode('[wpgmza id="1"]'); 
+									}	
+								?>
                             </div>
                             
                             <div class="col-md-12 no-padding-lr avilab-row2">

@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Jobile
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
-Version: 1.1.3
+Version: 1.1.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
@@ -71,6 +71,17 @@ body{
 .jobile-container{
 	width:1200px;
 }
+.right-pagination li a:hover, 
+a.select, 
+.right-pagination .active a{
+    border: 1px solid #1d9092;
+    color:#fff;
+    background-color: #1d9092;
+}
+.blogpage-breadcrumb > li > .pull-right {
+    float: none !important;
+}
+
 /**normal css**/
 h2,h2,h3,h4,h5,h6,ul,p{
 	margin:0;
@@ -1777,8 +1788,11 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	height:290px;	
 }
 .avilab-row2{
-	padding-top:25px;
+/*	padding-top:25px; */
 	padding-bottom:25px;
+}
+#wpgmza_map {
+    margin-bottom: 25px;
 }
 .left-sorting select{
 	min-width:150px;

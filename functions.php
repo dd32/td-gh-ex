@@ -355,3 +355,7 @@ function jobile_comment( $comment, $jobile_args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
+
+if ( ! function_exists('is_plugin_inactive')) {
+	require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+}
