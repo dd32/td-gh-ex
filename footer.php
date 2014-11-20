@@ -19,7 +19,7 @@
         <nav class="footer-menu-nav">
      	<ul class="footer-nav nav navbar-nav">
         	<?php if((!empty($mywiki_options['fburl'])) || (!empty($mywiki_options['twitter'])) || (!empty($mywiki_options['googleplus'])) || (!empty($mywiki_options['linkedin']))) { ?>
-        	<li><a><?php _e('Follow Us :'); ?></a></li>
+        	<li><a><?php _e('Follow Us :', 'mywiki'); ?></a></li>
             <?php } if(!empty($mywiki_options['fburl'])) { ?>
         	<li class="facebook_icon socia_icon"><a href="<?php echo esc_url($mywiki_options['fburl']); ?>" target="_blank"></a></li>
             <?php } if(!empty($mywiki_options['twitter'])) { ?>

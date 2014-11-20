@@ -504,7 +504,7 @@ function mywiki_comment( $comment, $args, $depth ) {
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-					<b class="fn">	<?php printf( __( '%s says:' ), sprintf( '%s', get_comment_author_link() ) ); ?></b>
+					<b class="fn">	<?php printf( __( '%s says:','mywiki' ), sprintf( '%s', get_comment_author_link() ) ); ?></b>
 					</div><!-- .comment-author -->
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">

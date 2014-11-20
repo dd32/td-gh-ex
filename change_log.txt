@@ -79,3 +79,6 @@ Version 2.1 (20th Nov. 2014)
 Version 2.1.1 (20th Nov. 2014)
 
 	i) Fixed text-domain.
+Version 2.1.2 (20th Nov. 2014)
+
+	i) Fixed text-domain.
