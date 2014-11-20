@@ -23,7 +23,7 @@ function mywiki_setup() {
 	 * Make mywiki theme available for translation.
 	 *
 	 */
-	 load_theme_textdomain( 'mywiki');
+	load_theme_textdomain( 'mywiki', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( 'css/editor-style.css' );
 	// Add RSS feed links to <head> for posts and comments.

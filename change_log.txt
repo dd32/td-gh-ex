@@ -75,3 +75,7 @@ Version 2.0.3 (17th Nov. 2014)
 Version 2.1 (20th Nov. 2014)
 
 	i) Made the theme translation-ready.
+
+Version 2.1.1 (20th Nov. 2014)
+
+	i) Fixed text-domain.
