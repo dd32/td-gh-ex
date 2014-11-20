@@ -9,19 +9,20 @@
 // Return theme options
 function rubine_theme_options() {
     
-	// Get theme options from DB
-	$theme_options = get_option( 'rubine_theme_options' );
-    
-	// Check if user has already configured theme options
-	if ( false === $theme_options ) :
+	// Merge Theme Options Array from Database with Default Options Array
+	$theme_options = wp_parse_args( 
 		
-		// Set Default Options
-		$theme_options = rubine_default_options();
+		// Get saved theme options from WP database
+		get_option( 'rubine_theme_options', array() ), 
 		
-    endif;
-	
+		// Merge with Default Options if setting was not saved yet
+		rubine_default_options() 
+		
+	);
+
 	// Return theme options
 	return $theme_options;
+	
 }
 
 
@@ -33,7 +34,9 @@ function rubine_default_options() {
 		'header_logo' 						=> '',
 		'header_content' 					=> '',
 		'header_search' 					=> false,
-		'header_icons' 						=> false
+		'header_icons' 						=> false,
+		'post_thumbnails_single' 			=> true,
+		'excerpt_text' 						=> false
 	);
 	
 	return $default_options;

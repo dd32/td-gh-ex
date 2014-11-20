@@ -94,7 +94,7 @@ function rubine_add_image_sizes() {
 	add_image_size( 'post-thumbnail', 375, 210, true);
 
 	// Add Featured Image Size
-	add_image_size( 'featured-content', 460, 230, true);
+	add_image_size( 'featured-content', 460, 220, true);
 
 }
 
@@ -186,10 +186,20 @@ function rubine_featured_content_excerpt_length($length) {
     return 15;
 }
 
+
 // Change Excerpt More
 add_filter('excerpt_more', 'rubine_excerpt_more');
 function rubine_excerpt_more($more) {
-    return '';
+    
+	// Get Theme Options from Database
+	$theme_options = rubine_theme_options();
+
+	// Return Excerpt Text
+	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
+		return ' [...]';
+	else :
+		return '';
+	endif;
 }
 
 

@@ -15,6 +15,7 @@
 			</h2>
 
 			<div class="entry clearfix">
+				<?php rubine_display_thumbnail_single(); ?>
 				<?php the_content(); ?>
 				<!-- <?php trackback_rdf(); ?> -->
 				<div class="page-links"><?php wp_link_pages(); ?></div>			

@@ -2,6 +2,13 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.4
+-----------------------------------
+[added] theme option to display excerpt more text
+[added] theme option to display featured image on single posts
+[added] improved way to set sane defaults for theme options
+[changed] styling of featured content area
+
 Version 1.0.3
 -----------------------------------
 [added] sanitize_callback functions for all theme settings

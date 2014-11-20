@@ -84,6 +84,22 @@ if ( ! function_exists( 'rubine_display_postmeta' ) ) :
 endif;
 
 
+// Display Post Thumbnail on single posts
+function rubine_display_thumbnail_single() {
+	
+	// Get Theme Options from Database
+	$theme_options = rubine_theme_options();
+	
+	// Display Post Thumbnail if activated
+	if ( isset($theme_options['post_thumbnails_single']) and $theme_options['post_thumbnails_single'] == true ) :
+
+		the_post_thumbnail('post-thumbnail', array('class' => 'alignleft'));
+
+	endif;
+
+}
+
+
 // Display Post Tags
 if ( ! function_exists( 'rubine_display_post_tags' ) ):
 	

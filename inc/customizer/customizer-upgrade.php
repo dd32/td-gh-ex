@@ -12,7 +12,7 @@ function rubine_customize_register_upgrade_settings( $wp_customize ) {
 	// Add Sections for Post Settings
 	$wp_customize->add_section( 'rubine_section_upgrade', array(
         'title'    => __( 'PRO Version', 'rubine-lite' ),
-        'priority' => 70,
+        'priority' => 50,
 		'panel' => 'rubine_options_panel' 
 		)
 	);

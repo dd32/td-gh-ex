@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.0.3
+Version: 1.0.4
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -831,6 +831,10 @@ article .wp-post-image {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+article .entry .wp-post-image {
+	margin: 1.2em 2em 1em 0;
+	height: auto;
+}
 .entry img {
 	max-width: 100%;
 	height: auto;
@@ -1288,33 +1292,46 @@ embed, iframe, object, video {
 
 /* Featured Content
 -------------------------------------------------------------- */
+#featured-content-bg {
+	background: #fff;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #ddd;
+}
+#featured-content-wrap {
+	clear: both;
+	padding: 1.5em 0 0;
+}
 #featured-content {
-	margin-right: -2em;
+	margin-right: -1em;
 }
 #featured-content .featured-post {
 	float: left;
-	padding-right: 2em;
+	padding-right: 1em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 25%;
+}
+#featured-content .featured-post .type-post {
+	margin-bottom: 1em;
 }
 #featured-content .featured-post:nth-child(4n + 1) {
 	clear: left;
 }
 #featured-content .featured-post .featured-post-thumbnail {
 	padding: 0.8em;
-	background: #fff;
 	border-bottom: 1px solid #ddd;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	background: #f8f8f8;
 }
 #featured-content .featured-post .featured-post-content {
 	padding: 0.8em 1em;
+	background: #fff;
 }
 #featured-content .featured-post .post-title {
-	font-size: 1.1em;
+	font-size: 1.05em;
 }
 #featured-content .featured-post .post-title a:hover {
 	text-decoration: underline;
@@ -1391,6 +1408,9 @@ embed, iframe, object, video {
 	}
 	#wrap, #custom-header-image {
 		padding: 2em 2em 0;
+	}
+	#featured-content-wrap {
+		padding: 1.5em 1.5em 0;
 	}
 	#header {
 		padding: 2em;
@@ -1550,11 +1570,11 @@ embed, iframe, object, video {
 		font-size: 1.0em;
 		font-weight: bold;
 		font-family: 'Carme', Tahoma, Verdana, Arial;
-		background: #fff;
+		background: #f8f8f8;
 	}
 	#mainnav-icon:hover {
 		cursor: pointer;
-		background: #f8f8f8;
+		background: #fff;
 	}
 	#mainnav-icon:after {
 		float: right;
@@ -1690,18 +1710,15 @@ embed, iframe, object, video {
 	#wrap, #custom-header-image {
 		padding: 1.5em 1.5em 0;
 	}
+	#featured-content-wrap {
+		padding: 1.3em 1.3em 0;
+	}
 	#header-social-icons .social-icons-menu li a {
 		padding: 0.9em;
 	}
 	#header-social-icons .social-icons-menu li a:before {
 		font-size: 20px;
 		vertical-align: middle;
-	}
-	#featured-content {
-		margin-right: -1.5em;
-	}
-	#featured-content .featured-post {
-		padding-right: 1.5em;
 	}
 	.type-post, .type-page, .type-attachment, .widget  {
 		margin: 0 0 1.5em 0;
@@ -1734,13 +1751,14 @@ embed, iframe, object, video {
 
 /* Phablets (portrait) | <640px */
 @media only screen and (max-width: 34em) {
-	#featured-content {
-		margin-right: 0;
+	#featured-content .featured-post .featured-post-thumbnail {
+		padding: 0.4em;
 	}
-	#featured-content .featured-post {
-		width: 100%;
-		padding: 0;
-		float: none;
+	#featured-content .featured-post .featured-post-content {
+		padding: 0.4em 0.6em;
+	}
+	#featured-content .featured-post .post-title {
+		font-size: 1.0em;
 	}
 	.archive-post.has-post-thumbnail .postmeta-wrap .wp-post-image {
 		max-width: 45%;
@@ -1757,7 +1775,7 @@ embed, iframe, object, video {
 
 /* Smartphones | <480px */
 @media only screen and (max-width: 30em) {
-	#wrap, #custom-header-image {
+	#wrap, #custom-header-image, #featured-content-wrap {
 		padding: 1em 1em 0;
 	}
 	#header-social-icons .social-icons-menu li a {
@@ -1805,6 +1823,21 @@ embed, iframe, object, video {
 	}
 	.archive-post.has-post-thumbnail .postmeta {
 		margin-top: 1em;
+	}
+	#featured-content .featured-post .type-post {
+		border: none;
+	}
+	#featured-content .featured-post .featured-post-thumbnail {
+		padding: 0;
+		background: #fff;
+		border: none;
+	}
+	#featured-content .featured-post .featured-post-content {
+		padding: 0.4em 0.1em;
+		border: none;
+	}
+	#featured-content .featured-post .post-title {
+		font-size: 0.95em;
 	}
 }
 

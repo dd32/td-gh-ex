@@ -9,6 +9,7 @@ require( get_template_directory() . '/inc/customizer/customizer-functions.php' )
 
 // Load Customizer Settings
 require( get_template_directory() . '/inc/customizer/customizer-header.php' );
+require( get_template_directory() . '/inc/customizer/customizer-post.php' );
 require( get_template_directory() . '/inc/customizer/customizer-upgrade.php' );
 
 
@@ -100,7 +101,7 @@ function rubine_customize_register_options( $wp_customize ) {
 	
 	// Change Featured Content Section
 	$wp_customize->get_section( 'featured_content'  )->panel = 'rubine_options_panel';
-	$wp_customize->get_section( 'featured_content'  )->priority = 30;
+	$wp_customize->get_section( 'featured_content'  )->priority = 40;
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'rubine_theme_options[header_tagline]', array(

@@ -12,16 +12,24 @@ add_filter('excerpt_length', 'rubine_featured_content_excerpt_length');
 
 ?>
 
-	<div id="featured-content" class="clearfix">
-
-		<?php // Display Featured Content
-		foreach ( $slider_posts as $post ) : setup_postdata( $post ); 
-		
-			get_template_part( 'content', 'featured' );
-
-		endforeach;
-		?>
+	<div id="featured-content-bg">
 	
+		<div id="featured-content-wrap" class="container">
+		
+			<div id="featured-content" class="clearfix">
+
+				<?php // Display Featured Content
+				foreach ( $slider_posts as $post ) : setup_postdata( $post ); 
+				
+					get_template_part( 'content', 'featured' );
+
+				endforeach;
+				?>
+			
+			</div>
+			
+		</div>
+		
 	</div>
 
 
