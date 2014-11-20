@@ -170,9 +170,7 @@ add_action( 'widgets_init', 'adamos_widgets_init' );
 function adamos_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
-	if (!is_admin()) {
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
-	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -182,16 +180,11 @@ function adamos_scripts() {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 	
-	if (!is_admin()) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
+	wp_enqueue_script( 'smoothup', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '',  true );
+		
+	wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 }
 add_action( 'wp_enqueue_scripts', 'adamos_scripts' );
-
-/**
- * Implement the Custom Header feature
- */
-require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**
@@ -199,10 +192,8 @@ require( get_template_directory() . '/inc/custom-header.php' );
  */
 
 function adamos_add_scripts() {
-	if (!is_admin()) {
     wp_enqueue_script('flexslider', get_template_directory_uri('stylesheet_directory').'/js/jquery.flexslider-min.js', array('jquery'));
     wp_enqueue_script('flexslider-init', get_template_directory_uri('stylesheet_directory').'/js/flexslider-init.js', array('jquery', 'flexslider'));
-	}
 }
 add_action('wp_enqueue_scripts', 'adamos_add_scripts');
 
@@ -210,9 +201,6 @@ function adamos_add_styles() {
     wp_enqueue_style('flexslider', get_template_directory_uri('stylesheet_directory').'/js/flexslider.css');
 }
 add_action('wp_enqueue_scripts', 'adamos_add_styles');
-
-add_theme_support('post-thumbnails');
-add_image_size(100, 300, true);
 
 /**
  * Implement the Custom Logo feature
@@ -460,7 +448,7 @@ add_action( 'customize_register', 'featured_text_three_customizer' );
 /**
  * Implement excerpt for homepage slider
  */
-function get_slider_excerpt(){
+function adamos_get_slider_excerpt(){
 $excerpt = get_the_content();
 $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
 $excerpt = strip_shortcodes($excerpt);
@@ -491,7 +479,7 @@ add_filter( 'wp_title', 'adamos_wp_title' );
 /**
  * Implement excerpt for homepage thumbnails
  */
-function content($limit) {
+function adamos_content($limit) {
   $content = explode(' ', get_the_content(), $limit);
   if (count($content)>=$limit) {
     array_pop($content);
@@ -528,3 +516,143 @@ function adamos_wp_title( $title ) {
 
 	return $filtered_title;
 }
+
+/**
+ * Implement the Custom Header feature
+ */
+add_theme_support( 'custom-header' );
+
+$args = array(
+		'default-image'          => '',
+		'default-text-color'     => 'FFF',
+		'width'                  => 1400,
+		'height'                 => 500,
+		'flex-height'            => true,
+		'wp-head-callback'       => 'adamos_header_style',
+		'admin-head-callback'    => 'adamos_admin_header_style',
+		'admin-preview-callback' => 'adamos_admin_header_image',
+	);
+
+	$args = apply_filters( 'adamos_custom_header_args', $args );
+
+	if ( function_exists( 'wp_get_theme' ) ) {
+		add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'adamos_custom_header_setup' );
+
+
+if ( ! function_exists( 'adamos_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @see adamos_custom_header_setup().
+ *
+ * @since adamos 1.0
+ */
+function adamos_header_style() {
+
+	// If no custom options for text are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
+		return;
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Do we have a custom header image?
+		if ( '' != get_header_image() ) :
+	?>
+		.site-header img {
+			display: block;
+		}
+	<?php endif;
+
+		// Has the text been hidden?
+		if ( 'blank' == get_header_textcolor() ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		.site-header hgroup {
+			background: none;
+			padding: 0;
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo get_header_textcolor(); ?> !important;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; // adamos_header_style
+
+if ( ! function_exists( 'adamos_admin_header_style' ) ) :
+/**
+ * Styles the header image displayed on the Appearance > Header admin panel.
+ *
+ * @see adamos_custom_header_setup().
+ *
+ * @since adamos 1.0
+ */
+function adamos_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		background: #000;
+		border: none;
+		min-height: 200px;
+	}
+	#headimg h1 {
+		font-size: 20px;
+		font-family: 'open_sansbold', sans-serif;
+		font-weight: normal;
+		padding: 0.8em 0.5em 0;
+	}
+	#desc {
+		padding: 0 2em 2em;
+	}
+	#headimg h1 a,
+	#desc {
+		color: #FFF;
+		text-decoration: none;
+	}
+	#headimg img {
+	}
+	</style>
+<?php
+}
+endif; // adamos_admin_header_style
+
+if ( ! function_exists( 'adamos_admin_header_image' ) ) :
+/**
+ * Custom header image markup displayed on the Appearance > Header admin panel.
+ *
+ * @see adamos_custom_header_setup().
+ *
+ * @since adamos 1.0
+ */
+function adamos_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
+			$style = ' style="display:none;"';
+		else
+			$style = ' style="color:#' . get_header_textcolor() . ';"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; // adamos_admin_header_image

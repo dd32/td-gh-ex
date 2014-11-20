@@ -50,6 +50,7 @@
             <?php echo __( 'Powered By WordPress ', 'adamos' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
+    <a href="#top" id="smoothup"></a>
 </div><!-- #page .hfeed .site -->
 </div><!-- end of wrapper -->
 <?php wp_footer(); ?>

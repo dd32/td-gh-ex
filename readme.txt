@@ -33,4 +33,22 @@ License
 License: GNU General Public License v2.0
 License URI: ?http://www.gnu.org/licenses/gpl-2.0.html
 
+Screenshot image
+----------------------------------------------
+Images courtesy of Pixabay - provided Images on Pixabay are bound to Creative Commons Deed CC0. 
+To the extent possible under law, uploaders of Pixabay have waived all copyright and related or neighboring 
+rights to these Images. 
 
+You are free to adapt and use the Images for commercial purposes without attributing the original author
+ or source. Although absolutely not required, a link back to Pixabay would be nice.
+More info: http://pixabay.com/en/service/terms/
+
+Changelog
+-------------------------------------------------
+Current Version 2.0
+all functions prefixed
+style.css updated
+rtl.css updated
+licensed image added for screenshot
+if admin removed from enque of files
+smoothscroll back to top added

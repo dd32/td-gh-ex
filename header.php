@@ -59,7 +59,7 @@
 	<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) { ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+				<img src="<?php header_image(); ?>"/>
 			</a>
 		<?php } // if ( ! empty( $header_image ) ) ?>
 	</div>
@@ -79,7 +79,7 @@
                     <div class="flex-caption-title">
                     <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                     </div>
-                    <p><?php echo get_slider_excerpt(); ?>
+                    <p><?php echo adamos_get_slider_excerpt(); ?>
                     <a href="<?php the_permalink() ?>">...</a></p>
                     </div>
                     </div>

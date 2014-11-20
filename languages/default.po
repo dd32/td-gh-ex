@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adamos\n"
-"POT-Creation-Date: 2014-10-02 11:48-0000\n"
-"PO-Revision-Date: 2014-10-02 11:48-0000\n"
+"POT-Creation-Date: 2014-11-20 11:10-0000\n"
+"PO-Revision-Date: 2014-11-20 11:10-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -203,72 +203,72 @@ msgstr ""
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:223 ../functions.php:236
+#: ../functions.php:211 ../functions.php:224
 msgid "Logo"
 msgstr ""
 
-#: ../functions.php:253
+#: ../functions.php:241
 msgid "Featured Text Area"
 msgstr ""
 
-#: ../functions.php:254 ../functions.php:319 ../functions.php:369
-#: ../functions.php:418
+#: ../functions.php:242 ../functions.php:307 ../functions.php:357
+#: ../functions.php:406
 msgid "This is a settings section to change the homepage featured text area."
 msgstr ""
 
-#: ../functions.php:262 ../functions.php:279
+#: ../functions.php:250 ../functions.php:267
 msgid "Default Featured Text"
 msgstr ""
 
-#: ../functions.php:270
+#: ../functions.php:258
 msgid "Featured Text Header"
 msgstr ""
 
-#: ../functions.php:287
+#: ../functions.php:275
 msgid "Featured sub text"
 msgstr ""
 
-#: ../functions.php:295 ../functions.php:302
+#: ../functions.php:283 ../functions.php:290
 msgid "Featured sub text url"
 msgstr ""
 
-#: ../functions.php:318
+#: ../functions.php:306
 msgid "Featured Text Box 1"
 msgstr ""
 
-#: ../functions.php:327 ../functions.php:377 ../functions.php:426
+#: ../functions.php:315 ../functions.php:365 ../functions.php:414
 msgid "Default featured text Header"
 msgstr ""
 
-#: ../functions.php:335
+#: ../functions.php:323
 msgid "Featured Header Text"
 msgstr ""
 
-#: ../functions.php:344 ../functions.php:394 ../functions.php:443
+#: ../functions.php:332 ../functions.php:382 ../functions.php:431
 msgid "Default featured text"
 msgstr ""
 
-#: ../functions.php:352
+#: ../functions.php:340
 msgid "Featured Text"
 msgstr ""
 
-#: ../functions.php:368
+#: ../functions.php:356
 msgid "Featured Text Box 2"
 msgstr ""
 
-#: ../functions.php:385 ../functions.php:434
+#: ../functions.php:373 ../functions.php:422
 msgid "Featured Header text"
 msgstr ""
 
-#: ../functions.php:402 ../functions.php:451
+#: ../functions.php:390 ../functions.php:439
 msgid "Featured text"
 msgstr ""
 
-#: ../functions.php:417
+#: ../functions.php:405
 msgid "Featured Text Box 3"
 msgstr ""
 
-#: ../functions.php:523
+#: ../functions.php:515
 #, php-format
 msgid "Page %s"
 msgstr ""

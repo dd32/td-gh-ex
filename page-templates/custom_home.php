@@ -53,7 +53,7 @@ get_header(); ?>
      echo '<img alt="post" class="imagerct" src="' . $image_src[0] . '">';
 }
   			?>
-                <?php echo content(50); ?><div class="thumbs-more-link"><a href="<?php the_permalink() ?>"> <?php echo __('More', 'adamos'); ?></a></div>
+                <?php echo adamos_content(50); ?><div class="thumbs-more-link"><a href="<?php the_permalink() ?>"> <?php echo __('More', 'adamos'); ?></a></div>
     </article>
     </div>			
 	<?php endwhile; ?>
