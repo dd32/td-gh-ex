@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spacious\n"
-"POT-Creation-Date: 2014-11-05 14:01+0545\n"
-"PO-Revision-Date: 2014-11-05 14:01+0545\n"
+"POT-Creation-Date: 2014-11-21 11:04+0545\n"
+"PO-Revision-Date: 2014-11-21 11:04+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex;esc_attr__;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:22
@@ -27,7 +27,9 @@ msgstr ""
 #: comments.php:31
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:38 comments.php:55
 msgid "Comment navigation"
@@ -113,127 +115,126 @@ msgstr ""
 msgid "No Sidebar Content Centered"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:85
-#: inc/admin/options/includes/class-options-framework-admin.php:86
-#: inc/admin/options/includes/class-options-framework-admin.php:307
+#: inc/admin/options/includes/class-options-framework-admin.php:91
+#: inc/admin/options/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:173
+#: inc/admin/options/includes/class-options-framework-admin.php:198
 msgid "Save Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
+#: inc/admin/options/includes/class-options-framework-admin.php:199
 msgid "Restore Defaults"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:174
+#: inc/admin/options/includes/class-options-framework-admin.php:199
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:205
+#: inc/admin/options/includes/class-options-framework-admin.php:230
 msgid "Default options restored."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:259
+#: inc/admin/options/includes/class-options-framework-admin.php:284
 msgid "Options saved."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:63
+#: inc/admin/options/includes/class-options-media-uploader.php:62
 msgid "No file chosen"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:66
-#: inc/admin/options/includes/class-options-media-uploader.php:119
+#: inc/admin/options/includes/class-options-media-uploader.php:65
+#: inc/admin/options/includes/class-options-media-uploader.php:118
 msgid "Upload"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:68
-#: inc/admin/options/includes/class-options-media-uploader.php:120
+#: inc/admin/options/includes/class-options-media-uploader.php:67
+#: inc/admin/options/includes/class-options-media-uploader.php:119
 msgid "Remove"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:71
+#: inc/admin/options/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-media-uploader.php:95
+#: inc/admin/options/includes/class-options-media-uploader.php:94
 msgid "View File"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:241
+#: inc/admin/options/includes/class-options-sanitization.php:316
 msgid "No Repeat"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:242
+#: inc/admin/options/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:243
+#: inc/admin/options/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:244
+#: inc/admin/options/includes/class-options-sanitization.php:319
 msgid "Repeat All"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:257
+#: inc/admin/options/includes/class-options-sanitization.php:331
 msgid "Top Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:258
+#: inc/admin/options/includes/class-options-sanitization.php:332
 msgid "Top Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:259
+#: inc/admin/options/includes/class-options-sanitization.php:333
 msgid "Top Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:260
+#: inc/admin/options/includes/class-options-sanitization.php:334
 msgid "Middle Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:261
+#: inc/admin/options/includes/class-options-sanitization.php:335
 msgid "Middle Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:262
+#: inc/admin/options/includes/class-options-sanitization.php:336
 msgid "Middle Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:263
+#: inc/admin/options/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:264
+#: inc/admin/options/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:265
+#: inc/admin/options/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:278
+#: inc/admin/options/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:279
+#: inc/admin/options/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:353
+#: inc/admin/options/includes/class-options-sanitization.php:424
 msgid "Normal"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:354
+#: inc/admin/options/includes/class-options-sanitization.php:425
 msgid "Italic"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:355
+#: inc/admin/options/includes/class-options-sanitization.php:426
 msgid "Bold"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-sanitization.php:356
+#: inc/admin/options/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
 msgstr ""
 
@@ -242,10 +243,12 @@ msgid "Post navigation"
 msgstr ""
 
 #: inc/functions.php:345 navigation.php:42
+msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
 #: inc/functions.php:346 navigation.php:43
+msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
@@ -611,278 +614,278 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: options.php:31
+#: options.php:28
 msgid "Header"
 msgstr ""
 
-#: options.php:37
+#: options.php:34
 msgid "Header Logo"
 msgstr ""
 
-#: options.php:38
+#: options.php:35
 msgid "Upload logo for your header."
 msgstr ""
 
-#: options.php:45
+#: options.php:42
 msgid "Header Logo Only"
 msgstr ""
 
-#: options.php:46
+#: options.php:43
 msgid "Header Text Only"
 msgstr ""
 
-#: options.php:47
+#: options.php:44
 msgid "Show Both"
 msgstr ""
 
-#: options.php:48
+#: options.php:45
 msgid "Disable"
 msgstr ""
 
-#: options.php:51
+#: options.php:48
 msgid "Show"
 msgstr ""
 
-#: options.php:52
+#: options.php:49
 msgid "Choose the option that you want."
 msgstr ""
 
-#: options.php:61
+#: options.php:58
 msgid "Need to replace Header Image?"
 msgstr ""
 
-#: options.php:62 options.php:181
+#: options.php:59 options.php:178
 #, php-format
 msgid "<a href=\"%1$s\">Click Here</a>"
 msgstr ""
 
-#: options.php:68
+#: options.php:65
 msgid "Header Image Position"
 msgstr ""
 
-#: options.php:69
+#: options.php:66
 msgid "Choose top header image display position."
 msgstr ""
 
-#: options.php:74
+#: options.php:71
 msgid ""
 "Position Above (Default): Display the Header image just above the site title "
 "and main menu part."
 msgstr ""
 
-#: options.php:75
+#: options.php:72
 msgid ""
 "Position Below: Display the Header image just below the site title and main "
 "menu part."
 msgstr ""
 
-#: options.php:83
+#: options.php:80
 msgid "Design"
 msgstr ""
 
-#: options.php:88
+#: options.php:85
 msgid "Site Layout"
 msgstr ""
 
-#: options.php:89
+#: options.php:86
 msgid "Choose your site layout. The change is reflected in whole site."
 msgstr ""
 
-#: options.php:94
+#: options.php:91
 msgid "Boxed layout with content width of 1218px"
 msgstr ""
 
-#: options.php:95
+#: options.php:92
 msgid "Boxed layout with content width of 978px"
 msgstr ""
 
-#: options.php:96
+#: options.php:93
 msgid "Wide layout with content width of 1218px"
 msgstr ""
 
-#: options.php:97
+#: options.php:94
 msgid "Wide layout with content width of 978px"
 msgstr ""
 
-#: options.php:102
+#: options.php:99
 msgid "Default layout"
 msgstr ""
 
-#: options.php:103
+#: options.php:100
 msgid ""
 "Select default layout. This layout will be reflected in whole site archives, "
 "search etc. The layout for a single post and page can be controlled from "
 "below options."
 msgstr ""
 
-#: options.php:116
+#: options.php:113
 msgid "Default layout for pages only"
 msgstr ""
 
-#: options.php:117
+#: options.php:114
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is set for specific page."
 msgstr ""
 
-#: options.php:130
+#: options.php:127
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: options.php:131
+#: options.php:128
 msgid ""
 "Select default layout for single posts. This layout will be reflected in all "
 "single posts unless unique layout is set for specific post."
 msgstr ""
 
-#: options.php:144
+#: options.php:141
 msgid "Blog Posts display type"
 msgstr ""
 
-#: options.php:145
+#: options.php:142
 msgid ""
 "Choose the display type for the latests posts view or posts page view "
 "(static front page)."
 msgstr ""
 
-#: options.php:150
+#: options.php:147
 msgid "Blog Image Large"
 msgstr ""
 
-#: options.php:151
+#: options.php:148
 msgid "Blog Image Medium"
 msgstr ""
 
-#: options.php:152
+#: options.php:149
 msgid "Blog Image Alternate Medium"
 msgstr ""
 
-#: options.php:153
+#: options.php:150
 msgid "Blog Full Content"
 msgstr ""
 
-#: options.php:159
+#: options.php:156
 msgid "Primary color option"
 msgstr ""
 
-#: options.php:160
+#: options.php:157
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to match "
 "your site."
 msgstr ""
 
-#: options.php:168
+#: options.php:165
 msgid "Color Skin"
 msgstr ""
 
-#: options.php:169
+#: options.php:166
 msgid "Choose the light or dark skin. This will be reflected in whole site."
 msgstr ""
 
-#: options.php:180
+#: options.php:177
 msgid "Need to replace default background?"
 msgstr ""
 
-#: options.php:181
+#: options.php:178
 msgid ""
 "Note: The background will only be seen if you choose any of the boxed layout "
 "option in site layout option."
 msgstr ""
 
-#: options.php:186
+#: options.php:183
 msgid "Custom CSS"
 msgstr ""
 
-#: options.php:187
+#: options.php:184
 msgid "Write your custom css."
 msgstr ""
 
-#: options.php:196
+#: options.php:193
 msgid "Additional"
 msgstr ""
 
-#: options.php:202
+#: options.php:199
 msgid "Activate favicon"
 msgstr ""
 
-#: options.php:203
+#: options.php:200
 msgid "Check to activate favicon. Upload fav icon from below option"
 msgstr ""
 
-#: options.php:211
+#: options.php:208
 msgid "Upload favicon"
 msgstr ""
 
-#: options.php:212
+#: options.php:209
 msgid "Upload favicon for your site."
 msgstr ""
 
-#: options.php:220
+#: options.php:217
 msgid "Slider"
 msgstr ""
 
-#: options.php:226
+#: options.php:223
 msgid "Activate slider"
 msgstr ""
 
-#: options.php:227
+#: options.php:224
 msgid "Check to activate slider."
 msgstr ""
 
-#: options.php:235
+#: options.php:232
 msgid "Disable slider in Posts page"
 msgstr ""
 
-#: options.php:236
+#: options.php:233
 msgid "Check to disable slider in Posts Page"
 msgstr ""
 
-#: options.php:245
+#: options.php:242
 #, php-format
 msgid "Image Upload #%1$s"
 msgstr ""
 
-#: options.php:246
+#: options.php:243
 msgid "Upload slider image."
 msgstr ""
 
-#: options.php:251
+#: options.php:248
 msgid "Enter title for your slider."
 msgstr ""
 
-#: options.php:257
+#: options.php:254
 msgid "Enter your slider description."
 msgstr ""
 
-#: options.php:263
+#: options.php:260
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: options.php:282
+#: options.php:279
 msgid "About Spacious"
 msgstr ""
 
-#: options.php:284
+#: options.php:281
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: options.php:285
+#: options.php:282
 msgid "Free Support"
 msgstr ""
 
-#: options.php:286
+#: options.php:283
 msgid "Documentation"
 msgstr ""
 
-#: options.php:287
+#: options.php:284
 msgid "View Demo"
 msgstr ""
 
-#: options.php:288
+#: options.php:285
 msgid "Rate this theme"
 msgstr ""
 
-#: options.php:291
+#: options.php:288
 msgid "If you like our work. Buy us a beer."
 msgstr ""
 
