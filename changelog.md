@@ -2,11 +2,31 @@
 
 =====
 
+### *2014.11.21* - 1.1.0
+* **New** - Integration with AJAX Layered Navigation extension.
+* **New** - Integration with Variation Swatches and Photos extension.
+* **New** - Integration with Composite Products extension.
+* **New** - Integration with WooCommerce Photography extension.
+* **New** - Integration with Jetpacks `site-logo` feature.
+* **Tweak** - Create account checkbox styling at checkout.
+* **Tweak** - Added support for WordPress 4.1s `title-tag` theme feature.
+* **Tweak** - Softened default text color slightly.
+* **Tweak** - Styling for valid/invalid inputs.
+* **Tweak** - Price filter slider styling.
+* **Tweak** - Default settings for display options.
+* **Tweak** - Added custom layout picker control.
+* **Tweak** - Removed unused animation styles.
+* **Tweak** - Default customizer settings added.
+
+=====
+
 ### *2014.10.15* - 1.0.3
 * **Fix** - Comment date link color.
 * **Fix** - Comment reply link color.
 * **Tweak** - Sanitize layout setting.
 * **Tweak** - No redirect to welcome screen on activation.
+
+=====
 
 ### *2014.10.12* - 1.0.2
 * **Fix** - Upsell display on cart when using full width template.

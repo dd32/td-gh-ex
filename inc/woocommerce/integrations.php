@@ -30,8 +30,48 @@ function storefront_woocommerce_integrations_scripts() {
 	if ( class_exists( 'WC_Wishlists_Wishlist' ) ) {
 		wp_enqueue_style( 'storefront-woocommerce-wishlists-style', get_template_directory_uri() . '/inc/woocommerce/css/wishlists.css' );
 	}
+
+	/**
+	 * AJAX Layered Nav
+	 */
+	if ( class_exists( 'SOD_Widget_Ajax_Layered_Nav' ) ) {
+		wp_enqueue_style( 'storefront-woocommerce-ajax-layered-nav-style', get_template_directory_uri() . '/inc/woocommerce/css/ajax-layered-nav.css' );
+	}
+
+	/**
+	 * Variation Swatches
+	 */
+	if ( class_exists( 'WC_SwatchesPlugin' ) ) {
+		wp_enqueue_style( 'storefront-variation-swatches-style', get_template_directory_uri() . '/inc/woocommerce/css/variation-swatches.css' );
+	}
+
+	/**
+	 * Composite Products
+	 */
+	if ( class_exists( 'WC_Composite_Products' ) ) {
+		wp_enqueue_style( 'storefront-composite-products-style', get_template_directory_uri() . '/inc/woocommerce/css/composite-products.css' );
+	}
+
+	/**
+	 * WooCommerce Photography
+	 */
+	if ( class_exists( 'WC_Photography' ) ) {
+		wp_enqueue_style( 'storefront-woocommerce-photography-style', get_template_directory_uri() . '/inc/woocommerce/css/photography.css' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'storefront_woocommerce_integrations_scripts' );
+
+/**
+ * Integrations layout tweaks
+ * @return void
+ */
+function storefront_woocommerce_integrations_layout() {
+	/**
+	 * WooCommerce Photography
+	 */
+	if ( class_exists( 'WC_Photography' ) ) {
+		remove_action( 'wc_photography_before_main_content', 'woocommerce_breadcrumb', 20 );
+	}
+}
 
 /**
  * Add CSS in <head> for integration styles handled by the theme customizer
@@ -77,4 +117,3 @@ if ( ! function_exists( 'storefront_add_bookings_customizer_css' ) ) {
 	<?php }
 	}
 }
-add_action( 'wp_head', 'storefront_add_bookings_customizer_css' );

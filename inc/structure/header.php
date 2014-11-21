@@ -5,16 +5,6 @@
  * @package storefront
  */
 
-if ( ! function_exists( 'storefront_title' ) ) {
-	/**
-	 * Wrapper function for displaying the page title, for use with third-party title plugins.
-	 * @since  1.0.0
-	 */
-	function storefront_title () {
-		wp_title( '|', true, 'right' );
-	} // End storefront_title()
-}
-
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
@@ -69,8 +59,8 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	 * @return void
 	 */
 	function storefront_site_branding() {
-		if ( function_exists( 'has_site_logo' ) && has_site_logo() ) {
-			the_site_logo();
+		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+			jetpack_the_site_logo();
 		} else {
 		?>
 			<div class="site-branding">

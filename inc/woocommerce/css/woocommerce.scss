@@ -224,7 +224,7 @@ ul.products {
 		.variations_button {
 			@include clearfix;
 			padding-top: 1em;
-			border-top: 1px solid darken( $body-background, 10% );
+			border-top: 1px solid $color_border;
 		}
 
 		.woocommerce-product-rating {
@@ -403,6 +403,18 @@ ul.products {
 .widget_shopping_cart {
 	.product_list_widget {
 		margin-bottom: 0;
+
+		li {
+			padding-left: 2em;
+			position: relative;
+
+			a.remove {
+				position: absolute;
+				top: 1em;
+				left: 0;
+				opacity: 1;
+			}
+		}
 	}
 
 	p.total,
@@ -479,13 +491,20 @@ ul.products {
 		height: 1em;
 		@include border-top-radius(1em);
 		@include border-bottom-radius(1em);
-		cursor: pointer;
+		cursor: ew-resize;
 		outline: none;
-		background: #000;
+		background: $color_links;
 		@include box-sizing(border-box);
+		margin-top: -.25em;
+		opacity: 1;
 
 		&:last-child {
 			margin-left: -1em;
+		}
+
+		&:hover,
+		&.ui-state-active {
+			box-shadow: 0 0 0 .236em rgba(#000, 0.1);
 		}
 	}
 
@@ -507,7 +526,7 @@ ul.products {
 	}
 
     .ui-slider-horizontal {
-		height: 1em;
+		height: .5em;
 	}
 
     .ui-slider-horizontal .ui-slider-range {
@@ -595,19 +614,26 @@ ul#shipping_method {
 
 a.remove {
 	display: block;
-	width: 1em;
-	height: 1em;
-	line-height: 1;
-	font-weight: 700;
-	padding: .236em;
-	background-color: $error;
-	text-align: center;
-	@include box-sizing(content-box);
-	color: #fff;
+	width: 1.618em;
+	height: 1.618em;
+	line-height: 1.618;
+	font-weight: 400;
+	text-indent: -9999px;
+	position: relative;
 
-	&:hover {
-		background-color: $color_body;
-		color: #fff;
+	&:before {
+		content: "\f057";
+		font-family: 'FontAwesome';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: $error;
+		line-height: 1.618;
+		text-indent: 0;
+		text-align: center;
+		font-weight: 400;
 	}
 }
 
@@ -817,8 +843,31 @@ ul.digital-downloads {
 		width: 100%;
 	}
 
+	input[type=checkbox],
+	input[type=radio] {
+		width: auto;
+	}
+
 	.button {
 		width: auto;
+	}
+
+	&.create-account {
+		label {
+			display: inline-block;
+		}
+	}
+
+	&.woocommerce-validated {
+		input.input-text {
+			box-shadow: inset 2px 0 0 $success;
+		}
+	}
+
+	&.woocommerce-invalid {
+		input.input-text {
+			box-shadow: inset 2px 0 0 $error;
+		}
 	}
 }
 
