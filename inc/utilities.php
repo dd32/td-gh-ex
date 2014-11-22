@@ -13,12 +13,7 @@ function tishonator_show_social_sites( $before,
 
 	$options = get_option( 'fgymm_tishonator_social_settings' );
 	if ( $options === false ) {
-		$options = array (  
-				'tishonator_social_facebook'   => 	'https://www.facebook.com/tishonator',
-				'tishonator_social_googleplus' => 	'https://plus.google.com/+tishonator',
-				'tishonator_social_rss' 	   => 	get_bloginfo( 'rss2_url' ),
-				'tishonator_social_youtube'    => 	'http://www.youtube.com/',	
-			  );
+		return;
 	}
 	
 	echo $before;
@@ -80,7 +75,7 @@ function tishonator_show_website_logo_image_or_title() {
 	if ( $options !== false && array_key_exists( 'tishonator_header_logo', $options )
 		 && $options[ 'tishonator_header_logo' ] != '' ) {
 		 
-		echo '<a href="'.home_url().'" title="'.get_bloginfo('name').'">';
+		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
 		
 		$logoImgPath = $options[ 'tishonator_header_logo' ];
 		$siteTitle = get_bloginfo( 'name' );
@@ -91,7 +86,7 @@ function tishonator_show_website_logo_image_or_title() {
 
 	} else {
 	
-		echo '<a href="'.home_url().'" title="'.get_bloginfo('name').'">';
+		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
 		
 		echo '<h1>'.get_bloginfo('name').'</h1>';
 		
@@ -108,7 +103,7 @@ function tishonator_show_header_top() {
 	
 	// display homepage icon
 ?>
-	<a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('name'); ?>" class="homepage-icon-link"></a>
+	<a href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>" class="homepage-icon-link"></a>
 <?php
 	
 	// display social sites
@@ -136,20 +131,13 @@ function tishonator_show_copyright_text() {
 	if ( $options !== false && array_key_exists( 'tishonator_footer_copyrighttext', $options )
 	     && $options[ 'tishonator_footer_copyrighttext' ] != '' ) {
 
-		echo '<p>'.$options[ 'tishonator_footer_copyrighttext' ];
+		echo '<p>'.$options[ 'tishonator_footer_copyrighttext' ] . ' | ';
 	} else {
 		echo '<p>';
 	}
 	
-	/**
-	 * Please, do not remove poweredBy :)
-	 *
-	 * Thanks in advance :)
-	 *
-	 * Tishonator Team
-	 */
-	$poweredBy = ' | Powered by <a title="tishonator.com" href="http://tishonator.com/" target="_blank">tishonator.com</a></p>';
-	
+	$poweredBy = __('fGymm WordPress Theme, Copyright 2014 <a title="tishonator.com" href="http://tishonator.com/" target="_blank">tishonator.com</a></p>', 'tishonator');
+
 	echo $poweredBy;
 }
 
@@ -160,19 +148,7 @@ function tishonator_display_slider() {
 
 		$options = get_option( 'fgymm_tishonator_slider_settings' );
 		if ( $options === false ) {
-			$options = array(
-				// Slide #1 default settings
-				'tishonator_slider_slide1_content' 	   		=> '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
-				'tishonator_slider_slide1_image'	   		=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
-				
-				// Slide #2 default settings
-				'tishonator_slider_slide2_content' 	   		=> '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
-				'tishonator_slider_slide2_image'	   		=> get_stylesheet_directory_uri().'/images/slider/2.jpg',
-				
-				// Slide #3 default settings
-				'tishonator_slider_slide3_content' 	   		=> '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
-				'tishonator_slider_slide3_image' 	   		=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
-			);
+			return;
 		}
 	 ?>
 	 

@@ -26,16 +26,10 @@ add_action( 'wp_enqueue_scripts', 'tishonator_load_scripts' );
 // Add wp_head actions
 add_action( 'wp_head', 'tishonator_head_load_favicon_image' );
 
-// Add wp_footer actions
-add_action( 'wp_footer', 'tishonator_footer_load_footer_scripts' );
-
 add_action( 'widgets_init', 'tishonator_widgets_init' );
 
-if ( function_exists( 'add_theme_support' ) ) { 
-
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 'full', 'full', true );
-}
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 'full', 'full', true );
 
 if ( ! isset( $content_width ) )
 	$content_width = 900;

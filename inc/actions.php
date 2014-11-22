@@ -5,23 +5,18 @@
  */
 function tishonator_load_scripts() {
 
-	wp_enqueue_script('jquery');
-
 	// load main stylesheet.
 	wp_enqueue_style( 'tisho-style', get_stylesheet_uri(), array( ) );
-}
 
-/*
- * Note: This function is called directly in header.php.
- * Reason: We need these scripts to be loaded in the head tag.
- * If wp_enqueue_script is called in wp_action, the scripts are loaded in footer.
- */
-function tishonator_head_load_scripts() {
+	wp_enqueue_script('jquery');
 	
 	// Load thread comments reply script
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	// Load Utilities JS Script
+	wp_enqueue_script( 'tisho-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );	
 }
 
 function tishonator_head_load_favicon_image() {
@@ -36,15 +31,6 @@ function tishonator_head_load_favicon_image() {
 
 		echo '<link rel="shortcut icon" href="'.$options[ 'tishonator_general_favicon' ].'" type="image/x-icon" />'."\n";	
 	}
-}
-
-/*
- * wp_footer action functions
- */
-function tishonator_footer_load_footer_scripts() {
-
-	// Load Utilities JS Script
-	wp_enqueue_script( 'tisho-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 }
 
 /**

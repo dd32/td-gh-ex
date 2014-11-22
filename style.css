@@ -4,9 +4,9 @@ Description: fGymm is a Gym Fitness WordPress theme. It is fully responsive, cus
 Theme URI: http://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: http://tishonator.com
-Version: 1.2.0
+Version: 1.2.1
 Tags: black, white, green, light, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
-License: GNU General Public License
+License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
@@ -143,6 +143,12 @@ ol {
 
 ul {
 	padding:0 0 0 15px;
+}
+
+.widget > ul,
+.col > ul,
+#sidebar > ul {
+	padding-left:0;
 }
 
 /* header */
@@ -1644,6 +1650,10 @@ img.wp-post-image {
 	#navmain div {
 		clear:both;
 		text-align:left;
+	}
+
+#navmain ul {
+		padding:0;
 	}
 				
 	#navmain div > ul {
