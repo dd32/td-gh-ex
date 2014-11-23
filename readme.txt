@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.26
+* Some test script left behind removed
+
 Version 2.25
 * minor bug in array merging fixed
 * New Translation Language added(Danish)
