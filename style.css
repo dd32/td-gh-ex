@@ -1,10 +1,10 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a photography or portfolio website and more. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, dark, light, gray, editor-style, translation-ready, photoblogging
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -93,13 +93,13 @@ small {font-size:0.75em;}
 big {font-size: 1.5em;}
 ins, mark {font-weight:bold; background:none; color:#e77776;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ddd; word-wrap:break-word; border-radius:5px;-moz-border-radius:5px;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #444; word-wrap:break-word; border-radius:5px;-moz-border-radius:5px;}
 blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-light.png') no-repeat;}
 address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
-table, th, td {border: 1px solid #ddd; padding:5px 10px;}
+table, th, td {border: 1px solid #444; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
 li {margin: 0 0 0 10px;}
@@ -108,7 +108,7 @@ dl {margin: 10px;}
 dt {margin: 0; font-size:1.25em; font-weight:bold;}
 dd {margin: 0 0 0 10px;}
 
-input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; padding:2px 5px; background:none; color:#ddd; font-size:1em; font-family:'Open Sans', sans-serif; border-radius:5px;-moz-border-radius:5px;}
+input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #444; padding:2px 5px; background:none; color:#ddd; font-size:1em; font-family:'Open Sans', sans-serif; border-radius:5px;-moz-border-radius:5px;}
 input[type="submit"]{cursor:pointer;	border:0; padding:2px 5px; background:#ddd; color:#333;}
 input[type="submit"]:hover {background:#e77776; color:#ddd;}
 select {max-width:100%;}
@@ -132,7 +132,7 @@ select {max-width:100%;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0;}
 .nav-head ul li {list-style-type: none; position: relative; padding:0; margin:0;}
-.nav-head ul li a {text-decoration: none; padding: 5px 0; display:inline-block; width:100%; border-bottom:1px solid #333;}
+.nav-head ul li a {text-decoration: none; padding: 5px 0; display:inline-block; width:100%; border-bottom:1px solid #444;}
 .menu .current_page_item > a, .menu .current_page_parent > a {color:#e77776;}
 
 /* HEADER SUBMENU */
@@ -142,18 +142,18 @@ select {max-width:100%;}
 /* PAGE */
 .page-title {margin: 0; padding: 0 0 10px;}
 .pagelink {clear:both; margin:20px 0 10px;}
-.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 2px; border:1px solid #ddd; border-radius:5px;-moz-border-radius:5px;}
+.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 2px; border:1px solid #444; border-radius:5px;-moz-border-radius:5px;}
 .edit-link a {color:#e77776;}
 .edit-link a:hover {color:#ddd;}
 
 /* POST */
 .post-title {margin: 0; padding: 0;}
 .excerpt {padding:5px 0 0;}
-.sticky {text-align:center; clear:both; color:#333; background: #ddd; margin: 0 0 10px; padding:5px; border:0;}
-.postmetadata {clear:both; margin:20px 0; padding:2px 0; border-top:1px solid #333; border-bottom:1px solid #333;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ddd;}
+.sticky {text-align:center; clear:both; margin:0 0 10px; padding:5px; color:#e77776; border-top:1px solid #444; border-bottom:1px solid #444;}
+.postmetadata {clear:both; margin:20px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #444;}
 .more:after {content:''; display:block; clear:both;}
-a.readmore {float:right; text-decoration:none; padding: 2px 5px; background: #ddd; color:#333; border-radius:5px;-moz-border-radius:5px;}
+a.readmore {float:right; text-decoration:none; padding: 2px 5px; background:#ddd; color:#333; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #e77776; color:#ddd; text-decoration:none;}
 .post-nav {padding: 5px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
@@ -188,9 +188,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 /* COMMENTS */
 #comments {clear:both; word-wrap: break-word;}
-#comments .comment-list {list-style:none; border:1px solid #ddd; font-weight:normal; margin: 20px 0; padding: 0 15px 0; border-radius:5px;-moz-border-radius:5px;}
+#comments .comment-list {list-style:none; border:1px solid #444; font-weight:normal; margin: 20px 0; padding: 0 15px 0; border-radius:5px;-moz-border-radius:5px;}
 #comments .children {list-style:none; margin: 0; padding: 0 0 0 15px;}
-.comment-body {border-left:2px solid #ddd; padding: 0 0 0 15px; margin:20px 0;}
+.comment-body {border-left:2px solid #444; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .form-allowed-tags code {padding:0; border:none;}
 
@@ -206,7 +206,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:100%; float:left; word-wrap: break-word;}
 .widget {padding:10px 0; margin: 0 0 10px; background: none;}
-.widgettitle, .nav-widgettitle {color:#ddd; padding:0 0 5px; margin:0 0 10px; border-bottom:1px solid #ddd;}
+.widgettitle, .nav-widgettitle {color:#ddd; padding:0 0 5px; margin:0 0 10px; border-bottom:1px solid #444;}
 #wp-calendar {width:90%;}
 
 /* FOOTER */
@@ -245,12 +245,12 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
 	.single-image {width:50%; margin: 5px 10px 5px 0;}
-	#sidebar {border-bottom:1px solid #ddd;}
+	#sidebar {border-bottom:1px solid #444;}
 	.widget, #footer .widget {padding:5px 0; margin: 0 0 5px;}
 	.nav-widgettitle {display:none;}
 	#footer {width:100%; padding: 0; margin:0; float:left; background:none;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0 0 10px;}
-	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #333; background:#ddd; border:0;}
+	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color:#333; background:#ddd; border:0;}
 }
