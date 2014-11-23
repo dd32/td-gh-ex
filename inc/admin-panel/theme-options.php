@@ -129,7 +129,6 @@ foreach( $accesspresslite_posts as $accesspresslite_post ) :
 		'label' => $accesspresslite_post->post_title
 	);
 endforeach;
-wp_reset_postdata();
 
 // Store Pages in array
 $accesspresslite_pagelist[0] = array(
@@ -144,9 +143,17 @@ foreach( $accesspresslite_pages as $accesspresslite_page ) :
 		'label' => $accesspresslite_page->post_title
 	);
 endforeach;
-wp_reset_postdata();
 
-$accesspresslite_postpagelist = array_merge($accesspresslite_postlist, $accesspresslite_pagelist);
+$accesspresslite_pagelist1 = array();
+foreach( $accesspresslite_pages as $accesspresslite_page ) :
+	$accesspresslite_pagelist1[$accesspresslite_page->ID] = array(
+		'value' => $accesspresslite_page->ID,
+		'label' => $accesspresslite_page->post_title
+	);
+endforeach;
+
+
+$accesspresslite_postpagelist = array_merge($accesspresslite_postlist, $accesspresslite_pagelist1);
 
 // Store categories in array
 $accesspresslite_catlist[0] = array(

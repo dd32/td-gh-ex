@@ -100,3 +100,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Implement the custom metabox feature
  */
 require get_template_directory() . '/inc/custom-metabox.php';
+
+add_filter( 'http_request_timeout', 'mytheme_bump_request_timeout', 100 );
+function mytheme_bump_request_timeout(){
+    return 300; //Change this to your desired timeout value in ms
+}

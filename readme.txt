@@ -60,7 +60,11 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
-Version 2.23
+Version 2.25
+* minor bug in array merging fixed
+* New Translation Language added(Danish)
+
+Version 2.24
 * Small bug fixed in for array warning in Theme Option
 * Three new Translation Language added
 
