@@ -69,7 +69,12 @@ This theme uses Bootstrap as a design tool
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 
+Version 1.4.2
+ * Fixes to the following:
+ function.php
+
 Version 1.4.1
+ * Fixes to the following:
    - style.css
    - functions.php
    - header.php
@@ -77,6 +82,29 @@ Version 1.4.1
    - includes/slider.php
    - includes/excerpts.php
 
+Version 1.4
+ * Fixes to the following:
+   - style.css
+   - 404.php
+   - archive.php
+   - comments.php
+   - full-width-page.php
+   - index.php	
+   - loop-entry.php
+   - page.php
+   - search.php
+   - searchform.php
+   - sidebar.php
+   - single.php
+   - functions.php
+   - footer.php
+   - header.php
+ * files added
+   - /js/custom.js
+   - /includes/breadcrumbs.php
+   - /includes/customizer.php
+   - /includes/widgetsrecentposts.php
+   - /includes/wpnewsstreamNavMenuWalker.php
 
 Version 1.3
  * Fixes to the following:

@@ -1,4 +1,17 @@
-﻿Version 1.4
+﻿Version 1.4.2
+ * Fixes to the following:
+ function.php
+
+Version 1.4.1
+ * Fixes to the following:
+   - style.css
+   - functions.php
+   - header.php
+   - includes/customizer.php
+   - includes/slider.php
+   - includes/excerpts.php
+
+Version 1.4
  * Fixes to the following:
    - style.css
    - 404.php
