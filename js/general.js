@@ -69,27 +69,3 @@ $('#submit-comment-form').click(function() {
 	})
 });
 });
-jQuery(document).ready(function($) {
-$("#suggestionslist").niceScroll({touchbehavior:true,cursorcolor:"#048EB0",cursoropacitymax:0.7,cursorwidth:11,cursorborder:"1px solid #2848BE",cursorborderradius:"8px",background:"#ccc",autohidemode:false}); // MAC like scrollbar
-$("#suggestionslist2").niceScroll({touchbehavior:false,cursorcolor:"#00F",cursoropacitymax:0.7,cursorwidth:6,background:"#ccc",autohidemode:false});
-
-$(function(){var nice=$(":nicescroll").getNiceScroll(0);$("#div1").html($("#div1").html()+' '+nice.version+' ($:'+$().jquery+')')})
-});
-
-function doRemove(name) {
-$(name).getNiceScroll().remove();
-};
-
-var vis = true;
-
-function toggleVisibility() {
-vis = !vis;
-var ns = $("#suggestionslist").getNiceScroll();
-(vis) ? ns.show() : ns.hide();  
-}
-
-function toggleDiv() {
-var dv = $("#suggestionslist"); 
-var vv = (dv.css('display')!='none');
-(vv) ? dv.hide() : dv.show();
-}

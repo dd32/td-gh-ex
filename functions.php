@@ -4,7 +4,6 @@ function mywiki_theme_setup(){
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.0.1', 'all' );
 wp_enqueue_style('style', get_stylesheet_uri());
 wp_enqueue_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.1');
-wp_enqueue_script( 'nicescroll',  get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array('jquery'), '1.0.0');
 wp_enqueue_script( 'ajaxsearch',  get_template_directory_uri() . '/js/ajaxsearch.js', array(), '1.0.0');
 wp_enqueue_script( 'general',  get_template_directory_uri() . '/js/general.js');
 wp_localize_script( 'general', 'my_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -60,8 +59,8 @@ if ( ! function_exists( 'mywiki_entry_meta' ) ) :
  * Meta information for current post: categories, tags, permalink, author, and date.
  **/
 function mywiki_entry_meta() {
-	$mywiki_category_list = get_the_category_list( __( ' , ', 'mywiki' ) );
-	$mywiki_tag_list = get_the_tag_list( '', __( ' , ', 'mywiki' ) );
+	$mywiki_category_list = get_the_category_list(', ');
+	$mywiki_tag_list = get_the_tag_list('',', ');
 	$mywiki_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -347,7 +346,7 @@ function mywiki_custom_breadcrumbs() {
     if ( is_category() ) {
       $mywiki_thisCat = get_category(get_query_var('cat'), false);
       if ($mywiki_thisCat->parent != 0) echo get_category_parents($mywiki_thisCat->parent, TRUE, ' ' . $mywiki_delimiter . ' ');
-      echo $mywiki_before . _e('Archive by category ','mywiki'). single_cat_title('', false) . '"' . $mywiki_after;
+      echo $mywiki_before . _e('Archive by category ','mywiki').' : '.single_cat_title('', false).$mywiki_after;
   
     } elseif ( is_search() ) {
       echo $mywiki_before . _e('Search results for ','mywiki') . get_search_query() . '"' . $mywiki_after;
