@@ -15,7 +15,7 @@ function dynamicnews_enqueue_scripts() {
 	wp_enqueue_style('dynamicnewslite-stylesheet', get_stylesheet_uri());
 	
 	// Register Genericons
-	wp_enqueue_style('dynamicnewslite-genericons', get_template_directory_uri() . '/css/genericons.css');
+	wp_enqueue_style('dynamicnewslite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
 
 	// Register and Enqueue FlexSlider JS and CSS if necessary
 	if ( ( isset($theme_options['slider_activated_blog']) and $theme_options['slider_activated_blog'] == true )
@@ -363,7 +363,6 @@ require( get_template_directory() . '/inc/customizer/frontend/custom-slider.php'
 
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
-require( get_template_directory() . '/inc/front-page-functions.php' );
 
 // include Widget Files
 require( get_template_directory() . '/inc/widgets/widget-category-posts-boxed.php' );
