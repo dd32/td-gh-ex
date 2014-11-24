@@ -379,7 +379,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 			'youtube',
 			'pinterest',
 			'linkedin',
-            'specificfeeds'
+
 		);
 	}
 
@@ -464,11 +464,6 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'LinkedIn:', 'maxflat'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" type="text" value="<?php echo $form_values['linkedin']; ?>" /></label>
 	</p>
-        <p>
-		<label for="<?php echo $this->get_field_id( 'specificfeeds' ); ?>"><?php _e( 'SpecificFeeds:', 'maxflat'); ?>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'specificfeeds' ); ?>" name="<?php echo $this->get_field_name( 'specificfeeds' ); ?>" type="text" value="<?php echo $form_values['specificfeeds']; ?>" /></label>
-	</p>
-    <p><a href="http://www.specificfeeds.com/" target="_blank" style="clear: both; display: block; padding-top: 15px"><?php _e('How to promote your blog using SpecificFeeds?', 'smartadapt') ?></a></p>
 
 	<?php
 	}
@@ -884,7 +879,7 @@ function maxflat_add_theme_widgets($old_theme, $WP_theme = null) {
 maxflat_pre_set_widget( 'sidebar-1', 'smartlib-social-icons',
     array(
         'title' => __('Follow us','maxflat'),
-        'specificfeeds'  => 'http://specificfeeds.com/follow',
+       'gplus'  => 'https://plus.google.com/',
         'facebook' => 'https://www.facebook.com/',
 		'twitter'=> 'https://twitter.com/',
 		'youtube'=> 'https://www.youtube.com/',
