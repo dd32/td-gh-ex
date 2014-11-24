@@ -640,7 +640,8 @@ if ( ! class_exists( 'mediumPA_List_Table' ) ) {
         }
         /* Sets default message within the plugins table if no plugins */
         public function no_items() {
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'medium' ), admin_url() );
+           _e('No plugins to install or activate','medium'); echo ".<a href='admin_url()'>Return to the Dashboard</a>";
+
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
         }
         /* Output all the column information within the table.*/
@@ -995,7 +996,7 @@ function medium_load_bulk_installer() {
                 /* Sets the correct install strings for the installer skin to use. */
                 public function install_strings() {
                     $this->strings['no_package']          = __( 'Install package not available.', 'medium' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'medium' );
+                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'medium'), '<span class="code">', '</span>&#8230;');
                     $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'medium' );
                     $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'medium' );
                     $this->strings['process_failed']      = __( 'Plugin install failed.', 'medium' );

@@ -18,7 +18,7 @@
                     ?>
             <div class="col-md-12 footer-social">
                 <?php
-                    echo ($medium_options['scmessage'])? '<h6>'.esc_attr($medium_options['scmessage']).'</h6>' : '<h6>Connect With Me</h6>';                
+                    echo ($medium_options['scmessage'])? '<h6>'.esc_attr($medium_options['scmessage']).'</h6>' : '<h6>'.__('Connect With Me','medium').'</h6>';                
                ?>
             <ul>
             <?php
@@ -34,7 +34,7 @@
            <?php
            if(!empty($medium_options['footertext']))
                echo esc_attr($medium_options['footertext']).',';
-           echo "<span class='medium-poweredby'>Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/medium' target='_blank'>Medium</a>.</span>";
+           printf( __( 'Powered by %1$s and %2$s.', 'medium' ), '<a href="https://wordpress.org/" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/medium" target="_blank">Medium</a>' ); 
            ?>
             </div>
      </div>   

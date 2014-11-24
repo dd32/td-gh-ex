@@ -49,8 +49,8 @@ get_header();
 				endwhile; endif;
 		 	?><div class="col-md-12 medium-pagination-single no-padding-lr">
       		
-            <span class="medium-previous-link"><?php previous_post_link('%link', '&laquo; %title'); ?></span>
-            <span class="medium-next-link"><?php next_post_link('%link', '%title &raquo; '); ?></span>
+            <span class="medium-previous-link"><?php previous_posts_link(__('Previous','medium').' &raquo;'); ?></span>
+                        <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
       </div>
       
       		<?php comments_template(); ?>

@@ -10,11 +10,11 @@ get_header();
     	<h2>
         <?php
         if ( is_day() ) :
-            printf( __( 'Daily Archives : %s', 'medium' ), get_the_date() );
+            _e('Daily Archives','medium'); echo ": ". get_the_date();
         elseif ( is_month() ) :
-            printf( __( 'Monthly Archives : %s', 'medium' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'medium' ) ) );
+            _e('Monthly Archives','medium'); echo ": ". get_the_date('F-Y');
         elseif ( is_year() ) :
-            printf( __( 'Yearly Archives : %s', 'medium' ), get_the_date( _x( 'Y', 'yearly archives date format', 'medium' ) ) );
+            _e('Monthly Archives','medium'); echo ": ". get_the_date('Y');
         else :
             _e( 'Archives', 'medium' );
         endif;
@@ -64,8 +64,8 @@ get_header();
 				}
 				else{?>
 					<div class="col-md-12 medium-pagination-single">
-                        <span class="medium-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-                        <span class="medium-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+                        <span class="medium-previous-link"><?php previous_posts_link(__('Previous','medium').' &raquo;'); ?></span>
+                        <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
       				</div><?php
 				}
 		 	?>

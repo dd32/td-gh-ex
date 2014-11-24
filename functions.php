@@ -117,6 +117,7 @@ function medium_scripts() {
 	
         wp_enqueue_script( 'medium-default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
         
+        
         wp_localize_script( 'medium-default', 'admin_url', admin_url( 'admin-ajax.php'));
         
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
@@ -181,21 +182,24 @@ add_action('wp_ajax_medium_search_ajax', 'medium_search_ajax');
  */
 function medium_entry_meta() {
 	
-	$medium_category_list = get_the_category_list() ? sprintf( '<li> Posted in : '.get_the_category_list( __( ', ', 'medium' ) ).'  </li>') :'';
+	$medium_category_list = "";
+if(!empty(get_the_category_list()))
+	$medium_category_list = _e('Posted in ','booster'); echo ": ".get_the_category_list(', ');
+$medium_tag_list = "";
+if(!empty(get_the_tag_list()))
+$medium_tag_list = _e(' Tags','booster'); echo ": ".get_the_tag_list('',', ');
 
-	$medium_tag_list = get_the_tag_list() ? sprintf( '<li>Tags: %1$s </li>', get_the_tag_list( '', __( ', ', 'medium' ) )):'';
-	
-	$medium_date = sprintf( '<li>On : %1$s</li>',
+	$medium_date = sprintf( '<li>'.__('On','medium').' : %1$s</li>',
 		esc_html( get_the_date('M d, Y') )
 	);
-	$medium_author = sprintf( '<li>By : <a href="%1$s" title="%2$s" >%3$s</a></li>',
+	$medium_author = sprintf( '<li>'.__('By','medium').' : <a href="%1$s" title="%2$s" >%3$s</a></li>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'medium' ), get_the_author() ) ),
 		get_the_author()
 	);
 	if(comments_open()) { 
 		if(get_comments_number()>=1)
-			$medium_comments = '<li>Comments : '.get_comments_number().'</li>';
+			$medium_comments = '<li>'.__('Comments','medium').' : '.get_comments_number().'</li>';
 		else
 			$medium_comments = '';
 	} else {
@@ -248,14 +252,14 @@ function medium_comment( $comment, $args, $depth ) {
 			<article id="comment-<?php comment_ID(); ?>">
 			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
 			<div class="comment-content">
+				<div class="comment-metadata">
            <?php
-		   		printf( '<div class="comment-metadata"><span>%1$s</span>',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'medium' ) . '</span>' : '');
+		   		printf( '%1$s ',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'medium' ) . '</span>' : '');
+				printf( _n('%1$s', get_comment_date('F j, Y'), 'medium' ), get_comment_date(), get_comment_time() );
 				
-				echo '<span>'.get_comment_date('F j, Y').'<span>';
+				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'medium' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ));
 				
-				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'medium' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) )).'</div>';
-				
-				?>
+				?></div>
                 <div class="comment-content-main">
                 <?php comment_text(); ?>
                 </div>

@@ -74,7 +74,7 @@
           	<div class="header-search">
 	          <div class="search-column">
                <form method="post" action="javascript:void(0);" name="Search-form">
-		          <input type="search" placeholder="Search" autofocus class="pop-search">
+		          <input type="search" placeholder="<?php _e('Search','medium') ?>" autofocus class="pop-search">
                </form>
                
                <div id="search_result_form">

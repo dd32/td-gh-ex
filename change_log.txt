@@ -13,3 +13,7 @@ vi) Images folder is deleted.
 
 Version 1.1.1 (18-11-2014)
 i) Fixed JS and CSS issues.
+
+Version 1.2 (24-11-2014)
+i) Made theme translation-ready !
+ii) Fixed issues pointed out by the reviewer.

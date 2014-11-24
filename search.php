@@ -53,8 +53,8 @@ get_header();
 				}
 				else{?>
 					<div class="col-md-12 medium-pagination-single">
-                        <span class="medium-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-                        <span class="medium-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+                        <span class="medium-previous-link"><?php previous_posts_link(__('Previous','medium').' &raquo;'); ?></span>
+                        <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
       				</div><?php
 				}
 		 	?>
