@@ -1,11 +1,11 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 1.6
+Version: 1.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
-Tags: two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, dark, light, gray, editor-style, translation-ready, photoblogging
+Tags: two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, dark, light, gray, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: darkelements
@@ -73,7 +73,7 @@ table {
 }
 
 /* GENERAL */
-body {background: #333; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#ddd; line-height:1.5em;}
+body {background:#333; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#ddd; line-height:1.5em;}
 #container {max-width: 1000px; background:none; margin: 20px 0 20px 20px; text-align: left; word-wrap: break-word;}
 #container:after {content:''; display:block; clear:both;}
 #content {width: 68%; float:right; padding: 20px 2%; word-wrap: break-word; background:#333 url('images/back.png'); opacity:0.9;filter:alpha(opacity=90);}
@@ -151,7 +151,7 @@ select {max-width:100%;}
 .excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; margin:0 0 10px; padding:5px; color:#e77776; border-top:1px solid #444; border-bottom:1px solid #444;}
 .postmetadata {clear:both; margin:20px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #444;}
+.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ddd;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; text-decoration:none; padding: 2px 5px; background:#ddd; color:#333; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #e77776; color:#ddd; text-decoration:none;}
@@ -190,7 +190,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments {clear:both; word-wrap: break-word;}
 #comments .comment-list {list-style:none; border:1px solid #444; font-weight:normal; margin: 20px 0; padding: 0 15px 0; border-radius:5px;-moz-border-radius:5px;}
 #comments .children {list-style:none; margin: 0; padding: 0 0 0 15px;}
-.comment-body {border-left:2px solid #444; padding: 0 0 0 15px; margin:20px 0;}
+.comment-body {border-left:1px solid #ddd; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .form-allowed-tags code {padding:0; border:none;}
 
@@ -206,7 +206,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:100%; float:left; word-wrap: break-word;}
 .widget {padding:10px 0; margin: 0 0 10px; background: none;}
-.widgettitle, .nav-widgettitle {color:#ddd; padding:0 0 5px; margin:0 0 10px; border-bottom:1px solid #444;}
+.widgettitle, .nav-widgettitle {color:#ddd; padding:0 0 5px; margin:0 0 10px; border-bottom:1px solid #ddd;}
 #wp-calendar {width:90%;}
 
 /* FOOTER */

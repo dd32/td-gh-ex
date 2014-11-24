@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkElements v1.5\n"
+"Project-Id-Version: DarkElements v1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-10-05 20:18:08+0000\n"
+"PO-Revision-Date: 2014-11-24 22:41:10+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,15 +78,15 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:108
+#: functions.php:107
 #@ darkelements
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:110
-#: functions.php:120
-#: functions.php:130
-#: functions.php:140
+#: functions.php:109
+#: functions.php:119
+#: functions.php:129
+#: functions.php:139
 #@ darkelements
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -135,12 +135,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:118
+#: functions.php:117
 #@ darkelements
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:138
+#: functions.php:137
 #@ darkelements
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -158,13 +158,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:168
-#: functions.php:174
+#: functions.php:166
+#: functions.php:175
 #@ darkelements
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:170
+#: functions.php:168
 #@ darkelements
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -193,17 +193,17 @@ msgstr "% reacties"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:46
+#: footer.php:28
 #@ darkelements
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:47
+#: footer.php:29
 #@ darkelements
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:47
+#: footer.php:29
 #@ darkelements
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
@@ -252,7 +252,7 @@ msgstr "Tags %s"
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
-#: functions.php:128
+#: functions.php:127
 #@ darkelements
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
