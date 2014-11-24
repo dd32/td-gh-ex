@@ -1,7 +1,7 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	1.5
+Version: 	1.6
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -60,7 +60,7 @@ You can use the Searchlight Extend for more Features and Options. If you like th
 You can visit the Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
 
-
+Limitation: The width of the Main Menu is fixed. You should use the menu items within the box for better visualization.
 
 
 

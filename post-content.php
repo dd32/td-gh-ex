@@ -15,7 +15,7 @@
     
     	<div class="post-container">
         
-			<div class="fpthumb"><?php the_post_thumbnail('fpage-thumb'); ?></div>
+			<div class="fpthumb"><?php the_post_thumbnail('searchlight-fpage-thumb'); ?></div>
         	<div class="entrytext">
             	<?php if ( is_single() || is_page() ): ?><h1 class="page-title"><?php the_title(); ?></h1><?php else: ?><a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title(); ?></h2></a><?php endif; ?>
         		<div class="content-ver-sep"> </div>

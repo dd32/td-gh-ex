@@ -41,7 +41,7 @@ get_header(); ?>
 		
 			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 					<div class="post-container">
- 						<div class="fpthumb"><?php the_post_thumbnail('fpage-thumb'); ?></div>
+ 						<div class="fpthumb"><?php the_post_thumbnail('searchlight-fpage-thumb'); ?></div>
         				<div class="entrytext">
             				<a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title(); ?></h2></a>
         					<div class="content-ver-sep"> </div>

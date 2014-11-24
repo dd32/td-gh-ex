@@ -32,14 +32,14 @@
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-	add_image_size( 'fpage-thumb', 1000, 500, true ); 
+	add_image_size( 'searchlight-fpage-thumb', 1000, 500, true ); 
 	
 		
-// 	WordPress 3.4 Custom Background Support	
+// 	WordPress Custom Background Support	
 	$searchlight_custom_background = array( 'default-color' => 'FFFFFF', 'default-image'  => '', );
 	add_theme_support( 'custom-background', $searchlight_custom_background );
 	
-// 	WordPress 3.4 Custom Header Support				
+// 	WordPress Custom Header Support				
 	$searchlight_custom_header = array(
 	'default-image'          => '',
 	'random-default'         => false,

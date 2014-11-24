@@ -32,7 +32,8 @@ class Options_Framework_Media_Uploader {
 	static function optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 
 		// Gets the unique option id
-		$option_name = Options_Framework::get_option_name();
+		$options_framework = new Options_Framework;
+	    $option_name = $options_framework->get_option_name();
 
 		$output = '';
 		$id = '';
@@ -58,15 +59,15 @@ class Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'searchlight') .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'searchlight'  ) .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
-				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'searchlight' ) . '" />' . "\n";
+				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'searchlight'   ) . '" />' . "\n";
 			} else {
-				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'searchlight' ) . '" />' . "\n";
+				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'searchlight'   ) . '" />' . "\n";
 			}
 		} else {
-			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'searchlight' ) . '</i></p>';
+			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'searchlight'   ) . '</i></p>';
 		}
 
 		if ( $_desc != '' ) {
@@ -90,7 +91,7 @@ class Options_Framework_Media_Uploader {
 				$output .= '';
 
 				// Standard generic output if it's not an image.
-				$title = __( 'View File', 'searchlight' );
+				$title = __( 'View File', 'searchlight'   );
 				$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
 			}
 		}
@@ -114,8 +115,8 @@ class Options_Framework_Media_Uploader {
 		wp_register_script( 'of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ), Options_Framework::VERSION );
 		wp_enqueue_script( 'of-media-uploader' );
 		wp_localize_script( 'of-media-uploader', 'optionsframework_l10n', array(
-			'upload' => __( 'Upload', 'searchlight' ),
-			'remove' => __( 'Remove', 'searchlight' )
+			'upload' => __( 'Upload', 'searchlight'   ),
+			'remove' => __( 'Remove', 'searchlight'   )
 		) );
 	}
 }
