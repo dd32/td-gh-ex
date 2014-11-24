@@ -8,9 +8,9 @@ get_header(); ?>
     	<div class="webpage-container container">
         	<div class="laurels_menu">
         	<h1><?php the_title(); ?></h1>
-            <ol class="breadcrumb site-breadcumb">
+            <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
-            </ol>
+            </div>
             </div>
     	</div>
     </div>
@@ -22,7 +22,7 @@ get_header(); ?>
                 <div class="blog">                
                     <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-							<img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url($laurels_image); ?>" alt="<?php the_title(); ?>" class="img-responsive"  />
 						</div>
                     <?php } ?>
                     <div class="blog-data">
@@ -32,16 +32,16 @@ get_header(); ?>
                         </div>
                         <div class="blog-info">
                             <h2><?php the_title(); ?></h2>
-                            <ol class="breadcrumb blog-breadcumb">
+                            <div class="breadcrumb blog-breadcumb">
                                <?php laurels_entry_meta(); ?>            
-                            </ol>
+                            </div>
                         </div>
                         <div class="blog-content">
-                            <p><?php the_content(); 
+                            <?php the_content(); 
 									wp_link_pages( array(
 										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
 										'after' => '</div>',
-									) ); ?></p>
+									) ); ?>
                         </div>
                     </div>
                 </div> 

@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function($) {
 	$('.remove-image').click(function(e) {
         $('#logo').val('');
@@ -11,7 +10,7 @@ jQuery(document).ready(function($) {
 	$('.group').hide();
 	var active_tab = '';
 	if (typeof(localStorage) != 'undefined' ) {
-		active_tab = localStorage.getItem("active_tab");
+		active_tab = localStorage.getItem('"active_tab"');
 	}
 	if (active_tab != '' && $(active_tab).length ) {
 		$(active_tab).fadeIn();

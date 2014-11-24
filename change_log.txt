@@ -10,3 +10,9 @@ iii) wp_link_pages set in full width template, left sidebar template and in page
 iv) Require files set properly
 v) Remove Theme Text Translation and remove translation-ready tag in style.css and readme.txt
 vi) Remove newsletter code from theme options and remove newsletter script and css from js and css files.
+
+Version 1.1.0 (24-11-2014)
+
+i) set sanitization.
+ii) fix javascript error.
+

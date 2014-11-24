@@ -5,10 +5,9 @@ function laurels_options_init(){
 add_action( 'admin_init', 'laurels_options_init' );
 function laurels_options_validate($input)
 {
-	 $input['logo'] = esc_url_raw( $input['logo'] );
-	 $input['favicon'] = esc_url_raw( $input['favicon'] );
-	 $input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
-	 
+	 $input['logo'] = laurels_image_validation(esc_url_raw( $input['logo']));
+	 $input['favicon'] = laurels_image_validation(esc_url_raw( $input['favicon']));
+	 $input['footertext'] = esc_html( $input['footertext'] );
 	 	
 	 $input['facebook'] = esc_url_raw( $input['facebook'] );
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
@@ -18,21 +17,30 @@ function laurels_options_validate($input)
 	 $input['linkedin'] = esc_url_raw( $input['linkedin'] );
 
 	for($laurels_i=1; $laurels_i <=5 ;$laurels_i++ ):
-	 $input['slider-img-'.$laurels_i] = esc_url( $input['slider-img-'.$laurels_i] );
+	 $input['slider-img-'.$laurels_i] = laurels_image_validation(esc_url( $input['slider-img-'.$laurels_i]));
 	 $input['slidelink-'.$laurels_i] = esc_url( $input['slidelink-'.$laurels_i]);
 	 endfor;
 	 
-	 $input['home-title'] = wp_filter_nohtml_kses( $input['home-title'] );
-	 $input['home-content'] = wp_filter_nohtml_kses( $input['home-content'] );
+	 $input['home-title'] = esc_html( $input['home-title'] );
+	 $input['home-content'] = esc_html( $input['home-content'] );
 	 
 	 for($laurels_section_i=1; $laurels_section_i <=4 ;$laurels_section_i++ ):
-	 $input['home-icon-'.$laurels_section_i] = esc_url_raw( $input['home-icon-'.$laurels_section_i]);
-	 $input['section-title-'.$laurels_section_i] = wp_filter_nohtml_kses($input['section-title-'.$laurels_section_i]);
-	 $input['section-content-'.$laurels_section_i] = wp_filter_nohtml_kses($input['section-content-'.$laurels_section_i]);
+	 $input['home-icon-'.$laurels_section_i] = laurels_image_validation(esc_url_raw( $input['home-icon-'.$laurels_section_i]));
+	 $input['section-title-'.$laurels_section_i] = esc_html($input['section-title-'.$laurels_section_i]);
+	 $input['section-content-'.$laurels_section_i] = esc_html($input['section-content-'.$laurels_section_i]);
 	 endfor;
 	 
 	 
     return $input;
+}
+function laurels_image_validation($laurels_imge_url){
+	$laurels_filetype = wp_check_filetype($laurels_imge_url);
+	$laurels_supported_image = array('gif','jpg','jpeg','png','ico');
+	if (in_array($laurels_filetype['ext'], $laurels_supported_image)) {
+		return $laurels_imge_url;
+	} else {
+	return '';
+	}
 }
 function laurels_framework_load_scripts(){
 	wp_enqueue_media();

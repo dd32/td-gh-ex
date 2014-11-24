@@ -63,7 +63,7 @@ echo $before_title . $laurels_title . $after_title;;
             <?php $laurels_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 			if($laurels_feat_image!="") { ?>
 					<a href="<?php echo esc_url(get_permalink());?>" title="Post Page" class="pull-left"> 
-						<img src="<?php echo esc_url($laurels_feat_image); ?>" class="media-object" />
+						<img src="<?php echo esc_url($laurels_feat_image); ?>" alt="<?php the_title(); ?>" class="media-object" />
 					</a>
             <?php }else{ ?>
 					<a href="<?php echo esc_url(get_permalink());?>" title="Post Page"  class="pull-left"> 
@@ -78,7 +78,7 @@ echo $before_title . $laurels_title . $after_title;;
 						</a>
 					</p>
   				   <p class="text-left clearfix">
-					   <h5><?php comments_number( '0', '1', '%' ); ?>   Comments</h5>
+					   <span><?php comments_number( '0', '1', '%' ); ?>   Comments</span>
 					    <?php // the_time(get_option( 'date_format' )); ?>
 				   </p>
             </div>

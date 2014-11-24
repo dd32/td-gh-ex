@@ -17,9 +17,9 @@ get_header();
                         </div>
                         <div class="blog-info">
                             <a href="<?php echo  esc_url(get_permalink()); ?>" class="heading"><?php the_title(); ?></a>
-                            <ol class="breadcrumb blog-breadcumb">
+                            <div class="breadcrumb blog-breadcumb">
                                <?php laurels_entry_meta(); ?>   
-                            </ol>
+                            </div>
                          </div>
 
 <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
@@ -30,7 +30,7 @@ get_header();
                     <?php } ?>
                       
                         <div class="blog-content">
-                            <p><?php the_excerpt(); ?></p>
+                            <?php the_excerpt(); ?>
                         </div>
                     </div>
                 </div>	

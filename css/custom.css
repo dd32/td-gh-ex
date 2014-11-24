@@ -399,17 +399,7 @@ margin: 0;
 	text-transform: uppercase;
 }
 .prod_detail a {
-    background-image: url("../images/bg.png");
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    float: right;
-    font-size: 14px;
-    margin: 10px 0 10px 5px;
-    padding: 3px 10px 3px 22px;
-    text-shadow: 1px 1px 2px #0f9fb5;
-    text-transform: uppercase;
+	color:#212121;
 }
 .prod_detail span:hover{
 	color:#2E2E2E;
@@ -436,56 +426,6 @@ margin: 0;
     height: auto; 
 	transition: all 0.3s ease 0s;
 	-webkit-transition: all 0.3s ease 0s;
-}
-.gallery-img:hover img {
-    transform: scale(1.2);
-	-webkit-transform: scale(1.2);
-}
-.gallery-img-hover .mask {
-    height: 100%;
-    opacity: 0.7;
-    width: 100%;
-	background: none repeat scroll 0 0 rgb(0, 0, 0);
-}
-.gallery-img-hover {
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 0);
-	-webkit-transform: scale(0, 0);
-    transition: all 0.3s ease-in-out 0s;
-	-webkit-transition: all 0.3s ease-in-out 0s;
-    width: 100%;
-}
-.gallery-img:hover .gallery-img-hover {
-    opacity: 1;
-    transform: scale(1, 1);
-	-webkit-transform: scale(1, 1);
-}
-.gallery-img-hover ul {
-    list-style: none outside none;
-}
-.gallery-img-hover li {
-    background: none repeat scroll 0 0 #12bbd5;   
-    height: 50px;
-    left: 44%;
-    margin-top: -22px;
-    position: absolute;
-    top: 48%;
-    transition: all 0.3s ease 0s;
-	-webkit-transition: all 0.3s ease 0s;
-    width: 50px;
-}
-.gallery-img-hover li a {
-    color: rgb(238, 238, 238);
-    display: table-cell;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    width: 50px;
-	font-size: 30px;
 }
 
 .box{

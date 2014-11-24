@@ -8,11 +8,11 @@ get_header(); ?>
     	<div class="webpage-container container">
        	<div class="laurels_menu">
      	<h1><?php if ( have_posts() ) : 
-	 		printf( __( '<p>Tag : %s', 'laurels' ), ' ' . single_tag_title( '', false ) . '</p>' );
+	 		printf( __( 'Tag : %s', 'laurels' ), ' ' . single_tag_title( '', false ));
 		endif; ?></h1>
-            <ol class="breadcrumb site-breadcumb">
+            <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
-            </ol>
+            </div>
             </div>
     	</div>
     </div>
@@ -30,9 +30,9 @@ get_header(); ?>
                         </div>
                         <div class="blog-info">
                             <a href="<?php echo esc_url(get_permalink()); ?>" class="heading"><?php the_title(); ?></a>
-                            <ol class="breadcrumb blog-breadcumb">
+                            <div class="breadcrumb blog-breadcumb">
                                <?php laurels_entry_meta(); ?>   
-                            </ol>
+                            </div>
                         </div>
                         <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
@@ -40,7 +40,7 @@ get_header(); ?>
 						</div>
                     <?php } ?>
                         <div class="blog-content">
-                            <p><?php the_excerpt(); ?></p>
+                            <?php the_excerpt(); ?>
                         </div>
                     </div>
                 </div>	

@@ -16,11 +16,11 @@ function laurels_custom_breadcrumbs() {
 
   if (is_home() || is_front_page()) {
 
-    if ($laurels_showonhome == 1) echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a></div>';
+    if ($laurels_showonhome == 1) echo '<div id="crumbs" class="laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a></div>';
 
   } else {
 
-    echo '<div id="crumbs" class="font-14 color-fff conter-text laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a> ' . $laurels_delimiter . ' ';
+    echo '<div id="crumbs" class="laurels-breadcrumb"><a href="' . esc_url($laurels_homelink) . '">' . $laurels_home . '</a> ' . $laurels_delimiter . ' ';
 
     if ( is_category() ) {
       $laurels_thisCat = get_category(get_query_var('cat'), false);

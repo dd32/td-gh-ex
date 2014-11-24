@@ -5,6 +5,16 @@
 get_header();
 $laurels_options = get_option( 'laurels_theme_options' ); ?>
 <section>
+	<?php
+	$laurels_flag=0;
+	for($laurels_loop=1 ; $laurels_loop <=5 ; $laurels_loop++):?>
+	<?php if(!empty($laurels_options['slider-img-'.$laurels_loop])){
+		$laurels_flag=1;
+		break;
+	}
+	endfor;
+	?>
+	<?php if($laurels_flag == 1){ ?>
    <div class="banner">    	
          <!--Carousel-->
           <div id="sidebar-carousel-1" class="carousel slide " data-ride="carousel">
@@ -41,6 +51,7 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
     </div><!--/Carousel-->
     </div>
     
+    <?php } ?>
     <div class="webpage-container">
     	<div class="section_row_1 text-center col-md-12">
         	<h2><?php if(!empty($laurels_options['home-title'])) { echo esc_attr($laurels_options['home-title']); } ?></h2>
@@ -54,9 +65,9 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
                 <div class="img_inline text-center center-block">
                     <div class="row_img">
 					<?php if(!empty($laurels_options['home-icon-'.$laurels_loop])) {?>
-							<img src="<?php echo esc_url($laurels_options['home-icon-'.$laurels_loop]); ?>" class="img-circle" alt="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url($laurels_options['home-icon-'.$laurels_loop]); ?>" alt="<?php the_title(); ?>" class="img-circle"  />
 					  <?php }else{ ?>
-							<img src="<?php echo esc_url($laurels_options['home-icon-'.$laurels_loop]); ?>" class="img-circle" alt="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url($laurels_options['home-icon-'.$laurels_loop]); ?>" alt="<?php the_title(); ?>" class="img-circle"  />
 					  <?php } ?>
 					  <p><?php echo esc_attr($laurels_options['section-title-'.$laurels_loop]); ?>
 							<span><?php echo esc_attr($laurels_options['section-post-'.$laurels_loop]); ?></span>
@@ -90,27 +101,24 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
 		);	
 		$laurels_query=new $wp_query($laurels_args); ?>
 				<?php if ( $laurels_query->have_posts() ) { ?>	
-					<div class="gallary">
+			<div class="gallary">
 				<?php while($laurels_query->have_posts()) {  $laurels_query->the_post(); ?>	
+				<?php $laurels_image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'home-thumbnail-image', true ); ?>
                     <div class="col-sm-6 col-md-4">
 						<div class="box">
                         	<div class="gallery-img">
-								 <?php echo $laurels_image = wp_get_attachment_link( get_post_thumbnail_id(get_the_ID()), 'home-thumbnail-image' ); ?>
-                                <div class="gallery-img-hover">            
-                                    <div class="mask"></div>              
-                                    <ul>          	
-                                    	<li> <a class="fa fa-search" href="<?php echo esc_url(get_permalink()); ?>"></a></li>
-                                    </ul>                                             
-                                </div>           
-                            </div>
+								<a href="<?php echo get_permalink(get_the_ID()); ?>">
+									<img src="<?php echo $laurels_image[0]; ?>" width="<?php echo $laurels_image[1]; ?>" height="<?php echo $laurels_image[2]; ?>" alt="<?php the_title(); ?>">
+								 </a>
+                             </div>
                             <div class="prod_detail">
-                                <h5><?php echo get_the_title(); ?></h5>  
-                                <?php the_tags(' ',' '); ?>  
+                                <h5><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a></h5>  
                             </div>                        
                         </div>                      
                     </div>
+           
                     <?php } ?>
-                    </div>              
+            </div>    
                     <?php } else { echo '<p>no posts found</p>'; } ?>
             </div>            
         </div>  
