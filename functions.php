@@ -521,7 +521,7 @@ function adamos_wp_title( $title ) {
  * Implement the Custom Header feature
  */
 add_theme_support( 'custom-header' );
-
+function adamos_custom_header_setup() {
 $args = array(
 		'default-image'          => '',
 		'default-text-color'     => 'FFF',
@@ -537,6 +537,7 @@ $args = array(
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
+}
 }
 add_action( 'after_setup_theme', 'adamos_custom_header_setup' );
 
