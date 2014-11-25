@@ -59,7 +59,7 @@ function cyberchimps_portfolio_lite_page_options() {
 			'id'    => 'cyberchimps_portfolio_link_url_one',
 			'class' => '',
 			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
-			'std'   => home_url()
+			'std'   => esc_url( home_url() )
 		),
 
 		// Image two
@@ -89,7 +89,7 @@ function cyberchimps_portfolio_lite_page_options() {
 			'id'    => 'cyberchimps_portfolio_link_url_two',
 			'class' => '',
 			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
-			'std'   => home_url()
+			'std'   => esc_url( home_url() )
 		),
 
 		// Image three
@@ -119,7 +119,7 @@ function cyberchimps_portfolio_lite_page_options() {
 			'id'    => 'cyberchimps_portfolio_link_url_three',
 			'class' => '',
 			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
-			'std'   => home_url()
+			'std'   => esc_url( home_url() )
 		),
 
 		// Image four
@@ -149,7 +149,7 @@ function cyberchimps_portfolio_lite_page_options() {
 			'id'    => 'cyberchimps_portfolio_link_url_four',
 			'class' => '',
 			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
-			'std'   => home_url()
+			'std'   => esc_url( home_url() )
 		),
 	);
 	/*

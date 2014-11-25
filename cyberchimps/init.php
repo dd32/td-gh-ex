@@ -220,33 +220,3 @@ function cyberchimps_pro_welcome_notice() {
 	}
 }
 add_action( 'after_setup_theme', 'cyberchimps_pro_welcome_notice' );
-
-//Incase of free show a welcome message with link to theme options.
-function cyberchimps_welcome_notice() {
-	global $pagenow;
-	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
-
-		if ( 'free' == cyberchimps_theme_check() ) {
-			?>
-			<div id="welcome" style="
-										background: #81c7ef;
-										padding: 0 20px 20px;
-										margin: 20px 20px 20px 0;
-										font-size: 1.5em;
-										border: 1px solid #5ba9d3;
-										-webkit-border-radius: 3px;
-										border-radius: 3px;">
-				<p style="color: #ffffff;
-							text-align: center;
-							line-height: 1.4em;
-							font-weight: bold;
-							margin: 5px 0 0;">
-					<img src="<?php echo get_template_directory_uri(). '/cyberchimps/options/lib/images/chimp.png'; ?>" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
-					5px;">
-					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> by <a target="_blank" href="http://www.cyberchimps.com/">CyberChimps</a>. Please visit the <a href="themes.php?page=cyberchimps-theme-options">Theme Options</a> to setup and build your website.</p>
-			</div>
-		<?php
-		}
-	}
-}
-add_action( 'admin_notices', 'cyberchimps_welcome_notice' );
