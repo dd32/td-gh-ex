@@ -2,11 +2,11 @@
 
 <?php if ( is_front_page() ) : ?>
 
-		<?php tishonator_display_slider(); ?>
+		<?php fkidd_display_slider(); ?>
 	
 	<?php else : ?>
 	
-		<?php tishonator_show_page_header_section(); ?>
+		<?php fkidd_show_page_header_section(); ?>
 
 <?php endif; ?>
 
@@ -29,7 +29,7 @@
 				endwhile;
 	?>
 				<div class="navigation">
-					<?php tishonator_show_pagenavi(); ?>
+					<?php fkidd_show_pagenavi(); ?>
 				</div>  
 	<?php else :
 

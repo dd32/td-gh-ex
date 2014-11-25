@@ -14,308 +14,308 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: English\n"
 "X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SearchPath-0: D:\\tishonator.com\\themes\\fkidd\n"
+"X-Poedit-SearchPath-0: D:\\tishonator.com\\themes\\free_themes\\fkidd\n"
 
-#: D:\tishonator.com\themes\fkidd/404.php:20
+#: D:\tishonator.com\themes\free_themes\fkidd/404.php:20
 msgid "Error 404: Not Found"
 msgstr "Грешка 404: Не е намерено"
 
-#: D:\tishonator.com\themes\fkidd/comments.php:5
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:5
 msgid "Please do not load this page directly. Thanks!"
 msgstr "Моля, не отваряйте директно тази страница."
 
-#: D:\tishonator.com\themes\fkidd/comments.php:8
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:8
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "Този пост е защитен с парола. Въведете Вашата парола за да видите коментарите."
 
-#: D:\tishonator.com\themes\fkidd/comments.php:14
-#: D:\tishonator.com\themes\fkidd/content-aside.php:35
-#: D:\tishonator.com\themes\fkidd/content-audio.php:41
-#: D:\tishonator.com\themes\fkidd/content-gallery.php:42
-#: D:\tishonator.com\themes\fkidd/content-image.php:40
-#: D:\tishonator.com\themes\fkidd/content-link.php:35
-#: D:\tishonator.com\themes\fkidd/content-page.php:18
-#: D:\tishonator.com\themes\fkidd/content-quote.php:35
-#: D:\tishonator.com\themes\fkidd/content-video.php:42
-#: D:\tishonator.com\themes\fkidd/content.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:14
+#: D:\tishonator.com\themes\free_themes\fkidd/content-aside.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-audio.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/content-gallery.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content-image.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/content-quote.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-video.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content.php:44
 msgid "No Comments"
 msgstr "Няма коментари"
 
-#: D:\tishonator.com\themes\fkidd/comments.php:15
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:15
 msgid "One Response"
 msgstr "Един отговор"
 
-#: D:\tishonator.com\themes\fkidd/comments.php:16
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:16
 msgid "% Responses"
 msgstr "% Отговори"
 
-#: D:\tishonator.com\themes\fkidd/comments.php:16
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:16
 msgid "to"
 msgstr "към"
 
-#: D:\tishonator.com\themes\fkidd/comments.php:29
-#: D:\tishonator.com\themes\fkidd/content-aside.php:35
-#: D:\tishonator.com\themes\fkidd/content-audio.php:41
-#: D:\tishonator.com\themes\fkidd/content-gallery.php:42
-#: D:\tishonator.com\themes\fkidd/content-image.php:40
-#: D:\tishonator.com\themes\fkidd/content-link.php:35
-#: D:\tishonator.com\themes\fkidd/content-page.php:18
-#: D:\tishonator.com\themes\fkidd/content-quote.php:35
-#: D:\tishonator.com\themes\fkidd/content-video.php:42
-#: D:\tishonator.com\themes\fkidd/content.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/comments.php:29
+#: D:\tishonator.com\themes\free_themes\fkidd/content-aside.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-audio.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/content-gallery.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content-image.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/content-quote.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-video.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content.php:44
 msgid "Comments are closed."
 msgstr "Коментарите са затворени."
 
-#: D:\tishonator.com\themes\fkidd/content-aside.php:35
-#: D:\tishonator.com\themes\fkidd/content-audio.php:41
-#: D:\tishonator.com\themes\fkidd/content-gallery.php:42
-#: D:\tishonator.com\themes\fkidd/content-image.php:40
-#: D:\tishonator.com\themes\fkidd/content-link.php:35
-#: D:\tishonator.com\themes\fkidd/content-page.php:18
-#: D:\tishonator.com\themes\fkidd/content-quote.php:35
-#: D:\tishonator.com\themes\fkidd/content-video.php:42
-#: D:\tishonator.com\themes\fkidd/content.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/content-aside.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-audio.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/content-gallery.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content-image.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/content-quote.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-video.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content.php:44
 msgid "1 Comment"
 msgstr "1 Коментар"
 
-#: D:\tishonator.com\themes\fkidd/content-aside.php:35
-#: D:\tishonator.com\themes\fkidd/content-audio.php:41
-#: D:\tishonator.com\themes\fkidd/content-gallery.php:42
-#: D:\tishonator.com\themes\fkidd/content-image.php:40
-#: D:\tishonator.com\themes\fkidd/content-link.php:35
-#: D:\tishonator.com\themes\fkidd/content-page.php:18
-#: D:\tishonator.com\themes\fkidd/content-quote.php:35
-#: D:\tishonator.com\themes\fkidd/content-video.php:42
-#: D:\tishonator.com\themes\fkidd/content.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/content-aside.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-audio.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/content-gallery.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content-image.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/content-quote.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/content-video.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/content.php:44
 msgid "% Comments"
 msgstr "% Коментари"
 
-#: D:\tishonator.com\themes\fkidd/content-aside.php:51
-#: D:\tishonator.com\themes\fkidd/content-audio.php:57
-#: D:\tishonator.com\themes\fkidd/content-gallery.php:58
-#: D:\tishonator.com\themes\fkidd/content-image.php:56
-#: D:\tishonator.com\themes\fkidd/content-link.php:51
-#: D:\tishonator.com\themes\fkidd/content-page-clean.php:13
-#: D:\tishonator.com\themes\fkidd/content-page.php:21
-#: D:\tishonator.com\themes\fkidd/content-quote.php:51
-#: D:\tishonator.com\themes\fkidd/content-video.php:58
-#: D:\tishonator.com\themes\fkidd/content.php:57
+#: D:\tishonator.com\themes\free_themes\fkidd/content-aside.php:51
+#: D:\tishonator.com\themes\free_themes\fkidd/content-audio.php:57
+#: D:\tishonator.com\themes\free_themes\fkidd/content-gallery.php:58
+#: D:\tishonator.com\themes\free_themes\fkidd/content-image.php:56
+#: D:\tishonator.com\themes\free_themes\fkidd/content-link.php:51
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page-clean.php:13
+#: D:\tishonator.com\themes\free_themes\fkidd/content-page.php:21
+#: D:\tishonator.com\themes\free_themes\fkidd/content-quote.php:51
+#: D:\tishonator.com\themes\free_themes\fkidd/content-video.php:58
+#: D:\tishonator.com\themes\free_themes\fkidd/content.php:57
 msgid "Edit"
 msgstr "Редактиране"
 
-#: D:\tishonator.com\themes\fkidd/content-none.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/content-none.php:18
 msgid "No Results Found!"
 msgstr "Няма намерени резултати!"
 
-#: D:\tishonator.com\themes\fkidd/content-none.php:23
+#: D:\tishonator.com\themes\free_themes\fkidd/content-none.php:23
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Изглежда, че не може да намерим това, което търсите. Може би ново търсене може да помогне."
 
-#: D:\tishonator.com\themes\fkidd/search.php:8
+#: D:\tishonator.com\themes\free_themes\fkidd/search.php:8
 #, php-format
 msgid "You searched for \"%s\". Here are the results:"
 msgstr "Вие търсехте  \"%s\". Ето ги резултатите:"
 
-#: D:\tishonator.com\themes\fkidd/searchform.php:3
+#: D:\tishonator.com\themes\free_themes\fkidd/searchform.php:3
 msgid "Search..."
 msgstr "Търси..."
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:9
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:9
 msgid "Asides"
 msgstr "Бележки"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:12
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:12
 msgid "Images"
 msgstr "Картинки"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:15
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:15
 msgid "Videos"
 msgstr "Видеа"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:18
 msgid "Audio"
 msgstr "Аудио"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:21
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:21
 msgid "Quotes"
 msgstr "Цитати"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:24
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:24
 msgid "Links"
 msgstr "Връзки"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:27
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:27
 msgid "Galleries"
 msgstr "Галерии"
 
-#: D:\tishonator.com\themes\fkidd/taxonomy-post_format.php:30
+#: D:\tishonator.com\themes\free_themes\fkidd/taxonomy-post_format.php:30
 msgid "Archives"
 msgstr "Архив"
 
-#: D:\tishonator.com\themes\fkidd/inc/actions.php:55
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/actions.php:55
 msgid "Sidebar Widget Area"
 msgstr "Сайтбар Уиджет"
 
-#: D:\tishonator.com\themes\fkidd/inc/actions.php:57
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/actions.php:57
 msgid "The sidebar widget area"
 msgstr "Сайтбар Уиджет"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:18
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:19
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:18
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:19
 msgid "Theme Options"
 msgstr "Опции Тема"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:35
 msgid "General"
 msgstr "Общи"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:36
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:36
 msgid "Header"
 msgstr "Хедър"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:37
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:37
 msgid "Footer"
 msgstr "Футър"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:38
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:38
 msgid "Home"
 msgstr "Начална Страница"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:39
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:39
 msgid "Slider"
 msgstr "Слайдър"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:40
 msgid "Colors"
 msgstr "Цветове"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:41
 msgid "Social"
 msgstr "Социални"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:42
 msgid "Lightbox"
 msgstr "Лайтбокс"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:43
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:43
 msgid "Thumbnails"
 msgstr "Тъмбнейли"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:44
 msgid "Contacts"
 msgstr "Контакти"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:46
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:53
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:46
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:53
 msgid "Color Schemes"
 msgstr "Цветови Схеми"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:198
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:198
 msgid "Theme settings updated successfully."
 msgstr "Промените по настройките на темата са запазени успешно."
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:220
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:238
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:255
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:295
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:359
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:416
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:220
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:238
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:255
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:295
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:359
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:416
 msgid "Save Changes"
 msgstr "Запази Промените"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:454
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:454
 msgid "General Settings"
 msgstr "Общи Настройки"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:461
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:461
 msgid "Favicon for your website"
 msgstr "Иконка на Вашия сайт"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:467
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:467
 msgid "Favicon"
 msgstr "Иконка"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:484
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:484
 msgid "Header Settings"
 msgstr "Хедър Настройки"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:491
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:491
 msgid "Upload a custom logo for your website."
 msgstr "Качване на лого за Вашия уеб сайт."
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:497
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:497
 msgid "Logo image"
 msgstr "Лого картинка"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:514
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:514
 msgid "Footer Settings"
 msgstr "Настройки на Футъра"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:520
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:520
 msgid "Your Copyright text to appear in the website footer"
 msgstr "Вашият копирайт текст, който ще се появи във футъра на сайта."
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:526
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:526
 msgid "Copyright Text"
 msgstr "Копирайт текст"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:552
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:552
 msgid "Slider Settings"
 msgstr "Слайдър Настройки"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:645
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:645
 msgid "Social Websites"
 msgstr "Социални сайтове"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:712
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:712
 msgid "Error 404 Not Found Page Settings"
 msgstr "Грешка 404  Не е намерено Настройки"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:719
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:719
 msgid "Upload a custom image for your 404 Not Found Page."
 msgstr "Качете картинка за Грешка 404: Не е намерено."
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:725
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:725
 msgid "Image"
 msgstr "Картинка"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:732
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:732
 msgid "The Title to appear in the 404 Not Found Page"
 msgstr "Заглавие в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:738
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:738
 msgid "Title"
 msgstr "Заглавие"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:745
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:745
 msgid "The Content to appear in the 404 Not Found Page"
 msgstr "Съдържание в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\fkidd/inc/theme-options.php:751
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:751
 msgid "Content"
 msgstr "Съдържание"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:21
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:21
 msgid "Follow us on Facebook"
 msgstr "Следете ни във Facebook"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:27
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:27
 msgid "Follow us on Google+"
 msgstr "Следете ни в Google+"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:33
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:33
 msgid "Follow our RSS Feeds"
 msgstr "Следете нашите RSS емисии"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:40
 msgid "Follow us on YouTube"
 msgstr "Следете ни в YouTube"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:241
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:241
 msgid "Read More"
 msgstr "Прочетете повече"
 
-#: D:\tishonator.com\themes\fkidd/inc/utilities.php:254
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:254
 msgid "Read More..."
 msgstr "Научи повече..."
 

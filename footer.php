@@ -2,12 +2,13 @@
 			<footer id="footer-main">
 				<div id="footer-content-wrapper">
 					<div class="clear">
-						<?php tishonator_show_footer_social_sites( '<div id="fsocial">', '</div>' ); ?>
-					</div>
-					<div class="clear">
 					</div>
 					<div id="copyright">
-						<?php tishonator_show_copyright_text(); ?>
+						<p>
+						 <?php fkidd_show_copyright_text(); ?> <a href="<?php echo esc_url( 'http://tishonator.com/product/fkidd' ); ?>" title="<?php esc_attr_e( 'fkidd Theme', 'fkidd' ); ?>">
+							fKidd Theme</a> <?php esc_attr_e( 'powered by', 'fkidd' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'fkidd' ); ?>">
+							WordPress</a>
+						</p>
 					</div>
 				</div>
 			</footer>
