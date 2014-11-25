@@ -33,3 +33,6 @@ vi) .mini-content add new css for support safari. theme.css
 vii) Change the comments box field size.
 viii) add new file respond.js for normal jQuery script.
 ix) change content size related window to document.
+
+Version 1.3.1 (25 nov 2014)
+i) Fixed JS bug which caused error in the admin panel.
