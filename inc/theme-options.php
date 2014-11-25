@@ -3,53 +3,53 @@
 /******************************
   Register the settings to use on the Theme Admin Page
 ******************************/
-add_action( 'admin_init', 'tishonator_register_general_settings' );
-add_action( 'admin_init', 'tishonator_register_header_settings' );
-add_action( 'admin_init', 'tishonator_register_footer_settings' );
-add_action( 'admin_init', 'tishonator_register_slider_settings' );
-add_action( 'admin_init', 'tishonator_register_social_settings' );
-add_action( 'admin_init', 'tishonator_register_notfound_settings' );
-add_action( 'admin_menu', 'tishonator_menu' );
+add_action( 'admin_init', 'fgymm_register_general_settings' );
+add_action( 'admin_init', 'fgymm_register_header_settings' );
+add_action( 'admin_init', 'fgymm_register_footer_settings' );
+add_action( 'admin_init', 'fgymm_register_slider_settings' );
+add_action( 'admin_init', 'fgymm_register_social_settings' );
+add_action( 'admin_init', 'fgymm_register_notfound_settings' );
+add_action( 'admin_menu', 'fgymm_menu' );
 
 /******************************
   Admin Page Functions
 ******************************/
-function tishonator_menu() {
-	add_theme_page( __( 'Theme Options', 'tishonator' ),
-	                __( 'Theme Options', 'tishonator' ),
+function fgymm_menu() {
+	add_theme_page( __( 'Theme Options', 'fgymm' ),
+	                __( 'Theme Options', 'fgymm' ),
 					'manage_options',
-					'tishonator_options.php',
-					'tishonator_page' );
+					'options.php',
+					'fgymm_page' );
 }
 
 /******************************
   Callback function to the add_theme_page. It displays the theme options page
 ******************************/ 
-function tishonator_page()
+function fgymm_page()
 {
 	$active_tab = isset($_GET[ 'tab' ]) ? $_GET[ 'tab' ] : 'tab_general';
 	$fullThemeUrl = "http://tishonator.com/product/tgymm";
 ?>
     <div class="wrap">
 		<h2 class="nav-tab-wrapper">  
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_general"  class="nav-tab <?php echo $active_tab == 'tab_general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'tishonator' ); ?></a>	
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_header"  class="nav-tab <?php echo $active_tab == 'tab_header' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Header', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_footer"  class="nav-tab <?php echo $active_tab == 'tab_footer' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Footer', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_homepage"  class="nav-tab <?php echo $active_tab == 'tab_homepage' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Home', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_slider"  class="nav-tab <?php echo $active_tab == 'tab_slider' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Slider', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_colors"  class="nav-tab <?php echo $active_tab == 'tab_colors' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Colors', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_social" class="nav-tab <?php echo $active_tab == 'tab_social' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_lightbox" class="nav-tab <?php echo $active_tab == 'tab_lightbox' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Lightbox', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_thumbnails" class="nav-tab <?php echo $active_tab == 'tab_thumbnails' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Thumbnails', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_contacts" class="nav-tab <?php echo $active_tab == 'tab_contacts' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contacts', 'tishonator' ); ?></a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_notfound" class="nav-tab <?php echo $active_tab == 'tab_notfound' ? 'nav-tab-active' : ''; ?>">404</a>
-			<a href="?page=<?php echo 'tishonator_options.php'; ?>&tab=tab_woocommerce" class="nav-tab <?php echo $active_tab == 'tab_woocommerce' ? 'nav-tab-active' : ''; ?>">WooCommerce</a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_general"  class="nav-tab <?php echo $active_tab == 'tab_general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'fgymm' ); ?></a>	
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_header"  class="nav-tab <?php echo $active_tab == 'tab_header' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Header', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_footer"  class="nav-tab <?php echo $active_tab == 'tab_footer' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Footer', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_homepage"  class="nav-tab <?php echo $active_tab == 'tab_homepage' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Home', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_slider"  class="nav-tab <?php echo $active_tab == 'tab_slider' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Slider', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_colors"  class="nav-tab <?php echo $active_tab == 'tab_colors' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Colors', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_social" class="nav-tab <?php echo $active_tab == 'tab_social' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_lightbox" class="nav-tab <?php echo $active_tab == 'tab_lightbox' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Lightbox', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_thumbnails" class="nav-tab <?php echo $active_tab == 'tab_thumbnails' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Thumbnails', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_contacts" class="nav-tab <?php echo $active_tab == 'tab_contacts' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contacts', 'fgymm' ); ?></a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_notfound" class="nav-tab <?php echo $active_tab == 'tab_notfound' ? 'nav-tab-active' : ''; ?>">404</a>
+			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_woocommerce" class="nav-tab <?php echo $active_tab == 'tab_woocommerce' ? 'nav-tab-active' : ''; ?>">WooCommerce</a>
 		</h2>
 
 		<?php if (isset($_GET[ 'settings-updated' ])) : ?>
 			<div class='updated'>
 				<p>
-					<?php _e( 'Theme settings updated successfully.', 'tishonator' ) ?>
+					<?php _e( 'Theme settings updated successfully.', 'fgymm' ) ?>
 				</p>
 			</div>
 		<?php endif; ?>
@@ -58,8 +58,8 @@ function tishonator_page()
 			<?php
 			if ( $active_tab == 'tab_general' ) :
 
-				settings_fields( 'fgymm_tishonator_general_settings' );
-				do_settings_sections( 'fgymm_tishonator_general_settings' );
+				settings_fields( 'fgymm_general_settings' );
+				do_settings_sections( 'fgymm_general_settings' );
 ?>
 				<div style="background-color:#CCCCCC;padding:10px;">
 				
@@ -71,13 +71,13 @@ function tishonator_page()
 				</div>
 				
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php
 			elseif ( $active_tab == 'tab_header' ) :
 
-				settings_fields( 'fgymm_tishonator_header_settings' );
-				do_settings_sections( 'fgymm_tishonator_header_settings' );
+				settings_fields( 'fgymm_header_settings' );
+				do_settings_sections( 'fgymm_header_settings' );
 ?>						
 				<div style="background-color:#CCCCCC;padding:10px;">
 				
@@ -89,13 +89,13 @@ function tishonator_page()
 				</div>
 				
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php						
 			elseif ( $active_tab == 'tab_footer' ) :
 
-				settings_fields( 'fgymm_tishonator_footer_settings' );
-				do_settings_sections( 'fgymm_tishonator_footer_settings' );
+				settings_fields( 'fgymm_footer_settings' );
+				do_settings_sections( 'fgymm_footer_settings' );
 ?>						
 				<div style="background-color:#CCCCCC;padding:10px;">
 					<div>
@@ -106,7 +106,7 @@ function tishonator_page()
 				</div>
 				
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php
 
@@ -126,8 +126,8 @@ function tishonator_page()
 <?php						
 			elseif ($active_tab == 'tab_slider' ) :
 
-				settings_fields( 'fgymm_tishonator_slider_settings' );
-				do_settings_sections( 'fgymm_tishonator_slider_settings' );					
+				settings_fields( 'fgymm_slider_settings' );
+				do_settings_sections( 'fgymm_slider_settings' );					
 ?>
 
 				<div style="background-color:#CCCCCC;padding:10px;">
@@ -146,7 +146,7 @@ function tishonator_page()
 				</div>
 
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php
 			elseif ($active_tab == 'tab_colors' ) :
@@ -196,8 +196,8 @@ function tishonator_page()
 <?php
 			elseif ($active_tab == 'tab_social' ) :
 
-				settings_fields( 'fgymm_tishonator_social_settings' );
-				do_settings_sections( 'fgymm_tishonator_social_settings' );
+				settings_fields( 'fgymm_social_settings' );
+				do_settings_sections( 'fgymm_social_settings' );
 ?>
 				<div style="background-color:#CCCCCC;padding:10px;">
 				
@@ -210,7 +210,7 @@ function tishonator_page()
 				</div>
 
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php
 			elseif ( $active_tab == 'tab_lightbox' ) :
@@ -263,11 +263,11 @@ function tishonator_page()
 <?php
 			elseif ( $active_tab == 'tab_notfound' ) :
 
-				settings_fields( 'fgymm_tishonator_notfound_settings' );
-				do_settings_sections( 'fgymm_tishonator_notfound_settings' );
+				settings_fields( 'fgymm_notfound_settings' );
+				do_settings_sections( 'fgymm_notfound_settings' );
 ?>
 				<p class="submit">  
-					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'tishonator' ) ?>" />  
+					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 				</p>
 <?php						
 			elseif ( $active_tab == 'tab_woocommerce' ) :
@@ -277,7 +277,7 @@ function tishonator_page()
 					<div>
 						These options are available in the full version only. <a href="<?php echo $fullThemeUrl; ?>" title="Click Here">Click Here</a> to get the full version of tGymm theme.
 					</div>
-					<table class="form-table"><tbody><tr><th scope="row"><label for="tishonator_woocommerce_displaysidebar">Display WooCommerce Sidebar</label></th><td><input type="checkbox" checked="checked" value="1" name="tishonator_woocommerce_settings[tishonator_woocommerce_displaysidebar]" id="tishonator_woocommerce_displaysidebar" disabled><br><span class="description">Display WooCommerce sidebar in products pages</span></td></tr><tr><th scope="row"><label for="tishonator_woocommerce_productsperpage">Products per Page</label></th><td><input type="number" value="10" name="tishonator_woocommerce_settings[tishonator_woocommerce_productsperpage]" id="tishonator_woocommerce_productsperpage" pattern="\d*" class="regular-text" disabled><br><span class="description">The number of products diplayed per page</span></td></tr></tbody></table>
+					<table class="form-table"><tbody><tr><th scope="row"><label for="woocommerce_displaysidebar">Display WooCommerce Sidebar</label></th><td><input type="checkbox" checked="checked" value="1" name="woocommerce_settings[woocommerce_displaysidebar]" id="woocommerce_displaysidebar" disabled><br><span class="description">Display WooCommerce sidebar in products pages</span></td></tr><tr><th scope="row"><label for="woocommerce_productsperpage">Products per Page</label></th><td><input type="number" value="10" name="woocommerce_settings[woocommerce_productsperpage]" id="woocommerce_productsperpage" pattern="\d*" class="regular-text" disabled><br><span class="description">The number of products diplayed per page</span></td></tr></tbody></table>
 				</div>
 				<p class="submit">  
 					<a href="<?php echo $fullThemeUrl; ?>" title="Get tGymm Theme" class="button-primary">Get tGymm Theme</a>  
@@ -292,339 +292,337 @@ function tishonator_page()
 /**
  * Function to register the settings
  */
-function tishonator_register_general_settings() {
-	$options = get_option( 'fgymm_tishonator_general_settings' );  
+function fgymm_register_general_settings() {
+	$options = get_option( 'fgymm_general_settings' );  
 	if ( $options === false ) :
 		// add default general settings
-		$options = array(
-					'tishonator_general_favicon' => get_stylesheet_directory_uri().'/favicon.ico',
-				   );
-		add_option( 'fgymm_tishonator_general_settings', $options );
+		$options = array();
+		add_option( 'fgymm_general_settings', $options );
 	endif;
 
-	register_setting( 'fgymm_tishonator_general_settings', 'fgymm_tishonator_general_settings' );
+	register_setting( 'fgymm_general_settings', 'fgymm_general_settings' );
 					 
-	add_settings_section( 'tishonator_general_options_section', __( 'General Settings', 'tishonator' ),
-						  'tishonator_display_general_settings_section', 'fgymm_tishonator_general_settings' );
+	add_settings_section( 'fgymm_general_options_section', __( 'General Settings', 'fgymm' ),
+						  'fgymm_display_general_settings_section', 'fgymm_general_settings' );
 	
 	// Add favicon
 	$field_args = array( 'type'        => 'image',
-						 'id'          => 'tishonator_general_favicon',
-						 'name'        => 'tishonator_general_favicon',
-						 'desc'        => __( 'Favicon for your website', 'tishonator' ),
+						 'id'          => 'general_favicon',
+						 'name'        => 'general_favicon',
+						 'desc'        => __( 'Favicon for your website', 'fgymm' ),
 						 'std'         => '',
-						 'label_for'   => 'tishonator_general_favicon',
-						 'option_name' => 'fgymm_tishonator_general_settings',
+						 'label_for'   => 'general_favicon',
+						 'option_name' => 'fgymm_general_settings',
 					   );
 
-	add_settings_field( 'tishonator_general_favicon_image', __( 'Favicon', 'tishonator' ), 'tishonator_display_setting',
-				'fgymm_tishonator_general_settings', 'tishonator_general_options_section', $field_args );
+	add_settings_field( 'general_favicon_image', __( 'Favicon', 'fgymm' ), 'fgymm_display_setting',
+				'fgymm_general_settings', 'fgymm_general_options_section', $field_args );
 }
 
-function tishonator_register_header_settings() {
+function fgymm_register_header_settings() {
 
-	$options = get_option( 'fgymm_tishonator_header_settings' );  
+	$options = get_option( 'fgymm_header_settings' );  
 	if ( $options === false ) {
 		// add default header settings
 		$options = array (  
-					'tishonator_header_logo' 				=> get_stylesheet_directory_uri().'/images/logo.png',
+					'header_logo' 				=> get_stylesheet_directory_uri().'/images/logo.png',
 					);	
-		add_option( 'fgymm_tishonator_header_settings', $options );
+		add_option( 'fgymm_header_settings', $options );
 	}
 	
-	register_setting( 'fgymm_tishonator_header_settings', 'fgymm_tishonator_header_settings' );
+	register_setting( 'fgymm_header_settings', 'fgymm_header_settings' );
 					 
-	add_settings_section( 'tishonator_header_options_section', __( 'Header Settings', 'tishonator' ),
-		'tishonator_display_header_settings_section', 'fgymm_tishonator_header_settings');
+	add_settings_section( 'fgymm_header_options_section', __( 'Header Settings', 'fgymm' ),
+		'fgymm_display_header_settings_section', 'fgymm_header_settings');
 
 	// Add logo image
 	$field_args = array( 'type'        => 'image',
-						 'id'          => 'tishonator_header_logo',
-						 'name'        => 'tishonator_header_logo',
-						 'desc'        => __( 'Upload a custom logo for your website.', 'tishonator' ),
+						 'id'          => 'header_logo',
+						 'name'        => 'header_logo',
+						 'desc'        => __( 'Upload a custom logo for your website.', 'fgymm' ),
 						 'std'         => '',
-						 'label_for'   => 'tishonator_header_logo',
-						 'option_name' => 'fgymm_tishonator_header_settings',
+						 'label_for'   => 'header_logo',
+						 'option_name' => 'fgymm_header_settings',
 					   );
 
-	add_settings_field( 'tishonator_header_logo_image', __( 'Logo image', 'tishonator' ), 'tishonator_display_setting',
-				'fgymm_tishonator_header_settings', 'tishonator_header_options_section', $field_args );
+	add_settings_field( 'header_logo_image', __( 'Logo image', 'fgymm' ), 'fgymm_display_setting',
+				'fgymm_header_settings', 'fgymm_header_options_section', $field_args );
 }
 
-function tishonator_register_footer_settings() {
-	$options = get_option( 'fgymm_tishonator_footer_settings' );  
+function fgymm_register_footer_settings() {
+	$options = get_option( 'fgymm_footer_settings' );  
 	if ( $options === false ) {
 		// add default footer settings
 		$options = array( );
 
-		add_option( 'fgymm_tishonator_footer_settings', $options );
+		add_option( 'fgymm_footer_settings', $options );
 	}
 	
-	register_setting( 'fgymm_tishonator_footer_settings', 'fgymm_tishonator_footer_settings' );
+	register_setting( 'fgymm_footer_settings', 'fgymm_footer_settings' );
 	
-	add_settings_section( 'tishonator_footer_options_section', __( 'Footer Settings', 'tishonator' ),
-		'tishonator_display_footer_settings_section', 'fgymm_tishonator_footer_settings');
+	add_settings_section( 'fgymm_footer_options_section', __( 'Footer Settings', 'fgymm' ),
+		'fgymm_display_footer_settings_section', 'fgymm_footer_settings');
 	
 	$field_args = array( 'type'        => 'text',
-						 'id'          => 'tishonator_footer_copyrighttext',
-						 'name'        => 'tishonator_footer_copyrighttext',
-						 'desc'        => __( 'Your Copyright text to appear in the website footer', 'tishonator' ),
+						 'id'          => 'footer_copyrighttext',
+						 'name'        => 'footer_copyrighttext',
+						 'desc'        => __( 'Your Copyright text to appear in the website footer', 'fgymm' ),
 						 'std'         => '',
-						 'label_for'   => 'tishonator_footer_copyrighttext',
-						 'option_name' => 'fgymm_tishonator_footer_settings',
+						 'label_for'   => 'footer_copyrighttext',
+						 'option_name' => 'fgymm_footer_settings',
 					   );
 
-	add_settings_field( 'tishonator_footer_copyrighttext_text', __( 'Copyright Text', 'tishonator' ), 'tishonator_display_setting',
-				'fgymm_tishonator_footer_settings', 'tishonator_footer_options_section', $field_args );
+	add_settings_field( 'footer_copyrighttext_text', __( 'Copyright Text', 'fgymm' ), 'fgymm_display_setting',
+				'fgymm_footer_settings', 'fgymm_footer_options_section', $field_args );
 }
 
-function tishonator_register_slider_settings() {
-	$options = get_option( 'fgymm_tishonator_slider_settings' );  
+function fgymm_register_slider_settings() {
+	$options = get_option( 'fgymm_slider_settings' );  
 	if ( $options === false ) {
 		// Add default home page settings
 		$options = array(
 			// Slide #1 default settings
-			'tishonator_slider_slide1_content' 	   		=> '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'tishonator_slider_slide1_image'	   		=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
+			'slider_slide1_content' 	   		=> '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide1_image'	   		=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
 			
 			// Slide #2 default settings
-			'tishonator_slider_slide2_content' 	   		=> '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'tishonator_slider_slide2_image'	   		=> get_stylesheet_directory_uri().'/images/slider/2.jpg',
+			'slider_slide2_content' 	   		=> '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide2_image'	   		=> get_stylesheet_directory_uri().'/images/slider/2.jpg',
 			
 			// Slide #3 default settings
-			'tishonator_slider_slide3_content' 	   		=> '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'tishonator_slider_slide3_image' 	   		=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
+			'slider_slide3_content' 	   		=> '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide3_image' 	   		=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
 		);
-		add_option( 'fgymm_tishonator_slider_settings', $options );
+		add_option( 'fgymm_slider_settings', $options );
 	}
 	
-	register_setting( 'fgymm_tishonator_slider_settings', 'fgymm_tishonator_slider_settings' );
+	register_setting( 'fgymm_slider_settings', 'fgymm_slider_settings' );
 					 
-	add_settings_section( 'tishonator_slider_options_section', __( 'Slider Settings', 'tishonator' ),
-		'tishonator_display_slider_settings_section', 'fgymm_tishonator_slider_settings');
+	add_settings_section( 'fgymm_slider_options_section', __( 'Slider Settings', 'fgymm' ),
+		'fgymm_display_slider_settings_section', 'fgymm_slider_settings');
 
 	$field_args = array( 'type'        => 'textarea',
-					 'id'          => 'tishonator_slider_slide1_content',
-					 'name'        => 'tishonator_slider_slide1_content',
+					 'id'          => 'slider_slide1_content',
+					 'name'        => 'slider_slide1_content',
 					 'desc'        => 'Slide #1 content in the slider',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide1_content',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide1_content',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide1_content_textarea', 'Slide #1 Content', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide1_content_textarea', 'Slide #1 Content', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 
 	$field_args = array( 'type'        => 'image',
-					 'id'          => 'tishonator_slider_slide1_image',
-					 'name'        => 'tishonator_slider_slide1_image',
+					 'id'          => 'slider_slide1_image',
+					 'name'        => 'slider_slide1_image',
 					 'desc'        => 'Upload a custom Slide #1 Background image for the slider.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide1_image',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide1_image',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide1_image_image', 'Slide #1 Background Image', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide1_image_image', 'Slide #1 Background Image', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 			
 	$field_args = array( 'type'        => 'textarea',
-					 'id'          => 'tishonator_slider_slide2_content',
-					 'name'        => 'tishonator_slider_slide2_content',
+					 'id'          => 'slider_slide2_content',
+					 'name'        => 'slider_slide2_content',
 					 'desc'        => 'Slide #2 content in the slider',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide2_content',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide2_content',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide2_content_textarea', 'Slide #2 Content', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide2_content_textarea', 'Slide #2 Content', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 
 	$field_args = array( 'type'        => 'image',
-					 'id'          => 'tishonator_slider_slide2_image',
-					 'name'        => 'tishonator_slider_slide2_image',
+					 'id'          => 'slider_slide2_image',
+					 'name'        => 'slider_slide2_image',
 					 'desc'        => 'Upload a custom Slide #2 Background image for the slider.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide2_image',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide2_image',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide2_image_image', 'Slide #2 Background Image', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide2_image_image', 'Slide #2 Background Image', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 	
 	$field_args = array( 'type'        => 'textarea',
-					 'id'          => 'tishonator_slider_slide3_content',
-					 'name'        => 'tishonator_slider_slide3_content',
+					 'id'          => 'slider_slide3_content',
+					 'name'        => 'slider_slide3_content',
 					 'desc'        => 'Slide #3 content in the slider',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide3_content',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide3_content',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide3_content_textarea', 'Slide #3 Content', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide3_content_textarea', 'Slide #3 Content', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 
 
 	$field_args = array( 'type'        => 'image',
-					 'id'          => 'tishonator_slider_slide3_image',
-					 'name'        => 'tishonator_slider_slide3_image',
+					 'id'          => 'slider_slide3_image',
+					 'name'        => 'slider_slide3_image',
 					 'desc'        => 'Upload a custom Slide #3 Background image for the slider.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_slider_slide3_image',
-					 'option_name' => 'fgymm_tishonator_slider_settings',
+					 'label_for'   => 'slider_slide3_image',
+					 'option_name' => 'fgymm_slider_settings',
 				   );
 
-	add_settings_field( 'tishonator_slider_slide3_image_image', 'Slide #3 Background Image', 'tishonator_display_setting',
-			'fgymm_tishonator_slider_settings', 'tishonator_slider_options_section', $field_args );
+	add_settings_field( 'slider_slide3_image_image', 'Slide #3 Background Image', 'fgymm_display_setting',
+			'fgymm_slider_settings', 'fgymm_slider_options_section', $field_args );
 }
 
-function tishonator_register_social_settings() {
+function fgymm_register_social_settings() {
 
-	$options = get_option( 'fgymm_tishonator_social_settings' );  
+	$options = get_option( 'fgymm_social_settings' );  
 	if ( $options === false ) {
 		// add default social settings
 		$options = array (  
-							'tishonator_social_rss' 	   => 	get_bloginfo( 'rss2_url' ),	
+							'social_rss' 	   => 	get_bloginfo( 'rss2_url' ),	
 						  );	
-		add_option( 'fgymm_tishonator_social_settings', $options );
+		add_option( 'fgymm_social_settings', $options );
 	}
 
-    register_setting( 'fgymm_tishonator_social_settings', 'fgymm_tishonator_social_settings' );
+    register_setting( 'fgymm_social_settings', 'fgymm_social_settings' );
 
-	add_settings_section( 'tishonator_social_sites_section', __( 'Social Websites', 'tishonator' ),
-		'tishonator_display_social_settings_section', 'fgymm_tishonator_social_settings' );
+	add_settings_section( 'fgymm_social_sites_section', __( 'Social Websites', 'fgymm' ),
+		'fgymm_display_social_settings_section', 'fgymm_social_settings' );
 		
 	$field_args = array( 'type'        => 'text',
-					 'id'          => 'tishonator_social_facebook',
-					 'name'        => 'tishonator_social_facebook',
+					 'id'          => 'social_facebook',
+					 'name'        => 'social_facebook',
 					 'desc'        => 'Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_social_facebook',
-					 'option_name' => 'fgymm_tishonator_social_settings',
+					 'label_for'   => 'social_facebook',
+					 'option_name' => 'fgymm_social_settings',
 				   );
 
-	add_settings_field( 'tishonator_social_facebook_text', 'Facebook', 'tishonator_display_setting',
-			'fgymm_tishonator_social_settings', 'tishonator_social_sites_section', $field_args );
+	add_settings_field( 'social_facebook_text', 'Facebook', 'fgymm_display_setting',
+			'fgymm_social_settings', 'fgymm_social_sites_section', $field_args );
 			
 	$field_args = array( 'type'        => 'text',
-					 'id'          => 'tishonator_social_googleplus',
-					 'name'        => 'tishonator_social_googleplus',
+					 'id'          => 'social_googleplus',
+					 'name'        => 'social_googleplus',
 					 'desc'        => 'Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_social_googleplus',
-					 'option_name' => 'fgymm_tishonator_social_settings',
+					 'label_for'   => 'social_googleplus',
+					 'option_name' => 'fgymm_social_settings',
 				   );
 
-	add_settings_field( 'tishonator_social_googleplus_text', 'Google+', 'tishonator_display_setting',
-			'fgymm_tishonator_social_settings', 'tishonator_social_sites_section', $field_args );
+	add_settings_field( 'social_googleplus_text', 'Google+', 'fgymm_display_setting',
+			'fgymm_social_settings', 'fgymm_social_sites_section', $field_args );
 			
 	$field_args = array( 'type'        => 'text',
-					 'id'          => 'tishonator_social_rss',
-					 'name'        => 'tishonator_social_rss',
+					 'id'          => 'social_rss',
+					 'name'        => 'social_rss',
 					 'desc'        => 'Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_social_rss',
-					 'option_name' => 'fgymm_tishonator_social_settings',
+					 'label_for'   => 'social_rss',
+					 'option_name' => 'fgymm_social_settings',
 				   );
 
-	add_settings_field( 'tishonator_social_rss_text', 'RSS Feeds', 'tishonator_display_setting',
-			'fgymm_tishonator_social_settings', 'tishonator_social_sites_section', $field_args );
+	add_settings_field( 'social_rss_text', 'RSS Feeds', 'fgymm_display_setting',
+			'fgymm_social_settings', 'fgymm_social_sites_section', $field_args );
 	
 	$field_args = array( 'type'    => 'text',
-					 'id'          => 'tishonator_social_youtube',
-					 'name'        => 'tishonator_social_youtube',
+					 'id'          => 'social_youtube',
+					 'name'        => 'social_youtube',
 					 'desc'        => 'Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank.',
 					 'std'         => '',
-					 'label_for'   => 'tishonator_social_youtube',
-					 'option_name' => 'fgymm_tishonator_social_settings',
+					 'label_for'   => 'social_youtube',
+					 'option_name' => 'fgymm_social_settings',
 				   );
 
-	add_settings_field( 'tishonator_social_youtube_text', 'YouTube channel', 'tishonator_display_setting',
-			'fgymm_tishonator_social_settings', 'tishonator_social_sites_section', $field_args );	
+	add_settings_field( 'social_youtube_text', 'YouTube channel', 'fgymm_display_setting',
+			'fgymm_social_settings', 'fgymm_social_sites_section', $field_args );	
 }
 
-function tishonator_register_notfound_settings() {
+function fgymm_register_notfound_settings() {
 
-	$options = get_option( 'fgymm_tishonator_notfound_settings' );  
+	$options = get_option( 'fgymm_notfound_settings' );  
 	if ( $options === false ) {
 		// add default Not Found settings
 		$options = array (  
-					'tishonator_notfound_image'	=> get_stylesheet_directory_uri().'/images/404.png',
-					'tishonator_notfound_title'	=> 'Error 404: Not Found',
-					'tishonator_notfound_content'	=> '<p>Sorry. The page you are looking for does not exist.</p>',
+					'notfound_image'	=> get_stylesheet_directory_uri().'/images/404.png',
+					'notfound_title'	=> 'Error 404: Not Found',
+					'notfound_content'	=> '<p>Sorry. The page you are looking for does not exist.</p>',
 					);	
-		add_option( 'fgymm_tishonator_notfound_settings', $options );
+		add_option( 'fgymm_notfound_settings', $options );
 	}
 	
-	register_setting( 'fgymm_tishonator_notfound_settings', 'fgymm_tishonator_notfound_settings' );
+	register_setting( 'fgymm_notfound_settings', 'fgymm_notfound_settings' );
 					 
-	add_settings_section( 'tishonator_notfound_options_section', __( 'Error 404 Not Found Page Settings', 'tishonator' ),
-		'tishonator_display_notfound_settings_section', 'fgymm_tishonator_notfound_settings');
+	add_settings_section( 'fgymm_notfound_options_section', __( 'Error 404 Not Found Page Settings', 'fgymm' ),
+		'fgymm_display_notfound_settings_section', 'fgymm_notfound_settings');
 
 	// Add 404 image
 	$field_args = array( 'type'    => 'image',
-					 'id'          => 'tishonator_notfound_image',
-					 'name'        => 'tishonator_notfound_image',
-					 'desc'        => __( 'Upload a custom image for your 404 Not Found Page.', 'tishonator' ),
+					 'id'          => 'notfound_image',
+					 'name'        => 'notfound_image',
+					 'desc'        => __( 'Upload a custom image for your 404 Not Found Page.', 'fgymm' ),
 					 'std'         => '',
-					 'label_for'   => 'tishonator_notfound_image',
-					 'option_name' => 'fgymm_tishonator_notfound_settings',
+					 'label_for'   => 'notfound_image',
+					 'option_name' => 'fgymm_notfound_settings',
 				   );
 
-	add_settings_field( 'tishonator_notfound_image_text', __( 'Image', 'tishonator' ), 'tishonator_display_setting',
-			'fgymm_tishonator_notfound_settings', 'tishonator_notfound_options_section', $field_args );
+	add_settings_field( 'notfound_image_text', __( 'Image', 'fgymm' ), 'fgymm_display_setting',
+			'fgymm_notfound_settings', 'fgymm_notfound_options_section', $field_args );
 				   
 	// Add title
 	$field_args = array( 'type'    => 'text',
-					 'id'          => 'tishonator_notfound_title',
-					 'name'        => 'tishonator_notfound_title',
-					 'desc'        => __( 'The Title to appear in the 404 Not Found Page', 'tishonator' ),
+					 'id'          => 'notfound_title',
+					 'name'        => 'notfound_title',
+					 'desc'        => __( 'The Title to appear in the 404 Not Found Page', 'fgymm' ),
 					 'std'         => '',
-					 'label_for'   => 'tishonator_notfound_title',
-					 'option_name' => 'fgymm_tishonator_notfound_settings',
+					 'label_for'   => 'notfound_title',
+					 'option_name' => 'fgymm_notfound_settings',
 				   );
 
-	add_settings_field( 'tishonator_notfound_title_text', __( 'Title', 'tishonator' ), 'tishonator_display_setting',
-			'fgymm_tishonator_notfound_settings', 'tishonator_notfound_options_section', $field_args );
+	add_settings_field( 'notfound_title_text', __( 'Title', 'fgymm' ), 'fgymm_display_setting',
+			'fgymm_notfound_settings', 'fgymm_notfound_options_section', $field_args );
 
 	// Add content
 	$field_args = array( 'type'    => 'textarea',
-					 'id'          => 'tishonator_notfound_content',
-					 'name'        => 'tishonator_notfound_content',
-					 'desc'        => __( 'The Content to appear in the 404 Not Found Page', 'tishonator' ),
+					 'id'          => 'notfound_content',
+					 'name'        => 'notfound_content',
+					 'desc'        => __( 'The Content to appear in the 404 Not Found Page', 'fgymm' ),
 					 'std'         => '',
-					 'label_for'   => 'tishonator_notfound_content',
-					 'option_name' => 'fgymm_tishonator_notfound_settings',
+					 'label_for'   => 'notfound_content',
+					 'option_name' => 'fgymm_notfound_settings',
 				   );
 
-	add_settings_field( 'tishonator_notfound_content_textarea', __( 'Content', 'tishonator' ), 'tishonator_display_setting',
-			'fgymm_tishonator_notfound_settings', 'tishonator_notfound_options_section', $field_args );
+	add_settings_field( 'notfound_content_textarea', __( 'Content', 'fgymm' ), 'fgymm_display_setting',
+			'fgymm_notfound_settings', 'fgymm_notfound_options_section', $field_args );
 }
 
 /**
  * Function to add extra text to display on each section
  */
-function tishonator_display_general_settings_section() {
+function fgymm_display_general_settings_section() {
 }
 
-function tishonator_display_header_settings_section() {
+function fgymm_display_header_settings_section() {
 }
 
-function tishonator_display_footer_settings_section() {
+function fgymm_display_footer_settings_section() {
 }
 
-function tishonator_display_homepage_settings_section() {
+function fgymm_display_homepage_settings_section() {
 }
 
-function tishonator_display_slider_settings_section() {
+function fgymm_display_slider_settings_section() {
 }
 
-function tishonator_display_social_settings_section() {
+function fgymm_display_social_settings_section() {
 }
 
-function tishonator_display_notfound_settings_section() {
+function fgymm_display_notfound_settings_section() {
 }
 
-function tishonator_add_select_settings_option($type, $id, $desc, $settingsKey, $title, $section, $values) {		   
+function fgymm_add_select_settings_option($type, $id, $desc, $settingsKey, $title, $section, $values) {		   
 	$field_args = array(
 					  'type'        => $type,
 					  'id'          => $id,
@@ -636,7 +634,7 @@ function tishonator_add_select_settings_option($type, $id, $desc, $settingsKey, 
 					  'values'      => $values,
 				   );
 
-	add_settings_field( $id.'_'.$type, $title, 'tishonator_display_setting', $settingsKey, $section, $field_args );
+	add_settings_field( $id.'_'.$type, $title, 'fgymm_display_setting', $settingsKey, $section, $field_args );
 }
 
 /**
@@ -646,7 +644,7 @@ function tishonator_add_select_settings_option($type, $id, $desc, $settingsKey, 
  * Such as checkboxes, select boxes, file upload boxes etc.
  */
  $sendToEditorAdded = false;
-function tishonator_display_setting( $args ) {
+function fgymm_display_setting( $args ) {
 
 	extract( $args );
 
@@ -685,7 +683,7 @@ function tishonator_display_setting( $args ) {
 			    jQuery(document).ready(function($) {
 				$( '#<?php echo $id; ?>_uploadBtn' ).click(function() {
 					imgUploadSouceId = '#<?php echo $id; ?>';
-					tb_show( 'Upload an image', 'media-upload.php?referer=<?php echo 'tishonator_options.php'; ?>&type=image&TB_iframe=true&post_id=0', false);  
+					tb_show( 'Upload an image', 'media-upload.php?referer=<?php echo 'options.php'; ?>&type=image&TB_iframe=true&post_id=0', false);  
 					return false;  
 				   });
 				});	
@@ -710,31 +708,31 @@ function tishonator_display_setting( $args ) {
 /******************************
   Add WP javascript libraries used for image upload
 ******************************/ 
-function tishonator_settings_enqueue_scripts() {
+function fgymm_settings_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'thickbox' );
     wp_enqueue_style( 'thickbox' );
     wp_enqueue_script( 'media-upload' );
     wp_enqueue_script( 'wptuts-upload' );
 }
-add_action( 'admin_enqueue_scripts', 'tishonator_settings_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'fgymm_settings_enqueue_scripts' );
 
 /******************************
   Change 'Insert into Post' test in WP media upload dialog
 ******************************/
-function tishonator_image_options_setup() {  
+function fgymm_image_options_setup() {  
     global $pagenow;  
   
     if ( 'media-upload.php' == $pagenow || 'async-upload.php' == $pagenow ) {  
         // Now we'll replace the 'Insert into Post Button' inside Thickbox  
-        add_filter( 'gettext', 'tishonator_replace_thickbox_text', 1, 3 ); 
+        add_filter( 'gettext', 'fgymm_replace_thickbox_text', 1, 3 ); 
     } 
 } 
-add_action( 'admin_init', 'tishonator_image_options_setup' ); 
+add_action( 'admin_init', 'fgymm_image_options_setup' ); 
  
-function tishonator_replace_thickbox_text( $translated_text, $text, $domain ) {
+function fgymm_replace_thickbox_text( $translated_text, $text, $domain ) {
     if ( 'Insert into Post' == $text ) {
-        $referer = strpos( wp_get_referer(), 'tishonator_options.php' ); 
+        $referer = strpos( wp_get_referer(), 'options.php' ); 
         if ( $referer != '' ) { 
             return 'Select Image';  
         }  

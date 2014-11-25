@@ -2,12 +2,13 @@
 			<footer id="footer-main">
 				<div id="footer-content-wrapper">
 					<div class="clear">
-						<?php tishonator_show_footer_social_sites( '<div id="fsocial">', '</div>' ); ?>
-					</div>
-					<div class="clear">
 					</div>
 					<div id="copyright">
-						<?php tishonator_show_copyright_text(); ?>
+					<p>
+						 <?php fgymm_show_copyright_text(); ?> <a href="<?php echo esc_url( 'http://tishonator.com/product/fgymm' ); ?>" title="<?php esc_attr_e( 'fgymm Theme', 'fgymm' ); ?>">
+				fGymm Theme</a> <?php esc_attr_e( 'powered by', 'fgymm' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'fgymm' ); ?>">
+				WordPress</a>
+						</p>
 					</div>
 				</div>
 			</footer>

@@ -47,6 +47,7 @@ The exceptions to this license are as follows:
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
 * js/jquery.mobile.customized.min.js MIT License Reference: http://www.opensource.org/licenses/mit-license.php
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 
 == Contacts ==
 

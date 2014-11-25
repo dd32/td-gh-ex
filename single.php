@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php tishonator_show_page_header_section(); ?>
+<?php fgymm_show_page_header_section(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
@@ -21,7 +21,7 @@
 				}
 
 					wp_link_pages( array(
-						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tishonator' ) . '</span>',
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fgymm' ) . '</span>',
 						'after'       => '</div>',
 						'link_before' => '<span>',
 						'link_after'  => '</span>',

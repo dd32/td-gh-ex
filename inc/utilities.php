@@ -4,49 +4,49 @@
  * Utility Functions
  */
 
-function tishonator_show_social_sites( $before,
+function fgymm_show_social_sites( $before,
 						  $after,
 						  $separatorBefore,
 						  $separatorAfter,
 						  $openInNewWindow,
 						  $iconSize /* must be 16 or 32 */) {
 
-	$options = get_option( 'fgymm_tishonator_social_settings' );
+	$options = get_option( 'fgymm_social_settings' );
 	if ( $options === false ) {
 		return;
 	}
 	
 	echo $before;
 
-	if ( array_key_exists( 'tishonator_social_facebook', $options )
-		 && $options['tishonator_social_facebook'] != '' ) {
-		tishonator_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'tishonator_social_facebook' ],
-				__( 'Follow us on Facebook', 'tishonator' ), 'facebook'.$iconSize, $openInNewWindow );
+	if ( array_key_exists( 'social_facebook', $options )
+		 && $options['social_facebook'] != '' ) {
+		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_facebook' ],
+				__( 'Follow us on Facebook', 'fgymm' ), 'facebook'.$iconSize, $openInNewWindow );
 	}
 	
-	if ( array_key_exists( 'tishonator_social_googleplus', $options )
-		 && $options['tishonator_social_googleplus'] != '' ) {
-		tishonator_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'tishonator_social_googleplus' ],
-				__( 'Follow us on Google+', 'tishonator' ), 'google'.$iconSize, $openInNewWindow );
+	if ( array_key_exists( 'social_googleplus', $options )
+		 && $options['social_googleplus'] != '' ) {
+		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_googleplus' ],
+				__( 'Follow us on Google+', 'fgymm' ), 'google'.$iconSize, $openInNewWindow );
 	}
 	
-	if ( array_key_exists( 'tishonator_social_rss', $options )
-		 && $options['tishonator_social_rss'] != '' ) {
-		tishonator_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'tishonator_social_rss' ],
-				__( 'Follow our RSS Feeds', 'tishonator' ), 'rss'.$iconSize, $openInNewWindow );
+	if ( array_key_exists( 'social_rss', $options )
+		 && $options['social_rss'] != '' ) {
+		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_rss' ],
+				__( 'Follow our RSS Feeds', 'fgymm' ), 'rss'.$iconSize, $openInNewWindow );
 	}
 
-	if ( array_key_exists( 'tishonator_social_youtube', $options )
-		 && $options['tishonator_social_youtube'] != '' ) {
+	if ( array_key_exists( 'social_youtube', $options )
+		 && $options['social_youtube'] != '' ) {
 
-		tishonator_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'tishonator_social_youtube' ],
-				__( 'Follow us on YouTube', 'tishonator' ), 'youtube'.$iconSize, $openInNewWindow );
+		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_youtube' ],
+				__( 'Follow us on YouTube', 'fgymm' ), 'youtube'.$iconSize, $openInNewWindow );
 	}
 
 	echo $after;	
 }
 
-function tishonator_show_single_social_site( $separatorBefore,
+function fgymm_show_single_social_site( $separatorBefore,
 											 $separatorAfter,
 											 $socialSiteUrl,
 											 $title,
@@ -68,16 +68,16 @@ function tishonator_show_single_social_site( $separatorBefore,
 /**
  * Display website's logo image
  */
-function tishonator_show_website_logo_image_or_title() {
+function fgymm_show_website_logo_image_or_title() {
 
-	$options = get_option( 'fgymm_tishonator_header_settings' );
+	$options = get_option( 'fgymm_header_settings' );
 
-	if ( $options !== false && array_key_exists( 'tishonator_header_logo', $options )
-		 && $options[ 'tishonator_header_logo' ] != '' ) {
+	if ( $options !== false && array_key_exists( 'header_logo', $options )
+		 && $options[ 'header_logo' ] != '' ) {
 		 
 		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
 		
-		$logoImgPath = $options[ 'tishonator_header_logo' ];
+		$logoImgPath = $options[ 'header_logo' ];
 		$siteTitle = get_bloginfo( 'name' );
 		
 		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' />";
@@ -99,7 +99,7 @@ function tishonator_show_website_logo_image_or_title() {
 /* 
  * Display content at header top: email, phone and social icons 
  */
-function tishonator_show_header_top() {
+function fgymm_show_header_top() {
 	
 	// display homepage icon
 ?>
@@ -107,17 +107,17 @@ function tishonator_show_header_top() {
 <?php
 	
 	// display social sites
-	tishonator_show_social_sites( '<ul class="header-social-widget">', '</ul>', '<li>', '</li>', true, 16 );
+	fgymm_show_social_sites( '<ul class="header-social-widget">', '</ul>', '<li>', '</li>', true, 16 );
 }
 
 /**
  * Displays social sites code for footer
  */
-function tishonator_show_footer_social_sites($before, $after) {
+function fgymm_show_footer_social_sites($before, $after) {
 
 	echo $before;
 
-	tishonator_show_social_sites( '<ul class="footer-social-widget">', '</ul>', '<li>', '</li>', true, 16 );
+	fgymm_show_social_sites( '<ul class="footer-social-widget">', '</ul>', '<li>', '</li>', true, 16 );
 
 	echo $after;
 }
@@ -125,28 +125,22 @@ function tishonator_show_footer_social_sites($before, $after) {
 /**
  *	Displays the copyright text.
  */
-function tishonator_show_copyright_text() {
+function fgymm_show_copyright_text() {
 	
-	$options = get_option( 'fgymm_tishonator_footer_settings' );
-	if ( $options !== false && array_key_exists( 'tishonator_footer_copyrighttext', $options )
-	     && $options[ 'tishonator_footer_copyrighttext' ] != '' ) {
+	$options = get_option( 'fgymm_footer_settings' );
+	if ( $options !== false && array_key_exists( 'footer_copyrighttext', $options )
+	     && $options[ 'footer_copyrighttext' ] != '' ) {
 
-		echo '<p>'.$options[ 'tishonator_footer_copyrighttext' ] . ' | ';
-	} else {
-		echo '<p>';
+		echo $options[ 'footer_copyrighttext' ] . ' | ';
 	}
-	
-	$poweredBy = __('fGymm WordPress Theme, Copyright 2014 <a title="tishonator.com" href="http://tishonator.com/" target="_blank">tishonator.com</a></p>', 'tishonator');
-
-	echo $poweredBy;
 }
 
 /**
  * Displays the slider
  */
-function tishonator_display_slider() {
+function fgymm_display_slider() {
 
-		$options = get_option( 'fgymm_tishonator_slider_settings' );
+		$options = get_option( 'fgymm_slider_settings' );
 		if ( $options === false ) {
 			return;
 		}
@@ -157,8 +151,8 @@ function tishonator_display_slider() {
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
 
-					$slideContent = $options[ 'tishonator_slider_slide'.$i.'_content' ];
-					$slideImage = $options[ 'tishonator_slider_slide'.$i.'_image' ];
+					$slideContent = $options[ 'slider_slide'.$i.'_content' ];
+					$slideImage = $options[ 'slider_slide'.$i.'_image' ];
 				?>
 				
 					<div data-thumb="<?php echo $slideImage; ?>" data-src="<?php echo $slideImage; ?>">
@@ -168,11 +162,6 @@ function tishonator_display_slider() {
 					</div>
 <?php		} ?>
 	</div><!-- #camera_wrap -->
-	<?php
-		wp_enqueue_script( 'tisho-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'tisho-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-		wp_enqueue_script( 'tisho-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
-	?>
 	<script>
 		jQuery(function(){
 			jQuery('#camera_wrap').camera({
@@ -192,7 +181,7 @@ function tishonator_display_slider() {
 /**
  *	Displays the page navigation
  */
-function tishonator_show_pagenavi( $p = 2 ) { // pages will be show before and after current page
+function fgymm_show_pagenavi( $p = 2 ) { // pages will be show before and after current page
   if ( is_singular() ) {
 	return; // do NOT show in single page
   }
@@ -206,7 +195,7 @@ function tishonator_show_pagenavi( $p = 2 ) { // pages will be show before and a
   }
   // echo '<span class="pages">Page: ' . $paged . ' of ' . $max_page . ' </span> '; // pages
   if ( $paged > $p + 1 ) {
-	tishonator_p_link( 1, 'First' );
+	fgymm_p_link( 1, 'First' );
   }
   if ( $paged > $p + 2 ) {
 	echo '... ';
@@ -214,17 +203,17 @@ function tishonator_show_pagenavi( $p = 2 ) { // pages will be show before and a
   for ( $i = $paged - $p; $i <= $paged + $p; ++$i ) { 
 	// Middle pages
     if ( $i > 0 && $i <= $max_page ) {
-		$i == $paged ? print "<span class='page-numbers current'>{$i}</span> " : tishonator_p_link($i);
+		$i == $paged ? print "<span class='page-numbers current'>{$i}</span> " : fgymm_p_link($i);
 	}
   }
   if ( $paged < $max_page - $p - 1 ) {
 	echo '... ';
   }
   if ( $paged < $max_page - $p ) {
-	tishonator_p_link( $max_page, 'Last' );
+	fgymm_p_link( $max_page, 'Last' );
   }
 }
-function tishonator_p_link( $i, $title = '' ) {
+function fgymm_p_link( $i, $title = '' ) {
   if ( $title == '' ) {
 	$title = "Page {$i}";
   }
@@ -234,7 +223,7 @@ function tishonator_p_link( $i, $title = '' ) {
 /**
  *	Used to load the content for posts and pages.
  */
-function tishonator_the_content() {
+function fgymm_the_content() {
 
 	// Display Thumbnails if thumbnail is set for the post
 	if ( has_post_thumbnail() ) {
@@ -245,26 +234,26 @@ function tishonator_the_content() {
 		
 		echo '</a>';
 	}
-	the_content( __( 'Read More', 'tishonator' ) );
+	the_content( __( 'Read More', 'fgymm' ) );
 }
 
 /**
  *	Displays the single content.
  */
-function tishonator_the_content_single() {
+function fgymm_the_content_single() {
 
 	// Display Thumbnails if thumbnail is set for the post
 	if ( has_post_thumbnail() ) {
 
 		the_post_thumbnail();
 	}
-	the_content( __( 'Read More...', 'tishonator' ) );
+	the_content( __( 'Read More...', 'fgymm' ) );
 }
 
 /**
  * Displays the Page Header Section including Page Title and Breadcrumb
  */
-function tishonator_show_page_header_section() { ?>
+function fgymm_show_page_header_section() { ?>
 
 	<section id="page-header">
 		<div id="page-header-content">

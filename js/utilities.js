@@ -1,7 +1,7 @@
 jQuery( document ).ready(function() {
 
 	// add submenu icons class in main menu (only for large resolution)
-	if (tishonator_tishoIsLargeResolution()) {
+	if (fgymm_IsLargeResolution()) {
 	
 		jQuery('.menu > li:has(".sub-menu")').addClass('level-one-sub-menu');
 		jQuery('.menu li ul li:has(".sub-menu")').addClass('level-two-sub-menu');										
@@ -12,7 +12,7 @@ jQuery( document ).ready(function() {
 		e.stopPropagation();
 
 		// toggle main menu
-		if (tishonator_tishoIsSmallResolution() || tishonator_tishoIsMediumResolution()) {
+		if (fgymm_IsSmallResolution() || fgymm_IsMediumResolution()) {
 
 			var parentOffset = jQuery(this).parent().offset(); 
 			
@@ -26,13 +26,13 @@ jQuery( document ).ready(function() {
 	});
 
 	jQuery("#navmain .menu li").mouseleave( function() {
-		if (tishonator_tishoIsLargeResolution()) {
+		if (fgymm_IsLargeResolution()) {
 			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
 		}
 	});
 	
 	jQuery("#navmain .menu li").mouseenter( function() {
-		if (tishonator_tishoIsLargeResolution()) {
+		if (fgymm_IsLargeResolution()) {
 
 			var curMenuLi = jQuery(this);
 			jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
@@ -50,19 +50,19 @@ jQuery( document ).ready(function() {
 	}
 });
 
-function tishonator_tishoIsSmallResolution() {
+function fgymm_IsSmallResolution() {
 
 	return (jQuery(window).width() <= 360);
 }
 
-function tishonator_tishoIsMediumResolution() {
+function fgymm_IsMediumResolution() {
 	
 	var browserWidth = jQuery(window).width();
 
 	return (browserWidth > 360 && browserWidth < 800);
 }
 
-function tishonator_tishoIsLargeResolution() {
+function fgymm_IsLargeResolution() {
 
 	return (jQuery(window).width() >= 800);
 }

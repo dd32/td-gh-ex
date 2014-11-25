@@ -13,10 +13,10 @@
 			<header id="header-main-fixed">
 				<div id="header-content-wrapper">
 					<div id="header-top">
-						<?php tishonator_show_header_top(); ?>
+						<?php fgymm_show_header_top(); ?>
 					</div>
 					<div id="header-logo">
-						<?php tishonator_show_website_logo_image_or_title(); ?>
+						<?php fgymm_show_website_logo_image_or_title(); ?>
 					</div>
 					<nav id="navmain">
 						<?php wp_nav_menu( array( 'container_class' => 'menu-all-pages-container',

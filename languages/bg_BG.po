@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 01:31+0200\n"
-"PO-Revision-Date: 2014-10-07 01:31+0200\n"
+"POT-Creation-Date: 2014-11-25 22:23+0200\n"
+"PO-Revision-Date: 2014-11-25 22:23+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,15 +29,15 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr "Този пост е защитен с парола. Въведете Вашата парола за да видите коментарите."
 
 #: D:\tishonator.com\themes\free_themes\fgymm/comments.php:14
-#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:41
-#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:40
-#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:52
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:51
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:46
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content.php:44
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:55
 msgid "No Comments"
 msgstr "Няма коментари"
 
@@ -54,52 +54,63 @@ msgid "to"
 msgstr "към"
 
 #: D:\tishonator.com\themes\free_themes\fgymm/comments.php:29
-#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:41
-#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:40
-#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:52
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:51
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:46
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content.php:44
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:55
 msgid "Comments are closed."
 msgstr "Коментарите са затворени."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:41
-#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:40
-#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:36
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:42
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:43
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:41
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:36
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:36
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:43
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:45
+msgid "Read More"
+msgstr "Прочетете повече"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:52
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:51
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:46
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content.php:44
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:55
 msgid "1 Comment"
 msgstr "1 Коментар"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:41
-#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:40
-#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:35
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:52
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:51
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:46
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:35
-#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:42
-#: D:\tishonator.com\themes\free_themes\fgymm/content.php:44
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:46
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:53
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:55
 msgid "% Comments"
 msgstr "% Коментари"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:51
-#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:57
-#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:58
-#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:56
-#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:51
+#: D:\tishonator.com\themes\free_themes\fgymm/content-aside.php:62
+#: D:\tishonator.com\themes\free_themes\fgymm/content-audio.php:68
+#: D:\tishonator.com\themes\free_themes\fgymm/content-gallery.php:69
+#: D:\tishonator.com\themes\free_themes\fgymm/content-image.php:67
+#: D:\tishonator.com\themes\free_themes\fgymm/content-link.php:62
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page-clean.php:13
 #: D:\tishonator.com\themes\free_themes\fgymm/content-page.php:21
-#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:51
-#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:58
-#: D:\tishonator.com\themes\free_themes\fgymm/content.php:57
+#: D:\tishonator.com\themes\free_themes\fgymm/content-quote.php:62
+#: D:\tishonator.com\themes\free_themes\fgymm/content-video.php:69
+#: D:\tishonator.com\themes\free_themes\fgymm/content.php:68
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -111,6 +122,11 @@ msgstr "Няма намерени резултати!"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Изглежда, че не може да намерим това, което търсите. Може би ново търсене може да помогне."
 
+#: D:\tishonator.com\themes\free_themes\fgymm/functions.php:107
+#, php-format
+msgid "Page %s"
+msgstr "Страница  %s"
+
 #: D:\tishonator.com\themes\free_themes\fgymm/search.php:8
 #, php-format
 msgid "You searched for \"%s\". Here are the results:"
@@ -120,43 +136,47 @@ msgstr "Вие търсехте  \"%s\". Ето ги резултатите:"
 msgid "Search..."
 msgstr "Търси..."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:9
+#: D:\tishonator.com\themes\free_themes\fgymm/single.php:24
+msgid "Pages:"
+msgstr "Страници:"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:10
 msgid "Asides"
 msgstr "Бележки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:12
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:13
 msgid "Images"
 msgstr "Картинки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:15
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:16
 msgid "Videos"
 msgstr "Видеа"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:18
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:19
 msgid "Audio"
 msgstr "Аудио"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:21
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:22
 msgid "Quotes"
 msgstr "Цитати"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:24
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:25
 msgid "Links"
 msgstr "Връзки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:27
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:28
 msgid "Galleries"
 msgstr "Галерии"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:30
+#: D:\tishonator.com\themes\free_themes\fgymm/taxonomy-post_format.php:31
 msgid "Archives"
 msgstr "Архив"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/actions.php:55
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/actions.php:53
 msgid "Sidebar Widget Area"
 msgstr "Сайтбар Уиджет"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/actions.php:57
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/actions.php:55
 msgid "The sidebar widget area"
 msgstr "Сайтбар Уиджет"
 
@@ -205,119 +225,113 @@ msgstr "Тъмбнейли"
 msgid "Contacts"
 msgstr "Контакти"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:46
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:53
-msgid "Color Schemes"
-msgstr "Цветови Схеми"
-
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:198
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:52
 msgid "Theme settings updated successfully."
 msgstr "Промените по настройките на темата са запазени успешно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:220
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:238
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:255
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:295
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:359
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:416
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:74
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:92
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:109
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:149
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:213
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:270
 msgid "Save Changes"
 msgstr "Запази Промените"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:454
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:305
 msgid "General Settings"
 msgstr "Общи Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:461
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:312
 msgid "Favicon for your website"
 msgstr "Иконка на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:467
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:318
 msgid "Favicon"
 msgstr "Иконка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:484
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:335
 msgid "Header Settings"
 msgstr "Хедър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:491
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:342
 msgid "Upload a custom logo for your website."
 msgstr "Качване на лого за Вашия уеб сайт."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:497
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:348
 msgid "Logo image"
 msgstr "Лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:514
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:363
 msgid "Footer Settings"
 msgstr "Настройки на Футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:520
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:369
 msgid "Your Copyright text to appear in the website footer"
 msgstr "Вашият копирайт текст, който ще се появи във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:526
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:375
 msgid "Copyright Text"
 msgstr "Копирайт текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:552
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:401
 msgid "Slider Settings"
 msgstr "Слайдър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:645
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:491
 msgid "Social Websites"
 msgstr "Социални сайтове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:712
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:558
 msgid "Error 404 Not Found Page Settings"
 msgstr "Грешка 404  Не е намерено Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:719
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:565
 msgid "Upload a custom image for your 404 Not Found Page."
 msgstr "Качете картинка за Грешка 404: Не е намерено."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:725
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:571
 msgid "Image"
 msgstr "Картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:732
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:578
 msgid "The Title to appear in the 404 Not Found Page"
 msgstr "Заглавие в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:738
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:584
 msgid "Title"
 msgstr "Заглавие"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:745
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:591
 msgid "The Content to appear in the 404 Not Found Page"
 msgstr "Съдържание в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:751
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:597
 msgid "Content"
 msgstr "Съдържание"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:21
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:24
 msgid "Follow us on Facebook"
 msgstr "Следете ни във Facebook"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:27
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:30
 msgid "Follow us on Google+"
 msgstr "Следете ни в Google+"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:33
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:36
 msgid "Follow our RSS Feeds"
 msgstr "Следете нашите RSS емисии"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:40
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:43
 msgid "Follow us on YouTube"
 msgstr "Следете ни в YouTube"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:241
-msgid "Read More"
-msgstr "Прочетете повече"
-
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:254
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:250
 msgid "Read More..."
 msgstr "Научи повече..."
+
+#~ msgid "Color Schemes"
+#~ msgstr "Цветови Схеми"
 
 #~ msgid "About the Author"
 #~ msgstr "Информация за Автора"
@@ -1586,9 +1600,6 @@ msgstr "Научи повече..."
 
 #~ msgid "Authors"
 #~ msgstr "Автори"
-
-#~ msgid "Pages"
-#~ msgstr "Страници"
 
 #~ msgid "Posts"
 #~ msgstr "Постове"

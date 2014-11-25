@@ -1,34 +1,34 @@
 <?php get_header(); ?>
 
-<?php tishonator_show_page_header_section(); ?>
+<?php fgymm_show_page_header_section(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
 		<h1 class="page-title">
 			<?php
 				if ( is_tax( 'post_format', 'post-format-aside' ) ) :
-					_e( 'Asides', 'tishonator' );
+					_e( 'Asides', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-					_e( 'Images', 'tishonator' );
+					_e( 'Images', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-					_e( 'Videos', 'tishonator' );
+					_e( 'Videos', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-					_e( 'Audio', 'tishonator' );
+					_e( 'Audio', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-					_e( 'Quotes', 'tishonator' );
+					_e( 'Quotes', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-					_e( 'Links', 'tishonator' );
+					_e( 'Links', 'fgymm' );
 
 				elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-					_e( 'Galleries', 'tishonator' );
+					_e( 'Galleries', 'fgymm' );
 
 				else :
-					_e( 'Archives', 'tishonator' );
+					_e( 'Archives', 'fgymm' );
 
 				endif;
 			?>

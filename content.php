@@ -28,21 +28,21 @@
 	<?php if ( is_single() ) : ?>
 
 				<div class="content">
-					<?php tishonator_the_content_single(); ?> 
+					<?php fgymm_the_content_single(); ?> 
 				</div>
 
 	<?php else : ?>
 
 				<div class="content">
 
-					<?php tishonator_the_content(); ?>
+					<?php fgymm_the_content(); ?>
 
 				</div>
 
 	<?php endif; ?>
 <?php if ( !is_single() && get_the_title() === '' ) :
 			
-				echo '<strong><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="'.__( 'Read More', 'tishonator' ).'">'.__( 'Read More', 'tishonator' ).'</a></strong>';
+				echo '<strong><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="'.__( 'Read More', 'fgymm' ).'">'.__( 'Read More', 'fgymm' ).'</a></strong>';
 	
 		  endif;
 	?>
@@ -52,7 +52,7 @@
 			<?php the_author_posts_link(); ?>
 		</span>
 		<span class="comments-icon">
-			<?php comments_popup_link(__( 'No Comments', 'tishonator' ), __( '1 Comment', 'tishonator' ), __( '% Comments', 'tishonator' ), '', __( 'Comments are closed.', 'tishonator' )); ?>
+			<?php comments_popup_link(__( 'No Comments', 'fgymm' ), __( '1 Comment', 'fgymm' ), __( '% Comments', 'fgymm' ), '', __( 'Comments are closed.', 'fgymm' )); ?>
 		</span>
 		<?php if ( has_category() ) : ?>
 					<span class="category-icon">
@@ -65,7 +65,7 @@
 						<?php echo get_the_tag_list( '', ', ','' ); ?>
 					</span>
 		<?php endif; ?>
-		<?php edit_post_link( __( 'Edit', 'tishonator' ), '<span class="edit-icon">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'fgymm' ), '<span class="edit-icon">', '</span>' ); ?>
 	</div>
 	
 	<?php if ( !is_single() ) : ?>
