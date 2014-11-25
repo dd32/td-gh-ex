@@ -19,30 +19,30 @@
 
 <?php /* Render Theme Option style */ ?>
 <style type="text/css">
-    <?php if(!empty(of_get_option('body_text_color'))): ?>
+    <?php if(of_get_option('body_text_color')): ?>
 	body {
 	    color: <?php echo of_get_option('body_text_color'); ?>;;
 	}
     <?php endif; ?>
     
-    <?php if(!empty(of_get_option('body_link_color'))): ?>
+    <?php if(of_get_option('body_link_color')): ?>
 	body a {
 	    color: <?php echo of_get_option('body_link_color'); ?>;;
 	}
     <?php endif; ?>
      
-    <?php if(!empty(of_get_option('footer_top_border_color'))): ?>
+    <?php if(of_get_option('footer_top_border_color')): ?>
 	#colophon {
 	    border-color: <?php echo of_get_option('footer_top_border_color'); ?>;;
 	}
     <?php endif; ?>
     
-    <?php if(!empty(of_get_option('footer_background_color'))): ?>
+    <?php if(of_get_option('footer_background_color')): ?>
 	#colophon {
 	    background-color: <?php echo of_get_option('footer_background_color'); ?>;;
 	}
     <?php endif; ?>
-    <?php if(!empty(of_get_option('footer_background_bottom_color'))): ?>
+    <?php if(of_get_option('footer_background_bottom_color')): ?>
 	#footer-info {
 	    background-color: <?php echo of_get_option('footer_background_bottom_color'); ?>;;
 	}
@@ -60,10 +60,10 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="mail-info">
-			<?php if(!empty(of_get_option('phone_number'))): ?>
+			<?php if(of_get_option('phone_number')): ?>
 			    <span class="phone-info"><i class="fa fa-phone"></i> <?php echo of_get_option('phone_number'); ?></span>
 			<?php endif; ?>
-			<?php if(!empty(of_get_option('email_id'))): ?>
+			<?php if(of_get_option('email_id')): ?>
 			    <span><i class="fa fa-envelope"></i> <a href="<?php echo of_get_option('email_id'); ?>" target="_blank"><?php echo of_get_option('email_id'); ?></a></span>
 			<?php endif; ?>
                     </div>
@@ -74,7 +74,7 @@
 			    <?php
 				$socialmedia_navs= ascent_socialmedia_navs();
 				foreach($socialmedia_navs as $socialmedia_url => $socialmedia_icon) {
-				    if (!empty(of_get_option($socialmedia_url))) {
+				    if (of_get_option($socialmedia_url)) {
 					echo '<li class="social-icon"><a target="_blank" href="' . of_get_option($socialmedia_url) . '"><i class="'.$socialmedia_icon.'"></i></a></li>';
 				    }
 				}
@@ -94,7 +94,7 @@
                             <div class="site-header-inner col-sm-12">
                                 <div class="site-branding">
                                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				    <?php if(!empty(of_get_option('logo'))): ?>
+				    <?php if(of_get_option('logo')): ?>
 					<img src="<?php echo of_get_option('logo'); ?>" alt="<?php bloginfo( 'name' ); ?>">
 				    <?php else: ?>
 					<?php bloginfo( 'name' ); ?>

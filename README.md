@@ -72,3 +72,11 @@ You can add Slider following these steps:
 Featured Images look best at 732 pixels wide or larger.
 
 
+= Changelog =
+
+### Version 1.0.1
+- Fixed 'of_get_option' issue.
+
+
+### Version 1.0
+- Initial release.

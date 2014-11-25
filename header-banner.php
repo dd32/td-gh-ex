@@ -8,9 +8,9 @@
 <?php $home_slider_array = ascent_home_slider(); ?>
     <div id="home-slider">
 	<div class="main-owl-carousel">
-	<?php $enable_slider_overaly = !empty(of_get_option('slider_overlay_bg')) ? 'bg-overlay' : ' default-bg'; ?>
+	<?php $enable_slider_overaly = (of_get_option('slider_overlay_bg')) ? 'bg-overlay' : ' default-bg'; ?>
 	<?php foreach($home_slider_array as $home_slider_item => $home_slider_fields): ?>
-	    <?php if(!empty(of_get_option($home_slider_fields['image'])) ): ?>
+	    <?php if(of_get_option($home_slider_fields['image'])): ?>
 	    <div class="item">
 		<div class="<?php echo $enable_slider_overaly; ?>"></div>
 		<img src="<?php echo of_get_option($home_slider_fields['image']); ?>" class="gallery-post-single" alt="Slide 1"/>
@@ -29,7 +29,7 @@
     </div><!--.home-carousel-->
 <?php else: ?>
     <div id="banner">
-    <?php if(!empty(of_get_option('default_banner_image'))): ?>
+    <?php if(of_get_option('default_banner_image')): ?>
 	<img src="<?php echo of_get_option('default_banner_image'); ?>" alt="<?php bloginfo( 'name' ); ?>-Banner">
     <?php else: ?>
 	<img src="<?php echo get_template_directory_uri() . '/includes/images/banner.jpg'?>" alt="<?php bloginfo( 'name' ); ?>-Banner">

@@ -4,7 +4,7 @@ Theme URI: http://testbase.info/c/theme/wp/ascent/
 Author: Pitabas Behera
 Author URI: http://nettantra.com/
 Description: Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, rtl-language-support, theme-options, translation-ready
@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 
-/* Import the necessary TK Bootstrap WP CSS additions */
+/* Import the necessary Bootstrap WP CSS additions */
 @import url( includes/css/bootstrap-wp.css );
 
 /* Import the font-awesome css */
@@ -98,7 +98,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   background-color: #1ABC9C;
 }
 .read-more.red {
-  background-color: #1ABC9C;
+  background-color: #EA3200;
 }
 .read-more.red:hover {
   background-color: #3a3c41;
@@ -1068,6 +1068,7 @@ body input[type="file"] {
     margin-bottom: 30px;
     color: #3a3c41;
 }
+
 body input[type="submit"] {
     padding: 12px 25px;
     background-color: #3a3c41;
@@ -1084,7 +1085,8 @@ body input[type="submit"] {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
-body input[type="submit"]:hover {
+body input[type="submit"]:hover,
+body input[type="submit"]:focus {
     background-color: #1ABC9C;
     color: #FFF;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1095,6 +1097,7 @@ body input[type="submit"]:hover {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
+
 body input.error,
 body textarea.error {
     border: 2px solid #ff0000;
