@@ -20,3 +20,16 @@ v) Remove Theme Text Translation and remove translation-ready tag in style.css a
 
 Version: 1.2.1 (14 oct 2014)
 i) Remove newsletter code from theme options and remove newsletter script and css from js and css files.
+
+
+
+Version 1.3 (25 nov 2014) -- translation-ready
+i) set esc_url sanitization in missing fields  besty.php and besty-latest-posts.php
+ii) add text domain before variable, set validation and set title as post title in besty-latest-posts.php 
+iii) add handles prefixed in besty.php.
+iv) remove  tagline in besty.php and used WprdPress default tagline header.php.
+v) resize header size. custom-header.php
+vi) .mini-content add new css for support safari. theme.css
+vii) Change the comments box field size.
+viii) add new file respond.js for normal jQuery script.
+ix) change content size related window to document.

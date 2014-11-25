@@ -2,10 +2,10 @@
 Theme Name: Besty
 Theme URI: http://fasterthemes.com/wordpress-themes/Besty
 Description: Besty is really going to be the best WordPress theme for architectural blog, photography blog, design blog or any other creative niche because of its features and its modern look and feel. It uses masonry layout. As it is based on Twitter Bootstrap so it is mobile and tablets friendly. It is optimized for faster loading. It's got W3C validate code and is SEO friendly as well. It's got theme options to easily manage logo, social media links, footer text etc.
-Version: 1.2.2
+Version: 1.3
 Author: FasterThemes
 Author URI: http://fasterthemes.com
-Tags: black, dark, custom-menu, right-sidebar, full-width-template, responsive-layout, fixed-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns
+Tags: black, dark, custom-menu, right-sidebar, full-width-template, responsive-layout, fixed-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns , translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: besty
@@ -19,6 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 .custom-header-img{
 	text-align:center;
+        margin-top: -25px;
 }
 .wp-caption{
     background-color: rgba(0, 0, 0, 0.8);

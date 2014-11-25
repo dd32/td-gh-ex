@@ -36,9 +36,9 @@
             <?php } else { ?>
         		<a href="<?php echo esc_url( get_site_url() ); ?>"><img src="<?php echo esc_url($besty_options['logo']); ?>" alt="" class="logo-center" /></a>
             <?php }
-			if(!empty($besty_options['tagline']))
+			if(!empty(get_bloginfo ( 'description' )))
 			{
-				printf( '<h1>%1$s</h1>',esc_attr($besty_options['tagline']));
+			    ?><h2><?php _e(get_bloginfo ( 'description' ),'besry'); ?></h2><?php 
 			}
             ?>            
         </div>
@@ -51,7 +51,7 @@
     <?php } ?> 
         <div class="navbar-header">
           	<button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> 
-                <span class="sr-only">Toggle navigation</span> 
+                <span class="sr-only"></span> 
                 <span class="icon-bar icon-color"></span> 
                 <span class="icon-bar icon-color"></span> 
                 <span class="icon-bar icon-color"></span> 
@@ -98,8 +98,11 @@
             <div class="copyright"><?php 
 			if(!empty($besty_options['footertext'])) {
 				echo esc_attr($besty_options['footertext']);
-			} echo '<br />Powered by <a target="_blank" href="http://wordpress.org">WordPress</a> and <a target="_blank" href="http://fasterthemes.com/wordpress-themes/besty" target="_blank">Besty</a>.';
+			} 
+				printf( __( 'Powered by %1$s and %2$s.', 'besty' ), '<a href="http://wordpress.org/" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/besty" target="_blank">Besty</a>' ); 
+				
 				?>
+				
                 
             
             </div>

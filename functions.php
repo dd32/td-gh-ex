@@ -9,7 +9,7 @@ function besty_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 745;
 	}
-	/*
+	/*	
 	 * Make besty theme available for translation.
 	 */
 	load_theme_textdomain( 'besty' );
@@ -79,9 +79,9 @@ function besty_comment( $comment, $args, $depth ) {
 			?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<p>
-				<?php _e( 'Pingback:', 'besty' ); ?>
+				<?php _e('Pingback:', 'besty' ); ?>
 				<?php comment_author_link(); ?>
-				<?php edit_comment_link( __( '(Edit)', 'besty' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'besty' ), '<span class="edit-link">', '</span>' ); ?>
 				</p>
 			</li>
 			<?php
@@ -97,14 +97,9 @@ function besty_comment( $comment, $args, $depth ) {
 			<article id="comment-<?php comment_ID(); ?>">
 			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
 			<div class="comment-content">
-           <?php
-		   		printf( '<div class="comment-metadata"><span>%1$s</span>',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'besty' ) . '</span>' : '');
-				
-				echo '<span>'.get_comment_date('F j, Y').'<span>';
-				
-				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'besty' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) )).'</div>';
-				
-				?>
+           <div class="comment-metadata">
+					<span><?php _e('Post author','besty')?><span><?php echo ' : '.get_comment_author_link($comment->user_id === $post->post_author). ' '.get_comment_date('F j, Y')  ?>
+				</div>	
                 <div class="comment-content-main">
                 <?php comment_text(); ?>
                 </div>
@@ -125,7 +120,7 @@ endif;  //besty_comment();
  */
 function besty_widgets_init() {
 	register_sidebar( array(
-		'name' => 'Main Sidebar',
+		'name' => __('Main Sidebar','besty'),
 		'id' => 'main_sidebar',
 		'class' => 'nav-list',
 		'before_widget' => '<aside class="besty-widget">',

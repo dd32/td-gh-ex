@@ -8,10 +8,10 @@ get_header();
     <div class="col-md-9">
     <header>
 			<div class="jumbotron">
-				<h1>Epic 404 - Article Not Found</h1>
-				<p>This is embarassing. We can't find what you were looking for.</p>
+				<h1><?php _e('Epic 404 - Article Not Found','besty') ?></h1>
+				<p><?php _e("This is embarassing. We can't find what you were looking for.","besty") ?></p>
                 <section class="post_content">
-                    <p>Whatever you were looking for was not found, but maybe try looking again or search using the form below.</p>
+                    <p><?php _e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.','besty') ?></p>
                     <div class="row">
                         <div class="col-sm-12">
                             <?php echo get_search_form(); ?>									

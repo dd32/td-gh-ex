@@ -1,0 +1,609 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Besty\n"
+"POT-Creation-Date: 2014-11-25 15:42+0530\n"
+"PO-Revision-Date: 2014-11-25 15:44+0530\n"
+"Last-Translator: FasterThemes <support@fasterthemes.com>\n"
+"Language-Team: FasterThemes <support@fasterthemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:11
+msgid "Epic 404 - Article Not Found"
+msgstr "Epic 404 - Article Not Found"
+
+#: 404.php:12
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr "This is embarassing. We can't find what you were looking for."
+
+#: 404.php:14
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+
+#: archive.php:14
+msgid "Daily Archives"
+msgstr "Daily Archives"
+
+#: archive.php:16 archive.php:18
+msgid "Monthly Archives"
+msgstr "Monthly Archives"
+
+#: archive.php:20
+msgid "Archives"
+msgstr "Archives"
+
+#: archive.php:48 author.php:35 category.php:35 index.php:32 search.php:36
+#: tag.php:35
+msgid "Previous"
+msgstr "Previous"
+
+#: archive.php:49 author.php:36 category.php:36 index.php:33 search.php:37
+#: tag.php:36
+msgid "Next"
+msgstr "Next"
+
+#: author.php:10
+msgid "Author "
+msgstr "Author "
+
+#: author.php:10
+msgid "All posts by "
+msgstr "All posts by "
+
+#: category.php:10
+msgid "Category "
+msgstr "Category "
+
+#: comments.php:14 functions/theme-default-setup.php:65
+msgid "Comments"
+msgstr "Comments"
+
+#: functions.php:27
+msgid "Top primary menu"
+msgstr "Top primary menu"
+
+#: functions.php:58
+msgctxt "Istok Web: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:82
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:84
+msgid "Edit"
+msgstr "Edit"
+
+#: functions.php:101
+msgid "Post author"
+msgstr "Post author"
+
+#: functions.php:123
+msgid "Main Sidebar"
+msgstr "Main Sidebar"
+
+#: functions/besty-latest-posts.php:8
+msgid "A widget for Latest Posts."
+msgstr "A widget for Latest Posts."
+
+#: functions/besty-latest-posts.php:12
+msgid "Besty Latest Post"
+msgstr "Besty Latest Post"
+
+#: functions/besty-latest-posts.php:92
+msgid "Besty Posts"
+msgstr "Besty Posts"
+
+#: functions/besty-latest-posts.php:107
+msgid "Number of posts to show"
+msgstr "Number of posts to show"
+
+#: functions/class-tgm-plugin-activation.php:41 functions/tgm-plugins.php:27
+msgid "Install Required Plugins"
+msgstr "Install Required Plugins"
+
+#: functions/class-tgm-plugin-activation.php:42 functions/tgm-plugins.php:28
+msgid "Install Plugins"
+msgstr "Install Plugins"
+
+#: functions/class-tgm-plugin-activation.php:43 functions/tgm-plugins.php:29
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installing Plugin: %s"
+
+#: functions/class-tgm-plugin-activation.php:44
+msgid "Something went wrong."
+msgstr "Something went wrong."
+
+#: functions/class-tgm-plugin-activation.php:45 functions/tgm-plugins.php:31
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "This theme requires the following plugin: %1$s."
+msgstr[1] "This theme requires the following plugins: %1$s."
+
+#: functions/class-tgm-plugin-activation.php:46 functions/tgm-plugins.php:32
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "This theme recommends the following plugin: %1$s."
+msgstr[1] "This theme recommends the following plugins: %1$s."
+
+#: functions/class-tgm-plugin-activation.php:47 functions/tgm-plugins.php:33
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+
+#: functions/class-tgm-plugin-activation.php:48 functions/tgm-plugins.php:34
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "The following required plugin is currently inactive: %1$s."
+msgstr[1] "The following required plugins are currently inactive: %1$s."
+
+#: functions/class-tgm-plugin-activation.php:49 functions/tgm-plugins.php:35
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "The following recommended plugin is currently inactive: %1$s."
+msgstr[1] "The following recommended plugins are currently inactive: %1$s."
+
+#: functions/class-tgm-plugin-activation.php:50 functions/tgm-plugins.php:36
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+
+#: functions/class-tgm-plugin-activation.php:51 functions/tgm-plugins.php:37
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[1] ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+
+#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:38
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+
+#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:39
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Begin installing plugin"
+msgstr[1] "Begin installing plugins"
+
+#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:40
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Begin activating plugin"
+msgstr[1] "Begin activating plugins"
+
+#: functions/class-tgm-plugin-activation.php:55 functions/tgm-plugins.php:41
+msgid "Return to Required Plugins Installer"
+msgstr "Return to Required Plugins Installer"
+
+#: functions/class-tgm-plugin-activation.php:56
+msgid "Return to the dashboard"
+msgstr "Return to the dashboard"
+
+#: functions/class-tgm-plugin-activation.php:57
+#: functions/class-tgm-plugin-activation.php:1005 functions/tgm-plugins.php:42
+msgid "Plugin activated successfully."
+msgstr "Plugin activated successfully."
+
+#: functions/class-tgm-plugin-activation.php:58
+#: functions/class-tgm-plugin-activation.php:821
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "The following plugin was activated successfully:"
+msgstr[1] "The following plugins were activated successfully:"
+
+#: functions/class-tgm-plugin-activation.php:59
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "All plugins installed and activated successfully. %1$s"
+
+#: functions/class-tgm-plugin-activation.php:60
+msgid "Dismiss this notice"
+msgstr "Dismiss this notice"
+
+#: functions/class-tgm-plugin-activation.php:244
+#: functions/class-tgm-plugin-activation.php:1111
+msgid "Return to the Dashboard"
+msgstr "Return to the Dashboard"
+
+#: functions/class-tgm-plugin-activation.php:546
+msgid "Private Repository"
+msgstr "Private Repository"
+
+#: functions/class-tgm-plugin-activation.php:549
+msgid "Pre-Packaged"
+msgstr "Pre-Packaged"
+
+#: functions/class-tgm-plugin-activation.php:551
+msgid "WordPress Repository"
+msgstr "WordPress Repository"
+
+#: functions/class-tgm-plugin-activation.php:553
+msgid "Required"
+msgstr "Required"
+
+#: functions/class-tgm-plugin-activation.php:553
+msgid "Recommended"
+msgstr "Recommended"
+
+#: functions/class-tgm-plugin-activation.php:555
+msgid "Not Installed"
+msgstr "Not Installed"
+
+#: functions/class-tgm-plugin-activation.php:557
+msgid "Installed But Not Activated"
+msgstr "Installed But Not Activated"
+
+#: functions/class-tgm-plugin-activation.php:603
+#: functions/class-tgm-plugin-activation.php:659
+msgid "Install"
+msgstr "Install"
+
+#: functions/class-tgm-plugin-activation.php:621
+#: functions/class-tgm-plugin-activation.php:660
+msgid "Activate"
+msgstr "Activate"
+
+#: functions/class-tgm-plugin-activation.php:643
+msgid "No plugins to install or activate"
+msgstr "No plugins to install or activate"
+
+#: functions/class-tgm-plugin-activation.php:650
+msgid "Plugin"
+msgstr "Plugin"
+
+#: functions/class-tgm-plugin-activation.php:651
+msgid "Source"
+msgstr "Source"
+
+#: functions/class-tgm-plugin-activation.php:652
+msgid "Type"
+msgstr "Type"
+
+#: functions/class-tgm-plugin-activation.php:653
+msgid "Status"
+msgstr "Status"
+
+#: functions/class-tgm-plugin-activation.php:725
+msgid "No plugins are available to be installed at this time."
+msgstr "No plugins are available to be installed at this time."
+
+#: functions/class-tgm-plugin-activation.php:804
+msgid "No plugins are available to be activated at this time."
+msgstr "No plugins are available to be activated at this time."
+
+#: functions/class-tgm-plugin-activation.php:995
+msgid "Install package not available."
+msgstr "Install package not available."
+
+#: functions/class-tgm-plugin-activation.php:996
+#, php-format
+msgid "Downloading install package from %1$s %s %1$s"
+msgstr "Downloading install package from %1$s %s %1$s"
+
+#: functions/class-tgm-plugin-activation.php:997
+msgid "Unpacking the package&#8230;"
+msgstr "Unpacking the package&#8230;"
+
+#: functions/class-tgm-plugin-activation.php:998
+msgid "Installing the plugin&#8230;"
+msgstr "Installing the plugin&#8230;"
+
+#: functions/class-tgm-plugin-activation.php:999
+msgid "Plugin install failed."
+msgstr "Plugin install failed."
+
+#: functions/class-tgm-plugin-activation.php:1000
+msgid "Plugin installed successfully."
+msgstr "Plugin installed successfully."
+
+#: functions/class-tgm-plugin-activation.php:1004
+msgid "Plugin activation failed."
+msgstr "Plugin activation failed."
+
+#: functions/class-tgm-plugin-activation.php:1044
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+
+#: functions/class-tgm-plugin-activation.php:1045
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installed and activated successfully."
+
+#: functions/class-tgm-plugin-activation.php:1045
+#: functions/class-tgm-plugin-activation.php:1054
+msgid "Show Details"
+msgstr "Show Details"
+
+#: functions/class-tgm-plugin-activation.php:1045
+#: functions/class-tgm-plugin-activation.php:1054
+msgid "Hide Details"
+msgstr "Hide Details"
+
+#: functions/class-tgm-plugin-activation.php:1046
+msgid "All installations and activations have been completed."
+msgstr "All installations and activations have been completed."
+
+#: functions/class-tgm-plugin-activation.php:1047
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+
+#: functions/class-tgm-plugin-activation.php:1051
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+
+#: functions/class-tgm-plugin-activation.php:1052
+#, php-format
+msgid "An error occurred while installing %1$s: %2$s."
+msgstr "An error occurred while installing %1$s: %2$s."
+
+#: functions/class-tgm-plugin-activation.php:1053
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "The installation of %1$s failed."
+
+#: functions/class-tgm-plugin-activation.php:1054
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s installed successfully."
+
+#: functions/class-tgm-plugin-activation.php:1055
+msgid "All installations have been completed."
+msgstr "All installations have been completed."
+
+#: functions/class-tgm-plugin-activation.php:1056
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing Plugin %1$s (%2$d/%3$d)"
+
+#: functions/tgm-plugins.php:30
+msgid "Something went wrong with the plugin API."
+msgstr "Something went wrong with the plugin API."
+
+#: functions/tgm-plugins.php:43
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr "All plugins installed and activated successfully. %s"
+
+#: functions/theme-default-setup.php:26
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
+
+#: functions/theme-default-setup.php:42
+msgid "Category"
+msgstr "Category"
+
+#: functions/theme-default-setup.php:44
+msgid " Tags "
+msgstr " Tags "
+
+#: functions/theme-default-setup.php:55
+msgid "Post By"
+msgstr "Post By"
+
+#: functions/theme-default-setup.php:57
+#, php-format
+msgid "View all posts by %s"
+msgstr "View all posts by %s"
+
+#: header.php:102
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr "Powered by %1$s and %2$s."
+
+#: search.php:11
+msgid "Search Results for"
+msgstr "Search Results for"
+
+#: tag.php:10
+msgid "Tags"
+msgstr "Tags"
+
+#: theme-options/besty.php:37
+msgid "Besty Options"
+msgstr "Besty Options"
+
+#: theme-options/besty.php:38 theme-options/besty.php:66
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: theme-options/besty.php:67 theme-options/besty.php:157
+msgid "Save Options"
+msgstr "Save Options"
+
+#: theme-options/besty.php:75
+msgid "Basic Settings"
+msgstr "Basic Settings"
+
+#: theme-options/besty.php:76
+msgid "Social Settings"
+msgstr "Social Settings"
+
+#: theme-options/besty.php:77
+msgid "Home Page Settings"
+msgstr "Home Page Settings"
+
+#: theme-options/besty.php:90
+msgid "Site Logo"
+msgstr "Site Logo"
+
+#: theme-options/besty.php:93 theme-options/besty.php:107
+#: theme-options/besty.php:180
+msgid "No file chosen"
+msgstr "No file chosen"
+
+#: theme-options/besty.php:102
+msgid "Favicon"
+msgstr "Favicon"
+
+#: theme-options/besty.php:104
+msgid "Size of favicon should be exactly 32x32px for best results."
+msgstr "Size of favicon should be exactly 32x32px for best results."
+
+#: theme-options/besty.php:117
+msgid "Copyright Text"
+msgstr "Copyright Text"
+
+#: theme-options/besty.php:120
+msgid ""
+"Some text regarding copyright of your site, you would like to display in the "
+"footer."
+msgstr ""
+"Some text regarding copyright of your site, you would like to display in the "
+"footer."
+
+#: theme-options/besty.php:130
+msgid "Facebook"
+msgstr "Facebook"
+
+#: theme-options/besty.php:133
+msgid "Facebook profile or page URL i.e."
+msgstr "Facebook profile or page URL i.e."
+
+#: theme-options/besty.php:139
+msgid "Twitter"
+msgstr "Twitter"
+
+#: theme-options/besty.php:142
+msgid "Twitter profile or page URL i.e."
+msgstr "Twitter profile or page URL i.e."
+
+#: theme-options/besty.php:148
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#: theme-options/besty.php:151
+msgid "Linkedin profile or page URL i.e."
+msgstr "Linkedin profile or page URL i.e."
+
+#: theme-options/besty.php:160
+msgid "Googleplus profile or page URL i.e."
+msgstr "Googleplus profile or page URL i.e."
+
+#: theme-options/besty.php:169
+msgid "Welcome Title"
+msgstr "Welcome Title"
+
+#: theme-options/besty.php:172
+msgid ""
+"Enter recent welcome title for your site , you would like to display in the "
+"Home Page."
+msgstr ""
+"Enter recent welcome title for your site , you would like to display in the "
+"Home Page."
+
+#: theme-options/besty.php:177
+msgid "Welcome Image"
+msgstr "Welcome Image"
+
+#: theme-options/besty.php:189
+msgid "Welcome Details"
+msgstr "Welcome Details"
+
+#: theme-options/besty.php:210
+msgid "fasterthemes.com"
+msgstr "fasterthemes.com"
+
+#: theme-options/besty.php:213
+msgid "Save options"
+msgstr "Save options"
+
+#: theme-options/besty.php:218
+msgid "Options saved successfully."
+msgstr "Options saved successfully."
+
+#: theme-options/besty.php:221
+msgid "Subscribe with us"
+msgstr "Subscribe with us"
+
+#: theme-options/besty.php:222
+msgid ""
+"Join our mailing list and we'll keep you updated on new themes as they're "
+"released and our exclusive special offers. "
+msgstr ""
+"Join our mailing list and we'll keep you updated on new themes as they're "
+"released and our exclusive special offers. "
+
+#: theme-options/besty.php:224
+msgid "Click here to join."
+msgstr "Click here to join."

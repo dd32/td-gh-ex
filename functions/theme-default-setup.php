@@ -39,9 +39,9 @@ function besty_entry_meta() {
 	$besty_month = get_the_time( 'm');
 	$besty_day = get_the_time( 'd');
 	
-	$besty_category_list = get_the_category_list() ? sprintf( '<li> Category: '.get_the_category_list( __( ', ', 'besty' ) ).'  </li>') :'';
+	$besty_category_list = get_the_category_list() ?  '<li>'.__('Category','besty'). " : ".get_the_category_list(', ').'</li>' : '';
 	
-	$besty_tag_list = get_the_tag_list() ? sprintf( '<li>Tags: %1$s </li>', get_the_tag_list( '', __( ', ', 'besty' ) )):'';
+	$besty_tag_list = get_the_tag_list() ? '<li>'.__(' Tags ','besty').': ' .get_the_tag_list('',', ').'</li>' : '';
 	
 	$besty_date = sprintf( '<li><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></li>',
 		esc_url( get_day_link( $besty_year, $besty_month, $besty_day)),
@@ -49,14 +49,20 @@ function besty_entry_meta() {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date('d M, Y') )
 	);
-	$besty_author = sprintf( '<li> Post By: <a href="%1$s" title="%2$s" >%3$s</a></li>',
+	
+	
+	
+	$besty_author = sprintf( '<li>'.__('Post By','besty').' : <a href="%1$s" title="%2$s" >%3$s</a></li>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'besty' ), get_the_author() ) ),
 		get_the_author()
 	);
+	
+	
+	
 	if(comments_open()) { 
 		if(get_comments_number()>=1)
-			$besty_comments = '<li>Comments: '.get_comments_number().'</li>';
+			$besty_comments = '<li>'. __('Comments','besty') .' : '.get_comments_number().'</li>';
 		else
 			$besty_comments = '';
 	} else {
