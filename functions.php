@@ -16,26 +16,20 @@ require_once( 'inc/theme-options.php' );
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-load_theme_textdomain( 'tishonator', get_template_directory() . '/languages' );
+load_theme_textdomain( 'fmuzz', get_template_directory() . '/languages' );
 
 add_theme_support( 'menus' );
 
 // Add wp_enqueue_scripts actions
-add_action( 'wp_enqueue_scripts', 'tishonator_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'fmuzz_load_scripts' );
 
 // Add wp_head actions
-add_action( 'wp_head', 'tishonator_head_load_favicon_image' );
+add_action( 'wp_head', 'fmuzz_head_load_favicon_image' );
 
-// Add wp_footer actions
-add_action( 'wp_footer', 'tishonator_footer_load_footer_scripts' );
+add_action( 'widgets_init', 'fmuzz_widgets_init' );
 
-add_action( 'widgets_init', 'tishonator_widgets_init' );
-
-if ( function_exists( 'add_theme_support' ) ) { 
-
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 'full', 'full', true );
-}
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 'full', 'full', true );
 
 if ( ! isset( $content_width ) )
 	$content_width = 900;
@@ -87,7 +81,7 @@ add_theme_support( 'post-formats', array (
 // add the visual editor to resemble the theme style
 add_editor_style( array( 'css/editor-style.css' ) );
 
-function tishonator_wp_title_for_home( $title, $sep ) {
+function fmuzz_wp_title_for_home( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() ) {
@@ -109,11 +103,11 @@ function tishonator_wp_title_for_home( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'tishonator' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'fmuzz' ), max( $paged, $page ) );
 	}
 
 	return $title;
 }
-add_filter( 'wp_title', 'tishonator_wp_title_for_home', 10, 2 );
+add_filter( 'wp_title', 'fmuzz_wp_title_for_home', 10, 2 );
 
 ?>

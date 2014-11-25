@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
-<?php tishonator_show_page_header_section(); ?>
+<?php fmuzz_show_page_header_section(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
 		<div id="infoTxt">
-			<?php printf( __( 'You searched for "%s". Here are the results:', 'tishonator' ),
+			<?php printf( __( 'You searched for "%s". Here are the results:', 'fmuzz' ),
 						get_search_query() );
 			?>
 		</div>
@@ -24,7 +24,7 @@
 				endwhile;
 	?>
 				<div class="navigation">
-					<?php tishonator_show_pagenavi(); ?>
+					<?php fmuzz_show_pagenavi(); ?>
 				</div>  
 	<?php else :
 

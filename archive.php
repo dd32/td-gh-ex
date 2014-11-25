@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php tishonator_show_page_header_section(); ?>
+<?php fmuzz_show_page_header_section(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
@@ -20,7 +20,7 @@
 				endwhile;
 	?>
 				<div class="navigation">
-					<?php tishonator_show_pagenavi(); ?>
+					<?php fmuzz_show_pagenavi(); ?>
 				</div>  
 	<?php else :
 

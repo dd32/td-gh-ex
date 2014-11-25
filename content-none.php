@@ -11,16 +11,16 @@
 
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<h1><?php __e( 'Oh no! Article not found! 404 error!', 'tishonator' ); ?></h1>
+			<h1><?php __e( 'Oh no! Article not found! 404 error!', 'fmuzz' ); ?></h1>
 	
 	<?php elseif ( is_search() ) : ?>
 
-			<h1><?php _e( 'No Results Found!', 'tishonator' ); ?></h1>
+			<h1><?php _e( 'No Results Found!', 'fmuzz' ); ?></h1>
 			<?php get_search_form(); ?>
 
 	<?php else : ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'tishonator' ); ?></p>
+			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'fmuzz' ); ?></p>
 			<?php get_search_form(); ?>
 
 	<?php endif; ?>

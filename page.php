@@ -2,11 +2,11 @@
 
 <?php if ( is_front_page() ) : ?>
 
-		<?php tishonator_display_slider(); ?>
+		<?php fmuzz_display_slider(); ?>
 	
 	<?php else : ?>
 	
-		<?php tishonator_show_page_header_section(); ?>
+		<?php fmuzz_show_page_header_section(); ?>
 	
 <?php endif; ?>
 

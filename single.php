@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php tishonator_show_page_header_section(); ?>
+<?php fmuzz_show_page_header_section(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
@@ -19,6 +19,25 @@
 				if ( comments_open() || get_comments_number() ) {
 					comments_template();
 				}
+
+					wp_link_pages( array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fmuzz' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+					) );
+
+?>
+					<div class="post-links">
+						<div class="left">
+							<?php previous_post_link(); ?>
+						</div>
+						<div class="right">
+							<?php next_post_link(); ?>
+						</div>
+					</div>
+
+		<?php
 				
 				endwhile;
 	?>
