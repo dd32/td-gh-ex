@@ -1,51 +1,56 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simone\n"
-"POT-Creation-Date: 2014-08-10 17:08-0800\n"
-"PO-Revision-Date: 2014-08-13 13:22-0600\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2014-11-16 22:05+0200\n"
+"PO-Revision-Date: 2014-11-16 22:05+0200\n"
+"Last-Translator: Mehmet Yurtar <mehmetyurtar@gmail.com>\n"
 "Language-Team: lynda.com <mrh@lynda.com>\n"
-"Language: en\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #. translators: %s = single category title
 #: archive.php:22
 #, php-format
 msgid "Posts in the %s category:"
-msgstr "Entradas en la categoría %s"
+msgstr "%s kategorisindeki gönderiler"
 
 #. translators: %s = single tag title
 #: archive.php:26
 #, php-format
 msgid "Posts with the %s tag"
-msgstr "Entradas con la etiqueta %s"
+msgstr "%s etiketi içeren gönderiler"
 
 #: archive.php:29
 #, php-format
 msgid "Author: %s"
-msgstr "Autor: %s"
+msgstr "Yazar: %s"
 
 #: archive.php:33
 #, php-format
 msgctxt "archive for a day"
 msgid "Posts from %s"
-msgstr "Entradas de %s"
+msgstr "%s tarihli gönderiler"
+
+#: archive.php:33
+msgctxt "Daily archives date format"
+msgid "F j, Y"
+msgstr "j F, Y"
 
 #: archive.php:36
 #, php-format
 msgctxt "archive for a month"
 msgid "Posts from %s"
-msgstr "Entradas desde %s"
+msgstr "%s tarihli gönderiler"
 
 #: archive.php:36
 msgctxt "monthly archives date format"
@@ -56,7 +61,7 @@ msgstr "F Y"
 #, php-format
 msgctxt "archive for a year"
 msgid "Posts from %s"
-msgstr "Entradas de %s"
+msgstr "%s tarihli gönderiler"
 
 #: archive.php:39
 msgctxt "yearly archives date format"
@@ -65,137 +70,137 @@ msgstr "Y"
 
 #: archive.php:42
 msgid "Asides"
-msgstr "Aparte"
+msgstr "Kenar"
 
 #: archive.php:45
 msgid "Archives"
-msgstr "Archivos"
+msgstr "Arşiv"
 
 #: comments.php:29
 #, php-format
 msgctxt "comments title"
 msgid "One comment:"
 msgid_plural "%1$s comments:"
-msgstr[0] "Un Comentario:"
-msgstr[1] "%1$s comentarios"
+msgstr[0] "%1$s Yorum"
 
 #: comments.php:47
 msgid "Comment navigation"
-msgstr "Navegar en los comentarios"
+msgstr "Yorum navigasyonu"
 
 #: comments.php:48
 msgid "Older Comments"
-msgstr "Comentarios Anteriores"
+msgstr "Daha Eski Yorumlar"
 
 #: comments.php:49
 msgid "Newer Comments"
-msgstr "Nuevos Comentarios"
+msgstr "Daha Yeni Yorumlar"
 
 #: comments.php:59
 msgid "Comments are closed."
-msgstr "Comentarios cerrados"
+msgstr "Yorumlar kapalı"
 
 #: content-aside.php:17 content-page.php:32 content-single.php:42
 #: content.php:61
 msgid "Edit"
-msgstr "Editar"
+msgstr "Düzenle"
 
 #: content-none.php:16
 msgid "Page not available"
-msgstr "Pagina no disponible"
+msgstr "Sayfa bulunamadı"
 
 #. translators: %s = search query
 #: content-none.php:20
 #, php-format
 msgid "Nothing found for %s"
-msgstr "No hay resultados para %s"
+msgstr "%s için sonuç bulunamadı."
 
 #: content-none.php:22
 msgid "Nothing Found"
-msgstr "Nada encontrado"
+msgstr "Bir sonuç bulunamadı."
 
 #: content-none.php:31
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"¿Listo para publicar tu primer entrada? <a href=\"%1$s\">Comienza aquí</a>."
+"İlk gönderinizi yayınlamaya hazır mısınız? <a href=\"%1$s\">Buradan "
+"başlayın</a>."
 
 #: content-none.php:35
 msgid ""
 "You seem to be lost. To find what you are looking for check out the most "
 "recent articles below or try a search:"
 msgstr ""
-"Parece que te has perdido. Para encontrar lo que estas buscando busca los "
-"artículos recientes o realiza una búsqueda:"
+"Aradığınız sayfa bulunamadı. Son gönderilere bir göz atabilir ya da site "
+"içinde arama yapabilirsiniz. "
 
 #: content-none.php:40
 msgid ""
 "Nothing matched your search terms. Check out the most recent articles below "
 "or try searching for something else:"
 msgstr ""
-"No hay ningún resultado para tu búsqueda. Revisa las entradas nuevas o "
-"intenta buscando algo más:"
+"Aramanızla eşleşen bir sonuç bulunamadı. Son gönderilere bir göz atabilir ya "
+"da başka bir şey arayabilirsiniz:"
 
 #: content-none.php:45
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Parece que no hemos encontrado lo que buscas. Tal vez una búsqueda pueda "
-"ayudar."
+"Aradığınız şeyi bulamadık. Aşağıdaki form aracılığıyla sitede arama "
+"yapabilirsiniz"
 
 #: content-none.php:56
 msgid "Most recent posts:"
-msgstr "Entradas recientes:"
+msgstr "Son gönderiler:"
 
 #: content-page.php:27 content-single.php:50 image.php:48
 msgid "Pages:"
-msgstr "Páginas:"
+msgstr "Sayfalar:"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:25 content.php:43
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: content-single.php:38 content.php:57
 msgid "Leave a comment"
-msgstr "Deja un comentario"
+msgstr "Yorum yap"
 
 #: content-single.php:38 content.php:57
 msgid "1 Comment"
-msgstr "1 Comentario"
+msgstr "1 Yorum"
 
 #: content-single.php:38 content.php:57
 msgid "% Comments"
-msgstr "% Comentarios"
+msgstr "% Yorum"
 
 #: content.php:13 content.php:26
 msgid "Read "
-msgstr "Leer"
+msgstr "Oku"
 
-#: content.php:72
+#: content.php:72 content.php:89
 msgctxt "First part of \"Read *article title* in title tag of Read more link"
 msgid "Read "
-msgstr "Leer"
+msgstr "Oku "
 
-#: content.php:72
+#: content.php:72 content.php:89
 msgid "Read <span aria-hidden=\"true\">the article</span>"
-msgstr "Leer"
+msgstr "<span aria-hidden=\"true\">Devamını</span> oku"
 
-#: content.php:79
+#: content.php:91
 msgid "Continue Reading "
-msgstr "Seguir leyendo"
+msgstr "Devamını Oku"
 
-#: content.php:79
+#: content.php:91
 msgid "Continue Reading"
-msgstr "Seguir leyendo"
+msgstr "Devamını Oku"
 
 #. translators: %s = text link: WordPress, URL: http://wordpress.org/
 #: footer.php:20
 #, php-format
 msgid "Proudly powered by %s"
-msgstr "Con la tecnología de %s"
+msgstr "%s gururla sunar"
 
 #: footer.php:21
 msgid "WordPress"
@@ -205,88 +210,88 @@ msgstr "WordPress"
 #: footer.php:27
 #, php-format
 msgid "Theme: %1$s by %2$s"
-msgstr "Tema: %1$s por %2$s"
+msgstr "Tema: %1$s by %2$s"
 
 #: footer.php:29
 msgid "mor10.com"
 msgstr "mor10.com"
 
-#: functions.php:55
+#: functions.php:68
 msgid "Primary Menu"
-msgstr "Menu Principal"
+msgstr "Birincil Menü"
 
-#: functions.php:56
+#: functions.php:69
 msgid "Social Menu"
-msgstr "Menu Social"
+msgstr "Sosyal Menü"
 
-#: functions.php:85
+#: functions.php:98
 msgid "Sidebar"
-msgstr "Barra Lateral"
+msgstr "Yanmenü"
 
-#: functions.php:94
+#: functions.php:107
 msgid "Footer Widgets"
-msgstr "Widget Pie de página"
+msgstr "Footer Bileşenleri"
 
-#: functions.php:95
+#: functions.php:108
 msgid ""
 "Footer widgets area appears, not surprisingly, in the footer of the site."
 msgstr ""
-"Los widgets del pie de página aparecen, sin sorpresas, en el pie de página "
-"del sitio web."
+"Tahmin edeceğiniz üzere, footer bileşenleri sitenin en alt kısmında "
+"gözükürler"
 
 #: header.php:25
 msgid "Skip to content"
-msgstr "Ir al contenido"
+msgstr "İçeriğe geç"
 
 #: header.php:47
 msgid "Menu"
-msgstr "Menú"
+msgstr "Menü"
 
 #: header.php:53
 msgid "Search"
-msgstr "Buscar"
+msgstr "Ara"
 
 #: image.php:25
 msgid "Featured in: "
-msgstr "Destacado en:"
+msgstr "Paylaşıldığı Gönderi: "
 
 #: image.php:26
 msgid "Full size image: "
-msgstr "Imagen a tamaño completo:"
+msgstr "Resmin Tam Boyutu: "
 
 #: image.php:27
 msgid "Edit attachment post"
-msgstr "Editar adjuntos de la entrada"
+msgstr "Eki düzenle"
 
 #: inc/author-box.php:10
 msgid "Hide Author Bio"
-msgstr "Ocultar Información del Autor"
+msgstr "Yazar biyografisini gizle"
 
 #: inc/author-box.php:21
 #, php-format
 msgid "About %s"
-msgstr "Sobre %s"
+msgstr "%s Hakkında"
 
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:29
 msgid "One article and counting. "
-msgstr "Un artículo y contando "
+msgstr "1 gönderi "
 
 #. translators: May be followed by another sentence. There is a space after the punctuation mark.
 #: inc/author-box.php:34
 #, php-format
 msgid "%s articles and counting. "
-msgstr "%s artículos y contando."
+msgstr "%s Gönderi"
 
 #: inc/author-box.php:44
 #, php-format
 msgid "Follow %s on social media: "
-msgstr "Seguir %s  en las redes sociales:"
+msgstr "%s sosyal medya hesapları"
 
 #: inc/author-box.php:46
 #, php-format
 msgid "Follow %s on Twitter"
-msgstr "Seguir %s  en Twitter"
+msgstr "%s Twitter'da"
 
 #: inc/author-box.php:46
 msgid "Twitter"
@@ -295,7 +300,7 @@ msgstr "Twitter"
 #: inc/author-box.php:49
 #, php-format
 msgid "Add %s to your Google+ circles"
-msgstr "Agregar %s a tus cÍrculos de Google+"
+msgstr "%s Google+ Profili"
 
 #: inc/author-box.php:49
 msgid "Google+"
@@ -304,7 +309,7 @@ msgstr "Google+"
 #: inc/author-box.php:52
 #, php-format
 msgid "Like %s on Facebook"
-msgstr "Me Gusta %s en Facebook"
+msgstr "%s Facebook Sayfası"
 
 #: inc/author-box.php:52
 msgid "Facebook"
@@ -313,62 +318,102 @@ msgstr "Facebook"
 #: inc/author-box.php:65
 #, php-format
 msgid "All posts by %s"
-msgstr "Todas las entradas por %s"
+msgstr "%s tarafından yazılan tüm gönderiler"
 
-#: inc/customizer.php:46
+#: inc/customizer.php:47
 msgid "Header Color"
-msgstr "Color de la cabecera"
+msgstr "Üst Kısım Rengi"
 
-#: inc/customizer.php:65
+#: inc/customizer.php:67
 msgid "Link Color"
-msgstr "Color de hipervínculos"
+msgstr "Link Rengi"
+
+#: inc/customizer.php:80
+msgid "Theme Options"
+msgstr "Tema Ayarları"
+
+#: inc/customizer.php:82
+msgid "Change the default display options for the theme."
+msgstr "Temanın varsayılan görünüm ayarlarını değiştirebilirsiniz"
+
+#: inc/customizer.php:104
+msgid "Sidebar position"
+msgstr "Yanmenü pozisyonu"
+
+#: inc/customizer.php:107
+msgid "Left sidebar"
+msgstr "Sol"
+
+#: inc/customizer.php:108
+msgid "Right sidebar"
+msgstr "Sağ"
+
+#: inc/customizer.php:132
+msgid "Archive display"
+msgstr "Arşiv Görünümü"
+
+#: inc/customizer.php:133
+msgid ""
+"Display excerpts or full content with optional \"More\" tag in the blog "
+"index and archive pages."
+msgstr ""
+"Arşive ve blog sayfalarınızda tüm içeriği ya da \"More\" etiketini "
+"kullanarak sadece özeti gösterebilirsiniz."
+
+#: inc/customizer.php:136
+msgid "Excerpt"
+msgstr "Özet"
+
+#: inc/customizer.php:137
+msgid "Full content"
+msgstr "Tüm İçerik"
 
 #: inc/extras.php:63
 #, php-format
 msgid "Page %s"
-msgstr "Página %s"
+msgstr "Sayfa %s"
 
 #: inc/template-tags.php:45
 msgid "&larr; Previous"
-msgstr "&larr; Anterior"
+msgstr "&larr; Önceki Sayfa"
 
 #: inc/template-tags.php:46
 msgid "Next &rarr;"
-msgstr "Siguiente &rarr;"
+msgstr "Sonraki Sayfa &rarr;"
 
 #: inc/template-tags.php:54
 msgid "Posts navigation"
-msgstr "Navegar en las entradas"
+msgstr "Gönderi navigasyonu"
 
 #: inc/template-tags.php:79 inc/template-tags.php:101
 msgid "Post navigation"
-msgstr "Navegar en las entradas"
+msgstr "Gönderi navigasyonu"
 
 #: inc/template-tags.php:82
 msgid "Previous Post:"
-msgstr "Entrada Anterior:"
+msgstr "Önceki Gönderi"
 
 #: inc/template-tags.php:83
 msgid "Next Post:"
-msgstr "Entrada siguiente:"
+msgstr "Sonraki Gönderi"
 
 #: inc/template-tags.php:104
 msgid "Previous Image"
-msgstr "Imagen Anterior"
+msgstr "Önceki Resim"
 
 #: inc/template-tags.php:105
 msgid "Next Image"
-msgstr "Imagen Siguiente"
+msgstr "Sonraki Resim"
 
 #: inc/template-tags.php:126
 msgctxt "Public posted on date"
 msgid "F jS, Y"
-msgstr "F jS, Y"
+msgstr "j F Y"
 
 #: inc/template-tags.php:128
 msgctxt "Public modified on date"
 msgid "F jS, Y"
-msgstr "F jS, Y"
+msgstr "j F  Y"
 
 #: inc/template-tags.php:131
 #, php-format
@@ -380,11 +425,11 @@ msgid ""
 "</span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">.</"
 "span>"
 msgstr ""
-"<span class=\"byline\">Escrito por %1$s</span><span class=\"mobile-hide\"> "
-"en </span><span class=\"posted-on\">%2$s</span><span class=\"mobile-hide\">."
-"</span>"
+"<span class=\"byline\">%1$s tarafından</span><span class=\"mobile-hide\"> "
+"%2$s </span><span class=\"posted-on\">tarihinde yazılmış.</span><span class="
+"\"mobile-hide\">.</span>"
 
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Resultados de la búsqueda: %s"
+msgstr "%s için arama sonuçları:"
