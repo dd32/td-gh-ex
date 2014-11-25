@@ -8,7 +8,7 @@ get_header();
 <div class="mini-content archive">
     <div class="col-md-9">
     <div class="col-md-12 single-box">
-        			<h1 class="blog-title"><?php printf( __( 'Search Results for: %s', 'besty' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        			<h1 class="blog-title"><?php _e( 'Search Results for', 'besty' ); echo ' : '. get_search_query(); ?></h1>
 				</div>
     <div class="masonry-container">    	
         <?php
@@ -33,8 +33,8 @@ get_header();
          </div>
          <div class="col-md-12 besty-pagination">
 		  <?php if (function_exists('faster_pagination') ) { faster_pagination(); } else { ?>
-			<span class="besty-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-			<span class="besty-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+			<span class="besty-previous-link"><?php previous_posts_link(__('Previous','besty').' &raquo;'); ?></span>
+            <span class="besty-next-link"><?php next_posts_link(__('Next','besty').' &raquo;'); ?></span>
 		 <?php } ?>
       </div>
     </div>

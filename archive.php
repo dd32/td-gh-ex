@@ -9,15 +9,16 @@ get_header();
     <div class="col-md-12 single-box">
 		<h1 class="blog-title">
 		<?php
+		
 		if ( is_day() ) :
-				printf( __( 'Daily Archives : %s', 'besty' ), get_the_date( _x( 'd F, Y', 'Daily archives date format', 'besty' ) ) );
-		elseif ( is_month() ) :
-				printf( __( 'Monthly Archives : %s', 'besty' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'besty' ) ) );
-		elseif ( is_year() ) :
-				printf( __( 'Yearly Archives : %s', 'besty' ), get_the_date( _x( 'Y', 'yearly archives date format', 'besty' ) ) );
-		else :
-				_e( 'Archives', 'besty' );
-		endif;
+            _e('Daily Archives','besty'); echo ": ". get_the_date('d F, Y');
+        elseif ( is_month() ) :
+            _e('Monthly Archives','besty'); echo ": ". get_the_date('F Y');
+        elseif ( is_year() ) :
+            _e('Monthly Archives','besty'); echo ": ". get_the_date('Y');
+        else :
+            _e( 'Archives', 'besty' );
+        endif;
 		?>
 		</h1>
     </div>
@@ -44,8 +45,8 @@ get_header();
          </div>
          <div class="col-md-12 besty-pagination">
 		  <?php if (function_exists('faster_pagination') ) { faster_pagination(); } else { ?>
-			<span class="besty-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-			<span class="besty-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+			<span class="besty-previous-link"><?php previous_posts_link(__('Previous','besty').' &raquo;'); ?></span>
+            <span class="besty-next-link"><?php next_posts_link(__('Next','besty').' &raquo;'); ?></span>
 		 <?php } ?>
       </div>
     </div>

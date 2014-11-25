@@ -29,8 +29,8 @@ get_header();
          </div>
          <div class="col-md-12 besty-pagination">
 		 <?php if (function_exists('faster_pagination') ) { faster_pagination(); } else { ?>
-			<span class="besty-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-			<span class="besty-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+			<span class="besty-previous-link"><?php previous_posts_link(__('Previous','besty').' &raquo;'); ?></span>
+            <span class="besty-next-link"><?php next_posts_link(__('Next','besty').' &raquo;'); ?></span>
 		 <?php } ?>
       </div>
     </div>

@@ -82,7 +82,8 @@ img{
 	margin-bottom:65px;
 }
 .logo a,
-.logo h1{
+.logo h1,
+.logo h2{
 	color: #545454;
     font-size: 14px;
     margin: 10px 0 0;
@@ -189,8 +190,14 @@ img{
 	float:left;
 	background:rgba(0,0,0,0.85);
 	margin-left:230px;
-	width:calc(100% - 230px);
+	width:calc(100% - 230px);        
 	z-index:1;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /****** This code only safari ******/
+    ::i-block-chrome, .mini-content{        
+        width: 82.99999%;
+    }
 }
 .besty-homepage{
 	min-height:0px !important;
@@ -359,7 +366,7 @@ img{
 	display: inline-block;
     font-size: 14px;
     list-style: none outside none;
-    padding: 8px 0px 0px;
+    padding: 8px 0px;
     width: 100%;
 }
 .besty-widget ul.children,
@@ -544,7 +551,7 @@ img{
 .besty-comments .form-submit{
 	float: left;
     margin: 20px 0 20px 27px;
-    width: 31%;
+    width: 30.93%;
 }
 .besty-comments .comment-form-author label,
 .besty-comments .comment-form-email label,
@@ -681,7 +688,7 @@ img{
 	.shidebar-control{
 		display:none;
 	}
-}
+}   
 @media (max-width:767px){
 	.menu-sidebar{
 		position:relative;
@@ -742,6 +749,9 @@ img{
 	.menu-sidebar-more{
 		display:none;
 	}
+        .custom-header-img{
+            margin-top: 25px;
+        }
 	
 }
 @media only screen and (min-width:1007px) and (max-width: 1200px){

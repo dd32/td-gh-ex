@@ -18,12 +18,6 @@ get_header();
 			?>            
             <div class="blog-title"><?php the_title();?></div>
             <div class="besty-post-content"><?php the_content(); ?>
-             <?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
-					'after' => '</div>',
-				) );
-			?>
             </div>            
             </div>            
          <?php

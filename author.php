@@ -7,7 +7,7 @@ get_header();
 <div class="mini-content">
     <div class="col-md-9">
     <div class="col-md-12 single-box">
-		<h1 class="blog-title"><?php echo 'Author : All posts by : '.get_the_author().''; ?></h1>
+		<h1 class="blog-title"> <?php _e('Author ','besty'); echo ": ". __('All posts by ','besty'), get_the_author(); ?></h1>
    	</div>
     <div class="masonry-container">    	
         <?php
@@ -32,8 +32,8 @@ get_header();
          </div>
          <div class="col-md-12 besty-pagination">
 		  <?php if (function_exists('faster_pagination') ) { faster_pagination(); } else { ?>
-			<span class="besty-previous-link"><?php previous_posts_link('&laquo; Previous'); ?></span>
-			<span class="besty-next-link"><?php next_posts_link('Next &raquo;'); ?></span>
+			<span class="besty-previous-link"><?php previous_posts_link(__('Previous','besty').' &raquo;'); ?></span>
+            <span class="besty-next-link"><?php next_posts_link(__('Next','besty').' &raquo;'); ?></span>
 		 <?php } ?>
       </div>
     </div>

@@ -23,8 +23,8 @@ function besty_custom_header_setup() {
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'besty_custom_header_args', array(
 		'default-text-color'     => 'fff',
-		'width'                  => 1260,
-		'height'                 => 240,
+		'width'                  => 200,
+		'height'                 => 70,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'besty_header_style',
 		'admin-head-callback'    => 'besty_admin_header_style',
