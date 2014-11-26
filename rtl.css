@@ -1,0 +1,240 @@
+/*
+Theme Name: SPARK
+Theme URI: http://d5creation.com/themes/spark/
+
+Author: D5 Creation
+Author URI: http://d5creation.com/
+
+Description: SPARK WordPress Theme is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: http://d5creation.com/theme/spark 
+
+Version: 1.0
+
+Tags: gray, light, white, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, black, blue, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support,full-width-template, theme-options 
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+SPARK WordPress Theme, Copyright 2014-2015: D5 Creation (www.d5creation.com)
+SPARK is distributed under the terms of the GNU GPL
+
+Text Domain: spark
+
+*/
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align:right;
+}
+
+.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.wp-caption.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+
+.tcontainer1 {
+	float:right;
+	border-left-color: transparent;
+}
+
+.tcontainer2 {
+	float: left;
+	border-right-color: transparent;
+}
+
+img.site-logo, .site-title {
+	float:right;
+}
+
+#content {
+	float:right;
+}
+
+#left-sidebar {
+	float:left;
+}
+
+#spark-main-menu {
+	float:left;
+}
+
+#spark-main-menu li {
+	float:right;
+}
+
+#spark-main-menu li ul {
+	float:right;
+}
+
+#spark-main-menu ul ul,
+.sub-menu, .sub-menu ul ul {
+	float:right;
+	right:0;
+	left: auto;
+}
+
+#spark-main-menu ul ul ul {
+	right:100%;
+	left: auto;
+}
+
+#spark-main-menu ul ul a {
+	text-align:right;
+}
+
+#left-sidebar .widget li {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+#footer-widget {
+	float:right;
+}
+
+#footer-sidebar .widgets {
+	margin-right:6%;
+	float:right;
+	margin-left: auto;
+}
+
+#footer-sidebar .widget li {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+ul, ol {
+	margin:0 25px 10px 0;
+}
+
+address {
+	text-align:left;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select {
+	border-right:1px solid #999999;
+	border-left:1px solid #FFFFFF;
+}
+
+.post.sticky,
+.sticky {
+	background:url("images/sticky.png") no-repeat scroll left top #F2F2F2;
+}
+
+#featured-boxs {
+	text-align:right;
+}
+
+h3.featured-box2 {
+	float:left;
+}
+
+.featured-box, .featured-box-first {
+	text-align:right;
+}
+
+blockquote, q {
+	border-right:10px solid #ccc;
+	border-left:10px solid #ccc;
+}
+
+blockquote:before, q:before {
+	margin-left:.20em;
+	margin-right: auto;
+}
+
+blockquote:after, q:after {
+	margin-right:.20em;
+	margin-left: auto;
+}
+
+#container .attachment-thumbnail, #container .attachment-spark-category-thumb {
+	margin:0px 0 10px 15px;
+	float:right;
+}
+
+h1.page-title,
+h1.arc-post-title {
+	text-align:right;
+}
+
+h2.post-title,
+h2.comments,
+h3#reply-title,
+h2.post-title-color {
+	text-align:right;
+}
+
+.floatright {
+	float:right;
+	text-align:right;
+}
+
+.floatleft {
+	float:left;
+	text-align:left;
+}
+
+#page-nav .alignleft {
+	text-align:left;
+}
+
+#page-nav .alignright {
+	text-align:right;
+}
+
+#commentsbox img.avatar {
+	right:0;
+	left: auto;
+}
+
+#commentsbox .commentlist li.comment {
+	padding:5px 50px 0 0;
+}
+
+#commentsbox .commentlist .children li {
+	margin:0 -25px 0 0;
+}
+
+.social a {
+	float: right;
+}
