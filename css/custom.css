@@ -1,19 +1,31 @@
+@font-face {
+    font-family: 'Scada-Regular';
+    src: url(../fonts/Scada-Regular.ttf);
+}
+@font-face {
+    font-family: Scada-Bold;
+    src: url(../fonts/Scada-Bold.ttf);
+}
+@font-face {
+    font-family: Scada-Italic;
+    src: url(../fonts/Scada-Italic.ttf);
+}
 body{
 	width:100%;
 	margin:0;
 	padding:0;
-	font-family:'Scada';
+	font-family:'Scada-Regular';
 	background-color:#f6f6f6;	
 	color:#000;
-} 
+}
+.webpage-container{
+	width:1080px;
+	margin:0 auto;
+}
 .no-padding{
 	padding-left: 0;
     padding-right: 0;
 }
-.no-post-found-cls {
-    float: left;
-    width: 100%;
-} 
 img{
 	max-width: 100%;
 	vertical-align: middle;	
@@ -43,6 +55,8 @@ img{
 	float:left;
 	width: 100%;	
 } 
+/**************************header *********************/
+
 .header_top{
 	background-color:#2b2b2b;
 	
@@ -217,6 +231,7 @@ margin: 0;
 .logo{
 	margin-top:10px;
 }
+/**************************laurels-home-page *********************/
 .color_txt{
 	color:#12bbd5;	
 }
@@ -278,7 +293,7 @@ margin: 0;
 .caption-text p{
 	color: #1e1e1e;
 	font-size: 35px;
-	font-family: 'Scada';	
+	font-family: Scada-Bold;	
 	text-align: center;
 	margin-bottom: 24px;
 	line-height: 24px;
@@ -314,45 +329,19 @@ margin: 0;
 	max-width:100%;
 }
 .row_img > p{	
+	background-image:url(../images/img-bg.png);
+	background-size:auto auto;
+	background-position:center center;
+	background-repeat:no-repeat;
     color: rgb(254, 254, 254);
     font-size: 22px;
     padding: 2px 0;
     position: absolute;
-    top: 85px;
-    left: 12%;
-    width: 80%;
-    text-transform: uppercase;
-    background: #12bbd5;
+    top: 28%;
+	left:10%;
+    width: 80%;	
+	text-transform: uppercase;
 }
-.row_img > p::after {
-    right: 0;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(136, 183, 213, 0);
-    border-right-color: #f6f6f6;
-    border-width: 30px;
-    margin-top: -30px;
-}
-
-.row_img > p::before {
-    left: -18px;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(194, 225, 245, 0);
-    border-left-color: #f6f6f6;
-    border-width: 36px;
-    margin-top: -36px;
-} 
 .row_img > p >  span {
     font-size: 15px;
     margin-left: 8px;
@@ -548,6 +537,9 @@ top: 55px;
 right: -45px;
 top: 55px;
 }
+/**************************laurels-home-page complete *********************/
+
+/**************************page-aboutus start *********************/
 .aboutus-section1{
 	margin:40px 0 35px 0;	
 }
@@ -562,7 +554,7 @@ top: 55px;
 }
 .color_txt1{
 	color:#515050;
-	font-family: 'Scada';		
+	font-family: Scada-Bold;		
 }
 .color_txt1:hover,
 .color_txt1:focus{
@@ -632,6 +624,9 @@ top: 55px;
 .our-strategy{
 	margin-top:40px;	
 }
+/**************************page-aboutus end *********************/
+
+/**************************page-ourteam start *********************/
 .our-team-section1{
 	margin-top:40px;		
 }
@@ -689,6 +684,9 @@ top: 55px;
 	background-color:#a7a7a7;
 	padding-top:2px;
 }
+/**************************page-ourteam end *********************/
+
+/**************************blog-page start *********************/
 .blog-page{
 	padding-left:0;
 	padding-right:35px;
@@ -981,6 +979,8 @@ a:hover,a:focus{
 	-webkit-transition: all ease-in-out 0.5s;    
 	transition: all ease-in-out 0.5s;
 }
+/**************************blog-page end *********************/
+/**************************contact-page start *********************/
 .gmap iframe{
 	width:100%;
 	margin:35px 0 20px;
@@ -1078,6 +1078,7 @@ a:hover,a:focus{
 	margin-top:18px;	
 	margin-left: 0;
 }
+/**************************contact-page end *********************/
 .services{
 	margin-top:45px;	
 }
@@ -1115,6 +1116,11 @@ a:hover,a:focus{
 	padding-left:15px;
 	text-transform: uppercase;
 }
+/**************************portfolio-page complete *********************/
+/*h1, h2, h3, h4, h5, h6, ul, p {
+    margin: 0;
+    padding: 0;
+} */
 .laurels_menu{
     padding: 30px 0 25px 0;
 }
@@ -1127,7 +1133,7 @@ a:hover,a:focus{
 .laurels_menu h1 {
     color: #1e1e1e;
     float: left;    
-    font-family: 'Scada';
+    font-family: Scada-Bold;
 	text-transform: capitalize;
 	margin:0px;
 }
@@ -1183,6 +1189,9 @@ a:hover,a:focus{
 .portfolio_btns{
     margin: 10px 0 35px;
 }
+/**************************portfolio-page complete *********************/
+
+/**************************portfolio-2 start *********************/
 .padding-left{
 	margin-left:28px;
 }
@@ -1202,12 +1211,18 @@ a:hover,a:focus{
 .owl-pagination{
 	display:none;
 }
+/**************************portfolio-2 end *********************/
+
+/**************************portfolio-3 start *********************/
 .portfolio-3{
 	margin-top:50px;	
 }
 .portfolio-3-btns{
 	margin:5px 0 40px 0;	
 }
+/**************************portfolio-3 end *********************/
+
+/**************************single-portfolio start *********************/
 .single-portfolio-article{
 	margin:50px 0 55px 0;
 }
@@ -1240,6 +1255,10 @@ a:hover,a:focus{
 	display: inline-block;
 	width: 100%;	
 }
+
+/**************************single-portfolio start *********************/
+
+/**************************footer start*********************/
 footer{
 	background-color:#121212;
 	
@@ -1357,3 +1376,6 @@ footer{
 .address{
 	margin-bottom:35px;	
 }
+/**************************footer complete*********************/
+
+

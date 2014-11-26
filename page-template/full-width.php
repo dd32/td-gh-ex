@@ -18,14 +18,11 @@ get_header(); ?>
     	<article class="blog-article">        
 	  <div id="post-<?php the_ID(); ?>" <?php post_class("col-md-12 col-sm-12 no-padding"); ?>> 
       <?php while ( have_posts() ) : the_post(); ?>
+      <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
                 <div class="blog">                
                     <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-                             <?php if ( has_post_thumbnail() ) { ?>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>">
-                              <?php the_post_thumbnail('',array('class'=>'img-responsive')); ?>
-                            </a>
-                            <?php } ?>
+							<img src="<?php echo esc_url($laurels_image); ?>" alt="<?php the_title(); ?>" class="img-responsive"  />
 						</div>
                     <?php } ?>
                     <div class="blog-data">
@@ -41,19 +38,19 @@ get_header(); ?>
                         </div>
                         <div class="blog-content">
                             <?php the_content(); 
-								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
-									'after' => '</div>',
-								) ); ?>
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
+										'after' => '</div>',
+									) ); ?>
                         </div>
                     </div>
                 </div> 
           <?php endwhile; ?>       
                 <div class="comments">
-					<?php  comments_template( '', true ); ?>
+					 <?php  comments_template( '', true ); ?>
                 </div>              
             </div>    
     	</article>
     </div>
 </section>
-<?php get_footer();
+<?php get_footer(); ?>

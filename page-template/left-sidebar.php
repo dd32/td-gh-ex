@@ -19,13 +19,10 @@ get_header(); ?>
 		<?php get_sidebar(); ?>       
 	<div id="post-<?php the_ID(); ?>" <?php post_class("col-md-9 col-sm-8 blog-left-page"); ?>> 
       <?php while ( have_posts() ) : the_post(); ?>
+      <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
                 <div class="blog">                
                     <div class="blog-rightsidebar-img">
-                    <?php if ( has_post_thumbnail() ) { ?>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>">
-                              <?php the_post_thumbnail('',array('class'=>'img-responsive')); ?>
-                            </a>
-                            <?php } ?>
+					<?php if(!empty($laurels_image)) { ?><img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title() ?>" /><?php } ?>
                     </div>
                     <div class="blog-data">
                         <div class="blog-date text-center">
@@ -40,10 +37,10 @@ get_header(); ?>
                         </div>
                         <div class="blog-content">
                             <?php the_content();
-								 wp_link_pages( array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
-								'after' => '</div>',
-							) ); ?>
+										 wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
+										'after' => '</div>',
+									) );?>
                         </div>
                     </div>
                 </div> 
@@ -55,4 +52,4 @@ get_header(); ?>
     	</article>
     </div>
 </section>
-<?php get_footer();
+<?php get_footer(); ?>

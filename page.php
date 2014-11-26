@@ -17,9 +17,10 @@ get_header(); ?>
     <div class="container webpage-container">
     	<article class="blog-article">        
 	<div id="post-<?php the_ID(); ?>" <?php post_class("col-md-9 col-sm-8 blog-page"); ?>> 
-      <?php while ( have_posts() ) : the_post();
-        $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-                <div class="blog">
+      <?php while ( have_posts() ) : the_post(); ?>
+      <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+                <div class="blog">                
+                    
                     <div class="blog-data">
                         <div class="blog-date text-center">
                             <h2 class="color_txt"> <?php echo get_the_date('d'); ?></h2>
@@ -31,25 +32,27 @@ get_header(); ?>
                                <?php laurels_entry_meta(); ?>   
                             </div>
                         </div>
+                        
                         <div class="blog-rightsidebar-img">
 					<?php if(!empty($laurels_image)) { ?><img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" /><?php } ?>
                     </div>
+                        
                         <div class="blog-content">
                             <?php the_content();
-								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
-									'after' => '</div>',
-								) ); ?>
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+										'after' => '</div>',
+									) ); ?>
                         </div>
                     </div>
                 </div> 
           <?php endwhile; ?>       
                 <div class="comments">
-					<?php comments_template( '', true ); ?>
+					 <?php comments_template( '', true ); ?>
                 </div>              
             </div>
              <?php get_sidebar(); ?>       
     	</article>
     </div>
 </section>
-<?php get_footer();
+<?php get_footer(); ?>
