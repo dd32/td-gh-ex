@@ -1,34 +1,59 @@
+<?php if(is_active_sidebar('footer-sidebar-1') && is_active_sidebar('footer-sidebar-2')): ?> 
    <footer id="kt-footer">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="kt-footer-column">
-                        <?php if (!dynamic_sidebar( 'left-footer-sidebar')): ?>
+   <div class="container">
+        <div class="row">
+        <?php $fsn = esc_html(of_get_option('footer_sidebars_number','1')); 
+              if($fsn == 1):
+        ?>
+               <div class="col-md-12" id="kt-sidebar">
+                    <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
                         <div class="pre-widget">
-                            <h3><?php _e('Widgetized Sidebar', 'businesscard'); ?></h3>
+                            <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
                             <p><?php _e('This panel is active and ready for you to add 
-                            some widgets via the WP Admin', 'businesscard'); ?></p>
+                            some widgets via the WP Admin', 'beyondmagazine'); ?></p>
                         </div>
-                        <?php endif; ?>   
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="kt-footer-column">
-                        <?php if (!dynamic_sidebar( 'right-footer-sidebar')): ?>
+                    <?php endif; ?>
+                </div>    
+        <?php elseif($fsn == 2): ?>
+                <div class="col-md-6" id="kt-sidebar">
+                    <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
                         <div class="pre-widget">
-                            <h3><?php _e('Widgetized Sidebar', 'businesscard'); ?></h3>
+                            <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
                             <p><?php _e('This panel is active and ready for you to add 
-                            some widgets via the WP Admin', 'businesscard'); ?></p>
+                            some widgets via the WP Admin', 'beyondmagazine'); ?></p>
                         </div>
-                        <?php endif; ?> 
-                        </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
-            </footer>
+                <div class="col-md-6" id="kt-sidebar">
+                    <?php if (!dynamic_sidebar( 'footer-sidebar-2')): ?>
+                        <div class="pre-widget">
+                            <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
+                            <p><?php _e('This panel is active and ready for you to add 
+                            some widgets via the WP Admin', 'beyondmagazine'); ?></p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+        <?php else: ?>
+               <div class="col-md-12" id="kt-sidebar">
+                    <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
+                        <div class="pre-widget">
+                            <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
+                            <p><?php _e('This panel is active and ready for you to add 
+                            some widgets via the WP Admin', 'beyondmagazine'); ?></p>
+                        </div>
+                    <?php endif; ?>
+                </div>    
+        <?php endif ;?>    
+        </div>
+    </div>
+   </footer>
+<?php endif; ?>
             <div id="kt-copyright">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="kt-footer-column">
-                        <p class="small">&copy; Copyright 2014, Beyond Magazine Theme. All Rights Reserved</p>
+                        <p><a rel="nofollow" href="<?php echo esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')); ?>">
+                        <?php printf( __( 'Beyond Magazine', 'beyondmagazine' )); ?></a>, <?php echo __('&copy; 2014','beyondmagazine'); ?> <?php echo get_bloginfo('name'); ?></p>
                         </div>
                     </div>
                 </div>

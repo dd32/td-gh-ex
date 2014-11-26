@@ -4,15 +4,18 @@ Theme URI: http://ketchupthemes.com/beyond-magazine/
 Author: Alexandros Itsios
 Author URI: http://ketchupthemes/alex-itsios
 Description: Beyond is a free and responsive Magazine Theme for WordPress that makes you stand out of the crowd.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, light, two-columns, editor-style, left-sidebar, responsive-layout, custom-menu, featured-image-header, featured-images, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header
 TextDomain: beyondmagazine
 */
-/********
+
+/***
+*
 GENERAL
-********/
+*
+***/
 body {
 	text-align: justify;
 	color: #a2a2a2;
@@ -33,6 +36,74 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 a:hover {
 	text-decoration: none;
 }
+
+/***
+*
+DEFAULT WORDPRESS CLASSES
+*
+***/
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
 .sticky{}
 .bypostauthor{}
 .gallery-caption{}
@@ -41,7 +112,7 @@ a:hover {
 }
 /***
 *
-MAIN
+HEADER
 *
 ***/
 .kt-wrapper {
@@ -124,7 +195,11 @@ MAIN
 .slicknav_menu{
        display:none;
    }
-
+/***
+*
+MAIN
+*
+***/
 #kt-latest-title{
 	color: #06bfea;
 	text-align: center;
@@ -201,73 +276,9 @@ MAIN
 }
 /***
 *
-SIDEBAR & WIDGETS
+COMMENTS
 *
 ***/
-#kt-sidebar{
-	color: #a2a2a2;
-}
-#kt-sidebar h3 {
-	position: relative;
-	overflow: hidden;
-	padding-left: 10px;
-}
-#kt-sidebar h3 span {
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto;
-  position: relative;
-  padding: 0 10px;
-}
-#kt-sidebar h3 span:before, #kt-sidebar h3 span:after {
-  content: '';
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 0.6em;
-  border-image:url(img/bg.png) 1 1;
-}
-#kt-sidebar h3 span:before {
-  right: 100%;
-}
-#kt-sidebar h3 span:after {
-  left: 100%;
-}
-#kt-sidebar h1, #kt-sidebar h2, #kt-sidebar h3, #kt-sidebar h4, #kt-sidebar h5, #kt-sidebar h6, #kt-sidebar .h1, #kt-sidebar .h2, #kt-sidebar .h3, #kt-sidebar .h4, #kt-sidebar .h5, #kt-sidebar .h6 {
-	color: #06bfea;
-}
-
-/***
-*
-FOOTER & WIDGETS
-*
-***/
-#kt-footer {
-	background-color: #3a3a3a;
-	color: #fff;
-}
-.kt-footer-column {
-	margin: 15px;
-}
-#kt-footer h1, #kt-footer h2, #kt-footer h3, #kt-footer h4, #kt-footer h5, #kt-footer h6, #kt-footer .h1, #kt-footer .h2, #kt-footer .h3, #kt-footer .h4, #kt-footer .h5, #kt-footer .h6 {
-	color: #06bfea;
-	border-bottom: 1px solid #7a7a7a;
-	padding-bottom: 0.3em;
-}
-#kt-copyright {
-	background: #303030;
-	margin-bottom: 2px;
-}
-#kt-copyright p {
-	color: #fff;
-}
-
-/** Comments Styling **/
-/*-------------------*/
-/* Comments Styling  */
-/*-------------------*/
 p.comment-form-author{
     width:30%;
     display: inline-block;
@@ -315,7 +326,6 @@ p.comment-form-url input[type="text"]{
     border-left:1px solid #dddddd;
     border-right:1px solid #dddddd;
     border-bottom:1px solid #dddddd;
-    
 }
 .comment-body{
     padding:10px 0 20px 0;
@@ -412,7 +422,6 @@ p.comment-form-url input[type="text"]{
     margin-bottom: 24px;
     padding-top: 24px;
 }
-
 .comment-list > li:first-child > article,
 .comment-list > .pingback:first-child,
 .comment-list > .trackback:first-child {
@@ -480,7 +489,6 @@ p.comment-form-url input[type="text"]{
 .form-allowed-tags code {
     color: #767676;
 }
-
 .comment-notes,
 .comment-awaiting-moderation,
 .logged-in-as {
@@ -541,76 +549,75 @@ p.comment-form-url input[type="text"]{
     margin-top: 25px;
     margin-bottom: 0;
 }
-
-
-/** Widgets Styling  **/
 /***
 *
-DEFAULT WORDPRESS CLASSES
+SIDEBAR & WIDGETS
 *
 ***/
-.alignnone {
-    margin: 5px 20px 20px 0;
+#kt-sidebar{
+    color: #a2a2a2;
 }
-.aligncenter,
-div.aligncenter {
-    display: block;
-    margin: 5px auto 5px auto;
+#kt-sidebar h3 {
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
 }
-.alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+#kt-sidebar h3 span {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  position: relative;
+  padding: 0 10px;
 }
-.alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
+#kt-sidebar h3 span:before, #kt-sidebar h3 span:after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0.6em;
+  border-image:url(img/bg.png) 1 1;
 }
-a img.alignright {
-    float: right;
-    margin: 5px 0 20px 20px;
+#kt-sidebar h3 span:before {
+  right: 100%;
 }
-a img.alignnone {
-    margin: 5px 20px 20px 0;
+#kt-sidebar h3 span:after {
+  left: 100%;
 }
-a img.alignleft {
-    float: left;
-    margin: 5px 20px 20px 0;
+#kt-sidebar h1, #kt-sidebar h2, #kt-sidebar h3, #kt-sidebar h4, #kt-sidebar h5, #kt-sidebar h6, #kt-sidebar .h1, #kt-sidebar .h2, #kt-sidebar .h3, #kt-sidebar .h4, #kt-sidebar .h5, #kt-sidebar .h6 {
+    color: #06bfea;
 }
-a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+
+/***
+*
+FOOTER & WIDGETS
+*
+***/
+#kt-footer {
+    background-color: #3a3a3a;
+    color: #fff;
 }
-.wp-caption {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
+.kt-footer-column {
+    margin: 15px;
 }
-.wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+#kt-footer h1, #kt-footer h2, #kt-footer h3, #kt-footer h4, #kt-footer h5, #kt-footer h6, #kt-footer .h1, #kt-footer .h2, #kt-footer .h3, #kt-footer .h4, #kt-footer .h5, #kt-footer .h6 {
+    color: #06bfea;
+    border-bottom: 1px solid #7a7a7a;
+    padding-bottom: 0.3em;
 }
-.wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+#kt-copyright {
+    background: #303030;
+    margin-bottom: 2px;
 }
-.wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+#kt-copyright p {
+    color: #fff;
 }
-.wp-caption img {
-    border: 0 none;
-    height: auto;
-    margin: 0;
-    max-width: 98.5%;
-    padding: 0;
-    width: auto;
-}
-.wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
-}
+/***
+*
+BOOTSTRAP OVERRIDES
+*
+***/
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px), (max-width: 900px) {
    .slicknav_menu{
        display:block;

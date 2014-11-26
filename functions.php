@@ -1,10 +1,9 @@
 <?php
-/* 
- * Helper function to return the theme option value. If no value has been saved, it returns $default.
- * Needed because options are saved as serialized strings.
- *
- * This code allows the theme to work without errors if the Options Framework plugin has been disabled.
- */
+/***
+*
+OPTIONS -  This code works with the Options Framework Plugin
+*
+***/
 if ( !function_exists('of_get_option')) {
 function of_get_option($name, $default = false) {
     $optionsframework_settings = get_option('optionsframework');
@@ -22,12 +21,12 @@ function of_get_option($name, $default = false) {
     }
 }
 } 
+/***
+*
+TGM PLUGIN ACTIVATION
+*
+***/
 require_once('libs/class-tgm-plugin-activation.php');
-/***********************
-* TGM Plugin Activation
-***********************/
-//require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
- 
 add_action( 'tgmpa_register', 'beyond_register_recommended_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -51,8 +50,19 @@ function beyond_register_recommended_plugins() {
         array(
             'name'      => 'Options Framework',
             'slug'      => 'options-framework',
+            'required'  => false
+    ),
+        array(
+            'name'      => 'Bootstrap 3 Shortcodes',
+            'slug'      => 'bootstrap-3-shortcodes',
             'required'  => false,
-        )
+    ),
+        array(
+            'name'      => 'Ketchup Shortcodes',
+            'slug'      => 'ketchup-shortcodes-pack',
+            'required'  => false,
+    )
+    
 
     );
     $config = array(
@@ -87,26 +97,17 @@ function beyond_register_recommended_plugins() {
  
     tgmpa( $plugins, $config );
 }
-/************************************************************
-* Define Constant Variables
-*************************************************************/
-DEFINE('STYLE_URI',get_stylesheet_uri());
-/************************************************************
-* Theme Requirements (if any..)
-*************************************************************/
-
-/************************************************************
-* Theme Setup
-* - remove_header_info
-* - _kt_custom_background_cb
-* - register menu
-*************************************************************/
+/***
+*
+THEME SETUP
+*
+***/
 function beyond_theme_setup(){
     
-        // Set $content_width
+        
         if (!isset( $content_width ))
         $content_width = 575;
-         // Load Background
+
         $ketchupthemes_background_args = array(
         'default-color' => 'ffffff',
         'default-image' => get_template_directory_uri() . '/img/bg.png',
@@ -114,7 +115,7 @@ function beyond_theme_setup(){
         );
         add_theme_support( 'custom-background', $ketchupthemes_background_args );
         add_editor_style( 'style.css' );
-        //Load Header
+        
         $ketchupthemes_header_defaults = array(
         'default-image'          => '',
         'random-default'         => false,
@@ -171,11 +172,11 @@ body.custom-background { <?php echo trim( $style ); ?> }
 </style>
 <?php
 }
-/************************************************************
-*Load Stylesheets and Scripts..
-*************************************************************/
-    
-    /***JS***/
+/***
+*
+LOAD CSS AND JS STYLES
+*
+***/
     function beyond_load_scripts() {
    
         wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
@@ -190,7 +191,7 @@ body.custom-background { <?php echo trim( $style ); ?> }
         wp_enqueue_script( 'comment-reply' );
     }
     add_action('wp_enqueue_scripts', 'beyond_load_scripts');
-    /***CSS***/
+
     function beyond_load_styles()
     { 
         wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
@@ -198,7 +199,7 @@ body.custom-background { <?php echo trim( $style ); ?> }
         wp_enqueue_style( 'slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
         wp_enqueue_style( 'elegant-font',get_template_directory_uri().'/elegant_font/HTML_CSS/style.css','','','all');
         wp_enqueue_style( 'openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-        wp_enqueue_style( 'style', STYLE_URI,'','','all' );
+        wp_enqueue_style( 'style', get_stylesheet_uri(),'','','all' );
     }    
     add_action('wp_enqueue_scripts', 'beyond_load_styles');
    
@@ -208,13 +209,15 @@ body.custom-background { <?php echo trim( $style ); ?> }
         echo '<![endif]-->';
     }
     add_action('wp_head', 'beyond_add_ie_html5_shim');
-/************************************************************
-*Sidebar Initialization
-*************************************************************/
+/***
+*
+SIDEBARS INITIALIZATION
+*
+***/
 function beyond_widgets_init() {
     
     register_sidebar(array(
-        'name' => __('Sidebar', 'businesscard' ),
+        'name' => __('Sidebar', 'beyondmagazine' ),
         'id'   => 'sidebar',
         'description' => __('This is the widgetized sidebar.', 'beyondmagazine' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -223,8 +226,8 @@ function beyond_widgets_init() {
         'after_title'   => '</span></h3>'
     ));
     register_sidebar(array(
-        'name' => __('Left footer Sidebar', 'businesscard' ),
-        'id'   => 'left-footer-sidebar',
+        'name' => __('Left footer Sidebar', 'beyondmagazine' ),
+        'id'   => 'footer-sidebar-1',
         'description' => __('This is the widgetized sidebar.', 'beyondmagazine' ),
         'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s">',
         'after_widget'  => '</div>',
@@ -232,8 +235,8 @@ function beyond_widgets_init() {
         'after_title'   => '</h3>'
     ));
     register_sidebar(array(
-        'name' => __('Right Footer Sidebar', 'businesscard' ),
-        'id'   => 'right-footer-sidebar',
+        'name' => __('Right Footer Sidebar', 'beyondmagazine' ),
+        'id'   => 'footer-sidebar-2',
         'description' => __('This is the widgetized sidebar.', 'beyondmagazine' ),
         'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s">',
         'after_widget'  => '</div>',
@@ -242,11 +245,11 @@ function beyond_widgets_init() {
     ));
     }
 add_action( 'widgets_init', 'beyond_widgets_init' );
-/************************************************************
-*Theme Functions (general) ,filters and hooks
-* - excerpt_length
-* - wp_title
-*************************************************************/
+/***
+*
+THEME FUNCTIONS
+*
+***/
 function beyond_wp_title($title,$sep){
 
     global $page, $paged;

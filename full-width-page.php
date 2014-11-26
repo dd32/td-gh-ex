@@ -1,8 +1,12 @@
-<?php get_header();?>
+<?php 
+/**
+* Template Name: Full Width
+*/
+get_header();?>
 <div class="row" id="kt-main">
-                <div class="col-md-9">
+                <div class="col-md-12">
                 <?php if(have_posts()):while(have_posts()):the_post();?>
-                    <div <?php post_class('kt-article'); ?> id="post-<?php the_ID(); ?>">
+                     <div <?php post_class('kt-article'); ?> id="post-<?php the_ID(); ?>">
                         <div id="kt-icon">
                             <div id="kt-icon-inner"><i class="glyphicon glyphicon-file"></i></div>
                         </div>
@@ -18,17 +22,11 @@
                             </h1>
                         </div>
                         <div>
-                            <p class="small"><?php the_date('d, M Y') ;?> by <a href="<?php echo get_the_author_link();?>"><?php echo get_the_author(); ?></a> <?php echo __('in','beyondmagazine');?> <?php echo get_the_category_list(','); ?> &nbsp; 
-                             <?php if(has_tag()):?>
-                            <i class="glyphicon glyphicon-tags small"></i> &nbsp; 
-                            <?php 
-                            echo get_the_tag_list(' ',', ',' ');
-                            ?> 
-                            <?php endif; ?>
-                            &nbsp; <i class="glyphicon glyphicon-comment small"></i> 
-                            <?php comments_number( __('No Comments','beyondmagazine'), __('1 Comment','beyondmagazine'),__('% Comment' ,'beyondmagazine')); ?></p>
                             <p>
-                            <?php if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif; 
+                            <?php 
+                            if(has_post_thumbnail()):
+                                the_post_thumbnail('',array('class'=>'img-responsive')); 
+                            endif; 
                             ?>
                             </p>
                             
@@ -47,6 +45,5 @@
                     </div>
                 </div>
                 <?php endwhile; endif;?>
-                <?php get_sidebar(); ?>
             </div>
 <?php get_footer();?>

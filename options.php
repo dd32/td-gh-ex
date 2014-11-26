@@ -27,52 +27,6 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-	);
-
-	// Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
-
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
-
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
-
-	// If using image radio buttons, define a directory path
     $columns = array('two_col'=>__('Two Columns','beyondmagazine'), 
                      'three_col'=>__('Three Columns','beyondmagazine'));
 
@@ -94,6 +48,36 @@ function optionsframework_options() {
         'id' => 'post_layout',
         'std' => 'two_col',
         'type' => 'radio',
-        'options' => $columns);    
+        'options' => $columns);  
+    
+    $options[] = array(
+        'name' => __('Footer Sidebars', 'beyondmagazine'),
+        'desc' => __('Select Footer Sidebars Number.', 'beyondmagazine'),
+        'id' => 'footer_sidebars_number',
+        'std' => '1',
+        'type' => 'radio',
+        'options' => array('1'=>__('1','beyondmagazine'),
+                           '2'=>__('2','beyondmagazine')
+                           ));
+    $options[] = array(
+        'name' => __('Premium Options', 'beyondmagazine'),
+        'type' => 'heading');
+        
+    $options[] = array(
+        'name' => __('Premium Features', 'beyondmagazine'),
+        'desc' => __('<ul>
+        
+        <li>Upload Logo</li>
+        <li>Slider (enable/disable title & description)</li>
+        <li>Testimonials</li>
+        <li>Google Fonts</li>
+        <li>Color Picker</li>
+        <li>Opening Hours</li>
+        <li>Jet Pack </li>
+        <li>2-4 Columns Widgetized Footer Sidebar</li>
+        </ul>
+        <p>
+        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')).'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">Update to Premium</a></p>'),
+        'type' => 'info');  
 	return $options;
 }
