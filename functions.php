@@ -91,6 +91,7 @@
 	
 	color: #<?php echo get_header_textcolor(); ?>;
 	}
+	</style>
 	<?php 
 	}
 	
