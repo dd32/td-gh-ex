@@ -10,61 +10,55 @@
 			$class_single = 'post-video';
 		} else if ( get_post_format() == 'audio' ){ 
 			$class_single = 'post-audio';
+		} else if ( get_post_format() == 'gallery' ){ 
+			$class_single = 'post-gallery';
 		} else {
 			$class_single = 'mw_single';
 		}
-		$videourl = get_post_meta($post->ID, 'videourl', true);
-		$audiourl = get_post_meta($post->ID, 'audiourl', true);
 	?>
 	<header class="entry-header <?php echo $class_single; ?>">
-
-
-		<?php  
-		if ( $videourl != '' ) : ?>
-
-		<div class="featured-media">		
-			<?php if (strpos($videourl,'.mp4') !== false) : ?>				
-				<video controls>
-					<source src="<?php echo $videourl; ?>" type="video/mp4">
-				</video>
-			<?php else : ?>				
-				<?php 				
-					$embed_code = wp_oembed_get($videourl); 					
-					echo $embed_code;					
-				?>					
-			<?php endif; ?>			
-		</div>
-	
-		<?php endif; ?>
-		<?php  
-		if ( $audiourl != '' ) : ?>
-
-		<div class="featured-media">		
-			<?php 
-				$attr = array(
-					'src'      => $audiourl,
-					'loop'     => '',
-					'autoplay' => '',
-					'preload' => 'none'
-					);
-					
-				echo '<div class="mw_audio">';
-				echo wp_audio_shortcode( $attr );
-				echo '</div>';
-			?>			
-		</div>
-	
-		<?php endif; ?>
 		
-		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+		<?php if ( get_post_format() == 'gallery' ) {
+			?>
+			<div class="flexslider">
+		<?php 
+		$args = array(
+			'post_parent' => $post->ID,
+			'post_type' => 'attachment',
+			'orderby' => 'menu_order', // you can also sort images by date or be name
+			'order' => 'ASC',
+			'numberposts' => -1, // number of images (slides)
+			'post_mime_type' => 'image',
+			'post_status'    => null,
+		);
+
+		if ( $images = get_children( $args ) ) {
+			// if there are no images in post, don't display anything
+			echo '<ul class="slides">';
+
+					foreach( $images as $image ) {
+						echo '<li>';
+						echo wp_get_attachment_image( $image->ID, 'blog_img' );
+						echo '</li>';
+					}
+					
+			echo '</ul>'; 
+		} ?>
+
+		</div>
+		<?php } else if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 			<?php the_post_thumbnail('blog_img'); ?>
 		<?php endif; ?>
 
 		<div class="mw_title">
-			<div class="entry-time">
-				<span class="day"><?php the_time( 'j' ); ?></span>
-				<span class="month"><?php the_time( 'M' ); ?></span> /
-				<span class="year"><?php the_time( 'Y' ); ?></span>
+			<div class="entry-time">				
+				<?php if ( ('j M Y') == get_option( 'date_format' ) ) : ?>
+					<span class="day"><?php echo get_the_date('j'); ?></span>
+					<span class="month"><?php echo get_the_date('M'); ?></span> /
+					<span class="year"><?php echo get_the_date('Y'); ?></span>
+				<?php else : ?>
+					<span class="mw-date-format"><?php echo get_the_date(); ?></span>
+				<?php endif; ?>		
 			</div>
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><?php the_title(); ?></h1>
 			<?php mwsmall_post_icon(); ?>

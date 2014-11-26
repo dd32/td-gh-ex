@@ -140,6 +140,9 @@ function promo_info_none(){
 		#customize-control-more_info_mwthemes input{
 			display: none;
 		}
+		#customize-theme-controls #accordion-section-mwsmall_info .accordion-section-title {
+			background-color: #8CBEDD;
+		}
 	</style>
 	<?php
 }

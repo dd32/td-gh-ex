@@ -7,6 +7,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header post-video">
+		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+			<?php the_post_thumbnail('blog_img'); ?>
+		<?php endif; ?>
+		
 		<div class="mw_title">
 			<div class="entry-time">
 				<span class="day"><?php the_time( 'j' ); ?></span>

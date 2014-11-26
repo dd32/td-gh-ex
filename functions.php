@@ -20,7 +20,7 @@ function mwsmall_setup() {
 	set_post_thumbnail_size( 55, 55, true );
 	
 	add_theme_support( 'custom-background', apply_filters( 'mwsmall_custom_background_args', array(
-		'default-color' => 'f5f5f5',
+		'default-color' => 'e5e5e5',
 		'default-image' => '',
 	) ) );
 	
@@ -30,7 +30,7 @@ function mwsmall_setup() {
 		'flex-height' => true,
 		'height' => 250,
 		'header-text' => true,
-		'default-text-color'  => '#0099cc',
+		'default-text-color'  => '#ffffff',
 	);
 	add_theme_support( 'custom-header', $args );
 	
@@ -41,7 +41,6 @@ function mwsmall_setup() {
 	register_nav_menus( array(
 		'primary'		=>	__( 'Main Navigation', 'mwsmall' )
 	) );
-	
 } 
 endif;
 add_action( 'after_setup_theme', 'mwsmall_setup' );
@@ -71,7 +70,7 @@ function mwsmall_scripts() {
 add_action( 'wp_enqueue_scripts', 'mwsmall_scripts' );
 
 function mwsmall_add_editor_styles() {
-    add_editor_style( 'editor-style.css' );
+	add_editor_style( 'editor-style.css' );
 }
 add_action( 'after_setup_theme', 'mwsmall_add_editor_styles' );
 
