@@ -83,10 +83,8 @@ function laurels_framework_page(){
 		?>
     </div>
     <div class="header-right">
-      <?php
-			echo "<h1>". __( 'Theme Options', 'laurels' ) . "</h1>"; 			
-			echo "<div class='btn-save'><input type='submit' class='button-primary' value='Save Options' /></div>";			
-			?>
+		<h1> <?php _e( 'Theme Options', 'laurels' ) ?> </h1>
+		<div class='btn-save'><input type='submit' class='button-primary' value='<?php _e('Save Options','laurels') ?>' /></div>
     </div>
   </div>
   <div class="fasterthemes-details">
@@ -94,10 +92,10 @@ function laurels_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
-            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a></li>
-            <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-3">Social Settings</a></li>
-            <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="Homepage Settings" href="#options-group-2">Home page Settings</a></li>
-            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4">PRO Theme Features</a></li>
+            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1"><?php _e('Basic Settings','laurels'); ?></a></li>
+            <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-3"><?php _e('Social Settings','laurels'); ?></a></li>
+            <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="Homepage Settings" href="#options-group-2"> <?php _e('Home page Settings','laurels'); ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4"><?php _e('PRO Theme Features','laurels'); ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -111,26 +109,27 @@ function laurels_framework_page(){
             <!-------------- Header group ----------------->
           <div id="options-group-1" class="group faster-inner-tabs">   
           	<div class="section theme-tabs theme-logo">
-            <a class="heading faster-inner-tab active" href="javascript:void(0)">Site Logo</a>
+            <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo','laurels'); ?></a>
             <div class="faster-inner-tab-group active">
               	<div class="ft-control">
                 <input id="logo-img" class="upload" type="text" name="laurels_theme_options[logo]" 
-                            value="<?php if(!empty($laurels_options['logo'])) { echo esc_url($laurels_options['logo']); } ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($laurels_options['logo'])) { echo esc_url($laurels_options['logo']); } ?>" placeholder="<?php _e('No file chosen','laurels'); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($laurels_options['logo'])) { echo "<img src='".esc_url($laurels_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($laurels_options['logo'])) { echo "<img src='".esc_url($laurels_options['logo'])."' />
+					  <a class='remove-image'>Remove</a>"; } ?>
                 </div>
               </div>
             </div>
           </div>
             <div class="section theme-tabs theme-favicon">
-              <a class="heading faster-inner-tab" href="javascript:void(0)">Favicon</a>
+              <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Favicon','laurels'); ?></a>
               <div class="faster-inner-tab-group">
-              	<div class="explain">Size of favicon should be exactly 32x32px for best results.</div>
+              	<div class="explain"><?php _e('Size of favicon should be exactly 32x32px for best results.','laurels'); ?></div>
                 <div class="ft-control">
                   <input id="favicon-img" class="upload" type="text" name="laurels_theme_options[favicon]" 
-                            value="<?php if(!empty($laurels_options['favicon'])) { echo esc_url($laurels_options['favicon']); } ?>" placeholder="No file chosen" />
-                  <input id="upload_image_button1" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($laurels_options['favicon'])) { echo esc_url($laurels_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','laurels'); ?>" />
+                  <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="favicon-image">
                     <?php  if(!empty($laurels_options['favicon'])) { echo "<img src='".esc_url($laurels_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
@@ -138,10 +137,10 @@ function laurels_framework_page(){
               </div>
             </div>     
             <div id="section-footertext" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Copyright Text</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Copyright Text','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>                
+              		<div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','laurels'); ?></div>                
                   	<input type="text" id="footertext" class="of-input" name="laurels_theme_options[footertext]" size="32"  value="<?php if(!empty($laurels_options['footertext'])) { echo esc_attr($laurels_options['footertext']); } ?>">
                 </div>                
               </div>
@@ -154,20 +153,20 @@ function laurels_framework_page(){
 <div id="options-group-2" class="group faster-inner-tabs">  
 	
 	
-	<h3>Banner Slider</h3>
+	<h3><?php _e('Banner Slider','laurels'); ?></h3>
             <?php for($laurels_i=1; $laurels_i <= 5 ;$laurels_i++ ):?>
-            <div class="section theme-tabs theme-slider-img"> <a class="heading faster-inner-tab" href="javascript:void(0)">Slider <?php echo $laurels_i;?></a>
+            <div class="section theme-tabs theme-slider-img"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Slider','laurels');?> <?php echo $laurels_i;?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
                   <input id="slider-img-<?php echo $laurels_i;?>" class="upload" type="text" name="laurels_theme_options[slider-img-<?php echo $laurels_i;?>]" 
-                            value="<?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo esc_url($laurels_options['slider-img-'.$laurels_i]); } ?>" placeholder="No file chosen" />
-                  <input id="1upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo esc_url($laurels_options['slider-img-'.$laurels_i]); } ?>" placeholder="<?php _e('No file chosen','placeholder'); ?>" />
+                  <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="slider-img-<?php echo $laurels_i;?>">
                     <?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo "<img src='".esc_url($laurels_options['slider-img-'.$laurels_i])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
                 </div>
                 <div class="ft-control">
-                  <input type="text" placeholder="Slide<?php echo $laurels_i; ?> Link" id="slidelink-<?php echo $laurels_i;?>" class="of-input" name="laurels_theme_options[slidelink-<?php echo $laurels_i;?>]" size="32"  value="<?php if(!empty($laurels_options['slidelink-'.$laurels_i])) { echo esc_url($laurels_options['slidelink-'.$laurels_i]); } ?>">
+                  <input type="text" placeholder="<?php _e('Slide','laurels');?><?php echo $laurels_i; ?> <?php _e('Link','laurels'); ?>" id="slidelink-<?php echo $laurels_i;?>" class="of-input" name="laurels_theme_options[slidelink-<?php echo $laurels_i;?>]" size="32"  value="<?php if(!empty($laurels_options['slidelink-'.$laurels_i])) { echo esc_url($laurels_options['slidelink-'.$laurels_i]); } ?>">
                 </div>
               </div>
             </div>
@@ -175,63 +174,63 @@ function laurels_framework_page(){
 	
 	
 	
-	<h3>Title Bar</h3>	
-	<div id="section-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)">Title</a>
+	<h3><?php _e('Title Bar','laurels'); ?></h3>	
+	<div id="section-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Title','laurels'); ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
-                  <div class="explain">Enter home page title for your site , you would like to display in the Home Page.</div>
+                  <div class="explain"><?php _e('Enter home page title for your site , you would like to display in the Home Page.','laurels'); ?></div>
                   <input id="title" class="of-input" name="laurels_theme_options[home-title]" type="text" size="50" value="<?php if(!empty($laurels_options['home-title'])) { echo esc_attr($laurels_options['home-title']); } ?>" />
                 </div>
               </div>
             </div>
-            <div class="section theme-tabs theme-short_description"> <a class="heading faster-inner-tab" href="javascript:void(0)">Short Description</a>
+            <div class="section theme-tabs theme-short_description"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Short Description','laurels'); ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
-                  <div class="explain">Enter home content for your site , you would like to display in the Home Page.</div>
+                  <div class="explain"><?php _e('Enter home content for your site , you would like to display in the Home Page.','laurels'); ?></div>
                   <textarea name="laurels_theme_options[home-content]" rows="6" id="home-content1" class="of-input"><?php if(!empty($laurels_options['home-content'])) { echo esc_attr($laurels_options['home-content']); } ?></textarea>
                 </div>
               </div>
             </div>
 
 
-   <h3>First Section</h3>
+   <h3><?php _e('First Section','laurels'); ?></h3>
             <?php for($laurels_section_i=1; $laurels_section_i <=4 ;$laurels_section_i++ ): ?>
-            <div class="section theme-tabs theme-slider-img"> <a class="heading faster-inner-tab" href="javascript:void(0)">Tab <?php echo $laurels_section_i; ?></a>
+            <div class="section theme-tabs theme-slider-img"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Tab','laurels'); ?> <?php echo $laurels_section_i; ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
                   <input id="first-image-<?php echo $laurels_section_i;?>" class="upload" type="text" name="laurels_theme_options[home-icon-<?php echo $laurels_section_i;?>]" 
-                            value="<?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo esc_url($laurels_options['home-icon-'.$laurels_section_i]); } ?>" placeholder="No file chosen" />
-                  <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo esc_url($laurels_options['home-icon-'.$laurels_section_i]); } ?>" placeholder="<?php _e('No file chosen','laurels'); ?>" />
+                  <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="first-img-<?php echo $laurels_section_i;?>">
                     <?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo "<img src='".esc_url($laurels_options['home-icon-'.$laurels_section_i])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
                 </div>
                 <div class="ft-control">
-                  <div class="explain">Enter secion title for your home template , you would like to display in the Home Page.</div>
-                  <input type="text" placeholder="Enter title here" id="title-<?php echo $laurels_section_i;?>" class="of-input" name="laurels_theme_options[section-title-<?php echo $laurels_section_i;?>]" size="32"  value="<?php if(!empty($laurels_options['section-title-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-title-'.$laurels_section_i]); } ?>">
+                  <div class="explain"><?php _e('Enter secion title for your home template , you would like to display in the Home Page.','laurels'); ?></div>
+                  <input type="text" placeholder="<?php _e('Enter title here','laurels'); ?>" id="title-<?php echo $laurels_section_i;?>" class="of-input" name="laurels_theme_options[section-title-<?php echo $laurels_section_i;?>]" size="32"  value="<?php if(!empty($laurels_options['section-title-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-title-'.$laurels_section_i]); } ?>">
                 </div>
                 <div class="ft-control">
-                  <div class="explain">Enter secion post for your home template , you would like to display in the Home Page.</div>
-                  <input type="text" placeholder="Enter post here" id="post-<?php echo $laurels_section_i;?>" class="of-input" name="laurels_theme_options[section-post-<?php echo $laurels_section_i;?>]" size="32"  value="<?php if(!empty($laurels_options['section-post-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-post-'.$laurels_section_i]); } ?>">
+                  <div class="explain"><?php _e('Enter secion post for your home template , you would like to display in the Home Page.','laurels'); ?></div>
+                  <input type="text" placeholder="<?php _e('Enter post here','laurels'); ?>" id="post-<?php echo $laurels_section_i;?>" class="of-input" name="laurels_theme_options[section-post-<?php echo $laurels_section_i;?>]" size="32"  value="<?php if(!empty($laurels_options['section-post-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-post-'.$laurels_section_i]); } ?>">
                 </div>
                 <div class="ft-control">
-                  <div class="explain">Enter section content for home template , you would like to display in the Home Page.</div>
-                  <textarea name="laurels_theme_options[section-content-<?php echo $laurels_section_i; ?>]" rows="6" id="content-<?php echo $laurels_section_i; ?>" placeholder="Enter Content here" class="of-input"><?php if(!empty($laurels_options['section-content-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-content-'.$laurels_section_i]); } ?></textarea>
+                  <div class="explain"><?php _e('Enter section content for home template , you would like to display in the Home Page.','laurels');?></div>
+                  <textarea name="laurels_theme_options[section-content-<?php echo $laurels_section_i; ?>]" rows="6" id="content-<?php echo $laurels_section_i; ?>" placeholder="<?php _e('Enter Content here','laurels'); ?>" class="of-input"><?php if(!empty($laurels_options['section-content-'.$laurels_section_i])) { echo esc_attr($laurels_options['section-content-'.$laurels_section_i]); } ?></textarea>
                 </div>
               </div>
             </div>
             <?php endfor; ?>
 
-            <h3>Second Section</h3>
-            <div id="section-recent-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)">Category post title</a>
+            <h3><?php _e('Second Section','laurels'); ?></h3>
+            <div id="section-recent-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Category post title','laurels'); ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
-                  <div class="explain">Enter category post title for your site , you would like to display in the Home Page.</div>
+                  <div class="explain"><?php _e('Enter category post title for your site , you would like to display in the Home Page.','laurels'); ?></div>
                   <input id="post" class="of-input" name="laurels_theme_options[post-title]" type="text" size="50" value="<?php if(!empty($laurels_options['post-title'])) { echo esc_attr($laurels_options['post-title']); } ?>" />
                 </div>
               </div>
             </div>
-            <div class="section theme-tabs theme-short_description"> <a class="heading faster-inner-tab" href="javascript:void(0)">Category</a>
+            <div class="section theme-tabs theme-short_description"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Category','laurels'); ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
                   <select name="laurels_theme_options[post-category]" id="category">
@@ -277,11 +276,11 @@ function laurels_framework_page(){
               </div>
             </div>
             
-            <h3>Third Section</h3>
-            <div id="section-latespost-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)">Latest Post Title</a>
+            <h3><?php _e('Third Section','laurels'); ?></h3>
+            <div id="section-latespost-title" class="section theme-tabs"> <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Latest Post Title','laurels'); ?></a>
               <div class="faster-inner-tab-group">
                 <div class="ft-control">
-                  <div class="explain">Enter Latest post title for your site , you would like to display in the Home Page.</div>
+                  <div class="explain"><?php _e('Enter Latest post title for your site , you would like to display in the Home Page.','laurels');?></div>
                   <input id="post" class="of-input" name="laurels_theme_options[latestpost-title]" type="text" size="50" value="<?php if(!empty($laurels_options['latestpost-title'])) { echo esc_attr($laurels_options['latestpost-title']); } ?>" />
                 </div>
               </div>
@@ -294,55 +293,55 @@ function laurels_framework_page(){
           <!-------------- Social group ----------------->
           <div id="options-group-3" class="group faster-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
-            	<a class="heading faster-inner-tab active" href="javascript:void(0)">Facebook</a>
+            	<a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','laurels'); ?></a>
               <div class="faster-inner-tab-group active">
               	<div class="ft-control">
-              		<div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>                
+              		<div class="explain"><?php _e('Facebook profile or page URL i.e. ','laurels'); ?> http://facebook.com/username/ </div>                
                   	<input id="facebook" class="of-input" name="laurels_theme_options[facebook]" size="30" type="text" value="<?php if(!empty($laurels_options['facebook'])) { echo esc_url($laurels_options['facebook']); } ?>" />
                 </div>                
               </div>
             </div>
             <div id="section-twitter" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Twitter</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Twitter','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Twitter profile or page URL i.e. http://www.twitter.com/username/</div>                
+              		<div class="explain"><?php _e('Twitter profile or page URL i.e. ','laurels'); ?>http://www.twitter.com/username/</div>                
                   	<input id="twitter" class="of-input" name="laurels_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($laurels_options['twitter'])) { echo esc_url($laurels_options['twitter']); } ?>" />
                 </div>                
               </div>
             </div>
             <div id="section-pinterest" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Pinterest</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Pinterest','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Pinterest profile or page URL i.e. https://pinterest.com/username/</div>                
+              		<div class="explain"><?php _e('Pinterest profile or page URL i.e. ','laurels'); ?>https://pinterest.com/username/</div>                
                   	 <input id="pinterest" class="of-input" name="laurels_theme_options[pinterest]" type="text" size="30" value="<?php if(!empty($laurels_options['pinterest'])) { echo esc_url($laurels_options['pinterest']); } ?>" />
                 </div>                
               </div>
             </div>
 			<div id="section-googleplus" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Google plus</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Google plus','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Google plus profile or page URL i.e. https://googleplus.com/username/</div>                
+              		<div class="explain"><?php _e('Google plus profile or page URL i.e.','laurels'); ?> https://googleplus.com/username/</div>                
                   	 <input id="googleplus" class="of-input" name="laurels_theme_options[googleplus]" type="text" size="30" value="<?php if(!empty($laurels_options['googleplus'])) { echo esc_url($laurels_options['googleplus']); } ?>" />
                 </div>                
               </div>
             </div>
             <div id="section-rss" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">RSS</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('RSS','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">RSS profile or page URL i.e. https://www.rss.com/username/</div>                
+              		<div class="explain"><?php _e('RSS profile or page URL i.e.','laurels'); ?> https://www.rss.com/username/</div>                
                   	<input id="rss" class="of-input" name="laurels_theme_options[rss]" type="text" size="30" value="<?php if(!empty($laurels_options['rss'])) { echo esc_url($laurels_options['rss']); } ?>" />
                 </div>                
               </div>
             </div>
             <div id="section-linkedin" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Linkedin</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Linkedin','laurels'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Linkedin profile or page URL i.e. https://www.linkedin.com/username/</div>                
+              		<div class="explain"><?php _e('Linkedin profile or page URL i.e.','laurels');?>https://www.linkedin.com/username/</div>                
                   	<input id="rss" class="of-input" name="laurels_theme_options[linkedin]" type="text" size="30" value="<?php if(!empty($laurels_options['linkedin'])) { echo esc_url($laurels_options['linkedin']); } ?>" />
                 </div>                
               </div>
@@ -363,19 +362,20 @@ function laurels_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','laurels'); ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png" alr="..." /> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png" alr="..."/> </a></li>
-            <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
+            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','laurels'); ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
-<div class="save-options"><h2>Options saved successfully.</h2></div>
+<div class="save-options"><h2><?php _e('Options saved successfully.','laurels'); ?></h2></div>
 <div class="newsletter"> 
   <!-- Begin MailChimp Signup Form -->
-  <h1>Subscribe with us</h1>
-  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://eepurl.com/SP2nP" target="_blank">Click here to join</a></p>
+  <h1><?php _e('Subscribe with us','laurels'); ?></h1>
+  <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers.",
+  "laurels"); ?> <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join','laurels'); ?></a></p>
   <!--End mc_embed_signup--> 
 </div>
 <?php } ?>

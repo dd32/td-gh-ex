@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="laurels_menu_bg">
     	<div class="webpage-container container">
        	<div class="laurels_menu">
-     	<h1>Author : All posts by <?php echo get_the_author();?></h1>
+     	<h1><?php _e('Author ','laurels'); echo ": ". __('All posts by ','laurels'), get_the_author(); ?></h1>
             <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
             </div>

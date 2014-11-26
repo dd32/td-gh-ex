@@ -29,8 +29,10 @@ $laurels_options = get_option( 'laurels_theme_options' );
         	<?php if(!empty($laurels_options['footertext'])) {
 			 	echo esc_attr($laurels_options['footertext']).' '; 
 			  }
-				echo "<span class='foot_txt text-left'>Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/laurels' target='_blank'>Laurels</a>.</span>";
-			?>
+			?>  
+			<span class='foot_txt text-left'>
+			<?php _e('Powered by','laurels'); ?> <a href='http://wordpress.org' target='_blank'><?php _e('WordPress','laurels'); ?></a> <?php _e('and','laurels'); ?> <a href='http://fasterthemes.com/wordpress-themes/laurels' target='_blank'><?php _e('Laurels','laurels'); ?></a>
+			</span>
         </div>
         <div class="col-sm-6 col-md-3 no-padding bottom-footer">
         	<ul>

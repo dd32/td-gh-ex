@@ -7,9 +7,7 @@ get_header(); ?>
     <div class="laurels_menu_bg">
     	<div class="webpage-container container">
        	<div class="laurels_menu">
-     	<h1><?php if ( have_posts() ) : 
-	 		printf( __( 'Tag : %s', 'laurels' ), ' ' . single_tag_title( '', false ));
-		endif; ?></h1>
+     	<h1><?php  _e( 'Tags', 'laurels' ); echo ' : '. single_tag_title( '', false ) ?></h1>
             <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
             </div>

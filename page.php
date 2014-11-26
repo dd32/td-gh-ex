@@ -38,11 +38,11 @@ get_header(); ?>
                     </div>
                         
                         <div class="blog-content">
-                            <p><?php the_content();
+                            <?php the_content();
 									wp_link_pages( array(
 										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
 										'after' => '</div>',
-									) ); ?></p>
+									) ); ?>
                         </div>
                     </div>
                 </div> 

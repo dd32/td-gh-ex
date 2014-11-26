@@ -54,7 +54,7 @@ $laurels_options = get_option( 'laurels_theme_options' );
                 </div>              
                 <div class="col-md-2 col-sm-3  no-padding search-box">       	
 					<form method="get" id="searchform" action="<?php  echo esc_url(home_url()); ?>/">
-                	<input type="text" class="input-medium search-query search-input" name="s" placeholder="Search.." id="s" value="<?php the_search_query(); ?>">
+                	<input type="text" class="input-medium search-query search-input" name="s" placeholder="<?php _e('Search..','laurels'); ?>" id="s" value="<?php the_search_query(); ?>">
 						<button type="submit" class="add-on" id="searchsubmit">
 							<span class="fa fa-search"></span>
 						</button>      
@@ -78,7 +78,7 @@ $laurels_options = get_option( 'laurels_theme_options' );
                       <nav class="navbar-default main_menu navigation-deafault" role="navigation">
                        <div class="navbar-header res-nav-header toggle-respon">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                               <span class="sr-only">Toggle navigation</span>
+                               <span class="sr-only"></span>
                                <span class="icon-bar"></span>
                                <span class="icon-bar"></span>
                                <span class="icon-bar"></span>

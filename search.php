@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="laurels_menu_bg">
     	<div class="webpage-container container">
        	<div class="laurels_menu">
-     	<h1><?php printf( __( 'Search Results for : %s', 'laurels' ), ' ' . get_search_query() . ' ' ); ?></h1>
+     	<h1><?php  _e( 'Search Results for', 'laurels' ); echo ' : '. get_search_query(); ?></h1>
             <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
             </div>
@@ -20,7 +20,6 @@ get_header(); ?>
 		  <?php while ( have_posts() ) : the_post(); ?>
           <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
                 <div class="blog">                
-		 			
                     <div class="blog-data">
                         <div class="blog-date text-center">
                             <h2 class="color_txt"> <?php echo get_the_date('d'); ?></h2>

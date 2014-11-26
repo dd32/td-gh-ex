@@ -7,14 +7,13 @@ get_header(); ?>
     <div class="laurels_menu_bg">
     	<div class="webpage-container container">
        	<div class="laurels_menu">
-     	<h1><?php if ( have_posts() ) : printf( __( 'Archives : %s', 'laurels' ), '' . get_the_date('M-Y')  );
-		endif; ?></h1>
-            <div class="breadcrumb site-breadcumb">
-				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
-            </div>
-            </div>
-    	</div>
-    </div>
+     	<h1><?php  if ( have_posts() ) : _e('Archives','laurels'); echo " : ". get_the_date('M-Y');  endif;?></h1>
+	    <div class="breadcrumb site-breadcumb">
+			<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
+        </div>
+       </div>
+   	</div>
+  </div>
     <div class="container webpage-container">
     	<article class="blog-article">        
             <div class="col-md-9 col-sm-8 blog-page">

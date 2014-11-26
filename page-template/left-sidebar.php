@@ -38,7 +38,7 @@ get_header(); ?>
                         <div class="blog-content">
                             <?php the_content();
 										 wp_link_pages( array(
-										'before' => '<div class="page-links">' . __( 'Pages:', 'besty' ),
+										'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
 										'after' => '</div>',
 									) );?>
                         </div>

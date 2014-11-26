@@ -78,7 +78,7 @@ echo $before_title . $laurels_title . $after_title;;
 						</a>
 					</p>
   				   <p class="text-left clearfix">
-					   <span><?php comments_number( '0', '1', '%' ); ?>   Comments</span>
+					   <span><?php comments_number( '0', '1', '%' ); ?>   <?php _e('Comments','laurels'); ?></span>
 					    <?php // the_time(get_option( 'date_format' )); ?>
 				   </p>
             </div>

@@ -25,10 +25,10 @@ function laurels_custom_breadcrumbs() {
     if ( is_category() ) {
       $laurels_thisCat = get_category(get_query_var('cat'), false);
       if ($laurels_thisCat->parent != 0) echo get_category_parents($laurels_thisCat->parent, TRUE, ' ' . $laurels_delimiter . ' ');
-      echo $laurels_before . 'Archive by category "' . single_cat_title('', false) . '"' . $laurels_after;
+      echo $laurels_before . _e('Archive by category','laurels') .'"'. single_cat_title('', false) . '"' . $laurels_after;
 
     } elseif ( is_search() ) {
-      echo $laurels_before . 'Search results for "' . get_search_query() . '"' . $laurels_after;
+      echo $laurels_before . _e('Search results for','laurels').' "' . get_search_query() . '"' . $laurels_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $laurels_delimiter . ' ';
@@ -86,15 +86,15 @@ function laurels_custom_breadcrumbs() {
       if ($laurels_showcurrent == 1) echo ' ' . $laurels_delimiter . ' ' . $laurels_before . get_the_title() . $laurels_after;
 
     } elseif ( is_tag() ) {
-      echo $laurels_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $laurels_after;
+      echo $laurels_before . _e('Posts tagged','laurels') .' "' . single_tag_title('', false) . '"' . $laurels_after;
 
     } elseif ( is_author() ) {
        global $author;
       $laurels_userdata = get_userdata($author);
-      echo $laurels_before . 'Articles posted by ' . $laurels_userdata->display_name . $laurels_after;
+      echo $laurels_before . _e('Articles posted by','laurels') . $laurels_userdata->display_name . $laurels_after;
 
     } elseif ( is_404() ) {
-      echo $laurels_before . 'Error 404' . $laurels_after;
+      echo $laurels_before . _e('Error 404','laurels') . $laurels_after;
     }
 
     if ( get_query_var('paged') ) {

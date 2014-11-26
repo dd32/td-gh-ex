@@ -86,7 +86,7 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
     <div class="container webpage-container">
         <div class="section_row_3">                           
             <div class="col-md-12 title lx no-padding">
-            	<h3><?php if(!empty($laurels_options['post-title'])) { echo esc_attr($laurels_options['post-title']); }else{ echo 'Recent Post'; }?></h3>
+            	<h3><?php if(!empty($laurels_options['post-title'])) { echo esc_attr($laurels_options['post-title']); }else{ echo _e('Recent Post','laurels'); }?></h3>
             </div>
             <div class="row">
             <?php
@@ -103,7 +103,7 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
 				<?php if ( $laurels_query->have_posts() ) { ?>	
 			<div class="gallary">
 				<?php while($laurels_query->have_posts()) {  $laurels_query->the_post(); ?>	
-				<?php $laurels_image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'home-thumbnail-image', true ); ?>
+				<?php $laurels_image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'laurels-home-thumbnail-image', true ); ?>
                     <div class="col-sm-6 col-md-4">
 						<div class="box">
                         	<div class="gallery-img">
@@ -128,7 +128,7 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
         <div class="section_row_4">
         	<div class="header_line">          
                 <div class="col-md-12 title no-padding">
-            		<h3><?php if(!empty($laurels_options['latestpost-title'])) { echo esc_attr($laurels_options['latestpost-title']); }else{ echo 'OUR LATEST POSTS'; }?></h3>
+            		<h3><?php if(!empty($laurels_options['latestpost-title'])) { echo esc_attr($laurels_options['latestpost-title']); }else{ echo _e('OUR LATEST POSTS','laurels'); }?></h3>
                 </div>                               
                 <div class="customNavigation">
                     <a class="btn prev btn-default btn_lr">

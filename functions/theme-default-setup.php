@@ -24,9 +24,9 @@ add_filter('wp_page_menu', 'laurels_add_menuid');
  */
 function laurels_entry_meta() {
 
-	$laurels_category_list = get_the_category_list( __( ', ', 'laurels' ) );
+	$laurels_category_list = get_the_category_list() ?  ' '. get_the_category_list(', ').' ' :'';
 
-	$laurels_tag_list = get_the_tag_list('Tags: ',', ',' ');
+	$laurels_tag_list = get_the_tag_list( __('Tags: ',', ',' ','laurels'));
 
 	$laurels_date = sprintf( '<time datetime="%3$s">%4$s</time>',
 		esc_url( get_permalink() ),
@@ -41,14 +41,15 @@ function laurels_entry_meta() {
 		get_the_author()
 	);
 
-
 	if ( $laurels_tag_list ) {
-		$laurels_utility_text = __( '<div class="laurels-entry-meta"> Posted in : %1$s  on %3$s by : %4$s  %2$s  Comments : '.get_comments_number(). '</div>', 'laurels' );
+		$laurels_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'laurels' );
 	} elseif ( $laurels_category_list ) {
-		$laurels_utility_text = __( '<div class="laurels-entry-meta"> Posted in : %1$s  on %3$s by : %4$s  %2$s  Comments : '.get_comments_number().'</div>', 'laurels' );
+		$laurels_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s  %2$s Comments: '.get_comments_number(), 'laurels'  );
 	} else {
-		$laurels_utility_text = __( '<div class="laurels-entry-meta"> Posted on : %3$s by : %4$s  %2$s  Comments : '.get_comments_number(). '</div>', 'laurels' );
+		$laurels_utility_text = __( 'Posted on : %3$s by : %4$s  %2$s Comments: '.get_comments_number(), 'multilaurelsshop' );
 	}
+
+	
 
 	printf(
 		$laurels_utility_text,
@@ -128,8 +129,8 @@ endif;
  
 
 function laurels_read_more() {
-return '  <a href="'. get_permalink( get_the_ID() ) . '" class="color_txt readmore" > READ MORE </a>';
- }
+return '  <a href="'. get_permalink( get_the_ID() ) . '" class="color_txt readmore" >'. __('READ MORE','laurias'). '</a>';
+}
 add_filter( 'excerpt_more', 'laurels_read_more' ); 
 
 

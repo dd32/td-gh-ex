@@ -16,10 +16,3 @@ jQuery(document).ready(function() {
 	 });
 });
 
-jQuery(document).ready(function() {
-  jQuery(".comment-form-author #author").attr("placeholder","Name");
-  jQuery(".comment-form-email #email").attr("placeholder","E-Mail");
-  jQuery(".comment-form-url #url").attr("placeholder","Website");
-  jQuery(".comment-form-comment #comment").attr("placeholder","Comment");
-  jQuery(".form-submit #submit").val("Send");
-})

@@ -21,7 +21,7 @@ function laurels_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'laurels-full-width', 1038, 576, true );
-	add_image_size( 'home-thumbnail-image', 311, 186, true );
+	add_image_size( 'laurels-home-thumbnail-image', 311, 186, true );
 	add_image_size( 'laurels-home-latestpost-thumbnails',130,80, true );
 
 	// This theme uses wp_nav_menu() in two locations.
@@ -135,6 +135,62 @@ function laurels_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'laurels_widgets_init' );
+
+
+add_filter( 'comment_form_default_fields', 'laurels_comment_placeholders' );
+/**
+ * Change default fields, add placeholder and change type attributes.
+ *
+ * @param  array $fields
+ * @return array
+ */
+function laurels_comment_placeholders( $fields )
+{
+    $fields['author'] = str_replace(
+        '<input',
+        '<input placeholder="'
+        /* Replace 'theme_text_domain' with your theme’s text domain.
+         * I use _x() here to make your translators life easier. :)
+         * See http://codex.wordpress.org/Function_Reference/_x
+         */
+            . _x(
+                'First Name',
+                'comment form placeholder',
+                'theme_text_domain'
+                )
+            . '"',
+        $fields['author']
+    );
+    $fields['email'] = str_replace(
+        '<input',
+        '<input id="email" name="email" type="text" placeholder="'
+            . _x(
+                'Email Id',
+                'comment form placeholder',
+                'theme_text_domain'
+                )
+            . '"',
+        $fields['email']
+        
+    );
+    return $fields;
+}
+add_filter( 'comment_form_defaults', 'laurels_textarea_insert' );
+function laurels_textarea_insert( $fields )
+{
+        $fields['comment_field'] = str_replace(
+            '</textarea>',
+            ''. _x(
+                'Comment',
+                'comment form placeholder',
+                'theme_text_domain'
+                )
+            . ''. '</textarea>',
+            $fields['comment_field']
+        );
+    return $fields;
+}
+
 
 /*
  * Enqueue scripts and styles for the front end.

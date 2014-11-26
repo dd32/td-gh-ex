@@ -8,7 +8,7 @@ function laurels_theme_register_plugins() {
     $laurels_plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
          array(
-            'name'      => 'Faster Pagination',
+            'name'      => __('Faster Pagination'),
             'slug'      => 'faster-pagination',
             'required'  => false,
         ),

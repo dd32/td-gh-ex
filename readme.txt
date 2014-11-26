@@ -5,7 +5,7 @@ Laurels Theme by FasterThemes http://fasterthemes.com/
 Laurels is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Laurels Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
-left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
+left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 
 == License ==
 License: GNU General Public License v3 or later
@@ -78,9 +78,9 @@ vi) html5 js file
 we used are licensed under MIT/GPL2.
 Version - v3.7.0
 
-vii) slider js files
+vii) slider
 ============
-owl.carousel.min.js - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) Copyright (c) 2013 The MIT License (MIT) 
+OwlCarousel - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) Copyright (c) 2014 The MIT License (MIT) 
 
 
 ---------------------------------------------------------
