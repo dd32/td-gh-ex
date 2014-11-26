@@ -12,9 +12,8 @@
  */
 global $boxy;
 get_header(); ?>
-	<div class="row">
 
-	<div id="primary" class="content-area two-thirds column span9">
+	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( $boxy['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>			
@@ -38,7 +37,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php flaton_posts_nav(); ?>
+			<?php boxy_posts_nav(); ?>
 
 		<?php else : ?>
 

@@ -11,16 +11,9 @@
  */
 
 get_header(); ?>
-<div class="row">
 
-	<div id="primary" class="content-area two-thirds column span9">
+	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
-			
-			<?php if ( $boxy['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>			
-				<div id="breadcrumb" role="navigation">
-					<?php boxy_breadcrumbs(); ?>
-				</div>
-			<?php endif; ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -38,6 +31,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php get_sidebar(); ?>
-	
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

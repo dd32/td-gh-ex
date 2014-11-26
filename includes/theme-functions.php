@@ -17,7 +17,8 @@
 	function boxy_excerpt_more($excerpt) {
 		global $post;
 		// edit here if you like
-		return '<p class="readmore"><a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a></p>';
+		$output = sprintf(__('<p class="readmore"><a href="%1$s" title="Read %2$s">Read more &raquo;</a></p>','boxy'), esc_attr(get_permalink($post->ID)), esc_attr(get_the_title($post->ID)));
+		return $output;
 	}
 
 	function boxy_excerpt_length( $length ) {

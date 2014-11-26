@@ -21,8 +21,6 @@ global $boxy;
 				<?php 
 					if( has_post_thumbnail() && ! post_password_required() ) : 
 						the_post_thumbnail(); 
-					else :
-						echo '<img src="' . BOXY_CHILD_URL . '/images/no-image.png" />';
 					endif;
 				?>
 			</div>
@@ -32,7 +30,6 @@ global $boxy;
 					endif;
 		endif; ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'boxy' ) ); ?>
-		<?php //the_content( '',false,'' ); ?>
 
 		<?php
 			wp_link_pages( array(
@@ -53,7 +50,7 @@ global $boxy;
 				if ( $categories_list && boxy_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<i class="el-icon-list-alt"></i>
+				<i class="fa fa-list-alt"></i>
 				<?php printf( __( ' %1$s', 'boxy' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
@@ -64,11 +61,11 @@ global $boxy;
 				if ( $tags_list ) :
 			?>		
 			<span class="tags-links">
-				<i class="el-icon-tags"></i>
+				<i class="fa fa-tag"></i>
 				<?php printf( __( ' %1$s', 'boxy' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-		<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', 'boxy' ), '', '' ); ?>
+		<?php edit_post_link( __( '<span class="edit-link"><i class="fa fa-edit"></i> Edit</span>', 'boxy' ), '', '' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

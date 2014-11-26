@@ -6,9 +6,7 @@
  */
 
 get_header(); ?>
-	<div class="row">
-
-	<div id="primary" class="content-area two-thirds column span9">
+	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -28,5 +26,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<?php get_sidebar(); ?>
-		
+
 <?php get_footer(); ?>

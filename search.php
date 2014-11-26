@@ -6,9 +6,7 @@
  */
 
 get_header(); ?>
-<div class="row">
-
-	<section id="primary" class="content-area two-thirds column span9">
+	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -31,11 +29,9 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-		<h3><?php //_e( 'Can\'t find what you\'re looking for? Search again!', 'boxy' ); ?></h3>
-		<?php //get_search_form(); ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php get_sidebar(); ?>
 	

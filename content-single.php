@@ -39,7 +39,7 @@ global $boxy;
 				if ( $categories_list && boxy_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<i class="el-icon-list-alt"></i>
+				<i class="fa fa-list-alt"></i>
 				<?php printf( __( ' %1$s', 'boxy' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
@@ -50,7 +50,7 @@ global $boxy;
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<i class="el-icon-tags"></i>
+				<i class="fa fa-tag"></i>
 				<?php printf( __( ' %1$s', 'boxy' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>

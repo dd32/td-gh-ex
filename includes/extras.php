@@ -10,7 +10,7 @@
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
- * @param array $args Configuration arguments.
+ * @param array   $args Configuration arguments.
  * @return array
  */
 function boxy_page_menu_args( $args ) {
@@ -22,7 +22,7 @@ add_filter( 'wp_page_menu_args', 'boxy_page_menu_args' );
 /**
  * Adds custom classes to the array of body classes.
  *
- * @param array $classes Classes for the body element.
+ * @param array   $classes Classes for the body element.
  * @return array
  */
 function boxy_body_classes( $classes ) {
@@ -38,8 +38,8 @@ add_filter( 'body_class', 'boxy_body_classes' );
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
+ * @param string  $title Default title text for current view.
+ * @param string  $sep   Optional separator.
  * @return string The filtered title.
  */
 function boxy_wp_title( $title, $sep ) {
