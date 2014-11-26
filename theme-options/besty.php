@@ -207,21 +207,21 @@ function besty_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','medium') ?></a></li>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','besty') ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
-            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save options', 'medium') ?>" /></li>
+            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save options', 'besty') ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
-<div class="save-options"><h2><?php _e('Options saved successfully.','medium'); ?></h2></div>
+<div class="save-options"><h2><?php _e('Options saved successfully.','besty'); ?></h2></div>
 <div class="newsletter"> 
   <!-- Begin MailChimp Signup Form -->
-  <h1><?php _e('Subscribe with us','medium'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","medium"); ?>
+  <h1><?php _e('Subscribe with us','besty'); ?></h1>
+       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","besty"); ?>
           
-        <a href="http://eepurl.com/SP2nP" target="_blank"><?php _e('Click here to join.','medium'); ?></a>
+        <a href="http://eepurl.com/SP2nP" target="_blank"><?php _e('Click here to join.','besty'); ?></a>
         
        </p> 
   <!--End mc_embed_signup--> 
