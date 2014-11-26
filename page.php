@@ -12,6 +12,16 @@
 
 get_header(); ?>
 
+	<div class="sixteen columns">
+		<div class="breadcrumb">
+			<?php if ( $boxy['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>
+				<div id="breadcrumb" role="navigation">
+					<?php boxy_breadcrumbs(); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 

@@ -32,11 +32,8 @@ global $boxy;
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $boxy['custom-logo']['url'] ); ?>" alt="logo" ></a>
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php if( isset( $boxy['site-description'] ) && $boxy['site-description'] != 0 ) : ?>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-							<?php endif; ?>
 						<?php endif; ?>
-						<?php if( ! isset( $boxy['site-description'] ) ) : ?>
+						<?php if( isset( $boxy['site-description'] ) && $boxy['site-description'] != false ) : ?>
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php endif; ?>
 					</div>

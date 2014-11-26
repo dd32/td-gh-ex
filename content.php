@@ -24,11 +24,7 @@ global $boxy;
 					endif;
 				?>
 			</div>
-		<?php else: 
-					if( has_post_thumbnail() && ! post_password_required() ) : 
-						the_post_thumbnail(); 
-					endif;
-		endif; ?>
+		<?php endif; ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'boxy' ) ); ?>
 
 		<?php

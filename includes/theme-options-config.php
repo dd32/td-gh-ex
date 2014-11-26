@@ -658,7 +658,7 @@ FEATURES;
                         'type' => 'switch',
                         'title' => __( 'Featured Image', 'boxy' ),
                         'subtitle'=> __( 'Check to show featured image', 'boxy' ),
-                        "default"       => 0,
+                        "default"       => 1,
                         'on' => 'Show',
                         'off' => 'Hide',
                     ),

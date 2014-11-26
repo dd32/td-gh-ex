@@ -391,7 +391,7 @@ if ( ! function_exists( 'boxy_recent_posts' ) ) {
 		$args = array (
 			'post_type'              => 'post',
 			'post_status'            => 'publish',
-			'posts_per_page'         => get_option( 'posts_per_page' ),
+			'posts_per_page'         => get_option( 'posts_per_page' ) - ( get_option( 'posts_per_page' ) % 3 ),
 			'ignore_sticky_posts'    => true,
 			'order'                  => 'DESC',
 		);
@@ -407,7 +407,7 @@ if ( ! function_exists( 'boxy_recent_posts' ) ) {
 				$output .= '<div class="recent-post">';
 				$output .= '<a class="post-readmore" href="'. get_permalink() . '" title="Read '.get_the_title().'">';
 				if ( has_post_thumbnail() ) {
-					$output .= get_the_post_thumbnail();
+					$output .= get_the_post_thumbnail($query->post->ID, 'rpgallery');
 				}
 				else {
 					$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';

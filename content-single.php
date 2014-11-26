@@ -15,11 +15,13 @@ global $boxy;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+	<?php if( isset($boxy['single-featured-image'] ) && $boxy['single-featured-image'] ) : ?>
 		<?php if( has_post_thumbnail() && ! post_password_required() ) : ?>
 			<div class="post-thumb">
 				<?php the_post_thumbnail(); ?>
 			</div>
 		<?php endif; ?>
+	<?php endif; ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
