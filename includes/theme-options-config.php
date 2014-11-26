@@ -668,7 +668,7 @@ FEATURES;
                         'type' => 'switch',
                         'title' => __( 'Single Post Featured Image', 'boxy' ),
                         'subtitle'=> __( 'Check to show featured image on single post', 'boxy' ),
-                        "default"       => 0,
+                        "default"       => 1,
                         'on' => 'Show',
                         'off' => 'Hide',
                     ),

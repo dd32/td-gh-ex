@@ -4,7 +4,7 @@ Theme URI: http://www.webulous.in/boxy/
 Author: N. Venkat Raj
 Author URI: http://www.webulous.in/
 Description: Boxy is uniquely designed, elegant looking responsive theme. It uses Skeleton Grid system and SASS to keep CSS DRY. It's multi purpose theme and suited for all types of sites. It comes with Jigoshop support. It has advanced theme options panel to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/boxy/
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: boxy
@@ -735,7 +735,7 @@ a {
       background-color: #D7D7D7;
       float: left;
       position: absolute;
-      top: 40px;
+      top: 38px;
       left: -999em;
       z-index: 99999; }
       .main-navigation ul ul ul {
@@ -2082,9 +2082,9 @@ td.cart-row-total {
       font-weight: 700;
       line-height: 1; }
   .flex-container .flexslider .flex-image {
-    width: 50%;
-    text-align: center;
-    height: auto; }
+    width: 100%; }
+    .flex-container .flexslider .flex-image img {
+      width: 100%; }
   .flex-container .flexslider .slides > li {
     position: relative; }
   .flex-container .flex-control-paging li a {
