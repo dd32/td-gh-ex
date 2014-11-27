@@ -1,0 +1,113 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Food Recipes 1.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2013-09-25 22:06:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+
+#: 404.php:11
+msgid "404 Page"
+msgstr ""
+
+#: 404.php:26
+msgid "Epic 404 - Article Not Found"
+msgstr ""
+
+#: 404.php:27
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr ""
+
+#: 404.php:29
+msgid "Whatever you were looking for was not found, but maybe try looking again or search using the form below."
+msgstr ""
+
+#: archive.php:12
+msgid "Archives"
+msgstr ""
+
+#: author.php:11
+msgid "Author : All posts by"
+msgstr ""
+
+#: category.php:11
+msgid "Category"
+msgstr ""
+
+#: comments.php:20
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: footer.php:13
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: footer.php:14
+msgid "Food Recipes by FasterThemes."
+msgstr ""
+
+#: functions.php:123
+msgid "Home"
+msgstr ""
+
+#: functions.php:123
+msgid "Archive by category"
+msgstr ""
+
+#: functions.php:176
+msgid "Search results for"
+msgstr ""
+
+#: functions.php:234
+msgid "Posts tagged"
+msgstr ""
+
+#: functions.php:239
+msgid "Articles posted by"
+msgstr ""
+
+#: functions.php:242
+msgid "Error 404"
+msgstr ""
+
+#: functions.php:379
+msgid "Read more"
+msgstr ""
+
+#: header.php:67
+msgid "Toggle navigation"
+msgstr ""
+
+#: index.php:47
+msgid "Post By"
+msgstr ""
+
+#: page.php:34
+msgid "NO COMMENT 1 COMMENT % COMMENTS "
+msgstr ""
+
+#: full-width.php:39
+msgid "NO COMMENT 1 COMMENT % COMMENTS "
+msgstr ""
+
+#: left-sidebar.php:34
+msgid "NO COMMENT 1 COMMENT % COMMENTS "
+msgstr ""
+
+#: search.php:11
+msgid "Search Results for"
+msgstr ""
+
+#: tag.php:12
+msgid "Tag"
+msgstr ""

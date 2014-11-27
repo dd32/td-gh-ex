@@ -8,12 +8,12 @@ function multishop_theme_register_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
          array(
-            'name'      => 'WooCommerce excelling eCommerce',
+            'name'      => __('WooCommerce excelling eCommerce','multishop'),
             'slug'      => 'woocommerce',
             'required'  => false,
         ),
 		 array(
-            'name'      => 'Faster Pagination',
+            'name'      => __('Faster Pagination','multishop'),
             'slug'      => 'faster-pagination',
             'required'  => false,
         ),

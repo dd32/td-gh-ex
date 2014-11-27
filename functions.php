@@ -10,15 +10,17 @@ function multishop_setup() {
 		$content_width = 745;
 	}
 	/*
-	 * Make multishop theme available for translation.
+	 * Make foodrecipes theme available for translation.
 	 */
-	load_theme_textdomain( 'multishop' );
+	load_theme_textdomain( 'multishop', get_template_directory() . '/languages' );	
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', multishop_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
+    
+        
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'multishop-full-width', 1038, 576, true );
 	add_image_size( 'multishop-blog-image', 380, 260, true );

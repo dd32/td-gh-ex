@@ -91,9 +91,12 @@ $multishop_options = get_option( 'multishop_theme_options' );
       </div>
     </div>
     <!--row2-->
+    <?php    
+    if (is_plugin_active('woocommerce/woocommerce.php')) {
+    ?>
     <div class="woocommerce-product">
       <div class="product-header">
-        <h2 class="widget-title"> <span class="product-title">TOP RATED PRODUCTS</span> </h2>
+        <h2 class="widget-title"> <span class="product-title"><?php _e('TOP RATED PRODUCTS','multishop') ?></span> </h2>
       </div>
       <div class="col-md-12 next-prev-button"> <span id="prev2" class="prev black-box prev3"></span> <span id="next2" class="next black-box next3"></span> </div>
       <div class="clearfix"></div>
@@ -118,7 +121,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
                 <?php the_title(); ?>
               </h5>
               
-              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
+              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
             </div>
           </div>
         </div>
@@ -130,6 +133,9 @@ $multishop_options = get_option( 'multishop_theme_options' );
       </div>
     </div>
     <!--row2 end--> 
+    <?php
+    }
+    ?>
   </div>
 </section>
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@ get_header();
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1><?php printf( __( 'Search Results for :<span> %s </span>', 'multishop' ), ' ' . get_search_query() . ' ' ); ?></h1>
+    <h1><?php _e('Search Results for ','multishop'); echo ": ".get_search_query(); ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>

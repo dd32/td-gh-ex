@@ -8,7 +8,7 @@ get_header();
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1>Category : <span> <?php echo single_cat_title( '', false );?></span></h1>
+    <h1><?php _e('Category ','multishop'); echo ": ".single_cat_title( '', false ); ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>

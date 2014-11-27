@@ -9,7 +9,7 @@ get_header( 'shop' ); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
-    <h1> SHOP </h1>
+    <h1> <?php _e('SHOP','multishop') ?> </h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>
@@ -35,11 +35,11 @@ get_header( 'shop' ); ?>
 							$first = ( $per_page * $paged ) - $per_page + 1;
 							$last = min( $total, $wp_query->get( 'posts_per_page' ) * $paged );
 							if ( 1 == $total ) {
-							_e( 'Showing the single result', 'woocommerce' );
+							_e( 'Showing the single result', 'multishop' );
 							} elseif ( $total <= $per_page || -1 == $per_page ) {
-							printf( __( 'Showing all %d results', 'woocommerce' ), $total );
+							printf( __( 'Showing all %d results', 'multishop' ), $total );
 							} else {
-							printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'woocommerce' ), $first, $last, $total );
+							printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'multishop' ), $first, $last, $total );
 							}
 							?>
           </p>
@@ -47,7 +47,7 @@ get_header( 'shop' ); ?>
         <div class="col-md-7 no-padding-lr">
           <div class="pagination-sorting">
          	  <div class="sorting-all">
-			  <label class="sele-label">Show All</label>
+			  <label class="sele-label"><?php _e('Show All','multishop') ?></label>
               <form action="" method="POST" name="results" class="woocommerce-ordering">
                 <select name="woocommerce-sort-by-columns" id="woocommerce-sort-by-columns" class="form-control select-sort" onchange="this.form.submit()">
                   <?php
@@ -59,12 +59,12 @@ get_header( 'shop' ); ?>
 										  }
 							$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
 											//Add as many of these as you like, -1 shows all products per page
-												'5' 		=> __('5', 'woocommerce'),
-												'9' 		=> __('9', 'woocommerce'),
-												'12' 		=> __('12', 'woocommerce'),
-												'15' 		=> __('15', 'woocommerce'),
-												'20' 		=> __('20', 'woocommerce'),
-												'-1' 		=> __('all', 'woocommerce'),
+												'5' 		=> '5',
+												'9' 		=> '9',
+												'12' 		=> '12',
+												'15' 		=> '15',
+												'20' 		=> '20',
+												'-1' 		=> __('all', 'multishop'),
 											));
 			foreach ( $shopCatalog_orderby as $sort_id => $sort_name )
 				echo '<option value="' . $sort_id . '" ' . selected( $numberOfProductsPerPage, $sort_id, true ) . ' >' . $sort_name . '</option>';
@@ -96,7 +96,7 @@ get_header( 'shop' ); ?>
               	<span><?php echo $product->get_price_html(); ?></span>
                 <h5>  <?php the_title(); ?> </h5>
                </div> 
-                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button">DETAILS</a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
+                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop') ?></a> </div>
               </div>
             </div>
           </div>
@@ -122,11 +122,11 @@ get_header( 'shop' ); ?>
 						$first = ( $per_page * $paged ) - $per_page + 1;
 						$last = min( $total, $wp_query->get( 'posts_per_page' ) * $paged );
 						if ( 1 == $total ) {
-						_e( 'Showing the single result', 'woocommerce' );
+						_e( 'Showing the single result', 'multishop' );
 						} elseif ( $total <= $per_page || -1 == $per_page ) {
-						printf( __( 'Showing all %d results', 'woocommerce' ), $total );
+						printf( __( 'Showing all %d results', 'multishop' ), $total );
 						} else {
-						printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'woocommerce' ), $first, $last, $total );
+						printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'multishop' ), $first, $last, $total );
 						}
 						?>
           </p>
@@ -134,7 +134,7 @@ get_header( 'shop' ); ?>
 			 <div class="col-md-8 no-padding-lr">
           <div class="pagination-sorting">
             <div class="sorting-all"> 
-              <label class="sele-label">Show All</label>
+              <label class="sele-label"><?php _e('Show All','multishop') ?></label>
               <form action="" method="POST" name="results" class="woocommerce-ordering">
                 <select name="woocommerce-sort-by-columns" id="woocommerce-sort-by-columns" class="form-control select-sort" onchange="this.form.submit()">
                   <?php
@@ -146,13 +146,13 @@ get_header( 'shop' ); ?>
 										  }
 										$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
 											//Add as many of these as you like, -1 shows all products per page
-											  //  ''       => __('Results per page', 'woocommerce'),
-												'5' 		=> __('5', 'woocommerce'),
-												'9' 		=> __('9', 'woocommerce'),
-												'12' 		=> __('12', 'woocommerce'),
-												'15' 		=> __('15', 'woocommerce'),
-												'20' 		=> __('20', 'woocommerce'),
-												'-1' 		=> __('All', 'woocommerce'),
+											  //  ''       => __('Results per page', 'multishop'),
+												'5' 		=> '5',
+												'9' 		=> '9',
+												'12' 		=> '12',
+												'15' 		=> '15',
+												'20' 		=> '20',
+												'-1' 		=> __('All', 'multishop'),
 											));
 
 										foreach ( $shopCatalog_orderby as $sort_id => $sort_name )
@@ -168,6 +168,7 @@ get_header( 'shop' ); ?>
     
     <!--section end-->
     
+    <?php
     <?php
 		do_action( 'woocommerce_sidebar' );
 	?>

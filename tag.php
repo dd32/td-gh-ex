@@ -8,11 +8,7 @@ get_header();
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1>
-      <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="multishop-post-title">Tag : <span> %s </span>', 'multishop' ), ' ' . single_tag_title( '', false ) . '</p>' );
-		endif; ?>
-    </h1>
+    <h1><?php if ( have_posts() ) : _e('Tag ','multishop'); echo ": ".single_tag_title( '', false ); endif; ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>

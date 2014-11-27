@@ -111,9 +111,11 @@ add_action( 'widgets_init', 'multishop_widgets_init' );
  */
 function multishop_entry_meta() {
 
-	$multishop_category_list = get_the_category_list( __( ', ', 'multishop' ) );
+	
+	$multishop_category_list = get_the_category_list(', ', '');
 
-	$multishop_tag_list = get_the_tag_list( '', __( ', ', 'multishop' ) );
+	//$multishop_tag_list = get_the_tag_list( '', __( ', ', 'multishop' ) );
+	$multishop_tag_list = get_the_tag_list( ', ', '' ) ;
 
 	$multishop_date = sprintf( '<time datetime="%3$s">%4$s</time>',
 		esc_url( get_permalink() ),
@@ -130,11 +132,11 @@ function multishop_entry_meta() {
 
 
 	if ( $multishop_tag_list ) {
-		$multishop_utility_text = __( '<div class="multishop-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'multishop' );
+		$multishop_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'multishop' );
 	} elseif ( $multishop_category_list ) {
-		$multishop_utility_text = __( '<div class="multishop-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'multishop' );
+		$multishop_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'multishop' );
 	} else {
-		$multishop_utility_text = __( '<div class="multishop-entry-meta"> Posted on : %3$s by : %4$s </div>', 'multishop' );
+		$multishop_utility_text = __( 'Posted on : %3$s by : %4$s', 'multishop' );
 	}
 
 	printf(
@@ -169,7 +171,7 @@ function multishop_comment( $comment, $multishop_args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'multishop' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'multishop' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'multishop' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -215,7 +217,7 @@ endif;
 
 
 function multishop_read_more( ) {
-return ' ..<br /><div class="reading"><a class="readmore-btn" href="'. get_permalink() . '" >Continue Reading</a></div>';
+return ' ..<br /><div class="reading"><a class="readmore-btn" href="'. get_permalink() . '" >' .__('Continue Reading','multishop'). '</a></div>';
  }
 add_filter( 'excerpt_more', 'multishop_read_more' ); 
 
@@ -233,7 +235,7 @@ function dl_sort_by_page($count) {
      $count = $_COOKIE['shop_pageResults'];
   }
   if (isset($_POST['woocommerce-sort-by-columns'])) { //if form submitted
-    setcookie('shop_pageResults', $_POST['woocommerce-sort-by-columns'], time()+1209600, '/', 'www.your-domain-goes-here.com', false); //this will fail if any part of page has been output- hope this works!
+    setcookie('shop_pageResults', $_POST['woocommerce-sort-by-columns'], time()+1209600, '/', 'www.multishop.fasterthemes.com', false); //this will fail if any part of page has been output- hope this works!
     $count = $_POST['woocommerce-sort-by-columns'];
   }
   // else normal page load and no cookie
@@ -242,3 +244,7 @@ function dl_sort_by_page($count) {
  
 add_filter('loop_shop_per_page','dl_sort_by_page');
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_page_ordering', 20 );
+
+if ( ! function_exists('is_plugin_inactive')) {
+      require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+}

@@ -6,8 +6,8 @@ class multishop_randompostwidget extends WP_Widget
 {
 function multishop_randompostwidget()
 {
-$multishop_widget_ops = array('classname' => 'multishop_recentpostwidget', 'description' => 'Displays a recent post with thumbnail' );
-$this->WP_Widget('multishop_recentpostwidget', 'Multishop Recent Post', $multishop_widget_ops);
+$multishop_widget_ops = array('classname' => 'multishop_recentpostwidget', 'description' => __('Displays a recent post with thumbnail','multishop') );
+$this->WP_Widget('multishop_recentpostwidget', ' '.__('Multishop Recent Post','multishop').' ', $multishop_widget_ops);
 }
 
 function form($multishop_instance)
@@ -17,11 +17,11 @@ $multishop_instance['title'];
 if(!empty($multishop_instance['post_number'])) { $multishop_instance['post_number']; } 
 ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'multishop_info'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'multishop'); echo ":"; ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($multishop_instance['title'])) { echo $multishop_instance['title']; } ?>" style="width:100%;" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'multishop_info'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show', 'multishop');  echo ":"; ?></label>
             <input id="<?php echo $this->get_field_id( 'post_number' ); ?>" name="<?php echo $this->get_field_name( 'post_number' ); ?>" value="<?php if(!empty($multishop_instance['post_number'])) { echo $multishop_instance['post_number']; } else { echo '5'; } ?>" style="width:100%;" />
         </p>
 <?php

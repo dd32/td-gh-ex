@@ -154,13 +154,13 @@
             } ?>
 
 <div class="multishop wrap">
-  <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+  <h2><?php _e(esc_html( get_admin_page_title() ), 'multishop'); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
   <?php if ( isset( $this->message ) ) {
-                    echo wp_kses_post( $this->message );
+                    _e( wp_kses_post( $this->message ), 'multishop');
                 } ?>
   <form id="multishop-plugins" action="" method="post">
-    <input type="hidden" name="multishop-page" value="<?php echo $this->menu; ?>" />
+    <input type="hidden" name="multishop-page" value="<?php _e( $this->menu, 'multishop'); ?>" />
     <?php $plugin_table->display(); ?>
   </form>
 </div>
@@ -233,17 +233,20 @@
                     $activate        = activate_plugin( $plugin_activate ); // Activate the plugin.
                     $this->populate_file_path(); // Re-populate the file path now that the plugin has been installed and activated.
                     if ( is_wp_error( $activate ) ) {
-                        echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
-                        echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . $this->strings['return'] . '</a></p>';
+			
+			echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
+			echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . $this->strings['return'] . '</a></p>';
+		
                         return true; // End it here if there is an error with automatic activation
                     } else {
-                        echo '<p>' . $this->strings['plugin_activated'] . '</p>';
+			
+			echo '<p>' . $this->strings['plugin_activated'] . '</p>';
                     } }
                 // Display message based on if all plugins are now active or not.
                 $complete = array();
                 foreach ( $this->plugins as $plugin ) {
                     if ( ! is_plugin_active( $plugin['file_path'] ) ) {
-                        echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . $this->strings['return'] . '</a></p>';
+			echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . $this->strings['return'] . '</a></p>';
                         $complete[] = $plugin;
                         break;
                     } else {
@@ -651,10 +654,11 @@ if ( ! class_exists( 'multishopPA_List_Table' ) ) {
             return sprintf( '<input type="checkbox" name="%1$s[]" value="%2$s" id="%3$s" />', $this->_args['singular'], $value, $item['sanitized_plugin'] );
         }
         /* Sets default message within the plugins table if no plugins */
-        public function no_items() {
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'multishop' ), admin_url() );
-            echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
-        }
+        public function no_items() 
+    {
+      _e('No plugins to install or activate','multishop'); echo ".<a href='admin_url()'>Return to the Dashboard</a>";
+      echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
+    }
         /* Output all the column information within the table.*/
         public function get_columns() {
             $columns = array(
@@ -1007,7 +1011,7 @@ function multishop_load_bulk_installer() {
                 /* Sets the correct install strings for the installer skin to use. */
                 public function install_strings() {
                     $this->strings['no_package']          = __( 'Install package not available.', 'multishop' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'multishop' );
+                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'multishop'), '<span class="code">', '</span>&#8230;');
                     $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'multishop' );
                     $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'multishop' );
                     $this->strings['process_failed']      = __( 'Plugin install failed.', 'multishop' );
@@ -1063,7 +1067,7 @@ function multishop_load_bulk_installer() {
                     // Default installation strings.
                     else {
                         $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'multishop' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'multishop' );
+                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: %2$s.', 'multishop' );
                         $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'multishop' );
                         $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'multishop' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'multishop' ) . '</span><span class="hidden">' . __( 'Hide Details', 'multishop' ) . '</span>.</a>';
                         $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'multishop' );

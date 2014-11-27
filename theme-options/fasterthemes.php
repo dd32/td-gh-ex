@@ -265,7 +265,7 @@ function fastertheme_framework_page(){
 <div class="newsletter"> 
   <!-- Begin MailChimp Signup Form -->
   <h1>Subscribe with us</h1>
-  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://eepurl.com/SP2nP" target="_blank">Click here to join</a></p>
+  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank">Click here to join</a></p>
   <!--End mc_embed_signup--> 
 </div>
 <?php } ?>

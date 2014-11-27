@@ -18,3 +18,7 @@ i) Fixed screen_icon error.
 Version: 1.0.2 (15 Nov 2014)
 
 i) Fixed small issue with fasterthemes-custom.js file.
+
+Version: 1.1.0 (27 Nov 2014)
+i) Made theme "translation-ready"
+ii) Fixed some small bugs in functionality as well as in design.

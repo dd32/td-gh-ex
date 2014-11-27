@@ -8,7 +8,7 @@ get_header();
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1>Author : <span> All posts by <?php echo get_the_author();?></span></h1>
+    <h1><?php if ( have_posts() ): _e('All posts by ','multishop'); echo ": ".get_the_author();  endif; ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>

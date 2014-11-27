@@ -8,9 +8,7 @@ get_header();
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1>
-      <?php if ( have_posts() ) : printf( __( '<p class="multishop-post-title">Archives : <span> %s </span>', 'multishop' ), ''.get_the_date('M-Y').'</p>' ); endif; ?>
-    </h1>
+    <h1><?php if ( have_posts() ): _e('Archives ','multishop'); echo ": ".get_the_date('M-Y');  endif; ?></h1>
     <ol class="site-breadcumb">
       <?php  if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>
