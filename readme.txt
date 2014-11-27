@@ -46,6 +46,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG == 
+= Version 1.1.9 =
+* German language file added. Thanks to Mr. F. Düllberg and Mr. Mario Weinert for providing the language files.
+* Option added to replace slider's 'Read more' text with user's custom text or to remove it.
+* Some CSS adjustments.
+* Missed escaping done.
+
 = Version 1.1.8 =
 * Options Framework updated to 1.9.0
 * Options Framework textdomain 'textdomain' changed to 'spacious'.

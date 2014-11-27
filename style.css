@@ -3,8 +3,8 @@ Theme Name: Spacious
 Theme URI: http://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: http://themegrill.com
-Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/. Available Translations: Russian, Norsk (Bokmål), Czech, French, Spanish, Lithuanian, Dutch, Traditional Chinese (Taiwan), Slovak, Catalan and Hungarian.
-Version: 1.1.8
+Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/. Available Translations: Russian, Norsk (Bokmål), Czech, French, Spanish, Lithuanian, Dutch, Traditional Chinese (Taiwan), Slovak, Catalan, Hungarian and German.
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, dark, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
@@ -697,6 +697,7 @@ li.default-menu {
 	font-weight: 300;
 	padding: 5px 22px;
 	margin: 0;
+	text-align: center;
 }
 .site-header .menu-toggle:hover {
   background: #0FBE7C;
@@ -785,14 +786,22 @@ li.default-menu {
 #featured-slider .displaynone {
 	display: none;
 }
-#featured-slider .entry-container {
+.ie8 #featured-slider .entry-container {
 	top: 25%;
+}
+#featured-slider .entry-container {
+	top: 50%;
+	-ms-transform: translateY(-50%); /* IE 9 */
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
 	position: absolute;
 	left: 5%;
 	max-width: 40%;
 }
 #featured-slider .entry-description-container {
-	background: none repeat scroll right -53px rgba(0, 0, 0, 0.3);
+	background-color: #555555;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 10px 15px;
 	padding: 1rem 1.5rem;
 }
 #featured-slider img {
@@ -801,6 +810,7 @@ li.default-menu {
 #featured-slider .slider-title-head {
 	display: inline-block;
 	left: 0;
+	margin-bottom: 5px;
 	margin-bottom: 0.5rem;
 }
 #featured-slider .entry-title {
@@ -817,6 +827,7 @@ li.default-menu {
 }
 #featured-slider .entry-content {
 	color: #FFFFFF;
+	padding-top: 5px;
 	padding-top: 0.5rem;
 }
 #featured-slider .entry-content p {
@@ -828,6 +839,7 @@ li.default-menu {
 	color: #FFFFFF;
 	text-align: center;
 	font-family: 'Lato',sans-serif;
+	padding: 10px 15px;
 	padding: 1rem 1.5rem;
 	float: left;
 	margin-top: 15px;
@@ -1800,19 +1812,9 @@ a#scroll-up:hover {
 @media screen and (max-width: 1078px) {
 	body {
 		padding: 15px 0;
-	}
-	#page { 
-		width: 97%; 
-	}
-	.wide-1218 #page, .wide-978 #page {
-		width: 100%;
-	}
-	.inner-wrap {
-		width: 94%;
 	}	
 	#featured-slider .entry-container {
 		max-width: 60%;
-		top: 15%;
 	}
 	.call-to-action-content {
 		float: none;
@@ -1869,18 +1871,6 @@ a#scroll-up:hover {
 		clear: none;
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 900px) {
-	#featured-slider .slider-title-head {
-		margin-bottom: 0;
-	}
-	#featured-slider .entry-content {
-		display: none;
-	}
-	#featured-slider .entry-container {
-		top: auto;
-		bottom: 15%;
-	}
-}
 @media screen and (max-width: 768px) {
 	#primary, #secondary {
 		float: none;
@@ -1896,6 +1886,7 @@ a#scroll-up:hover {
 		float: none;
 		text-align: center;
 		margin-bottom: 10px;
+		padding-right: 0;
 	}
 	#header-text {
 		float: none;
@@ -1931,45 +1922,21 @@ a#scroll-up:hover {
 	#masthead input.s {
 	    margin-left: -30px;
 	}
+	#featured-slider .entry-container { max-width: 70%; }
+	#featured-slider .entry-description-container { padding: 5px 10px; padding: 0.5rem 1rem; }
+	#featured-slider .slider-title-head { margin-bottom: 0; }
+	#featured-slider .entry-title span { font-size: 18px; line-height: 1.4; }	
+	#featured-slider .entry-content p { font-size: 14px; line-height: 1.4; }
+	#featured-slider .slider-read-more-button { font-size: 14px; padding: 5px 10px; padding: 0.5rem 1rem; }
 }
 @media screen and (max-width: 767px) {
-	body {
-		padding: 5px 0;
-	}
-	#page { 
-		width: 97%; 
-	}
-	.inner-wrap {
-		width: 95%;
-	}	
-	#featured-slider .entry-container {
-		top: auto;
-		bottom: 15%;
-		max-width: 70%;
-	}
-	#featured-slider .entry-description-container {
-		padding: 0.5rem 1rem;
-	}
-	#featured-slider .entry-content {
-		display: none;
-	}	
-	#featured-slider .slider-title-head {
-		margin-bottom: 0;
-	}
-	#featured-slider .entry-title span {
-		font-size: 16px;
-	}	
-	#featured-slider .slider-read-more-button {
-		font-size: 16px;
-		padding: 0.5rem 1rem;
-	}
 	.tg-one-half, .tg-one-third, .tg-one-fourth {
 		float: none;
 		width: 100%;
 		margin: 0;
 	}
 	.tg-column-1, .tg-column-2, .tg-column-3, .tg-column-4 {
-		float:none;
+		float: none;
 	}
 	#primary, #secondary {
 		float: none;
@@ -1980,60 +1947,20 @@ a#scroll-up:hover {
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	body {
-		padding: 10px 0;
-	}
-	#page { 
-		width: 97%; 
-	}
-	.inner-wrap {
-		width: 96%;
-	}
-	#header-logo-image {
-		padding-right: 0;
-	}
-	#header-text {
-		padding-right: 0;
-	}
+@media screen and (max-width: 600px) {
+	#featured-slider .entry-description-container { padding: 3px 6px; padding: 0.3rem 0.6rem; }
+	#featured-slider .entry-title span { font-size: 14px; }
+	#featured-slider .entry-content p { font-size: 10px; }
+	#featured-slider .slider-read-more-button { margin-top: 5px; font-size: 10px; padding: 3px 6px; padding: 0.3rem 0.6rem; }   
+	#controllers { bottom: 5px; }
+	#controllers a { height: 4px; margin: 0 3px; width: 12px; }
 }
-@media screen and (max-width: 480px) {
-	#featured-slider .entry-container {
-		max-width: 90%;
-	}
-	#featured-slider .entry-description-container {
-		padding: 5px 10px;
-	}
-	#featured-slider .entry-title {
-		line-height: 1.5;
-	}
-   #featured-slider .slider-read-more-button {
-		display: none;
-	}
-	#controllers {
-		bottom: 5px;
-	}
-	#controllers a {
-		height: 4px;
-		margin: 0 3px;
-		width: 12px;
-	}
-}
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 420px) {
    #page {
    	width: 97%; 
    }
    .inner-wrap { 
    	width: 95%; 
    }
-   #masthead .social-links,
-   #masthead .small-info-text {
-   	max-width: 100%;
-   }
-   #featured-slider .entry-title span {
-		font-size: 12px;
-	}
-   #featured-slider .entry-description-container {
-		padding: 2px 5px;
-	}
+	#featured-slider .entry-content, #featured-slider .slider-read-more-button { display: none; }
 }

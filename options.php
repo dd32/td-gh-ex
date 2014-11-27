@@ -259,6 +259,12 @@ function optionsframework_options() {
 			'type' 	=> 'textarea'
 		);
 		$options[] = array(
+			'desc' 	=> __( 'Enter the button text. Default is "Read more"', 'spacious' ),
+			'id' 		=> 'spacious_slider_button_text'.$i,
+			'std' 	=> __( 'Read more', 'spacious' ),
+			'type' 	=> 'text'
+		);
+		$options[] = array(
 			'desc' 	=> __( 'Enter link to redirect slider when clicked', 'spacious' ),
 			'id' 		=> 'spacious_slider_link'.$i,
 			'std' 	=> '',
