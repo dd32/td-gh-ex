@@ -56,7 +56,7 @@ function multishop_custom_breadcrumbs() {
         $multishop_cat = get_the_category(); $multishop_cat = $multishop_cat[0];
         $multishop_cats = get_category_parents($multishop_cat, TRUE, ' ' . $multishop_delimiter . ' ');
         if ($multishop_showcurrent == 0) $multishop_cats = preg_replace("#^(.+)\s$multishop_delimiter\s$#", "$1", $multishop_cats);
-        _e($multishop_cats,'multishop');
+        echo $multishop_cats;
         if ($multishop_showcurrent == 1) echo $multishop_before . get_the_title() . $multishop_after;
       }
 
@@ -88,7 +88,7 @@ function multishop_custom_breadcrumbs() {
       }
       $multishop_breadcrumbs = array_reverse($multishop_breadcrumbs);
       for ($multishop_i = 0; $multishop_i < count($multishop_breadcrumbs); $multishop_i++) {
-        _e($multishop_breadcrumbs[$multishop_i],'multishop');
+        echo $multishop_breadcrumbs[$multishop_i];
         if ($multishop_i != count($multishop_breadcrumbs)-1) echo ' ' . $multishop_delimiter . ' ';
       }
       if ($multishop_showcurrent == 1) echo ' ' . $multishop_delimiter . ' ' . $multishop_before . get_the_title() . $multishop_after;

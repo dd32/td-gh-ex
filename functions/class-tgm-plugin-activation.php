@@ -157,10 +157,10 @@
   <h2><?php _e(esc_html( get_admin_page_title() ), 'multishop'); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
   <?php if ( isset( $this->message ) ) {
-                    _e( wp_kses_post( $this->message ), 'multishop');
+                    echo( wp_kses_post( $this->message ));
                 } ?>
   <form id="multishop-plugins" action="" method="post">
-    <input type="hidden" name="multishop-page" value="<?php _e( $this->menu, 'multishop'); ?>" />
+    <input type="hidden" name="multishop-page" value="<?php echo $this->menu; ?>" />
     <?php $plugin_table->display(); ?>
   </form>
 </div>
