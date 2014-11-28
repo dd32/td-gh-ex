@@ -183,6 +183,68 @@ msgstr ""
 msgid "Comment *"
 msgstr ""
 
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-page.php:26 content-single.php:33
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:35 content.php:36 inc/template-tags.php:123
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:52
+msgid "Share This!"
+msgstr ""
+
+#: content-single.php:53
+msgid "Share on Facebook"
+msgstr ""
+
+#: content-single.php:54
+msgid "Share on Twitter"
+msgstr ""
+
+#: content-single.php:55
+msgid "Share on Google Plus"
+msgstr ""
+
+#: content-single.php:56
+msgid "Share on Linkedin"
+msgstr ""
+
+#: content-single.php:57
+msgid "Share on Stumbleupon"
+msgstr ""
+
+#: content-single.php:58
+msgid "Share via Email"
+msgstr ""
+
+#: content-single.php:58
+msgid "Read this interesting post"
+msgstr ""
+
 #: footer.php:22
 msgid "http://wordpress.org/"
 msgstr ""
@@ -205,15 +267,23 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:26
+#: functions.php:111
+#, php-format
+msgid ""
+"Thank you for installing <b>Blogghiamo</b> WordPress Theme! <a href=\"%2$s"
+"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
+"Notice</a>"
+msgstr ""
+
+#: header.php:25
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:82
+#: header.php:81
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:87
+#: header.php:86
 msgid "Menu"
 msgstr ""
 
@@ -227,28 +297,6 @@ msgstr ""
 
 #: inc/blogghiamo-dynamic.php:46
 msgid "Special Color"
-msgstr ""
-
-#: inc/blogghiamo-dynamic.php:73
-msgid "Upgrade to Blogghiamo PRO"
-msgstr ""
-
-#: inc/blogghiamo-dynamic.php:120
-msgid "Need more features and options?"
-msgstr ""
-
-#: inc/blogghiamo-dynamic.php:121
-msgid ""
-"Check out the Premium Version of Blogghiamo WP Theme which comes with "
-"additional features and advanced customization options."
-msgstr ""
-
-#: inc/blogghiamo-dynamic.php:122
-msgid "Learn more about Blogghiamo PRO"
-msgstr ""
-
-#: inc/blogghiamo-dynamic.php:123
-msgid "See  the Demo (Blogghiamo PRO)"
 msgstr ""
 
 #: inc/extras.php:63
@@ -320,11 +368,6 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:123 post-formats/content-page.php:33
-#: post-formats/content-standard.php:36
-msgid "Edit"
-msgstr ""
-
 #: inc/theme-options.php:24 inc/theme-options.php:47
 msgid "Blogghiamo Theme Options"
 msgstr ""
@@ -333,164 +376,106 @@ msgstr ""
 msgid " Free Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:88
+#: inc/theme-options.php:89
 msgid ""
 "These options will let you setup the social icons at the top of the theme. "
 "You can enter the URLs of your profiles to have the icons show up."
 msgstr ""
 
-#: inc/theme-options.php:90
+#: inc/theme-options.php:91
 msgid "Options saved"
 msgstr ""
 
-#: inc/theme-options.php:105
+#: inc/theme-options.php:106
 msgid "Hide RSS Icon?"
 msgstr ""
 
-#: inc/theme-options.php:108
+#: inc/theme-options.php:109
 msgid "Hide the RSS feed icon?"
 msgstr ""
 
-#: inc/theme-options.php:117
+#: inc/theme-options.php:118
 msgid "Hide Search Icon?"
 msgstr ""
 
-#: inc/theme-options.php:120
+#: inc/theme-options.php:121
 msgid "Hide the Search icon?"
 msgstr ""
 
-#: inc/theme-options.php:129
+#: inc/theme-options.php:130
 msgid "Enter your Facebook URL"
 msgstr ""
 
-#: inc/theme-options.php:132
+#: inc/theme-options.php:133
 msgid "Leave blank to hide Facebook Icon"
 msgstr ""
 
-#: inc/theme-options.php:141
+#: inc/theme-options.php:142
 msgid "Enter your Twitter URL"
 msgstr ""
 
-#: inc/theme-options.php:144
+#: inc/theme-options.php:145
 msgid "Leave blank to hide Twitter Icon"
 msgstr ""
 
-#: inc/theme-options.php:153
+#: inc/theme-options.php:154
 msgid "Enter your Google + URL"
 msgstr ""
 
-#: inc/theme-options.php:156
+#: inc/theme-options.php:157
 msgid "Leave blank to hide Google + Icon"
 msgstr ""
 
-#: inc/theme-options.php:165
+#: inc/theme-options.php:166
 msgid "Enter your Linkedin URL"
 msgstr ""
 
-#: inc/theme-options.php:168
+#: inc/theme-options.php:169
 msgid "Leave blank to hide Linkedin Icon"
 msgstr ""
 
-#: inc/theme-options.php:177
+#: inc/theme-options.php:178
 msgid "Enter your Instagram URL"
 msgstr ""
 
-#: inc/theme-options.php:180
+#: inc/theme-options.php:181
 msgid "Leave blank to hide Instagram Icon"
 msgstr ""
 
-#: inc/theme-options.php:189
+#: inc/theme-options.php:190
 msgid "Enter your YouTube URL"
 msgstr ""
 
-#: inc/theme-options.php:192
+#: inc/theme-options.php:193
 msgid "Leave blank to hide YouTube Icon"
 msgstr ""
 
-#: inc/theme-options.php:201
+#: inc/theme-options.php:202
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-#: inc/theme-options.php:204
+#: inc/theme-options.php:205
 msgid "Leave blank to hide Pinterest Icon"
 msgstr ""
 
-#: inc/theme-options.php:213
+#: inc/theme-options.php:214
 msgid "Enter your Tumblr URL"
 msgstr ""
 
-#: inc/theme-options.php:216
+#: inc/theme-options.php:217
 msgid "Leave blank to hide Tumblr Icon"
 msgstr ""
 
-#: inc/theme-options.php:225
+#: inc/theme-options.php:226
 msgid "Hide Social Buttons in posts?"
 msgstr ""
 
-#: inc/theme-options.php:228
+#: inc/theme-options.php:229
 msgid "Hide the Social Buttons at the bottom of each posts?"
 msgstr ""
 
-#: inc/theme-options.php:235
+#: inc/theme-options.php:236
 msgid "Save Options"
-msgstr ""
-
-#: post-formats/content-none.php:13
-msgid "Nothing Found"
-msgstr ""
-
-#: post-formats/content-none.php:19
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: post-formats/content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: post-formats/content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: post-formats/content-page.php:26 post-formats/single-standard.php:33
-msgid "Pages:"
-msgstr ""
-
-#: post-formats/single-standard.php:52
-msgid "Share This!"
-msgstr ""
-
-#: post-formats/single-standard.php:53
-msgid "Share on Facebook"
-msgstr ""
-
-#: post-formats/single-standard.php:54
-msgid "Share on Twitter"
-msgstr ""
-
-#: post-formats/single-standard.php:55
-msgid "Share on Google Plus"
-msgstr ""
-
-#: post-formats/single-standard.php:56
-msgid "Share on Linkedin"
-msgstr ""
-
-#: post-formats/single-standard.php:57
-msgid "Share on Stumbleupon"
-msgstr ""
-
-#: post-formats/single-standard.php:58
-msgid "Share via Email"
-msgstr ""
-
-#: post-formats/single-standard.php:58
-msgid "Read this interesting post"
 msgstr ""
 
 #: search.php:16

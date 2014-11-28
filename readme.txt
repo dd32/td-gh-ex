@@ -32,7 +32,7 @@ Blogghiamo Free theme is translation ready.
 Blogghiamo Free Theme have 1 menu: Primary
 
 == Tags ==
-two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style
+two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready
 
 == Installation ==
 
@@ -50,4 +50,9 @@ Version 1.0.1
 Version 1.1
 * Updated overlay images
 * Fixed sub menu effect
+* Minor bug fixes
+
+Version 1.2
+* Updated main menu effect
+* Fixed rich snippets
 * Minor bug fixes

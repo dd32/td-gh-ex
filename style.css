@@ -4,12 +4,12 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
-Domain Path: /languages/
-Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style
+Domain Path: /languages
+Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready
 */
 
 /*--------------------------------------------------------------
@@ -987,7 +987,7 @@ footer.site-footer {
 	margin-top: 1.5em;
 	margin-left: -3em;
 	margin-right: -3em;
-	margin-bottom: -8em;
+	margin-bottom: -7em;
 	position: relative;
 }
 .entry-featuredImg img {

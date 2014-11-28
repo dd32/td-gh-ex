@@ -11,11 +11,14 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
 		/*-----------------------------------------------------------------------------------*/ 
-			if ('.widget .tagcloud') {
+			if ( $( '.widget .tagcloud' ).length ) {
 				$('.widget .tagcloud').addClass('smallPart');
 			}
-			if ('.comment-metadata') {
+			if ( $( '.comment-metadata' ).length ) {
 				$('.comment-metadata').addClass('smallPart');
+			}
+			if ( $( '.comment-list .edit-link' ).length ) {
+				$('.comment-list .edit-link').addClass('smallPart');
 			}
 			
 		/*-----------------------------------------------------------------------------------*/
@@ -59,8 +62,19 @@
 			/*-----------------------------------------------------------------------------------*/
 			/*  Scroll To Top
 			/*-----------------------------------------------------------------------------------*/ 
-				$("#toTop").scrollToTop();
-		
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 700) {
+						$('#toTop').fadeIn();
+					} 
+					else {
+						$('#toTop').fadeOut();
+					}
+				}); 
+				$('#toTop').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 1000);
+					return false;
+				});
+
 		}
 			
 	});
