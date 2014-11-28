@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-DarkElements version 1.7 - november 2014 
+DarkElements version 1.8 - november 2014 
 - first stable release
 
 

@@ -52,8 +52,8 @@ big {font-size: 1.5em;}
 ins, mark {font-weight:bold; background:none; color:#e77776;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #444; word-wrap:break-word; border-radius:5px;-moz-border-radius:5px;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-light.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:1px solid #e77776;}
+address {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; border-left:1px solid #ddd;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}

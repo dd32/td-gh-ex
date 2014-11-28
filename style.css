@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 1.7
+Version: 1.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Sidebar on left side, left side navigation, 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -94,8 +94,8 @@ big {font-size: 1.5em;}
 ins, mark {font-weight:bold; background:none; color:#e77776;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #444; word-wrap:break-word; border-radius:5px;-moz-border-radius:5px;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-light.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-light.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:1px solid #e77776;}
+address {margin:10px 0; padding:0 0 0 10px; display:block; font-size:1.2em; line-height:1.5em; border-left:1px solid #ddd;}
 p {margin:0 0 10px; text-align:justify;}
 
 table {margin:10px; border-collapse:collapse;}
@@ -148,10 +148,10 @@ select {max-width:100%;}
 
 /* POST */
 .post-title {margin: 0; padding: 0;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; margin:0 0 10px; padding:5px; color:#e77776; border-top:1px solid #444; border-bottom:1px solid #444;}
 .postmetadata {clear:both; margin:20px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ddd;}
+.more {clear:both; margin:10px 0; padding:0 0 20px; border-bottom:1px solid #ddd;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; text-decoration:none; padding: 2px 5px; background:#ddd; color:#333; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #e77776; color:#ddd; text-decoration:none;}
@@ -171,8 +171,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 20px 5px 0;}
-.single-image {float:left; margin: 5px 20px 5px 0;}
+.wp-post-image, .single-image {float:left; margin:5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -195,7 +194,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .form-allowed-tags code {padding:0; border:none;}
 
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#e77776;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -243,12 +242,11 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header-image-mobile .header-img {width: 100%; height: auto;}
 	.postmetadata {margin:10px 0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin:5px 10px 5px 0;}
 	#sidebar {border-bottom:1px solid #444;}
 	.widget, #footer .widget {padding:5px 0; margin: 0 0 5px;}
 	.nav-widgettitle {display:none;}
-	#footer {width:100%; padding: 0; margin:0; float:left; background:none;}
+	#footer {width:100%; padding:0; margin:0; float:left; background:none;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0 0 10px;}
