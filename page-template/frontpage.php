@@ -92,10 +92,10 @@ $customizable_options = get_option( 'faster_theme_options' );
               <p> <?php echo get_the_excerpt(); ?>	</p>
           	  <div class=" col-md-12 no-padding post-comment" >
                     <div class="col-md-6 no-padding post-comment-set">
-                        Post By:<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a>
+                        <?php _e('Post By:','customizable') ?><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a>
                     </div>
                     <div class="col-md-6 no-padding post-comment-set text-right">
-                        Comments: <?php echo get_comments_number(); ?>
+                        <?php _e('Comments:','customizable') ?> <?php echo get_comments_number(); ?>
                     </div>
               </div>
         </div>
@@ -103,7 +103,7 @@ $customizable_options = get_option( 'faster_theme_options' );
         </div>
 			<?php 
             } else {
-            echo '<p>no posts found</p>';
+            echo '<p>'.__('no posts found','customizable').'</p>';
             }	 
             
             ?>
@@ -117,7 +117,7 @@ $customizable_options = get_option( 'faster_theme_options' );
         </div>
         <div class="col-md-2 btn-group no-padding">
         <?php if(!empty($customizable_options['downloadlink'])){ ?>
-		  <a href="<?php echo esc_url($customizable_options['downloadlink']); ?>" class="btn btn-default download-button">Download </a>
+		  <a href="<?php echo esc_url($customizable_options['downloadlink']); ?>" class="btn btn-default download-button"><?php _e('Download ','customizable') ?></a>
           <?php } ?>
         </div>
     </div>

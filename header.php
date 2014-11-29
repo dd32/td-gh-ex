@@ -44,7 +44,7 @@
       </div>
       <div class="header_right">
         <div class="navbar-header pull-right">
-          <button type="button" class="navbar-toggle navbar-toggle-top" id="menu-trigger"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
+          <button type="button" class="navbar-toggle navbar-toggle-top" id="menu-trigger"> <span class="sr-only"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>
         <nav class="customize-menu">
           <?php wp_nav_menu(array('theme_location'  => 'primary','container' => ' ')); ?>

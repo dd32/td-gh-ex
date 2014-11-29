@@ -7,7 +7,7 @@ get_header();?>
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
-      <h1><?php printf( __( 'Tag Archives: %s', 'customizable' ), single_tag_title( '', false ) ); ?></h1>
+      <h1> <?php _e('Tag Archives','customizable'); echo " : ".single_tag_title( '', false );?> </h1>
       <?php customizable_breadcrumbs();?>
     </div>
   </div>
@@ -17,7 +17,7 @@ get_header();?>
     <div class="left_section">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
-       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="section_post border-none">
         <?php if(has_post_thumbnail()) {echo get_the_post_thumbnail(get_the_ID(), 'customizable-blog-width',array('class'=>''));}?>
         <h3>
@@ -25,7 +25,7 @@ get_header();?>
         </h3>
         <h4><?php echo customizable_entry_meta();?></h4>
        <div class="content"><?php the_excerpt();?></div>
-        <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a>   
+        <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable'); ?></a>   
       </div>
       </article>
       <?php endwhile;?>
@@ -46,7 +46,7 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p> no posts found </p>
+      <p><?php _e('no posts found','customizable'); ?></p>
       <?php  endif;?>
     </div>
     <div class="side_bar">

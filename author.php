@@ -7,7 +7,7 @@ get_header();?>
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
-      <h1> <?php printf( __( 'All posts by %s', 'customizable' ), get_the_author() );?> </h1>
+      <h1> <?php _e('All posts by','customizable'); echo " : ".get_the_author();?> </h1>
       <?php customizable_breadcrumbs();?>
     </div>
   </div>
@@ -27,7 +27,7 @@ get_header();?>
           </h3>
           <h4><?php echo customizable_entry_meta();?></h4>
            <div class="content"><?php the_excerpt();?></div>
-          <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a> </div>
+          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
 
@@ -47,7 +47,7 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p> no posts found </p>
+       <p><?php _e('no posts found','customizable') ?>  </p>
       <?php  endif;?>
     </div>
     <div class="side_bar">

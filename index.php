@@ -25,7 +25,7 @@
           </h3>
           <h4><?php echo customizable_entry_meta();?></h4>
           <div class="content"> <?php the_excerpt();?></div>
-          <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a> </div>
+          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
 
@@ -45,7 +45,7 @@
       <?php
 		   else : 
 		   ?>
-      <p> no posts found </p>
+      <p> <?php _e('no posts found','customizable') ?> </p>
       <?php  endif;?>
     </div>
     <div class="side_bar">

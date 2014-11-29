@@ -190,7 +190,7 @@ function customizable_breadcrumbs() {
         echo '<li><a href="';
         echo home_url();
         echo '">';
-        echo 'Home';
+        _e('Home','customizable');
         echo '</a></li> / ';
         if (is_category() || is_single()) {
             echo '<li>';
@@ -215,13 +215,13 @@ function customizable_breadcrumbs() {
             }
         }
 	if (is_tag()) {single_tag_title();}
-    if (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
-    if (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
-    if (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
-    if (is_author()) {echo"<li>Author Archive"; echo'</li>';}
-    if (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
-    if (is_search()) {echo"<li>Search Results"; echo'</li>';}
-	if (is_404()) {echo"<li>404"; echo'</li>';}
+if (is_day()) {echo"<li>".__('Archive for ','customizable'); the_time('F jS, Y'); echo'</li>';}
+    if (is_month()) {echo"<li>".__('Archive for ','customizable'); the_time('F, Y'); echo'</li>';}
+    if (is_year()) {echo"<li>".__('Archive for','customizable'); the_time('Y'); echo'</li>';}
+    if (is_author()) {echo"<li>".__('Author Archive','customizable'); echo'</li>';}
+    if (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>".__('Blog Archives','customizable'); echo'</li>';}
+    if (is_search()) {echo"<li>".__('Search Results','customizable'); echo'</li>';}
+	if (is_404()) {echo"<li>".__('404','customizable'); echo'</li>';}
     }
     
     echo '</ol>';
@@ -253,7 +253,7 @@ function customizable_comment( $comment, $args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'customizable' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'customizable' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'customizable' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -348,9 +348,9 @@ if ( ! function_exists( 'customizable_entry_meta' ) ) :
 
 function customizable_entry_meta() {
 
-	$customizable_category_list = get_the_category_list( __( ', ', 'customizable' ) );
+	$customizable_category_list = get_the_category_list( ', ', 'customizable' );
 
-	$customizable_tag_list = get_the_tag_list( '', __( ', ', 'customizable' ) );
+	$customizable_tag_list = get_the_tag_list(', ', 'customizable' );
 
 	$customizable_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))),
@@ -366,19 +366,19 @@ function customizable_entry_meta() {
 
 	if(get_comments_number() > 0){
 		if ( $customizable_tag_list ) {
-			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: '.get_comments_number().' ', 'customizable' );
 		} elseif ( $customizable_category_list ) {
-			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: '.get_comments_number().' ', 'customizable' );
 		} else {
-			$customizable_utility_text = __( '<span class="post-category"> Posted on : %3$s </span><span class="post-author"> by : %4$s </span> <span class="post-comment"> Comments: '.get_comments_number().'</span>', 'customizable' );
+			$multishop_utility_text = __( 'Posted on : %3$s by : %4$s'.get_comments_number(). 'customizable' );
 		}
 	}else{
 		if ( $customizable_tag_list ) {
-			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: ', 'customizable' );
 		} elseif ( $customizable_category_list ) {
-			$customizable_utility_text = __( '<span class="post-category"> Posted in : %1$s  on %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments:', 'customizable' );
 		} else {
-			$customizable_utility_text = __( '<span class="post-category"> Posted on : %3$s </span><span class="post-author"> by : %4$s </span>', 'customizable' );
+			$multishop_utility_text = __( 'Posted on : %3$s by : %4$s', 'customizable' );
 		}
 	}
 

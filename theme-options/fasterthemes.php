@@ -39,8 +39,8 @@ function fasterthemes_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$customizable_menu = array(
-				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('Theme Options', 'fastertheme_framework'),
+				'page_title' => __( 'Faster Themes Options', 'customizable'),
+				'menu_title' => __('Theme Options', 'customizable'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
 				'callback' => 'fastertheme_framework_page'
@@ -69,8 +69,8 @@ function fastertheme_framework_page(){
     </div>
     <div class="header-right">
       <?php
-			echo "<h1>". __( 'Theme Options', 'customtheme' ) . "</h1>"; 			
-			echo "<div class='btn-save'><input type='submit' class='button-primary' value='Save Options' /></div>";			
+			echo "<h1>". __( 'Theme Options', 'customizable' ) . "</h1>"; 			
+			echo "<div class='btn-save'><input type='submit' class='button-primary' value='".__('Save Options','customizable')."' /></div>";			
 			?>
     </div>
   </div>
@@ -79,9 +79,9 @@ function fastertheme_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
-            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a></li>
-            <li><a id="options-group-2-tab" class="nav-tab homesettings-tab" title="Home Settings" href="#options-group-2">Home Page Settings</a></li>
-            <li><a id="options-group-3-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-3">PRO Theme Features</a></li>
+            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1"><?php _e('Basic Settings','customizable') ?></a></li>
+            <li><a id="options-group-2-tab" class="nav-tab homesettings-tab" title="Home Settings" href="#options-group-2"><?php _e('Home Page Settings','customizable') ?></a></li>
+            <li><a id="options-group-3-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-3"><?php _e('PRO Theme Features','customizable') ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -93,12 +93,12 @@ function fastertheme_framework_page(){
             <!-------------- First group ----------------->
             <div id="options-group-1" class="group faster-inner-tabs">
                 <div class="section theme-tabs theme-logo">
-                <a class="heading faster-inner-tab active" href="javascript:void(0)">Site Logo</a>
+                <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo','customizable') ?></a>
                 <div class="faster-inner-tab-group active">
-                    <div class="explain">Size of logo should be exactly 117x43px for best results. Leave blank to use text heading.</div>
+                    <div class="explain"><?php _e('Size of logo should be exactly 117x43px for best results. Leave blank to use text heading.','customizable') ?></div>
                     <div class="ft-control">
-                    <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($customizable_options['logo'])) echo esc_url($customizable_options['logo']); ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                    <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($customizable_options['logo'])) echo esc_url($customizable_options['logo']); ?>" placeholder="<?php _e('No file chosen','customizable') ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','customizable') ?>" />
                     <div class="screenshot" id="logo-image">
                       <?php if(!empty($customizable_options['logo'])) echo "<img src='".esc_url($customizable_options['logo'])."' /><a class='remove-image'>Remove</a>" ?>
                     </div>
@@ -106,12 +106,12 @@ function fastertheme_framework_page(){
                 </div>
               </div>
                 <div class="section theme-tabs theme-favicon">
-                  <a class="heading faster-inner-tab" href="javascript:void(0)">Favicon</a>
+                  <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Favicon','customizable') ?></a>
                   <div class="faster-inner-tab-group">
-                    <div class="explain">Size of favicon should be exactly 32x32px for best results.</div>
+                    <div class="explain"><?php _e('Size of favicon should be exactly 32x32px for best results.','customizable') ?></div>
                     <div class="ft-control">
-                      <input id="logo" class="upload" type="text" name="faster_theme_options[favicon]" value="<?php if(!empty($customizable_options['favicon'])) echo esc_url($customizable_options['favicon']); ?>" placeholder="No file chosen" />
-                      <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                      <input id="logo" class="upload" type="text" name="faster_theme_options[favicon]" value="<?php if(!empty($customizable_options['favicon'])) echo esc_url($customizable_options['favicon']); ?>" placeholder="<?php _e('No file chosen','customizable') ?>" />
+                      <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','customizable') ?>" />
                       <div class="screenshot" id="favicon-image">
                         <?php if(!empty($customizable_options['favicon'])) echo "<img src='".esc_url($customizable_options['favicon'])."' /><a class='remove-image'>Remove</a>" ?>
                       </div>
@@ -119,19 +119,19 @@ function fastertheme_framework_page(){
                   </div>
                 </div> 
                 <div id="section-headingtext2" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Home page heading Text</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Home page heading Text','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Some text regarding default home page title.</div>                
+              		<div class="explain"><?php _e('Some text regarding default home page title.','customizable') ?></div>                
                   	<input type="text" id="headingtext" class="of-input" name="faster_theme_options[headingtext]" size="32"  value="<?php if(!empty($customizable_options['headingtext'])) echo wp_filter_nohtml_kses($customizable_options['headingtext']); ?>">
                 </div>                
               </div>
             </div>
             	<div id="section-footertext2" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Copyright Text</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Copyright Text','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>                
+              		<div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','customizable') ?></div>                
                   	<input type="text" id="footertext" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($customizable_options['footertext'])) echo wp_filter_nohtml_kses($customizable_options['footertext']); ?>">
                 </div>                
               </div>
@@ -139,70 +139,70 @@ function fastertheme_framework_page(){
             </div>          
           <!-------------- Second group ----------------->
           <div id="options-group-2" class="group faster-inner-tabs">
-          <h3>Slider</h3>   
+          <h3><?php _e('Slider','customizable') ?></h3>   
           <?php for($customizable_i=1; $customizable_i <= 5 ;$customizable_i++ ):?> 
                 <div class="section theme-tabs theme-logo">
-                <a class="heading faster-inner-tab" href="javascript:void(0)">Slide <?php echo $customizable_i; ?></a>
+                <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Slide','customizable') ?> <?php echo $customizable_i; ?></a>
                 <div class="faster-inner-tab-group">
                     <div class="explain"></div>
                     <div class="ft-control">
-                    <input id="slider-img-<?php echo $customizable_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $customizable_i;?>]" value="<?php if(!empty($customizable_options['slider-img-'.$customizable_i])) echo esc_url($customizable_options['slider-img-'.$customizable_i]); ?>" placeholder="No file chosen" />
-                <input id="slider" class="upload-button button" type="button" value="Upload" />
+                    <input id="slider-img-<?php echo $customizable_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $customizable_i;?>]" value="<?php if(!empty($customizable_options['slider-img-'.$customizable_i])) echo esc_url($customizable_options['slider-img-'.$customizable_i]); ?>" placeholder="<?php _e('No file chosen','customizable') ?>" />
+                <input id="slider" class="upload-button button" type="button" value="<?php _e('Upload','customizable') ?>" />
                     <div class="screenshot" id="logo-image">
                       <?php if(!empty($customizable_options['slider-img-'.$customizable_i])) echo "<img src='".esc_url($customizable_options['slider-img-'.$customizable_i])."' /><a class='remove-image'>Remove</a>"; ?>
                		</div>
                     </div>
                     <div class="ft-control">
-                    <input id="slidelink-<?php echo $customizable_i; ?>" class="of-input" name="faster_theme_options[slidelink-<?php echo $customizable_i; ?>]" type="text" size="46" value="<?php if(!empty($customizable_options['slidelink-'.$customizable_i])) { echo esc_url($customizable_options['slidelink-'.$customizable_i]); } ?>" placeholder="Slide Link" />
+                    <input id="slidelink-<?php echo $customizable_i; ?>" class="of-input" name="faster_theme_options[slidelink-<?php echo $customizable_i; ?>]" type="text" size="46" value="<?php if(!empty($customizable_options['slidelink-'.$customizable_i])) { echo esc_url($customizable_options['slidelink-'.$customizable_i]); } ?>" placeholder="<?php _e('Slide Link','customizable') ?>" />
                   </div>
                 </div>
               </div> 
           <?php endfor; ?>
-          <h3>First Section</h3>   
+          <h3><?php _e('First Section','customizable') ?></h3>   
           		<div id="section-sectiontitle2" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Section Title</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Section Title','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Some text regarding default home page title.</div>                
+              		<div class="explain"><?php _e('Some text regarding default home page title.','customizable') ?></div>                
                   	<input type="text" id="sectionhead" class="of-input" name="faster_theme_options[sectionhead]" size="32"  value="<?php if(!empty($customizable_options['sectionhead'])) { echo wp_filter_nohtml_kses($customizable_options['sectionhead']); } ?>">
                 </div>                
               </div>
             </div>
           <?php for($customizable_j=1; $customizable_j <= 3 ;$customizable_j++ ):?>
                 <div class="section theme-tabs theme-logo">
-                <a class="heading faster-inner-tab" href="javascript:void(0)">Tab <?php echo $customizable_j; ?></a>
+                <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Tab','customizable') ?> <?php echo $customizable_j; ?></a>
                 <div class="faster-inner-tab-group">
                     <div class="ft-control">
-                    <input id="section-icon-<?php echo $customizable_j;?>" class="upload" type="text" name="faster_theme_options[section-icon-<?php echo $customizable_j;?>]"  value="<?php if(!empty($customizable_options['section-icon-'.$customizable_j])) echo esc_url($customizable_options['section-icon-'.$customizable_j]); ?>" placeholder="No file chosen" />
-            <input id="icon" class="upload-button button" type="button" value="Upload" />
+                    <input id="section-icon-<?php echo $customizable_j;?>" class="upload" type="text" name="faster_theme_options[section-icon-<?php echo $customizable_j;?>]"  value="<?php if(!empty($customizable_options['section-icon-'.$customizable_j])) echo esc_url($customizable_options['section-icon-'.$customizable_j]); ?>" placeholder="<?php _e('No file chosen','customizable') ?>" />
+            <input id="icon" class="upload-button button" type="button" value="<?php _e('Upload','customizable') ?>" />
                     <div class="screenshot" id="logo-image">
                       <?php if(!empty($customizable_options['section-icon-'.$customizable_j])) echo "<img src='".esc_url($customizable_options['section-icon-'.$customizable_j])."' /><a class='remove-image'>Remove</a>"; ?>
                     </div>
                     <div class="ft-control">
-                    <div class="explain">Upload icon for your home template , you would like to display in the Home Page.</div>
-                    <input id="sectiontitle-<?php echo $customizable_j; ?>" class="of-input" name="faster_theme_options[sectiontitle-<?php echo $customizable_j; ?>]" type="text" size="46" value="<?php if(!empty($customizable_options['sectiontitle-'.$customizable_j])) { echo wp_filter_nohtml_kses($customizable_options['sectiontitle-'.$customizable_j]); } ?>"  placeholder="Section Title" />
+                    <div class="explain"><?php _e("Upload icon for your home template , you would like to display in the Home Page.",'customizable') ?></div>
+                    <input id="sectiontitle-<?php echo $customizable_j; ?>" class="of-input" name="faster_theme_options[sectiontitle-<?php echo $customizable_j; ?>]" type="text" size="46" value="<?php if(!empty($customizable_options['sectiontitle-'.$customizable_j])) { echo wp_filter_nohtml_kses($customizable_options['sectiontitle-'.$customizable_j]); } ?>"  placeholder="<?php _e('Section Title','customizable') ?>" />
                     </div>
                     <div class="ft-control">
-                    <div class="explain">Enter title for your home template , you would like to display in the Home Page.</div>
-                    <textarea name="faster_theme_options[sectiondesc-<?php echo $customizable_j; ?>]" id="sectiondesc-<?php echo $customizable_j; ?>" class="of-input" placeholder="Section Description" rows="8" ><?php if(!empty($customizable_options['sectiondesc-'.$customizable_j])) { echo wp_filter_nohtml_kses($customizable_options['sectiondesc-'.$customizable_j]); } ?></textarea>
-                    <div class="explain">Enter description for your home template , you would like to display in the Home Page.</div>
+                    <div class="explain"><?php _e('Enter title for your home template , you would like to display in the Home Page.','customizable') ?></div>
+                    <textarea name="faster_theme_options[sectiondesc-<?php echo $customizable_j; ?>]" id="sectiondesc-<?php echo $customizable_j; ?>" class="of-input" placeholder="<?php _e('Section Description','customizable') ?>" rows="8" ><?php if(!empty($customizable_options['sectiondesc-'.$customizable_j])) { echo wp_filter_nohtml_kses($customizable_options['sectiondesc-'.$customizable_j]); } ?></textarea>
+                    <div class="explain"><?php _e("Enter description for your home template , you would like to display in the Home Page.",'customizable') ?></div>
                   </div>
                 </div>
               </div>
               </div> 
           <?php endfor; ?>    
-           <h3>Second Section</h3>  
+           <h3><?php _e('Second Section','customizable') ?></h3>  
           		<div id="section-recentpost2" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Recent Post Title</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Recent Post Title','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain">Enter recent post title for your site , you would like to display in the Home Page.</div>                
+              		<div class="explain"><?php _e('Enter recent post title for your site , you would like to display in the Home Page.','customizable') ?></div>                
                   	<input type="text" id="post" class="of-input" name="faster_theme_options[post-title]" size="32"  value="<?php if(!empty($customizable_options['post-title'])) { echo wp_filter_nohtml_kses($customizable_options['post-title']); } ?>">
                 </div>                
               </div>
             </div>
             	<div id="section-category" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Category</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Category','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
               		<div class="explain"></div>                
@@ -246,22 +246,22 @@ function fastertheme_framework_page(){
                 </div>                
               </div>
             </div> 
-            <h3>Download Settings</h3>  
+            <h3><?php _e('Download Settings','customizable') ?></h3>  
             	<div id="section-downloadcaption" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Download Caption</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Download Caption','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
               		<div class="explain"></div>                
-                  	<textarea name="faster_theme_options[downloadcaption]" id="downloadcaption" class="of-input" rows="5" placeholder="Caption" ><?php if(!empty($customizable_options['downloadcaption'])) { echo wp_filter_nohtml_kses($customizable_options['downloadcaption']); } ?></textarea>
+                  	<textarea name="faster_theme_options[downloadcaption]" id="downloadcaption" class="of-input" rows="5" placeholder="<?php _e('Caption','customizable') ?>" ><?php if(!empty($customizable_options['downloadcaption'])) { echo wp_filter_nohtml_kses($customizable_options['downloadcaption']); } ?></textarea>
                 </div>                
               </div>
             </div>
             	<div id="section-downloadlink" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Download Link</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Download Link','customizable') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
               		<div class="explain"></div>                
-                  	<input type="text" id="downloadlink" class="of-input" name="faster_theme_options[downloadlink]" size="32" placeholder="Download Link"  value="<?php if(!empty($customizable_options['downloadlink'])) { echo esc_url($customizable_options['downloadlink']); } ?>">
+                  	<input type="text" id="downloadlink" class="of-input" name="faster_theme_options[downloadlink]" size="32" placeholder="<?php _e('Download Link','customizable') ?>"  value="<?php if(!empty($customizable_options['downloadlink'])) { echo esc_url($customizable_options['downloadlink']); } ?>">
                 </div>                
               </div>
             </div>         
@@ -280,38 +280,26 @@ function fastertheme_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','customizable') ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
-            <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
+            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','customizable') ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
-<div class="save-options"><h2>Options saved successfully.</h2></div>
-<div class="newsletter">    
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <h2>Enter your email to join our mailing list and we'll keep you updated on new themes as they're
-            released and our exclusive special offers.</h2>          
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label>
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-          </div>
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value="">
-          </div>
-          <div class="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup--> 
-    </div>
+<div class="save-options"><h2><?php _e('Options saved successfully.','customizable') ?></h2></div>
+<div class="newsletter"> 
+  <!-- Begin MailChimp Signup Form -->
+  <h1><?php _e('Subscribe with us','customizable'); ?></h1>
+       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","customizable"); ?>
+          
+        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','customizable'); ?></a>
+        
+       </p> 
+  <!--End mc_embed_signup--> 
+</div>
+
+
+
 <?php } ?>

@@ -38,7 +38,7 @@ get_header();?>
       <?php 
 		   else : 
 		   ?>
-      <p> no posts found </p>
+      <p> <?php _e('no posts found ','customizable') ?></p>
       <?php  endif;?>
     </div>
   </div>

@@ -9,14 +9,14 @@ get_header();?>
       <h1>
         <?php
 						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'customizable' ), get_the_date() );
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'customizable' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'customizable' ) ) );
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'customizable' ), get_the_date( _x( 'Y', 'yearly archives date format', 'customizable' ) ) );
-						else :
-							_e( 'Archives', 'customizable' );
-						endif;
+            _e('Daily Archives','customizable'); echo ": ". get_the_date();
+        elseif ( is_month() ) :
+            _e('Monthly Archives','customizable'); echo ": ". get_the_date('F Y');
+        elseif ( is_year() ) :
+            _e('Yearly Archives','customizable'); echo ": ". get_the_date('Y');
+        else :
+            _e( 'Archives', 'customizable' );
+        endif;  
 					?>
       </h1>
       <?php customizable_breadcrumbs();?>
@@ -36,7 +36,7 @@ get_header();?>
           </h3>
           <h4><?php echo customizable_entry_meta();?></h4>
           <div class="content"> <?php the_excerpt();?></div>
-          <a class="read-more" href="<?php echo get_permalink();?>">READ MORE</a> </div>
+          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
         <!--Pagination Start-->
@@ -55,7 +55,7 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p> no posts found </p>
+      <p><?php _e('no posts found','customizable') ?>  </p>
       <?php  endif;?>
     </div>
     <div class="side_bar">
