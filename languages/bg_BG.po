@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-26 00:07+0200\n"
-"PO-Revision-Date: 2014-11-26 00:07+0200\n"
+"POT-Creation-Date: 2014-11-29 19:19+0200\n"
+"PO-Revision-Date: 2014-11-29 19:19+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -229,6 +229,134 @@ msgstr "Контакти"
 msgid "Theme settings updated successfully."
 msgstr "Промените по настройките на темата са запазени успешно."
 
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:67
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:85
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:102
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:160
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:205
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:222
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:237
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:253
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:278
+msgid "These options are available in the full version only."
+msgstr "Тези опции са налични само в пълната версия."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:67
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:85
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:102
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:136
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:160
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:205
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:222
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:237
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:253
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:278
+msgid "Click Here"
+msgstr "Кликнете тук"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:67
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:85
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:102
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:136
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:160
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:205
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:222
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:237
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:253
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:278
+msgid "to get the full version of tMuzz theme."
+msgstr "за да получите пълната версия на tMuzz темата."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Website Layout"
+msgstr "Уебсайт Оформление"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Wide"
+msgstr "Широко"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Boxed"
+msgstr "Рамка"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Select layout of your website"
+msgstr "Избери оформление на Вашия сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Code before &lt;/header&gt; tag"
+msgstr "Код преди &lt;/header&gt; таг"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Custom html code, before the &lt;/head&gt; tag"
+msgstr "Потребителски html код, преди &lt;/head&gt; таг"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Code before &lt;/body&gt; tag"
+msgstr "Код преди тагът &lt;/body&gt;"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Custom html code, before the &lt;/body&gt; tag"
+msgstr "Потребителски html код, преди тагът &lt;/body&gt;"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Tracking Code"
+msgstr "Код за тракване"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Tracking code (i.e. Google Analytics). It will be added in the footer part of the website."
+msgstr "Код за тракване (например Google Analytics). Той ще бъде добавен във футър частта на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Show Author Info After Single Posts"
+msgstr "Показване на информация за автора след единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Display author info box after single posts"
+msgstr "Показване на информация за автора след единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Show Social Sharing After Single Posts"
+msgstr "Показване на споделяне в социални сайтове след единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Display social sharing box after single posts"
+msgstr "Показване на социални иконки след единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Show Author Info After Single Pages"
+msgstr "Показване на информация за автора след единични страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Display author info box after single page"
+msgstr "Показване на информация за автора след единични страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Show Social Sharing After Single Pages"
+msgstr "Показване на споделяне в социални сайтове след единични страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:70
+msgid "Display social sharing box after single pages"
+msgstr "Показване на социални иконки след единични страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:74
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:92
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:109
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:124
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:149
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:194
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:213
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:228
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:261
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:270
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:283
+msgid "Get tMuzz Theme"
+msgstr "Вземи tMuzz Тема"
+
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:74
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:92
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:109
@@ -237,6 +365,768 @@ msgstr "Промените по настройките на темата са з
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:270
 msgid "Save Changes"
 msgstr "Запази Промените"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Logo Image Width"
+msgstr "Ширина на лого картинка"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Logo image width of your website"
+msgstr "Ширина на лого картинка на Вашия уеб сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Logo Image Height"
+msgstr "Височина на лого картинка"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Logo image height of your website"
+msgstr "Височина на лого картинка на Вашия уеб сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Header Phone"
+msgstr "Телефонен номер за Хедъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Your phone to appear in the website header"
+msgstr "Вашия телефонен номер, който ще се появи в хедъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Header E-mail"
+msgstr "Имейл адрес за Хедъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Your e-mail to appear in the website header"
+msgstr "Вашия имейл адрес, който ще се появи в хедъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Display Homepage Icon"
+msgstr "Покажи иконки на начална страница"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Display homepage icon in the website header"
+msgstr "Покажи иконка на начална страница в хедъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+msgid "Display Social Icons"
+msgstr "Покажи социални иконки"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Display social icons in the website header"
+msgstr "Покажи социални иконки в хедъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Display Search Form"
+msgstr "Показване на Форма за търсене"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Display search form in the website header"
+msgstr "Покажи форма за търсене в хедъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+msgid "Open Social Icons in a new window"
+msgstr "Отваряне на социални икони в нов прозорец"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+msgid "Open social icons links in a new window"
+msgstr "Отваряне на линковете на социалните иконки в нов прозорец."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Show Breadcrumb"
+msgstr "Показване на Бредкръмб"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Show breadcrumb in the website header"
+msgstr "Показване на Бредкръмб в хедъра на сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Page Header Background Image"
+msgstr "Картинка за фон на раздел заглавна страница"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:88
+msgid "Upload a custom breadcrumb background image for page header section."
+msgstr "Качване на изображение за фон за раздел заглавна страница."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Number of Columns"
+msgstr "Брой Колони"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "none"
+msgstr "нищо"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "1"
+msgstr "1"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "2"
+msgstr "2"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "3"
+msgstr "3"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "4"
+msgstr "4"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+msgid "Select number of columns to display in the website footer"
+msgstr "Изберете брой на колони, които да се покажат във футъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:105
+msgid "Display social icons in the website footer"
+msgstr "Покажи социални иконки във футъра на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:115
+msgid "Home Page Settings"
+msgstr "Настройки на Начална страница"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display Slider"
+msgstr "Покажи слайдър"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display slider in your website home page"
+msgstr "Покажи слайдър в началната страница на сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display Latest Posts"
+msgstr "Показване на най-нови постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display latest posts in your website home page"
+msgstr "Показване на слайдър в началната страница на Вашия сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display Sidebar"
+msgstr "Показване на сайдбар"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Display sidebar in your website home page"
+msgstr "Показване на сайдбар в началната страница на Вашия сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:120
+msgid "Select number of columns to display in the website homepage"
+msgstr "Изберете брой на колони, които да се покажат в началната страница на сайта."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:136
+msgid "Full Slider options are available in the full version only."
+msgstr "Пълните слайдър опции са достъпни само в пълната версия."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+msgid "Display Slide #1"
+msgstr "Покажи слайд #1"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+msgid "Display slide #1 in the slider"
+msgstr "Покажи слайд #1 в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s Title"
+msgstr "Слайд #%s Заглавие"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s Title in the slider"
+msgstr "Слайд #%s Заглавие в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s Text"
+msgstr "Слайд #%s Текст"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s Text in the slider"
+msgstr "Слайд #%s текст в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s URL"
+msgstr "Слайд #%s URL адрес"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s URL in the slider"
+msgstr "Слайд #%s УРЛ адрес в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Slide #%s Background Image"
+msgstr "Слайд #%s фон"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+#, php-format
+msgid "Upload a custom Slide #%s Background image for the slider."
+msgstr "Качете картинка за фон на слайд #%s за слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+msgid "Display Slide #2"
+msgstr "Покажи слайд #2"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:140
+msgid "Display slide #2 in the slider"
+msgstr "Покажи слайд #2 в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+msgid "Display Slide #3"
+msgstr "Покажи слайд #3"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:141
+msgid "Display slide #3 in the slider"
+msgstr "Покажи слайд #3 в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+msgid "Display Slide #4"
+msgstr "Покажи слайд #4"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:142
+msgid "Display slide #4 in the slider"
+msgstr "Покажи слайд #4 в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+msgid "Display Slide #5"
+msgstr "Покажи слайд #5"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:143
+msgid "Display slide #5 in the slider"
+msgstr "Покажи слайд #5 в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:157
+msgid "Colors Settings"
+msgstr "Настройки на Цветове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:163
+msgid "Content Background Color"
+msgstr "Цвят на фон на съдържанието"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:164
+msgid "The content background color of the website"
+msgstr "Цвят на фон на съдържанието в сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:164
+msgid "Text Color"
+msgstr "Цвят на текст"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:165
+msgid "The text color of the website"
+msgstr "Цвят на текста в сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:165
+msgid "Link Color"
+msgstr "Цвят на връзки"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:166
+msgid "The links color of the website"
+msgstr "Цвят на връзките в сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:166
+msgid "Link Hover Color"
+msgstr "Ховър цвят на връзки"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:167
+msgid "The links hover color of the website"
+msgstr "Ховър цвят на връзките в сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:167
+msgid "Headings Color"
+msgstr "Цвят на заглавията"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:168
+msgid "The headings (h1, h2, h3) color of the website"
+msgstr "Цвят на заглавията (h1, h2, h3) в сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:168
+msgid "Buttons Gradient Top Background Color"
+msgstr "Градиентен цвят на бутони в горна част"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:169
+msgid "The buttons gradient top background color."
+msgstr "Градиентен цвят на бутоните в горната част."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:169
+msgid "Buttons Gradient Bottom Background Color"
+msgstr "Градиентен цвят на бутони в долна част"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:170
+msgid "The buttons gradient bottom background color."
+msgstr "Градиентен цвят на бутоните в долната част."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:170
+msgid "Header Top Box Background Color"
+msgstr "Цвят на фона на хедър топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:171
+msgid "Color to appear in the website header top box background"
+msgstr "Цвят, който да се покаже в хедъра топ като фон"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:171
+msgid "Header Top Box Text Color"
+msgstr "Хедър Топ цвят на текст"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:172
+msgid "Color to appear in the website header top box text color"
+msgstr "Цвят на текст, който да се покаже в хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:172
+msgid "Header Top Box Link Color"
+msgstr "Хедър Топ цвят на линкове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:173
+msgid "Color to appear in the website header top box links colors"
+msgstr "Цвят на линкове, който да се покаже в хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:173
+msgid "Header Top Box Link Hover Color"
+msgstr "Хедър Топ цвят на текст при хоувър"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:174
+msgid "Color to appear in the website header top box links colors on hover"
+msgstr "Цвят на линкове при хоувър, който да се покаже в хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:174
+msgid "Header top Box Sub-Content Background Color"
+msgstr "Цвят на фона на под-съдържанието на хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:175
+msgid "Color to appear in the website header top box subcontent background"
+msgstr "Цвят на фон, който да се покаже в под-съдържанието на хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:175
+msgid "Header top Box Sub-Content Text Color"
+msgstr "Цвят на текста на под-съдържанието на хедър топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:176
+msgid "Color to appear in the website header top box subcontent text color"
+msgstr "Цвят на теьт, който да се покаже в под-съдържанието на хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:176
+msgid "Header top Box Sub-Content Link Color"
+msgstr "Цвят на линкове на под-съдържанието на хедър топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:177
+msgid "Color to appear in the website header top box subcontent links colors"
+msgstr "Цвят на линкове, който да се покаже в под-съдържанието на хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:177
+msgid "Header top Sub-Content Box Link Hover Color"
+msgstr "Хедър топ под-съдържание цвяр на линкове при хоувър"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:178
+msgid "Color to appear in the website header top box subcontent links colors on hover"
+msgstr "Цвят на линкове при хоувър, който да се покаже в под-съдържанието на хедъра топ"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:178
+msgid "Header Background Color"
+msgstr "Цвят на фона на хедъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:179
+msgid "Color to appear in the website header background"
+msgstr "Фон на цвят на хедъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:179
+msgid "Page Header Text Color"
+msgstr "Цвят на Текст в Заглавна Секция"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:180
+msgid "Color to appear in the website page header text color"
+msgstr "Цвят на текст, който да се покаже в заглавната секция на сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:180
+msgid "Page Header Link Color"
+msgstr "Цвят на Линкове в Заглавна Секция"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:181
+msgid "Color to appear in the website page header link color"
+msgstr "Цвят на линкове, който да се покаже в заглавната секция на сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:181
+msgid "Page Header Link Hover Color"
+msgstr "Цвят на Линкове при Хоувър в Заглавна Секция"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:182
+msgid "Color to appear in the website page header link color on hover"
+msgstr "Цвят на линкове при хоувър, който да се покаже в заглавната секция на сайта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:182
+msgid "Menu Text Color"
+msgstr "Меню Текс Цвят"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:183
+msgid "Color to appear in the website main menu text"
+msgstr "Цвят, който да се покаже за текст в главното меню"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:183
+msgid "Menu Drop Down Border Color"
+msgstr "Цвят на ивица на падащо меню"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:184
+msgid "Color to appear in the website main menu drop down border"
+msgstr "Цвят, който да се покаже за ивица на падащото главно меню"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:184
+msgid "Menu Drop Down Background Color"
+msgstr "Фон на Падащо Меню"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:185
+msgid "Background color to appear in the website main menu drop down"
+msgstr "Цвят на фон, който да се покаже за падащото главно меню"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:185
+msgid "Menu Hover Background Color (Large Resolution)"
+msgstr "Ховър цвят на фон на основното меню (Голяма резолюция)"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:186
+msgid "Background color to appear in the website main menu on hover"
+msgstr "Цвят на фон, който да се покаже за падащото главно меню при хоувър"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:186
+msgid "Menu Text Hover Color"
+msgstr "Меню Текс Цвят при Хоувър"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:187
+msgid "Color to appear in the website main menu text on hover"
+msgstr "Цвят, който да се покаже за падащото главно меню при хоувър на текст"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:187
+msgid "Footer Background Color"
+msgstr "Цвят на фон във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:188
+msgid "Color to appear in the website footer background"
+msgstr "Цвят на фон на футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:188
+msgid "Footer Text Color"
+msgstr "Цвят на текст във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:189
+msgid "Color to appear in the website footer text"
+msgstr "Цвят на текст във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:189
+msgid "Footer Link Color"
+msgstr "Цвят на връзка във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:190
+msgid "Color to appear in the website footer links"
+msgstr "Цвят на връзк във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:190
+msgid "Footer Link Hover Color"
+msgstr "Ховър цвят на връзка във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:191
+msgid "Color to appear in the website footer links on hover"
+msgstr "Ховър цвят на връзк във футъра"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Twitter"
+msgstr "Twitter"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Place your Twitter page url and the Twitter icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Twitter URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Place your LinkedIn page url and the LinkedIn icon will appear. To remove it, just leave it blank."
+msgstr "Поставете LinkedIn URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Instagram"
+msgstr "Инстаграм"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Place your Instagram page url and the Instagram icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Instagram URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:208
+msgid "Place your Tumblr page url and the Tumblr icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Tumblr URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:218
+msgid "Lightbox Settings"
+msgstr "Лайтбокс Настройки"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox Functionality"
+msgstr "Активиране на Лайтбокс фунционалност"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Globally Enable Lightbox functionality"
+msgstr "Глобално активиране на Лайтбокс фунционалност"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable on Home Page"
+msgstr "Активиране в Начална Страница"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox on Home Page of your website"
+msgstr "Активиране на Лайтбокс за Началната страница на Вашия сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable on Blog Index Page"
+msgstr "Активиране за индекс страницата на блог постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox on blog posts index page of your website"
+msgstr "Активиране на Лайтбокс за индекс страницата на блог постове на Вашия сайт"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable on Posts"
+msgstr "Активиране за постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox on Posts"
+msgstr "Активиране на Лайтбокс за постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable on Pages"
+msgstr "Активиране за страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox on Pages"
+msgstr "Активиране на Лайтбокс за страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable on Archive"
+msgstr "Активиране за архивни страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Enable Lightbox on Archive Pages (categories, tags, etc.)"
+msgstr "Активиране на Лайтбокс за архивни страници (категории, тагове, т.н.)"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Group Items"
+msgstr "Групиране на елементи"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:225
+msgid "Group Items (for displaying as a slideshow)"
+msgstr "Групиране на елементи (за показване като слайдшоу)"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:233
+msgid "Thumbnails Settings"
+msgstr "Тъмбнейли Настройки"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Enable"
+msgstr "Разрешаване"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Thumbnails Functionality"
+msgstr "Тъмбнейл фунционалност"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Globally Enable Thumbnails functionality"
+msgstr "Глобално активиране на Тъмбнейл фунционалност"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Display Image Size in Index Pages"
+msgstr "Размер на картинка в индексни страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "thumbnail"
+msgstr "тъмбнейл"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "medium"
+msgstr "средно"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "large"
+msgstr "широко"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "full"
+msgstr "пълно"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Select display thumbnail image size in Index Pages"
+msgstr "Избиране на размер на картинка за тъмбнейл в индексни страници"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Link Thumbnails"
+msgstr "Линкване на Тъмбнейли"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Link Thumbnails to Single Post URLs"
+msgstr "Линкване на Тъмбнейли към URL-и на единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Display in Single Post"
+msgstr "Показване в Единични Постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Display Thumbnail in Single Post"
+msgstr "Показване на Тъмбнейли в единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Display Image Size in Single Post"
+msgstr "Показване на размер на картинки в единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:240
+msgid "Select display thumbnail image size in Single Post"
+msgstr "Избиране на размер на картинка за тъмбнейл в страници за единични постове"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:249
+msgid "Contacts Settings"
+msgstr "Настройки на Контакти"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+msgid "Center Google Map Latitude"
+msgstr "Географска ширина на центъра на google карта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+msgid "The latitude of the center of the google map in contact pages."
+msgstr "Географска ширина на центъра на google картата в страниците за контакт."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+msgid "Center Google Map Longitude"
+msgstr "Географска височина на центъра на google карта"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+msgid "The longitude of the center of the google map in contact pages."
+msgstr "Географска височина на центъра на google картата в страниците за контакт."
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Name"
+msgstr "Име на Офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The display name of office #%s"
+msgstr "Името на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Latitude"
+msgstr "Географска ширина на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The latitude coordinate of office #%s"
+msgstr "Географска ширина на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Longitude"
+msgstr "Географска височина на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The longitude coordinate of office #%s"
+msgstr "Географска височина на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Address"
+msgstr "Адрес на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The address of office #%s"
+msgstr "Адресът на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Phone"
+msgstr "Номер на телефон на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The phone of office #%s"
+msgstr "Номер на телефон на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "Office #%s Email"
+msgstr "Имейл адрес на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:256
+#, php-format
+msgid "The email of office #%s"
+msgstr "Имейл адрес на офис #%s"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:275
+msgid "WooCommerce Settings"
+msgstr "Настройки на WooCommerce"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:280
+msgid "Display WooCommerce Sidebar"
+msgstr "Показване на WooCommerce Сайдбар"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:280
+msgid "Display WooCommerce sidebar in products pages"
+msgstr "Показване на WooCommerce сайдбар в страницата с продукти"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:280
+msgid "Products per Page"
+msgstr "Продукти на Страница"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:280
+msgid "The number of products diplayed per page"
+msgstr "Брой на продукти, които да се покажат на страница"
 
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/theme-options.php:305
 msgid "General Settings"
@@ -326,7 +1216,7 @@ msgstr "Следете нашите RSS емисии"
 msgid "Follow us on YouTube"
 msgstr "Следете ни в YouTube"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/inc/utilities.php:250
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/utilities.php:238
 msgid "Read More..."
 msgstr "Научи повече..."
 
@@ -598,519 +1488,6 @@ msgstr "Научи повече..."
 #~ msgid "Apply Color Scheme"
 #~ msgstr "Приложи Цветова Схема"
 
-#~ msgid "Select layout of your website"
-#~ msgstr "Избери оформление на Вашия сайт"
-
-#~ msgid "Website Layout"
-#~ msgstr "Уебсайт Оформление"
-
-#~ msgid "Custom html code, before the &lt;/head&gt; tag"
-#~ msgstr "Потребителски html код, преди &lt;/head&gt; таг"
-
-#~ msgid "Code before &lt;/header&gt; tag"
-#~ msgstr "Код преди &lt;/header&gt; таг"
-
-#~ msgid "Custom html code, before the &lt;/body&gt; tag"
-#~ msgstr "Потребителски html код, преди тагът &lt;/body&gt;"
-
-#~ msgid "Code before &lt;/body&gt; tag"
-#~ msgstr "Код преди тагът &lt;/body&gt;"
-
-#~ msgid ""
-#~ "Tracking code (i.e. Google Analytics). It will be added in the footer "
-#~ "part of the website."
-#~ msgstr ""
-#~ "Код за тракване (например Google Analytics). Той ще бъде добавен във "
-#~ "футър частта на сайта."
-
-#~ msgid "Tracking Code"
-#~ msgstr "Код за тракване"
-
-#~ msgid "Display author info box after single posts"
-#~ msgstr "Показване на информация за автора след единични постове"
-
-#~ msgid "Show Author Info After Single Posts"
-#~ msgstr "Показване на информация за автора след единични постове"
-
-#~ msgid "Display social sharing box after single posts"
-#~ msgstr "Показване на социални иконки след единични постове"
-
-#~ msgid "Show Social Sharing After Single Posts"
-#~ msgstr "Показване на споделяне в социални сайтове след единични постове"
-
-#~ msgid "Display author info box after single page"
-#~ msgstr "Показване на информация за автора след единични страници"
-
-#~ msgid "Show Author Info After Single Pages"
-#~ msgstr "Показване на информация за автора след единични страници"
-
-#~ msgid "Display social sharing box after single pages"
-#~ msgstr "Показване на социални иконки след единични страници"
-
-#~ msgid "Show Social Sharing After Single Pages"
-#~ msgstr "Показване на споделяне в социални сайтове след единични страници"
-
-#~ msgid "Logo image width of your website"
-#~ msgstr "Ширина на лого картинка на Вашия уеб сайт"
-
-#~ msgid "Logo Image Width"
-#~ msgstr "Ширина на лого картинка"
-
-#~ msgid "Logo image height of your website"
-#~ msgstr "Височина на лого картинка на Вашия уеб сайт"
-
-#~ msgid "Logo Image Height"
-#~ msgstr "Височина на лого картинка"
-
-#~ msgid "Your phone to appear in the website header"
-#~ msgstr "Вашия телефонен номер, който ще се появи в хедъра на сайта."
-
-#~ msgid "Header Phone"
-#~ msgstr "Телефонен номер за Хедъра"
-
-#~ msgid "Your e-mail to appear in the website header"
-#~ msgstr "Вашия имейл адрес, който ще се появи в хедъра на сайта."
-
-#~ msgid "Header E-mail"
-#~ msgstr "Имейл адрес за Хедъра"
-
-#~ msgid "Display homepage icon in the website header"
-#~ msgstr "Покажи иконка на начална страница в хедъра на сайта."
-
-#~ msgid "Display Homepage Icon"
-#~ msgstr "Покажи иконки на начална страница"
-
-#~ msgid "Display social icons in the website header"
-#~ msgstr "Покажи социални иконки в хедъра на сайта."
-
-#~ msgid "Display Social Icons"
-#~ msgstr "Покажи социални иконки"
-
-#~ msgid "Display search form in the website header"
-#~ msgstr "Покажи форма за търсене в хедъра на сайта."
-
-#~ msgid "Display Search Form"
-#~ msgstr "Показване на Форма за търсене"
-
-#~ msgid "Open social icons links in a new window"
-#~ msgstr "Отваряне на линковете на социалните иконки в нов прозорец."
-
-#~ msgid "Open Social Icons in a new window"
-#~ msgstr "Отваряне на социални икони в нов прозорец"
-
-#~ msgid "Show breadcrumb in the website header"
-#~ msgstr "Показване на Бредкръмб в хедъра на сайта"
-
-#~ msgid "Show Breadcrumb"
-#~ msgstr "Показване на Бредкръмб"
-
-#~ msgid "Upload a custom breadcrumb background image for page header section."
-#~ msgstr "Качване на изображение за фон за раздел заглавна страница."
-
-#~ msgid "Page Header Background Image"
-#~ msgstr "Картинка за фон на раздел заглавна страница"
-
-#~ msgid "Select number of columns to display in the website footer"
-#~ msgstr "Изберете брой на колони, които да се покажат във футъра на сайта."
-
-#~ msgid "Number of Columns"
-#~ msgstr "Брой Колони"
-
-#~ msgid "Display social icons in the website footer"
-#~ msgstr "Покажи социални иконки във футъра на сайта."
-
-#~ msgid "Home Page Settings"
-#~ msgstr "Настройки на Начална страница"
-
-#~ msgid "Display slider in your website home page"
-#~ msgstr "Покажи слайдър в началната страница на сайта"
-
-#~ msgid "Display Slider"
-#~ msgstr "Покажи слайдър"
-
-#~ msgid "Display latest posts in your website home page"
-#~ msgstr "Показване на слайдър в началната страница на Вашия сайт"
-
-#~ msgid "Display Latest Posts"
-#~ msgstr "Показване на най-нови постове"
-
-#~ msgid "Display sidebar in your website home page"
-#~ msgstr "Показване на сайдбар в началната страница на Вашия сайт"
-
-#~ msgid "Display Sidebar"
-#~ msgstr "Показване на сайдбар"
-
-#~ msgid "Select number of columns to display in the website homepage"
-#~ msgstr ""
-#~ "Изберете брой на колони, които да се покажат в началната страница на "
-#~ "сайта."
-
-#~ msgid "Display slide #%s in the slider"
-#~ msgstr "Покажи слайд #%s в слайдъра"
-
-#~ msgid "Display Slide #%s"
-#~ msgstr "Покажи слайд #%s"
-
-#~ msgid "Slide #%s Title in the slider"
-#~ msgstr "Слайд #%s Заглавие в слайдъра"
-
-#~ msgid "Slide #%s Title"
-#~ msgstr "Слайд #%s Заглавие"
-
-#~ msgid "Slide #%s Text in the slider"
-#~ msgstr "Слайд #%s текст в слайдъра"
-
-#~ msgid "Slide #%s Text"
-#~ msgstr "Слайд #%s Текст"
-
-#~ msgid "Slide #%s URL in the slider"
-#~ msgstr "Слайд #%s УРЛ адрес в слайдъра"
-
-#~ msgid "Slide #%s URL"
-#~ msgstr "Слайд #%s URL адрес"
-
-#~ msgid "Upload a custom Slide #%s Background image for the slider."
-#~ msgstr "Качете картинка за фон на слайд #%s за слайдъра"
-
-#~ msgid "Slide #%s Background Image"
-#~ msgstr "Слайд #%s фон"
-
-#~ msgid "Colors Settings"
-#~ msgstr "Настройки на Цветове"
-
-#~ msgid " The content background color of the website"
-#~ msgstr "Цвят на фон на съдържанието в сайта"
-
-#~ msgid "Content Background Color"
-#~ msgstr "Цвят на фон на съдържанието"
-
-#~ msgid " The text color of the website"
-#~ msgstr "Цвят на текста в сайта"
-
-#~ msgid "Text Color"
-#~ msgstr "Цвят на текст"
-
-#~ msgid " The links color of the website"
-#~ msgstr "Цвят на връзките в сайта."
-
-#~ msgid "Link Color"
-#~ msgstr "Цвят на връзки"
-
-#~ msgid " The links hover color of the website"
-#~ msgstr "Ховър цвят на връзките в сайта."
-
-#~ msgid "Link Hover Color"
-#~ msgstr "Ховър цвят на връзки"
-
-#~ msgid " The headings (h1, h2, h3) color of the website"
-#~ msgstr "Цвят на заглавията (h1, h2, h3) в сайта"
-
-#~ msgid "Headings Color"
-#~ msgstr "Цвят на заглавията"
-
-#~ msgid " The buttons gradient top background color."
-#~ msgstr "Градиентен цвят на бутоните в горната част."
-
-#~ msgid "Buttons Gradient Top Background Color"
-#~ msgstr "Градиентен цвят на бутони в горна част"
-
-#~ msgid " The buttons gradient bottom background color."
-#~ msgstr "Градиентен цвят на бутоните в долната част."
-
-#~ msgid "Buttons Gradient Bottom Background Color"
-#~ msgstr "Градиентен цвят на бутони в долна част"
-
-#~ msgid "Color to appear in the website header top box background"
-#~ msgstr "Цвят, който да се покаже в хедъра топ като фон"
-
-#~ msgid "Header Top Box Background Color"
-#~ msgstr "Цвят на фона на хедър топ"
-
-#~ msgid "Color to appear in the website header top box text color"
-#~ msgstr "Цвят на текст, който да се покаже в хедъра топ"
-
-#~ msgid "Header Top Box Text Color"
-#~ msgstr "Хедър Топ цвят на текст"
-
-#~ msgid "Color to appear in the website header top box links colors"
-#~ msgstr "Цвят на линкове, който да се покаже в хедъра топ"
-
-#~ msgid "Header Top Box Link Color"
-#~ msgstr "Хедър Топ цвят на линкове"
-
-#~ msgid "Color to appear in the website header top box links colors on hover"
-#~ msgstr "Цвят на линкове при хоувър, който да се покаже в хедъра топ"
-
-#~ msgid "Header Top Box Link Hover Color"
-#~ msgstr "Хедър Топ цвят на текст при хоувър"
-
-#~ msgid "Color to appear in the website header top box subcontent background"
-#~ msgstr "Цвят на фон, който да се покаже в под-съдържанието на хедъра топ"
-
-#~ msgid "Header top Box Sub-Content Background Color"
-#~ msgstr "Цвят на фона на под-съдържанието на хедъра топ"
-
-#~ msgid "Color to appear in the website header top box subcontent text color"
-#~ msgstr "Цвят на теьт, който да се покаже в под-съдържанието на хедъра топ"
-
-#~ msgid "Header top Box Sub-Content Text Color"
-#~ msgstr "Цвят на текста на под-съдържанието на хедър топ"
-
-#~ msgid ""
-#~ "Color to appear in the website header top box subcontent links colors"
-#~ msgstr ""
-#~ "Цвят на линкове, който да се покаже в под-съдържанието на хедъра топ"
-
-#~ msgid "Header top Box Sub-Content Link Color"
-#~ msgstr "Цвят на линкове на под-съдържанието на хедър топ"
-
-#~ msgid ""
-#~ "Color to appear in the website header top box subcontent links colors on "
-#~ "hover"
-#~ msgstr ""
-#~ "Цвят на линкове при хоувър, който да се покаже в под-съдържанието на "
-#~ "хедъра топ"
-
-#~ msgid "Header top Sub-Content Box Link Hover Color"
-#~ msgstr "Хедър топ под-съдържание цвяр на линкове при хоувър"
-
-#~ msgid "Color to appear in the website header background"
-#~ msgstr "Фон на цвят на хедъра"
-
-#~ msgid "Header Background Color"
-#~ msgstr "Цвят на фона на хедъра"
-
-#~ msgid "Color to appear in the website page header text color"
-#~ msgstr "Цвят на текст, който да се покаже в заглавната секция на сайта"
-
-#~ msgid "Page Header Text Color"
-#~ msgstr "Цвят на Текст в Заглавна Секция"
-
-#~ msgid "Color to appear in the website page header link color"
-#~ msgstr "Цвят на линкове, който да се покаже в заглавната секция на сайта"
-
-#~ msgid "Page Header Link Color"
-#~ msgstr "Цвят на Линкове в Заглавна Секция"
-
-#~ msgid "Color to appear in the website page header link color on hover"
-#~ msgstr ""
-#~ "Цвят на линкове при хоувър, който да се покаже в заглавната секция на "
-#~ "сайта"
-
-#~ msgid "Page Header Link Hover Color"
-#~ msgstr "Цвят на Линкове при Хоувър в Заглавна Секция"
-
-#~ msgid "Color to appear in the website main menu text"
-#~ msgstr "Цвят, който да се покаже за текст в главното меню"
-
-#~ msgid "Menu Text Color"
-#~ msgstr "Меню Текс Цвят"
-
-#~ msgid "Color to appear in the website main menu drop down border"
-#~ msgstr "Цвят, който да се покаже за ивица на падащото главно меню"
-
-#~ msgid "Menu Drop Down Border Color"
-#~ msgstr "Цвят на ивица на падащо меню"
-
-#~ msgid "Background color to appear in the website main menu drop down"
-#~ msgstr "Цвят на фон, който да се покаже за падащото главно меню"
-
-#~ msgid "Menu Drop Down Background Color"
-#~ msgstr "Фон на Падащо Меню"
-
-#~ msgid "Background color to appear in the website main menu on hover"
-#~ msgstr "Цвят на фон, който да се покаже за падащото главно меню при хоувър"
-
-#~ msgid "Menu Hover Background Color (Large Resolution)"
-#~ msgstr "Ховър цвят на фон на основното меню (Голяма резолюция)"
-
-#~ msgid "Color to appear in the website main menu text on hover"
-#~ msgstr ""
-#~ "Цвят, който да се покаже за падащото главно меню при хоувър на текст"
-
-#~ msgid "Menu Text Hover Color"
-#~ msgstr "Меню Текс Цвят при Хоувър"
-
-#~ msgid "Color to appear in the website footer background"
-#~ msgstr "Цвят на фон на футъра"
-
-#~ msgid "Footer Background Color"
-#~ msgstr "Цвят на фон във футъра"
-
-#~ msgid "Color to appear in the website footer text"
-#~ msgstr "Цвят на текст във футъра"
-
-#~ msgid "Footer Text Color"
-#~ msgstr "Цвят на текст във футъра"
-
-#~ msgid "Color to appear in the website footer links"
-#~ msgstr "Цвят на връзк във футъра"
-
-#~ msgid "Footer Link Color"
-#~ msgstr "Цвят на връзка във футъра"
-
-#~ msgid "Color to appear in the website footer links on hover"
-#~ msgstr "Ховър цвят на връзк във футъра"
-
-#~ msgid "Footer Link Hover Color"
-#~ msgstr "Ховър цвят на връзка във футъра"
-
-#~ msgid ""
-#~ "Place your %s page url and the %s icon will appear. To remove it, just "
-#~ "leave it blank."
-#~ msgstr ""
-#~ "Поставете %s URL адреса на Вашата страница и %s иконката ще се появи. За "
-#~ "да я махнете, просто оставете полето празно."
-
-#~ msgid "Lightbox Settings"
-#~ msgstr "Лайтбокс Настройки"
-
-#~ msgid "Globally Enable Lightbox functionality"
-#~ msgstr "Глобално активиране на Лайтбокс фунционалност"
-
-#~ msgid "Enable Lightbox Functionality"
-#~ msgstr "Активиране на Лайтбокс фунционалност"
-
-#~ msgid "Enable Lightbox on Home Page of your website"
-#~ msgstr "Активиране на Лайтбокс за Началната страница на Вашия сайт"
-
-#~ msgid "Enable on Home Page"
-#~ msgstr "Активиране в Начална Страница"
-
-#~ msgid "Enable Lightbox on blog posts index page of your website"
-#~ msgstr ""
-#~ "Активиране на Лайтбокс за индекс страницата на блог постове на Вашия сайт"
-
-#~ msgid "Enable on Blog Index Page"
-#~ msgstr "Активиране за индекс страницата на блог постове"
-
-#~ msgid "Enable Lightbox on Posts"
-#~ msgstr "Активиране на Лайтбокс за постове"
-
-#~ msgid "Enable on Posts"
-#~ msgstr "Активиране за постове"
-
-#~ msgid "Enable Lightbox on Pages"
-#~ msgstr "Активиране на Лайтбокс за страници"
-
-#~ msgid "Enable on Pages"
-#~ msgstr "Активиране за страници"
-
-#~ msgid "Enable Lightbox on Archive Pages (categories, tags, etc.)"
-#~ msgstr ""
-#~ "Активиране на Лайтбокс за архивни страници (категории, тагове, т.н.)"
-
-#~ msgid "Enable on Archive"
-#~ msgstr "Активиране за архивни страници"
-
-#~ msgid "Group Items (for displaying as a slideshow)"
-#~ msgstr "Групиране на елементи (за показване като слайдшоу)"
-
-#~ msgid "Group Items"
-#~ msgstr "Групиране на елементи"
-
-#~ msgid "Thumbnails Settings"
-#~ msgstr "Тъмбнейли Настройки"
-
-#~ msgid "Globally Enable Thumbnails functionality"
-#~ msgstr "Глобално активиране на Тъмбнейл фунционалност"
-
-#~ msgid "Enable Thumbnails Functionality"
-#~ msgstr "Активиране на Тъмбнейл фунционалност"
-
-#~ msgid "Select display thumbnail image size in Index Pages"
-#~ msgstr "Избиране на размер на картинка за тъмбнейл в индексни страници"
-
-#~ msgid "Display Image Size in Index Pages"
-#~ msgstr "Размер на картинка в индексни страници"
-
-#~ msgid "Link Thumbnails to Single Post URLs"
-#~ msgstr "Линкване на Тъмбнейли към URL-и на единични постове"
-
-#~ msgid "Link Thumbnails"
-#~ msgstr "Линкване на Тъмбнейли"
-
-#~ msgid "Display Thumbnail in Single Post"
-#~ msgstr "Показване на Тъмбнейли в единични постове"
-
-#~ msgid "Display in Single Post"
-#~ msgstr "Показване в Единични Постове"
-
-#~ msgid "Select display thumbnail image size in Single Post"
-#~ msgstr ""
-#~ "Избиране на размер на картинка за тъмбнейл в страници за единични постове"
-
-#~ msgid "Display Image Size in Single Post"
-#~ msgstr "Показване на размер на картинки в единични постове"
-
-#~ msgid "Contacts Settings"
-#~ msgstr "Настройки на Контакти"
-
-#~ msgid "The latitude of the center of the google map in contact pages."
-#~ msgstr ""
-#~ "Географска ширина на центъра на google картата в страниците за контакт."
-
-#~ msgid "Center Google Map Latitude"
-#~ msgstr "Географска ширина на центъра на google карта"
-
-#~ msgid "The longitude of the center of the google map in contact pages."
-#~ msgstr ""
-#~ "Географска височина на центъра на google картата в страниците за контакт."
-
-#~ msgid "Center Google Map Longitude"
-#~ msgstr "Географска височина на центъра на google карта"
-
-#~ msgid "The display name of office #%s"
-#~ msgstr "Името на офис #%s"
-
-#~ msgid "Office #%s Name"
-#~ msgstr "Име на Офис #%s"
-
-#~ msgid "The latitude coordinate of office #%s"
-#~ msgstr "Географска ширина на офис #%s"
-
-#~ msgid "Office #%s Latitude"
-#~ msgstr "Географска ширина на офис #%s"
-
-#~ msgid "The longitude coordinate of office #%s"
-#~ msgstr "Географска височина на офис #%s"
-
-#~ msgid "Office #%s Longitude"
-#~ msgstr "Географска височина на офис #%s"
-
-#~ msgid "The address of office #%s"
-#~ msgstr "Адресът на офис #%s"
-
-#~ msgid "Office #%s Address"
-#~ msgstr "Адрес на офис #%s"
-
-#~ msgid "The phone of office #%s"
-#~ msgstr "Номер на телефон на офис #%s"
-
-#~ msgid "Office #%s Phone"
-#~ msgstr "Номер на телефон на офис #%s"
-
-#~ msgid "The email of office #%s"
-#~ msgstr "Имейл адрес на офис #%s"
-
-#~ msgid "Office #%s Email"
-#~ msgstr "Имейл адрес на офис #%s"
-
-#~ msgid "WooCommerce Settings"
-#~ msgstr "Настройки на WooCommerce"
-
-#~ msgid "Display WooCommerce sidebar in products pages"
-#~ msgstr "Показване на WooCommerce сайдбар в страницата с продукти"
-
-#~ msgid "Display WooCommerce Sidebar"
-#~ msgstr "Показване на WooCommerce Сайдбар"
-
-#~ msgid "The number of products diplayed per page"
-#~ msgstr "Брой на продукти, които да се покажат на страница"
-
-#~ msgid "Products per Page"
-#~ msgstr "Продукти на Страница"
-
 #~ msgid "Follow us on Instagram"
 #~ msgstr "Следете ни в Instagram"
 
@@ -1280,9 +1657,6 @@ msgstr "Научи повече..."
 #~ msgid "Displays your latest Instagram photos"
 #~ msgstr "Показване на последните снимки от Инстаграм"
 
-#~ msgid "Instagram"
-#~ msgstr "Инстаграм"
-
 #~ msgid "Username"
 #~ msgstr "Потребителско име"
 
@@ -1291,12 +1665,6 @@ msgstr "Научи повече..."
 
 #~ msgid "Photo Size"
 #~ msgstr "Размер на снимка"
-
-#~ msgid "Thumbnail"
-#~ msgstr "Тъмбнейл"
-
-#~ msgid "Large"
-#~ msgstr "Широк"
 
 #~ msgid "Unable to communicate with Instagram."
 #~ msgstr "Невъзможност за комуникация с Инстаграм."
@@ -2027,9 +2395,6 @@ msgstr "Научи повече..."
 
 #~ msgid "No Responses"
 #~ msgstr "Няма отговори"
-
-#~ msgid "on"
-#~ msgstr "в"
 
 #~ msgid "Your comment is awaiting moderation."
 #~ msgstr "Вашият коментар е в процес на модерация."
