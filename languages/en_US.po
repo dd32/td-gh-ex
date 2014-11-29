@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Minamaze v1.0.6\n"
+"Project-Id-Version: Minamaze v1.1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-10-06 22:15:41+0000\n"
+"PO-Revision-Date: 2014-11-29 15:46:29+0000\n"
 "Last-Translator: localadmin <afzaal@thinkupthemes.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: admin/main/framework.php:122
 #: admin/main/framework.php:124
-#: admin/main/options.php:211
+#: admin/main/options.php:200
 #@ redux-framework
 msgid "Options"
 msgstr ""
@@ -45,7 +45,6 @@ msgstr ""
 #: admin/main/framework.php:1310
 #: admin/main/framework.php:1311
 #: admin/main/framework.php:2085
-#: admin/main/framework.php:2198
 #@ redux-framework
 msgid "System Info"
 msgstr ""
@@ -81,13 +80,13 @@ msgid "Expand"
 msgstr ""
 
 #: admin/main/framework.php:1973
-#: admin/main/framework.php:2230
+#: admin/main/framework.php:2216
 #@ redux-framework
 msgid "Reset to Defaults"
 msgstr ""
 
 #: admin/main/framework.php:1976
-#: admin/main/framework.php:2233
+#: admin/main/framework.php:2219
 #@ redux-framework
 msgid "Working..."
 msgstr ""
@@ -352,67 +351,6 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: admin/main/inc/fields/typography/field_typography.php:105
-#@ redux-framework
-msgid "Font family"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:165
-#: admin/main/inc/fields/typography/field_typography.php:169
-#@ redux-framework
-msgid "Font style"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:169
-#@ redux-framework
-msgid "Style"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:195
-#@ redux-framework
-msgid "Font subsets"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:196
-#@ redux-framework
-msgid "Subsets"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:196
-#@ redux-framework
-msgid "Font script"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:214
-#@ redux-framework
-msgid "Size"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:223
-#@ redux-framework
-msgid "Height"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:231
-#@ redux-framework
-msgid "Word Spacing"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:239
-#@ redux-framework
-msgid "Letter Spacing"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:254
-#@ redux-framework
-msgid "Font color"
-msgstr ""
-
-#: admin/main/inc/fields/typography/field_typography.php:262
-#@ redux-framework
-msgid "Backup Font Family"
-msgstr ""
-
 #: admin/main/inc/validation/color/validation_color.php:15
 #@ redux
 msgid "This field must be a valid color value."
@@ -453,278 +391,147 @@ msgstr ""
 msgid "You must provide a valid URL for this option."
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:59
-#: lib/plugins/theme-plugin-activation.php:164
-#@ lan-thinkupthemes
-msgid "Install Required Plugins"
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:60
-#: lib/plugins/theme-plugin-activation.php:165
-#@ lan-thinkupthemes
-msgid "Install Plugins"
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:61
-#: lib/plugins/theme-plugin-activation.php:166
-#, php-format
-#@ lan-thinkupthemes
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:62
-#@ lan-thinkupthemes
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:63
-#: lib/plugins/theme-plugin-activation.php:168
-#, php-format
-#@ lan-thinkupthemes
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:64
-#: lib/plugins/theme-plugin-activation.php:169
-#, php-format
-#@ lan-thinkupthemes
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:65
-#: lib/plugins/theme-plugin-activation.php:170
-#, php-format
-#@ lan-thinkupthemes
-msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:66
-#: lib/plugins/theme-plugin-activation.php:171
-#, php-format
-#@ lan-thinkupthemes
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:67
-#: lib/plugins/theme-plugin-activation.php:172
-#, php-format
-#@ lan-thinkupthemes
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:68
-#: lib/plugins/theme-plugin-activation.php:173
-#, php-format
-#@ lan-thinkupthemes
-msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:69
-#: lib/plugins/theme-plugin-activation.php:174
-#, php-format
-#@ lan-thinkupthemes
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:70
-#: lib/plugins/theme-plugin-activation.php:175
-#, php-format
-#@ lan-thinkupthemes
-msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:71
-#: lib/plugins/theme-plugin-activation.php:176
-#@ lan-thinkupthemes
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:72
-#: lib/plugins/theme-plugin-activation.php:177
-#@ lan-thinkupthemes
-msgid "Activate installed plugin"
-msgid_plural "Activate installed plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/main/options/00.theme-setup.php:73
-#: lib/plugins/theme-plugin-activation.php:178
-#: lib/plugins/theme-plugin-activation.php:489
-#@ lan-thinkupthemes
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:74
-#: lib/plugins/theme-plugin-activation.php:179
-#: lib/plugins/theme-plugin-activation.php:1845
-#@ lan-thinkupthemes
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:75
-#, php-format
-#@ lan-thinkupthemes
-msgid "Plugin(s) installed and activated successfully. %s"
-msgstr ""
-
-#: admin/main/options/00.theme-setup.php:150
+#: admin/main/options/00.theme-setup.php:103
 #@ lan-thinkupthemes
 msgid "Archive Category: "
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:152
+#: admin/main/options/00.theme-setup.php:105
 #@ lan-thinkupthemes
 msgid "Posts Tagged: "
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:161
+#: admin/main/options/00.theme-setup.php:114
 #@ lan-thinkupthemes
 msgid "Search Results for: "
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:176
+#: admin/main/options/00.theme-setup.php:129
 #@ lan-thinkupthemes
 msgid "Archived Article(s) by Author: "
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:178
+#: admin/main/options/00.theme-setup.php:131
 #@ lan-thinkupthemes
 msgid "Error 404 - Not Found."
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:208
+#: admin/main/options/00.theme-setup.php:161
 #@ lan-thinkupthemes
 msgid "Prev"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:217
+#: admin/main/options/00.theme-setup.php:170
+#: lib/functions/template-tags.php:67
 #@ lan-thinkupthemes
 msgid "Next"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:408
-#: admin/main/options/00.theme-setup.php:467
-#: lib/widgets/popularposts.php:95
+#: admin/main/options/00.theme-setup.php:361
+#: admin/main/options/00.theme-setup.php:420
+#: lib/widgets/popularposts.php:93
 #@ lan-thinkupthemes
 msgid "No Comments"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:409
-#: admin/main/options/00.theme-setup.php:469
-#: lib/widgets/popularposts.php:95
+#: admin/main/options/00.theme-setup.php:362
+#: admin/main/options/00.theme-setup.php:422
+#: lib/widgets/popularposts.php:93
 #@ lan-thinkupthemes
 msgid "1 Comment"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:410
-#: admin/main/options/00.theme-setup.php:465
-#: lib/widgets/popularposts.php:95
+#: admin/main/options/00.theme-setup.php:363
+#: admin/main/options/00.theme-setup.php:418
+#: lib/widgets/popularposts.php:93
 #@ lan-thinkupthemes
 msgid "% Comments"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:411
+#: admin/main/options/00.theme-setup.php:364
 #@ lan-thinkupthemes
 msgid "Comments Off"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:423
+#: admin/main/options/00.theme-setup.php:376
 #@ lan-thinkupthemes
 msgid "Enter your password to view comments."
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:450
+#: admin/main/options/00.theme-setup.php:403
 #, php-format
 #@ lan-thinkupthemes
 msgid "Comment on %s"
 msgstr ""
 
-#: admin/main/options/00.theme-setup.php:549
+#: admin/main/options/00.theme-setup.php:474
 #@ lan-thinkupthemes
 msgid "Thumbs"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:295
-#: admin/main/options/01.general-settings.php:299
-#: admin/main/options/01.general-settings.php:321
+#: admin/main/options/01.general-settings.php:296
+#: admin/main/options/01.general-settings.php:300
+#: admin/main/options/01.general-settings.php:322
 #, php-format
 #@ lan-thinkupthemes
 msgid "%s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:297
+#: admin/main/options/01.general-settings.php:298
 #, php-format
 #@ lan-thinkupthemes
 msgid "Blog Post Image: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:301
+#: admin/main/options/01.general-settings.php:302
 #, php-format
 #@ lan-thinkupthemes
 msgid "Search Results: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:303
+#: admin/main/options/01.general-settings.php:304
 #@ lan-thinkupthemes
 msgid "Page Not Found"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:305
+#: admin/main/options/01.general-settings.php:306
 #, php-format
 #@ lan-thinkupthemes
 msgid "Category Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:307
+#: admin/main/options/01.general-settings.php:308
 #, php-format
 #@ lan-thinkupthemes
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:310
+#: admin/main/options/01.general-settings.php:311
 #, php-format
 #@ lan-thinkupthemes
 msgid "Author Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:313
+#: admin/main/options/01.general-settings.php:314
 #, php-format
 #@ lan-thinkupthemes
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:315
+#: admin/main/options/01.general-settings.php:316
 #, php-format
 #@ lan-thinkupthemes
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:317
+#: admin/main/options/01.general-settings.php:318
 #, php-format
 #@ lan-thinkupthemes
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: admin/main/options/01.general-settings.php:319
-#: admin/main/options.php:1081
+#: admin/main/options/01.general-settings.php:320
+#: admin/main/options.php:1071
 #@ lan-thinkupthemes
 #@ redux-framework
 msgid "Blog"
@@ -795,80 +602,81 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: admin/main/options/05.blog.php:65
+#: admin/main/options/05.blog.php:53
 #@ lan-thinkupthemes
 msgid "Sticky"
 msgstr ""
 
-#: admin/main/options/05.blog.php:73
+#: admin/main/options/05.blog.php:61
 #, php-format
 #@ lan-thinkupthemes
 msgid "<span class=\"date\"><i class=\"icon-calendar-empty\"></i><a href=\"%1$s\" title=\"%2$s\"><time datetime=\"%3$s\">%4$s</time></a></span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:87
+#: admin/main/options/05.blog.php:75
 #@ lan-thinkupthemes
 msgid "0 comments"
 msgstr ""
 
-#: admin/main/options/05.blog.php:87
+#: admin/main/options/05.blog.php:75
 #@ lan-thinkupthemes
 msgid "1 comment"
 msgstr ""
 
-#: admin/main/options/05.blog.php:87
+#: admin/main/options/05.blog.php:75
 #@ lan-thinkupthemes
 msgid "% comments"
 msgstr ""
 
-#: admin/main/options/05.blog.php:95
-#: admin/main/options/05.blog.php:106
+#: admin/main/options/05.blog.php:83
+#: admin/main/options/05.blog.php:94
 #@ lan-thinkupthemes
 msgid ", "
 msgstr ""
 
-#: admin/main/options/05.blog.php:99
-#: admin/main/options/05.blog.php:110
+#: admin/main/options/05.blog.php:87
+#: admin/main/options/05.blog.php:98
 #, php-format
 #@ lan-thinkupthemes
 msgid "%1$s"
 msgstr ""
 
-#: admin/main/options/05.blog.php:117
+#: admin/main/options/05.blog.php:105
 #, php-format
 #@ lan-thinkupthemes
 msgid "<span class=\"author\"><i class=\"icon-pencil\"></i>By <a href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a></span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:119
+#: admin/main/options/05.blog.php:107
 #, php-format
 #@ lan-thinkupthemes
 msgid "View all posts by %s"
 msgstr ""
 
+#: admin/main/options/00.theme-setup.php:512
 #: admin/main/options/02.homepage.php:52
 #: admin/main/options/02.homepage.php:271
 #: admin/main/options/02.homepage.php:287
 #: admin/main/options/02.homepage.php:303
-#: admin/main/options/05.blog.php:128
 #@ lan-thinkupthemes
 msgid "Read More"
 msgstr ""
 
-#: admin/main/options/05.blog.php:210
+#: admin/main/options/05.blog.php:191
 #@ lan-thinkupthemes
 msgid "Pingback:"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: admin/main/options/05.blog.php:210
-#: admin/main/options/05.blog.php:235
+#: admin/main/options/05.blog.php:191
+#: admin/main/options/05.blog.php:216
+#: content-single.php:17
 #: single.php:16
 #@ lan-thinkupthemes
 msgid "Edit"
 msgstr ""
 
-#: admin/main/options/05.blog.php:225
+#: admin/main/options/05.blog.php:206
 #@ lan-thinkupthemes
 msgid "Your comment is awaiting moderation."
 msgstr ""
@@ -920,7 +728,7 @@ msgstr ""
 
 #: admin/main/options.php:97
 #, php-format
-#@ default
+#@ redux-framework
 msgid "This <a href=\"%1$s\">child theme</a> requires its parent theme, %2$s."
 msgstr ""
 
@@ -929,696 +737,696 @@ msgstr ""
 msgid "http://codex.wordpress.org/Child_Themes"
 msgstr ""
 
-#: admin/main/options.php:207
+#: admin/main/options.php:196
 #@ redux-framework
 msgid "Theme Options"
 msgstr ""
 
-#: admin/main/options.php:282
+#: admin/main/options.php:271
 #@ redux-framework
 msgid "<p>Thank you for creating with <a href=\"http://wordpress.org/\">WordPress</a></p>"
 msgstr ""
 
-#: admin/main/options.php:314
+#: admin/main/options.php:303
 #@ redux-framework
 msgid "General Settings"
 msgstr ""
 
-#: admin/main/options.php:315
+#: admin/main/options.php:304
 #@ redux-framework
 msgid "Welcome to the Simple Options Framework Demo"
 msgstr ""
 
-#: admin/main/options.php:316
+#: admin/main/options.php:305
 #@ redux-framework
 msgid "<span class=\"redux-title\">Logo & Favicon Settings</span>"
 msgstr ""
 
-#: admin/main/options.php:322
+#: admin/main/options.php:311
 #@ redux-framework
 msgid "Logo Settings"
 msgstr ""
 
-#: admin/main/options.php:323
+#: admin/main/options.php:312
 #@ redux-framework
 msgid "If you have an image logo you can upload it, otherwise you can display a text site title"
 msgstr ""
 
-#: admin/main/options.php:333
+#: admin/main/options.php:322
 #@ redux-framework
 msgid "Custom Image Logo"
 msgstr ""
 
-#: admin/main/options.php:334
+#: admin/main/options.php:323
 #@ redux-framework
 msgid "Upload image logo or specify the image url.<br />Name the logo image logo.png."
 msgstr ""
 
-#: admin/main/options.php:341
+#: admin/main/options.php:330
 #@ redux-framework
 msgid "Custom Image Logo (Retina display)"
 msgstr ""
 
-#: admin/main/options.php:342
+#: admin/main/options.php:331
 #@ redux-framework
 msgid "Upload a logo image twice the size of logo.png. Name the logo image logo@2x.png."
 msgstr ""
 
-#: admin/main/options.php:349
+#: admin/main/options.php:338
 #@ redux-framework
 msgid "Site Title"
 msgstr ""
 
-#: admin/main/options.php:350
+#: admin/main/options.php:339
 #@ redux-framework
 msgid "Input a message to display as your site title. Leave blank to display your default site title."
 msgstr ""
 
-#: admin/main/options.php:357
+#: admin/main/options.php:346
 #@ redux-framework
 msgid "Site Description"
 msgstr ""
 
-#: admin/main/options.php:358
+#: admin/main/options.php:347
 #@ redux-framework
 msgid "Input a message to display as site description. Leave blank to display default site description."
 msgstr ""
 
-#: admin/main/options.php:365
+#: admin/main/options.php:354
 #@ redux-framework
 msgid "Custom Favicon"
 msgstr ""
 
-#: admin/main/options.php:366
+#: admin/main/options.php:355
 #@ redux-framework
 msgid "Uploads favicon or specify the favicon url."
 msgstr ""
 
-#: admin/main/options.php:376
+#: admin/main/options.php:365
 #@ redux-framework
 msgid "<span class=\"redux-title\">Page Structure</span>"
 msgstr ""
 
-#: admin/main/options.php:380
+#: admin/main/options.php:369
 #@ redux-framework
 msgid "Page Layout"
 msgstr ""
 
-#: admin/main/options.php:381
+#: admin/main/options.php:370
 #@ redux-framework
 msgid "Select page layout. This will only be applied to published Pages (I.e. Not posts, blog or home)."
 msgstr ""
 
-#: admin/main/options.php:394
-#: admin/main/options.php:499
-#: admin/main/options.php:1101
-#: admin/main/options.php:1142
+#: admin/main/options.php:383
+#: admin/main/options.php:489
+#: admin/main/options.php:1091
+#: admin/main/options.php:1132
 #@ redux-framework
 msgid "Select a Sidebar"
 msgstr ""
 
-#: admin/main/options.php:395
+#: admin/main/options.php:384
 #@ redux-framework
 msgid "Choose a sidebar to use with the page layout."
 msgstr ""
 
-#: admin/main/options.php:402
+#: admin/main/options.php:391
 #@ redux-framework
 msgid "Enable Responsive Layout"
 msgstr ""
 
-#: admin/main/options.php:403
+#: admin/main/options.php:392
 #@ redux-framework
 msgid "Check to enable responsive layout."
 msgstr ""
 
-#: admin/main/options.php:410
+#: admin/main/options.php:399
 #@ redux-framework
 msgid "Enable Breadcrumbs"
 msgstr ""
 
-#: admin/main/options.php:411
+#: admin/main/options.php:400
 #@ redux-framework
 msgid "Switch on to enable breadcrumbs."
 msgstr ""
 
-#: admin/main/options.php:418
+#: admin/main/options.php:407
 #@ redux-framework
 msgid "Breadcrumb Delimiter"
 msgstr ""
 
-#: admin/main/options.php:419
+#: admin/main/options.php:408
 #@ redux-framework
 msgid "Specify a custom delimiter to use instead of the default &#40; / &#41; when displaying breadcrumbs."
 msgstr ""
 
-#: admin/main/options.php:432
+#: admin/main/options.php:421
 #@ redux-framework
 msgid "<span class=\"redux-title\">Custom Code</span>"
 msgstr ""
 
-#: admin/main/options.php:436
+#: admin/main/options.php:425
 #@ redux-framework
 msgid "Custom CSS"
 msgstr ""
 
-#: admin/main/options.php:437
+#: admin/main/options.php:426
 #@ redux-framework
 msgid "Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes."
 msgstr ""
 
-#: admin/main/options.php:444
+#: admin/main/options.php:433
 #@ redux-framework
 msgid "Custom jQuery - Front End"
 msgstr ""
 
-#: admin/main/options.php:445
+#: admin/main/options.php:434
 #@ redux-framework
 msgid "Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features."
 msgstr ""
 
-#: admin/main/options.php:454
+#: admin/main/options.php:444
 #@ redux-framework
 msgid "This is a header."
 msgstr ""
 
-#: admin/main/options.php:455
+#: admin/main/options.php:445
 #@ redux-framework
 msgid "<span class=\"redux-title\">Demo Content</span>"
 msgstr ""
 
-#: admin/main/options.php:459
+#: admin/main/options.php:449
 #@ redux-framework
 msgid "Enable Demo Content?"
 msgstr ""
 
-#: admin/main/options.php:460
+#: admin/main/options.php:450
 #@ redux-framework
 msgid "Check to enable demo content."
 msgstr ""
 
-#: admin/main/options.php:478
+#: admin/main/options.php:468
 #@ redux-framework
 msgid "Homepage"
 msgstr ""
 
-#: admin/main/options.php:479
+#: admin/main/options.php:469
 #@ redux-framework
 msgid "<span class=\"redux-title\">Control Homepage Layout</span>"
 msgstr ""
 
-#: admin/main/options.php:485
+#: admin/main/options.php:475
 #@ redux-framework
 msgid "Homepage Layout"
 msgstr ""
 
-#: admin/main/options.php:486
+#: admin/main/options.php:476
 #@ redux-framework
 msgid "Select page layout. This will only be applied to the home page."
 msgstr ""
 
-#: admin/main/options.php:500
-#: admin/main/options.php:1143
+#: admin/main/options.php:490
+#: admin/main/options.php:1133
 #@ redux-framework
 msgid "Choose a sidebar to use with the layout."
 msgstr ""
 
-#: admin/main/options.php:510
+#: admin/main/options.php:500
 #@ redux-framework
 msgid "<span class=\"redux-title\">Homepage Slider</span>"
 msgstr ""
 
-#: admin/main/options.php:514
-#@ redux-framework-demo
+#: admin/main/options.php:504
+#@ redux-framework
 msgid "Enable Homepage Slider"
 msgstr ""
 
-#: admin/main/options.php:515
+#: admin/main/options.php:505
 #@ redux-framework
 msgid "Switch on to enable home page slider."
 msgstr ""
 
-#: admin/main/options.php:527
+#: admin/main/options.php:517
 #@ redux-framework
 msgid "Homepage Slider Shortcode"
 msgstr ""
 
-#: admin/main/options.php:528
+#: admin/main/options.php:518
 #@ redux-framework
 msgid "Input the shortcode of the slider you want to display. I.e. [shortcode_name]."
 msgstr ""
 
-#: admin/main/options.php:535
-#@ redux-framework-demo
+#: admin/main/options.php:525
+#@ redux-framework
 msgid "Built-In Slider"
 msgstr ""
 
-#: admin/main/options.php:536
-#@ redux-framework-demo
+#: admin/main/options.php:526
+#@ redux-framework
 msgid "Unlimited slides with drag and drop sortings."
 msgstr ""
 
-#: admin/main/options.php:542
-#@ redux-framework-demo
+#: admin/main/options.php:532
+#@ redux-framework
 msgid "Enable Full-Width Slider"
 msgstr ""
 
-#: admin/main/options.php:543
+#: admin/main/options.php:533
 #@ redux-framework
 msgid "Switch on to enable full-width slider."
 msgstr ""
 
-#: admin/main/options.php:552
+#: admin/main/options.php:542
 #@ redux-framework-demo
 msgid "Slider Height (Max)"
 msgstr ""
 
-#: admin/main/options.php:553
-#@ redux-framework-demo
+#: admin/main/options.php:543
+#@ redux-framework
 msgid "Specify the maximum slider height (px)."
 msgstr ""
 
-#: admin/main/options.php:564
+#: admin/main/options.php:554
 #@ redux-framework
 msgid "<span class=\"redux-title\">Call To Action - Intro</span>"
 msgstr ""
 
-#: admin/main/options.php:568
+#: admin/main/options.php:558
 #@ redux-framework
 msgid "Message"
 msgstr ""
 
-#: admin/main/options.php:569
+#: admin/main/options.php:559
 #@ redux-framework
 msgid "Check to enable intro on home page."
 msgstr ""
 
-#: admin/main/options.php:576
+#: admin/main/options.php:566
 #@ redux-framework
 msgid "Enter a <strong>main</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention."
 msgstr ""
 
-#: admin/main/options.php:583
+#: admin/main/options.php:573
 #@ redux-framework
 msgid "Enter a <strong>teaser</strong> message. <br /><br />Use this to provide more details about what you offer."
 msgstr ""
 
-#: admin/main/options.php:590
+#: admin/main/options.php:580
 #@ redux-framework
 msgid "Button Text"
 msgstr ""
 
-#: admin/main/options.php:591
+#: admin/main/options.php:581
 #@ redux-framework
 msgid "Input text to display on the action button."
 msgstr ""
 
-#: admin/main/options.php:598
+#: admin/main/options.php:588
 #@ redux-framework
 msgid "Link"
 msgstr ""
 
-#: admin/main/options.php:599
+#: admin/main/options.php:589
 #@ redux-framework
 msgid "Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether."
 msgstr ""
 
-#: admin/main/options.php:610
-#: admin/main/options.php:674
-#: admin/main/options.php:707
-#: admin/main/options.php:740
+#: admin/main/options.php:600
+#: admin/main/options.php:664
+#: admin/main/options.php:697
+#: admin/main/options.php:730
 #@ redux-framework
 msgid "Link to a page"
 msgstr ""
 
-#: admin/main/options.php:611
+#: admin/main/options.php:601
 #@ redux-framework
 msgid "Select a target page for action button link."
 msgstr ""
 
-#: admin/main/options.php:618
+#: admin/main/options.php:608
 #@ redux-framework
 msgid "Custom link"
 msgstr ""
 
-#: admin/main/options.php:619
+#: admin/main/options.php:609
 #@ redux-framework
 msgid "Input a custom url for the action button link.<br>Add http:// if linking to an external webpage."
 msgstr ""
 
-#: admin/main/options.php:633
+#: admin/main/options.php:623
 #@ redux-framework
 msgid "Homepage (Content)"
 msgstr ""
 
-#: admin/main/options.php:634
+#: admin/main/options.php:624
 #@ redux-framework
 msgid "<span class=\"redux-title\">Display Pre-Designed Homepage Layout</span>"
 msgstr ""
 
-#: admin/main/options.php:640
+#: admin/main/options.php:630
 #@ redux-framework
 msgid "Enable Pre-Made Homepage "
 msgstr ""
 
-#: admin/main/options.php:641
+#: admin/main/options.php:631
 #@ redux-framework
 msgid "switch on to enable pre-designed homepage layout."
 msgstr ""
 
-#: admin/main/options.php:648
+#: admin/main/options.php:638
 #@ redux-framework
 msgid "Content Area 1"
 msgstr ""
 
-#: admin/main/options.php:649
-#: admin/main/options.php:682
-#: admin/main/options.php:715
+#: admin/main/options.php:639
+#: admin/main/options.php:672
+#: admin/main/options.php:705
 #@ redux-framework
 msgid "Add an image for the section background."
 msgstr ""
 
-#: admin/main/options.php:658
-#: admin/main/options.php:691
-#: admin/main/options.php:724
+#: admin/main/options.php:648
+#: admin/main/options.php:681
+#: admin/main/options.php:714
 #@ redux-framework
 msgid "Add a title to the section."
 msgstr ""
 
-#: admin/main/options.php:666
+#: admin/main/options.php:656
 #@ redux-framework
 msgid "Add some text to featured section 1."
 msgstr ""
 
-#: admin/main/options.php:681
+#: admin/main/options.php:671
 #@ redux-framework
 msgid "Content Area 2"
 msgstr ""
 
-#: admin/main/options.php:699
+#: admin/main/options.php:689
 #@ redux-framework
 msgid "Add some text to featured section 2."
 msgstr ""
 
-#: admin/main/options.php:714
+#: admin/main/options.php:704
 #@ redux-framework
 msgid "Content Area 3"
 msgstr ""
 
-#: admin/main/options.php:732
+#: admin/main/options.php:722
 #@ redux-framework
 msgid "Add some text to featured section 3."
 msgstr ""
 
-#: admin/main/options.php:754
+#: admin/main/options.php:744
 #@ redux-framework
 msgid "Header"
 msgstr ""
 
-#: admin/main/options.php:755
+#: admin/main/options.php:745
 #@ redux-framework
 msgid "<span class=\"redux-title\">Control Header Content</span>"
 msgstr ""
 
-#: admin/main/options.php:761
+#: admin/main/options.php:751
 #@ redux-framework
 msgid "Enable Search"
 msgstr ""
 
-#: admin/main/options.php:762
+#: admin/main/options.php:752
 #@ redux-framework
 msgid "Switch on to enable header search."
 msgstr ""
 
-#: admin/main/options.php:769
+#: admin/main/options.php:759
 #@ redux-framework
 msgid "Enable Social Media Links"
 msgstr ""
 
-#: admin/main/options.php:770
+#: admin/main/options.php:760
 #@ redux-framework
 msgid "Switch on to enable links to social media pages."
 msgstr ""
 
-#: admin/main/options.php:780
+#: admin/main/options.php:770
 #@ redux-framework
 msgid "<span class=\"redux-title\">Manage Social Media Content</span>"
 msgstr ""
 
-#: admin/main/options.php:784
+#: admin/main/options.php:774
 #@ redux-framework
 msgid "Display Message"
 msgstr ""
 
-#: admin/main/options.php:785
+#: admin/main/options.php:775
 #@ redux-framework
 msgid "Add a message here. E.g. &#34;Follow Us&#34;."
 msgstr ""
 
-#: admin/main/options.php:793
+#: admin/main/options.php:783
 #@ redux-framework
 msgid "Facebook"
 msgstr ""
 
-#: admin/main/options.php:794
+#: admin/main/options.php:784
 #@ redux-framework
 msgid "Enable link to Facebook profile."
 msgstr ""
 
-#: admin/main/options.php:801
+#: admin/main/options.php:791
 #@ redux-framework
 msgid "Input the url to your Facebook page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:809
+#: admin/main/options.php:799
 #@ redux-framework
 msgid "Use Custom Facebook Icon"
 msgstr ""
 
-#: admin/main/options.php:817
-#: admin/main/options.php:850
-#: admin/main/options.php:883
-#: admin/main/options.php:916
-#: admin/main/options.php:949
-#: admin/main/options.php:982
-#: admin/main/options.php:1015
+#: admin/main/options.php:807
+#: admin/main/options.php:840
+#: admin/main/options.php:873
+#: admin/main/options.php:906
+#: admin/main/options.php:939
+#: admin/main/options.php:972
+#: admin/main/options.php:1005
 #@ redux-framework
 msgid "Add a link to the image or upload one from your desktop. The image will be resized."
 msgstr ""
 
-#: admin/main/options.php:826
+#: admin/main/options.php:816
 #@ redux-framework
 msgid "Twitter"
 msgstr ""
 
-#: admin/main/options.php:827
+#: admin/main/options.php:817
 #@ redux-framework
 msgid "Enable link to Twitter profile."
 msgstr ""
 
-#: admin/main/options.php:834
+#: admin/main/options.php:824
 #@ redux-framework
 msgid "Input the url to your Twitter page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:842
+#: admin/main/options.php:832
 #@ redux-framework
 msgid "Use Custom Twitter Icon"
 msgstr ""
 
-#: admin/main/options.php:859
+#: admin/main/options.php:849
 #@ redux-framework
 msgid "Google+"
 msgstr ""
 
-#: admin/main/options.php:860
+#: admin/main/options.php:850
 #@ redux-framework
 msgid "Enable link to Google+ profile."
 msgstr ""
 
-#: admin/main/options.php:867
+#: admin/main/options.php:857
 #@ redux-framework
 msgid "Input the url to your Google+ page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:875
+#: admin/main/options.php:865
 #@ redux-framework
 msgid "Use Custom Google+ Icon"
 msgstr ""
 
-#: admin/main/options.php:892
+#: admin/main/options.php:882
 #@ redux-framework
 msgid "LinkedIn"
 msgstr ""
 
-#: admin/main/options.php:893
+#: admin/main/options.php:883
 #@ redux-framework
 msgid "Enable link to LinkedIn profile."
 msgstr ""
 
-#: admin/main/options.php:900
+#: admin/main/options.php:890
 #@ redux-framework
 msgid "Input the url to your LinkedIn page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:908
+#: admin/main/options.php:898
 #@ redux-framework
 msgid "Use Custom LinkedIn Icon"
 msgstr ""
 
-#: admin/main/options.php:925
+#: admin/main/options.php:915
 #@ redux-framework
 msgid "Flickr"
 msgstr ""
 
-#: admin/main/options.php:926
+#: admin/main/options.php:916
 #@ redux-framework
 msgid "Enable link to Flickr profile."
 msgstr ""
 
-#: admin/main/options.php:933
+#: admin/main/options.php:923
 #@ redux-framework
 msgid "Input the url to your Flickr page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:941
+#: admin/main/options.php:931
 #@ redux-framework
 msgid "Use Custom Flickr Icon"
 msgstr ""
 
-#: admin/main/options.php:958
+#: admin/main/options.php:948
 #@ redux-framework
 msgid "YouTube"
 msgstr ""
 
-#: admin/main/options.php:959
+#: admin/main/options.php:949
 #@ redux-framework
 msgid "Enable link to YouTube profile."
 msgstr ""
 
-#: admin/main/options.php:966
+#: admin/main/options.php:956
 #@ redux-framework
 msgid "Input the url to your YouTube page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:974
+#: admin/main/options.php:964
 #@ redux-framework
 msgid "Use Custom YouTube Icon"
 msgstr ""
 
-#: admin/main/options.php:991
+#: admin/main/options.php:981
 #@ redux-framework
 msgid "RSS"
 msgstr ""
 
-#: admin/main/options.php:992
+#: admin/main/options.php:982
 #@ redux-framework
 msgid "Enable link to RSS profile."
 msgstr ""
 
-#: admin/main/options.php:999
+#: admin/main/options.php:989
 #@ redux-framework
 msgid "Input the url to your RSS page. <strong>Note:</strong> Add http:// as the url is an external link."
 msgstr ""
 
-#: admin/main/options.php:1007
+#: admin/main/options.php:997
 #@ redux-framework
 msgid "Use Custom RSS Icon"
 msgstr ""
 
-#: admin/main/options.php:1030
+#: admin/main/options.php:1020
 #@ redux-framework
 msgid "Footer"
 msgstr ""
 
-#: admin/main/options.php:1031
+#: admin/main/options.php:1021
 #@ redux-framework
 msgid "<span class=\"redux-title\">Control Footer Content</span>"
 msgstr ""
 
-#: admin/main/options.php:1037
+#: admin/main/options.php:1027
 #@ redux-framework
 msgid "Footer Widgets Layout"
 msgstr ""
 
-#: admin/main/options.php:1038
+#: admin/main/options.php:1028
 #@ redux-framework
 msgid "Select footer layout. Take complete control of the footer content by adding widgets."
 msgstr ""
 
-#: admin/main/options.php:1066
+#: admin/main/options.php:1056
 #@ redux-framework
 msgid "Disable Footer Widgets"
 msgstr ""
 
-#: admin/main/options.php:1067
+#: admin/main/options.php:1057
 #@ redux-framework
 msgid "Check to disable footer widgets."
 msgstr ""
 
-#: admin/main/options.php:1082
+#: admin/main/options.php:1072
 #@ redux-framework
 msgid "<span class=\"redux-title\">Control Blog Pages</span>"
 msgstr ""
 
-#: admin/main/options.php:1088
+#: admin/main/options.php:1078
 #@ redux-framework
 msgid "Blog Layout"
 msgstr ""
 
-#: admin/main/options.php:1089
+#: admin/main/options.php:1079
 #@ redux-framework
 msgid "Select blog page layout. Only applied to the main blog page and not individual posts."
 msgstr ""
 
-#: admin/main/options.php:1102
+#: admin/main/options.php:1092
 #@ redux-framework
 msgid "<strong>Note:</strong> Sidebars will not be applied to homepage Blog. Control sidebars on the homepage from the &#39;Home Settings&#39; option."
 msgstr ""
 
-#: admin/main/options.php:1109
+#: admin/main/options.php:1099
 #@ redux-framework
 msgid "Post Content"
 msgstr ""
 
-#: admin/main/options.php:1110
+#: admin/main/options.php:1100
 #@ redux-framework
 msgid "Control how much content you want to show from each post on the main blog page. Remember to control the full article content by using the Wordpress <a href=\"http://en.support.wordpress.com/splitting-content/more-tag/\">more</a> tag in your post."
 msgstr ""
 
-#: admin/main/options.php:1124
+#: admin/main/options.php:1114
 #@ redux-framework
 msgid "<span class=\"redux-title\">Control Single Post Page</span>"
 msgstr ""
 
-#: admin/main/options.php:1128
+#: admin/main/options.php:1118
 #@ redux-framework
 msgid "Post Layout"
 msgstr ""
 
-#: admin/main/options.php:1129
+#: admin/main/options.php:1119
 #@ redux-framework
 msgid "Select blog page layout. This will only be applied to individual posts and not the main blog page."
 msgstr ""
 
-#: admin/main/options.php:1192
+#: admin/main/options.php:1182
 #@ redux-framework
 msgid "Support"
 msgstr ""
 
-#: admin/main/options.php:1193
+#: admin/main/options.php:1183
 #@ redux-framework
 msgid "<span class=\"redux-title\">Documentation</span><p>Please refer to the \"ThinkUpThemes - Lite Documentation\" file included with this theme for information on how to use the theme options. For premium support direct from the theme developers, or advice on customizations please <a href=\"http://www.thinkupthemes.com/themes/minamaze/\" target=\"_blank\">upgrade</a> to the Premium Theme Membership.</p>"
 msgstr ""
 
-#: admin/main/options.php:1210
+#: admin/main/options.php:1200
 #@ redux-framework
 msgid "Upgrade (10% off)"
 msgstr ""
 
 #: comments.php:20
 #, php-format
-#@ default
+#@ lan-thinkupthemes
 msgid "1 comment %2$s"
 msgid_plural "%1$s comments %2$s"
 msgstr[0] ""
@@ -1641,221 +1449,6 @@ msgstr ""
 msgid "Published "
 msgstr ""
 
-#: lib/plugins/theme-plugin-activation.php:167
-#@ lan-thinkupthemes
-msgid "Something went wrong."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:180
-#, php-format
-#@ lan-thinkupthemes
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:516
-#: lib/plugins/theme-plugin-activation.php:2057
-#@ lan-thinkupthemes
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:544
-#, php-format
-#@ lan-thinkupthemes
-msgid "The following plugin was activated successfully: %s."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:703
-#@ lan-thinkupthemes
-msgid "Dismiss this notice"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1090
-#@ lan-thinkupthemes
-msgid "External Link"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1095
-#@ lan-thinkupthemes
-msgid "Private Repository"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1098
-#@ lan-thinkupthemes
-msgid "Pre-Packaged"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1102
-#@ lan-thinkupthemes
-msgid "WordPress Repository"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1105
-#@ lan-thinkupthemes
-msgid "Required"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1105
-#@ lan-thinkupthemes
-msgid "Recommended"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1108
-#@ lan-thinkupthemes
-msgid "Not Installed"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1110
-#@ lan-thinkupthemes
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1280
-#, php-format
-#@ lan-thinkupthemes
-msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1296
-#@ lan-thinkupthemes
-msgid "Plugin"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1297
-#@ lan-thinkupthemes
-msgid "Source"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1298
-#@ lan-thinkupthemes
-msgid "Type"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1299
-#@ lan-thinkupthemes
-msgid "Status"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1317
-#@ lan-thinkupthemes
-msgid "Install"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1318
-#@ lan-thinkupthemes
-msgid "Activate"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1543
-#@ lan-thinkupthemes
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: lib/plugins/theme-plugin-activation.php:1828
-#@ lan-thinkupthemes
-msgid "Install package not available."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1829
-#, php-format
-#@ lan-thinkupthemes
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1830
-#@ lan-thinkupthemes
-msgid "Unpacking the package&#8230;"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1831
-#@ lan-thinkupthemes
-msgid "Installing the plugin&#8230;"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1832
-#@ lan-thinkupthemes
-msgid "Plugin install failed."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1833
-#@ lan-thinkupthemes
-msgid "Plugin installed successfully."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1844
-#@ lan-thinkupthemes
-msgid "Plugin activation failed."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1954
-#@ lan-thinkupthemes
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1955
-#, php-format
-#@ lan-thinkupthemes
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1955
-#: lib/plugins/theme-plugin-activation.php:1964
-#@ lan-thinkupthemes
-msgid "Show Details"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1955
-#: lib/plugins/theme-plugin-activation.php:1964
-#@ lan-thinkupthemes
-msgid "Hide Details"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1956
-#@ lan-thinkupthemes
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1957
-#, php-format
-#@ lan-thinkupthemes
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1961
-#@ lan-thinkupthemes
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1962
-#, php-format
-#@ lan-thinkupthemes
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1963
-#, php-format
-#@ lan-thinkupthemes
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1964
-#, php-format
-#@ lan-thinkupthemes
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1965
-#@ lan-thinkupthemes
-msgid "All installations have been completed."
-msgstr ""
-
-#: lib/plugins/theme-plugin-activation.php:1966
-#, php-format
-#@ lan-thinkupthemes
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #: lib/widgets/categories.php:118
 #: template-archive.php:30
 #@ lan-thinkupthemes
@@ -1868,23 +1461,18 @@ msgstr ""
 msgid "View all posts in %s"
 msgstr ""
 
-#: lib/widgets/popularposts.php:68
+#: lib/widgets/popularposts.php:66
 #@ lan-thinkupthemes
 msgid "Popular Posts"
 msgstr ""
 
-#: lib/widgets/recentcomments.php:57
-#@ lan-thinkupthemes
-msgid "Recent Comments"
-msgstr ""
-
-#: lib/widgets/recentposts.php:60
+#: lib/widgets/recentposts.php:59
 #: template-archive.php:18
 #@ lan-thinkupthemes
 msgid "Recent Posts"
 msgstr ""
 
-#: lib/widgets/searchfield.php:49
+#: lib/widgets/searchfield.php:47
 #@ lan-thinkupthemes
 msgid "Search Form"
 msgstr ""
@@ -1920,6 +1508,7 @@ msgstr ""
 msgid "Remove this message by adding widgets to the Sidebar from the Widgets section of the Wordpress admin area."
 msgstr ""
 
+#: image.php:75
 #: template-archive.php:11
 #: template-sitemap.php:11
 #@ lan-thinkupthemes
@@ -1950,5 +1539,126 @@ msgstr ""
 #: template-sitemap.php:49
 #@ lan-thinkupthemes
 msgid "Archives"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:526
+#@ lan-thinkupthemes
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: comments.php:50
+#@ lan-thinkupthemes
+msgid "Comments are closed."
+msgstr ""
+
+#: image.php:18
+#@ lan-thinkupthemes
+msgid "Link to full-size image"
+msgstr ""
+
+#: image.php:18
+#@ lan-thinkupthemes
+msgid "Return to "
+msgstr ""
+
+#: lib/functions/extras.php:60
+#@ lan-thinkupthemes
+msgid "Page"
+msgstr ""
+
+#: lib/functions/template-tags.php:40
+#@ lan-thinkupthemes
+msgid "Older posts"
+msgstr ""
+
+#: lib/functions/template-tags.php:44
+#@ lan-thinkupthemes
+msgid "Newer posts"
+msgstr ""
+
+#: lib/functions/template-tags.php:66
+#@ lan-thinkupthemes
+msgid "Previous"
+msgstr ""
+
+#: lib/widgets/categories.php:33
+#: lib/widgets/popularposts.php:33
+#: lib/widgets/recentposts.php:32
+#: lib/widgets/searchfield.php:30
+#: lib/widgets/tagscloud.php:28
+#@ lan-thinkupthemes
+msgid "Title"
+msgstr ""
+
+#: lib/widgets/categories.php:35
+#@ lan-thinkupthemes
+msgid "Show post count"
+msgstr ""
+
+#: lib/widgets/categories.php:37
+#@ lan-thinkupthemes
+msgid "Display type"
+msgstr ""
+
+#: lib/widgets/categories.php:44
+#@ lan-thinkupthemes
+msgid "Order by"
+msgstr ""
+
+#: lib/widgets/categories.php:53
+#@ lan-thinkupthemes
+msgid "Order direction"
+msgstr ""
+
+#: lib/widgets/categories.php:60
+#@ lan-thinkupthemes
+msgid "Exclude categories"
+msgstr ""
+
+#: lib/widgets/popularposts.php:35
+#: lib/widgets/recentposts.php:34
+#@ lan-thinkupthemes
+msgid "Number of posts"
+msgstr ""
+
+#: lib/widgets/popularposts.php:37
+#@ lan-thinkupthemes
+msgid "Show excerpt"
+msgstr ""
+
+#: lib/widgets/popularposts.php:39
+#@ lan-thinkupthemes
+msgid "Excerpt length"
+msgstr ""
+
+#: lib/widgets/popularposts.php:41
+#@ lan-thinkupthemes
+msgid "Show Comments"
+msgstr ""
+
+#: lib/widgets/recentposts.php:36
+#@ lan-thinkupthemes
+msgid "Enable post thumbnail"
+msgstr ""
+
+#: lib/widgets/recentposts.php:38
+#@ lan-thinkupthemes
+msgid "Show post date"
+msgstr ""
+
+#: sidebar.php:19
+#@ lan-thinkupthemes
+msgid "No Widgets Selected"
+msgstr ""
+
+#: template-archive.php:22
+#@ lan-thinkupthemes
+msgid "Look"
+msgstr ""
+
+#: template-sitemap.php:38
+#@ lan-thinkupthemes
+msgid "Permanent Link to"
 msgstr ""
 

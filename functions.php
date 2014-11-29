@@ -77,7 +77,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_script('jquery');
 
 	/* Register theme stylesheets. */
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.1' );
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.2' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
