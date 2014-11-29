@@ -81,6 +81,10 @@ select{
 	padding-left: 0;
 	padding-right: 0;	
 }
+.menu-button{    
+    z-index: 2;
+}
+
 #menu-trigger {
   position: relative;
   color: #000;
@@ -89,8 +93,7 @@ select{
   padding: 20px 25px 9px 30px;
   text-decoration: none;
   -webkit-transition: all ease-in-out 0.2s;
-  transition: all ease-in-out 0.2s;
-  z-index: 99999;
+  transition: all ease-in-out 0.2s;  
 }
 .header-menu {
   background-color: rgba(255, 255, 255, 0.95);
@@ -101,7 +104,7 @@ select{
   bottom:0;
   width: 100%;
   overflow-x:auto;
-  z-index: 1000;
+  z-index: 1;
   height: 100%;
   font-family: 'Raleway-Bold';
 }
@@ -152,8 +155,7 @@ select{
   padding: 20px 25px 9px 30px;
   text-decoration: none;
   -webkit-transition: all ease-in-out 0.2s;
-  transition: all ease-in-out 0.2s;
-  z-index: 99999;
+  transition: all ease-in-out 0.2s;  
 }
 .header-search {
   background-color: #ffffff;
@@ -163,7 +165,7 @@ select{
   top: 0px;
   bottom:0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
   height: 100%;
   overflow-x: auto;
 }
@@ -191,6 +193,37 @@ select{
 	font-size: 16px;
 	margin-left: 15px;
 	text-transform: capitalize;	
+}
+
+.scrollbar{
+    overflow: auto;
+    height: 100%;
+}
+.track3 {
+    width: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-right: 2px;
+    border-radius: 10px;
+    -webkit-transition: background 250ms linear;
+    transition: background 250ms linear;
+}
+.track3:hover,
+.track3.dragging {
+    background: #d9d9d9; 
+    background: rgba(0, 0, 0, 0.6);
+}
+.handle3 {
+    width: 10px;
+    right: 0;
+    background: #999;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 7px;
+    -webkit-transition: width 250ms;
+    transition: width 250ms;
+}
+.track3:hover .handle3,
+.track3.dragging .handle3 {
+    width: 10px;
 }
 /***************header end******/
 /*********secton strat**********/

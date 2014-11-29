@@ -28,7 +28,7 @@ get_header();
                     <div class="blog-left">
                     	<?php
 							if(!empty($medium_featured_image[0])) {
-								echo '<a href="'.esc_url(get_permalink()).'"><img src="'.esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.get_the_title().'" /></a>';
+								echo '<a href="'.esc_url(get_permalink()).'"><img src="'.esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.esc_attr(get_the_title()).'" /></a>';
 								}
 						?>
                         <div class="block-content">
@@ -53,7 +53,7 @@ get_header();
 				}
 				else{?>
 					<div class="col-md-12 medium-pagination-single">
-                       <span class="medium-previous-link"><?php previous_posts_link(__('Previous','medium').' &raquo;'); ?></span>
+                       <span class="medium-previous-link"><?php previous_posts_link('&laquo; '.__('Previous','medium')); ?></span>
                         <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
       				</div><?php
 				}

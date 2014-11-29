@@ -18,7 +18,7 @@ get_header();
                     <div class="blog-left">
                     	<?php
 							if(!empty($medium_featured_image[0])) {
-								echo '<img src="'. esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.get_the_title().'" />';
+								echo '<img src="'. esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.esc_attr(get_the_title()).'" />';
 								}
 						?>
                         <div class="block-content">

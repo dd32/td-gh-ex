@@ -1,4 +1,9 @@
 /***media***/
+@media all and (-ms-high-contrast:none)
+{
+     .header-menu, .header-search { width: 98.8%; } /* IE10 */
+     *::-ms-backdrop, .header-menu, .header-search { width: 98.8%; } /* IE11 */
+}
 @media screen and (max-width:1200px){
 .medium-container,
 .blog-container{
@@ -70,16 +75,7 @@ header,
     .medium-pagination-single{
        padding-left: 15px;
        padding-right: 15px;
-    }
-    .medium-pagination-single > span{
-        display: table;
-        text-align: center;
-        width: 100%;
-        margin: 20px 0px;
-    }
-    .medium-pagination-single > span.medium-next-link a{
-       float: none;           
-    }
+    }    
     
 }
 @media screen and (max-width:390px){

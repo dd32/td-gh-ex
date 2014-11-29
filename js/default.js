@@ -11,7 +11,8 @@ jQuery(document).ready(function($){
 			$(this).removeClass("open");
 			$(this).addClass(".fa fa-bars");
 			$(this).removeClass(".fa fa-times");
-			jQuery('#search-trigger').css({'display':'block'});			
+			jQuery('#search-trigger').css({'display':'block'});
+                        jQuery('body').toggleClass('popup-open');
 		}
 		// otherwise, slide the menu down
 		else
@@ -21,8 +22,16 @@ jQuery(document).ready(function($){
 			$(this).addClass("open");
 			$(this).addClass(".fa fa-times");
 			$(this).removeClass(".fa fa-bars");
+                        jQuery('body').toggleClass('popup-open');
 		}
 	});
+        if(jQuery('div').hasClass("scrollbar")){
+	jQuery('.scrollbar').enscroll({
+		showOnHover: false,
+		verticalTrackClass: 'track3',
+		verticalHandleClass: 'handle3'
+	});
+	}	
 });
 jQuery(document).ready(function($){
 	// build a variable to target the #menu div
@@ -37,6 +46,7 @@ jQuery(document).ready(function($){
 			$(this).removeClass("open");
 			$(this).addClass(".fa fa-search");
 			$(this).removeClass(".fa fa-times");
+                        jQuery('body').toggleClass('popup-open');
 		}
 		// otherwise, slide the menu down
 		else
@@ -46,6 +56,7 @@ jQuery(document).ready(function($){
 			$(this).addClass("open");
 			$(this).addClass(".fa fa-times");
 			$(this).removeClass(".fa fa-search");
+                        jQuery('body').toggleClass('popup-open');
 		}
 	});
         

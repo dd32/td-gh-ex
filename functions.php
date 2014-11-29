@@ -114,7 +114,7 @@ function medium_scripts() {
 	wp_enqueue_style( 'medium-media', get_stylesheet_directory_uri().'/css/media.css' );        
 	
 	wp_enqueue_script( 'medium-script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0' );	        
-	
+	wp_enqueue_script( 'medium-enscroll.min', get_template_directory_uri() . '/js/enscroll.min.js', array('jquery'), '1.0' );
         wp_enqueue_script( 'medium-default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
         
         
@@ -157,14 +157,14 @@ function medium_search_ajax(){
                         $medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-small',0 );
 			$medium_result .= '<div class="col-md-3 search-box" >';
                         if(!empty($medium_featured_image))
-                        $medium_result .= '<a href="'.get_permalink(get_the_ID()).'"><img class="img-responsive" src="'.$medium_featured_image[0].'" alt="'.get_the_title().'"></a>';
+                        $medium_result .= '<a href="'.get_permalink(get_the_ID()).'"><img class="img-responsive" src="'.$medium_featured_image[0].'" alt="'.esc_attr(get_the_title()).'"></a>';
 			$medium_result .= '<div class="image-sub"><a href="'.get_permalink(get_the_ID()).'">'.get_the_title().'</a></div>
 				<div class="post-arthur"><a class="privacy" href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'">'.get_the_author().'</a></div>
 			  </div>';
 		}
 	}
 	else
-		$medium_error.='Not found';
+		$medium_error.=_e('Not found','medium');
 		
 	echo json_encode(array("medium_result"=>$medium_result,"medium_error"=>$medium_error));
 	die;
@@ -184,10 +184,10 @@ function medium_entry_meta() {
 	
 	$medium_category_list = "";
 if(!empty(get_the_category_list()))
-	$medium_category_list = _e('Posted in ','booster'); echo ": ".get_the_category_list(', ');
+	$medium_category_list = _e('Posted in ','medium'); echo ": ".get_the_category_list(', ');
 $medium_tag_list = "";
 if(!empty(get_the_tag_list()))
-$medium_tag_list = _e(' Tags','booster'); echo ": ".get_the_tag_list('',', ');
+$medium_tag_list = _e(' Tags','medium'); echo ": ".get_the_tag_list('',', ');
 
 	$medium_date = sprintf( '<li>'.__('On','medium').' : %1$s</li>',
 		esc_html( get_the_date('M d, Y') )

@@ -19,7 +19,8 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 
@@ -28,10 +29,10 @@
 <body <?php body_class(); ?>>
 <!--header strat-->
    <header class="home-header">
-       <div class="col-md-3 col-sm-3 col-xs-3 menu-button clearfix">
+       <div class="col-md-3 col-sm-3 col-xs-3 menu-button">
            <a href="javascript:void(0);" id="menu-trigger" class="fa fa-bars"></a>
         </div>   
-          	<div class="header-menu">
+          	<div class="header-menu scrollbar">
 	          <div class="menu-column">
 		         <?php
 			$medium_args = array(
@@ -61,17 +62,17 @@
               if(empty($medium_options['logo'])) { ?>
         		<a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a>
             <?php } else { ?>
-                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="<?php echo get_bloginfo('name'); ?>" class="logo-center img-responsive" /></a>
+                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="logo-center img-responsive" /></a>
             <?php }
             ?>
               </div>
            </div>
        
               
-       <div class="col-md-3 col-sm-3 col-xs-3 menu-button clearfix">
+       <div class="col-md-3 col-sm-3 col-xs-3 menu-button">
           		<a href="javascript:void(0);" id="search-trigger" class="fa fa-search"></a>
              </div>   
-          	<div class="header-search">
+          	<div class="header-search scrollbar">
 	          <div class="search-column">
                <form method="post" action="javascript:void(0);" name="Search-form">
 		          <input type="search" placeholder="<?php _e('Search','medium') ?>" autofocus class="pop-search">

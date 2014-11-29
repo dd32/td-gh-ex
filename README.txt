@@ -5,7 +5,7 @@ Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Medium is a clean, simple, translation ready and elegant Twitter bootstrap based responsive WordPress theme mainly designed for professional bloggers and writers but this can be used for corporate websites as well. Medium theme was developed using Twitter bootstrap framework that makes it mobile and tablets friendly. Medium theme incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. It has theme options to manage logo, favicon and footer text. Medium theme has an awesome colored toggable menu and AJAX based search. 
 Tags: theme-options, threaded-comments, responsive-layout, fluid-layout, one-column, two-columns, black, light, white, featured-images, custom-menu , translation-ready
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: medium
@@ -93,10 +93,24 @@ Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 vi) respond.min js file
 ============
 we used are licensed under MIT/GPL2.
-Version - v1.3.0	
+Version - v1.4.2
+Licensed under MIT (https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT)
+
+
+viii) html5shiv.min file
+============
+Licensed under MIT
+Version - 3.7.2
+Licensed under MIT (https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md)
 
 vii) Images
 ============
 
 http://www.pexels.com/photo/3117/  - Public Domain CC0 License
 http://www.pexels.com/photo/3367/ - Public Domain CC0 License
+
+
+viii) enscroll
+Licensed under MIT
+Version - v0.6.0
+Licensed under MIT  http://enscrollplugin.com/license.html
