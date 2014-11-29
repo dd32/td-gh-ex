@@ -5,9 +5,11 @@
 <head>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -22,7 +24,7 @@
   <?php echo adelle_theme_heading(); ?>
 
   <nav class="nav" role="navigation">
-    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
+    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&fallback_cb=false&show_home=1' ); ?>
 
     <form role="search" method="get" class="header-form" action="<?php echo esc_url( home_url() ); ?>">
       <fieldset>
@@ -35,4 +37,5 @@
 
 </header><!-- .header -->
 
+<main>
 <section class="container">

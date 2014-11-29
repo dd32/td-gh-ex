@@ -1,3 +1,5 @@
+</main>
+
 <footer class="footer">
 
   <p class="footer-copy" role="contentinfo">

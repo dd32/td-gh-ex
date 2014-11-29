@@ -1,4 +1,4 @@
-<section class="comment-box">
+<div class="comment-box">
 
 <?php
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
@@ -10,10 +10,10 @@ if ( post_password_required() ) { ?>
 <!-- You can start editing here. -->
   <?php if ( have_comments() ) : ?>
 
-    <section class="comment-pagination">
-      <section class="alignleft"><?php previous_comments_link( __( 'Older comments','ace' ) ) ?></section>
-      <section class="alignright"><?php next_comments_link( __( 'Newer comments','ace' ) ) ?></section>
-    </section>
+    <div class="comment-pagination">
+      <div class="alignleft"><?php previous_comments_link( __( 'Older comments','ace' ) ) ?></div>
+      <div class="alignright"><?php next_comments_link( __( 'Newer comments','ace' ) ) ?></div>
+    </div>
 
   <?php if (!empty($comments_by_type['comment'])) { ?>
     <h4 id="comments"><?php comments_number(__( '0 comment','adelle-theme' ), __( '1 Comment','adelle-theme' ), __( '% Comments','adelle-theme' )); ?> <?php _e( 'on','adelle-theme' ); ?> <?php the_title(); ?></h4>
@@ -27,10 +27,10 @@ if ( post_password_required() ) { ?>
     </ol>
   <?php } ?>
 
-    <section class="comment-pagination">
-      <section class="alignleft"><?php previous_comments_link( __( 'Older comments','ace' ) ) ?></section>
-      <section class="alignright"><?php next_comments_link( __( 'Newer comments','ace' ) ) ?></section>
-    </section>
+    <div class="comment-pagination">
+      <div class="alignleft"><?php previous_comments_link( __( 'Older comments','ace' ) ) ?></div>
+      <div class="alignright"><?php next_comments_link( __( 'Newer comments','ace' ) ) ?></div>
+    </div>
 
   <?php else : // this is displayed if there are no comments so far ?>
 
@@ -48,7 +48,7 @@ if ( post_password_required() ) { ?>
 
   <?php if ( 'open' == $post->comment_status) : ?>
 
-  <section id="respond">
+  <div id="comment-box-respond">
 
     <?php
     $comments_args = array(
@@ -68,6 +68,6 @@ if ( post_password_required() ) { ?>
     comment_form( $comments_args );
     ?>
 
-  </section>
+  </div>
   <?php endif; // if you delete this the sky will fall on your head ?>
-</section>
+</div>

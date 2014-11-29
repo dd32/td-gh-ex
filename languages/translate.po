@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2014-05-07 11:33+0800\n"
-"PO-Revision-Date: 2014-05-07 11:34+0800\n"
+"POT-Creation-Date: 2014-10-05 16:24+0800\n"
+"PO-Revision-Date: 2014-10-05 16:24+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
-"Language: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
@@ -64,15 +64,15 @@ msgstr ""
 msgid "Newer comments"
 msgstr ""
 
-#: comments.php:19 content-list.php:20 content.php:19
+#: comments.php:19 content-list.php:17 content.php:19
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:19 content-list.php:20 content.php:19
+#: comments.php:19 content-list.php:17 content.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:19 content-list.php:20 content.php:19
+#: comments.php:19 content-list.php:17 content.php:19
 msgid "% Comments"
 msgstr ""
 
@@ -138,79 +138,79 @@ msgstr ""
 msgid "<li class=\"next\">%link &raquo;</li>"
 msgstr ""
 
-#: footer.php:4
+#: footer.php:6
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:4
+#: footer.php:6
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:4
+#: footer.php:6
 msgid "Theme designed by BluChic"
 msgstr ""
 
-#: footer.php:4
+#: footer.php:6
 msgid "Designed by"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:159
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:206
 msgid "Please enable referrers in your browser."
 msgstr ""
 
-#: functions.php:214
+#: functions.php:216
 msgid "ago"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:228
 #, php-format
 msgid "<h6>%s</h6>"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:229
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:229
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:231
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:247
+#: functions.php:249
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:260
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:265
 msgid "Next page"
 msgstr ""
 
-#: functions.php:264
+#: functions.php:266
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:299
 msgid "Previous"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:300
 msgid "Next"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:315
 msgid "Right Widget 1"
 msgstr ""
 

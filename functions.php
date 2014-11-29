@@ -113,7 +113,7 @@ function adelle_setup() {
       <img src="<?php header_image(); ?>" alt="">
       <?php else : ?>
       <h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-      <p class="displaying-header-desc"><?php bloginfo( 'description' ); ?></p>
+      <p class="displaying-header-text displaying-header-desc"><?php bloginfo( 'description' ); ?></p>
       <?php endif; ?>
     </div>
   <?php }
@@ -127,6 +127,8 @@ function adelle_setup() {
   ?>
     <style type="text/css">
     <?php if ( ! display_header_text() ) : ?>
+      .header-title,
+      .header-desc {display: none;}
     <?php elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
       .header-title {color: #<?php echo esc_attr( $text_color ); ?>;}
     <?php endif; ?>

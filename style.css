@@ -1,7 +1,7 @@
 /*
 Theme Name:		Adelle
 Description:	Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
-Version:			14.04
+Version:			14.10
 Author:				BluChic
 Author URI:		http://www.bluchic.com
 Theme URI:		http://www.bluchic.com/shop/adelle-theme
@@ -26,7 +26,7 @@ small, strong, sub, sup, var,
 b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-article, aside, canvas, details, figcaption, figure, 
+main, article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
 article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {display: block;}
@@ -40,14 +40,17 @@ del {text-decoration: line-through;}
 abbr[title], dfn[title] {border-bottom: 1px dotted; cursor: help;}
 table {border-collapse: collapse; border-spacing: 0; padding: 5px; font-size: 1em; width: 100%; border-top: 1px solid #ddd; border-right: 1px solid #ddd;}
 tr, th, td, tbody, thead, tfoot {padding: 10px; vertical-align: top; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd;}
-th {background: #efefef;}
+th {background: #f0f0f0;}
+dl {margin-bottom: 20px; line-height: 1.8em;}
+dt {font-weight: bold;}
+dd {font-style: italic; margin-bottom: 20px;}
 input, select {vertical-align: middle;}
 :focus {outline: 0;}
 hr {background: none; border: none; margin: 10px 0; border-bottom: 1px solid #ccc; clear: both;}
 code {font-size: 1.1em;}
 code {display: inline-block; border: 1px solid #eee; font-size: 0.9em; padding: 0 3px;}
 pre {overflow: auto; font-family: 'courier new', courier, monospace; font-size: 0.85em; padding: 10px;  border: 1px solid #ccc;}
-html {-webkit-font-smoothing: antialiased;}
+html {-webkit-font-smoothing: antialiased; -webkit-text-stroke: .001em;}
 @-webkit-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
 @-moz-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
 @-o-keyframes fontfix { from{ opacity: 1; } to { opacity: 1; } }
@@ -270,7 +273,7 @@ position: absolute; width: 200px; background: #000; z-index: 200;
 .article li {margin: 3px 0; line-height: 1.8em;}
 
 /* .article misc */
-.pagetitle {text-align: center; font-size: 2em; padding: 20px; color: #999;}
+.pagetitle {padding: 20px 0; font-size: 1em; color: #999; text-transform: uppercase; letter-spacing: .2em;}
 
 .page-pagination {font-weight: bold; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 5px 0;}
 .page-pagination span {margin: 2px 5px;}

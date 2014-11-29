@@ -21,7 +21,7 @@ jQuery(document).ready(function($){ // START
 
   // Mobile menu
   $( "nav.nav .menu ul" ).tinyNav({
-    active: 'current_page_item'
+    active: 'current_page_item, current-menu-item'
   });
 
 
