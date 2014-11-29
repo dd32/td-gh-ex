@@ -23,3 +23,6 @@ ii) Remove Oswald fonts.
 
 Version 1.1.2 (26-11-2014)
 i) Text domain spelling fixed.
+
+Version 1.1.3 (27-11-2014)
+i). fix Translation Ready.

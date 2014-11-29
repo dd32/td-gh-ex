@@ -6,7 +6,7 @@ function laurels_custom_breadcrumbs() {
 
   $laurels_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $laurels_delimiter = '/'; // laurels_delimiter between crumbs
-  $laurels_home = 'Home'; // text for the 'Home' link
+  $laurels_home = __('Home','laurels'); // text for the 'Home' link
   $laurels_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $laurels_before = ' '; // tag before the current crumb
   $laurels_after = ' '; // tag after the current crumb

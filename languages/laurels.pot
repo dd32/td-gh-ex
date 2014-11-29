@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Laurels WordPress Theme V1.1.2\n"
-"POT-Creation-Date: 2014-11-26 15:31+0530\n"
-"PO-Revision-Date: 2014-11-26 15:31+0530\n"
+"POT-Creation-Date: 2014-11-29 10:59+0530\n"
+"PO-Revision-Date: 2014-11-29 11:00+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
 "Language: en_US\n"
@@ -130,6 +130,10 @@ msgstr ""
 #: functions.php:184
 msgctxt "comment form placeholder"
 msgid "Comment"
+msgstr ""
+
+#: functions/breadcrumbs.php:9
+msgid "Home"
 msgstr ""
 
 #: functions/breadcrumbs.php:28
