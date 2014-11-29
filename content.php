@@ -56,7 +56,7 @@
 								</a>
 							</div>
 						<?php endif; ?>
-						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'simple-life' ) ); ?>
+						<?php the_content( __( 'Continue reading', 'simple-life' ) . ' <span class="meta-nav">&rarr;</span>' ); ?>
 						<?php
 							wp_link_pages( array(
 								'before' => '<div class="page-links">' . __( 'Pages:', 'simple-life' ),

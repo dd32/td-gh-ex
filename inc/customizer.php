@@ -29,6 +29,24 @@ function simple_life_customize_register( $wp_customize ) {
     }
 
   endif;
+
+  if ( ! function_exists( 'simple_life_customizer_validate_excerpt_length' ) ) {
+    function simple_life_customizer_validate_excerpt_length($input){
+      if ( intval( $input ) < 1 ) {
+        $input = 40;
+      }
+      return $input;
+    }
+  }
+  if ( ! function_exists( 'simple_life_customizer_validate_read_more_text' ) ) {
+    function simple_life_customizer_validate_read_more_text($input){
+      if ( empty( $input ) ) {
+        $input = __( 'Read more', 'simple-life' );
+      }
+      return $input;
+    }
+  }
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -46,9 +64,11 @@ function simple_life_customize_register( $wp_customize ) {
   // general_heading
   $wp_customize->add_setting( 'simple_life_options[general_heading]',
      array(
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control( new Plain_Html_Customize_Control( $wp_customize, 'simple_life_options[general_heading]', array(
@@ -60,10 +80,12 @@ function simple_life_customize_register( $wp_customize ) {
   // site_layout
   $wp_customize->add_setting( 'simple_life_options[site_layout]',
      array(
-        'default'    => 'content-sidebar',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => 'content-sidebar',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[site_layout]', array(
@@ -81,10 +103,12 @@ function simple_life_customize_register( $wp_customize ) {
   // content_layout
   $wp_customize->add_setting( 'simple_life_options[content_layout]',
      array(
-        'default'    => 'full',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => 'full',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[content_layout]', array(
@@ -102,9 +126,11 @@ function simple_life_customize_register( $wp_customize ) {
   // blog_heading
   $wp_customize->add_setting( 'simple_life_options[blog_heading]',
      array(
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control( new Plain_Html_Customize_Control( $wp_customize, 'simple_life_options[blog_heading]', array(
@@ -116,10 +142,12 @@ function simple_life_customize_register( $wp_customize ) {
   // read_more_text
   $wp_customize->add_setting( 'simple_life_options[read_more_text]',
      array(
-        'default'    => 'Read more',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => 'Read more',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'simple_life_customizer_validate_read_more_text',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[read_more_text]', array(
@@ -132,10 +160,12 @@ function simple_life_customize_register( $wp_customize ) {
   // excerpt_length
   $wp_customize->add_setting( 'simple_life_options[excerpt_length]',
      array(
-        'default'    => '40',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => '40',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'simple_life_customizer_validate_excerpt_length',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[excerpt_length]', array(
@@ -149,9 +179,11 @@ function simple_life_customize_register( $wp_customize ) {
   // footer_heading
   $wp_customize->add_setting( 'simple_life_options[footer_heading]',
      array(
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control( new Plain_Html_Customize_Control( $wp_customize, 'simple_life_options[footer_heading]', array(
@@ -163,10 +195,12 @@ function simple_life_customize_register( $wp_customize ) {
   // footer_widgets
   $wp_customize->add_setting( 'simple_life_options[footer_widgets]',
      array(
-        'default'    => 0,
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => 0,
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[footer_widgets]', array(
@@ -187,10 +221,12 @@ function simple_life_customize_register( $wp_customize ) {
   // copyright_text
   $wp_customize->add_setting( 'simple_life_options[copyright_text]',
      array(
-        'default'    => '&copy; 2014 All rights reserved',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => '(c) 2014 All rights reserved',
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[copyright_text]', array(
@@ -203,10 +239,12 @@ function simple_life_customize_register( $wp_customize ) {
   // powered_by
   $wp_customize->add_setting( 'simple_life_options[powered_by]',
      array(
-        'default'    => 0,
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-        'transport'  => 'postMessage',
+        'default'           => 0,
+        'type'              => 'option',
+        'capability'        => 'edit_theme_options',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'esc_attr',
+        'sanitize_js_callback' => 'esc_attr',
      )
   );
   $wp_customize->add_control('simple_life_options[powered_by]', array(

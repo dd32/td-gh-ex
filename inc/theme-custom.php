@@ -93,10 +93,8 @@ if( ! function_exists( 'simple_life_custom_post_classes' ) ):
         $input[] = 'content-layout-excerpt-thumb';
       }
     }
-
-
-
     return $input;
+
   }
 endif;
 add_filter( 'post_class', 'simple_life_custom_post_classes' );

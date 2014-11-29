@@ -2,7 +2,7 @@
 * by the Nilambar Sharma, http://nilambar.net/
 
 == ABOUT Simple Life ==
-Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. This theme is easily customizable with the Custimize feature of WordPress. It supports popular plugins such as WP-PageNavi, Contact Form 7 and many more. It is also translation ready. If you need support with this theme, please go to http://wordpress.org/support/theme/simple-life
+Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. This theme is easily customizable with the Customizer feature of WordPress. It supports popular plugins such as WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready. If you need support with this theme, please go to http://wordpress.org/support/theme/simple-life
 
 == Navigation ==
 - Two menu positions are available. One is 'Primary Menu'. This one is for header menu.
@@ -28,6 +28,10 @@ The exceptions to license are as follows:
 light, white, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, translation-ready, responsive-layout
 
 == Changelog ==
+
+Version 1.0.4
+* Fixed missing translation strings in language file
+* Sanitizing customizer options
 
 Version 1.0.0
 * Initial Submission to WordPress.org

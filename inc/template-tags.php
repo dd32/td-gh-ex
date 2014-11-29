@@ -22,11 +22,11 @@ function simple_life_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> Older posts', 'simple-life' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> ' . __( 'Older posts', 'simple-life' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>', 'simple-life' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'simple-life' ) . ' <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -155,7 +155,7 @@ if ( ! function_exists('simple_life_post_format_icon')) :
 					$format_icon = 'tasks';
 					break;
 				case 'image':
-					$format_icon = 'file-photo';
+					$format_icon = 'file-image-o';
 					break;
 				case 'quote':
 					$format_icon = 'quote-left';

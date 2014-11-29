@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'SIMPLE_LIFE_VERSION' ) ) {
+	define( 'SIMPLE_LIFE_VERSION', '1.0.4' );
+}
+
 /**
  * Simple Life functions and definitions
  *
@@ -41,7 +46,7 @@ function simple_life_setup() {
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'simple-life' ),
-		'footer' => __( 'Footer Menu', 'simple-life' ),
+		'footer'  => __( 'Footer Menu', 'simple-life' ),
 	) );
 
 	/*
@@ -120,10 +125,10 @@ function simple_life_scripts() {
   wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu.css', false ,'2.0.6' );
 
 	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri() );
-  wp_enqueue_style( 'simple-life-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'1.0.0' );
+  wp_enqueue_style( 'simple-life-style-responsive', get_template_directory_uri().'/css/responsive.css', false , SIMPLE_LIFE_VERSION );
 
 	wp_enqueue_script( 'simple-life-meanmenu-script', get_template_directory_uri() . '/third-party/meanmenu/jquery.meanmenu.js', array('jquery'), '2.0.6', true );
-	wp_enqueue_script( 'simple-life-custom', get_template_directory_uri() . '/js/custom.js', array('jquery','simple-life-meanmenu-script'), '1.0.0', true );
+	wp_enqueue_script( 'simple-life-custom', get_template_directory_uri() . '/js/custom.js', array('jquery','simple-life-meanmenu-script'), SIMPLE_LIFE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

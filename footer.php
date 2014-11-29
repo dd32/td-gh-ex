@@ -12,8 +12,8 @@
 
   <?php
   $args = array(
-    'container_class'   => 'container',
-    'container_id'   => 'footer_widgets_wrap',
+    'container_class' => 'container',
+    'container_id'    => 'footer_widgets_wrap',
     );
   simple_life_footer_widgets($args);
   ?>
