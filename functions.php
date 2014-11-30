@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '1.5';
+$activetab_version = '1.6';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :

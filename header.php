@@ -61,7 +61,7 @@ if( $menu_position_type == 'fixed' ) {
 <div class="container site-container">
 <div class="site-wrapper border-radius">
 <div class="row">
-<div class="col-lg-12">
+<div class="col-sm-12">
 <div class="row">
 
 	<div id="main" class="site-main">

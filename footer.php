@@ -9,7 +9,7 @@
 
 	<div class="row">
 
-		<div class="col-lg-8">
+		<div class="col-sm-8">
 			<div class="site-footer-left">
 
 				<?php if ( ! dynamic_sidebar( 'footer' ) ) : // footer widgetized area ?>
@@ -26,9 +26,9 @@
 				<?php endif; // end of the footer widgetized area ?>
 
 			</div> <!-- /.site-footer-left -->
-		</div> <!-- /.col-lg-8 -->
+		</div> <!-- /.col-sm-8 -->
 
-		<div class="col-lg-4">
+		<div class="col-sm-4">
 			<div class="site-footer-right text-right">
 
 				<?php if ( is_home() || is_front_page() ) : // show credit links only on homepage
@@ -44,14 +44,14 @@
 				<?php endif; ?>
 
 			</div> <!-- /.site-footer-right -->
-		</div> <!-- /.col-lg-4 -->
+		</div> <!-- /.col-sm-4 -->
 
 	</div> <!-- /.row -->
 
 
 </footer> <!-- /#colophon /.site-footer -->
 
-</div> <!-- /.col-lg-12 -->
+</div> <!-- /.col-sm-12 -->
 </div> <!-- /.row -->
 </div> <!-- /.site-wrapper -->
 </div> <!-- /.container -->

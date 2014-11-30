@@ -1,3 +1,7 @@
+= 1.6 - 2014-12-01 =
+* update Bootstrap v.3.3.1
+* replace '-lg-' with '-sm-' inside of php templates for hiding sidebar on small screens
+
 = 1.5 - 2014-05-27 =
 * default form controls styles update
 * remove link to bootstrap.css.map
