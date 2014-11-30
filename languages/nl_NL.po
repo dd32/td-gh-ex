@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v2.4\n"
+"Project-Id-Version: Shipyard v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 16:52:21+0000\n"
+"PO-Revision-Date: 2014-11-29 18:57:30+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -153,13 +153,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:149
-#: functions.php:158
+#: functions.php:155
+#: functions.php:164
 #@ shipyard
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:151
+#: functions.php:157
 #@ shipyard
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"

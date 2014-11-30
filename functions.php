@@ -143,6 +143,12 @@
 	add_filter( "the_excerpt", "shipyard_excerpt" );
 
 
+// Custom excerpt lenght (default length is 55 words)
+	function bluegray_excerpt_length( $length ) { 
+		return 55; } 
+	add_filter( 'excerpt_length', 'bluegray_excerpt_length', 999 ); 
+
+
 // Theme Customizer (option to add logo)
 	function shipyard_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'shipyard_logo_section' , array( 
