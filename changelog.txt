@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+Medical version 1.9 - december 2014
+- added French translation
+- several css adjustments
+
 Medical version 1.8 - november 2014
 - file functions: added sanitize_callback to logo upload
 - file footer: removed double if statement

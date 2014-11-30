@@ -156,17 +156,17 @@
 	add_action( 'widgets_init', 'medical_widgets_init' );
 
 
-// Custom excerpt lenght 
-	function medical_excerpt_length( $length ) { 
-		return 75; } 
-	add_filter( 'excerpt_length', 'medical_excerpt_length', 999 ); 
-
-
 // Add class to the excerpt 
 	function medical_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "medical_excerpt" );
+
+
+// Custom excerpt lenght (default length is 55 words)
+	function medical_excerpt_length( $length ) { 
+		return 75; } 
+	add_filter( 'excerpt_length', 'medical_excerpt_length', 999 ); 
 
 
 // Theme Customizer (option to add logo)
