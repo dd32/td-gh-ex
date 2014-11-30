@@ -53,10 +53,12 @@ msgstr ""
 msgid "Tag Archives"
 msgstr ""
 
-#: archive.php:29
-#: search.php:16
+#: archive.php:31
+#: index.php:23
+#: search.php:18
+#, php-format
 #@ multicolors
-msgid "Permalink to "
+msgid "Permalink to %s"
 msgstr ""
 
 #: archive.php:33
@@ -236,12 +238,6 @@ msgstr ""
 #: index.php:18
 #@ multicolors
 msgid "Featured post"
-msgstr ""
-
-#: index.php:23
-#, php-format
-#@ multicolors
-msgid "Permalink to %s"
 msgstr ""
 
 #: page-full.php:27

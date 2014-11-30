@@ -1,9 +1,11 @@
 CHANGELOG
 =========
 
-MultiColors version 1.8 - december 2014 
+MultiColors version 1.9 - december 2014 
+- file header: removed double if statement
 - file functions: added custom post excerpt lenght
 - added French translation
+- fixed minor issue with permalink
 - several css adjustments
 
 MultiColors version 1.7 - november 2014 
