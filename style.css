@@ -1,7 +1,7 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: LeftSide is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Sidebar on left side, left side navigation (with horizontal submenu), 3 widget-area's in footer, custom header-image, custom background and display logo or blogname and description are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -91,14 +91,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#e77776;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc; background:none; border-radius:5px;-moz-border-radius:5px; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #e77776;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -156,10 +158,10 @@ select {max-width:100%;}
 /* POST */
 .post-title {margin: 0; padding: 0;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #e77776; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
+.more {clear:both; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #ccc;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 5px; background:#e77776; color:#fff; text-decoration:none; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #666; color:#ddd; text-decoration:none;}
@@ -180,8 +182,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 20px 5px 0;}
-.single-image {float:left; margin: 5px 20px 5px 0;}
+.wp-post-image, .single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -204,7 +205,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .comment-body {border-left:2px solid #e77776; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -214,29 +215,28 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:100%; float:left; word-wrap: break-word;}
-.widget {padding:10px 0; margin: 0 0 10px; background: none;}
+.widget {padding:10px 0; margin:0 0 10px; background: none;}
 .widgettitle, .nav-widgettitle {background:#666; color:#ddd; padding:5px 15px; margin:0 0 10px;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
-#footer {width:100%; clear:both;}
+#footer {width:100%; clear:both; background:#666; color:#ddd;}
 #footer a {color:#ddd;}
-#footer .widget {padding:0; margin: 20px 0 0;}
-#footer .widgettitle {padding:0; background:none; color:#ddd;}
+#footer .widget {padding:0; margin:20px 0 0;}
+#footer .widgettitle {padding:0; background:none;}
 
 #footer input, #footer select, #footer textarea {border:1px solid #ddd; color:#ddd;}
-#footer input[type="submit"] {border:0; background: #ddd; color:#333;}
-#footer input[type="submit"]:hover {background: #fff; color:#333;}
+#footer input[type="submit"] {border:0; background:#ddd; color:#333;}
+#footer input[type="submit"]:hover {background:#fff; color:#333;}
 
-#footer-widgets {width: 100%; margin:0 auto 0; padding:0; background:#666; color:#ddd;}
+#footer-widgets {width: 100%; margin:0 auto 0; padding:0;}
 #footer-widgets:after {content:''; display:block; clear:both;}
 
 .footer-left {float: left; width: 30%; margin:10px 0 0 2%; padding:0; word-wrap: break-word;}
 .footer-middle {float: left; width: 30%; margin:10px 3%; padding:0; word-wrap: break-word;}
 .footer-right {float: right; width: 30%; margin:10px 2% 0 0; padding:0; word-wrap: break-word;}
 
-#footer .site-info {text-align:center; clear:both; padding:10px; background:#666; color:#ddd;}
+#footer .site-info {text-align:center; clear:both; padding:10px;}
 
 
 /* Mobile */
@@ -255,8 +255,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header-image-mobile .header-img {width: 100%; height: auto;}
 	.postmetadata {margin:10px 0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin: 5px 10px 5px 0;}
 	#sidebar {border-bottom:1px solid #ccc;}
 	.widget, #footer .widget {padding:5px 0; margin: 0 0 5px;}
 	.nav-widgettitle {display:none;}

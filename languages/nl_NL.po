@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: LeftSide v1.5\n"
+"Project-Id-Version: LeftSide v1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 11:07:31+0000\n"
+"PO-Revision-Date: 2014-11-28 16:54:21+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -193,17 +193,17 @@ msgstr "% reacties"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:46
+#: footer.php:28
 #@ leftside
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:47
+#: footer.php:29
 #@ leftside
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:47
+#: footer.php:29
 #@ leftside
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"

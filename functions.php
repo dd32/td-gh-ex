@@ -146,17 +146,17 @@
 	add_action( 'widgets_init', 'leftside_widgets_init' );
 
 
-// Custom excerpt lenght 
-	function leftside_excerpt_length( $length ) { 
-		return 75; } 
-	add_filter( 'excerpt_length', 'leftside_excerpt_length', 999 ); 
-
-
 // Add class to the excerpt 
 	function leftside_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "leftside_excerpt" );
+
+
+// Custom excerpt lenght (default length is 55 words)
+	function leftside_excerpt_length( $length ) { 
+		return 55; } 
+	add_filter( 'excerpt_length', 'leftside_excerpt_length', 999 ); 
 
 
 // Theme Customizer (option to add logo)
