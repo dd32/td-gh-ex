@@ -57,7 +57,7 @@ msgstr ""
 #: index.php:19
 #: search.php:15
 #@ bluegray
-msgid "Permalink to "
+msgid "Permalink to %s"
 msgstr ""
 
 #: archive.php:31

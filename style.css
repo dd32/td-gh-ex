@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 2.1
+Version: 2.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -95,14 +95,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#00aaff;}
 cite, em, abbr, acronym {font-style:italic;}
-code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ddd; background:none; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ddd; background:#f8f8f8; word-wrap:break-word;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #00aaff;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #ddd; padding:10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -157,20 +159,19 @@ select {max-width:100%;}
 .home-right {float: right; width: 32%; margin:20px 0 0; padding:0; word-wrap: break-word;}
 
 /* PAGE */
-.page-title {margin: 0; padding: 0 0 20px; color:#333; line-height:1em;}
-.archive-title {margin: 0 0 20px; padding: 0 0 10px; color:#333; line-height:1em; border-bottom:2px solid #ddd;}
+.page-title {margin:0; padding:0 0 20px; color:#333; line-height:1em;}
+.archive-title {margin:0 0 20px; padding:0 0 10px; color:#333; line-height:1em; border-bottom:2px solid #ddd;}
 .pagelink {clear:both; margin:20px 0 10px;}
-.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: #f8f8f8; border:1px solid #ddd;}
+.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding:5px; background:#f8f8f8; border:1px solid #ddd;}
 
 
 /* POST */
-.post-title {margin: 0; padding: 0; color:#00aaff; line-height:1em;}
+.post-title {margin:0; padding:0; line-height:1em;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.single-post-title {margin: 0; padding: 0; color:#333; line-height:1em;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #00aaff; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ddd;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:2px solid #ddd;}
+.more {clear:both; margin:20px 0; padding:0 0 20px; border-bottom:2px solid #ddd;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding:2px 5px; background:#00aaff; color:#fff; text-decoration:none;}
 a.readmore:hover {background:#333; text-decoration:none;}
@@ -191,8 +192,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 20px 5px 0;}
-.single-image {float:left; margin: 5px 20px 5px 0;}
+.wp-post-image, .single-image {float:left; margin:5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -214,8 +214,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments .children {list-style:none; background: #f8f8f8; margin: 0; padding: 0 0 0 15px;}
 .comment-body {border-left:2px solid #00aaff; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
-.comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -227,7 +227,6 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #sidebar {width: 38%; float: right; margin:0; padding:20px 0 0; word-wrap: break-word;}
 .widget {padding:15px 5% 15px; margin: 0 0 20px; background: #f8f8f8; border:1px solid #ddd;}
 .widgettitle {margin:0 0 10px; padding: 0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
@@ -265,9 +264,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#footer .footer-content {width:100%; margin:0; padding:0;}
 	#sidebar {width:100%; padding:0; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
-	.post-title, .single-post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
+	.post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
 	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin:5px 10px 5px 0;}
 	.home-right, .home-middle, .home-left {width:100%; margin:0; float:left;} 
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 	.widget, #footer .widget {padding:5px 3% 5px; margin: 0 0 10px;} 

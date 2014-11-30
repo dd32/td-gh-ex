@@ -16,7 +16,7 @@
 	<?php endif; ?>
 
 		<h4 class="post-title">
-		<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'bluegray'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'bluegray'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
 		</h4>
 
 		<h5 class="postmetadata">

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueGray v2.1\n"
+"Project-Id-Version: BlueGray v2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 09:17:36+0000\n"
+"PO-Revision-Date: 2014-11-28 13:09:38+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:35
+#: search.php:37
 #@ bluegray
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:47
+#: archive.php:49
 #: index.php:39
-#: search.php:36
+#: search.php:38
 #@ bluegray
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -64,23 +64,16 @@ msgstr "Auteur Archieven"
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:27
-#: index.php:19
-#: search.php:14
-#@ bluegray
-msgid "Permalink to "
-msgstr "Permalink naar "
-
-#: archive.php:51
+#: archive.php:53
 #: index.php:43
-#: search.php:42
+#: search.php:44
 #@ bluegray
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:52
+#: archive.php:54
 #: index.php:44
-#: search.php:43
+#: search.php:45
 #@ bluegray
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
@@ -101,9 +94,9 @@ msgstr "Hoofd Sidebar"
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: archive.php:43
+#: archive.php:45
 #: index.php:35
-#: search.php:30
+#: search.php:32
 #@ bluegray
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
@@ -169,13 +162,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:190
-#: functions.php:199
+#: functions.php:196
+#: functions.php:205
 #@ bluegray
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:192
+#: functions.php:198
 #@ bluegray
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -190,25 +183,25 @@ msgstr "Homepage Sidebar Rechts"
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
-#: archive.php:34
+#: archive.php:36
 #: index.php:26
-#: search.php:21
+#: search.php:23
 #: single.php:20
 #@ bluegray
 msgid "Leave a response"
 msgstr "Plaats een reactie"
 
-#: archive.php:34
+#: archive.php:36
 #: index.php:26
-#: search.php:21
+#: search.php:23
 #: single.php:20
 #@ bluegray
 msgid "% responses"
 msgstr "% reacties"
 
-#: archive.php:34
+#: archive.php:36
 #: index.php:26
-#: search.php:21
+#: search.php:23
 #: single.php:20
 #@ bluegray
 msgid "1 response"
@@ -239,18 +232,18 @@ msgstr "Homepage Sidebar Midden"
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
-#: archive.php:31
+#: archive.php:33
 #: index.php:23
-#: search.php:18
+#: search.php:20
 #: single.php:17
 #, php-format
 #@ bluegray
 msgid "Posted on %s"
 msgstr "Geplaatst op %s"
 
-#: archive.php:32
+#: archive.php:34
 #: index.php:24
-#: search.php:19
+#: search.php:21
 #: single.php:18
 #, php-format
 #@ bluegray
@@ -274,4 +267,12 @@ msgstr "Geplaatst in %s"
 #@ bluegray
 msgid "Tags: %s"
 msgstr "Tags: %s"
+
+#: archive.php:29
+#: index.php:19
+#: search.php:16
+#, php-format
+#@ bluegray
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
 

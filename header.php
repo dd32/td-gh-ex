@@ -55,34 +55,20 @@
 
 	<?php if( is_home() || is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
-	<div id="header-widgets">
-
-		<div class="home-left"> 
-			<?php if ( is_active_sidebar( 'homepage-left' ) ) : ?>
 	
+	<div id="header-widgets">
+		<div class="home-left"> 
 			<?php dynamic_sidebar( 'homepage-left' ); ?>
-
-			<?php else : ?> 
-			<?php endif; ?> 
 		</div>
 	
 		<div class="home-middle"> 
-			<?php if ( is_active_sidebar( 'homepage-middle' ) ) : ?>
-		
 			<?php dynamic_sidebar( 'homepage-middle' ); ?>
-
-			<?php else : ?> 
-			<?php endif; ?> 
 		</div>
 	
 		<div class="home-right"> 
-			<?php if ( is_active_sidebar( 'homepage-right' ) ) : ?>
-		
 			<?php dynamic_sidebar( 'homepage-right' ); ?>
-
-			<?php else : ?> 
-			<?php endif; ?> 
 		</div>
 	</div>
+
 	<?php } ?>	
 	<?php } ?>

@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 2.2 - december 2014
+- file functions: added custom post excerpt lenght
+- added French translation
+- several css adjustments
+
 BlueGray version 2.1 - november 2014
 - file functions: added sanitize_callback to logo upload
 - file footer: removed double if statement
