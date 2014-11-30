@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SimplyBlack v2.3\n"
+"Project-Id-Version: SimplyBlack v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 17:06:35+0000\n"
+"PO-Revision-Date: 2014-11-29 19:47:14+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -154,8 +154,8 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:158
-#: functions.php:167
+#: functions.php:164
+#: functions.php:173
 #@ simplyblack
 msgid "Logo"
 msgstr "Logo"
@@ -165,7 +165,7 @@ msgstr "Logo"
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
-#: functions.php:160
+#: functions.php:166
 #@ simplyblack
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
