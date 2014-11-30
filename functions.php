@@ -50,7 +50,7 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args  ); 
 		add_theme_support( 'automatic-feed-links');
-		
+		add_theme_support('woocommerce');
 		require_once('theme_setup_data.php');
 		// setup admin pannel defual data for index page		
 		$wallstreet_lite_options=theme_data_setup();

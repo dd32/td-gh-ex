@@ -74,11 +74,11 @@ function theme_data_setup()
 			/** Social media links **/
 			'header_social_media_enabled'=>'on',			
 			'footer_social_media_enabled'=>'on',			
-			'social_media_twitter_link' =>"http://twitter.com/",			
-			'social_media_facebook_link' =>"http://facebook.com/",
-			'social_media_googleplus_link' =>"http://www.google.com",
-			'social_media_linkedin_link' =>"http://liknkedin.com/",		
-			'social_media_youtube_link' =>"http://youtube.com/",
+			'social_media_twitter_link' =>"#",			
+			'social_media_facebook_link' =>"#",
+			'social_media_googleplus_link' =>"#",
+			'social_media_linkedin_link' =>"#",		
+			'social_media_youtube_link' =>"#",
 			
 			/** footer customization **/
 			'footer_customizations' => 'Copyright @ 2014 - WALL STREET. Designed by',

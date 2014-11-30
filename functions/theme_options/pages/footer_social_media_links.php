@@ -31,11 +31,11 @@
 		{
 			$current_options['header_social_media_enabled']="on";
 			$current_options['footer_social_media_enabled']="on";			
-			$current_options['social_media_twitter_link']="http://twitter.com/";
-			$current_options['social_media_facebook_link']="http://facebook.com/";
-			$current_options['social_media_googleplus_link']="http://googleplus.com/";
-			$current_options['social_media_linkedin_link']="http://linkedin.com/";
-			$current_options['social_media_youtube_link']="http://youtube.com/";		
+			$current_options['social_media_twitter_link']="#";
+			$current_options['social_media_facebook_link']="#";
+			$current_options['social_media_googleplus_link']="#";
+			$current_options['social_media_linkedin_link']="#";
+			$current_options['social_media_youtube_link']="#";		
 			update_option('wallstreet_lite_options',$current_options);
 		}
 	}  ?>
