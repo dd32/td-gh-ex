@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 2.4
+Version: 2.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy.
@@ -92,14 +92,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#ff6600;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; background:none; border-radius:5px;-moz-border-radius:5px; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #ff6600;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -156,16 +158,16 @@ select {max-width:100%;}
 .article {padding: 0 4% 0;}
 .page-title {margin: 0; padding: 0 0 20px;}
 .pagelink {clear:both; margin:20px 0 10px;}
-.edit-link {display:block; clear:both; margin:10px 0; padding: 5px 20px; border:1px solid #ff6600; border-radius:5px;-moz-border-radius:5px;}
+.edit-link {display:block; clear:both; margin:10px 0; padding: 5px 20px; border:1px solid #ff6600; text-align:center; border-radius:5px;-moz-border-radius:5px;}
 
 
 /* POST */
 .post-title {margin: 0; padding: 0;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; color:#ff6600; background: #444; margin: 0 0 10px; padding:5px; border-radius:5px;-moz-border-radius:5px;}
-.postmetadata {clear:both; margin:10px 0 15px; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-.more {clear:both; margin:0 0 10px; padding:0 0 10px;}
+.postmetadata {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+.more {clear:both; margin:10px 0 0; padding:0;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding:2px 5px; background: #444; color:#fff; text-decoration:none; border-radius:5px;-moz-border-radius:5px;}
 a.readmore:hover {background: #ff6600; text-decoration:none;}
@@ -173,7 +175,7 @@ a.readmore:hover {background: #ff6600; text-decoration:none;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
-.post-home {width: 44.5%; float: left; margin:0 0 20px; padding:2%; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
+.post-home {width: 44.7%; float: left; margin:0 0 20px; padding:2%; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
 .post-home.left {clear:left; margin:0 2% 20px 0;}
 
 
@@ -188,8 +190,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 20px 5px 0;}
-.single-image {float:left; margin: 5px 20px 5px 0;}
+.wp-post-image, .single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -209,10 +210,10 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments {clear:both; word-wrap: break-word;}
 #comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; font-weight:normal; margin: 20px 0; padding: 0 15px 0;}
 #comments .children {list-style:none; background: #f8f8f8; margin: 0; padding: 0 0 0 15px;}
-.comment-body {border-left:2px solid #ec6500; padding: 0 0 0 15px; margin:20px 0;}
+.comment-body {border-left:2px solid #ff6600; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -224,7 +225,6 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #sidebar {width: 32%; float: right; margin:0; padding:20px 4% 20px 0; word-wrap: break-word;}
 .widget {padding:0 0 20px; margin: 0 0 20px; border-bottom: 1px solid #eee; }
 .widgettitle {color:#333; padding:0; margin:0 0 20px;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
@@ -232,6 +232,10 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #footer .site-info {text-align:center; clear:both; padding:20px 4%; background: #444; color:#aaa;}
 #footer .widget {border:0; margin:40px 0; padding:0;}
 #footer .widgettitle {padding:0; margin:0 0 20px; color:#aaa; background:none;}
+
+#footer input, #footer select, #footer textarea {color:#aaa;}
+#footer input[type="submit"] {border:0; background:#aaa; color:#333;}
+#footer input[type="submit"]:hover {background:#ccc; color:#333;}
 
 .footer-left {float: left; width: 44%; padding:0; margin:0 0 0 4%; word-wrap: break-word;}
 .footer-right {float: right; width: 44%; padding:0; margin:0 4% 0 0; word-wrap: break-word;}
@@ -252,8 +256,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header .sidebar-homepage {width:100%; float:left;} 
 	.article {padding:0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin: 5px 10px 5px 0;}
 	.post-home, .post-home.left {width: 96%; float: left; border:1px solid #ccc;}
 	#sidebar {width:100%; padding:0; float:left;}
 	.widget {padding:0 0 5px; margin:0 0 10px; border:0;}
