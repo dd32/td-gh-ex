@@ -11,7 +11,7 @@
 
 	<?php while (have_posts()) : the_post(); ?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<h3 class="page-title"><?php the_title(); ?></h3>
+			<h3 class="post-title"><?php the_title(); ?></h3>
 
 			<h5 class="postmetadata">
 			<?php printf( __( 'Posted on %s', 'onecolumn' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
@@ -35,7 +35,8 @@
 	<?php endwhile; ?>
 	<?php endif; ?>
 	
-		<h5><?php edit_post_link( __( 'Edit', 'onecolumn' ), '<span class="edit-link">', '</span>' ) ?></h5>
+	<?php edit_post_link( __( 'Edit', 'onecolumn' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+
 </div>
 </div>
 <?php get_sidebar(); ?>

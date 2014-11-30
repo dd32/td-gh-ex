@@ -154,9 +154,9 @@
 	add_filter( "the_excerpt", "onecolumn_excerpt" );
 
 
-// Custom excerpt lenght 
+// Custom excerpt lenght (default length is 55 words)
 	function onecolumn_excerpt_length( $length ) { 
-		return 100; } 
+		return 75; } 
 	add_filter( 'excerpt_length', 'onecolumn_excerpt_length', 999 ); 
 
 

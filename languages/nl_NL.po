@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v2.3\n"
+"Project-Id-Version: OneColumn v2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 15:06:10+0000\n"
+"PO-Revision-Date: 2014-11-29 12:55:16+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page.php:24
+#: page.php:25
 #: single.php:38
 #@ onecolumn
 msgid "Edit"
