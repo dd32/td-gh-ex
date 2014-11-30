@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 1.7
+Version: 1.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -92,14 +92,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#ec6500;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc; background:none; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #ec6500;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -155,9 +157,9 @@ select {max-width:100%;}
 
 /* POST */
 .post-title {clear:both; margin:5px 0 10px; text-align:center; line-height:1.5em; font-weight:bold;}
-.excerpt {padding:5px 5px 10px;}
+.excerpt {margin:10px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #ec6500; margin: 10px 0 10px; padding:5px; border:0;}
-.postmetadata {clear:both; margin:0 0 10px; padding:2px 10px; background: #0066ff; color:#fff;}
+.postmetadata {clear:both; margin:10px 0; padding:2px 10px; background: #0066ff; color:#fff;}
 .postmetadata a{color:#fff;}
 
 .post-nav {padding: 10px 0; clear:both;}
@@ -209,7 +211,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .comment-body {border-left:2px solid #ec6500; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -221,7 +223,6 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #sidebar {width: 34%; float: right; margin:20px 2% 0 0; padding:0; word-wrap: break-word;}
 .widget {padding:15px 15px 15px; margin: 0 0 20px; background: #eee; border-bottom:2px solid #ec6500; border-top-right-radius:10px;-moz-border-top-right-radius:10px; border-top-left-radius:10px;-moz-border-top-left-radius:10px;}
 .widgettitle {margin:0 0 10px;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
@@ -252,8 +253,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#footer-widgets {padding:0;}
 	.article, .article-full {padding:0; margin:0; border:0; background:none;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em; text-align:left;}
-	.wp-post-image {float:left; width:50%; margin: 10px 10px 5px 0;}
-	.single-image {float:left; width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {float:left; width:50%; margin:5px 10px 5px 0;}
 	.widget {margin: 10px 0;}
 	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
 	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 

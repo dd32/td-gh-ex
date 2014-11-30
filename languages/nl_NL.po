@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v1.7\n"
+"Project-Id-Version: GridBulletin v1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 10:47:57+0000\n"
+"PO-Revision-Date: 2014-11-28 14:40:40+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -212,19 +212,19 @@ msgstr "Footer Home Links"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer-home.php:42
+#: footer-home.php:29
 #: footer.php:28
 #@ gridbulletin
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer-home.php:43
+#: footer-home.php:30
 #: footer.php:29
 #@ gridbulletin
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer-home.php:43
+#: footer-home.php:30
 #: footer.php:29
 #@ gridbulletin
 msgid "Proudly powered by WordPress"

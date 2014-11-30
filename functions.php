@@ -176,17 +176,17 @@
 	add_action( 'widgets_init', 'gridbulletin_widgets_init' );
 
 
-// Custom excerpt lenght 
-	function gridbulletin_excerpt_length( $length ) { 
-		return 20; } 
-	add_filter( 'excerpt_length', 'gridbulletin_excerpt_length', 999 ); 
-
-
 // Add class to the excerpt 
 	function gridbulletin_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "gridbulletin_excerpt" );
+
+
+// Custom excerpt lenght (default length is 55 words)
+	function gridbulletin_excerpt_length( $length ) { 
+		return 20; } 
+	add_filter( 'excerpt_length', 'gridbulletin_excerpt_length', 999 ); 
 
 
 // Theme Customizer (option to add logo)
