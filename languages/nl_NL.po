@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MultiColors v1.7\n"
+"Project-Id-Version: MultiColors v1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-05 11:36:37+0000\n"
+"PO-Revision-Date: 2014-11-28 22:42:21+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:11
-#: search.php:37
+#: search.php:39
 #@ multicolors
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:12
-#: archive.php:49
+#: archive.php:51
 #: index.php:45
-#: search.php:38
+#: search.php:40
 #@ multicolors
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -64,22 +64,16 @@ msgstr "Auteur Archieven"
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:29
-#: search.php:16
-#@ multicolors
-msgid "Permalink to "
-msgstr "Permalink naar "
-
-#: archive.php:53
+#: archive.php:55
 #: index.php:49
-#: search.php:44
+#: search.php:46
 #@ multicolors
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:54
+#: archive.php:56
 #: index.php:50
-#: search.php:45
+#: search.php:47
 #@ multicolors
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
@@ -101,9 +95,9 @@ msgstr "Hoofd Sidebar"
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: archive.php:45
+#: archive.php:47
 #: index.php:39
-#: search.php:32
+#: search.php:34
 #@ multicolors
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
@@ -169,13 +163,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:199
-#: functions.php:208
+#: functions.php:205
+#: functions.php:214
 #@ multicolors
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:201
+#: functions.php:207
 #@ multicolors
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -190,25 +184,25 @@ msgstr "Homepage Sidebar Rechts"
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
-#: archive.php:36
+#: archive.php:38
 #: index.php:30
-#: search.php:23
+#: search.php:25
 #: single.php:22
 #@ multicolors
 msgid "Leave a response"
 msgstr "Plaats een reactie"
 
-#: archive.php:36
+#: archive.php:38
 #: index.php:30
-#: search.php:23
+#: search.php:25
 #: single.php:22
 #@ multicolors
 msgid "% responses"
 msgstr "% reacties"
 
-#: archive.php:36
+#: archive.php:38
 #: index.php:30
-#: search.php:23
+#: search.php:25
 #: single.php:22
 #@ multicolors
 msgid "1 response"
@@ -239,18 +233,18 @@ msgstr "Homepage Sidebar Midden"
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
-#: archive.php:33
+#: archive.php:35
 #: index.php:27
-#: search.php:20
+#: search.php:22
 #: single.php:19
 #, php-format
 #@ multicolors
 msgid "Posted on %s"
 msgstr "Geplaatst op %s"
 
-#: archive.php:34
+#: archive.php:36
 #: index.php:28
-#: search.php:21
+#: search.php:23
 #: single.php:20
 #, php-format
 #@ multicolors
@@ -280,7 +274,9 @@ msgstr "Tags: %s"
 msgid "Header Sidebar"
 msgstr "Header Sidebar"
 
+#: archive.php:31
 #: index.php:23
+#: search.php:18
 #, php-format
 #@ multicolors
 msgid "Permalink to %s"

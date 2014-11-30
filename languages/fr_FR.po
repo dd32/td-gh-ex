@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MultiColors v1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-28 22:45:43+0000\n"
+"Last-Translator: Guido van der Leest\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:11
+#: search.php:39
+#@ multicolors
+msgid "Nothing Found"
+msgstr "Recherche infructueuse"
+
+#: 404.php:12
+#: archive.php:51
+#: index.php:45
+#: search.php:40
+#@ multicolors
+msgid "Sorry, no posts matched your criteria."
+msgstr "Désolé, il n'y a pas de résultats correspondant aux critères demandés."
+
+#: archive.php:14
+#@ multicolors
+msgid "Archive"
+msgstr "Archive"
+
+#: archive.php:16
+#@ multicolors
+msgid "Daily Archives"
+msgstr "Archives du jour"
+
+#: archive.php:18
+#@ multicolors
+msgid "Monthly Archives"
+msgstr "Archives du mois"
+
+#: archive.php:20
+#@ multicolors
+msgid "Yearly Archives"
+msgstr "Archives de l'année"
+
+#: archive.php:22
+#@ multicolors
+msgid "Author Archives"
+msgstr "Archives par auteur"
+
+#: archive.php:24
+#@ multicolors
+msgid "Tag Archives"
+msgstr "Achives du mot-clé"
+
+#: archive.php:31
+#: index.php:23
+#: search.php:18
+#, php-format
+#@ multicolors
+msgid "Permalink to %s"
+msgstr "Permalien vers %s"
+
+#: archive.php:35
+#: index.php:27
+#: search.php:22
+#: single.php:19
+#, php-format
+#@ multicolors
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+#: archive.php:36
+#: index.php:28
+#: search.php:23
+#: single.php:20
+#, php-format
+#@ multicolors
+msgid "By %s"
+msgstr "Par %s"
+
+#: archive.php:38
+#: index.php:30
+#: search.php:25
+#: single.php:22
+#@ multicolors
+msgid "Leave a response"
+msgstr "Commenter"
+
+#: archive.php:38
+#: index.php:30
+#: search.php:25
+#: single.php:22
+#@ multicolors
+msgid "1 response"
+msgstr "1 commentaire"
+
+#: archive.php:38
+#: index.php:30
+#: search.php:25
+#: single.php:22
+#@ multicolors
+msgid "% responses"
+msgstr "% commentaires"
+
+#: archive.php:47
+#: index.php:39
+#: search.php:34
+#@ multicolors
+msgid "Read More &raquo;"
+msgstr "Lire la suite &raquo;"
+
+#: archive.php:55
+#: index.php:49
+#: search.php:46
+#@ multicolors
+msgid "&laquo; Older posts"
+msgstr "&laquo; Articles précédents"
+
+#: archive.php:56
+#: index.php:50
+#: search.php:47
+#@ multicolors
+msgid "Newer posts &raquo;"
+msgstr "Articles plus récents &raquo;"
+
+#: comments.php:18
+#, php-format
+#@ multicolors
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 commentaire sur %2$s"
+msgstr[1] "%1$s commentaires sur %2$s"
+
+#: comments.php:38
+#@ multicolors
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Commentaires précédents"
+
+#: comments.php:39
+#@ multicolors
+msgid "Newer Comments &raquo;"
+msgstr "Commentaires plus récents &raquo;"
+
+#: comments.php:44
+#@ multicolors
+msgid "Comments are closed"
+msgstr "Les commentaires sont fermés"
+
+#: footer.php:25
+#@ multicolors
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:26
+#@ multicolors
+msgid "WordPress Blog Platform"
+msgstr "Plateforme de blog WordPress"
+
+#: footer.php:26
+#@ multicolors
+msgid "Proudly powered by WordPress"
+msgstr "Fièrement propulsé par WordPress"
+
+#: functions.php:19
+#@ multicolors
+msgid "Primary Navigation"
+msgstr "Navigation principale"
+
+#: functions.php:40
+#@ multicolors
+msgid "Boats"
+msgstr "Bateaux"
+
+#: functions.php:105
+#@ multicolors
+msgid "Primary Sidebar"
+msgstr "Colonne latérale pincipale"
+
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
+#: functions.php:148
+#: functions.php:158
+#: functions.php:168
+#: functions.php:178
+#@ multicolors
+msgid "Select widgets from the right-hand side."
+msgstr "Choisir les widgets sur le côté droit."
+
+#: functions.php:156
+#@ multicolors
+msgid "Footer Sidebar Right"
+msgstr "Pied de page à droite"
+
+#: functions.php:176
+#@ multicolors
+msgid "Footer Sidebar Left"
+msgstr "Pied de page à gauche"
+
+#: functions.php:205
+#: functions.php:214
+#@ multicolors
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:207
+#@ multicolors
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Télécharger un logo pour remplacer le nom du blog et sa description dans l'en-tête"
+
+#: index.php:18
+#@ multicolors
+msgid "Featured post"
+msgstr "Articles mis en avant"
+
+#: page-full.php:27
+#: page.php:26
+#: single.php:40
+#@ multicolors
+msgid "Edit"
+msgstr "Modifier"
+
+#: search.php:13
+#, php-format
+#@ multicolors
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+#: single.php:29
+#, php-format
+#@ multicolors
+msgid "Posted in %s"
+msgstr "Publié dans %s"
+
+#: single.php:29
+#: single.php:30
+#@ multicolors
+msgid ", "
+msgstr ", "
+
+#: single.php:30
+#, php-format
+#@ multicolors
+msgid "Tags: %s"
+msgstr "Mots-clés: %s"
+
+#: functions.php:115
+#@ multicolors
+msgid "Header Sidebar"
+msgstr "Sidebar l'en-tête"
+
+#: functions.php:125
+#@ multicolors
+msgid "Homepage Sidebar Right"
+msgstr "Page d'accueil Sidebar à droite"
+
+#: functions.php:135
+#@ multicolors
+msgid "Homepage Sidebar Middle"
+msgstr "Page d'accueil Sidebar à centre"
+
+#: functions.php:146
+#@ multicolors
+msgid "Homepage Sidebar Left"
+msgstr "Page d'accueil Sidebar à gauche"
+
+#: functions.php:166
+#@ multicolors
+msgid "Footer Sidebar Middle"
+msgstr "Pied de page à centre"
+

@@ -193,6 +193,12 @@
 	add_filter( "the_excerpt", "multicolors_excerpt" );
 
 
+// Custom excerpt lenght (default length is 55 words)
+	function multicolors_excerpt_length( $length ) { 
+		return 55; } 
+	add_filter( 'excerpt_length', 'multicolors_excerpt_length', 999 ); 
+
+
 // Theme Customizer (option to add logo)
 	function multicolors_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'multicolors_logo_section' , array( 

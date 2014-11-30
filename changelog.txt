@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MultiColors version 1.8 - december 2014 
+- file functions: added custom post excerpt lenght
+- added French translation
+- several css adjustments
+
 MultiColors version 1.7 - november 2014 
 - file functions: added sanitize_callback to logo upload
 - file footer: removed double if statement
