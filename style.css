@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 2.6
+Version: 2.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, header navigation and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -92,14 +92,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#0066ff;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #ccc; background:none; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #0066ff;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -161,21 +163,21 @@ select {max-width:100%;}
 
 
 /* PAGE */
-.article {padding: 0 2% 0;}
+.article {padding:0 2% 0;}
 .page-title {margin: 0; padding: 0 0 10px; line-height:1em;}
 .pagelink {clear:both; margin:20px 0 10px;}
 .edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: none; border:1px solid #ccc;}
 
 
 /* POST */
-.post-title {margin: 0; padding: 0;}
+.post-title {margin:0; padding:0; line-height:1em;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #0066ff; margin: 0 0 10px; padding:5px; border:0;}
-.postmetadata {clear:both; margin:20px 0; padding:5px; background: #f8f8f8; border:1px solid #ccc;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ccc;}
+.postmetadata {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc;}
+.more {clear:both; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #ccc;}
 .more:after {content:''; display:block; clear:both;}
-a.readmore {float:right; padding: 2px 5px; background: #0066ff; color:#fff; text-decoration:none;}
+a.readmore {float:right; padding: 2px 5px; background:#0066ff; color:#fff; text-decoration:none;}
 a.readmore:hover {background: #333; text-decoration:none;}
 .post-nav {padding: 5px 0; clear:both;}
 .post-nav:after {content:''; display:block; clear:both;}
@@ -194,8 +196,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 20px 5px 0;}
-.single-image {float:left; margin: 5px 20px 5px 0;}
+.wp-post-image, .single-image {float:left; margin: 5px 20px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -218,7 +219,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .comment-body {border-left:2px solid #0066ff; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -230,7 +231,6 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #sidebar {width: 34%; float: right; margin:0 2% 0 0; padding: 0; word-wrap: break-word;}
 .widget {padding:15px; margin: 20px 0; background: #f8f8f8; border:1px solid #ccc;}
 .widgettitle {margin:0 0 10px;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
@@ -259,8 +259,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#footer {width:100%; padding:10px 0 0;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 	.article {padding:0;}
-	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin: 5px 10px 5px 0;}
 	.widget {margin: 15px 0; padding:10px;}
 	.home-right, .home-left, .footer-right, .footer-left {width:100%; margin:0; float:left;} 
 	.nav-head ul {display: none;} 

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 2.7 - december 2014
+- added French translation
+- several css adjustments
+
 PrivateBusiness version 2.6 - november 2014
 - file functions: added sanitize_callback to logo upload
 - file footer and file header: removed double if statement
