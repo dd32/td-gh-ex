@@ -50,7 +50,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menu's.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch translation included). 
+This theme is translation-ready (Dutch and French translation included). 
 You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
 
 
@@ -80,15 +80,6 @@ Copyright author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-Item: address-dark.png
-Item: address-light.png
-Item: quote-dark.png
-Item: quote-light.png
-Author: Clker.com
-Author URI: http://www.clker.com
-License: none (public domain) 
-License URI: http://www.clker.com/disclaimer.html
 
 
 CREDITS

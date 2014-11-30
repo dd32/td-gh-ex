@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Weblink Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -93,14 +93,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#08a0ff;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; background:none; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #08a0ff;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #eee; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
@@ -135,8 +137,9 @@ select {max-width:100%;}
 #header-second .sidebar-homepage {width: 49%; float: right; word-wrap: break-word; background:#08a0ff;}
 #header-second .widget {margin:15px 0; padding:0 20px; background:none; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
-#header-second input, #header-second select, #header-second textarea {background:#fff; border:1px solid #fff;}
-#header-second input[type="submit"] {border:0; background: #fff; color:#333;}
+
+#header-second input, #header-second select, #header-second textarea {background:#fff; color:#333; border:0;}
+#header-second input[type="submit"] {background: #fff; color:#333;}
 #header-second input[type="submit"]:hover {background: #333; color:#fff;}
 
 
@@ -164,7 +167,7 @@ select {max-width:100%;}
 #header-third .search-form {width:50%;float:right;text-align:right;} 
 #header-third .search-title {width:50%; float:left; color:#fff; margin: 7px 0 0;}
 
-#header-third input {background: #fff; color:#333; padding: 5px; border:0;}
+#header-third input {background: #fff; color:#333; padding:5px; border:0;}
 #header-third input[type="submit"]{padding:5px; background:#fff; color:#333;}
 #header-third input[type="submit"]:hover {background:#333; color:#fff;}
 
@@ -197,10 +200,10 @@ select {max-width:100%;}
 /* POST */
 .post-title {margin: 0; padding: 0;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.excerpt {padding:5px 0 0;}
+.excerpt {margin:0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #08a0ff; margin: 0 0 10px; padding:2px 5px; border:0;}
-.postmetadata {clear:both; margin:10px 0 15px; padding:5px 10px; background: #f8f8f8; border:1px solid #eee;}
-.more {clear:both; margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #eee;}
+.postmetadata {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #eee;}
+.more {clear:both; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #eee;}
 .more:after {content:''; display:block; clear:both;}
 a.readmore {float:right; padding: 2px 10px; background: #08a0ff; color:#fff; text-decoration:none;}
 a.readmore:hover {background: #333; text-decoration:none;}
@@ -221,8 +224,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
-.wp-post-image {float:left; margin: 10px 15px 5px 0;}
-.single-image {float:left; margin: 5px 15px 5px 0;}
+.wp-post-image, .single-image {float:left; margin: 5px 15px 5px 0;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -241,12 +243,12 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* COMMENTS */
 #comments {clear:both; word-wrap: break-word;}
 #comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #eee; font-weight:normal; margin: 20px 0; padding: 0 15px 0;}
-#comments .children {list-style:none; background: #f8f8f8; margin: 0; padding: 0 0 0 15px;}
+#comments .children {list-style:none; background:#f8f8f8; margin: 0; padding: 0 0 0 15px;}
 .comment-body {border-left:2px solid #08a0ff; padding: 0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .form-allowed-tags code {padding:0; border:none;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {font-style:italic;}
 
 #respond {padding:0; margin:0; clear:both;}
 #commentform label {padding: 0 0 5px; display:block;}
@@ -258,7 +260,6 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #sidebar {width: 30%; float: right; margin:0; padding:20px 0 0; word-wrap: break-word;}
 .widget {padding:0 0 10px; margin:0 0 20px; background:none; border-bottom:1px solid #eee;}
 .widgettitle {margin:0 0 10px;}
-#wp-calendar {width:90%;}
 
 
 /* FOOTER */
@@ -295,8 +296,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header-third .search-form {width:100%; float:left; text-align:left;} 
 	#sidebar {width:100%; padding:0 0 10px; float:left;}
 	.post-title, .page-title, .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
-	.wp-post-image {width:50%; margin: 10px 10px 5px 0;}
-	.single-image {width:50%; margin: 5px 10px 5px 0;}
+	.wp-post-image, .single-image {width:50%; margin:5px 10px 5px 0;}
 	.widget {margin: 10px 0;}
 	.widgettitle {padding: 5px 3%; background: #08a0ff; color:#fff;}
 	#footer {width:94%; padding:10px 3% 0;}

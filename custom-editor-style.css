@@ -49,14 +49,16 @@ a:hover {text-decoration:underline;}
 strong, b {font-weight: bold;}
 small {font-size:0.75em;}
 big {font-size: 1.5em;}
+sub {vertical-align:sub; font-size:0.9em;}
+sup {vertical-align:super; font-size:0.9em;}
 ins, mark {font-weight:bold; background:none; color:#08a0ff;}
 cite, em, abbr, acronym {font-style:italic;}
 code, pre {margin:10px 0; padding:5px 10px; display:block; border:1px solid #eee; background:none; word-wrap:break-word;}
-blockquote, q {margin:10px 0; padding:0 0 0 40px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/quote-dark.png') no-repeat;}
-address {margin:10px 0; padding:0 0 0 30px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; background:url('images/address-dark.png') no-repeat;}
+blockquote, q {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; font-style:italic; border-left:2px solid #08a0ff;}
+address {margin:10px 0; padding:0 0 0 20px; display:block; font-size:1.2em; line-height:1.5em; border-left:2px solid #333;}
 p {margin:0 0 10px; text-align:justify;}
 
-table {margin:10px; border-collapse:collapse;}
+table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #eee; padding:5px 10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
