@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.27
+* Custom Script added to header instead of footer for Google Analytic support
+* Few Minor changes in Admin Interface
+
 Version 2.26
 * Some test script left behind removed
 

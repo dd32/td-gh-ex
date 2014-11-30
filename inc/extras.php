@@ -571,7 +571,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 			echo $accesspresslite_settings['custom_code'];
 	}
 
-	add_action('wp_footer','accesspresslite_custom_code');
+	add_action('wp_head','accesspresslite_custom_code');
 
 	function accesspresslite_call_to_action_cb(){
 		global $accesspresslite_options;

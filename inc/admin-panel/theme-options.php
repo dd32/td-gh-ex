@@ -1104,6 +1104,11 @@ function accesspresslite_theme_options_page() {
 						$other_product .= "<div class='view-detail'>View Detail</div></a>";
 						$other_product .= "</div></div>";
 
+						$other_product .= "<div class='product'>";
+						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-social-icons/')."'><img alt='AccessPress Social Icons' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-social-icons.jpg'>";
+						$other_product .= "<div class='view-detail'>View Detail</div></a>";
+						$other_product .= "</div></div>";
+
 						$other_product .= "<div class='clearfix'></div>";
 						echo $other_product;
 						?>
