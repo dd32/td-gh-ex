@@ -1,9 +1,11 @@
 CHANGELOG
 =========
 
-BlueGray version 2.2 - december 2014
+BlueGray version 2.3 - december 2014
+- file header: removed double if statement
 - file functions: added custom post excerpt lenght
 - added French translation
+- fixed minor issue with permalink
 - several css adjustments
 
 BlueGray version 2.1 - november 2014
