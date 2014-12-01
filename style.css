@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -146,7 +146,7 @@ textarea {
 	line-height: 2;
 }
 
-.smallPart {
+.smallPart, aside .tagcloud {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1.5;
@@ -1035,52 +1035,6 @@ span.overlay-img {
 .entry-meta span {
 	margin-right: 10px;
 }
-.theShareSpace {
-	background: #f7c322;
-	margin-bottom: 1em;
-	color: #ffffff;
-	border-radius: 2px;
-	position: relative;
-	margin-left: -4.5em;
-	margin-top: 3em;
-	text-align: center;
-}
-
-.theShareSpace:before {
-	content: "";
-	position: absolute;
-	border-top: 1.5em solid #f7c322;
-	border-left: 1.5em solid transparent;
-	left: 0;
-	bottom: -1.4em;
-}
-
-.theShareSpace:after {
-	content: "";
-	position: absolute;
-	border-top: 1.5em solid rgba(0,0,0,.1);
-	border-left: 1.5em solid transparent;
-	left: 0;
-	bottom: -1.4em;
-}
-
-.theShareSpace h4 {
-	font-weight: 300;
-	padding: 8px 12px;
-	display:inline-block;
-}
-
-.theShareButton {
-	display:inline-block;
-}
-
-.theShareButton a {
-	color: #ffffff;
-	padding: 0 1em;
-}
-.theShareButton a:hover {
-	color: #ffffff;
-}
 
 .site-info {
 	text-align: center;
@@ -1510,5 +1464,16 @@ object {
 	}
 	.form-allowed-tags {
 		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+Print Style
+--------------------------------------------------------------*/
+@media print {
+	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 	}
 }

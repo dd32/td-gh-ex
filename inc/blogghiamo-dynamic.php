@@ -104,9 +104,6 @@ function blogghiamo_custom_css_styles() {
 	.post-navigation .meta-nav,
 	.widget-title,
 	.edit-link a, .tagcloud a,
-	.theShareSpace,
-	.theShareButton a,
-	.theShareButton a:hover,
 	#comments .reply a {
 		color: <?php echo $box_color_second; ?>;
 	}
@@ -132,7 +129,6 @@ function blogghiamo_custom_css_styles() {
 	.post-navigation .meta-nav,
 	.widget-title,
 	.edit-link a, .tagcloud a,
-	.theShareSpace,
 	#comments .reply {
 		background: <?php echo $special_color_third; ?>;
 	}

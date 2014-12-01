@@ -213,38 +213,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content-single.php:52
-msgid "Share This!"
-msgstr ""
-
-#: content-single.php:53
-msgid "Share on Facebook"
-msgstr ""
-
-#: content-single.php:54
-msgid "Share on Twitter"
-msgstr ""
-
-#: content-single.php:55
-msgid "Share on Google Plus"
-msgstr ""
-
-#: content-single.php:56
-msgid "Share on Linkedin"
-msgstr ""
-
-#: content-single.php:57
-msgid "Share on Stumbleupon"
-msgstr ""
-
-#: content-single.php:58
-msgid "Share via Email"
-msgstr ""
-
-#: content-single.php:58
-msgid "Read this interesting post"
-msgstr ""
-
 #: footer.php:22
 msgid "http://wordpress.org/"
 msgstr ""
@@ -265,14 +233,6 @@ msgstr ""
 
 #: functions.php:74
 msgid "Sidebar"
-msgstr ""
-
-#: functions.php:111
-#, php-format
-msgid ""
-"Thank you for installing <b>Blogghiamo</b> WordPress Theme! <a href=\"%2$s"
-"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
-"Notice</a>"
 msgstr ""
 
 #: header.php:25
@@ -368,113 +328,205 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/theme-options.php:24 inc/theme-options.php:47
+#: inc/theme-options.php:23 inc/theme-options.php:46
 msgid "Blogghiamo Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:60
+#: inc/theme-options.php:59
 msgid " Free Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:89
+#: inc/theme-options.php:62
+msgid "Need more features and options? Upgrade to PRO!"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "Get"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "Blogghiamo PRO"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "WordPress Theme for only"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "(One Time Fee)"
+msgstr ""
+
+#: inc/theme-options.php:65
+msgid "Demo (Blogghiamo PRO)"
+msgstr ""
+
+#: inc/theme-options.php:67
+msgid "Get The Pro Version"
+msgstr ""
+
+#: inc/theme-options.php:71
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:71
+msgid ""
+"(Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font "
+"switcher and much more...)"
+msgstr ""
+
+#: inc/theme-options.php:72
+msgid "Logo and Favicon Upload"
+msgstr ""
+
+#: inc/theme-options.php:73
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/theme-options.php:74
+msgid "Beautiful Slider"
+msgstr ""
+
+#: inc/theme-options.php:75
+msgid "Breaking News"
+msgstr ""
+
+#: inc/theme-options.php:76
+msgid "Post views counter"
+msgstr ""
+
+#: inc/theme-options.php:77
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/theme-options.php:78
+msgid "Post format"
+msgstr ""
+
+#: inc/theme-options.php:78
+msgid "(Standard, Gallery, Audio, Link, Video, Quote)"
+msgstr ""
+
+#: inc/theme-options.php:79
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/theme-options.php:79
+msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
+msgstr ""
+
+#: inc/theme-options.php:80
+msgid "11 Exclusive Widgets"
+msgstr ""
+
+#: inc/theme-options.php:80
+msgid ""
+"(Latest Tweet, Instagram, Random Posts, Social Counter, Posts with "
+"Thumbnail, News in Pictures, and much more...)"
+msgstr ""
+
+#: inc/theme-options.php:81
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/theme-options.php:82
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/theme-options.php:83
+msgid "And much more..."
+msgstr ""
+
+#: inc/theme-options.php:88
 msgid ""
 "These options will let you setup the social icons at the top of the theme. "
 "You can enter the URLs of your profiles to have the icons show up."
 msgstr ""
 
-#: inc/theme-options.php:91
+#: inc/theme-options.php:90
 msgid "Options saved"
 msgstr ""
 
-#: inc/theme-options.php:106
+#: inc/theme-options.php:105
 msgid "Hide RSS Icon?"
 msgstr ""
 
-#: inc/theme-options.php:109
+#: inc/theme-options.php:108
 msgid "Hide the RSS feed icon?"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:117
 msgid "Hide Search Icon?"
 msgstr ""
 
-#: inc/theme-options.php:121
+#: inc/theme-options.php:120
 msgid "Hide the Search icon?"
 msgstr ""
 
-#: inc/theme-options.php:130
+#: inc/theme-options.php:129
 msgid "Enter your Facebook URL"
 msgstr ""
 
-#: inc/theme-options.php:133
+#: inc/theme-options.php:132
 msgid "Leave blank to hide Facebook Icon"
 msgstr ""
 
-#: inc/theme-options.php:142
+#: inc/theme-options.php:141
 msgid "Enter your Twitter URL"
 msgstr ""
 
-#: inc/theme-options.php:145
+#: inc/theme-options.php:144
 msgid "Leave blank to hide Twitter Icon"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:153
 msgid "Enter your Google + URL"
 msgstr ""
 
-#: inc/theme-options.php:157
+#: inc/theme-options.php:156
 msgid "Leave blank to hide Google + Icon"
 msgstr ""
 
-#: inc/theme-options.php:166
+#: inc/theme-options.php:165
 msgid "Enter your Linkedin URL"
 msgstr ""
 
-#: inc/theme-options.php:169
+#: inc/theme-options.php:168
 msgid "Leave blank to hide Linkedin Icon"
 msgstr ""
 
-#: inc/theme-options.php:178
+#: inc/theme-options.php:177
 msgid "Enter your Instagram URL"
 msgstr ""
 
-#: inc/theme-options.php:181
+#: inc/theme-options.php:180
 msgid "Leave blank to hide Instagram Icon"
 msgstr ""
 
-#: inc/theme-options.php:190
+#: inc/theme-options.php:189
 msgid "Enter your YouTube URL"
 msgstr ""
 
-#: inc/theme-options.php:193
+#: inc/theme-options.php:192
 msgid "Leave blank to hide YouTube Icon"
 msgstr ""
 
-#: inc/theme-options.php:202
+#: inc/theme-options.php:201
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-#: inc/theme-options.php:205
+#: inc/theme-options.php:204
 msgid "Leave blank to hide Pinterest Icon"
 msgstr ""
 
-#: inc/theme-options.php:214
+#: inc/theme-options.php:213
 msgid "Enter your Tumblr URL"
 msgstr ""
 
-#: inc/theme-options.php:217
+#: inc/theme-options.php:216
 msgid "Leave blank to hide Tumblr Icon"
 msgstr ""
 
-#: inc/theme-options.php:226
-msgid "Hide Social Buttons in posts?"
-msgstr ""
-
-#: inc/theme-options.php:229
-msgid "Hide the Social Buttons at the bottom of each posts?"
-msgstr ""
-
-#: inc/theme-options.php:236
+#: inc/theme-options.php:223
 msgid "Save Options"
 msgstr ""
 

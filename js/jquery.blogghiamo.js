@@ -11,9 +11,6 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
 		/*-----------------------------------------------------------------------------------*/ 
-			if ( $( '.widget .tagcloud' ).length ) {
-				$('.widget .tagcloud').addClass('smallPart');
-			}
 			if ( $( '.comment-metadata' ).length ) {
 				$('.comment-metadata').addClass('smallPart');
 			}

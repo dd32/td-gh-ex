@@ -56,3 +56,8 @@ Version 1.2
 * Updated main menu effect
 * Fixed rich snippets
 * Minor bug fixes
+
+Version 1.2.1
+* Updated Theme Options
+* Update Languages
+* Minor bug fixes

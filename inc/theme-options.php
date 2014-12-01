@@ -6,7 +6,6 @@
 $blogghiamo_theme_options = array( 
 	'hiderss' => '0',
 	'hidesearch' => '0',
-	'hidesocial' => '0',
 	'facebookurl' => '#', 
 	'twitterurl' => '#', 
 	'googleplusurl' => '#', 
@@ -60,28 +59,28 @@ function blogghiamo_options_do_page() {
 		<?php echo "<h2>" . wp_get_theme() . __( ' Free Theme Options', 'blogghiamo' ) . "</h2>"; ?>
 			
 		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
-			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Upgrade to PRO!</h3>
-			<p>Get <b>Blogghiamo PRO</b> WordPress Theme for only <b>24,90&euro;</b> <i>(One Time Fee)</i></p>
+			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'blogghiamo' ); ?></h3>
+			<p><?php _e( 'Get', 'blogghiamo' ); ?> <b><?php _e( 'Blogghiamo PRO', 'blogghiamo' ); ?></b> <?php _e( 'WordPress Theme for only', 'blogghiamo' ); ?> <b>24,90&euro;</b> <i><?php _e( '(One Time Fee)', 'blogghiamo' ); ?></i></p>
 			<div class="blogghiamoLeft" style="float:left; width: 30%; text-align: center;">
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/blogghiamo-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> Demo (Blogghiamo PRO)</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/blogghiamo-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Blogghiamo PRO)', 'blogghiamo' ); ?></a>
 				<br />
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/blogghiamo/" target="_blank"><div class="dashicons dashicons-heart"></div> Get The Pro Version</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/blogghiamo/" target="_blank"><div class="dashicons dashicons-heart"></div> <?php _e( 'Get The Pro Version', 'blogghiamo' ); ?></a>
 			</div>
 			<div class="blogghiamoRight" style="float:right; width: 70%;">
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Advanced Theme Options</b> (Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font switcher and much more...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Logo and Favicon Upload</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Unlimited Colors and Skin</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Beautiful Slider</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Breaking News</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post views counter</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Breadcrumb</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post format</b> (Standard, Gallery, Audio, Link, Video, Quote)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>7 Shortcodes</b> (Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>11 Exclusive Widgets</b> (Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Related Posts Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Information About Author Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>And much more...</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'blogghiamo' ); ?></b> <?php _e( '(Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font switcher and much more...)', 'blogghiamo' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo and Favicon Upload', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Beautiful Slider', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breaking News', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'blogghiamo' ); ?></b> <?php _e( '(Standard, Gallery, Audio, Link, Video, Quote)', 'blogghiamo' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'blogghiamo' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'blogghiamo' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '11 Exclusive Widgets', 'blogghiamo' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)', 'blogghiamo' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'blogghiamo' ); ?></b></li>
 			<ul>
 			</div>
 		</div>	
@@ -218,18 +217,6 @@ function blogghiamo_options_do_page() {
 					</td>
 				</tr>
 				
-				<?php
-				/**
-				 * Social Buttons
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Hide Social Buttons in posts?', 'blogghiamo' ); ?></th>
-					<td>
-						<input id="blogghiamo_theme_options[hidesocial]" name="blogghiamo_theme_options[hidesocial]" type="checkbox" value="1" <?php checked( '1', $se_options['hidesocial'] ); ?> />
-						<label class="description" for="blogghiamo_theme_options[hidesocial]"><?php _e( 'Hide the Social Buttons at the bottom of each posts?', 'blogghiamo' ); ?></label>
-					</td>
-				</tr>
-				
 			</table>
 
 			<p class="submit">
@@ -257,10 +244,6 @@ function blogghiamo_options_validate( $input ) {
 	if ( ! isset( $input['hidesearch'] ) )
 		$input['hidesearch'] = null;
 		$input['hidesearch'] = ( $input['hidesearch'] == 1 ? 1 : 0 );
-		
-	if ( ! isset( $input['hidesocial'] ) )
-		$input['hidesocial'] = null;
-		$input['hidesocial'] = ( $input['hidesocial'] == 1 ? 1 : 0 );
 
 	// Encode URLs
 	if( isset( $se_options[ 'twitterurl' ] ) )
