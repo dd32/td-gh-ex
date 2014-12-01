@@ -74,7 +74,18 @@
 			/*-----------------------------------------------------------------------------------*/
 			/*  Scroll To Top
 			/*-----------------------------------------------------------------------------------*/ 
-				$("#toTop").scrollToTop();
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 700) {
+						$('#toTop').fadeIn();
+					} 
+					else {
+						$('#toTop').fadeOut();
+					}
+				}); 
+				$('#toTop').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 1000);
+					return false;
+				});
 		
 		}
 		

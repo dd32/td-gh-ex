@@ -6,7 +6,6 @@
 $zenzero_theme_options = array( 
 	'hiderss' => '0',
 	'hidesearch' => '0',
-	'hidesocial' => '0',
 	'facebookurl' => '#', 
 	'twitterurl' => '#', 
 	'googleplusurl' => '#', 
@@ -60,12 +59,12 @@ function zenzero_options_do_page() {
 		<?php echo "<h2>" . wp_get_theme() . __( ' Free Theme Options', 'zenzero' ) . "</h2>"; ?>
 			
 		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
-			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Upgrade to PRO!</h3>
-			<p>Get <b>Zenzero PRO</b> WordPress Theme for only <b>19,90&euro;</b> <i>(One Time Fee)</i></p>
+			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'zenzero' ); ?></h3>
+			<p><?php _e( 'Get', 'zenzero' ); ?> <b><?php _e( 'Zenzero PRO', 'zenzero' ); ?></b> <?php _e( 'WordPress Theme for only', 'zenzero' ); ?> <b>19,90&euro;</b> <i><?php _e( '(One Time Fee)', 'zenzero' ); ?></i></p>
 			<div class="zenzeroLeft" style="float:left; width: 30%; text-align: center;">
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/zenzero-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> Demo (Zenzero PRO)</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/zenzero-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Zenzero PRO)', 'zenzero' ); ?></a>
 				<br />
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/zenzero/" target="_blank"><div class="dashicons dashicons-heart"></div> Get The Pro Version</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/zenzero/" target="_blank"><div class="dashicons dashicons-heart"></div> <?php _e( 'Get The Pro Version', 'zenzero' ); ?></a>
 			</div>
 			<div class="zenzeroRight" style="float:right; width: 70%;">
 			<ul>
