@@ -14,29 +14,6 @@ if ( is_admin() ) {
 	add_action( "admin_print_scripts-$of_page", 'optionsframework_mlu_js', 0 );	
 }
 
-/**
- * Sets up a custom post type to attach image to.  This allows us to have
- * individual galleries for different uploaders.
- */
-
-if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
-	function optionsframework_mlu_init () {
-		register_post_type( 'optionsframework', array(
-			'labels' => array(
-				'name' => __( 'Options Framework Internal Container' , 'target'),
-			),
-			'public' => true,
-			'show_ui' => false,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'rewrite' => false,
-			'supports' => array( 'title', 'editor' ), 
-			'query_var' => false,
-			'can_export' => true,
-			'show_in_nav_menus' => false
-		) );
-	}
-}
 
 /**
  * Adds the Thickbox CSS file and specific loading and button images to the header

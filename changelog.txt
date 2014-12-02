@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+03-12-2014 - version 1.7.27
+*register_post_type function removed from options-medialibrary-uploader.php file...
+
 19-10-2014 - version 1.7.26
 *sidebar-footer.php file updated with translation..
 
