@@ -4,19 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-20 21:36+0545\n"
-"PO-Revision-Date: 2014-09-20 21:36+0545\n"
+"POT-Creation-Date: 2014-12-02 20:24+0545\n"
+"PO-Revision-Date: 2014-12-02 20:24+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -58,6 +58,7 @@ msgid "Monthly Archives: %s"
 msgstr ""
 
 #: ../archive.php:24
+msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
@@ -66,7 +67,8 @@ msgstr ""
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: ../archive.php:26 ../inc/panel/theme-options.php:1410
+#: ../archive.php:26
+msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
@@ -109,7 +111,9 @@ msgstr ""
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
@@ -184,6 +188,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:70 ../content-gallery.php:80 ../content-image.php:55
 #: ../content-image.php:64 ../content-quote.php:53 ../content-quote.php:63
@@ -213,7 +218,9 @@ msgstr ""
 #: ../content-gallery.php:49
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
-msgstr ""
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../content-gallery.php:74 ../content-image.php:59 ../content-quote.php:57
 #: ../content.php:88
@@ -351,6 +358,7 @@ msgstr ""
 msgid "Post author"
 msgstr ""
 
+#. translators: 1: date, 2: time
 #: ../inc/catchflames-functions.php:425
 #, php-format
 msgid "%1$s at %2$s"
@@ -1156,6 +1164,10 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:1016
 msgid "Enable SpecificFeeds?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:1410
+msgid "Y"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:1431

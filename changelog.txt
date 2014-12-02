@@ -1,4 +1,6 @@
 == Changelog ==
+Version 2.0
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo files
 
 Version 1.1
 * Fixed edit action issue in page slider options
