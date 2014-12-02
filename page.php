@@ -7,10 +7,20 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package _s
+ * @package Greenr
  */
 
 get_header(); ?>
+
+	<div class="sixteen columns">
+		<div class="breadcrumb">
+			<?php if ( $greenr['breadcrumb'] && function_exists( 'greenr_breadcrumbs' ) ) : ?>
+				<div id="breadcrumb" role="navigation">
+					<?php greenr_breadcrumbs(); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
 
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">

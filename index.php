@@ -8,14 +8,20 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package Greenr
  */
-
+global $greenr
 get_header(); ?>
 
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
 
+		<?php if ( $greenr['breadcrumb'] && function_exists( 'boxy_breadcrumbs' ) ) : ?>			
+			<div id="breadcrumb" role="navigation">
+				<?php boxy_breadcrumbs(); ?>
+			</div>
+		<?php endif; ?>
+				
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -31,7 +37,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _s_paging_nav(); ?>
+			<?php greenr_paging_nav(); ?>
 
 		<?php else : ?>
 

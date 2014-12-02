@@ -2,10 +2,20 @@
 /**
  * The template for displaying all single posts.
  *
- * @package _s
+ * @package Greenr
  */
 
 get_header(); ?>
+
+	<div class="sixteen columns">
+		<div class="breadcrumb">
+			<?php if ( $greenr['breadcrumb'] && function_exists( 'greenr_breadcrumbs' ) ) : ?>
+				<div id="breadcrumb" role="navigation">
+					<?php greenr_breadcrumbs(); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
 
 	<div id="primary" class="content-area eleven columns">
 		<main id="main" class="site-main" role="main">
@@ -14,7 +24,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php _s_post_nav(); ?>
+			<?php greenr_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

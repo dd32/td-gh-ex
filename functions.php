@@ -1,18 +1,18 @@
 <?php
 /**
- * _s functions and definitions
+ * Greenr functions and definitions
  *
- * @package _s
+ * @package Greenr
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 870; /* pixels */
 }
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( 'greenr_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,16 +20,11 @@ if ( ! function_exists( '_s_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function _s_setup() {
+function greenr_setup() {
 
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
-
+	// Makes theme translation ready
+	load_theme_textdomain( 'flaton', GREENR_LANGUAGES_DIR );
+	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -38,11 +33,12 @@ function _s_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 250, 250, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
+		'primary' => __( 'Primary Menu', 'greenr' ),
 	) );
 
 	/*
@@ -62,47 +58,20 @@ function _s_setup() {
 	) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'greenr_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // _s_setup
-add_action( 'after_setup_theme', '_s_setup' );
+endif; // greenr_setup
+add_action( 'after_setup_theme', 'greenr_setup' );
 
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * Defining constants to use through out theme code
  */
-require_once get_template_directory() . '/inc/sidebars.php';
-
-/*
- * Enqueue Scripts and Styles
- */
-require_once get_template_directory() . '/inc/enqueue.php';
+require_once get_template_directory() . '/includes/constants.php';
 
 /**
- * Implement the Custom Header feature.
+ * Include all includes. Genius
  */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+require_once GREENR_INCLUDES_DIR. '/all.php';
