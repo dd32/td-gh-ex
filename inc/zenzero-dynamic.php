@@ -93,11 +93,16 @@ function zenzero_custom_css_styles() {
 	input,
 	select,
 	textarea {
-		color: <?php echo $text_color_first; ?>;
+		color: <?php echo esc_attr($text_color_first); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($box_color_second) && $box_color_second != '#ffffff' ) : ?>
+	<?php list($r, $g, $b) = sscanf($box_color_second, '#%02x%02x%02x'); ?>
+	#search-full {
+		background: rgba(<?php echo esc_attr($r).', '.esc_attr($g).', '.esc_attr($b); ?>, 0.9);
+	}
+	
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -121,22 +126,22 @@ function zenzero_custom_css_styles() {
 	.page-links span a,
 	.entry-footer a,
 	.widget-title	{
-		color: <?php echo $box_color_second; ?>;
+		color: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.site-branding a, 
 	.site-branding a:hover,
 	.menu-toggle, 
 	.menu-toggle:hover {
-		color: <?php echo $box_color_second; ?> !important;
+		color: <?php echo esc_attr($box_color_second); ?> !important;
 	}
 	.paging-navigation .nav-links a:hover,
 	.comment-navigation a:hover,
 	#page	{
-		background: <?php echo $box_color_second; ?>;
+		background: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.main-navigation ul:not(.sub-menu) > li > a:hover::before,
 	.main-navigation ul:not(.sub-menu) > li > a:focus::before {
-		text-shadow: 8px 0 <?php echo $box_color_second; ?>, -8px 0px <?php echo $box_color_second; ?>;
+		text-shadow: 8px 0 <?php echo esc_attr($box_color_second); ?>, -8px 0px <?php echo esc_attr($box_color_second); ?>;
 	}
 	<?php endif; ?>
 	
@@ -156,7 +161,7 @@ function zenzero_custom_css_styles() {
 	#toTop,
 	.page-links span a,
 	.entry-footer a	{
-		background: <?php echo $special_color_third; ?>;
+		background: <?php echo esc_attr($special_color_third); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -179,10 +184,10 @@ function zenzero_custom_css_styles() {
 	.entry-meta,
 	.entry-footer a:hover,
 	.sticky:after {
-		color: <?php echo $special_color_third; ?>;
+		color: <?php echo esc_attr($special_color_third); ?>;
 	}
 	.tagcloud a {	
-		color: <?php echo $special_color_third; ?> !important;
+		color: <?php echo esc_attr($special_color_third); ?> !important;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -196,7 +201,7 @@ function zenzero_custom_css_styles() {
 	.paging-navigation .nav-links a:hover, 
 	.comment-navigation a:hover,
 	.entry-footer a:hover {
-		border: 1px solid <?php echo $special_color_third; ?>;
+		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	<?php endif; ?>
 	
@@ -211,17 +216,17 @@ function zenzero_custom_css_styles() {
 	.showSide, 
 	.showSearch,
 	#toTop {
-		color: <?php echo $special_box_color_fourth; ?>;
+		color: <?php echo esc_attr($special_box_color_fourth); ?>;
 	}
 	.tagcloud a:hover {
-		color: <?php echo $special_box_color_fourth; ?> !important;
+		color: <?php echo esc_attr($special_box_color_fourth); ?> !important;
 	}
 	.tagcloud a {
-		background: <?php echo $special_box_color_fourth; ?>;
+		background: <?php echo esc_attr($special_box_color_fourth); ?>;
 	}
 	#wp-calendar tbody td#today,
 	.tagcloud a:hover {
-		border: 1px solid <?php echo $special_box_color_fourth; ?>;
+		border: 1px solid <?php echo esc_attr($special_box_color_fourth); ?>;
 	}
 	<?php endif; ?>
 	

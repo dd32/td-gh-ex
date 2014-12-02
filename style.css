@@ -1,10 +1,9 @@
 /*
 Theme Name: Zenzero
-Theme URI: http://crestaproject.com/downloads/zenzero/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/zenzero/
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zenzero
@@ -563,7 +562,7 @@ a:active {
 	transition: color 0.3s;
 }
 
-.main-navigation ul:not(.sub-menu) > li > a::before {
+.main-navigation ul:not(.sub-menu):not(.children) > li > a::before {
 	position: absolute;
 	top: 45%;
 	left: 50%;
@@ -580,13 +579,20 @@ a:active {
 	pointer-events: none;
 }
 
-.main-navigation ul:not(.sub-menu) > li > a:hover::before,
-.main-navigation ul:not(.sub-menu) > li > a:focus::before {
+.main-navigation ul:not(.sub-menu):not(.children) > li > a:hover::before,
+.main-navigation ul:not(.sub-menu):not(.children) > li > a:focus::before {
 	color: #ffffff;
 	text-shadow: 8px 0 #ffffff, -8px 0 #ffffff;
 }
 
-.main-navigation ul li:hover > a, .main-navigation li.current-menu-item > a, .main-navigation li.current-menu-parent > a, .main-navigation li.current-page-ancestor > a, .main-navigation .current_page_item > a, .main-navigation ul > li:hover .indicator, .main-navigation li.current-menu-parent .indicator, .main-navigation li.current-menu-item .indicator {
+.main-navigation ul li:hover > a,
+.main-navigation li.current-menu-item > a,
+.main-navigation li.current-menu-parent > a,
+.main-navigation li.current-page-ancestor > a,
+.main-navigation .current_page_item > a,
+.main-navigation ul > li:hover .indicator,
+.main-navigation li.current-menu-parent .indicator,
+.main-navigation li.current-menu-item .indicator {
 	color: #ffffff;
 }
 
@@ -1173,7 +1179,6 @@ body.menu-opened .sidebarButton:before {
 }
 #search-full {
 	background: rgba(255,255,255,0.9);
-	color: #fff;
 	position: fixed;
 	width: 100%;
 	height: 100%;

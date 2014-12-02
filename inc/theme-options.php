@@ -6,14 +6,14 @@
 $zenzero_theme_options = array( 
 	'hiderss' => '0',
 	'hidesearch' => '0',
-	'facebookurl' => '#', 
-	'twitterurl' => '#', 
-	'googleplusurl' => '#', 
-	'linkedinurl' => '#', 
-	'instagramurl' => '#', 
-	'youtubeurl' => '#', 
-	'pinteresturl' => '#', 
-	'tumblrurl' => '#'
+	'facebookurl' => '', 
+	'twitterurl' => '', 
+	'googleplusurl' => '', 
+	'linkedinurl' => '', 
+	'instagramurl' => '', 
+	'youtubeurl' => '', 
+	'pinteresturl' => '', 
+	'tumblrurl' => ''
 );
 
 function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
@@ -89,7 +89,7 @@ function zenzero_options_do_page() {
 		<?php endif; ?>
 
 		<form method="post" action="options.php">
-		<?php $se_options = get_option( 'zenzero_theme_options', $zenzero_theme_options ); ?>
+		<?php $zenzero_options = get_option( 'zenzero_theme_options', $zenzero_theme_options ); ?>
 		
 		<?php settings_fields( 'zenzero_options_add_page' ); ?>
 			
@@ -102,7 +102,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Hide RSS Icon?', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[hiderss]" name="zenzero_theme_options[hiderss]" type="checkbox" value="1" <?php checked( '1', $se_options['hiderss'] ); ?> />
+						<input id="zenzero_theme_options[hiderss]" name="zenzero_theme_options[hiderss]" type="checkbox" value="1" <?php checked( '1', $zenzero_options['hiderss'] ); ?> />
 						<label class="description" for="zenzero_theme_options[hiderss]"><?php _e( 'Hide the RSS feed icon?', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -114,7 +114,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Hide Search Button?', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[hidesearch]" name="zenzero_theme_options[hidesearch]" type="checkbox" value="1" <?php checked( '1', $se_options['hidesearch'] ); ?> />
+						<input id="zenzero_theme_options[hidesearch]" name="zenzero_theme_options[hidesearch]" type="checkbox" value="1" <?php checked( '1', $zenzero_options['hidesearch'] ); ?> />
 						<label class="description" for="zenzero_theme_options[hidesearch]"><?php _e( 'Hide the Search button?', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -126,7 +126,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Facebook URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[facebookurl]" class="regular-text" type="text" name="zenzero_theme_options[facebookurl]" value="<?php if( isset( $se_options[ 'facebookurl' ] ) ) echo esc_url( $se_options[ 'facebookurl' ] ); ?>" />
+						<input id="zenzero_theme_options[facebookurl]" class="regular-text" type="text" name="zenzero_theme_options[facebookurl]" value="<?php if( isset( $zenzero_options[ 'facebookurl' ] ) ) echo esc_url( $zenzero_options[ 'facebookurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[facebookurl]"><?php _e( 'Leave blank to hide Facebook Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -138,7 +138,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Twitter URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[twitterurl]" class="regular-text" type="text" name="zenzero_theme_options[twitterurl]" value="<?php if( isset( $se_options[ 'twitterurl' ] ) ) echo esc_url( $se_options[ 'twitterurl' ] ); ?>" />
+						<input id="zenzero_theme_options[twitterurl]" class="regular-text" type="text" name="zenzero_theme_options[twitterurl]" value="<?php if( isset( $zenzero_options[ 'twitterurl' ] ) ) echo esc_url( $zenzero_options[ 'twitterurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[twitterurl]"><?php _e( 'Leave blank to hide Twitter Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -150,7 +150,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Google + URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[googleplusurl]" class="regular-text" type="text" name="zenzero_theme_options[googleplusurl]" value="<?php if( isset( $se_options[ 'googleplusurl' ] ) ) echo esc_url( $se_options[ 'googleplusurl' ] ); ?>" />
+						<input id="zenzero_theme_options[googleplusurl]" class="regular-text" type="text" name="zenzero_theme_options[googleplusurl]" value="<?php if( isset( $zenzero_options[ 'googleplusurl' ] ) ) echo esc_url( $zenzero_options[ 'googleplusurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[googleplusurl]"><?php _e( 'Leave blank to hide Google + Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -162,7 +162,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Linkedin URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[linkedinurl]" class="regular-text" type="text" name="zenzero_theme_options[linkedinurl]" value="<?php if( isset( $se_options[ 'linkedinurl' ] ) ) echo esc_url( $se_options[ 'linkedinurl' ] ); ?>" />
+						<input id="zenzero_theme_options[linkedinurl]" class="regular-text" type="text" name="zenzero_theme_options[linkedinurl]" value="<?php if( isset( $zenzero_options[ 'linkedinurl' ] ) ) echo esc_url( $zenzero_options[ 'linkedinurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[linkedinurl]"><?php _e( 'Leave blank to hide Linkedin Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -174,7 +174,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Instagram URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[instagramurl]" class="regular-text" type="text" name="zenzero_theme_options[instagramurl]" value="<?php if( isset( $se_options[ 'instagramurl' ] ) ) echo esc_url( $se_options[ 'instagramurl' ] ); ?>" />
+						<input id="zenzero_theme_options[instagramurl]" class="regular-text" type="text" name="zenzero_theme_options[instagramurl]" value="<?php if( isset( $zenzero_options[ 'instagramurl' ] ) ) echo esc_url( $zenzero_options[ 'instagramurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[instagramurl]"><?php _e( 'Leave blank to hide Instagram Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -186,7 +186,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your YouTube URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[youtubeurl]" class="regular-text" type="text" name="zenzero_theme_options[youtubeurl]" value="<?php if( isset( $se_options[ 'youtubeurl' ] ) ) echo esc_url( $se_options[ 'youtubeurl' ] ); ?>" />
+						<input id="zenzero_theme_options[youtubeurl]" class="regular-text" type="text" name="zenzero_theme_options[youtubeurl]" value="<?php if( isset( $zenzero_options[ 'youtubeurl' ] ) ) echo esc_url( $zenzero_options[ 'youtubeurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -198,7 +198,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Pinterest URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[pinteresturl]" class="regular-text" type="text" name="zenzero_theme_options[pinteresturl]" value="<?php if( isset( $se_options[ 'pinteresturl' ] ) ) echo esc_url( $se_options[ 'pinteresturl' ] ); ?>" />
+						<input id="zenzero_theme_options[pinteresturl]" class="regular-text" type="text" name="zenzero_theme_options[pinteresturl]" value="<?php if( isset( $zenzero_options[ 'pinteresturl' ] ) ) echo esc_url( $zenzero_options[ 'pinteresturl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[pinteresturl]"><?php _e( 'Leave blank to hide Pinterest Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -210,7 +210,7 @@ function zenzero_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Tumblr URL', 'zenzero' ); ?></th>
 					<td>
-						<input id="zenzero_theme_options[tumblrurl]" class="regular-text" type="text" name="zenzero_theme_options[tumblrurl]" value="<?php if( isset( $se_options[ 'tumblrurl' ] ) ) echo esc_url( $se_options[ 'tumblrurl' ] ); ?>" />
+						<input id="zenzero_theme_options[tumblrurl]" class="regular-text" type="text" name="zenzero_theme_options[tumblrurl]" value="<?php if( isset( $zenzero_options[ 'tumblrurl' ] ) ) echo esc_url( $zenzero_options[ 'tumblrurl' ] ); ?>" />
 						<label class="description" for="zenzero_theme_options[tumblrurl]"><?php _e( 'Leave blank to hide Tumblr Icon', 'zenzero' ); ?></label>
 					</td>
 				</tr>
@@ -232,7 +232,7 @@ function zenzero_options_do_page() {
 function zenzero_options_validate( $input ) {
 	global $zenzero_theme_options;
 	
-	$se_options = get_option( 'zenzero_theme_options', $zenzero_theme_options );
+	$zenzero_options = get_option( 'zenzero_theme_options', $zenzero_theme_options );
 
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['hiderss'] ) )
@@ -244,21 +244,21 @@ function zenzero_options_validate( $input ) {
 		$input['hidesearch'] = ( $input['hidesearch'] == 1 ? 1 : 0 );
 
 	// Encode URLs
-	if( isset( $se_options[ 'twitterurl' ] ) )
+	if( isset( $zenzero_options[ 'twitterurl' ] ) )
 		$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
-	if( isset( $se_options[ 'facebookurl' ] ) )
+	if( isset( $zenzero_options[ 'facebookurl' ] ) )
 		$input['facebookurl'] = esc_url_raw( $input['facebookurl'] );
-	if( isset( $se_options[ 'googleplusurl' ] ) )
+	if( isset( $zenzero_options[ 'googleplusurl' ] ) )
 		$input['googleplusurl'] = esc_url_raw( $input['googleplusurl'] );
-	if( isset( $se_options[ 'linkedinurl' ] ) )
+	if( isset( $zenzero_options[ 'linkedinurl' ] ) )
 		$input['linkedinurl'] = esc_url_raw( $input['linkedinurl'] );
-	if( isset( $se_options[ 'instagramurl' ] ) )
+	if( isset( $zenzero_options[ 'instagramurl' ] ) )
 		$input['instagramurl'] = esc_url_raw( $input['instagramurl'] );
-	if( isset( $se_options[ 'youtubeurl' ] ) )
+	if( isset( $zenzero_options[ 'youtubeurl' ] ) )
 		$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
-	if( isset( $se_options[ 'pinteresturl' ] ) )
+	if( isset( $zenzero_options[ 'pinteresturl' ] ) )
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
-	if( isset( $se_options[ 'tumblrurl' ] ) )
+	if( isset( $zenzero_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
 
 	return $input;
