@@ -15,14 +15,14 @@
 if ( ! function_exists( 'storefront_cart_link' ) ) {
 	function storefront_cart_link() {
 		if ( is_cart() ) {
-			$class = "current-menu-item";
+			$class = 'current-menu-item';
 		} else {
-			$class = "";
+			$class = '';
 		}
 		?>
-		<li class="<?php echo $class; ?>">
+		<li class="<?php echo esc_attr( $class ); ?>">
 			<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'storefront' ); ?>">
-				<?php echo WC()->cart->get_cart_total(); ?> <span class="count"><?php echo sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() );?></span>
+				<?php echo wp_kses_data( WC()->cart->get_cart_total() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</a>
 		</li>
 		<?php
@@ -69,6 +69,6 @@ function storefront_header_cart() {
  */
 if ( ! function_exists( 'storefront_upsell_display' ) ) {
 	function storefront_upsell_display() {
-	    woocommerce_upsell_display( -1, 3 );
+		woocommerce_upsell_display( -1, 3 );
 	}
 }

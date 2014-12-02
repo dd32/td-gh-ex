@@ -265,9 +265,10 @@ ul.products {
 		li {
 			border-bottom: 1px solid $color_border;
 			margin-bottom: 3.631em;
+			list-style: none;
 
 			time {
-				color: lighten( $color_body, 20% );
+				opacity: 0.8;
 			}
 
 			.avatar {
@@ -282,6 +283,14 @@ ul.products {
 
 			.description {
 				padding-bottom: 1.618em;
+			}
+
+			ul.children {
+				margin-left: 0;
+				border-top: 1px solid $color_border;
+				@include gs-span(c, 5, 9, (4, 9)); // This specifies the columns
+				float: none;
+				padding-top: 1.618em;
 			}
 		}
 	}
@@ -354,7 +363,6 @@ ul.products {
 	margin-bottom: 4.236em;
 	font-size: .857em;
 	padding: 1em 0;
-	color: lighten( $color_body, 20% );
 	margin-top: -2.618em;
 	border-bottom: 1px solid rgba(0,0,0,0.05);
 
@@ -875,6 +883,11 @@ ul.digital-downloads {
 	margin-right: 0 !important;
 }
 
+.form-row-wide {
+	clear: both;
+	width: 100%;
+}
+
 .required {
 	border: 0;
 	color: red;
@@ -936,11 +949,10 @@ ul.digital-downloads {
 
 p.stars {
 	position: relative;
-	height: 1em;
-	font-size: 1em;
+	font-size: 1.618em;
 
 	a {
-		display: inline-block;
+		display: block;
 		font-weight: 700;
 		margin-right: 1em;
 		text-indent: -9999px;
@@ -960,8 +972,6 @@ p.stars {
 		&.star-3,
 		&.star-4,
 		&.star-5 {
-			border-right:1px solid $color_border;
-
 			&:after {
 				font-family: "FontAwesome";
 				text-indent: 0;
@@ -1217,6 +1227,20 @@ dl.variation {
 }
 
 @media screen and (min-width: 768px) {
+	p.stars {
+		font-size: 1em;
+
+		a {
+			display: inline-block;
+
+			&.star-1,
+			&.star-2,
+			&.star-3,
+			&.star-4 {
+				border-right:1px solid $color_border;
+			}
+		}
+	}
 	/**
 	 * Header Elements
 	 */
@@ -1272,6 +1296,16 @@ dl.variation {
 
 			h2.widgettitle {
 				display: none;
+			}
+
+			.product_list_widget li a.remove {
+				position: relative;
+				float: left;
+				top: auto;
+
+				&:before {
+					text-align: left;
+				}
 			}
 		}
 

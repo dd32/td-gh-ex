@@ -8,6 +8,15 @@
  */
 
 /**
+ * Check whether the Storefront Customizer settings ar enabled
+ * @return boolean
+ * @since  1.1.2
+ */
+function is_storefront_customizer_enabled() {
+	return apply_filters( 'storefront_customizer_enabled', true );
+}
+
+/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
  * @param array $args Configuration arguments.
@@ -58,7 +67,7 @@ function storefront_setup_author() {
  */
 if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	function is_woocommerce_activated() {
-		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }
 
@@ -67,25 +76,25 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
  * @return string schema itemprop type
  */
 function storefront_html_tag_schema() {
-    $schema = 'http://schema.org/';
-    $type 	= 'WebPage';
+	$schema 	= 'http://schema.org/';
+	$type 		= 'WebPage';
 
-    // Is single post
-    if ( is_singular( 'post' ) ) {
-        $type = "Article";
-    }
+	// Is single post
+	if ( is_singular( 'post' ) ) {
+		$type 	= 'Article';
+	}
 
-    // Is author page
-    elseif ( is_author() ) {
-        $type = 'ProfilePage';
-    }
+	// Is author page
+	elseif ( is_author() ) {
+		$type 	= 'ProfilePage';
+	}
 
-    // Is search results page
-    elseif ( is_search() ) {
-        $type = 'SearchResultsPage';
-    }
+	// Is search results page
+	elseif ( is_search() ) {
+		$type 	= 'SearchResultsPage';
+	}
 
-    echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
+	echo 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"';
 }
 
 /**

@@ -1,5 +1,18 @@
 # Storefront Changelog
 
+### *2014.12.02* - 1.2.0
+* **New** - Integration with Product Reviews Pro extension.
+* **New** - Integration with Smart Coupons extension.
+* **Fix** - Layout picker images when using a child theme.
+* **Fix** - Header link color now properly applied to site title.
+* **Fix** - Included styling for `.form-row-wide`.
+* **Dev** - Added `storefront_copyright_text` filter.
+* **Dev** - Tweaked how Storefront determines whether Customizer logic should be loaded.
+* **Dev** - Added `storefront_after_footer` action.
+* **Dev** - Customizer CSS now correctly appended to appropriate stylesheets.
+* **Tweak** - Improved star rating input display for handheld devices.
+* **Tweak** - Several minor code optimisations (thanks https://scrutinizer-ci.com).
+
 ### *2014.11.24* - 1.1.1
 * **Fix** - Title tag now displays correctly.
 * **Localisation** - Tweaked how translation files are loaded.

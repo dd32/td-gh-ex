@@ -83,7 +83,9 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
  * @since 1.0.0
  */
 function storefront_woocommerce_scripts() {
-	wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css' );
+	global $storefront_version;
+
+	wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
 }
 
 /**
@@ -92,28 +94,40 @@ function storefront_woocommerce_scripts() {
  * @since 1.0.0
  * @return  array $args related products args
  */
-function storefront_related_products_args( $args ) {
-	$args = array(
+function storefront_related_products_args( $args = array() ) {
+	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	);
+
+	$args = wp_parse_args( $args, $defaults );
+
 	return $args;
 }
 
 /**
  * Product gallery thumnail columns
- * @return integrer number of columns
+ * @return integer number of columns
  * @since  1.0.0
  */
 function storefront_thumbnail_columns() {
-	return apply_filters( 'storefront_product_thumbnail_columns', 4 );
+	return intval( apply_filters( 'storefront_product_thumbnail_columns', 4 ) );
 }
 
 /**
  * Products per page
- * @return integrer number of products
+ * @return integer number of products
  * @since  1.0.0
  */
 function storefront_products_per_page() {
-	return apply_filters( 'storefront_products_per_page', 12 );
+	return intval( apply_filters( 'storefront_products_per_page', 12 ) );
+}
+
+/**
+ * Query WooCommerce Extension Activation.
+ * @var  $extension main extension class name
+ * @return boolean
+ */
+function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
+	return class_exists( $extension ) ? true : false;
 }

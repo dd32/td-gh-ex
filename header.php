@@ -18,8 +18,9 @@
  * WordPress 4.1 + uses native `title-tag` theme feature.
  */
 if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php } ?>
+	<title><?php wp_title( '|', true, 'right' ); ?></title><?php
+}
+?>
 
 <?php wp_head(); ?>
 </head>
@@ -31,7 +32,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 	<?php
 	do_action( 'storefront_before_header' ); ?>
 
-	<header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . get_header_image() . ')";'; } ?>>
+	<header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ')";'; } ?>>
 		<div class="col-full">
 
 			<?php

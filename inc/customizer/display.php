@@ -35,16 +35,13 @@ if ( ! function_exists( 'storefront_add_customizer_css' ) ) {
 		$style 							= '
 		.main-navigation ul li a,
 		.site-title a,
-		a.cart-contents,
-		.site-header-cart .widget_shopping_cart a,
-		ul.menu li a {
+		ul.menu li a,
+		.site-branding h1 a {
 			color: ' . $header_link_color . ';
 		}
 
 		.main-navigation ul li a:hover,
-		.site-title a:hover,
-		a.cart-contents:hover,
-		.site-header-cart .widget_shopping_cart a:hover {
+		.site-title a:hover {
 			color: ' . storefront_adjust_color_brightness( $header_link_color, $darken_factor ) . ';
 		}
 
@@ -52,7 +49,6 @@ if ( ! function_exists( 'storefront_add_customizer_css' ) ) {
 		.main-navigation ul ul,
 		.secondary-navigation ul ul,
 		.main-navigation ul.menu > li.menu-item-has-children:after,
-		.site-header-cart .widget_shopping_cart,
 		.secondary-navigation ul.menu ul,
 		.main-navigation ul.menu ul,
 		.main-navigation ul.nav-menu ul {
@@ -78,34 +74,14 @@ if ( ! function_exists( 'storefront_add_customizer_css' ) ) {
 
 		body,
 		.secondary-navigation a,
-		.woocommerce-tabs ul.tabs li.active a,
-		ul.products li.product .price,
 		.widget-area .widget a,
 		.onsale,
 		#comments .comment-list .reply a {
 			color: ' . $text_color . ';
 		}
 
-		.onsale {
-			border-color: ' . $text_color . ';
-		}
-
-		a,
-		.star-rating span:before,
-		.widget-area .widget a:hover,
-		.product_list_widget a:hover,
-		.quantity .plus, .quantity .minus,
-		p.stars a:hover:after {
+		a  {
 			color: ' . $accent_color . ';
-		}
-
-		.widget_price_filter .ui-slider .ui-slider-range,
-		.widget_price_filter .ui-slider .ui-slider-handle {
-			background-color: ' . $accent_color . ';
-		}
-
-		#order_review_heading, #order_review {
-			border-color: ' . $accent_color . ';
 		}
 
 		button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget-area .widget a.button, .site-header-cart .widget_shopping_cart a.button {
@@ -150,19 +126,68 @@ if ( ! function_exists( 'storefront_add_customizer_css' ) ) {
 				border-top-color: ' . $header_background_color . '}
 			}
 
-			<?php if ( isset( $header_link_color ) ) { ?>
-
 			.secondary-navigation ul.menu a:hover {
 				color: ' . storefront_adjust_color_brightness( $header_text_color, $brighten_factor ) . ';
 			}
-
-			<?php } ?>
 
 			.main-navigation ul.menu ul {
 				background-color: ' . $header_background_color . ';
 			}
 
-			.secondary-navigation ul.menu a,
+			.secondary-navigation ul.menu a {
+				color: ' . $header_text_color . ';
+			}
+		}';
+
+		$woocommerce_style 							= '
+		a.cart-contents,
+		.site-header-cart .widget_shopping_cart a {
+			color: ' . $header_link_color . ';
+		}
+
+		a.cart-contents:hover,
+		.site-header-cart .widget_shopping_cart a:hover {
+			color: ' . storefront_adjust_color_brightness( $header_link_color, $darken_factor ) . ';
+		}
+
+		.site-header-cart .widget_shopping_cart {
+			background-color: ' . $header_background_color . ';
+		}
+
+		.woocommerce-tabs ul.tabs li.active a,
+		ul.products li.product .price,
+		.onsale {
+			color: ' . $text_color . ';
+		}
+
+		.onsale {
+			border-color: ' . $text_color . ';
+		}
+
+		.star-rating span:before,
+		.widget-area .widget a:hover,
+		.product_list_widget a:hover,
+		.quantity .plus, .quantity .minus,
+		p.stars a:hover:after,
+		p.stars a:after,
+		.star-rating span:before {
+			color: ' . $accent_color . ';
+		}
+
+		.star-rating span:before {
+			color: ' . $accent_color . ' !important;
+		}
+
+		.widget_price_filter .ui-slider .ui-slider-range,
+		.widget_price_filter .ui-slider .ui-slider-handle {
+			background-color: ' . $accent_color . ';
+		}
+
+		#order_review_heading, #order_review {
+			border-color: ' . $accent_color . ';
+		}
+
+		@media screen and ( min-width: 768px ) {
 			.site-header-cart .widget_shopping_cart,
 			.site-header .product_list_widget li .quantity {
 				color: ' . $header_text_color . ';
@@ -170,5 +195,6 @@ if ( ! function_exists( 'storefront_add_customizer_css' ) ) {
 		}';
 
 		wp_add_inline_style( 'storefront-style', $style );
+		wp_add_inline_style( 'storefront-woocommerce-style', $woocommerce_style );
 	}
 }

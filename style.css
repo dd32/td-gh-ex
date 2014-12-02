@@ -4,7 +4,7 @@ Theme URI: http://woothemes.com/storefront
 Author: WooThemes
 Author URI: http://woothemes.com
 Description: Storefront is the perfect theme for your next eCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend.
-Version: 1.1.1
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storefront
@@ -140,7 +140,9 @@ body {
   background-color: #2c2d33;
   padding-top: 2.618em;
   color: #5a6567;
-  background-position: center center; }
+  background-position: center center;
+  position: relative;
+  z-index: 99; }
   .site-header .site-logo-anchor {
     display: block; }
     .site-header .site-logo-anchor img {
@@ -157,8 +159,7 @@ body {
   letter-spacing: -1px;
   margin: 0; }
   .site-branding h1 a {
-    font-weight: 700;
-    color: #fff; }
+    font-weight: 700; }
 .site-branding .site-description {
   font-size: .857em;
   display: none; }
@@ -923,8 +924,7 @@ fieldset {
     margin-left: 1.387em; }
   .main-navigation ul li a {
     padding: .857em 1.387em;
-    display: block;
-    color: #fff; }
+    display: block; }
     .main-navigation ul li a:before {
       font-family: "FontAwesome";
       content: "\f0f6";
@@ -981,8 +981,6 @@ fieldset {
 
   ul.menu li.current-menu-item > a {
     color: #787E87; }
-  ul.menu li a {
-    color: #fff; }
 
   /**
    * Primary Navigation
@@ -1036,8 +1034,7 @@ fieldset {
       .main-navigation ul.nav-menu ul li:hover > a {
         background-color: rgba(0, 0, 0, 0.025); }
     .main-navigation a {
-      padding: 0 1em 2.244em;
-      color: #fff; }
+      padding: 0 1em 2.244em; }
 
   /**
    * Secondary Navigation
