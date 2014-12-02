@@ -4,85 +4,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-03 01:36+0545\n"
-"PO-Revision-Date: 2014-12-03 01:36+0545\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: H.P. Brinkmann\n"
-"Language: cs\n"
+"POT-Creation-Date: 2014-12-03 01:37+0545\n"
+"PO-Revision-Date: 2014-12-03 01:37+0545\n"
+"Last-Translator: Rafa Garés <ragafus@gmail.com>\n"
+"Language-Team: Rafa Garés <ragafus@gmail.com>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Chyba 404 - Stránka bohužel nebyla nalezena."
+msgstr "Error 404 - Pàgina no trobada"
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr "Vypadá to, že nemohu&rsquo; najít to, co hledáte."
+msgstr "Sembla que no podem trobar el que esteu buscant."
 
 #: ../404.php:19
 msgid "This might be because:"
-msgstr "Tohle se stalo, protože "
+msgstr "Açò es pot deure a:"
 
 #: ../404.php:20
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Vypadá to, že jste adresu nezadali správně . Je ale také možné, že byl "
-"hledaný cíl přesunut nebo smazán."
+"Heu escrit incorrectament l'adreça web o, potser, la pàgina que buscàveu ha "
+"estat moguda, actualitzada o esborrada."
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
-msgstr "Můžete zkusit toto: "
+msgstr "Per favor, en el seu lloc intenteu les opcions següents:"
 
 #: ../404.php:22
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box below."
 msgstr ""
-"Zkuste zkontrolovat, zda jste zadali URL adresu správně. TIP! Pokud si "
-"nejste jistý, použijte vyhledávač."
+"Comproveu si hi ha cap errada en l'adreça escrita, després premeu el botó "
+"d'actualitzar al vostre navegador o utilitzeu el cercador de més avall."
 
 #: ../archive.php:22
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Denní archiv: %s"
+msgstr "Arxius diaris: %s"
 
 #: ../archive.php:24
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Měsíční archiv: %s"
+msgstr "Arxius mensuals: %s"
 
 #: ../archive.php:24
+msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
 #: ../archive.php:26
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Roční archiv: %s"
+msgstr "Arxius per any: %s"
 
 #: ../archive.php:26
+msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
 #: ../archive.php:28
 msgid "Blog Archives"
-msgstr "Archiv od počátku věků, tedy od vzniku webu."
+msgstr "Arxius del blog"
 
 #: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
 #: ../page-blog.php:65 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
-msgstr "Nic jsem nenašel :-("
+msgstr "No hem trobat res"
 
 #: ../archive.php:56 ../author.php:73 ../category.php:49 ../index.php:36
 #: ../page-blog.php:69 ../tag.php:49
@@ -90,50 +91,53 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Bohužel jsem v dané kategorii nic nenašel. Zkuste vyhledávat podle štítků."
+"Ho sentim, però no hem trobat res per a l'arxiu sol·licitat. Potser la cerca "
+"us ajude a trobar un article relacionat."
 
 #: ../author.php:25
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Od autora: %s"
+msgstr "Arxiu de l'autor: %s"
 
 #: ../author.php:44 ../content-single.php:76
 #, php-format
 msgid "About %s"
-msgstr "O  %s"
+msgstr "Quant a %s"
 
 #: ../category.php:16
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Archiv kategorie: %s"
+msgstr "Arxius de la categoría: %s"
 
 #: ../comments.php:17
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Tento článek mohou kompletně zobrazit pouze vyvolení. Jestli mezi ně "
-"patříte, zadejte heslo."
+"Aquesta publicació està protegida amb contrasenya. Introduïu-la per veure "
+"els comentaris."
 
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "komentář u &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Una reflexió sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s reflexions sobre &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Navigaci v komentářích"
+msgstr "Navegació de comentaris"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Starší komentáře"
+msgstr "&larr; Comentaris més vells"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Novější komentáře &rarr;"
+msgstr "Comentaris més nous &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "U tohoto článku nemůžete přidávat komentáře."
+msgstr "Els comentaris estan tancats."
 
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
@@ -141,24 +145,26 @@ msgstr "U tohoto článku nemůžete přidávat komentáře."
 #: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:829
 #, php-format
 msgid "Permalink to %s"
-msgstr "Permalink pro %s"
+msgstr "Enllaç permanent a %s"
 
 #: ../content-aside.php:17
 msgid "Aside"
-msgstr "Stranou"
+msgstr "Apart"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
 msgid "Reply"
-msgstr "Odpověď"
+msgstr "Respondre"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
+msgctxt "comments number"
 msgid "1"
 msgstr "1"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
+msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
@@ -166,32 +172,32 @@ msgstr "%"
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
 #: ../content.php:55 ../functions.php:375
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Celý článek <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continueu llegint <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:35 ../content-featured.php:24
 #: ../content-gallery.php:55 ../content-image.php:29 ../content-link.php:35
 #: ../content-page.php:19 ../content-quote.php:37 ../content-single.php:31
 #: ../content-status.php:36 ../content.php:57 ../image.php:87
 msgid "Pages:"
-msgstr "Stránky:"
+msgstr "Pàgines:"
 
 #: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
 #: ../content.php:97
 msgid "Leave a reply"
-msgstr "Zanechte komentář"
+msgstr "Deixeu una resposta"
 
 #: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
 #: ../content.php:97
 msgid "<b>1</b> Reply"
-msgstr "<b>1</b> komentář"
+msgstr "<b>1</b> Resposta"
 
 #: ../content-aside.php:48 ../content-gallery.php:93 ../content-image.php:70
 #: ../content-link.php:48 ../content-quote.php:75 ../content-status.php:49
 #: ../content.php:97
 msgid "<b>%</b> Replies"
-msgstr "<b>%</b> komentářů"
+msgstr "<b>%</b> Respostes"
 
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
@@ -199,7 +205,7 @@ msgstr "<b>%</b> komentářů"
 #: ../content-status.php:51 ../content.php:100 ../functions.php:623
 #: ../functions.php:651 ../image.php:97
 msgid "Edit"
-msgstr "Upravit"
+msgstr "Edita"
 
 #. translators: used between list items, there is a space after the comma
 #: ../content-featured.php:35 ../content-featured.php:44
@@ -216,8 +222,8 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Publikováno: %1$s Štítky: %2$s. <a href=\"%3$s\" title=\"Permalink %4$s\" "
-"rel=\"bookmark\">Permalink</a>"
+"Aquesta entrada va ser publicada en %1$s i etiquetada %2$s. <a href =\"%3$s"
+"\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">Enllaç permanent</a>."
 
 #: ../content-featured.php:39
 #, php-format
@@ -225,33 +231,35 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Publikováno:  %1$s. <a href=\"%3$s\" title=\"Permalink %4$s\" rel=\"bookmark"
-"\">permalink</a>"
+"Aquesta entrada va ser publicada en %1$s. <a href=\"%3$s\" title=\"Enllaç "
+"permanent a %4$s\" rel=\"bookmark\">Enllaç permanent</a>."
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "Galerie"
+msgstr "Galería"
 
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
-msgstr "V této galerii najdete <a %1$s>%2$s Fotos</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] "Aquesta galeria conté <a %1$s>%2$s foto</a>."
+msgstr[1] "Aquesta galeria conté <a %1$s>%2$s fotos</a>."
 
 #: ../content-gallery.php:72 ../content-image.php:57 ../content-quote.php:54
 #: ../content.php:75
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Publikováno:</span> %2$s"
+msgstr "<span class=\"%1$s\">Publicat en</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:65 ../content-quote.php:66
 #: ../content.php:87
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Štítky:  </span> %2$s"
+msgstr "<span class=\"%1$s\">Etiquetada</span> %2$s"
 
 #: ../content-image.php:16
 msgid "Image"
-msgstr "Obrázek"
+msgstr "Imatge"
 
 #: ../content-image.php:40
 #, php-format
@@ -261,35 +269,35 @@ msgid ""
 "</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" "
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
-"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
+"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-time\" datetime=\"%2$s"
 "\" pubdate>%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> "
-"Autor:  </span> <span class=\"author vcard\"><a class=\"url fn n\" href="
-"\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+"per </span> <span class=\"author vcard\"> <a href=\"url fn n\" href=\"%4$s\" "
+"title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 #: ../content-image.php:45 ../functions.php:689
 #, php-format
 msgid "View all posts by %s"
-msgstr "Zobrazit všechny články od : %s "
+msgstr "Veure totes les entrades de %s"
 
 #: ../content-link.php:17
 msgid "Link"
-msgstr "Link"
+msgstr "Enllaç"
 
 #: ../content-quote.php:15
 msgid "Quote"
-msgstr "Citovat"
+msgstr "Cita"
 
 #: ../content-single.php:21 ../content.php:28
 msgid "No Comments &darr;"
-msgstr "Žádné komentáře &darr;"
+msgstr "Cap comentari &darr;"
 
 #: ../content-single.php:21 ../content.php:28
 msgid "1 Comment &darr;"
-msgstr "1 komentář &darr;"
+msgstr "1 comentari &darr;"
 
 #: ../content-single.php:21 ../content.php:28
 msgid "% Comments &darr;"
-msgstr "% komentářů &darr;"
+msgstr "% comentaris &darr;"
 
 #: ../content-single.php:47
 #, php-format
@@ -298,8 +306,9 @@ msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
-"Publikováno: %1$s Štítky: %2$s Autor: <a href=\"%6$s\">%5$s</a>. <a href="
-"\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+"Aquesta entrada fou publicada en %1$s i etiquetada %2$s per <a href=\"%6$s\">"
+"%5$s</a>. <a href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark"
+"\">Enllaç permanent</a>."
 
 #: ../content-single.php:49
 #, php-format
@@ -307,8 +316,9 @@ msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Publikováno: %1$s Autor:  <a href=\"%6$s\">%5$s</a>. <a href=\"%3$s\" title="
-"\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+"Aquest entrada va ser publicada en %1$s per <a href=\"%6$s\">%5$s</a>. <a "
+"href=\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">Enllaç "
+"permanent</a>."
 
 #: ../content-single.php:51
 #, php-format
@@ -316,91 +326,90 @@ msgid ""
 "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
 "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Tento článek napsal <a href=\"%6$s\">%5$s</a>. <a href=\"%3$s\" title="
-"\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
+"Aquesta entrada va ser publicada per <a href=\"%6$s\">%5$s</a>. <a href="
+"\"%3$s\" title=\"Enllaç permanent a %4$s\" rel=\"bookmark\">Enllaç "
+"permanent</a>."
 
 #: ../content-single.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-"Všechny články od tohoto autora %s <span class=\"meta-nav\">&rarr;</span> "
-"ansehen"
+msgstr "Mostra totes les entrades de %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:16
 msgid "Status"
-msgstr "Status"
+msgstr "Estat"
 
 #: ../content.php:16
 msgid "Featured"
-msgstr "Doporučené"
+msgstr "Destacat"
 
 #: ../footer.php:54
 msgid "Footer menu"
-msgstr "Menu v zápatí"
+msgstr "Menú del peu de pàgina"
 
 #: ../functions.php:109
 msgid "Primary Menu"
-msgstr "Hlavní menu"
+msgstr "Menú principal"
 
 #: ../functions.php:110
 msgid "Secondary Menu"
-msgstr "Duhé ménu"
+msgstr "Menú secundari"
 
 #: ../functions.php:111
 msgid "Footer Menu"
-msgstr "Menu v zápatí"
+msgstr "Menú del peu d epàgina"
 
 #. translators: header image description
 #: ../functions.php:179
 msgid "Garden"
-msgstr "Zahrada"
+msgstr "Jardí"
 
 #. translators: header image description
 #: ../functions.php:185
 msgid "Flower"
-msgstr "Kytice"
+msgstr "Flor"
 
 #. translators: header image description
 #: ../functions.php:191
 msgid "Mountain"
-msgstr "hory"
+msgstr "Muntanya"
 
 #: ../functions.php:343
 #, php-format
 msgid "Page %s"
-msgstr "Stránka  %s"
+msgstr "Pàgina %s"
 
 #: ../functions.php:444
 msgid "Main Sidebar"
-msgstr "Hlavní sidebar"
+msgstr "Barra lateral principal"
 
 #: ../functions.php:453
 msgid "Footer Area One"
-msgstr "Zápatí 1"
+msgstr "Àrea u del peu de pàgina"
 
 #: ../functions.php:455 ../functions.php:465 ../functions.php:475
 msgid "An optional widget area for your site footer"
-msgstr "Místo pro widget, který bude zobrazen v zápatí"
+msgstr "Una àrea opcional de ginys per al peu de pàgina"
 
 #: ../functions.php:463
 msgid "Footer Area Two"
-msgstr "Zápatí 2"
+msgstr "Àrea dos del peu de pàgina"
 
 #: ../functions.php:473
 msgid "Footer Area Three"
-msgstr "Zápatí 3"
+msgstr "Àrea tres del peu de pàgina"
 
 #: ../functions.php:507 ../functions.php:536 ../single.php:15
 msgid "Post navigation"
-msgstr "Navigace v příspěvku"
+msgstr "Navegació per les entrades"
 
 #: ../functions.php:515 ../functions.php:544
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Starší"
+msgstr "<span class=\"meta-nav\">&larr;</span> Entrades més velles"
 
 #: ../functions.php:516 ../functions.php:545
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Novější <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Entrades més noves <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:623
 msgid "Pingback:"
@@ -410,21 +419,21 @@ msgstr "Pingback:"
 #: ../functions.php:640
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
-msgstr "%1$s na %2$s <span class=\"says\">řekl:</span>"
+msgstr "%1$s el %2$s <span class=\"says\"> va escriure: </span>"
 
 #. translators: 1: date, 2: time
 #: ../functions.php:646
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s v %2$s"
+msgstr "%1$s a les %2$s"
 
 #: ../functions.php:655
 msgid "Your comment is awaiting moderation."
-msgstr "Váš komentář čeká na schválení."
+msgstr "El vostre comentari està pendent de moderació."
 
 #: ../functions.php:664
 msgid "Reply <span>&darr;</span>"
-msgstr "Odpověd <span>&darr;</span>"
+msgstr "Respondre <span>&darr;</span>"
 
 #: ../functions.php:683
 #, php-format
@@ -435,11 +444,11 @@ msgid ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
-"<span class=\"sep\">Publikováno: </span><a href=\"%1$s\" title=\"%2$s\" rel="
-"\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>"
-"%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> Autor: </"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
-"\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+"<span class=\"sep\">Publicat el</span> <a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a> <span class=\"by-author\"><span class=\"sep\"> per </span> <span "
+"class=\"author vcard\"> <a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
+"rel=\"author\">%7$s</a></span></span>"
 
 #: ../functions.php:741
 msgid "ID"
@@ -447,27 +456,27 @@ msgstr "ID"
 
 #: ../functions.php:967
 msgid "Name"
-msgstr "Jméno"
+msgstr "Nom"
 
 #: ../functions.php:969 ../inc/theme-options.php:889
 msgid "Email"
-msgstr "E-Mail"
+msgstr "Correu electronic"
 
 #: ../functions.php:1346
 msgid "Primary menu"
-msgstr "Primární menu"
+msgstr "Menú principal"
 
 #: ../functions.php:1348 ../functions.php:1381
 msgid "Skip to primary content"
-msgstr "Přeskočit k primárnímu obsahu."
+msgstr "Salta al contingut principal"
 
 #: ../functions.php:1349 ../functions.php:1382
 msgid "Skip to secondary content"
-msgstr "Přeskočit k sekundárnímu obsahu."
+msgstr "Salta al contingut secundari"
 
 #: ../functions.php:1379
 msgid "Secondary menu"
-msgstr "Sekundární menu"
+msgstr "Menú secundari"
 
 #: ../functions.php:1401
 msgid "Copyright &copy;"
@@ -475,7 +484,7 @@ msgstr "Copyright &copy;"
 
 #: ../functions.php:1405
 msgid ". All Rights Reserved."
-msgstr "Všechna práva vyhrazena."
+msgstr ". Tots els drets reservats."
 
 #: ../functions.php:1408
 msgid "http://wordpress.org/"
@@ -483,12 +492,12 @@ msgstr "http://wordpress.org/"
 
 #: ../functions.php:1408
 msgid "Powered by WordPress"
-msgstr "Powered by WordPress"
+msgstr "Funciona amb Wordpress"
 
 #: ../functions.php:1408
 #, php-format
 msgid "Powered by %s"
-msgstr "Powered by %s"
+msgstr "Funciona amb %s"
 
 #: ../functions.php:1410 ../inc/theme-options.php:631
 msgid "http://catchthemes.com/"
@@ -496,24 +505,24 @@ msgstr "http://catchthemes.com/"
 
 #: ../functions.php:1410
 msgid "Theme Catch Box by Catch Themes"
-msgstr "Theme Catch Box od  Catch Themes"
+msgstr "Tema Catch Box per Catch Themes"
 
 #: ../functions.php:1410
 #, php-format
 msgid "Theme: %s"
-msgstr "Šablona: %s"
+msgstr "Tema: %s"
 
 #: ../image.php:15
 msgid "Image navigation"
-msgstr "Navigace v galerii"
+msgstr "Navegació d'imatges"
 
 #: ../image.php:16
 msgid "&larr; Previous"
-msgstr "&larr; Předešlý"
+msgstr "&larr; Anterior"
 
 #: ../image.php:17
 msgid "Next &rarr;"
-msgstr "Další  &rarr;"
+msgstr "Següent &rarr;"
 
 #: ../image.php:27
 #, php-format
@@ -523,152 +532,152 @@ msgid ""
 "at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> "
 "in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
-"<span class=\"meta-prep meta-prep-entry-date\">Publikováno:  </span> <span "
-"class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></"
-"span> v <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
-"%5$s</a> v <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+"<span class=\"meta-prep meta-prep-entry-date\">Publicat</span> <span class="
+"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> "
+"<a href=\"%3$s\" title=\"Enllaç a la imatge a mida completa\">%4$s &times "
+"%5$s</ a> <a href=\"%6$s\" title=\"Torna a %7$s\" rel=\"gallery\">%8$s</ a>"
 
 #: ../inc/theme-options.php:84
 msgid "Favicon URL"
-msgstr "Favicon URL"
+msgstr "URL de la icona de web"
 
 #: ../inc/theme-options.php:93
 msgid "Web Clip Icon URL"
-msgstr "Web Clip Icon URL"
+msgstr "URL de la icona Web Clip"
 
 #: ../inc/theme-options.php:102
 msgid "Color Scheme"
-msgstr "Barevná varianta"
+msgstr "Combinació de colors"
 
 #: ../inc/theme-options.php:110
 msgid "Link Color"
-msgstr "Barva odkazů"
+msgstr "Color dels enllaços"
 
 #: ../inc/theme-options.php:118
 msgid "Default Layout"
-msgstr "Základní  rozložení"
+msgstr "Disposició predeterminada"
 
 #: ../inc/theme-options.php:126
 msgid "Content layout"
-msgstr "Rozložení obsahu"
+msgstr "Disposició del contingut"
 
 #: ../inc/theme-options.php:134
 msgid "Excerpt Length in Words"
-msgstr "Přesná délka podle počtu slov"
+msgstr "Nombre de paraules del resum"
 
 #: ../inc/theme-options.php:142
 msgid "Feed Redirect URL"
-msgstr "Přesměrování"
+msgstr "URL de redireccionament del canal web"
 
 #: ../inc/theme-options.php:150
 msgid "Move Site Title and Tagline?"
-msgstr "Move Site Title and Tagline?"
+msgstr "Moc el títol i les etiquetes del lloc web?"
 
 #: ../inc/theme-options.php:158
 msgid "Default Display Text in Search"
-msgstr "Default Display Text in Search"
+msgstr "Text mostrat per defecte en el cercador"
 
 #: ../inc/theme-options.php:166
 msgid "Disable Search in Header?"
-msgstr "Zrušit Vyhledávání v headeru?"
+msgstr "Desactive la cerca en la capçalera?"
 
 #: ../inc/theme-options.php:174
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
-msgstr "Zapnout Sekundární & zápatí menu in Mobile Devices?"
+msgstr "Active els menús secundari i del peu en dispositius mòbil?"
 
 #: ../inc/theme-options.php:182
 msgid "Custom CSS Styles"
-msgstr "Vlastní CSS stylování"
+msgstr "Estils CSS personalitzats"
 
 #: ../inc/theme-options.php:219 ../inc/theme-options.php:220
 #: ../inc/theme-options.php:658
 msgid "Theme Options"
-msgstr "Natavení šablony"
+msgstr "Opcions del tema"
 
 #: ../inc/theme-options.php:242
 msgid "Add/Change Favicon"
-msgstr "Přidat/změnit Favicon"
+msgstr "Afegiu o canvieu l'icona de web"
 
 #: ../inc/theme-options.php:256
 msgid "Add/Change Web Clip Icon"
-msgstr "Přidat/změnit Web Clip Icon"
+msgstr "Afegiu o canvieu l'icona Web Clip"
 
 #: ../inc/theme-options.php:270
 msgid "Light"
-msgstr "Světlé"
+msgstr "Clar"
 
 #: ../inc/theme-options.php:276
 msgid "Dark"
-msgstr "Tmavé"
+msgstr "Obscur"
 
 #: ../inc/theme-options.php:282
 msgid "Blue"
-msgstr "Modré"
+msgstr "Blau"
 
 #: ../inc/theme-options.php:288
 msgid "Green"
-msgstr "Green"
+msgstr "Verd"
 
 #: ../inc/theme-options.php:294
 msgid "Red"
-msgstr "Red"
+msgstr "Roig"
 
 #: ../inc/theme-options.php:300
 msgid "Brown"
-msgstr "Brown"
+msgstr "Marró"
 
 #: ../inc/theme-options.php:306
 msgid "Orange"
-msgstr "Orange"
+msgstr "Taronja"
 
 #: ../inc/theme-options.php:325
 msgid "Content on left"
-msgstr "Obsah na levé straně"
+msgstr "Contingut a l'esquerra"
 
 #: ../inc/theme-options.php:330
 msgid "Content on right"
-msgstr "Obsah na pravé straně"
+msgstr "Contingut a la dreta"
 
 #: ../inc/theme-options.php:335
 msgid "One-column, no sidebar"
-msgstr "Jeden seznam, žádné sidebary"
+msgstr "Una columna, sense barra lateral"
 
 #: ../inc/theme-options.php:353
 msgid "Show excerpt"
-msgstr "Zobrazit výpis"
+msgstr "Mostra un fragment"
 
 #: ../inc/theme-options.php:358
 msgid "Show full content"
-msgstr "Zobrazit celý obsah článku"
+msgstr "Mostra el contingut sencer"
 
 #: ../inc/theme-options.php:459
 msgid "Select a Color"
-msgstr "Vybrat barvu"
+msgstr "Trieu un color"
 
 #: ../inc/theme-options.php:462
 #, php-format
 msgid "Default color: %s"
-msgstr "Základní barva: %s"
+msgstr "Color predeterminat: %s"
 
 #: ../inc/theme-options.php:478
 msgid "Words"
-msgstr "Words"
+msgstr "Paraules"
 
 #: ../inc/theme-options.php:506
 msgid "Check to move above the Header/Logo Image"
-msgstr "Check to move above the Header/Logo Image"
+msgstr "Cliqueu per moure-ho damunt de la capçalera o la imatge del logotip"
 
 #: ../inc/theme-options.php:536
 msgid "Check to Disable"
-msgstr "Nezobrazovat"
+msgstr "Marqueu per desactivar"
 
 #: ../inc/theme-options.php:551
 msgid "Check to Enable"
-msgstr "umožnit"
+msgstr "Marqueu per activar"
 
 #: ../inc/theme-options.php:565
 msgid "CSS Tutorial from W3Schools."
-msgstr "CSS Tutorial od W3Schools"
+msgstr "Tutorial CSS de W3Schools."
 
 #: ../inc/theme-options.php:565
 msgid "http://www.w3schools.com/css/default.asp"
@@ -676,15 +685,15 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/theme-options.php:565
 msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
+msgstr "Tutorial CSS"
 
 #: ../inc/theme-options.php:565
 msgid "Click Here to Read"
-msgstr "Číst"
+msgstr "Cliqueu ací per llegir"
 
 #: ../inc/theme-options.php:629
 msgid "Theme Options By"
-msgstr "Theme Options By"
+msgstr "Opcions del tema per"
 
 #: ../inc/theme-options.php:631 ../inc/theme-options.php:632
 msgid "Catch Themes"
@@ -696,7 +705,7 @@ msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:638
 msgid "Upgrade to Catch Box Pro"
-msgstr "Upgradovat na Catch Box Pro"
+msgstr "Actualitzeu a Catch Box Pro"
 
 #: ../inc/theme-options.php:643
 msgid "http://catchthemes.com/donate/"
@@ -704,15 +713,15 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/theme-options.php:643
 msgid "Donate"
-msgstr "Přispět"
+msgstr "Doneu"
 
 #: ../inc/theme-options.php:644
 msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/"
+msgstr "http://catchthemes.com/support/"
 
 #: ../inc/theme-options.php:644
 msgid "Support"
-msgstr "Sodpora"
+msgstr "Suport"
 
 #: ../inc/theme-options.php:645
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
@@ -720,7 +729,7 @@ msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
 #: ../inc/theme-options.php:645
 msgid "Support Forum"
-msgstr "Support Forum"
+msgstr "Fòrum de suport"
 
 #: ../inc/theme-options.php:646
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
@@ -728,7 +737,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
 #: ../inc/theme-options.php:646
 msgid "Theme Instructions"
-msgstr "Natavení šablony"
+msgstr "Instruccions del tema"
 
 #: ../inc/theme-options.php:647
 msgid "https://www.facebook.com/catchthemes/"
@@ -736,7 +745,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/theme-options.php:647
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes on Facebook"
+msgstr "Clicla m'agrada Catch Themes a Facebook"
 
 #: ../inc/theme-options.php:647 ../inc/theme-options.php:782
 msgid "Facebook"
@@ -748,7 +757,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/theme-options.php:648
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Seguiu Catch Themes a Twitter"
 
 #: ../inc/theme-options.php:648 ../inc/theme-options.php:787
 msgid "Twitter"
@@ -760,27 +769,27 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
 #: ../inc/theme-options.php:649
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Puntua'ns amb 5 estrelles a Wordpress"
 
 #: ../inc/theme-options.php:649
 msgid "5 Star Rating"
-msgstr "5 Star Rating"
+msgstr "Puntuació de 5 estrelles"
 
 #: ../inc/theme-options.php:659
 msgid "Featured Post Slider"
-msgstr "Featured Post Slider"
+msgstr "Presentació d'entrada destacada"
 
 #: ../inc/theme-options.php:660
 msgid "Social Links"
-msgstr "Sociální sítě"
+msgstr "Enllaços socials"
 
 #: ../inc/theme-options.php:661
 msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
+msgstr "Eines del webmaster"
 
 #: ../inc/theme-options.php:688
 msgid "Slider Options"
-msgstr "Nastavení slideru"
+msgstr "Opcions de la presentació"
 
 #: ../inc/theme-options.php:692 ../inc/theme-options.php:694
 msgid "Post Slider Tutorial"
@@ -801,102 +810,100 @@ msgstr "Click Here to Read Post Slider Tutorial"
 #: ../inc/theme-options.php:698
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
-"Vyloučit příspěvky, které jsou použity ve slideru, z výpisu článků na domácí "
-"obrazovce: "
+"Esxcloure articles en la presentació de destacats de la pàgina d'inici:"
 
 #: ../inc/theme-options.php:700
 msgid "Check to disable"
-msgstr "Nezobrazovat: "
+msgstr "Marqueu per desactivar"
 
 #: ../inc/theme-options.php:703
 msgid "Number of Slides"
-msgstr "Počet slidů"
+msgstr "Nombre de diapositives"
 
 #: ../inc/theme-options.php:709
 msgid "Featured Post ID"
-msgstr "Featured Post ID"
+msgstr "ID de l'entrada destacada"
 
-# @ default
 #: ../inc/theme-options.php:711
 msgid "Click Here To Edit"
-msgstr "Klikněte zde pro úpravu"
+msgstr "Cliqueu ací per editar"
 
 #: ../inc/theme-options.php:717
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
 msgstr ""
-"<strong>Poznámka</strong>: Zde můžete zadat ID číslo článků, podle kterého "
-"se budou články ve slideru zobrazovat ."
+"<strong>Nota</strong>: Ací podeu afegir els IDs de les entrades que es "
+"mostren a la presentació destacada de la pàgina d'inici."
 
 #: ../inc/theme-options.php:718 ../inc/theme-options.php:764
 #: ../inc/theme-options.php:901 ../inc/theme-options.php:942
 msgid "Save"
-msgstr "Uložit"
+msgstr "Desar"
 
 #: ../inc/theme-options.php:722
 msgid "Slider Effect Options"
-msgstr "Nastavení efektu přechodu mezi položkami ve slideru"
+msgstr "Opcions dels efectes de la presentació"
 
 #: ../inc/theme-options.php:727
 msgid "Transition Effect:"
-msgstr "efekt přechodu:"
+msgstr "Efecte de transició:"
 
 #: ../inc/theme-options.php:732
 msgid "fade"
-msgstr "zeslábnutí"
+msgstr "esvair-se"
 
 #: ../inc/theme-options.php:733
 msgid "wipe"
-msgstr "wipe"
+msgstr "netejar"
 
 #: ../inc/theme-options.php:734
 msgid "scrollUp"
-msgstr "Vyměnit ze shora"
+msgstr "desplaçament cap amunt"
 
 #: ../inc/theme-options.php:735
 msgid "scrollDown"
-msgstr "Vyměnit z dola"
+msgstr "desplaçament cap avall"
 
 #: ../inc/theme-options.php:736
 msgid "scrollLeft"
-msgstr "Vyměnit z leva"
+msgstr "desplaçament a l'esquerra"
 
 #: ../inc/theme-options.php:737
 msgid "scrollRight"
-msgstr "Vyměnit z prava"
+msgstr "desplaçament a la dreta"
 
 #: ../inc/theme-options.php:738
 msgid "blindX"
-msgstr "roletaX"
+msgstr "cortineta X"
 
 #: ../inc/theme-options.php:739
 msgid "blindY"
-msgstr "roletaY"
+msgstr "cortineta Y"
 
 #: ../inc/theme-options.php:740
 msgid "blindZ"
-msgstr "roletaZ"
+msgstr "cortineta Z"
 
 #: ../inc/theme-options.php:741
 msgid "cover"
-msgstr "překrýt"
+msgstr "incloure"
 
 #: ../inc/theme-options.php:742
 msgid "shuffle"
-msgstr "Přehodit"
+msgstr "mesclar"
 
 #: ../inc/theme-options.php:748
 msgid "Transition Delay"
-msgstr "Doba statického zobrazení"
+msgstr "Retard de la transició"
 
 #: ../inc/theme-options.php:751 ../inc/theme-options.php:760
 msgid "second(s)"
-msgstr "vteřin"
+msgstr "segon(s)"
 
 #: ../inc/theme-options.php:757
 msgid "Transition Length"
-msgstr "Délka trvání přechodu"
+msgstr "Durada de la transició"
 
 #: ../inc/theme-options.php:793
 msgid "Google +"
@@ -916,7 +923,7 @@ msgstr "Youtube"
 
 #: ../inc/theme-options.php:817
 msgid "RSS Feed"
-msgstr "RSS Feed"
+msgstr "Canal web RSS"
 
 #: ../inc/theme-options.php:823
 msgid "Deviantart"
@@ -940,7 +947,7 @@ msgstr "MySpace"
 
 #: ../inc/theme-options.php:853
 msgid "Aim"
-msgstr "Aim"
+msgstr "AIM"
 
 #: ../inc/theme-options.php:859
 msgid "Flickr"
@@ -971,109 +978,110 @@ msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr ""
-"<strong>Poznámka:</strong>Zadejte URL adresy pro dané profily na určených "
-"sociálních sítích."
+"<strong>Nota:</strong> escriviu les URLs de les xarxes socials del lloc web."
 
 #: ../inc/theme-options.php:915
 msgid "Header and Footer Code"
-msgstr "Header and Footer Code"
+msgstr "Codi de capçalera i peu"
 
 #: ../inc/theme-options.php:920
 msgid "Code to display on Header"
-msgstr "Code to display on Header"
+msgstr "Codi a mostrar a la capçalera"
 
 #: ../inc/theme-options.php:927
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook etc. which will load on "
-"Header"
+"Nota: ací podeu enganxar script de Google, Facebook, etc. Es carregaran a la "
+"capçalera"
 
 #: ../inc/theme-options.php:931
 msgid "Code to display on Footer"
-msgstr "Code to display on Footer"
+msgstr "Codi a mostrar al peu"
 
 #: ../inc/theme-options.php:938
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
-"will load on footer"
+"Nota: ací podeu enganxar script de Google, Facebook, etc. Es carregaran al "
+"peu"
 
 #: ../inc/widgets.php:20
 msgid "Use this widget to add any type of Ad as a widget."
-msgstr "Použijte tento widget pro přidání jakékoliv reklamy."
+msgstr "Utilitza aquest giny per afegir qualsevol tipus d'anunci com un giny:"
 
 #: ../inc/widgets.php:21
 msgid "Catch Box Adspace Widget"
-msgstr "Catch Box Adspace Widget"
+msgstr "Widget de publicitat de Catch Box"
 
 #: ../inc/widgets.php:38
 msgid "Title (optional):"
-msgstr "Název (doporovolný):"
+msgstr "Títol (opcional):"
 
 #: ../inc/widgets.php:43
 msgid "Ad Code:"
-msgstr "Kód reklamy:"
+msgstr "Codi de l'anunci:"
 
 #: ../inc/widgets.php:49
 msgid "Image Url:"
-msgstr "URL obrázku:"
+msgstr "URL de la imatge:"
 
 #: ../inc/widgets.php:53
 msgid "Link URL:"
-msgstr "Link URL:"
+msgstr "Adreça URL:"
 
 #: ../inc/widgets.php:57
 msgid "Alt text:"
-msgstr "Text:"
+msgstr "Text alternatiu:"
 
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Výsledky vyhledávání pro : %s"
+msgstr "Resultats de la cerca de: %s"
 
 #: ../search.php:43
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
-msgstr "Bohužel jsem nic nenašel. Zkuste zadat jiná klíčová slova."
+msgstr ""
+" Ho sentim, res no coincideix amb els criteris de cerca. Intenteu-ho de nou "
+"amb altres paraules claus diferents"
 
 #: ../searchform.php:11
 msgid "Search"
-msgstr "Vyhledávání"
+msgstr "Cercar"
 
 #: ../sidebar.php:28
 msgid "Archives"
-msgstr "Archiv"
+msgstr "Arxius"
 
 #: ../sidebar.php:37
 msgid "Meta"
-msgstr "Další"
+msgstr "Meta"
 
 #: ../single.php:16
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Předešlý"
+msgstr "<span class=\"meta-nav\">&larr;</span> Anterior"
 
 #: ../single.php:17
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Další <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Següent <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../tag.php:16
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "Více se stejným štíkem: %s"
+msgstr "Arxiu de l'etiqueta: %s"
 
 #~ msgid "http://facebook.com/catchthemes"
-#~ msgstr "http://facebook.com/catchthemes"
+#~ msgstr "http://facebook.com/catchtheme "
 
 #~ msgid "https://twitter.com/catchthemes"
 #~ msgstr "https://twitter.com/catchthemes"
 
 #~ msgid "Settings saved."
-#~ msgstr "Nastavení uloženo"
+#~ msgstr "Configuración guardada."
 
 #~ msgid ""
 #~ "Some themes provide customization options that are grouped together on a "
@@ -1081,18 +1089,19 @@ msgstr "Více se stejným štíkem: %s"
 #~ "disappear, as they are theme-specific. Your current theme, Catch Box, "
 #~ "provides the following Theme Options:"
 #~ msgstr ""
-#~ "Některá nastavení jsou shromážděny v položce menu Nastavení. Pokud "
-#~ "šablonu změníte na jinou, můžé se nastavení změnit. Pro nastavení šablony "
-#~ "Catch Box přejděte do Nastavení šablony."
+#~ "Algunos de los temas ofrecen opciones de personalización que se agrupan "
+#~ "en una pantalla de Opciones del tema. Si cambias de tema, las opciones "
+#~ "pueden cambiar o desaparecer, dado que son especificas del tema. Catch "
+#~ "Box, provee las siguientes Opciones del tema:"
 
 #~ msgid ""
 #~ "<strong>Color Scheme</strong>: You can choose a color palette of \"Light"
 #~ "\" (light background with dark text) or \"Dark\" (dark background with "
 #~ "light text) for your site."
 #~ msgstr ""
-#~ "<strong>Barevný styl</strong>: Můžete si zvolit jedno z barevných stylů"
-#~ "\"Hell\" (bílé pozadí s černým textem) nebo\"Dunkel\" (černé pozadí s "
-#~ "bílým textem) pro vaši stránku."
+#~ "<strong>Esquema de color</ strong>: Puedes elegir una paleta de colores "
+#~ "\"Clara\" (fondo claro con texto oscuro) o \"Oscura\" (fondo oscuro con "
+#~ "texto claro) para tu sitio."
 
 #~ msgid ""
 #~ "<strong>Link Color</strong>: You can choose the color used for text links "
@@ -1100,45 +1109,46 @@ msgstr "Více se stejným štíkem: %s"
 #~ "visually by clicking the \"Select a Color\" button to pick from a color "
 #~ "wheel."
 #~ msgstr ""
-#~ "<strong>Barva odkazů</strong>: Zde můžete nastavit, jakou barvu budou mít "
-#~ "všechny aktivní odkazy. Můžete jej zadat pomocí HTML nebo hex kódem. Taky "
-#~ "můžete barvu zvolit kliknutím  na \"Zvolit barvu\"  a vybrat si z "
-#~ "barevného spektra."
+#~ "<strong>Color de los enlaces</ strong>: Puedes elegir el color utilizado "
+#~ "para los enlaces de texto en tu sitio. Puedes introducir el color HTML o "
+#~ "el código hexadecimal, o puedes elegir visualmente haciendo clic en "
+#~ "\"Elige un color\" para elegir de una rueda de color."
 
 #~ msgid ""
 #~ "<strong>Default Layout</strong>: You can choose if you want your "
 #~ "site&#8217;s default layout to have a sidebar on the left, the right, or "
 #~ "not at all."
 #~ msgstr ""
-#~ "<strong>Základní rozložení</strong>: Pokud chcete základní rozložení se "
-#~ "sidebarem na levé, pravé nebo žádné straně."
+#~ "<strong>Diseño predeterminado</strong>: Puedes elegir si deseas que el "
+#~ "diseño de tu sitio web por defecto tendrá una barra lateral a la "
+#~ "izquierda, la derecha, o ninguna en absoluto."
 
 #~ msgid ""
 #~ "Remember to click \"Save Changes\" to save any changes you have made to "
 #~ "the theme options."
 #~ msgstr ""
-#~ "Nezapomeň kliknut na \"Uložit změny\" aby jsi uložit všechy provedené "
-#~ "změny."
+#~ "Recuerda hacer clic en \"Guardar cambios\" para guardar los cambios "
+#~ "realizados a las opciones de tema."
 
 #~ msgid "For more information:"
-#~ msgstr "Pro více informací: "
+#~ msgstr "Para más información:"
 
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
 #~ "target=\"_blank\">Documentation on Theme Options</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
-#~ "target=\"_blank\">Nápověda pro Nastavení šablony</a>"
+#~ "target=\"_blank\">Documentación sobre las opciones del Tema</a>"
 
 #~ msgid ""
 #~ "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support "
 #~ "Forums</a>"
 #~ msgstr ""
-#~ "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Fórum "
-#~ "podpory</a>"
+#~ "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Foros de "
+#~ "soporte</a>"
 
 #~ msgid "Overview"
-#~ msgstr "Přehled"
+#~ msgstr "Perspectiva General"
 
 #~ msgid ""
 #~ "Slider Some themes provide customization options that are grouped "
@@ -1146,40 +1156,72 @@ msgstr "Více se stejným štíkem: %s"
 #~ "change or disappear, as they are theme-specific. Your current theme, "
 #~ "Catch Box, provides the following Theme Options:"
 #~ msgstr ""
-#~ "Posuvník Některé šablony si můžete uživatelsky přizpůsobit. Všechny tyto "
-#~ "možnosti najdete v Nastavení šablony. Pokud šablonu změníte na jinou, "
-#~ "můžete o současné nastavení přijít. Vaše současná šablona Catch Box "
-#~ "nabízí zmiňované nastavení zde: "
+#~ "Algunos temas proporcionan opciones de personalización que se agrupan en "
+#~ "una pantalla de Opciones del tema. Si cambia temas, las opciones pueden "
+#~ "cambiar o desaparecer, ya que son un tema específico. Su tema actual, "
+#~ "Catch Box, proporciona las opciones siguientes temáticas:"
 
 #~ msgid "Webmaster Site Verification IDs"
-#~ msgstr "Webmaster Site Verification IDs"
+#~ msgstr "Identificador de Verificación de Sitios de Webmaster"
 
 #~ msgid "Google Site Verification ID"
-#~ msgstr "Google Site Verification ID"
+#~ msgstr "Identificador de verificación de Google Site"
 
 #~ msgid "Enter your Google ID number only"
-#~ msgstr "Geben Sie nur Ihre Google-ID-Nummer ein"
+#~ msgstr "Introduce solamente tu identificador de Google"
 
 #~ msgid "Yahoo Site Verification ID"
-#~ msgstr "Yahoo Site Verification ID"
+#~ msgstr "Identificador de verificación de Yahoo"
 
 #~ msgid "Enter your Yahoo ID number only"
-#~ msgstr "Geben Sie nur Ihre Yahoo-ID-Nummer ein"
+#~ msgstr "Introduce solamente tu identificador de Yahoo"
 
 #~ msgid "Bing Site Verification ID"
-#~ msgstr "Bing Site Verification ID"
+#~ msgstr "Identificador de verificación de Bing"
 
 #~ msgid "Enter your Bing ID number only"
-#~ msgstr "Geben Sie nur Ihre Bing-ID-Nummer ein"
+#~ msgstr "Introduce solamente tu identificador de Bing"
 
 #~ msgid "Webmaster Site Verification Code"
-#~ msgstr "Webmaster Site Verification Code"
+#~ msgstr "Código de Verificación de Sitio de Webmaster"
 
 #~ msgid "Analytics, site stats Header code"
-#~ msgstr "Analytics, statistiky Header kód"
+#~ msgstr "Código de cabecera de Google Analytics"
 
 #~ msgid "Analytics, site stats footer code"
-#~ msgstr "Analytics, statistiky kód v zápatí"
+#~ msgstr "Código del pie de Google Analytics"
 
-#~ msgid "Viemo"
-#~ msgstr "Viemo"
+#~ msgid "Catch Box"
+#~ msgstr "Catch Box"
+
+#~ msgid ""
+#~ "dark, light, blue, white, black, gray, one-column, two-columns, left-"
+#~ "sidebar, right-sidebar, fixed-width, flexible-width, custom-background, "
+#~ "custom-colors, custom-header, custom-menu, editor-style, featured-image-"
+#~ "header, featured-images, full-width-template, microformats, post-formats, "
+#~ "rtl-language-support, sticky-post, theme-options, translation-ready"
+#~ msgstr ""
+#~ "dark, light, blue, white, black, gray, one-column, two-columns, left-"
+#~ "sidebar, right-sidebar, fixed-width, flexible-width, custom-background, "
+#~ "custom-colors, custom-header, custom-menu, editor-style, featured-image-"
+#~ "header, featured-images, full-width-template, micro formats, post-"
+#~ "formats, rtl-language-support, sticky-post, theme-options, translation-"
+#~ "ready"
+
+#~ msgid "Disable Sidebar Template"
+#~ msgstr "Desactivar la plantilla de la barra lateral"
+
+#~ msgid "Full Width Disable Sidebar Template"
+#~ msgstr "Plantilla de ancho completo con barra lateral desactivada"
+
+#~ msgid "More Themes"
+#~ msgstr "Más Temas"
+
+#~ msgid "%s Featured Slider By"
+#~ msgstr "%s Presentación de Destacados por"
+
+#~ msgid "%s Social Links By"
+#~ msgstr "%s enlaces sociales de los"
+
+#~ msgid "%s Webmaster Tools By"
+#~ msgstr "%s Herramientas para webmasters por"
