@@ -15,6 +15,15 @@ SlickNav jQuery Plugin is licended under the MIT Licence
 -----------------------------------------------
 Images
 -----------------------------------------------
+http://creativecommons.org/choose/zero/
+http://www.gratisography.com/pictures/130_1.jpg
+http://www.gratisography.com/pictures/129_1.jpg
+http://www.gratisography.com/pictures/125_1.jpg
+http://www.gratisography.com/pictures/108_1.jpg
+http://www.gratisography.com/pictures/83_1.jpg
+http://www.gratisography.com/pictures/129_1.jpg
+http://www.gratisography.com/pictures/132_1.jpg
+
 
 
 -----------------------------------------------
@@ -37,3 +46,5 @@ Change Log:
 First Release
 = 1.1 =
 - Minor Fixes
+= 1.2 =
+- Changed screenshot.png
