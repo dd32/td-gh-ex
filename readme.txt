@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.28
+* Feature to disable Homepage Event sidebar added
+* Few Minor CSS bugs fixed
+
 Version 2.27
 * Custom Script added to header instead of footer for Google Analytic support
 * Few Minor changes in Admin Interface

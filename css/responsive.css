@@ -349,7 +349,7 @@
 	}
 
 	#top-section .welcome-text-image{
-		width:auto;
+		width:auto !important;
 		float: none;
 		margin-bottom: 15px;
 	}
@@ -359,7 +359,7 @@
 	}
 
 	#top-section .welcome-detail{
-		width:auto;
+		width:auto !important;
 	}
 
 	#top-footer .footer{
@@ -406,6 +406,20 @@
         border-color:transparent transparent #F2F3F4;
         top:-40px;
         right:20px;
+    }
+    #call-to-action{
+    	text-align: center;
+    	padding: 20px 0;
+    }
+    #call-to-action h4{
+    	width: 100%;
+    	float: none;
+    	max-width: none;
+    	margin-bottom: 5px;
+    }
+    #call-to-action .action-btn{
+    	float: none;
+    	display: inline-block;
     }
 }
 

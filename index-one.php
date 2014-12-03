@@ -14,11 +14,16 @@ $accesspresslite_featured_bar = $accesspresslite_settings['featured_bar'];
 $accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
 $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
 $big_icons = $accesspresslite_settings['big_icons'];
-
+$disable_event = $accesspresslite_settings['disable_event'];
+if($disable_event == 1){
+	$welcome_class = "full-width";
+}else{
+	$welcome_class = "";
+}
 if( $accesspresslite_layout !== 'Layout2') { ?>
 <?php do_action('accesspresslite_call_to_action');?>			
 <section id="top-section" class="ak-container">
-<div id="welcome-text" class="clearfix">
+<div id="welcome-text" class="clearfix <?php echo $welcome_class; ?>">
 	<?php
 		
 			if(!empty($accesspresslite_welcome_post_id)){
@@ -81,6 +86,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 			<?php } ?>
 </div>
 
+<?php if($disable_event != 1): ?>
 <div id="latest-events">
 
 			<?php
@@ -175,6 +181,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	        	}
 	        } ?>
 </div>
+<?php endif; ?>
 </section>
 
 <section id="mid-section" class="ak-container">

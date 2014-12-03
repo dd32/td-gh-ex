@@ -514,6 +514,15 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
+						<th><label for="show_eventdate"><?php _e('Disable Event Section?','accesspresslite'); ?></th>
+						<td>
+							<input type="checkbox" id="disable_event" name="accesspresslite_options[disable_event]" value="1" <?php checked( true, $settings['disable_event'] ); ?> />
+							<label for="disable_event"><?php _e('Check to Disable','accesspresslite'); ?></label><br />
+							<em class="f13">The welcome post will cover the full width if disabled.</em>
+						</td>
+					</tr>
+
+					<tr>
 						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspresslite'); ?></label></th>
 						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number'],'accesspresslite'); } ?>"></td>
 					</tr>
@@ -1281,6 +1290,10 @@ function accesspresslite_validate_options( $input ) {
     if ( ! isset( $input['big_icons'] ) )
 		$input['big_icons'] = null;
 	$input['big_icons'] = ( $input['big_icons'] == 1 ? 1 : 0 );
+
+	if ( ! isset( $input['disable_event'] ) )
+		$input['disable_event'] = null;
+	$input['disable_event'] = ( $input['disable_event'] == 1 ? 1 : 0 );
 
 	if ( ! isset( $input['leftsidebar_show_latest_events'] ) )
 		$input['leftsidebar_show_latest_events'] = null;
