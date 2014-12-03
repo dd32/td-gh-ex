@@ -15,11 +15,11 @@
 	if( !is_single() ) {
 		if( has_post_thumbnail() ) {
 			$image = '';     
-			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');   			
+			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'blog-large');   			
      		$title_attribute = get_the_title( $post->ID );
      		$image .= '<figure class="post-featured-image">';
   			$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-  			$image .= get_the_post_thumbnail( $post->ID, 'large', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+  			$image .= get_the_post_thumbnail( $post->ID, 'blog-large', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
   			$image .= '<div class="mask">
 						<a href="'.$large_image_url[0].'" class="img-icon img-search"><i class="icon-search"></i></a>
 						<a href="'.get_permalink().'" class="img-icon img-link"><i class="icon-link"></i></a>
@@ -54,7 +54,7 @@
 	
 	<div class="entry-content clearfix">
 		<?php the_excerpt(); ?>
-	<div class="readmore-wrap"><a class="readmore" href="<?php the_permalink(); ?>">Read more</a></div>
+	<div class="readmore-wrap"><a class="readmore" href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'esteem' ); ?></a></div>
 	</div><!-- .entry-content -->
 
 	

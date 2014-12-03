@@ -48,8 +48,8 @@ function esteem_setup() {
 	register_nav_menu( 'primary', 'Primary Menu' );
 
 	// Cropping images to different sizes to be used in the theme
-	add_image_size( 'large', 642, 300, true ); 				// used on blog large template
-	add_image_size( 'medium', 306, 205, true ); 				// used on blog medium template
+	add_image_size( 'blog-large', 642, 300, true ); 				// used on blog large template
+	add_image_size( 'blog-medium', 306, 205, true ); 				// used on blog medium template
 	add_image_size( 'recent-thumb', 350, 316, true );
 	
 	// Setup the WordPress core custom background feature.

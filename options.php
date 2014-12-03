@@ -267,7 +267,8 @@ function esteem_options_display_sidebar() { ?>
 		<div class="metabox-holder">
 	    	<div class="postbox">
 	    		<h3><?php esc_attr_e( 'About Esteem', 'esteem' ); ?></h3>
-      			<div class="inside"> 
+      			<div class="inside">
+      				<div class="option-btn"><a class="btn upgrade" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/themes/esteem-pro/' ); ?>"><?php esc_attr_e( 'Upgrade to Pro' , 'esteem' ); ?></a></div> 
 					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>"><?php esc_attr_e( 'Free Support' , 'esteem' ); ?></a></div>
 					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/esteem/' ); ?>"><?php esc_attr_e( 'Documentation' , 'esteem' ); ?></a></div>
 					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://demo.themegrill.com/esteem/' ); ?>"><?php esc_attr_e( 'View Demo' , 'esteem' ); ?></a></div>

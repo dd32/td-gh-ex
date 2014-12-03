@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Esteem\n"
-"POT-Creation-Date: 2014-11-18 21:07+0545\n"
-"PO-Revision-Date: 2014-11-18 21:07+0545\n"
+"POT-Creation-Date: 2014-12-03 15:55+0545\n"
+"PO-Revision-Date: 2014-12-03 15:55+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -70,6 +70,11 @@ msgstr ""
 #: content-blog-full-content.php:30 content-blog-image-large.php:48
 #: content-blog-image-medium.php:30 content-single.php:46 content.php:50
 msgid "Edit"
+msgstr ""
+
+#: content-blog-image-large.php:54 content-blog-image-medium.php:55
+#: content.php:57 inc/widgets/widgets.php:191
+msgid "Read more"
 msgstr ""
 
 #: content-page.php:17 content-single.php:29
@@ -369,10 +374,6 @@ msgstr ""
 
 #: inc/widgets/widgets.php:126 inc/widgets/widgets.php:239
 msgid "Page"
-msgstr ""
-
-#: inc/widgets/widgets.php:191
-msgid "Read more"
 msgstr ""
 
 #: inc/widgets/widgets.php:211
@@ -703,18 +704,22 @@ msgid "About Esteem"
 msgstr ""
 
 #: options.php:271
-msgid "Free Support"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: options.php:272
-msgid "Documentation"
+msgid "Free Support"
 msgstr ""
 
 #: options.php:273
+msgid "Documentation"
+msgstr ""
+
+#: options.php:274
 msgid "View Demo"
 msgstr ""
 
-#: options.php:276
+#: options.php:277
 msgid "If you like our work. Buy us a beer."
 msgstr ""
 

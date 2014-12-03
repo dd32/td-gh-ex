@@ -43,6 +43,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.6 =
+* Some missed translation fixed.
+* Changed the image size name to prevent conflict with reserved image size name.
+* Changes in options panel sidebar.
+
 = Version 1.1.5 =
 * Language pot file updated.
 
