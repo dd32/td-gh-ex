@@ -16,7 +16,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : 	?>
     <h1 class="comments-title">
 		<?php
-			printf( _n( 'One thought on - %2$s', '%1$s thoughts on - %2$s', get_comments_number(), 'generator' ),
+			printf( _n( 'One thought on  %2$s', '%1$s thoughts on  %2$s', get_comments_number(), 'generator' ),
 				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
 	</h1>

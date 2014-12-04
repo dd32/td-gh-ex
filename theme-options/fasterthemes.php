@@ -44,8 +44,8 @@ function fasterthemes_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$generator_menu = array(
-				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('Theme Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'generator'),
+				'menu_title' => __('Theme Options', 'generator'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
 				'callback' => 'fastertheme_framework_page'
@@ -125,7 +125,7 @@ function fastertheme_framework_page(){
                 <div class="ft-control">
                   <input id="favicon-img" class="upload" type="text" name="faster_theme_options[favicon]" 
                             value="<?php if(!empty($generator_options['favicon'])) { echo esc_url($generator_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','generator') ?>" />
-                  <input id="upload_image_button1" class="upload-button button" type="button" value="Upload" />
+                  <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','generator') ?>" />
                   <div class="screenshot" id="favicon-image">
                     <?php  if(!empty($generator_options['favicon'])) { ?>
 					 <img src="<?php esc_url($generator_options['favicon']) ?>"/>
@@ -177,7 +177,7 @@ function fastertheme_framework_page(){
                 <div class="ft-control">
                 <input id="slider-img-<?php echo $generator_i;?>" class="upload" type="text" name="faster_theme_options[slider-img-<?php echo $generator_i;?>]" 
                             value="<?php if(!empty($generator_options['slider-img-'.$generator_i])) { echo esc_url($generator_options['slider-img-'.$generator_i]); } ?>" placeholder="<?php _e('No file chosen','generator') ?>" />
-                <input id="1upload_image_button" class="upload-button button" type="button" value="Upload" />
+                <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','generator') ?>" />
                 <div class="screenshot" id="slider-img-<?php echo $generator_i;?>">
                   <?php if(!empty($generator_options['slider-img-'.$generator_i])) { ?>
 				   <img src="<?php esc_url($generator_options['slider-img-'.$generator_i])?>" />
@@ -221,7 +221,7 @@ function fastertheme_framework_page(){
                 <div class="ft-control">
                 <input id="first-image-<?php echo $generator_section_i;?>" class="upload" type="text" name="faster_theme_options[home-icon-<?php echo $generator_section_i;?>]" 
                             value="<?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { echo esc_url($generator_options['home-icon-'.$generator_section_i]); } ?>" placeholder="<?php _e('No file chosen','generator') ?>" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','generator') ?>" />
                 <div class="screenshot" id="first-img-<?php echo $generator_section_i;?>">
                   <?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { ?>
 				  <img src="<?php esc_url($generator_options['home-icon-'.$generator_section_i]) ?>"/>
@@ -232,7 +232,7 @@ function fastertheme_framework_page(){
             
                 <div class="ft-control">
                 <div class="explain"><?php _e('Enter section title for your home template , you would like to display in the Home Page.','generator') ?></div>
-                    <input type="text" placeholder="Enter title here" id="title-<?php echo $generator_section_i;?>" class="of-input" name="faster_theme_options[section-title-<?php echo $generator_section_i;?>]" size="32"  value="<?php if(!empty($generator_options['section-title-'.$generator_section_i])) { echo esc_attr($generator_options['section-title-'.$generator_section_i]); } ?>">
+                    <input type="text" placeholder="<?php _e('Enter title here','generator') ?>" id="title-<?php echo $generator_section_i;?>" class="of-input" name="faster_theme_options[section-title-<?php echo $generator_section_i;?>]" size="32"  value="<?php if(!empty($generator_options['section-title-'.$generator_section_i])) { echo esc_attr($generator_options['section-title-'.$generator_section_i]); } ?>">
               </div>
 				<div class="ft-control">
                  <div class="explain"><?php _e('Enter section content for home template , you would like to display in the Home Page.','generator') ?></div>
@@ -362,7 +362,7 @@ function fastertheme_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','generator') ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','generator') ?>" /></li>
@@ -371,27 +371,12 @@ function fastertheme_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully','generator') ?>.</h2></div>
-<div class="newsletter">    
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <h2><?php _e('Enter your email to join our mailing list and we will keep you updated on new themes as they are released and for our exclusive special offers','generator') ?>.</h2>          
-          <div class="mc-field-group">
-            <label for="mce-EMAIL"><?php _e('Email Address ','generator') ?> <span class="asterisk">*</span> </label>
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-          </div>
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value="">
-          </div>
-          <div class="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup--> 
-    </div>
+<div class="newsletter"> 
+       <h1><?php _e('Subscribe with us','generator'); ?></h1>
+       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","generator"); ?>
+          
+        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','generator'); ?></a>
+        
+       </p>
+</div>
 <?php } ?>

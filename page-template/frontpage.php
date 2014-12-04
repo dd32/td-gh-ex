@@ -37,16 +37,18 @@ $generator_options = get_option( 'faster_theme_options' );
     <?php get_template_part('front-content','generator'); ?>
   </div>
   <div class="clearfix"></div>
-  <?php if(!empty($generator_options['post-category'])){ ?>
+  <?php  if(!empty($generator_options['post-category'])){ ?>
   <div class="container container-generator generator-home-content no-padding">
     <div class="col-md-12 no-padding next-prev">
       <div class="back-radius"> <i class="fa fa-pencil project-icon-size"></i> </div>
       <span class="project-tag">
-      <?php if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); }
+      <?php  if(!empty($generator_options['post-title'])) { echo esc_attr($generator_options['post-title']); }
 	  else{  
-	  _e('Recent Posts','generator')
+		_e('Recent Posts','generator');
+		}
 	  ?>
-      </span> </div>
+      </span> 
+    </div>
     <div class="project1-line"></div>
     <div class="row margin-top-8 text-center no-padding">
       <?php
@@ -82,6 +84,7 @@ $generator_query=new $wp_query($generator_args); ?>
 	  <?php } ?>
     </div>
   </div>
-  <?php } ?>
+   <?php  } ?>	
 </div>
-<?php get_footer(); ?>
+
+<?php  get_footer(); ?>

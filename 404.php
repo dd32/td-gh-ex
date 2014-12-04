@@ -14,10 +14,7 @@ get_header();
                 <div class="row">
                     <div class="col-sm-12">
                     <form action="<?php echo home_url(); ?>/" class="search-form" method="get" role="search">
-                    <label>
-                    <input type="search" name="s" value="" placeholder="Search ..." class="search-field">
-                    </label>
-                    <input type="submit" value="Search" class="btn btn-primary comment-sub">
+                    <?php get_search_form(); ?>
                     </form>								
                     </div>
                 </div>

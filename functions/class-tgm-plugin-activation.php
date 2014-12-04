@@ -642,8 +642,9 @@ if ( ! class_exists( 'generatorPA_List_Table' ) ) {
         }
         /* Sets default message within the plugins table if no plugins */
         public function no_items() {
-		    _e('No plugins to install or activate','generator'); echo ".<a href='admin_url()'>Return to the Dashboard</a>";
+		    _e('No plugins to install or activate','generator'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','generator')."</a>";
 		    echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
+		    
         }
         /* Output all the column information within the table.*/
         public function get_columns() {

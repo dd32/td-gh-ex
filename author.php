@@ -6,7 +6,8 @@ get_header();
 ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
-    <h1><?php _e('Author : All posts by ','generator')?><?php echo get_the_author();?></h1>
+    
+    <h1><?php _e('Author : All posts by ','generator'); echo " : ". get_the_date('M-Y'); ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('generator_custom_breadcrumbs')) generator_custom_breadcrumbs(); ?>

@@ -112,9 +112,9 @@ add_action( 'widgets_init', 'generator_widgets_init' );
  */
 function generator_entry_meta() {
 
-	$generator_category_list = get_the_category_list( __( ', ', 'generator' ) );
+	$generator_category_list = get_the_category_list( ', ', 'generator' );
 
-	$generator_tag_list = get_the_tag_list( '', __( ', ', 'generator' ) );
+	$generator_tag_list = get_the_tag_list( ', ', 'generator');
 
 	$generator_date = sprintf( '<time datetime="%3$s">%4$s</time>',
 		esc_url( get_permalink() ),
@@ -168,7 +168,7 @@ function generator_comment( $comment, $generator_args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'generator' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'generator' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'generator' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php

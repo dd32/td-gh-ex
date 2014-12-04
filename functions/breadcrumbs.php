@@ -6,7 +6,7 @@ function generator_custom_breadcrumbs() {
 
   $generator_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $generator_delimiter = '/'; // generator_delimiter between crumbs
-  $generator_home = 'Home'; // text for the 'Home' link
+  $generator_home = __('Home','generator'); // text for the 'Home' link
   $generator_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $generator_before = ' '; // tag before the current crumb
   $generator_after = ' '; // tag after the current crumb
@@ -25,10 +25,10 @@ function generator_custom_breadcrumbs() {
     if ( is_category() ) {
       $generator_thisCat = get_category(get_query_var('cat'), false);
       if ($generator_thisCat->parent != 0) echo get_category_parents($generator_thisCat->parent, TRUE, ' ' . $generator_delimiter . ' ');
-      echo $generator_before . 'Archive by category "' . single_cat_title('', false) . '"' . $generator_after;
+      echo $generator_before . __('Archive by category ','generator') . single_cat_title(' : ', false)  . $generator_after;
 
     } elseif ( is_search() ) {
-      echo $generator_before . 'Search results for "' . get_search_query() . '"' . $generator_after;
+      echo $generator_before . __('Search results for ','generator'); echo ' : '. get_search_query() . $generator_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $generator_delimiter . ' ';
@@ -86,15 +86,15 @@ function generator_custom_breadcrumbs() {
       if ($generator_showcurrent == 1) echo ' ' . $generator_delimiter . ' ' . $generator_before . get_the_title() . $generator_after;
 
     } elseif ( is_tag() ) {
-      echo $generator_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $generator_after;
+      echo $generator_before . __('Posts tagged','generator') . single_tag_title(' : ', false) . $generator_after;
 
     } elseif ( is_author() ) {
        global $author;
       $generator_userdata = get_userdata($author);
-      echo $generator_before . 'Articles posted by ' . $generator_userdata->display_name . $generator_after;
+      echo $generator_before . __('Articles posted by','generator'); echo ' : ' . $generator_userdata->display_name . $generator_after;
 
     } elseif ( is_404() ) {
-      echo $generator_before . 'Error 404' . $generator_after;
+      echo $generator_before . __('Error 404','generator') . $generator_after;
     }
 
     if ( get_query_var('paged') ) {

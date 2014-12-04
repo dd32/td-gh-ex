@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-4 no-padding center-search ">
            <form method="get" id="searchform" action="<?php  echo home_url(); ?>/">
-                <input type="text" value="<?php the_search_query(); ?>" class="search-box" name="s" id="s"  placeholder="Search the site" />
+                <input type="text" value="<?php the_search_query(); ?>" class="search-box" name="s" id="s"  placeholder="<?php _e('generator','Search the site') ?>" />
                 <input type="submit" id="searchsubmit" value="" class="search-button" />
             </form>
            </div>

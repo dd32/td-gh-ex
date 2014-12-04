@@ -338,77 +338,28 @@
     margin:4px 42px 0 0;
     width: 188px;
 }
-/* MailChimp Form Embed Code - Classic - 08/17/2011 */
-.newsletter{
-	float: left;
-    margin-top: 20px;
-    width: 98.5%;
+.newsletter {
+    clear: both;
+    display: table;
+    float: right;
+    margin-right: 15%;
+    width: 60%;
 }
-#mce-success-response {
-    color: rgb(0, 128, 0);
+.newsletter h1 {
+	border-bottom: 1px solid;
+    color: rgb(53, 75, 88);
+    display: table;
+    padding-bottom: 5px;
 }
-#mc_embed_signup{
-	border: 1px solid #bcbcbc;
-    clear: left;
-    margin: 0 auto;
-    padding: 10px;
-    width: 44%;
+.newsletter > p {
+    color: rgb(53, 75, 88);
+    font-size: 16px;
 }
-#mc_embed_signup h2 {
-	font-size: 1.1em;
-    font-weight: bold;
-    margin: 15px 0;
-    padding: 0;
+.newsletter a {
+    color: rgb(53, 75, 88);
 }
-#mc_embed_signup input {
-	display: block;
-    padding: 8px 0;
-    text-indent: 2%;
-    width: 100%;	
-}
-#mc_embed_signup input:focus {
-	border-color:#333;
-}
-#mc_embed_signup .button {
-	background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #334d5c;
-    border-radius: 4px;
-    box-shadow: none;
-    color: #334d5c;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 15px;
-    height: auto;
-    line-height: 20px;
-    margin: 15px 5px 10px 0;
-    padding: 6px 22px;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    width: auto;
-	transition:all 0.8s ease-in-out;
-	-webkit-transition:all 0.8s ease-in-out;
-}
-#mc_embed_signup .button:hover {
-	background-color:#334d5c;
-	color:#FFF;
-}
-#mc_embed_signup .mc-field-group label {
-	display:block;
-	margin-bottom:3px;
-}
-#mc_embed_signup .mc-field-group input {
-	display:block;
-	width:100%;
-	padding:8px 0;
-	text-indent:2%;
-}
-
-.faster-inner-tabs h3 {
-    border-bottom: 1px solid #ccc;
-    margin-top: 0;
-    padding-bottom: 10px;
-    width: 100%;
+.newsletter a:hover {
+    color: #212121;
 }
 @media (max-width:992px){
 	.logo{
@@ -443,9 +394,6 @@
 	.left-box,
 	.fasterthemes-themes textarea{
 		width:95.5%;
-	}
-	#mc_embed_signup{
-		width:80%;
 	}
 	.right-box .nav-tab-wrapper ul li .nav-tab-active:after{
 		border:none;
