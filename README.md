@@ -33,3 +33,17 @@ are licensed under GPLv2
 14. Description field allows HTML, so that you can have any content along with paragraphs.
 15. 'Client Logo Carousel' works same as 'Flex Slider Options'
 16. Other theme options are self explanatory.
+
+Change Logo
+
+Version 1.0.2
+1) Word Wrap fix
+2) Remove unnecessary text in theme options
+
+Version 1.0.1
+1) Fix issues raised by reviewer
+2) Added Redux Theme Options
+
+Version 1.0.0
+1) Initial Release
+
