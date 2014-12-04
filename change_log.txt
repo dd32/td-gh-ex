@@ -25,3 +25,9 @@ ii) set text domain in function.php
 iii) set menu and search scrollbar.
 iv) add esc_attr() before image alt attribute.
 v) added two files html5shiv.min and respond.js.
+
+
+Version 1.2.2 (04-12-2014)
+i) Set header image
+ii) Escaped $medium_featured_image in index.php
+iii) Set original version of enscroll.min

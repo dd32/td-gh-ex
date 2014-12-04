@@ -113,8 +113,8 @@ function medium_scripts() {
 	wp_enqueue_style( 'medium-theme', get_stylesheet_directory_uri().'/css/theme.css' );	
 	wp_enqueue_style( 'medium-media', get_stylesheet_directory_uri().'/css/media.css' );        
 	
-	wp_enqueue_script( 'medium-script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0' );	        
-	wp_enqueue_script( 'medium-enscroll.min', get_template_directory_uri() . '/js/enscroll.min.js', array('jquery'), '1.0' );
+	wp_enqueue_script( 'medium-script-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '' );	        
+	wp_enqueue_script( 'medium-enscroll.min', get_template_directory_uri() . '/js/enscroll.min.js', array('jquery'), '0.6.0' );
         wp_enqueue_script( 'medium-default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
         
         
@@ -183,11 +183,13 @@ add_action('wp_ajax_medium_search_ajax', 'medium_search_ajax');
 function medium_entry_meta() {
 	
 	$medium_category_list = "";
-if(!empty(get_the_category_list()))
+	$medium_category_list=get_the_category_list();
+if(!empty($medium_category_list))
 	$medium_category_list = _e('Posted in ','medium'); echo ": ".get_the_category_list(', ');
 $medium_tag_list = "";
-if(!empty(get_the_tag_list()))
-$medium_tag_list = _e(' Tags','medium'); echo ": ".get_the_tag_list('',', ');
+$medium_tag_list=get_the_tag_list();
+if(!empty($medium_tag_list))
+	$medium_tag_list = _e(' Tags','medium'); echo ": ".get_the_tag_list('',', ');
 
 	$medium_date = sprintf( '<li>'.__('On','medium').' : %1$s</li>',
 		esc_html( get_the_date('M d, Y') )

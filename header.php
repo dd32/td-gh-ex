@@ -30,6 +30,10 @@
 <!--header strat-->
    <header class="home-header">
        <div class="col-md-3 col-sm-3 col-xs-3 menu-button">
+        <?php if(get_header_image()){ ?>
+      <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="medium-custom-header" alt="" />
+      <?php } ?>
+
            <a href="javascript:void(0);" id="menu-trigger" class="fa fa-bars"></a>
         </div>   
           	<div class="header-menu scrollbar">

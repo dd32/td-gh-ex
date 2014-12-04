@@ -228,7 +228,7 @@ function medium_framework_page(){
    <h1><?php _e('Subscribe with us','medium'); ?></h1>
        <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","medium"); ?>
           
-        <a href="http://eepurl.com/SP2nP" target="_blank"><?php _e('Click here to join.','medium'); ?></a>
+        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','medium'); ?></a>
         
        </p> 
   <!--End mc_embed_signup--> 
