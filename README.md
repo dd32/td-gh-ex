@@ -9,6 +9,7 @@ are licensed under GPLv2
 5. This theme uses { Elusive Icons Webfont } which is licensed under GPL-compatible SIL Open Font License
 6. All images used in this theme is licensed under GPLv2 or later
 7. This theme uses { SlickNav } which is licensed under GPL compatible MIT License
+8. This theme uses { WayPoints } which is licensed under GPL compatible MIT License
 
 
 Change log
@@ -41,3 +42,7 @@ Version 1.0.12
 
 Version 1.0.13
 1. Support for JigoShop eCommerce Plugin
+
+Version 1.0.14
+1. Updating jquery plugin files
+1. Adding uncompressed versions of javascript files
