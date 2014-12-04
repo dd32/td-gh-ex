@@ -69,7 +69,7 @@ They are under SIL Open Font.
 	
 iv)Bootstrap files
 ===========
-we used are licensed under the Apache License v3.2.0
+we used are licensed under the Apache License v3.3.1
 Bootstrap - http://getbootstrap.com
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 

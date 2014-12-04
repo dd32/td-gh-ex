@@ -15,9 +15,7 @@ function laurels_setup() {
 	load_theme_textdomain( 'laurels' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', laurels_font_url() ) );
-	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'laurels-full-width', 1038, 576, true );

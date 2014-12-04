@@ -26,3 +26,6 @@ i) Text domain spelling fixed.
 
 Version 1.1.3 (27-11-2014)
 i). fix Translation Ready.
+
+Version 1.1.4 (4-12-2014)
+i). Added bootstrap.js , html5.min.js , owl.carousel.js , owl.carousel.css , bootstrap.css

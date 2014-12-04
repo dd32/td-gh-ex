@@ -23,7 +23,7 @@ $laurels_options = get_option( 'laurels_theme_options' );
     <link rel="shortcut icon" href="<?php echo esc_url($laurels_options['favicon']);?>">
     <?php } ?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
