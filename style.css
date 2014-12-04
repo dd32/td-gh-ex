@@ -1,17 +1,16 @@
 /* 
 Theme Name: Rockers
 Author: Alberto Ramacciotti
-Author URI: http://ramacciotti.altervista.org
-Theme URI: http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme
+Author URI: http://albertoramacciotti.com
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.3
+Version: 2.4
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Rockers WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+Rockers WordPress theme, Copyright (C) 2013-2014 Alberto Ramacciotti.
 Rockers theme is licensed under the GPL.
 
-Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments, accessibility-ready 
+Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments 
 */
 
 html, 
@@ -133,8 +132,8 @@ label ~ .required,
 .prev-link a:visited,
 .next-link a, 
 .next-link a:visited,
-.blog-title a,
-.blog-title a:visited,
+.blog-header h1 a,
+.blog-header h1 a:visited,
 .post-meta .edit-link {
     display: block;
 }
@@ -142,10 +141,10 @@ label ~ .required,
 audio,
 canvas,
 video,
-.blog-title a,
-.blog-title a:visited,
-.blog-description a,
-.blog-description a:visited,
+.blog-header h1 a,
+.blog-header h1 a:visited,
+.blog-header h2 a,
+.blog-header h2 a:visited,
 .menu .nav-menu.toggled-on,
 .menu-toggle,
 .format-status .post-header header {
@@ -166,7 +165,7 @@ audio:not([controls]),
 .comments-area article header,
 .author-info,
 .attachment,
-.blog-title,
+.blog-header h1,
 .site,
 .wrapper {
     overflow: hidden;
@@ -213,7 +212,7 @@ table {
 caption,
 th,
 td,
-.blog-description,
+.blog-header h2,
 .menu-toggle,
 input[type="submit"],
 .post-password-required input[type=submit],
@@ -249,7 +248,7 @@ td,
     text-align: center;
 }
 
-.blog-title,
+.blog-header h1,
 .edit-link a, 
 .edit-link a:visited,
 .archive-title,
@@ -665,38 +664,38 @@ a:hover {
     margin: 0 0 48px 24px;
 }
 
-.blog-title,
-.blog-description {
+.blog-header h1,
+.blog-header h2 {
     text-align: center;
     color: #1f1d0e;
 }
 
-.blog-title a {
+.blog-header h1 a {
     font-weight: normal;
     color: #1f1d0e;
     border: 0;
 }
 
-.blog-title a:visited,
-.blog-description a:visited {
+.blog-header h1 a:visited,
+.blog-header h2 a:visited {
     font-weight: normal;
     border: 0;
     color: #555024;
     background-color: transparent;
 }
 
-.blog-title a:hover,
-.blog-description a:hover {
+.blog-header h1 a:hover,
+.blog-header h2 a:hover {
     color: #818181;
     background-color: transparent;
 }
 
-.blog-title {
+.blog-header h1 {
     font-size: 3em;
     line-height: 1.5;
 }
 
-.blog-description {
+.blog-header h2 {
     font-size: .9em;
     line-height: 1.5;
     letter-spacing: 1px;
@@ -1525,7 +1524,7 @@ label ~ .required {
         width: 28%;
     }
 
-    .blog-title {
+    .blog-header h1 {
         font-size: 3em;
         line-height: 1.5;
     }
@@ -1745,13 +1744,13 @@ label ~ .required {
         text-align: left;
     }
 
-    .blog-title {
+    .blog-header h1 {
         font-size: 21pt;
         line-height: 1;
         text-align: left;
     }
 
-    .blog-description {
+    .blog-header h2 {
         font-size: 10pt;
         text-align: left;
     }

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <section id="content">
+    <div id="content">
         <?php while ( have_posts() ) : the_post();
             get_template_part( 'content', get_post_format() ); ?>
             <nav class="single-pagination">
@@ -10,8 +10,8 @@
                 </ul>
             </nav>
             <?php if ( comments_open() || '0' != get_comments_number() )
-                comments_template( '', TRUE );
+                comments_template( '', true );
         endwhile; ?>
-    </section>
+    </div>
 <?php get_sidebar();
 get_footer(); ?>

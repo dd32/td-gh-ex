@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <div id="wrapper" class="content">
-        <section id="content">
+        <div id="content">
             <article id="post-0" class="post error404 no-results not-found">
                 <header class="post-header">
                     <h1 class="post-title"><?php _e( 'Error: page not found.', 'rockers' ); ?></h1>

@@ -1,6 +1,6 @@
 <?php 
 get_header(); ?>
-    <section id="content">
+    <div id="content">
         <?php while ( have_posts() ) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
                 <header class="post-header">

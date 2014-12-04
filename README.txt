@@ -1,13 +1,13 @@
 === rockers Theme ===
 Contributors: Alberto Ramacciotti ( http://ramacciotti.altervista.org )
-Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments, accessibility-ready
+Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
-Tested up to: 3.8.1
-Version: 2.3
+Tested up to: 4.0.1
+Version: 2.4
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Rockers WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+Rockers WordPress theme, Copyright (C) 2013-2014 Alberto Ramacciotti.
 Rockers theme is licensed under the GPL.
 
 Rockers is a responsive HTML5 WordPress theme.
@@ -31,15 +31,13 @@ do a backup of both filesystem and database.
 03. Activate through the 'Appearance -> Themes' menu in WordPress,
 04. Optional: customize the theme options like Widgets and Menu setup.
 
-More informations are available here: http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme
-
 == Frequently Asked Questions ==
 
 None yet
 
 == Screenshots ==
 
-http://ramacciotti.altervista.org/magazzino/wp-themes/rockers-screenshot.png
+None yet
 
 == Changelog ==
 
@@ -80,4 +78,7 @@ http://ramacciotti.altervista.org/magazzino/wp-themes/rockers-screenshot.png
 * Fixed bugs
 
 = 2.3 =
+* Fixed bugs
+
+= 2.4 =
 * Fixed bugs
