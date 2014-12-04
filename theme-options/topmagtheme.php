@@ -177,10 +177,43 @@ function top_mag_framework_page(){
                 <div class="explain">Select Post Slider Category</div>
                 <?php $top_mag_terms = get_terms('category'); ?>
                 <select class="of-input" name="topmag_theme_options[post-slider-category]">
-                    <option value="">--Select Category--</option>
-					<?php foreach($top_mag_terms as $top_mag_slider_term) { ?>
-                    <option value="<?php echo $top_mag_slider_term->name; ?>" <?php if(!empty($top_mag_options['post-slider-category']) && $top_mag_options['post-slider-category'] == $top_mag_slider_term->name) { ?> selected="selected" <?php } ?>><?php echo $top_mag_slider_term->name; ?></option>
-                    <?php } ?>
+                    
+				<?php 
+				$top_mag_args = array(
+				'meta_query' => array(
+									array(
+									'key' => '_thumbnail_id',
+									'compare' => 'EXISTS'
+										),
+									)
+								);  
+				$top_mag_post = new WP_Query( $top_mag_args );
+				$top_mag_cat_id=array();
+				while($top_mag_post->have_posts()){
+				$top_mag_post->the_post();
+				$top_mag_post_categories = wp_get_post_categories( get_the_id());   
+				$top_mag_cat_id[]=$top_mag_post_categories[0];
+				}
+				$top_mag_cat_id=array_unique($top_mag_cat_id);
+				$top_mag_args = array(
+				'orderby' => 'name',
+				'parent' => 0,
+				'include'=>$top_mag_cat_id
+				);
+				
+				$top_mag_categories = get_categories($top_mag_args); 
+			
+                  foreach ($top_mag_categories as $top_mag_category) {
+					  if($top_mag_category->term_id == $top_mag_options['post-category'])
+					  	$top_mag_selected="selected=selected";
+					  else
+					  	$top_mag_selected='';
+                    $top_mag_option = '<option value="'.$top_mag_category->term_id .'" '.$top_mag_selected.'>';
+                    $top_mag_option .= $top_mag_category->cat_name;
+                    $top_mag_option .= '</option>';
+                    echo $top_mag_option;
+                  }
+                 ?>
                 </select>
                 </div>                
               </div>
@@ -285,29 +318,12 @@ function top_mag_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2>Options saved successfully.</h2></div>
-<div class="newsletter">    
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <h2>Enter your email to join our mailing list and we'll keep you updated on new themes as they're
-            released and our exclusive special offers.</h2>          
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label>
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-          </div>
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value="">
-          </div>
-          <div class="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup--> 
-    </div>
+ <div class="newsletter"> 
+  <h1><?php _e('Subscribe with us','top-mag'); ?></h1>
+       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","top-mag"); ?>
+          
+        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','top-mag'); ?></a>
+        
+       </p> 
+</div>
 <?php } ?>

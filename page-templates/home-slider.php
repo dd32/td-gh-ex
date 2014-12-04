@@ -13,11 +13,10 @@ $top_mag_options = get_option( 'topmag_theme_options' );
 								'order'            => 'DESC',
 								'post_type'        => 'post',
 								'post_status'      => 'publish',
-								'category_name'    => esc_attr($top_mag_options['post-slider-category']),
-								'meta_query'  	   => array( array('key' => '_thumbnail_id','compare' => 'EXISTS' ),)
+								'cat'    =>  $top_mag_options['post-slider-category'],
 							);	
 	$top_mag_slider_post = new WP_Query( $top_mag_slider_post_args );	
-	if($top_mag_slider_post->max_num_pages != 0) {					
+        if($top_mag_slider_post->max_num_pages != 0) {					
   ?>                          
  <div class="col-md-12">
    <div id="slider1_container">

@@ -31,3 +31,7 @@ Version 1.4
  
 Version 1.4.1
  i) Fix Javascript error in admin menu area.
+
+Version 1.4.2
+i) Set responsive and css change.
+ii) Set pagination color in homepage.
