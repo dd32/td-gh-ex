@@ -35,3 +35,6 @@ Version 1.4.1
 Version 1.4.2
 i) Set responsive and css change.
 ii) Set pagination color in homepage.
+
+Version 1.4.3 (4th Dec 2014)
+i) Deleted an extra file
