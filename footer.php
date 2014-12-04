@@ -59,7 +59,7 @@ echo "All rights reserved";
 				<?php do_action( 'twentyten_credits' ); ?>
 
                 <?php if( $badeyes_settings['author_credits'] ) : ?>
-<div class="center"><p>This Accessible 2014 Child Theme created by<a href="http://www.badeyes.com">Badeyes Design &amp; Consulting</a></p></div>
+<div class="center"><p>This Accessible 2014 Child Theme created by <?php echo "<a href=\"http://www.badeyes.com\">Badeyes Design &amp; Consulting</a>"; ?></p></div>
 <?php endif; ?>
 
 			</div><!-- #site-generator -->

@@ -80,22 +80,22 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 <table class="form-table">
 <tr valign="top"><th scope="row"><label for="featured_title">Featured Heading Title</label></th>
 <td>
-<input id="featured_title" name="badeyes_options[featured_title]" type="text" value="<?php  esc_attr_e($settings['featured_title']); ?>" />
+<input id="featured_title" name="badeyes_options[featured_title]" type="text" value="<?php  echo esc_attr($settings['featured_title']); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row"><label for="blog_title">Blog Heading Title</label></th>
 <td>
-<input id="blog_title" name="badeyes_options[blog_title]" type="text" value="<?php  esc_attr_e($settings['blog_title']); ?>" />
+<input id="blog_title" name="badeyes_options[blog_title]" type="text" value="<?php  echo esc_attr($settings['blog_title']); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row"><label for="side_heading">Side Menu Heading</label></th>
 <td>
-<input id="side_heading" name="badeyes_options[side_heading]" type="text" value="<?php  esc_attr_e($settings['side_heading']); ?>" />
+<input id="side_heading" name="badeyes_options[side_heading]" type="text" value="<?php  echo esc_attr($settings['side_heading']); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row"><label for="side_nav">Side Menu Link(change the name of the skip link at top of page)</label></th>
 <td>
-<input id="side_nav" name="badeyes_options[side_nav]" type="text" value="<?php  esc_attr_e($settings['side_nav']); ?>" />
+<input id="side_nav" name="badeyes_options[side_nav]" type="text" value="<?php  echo esc_attr($settings['side_nav']); ?>" />
 </td>
 </tr>
 </table>
@@ -104,7 +104,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 
 <tr valign="top"><th scope="row"><label for="footer_copyright">Footer Copyright Notice</label></th>
 <td>
-<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  esc_attr_e($settings['footer_copyright']); ?> " />
+<input id="footer_copyright" name="badeyes_options[footer_copyright]" type="text" value="<?php  echo esc_attr($settings['footer_copyright']); ?> " />
 </td>
 </tr>
 <tr valign="top"><th scope="row">Author Credits</th>
@@ -120,7 +120,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 </form>
 <h1>Welcome to the Badeyes 2014 Child Theme</h1>
 <p>Important! This Theme requires that you have the TwentyFourteen Theme installed.</p>
-<p>If you haven't already done so you can see a mock up version of this site at <a href="http://www.badeyes.com/2014" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a>.</p> 
+<p>If you haven't already done so you can see a mock up version of this site at <?php echo"<a href=\"http://www.badeyes.com/2014\" target=\"_blank\">www.badeyes.com/2014/ (opens in new window/tab)</a>"; ?>  .</p> 
 <p>This Child Theme has been optimized for screen reader users but should still be understanbable by those who dont, see changes below.</p>
 <h2>Visual Editor</h2>
 <p>If you use a screen reader then you will need to go to your Profile page and check the box "Disable the visual Editor" so that you can create Posts properly, you will quickly find out that it does not work very well if you dont.</p> 
@@ -134,9 +134,9 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 <h2>Menus</h2>
 <p>This Child Theme has 3 possible Menus, there is a custom menu an Primary one, both are situated horizontally under the Header section and the Secondary one or "Side Menu" located in the left hand sidebar.</p>
 <p>Neither These menus nor their corresponding "Skip Links" will appear unless you create and manage them in the Menus area.</p> 
-<p>You can see examples at <a href="http://www.badeyes.com/2014/" target="_blank">www.badeyes.com/2014/ (opens in new window/tab)</a></p>
+<p>You can see examples at <?php echo "<a href=\"http://www.badeyes.com/2014/\" target=\"_blank\">www.badeyes.com/2014/ (opens in new window/tab)</a>"; ?></p>
 <h2>WordPress for Bad Eyes</h2>
-<p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <a href="http://www.wordpressforbadeyes.com" target=_blank">www.wordpressforbadeyes.com(opens in new window/tab</a>.</p>
+<p>If you are new to WordPress then you might find my book useful even if you dont use a screen reader you can buy it at <?php echo "<a href=\"http://www.wordpressforbadeyes.com\" target=\"_blank\">www.wordpressforbadeyes.com(opens in new window/tab</a"; ?>>.</p>
 
 </div>
 

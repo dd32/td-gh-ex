@@ -33,7 +33,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php require_once( get_stylesheet_directory() . '/stylearray.php' ); ?>
+<?php get_template_part( 'stylearray' ); ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
@@ -126,3 +126,4 @@ $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_al
 <?php endif; ?>
 </div>
 <div id="main" class="site-main">
+
