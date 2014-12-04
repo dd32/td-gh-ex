@@ -28,7 +28,7 @@
 				foreach($slides as $slide) {
 					$output .= '<li>';
 
-					$output .= '<div class="flex-image"><img src="' . $slide['image'] . '" alt="" ></div>';
+					$output .= '<div class="flex-image"><img src="' . esc_url( $slider['image'] ) . '" alt="" ></div>';
 					if ( $slide['description'] != '' ) {
 						$output .= '<div class="flex-caption">' . $slide['description'] . '</div>';
 					}
@@ -52,21 +52,21 @@
 				$output .= '<div class="row">';
 					if( isset( $abaris['service-icon-1'] ) && isset( $abaris['service-description-1'] ) ) {
 						$output .= '<div class="span4" id="service1">';
-						$output .= '<h3><i class="' . $abaris['service-icon-1'] . '"></i></h3>';
+						$output .= '<h3><i class="' . esc_attr( $abaris['service-icon-1'] ) . '"></i></h3>';
 						$output .= '<div class="service">' . $abaris['service-description-1'] . '</div>';
 						$output .= '</div><!-- .span4 -->';
 					}
 
 					if( isset( $abaris['service-icon-2'] ) && isset( $abaris['service-description-2'] ) ) {
 						$output .= '<div class="span4" id="service2">';
-						$output .= '<h3><i class="' . $abaris['service-icon-2'] . '"></i></h3>';
+						$output .= '<h3><i class="' . esc_attr( $abaris['service-icon-2'] ) . '"></i></h3>';
 						$output .= '<div class="service">' . $abaris['service-description-2'] . '</div>';
 						$output .= '</div><!-- .span4 -->';
 					}
 
 					if( isset( $abaris['service-icon-3'] ) && isset( $abaris['service-description-3'] ) ) {
 						$output .= '<div class="span4" id="service3">';
-						$output .= '<h3><i class="' . $abaris['service-icon-3'] . '"></i></h3>';
+						$output .= '<h3><i class="' . esc_attr( $abaris['service-icon-3'] ) . '"></i></h3>';
 						$output .= '<div class="service">' . $abaris['service-description-3'] . '</div>';
 						$output .= '</div><!-- .span4 -->';
 					}
@@ -111,9 +111,9 @@
 												$percentage = "percentage-{$i}";
 												$icon = "skill-icon-{$i}";
 												if( isset( $skill ) && isset( $abaris[$icon] ) && isset( $abaris[$percentage] ) && isset( $abaris[$skill] ) ) {
-													$output .= '<div class="skill-container"><i class="' . $abaris[$icon] . '"></i>';
+													$output .= '<div class="skill-container"><i class="' . esc_attr( $abaris[$icon] ) . '"></i>';
 													$output .= '<div class="skill">';
-													$output .= '<div class="skill-percentage percent' . $abaris[$percentage] .' start"><span class="circle"></span></div>';
+													$output .= '<div class="skill-percentage percent' . esc_attr( $abaris[$percentage] ) .' start"><span class="circle"></span></div>';
 													$output .= '<div class="skill-content">'  . $abaris[$skill] .' ' . $abaris[$percentage] . '%</div>';
 													$output .= '</div>';
 													$output .= '</div>';
@@ -170,7 +170,7 @@
 				foreach($slides as $slide) {
 					$output .= '<li>';
 
-					$output .= '<div class="flex-image"><img src="' . $slide['image'] . '" alt="" ></div>';
+					$output .= '<div class="flex-image"><img src="' . esc_url( $slider['image'] ) . '" alt="" ></div>';
 					if ( $slide['description'] != '' ) {
 						$output .= '<div class="flex-caption">' . $slide['description'] . '</div>';
 					}
@@ -195,7 +195,7 @@
 				foreach ($abaris_home['services'] as $service) {
 					if( isset( $service['icon'] ) && isset( $service['description'] ) ) {
 						$output .= '<div class="span4" id="service1">';
-						$output .= '<h3><i class="' . $service['icon'] . '"></i></h3>';
+						$output .= '<h3><i class="' . esc_attr( $service['icon'] ) . '"></i></h3>';
 						$output .= '<div class="service">' . $service['description'] . '</div>';
 						$output .= '</div><!-- .span4 -->';
 					}
@@ -224,7 +224,7 @@
 								<?php
 									$output = '';
 									if ( isset( $abaris_home['skill-heading'] ) ) {
-										$output .= '<h2><i class="el-icon-tags"></i>' . $abaris_home['skill-heading'] . '</h2>';
+										$output .= '<h2><i class="el-icon-tags"></i>' . esc_html( $abaris_home['skill-heading'] ) . '</h2>';
 									}
 
 									for ($i=1;$i<6;$i++) {
@@ -232,9 +232,9 @@
 										$percentage = "percentage-{$i}";
 										$icon = "skill-icon-{$i}";
 										if( isset( $skill ) && isset( $abaris_home[$icon] ) && isset( $abaris_home[$percentage] ) && isset( $abaris_home[$skill] ) ) {
-											$output .= '<div class="skill-container"><i class="' . $abaris_home[$icon] . '"></i>';
+											$output .= '<div class="skill-container"><i class="' . esc_attr( $abaris_home[$icon] ) . '"></i>';
 											$output .= '<div class="skill">';
-											$output .= '<div class="skill-percentage percent' . $abaris_home[$percentage] .' start"><span class="circle"></span></div>';
+											$output .= '<div class="skill-percentage percent' . esc_attr( $abaris_home[$percentage] ) .' start"><span class="circle"></span></div>';
 											$output .= '<div class="skill-content">'  . $abaris_home[$skill] .' ' . $abaris_home[$percentage] . '%</div>';
 											$output .= '</div>';
 											$output .= '</div>';

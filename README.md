@@ -45,4 +45,7 @@ Version 1.0.13
 
 Version 1.0.14
 1. Updating jquery plugin files
-1. Adding uncompressed versions of javascript files
+2. Adding uncompressed versions of javascript files
+
+Version 1.0.15
+1. Escaping Theme Options on output
