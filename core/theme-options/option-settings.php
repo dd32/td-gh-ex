@@ -645,7 +645,17 @@ $site ="http://www.weblizar.com" ;?>
 		<div class="section">
 			<h3><?php _e('Youtube Links:','weblizar');?></h3>
 			<input class="weblizar_inpute"  type="text" name="youtube_link" id="youtube_link" value="<?php if($wl_theme_options['youtube_link']!='') { echo esc_attr($wl_theme_options['youtube_link']); } ?>" >
+			<span class="explain"><?php  _e('Enter youtube link.','weblizar');?></span>
+		</div>
+		<div class="section">
+			<h3><?php _e('Google Plus Link:','weblizar');?></h3>
+			<input class="weblizar_inpute"  type="text" name="gplus" id="gplus" value="<?php if($wl_theme_options['gplus']!='') { echo esc_attr($wl_theme_options['gplus']); } ?>" >
 			<span class="explain"><?php  _e('Enter google plus link.','weblizar');?></span>
+		</div>
+		<div class="section">
+			<h3><?php _e('Instagram Links:','weblizar');?></h3>
+			<input class="weblizar_inpute"  type="text" name="instagram" id="instagram" value="<?php if($wl_theme_options['instagram']!='') { echo esc_attr($wl_theme_options['instagram']); } ?>" >
+			<span class="explain"><?php  _e('Enter Instagram link.','weblizar');?></span>
 		</div>
 		<div id="button_section">
 			<input type="hidden" value="1" id="weblizar_settings_save_social" name="weblizar_settings_save_social" />			

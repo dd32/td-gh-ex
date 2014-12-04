@@ -11,7 +11,9 @@ function weblizar_admin_menu_pannel() {
  /**
  * Weblizar Admin Menu CSS
  */
-function weblizar_admin_enqueue_script() {		
+function weblizar_admin_enqueue_script() {
+	
+	wp_enqueue_script('snow', WL_TEMPLATE_DIR_URI .'/js/snowstorm.js');
 	wp_enqueue_script('bootjs', WL_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');	
 	wp_enqueue_script('weblizar-tab-js', WL_TEMPLATE_DIR_URI .'/core/theme-options/js/option-js.js',array('media-upload', 'jquery-ui-sortable'));	
 	
@@ -25,48 +27,27 @@ function weblizar_admin_enqueue_script() {
 	wp_enqueue_style('pricing-table', WL_TEMPLATE_DIR_URI .'/core/theme-options/css/pricing-table.css');
 }
 /**
- * Weblizar Theme Option Form
- */
+* Weblizar Theme Option Form
+*/
 function weblizar_option_panal_function() { 
 $theme_name = "Enigma-Pro"; 
 $get_theme= "Get Our Premium Theme" ;
 $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>	
 	<div class="wrap" id="weblizar_wrap" >
 		<div class="wbl-notify" id="wbl-notify">
-			<div class="col-md-12">
-				<div class="col-md-2 col-sm-6">
-					<h1 style="text-decoration:underline;margin-bottom:40px;"><?php echo $theme_name; ?></h1>
-					<a style="margin-bottom:20px" href="<?php echo $purchase; ?>" target="blank" class="btn btn-success btn-lg"><?php _e('View Enigma Pro Demo','weblizar'); ?> </a>
-					<a href="<?php echo $purchase; ?>" target="_blank" class="btn btn-danger btn-lg" ><?php _e('Upgrade to Enigma Pro','weblizar'); ?></a>
-				</div>				
-				<div class="col-md-3 col-sm-6">
-				<h3 style="margin-top:30px;margin-left: 40px;text-decoration:underline;color:#fff;">Features</h3>
-					<ul style="padding-top:20px">
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','weblizar'); ?> </li>						
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('More than 13 Templates','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Different Types of Blog Templates','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('6 Types of Portfolio Templates','weblizar'); ?></li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('12 types Themes Colors Scheme','weblizar'); ?></li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Patterns Background','weblizar'); ?>   </li>
-						
-					</ul>
-				</div>
-				<div class="col-md-3 col-sm-6">					
-					<ul style="padding-top:47px">
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','weblizar'); ?>  </li>	
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Ultimate Portfolio layout with Isotope effect','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Rich Short codes','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Translation Ready','weblizar'); ?> </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Coming Soon Mode','weblizar'); ?>  </li>
-						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Extreme Gallery Design Layout','weblizar'); ?>  </li>
-					</ul>
-				</div>
-				<div class="col-md-4 col-sm-6">
-				<img class="enigma_img_responsive " src="<?php echo WL_TEMPLATE_DIR_URI .'/core/theme-options/images/Enig.png'?>">
-				
-				</div>	
+		<div style="background-color:#333;" class="weblizar_header_area">		
+			<div class="col-md-4 col-sm-6">
+				<img class="img-responsive" style="width:60%" src="<?php echo WL_TEMPLATE_DIR_URI .'/core/theme-options/images/Merry.png' ?>" scale="0">
 			</div>
+			<div class="col-md-4 col-sm-6">
+				<p style="font-size: 30px;padding-top: 26px;line-height: 1.3;" class=""><?php _e(' Hurray! Get 10% OFF in Christmas Seasons on all Premium Products','weblizar'); ?></p><p style="font-size: 30px;">Use "<strong>MERRYCHRISTMAS</strong>" Coupon Code </p>
+			</div>
+			<div class="col-md-4 col-sm-6">
+					<h1 style="text-decoration:underline;margin-bottom:40px;"><?php echo $theme_name; ?></h1>
+					<a href="<?php echo $purchase; ?>" target="blank" class="btn btn-success btn-lg"><?php _e('View Enigma Pro Demo','weblizar'); ?> </a>
+					<a href="<?php echo $purchase; ?>" target="_blank" class="btn btn-danger btn-lg" ><?php _e('Upgrade to Enigma Pro','weblizar'); ?></a>
+			</div>
+		</div>			
 		</div><h2><span></span></h2>
 		<div id="content_wrap">			
 			<div class="weblizar-header" >

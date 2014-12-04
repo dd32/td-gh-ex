@@ -1,14 +1,7 @@
-jQuery(document).ready(function() {
-	  /*  jQuery('.nav li.dropdown').hover(function() {
-		   jQuery(this).addClass('open');
-	   }, function() {
-		   jQuery(this).removeClass('open');
-	   });  */
-	   
-	   
-	   
+jQuery(document).ready(function() {		
+		jQuery('.nav li.dropdown').click(function() { jQuery(this).addClass('open');   }}); 
+		jQuery('ul.dropdown li.dropdown-submenu').click(function() { jQuery(this).addClass('open');	} });	
 	   var bMobile;  // true if in mobile mode
-
 		// Initiate event handlers
 		function init() {
 		  // .navbar-toggle is only visible in mobile mode
@@ -42,7 +35,4 @@ jQuery(document).ready(function() {
 		  init();
 		});
 		jQuery(window).resize(init);
-		jQuery('#parent_menu').click( function (){
-			jQuery('.dropdown-submenu > .dropdown-menu').show();		
-		});
-});
+	});  

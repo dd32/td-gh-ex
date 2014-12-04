@@ -7,7 +7,9 @@
 	define('WL_TEMPLATE_DIR', get_template_directory());
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 	
-	require( WL_TEMPLATE_DIR_CORE . '/menu/wlkr_bootstrap_navwalker.php' );
+	//require( WL_TEMPLATE_DIR_CORE . '/menu/wlkr_bootstrap_navwalker.php' );
+	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
+	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/flickr-widget.php' );
@@ -58,6 +60,8 @@
 			'fb_link' =>"#",
 			'linkedin_link' =>"#",
 			'youtube_link' =>"#",
+			'instagram' =>"#",
+			'gplus' =>"#",
 			
 			'email_id' => 'enigma@mymail.com',
 			'phone_no' => '0159753586',

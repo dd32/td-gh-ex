@@ -5,6 +5,11 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.6 [04/12/14]
+1. Snow Effects in Theme-Options.
+2. Two More SOcial Icons.
+3. iPad Drop-Down Fixed
+
 @Version: 1.5.1 [19/11/14]
 1. Minor FIX in blog file
 2. Log image to add css for mobile view
@@ -66,6 +71,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see .
 
 Enigma WordPress Theme bundles the following third-party resources:
+Snow-fall JS : http://www.schillmania.com/projects/snowstorm/license.txt
+Licensed under: BSD
+
 
 Bootstrap jQuery library, Copyright 2013  Twitter, Inc.
 Licensed under http://www.apache.org/licenses/LICENSE-2.0

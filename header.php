@@ -58,6 +58,10 @@
 					<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo esc_url($wl_theme_options['linkedin_link']); ?>"><i class="fa fa-linkedin"></i></a></li>
 					<?php } if($wl_theme_options['youtube_link']!='') { ?>
 					<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo esc_url($wl_theme_options['youtube_link']) ; ?>"><i class="fa fa-youtube"></i></a></li>
+	                <?php } if($wl_theme_options['gplus']!='') { ?>
+					<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="gplus"><a href="<?php echo esc_url($wl_theme_options['gplus']) ; ?>"><i class="fa fa-google-plus"></i></a></li>
+	                <?php } if($wl_theme_options['instagram']!='') { ?>
+					<li class="facebook" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($wl_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
 	                <?php } ?>
 					</ul>	
 				</div>
@@ -81,16 +85,15 @@
 					  <span class="icon-bar"></span>
 					</button>
 				</div>
+				<div id="menu" class="collapse navbar-collapse ">	
 				<?php wp_nav_menu( array(
-	            'menu'              => 'primary',
-	            'theme_location'    => 'primary',               
-				'container'         => 'div',
-				'container_class'   => 'collapse navbar-collapse',
-				'container_id'      => 'menu',
-				'menu_class'        => 'nav navbar-nav',
-				'fallback_cb'       => 'wlkr_bootstrap_navwalker::fallback',
-				'walker'            => new wlkr_bootstrap_navwalker())
-				); ?>
+						'theme_location' => 'primary',
+						'menu_class' => 'nav navbar-nav',
+						'fallback_cb' => 'weblizar_fallback_page_menu',
+						'walker' => new weblizar_nav_walker(),
+						)
+						);	?>				
+				</div>	
 			</nav>
 		</div>
 	</div>
