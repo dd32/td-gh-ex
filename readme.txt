@@ -64,6 +64,9 @@ iii)Fonts
 ===========
 http://fonts.googleapis.com/css?family=Lato
 They are under SIL Open Font.
+Istokbold and IstokWeb regular under SIL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Ubuntu under http://font.ubuntu.com/ufl/
+ElegantIcons are dual licensed under the GPL 2.0 and MIT
 	
 iv)Bootstrap files
 ===========
@@ -81,9 +84,20 @@ vii) slider js files
 jquery.nstSlider.js - https://github.com/lokku/jquery-nstslider licensed under MIT
 owl.carousel.js - https://github.com/OwlFonk/OwlCarousel licensed under MIT
 
+viii) html5 js file
+============
+we used are licensed under MIT/GPL2.
+Version - v3.7.0
+
+ix)
+ Item:        Elegant Icons 
+Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free 
+Licence:     Dual GPL and MIT 
+Licence URL: /licenses/license_(elegant_icons).txt 
 ---------------------------------------------------------
 TGM Plugin license and link
 ---------------------------------------------------------
 
  license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation
+

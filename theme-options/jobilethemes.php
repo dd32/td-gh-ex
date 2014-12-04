@@ -5,15 +5,14 @@ function jobiletheme_options_init(){
 add_action( 'admin_init', 'jobiletheme_options_init' );
 function theme_options_validate($input)
 {
-	$input['logo'] = esc_url_raw( $input['logo'] );
-	$input['favicon'] = esc_url_raw( $input['favicon'] );
-	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+	$input['logo'] = jobile_image_validation(esc_url_raw( $input['logo']));
+	$input['favicon'] = jobile_image_validation(esc_url_raw( $input['favicon'] ));
+	$input['footertext'] = esc_html( $input['footertext'] );
     return $input;
 }
 function jobiletheme_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'jobiletheme_framework', get_template_directory_uri(). '/theme-options/css/jobiletheme_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'jobiletheme_framework' );	
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/jobiletheme-custom.js', array( 'jquery' ) );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
@@ -127,9 +126,7 @@ function jobile_framework_page(){
 </div>
 <div class="save-options"><h2>Options saved successfully.</h2></div>
 <div class="newsletter"> 
-  <!-- Begin MailChimp Signup Form -->
   <h1>Subscribe with us</h1>
-  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://eepurl.com/SP2nP" target="_blank">Click here to join</a></p>
-  <!--End mc_embed_signup--> 
+  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank">Click here to join</a></p>  
 </div>
 <?php } ?>
