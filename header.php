@@ -34,7 +34,7 @@
             <?php }
 			if(!empty(get_bloginfo ( 'description' )))
 			{
-			    ?><h2><?php _e(get_bloginfo ( 'description' ),'besry'); ?></h2><?php 
+				?><h2><?php bloginfo( 'description' ); ?></h2><?php 
 			}
             ?>            
         </div>

@@ -50,3 +50,7 @@ vi) set respond.js in enqueue-files.php
 
 Version 1.3.4 (5 Dec 2014)
 i) Enqueued respond.min in functions.php
+
+Version 1.3.5 (5 Dec 2014)
+i) set respond.js in function.php
+ii) fix sanitization.

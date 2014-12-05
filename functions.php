@@ -128,6 +128,79 @@ function besty_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'besty_widgets_init' );
+
+function besty_add_ie_html5_shim () {
+	echo '<!--[if lt IE 9]>';
+	echo '<script src="' . get_template_directory_uri() . '/js/respond.min.js"></script>';
+	echo '<![endif]-->';
+}
+add_action('wp_head', 'besty_add_ie_html5_shim'); 
+
+add_filter( 'comment_form_default_fields', 'besty_comment_placeholders' );
+/**
+ * Change default fields, add placeholder and change type attributes.
+ *
+ * @param  array $fields
+ * @return array
+ */
+function besty_comment_placeholders( $fields )
+{
+    $fields['author'] = str_replace(
+        '<input',
+        '<input placeholder="'
+        /* Replace 'theme_text_domain' with your theme’s text domain.
+         * I use _x() here to make your translators life easier. :)
+         * See http://codex.wordpress.org/Function_Reference/_x
+         */
+            . _x(
+                'First Name',
+                'comment form placeholder',
+                'besty'
+                )
+            . '"',
+        $fields['author']
+    );
+    $fields['email'] = str_replace(
+        '<input',
+        '<input id="email" name="email" type="text" placeholder="'
+            . _x(
+                'Email Id',
+                'comment form placeholder',
+                'besty'
+                )
+            . '"',
+        $fields['email']
+        
+    );
+     $fields['url'] = str_replace(
+        '<input',
+        '<input id="url" name="url" type="text" placeholder="'
+            . _x(
+                'Website',
+                'comment form placeholder',
+                'besty'
+                )
+            . '"',
+        $fields['url']
+        
+    );
+    return $fields;
+}
+add_filter( 'comment_form_defaults', 'besty_textarea_insert' );
+function besty_textarea_insert( $fields )
+{
+        $fields['comment_field'] = str_replace(
+            '</textarea>',
+            ''. _x(
+                'Comment',
+                'comment form placeholder',
+                'besty'
+                )
+            . ''. '</textarea>',
+            $fields['comment_field']
+        );
+    return $fields;
+}
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
 
