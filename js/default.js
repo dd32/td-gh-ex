@@ -13,8 +13,7 @@ jQuery(document).ready(function(e) {
 	jQuery(window).resize(function(){	
    		jQuery('.mini-content').css({'min-height':(jQuery(document).height())});
 	});
-	/*jQuery('.enscroll-track').parent().css({'left':jQuery('.slider-content').width()+18});	*/
-	
+
 	jQuery('.slider-details-control').click(function() {
 		if (jQuery('.slider-content').is(':visible')) {			
 			jQuery('.slider-details-control').animate({left:'0%'});
@@ -48,12 +47,6 @@ jQuery(document).ready(function(e) {
 		$container.masonry();
 	});
 		
-	//alert(jQuery(window).height());
-	jQuery('.comment-form-author #author').attr("placeholder", "Name");
-	jQuery('.comment-form-email #email').attr("placeholder", "E-Mail");
-	jQuery('.comment-form-url #url').attr("placeholder", "Website");
-	jQuery('.comment-form-comment #comment').attr("placeholder", "Message");
-	jQuery('.form-submit #submit').val('Send');
 	
 	jQuery('.search-form .search-submit').val('');
 	
