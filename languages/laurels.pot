@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Laurels WordPress Theme V1.1.4\n"
-"POT-Creation-Date: 2014-12-04 19:55+0530\n"
-"PO-Revision-Date: 2014-12-04 19:55+0530\n"
+"Project-Id-Version: Laurels WordPress Theme V1.1.2\n"
+"POT-Creation-Date: 2014-11-29 10:59+0530\n"
+"PO-Revision-Date: 2014-11-29 11:00+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
 "Language: en_US\n"
@@ -71,63 +71,63 @@ msgstr ""
 msgid "Laurels"
 msgstr ""
 
-#: functions.php:27
+#: functions.php:29
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:59
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:87
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:99
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:101
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:108
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:110
 msgid "Footer Area One that appears on the right."
 msgstr ""
 
-#: functions.php:116
+#: functions.php:118
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:120
 msgid "Footer Area Two that appears on the center."
 msgstr ""
 
-#: functions.php:126
+#: functions.php:128
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:130
 msgid "Footer Area Three that appears on the left."
 msgstr ""
 
-#: functions.php:155
+#: functions.php:157
 msgctxt "comment form placeholder"
 msgid "First Name"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:168
 msgctxt "comment form placeholder"
 msgid "Email Id"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:184
 msgctxt "comment form placeholder"
 msgid "Comment"
 msgstr ""
@@ -775,16 +775,16 @@ msgstr ""
 msgid "Options saved successfully."
 msgstr ""
 
-#: theme-options/fasterthemes.php:375
+#: theme-options/fasterthemes.php:376
 msgid "Subscribe with us"
 msgstr ""
 
-#: theme-options/fasterthemes.php:376
+#: theme-options/fasterthemes.php:377
 msgid ""
 "Join our mailing list and we'll keep you updated on new themes as they're "
 "released and our exclusive special offers."
 msgstr ""
 
-#: theme-options/fasterthemes.php:377
+#: theme-options/fasterthemes.php:378
 msgid "Click here to join"
 msgstr ""

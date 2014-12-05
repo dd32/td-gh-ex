@@ -43,7 +43,6 @@ get_header(); ?>
                     </div>
                 </div>	
      <?php endwhile; ?> 
-     <!--Pagination Start-->
         <?php   if (function_exists('faster_pagination') ) {?>
             <?php faster_pagination('','1');?>
         <?php }else { ?>
@@ -54,7 +53,6 @@ get_header(); ?>
         </div>
         <?php } ?>
         <?php } ?>
-		<!--Pagination End-->
             </div>
             <?php get_sidebar(); ?>
     	</article>

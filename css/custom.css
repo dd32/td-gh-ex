@@ -55,8 +55,6 @@ img{
 	float:left;
 	width: 100%;	
 } 
-/**************************header *********************/
-
 .header_top{
 	background-color:#2b2b2b;
 	
@@ -231,7 +229,6 @@ margin: 0;
 .logo{
 	margin-top:10px;
 }
-/**************************laurels-home-page *********************/
 .color_txt{
 	color:#12bbd5;	
 }
@@ -537,9 +534,6 @@ top: 55px;
 right: -45px;
 top: 55px;
 }
-/**************************laurels-home-page complete *********************/
-
-/**************************page-aboutus start *********************/
 .aboutus-section1{
 	margin:40px 0 35px 0;	
 }
@@ -624,9 +618,6 @@ top: 55px;
 .our-strategy{
 	margin-top:40px;	
 }
-/**************************page-aboutus end *********************/
-
-/**************************page-ourteam start *********************/
 .our-team-section1{
 	margin-top:40px;		
 }
@@ -684,9 +675,6 @@ top: 55px;
 	background-color:#a7a7a7;
 	padding-top:2px;
 }
-/**************************page-ourteam end *********************/
-
-/**************************blog-page start *********************/
 .blog-page{
 	padding-left:0;
 	padding-right:35px;
@@ -979,8 +967,6 @@ a:hover,a:focus{
 	-webkit-transition: all ease-in-out 0.5s;    
 	transition: all ease-in-out 0.5s;
 }
-/**************************blog-page end *********************/
-/**************************contact-page start *********************/
 .gmap iframe{
 	width:100%;
 	margin:35px 0 20px;
@@ -1078,7 +1064,6 @@ a:hover,a:focus{
 	margin-top:18px;	
 	margin-left: 0;
 }
-/**************************contact-page end *********************/
 .services{
 	margin-top:45px;	
 }
@@ -1116,11 +1101,6 @@ a:hover,a:focus{
 	padding-left:15px;
 	text-transform: uppercase;
 }
-/**************************portfolio-page complete *********************/
-/*h1, h2, h3, h4, h5, h6, ul, p {
-    margin: 0;
-    padding: 0;
-} */
 .laurels_menu{
     padding: 30px 0 25px 0;
 }
@@ -1189,9 +1169,6 @@ a:hover,a:focus{
 .portfolio_btns{
     margin: 10px 0 35px;
 }
-/**************************portfolio-page complete *********************/
-
-/**************************portfolio-2 start *********************/
 .padding-left{
 	margin-left:28px;
 }
@@ -1211,18 +1188,12 @@ a:hover,a:focus{
 .owl-pagination{
 	display:none;
 }
-/**************************portfolio-2 end *********************/
-
-/**************************portfolio-3 start *********************/
 .portfolio-3{
 	margin-top:50px;	
 }
 .portfolio-3-btns{
 	margin:5px 0 40px 0;	
 }
-/**************************portfolio-3 end *********************/
-
-/**************************single-portfolio start *********************/
 .single-portfolio-article{
 	margin:50px 0 55px 0;
 }
@@ -1255,10 +1226,6 @@ a:hover,a:focus{
 	display: inline-block;
 	width: 100%;	
 }
-
-/**************************single-portfolio start *********************/
-
-/**************************footer start*********************/
 footer{
 	background-color:#121212;
 	
@@ -1376,6 +1343,3 @@ footer{
 .address{
 	margin-bottom:35px;	
 }
-/**************************footer complete*********************/
-
-

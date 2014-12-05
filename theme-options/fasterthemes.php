@@ -7,7 +7,7 @@ function laurels_options_validate($input)
 {
 	 $input['logo'] = laurels_image_validation(esc_url_raw( $input['logo']));
 	 $input['favicon'] = laurels_image_validation(esc_url_raw( $input['favicon']));
-	 $input['footertext'] = esc_html( $input['footertext'] );
+	 $input['footertext'] = sanitize_text_field( $input['footertext'] );
 	 	
 	 $input['facebook'] = esc_url_raw( $input['facebook'] );
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
@@ -21,13 +21,13 @@ function laurels_options_validate($input)
 	 $input['slidelink-'.$laurels_i] = esc_url( $input['slidelink-'.$laurels_i]);
 	 endfor;
 	 
-	 $input['home-title'] = esc_html( $input['home-title'] );
-	 $input['home-content'] = esc_html( $input['home-content'] );
+	 $input['home-title'] = sanitize_text_field( $input['home-title'] );
+	 $input['home-content'] = sanitize_text_field( $input['home-content'] );
 	 
 	 for($laurels_section_i=1; $laurels_section_i <=4 ;$laurels_section_i++ ):
 	 $input['home-icon-'.$laurels_section_i] = laurels_image_validation(esc_url_raw( $input['home-icon-'.$laurels_section_i]));
-	 $input['section-title-'.$laurels_section_i] = esc_html($input['section-title-'.$laurels_section_i]);
-	 $input['section-content-'.$laurels_section_i] = esc_html($input['section-content-'.$laurels_section_i]);
+	 $input['section-title-'.$laurels_section_i] = sanitize_text_field($input['section-title-'.$laurels_section_i]);
+	 $input['section-content-'.$laurels_section_i] = sanitize_text_field($input['section-content-'.$laurels_section_i]);
 	 endfor;
 	 
 	 
@@ -44,12 +44,10 @@ function laurels_image_validation($laurels_imge_url){
 }
 function laurels_framework_load_scripts(){
 	wp_enqueue_media();
-	wp_enqueue_style( 'laurels_framework', get_stylesheet_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'laurels_framework' );	
+	wp_enqueue_style( 'laurels_framework', get_template_directory_uri(). '/theme-options/css/fasterthemes_framework.css' ,false, '1.0.0');
 	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_stylesheet_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery' ) );
-	wp_enqueue_script( 'media-uploader', get_stylesheet_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
-	wp_enqueue_script('media-uploader');
+	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/fasterthemes-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
 }
 add_action( 'admin_enqueue_scripts', 'laurels_framework_load_scripts' );
 function laurels_framework_menu_settings() {
@@ -78,7 +76,7 @@ function laurels_framework_page(){
   <div class="fasterthemes-header">
     <div class="logo">
       <?php
-		$laurels_image=get_stylesheet_directory_uri().'/theme-options/images/logo.png';
+		$laurels_image=get_template_directory_uri().'/theme-options/images/logo.png';
 		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$laurels_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
@@ -350,11 +348,11 @@ function laurels_framework_page(){
           <!-------------- Social group ----------------->          
           <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/theme-options/images/laurels_logopro_features.png" class="fasterthemes-pro-logo" />
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/laurels_logopro_features.png" class="fasterthemes-pro-logo" />
               <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Laurels" target="_blank">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+			  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
-          	<img src="<?php echo get_stylesheet_directory_uri(); ?>/theme-options/images/laurels_pro_features.png" />
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/laurels_pro_features.png" />
           </div> 
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
@@ -363,8 +361,8 @@ function laurels_framework_page(){
 	<div class="fasterthemes-footer">
       	<ul>
         	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','laurels'); ?></a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/theme-options/images/fb.png" alr="..." /> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/theme-options/images/tw.png" alr="..."/> </a></li>
+            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png" alr="..." /> </a></li>
+            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png" alr="..."/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','laurels'); ?>" /></li>
         </ul>
     </div>

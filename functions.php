@@ -28,9 +28,9 @@ function laurels_setup() {
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
+	 * to output valid html5shiv.
 	 */
-	add_theme_support( 'html5', array(
+	add_theme_support( 'html5shiv', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
 	add_theme_support( 'custom-background', apply_filters( 'laurels_custom_background_args', array(
@@ -154,7 +154,7 @@ function laurels_comment_placeholders( $fields )
             . _x(
                 'First Name',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . '"',
         $fields['author']
@@ -165,7 +165,7 @@ function laurels_comment_placeholders( $fields )
             . _x(
                 'Email Id',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . '"',
         $fields['email']
@@ -181,7 +181,7 @@ function laurels_textarea_insert( $fields )
             ''. _x(
                 'Comment',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . ''. '</textarea>',
             $fields['comment_field']
@@ -189,14 +189,14 @@ function laurels_textarea_insert( $fields )
     return $fields;
 }
 
-
-/*
- * Enqueue scripts and styles for the front end.
- */
-function laurels_scripts() {
-	wp_enqueue_style( 'laurels-lato', laurels_font_url(), array(), null );
+// add ie conditional html5 shim to header
+function laurels_add_ie_html5_shim () {
+	echo '<!--[if lt IE 9]>';
+	echo '<script src="' . get_template_directory_uri() . '/js/html5shiv.js"></script>';
+	echo '<![endif]-->';
 }
-add_action( 'wp_enqueue_scripts', 'laurels_scripts' );	
+add_action('wp_head', 'laurels_add_ie_html5_shim'); 
+
 
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';

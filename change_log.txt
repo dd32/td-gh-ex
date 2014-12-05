@@ -29,3 +29,6 @@ i). fix Translation Ready.
 
 Version 1.1.4 (4-12-2014)
 i). Added bootstrap.js , html5.min.js , owl.carousel.js , owl.carousel.css , bootstrap.css
+
+Version 1.1.5 (5-12-2014)
+i). Added html5shiv.js , html5shiv.min.js , owl.carousel.min.js

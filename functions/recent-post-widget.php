@@ -67,7 +67,7 @@ echo $before_title . $laurels_title . $after_title;;
 					</a>
             <?php }else{ ?>
 					<a href="<?php echo esc_url(get_permalink());?>" title="Post Page"  class="pull-left"> 
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-not-available.jpg" class="media-object" /> 
+						<img src="<?php echo get_template_directory_uri(); ?>/images/img-not-available.jpg" class="media-object" /> 
 					</a>
             <?php } ?>
             
@@ -79,7 +79,7 @@ echo $before_title . $laurels_title . $after_title;;
 					</p>
   				   <p class="text-left clearfix">
 					   <span><?php comments_number( '0', '1', '%' ); ?>   <?php _e('Comments','laurels'); ?></span>
-					    <?php // the_time(get_option( 'date_format' )); ?>
+					    
 				   </p>
             </div>
             </div>

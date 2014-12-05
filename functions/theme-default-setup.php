@@ -46,7 +46,7 @@ function laurels_entry_meta() {
 	} elseif ( $laurels_category_list ) {
 		$laurels_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s  %2$s Comments: '.get_comments_number(), 'laurels'  );
 	} else {
-		$laurels_utility_text = __( 'Posted on : %3$s by : %4$s  %2$s Comments: '.get_comments_number(), 'multilaurelsshop' );
+		$laurels_utility_text = __( 'Posted on : %3$s by : %4$s  %2$s Comments: '.get_comments_number(), 'laurels' );
 	}
 
 	

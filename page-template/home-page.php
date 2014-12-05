@@ -41,10 +41,10 @@ $laurels_options = get_option( 'laurels_theme_options' ); ?>
              <!-- Controls -->
             <?php if($laurels_first_slide > 1){ ?>
             <a class="left carousel-control slider_button" href="#sidebar-carousel-1" data-slide="prev">
-              	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/prev.png" alt="...">
+              	<img src="<?php echo get_template_directory_uri(); ?>/images/prev.png" alt="...">
             </a>
             <a class="right carousel-control slider_button" href="#sidebar-carousel-1" data-slide="next">
-             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/next.png" alt="...">
+             	<img src="<?php echo get_template_directory_uri(); ?>/images/next.png" alt="...">
             </a>
             <?php } ?>
             
