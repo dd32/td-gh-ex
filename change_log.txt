@@ -46,3 +46,7 @@ ii) include non-minified  bootstrap.js
 iii) include non-minified  bootstrap.css
 iv) include .map file  bootstrap.css.map
 v) set sanitization. besty.php
+vi) set respond.js in enqueue-files.php
+
+Version 1.3.4 (5 Dec 2014)
+i) Enqueued respond.min in functions.php

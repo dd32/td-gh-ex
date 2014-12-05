@@ -10,7 +10,6 @@
 <!--[if IE 8]>
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
@@ -21,11 +20,8 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php if(!empty($besty_options['favicon'])) {?>
     <link rel="shortcut icon" href="<?php echo esc_url($besty_options['favicon']); ?>">
-    <?php } ?>
-    <!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
-    <?php wp_head(); ?>
+    <?php }
+    wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="content">
