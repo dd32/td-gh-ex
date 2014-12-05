@@ -1,0 +1,4 @@
+== Changelog ==
+
+= 1.0 - December 05, 2014 =
+* Initial release.
