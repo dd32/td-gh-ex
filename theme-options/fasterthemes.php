@@ -27,8 +27,8 @@ function mywiki_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'mywiki_framework_load_scripts' );
 function mywiki_framework_menu_settings() {
 	$menu = array(
-				'page_title' => __( 'FasterThemes Options', 'mywiki_framework'),
-				'menu_title' => __('Theme Options', 'mywiki_framework'),
+				'page_title' => __( 'FasterThemes Options', 'mywiki'),
+				'menu_title' => __('Theme Options', 'mywiki'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'mywiki_framework',
 				'callback' => 'mywiki_framework_page'
@@ -86,7 +86,7 @@ function mywiki_framework_page(){
             	<div class="explain"><?php _e('Size of logo should be exactly 117x43px for best results. Leave blank to use text heading.', 'mywiki') ?></div>
               	<div class="ft-control">
                 <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($mywiki_options['logo'])) { echo esc_url($mywiki_options['logo']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki') ?>" />
-                <input id="upload_image_button1" class="upload-button button" type="button" value="Upload" />
+                <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','mywiki') ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if(!empty($mywiki_options['logo'])) { echo "<img src='".esc_url($mywiki_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
@@ -100,7 +100,7 @@ function mywiki_framework_page(){
                 <div class="ft-control">
                   <input id="favicon-img" class="upload" type="text" name="faster_theme_options[favicon]" 
                             value="<?php if(!empty($mywiki_options['favicon'])) { echo esc_url($mywiki_options['favicon']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki') ?>" />
-                  <input id="upload_image_button11" class="upload-button button" type="button" value="Upload" />
+                  <input id="upload_image_button11" class="upload-button button" type="button" value="<?php _e('Upload','mywiki') ?>" />
                   <div class="screenshot" id="favicon-image">
                     <?php  if(!empty($mywiki_options['favicon'])) { echo "<img src='".esc_url($mywiki_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
@@ -182,11 +182,9 @@ function mywiki_framework_page(){
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','mywiki'); ?></h2></div>
 <div class="newsletter">    
-      <!-- Begin MailChimp Signup Form -->
      <h1><?php _e('Subscribe with us','mywiki'); ?></h1>
        <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","mywiki"); ?>
-          <a href="http://eepurl.com/SP2nP" target="_blank"><?php _e('Click here to join','mywiki'); ?></a>
+          <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join','mywiki'); ?></a>
        </p> 
-      <!--End mc_embed_signup--> 
     </div>
 <?php } ?>

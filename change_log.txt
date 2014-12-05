@@ -87,3 +87,6 @@ Version 2.2 (24th Nov. 2014)
 
 	i) Added Spanish Translation files.
 	ii) Fixed JS issues.
+	
+Version 2.2.1 (5th Dec. 2014)
+    i) A few small fixes.

@@ -327,7 +327,7 @@ function mywiki_custom_breadcrumbs() {
   
   $mywiki_showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $mywiki_delimiter = '&raquo;'; // delimiter between crumbs
-  $mywiki_home = 'Home'; // text for the 'Home' link
+  $mywiki_home = __('Home','mywiki'); // text for the 'Home' link
   $mywiki_showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $mywiki_before = '<span class="current">'; // tag before the current crumb
   $mywiki_after = '</span>'; // tag after the current crumb
