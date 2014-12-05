@@ -5,8 +5,8 @@ function besty_options_init(){
 add_action( 'admin_init', 'besty_options_init' );
 function besty_options_validate( $input ) {
  
-	 $input['logo'] = esc_url_raw( $input['logo'] );
-	 $input['favicon'] = esc_url_raw( $input['favicon'] );
+	 $input['logo'] = besty_image_validation(esc_url_raw( $input['logo']));
+	 $input['favicon'] = besty_image_validation(esc_url_raw( $input['favicon']));	 
 	 $input['footertext'] = sanitize_text_field( $input['footertext'] );	
 	 
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
@@ -14,16 +14,26 @@ function besty_options_validate( $input ) {
 	 $input['linkedin'] = esc_url_raw( $input['linkedin'] );
 	 $input['googleplus'] = esc_url_raw( $input['googleplus'] );
 	 	 	 
-	 $input['welcome-title'] = sanitize_text_field( $input['welcome-title'] );
-	 $input['welcome-img'] = esc_url_raw( $input['welcome-img'] ); 
-	 $input['welcome_details'] = sanitize_text_field($input['welcome_details']);
+	 $input['welcome-title'] = sanitize_text_field($input['welcome-title']);	
+	 $input['welcome-img'] = besty_image_validation(esc_url_raw( $input['welcome-img']));	 
+	 $input['welcome_details'] = wp_kses_post($input['welcome_details']);
 
     return $input;
 }
+ function besty_image_validation($besty_imge_url){
+$besty_filetype = wp_check_filetype($besty_imge_url);
+
+$besty_supported_image = array('gif','jpg','jpeg','png','ico');
+
+if (in_array($besty_filetype['ext'], $besty_supported_image)) {
+return $besty_imge_url;
+} else {
+return '';
+}
+}
 function besty_framework_load_scripts(){
 	wp_enqueue_media();
-	wp_enqueue_style( 'besty-framework', get_template_directory_uri(). '/theme-options/css/besty_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'besty-framework' );
+	wp_enqueue_style( 'besty-framework', get_template_directory_uri(). '/theme-options/css/besty_framework.css' ,false, '1.0.0');	
 
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'besty-options-custom', get_template_directory_uri(). '/theme-options/js/besty-custom.js', array('jquery'), '20120106', true );
@@ -217,13 +227,12 @@ function besty_framework_page(){
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','besty'); ?></h2></div>
 <div class="newsletter"> 
-  <!-- Begin MailChimp Signup Form -->
   <h1><?php _e('Subscribe with us','besty'); ?></h1>
        <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","besty"); ?>
           
-        <a href="http://eepurl.com/SP2nP" target="_blank"><?php _e('Click here to join.','besty'); ?></a>
+        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','besty'); ?></a>
         
        </p> 
-  <!--End mc_embed_signup--> 
+
 </div>
 <?php } ?>

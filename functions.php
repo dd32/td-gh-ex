@@ -16,13 +16,11 @@ function besty_setup() {
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', besty_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
-	// This theme uses wp_nav_menu() in two locations.
+	add_theme_support( 'automatic-feed-links' );	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'besty-full-width', 1038, 576, true );
-	add_image_size( 'besty-thumbnail', 374, 254, true );
-	// This theme uses wp_nav_menu() in two locations.
+	add_image_size( 'besty-thumbnail', 374, 254, true );	   
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'besty' ),
 	) );
@@ -47,13 +45,13 @@ function besty_setup() {
 endif; // besty_setup
 add_action( 'after_setup_theme', 'besty_setup' );
 /**
- * Register Lato Google font for besty.
+ * Register Istok Web Google font for besty.
  */
 function besty_font_url() {
 	$besty_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
+	 * by Istok Web, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Istok Web: on or off', 'besty' ) ) {
 		$besty_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );

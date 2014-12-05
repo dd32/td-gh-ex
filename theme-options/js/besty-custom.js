@@ -99,8 +99,10 @@ jQuery(document).ready(function($) {
 		});
 	})(jQuery);
 	//callback handler for form submit
+
 jQuery("#form-option").submit(function(e)
 {
+        tinyMCE.triggerSave();
 	var postData = jQuery(this).serializeArray();
 	var formURL = jQuery(this).attr("action");
 	jQuery.ajax(
@@ -125,7 +127,5 @@ jQuery("#form-option").submit(function(e)
 	
 	e.preventDefault(); //STOP default action
 	});
-	
-	jQuery("#ajaxform").submit(); //Submit the FORM
 });	
 
