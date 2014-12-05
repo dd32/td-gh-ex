@@ -1,0 +1,32 @@
+/**
+ * TopShop Customizer Custom Functionality
+ *
+ */
+( function( $ ) {
+    
+    $( window ).load( function() {
+        
+        var the_select_value = $( '#customize-control-kra-slider-type select' ).val();
+        topshop_customizer_slider_check( the_select_value );
+        
+        $( '#customize-control-kra-slider-type select' ).on( 'change', function() {
+            var select_value = $( this ).val();
+            topshop_customizer_slider_check( select_value );
+        } );
+        
+        function topshop_customizer_slider_check( select_value ) {
+            if ( select_value == 'kra-slider-default' ) {
+                $( '#customize-control-kra-meta-slider-shortcode' ).hide();
+                $( '#customize-control-kra-slider-cats' ).show();
+            } else if ( select_value == 'kra-meta-slider' ) {
+                $( '#customize-control-kra-slider-cats' ).hide();
+                $( '#customize-control-kra-meta-slider-shortcode' ).show();
+            } else {
+                $( '#customize-control-kra-slider-cats' ).hide();
+                $( '#customize-control-kra-meta-slider-shortcode' ).hide();
+            }
+        }
+        
+    } );
+    
+} )( jQuery );
