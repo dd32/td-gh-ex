@@ -14,7 +14,7 @@
 		<div class="site-info smallPart">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zenzero' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'zenzero' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'zenzero' ), 'Zenzero', '<a target="_blank" href="http://crestaproject.com" rel="designer" title="CrestaProject">CrestaProject WordPress Themes</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s.', 'zenzero' ), 'Zenzero', '<a target="_blank" href="http://crestaproject.com" rel="designer" title="CrestaProject">CrestaProject</a>' ); ?>
 		</div><!-- .site-info -->
 		<div class="site-social smallPart">
 		<?php 
