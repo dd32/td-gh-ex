@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-29 19:19+0200\n"
-"PO-Revision-Date: 2014-11-29 19:19+0200\n"
+"POT-Creation-Date: 2014-12-07 00:19+0200\n"
+"PO-Revision-Date: 2014-12-07 00:20+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,97 +20,86 @@ msgstr ""
 msgid "Error 404: Not Found"
 msgstr "Грешка 404: Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:5
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:13
 msgid "Please do not load this page directly. Thanks!"
 msgstr "Моля, не отваряйте директно тази страница."
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:8
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:16
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "Този пост е защитен с парола. Въведете Вашата парола за да видите коментарите."
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:14
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:52
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:51
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:46
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:22
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:61
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:60
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:55
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:64
 msgid "No Comments"
 msgstr "Няма коментари"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:15
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:23
 msgid "One Response"
 msgstr "Един отговор"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:16
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:24
 msgid "% Responses"
 msgstr "% Отговори"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:16
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:24
 msgid "to"
 msgstr "към"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:29
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:52
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:51
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:46
+#: D:\tishonator.com\themes\free_themes\fmuzz/comments.php:37
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:61
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:60
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:55
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:64
 msgid "Comments are closed."
 msgstr "Коментарите са затворени."
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:36
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:42
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:43
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:41
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:36
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:36
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:43
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:45
-msgid "Read More"
-msgstr "Прочетете повече"
-
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:52
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:51
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:46
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:61
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:60
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:55
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:64
 msgid "1 Comment"
 msgstr "1 Коментар"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:52
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:51
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:46
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:61
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:60
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:55
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page.php:18
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:46
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:53
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:55
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:64
 msgid "% Comments"
 msgstr "% Коментари"
 
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:62
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:68
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:69
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:67
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:62
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-aside.php:76
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-audio.php:82
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-gallery.php:83
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-image.php:81
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-link.php:76
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page-clean.php:13
 #: D:\tishonator.com\themes\free_themes\fmuzz/content-page.php:21
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:62
-#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:69
-#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:68
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-quote.php:76
+#: D:\tishonator.com\themes\free_themes\fmuzz/content-video.php:83
+#: D:\tishonator.com\themes\free_themes\fmuzz/content.php:82
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -1215,6 +1204,10 @@ msgstr "Следете нашите RSS емисии"
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/utilities.php:43
 msgid "Follow us on YouTube"
 msgstr "Следете ни в YouTube"
+
+#: D:\tishonator.com\themes\free_themes\fmuzz/inc/utilities.php:225
+msgid "Read More"
+msgstr "Прочетете повече"
 
 #: D:\tishonator.com\themes\free_themes\fmuzz/inc/utilities.php:238
 msgid "Read More..."

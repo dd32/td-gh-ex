@@ -13,7 +13,7 @@
 		<span class="author-icon">
 			<?php the_author_posts_link(); ?>
 		</span>
-		<?php if ('open' == $post->comment_status) : ?>
+		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 			<span class="comments-icon">
 				<?php comments_popup_link(__( 'No Comments', 'fmuzz' ), __( '1 Comment', 'fmuzz' ), __( '% Comments', 'fmuzz' ), '', __( 'Comments are closed.', 'fmuzz' )); ?>
 			</span>
