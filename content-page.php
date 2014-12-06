@@ -13,10 +13,12 @@
 		<span class="author-icon">
 			<?php the_author_posts_link(); ?>
 		</span>
-		<?php if ('open' == $post->comment_status) : ?>
-			<span class="comments-icon">
-				<?php comments_popup_link(__( 'No Comments', 'fkidd'), __( '1 Comment', 'fkidd'), __( '% Comments', 'fkidd'), '', __( 'Comments are closed.', 'fkidd')); ?>
-			</span>
+			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+
+				<span class="comments-icon">
+					<?php comments_popup_link(__( 'No Comments', 'fkidd' ), __( '1 Comment', 'fkidd' ), __( '% Comments', 'fkidd' ), '', __( 'Comments are closed.', 'fkidd' )); ?>
+				</span>
+
 		<?php endif; ?>
 		<?php edit_post_link( __( 'Edit', 'fkidd'), '<span class="edit-icon">', '</span>' ); ?>
 	</div>

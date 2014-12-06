@@ -111,4 +111,13 @@ function fkidd_wp_title_for_home( $title, $sep ) {
 }
 add_filter( 'wp_title', 'fkidd_wp_title_for_home', 10, 2 );
 
+function fkidd_post_classes( $classes ) {
+	if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) {
+		$classes[] = 'has-post-thumbnail';
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'fkidd_post_classes' );
+
 ?>
