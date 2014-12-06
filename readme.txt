@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.1 =
+* Customizer Fix.
+* Topbar widget area fix.
+* Author box fix.
+* Add comment link in full post view.
+* Moving page title and content back to home layout default, created to much confusion.
+* update Language files
+
 = Version: 2.3.0 =
 * prefix updates.
 

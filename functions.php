@@ -2,7 +2,11 @@
 /*-----------------------------------------------------------------------------------*/
 /* Include Theme Functions */
 /*-----------------------------------------------------------------------------------*/
-load_theme_textdomain('virtue', get_template_directory() . '/languages');
+
+function virtue_lang_setup() {
+	load_theme_textdomain('virtue', get_template_directory() . '/languages');
+}
+add_action( 'after_setup_theme', 'virtue_lang_setup' );
 require_once locate_template('/themeoptions/options/virtue_extension.php'); // Options framework extension
 require_once locate_template('/themeoptions/framework.php');        // Options framework
 require_once locate_template('/themeoptions/options.php');     		// Options framework
@@ -15,7 +19,6 @@ require_once locate_template('/lib/nav.php');            			// Custom nav modifi
 require_once locate_template('/lib/metaboxes.php');     			// Custom metaboxes
 require_once locate_template('/lib/gallery_metabox.php');     		// Custom metaboxes
 require_once locate_template('/lib/comments.php');        			// Custom comments modifications
-require_once locate_template('/lib/shortcodes.php');      			// Shortcodes
 require_once locate_template('/lib/widgets.php');         			// Sidebars and widgets
 require_once locate_template('/lib/aq_resizer.php');      			// Resize on the fly
 require_once locate_template('/lib/scripts.php');        			// Scripts and stylesheets

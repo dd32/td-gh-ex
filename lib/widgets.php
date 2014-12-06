@@ -50,8 +50,8 @@ function kadence_widgets_init() {
     'id'            => 'topbarright',
     'before_widget' => '',
     'after_widget'  => '',
-    'before_title'  => '',
-    'after_title'   => '',
+    'before_title'  => '<span class="topbar-widgettitle">',
+    'after_title'   => '</span>',
   ));
 }
   // Sidebars

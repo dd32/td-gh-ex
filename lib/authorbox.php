@@ -65,11 +65,23 @@ function virtue_author_box() { ?>
   <h5><?php _e('Latest posts from', 'virtue'); ?> <?php the_author_posts_link(); ?></h5>
   			<ul>
 			<?php
-            $args = array( 'numberposts' => '3' );
-            $recent_posts = wp_get_recent_posts( $args );
-            foreach( $recent_posts as $post ){
-			echo '<li><a href="' . get_permalink($post["ID"]) . '" title="'.$post["post_title"].'" ><i class="icon-caret-right"></i>  ' .   $post["post_title"].'</a><span class="recentpost-date"> - '. get_the_time('F j, Y', $post["ID"]) .'</span> </li> ';
-			} ?>
+          global $authordata, $post;
+          $temp = null; 
+          $wp_query = null; 
+          $wp_query = new WP_Query();
+          $wp_query->query(array(
+          'author' => $authordata->ID,
+          'posts_per_page'=>3));
+          $count =0;
+           if ( $wp_query ) : 
+          while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+
+          <li><a href="<?php the_permalink();?>"><?php the_title(); ?></a><span class="recentpost-date"> - <?php echo get_the_time('F j, Y'); ?></span></li>
+       <?php endwhile; 
+        endif; 
+        $wp_query = null; 
+          $wp_query = $temp;  // Reset
+        wp_reset_query(); ?>
 			</ul>
 	</div><!--Latest Post -->
   </div><!--Latest pane -->

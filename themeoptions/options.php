@@ -15,11 +15,28 @@ if ( !class_exists( "Redux_Framework_Virtue_config" ) ) {
                 public $theme;
                 public $ReduxFramework;
 
-                public function __construct( ) {
+               public function __construct() {
+
+                    if (!class_exists('ReduxFramework')) {
+                        return;
+                    }
+
+                    // This is needed. Bah WordPress bugs.  ;)
+                    if (  true == Redux_Helpers::isTheme(__FILE__) ) {
+                        $this->initSettings();
+                    } else {
+                        add_action('plugins_loaded', array($this, 'initSettings'), 10);
+                    }
+
+                }
+                public function initSettings() {
+
+                load_theme_textdomain('virtue', get_template_directory() . '/languages');
                   // Create the sections and fields
                   $this->setSections();
                   // Set the default arguments
                   $this->setArguments();
+                  //add_filter('redux/options/'.$this->args['opt_name'].'/compiler', array( $this, 'compiler_action' ), 10, 2);
                   $this->ReduxFramework = new ReduxFramework($this->sections, $this->args);
                 }
 
@@ -527,14 +544,14 @@ $this->sections[] = array(
             'options' => array(
             	"disabled" => array(
                     "placebo" => "placebo", //REQUIRED!
-                    "block_one"   => __("Page Title", 'virtue'),
-                    "block_four"  => __("Page Content", 'virtue'),
+                    "block_five"  => __("Latest Blog Posts", 'virtue'),
                     "block_six"   => __("Portfolio Carousel", 'virtue'),
                     "block_seven" => __("Icon Menu", 'virtue'),
                 ),
                 "enabled" => array(
                     "placebo" => "placebo", //REQUIRED!
-                    "block_five"  => __("Latest Blog Posts", 'virtue'),
+                    "block_one"   => __("Page Title", 'virtue'),
+                    "block_four"  => __("Page Content", 'virtue'),
                 ),
             ),
         ),
@@ -931,7 +948,7 @@ $this->sections[] = array(
     	array(
             'id'=>'header_bg_color',
             'type' => 'color',
-            'title' => __('Background Color', 'virtue'), 
+            'title' => __('Header Background Color', 'virtue'), 
             'default' => '',
             'validate' => 'color',
             'customizer' => true,

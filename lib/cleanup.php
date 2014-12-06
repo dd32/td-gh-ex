@@ -1,36 +1,4 @@
 <?php
-
-/**
- * Clean up language_attributes() used in <html> tag
- *
- * Change lang="en-US" to lang="en"
- * Remove dir="ltr"
- */
-function kadence_language_attributes() {
-  $attributes = array();
-  $output = '';
-
-  if (function_exists('is_rtl')) {
-    if (is_rtl() == 'rtl') {
-      $attributes[] = 'dir="rtl"';
-    }
-  }
-
-  $lang = get_bloginfo('language');
-
-  if ($lang && $lang !== 'en-US') {
-    $attributes[] = "lang=\"$lang\"";
-  } else {
-    $attributes[] = 'lang="en"';
-  }
-
-  $output = implode(' ', $attributes);
-  $output = apply_filters('kadence_language_attributes', $output);
-
-  return $output;
-}
-add_filter('language_attributes', 'kadence_language_attributes');
-
 /**
  * Manage output of wp_title()
  */
@@ -45,9 +13,8 @@ function kadence_wp_title($title) {
 }
 add_filter('wp_title', 'kadence_wp_title', 10);
 
-
 /**
- * Add and remove body_class() classes
+ * Add body_class() classes
  */
 function kadence_body_class($classes) {
   // Add post/page slug
@@ -55,18 +22,9 @@ function kadence_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
 
-  // Remove unnecessary classes
-  $home_id_class = 'page-id-' . get_option('page_on_front');
-  $remove_classes = array(
-    'page-template-default',
-    $home_id_class
-  );
-  $classes = array_diff($classes, $remove_classes);
-
   return $classes;
 }
 add_filter('body_class', 'kadence_body_class');
-
 
 /**
  * Add class="thumbnail" to attachment items
@@ -77,8 +35,6 @@ function kadence_attachment_link_class($html) {
   return $html;
 }
 add_filter('wp_get_attachment_link', 'kadence_attachment_link_class', 10, 1);
-
-
 
 /**
  * Add-rel-lighbox
@@ -95,7 +51,6 @@ function kadence_addlightboxrel($content) {
 
 /**
  * Add Bootstrap thumbnail styling to images with captions
- * Use <figure> and <figcaption>
  *
  * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
  */
@@ -150,26 +105,6 @@ function kadence_excerpt_more($more) {
 }
 add_filter('excerpt_length', 'kadence_excerpt_length');
 add_filter('excerpt_more', 'kadence_excerpt_more');
-
-/**
- * Remove unnecessary self-closing tags
- */
-function kadence_remove_self_closing_tags($input) {
-  return str_replace(' />', '>', $input);
-}
-add_filter('get_avatar',          'kadence_remove_self_closing_tags'); // <img />
-add_filter('comment_id_fields',   'kadence_remove_self_closing_tags'); // <input />
-add_filter('post_thumbnail_html', 'kadence_remove_self_closing_tags'); // <img />
-
-/**
- * Don't return the default description in the RSS feed if it hasn't been changed
- */
-function kadence_remove_default_description($bloginfo) {
-  $default_tagline = 'Just another WordPress site';
-  return ($bloginfo === $default_tagline) ? '' : $bloginfo;
-}
-add_filter('get_bloginfo_rss', 'kadence_remove_default_description');
-
 
 /**
  * Add additional classes onto widgets

@@ -78,6 +78,19 @@
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
       
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>
+        <?php
+  if ( comments_open() ) :
+    echo '<p class="kad_comments_link">';
+      comments_popup_link( 
+        __( 'Leave a Reply', 'virtue' ), 
+        __( '1 Comment', 'virtue' ), 
+        __( '% Comments', 'virtue' ),
+        'comments-link',
+        __( 'Comments are Closed', 'virtue' )
+    );
+    echo '</p>';
+  endif;
+  ?>
     </footer>
   </article>
 

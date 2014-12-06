@@ -37,7 +37,7 @@
         </div><!-- close col-md-6 --> 
         <div class="col-md-6 col-sm-6 kad-topbar-right">
           <div id="topbar-search" class="topbar-widget">
-            <?php if(kadence_display_topbar_widget()) { if(is_active_sidebar('topbarright')) { dynamic_sidebar(__('Topbar Widget', 'virtue')); } 
+            <?php if(kadence_display_topbar_widget()) { if(is_active_sidebar('topbarright')) { dynamic_sidebar('topbarright'); } 
               } else { if(kadence_display_top_search()) {get_search_form();} 
           } ?>
         </div>

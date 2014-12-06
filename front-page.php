@@ -1,24 +1,15 @@
-			<?php  global $virtue; ?>
-			<?php if(!empty($virtue['mobile_switch'])) { 
-				$mobile_slider = $virtue['mobile_switch'];
-			} else {
-				$mobile_slider = '';
-			}
-			if(isset($virtue['choose_slider'])) {
-				$slider = $virtue['choose_slider'];
-			} else {
-				$slider = 'mock_flex';
-			}
-			if(kadence_detect_mobile() && $mobile_slider == '1') {
+<?php  global $virtue; 
+			if(!empty($virtue['mobile_switch'])) {$mobile_slider = $virtue['mobile_switch']; } else { $mobile_slider = '';}
+			if(isset($virtue['choose_slider'])) {$slider = $virtue['choose_slider'];} else {$slider = 'mock_flex';}
+			if(wp_is_mobile() && $mobile_slider == '1') {
 		 		$slider = $virtue['choose_mobile_slider'];
-					 if ($slider == "flex") {
+				if ($slider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');
-				}
-				else if ($slider == "video") {
+				} else if ($slider == "video") {
 					get_template_part('templates/mobile_home/mobilevideo', 'block');
 				} 
-	} else { ?>
-    		<?php if ($slider == "flex") {
+			} else {
+				if ($slider == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 				}
 				else if ($slider == "thumbs") {
@@ -36,7 +27,7 @@
 				else if ($slider == "mock_flex") {
 					get_template_part('templates/home/mock', 'flex');
 				}
-}
+			}
 
 if(isset($virtue['homepage_layout']['enabled'])){
 		$i = 0;
