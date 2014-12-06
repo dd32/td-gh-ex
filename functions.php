@@ -111,4 +111,13 @@ function fgymm_wp_title_for_home( $title, $sep ) {
 }
 add_filter( 'wp_title', 'fgymm_wp_title_for_home', 10, 2 );
 
+function fgymm_post_classes( $classes ) {
+	if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) {
+		$classes[] = 'has-post-thumbnail';
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'fgymm_post_classes' );
+
 ?>

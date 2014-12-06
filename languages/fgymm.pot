@@ -1,11 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: fGymm Theme\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 21:12+0200\n"
-"POT-Creation-Date: 2014-11-28 21:12+0200\n"
-"Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
-"Language-Team: English\n"
+"POT-Creation-Date: 2014-12-07 00:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,62 +21,56 @@ msgstr ""
 msgid "Error 404: Not Found"
 msgstr ""
 
-#: comments.php:5
+#: comments.php:13
 msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
-#: comments.php:8
+#: comments.php:16
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments.php:14 content-aside.php:46 content-audio.php:52
-#: content-gallery.php:53 content-image.php:51 content-link.php:46
-#: content-page.php:18 content-quote.php:46 content-video.php:53
-#: content.php:55
+#: comments.php:22 content-aside.php:55 content-audio.php:61
+#: content-gallery.php:62 content-image.php:60 content-link.php:55
+#: content-page.php:20 content-quote.php:55 content-video.php:62
+#: content.php:64
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:15
+#: comments.php:23
 msgid "One Response"
 msgstr ""
 
-#: comments.php:16
+#: comments.php:24
 msgid "% Responses"
 msgstr ""
 
-#: comments.php:16
+#: comments.php:24
 msgid "to"
 msgstr ""
 
-#: comments.php:29 content-aside.php:46 content-audio.php:52
-#: content-gallery.php:53 content-image.php:51 content-link.php:46
-#: content-page.php:18 content-quote.php:46 content-video.php:53
-#: content.php:55
+#: comments.php:37 content-aside.php:55 content-audio.php:61
+#: content-gallery.php:62 content-image.php:60 content-link.php:55
+#: content-page.php:20 content-quote.php:55 content-video.php:62
+#: content.php:64
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:36 content-audio.php:42 content-gallery.php:43
-#: content-image.php:41 content-link.php:36 content-quote.php:36
-#: content-video.php:43 content.php:45 inc/utilities.php:237
-msgid "Read More"
-msgstr ""
-
-#: content-aside.php:46 content-audio.php:52 content-gallery.php:53
-#: content-image.php:51 content-link.php:46 content-page.php:18
-#: content-quote.php:46 content-video.php:53 content.php:55
+#: content-aside.php:55 content-audio.php:61 content-gallery.php:62
+#: content-image.php:60 content-link.php:55 content-page.php:20
+#: content-quote.php:55 content-video.php:62 content.php:64
 msgid "1 Comment"
 msgstr ""
 
-#: content-aside.php:46 content-audio.php:52 content-gallery.php:53
-#: content-image.php:51 content-link.php:46 content-page.php:18
-#: content-quote.php:46 content-video.php:53 content.php:55
+#: content-aside.php:55 content-audio.php:61 content-gallery.php:62
+#: content-image.php:60 content-link.php:55 content-page.php:20
+#: content-quote.php:55 content-video.php:62 content.php:64
 msgid "% Comments"
 msgstr ""
 
-#: content-aside.php:62 content-audio.php:68 content-gallery.php:69
-#: content-image.php:67 content-link.php:62 content-page-clean.php:13
-#: content-page.php:21 content-quote.php:62 content-video.php:69
-#: content.php:68
+#: content-aside.php:76 content-audio.php:82 content-gallery.php:83
+#: content-image.php:81 content-link.php:76 content-page-clean.php:13
+#: content-page.php:23 content-quote.php:76 content-video.php:83
+#: content.php:82
 msgid "Edit"
 msgstr ""
 
@@ -1149,6 +1150,10 @@ msgstr ""
 
 #: inc/utilities.php:43
 msgid "Follow us on YouTube"
+msgstr ""
+
+#: inc/utilities.php:237
+msgid "Read More"
 msgstr ""
 
 #: inc/utilities.php:250

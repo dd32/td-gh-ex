@@ -13,11 +13,15 @@
 		<span class="author-icon">
 			<?php the_author_posts_link(); ?>
 		</span>
-		<?php if ('open' == $post->comment_status) : ?>
+		<?php if ( ! post_password_required() ) : ?>
+
+	<?php if ('open' == $post->comment_status) : ?>
 			<span class="comments-icon">
 				<?php comments_popup_link(__( 'No Comments', 'fgymm' ), __( '1 Comment', 'fgymm' ), __( '% Comments', 'fgymm' ), '', __( 'Comments are closed.', 'fgymm' )); ?>
 			</span>
 		<?php endif; ?>
 		<?php edit_post_link( __( 'Edit', 'fgymm' ), '<span class="edit-icon">', '</span>' ); ?>
+
+<?php endif; ?>
 	</div>
 </article>
