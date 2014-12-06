@@ -27,7 +27,7 @@ Template Name: Blog Grid
 					?>
       <div class="main <?php echo kadence_main_class();?>" role="main">
       	<?php get_template_part('templates/content', 'page'); ?>
-      	<div id="kad-blog-grid" class="rowtight" data-fade-in="<?php echo $animate;?>">
+      	<div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".b_item">
       		<?php   $temp = $wp_query; 
 					$wp_query = null; 
 					$wp_query = new WP_Query();
@@ -62,7 +62,6 @@ Template Name: Blog Grid
 				<?php endif; ?>
 				<?php $wp_query = null; $wp_query = $temp;  // Reset ?>
 				<?php wp_reset_query(); ?>
-<script type="text/javascript">jQuery( window ).load(function () {var $container = jQuery('#kad-blog-grid');$container.masonry({itemSelector: '.b_item'});});</script>
 </div><!-- /.main -->
 <?php get_sidebar(); ?>
       </div><!-- /.row-->

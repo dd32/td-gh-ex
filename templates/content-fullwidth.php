@@ -84,7 +84,7 @@
                     <?php } elseif($postsummery == 'slider_landscape') {
                             $textsize = 'col-md-12'; ?>
                             <div class="col-md-12">
-                                <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px;">
+                                <div class="flexslider kt-flexslider loading" style="max-width:<?php echo $slidewidth;?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                                     <ul class="slides">
                                       <?php
                                         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -106,25 +106,12 @@
                                             } ?>                                   
                                     </ul>
                                 </div> <!--Flex Slides-->
-                                <script type="text/javascript">
-                                  jQuery(window).load(function () {
-                                    jQuery('.flexslider').flexslider({
-                                      animation: "fade",
-                                      animationSpeed: 400,
-                                      slideshow: true,
-                                      slideshowSpeed: 7000,
-                                      before: function(slider) {
-                                        slider.removeClass('loading');
-                                        }  
-                                    });
-                                  });
-                                </script>
                             </div>
 
                     <?php } elseif($postsummery == 'slider_portrait') { ?>
                              <?php $textsize = 'col-md-7'; ?>
                               <div class="col-md-5">
-                                  <div class="flexslider loading">
+                                  <div class="flexslider kt-flexslider loading" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                                       <ul class="slides">
                                          <?php
                                         $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -146,19 +133,6 @@
                                             } ?>           
                                       </ul>
                                 </div> <!--Flex Slides-->
-                                <script type="text/javascript">
-                                    jQuery(window).load(function () {
-                                        jQuery('.flexslider').flexslider({
-                                          animation: "fade",
-                                          animationSpeed: 400,
-                                          slideshow: true,
-                                          slideshowSpeed: 7000,
-                                          before: function(slider) {
-                                            slider.removeClass('loading');
-                                          }  
-                                        });
-                                      });
-                                </script>
                             </div>
                     <?php } elseif($postsummery == 'video') {
                            $textsize = 'col-md-12'; ?>

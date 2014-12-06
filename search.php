@@ -15,7 +15,7 @@
         if ($blog_grid_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $postcolumn = '2';} 
         else if ($blog_grid_column == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $postcolumn = '3';} 
         else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $postcolumn = '4';} ?>
-    <div id="kad-blog-grid" class="rowtight">
+    <div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".search_item">
         <?php while (have_posts()) : the_post(); ?>
           <div class="<?php echo $itemsize;?> search_item">
           <?php get_template_part('templates/content', 'searchresults'); ?>
@@ -34,7 +34,6 @@
               </nav>
             <?php } ?> 
         <?php endif; ?>
-          <script type="text/javascript">jQuery( window ).load(function () {var $container = jQuery('#kad-blog-grid');$container.masonry({itemSelector: '.search_item'});});</script>
 </div><!-- /.main -->
 <?php get_sidebar(); ?>
       </div><!-- /.row-->

@@ -94,6 +94,31 @@ jQuery(document).ready(function ($) {
 		}
 		kad_fullwidth_panel();
 	$(window).on("debouncedresize", function( event ) {kad_fullwidth_panel();});
+
+	 //init Flexslider
+     $('.kt-flexslider').each(function(){
+	 	var flex_speed = $(this).data('flex-speed'),
+		flex_animation = $(this).data('flex-animation'),
+		flex_animation_speed = $(this).data('flex-anim-speed'),
+		flex_auto = $(this).data('flex-auto');
+	 	$(this).flexslider({
+	 		animation:flex_animation,
+			animationSpeed: flex_animation_speed,
+			slideshow: flex_auto,
+			slideshowSpeed: flex_speed,
+			start: function ( slider ) {
+				slider.removeClass( 'loading' );
+			}
+		});
+    });
+	//init masonry
+	$('.init-masonry').each(function(){
+    	var masonrycontainer = $(this),
+    	masonry_selector = $(this).data('masonry-selector');
+    	masonrycontainer.imagesLoadedn( function(){
+			masonrycontainer.masonry({itemSelector: masonry_selector});
+		});
+	});
 });
 if( isMobile.any() ) {
 jQuery(document).ready(function ($) {

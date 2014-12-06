@@ -1,18 +1,12 @@
 	<?php get_header(); ?>
 <?php global $pinnacle; 
-	$detect = new Mobile_Detect_pinnacle; if($detect->isMobile() && !$detect->isTablet() && $pinnacle['mobile_switch'] == '1') {
+			if(isset($pinnacle['mobile_switch']) && $pinnacle['mobile_switch'] == '1') {
 		 		$m_home_header = $pinnacle['choose_mobile_slider'];
-				if ($m_home_header == "flex") {
-					get_template_part('templates/mobile_home/mobileflex', 'slider');
-				}
-				else if ($m_home_header == "pagetitle") {
-					get_template_part('templates/mobile_home/page-title', 'mhome');
-				}
-				else if ($m_home_header == "video") {
-					get_template_part('templates/mobile_home/mobilevideo', 'block');
-				}
-			} else { 
-			  $home_header = $pinnacle['choose_home_header'];
+				if ($m_home_header == "flex") {get_template_part('templates/mobile_home/mobileflex', 'slider');}
+				else if ($m_home_header == "pagetitle") {get_template_part('templates/mobile_home/page-title', 'mhome');}
+				else if ($m_home_header == "video") {get_template_part('templates/mobile_home/mobilevideo', 'block');}
+			}
+			$home_header = $pinnacle['choose_home_header'];
 				if ($home_header == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 				}
@@ -28,19 +22,15 @@
 				else if ($home_header == "pagetitle") {
 					get_template_part('templates/home/page-title', 'home');
 				}
-}?>
+				?>
     <div id="content" class="container homepagecontent">
    		<div class="row">
           <div class="main <?php echo kadence_main_class(); ?>" role="main">
 
       	<?php if(isset($pinnacle['homepage_layout']['enabled'])) { $layout = $pinnacle['homepage_layout']['enabled']; } else {$layout = array("block_two" => "block_two", "block_five" => "block_five");}
-
 				if ($layout):
-
 				foreach ($layout as $key=>$value) {
-
 				    switch($key) {
-
 				    	case 'block_one':?>
 								
 									<?php get_template_part('templates/home/callto', 'action'); ?>
@@ -81,15 +71,14 @@
 						                endwhile;
 						             }
 						      } else if($summary == 'grid') { ?>
-						                <div id="kad-blog-grid" class="rowtight">
+						                <div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".b_item">
 						                <?php while (have_posts()) : the_post(); ?>
 						                <div class="<?php echo $itemsize;?> b_item kad_blog_item">
 						                 <?php  get_template_part('templates/content', 'post-grid'); ?>
 						                </div>
 						                <?php endwhile; ?>
 						                </div>
-						                <script type="text/javascript">jQuery( window ).load(function () {var $container = jQuery('#kad-blog-grid');$container.masonry({itemSelector: '.b_item'});});</script>
-						                 <?php
+						               <?php
 						     } else {
 						          if($display_sidebar){
 						               while (have_posts()) : the_post();

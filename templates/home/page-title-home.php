@@ -37,7 +37,7 @@
         		$bsub = str_replace('[site-tagline]',get_bloginfo('description'),$bsub);
         	}
 ?>
-<div id="pageheader" class="titleclass home-title-class" style="<?php echo $bg_style.' '.$bg_repeat.' '.$bg_size.' '.$bg_position.' '.$bg_attachment; ?>">
+<div id="pageheader" class="titleclass kad-desktop-slider home-title-class" style="<?php echo $bg_style.' '.$bg_repeat.' '.$bg_size.' '.$bg_position.' '.$bg_attachment; ?>">
 <div class="header-color-overlay"></div>
 	<div class="container">
 		<div class="page-header home-page-header" style="<?php echo $tpadding.' '.$bpadding.' '.$talign;?>">

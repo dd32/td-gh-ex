@@ -34,8 +34,8 @@
 
     if ( ! class_exists( 'ReduxFrameworkInstances' ) ) {
         // Instance Container
-        include_once( dirname( __FILE__ ) . '/inc/class.redux_instances.php' );
-        include_once( dirname( __FILE__ ) . '/inc/lib.redux_instances.php' );
+        require_once( dirname( __FILE__ ) . '/inc/class.redux_instances.php' );
+        require_once( dirname( __FILE__ ) . '/inc/lib.redux_instances.php' );
 
     }
 
@@ -47,12 +47,12 @@
     if ( ! class_exists( 'ReduxFramework' ) ) {
 
         // General helper functions
-        include_once( dirname( __FILE__ ) . '/inc/class.redux_helpers.php' );
+        require_once( dirname( __FILE__ ) . '/inc/class.redux_helpers.php' );
 
         // General functions
-        include_once( dirname( __FILE__ ) . '/inc/class.redux_functions.php' );
+        require_once( dirname( __FILE__ ) . '/inc/class.redux_functions.php' );
 
-        include_once( dirname( __FILE__ ) . '/inc/class.redux_filesystem.php' );
+        require_once( dirname( __FILE__ ) . '/inc/class.redux_filesystem.php' );
 
         /**
          * Main ReduxFramework class
@@ -64,8 +64,8 @@
             // ATTENTION DEVS
             // Please update the build number with each push, no matter how small.
             // This will make for easier support when we ask users what version they are using.
-            public static $_version = '3.3.7.10';
-            public static $_dir;
+            public static $_version = '3.3.9.15';
+            public static $_dir; 
             public static $_url;
             public static $_upload_dir;
             public static $_upload_url;
@@ -76,9 +76,11 @@
 
             public static function init() {
                 $dir = Redux_Helpers::cleanFilePath( dirname( __FILE__ ) );
+
                 // Windows-proof constants: replace backward by forward slashes. Thanks to: @peterbouwmeester
                 self::$_dir           = trailingslashit( $dir );
                 self::$wp_content_url = trailingslashit( Redux_Helpers::cleanFilePath( ( is_ssl() ? str_replace( 'http://', 'https://', WP_CONTENT_URL ) : WP_CONTENT_URL ) ) );
+
                 // See if Redux is a plugin or not
                 if ( strpos( Redux_Helpers::cleanFilePath( __FILE__ ), Redux_Helpers::cleanFilePath( get_stylesheet_directory() ) ) !== false || strpos( Redux_Helpers::cleanFilePath( __FILE__ ), Redux_Helpers::cleanFilePath( get_template_directory_uri() ) ) !== false || strpos( Redux_Helpers::cleanFilePath( __FILE__ ), Redux_Helpers::cleanFilePath( WP_CONTENT_DIR . '/themes/' ) ) !== false ) {
                     self::$_is_plugin = false;
@@ -88,6 +90,7 @@
                         if ( ! function_exists( 'get_plugins' ) ) {
                             require_once ABSPATH . 'wp-admin/includes/plugin.php';
                         }
+
                         $is_plugin = false;
                         foreach ( get_plugins() as $key => $value ) {
                             if ( strpos( $key, 'redux-framework.php' ) !== false ) {
@@ -100,6 +103,7 @@
                         }
                     }
                 }
+
                 if ( self::$_is_plugin == true || self::$_as_plugin == true ) {
                     self::$_url = plugin_dir_url( __FILE__ );
                 } else {
@@ -116,6 +120,11 @@
                         self::$_url     = trailingslashit( self::$wp_content_url . $relative_url );
                     }
                 }
+
+                self::$_url       = apply_filters( "redux/_url", self::$_url );
+                self::$_dir       = apply_filters( "redux/_dir", self::$_dir );
+                self::$_is_plugin = apply_filters( "redux/_is_plugin", self::$_is_plugin );
+
             }
 
             // ::init()
@@ -152,6 +161,7 @@
             public $typography = null; //values to generate google font CSS
             public $import_export = null;
             public $debug = null;
+            public $no_panel = array(); // Fields that are not visible in the panel
             private $show_hints = false;
             private $hidden_perm_fields = array(); //  Hidden fields specified by 'permissions' arg.
             private $hidden_perm_sections = array(); //  Hidden sections specified by 'permissions' arg.
@@ -279,7 +289,6 @@
                      *
                      * @param object $this ReduxFramework
                      */
-
                     do_action( 'redux/construct', $this );
 
                     $this->filesystem = new Redux_Filesystem( $this );
@@ -299,8 +308,6 @@
                     // Grab database values
                     $this->get_options();
 
-                    // Tracking removed
-
                     // Set option with defaults
                     //add_action( 'init', array( &$this, '_set_default_options' ), 101 );
 
@@ -312,7 +319,7 @@
 //
 //                        if ( isset($_GET['page']) && ($_GET['page'] == 'redux-about' || $_GET['page'] == 'redux-getting-started' || $_GET['page'] == 'redux-credits' || $_GET['page'] == 'redux-changelog' )) {
 //                            //logconsole('inc');
-//                            include_once( dirname( __FILE__ ) . '/inc/welcome.php' );
+//                            require_once( dirname( __FILE__ ) . '/inc/welcome.php' );
 //                        } else {
 //                            //logconsole('compare');
 //                            if (isset($_GET['page']) && $_GET['page'] == $this->args['page_slug']) {
@@ -348,16 +355,6 @@
                     // Register setting
                     add_action( 'admin_init', array( $this, '_register_settings' ) );
 
-                    // Display admin notices in dev_mode
-                    if ( true == $this->args['dev_mode'] ) {
-                        include_once( self::$_dir . 'inc/debug.php' );
-                        $this->debug = new ReduxDebugObject( $this );
-
-                        if ( true == $this->args['update_notice'] ) {
-                            add_action( 'admin_init', array( $this, '_update_check' ) );
-                        }
-                    }
-
                     // Display admin notices
                     add_action( 'admin_notices', array( $this, '_admin_notices' ) );
 
@@ -370,25 +367,23 @@
                     }
 
                     // Output dynamic CSS
-                    add_action( 'wp_head', array( &$this, '_output_css' ), 150 );
                     // Frontend: Maybe enqueue dynamic CSS and Google fonts
-// if( in_array( 'frontend', $this->args['output_location'] ) ) {
-// add_action( 'wp_head', array( &$this, '_output_css' ), 150 );
-// add_action( 'wp_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
-// }
+                    if ( empty( $this->args['output_location'] ) || in_array( 'frontend', $this->args['output_location'] ) ) {
+                        add_action( 'wp_head', array( &$this, '_output_css' ), 150 );
+                        add_action( 'wp_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
+                    }
 
                     // Login page: Maybe enqueue dynamic CSS and Google fonts
-// if( in_array( 'login', $this->args['output_location'] ) ) {
-// add_action( 'login_head', array( &$this, '_output_css' ), 150 );
-// add_action( 'login_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
-// }
+                    if ( in_array( 'login', $this->args['output_location'] ) ) {
+                        add_action( 'login_head', array( &$this, '_output_css' ), 150 );
+                        add_action( 'login_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
+                    }
 
-                    // Enqueue dynamic CSS and Google fonts
-                    add_action( 'wp_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
-// if( in_array( 'admin', $this->args['output_location'] ) ) {
-// add_action( 'admin_head', array( &$this, '_output_css' ), 150 );
-// add_action( 'admin_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
-//}
+                    // Admin area: Maybe enqueue dynamic CSS and Google fonts
+                    if ( in_array( 'admin', $this->args['output_location'] ) ) {
+                        add_action( 'admin_head', array( &$this, '_output_css' ), 150 );
+                        add_action( 'admin_enqueue_scripts', array( &$this, '_enqueue_output' ), 150 );
+                    }
 
 
                     add_action( 'wp_print_scripts', array( $this, 'vc_fixes' ), 100 );
@@ -406,9 +401,6 @@
 
 
                     }
-
-                    // mod_rewrite check
-                    //Redux_Functions::modRewriteCheck();
                 }
 
                 /**
@@ -448,7 +440,7 @@
                     'page_title'                => '',
                     // option page title
                     'page_slug'                 => '_options',
-                    'page_permissions'          => 'edit_theme_options',
+                    'page_permissions'          => 'manage_options',
                     'menu_type'                 => 'menu',
                     // ('menu'|'submenu')
                     'page_parent'               => 'themes.php',
@@ -482,6 +474,8 @@
                     // Initiate the compiler hook
                     'output_tag'                => true,
                     // Print Output Tag
+                    'output_location'           => array( 'frontend' ),
+                    // Where  the dynamic CSS will be added. Can be any combination from: 'frontend', 'login', 'admin'
                     'transient_time'            => '',
                     'default_show'              => false,
                     // If true, it shows the default value
@@ -492,6 +486,7 @@
                     'disable_save_warn'         => false,
                     // Disable the save warn
                     'open_expanded'             => false,
+                    'hide_expand'               => false,
                     // Start the panel fully expanded to start with
                     'network_admin'             => false,
                     // Enable network admin when using network database mode
@@ -527,8 +522,9 @@
                         ),
                     ),
                     'show_import_export'        => true,
-                    'dev_mode'                  => false,
+                    'dev_mode'                  => true,
                     'system_info'               => false,
+                    'disable_tracking'          => false,
                 );
             }
 
@@ -623,8 +619,6 @@
                 //self::$_instance = $this;
                 return self::$instance;
             } // get_instance()
-
-            //Tracking removed
 
             /**
              * ->_get_default(); This is used to return the default value if default_show is set
@@ -726,7 +720,7 @@
              *
              * @param mixed $value the value of the option being added
              */
-            private function set_options( $value = '' ) {
+            public function set_options( $value = '' ) {
 
                 $this->transients['last_save'] = time();
 
@@ -1154,6 +1148,10 @@
 
                                     if ( $field['type'] == "sortable" ) {
                                         $this->options_defaults[ $field['id'] ] = array();
+                                    } elseif ( $field['type'] == "image_select" ) {
+                                        $this->options_defaults[ $field['id'] ] = '';
+                                    } elseif ( $field['type'] == "select" ) {
+                                        $this->options_defaults[ $field['id'] ] = '';
                                     } else {
                                         $this->options_defaults[ $field['id'] ] = $field['options'];
                                     }
@@ -1223,7 +1221,7 @@
                     );
                 } else {
                     // Network settings and Post type menus. These do not have
-                    // wrappers and need to be appened to using add_submenu_page.
+                    // wrappers and need to be appened to using.
                     // Okay, since we've left the post type menu appending
                     // as default, we need to validate it, so anything that
                     // isn't post_type=<post_type> doesn't get through and mess
@@ -1270,7 +1268,7 @@
             public function _options_page() {
                 $this->import_export->in_field();
 
-                 $this->page = add_theme_page(
+                $this->page = add_theme_page(
                         $this->args['page_title'],
                         $this->args['menu_title'],
                         $this->args['page_permissions'],
@@ -1295,7 +1293,7 @@
                 $ct         = wp_get_theme();
                 $theme_data = $ct;
 
-                if ( ! is_super_admin() || ! is_admin_bar_showing() || ! $this->args['admin_bar'] ) {
+                if ( ! is_super_admin() || ! is_admin_bar_showing() || ! $this->args['admin_bar'] || $this->args['menu_type'] == 'hidden' ) {
                     return;
                 }
 
@@ -1303,6 +1301,7 @@
                     foreach ( $menu as $menu_item ) {
                         if ( isset( $menu_item[2] ) && $menu_item[2] === $this->args["page_slug"] ) {
 
+                            // Fetch the title
                             $title = empty( $this->args['admin_bar_icon'] ) ? $menu_item[0] : '<span class="ab-icon ' . $this->args['admin_bar_icon'] . '"></span>' . $menu_item[0];
 
                             $nodeargs = array(
@@ -1358,9 +1357,12 @@
                         }
                     }
                 } else {
+                    // Fetch the title
+                    $title = empty( $this->args['admin_bar_icon'] ) ? $this->args['menu_title'] : '<span class="ab-icon ' . $this->args['admin_bar_icon'] . '"></span>' . $this->args['menu_title'];
+
                     $nodeargs = array(
                         'id'    => $this->args["page_slug"],
-                        'title' => "<span class='ab-icon dashicons-admin-generic'></span>" . $this->args['menu_title'],
+                        'title' => $title,
                         // $theme_data->get( 'Name' ) . " " . __( 'Options', 'redux-framework-demo' ),
                         'href'  => admin_url( 'admin.php?page=' . $this->args["page_slug"] ),
                         'meta'  => array()
@@ -1541,17 +1543,17 @@
 
                     // JS
                     wp_register_script(
-                        'select2-sortable-js',
-                        self::$_url . 'assets/js/vendor/select2.sortable.min.js',
+                        'redux-select2-sortable-js',
+                        self::$_url . 'assets/js/vendor/redux.select2.sortable' . $min . '.js',
                         array( 'jquery' ),
-                        filemtime( self::$_dir . 'assets/js/vendor/select2.sortable.min.js' ),
+                        filemtime( self::$_dir . 'assets/js/vendor/redux.select2.sortable' . $min . '.js' ),
                         true
                     );
 
                     wp_register_script(
                         'select2-js',
                         self::$_url . 'assets/js/vendor/select2/select2.min.js',
-                        array( 'jquery', 'select2-sortable-js' ),
+                        array( 'jquery', 'redux-select2-sortable-js' ),
                         filemtime( self::$_dir . 'assets/js/vendor/select2/select2.min.js' ),
                         true
                     );
@@ -1830,7 +1832,7 @@
 
                 if ( isset( $this->args['dev_mode'] ) && $this->args['dev_mode'] == true ) {
 
-                    $base                        = ReduxFramework::$_url . 'inc/p.php?url=';
+                    $base                        = admin_url( 'admin-ajax.php' ) . '?action=redux_p&url=';
                     $url                         = $base . urlencode( 'http://ads.reduxframework.com/api/index.php?js&g&1&v=2' ) . '&proxy=' . urlencode( $base );
                     $this->localize_data['rAds'] = '<span data-id="1" class="mgv1_1"><script type="text/javascript">(function(){if (mysa_mgv1_1) return; var ma = document.createElement("script"); ma.type = "text/javascript"; ma.async = true; ma.src = "' . $url . '"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ma, s) })();var mysa_mgv1_1=true;</script></span>';
                 }
@@ -2001,30 +2003,30 @@
 
                     // Default url values for enabling hints.
                     $dismiss = 'true';
-                    $s       = 'Enable';
+                    $s       = __( 'Enable', 'redux-framework' );
 
                     // Values for disabling hints.
                     if ( 'true' == $hint_status ) {
                         $dismiss = 'false';
-                        $s       = 'Disable';
+                        $s       = __( 'Disable', 'redux-framework' );
                     }
 
                     // Make URL
                     $url = '<a class="redux_hint_status" href="?dismiss=' . $dismiss . '&amp;id=hints&amp;page=' . $curPage . '&amp;tab=' . $curTab . '">' . $s . ' hints</a>';
 
-                    $event = 'moving the mouse over';
+                    $event = __( 'moving the mouse over', 'redux-framework' );
                     if ( 'click' == $this->args['hints']['tip_effect']['show']['event'] ) {
-                        $event = 'clicking';
+                        $event = __( 'clicking', 'redux-framework' );
                     }
 
                     // Construct message
-                    $msg = 'Hints are tooltips that popup when ' . $event . ' the hint icon, offering addition information about the field in which they appear.  They can be ' . strtolower( $s ) . 'd by using the link below.<br/><br/>' . $url;
+                    $msg = sprintf( __( 'Hints are tooltips that popup when %d the hint icon, offering addition information about the field in which they appear.  They can be %d d by using the link below.', 'redux-framework' ), $event, strtolower( $s ) ) . '<br/><br/>' . $url;
 
                     // Construct hint tab
                     $tab = array(
                         'id'      => 'redux-hint-tab',
                         'title'   => __( 'Hints', 'redux-framework' ),
-                        'content' => __( '<p>' . $msg . '</p>', 'redux-framework' )
+                        'content' => '<p>' . $msg . '</p>'
                     );
 
                     $screen->add_help_tab( $tab );
@@ -2267,9 +2269,6 @@
                         }
                     }
 
-                    if ( ! $display ) {
-                        continue;
-                    }
 
                     // DOVY! Replace $k with $section['id'] when ready
                     /**
@@ -2314,20 +2313,20 @@
                         }
                     }
 
-                    add_settings_section( $this->args['opt_name'] . $k . '_section', $heading, array(
-                        &$this,
-                        '_section_desc'
-                    ), $this->args['opt_name'] . $k . '_section_group' );
+                    if ( ! $display ) {
+                        $this->no_panel_section[ $k ] = $section;
+                    } else {
+                        add_settings_section( $this->args['opt_name'] . $k . '_section', $heading, array(
+                            &$this,
+                            '_section_desc'
+                        ), $this->args['opt_name'] . $k . '_section_group' );
+                    }
 
                     $sectionIndent = false;
                     if ( isset( $section['fields'] ) ) {
                         foreach ( $section['fields'] as $fieldk => $field ) {
                             if ( ! isset( $field['type'] ) ) {
                                 continue; // You need a type!
-                            }
-
-                            if ( isset( $field['customizer_only'] ) && $field['customizer_only'] == true ) {
-                                continue; // ok
                             }
 
                             /**
@@ -2338,15 +2337,16 @@
                             $field = apply_filters( "redux/options/{$this->args['opt_name']}/field/{$field['id']}/register", $field );
 
                             $display = true;
+
                             if ( isset( $_GET['page'] ) && $_GET['page'] == $this->args['page_slug'] ) {
                                 if ( isset( $field['panel'] ) && $field['panel'] == false ) {
                                     $display = false;
                                 }
                             }
-
-                            if ( ! $display ) {
-                                continue;
+                            if ( isset( $field['customizer_only'] ) && $field['customizer_only'] == true ) {
+                                //$display = false;
                             }
+
 
                             // TODO AFTER GROUP WORKS - Remove IF statement
 //                            if ( $field['type'] == "group" && isset( $_GET['page'] ) && $_GET['page'] == $this->args['page_slug'] ) {
@@ -2537,14 +2537,22 @@
 
                             $this->check_dependencies( $field );
 
-                            add_settings_field(
-                                "{$fieldk}_field",
-                                $th,
-                                array( &$this, '_field_input' ),
-                                "{$this->args['opt_name']}{$k}_section_group",
-                                "{$this->args['opt_name']}{$k}_section",
-                                $field
-                            ); // checkbox
+                            if ( ! $display || isset( $this->no_panel_section[ $k ] ) ) {
+                                $this->no_panel[] = $field['id'];
+                            } else {
+                                if (isset($field['hidden']) && $field['hidden']) {
+                                    $field['label_for'] = 'redux_hide_field';
+                                }
+                                
+                                add_settings_field(
+                                    "{$fieldk}_field",
+                                    $th,
+                                    array( &$this, '_field_input' ),
+                                    "{$this->args['opt_name']}{$k}_section_group",
+                                    "{$this->args['opt_name']}{$k}_section",
+                                    $field
+                                ); // checkbox
+                            }
                         }
                     }
                 }
@@ -2568,7 +2576,8 @@
                 }
 
                 if ( isset( $this->transients['run_compiler'] ) && $this->transients['run_compiler'] ) {
-                    $this->args['output_tag'] = false;
+
+                    $this->no_output = true;
                     $this->_enqueue_output();
 
 
@@ -2589,6 +2598,14 @@
                      * @param string CSS that get sent to the compiler hook
                      */
                     do_action( "redux/options/{$this->args['opt_name']}/compiler", $this->options, $this->compilerCSS, $this->transients['changed_values'] );
+
+                    /**
+                     * action 'redux/options/{opt_name}/compiler/advanced'
+                     *
+                     * @param array  options
+                     * @param string CSS that get sent to the compiler hook, which sends the full Redux object
+                     */
+                    do_action( "redux/options/{$this->args['opt_name']}/compiler/advanced", $this );
 
                     unset( $this->transients['run_compiler'] );
                     $this->set_transients();
@@ -2614,7 +2631,7 @@
                 do_action( "redux/extensions/{$this->args['opt_name']}/before", $this );
 
                 foreach ( $folders as $folder ) {
-                    if ( $folder === '.' || $folder === '..' || ! is_dir( $path . $folder ) || $folder === '.svn' || substr( $folder, 0, 1 ) === '.' || substr( $folder, 0, 1 ) === '@' ) {
+                    if ( $folder === '.' || $folder === '..' || ! is_dir( $path . $folder ) || substr( $folder, 0, 1 ) === '.' || substr( $folder, 0, 1 ) === '@' || substr( $folder, 0, 4 ) === '_vti' ) {
                         continue;
                     }
 
@@ -2690,6 +2707,17 @@
              * @return array|mixed|string|void
              */
             public function _validate_options( $plugin_options ) {
+
+                // Save the values not in the panel
+                if ( isset( $plugin_options['redux-no_panel'] ) ) {
+                    $keys = explode( '|', $plugin_options['redux-no_panel'] );
+                    foreach ( $keys as $key ) {
+                        $plugin_options[ $key ] = $this->options[ $key ];
+                    }
+                    if ( isset( $plugin_options['redux-no_panel'] ) ) {
+                        unset( $plugin_options['redux-no_panel'] );
+                    }
+                }
 
                 if ( ! empty( $this->hidden_perm_fields ) && is_array( $this->hidden_perm_fields ) ) {
                     foreach ( $this->hidden_perm_fields as $id => $data ) {
@@ -2778,6 +2806,11 @@
                     $plugin_options = $this->options_defaults;
 
                     $this->transients['changed_values'] = array();
+
+                    if ( empty( $this->options ) ) {
+                        $this->options = $this->options_defaults;
+                    }
+
                     foreach ( $this->options as $key => $value ) {
                         if ( isset( $plugin_options[ $key ] ) && $value != $plugin_options[ $key ] ) {
                             $this->transients['changed_values'][ $key ] = $value;
@@ -2789,6 +2822,7 @@
 
                     //setcookie('redux-compiler-' . $this->args['opt_name'], 1, time() + 1000, "/");
                     //setcookie("redux-saved-{$this->args['opt_name']}", 'defaults', time() + 1000, "/");
+
                     $this->set_transients(); // Update the transients
 
                     return $plugin_options;
@@ -2829,12 +2863,18 @@
 
                     //setcookie("redux-saved-{$this->args['opt_name']}", 'defaults_section', time() + 1000, "/");
                     unset( $plugin_options['defaults'], $plugin_options['defaults_section'], $plugin_options['import'], $plugin_options['import_code'], $plugin_options['import_link'], $plugin_options['compiler'], $plugin_options['redux-section'] );
+                    
                     $this->set_transients();
 
                     return $plugin_options;
                 }
 
-                $this->transients['last_save_mode'] = "normal"; // Last save mode
+//                if ($this->transients['last_save_mode'] != 'remove') {
+                    $this->transients['last_save_mode'] = "normal"; // Last save mode
+//               } else {
+//                    $this->transients['last_save_mode'] = '';
+//                }
+
 
                 // Validate fields (if needed)
                 $plugin_options = $this->_validate_values( $plugin_options, $this->options, $this->sections );
@@ -2896,9 +2936,8 @@
                     //set_transient($this->args['opt_name'].'-transients', $this->transients);
                     //exit();
                 }
-
+                
                 $this->set_transients( $this->transients );
-
 
                 return $plugin_options;
             }
@@ -2919,7 +2958,10 @@
                 foreach ( $sections as $k => $section ) {
                     if ( isset( $section['fields'] ) ) {
                         foreach ( $section['fields'] as $fkey => $field ) {
-                            $field['section_id'] = $k;
+                            
+                            if( is_array( $field ) ) {
+                                $field['section_id'] = $k;
+                            }
 
                             if ( isset( $field['type'] ) && ( $field['type'] == 'checkbox' || $field['type'] == 'checkbox_hide_below' || $field['type'] == 'checkbox_hide_all' ) ) {
                                 if ( ! isset( $plugin_options[ $field['id'] ] ) ) {
@@ -2943,7 +2985,7 @@
 
                             // Check for empty id value
 
-                            if ( ! isset( $plugin_options[ $field['id'] ] ) || ( isset( $plugin_options[ $field['id'] ] ) && $plugin_options[ $field['id'] ] == '' ) ) {
+                            if ( ! isset( $field['id'] ) || ! isset( $plugin_options[ $field['id'] ] ) || ( isset( $plugin_options[ $field['id'] ] ) && $plugin_options[ $field['id'] ] == '' ) ) {
 
                                 // If we are looking for an empty value, in the case of 'not_empty'
                                 // then we need to keep processing.
@@ -3053,7 +3095,7 @@
                             }
                             if ( isset( $field['validate_callback'] ) && ( is_callable( $field['validate_callback'] ) || ( is_string( $field['validate_callback'] ) && function_exists( $field['validate_callback'] ) ) ) ) {
                                 $callback = $field['validate_callback'];
-                                unset($field['validate_callback']);
+                                unset( $field['validate_callback'] );
 
                                 $callbackvalues                 = call_user_func( $callback, $field, $plugin_options[ $field['id'] ], $options[ $field['id'] ] );
                                 $plugin_options[ $field['id'] ] = $callbackvalues['value'];
@@ -3114,6 +3156,11 @@
                     $icon = ( ! isset( $section['icon'] ) ) ? '<i class="el-icon-cog' . $icon_class . '"></i> ' : '<i class="' . $section['icon'] . $icon_class . '"></i> ';
                 }
 
+                $hide_section = '';
+                if (isset($section['hidden'])) {
+                    $hide_section = ($section['hidden'] == true) ? ' hidden ' : '';
+                }
+                
                 $canBeSubSection = ( $k > 0 && ( ! isset( $sections[ ( $k ) ]['type'] ) || $sections[ ( $k ) ]['type'] != "divide" ) ) ? true : false;
 
                 if ( ! $canBeSubSection && isset( $section['subsection'] ) && $section['subsection'] == true ) {
@@ -3130,7 +3177,7 @@
                     $subsectionsClass = $subsections ? ' hasSubSections' : '';
                     $subsectionsClass .= ( ! isset( $section['fields'] ) || empty( $section['fields'] ) ) ? ' empty_section' : '';
                     $extra_icon = $subsections ? '<span class="extraIconSubsections"><i class="el el-icon-chevron-down">&nbsp;</i></span>' : '';
-                    $string .= '<li id="' . $k . $suffix . '_section_group_li" class="redux-group-tab-link-li' . $section['class'] . $subsectionsClass . '">';
+                    $string .= '<li id="' . $k . $suffix . '_section_group_li" class="redux-group-tab-link-li' . $hide_section . $section['class'] . $subsectionsClass . '">';
                     $string .= '<a href="javascript:void(0);" id="' . $k . $suffix . '_section_group_li_a" class="redux-group-tab-link-a" data-key="' . $k . '" data-rel="' . $k . $suffix . '">' . $extra_icon . $icon . '<span class="group_title">' . $section['title'] . '</span></a>';
                     $nextK = $k;
 
@@ -3156,6 +3203,11 @@
                                     continue;
                                 }
 
+                                $hide_sub = '';
+                                if (isset($sections[ $nextK ]['hidden'])) {
+                                    $hide_sub = ($sections[ $nextK ]['hidden'] == true) ? ' hidden ' : '';
+                                }
+                                
                                 if ( ( isset( $this->args['icon_type'] ) && $this->args['icon_type'] == 'image' ) || ( isset( $sections[ $nextK ]['icon_type'] ) && $sections[ $nextK ]['icon_type'] == 'image' ) ) {
                                     //if( !empty( $this->args['icon_type'] ) && $this->args['icon_type'] == 'image' ) {
                                     $icon = ( ! isset( $sections[ $nextK ]['icon'] ) ) ? '' : '<img class="image_icon_type" src="' . $sections[ $nextK ]['icon'] . '" /> ';
@@ -3170,7 +3222,7 @@
                                     $icon = ( ! isset( $sections[ $nextK ]['icon'] ) ) ? '' : '<i class="' . $sections[ $nextK ]['icon'] . $icon_class . '"></i> ';
                                 }
                                 $section[ $nextK ]['class'] = isset( $section[ $nextK ]['class'] ) ? $section[ $nextK ]['class'] : '';
-                                $string .= '<li id="' . $nextK . $suffix . '_section_group_li" class="redux-group-tab-link-li ' . $section[ $nextK ]['class'] . ( $icon ? ' hasIcon' : '' ) . '">';
+                                $string .= '<li id="' . $nextK . $suffix . '_section_group_li" class="redux-group-tab-link-li ' . $hide_sub . $section[ $nextK ]['class'] . ( $icon ? ' hasIcon' : '' ) . '">';
                                 $string .= '<a href="javascript:void(0);" id="' . $nextK . $suffix . '_section_group_li_a" class="redux-group-tab-link-a" data-key="' . $nextK . '" data-rel="' . $nextK . $suffix . '">' . $icon . '<span class="group_title">' . $sections[ $nextK ]['title'] . '</span></a>';
                                 $string .= '</li>';
                             }
@@ -3233,6 +3285,10 @@
                 echo '<form method="post" action="' . $url . '" enctype="multipart/form-data" id="redux-form-wrapper">';
                 echo '<input type="hidden" id="redux-compiler-hook" name="' . $this->args['opt_name'] . '[compiler]" value="" />';
                 echo '<input type="hidden" id="currentSection" name="' . $this->args['opt_name'] . '[redux-section]" value="" />';
+                if ( ! empty( $this->no_panel ) ) {
+                    echo '<input type="hidden" name="' . $this->args['opt_name'] . '[redux-no_panel]" value="' . implode( '|', $this->no_panel ) . '" />';
+                }
+
 
                 settings_fields( "{$this->args['opt_name']}_group" );
 
@@ -3275,8 +3331,9 @@
                 echo '<div id="info_bar">';
 
                 $expanded = ( $this->args['open_expanded'] ) ? ' expanded' : '';
-
-                echo '<a href="javascript:void(0);" class="expand_options' . $expanded . '">' . __( 'Expand', 'redux-framework' ) . '</a>';
+                $hide_expand = $this->args['hide_expand'] ? ' style="display: none;"' : '';
+                
+                echo '<a href="javascript:void(0);" class="expand_options' . $expanded . '"' . $hide_expand . '>' . __( 'Expand', 'redux-framework' ) . '</a>';
                 echo '<div class="redux-action_bar">';
                 submit_button( __( 'Save Changes', 'redux-framework' ), 'primary', 'redux_save', false );
 
@@ -3339,7 +3396,7 @@
                          * @param string  translated "settings imported" text
                          */
                         echo '<div class="saved_notice admin-notice notice-yellow"><strong>' . apply_filters( "redux-defaults-section-text-{$this->args['opt_name']}", __( 'Section Defaults Restored!', 'redux-framework' ) ) . '</strong></div>';
-                    } else {
+                    } else if ( $this->transients['last_save_mode'] == "normal") {
                         /**
                          * action 'redux/options/{opt_name}/saved'
                          *
@@ -3354,8 +3411,10 @@
                          */
                         echo '<div class="saved_notice admin-notice notice-green"><strong>' . apply_filters( "redux-saved-text-{$this->args['opt_name']}", __( 'Settings Saved!', 'redux-framework' ) ) . '</strong></div>';
                     }
+                    
                     unset( $this->transients['last_save_mode'] );
-
+                    //$this->transients['last_save_mode'] = 'remove';
+                    $this->set_transients();
                 }
 
                 /**
@@ -3635,7 +3694,6 @@
                 }
 
                 $this->set_transients();
-
             }
 
             /**
@@ -3967,7 +4025,7 @@
              *
              * @return array $params
              */
-            private function check_dependencies( $field ) {
+            public function check_dependencies( $field ) {
                 //$params = array('data_string' => "", 'class_string' => "");
 
                 if ( ! empty( $field['required'] ) ) {
@@ -4020,42 +4078,85 @@
             // Compare data for required field
             private function compareValueDependencies( $parentValue, $checkValue, $operation ) {
                 $return = false;
-
                 switch ( $operation ) {
                     case '=':
                     case 'equals':
                         $data['operation'] = "=";
-                        if ( is_array( $checkValue ) ) {
-                            if ( in_array( $parentValue, $checkValue ) ) {
-                                $return = true;
+                        
+                        if (is_array($parentValue)) {
+                            foreach($parentValue as $idx => $val) {
+                                if (is_array($checkValue)) {
+                                    foreach($checkValue as $i => $v) {
+                                        if ($val == $v) {
+                                            $return = true;
+                                        }
+                                    }
+                                } else {
+                                    if ($val == $checkValue) {
+                                        $return = true;
+                                    }
+                                }
                             }
                         } else {
-                            if ( $parentValue == $checkValue ) {
-                                $return = true;
-                            } else if ( is_array( $parentValue ) ) {
-                                if ( in_array( $checkValue, $parentValue ) ) {
+                            if (is_array($checkValue)) {
+                                foreach($checkValue as $i => $v) {
+                                    if ($parentValue == $v) {
+                                        $return = true;
+                                    }
+                                }
+                            } else {
+                                if ($parentValue == $checkValue) {
                                     $return = true;
                                 }
                             }
                         }
-                        break;
+                    break;
+                    
                     case '!=':
                     case 'not':
                         $data['operation'] = "!==";
-                        if ( is_array( $checkValue ) ) {
-                            if ( ! in_array( $parentValue, $checkValue ) ) {
-                                $return = true;
+                        if (is_array($parentValue)) {
+                            foreach($parentValue as $idx => $val) {
+                                if (is_array($checkValue)) {
+                                    foreach($checkValue as $i => $v) {
+                                        if ($val != $v) {
+                                            $return = true;
+                                        }
+                                    }
+                                } else {
+                                    if ($val != $checkValue) {
+                                        $return = true;
+                                    }
+                                }
                             }
                         } else {
-                            if ( $parentValue != $checkValue ) {
-                                $return = true;
-                            } else if ( is_array( $parentValue ) ) {
-                                if ( ! in_array( $checkValue, $parentValue ) ) {
+                            if (is_array($checkValue)) {
+                                foreach($checkValue as $i => $v) {
+                                    if ($parentValue != $v) {
+                                        $return = true;
+                                    }
+                                }
+                            } else {
+                                if ($parentValue != $checkValue) {
                                     $return = true;
                                 }
                             }
                         }
-                        break;
+                        
+//                        if ( is_array( $checkValue ) ) {
+//                            if ( ! in_array( $parentValue, $checkValue ) ) {
+//                                $return = true;
+//                            }
+//                        } else {
+//                            if ( $parentValue != $checkValue ) {
+//                                $return = true;
+//                            } else if ( is_array( $parentValue ) ) {
+//                                if ( ! in_array( $checkValue, $parentValue ) ) {
+//                                    $return = true;
+//                                }
+//                            }
+//                        }
+                    break;
                     case '>':
                     case 'greater':
                     case 'is_larger':
@@ -4089,15 +4190,41 @@
                         }
                         break;
                     case 'contains':
-                        if ( strpos( $parentValue, $checkValue ) !== false ) {
-                            $return = true;
+                        if (is_array($parentValue)) {
+                            $parentValue = implode(',', $parentValue);
                         }
+                        
+                        if (is_array($checkValue)) {
+                            foreach($checkValue as $idx => $opt) {
+                                if ( strpos( $parentValue, $opt ) !== false ) {
+                                    $return = true;
+                                }
+                            }
+                        } else {
+                            if ( strpos( $parentValue, $checkValue ) !== false ) {
+                                $return = true;
+                            }
+                        }
+                        
                         break;
                     case 'doesnt_contain':
                     case 'not_contain':
-                        if ( strpos( $parentValue, $checkValue ) === false ) {
-                            $return = true;
+                        if (is_array($parentValue)) {
+                            $parentValue = implode(',', $parentValue);
                         }
+
+                        if (is_array($checkValue)) {
+                            foreach($checkValue as $idx => $opt) {
+                                if ( strpos( $parentValue, $opt ) === false ) {
+                                    $return = true;
+                                }
+                            }
+                        } else {
+                            if ( strpos( $parentValue, $checkValue ) === false ) {
+                                $return = true;
+                            }
+                        }
+                        
                         break;
                     case 'is_empty_or':
                         if ( empty( $parentValue ) || $parentValue == $checkValue ) {
@@ -4133,7 +4260,9 @@
 
                 if ( ! in_array( $data['parent'], $this->fieldsHidden ) && ( ! isset( $this->folds[ $field['id'] ] ) || $this->folds[ $field['id'] ] != "hide" ) ) {
                     if ( isset( $this->options[ $data['parent'] ] ) ) {
+                        //echo $data['parent'];
                         $return = $this->compareValueDependencies( $this->options[ $data['parent'] ], $data['checkValue'], $data['operation'] );
+                        //$return = $this->compareValueDependencies( $data['parent'], $data['checkValue'], $data['operation'] );
                     }
                 }
 

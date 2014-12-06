@@ -502,7 +502,7 @@ $this->sections[] = array(
     'icon' => 'icon-tablet',
     'icon_class' => 'icon-large',
     'title' => __('Home Mobile Slider', 'pinnacle'),
-    'desc' => "<div class='redux-info-field'><h3>".__('Create a more lightweight home slider for your mobile visitors.', 'pinnacle')."</h3></div>",
+    'desc' => "<div class='redux-info-field'><h3>".__('Create a different home slider for your mobile visitors.', 'pinnacle')."</h3></div>",
     'fields' => array(
       array(
             'id'=>'mobile_switch',
@@ -516,7 +516,7 @@ $this->sections[] = array(
             'type' => 'select',
             'title' => __('Choose a Slider for Mobile', 'pinnacle'), 
             'subtitle' => __("Choose which slider you would like to show for mobile viewers.", 'pinnacle'),
-            'options' => array('none' => __('None', 'pinnacle'),'flex' => __('Flex Slider', 'pinnacle'), 'carousel' => __('Carousel Slider', 'pinnacle'), 'pagetitle' => __('Page Title', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
+            'options' => array('none' => __('None', 'pinnacle'),'flex' => __('Flex Slider', 'pinnacle'), 'pagetitle' => __('Page Title', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
             'default' => 'none',
             'width' => 'width:60%',
             'required' => array('mobile_switch','=','1'),
@@ -569,7 +569,7 @@ $this->sections[] = array(
             'type' => 'kad_slides',
             'title' => __('Slider Images', 'pinnacle'),
             'subtitle'=> __('Use large images for best results.', 'pinnacle'),
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
         ),  
         array(
             'id'=>'mobile_slider_size',
@@ -580,7 +580,7 @@ $this->sections[] = array(
             "min"       => "100",
             "step"      => "5",
             "max"       => "800",
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ), 
         array(
             'id'=>'mobile_slider_size_width',
@@ -591,7 +591,7 @@ $this->sections[] = array(
             "min"       => "200",
             "step"      => "5",
             "max"       => "800",
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ), 
         array(
             'id'=>'mobile_slider_autoplay',
@@ -599,7 +599,7 @@ $this->sections[] = array(
             'title' => __('Auto Play?', 'pinnacle'),
             'subtitle'=> __('This determines if a slider automatically scrolls', 'pinnacle'),
             "default"       => 1,
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ),
         array(
             'id'=>'mobile_slider_pausetime',
@@ -610,7 +610,7 @@ $this->sections[] = array(
             "min"       => "3000",
             "step"      => "1000",
             "max"       => "12000",
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ), 
         array(
             'id'=>'mobile_trans_type',
@@ -619,7 +619,7 @@ $this->sections[] = array(
             'subtitle' => __("Choose a transition type", 'pinnacle'),
             'options' => array('fade' => __('Fade', 'pinnacle'),'slide' => __('Slide', 'pinnacle')),
             'default' => 'fade',
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ),
         array(
             'id'=>'mobile_slider_transtime',
@@ -630,7 +630,7 @@ $this->sections[] = array(
             "min"       => "200",
             "step"      => "100",
             "max"       => "1200",
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ), 
         array(
             'id'=>'mobile_slider_captions',
@@ -638,7 +638,7 @@ $this->sections[] = array(
             'title' => __('Show Captions?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide captions', 'pinnacle'),
             "default"       => 0,
-            'required' => array('choose_mobile_header','=',array('flex','carousel','imgcarousel','latest')),
+            'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
             ),
         array(
             'id'=>'mobile_video_embed',
@@ -646,7 +646,7 @@ $this->sections[] = array(
             'title' => __('Video Embed Code', 'pinnacle'), 
             'subtitle' => __('If your using a video on the home page place video embed code here.', 'pinnacle'),
             'default' => '',
-            'required' => array('choose_mobile_header','=','video'),
+            'required' => array('choose_mobile_slider','=','video'),
             ),
          ),
 );
@@ -2155,7 +2155,7 @@ $this->sections[] = array(
             'page_icon' => "kad_logo_header",
             'footer_credit' => __('Thank you for using the Pinnacle Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
             );
-            $this->args['intro_text'] = 'Upgrade to <a href="http://kadencethemes.com/product/pinnacle-premium-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!';
+            $this->args['intro_text'] = 'Upgrade to <a href="http://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!';
            $this->args['share_icons']['facebook'] = array(
             'link' => 'https://www.facebook.com/KadenceThemes',
             'title' => 'Follow Kadence Themes on Facebook', 

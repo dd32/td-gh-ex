@@ -43,7 +43,7 @@ function kadence_display_sidebar() {
       );
   } else {
   $sidebar_config = new Kadence_Sidebar(
-    array('kadence_sidebar_page', 'kadence_sidebar_on_post','is_404','kadence_sidebar_on_home_page', array('is_singular', array('portfolio')), array('is_singular', array('kadslider')), array('is_tax', array('portfolio-type'))
+    array('kadence_sidebar_page', 'kadence_sidebar_on_post','is_404','kadence_sidebar_on_archive_page_noshop','kadence_sidebar_on_home_page', array('is_singular', array('portfolio')), array('is_singular', array('kadslider')), array('is_tax', array('portfolio-type'))
       ),
     array('template-portfolio-grid.php','template-contact.php' )
   );
@@ -63,7 +63,7 @@ function kadence_sidebar_on_shop_page() {
   }
 }
 function kadence_sidebar_page_woo() {
-  if( is_page() && !is_page_template('template-portfolio-grid.php') && !is_page_template('template-contact.php') && !is_account_page() ) {
+  if( is_page() && !is_page_template('template-portfolio-grid.php') && !is_page_template('template-contact.php') && !is_account_page() && !is_shop() && !is_front_page() ) {
   global $post; 
   $postsidebar = get_post_meta( $post->ID, '_kad_page_sidebar', true );
       if(isset($postsidebar) && $postsidebar == 'yes') {
@@ -74,7 +74,7 @@ function kadence_sidebar_page_woo() {
   }
 }
 function kadence_sidebar_page() {
-  if( is_page() && !is_page_template('template-portfolio-grid.php') && !is_page_template('template-contact.php') ) {
+  if( is_page() && !is_page_template('template-portfolio-grid.php') && !is_page_template('template-contact.php') && !is_front_page() ) {
   global $post; 
   $postsidebar = get_post_meta( $post->ID, '_kad_page_sidebar', true );
       if(isset($postsidebar) && $postsidebar == 'yes') {
@@ -135,6 +135,16 @@ function kadence_sidebar_on_home_page() {
 }
 function kadence_sidebar_on_archive_page() {
   if(is_archive() && !is_shop() && !is_product_category() && !is_product_tag()) {
+      global $pinnacle; 
+      if(isset($pinnacle['blog_cat_layout']) && $pinnacle['blog_cat_layout'] == 'sidebar') {
+        return false;
+        } else {
+          return true;
+        }
+   }
+}
+function kadence_sidebar_on_archive_page_noshop() {
+  if(is_archive()) {
       global $pinnacle; 
       if(isset($pinnacle['blog_cat_layout']) && $pinnacle['blog_cat_layout'] == 'sidebar') {
         return false;

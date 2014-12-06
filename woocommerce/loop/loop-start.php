@@ -19,4 +19,4 @@ global $woocommerce, $woocommerce_loop, $pinnacle;
       	$columns = "shopcolumn-cart".$woocommerce_loop['columns']." shopfullwidth";
       }
 ?>
-<div id="product_wrapper<?php echo $woocommerce_loop['rand'];?>" class="products kad_product_wrapper rowtight <?php echo $columns; ?> kad_shop_default">
+<div id="product_wrapper<?php echo $woocommerce_loop['rand'];?>" class="products init-masonry kad_product_wrapper rowtight <?php echo $columns; ?> kad_shop_default" data-masonry-selector=".kad_product">

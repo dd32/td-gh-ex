@@ -44,6 +44,7 @@ Pinnacle Theme Uses:
 * TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
 * Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* imagesLoaded (https://github.com/desandro/imagesloaded) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * SmartResize (https://github.com/louisremi/jquery-smartresize) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 
 -------------------------------------------------------
@@ -51,6 +52,13 @@ Pinnacle Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Pinnacle =
+
+= Version 1.0.5 = 
+* Remove mobile check.
+* Move response.js to function.
+* Remove some things in cleanup.php
+* Remove shortcodes.php
+* Move some inline scripts to main js file.
 
 = Version 1.0.4 = 
 * Fix/add some esc_attr.
@@ -62,7 +70,7 @@ Pinnacle Theme Uses:
 * Fix language/translation issues.
 * Remove template wrapper.
 * Fix/add some esc_attr.
-* Fix home blog unfdifined index.
+* Fix home blog undefined index.
 
 = Version 1.0.2 =
 * Update responsive layout tag.

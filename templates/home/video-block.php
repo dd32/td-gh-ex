@@ -1,4 +1,4 @@
-<div class="sliderclass">
+<div class="sliderclass kad-desktop-slider">
 <div id="imageslider" class="container">
 	<?php global $pinnacle; if(isset($pinnacle['slider_size_width'])) {$slidewidth = $pinnacle['slider_size_width'];} else { $slidewidth = 1140; } ?>
 			<div class="videofit" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">

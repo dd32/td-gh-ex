@@ -1,4 +1,4 @@
-<div class="sliderclass carousel_outerrim">
+<div class="sliderclass carousel_outerrim kad-desktop-slider">
   <?php  global $pinnacle; 
          if(isset($pinnacle['slider_size'])) {$slideheight = $pinnacle['slider_size'];} else { $slideheight = 400; }
          if(isset($pinnacle['slider_size_width'])) {$slidewidth = $pinnacle['slider_size_width'];} else { $slidewidth = 1140; }

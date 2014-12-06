@@ -47,7 +47,7 @@ if(kadence_display_sidebar()) {$slide_sidebar = 848;} else {$slide_sidebar = 117
           <article <?php post_class('postclass'); ?>>
           <?php if ($headcontent == 'flex') { ?>
               <section class="postfeat">
-                <div class="flexslider kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;">
+                <div class="flexslider kt-flexslider loading kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                 <ul class="slides">
                   <?php
                       $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -64,20 +64,6 @@ if(kadence_display_sidebar()) {$slide_sidebar = 848;} else {$slide_sidebar = 117
                           }?>                            
                   </ul>
                 </div> <!--Flex Slides-->
-                <script type="text/javascript">
-                  jQuery(window).load(function () {
-                      jQuery('.flexslider').flexslider({
-                          animation: "fade",
-                          animationSpeed: 400,
-                          slideshow: true,
-                          slideshowSpeed: 7000,
-
-                          before: function(slider) {
-                            slider.removeClass('loading');
-                          }  
-                        });
-                      });
-              </script>
               </section>
         <?php } else if ($headcontent == 'carouselslider') { ?>
         <section class="postfeat">

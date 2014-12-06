@@ -1,9 +1,8 @@
 <div class="home_blog home-margin clearfix home-padding">
 	<?php global $pinnacle, $postcolumn; 
-	if(isset($pinnacle['blog_title']) && !empty($pinnacle['blog_title'])) {$blog_title = $pinnacle['blog_title'];} else {$blog_title = __('Latest from the Blog', 'pinnacle');}
-	if(isset($pinnacle['pinnacle_animate_in']) && $pinnacle['pinnacle_animate_in'] == 1) {$animate = 1;} else {$animate = 0;} ?>
+	if(isset($pinnacle['blog_title']) && !empty($pinnacle['blog_title'])) {$blog_title = $pinnacle['blog_title'];} else {$blog_title = __('Latest from the Blog', 'pinnacle');} ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $blog_title; ?></h3></div>
-			<div id="kad-blog-grid" class="row" data-fade-in="<?php echo $animate;?>">
+			<div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".b_item">
 				<?php if(isset($pinnacle['home_post_count'])) { $blogcount = $pinnacle['home_post_count'];} else { $blogcount = '3'; } 
 				if(isset($pinnacle['home_post_column'])) {$blog_grid_column = $pinnacle['home_post_column'];} else {$blog_grid_column ="3";}
 				if ($blog_grid_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $postcolumn = '2';} 
@@ -36,4 +35,3 @@
 
 	</div>
 </div> <!--home-blog -->
-<script type="text/javascript">jQuery( window ).load(function () {var $container = jQuery('#kad-blog-grid');$container.masonry({itemSelector: '.b_item'});});</script>

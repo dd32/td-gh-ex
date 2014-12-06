@@ -58,7 +58,7 @@
 
                       <?php } elseif($postsummery == 'slider_landscape' || $postsummery == 'slider_portrait' || $postsummery == 'gallery_grid') {?>
                           <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
-                                <div class="flexslider loading" style="max-width:<?php echo $image_width;?>px;">
+                                <div class="flexslider kt-flexslider loading" style="max-width:<?php echo $image_width;?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                                     <ul class="slides">
                                       <?php $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                                             if(!empty($image_gallery)) {
@@ -79,20 +79,6 @@
                                             } ?>                                 
                                     </ul>
                                 </div> <!--Flex Slides-->
-                                <script type="text/javascript">
-                                  jQuery(document).ready(function() {
-                                    jQuery('.flexslider').flexslider({
-                                      animation: "fade",
-                                      animationSpeed: 400,
-                                      slideshow: true,
-                                      slideshowSpeed: 7000,
-                                      before: function(slider) {
-                                        slider.removeClass('loading');
-                                        }  
-                                    });
-                                  });
-                                </script>
-
                     <?php } elseif($postsummery == 'video') {?>
                           <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
                                 <div class="videofit">

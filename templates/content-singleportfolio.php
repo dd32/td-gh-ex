@@ -51,7 +51,7 @@
       	<div class="row">
       		<div class="<?php echo $imgclass; ?>">
 				  <?php if ($ppost_type == 'flex') { ?>
-					<div class="flexslider loading kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;">
+					<div class="flexslider kt-flexslider loading kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
               <ul class="slides">
                 <?php $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                       if(!empty($image_gallery)) {
@@ -68,19 +68,6 @@
                     			
 								        } ?>                            
 						</ul>
-						<script type="text/javascript">
-			            	jQuery(window).load(function () {
-			                	jQuery('.flexslider').flexslider({
-				                    animation: "fade",
-				                    animationSpeed: 500,
-				                    slideshow: true,
-				                    slideshowSpeed: 7000,
-			                    before: function(slider) {
-			                      slider.removeClass('loading');
-			                    }  
-			                  });
-			                });
-			      		</script>
               	</div> <!--Flex Slides-->
 				<?php 	
 				} else if ($ppost_type == 'video') { ?>
