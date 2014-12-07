@@ -27,6 +27,7 @@ function athemes_customize_register( $wp_customize ) {
 		'site_logo',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -47,6 +48,7 @@ function athemes_customize_register( $wp_customize ) {
 		'site_favicon',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -66,6 +68,7 @@ function athemes_customize_register( $wp_customize ) {
 		'apple_touch_144',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -85,6 +88,7 @@ function athemes_customize_register( $wp_customize ) {
 		'apple_touch_114',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -104,6 +108,7 @@ function athemes_customize_register( $wp_customize ) {
 		'apple_touch_72',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(
@@ -123,6 +128,7 @@ function athemes_customize_register( $wp_customize ) {
 		'apple_touch_57',
 		array(
 			'default-image' => '',
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
     $wp_customize->add_control(

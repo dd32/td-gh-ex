@@ -37,7 +37,7 @@ function athemes_custom_styles($custom) {
 	
 	if ( $headings_font ) {
 		$font_pieces = explode(":", $headings_font);
-		$custom .= "a.button, h1, h2, h3, h4, h5, h6, button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"], .site-title, .site-description, #main-navigation li a, .nav-open, .nav-close, .comments-link a, .author-info .author-links a, .site-content [class*=\"navigation\"] a, .comment-list li.comment .comment-author .fn, .comment-list li.comment .reply a, #commentform label, .widget_athemes_tabs .widget-tab-nav li a,  { font-family: {$font_pieces[0]}; }"."\n";
+		$custom .= "a.button, h1, h2, h3, h4, h5, h6, button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"], .site-title, .site-description, #main-navigation li a, .nav-open, .nav-close, .comments-link a, .author-info .author-links a, .site-content [class*=\"navigation\"] a, .comment-list li.comment .comment-author .fn, .comment-list li.comment .reply a, #commentform label, .widget_athemes_tabs .widget-tab-nav li a { font-family: {$font_pieces[0]}; }"."\n";
 	}
 	if ( $body_font ) {
 		$font_pieces = explode(":", $body_font);

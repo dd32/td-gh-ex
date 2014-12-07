@@ -1,0 +1,8 @@
+Changelog
+
+Hiero 1.4 - 7 Dec 2014
+-----------------------------
+- added changelog.txt;
+- fixed headings fonts issue;
+- added missing sanitization callbacks in customizer.php;
+- changed deprecated tag in style.css.
