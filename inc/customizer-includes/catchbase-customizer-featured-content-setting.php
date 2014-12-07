@@ -74,40 +74,6 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'type'	  	=> 'select',
 	) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_headline]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_content_headline'],
-		'sanitize_callback'	=> 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( new Catchbase_Customize_Custom_Input_Text( $wp_customize, 'catchbase_theme_options[featured_content_headline]' , array(
-			'description'	=> 'Leave field empty if you want to remove it',
-			'label'    		=> __( 'Headline for Featured Content', 'catchbase' ),
-			'priority'		=> '2',
-			'section'  		=> 'catchbase_featured_content_settings',
-			'settings' 		=> 'catchbase_theme_options[featured_content_headline]',
-			'type'	   		=> 'custom-text',
-			)
-		) 
-	);
-
-	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_subheadline]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['featured_content_subheadline'],
-		'sanitize_callback'	=> 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( new Catchbase_Customize_Custom_Input_Text( $wp_customize, 'catchbase_theme_options[featured_content_subheadline]' , array(
-			'description'	=> 'Leave field empty if you want to remove it',
-			'label'    		=> __( 'Sub-headline for Featured Content', 'catchbase' ),
-			'priority'		=> '2',
-			'section'  		=> 'catchbase_featured_content_settings',
-			'settings' 		=> 'catchbase_theme_options[featured_content_subheadline]',
-			'type'	   		=> 'custom-text',
-			)
-		) 
-	);
-
 	$wp_customize->add_section( 'catchbase_featured_content_type', array(
 		'panel'			=> 'catchbase_featured_content_options',
 		'priority'		=> 2,
@@ -135,19 +101,57 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'type'	  	=> 'select',
 	) );
 
+	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_headline]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_headline'],
+		'sanitize_callback'	=> 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'catchbase_theme_options[featured_content_headline]' , array(
+		'description'	=> __( 'Leave field empty if you want to remove Headline', 'catchbase' ),
+		'label'    		=> __( 'Headline for Featured Content', 'catchbase' ),
+		'priority'		=> '4',
+		'section'  		=> 'catchbase_featured_content_type',
+		'settings' 		=> 'catchbase_theme_options[featured_content_headline]',
+		'type'	   		=> 'text',
+		)
+	);
+
+	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_subheadline]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_subheadline'],
+		'sanitize_callback'	=> 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( 'catchbase_theme_options[featured_content_subheadline]' , array(
+		'description'	=> __( 'Leave field empty if you want to remove Sub-headline', 'catchbase' ),
+		'label'    		=> __( 'Sub-headline for Featured Content', 'catchbase' ),
+		'priority'		=> '5',
+		'section'  		=> 'catchbase_featured_content_type',
+		'settings' 		=> 'catchbase_theme_options[featured_content_subheadline]',
+		'type'	   		=> 'text',
+		) 
+	);
+
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_number]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_number'],
 		'sanitize_callback'	=> 'catchbase_sanitize_no_of_slider',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_theme_options[featured_content_number]' , array(
-			'description'	=> __( 'Save and refresh the page if No. of Featured Content is changed (Max no of Featured Content is 20)', 'catchbase' ),
-			'label'    		=> __( 'No of Featured Content', 'catchbase' ),
-			'priority'		=> '4',
-			'section'  		=> 'catchbase_featured_content_type',
-			'settings' 		=> 'catchbase_theme_options[featured_content_number]',
-			)
+	$wp_customize->add_control( 'catchbase_theme_options[featured_content_number]' , array(
+		'description'	=> __( 'Save and refresh the page if No. of Featured Content is changed (Max no of Featured Content is 20)', 'catchbase' ),
+		'input_attrs' 	=> array(
+            'style' => 'width: 45px;',
+            'min'   => 0,
+            'max'   => 20,
+            'step'  => 1,
+        	),
+		'label'    		=> __( 'No of Featured Content', 'catchbase' ),
+		'priority'		=> '6',
+		'section'  		=> 'catchbase_featured_content_type',
+		'settings' 		=> 'catchbase_theme_options[featured_content_number]',
+		'type'	   		=> 'number',
 		) 
 	);
 
@@ -161,7 +165,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 		$wp_customize->add_control( 'catchbase_featured_content_page_'. $i .'', array(
 			'label'    	=> __( 'Featured Page', 'catchbase' ) . ' ' . $i ,
-			'priority'	=> '5' . $i,
+			'priority'	=> '7' . $i,
 			'section'  	=> 'catchbase_featured_content_type',
 			'settings' 	=> 'catchbase_theme_options[featured_content_page_'. $i .']',
 			'type'	   	=> 'dropdown-pages',

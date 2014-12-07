@@ -40,13 +40,14 @@
     do_action( 'catchbase_before' );
 	
 	/** 
-	 * catchbase_site_branding hook
+	 * catchbase_header hook
 	 *
 	 * @hooked catchbase_page_start -  10
-	 * @hooked catchbase_header_start- 30
-	 * @hooked catchbase_mobile_header_nav_anchor - 39
-	 * @hooked catchbase_site_branding - 40
-	 * @hooked catchbase_header_right - 50
+	 * @hooked catchbase_header_start- 20
+	 * @hooked catchbase_mobile_header_nav_anchor - 30
+	 * @hooked catchbase_mobile_secondary_nav_anchor - 40
+	 * @hooked catchbase_site_branding - 50
+	 * @hooked catchbase_header_right - 60
 	 * @hooked catchbase_header_end - 100
 	 * 
 	 */
@@ -72,7 +73,7 @@
 	do_action( 'catchbase_before_content' );
 	
 	/** 
-     * catchbase_main hook
+     * catchbase_content hook
      *
      *  @hooked catchbase_content_start - 10
      *  @hooked catchbase_add_breadcrumb - 20

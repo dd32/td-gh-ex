@@ -80,14 +80,16 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'absint',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_theme_options[featured_slide_transition_delay]' , array(
-			'description'	=> __( 'seconds(s)', 'catchbase' ),
-			'label'    		=> __( 'Transition Delay', 'catchbase' ),
-			'priority'		=> '2.1.1',
-			'section'  		=> 'catchbase_featured_slider',
-			'settings' 		=> 'catchbase_theme_options[featured_slide_transition_delay]',
-			)
-		) 
+	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_transition_delay]' , array(
+		'description'	=> __( 'seconds(s)', 'catchbase' ),
+		'input_attrs' => array(
+            'style' => 'width: 40px;'
+        	),
+		'label'    		=> __( 'Transition Delay', 'catchbase' ),
+		'priority'		=> '2.1.1',
+		'section'  		=> 'catchbase_featured_slider',
+		'settings' 		=> 'catchbase_theme_options[featured_slide_transition_delay]',
+		)
 	);
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_slide_transition_length]', array(
@@ -96,14 +98,16 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'absint',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_theme_options[featured_slide_transition_length]' , array(
-			'description'	=> __( 'seconds(s)', 'catchbase' ),
-			'label'    		=> __( 'Transition Length', 'catchbase' ),
-			'priority'		=> '2.1.2',
-			'section'  		=> 'catchbase_featured_slider',
-			'settings' 		=> 'catchbase_theme_options[featured_slide_transition_length]',
-			)
-		) 
+	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_transition_length]' , array(
+		'description'	=> __( 'seconds(s)', 'catchbase' ),
+		'input_attrs' => array(
+	            'style' => 'width: 40px;'
+            	),
+		'label'    		=> __( 'Transition Length', 'catchbase' ),
+		'priority'		=> '2.1.2',
+		'section'  		=> 'catchbase_featured_slider',
+		'settings' 		=> 'catchbase_theme_options[featured_slide_transition_length]',
+		)
 	);
 
 	$wp_customize->add_section( 'catchbase_featured_slider_type', array(
@@ -139,14 +143,20 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'catchbase_sanitize_no_of_slider',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_featured_slide_number' , array(
-			'description'	=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'catchbase' ),
-			'label'    		=> __( 'No of Slides', 'catchbase' ),
-			'priority'		=> '2.1.4',
-			'section'  		=> 'catchbase_featured_slider_type',
-			'settings' 		=> 'catchbase_theme_options[featured_slide_number]',
-			)
-		) 
+	$wp_customize->add_control( 'catchbase_featured_slide_number' , array(
+		'description'	=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'catchbase' ),
+		'input_attrs' 	=> array(
+            'style' => 'width: 45px;',
+            'min'   => 0,
+            'max'   => 20,
+            'step'  => 1,
+        	),
+		'label'    		=> __( 'No of Slides', 'catchbase' ),
+		'priority'		=> '2.1.4',
+		'section'  		=> 'catchbase_featured_slider_type',
+		'settings' 		=> 'catchbase_theme_options[featured_slide_number]',
+		'type'	   		=> 'number',
+		)
 	);
 
 	//loop for featured page sliders
@@ -164,18 +174,4 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 			'type'	   	=> 'dropdown-pages',
 		) );
 	}
-
-	$wp_customize->add_setting( 'catchbase_theme_options[featured_slider_select_category]', array(
-		'capability'		=> 'edit_theme_options',
-		'sanitize_callback'	=> 'catchbase_sanitize_category_list',
-	) );
-
-	$wp_customize->add_control( new Catchbase_Customize_Dropdown_Categories_Control( $wp_customize, 'catchbase_featured_slider_select_category', array(
-        'label'   	=> __('Select Categories', 'catchbase' ),
-        'name' 		=> 'catchbase_theme_options[featured_slider_select_category]',
-		'priority'	=> '5',
-        'section'  	=> 'catchbase_featured_slider_type',
-        'settings' 	=> 'catchbase_theme_options[featured_slider_select_category]',
-        'type'     	=> 'dropdown-categories',
-    ) ) );
 // Featured Slider End

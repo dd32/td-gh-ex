@@ -54,14 +54,14 @@ if ( ! function_exists( 'catchbase_content_width' ) ) :
 
 		// Blog Page setting in Reading Settings
 		if ( $page_id == $page_for_posts ) {
-			$layout = get_post_meta( $page_for_posts,'catchflames-sidebarlayout', true );
+			$layout = get_post_meta( $page_for_posts,'catchbase-sidebarlayout', true );
 		}
 		elseif ( $post)  {
 			if ( is_attachment() ) {
 				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent,'catchflames-sidebarlayout', true );
+				$layout = get_post_meta( $parent,'catchbase-sidebarlayout', true );
 			} else {
-				$layout = get_post_meta( $post->ID,'catchflames-sidebarlayout', true );
+				$layout = get_post_meta( $post->ID,'catchbase-sidebarlayout', true );
 			}
 		}
 
@@ -127,8 +127,6 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		register_nav_menus( array(
 			'primary' 	=> __( 'Primary Menu', 'catchbase' ),
 			'secondary' => __( 'Secondary Menu', 'catchbase' ),
-			'header-right' => __( 'Header Right Menu', 'catchbase' ),
-			'footer' 	=> __( 'Footer Menu', 'catchbase' ),
 		) );
 
 		/**
@@ -147,7 +145,14 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		/**
 		 * Setup Editor style
 		 */
-		add_editor_style();
+		add_editor_style( 'css/editor-style.css' );
+
+		/**
+		 * Setup title support for theme
+		 * Supported from WordPress version 4.1 onwards 
+		 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+		 */
+		add_theme_support( 'title-tag' );
 
 		/**
 		 * Setup Infinite Scroll using JetPack if navigation type is set
@@ -188,9 +193,9 @@ function catchbase_scripts() {
 
 	wp_enqueue_style( 'catchbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -248,11 +253,6 @@ function catchbase_scripts() {
 		else {
 			wp_enqueue_script( 'jquery.cycle2' );
 		}
-
-		// Condition for youtube video in slider
-		if ( 'featured-video-slider' ==  $options['featured_slider_type'] ){
-			wp_enqueue_script( 'jquery.cycle2.video', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.video.min.js',  array( 'jquery.cycle2' ), '20140128 ', true );
-		}
 	}
 
 	/**
@@ -263,7 +263,7 @@ function catchbase_scripts() {
 	/**
 	 * Enqueue custom script for catchbase.
 	 */
-	wp_enqueue_script( 'catchbase-custom-scripts', get_template_directory_uri() . '/js/catchbase-custom-scripts.js', array( 'jquery' ), null );
+	wp_enqueue_script( 'catchbase-custom-scripts', get_template_directory_uri() . '/js/catchbase-custom-scripts.min.js', array( 'jquery' ), null );
 }
 add_action( 'wp_enqueue_scripts', 'catchbase_scripts' );
 
@@ -279,7 +279,7 @@ add_action( 'wp_enqueue_scripts', 'catchbase_scripts' );
 function catchbase_enqueue_metabox_scripts() {
     //Scripts
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js' );
-	wp_enqueue_script( 'catchbase-metabox', get_template_directory_uri() . '/js/catchbase-metabox.js', array( 'jquery-ui-tabs', 'jquery-cookie' ), '2013-10-05' );
+	wp_enqueue_script( 'catchbase-metabox', get_template_directory_uri() . '/js/catchbase-metabox.min.js', array( 'jquery-ui-tabs', 'jquery-cookie' ), '2013-10-05' );
 	
 	//CSS Styles
 	wp_enqueue_style( 'catchbase-metabox-tabs', get_template_directory_uri() . '/css/catchbase-metabox-tabs.css' );
@@ -322,7 +322,7 @@ require get_template_directory() . '/inc/catchbase-menus.php';
 /**
  * Load Slider file.
  */
-require get_template_directory() . '/inc/catchbase-slider.php';
+require get_template_directory() . '/inc/catchbase-featured-slider.php';
 
 
 /**
@@ -523,7 +523,7 @@ if ( ! function_exists( 'catchbase_custom_css' ) ) :
 	 * @since Catchbase 1.0
 	 */
 	function catchbase_custom_css() {
-		//catchbase_flush_transients();
+		catchbase_flush_transients();
 		$options 	= catchbase_get_theme_options();
 		
 		$defaults 	= catchbase_get_default_theme_options();
@@ -539,16 +539,6 @@ if ( ! function_exists( 'catchbase_custom_css' ) ) :
 
 			if ( 'blank' == $text_color ){
 				$catchbase_custom_css	.=  "#site-header { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); }". "\n";
-			}
-			
-			/*
-			 * Custom css for genericon social icons. needs change: @change
-			 */
-			if( $defaults[ 'social_icon_size' ] != $options[ 'social_icon_size' ] )
-			if( isset( $options['social_icon_size'] ) && $options['social_icon_size'] != '' ){
-				$size 	= $options['social_icon_size'];
-			
-				$catchbase_custom_css	.=	'.genericon { font-size:'. $size .'px; height: '. $size .'px; width :'. $size .'px; }' . "\n";
 			}
 
 			//Custom CSS Option		
@@ -750,18 +740,20 @@ if ( ! function_exists( 'catchbase_the_attached_image' ) ) :
 endif; //catchbase_the_attached_image
 
 
-if ( ! function_exists( 'catchbase_posted_on' ) ) :
+if ( ! function_exists( 'catchbase_entry_meta' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 *
-	 * @since Catchbase_ 1.0
+	 * @since Catchbase 1.0
 	 */
-	function catchbase_posted_on() {
+	function catchbase_entry_meta() {
 		echo '<p class="entry-meta">';
 
-		$time_string = '<time pubdate class="entry-date published" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
-			$time_string .= '<time pubdate class="entry-date updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
@@ -769,56 +761,94 @@ if ( ! function_exists( 'catchbase_posted_on' ) ) :
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
-		printf( __( '<span class="posted-on">%1$s</span> %2$s', 'catchbase' ),
-			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				$time_string
-			),
-			sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'catchbase' ), get_the_author() ) ),
-				esc_html( get_the_author() )
-			)
+
+		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
+			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'catchbase' ) ),
+			esc_url( get_permalink() ),
+			$time_string
 		);
 
-		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'catchbase' ), __( '1 Comment', 'catchbase' ), __( '% Comments', 'catchbase' ) ); ?></span>
-		<?php endif;
+		if ( is_singular() || is_multi_author() ) {
+			printf( '<span class="byline"><span class="author vcard">%1$s<a class="url fn n" href="%2$s">%3$s</a></span></span>',
+				sprintf( _x( '<span class="screen-reader-text">Author</span>', 'Used before post author name.', 'catchbase' ) ),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			);
+		}
 
-		edit_post_link( __( 'Edit', 'catchbase' ), ' <span class="edit-link">', '</span>' );
+		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'catchbase' ), esc_html__( '1 Comment', 'catchbase' ), esc_html__( '% Comments', 'catchbase' ) );
+			echo '</span>';
+		}
+
+		edit_post_link( esc_html__( 'Edit', 'catchbase' ), '<span class="edit-link">', '</span>' ); 
 
 		echo '</p><!-- .entry-meta -->';
 	}
-endif; //catchbase_posted_on
+endif; //catchbase_entry_meta
 
 
-/**
- * Returns true if a blog has more than 1 category
- *
- * @since Catchbase 1.0
- */
-function catchbase_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1,
-		) );
+if ( ! function_exists( 'catchbase_tag_category' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags.
+	 *
+	 * @since Catchbase 1.0
+	 */
+	function catchbase_tag_category() {
+		echo '<p class="entry-meta">';
 
-		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		if ( 'post' == get_post_type() ) {
+			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'catchbase' ) );
+			if ( $categories_list && catchbase_categorized_blog() ) {
+				printf( '<span class="cat-links">%1$s%2$s</span>',
+					sprintf( _x( '<span class="screen-reader-text">Categories</span>', 'Used before category names.', 'catchbase' ) ),
+					$categories_list
+				);
+			}
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'catchbase' ) );
+			if ( $tags_list ) {
+				printf( '<span class="tags-links">%1$s%2$s</span>',
+					sprintf( _x( '<span class="screen-reader-text">Tags</span>', 'Used before tag names.', 'catchbase' ) ),
+					$tags_list
+				);
+			}
+		}
+
+		echo '</p><!-- .entry-meta -->';
 	}
+endif; //catchbase_tag_category
 
-	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so catchbase_categorized_blog should return true
-		return true;
-	} else {
-		// This blog has only 1 category so catchbase_categorized_blog should return false
-		return false;
+
+if ( ! function_exists( 'catchbase_categorized_blog' ) ) :
+	/**
+	 * Returns true if a blog has more than 1 category
+	 *
+	 * @since Catchbase 1.0
+	 */
+	function catchbase_categorized_blog() {
+		if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+			// Create an array of all the categories that are attached to posts
+			$all_the_cool_cats = get_categories( array(
+				'hide_empty' => 1,
+			) );
+
+			// Count the number of categories that are attached to the posts
+			$all_the_cool_cats = count( $all_the_cool_cats );
+
+			set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		}
+
+		if ( '1' != $all_the_cool_cats ) {
+			// This blog has more than 1 category so catchbase_categorized_blog should return true
+			return true;
+		} else {
+			// This blog has only 1 category so catchbase_categorized_blog should return false
+			return false;
+		}
 	}
-}
+endif; //catchbase_categorized_blog
 
 
 /**
@@ -1409,10 +1439,11 @@ function catchbase_get_first_image( $postID, $size, $attr ) {
 		//Get first image
 		$first_img = $matches [1] [0];
 		
-		return '<img class="pngfix wp-post-image" src="'. $first_img .'">';
+		return '<img class="pngfix wp-post-image" src="'. esc_url( $first_img ) .'">';
 	}
-	
-	return false;
+	else {
+		return false;
+	}
 }
 
 

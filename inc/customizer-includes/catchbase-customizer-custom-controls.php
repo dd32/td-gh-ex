@@ -23,55 +23,13 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	        ?>
 	        <label>
 	        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+	        <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 	        <textarea rows="6" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
 	        </label>
 	        <?php
 	    }
 	}
 
-	//Custom control for Small Input Text
-	class Catchbase_Customize_Small_Input_Text extends WP_Customize_Control {
-		public $type = 'small-input-text';
-
-		public $description;
-
-		public function render_content() {
-			echo '<div class="small-input-text-parent">';
-
-			echo '<label><span class="customize-control-title">'. $this->label .'</span></label>';
-
-			if( isset(  $this->description  ) && $this->description != '' )
-				echo '<p class="description">'. esc_attr( $this->description )  .'</p>';
-
-			echo '<input type="text" class="small-input-text"';
-
-			$this->link();
-
-			echo ' value="'. $this->value() .'">';
-
-			echo '</div>';
-		}
-	}
-
-	//Custom control for Input text with custom messages
-	class Catchbase_Customize_Custom_Input_Text extends WP_Customize_Control {
-		public $type = 'custom-text';
-
-		public $description;
-
-		public function render_content() {
-
-			echo '<label><span class="customize-control-title">'. $this->label .'</span></label>';
-
-			echo '<p class="description">'. esc_attr( $this->description )  .'</p>';
-
-			echo '<input type="text"';
-
-			$this->link();
-
-			echo ' value="'. $this->value() .'">';
-		}
-	}
 
 	//Custom control for dropdown category multiple select
 	class Catchbase_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
@@ -100,23 +58,5 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 			);
 
 			echo '<p class="description">'. __( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'catchbase' ) . '</p>';
-		}
-	}
-
-	//Custom control for any note, use label as output description
-	class Catchbase_Note_Control extends WP_Customize_Control {
-		public $type = 'description';
-
-		public function render_content() {
-			echo '<h2 class="description">' . $this->label . '</h2>';
-		}
-	}
-
-	//Custom control for social icon size control
-	class Catchbase_Social_Icon_Size_Control extends WP_Customize_Control {
-		public $type = 'description';
-
-		public function render_content() {
-			echo '<div class="small-input-text-parent"><span class="customize-control-title">'. __( 'Social Icon Size', 'catchbase' ) .'</span><input type="text" data-customize-setting-link="catchbase_theme_options[social_icon_size]"/> px</div>';
 		}
 	}

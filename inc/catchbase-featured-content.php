@@ -63,7 +63,7 @@ function catchbase_featured_content_display() {
 				<section id="featured-content" class="' . $classes . '">
 					<div class="wrapper">
 						<div class="featured-heading-wrap">
-							<h2 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h2>
+							<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>
 							<p>'. esc_attr( $subheadline ) .'</p>
 						</div><!-- .featured-heading-wrap -->
 
@@ -250,12 +250,16 @@ function catchbase_page_content( $options ) {
 					</figure>';
 				}
 				else {
-					$catchbase_page_content .= '
-					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
-							'. catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
-						</a>
-					</figure>';
+					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+
+					if ( '' != $catchbase_first_image ) {
+						$catchbase_page_content .= '
+						<figure class="featured-homepage-image">
+							<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
+								'. $catchbase_first_image .'
+							</a>
+						</figure>';
+					}
 				}
 
 				$catchbase_page_content .= '

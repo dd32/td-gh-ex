@@ -27,7 +27,7 @@ if( !function_exists( 'catchbase_featured_slider' ) ) :
  */
 function catchbase_featured_slider() {
 	global $post, $wp_query;
-	//catchbase_flush_transients();
+	catchbase_flush_transients();
 	// get data value from options
 	$options 		= catchbase_get_theme_options();
 	$enableslider 	= $options['featured_slider_option'];
@@ -51,6 +51,7 @@ function catchbase_featured_slider() {
 						    data-cycle-log="false"
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
+						    data-cycle-auto-height=container
 						    data-cycle-fx="'. $options['featured_slide_transition_effect'] .'"
 							data-cycle-speed="'. $options['featured_slide_transition_length'] * 1000 .'"
 							data-cycle-timeout="'. $options['featured_slide_transition_delay'] * 1000 .'"
@@ -189,8 +190,19 @@ function catchbase_page_slider( $options ) {
 					</a>';
 				}
 				else {
+					//Default value if there is no first image
+					$catchbase_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
+					
+					//Get the first image in page, returns false if there is no image
+					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+
+					//Set value of image as first image if there is an image present in the page
+					if ( '' != $catchbase_first_image ) {
+						$catchbase_image =	$catchbase_first_image;
+					}
+
 					$catchbase_page_slider .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
-						'. catchbase_get_first_image( $post->ID, 'catchbase_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
+						'. $catchbase_image .'
 					</a>';
 				}
 				

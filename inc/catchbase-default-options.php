@@ -93,9 +93,6 @@ function catchbase_get_default_theme_options() {
 		'featured_slider_type'								=> 'demo-featured-slider',
 		'featured_slide_number'								=> '4',
 		
-		//Social Links
-		'social_icon_size'									=> '20',
-		
 		//Reset all settings
 		'reset_all_settings'								=> 0,
 	);

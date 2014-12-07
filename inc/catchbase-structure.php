@@ -46,7 +46,7 @@ if ( ! function_exists( 'catchbase_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php if ( ! function_exists( '_wp_render_title_tag' ) ) : ?><title><?php wp_title( '|', true, 'right' ); ?></title><?php endif; ?>	
 		<!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.min.js"></script>
 		<![endif]-->
@@ -102,7 +102,7 @@ if ( ! function_exists( 'catchbase_header_start' ) ) :
 		<?php
 	}
 endif;
-add_action( 'catchbase_header', 'catchbase_header_start', 30 );
+add_action( 'catchbase_header', 'catchbase_header_start', 20 );
 
 
 if ( ! function_exists( 'catchbase_header_end' ) ) :
@@ -303,10 +303,16 @@ add_action( 'catchbase_footer', 'catchbase_footer_content_end', 110 );
 
 if ( ! function_exists( 'catchbase_header_right' ) ) :
 	/**
-	 * Shows Header Right Sidebar
+	 * Shows Header Right Social Icon
 	 */
-	function catchbase_header_right() { 
-		get_sidebar( 'header-right' ); 
+	function catchbase_header_right() { ?>
+		<aside class="sidebar sidebar-header-right widget-area">
+		<?php
+			//Header Right Widgets Sidebar
+			the_widget( 'Catchbase_social_icons_widget' );
+		?>
+		</aside><!-- .sidebar .header-sidebar .widget-area -->
+	<?php	
 	}
 endif;
-add_action( 'catchbase_header', 'catchbase_header_right', 50 );
+add_action( 'catchbase_header', 'catchbase_header_right', 60 );

@@ -10,13 +10,7 @@ jQuery(document).ready(function() {
 			jQueryform_search = jQuerythis_el_search.siblings( '#search-container' );
 			
 		if ( jQueryform_search.hasClass( 'displaynone' ) ) {
-			
 			jQueryform_search.removeClass( 'displaynone' ).addClass( 'displayblock' ).animate( { opacity : 1 }, 300 );
-			
-			if ( jQueryhideform_search.hasClass( 'displayblock' ) ) {
-				jQueryhideform_search.removeClass( 'displayblock' ).addClass( 'displaynone' ).animate( { opacity : 0 }, 300 );
-			}
-			
 		} else {
 			jQueryform_search.removeClass( 'displayblock' ).addClass( 'displaynone' ).animate( { opacity : 0 }, 300 );		
 		}

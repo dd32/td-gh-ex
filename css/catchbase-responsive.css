@@ -1,8 +1,9 @@
 /*--------------------------------------------------------------
-1.0 Responsive Style
+Responsive Style
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
-1.1 Media queries
+1. Media queries
 --------------------------------------------------------------*/
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
@@ -12,35 +13,41 @@
 @-ms-viewport {
 	width: device-width;
 }
+
 @viewport {
 	width: device-width;
 }
 
 /*--------------------------------------------------------------
-1.2 Mobile Menus
+2. Mobile Menus
 --------------------------------------------------------------*/
 .mobile-menu,
 .mobile-menu-anchor,
 .mobile-menu-text {
 	display: none;
 }
+
 #mobile-header-left-menu {
 	float: left;
 }
+
 #mobile-header-right-menu {
 	float: right;
 }
+
 .mobile-menu-anchor a.genericon-menu,
 .mobile-menu-anchor a.genericon-menu:hover {
 	color: #404040;
 	text-decoration: none;
 }
+
 .mobile-header-left-nav-open #mobile-header-left-menu .genericon-menu:before,
 .mobile-secondary-nav-open #mobile-secondary-menu .genericon-menu:before,
 .mobile-header-right-nav-open #mobile-header-right-menu .genericon-menu:before,
 .mobile-footer-nav-open #mobile-footer-menu .genericon-menu:before {
 	content: "\f406";
 }
+
 .sidr {
 	display: none;
 	position: absolute;
@@ -58,22 +65,32 @@
 	-moz-box-shadow: inset 0 0 5px 5px #222;
 	box-shadow:i nset 0 0 5px 5px #222;
 }
+
 .sidr .sidr-inner {
 	padding: 0 0 15px;
 }
+
 .sidr .sidr-inner>p {
 	margin-left: 15px;
 	margin-right: 15px;
 }
+
 .sidr.right {
 	left: auto;
 	right: -260px; 
 }
+
 .sidr.left {
 	left: -260px;
 	right: auto;
 }
-.sidr h1, .sidr h2, .sidr h3, .sidr h4, .sidr h5, .sidr h6 {
+
+.sidr h1, 
+.sidr h2, 
+.sidr h3, 
+.sidr h4, 
+.sidr h5, 
+.sidr h6 {
 	font-size: 11px;
 	font-weight: normal;
 	padding: 0 15px;
@@ -89,17 +106,21 @@
 	-moz-box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
 }
+
 .sidr p {
 	font-size: 13px;
 	margin: 0 0 12px;
 }
+
 .sidr p a {
 	color: rgba(255, 255, 255, 0.9);
 }
+
 .sidr>p {
 	margin-left: 15px;
 	margin-right: 15px;
 }
+
 .sidr ul {
 	display: block;
 	margin: 0 0 15px;
@@ -107,6 +128,7 @@
 	border-top: 1px solid #1a1a1a;
 	border-bottom: 1px solid #4d4d4d;
 }
+
 .sidr ul li {
 	display:block;
 	margin: 0;
@@ -114,55 +136,95 @@
 	border-top: 1px solid #4d4d4d;
 	border-bottom: 1px solid #1a1a1a;
 }
-.sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+
+.sidr ul li:hover, 
+.sidr ul li.active, 
+.sidr ul li.sidr-class-active {
 	border-top: none;
 	line-height: 49px;
 }
-.sidr ul li:hover>a, .sidr ul li:hover>span, .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span {
+
+.sidr ul li:hover>a, 
+.sidr ul li:hover>span, 
+.sidr ul li.active>a, 
+.sidr ul li.active>span, 
+.sidr ul li.sidr-class-active>a, 
+.sidr ul li.sidr-class-active>span {
 	-webkit-box-shadow: inset 0 0 15px 3px #222;
 	-moz-box-shadow: inset 0 0 15px 3px #222;
 	box-shadow: inset 0 0 15px 3px #222;
 }
-.sidr ul li a, .sidr ul li span {
+
+.sidr ul li a, 
+.sidr ul li span {
 	padding: 0 15px;
 	display: block;
 	text-decoration: none;
 	color: #fff;
 }
+
 .sidr ul li ul {
 	border-bottom: none;
 	margin: 0;
 }
+
 .sidr ul li ul li {
 	line-height: 40px;
 	font-size: 13px;
 }
+
 .sidr ul li ul li:last-child {
 	border-bottom: none;
 }
-.sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+
+.sidr ul li ul li:hover, 
+.sidr ul li ul li.active, 
+.sidr ul li ul li.sidr-class-active {
 	border-top: none;
 	line-height: 41px;
 }
-.sidr ul li ul li:hover>a, .sidr ul li ul li:hover>span, .sidr ul li ul li.active>a, .sidr ul li ul li.active>span, .sidr ul li ul li.sidr-class-active>a, .sidr ul li ul li.sidr-class-active>span {
+
+.sidr ul li ul li:hover>a, 
+.sidr ul li ul li:hover>span, 
+.sidr ul li ul li.active>a, 
+.sidr ul li ul li.active>span, 
+.sidr ul li ul li.sidr-class-active>a, 
+.sidr ul li ul li.sidr-class-active>span {
 	-webkit-box-shadow: inset 0 0 15px 3px #222;
 	-moz-box-shadow: inset 0 0 15px 3px #222;
 	box-shadow: inset 0 0 15px 3px #222;
 }
-.sidr ul li ul li a, .sidr ul li ul li span {
+
+.sidr ul li ul li a, 
+.sidr ul li ul li span {
 	color: #ccc;
 	padding-left: 20px;
 }
-.sidr ul li ul li ul li a, .sidr ul li ul li ul li span {
+
+.sidr ul li ul li ul li a, 
+.sidr ul li ul li ul li span {
 	padding-left: 30px;
 }
+
 .sidr form {
 	margin: 0 15px;
 }
+
 .sidr label {
 	font-size: 13px;
 }
-.sidr input[type="text"], .sidr input[type="password"], .sidr input[type="date"], .sidr input[type="datetime"], .sidr input[type="email"], .sidr input[type="number"], .sidr input[type="search"], .sidr input[type="tel"], .sidr input[type="time"], .sidr input[type="url"], .sidr textarea, .sidr select {
+
+.sidr input[type="text"], 
+.sidr input[type="password"], 
+.sidr input[type="date"], 
+.sidr input[type="datetime"], 
+.sidr input[type="email"], 
+.sidr input[type="number"], 
+.sidr input[type="search"], 
+.sidr input[type="tel"], 
+.sidr input[type="time"], 
+.sidr input[type="url"], 
+.sidr textarea, .sidr select {
 	width: 100%;
 	font-size: 13px;
 	padding: 5px;
@@ -181,21 +243,26 @@
 	display: block;
 	clear: both;
 }
+
 .sidr input[type=checkbox] {
 	width: auto;
 	display: inline;
 	clear: none;
 }
-.sidr input[type=button], .sidr input[type=submit] {
+
+.sidr input[type=button], 
+.sidr input[type=submit] {
 	color: #333;
 	background: #fff;
 }
-.sidr input[type=button]:hover, .sidr input[type=submit]:hover {
+
+.sidr input[type=button]:hover,
+.sidr input[type=submit]:hover {
 	background: rgba(255, 255, 255, 0.9);
 }
 
 /*--------------------------------------------------------------
-1.3 x <= 1280px
+3. x <= 1280px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
 	.site {
@@ -234,7 +301,6 @@
 	.three-columns.equal-sidebars .sidebar-secondary {
 		width: 300px;
 	}
-
 	/* Three Columns Equal Columns */	
 	.three-columns.equal-columns #content_sidebar_wrap {
 	    width: 707px;
@@ -246,7 +312,6 @@
 	.three-columns.equal-columns .sidebar-secondary {
 	    width: 353px;
 	}
-
 	#featured-content.layout-four .hentry,
 	#supplementary.four .widget-area {
 	    width: 25%;
@@ -267,7 +332,7 @@
 }
 
 /*--------------------------------------------------------------
-1.4 x <= 1152px
+4. x <= 1152px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1152px) {
 	.site {
@@ -325,7 +390,6 @@
 	.sidebar-secondary {
 	    width: 220px;
 	}	
-
 	/* Three Columns Equal Sidebars */	
 	.three-columns.equal-sidebars  #content_sidebar_wrap {
 		width:  735px;
@@ -348,7 +412,7 @@
 }
 
 /*--------------------------------------------------------------
-1.5 x <= 1100px (iPad Landscape)
+5. x <= 1100px (iPad Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width: 1100px) {
 	.site {
@@ -410,7 +474,7 @@
 }
 
 /*--------------------------------------------------------------
-1.6 x <= 990px (iPad Portrait)
+6. x <= 990px (iPad Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 990px) {	
 	.site,
@@ -495,16 +559,13 @@
 	h6 {
 		font-size: 14px;
 	}
-	.entry-title {
-	    font-size: 24px;
-	}
-	#feature-slider .entry-title,
+	.entry-title,
 	#promotion-message h2,
-	#featured-content .entry-title {
-	    font-size: 22px;
+	#featured-content #featured-heading {
+		font-size: 24px;
 	}
-	#featured-content .entry-container .entry-title {
-	    font-size: 20px;
+	#featured-content .entry-title {
+		font-size: 20px;
 	}
 	#site-generator {
 		font-size: 13px;
@@ -631,7 +692,7 @@
 }
 
 /*--------------------------------------------------------------
-1.7 x <= 767px
+7. x <= 767px
 --------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
 	.site,
@@ -647,7 +708,7 @@
 }
 
 /*--------------------------------------------------------------
-1.8 x <= 700px
+8. x <= 700px
 --------------------------------------------------------------*/
 @media screen and (max-width: 700px) {
 	.site,
@@ -675,7 +736,7 @@
 }
 
 /*--------------------------------------------------------------
-1.9 x <= 600px (iPhone 5 Landscape)
+9. x <= 600px (iPhone 5 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width:600px) {
 	.site,
@@ -712,17 +773,14 @@
 	h6 {
 		font-size: 14px;
 	}
-	.entry-title {
-	    font-size: 22px;
-	}
+	.entry-title,
 	#promotion-message h2,
-	#featured-content .entry-title {
-	    font-size: 20px;
+	#featured-content #featured-heading {
+		font-size: 22px;
 	}
-	#feature-slider .entry-title {
-	    font-size: 18px;
-	    margin-bottom: 0;
-	}	
+	#featured-content .entry-title {
+		font-size: 18px;
+	}
 	#feature-slider .entry-content {
 		display: none;
 	}
@@ -732,7 +790,7 @@
 }
 
 /*--------------------------------------------------------------
-1.10 x <= 540px (iPhone 4 Landscape)
+10. x <= 540px (iPhone 4 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width: 540px) {
 	.site,
@@ -786,12 +844,13 @@
 	h6 {
 		font-size: 13px;
 	}
-	.entry-title {
-	    font-size: 20px;
-	}
+	.entry-title,
 	#promotion-message h2,
+	#featured-content #featured-heading {
+		font-size: 20px;
+	}
 	#featured-content .entry-title {
-	    font-size: 18px;
+		font-size: 18px;
 	}
 	#feature-slider .entry-title {
 	    font-size: 16px;
@@ -800,7 +859,7 @@
 }
 
 /*--------------------------------------------------------------
-1.11 x <= 479px (iPhone Portrait)
+11. x <= 479px (iPhone Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 479px) {
 	.site,
@@ -849,7 +908,7 @@
 }
 
 /*--------------------------------------------------------------
-1.12 x <= 319px
+12. x <= 319px
 --------------------------------------------------------------*/
 @media screen and (max-width: 319px) {
 	.site,
@@ -908,12 +967,13 @@
 	h6 {
 		font-size: 12px;
 	}
-	.entry-title {
-	    font-size: 18px;
-	}
+	.entry-title,
 	#promotion-message h2,
+	#featured-content #featured-heading {
+		font-size: 18px;
+	}
 	#featured-content .entry-title {
-	    font-size: 16px;
+		font-size: 16px;
 	}
 	#feature-slider .entry-title {
 	    font-size: 14px;
@@ -922,7 +982,7 @@
 }
 
 /*--------------------------------------------------------------
-1.13 Form Zoom Fix
+13. Form Zoom Fix
 --------------------------------------------------------------*/
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	select:focus, 

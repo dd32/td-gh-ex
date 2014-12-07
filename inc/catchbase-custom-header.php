@@ -4,7 +4,7 @@
  * http://codex.wordpress.org/Custom_Headers
  *
  * @package Catchbase
- * @subpackage Catchbase Pro
+ * @subpackage Catchbase
  * @since Catchbase 1.0
  */
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -62,7 +62,7 @@ if ( ! function_exists( 'catchbase_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @since Catch Base Pro 1.0
+ * @since Catch Base 1.0
  */
 function catchbase_admin_header_style() {
 	$options 	= catchbase_get_theme_options();
@@ -145,7 +145,7 @@ if ( ! function_exists( 'catchbase_admin_header_image' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @since Catch Base Pro 1.0
+ * @since Catch Base 1.0
  */
 function catchbase_admin_header_image() {
 	
@@ -225,7 +225,7 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 		echo $catchbase_site_branding ;	
 	}
 endif; // catchbase_site_branding
-add_action( 'catchbase_header', 'catchbase_site_branding', 40 );
+add_action( 'catchbase_header', 'catchbase_site_branding', 50 );
 
 
 if ( ! function_exists( 'catchbase_featured_image' ) ) :

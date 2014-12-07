@@ -38,11 +38,5 @@ if (   ! is_active_sidebar( 'footer-1'  )
                 <?php dynamic_sidebar( 'footer-3' ); ?>
             </div><!-- #third .widget-area -->
             <?php endif; ?>
-
-            <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-            <div id="fourth" class="widget-area" role="complementary">
-                <?php dynamic_sidebar( 'footer-4' ); ?>
-            </div><!-- #fourth .widget-area -->
-            <?php endif; ?>
         </div> <!-- .wrapper -->
     </div><!-- #supplementary -->

@@ -16,6 +16,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
 }
+
 	
 //Theme Options
 	if( 4 <= get_bloginfo( 'version' ) ) {
@@ -67,12 +68,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_breadcumb_seperator', array(
-			'label'    	=> __( 'Seperator between Breadcrumbs', 'catchbase' ),
+	$wp_customize->add_control( 'catchbase_breadcumb_seperator', array(
+			'input_attrs' => array(
+	            'style' => 'width: 40px;'
+            	),
+            'label'    	=> __( 'Seperator between Breadcrumbs', 'catchbase' ),
 			'section' 	=> 'catchbase_breadcumb_options',
 			'settings' 	=> 'catchbase_theme_options[breadcumb_seperator]',
 			'type'     	=> 'text'
-			)
 		) 
 	);
    	// Breadcrumb Option End
@@ -113,12 +116,20 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Small_Input_Text( $wp_customize, 'catchbase_excerpt_length', array(
-		'label'    => __( 'Excerpt Length (words)', 'catchbase' ),
+	$wp_customize->add_control( 'catchbase_excerpt_length', array(
+		'description' => __('Excerpt length. Default is 40 words', 'catchbase'),
+		'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 200,
+            'step'  => 5,
+            'style' => 'width: 60px;'
+            ),
+        'label'    => __( 'Excerpt Length (words)', 'catchbase' ),
 		'section'  => 'catchbase_excerpt_options',
 		'settings' => 'catchbase_theme_options[excerpt_length]',
-		'type'	   => 'small-text',
-	)	)	);
+		'type'	   => 'number',
+	)	);
+
 
 	$wp_customize->add_setting( 'catchbase_theme_options[excerpt_more_text]', array(
 		'capability'		=> 'edit_theme_options',
@@ -173,7 +184,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	
 	// Icon Options
 	$wp_customize->add_section( 'catchbase_icons', array(
-		'description'	=> __( 'Remove Icon images to disable. <br/> Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catchbase'),
+		'description'	=> __( 'Remove Icon images to disable.', 'catchbase'),
 		'panel'  => 'catchbase_theme_options',
 		'priority' 		=> 210,
 		'title'    		=> __( 'Icon Options', 'catchbase' ),
@@ -196,9 +207,10 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'catchbase_theme_options[web_clip]', array(
-		'label'		=> __( 'Select/Add Web Clip Icon', 'catchbase' ),
-		'section'    => 'catchbase_icons',
-        'settings'   => 'catchbase_theme_options[web_clip]',
+		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catchbase'),
+		'label'		 	=> __( 'Select/Add Web Clip Icon', 'catchbase' ),
+		'section'    	=> 'catchbase_icons',
+        'settings'   	=> 'catchbase_theme_options[web_clip]',
 	) ) );
 	// Icon Options End
 
@@ -330,7 +342,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	//Promotion Headline Options
     $wp_customize->add_section( 'catchbase_promotion_headline_options', array(
-		'description'	=> __( 'The appropriate lengths:<br/>Headline Text: 10 words<br/>Subheadline Text: 15 words<br/>Headline Button Text: 3 words<br/>To disable the fields, simply leave them empty.', 'catchbase' ),
+		'description'	=> __( 'To disable the fields, simply leave them empty.', 'catchbase' ),
 		'panel'			=> 'catchbase_theme_options',
 		'priority' 		=> 213,
 		'title'   	 	=> __( 'Promotion Headline Options', 'catchbase' ),
@@ -364,6 +376,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Catchbase_Customize_Textarea_Control( $wp_customize, 'catchbase_theme_options[promotion_headline]', array(
+		'description'	=> __( 'Appropriate Words: 10', 'catchbase' ),
 		'label'    	=> __( 'Promotion Headline Text', 'catchbase' ),
 		'priority'	=> '1',
 		'section' 	=> 'catchbase_promotion_headline_options',
@@ -377,6 +390,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Catchbase_Customize_Textarea_Control( $wp_customize, 'catchbase_theme_options[promotion_subheadline]', array(
+		'description'	=> __( 'Appropriate Words: 15', 'catchbase' ),
 		'label'    	=> __( 'Promotion Subheadline Text', 'catchbase' ),
 		'priority'	=> '2',
 		'section' 	=> 'catchbase_promotion_headline_options',
@@ -390,6 +404,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[promotion_headline_button]', array(
+		'description'	=> __( 'Appropriate Words: 3', 'catchbase' ),
 		'label'    	=> __( 'Promotion Headline Button Text ', 'catchbase' ),
 		'priority'	=> '3',
 		'section' 	=> 'catchbase_promotion_headline_options',

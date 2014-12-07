@@ -32,19 +32,6 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'title'   	 	=> __( 'Social Links', 'catchbase' ),
 	) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[social_icon_size]', array(
-		'capability'		=> 'edit_theme_options',
-		'default' 			=> $defaults['social_icon_size'],
-		'sanitize_callback'	=> 'absint',
-	) );
-
-	$wp_customize->add_control( new Catchbase_Social_Icon_Size_Control( $wp_customize, 'social_icon_size', array(
-		'label'    	=> __( 'Social Icon Size', 'catchbase' ),
-		'priority'	=> '1.5',
-		'section' 	=> 'catchbase_social_links',
-		'settings'	=> 'catchbase_theme_options[social_icon_size]',
-	) ) );
-
 	$catchbase_social_icons 	=	catchbase_get_social_icons_list();	
 	
 	$i 	=	1;

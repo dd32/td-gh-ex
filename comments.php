@@ -41,10 +41,10 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use catchflames_comment() to format the comments.
+				 * to use catchbase_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
-				 * define catchflames_comment() and that will be used instead.
-				 * See catchflames_comment() in catchflames/functions.php for more.
+				 * define catchbase_comment() and that will be used instead.
+				 * See catchbase_comment() in catchbase/functions.php for more.
 				 */
 				wp_list_comments( array( 
 					'callback' => 'catchbase_comment',

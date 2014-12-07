@@ -369,7 +369,7 @@ function catchbase_reset_all_settings( $input ) {
  * @since Catchbase 1.0
  */
 function catchbase_customize_preview() {
-	wp_enqueue_script( 'catchbase_customizer', get_template_directory_uri() . '/js/catchbase-customizer.js', array( 'customize-preview' ), '20120827', true );
+	wp_enqueue_script( 'catchbase_customizer', get_template_directory_uri() . '/js/catchbase-customizer.min.js', array( 'customize-preview' ), '20120827', true );
 	
 	//Flush transients
 	catchbase_flush_transients();
@@ -383,29 +383,29 @@ add_action( 'customize_preview_init', 'catchbase_customize_preview' );
  * @since Catchbase 1.0
  */
 function catchbase_customize_scripts() {
-	wp_register_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
+	wp_register_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$catchbase_misc_links = array(
-							'heading'					=> __( 'Misc Links', 'catchbase' ),
-							'upgrade_link' 				=> esc_url( '//replace_me' ),
+							'heading'					=> __( 'Important Links', 'catchbase' ),
+							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-base-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro', 'catchbase' ),
-							'theme_instructions_link' 	=> esc_url( '//replace_me' ),
+							'theme_instructions_link' 	=> esc_url( 'http://catchthemes.com/theme-instructions/catch-base/' ),
 							'theme_instructions_text' 	=> __( 'Theme Instructions', 'catchbase' ),
-							'support_forum_link'		=> esc_url( '//replace_me' ),
-							'support_forum_text' 		=> __( 'Support Forum', 'catchbase' ),
-							'changelog_link' 			=> esc_url( '//replace_me' ),
+							'support_forum_link'		=> esc_url( 'http://catchthemes.com/support/' ),
+							'support_forum_text' 		=> __( 'Support', 'catchbase' ),
+							'changelog_link' 			=> esc_url( 'http://catchthemes.com/changelogs/catch-base-theme/' ),
 							'changelog_text' 			=> __( 'Changelog', 'catchbase' ),
-							'donate_link'			 	=> esc_url( '//replace_me' ),
-							'donate_link_text' 			=> __( 'Donate link', 'catchbase' ),
-							'review_link' 				=> esc_url( '//replace_me' ),
+							'donate_link'			 	=> esc_url( 'http://catchthemes.com/donate/' ),
+							'donate_link_text' 			=> __( 'Donate Now', 'catchbase' ),
+							'review_link' 				=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catch-base' ),
 							'review_text' 				=> __( 'Review', 'catchbase' ),
-							'facebook_link' 			=> esc_url( '//replace_me' ),
+							'facebook_link' 			=> esc_url( 'https://www.facebook.com/catchthemes/' ),
 							'facebook_text' 			=> __( 'Facebook', 'catchbase' ),
-							'twitter_link' 				=> esc_url( '//replace_me' ),
+							'twitter_link' 				=> esc_url( 'https://twitter.com/catchthemes/' ),
 							'twitter_text' 				=> __( 'Twitter', 'catchbase' ),
-							'gplus_link' 				=> esc_url( '//replace_me' ),
+							'gplus_link' 				=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
 							'gplus_text' 				=> __( 'Google+', 'catchbase' ),
-							'pinterest_link' 			=> esc_url( '//replace_me' ),
+							'pinterest_link' 			=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
 							'pinterest_text' 			=> __( 'Pinterest', 'catchbase' ),
 							'WP_version'				=> get_bloginfo( 'version' ),
 							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catchbase' )

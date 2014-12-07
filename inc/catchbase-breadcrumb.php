@@ -18,6 +18,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	exit();
 }
 
+
 /**
  * Add breadcrumb.
  *

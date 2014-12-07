@@ -88,109 +88,39 @@ endif; //catchbase_secondary_menu
 add_action( 'catchbase_after_header', 'catchbase_secondary_menu', 30 );
 
 
-if ( ! function_exists( 'catchbase_footer_menu' ) ) :
-/**
- * Shows the Footer Menu 
- *
- * default load in sidebar-header-right.php
- */
-function catchbase_footer_menu() {
-	if ( has_nav_menu( 'footer' ) ) { 
-    ?>
-	<nav class="nav-footer" role="navigation">
-        <div class="wrapper">
-            <h1 class="menu-toggle"><?php _e( 'Footer Menu', 'catchbase' ); ?></h1>
-            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catchbase' ); ?>"><?php _e( 'Skip to content', 'catchbase' ); ?></a></div>
-            <?php                
-                $catchbase_footer_menu_args = array(
-                    'theme_location'    => 'footer',
-                    'menu_class' => 'menu catchbase-nav-menu'
-                );
-                wp_nav_menu( $catchbase_footer_menu_args );
-            ?>
-    	</div><!-- .wrapper -->
-    </nav><!-- .nav-footer -->
-<?php
-    }
-}
-endif; //catchbase_footer_menu
-add_action( 'catchbase_footer', 'catchbase_footer_menu', 10 );
-
-
 if ( ! function_exists( 'catchbase_mobile_menus' ) ) :
 /**
  * This function loads Mobile Menus
  *
- * @get the data value from theme options
- * @uses catchflames_after action to add the code in the footer
+ * @uses catchbase_after action to add the code in the footer
  */
 function catchbase_mobile_menus() {
-    //Getting Ready to load options data
-    $options                    = catchbase_get_theme_options();
-
-    // Check Header Left Mobile Menu
-    if ( has_nav_menu( 'primary' ) ) :
-       $count = '1';
-       $location = 'primary';
-    elseif ( has_nav_menu( 'secondary' ) ) :
-       $count = '1';
-       $location = 'secondary';
-    elseif ( has_nav_menu( 'header-right' ) ) :
-       $count = '1';
-       $location = 'header-right';
-    else :
-       $count = '2';
-       $location = 'none';
-    endif;
-    
+    //For primary menu, check if primary menu exists, if not, page menu
     echo '<nav id="mobile-header-left-nav" class="mobile-menu" role="navigation">';
-        if ( $count == '1' ) :
+        if ( has_nav_menu( 'primary' ) ) {
             $args = array(
-                'theme_location'    => $location,
+                'theme_location'    => 'primary',
                 'container'         => false,
                 'items_wrap'        => '<ul id="header-left-nav" class="menu">%3$s</ul>'
             );
             wp_nav_menu( $args );
-        else :
+        }
+        else { 
             wp_page_menu( array( 'menu_class'  => 'menu' ) );
-        endif;
+        }
     echo '</nav><!-- #mobile-header-left-nav -->';
 
-
-    // Check Header Right Mobile Menu ( only for Header right and Secondary )
-    if ( ( has_nav_menu( 'secondary' ) &&  has_nav_menu( 'header-right' ) ) ) :
-        $count2 = '1';
-        $location2 = 'header-right';
-    elseif ( has_nav_menu( 'secondary' ) ) :
-        $count2 = '1';
-        $location2 = 'secondary';
-    else :
-        $count2 = '0';
-        $location2 = 'none';
-    endif;
-
-    if ( $count2 == '1' ) :
+    //For Secondary Menu
+    if ( has_nav_menu( 'secondary' ) ) {
         echo '<nav id="mobile-header-right-nav" class="mobile-menu" role="navigation">';
             $args = array(
-                'theme_location'    => $location2,
+                'theme_location'    => 'secondary',
                 'container'         => false,
                 'items_wrap'        => '<ul id="header-right-nav" class="menu">%3$s</ul>'
             );
             wp_nav_menu( $args );
         echo '</nav><!-- #mobile-header-right-nav -->';
-    endif;
-
-    // Check Secondary Menu
-    if ( has_nav_menu( 'primary' ) &&  has_nav_menu( 'secondary' ) &&  has_nav_menu( 'header-right' ) ) :
-        echo '<nav id="mobile-secondary-nav" class="mobile-menu" role="navigation">';
-            $args = array(
-                'theme_location'    => 'secondary',
-                'container'         => false,
-                'items_wrap'        => '<ul id="secondary-nav" class="menu">%3$s</ul>'
-            );
-            wp_nav_menu( $args );
-        echo '</nav><!-- #mobile-secondary-nav -->';
-    endif;
+    }
 }
 endif; //catchbase_mobile_menus
 
@@ -201,13 +131,10 @@ if ( ! function_exists( 'catchbase_mobile_header_nav_anchor' ) ) :
 /**
  * This function loads Mobile Menus Left Anchor
  *
- * @get the data value from theme options
  * @uses catchbase_header action to add in the Header
  */
 function catchbase_mobile_header_nav_anchor() {
-    //Getting Ready to load options data
-    $options                    = catchbase_get_theme_options();
-
+    
     // Header Left Mobile Menu Anchor 
     if ( has_nav_menu( 'primary' ) ) {
         $classes = "mobile-menu-anchor primary-menu";
@@ -222,29 +149,10 @@ function catchbase_mobile_header_nav_anchor() {
             <span class="mobile-menu-text"><?php _e( 'Menu', 'catchbase' );?></span>
         </a>
     </div><!-- #mobile-header-menu -->
-
-    <?php 
-    // Header Right Mobile Menu Anchor 
-    if ( has_nav_menu( 'secondary' ) &&  has_nav_menu( 'header-right' ) ) {
-        $classes = "mobile-menu-anchor header-right-menu";
-    }
-    elseif ( has_nav_menu( 'secondary' ) ) {
-        $classes = "mobile-menu-anchor secondary-menu";
-    } 
-    else {
-        return; 
-    }
-    ?>
-    <div id="mobile-header-right-menu" class="<?php echo $classes; ?>">
-        <a href="#mobile-header-right-nav" id="header-right-menu" class="genericon genericon-menu">
-            <span class="mobile-menu-text"><?php _e( 'Menu', 'catchbase' );?></span>
-        </a>
-    </div><!-- #mobile-header-menu -->
-
     <?php    
 }
 endif; //catchbase_mobile_menus    
-add_action( 'catchbase_header', 'catchbase_mobile_header_nav_anchor', 40 );
+add_action( 'catchbase_header', 'catchbase_mobile_header_nav_anchor', 30 );
 
 
 if ( ! function_exists( 'catchbase_mobile_secondary_nav_anchor' ) ) :
@@ -253,15 +161,15 @@ if ( ! function_exists( 'catchbase_mobile_secondary_nav_anchor' ) ) :
  * @uses catchbase_header action to add in the Header
  */
 function catchbase_mobile_secondary_nav_anchor() {
-    if ( has_nav_menu( 'secondary' ) && has_nav_menu( 'header-right' ) ) {  
+    if ( has_nav_menu( 'secondary' ) ) {  
         ?>    
-        <div id="mobile-secondary-menu" class="mobile-menu-anchor secondary-menu">
-            <a href="#mobile-secondary-nav" id="footer-menu" class="genericon genericon-menu">
+        <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
+            <a href="#mobile-header-right-menu" id="footer-menu" class="genericon genericon-menu">
                 <span class="mobile-menu-text"><?php _e( 'Menu', 'catchbase' );?></span>
             </a>
         </div><!-- #mobile-header-menu -->
     <?php    
     }
 }
-endif; //catchbase_mobile_footer_nav_anchor    
-add_action( 'catchbase_header', 'catchbase_mobile_secondary_nav_anchor', 60 );
+endif; //catchbase_mobile_secondary_nav_anchor    
+add_action( 'catchbase_header', 'catchbase_mobile_secondary_nav_anchor', 50 );

@@ -1,24 +1,18 @@
-Catch Base
-===
+=== Catch Base ===
 
 Catch Base is a simple, clean and responsive WordPress Theme. This theme can be use as base theme for your theme development or custom site development. This theme is built in HTML3, CSS3 and WordPress core customizer for easy real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
 
-* Full-bleed flex slider
-* Featured Image support
-* Full-width page template
-* Responsive layout
-* Custom Background
-* Custom Header
-* Jetpack.me compatibility for infinite scroll
-* Keyboard navigation for image attachment templates.
-* CSS3 transition effects
-* The GPL license in license.txt. :) Use it to make something cool.
 
-== Support URL ==
-http://catchthemes.com/support/
+== Support ==
+
+Support: http://catchthemes.com/support/
+Support Forum: http://catchthemes.com/support-forum/forum/catch-base-free/
+
 
 == Translation ==
+
 Catch Base theme is translation ready.
+
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -50,3 +44,48 @@ JS Files
 
     Sidr is Licensed under the MIT License
     https://github.com/artberri/sidr
+
+
+== Getting Started ==
+
+= Installation =
+
+1. In your admin panel, go to Appearance -> Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+= Custom Menus =
+
+Catch Base theme supports two custom menus that is primary and secondary. 
+To create a custom menu, go to Appearance -> Menus in your dashboard.
+
+= Featured Image =
+
+This theme relies heavily on Featured Images. If your post/page is missing a Featured Image, the post image will not show up on homepage, on archived pages and on Featured Page Slider. For more about featured image, check out http://catchthemes.com/blog/videos-blog/video-series-adding-featured-image-wordpress-postpage/
+
+If you are migrating your old site to this new them then you need to regenerate thumbnails. You can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. This plugin allows you to regenerate your thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
+
+= Featured Slider =
+
+In Catch Base Free theme, there is only option to use Featured Page Slider, which is created to highlight your Page in the slider. But pro version has additional option to Featured Post Slider, Featured Category Slider and Featured Image Slider. 
+
+To add featured page slider, 
+1. Create a Page and then add Featured Image to the Page.
+2. Go to "Appearance -> Customize -> Featured Slider Options" from your WordPress Dashboard
+3. Under Featured Slider Type, you need to select "Featured Page Slider"
+4. Then you change the number of slides and select your pages in "Featured Page #"
+4. Finally, click on "Save & Publish"
+
+Note: You can also change Enable Slider, slider effects, delay and length under Featured Slider Settings.
+
+= Featured Icons =
+
+Catch Base has custom social icons for various social networking sites. 
+1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
+2. Add in your social profile links and click on "Save & Publish" 
+
+Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
+
+= Theme Instructions =
+
+For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/catch-base/

@@ -23,7 +23,6 @@
     /** 
      * catchbase_footer hook
      *
-     * @hooked catchbase_footer_menu - 10
      * @hooked catchbase_footer_content_start - 20
      * @hooked catchbase_footer_sidebar - 30
      * @hooked catchbase_get_footer_content - 100

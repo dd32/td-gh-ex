@@ -8,7 +8,7 @@
  * Functions that adds custom sidebars and widgets to catchbase
  *
  * @package Catchbase
- * @subpackage Catchbase Pro
+ * @subpackage Catchbase
  * @since Catchbase 1.0
  */
 
@@ -47,7 +47,7 @@ function catchbase_widgets_init() {
 		'description'	=> __( 'This is the secondary sidebar if you are using a three column site layout option.', 'catchbase' ),
 	) );
 
-	$footer_sidebar_number = 4; //Number of footer sidebars
+	$footer_sidebar_number = 3; //Number of footer sidebars
 	
 	for( $i=1; $i <= $footer_sidebar_number; $i++ ) {
 		register_sidebar( array(

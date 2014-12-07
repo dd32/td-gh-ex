@@ -1,11 +1,6 @@
 /**
  * Customizer Custom CSS
  */
-
-.small-input-text-parent input[type="text"]{
-    width: 20%;
-}
-
 .wp-core-ui .btn-upgrade {
 	background: none repeat scroll 0 0 #5BC0DE;
 	border-color: #CCCCCC;
