@@ -21,7 +21,7 @@
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'blogghiamo' ), 'Blogghiamo Free', '<a title="CrestaProject" href="http://crestaproject.com/" rel="designer" target="_blank">CrestaProject WordPress Themes</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s.', 'blogghiamo' ), 'Blogghiamo Free', '<a title="CrestaProject" href="http://crestaproject.com/" rel="designer">CrestaProject WordPress Themes</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

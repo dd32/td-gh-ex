@@ -61,3 +61,7 @@ Version 1.2.1
 * Updated Theme Options
 * Update Languages
 * Minor bug fixes
+
+Version 1.2.2
+* Accessibility update
+* Minor bug fixes

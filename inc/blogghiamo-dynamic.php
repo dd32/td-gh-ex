@@ -42,7 +42,7 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	
 	$colors[] = array(
 	'slug'=>'special_color_third', 
-	'default' => '#f7c322',
+	'default' => '#0a7db0',
 	'label' => __('Special Color', 'blogghiamo')
 	);
 	
@@ -99,12 +99,15 @@ function blogghiamo_custom_css_styles() {
 	input[type="submit"],
 	.main-navigation ul li .indicator,
 	.main-navigation a,
-	.main-navigation a:hover,
-	.menu-toggle:hover,
+	.main-navigation a:hover, 
+	.main-navigation a:focus, 
+	.main-navigation a:active,
 	.post-navigation .meta-nav,
 	.widget-title,
 	.edit-link a, .tagcloud a,
-	#comments .reply a {
+	#comments .reply a,
+	.menu-toggle:hover,
+	.menu-toggle:focus	{
 		color: <?php echo $box_color_second; ?>;
 	}
 	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header,
@@ -119,7 +122,7 @@ function blogghiamo_custom_css_styles() {
 	}
 	<?php endif; ?>
 	
-	<?php if (!empty($special_color_third) && $special_color_third != '#f7c322' ) : ?>
+	<?php if (!empty($special_color_third) && $special_color_third != '#0a7db0' ) : ?>
 	button,
 	input[type="button"],
 	input[type="reset"],

@@ -35,7 +35,7 @@
 			$se_options = get_option( 'blogghiamo_theme_options', $blogghiamo_theme_options );
 		?>
 
-			<div class="socialLine">
+			<div class="socialLine" role="navigation">
 				<?php if ( $se_options['facebookurl'] != '' ) : ?>
 					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
 				<?php endif; ?>
@@ -78,7 +78,12 @@
 			</div>
 			<?php if ( ! $se_options['hidesearch'] ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>"><input type="search" name="s" class="search" placeholder="<?php _e('Type here and hit enter...', 'blogghiamo'); ?>"></form>
+						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+							<label>
+								<span class="screen-reader-text"><?php _e( 'Search for:', 'blogghiamo' ); ?></span>
+								<input type="search" name="s" class="search" placeholder="<?php _e('Type here and hit enter...', 'blogghiamo'); ?>">
+							</label>
+						</form>
 				</div>
 			<?php endif; ?>
 		</div>

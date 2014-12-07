@@ -64,9 +64,9 @@ if ( post_password_required() ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
 	$fields =  array(
-		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Name *'  , 'blogghiamo' ) . '"/></p>',
-		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Email *'  , 'blogghiamo' ) . '"/></p>',
-		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website'  , 'blogghiamo' ) . '"/></p>',
+		'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name *'  , 'blogghiamo' ) . '</label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Name *'  , 'blogghiamo' ) . '"/></p>',
+		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email *'  , 'blogghiamo' ) . '</label><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Email *'  , 'blogghiamo' ) . '"/></p>',
+		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website *'  , 'blogghiamo' ) . '</label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website'  , 'blogghiamo' ) . '"/></p>',
 	);
 	$required_text = __(' Required fields are marked ', 'blogghiamo').' <span class="required">*</span>';
 	?>
@@ -79,7 +79,7 @@ if ( post_password_required() ) {
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'blogghiamo' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'blogghiamo' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'blogghiamo' ),
-		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . __( 'Comment *'  , 'blogghiamo' ) . '"></textarea></p>'
+		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><label for="comment">' . __( 'Comment *'  , 'blogghiamo' ) . '</label><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . __( 'Comment *'  , 'blogghiamo' ) . '"></textarea></p>'
 	)); 
 	?>
 

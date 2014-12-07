@@ -30,7 +30,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links smallPart"><i class="fa fa-file-text spaceRight"></i>' . __( 'Pages:', 'blogghiamo' ),
+				'before' => '<div class="page-links smallPart"><i class="fa fa-file-text spaceRight aria-hidden="true""></i>' . __( 'Pages:', 'blogghiamo' ),
 				'after'  => '</div>',
 				'link_before'      => '<span>',
 				'link_after'       => '</span>',

@@ -29,10 +29,20 @@
 			<i class="fa fa-lg fa-pencil"></i>
 		</div>
 		<?php endif; ?>
-		<?php the_excerpt(); ?>
+		
+		<?php 
+			global $blogghiamo_theme_options;
+			$se_options = get_option( 'blogghiamo_theme_options', $blogghiamo_theme_options );
+		?>
+		<?php if ( $se_options['showfullpost'] != '' ) : ?>
+			<?php the_content(); ?>
+		<?php else: ?>
+			<?php the_excerpt(); ?>
+		<?php endif; ?>
+		
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer smallPart">
-		<?php edit_post_link( __( 'Edit', 'blogghiamo' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'blogghiamo' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -6,6 +6,7 @@
 $blogghiamo_theme_options = array( 
 	'hiderss' => '0',
 	'hidesearch' => '0',
+	'showfullpost' => '0',
 	'facebookurl' => '#', 
 	'twitterurl' => '#', 
 	'googleplusurl' => '#', 
@@ -118,6 +119,18 @@ function blogghiamo_options_do_page() {
 					<td>
 						<input id="blogghiamo_theme_options[hidesearch]" name="blogghiamo_theme_options[hidesearch]" type="checkbox" value="1" <?php checked( '1', $se_options['hidesearch'] ); ?> />
 						<label class="description" for="blogghiamo_theme_options[hidesearch]"><?php _e( 'Hide the Search icon?', 'blogghiamo' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Content text
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Content text', 'blogghiamo' ); ?></th>
+					<td>
+						<input id="blogghiamo_theme_options[showfullpost]" name="blogghiamo_theme_options[showfullpost]" type="checkbox" value="1" <?php checked( '1', $se_options['showfullpost'] ); ?> />
+						<label class="description" for="blogghiamo_theme_options[showfullpost]"><?php _e( 'Check if you want to show full content, uncheck if you want to show the excerpt', 'blogghiamo' ); ?></label>
 					</td>
 				</tr>
 
@@ -244,6 +257,10 @@ function blogghiamo_options_validate( $input ) {
 	if ( ! isset( $input['hidesearch'] ) )
 		$input['hidesearch'] = null;
 		$input['hidesearch'] = ( $input['hidesearch'] == 1 ? 1 : 0 );
+		
+	if ( ! isset( $input['showfullpost'] ) )
+		$input['showfullpost'] = null;
+		$input['showfullpost'] = ( $input['showfullpost'] == 1 ? 1 : 0 );
 
 	// Encode URLs
 	if( isset( $se_options[ 'twitterurl' ] ) )
