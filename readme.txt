@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.0
+Version: 1.2.1
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.0.1
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -23,7 +23,6 @@ Theme Athenea uses:
 * Open Aclonica (available through Google web Fonts: http://www.google.com/fonts/specimen/Aclonica), licensed under Apache License Version 2 (http://www.apache.org/licenses/LICENSE-2.0.html)
 * Genericons library (http://genericons.com/) licensed under GNU General Public License v2.0 or later
 * Frameworks Bootstrap 3.0 under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
-* wp_bootstrap_navwalker under the GPL-2.0+ license (http://www.gnu.org/licenses/gpl-2.0.txt)
 * Options-Frameworks under the GPL-2.0+ license (http://www.gnu.org/licenses/gpl-2.0.txt)
 * ContentMultimedia-theme-WP-Athenea (http://www.gnu.org/licenses/gpl-3.0.txt) and (https://www.safecreative.org/work/1402100112703-contentmultimedia-theme-wp-atenea)
 
@@ -62,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.1 - 07.12.2014 =
+* Icons are added on date and author of the posts.
 
 = 1.2.0 - 04.11.2014 =
 * Attribution license-framework option is added.
