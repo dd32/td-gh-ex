@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.29
+* Minor bugs fixed
+
 Version 2.28
 * Feature to disable Homepage Event sidebar added
 * Few Minor CSS bugs fixed

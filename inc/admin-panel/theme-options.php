@@ -98,7 +98,8 @@ $accesspresslite_options = array(
     'action_btn_text' => 'Check Now',
     'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
     'welcome_post_content' => false,
-    'show_eventdate' => true
+    'show_eventdate' => true,
+    'disable_event' => false
 
 );
 
