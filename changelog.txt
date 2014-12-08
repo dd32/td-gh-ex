@@ -1,11 +1,16 @@
 == Changelog ==
 
+Version 1.3
+* Added German translation de_DE.po and de_DE.mo
+* Removed shortcodes
+* Replaced get_bloginfo('url') to admin_url() to link to Theme Options panel
+
 Version 1.2
 * Added meetup social icon
-* Added changelog.txt file which list the theme changelog
-* Replaced screenshot.jpg with screenshot.png
-* Change footer theme content 
+* Added changelog.txt file which list the theme change log
+* Changed footer theme content 
 * Fixed header top position issue
+* Replaced screenshot.jpg with screenshot.png 
 * Removed rem in font size css
 
 Version 1.1

@@ -1721,25 +1721,6 @@ add_action( 'save_post', 'adventurous_post_invalidate_caches' );
 
 
 /**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function adventurous_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'footer-image', 'adventurous_footer_image_shortcode' );
-	add_shortcode( 'the-year', 'adventurous_the_year_shortcode' );
-	add_shortcode( 'site-link', 'adventurous_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'adventurous_wp_link_shortcode' );
-	add_shortcode( 'theme-link', 'adventurous_theme_link_shortcode' );
-	
-}
-/* Register shortcodes. */
-add_action( 'init', 'adventurous_add_shortcodes' );
-
-
-/**
  * Shortcode to display Footer Image.
  *
  * @uses date() Gets the current year.
@@ -1753,42 +1734,22 @@ function adventurous_footer_image_shortcode() {
 
 
 /**
- * Shortcode to display the current year.
+ * Change the footer_code saved in theme options
  *
- * @uses date() Gets the current year.
- * @return string
+ * @uses adventurous_the_year(), adventurous_site_link(), adventurous_shop_link(), delete_transient, update_option
  */
-function adventurous_the_year_shortcode() {
-	return date( __( 'Y', 'adventurous' ) );
+function adventurous_make_footer_modifications() {
+    global $adventurous_options_settings;
+    
+    $new_footer_code = '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; ' . adventurous_the_year() . '&nbsp;' . adventurous_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Adventurous Theme by', 'adventurous' ) . '&nbsp;' . adventurous_shop_link() . '</div>';
+
+    //Check if new footer code and old footer code match, if they don't perform following
+    if( $new_footer_code != $adventurous_options_settings['footer_code'] ) {
+        delete_transient( 'adventurous_footer_content' ); // Footer Content
+        
+        $adventurous_options_settings['footer_code'] = $new_footer_code;
+
+        update_option( 'adventurous_options', $adventurous_options_settings );
+    }
 }
-
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @uses get_bloginfo() Gets the site link
- * @return string
- */
-function adventurous_site_link_shortcode() {
-	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function adventurous_wp_link_shortcode() {
-	return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'adventurous' ) . '"><span>' . __( 'WordPress', 'adventurous' ) . '</span></a>';
-}
-
-
-/**
- * Shortcode to display a link to Theme Link.
- *
- * @return string
- */
-function adventurous_theme_link_shortcode() {
-	return '<a href="http://catchthemes.com/" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
-}
+add_action( 'init', 'adventurous_make_footer_modifications' );

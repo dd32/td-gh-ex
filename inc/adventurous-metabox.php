@@ -52,7 +52,7 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'adventurous-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'adventurous' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Options', 'adventurous' ).'</a>',
+						'label'		=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Options</a>', 'adventurous' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
 						'thumbnail' => ' '
         			),
        'right-sidebar' => array(
@@ -83,7 +83,7 @@ $featuredimage_options = array(
 	'default' => array(
 		'id'		=> 'adventurous-featured-image',
 		'value' 	=> 'default',
-		'label' 	=> __( 'Default Layout Set in', 'adventurous' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Options', 'adventurous' ).'</a>',
+		'label'		=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Options</a>', 'adventurous' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
 	),							   
 	'featured' => array(
 		'id'		=> 'adventurous-featured-image',

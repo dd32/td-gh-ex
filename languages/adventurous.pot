@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-21 23:41+0545\n"
-"PO-Revision-Date: 2014-09-21 23:41+0545\n"
+"POT-Creation-Date: 2014-12-08 22:57+0545\n"
+"PO-Revision-Date: 2014-12-08 22:57+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:17
@@ -32,6 +32,7 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
+#. translators: %1$s: smilie
 #: ../404.php:36
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
@@ -271,10 +272,12 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
+#. translators: header image description
 #: ../inc/adventurous-custom-header.php:45
 msgid "Highway"
 msgstr ""
 
+#. translators: header image description
 #: ../inc/adventurous-custom-header.php:51
 msgid "Buddha"
 msgstr ""
@@ -284,154 +287,153 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:741
+#: ../inc/adventurous-functions.php:743
 #: ../inc/panel/adventurous-theme-options.php:105
 #: ../inc/panel/adventurous-theme-options.php:1061
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:746
+#: ../inc/adventurous-functions.php:748
 #: ../inc/panel/adventurous-theme-options.php:106
 #: ../inc/panel/adventurous-theme-options.php:1069
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:751
+#: ../inc/adventurous-functions.php:753
 #: ../inc/panel/adventurous-theme-options.php:1077
 msgid "Google+"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:756
+#: ../inc/adventurous-functions.php:758
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:761
+#: ../inc/adventurous-functions.php:763
 #: ../inc/panel/adventurous-theme-options.php:1085
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:766
+#: ../inc/adventurous-functions.php:768
 msgid "YouTube"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:771
+#: ../inc/adventurous-functions.php:773
 #: ../inc/panel/adventurous-theme-options.php:1101
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:776
+#: ../inc/adventurous-functions.php:778
 msgid "SlideShare"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:781
+#: ../inc/adventurous-functions.php:783
 msgid "FourSquare"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:786
+#: ../inc/adventurous-functions.php:788
 #: ../inc/panel/adventurous-theme-options.php:1133
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:791
+#: ../inc/adventurous-functions.php:793
 #: ../inc/panel/adventurous-theme-options.php:1141
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:796
+#: ../inc/adventurous-functions.php:798
 #: ../inc/panel/adventurous-theme-options.php:1149
 msgid "deviantART"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:801
+#: ../inc/adventurous-functions.php:803
 #: ../inc/panel/adventurous-theme-options.php:1157
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:806
+#: ../inc/adventurous-functions.php:808
 #: ../inc/panel/adventurous-theme-options.php:1165
 msgid "MySpace"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:811
+#: ../inc/adventurous-functions.php:813
 #: ../inc/panel/adventurous-theme-options.php:1173
-#: ../inc/panel/adventurous-theme-options.php:1783
 msgid "WordPress"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:816
+#: ../inc/adventurous-functions.php:818
 #: ../inc/panel/adventurous-theme-options.php:1181
 msgid "RSS"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:821
+#: ../inc/adventurous-functions.php:823
 #: ../inc/panel/adventurous-theme-options.php:1189
 msgid "Delicious"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:826
+#: ../inc/adventurous-functions.php:828
 #: ../inc/panel/adventurous-theme-options.php:1197
 msgid "Last.fm"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:831
+#: ../inc/adventurous-functions.php:833
 #: ../inc/panel/adventurous-theme-options.php:1205
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:836
+#: ../inc/adventurous-functions.php:838
 #: ../inc/panel/adventurous-theme-options.php:1213
 msgid "GitHub"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:841
+#: ../inc/adventurous-functions.php:843
 #: ../inc/panel/adventurous-theme-options.php:1221
 msgid "Vkontakte"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:846
+#: ../inc/adventurous-functions.php:848
 #: ../inc/panel/adventurous-theme-options.php:1229
 msgid "My World"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:851
+#: ../inc/adventurous-functions.php:853
 #: ../inc/panel/adventurous-theme-options.php:1237
 msgid "Odnoklassniki"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:856
+#: ../inc/adventurous-functions.php:858
 msgid "GoodReads"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:861
+#: ../inc/adventurous-functions.php:863
 #: ../inc/panel/adventurous-theme-options.php:1253
 msgid "Skype"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:866
+#: ../inc/adventurous-functions.php:868
 msgid "SoundCloud"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:871
+#: ../inc/adventurous-functions.php:873
 #: ../inc/panel/adventurous-theme-options.php:1269
 msgid "Email"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:876
+#: ../inc/adventurous-functions.php:878
 #: ../inc/panel/adventurous-theme-options.php:1277
 msgid "Contact"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:881
+#: ../inc/adventurous-functions.php:883
 #: ../inc/panel/adventurous-theme-options.php:1285
 msgid "Xing"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:886
+#: ../inc/adventurous-functions.php:888
 #: ../inc/panel/adventurous-theme-options.php:1293
 msgid "Meetup"
 msgstr ""
 
-#: ../inc/adventurous-functions.php:908
+#: ../inc/adventurous-functions.php:910
 msgid "ID"
 msgstr ""
 
@@ -472,14 +474,8 @@ msgid "Disable"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:55 ../inc/adventurous-metabox.php:86
-msgid "Default Layout Set in"
-msgstr ""
-
-#: ../inc/adventurous-metabox.php:55 ../inc/adventurous-metabox.php:86
-#: ../inc/panel/adventurous-theme-options.php:41
-#: ../inc/panel/adventurous-theme-options.php:42
-#: ../inc/panel/adventurous-theme-options.php:116
-msgid "Theme Options"
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Theme Options</a>"
 msgstr ""
 
 #: ../inc/adventurous-metabox.php:61
@@ -584,6 +580,7 @@ msgstr ""
 msgid "Post author"
 msgstr ""
 
+#. translators: 1: date, 2: time
 #: ../inc/adventurous-template-tags.php:179
 #, php-format
 msgid "%1$s at %2$s"
@@ -718,15 +715,38 @@ msgid "Search &hellip;"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:98
+#: ../inc/panel/adventurous-theme-options.php:1744
 msgid "Copyright"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:98
+#: ../inc/panel/adventurous-theme-options.php:1744
 msgid "All Rights Reserved"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:98
-msgid "Adventurous Theme By "
+#: ../inc/panel/adventurous-theme-options.php:1744
+msgid "Adventurous Theme by"
+msgstr ""
+
+#: ../inc/panel/adventurous-theme-options-defaults.php:116
+msgid "Y"
+msgstr ""
+
+#: ../inc/panel/adventurous-theme-options-defaults.php:137
+msgid "http://catchthemes.com"
+msgstr ""
+
+#: ../inc/panel/adventurous-theme-options-defaults.php:137
+#: ../inc/panel/adventurous-theme-options.php:90
+#: ../inc/panel/adventurous-theme-options.php:91
+msgid "Catch Themes"
+msgstr ""
+
+#: ../inc/panel/adventurous-theme-options.php:41
+#: ../inc/panel/adventurous-theme-options.php:42
+#: ../inc/panel/adventurous-theme-options.php:116
+msgid "Theme Options"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:82
@@ -739,12 +759,6 @@ msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:90
 msgid "http://catchthemes.com/"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:90
-#: ../inc/panel/adventurous-theme-options.php:91
-#: ../inc/panel/adventurous-theme-options.php:1793
-msgid "Catch Themes"
 msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:97
@@ -1465,10 +1479,6 @@ msgstr ""
 
 #: ../inc/panel/adventurous-theme-options.php:1261
 msgid "Soundcloud"
-msgstr ""
-
-#: ../inc/panel/adventurous-theme-options.php:1762
-msgid "Y"
 msgstr ""
 
 #: ../no-results.php:15

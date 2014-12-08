@@ -95,7 +95,7 @@ $adventurous_options_defaults = array(
 	'social_contact'						=> '',
 	'social_xing'							=> '',
 	'social_meetup'							=> '',
-	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; [the-year] [site-link]. '. esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Adventurous Theme By ', 'adventurous' ) . '[theme-link]</div>',
+	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; ' . adventurous_the_year() . '&nbsp;' . adventurous_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Adventurous Theme by', 'adventurous' ) . '&nbsp;' . adventurous_shop_link() . '</div>',
 	'reset_footer'							=> '2'
 );
 global $adventurous_options_settings;
@@ -106,4 +106,33 @@ function adventurous_options_set_defaults( $adventurous_options_defaults ) {
 	return $adventurous_options_settings;
 }
 
-?>
+/**
+ * Returns the current year.
+ *
+ * @uses date() Gets the current year.
+ * @return string
+ */
+function adventurous_the_year() {
+	return date( __( 'Y', 'adventurous' ) );
+}
+
+
+/**
+ * Returns a link back to the site.
+ *
+ * @uses get_bloginfo() Gets the site link
+ * @return string
+ */
+function adventurous_site_link() {
+	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+
+/**
+ * Returns a link to Theme Shop.
+ *
+ * @return string
+ */
+function adventurous_shop_link() {
+	return '<a href="'. esc_url( __( 'http://catchthemes.com', 'adventurous' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
+}

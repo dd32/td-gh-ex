@@ -713,7 +713,9 @@ function adventurous_social_networks() {
 						$options[ 'social_skype' ],
 						$options[ 'social_soundcloud' ],
 						$options[ 'social_email' ],
-						$options[ 'social_contact' ]
+						$options[ 'social_contact' ],
+						$options[ 'social_xing' ],
+						$options[ 'social_meetup' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -880,7 +882,7 @@ function adventurous_social_networks() {
 				$adventurous_social_networks .=
 					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Xing', 'adventurous' ) .'</a></li>';
 			}
-			//Xing
+			//Meetup
 			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$adventurous_social_networks .=
 					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'adventurous' ) .'" target="_blank">'. esc_attr__( 'Meetup', 'adventurous' ) .'</a></li>';
