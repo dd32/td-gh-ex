@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-31 15:46+0100\n"
-"PO-Revision-Date: 2014-07-31 15:46+0100\n"
+"POT-Creation-Date: 2014-12-08 17:29+0100\n"
+"PO-Revision-Date: 2014-12-08 17:29+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
 "Language-Team: ThemeZee <contact@themezee.com>\n"
 "MIME-Version: 1.0\n"
@@ -88,45 +88,45 @@ msgstr ""
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:66
 msgid "Menu"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:109
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:111
 msgid "Appears on posts and pages except front page and fullwidth template."
 msgstr ""
 
-#: functions.php:145
+#: functions.php:142
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:169
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: functions.php:173
+#: functions.php:170
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:174
-msgid "rubine-lite"
+#: functions.php:171
+msgid "Rubine Theme"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:217
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:211 functions.php:230
+#: functions.php:218 functions.php:237
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:248
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:161
+#: inc/template-tags.php:177
 msgid ""
 "Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Visit Rubine Documentation"
 msgstr ""
 
-#: inc/theme-info.php:75 inc/customizer/customizer.php:17
+#: inc/theme-info.php:75 inc/customizer/customizer.php:28
 msgid "Theme Options"
 msgstr ""
 
@@ -278,7 +278,11 @@ msgid ""
 "\"Customize Theme\" to open the Customizer now."
 msgstr ""
 
-#: inc/theme-info.php:84
+#: inc/theme-info.php:79
+msgid "Customize Theme"
+msgstr ""
+
+#: inc/theme-info.php:84 inc/customizer/sections/customizer-upgrade.php:14
 msgid "PRO Version"
 msgstr ""
 
@@ -302,30 +306,80 @@ msgstr ""
 msgid "rate it"
 msgstr ""
 
-#: inc/customizer/customizer.php:31
+#: inc/customizer/customizer.php:53
+msgid "Display Tagline below site title."
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:14
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:29
 msgid "Theme Layout"
 msgstr ""
 
-#: inc/customizer/customizer.php:37
+#: inc/customizer/sections/customizer-general.php:35
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer/customizer.php:38
+#: inc/customizer/sections/customizer-general.php:36
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/customizer/customizer.php:52
+#: inc/customizer/sections/customizer-general.php:51
+msgid "Footer Content"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:68
+msgid "Display Social Icons in footer line."
+msgstr ""
+
+#: inc/customizer/sections/customizer-header.php:14
+msgid "Header Area"
+msgstr ""
+
+#: inc/customizer/sections/customizer-header.php:30
 msgid "Header Content"
 msgstr ""
 
-#: inc/customizer/customizer.php:69
+#: inc/customizer/sections/customizer-header.php:47
 msgid "Display search field on header area"
 msgstr ""
 
-#: inc/customizer/customizer.php:85
+#: inc/customizer/sections/customizer-header.php:63
 msgid "Display Social Icons on header area"
 msgstr ""
 
-#: inc/customizer/customizer.php:110
-msgid "Display Tagline below site title."
+#: inc/customizer/sections/customizer-post.php:14
+msgid "Post Settings"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:30
+msgid "Post Images"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:45
+msgid "Display featured images on single posts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:63
+msgid "Excerpt More Text"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:78
+msgid "Display [...] after text excerpts."
+msgstr ""
+
+#: inc/customizer/sections/customizer-upgrade.php:30
+msgid "Need more features?"
+msgstr ""
+
+#: inc/customizer/sections/customizer-upgrade.php:46
+msgid ""
+"Check out the PRO version which comes with additional features and advanced "
+"customization options."
+msgstr ""
+
+#: inc/customizer/sections/customizer-upgrade.php:62
+msgid "Learn more about the PRO Version"
 msgstr ""

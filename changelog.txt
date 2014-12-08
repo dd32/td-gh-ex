@@ -2,6 +2,13 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.5
+-----------------------------------
+[changed] structure and organization of theme files for the Customizer
+[improved] usage of proper sanitization functions for data validation
+[updated] rubine.pot language file
+[fixed] line height bug for pre and code HTML tags
+
 Version 1.0.4
 -----------------------------------
 [added] theme option to display excerpt more text

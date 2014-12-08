@@ -58,26 +58,4 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 endif;
 
 
-/*========================== CUSTOMIZER SANITIZE FUNCTIONS ==========================*/
-
-// Sanitize checkboxes
-function rubine_sanitize_checkbox( $value ) {
-
-	if ( $value == 1) :
-        return 1;
-	else:
-		return '';
-	endif;
-}
-
-// Sanitize the layout sidebar value.
-function rubine_sanitize_layout( $value ) {
-
-	if ( ! in_array( $value, array( 'left-sidebar', 'right-sidebar', 'fullwidth' ) ) ) :
-        $value = 'right-sidebar';
-	endif;
-
-    return $value;
-}
-
 ?>
