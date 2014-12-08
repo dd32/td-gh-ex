@@ -1,4 +1,6 @@
 == Changelog ==
+Version 3.2
+* Added Romanian translation ro_RO.po and ro_RO.mo
 
 Version 3.1
 * Added Catalan translation ca.po and ca.mo
