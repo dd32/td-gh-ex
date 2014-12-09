@@ -1,12 +1,4 @@
-<?php
-/**
-* @Theme Name	:	Corpbiz
-* @file         :	functions.php
-* @package      :	Corpbiz
-* @author       :	Priyanshu Mittal
-* @filesource   :	wp-content/themes/corpbiz/functions.php
-* Theme Core Functions and Codes
-*/	
+<?php	
 	/**Includes reqired resources here**/
 	define('WEBRITI_TEMPLATE_DIR_URI',get_template_directory_uri());	
 	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
@@ -14,20 +6,21 @@
 	define('WEBRITI_THEME_OPTIONS_PATH',WEBRITI_TEMPLATE_DIR_URI.'/functions/theme_options');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
 	//wp title tag starts here
 	function webriti_head( $title, $sep )
 	{	global $paged, $page;		
 		if ( is_feed() )
 			return $title;
 		// Add the site name.
-		$title .= get_bloginfo( 'name' );
+		$title .= get_bloginfo( 'name','display' );
 		// Add the site description for the home/front page.
-		$site_description = get_bloginfo( 'description' );
+		$site_description = get_bloginfo( 'description','display' );
 		if ( $site_description && ( is_home() || is_front_page() ) )
 			$title = "$title $sep $site_description";
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( _e( 'Page', 'corpbiz' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( _e( 'Page %s', 'corpbiz' ), max( $paged, $page ) );
 		return $title;
 	}	
 	add_filter( 'wp_title', 'webriti_head', 10, 2);
@@ -42,6 +35,7 @@
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'corpbiz', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
 		add_theme_support( 'post-thumbnails' ); //supports featured image
+		add_theme_support('woocommerce');//woocommerce support
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'corpbiz' ) ); //Navigation
 		register_nav_menu( 'secondary', __( 'Secondary Menu', 'corpbiz' ) ); //Navigation
@@ -123,14 +117,14 @@
 	/*******corpbiz css and js *******/
 	function webriti_scripts()
 	{	
-		wp_enqueue_style('bootstrap-css', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
-		wp_enqueue_style('theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
-		wp_enqueue_style('font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
-		wp_enqueue_style('font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome-4.0.3/css/font-awesome.min.css');	
-		wp_enqueue_style('media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
+		wp_enqueue_style('corpbiz-bootstrap-css', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+		wp_enqueue_style('corpbiz-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
+		wp_enqueue_style('corpbiz-font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
+		wp_enqueue_style('corpbiz-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome-4.0.3/css/font-awesome.min.css');	
+		wp_enqueue_style('corpbiz-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 		
-		wp_enqueue_script('menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
-		wp_enqueue_script('bootstrap-min', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
+		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
+		wp_enqueue_script('corpbiz-bootstrap-min', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
 		
 		if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 	}

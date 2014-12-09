@@ -1,10 +1,3 @@
-<?php
-/*	@Theme Name	:	Corpbiz
-* 	@file         :	category.php
-* 	@package      :	corpbiz
-* 	@author       :	Priyanshu Mittal
-* 	@filesource   :	wp-content/themes/corpbiz/category.php
-*/?>
 <?php get_header(); ?>
 <!-- Page Section -->
 <div class="page_mycarousel">
@@ -21,7 +14,7 @@
 <div class="container">
 	<div class="row blog_sidebar_section">
 		<!--Blog-->
-		<div class="col-md-8">			
+		<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >		
 		<?php if ( have_posts() ) : 
 			while(have_posts()): the_post(); ?>			
 			<div id="post-<?php the_ID(); ?>" <?php post_class('blog_section'); ?>>

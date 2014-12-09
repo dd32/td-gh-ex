@@ -4,7 +4,7 @@ get_template_part('index', 'banner');
 <!-- Blog & Sidebar Section -->
 <div class="container">
 	<div class="row blog_sidebar_section">		
-		<div class="col-md-8">
+		<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 			<?php the_post(); ?>
 			<div class="blog_detail_section">
 				<?php if(has_post_thumbnail()): ?>

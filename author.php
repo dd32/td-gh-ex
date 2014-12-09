@@ -14,7 +14,7 @@
 <div class="container">
 	<div class="row blog_sidebar_section">
 		<!--Blog-->
-		<div class="col-md-8">			
+		<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >		
 		<?php if ( have_posts() ) : 
 			while(have_posts()): the_post(); ?>			
 			<div id="post-<?php the_ID(); ?>" <?php post_class('blog_section'); ?>>
@@ -39,7 +39,7 @@
 				</div>
 				</div>
 				<div class="blog_post_content">
-					<?php the_content(); ?>
+					<?php the_content(); ?><?php if(wp_link_pages()) { wp_link_pages();  } ?>
 				</div>	
 			</div>
 			<?php endwhile; ?>
@@ -50,9 +50,7 @@
 					<?php if ( get_next_posts_link() ): ?>
 					<?php next_posts_link(); ?>
 					<?php endif; ?>
-				</div>
-				<?php if(wp_link_pages()) { wp_link_pages();  } ?>
-				
+				</div>				
 		<?php endif; ?>
 		</div>
 		<?php get_sidebar(); ?>

@@ -4,7 +4,7 @@ A Premium multi colored Business Blog theme that supports Primary menu's , Prima
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
 Theme supports featured slider managed from Theme Option Panel.
 
-Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri & Harish Lodha.
+Author: Webriti.
 Theme Homepage Url:http://webriti.com/demo/wp/corpbiz/
 
 About:
@@ -53,6 +53,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.0.2.4
+1. Translated some untranslated strings
+2. Option Panel scripts properly hooked.
+3. Defaults widgets removed.
 @Version 1.0.2.3
 1. Front managed.
 @Version 1.0.2.2

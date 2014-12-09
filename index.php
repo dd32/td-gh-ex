@@ -1,20 +1,10 @@
-<?php 
-/**
-* @Theme Name	:	Corpbiz
-* @file         :	index.php
-* @package      :	Corpbiz
-* @author       :	Priyanshu Mittal
-* @filesource   :	wp-content/themes/corpbiz/index.php
-*/
-get_header();
-
-?>
+<?php get_header(); ?>
 <?php get_template_part('index', 'banner'); ?>
 <!-- Blog & Sidebar Section -->
 <div class="container">
 	<div class="row blog_sidebar_section">
 		<!--Blog-->
-		<div class="col-md-8">
+		<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 			<?php 	
 			while(have_posts()):the_post();
 				global $more;
@@ -42,7 +32,7 @@ get_header();
 					</div>
 				</div>
 				<div class="blog_post_content">
-					<?php the_content(__( 'Read More' , 'corpbiz' )); ?>
+					<?php the_content(__( 'Read More' , 'corpbiz' )); ?><?php if(wp_link_pages()) { wp_link_pages();  } ?>	
 				</div>	
 			</div>
 			<?php endwhile ?>
@@ -53,8 +43,7 @@ get_header();
 				<?php if ( get_next_posts_link() ): ?>
 				<?php next_posts_link(); ?>
 				<?php endif; ?>
-			</div>
-			<?php if(wp_link_pages()) { wp_link_pages();  } ?>			
+			</div>		
 		</div>
 		<?php get_sidebar(); ?>
 		</div>

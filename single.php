@@ -1,11 +1,12 @@
-<?php get_header(); 
+<?php 
+get_header(); 
 get_template_part('index', 'banner');
 ?>
 <!-- Blog & Sidebar Section -->
 <div class="container">
 	<div class="row blog_sidebar_section">		
 		<!--Blog-->
-<div class="col-md-8">
+<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 	<?php
 		if(have_posts())
 		{

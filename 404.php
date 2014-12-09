@@ -1,12 +1,4 @@
-<?php
-/*	@Theme Name	:	corpbiz
-* 	@file         :	404.php
-* 	@package      :	Corpbiz
-* 	@author       :	Priyanshu Mittal
-* 	@filesource   :	wp-content/themes/corpbiz/404.php
-*/
-get_header();
- ?>
+<?php get_header(); ?>
 <div class="page_mycarousel">
 	<div class="container page_title_col">
 		<div class="row">

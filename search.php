@@ -1,19 +1,10 @@
-<?php 
-/**
-* @Theme Name	:	Corpbiz
-* @file         :	search.php
-* @package      :	Corpbiz
-* @author       :	Priyanshu Mittal
-* @filesource   :	wp-content/themes/corpbiz/search.php
-*/
-get_header();
-?>
+<?php get_header(); ?>
 <?php get_template_part('index', 'banner'); ?>
 <!-- Blog & Sidebar Section -->
 <div class="container">
 	<div class="row blog_sidebar_section">
 		<!--Blog-->
-		<div class="col-md-8">
+		<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
 		<?php if ( have_posts() ) : ?>
 			<h1>
 				<?php printf( __( "Search Results for: %s", 'corpbiz' ), '<span>' . get_search_query() . '</span>' ); ?>
@@ -41,7 +32,7 @@ get_header();
 					</div>
 				</div>
 				<div class="blog_post_content">
-					<?php the_content(); ?>
+					<?php the_content(); ?><?php if(wp_link_pages()) { wp_link_pages();  } ?>
 				</div>	
 			</div>			
 			<?php endwhile; ?>
@@ -53,7 +44,7 @@ get_header();
 				<?php next_posts_link(); ?>
 				<?php endif; ?>
 			</div>
-			<?php if(wp_link_pages()) { wp_link_pages();  } ?>			
+						
 			<?php else : ?>
 						<h2><?php _e( "Nothing Found", 'corpbiz' ); ?></h2>
 						<div class="qua_searching">

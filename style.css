@@ -3,8 +3,8 @@ Theme Name: Corpbiz
 Theme URI: 
 Author: Webriti
 Author URI: http://webriti.com/
-Description: Business theme which is ideal for creating a corporate / business website.It boasts of 1 beautifully designed page templates , Full-Width Page. It has beautifull portfolio section.
-Version:  1.0.2.3
+Description: Business theme which is ideal for creating a corporate / business website.It boasts of 1 beautifully designed page templates , Full-Width Page. It has beautifull portfolio section. Comes with woocommerce support.
+Version:  1.0.2.4
 Tags:white,pink,right-sidebar,responsive-layout,featured-images,full-width-template,theme-options,threaded-comments,custom-menu,two-columns,translation-ready,sticky-post
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -1096,7 +1096,7 @@ border-bottom: 0px solid #E0E4E6;
 .blog_post_content p {
     color: #787878;
 	font-family: 'RobotoLight';
-    font-size: 16px;
+    font-size: 14px;
     line-height: 30px;
     /*margin: 0 0 50px;*/
     word-wrap: break-word;
@@ -3036,7 +3036,7 @@ blockquote small {
 }
 .blog_post_content table tr td, .blog_post_content table tbody tr td{
 	font-family: 'RobotoLight';
-    font-size: 16px;
+    font-size: 14px;
 }
 .blog_post_content table > tbody > tr, .blog_post_content table > tbody > tr > th, .blog_post_content table > tbody > tr > td {
     border: 1px solid #E0E0E0 !important;
@@ -3069,7 +3069,7 @@ blockquote small {
 /*.copyright_menu_section a:hover, 
 .blog_post_content a:hover */
 {
-    color: #fa7073;
+    color: #66D1B9;
     text-decoration: none;
 }
 
@@ -3597,7 +3597,6 @@ html[xmlns] .slides {display: block; }
 }
 .blog_post_content ul li:before{  
 	color:#66d9c1;
-	content:"\2022"; 
 	font-size:1.7em; 
 	padding-right:.25em; 
 	position:relative;
@@ -3650,3 +3649,147 @@ color: #787878;
     word-wrap: break-word;
 }
 .blog_post_content table {  border-collapse: separate; }
+
+/* Woocommerce styles*/
+
+.woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h3 {
+     font-family: roboto !important;
+    font-size: 16px !important;
+}
+
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price {
+    color: #DC2623;
+     font-family: roboto;
+    font-size: 16px;
+    font-weight: 600 !important;    
+}
+.woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 100px !important;
+}
+/*.woocommerce table td{line-height:60px !important;}*/
+.woocommerce table.shop_table, .woocommerce-page table.shop_table {
+    border-collapse: separate;
+    text-align: center !important;
+}
+
+.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before,.woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before
+{ background-color:#66D1B9!important;}
+
+
+.woocommerce .woocommerce-message, .woocommerce-page .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
+    border-top: 3px solid #66D1B9 !important;
+}
+.woocommerce form .form-row textarea, .woocommerce-page form .form-row textarea {
+height: 4em !important;
+}
+
+.woocommerce table.shop_table th,
+.woocommerce-page table.shop_table th 
+{font-weight:bold;line-height:18px;padding:9px 12px;text-align:center !important;}
+
+.woocommerce .cart-collaterals .cart_totals table th,
+.woocommerce-page .cart-collaterals .cart_totals table th
+{padding: 19px 12px 11px 25px;width:25%;text-align:center;}
+
+.woocommerce table.cart input,.woocommerce #content table.cart input,.woocommerce-page table.cart input,.woocommerce-page #content table.cart input
+{
+	margin:80px;
+	vertical-align:middle;
+	line-height:1em;
+}
+.payment_methods label
+{
+ display:inline;
+}
+
+.blog_single_post h2, .blog_section2 h2, .blog_section h2 
+{
+font-size: 26px;
+line-height: 30px;
+color: hsl(200, 7%, 49%);
+margin-left: 0px;
+}
+
+.woocommerce #payment ul.payment_methods li, .woocommerce-page #payment.payment_methods {
+display: block;
+}
+
+.woocommerce .woocommerce-error, .woocommerce-page .woocommerce-error {
+border-top: 3px solid #66D1B9 !important;
+}
+
+.woocommerce .woocommerce-error:before, .woocommerce-page .woocommerce-error:before {
+background-color: #66D1B9 !important;
+content: "\00d7" !important;
+font-weight: 700;
+}
+
+.pull-left {
+float: left;
+width: 430px;
+}
+
+.woocommerce form .form-row .required, .woocommerce-page form .form-row .required {
+color: #66D1B9 !important;
+font-weight: bold;
+border: 0;
+}
+
+select, input[type="text"], input[type="password"], 
+input[type="datetime"], input[type="datetime-local"], 
+input[type="date"], input[type="month"], input[type="time"],
+ input[type="week"], input[type="number"], input[type="email"],
+ input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+
+height: 27px !important;
+
+}
+
+
+button, input, optgroup, select, textarea {
+margin: 3px !important;
+}
+
+.woocommerce .woocommerce-message:before,
+.woocommerce .woocommerce-error:before, 
+.woocommerce .woocommerce-info:before, 
+.woocommerce-page .woocommerce-message:before, 
+.woocommerce-page .woocommerce-error:before,
+ .woocommerce-page .woocommerce-info:before {
+
+height: 2.5em !important;
+}
+
+.woocommerce .addresses .title .edit, .woocommerce-page .addresses .title .edit {
+float: right;
+margin-top: 29px;
+}
+
+.input-checkbox {
+display: inline;
+margin-top: -51px !important;
+}
+.woocommerce form .form-row .input-checkbox, .woocommerce-page form .form-row .input-checkbox {
+display: none !important;
+}
+
+.woocommerce form .form-row label.checkbox, .woocommerce-page form .form-row label.checkbox {
+display: none !important;
+}
+
+.radio, .checkbox {
+/* min-height: 11px; */
+padding-left: 20px;
+ margin-top: 2px !important; 
+margin-bottom: -2px !important;
+float: right;
+}
+
+.woocommerce .cart-collaterals .cart_totals table td, .woocommerce-page .cart-collaterals .cart_totals table td {
+padding: 10px 51px !important;
+}
+label {
+font-weight: normal !important;
+}
+
+
