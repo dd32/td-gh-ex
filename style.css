@@ -1,8 +1,8 @@
-/*!
+/*
 * Theme Name: Spasalon
-  Theme URI: http://webriti.com/spasalon-lite-description/
+* Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site. Very recently added a support for woocommerce plugin. Now you create an effective online shop presence with the help of this woocommerce support i.e we have styled this theme in such a manner so that the woocommerce pages/templates looks very similar to the theme styles.
-* Version: 1.5.1.1
+* Version: 1.5.2
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout,featured-images
@@ -3043,3 +3043,22 @@ div.product h1 {
     padding-bottom: 15px !important;
 }
 div#payment label{display:inline-block;}
+
+.woocommerce #payment ul.payment_methods li, .woocommerce-page #payment ul.payment_methods li
+{
+list-style-type: none !important;
+}
+.woocommerce #content table.cart td.actions .coupon .input-text, .woocommerce table.cart td.actions .coupon .input-text, .woocommerce-page #content table.cart td.actions .coupon .input-text, .woocommerce-page table.cart td.actions .coupon .input-text { margin-top: 15px !important;}
+#ship-to-different-address label
+{
+ font-weight: normal !important;
+line-height: 20px !important;
+margin-bottom: -10px;
+}
+
+#ship-to-different-address input[type="checkbox"]
+{
+float:left;
+margin: -8px 0 -4px;
+}
+div#payment ul li {	background:none;}

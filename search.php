@@ -20,7 +20,7 @@
           </ul>
         </div>
         <div class="media-body">
-          <h4 class="blog-detail-head"><a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+        <h4 class="blog-detail-head"><a href="<?php the_permalink(); ?>"title="<?php get_search_query(); ?>"></a></h4>
           <div class="blog_content">
             <p><?php the_excerpt();?></p>
           </div>

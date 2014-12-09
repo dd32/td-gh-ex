@@ -58,7 +58,7 @@
    
    
   <div id="accordion">
-  <h3><b><?php _e('Banner Configuration For Category Template'); ?></b></h3>
+  <h3><b><?php _e('Banner Configuration For Category Template','sis_spa'); ?></b></h3>
   <div>
     <div class="inside">
     <p><h4 class="heading"><?php _e('Category Banner Tagline One','sis_spa');?></h4>
@@ -76,7 +76,7 @@
     </div> 
   </div>
   
-  <h3><b><?php _e('Banner Configuration For Author Template'); ?></b></h3>
+  <h3><b><?php _e('Banner Configuration For Author Template','sis_spa'); ?></b></h3>
   <div>
      <div class="inside">
     <p><h4 class="heading"><?php _e('Author Banner Tagline One','sis_spa');?></h4>
@@ -95,7 +95,7 @@
     </div>
   </div>
  
- <h3><b><?php _e('Banner Configuration For 404 Template'); ?></b></h3>
+ <h3><b><?php _e('Banner Configuration For 404 Template','sis_spa'); ?></b></h3>
   <div>
      <div class="inside">
     <p><h4 class="heading"><?php _e('404 Banner Tagline One','sis_spa');?></h4>

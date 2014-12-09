@@ -99,6 +99,14 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.2
+1. Remove all debug log errors.
+2. the_title replaced by the tag get_search_query in the search.php
+3. All placeholder text translated int he comments.php.
+4. Pot file updated.
+5. Fixed all monster widgets styling issues.
+6. Woocommerce styling issues fixed.
+7. All the scripts of the option panel renamed and prefixed with the theme name.
 @version 1.5.1.1
 1. New screenshot added.
 @version 1.5.1

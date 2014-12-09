@@ -32,11 +32,11 @@
 <?php else : ?>
 <?php $fields=array(
   'author' => '<label for="author" class="blog-form-feild">'.__('Name','sis_spa'),'*</label>
-               <input type="text" name="author" id="author" value=""   placeholder="Name" class="span8 cmt_input_bg" tabindex="1" />',
+               <input type="text" name="author" id="author" value=""   placeholder="' . __('Name','sis_spa') . '" class="span8 cmt_input_bg" tabindex="1" />',   
   'email'  => '<label for="email" class="blog-form-feild">'.__('Mail','sis_spa').__('will not be published','sis_spa'),'</label>
-               <input type="text" name="email" id="email" value="" placeholder="email"  tabindex="2" class="span8 cmt_input_bg" />',
+               <input type="text" name="email" id="email" value="" placeholder="' . __('email','sis_spa') .'"  tabindex="2" class="span8 cmt_input_bg" />',
   'url'    => ' <label for="url" class="blog-form-feild">'.__('Website','sis_spa'),'</label>
-                <input type="text" name="url" id="url" value="" placeholder="website"  tabindex="3" class="span8 cmt_input_bg" />'
+                <input type="text" name="url" id="url" value="" placeholder="' . __('website','sis_spa') . '"  tabindex="3" class="span8 cmt_input_bg" />'
   );
   
   function my_fields($fields) {
@@ -47,7 +47,7 @@
   
   $defaults = array(
    'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-  'comment_field'        => ' <label for="url" class="blog-form-feild">Comment</label><p class="comment-form-comment"><textarea name="comment" id="comment" rows="3" placeholder="Comment" class="span8 cmt_input_bg" tabindex="4"></textarea></p>',
+  'comment_field'        => ' <label for="url" class="blog-form-feild">Comment</label><p class="comment-form-comment"><textarea name="comment" id="comment" rows="3" placeholder="' .__('Comment','sis_spa') . '" class="span8 cmt_input_bg" tabindex="4"></textarea></p>',
   
   'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'sis_spa' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__('Log out?','sis_spa').'</a>' . '</p>',
   'comment_notes_after'  => '<dl class="form-allowed-tags"></dl>',
