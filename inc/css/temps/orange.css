@@ -23,7 +23,7 @@ a:hover{
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   background-color: #EB5E00;
-  border-color: #B64900;
+  border-color: #EB5E00;
 }
 fieldset[disabled] .btn-primary.active {
   background-color: #ff6600;
@@ -49,11 +49,14 @@ fieldset[disabled] .btn-primary.active {
     border-color: #ff6600;
 }
 #site-toolbar{
-    border-bottom: 1px solid #ff6600;
+    border-bottom: 4px solid #ff6600;
 }
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
         color: #ff6600;
     }      
 }
-
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a{
+    color: rgb(255, 102, 0);
+}

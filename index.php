@@ -14,17 +14,19 @@ get_header();
 ?>
 
 <div id="content" class="site-content row blogroll <?php echo of_get_option('sc_container_width'); ?>">
-    <div class="col-md-9">
+    <div class="col-md-9 site-content item-page <?php echo of_get_option('sc_blog_layout'); ?>">
         <?php if (have_posts()) : ?>
             <?php /* Start the Loop */ ?>
             <?php while (have_posts()) : the_post(); ?>
                 <div class="item-post col-md-12">
-                    <div class="post-thumb col-md-4">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail('large'); ?>
-                        </a>
-                    </div>
-                    <div class="col-md-8">
+                    <?php if( 'on' == of_get_option('sc_blog_featured', 'on')) : ?>
+                        <div class="post-thumb col-sm-4">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('large'); ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-sm-8 <?php echo 'on' == of_get_option('sc_blog_featured', 'on') ? '' : 'featured_none'; ?>">
                         <h2 class="post-title">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
@@ -43,9 +45,13 @@ get_header();
             <?php get_template_part('content', 'none'); ?>
         <?php endif; ?>
     </div>
-    <div class="col-md-3">
-        <?php get_sidebar(); ?>
-    </div>
+    
+    <?php if( 'col2r' == of_get_option('sc_blog_layout', 'col2r')) : ?>
+        <div class="col-md-3 avenue-sidebar">
+            <?php get_sidebar(); ?>
+        </div>
+    <?php endif; ?>
+    
     <div class="col-md-12">
         <?php avenue_paging_nav(); ?>
     </div>

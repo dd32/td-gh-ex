@@ -217,17 +217,13 @@ h3{ font-size: 22px;line-height: 26px;}
     padding: 8px 10px;
     background: #fff;
     color: #222222;
-    transition: 0.3s all ease-in-out;
-    -moz-transition: 0.3s all ease-in-out;
-    -webkit-transition: 0.3s all ease-in-out;
+
 } 
 
 .main-navigation ul ul{
     top: initial;
     background: #fff;
-    transition: 0.3s all ease-in-out;
-    -moz-transition: 0.3s all ease-in-out;
-    -webkit-transition: 0.3s all ease-in-out;
+
 }
 .menu-toggle{
     margin: 0 auto;
@@ -440,6 +436,7 @@ h3{ font-size: 22px;line-height: 26px;}
     font-size: 32px;
     color: #e0e0e0;
     padding: 30px 0;
+    padding-left: 20px;
 }
 .page .entry-content{
 
@@ -452,20 +449,26 @@ h3{ font-size: 22px;line-height: 26px;}
     background: #ffffff;
     padding-bottom: 10px;*/
 }
-.page-content .col-md-9{
+.item-page.col1{
+    width: 100%;
+}
+.item-post .col-sm-8.featured_none {
+    width: 100%;
+}
+.page-content > col-md-9{
     overflow: hidden;
+    
+}
+.page-container.sidebar-off{
+    width: 100%;
 }
 /*-- Blog --*/
 .blogroll{
     margin-top: 20px;
 }
 .item-post{
-/*    margin-bottom: 15px;
-    box-shadow: 1px 1px 3px #CACACA;
-    -moz-box-shadow: 1px 1px 3px #CACACA;
-    -webkit-box-shadow: 1px 1px 3px #CACACA;
-    background: #ffffff;
-    padding-bottom: 10px;*/
+    border-bottom: 1px solid rgb(228, 228, 228);
+    padding-bottom: 10px;
 }
 .item-post .post-title{
     font-size: 32px;
@@ -484,7 +487,7 @@ h3{ font-size: 22px;line-height: 26px;}
 
 }
 .single-title > div.row{
-    padding-left: 30px; 
+    
 }
 .single .wp-post-image{
     margin: 0 20px 20px 0;

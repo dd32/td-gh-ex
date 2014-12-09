@@ -126,6 +126,7 @@ h2 .nav-tab:hover{
 	background:  url('../../images/menu-bg.png');
 	border: 0;
         color: #ffffff;
+        font-size: 26px;
 }
 #optionsframework p {
 	margin-bottom:0;

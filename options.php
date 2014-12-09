@@ -224,6 +224,21 @@ function optionsframework_options() {
         'std' => '',
         'type' => 'text');
 
+    $options[] = array(
+        'name' => __('Footer Number of Columns','options_framework_theme'),
+        'desc' => __('How many columns is the footer'),
+        'id' => 'sc_footer_columns',
+        'std' => 'col-md-4',
+        'type' => 'select',
+        'options' => $footer_columns);
+    
+    $options[] = array(
+        'name' => __('Footer Text', 'options_framework_theme'),
+        'desc' => __('Enter text for the footer', 'options_framework_theme'),
+        'id' => 'sc_footer_text',
+        'std' => '&#169; 2014 Your company name',
+        'type' => 'textarea');    
+    
     // ---------------------------------------------------------------------- Design
     $options[] = array(
         'name' => __('Design', 'options_framework_theme'),
@@ -247,7 +262,8 @@ function optionsframework_options() {
         'type' => "images",
         'options' => array(
             'orange' => $imagepath . 'orange.png',
-            'green' => $imagepath . 'green.png')
+            'green' => $imagepath . 'green.png',
+            'blue' => $imagepath . 'blue.png'),
     );
 
 
@@ -271,19 +287,75 @@ function optionsframework_options() {
 
 
     // ---------------------------------------------------------------------- Slider
-    $path = get_template_directory_uri() . '/images/demo-slider.png';
+    
     $options[] = array(
-        'name' => __('Slider', 'options_framework_theme'),
+        'name' => __('Single Post', 'options_framework_theme'),
         'type' => 'heading');
     
-//$options[] = array(
-//	"name" => "Test",
-//	"id" => "example_text",
-//	"std" => "Default Value",
-//	"type" => "text",
-//        "theme_customizer" => true,
-//        "section" => "nav");
-        
+    $options[] = array(
+        'name' => "Single Post Layout",
+        'desc' => "Select full-width or right sidebar page layout",
+        'id' => "sc_single_layout",
+        'std' => "col2r",
+        'type' => "images",
+        'options' => array(
+            'col1' => $imagepath . '1col.png',
+            'col2r' => $imagepath . '2cr.png',
+    ));      
+    
+    $options[] = array(
+        'name' => __('Single Post Featured Images','options_framework_theme'),
+        'desc' => __('Show or Hide the post images on a single post'),
+        'id' => 'sc_single_featured',
+        'std' => 'on',
+        'type' => 'radio',
+        'options' => array(
+            'on' => 'Show',
+            'off' => 'Hide',
+        ));  
+    
+    
+    $options[] = array(
+        'name' => __('Single Post Date','options_framework_theme'),
+        'desc' => __('Show or Hide the Posted On post date'),
+        'id' => 'sc_single_date',
+        'std' => 'on',
+        'type' => 'radio',
+        'options' => array(
+            'on' => 'Show',
+            'off' => 'Hide',
+        ));  
+    
+    $options[] = array(
+        'name' => __('Single Post Author','options_framework_theme'),
+        'desc' => __('Show or Hide the post author'),
+        'id' => 'sc_single_author',
+        'std' => 'on',
+        'type' => 'radio',
+        'options' => array(
+            'on' => 'Show',
+            'off' => 'Hide',
+        ));  
+    
+    
+    //--------------------------------------------------------------------------- Homepage
+    $options[] = array(
+        'name' => __('Homepage', 'options_framework_theme'),
+        'type' => 'heading');
+    
+    $options[] = array(
+        'name' => "Select homepage design",
+        'desc' => "Select to show or hide the homepage sidebar",
+        'id' => "sc_homepage_sidebar",
+        'std' => "sidebar-off",
+        'type' => "images",
+        'options' => array(
+            'sidebar-off' => $imagepath . '1col.png',
+            'sidebar-on' => $imagepath . '2cr.png')
+    );    
+    
+    $path = get_template_directory_uri() . '/images/avenue-background.jpg';
+
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'desc' => __('Toggle the Slider on or off', 'options_framework_theme'),
@@ -335,11 +407,7 @@ function optionsframework_options() {
         'desc' => __('Third Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide3_text',
         'std' => 'Comes with 600 Icons',
-        'type' => 'text');
-    //--------------------------------------------------------------------------- Homepage
-    $options[] = array(
-        'name' => __('Homepage', 'options_framework_theme'),
-        'type' => 'heading');
+        'type' => 'text');    
     
     $options[] = array(
         'name' => __('Show Banner', 'options_framework_theme'),
@@ -453,22 +521,30 @@ function optionsframework_options() {
 
     /*------------------------------------------------------ Footer -----------*/
     $options[] = array(
-        'name' => __('Footer', 'options_framework_theme'),
+        'name' => __('Blog', 'options_framework_theme'),
         'type' => 'heading');
+
     $options[] = array(
-        'name' => __('Number of Columns','options_framework_theme'),
-        'desc' => __('How many columns is the footer'),
-        'id' => 'sc_footer_columns',
-        'std' => 3,
-        'type' => 'select',
-        'options' => $footer_columns);
+        'name' => "Blog Page Layout",
+        'desc' => "Select full-width or right sidebar page layout",
+        'id' => "sc_blog_layout",
+        'std' => "col2r",
+        'type' => "images",
+        'options' => array(
+            'col1' => $imagepath . '1col.png',
+            'col2r' => $imagepath . '2cr.png',
+    ));        
     
     $options[] = array(
-        'name' => __('Footer Text', 'options_framework_theme'),
-        'desc' => __('Enter text for the footer', 'options_framework_theme'),
-        'id' => 'sc_footer_text',
-        'std' => '&#169; 2014 Your company name',
-        'type' => 'textarea');
+        'name' => __('Blog Featured Images','options_framework_theme'),
+        'desc' => __('Show or Hide the post images on the blog page'),
+        'id' => 'sc_blog_featured',
+        'std' => 'on',
+        'type' => 'radio',
+        'options' => array(
+            'on' => 'Show',
+            'off' => 'Hide',
+        ));    
     
     //-------------------- Add ons
 //    $options[] = array(

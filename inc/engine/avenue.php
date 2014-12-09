@@ -68,18 +68,8 @@ function avenue_widgets_init() {
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
-    ));
-
-    register_sidebar(array(
-        'name' => __('Homepage Sidebar', 'avenue'),
-        'id' => 'sidebar-homepage',
-        'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
     ));
 
     register_sidebar(array(
@@ -88,8 +78,8 @@ function avenue_widgets_init() {
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
     ));
 }
 add_action('widgets_init', 'avenue_widgets_init');
@@ -121,9 +111,6 @@ function sc_avenue_css() {
         body{
             font-size: <?php echo of_get_option('sc_font_size'); ?>;
             font-family: <?php echo of_get_option('sc_font_family'); ?>;
-        }
-        .row{
-            /*width: <?php echo of_get_option('sc_container_width'); ?>;*/
         }
         .sc-slider ul li{
             background-size: <?php echo of_get_option('sc_slider_style'); ?>;

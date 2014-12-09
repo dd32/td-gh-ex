@@ -6,15 +6,15 @@
         Purpose of the stylesheet follows.
 */
 a,a:visited {
-  color: #0FAF97;
+  color: #3B7DBD;
 }
 a:hover{
-    color: #0B9681;
+    color: rgb(25, 87, 148);
 }
-.primary-color{ color: #0FAF97;}
+.primary-color{ color: #3B7DBD;}
 .btn-primary {
-    background-color: #0FAF97;
-    border-color: #16A08B;
+    background-color: #3B7DBD;
+    border-color: #3B7DBD;
     color: #ffffff !important;
 }
 .btn-primary:hover,
@@ -22,44 +22,43 @@ a:hover{
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  background-color: #14927F;
-  border-color: #16A08B;
+  background-color: rgb(25, 87, 148);
+  border-color: rgb(25, 87, 148);
 }
 fieldset[disabled] .btn-primary.active {
-  background-color: #0FAF97;
+  background-color: #3B7DBD;
 }
 .btn-primary .badge {
-  color: #0FAF97;
+  color: #3B7DBD;
 }
 .btn-link {
-  color: #0FAF97;
+  color: #3B7DBD;
 }
-.sc-primary-color{ color: #0FAF97;}
-.sc-primary-border{ border-color: #0FAF97;}
+.sc-primary-color{ color: #3B7DBD;}
+.sc-primary-border{ border-color: #3B7DBD;}
 .site-branding .search-bar .search-field:focus{
-    border-bottom: 1px solid #0FAF97;
+    border-bottom: 1px solid #3B7DBD;
 }
 .icon404{
-    color: #0FAF97;
+    color: #3B7DBD;
 }
 .nav-menu > li a:hover{
-    color: #0FAF97;
+    color: #3B7DBD;
 }
 .scroll-top:hover{
-    border-color: #0FAF97;
+    border-color: #3B7DBD;
 }
 #site-toolbar{
-    border-bottom: 4px solid #0FAF97;
+    border-bottom: 4px solid #3B7DBD;
 }
 
 
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
-        color: #0FAF97;
+        color: #3B7DBD;
     }      
 }
-
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a{
-    color: rgb(15, 175, 151);
+    color: rgb(59, 125, 189);
 }

@@ -23,39 +23,35 @@
             <header id="masthead" class="site-header" role="banner">
                 <?php sc_toolbar(); ?>
                 <div class="site-branding">
-                    <div class="row <?php echo of_get_option('sc_container_width'); ?>">
-                        <div class="col-md-12">
-                            <div class="col-xs-6">
-                                <h1 class="site-title">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                                        <?php if (of_get_option('sc_logo_image') != '') { ?>
-                                            <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt="" id="sc_logo"/>
+                    <div class="row <?php echo of_get_option('sc_container_width'); ?>"> 
+                        <div class="col-xs-6">
+                            <h1 class="site-title">
+                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                                    <?php if (of_get_option('sc_logo_image') != '') { ?>
+                                        <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt="" id="sc_logo"/>
                                         <?php
-                                        } else {
-                                            bloginfo('name');
-                                        }
-                                        ?>                                        
-                                    </a>
-                                </h1>
-                                <?php if (of_get_option('sc_logo_image') == '') { ?>
-                                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
-                                <?php } ?>
+                                    } else {
+                                        bloginfo('name');
+                                    }
+                                    ?>                                        
+                                </a>
+                            </h1>
+                            <?php if (of_get_option('sc_logo_image') == '') { ?>
+                                <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                            <?php } ?>
 
-                            </div>
-                            <div class="col-xs-6 search-bar">
-                                <!-- header right -->
-                                <?php get_sidebar('header-right'); ?>
-                            </div>
+                        </div>
+                        <div class="col-xs-6 search-bar">
+                            <!-- header right -->
+                            <?php get_sidebar('header-right'); ?>
                         </div>
                     </div>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <div class="row <?php echo of_get_option('sc_container_width'); ?>">
-                        <div class="col-md-12">
-                            <button class="menu-toggle"><?php _e('Primary Menu', 'avenue'); ?></button>
-                            <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'avenue'); ?></a>
-                            <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-                        </div>
+                        <button class="menu-toggle"><?php _e('Primary Menu', 'avenue'); ?></button>
+                        <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'avenue'); ?></a>
+                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                     </div>
                 </nav><!-- #site-navigation -->
             </header><!-- #masthead -->
