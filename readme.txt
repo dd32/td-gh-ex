@@ -5,6 +5,9 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.6.1 [09/12/14]
+1.Minor Translated String
+
 @Version: 1.6 [04/12/14]
 1. Snow Effects in Theme-Options.
 2. Two More SOcial Icons.
