@@ -8,9 +8,11 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
+		  
         <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="foodrecipes-post-title">Archives : %s', 'foodrecipes' ), '<span class="foodrecipes-post-subtitle">' . get_the_date('M-Y') . '</span></p>' );
+	 		?><p class="foodrecipes-post-title"><?php _e('Archives','foodrecipes'); echo " : " .  get_the_date('M-Y'); ?></p><?php
 		endif; ?>
+     
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

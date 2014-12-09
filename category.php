@@ -13,7 +13,8 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="foodrecipes-post-title">Category : <span class="foodrecipes-post-subtitle"><?php echo $foodrecipes_category_name;?></span></p>
+
+        <p class="foodrecipes-post-title"><?php _e('Category','foodrecipes'); echo " : " .  $foodrecipes_category_name; ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

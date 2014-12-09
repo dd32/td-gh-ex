@@ -44,7 +44,7 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
             <div class="foodrecipes-box-name">
               <h6><?php echo get_the_date("j F, Y"); ?></h6>
               <div class="foodrecipes-title"> <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a> </div>
-              <div class="foodrecipes-hr"> Post By: <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span><?php if ( get_comments_number() > 0 ) : ?> Comments:<span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span><?php endif; ?> </div>
+              <div class="foodrecipes-hr"><?php _e('Post By:','foodrecipes') ?>  <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span><?php if ( get_comments_number() > 0 ) : ?> <?php _e('Comments:','foodrecipes') ?> <span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span><?php endif; ?> </div>
             </div>
           </div>
           </div>

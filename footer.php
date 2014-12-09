@@ -10,7 +10,9 @@
       <?php if(!empty($foodrecipes_options['footertext'])) {
                	 echo wp_filter_nohtml_kses($foodrecipes_options['footertext']).' '; 
 			}
-			echo 'Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a target="_blank" href="http://fasterthemes.com/wordpress-themes/foodrecipes">Food Recipes</a>.';
+
+		printf( __( 'Powered by %1$s and %2$s.', 'foodrecipes' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>',
+				'<a href="http://fasterthemes.com/wordpress-themes/foodrecipes" target="_blank">Food Recipes</a>' ); 
 		?>
     </h2>
   </div>

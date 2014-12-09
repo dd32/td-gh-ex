@@ -8,7 +8,8 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="foodrecipes-post-title"><?php printf( __( 'Search Results for : %s', 'foodrecipes' ), '<span>' . get_search_query() . '</span>' ); ?></p>
+        
+        <p class="foodrecipes-post-title"><?php _e('Search Results for','foodrecipes'); echo " : " .  get_search_query(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

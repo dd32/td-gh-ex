@@ -6,8 +6,10 @@ class foodrecipes_randompostwidget extends WP_Widget
 {
 function foodrecipes_randompostwidget()
 {
-$foodrecipes_widget_ops = array('classname' => 'foodrecipes_randompostwidget', 'description' => 'Displays a random post with thumbnail' );
-$this->WP_Widget('foodrecipes_randompostwidget', 'Random Post and Thumbnail', $foodrecipes_widget_ops);
+$foodrecipes_widget_ops = array(
+								 'classname' => 'foodrecipes_randompostwidget',
+								 'description' => __('Displays a random post with thumbnail','foodrecipes'));
+$this->WP_Widget('foodrecipes_randompostwidget', __('Random Post and Thumbnail','foodrecipes'), $foodrecipes_widget_ops);
 }
 
 function form($foodrecipes_instance)

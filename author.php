@@ -8,7 +8,8 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="foodrecipes-post-title">Author : <span class="foodrecipes-post-subtitle">All posts by <?php echo get_the_author();?></span></p>
+        
+     <p class="foodrecipes-post-title"><?php _e('Author','foodrecipes'); echo __('All post by','foodrecipes')." : " .  get_the_author(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

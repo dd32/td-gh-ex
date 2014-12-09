@@ -8,9 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="foodrecipes-post-title">Tag : %s', 'foodrecipes' ), '<span class="foodrecipes-post-subtitle">' . single_tag_title( '', false ) . '</span></p>' );
-		endif; ?>
+      <p class="foodrecipes-post-title"><?php _e('Tag','foodrecipes'); echo " : " .  single_tag_title( '', false ); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

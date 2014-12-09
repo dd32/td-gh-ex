@@ -154,7 +154,7 @@ add_action('wp_enqueue_scripts', 'foodrecipes_enqueue');
 function foodrecipes_custom_breadcrumbs() {
   $foodrecipes_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $foodrecipes_delimiter = '/'; // delimiter between crumbs
-  $foodrecipes_home = 'Home'; // text for the 'Home' link
+  $foodrecipes_home = __('Home','foodrecipes'); // text for the 'Home' link
   $foodrecipes_showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $foodrecipes_before = '<span>'; // tag before the current crumb
   $foodrecipes_after = '</span>'; // tag after the current crumb
@@ -173,10 +173,10 @@ function foodrecipes_custom_breadcrumbs() {
     if ( is_category() ) {
       $foodrecipes_thisCat = get_category(get_query_var('cat'), false);
       if ($foodrecipes_thisCat->parent != 0) echo get_category_parents($foodrecipes_thisCat->parent, TRUE, ' ' . $foodrecipes_delimiter . ' ');
-      echo $foodrecipes_before . 'Archive by category "' . single_cat_title('', false) . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Archive by category','foodrecipes'). ' "'. single_cat_title('', false) . '"' . $foodrecipes_after;
 
     } elseif ( is_search() ) {
-      echo $foodrecipes_before . 'Search results for "' . get_search_query() . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Search results for','foodrecipes') .' "'. get_search_query() . '"' . $foodrecipes_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $foodrecipes_delimiter . ' ';
@@ -234,15 +234,15 @@ function foodrecipes_custom_breadcrumbs() {
       if ($foodrecipes_showCurrent == 1) echo ' ' . $foodrecipes_delimiter . ' ' . $foodrecipes_before . get_the_title() . $foodrecipes_after;
 
     } elseif ( is_tag() ) {
-      echo $foodrecipes_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Posts tagged','foodrecipes').' "' . single_tag_title('', false) . '"' . $foodrecipes_after;
 
     } elseif ( is_author() ) {
        global $author;
       $foodrecipes_userdata = get_userdata($author);
-      echo $foodrecipes_before . 'Articles posted by ' . $foodrecipes_userdata->display_name . $foodrecipes_after;
+      echo $foodrecipes_before . __('Articles posted by','foodrecipes').' '. $foodrecipes_userdata->display_name . $foodrecipes_after;
 
     } elseif ( is_404() ) {
-      echo $foodrecipes_before . 'Error 404' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Error 404','foodrecipes') . $foodrecipes_after;
     }
 
     if ( get_query_var('paged') ) {
@@ -263,9 +263,9 @@ function foodrecipes_custom_breadcrumbs() {
  **/
 function foodrecipes_entry_meta() {
 
-	$foodrecipes_category_list = get_the_category_list( __( ', ', 'foodrecipes' ) );
+	$foodrecipes_category_list = get_the_category_list( ', ', 'foodrecipes' );
 
-	$foodrecipes_tag_list = get_the_tag_list( '', __( ', ', 'foodrecipes' ) );
+	$foodrecipes_tag_list = get_the_tag_list(', ', 'foodrecipes' );
 
 	$foodrecipes_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -282,21 +282,26 @@ function foodrecipes_entry_meta() {
 if(get_comments_number() > 0 ) {
 
 	if ( $foodrecipes_tag_list ) {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'</div>', 'foodrecipes' );
-	} elseif ( $foodrecipes_category_list ) {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'</div>', 'foodrecipes' );
-	} else {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'</div>', 'foodrecipes' );
-	}
-} else {
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+		} elseif ( $foodrecipes_category_list ) {
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+		} else {
+			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'foodrecipes' );
+			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+		}
 	
+	
+	
+} else {
 	if ( $foodrecipes_tag_list ) {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
-	} elseif ( $foodrecipes_category_list ) {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
-	} else {
-		$foodrecipes_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div>', 'foodrecipes' );
-	}
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+		} elseif ( $foodrecipes_category_list ) {
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+		} else {
+			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'foodrecipes' );
+		}
 }
 
 	printf(
@@ -331,7 +336,7 @@ function foodrecipes_comment( $comment, $foodrecipes_args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'foodrecipes' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'foodrecipes' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'foodrecipes' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -379,6 +384,6 @@ endif;
  * Replace Excerpt [...] with Read More
 **/
 function foodrecipes_read_more( ) {
-return ' <br /><a class="more" href="'. get_permalink( get_the_ID() ) . '">Read more... </a>';
+return ' <br /><a class="more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read more ','foodrecipes').'</a>';
  }
 add_filter( 'excerpt_more', 'foodrecipes_read_more' ); 
