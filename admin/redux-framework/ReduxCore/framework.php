@@ -1986,7 +1986,7 @@ if ( true == $this->args['system_info'] ) {
                     $tab = array(
                         'id'      => 'redux-hint-tab',
                         'title'   => __( 'Hints', 'redux-framework-demo' ),
-                        'content' => __( '<p>' . $msg . '</p>', 'redux-framework-demo' )
+                        'content' => __( '<p>Hints are tooltips that popup when clicking the hint icon, offering addition information about the field in which they appear.  They can be Enabled by using the link below.</p>', 'redux-framework-demo' )
                     );
 
                     $screen->add_help_tab( $tab );
