@@ -32,7 +32,8 @@
             <?php } else { ?>
         		<a href="<?php echo esc_url( get_site_url() ); ?>"><img src="<?php echo esc_url($besty_options['logo']); ?>" alt="" class="logo-center" /></a>
             <?php }
-			if(!empty(get_bloginfo ( 'description' )))
+			$desc = get_bloginfo ( 'description' );
+			if(!empty($desc))
 			{
 				?><h2><?php bloginfo( 'description' ); ?></h2><?php 
 			}
