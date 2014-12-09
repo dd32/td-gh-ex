@@ -11,7 +11,7 @@
 <div class="container">
   <!---main-->
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <?php if ( have_posts() ) : ?>
       <?php the_post(); ?>
       <h2><?php _e( 'Author Archives : ', 'busi_prof' ); echo get_the_author(); ?></h2>

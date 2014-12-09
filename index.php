@@ -13,7 +13,7 @@
   	$image_uri=get_template_directory_uri(). '/images' ;?>
 <div class="container">
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <?php 
         //$post_type_data = new WP_Query( $args );
         while(have_posts()):the_post();	?>

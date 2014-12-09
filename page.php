@@ -1,20 +1,10 @@
 <?php 			
-/*
-	*Theme Name	: BusiProf
-	
- * @file           page.php
- * @package        Busiprof
- * @author         Priyanshu Mittal
- * @copyright      2013 Webriti
- * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/page.php
-*/	
 	get_template_part('banner','header');
 	$image_uri=get_template_directory_uri(). '/images' ;
 ?>
 <div class="container">
 	<div class="row-fluid">
-       <div class="span8 blog_left"> 		 
+       <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left"> 		 
 		  <?php 	global $more;
 					$more = 0;
 					the_post(); ?>

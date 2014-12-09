@@ -16,20 +16,7 @@
       <?php if ( is_active_sidebar( 'footer-widget-area' ))
         {  
         	dynamic_sidebar('footer-widget-area' );   
-        } else { ?>
-      <div class="span3"> 
-        <?php the_widget('WP_Widget_Archives'); ?>
-      </div>
-      <div class="span3">                       
-        <?php the_widget('WP_Widget_Categories'); ?>
-      </div>
-      <div class="span3">
-        <?php the_widget('WP_Widget_Meta'); ?>
-      </div>
-      <div class="span3">
-        <?php  the_widget('WP_Widget_Pages'); ?>
-      </div>
-      <?php }  ?>
+        } ?>
     </div>
   </div>
 </div>

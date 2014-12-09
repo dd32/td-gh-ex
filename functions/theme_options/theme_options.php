@@ -21,7 +21,7 @@
   	wp_enqueue_script( 'bootstrap-modal', get_template_directory_uri() . '/functions/theme_options/js/bootstrap-modal.js');
   	wp_enqueue_style('thickbox');	
   	wp_enqueue_style( 'wpb_option_pannel', get_template_directory_uri() . '/functions/theme_options/css/busiprof_option_pannel.css' );
-  	wp_enqueue_style('busiprof-bootstrap',get_bloginfo('template_directory').'/functions/theme_options/css/assets/css/busiprof-bootstrap.css');
+  	wp_enqueue_style('busiprof-bootstrap',get_template_directory_uri().'/functions/theme_options/css/assets/css/busiprof-bootstrap.css');
   }
   function busiprof_option_panal_function () 
   {	

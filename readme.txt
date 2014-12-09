@@ -4,7 +4,7 @@ A Free Blue colored Business Blog theme that supports Primary menu's , Primary s
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Two beautifully designed page templates Home Page and Blog Page. 
 BusiProf supports featured slider managed from Theme Option Panel.
 
-Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri and Vibhor Purandare.
+Author: Webriti
 
 About:
 BusiProf a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.webriti.com). 
@@ -57,6 +57,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.4.3
+1. Translated all untranslated strings of the option panel.
+2. content layout fixed in case of no sidebar.
+
 @Version: 1.4.2.9
 1. Added esc validation wherever is required.
 @Version: 1.4.2.8
@@ -140,4 +144,41 @@ Small Styling added for Options Panel.
 @Version 1.0
 released
 
+
+
+
+Spicy WordPress Theme, Copyright 2014 Priyanshu Mittal
+Spicy is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see .
+
+BusiProf WordPress Theme bundles the following third-party resources:
+
+Screenshot: Image used in screenshot By Jeff Sheldon
+URL: https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?fit=crop&fm=jpg&h=800&q=75&w=1050
+Source: http://unsplash.com
+License: GPL
+
+Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
+
+Bootstrap v2.3.0  Copyright 2012 Twitter, Inc.
+Licensed under APACHE License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+Font License
+    Applies to all desktop and webfont files in the following directory: /fonts/.
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
 # --- EOF --- #

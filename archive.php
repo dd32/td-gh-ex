@@ -13,7 +13,7 @@
    ?>
 <div class="container">
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <div class="blog_section">
         <h2><?php if ( is_day() ) : ?>
           <?php  _e( "Daily Archives: ", 'busi_prof' ); echo (get_the_date()); ?>

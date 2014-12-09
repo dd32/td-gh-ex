@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row-fluid">
     <!-- Main_content -->
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <div class="blog_section" id="post-<?php the_ID(); ?>">
         <?php  the_post(); ?>
         <h2 class="blog_section_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

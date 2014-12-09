@@ -2,7 +2,7 @@
 <div class="container">
   <!-- Main --> 
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <h2><?php  _e( "Category  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
       <?php    while(have_posts()): the_post();?>
       <div class="blog_section">

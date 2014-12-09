@@ -1,13 +1,4 @@
 <?php
-  /*
-   *Theme Name	: BusiProf
-   * @file           banner-header.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webriti
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/banner-header.php
-  */
   	get_header();
   	$current_options=get_option('busiprof_theme_options'); 
   ?>	<!-- Header top Slide -->

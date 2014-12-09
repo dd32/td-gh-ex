@@ -25,7 +25,7 @@
 </div>
 <div class="container">
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <h2><?php _e( 'Unfortunately, the page you tried accessing could not be retrieved. ', 'busi_prof' ); ?></h2>
       <div class="blog_section">
         <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'busi_prof' ); ?></p>

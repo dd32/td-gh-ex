@@ -1,22 +1,10 @@
-<?php
-  /***Theme Name	: BusiProf
-  	
-   * @file           search.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webriti
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/search.php
-   * 
-   */
-  ?>
 <?php  get_template_part('banner','header');
   $image_uri=get_template_directory_uri(). '/images' ;
   ?>
 <div class="container">
   <!-- Main --> 
   <div class="row-fluid">
-    <div class="span8 blog_left">
+    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
       <?php if ( have_posts() ) : ?>
       <h2><?php printf( __( 'Search Results for: %s', 'busi_prof' ), get_search_query() ); ?></h2>
       <?php while ( have_posts() ) : the_post(); ?>
