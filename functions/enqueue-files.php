@@ -15,9 +15,9 @@ function laurels_enqueue()
 	if(is_page_template('page-template/home-page.php')){
 		wp_enqueue_script('laurels-owl-carousel-min-js',get_template_directory_uri().'/js/owl.carousel.min.js',array('jquery'));
 		wp_enqueue_style('laurels-owl-carousel-css',get_template_directory_uri().'/css/owl.carousel.css',array());
+            wp_enqueue_script('laurels-default-js',get_template_directory_uri().'/js/default.js',array('jquery'));
 	}
 
-	wp_enqueue_script('laurels-default-js',get_template_directory_uri().'/js/default.js',array('jquery'));
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
 add_action('wp_enqueue_scripts', 'laurels_enqueue');	

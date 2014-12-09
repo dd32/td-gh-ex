@@ -11,6 +11,9 @@ left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, cust
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
+== Copyright ==
+Laurels Theme, Copyright 2014 fasterthemes.com
+Laurels is distributed under the terms of the GNU GPL
 
 
 == Installation ==

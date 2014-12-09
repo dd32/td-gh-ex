@@ -32,3 +32,7 @@ i). Added bootstrap.js , html5.min.js , owl.carousel.js , owl.carousel.css , boo
 
 Version 1.1.5 (5-12-2014)
 i). Added html5shiv.js , html5shiv.min.js , owl.carousel.min.js
+
+Version 1.1.6 (9-12-2014)
+i) Remove subcriber code in fasterthemes.php.
+ii) Declare copyright and license information.

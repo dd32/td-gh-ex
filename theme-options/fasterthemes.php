@@ -360,18 +360,12 @@ function laurels_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','laurels'); ?></a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png" alr="..." /> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png" alr="..."/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','laurels'); ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','laurels'); ?></h2></div>
-<div class="newsletter"> 
-  <h1><?php _e('Subscribe with us','laurels'); ?></h1>
-  <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers.",
-  "laurels"); ?> <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join','laurels'); ?></a></p>
-</div>
+
+
 <?php } ?>
