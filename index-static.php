@@ -1,13 +1,3 @@
-<?php
-/**
-* @Theme Name	:	Quality
-* @file         :	index-static.php
-* @package      :	Quality
-* @author       :	Vibhor
-* @license      :	license.txt
-* @filesource   :	wp-content/themes/Quality/index-static.php
-*/
-?>
 <!-- Quality Main Slider --->
 <?php $current_options=get_option('quality_options') ; ?>
 

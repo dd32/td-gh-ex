@@ -1,13 +1,3 @@
-<?php
-  /**
-  * @Theme Name	:	Quality
-  * @file         :	footer.php
-  * @package      :	Quality
-  * @author       :	Vibhor
-  * @license      :	license.txt
-  * @filesource   :	wp-content/themes/quality/footer.php
-  */
-  ?>
 <?php $current_options=get_option('quality_options'); ?>
 <div class="qua_footer_area">
   <div class="container">

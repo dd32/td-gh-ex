@@ -1,13 +1,3 @@
-<?php
-/**
-* @Theme Name	:	Quality
-* @file         :	index-service.php
-* @package      :	Quality
-* @author       :	Vibhor
-* @license      :	license.txt
-* @filesource   :	wp-content/themes/quality/index-service.php
-*/
-?>
 <!-- Quality Service Section ---->
 <div class="container">
 	<?php $current_options=get_option('quality_options'); ?>

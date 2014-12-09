@@ -1,12 +1,5 @@
-t<?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	tag.php
-  * 	@package      :	Quality
-  * 	@author       :	Vibhor
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/tag.php
-  */
-  get_header(); ?>
+<?php
+ get_header(); ?>
 <div class="page-seperator"></div>
 <div class="container">
   <div class="row">

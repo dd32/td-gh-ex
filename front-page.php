@@ -1,13 +1,4 @@
 <?php
-/** 
-* @Theme Name	:	Quality
-* @file         :	front-page.php
-* @package      :	Quality
-* @author       :	Vibhor
-* @license      :	license.txt
-* @filesource   :	wp-content/themes/quality/front-page.php
-*/
-
 	$current_options = get_option('quality_options');
   	if (  $current_options['front_page'] != 'on' ) {
   		get_template_part('index');

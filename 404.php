@@ -1,11 +1,4 @@
 <?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	404.php
-  * 	@package      :	Quality
-  * 	@author       :	Vibhor
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/404.php
-  */
   get_header(); ?>
 <div class="page-seperator"></div>
 <div class="container">

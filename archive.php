@@ -1,11 +1,4 @@
 <?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	arcive.php
-  * 	@package      :	Quality
-  * 	@author       :	Vibhor
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/arcive.php
-  */
   get_header(); ?>
 <div class="page-seperator"></div>
 <!-- Page Title Section ---->

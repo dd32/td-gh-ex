@@ -131,6 +131,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@version 1.1
+1. All social links initialised with the # value.
+2. Remove console errors.
+3. Remove all debug errors.
+4. removed default widgets.
 
 @VErsion 1.0.6.6
 1. Managed Front Page.

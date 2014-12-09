@@ -1,13 +1,3 @@
-<?php
-  /** 
-  * @Theme Name	:	Quality
-  * @file         :	header.php
-  * @package      :	Quality
-  * @author       :	Vibhor
-  * @license      :	license.txt
-  * @filesource   :	wp-content/themes/quality/header.php
-  */
-  ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
@@ -17,7 +7,6 @@
     <![endif]-->
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <!-- Theme Css -->

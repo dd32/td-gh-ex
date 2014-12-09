@@ -1,11 +1,4 @@
 <?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	category.php
-  * 	@package      :	Quality
-  * 	@author       : Vibhor
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/category.php
-  */
   get_header(); ?>
 <div class="page-seperator"></div>
 <!-- Page Title Section ---->

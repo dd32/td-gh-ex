@@ -1,12 +1,5 @@
 <?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	single.php
-  * 	@package      :	Quality
-  * 	@author       :	VibhorPurandare
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/single.php
-  */	
-  get_header(); ?>
+ 	 get_header(); ?>
 <div class="page-seperator"></div>
 <div class="container">
   <div class="row">

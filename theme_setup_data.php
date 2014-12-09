@@ -1,12 +1,4 @@
 <?php
-/**
-* @Theme Name	:	Quality
-* @file         :	theme_stup_data.php
-* @package      :	Quality
-* @author       :	Vibhor
-* @license      :	license.txt
-* @filesource   :	wp-content/themes/quality/theme_stup_data.php
-*/
 function theme_data_setup()
 {	
 	$project_img = QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png';

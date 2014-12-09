@@ -1,12 +1,3 @@
-<?php
-  /*	@Theme Name	:	Quality
-  * 	@file         :	comments.php
-  * 	@package      :	Quality
-  * 	@author       :	VibhorPurandare
-  * 	@license      :	license.txt
-  * 	@filesource   :	wp-content/themes/quality/comments.php
-  */
-  ?>
 <?php if ( post_password_required() ) : ?>
 <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'quality' ); ?></p>
 <?php return; endif; ?>
