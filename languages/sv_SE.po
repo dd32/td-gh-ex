@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bunny\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-11 12:47+0100\n"
-"PO-Revision-Date: 2014-05-11 12:49+0100\n"
+"POT-Creation-Date: 2014-12-09 04:16+0100\n"
+"PO-Revision-Date: 2014-12-09 04:44+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: Layout.nu <carro@layout.nu>\n"
 "Language: sv_SE\n"
@@ -13,64 +13,65 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.6\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\bunny\n"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/404.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:118
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:236
 msgid "Page not found"
 msgstr "Sidan kunde inte hittas"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:6
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Arkiv: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:7
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Arkiv: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:8
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Arkiv: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:7
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:9
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Arkiv: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:10
 #, php-format
 msgid "Category Archives: %s"
 msgstr "Arkiv: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:11
 msgid "Archive:"
 msgstr "Arkiv:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:26
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:28
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:34
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/comments.php:13
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/comments.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/content.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/page.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/content.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/content.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/page.php:13
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:18
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/single.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/single.php:21
 msgid "Pages: "
 msgstr "Sidor: "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:32
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:35
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:40
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/index.php:9
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:24
 msgid "Next page &rarr;"
 msgstr "Nästa sida &rarr;"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:33
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/archive.php:36
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:41
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/index.php:14
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:25
 msgid "&larr; Previous page"
@@ -78,15 +79,15 @@ msgstr "&larr; Föregående sida"
 
 # this is refering to the author. Authors name will be inserted at %
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:4
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:212
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:334
 #, php-format
 msgid "About %s"
 msgstr "Om %s"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/author.php:19
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:219
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:236
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:244
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:341
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:357
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:364
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visa alla inägg av %s"
@@ -98,74 +99,96 @@ msgstr ""
 "Det här inlägget är lösenordsskyddat. Skriv in lösenordet för att läsa "
 "kommentarerna."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:31
 msgid "Header Navigation"
 msgstr "Navigering för sidhuvud"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:57
+# Typsnitt på eller av
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:45
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:51
+msgid "on"
+msgstr "på"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:165
 msgid "Read more: "
 msgstr "Läs mer: "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:82
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:191
 msgid "Untitled"
 msgstr "Titel saknas"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:92
-msgid "Footer Sidebar"
-msgstr "Sidfotspanel"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:201
+msgid "Footer Widget area"
+msgstr "Sidfotspanel."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:93
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:203
 msgid "Widgets in this area will be shown in the footer."
 msgstr "Widgets i denna panel visas i sidfoten."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:115
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:209
+msgid "Sidebar"
+msgstr "Sidpanel"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:211
+msgid "Widgets in this area will be shown in the right hand sidebar."
+msgstr "Widgets i denna panel visas på höger sida"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:233
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
 
 # translators: 1: date, 2: time
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:156
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:275
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s kl %2$s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:156
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:275
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:162
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:281
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar måste godkännas innan publicering."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:169
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:288
 msgid "Reply"
 msgstr "Svara"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:182
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:303
 msgid "Home"
 msgstr "Hem"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:255
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:375
 msgid "Category"
 msgstr "Kategori"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:262
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/functions.php:381
 msgid "Tags"
 msgstr "Etiketter"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/header.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/header.php:12
 msgid "Skip to content"
 msgstr "Hoppa till innehållet"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:9
 msgid "Logo Image"
 msgstr "Logo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:12
-msgid "Easter eggs"
-msgstr "Påskägg"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:14
+msgid "Bunny Image Settings"
+msgstr "Bunny Bildinställningar"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:19
+msgid "Bunny Meta Settings"
+msgstr "Bunny Metainställningar"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:24
+msgid "Bunny Animation Settings"
+msgstr "Bunny Animering"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:39
 msgid ""
 "Adjust the value of the arc to match the length of your site title. Set a "
 "small number for a high arc, and high number for a low arc."
@@ -173,26 +196,57 @@ msgstr ""
 "Justera värdet på kurvan så att det matchar längden på din webbplatstitel. "
 "Sätt ett lågt nummer för en hög kurva, och ett högt nummer för en låg kurva."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:37
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:50
 msgid "Adjust the value of the arc to match the length of your tagline"
 msgstr "Justera värdet för kurvan så att det matchar längden på din slogan"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:48
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:61
+msgid "Check this box to disable the arc."
+msgstr "Klicka i rutan för att inaktivera böjjningen av texten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:75
 msgid "Check this box to turn Bunny into the Easter bunny!"
 msgstr "Klicka i rutan för att visa påskäggen!"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:56
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:85
+msgid "Check this box add that Christmas feeling!"
+msgstr "Klicka i rutan för att få lite julkänsla!"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:95
+msgid "Check this box to hide all decorative images."
+msgstr "Klicka i rutan för att  ta bort alla bilder."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:107
 msgid ""
-"Choose a logo to replace the cloud behind the site title. Recommended height "
-"is 140px. Remove the image to add the cloud back."
+"Choose a logo to replace the cloud behind the site title. The recommended "
+"height is 140px. Remove the image to show the cloud again."
 msgstr ""
 "Välj en bild som ersätter molnet bakom sidans titel. Rekommenderad höjd är "
-"140px. Ta bort bilden för att återställa molnet."
+"140px. Ta bort bilden för att visa molnet igen."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:121
+msgid "Check this box to show the breadcrumb navigation."
+msgstr "Klicka i rutan för att visa brödsmulorna (navigeringen)."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:134
+msgid "Check this box to stop the animations."
+msgstr "Klicka i rutan för att stoppa animeringen."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/inc/customizer.php:147
+msgid ""
+"Check this box to hide the meta information (post author, category, edit "
+"button etc)."
+msgstr ""
+"Klicka i rutan för att gömma all meta information (författare, kategori, "
+"redigera osv)."
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/search.php:3
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Sökresultat för: %s"
+
+#~ msgid "Easter eggs"
+#~ msgstr "Påskägg"
 
 #~ msgid "Header"
 #~ msgstr "Bild i sidhuvud"
@@ -200,26 +254,17 @@ msgstr "Sökresultat för: %s"
 #~ msgid "Right Hand Sidebar"
 #~ msgstr "Höger Sidopanel"
 
-#~ msgid "Widgets in this area will be shown on the right-hand side."
-#~ msgstr "Widgets i denna panel visas på höger sida"
-
 #~ msgid "Author and meta"
 #~ msgstr "Författare och meta"
 
 #~ msgid "Sidebar position"
 #~ msgstr "Sidpanels position"
 
-#~ msgid "Check this box to hide the breadcrumb navigation."
-#~ msgstr "Klicka i rutan för att gömma brödsmulorna (navigeringen)."
-
 #~ msgid "Display the text in the footer."
 #~ msgstr "Visa texten i sidfoten."
 
 #~ msgid "Choose a logo: "
 #~ msgstr "Välj en logo: "
-
-#~ msgid "Check this box to display the logo in the header."
-#~ msgstr "Klicka i rutan för att visa logon i sidhuvudet."
 
 #~ msgid ""
 #~ "Check this box to display the logo on top of the sidebar. This requires "
@@ -238,9 +283,6 @@ msgstr "Sökresultat för: %s"
 #~ msgstr ""
 #~ "Klicka i rutan för att gömma den extra informationen om författaren (och "
 #~ "avataren) som visas under enskilda inlägg."
-
-#~ msgid "Check this box to hide all the meta information."
-#~ msgstr "Klicka i rutan för att gömma all meta information."
 
 #~ msgid "Add this link to the header image:"
 #~ msgstr "Lägg till denna länk till headerbilden:"
@@ -341,9 +383,6 @@ msgstr "Sökresultat för: %s"
 #~ msgstr ""
 #~ "Klicka i rutan för att placera bilden i sidhuvudet ovanför menyn istället "
 #~ "för under."
-
-#~ msgid "Check this box to hide all shadows."
-#~ msgstr "Klicka i rutan för att  ta bort skuggorna."
 
 #~ msgid ""
 #~ "Check this box to remove the rounded corners on posts, widgets, "

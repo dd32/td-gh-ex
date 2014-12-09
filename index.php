@@ -14,5 +14,11 @@
 			previous_posts_link(__('&larr; Previous page','bunny'));
 			echo '</div>'; 
 		}
-		?>
-<?php get_footer(); ?>
+		?><br/><br/>
+</div>
+<?php 
+if (is_active_sidebar('sidebar_widget')){
+	get_sidebar(); 
+}
+get_footer(); 
+?>

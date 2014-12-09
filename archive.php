@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php if ( have_posts() ) : ?>
+
 	<h1 class="archive-title">
 		<?php 
 		if ( is_day() ) :  printf( __( 'Daily Archives: %s', 'bunny' ), get_the_date(get_option('date_format')) ); 
@@ -25,11 +27,19 @@
 			the_content(); 
 			wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'bunny' ), 'after' => '</div>' ) ); 
 			bunny_meta();
-			?>	
-		</div>
+			?>
+			
+		</div><br/><br/>
 <?php
 endwhile; 
 next_posts_link('<div class="newer-posts">'. __('Next page &rarr;', 'bunny') . '</div>'); 
 previous_posts_link('<div class="older-posts">' . __('&larr; Previous page','bunny') . '</div>'); 
-get_footer();
-?> 
+endif;
+?>
+</div>
+<?php 
+if (is_active_sidebar('sidebar_widget')){
+	get_sidebar(); 
+}
+get_footer(); 
+?>

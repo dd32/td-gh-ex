@@ -16,14 +16,15 @@ $bunny_curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_
 					<?php echo $bunny_curauth->description;	?>
 				</div>
 			</div>
-		<h1 class="archive-title"><?php printf( __( 'View all posts by %s', 'bunny' ), $bunny_curauth->display_name ); ?></h1>
+		<h1 class="archive-title"><?php printf( __( 'View all posts by %s', 'bunny' ), $bunny_curauth->display_name ); ?>:</h1>
 		<?php
 		while ( have_posts() ) : the_post(); ?> 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'));?></a></div>
-			    <?php bunny_breadcrumbs();?>
-					<?php
+			    <?php 
+					bunny_breadcrumbs();
+				
 					if (strpos($post->post_content,'[gallery') === false){
 					   if ( has_post_thumbnail()) {
 							the_post_thumbnail();
@@ -33,10 +34,16 @@ $bunny_curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_
 					wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'bunny' ), 'after' => '</div>' ) ); 
 					bunny_meta();
 					?>						
-			</div>
+			</div><br/><br/>
 <?php
 endwhile; 
 next_posts_link('<div class="newer-posts">'. __('Next page &rarr;', 'bunny') . '</div>'); 
 previous_posts_link('<div class="older-posts">' . __('&larr; Previous page','bunny') . '</div>'); 
-get_footer();
-?> 
+?>
+</div>
+<?php 
+if (is_active_sidebar('sidebar_widget')){
+	get_sidebar(); 
+}
+get_footer(); 
+?>

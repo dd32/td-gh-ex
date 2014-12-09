@@ -1,37 +1,93 @@
 <?php
+if ( ! isset( $content_width ) ) $content_width = 700;
 
 if ( ! function_exists( 'bunny_setup' ) ) :
 	function bunny_setup() {
+	
+		$bunny_ch = array(
+			'default-image'          => '',
+			'width'                  => 0,
+			'height'                 => 0,
+			'flex-height'            => false,
+			'flex-width'             => false,
+			'uploads'                => false,
+			'random-default'         => false,
+			'header-text'            => true,
+			'default-text-color'     => '000000',
+			'wp-head-callback'       => '',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => '',
+		);
+			
+		add_theme_support( 'custom-header', $bunny_ch );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'html5', array( 'gallery', 'caption' ) );
+
 		/* translate */
 		load_theme_textdomain( 'bunny', get_template_directory() . '/languages' );
+		
 		/* add menu */
 		register_nav_menus( array('header' => __( 'Header Navigation', 'bunny' ) ) );
+		
 		add_editor_style();
-		/* width     bredd */
-		if ( ! isset( $content_width ) ) $content_width = 560;
 	}
 endif;
 add_action( 'after_setup_theme', 'bunny_setup' );
 
-/* add 'home' button to menu            'hem' knapp i menyn*/
-function bunny_menu( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'bunny_menu' );
 
-/* Enqueue fonts */
+function bunny_fonts_url() {
+    $fonts_url = '';
+ 	/* Translators: If there are characters in your language that are not
+	* supported by Oswald, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$oswald = _x( 'on', 'Oswald font: on or off', 'bunny' );
+	 
+	/* Translators: If there are characters in your language that are not
+	* supported by Open Sans, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'bunny' );
+
+	 if ( 'off' !== $oswald || 'off' !== $open_sans ) {
+		$font_families = array();
+ 
+		if ( 'off' !== $oswald ) {
+			$font_families[] = 'Oswald:400,700,300';
+		}
+		if ( 'off' !== $open_sans ) {
+			$font_families[] = 'Open+Sans:400italic,400,700';
+		}
+		
+		//&subset=latin,greek-ext,vietnamese,greek,latin-ext,cyrillic
+		
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+
+	}
+    return $fonts_url;
+}
+
+
+/* Enqueue fonts, styles and js*/
  function bunny_fonts_styles() {
-	wp_enqueue_style( 'bunny_style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bunny_Font','//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic&subset=latin,latin-ext');
-	wp_enqueue_style( 'bunny_Font2','//fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext');
+	wp_enqueue_style( 'bunny_style', get_stylesheet_uri() );	
+	wp_enqueue_style( 'bunny-fonts', bunny_fonts_url(), array(), null );
 	
-	wp_enqueue_script( 'bunny_webfont', get_template_directory_uri() . '/inc/webfont.js', array( 'jquery' ) );
-	wp_enqueue_script( 'bunny_sprite', get_template_directory_uri() . '/inc/spritely.js', array( 'jquery' ) );
-	wp_enqueue_script( 'bunny_arc', get_template_directory_uri() . '/inc/arctext.js', array( 'jquery' ) );
-	wp_enqueue_script( 'bunny_bunny', get_template_directory_uri() . '/inc/bunny.js', array( 'jquery' ) );
+	/* Only enqueue the scripts for the animation and arc if they are needed. */
+	if ( get_theme_mod( 'bunny_animation' ) == '') {
+		wp_enqueue_script( 'bunny_sprite', get_template_directory_uri() . '/inc/spritely.js', array( 'jquery' ) );
+	}
+	if ( get_theme_mod( 'bunny_disable_arc' ) == '') {
+		wp_enqueue_script( 'bunny_circletype', get_template_directory_uri() . '/inc/circletype.js', array( 'jquery' ) );
+	}
+	
+	wp_enqueue_script( 'bunny_js', get_template_directory_uri() . '/inc/bunny.js', array( 'jquery' ) );
 	
 	/* Enqueue comment reply / threaded comments. */
 	if ( ! is_admin() ){
@@ -39,14 +95,66 @@ add_filter( 'wp_page_menu_args', 'bunny_menu' );
 			wp_enqueue_script( 'comment-reply' ); 
 		}
 	}
-	
-	/*Add easter eggs*/
-	if( get_theme_mod( 'bunny_easter_eggs' ) <> '') {
+		
+	/* Add Easter eggs */
+	if ( get_theme_mod( 'bunny_easter_eggs' )) {
 		wp_register_style('bunny_eggs', get_template_directory_uri() . '/eggs.css');
 		wp_enqueue_style('bunny_eggs');
+		
+	/* Add that Christmas feeling */	
+	}elseif ( get_theme_mod( 'bunny_christmas' )) {
+		wp_register_style('bunny_christmas', get_template_directory_uri() . '/christmas.css');
+		wp_enqueue_style('bunny_christmas');
 	}
 }
 add_action('wp_enqueue_scripts', 'bunny_fonts_styles');
+
+
+function bunny_css() {
+	echo '<style type="text/css">
+		.site-title, .site-description { color: #' . esc_attr( get_header_textcolor() ) . ';}';
+			
+	if (! has_nav_menu( 'header' ) ) {
+		echo '.site-title{margin-top:6px;}';
+	}
+
+	if (get_theme_mod( 'bunny_hide' )){
+		echo '#wrapper{margin:40px auto auto auto;}
+		#main{position:relative; overflow: auto;	float:none;	margin:0 auto;}
+		#footer{position:relative; overflow: auto;	float:none;	margin-top:40px;}
+		@media screen and (max-width:840px){
+			#wrapper{margin-top:40px; margin-left:1%;}
+			.kaninsmall{display:none;}
+		}
+		@media screen and (max-width:600px){
+			.kaninsmall{display:none;}
+		}';
+		
+		/*center the main content when there is no sidebar*/
+		if (! is_active_sidebar('sidebar_widget')){
+			echo '#main, #footer {display:block;}';
+		}
+	}
+	
+	if (display_header_text() AND get_bloginfo('name') == ''){
+		echo '.site-description{margin-top:90px;}';
+	}
+	
+	if (display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') <> ''){
+		echo '.site-description{margin-top:-20px;}';
+	}	
+	
+	if (display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') == ''){
+		echo '.site-description{margin-top:60px;}';
+	}
+	
+	if (!display_header_text()){
+		echo '.logo{margin-bottom:66px;}';
+	}	
+	echo '</style>';
+}
+add_action( 'wp_head', 'bunny_css');
+
 
 /* Add title to read more links */
 add_filter( 'get_the_excerpt', 'bunny_custom_excerpt_more',100 );
@@ -75,6 +183,7 @@ function bunny_custom_excerpt_more($output) {
 	return $output;
 }
 
+
 /* Add a title to posts that are missing title */
 add_filter( 'the_title', 'bunny_post_title' );
 function bunny_post_title( $title ) {
@@ -89,8 +198,17 @@ function bunny_post_title( $title ) {
 function bunny_widgets_init() {
 	register_sidebar(
 		array(
-		'name' => __( 'Footer Sidebar', 'bunny' ),
+		'name' => __( 'Footer Widget area', 'bunny' ),
+		'id' => 'footer_widget',
   		'description' => __( 'Widgets in this area will be shown in the footer.', 'bunny' ),
+		)
+	);
+	
+	register_sidebar(
+		array(
+		'name' => __( 'Sidebar', 'bunny' ),
+		'id' => 'sidebar_widget',
+  		'description' => __( 'Widgets in this area will be shown in the right hand sidebar.', 'bunny' ),
 		)
 	);
 }
@@ -121,6 +239,8 @@ function bunny_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'bunny_wp_title', 11, 2 );
 
+
+
 /* Comments */
 function bunny_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
@@ -147,20 +267,19 @@ function bunny_comment($comment, $args, $depth) {
 		}else{
 			echo '<i class="avataroff fa"></i>';
 		}
-		
 		printf('<div class="fn">%s</div>', get_comment_author_link());		
 		?>
 			<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 				<?php
-					/* translators: 1: date, 2: time */
-					printf( __('%1$s at %2$s','bunny'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'bunny'),'  ','' );
+				/* translators: 1: date, 2: time */
+				printf( __('%1$s at %2$s','bunny'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'bunny'),'  ','' );
 				?>
 			</div>
 		</div>
 		<?php comment_text() ?>
 		<?php if ($comment->comment_approved == '0') : ?>
-				<em class="comment-awaiting-moderation"><?php __('Your comment is awaiting moderation.', 'bunny') ?></em>
-				<br />
+			<em class="comment-awaiting-moderation"><?php __('Your comment is awaiting moderation.', 'bunny') ?></em>
+			<br />
 		<?php 
 		endif;
 		/*Make sure the reply button only displays if comments are open.*/
@@ -171,28 +290,31 @@ function bunny_comment($comment, $args, $depth) {
 			</div>
 		<?php 
 		endif;
-		if ( 'div' != $args['style'] ) : ?>
-		</div>
-		<?php 
+		if ( 'div' != $args['style'] ) : 
+			echo '</div>';
 		endif; 
-    }
+}
+
+
 
 function bunny_breadcrumbs(){
-	?>
-		<div class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'bunny');?></a>
-		<?php
+	if ( get_theme_mod( 'bunny_breadcrumb' ) <> ''){
+		?>
+			<div class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'bunny');?></a>
+			<?php
 				if ( count( get_the_category() ) ) : 
 					$bunny_category = get_the_category(); 
-					if($bunny_category[0]){
-						echo '<i>|</i>  ';
-						echo '<a href="'.get_category_link($bunny_category[0]->term_id ).'">'.$bunny_category[0]->cat_name.'</a>';
-					}
+						if($bunny_category[0]){
+							echo '<i>/</i>  ';
+							echo '<a href="'.get_category_link($bunny_category[0]->term_id ).'">'.$bunny_category[0]->cat_name.'</a>';
+						}
 				endif;
-				echo ' <i>|</i>  ';
+				echo ' <i>/</i>  ';
 				?>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		</div>
-	<?php
+			</div>
+		<?php
+	}
 }
 
 
@@ -225,77 +347,78 @@ function bunny_author(){
 
 
 function bunny_meta(){
-?>
-	<div class="meta">
-		
-		<?php
-		//get_avatar( get_the_author_meta( 'ID' ), 32 )
-		if (get_avatar( get_the_author_meta( 'ID' ))){
-			printf(('<a href="%1$s" title="%2$s" rel="author">%3$s</a> '),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'bunny' ), get_the_author() ) ),
-			get_avatar( get_the_author_meta( 'ID' ), 32 ),
-			get_the_author()
-			);
-		
-		}else{
-			printf(('<a href="%1$s" title="%2$s" rel="author"><i class="author-links fa"></i></a> '),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'bunny' ), get_the_author() ) ),
-			get_the_author()
-			);
-		}
-		
-		if ( comments_open() ) :
-			comments_popup_link('<i class="comment-icon fa"></i>','<i class="comment-icon fa"></i>','<i class="comment-icon fa"></i>',null,'<i class="comment-icon fa"></i>');		 
-			echo '&nbsp;';
-		endif;
-					
-		if ( count( get_the_category() ) ) : 
-			echo '<div class="cat-links2" title="' . __('Category', 'bunny') . '">';
-			echo '<i class="cat-links fa"></i>';
-			echo get_the_category_list(', ');
-			echo '</div> ';
-		endif; 	
-
-		if(get_the_tag_list()) {
-			echo '<div class="tag-links2"  title="' . __('Tags', 'bunny') .'">';
-			echo '<i class="tag-links fa"></i>';
-			echo get_the_tag_list( '', ', ' );
-			echo '</div>';
-		}
-					
-		edit_post_link(' <i class="edit-links fa"></i> ');
-			
-		if(is_single()){
-			bunny_author();
-		}
+	if ( get_theme_mod( 'bunny_meta' ) == '') {
 	?>
-	</div>
-<?php
+		<div class="meta">
+			<?php
+			if (get_avatar( get_the_author_meta( 'ID' ))){
+				printf(('<a href="%1$s" title="%2$s" rel="author">%3$s</a> '),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'bunny' ), get_the_author() ) ),
+				get_avatar( get_the_author_meta( 'ID' ), 32 ),
+				get_the_author()
+				);
+			}else{
+				printf(('<a href="%1$s" title="%2$s" rel="author"><i class="author-links fa"></i></a> '),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'bunny' ), get_the_author() ) ),
+				get_the_author()
+				);
+			}
+			if (!post_password_required() ){
+				if ( comments_open() ) :
+					comments_popup_link('<i class="comment-icon fa"></i>','<i class="comment-icon fa"></i>','<i class="comment-icon fa"></i>',null,'<i class="comment-icon fa"></i>');		 
+					echo '&nbsp;';
+				endif;
+			}
+			if ( count( get_the_category() ) ) : 
+				echo '<div class="cat-links2" title="' . __('Category', 'bunny') . '">';
+				echo '<i class="cat-links fa"></i>';
+				echo get_the_category_list(', ');
+				echo '</div> ';
+			endif; 	
+			if(get_the_tag_list()) {
+				echo '<div class="tag-links2"  title="' . __('Tags', 'bunny') .'">';
+				echo '<i class="tag-links fa"></i>';
+				echo get_the_tag_list( '', ', ' );
+				echo '</div>';
+			}
+			
+			edit_post_link(' <i class="edit-links fa"></i> ');
+			if(is_single()){
+				bunny_author();
+			}
+		?>
+		</div>
+	<?php
+	}
 }
 
-function bunny_curve(){
-	if( get_theme_mod( 'bunny_title_arc_size' ) ) {
-		$bunnyarc1=get_theme_mod('bunny_title_arc_size' );
-	}else {
-		$bunnyarc1='400';
-	}
 
-	if( get_theme_mod( 'bunny_tagline_arc_size' ) ) {
-		$bunnyarc2=get_theme_mod('bunny_tagline_arc_size' );
-	}else {
-		$bunnyarc2='400';
-	}
+function bunny_js(){
 	?>
 	<script type="text/javascript">
 	<!--//--><![CDATA[//><!--
-	arc('<?php echo $bunnyarc1; ?>', '<?php echo $bunnyarc2; ?>');
+	<?php if ( get_theme_mod( 'bunny_animation' ) == '') {?>
+			jQuery(document).ready(function($) {
+				$('#far-clouds').pan({fps: 30, speed: 0.5, dir: 'left', depth: 30});
+				$('#near-clouds').pan({fps: 30, speed: 0.7, dir: 'right', depth: 70}); 
+				$('#kaninf').sprite({fps: 1.8, no_of_frames: 8, speed: 1});
+			});			
+	<?php }?>
+	
+	<?php if ( get_theme_mod( 'bunny_disable_arc' ) == '') {?>	
+		jQuery(document).ready(function($) {
+			$('#headline').circleType({radius:<?php echo esc_attr(get_theme_mod('bunny_title_arc_size','400' ))?>});
+			$('#tagline').circleType({radius:<?php echo esc_attr(get_theme_mod('bunny_tagline_arc_size','400' ))?>});
+		}); 
+	<?php }?>
 	//--><!]]>
 	 </script>
 <?php
 }
-add_action('wp_footer', 'bunny_curve');
+add_action('wp_footer', 'bunny_js');
+
 
 //Customizer
 require get_template_directory() . '/inc/customizer.php';

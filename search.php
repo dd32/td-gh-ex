@@ -18,9 +18,16 @@
 					wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'bunny' ), 'after' => '</div>' ) ); 
 					bunny_meta();
 					?>						
-				</div>
+				</div><br/><br/>
 <?php 
 endwhile;
 next_posts_link('<div class="newer-posts">'. __('Next page &rarr;', 'bunny') . '</div>'); 
 previous_posts_link('<div class="older-posts">' . __('&larr; Previous page','bunny') . '</div>');
-get_footer(); ?> 
+?>
+</div>
+<?php 
+if (is_active_sidebar('sidebar_widget')){
+	get_sidebar(); 
+}
+get_footer(); 
+?>

@@ -9,36 +9,50 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<a href="#wrapper" class="keyboard-shortcut"><?php _e('Skip to content', 'bunny' );?></a>
+<a href="#main" class="keyboard-shortcut"><?php _e('Skip to content', 'bunny' );?></a>
 
 <div id="header" role="banner">
-		<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu' ) ); ?>
-
-		<!-- mobile menu -->
-		<a href="#" id="mobile-menu" title="<?php esc_attr_e( 'Show and hide menu', 'bunny' ); ?>"></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu' ) ); ?>
-		<!-- End mobile menu -->
-
+	<?php
+	if ( has_nav_menu( 'header' ) ) {
+		wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu' ) ); 
+		
+		echo '<a href="#" id="mobile-menu"></a>';
+		wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu' ) ); 
+	}
+	?>
 	<div class="logo">
 	<?php
 	if( get_theme_mod( 'bunny_logo' ) ) {
-		echo '<img src="' . get_theme_mod( 'bunny_logo' ) . '">';
-	}else{
-	?>
-		<img src="<?php echo get_template_directory_uri()?>/images/cloud-large.png" height="146px" width="316px"/>
-	<?php
+		echo '<img src="' . esc_url(get_theme_mod( 'bunny_logo' ) ). '" alt="" />';
+	}elseif ( get_theme_mod( 'bunny_hide' ) == ''){
+		echo '<img src="' . get_template_directory_uri() . '/images/cloud-large.png" height="146" width="316" alt="" />';
 	}
 	?>
 	</div>
-	<h1 class="site-title" id="headline"><?php bloginfo( 'name' ); ?></h1>
-	<h2 class="site-description" id="tagline"><?php bloginfo( 'description' ); ?></h2>
+	<?php
+	if ( get_bloginfo('name') <> '' && display_header_text() ) {
+	?>
+		<h1 class="site-title" id="headline"><?php bloginfo( 'name' ); ?></h1>
+	<?php
+	}
+	if ( get_bloginfo('description') <> '' && display_header_text() ){
+	?>
+		<h2 class="site-description" id="tagline"><?php bloginfo( 'description' ); ?></h2>
+	<?php
+	}
+	?>
 </div>
-
-<div id="sol" class="sol"></div>
-<div id="far-clouds" class="far-clouds stage"></div>
-<div id="near-clouds" class="near-clouds stage"></div>
-
-<div id="kaninf" class="kaninf"></div>
-<div id="grass" class="grass"></div>
-<div id="wrapper" role="main">
+<?php
+//Hide these if the 'hide images' option is chosen.
+if ( get_theme_mod( 'bunny_hide' ) == ''){
+?>
+	<div id="sol" class="sol"></div>
+	<div id="far-clouds" class="far-clouds stage"></div>
+	<div id="near-clouds" class="near-clouds stage"></div>
+	<div id="kaninf" class="kaninf"></div>
+	<div id="grass" class="grass"></div>
+<?php
+}
+?>
+<div id="wrapper">
+	<div id="main" role="main">

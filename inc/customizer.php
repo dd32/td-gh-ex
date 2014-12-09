@@ -1,43 +1,68 @@
 <?php
 function bunny_customizer( $wp_customize ) {
 
+	
+	$wp_customize->remove_section('header_image'); /*We are not actually using a header image, only the text options.*/
+
+
 	$wp_customize->add_section('bunny_section_one',      array(
-            'title' => __( 'Logo Image', 'bunny' ),
-            'priority' => 90
+        'title' => __( 'Logo Image', 'bunny' ),
+        'priority' => 90
         )
     );
-
-
+	$wp_customize->add_section('bunny_section_two',        array(
+       'title' => __( 'Bunny Meta Settings', 'bunny' ),
+       'priority' => 210
+        )
+    );
 	$wp_customize->add_section('bunny_section_three',        array(
-        'title' => __( 'Easter eggs', 'bunny' ),
+       'title' => __( 'Bunny Image Settings', 'bunny' ),
+       'priority' => 210
+        )
+    );
+	$wp_customize->add_section('bunny_section_four',        array(
+       'title' => __( 'Bunny Animation Settings', 'bunny' ),
        'priority' => 210
         )
     );
 	
-
+		
 	$wp_customize->add_setting( 'bunny_title_arc_size',		array(
 			'sanitize_callback' => 'bunny_sanitize_arc_value',
+			'default' => '400',
 		)
 	);
 	$wp_customize->add_control('bunny_title_arc_size',		array(
 			'type' => 'text',
-			'default' => '400',
 			'label' =>  __( 'Adjust the value of the arc to match the length of your site title. Set a small number for a high arc, and high number for a low arc.', 'bunny' ),
 			'section' => 'title_tagline',
 		)
 	);
-	
 	$wp_customize->add_setting( 'bunny_tagline_arc_size',		array(
 			'sanitize_callback' => 'bunny_sanitize_arc_value',
+			'default' => '400',
 		)
 	);
 	$wp_customize->add_control('bunny_tagline_arc_size',		array(
 			'type' => 'text',
-			'default' => '400',
 			'label' =>  __( 'Adjust the value of the arc to match the length of your tagline', 'bunny' ),
 			'section' => 'title_tagline',
 		)
 	);
+	
+	$wp_customize->add_setting( 'bunny_disable_arc',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_disable_arc',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to disable the arc.', 'bunny' ),
+			'section' => 'title_tagline',
+		)
+	);
+
+
+
 	
 	$wp_customize->add_setting( 'bunny_easter_eggs',		array(
 			'sanitize_callback' => 'bunny_sanitize_checkbox',
@@ -49,14 +74,79 @@ function bunny_customizer( $wp_customize ) {
 			'section' => 'bunny_section_three',
 		)
 	);
+	$wp_customize->add_setting( 'bunny_christmas',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_christmas',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box add that Christmas feeling!', 'bunny' ),
+			'section' => 'bunny_section_three',
+		)
+	);
+	$wp_customize->add_setting( 'bunny_hide',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_hide',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to hide all decorative images.', 'bunny' ),
+			'section' => 'bunny_section_three',
+		)
+	);
+	
 	
 	/** Logo settings */
-	$wp_customize->add_setting( 'bunny_logo' );
+	$wp_customize->add_setting( 'bunny_logo' ,		array(
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bunny_logo', array(
-		'label'    => __( 'Choose a logo to replace the cloud behind the site title. Recommended height is 140px. Remove the image to add the cloud back.', 'bunny' ),
+		'label'    => __( 'Choose a logo to replace the cloud behind the site title. The recommended height is 140px. Remove the image to show the cloud again.', 'bunny' ),
 		'section' => 'bunny_section_one',
 		'settings' => 'bunny_logo',
-	)));
+		)
+	)
+	);
+	
+	
+	$wp_customize->add_setting( 'bunny_breadcrumb',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_breadcrumb',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to show the breadcrumb navigation.', 'bunny' ),
+			'section' => 'nav',
+		)
+	);
+	
+	
+	
+	$wp_customize->add_setting( 'bunny_animation',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_animation',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to stop the animations.', 'bunny' ),
+			'section' => 'bunny_section_four',
+		)
+	);
+	
+	
+	
+	$wp_customize->add_setting( 'bunny_meta',		array(
+			'sanitize_callback' => 'bunny_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('bunny_meta',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to hide the meta information (post author, category, edit button etc).', 'bunny' ),
+			'section' => 'bunny_section_two',
+		)
+	);
+
 	
 }
 add_action( 'customize_register', 'bunny_customizer' );
