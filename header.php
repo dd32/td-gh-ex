@@ -42,12 +42,9 @@
               $blogname2 = substr($blogname,1);
               ?>
             <span class="logo-title"><?php echo ucfirst($blogname1); ?><small><?php echo $blogname2; ?></small></span>
-            <?php } else if($rambo_current_options['upload_image_logo']!=''){ ?>
-			
-			<img id="logo_image" src="<?php echo $rambo_current_options['upload_image_logo']; ?>" height= "<?php if($rambo_current_options['height']!='') { echo $rambo_current_options['height']; }  else { "50"; }?>px" 
-			  width="<?php if($rambo_current_options['width']!='') { echo $rambo_current_options['width']; }  else { "150"; } ?>px" />
-			  
-			  <?php } ?>
+            <?php } else if($rambo_current_options['upload_image_logo']!='')
+              { ?><img id="logo_image" src="<?php echo $rambo_current_options['upload_image_logo']; ?>"  /><?php
+              } ?>
             </a>
             <!------ end of logo -------->
             <div class="nav-collapse collapse navbar-responsive-collapse ">
@@ -65,4 +62,7 @@
         </div>
         <!-- /navbar-inner -->
       </div>
-    </div>   
+    </div>
+    <style type="text/css">
+      #logo_image{height:<?php if($rambo_current_options['height']!='') { echo $rambo_current_options['height']; }  else { "50"; } ?>px; width:<?php if($rambo_current_options['width']!='') { echo $rambo_current_options['width']; }  else { "150"; } ?>px;}
+    </style>

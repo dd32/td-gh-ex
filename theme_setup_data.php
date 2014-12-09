@@ -5,7 +5,7 @@
  * @copyright      	2013 rambo
  * @license        	license.txt
  * @author       	webriti
- * @filesource     	wp-content/themes/rambo/theme_setup_data.php
+ * @filesource     	wp-content/themes/rambo-pro/theme_setup_data.php
  *	Admin  & front end default data file 
  *-----------------------------------------------------------------------------------*/ 
 function theme_data_setup()
@@ -57,10 +57,10 @@ function theme_data_setup()
 			
 			//Social media links
 			'footer_social_media_enabled'=>'on',
-			'social_media_twitter_link' =>"https://twitter.com/",
-			'social_media_facebook_link' =>"https:www.facebook.com",
-			'social_media_linkedin_link' =>"http://linkedin.com/",
-			'social_media_google_plus' =>"https://plus.google.com/",
+			'social_media_twitter_link' =>"#",
+			'social_media_facebook_link' =>"#",
+			'social_media_linkedin_link' =>"#",
+			'social_media_google_plus' =>"#",
 			
 			//Projects Section Settings
 			'home_projects_enabled' => 'on',

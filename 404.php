@@ -2,7 +2,8 @@
 <div class="container">
   <!--- Main ---> 
   <div class="row-fluid">
-    <div class="<?php if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";?> Blog_main">
+    <!-- Call Function sidebar Check -->
+	<div class="<?php  rambo_post_layout_class(); ?> Blog_main">
       <div class="blog_single_post">
         <h2><?php _e( 'Unfortunately, the page you tried accessing could not be retrieved. ', 'rambo' ); ?>
         </h2>

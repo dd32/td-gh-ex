@@ -749,7 +749,8 @@ h6 {
   font-weight: normal;
   /* font-weight: bold; Shahid */
   line-height: 20px;
-  color: inherit;  
+  color: inherit;
+  /*text-rendering: optimizelegibility;*/
 }
 
 h1 small,
@@ -1062,7 +1063,6 @@ input,
 button,
 select,
 textarea {
-  font-size: 14px;
   font-weight: normal;
   line-height: 20px;
 }

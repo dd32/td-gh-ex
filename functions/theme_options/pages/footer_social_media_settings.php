@@ -25,10 +25,10 @@
 		if($_POST['rambo_settings_save_7'] == 2) 
 		{
 			$current_options['footer_social_media_enabled']="on";
-			$current_options['social_media_twitter_link']="https://twitter.com/";
-			$current_options['social_media_facebook_link']="https://facebook.com/";
-			$current_options['social_media_linkedin_link']="https://linkedin.com/";
-			$current_options['social_media_google_plus']="https://plus.google.com/";			
+			$current_options['social_media_twitter_link']="#";
+			$current_options['social_media_facebook_link']="#";
+			$current_options['social_media_linkedin_link']="#";
+			$current_options['social_media_google_plus']="#";			
 			
 			update_option('rambo_theme_options',$current_options);
 		}

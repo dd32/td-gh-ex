@@ -131,8 +131,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
-@version 1.2.6.5
-1. Fixed some issues.
+@veriosn 1.2.7
+1. All social media links initialised with the # value.
+2. Add text domain to __ and _e funstions.
+3. Pot file updated
+4. All scripts name enqued has been prefixed with the theme name.
+5. Woocommerce styling issues fixed.
 @version 1.2.6.5
 1. Front page issue fixed.
 @version 1.2.6.4

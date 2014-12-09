@@ -107,15 +107,14 @@
     display: block;
     width: 160px;
     padding: 8px 10px;
-    border-bottom: 1px solid #e3e3e3;
-    background-image: url(../images/white_px.png);
+    border-bottom: 1px solid #e3e3e3;    
     background-repeat: repeat-x;
     background-position: 0 0;    
 	font-weight:200;
 	font:bold 13px/18px sans-serif;	
 }
 #nav-shadow{ 	width: 500px;	position: absolute;	top: 0;	bottom: 0;	right: 0;
-	background: transparent url('../images/menu-shadow.png') repeat-y top right;
+	
 	width: 6px;	z-index: 999;
 }
 

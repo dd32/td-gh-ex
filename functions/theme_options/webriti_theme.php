@@ -3,7 +3,7 @@
 		<div class="row-fluid">
 			<div class="span12" id="webriti_header">
 				<h2><a href="http://www.webriti.com/" target="_blank">	
-						<div style="font-size:35px;color:#fff; font-weight:bold; margin-top:10px; margin-bottom:10px;">Browse Premium Webriti Themes </div>
+						<div style="font-size:35px;color:#fff; font-weight:bold; margin-top:10px; margin-bottom:10px;"><?php _e('Browse Premium Webriti Themes','rambo'); ?> </div>
 					</a>
 				</h2>
 			<!--	<h3>Our Themes</h3> -->
