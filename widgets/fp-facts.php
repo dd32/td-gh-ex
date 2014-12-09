@@ -89,7 +89,7 @@ class Quill_Facts extends WP_Widget {
            echo '<p><img class="custom_media_image" src="' . $image_uri . '" style="max-width:100px;" /></p>';
         endif;
     ?>
-    <p><label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Upload an image for the background if you want. It will get a parallax effect.', 'quill'); ?></label></p> 
+    <p><label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Upload an image for the background if you want. [DEPRECATED - use row styles instead]', 'quill'); ?></label></p> 
     <p><input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('image_uri'); ?>" value="Upload Image" style="margin-top:5px;" /></p>
 	<p><input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'image_uri' ); ?>" name="<?php echo $this->get_field_name( 'image_uri' ); ?>" type="text" value="<?php echo $image_uri; ?>" size="3" /></p>	
 	
@@ -148,15 +148,15 @@ class Quill_Facts extends WP_Widget {
 
 		$title 			= ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Our facts', 'quill' );
 		$title 			= apply_filters( 'widget_title', $title, $instance, $this->id_base );
-		$desc = isset( $instance['desc'] ) ? esc_textarea($instance['desc']) : '';		
+		$desc 			= isset( $instance['desc'] ) ? esc_textarea($instance['desc']) : '';		
 		$fact_one   	= isset( $instance['fact_one'] ) ? esc_html( $instance['fact_one'] ) : '';
-		$fact_one_max  = isset( $instance['fact_one_max'] ) ? absint( $instance['fact_one_max'] ) : '';
+		$fact_one_max  	= isset( $instance['fact_one_max'] ) ? absint( $instance['fact_one_max'] ) : '';
 		$fact_two   	= isset( $instance['fact_two'] ) ? esc_attr( $instance['fact_two'] ) : '';
-		$fact_two_max  = isset( $instance['fact_two_max'] ) ? absint( $instance['fact_two_max'] ) : '';
+		$fact_two_max  	= isset( $instance['fact_two_max'] ) ? absint( $instance['fact_two_max'] ) : '';
 		$fact_three   	= isset( $instance['fact_three'] ) ? esc_attr( $instance['fact_three'] ) : '';
-		$fact_three_max= isset( $instance['fact_three_max'] ) ? absint( $instance['fact_three_max'] ) : '';
+		$fact_three_max	= isset( $instance['fact_three_max'] ) ? absint( $instance['fact_three_max'] ) : '';
 		$fact_four   	= isset( $instance['fact_four'] ) ? esc_attr( $instance['fact_four'] ) : '';		
-		$fact_four_max = isset( $instance['fact_four_max'] ) ? absint( $instance['fact_four_max'] ) : '';		
+		$fact_four_max 	= isset( $instance['fact_four_max'] ) ? absint( $instance['fact_four_max'] ) : '';		
 		$image_uri 		= isset( $instance['image_uri'] ) ? esc_url($instance['image_uri']) : '';		
 
 ?>
@@ -165,7 +165,7 @@ class Quill_Facts extends WP_Widget {
 				<?php if ( $title ) echo $before_title . '<span class="wow fadeInRight">' . $title . '</span>' . $after_title; ?>
 				<?php if ($desc != '') : ?>
 					<div class="section-desc">
-						<?php echo esc_textarea($desc); ?>
+						<?php echo $desc; ?>
 					</div>
 				<?php endif; ?>				
 				<?php if ($fact_one !='') : ?>

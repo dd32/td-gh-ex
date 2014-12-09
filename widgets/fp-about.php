@@ -129,7 +129,7 @@ class Quill_About extends WP_Widget {
 				<?php else : ?>
 					<div class="col-md-12">
 				<?php endif; ?>
-					<div class="about-text wow fadeInRight"><?php echo esc_textarea($about_text); ?></div>
+					<div class="about-text wow fadeInRight"><?php echo $about_text; ?></div>
 					<h3 class="action-title"><?php echo esc_html($action_title); ?></h3>
 					<a class="read-more buttons wow pulse" href="<?php echo esc_url($action_link); ?>"><?php echo esc_html($action_anchor); ?></a>
 				</div>	

@@ -1,0 +1,12 @@
+Changelog
+
+Quill 1.03
+----------------------
+- added changelog.txt;
+- multicolumn support;
+- various CSS&JS improvements/fixes;
+- more options added in widgets;
+- removed Nicescroll files and license info;
+- add support for row styles for the Page Builder plugin;
+- added some missing sanitization in customizer.php;
+- reversed theme uri with author uri.

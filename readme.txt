@@ -53,44 +53,38 @@ License: MIT/GPLv2
 License URI: http://opensource.org/licenses/MIT
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-f) niceScroll
-Copyright: 2011-13*InuYaksa
-Resource URI: http://areaaperta.com/nicescroll/
-License: MIT
-License URI: http://opensource.org/licenses/MIT
-
-g) jQuery Waypoints
+f) jQuery Waypoints
 Copyright: 2011-2014 Caleb Troughton
 Resource URI: http://imakewebthings.com/jquery-waypoints/
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-i) Images folder
+g) Images folder
 header.jpg
 Copyright: RyanMcGuire
 Resource URI: http://pixabay.com/en/taxi-cab-taxicab-taxi-cab-new-york-238478/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
-k) Screenshot
+h) Screenshot
 Copyright: Unsplash
 Resource URI: http://pixabay.com/en/taxi-cab-traffic-cab-new-york-381233/
 License: CC0 1.0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
-l) animate.css
+i) animate.css
 Copyright: daneden
 Resource URI: http://daneden.github.io/animate.css/
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-m) WOW.js
+j) WOW.js
 Copyright: Matthieu Aussaguel
 Resource URI: http://mynameismatthieu.com/WOW/
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-n) Flexslider
+k) Flexslider
 Copyright: 2013 WooThemes
 Resource URI: http://www.woothemes.com/flexslider/
 License: GPLv2

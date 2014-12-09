@@ -47,7 +47,7 @@
 	});
 	wp.customize('services_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.services-area .widget-title span').css('border-color', newval );
+			$('.services-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	wp.customize('services_icon_bg',function( value ) {
@@ -79,7 +79,7 @@
 	});
 	wp.customize('employees_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.employees-area .widget-title span').css('border-color', newval );
+			$('.employees-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	wp.customize('employees_text',function( value ) {
@@ -105,7 +105,7 @@
 	});
 	wp.customize('testimonials_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.testimonials-area .widget-title span').css('border-color', newval );
+			$('.testimonials-area .widget-title').css('border-color', newval );
 		} );
 	});
 	wp.customize('testimonials_body_text',function( value ) {
@@ -126,7 +126,7 @@
 	});
 	wp.customize('facts_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.facts-area .widget-title span').css('border-color', newval );
+			$('.facts-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	wp.customize('facts_color',function( value ) {
@@ -149,7 +149,7 @@
 	});
 	wp.customize('social_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.social-area .widget-title span').css('border-color', newval );
+			$('.social-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	//Projects section
@@ -165,7 +165,7 @@
 	});
 	wp.customize('projects_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.cases-area .widget-title span').css('border-color', newval );
+			$('.cases-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	wp.customize('projects_item_bg',function( value ) {
@@ -186,7 +186,7 @@
 	});
 	wp.customize('latest_news_title_dec',function( value ) {
 		value.bind( function( newval ) {
-			$('.latest-news-area .widget-title span').css('border-color', newval );
+			$('.latest-news-area .widget-title').css('border-color', newval );
 		} );
 	});	
 	wp.customize('latest_news_post_title',function( value ) {
@@ -212,7 +212,7 @@
     });
     wp.customize('subscribe_title_dec',function( value ) {
         value.bind( function( newval ) {
-            $('.subscribe-area .widget-title span').css('border-color', newval );
+            $('.subscribe-area .widget-title').css('border-color', newval );
         } );
     });
     //Contact
@@ -228,7 +228,7 @@
     });
     wp.customize('contact_title_dec',function( value ) {
         value.bind( function( newval ) {
-            $('.contact-area .widget-title span').css('border-color', newval );
+            $('.contact-area .widget-title').css('border-color', newval );
         } );
     });
     wp.customize('contact_info',function( value ) {
@@ -249,7 +249,7 @@
     });
     wp.customize('about_title_dec',function( value ) {
         value.bind( function( newval ) {
-            $('.about-area .widget-title span').css('border-color', newval );
+            $('.about-area .widget-title').css('border-color', newval );
         } );
     });
     wp.customize('about_text',function( value ) {

@@ -40,6 +40,7 @@ function quill_customize_register( $wp_customize ) {
 		'site_logo',
 		array(
 			'default-image' => '',
+      'sanitize_callback' => 'esc_url_raw',
 		)
 	);
     $wp_customize->add_control(
@@ -48,7 +49,7 @@ function quill_customize_register( $wp_customize ) {
             'site_logo',
             array(
                'label'          => __( 'Upload your logo', 'quill' ),
-			   'type' 			=> 'image',
+			         'type' 			=> 'image',
                'section'        => 'quill_general',
                'settings'       => 'site_logo',
                'priority' => 9,
@@ -60,6 +61,7 @@ function quill_customize_register( $wp_customize ) {
 		'site_favicon',
 		array(
 			'default-image' => '',
+      'sanitize_callback' => 'esc_url_raw',
 		)
 	);
     $wp_customize->add_control(
@@ -80,6 +82,7 @@ function quill_customize_register( $wp_customize ) {
         'apple_touch_144',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -100,6 +103,7 @@ function quill_customize_register( $wp_customize ) {
         'apple_touch_114',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -120,6 +124,7 @@ function quill_customize_register( $wp_customize ) {
         'apple_touch_72',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -140,6 +145,7 @@ function quill_customize_register( $wp_customize ) {
         'apple_touch_57',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -155,23 +161,6 @@ function quill_customize_register( $wp_customize ) {
             )
         )
     );
-    //SCroller
-	$wp_customize->add_setting(
-		'quill_scroller',
-		array(
-			'sanitize_callback' => 'quill_sanitize_checkbox',
-			'default' => 0,			
-		)		
-	);
-	$wp_customize->add_control(
-		'quill_scroller',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Check this box if you want to disable the custom scroller.', 'quill'),
-			'section' => 'quill_general',
-      'priority' => 15,			
-		)
-	);
   //Full content posts
   $wp_customize->add_setting(
     'quill_full_content',
@@ -218,6 +207,7 @@ function quill_customize_register( $wp_customize ) {
         'slider_image_1',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -238,6 +228,7 @@ function quill_customize_register( $wp_customize ) {
         'slider_image_2',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -258,6 +249,7 @@ function quill_customize_register( $wp_customize ) {
         'slider_image_3',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -278,6 +270,7 @@ function quill_customize_register( $wp_customize ) {
         'slider_image_4',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -298,6 +291,7 @@ function quill_customize_register( $wp_customize ) {
         'slider_image_5',
         array(
             'default-image' => '',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -433,13 +427,14 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'services_section', array(
-    'label' => __('Services section', 'quill'),
+        'label' => __('Services section', 'quill'),
         'section' => 'quill_fp_colors',
         'settings' => 'quill_options[info]',
-    'priority' => 10
+        'priority' => 10
         ) )
     );
     //Background
@@ -572,6 +567,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'employees_section', array(
@@ -690,6 +686,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'testimonials_section', array(
@@ -787,6 +784,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'facts_section', array(
@@ -884,6 +882,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'social_section', array(
@@ -981,6 +980,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'projects_section', array(
@@ -1078,6 +1078,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'latest_news_section', array(
@@ -1197,6 +1198,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'subscribe_section', array(
@@ -1273,6 +1275,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'contact_section', array(
@@ -1370,6 +1373,7 @@ function quill_customize_register( $wp_customize ) {
     $wp_customize->add_setting('quill_options[info]', array(
             'type' => 'info_control',
             'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new quill_Info( $wp_customize, 'about_section', array(

@@ -19,7 +19,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".services-area .widget-title { color: {$services_title}; }"."\n";
 	}
 	if ( isset($services_title_dec) && ( $services_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".services-area .widget-title span { border-color: {$services_title_dec}; }"."\n";
+		$custom .= ".services-area .widget-title { border-color: {$services_title_dec}; }"."\n";
 	}	
 	if ( isset($services_icon_bg) && ( $services_icon_bg != '#2E2E2E' ) ) {
 		$custom .= ".service-icon { border-color: {$services_icon_bg}; }"."\n";
@@ -46,7 +46,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".employees-area .widget-title { color: {$employees_title}; }"."\n";
 	}
 	if ( isset($employees_title_dec) && ( $employees_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".employees-area .widget-title span { border-color: {$employees_title_dec}; }"."\n";
+		$custom .= ".employees-area .widget-title { border-color: {$employees_title_dec}; }"."\n";
 	}
 	if ( isset($employees_text) && ( $employees_text != '#fff' ) ) {
 		$custom .= ".employee-name { color: {$employees_text}; }"."\n";
@@ -74,7 +74,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".testimonials-area .widget-title { color: {$testimonials_title}; }"."\n";
 	}
 	if ( isset($testimonials_title_dec) && ( $testimonials_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".testimonials-area .widget-title span { border-color: {$testimonials_title_dec}; }"."\n";
+		$custom .= ".testimonials-area .widget-title { border-color: {$testimonials_title_dec}; }"."\n";
 	}	
 	if ( isset($testimonials_body_text) && ( $testimonials_body_text!= '#6B6B6B' ) ) {
 		$custom .= ".testimonial, .testimonial h4 { color: {$testimonials_body_text}; }"."\n";
@@ -93,7 +93,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".facts-area .widget-title { color: {$facts_title}; }"."\n";
 	}
 	if ( isset($facts_title_dec) && ( $facts_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".facts-area .widget-title:after { border-color: {$facts_title_dec}; }"."\n";
+		$custom .= ".facts-area .widget-title { border-color: {$facts_title_dec}; }"."\n";
 	}
 	if ( isset($facts_color) && ( $facts_color != '#2E2E2E' ) ) {
 		$custom .= ".fact { color: {$facts_color}; }"."\n";
@@ -129,7 +129,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".social-area .widget-title { color: {$social_title}; }"."\n";
 	}
 	if ( isset($social_title_dec) && ( $social_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".social-area .widget-title span { border-color: {$social_title_dec}; }"."\n";
+		$custom .= ".social-area .widget-title { border-color: {$social_title_dec}; }"."\n";
 	}
 	if ( isset($social_icons) && ( $social_icons != '#2E2E2E' ) ) {
 		$custom .= ".social-area a:before { color: {$social_icons}; }"."\n";
@@ -147,7 +147,7 @@ function quill_custom_styles($custom) {
 		$custom .= ".cases-area .widget-title { color: {$projects_title}; }"."\n";
 	}
 	if ( isset($projects_title_dec) && ( $projects_title_dec != '#2E2E2E' ) ) {
-		$custom .= ".cases-area .widget-title span { border-color: {$projects_title_dec}; }"."\n";
+		$custom .= ".cases-area .widget-title { border-color: {$projects_title_dec}; }"."\n";
 	}
 	if ( isset($projects_item_bg) && ( $projects_item_bg != '#2E2E2E' ) ) {
 		$custom .= ".cases-area .entry-title { background-color: {$projects_item_bg}; }"."\n";
@@ -166,7 +166,7 @@ function quill_custom_styles($custom) {
         $custom .= ".latest-news-area .widget-title { color: {$latest_news_title}; }"."\n";
     }
     if ( isset($latest_news_title_dec) && ( $latest_news_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".latest-news-area .widget-title span { border-color: {$latest_news_title_dec}; }"."\n";
+        $custom .= ".latest-news-area .widget-title { border-color: {$latest_news_title_dec}; }"."\n";
     }
     if ( isset($latest_news_post_title) && ( $latest_news_post_title != '#2E2E2E' ) ) {
         $custom .= ".latest-news-area .entry-title a { color: {$latest_news_post_title}; }"."\n";
@@ -186,7 +186,7 @@ function quill_custom_styles($custom) {
         $custom .= ".subscribe-area .widget-title { color: {$subscribe_title}; }"."\n";
     }
     if ( isset($subscribe_title_dec) && ( $subscribe_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".subscribe-area .widget-title span { border-color: {$subscribe_title_dec}; }"."\n";
+        $custom .= ".subscribe-area .widget-title { border-color: {$subscribe_title_dec}; }"."\n";
     } 
     //Contact section
     $contact_bg = esc_html(get_theme_mod( 'contact_bg' ));
@@ -201,7 +201,7 @@ function quill_custom_styles($custom) {
         $custom .= ".contact .widget-title { color: {$contact_title}; }"."\n";
     }
     if ( isset($contact_title_dec) && ( $contact_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title span { border-color: {$contact_title_dec}; }"."\n";
+        $custom .= ".contact .widget-title { border-color: {$contact_title_dec}; }"."\n";
     } 
     if ( isset($contact_info) && ( $contact_info != '#2E2E2E' ) ) {
         $custom .= ".contact_info div { background-color: {$contact_info}; }"."\n";
@@ -219,7 +219,7 @@ function quill_custom_styles($custom) {
         $custom .= ".contact .widget-title { color: {$about_title}; }"."\n";
     }
     if ( isset($about_title_dec) && ( $about_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title span { border-color: {$about_title_dec}; }"."\n";
+        $custom .= ".contact .widget-title { border-color: {$about_title_dec}; }"."\n";
     } 
     if ( isset($about_text) && ( $about_text != '#6B6B6B' ) ) {
         $custom .= ".about-text { color: {$about_text}; }"."\n";
