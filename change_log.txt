@@ -54,3 +54,8 @@ i) Enqueued respond.min in functions.php
 Version 1.3.5 (5 Dec 2014)
 i) set respond.js in function.php
 ii) fix sanitization.
+
+Version 1.3.6 (9 Dec 2014)
+i)  Fixed Fatal Error is header.php
+
+
