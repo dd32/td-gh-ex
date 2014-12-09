@@ -157,7 +157,7 @@ function medium_search_ajax(){
                         $medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-small',0 );
 			$medium_result .= '<div class="col-md-3 search-box" >';
                         if(!empty($medium_featured_image))
-                        $medium_result .= '<a href="'.get_permalink(get_the_ID()).'"><img class="img-responsive" src="'.$medium_featured_image[0].'" alt="'.esc_attr(get_the_title()).'"></a>';
+                        $medium_result .= '<a href="'.get_permalink(get_the_ID()).'"><img class="img-responsive" src="'.esc_url($medium_featured_image[0]).'" alt="'.esc_attr(get_the_title()).'"></a>';
 			$medium_result .= '<div class="image-sub"><a href="'.get_permalink(get_the_ID()).'">'.get_the_title().'</a></div>
 				<div class="post-arthur"><a class="privacy" href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'">'.get_the_author().'</a></div>
 			  </div>';

@@ -290,10 +290,6 @@
 .fasterthemes-footer ul{
 	margin:0px;
 }
-.fasterthemes-footer ul li{
-	display:inline-block;
-	margin:10px 5px;
-}
 .fasterthemes-footer .btn-save{
 	float: right;
     margin: 3px 0;
@@ -302,14 +298,7 @@
 	margin-right:20px;
 }
 
-.fasterthemes-footer a{
-	color:#FFF;
-	text-decoration:none;
-}
-.fasterthemes-footer img
-{
- vertical-align:middle;
-}
+
 .save-options{
 	background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;
@@ -332,30 +321,7 @@
     top: 40%;
     width: auto;
 }
-/* MailChimp Form Embed Code - Classic - 08/17/2011 */
-.newsletter {
-    clear: both;
-    display: table;
-    float: right;
-    margin-right: 15%;
-    width: 60%;
-}
-.newsletter h1 {
-	border-bottom: 1px solid;
-    color: rgb(53, 75, 88);
-    display: table;
-    padding-bottom: 5px;
-}
-.newsletter > p {
-    color: rgb(53, 75, 88);
-    font-size: 16px;
-}
-.newsletter a {
-    color: rgb(53, 75, 88);
-}
-.newsletter a:hover {
-    color: #212121;
-}
+
 @media (max-width:992px){
 	.logo{
 		width:100%;
@@ -389,10 +355,7 @@
 	.left-box,
 	.fasterthemes-themes textarea{
 		width:95.5%;
-	}
-	#mc_embed_signup{
-		width:80%;
-	}
+	}	
 	.right-box .nav-tab-wrapper ul li .nav-tab-active:after{
 		border:none;
 	}

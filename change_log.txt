@@ -31,3 +31,8 @@ Version 1.2.2 (04-12-2014)
 i) Set header image
 ii) Escaped $medium_featured_image in index.php
 iii) Set original version of enscroll.min
+
+Version 1.2.3 (09-12-2014)
+i) Escaped $medium_featured_image in functions.php
+ii) Fixed scroll issue
+iii) Declare copyright and license information
