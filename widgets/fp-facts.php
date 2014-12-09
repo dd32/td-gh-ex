@@ -167,7 +167,8 @@ class Quill_Facts extends WP_Widget {
 					<div class="section-desc">
 						<?php echo $desc; ?>
 					</div>
-				<?php endif; ?>				
+				<?php endif; ?>	
+				<div class="facts-container">			
 				<?php if ($fact_one !='') : ?>
 					<div class="fact-wrapper col-md-3 col-sm-6 col-xs-12 wow fadeInUp">
 						<span class="fact" id="<?php echo absint($fact_one_max); ?>">0</span>
@@ -191,7 +192,8 @@ class Quill_Facts extends WP_Widget {
 						<span class="fact" id="<?php echo absint($fact_four_max); ?>">0</span>
 						<div class="fact-name"><?php echo esc_html($fact_four); ?></div>
 					</div>
-				<?php endif; ?>																			
+				<?php endif; ?>	
+				</div>																		
 			</div>
 			<?php if ($image_uri != '') : ?>
 				<style type="text/css">

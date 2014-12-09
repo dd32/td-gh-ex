@@ -138,7 +138,8 @@ class Quill_Services extends WP_Widget {
 					<div class="section-desc">
 						<?php echo $desc; ?>
 					</div>
-				<?php endif; ?>				
+				<?php endif; ?>	
+				<div class="services-container">			
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php $icon = get_post_meta( get_the_ID(), 'wpcf-service-icon', true ); ?>
 					<div class="service col-md-4 col-sm-6 col-xs-6 wow rotateInUpLeft">
@@ -150,6 +151,7 @@ class Quill_Services extends WP_Widget {
 						<a class="read-more buttons" href="<?php the_permalink(); ?>"><?php echo __('Read More', 'quill'); ?></a>
 					</div>
 				<?php endwhile; ?>
+				</div>
 			</div>
 			<?php if ($see_all != '') : ?>
 				<a href="<?php echo esc_url($see_all); ?>" class="read-more buttons"><?php echo __('See all our services', 'quill'); ?></a>

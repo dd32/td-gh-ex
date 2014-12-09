@@ -138,6 +138,7 @@ class Quill_Employees extends WP_Widget {
 						<?php echo $desc; ?>
 					</div>
 				<?php endif; ?>
+				<div class="employees-container">
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 					<?php //Get the custom field values
 						$position = get_post_meta( get_the_ID(), 'wpcf-position', true );
@@ -173,6 +174,7 @@ class Quill_Employees extends WP_Widget {
 						<a class="read-more buttons" href="<?php the_permalink(); ?>"><?php echo __('See bio', 'quill'); ?></a>
 					</div>
 				<?php endwhile; ?>
+				</div>
 			</div>
 			<?php if ($see_all != '') : ?>
 				<a href="<?php echo esc_url($see_all); ?>" class="read-more buttons"><?php echo __('See all our employees', 'quill'); ?></a>

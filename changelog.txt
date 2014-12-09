@@ -1,5 +1,10 @@
 Changelog
 
+
+Quill 1.04
+----------------------
+- few clearings fixes;
+
 Quill 1.03
 ----------------------
 - added changelog.txt;
