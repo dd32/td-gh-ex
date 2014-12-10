@@ -30,10 +30,10 @@ $top_mag_options = get_option( 'topmag_theme_options' );
         <div u="slides" class="slider-image-content">
             <?php
 				while ( $top_mag_slider_post->have_posts() ) { $top_mag_slider_post->the_post();
-				$top_mag_featured_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
+				$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large');
 			?>
             <div>
-                <img u="image" alt="slider image" src="<?php echo $top_mag_featured_image; ?>" />
+                <img u="image" alt="slider image" src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>"   />
             </div>
             <?php } ?>
         </div>
@@ -57,15 +57,15 @@ $top_mag_options = get_option( 'topmag_theme_options' );
                 );
     $top_mag_recent_post = new WP_Query( $top_mag_recent_post_args );
     while ( $top_mag_recent_post->have_posts() ) { $top_mag_recent_post->the_post();
-	$top_mag_featured_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
+	$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'medium');
 	?>
           <div class="col-md-12 recent-posts clearfix item no-padding-left">
             <div class="blog-post">
               <div class="ImageWrapper chrome-fix">
-			  	<?php if($top_mag_featured_image != '')  { ?>
-                	<img src="<?php echo $top_mag_featured_image; ?>" class="img-responsive" />
+			  	<?php if($top_mag_featured_image[0] != '')  { ?>
+                	<img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
                 <?php } else { ?>    
-                	<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+                	<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" width="320" height="221" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
                 <?php } ?>    
                 <div class="ImageOverlayC"></div>
                 <div class="Buttons StyleH"> <span class="WhiteRounded"><a href="<?php echo get_permalink(); ?>"><i class="fa fa-picture-o"></i></a> </span> </div>
@@ -108,15 +108,15 @@ $top_mag_options = get_option( 'topmag_theme_options' );
 		$top_mag_single_post = new WP_Query( $top_mag_args );
 	   
 		while ( $top_mag_single_post->have_posts() ) { $top_mag_single_post->the_post();
-		$top_mag_featured_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
+		$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'medium');
 		?> 
         <div class="home-category-post">
         <div class="news-list-col1 no-padding">
           <div class="ImageWrapper chrome-fix"> 
-            <?php if($top_mag_featured_image != '')  { ?>
-                	<img src="<?php echo $top_mag_featured_image; ?>" class="img-responsive" />
+            <?php if($top_mag_featured_image[0] != '')  { ?>
+                	<img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
 			<?php } else { ?>    
-                <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" class="img-responsive" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="No image" width="320" height="221" class="img-responsive" />
             <?php } ?>  
             <div class="ImageOverlayC"></div>
             <div class="Buttons StyleH"> <span class="WhiteRounded"><a href="<?php echo get_permalink(); ?>"><i class="fa fa-picture-o"></i></a> </span> </div>

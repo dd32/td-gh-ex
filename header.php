@@ -50,12 +50,12 @@ $top_mag_options = get_option( 'topmag_theme_options' );
           <div class="custom-header-img">
             	<?php if(empty($top_mag_options['banner-html']) && !empty($top_mag_options['banner-ads'])) { 
 						if(!empty($top_mag_options['banneradslink'])) {	?>
-                		<a href="<?php echo $top_mag_options['banneradslink']; ?>" target="_blank"><img width="860" height="90" src="<?php echo $top_mag_options['banner-ads']; ?>" class="img-responsive" /></a>
+                		<a href="<?php echo esc_url($top_mag_options['banneradslink']); ?>" target="_blank"><img width="860" height="90" src="<?php echo $top_mag_options['banner-ads']; ?>" class="img-responsive" /></a>
                 <?php } else { ?>
-                		<img width="860" height="90" src="<?php echo $top_mag_options['banner-ads']; ?>" class="img-responsive" />
+                		<img width="860" height="90" src="<?php echo esc_url($top_mag_options['banner-ads']); ?>" class="img-responsive" />
 				<?php } 
 				} else { 
-					echo $top_mag_options['banner-html']; 
+					echo esc_html($top_mag_options['banner-html']); 
 		  } ?>
           </div>
         <?php } ?>

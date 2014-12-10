@@ -5,18 +5,18 @@ function top_mag_theme_options_init(){
 add_action( 'admin_init', 'top_mag_theme_options_init' );
 function theme_options_validate($input)
 {
-	$input['breaking-news'] = wp_filter_nohtml_kses( $input['breaking-news'] );
-	$input['breaking-news-category'] = wp_filter_nohtml_kses( $input['breaking-news-category'] );
+	$input['breaking-news'] = sanitize_text_field( $input['breaking-news'] );
+	$input['breaking-news-category'] = sanitize_text_field( $input['breaking-news-category'] );
  	$input['logo'] = esc_url_raw( $input['logo'] );
-	$input['logo-tagline'] = wp_filter_nohtml_kses( $input['logo-tagline'] );
+	$input['logo-tagline'] = sanitize_text_field( $input['logo-tagline'] );
 	$input['favicon'] = esc_url_raw( $input['favicon'] );
 	
-	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+	$input['footertext'] = sanitize_text_field( $input['footertext'] );
 	
-	$input['post-slider-category'] = wp_filter_nohtml_kses( $input['post-slider-category'] );
-	$input['recent-post-number'] = wp_filter_nohtml_kses( $input['recent-post-number'] );
-	$input['home-post-category'] = wp_filter_nohtml_kses( $input['home-post-category'] );
-	$input['post-number'] = wp_filter_nohtml_kses( $input['post-number'] );	
+	$input['post-slider-category'] = sanitize_text_field( $input['post-slider-category'] );
+	$input['recent-post-number'] = sanitize_text_field( $input['recent-post-number'] );
+	$input['home-post-category'] = sanitize_text_field( $input['home-post-category'] );
+	$input['post-number'] = sanitize_text_field( $input['post-number'] );	
 	
 	$input['banner-ads'] = esc_url_raw( $input['banner-ads'] );
 	$input['banneradslink'] = esc_url_raw( $input['banneradslink'] ); 
@@ -25,7 +25,6 @@ function theme_options_validate($input)
 function top_mag_theme_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'topmagtheme_framework', get_template_directory_uri(). '/theme-options/css/topmagtheme_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'topmagtheme_framework' );	
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/topmagtheme-custom.js', array( 'jquery' ) );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
@@ -309,9 +308,6 @@ function top_mag_framework_page(){
 	</div>
 	<div class="topmagtheme-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
-            <li><a href="https://twitter.com/fasterthemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
         </ul>
     </div>

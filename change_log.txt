@@ -38,3 +38,9 @@ ii) Set pagination color in homepage.
 
 Version 1.4.3 (4th Dec 2014)
 i) Deleted an extra file
+
+
+Version 1.4.4 (10th Dec 2014)
+i) Remove unnecessary code.
+ii) Set sanitization in $top_mag_featured_image in all files.
+iii) Declare copyright and license information

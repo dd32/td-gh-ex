@@ -21,7 +21,7 @@
   <div class="copyright col-lg-12">
     <div class="col-md-7 no-padding">
       <p><?php if(!empty($top_mag_options['footertext'])) { 
-               	 echo esc_attr($top_mag_options['footertext']).' '; 
+               	 echo sanitize_text_field($top_mag_options['footertext']).' '; 
 			}
 				echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/topmag">Top Mag</a>.';
 		?></p>

@@ -7,14 +7,14 @@ get_header(); ?>
   <div class="col-md-8 blogpost no-padding-left clearfix">
     <?php while ( have_posts() ) : the_post(); 
 	
-	$top_mag_featured_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
+	$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'medium');
 ?>
     <div class="col-md-12 no-padding blogpost-border">
       <div class="blogpost-col1 no-padding">
-        <?php if($top_mag_featured_image != '') { ?>
-        <img src="<?php echo $top_mag_featured_image; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
+        <?php if($top_mag_featured_image[0] != '') { ?>
+        <img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
         <?php } else { ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" width="320" height="221" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
         <?php } ?>
         <div class="caption-wrap-topimg">
           <div class="caption-date"><span><?php echo get_the_date('d M'); ?></span></div>
