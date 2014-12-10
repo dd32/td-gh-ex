@@ -8,11 +8,7 @@ include_once ('class-tgm-plugin-activation.php');
 function newsmag_recommended_plugins() {
 
 	$plugins = array(
-		array(
-			'name' 		=> 'Redux Framework',
-			'slug' 		=> 'redux-framework',
-			'required' 	=> false,
-		),
+		
 		array(
             'name'               => 'Advanced Custom Fields', // The plugin name.
             'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
