@@ -37,43 +37,43 @@
 
 			<div class="socialLine" role="navigation">
 				<?php if ( $se_options['facebookurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook" target="_blank"><i class="fa spaceRightDouble fa-facebook"></i></a>
+					<a href="<?php echo esc_url($se_options['facebookurl']); ?>" title="Facebook"><i class="fa spaceRightDouble fa-facebook"><span class="screen-reader-text">Facebook</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['twitterurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter" target="_blank"><i class="fa spaceRightDouble fa-twitter"></i></a>
+					<a href="<?php echo esc_url($se_options['twitterurl']); ?>" title="Twitter"><i class="fa spaceRightDouble fa-twitter"><span class="screen-reader-text">Twitter</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['googleplusurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus" target="_blank"><i class="fa spaceRightDouble fa-google-plus"></i></a>
+					<a href="<?php echo esc_url($se_options['googleplusurl']); ?>" title="Google Plus"><i class="fa spaceRightDouble fa-google-plus"><span class="screen-reader-text">Google Plus</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['linkedinurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin" target="_blank"><i class="fa spaceRightDouble fa-linkedin"></i></a>
+					<a href="<?php echo esc_url($se_options['linkedinurl']); ?>" title="Linkedin"><i class="fa spaceRightDouble fa-linkedin"><span class="screen-reader-text">Linkedin</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['instagramurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram" target="_blank"><i class="fa spaceRightDouble fa-instagram"></i></a>
+					<a href="<?php echo esc_url($se_options['instagramurl']); ?>" title="Instagram"><i class="fa spaceRightDouble fa-instagram"><span class="screen-reader-text">Instagram</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['youtubeurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube" target="_blank"><i class="fa spaceRightDouble fa-youtube"></i></a>
+					<a href="<?php echo esc_url($se_options['youtubeurl']); ?>" title="YouTube"><i class="fa spaceRightDouble fa-youtube"><span class="screen-reader-text">YouTube</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['pinteresturl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
+					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest"><i class="fa spaceRightDouble fa-pinterest"><span class="screen-reader-text">Pinterest</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $se_options['tumblrurl'] != '' ) : ?>
-					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr" target="_blank"><i class="fa spaceRightDouble fa-tumblr"></i></a>
+					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text">Tumblr</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $se_options['hiderss'] ) : ?>
-					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceRightDouble fa-rss"></i></a>
+					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceRightDouble fa-rss"><span class="screen-reader-text">RSS</span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $se_options['hidesearch'] ) : ?>
-					<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"></i></a>
+					<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"><span class="screen-reader-text">Search</span></i></a>
 				<?php endif; ?>
 			</div>
 			<?php if ( ! $se_options['hidesearch'] ) : ?>

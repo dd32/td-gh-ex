@@ -87,7 +87,8 @@ function blogghiamo_custom_css_styles() {
 	input,
 	select,
 	textarea,
-	a {
+	a,
+	.menu-toggle {
 		color: <?php echo $text_color_first; ?>;
 	}
 	<?php endif; ?>
@@ -114,7 +115,8 @@ function blogghiamo_custom_css_styles() {
 	.crestaPostStripeInner,
 	.page-content,
 	.entry-content,
-	.entry-summary {
+	.entry-summary,
+	.menu-toggle {
 		background: <?php echo $box_color_second; ?>;
 	}
 	.site-title {
@@ -132,7 +134,8 @@ function blogghiamo_custom_css_styles() {
 	.post-navigation .meta-nav,
 	.widget-title,
 	.edit-link a, .tagcloud a,
-	#comments .reply {
+	#comments .reply,
+	.menu-toggle:focus, .menu-toggle:hover {
 		background: <?php echo $special_color_third; ?>;
 	}
 	button:hover,

@@ -20,7 +20,6 @@ $blogghiamo_theme_options = array(
 function blogghiamo_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$args = array(
 		'id'    => 'blogghiamo_theme_options',
-		'parent' => 'site-name',
 		'title' => __('Blogghiamo Theme Options', 'blogghiamo' ),
 		'href'  => admin_url('themes.php?page=theme_options')
 	);
