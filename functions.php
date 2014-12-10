@@ -9,16 +9,16 @@
 /**
  * Load the TGM init if it exists
  */
-if ( file_exists( dirname(__FILE__) . '/inc/options/tgm/tgm-init.php') ) {
-    require_once( dirname(__FILE__) . '/inc/options/tgm/tgm-init.php' );
+if ( file_exists( get_template_directory() . '/inc/options/tgm/tgm-init.php') ) {
+    require_once( get_template_directory() . '/inc/options/tgm/tgm-init.php' );
 }   
 /**
  * Tweak the redux framework.
  * Register all the theme options.
  * Registers the wpex_option function.
  */
-if ( file_exists( dirname(__FILE__) . '/inc/options/admin-config.php') ) {
-	require_once( dirname(__FILE__) . '/inc/options/admin-config.php' );
+if ( file_exists( get_template_directory() . '/inc/options/admin-config.php') ) {
+	require_once( get_template_directory() . '/inc/options/admin-config.php' );
 }
 
 if ( ! function_exists( 'awaken_setup' ) ) :
