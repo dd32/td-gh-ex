@@ -85,6 +85,7 @@ function besty_framework_page(){
             <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="<?php _e('Basic Settings','besty') ?>" href="#options-group-1"><?php _e('Basic Settings','besty') ?></a></li>
             <li><a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="<?php _e('Social Settings','besty') ?>" href="#options-group-2"><?php _e('Social Settings','besty') ?></a></li>
             <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings','besty') ?>" href="#options-group-3"><?php _e('Home Page Settings','besty') ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4"><?php _e('PRO Theme Features','besty') ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -211,15 +212,21 @@ function besty_framework_page(){
 		</div>
           </div>    
           
+          <!-------------- fourth group ----------------->
+          <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
+          	<div class="fasterthemes-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=besty" target="_blank" class="fasterthemes-pro-buynow"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
+          </div>
+          
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','besty') ?></a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save options', 'besty') ?>" /></li>
         </ul>
     </div>

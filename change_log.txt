@@ -58,4 +58,7 @@ ii) fix sanitization.
 Version 1.3.6 (9 Dec 2014)
 i)  Fixed Fatal Error is header.php
 
-
+Version 1.3.7 (10 Dec 2014)
+i)  Remove fasterthemes icon in besty.php
+ii) Add pro theme features tab in theme options.
+iii) Declare copyright and license information

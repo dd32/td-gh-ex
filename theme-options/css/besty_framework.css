@@ -319,23 +319,23 @@
     width: auto;
 }
 .fasterthemes-pro-image img {
-	max-width:100%;
 	height:auto;
-	max-width: 858px;
+	max-width: 100%;
 }
 .fasterthemes-pro-header {
     padding: 8px 0 10px;
     width: 100%;
 	max-width: 858px;
+	background-image:url("../images/footer_bg.png");
 }
 .fasterthemes-pro-logo {
     margin: 10px 30px 2px;
-    width: 230px;
+    max-width: 100%;
 }
 .fasterthemes-pro-buynow {
     border-radius: 2px;
     float: right;
-    margin:4px 42px 0 0;
+    margin:30px 42px 0 0;
     width: 188px;
 }
 .newsletter {
