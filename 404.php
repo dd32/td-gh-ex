@@ -26,6 +26,6 @@ get_header(); ?>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 
-<?php get_sidebar('sidebar-1'); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
 

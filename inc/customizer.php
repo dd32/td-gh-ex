@@ -13,7 +13,6 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  *
  */
- 
 function thebox_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -23,31 +22,20 @@ add_action( 'customize_register', 'thebox_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
  */
- 
 function thebox_customize_preview_js() {
-	wp_enqueue_script( 
-		'thebox_customizer',
-		get_template_directory_uri() . '/js/customizer.js',
-		array( 'customize-preview' ),
-		'20120827',
-		true
-		);
+	wp_enqueue_script( 'thebox_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-
 add_action( 'customize_preview_init', 'thebox_customize_preview_js' );
 
 
 /**
-* The Box Customizer
-*
-*/
-
+ * The Box Customizer
+ *
+ */
 function thebox_theme_customizer( $wp_customize ) {
 		
 	// Accent Color
-	
 	$wp_customize->add_setting( 'color_primary', array(
 		'default' => '#0fa5d9',
 		'type' => 'option', 
@@ -62,7 +50,6 @@ function thebox_theme_customizer( $wp_customize ) {
 	) ) );
 	
 }
-
 add_action('customize_register', 'thebox_theme_customizer');
 
 
@@ -70,7 +57,6 @@ add_action('customize_register', 'thebox_theme_customizer');
  * Convert hex to rgb
  *
  */
-
 function hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
 
@@ -104,12 +90,20 @@ function add_color_styles() { ?>
 	<style type="text/css">
 
 		.main-navigation > div > ul,
-		#content input#submit:hover,
-		#content button,
-		#content input[type="button"],
-		#content input[type="reset"],
-		#content input[type="submit"] {
+		#main button,
+		#main input[type="button"],
+		#main input[type="reset"],
+		#main input[type="submit"],
+		#content .page-numbers.current,
+		#content .page-numbers.current:hover,
+		#content .page-numbers a:hover {
 		background-color: <?php echo $color_primary; ?>;	
+		}
+		#main button:hover,
+		#main input[type="button"]:hover,
+		#main input[type="reset"]:hover,
+		#main input[type="submit"]:hover {
+		background-color: rgba(<?php echo hex2rgb( $color_primary ); ?>, 0.9);		
 		}
 		#content .entry-time {
 		background-color: rgba(<?php echo hex2rgb( $color_primary ); ?>, 0.7);		
@@ -135,7 +129,6 @@ function add_color_styles() { ?>
 		#secondary .widget_recent_comments a.url { 
 	    color: <?php echo $color_primary; ?>;
 	    }
-	   
 	    #content .edit-link a {
 		border-color: <?php echo $color_primary; ?>;
 	    }
@@ -145,5 +138,4 @@ function add_color_styles() { ?>
 <?php
 	}
 }
-
 add_action('wp_head', 'add_color_styles');

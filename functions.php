@@ -15,13 +15,6 @@ if ( ! isset( $content_width ) )
 	$content_width = 600; /* pixels */
 
 
-/*
- * Load Jetpack compatibility file.
- *
- */
-require( get_template_directory() . '/inc/jetpack.php' );
-
-
 /**
  * The Box Theme setup
  *
@@ -31,16 +24,7 @@ if ( ! function_exists( 'thebox_setup' ) ) :
 function thebox_setup() {
 	
 	// Make theme available for translation. Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'thebox', get_template_directory() . '/languages' );
-	
-	// Custom functions
-	require( get_template_directory() . '/inc/extras.php' );
-
-	// Customizer additions
-	require( get_template_directory() . '/inc/customizer.php' );
-	
-	// Load the Theme Options Page for social media icons
-	require( get_template_directory() . '/inc/theme-options.php' );
+	load_theme_textdomain( 'thebox', get_template_directory() . '/languages' );	
 	
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'inc/editor-style.css', thebox_fonts_url() ) );
@@ -74,10 +58,10 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
 	
 	// Add Icons Font, used in the main stylesheet.
-	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.2' );
+	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.4' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '2014-09-11' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.3.6' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -146,28 +130,9 @@ add_action( 'admin_print_scripts-appearance_page_custom-header', 'thebox_admin_f
 
 
 /**
- * Setup the WordPress core custom background feature.
- *
- */
-function thebox_register_custom_background() {
-	$args = array(
-		'default-color' => 'f0f3f5',
-		'default-image' => '',
-	);
-
-	$args = apply_filters( 'thebox_custom_background_args', $args );
-	
-	add_theme_support( 'custom-background', $args );
-	
-}
-add_action( 'after_setup_theme', 'thebox_register_custom_background' );
-
-
-/**
  * Register widgetized area and update sidebar with default widgets
  *
  */
- 
 function thebox_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar Primary', 'thebox' ),
@@ -194,14 +159,50 @@ add_action( 'widgets_init', 'thebox_widgets_init' );
  * Implement the Custom Header feature
  *
  */
- 
 require( get_template_directory() . '/inc/custom-header.php' );
 
 
-function custom_excerpt_length( $length ) {
-	return 40;
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+
+/**
+ * Customizer additions
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+
+/**
+ * Theme Options additions
+ */
+require get_template_directory() . '/inc/theme-options.php';
+
+
+/**
+ * Load Jetpack compatibility file
+ *
+ */
+require( get_template_directory() . '/inc/jetpack.php' );
+
+
+/**
+ * Setup the WordPress core custom background feature.
+ *
+ */
+function thebox_register_custom_background() {
+	$args = array(
+		'default-color' => 'f0f3f5',
+		'default-image' => '',
+	);
+
+	$args = apply_filters( 'thebox_custom_background_args', $args );
+	
+	add_theme_support( 'custom-background', $args );
+	
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_action( 'after_setup_theme', 'thebox_register_custom_background' );
 
 
 /*
@@ -215,7 +216,7 @@ function thebox_excerpt($num) {
 	array_pop($excerpt);
 	$excerpt = implode(" ",$excerpt)."... <br><a class=\"more-link\" href='" .get_permalink($post->ID) ." '>".__('Read more', 'thebox')." &raquo;</a>";
 	echo $excerpt;
-    }
+}
 
 
 /*
@@ -228,4 +229,103 @@ function thebox_credits() {
 	$website_date =  date ('Y');
 	$website_credits = esc_attr( '&copy; ' . $website_date . ' ' . $website_author );	
 	echo $website_credits;
+}
+
+
+/**
+ * Custom Pagination
+ *
+ */
+if ( ! function_exists('thebox_pagination') ) {
+	function thebox_pagination() {
+		global $wp_query;
+		$total = $wp_query->max_num_pages;
+		$big = 999999999; // need an unlikely integer
+		if( $total > 1 )  {
+			 if( !$current_page = get_query_var('paged') )
+				 $current_page = 1;
+			 if( get_option('permalink_structure') ) {
+				 $format = 'page/%#%/';
+			 } else {
+				 $format = '&paged=%#%';
+			 }
+			echo paginate_links(array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => $format,
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $total,
+				'mid_size' => 3,
+				'type' => 'list',
+				'prev_text' => '&laquo;',
+				'next_text' => '&raquo;',
+			 ));
+		}
+	}
+}
+
+
+/**
+ * Update to Plus Version
+ *
+ */
+ 
+if(is_admin()){
+
+  if(!get_option('thebox_basic_notice')){
+
+    add_action('admin_notices', 'thebox_basic_notice');
+    add_action('wp_ajax_thebox_hide_notice', 'thebox_hide_notice');
+
+    function thebox_basic_notice(){
+       ?>
+      <div class="basic-notice updated" style="position:relative;">
+        <p>
+          <?php
+            printf(__('<strong>Upgrade to The Box Plus</strong> version to get extended functionality and advanced customization options: %1$s', 'thebox'),
+            sprintf('<a class="button button-primary" style="text-decoration:none" href="http://design.altervista.org/thebox-plus">%s</a>', '<strong>Try The Box Plus</strong>')
+            );
+          ?>
+        </p>
+         <a class="hide-me" style="position:absolute;top:10px;right:12px;text-decoration:none;cursor:pointer" title="<?php _e('Close and don\'t show this message again', 'thebox'); ?>">
+	         <img src="<?php echo get_template_directory_uri(); ?>/inc/images/icon-dismiss.png" alt="" />
+         </a>
+      </div>
+
+      <script type="text/javascript">
+       jQuery(document).ready(function($){
+         $('#wpbody').delegate('.basic-notice a.hide-me', 'click', function(){
+           $.ajax({
+             url: ajaxurl,
+             type: 'GET',
+             context: this,
+             data: ({
+               action: 'thebox_hide_notice',
+               _ajax_nonce: '<?php echo wp_create_nonce('thebox_hide_notice'); ?>'
+             }),
+             success: function(data){
+               $(this).parents('.basic-notice').remove();
+             }
+           });
+         });
+       });
+
+      </script>
+      <?php
+    }
+
+    function thebox_hide_notice(){
+      check_ajax_referer('thebox_hide_notice');
+      update_option('thebox_basic_notice', true);
+      die();
+    }
+
+  }
+
+  // removes the notice status from the db
+  add_action('switch_theme', 'thebox_remove_notice_record');
+
+  function thebox_remove_notice_record(){
+    delete_option('thebox_basic_notice');
+  }
+
 }

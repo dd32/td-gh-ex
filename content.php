@@ -5,10 +5,10 @@
  */
 ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
 	<header class="entry-header">
-		<div class="entry-meta entry-time">
+		<div class="entry-time">
 			<span class="entry-time-day"><?php the_time('j') ?></span>
 			<span class="entry-time-month"><?php the_time('M') ?></span>
 			<span class="entry-format-icon"></span>
@@ -19,37 +19,38 @@
 			</a>
 		</h2>		
 	</header><!-- .entry-header -->
-
-	<?php if ( is_home() || is_search() || is_archive() ) : // Only display Excerpts for Homepage, Archive and Search, if is active option1 ?>
-
-		<div class="entry-summary">
-			
-
-			<?php if ( get_post_format() )  : ?>
-				
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thebox' ) ); ?>
-				
-			<?php else : ?>
-			
-				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-					<div class="post-thumbnail">
-						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thebox' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-							<?php the_post_thumbnail(); ?>
-						</a>
-					</div>
-				<?php endif; ?>
-				<?php thebox_excerpt(40); ?>
-				
-			<?php endif; // End if get_post_format() ?>
-			
-		</div><!-- .entry-summary -->
-
-	<?php else : ?>
+	
+	<?php if ( is_single() ) : ?>
+		
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thebox' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thebox' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
-	<?php endif; ?>
+	
+	<?php else : ?>
+	
+		<div class="entry-summary">
+			
+			<?php if ( get_post_format() ) : ?>
+		
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thebox' ) ); ?>
+		
+			<?php else : ?>
+		
+				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+					<div class="post-thumbnail">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thebox' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+							<?php the_post_thumbnail('large'); ?>
+						</a>
+					</div>
+				<?php endif; ?>
+				<?php thebox_excerpt(40); ?>
+			
+			<?php endif; // get_post_format() ?>
+				
+		</div><!-- .entry-summary -->
+		
+	<?php endif; // is_single() ?>
 
 	<footer class="entry-meta">
 		<p>
@@ -76,10 +77,10 @@
 				<?php printf( __( '%1$s', 'thebox' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
+			<span class="sep"></span>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep"></span>
 		<span class="comments-link">
 			<?php comments_popup_link( __( '<span class="icon-font icon-comment-alt"></span> Leave a comment', 'thebox' ), __( '<span class="icon-font icon-comment"></span> 1 Comment', 'thebox' ), __( '<span class="icon-font icon-comments-alt"></span> % Comments', 'thebox' ) ); ?>
 		</span>
@@ -89,6 +90,3 @@
 		</p>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-
-

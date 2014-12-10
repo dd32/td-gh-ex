@@ -22,13 +22,13 @@ The Box supports widgetized areas in the sidebar and footer. These areas will be
 
 
 # Responsive #
-THe Box has been fully optimised for small screen display. Your content will look beautiful whether it's viewed on a desktop, a tablet or a smartphone.
+The Box has been fully optimised for small screen display. Your content will look beautiful whether it's viewed on a desktop, a tablet or a smartphone.
 
 # Languages #
 Dutch translation by Theo Muys
 
 # Copyright, License & Other info #
-The Box theme, Copyright 2014 Fabio Rubioglio (http://design.altervista.org/)
+The Box Theme, Copyright 2014 Design Lab (http://design.altervista.org/)
 License: [GNU General Public License v2.0](http://www.gnu.org/licenses/gpl-2.0.html)
 FontAwesome Icon font License: [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
@@ -52,3 +52,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 - Fix Preview Live
 - Added LinkedIn to Social Icons
 - Added Editor Styles
+
+1.3.6
+- Fix Menu on Tablet
+- Added Flickr to Social Icons

@@ -42,28 +42,41 @@ function thebox_options_do_page() {
 		$_REQUEST['settings-updated'] = false;
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'thebox' ) . "</h2>"; ?>
-		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'thebox' ); ?></p>
+		<?php echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'thebox' ) . "</h2>"; ?>
+		
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'thebox' ); ?></strong></p></div>
 		<?php endif; ?>
 			
-		<div class="updated" style="background:#E9F7DF;">
-			<table class="form-table">
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Support thebox Theme', 'thebox' ); ?></strong></th>
-					<td>
-						<p><?php _e( 'If you enjoy my theme, please consider making a secure donation using the PayPal button. Anything is appreciated!', 'thebox' ); ?></p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form>
-					</td>
-				</tr>
-			</table>		
-		</div>	
+		
+		<table class="form-table">
+			<tr valign="top">
+				<th scope="row"><strong><?php _e( 'Support', 'thebox' ); ?></strong></th>
+				<td>
+					<p>
+						<a href="http://design.altervista.org/thebox-documentation"><?php _e( 'You find documentation here', 'thebox' ); ?></a>
+						&amp;
+						<a href="https://wordpress.org/support/theme/the-box"><?php _e( 'free support Forum', 'thebox' ); ?></a>
+						<?php _e( 'on wordpress.org', 'thebox' ); ?>
+					</p>
+					
+				</td>
+			</tr>
+			<tr valign="top">
+				<th scope="row"><strong><?php _e( 'The Box Plus', 'thebox' ); ?></strong></th>
+				<td>
+					<p>
+						<?php _e( 'Want more customizations and flexibility?', 'thebox' ); ?>
+						<a href="http://design.altervista.org/thebox-plus"><strong><?php _e( 'Try The Box Plus.', 'thebox' ); ?></strong></a>
+					</p>
+				</td>
+			</tr>
+		</table>		
+		
+		<hr>
+		<h3><?php _e( 'Social Links', 'thebox' ); ?></h3>
+		<p><?php _e( 'These options will let you setup the social icons at the top of the theme. You can enter the URLs of your profiles to have the icons show up.', 'thebox' ); ?></p>
+		<p><?php _e( 'Leave blank to hide the social icons.', 'thebox' ); ?></p>
 
 		<form method="post" action="options.php">
 		<?php settings_fields( 'thebox_options' ); ?>
@@ -88,10 +101,9 @@ function thebox_options_do_page() {
 				 * Facebook Icon
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your Facebook URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Facebook URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[facebookurl]" class="regular-text" type="text" name="thebox_theme_options[facebookurl]" value="<?php echo esc_attr( $options['facebookurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[facebookurl]"><?php _e( 'Leave blank to hide Facebook Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -100,10 +112,9 @@ function thebox_options_do_page() {
 				 * Twitter URL
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your Twitter URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Twitter URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[twitterurl]" class="regular-text" type="text" name="thebox_theme_options[twitterurl]" value="<?php echo esc_attr( $options['twitterurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[twitterurl]"><?php _e( 'Leave blank to hide Twitter Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -112,10 +123,9 @@ function thebox_options_do_page() {
 				 * Google +
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your Google + URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Google + URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[googleplusurl]" class="regular-text" type="text" name="thebox_theme_options[googleplusurl]" value="<?php echo esc_attr( $options['googleplusurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[googleplusurl]"><?php _e( 'Leave blank to hide Google + Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -124,10 +134,9 @@ function thebox_options_do_page() {
 				 * LinkedIn
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your LinkedIn URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'LinkedIn URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[linkedinurl]" class="regular-text" type="text" name="thebox_theme_options[linkedinurl]" value="<?php echo esc_attr( $options['linkedinurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[linkedinurl]"><?php _e( 'Leave blank to hide LinkedIn Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -136,10 +145,9 @@ function thebox_options_do_page() {
 				 * Instagram
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your Instagram URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Instagram URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[instagramurl]" class="regular-text" type="text" name="thebox_theme_options[instagramurl]" value="<?php echo esc_attr( $options['instagramurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[instagramurl]"><?php _e( 'Leave blank to hide Instagram Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -148,10 +156,9 @@ function thebox_options_do_page() {
 				 * YouTube
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your YouTube URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'YouTube URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[youtubeurl]" class="regular-text" type="text" name="thebox_theme_options[youtubeurl]" value="<?php echo esc_attr( $options['youtubeurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[youtubeurl]"><?php _e( 'Leave blank to hide YouTube Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -160,10 +167,9 @@ function thebox_options_do_page() {
 				 * Pinterest
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your Pinterest URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Pinterest URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[pinteresturl]" class="regular-text" type="text" name="thebox_theme_options[pinteresturl]" value="<?php echo esc_attr( $options['pinteresturl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[pinteresturl]"><?php _e( 'Leave blank to hide Pinterest Icon', 'thebox' ); ?></label>
 					</td>
 				</tr>
 				
@@ -172,10 +178,20 @@ function thebox_options_do_page() {
 				 * StumbleUpon
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Enter your StumbleUpon URL', 'thebox' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'StumbleUpon URL', 'thebox' ); ?></th>
 					<td>
 						<input id="thebox_theme_options[stumbleuponurl]" class="regular-text" type="text" name="thebox_theme_options[stumbleuponurl]" value="<?php echo esc_attr( $options['stumbleuponurl'] ); ?>" />
-						<label class="description" for="thebox_theme_options[stumbleuponurl]"><?php _e( 'Leave blank to hide StumbleUpon Icon', 'thebox' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Flickr
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Flickr URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[flickrurl]" class="regular-text" type="text" name="thebox_theme_options[flickrurl]" value="<?php echo esc_attr( $options['flickrurl'] ); ?>" />
 					</td>
 				</tr>
 				
@@ -212,6 +228,7 @@ function thebox_options_validate( $input ) {
 	$input['youtubeurl'] = wp_filter_nohtml_kses( $input['youtubeurl'] );
 	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
 	$input['stumbleuponurl'] = wp_filter_nohtml_kses( $input['stumbleuponurl'] );
+	$input['flickrurl'] = wp_filter_nohtml_kses( $input['flickrurl'] );
 	
 	// Encode URLs
 	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
@@ -222,6 +239,7 @@ function thebox_options_validate( $input ) {
 	$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
 	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	$input['stumbleuponurl'] = esc_url_raw( $input['stumbleuponurl'] );
+	$input['flickrurl'] = esc_url_raw( $input['flickrurl'] );
 	
 	return $input;
 }

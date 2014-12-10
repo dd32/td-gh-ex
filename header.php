@@ -72,6 +72,10 @@
 					<a href="<?php echo $options['stumbleuponurl']; ?>" class="stumbleupon" alt="stumble upon"><span class="icon-stumbleupon"></span></a>
 				<?php endif; ?>
 				
+				<?php if ( $options['flickrurl'] != '' ) : ?>
+					<a href="<?php echo $options['flickrurl']; ?>" class="flickr" alt="flickr upon"><span class="icon-flickr"></span></a>
+				<?php endif; ?>
+				
 				<?php if ( ! $options['hiderss'] ) : ?>
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss"><span class="icon-rss" alt="rss"></span></a>
 				<?php endif; ?>

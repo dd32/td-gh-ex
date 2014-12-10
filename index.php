@@ -34,7 +34,8 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php thebox_content_nav( 'nav-below' ); ?>
+				<?php //thebox_content_nav( 'nav-below' ); ?>
+				<?php thebox_pagination(); ?>
 
 			<?php else : ?>
 

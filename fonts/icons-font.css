@@ -39,7 +39,7 @@
 }
 
 
-/* Icons v. 1.1 */
+/* Icons v. 1.4 */
 
 .icon-quote-right:before {
   content: "a";
@@ -214,4 +214,10 @@
 }
 .icon-caret-up:before {
   content: "n";
+}
+.icon-flickr:before {
+  content: "Y";
+}
+.icon-share:before {
+  content: "6";
 }
