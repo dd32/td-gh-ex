@@ -62,46 +62,43 @@ function ascent_setup() {
     // This theme styles the visual editor with editor-style.css to match the theme style.
     add_editor_style();
 
-    if ( function_exists( 'add_theme_support' ) ) {
+    /**
+     * Add default posts and comments RSS feed links to head
+    */
+    add_theme_support( 'automatic-feed-links' );
+    
+    /**
+     * Enable support for Post Thumbnails on posts and pages
+     *
+     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+    */
+    add_theme_support( 'post-thumbnails' );
+    
+    /**
+     * Enable support for Post Formats
+    */
+    add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+    
+    /**
+     * Setup the WordPress core custom background feature.
+    */
+    add_theme_support( 'custom-background', apply_filters( 'ascent_custom_background_args', array(
+        'default-color' => 'ffffff',
+        'default-image' => '',
+    ) ) );
 
-        /**
-         * Add default posts and comments RSS feed links to head
-        */
-        add_theme_support( 'automatic-feed-links' );
-        
-        /**
-         * Enable support for Post Thumbnails on posts and pages
-         *
-         * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-        */
-        add_theme_support( 'post-thumbnails' );
-        
-        /**
-         * Enable support for Post Formats
-        */
-        add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-        
-        /**
-         * Setup the WordPress core custom background feature.
-        */
-        add_theme_support( 'custom-background', apply_filters( 'ascent_custom_background_args', array(
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ) ) );
-  
-     /* Add Menu Support */
-        add_theme_support('menus');
-        register_nav_menus(
-            array(
-                'main-menu' => __('Main Menu', 'framework')
-            )
-        );
-        /* Add Post Thumbnails Support and Related Image Sizes */
-        add_theme_support('post-thumbnails');
-        add_image_size('blog-page', 732, 9999, false);                  // For Blog Page
-        add_image_size('default-page', 1140, 9999, false);              // Default Page and Full Width Page
-        add_image_size('blog-post-thumb', 732, 447, true);              // For Home Blog Section and Gallery Slider on Single and Blog Page
-    }
+ /* Add Menu Support */
+    add_theme_support('menus');
+    register_nav_menus(
+        array(
+            'main-menu' => __('Main Menu', 'framework')
+        )
+    );
+    /* Add Post Thumbnails Support and Related Image Sizes */
+    add_theme_support('post-thumbnails');
+    add_image_size('blog-page', 732, 9999, false);                  // For Blog Page
+    add_image_size('default-page', 1140, 9999, false);              // Default Page and Full Width Page
+    add_image_size('blog-post-thumb', 732, 447, true);              // For Home Blog Section and Gallery Slider on Single and Blog Page
 
   /**
    * Make theme available for translation
@@ -264,3 +261,42 @@ if( !function_exists( 'ascent_home_slider' ) ){
         ); 
     }
 }
+
+
+if( !function_exists( 'ascent_theme_option_custom_style' ) ) {
+    function ascent_theme_option_custom_style() {
+?>
+    <style type="text/css">
+        <?php if(of_get_option('body_text_color')): ?>
+            body {
+                color: <?php echo of_get_option('body_text_color'); ?>;;
+            }
+        <?php endif; ?>
+        
+        <?php if(of_get_option('body_link_color')): ?>
+            body a {
+                color: <?php echo of_get_option('body_link_color'); ?>;;
+            }
+        <?php endif; ?>
+         
+        <?php if(of_get_option('footer_top_border_color')): ?>
+            #colophon {
+                border-color: <?php echo of_get_option('footer_top_border_color'); ?>;;
+            }
+        <?php endif; ?>
+        
+        <?php if(of_get_option('footer_background_color')): ?>
+            #colophon {
+                background-color: <?php echo of_get_option('footer_background_color'); ?>;;
+            }
+        <?php endif; ?>
+        <?php if(of_get_option('footer_background_bottom_color')): ?>
+            #footer-info {
+                background-color: <?php echo of_get_option('footer_background_bottom_color'); ?>;;
+            }
+        <?php endif; ?>
+    </style>
+<?php
+    }
+}
+add_action( 'wp_head', 'ascent_theme_option_custom_style' );

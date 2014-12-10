@@ -1,7 +1,7 @@
 == Ascent ==
 
 Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, rtl-language-support, theme-options, translation-ready
-Tested up to: 3.8
+Tested up to: 4.0.1
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,9 +74,13 @@ Featured Images look best at 732 pixels wide or larger.
 
 = Changelog =
 
+### Version 1.0.2
+- Fixed 'text-domain, function_exists() conditional wrappers for core functions' issue.
+
 ### Version 1.0.1
 - Fixed 'of_get_option' issue.
 
 
 ### Version 1.0
 - Initial release.
+

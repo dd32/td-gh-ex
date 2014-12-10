@@ -16,41 +16,7 @@
 <link rel="shortcut icon" href="<?php echo of_get_option('favicon'); ?>"/>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
-
-<?php /* Render Theme Option style */ ?>
-<style type="text/css">
-    <?php if(of_get_option('body_text_color')): ?>
-	body {
-	    color: <?php echo of_get_option('body_text_color'); ?>;;
-	}
-    <?php endif; ?>
-    
-    <?php if(of_get_option('body_link_color')): ?>
-	body a {
-	    color: <?php echo of_get_option('body_link_color'); ?>;;
-	}
-    <?php endif; ?>
-     
-    <?php if(of_get_option('footer_top_border_color')): ?>
-	#colophon {
-	    border-color: <?php echo of_get_option('footer_top_border_color'); ?>;;
-	}
-    <?php endif; ?>
-    
-    <?php if(of_get_option('footer_background_color')): ?>
-	#colophon {
-	    background-color: <?php echo of_get_option('footer_background_color'); ?>;;
-	}
-    <?php endif; ?>
-    <?php if(of_get_option('footer_background_bottom_color')): ?>
-	#footer-info {
-	    background-color: <?php echo of_get_option('footer_background_bottom_color'); ?>;;
-	}
-    <?php endif; ?>
-</style>
-
 </head>
-
 
 <body <?php body_class(); ?>>
   <?php do_action( 'before' ); ?>

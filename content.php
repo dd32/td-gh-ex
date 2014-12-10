@@ -28,7 +28,7 @@
 	    <header class="page-header">
 		<h2 class="page-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<span class="entry-author">
-		    <?php _e('Posted by', 'framework') ?>
+		    <?php _e('Posted by', 'ascent') ?>
 		    <span class="entry-author-link">
 			<?php the_author_posts_link(); ?>
 		    </span>

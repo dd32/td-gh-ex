@@ -74,7 +74,7 @@ function optionsframework_options() {
 		'name' => __('Phone Number', 'ascent'),
 		'desc' => __('Provide the phone number.', 'ascent'),
 		'id' => 'phone_number',
-		'std' => '1112223330',
+		'std' => '000',
 		'type' => 'text');
 	
 	$options[] = array(
