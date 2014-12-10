@@ -116,10 +116,15 @@ class Moesia_Projects extends WP_Widget {
 				
 				<?php $c = 1; ?>				
 				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
+					<?php $project_url = get_post_meta( get_the_ID(), 'wpcf-project-link', true ); //Get the custom URL for this project ?>
 					<div class="project col-md-4 col-sm-6 col-xs-6 wow zoomIn">
 						<div class="project-image">
 							<?php the_post_thumbnail('project-image'); ?>
-							<a class="link-icon" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
+							<?php if ( $project_url ) : ?>
+								<a class="link-icon" href="<?php echo esc_url($project_url); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
+							<?php else : ?>
+								<a class="link-icon" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-link"></i></a>
+							<?php endif; ?>
 							<?php 
 								global $post;
 								$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 

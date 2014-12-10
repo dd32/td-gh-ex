@@ -88,7 +88,9 @@ jQuery(function($) {
 
 //Make the menu sticky
 jQuery(function($) {
-	$(".top-bar").sticky({topSpacing:0});
+	$(window).bind("load", function() {
+		$(".top-bar").sticky();
+	});	
 });
 
 //Better support for third party widgets
@@ -106,12 +108,22 @@ jQuery(function($) {
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
+			var topbar = $('.top-bar').height();
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-			$('html,body').animate({
-			scrollTop: target.offset().top
-			}, 800);
-			return false;
+			if ( $(window).width() > 1024 ) {
+				if (target.length) {
+				$('html,body').animate({
+				scrollTop: target.offset().top - topbar + 40
+				}, 800);
+				return false;
+				}
+			} else {
+				if (target.length) {
+				$('html,body').animate({
+				scrollTop: target.offset().top
+				}, 800);
+				return false;
+				}				
 			}
 		}
 	});

@@ -18,6 +18,7 @@ class Moesia_Latest_News extends WP_Widget {
 
 	// Check values
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$category  = isset( $instance['category'] ) ? esc_attr( $instance['category'] ) : '';					
 		$image_uri = isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';		
 	?>
 
@@ -25,6 +26,9 @@ class Moesia_Latest_News extends WP_Widget {
 	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'moesia'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
+
+	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show posts from all categories.', 'moesia' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>	
 
     <?php
         if ( $image_uri != '' ) :
@@ -41,8 +45,9 @@ class Moesia_Latest_News extends WP_Widget {
 	// update widget
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
-	    $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );			
+		$instance['title'] 		= strip_tags($new_instance['title']);
+		$instance['category'] 	= strip_tags($new_instance['category']);		
+	    $instance['image_uri'] 	= esc_url_raw( $new_instance['image_uri'] );			
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
@@ -83,6 +88,7 @@ class Moesia_Latest_News extends WP_Widget {
 
 		/** This filter is documented in wp-includes/default-widgets.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+		$category = isset( $instance['category'] ) ? esc_attr($instance['category']) : '';
 		$image_uri = isset( $instance['image_uri'] ) ? esc_url($instance['image_uri']) : '';		
 
 		/**
@@ -97,7 +103,8 @@ class Moesia_Latest_News extends WP_Widget {
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
-			'posts_per_page'	  => 3
+			'posts_per_page'	  => 3,
+			'category_name'		  => $category
 		) ) );
 
 		if ($r->have_posts()) :

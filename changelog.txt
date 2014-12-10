@@ -1,5 +1,13 @@
 Changelog
 
+10 Dec 2014 - 1.17
+--------------------------------------
+- small CSS fixes
+- new widget options
+- small change to the sticky menu
+- small change to the smooth scrolling code
+
+
 17 Nov 2014 - 1.16
 --------------------------------------
 - small addition to style.css

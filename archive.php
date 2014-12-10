@@ -23,6 +23,9 @@ get_header(); ?>
 						elseif ( is_tag() ) :
 							single_tag_title();
 
+						elseif ( is_post_type_archive() ) :
+							post_type_archive_title();						
+
 						elseif ( is_author() ) :
 							printf( __( 'Author: %s', 'moesia' ), '<span class="vcard">' . get_the_author() . '</span>' );
 

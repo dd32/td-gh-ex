@@ -11,6 +11,7 @@
 //       might need to adjust the width in some cases.
 
 (function($) {
+$(window).bind("load", function() {
   var defaults = {
       topSpacing: 0,
       bottomSpacing: 0,
@@ -98,7 +99,7 @@
             stickyElement.css({"float":"none"}).parent().css({"float":"right"});
           }
 
-          var stickyWrapper = stickyElement.parent();
+          var stickyWrapper = stickyElement.parent();  
           stickyWrapper.css('height', stickyElement.outerHeight());
           sticked.push({
             topSpacing: o.topSpacing,
@@ -166,5 +167,7 @@
   };
   $(function() {
     setTimeout(scroller, 0);
-  });
+
+});    
+});
 })(jQuery);

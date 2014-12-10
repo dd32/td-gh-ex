@@ -112,8 +112,8 @@ class Moesia_Blockquote extends WP_Widget {
 				<?php else : ?>
 					<div class="bq-text col-md-12">
 				<?php endif; ?>
-					<blockquote class="wow fadeInRight"><?php echo $blockquote; ?></blockquote>
-					<cite class="wow fadeInRight"><?php echo esc_html($cite); ?></cite>
+					<blockquote class="wow fadeInUp"><?php echo $blockquote; ?></blockquote>
+					<cite class="wow fadeInUp"><?php echo esc_html($cite); ?></cite>
 				</div>	
 			</div>		
 		</section>		
