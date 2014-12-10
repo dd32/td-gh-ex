@@ -34,7 +34,7 @@ function optionsframework_options() {
 	// Header Logo upload option
 	$options[] = array(
 		'name' 	=> __( 'Header Logo', 'spacious' ),
-		'desc' 	=> __( 'Upload logo for your header.', 'spacious' ),
+		'desc' 	=> __( 'Upload logo for your header. Recommended image size is 100 X 100 pixels.', 'spacious' ),
 		'id' 		=> 'spacious_header_logo_image',
 		'type' 	=> 'upload'
 	);
