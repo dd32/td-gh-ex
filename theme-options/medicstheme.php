@@ -1,61 +1,71 @@
 <?php
-function medicstheme_options_init(){
+function medics_options_init(){
  register_setting( 'medics_options', 'medics_theme_options', 'medics_options_validate');
 } 
-add_action( 'admin_init', 'medicstheme_options_init' );
+add_action( 'admin_init', 'medics_options_init' );
 function medics_options_validate( $input ) {
  
-	 $input['logo'] = esc_url_raw( $input['logo'] );
-	 $input['favicon'] = esc_url_raw( $input['favicon'] );
-	 $input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+	 $input['logo'] = medics_image_validation(esc_url_raw( $input['logo'] ));
+	 $input['favicon'] = medics_image_validation(esc_url_raw( $input['favicon'] ));
+	 $input['footertext'] = sanitize_text_field( $input['footertext'] );
 	 $input['email'] = is_email( $input['email'] );
-	 $input['phone'] = wp_filter_nohtml_kses( $input['phone'] );
-	 $input['helpline'] = wp_filter_nohtml_kses( $input['helpline'] );
+	 $input['phone'] = sanitize_text_field( $input['phone'] );
+	 $input['helpline'] = sanitize_text_field( $input['helpline'] );
 	 
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
 	 $input['fburl'] = esc_url_raw( $input['fburl'] );
 	 $input['googleplus'] = esc_url_raw( $input['googleplus'] );
 	 
-	 $input['home-title'] = wp_filter_nohtml_kses( $input['home-title'] );
-	 $input['home-content'] = wp_filter_nohtml_kses( $input['home-content'] );
-	 $input['homeblogtitle'] = wp_filter_nohtml_kses( $input['homeblogtitle'] );
-     $input['home-download-text'] = wp_filter_nohtml_kses( $input['home-download-text'] );
+	 $input['home-title'] = sanitize_text_field( $input['home-title'] );
+	 $input['home-content'] = sanitize_text_field( $input['home-content'] );
+	 $input['homeblogtitle'] = sanitize_text_field( $input['homeblogtitle'] );
+     $input['home-download-text'] = sanitize_text_field( $input['home-download-text'] );
 	 $input['home-download-link'] = esc_url_raw( $input['home-download-link'] );
 	 		 
 	 for($medics_section_i=1; $medics_section_i <=3 ;$medics_section_i++ ):
-	 $input['home-icon-'.$medics_section_i] = esc_url_raw( $input['home-icon-'.$medics_section_i]);
-	 $input['section-title-'.$medics_section_i] = wp_filter_nohtml_kses($input['section-title-'.$medics_section_i]);
-	 $input['section-content-'.$medics_section_i] = wp_filter_nohtml_kses($input['section-content-'.$medics_section_i]);
+	 $input['home-icon-'.$medics_section_i] = medics_image_validation(esc_url_raw( $input['home-icon-'.$medics_section_i]));
+	 $input['section-title-'.$medics_section_i] = sanitize_text_field($input['section-title-'.$medics_section_i]);
+	 $input['section-content-'.$medics_section_i] = sanitize_text_field($input['section-content-'.$medics_section_i]);
 	 endfor;
 	 
     return $input;
 }
-function medicstheme_framework_load_scripts(){
+function medics_image_validation($medics_imge_url) {
+  $medics_filetype = wp_check_filetype($medics_imge_url);
+
+  $medics_supported_image = array('gif', 'jpg', 'jpeg', 'png', 'ico');
+
+  if (in_array($medics_filetype['ext'], $medics_supported_image)) {
+    return $medics_imge_url;
+  } else {
+    return '';
+  }
+}
+function medics_framework_load_scripts(){
 	wp_enqueue_media();
-	wp_enqueue_style( 'medicstheme_framework', get_template_directory_uri(). '/theme-options/css/medicstheme_framework.css' ,false, '1.0.0');
-	wp_enqueue_style( 'medicstheme_framework' );	
+	wp_enqueue_style( 'medics_framework', get_template_directory_uri(). '/theme-options/css/medicstheme_framework.css' ,false, '1.0.0');
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/medicstheme-custom.js', array( 'jquery' ), '20120106', true );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') , '20120106', true);		
 	wp_enqueue_script('media-uploader');
 }
-add_action( 'admin_enqueue_scripts', 'medicstheme_framework_load_scripts' );
-function medicstheme_framework_menu_settings() {
+add_action( 'admin_enqueue_scripts', 'medics_framework_load_scripts' );
+function medics_framework_menu_settings() {
 	$medics_menu = array(
-				'page_title' => __( 'Medicstheme Options', 'medicstheme_framework'),
-				'menu_title' => __('Theme Options', 'medicstheme_framework'),
+				'page_title' => __( 'Medics Options', 'medics_framework'),
+				'menu_title' => __('Theme Options', 'medics_framework'),
 				'capability' => 'edit_theme_options',
-				'menu_slug' => 'medicstheme_framework',
-				'callback' => 'medicstheme_framework_page'
+				'menu_slug' => 'medics_framework',
+				'callback' => 'medics_framework_page'
 				);
-	return apply_filters( 'medicstheme_framework_menu', $medics_menu );
+	return apply_filters( 'medics_framework_menu', $medics_menu );
 }
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 function theme_options_add_page() {
-	$medics_menu = medicstheme_framework_menu_settings();
+	$medics_menu = medics_framework_menu_settings();
    	add_theme_page($medics_menu['page_title'],$medics_menu['menu_title'],$medics_menu['capability'],$medics_menu['menu_slug'],$medics_menu['callback']);
 } 
-function medicstheme_framework_page(){ 
+function medics_framework_page(){ 
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;		
@@ -67,7 +77,7 @@ function medicstheme_framework_page(){
     <div class="logo">
       <?php
 		$medics_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$medics_image."' alt='medicstheme' /></a>";
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$medics_image."' alt='medics' /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -85,7 +95,8 @@ function medicstheme_framework_page(){
             <li><a id="options-group-1-tab" class="nav-tab generalsettings-tab" title="General Settings" href="#options-group-1">Basic Settings</a></li>
             <li><a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-2">Social Settings</a></li>
             <li><a id="options-group-3-tab" class="nav-tab homesettings-tab" title="Home Post Settings" href="#options-group-3">Home Page Settings</a></li>
-  		  </ul>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4"><?php _e('PRO Theme Features','medics') ?></a></li>
+          </ul>
         </div>
       </div>
       <div class="right-box-bg"></div>
@@ -287,15 +298,20 @@ function medicstheme_framework_page(){
               </div>
             </div>
         </div>  
+         <!-------------- fourth group ----------------->
+          <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
+          	<div class="fasterthemes-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Medics" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
+          </div>
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
 	</div>
 	<div class="medicstheme-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
         </ul>
     </div>
@@ -304,9 +320,7 @@ function medicstheme_framework_page(){
 <div class="save-options"><h2>Options saved successfully.</h2></div>
 
 <div class="newsletter"> 
-  <!-- Begin MailChimp Signup Form -->
   <h1>Subscribe with us</h1>
-  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://eepurl.com/SP2nP" target="_blank">Click here to join</a></p>
-  <!--End mc_embed_signup--> 
+  <p>Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank">Click here to join</a></p>
 </div>
 <?php } ?>

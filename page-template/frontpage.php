@@ -18,10 +18,10 @@ $medics_options = get_option( 'medics_theme_options' );
 <div class="section-main front-main">
   <div class=" container-medics container homepage-theme-title">
     <h2>
-      <?php if(!empty($medics_options['home-title'])) { echo esc_attr($medics_options['home-title']); } ?>
+      <?php if(!empty($medics_options['home-title'])) { echo sanitize_text_field($medics_options['home-title']); } ?>
     </h2>
     <h3>
-      <?php if(!empty($medics_options['home-content'])) { echo esc_attr($medics_options['home-content']); } ?>
+      <?php if(!empty($medics_options['home-content'])) { echo sanitize_text_field($medics_options['home-content']); } ?>
     </h3>
     <?php if((!empty($medics_options['home-content'])) || (!empty($medics_options['home-title']))) { ?>
     <div class="center-welcome-line text-center"></div>
@@ -101,7 +101,6 @@ $medics_options = get_option( 'medics_theme_options' );
       </div>
     </div>
     <?php } } else { echo '<p>no posts found</p>'; } ?>
-    <?php // endwhile; endif; // end of the loop. ?>
   </div>
   <?php } ?>
   <!-- END FROM THE BLOG --> 
@@ -116,7 +115,7 @@ $medics_options = get_option( 'medics_theme_options' );
       </p>
     </div>
     <?php if(!empty($medics_options['home-download-link'])) { ?>
-    <div class="midecs-download-link pull-right"> <a href="<?php  echo esc_url($medics_options['home-download-link']); ?>">Download</a> </div>
+    <div class="medics-download-link pull-right"> <a href="<?php  echo esc_url($medics_options['home-download-link']); ?>">Download</a> </div>
     <?php } ?>
   </div>
 </div>

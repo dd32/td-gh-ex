@@ -40,7 +40,7 @@
     <div class="container container-medics">
       <div class="col-md-6 help-line no-padding">
         <?php if(!empty($medics_options['phone'])) { ?>
-        <span><?php echo esc_attr($medics_options['helpline']).' '.esc_attr($medics_options['phone']);?> </span>
+        <span><?php echo esc_attr($medics_options['helpline']).' <a class="medics-phone">'.esc_attr($medics_options['phone']).'</a>';?> </span>
         <?php } ?>
       </div>
       <div class="col-md-6 top-email-id no-padding">

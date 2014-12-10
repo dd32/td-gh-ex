@@ -26,7 +26,7 @@
     <div class="container container-medics">
       <div class="col-md-8 no-padding">
         <?php if(!empty($medics_options['footertext'])) {
-			 	echo '<p>'.esc_attr($medics_options['footertext']).' ' ; 
+			 	echo '<p>'.sanitize_text_field($medics_options['footertext']).' ' ; 
 			  } 
 			  _e('<span class="medics-poweredby">Powered by <a target="_blank" href="http://wordpress.org">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/Medics" target="_blank">Medics</a>.</span> </p>','medics');
 		 ?>
