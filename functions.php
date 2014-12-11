@@ -16,71 +16,88 @@ require_once( 'inc/theme-options.php' );
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-load_theme_textdomain( 'tishonator', get_template_directory() . '/languages' );
-
-add_theme_support( 'menus' );
-
-// Add wp_enqueue_scripts actions
-add_action( 'wp_enqueue_scripts', 'fkidd_load_scripts' );
-
-// Add wp_head actions
-add_action( 'wp_head', 'fkidd_head_load_favicon_image' );
-
-add_action( 'widgets_init', 'fkidd_widgets_init' );
-
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 'full', 'full', true );
-
-if ( ! isset( $content_width ) )
-	$content_width = 900;
-
-add_theme_support( 'automatic-feed-links' );
-
-// add Custom background				 
-$args = array(
-	'default-color' 	 => '#555555',
-	'default-image' 	 => '%1$s/images/background.png',
-	'default-repeat' 	 => 'background-repeat',
-);
-add_theme_support( 'custom-background', $args );
-
-// add custom header
-add_theme_support( 'custom-header', array (
-				   'default-image'          => '',
-				   'random-default'         => false,
-				   'width'                  => 0,
-				   'height'                 => 0,
-				   'flex-height'            => false,
-				   'flex-width'             => false,
-				   'default-text-color'     => '',
-				   'header-text'            => true,
-				   'uploads'                => true,
-				   'wp-head-callback'       => '',
-				   'admin-head-callback'    => '',
-				   'admin-preview-callback' => '',
-				) );
-
-/*
- * Switch default core markup for search form, comment form, and comments
- * to output valid HTML5.
+if ( ! function_exists( 'fkidd_setup' ) ) :
+/**
+ * fKidd setup.
+ *
+ * Set up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support post thumbnails.
+ *
  */
-add_theme_support( 'html5', array(
-	'search-form', 'comment-form', 'comment-list',
-) );
+function fkidd_setup() {
 
-// add support for Post Formats.
-add_theme_support( 'post-formats', array (
-										'aside',
-										'image',
-										'video',
-										'audio',
-										'quote', 
-										'link',
-										'gallery',
-				) );
+	load_theme_textdomain( 'fkidd', get_template_directory() . '/languages' );
 
-// add the visual editor to resemble the theme style
-add_editor_style( array( 'css/editor-style.css' ) );
+	add_theme_support( 'menus' );
+
+	// Add wp_enqueue_scripts actions
+	add_action( 'wp_enqueue_scripts', 'fkidd_load_scripts' );
+
+	// Add wp_head actions
+	add_action( 'wp_head', 'fkidd_head_load_favicon_image' );
+
+	add_action( 'widgets_init', 'fkidd_widgets_init' );
+
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 'full', 'full', true );
+
+	if ( ! isset( $content_width ) )
+		$content_width = 900;
+
+	add_theme_support( 'automatic-feed-links' );
+
+	// add Custom background				 
+	$args = array(
+		'default-color' 	 => '#555555',
+		'default-image' 	 => '%1$s/images/background.png',
+		'default-repeat' 	 => 'background-repeat',
+	);
+	add_theme_support( 'custom-background', $args );
+
+	// add custom header
+	add_theme_support( 'custom-header', array (
+					   'default-image'          => '',
+					   'random-default'         => false,
+					   'width'                  => 0,
+					   'height'                 => 0,
+					   'flex-height'            => false,
+					   'flex-width'             => false,
+					   'default-text-color'     => '',
+					   'header-text'            => true,
+					   'uploads'                => true,
+					   'wp-head-callback'       => '',
+					   'admin-head-callback'    => '',
+					   'admin-preview-callback' => '',
+					) );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list',
+	) );
+
+	// add support for Post Formats.
+	add_theme_support( 'post-formats', array (
+											'aside',
+											'image',
+											'video',
+											'audio',
+											'quote', 
+											'link',
+											'gallery',
+					) );
+
+	// add the visual editor to resemble the theme style
+	add_editor_style( array( 'css/editor-style.css' ) );
+}
+endif; // fkidd_setup
+add_action( 'after_setup_theme', 'fkidd_setup' );
+
 
 function fkidd_wp_title_for_home( $title, $sep ) {
 	global $paged, $page;

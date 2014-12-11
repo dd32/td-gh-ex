@@ -11,7 +11,7 @@ function fkidd_show_social_sites( $before,
 						  $openInNewWindow,
 						  $iconSize /* must be 16 or 32 */) {
 
-	$options = get_option( 'fkidd_social_settings' );
+	$options = get_option( 'fkidd_settings' );
 	if ( $options === false ) {
 		return;
 	}
@@ -70,7 +70,7 @@ function fkidd_show_single_social_site( $separatorBefore,
  */
 function fkidd_show_website_logo_image_or_title() {
 
-	$options = get_option( 'fkidd_header_settings' );
+	$options = get_option( 'fkidd_settings' );
 
 	if ( $options !== false && array_key_exists( 'header_logo', $options )
 		 && $options[ 'header_logo' ] != '' ) {
@@ -115,7 +115,7 @@ function fkidd_show_header_top() {
  */
 function fkidd_show_copyright_text() {
 	
-	$options = get_option( 'fkidd_footer_settings' );
+	$options = get_option( 'fkidd_settings' );
 	if ( $options !== false && array_key_exists( 'footer_copyrighttext', $options )
 	     && $options[ 'footer_copyrighttext' ] != '' ) {
 
@@ -128,7 +128,7 @@ function fkidd_show_copyright_text() {
  */
 function fkidd_display_slider() {
 
-		$options = get_option( 'fkidd_slider_settings' );
+		$options = get_option( 'fkidd_settings' );
 		if ( $options === false ) {
 			return;
 		}

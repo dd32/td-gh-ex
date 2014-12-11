@@ -3,6 +3,8 @@
 /******************************
   Register the settings to use on the Theme Admin Page
 ******************************/
+add_action( 'admin_init', 'fkidd_admin_init' );
+add_filter( 'option_page_capability_fkidd-options', 'fkidd_get_options_page_cap' );
 add_action( 'admin_init', 'fkidd_register_general_settings' );
 add_action( 'admin_init', 'fkidd_register_header_settings' );
 add_action( 'admin_init', 'fkidd_register_footer_settings' );
@@ -17,14 +19,40 @@ add_action( 'admin_menu', 'fkidd_menu' );
 function fkidd_menu() {
 	add_theme_page( __( 'Theme Options', 'fkidd' ),
 	                __( 'Theme Options', 'fkidd' ),
-					'manage_options',
+					fkidd_get_options_page_cap(),
 					'options.php',
 					'fkidd_page' );
+}
+
+function fkidd_get_options_page_cap() {
+    return 'edit_theme_options';
 }
 
 /******************************
   Callback function to the add_theme_page. It displays the theme options page
 ******************************/ 
+function fkidd_admin_init() {
+
+	$options = get_option( 'fkidd_settings' );
+	if ( $options === false ) {
+		// add default settings
+		$options = array(
+			'social_rss' 	   		=> get_bloginfo( 'rss2_url' ),
+			'notfound_image'		=> get_stylesheet_directory_uri().'/images/404.png',
+			'notfound_title'		=> 'Error 404: Not Found',
+			'notfound_content'		=> '<p>Sorry. The page you are looking for does not exist.</p>',
+			'slider_slide1_content' => '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide1_image'	=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
+			'slider_slide2_content' => '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide2_image'	=> get_stylesheet_directory_uri().'/images/slider/2.jpg',		
+			'slider_slide3_content' => '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
+			'slider_slide3_image' 	=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
+		);
+
+		add_option( 'fkidd_settings', $options, '', 'yes' );
+	}
+}
+
 function fkidd_page()
 {
 	$active_tab = isset($_GET[ 'tab' ]) ? $_GET[ 'tab' ] : 'tab_general';
@@ -70,6 +98,8 @@ function fkidd_page()
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="layout"><?php _e( 'Website Layout', 'fkidd' ); ?></label> </th> <td> <select name="layout" id="layout" disabled> <option selected="selected" value="Wide" style="padding-right: 10px;"><?php _e( 'Wide', 'fkidd' ); ?></option> <option value="Boxed" style="padding-right: 10px;"><?php _e( 'Boxed', 'fkidd' ); ?></option> </select> <br> <span class="description"><?php _e( 'Select layout of your website', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="headercode"> <?php _e( 'Code before &lt;/header&gt; tag', 'fkidd' ); ?> </label> </th> <td> <textarea name="headercode" id="headercode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Custom html code, before the &lt;/head&gt; tag', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="bodycode"> <?php _e( 'Code before &lt;/body&gt; tag', 'fkidd' ); ?> </label> </th> <td> <textarea name="bodycode" id="bodycode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Custom html code, before the &lt;/body&gt; tag', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="trackingcode"><?php _e( 'Tracking Code', 'fkidd' ); ?></label> </th> <td> <textarea name="trackingcode" id="trackingcode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Tracking code (i.e. Google Analytics). It will be added in the footer part of the website.', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepost"><?php _e( 'Show Author Info After Single Posts', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepost" id="aftersinglepost" disabled> <br> <span class="description"><?php _e( 'Display author info box after single posts', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepost"><?php _e( 'Show Social Sharing After Single Posts', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepost" id="aftersinglepost" disabled> <br> <span class="description"><?php _e( 'Display social sharing box after single posts', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepage"><?php _e( 'Show Author Info After Single Pages', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepage" id="aftersinglepage" disabled> <br> <span class="description"><?php _e( 'Display author info box after single page', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepage"><?php _e( 'Show Social Sharing After Single Pages', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepage" id="aftersinglepage" disabled> <br> <span class="description"><?php _e( 'Display social sharing box after single pages', 'fkidd' ); ?></span> </td> </tr> </tbody> </table>
 						</div>
 						
+						<?php fkidd_display_hidden_fields($active_tab); ?>
+						
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
@@ -88,6 +118,8 @@ function fkidd_page()
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="logo_width"><?php _e( 'Logo Image Width', 'fkidd' ); ?></label> </th> <td> <input type="text" name="logo_width" id="logo_width" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Logo image width of your website', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="logo_height"><?php _e( 'Logo Image Height', 'fkidd' ); ?></label> </th> <td> <input type="text" name="logo_height" id="logo_height" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Logo image height of your website', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="header_phone"><?php _e( 'Header Phone', 'fkidd' ); ?></label> </th> <td> <input type="text" value="1.555.555.555" name="header_phone" id="header_phone" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Your phone to appear in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="header_email"><?php _e( 'Header E-mail', 'fkidd' ); ?></label> </th> <td> <input type="text" value="sales@yoursite.com" name="header_email" id="header_email" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Your e-mail to appear in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displayhomeicon"><?php _e( 'Display Homepage Icon', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displayhomeicon" id="displayhomeicon" disabled> <br> <span class="description"><?php _e( 'Display homepage icon in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysocial"><?php _e( 'Display Social Icons', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaysocial" id="displaysocial" disabled> <br> <span class="description"><?php _e( 'Display social icons in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysearch"><?php _e( 'Display Search Form', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="displaysearch" id="displaysearch" disabled> <br> <span class="description"><?php _e( 'Display search form in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="opensocialnewwindow"><?php _e( 'Open Social Icons in a new window', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" name="opensocialnewwindow" checked="checked" value="1" id="opensocialnewwindow" disabled> <br> <span class="description"><?php _e( 'Open social icons links in a new window', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="showbreadcrumb"><?php _e( 'Show Breadcrumb', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="showbreadcrumb" id="showbreadcrumb" disabled> <br> <span class="description"><?php _e( 'Show breadcrumb in the website header', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="pageheaderbackground"><?php _e( 'Page Header Background Image', 'fkidd' ); ?></label> </th> <td> <input type="text" class="regular-text" name="pageheaderbackground" id="pageheaderbackground" disabled><input type="button" value="Upload" id="pageheaderbackground_uploadBtn" disabled> <br> <span class="description"><?php _e( 'Upload a custom breadcrumb background image for page header section.', 'fkidd' ); ?></span> <br> </td> </tr> </tbody> </table>
 						</div>
 						
+						<?php fkidd_display_hidden_fields($active_tab); ?>
+						
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
@@ -104,6 +136,8 @@ function fkidd_page()
 							
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="columnsnumber"><?php _e( 'Number of Columns', 'fkidd' ); ?></label> </th> <td> <select name="columnsnumber" id="columnsnumber" disabled> <option value="none" style="padding-right: 10px;"><?php _e( 'none', 'fkidd' ); ?></option> <option value="1" style="padding-right: 10px;"><?php _e( '1', 'fkidd' ); ?></option> <option value="2" style="padding-right: 10px;"><?php _e( '2', 'fkidd' ); ?></option> <option value="3" style="padding-right: 10px;"><?php _e( '3', 'fkidd' ); ?></option> <option selected="selected" value="4" style="padding-right: 10px;"><?php _e( '4', 'fkidd' ); ?></option> </select> <br> <span class="description"><?php _e( 'Select number of columns to display in the website footer', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysocial"><?php _e( 'Display Social Icons', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaysocial" id="displaysocial" disabled> <br> <span class="description"><?php _e( 'Display social icons in the website footer', 'fkidd' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="opensocialnewwindow"><?php _e( 'Open Social Icons in a new window', 'fkidd' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="opensocialnewwindow" id="opensocialnewwindow" disabled> <br> <span class="description"><?php _e( 'Open social icons links in a new window', 'fkidd' ); ?></span> </td> </tr> </tbody> </table>
 						</div>
+						
+						<?php fkidd_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
@@ -136,14 +170,16 @@ function fkidd_page()
 								<?php _e( 'Full Slider options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="Click Here"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
-							<table class="form-table"><tbody><tr><th scope="row"><label for="displayslide1"><?php _e( 'Display Slide #1', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide1" id="displayslide1"><br><span class="description"><?php _e( 'Display slide #1 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide1_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" value="Lorem ipsum dolor" name="slide1_title" id="slide1_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 1 ); ?></label></th><td><textarea disabled name="slide1_text" id="slide1_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" value="#" name="slide1_url" id="slide1_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/1.jpg" name="slide1_image" id="slide1_image"><input disabled type="button" value="Upload" id="slide1_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 1 ); ?></span><br>			  
-			  </td></tr><tr><th scope="row"><label for="displayslide2"><?php _e( 'Display Slide #2', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide2" id="displayslide2"><br><span class="description"><?php _e( 'Display slide #2 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide2_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" value="Everti Constituam" name="slide2_title" id="slide2_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 2 ); ?></label></th><td><textarea disabled name="slide2_text" id="slide2_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" value="#" name="slide2_url" id="slide2_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/2.jpg" name="slide2_image" id="slide2_image"><input disabled type="button" value="Upload" id="slide2_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 2 ); ?></span><br>
-			  </td></tr><tr><th scope="row"><label for="displayslide3"><?php _e( 'Display Slide #3', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide3" id="displayslide3"><br><span class="description"><?php _e( 'Display slide #3 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide3_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" value="Id Essent Cetero" name="slide3_title" id="slide3_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 3 ); ?></label></th><td><textarea disabled name="slide3_text" id="slide3_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" value="#" name="slide3_url" id="slide3_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/3.jpg" name="slide3_image" id="slide3_image"><input disabled type="button" value="Upload" id="slide3_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 3 ); ?></span><br>
-			  </td></tr><tr><th scope="row"><label for="displayslide4"><?php _e( 'Display Slide #4', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide4" id="displayslide4"><br><span class="description"><?php _e( 'Display slide #4 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide4_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" value="Nostrud Cotidieque Et" name="slide4_title" id="slide4_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 4 ); ?></label></th><td><textarea disabled name="slide4_text" id="slide4_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" value="#" name="slide4_url" id="slide4_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/4.jpg" name="slide4_image" id="slide4_image"><input disabled type="button" value="Upload" id="slide4_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 4 ); ?></span><br>
-			  </td></tr><tr><th scope="row"><label for="displayslide5"><?php _e( 'Display Slide #5', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide5" id="displayslide5"><br><span class="description"><?php _e( 'Display slide #5 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide5_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" value="Lorem ipsum dolor sit amet" name="slide5_title" id="slide5_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 5 ); ?></label></th><td><textarea disabled name="slide5_text" id="slide5_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" value="#" name="slide5_url" id="slide5_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/5.jpg" name="slide5_image" id="slide5_image"><input disabled type="button" value="Upload" id="slide5_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 5 ); ?></span><br>
+							<table class="form-table"><tbody><tr><th scope="row"><label for="displayslide1"><?php _e( 'Display Slide #1', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide1" id="displayslide1"><br><span class="description"><?php _e( 'Display slide #1 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide1_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" value="Lorem ipsum dolor" name="slide1_title" id="slide1_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 1 ); ?></label></th><td><textarea disabled name="slide1_text" id="slide1_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" value="#" name="slide1_url" id="slide1_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 1 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/1.jpg" name="slide1_image" id="slide1_image"><input disabled type="button" value="<?php _e( 'Upload', 'fkidd' ); ?>" id="slide1_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 1 ); ?></span><br>			  
+			  </td></tr><tr><th scope="row"><label for="displayslide2"><?php _e( 'Display Slide #2', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide2" id="displayslide2"><br><span class="description"><?php _e( 'Display slide #2 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide2_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" value="Everti Constituam" name="slide2_title" id="slide2_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 2 ); ?></label></th><td><textarea disabled name="slide2_text" id="slide2_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" value="#" name="slide2_url" id="slide2_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="slide2_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 2 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/2.jpg" name="slide2_image" id="slide2_image"><input disabled type="button" value="<?php _e( 'Upload', 'fkidd' ); ?>" id="slide2_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 2 ); ?></span><br>
+			  </td></tr><tr><th scope="row"><label for="displayslide3"><?php _e( 'Display Slide #3', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide3" id="displayslide3"><br><span class="description"><?php _e( 'Display slide #3 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide3_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" value="Id Essent Cetero" name="slide3_title" id="slide3_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 3 ); ?></label></th><td><textarea disabled name="slide3_text" id="slide3_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" value="#" name="slide3_url" id="slide3_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="slide3_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 3 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/3.jpg" name="slide3_image" id="slide3_image"><input disabled type="button" value="<?php _e( 'Upload', 'fkidd' ); ?>" id="slide3_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 3 ); ?></span><br>
+			  </td></tr><tr><th scope="row"><label for="displayslide4"><?php _e( 'Display Slide #4', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide4" id="displayslide4"><br><span class="description"><?php _e( 'Display slide #4 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide4_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" value="Nostrud Cotidieque Et" name="slide4_title" id="slide4_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 4 ); ?></label></th><td><textarea disabled name="slide4_text" id="slide4_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" value="#" name="slide4_url" id="slide4_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="slide4_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 4 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/4.jpg" name="slide4_image" id="slide4_image"><input disabled type="button" value="<?php _e( 'Upload', 'fkidd' ); ?>" id="slide4_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 4 ); ?></span><br>
+			  </td></tr><tr><th scope="row"><label for="displayslide5"><?php _e( 'Display Slide #5', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide5" id="displayslide5"><br><span class="description"><?php _e( 'Display slide #5 in the slider', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="slide5_title"><?php printf( __( 'Slide #%s Title', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" value="Lorem ipsum dolor sit amet" name="slide5_title" id="slide5_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_text"><?php printf( __( 'Slide #%s Text', 'fkidd' ), 5 ); ?></label></th><td><textarea disabled name="slide5_text" id="slide5_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fkidd' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_url"><?php printf( __( 'Slide #%s URL', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" value="#" name="slide5_url" id="slide5_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fkidd' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="slide5_image"><?php printf( __( 'Slide #%s Background Image', 'fkidd' ), 5 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fkidd/images/slider/5.jpg" name="slide5_image" id="slide5_image"><input disabled type="button" value="<?php _e( 'Upload', 'fkidd' ); ?>" id="slide5_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 5 ); ?></span><br>
 			  </td></tr></tbody></table>
 
 						</div>
+						
+						<?php fkidd_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
@@ -208,6 +244,8 @@ function fkidd_page()
 							<table class="form-table"><tbody><tr><tr><th scope="row"><label for="twitter"><?php _e( 'Twitter', 'fkidd' ); ?></label></th><td><input disabled type="text" value="https://twitter.com" name="twitter" id="twitter" class="regular-text"><br><span class="description"><?php _e( 'Place your Twitter page url and the Twitter icon will appear. To remove it, just leave it blank.', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="linkedin"><?php _e( 'LinkedIn', 'fkidd' ); ?></label></th><td><input disabled type="text" value="http://www.linkedin.com/" name="linkedin" id="linkedin" class="regular-text"><br><span class="description"><?php _e( 'Place your LinkedIn page url and the LinkedIn icon will appear. To remove it, just leave it blank.', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="instagram"><?php _e( 'Instagram', 'fkidd' ); ?></label></th><td><input disabled type="text" value="http://instagram.com" name="instagram" id="instagram" class="regular-text"><br><span class="description"><?php _e( 'Place your Instagram page url and the Instagram icon will appear. To remove it, just leave it blank.', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="tumblr"><?php _e( 'Tumblr', 'fkidd' ); ?></label></th><td><input disabled type="text" value="https://www.tumblr.com/" name="tumblr" id="tumblr" class="regular-text"><br><span class="description"><?php _e( 'Place your Tumblr page url and the Tumblr icon will appear. To remove it, just leave it blank.', 'fkidd' ); ?></span></td></tr></tbody></table>
 							
 						</div>
+						
+						<?php fkidd_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
@@ -266,6 +304,9 @@ function fkidd_page()
 						settings_fields( 'fkidd_notfound_settings' );
 						do_settings_sections( 'fkidd_notfound_settings' );
 ?>
+
+						<?php fkidd_display_hidden_fields($active_tab); ?>
+
 						<p class="submit">  
 							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
@@ -293,14 +334,8 @@ function fkidd_page()
  * Function to register the settings
  */
 function fkidd_register_general_settings() {
-	$options = get_option( 'fkidd_general_settings' );  
-	if ( $options === false ) :
-		// add default general settings
-		$options = array( );
-		add_option( 'fkidd_general_settings', $options );
-	endif;
 
-	register_setting( 'fkidd_general_settings', 'fkidd_general_settings' );
+	register_setting( 'fkidd_general_settings', 'fkidd_settings', 'fkidd_general_sanitize_callback' );
 					 
 	add_settings_section( 'fkidd_general_options_section', __( 'General Settings', 'fkidd' ),
 						  'fkidd_display_general_settings_section', 'fkidd_general_settings' );
@@ -312,7 +347,7 @@ function fkidd_register_general_settings() {
 						 'desc'        => __( 'Favicon for your website', 'fkidd' ),
 						 'std'         => '',
 						 'label_for'   => 'general_favicon',
-						 'option_name' => 'fkidd_general_settings',
+						 'option_name' => 'fkidd_settings',
 					   );
 
 	add_settings_field( 'general_favicon_image', __( 'Favicon', 'fkidd' ), 'fkidd_display_setting',
@@ -320,17 +355,8 @@ function fkidd_register_general_settings() {
 }
 
 function fkidd_register_header_settings() {
-
-	$options = get_option( 'fkidd_header_settings' );  
-	if ( $options === false ) {
-		// add default header settings
-		$options = array (  
-					'header_logo' 				=> get_stylesheet_directory_uri().'/images/logo.png',
-					);	
-		add_option( 'fkidd_header_settings', $options );
-	}
 	
-	register_setting( 'fkidd_header_settings', 'fkidd_header_settings' );
+	register_setting( 'fkidd_header_settings', 'fkidd_settings', 'fkidd_header_sanitize_callback' );
 					 
 	add_settings_section( 'fkidd_header_options_section', __( 'Header Settings', 'fkidd' ),
 		'fkidd_display_header_settings_section', 'fkidd_header_settings');
@@ -342,7 +368,7 @@ function fkidd_register_header_settings() {
 						 'desc'        => __( 'Upload a custom logo for your website.', 'fkidd' ),
 						 'std'         => '',
 						 'label_for'   => 'header_logo',
-						 'option_name' => 'fkidd_header_settings',
+						 'option_name' => 'fkidd_settings',
 					   );
 
 	add_settings_field( 'header_logo_image', __( 'Logo image', 'fkidd' ), 'fkidd_display_setting',
@@ -350,15 +376,8 @@ function fkidd_register_header_settings() {
 }
 
 function fkidd_register_footer_settings() {
-	$options = get_option( 'fkidd_footer_settings' );  
-	if ( $options === false ) {
-		// add default footer settings
-		$options = array( );
-
-		add_option( 'fkidd_footer_settings', $options );
-	}
 	
-	register_setting( 'fkidd_footer_settings', 'fkidd_footer_settings' );
+	register_setting( 'fkidd_footer_settings', 'fkidd_settings', 'fkidd_footer_sanitize_callback' );
 	
 	add_settings_section( 'fkidd_footer_options_section', __( 'Footer Settings', 'fkidd' ),
 		'fkidd_display_footer_settings_section', 'fkidd_footer_settings');
@@ -369,7 +388,7 @@ function fkidd_register_footer_settings() {
 						 'desc'        => __( 'Your Copyright text to appear in the website footer', 'fkidd' ),
 						 'std'         => '',
 						 'label_for'   => 'footer_copyrighttext',
-						 'option_name' => 'fkidd_footer_settings',
+						 'option_name' => 'fkidd_settings',
 					   );
 
 	add_settings_field( 'footer_copyrighttext_text', __( 'Copyright Text', 'fkidd' ), 'fkidd_display_setting',
@@ -377,26 +396,8 @@ function fkidd_register_footer_settings() {
 }
 
 function fkidd_register_slider_settings() {
-	$options = get_option( 'fkidd_slider_settings' );  
-	if ( $options === false ) {
-		// Add default home page settings
-		$options = array(
-			// Slide #1 default settings
-			'slider_slide1_content' 	   		=> '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide1_image'	   		=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
-			
-			// Slide #2 default settings
-			'slider_slide2_content' 	   		=> '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide2_image'	   		=> get_stylesheet_directory_uri().'/images/slider/2.jpg',
-			
-			// Slide #3 default settings
-			'slider_slide3_content' 	   		=> '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide3_image' 	   		=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
-		);
-		add_option( 'fkidd_slider_settings', $options );
-	}
 	
-	register_setting( 'fkidd_slider_settings', 'fkidd_slider_settings' );
+	register_setting( 'fkidd_slider_settings', 'fkidd_settings', 'fkidd_slider_sanitize_callback' );
 					 
 	add_settings_section( 'fkidd_slider_options_section', __( 'Slider Settings', 'fkidd' ),
 		'fkidd_display_slider_settings_section', 'fkidd_slider_settings');
@@ -404,156 +405,136 @@ function fkidd_register_slider_settings() {
 	$field_args = array( 'type'        => 'textarea',
 					 'id'          => 'slider_slide1_content',
 					 'name'        => 'slider_slide1_content',
-					 'desc'        => 'Slide #1 content in the slider',
+					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fkidd' ), 1 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide1_content',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide1_content_textarea', 'Slide #1 Content', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide1_content_textarea', sprintf( __( 'Slide #%s Content', 'fkidd' ), 1 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 
 	$field_args = array( 'type'        => 'image',
 					 'id'          => 'slider_slide1_image',
 					 'name'        => 'slider_slide1_image',
-					 'desc'        => 'Upload a custom Slide #1 Background image for the slider.',
+					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 1 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide1_image',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide1_image_image', 'Slide #1 Background Image', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide1_image_image', sprintf( __( 'Slide #%s Background Image', 'fkidd' ), 1 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 			
 	$field_args = array( 'type'        => 'textarea',
 					 'id'          => 'slider_slide2_content',
 					 'name'        => 'slider_slide2_content',
-					 'desc'        => 'Slide #2 content in the slider',
+					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fkidd' ), 2 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide2_content',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide2_content_textarea', 'Slide #2 Content', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide2_content_textarea', sprintf( __( 'Slide #%s Content', 'fkidd' ), 2 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 
 	$field_args = array( 'type'        => 'image',
 					 'id'          => 'slider_slide2_image',
 					 'name'        => 'slider_slide2_image',
-					 'desc'        => 'Upload a custom Slide #2 Background image for the slider.',
+					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 2 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide2_image',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide2_image_image', 'Slide #2 Background Image', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide2_image_image', sprintf( __( 'Slide #%s Background Image', 'fkidd' ), 2 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 	
 	$field_args = array( 'type'        => 'textarea',
 					 'id'          => 'slider_slide3_content',
 					 'name'        => 'slider_slide3_content',
-					 'desc'        => 'Slide #3 content in the slider',
+					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fkidd' ), 3 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide3_content',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide3_content_textarea', 'Slide #3 Content', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide3_content_textarea', sprintf( __( 'Slide #%s Content', 'fkidd' ), 3 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 
 
 	$field_args = array( 'type'        => 'image',
 					 'id'          => 'slider_slide3_image',
 					 'name'        => 'slider_slide3_image',
-					 'desc'        => 'Upload a custom Slide #3 Background image for the slider.',
+					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fkidd' ), 3 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide3_image',
-					 'option_name' => 'fkidd_slider_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'slider_slide3_image_image', 'Slide #3 Background Image', 'fkidd_display_setting',
+	add_settings_field( 'slider_slide3_image_image', sprintf( __( 'Slide #%s Background Image', 'fkidd' ), 3 ), 'fkidd_display_setting',
 			'fkidd_slider_settings', 'fkidd_slider_options_section', $field_args );
 }
 
 function fkidd_register_social_settings() {
 
-	$options = get_option( 'fkidd_social_settings' );  
-	if ( $options === false ) {
-		// add default social settings
-		$options = array (
-							'social_rss' 	   => 	get_bloginfo( 'rss2_url' ),
-						  );	
-		add_option( 'fkidd_social_settings', $options );
-	}
-
-    register_setting( 'fkidd_social_settings', 'fkidd_social_settings' );
+    register_setting( 'fkidd_social_settings', 'fkidd_settings', 'fkidd_social_sanitize_callback' );
 
 	add_settings_section( 'fkidd_social_sites_section', __( 'Social Websites', 'fkidd' ),
 		'fkidd_display_social_settings_section', 'fkidd_social_settings' );
 		
-	$field_args = array( 'type'        => 'text',
+	$field_args = array( 'type'        => 'url',
 					 'id'          => 'social_facebook',
 					 'name'        => 'social_facebook',
-					 'desc'        => 'Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank.',
+					 'desc'        => __( 'Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank.', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'social_facebook',
-					 'option_name' => 'fkidd_social_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'social_facebook_text', 'Facebook', 'fkidd_display_setting',
+	add_settings_field( 'social_facebook_text', __( 'Facebook', 'fkidd' ), 'fkidd_display_setting',
 			'fkidd_social_settings', 'fkidd_social_sites_section', $field_args );
 			
-	$field_args = array( 'type'        => 'text',
+	$field_args = array( 'type'        => 'url',
 					 'id'          => 'social_googleplus',
 					 'name'        => 'social_googleplus',
-					 'desc'        => 'Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank.',
+					 'desc'        => __( 'Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank.', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'social_googleplus',
-					 'option_name' => 'fkidd_social_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'social_googleplus_text', 'Google+', 'fkidd_display_setting',
+	add_settings_field( 'social_googleplus_text', __( 'Google+', 'fkidd' ), 'fkidd_display_setting',
 			'fkidd_social_settings', 'fkidd_social_sites_section', $field_args );
 			
-	$field_args = array( 'type'        => 'text',
+	$field_args = array( 'type'        => 'url',
 					 'id'          => 'social_rss',
 					 'name'        => 'social_rss',
-					 'desc'        => 'Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank.',
+					 'desc'        => __( 'Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank.', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'social_rss',
-					 'option_name' => 'fkidd_social_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'social_rss_text', 'RSS Feeds', 'fkidd_display_setting',
+	add_settings_field( 'social_rss_text', __( 'RSS Feeds', 'fkidd' ), 'fkidd_display_setting',
 			'fkidd_social_settings', 'fkidd_social_sites_section', $field_args );
 	
-	$field_args = array( 'type'    => 'text',
+	$field_args = array( 'type'    => 'url',
 					 'id'          => 'social_youtube',
 					 'name'        => 'social_youtube',
-					 'desc'        => 'Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank.',
+					 'desc'        => __( 'Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank.', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'social_youtube',
-					 'option_name' => 'fkidd_social_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
-	add_settings_field( 'social_youtube_text', 'YouTube channel', 'fkidd_display_setting',
+	add_settings_field( 'social_youtube_text', __( 'YouTube channel', 'fkidd' ), 'fkidd_display_setting',
 			'fkidd_social_settings', 'fkidd_social_sites_section', $field_args );	
 }
 
 function fkidd_register_notfound_settings() {
-
-	$options = get_option( 'fkidd_notfound_settings' );  
-	if ( $options === false ) {
-		// add default Not Found settings
-		$options = array (  
-					'notfound_image'	=> get_stylesheet_directory_uri().'/images/404.png',
-					'notfound_title'	=> 'Error 404: Not Found',
-					'notfound_content'	=> '<p>Sorry. The page you are looking for does not exist.</p>',
-					);	
-		add_option( 'fkidd_notfound_settings', $options );
-	}
 	
-	register_setting( 'fkidd_notfound_settings', 'fkidd_notfound_settings' );
+	register_setting( 'fkidd_notfound_settings', 'fkidd_settings', 'fkidd_notfound_sanitize_callback' );
 					 
 	add_settings_section( 'fkidd_notfound_options_section', __( 'Error 404 Not Found Page Settings', 'fkidd' ),
 		'fkidd_display_notfound_settings_section', 'fkidd_notfound_settings');
@@ -565,7 +546,7 @@ function fkidd_register_notfound_settings() {
 					 'desc'        => __( 'Upload a custom image for your 404 Not Found Page.', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_image',
-					 'option_name' => 'fkidd_notfound_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
 	add_settings_field( 'notfound_image_text', __( 'Image', 'fkidd' ), 'fkidd_display_setting',
@@ -578,7 +559,7 @@ function fkidd_register_notfound_settings() {
 					 'desc'        => __( 'The Title to appear in the 404 Not Found Page', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_title',
-					 'option_name' => 'fkidd_notfound_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
 	add_settings_field( 'notfound_title_text', __( 'Title', 'fkidd' ), 'fkidd_display_setting',
@@ -591,11 +572,67 @@ function fkidd_register_notfound_settings() {
 					 'desc'        => __( 'The Content to appear in the 404 Not Found Page', 'fkidd' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_content',
-					 'option_name' => 'fkidd_notfound_settings',
+					 'option_name' => 'fkidd_settings',
 				   );
 
 	add_settings_field( 'notfound_content_textarea', __( 'Content', 'fkidd' ), 'fkidd_display_setting',
 			'fkidd_notfound_settings', 'fkidd_notfound_options_section', $field_args );
+}
+
+function fkidd_display_hidden_fields($activeTab) {
+
+	$options = get_option( 'fkidd_settings' );
+	if ( $options === false ) {
+	
+		return;
+	}
+	
+	if ($activeTab != 'tab_general') {
+	
+		fkidd_display_hidden_field('general_favicon', $options);
+	}
+	
+	if ($activeTab != 'tab_header') {
+	
+		fkidd_display_hidden_field('header_logo', $options);
+	}
+	
+	if ($activeTab != 'tab_footer') {
+	
+		fkidd_display_hidden_field('footer_copyrighttext', $options);
+	}
+	
+	if ($activeTab != 'tab_slider') {
+	
+		fkidd_display_hidden_field('slider_slide1_content', $options);
+		fkidd_display_hidden_field('slider_slide1_image', $options);
+		fkidd_display_hidden_field('slider_slide2_content', $options);
+		fkidd_display_hidden_field('slider_slide2_image', $options);
+		fkidd_display_hidden_field('slider_slide3_content', $options);
+		fkidd_display_hidden_field('slider_slide3_image', $options);
+	}
+	
+	if ($activeTab != 'tab_social') {
+	
+		fkidd_display_hidden_field('social_facebook', $options);
+		fkidd_display_hidden_field('social_googleplus', $options);
+		fkidd_display_hidden_field('social_rss', $options);
+		fkidd_display_hidden_field('social_youtube', $options);
+	}
+	
+	if ($activeTab != 'tab_notfound') {
+	
+		fkidd_display_hidden_field('notfound_image', $options);
+		fkidd_display_hidden_field('notfound_title', $options);
+		fkidd_display_hidden_field('notfound_content', $options);
+	}
+}
+
+function fkidd_display_hidden_field($id, $options) {
+
+	$val = ( $options !== false && array_key_exists( $id, $options ) ) ? $options[ $id ] : '';
+
+	echo "<input id='$id' type='hidden' value='" . esc_attr( $val ) . "' name='fkidd_settings[$id]' />";
 }
 
 /**
@@ -659,7 +696,11 @@ function fkidd_display_setting( $args ) {
 	$optionsId = ( $options !== false && array_key_exists( $id, $options ) )
 							? $options[ $id ] : '';
 				
-    switch ( $type ) {  
+    switch ( $type ) {
+		case 'url':
+              echo "<input class='regular-text' type='url' id='$id' name='" . $option_name . "[$id]' value='$optionsId' />";  
+              echo ( $desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";  
+          break;
           case 'text':
               echo "<input class='regular-text' type='text' id='$id' name='" . $option_name . "[$id]' value='$optionsId' />";  
               echo ( $desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";  
@@ -672,8 +713,8 @@ function fkidd_display_setting( $args ) {
 		  
 		  case 'image':
 		  
-		  	  echo "<input type='text' id='$id' name='".$option_name."[$id]' value='$optionsId' class='regular-text' />";  
-        	  echo '<input id="'.$id.'_uploadBtn" type="button" value="Upload" />';
+		  	  echo "<input type='url' id='$id' name='".$option_name."[$id]' value='$optionsId' class='regular-text' />";  
+        	  echo '<input id="'.$id.'_uploadBtn" type="button" value="'.__( 'Upload', 'fkidd' ).'" />';
 			  echo ($desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";
 			  if ( $optionsId != '' ) {			  
 			  	echo '<br /><p><img id="'.$id.'_preview" src="'.$optionsId.'" /></p>';
@@ -737,6 +778,151 @@ function fkidd_replace_thickbox_text( $translated_text, $text, $domain ) {
         }  
     }
     return $translated_text;  
+}
+
+function fkidd_general_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'general_favicon':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+
+	return $newinput;
+}
+
+function fkidd_header_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'header_logo':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+
+	return $newinput;
+
+}
+
+function fkidd_footer_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'footer_copyrighttext':
+				$newinput[$k] = sanitize_text_field( $val );			
+				break;
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+
+	return $newinput;
+}
+
+function fkidd_slider_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'slider_slide1_content':
+				$newinput[$k] = force_balance_tags( $val );			
+				break;	
+			case 'slider_slide1_image':
+				$newinput[$k] = esc_url( $val );			
+				break;	
+			case 'slider_slide2_content':
+				$newinput[$k] = force_balance_tags( $val );			
+				break;	
+			case 'slider_slide2_image':
+				$newinput[$k] = esc_url( $val );			
+				break;	
+			case 'slider_slide3_content':
+				$newinput[$k] = force_balance_tags( $val );			
+				break;
+			case 'slider_slide3_image':
+				$newinput[$k] = esc_url( $val );			
+				break;	
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+	
+	return $newinput;
+}
+
+function fkidd_social_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'social_facebook':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			case 'social_googleplus':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			case 'social_rss':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			case 'social_youtube':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+
+	return $newinput;
+}
+
+function fkidd_notfound_sanitize_callback($input) {
+
+	foreach ( $input as $k => $v ) {
+	
+		$val = trim($v);
+		
+		switch ($k) {
+			case 'notfound_image':
+				$newinput[$k] = esc_url( $val );			
+				break;
+			case 'notfound_title':
+				$newinput[$k] = sanitize_text_field( $val );			
+				break;
+			case 'notfound_content':
+				$newinput[$k] = force_balance_tags( $val );			
+				break;
+			default:
+				$newinput[$k] = $val;
+				break;
+		}
+	}
+
+	return $newinput;
 }
 
 ?>

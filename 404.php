@@ -3,7 +3,7 @@
 <?php fkidd_show_page_header_section(); ?>
 
 <?php
-	$options = get_option( 'fkidd_notfound_settings' );
+	$options = get_option( 'fkidd_settings' );
 	if ( $options === false ) {
 		// get default Not Found settings
 		$options = array (  

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-07 00:19+0200\n"
-"PO-Revision-Date: 2014-12-07 00:19+0200\n"
+"POT-Creation-Date: 2014-12-11 23:31+0200\n"
+"PO-Revision-Date: 2014-12-11 23:31+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -111,7 +111,7 @@ msgstr "Няма намерени резултати!"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Изглежда, че не може да намерим това, което търсите. Може би ново търсене може да помогне."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/functions.php:107
+#: D:\tishonator.com\themes\free_themes\fkidd/functions.php:124
 #, php-format
 msgid "Page %s"
 msgstr "Страница %s"
@@ -169,1033 +169,1094 @@ msgstr "Сайтбар Уиджет"
 msgid "The sidebar widget area"
 msgstr "Сайтбар Уиджет"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:18
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:19
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:20
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:21
 msgid "Theme Options"
 msgstr "Опции Тема"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:35
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:63
 msgid "General"
 msgstr "Общи"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:36
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:64
 msgid "Header"
 msgstr "Хедър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:37
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:65
 msgid "Footer"
 msgstr "Футър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:38
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:66
 msgid "Home"
 msgstr "Начална Страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:39
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:67
 msgid "Slider"
 msgstr "Слайдър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:40
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:68
 msgid "Colors"
 msgstr "Цветове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:41
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:69
 msgid "Social"
 msgstr "Социални"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:42
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
 msgid "Lightbox"
 msgstr "Лайтбокс"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:43
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:71
 msgid "Thumbnails"
 msgstr "Тъмбнейли"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:44
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:72
 msgid "Contacts"
 msgstr "Контакти"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:52
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:80
 msgid "Theme settings updated successfully."
 msgstr "Промените по настройките на темата са запазени успешно."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:67
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:85
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:102
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:160
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:205
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:222
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:237
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:253
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:95
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:115
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:134
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:152
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:196
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:241
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:260
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:275
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:291
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:319
 msgid "These options are available in the full version only."
 msgstr "Тези опции са налични само в пълната версия."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:67
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:85
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:102
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:136
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:160
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:205
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:222
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:237
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:253
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:95
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:115
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:134
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:152
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:170
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:196
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:241
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:260
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:275
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:291
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:319
 msgid "Click Here"
 msgstr "Кликнете тук"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:67
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:85
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:102
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:136
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:160
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:205
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:222
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:237
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:253
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:95
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:115
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:134
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:152
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:170
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:196
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:241
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:260
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:275
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:291
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:319
 msgid "to get the full version of tKidd theme."
 msgstr "за да получите пълната версия на tKidd темата."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Website Layout"
 msgstr "Уебсайт Оформление"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Wide"
 msgstr "Широко"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Boxed"
 msgstr "Рамкиран"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Select layout of your website"
 msgstr "Избери оформление на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Code before &lt;/header&gt; tag"
 msgstr "Код преди &lt;/header&gt; таг"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Custom html code, before the &lt;/head&gt; tag"
 msgstr "Потребителски html код, преди &lt;/head&gt; таг"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Code before &lt;/body&gt; tag"
 msgstr "Код преди тагът &lt;/body&gt;"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Custom html code, before the &lt;/body&gt; tag"
 msgstr "Потребителски html код, преди тагът &lt;/body&gt;"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Tracking Code"
 msgstr "Код за тракване"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Tracking code (i.e. Google Analytics). It will be added in the footer part of the website."
 msgstr "Код за тракване (например Google Analytics). Той ще бъде добавен във футър частта на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Show Author Info After Single Posts"
 msgstr "Показване на информация за автора след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Display author info box after single posts"
 msgstr "Показване на информация за автора след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Show Social Sharing After Single Posts"
 msgstr "Показване на споделяне в социални сайтове след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Display social sharing box after single posts"
 msgstr "Показване на социални иконки след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Show Author Info After Single Pages"
 msgstr "Показване на информация за автора след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Display author info box after single page"
 msgstr "Показване на информация за автора след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Show Social Sharing After Single Pages"
 msgstr "Показване на споделяне в социални сайтове след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:98
 msgid "Display social sharing box after single pages"
 msgstr "Показване на социални иконки след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:74
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:92
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:109
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:104
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:124
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:149
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:194
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:213
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:228
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:261
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:270
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:283
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:158
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:185
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:230
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:251
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:266
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:282
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:299
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:311
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:324
 msgid "Get tKidd Theme"
 msgstr "Вземи tKidd Тема"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:74
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:92
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:109
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:149
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:213
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:270
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:104
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:124
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:185
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:251
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:311
 msgid "Save Changes"
 msgstr "Запази Промените"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Logo Image Width"
 msgstr "Ширина на лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Logo image width of your website"
 msgstr "Ширина на лого картинка на Вашия уеб сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Logo Image Height"
 msgstr "Височина на лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Logo image height of your website"
 msgstr "Височина на лого картинка на Вашия уеб сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Header Phone"
 msgstr "Телефонен номер за Хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Your phone to appear in the website header"
 msgstr "Вашия телефонен номер, който ще се появи в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Header E-mail"
 msgstr "Имейл адрес за Хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Your e-mail to appear in the website header"
 msgstr "Вашия имейл адрес, който ще се появи в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Display Homepage Icon"
 msgstr "Покажи иконки на начална страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Display homepage icon in the website header"
 msgstr "Покажи иконка на начална страница в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
 msgid "Display Social Icons"
 msgstr "Покажи социални иконки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Display social icons in the website header"
 msgstr "Покажи социални иконки в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Display Search Form"
 msgstr "Показване на Форма за търсене"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Display search form in the website header"
 msgstr "Покажи форма за търсене в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
 msgid "Open Social Icons in a new window"
 msgstr "Отваряне на социални икони в нов прозорец"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
 msgid "Open social icons links in a new window"
 msgstr "Отваряне на линковете на социалните иконки в нов прозорец."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Show Breadcrumb"
 msgstr "Показване на Бредкръмб"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Show breadcrumb in the website header"
 msgstr "Показване на Бредкръмб в хедъра на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Page Header Background Image"
 msgstr "Картинка за фон на раздел заглавна страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:88
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:118
 msgid "Upload a custom breadcrumb background image for page header section."
 msgstr "Качване на изображение за фон за раздел заглавна страница."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Number of Columns"
 msgstr "Брой Колони"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "none"
 msgstr "нищо"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "1"
 msgstr "1"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "2"
 msgstr "2"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "3"
 msgstr "3"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "4"
 msgstr "4"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
 msgid "Select number of columns to display in the website footer"
 msgstr "Изберете брой на колони, които да се покажат във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:105
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:137
 msgid "Display social icons in the website footer"
 msgstr "Покажи социални иконки във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:115
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:149
 msgid "Home Page Settings"
 msgstr "Настройки на Начална страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display Slider"
 msgstr "Покажи слайдър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display slider in your website home page"
 msgstr "Покажи слайдър в началната страница на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display Latest Posts"
 msgstr "Показване на най-нови постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display latest posts in your website home page"
 msgstr "Показване на слайдър в началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display Sidebar"
 msgstr "Показване на сайдбар"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Display sidebar in your website home page"
 msgstr "Показване на сайдбар в началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:120
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:154
 msgid "Select number of columns to display in the website homepage"
 msgstr "Изберете брой на колони, които да се покажат в началната страница на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:136
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:170
 msgid "Full Slider options are available in the full version only."
 msgstr "Пълните слайдър опции са достъпни само в пълната версия."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
 msgid "Display Slide #1"
 msgstr "Покажи слайд #1"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
 msgid "Display slide #1 in the slider"
 msgstr "Покажи слайд #1 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s Title"
 msgstr "Слайд #%s Заглавие"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s Title in the slider"
 msgstr "Слайд #%s Заглавие в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s Text"
 msgstr "Слайд #%s Текст"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s Text in the slider"
 msgstr "Слайд #%s текст в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s URL"
 msgstr "Слайд #%s URL адрес"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 #, php-format
 msgid "Slide #%s URL in the slider"
 msgstr "Слайд #%s УРЛ адрес в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:426
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:450
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:475
 #, php-format
 msgid "Slide #%s Background Image"
 msgstr "Слайд #%s фон"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:139
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:717
+msgid "Upload"
+msgstr "Качване"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:420
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:444
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:469
 #, php-format
 msgid "Upload a custom Slide #%s Background image for the slider."
 msgstr "Качете картинка за фон на слайд #%s за слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
 msgid "Display Slide #2"
 msgstr "Покажи слайд #2"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:140
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
 msgid "Display slide #2 in the slider"
 msgstr "Покажи слайд #2 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
 msgid "Display Slide #3"
 msgstr "Покажи слайд #3"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
 msgid "Display slide #3 in the slider"
 msgstr "Покажи слайд #3 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
 msgid "Display Slide #4"
 msgstr "Покажи слайд #4"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:142
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
 msgid "Display slide #4 in the slider"
 msgstr "Покажи слайд #4 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 msgid "Display Slide #5"
 msgstr "Покажи слайд #5"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:143
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
 msgid "Display slide #5 in the slider"
 msgstr "Покажи слайд #5 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:157
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:193
 msgid "Colors Settings"
 msgstr "Настройки на Цветове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:163
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:199
 msgid "Content Background Color"
 msgstr "Цвят на фон на съдържанието"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:164
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:200
 msgid "The content background color of the website"
 msgstr "Цвят на фон на съдържанието в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:164
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:200
 msgid "Text Color"
 msgstr "Цвят на текст"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:165
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:201
 msgid "The text color of the website"
 msgstr "Цвят на текста в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:165
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:201
 msgid "Link Color"
 msgstr "Цвят на връзки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:166
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:202
 msgid "The links color of the website"
 msgstr "Цвят на връзките в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:166
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:202
 msgid "Link Hover Color"
 msgstr "Ховър цвят на връзки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:167
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:203
 msgid "The links hover color of the website"
 msgstr "Ховър цвят на връзките в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:167
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:203
 msgid "Headings Color"
 msgstr "Цвят на заглавията"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:168
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:204
 msgid "The headings (h1, h2, h3) color of the website"
 msgstr "Цвят на заглавията (h1, h2, h3) в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:168
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:204
 msgid "Buttons Gradient Top Background Color"
 msgstr "Градиентен цвят на бутони в горна част"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:169
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:205
 msgid "The buttons gradient top background color."
 msgstr "Градиентен цвят на бутоните в горната част."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:169
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:205
 msgid "Buttons Gradient Bottom Background Color"
 msgstr "Градиентен цвят на бутони в долна част"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:170
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:206
 msgid "The buttons gradient bottom background color."
 msgstr "Градиентен цвят на бутоните в долната част."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:170
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:206
 msgid "Header Top Box Background Color"
 msgstr "Цвят на фона на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:171
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:207
 msgid "Color to appear in the website header top box background"
 msgstr "Цвят, който да се покаже в хедъра топ като фон"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:171
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:207
 msgid "Header Top Box Text Color"
 msgstr "Хедър Топ цвят на текст"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:172
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
 msgid "Color to appear in the website header top box text color"
 msgstr "Цвят на текст, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:172
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
 msgid "Header Top Box Link Color"
 msgstr "Хедър Топ цвят на линкове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:209
 msgid "Color to appear in the website header top box links colors"
 msgstr "Цвят на линкове, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:209
 msgid "Header Top Box Link Hover Color"
 msgstr "Хедър Топ цвят на текст при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:210
 msgid "Color to appear in the website header top box links colors on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:210
 msgid "Header top Box Sub-Content Background Color"
 msgstr "Цвят на фона на под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:211
 msgid "Color to appear in the website header top box subcontent background"
 msgstr "Цвят на фон, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:211
 msgid "Header top Box Sub-Content Text Color"
 msgstr "Цвят на текста на под-съдържанието на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:212
 msgid "Color to appear in the website header top box subcontent text color"
 msgstr "Цвят на теьт, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:212
 msgid "Header top Box Sub-Content Link Color"
 msgstr "Цвят на линкове на под-съдържанието на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:213
 msgid "Color to appear in the website header top box subcontent links colors"
 msgstr "Цвят на линкове, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:213
 msgid "Header top Sub-Content Box Link Hover Color"
 msgstr "Хедър топ под-съдържание цвяр на линкове при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:214
 msgid "Color to appear in the website header top box subcontent links colors on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:214
 msgid "Header Background Color"
 msgstr "Цвят на фона на хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:215
 msgid "Color to appear in the website header background"
 msgstr "Фон на цвят на хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:215
 msgid "Page Header Text Color"
 msgstr "Цвят на Текст в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:216
 msgid "Color to appear in the website page header text color"
 msgstr "Цвят на текст, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:216
 msgid "Page Header Link Color"
 msgstr "Цвят на Линкове в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:181
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:217
 msgid "Color to appear in the website page header link color"
 msgstr "Цвят на линкове, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:181
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:217
 msgid "Page Header Link Hover Color"
 msgstr "Цвят на Линкове при Хоувър в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:182
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:218
 msgid "Color to appear in the website page header link color on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:182
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:218
 msgid "Menu Text Color"
 msgstr "Меню Текс Цвят"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:183
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:219
 msgid "Color to appear in the website main menu text"
 msgstr "Цвят, който да се покаже за текст в главното меню"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:183
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:219
 msgid "Menu Drop Down Border Color"
 msgstr "Цвят на ивица на падащо меню"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:184
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:220
 msgid "Color to appear in the website main menu drop down border"
 msgstr "Цвят, който да се покаже за ивица на падащото главно меню"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:184
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:220
 msgid "Menu Drop Down Background Color"
 msgstr "Фон на Падащо Меню"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:185
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:221
 msgid "Background color to appear in the website main menu drop down"
 msgstr "Цвят на фон, който да се покаже за падащото главно меню"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:185
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:221
 msgid "Menu Hover Background Color (Large Resolution)"
 msgstr "Ховър цвят на фон на основното меню (Голяма резолюция)"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:186
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:222
 msgid "Background color to appear in the website main menu on hover"
 msgstr "Цвят на фон, който да се покаже за падащото главно меню при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:186
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:222
 msgid "Menu Text Hover Color"
 msgstr "Меню Текс Цвят при Хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:187
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:223
 msgid "Color to appear in the website main menu text on hover"
 msgstr "Цвят, който да се покаже за падащото главно меню при хоувър на текст"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:187
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:223
 msgid "Footer Background Color"
 msgstr "Цвят на фон във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:188
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:224
 msgid "Color to appear in the website footer background"
 msgstr "Цвят на фон на футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:188
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:224
 msgid "Footer Text Color"
 msgstr "Цвят на текст във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:189
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
 msgid "Color to appear in the website footer text"
 msgstr "Цвят на текст във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:189
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
 msgid "Footer Link Color"
 msgstr "Цвят на връзка във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:190
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:226
 msgid "Color to appear in the website footer links"
 msgstr "Цвят на връзк във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:190
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:226
 msgid "Footer Link Hover Color"
 msgstr "Ховър цвят на връзка във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:191
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:227
 msgid "Color to appear in the website footer links on hover"
 msgstr "Ховър цвят на връзк във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Twitter"
-msgstr "Twitter"
+msgstr "Туитър"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Place your Twitter page url and the Twitter icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Twitter URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "LinkedIn"
-msgstr "LinkedIn"
+msgstr "ЛинкедИн"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Place your LinkedIn page url and the LinkedIn icon will appear. To remove it, just leave it blank."
 msgstr "Поставете LinkedIn URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Instagram"
 msgstr "Инстаграм"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Place your Instagram page url and the Instagram icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Instagram URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Tumblr"
-msgstr "Tumblr"
+msgstr "Тъмбълр"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:244
 msgid "Place your Tumblr page url and the Tumblr icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Tumblr URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:218
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
 msgid "Lightbox Settings"
 msgstr "Лайтбокс Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox Functionality"
 msgstr "Активиране на Лайтбокс фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Globally Enable Lightbox functionality"
 msgstr "Глобално активиране на Лайтбокс фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable on Home Page"
 msgstr "Активиране в Начална Страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox on Home Page of your website"
 msgstr "Активиране на Лайтбокс за Началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable on Blog Index Page"
 msgstr "Активиране за индекс страницата на блог постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox on blog posts index page of your website"
 msgstr "Активиране на Лайтбокс за индекс страницата на блог постове на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable on Posts"
 msgstr "Активиране за постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox on Posts"
 msgstr "Активиране на Лайтбокс за постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable on Pages"
 msgstr "Активиране за страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox on Pages"
 msgstr "Активиране на Лайтбокс за страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable on Archive"
 msgstr "Активиране за архивни страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Enable Lightbox on Archive Pages (categories, tags, etc.)"
 msgstr "Активиране на Лайтбокс за архивни страници (категории, тагове, т.н.)"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Group Items"
 msgstr "Групиране на елементи"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:263
 msgid "Group Items (for displaying as a slideshow)"
 msgstr "Групиране на елементи (за показване като слайдшоу)"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:233
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:271
 msgid "Thumbnails Settings"
 msgstr "Тъмбнейли Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Enable"
 msgstr "Разрешен"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Thumbnails Functionality"
 msgstr "Тъмбнейл фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Globally Enable Thumbnails functionality"
 msgstr "Глобално активиране на Тъмбнейл фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Display Image Size in Index Pages"
 msgstr "Размер на картинка в индексни страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "thumbnail"
 msgstr "тъмбнейл"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "medium"
 msgstr "средно"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "large"
 msgstr "широко"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "full"
 msgstr "пълно"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Select display thumbnail image size in Index Pages"
 msgstr "Избиране на размер на картинка за тъмбнейл в индексни страници"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Link Thumbnails"
 msgstr "Линкване на Тъмбнейли"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Link Thumbnails to Single Post URLs"
 msgstr "Линкване на Тъмбнейли към URL-и на единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Display in Single Post"
 msgstr "Показване в Единични Постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Display Thumbnail in Single Post"
 msgstr "Показване на Тъмбнейли в единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Display Image Size in Single Post"
 msgstr "Показване на размер на картинки в единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:240
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:278
 msgid "Select display thumbnail image size in Single Post"
 msgstr "Избиране на размер на картинка за тъмбнейл в страници за единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:249
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:287
 msgid "Contacts Settings"
 msgstr "Настройки на Контакти"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 msgid "Center Google Map Latitude"
 msgstr "Географска ширина на центъра на google карта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 msgid "The latitude of the center of the google map in contact pages."
 msgstr "Географска ширина на центъра на google картата в страниците за контакт."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 msgid "Center Google Map Longitude"
 msgstr "Географска височина на центъра на google карта"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 msgid "The longitude of the center of the google map in contact pages."
 msgstr "Географска височина на центъра на google картата в страниците за контакт."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Name"
 msgstr "Име на Офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The display name of office #%s"
 msgstr "Името на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Latitude"
 msgstr "Географска ширина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The latitude coordinate of office #%s"
 msgstr "Географска ширина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Longitude"
 msgstr "Географска височина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The longitude coordinate of office #%s"
 msgstr "Географска височина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Address"
 msgstr "Адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The address of office #%s"
 msgstr "Адресът на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Phone"
 msgstr "Номер на телефон на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The phone of office #%s"
 msgstr "Номер на телефон на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "Office #%s Email"
 msgstr "Имейл адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:294
 #, php-format
 msgid "The email of office #%s"
 msgstr "Имейл адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:275
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:316
 msgid "WooCommerce Settings"
 msgstr "Настройки на WooCommerce"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:280
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:321
 msgid "Display WooCommerce Sidebar"
 msgstr "Показване на WooCommerce Сайдбар"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:280
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:321
 msgid "Display WooCommerce sidebar in products pages"
 msgstr "Показване на WooCommerce сайдбар в страницата с продукти"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:280
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:321
 msgid "Products per Page"
 msgstr "Продукти на Страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:280
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:321
 msgid "The number of products diplayed per page"
 msgstr "Брой на продукти, които да се покажат на страница"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:305
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:340
 msgid "General Settings"
 msgstr "Общи Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:312
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:347
 msgid "Favicon for your website"
 msgstr "Иконка на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:318
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:353
 msgid "Favicon"
 msgstr "Иконка"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:335
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:361
 msgid "Header Settings"
 msgstr "Хедър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:342
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:368
 msgid "Upload a custom logo for your website."
 msgstr "Качване на лого за Вашия уеб сайт."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:348
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:374
 msgid "Logo image"
 msgstr "Лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:363
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:382
 msgid "Footer Settings"
 msgstr "Настройки на Футъра"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:369
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:388
 msgid "Your Copyright text to appear in the website footer"
 msgstr "Вашият копирайт текст, който ще се появи във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:375
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:394
 msgid "Copyright Text"
 msgstr "Копирайт текст"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:401
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:402
 msgid "Slider Settings"
 msgstr "Слайдър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:491
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:408
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:432
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:456
+#, php-format
+msgid "Slide #%s content in the slider"
+msgstr "Слайд #%s текст в слайдъра"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:414
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:438
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:462
+#, php-format
+msgid "Slide #%s Content"
+msgstr "Слайд #%s Текст"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:483
 msgid "Social Websites"
 msgstr "Социални сайтове"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:558
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:489
+msgid "Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Фейсбук URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:495
+msgid "Facebook"
+msgstr "Фейсбук"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:501
+msgid "Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Гугъл+ URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:507
+msgid "Google+"
+msgstr "Гугъл+"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:513
+msgid "Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank."
+msgstr "Поставете RSS емисии URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:519
+msgid "RSS Feeds"
+msgstr "RSS емисии"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:525
+msgid "Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank."
+msgstr "Поставете Ютуб канал URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:531
+msgid "YouTube channel"
+msgstr "Ютуб Канал"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:539
 msgid "Error 404 Not Found Page Settings"
 msgstr "Грешка 404  Не е намерено Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:565
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:546
 msgid "Upload a custom image for your 404 Not Found Page."
 msgstr "Качете картинка за Грешка 404: Не е намерено."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:571
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:552
 msgid "Image"
 msgstr "Картинка"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:578
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:559
 msgid "The Title to appear in the 404 Not Found Page"
 msgstr "Заглавие в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:584
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:565
 msgid "Title"
 msgstr "Заглавие"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:591
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:572
 msgid "The Content to appear in the 404 Not Found Page"
 msgstr "Съдържание в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:597
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/theme-options.php:578
 msgid "Content"
 msgstr "Съдържание"
 
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:24
 msgid "Follow us on Facebook"
-msgstr "Следете ни във Facebook"
+msgstr "Следете ни във Фейсбук"
 
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:30
 msgid "Follow us on Google+"
-msgstr "Следете ни в Google+"
+msgstr "Следете ни в Гугъл+"
 
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:36
 msgid "Follow our RSS Feeds"
@@ -1203,7 +1264,7 @@ msgstr "Следете нашите RSS емисии"
 
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:43
 msgid "Follow us on YouTube"
-msgstr "Следете ни в YouTube"
+msgstr "Следете ни в Ютуб"
 
 #: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:225
 msgid "Read More"
@@ -1543,9 +1604,6 @@ msgstr "Научи повече..."
 
 #~ msgid "Show Office Email"
 #~ msgstr "Показване на имейл на офис"
-
-#~ msgid "Google Map"
-#~ msgstr "google карта"
 
 #~ msgid ""
 #~ "Displays Google Map with marker points the offices set in Appearance -> "
