@@ -19,7 +19,6 @@ $zenzero_theme_options = array(
 function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$args = array(
 		'id'    => 'zenzero_theme_options',
-		'parent' => 'site-name',
 		'title' => __('Zenzero Theme Options', 'zenzero' ),
 		'href'  => admin_url('themes.php?page=theme_options')
 	);
