@@ -89,7 +89,8 @@ add_action( 'widgets_init', 'annina_widgets_init' );
 function annina_scripts() {
 	wp_enqueue_style( 'annina-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'annina-fontAwesome', get_template_directory_uri() .'/css/font-awesome.min.css');
-	wp_enqueue_style( 'annina-googlefonts', '//fonts.googleapis.com/css?family=Lato:300,400,700');
+	$protocol = is_ssl() ? 'https' : 'http';
+	wp_enqueue_style( 'annina-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Lato:300,400,700');
 
 	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery'), '1.0', true );
@@ -102,27 +103,6 @@ function annina_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'annina_scripts' );
-
-/* Display a notice that can be dismissed */
-add_action('admin_notices', 'annina_admin_notice');
-function annina_admin_notice() {
-	global $current_user ;
-        $user_id = $current_user->ID;
-	if ( ! get_user_meta($user_id, 'annina_ignore_notice') ) {
-        echo '<div class="updated" style="background: #E9F7DF; border-left: 4px solid #1fa67a;"><p>'; 
-        printf(__('Thank you for installing <b>Annina</b> WordPress Theme! <a href="%2$s"><b>Click here to go to the Theme Options</b></a>  | <a href="%1$s">Hide Notice</a>'), '?annina_nag_ignore=0', 'themes.php?page=theme_options');
-        echo "</p></div>";
-	}
-}
-
-add_action('admin_init', 'annina_nag_ignore');
-function annina_nag_ignore() {
-	global $current_user;
-        $user_id = $current_user->ID;
-        if ( isset($_GET['annina_nag_ignore']) && '0' == $_GET['annina_nag_ignore'] ) {
-             add_user_meta($user_id, 'annina_ignore_notice', 'true', true);
-	}
-}
 
 /**
  * EXCLUDE PAGE FROM SEARCH

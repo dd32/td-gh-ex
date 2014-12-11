@@ -20,7 +20,6 @@
 
 <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 <?php 
@@ -31,8 +30,11 @@
 <!-- Start: Search Form -->
 					<div id="search-full">
 						<div class="search-container">
-							<form id="search-form" method="get" action="<?php echo home_url( '/' ); ?>">
-								<input id="search-field" type="text" name="s" value="" placeholder="<?php _e('Type here and hit enter...', 'annina'); ?>" />
+							<form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
+								<label>
+									<span class="screen-reader-text"><?php _e( 'Search for:', 'annina' ); ?></span>
+									<input type="search" name="s" id="search-field" placeholder="<?php _e('Type here and hit enter...', 'annina'); ?>">
+								</label>
 							</form>
 							<span><a id="close-search"><i class="fa fa-close spaceRight"></i><?php _e('Close', 'annina'); ?></a></span>
 						</div>

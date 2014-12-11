@@ -18,7 +18,6 @@ $annina_theme_options = array(
 function annina_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$args = array(
 		'id'    => 'annina_theme_options',
-		'parent' => 'site-name',
 		'title' => __('Annina Theme Options', 'annina' ),
 		'href'  => admin_url('themes.php?page=theme_options')
 	);

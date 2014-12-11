@@ -125,6 +125,7 @@ function annina_custom_css_styles() {
 	input[type="submit"],
 	.site-header a, 
 	.site-header a:hover, 
+	.site-header a:focus, 
 	.site-header, 
 	.site-footer a, 
 	.site-footer a:hover,
@@ -167,6 +168,7 @@ function annina_custom_css_styles() {
 	input[type="submit"]:hover,
 	a,
 	.main-navigation ul li:hover > a, 
+	.main-navigation li a:focus, 
 	.main-navigation li.current-menu-item > a, 
 	.main-navigation li.current-menu-parent > a, 
 	.main-navigation li.current-page-ancestor > a,
@@ -200,6 +202,7 @@ function annina_custom_css_styles() {
 		border-right: 2px solid <?php echo $special_color_third; ?>;
 	}
 	.main-navigation ul li:hover > a, 
+	.main-navigation li a:focus, 
 	.main-navigation li.current-menu-item > a, 
 	.main-navigation li.current-menu-parent > a, 
 	.main-navigation li.current-page-ancestor > a,

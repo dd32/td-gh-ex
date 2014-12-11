@@ -34,7 +34,7 @@ Annina Free theme is translation ready.
 Annina Free Theme have 1 menu: Primary
 
 == Tags ==
-two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style, white, full-width-template, rtl-language-support
+two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, white, full-width-template, rtl-language-support
 
 == Installation ==
 
@@ -43,5 +43,9 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.1
+* Google Fonts fixes
+* Minor bug fixes
+
 Version 1.0
 * Initial Release
