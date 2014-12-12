@@ -62,7 +62,7 @@ function weaverx_setup() {
 
 	$tpath = trailingslashit(get_template_directory());
 
-	load_theme_textdomain( 'weaverx', $tpath . 'languages' );
+	load_theme_textdomain( 'weaver-xtreme', $tpath . 'languages' );
 
 	$locale = get_locale();
 	$locale_file = $tpath . "languages/$locale.php";
@@ -183,7 +183,7 @@ function weaverx_register_header_images() {
 		'url' => '%s/assets/images/headers/maroon-bells.jpg',
 		'thumbnail_url' => '%s/assets/images/headers/maroon-bells-thumbnail.jpg',
 		/* translators: header image description */
-		'description' => wvr__( 'Maroon Bells')
+		'description' => __( 'Maroon Bells','weaver-xtreme')
 		)
 	) );
 }
@@ -221,69 +221,69 @@ function weaverx_widgets_init() {
  */
 
 	// Top located at the top of the sidebar.
-	weaverx_register_sidebar( wvr__( 'Primary Sidebar'),
+	weaverx_register_sidebar( __( 'Primary Sidebar','weaver-xtreme'),
 		'primary-widget-area',
-		wvr__( 'Primary sidebar widget area, displays on top, or left side for split sidebars' ));
+		__( 'Primary sidebar widget area, displays on top, or left side for split sidebars','weaver-xtreme' ));
 
-    weaverx_register_sidebar( wvr__( 'Secondary Sidebar'),
+    weaverx_register_sidebar( __( 'Secondary Sidebar','weaver-xtreme'),
 		'secondary-widget-area',
-		wvr__( 'Secondary sidebar widget area, displays on bottom, or right side for split sidebars' ));
+		__( 'Secondary sidebar widget area, displays on bottom, or right side for split sidebars','weaver-xtreme' ));
 
 
 
 		## Site-wide top area
-	weaverx_register_sidebar(wvr__( 'Sitewide Top Widget Area'),
+	weaverx_register_sidebar(__( 'Sitewide Top Widget Area','weaver-xtreme'),
 		'sitewide-top-widget-area',
-		 wvr__( 'This widget area appears at the top of the content area on all site static pages and post pages (including special post pages) EXCEPT pages using the blank or iframe page templates.'));
+		 __( 'This widget area appears at the top of the content area on all site static pages and post pages (including special post pages) EXCEPT pages using the blank or iframe page templates.','weaver-xtreme'));
 
 	## Site-wide bottom area
-	weaverx_register_sidebar(wvr__( 'Sitewide Bottom Widget Area'),
+	weaverx_register_sidebar(__( 'Sitewide Bottom Widget Area','weaver-xtreme'),
 		'sitewide-bottom-widget-area',
-		wvr__( 'This widget area appears at the bottom of the content area on all site static pages and post pages (including special post pages) EXCEPT pages using the blank or iframe page templates.'));
+		__( 'This widget area appears at the bottom of the content area on all site static pages and post pages (including special post pages) EXCEPT pages using the blank or iframe page templates.','weaver-xtreme'));
 
 	## page top widget area
-	weaverx_register_sidebar(wvr__( 'Pages Top Widget Area'),
+	weaverx_register_sidebar(__( 'Pages Top Widget Area','weaver-xtreme'),
 		'page-top-widget-area',
-		 wvr__( 'The top widget area appears above the content area of pages. It is not displayed on archive-like post pages (archives, etc.).'));
+		 __( 'The top widget area appears above the content area of pages. It is not displayed on archive-like post pages (archives, etc.).','weaver-xtreme'));
 
 	## page bottom widget area
-	weaverx_register_sidebar(wvr__( 'Pages Bottom Widget Area'),
-		'page-bottom-widget-area', wvr__( 'The bottom widget area appears below the content area. It is not displayed on archive-like post pages.'));
+	weaverx_register_sidebar(__( 'Pages Bottom Widget Area','weaver-xtreme'),
+		'page-bottom-widget-area', __( 'The bottom widget area appears below the content area. It is not displayed on archive-like post pages.','weaver-xtreme'));
 
 	## posts top widget area
-	weaverx_register_sidebar(wvr__( 'Blog Top Widget Area'),
+	weaverx_register_sidebar(__( 'Blog Top Widget Area','weaver-xtreme'),
 		'blog-top-widget-area',
-		 wvr__( 'The blog top widget area appears above the content area of blog pages, including page with posts templates, and post single page. It is not displayed on archive-like post pages.'));
+		 __( 'The blog top widget area appears above the content area of blog pages, including page with posts templates, and post single page. It is not displayed on archive-like post pages.','weaver-xtreme'));
 
 	## posts blog bottom widget area
-	weaverx_register_sidebar(wvr__( 'Blog Bottom Widget Area'),
-		'blog-bottom-widget-area', wvr__( 'The blog bottom widget area appears below the content area of blog pages, including page with posts templates, and post single page. It is not displayed on archive-like post pages.'));
+	weaverx_register_sidebar(__( 'Blog Bottom Widget Area','weaver-xtreme'),
+		'blog-bottom-widget-area', __( 'The blog bottom widget area appears below the content area of blog pages, including page with posts templates, and post single page. It is not displayed on archive-like post pages.','weaver-xtreme'));
 
 
 	## Special Post Pages Top Widget area
-	weaverx_register_sidebar(wvr__( 'Archive-like Pages Top Widget Area'),
+	weaverx_register_sidebar(__( 'Archive-like Pages Top Widget Area','weaver-xtreme'),
 		'postpages-widget-area',
-		wvr__( 'This widget area will appear at the top of archive-like post pages (date archives, author, category, tag, search).'));
+		__( 'This widget area will appear at the top of archive-like post pages (date archives, author, category, tag, search).','weaver-xtreme'));
 
 
 	// located in the header. Empty by default.
-	weaverx_register_sidebar( wvr__( 'Header Widget Area'),
+	weaverx_register_sidebar( __( 'Header Widget Area','weaver-xtreme'),
 		'header-widget-area',
-		 wvr__( 'The header widget area. Widgets in this area can be displayed horizontally.'));
+		 __( 'The header widget area. Widgets in this area can be displayed horizontally.','weaver-xtreme'));
 
     // located in the footer. Empty by default.
-	weaverx_register_sidebar( wvr__( 'Footer Widget Area'),
+	weaverx_register_sidebar( __( 'Footer Widget Area','weaver-xtreme'),
 		'footer-widget-area',
-		 wvr__( 'The footer widget area. Widgets in this area can be displayed horizontally.'));
+		 __( 'The footer widget area. Widgets in this area can be displayed horizontally.','weaver-xtreme'));
 
     $extra_areas = weaverx_getopt('_perpagewidgets');	// create extra areas?
 	if (strlen($extra_areas) > 0) {
 		$extra_list = explode(',', $extra_areas);
 		foreach ($extra_list as $area) {
-			weaverx_register_sidebar( wvr__('Per Page Area ') . $area,
+			weaverx_register_sidebar( __('Per Page Area ','weaver-xtreme') . $area,
 				'per-page-'.$area,
-				wvr__('This widget area can be added using "' /*a*/ ) .
-			   $area . wvr__('" as the name for Per Page options or the Weaver Xtreme Plus [widget_area] shortcode. Style it using: ' /*a*/ ) .
+				__('This widget area can be added using "','weaver-xtreme' ) .
+			   $area . __('" as the name for Per Page options or the Weaver Xtreme Plus [widget_area] shortcode. Style it using: ','weaver-xtreme' ) .
 			   '".per-page-' . $area .'".'
 			);
 		}
@@ -331,13 +331,28 @@ function weaverx_wp_head() {	// action definition
 }
 //--
 
+add_action('wp_head', 'weaverx_wp_head_early',7);
+
+function weaverx_wp_head_early() {
+    $sheet = get_template_directory_uri() . '/assets/css/fonts'.WEAVERX_MINIFY.'.css';
+    $sheet_name = 'weaverx-font-sheet';
+    wp_register_style($sheet_name,$sheet,array(),WEAVERX_VERSION,'all');
+    wp_enqueue_style($sheet_name);
+
+    // Start with the "real" stylesheet (so child theme style.css can override)
+
+    $sheet = get_template_directory_uri() . '/assets/css/style-weaverx'.WEAVERX_MINIFY.'.css';
+    $sheet_name = 'weaverx-style-sheet';
+    wp_register_style($sheet_name,$sheet,array('weaverx-font-sheet'),WEAVERX_VERSION,'all');
+    wp_enqueue_style($sheet_name);
+}
 
 add_action('admin_menu', 'weaverx_add_admin',5);
 
 function weaverx_add_admin() {	// action definition
 	/* adds our admin panel  (add_action: admin_menu) */
 	// 'edit_theme_options' works for both single and multisite
-	$page = add_theme_page('WeaverX',  WEAVERX_THEMENAME, 'edit_theme_options', 'WeaverX', 'weaverx_admin_theme_page');
+	$page = add_theme_page('WeaverX',  __('Theme Options','weaver-xtreme'), 'edit_theme_options', 'WeaverX', 'weaverx_admin_theme_page');
 	/* using registered $page handle to hook stylesheet loading for this admin page */
 	add_action('admin_print_styles-'.$page, 'weaverx_admin_scripts');
 }
@@ -468,8 +483,6 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wr
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 add_action('woocommerce_before_main_content', 'weaverx_woo_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'weaverx_woo_wrapper_end', 10);
-
-add_filter('widget_text', 'do_shortcode');		// add shortcode processing to standard text widget
 
 function weaverx_woo_wrapper_start() {
   echo '<div id="container" class="container"><div id="content" class="weaver-woo" role="main">';

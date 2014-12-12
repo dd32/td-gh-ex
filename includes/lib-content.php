@@ -1,4 +1,5 @@
 <?php
+if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /*
  *  lib-content.php
  *  functions related to displaying posts and pages
@@ -24,7 +25,7 @@ function weaverx_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 ?>
 	<li class="pingback">
-		<p><?php echo __( 'Pingback:','weaverx'); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit','weaverx'), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php echo __( 'Pingback:','weaver-xtreme'); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit','weaver-xtreme'), '<span class="edit-link">', '</span>' ); ?></p>
 <?php
 			break;
 
@@ -42,21 +43,21 @@ function weaverx_comment( $comment, $args, $depth ) {
 				echo get_avatar( $comment, $avatar_size );
 
 				/* translators: 1: comment author, 2: date and time */
-				printf( __( '%1$s on %2$s <span class="says">said:</span>','weaverx'),
+				printf( __( '%1$s on %2$s <span class="says">said:</span>','weaver-xtreme'),
 					sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 					sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 					esc_url( get_comment_link( $comment->comment_ID ) ),
 					get_comment_time( 'c' ),
 					/* translators: 1: date, 2: time */
-					sprintf( __( '%1$s at %2$s','weaverx'), get_comment_date(), get_comment_time() )
+					sprintf( __( '%1$s at %2$s','weaver-xtreme'), get_comment_date(), get_comment_time() )
 					)
 				);
 
-			   edit_comment_link( __( 'Edit','weaverx'), '<span class="edit-link">', '</span>' ); ?>
+			   edit_comment_link( __( 'Edit','weaver-xtreme'), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.','weaverx'); ?></em>
+					<em class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.','weaver-xtreme'); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -64,7 +65,7 @@ function weaverx_comment( $comment, $args, $depth ) {
 
 			<div class="comment-content"><?php comment_text(); ?></div>
 <?php
-			$rl = get_comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>','weaverx'), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+			$rl = get_comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>','weaver-xtreme'), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
 			if ($rl != '') {
 ?>
 			<div class="reply">
@@ -90,7 +91,7 @@ function weaverx_comments_popup_link() {
 	&& comments_open() && ! post_password_required() ) {
         echo '<span class="comments-link comments-bubble">';
 			comments_popup_link( '<span class="leave-reply">' . '&nbsp;' .
-			'</span>', _x( '1', 'comments number','weaverx'), _x( '%', 'comments number','weaverx') );
+			'</span>', _x( '1', 'comments number','weaver-xtreme'), _x( '%', 'comments number','weaver-xtreme') );
         echo '</span>';
 	}
 }
@@ -108,12 +109,12 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 	if ( $wp_query->max_num_pages > 1 ) {
 ?>
 	<nav id="<?php echo $nav_id; ?>">
-		<h3 class="assistive-text"><?php echo __( 'Post navigation','weaverx'); ?></h3>
+		<h3 class="assistive-text"><?php echo __( 'Post navigation','weaver-xtreme'); ?></h3>
 <?php
 	if (weaverx_getopt('nav_style') == 'prev_next') {
 ?>
-		<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&larr; </span>' . __('Previous Post','weaverx')); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __('Next Post','weaverx') . '<span class="meta-nav">&rarr; </span>'); ?></div>
+		<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&larr; </span>' . __('Previous Post','weaver-xtreme')); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __('Next Post','weaver-xtreme') . '<span class="meta-nav">&rarr; </span>'); ?></div>
 <?php
 	} else if (weaverx_getopt('nav_style') == 'paged_left') {
 		echo ("\t<div class=\"nav-previous\">");
@@ -137,8 +138,8 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 		echo "\t</div>\n";
 	} else {	// Older/Newer posts
 ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts','weaverx') ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>','weaverx') ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts','weaver-xtreme') ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>','weaver-xtreme') ); ?></div>
 <?php	} ?>
 	</nav><div class="clear-nav-id" style="clear:both"></div><!-- #<?php echo $nav_id;?> -->
 <?php
@@ -162,7 +163,7 @@ function weaverx_continue_reading_link() {
 	if (!empty($rep))
 		$msg = '<span class="more-msg">' . $rep . '</span>';
 	else
-		$msg = __( '<span class="more-msg">Continue reading &rarr;</span>','weaverx');
+		$msg = __( '<span class="more-msg">Continue reading &rarr;</span>','weaver-xtreme');
 
 	return ' <a class="more-link" href="'. esc_url(get_permalink()) . '">' . $msg . '</a>';
 }
@@ -175,7 +176,7 @@ if ( !function_exists( 'weaverx_edit_link')) {
 function weaverx_edit_link($echo = 'echo') {
 	$before = '<span class="edit-link">';
 	$after = '</span>';
-	$link = __( 'Edit','weaverx');
+	$link = __( 'Edit','weaver-xtreme');
 	$id = 0;
 
 	if ( !$post = get_post( $id ) )
@@ -227,7 +228,7 @@ function weaverx_post_title($before='', $after='') {
 	echo($before);
     $title = the_title('', '', false);
 ?>
-	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaverx')),
+	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaver-xtreme')),
 	   the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title;?></a>
 <?php
 	echo($after . "\n");
@@ -239,7 +240,7 @@ function weaverx_post_title($before='', $after='') {
 
 if ( !function_exists( 'weaverx_link_pages')) {
 function weaverx_link_pages() {
-	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaverx') . '</span>', 'after' => '</div>' ) );
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) );
 }
 }
 //--
@@ -251,14 +252,14 @@ function weaverx_not_found_search($file_name) {
 ?>
 	<article id="post-0" class="post no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title title-search"><?php echo __( 'Nothing Found','weaverx'); ?></h1>
+		<h1 class="page-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="entry-content clearfix">
 		<p>
 <?php
 		if (!weaverx_getopt('_hide_not_found_search')) {
-		echo __( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.','weaverx');
+		echo __( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.','weaver-xtreme');
 ?>
 		</p>
 			<p>
@@ -301,8 +302,8 @@ function weaverx_format_posted_on_footer($who) {
 <?php 		weaverx_posted_on();
 		if ( comments_open() ) {
 			echo '<span ' . weaverx_meta_info_class( 'post_info_bottom' ) . '><span class="comments-link">';
-			comments_popup_link( '<span class="leave-reply">' . '&nbsp;&nbsp;' . __( 'Leave a reply','weaverx') . '</span>', __( '<b>1</b> Reply','weaverx'),
-				__( '<b>%</b> Replies','weaverx') ); ?></span></span>
+			comments_popup_link( '<span class="leave-reply">' . '&nbsp;&nbsp;' . __( 'Leave a reply','weaver-xtreme') . '</span>', __( '<b>1</b> Reply','weaver-xtreme'),
+				__( '<b>%</b> Replies','weaver-xtreme') ); ?></span></span>
 
 <?php
 		}
@@ -394,16 +395,16 @@ function weaverx_posted_in($type='') {
 
 	if ($type == 'single') {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ','weaverx') );
+		$categories_list = get_the_category_list( __( ', ','weaver-xtreme') );
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ','weaverx') );
+		$tags_list = get_the_tag_list( '', __( ', ','weaver-xtreme') );
 		if ( '' != $tags_list ) {
-			$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaverx');
+			$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaver-xtreme');
 		} elseif ( '' != $categories_list ) {
-			$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaverx');
+			$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaver-xtreme');
 		} else {
-			$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaverx');
+			$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.','weaver-xtreme');
 		}
 
 
@@ -413,7 +414,7 @@ function weaverx_posted_in($type='') {
                 $pi .= "\t\t\t<span class=\"cat-links post_hide-singleton-category\">\n";
             else
                 $pi .="\t\t\t<span class=\"cat-links\">\n";
-            $pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaverx'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
+            $pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
 
             $pi .="\t\t\t</span>\n";
 
@@ -422,12 +423,12 @@ function weaverx_posted_in($type='') {
 
         if ($tags_list ) {
             $pi .="\t\t\t<span class=\"tag-links\">\n";
-            $pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaverx'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+            $pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
             $pi .= "\t\t\t</span>\n";
         } // End if $tags_list
 
         $pi .= '<span class="permalink-icon"><a href="' .  esc_url( get_permalink()) . '" title="Permalink to ' . the_title_attribute(array('echo'=>false)) .
-                '" rel="bookmark">' .  __('permalink','weaverx') . '</a></span>';
+                '" rel="bookmark">' .  __('permalink','weaver-xtreme') . '</a></span>';
 
 
 		$pi .= weaverx_edit_link('noecho');
@@ -439,23 +440,23 @@ function weaverx_posted_in($type='') {
 		if ( 'page' != get_post_type() ) { // Hide category and tag text for pages on Search
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ','weaverx') );
+			$categories_list = get_the_category_list( __( ', ','weaver-xtreme') );
 			$cat_count = count( get_the_category() );
 			$skip =  ($cat_count < 2 && weaverx_getopt_checked('hide_singleton_category'));
 			if ( $categories_list && !$skip) {
 				$pi .= '<span class="cat-links">';
-				$pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaverx'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
+				$pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
 				$show_sep = true;
 				$pi .= '</span>';
 			} // End if categories
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', __( ', ','weaverx') );
+			$tags_list = get_the_tag_list( '', __( ', ','weaver-xtreme') );
 			if ( $tags_list ) {
 				if ( $show_sep ) {
 					$pi .= '<span class="sep"> | </span>';
 				} // End if $show_sep
 				$pi .= '<span class="tag-links">';
-				$pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaverx'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+				$pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
 				$show_sep = true;
 				$pi .= '</span>';
 			} // End if $tags_list
@@ -467,8 +468,8 @@ function weaverx_posted_in($type='') {
 			} // End if $show_sep
 			$pi .= '<span class="comments-link">';
 			ob_start();     // yuck - why doesn't WP make all the utilities have an echo option??
-			comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply','weaverx') . '</span>', __( '<b>1</b> Reply','weaverx'),
-				 __( '<b>%</b> Replies','weaverx') );
+			comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply','weaver-xtreme') . '</span>', __( '<b>1</b> Reply','weaver-xtreme'),
+				 __( '<b>%</b> Replies','weaver-xtreme') );
 			$pi .= ob_get_clean();
 			$pi .= '</span>';
 
@@ -510,13 +511,13 @@ function weaverx_posted_on($type='') {
 			$po .= '</span>';
 	}
 
-	$po .= sprintf( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','weaverx'),
+	$po .= sprintf( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','weaver-xtreme'),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		sprintf( esc_attr(__( 'View all posts by %s','weaverx')), get_the_author() ),
+		sprintf( esc_attr(__( 'View all posts by %s','weaver-xtreme')), get_the_author() ),
 		esc_html( get_the_author() )
 	);
 
@@ -727,12 +728,12 @@ function weaverx_the_page_content( $who = '' ) {
 //--
 
 
-function weaverx_the_contnt( $m='' ) {
+function weaverx_the_contnt(  ) {
 	if ( (weaverx_is_checked_page_opt('_pp_raw_html') && !weaverx_t_get('showposts')) || weaverx_is_checked_post_opt('_pp_raw_html') ) {
 		remove_filter ('the_content', 'wpautop');
         remove_filter ('the_content', 'wptexturize');
 	}
-	the_content($m);
+	the_content(weaverx_continue_reading_link());
 }
 //--
 
@@ -868,11 +869,11 @@ function weaverx_author_info() {
                 <div id="author-avatar">
 				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'weaverx_author_bio_avatar_size', 75 ) ); ?>
 			</div><!-- #author-avatar -->
-				<p class="author-title"><?php printf( esc_attr__( 'About %s','weaverx'), get_the_author() ); ?></p>
+				<p class="author-title"><?php printf( esc_attr__( 'About %s','weaver-xtreme'), get_the_author() ); ?></p>
 				<p><?php the_author_meta( 'description' ); ?></p>
 				<div id="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s</span>','weaverx'), get_the_author() ); ?>
+						<?php printf( __( 'View all posts by %s</span>','weaver-xtreme'), get_the_author() ); ?>
 					</a>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->

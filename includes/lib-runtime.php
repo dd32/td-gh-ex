@@ -2,6 +2,7 @@
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /* Weaver Xtreme - runtime utils
  *
+ *  __ added - 12/11/14
  * needed both at admin time and runtime
  */
 
@@ -126,12 +127,12 @@ function weaverx_save_opts($who='', $bump = true) {
 
         // put the CSS into the DB
         require_once(get_template_directory() . '/includes/generatecss.php');
-        unset( $GLOBALS['wvrx_css'] );
-        $GLOBALS['wvrx_css'] = '';
-        weaverx_f_write('wvrx_css', '/* -wvrx_css- */');
-        weaverx_output_style('wvrx_css');
-        weaverx_setopt('wvrx_css', $GLOBALS['wvrx_css'] );
-        unset( $GLOBALS['wvrx_css'] );
+        unset( $GLOBALS['wvrx_css_saved'] );
+        $GLOBALS['wvrx_css_saved'] = '';
+        weaverx_f_write('wvrx_css_saved', '/* -wvrx_css- */');
+        weaverx_output_style('wvrx_css_saved');
+        weaverx_setopt('wvrx_css_saved', $GLOBALS['wvrx_css_saved'] );
+        unset( $GLOBALS['wvrx_css_saved'] );
     }
 
     weaverx_setopt('style_date', date('Y-m-d-H:i:s'), $bump);
@@ -210,6 +211,7 @@ function weaverx_sapi_options_init() {
 function weaverx_validate_cb($in) {
 	// keep the definition in runtime, load as needed at admin time
     require_once( get_template_directory() . '/includes/lib-admin.php' );
+    require_once( get_template_directory() . '/includes/lib-admin-part2.php' );
 
 	return weaverx_validate_all_options($in);
 }
@@ -227,7 +229,7 @@ function weaverx_submitted($submit_name) {
         if (isset($_POST[$nonce_name]) && wp_verify_nonce($_POST[$nonce_name],$nonce_act)) {
             return true;
         } else {
-            die("WARNING: invalid form submit detected ($submit_name). Probably caused by session time-out, or, rarely, a failed security check. Please contact Weaver XTheme.com if you continue to receive this message.");
+            die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.','weaver-xtreme') . '(' . $submit_name . ')');
         }
 	} else {
         return false;
@@ -352,7 +354,7 @@ function weaverx_get_page_orderby() {
 
 	if ($orderby == 'author' || $orderby == 'date' || $orderby == 'title' || $orderby == 'rand')
 		return $orderby;
-	weaverx_page_posts_error('orderby must be author, date, title, or rand. You used: '. $orderby);
+	weaverx_page_posts_error(__('orderby must be author, date, title, or rand. You used: ','weaver-xtreme'). $orderby);
 	return '';
 }
 
@@ -361,7 +363,7 @@ function weaverx_get_page_order() {
 	if (empty($order)) return '';
 	if ($order == 'ASC' || $order == 'DESC')
 		return $order;
-	weaverx_page_posts_error('order value must be ASC or DESC. You used: '. $order);
+	weaverx_page_posts_error(__('order value must be ASC or DESC. You used: ','weaver-xtreme'). $order);
 	return '';
 }
 
@@ -405,11 +407,8 @@ function weaverx_filter_head( $text ) {
         'base' => array( 'href' => true, 'target' => true, )
 		);
 
-	// virtually all option input from Weaver Xtreme can be code, and thus must not be
-	// content filtered - at least for admins. The utf8 check is about the extent of it, although even
-	// that is more restrictive than the standard text widget uses.
-	// Note: this check also works OK for simple checkboxes/radio buttons/selections,
-	// so it is ok to blindly pass those options in here, too.
+	// restrict head code to valid stuff for <head>
+
 	$noslash = trim(stripslashes($text));
 	if ($noslash == '') return '';
 
@@ -449,7 +448,7 @@ function weaverx_echo_css( $css ) {
 // # MISC ==============================================================
 function weaverx_media_lib_button($fillin = '') {
 ?>
-&nbsp;&larr;&nbsp;<a style='text-decoration:none;' href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><img src="<?php echo esc_url(weaverx_relative_url('assets/images/theme/media-button.png')); ?>" title="Select image from Media Library. Click 'Insert into Post' to paste url here." alt="media" /></a>
+&nbsp;&larr;&nbsp;<a style='text-decoration:none;' title="<?php _e('Select image from Media Library. Click \'Insert into Post\' to paste url here.','weaver-xtreme'); ?>" alt="media" href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
 <?php
 }
 
@@ -520,12 +519,14 @@ function weaverx_allow_multisite() {
 
 
 
-function weaverx_help_link($link, $info) {
+function weaverx_help_link($link, $info, $alt_label = '') {
     /*. '<img class="entry-cat-img" src="' . esc_url($t_dir . 'assets/images/help-1.png') . '" style="position:relative; top:4px; padding-left:4px;" title="Click for help" alt="Click for help" /> */
 	$t_dir = weaverx_relative_url('');
-	$_pp_help =  '<a style="text-decoration:none;" href="' . esc_url($t_dir . 'help/' . $link) . '" target="_blank" title="' . $info . '">'
-		. '<span style="color:red; vertical-align: middle; margin-left:.25em;" class="dashicons dashicons-editor-help"></span>' . '</a>';
-	echo($_pp_help);
+    if ( !$alt_label )
+        $alt_label = '<span style="color:red; vertical-align: middle; margin-left:.25em;" class="dashicons dashicons-editor-help"></span>';
+
+    echo '<a style="text-decoration:none;" href="' . esc_url($t_dir . 'help/' . $link) . '" target="_blank" title="' . $info . '">'
+		. $alt_label . '</a>';
 }
 
 
@@ -604,7 +605,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
     if ( weaverx_getopt('menu_nohome')) {
         $name = get_the_title(get_option( 'page_on_front' ));
     } else {
-        $name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : __('Home','weaverx'); //text for the 'Home' link
+        $name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : __('Home','weaver-xtreme'); //text for the 'Home' link
     }
 
 
@@ -633,9 +634,9 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
             $thisCat = get_category($thisCat);
             $parentCat = get_category($thisCat->parent);
             if ($thisCat->parent != 0) {
-                $hierarchy = ( $delimiter . __( 'Categories','weaverx') . ' ' . get_category_parents( $parentCat, TRUE, $delimiter ) );
+                $hierarchy = ( $delimiter . __( 'Categories','weaver-xtreme') . ' ' . get_category_parents( $parentCat, TRUE, $delimiter ) );
             } else {
-                $hierarchy = $delimiter . __( 'Categories','weaverx') . ' ';
+                $hierarchy = $delimiter . __( 'Categories','weaver-xtreme') . ' ';
             }
         } else {
             $hierarchy = '';
@@ -663,7 +664,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
             $date_string = '';
             $currentLocation = get_the_time('Y');
         }
-        $hierarchy = $delimiter . __( 'Published','weaverx') . ' ' . $date_string ;
+        $hierarchy = $delimiter . __( 'Published','weaver-xtreme') . ' ' . $date_string ;
 	}
 	// Define Category Hierarchy Crumbs for Single Posts
 	elseif ( is_single() && !is_attachment() ) {
@@ -730,27 +731,27 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	}
 	// Define current location for Search Results page
 	elseif ( is_search() ) {
-        $hierarchy = $delimiter . __('Search Results','weaverx') . ' ';
+        $hierarchy = $delimiter . __('Search Results','weaver-xtreme') . ' ';
         $currentLocation = get_search_query();
 	}
 	// Define current location for Tag Archives
 	elseif ( is_tag() ) {
-        $hierarchy = $delimiter . __( 'Tags','weaverx') . ' ';
+        $hierarchy = $delimiter . __( 'Tags','weaver-xtreme') . ' ';
         $currentLocation = single_tag_title( '' , FALSE );
 	}
 	// Define current location for Author Archives
 	elseif ( is_author() ) {
-        $hierarchy = $delimiter . __( 'Author','weaverx') . ' ';
+        $hierarchy = $delimiter . __( 'Author','weaver-xtreme') . ' ';
         $currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
 	}
 	// Define current location for 404 Error page
 	elseif ( is_404() ) {
-        $hierarchy = $delimiter . __( '404','weaverx') . ' ';
-        $currentLocation = __( 'Page not found','weaverx');
+        $hierarchy = $delimiter . __( '404','weaver-xtreme') . ' ';
+        $currentLocation = __( 'Page not found','weaver-xtreme');
 	}
 	// Define current location for Post Format Archives
 	elseif ( get_post_format() && ! is_home() ) {
-        $hierarchy = $delimiter . __( 'Post Formats','weaverx') . ' ';
+        $hierarchy = $delimiter . __( 'Post Formats','weaver-xtreme') . ' ';
         $currentLocation = get_post_format_string( get_post_format() ) . 's';
 	} else {
         global $weavrex_pwp_title;
@@ -767,12 +768,12 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 
 // Define pagination for paged Archive pages
 	if ( get_query_var('paged') && ! function_exists( 'wp_paginate' ) ) {
-        $crumbPagination = ' - ' . __('Page','weaverx') . ' ' . get_query_var('paged');
+        $crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('paged');
 	}
 
  // Define pagination for Paged Posts and Pages
 	if ( get_query_var('page') ) {
-        $crumbPagination = ' - ' . __('Page','weaverx') . ' ' . get_query_var('page') . ' ';
+        $crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('page') . ' ';
 	}
 
 // Output the resulting Breadcrumbs
@@ -1012,10 +1013,6 @@ function weaverx_opt_cache() {
         $weaverx_opts_cache = apply_filters('weaverx_switch_theme',
             get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
 	}
-}
-
-function wvr__($t) {
-	return $t;
 }
 
 require_once( get_template_directory() . '/includes/fileio.php' );

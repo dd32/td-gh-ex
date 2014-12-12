@@ -1,8 +1,11 @@
 <?php
+if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /* lib-layout.php
  * Layout functions for Weaver X
+ *  __ added - 12/11/14
  */
 // Weaver Xtreme Layout Support
+
 
 // determine classes for areas
 function weaverx_inject_area( $name ) {
@@ -45,6 +48,30 @@ function weaverx_inject_area( $name ) {
 function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '') {
 
     $class = '';
+
+    $cols = weaverx_getopt_default( $area . '_cols_int', 1);
+    if ( $cols > 1 ) {
+        $l_smart = ' widget-smart-rm';
+        $m_smart = ' m-widget-smart-rm';
+        if ( weaverx_getopt( $area . '_no_widget_margins' ) ) {
+            $l_smart = '';
+            $m_smart = '';
+        }
+        $l_class = 'widget-cols-' . $cols;;
+        $m_class = ' m-widget-cols-2';
+
+        if ( weaverx_getopt('_' . $area . '_lw_cols_list') != '') {
+            $l_class = '';
+            $l_smart = '';
+        }
+
+        if ( weaverx_getopt('_' . $area . '_mw_cols_list') != '') {
+            $m_class = '';
+            $m_smart = '';
+        }
+
+        $class = $l_class . $l_smart . $m_class . $m_smart;
+    }
 
     // top/bottom margin
 
@@ -97,7 +124,7 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
         $class .= ' ' . trim($val);
     }
 
-    return $class;
+    return trim($class);
 }
 //--
 
@@ -543,6 +570,7 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '', 
     unset( $GLOBALS['wvr_widget_number']);     // clear for each widget
     $GLOBALS['wvr_widget_number'] = false;
 
+
     if ($area != $area_name) {   // replacement area?
         $class .= ' ' . $area;
         weaverx_t_set('use_widget_area', $area_name);                   // save state for weaverx_add_widget_classes to use later
@@ -595,6 +623,7 @@ function weaverx_add_widget_classes( $params ) {
     $area_map = array('primary-widget-area'=>'primary','secondary-widget-area'=>'secondary',
         'footer-widget-area'=>'footer',
         'sitewide-top-widget-area'=>'top', 'page-top-widget-area'=>'top', 'postpages-widget-area'=>'top',
+        'blog-top-widget-area'=>'top',
         'sitewide-bottom-widget-area'=>'bottom', 'page-bottom-widget-area'=>'bottom', 'blog-bottom-widget-area'=>'bottom',
         'header-widget-area'=>'header_sb', 'footer-widget-area'=> 'footer_sb',
         'primary' => 'primary', 'secondary' => 'secondary', 'widget' => 'widget',
@@ -624,14 +653,14 @@ function weaverx_add_widget_classes( $params ) {
     $show_evenodd = true;
 
 
-    if ( empty($GLOBALS['wvr_widget_number']) || !isset($GLOBALS['wvr_widget_number']) || !$GLOBALS['wvr_widget_number'] ) {  // global to keep track of which widget this is
-        $GLOBALS['wvr_widget_number'] = array();
-    }
-
     if ( !isset( $arr_registered_widgets[$sb_id] ) || !is_array( $arr_registered_widgets[$sb_id] ) ) {
         return $params;
     }
 
+
+    if ( empty($GLOBALS['wvr_widget_number']) || !isset($GLOBALS['wvr_widget_number']) || !$GLOBALS['wvr_widget_number'] ) {  // global to keep track of which widget this is
+        $GLOBALS['wvr_widget_number'] = array();
+    }
     if ( isset( $GLOBALS['wvr_widget_number'][$sb_id] ) ) {        // initialize or bump widget number
         $GLOBALS['wvr_widget_number'][$sb_id]++;
     } else {
@@ -715,6 +744,7 @@ function weaverx_add_widget_classes( $params ) {
     if ( $title_class )
         $params[0]['before_title'] = str_replace( '">', ' ' . trim($title_class) . '">', $params[0]['before_title'] );
 
+
     return $params;
 }
 //--
@@ -728,10 +758,10 @@ function weaverx_no_sidebars( $class ) {
 			<aside id="primary-widget-area" class="widget">
 		<h3 class="widget-title"><?php echo( 'Sidebar Area'); ?></h3>
 		<ul><li>
-<strong>Add Some Widgets!</strong><br /><small>This theme has been designed to be used with sidebars. <span style="color:red">This message will no longer be displayed after
+<?php _e('<strong>Add Some Widgets!</strong><br /><small>This theme has been designed to be used with sidebars. <span style="color:red">This message will no longer be displayed after
 you add at least one widget to one of the Sidebar Widget Areas using the Appearance &rarr; Widgets control panel.</span>
 <br />You can also change the sidebar layout for this page using theme options.
-<br />Note: If you have added widgets, be sure you've not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small></li>
+<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>','weaver-xtreme'); ?></li>
 <li>
 <?php       wp_loginout(); ?>
 </li>

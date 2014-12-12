@@ -18,4 +18,4 @@ $weaverx_cur_post_ID = get_the_ID();
 <?php 	weaverx_the_post_full();
 ?>
 	</div><!-- #post-<?php the_ID(); ?> -->
-<?php 	edit_post_link( __( 'Edit','weaverx'), '<span class="edit-link">', '</span>' ); ?>
+<?php 	edit_post_link( __( 'Edit','weaver-xtreme'), '<span class="edit-link">', '</span>' ); ?>

@@ -1,6 +1,8 @@
 <?php
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+
 // The Weaver Xtreme WP_Filesystem interface to "duplicate" fopen, fwrite, etc.
+// __ added - 12/11/14
 
 function weaverx_f_file_access_fail($who = '') {
 	static $weaverx_f_file_access_fail_sent = false;
@@ -8,19 +10,19 @@ function weaverx_f_file_access_fail($who = '') {
 	$weaverx_f_file_access_fail_sent = true;
 ?>
 	<div class="error">
-		<strong style="color:#f00; line-height:150%;">*** Weaver Xtreme File Access Error! ***</strong> <small style="padding-left:20px;">(But don't panic!)</small>
+		<strong style="color:#f00; line-height:150%;"><?php _e('*** Weaver Xtreme File Access Error! ***</strong> <small style="padding-left:20px;">(But don\'t panic!)</small>
 	<p>Weaver Xtreme is unable to process a file access request. You may need proper FTP credentials set in
 	WordPress, or in your wp-config.php file. It is unusual to see this error. It may be displayed
 	after you move to a new host.</p>
-	<p>You may have to change the directory permissions on your web hosting server.</p>
-	<?php echo "<p>Diagnostics: $who</p>\n"; ?>
+	<p>You may have to change the directory permissions on your web hosting server.</p>','weaver-xtreme'); ?>
+	<?php echo '<p>' . __('Diagnostics:','weaver-xtreme') . "{$who}</p>\n"; ?>
 	</div>
 <?php
 	return;
 }
 
 function weaverx_f_file_access_available() {
-	if (function_exists('weaverxtwf_file_access'))
+	if (function_exists('weaverxplus_f_file_access'))
 		return true;
 	return false;
 }
@@ -29,13 +31,13 @@ function weaverx_f_open($fn, $how) {
 	// 'php://output'
 	if ($fn == 'php://output' || $fn == 'echo')
 		return 'echo';
-    if ($fn == 'wvrx_css') {
-        unset( $GLOBALS['wvrx_css'] );
-        $GLOBALS['wvrx_css'] = '';
+    if ($fn == 'wvrx_css_saved') {
+        unset( $GLOBALS['wvrx_css_saved'] );
+        $GLOBALS['wvrx_css_saved'] = '';
         return $fn;
     }
-	if (function_exists('weaverxtwf_open'))
-		return weaverxtwf_open( $fn, $how );
+	if (function_exists('weaverxplus_f_open'))
+		return weaverxplus_f_open( $fn, $how );
 	return false;
 }
 
@@ -43,10 +45,10 @@ function weaverx_f_write($fn,$data) {
 	if ($fn == 'php://output' || $fn == 'echo') {
 		echo $data;
         return true;
-	} else if ($fn == 'wvrx_css') {
-        $GLOBALS['wvrx_css'] .= $data;
-    } else if (function_exists('weaverxtwf_write'))
-		return weaverxtwf_write( $fn, $data);
+	} else if ($fn == 'wvrx_css_saved') {
+        $GLOBALS['wvrx_css_saved'] .= $data;
+    } else if (function_exists('weaverxplus_f_write'))
+		return weaverxplus_f_write( $fn, $data);
 	else
         return false;
 }
@@ -54,8 +56,8 @@ function weaverx_f_write($fn,$data) {
 function weaverx_f_close($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return true;
-	else if (function_exists('weaverxtwf_close'))
-		return weaverxtwf_close( $fn );
+	else if (function_exists('weaverxplus_f_close'))
+		return weaverxplus_f_close( $fn );
 	else
 		return false;
 }
@@ -63,32 +65,32 @@ function weaverx_f_close($fn) {
 function weaverx_f_delete($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return true;
-	if (function_exists('weaverxtwf_delete'))
-		return weaverxtwf_delete( $fn );
+	if (function_exists('weaverxplus_f_delete'))
+		return weaverxplus_f_delete( $fn );
 	return false;
 }
 
 function weaverx_f_is_writable($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return true;
-	if (function_exists('weaverxtwf_is_writable'))
-		return weaverxtwf_is_writable( $fn );
+	if (function_exists('weaverxplus_f_is_writable'))
+		return weaverxplus_f_is_writable( $fn );
 	return false;
 }
 
 function weaverx_f_touch($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return true;
-	if (function_exists('weaverxtwf_touch'))
-		return weaverxtwf_touch( $fn );
+	if (function_exists('weaverxplus_f_touch'))
+		return weaverxplus_f_touch( $fn );
 	return false;
 }
 
 function weaverx_f_mkdir($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return false;
-	if (function_exists('weaverxtwf_mkdir'))
-		return weaverxtwf_mkdir( $fn );
+	if (function_exists('weaverxplus_f_mkdir'))
+		return weaverxplus_f_mkdir( $fn );
 	return false;
 }
 
@@ -96,21 +98,21 @@ function weaverx_f_exists($fn) {
 	// this one must use native PHP version since it is used at theme runtime as well as admin
 	if ($fn == 'php://output' || $fn == 'echo')
 		return true;
-	if (function_exists('weaverxtwf_exists'))
-		return weaverxtwf_exists( $fn );
+	if (function_exists('weaverxplus_f_exists'))
+		return weaverxplus_f_exists( $fn );
 	return @file_exists($fn);
 }
 
 function weaverx_f_get_contents($fn) {
 	if ($fn == 'php://output' || $fn == 'echo')
 		return '';
-	if (function_exists('weaverxtwf_get_contents'))
-		return weaverxtwf_get_contents( $fn );
+	if (function_exists('weaverxplus_f_get_contents'))
+		return weaverxplus_f_get_contents( $fn );
 	return implode('',file($fn));	// works if no newlines in the file...
 }
 
 // =========================== helper functions ===========================
-function weaverx_pop_msg($msg) {
+function weaverx_alert($msg) {
 	echo "<script> alert('" . $msg . "'); </script>";
 	// echo "<h1>*** $msg ***</h1>\n";
 }

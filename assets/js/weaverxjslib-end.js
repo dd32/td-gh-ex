@@ -1,9 +1,10 @@
+/*! Weaver Xtreme JavaScript Library 1.1 - Copyright 2014 + Copyrights of sub-scripts */
 /* Weaver Xtreme FitVids - added to end of page html. If add more than FitVids, need to fix
  * how _disable_FitVids works.
  * */
 /*global jQuery */
 /*jshint browser:true */
-/*!
+/*
 * FitVids 1.1
 *
 * Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
@@ -86,6 +87,30 @@
 })( window.jQuery || window.Zepto );
 
 
+
+/* -------------------------
+    support [showhide]
+*/
+function weaverx_ToggleDIV(his, me, show, hide, text) {
+
+    if (his.style.display != 'none') {
+        his.style.display = 'none';
+        if (text == 'img') {
+            me.innerHTML = '<img src="' + show + '" alt="show" />';
+        } else {
+            me.innerHTML = '<span class="weaverx_showhide_show">' + show + '</span>';
+        }
+    } else {
+        his.style.display = '';
+        if (text == 'img') {
+            me.innerHTML = '<img src="' + hide + '" alt="hide" />';
+        } else {
+            me.innerHTML = '<span class="weaverx_showhide_hide">' + hide + '</span>';
+        }
+    }
+}
+
+
 (function( $ ){
 
   "use strict";
@@ -110,7 +135,7 @@
             $('#title-over-image').css('height', h_image + "px");
         }
     }
-    //$('#monitor-branding').html('h_title: ' + h_title + ' h_image: '  + h_image);
+    // $('#monitor-branding').html('Monitor #branding: h_title: ' + h_title + ' h_image: '  + h_image);
   };
 })( window.jQuery );
 
@@ -245,7 +270,7 @@ function wvrxFlowColor() {
 
 
 function weaverxWidgetEq(WdgtClass,AreaId) {
-//version 0.8 - 10 oct 2014
+//version 0.9 - 26 Nov 2014
 //-- added check for actual margin and presence of widget area, and fixed bottom margin eval
 //--use offsetxxx instead of clientxxx to account for borders
 //--Capture margin in its actual form not only pixel value
@@ -297,7 +322,7 @@ var WdgtArea = document.getElementById(AreaId);
 			var start = (0 + EqWdgt);
 			var end = ( WdgtInRow[i] + EqWdgt );
 			for( j = start ; j < end ; j++ ) {
-			  widget[j].style.minHeight = maxHeight + "px";
+			  widget[j].style.minHeight = (maxHeight+1) + "px";
 			  widget[j].style.marginBottom = ""; //Remove the zero bot margin in case it was set previously
 				if ( i == Rows ) {
                     if( noBotMargin ) {
@@ -346,12 +371,12 @@ function weaverxResizeEnd() {
 
     wvrxFlowColor();                               // fix Color Flow - must go after the weaverxWidgetEq calls.
 
-
     if (typeof( weaverxUserOnResize ) == 'function' ) // call user function if there
         weaverxUserOnResize();
 };
 
 // Invoke scripts
+
 jQuery(document).ready(function () {
 
     // need to run weaverxResizeEnd on doc ready for at least some browsers
@@ -419,6 +444,7 @@ function weaverxMonitorContent(class2Mon) {
 
 weaverxMonitorContent('.menu-type-accordion');
 weaverxMonitorContent('.menu-type-standard');
+weaverxMonitorContent('.header-image'); // need this to handle slow loading header image
 
 //Check is users have defined a function to monitor their own dynamic container
 

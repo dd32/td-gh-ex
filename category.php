@@ -12,7 +12,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
                 if ( have_posts() ) {
                     $title = '<span class="category-title-label">' .
-						sprintf( __( 'Category Archives: %s','weaverx'), '</span><span class="archive-info">' . single_cat_title( '', false ) . '</span>' );
+						sprintf( __( 'Category Archives: %s','weaver-xtreme'), '</span><span class="archive-info">' . single_cat_title( '', false ) . '</span>' );
                     ?>
 
 				<header class="page-header">

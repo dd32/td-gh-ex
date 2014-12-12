@@ -9,7 +9,19 @@
 	background-color:#F5FBEF;border: 1px solid #ccc;padding-left:20px;padding-right:20px;margin-left:20px;margin-right:20%;
 }
 
-input.color {border:1px solid yellow;}
+.i-left {float:left;font-size:14px;}
+.i-left-bg {float:left;font-size:16px;color:#70FF29;}
+.i-left-fg {float:left;font-size:16px;color:#290BBD;}
+
+a.anchorx {display: block; position: relative; top: -40px; visibility: hidden;} /* This makes the anchor above the content, so the title shows */
+
+.options-intro {text-align:center;margin:-10px auto -5px auto;font-size:90%;background-color:ivory;padding:4px 10px 4px 10px;border:1px solid green;max-width:90%;}
+.options-intro a{font-weight: bold;text-decoration:none;color:blue;}
+.options-intro-menu {text-align:center;}
+
+#wpcontent {background-color:#FFFFF8;color:black;}
+
+input.color {border:1px solid #2BFF1C;}
 
 select { font-size:12px;}
 
@@ -22,12 +34,12 @@ select { font-size:12px;}
 
 .font-italic a,
 .font-italic {
-    font-style:italic !important;
+    font-style:     italic !important;
 }
 /* =sans-serif -------------------------------------------------- */
 
 .font-sans-serif {
-    font-family: sans-serif;
+    font-family:    sans-serif;
 }
 
 .font-arial {

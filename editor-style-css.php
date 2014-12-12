@@ -25,8 +25,8 @@ if (($val=weaverx_mce_opt('fontsize'))) {
 	echo "label,th,thead th,tr,td,.mceContentBody,body{font-size:" . $val . "px;}\n";
 }
 
-if (($val=weaverx_mce_opt('twidth'))) {
-	echo "html .mceContentBody {width:" . $val . "px;}\n";
+if (($val = weaverx_mce_opt('twidth'))) {
+	echo "html .mceContentBody {max-width:96%;width:" . $val . "px;}\n";
 }
 
 if (($val=weaverx_mce_opt('fontfamily'))) {

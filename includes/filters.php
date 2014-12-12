@@ -1,4 +1,6 @@
 <?php
+if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+//  __ added - 12/11/14
 
 // ============================================= >>> CALLBACK: weaverx_page_menu <<< ======================================
 
@@ -36,7 +38,7 @@ function weaverx_page_menu( $args = array() ) {
 
 	// Show Home in the menu
 	if ( $args['show_home'] ) {
-		$text = __( 'Home', 'weaverx' );
+		$text = __( 'Home', 'weaver-xtreme' );
 
 		$class = '';
         if ( is_home() || is_front_page() ) $class = 'class="current_page_item"';
@@ -98,7 +100,8 @@ function weaverx_featured_image_info($text) {
     // Show additional information on the FI Admin box
 
 	return $text .
-'<p><small>Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.</small></p>';
+'<p><small>' .
+ __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.','weaver-xtreme') . '</small></p>';
 
 }
 //--
@@ -223,7 +226,7 @@ function weaverx_wp_title($title) {	// filter definition
 
 	/* Add a page number if necessary: */
 	if ( $paged >= 2 || $page >= 2 )
-		$t .= ' | ' . sprintf( __( 'Page %s','weaverx'), max( $paged, $page ) );
+		$t .= ' | ' . sprintf( __( 'Page %s','weaver-xtreme'), max( $paged, $page ) );
 
 	return $t;
 }
@@ -279,10 +282,10 @@ function weaverx_replace_widget_area_filter( $area_name ) {
 
         if ( ! is_active_sidebar( $replace ) ) {
 ?>
-        <h3>Notice: Widget Area Not Found: <em><?php echo $replace; ?></em></h3>
-        <p>You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
-        <em></em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
-        widgets to the area.</p>
+        <h3><?php _e('Notice: Widget Area Not Found:','weaver-xtreme'); ?> <em><?php echo $replace; ?></em></h3>
+        <p><?php _e('You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
+        <em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
+        widgets to the area.','weaver-xtreme'); ?></p>
 <?php
             return $area_name;
         }
@@ -407,9 +410,46 @@ function weaverx_mce_css($default_style) {
         $val = weaverx_getopt_default('container_font_family', 'default' );
     if ( $val == 'default' )
         $val = weaverx_getopt('wrapper_font_family');
-	if ( $val != 'default' )     	// found a font
-		$put .= '&fontfamily=' . urlencode($val);
+	if ( $val != 'default' ) {    	// found a font {
 
+        // these are not translatable - the values are used to define the actual font definition
+        $fonts = array(
+            'sans-serif' => 'Arial,sans-serif',
+            'arialBlack' => '"Arial Black",sans-serif',
+            'arialNarrow' => '"Arial Narrow",sans-serif',
+            'lucidaSans' => '"Lucida Sans",sans-serif',
+            'trebuchetMS' => '"Trebuchet MS", "Lucida Grande",sans-serif',
+            'verdana' => 'Verdana, Geneva,sans-serif',
+            'serif' => 'TimesNewRoman, "Times New Roman",serif',
+            'cambria' => 'Cambria,serif',
+            'garamond' => 'Garamond,serif',
+            'georgia' => 'Georgia,serif',
+            'lucidaBright' => '"Lucida Bright",serif',
+            'palatino' => '"Palatino Linotype",Palatino,serif',
+            'monospace' => '"Courier New",Courier,monospace',
+            'consolas' => 'Consolas,monospace',
+            'papyrus' => 'Papyrus,cursive,serif',
+            'comicSans' => '"Comic Sans MS",cursive,serif'
+            );
+
+        if ( isset($fonts[$val]) ) {
+            $font = $fonts[$val];
+        } else {
+            $font = "Arial,'Helvetica Neue',Helvetica,sans-serif";   // fallback
+            // scan Google Fonts
+            $gfonts = weaverx_getopt_array('fonts_added');
+            if ( !empty($gfonts) ) {
+                foreach ($gfonts as $gfont) {
+                    $slug = sanitize_title($gfont['name']);
+                    if ( $slug == $val ) {
+                        $font = str_replace('font-family:','',$gfont['family']);//'Papyrus';
+                        break;
+                    }
+                }
+            }
+        }
+		$put .= '&fontfamily=' . urlencode($font);
+	}
 
 	/* need to handle bg color of content area - need to do the cascade ourself */
 	if ( ($val = weaverx_getopt('editor_bgcolor')) && strcasecmp($val,'transparent') != 0) {	        /* alt bg color */

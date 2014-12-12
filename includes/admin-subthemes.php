@@ -2,59 +2,46 @@
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /* Weaver Xtreme - admin Subtheme
  *
+ *  __ added - 12/10/14
  * This is the intro form. It won't have any options because it will be outside the main form
  */
 
 function weaverx_admin_subthemes() {
 
-?>
 
-<h3>Predefined Weaver Xtreme Subthemes
-<?php weaverx_help_link('help.html#PredefinedThemes','Help for Weaver Xtreme Predefined Themes');?>
-<small style="font-weight:normal;font-size:10px;">&nbsp;&larr; You can click the ?'s found throughout Weaver Xtreme admin pages for context specific help.</small></h3>
-<b>Welcome to Weaver X</b>
+    weaverx_tab_title(__('Predefined Weaver Xtreme Subthemes','weaverx_axtreme'), 'help.html#PredefinedThemes', __('Help for Weaver Xtreme Predefined Themes','weaver-xtreme')); ?>
+<small style="font-weight:normal;font-size:10px;"><?php _e('You can click the ?\'s found throughout Weaver Xtreme admin pages for context specific help.','weaver-xtreme');?></small>
 
-<p>Weaver Xtreme gives you extreme control of your WordPress blog appearance using the
+<?php _e('<h4>Welcome to Weaver X</h4>','weaver-xtreme');?>
+
+<?php _e('<p>Weaver Xtreme gives you extreme control of your WordPress blog appearance using the
 different admin tabs here. This tab lets you get a quick start by picking one of the many
-predefined subthemes. Once you've picked a starter theme, use the <em>Main Options</em> and <em>Advanced Options</em>
-tabs to tweak the theme to be whatever you like. After you have a theme you're happy with,
-you can save it from the Save/Restore tab. The <em>Help</em> tab has much more <b>useful</b> information.</p>
+predefined subthemes. Once you\'ve picked a starter theme, use the <em>Main Options</em> and <em>Advanced Options</em>
+tabs to tweak the theme to be whatever you like. After you have a theme you\'re happy with,
+you can save it from the Save/Restore tab. The <em>Help</em> tab has much more <b>useful</b> information.</p>','weaver-xtreme');?>
 
 
-<?php
-	do_action('weaverx_child_show_extrathemes');
-	do_action('weaverxplus_admin','show_subthemes');
-    if (false) {
-?>
-<h3 class="atw-option-subheader" style="color:red;font-style:italic">Visit our
-<?php weaverx_site('/subthemes/'); ?>website</a> for even more great looking subthemes!</h3>
-<table><tr><td><img src="<?php echo esc_url(weaverx_relative_url('/assets/images/') . 'addon_themes.png'); ?>" alt="addons" /></td>
-<td><p style="margin-left:10px;">All the subthemes included here provide a great starting point, but we're trying hard to make even more great looking subthemes available for you to try. Click to check out our
-<?php weaverx_site('/subthemes/'); ?><strong>Subthemes</strong></a> page now on the main Weaver Xtreme website.
-</p></td></tr></table>
-<?php
-} // hide subthemes
-?>
-
-<h3 class="atw-option-subheader"><span style="color:black;padding:.2em;" class="dashicons dashicons-images-alt2"></span>Get started by trying one of the predefined subthemes!</h3>
+<h3 class="atw-option-subheader"><span style="color:black;padding:.2em;" class="dashicons dashicons-images-alt2"></span>
+<?php _e('Get started by trying one of the predefined subthemes!','weaver-xtreme');?>
+</h3>
 <?php
 	$theme_dir = trailingslashit(WP_CONTENT_DIR) . 'themes/' . get_template() . '/subthemes/';
 	$theme_list = array();
 	if ( $media_dir = opendir($theme_dir) ) {	    // build the list of themes from directory
-	while ( $m_file = readdir($media_dir) ) {
-		$len = strlen($m_file);
-		$base = substr( $m_file, 0, $len-4 );
-		$ext = $len > 4 ? substr( $m_file, $len-4, 4 ) : '';
-		if ( $ext == '.wxt' ) {
-		$theme_list[] = $base;
-		}
-	}
+        while ( $m_file = readdir($media_dir) ) {
+            $len = strlen($m_file);
+            $base = substr( $m_file, 0, $len-4 );
+            $ext = $len > 4 ? substr( $m_file, $len-4, 4 ) : '';
+            if ( $ext == '.wxt' ) {
+                $theme_list[] = $base;
+            }
+        }
 	}
 
 	if (!empty($theme_list)) {
-	weaverx_st_pick_theme($theme_list);	// show the theme picker
+        weaverx_st_pick_theme($theme_list);	// show the theme picker
 	} else {
-	echo "<h3>WARNING: Your version of Weaver Xtreme is likely installed incorrectly. Unable to find subtheme definitions.</h3>\n";
+         _e("<h3>WARNING: Your version of Weaver Xtreme is likely installed incorrectly. Unable to find subtheme definitions.</h3>\n",'weaver-xtreme');
 	}
 }
 
@@ -66,8 +53,8 @@ function weaverx_st_pick_theme($list_in) {
 	if ( !$cur_theme ) $cur_theme = WEAVERX_DEFAULT_THEME;	// the default theme
 ?>
 <form enctype="multipart/form-data" name='pick_theme' method='post'>
-	&nbsp;&nbsp;<strong>Click a Radio Button below to select a subtheme: &nbsp;</strong>
-	<span style="padding-left:100px;">Current theme: <strong>
+	&nbsp;&nbsp;<strong><?php _e('Click a Radio Button below to select a subtheme:','weaver-xtreme');?> &nbsp;</strong>
+	<span style="padding-left:100px;"><?php _e('Current theme:','weaver-xtreme');?> <strong>
 <?php
 	$cur_addon = weaverx_getopt('addon_name');
 	if ($cur_addon == '') {
@@ -79,10 +66,9 @@ function weaverx_st_pick_theme($list_in) {
 ?>
 	</strong></span>
 
-	<br /><br /><span class='submit'><input name="set_subtheme" type="submit" value="Set to Selected Subtheme" /></span>&nbsp;
-	<small style="color:#b00;"><br /><strong>Note:</strong> Selecting a new subtheme will change only theme related settings.
-    Options labelled with (&diams;) will be retained.
-	You can use the Save/Restore tab to save a copy of all your current settings first.</small><br /><br />
+	<br /><br /><span class='submit'><input name="set_subtheme" type="submit" value="<?php _e('Set to Selected Subtheme','weaver-xtreme');?>" /></span>
+	<small style="color:#b00;"><br /><?php _e('<strong>Note:</strong> Selecting a new subtheme will change only theme related settings.
+    Options labelled with (&diams;) will be retained. You can use the Save/Restore tab to save a copy of all your current settings first.','weaver-xtreme');?></small><br /><br />
 <?php
 	weaverx_nonce_field('set_subtheme');
 
@@ -105,7 +91,7 @@ function weaverx_st_pick_theme($list_in) {
 	if (! weaverx_getopt_checked('_hide_theme_thumbs')) {
         weaverx_clear_both();
 ?>
-	<span class='submit' style='padding-top:6px;'><input name="set_subtheme" type="submit" value="Set to Selected Subtheme" /></span>
+	<span class='submit' style='padding-top:6px;'><input name="set_subtheme" type="submit" value="<?php _e('Set to Selected Subtheme','weaver-xtreme');?>" /></span>
 <?php
 	}
 ?>
@@ -115,13 +101,17 @@ function weaverx_st_pick_theme($list_in) {
 
 	<form enctype="multipart/form-data" name='hide_thumbs_form' method='post'>
 <?php
-	$hide_msg =  (weaverx_getopt('_hide_theme_thumbs')) ? 'Show Subtheme Thumbnails' : 'Hide Subtheme Thumbnails';
+	$hide_msg =  (weaverx_getopt('_hide_theme_thumbs')) ? __('Show Subtheme Thumbnails','weaver-xtreme') :
+    __('Hide Subtheme Thumbnails','weaver-xtreme');
 ?>
 	<input name="hide_thumbs" type="submit" value="<?php echo $hide_msg; ?>" />
 <?php	weaverx_nonce_field('hide_thumbs'); ?>
 	</form>
 	<div style="clear:both;"></div>
+    <hr />
 <?php
+    do_action('weaverx_child_show_extrathemes');
+	do_action('weaverxplus_admin','show_subthemes');
 }
 
 function weaverx_process_options_themes() {
@@ -131,17 +121,17 @@ function weaverx_process_options_themes() {
             $theme = weaverx_filter_textarea($_POST['theme_picked']);
 
             if (weaverx_activate_subtheme($theme))
-                weaverx_save_msg(wvr__("Subtheme Selected: ") . $theme );
+                weaverx_save_msg(__("Subtheme Selected: ",'weaver-xtreme') . $theme );
             else
-                weaverx_save_msg(wvr__("Invalid Subtheme file detected. Your installation of Weaver Xtreme may be broken."));
+                weaverx_save_msg(__("Invalid Subtheme file detected. Your installation of Weaver Xtreme may be broken.",'weaver-xtreme'));
         } else {
-            weaverx_save_msg(wvr__("Please select a subtheme."));
+            weaverx_save_msg(__("Please select a subtheme.",'weaver-xtreme'));
         }
         return true;
 	}
 
 	if (weaverx_submitted('save_mytheme')) {	// invoked from Save/Restore tab
-        weaverx_save_msg(wvr__("Current settings saved in WordPress database."));
+        weaverx_save_msg(__("Current settings saved in WordPress database.",'weaver-xtreme'));
         global $weaverx_opts_cache;
         if (!$weaverx_opts_cache)
             $weaverx_opts_cache = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
@@ -161,7 +151,7 @@ function weaverx_process_options_themes() {
             $weaverx_opts_cache = $saved;
             weaverx_wpupdate_option('weaverx_settings',$weaverx_opts_cache);
         }
-        weaverx_save_msg(wvr__("Current settings restored from WordPress database."));
+        weaverx_save_msg(__("Current settings restored from WordPress database.",'weaver-xtreme'));
         return true;
 	}
 

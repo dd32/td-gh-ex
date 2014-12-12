@@ -24,7 +24,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	if ( post_password_required() ) { ?>
 
-		<p class="nopassword"><?php echo __( 'This post is password protected. Enter the password to view any comments.','weaverx'); ?></p>
+		<p class="nopassword"><?php echo __( 'This post is password protected. Enter the password to view any comments.','weaver-xtreme'); ?></p>
 <?php
 	/* Stop the rest of comments.php from being processed,
 	 * but don't kill the script entirely -- we still have
@@ -46,7 +46,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
         $ct_class = ( $c_count < 1 ) ? ' class="no-comments-made"' : '';
 ?>
 		<header id="comments-title"<?php echo $ct_class;?>>
-		<h3><?php echo __('Comments','weaverx'); ?></h3>
+		<h3><?php echo __('Comments','weaver-xtreme'); ?></h3>
 				<h4>
 <?php		printf("<em>%s</em> &#8212; ",get_the_title()); comments_number(); /* em-dash */ ?>
 		</h4>
@@ -54,9 +54,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { // are there comments to navigate through ?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaverx'); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaverx') ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaverx') ); ?></div>
+			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaver-xtreme'); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaver-xtreme') ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaver-xtreme') ); ?></div>
 		</nav>
 		<?php } // check for comment navigation ?>
 
@@ -74,9 +74,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaverx'); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaverx') ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaverx') ); ?></div>
+			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaver-xtreme'); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaver-xtreme') ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaver-xtreme') ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -92,7 +92,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		 * But we don't want the note on pages or post types that do not support comments.
 		 */
 	?>
-		<p class="nocomments"><?php echo __( 'Comments are closed.','weaverx'); ?></p>
+		<p class="nocomments"><?php echo __( 'Comments are closed.','weaver-xtreme'); ?></p>
 <?php
 	}
 ?>

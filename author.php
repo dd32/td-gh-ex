@@ -22,7 +22,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
          */
         the_post();
 
-        $title = '<span class="author-title-label">' .  sprintf( __( 'Author Archives: %s','weaverx') ,
+        $title = '<span class="author-title-label">' .  sprintf( __( 'Author Archives: %s','weaver-xtreme') ,
                 '</span><span class="vcard archive-info"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) .
                 '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?>
 

@@ -1,12 +1,17 @@
 <?php
+/* Display per page and per post options.
+ *
+ *  __ added - 12/10/14
+ */
+
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 // Admin panel that gets added to the page edit page for per page options
 
 add_action('admin_menu', 'weaverx_add_page_fields');
 
 function weaverx_add_page_fields() {
-	add_meta_box('page-box', 'Weaver Xtreme Options For This Page (Per Page Options)', 'weaverx_page_extras', 'page', 'normal', 'high');
-	add_meta_box('post-box', 'Weaver Xtreme Options For This Post (Per Post Options)', 'weaverx_post_extras', 'post', 'normal', 'high');
+	add_meta_box('page-box', __('Weaver Xtreme Options For This Page (Per Page Options)','weaver-xtreme'), 'weaverx_page_extras', 'page', 'normal', 'high');
+	add_meta_box('post-box', __('Weaver Xtreme Options For This Post (Per Post Options)','weaver-xtreme'), 'weaverx_post_extras', 'post', 'normal', 'high');
     global $post;
 	$opts = get_option( apply_filters('weaverx_options','weaverx_settings') , array());	// need to fetch Weaver Xtreme options
     if (isset($opts['_show_per_post_all']) && $opts['_show_per_post_all']) {
@@ -14,7 +19,7 @@ function weaverx_add_page_fields() {
         $args=array( 'public'   => true, '_builtin' => false );
         $post_types=get_post_types($args,'names','and');
         foreach ($post_types  as $post_type ) {
-            add_meta_box('post-box' . $i, 'Weaver Xtreme Options For This Post', 'weaverx_post_extras', $post_type, 'normal', 'high');
+            add_meta_box('post-box' . $i, __('Weaver Xtreme Options For This Post','weaver-xtreme'), 'weaverx_post_extras', $post_type, 'normal', 'high');
             $i++;
         }
     }
@@ -38,21 +43,21 @@ function weaverx_page_checkbox($opt, $msg, $width = 33, $br = 0) {
 function weaverx_page_layout( $page = 'page' ) {
 
     if ( $page == 'page')
-        $msg = wvr__('Select <em>Sidebar Layout</em> for this page - overrides default Page layout.');
+        $msg = __('Select <em>Sidebar Layout</em> for this page - overrides default Page layout.','weaver-xtreme');
     else
-        $msg = wvr__('Select Single Page View <em>Sidebar Layout</em> for this post - overrides default Single View layout.');
+        $msg = __('Select Single Page View <em>Sidebar Layout</em> for this post - overrides default Single View layout.','weaver-xtreme');
 
     $opts = array( 'id' => '_pp_page_layout',
         'info' => $msg,
         'value' => array(
-            array('val' => '', 'desc' => wvr__('Use Default') ),
-            array('val' => 'right', 'desc' => wvr__('Sidebars on Right') ),
-            array('val' => 'right-top', 'desc' => wvr__('Sidebars on Right (stack top)') ),
-            array('val' => 'left', 'desc' => wvr__('Sidebars on Left') ),
-            array('val' => 'left-top', 'desc' => wvr__('Sidebars on Left (stack top)') ),
-            array('val' => 'split', 'desc' => wvr__('Split - Sidebars on Right and Left') ),
-            array('val' => 'split-top', 'desc' => wvr__('Split (stack top)') ),
-            array('val' => 'one-column', 'desc' => wvr__('No sidebars, content only') )
+            array('val' => '', 'desc' => __('Use Default','weaver-xtreme') ),
+            array('val' => 'right', 'desc' => __('Sidebars on Right','weaver-xtreme') ),
+            array('val' => 'right-top', 'desc' => __('Sidebars on Right (stack top)','weaver-xtreme') ),
+            array('val' => 'left', 'desc' => __('Sidebars on Left','weaver-xtreme') ),
+            array('val' => 'left-top', 'desc' => __('Sidebars on Left (stack top)','weaver-xtreme') ),
+            array('val' => 'split', 'desc' => __('Split - Sidebars on Right and Left','weaver-xtreme') ),
+            array('val' => 'split-top', 'desc' => __('Split (stack top)','weaver-xtreme') ),
+            array('val' => 'one-column', 'desc' => __('No sidebars, content only','weaver-xtreme') )
 	));
     weaverx_pp_select_id($opts);
 }
@@ -124,11 +129,14 @@ if ( function_exists( 'atw_showposts_installed' ) ) {
             echo '<option value="' . $filter .'" ' . selected(get_post_meta($post->ID, '_pp_post_filter', true) == $filter) . '>' . $val['name'] . '</option>';
         }
     }
-    echo '</select>&nbsp;Use a Filter from <em>ATW Show Posts Plugin</em> <strong>instead</strong> of above post selection options.<br /> ' .
-    '<span style="margin-left:8em;"><span>(Note: ATW Show Posts <em>Post Display</em> options and <em>Use Paging</em> option <strong>not</strong> used for posts using this filter.)<br />' . '<br />';
+    echo '</select>&nbsp;' .
+__('Use a Filter from <em>ATW Show Posts Plugin</em> <strong>instead</strong> of above post selection options.','weaver-xtreme') .
+'<br /> <span style="margin-left:8em;"><span>' .
+__('(Note: ATW Show Posts <em>Post Display</em> options and <em>Use Paging</em> option <strong>not</strong> used for posts using this filter.)','weaver-xtreme') .
+'<br />' . '<br />';
 } else {
-?>
-<strong>Want More Post Filtering Options?</strong> Install the <em>Aspen Themeworks Show Posts</em> plugin for more filtering options.<br /><br />
+_e('<strong>Want More Post Filtering Options?</strong> Install the <em>Aspen Themeworks Show Posts</em> plugin for more filtering options.','weaver-xtreme'); ?>
+<br /><br />
 <?php }
 }
 //--
@@ -136,14 +144,14 @@ if ( function_exists( 'atw_showposts_installed' ) ) {
 
 
 function weaverx_pwp_type() {
-    $opts = array( 'name' => 'Display posts as:', 'id' => '_pp_wvrx_pwp_type',
-        'info' => wvr__('How to display posts on this Page with Posts (Default: global Full Post/Excerpt setting)'),
+    $opts = array( 'name' => __('Display posts as:','weaver-xtreme'), 'id' => '_pp_wvrx_pwp_type',
+        'info' => __('How to display posts on this Page with Posts (Default: global Full Post/Excerpt setting)','weaver-xtreme'),
         'value' => array(
-            array('val' => '', 'desc' => wvr__('&nbsp;') ),
-            array('val' => 'full', 'desc' => wvr__('Full post') ),
-            array('val' => 'excerpt', 'desc' => wvr__('Excerpt') ),
-            array('val' => 'title', 'desc' => wvr__('Title only') ),
-            array('val' => 'title_featured', 'desc' => wvr__('Title + Featured Image') )
+            array('val' => '', 'desc' => '&nbsp;' ),
+            array('val' => 'full', 'desc' => __('Full post','weaver-xtreme') ),
+            array('val' => 'excerpt', 'desc' => __('Excerpt','weaver-xtreme') ),
+            array('val' => 'title', 'desc' => __('Title only','weaver-xtreme') ),
+            array('val' => 'title_featured', 'desc' => __('Title + Featured Image','weaver-xtreme') )
 	));
     weaverx_pp_select_id($opts);
 }
@@ -151,35 +159,35 @@ function weaverx_pwp_type() {
 
 function weaverx_pwp_cols() {
 
-    $opts = array( 'name' => 'Display post columns: ', 'id' => '_pp_wvrx_pwp_cols',
-        'info' => wvr__('Display posts in this many columns - left to right, then top to bottom'),
+    $opts = array( 'name' => __('Display post columns:','weaver-xtreme'), 'id' => '_pp_wvrx_pwp_cols',
+        'info' => __('Display posts in this many columns - left to right, then top to bottom','weaver-xtreme'),
         'value' => array(
-            array('val' => '', 'desc' => wvr__('&nbsp;') ),
-            array('val' => '1', 'desc' => wvr__('One Column') ),
-            array('val' => '2', 'desc' => wvr__('Two Columns') ),
-            array('val' => '3', 'desc' => wvr__('Three Columns') ) )
+            array('val' => '', 'desc' => '&nbsp;'),
+            array('val' => '1', 'desc' => __('One Column','weaver-xtreme') ),
+            array('val' => '2', 'desc' => __('Two Columns','weaver-xtreme') ),
+            array('val' => '3', 'desc' => __('Three Columns','weaver-xtreme') ) )
         );
     weaverx_pp_select_id($opts);
 
     weaverx_html_br();
 
-    $opts2 = array( 'name' => 'Use <em>Masonry</em> columns:', 'id' => '_pp_pwp_masonry',
-        'info' => wvr__('Use <em>Masonry</em> for multi-column display'),
+    $opts2 = array( 'name' => __('Use <em>Masonry</em> columns:','weaver-xtreme'), 'id' => '_pp_pwp_masonry',
+        'info' => __('Use <em>Masonry</em> for multi-column display','weaver-xtreme'),
         'value' => array(
-            array('val' => '', 'desc' => wvr__('&nbsp;') ),
-            array('val' => '1', 'desc' => wvr__('One Column') ),
-            array('val' => '2', 'desc' => wvr__('Two Columns') ),
-            array('val' => '3', 'desc' => wvr__('Three Columns') ),
-            array('val' => '4', 'desc' => wvr__('Four Columns') ),
-            array('val' => '5', 'desc' => wvr__('Five Columns') ) )
+            array('val' => '', 'desc' => '&nbsp;' ),
+            array('val' => '1', 'desc' => __('One Column','weaver-xtreme') ),
+            array('val' => '2', 'desc' => __('Two Columns','weaver-xtreme') ),
+            array('val' => '3', 'desc' => __('Three Columns','weaver-xtreme') ),
+            array('val' => '4', 'desc' => __('Four Columns','weaver-xtreme') ),
+            array('val' => '5', 'desc' => __('Five Columns','weaver-xtreme') ) )
         );
     weaverx_pp_select_id($opts2);
 
 ?>
 	<br />
 <?php
-	weaverx_page_checkbox('_pp_pwp_compact', 'For posts with <em>Post Format</em> specified, use compact layout on blog/archive pages.',90,1);
-	weaverx_page_checkbox('_pp_pwp_compact_posts', 'For regular, <em>non-PostFormats</em> posts, show <em>title + first image</em> on blog pages.',90,1);
+	weaverx_page_checkbox('_pp_pwp_compact', __('For posts with <em>Post Format</em> specified, use compact layout on blog/archive pages.','weaver-xtreme'),90,1);
+	weaverx_page_checkbox('_pp_pwp_compact_posts', __('For regular, <em>non-PostFormats</em> posts, show <em>title + first image</em> on blog pages.','weaver-xtreme'),90,1);
 }
 
 function weaverx_page_extras() {
@@ -192,70 +200,75 @@ function weaverx_page_extras() {
 		|| (current_user_can('edit_posts') && !isset($opts['_hide_author_per'])))    // Author/Contributor
 	) {
         if (isset($opts['_show_per_post_all']) && $opts['_show_per_post_all'])
-         echo '<p>You can enable Weaver Xtreme Per Page Options for Custom Post Types on the Weaver X:Advanced Options:Admin Options tab.</p>';
+            echo '<p>' .
+__('You can enable Weaver Xtreme Per Page Options for Custom Post Types on the Weaver X:Advanced Options:Admin Options tab.','weaver-xtreme') .
+        '</p>';
         else
-            echo '<p>Weaver Xtreme Per Page Options not available for your User Role.</p>';
+            echo '<p>' . __('Weaver Xtreme Per Page Options not available for your User Role.','weaver-xtreme') . '</p>';
 		return;	// don't show per post panel
 	   }
 
 	echo("<div style=\"line-height:150%;\"><p>\n");
 	if (get_the_ID() == get_option( 'page_on_front' ) ) { ?>
-<div style="padding:2px; border:2px solid yellow; background:#FF8;">Information: This page has been set
-to serve as your front page in the <em>Dashboard:Settings:Reading</em> 'Front page:' option.
+<div style="padding:2px; border:2px solid yellow; background:#FF8;">
+<?php _e('Information: This page has been set to serve as your front page in the <em>Dashboard:Settings:Reading</em> \'Front page:\' option.','weaver-xtreme'); ?>
 </div><br />
 <?php
     }
 
     if (get_the_ID() == get_option( 'page_for_posts' ) ) { ?>
-<div style="padding:2px; border:2px solid red; background:#FAA;"><strong>WARNING!</strong> You have the
-<em>Dashboard:Settings:Reading</em> 'Posts page:' option set to this page. You may intend to do this, but
-note this means that <em>only</em> this page's Title will be used
+<div style="padding:2px; border:2px solid red; background:#FAA;">
+<?php _e('<strong>WARNING!</strong>
+You have the <em>Dashboard:Settings:Reading Posts page:</em> option set to this page.
+You may intend to do this, but note this means that <em>only</em> this page\'s Title will be used
 on the default WordPress blog page, and any content you may have entered above is <em>not</em> used.
 If you want this page to serve as your blog page, and enable Weaver Xtreme Per Page options,
 including the option of using the Page with Posts page template,
-then that Reading:'Posts page:' selection <strong><em>must</em></strong> be set to the '&mdash; Select &mdash;' default value.
+then the <em>Settings:Reading:Posts page</em> selection <strong>must</strong> be set to
+the <em></em>&mdash; Select &mdash;</em> default value.','weaver-xtreme'); ?>
 </div><br />
 <?php
-            return;
+        return;
     }
-	echo("<strong>Page Templates</strong>");
-	weaverx_help_link('help.html#PageTemplates',wvr__('Help for Weaver Xtreme Page Templates'));
-	echo '<span style="float:right;">(This Page\'s ID: '; the_ID() ; echo ')</span>';
+	echo '<strong>' . __('Page Templates','weaver-xtreme') . '</strong>';
+	weaverx_help_link('help.html#PageTemplates',__('Help for Weaver Xtreme Page Templates','weaver-xtreme'));
+	echo '<span style="float:right;">(' . __('This Page\'s ID: ','weaver-xtreme'); the_ID() ; echo ')</span>';
 	weaverx_html_br();
-	echo('Please click the (?) for more information about all the Weaver Xtreme Page Templates.');
-	echo("</p><p>\n");
-	echo("<strong>Per Page Options</strong>");
-	weaverx_help_link('help.html#optsperpage', wvr__('Help for Per Page Options'));
+	_e('Please click the (?) for more information about all the Weaver Xtreme Page Templates.','weaver-xtreme');
+    weaverx_html_br();
+	echo '<strong>' . __('Per Page Options','weaver-xtreme') . '</strong>';
+	weaverx_help_link('help.html#optsperpage', __('Help for Per Page Options','weaver-xtreme'));
 	weaverx_html_br();
-	echo("These settings let you hide various elements on a per page basis.");
+	_e('These settings let you hide various elements on a per page basis.','weaver-xtreme');
 	weaverx_html_br();
 
 
-	weaverx_page_checkbox('_pp_hide_site_title',wvr__('Hide Site Title/Tagline'));
-	weaverx_page_checkbox('_pp_hide_header_image',wvr__('Hide Standard Header Image'));
-	weaverx_page_checkbox('_pp_hide_header',wvr__('Hide Entire Header'), 33, 1);
+	weaverx_page_checkbox('_pp_hide_site_title',__('Hide Site Title/Tagline','weaver-xtreme'));
+	weaverx_page_checkbox('_pp_hide_header_image',__('Hide Standard Header Image','weaver-xtreme'));
+	weaverx_page_checkbox('_pp_hide_header',__('Hide Entire Header','weaver-xtreme'), 33, 1);
 
-    weaverx_page_checkbox('_pp_hide_menus',wvr__('Hide Menus'));
-	weaverx_page_checkbox('_pp_hide_page_infobar',wvr__('Hide Info Bar on this page'));
-	weaverx_page_checkbox('_pp_hide_footer',wvr__('Hide Entire Footer'),33,1);
-
-
-	weaverx_page_checkbox('_pp_hide_page_title',wvr__('Hide Page Title'),33,2);
-
-	echo '<em>Note:</em> the following options work with the default menu - not custom menus.<br>';
-	weaverx_page_checkbox('_pp_hide_on_menu',wvr__('Hide Page on the default Primary Menu'),90,1);
+    weaverx_page_checkbox('_pp_hide_menus',__('Hide Menus','weaver-xtreme'));
+	weaverx_page_checkbox('_pp_hide_page_infobar',__('Hide Info Bar on this page','weaver-xtreme'));
+	weaverx_page_checkbox('_pp_hide_footer',__('Hide Entire Footer','weaver-xtreme'),33,1);
 
 
-	weaverx_page_checkbox('_pp_stay_on_page',wvr__('Menu "Placeholder" page. Useful for top-level menu item - don\'t go anywhere when menu item is clicked.'),90,2);
+	weaverx_page_checkbox('_pp_hide_page_title',__('Hide Page Title','weaver-xtreme'),33,2);
 
-	weaverx_page_checkbox('_pp_hide_visual_editor',wvr__('Disable Visual Editor for this page. Useful if you enter simple HTML or other code.'),90,1);
+	_e('<em>Note:</em> the following options work with the default menu - not custom menus.','weaver-xtreme');
+    weaverx_html_br();
+	weaverx_page_checkbox('_pp_hide_on_menu',__('Hide Page on the default Primary Menu','weaver-xtreme'),90,1);
+
+
+	weaverx_page_checkbox('_pp_stay_on_page',__('Menu "Placeholder" page. Useful for top-level menu item - don\'t go anywhere when menu item is clicked.','weaver-xtreme'),90,2);
+
+	weaverx_page_checkbox('_pp_hide_visual_editor',__('Disable Visual Editor for this page. Useful if you enter simple HTML or other code.','weaver-xtreme'),90,1);
 
 	if (weaverx_allow_multisite()) {
-		weaverx_page_checkbox('_pp_raw_html',wvr__('Allow Raw HTML and scripts. Disables auto paragraph, texturize, and other processing.'),90,1);
+		weaverx_page_checkbox('_pp_raw_html',__('Allow Raw HTML and scripts. Disables auto paragraph, texturize, and other processing.','weaver-xtreme'),90,1);
 	}
 
 ?>
-	<p><strong>Sidebars &amp; Widgets</strong></p>
+	<p><strong><?php _e('Sidebars &amp; Widgets','weaver-xtreme'); ?></strong></p>
 
 <?php
     weaverx_page_layout();
@@ -263,47 +276,48 @@ then that Reading:'Posts page:' selection <strong><em>must</em></strong> be set 
 <br />
     <input type="text" size="4" id="_pp_category" name="_pp_sidebar_width"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_sidebar_width", true)); ?>" />
-	<?php echo("% &nbsp;- <em>Sidebar Width</em> - Per Page Sidebar width (applies to all layouts)"); ?> <br /><br />
+	<?php _e('% &nbsp;- <em>Sidebar Width</em> - Per Page Sidebar width (applies to all layouts)','weaver-xtreme'); ?> <br /><br />
 <?php
 
-	weaverx_page_checkbox('_pp_primary-widget-area',wvr__('Hide Primary Sidebar'),40);
-	weaverx_page_checkbox('_pp_secondary-widget-area',wvr__('Hide Secondary Sidebar'),40,1);
+	weaverx_page_checkbox('_pp_primary-widget-area',__('Hide Primary Sidebar','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_secondary-widget-area',__('Hide Secondary Sidebar','weaver-xtreme'),40,1);
 
-	weaverx_page_checkbox('_pp_sitewide-top-widget-area',wvr__('Hide Sitewide Top Area'),40);
-	weaverx_page_checkbox('_pp_sitewide-bottom-widget-area',wvr__('Hide Sitewide Bottom Area'),40,1);
+	weaverx_page_checkbox('_pp_sitewide-top-widget-area',__('Hide Sitewide Top Area','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_sitewide-bottom-widget-area',__('Hide Sitewide Bottom Area','weaver-xtreme'),40,1);
 
-    weaverx_page_checkbox('_pp_top-widget-area',wvr__('Hide Pages Top Area'),40);
-	weaverx_page_checkbox('_pp_bottom-widget-area',wvr__('Hide Pages Bottom Area'),40,1);
+    weaverx_page_checkbox('_pp_top-widget-area',__('Hide Pages Top Area','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_bottom-widget-area',__('Hide Pages Bottom Area','weaver-xtreme'),40,1);
 ?>
 
-    <p><strong>Widget Area Replacements</strong></p>
-    <p>Select extra widget areas to replace the default widget areas for this page.
-    You can define extra widget areas on the bottom of the <em>Main Options &rarr; Sidebars &amp; Layout</em> tab.
+    <p><strong><?php _e('Widget Area Replacements','weaver-xtreme'); ?></strong></p>
+    <p>
+<?php _e('Select extra widget areas to replace the default widget areas for this page.
+You can define extra widget areas on the bottom of the <em>Main Options &rarr; Sidebars &amp; Layout</em> tab.','weaver-xtreme'); ?>
     </p>
 <?php
-    weaverx_pp_replacement( 'Primary Sidebar' , 'primary-widget-area' );
-    weaverx_pp_replacement( 'Secondary Sidebar' , 'secondary-widget-area' );
+    weaverx_pp_replacement( __('Primary Sidebar','weaver-xtreme') , 'primary-widget-area' );
+    weaverx_pp_replacement( __('Secondary Sidebar','weaver-xtreme') , 'secondary-widget-area' );
 
-    weaverx_pp_replacement( 'Header Widget Area' , 'header-widget-area' );
-    weaverx_pp_replacement( 'Footer Widget Area' , 'footer-widget-area' );
+    weaverx_pp_replacement( __('Header Widget Area','weaver-xtreme') , 'header-widget-area' );
+    weaverx_pp_replacement( __('Footer Widget Area','weaver-xtreme') , 'footer-widget-area' );
 
-    weaverx_pp_replacement( 'Sitewide Top Widget Area' , 'sitewide-top-widget-area' );
-    weaverx_pp_replacement( 'Sitewide Bottom Widget Area' , 'sitewide-bottom-widget-area' );
+    weaverx_pp_replacement( __('Sitewide Top Widget Area','weaver-xtreme') , 'sitewide-top-widget-area' );
+    weaverx_pp_replacement( __('Sitewide Bottom Widget Area','weaver-xtreme') , 'sitewide-bottom-widget-area' );
 
-    weaverx_pp_replacement( 'Pages Top Widget Area' , 'page-top-widget-area' );
-    weaverx_pp_replacement( 'Pages Bottom Widget Area' , 'page-bottom-widget-area' );
+    weaverx_pp_replacement( __('Pages Top Widget Area','weaver-xtreme') , 'page-top-widget-area' );
+    weaverx_pp_replacement( __('Pages Bottom Widget Area','weaver-xtreme') , 'page-bottom-widget-area' );
 ?>
-    <br style="clear:both;" /><p><strong>Featured Image</strong></p>
+    <br style="clear:both;" /><p><strong><?php _e('Featured Image','weaver-xtreme'); ?></strong></p>
 <?php
     $opts3 = array(  'id' => '_pp_fi_location',
-        'info' => wvr__('How to display Page FI on this page'),
+        'info' => __('How to display Page FI on this page','weaver-xtreme'),
         'value' => array(
-            array('val' => '', 'desc' => wvr__('Default Page FI') ),
-            array('val' => 'content-top', 'desc' => wvr__('With Content - top') ),
-            array('val' => 'content-bottom', 'desc' => wvr__('With Content - bottom') ),
-            array('val' => 'title-before', 'desc' => wvr__('Before Title') ),
-            array('val' => 'header-image', 'desc' => wvr__('Header Image Replacement') ),
-            array('val' => 'hide', 'desc' => wvr__('Hide FI on this Page') )
+            array('val' => '', 'desc' => __('Default Page FI','weaver-xtreme') ),
+            array('val' => 'content-top', 'desc' => __('With Content - top','weaver-xtreme') ),
+            array('val' => 'content-bottom', 'desc' => __('With Content - bottom','weaver-xtreme') ),
+            array('val' => 'title-before', 'desc' => __('Before Title','weaver-xtreme') ),
+            array('val' => 'header-image', 'desc' => __('Header Image Replacement','weaver-xtreme') ),
+            array('val' => 'hide', 'desc' => __('Hide FI on this Page','weaver-xtreme') )
             )
         );
     weaverx_pp_select_id($opts3);
@@ -311,59 +325,60 @@ then that Reading:'Posts page:' selection <strong><em>must</em></strong> be set 
 <br />
 <input type="text" size="30" id='_pp_fi_link' name='_pp_fi_link'
 	value="<?php echo esc_textarea(get_post_meta($post->ID, '_pp_fi_link', true)); ?>" />
-	<?php echo("<em>Featured Image Link</em> - Full URL for link from FI"); ?>
+<?php _e('<em>Featured Image Link</em> - Full URL for link from FI','weaver-xtreme'); ?>
     <br style="clear:both;" />
     <hr />
 	<input type="text" size="15" id="bodyclass" name="_pp_bodyclass"
 		value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_bodyclass", true)); ?>" />
 
-	<em>Per Page body Class</em> - CSS class name to add to HTML &lt;body&gt; block. Allows Per Page custom styling.
+	<?php _e('<em>Per Page body Class</em> - CSS class name to add to HTML &lt;body&gt; block. Allows Per Page custom styling.','weaver-xtreme'); ?>
 	<br />
 </p>
 <p>
-	<?php echo('<strong>Settings for "Page with Posts" Template</strong>');
-	weaverx_help_link('help.html#PerPostTemplate',wvr__('Help for Page with Posts Template') );
+	<?php _e('<strong>Settings for "Page with Posts" Template</strong>','weaver-xtreme');
+	weaverx_help_link('help.html#PerPostTemplate',__('Help for Page with Posts Template','weaver-xtreme') );
 
 	$template = !empty($post->page_template) ? $post->page_template : "Default Template";
 	if ($template == 'paget-posts.php') {
 	?>
 	<br />
-	<?php echo('These settings are optional, and can filter which posts are displayed when you use the "Page
-	with Posts" template. The settings will be combined for the final filtered list of posts displayed.
-	(If you make mistakes in your settings, it won\'t be apparent until you display the page.)'); ?><br />
-
+<?php _e('These settings are optional, and can filter which posts are displayed when you use the "Page with Posts" template.
+The settings will be combined for the final filtered list of posts displayed.
+(If you make mistakes in your settings, it won\'t be apparent until you display the page.)','weaver-xtreme'); ?>
+<br />
 
 	<input type="text" size="30" id="_pp_category" name="_pp_category"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_category", true)); ?>" />
-	<?php echo("<em>Category</em> - Enter list of category slugs of posts to include. (-slug will exclude specified category)"); ?> <br />
+	<?php _e('<em>Category</em> - Enter list of category slugs of posts to include. (-slug will exclude specified category)','weaver-xtreme'); ?>
+    <br />
 
 	<input type="text" size="30" id="_pp_tag" name="_pp_tag"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_tag", true)); ?>" />
-	<?php echo("<em>Tags</em> - Enter list of tag slugs of posts to include."); ?> <br />
+	<?php _e("<em>Tags</em> - Enter list of tag slugs of posts to include.",'weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_onepost" name="_pp_onepost"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_onepost", true)); ?>" />
-	<?php echo("<em>Single Post</em> - Enter post slug of a single post to display."); ?> <br />
+	<?php _e("<em>Single Post</em> - Enter post slug of a single post to display.",'weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_orderby" name="_pp_orderby"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_orderby", true)); ?>" />
-	<?php echo("<em>Order by</em> - Enter method to order posts by: author, date, title, or rand."); ?> <br />
+	<?php _e("<em>Order by</em> - Enter method to order posts by: author, date, title, or rand.",'weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_sort_order" name="_pp_sort_order"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_sort_order", true)); ?>" />
-	<?php echo("<em>Sort order</em> - Enter ASC or DESC for sort order."); ?> <br />
+	<?php _e("<em>Sort order</em> - Enter ASC or DESC for sort order.",'weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_posts_per_page" name="_pp_posts_per_page"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_posts_per_page", true)); ?>" />
-	<?php echo("<em>Posts per Page</em> - Enter maximum number of posts per page."); ?> <br />
+	<?php _e("<em>Posts per Page</em> - Enter maximum number of posts per page.",'weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_author" name="_pp_author"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_author", true)); ?>" />
-	<?php echo('<em>Author</em> - Enter author (use username, including spaces), or list of author IDs'); ?> <br />
+	<?php _e('<em>Author</em> - Enter author (use username, including spaces), or list of author IDs','weaver-xtreme'); ?> <br />
 
 	<input type="text" size="30" id="_pp_post_type" name="_pp_post_type"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_post_type", true)); ?>" />
-	<?php echo('<em>Custom Post Type</em> - Enter slug of one custom post type to display'); ?> <br />
+	<?php _e('<em>Custom Post Type</em> - Enter slug of one custom post type to display','weaver-xtreme'); ?> <br />
 
     <?php weaverx_pwp_atw_show_post_filter(); ?>
 
@@ -371,25 +386,28 @@ then that Reading:'Posts page:' selection <strong><em>must</em></strong> be set 
 	<?php weaverx_pwp_cols(); ?><br />
 	<input type="text" size="5" id="_pp_fullposts" name="_pp_fullposts"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_fullposts", true)); ?>" />
-	<?php echo("<em>Don't excerpt 1st <em>\"n\"</em> Posts</em> - Display the non-excerpted post for the first \"n\" posts."); ?>
+	<?php _e("<em>Don't excerpt 1st <em>\"n\"</em> Posts</em> - Display the non-excerpted post for the first \"n\" posts.",'weaver-xtreme'); ?>
 	<br />
 
 	<input type="text" size="5" id="_pp_hide_n_posts" name="_pp_hide_n_posts"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_hide_n_posts", true)); ?>" />
-	<?php echo("<em>Hide first \"n\" posts</em> - Start with post n+1.
-Useful with plugin that will display first n posts using a shortcode. (e.g., Post slider)"); ?>
+	<?php echo "<em><span class=\"dashicons dashicons-visibility\"></span>" .
+__("Hide first \"n\" posts</em> - Start with post n+1.
+Useful with plugin that will display first n posts using a shortcode. (e.g., Post slider)",'weaver-xtreme') ; ?>
 
 	<br /><br />
 
-	<?php weaverx_page_checkbox('_pp_hide_infotop',wvr__('Hide top info line'), 40); ?>
-	<?php weaverx_page_checkbox('_pp_hide_infobottom',wvr__('Hide bottom info line'), 40, 1); ?>
-    <?php weaverx_page_checkbox('_pp_hide_sticky',wvr__('No special treatment for Sticky Posts'), 40); ?>
+	<?php weaverx_page_checkbox('_pp_hide_infotop',__('Hide top info line','weaver-xtreme'), 40); ?>
+	<?php weaverx_page_checkbox('_pp_hide_infobottom',__('Hide bottom info line','weaver-xtreme'), 40, 1); ?>
+    <?php weaverx_page_checkbox('_pp_hide_sticky',__('No special treatment for Sticky Posts','weaver-xtreme'), 40); ?>
 </p>
 <?php
 	} else {	// NOT a page with posts
-?>	<p><strong>Note:</strong> After you choose the "Page with Posts" template from the <em>Template</em>
-	option in the <em>Page Attributes</em> box, <strong>and</strong> <em>Publish</em> or <em>Save Draft</em>,
-	settings for "Page with Posts" will be displayed here. (Current page template: <?php echo $template; ?>)
+?>	<p>
+<?php _e('<strong>Note:</strong> After you choose the "Page with Posts" template from the <em>Template</em>
+option in the <em>Page Attributes</em> box, <strong>and</strong> <em>Publish</em> or <em>Save Draft</em>,
+settings for "Page with Posts" will be displayed here. Current page template:','weaver-xtreme'); ?>
+<?php echo $template; ?>
 	</p>
 <?php
 	}
@@ -408,47 +426,49 @@ function weaverx_post_extras() {
 		|| (current_user_can('edit_pages') && !isset($opts['_hide_editor_per']))	// Editor
 		|| (current_user_can('edit_posts') && !isset($opts['_hide_author_per']))) // Author/Contributor
 	   ) {
-		echo '<p>Weaver Xtreme Per Post Options not available for your User Role.</p>';
+		echo '<p>' . __('Weaver Xtreme Per Post Options not available for your User Role.','weaver-xtreme') . '</p>';
 		return;	// don't show per post panel
 	   }
 ?>
 <div style="line-height:150%;">
 <p>
 	<?php
-	echo("<strong>Per Post Options</strong>");
-	weaverx_help_link('help.html#PerPage', wvr__('Help for Per Post Options'));
-	echo '<span style="float:right;">(This Post\'s ID: '; the_ID() ; echo ')</span>';
+	echo '<strong>' . __('Per Post Options','weaver-xtreme') . '</strong>';
+	weaverx_help_link('help.html#PerPage', __('Help for Per Post Options','weaver-xtreme'));
+	echo '<span style="float:right;">(' . __('This Post\'s ID: ','weaver-xtreme'); the_ID() ; echo ')</span>';
 	weaverx_html_br();
-	echo("These settings let you control display of this individual post. Many of these options override global options set on the Weaver Xtreme admin tabs.");
+	_e('These settings let you control display of this individual post. Many of these options override global options set on the Weaver Xtreme admin tabs.','weaver-xtreme');
 	weaverx_html_br();
 
-    weaverx_page_checkbox('_pp_force_post_excerpt',wvr__('Display post as excerpt'), 40);
-	weaverx_page_checkbox('_pp_force_post_full',wvr__('Display as full post where normally excerpted.'),55,1);
+    weaverx_page_checkbox('_pp_force_post_excerpt',__('Display post as excerpt','weaver-xtreme'), 40);
+	weaverx_page_checkbox('_pp_force_post_full',__('Display as full post where normally excerpted','weaver-xtreme'),55,1);
 
 
-	weaverx_page_checkbox('_pp_show_post_avatar',wvr__('Show author avatar with post'),40);
-    weaverx_page_checkbox('_show_post_bubble',wvr__('Show the comment bubble'), 40, 1);
+	weaverx_page_checkbox('_pp_show_post_avatar',__('Show author avatar with post','weaver-xtreme'),40);
+    weaverx_page_checkbox('_show_post_bubble',__('Show the comment bubble','weaver-xtreme'), 40, 1);
 
-	weaverx_page_checkbox('_pp_hide_post_format_label',wvr__('Hide <em>Post Format</em> label'),40);
-	weaverx_page_checkbox('_pp_hide_post_title',wvr__('Hide post title'),40,1);
+	weaverx_page_checkbox('_pp_hide_post_format_label',__('Hide <em>Post Format</em> label','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_hide_post_title',__('Hide post title','weaver-xtreme'),40,1);
 
-	weaverx_page_checkbox('_pp_hide_top_post_meta',wvr__('Hide top post info line'),40);
-	weaverx_page_checkbox('_pp_hide_bottom_post_meta',wvr__('Hide bottom post info line'),40,1);
-    weaverx_page_checkbox('_pp_masonry_span2',wvr__('For <em>Masonry</em> multi-columns: make this post span two columns.'),90,1);
+	weaverx_page_checkbox('_pp_hide_top_post_meta',__('Hide top post info line','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_hide_bottom_post_meta',__('Hide bottom post info line','weaver-xtreme'),40,1);
+    weaverx_page_checkbox('_pp_masonry_span2',__('For <em>Masonry</em> multi-columns: make this post span two columns.','weaver-xtreme'),90,1);
 
-    weaverx_page_checkbox('_pp_post_add_link',wvr__('Show a "link to single page" icon at bottom of post - useful with compact posts'),90);
+    weaverx_page_checkbox('_pp_post_add_link',__('Show a "link to single page" icon at bottom of post - useful with compact posts','weaver-xtreme'),90);
 
 
     echo('<br style="clear:both;"/><br /><strong>Per Post Style</strong>' /*a*/ );
-	weaverx_help_link('help.html#perpoststyle', wvr__('Help for Per Post Style' /*a*/ ));
-    echo("<br />Enter optional per post CSS style rules. <strong>Do not</strong> include the &lt;style> and &lt;/style> tags.
-		Include the {}'s. Don't use class names if rules apply to whole post, but do include class names
-		(e.g., <em>.entry-title a</em>) for specific elements. Custom styles will not be displayed by the Post Editor."); ?>
-            <br />
-		<textarea name="_pp_post_style" rows=2 style="width: 95%"><?php echo(get_post_meta($post->ID, "_pp_post_style", true)); ?></textarea>
-		<br />
+	weaverx_help_link('help.html#perpoststyle', __('Help for Per Post Style','weaver-xtreme' ));
+    echo '<br />' .
+__('Enter optional per post CSS style rules. <strong>Do not</strong> include the &lt;style> and &lt;/style> tags.
+Include the {}\'s. Don\'t use class names if rules apply to whole post, but do include class names
+(e.g., <em>.entry-title a</em>) for specific elements. Custom styles will not be displayed by the Post Editor.','weaver-xtreme'); ?>
 <br />
-<p><strong><em>Single Page View:</em> Sidebars</strong></p>
+	<textarea name="_pp_post_style" rows=2 style="width: 95%"><?php echo(get_post_meta($post->ID, "_pp_post_style", true)); ?>
+    </textarea>
+<br />
+<br />
+<p><strong><?php _e('<em>Single Page View:</em> Sidebars','weaver-xtreme'); ?></strong></p>
 
 <?php
     weaverx_page_layout('post');
@@ -456,45 +476,46 @@ function weaverx_post_extras() {
 <br />
     <input type="text" size="4" id="_pp_category" name="_pp_sidebar_width"
 	value="<?php echo esc_textarea(get_post_meta($post->ID, "_pp_sidebar_width", true)); ?>" />
-	<?php echo("% &nbsp;- <em>Sidebar Width</em> - Post Single View Sidebar width (applies to all layouts)"); ?> <br /><br />
+	<?php _e("% &nbsp;- <em>Sidebar Width</em> - Post Single View Sidebar width (applies to all layouts)",'weaver-xtreme'); ?> <br /><br />
 <?php
 
-	weaverx_page_checkbox('_pp_primary-widget-area',wvr__('Hide Primary Sidebar, Single View'),40);
-	weaverx_page_checkbox('_pp_secondary-widget-area',wvr__('Hide Secondary Sidebar, Single View'),40,1);
+	weaverx_page_checkbox('_pp_primary-widget-area',__('Hide Primary Sidebar, Single View','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_secondary-widget-area',__('Hide Secondary Sidebar, Single View','weaver-xtreme'),40,1);
 
-	weaverx_page_checkbox('_pp_sitewide-top-widget-area',wvr__('Hide Sitewide Top Area, Single View'),40);
-	weaverx_page_checkbox('_pp_sitewide-bottom-widget-area',wvr__('Hide Sitewide Bottom Area, Single View'),40,1);
+	weaverx_page_checkbox('_pp_sitewide-top-widget-area',__('Hide Sitewide Top Area, Single View','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_sitewide-bottom-widget-area',__('Hide Sitewide Bottom Area, Single View','weaver-xtreme'),40,1);
 
-    weaverx_page_checkbox('_pp_top-widget-area',wvr__('Hide Blog Top Area, Single View'),40);
-	weaverx_page_checkbox('_pp_bottom-widget-area',wvr__('Hide Blog Bottom Area, Single View'),40,1);
+    weaverx_page_checkbox('_pp_top-widget-area',__('Hide Blog Top Area, Single View','weaver-xtreme'),40);
+	weaverx_page_checkbox('_pp_bottom-widget-area',__('Hide Blog Bottom Area, Single View','weaver-xtreme'),40,1);
 ?>
 </p>
-<p><strong><em>Single Page View:</em> Widget Area Replacements</strong></p>
-    <p>Select extra widget areas to replace the default widget areas for <em>Single Page</em> view of this post.
-    You can define extra widget areas on the bottom of the <em>Main Options &rarr; Sidebars &amp; Layout</em> tab.
-    </p>
+<p><strong><?php _e('<em>Single Page View:</em> Widget Area Replacements','weaver-xtreme'); ?></strong></p>
+<p>
+<?php _e('Select extra widget areas to replace the default widget areas for <em>Single Page</em> view of this post.
+You can define extra widget areas on the bottom of the <em>Main Options &rarr; Sidebars &amp; Layout</em> tab.','weaver-xtreme'); ?>
+</p>
 <?php
-    weaverx_pp_replacement( 'Primary Sidebar' , 'primary-widget-area' );
-    weaverx_pp_replacement( 'Secondary Sidebar' , 'secondary-widget-area' );
+    weaverx_pp_replacement( __('Primary Sidebar','weaver-xtreme') , 'primary-widget-area' );
+    weaverx_pp_replacement( __('Secondary Sidebar','weaver-xtreme') , 'secondary-widget-area' );
 
-    weaverx_pp_replacement( 'Header Widget Area' , 'header-widget-area' );
-    weaverx_pp_replacement( 'Footer Widget Area' , 'footer-widget-area' );
+    weaverx_pp_replacement( __('Header Widget Area','weaver-xtreme') , 'header-widget-area' );
+    weaverx_pp_replacement( __('Footer Widget Area','weaver-xtreme') , 'footer-widget-area' );
 
     weaverx_pp_replacement( 'Sitewide Top Widget Area' , 'sitewide-top-widget-area' );
     weaverx_pp_replacement( 'Sitewide Bottom Widget Area' , 'sitewide-bottom-widget-area' );
 ?>
-<br style="clear:both;" /><p><strong><em>Single Page View:</em> Featured Image</strong></p>
+<br style="clear:both;" /><p><strong><?php _e('<em>Single Page View:</em> Featured Image','weaver-xtreme'); ?></strong></p>
 <?php
     $opts3 = array(  'id' => '_pp_fi_location',
-        'info' => wvr__('Override <em>Single Page</em> setting for where to display FI'),
+        'info' => __('Override <em>Single Page</em> setting for where to display FI','weaver-xtreme'),
         'value' => array(
-            array('val' => '', 'desc' => wvr__('Default Single Page FI') ),
-            array('val' => 'content-top', 'desc' => wvr__('With Content - top') ),
-            array('val' => 'content-bottom', 'desc' => wvr__('With Content - bottom') ),
-            array('val' => 'title-before', 'desc' => wvr__('Before Title') ),
-            array('val' => 'header-image', 'desc' => wvr__('Header Image Replacement') ),
-            array('val' => 'post-before', 'desc' => wvr__('Outside of Post') ),
-            array('val' => 'hide', 'desc' => wvr__('Hide FI on Single Page') )
+            array('val' => '', 'desc' => __('Default Single Page FI','weaver-xtreme') ),
+            array('val' => 'content-top', 'desc' => __('With Content - top','weaver-xtreme') ),
+            array('val' => 'content-bottom', 'desc' => __('With Content - bottom','weaver-xtreme') ),
+            array('val' => 'title-before', 'desc' => __('Before Title','weaver-xtreme') ),
+            array('val' => 'header-image', 'desc' => __('Header Image Replacement','weaver-xtreme') ),
+            array('val' => 'post-before', 'desc' => __('Outside of Post','weaver-xtreme') ),
+            array('val' => 'hide', 'desc' => __('Hide FI on Single Page','weaver-xtreme') )
             )
         );
     weaverx_pp_select_id($opts3);
@@ -502,24 +523,24 @@ function weaverx_post_extras() {
 <br />
 <input type="text" size="30" id='_pp_fi_link' name='_pp_fi_link'
 	value="<?php echo esc_textarea(get_post_meta($post->ID, '_pp_fi_link', true)); ?>" />
-	<?php echo("<em>Featured Image Link</em> - Full URL for link from FI"); ?>
+	<?php _e("<em>Featured Image Link</em> - Full URL for link from FI",'weaver-xtreme'); ?>
     <br style="clear:both;" />
     </p><p>
-    <strong>Post Editor Options</strong>
+    <strong><?php _e('Post Editor Options','weaver-xtreme'); ?></strong>
 
 <?php
-	weaverx_page_checkbox('_pp_hide_visual_editor',wvr__('Disable Visual Editor for this page. Useful if you enter simple HTML or other code.'),90,  1);
+	weaverx_page_checkbox('_pp_hide_visual_editor',__('Disable Visual Editor for this page. Useful if you enter simple HTML or other code.','weaver-xtreme'),90,  1);
 
 	if (weaverx_allow_multisite()) {
-		weaverx_page_checkbox('_pp_raw_html',wvr__('Allow Raw HTML and scripts. Disables auto paragraph, texturize, and other processing.'),90, 1);
+		weaverx_page_checkbox('_pp_raw_html',__('Allow Raw HTML and scripts. Disables auto paragraph, texturize, and other processing.','weaver-xtreme'),90, 1);
 	}
 	?>
 </p>
 <p>
 	<?php echo('<strong>Post Format</strong>');
-	weaverx_help_link('help.html#gallerypost', wvr__('Help for Per Post Format'));
+	weaverx_help_link('help.html#gallerypost', __('Help for Per Post Format','weaver-xtreme'));
 	weaverx_html_br();
-	echo('Weaver Xtreme supports Post Formats. Click the ? for more info.');
+	_e('Weaver Xtreme supports Post Formats. Click the ? for more info.','weaver-xtreme');
 	weaverx_html_br();
 	weaverx_html_br();
 

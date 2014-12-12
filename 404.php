@@ -12,11 +12,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
         // and next the content area.
 ?>
         <article id="post-0" class="post error404 not-found">
-            <?php weaverx_page_title( __( 'Sorry, no such page.','weaverx') );
+            <?php weaverx_page_title( __('Sorry, no such page.','weaver-xtreme') );
 
             if (!weaverx_getopt('_hide_not_found_search')) { ?>
                 <div class="entry-content clearfix">
-                    <p><?php echo __( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.','weaverx'); ?>
+                    <p><?php echo __( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.','weaver-xtreme'); ?>
                     </p>
 
                 <?php
@@ -25,7 +25,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
                 the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ), array( 'widget_id' => '404' ) );
                 ?>
                     <div class="widget">
-                        <h2 class="widgettitle"><?php echo __( 'Most Used Categories','weaverx'); ?></h2>
+                        <h2 class="widgettitle"><?php echo __( 'Most Used Categories','weaver-xtreme'); ?></h2>
                         <ul>
                             <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
                         </ul>
@@ -34,7 +34,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
                 <?php
 
                 /* translators: %1$s: smilie */
-                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s','weaverx'), convert_smilies( ':)' ) ) . '</p>';
+                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s','weaver-xtreme'), convert_smilies( ':)' ) ) . '</p>';
                 the_widget( 'WP_Widget_Archives', array('count' => 0 , 'dropdown' => 1 ), array( 'after_title' => '</h2>'.$archive_content ) );
                 the_widget( 'WP_Widget_Tag_Cloud' );
                 ?>

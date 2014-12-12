@@ -292,7 +292,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 			// Automatically insert a toggle button icon - dashicon
 			if ( menu.toggleButton.length < 1 ) {
                 if ( !mo.hideToggle )
-                    menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-menu"></div>').find('#' + mo.toggleButtonID).hide();
+                    menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu"></div>').find('#' + mo.toggleButtonID).hide();
                 else
                     menu.toggleButton = menu.container.find('#' + mo.toggleButtonID).hide();
 			}
@@ -465,6 +465,6 @@ jQuery(function($) {
         toggleButtonID: 'primary-toggle-button'
 	});
     $('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
-        toggleButtonID: 'secondary-toggle-button',
+        toggleButtonID: 'secondary-toggle-button'
 	});
 });

@@ -1,7 +1,7 @@
 <?php
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /* Weaver Xtreme - admin Save/Restore
- *
+ *  __ added - 12/10/14
  * This will come after the Options form has been closed, and is used for non-SAPI options
  *
  */
@@ -12,23 +12,20 @@ function weaverx_admin_saverestore() {
     if (!empty($saved))
         $style_date = $saved['style_date'];
 
-    if (! $style_date ) $style_date = 'No saved settings';
+    if (! $style_date ) $style_date = __('No saved settings','weaver-xtreme');
 ?>
 
-<div class="atw-option-header" style="clear:both;">Save/Restore Theme Settings <?php weaverx_help_link('help.html#SaveRestore','Help on Save/Restore Themes');?></div><br />
-<div class="atw-option-subheader">Save/Restore Current Theme Settings using WordPress Database</div>
-<p>This option allows you to save and restore all current theme settings using your host's WordPress
-database. Your options will be
-preserved across Weaver Xtreme theme upgrades, as well when you change to different themes. There is only one
-saved backup avaiable. You can also download your setting to your computer with the options below.</p>
-<p>Note: This save option saves <strong>all</strong> settings, including those marked with a &diams;.</p>
+<div class="atw-option-header" style="clear:both;"><?php _e('Save/Restore Theme Settings','weaver-xtreme');weaverx_help_link('help.html#SaveRestore',_e('Help on Save/Restore Themes','weaver-xtreme'));?></div><br />
+<div class="atw-option-subheader"><?php _e('Save/Restore Current Theme Settings using WordPress Database','weaver-xtreme');?></div>
+<?php _e('<p>This option allows you to save and restore all current theme settings using your host\'s WordPress database. Your options will be preserved across Weaver Xtreme theme upgrades, as well when you change to different themes. There is only one saved backup avaiable. You can also download your setting to your computer with the options below.</p>
+<p>Note: This save option saves <strong>all</strong> settings, including those marked with a &diams;.</p>','weaver-xtreme');?>
 <form name="save_mysave_form" method="post">
-	<span class="submit"><input type="submit" name="save_mytheme" value="Save Current Theme Settings"/></span>
-	<strong>Backup all current themes settings using the WordPress database.</strong>
+	<span class="submit"><input type="submit" name="save_mytheme" value="<?php _e('Save Current Theme Settings','weaver-xtreme');?>"/></span>
+	<strong><?php _e('Backup all current theme settings using the WordPress database.','weaver-xtreme');?></strong>
 <?php	 weaverx_nonce_field('save_mytheme'); ?>
 	<br /><br />
-	<span class="submit"><input type="submit" name="restore_mytheme" value="Restore Settings"/></span>
-	<strong>Restore from saved settings.</strong> <em>Last save date: <?php echo $style_date; ?></em>
+	<span class="submit"><input type="submit" name="restore_mytheme" value="<?php _e('Restore Settings','weaver-xtreme');?>"/></span>
+	<strong><?php _e('Restore from saved settings.','weaver-xtreme');?></strong> <em><?php _e('Last save date:','weaver-xtreme');?> <?php echo $style_date; ?></em>
 <?php
     weaverx_nonce_field('restore_mytheme');
     do_action('weaverxplus_admin','save_restore');
@@ -37,21 +34,21 @@ saved backup avaiable. You can also download your setting to your computer with 
 
 <?php
 
-	weaverx_saverestore();
+	weaverx_saverestore();      // download/upload to computer
 
 	do_action('weaverx_child_saverestore');	// allow additional save/restore in child */
 
 
 	do_action('weaverx_child_update');
 ?>
-	<div class="atw-option-subheader">Reset Current Settings to Default</div><br />
-	<form name="resetweaverx_form" method="post" onSubmit="return confirm('Are you sure you want to reset all Weaver Xtreme settings? This will include the [Saved Current Settings using WordPress Database].');">
-		<strong>Click the Clear button to reset all Weaver Xtreme settings to the default values.</strong><br >
-		<em style="color:red;">Warning: You will lose all current settings, including settings from "Save Settings using the WordPress Database".</em>
-        You should use the "Download Current Settings To Your Computer" option above to save a copy
-		of your current settings before clearing! <br />
-		<span class="submit"><input type="submit" name="reset_weaverx" value="Clear All Weaver Xtreme Settings"/></span>
-		<?php weaverx_nonce_field('reset_weaverx'); ?>
+	<div class="atw-option-subheader"><?php _e('Reset Current Settings to Default','weaver-xtreme'); ?></div><br />
+	<form name="resetweaverx_form" method="post" onSubmit="return confirm(__('Are you sure you want to reset all Weaver Xtreme settings? This will include the [Saved Current Settings using WordPress Database].','weaver-xtreme'));">
+		<strong><?php _e('Click the Clear button to reset all Weaver Xtreme settings to the default values.','weaver-xtreme'); ?></strong><br >
+<em style="color:red;"><?php _e('Warning: You will lose all current settings, including settings from "Save Settings using the WordPress Database".','weaver-xtreme'); ?></em>
+<?php _e('You should use the "Download Current Settings To Your Computer" option above to save a copy of your current settings before clearing!','weaver-xtreme'); ?>
+<br />
+<span class="submit"><input type="submit" name="reset_weaverx" value="<?php _e('Clear All Weaver Xtreme Settings','weaver-xtreme'); ?>"/></span>
+<?php weaverx_nonce_field('reset_weaverx'); ?>
 	</form> <!-- resetweaverx_form -->
 	<br /><hr />
 
@@ -65,16 +62,16 @@ function weaverx_process_options_admin_standard( $processed ) {
     }
 	if (weaverx_submitted('reset_weaverx')) {
 		if (! current_user_can('manage_options'))
-			wp_die('You do not have the capability to do that.');
+			wp_die(__('You do not have the capability to do that.','weaver-xtreme'));
         // delete everything!
-        weaverx_save_msg(wvr__('All Weaver Xtreme settings have been reset to the defaults.','weaverx'));
+        weaverx_save_msg(__('All Weaver Xtreme settings have been reset to the defaults.','weaver-xtreme'));
         delete_option( apply_filters('weaverx_options','weaverx_settings') );
         global $weaverx_opts_cache;
         $weaverx_opts_cache = false;	// clear the cache
         weaverx_init_opts('reset_weaverx');
-
         delete_option( apply_filters('weaverx_options','weaverx_settings_backup') );
-        delete_option( 'weaverx_plus_backup' );
+
+        do_action('weaverxplus_admin','reset_weaverxplus');
 
 		update_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice', 0 );     // reset the dismiss on the plugin loader
         return true;
@@ -85,12 +82,6 @@ function weaverx_process_options_admin_standard( $processed ) {
         return true;
 	}
 
-	if (weaverx_submitted('check_weaverx')) {
-        // perform Weaver Xtreme check
-        require_once(get_template_directory() . '/includes/check-theme.php');	// include check code now
-        weaverx_perform_check();
-        return true;
-	}
     return $processed;
 }
 
@@ -103,32 +94,54 @@ function weaverx_saverestore(){
 	$a_pro = (function_exists('weaverxplus_plugin_installed')) ? '-plus' : '';
 
 ?>
-<h3 class="atw-option-subheader" style="color:blue;">Save/Restore Current Theme Settings using Your Computer</h3>
-<p>This option allows you to save and restore all current theme settings by uploading and downloading to your
-own computer.</p>
+<h3 class="atw-option-subheader" style="color:blue;">
+    <?php _e('Save/Restore Current Theme Settings using Your Computer','weaver-xtreme'); ?><?php _e('Save/Restore Current Theme Settings using Your Computer','weaver-xtreme'); ?>
+</h3>
+<p>
+    <?php _e('This option allows you to save and restore all current theme settings by uploading and downloading to your own computer.','weaver-xtreme'); ?>
+</p>
 
-<h3>Download Current Settings To Your Computer</h3>
+<h3><?php _e('Download Current Settings To Your Computer','weaver-xtreme'); ?></h3>
 
-<a href="<?php echo $download_path . '?_wpnonce=' . $nonce; ?>"><img src="<?php echo esc_url($download_img_path); ?>" />&nbsp; <strong>Download</strong>&nbsp;</a> - <strong><em>All</em></strong> current settings to file <strong>weaverx-backup-settings<?php echo $a_pro;?>.wxb</strong> on your computer. (Full settings backup, including those marked with a &diams;.)
+<a href="<?php echo $download_path . '?_wpnonce=' . $nonce; ?>"><img src="<?php echo esc_url($download_img_path); ?>" />
+&nbsp; <strong><?php _e('Download','weaver-xtreme'); ?></strong>&nbsp;</a> -
+<?php _e('<strong>Save all</strong> current settings to file on your computer.
+(Full settings backup, including those marked with a &diams;.) <em>File:</em>','weaver-xtreme'); ?>
+<strong>weaverx-backup-settings<?php echo $a_pro;?>.wxb</strong>
 <br />
 <br />
-<a href="<?php echo $download_path . '?_wpnoncet=' . $nonce;?>"><img src="<?php echo esc_url($download_img_path); ?>" />&nbsp;<strong>Download</strong></a>&nbsp; - <strong><em>Only theme related</em></strong> current settings to file <strong>weaverx-theme-settings<?php echo $a_pro;?>.wxt</strong> on your computer.
-
+<a href="<?php echo $download_path . '?_wpnoncet=' . $nonce;?>"><img src="<?php echo esc_url($download_img_path); ?>" />
+&nbsp;<strong><?php _e('Download','weaver-xtreme'); ?></strong></a>&nbsp; -
+<?php _e('<strong><em>Save only theme related</em></strong> current settings to file on your computer. <em>File:</em>
+<strong>weaverx-theme-settings<?php echo $a_pro;?>.wxt</strong>','weaver-xtreme'); ?>
 <?php
 if (function_exists('weaverxplus_plugin_installed'))
-	echo "<p>Note: Downloaded settings include <em>Weaver Xtreme Plus</em> settings. Setting files from Weaver Xtreme Plus can be uploaded to the Free Weaver Xtreme version,
-	but will not be used or saved by the free version.</p>"
+	echo '<p>' .
+__('Note: Downloaded settings include <em>Weaver Xtreme Plus</em> settings.
+Setting files from Weaver Xtreme Plus can be uploaded to the Free Weaver Xtreme version, but will not be used or saved by the free version.','weaver-xtreme')
+. '</p>';
 ?>
 <form enctype="multipart/form-data" action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="POST">
 	<table>
-			<tr><td><h3>Upload settings from file saved on your computer</h3></td></tr>
+		<tr><td><h3><?php _e('Upload settings from file saved on your computer','weaver-xtreme'); ?></h3></td></tr>
+
 		<tr valign="top">
-			<td>Select theme/backup file to upload: <input name="uploaded" type="file" />
-			<input type="hidden" name="uploadit" value="yes" />&nbsp;(Restores settings in file to current settings.)
-						</td>
+		<td><?php _e('Select theme/backup file to upload:','weaver-xtreme'); ?> <input name="uploaded" type="file" />
+			<input type="hidden" name="uploadit" value="yes" />&nbsp;<?php _e('(Restores settings in file to current settings.)','weaver-xtreme'); ?>
+		</td>
 		</tr>
-				<tr><td><span class='submit'><input name="uploadtheme" type="submit" value="Upload theme/backup" /></span>&nbsp;<small><strong>Upload and Restore</strong> a theme/backup from file on your computer. Will become current settings.</small></td></tr>
-				<tr><td><?php if (!function_exists('weaverxplus_plugin_installed')) echo '<small>Note: Any Weaver Xtreme Plus settings will <em>not</em> be restored for Weaver Xtreme Free version.</small>';?>&nbsp;</td></tr>
+
+		<tr><td><span class='submit'>
+        <input name="uploadtheme" type="submit" value="<?php _e('Upload theme/backup','weaver-xtreme'); ?>" /></span>
+        &nbsp;<small><?php _e('<strong>Upload and Restore</strong> a theme/backup from file on your computer. Will become current settings.','weaver-xtreme'); ?>
+        </small></td></tr>
+
+		<tr><td>
+        <?php if (!function_exists('weaverxplus_plugin_installed'))
+        echo '<small>' .
+__('Note: Any Weaver Xtreme Plus settings will <em>not</em> be restored for Weaver Xtreme Free version.','weaver-xtreme') . '</small>';
+        ?>&nbsp;</td></tr>
+
 	</table>
 	<?php weaverx_nonce_field('uploadtheme'); ?>
 	</form>
@@ -162,41 +175,44 @@ function weaverx_loadtheme() {
 
 
 	if ($filename == "") {
-		$errors[] = "You didn't select a file to upload.<br />";
+		$errors[] = __('You didn\'t select a file to upload.','weaver-xtreme') . "<br />";
 		$ok = false;
 	}
 
 	if ($ok && $ext_check != 'wxt' && $ext_check != 'wxb'){
-		$errors[] = "Theme files must have <em>.wxt</em> or <em>.wxb</em> extension.<br />";
+		$errors[] = __('Theme files must have <em>.wxt</em> or <em>.wxb</em> extension.','weaver-xtreme') . '<br />';
 		$ok = false;
 	}
 
 		if ($ok) {
 			if (!weaverx_f_exists($openname)) {
-				$errors[] = '<strong><em style="color:red;">Sorry, there was a problem uploading your file.
-		You may need to check your folder permissions or other server settings.</em></strong>'.
-					"<br />(Trying to use file '$openname')";
+				$errors[] = '<strong><em style="color:red;">' .
+__('Sorry, there was a problem uploading your file.
+You may need to check your folder permissions or other server settings.','weaver-xtreme') .
+'</em></strong><br />(' . __('Trying to use file','weaver-xtreme') . ' <em>' . $openname . '</em>)';
 				$ok = false;
 			}
 		}
 	if (!$ok) {
-		echo '<div id="message" class="updated fade"><p><strong><em style="color:red;">ERROR</em></strong></p><p>';
+		echo '<div id="message" class="updated fade"><p><strong><em style="color:red;">' .
+        __('ERROR','weaver-xtreme') . '/em></strong></p><p>';
 		foreach($errors as $error){
             echo $error.'<br />';
 		}
 		echo '</p></div>';
 	} else {    // OK - read file and save to My Saved Theme
-			// $handle has file handle to temp file.
-			$contents = weaverx_f_get_contents($openname);
+		// $handle has file handle to temp file.
+		$contents = weaverx_f_get_contents($openname);
 
-			if ( ! weaverx_ex_set_current_to_serialized_values($contents,'weaverx_uploadit:'.$openname ) ) {
-				echo '<div id="message" class="updated fade"><p><strong><em style="color:red;">Sorry,
-                there was a problem uploading your file. The file you picked was not a valid
-                Weaver Xtreme theme file.</em></strong></p></div>';
-            } else {
-				weaverx_save_msg( 'Weaver Xtreme theme options reset to uploaded theme.' );
-			}
+		if ( ! weaverx_ex_set_current_to_serialized_values($contents,'weaverx_uploadit:'.$openname ) ) {
+				echo '<div id="message" class="updated fade"><p><strong><em style="color:red;">' .
+__('Sorry, there was a problem uploading your file.
+The file you picked was not a valid Weaver Xtreme theme file.','weaver-xtreme') .
+'</em></strong></p></div>';
+        } else {
+				weaverx_save_msg( __('Weaver Xtreme theme options reset to uploaded theme.','weaver-xtreme') );
 		}
+	}
 }
 
 function weaverx_ex_set_current_to_serialized_values($contents)  {
@@ -207,11 +223,11 @@ function weaverx_ex_set_current_to_serialized_values($contents)  {
 	else if (substr($contents,0,10) == 'WXB-V01.00')
         $type = 'backup';
 	else
-        return weaverx_f_fail(wvr__("Wrong theme file format version")); 	/* simple check for one of ours */
+        return weaverx_f_fail(__("Wrong theme file format version",'weaver-xtreme')); 	/* simple check for one of ours */
 	$restore = array();
 	$restore = unserialize(substr($contents,10));
 
-    if (!$restore) return weaverx_f_fail("Unserialize failed");
+    if (!$restore) return weaverx_f_fail(__("Unserialize failed",'weaver-xtreme'));
 
 	$version = weaverx_getopt('weaverx_version_id');	// get something to force load
 
@@ -243,7 +259,7 @@ function weaverx_ex_set_current_to_serialized_values($contents)  {
         }
 	}
 	weaverx_setopt('weaverx_version_id',$version); // keep version, force save of db
-    weaverx_setopt('wvrx_css','');
+    weaverx_setopt('wvrx_css_saved','');
 	weaverx_setopt('last_option','Weaver Xtreme');
 	weaverx_save_opts('loading theme');	// OK, now we've saved the options, update them in the DB
 	return true;

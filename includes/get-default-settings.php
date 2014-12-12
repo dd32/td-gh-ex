@@ -1,4 +1,5 @@
 <?php
+if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 if (!function_exists('weaverx_get_default_settings')) {
 

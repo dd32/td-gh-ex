@@ -61,7 +61,7 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 
 function weaverx_sapi_submit( $before='', $after='', $show_more_opts = false ) {
 	// generate a submit button for the form
-	$submit_label = wvr__('Save Settings');
+	$submit_label = __('Save Settings','weaver-xtreme');
 	echo $before;
 ?>
 	<span style="display:inline;"><input name="save_options" type="submit" style="margin-top:10px;" class="button-primary" value="<?php echo($submit_label); ?>" />
@@ -90,11 +90,11 @@ function weaverx_validate_all_options($in) {
 	$err_msg = '';			// no error message yet
 
 	if (empty($in)) {
-        wp_die( __( 'You attempted to save options, but something has gone wrong. Please be sure you are logged in and your host is correctly configured. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.' ,'weaverx') );
+        wp_die( __( 'You attempted to save options, but something has gone wrong. Please be sure you are logged in and your host is correctly configured. See the "Weaver Doesn\'t Save Settings" FAQ on weavertheme.com.' ,'weaver-xtreme') );
 	}
 
 	if (!current_user_can('edit_theme_options')) {
-        wp_die( __( 'You do not have sufficient permissions to manage options for this site.' ,'weaverx') );
+        wp_die( __( 'You do not have sufficient permissions to manage options for this site.' ,'weaver-xtreme') );
 	}
 
 	$wvr_last = '';
@@ -109,8 +109,8 @@ function weaverx_validate_all_options($in) {
                 if (!empty($value) && (!is_numeric($value) || !is_int((int)$value))) {
                     $opt_id = str_replace('', '', $key);
                     $opt_id = str_replace('_', ' ', $opt_id);
-                    $err_msg .= wvr__('Option must be an integer value: ') . '"'. $opt_id . '" = "' . $value . '".'
-                        . wvr__(' Value has been cleared to blank value') . '<br />';
+                    $err_msg .= __('Option must be an integer value: ','weaver-xtreme') . '"'. $opt_id . '" = "' . $value . '".'
+                        . __(' Value has been cleared to blank value','weaver-xtreme') . '<br />';
                     $in[$key] = '';
                 }
                 break;
@@ -140,7 +140,7 @@ function weaverx_validate_all_options($in) {
                 break;
 
 
-            case 'perpagewidgets':       	// Add widget areas for per page - names must be lower case
+            case '_perpagewidgets':       	// Add widget areas for per page - names must be lower case
                 if (!empty($value)) {
                     $in[$key] = strtolower(str_ireplace(' ','',weaverx_filter_code($value)));
                 }
@@ -153,9 +153,10 @@ function weaverx_validate_all_options($in) {
                 }
                 break;
 
-            case 'wvrx_css':
+            case 'wvrx_css_saved':
                 if ( !empty( $value ) ) {
                     $in[$key] = weaverx_filter_code( $value );
+                    //$in[$key] = wp_filter_post_kses( trim(stripslashes($value)) );
                 }
                 break;
 
@@ -166,9 +167,11 @@ function weaverx_validate_all_options($in) {
                 if (!empty($value)) {
                     $val = weaverx_filter_code($value);
                     $in[$key] = $val;
-                    if (stripos($val,'<style') !== false || stripos($val, '</style') !== false) {
-                    $err_msg .= wvr__('"Add CSS Rules" option must not contain &lt;style&gt; tags!')
-                        . wvr__(' Please correct your entry.') . '<br />';
+                    if (stripos($val,'<style') !== false || stripos($val, '</style') !== false ||
+                        stripos($val,'<script') !== false || stripos($val, '</script') !== false) {
+                        $err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your "Add CSS Rules"!','weaver-xtreme')
+                        . ' ' . __('Please correct your entry.','weaver-xtreme') . '<br />';
+                        $in[$key] = wp_filter_post_kses( trim(stripslashes($val)) );
                     }
                 }
                 break;
@@ -185,17 +188,24 @@ function weaverx_validate_all_options($in) {
             default:				/* to here, then colors, _css, or checkbox/selectors */
                 $keylen = strlen($key);
 
-                if (strrpos($key,'_css') == $keylen-4) {	// all _css settings
+                if (strrpos($key,'_css') == $keylen-4)  {	// all _css settings
                     if (!empty($value)) {
                         $val = weaverx_filter_code($value);
+                        if (stripos($val,'<style') !== false || stripos($val, '</style') !== false ||
+                            stripos($val,'<script') !== false || stripos($val, '</script') !== false) {
+                            $err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,','weaver-xtreme')
+                            . ' ' . __('Please correct your entry.','weaver-xtreme') . '<br />';
+                            $val = wp_filter_post_kses( trim(stripslashes($val)) );
+                        }
+
                         $in[$key] = $val;
 
                         if (strpos($val, '{') === false || strpos($val, '}') === false) {
                             $opt_id = str_replace('_css', '', $key);	// kill _css
                             $opt_id = str_replace('', '', $opt_id);
                             $opt_id = str_replace('_', ' ', $opt_id);
-                            $err_msg .= wvr__('CSS options must be enclosed in {}\'s: ') . '"'. $opt_id . '" = "' . $value . '".'
-                            . wvr__(' Please correct your entry.') . '<br />';
+                            $err_msg .= __('CSS options must be enclosed in {}\'s: ','weaver-xtreme') . '"'. $opt_id . '" = "' . $value . '". '
+                            . __('Please correct your entry.','weaver-xtreme') . '<br />';
                         }
                     }
                     break;
@@ -222,8 +232,8 @@ function weaverx_validate_all_options($in) {
                         $opt_id = str_replace('', '', $key);
                         $opt_id = str_replace('_dec', '', $opt_id);
                         $opt_id = str_replace('_', ' ', $opt_id);
-                        $err_msg .= wvr__('Option must be a numeric value: ') . '"'. $opt_id . '" = "' . $value . '".'
-                            . wvr__(' Value has been cleared to blank value.') . '<br />';
+                        $err_msg .= __('Option must be a numeric value: ','weaver-xtreme') . '"'. $opt_id . '" = "' . $value . '". '
+                            . __('Value has been cleared to blank value.','weaver-xtreme') . '<br />';
                         $in[$key] = '';
                     }
                     break;
@@ -240,8 +250,8 @@ function weaverx_validate_all_options($in) {
                         $opt_id = str_replace('', '', $key);
                         $opt_id = str_replace('_int', '', $opt_id);
                         $opt_id = str_replace('_', ' ', $opt_id);
-                        $err_msg .= wvr__('Option must be a numeric value: ') . '"'. $opt_id . '" = "' . $value . '".'
-                            . wvr__(' Value has been cleared to blank value.') . '<br />';
+                        $err_msg .= __('Option must be a numeric value: ','weaver-xtreme') . '"'. $opt_id . '" = "' . $value . '". '
+                            . __('Value has been cleared to blank value.','weaver-xtreme') . '<br />';
                         $in[$key] = '';
                     }
                     break;
@@ -249,7 +259,8 @@ function weaverx_validate_all_options($in) {
 
                 if (strrpos($key,'color') == $keylen-5) {	// _bgcolor and _color (order here important - after _css, etc.)
                     if (!empty($value)) {
-                        $val = weaverx_filter_code($value);
+
+                        $val = trim(weaverx_filter_code($value));
                         if (preg_match('/^#?+[0-9a-f]{3}(?:[0-9a-f]{3})?$/i', $val)) {	// hex value
                             $val = strtoupper($val);		// force hex values to upper case, just to be tidy
                             if ($val[0] != '#') $val = '#' . $val;
@@ -259,10 +270,15 @@ function weaverx_validate_all_options($in) {
                         } else {		// only legal things left are rgb and rgba
                             $isrgb = strpos( $val, 'rgb' );
                             $ishsa = strpos( $val, 'hsl' );
-                            if ($isrgb === false && $ishsa === false ) {
+                            if ($isrgb === false && $ishsa === false) {
+                                if ( $value == ' ') {
+                                    $in[$key] = '';
+                                } else {
+                                    $err_msg .= __('Color must be a valid # hex value, rgb value, or color name (a-z): ','weaver-xtreme') .
+                                    '"'. $key . '" = "' . bin2hex($value) . '". ' .
+                                    __('Value has been cleared to blank value.','weaver-xtreme') . '<br />';
+                                }
                                 $in[$key] = '';
-                                $err_msg .= 'Color must be a valid # hex value, rgb value, or color name (a-z): ' .
-                                '"'. $key . '" = "' . $value . '".' . ' Value has been cleared to blank value.' . '<br />';
                             } else {
                                 $in[$key] = $val;
                             }
@@ -278,15 +294,15 @@ function weaverx_validate_all_options($in) {
 	}
 
 	if (false && $wvr_last != 'Weaver Xtreme') { // @@@@@@ move this somewhere else
-        $err_msg .= 'Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.' .
-        ' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />';
+        $err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.' .
+        ' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />','weaver-xtreme');
 	}
 
 
 	if (!empty($err_msg)) {
         add_settings_error('weaverx_settings', 'settings_error', $err_msg, 'error');
 	} else {
-        add_settings_error('weaverx_settings', 'settings_updated', wvr__('Weaver Xtreme Settings Saved.'), 'updated');
+        add_settings_error('weaverx_settings', 'settings_updated', __('Weaver Xtreme Settings Saved.','weaver-xtreme'), 'updated');
 	}
 
     return $in;
@@ -298,18 +314,19 @@ function weaverx_end_of_section($who = '') {
     echo '<hr />';
     $name = weaverx_getopt('themename');
     if ( ! $name )
-        $name = 'Please set theme name on the Advanced Options &rarr; Admin Options tab.';
+        $name = __('Please set theme name on the Advanced Options &rarr; Admin Options tab.','weaver-xtreme');
 
-    printf("%s %s | Options Version: %s | Subtheme: %s\n",WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
+    printf(__("%s %s | Options Version: %s | Subtheme: %s\n",'weaver-xtreme'),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
 
     $last = weaverx_getopt('last_option');
 	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values @@@@@@ popup?
 	{
 ?>
-<p style="color:red">Possible Non-Standard Web Host Configuration detected. If your options
+<p style="color:red">
+<?php _e('Possible Non-Standard Web Host Configuration detected. If your options
 are not saving correctly, your host may have limited the default number of values that PHP can use for
 settings. Try saving your settings again, and if this message persists, please contact your host and ask them to "Increase the PHP <em>max_input_vars</em> value for $_POST to at least 600." If that does not fix the issue,
-please contact Weaver Xtreme support. (diagnostic info: last_option="<?php echo $last;?>").
+please contact Weaver Xtreme support. Diagnostic info: last_option=','weaver-xtreme'); ?><?php echo $last;?>
 </p>
 <?php
 	}
@@ -317,7 +334,7 @@ please contact Weaver Xtreme support. (diagnostic info: last_option="<?php echo 
 	if (false && !weaverx_getopt('_hide_subtheme_link')) {
 ?>
 	<p style="max-width:90%;"><?php weaverx_site('/subthemes/'); ?><img style="max-width:95%;float:left;margin-right:10px;" src="<?php echo weaverx_relative_url('/assets/images/'); ?>theme-bar.jpg" alt="addons" />
-	<strong>Discover more premium <br />Weaver Xtreme Subthemes</strong></a>
+	<?php _e('<strong>Discover more premium <br />Weaver Xtreme Subthemes</strong>','weaver-xtreme'); ?></a>
 	</p>
 <?php
 	}
@@ -326,7 +343,7 @@ please contact Weaver Xtreme support. (diagnostic info: last_option="<?php echo 
 function weaverx_donate_button() {
 
 	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) { ?>
-<div style="float:right;padding-right:30px;"><small><strong>Like Weaver X? Consider</strong></small>
+<div style="float:right;padding-right:30px;"><small><strong><?php _e('Like Weaver X? Consider','weaver-xtreme'); ?></strong></small>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="6Y68LG9G9M82W">
@@ -344,12 +361,12 @@ function weaverx_clear_messages() {
 <?php
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
-		weaverx_site('','http://plus.weavertheme.com/','Weaver Xtreme Plus');
+		weaverx_site('','http://plus.weavertheme.com/',__('Weaver Xtreme Plus','weaver-xtreme'));
 		echo 'Get Weaver Xtreme Plus!</a> </strong>';
 	}
 	do_action('weaverx_check_licenses');
 ?>
-	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="Clear Messages"/></span>
+	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages','weaver-xtreme'); ?>"/></span>
 	<?php weaverx_nonce_field('weaverx_clear_messages'); ?>
 </form> <!-- resetweaverx_form -->
 <?php
@@ -569,13 +586,12 @@ function weaverx_form_show_options($weaverx_olist, $begin_table = true, $end_tab
 }
 
 function weaverx_fix_type($type) {
-	if ($type[0] == '+') {
-        return apply_filters('weaverx_xtra_type', $type );
-	}
-	return $type;
+    return apply_filters('weaverx_xtra_type', $type );
 }
 
-function weaverx_form_inactive($value, $reason='<small>Weaver Xtreme Plus Required&nbsp;</small>') {
+function weaverx_form_inactive($value, $reason= '') {
+    if ( $reason == '' )
+        $reason = '<small>' . __('Weaver Xtreme Plus Options','weaver-xtreme') . '&nbsp;</small>';
 	if (!isset($value['name']) || !isset($value['id']) || !isset($value['info'])) {     // probably an '=submit'
 		return;
 	}
@@ -588,7 +604,7 @@ function weaverx_form_inactive($value, $reason='<small>Weaver Xtreme Plus Requir
 	<th scope="row" style="width:200px;"><?php      /* NO SAPI SETTING */
 	echo '<span style="color:#777;float:right;">'.$title.':&nbsp;</span>';
 	if (!empty($value['help'])) {
-		weaverx_help_link($value['help'], 'Help for ' . $title);
+		weaverx_help_link($value['help'], __('Help for ','weaver-xtreme') . $title);
 	}
 ?>
 		</th>
@@ -606,8 +622,8 @@ function weaverx_form_inactive($value, $reason='<small>Weaver Xtreme Plus Requir
 }
 
 
-function weaverx_echo_name($value) {
-	$l = $value['name'];
+function weaverx_echo_name($value, $add_icon = '') {
+	$l = $add_icon . $value['name'];
     if (isset($value['id']))
         $icon = $value['id'];
     if ( !isset($icon) || !$icon )
@@ -636,9 +652,12 @@ function weaverx_form_ctext( $value, $val_only = false ) {
 	} else {
         $img_toggle = $img_show;
 	}
+    $add_icon = '<span class="i-left-bg dashicons dashicons-admin-appearance"></span>';
+    if (strpos($value['name'], ' BG') === false)
+        $add_icon = '<span class="i-left-fg dashicons dashicons-admin-appearance"></span>';
     if ( ! $val_only ) { ?>
 	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
+	<th scope="row" align="right"><?php weaverx_echo_name($value, $add_icon ); ?>:&nbsp;</th>
 	<td> <?php } else { echo '&nbsp;<small>' . $value['info'] . '</small>&nbsp;'; } ?>
 	<input class="<?php echo $pclass; ?>" name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:90px" value="<?php if ( weaverx_getopt( $value['id'] ) != "") { weaverx_esc_textarea(weaverx_getopt( $value['id'] )); } else { echo ''; } ?>" />
 <?php
@@ -654,11 +673,12 @@ echo $img_css; ?><a href="javascript:void(null);" onclick="weaverx_ToggleRowCSS(
         $css_rows = 1;
 	if ($css_id_text && !weaverx_getopt( '_hide_auto_css_rules' )) { ?>
 	<tr id="<?php echo $css_id . '_js'; ?>">
-	<th scope="row" align="right"><span style="color:#22a;"><small>Custom CSS styling:</small></span></th>
+	<th scope="row" align="right"><span style="color:#22a;"><small>' . __('Custom CSS styling:','weaver-xtreme') . '</small></span></th>
 	<td align="right"><small>&nbsp;</small></td>
 	<td>
-		<small>You can enter CSS rules, enclosed in {}'s, and separated by <strong>;</strong>.
-		See <a href="<?php echo $help_file; ?>" target="_blank">CSS Help</a> for more details.</small><br />
+		<small>
+<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See ','weaver-xtreme'); ?>
+<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help','weaver-xtreme'); ?></a> <?php _e('for more details.','weaver-xtreme'); ?></small><br />
 		<textarea placeholder="{ font-size:150%; font-weight:bold; } /* for example */" name="<?php weaverx_sapi_main_name($css_id); ?>" rows=<?php echo $css_rows;?> style="width: 85%"><?php weaverx_esc_textarea($css_id_text); ?></textarea>
 	</td>
 	</tr>
@@ -666,11 +686,12 @@ echo $img_css; ?><a href="javascript:void(null);" onclick="weaverx_ToggleRowCSS(
 	} else {
 ?>
 	<tr id="<?php echo $css_id . '_js'; ?>" style="display:none;">
-	<th scope="row" align="right"><span style="color:green;"><small>Custom CSS styling:</small></span></th>
+	<th scope="row" align="right"><span style="color:green;"><small><?php _e('Custom CSS styling:','weaver-xtreme'); ?></small></span></th>
 	<td align="right"><small>&nbsp;</small></td>
 	<td>
-		<small>You can enter CSS rules, enclosed in {}'s, and separated by <strong>;</strong>.
-		See <a href="<?php echo $help_file; ?>" target="_blank">CSS Help</a> for more details.</small><br />
+		<small>
+<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See','weaver-xtreme'); ?>
+<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help','weaver-xtreme'); ?></a> for more details.</small><br />
 		<textarea placeholder="{ font-size:150%; font-weight:bold; } /* for example */" name="<?php weaverx_sapi_main_name($css_id); ?>" rows=<?php echo $css_rows;?> style="width: 85%"><?php weaverx_esc_textarea($css_id_text); ?></textarea>
 	</td>
 	</tr>
@@ -684,10 +705,10 @@ function weaverx_form_color($value, $val_only = false) {
     if ( ! $val_only ) {
 ?>
 	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
+	<th scope="row" align="right"><?php weaverx_echo_name($value, '<span class="i-left-fg dashicons dashicons-admin-appearance"></span>'); ?>:&nbsp;</th>
 	<td>
     <?php } else { echo '&nbsp;<small>' . $value['info'] . '</small>&nbsp;'; } ?>
-	<input class="<?php echo $pclass; ?>" name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:90px" value="<?php if ( weaverx_getopt( $value['id'] ) != "") { weaverx_esc_textarea(weaverx_getopt( $value['id'] )); } else { echo ''; } ?>" />
+	<input class="<?php echo $pclass; ?>" name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:90px" value="<?php if ( weaverx_getopt( $value['id'] ) != "") { weaverx_esc_textarea(weaverx_getopt( $value['id'] )); } else { echo ' '; } ?>" />
     <?php if (! $val_only ) { ?>
 	</td>
 <?php 	weaverx_form_info($value);
@@ -711,7 +732,7 @@ function weaverx_form_header($value, $narrow=false) {
 	if ( $icon[0] == '-' ) {                      // add a leading icon
         $dash = '<span style="padding: .1em .5em 0 .2em" class="dashicons dashicons-' . substr( $icon, 1) . '"></span>';
     }
-	echo $dash . '<span style="font-weight:bold; font-size: larger;"><em>'.$value['name'].'</em></span>';
+	echo weaverx_anchor($value['name']) . $dash . '<span style="font-weight:bold; font-size: larger;"><em>'. $value['name'] .'</em></span>';
 		weaverx_form_help($value);
 ?>
 	</th>
@@ -726,6 +747,12 @@ function weaverx_form_header($value, $narrow=false) {
 ?>
 	</tr>
 <?php
+}
+
+function weaverx_anchor( $title ) {
+    if ( $title )
+        return '<a class="anchorx" id="' . sanitize_title( $title ) . '"></a>';
+    return '';
 }
 
 function weaverx_form_help($value) {
@@ -749,7 +776,7 @@ function weaverx_form_subheader($value) {
         $dash = '<span style="padding:.2em;" class="dashicons dashicons-' . substr( $icon, 1) . '"></span>';
     }
 
-	echo $dash . '<span style="color:blue; font-weight:bold; "><em><u>'.$value['name'].'</u></em></span>';
+	echo weaverx_anchor($value['name']) . $dash . '<span style="color:blue; font-weight:bold; "><em><u>'.$value['name'].'</u></em></span>';
 	weaverx_form_help($value);
 ?>
 	</th>
@@ -779,7 +806,7 @@ function weaverx_form_subheader_alt($value) {
 	if ( $icon[0] == '-' ) {                      // add a leading icon
         $dash = '<span style="padding:.2em;" class="dashicons dashicons-' . substr( $icon, 1) . '"></span>';
     }
-	echo $dash . '<span style="color:blue; font-weight:bold;padding-left:5px;"><em>'.$value['name'].'</em></span>';
+	echo weaverx_anchor($value['name']) . $dash . '<span style="color:blue; font-weight:bold;padding-left:5px;"><em>'.$value['name'].'</em></span>';
 	weaverx_form_help($value);
 ?>
 	</th>
@@ -810,7 +837,7 @@ function weaverx_form_header_area($value) {
         $dash = '<span style="padding:.2em;" class="dashicons dashicons-' . substr( $icon, 1) . '"></span>';
     }
 
-	echo $dash . '<span style="color:blue; font-weight:bold;padding-left:5px;font-size:small;"><em>'.$value['name'].'</em></span>';
+	echo weaverx_anchor($value['name']) . $dash . '<span style="color:blue; font-weight:bold;padding-left:5px;font-size:small;"><em>'.$value['name'].'</em></span>';
 	weaverx_form_help($value);
 ?>
 	</th>
@@ -824,787 +851,5 @@ function weaverx_form_header_area($value) {
 	</tr>
 <?php
 }
-
-function weaverx_form_textarea($value,$media = false) {
-	$twide =  ($value['type'] == 'text') ? '60' : '140';
-    $rows = ( isset($value['val'] ) ) ? $value['val'] : 1;
-    $place = ( isset($value['placeholder'] ) ) ? ' placeholder="' . $value['placeholder'] . '"' : '';
-    if ( $rows < 1 )
-        $rows = 1;
-?>
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td colspan=2>
-		<textarea<?php echo $place;?> name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" rows=<?php echo $rows; ?> style="width: 350px"><?php echo(esc_textarea( weaverx_getopt($value['id'] ))); ?></textarea>
-<?php
-	if ($media) {
-	weaverx_media_lib_button($value['id']);
-	}
-?>
-&nbsp;<small><?php echo $value['info']; ?></small>
-	</td>
-
-	</tr>
-<?php
-}
-
-function weaverx_form_text($value,$media=false) {
-	$twide =  ($value['type'] == 'text') ? '60' : '160';
-?>
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td>
-		<input name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:<?php echo $twide;?>px;height:22px;" class="regular-text" value="<?php echo esc_textarea(weaverx_getopt( $value['id'] )); ?>" />
-<?php
-	if ($media) {
-	   weaverx_media_lib_button($value['id']);
-	}
-?>
-	</td>
-<?php	weaverx_form_info($value);
-?>
-	</tr>
-<?php
-}
-
-function weaverx_form_val($value, $unit = '') {
-?>
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td>
-		<input name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:50px;height:22px;" class="regular-text" value="<?php echo esc_textarea(weaverx_getopt( $value['id'] )); ?>" /> <?php echo $unit; ?>
-	</td>
-<?php	weaverx_form_info($value);
-?>
-	</tr>
-<?php
-}
-
-function weaverx_form_text_xy($value,$x='X', $y='Y', $units='px') {
-	$xid = $value['id'] . '_' . $x;
-	$yid = $value['id'] . '_' . $y;
-    $colon = ($value['name']) ? ':' : '';
-?>
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); echo $colon;?>&nbsp;</th>
-	<td>
-		<?php echo '<span class="rtl-break">' . $x;?>:<input name="<?php weaverx_sapi_main_name($xid); ?>" id="<?php echo $xid; ?>" type="text" style="width:40px;height:20px;" class="regular-text" value="<?php weaverx_esc_textarea(weaverx_getopt( $xid )); ?>" /> <?php echo $units; ?></span>
-		&nbsp;<?php echo '<span class="rtl-break">' . $y;?>:<input name="<?php weaverx_sapi_main_name($yid); ?>" id="<?php echo $yid; ?>" type="text" style="width:40px;height:20px;" class="regular-text" value="<?php weaverx_esc_textarea(weaverx_getopt( $yid )); ?>" /> <?php echo $units; ?></span>
-	</td>
-<?php	weaverx_form_info($value);
-?>
-	</tr>
-<?php
-}
-
-function weaverx_form_checkbox($value) {
-?>
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td>
-	<input type="checkbox" name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>"
-<?php 		checked(weaverx_getopt_checked( $value['id'] )); ?> >
-	</td>
-<?php 	weaverx_form_info($value);
-?>
-	</tr>
-<?php
-}
-
-function weaverx_form_radio( $value ) {
-?>
-
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td colspan="2">
-
-    <?php
-    $cur_val = weaverx_getopt_default( $value['id'], 'black' );
-	foreach ($value['value'] as $option) {
-        $desc = $option['val'];
-        if ( $desc == 'none' ) {
-            $desc = "None";
-        } else {
-            $icon = weaverx_relative_url('assets/css/icons/search-' . $desc . '.png');
-            $desc = '<img style="background-color:#ccc;height:24px; width:24px;" src="' . $icon . '" />';
-        }
-	?>
-        <input type="radio" name="<?php weaverx_sapi_main_name($value['id']); ?>" value="<?php echo $option['val']; ?>"
-        <?php checked($cur_val,$option['val']); ?> > <?php echo $desc; ?>&nbsp;
-    <?php } ?>
-    <?php echo '<br /><small style="margin-left:5%;">' . $value['info'] . '</small>'; ?>
-    </td>
-	</tr>
-<?php
-}
-
-
-function weaverx_form_select_id( $value, $show_row = true ) {
-    if ( $show_row ) { ?>
-
-	<tr>
-	<th scope="row" align="right"><?php weaverx_echo_name($value); ?>:&nbsp;</th>
-	<td>
-    <?php } ?>
-
-	<select name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>">
-    <?php
-	foreach ($value['value'] as $option) {
-	?>
-		<option value="<?php echo $option['val'] ?>" <?php selected( (weaverx_getopt( $value['id'] ) == $option['val']));?>><?php echo $option['desc']; ?></option>
-    <?php } ?>
-	</select>
-    <?php if ( $show_row ) { ?>
-	</td>
-    <?php weaverx_form_info($value); ?>
-	</tr>
-    <?php }
-}
-
-function weaverx_form_select_layout($value) {
-	$list = array(array('val' => 'default', 'desc' => wvr__('Use Default') ),
-        array('val' => 'right', 'desc' => wvr__('Sidebars on Right') ),
-        array('val' => 'right-top', 'desc' => wvr__('Sidebars on Right (stack top)') ),
-		array('val' => 'left', 'desc' => wvr__('Sidebars on Left') ),
-        array('val' => 'left-top', 'desc' => wvr__(' Sidebars on Left (stack top)') ),
-		array('val' => 'split', 'desc' => wvr__('Split - Sidebars on Right and Left') ),
-        array('val' => 'split-top', 'desc' => wvr__('Split (stack top)') ),
-		array('val' => 'one-column', 'desc' => wvr__('No sidebars, content only') )
-	);
-
-
-	$value['value'] = $list;
-	weaverx_form_select_id($value);
-}
-
-function weaverx_form_link($value) {
-    $id = $value['id'];
-
-	$link = array ('name' =>  $value['name'] , 'id' => $id.'_color', 'type' => 'ctext', 'info' => $value['info']);
-	$hover = array ('name' => '<small>Hover</small>', 'id' => $id.'_hover_color', 'type' => 'ctext', 'info' => 'Hover Color');
-
-	weaverx_form_ctext($link);
-    $id_strong = $id . '_strong';
-    $id_em = $id . '_em';
-    $id_u = $id . '_u';
-?>
-    <tr><td><small style="float:right;">Link Attributes:</small></td><td colspan="2">
-    <small style="margin-left:5em;"><strong>Bold</strong></small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_strong); ?>" id="<?php echo $id_strong; ?>"
-<?php checked(weaverx_getopt_checked( $id_strong )); ?> >
-
-    &nbsp;<small><em>Italic</em></small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_em); ?>" id="<?php echo $id_em; ?>"
-<?php checked(weaverx_getopt_checked( $id_em )); ?> >
-
-    &nbsp;<small><u>Underline</u></small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_u); ?>" id="<?php echo $id_u; ?>"
-<?php checked(weaverx_getopt_checked( $id_u )); ?> >
-
-<?php
-
-	weaverx_form_ctext($hover, true);
-    echo '</td></tr>';
-}
-
-
-function weaverx_form_note($value) {
-?>
-	<tr>
-	<th scope="row" align="right">&nbsp;</th>
-		<td style="float:right;font-weight:bold;"><?php weaverx_echo_name($value); ?>&nbsp;
-<?php
-	weaverx_form_help($value);
-?>
-		</td>
-<?php
-	weaverx_form_info($value);
-?>
-	</tr>
-<?php
-}
-
-function weaverx_form_info($value) {
-	if ($value['info'] != '') {
-	echo('<td style="padding-left: 10px"><small>'); echo $value['info']; echo("</small></td>");
-	}
-}
-
-
-function weaverx_form_widget_area( $value, $submit = false ) {
-	/* build the rows for area settings
-     * Defined Areas:
-     *  'container' => '0', 'header' => '0', 'header_html' => '0', 'header_sb' => '0',
-        'infobar' => '5px', 'content' => 'T:4px, B:8px', 'post' => '0', 'footer' => '0',
-        'footer_sb' => '0', 'footer_html' => '0', 'widget' => '0', 'primary' => '0',
-        'secondary' => '0', 'extra' => '0', 'top' => '0', 'bottom' => '0', 'wrapper' => '0'
-     */
-
-    // defaults - these are determined by the =Padding section of style-weaverx.css
-    $default_tb = array(
-        'infobar' => '5px', 'content' => 'T:4px, B:8px', 'post' => '0', 'footer' => '8px',
-        'footer_sb' => '8px', 'primary' => '8px',
-        'secondary' => '8px', 'extra' => '8px', 'top' => '8px', 'bottom' => '8px'
-    );
-
-    $default_lr = array(
-        'infobar' => '5px', 'content' => '2%', 'post' => '0', 'footer' => '0',
-        'footer_sb' => '8px', 'primary' => '8px',
-        'secondary' => '8px', 'extra' => '8px', 'top' => '8px', 'bottom' => '8px'
-    );
-
-    $default_margins = array(
-        'infobar' => '5px', 'content' => 'T:0, B:10', 'footer' => 'T:10, B:30',
-        'footer_sb' => 'T:0, B:10',  'primary' => 'T:0, B:10', 'widget' => '0, Auto - First: T:0, Last: B:0',
-        'secondary' => 'T:0, B:10', 'extra' => 'T:0, B:10', 'top' => 'T:10, B:10', 'bottom' => 'T:10, B:10',
-        'wrapper' => 'T:10, B:30'
-    );
-
-    $id = $value['id'];
-
-    $def_tb = '0'; $def_lr = '0' ; $def_marg = '0';
-    if ( isset( $default_tb[$id] ) ) $def_tb = $default_tb[$id];
-    if ( isset( $default_lr[$id] ) ) $def_lr = $default_lr[$id];
-    if ( isset( $default_margins[$id] ) ) $def_marg = $default_margins[$id];
-
-    $use_percent = array('content', 'post');
-
-    //echo '<table><tr><td>';
-	$name = $value['name'];
-
-
-    $lr_type = ( in_array($id, $use_percent) ) ? 'text_lr_percent' : 'text_lr';
-
-
-    $opts = array (
-
-        array( 'name' => $name,  'id' => '-welcome-widgets-menus', 'type' => 'header_area',
-              'info' => $value['info']),
-
-        array(  'name' => $name, 'id' => $id, 'type' => 'titles_area',
-            'info' => $name ),
-
-        array(  'name' => 'Padding', 'id' => $id . '_padding', 'type' => 'text_tb',
-            'info' => '<em>' . $name . '</em>' . ': Top/Bottom Inner padding (Default: ' . $def_tb . ')' ),
-
-        array(  'name' => '', 'id' => $id . '_padding', 'type' => $lr_type,
-            'info' => '<em>' . $name . '</em>' . ': Left/Right Inner padding (Default: ' . $def_lr . ')' ),
-
-        array(  'name' => 'Top/Bottom Margins', 'id' => $id . '_margin', 'type' => 'text_tb',
-            'info' => '<em>' . $name . '</em>' . ': Top/Bottom margins. <em>Side margins auto-generated.</em> (Default: ' . $def_marg . ')' )
-
-    );
-
-    weaverx_form_show_options($opts, false, false);
-
-
-    $no_lr_margins = array(     // areas that can't allow left-right margin or width specifications
-        'primary', 'secondary', 'content', 'post', 'widget'
-    );
-    $no_widgets = array(        // areas that don't have widgets
-        'widget', 'content', 'post', 'wrapper', 'container', 'header', 'header_html', 'footer_html', 'footer', 'infobar'
-    );
-
-    $no_hide = array(
-       'wrapper', 'container', 'content','widget', 'post'
-    );
-
-
-    if ( in_array( $id, $no_lr_margins )) {
-        if ( $id != 'widget') {
-            weaverx_form_checkbox(array(
-                'name' => 'Add Side Margin(s)',
-                'id' => $id . '_smartmargin',
-                'type' => '',
-                'info' => '<em>' . $name . '</em>' .
-                ': Automatically add left/right "smart" margins for separation of areas. ' ));
-        }
-
-        weaverx_form_note(array('name' => '<strong>Width',
-            'info' => 'The width of this area is automatically determined by the enclosing area'));
-    } else if ( $id != 'wrapper' ) {
-
-        weaverx_form_val( array(
-            'name' => wvr__('Width'),
-            'id' => $id . '_width_int', 'type' => '',
-            'info' => '<em>' . $name . '</em>' . wvr__(': Set Width of Area in percent of enclosing area (Default: 100%)'),
-            'value' => array() ), '%' );
-
-        weaverx_form_align(array(
-            'name' => '<small>Align Area</small>',
-            'id' => $id . '_align',
-            'type' => '',
-            'info' => '<em>' . $name . '</em>' . ': How to align this area (Default: Left Align)' )
-
-        );
-    }
-
-
-    if ( $id == 'wrapper' ) {       // setting #wrapper sets theme width.
-
-        $info = '<em>Change Theme Width.</em> Standard width is 940px. Widths less than 768px may give unexpected results on mobile devices. Weaver Xtreme can not create a fixed-width site.';
-
-        weaverx_form_val( array(
-            'name' => wvr__('<em style="color:red;">Theme Width</em>'),
-            'id' => 'theme_width_int', 'type' => '',
-            'info' => $info,
-            'value' => array() ), 'px' );
-    }
-
-    if ( in_array( $id, array( 'container', 'header', 'footer') ) ) {
-        $opts_max = array(
-           array(
-            'name' => '<small>' . wvr__('Max Width') . '</small>', 'id' => $id . '_max_width_int', 'type' => '+val_px',
-            'info' => '<em>' . $name . '</em>' . wvr__(': Set Max Width of Area for Desktop View. Advanced Option. (&starf;Plus)'),
-            'value' => array() ),
-           array(
-            'name' => '<small>Full-width BG</small>', 'id' => $id . '_extend_bgcolor', 'type' => '+color',
-            'info' => '<em>' . $name . '</em>' . wvr__(': Extend BG color to full theme width on Desktop View (&starf;Plus)'),
-            'value' => array() ),
-
-        );
-        weaverx_form_show_options($opts_max, false, false);
-    }
-
-
-    if ( ! in_array( $id, $no_widgets) ) {
-
-        $opts02 = array(
-            array('name' => wvr__('Columns'), 'id' => $id . '_cols_int', 'type' => 'val_num',
-                'info' => '<em>' . $name . '</em>' . wvr__(': Equal width columns of widgets (Default: 1; max: 8)') ),
-
-            array('name' => '<small>No Smart Widget Margins</small>','id' => $id . '_no_widget_margins', 'type' => 'checkbox',
-            'info' => '<em>' . $name . '</em>' . ': Do not use "smart margins" between widgets on rows.' ),
-
-            array('name' => '<small>Equal Height Widget Rows</small>','id' => $id . '_eq_widgets', 'type' => '+checkbox',
-            'info' => '<em>' . $name . '</em>' . ': Make widgets equal height rows if &gt; 1 column (&starf;Plus)' ),
-
-        );
-
-        weaverx_form_show_options($opts02, false, false);
-
-
-        $custom_widths = array( 'header_sb', 'footer_sb', 'primary', 'secondary', 'top', 'bottom');
-        if ( in_array( $id, $custom_widths) ) { /* if ( $id == 'header_sb' || $id == 'footer_sb' ) { */ ?>
-    <tr><th scope="row" align="right"><small>Custom Widget Widths:</small></th><td colspan="2" style="padding-left:20px;">
-		<small>You can optionally specify widget widths, including for specific devices. Please read the help entry!
-        <?php weaverx_help_link('help.html#CustomWidgetWidth','Help on Custom Widget Widths'); ?> (&starf;Plus) (&diams;)</small></td>
-	</tr>
-         <?php
-         $opts2 = array(
-            array('name' => '<small>Desktop</small>', 'id' => '_' . $id . '_lw_cols_list', 'type' => '+textarea',
-                'placeholder' => '25,25,50; 60,40; - for example',
-                'info' => 'List of widths separated by comma. Use semi-colon (;) for end of each row.  (&starf;Plus) (&diams;)'),
-            array('name' => '<small>Small Tablet</small>', 'id' => '_' . $id . '_mw_cols_list', 'type' => '+textarea',
-                'info' => 'List of widget widths. (&starf;Plus) (&diams;)'),
-            array('name' => '<small>Phone</small>', 'id' => '_' . $id . '_sw_cols_list', 'type' => '+textarea',
-                'info' => 'List of widget widths. (&starf;Plus) (&diams;)'),
-        );
-
-        weaverx_form_show_options($opts2, false, false);
-        }
-    }
-
-    $opts3 = array (
-        array( 'name' => '<small>Add Border</small>', 'id' => $id . '_border', 'type' => 'checkbox',
-            'info' => '<em>' . $name . '</em>' . ': Add the "standard" border (as set on Custom tab)'),
-        array( 'name' => '<small>Shadow</small>', 'id' => $id .'_shadow', 'type' => 'shadows',
-            'info' => '<em>' . $name . '</em>' . ': Wrap Area with Shadow.'),
-        array( 'name' => '<small>Rounded Corners</small>', 'id' => $id .'_rounded', 'type' => 'rounded',
-            'info' => '<em>' . $name . '</em>' . ': Rounded corners. Needs bg color or borders to show. Set for any overlapping nested area also!' ),
-
-
-    );
-
-    weaverx_form_show_options($opts3, false, false);
-
-
-
-    if ( ! in_array( $id, $no_hide) ) {
-        weaverx_form_select_hide(array(
-            'name' => '<small>Hide Area</small>',
-            'id' => $id .'_hide',
-            'info' => '<em>' . $name . '</em>' . ': Hide area on different display devices',
-            'value' => '' ) );
-    }
-
-    // class names
-    $opts4 = array (
-        array( 'name' => '<small>Add Classes</small>', 'id' => $id . '_add_class',  'type' => '+widetext',
-            'info' => '<em>' . $name . '</em>' . ': Space separated class names to add to this area (<em>Advanced option</em>) (&starf;Plus) '
-        )
-    );
-
-    weaverx_form_show_options($opts4, false, false);
-
-    if ( $submit )
-        weaverx_form_submit('');
-    //echo '</td></tr></table>';
-
-}
-
-
-
-
-
-function weaverx_form_menu_opts( $value, $submit = false ) {
-	// build the rows for area settings
-
-    //echo '<table><tr><td>';
-	$name = $value['name'];
-    $id = $value['id'];
-
-    $opts = array(
-
-        array( 'name' => $name,  'id' => '-menu', 'type' => 'header_area',
-              'info' => $value['info']),
-
-        array( 'name' => 'Menu Bar', 'id' => $id, 'type' => 'titles_menu',    // includes color, font size, font family
-            'info' => 'Entire Menu Bar' ),
-
-        array( 'name' => 'Item Background', 'id' => $id . '_link_bgcolor', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Background Color for Menu Bar Items (links)' ),
-
-        array( 'name' => '<small>Dividers between menu items</small>', 'id' => $id . '_dividers_color', 'type' => '+color',
-              'info' => '<em>' . $name . '</em>' . ': Add colored dividers between menu items. Leave blank for none.  (&starf;Plus)' ),
-
-        array( 'name' => '<small>Hover BG</small>', 'id' => $id . '_hover_bgcolor', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Hover BG Color (Default: rgba(255,255,255,0.15))' ),
-        array( 'name' => '<small>Hover Text Color</small>', 'id' => $id . '_hover_color', 'type' => 'color',
-            'info' => '<em>' . $name . '</em>' . ': Hover Text Color' ),
-
-
-        array( 'name' => '<small><em>Mobile</em> Open Submenu Arrow BG</small>', 'id' => $id . '_clickable_bgcolor', 'type' => 'ctext',
-        'info' => '<em>' . $name . '</em>' . ': Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. (Default: rgba(255,255,255,0.2))' ),
-
-
-
-        array( 'name' => 'Submenu Background', 'id' => $id . '_sub_bgcolor', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Background Color for submenus' ),
-        array( 'name' => '<small>Submenu Text Color</small>', 'id' => $id . '_sub_color', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Text Color for submenus' ),
-
-        array( 'name' => '<small>Submenu Hover BG', 'id' => $id . '_sub_hover_bgcolor', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Submenu Hover BG Color (Default: Inherit Top Level)' ),
-        array( 'name' => '<small>Submenu Hover Text Color', 'id' => $id . '_sub_hover_color', 'type' => 'color',
-            'info' => '<em>' . $name . '</em>' . ': Submenu Hover Text Color (Default: Inherit Top Level)' ),
-
-        // can't get to font properties for the submenus beause no way to add the classes
-
-
-        array ('name' => 'Align Menu',
-        'id' => $id . '_align', 'type' => 'select_id', 'info' => 'Align this menu on desktop view. Mobile menus always left aligned.',
-        'value' => array(
-			array('val' => 'left', 'desc' => 'Left'),
-			array('val' => 'center', 'desc' => 'Center'),
-			array('val' => 'right', 'desc' => 'Right')
-        )),
-
-        array( 'name' => '<small>Add Border</small>', 'id' => $id . '_border', 'type' => 'checkbox',
-              'info' => '<em>' . $name . '</em>' . ': Add the "standard" border (as set on Custom tab)' ),
-        array( 'name' => '<small>Shadow</small>', 'id' => $id .'_shadow', 'type' => 'shadows',
-            'info' => '<em>' . $name . '</em>' . ': Wrap Menu Bar with Shadow.' ),
-        array( 'name' => '<small>Rounded Corners</small>', 'id' => $id .'_rounded', 'type' => 'rounded',
-            'info' => '<em>' . $name . '</em>' . ': Add rounded corners to menu.' ),
-    );
-
-    weaverx_form_show_options($opts, false, false);
-
-
-    if ( $id == 'm_primary' ) {
-       weaverx_form_checkbox(array(
-        'name' => '<small>Move Primary Menu to Top</small>',
-        'id' => $id . '_move',
-        'info' => '<em>' . $name . '</em>' . ': Move Primary Menu at Top of Header Area (Default: Bottom)',
-        'value' => '' ) );
-    } elseif ( $id == 'm_secondary' ){
-        weaverx_form_checkbox(array(
-        'name' => '<small>Move Secondary Menu to Bottom</small>',
-        'id' => $id . '_move',
-        'info' => '<em>' . $name . '</em>' . ': Move Secondary Menu at Bottom of Header Area (Default: Top)',
-        'value' => '' ) );
-    }
-
-    $opts2 = array(
-        array( 'name' => '<small>Hide Area</small>', 'id' => $id .'_hide', 'type' => 'select_hide',
-            'info' => '<em>' . $name . '</em>' . ': Hide menu on different display devices' ),
-        array( 'name' => '<small>Hide Arrows</small>', 'id' => $id . '_hide_arrows', 'type' => 'checkbox',
-            'info' => '<em>' . $name . '</em>' . ': Hide Arrows on Desktop Menu'),
-        array( 'name' => '<small>Desktop Menu Padding</small>', 'id' => $id .'_menu_pad_dec', 'type' => 'val_em',
-            'info' => '<em>' . $name . '</em>' . ': Add vertical padding to Desktop menu bar and submenus (Default:none;)' ),
-        array( 'name' => '<small>Add Classes</small>', 'id' => $id . '_add_class', 'type' => '+widetext',
-            'info' => '<em>' . $name . '</em>' . ': Space separated class names to add to this area (<em>Advanced option</em>) (&starf;Plus)' ),
-        array('name' => '<small>Left HTML</small>', 'id' => $id . '_html_left', 'type' => '+textarea',
-              'placeholder' => 'Any HTML, including shortcodes.',
-              'info' => 'Add HTML Left (Works best with Centered Menu) (&diams;)(&starf;Plus)'),
-        array( 'name' => '<small>Hide Area</small>', 'id' => $id .'_hide_left', 'type' => '+select_hide',
-            'info' => '<em>' . $name . '</em>' . ': Hide Left HTML ' ),
-        array('name' => '<small>Right HTML</small>', 'id' => $id . '_html_right', 'type' => '+textarea',
-              'placeholder' => 'Any HTML, including shortcodes.',
-              'info' => 'Add HTML to Menu on Right (Works best with Centered Menu) (&diams;)(&starf;Plus)'),
-        array( 'name' => '<small>Hide Area</small>', 'id' => $id .'_hide_right', 'type' => '+select_hide',
-            'info' => '<em>' . $name . '</em>' . ': Hide Right HTML ' ),
-        array( 'name' => '<small>HTML: Text Color</small>', 'id' => $id .'_html_color', 'type' => 'ctext',
-            'info' => '<em>' . $name . '</em>' . ': Text Color for Left/Right Menu Bar HTML' ),
-        array( 'name' => '<small>HTML: Top Margin</small>', 'id' => $id .'_html_margin_dec', 'type' => 'val_em',
-            'info' => '<em>' . $name . '</em>' . ': Margin above Added Menu HTML (Usually needed only with Desktop Menu Padding)' ),
-
-    );
-
-    weaverx_form_show_options($opts2, false, false);
-
-
-    if ( $submit )
-        weaverx_form_submit('');
-}
-
-
-
-function weaverx_form_text_props( $value, $type = 'titles') {
-    // display text properties for an area or title
-
-    $id = $value['id'];
-    $name = $value['name'];
-    $info = $value['info'];
-
-    $id_colorbg = $id . '_bgcolor';
-
-    $id_color = $id . '_color';
-    $id_size = $id . '_font_size';
-    $id_family = $id . '_font_family';
-    $id_bold = $id . '_bold';
-    $id_normal = $id . '_normal';
-    $id_italic = $id . '_italic';
-
-    // COLOR BG & COLOR BOX
-
-    weaverx_form_ctext( array(
-        'name' => $name . ' BG',
-        'id' => $id_colorbg,
-        'info' => '<em>' . $info . ':</em> Background Color (use CSS+ to specify custom CSS for area)'));
-
-	if ( $type == 'menu' || $id == 'post_title' )
-        weaverx_form_ctext( array(
-            'name' => $name . ' Text Color',
-            'id' => $id_color,
-            'info' => '<em>' . $info . ':</em> Text properties'));
-    else
-        weaverx_form_color( array(
-            'name' => $name . ' Text Color',
-            'id' => $id_color,
-            'info' => '<em>' . $info . ':</em> Text properties'));
-
-    // FONT PROPERTIES
-?>
-    <tr>
-	<th scope="row" align="right"><small><?php echo ($type == 'titles') ? 'Title' : 'Text';?> Font properties:</small>&nbsp;</th>
-	<td colspan="2">
-        <?php
-        if ( $type != 'content') {
-            echo '&nbsp;<span class="rtl-break"><small><em>Size:</em></small>'; weaverx_form_select_font_size(array('id' => $id_size), false); echo '</span>';
-        }
-        echo '&nbsp;<span class="rtl-break"><small><em>Family:</em></small>'; weaverx_form_select_font_family(array('id' => $id_family), false); echo '</span>'; ?>
-
-        <?php if ( $type == 'titles' ) { ?>
-        &nbsp;<span class="rtl-break"><small>Normal Weight</small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_normal); ?>" id="<?php echo $id_normal; ?>"
-<?php checked(weaverx_getopt_checked( $id_normal )); ?> ></span>
-
-        <?php } else { ?>
-        &nbsp;<span class="rtl-break"><small><strong>Bold</strong></small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_bold); ?>" id="<?php echo $id_bold; ?>"
-<?php checked(weaverx_getopt_checked( $id_bold )); ?> ></span>
-        <?php } ?>
-        &nbsp;<span class="rtl-break"><small><em>Italic</em></small> <input type="checkbox" name="<?php weaverx_sapi_main_name($id_italic); ?>" id="<?php echo $id_italic; ?>"
-<?php checked(weaverx_getopt_checked( $id_italic )); ?> ></span>
-<?php   if ( apply_filters('weaverx_xtra_type', '+plus_fonts' ) == 'inactive' )
-            echo '<small>&nbsp;&nbsp; (Add new fonts with <em>Weaver Xtreme Plus</em>)</small>';
-        else
-            echo '<small>&nbsp;&nbsp; (Add new fonts from Custom &amp; Fonts tab.)</small>';?>
-    </td>
-    </tr>
-<?php
-
-}
-
-function weaverx_from_fi_location( $value, $is_post = false ) {
-    $value['value'] = array(
-        array('val' => 'content-top', 'desc' => wvr__('With Content - top') ),
-        array('val' => 'content-bottom', 'desc' => wvr__('With Content - bottom') ),
-        array('val' => 'title-before', 'desc' => wvr__('Before Title') ),
-        array('val' => 'header-image', 'desc' => $is_post ? wvr__('Hide on Blog View') : wvr__('Header Image Replacement') ),
-        array('val' => 'post-before', 'desc' => wvr__('Outside of Page/Post') )
-	);
-
-
-	weaverx_form_select_id($value);
-}
-
-
-function weaverx_form_align( $value ) {
-    $value['value'] = array(
-        array('val' => 'float-left', 'desc' => wvr__('Align Left') ),
-        array('val' => 'center', 'desc' => wvr__('Center') ),
-        array('val' => 'float-right', 'desc' => wvr__('Align Right') )
-	);
-
-	weaverx_form_select_id($value);
-}
-
-
-function weaverx_form_fi_align( $value ) {
-    $value['value'] = array(
-        array('val' => 'fi-alignleft', 'desc' => wvr__('Align Left') ),
-         array('val' => 'fi-aligncenter', 'desc' => wvr__('Center') ),
-        array('val' => 'fi-alignright', 'desc' => wvr__('Align Right') ),
-        array('val' => 'fi-alignnone', 'desc' => wvr__('No Align') )
-	);
-
-	weaverx_form_select_id($value);
-}
-
-function weaverx_form_select_hide($value) {
-	$value['value'] = array(array('val' => 'hide-none', 'desc' => wvr__('Do Not Hide') ),
-        array('val' => 's-hide', 'desc' => wvr__('Hide: Phones') ),
-        array('val' => 'm-hide', 'desc' => wvr__('Hide: Small Tablets') ),
-		array('val' => 'm-hide s-hide', 'desc' => wvr__('Hide: Phones+Tablets') ),
-        array('val' => 'l-hide', 'desc' => wvr__('Hide: Desktop') ),
-		array('val' => 'l-hide m-hide', 'desc' => wvr__('Hide: Desktop+Tablets') ),
-        array('val' => 'hide', 'desc' => wvr__('Hide on All Devices') )
-	);
-
-	weaverx_form_select_id($value);
-}
-
-function weaverx_form_select_font_size( $value, $show_row = true ) {
-	$value['value'] = array(array('val' => 'default', 'desc' => wvr__('Inherit') ),
-        array('val' => 'm-font-size', 'desc' => wvr__('Medium Font') ),
-        array('val' => 'xxs-font-size', 'desc' => wvr__('XX-Small Font') ),
-        array('val' => 'xs-font-size', 'desc' => wvr__('X-Small Font') ),
-        array('val' => 's-font-size', 'desc' => wvr__('Small Font') ),
-        array('val' => 'l-font-size', 'desc' => wvr__('Large Font') ),
-		array('val' => 'xl-font-size', 'desc' => wvr__('X-Large Font') ),
-        array('val' => 'xxl-font-size', 'desc' => wvr__('XX-Large Font') ),
-        array('val' => 'customA-font-size', 'desc' => wvr__('Custom Size A') ),
-        array('val' => 'customB-font-size', 'desc' => wvr__('Custom Size B') )
-	);
-    $value['value'] = apply_filters('weaverx_add_font_size', $value['value']);
-	weaverx_form_select_id( $value, $show_row);
-}
-
-
-function weaverx_form_select_font_family( $value, $show_row = true ) {
-	$value['value'] = array(array('val' => 'default', 'desc' => wvr__('Inherit') ),
-        array('val' => 'sans-serif', 'desc' => wvr__('Arial (Sans Serif)') ),
-        array('val' => 'arialBlack', 'desc' => wvr__('Arial Black') ),
-        array('val' => 'arialNarrow', 'desc' => wvr__('Arial Narrow') ),
-        array('val' => 'lucidaSans', 'desc' => wvr__('Lucida Sans') ),
-        array('val' => 'trebuchetMS', 'desc' => wvr__('Trebuchet MS') ),
-        array('val' => 'verdana', 'desc' => wvr__('Verdana') ),
-
-        array('val' => 'serif', 'desc' => wvr__('Times (Serif)') ),
-        array('val' => 'cambria', 'desc' => wvr__('Cambria') ),
-        array('val' => 'garamond', 'desc' => wvr__('Garamond') ),
-        array('val' => 'georgia', 'desc' => wvr__('Georgia') ),
-        array('val' => 'lucidaBright', 'desc' => wvr__('Lucida Bright') ),
-        array('val' => 'palatino', 'desc' => wvr__('Palatino') ),
-
-        array('val' => 'monospace', 'desc' => wvr__('Courier (Monospace)') ),
-        array('val' => 'consolas', 'desc' => wvr__('Consolas') ),
-
-        array('val' => 'papyrus', 'desc' => wvr__('Papyrus') ),
-        array('val' => 'comicSans', 'desc' => wvr__('Comic Sans MS') )
-	);
-    $value['value'] = apply_filters('weaverx_add_font_family', $value['value']);
-    ?>
-    <select name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>">
-    <?php
-	foreach ($value['value'] as $option) {
-	?>
-		<option class="font-<?php echo $option['val'];?>" value="<?php echo $option['val'] ?>"<?php selected( (weaverx_getopt( $value['id'] ) == $option['val']));?>><?php echo $option['desc']; ?></option>
-    <?php } ?>
-	</select>
-<?php
-}
-
-function weaverx_form_rounded($value) {
-	$value['value'] = array(array('val' => 'none', 'desc' => wvr__('None') ),
-        array('val' => '-all', 'desc' => wvr__('All Corners') ),
-        array('val' => '-left', 'desc' => wvr__('Left Corners') ),
-		array('val' => '-right', 'desc' => wvr__('Right Corners') ),
-        array('val' => '-top', 'desc' => wvr__('Top Corners') ),
-		array('val' => '-bottom', 'desc' => wvr__('Bottom Corners') ),
-	);
-
-	weaverx_form_select_id($value);
-}
-
-function weaverx_form_shadows($value) {
-	$value['value'] = array(array('val' => '-0', 'desc' => wvr__('No Shadow') ), // as in .shadow-0
-        array('val' => '-1', 'desc' => wvr__('All Sides, 1px') ),
-        array('val' => '-2', 'desc' => wvr__('All Sides, 2px') ),
-		array('val' => '-3', 'desc' => wvr__('All Sides, 3px') ),
-        array('val' => '-4', 'desc' => wvr__('All Sides, 4px') ),
-		array('val' => '-rb', 'desc' => wvr__('Right + Bottom') ),
-        array('val' => '-lb', 'desc' => wvr__('Left + Bottom') ),
-        array('val' => '-tr', 'desc' => wvr__('Top + Right') ),
-        array('val' => '-tl', 'desc' => wvr__('Top + Left') ),
-        array('val' => '-custom', 'desc' => wvr__('Custom Shadow') )
-	);
-    $value['value'] = apply_filters('weaverx_add_shadows', $value['value']);
-
-	weaverx_form_select_id($value);
-}
-
-function weaverx_check_version() {
-
-    $version = WEAVERX_VERSION;
-
-    $check_site = 'http://weaverxtra.wordpress.com';
-    $home_site = 'http://weavertheme.com';
-    $msg = ') is available at <a href="http://weavertheme.com/download/?did=30" target="_blank">WeaverTheme.com/download/</a>.';
-
-    $latest = weaverx_latest_version($check_site);     // check if newer version is available
-    if ( $latest != 'unavailable' && version_compare($version,$latest,'<') ) {
-        $saveme = 'Current ' . WEAVERX_THEMENAME . ' version is ' . $version . '. A newer version (' . $latest .
-            $msg;
-        weaverx_save_msg($saveme);
-    }
-
-
-	return '';
-}
-
-function weaverx_latest_version($check_site) {
-	$rss = fetch_feed($check_site. '/feed/');
-	 if (is_wp_error($rss) ) {
-		return 'unavailable';
-	}
-	$out = '';
-	$items = 1;
-	$num_items = $rss->get_item_quantity($items);
-	if ( $num_items < 1 ) {
-		$out .= 'unavailable';
-		$rss->__destruct();
-		unset($rss);
-		return $out;
-	}
-	$rss_items = $rss->get_items(0, $items);
-	foreach ($rss_items as $item ) {
-		$title = esc_attr(strip_tags($item->get_title()));
-		if ( empty($title) )
-			$title = 'unavailable';
-	}
-	if (stripos($title,'announcement') === false) {
-		$blank = strpos($title,' ');    // find blank
-		if ($blank < 1)     // problem
-			$title = 'unavailable';
-		else {
-			$title = substr($title,0,$blank);
-		}
-	}
-	$out .= $title;
-	$rss->__destruct();
-	unset($rss);
-	return $out;
-}
-
-
-require_once( get_template_directory() . '/includes/lib-forms.php' );
 
 ?>

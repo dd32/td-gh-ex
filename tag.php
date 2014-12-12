@@ -14,7 +14,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
     <header class="page-header">
         <?php
-        $title = '<span class="title-tag-label">' . sprintf( __( 'Tag Archives: %s','weaverx'), '</span><span class="archive-info">'
+        $title = '<span class="title-tag-label">' . sprintf( __( 'Tag Archives: %s','weaver-xtreme'), '</span><span class="archive-info">'
                                                             . single_tag_title( '', false ) . '</span>' );
         weaverx_archive_title( $title, 'tag' );
 

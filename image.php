@@ -15,9 +15,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
     weaverx_post_count_clear(); the_post();
     ?>
     <nav id="nav-above">
-        <h3 class="assistive-text"><?php echo __( 'Image navigation','weaverx'); ?></h3>
-        <span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' ,'weaverx') ); ?></span>
-        <span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' ,'weaverx') ); ?></span>
+        <h3 class="assistive-text"><?php echo __( 'Image navigation','weaver-xtreme'); ?></h3>
+        <span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' ,'weaver-xtreme') ); ?></span>
+        <span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' ,'weaver-xtreme') ); ?></span>
     </nav><!-- #nav-above -->
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('page-image'); ?>>
@@ -25,7 +25,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
         <div class="entry-meta <?php weaverx_text_class( 'post_info_top', true); ?>">
         <?php
         $metadata = wp_get_attachment_metadata();
-        printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>','weaverx'),
+        printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>','weaver-xtreme'),
             esc_attr( get_the_time() ),
             get_the_date(),
             esc_url( wp_get_attachment_url() ),
@@ -92,9 +92,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
     </article><!-- #post-<?php the_ID(); ?> -->
     <nav id="nav-below">
-        <h3 class="assistive-text"><?php echo __( 'Image navigation','weaverx'); ?></h3>
-        <span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' ,'weaverx') ); ?></span>
-        <span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' ,'weaverx') ); ?></span>
+        <h3 class="assistive-text"><?php echo __( 'Image navigation','weaver-xtreme'); ?></h3>
+        <span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' ,'weaver-xtreme') ); ?></span>
+        <span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' ,'weaver-xtreme') ); ?></span>
     </nav><!-- #nav-below -->
     <?php
     if (weaverx_getopt_checked('allow_attachment_comments'))

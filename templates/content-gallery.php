@@ -57,8 +57,8 @@ $entry_summary = 'entry-summary';
                 weaverx_clear_both('compact-poat');
 ?>
 		<p><em> <?php echo  '<a href="' . esc_url( get_permalink() ) . '" title="' .
-            sprintf( esc_attr__( 'Permalink to %s','weaverx'), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"' .
-            '>' . __( 'Gallery','weaverx') . '</a></em></p>';
+            sprintf( esc_attr__( 'Permalink to %s','weaver-xtreme'), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"' .
+            '>' . __( 'Gallery','weaver-xtreme') . '</a></em></p>';
 
 		} else {	// did not find any images from the content.
 			// using get_children failed to find any gallery image, so let's do it ourselves.
@@ -75,7 +75,7 @@ $entry_summary = 'entry-summary';
                 $linked = true;
     ?>
                 <a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
-                <p><em><?php echo __( 'Gallery','weaverx'); ?></em></p>
+                <p><em><?php echo __( 'Gallery','weaver-xtreme'); ?></em></p>
     <?php
             }
 		}
@@ -83,7 +83,7 @@ $entry_summary = 'entry-summary';
 		if ((!weaverx_compact_post() && !$linked) || !$linked)
             weaverx_the_post_excerpt();
 	}	// display gallery format
-	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaverx') . '</span>', 'after' => '</div>' ) ); ?>
+	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-summary -->
     <?php if (!weaverx_compact_post()) { ?>
 	    <footer class="entry-utility">

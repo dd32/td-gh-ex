@@ -11,7 +11,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
     weaverx_sb_precontent('search');
 
     if ( have_posts() ) {
-        $title = '<span class="title-search-label">' . sprintf( __( 'Search Results for: %s','weaverx'), '</span><span class="archive-info">'
+        $title = '<span class="title-search-label">' . sprintf( __( 'Search Results for: %s','weaver-xtreme'), '</span><span class="archive-info">'
                 . '"' . get_search_query() . '"</span>' );
         ?>
 
@@ -47,14 +47,14 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
     <article id="post-0" class="post no-results not-found">
         <header class="entry-header">
-            <h1 class="page-title content-title title-search"><?php echo __( 'Nothing Found','weaverx'); ?></h1>
+            <h1 class="page-title content-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
         </header><!-- .entry-header -->
 
         <?php
         if (!weaverx_getopt('_hide_not_found_search')) { ?>
 
         <div class="entry-content clearfix">
-            <p><?php echo __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.','weaverx'); ?></p>
+            <p><?php echo __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.','weaver-xtreme'); ?></p>
             <?php get_search_form(); ?>
         </div><!-- .entry-content -->
         <?php

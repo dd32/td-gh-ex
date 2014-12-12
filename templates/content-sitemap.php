@@ -23,16 +23,16 @@ weaverx_fi( 'page', 'post-before' );
 
 	// sitemap specific code
 	echo("<div id=\"weaver-sitemap\">\n");
-	echo("<h3>" . __('Pages','weaverx') . "</h3><ul class='xoxo sitemap-pages'>\n");
+	echo("<h3>" . __('Pages','weaver-xtreme') . "</h3><ul class='xoxo sitemap-pages'>\n");
 	wp_list_pages(array('title_li' => false));
 	echo("</ul>\n");
 
-	echo("<br /><h3>" .__('Posts','weaverx') . "</h3><ul class='xoxo sitemap-pages-month'>\n");
+	echo("<br /><h3>" .__('Posts','weaver-xtreme') . "</h3><ul class='xoxo sitemap-pages-month'>\n");
 	wp_get_archives(array('type' => 'monthly', 'show_post_count' => true));
 	echo("</ul>\n");
 
 	if (!weaverx_getopt('post_hide_categories')) {
-		echo("<br /><h3>" . __('Categories','weaverx') . "</h3><ul class='xoxo sitemap-categories'>\n");
+		echo("<br /><h3>" . __('Categories','weaver-xtreme') . "</h3><ul class='xoxo sitemap-categories'>\n");
 		wp_list_categories(array('show_count' => true, 'use_desc_for_title' => true, 'title_li' => false));
 		echo("</ul>\n");
     }
@@ -40,13 +40,13 @@ weaverx_fi( 'page', 'post-before' );
 
     if ( ! weaverx_getopt( 'post_hide_tags' ) ) {
 
-		echo("<br /><h3>" . __('Tag Cloud','weaverx') . "</h3><ul class='xoxo sitemap-tag'>\n");
+		echo("<br /><h3>" . __('Tag Cloud','weaver-xtreme') . "</h3><ul class='xoxo sitemap-tag'>\n");
 		wp_tag_cloud(array('number' => 0));
 		echo("</ul>\n");
 	}
 
     if ( ! weaverx_getopt( 'post_hide_author' ) ) {
-		echo("<br /><h3>" . __('Authors','weaverx') ."</h3><ul class='xoxo sitemap-authors'>\n");
+		echo("<br /><h3>" . __('Authors','weaver-xtreme') ."</h3><ul class='xoxo sitemap-authors'>\n");
 		wp_list_authors(array('exclude_admin' => false, 'optioncount' => true, 'title_li' => false));
         echo("</ul>\n");
     }

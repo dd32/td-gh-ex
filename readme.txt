@@ -6,8 +6,8 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Requires at least: 3.5
-Tested up to: 3.9
+Requires at least: 3.9
+Tested up to: 4.0
 Stable tag: 1.0
 
 == Description ==
@@ -49,45 +49,59 @@ with testing and feature suggestions.
 
 == Changelog ==
 
-Initial Release: Version 0.1
+Official Release: Version 0.90
 
-= Changed Version .60 =
-* New paradigm for last widget margin / widget area bottom padding
-* Fixed equalize widget height to correspond to previous change
-* Removed .content-title class
-* Changed  full screen bg image to tile on IE8
-* Added auto-backup for  settings if deactivate  plugin
+= Changed Version 0.90.1 =
+* Added Xenic subtheme
+* Added font-demo.html help doc, link from Help tab
+* Fixed issue with Header top padding
+* Removed PHP 5.3 dependency - should work with 5.2 now.
+* Clarified Content Image option wording: Container and Footer, not header
+* Tweaked line hieght of tagline - made it 1.625
+* Teaked Genericon Mobile Menu icon
+* Fixed styling for post title weight, style
+* Fixed Genericon Menu Arrow adjustments when adding menu margin
+* Fixed site title top margin issue
+* Removed stray .post margin-bottom rule
+* Tweaked generated rule for submenu hover bg
 
-= Changed Version .70 =
-* Removed some testing remnants
-* Fixed Breadcrumbs when have No Home Page option checked
-* Fixed descriptions for HTML Insertion IDs ()
-* Fixed Infobar location on Page with Posts (issues with some sidebars)
-* Won't display empty sidebars anymore
-* Fixed internal name issue with Mobile Open Submenu Arrow BG option. Will require manual fix if used.
+= Changed Version 0.90.2 =
+* Tweaked Add CSS and CSS+ validation
+* Tweaked interface to X-Plus
+* Fixed update link
 
-= Changed Version .80 =
-* Fixed right aligned mobile menus. Mobile menus don't align any direction!
-* Wording tweak on Archive-Like widget area
-* Tweaked API to Plus and Theme Support plugins
-* Added some styling for Plus
-* Fixed bottom up arrow location
-* Fixed subtheme version number
-* Added right margin for float-right menus
-* Added Per Post Styling
+= Changed Version 0.90.4 =
+* Version 0.90.3 was due to version file upload issue
+* Fixed .ie8 permalink icon bug
+* Tweaked site title top margin issue fix
+* Changed Area Width to be 98% on mobile if option specified
+* Fixed Continue Reading issue for <!--more-->
+* Fixed Page/Post Visual editor width issue
 
-= Changed for Version .89 - Pre-Release =
-* Added Auto Hyphenation option on for content text
-* Added equivalent id/classes to some areas (e.g., #wrapper and .wrapper)
-* Added 'updated' structured data for Google search (hidden value)
-* Removed some font selections
-* Switched to Genericons for visitor side icons. Add documentation for using
-  them in user content.
-* Tweaked JS code for colorflow and widget eq
-* Tweaked hooks for X-Plus
-* Tweaked some styles to use the class instead of id
-* Tweaked docs
-* Fixed content link attrubute generation
-* Fixed replacement widget area styling
-* Fixed bug with title/tagline over header auto-sizing
-* Fixed bug for custom width left sidebars
+= Changed Version 0.91 =
+* More Weaver X-Plus interface changes
+* Added index links to Main Options tabs
+* Fixed problem with header mini-menu top margin
+* Fixed problem with font-family display in WP Page/Post editor: the standard font families
+  now display properly, but Google Fonts from X-Plus can only be displayed as sans-serif.
+* One more try at fixing the site title top margin issue
+* Fixed issue with custom smart margin on mobile devices (it should not be used with mobile devices)
+* Fixed clearing issue with multi-column widgets and uneven heights
+* Removed blank space when hide arrows on desktop
+* Added icons to most options
+
+= Changed Version 0.91.2 =
+* Fixed issue with custom smart margin on small tablets
+* Changed order of Header HTML/Widget Area interface to match Footer order
+* Fixed small issue with equal heights calculations (X-Plus)
+* Tweaked option icons
+* Tweaked menu hover colors to override current item colors
+* Tweaked admin main options anchor links for positioning
+* Tweaked shadows on menus bordering images
+
+= Changed Version 0.91.3 =
+* Tweaked viewport to initial-scale=1.0
+* Fixed [ widget_area area_style=footer/header ] issue
+* Initial admin text translation wrapping
+* Changed Appearance : Weaver Xtreme to Theme Options per WP requirements
+* Fixed issue with late loading header image and branding resizing

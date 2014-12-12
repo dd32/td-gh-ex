@@ -28,7 +28,7 @@ function weaverx_install_tgm_plugins() {
 
 
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'weaverx';
+	$theme_text_domain = 'weaver-xtreme';
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.
@@ -46,12 +46,12 @@ function weaverx_install_tgm_plugins() {
 		'menu'             => 'install-weaverx-addons', // Menu slug
 		'has_notices'      => true, // Show admin notices or not
 		'is_automatic'     => true, // Automatically activate plugins after installation or not
-		'message'          => '<p>The following plugins are highly recommended for full functioning of the Weaver Xtreme theme.
+		'message'          => __('<p>The following plugins are highly recommended for full functioning of the Weaver Xtreme theme.
 The <em>Weaver Xtreme Theme Support</em> plugin provides important extra theme functionality, including several shortcodes
 that help you customize your content for desktop or mobile device appearance.</p>
 <p>The <em>ATW Show Posts</em> plugin provides an extremely useful shortcode, [show_posts], that allows you to display
 any number of selected posts on pages, the header, the footer, or in sidebars. This capability was formerly part of the
-Theme Support plugin, but has been separated because of its general usefulness for other themes.</p>',
+Theme Support plugin, but has been separated because of its general usefulness for other themes.</p>','weaver-xtreme'),
             // Message to output right before the plugins table
 		'strings'          => array(
 			'page_title'                      => __( 'The <em>Weaver X</em> Theme Recommended Plugins', $theme_text_domain ),

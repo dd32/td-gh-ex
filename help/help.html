@@ -344,7 +344,7 @@ Section</a></li>
         <li><a href="#style-titles">Styling Titles</a></li>
         </ul>
       </li>
-      <li><a href="#WeaverII"><strong style="font-size:large;">Weaver Xtreme Plus</strong></a></li>
+      <li><a href="#WeaverII"><strong>Weaver Xtreme Plus</strong></a></li>
       <li><a href="#Shortcodes"><strong>Shortcodes</strong></a></li>
       <li><strong><a href="#SaveRestore">Save/Restore Themes</a></strong></li>
       <li><strong><a href="#PageTemplates">Weaver Page Templates</a></strong></li>
@@ -727,26 +727,13 @@ If you use one of these extra widget areas more than once on the same page (for 
     </p>
     <h3><a name="Fonts" id="Fonts"></a>Fonts</h3>
 
-    <p>The <em>Weaver Xtreme</em> basic version, each area has the ability to set font color, size, family, bold, and italic. All font sizes are set using general size option, and use the 'em' unit.</p>
+    <p>With the <em>Weaver Xtreme</em> basic version, each area has the ability to set font color, size, family, bold, and italic. All font sizes are set using general size option, and use the 'em' unit.</p>
     <p>In addition, the design is based on a single &quot;Site Base Font Size&quot;. This value is expressed in px, and defaults to 16px. This means the default medium font size is 16px. All other text elements are sized in 'ems' using that base size. This means that 1em equals 16px. Changing the base font size affects all other font sizes such as headings, titles, etc.</p>
     <p>Note that it still possible to set the size and font family using Custom CSS Rules with the <em>Weaver Xtreme</em> basic version. However, <em>Weaver Xtreme Plus</em> provides much greater control over fonts.</p>
-    <p>The Custom A and B font specifications on the Main Options Custom tab allow you to do two things.</p>
-    <ol>
-      <li>        Define a new font size to use anywhere the Font Size option shows. So  you might want a really big font and put 6 in the font size box.</li>
-      <li> Define a new font family. In the easiest usage, you might want the  font-family: <em>&quot;Arial Rounded MT Bold&quot;, &quot;Helvetica Rounded&quot;, Arial,  sans-serif;</em> font stack. Simply put:<br />
-        <span class="css">&quot;Arial Rounded MT Bold&quot;, &quot;Helvetica Rounded&quot;, Arial, sans-serif; </span><br />
-      as the  value for Custom Font Family A/B option.
-     </li>
-    </ol>
-     <p>
-        Now  if you have used the &lt;HEAD&gt; section to include the proper  definitions for an external  font file (&lt;link&gt; usually), you  can then add that font family name to Custom Font Family A (or B), and  you can then select Custom A (or B) to select that font from the font  selection options.</p>
-     <p>
-    The <em>Weaver Xtreme Plus Font Control</em> will allow you do do  that with Google Fonts. The added Google Fonts will show up on the Font  Family selection options automatically after they've been defined. </p>
+    <p>The Custom A and B font size options on the Main Options Custom  &amp; Fonts tab allow you to define a new font size to use anywhere the Font Size option shows. So  you might want a really big font and put 6 in the font size box.</p>
+     <p><strong><a href="font-demo.html" target="_blank">See Basic Web Fonts and Google Fonts supported by Weaver Xtreme</a></strong></p>
     <h4>Weaver Xtreme Plus Font Control</h4>
-<p>The <em>Weaver Xtreme Plus</em> Font Control panel gives you fine tuned control over the fonts various elements of your site will use.
-    You can  use <em>any</em> of the free
-    <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>.
-You can add any number of Google Fonts, and they will automatically be included with all the Font Family selection options in the options settings.
+<p>The <em>Weaver Xtreme Plus Font Control</em> will allow you add Google Fonts and other free and commercial fonts. The added Google Fonts will be automatically added to the Font Family selection options after they've been defined.
 <h2><a name="Custom" id="Custom"></a>Custom Options</h2>
 <p>The <em>Custom</em> tab allows you to set some custom options. These options tend to be more advanced, and many are supported only by <em>Weaver X</em>.
 <h4>Site Base Font Size</h4>
@@ -839,7 +826,8 @@ You can add any number of Google Fonts, and they will automatically be included 
     <p>You can add arbitrary PHP code here, but normally this code will just be add_action and add_filter calls, plus supporting function definitions. You can probably add enqueue_style and enqueue_script functions as well, as those functions are typically used later in the header.php file.</p>
     <p>The code you define is executed using the PHP eval() function.<em> Any PHP errors will cause failure of the site to load properly.</em> Specifically, you should <strong>NOT</strong> wrap the code with &lt;?php at the beginning and ?&gt; at the end. You can use them within the code as needed.</p>
     <h3><a name="HTMLInsertion" id="HTMLInsertion"></a>HTML Code Insertion Areas </h3>
-<p>The options in this section allow you to insert HTML code into various regions of your pages. These areas must use HTML markup code, and all can include WP shortcodes. Important: You almost certainly will need to provide CSS styling rules for these code blocks, either as in-tag style="..." rules, or by adding CSS rules the the
+<p>The options in this section allow you to insert HTML code into various regions of your pages. In addition to the HTML Insertion boxes on the <em>Advanced Options : HTML Insertion</em> tab, there are also specialized HTML Code Insertion area for the Header and Footer found on those admin tabs. These areas must use HTML markup code, and all can include WP shortcodes. </p>
+<p>Important: You almost certainly will need to provide CSS styling rules for these code blocks, either as in-tag style="..." rules, or by adding CSS rules the the
       Custom CSS Rules Section described above. If any of your styling includes <em>float</em> rules, you will almost certainly have to
       add a <code>&lt;div style="clear:both;"&gt;</code> to your inserted code.
 
@@ -847,7 +835,7 @@ You can add any number of Google Fonts, and they will automatically be included 
     <p>The  areas are mostly useful for more advanced web site builders, and are most available only in the <em>Weaver Xtreme Plus</em> version.</p>
     <p>Each of the HTML insertion sections includes three additional options - Hide on the front page, and Hide on non-front pages, and a background color with the CSS+ option. These settings can be used to control where the areas are used.</p>
     <label><b><a name="HeaderInsCode" id="HeaderInsCode"></a>Header and Footer HTML</b></label>
-    <p>You can add HTML to the <span class="code1">Header</span> and <span class="code1">Footer</span> HTML areas. This must be HTML markup code (including WP shortcodes), and will be
+    <p>You can add HTML to the <span class="code1">Header</span> and <span class="code1">Footer</span> HTML areas in the specialized Header and Footer HTML sections of the Header and Footer tabs. This must be HTML markup code (including WP shortcodes), and will be
       inserted into the  header (#header) and footer (#colophon) areas. </p>
     <p>For the header, when used in combination with hiding the site
       title, header image, and the menu, you can design a completely custom
@@ -866,8 +854,7 @@ You can add any number of Google Fonts, and they will automatically be included 
       have uploaded your rotating header images for the plugin to use. To add
       this slide show header image, you should first disable the default
       header image by checking the &quot;Hide Header Image&quot; in the <em>Main
-      Options</em> tab. Then, add this code to the Site Header Insert Code
-      box:</p>
+      Options</em> tab. Then, add this code to the<em> Header HTML content</em> box on the Header options tab:</p>
     <p class="css">&lt;div
       class="aligncenter"&gt;[show_slider name='header-images']&lt;/div&gt;</p>
     <p>Note that the built-in <span class="css">aligncenter</span> CSS
@@ -875,16 +862,13 @@ You can add any number of Google Fonts, and they will automatically be included 
       appropriate CSS styling, you may get unexpected placement of the plugin
       output. The <span class="css">aligncenter</span> class will usually do
       what you want.</p>
-    <label><b>Footer Code</b></label>
-    <p>This code will be inserted into the site footer area, right before  the "Powered by" credits, but after any Footer widgets. This
-      could include extra information, visit counters, etc. You can use HTML
-      here, so include style tags if you want! And like the Site Header
-      Insert Code section, you can also use shortcodes.</p>
+    <p><strong>Pre-Wrapper and Post-Footer Code</strong></p>
+    <p>These areas are included with the free version of the theme. The HTML from these boxe is respectively inserted before and after the #wrapper &lt;div&gt;.</p>
     <p><strong>Pre-Header,  Pre-Container, Pre-Comments, Post-Comments, Pre-Footer, Post-Footer, Pre-Sidebar</strong></p>
-    <p>These areas can be used to insert HTML and shortcodes in the given areas of a site page.
-      These options are available only in the Xtra version.  Each of these areas a wrapped in an &quot;#inject_areaname&quot; &lt;div&gt;. The name is included on the admin page. In order to get proper display, you may have to add an extra empty &lt;div&gt; in your code block to clear the floats: <span class="code1">&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</span>. You could also include that in a CSS rule for the respective '#inject_xxx&quot; rule.</p>
+<p>These areas can be used to insert HTML and shortcodes in the given areas of a site page.
+      These options are available only in the Xtreme Plus version.  Each of these areas a wrapped in an &quot;#inject_areaname&quot; &lt;div&gt;. The name is included on the admin page. In order to get proper display, you may have to add an extra empty &lt;div&gt; in your code block to clear the floats: <span class="code1">&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</span>. You could also include that in a CSS rule for the respective '#inject_xxx&quot; rule.</p>
     <h3><a name="ArchivePages" id="ArchivePages"></a>Archive-type Pages</h3>
-<p>WordPress supports several kinds of pages that are often called &quot;Archive&quot; pages. These include pages that will display different post archives such as by category, tag, author, or date. It also includes the search page. Normally, such pages will include a title that describes the archive page type. In the Xtra version, this tab allow you to hide those titles.</p>
+<p>WordPress supports several kinds of pages that are often called &quot;Archive&quot; pages. These include pages that will display different post archives such as by category, tag, author, or date. It also includes the search page. Normally, such pages will include a title that describes the archive page type. In the Plus version, this tab allow you to hide those titles.</p>
     <ul>
 	<li>.category-title-label</li>
 	<li>.category-archive-meta - category description</li>
@@ -1079,12 +1063,12 @@ You can add any number of Google Fonts, and they will automatically be included 
     <p>&nbsp;</p>
 <h2><a name="WeaverII" id="WeaverII"></a><em>Weaver Xtreme Plus</em> Options</h2>
     <p>This page controls some administrative options for the <em>Weaver Xtreme Plus</em> version.</p>
-    <h3><a name="AdminOpts" id="AdminOpts"></a>Xtra Administrative Options</h3>
+    <h3><a name="AdminOpts" id="AdminOpts"></a>Xtreme Plus Administrative Options</h3>
     <p>The main option in this section is the &quot;Use Inline CSS&quot; option. The <em>Weaver Xtreme</em> Basic version always emits the necessary custom CSS rules in each page's &lt;head&gt; block. There is some debate in the SEO circles if having a block of CSS will hurt a site's SEO ranking, with the majority seeming to believe that a large block of CSS in the header is a negative. <em>Weaver Xtreme Plus</em> instead generates a custom css style file when the theme's options are saved. The keeps the CSS out of the &lt;head&gt; block, as well as eliminating the need to generate the custom CSS when the actual site page is loaded.</p>
     <p>The other option is called Development Mode. This mode supports a few options that might make it easier to develop the site. When it is enabled, Inline CSS is used which usually will avoid browser caching issues. The other options are explained on the option page.</p>
     <h3><a name="Shortcodes" id="Shortcodes"></a><em>Weaver Xtreme Plus</em> Shortcodes &amp; Features</h3>
-    <p>Many of the features of <em>Weaver Xtreme Plus</em> are implemented via shortcodes. While the settings and information about the Xtra Shortcodes are found on the <span class="code1">Appearance&rarr;Shortcodes</span> menu, this admin tab functions much like the WordPress &quot;Installed Plugins&quot; tab - it is mainly used to enable and disable the various plugins.</p>
-    <p>In general, <em>Weaver Xtreme</em>'s shortcodes work very much like regular plugins. And like them, there is a small overhead when a site page is loaded. When a shortcode is disabled, it is the same as deactivating a plugin, and any overhead of using the shortcode will be eliminated. So, ideally, just as you deactivate plugins you're not using, you can disable any Xtra Shortcode you don't need. The savings will be very small, but for busy sites, it might make a small difference.</p>
+    <p>Many of the features of <em>Weaver Xtreme Plus</em> are implemented via shortcodes. While the settings and information about the Xtreme Plus Shortcodes are found on the <span class="code1">Appearance&rarr;Shortcodes</span> menu, this admin tab functions much like the WordPress &quot;Installed Plugins&quot; tab - it is mainly used to enable and disable the various plugins.</p>
+    <p>In general, <em>Weaver Xtreme</em>'s shortcodes work very much like regular plugins. And like them, there is a small overhead when a site page is loaded. When a shortcode is disabled, it is the same as deactivating a plugin, and any overhead of using the shortcode will be eliminated. So, ideally, just as you deactivate plugins you're not using, you can disable any Xtreme Plus Shortcode you don't need. The savings will be very small, but for busy sites, it might make a small difference.</p>
     <h2><a name="SaveRestore" id="SaveRestore"></a>Save/Restore Themes and Backups</h2>
     <p><em>Weaver Xtreme</em> allows you to save a backup of all your settings in the WordPress database, or to download and upload them to a file on your own computer.</p>
     <p>&nbsp;</p>
@@ -1270,7 +1254,7 @@ You can optionally hide the header and footer areas using the check boxes on the
  Replace <span class="css">.woocommerce-page</span> with <span class="css">.woocommerce-checkout</span></li>
     </ol>
     <h3><a name="quickcache" id="quickcache"></a>Compatible Caching Plugins</h3>
-    <p>We highly recommend Quick Cache.  We  like how clean and easy to use Quick Cache is. Its free version works for most people, and it also has a Xtra version with some features important to some advanced users. Quick Cache will improve your site's speed as much as any other caching plugin for a lot less hassle.</p>
+    <p>We highly recommend Quick Cache.  We  like how clean and easy to use Quick Cache is. Its free version works for most people, and it also has a Pro version with some features important to some advanced users. Quick Cache will improve your site's speed as much as any other caching plugin for a lot less hassle.</p>
     <p>Since <em>Weaver Xtreme</em> is totally responsive, any other WordPress cache plugin, as well as external caching sites like CloudFlare, are totally compatible with <em>Weaver Xtreme</em>.</p>
     <p>&nbsp;</p>
     <h3><a name="MiscNotes" id="MiscNotes"></a>Miscellaneous Notes<br>

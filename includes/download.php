@@ -1,5 +1,6 @@
 <?php
 // will down load current settings based on db setting
+// __ added - 12/11/14
 
     $wp_root = dirname(__FILE__) .'/../../../../';
     if(file_exists($wp_root . 'wp-load.php')) {
@@ -27,12 +28,12 @@ function weaverx_filter_strip_default( $var ) {
         $nonce = '';
 	if (! wp_verify_nonce($nonce, 'weaverx_download')) {
         @header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-        wp_die('Sorry - download must be initiated from admin panel.');
+        wp_die(__('Sorry - download must be initiated from admin panel.','weaver-xtreme'));
 	}
 
 	if (headers_sent()) {
         @header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-        wp_die('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.');
+        wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.','weaver-xtreme'));
 	}
 
 	$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
@@ -44,7 +45,7 @@ function weaverx_filter_strip_default( $var ) {
 
     $weaverx_opts = array_filter( $weaverx_opts,  'weaverx_filter_strip_default' );
 
-    unset( $weaverx_opts['wvrx_css'] );
+    unset( $weaverx_opts['wvrx_css_saved'] );
 
 	$weaverx_save['weaverx_base'] = $weaverx_opts;
 

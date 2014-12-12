@@ -19,7 +19,7 @@ weaverx_fi( 'post', 'post-before' );
     <?php weaverx_single_title( '' ); ?>
 	<div class="entry-content clearfix">
 		<?php weaverx_the_post_full_single(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaverx') . '</span>', 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-utility entry-author-info">
