@@ -6,7 +6,7 @@
 function fmuzz_load_scripts() {
 
 	// load main stylesheet.
-	wp_enqueue_style( 'tisho-style', get_stylesheet_uri(), array( ) );
+	wp_enqueue_style( 'fmuzz-style', get_stylesheet_uri(), array( ) );
 
 	wp_enqueue_script('jquery');
 	
@@ -16,22 +16,22 @@ function fmuzz_load_scripts() {
 	}
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'tisho-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'fmuzz-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 	
 	if ( is_front_page() ) {
 	
-		$options = get_option( 'fmuzz_slider_settings' );
+		$options = get_option( 'fmuzz_settings' );
 		if ( $options !== false ) {
-			wp_enqueue_script( 'tisho-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-			wp_enqueue_script( 'tisho-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-			wp_enqueue_script( 'tisho-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fmuzz-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fmuzz-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fmuzz-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 		}
 	}
 }
 
 function fmuzz_head_load_favicon_image() {
 
-	$options = get_option( 'fmuzz_general_settings' );
+	$options = get_option( 'fmuzz_settings' );
 	if ( $options === false ) {
 		return;
 	}
@@ -50,9 +50,9 @@ function fmuzz_widgets_init() {
 
 	// Sidebar Widget.
 	register_sidebar( array (
-						'name'	 		 =>	 __( 'Sidebar Widget Area', 'fmuzz' ),
+						'name'	 		 =>	 __( 'Sidebar Widget Area', 'fmuzz'),
 						'id'		 	 =>	 'sidebar-widget-area',
-						'description'	 =>  __( 'The sidebar widget area', 'fmuzz' ),
+						'description'	 =>  __( 'The sidebar widget area', 'fmuzz'),
 						'before_widget'	 =>  '',
 						'after_widget'	 =>  '',
 						'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',

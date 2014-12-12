@@ -42,10 +42,17 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+*
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-* js/unslider.js WTFPL Reference: http://www.wtfpl.net/
+*
+* js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
+* js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
+* js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
+*
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 
 == Contacts ==

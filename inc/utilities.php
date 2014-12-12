@@ -11,7 +11,7 @@ function fmuzz_show_social_sites( $before,
 						  $openInNewWindow,
 						  $iconSize /* must be 16 or 32 */) {
 
-	$options = get_option( 'fmuzz_social_settings' );
+	$options = get_option( 'fmuzz_settings' );
 	if ( $options === false ) {
 		return;
 	}
@@ -21,26 +21,26 @@ function fmuzz_show_social_sites( $before,
 	if ( array_key_exists( 'social_facebook', $options )
 		 && $options['social_facebook'] != '' ) {
 		fmuzz_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_facebook' ],
-				__( 'Follow us on Facebook', 'fmuzz' ), 'facebook'.$iconSize, $openInNewWindow );
+				__( 'Follow us on Facebook', 'fmuzz'), 'facebook'.$iconSize, $openInNewWindow );
 	}
 	
 	if ( array_key_exists( 'social_googleplus', $options )
 		 && $options['social_googleplus'] != '' ) {
 		fmuzz_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_googleplus' ],
-				__( 'Follow us on Google+', 'fmuzz' ), 'google'.$iconSize, $openInNewWindow );
+				__( 'Follow us on Google+', 'fmuzz'), 'google'.$iconSize, $openInNewWindow );
 	}
 	
 	if ( array_key_exists( 'social_rss', $options )
 		 && $options['social_rss'] != '' ) {
 		fmuzz_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_rss' ],
-				__( 'Follow our RSS Feeds', 'fmuzz' ), 'rss'.$iconSize, $openInNewWindow );
+				__( 'Follow our RSS Feeds', 'fmuzz'), 'rss'.$iconSize, $openInNewWindow );
 	}
 
 	if ( array_key_exists( 'social_youtube', $options )
 		 && $options['social_youtube'] != '' ) {
 
 		fmuzz_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_youtube' ],
-				__( 'Follow us on YouTube', 'fmuzz' ), 'youtube'.$iconSize, $openInNewWindow );
+				__( 'Follow us on YouTube', 'fmuzz'), 'youtube'.$iconSize, $openInNewWindow );
 	}
 
 	echo $after;	
@@ -70,7 +70,7 @@ function fmuzz_show_single_social_site( $separatorBefore,
  */
 function fmuzz_show_website_logo_image_or_title() {
 
-	$options = get_option( 'fmuzz_header_settings' );
+	$options = get_option( 'fmuzz_settings' );
 
 	if ( $options !== false && array_key_exists( 'header_logo', $options )
 		 && $options[ 'header_logo' ] != '' ) {
@@ -115,7 +115,7 @@ function fmuzz_show_header_top() {
  */
 function fmuzz_show_copyright_text() {
 	
-	$options = get_option( 'fmuzz_footer_settings' );
+	$options = get_option( 'fmuzz_settings' );
 	if ( $options !== false && array_key_exists( 'footer_copyrighttext', $options )
 	     && $options[ 'footer_copyrighttext' ] != '' ) {
 
@@ -128,7 +128,7 @@ function fmuzz_show_copyright_text() {
  */
 function fmuzz_display_slider() {
 
-		$options = get_option( 'fmuzz_slider_settings' );
+		$options = get_option( 'fmuzz_settings' );
 		if ( $options === false ) {
 			return;
 		}
@@ -222,7 +222,7 @@ function fmuzz_the_content() {
 		
 		echo '</a>';
 	}
-	the_content( __( 'Read More', 'fmuzz' ) );
+	the_content( __( 'Read More', 'fmuzz') );
 }
 
 /**
@@ -235,7 +235,7 @@ function fmuzz_the_content_single() {
 
 		the_post_thumbnail();
 	}
-	the_content( __( 'Read More...', 'fmuzz' ) );
+	the_content( __( 'Read More...', 'fmuzz') );
 }
 
 /**

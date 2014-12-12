@@ -1,6 +1,6 @@
 <?php
 /*
- * tisho functions and definitions
+ * fMuzz functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -8,78 +8,94 @@
  *
  */
 
-require_once( 'inc/utilities.php' );
+require get_template_directory() . '/inc/utilities.php';
+require get_template_directory() . '/inc/actions.php';
+require get_template_directory() . '/inc/theme-options.php';
 
-require_once( 'inc/actions.php' );
-
-require_once( 'inc/theme-options.php' );
-
-require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-load_theme_textdomain( 'fmuzz', get_template_directory() . '/languages' );
-
-add_theme_support( 'menus' );
-
-// Add wp_enqueue_scripts actions
-add_action( 'wp_enqueue_scripts', 'fmuzz_load_scripts' );
-
-// Add wp_head actions
-add_action( 'wp_head', 'fmuzz_head_load_favicon_image' );
-
-add_action( 'widgets_init', 'fmuzz_widgets_init' );
-
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 'full', 'full', true );
-
-if ( ! isset( $content_width ) )
-	$content_width = 900;
-
-add_theme_support( 'automatic-feed-links' );
-
-// add Custom background				 
-$args = array(
-	'default-color' 	 => '#ffcc00',
-	'default-attachment' => 'fixed',
-);
-add_theme_support( 'custom-background', $args );
-
-// add custom header
-add_theme_support( 'custom-header', array (
-				   'default-image'          => '',
-				   'random-default'         => false,
-				   'width'                  => 0,
-				   'height'                 => 0,
-				   'flex-height'            => false,
-				   'flex-width'             => false,
-				   'default-text-color'     => '',
-				   'header-text'            => true,
-				   'uploads'                => true,
-				   'wp-head-callback'       => '',
-				   'admin-head-callback'    => '',
-				   'admin-preview-callback' => '',
-				) );
-
-/*
- * Switch default core markup for search form, comment form, and comments
- * to output valid HTML5.
+if ( ! function_exists( 'fmuzz_setup' ) ) :
+/**
+ * fMuzz setup.
+ *
+ * Set up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support post thumbnails.
+ *
  */
-add_theme_support( 'html5', array(
-	'search-form', 'comment-form', 'comment-list',
-) );
+function fmuzz_setup() {
 
-// add support for Post Formats.
-add_theme_support( 'post-formats', array (
-										'aside',
-										'image',
-										'video',
-										'audio',
-										'quote', 
-										'link',
-										'gallery',
-				) );
+	load_theme_textdomain( 'fmuzz', get_template_directory() . '/languages' );
 
-// add the visual editor to resemble the theme style
-add_editor_style( array( 'css/editor-style.css' ) );
+	// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary'   => __( 'primary menu', 'fmuzz' ),
+	) );
+
+	// Add wp_enqueue_scripts actions
+	add_action( 'wp_enqueue_scripts', 'fmuzz_load_scripts' );
+
+	// Add wp_head actions
+	add_action( 'wp_head', 'fmuzz_head_load_favicon_image' );
+
+	add_action( 'widgets_init', 'fmuzz_widgets_init' );
+
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 'full', 'full', true );
+
+	if ( ! isset( $content_width ) )
+		$content_width = 900;
+
+	add_theme_support( 'automatic-feed-links' );
+
+	// add Custom background				 
+	$args = array(
+		'default-color' 	 => '#ffcc00',
+		'default-attachment' => 'fixed',
+	);
+	add_theme_support( 'custom-background', $args );
+
+	// add custom header
+	add_theme_support( 'custom-header', array (
+					   'default-image'          => '',
+					   'random-default'         => false,
+					   'width'                  => 0,
+					   'height'                 => 0,
+					   'flex-height'            => false,
+					   'flex-width'             => false,
+					   'default-text-color'     => '',
+					   'header-text'            => true,
+					   'uploads'                => true,
+					   'wp-head-callback'       => '',
+					   'admin-head-callback'    => '',
+					   'admin-preview-callback' => '',
+					) );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list',
+	) );
+
+	// add support for Post Formats.
+	add_theme_support( 'post-formats', array (
+											'aside',
+											'image',
+											'video',
+											'audio',
+											'quote', 
+											'link',
+											'gallery',
+					) );
+
+	// add the visual editor to resemble the theme style
+	add_editor_style( array( 'css/editor-style.css' ) );
+}
+endif; // fmuzz_setup
+add_action( 'after_setup_theme', 'fmuzz_setup' );
+
 
 function fmuzz_wp_title_for_home( $title, $sep ) {
 	global $paged, $page;
@@ -103,7 +119,7 @@ function fmuzz_wp_title_for_home( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'fmuzz' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'fmuzz'), max( $paged, $page ) );
 	}
 
 	return $title;
