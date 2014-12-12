@@ -143,6 +143,8 @@ endif;
 
 // Sidebar
 
+function aura_widgets_init() {
+
 register_sidebar(array(
 'name' => __('Sidebar', 'aura'),
 
@@ -151,6 +153,10 @@ register_sidebar(array(
 'before_title' => '<div class="sidebar-headline">',
 'after_title' => '</div></p>',
 ));
+
+}
+
+add_action( 'widgets_init', 'aura_widgets_init' );
 
 add_action('admin_menu', 'aura_create_menu');
 

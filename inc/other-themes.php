@@ -1,6 +1,8 @@
 
-<div id="blogtitle">Fimply</div>
-<div id="blogdescription">Here you can find other themes from us.</div>
+
+<div id="blogtitle"><img src="<?php echo get_template_directory_uri() . '/img/logo.png'; ?>" width="60"></div>
+<div id="blogdescription">You are just a few steps away from experiencing high-quality minimalistic themes.</div>
+
 
 <div id="theme">
 <img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/manra.png'; ?>" width="584">
@@ -16,7 +18,7 @@
 <div id="name">Tautira</div>
 <div id="info">Tautira is a Premium Business Theme - it's very easy to create a professional website with it. We integrated Jetpack by WordPress.com for the first time in one of our themes, so it gets even more powerful. Tautira looks great on every device because of its Responsive Design.
 
-<p><a href="http://fimply.de/themes/tautira" target="_blank">Go to the Fimply Store and get it for just $12</a></p></div>
+<p><a href="http://fimply.de/themes/tautira" target="_blank">Let's check that out</a></p></div>
 
 </div>
 
@@ -24,9 +26,19 @@
 <div id="theme">
 <img class="screenshot" src="<?php echo get_template_directory_uri() . '/img/ewp.png'; ?>" width="600">
 <div id="name">elegantWhite Pro</div>
-<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one best WordPress themes on the planet!
+<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the best WordPress themes on the planet!
 
-<p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Go to the Fimply Store and get it for just $12</a></p></div>
+<p><a href="http://fimply.de/themes/elegantwhite-pro" target="_blank">Let's check that out</a></p></div>
+
+</div>
+
+
+<div id="theme">
+<img class="screenshot" src="http://wp-themes.com/wp-content/themes/aura/screenshot.png" width="600">
+<div id="name">Aura</div>
+<div id="info">Also with Aura, our newest WordPress theme, we will convince a lot of people all over the world of our strategy of minimalism. Aura comes with a lot of phenomenal features.
+
+<p><a href="http://wordpress.org/themes/aura" target="_blank">Download it at WordPress.org</a></p></div>
 
 </div>
 
@@ -49,15 +61,4 @@
 <p><a href="http://wordpress.org/extend/themes/elegantwhite" target="_blank">Download it at WordPress.org</a></p></div>
 
 </div>
-
-<div id="theme">
-<img class="screenshot" src="http://wp-themes.com/wp-content/themes/convention/screenshot.png">
-<div id="name">Convention</div>
-<div id="info">Convention is an awesome theme for your blog. It has lots of great features like post thumbnails or custom menus. You will love it!
-
-<p><a href="http://wordpress.org/extend/themes/convention" target="_blank">Download it at WordPress.org</a></p></div>
-
-</div>
-
-
 
