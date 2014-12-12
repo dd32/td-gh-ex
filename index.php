@@ -50,10 +50,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
         </div>
       <?php endwhile; endif; // end of the loop. ?>
   
-   <!-- next,prev,pages  -->
       <div class="clearfix"></div>
-        
-        <!--Pagination Start-->
         <?php if(function_exists('faster_pagination')) { ?> 
             <nav class="col-md-12 multishop-box-paging"> 
            		 <?php faster_pagination();?>
@@ -66,8 +63,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
       <?php next_posts_link(); ?>
       </span> </div>
       <?php } ?>
-        <?php }//is plugin active ?>
-        <!--Pagination End-->
+        <?php } ?>
     </div>
       <?php  get_sidebar(); ?>
   </div>

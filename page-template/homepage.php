@@ -5,16 +5,20 @@
 get_header();
 $multishop_options = get_option( 'multishop_theme_options' );
 ?>
-
-<section>
-  <div class="clearfix"></div>
+<div class="clearfix"></div>
   <!-- HOME BANNER -->
-  <div class="multishop-home-banner">
+ <div class="multishop-home-banner">
     <?php if(get_header_image()){ ?>
     <div class="custom-header-img"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" class="img-responsive"> </a> </div>
     <?php } ?>
+    <div class='site-title-text'>
+	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
   </div>
+  </div>  
   <!-- END HOME BANNER -->
+  
+<section>
   <div class="container multishop-container">
     <div class="row multishop-home-section">
       <div class="col-md-3 col-sm-3">
@@ -90,7 +94,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
         </div>
       </div>
     </div>
-    <!--row2-->
+
     <?php    
     if (is_plugin_active('woocommerce/woocommerce.php')) {
     ?>
@@ -114,14 +118,14 @@ $multishop_options = get_option( 'multishop_theme_options' );
           <?php $multishop_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  ?>
           <div class="main-border">
             <?php if($multishop_feat_image!="") { ?>
-            <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="Banner" class="img-responsive"  />
+            <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="<?php _e('Banner','multishop'); ?>" class="img-responsive"  />
             <?php } ?>
             <div class="product-details"> <span><?php echo $product->get_price_html(); ?></span>
               <h5>
                 <?php the_title(); ?>
               </h5>
               
-              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">ADD TO CART</a> </div>
+              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop'); ?></a> </div>
             </div>
           </div>
         </div>
@@ -132,7 +136,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
 						?>
       </div>
     </div>
-    <!--row2 end--> 
+
     <?php
     }
     ?>

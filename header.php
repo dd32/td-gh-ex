@@ -14,10 +14,6 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
-<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
-
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
@@ -48,7 +44,7 @@
       <div class="col-md-7 col-sm-9 no-padding-lr clearfix">
         <div class="header-navigation">
           <div class="navbar-header">
-            <button type="button" data-target=".navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <button type="button" data-target=".navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only"><?php _e('Toggle navigation','multishop'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           </div>
           <?php
 			$multishop_defaults = array(
@@ -74,15 +70,15 @@
       <div class="col-md-2 no-padding-lr">
         <div class="header-cart clearfix">
           <?php	
-	/*** Check if WooCommerce is active**/
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
 		 global $woocommerce; ?>
           <img src="<?php echo get_template_directory_uri(); ?>/images/addtocart.png" class="img-responsive" alt="">           
-          <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'multishop'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+          <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'multishop'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'multishop'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
           <?php } ?>
         </div>
       </div>
     </div>
   </div>
+    
 </header>
 <!-- END HEADER -->

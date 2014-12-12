@@ -4,8 +4,8 @@
 **/
 get_header(); 
 ?>
-
-<div class="col-md-12 site-title clearfix">
+<div class="clearfix"></div>
+<div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
     <h1><?php echo get_the_title(); ?></h1>
     <ol class="site-breadcumb">
@@ -13,6 +13,8 @@ get_header();
     </ol>
   </div>
 </div>
+
+<div class="site-title-border"> </div>
 <div class="multishop-container row">
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php while ( have_posts() ) : the_post(); ?>
@@ -22,7 +24,7 @@ get_header();
         <?php if($multishop_image != "") { ?>
         <img src="<?php echo esc_url($multishop_image); ?>" class="single-image img-responsive" />
         <?php } ?>
-        <div class="media-body blog-body single-blog-body">
+        <div class="blog-body single-blog-body">
           <h4><?php echo get_the_title(); ?></h4>
           <div class="multishop-tags">
             <?php multishop_entry_meta(); ?>

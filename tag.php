@@ -4,7 +4,6 @@
 **/
 get_header(); 
 ?>
-
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
@@ -43,8 +42,7 @@ get_header();
       </div>
     </div>
     <?php endwhile; ?>
-    <!--Pagination Start-->
-        <?php if(function_exists('faster_pagination')) { ?> 
+       <?php if(function_exists('faster_pagination')) { ?> 
             <nav class="col-md-12 multishop-box-paging"> 
            		 <?php faster_pagination();?>
             </nav>
@@ -56,8 +54,7 @@ get_header();
       <?php next_posts_link(); ?>
       </span> </div>
       <?php } ?>
-        <?php }//is plugin active ?>
-        <!--Pagination End-->
+        <?php } ?>
   </div>
   <?php  get_sidebar(); ?>
 </div>

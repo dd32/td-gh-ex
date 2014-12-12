@@ -63,7 +63,7 @@ function multishop_custom_breadcrumbs() {
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 	if ( function_exists('is_post_type_archive') && is_post_type_archive() && get_post_type()) {
 	    $multishop_post_type = get_post_type_object(get_post_type());
-	    printf(__('%1$s %2$s %3$s','multishop'),$multishop_before, $multishop_post_type->labels->singular_namem, $multishop_after);
+	    printf(__('%1$s %2$s %3$s','multishop'),$multishop_before, $multishop_post_type->labels->singular_name, $multishop_after);
 	    
 	}
 

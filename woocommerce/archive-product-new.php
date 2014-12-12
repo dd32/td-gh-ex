@@ -5,6 +5,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
+
 <div class="clearfix"></div>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
@@ -22,7 +23,10 @@ get_header( 'shop' ); ?>
        <div class="col-md-12 top-pagination no-padding-lr">
         <div class="col-md-5 pagination-icon no-padding-lr"> 
         <i class="fa fa-th-large"></i> 
-          <?php   global $wp_query;?>
+          <?php   global $wp_query;
+							if ( ! woocommerce_products_will_display() )
+							return;
+							?>
           <p class="woocommerce-result-count">
             <?php
 							$paged = max( 1, $wp_query->get( 'paged' ) );
@@ -39,7 +43,6 @@ get_header( 'shop' ); ?>
 							}
 							?>
           </p>
-          
         </div>
         <div class="col-md-7 no-padding-lr">
           <div class="pagination-sorting">
@@ -48,20 +51,14 @@ get_header( 'shop' ); ?>
               <form action="" method="POST" name="results" class="woocommerce-ordering">
                 <select name="woocommerce-sort-by-columns" id="woocommerce-sort-by-columns" class="form-control select-sort" onchange="this.form.submit()">
                   <?php
-					$numberOfProductsPerPage='';
 								//Get products on page reload
-								if(!empty($_POST['woocommerce-sort-by-columns'])){
-								if  (isset($_POST['woocommerce-sort-by-columns']) && (!empty($_COOKIE['shop_pageResults']))) {
-									if($_COOKIE['shop_pageResults'] <> $_POST['woocommerce-sort-by-columns'])
+								if  (isset($_POST['woocommerce-sort-by-columns']) && (($_COOKIE['shop_pageResults'] <> $_POST['woocommerce-sort-by-columns']))) {
 										$numberOfProductsPerPage = $_POST['woocommerce-sort-by-columns'];
 										  } else {
-											  if(!empty($_COOKIE['shop_pageResults']))
-												$numberOfProductsPerPage = $_COOKIE['shop_pageResults'];
-												else
-												$numberOfProductsPerPage=$_POST['woocommerce-sort-by-columns'];
+										$numberOfProductsPerPage = $_COOKIE['shop_pageResults'];
 										  }
-									  }else  $numberOfProductsPerPage=4;
-									$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
+							$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
+											//Add as many of these as you like, -1 shows all products per page
 												'5' 		=> '5',
 												'9' 		=> '9',
 												'12' 		=> '12',
@@ -71,7 +68,7 @@ get_header( 'shop' ); ?>
 											));
 			foreach ( $shopCatalog_orderby as $sort_id => $sort_name )
 				echo '<option value="' . $sort_id . '" ' . selected( $numberOfProductsPerPage, $sort_id, true ) . ' >' . $sort_name . '</option>';
-							?>
+								?>
                 </select>
               </form>
               
@@ -91,7 +88,7 @@ get_header( 'shop' ); ?>
             <?php $multishop_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  ?>
             <div class="main-border">
               <?php if($multishop_feat_image!="") { ?>
-              <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="<?php _e('Banner','multishop'); ?>" class="img-responsive"  />
+              <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="Banner" class="img-responsive"  />
               <?php } ?>
               <div class="product-details"> 
               <div class="product-text">
@@ -137,27 +134,20 @@ get_header( 'shop' ); ?>
 			 <div class="col-md-8 no-padding-lr">
           <div class="pagination-sorting">
             <div class="sorting-all"> 
-
               <label class="sele-label"><?php _e('Show All','multishop') ?></label>
               <form action="" method="POST" name="results" class="woocommerce-ordering">
                 <select name="woocommerce-sort-by-columns" id="woocommerce-sort-by-columns" class="form-control select-sort" onchange="this.form.submit()">
                   <?php
-                  
 				  		//Get products on page reload
-				  		if(!empty($_POST['woocommerce-sort-by-columns'])){
-								if  (isset($_POST['woocommerce-sort-by-columns']) && (!empty($_COOKIE['shop_pageResults']))) {
-													
-									if($_COOKIE['shop_pageResults'] <> $_POST['woocommerce-sort-by-columns'])
-										$numberOfProductsPerPage = $_POST['woocommerce-sort-by-columns'];
-										  } else {
-											  if(!empty($_COOKIE['shop_pageResults']))
-												$numberOfProductsPerPage = $_COOKIE['shop_pageResults'];
-											else
-												$numberOfProductsPerPage=$_POST['woocommerce-sort-by-columns'];
-
-										  }
-									  }else  $numberOfProductsPerPage=4;
-										$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
+				  		
+				  		if  (isset($_POST['woocommerce-sort-by-columns']) && (($_COOKIE['shop_pageResults'] <> $_POST['woocommerce-sort-by-columns']))) {
+        $numberOfProductsPerPage = $_POST['woocommerce-sort-by-columns'];
+          } else {
+        $numberOfProductsPerPage = $_COOKIE['shop_pageResults'];
+          }
+          
+				  		
+									$shopCatalog_orderby = apply_filters('woocommerce_sortby_page', array(
 												'5' 		=> '5',
 												'9' 		=> '9',
 												'12' 		=> '12',
@@ -180,6 +170,7 @@ get_header( 'shop' ); ?>
     <!--section end-->
     
     <?php
+
 		do_action( 'woocommerce_sidebar' );
 	?>
   </div>

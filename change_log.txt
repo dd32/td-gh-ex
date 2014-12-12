@@ -20,8 +20,21 @@ Version: 1.0.2 (15 Nov 2014)
 i) Fixed small issue with fasterthemes-custom.js file.
 
 Version: 1.1.0 (27 Nov 2014)
+
 i) Made theme "translation-ready"
 ii) Fixed some small bugs in functionality as well as in design.
 
 Version: 1.1.1 (27 Nov 2014)
+
 i) Fixed small issues with POT file.
+
+Version: 1.1.2 (12 Dec 2014)
+
+i)  fix Translation Ready.
+ii) set esc_url sanitization in all files.
+iii)Remove secondary menu.
+iv) Remove comment form placeholder code in default.js.
+v)  fix error/notices in Shop page.
+vi) set custom header text & color. 
+iv) fix css issue.
+

@@ -114,7 +114,6 @@ function multishop_entry_meta() {
 	
 	$multishop_category_list = get_the_category_list(', ', '');
 
-	//$multishop_tag_list = get_the_tag_list( '', __( ', ', 'multishop' ) );
 	$multishop_tag_list = get_the_tag_list( ', ', '' ) ;
 
 	$multishop_date = sprintf( '<time datetime="%3$s">%4$s</time>',
@@ -193,7 +192,9 @@ function multishop_comment( $comment, $multishop_args, $depth ) {
                             ); 
 						?>
     </div>
-    <div class="multishop-comment-datetime"> <?php echo get_comment_date('M j, Y \a\t g:i a'); ?> </div>
+    <div class="multishop-comment-datetime">
+    <?php printf( __(get_comment_date(_x('M j, Y \a\t g:i a','multishop')))); ?>
+    </div>
     <div class="multishop-comment-text blog-post-comment-text comment">
       <?php  comment_text(); ?>
     </div>
@@ -222,28 +223,11 @@ return ' ..<br /><div class="reading"><a class="readmore-btn" href="'. get_perma
 add_filter( 'excerpt_more', 'multishop_read_more' ); 
 
 /**length post text**/
-function multishop_custer_excerpt_length( $length ) {
+function multishop_custom_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'multishop_custer_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'multishop_custom_excerpt_length', 999 );
 
-
-
-// now we set our cookie if we need to
-function dl_sort_by_page($count) {
-  if (isset($_COOKIE['shop_pageResults'])) { // if normal page load with cookie
-     $count = $_COOKIE['shop_pageResults'];
-  }
-  if (isset($_POST['woocommerce-sort-by-columns'])) { //if form submitted
-    setcookie('shop_pageResults', $_POST['woocommerce-sort-by-columns'], time()+1209600, '/', 'www.multishop.fasterthemes.com', false); //this will fail if any part of page has been output- hope this works!
-    $count = $_POST['woocommerce-sort-by-columns'];
-  }
-  // else normal page load and no cookie
-  return $count;
-}
- 
-add_filter('loop_shop_per_page','dl_sort_by_page');
-add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_page_ordering', 20 );
 
 if ( ! function_exists('is_plugin_inactive')) {
       require_once( ABSPATH . '/wp-admin/includes/plugin.php' );

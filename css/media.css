@@ -7,14 +7,22 @@
 .header-navbar .header-nav-ul li a {
 	padding-left: 30px;
 }
+
 .footer-icon ul, .footer-post ul, .footer-post {
 	margin-left: 0;
 	padding: 0;
 }
 }
 @media screen and (max-width:992px) {
+    .main-sidebar{
+        margin-top: 25px;
+        margin-bottom: 25px;    
+    }
 .footer-post ul .footer-post {
 	float: none;
+}
+.product-details{
+    margin-top: 25px;
 }
 }
 @media screen and (max-width:767px) {

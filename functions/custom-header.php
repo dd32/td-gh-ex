@@ -158,7 +158,7 @@ function multishop_admin_header_style() {
 	</style>
 <?php
 }
-
+if ( ! function_exists( 'multishop_admin_header_image' ) ) :
 /*
  * Outputs markup to be displayed on the Appearance > Header admin panel.
  */
@@ -168,7 +168,10 @@ function multishop_admin_header_image() {
 		<?php $multishop_style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
 			<h1 class="displaying-header-text"><a id="name"<?php echo $multishop_style; ?> onclick="return false;" href="#"><?php bloginfo( 'name' ); ?></a></h1>
+			
 			<h2 id="desc" class="displaying-header-text"<?php echo $multishop_style; ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
 <?php }
+
+endif; // multishop_admin_header_image

@@ -60,7 +60,7 @@ get_header( 'shop' ); ?>
           </div>
           <div class="clearfix"></div>
           <div class="product-availabilty">
-            <label>Availability:</label>
+            <label><?php _e('Availability:','multishop'); ?></label>
             <?php
 							// Availability
 							$availability = $product->get_availability();
@@ -68,7 +68,7 @@ get_header( 'shop' ); ?>
 							if ( $availability['availability'] )
 							echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
 							else
-							echo "<p>Out Stock</p>";
+							echo "<p>"._e('Out Stock','multishop')."</p>";
 							?>
             <span><?php echo $product->get_price_html(); ?></span> </div>
           <div class="product-count">
@@ -114,7 +114,7 @@ get_header( 'shop' ); ?>
             <form action="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="cart" method="post" enctype='multipart/form-data'>
               <?php woocommerce_quantity_input(); ?>
               <button type="submit" class="single-add-cart">
-              <a  class="addcart-red-btn">add to cart </a>
+              <a  class="addcart-red-btn"><?php _e('add to cart','multishop'); ?> </a>
               </button>
             </form>
             <?php } else {

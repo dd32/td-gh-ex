@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Multishop
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But this can be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need. Pro version of this theme is also available which has several awesome options like Color options, Font Options , Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
@@ -90,6 +90,9 @@ header {
 .bypostauthor {
 }
 /*==================== M E N U -- C S S =============*/
+.multishop-menu li{
+    margin: 5px 0;
+}
 .multishop-menu li:last-child a {
 	padding-right: 0px !important;
 }
@@ -125,7 +128,7 @@ header {
 .multishop-menu a {
 	font-size: 15px;
 	color: #313131;
-	padding: 0 20px !important;
+	padding: 0 15px !important;
 	text-transform: uppercase;
 }
 .multishop-menu a:hover, .multishop-menu a:focus, .multishop-menu .active a {
@@ -280,9 +283,21 @@ footer {
 	text-transform: capitalize;
 	margin-bottom: 0px;
 }
+.site-title-text > h1{
+	margin-bottom: 0;
+    padding-left: 8px;
+    padding-top: 50%;
+    background-color: transparent;
+}
 .site-title {
 	background-color: #545454;
 	padding: 15px 0;
+	position:relative !important ;
+}
+.site-title-text {
+    padding-left: 15px;
+    position: absolute;
+    top: 0;
 }
 .site-title h1 {
 	color: #fff;
@@ -389,8 +404,8 @@ footer {
 }
 .single-image {
 	margin-bottom: 25px;
-	margin-top: 15px;
-	float: left;
+/*	margin-top: 15px;*/
+	float: left; 
 	margin-right: 15px;
 }
 .single-blog-body {
@@ -637,6 +652,10 @@ footer {
 .multishop-footer table {
 	width: 100%;
 }
+.multishop-menu  > li > a:hover, .multishop-menu  > li > a:focus{
+    background-color: transparent;
+    outline: none;
+}
 .multishop-footer ul li a {
 	color: #ffffff;
 	font-size: 14px;
@@ -731,9 +750,8 @@ footer {
 	font-size: 14px;
 }
 .multishop-tags {
-    display: table;
     margin-top: 8px;
-    width: 100%;
+    margin-bottom: 10px;
 }
 .multishop-tags li {
 	display: inline;
@@ -756,10 +774,6 @@ footer {
 }
 .multishop-tags > span {
 	margin-right: 10px;
-}
-.multishop-content-p {
-	clear: both;
-	display: table;
 }
 .multishop-default-pagination {
 	background-color: #F8F8F8;
@@ -1571,7 +1585,7 @@ i {
     float: right;
 }
 .products .resp-grid {
-    margin: 10px 0 20px;
+    margin: 10px auto 20px auto;
 }
 .single-product .product-details .reading a {
     display: none;

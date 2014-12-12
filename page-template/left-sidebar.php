@@ -4,8 +4,8 @@
 **/
 get_header();
 ?>
-
-<div class="col-md-12 site-title clearfix">
+<div class="clearfix"></div>
+<div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
     <h1><?php echo get_the_title(); ?></h1>
     <ol class="site-breadcumb">
@@ -13,6 +13,7 @@ get_header();
     </ol>
   </div>
 </div>
+<div class="site-title-border"> </div>
 <div class="multishop-container row">
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php while ( have_posts() ) : the_post(); ?>

@@ -44,7 +44,6 @@ get_header();
     </div>
     <?php endwhile; ?>
     
-    <!--Pagination Start-->
     <?php if(function_exists('faster_pagination')) { ?>
     <nav class="col-md-12 multishop-box-paging">
       <?php faster_pagination();?>
@@ -57,8 +56,7 @@ get_header();
       <?php next_posts_link(); ?>
       </span> </div>
     <?php } ?>
-    <?php }//is plugin active ?>
-    <!--Pagination End--> 
+    <?php } ?>
   </div>
   <?php  get_sidebar(); ?>
 </div>

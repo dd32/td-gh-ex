@@ -1,10 +1,3 @@
-jQuery(document).ready(function(e) { 
- jQuery('#commentform #author').attr("placeholder", "Name");
- jQuery('#commentform #email').attr("placeholder", "E-Mail");
- jQuery('#commentform #url').attr("placeholder", "Website");
- jQuery('#commentform #comment').attr("placeholder", "Comment");
- jQuery('#commentform #submit').val('Send');
-});
 jQuery(document).ready(function() {
     jQuery("#top-product").owlCarousel({
     autoPlay: false, //Set AutoPlay to 3 seconds
