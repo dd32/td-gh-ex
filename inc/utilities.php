@@ -11,7 +11,7 @@ function fgymm_show_social_sites( $before,
 						  $openInNewWindow,
 						  $iconSize /* must be 16 or 32 */) {
 
-	$options = get_option( 'fgymm_social_settings' );
+	$options = get_option( 'fgymm_settings' );
 	if ( $options === false ) {
 		return;
 	}
@@ -21,26 +21,26 @@ function fgymm_show_social_sites( $before,
 	if ( array_key_exists( 'social_facebook', $options )
 		 && $options['social_facebook'] != '' ) {
 		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_facebook' ],
-				__( 'Follow us on Facebook', 'fgymm' ), 'facebook'.$iconSize, $openInNewWindow );
+				__( 'Follow us on Facebook', 'fgymm'), 'facebook'.$iconSize, $openInNewWindow );
 	}
 	
 	if ( array_key_exists( 'social_googleplus', $options )
 		 && $options['social_googleplus'] != '' ) {
 		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_googleplus' ],
-				__( 'Follow us on Google+', 'fgymm' ), 'google'.$iconSize, $openInNewWindow );
+				__( 'Follow us on Google+', 'fgymm'), 'google'.$iconSize, $openInNewWindow );
 	}
 	
 	if ( array_key_exists( 'social_rss', $options )
 		 && $options['social_rss'] != '' ) {
 		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_rss' ],
-				__( 'Follow our RSS Feeds', 'fgymm' ), 'rss'.$iconSize, $openInNewWindow );
+				__( 'Follow our RSS Feeds', 'fgymm'), 'rss'.$iconSize, $openInNewWindow );
 	}
 
 	if ( array_key_exists( 'social_youtube', $options )
 		 && $options['social_youtube'] != '' ) {
 
 		fgymm_show_single_social_site( $separatorBefore, $separatorAfter, $options[ 'social_youtube' ],
-				__( 'Follow us on YouTube', 'fgymm' ), 'youtube'.$iconSize, $openInNewWindow );
+				__( 'Follow us on YouTube', 'fgymm'), 'youtube'.$iconSize, $openInNewWindow );
 	}
 
 	echo $after;	
@@ -70,7 +70,7 @@ function fgymm_show_single_social_site( $separatorBefore,
  */
 function fgymm_show_website_logo_image_or_title() {
 
-	$options = get_option( 'fgymm_header_settings' );
+	$options = get_option( 'fgymm_settings' );
 
 	if ( $options !== false && array_key_exists( 'header_logo', $options )
 		 && $options[ 'header_logo' ] != '' ) {
@@ -111,23 +111,11 @@ function fgymm_show_header_top() {
 }
 
 /**
- * Displays social sites code for footer
- */
-function fgymm_show_footer_social_sites($before, $after) {
-
-	echo $before;
-
-	fgymm_show_social_sites( '<ul class="footer-social-widget">', '</ul>', '<li>', '</li>', true, 16 );
-
-	echo $after;
-}
-
-/**
  *	Displays the copyright text.
  */
 function fgymm_show_copyright_text() {
 	
-	$options = get_option( 'fgymm_footer_settings' );
+	$options = get_option( 'fgymm_settings' );
 	if ( $options !== false && array_key_exists( 'footer_copyrighttext', $options )
 	     && $options[ 'footer_copyrighttext' ] != '' ) {
 
@@ -140,7 +128,7 @@ function fgymm_show_copyright_text() {
  */
 function fgymm_display_slider() {
 
-		$options = get_option( 'fgymm_slider_settings' );
+		$options = get_option( 'fgymm_settings' );
 		if ( $options === false ) {
 			return;
 		}
@@ -234,7 +222,7 @@ function fgymm_the_content() {
 		
 		echo '</a>';
 	}
-	the_content( __( 'Read More', 'fgymm' ) );
+	the_content( __( 'Read More', 'fgymm') );
 }
 
 /**
@@ -247,7 +235,7 @@ function fgymm_the_content_single() {
 
 		the_post_thumbnail();
 	}
-	the_content( __( 'Read More...', 'fgymm' ) );
+	the_content( __( 'Read More...', 'fgymm') );
 }
 
 /**
