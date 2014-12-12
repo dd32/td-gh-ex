@@ -36,7 +36,7 @@ function puro_theme_settings(){
 	siteorigin_settings_add_teaser('header', 'image_retina', __('Retina Logo', 'puro'), array(
 		'choose' => __('Choose Image', 'puro'),
 		'update' => __('Set Logo', 'puro'),
-		'description' => __('A double sized version of your logo for Apple Retina displays. Must be used in addition to standard logo.', 'puro'),
+		'description' => __('A double sized version of your logo for use on high pixel density displays. Must be used in addition to standard logo.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
 	) );
 
@@ -158,12 +158,12 @@ function puro_theme_settings(){
 	) );
 
 	siteorigin_settings_add_teaser('footer', 'attribution', __('Footer Attribution Link', 'puro'), array(
-		'description' => __('Remove the theme attribution link from your footer.', 'puro'),
+		'description' => __('Remove the theme attribution link from your footer without editing any code.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
 	));	
 
 }
-add_action('admin_init', 'puro_theme_settings');
+add_action('siteorigin_settings_init', 'puro_theme_settings');
 
 /**
  * Setup theme default settings.
@@ -173,7 +173,7 @@ add_action('admin_init', 'puro_theme_settings');
  * @since puro 1.0
  */
 function puro_theme_setting_defaults($defaults){
-	$defaults['header_image'] = array();
+	$defaults['header_image'] = false;
 	$defaults['header_image_retina'] = false;
 	$defaults['header_center_logo'] = false;
 	$defaults['header_display_tagline'] = false;
@@ -207,3 +207,8 @@ function puro_theme_setting_defaults($defaults){
 	return $defaults;
 }
 add_filter('siteorigin_theme_default_settings', 'puro_theme_setting_defaults');
+
+function puro_siteorigin_settings_page_icon($icon){
+	return get_template_directory_uri().'/images/settings-icon.png';
+}
+add_filter('siteorigin_settings_page_icon', 'puro_siteorigin_settings_page_icon');

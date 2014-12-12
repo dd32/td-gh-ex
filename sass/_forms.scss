@@ -76,7 +76,8 @@ textarea {
 	@include transition(0.3s);
 	border: 1px solid $border-color;
 	border-radius: 3px;
-	padding: 0.4563em 0.625em 0.3313em; 
+	line-height: normal;
+	padding: 0.6875em 0.625rem 0.6875em; 
 	-webkit-appearance: none;
 }
 input[type="text"]:focus,

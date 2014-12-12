@@ -175,6 +175,7 @@
 		input[type="search"] {
 			@include box-sizing(border-box);
 			display: block;
+			font-weight: normal; 
 			max-width: 19.2857em; 
 			width: 100%; 
 		}

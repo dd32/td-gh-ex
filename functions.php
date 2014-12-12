@@ -7,8 +7,8 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.4' );
-define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.5' );
+define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
 	include get_template_directory() . '/premium/functions.php';
@@ -30,6 +30,8 @@ include get_template_directory() . '/inc/jetpack.php';
 include get_template_directory() . '/inc/metaslider.php';
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/template-tags.php';
+include get_template_directory() . '/inc/formats.php';
+include get_template_directory() . '/tour/tour.php';
 
 if ( ! function_exists( 'puro_setup' ) ) :
 /**
@@ -91,7 +93,7 @@ function puro_setup() {
 		'margin-bottom' => 41,
 		'home-page' => true,
 		'home-page-default' => false,
-		'home-template' => '/page-templates/full-width-unconstrained-content-no-title.php',
+		'home-template' => 'page-templates/full-width-unconstrained-content-no-title.php',
 	) );
 
 	// Only include the bundled version of panels if the plugin does not exist.
@@ -171,7 +173,7 @@ function puro_scripts() {
 
 	wp_enqueue_script( 'puro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SITEORIGIN_THEME_VERSION, true );
 
-	wp_enqueue_style( 'puro-font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.0.3' );
+	wp_enqueue_style( 'puro-font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.2.0' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

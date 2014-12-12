@@ -135,6 +135,11 @@ a {
 	margin-left: auto;
 	overflow: hidden;
 }
+.comment-navigation .nav-links,
+.paging-navigation .nav-links,
+.post-navigation .nav-links {
+	text-align: center;	
+}
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -227,7 +232,7 @@ a {
 /*--------------------------------------------------------------
 6.5 - Social Menu
 --------------------------------------------------------------*/
-.menu-social-container {
+.menu-social-menu-container {
 	@include breakpoint($medium) {
 		float: left;
 		width: 100%; 
@@ -319,9 +324,6 @@ a {
 			}		
 			a[href*="tumblr.com"]:before {
 				content: "\f173";
-			}	
-			a[href*="tumblr.com"]:before {
-				content: "\f173";
 			}		
 			a[href*="twitter.com"]:before {
 				content: "\f099";
@@ -337,10 +339,7 @@ a {
 			}
 			a[href*="weibo.com"]:before {
 				content: "\f18a";
-			}			
-			a[href*="weibo.com"]:before {
-				content: "\f18a";
-			}		
+			}					
 			a[href*="wordpress.com"]:before {
 				content: "\f19a";
 			}	

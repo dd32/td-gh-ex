@@ -2,14 +2,14 @@
 Theme Name: Puro
 Author: Puro
 Author URI: http://purothemes.com/
-Theme URI: http://wordpress.org/themes/puro/
-Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and MetaSlider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .pot file ready for translators and a .rtl CSS file for right to left languages.  
-Version: 1.0.4
+Theme URI: http://purothemes.com/themes/puro-wordpress-theme/
+Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/puro-theme/">theme documentation</a> or ask a question on our <a href="http://purothemes.com/support/forum/puro/">support forum</a>.
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
 Domain Path: /languages/
-Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -54,10 +54,11 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 	17.1 - Contact Form
 	17.2 - Gravatar Profile
 	17.3 - Infinite Scroll
-	17.4 - RSS Links
-	17.5 - Tiled Gallery
-	17.6 - Video Player
-	17.7 - WordPress Posts
+	17.4 - Subscriptions
+	17.5 - RSS Links
+	17.6 - Tiled Gallery
+	17.7 - Video Player
+	17.8 - WordPress Posts
 18.0 - Contact Form 7
 19.0 - Gravity Forms
 --------------------------------------------------------------*/
@@ -148,7 +149,7 @@ a img {
   margin-left: auto;
   margin-right: auto;
   padding: 0 5%; }
-  #page::after {
+  #page:after {
     content: " ";
     display: block;
     clear: both; }
@@ -272,7 +273,7 @@ select,
 textarea {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
-  color: #666666;
+  color: #666;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1em;
@@ -288,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: 0.84375em 0;
   clear: both;
-  color: #333333;
+  color: #333;
   font-weight: 600; }
 
 h1 {
@@ -316,8 +317,6 @@ h6 {
   line-height: 1.6875em; }
 
 p {
-  word-break: break-all;
-  word-break: break-word;
   margin-bottom: 1.6875em; }
   p:last-child {
     margin-bottom: 0; }
@@ -372,7 +371,7 @@ abbr, acronym {
   cursor: help; }
 
 mark, ins {
-  background: #fff9c0;
+  background: #fff9C0;
   text-decoration: none; }
 
 sup,
@@ -546,7 +545,8 @@ textarea {
   transition: 0.3s;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  padding: 0.4563em 0.625em 0.3313em;
+  line-height: normal;
+  padding: 0.6875em 0.625rem 0.6875em;
   -webkit-appearance: none; }
 
 input[type="text"]:focus,
@@ -559,7 +559,7 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 select[multiple]:focus,
 textarea:focus {
-  border-color: #cccccc; }
+  border-color: #ccc; }
 
 textarea {
   -moz-box-sizing: border-box;
@@ -587,7 +587,7 @@ a {
   color: #2ac176;
   text-decoration: none; }
   a:hover, a:focus, a:active {
-    color: #666666; }
+    color: #666; }
 
 /*--------------------------------------------------------------
 6.2 - Main Menu
@@ -610,7 +610,7 @@ a {
   .main-navigation a {
     white-space: nowrap;
     display: block;
-    color: #666666; }
+    color: #666; }
   .main-navigation .current_page_item a, .main-navigation .current-menu-item a {
     color: #2ac176; }
   .main-navigation ul {
@@ -694,6 +694,11 @@ a {
   margin-left: auto;
   overflow: hidden; }
 
+.comment-navigation .nav-links,
+.paging-navigation .nav-links,
+.post-navigation .nav-links {
+  text-align: center; }
+
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -740,7 +745,7 @@ a {
     -webkit-border-radius: 4px;
     border-radius: 4px;
     border: 1px solid #e5e5e5;
-    color: #999999;
+    color: #999;
     display: inline-block;
     margin-right: 0.3125em;
     padding: 0.4375em 1.0625em 0.375em; }
@@ -755,7 +760,7 @@ a {
     padding-right: 0;
     padding-left: 0; }
     .paging-navigation .dots:hover {
-      color: #666666; }
+      color: #666; }
   .paging-navigation .current {
     border-color: #2ac176;
     color: #2ac176; }
@@ -781,90 +786,86 @@ a {
 6.5 - Social Menu
 --------------------------------------------------------------*/
 @media (max-width: 48rem) {
-  .menu-social-container {
+  .menu-social-menu-container {
     float: left;
     width: 100%; } }
-.menu-social-container .screen-reader-text {
+.menu-social-menu-container .screen-reader-text {
   left: -9999rem;
   position: absolute;
   top: -9999rem; }
-.menu-social-container ul {
+.menu-social-menu-container ul {
   list-style: none;
   position: relative;
   margin: 0; }
-  .menu-social-container ul li {
+  .menu-social-menu-container ul li {
     display: inline-block;
     color: transparent;
     font-size: 0;
     line-height: 0;
     padding: 0 0.3125rem; }
-    .menu-social-container ul li a {
+    .menu-social-menu-container ul li a {
       text-align: center; }
-    .menu-social-container ul li:last-of-type {
+    .menu-social-menu-container ul li:last-of-type {
       padding-right: 0; }
-    .menu-social-container ul li a:before {
+    .menu-social-menu-container ul li a:before {
       display: block;
-      color: #999999;
+      color: #999;
       font-family: "FontAwesome";
       font-size: 1.125rem;
       vertical-align: top; }
-    .menu-social-container ul li a:hover:before {
+    .menu-social-menu-container ul li a:hover:before {
       color: #2ac176; }
-    .menu-social-container ul li a[href*="behance.net"]:before {
+    .menu-social-menu-container ul li a[href*="behance.net"]:before {
       content: "\f1b4"; }
-    .menu-social-container ul li a[href*="codepen.io"]:before {
+    .menu-social-menu-container ul li a[href*="codepen.io"]:before {
       content: "\f1cb"; }
-    .menu-social-container ul li a[href*="delicious.com"]:before {
+    .menu-social-menu-container ul li a[href*="delicious.com"]:before {
       content: "\f1a5"; }
-    .menu-social-container ul li a[href*="deviantart.com"]:before {
+    .menu-social-menu-container ul li a[href*="deviantart.com"]:before {
       content: "\f1bd"; }
-    .menu-social-container ul li a[href*="digg.com"]:before {
+    .menu-social-menu-container ul li a[href*="digg.com"]:before {
       content: "\f1a6"; }
-    .menu-social-container ul li a[href*="dribbble.com"]:before {
+    .menu-social-menu-container ul li a[href*="dribbble.com"]:before {
       content: "\f17d"; }
-    .menu-social-container ul li a[href*="facebook.com"]:before {
+    .menu-social-menu-container ul li a[href*="facebook.com"]:before {
       content: "\f09a"; }
-    .menu-social-container ul li a[href*="flickr.com"]:before {
+    .menu-social-menu-container ul li a[href*="flickr.com"]:before {
       content: "\f16e"; }
-    .menu-social-container ul li a[href*="foursquare.com"]:before {
+    .menu-social-menu-container ul li a[href*="foursquare.com"]:before {
       content: "\f180"; }
-    .menu-social-container ul li a[href*="github.com"]:before {
+    .menu-social-menu-container ul li a[href*="github.com"]:before {
       content: "\f09b"; }
-    .menu-social-container ul li a[href*="plus.google.com"]:before {
+    .menu-social-menu-container ul li a[href*="plus.google.com"]:before {
       content: "\f0d5"; }
-    .menu-social-container ul li a[href*="instagram.com"]:before {
+    .menu-social-menu-container ul li a[href*="instagram.com"]:before {
       content: "\f16d"; }
-    .menu-social-container ul li a[href*="linkedin.com"]:before {
+    .menu-social-menu-container ul li a[href*="linkedin.com"]:before {
       content: "\f0e1"; }
-    .menu-social-container ul li a[href*="pinterest.com"]:before {
+    .menu-social-menu-container ul li a[href*="pinterest.com"]:before {
       content: "\f0d2"; }
-    .menu-social-container ul li a[href*="reddit.com"]:before {
+    .menu-social-menu-container ul li a[href*="reddit.com"]:before {
       content: "\f1a1"; }
-    .menu-social-container ul li a[href*="soundcloud.com"]:before {
+    .menu-social-menu-container ul li a[href*="soundcloud.com"]:before {
       content: "\f1be"; }
-    .menu-social-container ul li a[href*="stackexchange.com"]:before {
+    .menu-social-menu-container ul li a[href*="stackexchange.com"]:before {
       content: "\f18d"; }
-    .menu-social-container ul li a[href*="stackoverflow.com"]:before {
+    .menu-social-menu-container ul li a[href*="stackoverflow.com"]:before {
       content: "\f16c"; }
-    .menu-social-container ul li a[href*="tumblr.com"]:before {
+    .menu-social-menu-container ul li a[href*="tumblr.com"]:before {
       content: "\f173"; }
-    .menu-social-container ul li a[href*="tumblr.com"]:before {
-      content: "\f173"; }
-    .menu-social-container ul li a[href*="twitter.com"]:before {
+    .menu-social-menu-container ul li a[href*="twitter.com"]:before {
       content: "\f099"; }
-    .menu-social-container ul li a[href*="vimeo.com"]:before {
+    .menu-social-menu-container ul li a[href*="vimeo.com"]:before {
       content: "\f194"; }
-    .menu-social-container ul li a[href*="vine.co"]:before {
+    .menu-social-menu-container ul li a[href*="vine.co"]:before {
       content: "\f1ca"; }
-    .menu-social-container ul li a[href*="vk.com"]:before {
+    .menu-social-menu-container ul li a[href*="vk.com"]:before {
       content: "\f189"; }
-    .menu-social-container ul li a[href*="weibo.com"]:before {
+    .menu-social-menu-container ul li a[href*="weibo.com"]:before {
       content: "\f18a"; }
-    .menu-social-container ul li a[href*="weibo.com"]:before {
-      content: "\f18a"; }
-    .menu-social-container ul li a[href*="wordpress.com"]:before {
+    .menu-social-menu-container ul li a[href*="wordpress.com"]:before {
       content: "\f19a"; }
-    .menu-social-container ul li a[href*="youtube.com"]:before {
+    .menu-social-menu-container ul li a[href*="youtube.com"]:before {
       content: "\f167"; }
 
 /*--------------------------------------------------------------
@@ -986,7 +987,7 @@ img.alignnone {
     line-height: 1.5em;
     margin-bottom: 0.8438em; }
     #secondary .widget h3.widget-title a, #colophon .widget h3.widget-title a {
-      color: #333333; }
+      color: #333; }
       #secondary .widget h3.widget-title a:hover, #colophon .widget h3.widget-title a:hover {
         color: #2ac176; }
     #secondary .widget h3.widget-title:first-of-type, #colophon .widget h3.widget-title:first-of-type {
@@ -1108,6 +1109,7 @@ img.alignnone {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
+  font-weight: normal;
   max-width: 19.2857em;
   width: 100%; }
 #secondary .widget_search .search-form .search-submit, #colophon .widget_search .search-form .search-submit {
@@ -1143,6 +1145,9 @@ article {
   .entry-thumbnail a {
     display: block; }
 
+.post-video {
+  margin-bottom: 1.6875em; }
+
 .entry-header {
   text-align: left;
   margin: 0; }
@@ -1151,7 +1156,7 @@ article {
     line-height: 1.6875em;
     margin: 0; }
     .entry-header h1.entry-title a {
-      color: #333333; }
+      color: #333; }
     .entry-header h1.entry-title a:hover {
       color: #2ac176; }
   @media (max-width: 30rem) {
@@ -1162,10 +1167,10 @@ article {
     font-size: 0.875em;
     line-height: 1.92857em;
     margin-bottom: 1.6875em;
-    color: #999999;
+    color: #999;
     position: relative; }
     .entry-header .entry-meta a {
-      color: #999999; }
+      color: #999; }
       .entry-header .entry-meta a:hover {
         color: #2ac176; }
     .entry-header .entry-meta span {
@@ -1203,7 +1208,7 @@ article {
 .entry-footer {
   font-size: 0.875em;
   line-height: 1.92857em;
-  color: #999999;
+  color: #999;
   margin-right: auto;
   margin-left: auto; }
   .entry-footer ul {
@@ -1228,7 +1233,7 @@ article {
       font-family: 'FontAwesome';
       padding-right: 0.3839em; }
     .entry-footer .edit-link a {
-      color: #666666; }
+      color: #666; }
       .entry-footer .edit-link a:hover {
         color: #2ac176; }
 
@@ -1243,7 +1248,7 @@ article {
   margin: 0 0 1.6875em; }
   .page-links .page-links-title {
     border: none;
-    color: #666666;
+    color: #666;
     font-weight: 600;
     padding-right: 0;
     padding-left: 0;
@@ -1264,7 +1269,7 @@ article {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border-color: #e5e5e5;
-    color: #999999; }
+    color: #999; }
     .page-links a span:hover {
       color: #2ac176;
       border-color: #2ac176; }
@@ -1372,11 +1377,11 @@ article {
   margin-right: 0.3125em; }
 .comments-area .comment-metadata {
   margin-bottom: 0.84375em;
-  color: #999999; }
+  color: #999; }
   .comments-area .comment-metadata a {
     font-size: 0.875em;
     line-height: 1.92857em;
-    color: #999999; }
+    color: #999; }
     .comments-area .comment-metadata a:hover {
       color: #2ac176; }
   @media (max-width: 64rem) {
@@ -1490,7 +1495,9 @@ object {
 
 .gallery-columns-1 .gallery-item {
   width: 100%;
-  float: left; }
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
 
 .gallery-columns-2 .gallery-item {
   width: 48.57143%;
@@ -1721,12 +1728,12 @@ object {
 12.3 - Audio
 --------------------------------------------------------------*/
 .mejs-container button {
-  background: #333333; }
+  background: #333; }
 
 .mejs-controls .mejs-button button {
-  -moz-box-shadow: 0 0 0 #333333;
-  -webkit-box-shadow: 0 0 0 #333333;
-  box-shadow: 0 0 0 #333333; }
+  -moz-box-shadow: 0 0 0 #333;
+  -webkit-box-shadow: 0 0 0 #333;
+  box-shadow: 0 0 0 #333; }
 
 /*--------------------------------------------------------------
 12.4 - Attachments
@@ -1771,7 +1778,7 @@ object {
     .site-header .site-branding h2.site-description {
       font-size: 1em;
       line-height: 1.6875em;
-      color: #999999;
+      color: #999;
       font-weight: normal;
       margin: -0.375em 0 0.25em; }
   .site-header.center-logo .site-branding {
@@ -1794,7 +1801,9 @@ object {
     margin-right: 0; }
   .site-footer .widget-count-1 {
     width: 100%;
-    float: left; }
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
   .site-footer .widget-count-2 {
     width: 48.57143%;
     float: left;
@@ -1839,15 +1848,15 @@ object {
   .site-footer .site-info, .site-footer .theme-attribution {
     font-size: 0.8125em;
     line-height: 2.07692em;
-    color: #999999;
+    color: #999;
     float: left;
     margin-top: 1.6875em;
     text-align: left; }
     .site-footer .site-info a, .site-footer .theme-attribution a {
-      color: #999999; }
+      color: #999; }
     .site-footer .site-info a:hover, .site-footer .theme-attribution a:hover {
       color: #2ac176; }
-  .site-footer .menu-social-container {
+  .site-footer .menu-social-menu-container {
     float: right;
     margin-top: 1.6875em; }
 
@@ -1870,7 +1879,7 @@ div[id*="contact-form"] div {
     div[id*="contact-form"] div label span {
       font-size: 0.8125em;
       line-height: 2.07692em;
-      color: #999999; }
+      color: #999; }
   div[id*="contact-form"] div input, div[id*="contact-form"] div input[type='text'], div[id*="contact-form"] div input[type='email'] {
     margin-bottom: 0; }
   div[id*="contact-form"] div textarea {
@@ -1996,16 +2005,16 @@ div[id*="contact-form"] .form-error {
 #infinite-footer .blog-info a {
   font-size: 0.8125em;
   line-height: 2.07692em;
-  color: #333333; }
+  color: #333; }
   #infinite-footer .blog-info a:hover {
     color: #2ac176;
     text-decoration: none; }
 #infinite-footer .blog-credits {
   font-size: 0.6875em;
   line-height: 2.45455em;
-  color: #666666; }
+  color: #666; }
   #infinite-footer .blog-credits a {
-    color: #666666; }
+    color: #666; }
     #infinite-footer .blog-credits a:hover {
       color: #2ac176;
       text-decoration: none; }
@@ -2020,19 +2029,33 @@ div[id*="contact-form"] .form-error {
     display: block; }
 
 /*--------------------------------------------------------------
-17.5 - Tiled Gallery
+17.5 - Subscriptions
+--------------------------------------------------------------*/
+p.comment-subscription-form {
+  margin-bottom: 0; }
+  p.comment-subscription-form input[type="checkbox"] {
+    font-size: 0.875em;
+    line-height: 1.92857em; }
+  p.comment-subscription-form label.subscribe-label {
+    font-size: 0.875em;
+    line-height: 1.92857em;
+    font-weight: normal;
+    margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+17.6 - Tiled Gallery
 --------------------------------------------------------------*/
 .entry-content .tiled-gallery {
   margin: 0 0 1.6875em; }
 
 /*--------------------------------------------------------------
-17.6 - Video Player
+17.7 - Video Player
 --------------------------------------------------------------*/
 .entry-content .video-player {
   margin: 0 0 1.6875em; }
 
 /*--------------------------------------------------------------
-17.7 - WordPress Posts
+17.8 - WordPress Posts
 --------------------------------------------------------------*/
 #secondary .jetpack-display-remote-posts h4, #colophon .jetpack-display-remote-posts h4 {
   font-size: 0.875em;
@@ -2101,7 +2124,7 @@ div[id*="contact-form"] .form-error {
   border: none;
   border-top: 0.0625rem solid #e6db55;
   border-bottom: 0.0625rem solid #e6db55;
-  color: #666666;
+  color: #666;
   float: left;
   margin-top: 1.6875em; }
 .wpcf7:after {
@@ -2133,7 +2156,7 @@ div[id*="contact-form"] .form-error {
   border: 0.0625em solid #e6db55 !important;
   border-right: none !important;
   border-left: none !important;
-  color: #666666;
+  color: #666;
   padding: 1.2656em 0.8438em; }
 
 #secondary .gform_confirmation_wrapper .gform_confirmation_message, #colophon .gform_confirmation_wrapper .gform_confirmation_message {

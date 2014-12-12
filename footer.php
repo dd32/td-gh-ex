@@ -29,7 +29,7 @@
 					echo ' - ';
 				}
 				if( siteorigin_setting('footer_attribution') ) {
-					printf(__('<a href="%s">Theme by Puro</a>', 'puro'), 'http://purothemes.com');
+					printf(__('<a href="%s" title="A Free WordPress Theme by Puro">Theme by Puro</a>', 'puro'), 'http://purothemes.com');
 				}
 			?>
 		</div><!-- .site-info -->

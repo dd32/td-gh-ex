@@ -42,20 +42,21 @@ function siteorigin_panels_lite_enqueue_admin($prefix){
 		wp_enqueue_style('siteorigin-panels-lite-teaser', get_template_directory_uri().'/extras/panels-lite/css/panels-admin.css');
 	}
 
-	if($prefix == 'post.php' || $prefix == 'post-new.php' ) {
-
+	if( ( $prefix == 'post.php' || $prefix == 'post-new.php' ) && function_exists('siteorigin_plugin_activation_install_url') ) {
 		$install_url = siteorigin_plugin_activation_install_url(
 			'siteorigin-panels',
 			__('Page Builder', 'puro')
 		);
 
-		wp_enqueue_script('siteorigin-panels-lite-teaser', get_template_directory_uri().'/extras/panels-lite/js/tab.js', array('jquery'));
-		wp_localize_script('siteorigin-panels-lite-teaser', 'panelsLiteTeaser', array(
-			'tab' => __('Page Builder', 'puro'),
-			'message' => __("Refresh this page after you've installed Page Builder.", 'puro'),
-			'confirm' => __("Your theme has Page Builder support. Would you like to install it? It's free."),
-			'installUrl' => $install_url
-		));
+		if( current_user_can( 'install_plugins' ) ) {
+			wp_enqueue_script( 'siteorigin-panels-lite-teaser', get_template_directory_uri() . '/extras/panels-lite/js/tab.min.js', array( 'jquery' ) );
+			wp_localize_script( 'siteorigin-panels-lite-teaser', 'panelsLiteTeaser', array(
+				'tab'        => __( 'Page Builder', 'puro' ),
+				'message'    => __( "Refresh this page after you've installed Page Builder.", 'puro' ),
+				'confirm'    => __( "Your theme has Page Builder support. Would you like to install it? It's free." ),
+				'installUrl' => $install_url
+			) );
+		}
 	}
 }
 add_action('admin_enqueue_scripts', 'siteorigin_panels_lite_enqueue_admin');
@@ -67,15 +68,7 @@ add_action('admin_enqueue_scripts', 'siteorigin_panels_lite_enqueue_admin');
  * @return WP_Admin_Bar
  */
 function siteorigin_panels_lite_admin_bar_menu($admin_bar){
-	/**
-	 * @var WP_Query $wp_query
-	 */
-	global $wp_query;
-
-	if( $wp_query->is_home() && $wp_query->is_main_query() ){
-		// Check that we support the home page
-		if ( !current_user_can('edit_theme_options') ) return $admin_bar;
-
+	if( is_front_page() && current_user_can('edit_theme_options') && !is_page() ){
 		$admin_bar->add_node(array(
 			'id' => 'edit-home-page',
 			'title' => __('Edit Home Page', 'puro'),
@@ -94,24 +87,33 @@ add_action('admin_bar_menu', 'siteorigin_panels_lite_admin_bar_menu', 100);
  * @return mixed|null|void
  */
 function siteorigin_panels_lite_setting($key = false){
-	$settings = array(
-		'home-page' => false,                   // Is the home page supported
-		'home-page-default' => false,           // What's the default layout for the home page?
-		'home-template' => 'home-panels.php',   // The file used to render a home page.
-		'post-types' => get_option('siteorigin_panels_post_types', array('page')),	// Post types that can be edited using panels.
 
-		'responsive' => !isset( $display_settings['responsive'] ) ? false : $display_settings['responsive'],					// Should we use a responsive layout
-		'mobile-width' => !isset( $display_settings['mobile-width'] ) ? 780 : $display_settings['mobile-width'],				// What is considered a mobile width?
+	$settings = get_theme_support('siteorigin-panels');
+	if(!empty($settings)) $settings = $settings[0];
+	else $settings = array();
 
-		'margin-bottom' => !isset( $display_settings['margin-bottom'] ) ? 30 : $display_settings['margin-bottom'],				// Bottom margin of a cell
-		'margin-sides' => !isset( $display_settings['margin-sides'] ) ? 30 : $display_settings['margin-sides'],					// Spacing between 2 cells
-		'affiliate-id' => false,																								// Set your affiliate ID
-		'copy-content' => !isset( $display_settings['copy-content'] ) ? true : $display_settings['copy-content'],				// Should we copy across content
-		'animations' => !isset( $display_settings['animations'] ) ? true : $display_settings['animations'],						// Should we copy across content
-	);
+	$settings = wp_parse_args( $settings, array(
+		'home-page' => false,																								// Is the home page supported
+		'home-page-default' => false,																						// What's the default prebuilt layout for the home page?
+		'home-template' => 'home-panels.php',																				// The file used to render a home page.
+		'home-demo-template' => false,																				        // The file used to render the home page demo.
+		'post-types' => get_option('siteorigin_panels_post_types', array('page', 'post') ),									// Post types that can be edited.
+
+		'bundled-widgets' => !isset( $display_settings['bundled-widgets'] ) ? true : $display_settings['bundled-widgets'],	// Include bundled widgets.
+		'responsive' => !isset( $display_settings['responsive'] ) ? true : $display_settings['responsive'],				    // Should we use a responsive layout
+		'mobile-width' => !isset( $display_settings['mobile-width'] ) ? 780 : $display_settings['mobile-width'],			// What is considered a mobile width?
+
+		'margin-bottom' => !isset( $display_settings['margin-bottom'] ) ? 30 : $display_settings['margin-bottom'],			// Bottom margin of a cell
+		'margin-sides' => !isset( $display_settings['margin-sides'] ) ? 30 : $display_settings['margin-sides'],				// Spacing between 2 cells
+		'affiliate-id' => false,																							// Set your affiliate ID
+		'copy-content' => !isset( $display_settings['copy-content'] ) ? true : $display_settings['copy-content'],			// Should we copy across content
+		'animations' => !isset( $display_settings['animations'] ) ? true : $display_settings['animations'],					// Do we need animations
+		'inline-css' => !isset( $display_settings['inline-css'] ) ? true : $display_settings['inline-css'],				    // How to display CSS
+	) );
 
 	// Filter these settings
 	$settings = apply_filters('siteorigin_panels_settings', $settings);
+	if( empty( $settings['post-types'] ) ) $settings['post-types'] = array();
 
 	if( !empty( $key ) ) return isset( $settings[$key] ) ? $settings[$key] : null;
 	return $settings;
@@ -124,15 +126,17 @@ function siteorigin_panels_lite_setting($key = false){
  * @return string
  */
 function siteorigin_panels_lite_filter_home_template($template){
-	if ( !get_theme_mod('siteorigin_panels_home_page_enabled', siteorigin_panels_lite_setting('home-page-default') ) ) return $template;
-	// If the user already has their own custom home page, use that instead
+	// The user has already selected their own page as the home template
 	if ( get_option( 'show_on_front' ) !== 'posts' ) return $template;
 
-	$GLOBALS['siteorigin_panels_is_panels_home'] = true;
-	return locate_template(array(
-		'home-panels.php',
+	// Do we even support the home template
+	if ( !get_theme_mod('siteorigin_panels_home_page_enabled', siteorigin_panels_lite_setting('home-page-default') ) ) return $template;
+	if ( !siteorigin_panels_lite_setting('home-page-default') || !siteorigin_panels_lite_setting('home-demo-template') ) return $template;
+
+	return locate_template( array(
+		siteorigin_panels_lite_setting( 'home-demo-template' ),
 		$template
-	));
+	) );
 }
 add_filter('home_template', 'siteorigin_panels_lite_filter_home_template');
 
@@ -140,7 +144,7 @@ add_filter('home_template', 'siteorigin_panels_lite_filter_home_template');
  * @return mixed|void Are we currently viewing the home page
  */
 function siteorigin_panels_lite_is_home(){
-	$home = (is_home() && get_theme_mod('siteorigin_panels_home_page_enabled', siteorigin_panels_lite_setting('home-page-default')) );
+	$home = ( is_home() && get_theme_mod('siteorigin_panels_home_page_enabled', siteorigin_panels_lite_setting('home-page-default') ) && !is_page() && siteorigin_panels_lite_setting( 'home-page-default' ) );
 	return apply_filters('siteorigin_panels_is_home', $home);
 }
 
@@ -148,8 +152,8 @@ function siteorigin_panels_lite_is_home(){
  * Enqueue the required styles
  */
 function siteorigin_panels_lite_enqueue_styles(){
-	if(siteorigin_panels_lite_is_home()){
-		wp_enqueue_style('siteorigin-panels', get_template_directory_uri() . '/extras/panels-lite/css/front.css', array(), SITEORIGIN_THEME_VERSION );
+	if( siteorigin_panels_lite_is_home() ){
+		wp_enqueue_style( 'siteorigin-panels', get_template_directory_uri() . '/extras/panels-lite/css/front.css', array(), SITEORIGIN_THEME_VERSION );
 	}
 }
 add_action('wp_enqueue_scripts', 'siteorigin_panels_lite_enqueue_styles');
@@ -161,7 +165,10 @@ add_action('wp_enqueue_scripts', 'siteorigin_panels_lite_enqueue_styles');
  * @return array
  */
 function siteorigin_panels_lite_body_class($classes){
-	if(siteorigin_panels_lite_is_home()) $classes[] = 'siteorigin-panels-home';
+	if( siteorigin_panels_lite_is_home() ) {
+		$classes[] = 'siteorigin-panels';
+		$classes[] = 'siteorigin-panels-home';
+	}
 	return $classes;
 }
 add_filter('body_class', 'siteorigin_panels_lite_body_class');
@@ -178,22 +185,34 @@ add_filter('body_class', 'siteorigin_panels_lite_body_class');
  * @param $is_last
  */
 function siteorigin_panels_lite_the_widget( $widget, $instance, $grid, $cell, $panel, $is_first, $is_last ) {
-	if ( !class_exists( $widget ) ) return;
+	if ( class_exists( $widget ) ) {
+		$the_widget = new $widget;
+	}
 
-	$the_widget = new $widget;
+	if( empty($post_id) ) $post_id = get_the_ID();
 
 	$classes = array( 'panel', 'widget' );
-	if ( !empty( $the_widget->id_base ) ) $classes[] = 'widget_' . $the_widget->id_base;
+	if ( !empty( $the_widget ) && !empty( $the_widget->id_base ) ) $classes[] = 'widget_' . $the_widget->id_base;
 	if ( $is_first ) $classes[] = 'panel-first-child';
 	if ( $is_last ) $classes[] = 'panel-last-child';
+	$id = 'panel-' . $post_id . '-' . $grid . '-' . $cell . '-' . $panel;
 
-	$the_widget->widget( array(
-		'before_widget' => '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" id="panel-' . $grid . '-' . $cell . '-' . $panel . '">',
+
+	$args = array(
+		'before_widget' => '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" id="' . $id . '">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 		'widget_id' => 'widget-' . $grid . '-' . $cell . '-' . $panel
-	), $instance );
+	);
+
+	if ( class_exists( $widget ) ) {
+		$the_widget->widget($args , $instance );
+	}
+	else {
+		// This gives themes a chance to display some sort of placeholder for missing widgets
+		echo apply_filters('siteorigin_panels_missing_widget', '', $widget, $args , $instance);
+	}
 }
 
 /**
@@ -202,9 +221,8 @@ function siteorigin_panels_lite_the_widget( $widget, $instance, $grid, $cell, $p
  * @action wp_print_styles
  */
 function siteorigin_panels_lite_css() {
-	global $post;
+	if( !siteorigin_panels_lite_is_home() ) return;
 
-	if(!siteorigin_panels_lite_is_home()) return;
 	$layouts = apply_filters( 'siteorigin_panels_prebuilt_layouts', array() );
 	if(empty($layouts[ siteorigin_panels_lite_setting('home-page-default') ])) return;
 	$panels_data = $layouts[siteorigin_panels_lite_setting('home-page-default')];
@@ -326,7 +344,7 @@ add_action( 'wp_head', 'siteorigin_panels_lite_css', 15 );
  */
 function siteorigin_panels_lite_home_render(){
 	$layouts = apply_filters( 'siteorigin_panels_prebuilt_layouts', array() );
-	if(empty($layouts[ siteorigin_panels_lite_setting('home-page-default') ])) return;
+	if( empty( $layouts[ siteorigin_panels_lite_setting('home-page-default') ] ) ) return;
 	$panels_data = $layouts[siteorigin_panels_lite_setting('home-page-default')];
 	$panels_data = apply_filters( 'siteorigin_panels_data', $panels_data, 'home' );
 

@@ -83,7 +83,7 @@ function siteorigin_theme_update_settings_order_field() {
 
 	?>
 	<input type="text" class="regular-text code" name="<?php echo esc_attr( $name ) ?>" value="<?php echo esc_attr( get_option( $name, false ) ) ?>" />
-	<p class="description"><?php _e( 'Find your order number in your original order email from Puro', 'puro' ); ?></p>
+	<p class="description"><?php _e( 'Find your order number in your original order email from Puro.', 'puro' ); ?></p>
 	<?php
 }
 

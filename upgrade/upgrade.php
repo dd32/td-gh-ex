@@ -62,6 +62,16 @@ function puro_premium_upgrade_content($content){
 		'image' => get_template_directory_uri().'/upgrade/teasers/continued-updates.png',
 	);
 
+	$content['testimonials'] = array(
+		array(
+			'gravatar' => 'a30fb6758139a02d700c273d79a0877d',
+			'name' => 'Kerstie',
+			'title' => 'Minimalist Theme Ideal for Portfolio.',
+			'content' => __("<p>Great theme. Neat, simple, and modern. It suits my needs and preferences, and the small modification that I want was easily solved by Support. Highly recommended.</p> <p>My favorite feature was the option to move the logo to the center without adjusting the layout using CSS. I've been looking for minimalist portfolio-friendly themes with such feature and this is the only one that I've found so far.</p> <p>Thank you so much for sharing such a wonderful theme.</p>", 'puro'),
+		),
+
+	);	
+
 	return $content;
 }
 add_filter('siteorigin_premium_content', 'puro_premium_upgrade_content');

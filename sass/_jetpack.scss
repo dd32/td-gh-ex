@@ -172,21 +172,36 @@ div[id*="contact-form"] {
 }
 
 /*--------------------------------------------------------------
-17.5 - Tiled Gallery
+17.5 - Subscriptions
+--------------------------------------------------------------*/
+p.comment-subscription-form {
+	margin-bottom: 0; 
+	input[type="checkbox"] {
+		@include adjust-font-size-to(14px);
+	}
+	label.subscribe-label {
+		@include adjust-font-size-to(14px);
+		font-weight: normal;
+		margin-bottom: 0; 
+	}
+}
+
+/*--------------------------------------------------------------
+17.6 - Tiled Gallery
 --------------------------------------------------------------*/
 .entry-content .tiled-gallery {
 	margin: 0 0 rhythm(1);	 
 }
 
 /*--------------------------------------------------------------
-17.6 - Video Player
+17.7 - Video Player
 --------------------------------------------------------------*/
 .entry-content .video-player {
 	margin: 0 0 rhythm(1);	
 }
 
 /*--------------------------------------------------------------
-17.7 - WordPress Posts
+17.8 - WordPress Posts
 --------------------------------------------------------------*/
 #secondary .jetpack-display-remote-posts, #colophon .jetpack-display-remote-posts {
 	h4 {

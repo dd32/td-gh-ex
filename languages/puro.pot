@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2014-07-24 22:19+0200\n"
-"PO-Revision-Date: 2014-07-24 22:19+0200\n"
+"POT-Creation-Date: 2014-12-11 12:04+0200\n"
+"PO-Revision-Date: 2014-12-11 12:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.7.1\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -146,22 +146,28 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content-page.php:25 ../content-single.php:28 ../content.php:31
-#: ../page-templates/full-width-no-title.php:28
+#: ../content-page.php:25 ../content-single.php:28 ../content-video.php:43
+#: ../content.php:39 ../page-templates/full-width-no-title.php:28
 #: ../page-templates/full-width-unconstrained-content-no-title.php:28
 #: ../page-templates/no-title.php:28
 msgid "Pages:"
 msgstr ""
 
 #: ../content-page.php:33 ../content-search.php:24 ../content-single.php:38
-#: ../content.php:45 ../page-templates/full-width-no-title.php:35
+#: ../content-video.php:53 ../content.php:54
+#: ../extras/settings/settings.php:480
+#: ../page-templates/full-width-no-title.php:35
 #: ../page-templates/full-width-unconstrained-content-no-title.php:35
 #: ../page-templates/no-title.php:35
 msgid "Edit"
 msgstr ""
 
-#: ../content.php:28
+#: ../content-video.php:38 ../content.php:36
 msgid "Continue reading"
+msgstr ""
+
+#: ../extras/adminbar/adminbar.php:66
+msgid "Dismiss"
 msgstr ""
 
 #: ../extras/panels-lite/inc/widgets.php:12
@@ -172,142 +178,8 @@ msgstr ""
 msgid "Displays a post loop."
 msgstr ""
 
-#: ../extras/panels-lite/inc/widgets.php:148
-msgid "Unfortunately your theme doesn't have any post loops."
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:159
-msgid "Title"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:163
-msgid "Template"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:178
-msgid "Post Type"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:187
-msgid "Posts Per Page"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:192
-msgid "Order By"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:194
-#: ../extras/settings/settings.php:395 ../inc/metaslider.php:6
-msgid "None"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:195
-msgid "Post ID"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:196
-msgid "Author"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:197
-#: ../extras/panels-lite/inc/widgets.php:198
-msgid "Name"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:199
-msgid "Date"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:200
-msgid "Modified"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:201
-msgid "Parent"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:202
-msgid "Random"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:203
-msgid "Comment Count"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:204
-#: ../extras/panels-lite/inc/widgets.php:205
-msgid "Menu Order"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:210
-msgid "Order"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:212
-msgid "Descending"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:213
-msgid "Ascending"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:218
-msgid "Sticky Posts"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:220
-msgid "Default"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:221
-msgid "Ignore Sticky"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:222
-msgid "Exclude Sticky"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:223
-msgid "Only Sticky"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:228
-msgid "Additional "
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:230
-#, php-format
-msgid ""
-"Additional query arguments. See <a href=\"%s\" target=\"_blank"
-"\">query_posts</a>."
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:240
-msgid "Image (PB)"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:242
-msgid "Displays a simple image."
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:275
-msgid "Image URL"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:279
-msgid "Destination URL"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:293
-msgid "Embedded Video (PB)"
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:295
-msgid "Embeds a video."
-msgstr ""
-
-#: ../extras/panels-lite/inc/widgets.php:324
-msgid "Video"
+#: ../extras/panels-lite/inc/widgets.php:94
+msgid "Please install Page Builder to use this widget."
 msgstr ""
 
 #: ../extras/panels-lite/panels-lite.php:12
@@ -319,7 +191,7 @@ msgid "Home Page"
 msgstr ""
 
 #: ../extras/panels-lite/panels-lite.php:25
-#: ../extras/panels-lite/panels-lite.php:49
+#: ../extras/panels-lite/panels-lite.php:48
 #: ../extras/panels-lite/panels-lite.php:54
 #: ../extras/panels-lite/tpl/admin-home-page.php:4
 msgid "Page Builder"
@@ -334,7 +206,7 @@ msgid ""
 "Your theme has Page Builder support. Would you like to install it? It's free."
 msgstr ""
 
-#: ../extras/panels-lite/panels-lite.php:81
+#: ../extras/panels-lite/panels-lite.php:74
 msgid "Edit Home Page"
 msgstr ""
 
@@ -388,116 +260,118 @@ msgstr ""
 msgid "Installing %s"
 msgstr ""
 
-#: ../extras/premium/premium.php:12 ../extras/premium/tpl/upgrade-page.php:31
-msgid "Premium Upgrade"
+#: ../extras/premium/premium.php:12 ../extras/premium/premium.php:174
+#: ../extras/premium/premium.php:274 ../extras/premium/tpl/upgrade-page.php:16
+#: ../extras/premium/tpl/upgrade-page.php:123
+#: ../extras/settings/settings.php:145 ../extras/settings/settings.php:401
+msgid "Premium"
 msgstr ""
 
-#: ../extras/premium/premium.php:59
+#: ../extras/premium/premium.php:61
 #, php-format
-msgid "Your Order Number Is [%s]"
+msgid "Your Order Number is [%s]"
 msgstr ""
 
-#: ../extras/premium/premium.php:63
+#: ../extras/premium/premium.php:65
 msgid "There was a problem contacting our validation servers."
 msgstr ""
 
-#: ../extras/premium/premium.php:64 ../extras/premium/premium.php:90
+#: ../extras/premium/premium.php:66 ../extras/premium/premium.php:92
 msgid ""
 "Please try again later, or upgrade manually using the ZIP file we sent you."
 msgstr ""
 
-#: ../extras/premium/premium.php:68
+#: ../extras/premium/premium.php:70
 msgid "We've validated your order number."
 msgstr ""
 
-#: ../extras/premium/premium.php:71
+#: ../extras/premium/premium.php:73
 #, php-format
 msgid "You can update now, or later on your <a href=\"%s\">Themes page</a>."
 msgstr ""
 
-#: ../extras/premium/premium.php:75
+#: ../extras/premium/premium.php:77
 msgid "This update will add all the premium features."
 msgstr ""
 
-#: ../extras/premium/premium.php:80
+#: ../extras/premium/premium.php:82
 msgid ""
 "Updating this theme will lose any code customizations (CSS, PHP, Javascript, "
 "etc) you have made to the free version. You will not lose your content, "
 "images or settings. 'Cancel' to stop, 'OK' to update."
 msgstr ""
 
-#: ../extras/premium/premium.php:83
+#: ../extras/premium/premium.php:85
 msgid "Update Theme"
 msgstr ""
 
-#: ../extras/premium/premium.php:88
+#: ../extras/premium/premium.php:90
 msgid "We couldn't validate your order number."
 msgstr ""
 
-#: ../extras/premium/premium.php:89
+#: ../extras/premium/premium.php:91
 msgid "There might be a problem with our validation server."
 msgstr ""
 
-#: ../extras/premium/premium.php:134
+#: ../extras/premium/premium.php:136
 msgid "Get Additional Templates"
 msgstr ""
 
-#: ../extras/premium/premium.php:136
+#: ../extras/premium/premium.php:138
 #, php-format
 msgid "%s Premium includes additional templates"
 msgstr ""
 
-#: ../extras/premium/premium.php:172
+#: ../extras/premium/premium.php:174 ../extras/settings/settings.php:401
 #, php-format
 msgid ""
-"Available in <strong>%s Premium</strong> - <strong class=\"upgrade\">Upgrade "
+"Only available in <strong>%s</strong> - <strong class=\"upgrade\">Upgrade "
 "Now</strong>"
 msgstr ""
 
-#: ../extras/premium/premium.php:261
+#: ../extras/premium/premium.php:263
 msgid "Get Additional Customizations"
 msgstr ""
 
-#: ../extras/premium/premium.php:272
+#: ../extras/premium/premium.php:278
 #, php-format
 msgid "A Copy of %s Premium"
 msgstr ""
 
-#: ../extras/premium/premium.php:273
+#: ../extras/premium/premium.php:279
 #, php-format
 msgid ""
-"You get a copy of %s Premium, delivered instantly to your PayPal email "
-"address. This includes the same basic support we offer users of our free "
-"themes."
+"You get a copy of %s, delivered instantly to your PayPal email address. This "
+"includes the same basic support we offer users of our free themes."
 msgstr ""
 
-#: ../extras/premium/premium.php:278
+#: ../extras/premium/premium.php:284
 msgid "Premium Support"
 msgstr ""
 
-#: ../extras/premium/premium.php:279
+#: ../extras/premium/premium.php:285
 msgid ""
 "This includes Premium email support from our support team for a single site. "
 "We'll help you as quickly as possible with all your setup and configuration "
 "questions."
 msgstr ""
 
-#: ../extras/premium/premium.php:284
+#: ../extras/premium/premium.php:290
 msgid "Advanced Premium Support"
 msgstr ""
 
-#: ../extras/premium/premium.php:285
+#: ../extras/premium/premium.php:291
 #, php-format
 msgid ""
 "We'll go the extra mile and help you with minor CSS customizations, plugin "
-"conflicts and anything else that falls outside standard %s Premium support."
+"conflicts and anything else that falls outside standard %s support."
 msgstr ""
 
-#: ../extras/premium/premium.php:290
+#: ../extras/premium/premium.php:296
 msgid "A Special Thank You"
 msgstr ""
 
-#: ../extras/premium/premium.php:291
+#: ../extras/premium/premium.php:297
 #, php-format
 msgid ""
 "Our highest level of support. If you need it, you'll get support directly "
@@ -505,179 +379,249 @@ msgid ""
 "list."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:11
-#, php-format
-msgid ""
-"After you pay for %s Premium, we'll email you an order number to your "
-"<strong>PayPal email address</strong>. "
-msgstr ""
-
 #: ../extras/premium/tpl/upgrade-page.php:15
 #, php-format
 msgid ""
-"Email <a href='%s' target='_blank'>us</a> if you don't receive your order "
-"number in the next 15 minutes. "
+"After you pay for %s, we'll email you an order number to your <strong>PayPal "
+"email address</strong>. "
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:18
-msgid "To be sure, check your spam folder."
+#: ../extras/premium/tpl/upgrade-page.php:19
+#, php-format
+msgid ""
+"Use <a href='%s' target='_blank'>this form</a> if you don't receive your "
+"order number in the next 15 minutes. "
 msgstr ""
 
 #: ../extras/premium/tpl/upgrade-page.php:22
+msgid "To be sure, check your spam folder."
+msgstr ""
+
+#: ../extras/premium/tpl/upgrade-page.php:26
 msgid "Order Number"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:24
+#: ../extras/premium/tpl/upgrade-page.php:28
 msgid "Enable Upgrade"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:28
+#: ../extras/premium/tpl/upgrade-page.php:32
 msgid "Already Paid?"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:35
-msgid ""
-"The premium version of this theme is no longer available. If you need any "
-"help, please contact <a href='http://siteorigin.com/#support'>SiteOrigin "
-"support</a>."
+#: ../extras/premium/tpl/upgrade-page.php:37
+msgid "Premium Upgrade"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:72
+#: ../extras/premium/tpl/upgrade-page.php:41
+msgid ""
+"The premium version of this theme is no longer available. If you need any "
+"help, please contact <a href='mailto:support@purothemes.com'>Puro support</"
+"a>."
+msgstr ""
+
+#: ../extras/premium/tpl/upgrade-page.php:81
 msgid "Buy Now"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:78
+#: ../extras/premium/tpl/upgrade-page.php:87
 msgid ""
-"Although we appreciate and support all our premium users, our support staff "
-"prioritize orders of <strong>$15</strong> or more. Support on this order "
-"might take longer."
+"Although we appreciate and support all our users, we only offer prioritized "
+"support for orders of <strong>$15</strong> or more."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:82
+#: ../extras/premium/tpl/upgrade-page.php:91
 #, php-format
 msgid "You choose the price, so you can pay what %s is worth to you."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:86
+#: ../extras/premium/tpl/upgrade-page.php:95
 msgid "Building your site on a budget"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:87
+#: ../extras/premium/tpl/upgrade-page.php:96
 msgid "A fair price for a powerful theme"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:88
+#: ../extras/premium/tpl/upgrade-page.php:97
 msgid "Our sincere thanks"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:89
+#: ../extras/premium/tpl/upgrade-page.php:98
 msgid "We'll go that extra mile for you"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:90
+#: ../extras/premium/tpl/upgrade-page.php:99
 msgid "A huge contribution to its development"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:91
+#: ../extras/premium/tpl/upgrade-page.php:100
 msgid "Custom"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:94
+#: ../extras/premium/tpl/upgrade-page.php:103
 msgid "Please enable Javascript to change pricing"
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:98
+#: ../extras/premium/tpl/upgrade-page.php:107
 #, php-format
 msgid ""
 "Happy customers are our first priority. In the event, however, that you "
-"decide %s isn't quite right for you, we want to make things right. Within 30 "
+"decide %s isn't quite right for you, we want to make things right. Within 60 "
 "days of purchase, we'll refund the full price you paid upon request."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:105
+#: ../extras/premium/tpl/upgrade-page.php:118
+msgid "Download"
+msgstr ""
+
+#: ../extras/premium/tpl/upgrade-page.php:123
+#, php-format
+msgid "Sign up to our newsletter and download %s for free."
+msgstr ""
+
+#: ../extras/premium/tpl/upgrade-page.php:132
 #, php-format
 msgid "Your contribution will help fund new features in %s."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:106
+#: ../extras/premium/tpl/upgrade-page.php:133
 #, php-format
 msgid "Find out more on our <a href=\"%s\" target=\"_blank\">roadmap</a>."
 msgstr ""
 
-#: ../extras/premium/tpl/upgrade-page.php:111
+#: ../extras/premium/tpl/upgrade-page.php:138
 msgid "Our User Feedback"
 msgstr ""
 
-#: ../extras/settings/page.php:4 ../extras/settings/settings.php:66
+#: ../extras/settings/message.php:2
+#, php-format
+msgid ""
+"Hi! I'm Andrew from Puro. I hope you enjoy using our inaugural theme. Sign "
+"up to <a href='%s' target='_blank'>our newsletter</a> if you'd like more "
+"free themes and exclusive offers."
+msgstr ""
+
+#: ../extras/settings/page.php:6 ../extras/settings/settings.php:72
 #, php-format
 msgid "%s Theme Settings"
 msgstr ""
 
-#: ../extras/settings/page.php:13
+#: ../extras/settings/page.php:16 ../extras/settings/page.php:98
 msgid "Save Settings"
 msgstr ""
 
-#: ../extras/settings/settings.php:67
+#: ../extras/settings/page.php:17 ../extras/settings/page.php:74
+msgid "Preview"
+msgstr ""
+
+#: ../extras/settings/page.php:19
+msgid "Theme Support Forum"
+msgstr ""
+
+#: ../extras/settings/page.php:34
+#, php-format
+msgid "%s Theme Settings Preview"
+msgstr ""
+
+#: ../extras/settings/page.php:76
+msgid "Continue"
+msgstr ""
+
+#: ../extras/settings/page.php:91
+#, php-format
+msgid "Step %s of %s"
+msgstr ""
+
+#: ../extras/settings/page.php:99
+msgid "Close"
+msgstr ""
+
+#: ../extras/settings/settings.php:73
 msgid "Theme Settings"
 msgstr ""
 
-#: ../extras/settings/settings.php:81
+#: ../extras/settings/settings.php:103 ../extras/settings/settings.php:148
+msgid "Theme Tour"
+msgstr ""
+
+#: ../extras/settings/settings.php:117
 msgid "Please update to the latest version of WordPress to use theme settings."
 msgstr ""
 
-#: ../extras/settings/settings.php:265
+#: ../extras/settings/settings.php:298
 msgid "Enabled"
 msgstr ""
 
-#: ../extras/settings/settings.php:320
+#: ../extras/settings/settings.php:355
 #, php-format
 msgid ""
 "You need to <a href=\"%s\">upgrade</a> to WordPress 3.5 to use media fields"
 msgstr ""
 
-#: ../extras/settings/settings.php:338
+#: ../extras/settings/settings.php:373
 msgid "Choose Media"
 msgstr ""
 
-#: ../extras/settings/settings.php:339
+#: ../extras/settings/settings.php:374
 msgid "Set Media"
 msgstr ""
 
-#: ../extras/settings/settings.php:353
+#: ../extras/settings/settings.php:388
 msgid "Remove"
 msgstr ""
 
-#: ../extras/settings/settings.php:366
-#, php-format
-msgid ""
-"Only available in <strong>%s Premium</strong> - <strong class=\"upgrade"
-"\">Upgrade Now</strong>"
-msgstr ""
-
-#: ../extras/settings/settings.php:383
+#: ../extras/settings/settings.php:418
 msgid "Select Images"
 msgstr ""
 
-#: ../extras/settings/settings.php:404
+#: ../extras/settings/settings.php:430 ../inc/metaslider.php:6
+msgid "None"
+msgstr ""
+
+#: ../extras/settings/settings.php:457
+#, php-format
+msgid "This field requires the %s plugin. "
+msgstr ""
+
+#: ../extras/settings/settings.php:460
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Install %s</a> now. "
+msgstr ""
+
+#: ../extras/settings/settings.php:486
 msgid "Unknown Field Type"
 msgstr ""
 
-#: ../extras/settings/settings.php:476
+#: ../extras/settings/settings.php:590
 msgid "Settings saved."
 msgstr ""
 
-#: ../extras/settings/settings.php:493
+#: ../extras/settings/settings.php:609
 #, php-format
 msgid ""
-"Read %s's <a href='%s'>theme documentation</a> for help with these settings."
+"Read %s's <a href='%s' target='_blank'>theme documentation</a> for help with "
+"these settings."
 msgstr ""
 
-#: ../extras/settings/settings.php:500
-msgid "Options Help"
+#: ../extras/settings/settings.php:616
+msgid "Settings Help"
 msgstr ""
 
-#: ../extras/settings/settings.php:550
+#: ../extras/settings/settings.php:666
 msgid "Set Media File"
+msgstr ""
+
+#: ../extras/settings/settings.php:717
+msgid "Meta Slider: "
+msgstr ""
+
+#: ../extras/settings/settings.php:727
+msgid "Revolution Slider: "
+msgstr ""
+
+#: ../extras/settings/settings.php:737
+msgid "LayerSlider: "
 msgstr ""
 
 #: ../extras/update/update.php:59
@@ -690,26 +634,28 @@ msgid "Order Code"
 msgstr ""
 
 #: ../extras/update/update.php:86
-msgid "Find your order number in your original order email from SiteOrigin"
+msgid "Find your order number in your original order email from Puro."
 msgstr ""
 
 #: ../footer.php:32
-msgid "Puro WordPress Theme"
-msgstr ""
-
-#: ../functions.php:71
-msgid "Primary Menu"
+#, php-format
+msgid ""
+"<a href=\"%s\" title=\"A Free WordPress Theme by Puro\">Theme by Puro</a>"
 msgstr ""
 
 #: ../functions.php:72
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:73
 msgid "Social Network Icon Menu"
 msgstr ""
 
-#: ../functions.php:119 ../premium/inc/customizer.php:32
+#: ../functions.php:120 ../premium/inc/customizer.php:32
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:128 ../inc/settings.php:24
+#: ../functions.php:129 ../inc/settings.php:24
 #: ../premium/inc/customizer.php:37
 msgid "Footer"
 msgstr ""
@@ -777,8 +723,8 @@ msgstr ""
 
 #: ../inc/settings.php:39
 msgid ""
-"A double sized version of your logo for Apple Retina displays. Must be used "
-"in addition to standard logo."
+"A double sized version of your logo for use on high pixel density displays. "
+"Must be used in addition to standard logo."
 msgstr ""
 
 #: ../inc/settings.php:43
@@ -955,7 +901,8 @@ msgid "Footer Attribution Link"
 msgstr ""
 
 #: ../inc/settings.php:161
-msgid "Remove the theme attribution link from your footer."
+msgid ""
+"Remove the theme attribution link from your footer without editing any code."
 msgstr ""
 
 #: ../inc/settings.php:204
@@ -1024,7 +971,7 @@ msgid "Fonts"
 msgstr ""
 
 #: ../premium/inc/customizer.php:49
-msgid "Site Max Width"
+msgid "Site Max Width (px)"
 msgstr ""
 
 #: ../premium/inc/customizer.php:60
@@ -1186,6 +1133,95 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
+#: ../tour/tour.php:7
+msgid "Welcome to Puro"
+msgstr ""
+
+#: ../tour/tour.php:8
+msgid ""
+"Clean, crisp and lightweight. Puro is a theme for bloggers, creatives and "
+"small businesses. This quick tour will guide you through some of the basic "
+"setup and features."
+msgstr ""
+
+#: ../tour/tour.php:13
+msgid "Upload Your Logo"
+msgstr ""
+
+#: ../tour/tour.php:14
+msgid ""
+"Uploading a custom logo is a great place to start your customization. Click "
+"\"Choose Image\" below to set your logo image. The image will replace the "
+"text site title. If you don't have a logo, not to worry, the regular site "
+"title looks great on its own."
+msgstr ""
+
+#: ../tour/tour.php:20
+msgid "Upload Your Retina Logo"
+msgstr ""
+
+#: ../tour/tour.php:21
+msgid ""
+"Upload a double sized version of your logo. Puro will automatically display "
+"this logo to users on high pixel density displays. Apple devices with Retina "
+"displays are an example of this."
+msgstr ""
+
+#: ../tour/tour.php:27
+msgid "Add a Home Page Slider"
+msgstr ""
+
+#: ../tour/tour.php:28
+msgid ""
+"A home page slider can be used to show off your latest photos, feature pages "
+"or display a brand message. Add a home page Slider by installing the plugin, "
+"Meta Slider. Once you've created a slideshow in Meta Slider, it will appear "
+"in this drop down list."
+msgstr ""
+
+#: ../tour/tour.php:34
+msgid "Enable Post Sharing"
+msgstr ""
+
+#: ../tour/tour.php:35
+msgid ""
+"Toggle this setting to quickly add Facebook, Twitter and Google Plus sharing "
+"buttons below your single post content. "
+msgstr ""
+
+#: ../tour/tour.php:41
+msgid "Enter Your Footer Copyright Text"
+msgstr ""
+
+#: ../tour/tour.php:42
+msgid "Use this field to set the text found at the bottom left of your footer."
+msgstr ""
+
+#: ../tour/tour.php:48
+msgid "Additional Settings"
+msgstr ""
+
+#: ../tour/tour.php:49
+msgid ""
+"Puro has many additional settings not covered in this brief tour. Head to "
+"Appearance > Theme Settings to check them out."
+msgstr ""
+
+#: ../tour/tour.php:56
+msgid "Take a Look at Puro Premium"
+msgstr ""
+
+#: ../tour/tour.php:57
+msgid ""
+"Puro Premium offers a series of bonus features at a price of your choosing. "
+"A once off upgrade that never expires and includes priority support. Check "
+"out our premium upgrade page for more information."
+msgstr ""
+
+#: ../tour/tour.php:60
+msgid "More About Puro Premium"
+msgstr ""
+
 #: ../upgrade/upgrade.php:4
 msgid "Upgrade To Puro Premium"
 msgstr ""
@@ -1277,7 +1313,18 @@ msgid ""
 "Puro, ensuring it's compatible with future versions of WordPress."
 msgstr ""
 
-#: ../upgrade/upgrade.php:73
+#: ../upgrade/upgrade.php:70
+msgid ""
+"<p>Great theme. Neat, simple, and modern. It suits my needs and preferences, "
+"and the small modification that I want was easily solved by Support. Highly "
+"recommended.</p> <p>My favorite feature was the option to move the logo to "
+"the center without adjusting the layout using CSS. I've been looking for "
+"minimalist portfolio-friendly themes with such feature and this is the only "
+"one that I've found so far.</p> <p>Thank you so much for sharing such a "
+"wonderful theme.</p>"
+msgstr ""
+
+#: ../upgrade/upgrade.php:83
 #, php-format
 msgid ""
 "Additional styles are available in <a href=\"%s\" target=\"_blank\">Puro "

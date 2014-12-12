@@ -7,15 +7,23 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
-	<?php if ( has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
+	<?php if ( !is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail(); ?>
 			</a>	
-		</div>			
+		</div>	
+	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>				
 	<?php endif; ?>
-	<header class="entry-header">	
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	<header class="entry-header">
+		<?php if( is_single() ) : ?>	
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php else : ?>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<?php endif; ?>	
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php puro_posted_on(); ?>
@@ -42,6 +50,7 @@
 	<?php endif; ?>
 	
 	<footer class="entry-footer">
+		<?php if( is_single() ) { do_action('puro_entry_main_bottom'); }  ?>
 		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -1,7 +1,7 @@
 Puro WordPress Theme
 ====================
 
-A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and MetaSlider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .pot file ready for translators and a .rtl CSS file for left to right languages. 
+A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our theme documentation (http://purothemes.com/documentation/puro-theme/) or ask a question on our support forum (http://purothemes.com/support/forum/puro/).
 
 
 License
@@ -48,10 +48,24 @@ This theme makes use of the SiteOrigin Extras Framework contained in the folder 
 Change Log
 ---------------------
 
+#### 1.0.5
+* Updated SiteOrigin Extras Framework to latest version.
+* Added Theme Tour to assist with setup.
+* Added video post type formatting.
+* Added styling for Jetpack Subscriptions.
+* Corrected ocassional bolding of sidebar search form placeholder text.
+* Fixed issue with footer social icon menu not loading icons.
+* Corrected ocassional pagination alignment issue.
+* Updated stylsheet information to reflect new theme home page.
+* Added title to footer attribution link.
+* Resolved paragraph word-break bug. 
+* Updated /languanges/puro.pot.
+
 #### 1.0.4
 * Updated README.md with screenshot image license information. 
 
 #### 1.0.3
+* Added the SiteOrigin Extras Framework.
 * Added theme options.
 
 #### 1.0.2

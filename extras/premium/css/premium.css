@@ -246,6 +246,13 @@
 
 #theme-upgrade .testimonials .testimonial .text .name {
 	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#theme-upgrade .testimonials .testimonial .text .title {
+	display: block;
 	font-weight: bold;
 	margin-bottom: 5px;
 }

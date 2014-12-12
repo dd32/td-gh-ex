@@ -29,6 +29,9 @@ article {
 		display: block;
 	}
 }
+.post-video {
+	@include trailer;	
+}
 .entry-header {
 	text-align: left;
 	margin: 0;
