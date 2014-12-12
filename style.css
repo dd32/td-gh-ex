@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -855,7 +855,7 @@ img.wp-smiley,
 .ubarinnerwrap {
 	margin: 0px auto;
 	max-width: 1600px;
-	padding: 0% 2.5%;
+	padding: 0% 32px;
 }
 .utilitybar {
 	display: block;
@@ -905,7 +905,7 @@ img.wp-smiley,
 
 .topphone {
 	display: block;
-	float: right;
+	float: left;
 	margin-right: 16px;
 	color: #8b8b8b;
 	font-size: 12px;
@@ -964,7 +964,7 @@ img.wp-smiley,
 	max-width: 420px;
 	margin: 0 auto;
 	min-height: 80px;
-	padding: 0 0px 0px 20px;
+	padding: 0 0px 0px 32px;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -3198,6 +3198,7 @@ footer.entry-meta {
 .site-main .widget-area {
 	display: block;
 	width: 100%;
+	position: relative;
 }
 
 
@@ -3409,7 +3410,7 @@ footer.entry-meta {
 .site-footer div.widget-area {
 	margin: 0 auto;
 	max-width: 1600px;
-		
+	/*	
 	-moz-column-count: 4;
 	-moz-column-gap: 0px;
 	-webkit-column-count: 4;
@@ -3418,14 +3419,14 @@ footer.entry-meta {
 	column-gap: 0px;
 	width: 100%;
 	position: relative;
-	   
+	*/
 }
 .site-footer div.widget-area .widget {
 	display: inline-block;
 	float: none;
 	margin-bottom: 1px;
-	width: 100%;
-	padding: 0 10%;
+	width: 25%;
+	padding: 0 2.5%;
 	position: relative;
 }
 
@@ -3767,6 +3768,7 @@ div.ibanner .da-img img {
 	}
 	
 	.site-footer div.widget-area {
+		/*
 		-moz-column-count: 2;
 		-moz-column-gap: 0px;
 		-webkit-column-count: 2;
@@ -3774,6 +3776,8 @@ div.ibanner .da-img img {
 		column-count: 2;
 		column-gap: 0px;
 		width: 100%;   
+		*/
+		width: 100%;
 		   
 	}
 	.site-footer div.widget-area .widget {
@@ -3781,8 +3785,8 @@ div.ibanner .da-img img {
 		display: inline-block;
 		float: none;
 		margin-bottom: 1px;
-		width: 100%;
-		padding: 0 5%;
+		width: 50%;
+		padding: 0 2.5%;
 	}		
 
 }
@@ -3854,12 +3858,14 @@ div.ibanner .da-img img {
 	}
 
 	.site-footer div.widget-area {
+		/*
 		-moz-column-count: 1;
 		-moz-column-gap: 0px;
 		-webkit-column-count: 1;
 		-webkit-column-gap: 0px;
 		column-count: 1;
 		column-gap: 0px;
+		*/
 		width: 100%;
 		   
 	}

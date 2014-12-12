@@ -29,7 +29,6 @@ function itransform_social_icons () {
 		}
 }
 
-
 /*-----------------------------------------------------------------------------------*/
 /* ibanner Slider																		*/
 /*-----------------------------------------------------------------------------------*/
@@ -38,11 +37,14 @@ function itransform_ibanner_slider () {
 	$template_dir = get_template_directory_uri();
     for($slideno=1;$slideno<=4;$slideno++){
 			$strret = '';
-			$slide_title = of_get_option ('itrans_slide'.$slideno.'_title');
-			$slide_desc = of_get_option ('itrans_slide'.$slideno.'_desc');
-			$slide_linktext = of_get_option ('itrans_slide'.$slideno.'_linktext');
-			$slide_linkurl = of_get_option ('itrans_slide'.$slideno.'_linkurl');
+			$slide_title = esc_attr(of_get_option ('itrans_slide'.$slideno.'_title'));
+			$slide_desc = esc_attr(of_get_option ('itrans_slide'.$slideno.'_desc'));
+			$slide_linktext = esc_attr(of_get_option ('itrans_slide'.$slideno.'_linktext'));
+			$slide_linkurl = esc_url(of_get_option ('itrans_slide'.$slideno.'_linkurl'));
 			$slide_image = of_get_option ('itrans_slide'.$slideno.'_image');
+			
+			$slider_image_id = ispirit_get_attachment_id_from_url( $slide_image );			
+			$slider_resized_image = wp_get_attachment_image( $slider_image_id, "slider-thumb" );			
 			
 			if (!$slide_linktext)
 			{
@@ -60,7 +62,8 @@ function itransform_ibanner_slider () {
 					$upload_base_dir = $upload_dir['basedir'];
 					$upload_base_url = $upload_dir['baseurl'];
 					if( file_exists( str_replace($upload_base_url,$upload_base_dir,$slide_image) ) ){
-						$strret .= '<div class="da-img"><img src="'.$slide_image.'" alt="'.$slide_title.'" /></div>';
+						//$strret .= '<div class="da-img"><img src="'.$slide_image.'" alt="'.$slide_title.'" /></div>';
+						$strret .= '<div class="da-img">' . $slider_resized_image .'</div>';
 					}
 					else
 					{
@@ -123,3 +126,37 @@ function itransform_ibanner_slider () {
 	}
     
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* find attachment id from url																	*/
+/*-----------------------------------------------------------------------------------*/
+function ispirit_get_attachment_id_from_url( $attachment_url = '' ) {
+
+    global $wpdb;
+    $attachment_id = false;
+
+    // If there is no url, return.
+    if ( '' == $attachment_url )
+        return;
+
+    // Get the upload directory paths
+    $upload_dir_paths = wp_upload_dir();
+
+    // Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+    if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+
+        // If this is the URL of an auto-generated thumbnail, get the URL of the original image
+        $attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+
+        // Remove the upload path base directory from the attachment URL
+        $attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+
+        // Finally, run a custom database query to get the attachment ID from the modified attachment URL
+        $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+
+    }
+
+    return $attachment_id;
+}
+
+

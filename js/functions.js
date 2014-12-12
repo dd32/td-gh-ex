@@ -164,6 +164,23 @@ jQuery(document).ready(function($) {
 	});
 	*/
 	
+	
+	
+	/* footer area masonry 	*/
+	var $container = $('.site-footer .widget-area');
+	$container.isotope({
+	  itemSelector: '.widget',
+	  layoutMode: 'masonry'
+	});
+	
+	//Blog layout masonry
+	var $container2 = $('.blog.twocol-blog .blog-columns');
+	$container2.isotope({
+	  itemSelector: '.post',
+	  layoutMode: 'masonry'
+	});	
+		
+	
 });
 
 /* scripts to run as loads */
@@ -376,6 +393,7 @@ jQuery(document).ready(function($) {
 	}
 
 	setTimeout(moveRight(),1000);	
+	
 		
 })(jQuery);
 /**/

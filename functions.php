@@ -31,10 +31,6 @@
 if ( ! isset( $content_width ) )
 	$content_width = 604;
 
-/**
- * Add support for a custom header image.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * i-transform only works in WordPress 3.6 or later.
@@ -106,6 +102,7 @@ function itransform_setup() {
 	 */
 	add_image_size( 'category-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
 	add_image_size( 'homepage-thumb', 220, 220, true ); //(cropped)	
+	add_image_size( 'slider-thumb', 564, 280, true ); //(cropped)		
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -172,16 +169,15 @@ function itransform_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-	// Adds Masonry to handle vertical alignment of footer widgets.
-	if ( is_active_sidebar( 'sidebar-1' ) )
-		wp_enqueue_script( 'jquery-masonry' );
 
-	
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'modernizer-custom', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '2014-01-13', true );
 	
 	// Loads JavaScript file for scroll related functions and animations.
 	wp_enqueue_script( 'itransform-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), '2014-01-13', true );
+	
+	// Loads jquery isotope
+	wp_enqueue_script( 'itransform-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array( 'jquery' ), '2.1.0', true );
 	
 	// Loads JavaScript file for small screen side menu.
 	wp_enqueue_script( 'itransform-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2014-01-13', true );	
@@ -409,6 +405,27 @@ function itransform_post_nav() {
 	<?php
 }
 endif;
+
+
+// Add specific CSS class by filter
+
+add_filter( 'body_class', 'twocol_blog_body_class' );
+function twocol_blog_body_class( $classes ) {
+
+	$blog_layout = 'onecol';
+	$blog_layout = of_get_option ('itrans_blog_layout');
+	if ( $blog_layout == 'twocol' ) {
+		// add 'class-name' to the $classes array
+		$classes[] = 'twocol-blog';
+		// return the $classes array
+	} else
+	{
+		$classes[] = 'onecol-blog';
+	}
+	return $classes;
+	
+}
+
 
 
 
