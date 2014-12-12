@@ -89,7 +89,11 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:32
+msgid "primary menu"
+msgstr ""
+
+#: functions.php:123
 #, php-format
 msgid "Page %s"
 msgstr ""

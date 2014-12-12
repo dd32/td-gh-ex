@@ -1,6 +1,6 @@
 <?php
 /*
- * tisho functions and definitions
+ * fKidd functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -8,13 +8,9 @@
  *
  */
 
-require_once( 'inc/utilities.php' );
-
-require_once( 'inc/actions.php' );
-
-require_once( 'inc/theme-options.php' );
-
-require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require get_template_directory() . '/inc/utilities.php';
+require get_template_directory() . '/inc/actions.php';
+require get_template_directory() . '/inc/theme-options.php';
 
 if ( ! function_exists( 'fkidd_setup' ) ) :
 /**
@@ -31,7 +27,10 @@ function fkidd_setup() {
 
 	load_theme_textdomain( 'fkidd', get_template_directory() . '/languages' );
 
-	add_theme_support( 'menus' );
+	// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary'   => __( 'primary menu', 'fkidd' ),
+	) );
 
 	// Add wp_enqueue_scripts actions
 	add_action( 'wp_enqueue_scripts', 'fkidd_load_scripts' );

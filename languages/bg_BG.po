@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 23:31+0200\n"
-"PO-Revision-Date: 2014-12-11 23:31+0200\n"
+"POT-Creation-Date: 2014-12-12 22:58+0200\n"
+"PO-Revision-Date: 2014-12-12 22:58+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -111,7 +111,11 @@ msgstr "Няма намерени резултати!"
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Изглежда, че не може да намерим това, което търсите. Може би ново търсене може да помогне."
 
-#: D:\tishonator.com\themes\free_themes\fkidd/functions.php:124
+#: D:\tishonator.com\themes\free_themes\fkidd/functions.php:32
+msgid "primary menu"
+msgstr "основно меню"
+
+#: D:\tishonator.com\themes\free_themes\fkidd/functions.php:123
 #, php-format
 msgid "Page %s"
 msgstr "Страница %s"

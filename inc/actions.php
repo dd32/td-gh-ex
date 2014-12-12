@@ -6,7 +6,7 @@
 function fkidd_load_scripts() {
 
 	// load main stylesheet.
-	wp_enqueue_style( 'tisho-style', get_stylesheet_uri(), array( ) );
+	wp_enqueue_style( 'fkidd-style', get_stylesheet_uri(), array( ) );
 
 	wp_enqueue_script('jquery');
 	
@@ -16,15 +16,15 @@ function fkidd_load_scripts() {
 	}
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'tisho-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'fkidd-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 	
 	if ( is_front_page() ) {
 	
 		$options = get_option( 'fkidd_settings' );
 		if ( $options !== false ) {
-			wp_enqueue_script( 'tisho-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.custom.js', array( 'jquery' ) );
-			wp_enqueue_script( 'tisho-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-			wp_enqueue_script( 'tisho-camera-js', get_template_directory_uri() . '/js/camera.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fkidd-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fkidd-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+			wp_enqueue_script( 'fkidd-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 		}
 	}
 }
