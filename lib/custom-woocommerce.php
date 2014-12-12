@@ -25,6 +25,19 @@ if (class_exists('woocommerce')) {
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+// Set the number of columns to 3
+function kad_woocommerce_cross_sells_columns( $columns ) {
+  return 3;
+}
+add_filter( 'woocommerce_cross_sells_columns', 'kad_woocommerce_cross_sells_columns', 10, 1 );
+
+// Limit the number of cross sells displayed to a maximum of 3
+function kad_woocommerce_cross_sells_total( $limit ) {
+  return 3;
+}
+add_filter( 'woocommerce_cross_sells_total', 'kad_woocommerce_cross_sells_total', 10, 1 );
+
 // Redefine woocommerce_output_related_products()
 function kadence_woo_related_products_limit() {
   global $product, $woocommerce;

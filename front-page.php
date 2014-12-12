@@ -1,15 +1,16 @@
 <?php  global $virtue; 
-			if(!empty($virtue['mobile_switch'])) {$mobile_slider = $virtue['mobile_switch']; } else { $mobile_slider = '';}
+			if(isset($virtue['mobile_switch'])) {$mobile_slider = $virtue['mobile_switch']; } else { $mobile_slider = '0';}
 			if(isset($virtue['choose_slider'])) {$slider = $virtue['choose_slider'];} else {$slider = 'mock_flex';}
-			if(wp_is_mobile() && $mobile_slider == '1') {
+			if($mobile_slider == '1') {
 		 		$slider = $virtue['choose_mobile_slider'];
 				if ($slider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');
 				} else if ($slider == "video") {
 					get_template_part('templates/mobile_home/mobilevideo', 'block');
 				} 
-			} else {
-				if ($slider == "flex") {
+			}
+			
+			if ($slider == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 				}
 				else if ($slider == "thumbs") {
@@ -26,12 +27,10 @@
 				}
 				else if ($slider == "mock_flex") {
 					get_template_part('templates/home/mock', 'flex');
-				}
 			}
-
+$show_pagetitle = false;
 if(isset($virtue['homepage_layout']['enabled'])){
 		$i = 0;
-		$show_pagetitle = false;
 		foreach ($virtue['homepage_layout']['enabled'] as $key=>$value) {
 			if($key == "block_one") {
 				$show_pagetitle = true;

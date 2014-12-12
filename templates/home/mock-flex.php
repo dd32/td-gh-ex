@@ -1,4 +1,4 @@
-<div class="sliderclass">
+<div class="sliderclass kad-desktop-slider">
   <div id="imageslider" class="container">
     <div class="flexslider loading" >
         <ul class="slides">

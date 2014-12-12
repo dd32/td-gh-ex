@@ -1430,10 +1430,17 @@ $this->sections[] = array(
             'subtitle' => __('This sets the link in every single portfolio page. *note: You still have to set the page template to portfolio.', 'virtue'),
             ),
         array(
+            'id'=>'page_comments',
+            'type' => 'switch', 
+            'title' => __('Allow Comments on Pages', 'virtue'),
+            'subtitle' => __('Turn on to allow comments on pages', 'virtue'),
+            "default" => 0,
+            ),
+        array(
             'id'=>'portfolio_comments',
             'type' => 'switch', 
             'title' => __('Allow Comments on Portfolio Posts', 'virtue'),
-            'subtitle' => __('Turn on to allow Comments on Portfolio posts', 'virtue'),
+            'subtitle' => __('Turn on to allow comments on Portfolio posts', 'virtue'),
             "default" => 0,
             ),
     	array(

@@ -126,4 +126,5 @@ Template Name: Portfolio Grid
                       $wp_query = $temp;  // Reset
                     ?>
                     <?php wp_reset_query(); ?>
+                    <?php global $virtue; if(isset($virtue['page_comments']) && $virtue['page_comments'] == '1') { comments_template('/templates/comments.php');} ?>
 </div><!-- /.main -->

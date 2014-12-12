@@ -86,11 +86,12 @@
 
 
                 if ( ! ( isset( $_POST['action'] ) || ( isset( $_POST['action'] ) && $_POST['action'] != "customize_save" ) ) ) {
-
-                    add_action( "redux/options/{$this->parent->args['opt_name']}/options", array(
-                        $this,
-                        '_override_values'
-                    ), 100 );
+                    if(isset($this->parent->args['opt_name'])) {
+                        add_action( "redux/options/{$this->parent->args['opt_name']}/options", array(
+                            $this,
+                            '_override_values'
+                        ), 100 );
+                    }
 
                     if ( ! isset( $_POST['customized'] ) || $pagenow == "admin-ajax.php" ) {
                         if ( current_user_can( $this->parent->args['page_permissions'] ) ) {

@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.2 =
+* Firefox Grid Styles.
+* Fix issue with live preview.
+* Option for comments on pages
+* Woo Tab Styles.
+* Woocommerce 3 prep.
+* Remove mobile php function.
+
 = Version: 2.3.1 =
 * Customizer Fix.
 * Topbar widget area fix.

@@ -54,14 +54,14 @@ if(!empty($virtue['primary_color'])) {
 .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
 .product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
-.login .form-row .button, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .checkout-button, input[type="submit"].button, .order-actions .button  {background: '.$virtue['primary_color'].';}';
+.login .form-row .button, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .shop_table .actions input[type=submit].checkout-button, input[type="submit"].button, .order-actions .button  {background: '.$virtue['primary_color'].';}';
 } else {
   $color_primary = '';
 }
 if(!empty($virtue['primary20_color'])) {
   $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';} .kad-btn-primary:hover, .login .form-row .button:hover, #payment #place_order:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .widget_shopping_cart_content .checkout:hover,
 .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, 
-.widget_layered_nav ul li.chosen a:hover, .checkout-button:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart  {background: '.$virtue['primary20_color'].';}';
+.widget_layered_nav ul li.chosen a:hover, .shop_table .actions input[type=submit].checkout-button:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart  {background: '.$virtue['primary20_color'].';}';
 } else {
   $color_primary30 = '';
 }
@@ -332,7 +332,12 @@ if(isset($virtue['logo_layout']) and ($virtue['logo_layout'] == 'logocenter')) {
   $wp_image_border = '[class*="wp-image"] {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;}[class*="wp-image"]:hover {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;}';
   } else {
   $wp_image_border = '';
-  } 
+  }
+  if(isset($virtue['mobile_switch']) && $virtue['mobile_switch'] == '1') {
+  $mobileslider = '@media (max-width: 767px) {.kad-desktop-slider {display:none;}}';
+} else {
+  $mobileslider = '';
+}
 
 if (!empty($virtue['custom_css'])) {
   $custom_css = $virtue['custom_css'];
@@ -341,7 +346,7 @@ if (!empty($virtue['custom_css'])) {
 }
 
 $kad_custom_css = '<style type="text/css">'.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$color_primary.$color_primary30.$color_grayfont
-.$color_footerfont.$contentclass.$topbarclass.$headerclass.$menuclass.$mobileclass.$footerclass.$boxedclass.$show_author.$ptitle_uppercase.$menu_layout_center.$x2logo.$ptitle_minheight.$topbar_layout.$wp_image_border.$custom_css.'</style>';
+.$color_footerfont.$contentclass.$topbarclass.$headerclass.$menuclass.$mobileclass.$footerclass.$boxedclass.$show_author.$ptitle_uppercase.$menu_layout_center.$x2logo.$ptitle_minheight.$topbar_layout.$wp_image_border.$mobileslider.$custom_css.'</style>';
   echo $kad_custom_css;
 }
 function kad_custom_css_output() {

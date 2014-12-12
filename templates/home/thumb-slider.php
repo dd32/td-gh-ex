@@ -1,4 +1,4 @@
-<div class="sliderclass">
+<div class="sliderclass kad-desktop-slider">
     <div id="imageslider" class="container">
       <?php global $virtue; 
                       if(isset($virtue['slider_size'])) {$slideheight = $virtue['slider_size'];} else { $slideheight = 400; }
