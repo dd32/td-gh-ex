@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 22:58+0200\n"
-"PO-Revision-Date: 2014-12-12 22:58+0200\n"
+"POT-Creation-Date: 2014-12-13 19:47+0200\n"
+"PO-Revision-Date: 2014-12-13 19:47+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1270,11 +1270,11 @@ msgstr "Следете нашите RSS емисии"
 msgid "Follow us on YouTube"
 msgstr "Следете ни в Ютуб"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:225
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:241
 msgid "Read More"
 msgstr "Прочетете повече"
 
-#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:238
+#: D:\tishonator.com\themes\free_themes\fkidd/inc/utilities.php:254
 msgid "Read More..."
 msgstr "Научи повече..."
 

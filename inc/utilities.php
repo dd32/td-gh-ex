@@ -72,7 +72,21 @@ function fkidd_show_website_logo_image_or_title() {
 
 	$options = get_option( 'fkidd_settings' );
 
-	if ( $options !== false && array_key_exists( 'header_logo', $options )
+	if (get_header_image() != '') {
+	
+		// Check if the user selected a header Image in the Customizer or the Header Menu
+		$logoImgPath = get_header_image();
+		$siteTitle = get_bloginfo( 'name' );
+		$imageWidth = get_custom_header()->width;
+		$imageHeight = get_custom_header()->height;
+		
+		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
+		
+		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' width='$imageWidth' height='$imageHeight' alt='' />";
+		
+		echo '</a>';
+
+	} else if ( $options !== false && array_key_exists( 'header_logo', $options )
 		 && $options[ 'header_logo' ] != '' ) {
 		 
 		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
@@ -83,6 +97,8 @@ function fkidd_show_website_logo_image_or_title() {
 		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' />";
 	
 		echo '</a>';
+		
+		
 
 	} else {
 	

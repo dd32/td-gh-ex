@@ -1211,10 +1211,10 @@ msgstr ""
 msgid "Follow us on YouTube"
 msgstr ""
 
-#: inc/utilities.php:225
+#: inc/utilities.php:241
 msgid "Read More"
 msgstr ""
 
-#: inc/utilities.php:238
+#: inc/utilities.php:254
 msgid "Read More..."
 msgstr ""
