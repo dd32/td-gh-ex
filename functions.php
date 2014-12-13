@@ -92,9 +92,9 @@ function annina_scripts() {
 	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'annina-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'jquery-masonry' );
 	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'annina-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'annina-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'annina-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.0', true );
 

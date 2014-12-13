@@ -21,8 +21,7 @@ Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
 	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
-	4. Masonry script (http://masonry.desandro.com/) licensed under MIT
-	5. imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
+	4. imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
 
 Images used in Theme Screenshot
 	1. Pixabay (http://pixabay.com/) Free photos for commercial and personal works
@@ -43,6 +42,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.1.1
+* Fixed Masonry Script
+* Minor Bug Fixes
+
 Version 1.1
 * Google Fonts fixes
 * Minor bug fixes
