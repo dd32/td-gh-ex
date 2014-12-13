@@ -19,8 +19,7 @@
   	
   	require( WEBRITI_THEME_FUNCTIONS_PATH .'/resize_image/resize_image.php' );	
   	require_once( WEBRITI_THEME_FUNCTIONS_PATH .'/commentbox/comment-function.php');
-  //content width
-  if ( ! isset( $content_width ) ) $content_width = 720;
+ 
   
   
   //wp title tag starts here
@@ -98,6 +97,9 @@
   	{	// Load text domain for translation-ready
   		load_theme_textdomain( 'busi_prof', get_template_directory() . '/functions/lang' );	
   		
+		 //content width
+		if ( ! isset( $content_width ) ) $content_width = 720;
+		
   		add_theme_support( 'post-thumbnails' ); //supports featured image
   		add_theme_support( 'automatic-feed-links' ); //feed links enabled
   		do_action('busiprof_init');//load admin pannal file	

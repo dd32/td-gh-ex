@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.4.3.1
+1. all the bug fixed https://themes.trac.wordpress.org/ticket/22045
 @version 1.4.3
 1. Translated all untranslated strings of the option panel.
 2. content layout fixed in case of no sidebar.

@@ -32,8 +32,8 @@
     <div class="row">
       <div class="span8">
         <?php _e(' Powered by ', 'busi_prof'); ?>
-        <a href="<?php echo esc_url( 'http://wordpress.org/', 'busi_prof' ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
-        <?php esc_html($current_options['busiprof_copy_rights_text']); ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php esc_url($current_options['footer_url']); ?>"><?php esc_html($current_options['footer_designedby']); ?></a><?php } ?>
+        <a href="http://wordpress.org"><?php _e('WordPress', 'busi_prof'); ?></a>
+        <?php esc_html_e($current_options['busiprof_copy_rights_text'],'busi_prof'); ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php echo esc_url($current_options['footer_url']); ?>"><?php esc_html_e($current_options['footer_designedby'],'busi_prof'); ?></a><?php } ?>
       </div>
     </div>
   </div>
