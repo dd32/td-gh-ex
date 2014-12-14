@@ -75,7 +75,7 @@ function generate_settings_page()
 									<strong style="display:inline-block;width:60px;"><?php _e('Website','generate');?>:</strong> <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank">GeneratePress</a>
 								</p>
 								<p>
-									<span class="addon-title"><?php _e('Addons','generate');?></span>
+									<span class="addon-title"><?php _e('Add-ons','generate');?></span>
 									<?php 
 									
 									$addons = array(
@@ -219,7 +219,7 @@ function generate_settings_page()
 								<p>
 									<a id="generate_customize_button" class="button button-primary" href="<?php echo admin_url('customize.php'); ?>"><?php _e('Customizer','generate');?></a>  
 									<?php if ( generate_addons_available() ) : ?>
-										<a id="generate_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com/addons');?>" target="_blank"><?php _e('Addons','generate');?></a> 
+										<a id="generate_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com/addons');?>" target="_blank"><?php _e('Add-ons','generate');?></a> 
 									<?php endif; ?>
 									<a title="<?php _e('Please help support development of the GeneratePress by buying me a coffee :)','generate');?>" class="button button-primary" target="_blank" href="<?php echo esc_url('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UVPTY2ZJA68S6');?>"><?php _e('Buy me a coffee :)','generate');?></a>
 								</p>
@@ -234,7 +234,7 @@ function generate_settings_page()
 							
 								<?php
 								if ( generate_no_addons() == true ) :
-									echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
+									echo __('Looks like you don\'t have any Add-ons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
 								endif;
 								
 								do_action('generate_license_key_items'); 

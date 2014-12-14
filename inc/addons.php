@@ -77,6 +77,7 @@ function generate_no_addons()
  * This way, translators only have to translate these strings once
  * @since 1.1.8
  */
+
 if ( ! defined( 'GP_VERIFIED' ) )
 	define( 'GP_VERIFIED', __( 'verified','generate' ) );
 	
@@ -93,10 +94,10 @@ if ( ! defined( 'GP_DEACTIVATE' ) )
 	define( 'GP_DEACTIVATE', __( 'Deactivate','generate' ) );
 	
 if ( ! defined( 'GP_ACTIVATION_MESSAGE' ) )
-	define( 'GP_ACTIVATION_MESSAGE', __('Please activate the email you purchased your addons with below in order to receive future updates.','generate') );
+	define( 'GP_ACTIVATION_MESSAGE', __('Please activate the email you purchased your add-ons with below in order to receive future updates.','generate') );
 	
 if ( ! defined( 'GP_ADDON' ) )
-	define( 'GP_ADDON', __( 'Addon','generate' ) );
+	define( 'GP_ADDON', __( 'Add-on','generate' ) );
 	
 if ( ! defined( 'GP_EMAIL' ) )
 	define( 'GP_EMAIL', __( 'Email','generate' ) );

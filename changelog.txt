@@ -10,6 +10,17 @@ Changelog Legend:
 
 ----
 
+(12/14/2014) - 1.2.4
+[+] Add filter to mobile menu label: generate_mobile_menu_label
+[+] More fonts added to typography
+[*] Typography performance increased
+[!] Fix error on some servers when getting list of Google Fonts
+[+] Add filter for typography subsets
+[+] Class added to mobile menu label
+[!] Fixed bug with navigation search on mobile when centered
+
+----
+
 (11/16/2014) - 1.2.3
 [*] Hide default widgets if Secondary Navigation is set to that sidebar
 [*] Unsemantic CSS structure cleaned up considerably

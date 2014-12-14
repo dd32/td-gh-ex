@@ -209,14 +209,21 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 		
 		if ( is_admin() )
 			return;
-			
+		
 		$not_google = array(
 			'inherit',
 			'Arial,+Helvetica,+sans-serif',
-			'Verdana,+Geneva,+sans-serif',
+			'Century+Gothic',
+			'Courier+New',
+			'Georgia,+Times+New+Roman,+Times,+serif',
+			'Helvetica',
+			'Impact',
+			'Lucida+Console',
+			'Lucida+Sans Unicode',
+			'Palatino+Linotype',
 			'Tahoma,+Geneva,+sans-serif',
-			'Georgia,+Times New Roman,+Times,+serif',
-			'Trebuchet+MS,+Helvetica,+sans-serif'
+			'Trebuchet+MS,+Helvetica,+sans-serif',
+			'Verdana,+Geneva,+sans-serif'
 		);
 
 		$generate_settings = wp_parse_args( 
@@ -243,7 +250,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 		
 		$font_args = array(
             'family' => $google_fonts,
-            'subset' => urlencode( 'latin,latin-ext' ),
+            'subset' => urlencode( apply_filters( 'generate_fonts_subset','latin,latin-ext' ) ),
         );
  
         $fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );

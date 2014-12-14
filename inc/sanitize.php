@@ -61,15 +61,22 @@ function generate_sanitize_nav_layout( $input ) {
 function generate_sanitize_typography( $input ) 
 {
 
-	$google_fonts = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : '' );
+	$google_fonts = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : array() );
 	
 	$not_google = array(
 		'inherit',
 		'Arial, Helvetica, sans-serif',
-		'Verdana, Geneva, sans-serif',
-		'Tahoma, Geneva, sans-serif',
+		'Century Gothic',
+		'Courier New',
 		'Georgia, Times New Roman, Times, serif',
-		'Trebuchet MS, Helvetica, sans-serif'
+		'Helvetica',
+		'Impact',
+		'Lucida Console',
+		'Lucida Sans Unicode',
+		'Palatino Linotype',
+		'Tahoma, Geneva, sans-serif',
+		'Trebuchet MS, Helvetica, sans-serif',
+		'Verdana, Geneva, sans-serif'
 	);
 	
 	$valid = array_merge( $google_fonts, $not_google );

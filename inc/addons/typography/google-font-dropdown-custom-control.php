@@ -23,28 +23,41 @@ class Generate_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
      */
     public function render_content()
     {
-		$fonts = ( get_transient('generate_get_fonts') ? get_transient('generate_get_fonts') : '' );
-
+		unset($fonts);
+		$fonts = ( get_transient('generate_google_fonts_list') ? get_transient('generate_google_fonts_list') : '' );
         if(!empty($fonts))
         {
             ?>
                 <label>
                     <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
                     <select <?php $this->link(); ?>>
-						<?php 
-						printf('<option value="%s" %s>%s</option>', 'inherit', selected($this->value(), 'inherit', false), 'inherit');
-						printf('<option value="%s" %s>%s</option>', 'Arial, Helvetica, sans-serif', selected($this->value(), 'Arial, Helvetica, sans-serif', false), 'Arial, Helvetica, sans-serif');
-						printf('<option value="%s" %s>%s</option>', 'Verdana, Geneva, sans-serif', selected($this->value(), 'Verdana, Geneva, sans-serif', false), 'Verdana, Geneva, sans-serif');
-						printf('<option value="%s" %s>%s</option>', 'Tahoma, Geneva, sans-serif', selected($this->value(), 'Tahoma, Geneva, sans-serif', false), 'Tahoma, Geneva, sans-serif');
-						printf('<option value="%s" %s>%s</option>', 'Georgia, Times New Roman, Times, serif', selected($this->value(), 'Georgia, Times New Roman, Times, serif', false), 'Georgia, Times New Roman, Times, serif');
-						printf('<option value="%s" %s>%s</option>', 'Trebuchet MS, Helvetica, sans-serif', selected($this->value(), 'Trebuchet MS, Helvetica, sans-serif', false), 'Trebuchet MS, Helvetica, sans-serif');
+						<optgroup label="<?php _e( 'Default fonts', 'generate' ) ?>" class="google_label">
+							<?php 
+							printf('<option value="%s" %s>%s</option>', 'inherit', selected($this->value(), 'inherit', false), 'inherit');
+							printf('<option value="%s" %s>%s</option>', 'Arial, Helvetica, sans-serif', selected($this->value(), 'Arial, Helvetica, sans-serif', false), 'Arial');
+							printf('<option value="%s" %s>%s</option>', 'Century Gothic', selected($this->value(), 'Century Gothic', false), 'Century Gothic');
+							printf('<option value="%s" %s>%s</option>', 'Courier New', selected($this->value(), 'Courier New', false), 'Courier New');
+							printf('<option value="%s" %s>%s</option>', 'Georgia, Times New Roman, Times, serif', selected($this->value(), 'Georgia, Times New Roman, Times, serif', false), 'Georgia');
+							printf('<option value="%s" %s>%s</option>', 'Helvetica', selected($this->value(), 'Helvetica', false), 'Helvetica');
+							printf('<option value="%s" %s>%s</option>', 'Impact', selected($this->value(), 'Impact', false), 'Impact');
+							printf('<option value="%s" %s>%s</option>', 'Lucida Console', selected($this->value(), 'Lucida Console', false), 'Lucida Console');
+							printf('<option value="%s" %s>%s</option>', 'Lucida Sans Unicode', selected($this->value(), 'Lucida Sans Unicode', false), 'Lucida Sans Unicode');
+							printf('<option value="%s" %s>%s</option>', 'Palatino Linotype', selected($this->value(), 'Palatino Linotype', false), 'Palatino Linotype');
+							printf('<option value="%s" %s>%s</option>', 'Tahoma, Geneva, sans-serif', selected($this->value(), 'Tahoma, Geneva, sans-serif', false), 'Tahoma');
+							printf('<option value="%s" %s>%s</option>', 'Trebuchet MS, Helvetica, sans-serif', selected($this->value(), 'Trebuchet MS, Helvetica, sans-serif', false), 'Trebuchet MS');
+							printf('<option value="%s" %s>%s</option>', 'Verdana, Geneva, sans-serif', selected($this->value(), 'Verdana, Geneva, sans-serif', false), 'Verdana');	
+							?>
+						</optgroup>
 						
-                        foreach ( $fonts as $k => $fam )
-                        {
-							$var = join(',', $fam->variants);
-							printf('<option value="%s" %s>%s</option>', $fam->family . ':' . $var, selected($this->value(), $fam->family . ':' . $var, false), $fam->family);
-                        }
-                        ?>
+						<optgroup label="<?php _e( 'Google fonts', 'generate' ) ?>" class="google_label">
+							<?php
+							foreach ( $fonts as $k => $fam )
+							{
+								$var = join(',', $fam['font_variants']);
+								printf('<option value="%s" %s>%s</option>', $fam['name'] . ':' . $var, selected($this->value(), $fam['name'] . ':' . $var, false), $fam['name']);
+							}
+							?>
+						</optgroup>
                     </select>
 					<p class="description"><?php _e('Font family','generate'); ?></p>
                 </label>
@@ -159,5 +172,17 @@ if ( !class_exists('Generate_Customize_Slider_Control') ) :
 		<?php
 		}
 		
+		// Function to enqueue the right jquery scripts and styles
+		public function enqueue() {
+			
+			wp_enqueue_script( 'jquery-ui-core' );
+			wp_enqueue_script( 'jquery-ui-slider' );
+			
+			wp_register_script( 'generate-customcontrol-slider-js', get_template_directory_uri() . '/js/customcontrol.slider.js', array('jquery'), GENERATE_VERSION );
+			wp_enqueue_script( 'generate-customcontrol-slider-js' );
+			
+			wp_enqueue_style('jquery-ui-smoothness', get_template_directory_uri() . '/inc/css/jquery-ui-smoothness.css');
+			
+		}
 	}
 endif;

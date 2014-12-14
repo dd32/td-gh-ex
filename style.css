@@ -4,7 +4,7 @@ Theme URI: http://generatepress.com
 Author: Thomas Usborne
 Author URI: http://edge22.com
 Description: GeneratePress is a fast, lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website with ease. Using the Customizer you can transform GeneratePress to meet your needs in minutes. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible (including IE8+), WooCommerce compatible, BuddyPress compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English, German, Spanish, Russian and French! See more at http://generatepress.com
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: generate
@@ -538,7 +538,7 @@ a:active {
 	vertical-align: bottom;
 	padding: 0 15px;
 	line-height: 0;
-	height: 50px;
+	height: 60px;
 	opacity: 0.9;
 	width: 100%;
 	z-index: 20;
@@ -843,12 +843,12 @@ body .grid-container {
 }
 .main-navigation .main-nav ul li a {
 	display: block;
-	line-height: 50px;
+	line-height: 60px;
 	padding: 0 20px;
 	/*color:#FFF;*/
 }
 .menu-toggle {
-	line-height: 50px;
+	line-height: 60px;
 	/*color:#FFF;*/
 	margin: 0;
 	padding: 0 20px;
@@ -866,7 +866,7 @@ body .grid-container {
 	padding-right:2.5em;
 }
 .main-navigation ul ul{
-	top: 50px;
+	top: 60px;
 }
 .main-navigation ul ul li a {
 	font-size: 90%;

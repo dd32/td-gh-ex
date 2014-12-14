@@ -14,11 +14,13 @@ get_header(); ?>
 			<?php do_action('generate_before_main_content'); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="inside-article">
+					<?php do_action( 'generate_before_content'); ?>
 					<div class="entry-content" itemprop="text">
 						<?php if ( function_exists( 'woocommerce_content' ) ) :
 							woocommerce_content(); 
 						endif; ?>
 					</div><!-- .entry-content -->
+					<?php do_action( 'generate_after_content'); ?>
 				</div><!-- .inside-article -->
 			</article><!-- #post-## -->
 			<?php do_action('generate_after_main_content'); ?>
