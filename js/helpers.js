@@ -7,10 +7,11 @@
 		var $container = $( ".create-masonry #main" );
 
 		$container.imagesLoaded( function(){
-			$container.masonry({
+			$container.masonry ({
 				itemSelector: '.hentry',
 				isFitWidth: true,
-				gutter: 70,
+				columnWidth: 240,
+				gutter: 70
 			});
 
 			$container.find( '.hentry' ).animate( {

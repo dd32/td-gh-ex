@@ -11,9 +11,11 @@
  * See: http://jetpack.me/support/infinite-scroll/
  */
 function create_jetpack_setup() {
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'footer'    => 'page',
+    add_theme_support( 'infinite-scroll', array(
+        'container'      => 'main',
+		'footer'         => 'colophon',
+		'wrapper'        => false,
+		'posts_per_page' => 9,
 	) );
 	
     /**

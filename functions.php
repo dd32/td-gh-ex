@@ -138,16 +138,16 @@ function create_scripts() {
 	// Google fonts
 	wp_enqueue_style( 'create-fonts', create_fonts_url(), array(), '1.0.0' );
 	
-    // Social icons style.	
-	wp_enqueue_style( 'create-icons', get_template_directory_uri() . '/css/typicons.css', array(), '1.0.0' );
+	//For genericons
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );
 	
-    // JS helpers. (This is also the place where we call the jQuery in array)
+    // JS helpers (This is also the place where we call the jQuery in array)
 	wp_enqueue_script( 'create-helpers', get_template_directory_uri() . '/js/helpers.js', array( 'jquery' ), '1.0.0', true );
 
-	// Mobile navigation.
+	// Mobile navigation
 	wp_enqueue_script( 'create-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
 	
-	// Skip link fix.
+	// Skip link fix
 	wp_enqueue_script( 'create-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
 	// Comments
@@ -168,7 +168,7 @@ function create_fonts_url() {
 	 * by chosen font(s), translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Google font: on or off', 'create' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Bitter:400,700,400italic|Josefin+Sans:400,400italic|Varela:400' ), "//fonts.googleapis.com/css" );
+		$font_url = add_query_arg( 'family', urlencode( 'Bitter:400,700,400italic|Josefin Sans:400,400italic|Varela:400' ), "//fonts.googleapis.com/css" );
 	}
 
 	return $font_url;

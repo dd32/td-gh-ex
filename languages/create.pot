@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/create\n"
-"POT-Creation-Date: 2014-12-05 23:05+0545\n"
-"PO-Revision-Date: 2014-12-05 23:05+0545\n"
+"POT-Creation-Date: 2014-12-14 21:08+0545\n"
+"PO-Revision-Date: 2014-12-14 21:08+0545\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -106,23 +106,6 @@ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 # @ create
-#: ../footer.php:15
-msgid "http://wordpress.org/"
-msgstr ""
-
-# @ create
-#: ../footer.php:15
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-# @ create
-#: ../footer.php:17
-#, php-format
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-# @ create
 #: ../functions.php:60
 msgid "Primary Menu"
 msgstr ""
@@ -192,6 +175,17 @@ msgstr ""
 #: ../inc/extras.php:73
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: ../inc/extras.php:178
+#, php-format
+msgctxt "1: Year, 2: Site Title with home URL"
+msgid "&copy; %1$s %2$s"
+msgstr ""
+
+#: ../inc/extras.php:208
+msgctxt "attribution"
+msgid "by"
 msgstr ""
 
 # @ create

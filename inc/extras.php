@@ -113,3 +113,121 @@ function create_excerpt_more( $more ) {
 	return '<span class="more-dots"><a href="'. get_permalink( get_the_ID() ) . '">[ . . . ]</span>' . '</a>';
 }
 add_filter( 'excerpt_more', 'create_excerpt_more' );
+
+if ( ! function_exists( 'create_content_end' ) ) :
+/**
+ * End Content wrap
+ *
+ * @since Create 0.2
+ */
+function create_content_end() { ?>
+	</div><!-- #content -->
+<?php
+}
+endif; //create_content_end
+add_action( 'create_before_footer', 'create_content_end', 10 );
+
+if ( ! function_exists( 'create_footer_start' ) ) :
+/**
+ * Start Footer wrap
+ *
+ * @since Create 0.2
+ */
+function create_footer_start() { ?>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+<?php
+}
+endif; //create_footer_start
+add_action( 'create_footer', 'create_footer_start', 10 );
+
+if ( ! function_exists( 'create_footer_end' ) ) :
+/**
+ * End Footer wrap
+ *
+ * @since Create 0.2
+ */
+function create_footer_end() { ?>
+	</footer><!-- #colophon -->
+<?php
+}
+endif; //create_footer_end
+add_action( 'create_footer', 'create_footer_end', 50 );
+
+if ( ! function_exists( 'create_page_end' ) ) :
+/**
+ * End Page wrap
+ *
+ * @since Create 0.2
+ */
+function create_page_end() { ?>
+	</div><!-- #page -->
+<?php
+}
+endif; //create_page_end
+add_action( 'create_footer', 'create_page_end', 100 );
+
+if ( ! function_exists( 'create_copyright' ) ) :
+/**
+* Powered by Text
+*
+* @since Create 0.2
+*/
+function create_copyright() { ?>
+	<span class="site-copyright">
+		<?php 
+		printf( _x( '&copy; %1$s %2$s' , '1: Year, 2: Site Title with home URL', 'create' ), date( 'Y' ), '<a href="' . esc_url( home_url( '/' ) ) . '"> ' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+		?>
+	</span>
+<?php
+}
+endif; //create_copyright
+
+
+if ( ! function_exists( 'create_seperator' ) ) :
+/**
+ * Seperator
+ *
+ * @since Create 0.2
+ */
+function create_seperator() { ?>
+	<span class="sep"><?php echo esc_attr( '&nbsp;&bull;&nbsp;' ); ?></span>
+<?php
+}
+endif; //create_seperator
+
+/**
+ * Profile
+ *
+ * @since Create 0.2
+ */
+function create_profile() { ?>
+	<span class="theme-name">
+		<?php echo esc_attr( 'Create' ); ?>
+	</span>
+	<span class="theme-by">
+		<?php _ex( 'by', 'attribution', 'create' ); ?>
+	</span>
+	<span class="theme-author">
+		<a href="<?php echo esc_url( 'http://catchthemes.com/' ); ?>" target="_blank">
+			<?php echo esc_attr( 'Catch Themes' ); ?>
+		</a>
+	</span>
+<?php	
+}
+
+/**
+ * Footer Information
+ *
+ * @since Create 0.2
+ */
+function create_footer_info() { ?>
+	<div class="site-info">
+		<?php create_copyright(); ?>
+		<?php create_seperator(); ?>
+		<?php create_profile(); ?>
+	</div><!-- .site-info -->
+	
+<?php 
+}
+// Load footer content in  create_footer hook 
+add_action( 'create_footer', 'create_footer_info', 20 );

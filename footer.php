@@ -8,16 +8,28 @@
  */
 ?>
 
-	</div><!-- #content -->
+	<?php                
+	    /** 
+	     * create_before_footer hook
+	     *
+	     * @hooked create_content_end - 10
+	     *
+	     */
+	    do_action( 'create_before_footer' );
+	?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'create' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'create' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'create' ), 'Create', '<a href="http://catchthemes.com/">Catch Themes</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<?php                
+	    /** 
+	     * create_footer hook
+	     *
+	     * @hooked create_footer_start - 10
+	     * @hooked create_footer_info - 20
+	     * @hooked create_footer_end - 50
+	     * @hooked create_page_end - 100
+	     *
+	     */
+	    do_action( 'create_footer' );
+	?>
 
 <?php wp_footer(); ?>
 

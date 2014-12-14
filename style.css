@@ -1,10 +1,10 @@
 /*
 Theme Name: Create
-Theme URI: http://catchthemes.com/themes/create
+Theme URI: http://catchthemes.com/themes/create/
 Author: Catch Themes Team
 Author URI: http://catchthemes.com/
-Description: Make first impression count with a large headline & full-page background. Create is super easy to use, works out-of-the-box and it’s great for your personal, business or even organization site. Make is a clean WordPress Theme based on HTML5, CSS3 and mobile-first approach, meaning your content is always displayed beautifully, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer. Just make your beautiful, yet professional WordPress site at no time.
-Version: 0.1
+Description: Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Version: 1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
@@ -33,8 +33,8 @@ Create is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic,
     10. Links
     11. Header area
     12. Layout
-    13. Menus
-    14. Icons (separate folder)
+    13. Genericons    
+    14. Menus
     15. Accessibility
     16. Embedded content
     17. WordPress core styles
@@ -492,10 +492,6 @@ body {
     width: 100%;
 }
 
-.custom-background img {
-    background-color: rgba(0, 0, 0, .2);
-}
-
 /* =03. Clearfix
 -------------------------------------------------------------- */
 
@@ -558,7 +554,6 @@ blockquote,
 .comments-title,
 .wp-caption-text,
 .comment-reply-title,
-.create-masonry .hentry,
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -579,7 +574,7 @@ blockquote,
 .widget,
 .site-info,
 .widget-intro,
-.comments-link,
+.entry-footer,
 .site-description {
     padding-bottom: 25px;
 }
@@ -1014,7 +1009,8 @@ a:active {
 -------------------------------------------------------------- */
 
 .site-main {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
 }
 
@@ -1029,7 +1025,28 @@ a:active {
     width: device-width;
 }
 
-/* =13. Menus
+/* =13. Genericons
+-------------------------------------------------------------- */
+
+/* Reference only, see /css/genericons/genericons.css */
+.social-menu ul a:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: "Genericons";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    speak: none;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: text-bottom;
+}
+
+/* =14. Menus
 -------------------------------------------------------------- */
 
 .main-navigation {
@@ -1125,6 +1142,7 @@ a:active {
 
 .social-menu {
     background-color: #e8e8e8;
+    padding: 15px 0 10px;
     text-align: center;
 }
 
@@ -1134,19 +1152,6 @@ a:active {
 	padding: 0;
 }
 
-.social-menu ul a:before {
-    display: block;
-	font-family: "typicons";
-	font-size: 36px;
-    font-smoothing: antialiased;
-	font-weight: 400;
-    position: relative;
-    text-align: center;
-	text-decoration: none;
-    text-rendering: optimizeLegibility;
-	vertical-align: text-bottom;
-}
-
 .social-menu ul li {
 	display: inline-block;
 	list-style: none;
@@ -1154,12 +1159,23 @@ a:active {
 }
 
 .social-menu ul a {
-	display: inline-block;
-	margin: 0 3px;
-	text-decoration: none;
+    border: 3px solid #9a9a9a;
+    border-radius:          20px;
+    -moz-border-radius:     20px;
+    -webkit-border-radius:  20px; 
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing:    content-box;
+    box-sizing:         content-box;
+    color: #9a9a9a;
+    display: inline-block;
+    line-height: 1;
+    margin: 0 0 5px 5px;
+    padding: 3px;
+    text-decoration: none;
 }
 
 .social-menu ul a:hover {
+    border-color: #7b7b7b;
     color: #7b7b7b;
 	text-decoration: none;
 }
@@ -1168,56 +1184,105 @@ a:active {
 	margin-right: 0;
 }
 
-.social-menu ul a[href*="facebook.com"]:before {
-	content: "\e0e4";
+.social-menu ul a[href$="/feed/"]:before {
+    content: "\f413";
 }
 
-.social-menu ul a[href*="twitter.com"]:before {
-	content: "\e0f8";
+.social-menu ul a[href*="codepen.io"]:before {
+    content: "\f216";
+}
+
+.social-menu ul a[href*="digg.com"]:before {
+    content: "\f221";
 }
 
 .social-menu ul a[href*="dribbble.com"]:before {
-	content: "\e0e2";
+    content: "\f201";
 }
 
-.social-menu ul a[href*="plus.google.com"]:before {
-	content: "\e0ea";
+.social-menu ul a[href*="dropbox.com"]:before {
+    content: "\f225";
 }
 
-.social-menu ul a[href*="pinterest.com"]:before {
-	content: "\e0f2";
-}
-
-.social-menu ul a[href*="github.com"]:before {
-	content: "\e0e8";
-}
-
-.social-menu ul a[href*="tumblr.com"]:before {
-	content: "\e0f6";
-}
-
-.social-menu ul a[href*="youtube.com"]:before {
-	content: "\e0fc";
+.social-menu ul a[href*="facebook.com"]:before {
+    content: "\f204";
 }
 
 .social-menu ul a[href*="flickr.com"]:before {
-	content: "\e0e6";
+    content: "\f211";
 }
 
-.social-menu ul a[href*="vimeo.com"]:before {
-	content: "\e0fa";
+.social-menu ul a[href*="foursquare.com"]:before {
+    content: "\f226";
+}
+
+.social-menu ul a[href*="plus.google.com"]:before {
+    content: "\f206";
+}
+
+.social-menu ul a[href*="github.com"]:before {
+    content: "\f200";
 }
 
 .social-menu ul a[href*="instagram.com"]:before {
-	content: "\e0ec";
+    content: "\f215";
 }
 
 .social-menu ul a[href*="linkedin.com"]:before {
-	content: "\e0f0";
+    content: "\f208";
 }
 
-.social-menu ul a[href*="/feed"]:before {
-	content: "\e0db";
+.social-menu ul a[href*="pinterest.com"]:before {
+    content: "\f210";
+}
+
+.social-menu ul a[href*="getpocket.com"]:before {
+    content: "\f224";
+}
+
+.social-menu ul a[href*="polldaddy.com"]:before {
+    content: "\f217";
+}
+
+.social-menu ul a[href*="reddit.com"]:before {
+    content: "\f222";
+}
+
+.social-menu ul a[href*="stumbleupon.com"]:before {
+    content: "\f223";
+}
+
+.social-menu ul a[href*="tumblr.com"]:before {
+    content: "\f214";
+}
+
+.social-menu ul a[href*="twitter.com"]:before {
+    content: "\f202";
+}
+
+.social-menu ul a[href*="vimeo.com"]:before {
+    content: "\f212";
+}
+
+.social-menu ul a[href*="wordpress.com"]:before,
+.social-menu ul a[href*="wordpress.org"]:before {
+    content: "\f205";
+}
+
+.social-menu ul a[href*="youtube.com"]:before {
+    content: "\f213";
+}
+
+.social-menu ul a[href*="mailto:"]:before {
+    content: "\f410";
+}
+
+.social-menu ul a[href*="spotify.com"]:before {
+    content: "\f515";
+}
+
+.social-menu ul a[href*="twitch.tv"]:before {
+    content: "\f516";
 }
 
 /* Content navigation */
@@ -1248,10 +1313,6 @@ a:active {
     text-align: right;
 }
 
-/* =14. Icons
--------------------------------------------------------------- */
-
-/* Reference only, see /css/typicons.css */
 
 /* =15. Accessibility
 -------------------------------------------------------------- */
@@ -1538,6 +1599,7 @@ figure {
 
 .widget select {
     max-width: 100%;
+    margin-bottom: 25px;
 }
 
 /* =19. Content
@@ -1551,8 +1613,8 @@ figure {
     border-bottom: none;
 }
 
-.comments-link {
-    display: inline-block;
+.entry-footer span {
+    padding-right: 5px;
 }
 
 .create-masonry .entry-content {
@@ -1562,14 +1624,13 @@ figure {
 }
 
 .create-masonry .entry-meta,
-.create-masonry .comments-link {
+.create-masonry .entry-footer {
     display: none;
 }
 
 .create-masonry .hentry {
-    margin: 0 auto;
 	opacity: 0;
-    overflow: hidden;
+    height: 500px;
     width: 240px;
 }
 

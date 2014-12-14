@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-Make first impression count with a large headline & full-page background. Create is super easy to use, works out-of-the-box and it’s great for your personal, business or even organization site. Make is a clean WordPress Theme based on HTML5, CSS3 and mobile-first approach, meaning your content is always displayed beautifully, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer. Just make your beautiful, yet professional WordPress site at no time.
+Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
 
 * Responsive Layout
 * Custom Background
@@ -24,7 +24,18 @@ Make first impression count with a large headline & full-page background. Create
 * Create was based on Underscores http://underscores.me/ - (C) 2012-2014 Automattic, Inc. - [GNU General Public License v2 or later]
 * screenshot.png images: http://pixabay.com/en/man-person-shirt-bow-tie-suspender-407095/, http://pixabay.com/en/radio-television-grunge-chair-407112/, http://pixabay.com/en/wristwatch-watch-time-gadget-407096/ - [CC0] 
 * /images/default-background.jpg http://www.pexels.com/photo/2286/ [CC0]
-* /fonts/ http://typicons.com/ - (C) 2014 Stephen Hutchings - [SIL Open Font License]
+* /css/genericons/ http://genericons.com/ - (C) 2014 Automattic, Inc. - [GPL, version 2 or later]
+
+
+== Translation ==
+
+Create theme is translation ready.
+
+
+== Support ==
+
+Support: http://catchthemes.com/support/
+Support Forum: http://catchthemes.com/support-forum/forum/create-free/
 
 
 == Getting Started ==
@@ -78,9 +89,18 @@ Theme supports two widgets, one is your main one and second one is used for your
 
 = Featured Images =
 
-Before getting started with your featured images, regenerate them first and you can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. The plugin allows you to regenerateyour thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
+Before getting started with your featured images, regenerate them first and you can do that easily with this plugin: https://wordpress.org/plugins/regenerate-thumbnails/. The plugin allows you to regenerate your thumbnails after changing the thumbnail sizes, which occurs by switching from one theme to another.
 
 
 = Jetpack Plugin =
 
 Theme supports Jetpack logo and it can be easily uploaded from Customizer area. It also supports Responsive videos and Infinite Scroll as well. We highly recommend installing JetPack plugin.
+
+= Theme Instructions =
+
+For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/create/
+
+
+== Change Log ==
+
+Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/create-change-log/

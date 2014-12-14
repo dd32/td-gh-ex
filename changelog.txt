@@ -1,0 +1,13 @@
+== Changelog ==
+
+= 1.0 =
+* Added create_footer hook
+* Changed footer codes
+* Changed theme description
+* Fixed Google Font issues
+* Fixed style issues
+* Initial Release in Catchthemes.com
+* Replaced typicons with genericons version 3.3
+
+= 0.1 =
+* Submitted to WordPress.org
