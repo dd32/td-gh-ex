@@ -111,9 +111,9 @@ add_action( 'widgets_init', 'medics_widgets_init' );
  */
 function medics_entry_meta() {
 
-	$medics_category_list = get_the_category_list( __( ', ', 'medics' ) );
+	$medics_category_list = get_the_category_list( ', ', 'medics' );
 
-	$medics_tag_list = get_the_tag_list( '', __( ', ', 'medics' ) );
+	$medics_tag_list = get_the_tag_list( ', ', 'medics' );
 
 	$medics_date = sprintf( '<time datetime="%3$s">%4$s</time>',
 		esc_url( get_permalink() ),
@@ -129,13 +129,16 @@ function medics_entry_meta() {
 	);
 
 
+	
+	
 	if ( $medics_tag_list ) {
-		$medics_utility_text = __( '<div class="medics-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'medics' );
-	} elseif ( $medics_category_list ) {
-		$medics_utility_text = __( '<div class="medics-entry-meta"> Posted in : %1$s  on %3$s by : %4$s </div>', 'medics' );
-	} else {
-		$medics_utility_text = __( '<div class="medics-entry-meta"> Posted on : %3$s by : %4$s </div>', 'medics' );
-	}
+			$medics_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'medics' );
+		} elseif ( $medics_category_list ) {
+			$medics_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'medics' );
+		} else {
+			$medics_utility_text = __( 'Posted on : %3$s by : %4$s', 'medics' );
+		}
+	
 
 	printf(
 		$medics_utility_text,
@@ -153,8 +156,6 @@ if ( ! function_exists( 'medics_comment' ) ) :
  * To override this walker in a child theme without modifying the comments template
  * simply create your own medics_comment(), and that function will be used instead.
  *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
  */
 function medics_comment( $comment, $medics_args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -168,7 +169,7 @@ function medics_comment( $comment, $medics_args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'medics' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'medics' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'medics' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -191,7 +192,7 @@ function medics_comment( $comment, $medics_args, $depth ) {
                          ?>
   <?php
                                 echo '<span>'.get_comment_date().'</span>';
-                                echo '<a href="#">'.comment_reply_link( array_merge( $medics_args, array( 'reply_text' => __( '<div class="pull-right">Reply</div>', 'medics' ), 'after' => '', 'depth' => $depth, 'max_depth' => $medics_args['max_depth'] ) ) ).'</a>';
+                               echo '<a href="#">'.comment_reply_link( array_merge( $medics_args, array( 'reply_text' => __( 'Reply', 'medics' ), 'after' => '', 'depth' => $depth, 'max_depth' => $medics_args['max_depth'] ) ) ).'</a>';
                                 
                             ?>
   <div class="row">
@@ -210,7 +211,7 @@ function medics_comment( $comment, $medics_args, $depth ) {
 endif;
 
 function medics_read_more( ) {
-return ' ..<br /><div class="reading"><a href="'. get_permalink() . '">Continue Reading</a></div>';
+return ' ..<br /><div class="reading"><a href="'. get_permalink() . '">'.__('Continue Reading','medics').'</a></div>';
  }
 add_filter( 'excerpt_more', 'medics_read_more' ); 
 

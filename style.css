@@ -4,12 +4,12 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Medics
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Medics is a lightweight, faster, clean, super flexible and bootstrap based responsive theme mainly designed for doctors and hospitals but can be used in any business or personal website as well. Medics Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built and recent posts are touch friendly slider based on owl carousel. Pro or Paid version includes custom post types for managing team (doctors), slider on the home page and many more features !
-Version: 1.3.1
+Version: 1.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-* Medics Theme, Copyright 2014 fasterthemes.com
+Medics Theme, Copyright 2014 fasterthemes.com
 Medics is distributed under the terms of the GNU GPL
-Tags: blue, light, right-sidebar, left-sidebar, responsive-layout, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images
+Tags: blue, light, right-sidebar, left-sidebar, responsive-layout, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images, translation-ready
 Text Domain: medics
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -22,6 +22,9 @@ body{
 }
 .container-medics{
 	width:1130px;
+}
+.logo-center{
+	width:130px;
 }
 .no-padding
 {
@@ -93,17 +96,9 @@ body{
 }
 .custom-header-img > a > img {
     width: 100%;
-    margin: 0 auto;
 }
 
 /*==================== M E N U -- C S S =============*/
-.navbar-collapse{
-    max-height: 100%;
-    height: auto;
-}
-.navbar-collapse.in{
-    overflow: hidden;
-}
 .navbar-default {
     background:none;
     border:none;
@@ -126,7 +121,7 @@ body{
 }
 .medics-menu > li {
     float: left !important;
-    margin: 6px 3px 0;
+    margin: 6px 9px 0;
     position: relative;
 }
 .medics-menu > li ul li{
@@ -140,7 +135,7 @@ body{
 	margin-bottom:-2px;
 	font-size:16px;
 	color:#313131;
-	padding: 18px 17px !important;
+	padding: 18px 14px !important;
 	text-transform: uppercase;
 	border-bottom:2px solid rgba(0, 0, 0, 0);
 }
@@ -165,7 +160,7 @@ body{
 	visibility: hidden;
 	position: absolute;
 	top: 50px;
-	right: 0;
+	left: 0;
 	z-index: 1;
 	-webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
@@ -181,11 +176,14 @@ body{
 	margin: 0;
 }
 .medics-menu ul ul {
-    box-shadow: -1px 0 0 rgba(255, 255, 255, 0.3);
-    margin: 0;
-    right: 100%;
-    top: 0;
-    width: 100%;
+	top: 0;
+	margin: 0 0 0 0px;
+	_margin: 0; /*IE6 only*/
+	-moz-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+	-webkit-box-shadow: -1px 0 0 rgba(255,255,255,.3);
+	box-shadow: -1px 0 0 rgba(255,255,255,.3);
+	left: 100%;
+	width: 100%;
 }
 .medics-menu ul li a {
 	color: #000 !important;
@@ -206,7 +204,6 @@ body{
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-
 .medics-menu ul a {
 	padding: 10px;
 	width: 160px;
@@ -216,9 +213,6 @@ body{
 	text-transform: none;
 	text-align: left;
 	color:#313131;
-}
-.medics-menu li ul li a{
-     font-size: 14px;
 }
 .medics-menu ul li:first-child > a {
 	-moz-border-radius: 3px 3px 0 0;
@@ -249,7 +243,6 @@ body{
 	padding-top: 5px !important;
 	color: #313131 !important;
 	border-bottom: none;
-       
 }
 .medics-menu ul li a:hover, .medics-menu ul li a:focus, .medics-menu ul li a:active {
 	border-bottom: none;
@@ -581,7 +574,6 @@ body{
     color: #FEFFFF;
     font-size: 18px;
     padding: 6px 21px;
-    line-height: normal;
 }
 .header-blog{
 	border-top:3px solid #00c2e5;
@@ -681,9 +673,7 @@ body{
     padding: 10px 5px;	
 	color:#9a9a9a;
 }
-.sidebar-widget {
-    margin-bottom: 25px;
-}
+
 .main-sidebar {
     margin-bottom: 15px;
 }
@@ -1065,14 +1055,9 @@ margin-bottom:20px;
 .medics-next-link {
     float: right;
 }
-   .header-breadcrumb {
+.header-breadcrumb {
     float: right;
-    margin: 37px 0 31px;
-    text-align: right;
-    width: 50%;
-}
-.header-breadcrumb ol{
-    padding-left: 0;
+	margin: 37px 0 31px;
 }
 .medics-leftbar .comments-area {
     float: right;
@@ -1443,28 +1428,8 @@ color:#00C2E5;
 .wp-caption-text > a:hover {
 	color:#FFF;
 }
-#calendar_wrap{
-    margin-bottom: 20px;
-}
-.medics-phone:hover{
-	text-decoration:none;
-}
 /********* Media CSS Start *********/
-@media (max-width: 1024px){
-    .footer-widget #calendar_wrap #wp-calendar{
-        float: left;
-        width: 100%;
-        margin-bottom: 20px;
-}
-}
 @media (max-width:767px) {
-    .main-sidebar{
-    padding: 0;
-}
-.icon-msg {
-    float: left;
-    width: auto;
-}    
 .container-medics {
 	width: 100%;
 }
@@ -1473,6 +1438,10 @@ color:#00C2E5;
 }
 .navbar-toggle .icon-bar{
 	background-color:#000;
+}
+.navbar-collapse {
+	margin-top:0px;  
+	overflow-y: auto !important;
 }
 .single-blog .blog-contan-col-2 .medics-contant{
 	margin-right:0px;
@@ -1584,7 +1553,6 @@ color:#00C2E5;
 .medics-menu li {
 	float: left !important;
 	position: relative;
-        margin-bottom: 10px;
 }
 .medics-menu ul li a {
 	text-align: left;
@@ -1626,11 +1594,7 @@ embed, iframe, object, video {
     margin-bottom: 15px;
 }
 }
-@media (min-width:768px) and (max-width: 992px) {
-    .main-sidebar{
-    padding: 0;
-}
-}
+
 @media(min-width:320px) and (max-width:480px)	{
 .help-line {
     clear: both;
@@ -1744,13 +1708,11 @@ embed, iframe, object, video {
     text-align: center;
     width: 100%;
     margin: 25px 0;
-     line-height: inherit;
 }
 .header-breadcrumb {
     float: none;
     margin: 0 0 15px;
-    text-align: center;
-    width: auto;
+	text-align:center;
 }
 .header-breadcrumb ol{
 	padding:0px;
@@ -1869,7 +1831,10 @@ embed, iframe, object, video {
     margin-bottom: 25px;
     padding-left: 15px;
 }
-
+.icon-msg {
+    float: left;
+    width: 88%;
+}
 .doctors-title{
 	width:100%;
 }
@@ -2016,7 +1981,7 @@ embed, iframe, object, video {
 }
 .icon-msg {
     float: left;
-    width: auto;
+    width: 90%;
 }
 .twiterpost i{
 	margin-top:18px;

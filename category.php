@@ -7,7 +7,7 @@ get_header();
 
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
-    <h1><?php _e('Category : ','medics') ?> <span><?php echo single_cat_title( '', false );?></span></h1>
+    <h1><?php _e('Category', 'medics'); echo " : <span>" .single_cat_title( '', false ).'</span>'; ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('medics_custom_breadcrumbs')) medics_custom_breadcrumbs(); ?>

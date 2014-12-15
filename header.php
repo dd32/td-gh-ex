@@ -40,7 +40,7 @@
     <div class="container container-medics">
       <div class="col-md-6 help-line no-padding">
         <?php if(!empty($medics_options['phone'])) { ?>
-        <span><?php echo esc_attr($medics_options['helpline']).' <a class="medics-phone">'.esc_attr($medics_options['phone']).'</a>';?> </span>
+        <span><?php echo esc_attr($medics_options['helpline']).' '.esc_attr($medics_options['phone']);?> </span>
         <?php } ?>
       </div>
       <div class="col-md-6 top-email-id no-padding">
@@ -78,7 +78,7 @@
       </div>
       <div class="col-md-9 no-padding clearfix">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
+          <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>
         <?php
 			$medics_defaults = array(

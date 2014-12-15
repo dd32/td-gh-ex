@@ -1,6 +1,6 @@
 <?php
 /**
- * Implements a custom header for Premiummagazine.
+ * Implements a custom header for Medics.
  */
 function medics_custom_header_setup() {
 	$medics_args = array(

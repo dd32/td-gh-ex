@@ -17,7 +17,7 @@ if ( post_password_required() )
   <?php if ( have_comments() ) : 	?>
   <h1 class="comments-title">
     <?php
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s COMMENTS ', comments_number( '0', '1', '%' ) , 'medics' ),
+			printf( _n( 'One thought on %2$s ', '%1$s COMMENTS ', comments_number( '0', '1', '%' ) , 'medics' ),
 		
 				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>

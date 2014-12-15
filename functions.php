@@ -12,7 +12,7 @@ function medics_setup() {
 	/*
 	 * Make medics theme available for translation.
 	 */
-
+	load_theme_textdomain( 'medics', get_template_directory() . '/languages' );	
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', medics_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.

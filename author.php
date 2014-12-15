@@ -7,7 +7,7 @@ get_header();
 
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
-    <?php _e('<h1>Author : <span> All posts by '.get_the_author().'</span></h1>','medics'); ?>
+    <h1><?php _e('Author', 'medics'); echo " : <span>".__('All posts by','medics').' ' .get_the_author().'</span>'; ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('medics_custom_breadcrumbs')) medics_custom_breadcrumbs(); ?>

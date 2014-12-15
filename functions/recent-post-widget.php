@@ -6,8 +6,8 @@ class medics_randompostwidget extends WP_Widget
 {
 function medics_randompostwidget()
 {
-$medics_widget_ops = array('classname' => 'medics_recentpostwidget', 'description' => 'Displays a recent post with thumbnail' );
-$this->WP_Widget('medics_recentpostwidget', 'Medics Recent Post', $medics_widget_ops);
+$medics_widget_ops = array('classname' => 'medics_recentpostwidget', 'description' => __('Displays a recent post with thumbnail','medics') );
+$this->WP_Widget('medics_recentpostwidget', __('Medics Recent Post','medics'), $medics_widget_ops);
 }
 
 function form($medics_instance)
@@ -17,11 +17,11 @@ $medics_instance['title'];
 if(!empty($medics_instance['post_number'])) { $medics_instance['post_number']; } 
 ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'medics_info'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'medics'); ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($medics_instance['title'])) { echo $medics_instance['title']; } ?>" style="width:100%;" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'medics_info'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'medics'); ?></label>
             <input id="<?php echo $this->get_field_id( 'post_number' ); ?>" name="<?php echo $this->get_field_name( 'post_number' ); ?>" value="<?php if(!empty($medics_instance['post_number'])) { echo $medics_instance['post_number']; } else { echo '5'; } ?>" style="width:100%;" />
         </p>
 <?php
@@ -66,7 +66,7 @@ while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post();
 	$medics_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
       <div class="ImageWrapper chrome-fix">
       <?php if($medics_feat_image!="") { ?>
-      <img src="<?php echo $medics_feat_image; ?>" class="img-responsive medics-post-widget" alt="" />
+      <img src="<?php echo $medics_feat_image; ?>" class="img-responsive medics-post-widget" alt="<?php echo get_the_title(); ?>" />
     <?php } ?>
     </div>
     </div>

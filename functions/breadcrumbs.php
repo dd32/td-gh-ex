@@ -6,7 +6,7 @@ function medics_custom_breadcrumbs() {
 
   $medics_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $medics_delimiter = '/'; // medics_delimiter between crumbs
-  $medics_home = 'Home'; // text for the 'Home' link
+  $medics_home = __('Home','medics'); // text for the 'Home' link
   $medics_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $medics_before = ' '; // tag before the current crumb
   $medics_after = ' '; // tag after the current crumb
@@ -25,10 +25,10 @@ function medics_custom_breadcrumbs() {
     if ( is_category() ) {
       $medics_thisCat = get_category(get_query_var('cat'), false);
       if ($medics_thisCat->parent != 0) echo get_category_parents($medics_thisCat->parent, TRUE, ' ' . $medics_delimiter . ' ');
-      echo $medics_before . 'Archive by category "' . single_cat_title('', false) . '"' . $medics_after;
+      echo $medics_before . __('Archive by category','medics').' "' . single_cat_title('', false) . '"' . $medics_after;
 
     } elseif ( is_search() ) {
-      echo $medics_before . 'Search results for "' . get_search_query() . '"' . $medics_after;
+      echo $medics_before . __('Search results for','medics').' "' . get_search_query() . '"' . $medics_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $medics_delimiter . ' ';
@@ -86,15 +86,15 @@ function medics_custom_breadcrumbs() {
       if ($medics_showcurrent == 1) echo ' ' . $medics_delimiter . ' ' . $medics_before . get_the_title() . $medics_after;
 
     } elseif ( is_tag() ) {
-      echo $medics_before . 'Posts tagged "' . single_tag_title('', false) . '"' . $medics_after;
+      echo $medics_before . __('Posts tagged','medics').' "' . single_tag_title('', false) . '"' . $medics_after;
 
     } elseif ( is_author() ) {
        global $author;
       $medics_userdata = get_userdata($author);
-      echo $medics_before . 'Articles posted by ' . $medics_userdata->display_name . $medics_after;
+      echo $medics_before . __('Articles posted by ','medics'). $medics_userdata->display_name . $medics_after;
 
     } elseif ( is_404() ) {
-      echo $medics_before . 'Error 404' . $medics_after;
+      echo $medics_before . __('Error 404','medics') . $medics_after;
     }
 
     if ( get_query_var('paged') ) {

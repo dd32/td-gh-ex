@@ -7,11 +7,7 @@ get_header();
 
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
-    <h1>
-      <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="medics-post-title">Tag : <span> %s </span>', 'medics' ), ' ' . single_tag_title( '', false ) . '</p>' );
-		endif; ?>
-    </h1>
+    <h1><?php _e('Tag', 'medics'); echo " : <span>" .single_tag_title( '', false )  . ' ' ; ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('medics_custom_breadcrumbs')) medics_custom_breadcrumbs(); ?>

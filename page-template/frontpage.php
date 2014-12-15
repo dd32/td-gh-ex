@@ -39,10 +39,10 @@ $medics_options = get_option( 'medics_theme_options' );
         <?php if(!empty($medics_options['home-icon-'.$medics_section_i])) {  echo "<img src='".esc_url($medics_options['home-icon-'.$medics_section_i])."' alt=''  />"; } ?>
       </div>
       <h1>
-        <?php if(!empty($medics_options['section-title-'.$medics_section_i])) { echo esc_attr($medics_options['section-title-'.$medics_section_i]); } ?>
+        <?php if(!empty($medics_options['section-title-'.$medics_section_i])) { echo sanitize_text_field($medics_options['section-title-'.$medics_section_i]); } ?>
       </h1>
       <p>
-        <?php if(!empty($medics_options['section-content-'.$medics_section_i])) { echo esc_attr($medics_options['section-content-'.$medics_section_i]); } ?>
+        <?php if(!empty($medics_options['section-content-'.$medics_section_i])) { echo sanitize_text_field($medics_options['section-content-'.$medics_section_i]); } ?>
       </p>
     </div>
     <?php endfor; ?>
@@ -53,7 +53,7 @@ $medics_options = get_option( 'medics_theme_options' );
   <?php if(!empty($medics_options['post-category'])){ ?>
   <div class="col-md-12 main-title no-padding clearfix">
     <h1>
-       <?php if(!empty($medics_options['homeblogtitle'])) { echo esc_attr($medics_options['homeblogtitle']); }else{ echo 'FROM THE BLOG '; }?>
+       <?php if(!empty($medics_options['homeblogtitle'])) { echo esc_attr($medics_options['homeblogtitle']); }else{ _e('FROM THE BLOG','medics'); }?>
       <span id="next1" class="next black-box next3"><i class="fa fa-caret-right"></i></span> <span id="prev1" class="prev black-box prev3"><i class="fa fa-caret-left"></i> </span> </h1>
     <div class="full-line-title"></div>
   </div>
@@ -100,7 +100,8 @@ $medics_options = get_option( 'medics_theme_options' );
         </p>
       </div>
     </div>
-    <?php } } else { echo '<p>no posts found</p>'; } ?>
+    <?php } } else { echo '<p>'.__('no posts found','medics').'</p>'; } ?>
+    <?php // endwhile; endif; // end of the loop. ?>
   </div>
   <?php } ?>
   <!-- END FROM THE BLOG --> 
@@ -115,7 +116,7 @@ $medics_options = get_option( 'medics_theme_options' );
       </p>
     </div>
     <?php if(!empty($medics_options['home-download-link'])) { ?>
-    <div class="medics-download-link pull-right"> <a href="<?php  echo esc_url($medics_options['home-download-link']); ?>">Download</a> </div>
+    <div class="medics-download-link pull-right"> <a href="<?php  echo esc_url($medics_options['home-download-link']); ?>"><?php _e('Download','medics') ?></a> </div>
     <?php } ?>
   </div>
 </div>

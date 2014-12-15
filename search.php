@@ -7,7 +7,7 @@ get_header();
 
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
-    <h1><?php printf( __( 'Search Results for : <span> %s </span>', 'medics' ), ' ' . get_search_query() . ' ' ); ?></h1>
+   <h1><?php _e('Search Results for', 'medics'); echo " : <span>" .get_search_query() . ' </span>' ; ?></h1>
     <div class="header-breadcrumb">
       <ol>
         <?php if (function_exists('medics_custom_breadcrumbs')) medics_custom_breadcrumbs(); ?>

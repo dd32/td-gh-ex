@@ -22,7 +22,7 @@ vi) Handles Page Pagination set in page.php
 vii) set sanitization in theme
 viii) enqueue css and js files proper
 
-Version: 1.3.1 (10 Dec 2014)
+Version: 1.4 (15 Dec 2014)
 i) Remove unnecessary code
 ii) Declare copyright and license information
-
+iii) Set translation ready
