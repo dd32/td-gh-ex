@@ -31,8 +31,8 @@ function betilu_register_settings() {
     /*
      * color picker add on
      */
-    add_action( 'admin_enqueue_scripts', 'threeby_add_color_picker' );
-function threeby_add_color_picker() {
+    add_action( 'admin_enqueue_scripts', 'betilu_add_color_picker' );
+function betilu_add_color_picker() {
     // Add the color picker css file       
     wp_enqueue_style( 'wp-color-picker' ); 
     // Include our custom jQuery file with WordPress Color Picker dependency
@@ -72,14 +72,14 @@ function betilu_options_page() {
                 <table class="options-table">
                 <tr><td><div>Add mid-section banner text here. Same text will appear on lower banner.</div><br />         
                 <input id="betilu_new_text" name="betilu_theme_options[betilu_new_text]" size="72" type="text" 
-value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_text']; ?>" /></td></tr>
+value="<?php if (!empty($options['betilu_new_text'])) echo esc_attr( $options['betilu_new_text'] ); ?>" /></td></tr>
                 </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>You can add HTML4 tags such as <code>&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;p&gt; &lt;b&gt;</code></p>
             <hr>
                 <h3>Sidebar-Top-Right, Middle-Bar and Bottom-Bar Background set here</h3>
                 <table class="options-table"><tr><td><label>Change sidebar-right and middle banner background color</label>
-<input type="text" name="betilu_theme_options[top_backgrnd]" size="20" value="<?php echo $options['top_backgrnd']; ?>" class="betilu-color-field" /></td></tr>
-                    </table>
+<input type="text" name="betilu_theme_options[top_backgrnd]" size="20" value="<?php echo esc_attr( $options['top_backgrnd'] ); ?>" class="betilu-color-field" /></td></tr>
+                </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Selected color will appear on all mid-sections, Sticky posts and the Sidebar</p>
             <hr>
                 <h3>Add your Phone and eMail plus social media links here</h3>
@@ -87,13 +87,13 @@ value="<?php if (!empty($options['betilu_new_text'])) echo $options['betilu_new_
 <tr>
 <?php $options = get_option( 'betilu_theme_options' ); ?>
 <td><label>Phone Number</label> </td><td><input type="text" name="betilu_theme_options[phonenumber]" size="40" 
-value="<?php if( !empty( $options['phonenumber'] ) ) echo $options['phonenumber']; ?>" /></td></tr>
+value="<?php if( !empty( $options['phonenumber'] ) ) echo esc_attr( $options['phonenumber'] ); ?>" /></td></tr>
 <tr><td><label>Facebook</label> </td><td><input type="text" name="betilu_theme_options[facebookurl]" size="40" 
-value="<?php if( !empty( $options['facebookurl'] ) ) echo $options['facebookurl']; ?>" /></td</tr>
+value="<?php if( !empty( $options['facebookurl'] ) ) echo esc_url( $options['facebookurl'] ); ?>" /></td</tr>
 <tr><td><label>Twitter</label> </td><td><input type="text" name="betilu_theme_options[twitterurl]" size="40" 
-value="<?php if( !empty( $options['twitterurl'] ) ) echo $options['twitterurl']; ?>" /></td</tr>
+value="<?php if( !empty( $options['twitterurl'] ) ) echo esc_url( $options['twitterurl'] ); ?>" /></td</tr>
 <tr><td><label>E-Mail</label> </td><td><input type="text" name="betilu_theme_options[betilu_email]" size="40" 
-value="<?php if( !empty( $options['betily_email'] ) ) echo $options['betilu_email']; ?>" /></td</tr> 
+value="<?php if( !empty( $options['betilu_email'] ) ) echo esc_url( $options['betilu_email'] ); ?>" /></td</tr> 
                 </table>
                 <p><img src="<?php echo get_template_directory_uri(); ?>/images/info_black.png" height="24"/>Appears under Single Post Ariticles. Type only id for Twitter and url without the <code>https://</code> for facebook.</p>
             <hr>

@@ -4,7 +4,6 @@ Author: Larry Judd Oliver - tradesouthwest.com
 
 == Additional License Information ==  
 * HTML5 Shiv v3.7.0 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed    
-* Fonts imported from http://fonts.googleapis.com | License info at: https://developers.google.com/fonts/terms
 * All default images GPL2 License
 
 === About ===
@@ -12,6 +11,17 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.4 =
+* changed some widget styles in footer widgets
+* added edit link inline to author link
+* fixed menu navigation errors for drop down primary menu
+* fixed sidebar on archive template
+* created infinite lists row for menu top row menu
+* added img width parameters
+* fixed prefix in theme options
+* removed imported font, was not focused in some browsers
+* improved margins on ul and ol lists in entry content
+* corrected name space in options file for email option
 = 1.3 =
 * updates on small screen sizes
 = 1.2 =

@@ -55,49 +55,49 @@ msgstr ""
 msgid "Edit This"
 msgstr ""
 
-#: functions.php:28
+#: functions.php:25
 msgid "Primary Navigation - below header"
 msgstr ""
-#: functions.php:29
+#: functions.php:26
 msgid "Secondary Top Navigation - NO DROPDOWNS"
 msgstr ""
-#: functions.php:100
+#: functions.php:92
 msgid "<br>View Full Article..."
 msgstr ""
-#: functions.php:107
+#: functions.php:177
 msgid "Lead Article Top Right Box"
 msgstr ""
-#: functions.php:109
+#: functions.php:179
 msgid "Right-side top Lead Article page"
 msgstr ""
-#: functions.php:116
+#: functions.php:186
 msgid "Primary Right Side"
 msgstr ""
-#: functions.php:118
+#: functions.php:188
 msgid "Right-side widget area - two column pages"
 msgstr ""
-#: functions.php:126
+#: functions.php:196
 msgid "First Footer Widget Area"
 msgstr ""
-#: functions.php:128
+#: functions.php:198
 msgid "The first footer widget area'"
 msgstr ""
-#: functions.php:135
+#: functions.php:205
 msgid "Second Footer Widget Area"
 msgstr ""
-#: functions.php:137
+#: functions.php:207
 msgid "The second footer widget area"
 msgstr ""
-#: functions.php:144
+#: functions.php:214
 msgid "Third Footer Widget Area"
 msgstr ""
-#: functions.php:146
+#: functions.php:216
 msgid "The third footer widget area"
 msgstr ""
-#: functions.php:153
+#: functions.php:113
 msgid "Fourth Footer Widget Area"
 msgstr ""
-#: functions.php:155
+#: functions.php:225
 msgid "The fourth footer widget area"
 msgstr ""
 

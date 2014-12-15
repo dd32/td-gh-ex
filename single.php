@@ -18,8 +18,8 @@ get_header(); ?>
                                 <?php the_title(); ?></a></h1>
                             </hgroup>
                                 <div class="metadata"> 
-                                    <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p> 
-                                        <?php edit_post_link(__( 'Edit This', 'betilu' )); ?>
+                                    <p><span class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </span> 
+                                        <?php edit_post_link(__( ' [Edit This]', 'betilu' )); ?></p> 
                                 </div>
                         </header>
                             <article class="entry-lead">
@@ -46,7 +46,7 @@ get_header(); ?>
                                         </div>              
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
-                    </div> <!-- ends post one -->   <div class="breaker"></div>
+                    </div> <!-- ends post -->   <div class="breaker"></div>
                 </section><!-- ends content-area-left -->
             <?php endwhile; endif; ?>
                 <div id="right-sidebar">

@@ -43,7 +43,6 @@ function betilu_add_theme_scripts() {
 }
     add_action( 'wp_enqueue_scripts', 'betilu_add_theme_scripts' );
 
-
     // add ie conditional html5 shim to header
 function betilu_add_ie_html5_shim () {
     echo '<!--[if lt IE 9]>';
@@ -51,12 +50,6 @@ function betilu_add_ie_html5_shim () {
     echo '<![endif]-->';
 }
     add_action('wp_head', 'betilu_add_ie_html5_shim');
-
-    // font imported from googleapolis fonts
-    add_action( 'betilu', 'wpb_add_google_fonts', 5);
-    function betilu_add_google_fonts() {
-    echo "<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700' rel='stylesheet' type='text/css'>";
-    }
 
    /**
      * customer background color and image support 

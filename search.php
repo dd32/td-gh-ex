@@ -26,9 +26,9 @@ get_header(); ?>
             <?php endwhile; else: ?>
                     <section class="content-area-left">
                         <article class="entry-lead">
-                            <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
-                            <p><?php _e( 'Try another search, please.', 'betilu' ); ?></p>
-                            <p><?php get_search_form(); ?>
+                            <br><h2><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></h2>
+                            <h3><?php _e( 'Try another search, please.', 'betilu' ); ?></h3><br>
+                            <p><?php get_search_form(); ?><br>
                         </article>
                      </section><!-- ends content-left --> 
             <?php endif; ?>

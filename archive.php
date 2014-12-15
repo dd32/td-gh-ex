@@ -6,31 +6,45 @@
 */
 get_header(); ?>
             <div id="content-wide-page" role="main">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <section class="content-area-left">
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
                             <div class="entry-date">
                                 <a href="<?php the_permalink() ?>"><?php the_date(); ?></a>
                             </div>
-                                <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-                                <h5 class="linkcat"><?php _e( 'Archived Categories: ', 'betilu' ); echo '<span>'; the_category(); echo '</span>'; ?></h5><br>
+                                <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark">
+                                <?php the_title(); ?></a></h1>
+                                <div class="metadata">
+                                    <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p>
+                                    <?php edit_post_link( __( 'Edit This', 'betilu' ) ); ?>
+                                </div>
                         </header>
                             <article class="entry-lead">
-                                <?php the_excerpt(); ?>
+                                
+                                    <?php the_excerpt(); ?>
+                                                
                             </article>
-                    </div><!-- ends post -->
-                </section><!-- ends content-area-left -->
-            <?php endwhile; else: ?>
+                               
+                    </div> <!-- ends post -->  
+                </section><!-- ends content-area-lead -->
+           
+            <?php endwhile; ?>
+<?php betilu_numeric_posts_nav(); ?>
+<?php else: ?>
                     <section class="content-area-left">
                         <article class="entry-lead">
                             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
                         </article>
-                    </section><!-- ends content-left -->
+                     </section><!-- ends content-left -->
+           
             <?php endif; ?>
-                    <div class="num-nav"><?php betilu_numeric_posts_nav(); ?></div>
-                        <div id="right-sidebar-absolute">
-                           <?php get_sidebar(); ?>
-                        </div>    
-            </div><!-- ends wide-lead --> <div class="breaker">&nbsp;</div>
+
+                <div id="right-sidebar-absolute">
+                    <?php get_sidebar(); ?><br>
+                </div> <div id="right-sidebar-absolute-breaker"></div>
+
+ </div>
+ 
+                      
 <?php get_footer(); ?>

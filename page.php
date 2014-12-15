@@ -16,8 +16,8 @@ get_header(); ?>
                                 <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark">
                                 <?php the_title(); ?></a></h1>
                                 <div class="metadata">
-                                    <p class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </p>
-                                    <?php edit_post_link( __( 'Edit This', 'betilu' ) ); ?>
+                                     <p><span class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </span> 
+                                        <?php edit_post_link(__( ' [Edit This]', 'betilu' )); ?></p> 
                                 </div>
                         </header>
                             <article class="entry-lead">

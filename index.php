@@ -26,8 +26,9 @@ get_header(); ?>
                 	        echo '<div></div>';
                                     } ?>
                                     <?php the_content(''); ?>
-                                        <p><?php the_tags(); ?></p> <?php wp_link_pages(); ?>
-                                        <?php comments_template(); ?>
+                                        <?php wp_link_pages(); ?>
+                                            <p><?php the_tags(); ?></p> 
+                                                <?php comments_template(); ?>
                             </article>
                                 <!-- <?php trackback_rdf(); ?> -->
                     </div> <!-- ends post one -->  
