@@ -62,7 +62,7 @@
 		</span>
 <?php endif; ?>
 		<span class="audio-icon">
-			<a href="<?php echo esc_url( get_post_format_link( 'audio' ) ); ?>" title="<?php echo get_post_format_string( 'audio' ); ?>"><?php echo get_post_format_string( 'audio' ); ?></a>
+			<a href="<?php echo esc_url( get_post_format_link( 'audio' ) ); ?>" title="<?php echo esc_attr( get_post_format_string( 'audio' ) ); ?>"><?php echo get_post_format_string( 'audio' ); ?></a>
 		</span>
 		<?php if ( ! post_password_required() ) : ?>
 

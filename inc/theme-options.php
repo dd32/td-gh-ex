@@ -3,7 +3,6 @@
 /******************************
   Register the settings to use on the Theme Admin Page
 ******************************/
-add_action( 'admin_init', 'fgymm_admin_init' );
 add_filter( 'option_page_capability_fgymm-options', 'fgymm_get_options_page_cap' );
 add_action( 'admin_init', 'fgymm_register_general_settings' );
 add_action( 'admin_init', 'fgymm_register_header_settings' );
@@ -30,28 +29,33 @@ function fgymm_get_options_page_cap() {
 
 /******************************
   Callback function to the add_theme_page. It displays the theme options page
-******************************/ 
-function fgymm_admin_init() {
+******************************/
+function fgymm_get_option_defaults() {
 
-	$options = get_option( 'fgymm_settings' );
-	if ( $options === false ) {
-		// add default settings
-		$options = array(
-			'social_rss' 	   		=> get_bloginfo( 'rss2_url' ),
-			'notfound_image'		=> get_stylesheet_directory_uri().'/images/404.png',
-			'notfound_title'		=> 'Error 404: Not Found',
-			'notfound_content'		=> '<p>Sorry. The page you are looking for does not exist.</p>',
-			'slider_slide1_content' => '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide1_image'	=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
-			'slider_slide2_content' => '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide2_image'	=> get_stylesheet_directory_uri().'/images/slider/2.jpg',		
-			'slider_slide3_content' => '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>',
-			'slider_slide3_image' 	=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
-		);
+	$defaults = array(
+		'social_rss' 	   		=> get_bloginfo( 'rss2_url' ),
+		'notfound_image'		=> get_stylesheet_directory_uri().'/images/404.png',
+		'notfound_title'		=> __( 'Error 404: Not Found', 'fgymm' ),
+		'notfound_content'		=> __( '<p>Sorry. The page you are looking for does not exist.</p>', 'fgymm' ),
+		'slider_slide1_content' => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fgymm' ),
+		'slider_slide1_image'	=> get_stylesheet_directory_uri().'/images/slider/1.jpg',
+		'slider_slide2_content' => __( '<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fgymm' ),
+		'slider_slide2_image'	=> get_stylesheet_directory_uri().'/images/slider/2.jpg',		
+		'slider_slide3_content' => __( '<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fgymm' ),
+		'slider_slide3_image' 	=> get_stylesheet_directory_uri().'/images/slider/3.jpg',
+	);
 
-		add_option( 'fgymm_settings', $options, '', 'yes' );
-	}
+	return apply_filters( 'fgymm_get_option_defaults', $defaults );
 }
+
+function fgymm_get_options() {
+    // Options API
+    return wp_parse_args( 
+        get_option( 'theme_fgymm_options', array() ), 
+        fgymm_get_option_defaults() 
+    );
+}
+
 
 function fgymm_page()
 {
@@ -60,18 +64,18 @@ function fgymm_page()
 ?>
     <div class="wrap">
 		<h2 class="nav-tab-wrapper">  
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_general"  class="nav-tab <?php echo $active_tab == 'tab_general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'fgymm' ); ?></a>	
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_header"  class="nav-tab <?php echo $active_tab == 'tab_header' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Header', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_footer"  class="nav-tab <?php echo $active_tab == 'tab_footer' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Footer', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_homepage"  class="nav-tab <?php echo $active_tab == 'tab_homepage' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Home', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_slider"  class="nav-tab <?php echo $active_tab == 'tab_slider' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Slider', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_colors"  class="nav-tab <?php echo $active_tab == 'tab_colors' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Colors', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_social" class="nav-tab <?php echo $active_tab == 'tab_social' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_lightbox" class="nav-tab <?php echo $active_tab == 'tab_lightbox' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Lightbox', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_thumbnails" class="nav-tab <?php echo $active_tab == 'tab_thumbnails' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Thumbnails', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_contacts" class="nav-tab <?php echo $active_tab == 'tab_contacts' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contacts', 'fgymm' ); ?></a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_notfound" class="nav-tab <?php echo $active_tab == 'tab_notfound' ? 'nav-tab-active' : ''; ?>">404</a>
-			<a href="?page=<?php echo 'options.php'; ?>&tab=tab_woocommerce" class="nav-tab <?php echo $active_tab == 'tab_woocommerce' ? 'nav-tab-active' : ''; ?>">WooCommerce</a>
+			<a href="?page=options.php&tab=tab_general"  class="nav-tab <?php echo $active_tab == 'tab_general' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General', 'fgymm' ); ?></a>	
+			<a href="?page=options.php&tab=tab_header"  class="nav-tab <?php echo $active_tab == 'tab_header' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Header', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_footer"  class="nav-tab <?php echo $active_tab == 'tab_footer' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Footer', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_homepage"  class="nav-tab <?php echo $active_tab == 'tab_homepage' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Home', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_slider"  class="nav-tab <?php echo $active_tab == 'tab_slider' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Slider', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_colors"  class="nav-tab <?php echo $active_tab == 'tab_colors' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Colors', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_social" class="nav-tab <?php echo $active_tab == 'tab_social' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_lightbox" class="nav-tab <?php echo $active_tab == 'tab_lightbox' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Lightbox', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_thumbnails" class="nav-tab <?php echo $active_tab == 'tab_thumbnails' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Thumbnails', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_contacts" class="nav-tab <?php echo $active_tab == 'tab_contacts' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contacts', 'fgymm' ); ?></a>
+			<a href="?page=options.php&tab=tab_notfound" class="nav-tab <?php echo $active_tab == 'tab_notfound' ? 'nav-tab-active' : ''; ?>">404</a>
+			<a href="?page=options.php&tab=tab_woocommerce" class="nav-tab <?php echo $active_tab == 'tab_woocommerce' ? 'nav-tab-active' : ''; ?>">WooCommerce</a>
 		</h2>
 
 				<?php if (isset($_GET[ 'settings-updated' ])) : ?>
@@ -92,7 +96,7 @@ function fgymm_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 						
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="layout"><?php _e( 'Website Layout', 'fgymm' ); ?></label> </th> <td> <select name="layout" id="layout" disabled> <option selected="selected" value="Wide" style="padding-right: 10px;"><?php _e( 'Wide', 'fgymm' ); ?></option> <option value="Boxed" style="padding-right: 10px;"><?php _e( 'Boxed', 'fgymm' ); ?></option> </select> <br> <span class="description"><?php _e( 'Select layout of your website', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="headercode"> <?php _e( 'Code before &lt;/header&gt; tag', 'fgymm' ); ?> </label> </th> <td> <textarea name="headercode" id="headercode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Custom html code, before the &lt;/head&gt; tag', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="bodycode"> <?php _e( 'Code before &lt;/body&gt; tag', 'fgymm' ); ?> </label> </th> <td> <textarea name="bodycode" id="bodycode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Custom html code, before the &lt;/body&gt; tag', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="trackingcode"><?php _e( 'Tracking Code', 'fgymm' ); ?></label> </th> <td> <textarea name="trackingcode" id="trackingcode" cols="50" rows="4" disabled></textarea> <br> <span class="description"><?php _e( 'Tracking code (i.e. Google Analytics). It will be added in the footer part of the website.', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepost"><?php _e( 'Show Author Info After Single Posts', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepost" id="aftersinglepost" disabled> <br> <span class="description"><?php _e( 'Display author info box after single posts', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepost"><?php _e( 'Show Social Sharing After Single Posts', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepost" id="aftersinglepost" disabled> <br> <span class="description"><?php _e( 'Display social sharing box after single posts', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepage"><?php _e( 'Show Author Info After Single Pages', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepage" id="aftersinglepage" disabled> <br> <span class="description"><?php _e( 'Display author info box after single page', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="aftersinglepage"><?php _e( 'Show Social Sharing After Single Pages', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="aftersinglepage" id="aftersinglepage" disabled> <br> <span class="description"><?php _e( 'Display social sharing box after single pages', 'fgymm' ); ?></span> </td> </tr> </tbody> </table>
@@ -101,7 +105,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_header' ) :
@@ -112,7 +116,7 @@ function fgymm_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="logo_width"><?php _e( 'Logo Image Width', 'fgymm' ); ?></label> </th> <td> <input type="text" name="logo_width" id="logo_width" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Logo image width of your website', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="logo_height"><?php _e( 'Logo Image Height', 'fgymm' ); ?></label> </th> <td> <input type="text" name="logo_height" id="logo_height" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Logo image height of your website', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="header_phone"><?php _e( 'Header Phone', 'fgymm' ); ?></label> </th> <td> <input type="text" value="1.555.555.555" name="header_phone" id="header_phone" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Your phone to appear in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="header_email"><?php _e( 'Header E-mail', 'fgymm' ); ?></label> </th> <td> <input type="text" value="sales@yoursite.com" name="header_email" id="header_email" class="regular-text" disabled> <br> <span class="description"><?php _e( 'Your e-mail to appear in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displayhomeicon"><?php _e( 'Display Homepage Icon', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displayhomeicon" id="displayhomeicon" disabled> <br> <span class="description"><?php _e( 'Display homepage icon in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysocial"><?php _e( 'Display Social Icons', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaysocial" id="displaysocial" disabled> <br> <span class="description"><?php _e( 'Display social icons in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysearch"><?php _e( 'Display Search Form', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="displaysearch" id="displaysearch" disabled> <br> <span class="description"><?php _e( 'Display search form in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="opensocialnewwindow"><?php _e( 'Open Social Icons in a new window', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" name="opensocialnewwindow" checked="checked" value="1" id="opensocialnewwindow" disabled> <br> <span class="description"><?php _e( 'Open social icons links in a new window', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="showbreadcrumb"><?php _e( 'Show Breadcrumb', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="showbreadcrumb" id="showbreadcrumb" disabled> <br> <span class="description"><?php _e( 'Show breadcrumb in the website header', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="pageheaderbackground"><?php _e( 'Page Header Background Image', 'fgymm' ); ?></label> </th> <td> <input type="text" class="regular-text" name="pageheaderbackground" id="pageheaderbackground" disabled><input type="button" value="Upload" id="pageheaderbackground_uploadBtn" disabled> <br> <span class="description"><?php _e( 'Upload a custom breadcrumb background image for page header section.', 'fgymm' ); ?></span> <br> </td> </tr> </tbody> </table>
@@ -121,7 +125,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_footer' ) :
@@ -131,7 +135,7 @@ function fgymm_page()
 ?>						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="columnsnumber"><?php _e( 'Number of Columns', 'fgymm' ); ?></label> </th> <td> <select name="columnsnumber" id="columnsnumber" disabled> <option value="none" style="padding-right: 10px;"><?php _e( 'none', 'fgymm' ); ?></option> <option value="1" style="padding-right: 10px;"><?php _e( '1', 'fgymm' ); ?></option> <option value="2" style="padding-right: 10px;"><?php _e( '2', 'fgymm' ); ?></option> <option value="3" style="padding-right: 10px;"><?php _e( '3', 'fgymm' ); ?></option> <option selected="selected" value="4" style="padding-right: 10px;"><?php _e( '4', 'fgymm' ); ?></option> </select> <br> <span class="description"><?php _e( 'Select number of columns to display in the website footer', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysocial"><?php _e( 'Display Social Icons', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaysocial" id="displaysocial" disabled> <br> <span class="description"><?php _e( 'Display social icons in the website footer', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="opensocialnewwindow"><?php _e( 'Open Social Icons in a new window', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="opensocialnewwindow" id="opensocialnewwindow" disabled> <br> <span class="description"><?php _e( 'Open social icons links in a new window', 'fgymm' ); ?></span> </td> </tr> </tbody> </table>
@@ -140,7 +144,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php
 
@@ -149,13 +153,13 @@ function fgymm_page()
 						<h3><?php _e( 'Home Page Settings', 'fgymm' ); ?></h3>				
 						<div style="background-color:#CCCCCC;padding:10px;">			
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							<table class="form-table"> <tbody> <tr> <th scope="row"> <label for="displayslider"><?php _e( 'Display Slider', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displayslider" id="displayslider" disabled> <br> <span class="description"><?php _e( 'Display slider in your website home page', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaylatestposts"><?php _e( 'Display Latest Posts', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaylatestposts" id="displaylatestposts" disabled> <br> <span class="description"><?php _e( 'Display latest posts in your website home page', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="displaysidebar"><?php _e( 'Display Sidebar', 'fgymm' ); ?></label> </th> <td> <input type="checkbox" checked="checked" value="1" name="displaysidebar" id="displaysidebar" disabled> <br> <span class="description"><?php _e( 'Display sidebar in your website home page', 'fgymm' ); ?></span> </td> </tr> <tr> <th scope="row"> <label for="columnsnumber"><?php _e( 'Number of Columns', 'fgymm' ); ?></label> </th> <td> <select name="columnsnumber" id="columnsnumber" disabled> <option value="none" style="padding-right: 10px;"><?php _e( 'none', 'fgymm' ); ?></option> <option value="1" style="padding-right: 10px;"><?php _e( '1', 'fgymm' ); ?></option> <option value="2" style="padding-right: 10px;"><?php _e( '2', 'fgymm' ); ?></option> <option value="3" style="padding-right: 10px;"><?php _e( '3', 'fgymm' ); ?></option> <option selected="selected" value="4" style="padding-right: 10px;"><?php _e( '4', 'fgymm' ); ?></option> </select> <br> <span class="description"><?php _e( 'Select number of columns to display in the website homepage', 'fgymm' ); ?></span> </td> </tr> </tbody> </table>
 						</div>
 						
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
 						</p>
 <?php						
 					elseif ($active_tab == 'tab_slider' ) :
@@ -167,7 +171,7 @@ function fgymm_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'Full Slider options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="Click Here"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'Full Slider options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="displayslide1"><?php _e( 'Display Slide #1', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="displayslide1" id="displayslide1"><br><span class="description"><?php _e( 'Display slide #1 in the slider', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="slide1_title"><?php printf( __( 'Slide #%s Title', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="Lorem ipsum dolor" name="slide1_title" id="slide1_title" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s Title in the slider', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_text"><?php printf( __( 'Slide #%s Text', 'fgymm' ), 1 ); ?></label></th><td><textarea disabled name="slide1_text" id="slide1_text" cols="50" rows="4"><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'fgymm' ); ?></textarea><br><span class="description"><?php printf( __( 'Slide #%s Text in the slider', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_url"><?php printf( __( 'Slide #%s URL', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="#" name="slide1_url" id="slide1_url" class="regular-text"><br><span class="description"><?php printf( __( 'Slide #%s URL in the slider', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="slide1_image"><?php printf( __( 'Slide #%s Background Image', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" class="regular-text" value="fgymm/images/slider/1.jpg" name="slide1_image" id="slide1_image"><input disabled type="button" value="<?php _e( 'Upload', 'fgymm' ); ?>" id="slide1_image_uploadBtn"><br><span class="description"><?php printf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fgymm' ), 1 ); ?></span><br>			  
@@ -182,7 +186,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php
 					elseif ($active_tab == 'tab_colors' ) :
@@ -193,7 +197,7 @@ function fgymm_page()
 						<h3><?php _e( 'Colors Settings', 'fgymm' ); ?></h3>
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="contentbackgroundcolor"><?php _e( 'Content Background Color', 'fgymm' ); ?></label></th><td><div class="wp-picker-container">
@@ -227,7 +231,7 @@ function fgymm_page()
 							<span class="wp-picker-input-wrap"><input type="text" value="#9cc7e4" name="tgymm_settings[footerlinkhovercolor]" id="footerlinkhovercolor" class="regular-text wp-color-picker" style="display: none;"><input type="button" class="button button-small hidden wp-picker-clear" value="Clear"></span><div class="wp-picker-holder"><div class="iris-picker iris-mozilla iris-border" style="display: none; width: 255px; height: 202.125px; padding-bottom: 23.2209px;"><div class="iris-picker-inner"><div class="iris-square" style="width: 182.125px; height: 182.125px;"><a href="#" class="iris-square-value ui-draggable" style="left: 103.209px; top: 20.0346px;"><span class="iris-square-handle ui-slider-handle"></span></a><div class="iris-square-inner iris-square-horiz" style="background-image: -moz-linear-gradient(left center , rgb(255, 173, 173), rgb(255, 214, 173), rgb(255, 255, 173), rgb(214, 255, 173), rgb(173, 255, 173), rgb(173, 255, 214), rgb(173, 255, 255), rgb(173, 214, 255), rgb(173, 173, 255), rgb(214, 173, 255), rgb(254, 173, 255), rgb(255, 173, 214), rgb(255, 173, 173));"></div><div class="iris-square-inner iris-square-vert" style="background-image: -moz-linear-gradient(center top , transparent, rgb(0, 0, 0));"></div></div><div class="iris-slider iris-strip" style="height: 205.346px; width: 28.2px; background-image: -moz-linear-gradient(center top , rgb(0, 134, 224), rgb(226, 226, 226));"><div class="iris-slider-offset ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="bottom: 32%;"></a></div></div></div><div class="iris-palette-container"><a tabindex="0" class="iris-palette" style="background-color: rgb(0, 0, 0); height: 19.5784px; width: 19.5784px; margin-left: 0px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(255, 255, 255); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(221, 51, 51); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(221, 153, 51); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(238, 238, 34); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(129, 215, 66); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(30, 115, 190); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a><a tabindex="0" class="iris-palette" style="background-color: rgb(130, 36, 227); height: 19.5784px; width: 19.5784px; margin-left: 3.6425px;"></a></div></div></div></div><br><span class="description"><?php _e( 'Color to appear in the website footer links on hover', 'fgymm' ); ?></span> <script type="text/javascript"> jQuery(document).ready(function($){ $('#footerlinkhovercolor').wpColorPicker(); }); </script> </td></tr></tbody></table>
 						</div>
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>
 						</p>
 <?php
 					elseif ($active_tab == 'tab_social' ) :
@@ -238,7 +242,7 @@ function fgymm_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><tr><th scope="row"><label for="twitter"><?php _e( 'Twitter', 'fgymm' ); ?></label></th><td><input disabled type="text" value="https://twitter.com" name="twitter" id="twitter" class="regular-text"><br><span class="description"><?php _e( 'Place your Twitter page url and the Twitter icon will appear. To remove it, just leave it blank.', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="linkedin"><?php _e( 'LinkedIn', 'fgymm' ); ?></label></th><td><input disabled type="text" value="http://www.linkedin.com/" name="linkedin" id="linkedin" class="regular-text"><br><span class="description"><?php _e( 'Place your LinkedIn page url and the LinkedIn icon will appear. To remove it, just leave it blank.', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="instagram"><?php _e( 'Instagram', 'fgymm' ); ?></label></th><td><input disabled type="text" value="http://instagram.com" name="instagram" id="instagram" class="regular-text"><br><span class="description"><?php _e( 'Place your Instagram page url and the Instagram icon will appear. To remove it, just leave it blank.', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="tumblr"><?php _e( 'Tumblr', 'fgymm' ); ?></label></th><td><input disabled type="text" value="https://www.tumblr.com/" name="tumblr" id="tumblr" class="regular-text"><br><span class="description"><?php _e( 'Place your Tumblr page url and the Tumblr icon will appear. To remove it, just leave it blank.', 'fgymm' ); ?></span></td></tr></tbody></table>
@@ -248,7 +252,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_lightbox' ) :
@@ -257,13 +261,13 @@ function fgymm_page()
 
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="enablelightbox"><?php _e( 'Enable Lightbox Functionality', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enablelightbox" id="enablelightbox"><br><span class="description"><?php _e( 'Globally Enable Lightbox functionality', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="enableonhomepage"><?php _e( 'Enable on Home Page', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enableonhomepage" id="enableonhomepage"><br><span class="description"><?php _e( 'Enable Lightbox on Home Page of your website', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="enableonindexpage"><?php _e( 'Enable on Blog Index Page', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enableonindexpage" id="enableonindexpage"><br><span class="description"><?php _e( 'Enable Lightbox on blog posts index page of your website', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="enableonposts"><?php _e( 'Enable on Posts', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enableonposts" id="enableonposts"><br><span class="description"><?php _e( 'Enable Lightbox on Posts', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="enableonpages"><?php _e( 'Enable on Pages', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enableonpages" id="enableonpages"><br><span class="description"><?php _e( 'Enable Lightbox on Pages', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="enableonarchives"><?php _e( 'Enable on Archive', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="enableonarchives" id="enableonarchives"><br><span class="description"><?php _e( 'Enable Lightbox on Archive Pages (categories, tags, etc.)', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="groupitems"><?php _e( 'Group Items', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" name="groupitems" id="groupitems"><br><span class="description"><?php _e( 'Group Items (for displaying as a slideshow)', 'fgymm' ); ?></span></td></tr></tbody></table>
 						</div>
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_thumbnails' ) :
@@ -272,14 +276,14 @@ function fgymm_page()
 						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="thumbnails_enablethumbnails"><?php _e( 'Enable', 'fgymm' ); ?> <?php _e( 'Thumbnails Functionality', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="thumbnails_enablethumbnails" id="thumbnails_enablethumbnails"><br><span class="description"><?php _e( 'Globally Enable Thumbnails functionality', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="thumbnails_size"><?php _e( 'Display Image Size in Index Pages', 'fgymm' ); ?></label></th><td><select disabled name="thumbnails_size" id="thumbnails_size"><option value="none" style="padding-right: 10px;"><?php _e( 'none', 'fgymm' ); ?></option><option value="thumbnail" style="padding-right: 10px;"><?php _e( 'thumbnail', 'fgymm' ); ?></option><option value="medium" style="padding-right: 10px;"><?php _e( 'medium', 'fgymm' ); ?></option><option value="large" style="padding-right: 10px;"><?php _e( 'large', 'fgymm' ); ?></option><option selected="selected" value="full" style="padding-right: 10px;"><?php _e( 'full', 'fgymm' ); ?></option></select><br><span class="description"><?php _e( 'Select display thumbnail image size in Index Pages', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="thumbnails_linkthumbnails"><?php _e( 'Link Thumbnails', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="thumbnails_linkthumbnails" id="thumbnails_linkthumbnails"><br><span class="description"><?php _e( 'Link Thumbnails to Single Post URLs', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="thumbnails_displayinsingle"><?php _e( 'Display in Single Post', 'fgymm' ); ?></label></th><td><input disabled type="checkbox" checked="checked" value="1" name="thumbnails_displayinsingle" id="thumbnails_displayinsingle"><br><span class="description"><?php _e( 'Display Thumbnail in Single Post', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="thumbnails_sizeinsinglepost"><?php _e( 'Display Image Size in Single Post', 'fgymm' ); ?></label></th><td><select disabled name="thumbnails_sizeinsinglepost" id="thumbnails_sizeinsinglepost"><option value="none" style="padding-right: 10px;"><?php _e( 'none', 'fgymm' ); ?></option><option value="thumbnail" style="padding-right: 10px;"><?php _e( 'thumbnail', 'fgymm' ); ?></option><option value="medium" style="padding-right: 10px;"><?php _e( 'medium', 'fgymm' ); ?></option><option value="large" style="padding-right: 10px;"><?php _e( 'large', 'fgymm' ); ?></option><option selected="selected" value="full" style="padding-right: 10px;"><?php _e( 'full', 'fgymm' ); ?></option></select><br><span class="description"><?php _e( 'Select display thumbnail image size in Single Post', 'fgymm' ); ?></span></td></tr></tbody></table>
 						</div>
 						
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_contacts' ) :
@@ -288,7 +292,7 @@ function fgymm_page()
 						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="googlemapcenterlatitude"><?php _e( 'Center Google Map Latitude', 'fgymm' ); ?></label></th><td><input disabled type="text" value="40.764229" name="googlemapcenterlatitude" id="googlemapcenterlatitude" class="regular-text"><br><span class="description"><?php _e( 'The latitude of the center of the google map in contact pages.', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="googlemapcenterlongitude"><?php _e( 'Center Google Map Longitude', 'fgymm' ); ?></label></th><td><input disabled type="text" value="-73.948134" name="googlemapcenterlongitude" id="googlemapcenterlongitude" class="regular-text"><br><span class="description"><?php _e( 'The longitude of the center of the google map in contact pages.', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="office1_name"><?php printf( __( 'Office #%s Name', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="Office No. 1" name="office1_name" id="office1_name" class="regular-text"><br><span class="description"><?php printf( __( 'The display name of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office1_latitude"><?php printf( __( 'Office #%s Latitude', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="40.764229" name="office1_latitude" id="office1_latitude" class="regular-text"><br><span class="description"><?php printf( __( 'The latitude coordinate of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office1_longitude"><?php printf( __( 'Office #%s Longitude', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="-73.948134" name="office1_longitude" id="office1_longitude" class="regular-text"><br><span class="description"><?php printf( __( 'The longitude coordinate of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office1_address"><?php printf( __( 'Office #%s Address', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="1111 Main Street Anytown, USA" name="office1_address" id="office1_address" class="regular-text"><br><span class="description"><?php printf( __( 'The address of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office1_phone"><?php printf( __( 'Office #%s Phone', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="1.111.111.111" name="office1_phone" id="office1_phone" class="regular-text"><br><span class="description"><?php printf( __( 'The phone of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office1_email"><?php printf( __( 'Office #%s Email', 'fgymm' ), 1 ); ?></label></th><td><input disabled type="text" value="office1@example.com" name="office1_email" id="office1_email" class="regular-text"><br><span class="description"><?php printf( __( 'The email of office #%s', 'fgymm' ), 1 ); ?></span></td></tr><tr><th scope="row"><label for="office2_name"><?php printf( __( 'Office #%s Name', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="Office No. 2" name="office2_name" id="office2_name" class="regular-text"><br><span class="description"><?php printf( __( 'The display name of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office2_latitude"><?php printf( __( 'Office #%s Latitude', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="40.801375" name="office2_latitude" id="office2_latitude" class="regular-text"><br><span class="description"><?php printf( __( 'The latitude coordinate of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office2_longitude"><?php printf( __( 'Office #%s Longitude', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="-74.051721" name="office2_longitude" id="office2_longitude" class="regular-text"><br><span class="description"><?php printf( __( 'The longitude coordinate of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office2_address"><?php printf( __( 'Office #%s Address', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="2222 Main Street Anytown, USA" name="office2_address" id="office2_address" class="regular-text"><br><span class="description"><?php printf( __( 'The address of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office2_phone"><?php printf( __( 'Office #%s Phone', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="1.222.222.222" name="office2_phone" id="office2_phone" class="regular-text"><br><span class="description"><?php printf( __( 'The phone of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office2_email"><?php printf( __( 'Office #%s Email', 'fgymm' ), 2 ); ?></label></th><td><input disabled type="text" value="office2@example.com" name="office2_email" id="office2_email" class="regular-text"><br><span class="description"><?php printf( __( 'The email of office #%s', 'fgymm' ), 2 ); ?></span></td></tr><tr><th scope="row"><label for="office3_name"><?php printf( __( 'Office #%s Name', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="Office No. 3" name="office3_name" id="office3_name" class="regular-text"><br><span class="description"><?php printf( __( 'The display name of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office3_latitude"><?php printf( __( 'Office #%s Latitude', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="40.738062" name="office3_latitude" id="office3_latitude" class="regular-text"><br><span class="description"><?php printf( __( 'The latitude coordinate of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office3_longitude"><?php printf( __( 'Office #%s Longitude', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="-74.132916" name="office3_longitude" id="office3_longitude" class="regular-text"><br><span class="description"><?php printf( __( 'The longitude coordinate of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office3_address"><?php printf( __( 'Office #%s Address', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="3333 Main Street Anytown, USA" name="office3_address" id="office3_address" class="regular-text"><br><span class="description"><?php printf( __( 'The address of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office3_phone"><?php printf( __( 'Office #%s Phone', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="1.333.333.333" name="office3_phone" id="office3_phone" class="regular-text"><br><span class="description"><?php printf( __( 'The phone of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office3_email"><?php printf( __( 'Office #%s Email', 'fgymm' ), 3 ); ?></label></th><td><input disabled type="text" value="office3@example.com" name="office3_email" id="office3_email" class="regular-text"><br><span class="description"><?php printf( __( 'The email of office #%s', 'fgymm' ), 3 ); ?></span></td></tr><tr><th scope="row"><label for="office4_name"><?php printf( __( 'Office #%s Name', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="Office No. 4" name="office4_name" id="office4_name" class="regular-text"><br><span class="description"><?php printf( __( 'The display name of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office4_latitude"><?php printf( __( 'Office #%s Latitude', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="40.677422" name="office4_latitude" id="office4_latitude" class="regular-text"><br><span class="description"><?php printf( __( 'The latitude coordinate of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office4_longitude"><?php printf( __( 'Office #%s Longitude', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="-74.004857" name="office4_longitude" id="office4_longitude" class="regular-text"><br><span class="description"><?php printf( __( 'The longitude coordinate of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office4_address"><?php printf( __( 'Office #%s Address', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="4444 Main Street Anytown, USA" name="office4_address" id="office4_address" class="regular-text"><br><span class="description"><?php printf( __( 'The address of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office4_phone"><?php printf( __( 'Office #%s Phone', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="1.444.444.444" name="office4_phone" id="office4_phone" class="regular-text"><br><span class="description"><?php printf( __( 'The phone of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office4_email"><?php printf( __( 'Office #%s Email', 'fgymm' ), 4 ); ?></label></th><td><input disabled type="text" value="office4@example.com" name="office4_email" id="office4_email" class="regular-text"><br><span class="description"><?php printf( __( 'The email of office #%s', 'fgymm' ), 4 ); ?></span></td></tr><tr><th scope="row"><label for="office5_name"><?php printf( __( 'Office #%s Name', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="Office No. 5" name="office5_name" id="office5_name" class="regular-text"><br><span class="description"><?php printf( __( 'The display name of office #%s', 'fgymm' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="office5_latitude"><?php printf( __( 'Office #%s Latitude', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="40.685884" name="office5_latitude" id="office5_latitude" class="regular-text"><br><span class="description"><?php printf( __( 'The latitude coordinate of office #%s', 'fgymm' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="office5_longitude"><?php printf( __( 'Office #%s Longitude', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="-73.812596" name="office5_longitude" id="office5_longitude" class="regular-text"><br><span class="description"><?php printf( __( 'The longitude coordinate of office #%s', 'fgymm' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="office5_address"><?php printf( __( 'Office #%s Address', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="5555 Main Street Anytown, USA" name="office5_address" id="office5_address" class="regular-text"><br><span class="description"><?php printf( __( 'The address of office #%s', 'fgymm' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="office5_phone"><?php printf( __( 'Office #%s Phone', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="1.555.555.555" name="office5_phone" id="office5_phone" class="regular-text"><br><span class="description"><?php printf( __( 'The phone of office #%s', 'fgymm' ), 5 ); ?></span></td></tr><tr><th scope="row"><label for="office5_email"><?php printf( __( 'Office #%s Email', 'fgymm' ), 5 ); ?></label></th><td><input disabled type="text" value="office5@example.com" name="office5_email" id="office5_email" class="regular-text"><br><span class="description"><?php printf( __( 'The email of office #%s', 'fgymm' ), 5 ); ?></span></td></tr></tbody></table>
@@ -296,7 +300,7 @@ function fgymm_page()
 						</div>
 
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_notfound' ) :
@@ -308,7 +312,7 @@ function fgymm_page()
 						<?php fgymm_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fgymm' ) ?>" />  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_woocommerce' ) :
@@ -316,12 +320,12 @@ function fgymm_page()
 						<h3><?php _e( 'WooCommerce Settings', 'fgymm' ); ?></h3>
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fgymm' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fgymm' ); ?>"><?php _e( 'Click Here', 'fgymm' ); ?></a> <?php _e( 'to get the full version of tGymm theme.', 'fgymm' ); ?>
 							</div>
 							<table class="form-table"><tbody><tr><th scope="row"><label for="woocommerce_displaysidebar"><?php _e( 'Display WooCommerce Sidebar', 'fgymm' ); ?></label></th><td><input type="checkbox" checked="checked" value="1" name="woocommerce_settings[woocommerce_displaysidebar]" id="woocommerce_displaysidebar" disabled><br><span class="description"><?php _e( 'Display WooCommerce sidebar in products pages', 'fgymm' ); ?></span></td></tr><tr><th scope="row"><label for="woocommerce_productsperpage"><?php _e( 'Products per Page', 'fgymm' ); ?></label></th><td><input type="number" value="10" name="woocommerce_settings[woocommerce_productsperpage]" id="woocommerce_productsperpage" pattern="\d*" class="regular-text" disabled><br><span class="description"><?php _e( 'The number of products diplayed per page', 'fgymm' ); ?></span></td></tr></tbody></table>
 						</div>
 						<p class="submit">  
-							<a href="<?php echo $fullThemeUrl; ?>" title="<?php _e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
+							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tGymm Theme', 'fgymm' ); ?>" class="button-primary"><?php _e( 'Get tGymm Theme', 'fgymm' ); ?></a>  
 						</p>
 <?php
 					endif; ?>    
@@ -335,7 +339,7 @@ function fgymm_page()
  */
 function fgymm_register_general_settings() {
 
-	register_setting( 'fgymm_general_settings', 'fgymm_settings', 'fgymm_general_sanitize_callback' );
+	register_setting( 'fgymm_general_settings', 'theme_fgymm_options', 'fgymm_general_sanitize_callback' );
 					 
 	add_settings_section( 'fgymm_general_options_section', __( 'General Settings', 'fgymm' ),
 						  'fgymm_display_general_settings_section', 'fgymm_general_settings' );
@@ -347,7 +351,7 @@ function fgymm_register_general_settings() {
 						 'desc'        => __( 'Favicon for your website', 'fgymm' ),
 						 'std'         => '',
 						 'label_for'   => 'general_favicon',
-						 'option_name' => 'fgymm_settings',
+						 'option_name' => 'theme_fgymm_options',
 					   );
 
 	add_settings_field( 'general_favicon_image', __( 'Favicon', 'fgymm' ), 'fgymm_display_setting',
@@ -356,7 +360,7 @@ function fgymm_register_general_settings() {
 
 function fgymm_register_header_settings() {
 	
-	register_setting( 'fgymm_header_settings', 'fgymm_settings', 'fgymm_header_sanitize_callback' );
+	register_setting( 'fgymm_header_settings', 'theme_fgymm_options', 'fgymm_header_sanitize_callback' );
 					 
 	add_settings_section( 'fgymm_header_options_section', __( 'Header Settings', 'fgymm' ),
 		'fgymm_display_header_settings_section', 'fgymm_header_settings');
@@ -368,7 +372,7 @@ function fgymm_register_header_settings() {
 						 'desc'        => __( 'Upload a custom logo for your website.', 'fgymm' ),
 						 'std'         => '',
 						 'label_for'   => 'header_logo',
-						 'option_name' => 'fgymm_settings',
+						 'option_name' => 'theme_fgymm_options',
 					   );
 
 	add_settings_field( 'header_logo_image', __( 'Logo image', 'fgymm' ), 'fgymm_display_setting',
@@ -377,7 +381,7 @@ function fgymm_register_header_settings() {
 
 function fgymm_register_footer_settings() {
 	
-	register_setting( 'fgymm_footer_settings', 'fgymm_settings', 'fgymm_footer_sanitize_callback' );
+	register_setting( 'fgymm_footer_settings', 'theme_fgymm_options', 'fgymm_footer_sanitize_callback' );
 	
 	add_settings_section( 'fgymm_footer_options_section', __( 'Footer Settings', 'fgymm' ),
 		'fgymm_display_footer_settings_section', 'fgymm_footer_settings');
@@ -388,7 +392,7 @@ function fgymm_register_footer_settings() {
 						 'desc'        => __( 'Your Copyright text to appear in the website footer', 'fgymm' ),
 						 'std'         => '',
 						 'label_for'   => 'footer_copyrighttext',
-						 'option_name' => 'fgymm_settings',
+						 'option_name' => 'theme_fgymm_options',
 					   );
 
 	add_settings_field( 'footer_copyrighttext_text', __( 'Copyright Text', 'fgymm' ), 'fgymm_display_setting',
@@ -397,7 +401,7 @@ function fgymm_register_footer_settings() {
 
 function fgymm_register_slider_settings() {
 	
-	register_setting( 'fgymm_slider_settings', 'fgymm_settings', 'fgymm_slider_sanitize_callback' );
+	register_setting( 'fgymm_slider_settings', 'theme_fgymm_options', 'fgymm_slider_sanitize_callback' );
 					 
 	add_settings_section( 'fgymm_slider_options_section', __( 'Slider Settings', 'fgymm' ),
 		'fgymm_display_slider_settings_section', 'fgymm_slider_settings');
@@ -408,7 +412,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fgymm' ), 1 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide1_content',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide1_content_textarea', sprintf( __( 'Slide #%s Content', 'fgymm' ), 1 ), 'fgymm_display_setting',
@@ -420,7 +424,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fgymm' ), 1 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide1_image',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide1_image_image', sprintf( __( 'Slide #%s Background Image', 'fgymm' ), 1 ), 'fgymm_display_setting',
@@ -432,7 +436,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fgymm' ), 2 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide2_content',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide2_content_textarea', sprintf( __( 'Slide #%s Content', 'fgymm' ), 2 ), 'fgymm_display_setting',
@@ -444,7 +448,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fgymm' ), 2 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide2_image',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide2_image_image', sprintf( __( 'Slide #%s Background Image', 'fgymm' ), 2 ), 'fgymm_display_setting',
@@ -456,7 +460,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Slide #%s content in the slider', 'fgymm' ), 3 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide3_content',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide3_content_textarea', sprintf( __( 'Slide #%s Content', 'fgymm' ), 3 ), 'fgymm_display_setting',
@@ -469,7 +473,7 @@ function fgymm_register_slider_settings() {
 					 'desc'        => sprintf( __( 'Upload a custom Slide #%s Background image for the slider.', 'fgymm' ), 3 ),
 					 'std'         => '',
 					 'label_for'   => 'slider_slide3_image',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'slider_slide3_image_image', sprintf( __( 'Slide #%s Background Image', 'fgymm' ), 3 ), 'fgymm_display_setting',
@@ -478,7 +482,7 @@ function fgymm_register_slider_settings() {
 
 function fgymm_register_social_settings() {
 
-    register_setting( 'fgymm_social_settings', 'fgymm_settings', 'fgymm_social_sanitize_callback' );
+    register_setting( 'fgymm_social_settings', 'theme_fgymm_options', 'fgymm_social_sanitize_callback' );
 
 	add_settings_section( 'fgymm_social_sites_section', __( 'Social Websites', 'fgymm' ),
 		'fgymm_display_social_settings_section', 'fgymm_social_settings' );
@@ -489,7 +493,7 @@ function fgymm_register_social_settings() {
 					 'desc'        => __( 'Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank.', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'social_facebook',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'social_facebook_text', __( 'Facebook', 'fgymm' ), 'fgymm_display_setting',
@@ -501,7 +505,7 @@ function fgymm_register_social_settings() {
 					 'desc'        => __( 'Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank.', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'social_googleplus',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'social_googleplus_text', __( 'Google+', 'fgymm' ), 'fgymm_display_setting',
@@ -513,7 +517,7 @@ function fgymm_register_social_settings() {
 					 'desc'        => __( 'Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank.', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'social_rss',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'social_rss_text', __( 'RSS Feeds', 'fgymm' ), 'fgymm_display_setting',
@@ -525,7 +529,7 @@ function fgymm_register_social_settings() {
 					 'desc'        => __( 'Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank.', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'social_youtube',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'social_youtube_text', __( 'YouTube channel', 'fgymm' ), 'fgymm_display_setting',
@@ -534,7 +538,7 @@ function fgymm_register_social_settings() {
 
 function fgymm_register_notfound_settings() {
 	
-	register_setting( 'fgymm_notfound_settings', 'fgymm_settings', 'fgymm_notfound_sanitize_callback' );
+	register_setting( 'fgymm_notfound_settings', 'theme_fgymm_options', 'fgymm_notfound_sanitize_callback' );
 					 
 	add_settings_section( 'fgymm_notfound_options_section', __( 'Error 404 Not Found Page Settings', 'fgymm' ),
 		'fgymm_display_notfound_settings_section', 'fgymm_notfound_settings');
@@ -546,7 +550,7 @@ function fgymm_register_notfound_settings() {
 					 'desc'        => __( 'Upload a custom image for your 404 Not Found Page.', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_image',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'notfound_image_text', __( 'Image', 'fgymm' ), 'fgymm_display_setting',
@@ -559,7 +563,7 @@ function fgymm_register_notfound_settings() {
 					 'desc'        => __( 'The Title to appear in the 404 Not Found Page', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_title',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'notfound_title_text', __( 'Title', 'fgymm' ), 'fgymm_display_setting',
@@ -572,7 +576,7 @@ function fgymm_register_notfound_settings() {
 					 'desc'        => __( 'The Content to appear in the 404 Not Found Page', 'fgymm' ),
 					 'std'         => '',
 					 'label_for'   => 'notfound_content',
-					 'option_name' => 'fgymm_settings',
+					 'option_name' => 'theme_fgymm_options',
 				   );
 
 	add_settings_field( 'notfound_content_textarea', __( 'Content', 'fgymm' ), 'fgymm_display_setting',
@@ -581,11 +585,7 @@ function fgymm_register_notfound_settings() {
 
 function fgymm_display_hidden_fields($activeTab) {
 
-	$options = get_option( 'fgymm_settings' );
-	if ( $options === false ) {
-	
-		return;
-	}
+	$options = fgymm_get_options();
 	
 	if ($activeTab != 'tab_general') {
 	
@@ -632,7 +632,7 @@ function fgymm_display_hidden_field($id, $options) {
 
 	$val = ( $options !== false && array_key_exists( $id, $options ) ) ? $options[ $id ] : '';
 
-	echo "<input id='$id' type='hidden' value='" . esc_attr( $val ) . "' name='fgymm_settings[$id]' />";
+	echo "<input id='" .  esc_attr($id) . "' type='hidden' value='" . esc_attr( $val ) . "' name='theme_fgymm_options[$id]' />";
 }
 
 /**
@@ -685,9 +685,9 @@ function fgymm_display_setting( $args ) {
 
 	extract( $args );
 
-    $options = get_option( $option_name );
+    $options = fgymm_get_options();
 	
-	if ( $options !== false && array_key_exists( $id, $options ) ) {
+	if ( array_key_exists( $id, $options ) ) {
 	
 		$options[$id] = stripslashes( $options[$id] );  
         $options[$id] = esc_attr( $options[$id] );
@@ -698,33 +698,33 @@ function fgymm_display_setting( $args ) {
 				
     switch ( $type ) {
 		case 'url':
-              echo "<input class='regular-text' type='url' id='$id' name='" . $option_name . "[$id]' value='$optionsId' />";  
+              echo "<input class='regular-text' type='url' id='" .  esc_attr($id) . "' name='" .  esc_attr($option_name) . "[$id]' value='" .  esc_attr($optionsId) . "' />";  
               echo ( $desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";  
           break;
           case 'text':
-              echo "<input class='regular-text' type='text' id='$id' name='" . $option_name . "[$id]' value='$optionsId' />";  
+              echo "<input class='regular-text' type='text' id='" .  esc_attr($id) . "' name='" .  esc_attr($option_name) . "[$id]' value='" .  esc_attr($optionsId) . "' />";  
               echo ( $desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";  
           break;
 		  
 		  case 'textarea':    
-              echo "<textarea rows='4' cols='50' id='$id' name='" . $option_name . "[$id]'>".$optionsId.'</textarea>';  
+              echo "<textarea rows='4' cols='50' id='" .  esc_attr( $id ) . "' name='" .  esc_attr( $option_name ) . "[" .  esc_attr( $id ) . "]'>".$optionsId.'</textarea>';  
               echo ( $desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";  
           break;
 		  
 		  case 'image':
 		  
-		  	  echo "<input type='url' id='$id' name='".$option_name."[$id]' value='$optionsId' class='regular-text' />";  
+		  	  echo "<input type='url' id='" .  esc_attr( $id ) . "' name='" .  esc_attr( $option_name ) . "[" . esc_attr( $id ) . "]' value='" .  esc_attr( $optionsId ) . "' class='regular-text' />";  
         	  echo '<input id="'.$id.'_uploadBtn" type="button" value="'.__( 'Upload', 'fgymm' ).'" />';
 			  echo ($desc != '' ) ? "<br /><span class='description'>$desc</span>" : "";
 			  if ( $optionsId != '' ) {			  
-			  	echo '<br /><p><img id="'.$id.'_preview" src="'.$optionsId.'" /></p>';
+			  	echo '<br /><p><img id="' . esc_attr( $id ) . '_preview" src="' .  esc_attr( $optionsId ) . '" /></p>';
 			  } 
 			  ?>
 			  <script type="text/javascript">
 			    jQuery(document).ready(function($) {
 				$( '#<?php echo $id; ?>_uploadBtn' ).click(function() {
 					imgUploadSouceId = '#<?php echo $id; ?>';
-					tb_show( 'Upload an image', 'media-upload.php?referer=<?php echo 'options.php'; ?>&type=image&TB_iframe=true&post_id=0', false);  
+					tb_show( '<?php _e( 'Upload an image', 'fgymm'); ?>', 'media-upload.php?referer=options.php&type=image&TB_iframe=true&post_id=0', false);  
 					return false;  
 				   });
 				});	

@@ -9,7 +9,7 @@
 
 	<?php if ( !is_single() ) :
 				
-				echo '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="'.get_the_title().'">'.get_the_title().'</a></h1>';
+				echo '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="' . esc_attr( get_the_title() ) . '">'.get_the_title().'</a></h1>';
 	
 			endif;
 	?>
@@ -63,7 +63,7 @@
 		</span>
 <?php endif; ?>
 		<span class="gallery-icon">
-			<a href="<?php echo esc_url( get_post_format_link( 'gallery' ) ); ?>" title="<?php echo get_post_format_string( 'gallery' ); ?>"><?php echo get_post_format_string( 'gallery' ); ?></a>
+			<a href="<?php echo esc_url( get_post_format_link( 'gallery' ) ); ?>" title="<?php echo esc_attr( get_post_format_string( 'gallery' ) ); ?>"><?php echo get_post_format_string( 'gallery' ); ?></a>
 		</span>
 		<?php if ( ! post_password_required() ) : ?>
 

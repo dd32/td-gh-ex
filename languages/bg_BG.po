@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-13 00:06+0200\n"
-"PO-Revision-Date: 2014-12-13 00:06+0200\n"
+"POT-Creation-Date: 2014-12-15 23:34+0200\n"
+"PO-Revision-Date: 2014-12-15 23:36+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -173,1108 +173,1128 @@ msgstr "Сайтбар Уиджет"
 msgid "The sidebar widget area"
 msgstr "Сайтбар Уиджет"
 
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:19
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:20
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:21
 msgid "Theme Options"
 msgstr "Опции Тема"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:63
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:39
+msgid "<p>Sorry. The page you are looking for does not exist.</p>"
+msgstr "<p>За съжаление, страницата, която се опитвате да достъпите, не е налична</p>"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:40
+msgid "<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+msgstr "<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:42
+msgid "<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+msgstr "<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:44
+msgid "<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+msgstr "<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at duo, mea ea ceteros constituam.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:67
 msgid "General"
 msgstr "Общи"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:64
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:68
 msgid "Header"
 msgstr "Хедър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:65
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:69
 msgid "Footer"
 msgstr "Футър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:66
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:70
 msgid "Home"
 msgstr "Начална Страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:67
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:71
 msgid "Slider"
 msgstr "Слайдър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:68
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:72
 msgid "Colors"
 msgstr "Цветове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:69
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:73
 msgid "Social"
 msgstr "Социални"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:70
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:74
 msgid "Lightbox"
 msgstr "Лайтбокс"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:71
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:75
 msgid "Thumbnails"
 msgstr "Тъмбнейли"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:72
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:76
 msgid "Contacts"
 msgstr "Контакти"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:80
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:84
 msgid "Theme settings updated successfully."
 msgstr "Промените по настройките на темата са запазени успешно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:95
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:115
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:134
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:152
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:196
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:241
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:260
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:275
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:291
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:319
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:99
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:119
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:138
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:156
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:200
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:245
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:264
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:279
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:295
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:323
 msgid "These options are available in the full version only."
 msgstr "Тези опции са налични само в пълната версия."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:95
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:115
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:134
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:152
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:170
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:196
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:241
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:260
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:275
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:291
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:319
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:99
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:119
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:138
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:156
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:200
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:245
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:264
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:279
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:295
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:323
 msgid "Click Here"
 msgstr "Кликнете тук"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:95
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:115
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:134
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:152
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:170
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:196
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:241
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:260
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:275
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:291
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:319
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:99
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:119
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:138
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:156
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:200
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:245
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:264
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:279
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:295
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:323
 msgid "to get the full version of tGymm theme."
 msgstr "за да получите пълната версия на tGymm темата."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Website Layout"
 msgstr "Уебсайт Оформление"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Wide"
 msgstr "Широко"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Boxed"
 msgstr "Рамка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Select layout of your website"
 msgstr "Избери оформление на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Code before &lt;/header&gt; tag"
 msgstr "Код преди &lt;/header&gt; таг"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Custom html code, before the &lt;/head&gt; tag"
 msgstr "Потребителски html код, преди &lt;/head&gt; таг"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Code before &lt;/body&gt; tag"
 msgstr "Код преди тагът &lt;/body&gt;"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Custom html code, before the &lt;/body&gt; tag"
 msgstr "Потребителски html код, преди тагът &lt;/body&gt;"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Tracking Code"
 msgstr "Код за тракване"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Tracking code (i.e. Google Analytics). It will be added in the footer part of the website."
 msgstr "Код за тракване (например Google Analytics). Той ще бъде добавен във футър частта на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Show Author Info After Single Posts"
 msgstr "Показване на информация за автора след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Display author info box after single posts"
 msgstr "Показване на информация за автора след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Show Social Sharing After Single Posts"
 msgstr "Показване на споделяне в социални сайтове след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Display social sharing box after single posts"
 msgstr "Показване на социални иконки след единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Show Author Info After Single Pages"
 msgstr "Показване на информация за автора след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Display author info box after single page"
 msgstr "Показване на информация за автора след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Show Social Sharing After Single Pages"
 msgstr "Показване на споделяне в социални сайтове след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:98
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:102
 msgid "Display social sharing box after single pages"
 msgstr "Показване на социални иконки след единични страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:104
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:124
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:143
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:185
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:230
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:251
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:266
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:299
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:311
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:324
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:108
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:128
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:147
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:162
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:189
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:234
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:255
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:270
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:286
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:303
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:315
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:328
 msgid "Get tGymm Theme"
 msgstr "Вземи tGymm темата"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:104
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:124
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:143
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:185
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:251
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:311
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:108
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:128
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:147
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:189
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:255
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:315
 msgid "Save Changes"
 msgstr "Запази Промените"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Logo Image Width"
 msgstr "Ширина на лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Logo image width of your website"
 msgstr "Ширина на лого картинка на Вашия уеб сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Logo Image Height"
 msgstr "Височина на лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Logo image height of your website"
 msgstr "Височина на лого картинка на Вашия уеб сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Header Phone"
 msgstr "Телефонен номер за Хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Your phone to appear in the website header"
 msgstr "Вашия телефонен номер, който ще се появи в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Header E-mail"
 msgstr "Имейл адрес за Хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Your e-mail to appear in the website header"
 msgstr "Вашия имейл адрес, който ще се появи в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Display Homepage Icon"
 msgstr "Покажи иконки на начална страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Display homepage icon in the website header"
 msgstr "Покажи иконка на начална страница в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
 msgid "Display Social Icons"
 msgstr "Покажи социални иконки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Display social icons in the website header"
 msgstr "Покажи социални иконки в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Display Search Form"
 msgstr "Показване на Форма за търсене"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Display search form in the website header"
 msgstr "Покажи форма за търсене в хедъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
 msgid "Open Social Icons in a new window"
 msgstr "Отваряне на социални икони в нов прозорец"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
 msgid "Open social icons links in a new window"
 msgstr "Отваряне на линковете на социалните иконки в нов прозорец."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Show Breadcrumb"
 msgstr "Показване на Бредкръмб"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Show breadcrumb in the website header"
 msgstr "Показване на Бредкръмб в хедъра на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Page Header Background Image"
 msgstr "Картинка за фон на раздел заглавна страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:118
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:122
 msgid "Upload a custom breadcrumb background image for page header section."
 msgstr "Качване на изображение за фон за раздел заглавна страница."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Number of Columns"
 msgstr "Брой Колони"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "none"
 msgstr "нищо"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "1"
 msgstr "1"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "2"
 msgstr "2"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "3"
 msgstr "3"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "4"
 msgstr "4"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
 msgid "Select number of columns to display in the website footer"
 msgstr "Изберете брой на колони, които да се покажат във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:137
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:141
 msgid "Display social icons in the website footer"
 msgstr "Покажи социални иконки във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:149
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:153
 msgid "Home Page Settings"
 msgstr "Настройки на Начална страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display Slider"
 msgstr "Покажи слайдър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display slider in your website home page"
 msgstr "Покажи слайдър в началната страница на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display Latest Posts"
 msgstr "Показване на най-нови постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display latest posts in your website home page"
 msgstr "Показване на слайдър в началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display Sidebar"
 msgstr "Показване на сайдбар"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Display sidebar in your website home page"
 msgstr "Показване на сайдбар в началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:154
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:158
 msgid "Select number of columns to display in the website homepage"
 msgstr "Изберете брой на колони, които да се покажат в началната страница на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:170
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
 msgid "Full Slider options are available in the full version only."
 msgstr "Пълните слайдър опции са достъпни само в пълната версия."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
 msgid "Display Slide #1"
 msgstr "Покажи слайд #1"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
 msgid "Display slide #1 in the slider"
 msgstr "Покажи слайд #1 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s Title"
 msgstr "Слайд #%s Заглавие"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s Title in the slider"
 msgstr "Слайд #%s Заглавие в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s Text"
 msgstr "Слайд #%s Текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s Text in the slider"
 msgstr "Слайд #%s текст в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s URL"
 msgstr "Слайд #%s URL адрес"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #, php-format
 msgid "Slide #%s URL in the slider"
 msgstr "Слайд #%s УРЛ адрес в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:426
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:450
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:475
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:430
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:454
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:479
 #, php-format
 msgid "Slide #%s Background Image"
 msgstr "Слайд #%s фон"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:717
 msgid "Upload"
 msgstr "Качване"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:173
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:420
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:444
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:469
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:424
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:448
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:473
 #, php-format
 msgid "Upload a custom Slide #%s Background image for the slider."
 msgstr "Качете картинка за фон на слайд #%s за слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
 msgid "Display Slide #2"
 msgstr "Покажи слайд #2"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:174
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:178
 msgid "Display slide #2 in the slider"
 msgstr "Покажи слайд #2 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
 msgid "Display Slide #3"
 msgstr "Покажи слайд #3"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:175
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:179
 msgid "Display slide #3 in the slider"
 msgstr "Покажи слайд #3 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
 msgid "Display Slide #4"
 msgstr "Покажи слайд #4"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:176
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:180
 msgid "Display slide #4 in the slider"
 msgstr "Покажи слайд #4 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 msgid "Display Slide #5"
 msgstr "Покажи слайд #5"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:177
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:181
 msgid "Display slide #5 in the slider"
 msgstr "Покажи слайд #5 в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:193
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:197
 msgid "Colors Settings"
 msgstr "Настройки на Цветове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:199
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:203
 msgid "Content Background Color"
 msgstr "Цвят на фон на съдържанието"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:200
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:204
 msgid "The content background color of the website"
 msgstr "Цвят на фон на съдържанието в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:200
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:204
 msgid "Text Color"
 msgstr "Цвят на текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:201
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:205
 msgid "The text color of the website"
 msgstr "Цвят на текста в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:201
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:205
 msgid "Link Color"
 msgstr "Цвят на връзки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:202
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:206
 msgid "The links color of the website"
 msgstr "Цвят на връзките в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:202
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:206
 msgid "Link Hover Color"
 msgstr "Ховър цвят на връзки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:203
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:207
 msgid "The links hover color of the website"
 msgstr "Ховър цвят на връзките в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:203
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:207
 msgid "Headings Color"
 msgstr "Цвят на заглавията"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:204
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:208
 msgid "The headings (h1, h2, h3) color of the website"
 msgstr "Цвят на заглавията (h1, h2, h3) в сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:204
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:208
 msgid "Buttons Gradient Top Background Color"
 msgstr "Градиентен цвят на бутони в горна част"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:205
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:209
 msgid "The buttons gradient top background color."
 msgstr "Градиентен цвят на бутоните в горната част."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:205
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:209
 msgid "Buttons Gradient Bottom Background Color"
 msgstr "Градиентен цвят на бутони в долна част"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:206
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:210
 msgid "The buttons gradient bottom background color."
 msgstr "Градиентен цвят на бутоните в долната част."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:206
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:210
 msgid "Header Top Box Background Color"
 msgstr "Цвят на фона на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:207
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:211
 msgid "Color to appear in the website header top box background"
 msgstr "Цвят, който да се покаже в хедъра топ като фон"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:207
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:211
 msgid "Header Top Box Text Color"
 msgstr "Хедър Топ цвят на текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:212
 msgid "Color to appear in the website header top box text color"
 msgstr "Цвят на текст, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:208
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:212
 msgid "Header Top Box Link Color"
 msgstr "Хедър Топ цвят на линкове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:209
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:213
 msgid "Color to appear in the website header top box links colors"
 msgstr "Цвят на линкове, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:209
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:213
 msgid "Header Top Box Link Hover Color"
 msgstr "Хедър Топ цвят на текст при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:210
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:214
 msgid "Color to appear in the website header top box links colors on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:210
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:214
 msgid "Header top Box Sub-Content Background Color"
 msgstr "Цвят на фона на под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:211
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:215
 msgid "Color to appear in the website header top box subcontent background"
 msgstr "Цвят на фон, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:211
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:215
 msgid "Header top Box Sub-Content Text Color"
 msgstr "Цвят на текста на под-съдържанието на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:212
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:216
 msgid "Color to appear in the website header top box subcontent text color"
 msgstr "Цвят на теьт, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:212
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:216
 msgid "Header top Box Sub-Content Link Color"
 msgstr "Цвят на линкове на под-съдържанието на хедър топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:213
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:217
 msgid "Color to appear in the website header top box subcontent links colors"
 msgstr "Цвят на линкове, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:213
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:217
 msgid "Header top Sub-Content Box Link Hover Color"
 msgstr "Хедър топ под-съдържание цвяр на линкове при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:214
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:218
 msgid "Color to appear in the website header top box subcontent links colors on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в под-съдържанието на хедъра топ"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:214
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:218
 msgid "Header Background Color"
 msgstr "Цвят на фона на хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:215
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:219
 msgid "Color to appear in the website header background"
 msgstr "Фон на цвят на хедъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:215
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:219
 msgid "Page Header Text Color"
 msgstr "Цвят на Текст в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:216
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:220
 msgid "Color to appear in the website page header text color"
 msgstr "Цвят на текст, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:216
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:220
 msgid "Page Header Link Color"
 msgstr "Цвят на Линкове в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:217
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:221
 msgid "Color to appear in the website page header link color"
 msgstr "Цвят на линкове, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:217
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:221
 msgid "Page Header Link Hover Color"
 msgstr "Цвят на Линкове при Хоувър в Заглавна Секция"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:218
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:222
 msgid "Color to appear in the website page header link color on hover"
 msgstr "Цвят на линкове при хоувър, който да се покаже в заглавната секция на сайта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:218
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:222
 msgid "Menu Text Color"
 msgstr "Меню Текс Цвят"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:219
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:223
 msgid "Color to appear in the website main menu text"
 msgstr "Цвят, който да се покаже за текст в главното меню"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:219
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:223
 msgid "Menu Drop Down Border Color"
 msgstr "Цвят на ивица на падащо меню"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:220
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:224
 msgid "Color to appear in the website main menu drop down border"
 msgstr "Цвят, който да се покаже за ивица на падащото главно меню"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:220
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:224
 msgid "Menu Drop Down Background Color"
 msgstr "Фон на Падащо Меню"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:221
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:225
 msgid "Background color to appear in the website main menu drop down"
 msgstr "Цвят на фон, който да се покаже за падащото главно меню"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:221
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:225
 msgid "Menu Hover Background Color (Large Resolution)"
 msgstr "Ховър цвят на фон на основното меню (Голяма резолюция)"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:222
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:226
 msgid "Background color to appear in the website main menu on hover"
 msgstr "Цвят на фон, който да се покаже за падащото главно меню при хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:222
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:226
 msgid "Menu Text Hover Color"
 msgstr "Меню Текс Цвят при Хоувър"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:223
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:227
 msgid "Color to appear in the website main menu text on hover"
 msgstr "Цвят, който да се покаже за падащото главно меню при хоувър на текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:223
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:227
 msgid "Footer Background Color"
 msgstr "Цвят на фон във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:224
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:228
 msgid "Color to appear in the website footer background"
 msgstr "Цвят на фон на футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:224
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:228
 msgid "Footer Text Color"
 msgstr "Цвят на текст във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:229
 msgid "Color to appear in the website footer text"
 msgstr "Цвят на текст във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:225
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:229
 msgid "Footer Link Color"
 msgstr "Цвят на връзка във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:226
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:230
 msgid "Color to appear in the website footer links"
 msgstr "Цвят на връзк във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:226
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:230
 msgid "Footer Link Hover Color"
 msgstr "Ховър цвят на връзка във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:227
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:231
 msgid "Color to appear in the website footer links on hover"
 msgstr "Ховър цвят на връзк във футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Twitter"
 msgstr "Twitter"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Place your Twitter page url and the Twitter icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Twitter URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Place your LinkedIn page url and the LinkedIn icon will appear. To remove it, just leave it blank."
 msgstr "Поставете LinkedIn URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Instagram"
 msgstr "Инстаграм"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Place your Instagram page url and the Instagram icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Instagram URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:244
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:248
 msgid "Place your Tumblr page url and the Tumblr icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Tumblr URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:256
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:260
 msgid "Lightbox Settings"
 msgstr "Лайтбокс Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox Functionality"
 msgstr "Активиране на Лайтбокс фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Globally Enable Lightbox functionality"
 msgstr "Глобално активиране на Лайтбокс фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable on Home Page"
 msgstr "Активиране в Начална Страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox on Home Page of your website"
 msgstr "Активиране на Лайтбокс за Началната страница на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable on Blog Index Page"
 msgstr "Активиране за индекс страницата на блог постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox on blog posts index page of your website"
 msgstr "Активиране на Лайтбокс за индекс страницата на блог постове на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable on Posts"
 msgstr "Активиране за постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox on Posts"
 msgstr "Активиране на Лайтбокс за постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable on Pages"
 msgstr "Активиране за страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox on Pages"
 msgstr "Активиране на Лайтбокс за страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable on Archive"
 msgstr "Активиране за архивни страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Enable Lightbox on Archive Pages (categories, tags, etc.)"
 msgstr "Активиране на Лайтбокс за архивни страници (категории, тагове, т.н.)"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Group Items"
 msgstr "Групиране на елементи"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:263
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:267
 msgid "Group Items (for displaying as a slideshow)"
 msgstr "Групиране на елементи (за показване като слайдшоу)"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:271
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:275
 msgid "Thumbnails Settings"
 msgstr "Тъмбнейли Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Enable"
 msgstr "Разрешаване"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Thumbnails Functionality"
 msgstr "Тъмбнейл фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Globally Enable Thumbnails functionality"
 msgstr "Глобално активиране на Тъмбнейл фунционалност"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Display Image Size in Index Pages"
 msgstr "Размер на картинка в индексни страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "thumbnail"
 msgstr "тъмбнейл"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "medium"
 msgstr "средно"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "large"
 msgstr "широко"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "full"
 msgstr "пълно"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Select display thumbnail image size in Index Pages"
 msgstr "Избиране на размер на картинка за тъмбнейл в индексни страници"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Link Thumbnails"
 msgstr "Линкване на Тъмбнейли"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Link Thumbnails to Single Post URLs"
 msgstr "Линкване на Тъмбнейли към URL-и на единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Display in Single Post"
 msgstr "Показване в Единични Постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Display Thumbnail in Single Post"
 msgstr "Показване на Тъмбнейли в единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Display Image Size in Single Post"
 msgstr "Показване на размер на картинки в единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:278
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:282
 msgid "Select display thumbnail image size in Single Post"
 msgstr "Избиране на размер на картинка за тъмбнейл в страници за единични постове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:287
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:291
 msgid "Contacts Settings"
 msgstr "Настройки на Контакти"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 msgid "Center Google Map Latitude"
 msgstr "Географска ширина на центъра на google карта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 msgid "The latitude of the center of the google map in contact pages."
 msgstr "Географска ширина на центъра на google картата в страниците за контакт."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 msgid "Center Google Map Longitude"
 msgstr "Географска височина на центъра на google карта"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 msgid "The longitude of the center of the google map in contact pages."
 msgstr "Географска височина на центъра на google картата в страниците за контакт."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Name"
 msgstr "Име на Офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The display name of office #%s"
 msgstr "Името на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Latitude"
 msgstr "Географска ширина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The latitude coordinate of office #%s"
 msgstr "Географска ширина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Longitude"
 msgstr "Географска височина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The longitude coordinate of office #%s"
 msgstr "Географска височина на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Address"
 msgstr "Адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The address of office #%s"
 msgstr "Адресът на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Phone"
 msgstr "Номер на телефон на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The phone of office #%s"
 msgstr "Номер на телефон на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "Office #%s Email"
 msgstr "Имейл адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:294
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:298
 #, php-format
 msgid "The email of office #%s"
 msgstr "Имейл адрес на офис #%s"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:316
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:320
 msgid "WooCommerce Settings"
 msgstr "Настройки на WooCommerce"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:321
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:325
 msgid "Display WooCommerce Sidebar"
 msgstr "Показване на WooCommerce Сайдбар"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:321
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:325
 msgid "Display WooCommerce sidebar in products pages"
 msgstr "Показване на WooCommerce сайдбар в страницата с продукти"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:321
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:325
 msgid "Products per Page"
 msgstr "Продукти на Страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:321
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:325
 msgid "The number of products diplayed per page"
 msgstr "Брой на продукти, които да се покажат на страница"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:340
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:344
 msgid "General Settings"
 msgstr "Общи Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:347
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:351
 msgid "Favicon for your website"
 msgstr "Иконка на Вашия сайт"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:353
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:357
 msgid "Favicon"
 msgstr "Иконка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:361
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:365
 msgid "Header Settings"
 msgstr "Хедър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:368
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:372
 msgid "Upload a custom logo for your website."
 msgstr "Качване на лого за Вашия уеб сайт."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:374
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:378
 msgid "Logo image"
 msgstr "Лого картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:382
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:386
 msgid "Footer Settings"
 msgstr "Настройки на Футъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:388
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:392
 msgid "Your Copyright text to appear in the website footer"
 msgstr "Вашият копирайт текст, който ще се появи във футъра на сайта."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:394
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:398
 msgid "Copyright Text"
 msgstr "Копирайт текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:402
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:406
 msgid "Slider Settings"
 msgstr "Слайдър Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:408
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:432
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:456
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:412
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:436
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:460
 #, php-format
 msgid "Slide #%s content in the slider"
 msgstr "Слайд #%s текст в слайдъра"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:414
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:438
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:462
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:418
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:442
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:466
 #, php-format
 msgid "Slide #%s Content"
 msgstr "Слайд #%s Текст"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:483
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:487
 msgid "Social Websites"
 msgstr "Социални сайтове"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:489
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:493
 msgid "Place your Facebook page url and the Facebook icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Фейсбук URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:495
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:499
 msgid "Facebook"
 msgstr "Фейсбук"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:501
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:505
 msgid "Place your Google+ page url and the Google+ icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Гугъл+ URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:507
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:511
 msgid "Google+"
 msgstr "Гугъл+"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:513
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:517
 msgid "Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove it, just leave it blank."
 msgstr "Поставете RSS емисии URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:519
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:523
 msgid "RSS Feeds"
 msgstr "RSS емисии"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:525
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:529
 msgid "Place your YouTube channel page url and the YouTube channel icon will appear. To remove it, just leave it blank."
 msgstr "Поставете Ютуб канал URL адреса на Вашата страница и иконката ще се появи. За да я махнете, просто оставете полето празно."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:531
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:535
 msgid "YouTube channel"
 msgstr "Ютуб Канал"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:539
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:543
 msgid "Error 404 Not Found Page Settings"
 msgstr "Грешка 404  Не е намерено Настройки"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:546
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:550
 msgid "Upload a custom image for your 404 Not Found Page."
 msgstr "Качете картинка за Грешка 404: Не е намерено."
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:552
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:556
 msgid "Image"
 msgstr "Картинка"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:559
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:563
 msgid "The Title to appear in the 404 Not Found Page"
 msgstr "Заглавие в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:565
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:569
 msgid "Title"
 msgstr "Заглавие"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:572
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:576
 msgid "The Content to appear in the 404 Not Found Page"
 msgstr "Съдържание в страницата Грешка 404 Не е намерено"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:578
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:582
 msgid "Content"
 msgstr "Съдържание"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:24
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/theme-options.php:727
+msgid "Upload an image"
+msgstr "Качване на картинка"
+
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:21
 msgid "Follow us on Facebook"
 msgstr "Следете ни във Facebook"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:30
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:27
 msgid "Follow us on Google+"
 msgstr "Следете ни в Google+"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:36
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:33
 msgid "Follow our RSS Feeds"
 msgstr "Следете нашите RSS емисии"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:43
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:40
 msgid "Follow us on YouTube"
 msgstr "Следете ни в YouTube"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:225
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:217
 msgid "Read More"
 msgstr "Прочетете повече"
 
-#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:238
+#: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:230
 msgid "Read More..."
 msgstr "Научи повече..."
 
@@ -2134,9 +2154,6 @@ msgstr "Научи повече..."
 #~ msgstr ""
 #~ "Слайд #%s URL адрес за бутона 'Прочети повече' в слайдъра на началната "
 #~ "страница"
-
-#~ msgid "Slide #%s image"
-#~ msgstr "Картинка за слайд #%s"
 
 #~ msgid "Slide #%s image width of your home page slider"
 #~ msgstr "Ширина на картинка на Слайд #%s в началната страница"

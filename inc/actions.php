@@ -8,7 +8,13 @@ function fgymm_load_scripts() {
 	// load main stylesheet.
 	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array( ) );
 
-	wp_enqueue_script('jquery');
+	$header_image = get_header_image();
+	if ( $header_image ) {
+
+		$custom_css = "#header-main-fixed {background-image:url('" . esc_attr( $header_image ) . "');filter:none !important;}";
+	
+		wp_add_inline_style( 'fgymm-style', $custom_css );
+	}
 	
 	// Load thread comments reply script
 	if ( is_singular() ) {
@@ -20,26 +26,20 @@ function fgymm_load_scripts() {
 	
 	if ( is_front_page() ) {
 	
-		$options = get_option( 'fgymm_settings' );
-		if ( $options !== false ) {
-			wp_enqueue_script( 'fgymm-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-			wp_enqueue_script( 'fgymm-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-			wp_enqueue_script( 'fgymm-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
-		}
+		wp_enqueue_script( 'fgymm-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'fgymm-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+		wp_enqueue_script( 'fgymm-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 	}
 }
 
 function fgymm_head_load_favicon_image() {
 
-	$options = get_option( 'fgymm_settings' );
-	if ( $options === false ) {
-		return;
-	}
+	$options = fgymm_get_options();
 
 	if ( array_key_exists( 'general_favicon', $options )
 		 && $options[ 'general_favicon' ] != '' ) {
 
-		echo '<link rel="shortcut icon" href="'.$options[ 'general_favicon' ].'" type="image/x-icon" />'."\n";	
+		echo '<link rel="shortcut icon" href="' . esc_url( $options[ 'general_favicon' ] ) . '" type="image/x-icon" />'."\n";	
 	}
 }
 

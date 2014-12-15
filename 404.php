@@ -8,7 +8,7 @@
 <div id="main-content-wrapper">
 	<div id="main-content-full">
 		<article>
-		<h1 id="not-found-title"><?php echo $options[ 'notfound_title' ]; ?></h1>
+		<h1 id="not-found-title"><?php echo esc_html( $options[ 'notfound_title' ] ); ?></h1>
 		<div class="clear">
 		</div>
 		<div class="text-center">
@@ -19,7 +19,7 @@
 				$imgPath = $options[ 'notfound_image' ];
 				$title = __('Error 404: Not Found', 'fgymm' );
 				
-				echo "<img id='not-found-image' src='$imgPath' alt='$title' title='$title' />";
+				echo "<img id='not-found-image' src='" . esc_attr( $imgPath ) . "' alt='" esc_attr( $title ) . "' title='" . esc_attr( $title ) . "' />";
 			}
 		?>
 		</div>

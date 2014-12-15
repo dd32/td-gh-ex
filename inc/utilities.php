@@ -11,10 +11,7 @@ function fgymm_show_social_sites( $before,
 						  $openInNewWindow,
 						  $iconSize /* must be 16 or 32 */) {
 
-	$options = get_option( 'fgymm_settings' );
-	if ( $options === false ) {
-		return;
-	}
+	$options = fgymm_get_options();
 	
 	echo $before;
 
@@ -56,10 +53,10 @@ function fgymm_show_single_social_site( $separatorBefore,
 	echo $separatorBefore;
 	
 	if ( $openInNewWindow ) {
-		echo "<a href='$socialSiteUrl' title=\"$title\" class='$cssClass' target=\"_blank\"></a>";
+		echo "<a href='" . esc_url( $socialSiteUrl ) . "' title=\"" . esc_attr( $title ) . "\" class='" . esc_attr( $cssClass ) . "' target=\"_blank\"></a>";
 	}
 	else {
-		echo "<a href='$socialSiteUrl' title=\"$title\" class='$cssClass'></a>";
+		echo "<a href='". esc_url( $socialSiteUrl ) . "' title=\"" . esc_attr( $title ) . "\" class='" . esc_attr( $cssClass ) . "'></a>";
 	}
 
 	echo $separatorAfter;
@@ -70,23 +67,22 @@ function fgymm_show_single_social_site( $separatorBefore,
  */
 function fgymm_show_website_logo_image_or_title() {
 
-	$options = get_option( 'fgymm_settings' );
+	$options = fgymm_get_options();
 
-	if ( $options !== false && array_key_exists( 'header_logo', $options )
-		 && $options[ 'header_logo' ] != '' ) {
+	if ( array_key_exists( 'header_logo', $options ) && $options[ 'header_logo' ] != '' ) {
 		 
-		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
+		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
 		
 		$logoImgPath = $options[ 'header_logo' ];
 		$siteTitle = get_bloginfo( 'name' );
 		
-		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' />";
+		echo "<img src='" . esc_attr( $logoImgPath ) . "' alt='" . esc_attr( $siteTitle ) . "' title='" . esc_attr( $siteTitle ) . "' />";
 	
 		echo '</a>';
 
 	} else {
 	
-		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
+		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
 		
 		echo '<h1>'.get_bloginfo('name').'</h1>';
 		
@@ -103,7 +99,7 @@ function fgymm_show_header_top() {
 	
 	// display homepage icon
 ?>
-	<a href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>" class="homepage-icon-link"></a>
+	<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" class="homepage-icon-link"></a>
 <?php
 	
 	// display social sites
@@ -115,11 +111,10 @@ function fgymm_show_header_top() {
  */
 function fgymm_show_copyright_text() {
 	
-	$options = get_option( 'fgymm_settings' );
-	if ( $options !== false && array_key_exists( 'footer_copyrighttext', $options )
-	     && $options[ 'footer_copyrighttext' ] != '' ) {
+	$options = fgymm_get_options();
+	if ( array_key_exists( 'footer_copyrighttext', $options ) && $options[ 'footer_copyrighttext' ] != '' ) {
 
-		echo $options[ 'footer_copyrighttext' ] . ' | ';
+		echo esc_html( $options[ 'footer_copyrighttext' ] ) . ' | ';
 	}
 }
 
@@ -128,10 +123,7 @@ function fgymm_show_copyright_text() {
  */
 function fgymm_display_slider() {
 
-		$options = get_option( 'fgymm_settings' );
-		if ( $options === false ) {
-			return;
-		}
+		$options = fgymm_get_options();
 	 ?>
 	 
 	 <div class="camera_wrap camera_emboss" id="camera_wrap">
@@ -143,7 +135,7 @@ function fgymm_display_slider() {
 					$slideImage = $options[ 'slider_slide'.$i.'_image' ];
 				?>
 				
-					<div data-thumb="<?php echo $slideImage; ?>" data-src="<?php echo $slideImage; ?>">
+					<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
 						<div class="camera_caption fadeFromBottom">
 							<?php echo $slideContent; ?>
 						</div>
@@ -205,7 +197,7 @@ function fgymm_p_link( $i, $title = '' ) {
   if ( $title == '' ) {
 	$title = "Page {$i}";
   }
-  echo "<a class='page-numbers' href='", esc_html( get_pagenum_link( $i ) ), "' title='{$title}'>{$i}</a>";
+  echo "<a class='page-numbers' href='", esc_url( esc_html( get_pagenum_link( $i ) ) ), "' title='{$title}'>{$i}</a>";
 }
 
 /**
@@ -216,7 +208,7 @@ function fgymm_the_content() {
 	// Display Thumbnails if thumbnail is set for the post
 	if ( has_post_thumbnail() ) {
 		
-		echo '<a href="'.get_permalink().'" title="'.get_the_title().'">';
+		echo '<a href="'. esc_url( get_permalink() ) .'" title="' . esc_attr( get_the_title() ) . '">';
 		
 		the_post_thumbnail();
 		

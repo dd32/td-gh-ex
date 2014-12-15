@@ -56,7 +56,7 @@
 		</span>
 <?php endif; ?>
 		<span class="link-icon">
-			<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php echo get_post_format_string( 'link' ); ?>"><?php echo get_post_format_string( 'link' ); ?></a>
+			<a href="<?php echo esc_url( get_post_format_link( 'link' ) ); ?>" title="<?php echo esc_attr( get_post_format_string( 'link' ) ); ?>"><?php echo get_post_format_string( 'link' ); ?></a>
 		</span>
 		<?php if ( ! post_password_required() ) : ?>
 
