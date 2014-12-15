@@ -52,7 +52,7 @@ get_header();
 		?><div id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
 
 			?><div class="postmetadata"><?php
-				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php
+				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
 					?><span class="month"><?php the_time('M'); ?></span><?php
 					?><span class="day"><?php the_time('d'); ?></span><?php
 					?><span class="year"><?php the_time('Y'); ?></span><?php
@@ -80,13 +80,11 @@ get_header();
 			?><div class="post-contents"><?php
 				if ( '' != get_the_post_thumbnail() ):	// As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()
 				?><div class="thumbnail"><?php
-					echo '<a href="' . get_permalink() . '" title="' . get_the_title() . '">';
-					the_post_thumbnail('post-thumbnail', array('class' => 'scale-with-grid')); ?></a><?php
-				?></div><?php
+				?><a href="<?php echo get_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('post-thumbnail', array('class' => 'scale-with-grid')); ?></a></div><?php
 				endif;
 
 				?><h3 class="entry-title"><?php
-				?><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><?php
+				?><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a><?php
 				?></h3><?php
 				if ( 'post' == get_post_type() ):	// Do not display this for pages
 				?><div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div><?php

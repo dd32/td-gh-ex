@@ -121,34 +121,6 @@ function boldr_add_menu_parent_class( $items ) {
 add_filter( 'wp_nav_menu_objects', 'boldr_add_menu_parent_class' );
 
 /*
- * The automatically generated fallback menu is not responsive.
- * Add an admin notice to warn users who did not set a primary menu
- * and make this notice dismissable so it is less intrusive.
- */
-
-function boldr_admin_notice(){
-	global $current_user;
-	$user_id = $current_user->ID;
-	/* Display notice if primary menu is not set and user did not dismiss the notice */
-    if  ( !has_nav_menu( 'primary' ) && !get_user_meta($user_id, 'boldr_ignore_notice' ) ):
-	    echo '<div class="updated"><p><strong>BoldR Lite Notice:</strong> you have not set your primary menu yet, and your site is currently using a fallback menu which is not responsive. Please take a minute to <a href="'.admin_url('nav-menus.php').'">set your menu now</a>!';
-	    printf(__('<a href="%1$s" style="float:right">Dismiss</a>'), '?boldr_notice_ignore=0');
-	    echo '</p></div>';
-    endif;
-}
-add_action('admin_notices', 'boldr_admin_notice');
-
-function boldr_notice_ignore() {
-	global $current_user;
-	$user_id = $current_user->ID;
-	/* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset($_GET['boldr_notice_ignore']) && '0' == $_GET['boldr_notice_ignore'] ):		
-		add_user_meta($user_id, 'boldr_ignore_notice', true, true);
-	endif;
-}
-add_action('admin_init', 'boldr_notice_ignore');
-
-/*
  * Register Sidebar and Footer widgetized areas
  */
 function boldr_widgets_init() {
@@ -206,10 +178,10 @@ function boldr_styles() {
 		wp_register_style( 'boldr', $template_directory_uri . $stylesheet );				
 
 	// Always enqueue style.css from the current theme
-	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+	wp_register_style( 'boldr-style', $stylesheet_directory_uri . '/style.css');
 
 	wp_enqueue_style( 'boldr' );
-	wp_enqueue_style( 'style' );
+	wp_enqueue_style( 'boldr-style' );
 
 	// Google Webfonts
 	wp_enqueue_style( 'Oswald-webfonts', "//fonts.googleapis.com/css?family=Oswald:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
@@ -230,7 +202,7 @@ add_action( 'init', 'boldr_editor_styles' );
  * Enqueue Javascripts
  */
 function boldr_scripts() {
-	wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery'));
+	wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery','hoverIntent'));
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -255,41 +227,6 @@ function boldr_remove_rel_cat( $text ) {
 	$text = str_replace(' rel="category"', "", $text); return $text;
 }
 add_filter( 'the_category', 'boldr_remove_rel_cat' );
-
-/*
- * Fix for a known issue with enclosing shortcodes and wpautop
- * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
- * Thanks to Johann Heyne
- */
-function boldr_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-add_filter('the_content', 'boldr_shortcode_empty_paragraph_fix');
-
-/*
- * Improved version of clean_pre
- * Based on a work by Emrah Gunduz
- */
-function boldr_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'boldr_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function boldr_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
-	return $text;
-}
-add_filter( 'the_content', 'boldr_protect_pre' );
 
 /*
  * Customize "read more" links on index view

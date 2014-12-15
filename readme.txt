@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 1.1.43
+Tested up to: 4.1
+Stable tag: 1.1.44
 
 == ABOUT BOLDR LITE ==
 
@@ -36,9 +36,9 @@ Please refer to license.txt for more information.
 == CREDITS ==
 
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
-* hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * ru_RU, de_DE, es_ES, pt_BR, pl_PL and it_IT translation files: see below.
+* HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
 All other files are copyright 2013-2014 Iceable Media and released under the terms of the GNU GPLv2 License.
 
@@ -61,6 +61,19 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.44 =
+December 15th, 2014
+* Tested with WordPress 4.1 (RC1)
+* Fixed Blogpost title font size in index
+* Profixed 'boldr-style' handle when registering style.css
+* Moved admin notice to theme options page only and removed boldr_notice_ignore()
+* Now using core bundled version of hoverIntent
+* Removed content filters
+* Renamed and moved /page-full-width.php to /page-templates/full-width.php
+* Reviewed and enhanced validation, sanitation and escaping in theme options
+* Added an extra user permission check before saving theme options setting in the database
+* Appropriately use the_title_attribute() to escape title attributes in index.php and single.php
 
 = 1.1.43 =
 October 27th, 2014

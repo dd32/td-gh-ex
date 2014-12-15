@@ -21,7 +21,7 @@ get_header();
 		?><div id="post-<?php the_ID(); ?>" <?php post_class("single-post"); ?>><?php
 
 			?><div class="postmetadata"><?php
-				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php
+				?><span class="meta-date"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
 					?><span class="month"><?php the_time('M'); ?></span><?php
 					?><span class="day"><?php the_time('d'); ?></span><?php
 					?><span class="year"><?php the_time('Y'); ?></span><?php
@@ -55,7 +55,7 @@ get_header();
 
 			?><div class="post-contents"><?php
 				?><h3 class="entry-title"><?php
-				?><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a><?php
+				?><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a><?php
 				?></h3><?php
 				if ( has_category() ):
 					?><div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div><?php

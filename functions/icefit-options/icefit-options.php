@@ -30,9 +30,10 @@ add_action('admin_menu', 'boldr_settings_add_admin');
 
 // Registers and enqueue js and css for settings panel
 function boldr_settings_admin_scripts() {
-	wp_register_style( 'boldr_admin_css', get_template_directory_uri() .'/functions/icefit-options/style.css');
+	$boldr_template_directory_uri = get_template_directory_uri();
+	wp_register_style( 'boldr_admin_css', $boldr_template_directory_uri .'/functions/icefit-options/style.css');
 	wp_enqueue_style( 'boldr_admin_css' );
-	wp_enqueue_script( 'boldr_admin_js', get_template_directory_uri() . '/functions/icefit-options/functions.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'boldr_admin_js', $boldr_template_directory_uri . '/functions/icefit-options/functions.js', array( 'jquery' ), false, true );
 }
 
 // Generates the settings panel's menu
@@ -82,11 +83,11 @@ function boldr_settings_machine($options) {
 		{
 			$output .= '<h3>'. $arg['name'] .'</h3>'."\n";
 			if ( $val == "" && $arg['default'] != "") $boldr_settings[$arg['id']] = $val = $arg['default'];
-			$output .= '<input class="boldr_input_img" name="'. $arg['id'] .'" id="'. $arg['id'] .'" type="text" value="'. $val .'" />'."\n";
-			$output .= '<div class="desc">'. $arg['desc'] .'</div><br class="clear">'."\n";
+			$output .= '<input class="boldr_input_img" name="'. $arg['id'] .'" id="'. $arg['id'] .'" type="text" value="'. esc_url($val) .'" />'."\n";
+			$output .= '<br class="clear"><label>'. $arg['desc'] .'</label><br class="clear">'."\n";
 			$output .= '<input class="boldr_upload_button" name="'. $arg['id'] .'_upload" id="'. $arg['id'] .'_upload" type="button" value="Upload Image">'."\n";
 			$output .= '<input class="boldr_remove_button" name="'. $arg['id'] .'_remove" id="'. $arg['id'] .'_remove" type="button" value="Remove"><br />'."\n";
-			$output .= '<img class="boldr_image_preview" id="'. $arg['id'] .'_preview" src="'.$val.'"><br class="clear">'."\n";
+			$output .= '<img class="boldr_image_preview" id="'. $arg['id'] .'_preview" src="'.esc_url($val).'"><br class="clear">'."\n";
 		}
 		elseif ( $arg['type'] == "gopro" )
 		{
@@ -122,7 +123,7 @@ function boldr_settings_machine($options) {
 							<li><a href="http://www.gnu.org/licenses/" target="_blank">GPL License</a> : Buy once, use as many times as you wish!</li>
 							<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera (note: IE7 and older are no longer supported.)</li>
 							<li>Lifetime <strong>free updates</strong> and continued support for the <strong>latest WordPress versions</strong></li>
-							<li>Currently supports <strong>WordPress from 3.5 up to 4.0</strong></strong></li>
+							<li>Currently supports <strong>WordPress from 3.5 up to 4.1</strong></strong></li>
 							</ul>';
 			$output .= '<a href="http://www.iceablethemes.com/shop/boldr-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=boldr_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
 		}
@@ -151,6 +152,8 @@ function boldr_settings_machine($options) {
 
 // AJAX callback function for the "reset" button (resets settings to default)
 function boldr_settings_reset_ajax_callback() {
+	if ( ! current_user_can('edit_theme_options') )
+		wp_die(__('You do not have permission to edit theme options.', 'boldr'));
 	global $boldr_settings_slug;
 	// Get settings from the database
 	$boldr_settings = get_option($boldr_settings_slug);
@@ -158,7 +161,7 @@ function boldr_settings_reset_ajax_callback() {
 	$options = boldr_settings_template();
 	// Revert all settings to default value
 	foreach($options as $arg){
-		if ($arg['type'] != 'start_menu' && $arg['type'] != 'end_menu') {
+		if ($arg['type'] != 'start_menu' && $arg['type'] != 'end_menu' && isset($arg['default'])) {
 			$boldr_settings[$arg['id']] = $arg['default'];
 		}	
 	}
@@ -169,25 +172,32 @@ add_action('wp_ajax_boldr_settings_reset_ajax_post_action', 'boldr_settings_rese
 
 // AJAX callback function for the "Save changes" button (updates user's settings in the database)
 function boldr_settings_ajax_callback() {
+	if ( ! current_user_can('edit_theme_options') )
+		wp_die(__('You do not have permission to edit theme options.', 'boldr'));
 	global $boldr_settings_slug;
 	// Check nonce
 	check_ajax_referer('boldr_settings_ajax_post_action','boldr_settings_nonce');
 	// Get POST data
 	$data = $_POST['data'];
-	parse_str($data,$output);
+	parse_str($data,$input);
 	// Get current settings from the database
 	$boldr_settings = get_option($boldr_settings_slug);
 	// Get the settings template
 	$options = boldr_settings_template();
-	// Updates all settings according to POST data
+
+	// Validate input and update all settings according to POST data
 	foreach($options as $option_array){
-	
-		if ($option_array['type'] != 'start_menu' && $option_array['type'] != 'end_menu') {
+
+		if (isset($option_array['id']) && $option_array['type'] != 'start_menu' && $option_array['type'] != 'end_menu') {
 			$id = $option_array['id'];
-			if ($option_array['type'] == "text") {
-				$new_value = esc_textarea($output[$option_array['id']]);
-			} else {
-				$new_value = $output[$option_array['id']];		
+			if ($option_array['type'] == "radio" ) {
+				if ( in_array( $input[$option_array['id']], $option_array['values']) ) {
+					$new_value = $input[$option_array['id']];
+				} else {
+					$new_value = $option_array['default'];
+				}
+			} elseif ($option_array['type'] == "image") {
+				$new_value = esc_url_raw($input[$option_array['id']]);
 			}
 			$boldr_settings[$id] = stripslashes($new_value);
 		}
@@ -201,6 +211,8 @@ add_action('wp_ajax_boldr_settings_ajax_post_action', 'boldr_settings_ajax_callb
 
 // NOJS fallback for the "Save changes" button
 function boldr_settings_save_nojs() {
+	if ( ! current_user_can('edit_theme_options') )
+		wp_die(__('You do not have permission to edit theme options.', 'boldr'));
 	global $boldr_settings_slug;
 	// Get POST data
 	//	parse_str($_POST,$output);
@@ -213,10 +225,14 @@ function boldr_settings_save_nojs() {
 	
 		if ( isset($option_array['id']) && $option_array['type'] != 'start_menu' && $option_array['type'] != 'end_menu' ) {
 			$id = $option_array['id'];
-			if ($option_array['type'] == "text") {
-				$new_value = esc_textarea($_POST[$option_array['id']]);
-			} else {
-				$new_value = $_POST[$option_array['id']];
+			if ($option_array['type'] == "radio" ) {
+				if ( in_array( $_POST[$option_array['id']], $option_array['values']) ) {
+					$new_value = $_POST[$option_array['id']];
+				} else {
+					$new_value = $option_array['default'];
+				}
+			} elseif ($option_array['type'] == "image") {
+				$new_value = esc_url_raw($_POST[$option_array['id']]);
 			}
 			$boldr_settings[$id] = stripslashes($new_value);
 		}
@@ -250,9 +266,15 @@ function boldr_settings_page(){
 	<noscript><div id="no-js-warning" class="updated fade"><p><b>Warning:</b> Javascript is either disabled in your browser or broken in your WP installation.<br />
 	This is ok, but it is highly recommended to activate javascript for a better experience.<br />
 	If javascript is not blocked in your browser then this may be caused by a third party plugin.<br />
-	Make sure everything is up to date or try to deactivate some plugins.</p></div></noscript>
-	
-	<div id="icefit-admin-panel" class="no-js">
+	Make sure everything is up to date or try to deactivate some plugins.</p></div></noscript><?php
+
+	/* The automatically generated fallback menu is not responsive.
+	 * Add a notice to warn users who did not set a primary menu. */
+    if  ( !has_nav_menu( 'primary' ) ):
+	    echo '<div class="update-nag"><p><strong>BoldR Lite Notice:</strong> you have not set your primary menu yet, and your site is currently using a fallback menu which is not responsive. Please take a minute to <a href="'.admin_url('nav-menus.php').'">set your menu now</a>!</p></div>';
+    endif;
+
+	?><div id="icefit-admin-panel" class="no-js">
 		<form enctype="multipart/form-data" id="icefitform" method="POST">
 			<div id="icefit-admin-panel-header">
 				<div id="icon-options-general" class="icon32"><br></div>
