@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  * Theme Header Section for our theme.
- * 
+ *
  * Displays all of the <head> section and everything up till <div id="main" class="clearfix"> <div class="inner-wrap">
  *
  * @package ThemeGrill
@@ -25,7 +25,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
-/** 
+/**
  * This hook is important for wordpress plugins and other many things
  */
 wp_head();
@@ -36,17 +36,17 @@ wp_head();
 <?php	do_action( 'accelerate_before' ); ?>
 <div id="page" class="hfeed site">
 	<?php do_action( 'accelerate_before_header' ); ?>
-	<header id="masthead" class="site-header clearfix">		
+	<header id="masthead" class="site-header clearfix">
 
 		<div id="header-text-nav-container" class="clearfix">
 
 			<?php if( of_get_option( 'accelerate_header_image_position', 'position_two' ) == 'position_one' ) { accelerate_render_header_image(); } ?>
 
 			<div class="inner-wrap">
-				
+
 				<div id="header-text-nav-wrap" class="clearfix">
 					<div id="header-left-section">
-						<?php 
+						<?php
 						if( ( of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'logo_only' ) && of_get_option( 'accelerate_header_logo_image', '' ) != '' ) {
 						?>
 							<div id="header-logo-image">
@@ -58,7 +58,7 @@ wp_head();
 						if( of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'accelerate_show_header_logo_text', 'text_only' ) == 'text_only' ) {
 						?>
 						<div id="header-text">
-							<h1 id="site-title"> 
+							<h1 id="site-title">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 							</h1>
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2><!-- #site-description -->
@@ -70,29 +70,29 @@ wp_head();
 					<div id="header-right-section">
 						<?php
 						if( is_active_sidebar( 'accelerate_header_sidebar' ) ) {
-						?>								
+						?>
 						<div id="header-right-sidebar" class="clearfix">
 						<?php
 							// Calling the header sidebar if it exists.
 							if ( !dynamic_sidebar( 'accelerate_header_sidebar' ) ):
 							endif;
-						?>		
+						?>
 						</div>
 						<?php
 						}
-						?>					
-			    	</div><!-- #header-right-section --> 
-			    	
+						?>
+			    	</div><!-- #header-right-section -->
+
 			   </div><!-- #header-text-nav-wrap -->
-			   
+
 			</div><!-- .inner-wrap -->
 
 			<?php if( of_get_option( 'accelerate_header_image_position', 'position_two' ) == 'position_two' ) { accelerate_render_header_image(); } ?>
 
 			<nav id="site-navigation" class="main-navigation inner-wrap clearfix" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'accelerate' ); ?></h1>
+				<h3 class="menu-toggle"><?php _e( 'Menu', 'accelerate' ); ?></h3>
 				<?php
-					if ( has_nav_menu( 'primary' ) ) {									
+					if ( has_nav_menu( 'primary' ) ) {
 						wp_nav_menu( array( 'theme_location' => 'primary' ) );
 					}
 					else {
@@ -111,7 +111,7 @@ wp_head();
 			}
    	}
    	?>
-   	
+
 	</header>
 	<?php do_action( 'accelerate_after_header' ); ?>
 	<?php do_action( 'accelerate_before_main' ); ?>

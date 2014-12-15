@@ -6,11 +6,13 @@
  *
  */
 
+if ( !function_exists( 'optionsframework_option_name' ) ) {
 function optionsframework_option_name() {
 	// This gets the theme name from the stylesheet (lowercase and without spaces)
 	$themename = get_option( 'stylesheet' );
 	$themename = preg_replace("/\W/", "_", strtolower($themename) );
 	return $themename;
+}
 }
 
 /**
@@ -50,7 +52,7 @@ function optionsframework_options() {
 		'id' 			=> 'accelerate_show_header_logo_text',
 		'std' 		=> 'text_only',
 		'type' 		=> 'radio',
-		'options' 	=> $header_display_array 
+		'options' 	=> $header_display_array
 	);
 
 	// Header Image replace postion
@@ -162,8 +164,8 @@ function optionsframework_options() {
 		'desc' 		=> __( 'This will reflect in links, buttons and many others. Choose a color to match your site and logo.', 'accelerate' ),
 		'id' 			=> 'accelerate_primary_color',
 		'std' 		=> '#77CC6D',
-		'type' 		=> 'color' 
-	);	
+		'type' 		=> 'color'
+	);
 
 	$options[] = array(
 		'name' 		=> __( 'Need to replace default background?', 'accelerate' ),
@@ -272,7 +274,7 @@ function accelerate_options_display_sidebar() { ?>
 		<div class="metabox-holder">
 	    	<div class="postbox">
 	    		<h3><?php esc_attr_e( 'Accelerate', 'accelerate' ); ?></h3>
-      			<div class="inside"> 
+      			<div class="inside">
       				<div class="option-btn"><a class="btn upgrade" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/themes/accelerate-pro/' ); ?>"><?php esc_attr_e( 'Upgrade to Pro' , 'accelerate' ); ?></a></div>
 					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>"><?php esc_attr_e( 'Support Forum' , 'accelerate' ); ?></a></div>
 					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/accelerate/' ); ?>"><?php esc_attr_e( 'Documentation' , 'accelerate' ); ?></a></div>

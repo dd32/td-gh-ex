@@ -4,7 +4,7 @@
  *
  * This file contains all the functions and it's defination that particularly can't be
  * in other files.
- * 
+ *
  * @package ThemeGrill
  * @subpackage Accelerate
  * @since Accelerate 1.0
@@ -36,9 +36,9 @@ function accelerate_scripts_styles_method() {
 	 * Register JQuery cycle js file for slider.
 	 */
 	wp_register_script( 'jquery_cycle', ACCELERATE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	
+
 	/**
-	 * Enqueue Slider setup js file.	 
+	 * Enqueue Slider setup js file.
 	 */
 	if ( is_front_page() && of_get_option( 'accelerate_activate_slider', '0' ) == '1' ) {
 		wp_enqueue_script( 'accelerate_slider', ACCELERATE_JS_URL . '/accelerate-slider-setting.js', array( 'jquery_cycle' ), false, true );
@@ -103,9 +103,9 @@ function accelerate_gallery_atts( $out, $pairs, $atts ) {
 	), $atts );
 
 	$out['size'] = $atts['size'];
-	 
+
 	return $out;
- 
+
 }
 add_filter( 'shortcode_atts_gallery', 'accelerate_gallery_atts', 10, 3 );
 
@@ -124,7 +124,7 @@ function accelerate_body_class( $classes ) {
 
 	if( is_home() ) {
 		$queried_id = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true ); 
+		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true );
 	}
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$accelerate_default_layout = of_get_option( 'accelerate_default_layout', 'right_sidebar' );
@@ -162,7 +162,7 @@ function accelerate_body_class( $classes ) {
 	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'small_image_alternate' ) {
 		$classes[] = 'blog-alternate-small';
 	}
-	
+
 	if( of_get_option( 'accelerate_site_layout', 'wide' ) == 'wide' ) {
 		$classes[] = 'wide';
 	}
@@ -186,7 +186,7 @@ function accelerate_sidebar_select() {
 
 	if( is_home() ) {
 		$queried_id = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true ); 
+		$layout_meta = get_post_meta( $queried_id, 'accelerate_page_layout', true );
 	}
 
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
@@ -218,7 +218,7 @@ if ( ! function_exists( 'accelerate_posts_listing_display_type_select' ) ) :
 /**
  * Function to select the posts listing display type
  */
-function accelerate_posts_listing_display_type_select() {			
+function accelerate_posts_listing_display_type_select() {
 	if ( of_get_option( 'accelerate_posts_page_display_type', 'large_image' ) == 'large_image' ) {
 		$format = 'blog-large-image';
 	}
@@ -243,7 +243,7 @@ function accelerate_entry_meta() {
 	echo '<div class="entry-meta">';
 	?>
 	<span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
-	<?php 
+	<?php
 
 		$categories_list = get_the_category_list( __( ', ', 'accelerate' ) );
 		if ( $categories_list )	printf( __( '<span class="cat-links"><i class="fa fa-folder-open"></i>%1$s</span>', 'accelerate' ), $categories_list );
@@ -326,9 +326,9 @@ add_action('wp_head', 'accelerate_custom_css');
 function accelerate_custom_css() {
 	$accelerate_internal_css = '';
 
-	$primary_color = of_get_option( 'accelerate_primary_color', '#77CC6D' );	
+	$primary_color = of_get_option( 'accelerate_primary_color', '#77CC6D' );
 	if( $primary_color != '#77CC6D' ) {
-		$accelerate_internal_css .= ' .accelerate-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}a{color:'.$primary_color.'}#page{border-top:3px solid '.$primary_color.'}#site-title a:hover{color:'.$primary_color.'}#search-form span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a{background-color:'.$primary_color.'}.site-header .menu-toggle:before{color:'.$primary_color.'}.main-small-navigation li:hover{background-color:'.$primary_color.'}.main-small-navigation ul>.current-menu-item,.main-small-navigation ul>.current_page_item{background:'.$primary_color.'}.footer-menu a:hover,.footer-menu ul li.current-menu-ancestor a,.footer-menu ul li.current-menu-item a,.footer-menu ul li.current_page_ancestor a,.footer-menu ul li.current_page_item a,.footer-menu ul li:hover>a{color:'.$primary_color.'}#featured-slider .slider-read-more-button,.slider-nav a,.slider-title-head .entry-title a{background-color:'.$primary_color.'}#controllers a.active,#controllers a:hover{background-color:'.$primary_color.';color:'.$primary_color.'}.format-link .entry-content a{background-color:'.$primary_color.'}#secondary .widget_featured_single_post h3.widget-title a:hover,.widget_image_service_block .entry-title a:hover{color:'.$primary_color.'}.pagination span{background-color:'.$primary_color.'}.pagination a span:hover{color:'.$primary_color.';border-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:'.$primary_color.'}.comments-area .comment-author-link span{background-color:'.$primary_color.'}#wp-calendar #today,.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:'.$primary_color.'}.widget-title span{border-bottom:2px solid '.$primary_color.'}#secondary h3 span:before,.footer-widgets-area h3 span:before{color:'.$primary_color.'}#secondary .accelerate_tagcloud_widget a:hover,.footer-widgets-area .accelerate_tagcloud_widget a:hover{background-color:'.$primary_color.'}.footer-widgets-area a:hover{color:'.$primary_color.'}.footer-socket-wrapper{border-top:3px solid '.$primary_color.'}.footer-socket-wrapper .copyright a:hover{color:'.$primary_color.'}a#scroll-up{background-color:'.$primary_color.'}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover{color:'.$primary_color.'}.entry-meta .post-format i{background-color:'.$primary_color.'}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.entry-meta .tag-links a:hover{color:'.$primary_color.'}.more-link span,.read-more{background-color:'.$primary_color.'}';
+		$accelerate_internal_css .= ' .accelerate-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}a{color:'.$primary_color.'}#page{border-top:3px solid '.$primary_color.'}#site-title a:hover{color:'.$primary_color.'}#search-form span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a{background-color:'.$primary_color.'}.site-header .menu-toggle:before{color:'.$primary_color.'}.main-small-navigation li:hover{background-color:'.$primary_color.'}.main-small-navigation ul>.current-menu-item,.main-small-navigation ul>.current_page_item{background:'.$primary_color.'}.footer-menu a:hover,.footer-menu ul li.current-menu-ancestor a,.footer-menu ul li.current-menu-item a,.footer-menu ul li.current_page_ancestor a,.footer-menu ul li.current_page_item a,.footer-menu ul li:hover>a{color:'.$primary_color.'}#featured-slider .slider-read-more-button,.slider-title-head .entry-title a{background-color:'.$primary_color.'}a.slide-prev,a.slide-next,.slider-title-head .entry-title a{background-color:'.$primary_color.'}#controllers a.active,#controllers a:hover{background-color:'.$primary_color.';color:'.$primary_color.'}.format-link .entry-content a{background-color:'.$primary_color.'}#secondary .widget_featured_single_post h3.widget-title a:hover,.widget_image_service_block .entry-title a:hover{color:'.$primary_color.'}.pagination span{background-color:'.$primary_color.'}.pagination a span:hover{color:'.$primary_color.';border-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:'.$primary_color.'}.comments-area .comment-author-link span{background-color:'.$primary_color.'}#wp-calendar #today,.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:'.$primary_color.'}.widget-title span{border-bottom:2px solid '.$primary_color.'}#secondary h3 span:before,.footer-widgets-area h3 span:before{color:'.$primary_color.'}#secondary .accelerate_tagcloud_widget a:hover,.footer-widgets-area .accelerate_tagcloud_widget a:hover{background-color:'.$primary_color.'}.footer-widgets-area a:hover{color:'.$primary_color.'}.footer-socket-wrapper{border-top:3px solid '.$primary_color.'}.footer-socket-wrapper .copyright a:hover{color:'.$primary_color.'}a#scroll-up{background-color:'.$primary_color.'}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover{color:'.$primary_color.'}.entry-meta .post-format i{background-color:'.$primary_color.'}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.entry-meta .tag-links a:hover{color:'.$primary_color.'}.more-link span,.read-more{background-color:'.$primary_color.'}';
 	}
 
 	if( !empty( $accelerate_internal_css ) ) {
@@ -350,7 +350,7 @@ function accelerate_custom_css() {
 /**
  * Removing the more link jumping to middle of content
  */
-function accelerate_remove_more_jump_link($link) { 
+function accelerate_remove_more_jump_link($link) {
 	$offset = strpos($link, '#more-');
 	if ($offset) {
 		$end = strpos($link, '"',$offset);
@@ -461,7 +461,7 @@ function accelerate_comment( $comment, $args, $depth ) {
 				<?php comment_text(); ?>
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'accelerate' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</section><!-- .comment-content -->
-			
+
 		</article><!-- #comment-## -->
 	<?php
 		break;

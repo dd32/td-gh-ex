@@ -4,16 +4,16 @@ Accelerate is multipurpose WordPress theme made for simplicity and ease of use. 
 
 /**********************************************************/
 
-== COPYRIGHT AND LICENSE == 
+== COPYRIGHT AND LICENSE ==
 
-External resources linked to the theme. 
+External resources linked to the theme.
 * Roboto Font & Roboto Slab by Christian Robertson http://www.google.com/fonts/specimen/Roboto, http://www.google.com/fonts/specimen/Roboto+Slab
   Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-Resources packed within the theme. 
+Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
-* Images in the screenshot is from http://pixabay.com/ link: 
+* Images in the screenshot is from http://pixabay.com/ link:
 	http://pixabay.com/en/orange-fruit-office-287179/
 	http://pixabay.com/en/pretty-girls-happy-young-smiling-351884/
 	http://pixabay.com/en/girl-pose-sitting-smile-cute-344322/
@@ -30,7 +30,7 @@ Accelerate is distributed under the terms of the GNU GPL
 
 /**********************************************************/
 
-== THEME USAGE == 
+== THEME USAGE ==
 
 = Theme Instruction =
 Get theme instruction at http://themegrill.com/theme-instruction/accelerate
@@ -45,14 +45,20 @@ All available options can be used from Appearance->Theme Options
 
 == TRANSLATIONS ==
 If you've translated this theme into your language, feel free to send the translation over to themegrill@gmail.com
-and we will include it within the theme from next version update. 
+and we will include it within the theme from next version update.
 
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.1 =
+* Responsive menu h1 tag changed to h3.
+* Slider navigation arrows and slider titles when in same line overlapping issue fixed.
+* Page width adjustment for boxed layout.
+* Few CSS and other adjustments.
+
 = Version 1.1 =
 * Options Framework updated to 1.9.0
-* Options Framework textdomain 'textdomain' changed to 'accelerate'. 
+* Options Framework textdomain 'textdomain' changed to 'accelerate'.
 * Some wrong textdomain corrected.
 * Language pot file updated.
 * Few CSS adjustments.

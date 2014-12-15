@@ -19,18 +19,18 @@ if ( ! function_exists( 'accelerate_filter_wp_title' ) ) :
  */
 function accelerate_filter_wp_title( $title ) {
 	global $page, $paged;
-	
+
 	// Get the Site Name
    $site_name = get_bloginfo( 'name' );
 
    // Get the Site Description
    $site_description = get_bloginfo( 'description' );
 
-   $filtered_title = ''; 
+   $filtered_title = '';
 
 	// For Homepage or Frontpage
-   if(  is_home() || is_front_page() ) {		
-		$filtered_title .= $site_name;	
+   if(  is_home() || is_front_page() ) {
+		$filtered_title .= $site_name;
 		if ( !empty( $site_description ) )  {
         	$filtered_title .= ' &#124; '. $site_description;
 		}
@@ -38,7 +38,7 @@ function accelerate_filter_wp_title( $title ) {
 	elseif( is_feed() ) {
 		$filtered_title = '';
 	}
-	else{	
+	else{
 		$filtered_title = $title . $site_name;
 	}
 
@@ -46,7 +46,7 @@ function accelerate_filter_wp_title( $title ) {
 	if( $paged >= 2 || $page >= 2 ) {
 		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'accelerate' ), max( $paged, $page ) );
 	}
-	
+
 	// Return the modified title
    return $filtered_title;
 }
@@ -113,13 +113,11 @@ function accelerate_featured_image_slider() {
 					}
 				}
 				?>
+   			</div>
+   			<a class="slide-next" href="#"><i class="fa fa-angle-right"></i></a>
+            <a class="slide-prev" href="#"><i class="fa fa-angle-left"></i></a>
 			</div>
-				<div class="slider-nav">
-				<a class="slide-next" href="#"><i class="fa fa-angle-right"></i></a>
-				<a class="slide-prev" href="#"><i class="fa fa-angle-left"></i></a>
-			</div>
-			</div>
-			
+
 			<nav id="controllers" class="clearfix"></nav>
 		</section>
 
