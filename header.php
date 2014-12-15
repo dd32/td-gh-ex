@@ -40,7 +40,7 @@
                 <div class="topphone">
                     <i class="topbarico genericon genericon-phone"></i>
                     <?php if ( of_get_option('top_bar_phone') ) : ?>
-                        <?php _e('Call us : ','itransform'); ?> <?php echo of_get_option('top_bar_phone'); ?>
+                        <?php _e('Call us : ','itransform'); ?> <?php echo esc_attr(of_get_option('top_bar_phone')); ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -49,7 +49,7 @@
                 <div class="topphone">
                     <i class="topbarico genericon genericon-mail"></i>
                     <?php if ( of_get_option('top_bar_email') ) : ?>
-                        <?php _e('Mail us : ','itransform'); ?> <?php echo of_get_option('top_bar_email'); ?>
+                        <?php _e('Mail us : ','itransform'); ?> <?php echo sanitize_email(of_get_option('top_bar_email')); ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>                
@@ -117,7 +117,7 @@
                 ?>               
             	<h1>
 					<?php if ( of_get_option('itrans_slogan') ) : ?>
-                    	<?php echo of_get_option('itrans_slogan'); ?>
+                    	<?php echo esc_attr(of_get_option('itrans_slogan')); ?>
                     <?php //else : ?> 
                     	<?php //printf( __( 'Welcome To ', 'itransform' ) ); ?><?php //bloginfo( 'name' ); ?>   
                     <?php endif; ?>
@@ -125,9 +125,6 @@
                 <?php
 					}
                 ?>
-            </div>
-            <div class="breadcrumb" style="text-align: left; max-width: 1600px; margin: 0px auto;">
-         
             </div>
         </div>
         

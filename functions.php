@@ -169,15 +169,14 @@ function itransform_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-
+	// Loads jquery masonry.
+	wp_enqueue_script( 'jquery-masonry' );
+	
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'modernizer-custom', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '2014-01-13', true );
 	
 	// Loads JavaScript file for scroll related functions and animations.
 	wp_enqueue_script( 'itransform-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), '2014-01-13', true );
-	
-	// Loads jquery isotope
-	wp_enqueue_script( 'itransform-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array( 'jquery' ), '2.1.0', true );
 	
 	// Loads JavaScript file for small screen side menu.
 	wp_enqueue_script( 'itransform-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2014-01-13', true );	

@@ -164,21 +164,19 @@ jQuery(document).ready(function($) {
 	});
 	*/
 	
-	
-	
-	/* footer area masonry 	*/
-	var $container = $('.site-footer .widget-area');
-	$container.isotope({
-	  itemSelector: '.widget',
-	  layoutMode: 'masonry'
+
+	// footer area masonry
+	var container_1 = document.querySelector('.site-footer .widget-area');
+	var msnry_1 = new Masonry( container_1, {
+	  //columnWidth: 60
 	});
 	
-	//Blog layout masonry
-	var $container2 = $('.blog.twocol-blog .blog-columns');
-	$container2.isotope({
-	  itemSelector: '.post',
-	  layoutMode: 'masonry'
+	// Two column Blog layout masonry
+	var container_2 = document.querySelector('.twocol-blog .blog-columns');
+	var msnry_2 = new Masonry( container_2, {
+	  //columnWidth: 60
 	});	
+	
 		
 	
 });
