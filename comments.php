@@ -11,7 +11,7 @@
 
 // Do not delete these lines
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-	die ('Please do not load this page directly. Thanks!');
+	die ( __('Please do not load this page directly. Thanks!', 'boldr' );
 
 if ( post_password_required() ):
 	?><p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'boldr'); ?></p><?php
@@ -20,7 +20,7 @@ endif;
 
 if ( have_comments() ):
 	?><h3 id="comments"><?php
-		printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ),
+		printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'boldr' ),
 					number_format_i18n( get_comments_number() ),  get_the_title() );
 	?></h3><?php
 
