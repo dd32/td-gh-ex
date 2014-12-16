@@ -46,11 +46,11 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'label' => __('Special Color', 'blogghiamo')
 	);
 	
-	foreach( $colors as $color ) {
+	foreach( $colors as $blogghiamo_theme_options ) {
 	// SETTINGS
 	$wp_customize->add_setting(
-		$color['slug'], array(
-			'default' => $color['default'],
+		$blogghiamo_theme_options['slug'], array(
+			'default' => $blogghiamo_theme_options['default'],
 			'type' => 'option', 
 			'sanitize_callback' => 'sanitize_hex_color',
 			'capability' => 'edit_theme_options'
@@ -60,10 +60,10 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			$color['slug'], 
-			array('label' => $color['label'], 
+			$blogghiamo_theme_options['slug'], 
+			array('label' => $blogghiamo_theme_options['label'], 
 			'section' => 'colors',
-			'settings' => $color['slug'])
+			'settings' => $blogghiamo_theme_options['slug'])
 		)
 	);
 	}
@@ -89,7 +89,7 @@ function blogghiamo_custom_css_styles() {
 	textarea,
 	a,
 	.menu-toggle {
-		color: <?php echo $text_color_first; ?>;
+		color: <?php echo esc_attr($text_color_first); ?>;
 	}
 	<?php endif; ?>
 	
@@ -109,7 +109,7 @@ function blogghiamo_custom_css_styles() {
 	#comments .reply a,
 	.menu-toggle:hover,
 	.menu-toggle:focus	{
-		color: <?php echo $box_color_second; ?>;
+		color: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header,
 	.crestaPostStripeInner,
@@ -117,10 +117,10 @@ function blogghiamo_custom_css_styles() {
 	.entry-content,
 	.entry-summary,
 	.menu-toggle {
-		background: <?php echo $box_color_second; ?>;
+		background: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.site-title {
-		text-shadow: 4px 3px 0px <?php echo $box_color_second; ?>, 9px 8px 0px rgba(0, 0, 0, 0.1);
+		text-shadow: 4px 3px 0px <?php echo esc_attr($box_color_second); ?>, 9px 8px 0px rgba(0, 0, 0, 0.1);
 	}
 	<?php endif; ?>
 	
@@ -136,7 +136,7 @@ function blogghiamo_custom_css_styles() {
 	.edit-link a, .tagcloud a,
 	#comments .reply,
 	.menu-toggle:focus, .menu-toggle:hover {
-		background: <?php echo $special_color_third; ?>;
+		background: <?php echo esc_attr($special_color_third); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -149,11 +149,11 @@ function blogghiamo_custom_css_styles() {
 	.top-search.active,
 	.edit-link a:hover, .tagcloud a:hover,
 	.page-links a span {
-		color: <?php echo $special_color_third; ?>;
+		color: <?php echo esc_attr($special_color_third); ?>;
 	}
 	blockquote {
-		border-left: 5px solid <?php echo $special_color_third; ?>;
-		border-right: 2px solid <?php echo $special_color_third; ?>;
+		border-left: 5px solid <?php echo esc_attr($special_color_third); ?>;
+		border-right: 2px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -168,10 +168,10 @@ function blogghiamo_custom_css_styles() {
 	.post-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,
 	.edit-link a:hover, .tagcloud a:hover	{
-		border: 1px solid <?php echo $special_color_third; ?>;
+		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	.widget-title:before, .theShareSpace:before {
-		border-top: 1.5em solid <?php echo $special_color_third; ?>;
+		border-top: 1.5em solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	<?php endif; ?>
 	

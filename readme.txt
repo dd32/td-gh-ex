@@ -69,3 +69,6 @@ Version 1.2.2
 Version 1.2.3
 * Accessibility update
 * Minor bug fixes
+
+Version 1.2.4
+* Minor bug fixes

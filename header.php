@@ -15,7 +15,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
 <![endif]-->
 
 <?php wp_head(); ?>
@@ -78,7 +78,7 @@
 			</div>
 			<?php if ( ! $se_options['hidesearch'] ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' ) ); ?>">
 							<label>
 								<span class="screen-reader-text"><?php _e( 'Search for:', 'blogghiamo' ); ?></span>
 								<input type="search" name="s" class="search" placeholder="<?php _e('Type here and hit enter...', 'blogghiamo'); ?>">

@@ -17,16 +17,6 @@ $blogghiamo_theme_options = array(
 	'tumblrurl' => '#'
 );
 
-function blogghiamo_toolbar_link_to_mypage( $wp_admin_bar ) {
-	$args = array(
-		'id'    => 'blogghiamo_theme_options',
-		'title' => __('Blogghiamo Theme Options', 'blogghiamo' ),
-		'href'  => admin_url('themes.php?page=theme_options')
-	);
-	$wp_admin_bar->add_node( $args );
-}
-add_action( 'admin_bar_menu', 'blogghiamo_toolbar_link_to_mypage', 999 );
-
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'blogghiamo_options_init' );

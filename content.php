@@ -18,7 +18,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg"><a href="' .get_permalink(). '"><span class="overlay-img"></span>';
-			the_post_thumbnail('normal-post');
+			the_post_thumbnail('blogghiamo-normal-post');
 			echo '</a></div>';
 		}
 	?>
