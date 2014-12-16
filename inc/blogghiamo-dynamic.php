@@ -29,43 +29,43 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	$colors = array();
 	
 	$colors[] = array(
-	'slug'=>'text_color_first', 
-	'default' => '#404040',
-	'label' => __('Text Color', 'blogghiamo')
+		'slug'=>'text_color_first', 
+		'default' => '#404040',
+		'label' => __('Text Color', 'blogghiamo')
 	);
 	
 	$colors[] = array(
-	'slug'=>'box_color_second', 
-	'default' => '#ffffff',
-	'label' => __('Box Color', 'blogghiamo')
+		'slug'=>'box_color_second', 
+		'default' => '#ffffff',
+		'label' => __('Box Color', 'blogghiamo')
 	);
 	
 	$colors[] = array(
-	'slug'=>'special_color_third', 
-	'default' => '#0a7db0',
-	'label' => __('Special Color', 'blogghiamo')
+		'slug'=>'special_color_third', 
+		'default' => '#0a7db0',
+		'label' => __('Special Color', 'blogghiamo')
 	);
 	
 	foreach( $colors as $blogghiamo_theme_options ) {
-	// SETTINGS
-	$wp_customize->add_setting(
-		$blogghiamo_theme_options['slug'], array(
-			'default' => $blogghiamo_theme_options['default'],
-			'type' => 'option', 
-			'sanitize_callback' => 'sanitize_hex_color',
-			'capability' => 'edit_theme_options'
-		)
-	);
-	// CONTROLS
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			$blogghiamo_theme_options['slug'], 
-			array('label' => $blogghiamo_theme_options['label'], 
-			'section' => 'colors',
-			'settings' => $blogghiamo_theme_options['slug'])
-		)
-	);
+		// SETTINGS
+		$wp_customize->add_setting( 'blogghiamo_theme_options[' . $blogghiamo_theme_options['slug'] . ']', array(
+				'default' => $blogghiamo_theme_options['default'],
+				'type' => 'option', 
+				'sanitize_callback' => 'sanitize_hex_color',
+				'capability' => 'edit_theme_options'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$blogghiamo_theme_options['slug'], 
+				array('label' => $blogghiamo_theme_options['label'], 
+				'section' => 'colors',
+				'settings' =>'blogghiamo_theme_options[' . $blogghiamo_theme_options['slug'] . ']',
+				)
+			)
+		);
 	}
 	
 }
@@ -75,9 +75,17 @@ add_action( 'customize_register', 'blogghiamo_color_primary_register' );
  * Add Custom CSS to Header 
  */
 function blogghiamo_custom_css_styles() { 
-	$text_color_first = get_option('text_color_first');
-	$box_color_second = get_option('box_color_second');
-	$special_color_third = get_option('special_color_third');
+	global $blogghiamo_theme_options;
+	$se_options = get_option( 'blogghiamo_theme_options', $blogghiamo_theme_options );
+	if( isset( $se_options[ 'text_color_first' ] ) ) {
+		$text_color_first = $se_options['text_color_first'];
+	}
+	if( isset( $se_options[ 'box_color_second' ] ) ) {
+		$box_color_second = $se_options['box_color_second'];
+	}
+	if( isset( $se_options[ 'special_color_third' ] ) ) {
+		$special_color_third = $se_options['special_color_third'];
+	}
 ?>
 
 <style type="text/css">

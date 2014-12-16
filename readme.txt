@@ -72,3 +72,6 @@ Version 1.2.3
 
 Version 1.2.4
 * Minor bug fixes
+
+Version 1.2.5
+* Minor bug fixes
