@@ -51,6 +51,6 @@ global $boxy;
 
 	</header><!-- #masthead -->
 
-<?php	if (! is_front_page() ) : ?>
+<?php	if ( ! is_front_page() ) : ?>
 	<div id="content" class="site-content container">
 <?php endif; ?>

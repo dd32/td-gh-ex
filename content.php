@@ -16,7 +16,7 @@ global $boxy;
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php if( isset($boxy['featured-image'] ) && $boxy['featured-image'] ) : ?>
+		<?php if( isset( $boxy['featured-image'] ) && $boxy['featured-image'] ) : ?>
 			<div class="thumb">
 				<?php 
 					if( has_post_thumbnail() && ! post_password_required() ) : 

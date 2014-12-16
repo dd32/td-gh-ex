@@ -36,5 +36,9 @@ are licensed under GPLv2
 15. 'Client Logo Carousel' works same as 'Flex Slider Options'
 16. Other theme options are self explanatory.
 
+== Change Log ==
+v. 1.0.5
+	* Added uncompressed font awesome css files
+	* Fixing Coding Standards
 v. 1.0.4
-Initial Release
+	* Initial Release

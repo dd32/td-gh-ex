@@ -11,13 +11,13 @@
  */
 
 	// cleaning up excerpt
-	add_filter('excerpt_more', 'boxy_excerpt_more');
+	add_filter( 'excerpt_more', 'boxy_excerpt_more' );
 
 	// This removes the annoying […] to a Read More link
-	function boxy_excerpt_more($excerpt) {
+	function boxy_excerpt_more( $excerpt ) {
 		global $post;
 		// edit here if you like
-		$output = sprintf(__('<p class="readmore"><a href="%1$s" title="Read %2$s">Read more &raquo;</a></p>','boxy'), esc_attr(get_permalink($post->ID)), esc_attr(get_the_title($post->ID)));
+		$output = sprintf( __( '<p class="readmore"><a href="%1$s" title="Read %2$s">Read more &raquo;</a></p>','boxy' ), esc_attr( get_permalink( $post->ID ) ), esc_attr( get_the_title( $post->ID ) ) );
 		return $output;
 	}
 

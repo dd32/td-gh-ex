@@ -4,7 +4,7 @@
  * For full documentation, please visit: https://github.com/ReduxFramework/ReduxFramework/wiki
  * */
 
-if ( !class_exists( "Redux_Framework_sample_config" ) ) {
+if ( ! class_exists( "Redux_Framework_sample_config" ) ) {
 
     class Redux_Framework_sample_config {
 
@@ -24,7 +24,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 
         public function initSettings() {
 
-            if ( !class_exists( "ReduxFramework" ) ) {
+            if ( ! class_exists( "ReduxFramework" ) ) {
                 return;
             }
 
@@ -40,7 +40,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
             // Create the sections and fields
             $this->setSections();
 
-            if ( !isset( $this->args['opt_name'] ) ) { // No errors please
+            if ( ! isset( $this->args['opt_name'] ) ) { // No errors please
                 return;
             }
 
