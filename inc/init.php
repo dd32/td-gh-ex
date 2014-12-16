@@ -7,7 +7,7 @@ add_action( 'sampression_init', 'sampression_constants' );
  */
 function sampression_constants() {
 
-	define( 'SAM_NAYA_LITE_VERSION', '1.0.10');
+	define( 'SAM_NAYA_LITE_VERSION', '1.0.11');
 
 	/** Define Directory Location Constants */
 	define( 'SAM_FW_THEME_DIR', get_template_directory() );
