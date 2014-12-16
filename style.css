@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/generator
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Generator is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Generator Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built slider and recent posts are touch friendly slider based on owl carousel. 
-Version: 2.2.1
+Version: 2.2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: orange, left-sidebar, right-sidebar, full-width-template, one-column, two-columns, responsive-layout, theme-options, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, post-formats , translation-ready
@@ -1329,6 +1329,10 @@ text-align: center;
 	padding: 15px !important;
 }
 }
+@media (max-width: 992px){
+    .main-sidebar{float: left; width: 100%;}
+    .left-sidebar .no-padding-left{float: left; width: 100%;}
+}
 @media (max-width:768px) {
 	.main-sidebar {
 		padding-left: 0 !important;
@@ -1336,6 +1340,7 @@ text-align: center;
 	}
 }
 @media (max-width:767px) {
+.back-radius-img-hover{margin: 0 3px 0 0;}
 .callbacks_nav {
 	background:none;
 }
@@ -1380,10 +1385,6 @@ text-align: center;
 }
 .menu-left {
 	float: left;
-}
-.thumbnail {
-	width: 35% !important;
-	margin: 0px auto !important;
 }
 .icon-email-phone {
 	padding: 0 0px 0 0;
@@ -1558,7 +1559,7 @@ header .margin-top-bottom-2 {
 }
 .margin-top-bottom-3 {
 	position: absolute;
-	margin-top: 163px !important;
+	margin-top: 150px !important;
 }
 .icon-menu ul {
 	list-style: none outside none;

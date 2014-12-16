@@ -62,3 +62,6 @@ Version 2.2 (19 Nov 2014)
 
 Version 2.2.1 (04 Dec 2014)
     i) Fixed "Translation ready" bugs.
+
+Version 2.2.2 (12 Dec 2014)
+    i) Fixed CSS issue.
