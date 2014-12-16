@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/customizable
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Pro version is a paid version which has several other options like 6 color schemes, different page templates, more Google Fonts options etc.
-Version: 2.1.2
+Version: 2.1.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
@@ -400,7 +400,7 @@ a:hover, a:focus {
 .customize-menu > ul li > ul li a {
 	background-image: url("images/li.png");
 	background-repeat: no-repeat;
-	background-position: center left 10px;
+	background-position: 10px 15px;
 	padding: 5px 15px 5px 25px;
 	text-transform: capitalize;
 	width: 100%;
@@ -761,6 +761,7 @@ a:hover, a:focus {
 	padding: 0;
 	float: left;
 	max-width: 100%;
+        margin-top: 15px;
 }
 .top_footer {
 	width: 100%;
@@ -780,6 +781,7 @@ a:hover, a:focus {
 	font-size: 16px;
 	color: #f6f6f6;
 	text-transform: uppercase;
+        display: inline-block;
 }
 .footer-widget li {
 	margin: 0;
@@ -1297,6 +1299,7 @@ li.menu-divider:last-child {display:none;}
 .download-theme{
 	background-color:#00bee0;
 	padding: 10px 0 !important;
+        margin-top: 30px;
 }
 .download-theme p{
 	color:#FFF;
@@ -1428,7 +1431,7 @@ li.menu-divider:last-child {display:none;}
     color: #2a6496;
 }
 /******************************/
-@media (max-width:1200px) {
+@media (max-width:1250px) {
 	.customize-container{
 		width:auto;
 	}
@@ -1454,6 +1457,9 @@ li.menu-divider:last-child {display:none;}
 		.tagcloud {
     text-align: center;
 	padding-left:7px;
+}
+.customizable-home-icom .back-icon{
+    width: 24%;
 }
 .logo img{
 	display: inline !important;
@@ -1654,6 +1660,10 @@ li.menu-divider:last-child {display:none;}
 	}
 }
 @media(min-width:768px) and (max-width:1024px)	{
+    .download-theme .btn-group{float: right;}
+    .customize-menu > ul{margin-top: 15px; text-align: left;}
+.customize-menu > ul > li{margin-bottom: 5px;}
+
 .logo{
 	width:30% !important;
 }
