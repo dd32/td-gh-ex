@@ -5,7 +5,7 @@ Description: MyWiki is simple, lightweight and faster WordPress Theme for indivi
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: responsive-layout, custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
-version: 2.2.1
+version: 2.2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -322,6 +322,7 @@ body.admin-bar .navbar-fixed-top {
 #content img {
 	height: auto;
 	max-width: 100%;
+        margin-bottom: 15px;
 }
 .post_content {
 	width: 100% !important;
@@ -369,9 +370,9 @@ span.holdimg {
 	padding: 0.6em;
 }
 .gallery-caption {
-	font-weight: 90%;
+	font-weight: 900;
 }
- . .bypostauthor {
+.bypostauthor {
  color:#999;
 }
 #all_comments ul {
@@ -421,6 +422,7 @@ a.cboxElement:hover img {
 	margin: 15px 0 15px;
 	padding-bottom: 9px;
 	font-size: 22px;
+        padding-left: 30px;
 }
 .cat-main-section {
 	float: left;
@@ -605,9 +607,6 @@ div.input-group-btn button.btn-info {
 }
 #footer a:hover {
 	color: #FFF !important;
-}
-#footer .container {
-	padding: 20px 0;
 }
 hr {
 	margin: 0px;
@@ -1707,7 +1706,19 @@ input[type="submit"] {
 }
 
 /* Responsive Style */
-
+@media (max-width: 640px){
+    .mywiki-nav-previous {
+    float: left;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+.mywiki-nav-next {
+    float: right;
+    text-align: center;
+    width: 100%;
+}
+}
 @media (max-width: 359px) {
 #home-main .page-catheader .page-title {
 	margin-left: 13%;
@@ -1758,6 +1769,9 @@ input[type="submit"] {
 	text-align: center;
 }
 }
+ @media (max-width: 767px) {
+    #mc_embed_signup form{padding: 0;}
+ }
  @media (min-width: 768px) and (max-width: 979px) {
 #home-main .page-catheader .page-title {
 	margin-left: 10%;
@@ -1884,4 +1898,7 @@ input[type="submit"] {
 }
 .gallery-columns-7 .gallery-caption, .gallery-columns-8 .gallery-caption, .gallery-columns-9 .gallery-caption {
 	display: none;
+}
+.post_content p iframe{
+    width: 100%;
 }

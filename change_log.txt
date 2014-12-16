@@ -90,3 +90,6 @@ Version 2.2 (24th Nov. 2014)
 	
 Version 2.2.1 (5th Dec. 2014)
     i) A few small fixes.
+
+Version 2.2.2 (12th Dec. 2014)
+    i) Fixed CSS issue.
