@@ -68,7 +68,7 @@ get_header( 'shop' ); ?>
 							if ( $availability['availability'] )
 							echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
 							else
-							echo "<p>"._e('Out Stock','multishop')."</p>";
+							echo "<p>".__('Out Stock','multishop')."</p>";
 							?>
             <span><?php echo $product->get_price_html(); ?></span> </div>
           <div class="product-count">

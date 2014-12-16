@@ -70,11 +70,11 @@ function fastertheme_framework_page(){
     <div class="logo">
       <?php
 		$multishop_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$multishop_image."' alt='"._e('FasterThemes','multishop')."' /></a>";
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$multishop_image."' alt='".__('FasterThemes','multishop')."' /></a>";
 		?>
     </div>
     <div class="header-right">
-		<h1> <?php _e( 'Theme Options', 'laurels' ) ?> </h1>
+		<h1> <?php _e( 'Theme Options', 'multishop' ) ?> </h1>
 		<div class='btn-save'><input type='submit' class='button-primary' value='<?php _e('Save Options','multishop'); ?>' /></div>
 	</div>
 
@@ -107,7 +107,7 @@ function fastertheme_framework_page(){
                 <input id="logo-img" class="upload" type="text" name="multishop_theme_options[logo]" value="<?php if(!empty($multishop_options['logo'])) { echo esc_url($multishop_options['logo']); } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                 <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($multishop_options['logo'])) { echo "<img src='".esc_url($multishop_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($multishop_options['logo'])) { echo "<img src='".esc_url($multishop_options['logo'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
                 
               </div>
@@ -122,7 +122,7 @@ function fastertheme_framework_page(){
                             value="<?php if(!empty($multishop_options['favicon'])) { echo esc_url($multishop_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                   <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
                   <div class="screenshot" id="favicon-image">
-                    <?php  if(!empty($multishop_options['favicon'])) { echo "<img src='".esc_url($multishop_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                    <?php  if(!empty($multishop_options['favicon'])) { echo "<img src='".esc_url($multishop_options['favicon'])."' /><a class='remove-image'></a>"; } ?>
                   </div>
                 </div>
                 
@@ -179,7 +179,7 @@ function fastertheme_framework_page(){
                 <input id="image_section1" class="upload" type="text" name="multishop_theme_options[img-section-1]" value="<?php if(!empty($multishop_options['img-section-1'])) { echo $multishop_options['img-section-1']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
                 <div class="screenshot" id="image_section1">
-                  <?php if(!empty($multishop_options['img-section-1'])) {  echo "<img src='".esc_url($multishop_options['img-section-1'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($multishop_options['img-section-1'])) {  echo "<img src='".esc_url($multishop_options['img-section-1'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@ function fastertheme_framework_page(){
                 <input id="image_section2" class="upload" type="text" name="multishop_theme_options[img-section-2]" value="<?php if(!empty($multishop_options['img-section-2'])) { echo $multishop_options['img-section-2']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
                 <div class="screenshot" id="image_section2">
-                  <?php if(!empty($multishop_options['img-section-2'])) {  echo "<img src='".esc_url($multishop_options['img-section-2'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($multishop_options['img-section-2'])) {  echo "<img src='".esc_url($multishop_options['img-section-2'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ function fastertheme_framework_page(){
                 <input id="image_section3" class="upload" type="text" name="multishop_theme_options[img-section-3]" value="<?php if(!empty($multishop_options['img-section-3'])) { echo $multishop_options['img-section-3']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
                 <div class="screenshot" id="image_section3">
-                  <?php if(!empty($multishop_options['img-section-3'])) {  echo "<img src='".esc_url($multishop_options['img-section-3'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($multishop_options['img-section-3'])) {  echo "<img src='".esc_url($multishop_options['img-section-3'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
             </div>

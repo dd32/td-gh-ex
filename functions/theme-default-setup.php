@@ -193,7 +193,7 @@ function multishop_comment( $comment, $multishop_args, $depth ) {
 						?>
     </div>
     <div class="multishop-comment-datetime">
-    <?php printf( __(get_comment_date(_x('M j, Y \a\t g:i a','multishop')))); ?>
+    	<?php printf( __('%1$s', 'multishop' ), get_comment_date() ); ?> 
     </div>
     <div class="multishop-comment-text blog-post-comment-text comment">
       <?php  comment_text(); ?>
