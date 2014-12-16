@@ -1,10 +1,13 @@
 <?php
 /**
- * The template for displaying search forms in catchbase
+ * The template for displaying search forms
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
+
 <?php $options 	= catchbase_get_theme_options(); // Get options ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label>

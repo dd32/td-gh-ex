@@ -45,8 +45,12 @@
 
         if (value == 'demo-featured-content') {
             $('#customize-control-catchbase_theme_options-featured_content_number').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
         } else {
             $('#customize-control-catchbase_theme_options-featured_content_number').show();
+            $('#customize-control-catchbase_theme_options-featured_content_headline').show();
+            $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
         }
 
         if (value == 'featured-page-content') {
@@ -63,8 +67,12 @@
         var value = $("#customize-control-catchbase_theme_options-featured_content_type label select").val();
         if (value == 'demo-featured-content') {
             $('#customize-control-catchbase_theme_options-featured_content_number').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
         } else {
             $('#customize-control-catchbase_theme_options-featured_content_number').show();
+            $('#customize-control-catchbase_theme_options-featured_content_headline').show();
+            $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
         }
 
         if (value == 'featured-page-content') {
@@ -82,8 +90,12 @@
 
     if (catchbase_featured_content_layout_value == 'demo-content') {
         $('#customize-control-catchbase_theme_options-featured_content_number').hide();
+        $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
+        $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
     } else {
         $('#customize-control-catchbase_theme_options-featured_content_number').show();
+        $('#customize-control-catchbase_theme_options-featured_content_headline').show();
+        $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
     }
 
     if (catchbase_featured_content_layout_value == 'featured-page-content') {

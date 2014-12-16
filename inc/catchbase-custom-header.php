@@ -1,11 +1,10 @@
 <?php
 /**
- * 
- * http://codex.wordpress.org/Custom_Headers
+ * Implement Custom Header functionality
  *
- * @package Catchbase
- * @subpackage Catchbase
- * @since Catchbase 1.0
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
@@ -44,6 +43,7 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
 		'random-default'         => false,	
 			
 		// Callbacks for styling the header and the admin preview.
+		'wp-head-callback'       => 'catchbase_header_style',
 		'admin-head-callback'    => 'catchbase_admin_header_style',
 		'admin-preview-callback' => 'catchbase_admin_header_image',
 	);
@@ -56,6 +56,38 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
 	}
 endif; // catchbase_custom_header
 add_action( 'after_setup_theme', 'catchbase_custom_header' );
+
+
+if ( ! function_exists( 'catchbase_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @see catchbase_custom_header()
+ *
+ * @since Catch Base 0.3
+ */
+function catchbase_header_style() {
+
+	// If no custom options for text are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+		return;
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' != get_header_textcolor() ) { ?>
+			.site-title a,
+			.site-description {
+				color: #<?php echo get_header_textcolor(); ?> !important;
+			}
+	<?php
+	} ?>
+	</style>
+	<?php
+}
+endif; // catchbase_header_style
 
 
 if ( ! function_exists( 'catchbase_admin_header_style' ) ) :
@@ -122,18 +154,6 @@ function catchbase_admin_header_style() {
 			color: #' . get_header_textcolor() . ';
 		}';
 	}
-	if( $defaults[ 'site_title_color' ] != $options[ 'site_title_color' ] ) {
-		echo "#site-branding .site-title a { color: ".  $options[ 'site_title_color' ] ."; }". "\n";
-	}
-
-	if( $defaults[ 'site_title_hover_color' ] != $options[ 'site_title_hover_color' ] ) {
-		echo "#site-branding .site-title a:hover { color: ".  $options[ 'site_title_hover_color' ] ."; }". "\n";
-	}
-
-	if( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) {
-		echo "#site-branding .site-description { color: ".  $options[ 'tagline_color' ] ."; }". "\n";
-	}
-
 	 ?>	
 	</style>
 <?php
@@ -172,9 +192,10 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 	 * @since Catchbase 1.0
 	 */
 	function catchbase_site_branding() {
+		//catchbase_flush_transients();
 		$options 			= catchbase_get_theme_options();
 
-		$style 				= sprintf( ' style="color:#%s;"', get_header_textcolor() );
+		//$style 				= sprintf( ' style="color:#%s;"', get_header_textcolor() );
 
 		//Checking Logo
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
@@ -193,8 +214,8 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 			// Show header text if display_header_text is checked
 			$catchbase_header_text = '
 			<div id="site-header">
-				<h1 class="site-title"><a' . $style . ' href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
-				<h2 class="site-description"' . $style . '>' . get_bloginfo( 'description' ) . '</h2>
+				<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
+				<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
 			</div><!-- #site-header -->';
 		}
 		else {

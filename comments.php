@@ -1,11 +1,10 @@
 <?php
 /**
- * The template for displaying Comments.
+ * The template for displaying Comments
  *
- * The area of the page that contains both current comments
- * and the comment form.
- *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 /*

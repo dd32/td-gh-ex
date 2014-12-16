@@ -1,10 +1,12 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying Archive pages
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 get_header(); ?>

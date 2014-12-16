@@ -1,10 +1,10 @@
 <?php
 /**
- * Secondary Sidebar
+ * The Secondary Sidebar containing the secondary widget area
  *
- * @package Catchbase
- * @subpackage Catchbase Pro
- * @since Catchbase 1.0
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
 

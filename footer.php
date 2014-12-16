@@ -1,12 +1,13 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * Contains the closing of the id=main div and all content after
- *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
+
 <?php 
     /** 
      * catchbase_after_content hook
@@ -14,6 +15,7 @@
      * @hooked catchbase__content_sidebar_wrap_end - 10
      * @hooked catchbase_sidebar_secondary (three-column) - 20 
      * @hooked catchbase_content_end - 30
+     * @hooked catchbase_featured_content_display (move featured content below homepage posts) - 40 
      *
      */
     do_action( 'catchbase_after_content' ); 

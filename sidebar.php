@@ -1,10 +1,10 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * The Sidebar containing the primary widget area
  *
- * @package Catchbase
- * @subpackage Catchbase Pro
- * @since Catchbase 1.0
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
 
@@ -89,6 +89,5 @@ do_action( 'catchbase_before_secondary' );?>
 /** 
  * catchbase_after_secondary hook
  *
- * @hooked catchbase_featured_content_display (move featured content below homepage posts) 10 
  */
 do_action( 'catchbase_after_secondary' );

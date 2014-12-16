@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying Search Results pages
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 get_header(); ?>

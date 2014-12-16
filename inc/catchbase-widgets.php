@@ -7,9 +7,9 @@
  *
  * Functions that adds custom sidebars and widgets to catchbase
  *
- * @package Catchbase
- * @subpackage Catchbase
- * @since Catchbase 1.0
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -60,17 +60,6 @@ function catchbase_widgets_init() {
 			'description'	=> sprintf( __( 'Footer %d widget area.', 'catchbase' ), $i ),
 		) );
 	}
-
-	//Header Right
-	register_sidebar( array(
-		'name'          => __( 'Header Right', 'catchbase' ),
-		'id'            => 'header-right',
-		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
-		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the header right widget area. It typically appears on the right of the site title or logo. This widget area is not equipped to display any widget, and works best with a custom menu assigned as header right menu, a search form, social icons widget or possibly a text widget.', 'catchbase' ),
-	) );
 }
 add_action( 'widgets_init', 'catchbase_widgets_init' );
 

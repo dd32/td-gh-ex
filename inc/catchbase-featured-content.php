@@ -1,10 +1,10 @@
 <?php
 /**
- * Catchbase Featured Content display
+ * The template for displaying the Featured Content
  *
- * @package Catchbase
- *
- * @since Catchbase 1.0
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -59,6 +59,11 @@ function catchbase_featured_content_display() {
 			elseif ( $contentselect == 'featured-page-content' ) {
 				$classes .= ' featured-page-content' ;
 			}
+
+			if ( '1' == $options [ 'move_posts_home' ] ) {
+				$classes .= ' border-top' ;
+			}
+
 			$catchbase_featured_content ='
 				<section id="featured-content" class="' . $classes . '">
 					<div class="wrapper">
@@ -104,7 +109,7 @@ function catchbase_featured_content_display_position() {
 	if ( !$options['move_posts_home'] ) { 
 		add_action( 'catchbase_before_content', 'catchbase_featured_content_display', 40 );
 	} else {
-		add_action( 'catchbase_after_secondary', 'catchbase_featured_content_display', 10 );
+		add_action( 'catchbase_after_content', 'catchbase_featured_content_display', 40 );
 	}
 	
 }

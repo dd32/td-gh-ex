@@ -1,10 +1,10 @@
 /*
 Theme Name: Catch Base
 Theme URI: http://catchthemes.com/themes/catch-base
-Author: Catch Themes Team
+Author: Catch Themes
 Author URI: http://catchthemes.com/
-Description: Catch Base is a simple, clean and responsive WordPress Theme. This theme can be use as base theme for your theme development or custom site development. This theme is built in HTML3, CSS3 and WordPress core customizer for easy real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
-Version: 0.2
+Description: If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
+Version: 1.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catchbase
@@ -616,8 +616,7 @@ blockquote:before {
 	padding-bottom: 0;
 }
 
-.blog #main .entry-container,
-.archive #main .entry-container {
+.archive-post-wrap {
 	padding-bottom: 20px;
 }
 
@@ -701,7 +700,8 @@ input[type="submit"] {
 	padding: 9px 15px;
 }
 
-p {
+p,
+.hentry .featured-image {
     margin-bottom: 20px;
 }
 
@@ -971,7 +971,7 @@ textarea {
 	-ms-transition:     opacity .4s ease-in-out;
 	-o-transition:      opacity .4s ease-in-out;
 	transition:         opacity .4s ease-in-out;
-	width: 200px;
+	width: 250px;
 	z-index: 200;
 }
 
@@ -985,7 +985,7 @@ textarea {
 	background-color: #fff;
 	border: 1px solid #eee;
 	position: relative;
-	width: 200px;
+	width: 250px;
 }
 
 .catchbase-nav-menu .sub-menu a,
@@ -1013,7 +1013,7 @@ textarea {
 .catchbase-nav-menu .children .children,
 .sidebar-header-right .widget_nav_menu .sub-menu .sub-menu {
 	border-top: 1px solid #eee;
-	margin: -55px 0 0 199px;
+	margin: -43px 0 0 249px;
 }
 
 .nav-secondary .sub-menu .sub-menu,
@@ -1245,6 +1245,8 @@ textarea {
 9. Clearings
 --------------------------------------------------------------*/
 .clear:after,
+.hentry:after,
+.archive-post-wrap:after,
 .wrapper:after,
 .catchbase-nav-menu:after,
 .featured-content-wrap:after,
@@ -1354,11 +1356,22 @@ textarea {
 	text-decoration: none;
 }
 
+#promotion-message .left {
+    max-width: 80%;
+}
+#promotion-message .right {
+    max-width: 20%;
+}
 /*--------------------------------------------------------------
 12. Featured Content Area
 --------------------------------------------------------------*/
 #featured-content {
 	border-bottom: 1px solid #eee;	
+}
+
+#featured-content.border-top {
+	border-top: 1px solid #eee;
+	border-bottom: none;
 }
 
 #feature-heading {
@@ -1396,6 +1409,17 @@ textarea {
     line-height: 0;
 }
 
+.one-column .layout-four .featured-content-wrap {
+    margin-left: -2%;
+    width: 102%;
+}
+.one-column #featured-content.layout-four .hentry {
+    margin-left: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 23%;
+}
+
 /*--------------------------------------------------------------
 13. Content
 --------------------------------------------------------------*/
@@ -1409,8 +1433,7 @@ textarea {
 	width: 340px;
 }
 
-.blog #main .entry-container,
-.archive #main .entry-container,
+.archive-post-wrap,
 .page-header .page-title {
     border-bottom: 1px solid #eee;
 }
@@ -1468,7 +1491,7 @@ textarea {
 	width: 240px;
 }
 
-/* Catchbase Three Columns (Equal Sidebars) */
+/* Three Columns (Equal Sidebars) */
 .three-columns.equal-sidebars #content_sidebar_wrap {
 	width:  820px;
 }
@@ -1481,7 +1504,7 @@ textarea {
 	width: 340px;
 }
 
-/* Catchbase Three Columns (Equal Columns) */
+/* Three Columns (Equal Columns) */
 .three-columns.equal-columns #content_sidebar_wrap {
     width: 773px;
 }
@@ -1495,7 +1518,7 @@ textarea {
     width: 387px;
 }
 
-/* Catchbase Three Content Left */
+/* Three Content Left */
 .three-columns.content-left .sidebar-secondary,
 .three-columns.content-left .sidebar-secondary {
 	float: right;
@@ -1505,12 +1528,12 @@ textarea {
 	float: left;
 }
 
-/* Catchbase Three Content Right */
+/* Three Content Right */
 .three-columns.content-right #content_sidebar_wrap #main {
 	float:  right;
 }
 
-/* Catchbase One Column (No Sidebar, Content Width) */
+/* One Column (No Sidebar, Content Width) */
 .no-sidebar.content-width #main {
     display: block;
     float: none;
@@ -1518,7 +1541,7 @@ textarea {
     width: 820px;
 }
 
-/* Catchbase One Column (One Column) */
+/* One Column (One Column) */
 .no-sidebar.one-column .site {
     width: 860px;
 }
@@ -1527,9 +1550,123 @@ textarea {
 	width: 820px;
 }
 
-/* Catchbase One Column (No Sidebar, Full Width) */
+/* One Column (No Sidebar, Full Width) */
 .no-sidebar.full-width #main {
     width: 100%;
+}
+
+/* Layout Options with Featured Image on Left */
+.has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
+.has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
+.has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
+	display: inline;
+    float: left;	
+}
+
+.has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
+.has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
+.has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
+	display: inline;
+    float: right;
+}
+
+.has-post-thumbnail.excerpt-portrait-featured-image .featured-image {
+	width: 169px;
+}
+
+.has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
+	width: 200px;
+}
+
+.has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
+	width: 150px;
+}
+
+/* Three Colummns */
+/* Show Excerpt Portrait Featured Image */
+.has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
+    width: 351px;
+}
+
+/* Show Excerpt Landscape Featured Image */
+.has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
+    width: 320px;
+}
+
+/* Show Excerpt Thumbnail Featured Image */
+.has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
+    width: 370px;
+}
+
+/* Three Colummns, Equal Primary and Secondary */
+/* Show Excerpt Portrait Featured Image */
+.equal-sidebars .has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
+    width: 251px;
+}
+
+/* Show Excerpt Landscape Featured Image */
+.equal-sidebars .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
+    width: 250px;
+}
+
+.equal-sidebars .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
+    width: 170px;
+}
+
+/* Show Excerpt Thumbnail Featured Image */
+.equal-sidebars .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
+    width: 270px;
+}
+
+/* Three Colummns, Equal Columns ( width 346px ) */
+.equal-columns .has-post-thumbnail .featured-image {
+	text-align: center;
+	width:  100%
+}
+
+.equal-columns .has-post-thumbnail .entry-container {
+	clear: both;
+    width: 100%;
+}
+
+/* Two Colummns, One Column  */
+/* Show Excerpt Portrait Featured Image */
+.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
+.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
+    width: 300px;
+}
+
+.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
+.no-sidebar .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
+    width: 591px;
+}
+
+/* Show Excerpt Landscape Featured Image */
+.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
+.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
+    width: 460px;
+}
+
+/* Show Excerpt Thumbnail Featured Image */
+.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container,
+.no-sidebar .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
+    width: 610px;
+}
+
+/* Full Width */
+/* Show Excerpt Portrait Featured Image */
+.full-width .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
+    width: 911px;
+}
+
+/* Show Excerpt Landscape Featured Image */
+.full-width .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
+    width: 780px;
+}
+
+/* Show Excerpt Thumbnail Featured Image */
+.full-width .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
+    width: 930px;
 }
 
 /*--------------------------------------------------------------
@@ -1628,6 +1765,11 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+.hentry .featured-image a {
+    display: block;
+    line-height: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1736,6 +1878,11 @@ caption {
 
 #supplementary.four .widget-area {
 	width: 290px;
+}
+
+#site-generator.one #footer-left-content,
+#site-generator.one #footer-right-content {
+	width: 100%;
 }
 
 #footer-left-content,

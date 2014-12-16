@@ -1,10 +1,12 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
+ * The template part for displaying a message that posts cannot be found
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
 <section class="no-results not-found">

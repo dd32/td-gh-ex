@@ -1,4 +1,23 @@
-== Changelog ==
+== Change log ==
 
 = 1.0 =
-* Initial Release
+* Fixed Sub-menu issue
+* Fixed featured image issue in archive pages
+* Fixed color scheme
+* Fixed frontpage category options
+* Fixed content width 
+* Fixed featured content postions
+* Removed dark-noise.png image
+* Removed unnecessary header right sidebar
+* Removed default favicon and webclip icon
+* Standardize code quality
+* Updated stylesheets
+* Updated theme customizer types
+* Updated readme.txt and theme description
+* Updated genericons to version 3.3
+
+= 0.2 =
+* Initial Release in Catchthemes.com
+
+= 0.1 =
+* Submitted to WordPress.org

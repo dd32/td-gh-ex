@@ -45,4 +45,4 @@ In catch-base/sidebar.php:
 
 
 In catch-base/single.php:
-   catchbase_comment_section
+	catchbase_comment_section

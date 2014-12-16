@@ -1,6 +1,6 @@
 === Catch Base ===
 
-Catch Base is a simple, clean and responsive WordPress Theme. This theme can be use as base theme for your theme development or custom site development. This theme is built in HTML3, CSS3 and WordPress core customizer for easy real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
+If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
 
 
 == Support ==
@@ -57,7 +57,8 @@ JS Files
 = Custom Menus =
 
 Catch Base theme supports two custom menus that is primary and secondary. 
-To create a custom menu, go to Appearance -> Menus in your dashboard.
+To create a custom menu, go to Appearance -> Menus in your dashboard. 
+For more about custom menu, check out http://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
 
@@ -73,7 +74,7 @@ To add featured page slider,
 1. Create a Page and then add Featured Image to the Page.
 2. Go to "Appearance -> Customize -> Featured Slider Options" from your WordPress Dashboard
 3. Under Featured Slider Type, you need to select "Featured Page Slider"
-4. Then you change the number of slides and select your pages in "Featured Page #"
+4. Then you can change the number of slides and select your pages in "Featured Page #"
 4. Finally, click on "Save & Publish"
 
 Note: You can also change Enable Slider, slider effects, delay and length under Featured Slider Settings.
@@ -89,3 +90,8 @@ Note: By default social links will be added in Header Right Section. You can als
 = Theme Instructions =
 
 For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/catch-base/
+
+
+== Change Log ==
+
+Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/catch-base-theme/

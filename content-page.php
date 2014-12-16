@@ -2,7 +2,9 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
 

@@ -1,6 +1,10 @@
 <?php
 /**
- * @package Catchbase
+ * The template used for displaying post content in single.php
+ *
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 ?>
 

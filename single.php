@@ -1,8 +1,10 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The Template for displaying all single posts
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 get_header(); ?>

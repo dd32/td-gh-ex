@@ -1,8 +1,10 @@
 <?php
 /**
- * The Footer Sidebar containing the footer widget areas.
+ * The Footer Sidebar containing the footer widget areas
  *
- * @package Catchbase
+ * @package Catch Themes
+ * @subpackage Catch Base
+ * @since Catch Base 1.0 
  */
 
 /* The footer widget area is triggered if any of the areas
