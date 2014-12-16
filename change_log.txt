@@ -75,3 +75,6 @@ Version 1.4.2 (17th Nov. 2014)
    
 Version 1.4.3 (9th Dec 2014)
     i) Made it translation ready.
+
+Version 1.4.4 (16th Dec 2014)
+    i) Fix CSS issue.

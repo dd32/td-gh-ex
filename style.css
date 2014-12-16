@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/foodrecipes
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.4.3
+Version: 1.4.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, full-width-template, one-column, two-columns, fluid-layout, responsive-layout, theme-options, custom-background, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post , translation-ready
@@ -151,7 +151,7 @@ body {
 .menu-foodrecipes ul li a {
 	color: #000 !important;
 	text-decoration: none;
-	background-color: rgba(255, 255, 255, 0.9) !important;
+	background-color: rgba(232, 232, 232, 1) !important;
 }
 .menu-foodrecipes ul li a:hover, .menu-foodrecipes ul li a:focus, .menu-foodrecipes ul li a:active {
 	color: #FF7E00 !important;
@@ -186,7 +186,7 @@ body {
 .menu-foodrecipes ul li:first-child > a:after {
 	content: '';
 	position: absolute;
-	left: 46%;
+	left: 20%;
 	top: -6px;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
@@ -220,6 +220,8 @@ body {
 /***************footer*****************/
 .footer {
 	background-color: #333;
+        float: left;
+        width: 100%;
 }
 .footer h2 {
 	color: #CCC;
@@ -429,9 +431,12 @@ body {
 	border-top: 3px double #6e6e6e;
 }
 .foodrecipes-inner-blog-text img {
-	max-width: 100%;
-	height: auto;
-	margin-bottom: 10px;
+	float: left;
+    height: auto;
+    margin-bottom: 10px;
+    max-width: 100%;
+    margin-right: 15px;
+
 }
 .alignleft {
 	display: inline;
@@ -1046,4 +1051,19 @@ header .foodrecipes-container-recipes {
 }
 .comment-respond label {
 	width:80px;
+}
+
+/***media***/
+@media (max-width: 767px){
+.foodrecipes-post-title,
+.archive-breadcrumb,
+.foodrecipes-inner-blog-text > h1{text-align: center;width: 100%;}
+.main-sidebar .blog-categories ul{padding: 0;}
+.comment-form-comment textarea{width: 100%;}
+.archive-breadcrumb{padding-left: 0;}
+}
+@media (min-width: 768px) and (max-width: 1024px){
+.menu-foodrecipes a{
+	padding: 5px 15px;
+}
 }
