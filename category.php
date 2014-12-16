@@ -43,7 +43,12 @@ get_header();
             <!-- .post-->
         </div>
         <!-- #content-->
-        <?php sampression_right_sidebar() ?>
+        <?php 
+            $position = sampression_sidebar_position();
+            if ($position === 'right') {
+                get_sidebar();
+            }                           
+        ?>
     </div>
 </section>
 <!-- .block-->

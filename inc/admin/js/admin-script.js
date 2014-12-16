@@ -1,10 +1,3 @@
-//Checked till line number 740
-
-
-var urlPattern = /^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i;
-
-var form_clean;
-
 jQuery.fn.selectText = function(){
    var doc = document;
    var element = this[0];
@@ -22,39 +15,43 @@ jQuery.fn.selectText = function(){
    }
 };
 
-
-// serialize sampression form.
-jQuery(function($) {
-    form_clean = $("form#sampression-metadata").serialize();
-    if ($('[name="meta_data"]').val() == 'custom_css_settings') {
-        form_clean = $('#sam-custom-code').val();
-    }
-});
-
 jQuery(document).ready(function($) {
+    
+/* Simple Tabination */	
+//Default Action
+	jQuery(".tab_content").hide(); //Hide all content
+			
+	if( jQuery.cookie("active-tab")!=null){		
+		var lastActiveTab = jQuery.cookie("active-tab"); //retriving cookie value
+		//alert(lastActiveTab);
+		jQuery("ul.tabs li a[href="+lastActiveTab+"]").parent().addClass("current"); //Activate tab from cookie value
+		jQuery(lastActiveTab).show();
+	} else {		
+		jQuery("ul.tabs li:first").addClass("current").show(); //Activate first tab
+		jQuery(".tab_content:first").show(); //Show first tab content
+	} 
+	//On Click Event
+	jQuery("ul.tabs li").click(function() {
+		jQuery("ul.tabs li").removeClass("current"); //Remove any "active" class
+		jQuery(".tab_content").hide(); //Hide all tab content                
+		jQuery(this).addClass("current"); //Add "active" class to selected tab
+		var activeTab = jQuery(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		jQuery(activeTab).slideDown(600); //Fade in the active content
+		jQuery.cookie("active-tab", activeTab, { expires: 1 });
+		return false;
+	});
+
     
     $('body').addClass('noJS');
     var bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.className = bodyTag.className.replace("noJS", "hasJS");
     
-    $('pre.select-me').live('click', function() {
+    $('pre.select-me').on('click', function() {
         $(this).selectText();
-    });
-    
-    /* serialize sampression form after modification of form and
-     check if any form element has been changed.*/
-    $(window).on('beforeunload', function() {
-        var form_dirty = jQuery("form#sampression-metadata").serialize();
-        if ($('[name="meta_data"]').val() == 'custom_css_settings') {
-            form_dirty = editor.getValue();
-        }
-        if (form_clean != form_dirty) {
-            return "The changes that you have made has not been saved yet, are you sure you want to leave?";
-        }
     });
 
     // check confirmation for restoring theme to default.
-    $('.sampression-restore').live('click', function() {
+    $('.sampression-restore').on('click', function() {
         var answer = confirm('Do you want to restore theme to default?');
         if (answer) {
             return true;
@@ -77,33 +74,9 @@ jQuery(document).ready(function($) {
             i.slideUp(1000);
         }, 5000);
     });
-    
-    // generate wp slug for a string.
-    $('#new-widget-name, #edit-widget-name').live('blur', function() {
-        var i = $(this);
-        var val = i.val();
-        var data = {
-            action: 'return_slug',
-            value: val
-        };
-        jQuery.post(ajaxurl, data,
-                function(response) {
-                    i.next('input.widget-slug').val(response);
-                });
-        return false;
-    });
-
-    //Show blog from the following categories - Check all checkboxes and uncheck all checkboxes.
-    $('#show-all-categories').live('click', function() {
-        if ($(this).is(':checked')) {
-            $('.show-categories').attr('checked', 'checked');
-        } else {
-            $('.show-categories').removeAttr('checked');
-        }
-    });
 
     //Show Meta - Blog Page Setting - check/uncheck checkbox
-    $('.show-meta').live('click', function() {
+    $('.show-meta').on('click', function() {
         var id = $(this).attr('for');
         if ($('#' + id).is(':checked')) {
             $('#show-' + id).val('no');
@@ -112,176 +85,8 @@ jQuery(document).ready(function($) {
         }
     });
 
-    //Add New - Social Media
-    $('.add-custom-social-media').live('click', function() {
-        /*if ($("ul.custom-social-media-sizes li:nth-last-child(1) div.message").length > 0) {
-            return false;
-        }*/
-
-        var social_media_name = $.trim($('#social_media_name').val());
-        var social_media_url = $.trim($('#social_media_url').val());
-        var social_media_label = $('#social_media_name>option:selected').text();
-        if (social_media_url === '') {
-            remove_add_solial_media_notice();
-            $(this).parent('li').append('<div class="message error">Social Media Name and Url fields are required.</div>');
-            setTimeout(function() {
-                $("ul.custom-social-media-sizes li:nth-last-child(1) div.message").remove();
-            }, 5000);
-            return false;
-        }
-        if (urlPattern.test(social_media_url)) {
-            if ($('.social-media-list i.icon-' + social_media_name).length > 0) {
-                remove_add_solial_media_notice();
-                $(this).parent('li').append('<div class="message error">Already Created. Please click on edit button to modify</div>');
-                setTimeout(function() {
-                    $("ul.custom-social-media-sizes li:nth-last-child(1) div.message").remove();
-                }, 5000);
-                return false;
-            }
-
-            var box = '<li class="row sam-no-border" style="display: none;">';
-            box += '<label for="use-' + social_media_name + '" class=""><i class="icon-' + social_media_name + '"></i>' + social_media_url + '</label>';
-            box += '<div class="button-wrapper alignright">';
-            box += '<a data-social-media-slug="' + social_media_name + '" data-social-media-url="' + social_media_url + '" data-social-media-label="' + social_media_label + '" class="button3 edit-social-media" href="javascript:;">EDIT</a>';
-            box += '<a class="button4 delete-social-media" href="javascript:;">DELETE</a>';
-            box += '</div>';
-            box += '<input type="hidden" name="social_media_slug[]" value="' + social_media_name + '" />';
-            box += '<input type="hidden" name="social_media_url[]" value="' + social_media_url + '" />';
-            box += '<input type="hidden" name="social_media_label[]" value="' + social_media_label + '" />';
-            box += '</li>';
-            $('ul.social-media-list li').removeClass('sam-no-border');
-            $(box).insertBefore('.add-social-option');
-            var $new = $('ul.social-media-list').children('li:nth-last-child(2)');
-            $new.show('slow');
-            $('#social_media_url').val('');
-            remove_add_solial_media_notice();
-        } else {
-            remove_add_solial_media_notice();
-            $(this).parent('li').append('<div class="message error">Invalid Url</div>');
-            setTimeout(function() {
-                remove_add_solial_media_notice();
-            }, 5000);
-            return false;
-        }
-    });
-    
-    function remove_add_solial_media_notice() {
-        if($("ul.custom-social-media-sizes li:nth-last-child(1) div.message").length > 0) {
-            $("ul.custom-social-media-sizes li:nth-last-child(1) div.message").remove();
-        }
-    }
-
-    //Edit Social Media List
-    $('.edit-social-media').live('click', function() {
-        if ($('ul.social-media-list li').hasClass('edit-area')) {
-            return false;
-        }
-        $('.save-data').addClass('dont-save-social-media').removeClass('save-data');
-        $(this).parent('div').parent('li').addClass('edit-area');
-        $('ul.social-media-list li:last-child').hide();
-        var social_media_name = $.trim($(this).attr('data-social-media-slug'));
-        var social_media_url = $.trim($(this).attr('data-social-media-url'));
-        var social_media_label = $.trim($(this).attr('data-social-media-label'));
-        var box = '';
-        box += '<label for="use-' + social_media_name + '" class=""><i class="icon-' + social_media_name + '"></i></label>';
-        box += '<input type="text" id="edit_social_media_url" value="' + social_media_url + '" />';
-        box += '<input type="hidden" id="edit_social_media_slug" value="' + social_media_name + '" />';
-        box += '<input type="hidden" id="edit_social_media_label" value="' + social_media_label + '" />';
-        box += '<a class="button1 small-button update-social-media" href="javascript:void(0);">Update</a> <a class="cancel-update-social-media" data-social-media-slug="' + social_media_name + '" data-social-media-url="' + social_media_url + '" data-social-media-label="' + social_media_label + '" href="javascript:void(0);">Cancel</a>'
-        $(this).parent('div').parent('li').html(box);
-    });
-
-    // Cancel Update Social Media
-    $('.cancel-update-social-media').live('click', function() {
-        $('ul.social-media-list li:last-child').show();
-        var social_media_name = $.trim($(this).attr('data-social-media-slug'));
-        var social_media_url = $.trim($(this).attr('data-social-media-url'));
-        var social_media_label = $.trim($(this).attr('data-social-media-label'));
-        var box = '';
-        box += '<label for="use-' + social_media_name + '" class=""><i class="icon-' + social_media_name + '"></i>' + social_media_url + '</label>';
-        box += '<div class="button-wrapper alignright">';
-        box += '<a data-social-media-slug="' + social_media_name + '" data-social-media-url="' + social_media_url + '" data-social-media-label="' + social_media_label + '" class="button3 edit-social-media" href="javascript:;">EDIT</a>';
-        box += '<a class="button4 delete-social-media" href="javascript:;">DELETE</a>';
-        box += '</div>';
-        box += '<input type="hidden" name="social_media_slug[]" value="' + social_media_name + '" />';
-        box += '<input type="hidden" name="social_media_url[]" value="' + social_media_url + '" />';
-        box += '<input type="hidden" name="social_media_label[]" value="' + social_media_label + '" />';
-        $(this).parent('li').html(box);
-        $('ul.social-media-list li').removeClass('edit-area');
-        $('.dont-save-social-media').addClass('save-data').removeClass('dont-save-social-media');
-    });
-
-    //Update Social Media
-    $('.update-social-media').live('click', function() {
-
-        var social_media_name = $.trim($('#edit_social_media_slug').val());
-        var social_media_url = $.trim($('#edit_social_media_url').val());
-        var social_media_label = $.trim($('#edit_social_media_label').val());
-
-        if (social_media_url === '') {
-            $(this).parent('li').append('<div class="message error">Social Media Name and Url fields are required.</div>');
-            setTimeout(function() {
-                $(this).parent("li div.message").remove();
-            }, 5000);
-            return false;
-        }
-        if (urlPattern.test(social_media_url)) {
-            var box = '';
-            box += '<label for="use-' + social_media_name + '" class=""><i class="icon-' + social_media_name + '"></i>' + social_media_url + '</label>';
-            box += '<div class="button-wrapper alignright">';
-            box += '<a data-social-media-slug="' + social_media_name + '" data-social-media-url="' + social_media_url + '" data-social-media-label="' + social_media_label + '" class="button3 edit-social-media" href="javascript:;">EDIT</a>';
-            box += '<a class="button4 delete-social-media" href="javascript:;">DELETE</a>';
-            box += '</div>';
-            box += '<input type="hidden" name="social_media_slug[]" value="' + social_media_name + '" />';
-            box += '<input type="hidden" name="social_media_url[]" value="' + social_media_url + '" />';
-            box += '<input type="hidden" name="social_media_label[]" value="' + social_media_label + '" />';
-
-            $(this).parent('li').html(box);
-            $('ul.social-media-list li').removeClass('edit-area');
-            $('ul.social-media-list li:last-child').show();
-        } else {
-            $(this).parent('li').append('<div class="message error">Invalid Url</div>');
-            setTimeout(function() {
-                $("ul.custom-social-media-sizes li:nth-last-child(1) div.message").remove();
-            }, 5000);
-            return false;
-        }
-        $('.dont-save-social-media').addClass('save-data').removeClass('dont-save-social-media');
-
-    });
-
-    //Message if update or cancel is not clicked on clicking edit button - Generate while clicked on Save button
-    $('.dont-save-social-media').live('click', function() {
-        var box = '<div class="message info">Please update or cancel Social media to save.</div>';
-        $('#response').html(box);
-        setTimeout(function() {
-            $('#response').children('div.message').remove();
-        }, 5000);
-        return false;
-    });
-
-    //Delete Social Media Confirmation Message
-    $('.delete-social-media').live('click', function() {
-        if ($(this).parent('div').parent('li').parent('ul').find('.message').length > 0) {
-            return false;
-        }
-        $(this).parent('div').parent('li.row').append('<div class="message info">Are you sure you want to delete this Social Media? <a href="javascript:void(0);" id="yes-delete-this-social-media">Yes</a> <a href="javascript:void(0);" id="cancel-delete-this-social-media">Cancel</a></div>');
-    });
-
-    //Cancel deleting Social Media
-    $('#cancel-delete-this-social-media').live('click', function() {
-        $(this).parent('div.message').remove();
-    });
-
-    //Delete Social Media
-    $('#yes-delete-this-social-media').live('click', function() {
-        $(this).parent('div.message').parent('li.row').slideUp("slow", function() {
-            $(this).remove();
-        });
-    });
-
     //Check/Uncheck checkbox - Apple Touch Icons - Logos & Icons
-    $('.samp-style').live('click', function() {
+    $('.samp-style').on('click', function() {
         if ($(this).hasClass('appleicons') && !$(this).is(':checked')) {
             $('#no-touchicon').prop('checked', false);
             $('.sam-no-touchicon').val('no');
@@ -306,7 +111,7 @@ jQuery(document).ready(function($) {
     });
     
     //Check/Uncheck - Website Description - Logos & Icons
-    $('#no-webdesc').live('click', function() {
+    $('#no-webdesc').on('click', function() {
         check_checkbox_with_value($(this), '#sam-use-webdesc', 'yes', 'no');
     });
     
@@ -328,7 +133,7 @@ jQuery(document).ready(function($) {
     }
 
     //Get WP Default Image Uploader
-    $('.upload_image_button').live('click', function(e) {
+    $('.upload_image_button').on('click', function(e) {
         e.preventDefault();
         var iii = '';
         var iii = $(this);
@@ -436,41 +241,7 @@ jQuery(document).ready(function($) {
         $(this).parent('li').addClass('active');
     });
 
-    //Saving Theme Data
-    $('.save-data').live("click", function() {
-        if ($('#sam-custom-code').length > 0) {
-            $('#sam-custom-code').val(editor.getValue());
-        }
-        if ($(this).hasClass('saving')) {
-            return false;
-        }
-        
-        $(this).css('background-color', '#333333');
-        $(this).addClass('saving');
-        $('.save-data').html('Saving');
-        $( $(this) ).after( '<i class="icon-spinner circle alignright"></i>' );
-        var serial = $('#sampression-metadata').serialize();
-        var data = {
-            action: 'save_style',
-            elements: serial
-        };
-        jQuery.post(ajaxurl, data,
-                function(response) {
-                    $('#response').html(response);
-
-                    form_clean = $("form#sampression-metadata").serialize();
-                    if ($('[name="meta_data"]').val() == 'custom_css_settings') {
-                        form_clean = $('#sam-custom-code').val();
-                    }
-                        $('.save-data').css('background-color', '#57B94A');
-                        $('.save-data').html("Save");
-                        $('.save-data').removeClass('saving');
-                        $('.save-data').siblings('i.icon-spinner').remove();
-                });
-        return false;
-    });
-    
-    
+     
     //Fancyselect for styling selectbox.
     $('.sam-select').each(function() {
         var sb = new SelectBox({
@@ -486,25 +257,6 @@ jQuery(document).ready(function($) {
                 }
             }
         });
-    });
-
-    /**
-     * add css to select element in social media page
-     * for some modification from default
-     **/
-    $('#social_media_name').css({
-        'position': 'absolute',
-        'left': '-999em'
-    });
-
-    // apply style to select box
-    new SelectBox({
-        selectbox: $('#social_media_name'),
-        height: 250,
-        changeCallback: function(val) {
-            $('.example').addClass('hidden');
-            $('#social_example_' + val).removeClass('hidden');
-        }
     });
     
     /*
@@ -713,46 +465,40 @@ jQuery(document).ready(function($) {
     //calling equal height function on .box.col
     equalHeight('.sam-logooption', '.col');
 
-    if ($('#sam-custom-code').length > 0) {
-        var editor = CodeMirror.fromTextArea(document.getElementById("sam-custom-code"), {
-            lineNumbers: true,
-            styleActiveLine: true,
-            matchBrackets: true
-        });
-
-    }
-
     // generate tooltip
     $('.sam-tooltip').tooltip({
         position: {
             my: "left+20 center-5"
         }
     });
-
-    $('.sam-hooks-cb input.samp-style').live('click', function() {
-        var i = $(this);
-        var ta = i.parent('div.right-cnt').parent('div.box-title').siblings('div.sam-hooks-option');
-        var hook = $.trim(ta.children('textarea').val());
-        if(ta.children('pre.select-me').siblings('div.message').length > 0) {
-            ta.children('pre.select-me').siblings('div.message').remove();
-        }
-        if(hook == '') {
-            ta.children('textarea').focus();
-            ta.children('pre.select-me').after('<div class="message error">Enter something to execute the hook.</div>');
-            setTimeout(function() {
-                ta.children('pre.select-me').siblings('div.message').remove();
-            }, 5000);
-            return false;
-        }        
+    
+    /*
+    * Get selected categories id from 'hide blog from' section on blog menu
+    */
+    $('.show-categories').on('click', function(){
+        var chkId = '';
+        $('.show-categories:checked').each(function() {
+          chkId += $(this).val() + ",";
+        });
+        chkId =  chkId.slice(0,-1);
+        $("#sam-hide-category").val(chkId); // Place checked values in hidden input field to save on database
     });
     
-    $('div.sam-hooks-option textarea').live('blur', function() {
-        var i = $(this);
-        if(i.val() == '') {
-            i.parent('div.sam-hooks-option').siblings('div.sam-hooks-cb').children('div.right-cnt').children('input.samp-style').prop('checked', false);
-            i.parent('div.sam-hooks-option').siblings('div.sam-hooks-cb').children('div.right-cnt').children('input.sam-use-excute-sam_after_sidebar').val('no');
+    
+    $('#show-all-categories').on('click', function() {
+        //Show blog from the following categories - Check all checkboxes and uncheck all checkboxes.
+        if ($(this).is(':checked')) {
+            $('.show-categories').attr('checked', 'checked');
+        } else {
+            $('.show-categories').removeAttr('checked');
         }
+        // Get value of checked field and then place in hidden field to save on database
+        var chkId = '';
+        $('.show-categories:checked').each(function() {
+          chkId += $(this).val() + ",";
+        });
+        chkId =  chkId.slice(0,-1);
+        $("#sam-hide-category").val(chkId); // Place checked values in hidden input field to save on database
     });
 
-});
-// end ready function here.
+});// end ready function here.

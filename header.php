@@ -12,26 +12,32 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 <!--[if IE 8]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
-<meta charset="<?php echo esc_attr( get_bloginfo( 'charset' ) ); ?>" />
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="<?php bloginfo('charset'); ?>" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-<title><?php bloginfo( 'name' ); ?> <?php wp_title( '|', true ); ?></title>
-<link rel="stylesheet" type="text/css" href="<?php echo esc_url( get_bloginfo( 'stylesheet_url' ) ); ?>" media="all" />
-<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
-<?php sampression_favicons(); ?>
-<?php wp_head(); ?>
-<!--[if lt IE 9]>
-<script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
-<![endif]-->
-<?php do_action( 'sampression_before_head_close' ); ?>
+    <title> <?php wp_title( '|', true, 'right' ); ?></title>
+    <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
+    <?php sampression_favicons(); ?>
+    <!--[if lt IE 9]>
+    <script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
+    <![endif]-->
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php do_action( 'sampression_after_body' ); ?>
-<?php do_action( 'sampression_before_header' ); ?>
+<?php
+/** 
+ * sampression_after_body hook
+ */
+do_action('sampression_after_body'); 
+?>
 <div id="wrapper">
-    <div id="inner-wrapper">
+    <div id="inner-wrapper">        
+        <?php 
+        /** 
+        * sampression_before_header hook
+        */
+        do_action('sampression_before_header'); 
+        ?>
         <header id="header" class="block">
             <div class="container">
                 <div class="six columns">
@@ -41,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
                     </div>
                 </div>
                 <div class="social-connect">
-                    <?php echo sampression_social_media_icons( $location = 'header', $separater = '' ) ?>
+                    <?php sampression_social_media_icons() ?>
                 </div>
                 <?php $header_image = get_header_image();
         		if ( ! empty( $header_image ) ) : ?>
@@ -60,4 +66,9 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
             </div>
         </header>
         <!--/#header-->
-        <?php do_action( 'sampression_after_header' ); ?>
+        <?php 
+        /** 
+        * sampression_after_header hook
+        */
+        do_action('sampression_after_header'); 
+        ?>
