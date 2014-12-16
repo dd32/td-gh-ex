@@ -16,26 +16,26 @@ global $abaris;
 
 <?php if( isset( $abaris['ipad-icon-retina'] ) ) : ?>
 	<!-- For third-generation iPad with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $abaris['ipad-icon-retina']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url( $abaris['ipad-icon-retina']['url'] ); ?>">
 <?php endif; ?>
 
 <?php if( isset( $abaris['iphone-icon-retina'] ) ) : ?>
 	<!-- For iPhone with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $abaris['iphone-icon-retina']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo esc_url( $abaris['iphone-icon-retina']['url'] ); ?>">
 <?php endif; ?>
 
 <?php if( isset( $abaris['ipad-icon'] ) ) : ?>
 	<!-- For first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $abaris['ipad-icon']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo esc_url( $abaris['ipad-icon']['url'] ); ?>">
 <?php endif; ?>
 
 <?php if( isset( $abaris['iphone-icon'] ) ) : ?>
 	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="<?php echo $abaris['iphone-icon']['url']; ?>">
+	<link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( $abaris['iphone-icon']['url'] ); ?>">
 <?php endif; ?>
 
 <?php if( isset( $abaris['favicon'] ) ) : ?>
-	<link rel="icon" href="<?php echo $abaris['favicon']['url']; ?>">
+	<link rel="icon" href="<?php echo esc_url( $abaris['favicon']['url'] ); ?>">
 <?php endif; ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -55,7 +55,7 @@ global $abaris;
 				<div class="span3">
 					<div class="logo site-branding">
 						<?php if( isset( $abaris['site-title'] ) && isset( $abaris['custom-logo'] ) && $abaris['site-title'] ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $abaris['custom-logo']['url']; ?>" alt="logo" ></a></h1>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $abaris['custom-logo']['url'] ); ?>" alt="logo" ></a></h1>
 						<?php else : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php endif; ?>

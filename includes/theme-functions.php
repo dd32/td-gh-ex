@@ -14,17 +14,24 @@
 	add_filter('excerpt_more', 'abaris_excerpt_more');
 
 	// This removes the annoying […] to a Read More link
+
+if( ! function_exists( 'abaris_excerpt_more' )) {
+
 	function abaris_excerpt_more($excerpt) {
 		global $post;
 		// edit here if you like
 		return '<p class="readmore"><a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a></p>';
 	}
+}
+
+if( ! function_exists( 'abaris_excerpt_length' )) {
 
 	function abaris_excerpt_length( $length ) {
 		return 20;
 	}
-	add_filter( 'excerpt_length', 'abaris_excerpt_length', 999 );
+}
 
+	add_filter( 'excerpt_length', 'abaris_excerpt_length', 999 );
 	add_action( 'wp_head', 'abaris_custom_css' );
 
 	function abaris_custom_css() {

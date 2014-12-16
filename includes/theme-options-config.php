@@ -229,8 +229,85 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 $sampleHTML = $wp_filesystem->get_contents(dirname(__FILE__) . '/info-html.html');
             }
 
+            $featuresHTML = <<< FEATURES
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-cog-alt"></i></div>
+                <h3>Page Builder</h3>
+                <p>Abaris Pro supports Page Builder. All our shortcodes can be used as widgets too. You can drag and drop our widgets with page builder visual editor.</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-th-large"></i></div>
+                <h3>Page Layout</h3>
+                <p>Abaris Pro offers many different page layouts so you can quickly and easily create your pages with various layout without any hassle!</p>
+            </div>            
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-adjust-alt"></i></div>
+                <h3>Unlimited Sidebar</h3>
+                <p>Unlimited sidebars allows you to create multiple sidebars. Check out our demo site to see how different pages displays different sidebars!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-fork"></i></div>
+                <h3>Shortcode Builder</h3>
+                <p>With our shortcode builder and lots of shortcodes, you can easily create nested shortcodes and build custom pages!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-camera"></i></div>
+                <h3>Multi Portfolio</h3>
+                <p>7 portfolio layouts with Isotope filtering, 3 blog layouts and multiple other alternate layouts for interior pages!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-fontsize"></i></div>
+                <h3>Typography</h3>
+                <p>Abaris Pro loves typography, you can choose from over 500+ Google Fonts and Standard Fonts to customize your site!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-slideshare"></i></div>
+                <h3>Awesome Sliders</h3>
+                <p>Abaris Pro includes two types of slider. You can use both Flex and Elastic sliders anywhere in your site.</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-dashboard"></i></div>
+                <h3>Woo Commerce</h3>
+                <p>Abaris Pro has full design/code integration for WooCommerce, your shop will look as good as the rest of your site!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-tasks"></i></div>
+                <h3>Custom Widget</h3>
+                <p>We offer many custom widgets that are stylized and ready for use. Simply drag &amp; drop into place to activate!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-leaf"></i></div>
+                <h3>Advanced Admin</h3>
+                <p>Advanced Redux Framework for theme options panel, you can customize any part of your site quickly and easily!</p>
+            </div>            
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-magic"></i></div>
+                <h3>Font Awesome</h3>
+                <p>Font Awesome icons are fully integrated into the theme. Use them anywhere in your site in 6 different sizes!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-resize-full"></i></div>
+                <h3>Responsive Layout</h3>
+                <p>Abaris Pro is fully responsive and can adapt to any screen size. Resize your browser window to view it!</p>
+            </div>  
 
-
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-magic"></i></div>
+                <h3>Testimonials</h3>
+                <p>With our testimonial post type, shortcode and widget, Displaying testimonials is a breeze.</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-smiley-alt"></i></div>
+                <h3>Social Media</h3>
+                <p>Want your users to stay in touch? No problem, Abaris Pro has Social Media icons all throughout the theme!</p>
+            </div>
+            <div class="one-third column">
+                <div class="icon-wrap"><i class="el-icon-map-marker-alt"></i></div>
+                <h3>Google Map</h3>
+                <p>Abaris Pro includes Goole Map as shortcode and widget. So, you can use it anywhere in your site!</p>
+            </div>
+        </div>
+FEATURES;
 
             // ACTUAL DECLARATION OF SECTIONS
 
@@ -422,6 +499,24 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'validate' => 'html',
                         ),
 
+                    array(
+                        'id'        => 'upgrade-notice-1',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+
+                    array(
+                        'id'=>'footer-menu',
+                        'type' => 'select',
+                        'data' => 'menus',
+                        'title' => __('Select Menu', 'abaris'),
+                        'subtitle'=> __('Select menu to display in footer.', 'abaris'),
+                        ),
+
                     )
                 );
 
@@ -440,6 +535,15 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'show' => array( 'title' => true, 'description' => true, 'url' => true ),
                         ),
 
+                        array(
+                            'id'        => 'upgrade-notice-2',
+                            'type'      => 'info',
+                            'notice'    => true,
+                            'style'     => 'critical',
+                            'icon'      => 'el-icon-info-sign',
+                            'title'     => __('Flex Slider Post Type and Multiple Sliders. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                            'desc'      => __('Upgrade to Abaris Pro version to use Flex Slider Custom Post Type<br> and setup multiple sliders. You can also tweak slider effects.', 'abaris')
+                        ),
                         array(
                         'id'=>'service-icon-1',
                         'type' => 'select',
@@ -648,9 +752,35 @@ if (!class_exists("Redux_Framework_sample_config")) {
                                 ),
                             ),
                         ),  
+		                array(
+		                    'id'        => 'upgrade-notice-3',
+		                    'type'      => 'info',
+		                    'notice'    => true,
+		                    'style'     => 'critical',
+		                    'icon'      => 'el-icon-info-sign',
+		                    'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+		                    'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+		                ),
+		                array(
+		                    'id'=>'home-pagebuilder',
+		                    'type' => 'switch', 
+		                    'title' => __('Use Page Builder.', 'abaris'),
+		                    'subtitle'=> __('Check this to disable theme options for home page content and use page builder to enter content', 'abaris'),
+		                    "default" => 0,
+		                    'on' => 'Enable',
+		                    'off' => 'Disable',
+		                    ),
+
+		                array(
+		                    'id' => 'home-flexslider',
+		                    'type' => 'text',
+		                    'title' => __( 'Enter FlexSlider shortcode', 'abaris' ),
+		                    'subtitle' => __( 'FlexSlider for Home Page', 'abaris' ),
+		                    'desc' => __( 'Enter a FlexSlider shortcode to be displayed on Home Page', 'abaris' ),
+
+		                ),
                     )
                 );
-
 
                 $this->sections[] = array(
                     'title' => __('Blog', 'abaris'),
@@ -678,8 +808,807 @@ if (!class_exists("Redux_Framework_sample_config")) {
                             'on' => 'Show',
                             'off' => 'Hide',
                             ),
+                    array(
+                        'id'        => 'upgrade-notice-4',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39', 'abaris')
+                    ),
+                    
+                    array(
+                        'id'=>'show-author-bio',
+                        'type' => 'switch', 
+                        'title' => __('Author Bio Box', 'abaris'),
+                        'subtitle'=> __('Show Author information box below single post.', 'abaris'),
+                        "default"       => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                        ),
+
+                    array(
+                        'id'=>'show-social-sharing',
+                        'type' => 'switch', 
+                        'title' => __('Social Sharing Box', 'abaris'),
+                        'subtitle'=> __('Show social sharing options box below single post.', 'abaris'),
+                        "default"       => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                        ),
+
+                    array(
+                        'id'=>'show-related-posts',
+                        'type' => 'switch', 
+                        'title' => __('Related Posts', 'abaris'),
+                        'subtitle'=> __('Show related posts.', 'abaris'),
+                        "default"       => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                        ),
+
+                    array(
+                        'id'=>'show-comments',
+                        'type' => 'switch', 
+                        'title' => __('Comments', 'abaris'),
+                        'subtitle'=> __('Show comments.', 'abaris'),
+                        "default"       => 1,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                        ),
+
+                    array(
+                        'id'=>'show-post-meta',
+                        'type' => 'switch', 
+                        'title' => __('Post Meta', 'abaris'),
+                        'subtitle'=> __('Show post meta.', 'abaris'),
+                        "default"       => 1,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                        ),
+                    /*
+                     array(
+                        'id'=>'post-content',
+                        'type' => 'select',
+                        'title' => __('Post Content', 'abaris'),
+                        'subtitle'=> __('Select Excerpt or Full Content  to show on blog / archive pages.', 'abaris'),
+                        'options' => array( '1' => ' Excerpt ', '2' => ' Full Content ' ),
+                        'default' => '1'
+                    ),
+                    */
+
+
+                    array(
+                        'id'=>'excerpt-length',
+                        'type' => 'text',
+                        'title' => __('Excerpt Length', 'abaris' ), 
+                        'subtitle' => __('Input the number of words you want to cut from the content to be the excerpt of search and archive page.', 'abaris' ),
+                        'default' => 100,
+                        ),
                     )
                 );
+
+            $this->sections[] = array(
+                'title' => __('Social Sharing Box', 'abaris'),
+                'desc' => __('Social Sharing Icons Setup', 'abaris'),
+                'icon' => 'el-icon-share',
+                'fields' => array(  
+                    array(
+                        'id'        => 'upgrade-notice-5',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+
+                    array( 
+                        'id' => 'ss_box_facebook',
+                        'type' => 'switch',
+                        'title' => 'Facebook',
+                        'subtitle' => 'Show facebook sharing option in single posts.',
+                        'default' => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                    ), 
+
+                    array( 
+                        'id' => 'ss_box_twitter',
+                        'type' => 'switch',
+                        'title' => 'Twitter',
+                        'subtitle' => 'Show twitter sharing option in single posts.',
+                        'default' => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                    ),
+
+                    array( 
+                        'id' => 'ss_box_linkedin',
+                        'type' => 'switch',
+                        'title' => 'LinkedIn',
+                        'subtitle' => 'Show linkedin sharing option in single posts.',
+                        'default' => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                    ),
+
+                    array( 
+                        'id' => 'ss_box_googleplus',
+                        'type' => 'switch',
+                        'title' => 'Google Plus',
+                        'subtitle' => 'Show googleplus sharing option in single posts.',
+                        'default' => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                    ),
+
+                    array( 
+                        'id' => 'ss_box_email',
+                        'type' => 'switch',
+                        'title' => 'Email',
+                        'subtitle' => 'Show email sharing option in single posts.',
+                        'default' => 0,
+                        'on' => 'Show',
+                        'off' => 'Hide',
+                    ),
+                )
+            );
+
+            $this->sections[] = array(
+                'title' => __('Social Network', 'abaris'),
+                'desc' => __('Social Network Links', 'abaris'),
+                'icon' => 'el-icon-share',
+                'fields' => array(
+                    array(
+                        'id'        => 'upgrade-notice-6',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+
+                    array( 
+                        'id' => 'social-digg',
+                        'type' => 'text',
+                        'title' => 'Digg',
+                        'subtitle' => 'Your Digg link',
+                    ),
+
+                    array( 
+                        'id' => 'social-dribble',
+                        'type' => 'text',
+                        'title' => 'Dribble',
+                        'subtitle' => 'Your Dribble link',
+                    ),
+
+                    array( 
+                        'id' => 'social-facebook',
+                        'type' => 'text',
+                        'title' => 'Facebook',
+                        'subtitle' => 'Your Facebook link',
+                    ),
+
+                    array( 
+                        'id' => 'social-flickr',
+                        'type' => 'text',
+                        'title' => 'Flickr',
+                        'subtitle' => 'Your Flickr link',
+                    ),
+
+                    array( 
+                        'id' => 'social-google',
+                        'type' => 'text',
+                        'title' => 'Google',
+                        'subtitle' => 'Your Google link',
+                    ),
+
+                    array( 
+                        'id' => 'social-linkedin',
+                        'type' => 'text',
+                        'title' => 'LinkedIn',
+                        'subtitle' => 'Your LinkedIn link',
+                    ),
+
+                    array( 
+                        'id' => 'social-pinterest',
+                        'type' => 'text',
+                        'title' => 'Pinterest',
+                        'subtitle' => 'Your Pinterest link',
+                    ),
+
+                    array( 
+                        'id' => 'social-rss',
+                        'type' => 'text',
+                        'title' => 'RSS',
+                        'subtitle' => 'Your RSS link',
+                    ),
+
+                    array( 
+                        'id' => 'social-skype',
+                        'type' => 'text',
+                        'title' => 'Skype',
+                        'subtitle' => 'Your Skype link',
+                    ),
+
+                    array( 
+                        'id' => 'social-tumblr',
+                        'type' => 'text',
+                        'title' => 'Tumblr',
+                        'subtitle' => 'Your Tumblr link',
+                    ),
+
+                    array( 
+                        'id' => 'social-twitter',
+                        'type' => 'text',
+                        'title' => 'Twitter',
+                        'subtitle' => 'Your Twitter link',
+                    ),
+
+                    array( 
+                        'id' => 'social-vimeo',
+                        'type' => 'text',
+                        'title' => 'Vimeo',
+                        'subtitle' => 'Your Vimeo link',
+                    ),
+
+                    array( 
+                        'id' => 'social-youtube',
+                        'type' => 'text',
+                        'title' => 'YouTube',
+                        'subtitle' => 'Your YouTube link',
+                    ),
+
+                )
+            );
+            $this->sections[] = array(
+                'title' => __('Support', 'abaris'),
+                'desc' => __('Documentation', 'abaris'),
+                'icon' => 'el-icon-user',
+                'fields' => array(
+
+                    array(
+                        'id'        => 'support-notice',
+                        'type'      => 'info',
+                        'style'     => 'critical',
+                        'title'     => __('Support and Documentation.', 'redux-framework-demo'),
+                        'desc'      => __('Please refer to <a href="http://demo.webulous.in/abaris/documentation/">documentation</a> page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulous.in/?add-to-cart=21">Upgrade</a> to Abaris Pro Version', 'abaris')
+                    ),
+                )
+            );
+
+            $this->sections[] = array(
+                'title' => __('Why Upgrade?', 'abaris'),
+                'desc' => __('Features you\'ll get in Pro Version', 'abaris'),
+                'icon' => 'el-icon-magic',
+                'fields' => array(
+                    
+                    array(
+                        'id'        => 'pro-features',
+                        'type'      => 'raw',
+                        'content'   => $featuresHTML,
+                    ),
+                    
+
+                )
+            );
+
+            $this->sections[] = array(
+                'title' => __('Flex Slider', 'abaris'),
+                'desc' => __('Flex Slider Settings', 'abaris'),
+                'icon' => 'el-icon-screen',
+                'fields' => array(
+
+                    array(
+                        'id'        => 'upgrade-notice-7',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+                    
+                    array(
+                        'id' => 'flexslider_animation',
+                        'type' => 'select',
+                        'title' => 'Animation',
+                        'subtitle' => 'Select slider animation effect.',
+                        'default' => '1',
+                        'options' => array( 1 => 'fade', 2 => 'slide'),
+                    ),
+
+                    array(
+                        'id' => 'flexslider_slide_direction',
+                        'type' => 'select',
+                        'title' => 'Slide Direction',
+                        'subtitle' => 'Select direction to slide (if you are using the "Slide" animation)',
+                        'default' => '1',
+                        'options' => array( '1' => 'horizontal', '2' => 'vertical' ),
+                    ),
+
+                    array(
+                        'id'        => 'flexslider_slideshow_speed',
+                        'type'      => 'spinner',
+                        'title'     => 'Slideshow Speed',
+                        'subtitle'      => 'Set the delay between each slide animation (in milliseconds)',
+                        'default'       => '7000',
+                      'min' => '0',
+                      'max' => '10000',
+                      'step' => '100',
+                    ),
+
+                    array(
+                        'id'        => 'flexslider_animation_speed',
+                        'type'      => 'spinner',
+                        'title'     => 'Animation Speed',
+                        'subtitle'      => 'Set the duration of each slide animation (in milliseconds)',
+                        'default'       => '600',
+                      'min' => '0',
+                      'max' => '10000',
+                      'step' => '100',
+                    ),
+
+                    array(
+                        'id' => 'flexslider_slideshow',
+                        'type'      => 'switch',
+                        'title' => 'Slideshow',
+                        'subtitle' => 'Animate the slideshows automatically',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_smooth_height',
+                        'type'      => 'switch',
+                        'title' => 'Auto Height',
+                        'subtitle' => 'Adjust the height of the slideshow to the height of the current slide',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_direction_nav',
+                        'type'      => 'switch',
+                        'title' => 'Previous / Next Buttons',
+                        'subtitle' => 'Display the "Previous/Next" Buttons',
+                        'default' => 0,
+                        'on'        => 'Show',
+                        'off'       => 'Hide',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_control_nav',
+                        'type'      => 'switch',
+                        'title' => 'Pagination',
+                        'subtitle' => 'Display the slideshow pagination',
+                        'default' => 0,
+                        'on'        => 'Show',
+                        'off'       => 'Hide',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_keyboard_nav',
+                        'type'      => 'switch',
+                        'title' => 'Keyboard Navigation',
+                        'subtitle' => 'Enable keyboard navigation',
+                        'default' => 0,
+                        'on'        => 'Enable',
+                        'off'       => 'Disable',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_mousewheel_nav',
+                        'type'      => 'switch',
+                        'title' => 'Mouse Wheel Navigation',
+                        'subtitle' => 'Enable the mousewheel navigation',
+                        'default' => 0,
+                        'on'        => 'Enable',
+                        'off'       => 'Disable',
+                    ), 
+
+
+                    array(
+                        'id' => 'flexslider_pauseplay',
+                        'type'      => 'switch',
+                        'title' => 'Pause / Play',
+                        'subtitle' => 'Enable the "Pause/Play" event',
+                        'default' => 0,
+                        'on'        => 'Enable',
+                        'off'       => 'Disable',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_randomize',
+                        'type'      => 'switch',
+                        'title' => 'Random Slides',
+                        'subtitle' => 'Randomize the order of slides in slideshows',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_animation_loop',
+                        'type'      => 'switch',
+                        'title' => 'Loop Slideshow',
+                        'subtitle' => 'Loop the slideshow animations',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_pause_on_action',
+                        'type'      => 'switch',
+                        'title' => 'Pause On Action',
+                        'subtitle' => 'Pause the slideshow autoplay when using the pagination or "Previous/Next" navigation',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id' => 'flexslider_pause_on_hover',
+                        'type'      => 'switch',
+                        'title' => 'Pause On Hover',
+                        'subtitle' => 'Pause the slideshow autoplay when hovering over a slide',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ), 
+
+                    array(
+                        'id'        => 'flexslider_prev_text',
+                        'type'      => 'text',
+                        'title'     => '"Previous" Button',
+                        'subtitle'      => 'The text to display on the "Previous" button.',
+                        'default'       => 'Previous',
+                    ),
+
+                    array(
+                        'id'        => 'flexslider_next_text',
+                        'type'      => 'text',
+                        'title'     => '"Next" Button',
+                        'subtitle'      => 'The text to display on the "Next" button.',
+                        'default'       => 'Next',
+                    ),
+
+                    array(
+                        'id'        => 'flexslider_play_text',
+                        'type'      => 'text',
+                        'title'     => '"Play" Button',
+                        'subtitle'      => 'The text to display on the "Play" button.',
+                        'default'       => 'Play',
+                    ),
+
+                    array(
+                        'id'        => 'flexslider_pause_text',
+                        'type'      => 'text',
+                        'title'     => '"Pause" Button',
+                        'subtitle'      => 'The text to display on the "Pause" button.',
+                        'default'       => 'Pause',
+                    ),
+                )
+            );
+
+            $this->sections[] = array(
+                'title' => __('Light Box', 'abaris'),
+                'desc' => __('Light Box Settings', 'abaris'),
+                'icon' => 'el-icon-idea',
+                'fields' => array(
+
+                    array(
+                        'id'        => 'upgrade-notice-8',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+                    
+                    array( 
+                        'id' => 'lightbox_theme',
+                        'type' => 'select',
+                        'title' => 'Lightbox Theme',
+                        'subtitle' => '',
+                        'default' => '1',
+                        'options' => array(
+                            '1' => 'pp_default',
+                            '2' => 'light_rounded',
+                            '3' => 'dark_rounded',
+                            '4' => 'light_square',
+                            '5' => 'dark_square',
+                            '6' => 'facebook'
+                        ),
+                    ),
+                                        
+                    array( 
+                        'id' => 'lightbox_animation_speed',
+                        'type' => 'select',
+                        'title' => 'Animation Speed',
+                        'subtitle' => '',
+                        'default' => '1',
+                        'options' => array( '1' => 'Fast', '2' => 'Slow', '3' => 'Normal' ),
+                    ),
+
+                    array( 
+                        'id' => 'lightbox_slideshow',
+                        'type' => 'spinner',
+                        'title' => 'Autoplay Gallery Speed',
+                        'subtitle' => 'If autoplay is set to true, select the slideshow speed in ms. (Default: 5000, 1000 ms = 1 second)',
+                        'default' => '5000',
+                        'min' => '1000',
+                        'max' => '10000',
+                        'step' => '100',
+                    ),
+
+                    array( 
+                        'id' => 'lightbox_autoplay_slideshow',
+                        'type'      => 'switch',
+                        'title' => 'Autoplay Gallery',
+                        'subtitle' => 'Check to autoplay the lightbox gallery',
+                        'default' => 0,
+                        'on'        => 'Yes',
+                        'off'       => 'No',
+                    ),
+
+                    array( 
+                        'id' => 'lightbox_opacity',
+                        'type' => 'text',
+                        'title' => 'Background Opacity',
+                        'subtitle' => 'Enter 0.1 to 1.0',
+                        'default' => '0.7',
+                    ),
+
+                    array( 
+                        'id' => 'lightbox_show_title',
+                        'type'      => 'switch',
+                        'title' => 'Title',
+                        'subtitle' => 'Select visibility of the title',
+                        'default' => 1,
+                        'on'        => 'Show',
+                        'off'       => 'Hide',
+                    ),
+
+
+                    array( 
+                        'id' => 'lightbox_overlay_gallery',
+                        'type'      => 'switch',
+                        'title' => 'Show Gallery Thumbnails',
+                        'subtitle' => 'Check to show gallery thumbnails',
+                        'default' => 1,
+                        'on'        => 'Show',
+                        'off'       => 'Hide',
+                    ),
+
+
+                    array( 
+                        'id' => 'lightbox_social_tools',
+                        'type'      => 'switch',
+                        'title' => 'Social Icons',
+                        'subtitle' => 'Check to show social sharing icons',
+                        'default' => 1,
+                        'on'        => 'Show',
+                        'off'       => 'Hide',
+                    ),
+
+                )
+            );
+
+            $this->sections[] = array(
+                'title' => __('Typography', 'abaris'),
+                'desc' => __('Typography and Link Color Settings', 'abaris'),
+                'icon' => 'el-icon-font',
+                'fields' => array(
+
+                    array(
+                        'id'        => 'upgrade-notice-9',
+                        'type'      => 'info',
+                        'notice'    => true,
+                        'style'     => 'critical',
+                        'icon'      => 'el-icon-info-sign',
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
+                    ),
+                    
+                    array(
+                        'id'=>'custom-typography',
+                        'type' => 'switch', 
+                        'title' => __('Enable Custom Typography', 'abaris'),
+                        'subtitle'=> __('Turn on to customize typography and turn off for default typography.', 'abaris'),
+                        'default'       => 0,
+                        'on' => 'Enable',
+                        'off' => 'Disable',
+                        ),    
+
+                    array(
+                        'id'       => 'opt-link-color',
+                        'type'     => 'link_color',
+                        'title'    => __('Links Color Option', 'redux-framework-demo'),
+                        'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+                        'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+                        'default'  => array(
+                            'regular'  => '#ff4200', // blue
+                            'hover'    => '#ff4200', // red
+                            'active'   => '#ff4200',  // purple
+                            'visited'  => '#ff4200'  // purple
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'dummy-typography',
+                        'type'      => 'typography',
+                        'title'     => __('Font Preview', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'color' => false,
+                        'subtitle'  => __('Preview Google fonts using this field. Sets nothing, just preview.', 'redux-framework-demo'),
+                        'default'   => array( 'font-family' => 'Abel', 'font-size' => '24px' )
+                    ),
+
+                    array(
+                        'id'        => 'bd-typography',
+                        'type'      => 'typography',
+                        'title'     => __('Body Font', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the body font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Roboto',
+                            'google'        => true,
+                            'font-size'     => '14px',
+                            'line-height'   => '1.4',
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'nav-typography',
+                        'type'      => 'typography',
+                        'title'     => __('Navigation Font', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the navigation font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#ffffff',
+                            'font-style'    => '400',
+                            'font-family'   => 'Roboto',
+                            'google'        => true,
+                            'font-size'     => '14px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h1-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H1 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h1 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '47.6px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h2-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H2 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h2 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '30.8px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h3-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H3 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h3 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '23.8px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h4-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H4 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h4 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '21px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h5-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H5 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h5 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '18.2px'
+                        )
+                    ),
+
+                    array(
+                        'id'        => 'h6-typography',
+                        'type'      => 'typography',
+                        'title'     => __('H6 Font Properties', 'redux-framework-demo'),
+                        'google'    => true,
+                        'text-align'    => false,
+                        'subsets'   => false,
+                        'line-height'   => false,
+                        'preview'   => false,
+                        'subtitle'  => __('Specify the h6 font properties.', 'redux-framework-demo'),
+                        'default'   => array(
+                            'color'         => '#333',
+                            'font-style'    => '400',
+                            'font-family'   => 'Bree Serif',
+                            'google'        => true,
+                            'font-size'     => '16.1px'
+                        )
+                    ),
+                )
+            );
 
         }
 
@@ -749,30 +1678,30 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 'database' => '', // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
                 'show_import_export' => true, // REMOVE
                 'system_info' => false, // REMOVE
-                'help_tabs' => array(),
+                'help_tabs' => array('docs'),
                 'help_sidebar' => '', // __( '', $this->args['domain'] );            
             );
 
 
             // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.		
             $this->args['share_icons'][] = array(
-                'url' => 'https://github.com/ReduxFramework/ReduxFramework',
-                'title' => 'Visit us on GitHub',
+                'url' => 'https://github.com/venkatraj',
+                'title' => 'Visit me on GitHub',
                 'icon' => 'el-icon-github'
                     // 'img' => '', // You can use icon OR img. IMG needs to be a full URL.
             );
             $this->args['share_icons'][] = array(
-                'url' => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
+                'url' => 'https://www.facebook.com/pages/webulous/170827696548',
                 'title' => 'Like us on Facebook',
                 'icon' => 'el-icon-facebook'
             );
             $this->args['share_icons'][] = array(
-                'url' => 'http://twitter.com/reduxframework',
+                'url' => 'https://twitter.com/webulous',
                 'title' => 'Follow us on Twitter',
                 'icon' => 'el-icon-twitter'
             );
             $this->args['share_icons'][] = array(
-                'url' => 'http://www.linkedin.com/company/redux-framework',
+                'url' => 'https://www.linkedin.com/company/coding-geek',
                 'title' => 'Find us on LinkedIn',
                 'icon' => 'el-icon-linkedin'
             );
@@ -786,8 +1715,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                 } else {
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
-               $this->args['intro_text'] = __('<p><a href="http://www.webulous.in/?add-to-cart=21" target="_blank" class="buttn button-primary">Buy Pro Version</a> <a href="http://wordpress.org/support/view/theme-reviews/abaris" class="buttn button-secondary">Rate Theme</a> <a href="http://demo.webulous.in/abaris/documentation/" class="buttn button-secondary" target="_blank">Documentation</a></p>', 'redux-framework-demo');
-               //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
+                //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
+                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulous.in/?add-to-cart=21"><i class="el-icon-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el-icon-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }

@@ -9,6 +9,7 @@ are licensed under GPLv2
 5. This theme uses { Elusive Icons Webfont } which is licensed under GPL-compatible SIL Open Font License
 6. All images used in this theme is licensed under GPLv2 or later
 7. This theme uses { SlickNav } which is licensed under GPL compatible MIT License
+8. This theme uses { WayPoints } which is licensed under GPL compatible MIT License
 
 
 Change log
@@ -30,3 +31,27 @@ Version 1.0.7
 2. Added Full Width Page Template
 3. Added Sticky Navigation for mobiles
 4. Added option to show site description with logo
+
+Version 1.0.11
+1. Fixing Menu hover disappear problem. z-index issue.
+
+
+Version 1.0.12
+1. Nested Author comments turns to white bg. Fixed.
+2. screen_icon() in class-tgm-plugin-activation.php removed.
+
+Version 1.0.13
+1. Support for JigoShop eCommerce Plugin
+
+Version 1.0.14
+1. Updating jquery plugin files
+2. Adding uncompressed versions of javascript files
+
+Version 1.0.15
+1. Escaping Theme Options on output
+
+Version 1.1.0
+1. Deleted unwanted files
+2. Corrected languages pot file
+3. Slide Fix (typo)
+4. Pro Version Price Change

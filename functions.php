@@ -155,7 +155,11 @@ require ABARIS_INCLUDES_DIR . '/extras.php';
  * This uses Redux Framework Plugin
  */
 require_once( ABARIS_INCLUDES_DIR . '/load-plugins.php' );
+require_once( ABARIS_INCLUDES_DIR . '/home-info.php' );
+
 if( class_exists('ReduxFrameworkPlugin')) {
 	require_once( ABARIS_INCLUDES_DIR . '/theme-options-config.php' );
 }
 
+/* JigoShop Support */
+require_once( ABARIS_INCLUDES_DIR . '/jigoshop.php' );

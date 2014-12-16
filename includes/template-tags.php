@@ -443,50 +443,52 @@ function abaris_categorized_blog() {
 }
 
 // Recent Posts with featured Images to be displayed on home page
-function abaris_recent_posts() {
-	$output = '';
-	$output .= '<div class="flex-recent-posts">';
-  $output .= '<ul class="slides">';
-	// WP_Query arguments
-	$args = array (
-		'post_type'              => 'post',
-		'post_status'            => 'publish',
-		'posts_per_page'         => '10',
-		'ignore_sticky_posts'    => true,
-		'order'                  => 'DESC',
-	);
+if( ! function_exists( 'abaris_recent_posts' )) {
+	function abaris_recent_posts() {
+		$output = '';
+		$output .= '<div class="flex-recent-posts">';
+	  $output .= '<ul class="slides">';
+		// WP_Query arguments
+		$args = array (
+			'post_type'              => 'post',
+			'post_status'            => 'publish',
+			'posts_per_page'         => get_option('posts_per_page'),
+			'ignore_sticky_posts'    => true,
+			'order'                  => 'DESC',
+		);
 
-	// The Query
-	$query = new WP_Query( $args );
+		// The Query
+		$query = new WP_Query( $args );
 
-	// The Loop
-	if ( $query->have_posts() ) {
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			$output .= '<li>';
-			$output .= '<div class="recent-post">';
-			$output .= '<div class="rp-thumb">';
-			if ( has_post_thumbnail() ) {
-				$output .= get_the_post_thumbnail();
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$output .= '<li>';
+				$output .= '<div class="recent-post">';
+				$output .= '<div class="rp-thumb">';
+				if ( has_post_thumbnail() ) {
+					$output .= get_the_post_thumbnail();
+				}
+				else {
+					$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
+				}
+				$output .= '</div><!-- .rp-thumb -->';
+				$output .= '<div class="rp-content">';
+				$output .= '<h3>'. get_the_title() . '</h3>';
+				$output .= get_the_excerpt();
+				$output .= '</div><!-- .rp-content -->';
+				$output .= '</div>';
+				$output .= '</li>';
 			}
-			else {
-				$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
-			}
-			$output .= '</div><!-- .rp-thumb -->';
-			$output .= '<div class="rp-content">';
-			$output .= '<h3>'. get_the_title() . '</h3>';
-			$output .= get_the_excerpt();
-			$output .= '</div><!-- .rp-content -->';
-			$output .= '</div>';
-			$output .= '</li>';
-		}
-	} 
+		} 
 
-	// Restore original Post Data
-	wp_reset_postdata();
-  $output .= '</ul>';
-	$output .= '</div>';
-	echo $output;
+		// Restore original Post Data
+		wp_reset_postdata();
+	  $output .= '</ul>';
+		$output .= '</div>';
+		echo $output;
+	}
 }
 
 /**
