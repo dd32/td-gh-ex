@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -37,7 +39,7 @@
 	/**
 	 * Register the required plugins for the theme
 	 *
-	 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/develop/tgm-plugin-activation/example.php
+	 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 	 */
 	if ( ! function_exists( 'wm_plugins_suggestions' ) ) {
 		function wm_plugins_suggestions() {
@@ -54,11 +56,17 @@
 
 						//Recommended
 
+							'bn' => array(
+								'name'     => 'Breadcrumb NavXT',
+								'slug'     => 'breadcrumb-navxt',
+								'required' => false,
+							),
+
 							'jp' => array(
 								'name'     => 'Jetpack by WordPress.com',
 								'slug'     => 'jetpack',
 								'required' => false,
-								'version'  => '3.2',
+								'version'  => '3.3',
 							),
 
 				) );

@@ -4,8 +4,20 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
+
+
+
+/**
+ * Requirements check
+ */
+
+	if ( ! current_theme_supports( 'nova_menu_item' ) ) {
+		return;
+	}
 
 
 
@@ -34,7 +46,7 @@ if ( class_exists( 'Nova_Restaurant' ) ) :
 
 				<h1 class="page-title"><?php
 
-				$title_food_menu = __( 'Menu', 'wm_domain' );
+				$title_food_menu = _x( 'Menu', 'Food menu title.', 'wm_domain' );
 
 				$food_menu_page_id = intval( get_transient( 'wm-page-template-food-menu' ) );
 

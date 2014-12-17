@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -  1) Required files
@@ -44,7 +46,7 @@
 			add_action( 'customize_controls_enqueue_scripts', 'wm_customizer_enqueue_assets'         );
 			add_action( 'customize_preview_init',             'wm_customizer_preview_enqueue_assets' );
 		//Save skin
-			add_action( 'customize_save_last-trigger-setting', 'wm_custom_styles_cache', 10 );
+			add_action( 'customize_save_processing-hook', 'wm_custom_styles_cache', 10 );
 		//Flushing transients
 			add_action( 'switch_theme',         'wm_custom_styles_transient_flusher' );
 			add_action( 'wmhook_theme_upgrade', 'wm_custom_styles_transient_flusher' );
@@ -118,11 +120,14 @@
 	 * 				),
 	 * 			'custom' => 'your_custom_JavaScript_here',
 	 * 		)
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_theme_customizer_js' ) ) {
 		function wm_theme_customizer_js() {
 			//Helper variables
-				$wm_skin_design = apply_filters( 'wmhook_theme_options_skin_array', array() );
+				$wm_skin_design = apply_filters( 'wmhook_theme_options', array() );
 
 				$output = $output_single = '';
 
@@ -283,19 +288,19 @@
 			 * @link  http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
 			 */
 
-				locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_Hidden.php',      true );
-				locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_HTML.php',        true );
-				locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_Image.php',       true );
-				locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_Multiselect.php', true );
-				locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_Select.php',      true );
+				locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_Hidden.php',      true );
+				locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_HTML.php',        true );
+				locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_Image.php',       true );
+				locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_Multiselect.php', true );
+				locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_Select.php',      true );
 				if ( ! wm_check_wp_version( 4 ) ) {
-					locate_template( WM_INC_DIR . 'controls/class-WM_Customizer_Textarea.php', true );
+					locate_template( WM_INC_DIR . 'customizer/controls/class-WM_Customizer_Textarea.php', true );
 				}
 
 
 
 			//Helper variables
-				$wm_skin_design = (array) apply_filters( 'wmhook_theme_options_skin_array', array() );
+				$wm_skin_design = (array) apply_filters( 'wmhook_theme_options', array() );
 
 				$allowed_option_types = apply_filters( 'wmhook_wm_theme_customizer_allowed_option_types', array(
 						'checkbox',
@@ -544,7 +549,7 @@
 								break;
 
 								/**
-								 * Checkbox, radio & select
+								 * Checkbox, radio
 								 */
 								case 'checkbox':
 								case 'radio':
@@ -775,9 +780,7 @@
 
 
 					/**
-					 * THE CODE BELOW IS REQUIRED UNTIL WORDPRESS CREATES A HOOK TRIGGERED AFTER SAVING CUSTOMIZER OPTIONS
-					 *
-					 * Last hidden setting that triggers the main CSS file regeneration.
+					 * Last hidden setting where you can hook to process data being saved.
 					 *
 					 * @link  Idea from: http://wordpress.stackexchange.com/questions/57540/wp-3-4-what-action-hook-is-called-when-theme-customisation-is-saved
 					 * @link  Suggested: http://wordpress.org/extend/ideas/topic/do-customize_save-action-hook-after-the-settings-are-saved
@@ -788,23 +791,23 @@
 						 */
 
 							$wp_customize->add_setting(
-									'last-trigger-setting',
+									'processing-hook',
 									array(
 										'type'                 => 'theme_mod',
 										'default'              => 'true',
-										'transport'            => $transport,
+										'transport'            => 'refresh',
 										'sanitize_callback'    => 'esc_attr',
 										'sanitize_js_callback' => 'esc_attr',
 									)
 								);
 
 							$wp_customize->add_control(
-									'last-trigger-setting',
+									'processing-hook',
 									array(
 										'type'     => 'hidden',
-										'label'    => 'TRIGGER OPTION',
+										'label'    => 'PROCESSING HOOK',
 										'section'  => $customizer_section,
-										'priority' => $priority + 999,
+										'priority' => $priority + 99,
 									)
 								);
 
@@ -833,12 +836,15 @@
 	 * Outputs custom CSS styles set via Customizer
 	 *
 	 * This function allows you to hook your custom CSS styles string
-	 * onto 'wmhook_wm_custom_styles_output_preprocess' filter hook.
+	 * onto 'wmhook_custom_styles' filter hook.
 	 * Then just use a '[[skin-option-id]]' tags in your custom CSS
 	 * styles string where the specific option value should be used.
 	 *
 	 * Caching $replacement into 'WM_THEME_SHORTNAME-customizer-values' transient.
 	 * Caching $output into 'WM_THEME_SHORTNAME-custom-css' transient.
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 *
 	 * @param  bool $set_cache  Determines whether the results should be cached or not.
 	 * @param  bool $return     Whether to return a value or just run the process.
@@ -852,8 +858,8 @@
 					$wp_customize = null;
 				}
 
-				$output         = (string) apply_filters( 'wmhook_wm_custom_styles_output_preprocess', '' );
-				$wm_skin_design = (array) apply_filters( 'wmhook_theme_options_skin_array', array() );
+				$output         = (string) apply_filters( 'wmhook_custom_styles', '' );
+				$wm_skin_design = (array) apply_filters( 'wmhook_theme_options', array() );
 
 				$replacements   = array_filter( (array) get_transient( WM_THEME_SHORTNAME . '-customizer-values' ) ); //There have to be values (defaults) set!
 
@@ -875,8 +881,8 @@
 					if (
 							! empty( $wm_skin_design )
 							&& (
-								empty( $replacements )
-								|| ( $wp_customize && $wp_customize->is_preview() )
+								( $wp_customize && $wp_customize->is_preview() )
+								|| empty( $replacements )
 							)
 						) {
 
@@ -994,6 +1000,11 @@
 				//Replace tags in custom CSS strings with actual values
 					$output_cached = (string) get_transient( WM_THEME_SHORTNAME . '-custom-css' );
 
+					//When debugging set
+						if ( isset( $_GET['debug'] ) ) {
+							$output_cached = (string) get_transient( WM_THEME_SHORTNAME . '-custom-css-debug' );
+						}
+
 					if (
 							empty( $output_cached )
 							|| ( $wp_customize && $wp_customize->is_preview() )
@@ -1002,6 +1013,7 @@
 						$output = strtr( $output, $replacements );
 
 						if ( $set_cache ) {
+							set_transient( WM_THEME_SHORTNAME . '-custom-css-debug', apply_filters( 'wmhook_wm_custom_styles_output_cache_debug', $output ) );
 							set_transient( WM_THEME_SHORTNAME . '-custom-css', apply_filters( 'wmhook_wm_custom_styles_output_cache', $output ) );
 						}
 
@@ -1022,10 +1034,14 @@
 
 		/**
 		 * Flush out the transients used in wm_custom_styles
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 */
 		if ( ! function_exists( 'wm_custom_styles_transient_flusher' ) ) {
 			function wm_custom_styles_transient_flusher() {
 				delete_transient( WM_THEME_SHORTNAME . '-customizer-values' );
+				delete_transient( WM_THEME_SHORTNAME . '-custom-css-debug' );
 				delete_transient( WM_THEME_SHORTNAME . '-custom-css' );
 			}
 		} // /wm_custom_styles_transient_flusher
@@ -1098,6 +1114,13 @@
 
 	/**
 	 * CSS minifier
+	 *
+	 * The minifier is disabled when WordPress in debug mode.
+	 * @link  http://codex.wordpress.org/Debugging_in_WordPress
+	 *
+	 * Please note that you need to resave Customizer setup once you
+	 * disable WordPress debug to regenerate the custom CSS transients
+	 * with minified content.
 	 *
 	 * @param  string $css Code to minify
 	 */

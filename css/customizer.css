@@ -1,9 +1,11 @@
-*
+/**
  * Customizer modification styles
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.0
  */
 
 
@@ -55,6 +57,15 @@
 		.customize-control textarea { resize: vertical; }
 		.customize-control-hidden { display: none !important; }
 
+		#customize-control-page_on_front,
+		#customize-control-page_for_posts {
+			padding: 10px;
+			margin-left: -10px;
+			border-radius: 5px;
+			background: #d7eef4;
+		}
+		#customize-control-page_for_posts { background: #d7f4e3; }
+
 		/* Hide Custom Background image setup */
 			/* #accordion-section-background_image { display: none !important; } */
 
@@ -65,8 +76,8 @@
 	 */
 
 		#accordion-section-credits .accordion-section-title { display: none; }
-		#accordion-section-credits .accordion-section-content { display: block; }
+		#accordion-section-credits .accordion-section-content { display: block !important; }
 
 
 
-/* End of file
+/* End of file */

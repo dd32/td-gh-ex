@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -43,6 +45,7 @@
 	/**
 	 * Filters
 	 */
+
 		//Post visual editor
 			add_filter( 'mce_buttons',          'wm_add_buttons_row1'  );
 			add_filter( 'mce_buttons_2',        'wm_add_buttons_row2'  );
@@ -103,7 +106,6 @@
 	if ( ! function_exists( 'wm_post_columns_register' ) ) {
 		function wm_post_columns_register( $columns ) {
 			//Preparing output
-
 				if ( 'jetpack-portfolio' == get_post_type() ) {
 					unset( $columns['thumbnail'] );
 				}
@@ -177,7 +179,7 @@
 				}
 
 			//Output
-				return apply_filters( 'wmhook_wm_add_buttons_row1_output', $buttons );
+				return $buttons;
 		}
 	} // /wm_add_buttons_row1
 
@@ -196,7 +198,7 @@
 					$buttons = array_merge( array( 'styleselect' ), $buttons );
 
 				//Output
-					return apply_filters( 'wmhook_wm_add_buttons_row2_output', $buttons );
+					return $buttons;
 			}
 		} // /wm_add_buttons_row2
 
@@ -206,6 +208,9 @@
 		 * Customizing format dropdown items
 		 *
 		 * @link  http://codex.wordpress.org/TinyMCE_Custom_Styles
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 *
 		 * @param  array $init
 		 */
@@ -220,7 +225,7 @@
 
 								//Group: Quotes
 									array(
-										'title' => __( 'Quotes', 'wm_domain' ),
+										'title' => _x( 'Quotes', 'Visual editor blockquote formats group title.', 'wm_domain' ),
 										'items' => array(
 
 											array(
@@ -238,7 +243,7 @@
 												'classes' => 'pullquote alignright',
 											),
 											array(
-												'title' => __( 'Cite', 'wm_domain' ),
+												'title' => _x( 'Cite', 'Visual editor format label for HTML CITE tag used to set the blockquote source.', 'wm_domain' ),
 												'block' => 'cite',
 											),
 

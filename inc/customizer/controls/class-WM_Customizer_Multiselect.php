@@ -1,12 +1,14 @@
 <?php
 /**
- * Skinning System
+ * Customizer custom controls
  *
  * Customizer multi select field.
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -22,6 +24,8 @@ class WM_Customizer_Multiselect extends WP_Customize_Control {
 
 			<label>
 				<span class="customize-control-title"><?php echo $this->label; ?></span>
+				<?php if ( $this->description ) : ?><span class="description customize-control-description"><?php echo $this->description; ?></span><?php endif; ?>
+
 				<select name="<?php echo $this->id; ?>" multiple="multiple" <?php $this->link(); ?>>
 
 					<?php

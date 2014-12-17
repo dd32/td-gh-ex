@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -   1) Required files
@@ -24,18 +26,18 @@
  */
 
 	//Main theme action hooks
-		locate_template( WM_INC_DIR . 'hooks.php', true );
+		locate_template( WM_INC_DIR . 'lib/hooks.php', true );
 
 	//Admin required files
 		if ( is_admin() ) {
 
 			//WP admin functionality
-				locate_template( WM_INC_DIR . 'admin.php', true );
+				locate_template( WM_INC_DIR . 'lib/admin.php', true );
 
 			//Plugins suggestions
 				if ( apply_filters( 'wmhook_enable_plugins_integration', true ) ) {
-					locate_template( WM_INC_DIR . 'class-tgm-plugin-activation.php', true );
-					locate_template( WM_INC_DIR . 'plugins.php',                     true );
+					locate_template( WM_INC_DIR . 'tgmpa/class-tgm-plugin-activation.php', true );
+					locate_template( WM_INC_DIR . 'tgmpa/plugins.php',                     true );
 				}
 
 		}
@@ -72,7 +74,7 @@
 	 * Filters
 	 */
 
-		//HTML in widget title of default WordPress widgets
+		//HTML in widget title
 			add_filter( 'widget_title', 'wm_html_widget_title' );
 		//Table of contents
 			add_filter( 'the_content', 'wm_nextpage_table_of_contents', 10 );
@@ -89,6 +91,9 @@
 	 * Logo
 	 *
 	 * Supports Jetpack Site Logo module.
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_logo' ) ) {
 		function wm_logo() {
@@ -108,7 +113,7 @@
 					) );
 
 			//Preparing output
-				//Logo image (HiDPI ready)
+				//Logo image
 					if ( ! empty( $args['logo_image'] ) ) {
 
 						$img_id = ( is_numeric( $args['logo_image'] ) ) ? ( absint( $args['logo_image'] ) ) : ( wm_get_image_id_from_url( $args['logo_image'] ) );
@@ -117,7 +122,7 @@
 							$logo_url = wp_get_attachment_image_src( $img_id, 'full' );
 
 							$atts = (array) apply_filters( 'wmhook_wm_logo_image_atts', array(
-									'alt'   => esc_attr( sprintf( __( '%s logo', 'wm_domain' ), $blog_info['name'] ) ),
+									'alt'   => esc_attr( sprintf( _x( '%s logo', 'Site logo image "alt" HTML attribute text.', 'wm_domain' ), $blog_info['name'] ) ),
 									'title' => esc_attr( $args['title_att'] ),
 									'class' => '',
 								) );
@@ -365,6 +370,9 @@
 	 * the first H2 heading in each post part.
 	 * Appends the output at the top and bottom of post content.
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $content
 	 */
 	if ( ! function_exists( 'wm_nextpage_table_of_contents' ) ) {
@@ -372,7 +380,8 @@
 			//Helper variables
 				global $page, $numpages, $multipage, $post;
 
-				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( __( '"%s" table of contents', 'wm_domain' ), get_the_title() ) );
+				//translators: %s will be replaced with parted post title. Copy it, do not translate.
+				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( _x( '"%s" table of contents', 'Parted/paginated post table of content title.', 'wm_domain' ), get_the_title() ) );
 				$title      = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title', '<h2 class="screen-reader-text">' . $title_text . '</h2>' );
 
 				//Requirements check
@@ -481,6 +490,9 @@
 	 * hAtom microformats compatible. @link http://goo.gl/LHi4Dy
 	 * Supports ZillaLikes plugin. @link http://www.themezilla.com/plugins/zillalikes/
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  array $args
 	 */
 	if ( ! function_exists( 'wm_post_meta' ) ) {
@@ -566,7 +578,7 @@
 									$replacements = array(
 											'{attributes}' => '',
 											'{class}'      => 'comments-link entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( __( 'Comments: %s', 'wm_domain' ), $helper ) ) . '">' . sprintf( __( '<span class="comments-title">Comments: </span>%s', 'wm_domain' ), '<span class="comments-count">' . $helper . '</span>' ) . '</a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( _x( 'Comments: %s', 'Number of comments in post meta.', 'wm_domain' ), $helper ) ) . '">' . sprintf( _x( '<span class="comments-title">Comments: </span>%s', 'Number of comments in post meta (keep the HTML tags).', 'wm_domain' ), '<span class="comments-count">' . $helper . '</span>' ) . '</a>',
 										);
 								}
 
@@ -597,7 +609,7 @@
 									$replacements = array(
 											'{attributes}' => '',
 											'{class}'      => 'entry-edit entry-meta-element',
-											'{content}'    => '<a href="' . esc_url( $helper ) . '" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '"><span>' . __( 'Edit', 'wm_domain' ) . '</span></a>',
+											'{content}'    => '<a href="' . esc_url( $helper ) . '" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '"><span>' . _x( 'Edit', 'Edit post link.', 'wm_domain' ) . '</span></a>',
 										);
 								}
 
@@ -630,7 +642,7 @@
 									$replacements = array(
 											'{attributes}' => wm_schema_org( 'url' ),
 											'{class}'      => 'entry-permalink entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
 										);
 								}
 
@@ -683,6 +695,9 @@
 	/**
 	 * Paginated heading suffix
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $tag           Wrapper tag
 	 * @param  string $singular_only Display only on singular posts of specific type
 	 */
@@ -716,7 +731,7 @@
 
 			//Preparing output
 				if ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'wm_domain' ), $paged ) . $tag[1];
+					$output = ' ' . $tag[0] . sprintf( _x( '(page %s)', 'Paginated content title suffix.', 'wm_domain' ), $paged ) . $tag[1];
 				}
 
 			//Output
