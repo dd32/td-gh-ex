@@ -15,7 +15,7 @@ To set a static homepage login into WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header.
-I advice you to use a header-image of 1600px wide and 400px high. 
+I advice you to use a header-image of 500px wide and 350px high. 
 
 
 HOW TO SET LOGO

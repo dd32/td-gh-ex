@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu and header-image.
  */
 ?>
 
@@ -50,7 +50,7 @@
 
 	<div class="image-homepage"> 
 		<?php if ( get_header_image() ) {?> 
-				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
 		<?php } ?>
 	</div>
 
