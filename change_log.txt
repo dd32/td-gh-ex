@@ -44,3 +44,6 @@ Version 1.4.4 (10th Dec 2014)
 i) Remove unnecessary code.
 ii) Set sanitization in $top_mag_featured_image in all files.
 iii) Declare copyright and license information
+
+Version 1.4.5 (17th Dec 2014)
+i) Translation-Ready ready.

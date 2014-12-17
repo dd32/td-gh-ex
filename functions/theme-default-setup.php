@@ -122,9 +122,9 @@ add_action( 'widgets_init', 'top_mag_widgets_init' );
  */
 function top_mag_entry_meta() {
 
-	$top_mag_category_list = get_the_category_list( __( ', ', 'top-mag' ) );
+	$top_mag_category_list = get_the_category_list( ', ', 'top-mag' );
 
-	$top_mag_tag_list = get_the_tag_list( '', __( ', ', 'top-mag' ) );
+	$top_mag_tag_list = get_the_tag_list( ', ', 'top-mag' );
 
 	$top_mag_date = sprintf( '<time datetime="%3$s">%4$s</time>',
 		esc_url( get_permalink() ),
@@ -139,14 +139,17 @@ function top_mag_entry_meta() {
 		get_the_author()
 	);
 
-
 	if ( $top_mag_tag_list ) {
-		$top_mag_utility_text = __( '<span><i class="fa fa-user"></i> %4$s</span><span><i class="fa fa-folder-open"></i> %1$s</span><span><i class="fa fa-comments-o"></i> '.get_comments_number().'</span>', 'top-mag' );
-	} elseif ( $top_mag_category_list ) {
-		$top_mag_utility_text = __( '<span><i class="fa fa-user"></i> %4$s</span><span><i class="fa fa-folder-open"></i> %1$s</span><span><i class="fa fa-comments-o"></i> '.get_comments_number().'</span> ', 'top-mag' );
-	} else {
-		$top_mag_utility_text = __( '<span><i class="fa fa-user"></i> %4$s</span><span><i class="fa fa-comments-o"></i> '.get_comments_number().'</span> ', 'top-mag' );
-	}
+			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
+			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
+		} elseif ( $top_mag_category_list ) {
+			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
+			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
+		} else {
+			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
+			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
+		}
+	
 
 	printf(
 		$top_mag_utility_text,
@@ -178,7 +181,7 @@ function top_mag_comment( $comment, $top_mag_args, $depth ) {
   <p>
     <?php _e( 'Pingback:', 'top-mag' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'top-mag' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'top-mag' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php

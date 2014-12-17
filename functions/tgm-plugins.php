@@ -8,8 +8,8 @@ function top_mag_theme_register_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
          array(
-            'name'      => 'Faster Pagination',
-            'slug'      => 'faster-pagination',
+            'name'      => __('Faster Pagination','top-mag'),
+            'slug'      => __('faster-pagination','top-mag'),
             'required'  => false,
         ),
     );

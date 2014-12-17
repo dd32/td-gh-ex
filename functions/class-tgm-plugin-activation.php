@@ -639,10 +639,11 @@ if ( ! class_exists( 'top_magPA_List_Table' ) ) {
             return sprintf( '<input type="checkbox" name="%1$s[]" value="%2$s" id="%3$s" />', $this->_args['singular'], $value, $item['sanitized_plugin'] );
         }
         /* Sets default message within the plugins table if no plugins */
-        public function no_items() {
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'top-mag' ), admin_url() );
-            echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
-        }
+        public function no_items() 
+		{
+			_e('No plugins to install or activate','top-mag'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','top-mag')."</a>";
+			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
+		}
         /* Output all the column information within the table.*/
         public function get_columns() {
             $columns = array(
@@ -993,7 +994,8 @@ function top_mag_load_bulk_installer() {
                 /* Sets the correct install strings for the installer skin to use. */
                 public function install_strings() {
                     $this->strings['no_package']          = __( 'Install package not available.', 'top-mag' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'top-mag' );
+                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'top-mag'),
+	 '<span class="code">', '</span>&#8230;');
                     $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'top-mag' );
                     $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'top-mag' );
                     $this->strings['process_failed']      = __( 'Plugin install failed.', 'top-mag' );
@@ -1049,7 +1051,7 @@ function top_mag_load_bulk_installer() {
                     // Default installation strings.
                     else {
                         $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'top-mag' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'top-mag' );
+                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: %2$s.', 'top-mag' );
                         $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'top-mag' );
                         $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'top-mag' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'top-mag' ) . '</span><span class="hidden">' . __( 'Hide Details', 'top-mag' ) . '</span>.</a>';
                         $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'top-mag' );

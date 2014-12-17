@@ -34,7 +34,7 @@ get_header(); ?>
         <?php the_excerpt(); ?>
         <div class="blogpost-readmore">
           <p><a href="<?php the_permalink(); ?>">
-            <?php _e('Read More...','top-mag'); ?>
+            <?php _e('Read More','top-mag'); ?>
             </a></p>
         </div>
       </div>

@@ -33,8 +33,8 @@ function top_mag_theme_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'top_mag_theme_framework_load_scripts' );
 function top_mag_theme_framework_menu_settings() {
 	$top_mag_menu = array(
-				'page_title' => __( 'topmagtheme Options', 'top_mag_framework'),
-				'menu_title' => __('Theme Options', 'top_mag_framework'),
+				'page_title' => __('topmagtheme Options', 'top-mag'),
+				'menu_title' => __('Theme Options', 'top-mag'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'top_mag_theme_framework',
 				'callback' => 'top_mag_framework_page'
@@ -64,7 +64,7 @@ function top_mag_framework_page(){
     <div class="header-right">
       <?php
 			echo "<h1>". __( 'Theme Options', 'top-mag' ) . "</h1>"; 			
-			echo "<div class='btn-save'><input type='submit' class='button-primary' value='Save Options' /></div>";			
+			echo "<div class='btn-save'><input type='submit' class='button-primary' value='".__('Save Options','top-mag')."' /></div>";			
 			?>
     </div>
   </div>
@@ -73,11 +73,11 @@ function top_mag_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
-            <li><a id="options-group-1-tab" class="nav-tab headersettings-tab" title="Header Settings" href="#options-group-1">Header Settings</a></li>
-            <li><a id="options-group-2-tab" class="nav-tab footersettings-tab" title="Footer Settings" href="#options-group-2">Footer Settings</a></li>
-            <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="Home Page Settings" href="#options-group-3">Home Page Settings</a></li>
-            <li><a id="options-group-4-tab" class="nav-tab bannersettings-tab" title="Banner Settings" href="#options-group-4">Banner Settings</a></li>
-            <li><a id="options-group-5-tab" class="nav-tab prosettings-tab" title="Pro Theme Settings" href="#options-group-5">PRO Theme Features</a></li>
+            <li><a id="options-group-1-tab" class="nav-tab headersettings-tab" title="Header Settings" href="#options-group-1"><?php _e('Header Settings','top-mag') ?></a></li>
+            <li><a id="options-group-2-tab" class="nav-tab footersettings-tab" title="Footer Settings" href="#options-group-2"><?php _e('Footer Settings','top-mag') ?></a></li>
+            <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="Home Page Settings" href="#options-group-3"><?php _e('Home Page Settings','top-mag') ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab bannersettings-tab" title="Banner Settings" href="#options-group-4"><?php _e('Banner Settings','top-mag') ?></a></li>
+            <li><a id="options-group-5-tab" class="nav-tab prosettings-tab" title="Pro Theme Settings" href="#options-group-5"><?php _e('PRO Theme Features','top-mag') ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -89,24 +89,24 @@ function top_mag_framework_page(){
           <!-------------- First group ----------------->
           <div id="options-group-1" class="group faster-inner-tabs">
             <div class="section theme-tabs theme-colors theme-fonts">
-            	<a href="javascript:void(0)" class="heading faster-inner-tab active">Display Breaking News</a>
+            	<a href="javascript:void(0)" class="heading faster-inner-tab active"><?php _e('Display Breaking News','top-mag') ?></a>
               <div class="faster-inner-tab-group active">
                 <div class="option-group">                  
                  	<div class="ft-control">
               <input type="checkbox" id="credit-news" name="topmag_theme_options[breaking-news]" <?php if(!empty($top_mag_options['breaking-news'])) { ?> checked="checked" <?php } ?> value="yes">
-               <label class="breaking-news" for="credit-news">Please check checkbox to display Breaking News.</label>
+               <label class="breaking-news" for="credit-news"><?php _e('Please check checkbox to display Breaking News.','top-mag') ?></label>
                 </div>
                 </div>                
               </div>
             </div>
             <div class="section theme-tabs theme-email">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Select Breaking News Category</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Select Breaking News Category','top-mag') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-                <div class="explain">Please Select Category for Breaking News.</div>
+                <div class="explain"><?php _e('Please Select Category for Breaking News.','top-mag') ?></div>
                 <?php $top_mag_terms = get_terms('category'); ?>
                 <select class="of-input" name="topmag_theme_options[breaking-news-category]">
-                    <option value="">--Select Category--</option>
+                    <option value="">--<?php _e('Select Category','top-mag') ?>--</option>
 					<?php foreach($top_mag_terms as $top_mag_news_term) { ?>
                     <option value="<?php echo $top_mag_news_term->name; ?>" <?php if(!empty($top_mag_options['breaking-news-category']) && $top_mag_options['breaking-news-category'] == $top_mag_news_term->name) { ?> selected="selected" <?php } ?>><?php echo $top_mag_news_term->name; ?></option>
                     <?php } ?>
@@ -115,12 +115,12 @@ function top_mag_framework_page(){
               </div>
             </div>
             <div class="section theme-tabs theme-logo">
-            <a class="heading faster-inner-tab" href="javascript:void(0)">Site Logo</a>
+            <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Site Logo','top-mag') ?></a>
             <div class="faster-inner-tab-group">
               	<div class="ft-control">
                 <input id="logo-img" class="upload" type="text" name="topmag_theme_options[logo]" 
-                            value="<?php if(!empty($top_mag_options['logo'])) { echo esc_url($top_mag_options['logo']); } ?>" placeholder="No file chosen" />
-                <input id="1upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($top_mag_options['logo'])) { echo esc_url($top_mag_options['logo']); } ?>" placeholder="<?php _e('No file chosen','top-mag') ?>" />
+                <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','top-mag') ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if(!empty($top_mag_options['logo'])) { echo "<img src='".esc_url($top_mag_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
@@ -129,24 +129,24 @@ function top_mag_framework_page(){
             </div>
           </div>
           	<div class="section theme-tabs theme-colors theme-fonts">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Display Tagline</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Display Tagline','top-mag') ?></a>
               <div class="faster-inner-tab-group">
                 <div class="option-group">                  
                  	<div class="ft-control">
               <input type="checkbox" id="credit-tagline" name="topmag_theme_options[logo-tagline]" <?php if(!empty($top_mag_options['logo-tagline'])) { ?> checked="checked" <?php } ?> value="yes">
-               <label class="tagline" for="credit-tagline">Please check checkbox to display tagline in header.</label>
+               <label class="tagline" for="credit-tagline"><?php _e('Please check checkbox to display tagline in header.','top-mag') ?></label>
                 </div>
                 </div>                
               </div>
             </div>
             <div class="section theme-tabs theme-favicon">
-              <a class="heading faster-inner-tab" href="javascript:void(0)">Favicon</a>
+              <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Favicon','top-mag') ?></a>
               <div class="faster-inner-tab-group">
-              	<div class="explain">Size of favicon should be exactly 32x32px for best results.</div>
+              	<div class="explain"><?php _e('Size of favicon should be exactly 32x32px for best results.','top-mag') ?></div>
                 <div class="ft-control">
                   <input id="favicon-img" class="upload" type="text" name="topmag_theme_options[favicon]" 
-                            value="<?php if(!empty($top_mag_options['favicon'])) { echo esc_url($top_mag_options['favicon']); } ?>" placeholder="No file chosen" />
-                  <input id="upload_image_button1" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($top_mag_options['favicon'])) { echo esc_url($top_mag_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','top-mag') ?>" />
+                  <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','top-mag') ?>" />
                   <div class="screenshot" id="favicon-image">
                     <?php  if(!empty($top_mag_options['favicon'])) { echo "<img src='".esc_url($top_mag_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
@@ -158,10 +158,10 @@ function top_mag_framework_page(){
           <!-------------- Second group ----------------->
           <div id="options-group-2" class="group faster-inner-tabs">   
             <div id="section-footertext2" class="section theme-tabs">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Copyright Text</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Copyright Text','top-mag') ?></a>
               <div class="faster-inner-tab-group active">
               	<div class="ft-control">
-              		<div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>                
+              		<div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','top-mag') ?></div>                
                   	<input type="text" id="footertext2" class="of-input" name="topmag_theme_options[footertext]" size="32"  value="<?php if(!empty($top_mag_options['footertext'])) { echo esc_attr($top_mag_options['footertext']); } ?>">
                 </div>                
               </div>
@@ -170,10 +170,10 @@ function top_mag_framework_page(){
           <!-------------- Third group ----------------->
           <div id="options-group-3" class="group faster-inner-tabs">            
             <div class="section theme-tabs theme-email">
-            	<a class="heading faster-inner-tab active" href="javascript:void(0)">Select Post Slider Category</a>
+            	<a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Select Post Slider Category','top-mag') ?></a>
               <div class="faster-inner-tab-group active">
               	<div class="ft-control">
-                <div class="explain">Select Post Slider Category</div>
+                <div class="explain"><?php _e('Select Post Slider Category','top-mag') ?></div>
                 <?php $top_mag_terms = get_terms('category'); ?>
                 <select class="of-input" name="topmag_theme_options[post-slider-category]">
                     
@@ -218,12 +218,12 @@ function top_mag_framework_page(){
               </div>
             </div>
             <div class="section theme-tabs section-recent-post-slider">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Select recent post slider number</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Select recent post slider number','top-mag') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-                <div class="explain">Please select number of post</div>
+                <div class="explain"><?php _e('Please select number of post','top-mag') ?></div>
                  <select id="recent-post-number" class="of-input"  name="topmag_theme_options[recent-post-number]">
-              		<option value="">--select number--</option>
+              		<option value="">--<?php _e('select number','top-mag') ?>--</option>
                 	<?php for($recent_post_number = 1; $recent_post_number <= 20; $recent_post_number++ ) { ?>
                 	<option value="<?php echo $recent_post_number; ?>"<?php if($top_mag_options['recent-post-number'] == $recent_post_number) { echo 'selected="selected"'; } ?>><?php echo $recent_post_number; ?></option>
 					<?php } ?>
@@ -232,13 +232,13 @@ function top_mag_framework_page(){
               </div>
             </div>
             <div class="section theme-tabs theme-post">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Select post category</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Select post category','top-mag') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-                <div class="explain">Please select category for post slider.</div>
+                <div class="explain"><?php _e('Please select category for post slider.','top-mag') ?></div>
                 <?php $top_mag_terms = get_terms('category'); ?>
                 <select class="of-input" name="topmag_theme_options[home-post-category]">
-                    <option value="">--Select Category--</option>
+                    <option value="">--<?php _e('Select Category','top-mag') ?>--</option>
 					<?php foreach($top_mag_terms as $top_mag_home_term) { ?>
                     <option value="<?php echo $top_mag_home_term->name; ?>" <?php if(!empty($top_mag_options['home-post-category']) && $top_mag_options['home-post-category'] == $top_mag_home_term->name) { ?> selected="selected" <?php } ?>><?php echo $top_mag_home_term->name; ?></option>
                     <?php } ?>
@@ -247,12 +247,12 @@ function top_mag_framework_page(){
               </div>
             </div>
             <div class="section theme-tabs section-recent-post-slider">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">Select category post number</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Select category post number','top-mag') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-                <div class="explain">Please select number of post</div>
+                <div class="explain"><?php _e('Please select number of post','top-mag') ?></div>
                  <select id="post-number" class="of-input"  name="topmag_theme_options[post-number]">
-              		<option value="">--select number--</option>
+              		<option value="">--<?php _e('select number','top-mag') ?>--</option>
                 	<?php for($post_number = 1; $post_number <= 20; $post_number++ ) { ?>
                 	<option value="<?php echo $post_number; ?>"<?php if($top_mag_options['post-number'] == $post_number) { echo 'selected="selected"'; } ?>><?php echo $post_number; ?></option>
 					<?php } ?>
@@ -264,32 +264,32 @@ function top_mag_framework_page(){
           <!-------------- Fourth group ----------------->
           <div id="options-group-4" class="group faster-inner-tabs">  
 			  <div class="section theme-tabs theme-colors theme-fonts">
-            	<a href="javascript:void(0)" class="heading faster-inner-tab active">Settings of Top Banner header (Right Hand Side of the Logo)</a>
+            	<a href="javascript:void(0)" class="heading faster-inner-tab active"><?php _e('Settings of Top Banner header (Right Hand Side of the Logo)','top-mag') ?></a>
               <div class="faster-inner-tab-group active">
                 <div class="option-group">                  
                  	<div class="ft-control">
               <input type="checkbox" id="display-banner" name="topmag_theme_options[display-banner]" <?php if(!empty($top_mag_options['display-banner'])) { ?> checked="checked" <?php } ?> value="yes">
-               <label class="display-banner" for="display-banner">Please check this checkbox if you want to display banner in the right hand side of the logo.</label>
+               <label class="display-banner" for="display-banner"><?php _e('Please check this checkbox if you want to display banner in the right hand side of the logo.','top-mag') ?></label>
                 </div>
                 </div>                
               </div>
             </div>
             <div id="section-banneradd" class="section theme-tabs theme-logo">
-            	<a class="heading faster-inner-tab" href="javascript:void(0)">HTML Code for the Banner ad</a>
+            	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('HTML Code for the Banner ad','top-mag') ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
               		 <textarea name="topmag_theme_options[banner-html]" class="of-input" id="banner-html"><?php if(!empty($top_mag_options['banner-html'])) { echo $top_mag_options['banner-html']; } ?></textarea>
                 </div>  
-                <h4 class="fasterthemes-or sub-heading">OR</h4>
-               <h4 class="sub-heading">Image upload for the Banner ad (860px x 90px)</h4> 
+                <h4 class="fasterthemes-or sub-heading"><?php _e('OR','top-mag') ?></h4>
+               <h4 class="sub-heading"><?php _e('Image upload for the Banner ad (860px x 90px)','top-mag') ?></h4> 
                 <div class="ft-control">
-              		 <input id="banner-ads-image" class="upload" type="text" name="topmag_theme_options[banner-ads]" value="<?php if(!empty($top_mag_options['banner-ads'])) { echo esc_url($top_mag_options['banner-ads']); } ?>" placeholder="No file chosen" />
-               <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+              		 <input id="banner-ads-image" class="upload" type="text" name="topmag_theme_options[banner-ads]" value="<?php if(!empty($top_mag_options['banner-ads'])) { echo esc_url($top_mag_options['banner-ads']); } ?>" placeholder="<?php _e('No file chosen','top-mag') ?>" />
+               <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','top-mag') ?>" />
                     <div class="screenshot" id="logo-img">
                       <?php if(!empty($top_mag_options['banner-ads'])) {  echo "<img src='".esc_url($top_mag_options['banner-ads'])."' /><a class='remove-image'>Remove</a>"; } ?></div>
                 </div>
                 <div class="ft-control">      
-               <input type="text" id="bannerlink" class="of-input" name="topmag_theme_options[banneradslink]" size="32" value="<?php if(!empty($top_mag_options['banneradslink'])) { echo esc_url($top_mag_options['banneradslink']); } ?>" placeholder="Banner Link">
+               <input type="text" id="bannerlink" class="of-input" name="topmag_theme_options[banneradslink]" size="32" value="<?php if(!empty($top_mag_options['banneradslink'])) { echo esc_url($top_mag_options['banneradslink']); } ?>" placeholder="<?php _e('Banner Link','top-mag') ?>">
                 </div>              
               </div>
             </div> 
@@ -308,12 +308,12 @@ function top_mag_framework_page(){
 	</div>
 	<div class="topmagtheme-footer">
       	<ul>
-            <li class="btn-save"><input type="submit" class="button-primary" value="Save Options" /></li>
+            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','top-mag') ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
-<div class="save-options"><h2>Options saved successfully.</h2></div>
+<div class="save-options"><h2><?php _e('Options saved successfully.','top-mag') ?></h2></div>
  <div class="newsletter"> 
   <h1><?php _e('Subscribe with us','top-mag'); ?></h1>
        <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","top-mag"); ?>

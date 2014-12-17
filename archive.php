@@ -7,7 +7,7 @@ get_header(); ?>
 <div class="col-md-12 blogpost-list">
   <div class="col-md-8 blogpost no-padding-left clearfix">
     <div class="col-md-12 no-padding">
-      <h1 class="post-page-title"><?php printf( __( 'Archives : %s', 'top-mag' ), get_the_date('M-Y') ); ?></h1>
+      <h1 class="post-page-title"><?php _e( 'Archives', 'top-mag' ); echo ' : '.get_the_date('M-Y'); ?></h1>
     </div>
     <?php while ( have_posts() ) : the_post(); 
 	$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'medium');
@@ -37,7 +37,7 @@ get_header(); ?>
         <?php the_excerpt(); ?>
         <div class="blogpost-readmore">
           <p><a href="<?php the_permalink(); ?>">
-            <?php _e('Read More...','top-mag'); ?>
+            <?php _e('Read More','top-mag'); ?>
             </a></p>
         </div>
       </div>

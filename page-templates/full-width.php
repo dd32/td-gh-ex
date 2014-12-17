@@ -4,7 +4,7 @@
 **/
 get_header(); ?> 
   
-  <div class="col-md-12">
+<div class="col-md-12">
 <?php while ( have_posts() ) : the_post(); ?>      
       <div class="col-md-12 single-blog no-padding clearfix">
       	<h1 class="post-page-title"><?php the_title(); ?></h1>

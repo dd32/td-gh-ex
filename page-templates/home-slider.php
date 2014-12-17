@@ -92,7 +92,7 @@ $top_mag_options = get_option( 'topmag_theme_options' );
   <div class="col-md-12 technology-sports-news">
     <div class="col-md-8 news-list no-padding-left clearfix"> 
       <div class="col-md-12 no-padding-left">
-        <h1 class="home_category_title"> <?php if(!empty($top_mag_options['home-post-category'])) { echo esc_attr($top_mag_options['home-post-category']); } else { echo 'All Posts'; } ?></h1>
+        <h1 class="home_category_title"> <?php if(!empty($top_mag_options['home-post-category'])) { echo esc_attr($top_mag_options['home-post-category']); } else { _e('All Posts','top-mag'); } ?></h1>
         <?php
 		 $paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
 		 if(!empty($top_mag_options['post-number'])) { $top_mag_post_page = esc_attr($top_mag_options['post-number']); } else { $top_mag_post_page = get_option('posts_per_page');  } 

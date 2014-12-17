@@ -23,7 +23,11 @@
       <p><?php if(!empty($top_mag_options['footertext'])) { 
                	 echo sanitize_text_field($top_mag_options['footertext']).' '; 
 			}
-				echo 'Proudly Powered by <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://fasterthemes.com/wordpress-themes/topmag">Top Mag</a>.';
+				
+				
+				printf( __( 'Powered by %1$s and %2$s.', 'top-mag' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>',
+				'<a href="http://fasterthemes.com/wordpress-themes/topmag" target="_blank">Top Mag</a>' ); 
+				
 		?></p>
     </div>
   </div>
