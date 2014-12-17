@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu and header-image.
  */
 ?>
 
@@ -44,5 +44,4 @@
 			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
 		<?php } ?> 
 	<?php } ?> 
-
 </div>
