@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.9 - december 2014
+- renamed .article and .article-full into .main and .main-full
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 GridBulletin version 1.8 - december 2014
 - added French translation
 - several css adjustments

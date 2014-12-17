@@ -6,14 +6,15 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
+<div class="main">
 
 	<?php if ( have_posts() ) : ?>
+
 		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'gridbulletin' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 			
-	<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="post-archive<?php if( $wp_query->current_post%3 == 0 ) echo ' left'; elseif ( $wp_query->current_post%3 == 2 ) echo ' right'; ?>">
+		<div class="post-archive<?php if( $wp_query->current_post%3 == 0 ) echo ' left'; elseif ( $wp_query->current_post%3 == 2 ) echo ' right'; ?>">
 
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 			<div class="sticky">
@@ -38,12 +39,13 @@
 		<?php comments_popup_link( __( 'Leave a response', 'gridbulletin' ), __( '1 response', 'gridbulletin' ), __( '% responses', 'gridbulletin' ) ); ?><?php endif; ?>
 		</h5>
 
-	</div>
+		</div>
 
 		<?php endwhile; else: ?>
 					
-	<h3 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h3>
+		<h3 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h3>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
+
 		<?php get_search_form(); ?>
 			
 	<?php endif; ?>

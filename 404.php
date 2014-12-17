@@ -6,11 +6,11 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
+<div class="main">
 
-		<h3 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h3>
-			<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
-		<?php get_search_form(); ?>
+	<h3 class="page-title"><?php _e( 'Nothing Found', 'gridbulletin' ); ?></h3>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
+	<?php get_search_form(); ?>
 
 </div>
 </div>

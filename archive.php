@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
+<div class="main">
 
 	<?php if (have_posts()) : $count = 0; ?>
 		<?php if (is_category()) { ?>
@@ -53,9 +53,9 @@
 
 	</div>
 
-		<?php endwhile; else: ?>
+	<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
-		<?php endif; ?>
+	<?php endif; ?>
 				
 	<div class="post-nav">
 		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )) ?></div>

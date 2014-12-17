@@ -7,9 +7,10 @@
 
 <?php get_header(); ?>
 <div id="content-full">
-<div class="article-full">
+<div class="main-full">
 
 	<?php while ( have_posts() ) : the_post(); ?>
+
 		<h3 class="page-title"><?php the_title(); ?></h3>
 
 		<?php if ( has_post_thumbnail() ) { 
@@ -17,6 +18,7 @@
 		} ?>
 
 		<?php the_content(); ?>
+
 		<div class="pagelink"><?php wp_link_pages(); ?></div>
 
 		<?php comments_template(); ?>
@@ -27,5 +29,4 @@
 
 </div>
 </div>	
-	
 <?php get_footer(); ?>

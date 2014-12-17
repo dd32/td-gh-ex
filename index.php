@@ -6,8 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content-full">
-
-<div class="article-full">
+<div class="main-full">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
@@ -38,9 +37,9 @@
 
 	</div>
 
-		<?php endwhile; else: ?>
+	<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
-		<?php endif; ?>
+	<?php endif; ?>
 
 	<div class="post-nav">
 		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )) ?></div>
@@ -49,5 +48,4 @@
 
 </div>
 </div>
-
 <?php get_footer('home'); ?>

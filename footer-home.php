@@ -17,7 +17,6 @@
 		<?php dynamic_sidebar( 'footer-home-middle' ); ?>
 	</div>
 
-
 	<div class="footer-right"> 
 		<?php dynamic_sidebar( 'footer-home-right' ); ?>
 	</div>
@@ -31,7 +30,6 @@
 	</div>
 
 </div>
-
 </div><!-- #container -->
 
 <?php
@@ -41,5 +39,6 @@
     */
     wp_footer();
 ?>
+
 </body>
 </html>
