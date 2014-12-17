@@ -6,10 +6,11 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
-	<?php if (have_posts()) : ?>
+<div class="main">
 
+	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<h3 class="post-title"><?php the_title(); ?></h3>
 
@@ -27,7 +28,6 @@
 			<?php printf( __( 'Posted in %s', 'onecolumn' ), get_the_category_list( __( ', ', 'onecolumn' ) ) ); ?>
 			<?php if(has_tag() ) : echo ' | '; ?><?php printf(__( 'Tags: %s', 'onecolumn' ), get_the_tag_list('', __( ', ', 'onecolumn' ) ) ); ?> <?php endif; ?>
 			</h5>
-
 		</div>
 
 		<?php comments_template(); ?>

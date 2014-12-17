@@ -108,7 +108,7 @@
 		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle-home">',
+		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	) );
 
@@ -118,7 +118,7 @@
 		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle-home">',
+		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	) );
 
@@ -129,7 +129,7 @@
 		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle-foot">',
+		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	) );
 
@@ -139,7 +139,7 @@
 		'description' => __( 'Select widgets from the right-hand side.', 'onecolumn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle-foot">',
+		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	) );
 

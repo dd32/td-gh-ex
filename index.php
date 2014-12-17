@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
+<div class="main">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -32,6 +32,7 @@
 	} ?>
 
 	<?php the_excerpt(); ?>
+
 	<div class="more">
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'onecolumn' ); ?></a>
 	</div>

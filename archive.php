@@ -6,7 +6,8 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="article">
+<div class="main">
+
 	<?php if (have_posts()) : $count = 0; ?>
 		<?php if (is_category()) { ?>
 			<h3 class="page-title"><?php _e('Archive', 'onecolumn'); ?> | <?php echo single_cat_title(); ?></h3> 
@@ -38,9 +39,10 @@
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
-	} 	?>
+	} ?>
 
 	<?php the_excerpt(); ?>
+
 	<div class="more">
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'onecolumn' ); ?></a>
 	</div>

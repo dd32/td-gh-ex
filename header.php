@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu, header-image and homepage-widgets.
+ * The header for displaying menu, header-image and homepage-widgets.
  */
 ?>
 
@@ -26,6 +26,7 @@
 <body <?php body_class(); ?> >
 <div id="container">
 
+<div id="header-container">
 <div id="header">
 
 	<div class="logo"> 
@@ -47,6 +48,7 @@
 		<?php } ?> 
 	<?php } ?> 
 
+</div>
 </div>
 
 <?php if ( is_home() || is_front_page() ) {?> 
