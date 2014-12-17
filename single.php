@@ -8,8 +8,8 @@
 <div id="content">
 
 	<?php if (have_posts()) : ?>
-
 	<?php while (have_posts()) : the_post(); ?>
+
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<h3 class="post-title"><?php the_title(); ?></h3>
 
@@ -21,13 +21,13 @@
 			</h5>
 	
 			<?php the_content(); ?>
+
 			<div class="pagelink"><?php wp_link_pages(); ?></div>
 			
 			<h5 class="postmetadata">
 			<?php printf( __( 'Posted in %s', 'simplyblack' ), get_the_category_list( __( ', ', 'simplyblack' ) ) ); ?>
 			<?php if(has_tag() ) : echo ' | '; ?><?php printf(__( 'Tags: %s', 'simplyblack' ), get_the_tag_list('', __( ', ', 'simplyblack' ) ) ); ?> <?php endif; ?>
 			</h5>
-		
 		</div>
 
 		<?php comments_template(); ?>

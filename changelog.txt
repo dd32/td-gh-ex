@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+SimplyBlack Version 2.5 - december 2014
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 SimplyBlack Version 2.4 - december 2014
 - file functions: added custom post excerpt lenght
 - added French translation

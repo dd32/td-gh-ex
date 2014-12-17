@@ -13,21 +13,18 @@ if ( post_password_required() )
 <div id="comments">
 
 	<?php if ( have_comments() ) : ?>
+
 		<h4 class="comments-title">
-			<?php
-				printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'simplyblack' ),
-				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
+			<?php printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'simplyblack' ), 
+			number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?>
 		</h4>
 
 		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 32,
-				) );
-			?>
+			<?php wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 32,
+			) ); ?>
 		</ol><!-- .comment-list -->
 
 		<?php
@@ -43,7 +40,7 @@ if ( post_password_required() )
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'simplyblack' ); ?></h4>
+			<h4 class="no-comments"><?php _e( 'Comments are closed' , 'simplyblack' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
