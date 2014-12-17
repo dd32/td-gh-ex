@@ -8,9 +8,10 @@
 <div id="content">
 
 	<?php if (have_posts()) : ?>
-
 	<?php while (have_posts()) : the_post(); ?>
+
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
 			<h4 class="post-title"><?php the_title(); ?></h4>
 
 			<h5 class="postmetadata">
@@ -21,6 +22,7 @@
 			</h5>
 
 			<?php the_content(); ?>
+
 			<div class="pagelink"><?php wp_link_pages(); ?></div>
 			
 			<h5 class="postmetadata">

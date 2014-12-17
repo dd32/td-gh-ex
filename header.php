@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu and header-image.
  */
 ?>
 <!DOCTYPE html>
@@ -25,15 +25,13 @@
 <body <?php body_class(); ?> >
 <div id="container">
 
-<div id="pre-header">
+<div id="header-first">
 	<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 	<?php endif; ?>
-
 </div>
 
-<div id="header">
-
+<div id="header-second">
 	<div class="logo"> 
 		<?php if ( get_theme_mod( 'darkorange_logo' ) ) : ?> 
 			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'darkorange_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
@@ -43,20 +41,19 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="image-homepage"> 
-		<?php if ( is_home() || is_front_page() ) {?> 
-		<?php if ( get_header_image() ) {?> 
-				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
-		<?php } ?>
-		<?php } ?> 
-	</div>
-
-	<div class="sidebar-homepage"> 
-		<?php if ( is_home() || is_front_page() ) {?> 
-		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
+	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( get_header_image() ) {?> 
+		<div class="image-homepage"> 
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
+		</div>
+	<?php } ?>
+	<?php } ?> 
+	
+	<?php if ( is_home() || is_front_page() ) {?> 
+	<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
+		<div class="sidebar-homepage"> 
 			<?php dynamic_sidebar( 'homepage' ); ?>
-		<?php } ?>
- 		<?php } ?> 
-
-	</div>
+		</div>
+	<?php } ?>
+ 	<?php } ?> 
 </div>
