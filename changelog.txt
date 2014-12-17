@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+BlueGray version 2.4 - december 2014
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 BlueGray version 2.3 - december 2014
 - file header: removed double if statement
 - file functions: added custom post excerpt lenght

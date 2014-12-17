@@ -8,9 +8,10 @@
 <div id="content">
 
 	<?php if ( have_posts() ) : ?>
+
 		<h4 class="archive-title"><?php printf( __( 'Search Results for: %s', 'bluegray' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
 			
-	<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
 		<h4 class="post-title">
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permalink to %s', 'bluegray'), the_title_attribute('echo=0')); ?>"> <?php the_title(); ?></a> 
@@ -23,19 +24,21 @@
 		<?php comments_popup_link( __( 'Leave a response', 'bluegray' ), __( '1 response', 'bluegray' ), __( '% responses', 'bluegray' ) ); ?><?php endif; ?>
 		</h5>
 
-	<?php if ( has_post_thumbnail() ) { 
-		the_post_thumbnail(); 
+		<?php if ( has_post_thumbnail() ) { 
+			the_post_thumbnail(); 
 		} ?>
 
-	<?php the_excerpt(); ?>
-	<div class="more">
-		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'bluegray' ); ?></a>
-	</div>
+		<?php the_excerpt(); ?>
+
+		<div class="more">
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'bluegray' ); ?></a>
+		</div>
 
 		<?php endwhile; else: ?>
 					
-	<h4 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h4>
+		<h4 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h4>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'bluegray'); ?></p>
+
 		<?php get_search_form(); ?>
 			
 	<?php endif; ?>
@@ -46,6 +49,5 @@
 	</div>
 
 </div>
-
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

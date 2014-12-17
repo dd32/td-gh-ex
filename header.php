@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu, header-image and homepage-widgets.
  */
 ?>
 
@@ -39,7 +39,6 @@
 	</div>
 
 	<div id="header-second">
-
 		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 		<?php endif; ?>
