@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 1.7 - december 2014 
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 MyKnowledgeBase version 1.6 - december 2014 
 - added French translation
 - several css adjustments

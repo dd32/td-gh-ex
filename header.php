@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu and header-image.
  */
 ?>
 
@@ -66,4 +66,3 @@
 	<h4 class="search-title"><?php _e( 'Search website', 'myknowledgebase' ); ?></h4>
 	<?php get_search_form(); ?>
 </div>
-

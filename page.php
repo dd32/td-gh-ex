@@ -8,6 +8,7 @@
 <div id="content">
 
 	<?php while ( have_posts() ) : the_post(); ?>
+
 		<h4 class="page-title"><?php the_title(); ?></h4>
 
 		<?php if ( has_post_thumbnail() ) { 
@@ -24,6 +25,5 @@
 	<?php edit_post_link( __( 'Edit', 'myknowledgebase' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
 
 </div>		
-	
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
