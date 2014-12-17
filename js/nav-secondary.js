@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
             jQuery("<option />", {
                 "selected": "selected",
                 "value": "",
-                "text": "Top Menu..."  
+                "text": "Menu Top..."  
             }).appendTo(".nav-head-secondary select");
 
             //Populate

@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 2.8 - december 2014
+- file page-full: removed .article
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 PrivateBusiness version 2.7 - december 2014
 - added French translation
 - several css adjustments

@@ -23,19 +23,21 @@
 		<?php comments_popup_link( __( 'Leave a response', 'privatebusiness' ), __( '1 response', 'privatebusiness' ), __( '% responses', 'privatebusiness' ) ); ?><?php endif; ?>
 		</h5>
 
-	<?php if ( has_post_thumbnail() ) { 
-		the_post_thumbnail(); 
+		<?php if ( has_post_thumbnail() ) { 
+			the_post_thumbnail(); 
 		} ?>
 
-	<?php the_excerpt(); ?>
-	<div class="more">
-		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'privatebusiness' ); ?></a>
-	</div>
+		<?php the_excerpt(); ?>
+
+		<div class="more">
+			<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'privatebusiness' ); ?></a>
+		</div>
 
 	<?php endwhile; else: ?>
 					
 	<h3 class="page-title"><?php _e( 'Nothing Found', 'privatebusiness' ); ?></h3>
 	<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
+
 	<?php get_search_form(); ?>
 			
 	<?php endif; ?>

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v2.4\n"
+"Project-Id-Version: PrivateBusiness v2.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-25 16:18:51+0000\n"
