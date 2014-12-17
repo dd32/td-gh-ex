@@ -6,6 +6,15 @@ Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+== Bundled Resources ==
+* Font Awesome: http://fortawesome.github.io/Font-Awesome/
+* Options Framework: http://wptheming.com/
+* BootStrap: http://getbootstrap.com/
+* Owl carousel: http://owlgraphic.com/owlcarousel/
+* SwipeBox: http://github.com/brutaldesign/swipebox
+* MeanMenu: https://github.com/meanthemes/meanMenu
+* jQueryAppear: https://github.com/morr/jquery.appear/
+* SmoothScrolljs: https://gist.github.com/galambalazs/6477177/
 
 == Description ==
 
@@ -73,6 +82,8 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.3
+- Fixed 'text-domain' and add Bundled Resources credit link on README.md file.
 
 ### Version 1.0.2
 - Fixed 'text-domain, function_exists() conditional wrappers for core functions' issue.
