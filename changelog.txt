@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MultiColors version 2.0 - december 2014
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 MultiColors version 1.9 - december 2014 
 - file header: removed double if statement
 - file functions: added custom post excerpt lenght

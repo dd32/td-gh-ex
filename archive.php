@@ -40,16 +40,17 @@
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
-	} 	?>
+	} ?>
 
 	<?php the_excerpt(); ?>
+
 	<div class="more">
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'multicolors' ); ?></a>
 	</div>
 
-		<?php endwhile; else: ?>
+	<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'multicolors'); ?></p>
-		<?php endif; ?>
+	<?php endif; ?>
 				
 	<div class="post-nav">
 		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'multicolors' )) ?></div>
