@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-OneColumn Version 2.5 - december 2014
+OneColumn Version 2.6 - december 2014
 - renamed .article into .main
 - file header: added #header-container
 - fixed style bug with widgettitle
