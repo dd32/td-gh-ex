@@ -4,7 +4,7 @@ Theme URI: http://themes.redradar.net/adirondack/documentation/
 Author: Kelly Dwan & Mel Choyce
 Author URI: http://themes.redradar.net
 Description: Adirondack has a bright, clean layout designed to give your content the full attention it deserves. With large images and neat typography, this theme is crafted for longform writers and photographers alike.
-Version: 0.1.0
+Version: 0.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adirondack
@@ -1591,11 +1591,11 @@ body.no-image .entry-title {
   vertical-align: top;
 }
 
-.search .page-header {
+.search .page-header, .error404 .page-header {
   margin-bottom: 60px;
   padding: 100px 20px 100px;
 }
-.search .search-form {
+.search .search-form, .error404 .search-form {
   margin: 40px auto;
   padding-left: 2em;
   padding-right: 2em;
@@ -1603,17 +1603,17 @@ body.no-image .entry-title {
   -moz-box-sizing: content-box;
        box-sizing: content-box;
 }
-.search .search-form input[type="submit"] {
+.search .search-form input[type="submit"], .error404 .search-form input[type="submit"] {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
   width: 1px;
   overflow: hidden;
 }
-.search .entry-title a {
+.search .entry-title a, .error404 .entry-title a {
   text-decoration: none;
 }
-.search .hentry {
+.search .hentry, .search .page-content, .error404 .hentry, .error404 .page-content {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-bottom: 40px;
@@ -1622,10 +1622,68 @@ body.no-image .entry-title {
   max-width: 850px;
 }
 @media (max-width: 450px) {
-  .search .hentry {
+  .search .hentry, .search .page-content, .error404 .hentry, .error404 .page-content {
     padding-left: 1em;
     padding-right: 1em;
   }
+}
+.search .page-content, .error404 .page-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+.search .page-content p, .error404 .page-content p {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.search .widget, .error404 .widget {
+  width: 50%;
+}
+.search .widget:first-of-type:last-of-type, .error404 .widget:first-of-type:last-of-type {
+  width: 100%;
+}
+.search .widget a, .error404 .widget a {
+  color: #6f7d8f;
+}
+.search .widget a:hover, .search .widget a:focus, .error404 .widget a:hover, .error404 .widget a:focus {
+  color: #111111;
+}
+
+.not-found {
+  background: white;
+}
+.not-found .page-header {
+  margin-bottom: 60px;
+}
+.not-found .page-content {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 850px;
+}
+@media (max-width: 450px) {
+  .not-found .page-content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+.not-found .page-content p {
+  margin-bottom: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.not-found .search-form {
+  margin: 40px auto 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  max-width: 850px;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+}
+.not-found .search-form input[type="submit"] {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 /*--------------------------------------------------------------
