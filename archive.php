@@ -37,9 +37,10 @@
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
-	} 	?>
+	} ?>
 
 	<?php the_excerpt(); ?>
+
 	<div class="more">
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'darkelements' ); ?></a>
 	</div>

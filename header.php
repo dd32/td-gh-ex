@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying primary menu and header-image.
+ * The header for displaying menu and header-image.
  */
 ?>
 

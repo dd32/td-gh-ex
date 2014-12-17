@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+DarkElements version 2.0 - december 2014 
+- fixed width of footer widgets
+- adjusted styling of several tags
+- reordered and cleaned up files style and custom-editor-style
+- reordered php files
+
 DarkElements version 1.9 - november 2014 
 - first stable release
 
