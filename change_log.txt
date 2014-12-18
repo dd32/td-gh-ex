@@ -62,3 +62,10 @@ Version 1.3.7 (10 Dec 2014)
 i)  Remove fasterthemes icon in besty.php
 ii) Add pro theme features tab in theme options.
 iii) Declare copyright and license information
+
+Version 1.3.8 (18 Dec 2014)
+i) Remove .map file.
+ii) Change font import css file to using enqueue function.
+iii) Used minified file to normal file and remove minified files.
+iv) Rename file enscroll.min.js to enscroll.js.
+v) Remove subscribe link in theme options.

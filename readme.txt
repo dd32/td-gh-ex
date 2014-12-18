@@ -5,7 +5,7 @@ Description: Besty is really going to be the best WordPress theme for architectu
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: dark, custom-menu, right-sidebar, full-width-template, responsive-layout, fixed-layout, fluid-layout, sticky-post, featured-images, post-formats, theme-options, editor-style, custom-background, three-columns , translation-ready
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Besty Theme, Copyright 2014 fasterthemes.com

@@ -233,13 +233,4 @@ function besty_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','besty'); ?></h2></div>
-<div class="newsletter"> 
-  <h1><?php _e('Subscribe with us','besty'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","besty"); ?>
-          
-        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','besty'); ?></a>
-        
-       </p> 
-
-</div>
 <?php } ?>
