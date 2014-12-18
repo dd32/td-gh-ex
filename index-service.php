@@ -1,12 +1,3 @@
-<?php
-/**
-* @Theme Name	:	wallstreet
-* @file         :	index-service.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/index-service.php
-*/
-?>
 <?php $current_options=get_option('wallstreet_lite_options'); ?>
 <?php if($current_options['service_section_enabled'] == 'on') { ?>
 <!-- wallstreet Service Section ---->

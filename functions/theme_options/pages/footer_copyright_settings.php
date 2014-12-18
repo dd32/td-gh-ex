@@ -16,8 +16,8 @@
 		}	
 		if($_POST['webriti_settings_save_23'] == 2) 
 		{
-			$current_options['footer_customizations']="Copyright @ 2014 - WALL STREET. Designed by";
-			$current_options['created_by_webriti_text']="Webriti";
+			$current_options['footer_customizations']=__('Copyright @ 2014 - WALL STREET. Designed by','wallstreet');
+			$current_options['created_by_webriti_text']=__('Webriti','wallstreet');
 			$current_options['created_by_link']="http://webriti.com/";		
 			update_option('wallstreet_lite_options',$current_options);
 		}

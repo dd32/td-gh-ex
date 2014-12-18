@@ -1,12 +1,3 @@
-<?php 
-/**
-* @Theme Name	:	Wallstreet
-* @file         :	author.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/author.php
-*/
-?>
 <?php get_header(); ?>
 <!-- Page Title Section -->
 <div class="page-mycarousel">

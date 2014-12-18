@@ -28,10 +28,10 @@
 			$current_options['contact_header_settings']="on";
 			$current_options['contact_phone_number'] = "1-800-123-789";
 			$current_options['contact_email'] = "info@webriti.com";
-			$current_options['service_title'] = 'Our Services';
-			$current_options['service_description'] = 'We Offer Great Services to our Clients';
-			$current_options['portfolio_title'] ='Featured Portfolio Project';
-			$current_options['portfolio_description'] ='Most Popular of Our Works';
+			$current_options['service_title'] = __('Our Services','wallstreet');
+			$current_options['service_description'] = __('We Offer Great Services to our Clients','wallstreet');
+			$current_options['portfolio_title'] =__('Featured Portfolio Project','wallstreet');
+			$current_options['portfolio_description'] =__('Most Popular of Our Works','wallstreet');
 			update_option('wallstreet_lite_options',$current_options);
 		}
 	}  ?>

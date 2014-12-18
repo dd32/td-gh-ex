@@ -1,12 +1,3 @@
-<?php
-/**
-* @Theme Name	:	wallstreet
-* @file         :	index-portfolio.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/index-portfolio.php
-*/
-?>
 <!-- AddThis Button END -->
 <?php $current_options=get_option('wallstreet_lite_options'); ?>
 <?php if($current_options['portfolio_section_enabled'] == 'on') { ?>

@@ -1,15 +1,4 @@
-<?php 
-/**
-* @Theme Name	:	Wallstreet
-* @file         :	page.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/page.php
-*/
-?>
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <div class="page-mycarousel">
 	<div class="page-title-col">
 		<div class="container">

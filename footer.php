@@ -1,12 +1,3 @@
-<?php
-/**
-* @Theme Name	:	wallstreet
-* @file         :	footer.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/footer.php
-*/
-?>
 <!-- Footer Widget Secton -->
 <?php $current_options=get_option('wallstreet_lite_options'); ?>
 <div class="footer_section">
@@ -36,20 +27,7 @@
 		<?php 
 			if ( is_active_sidebar( 'footer-widget-area' ) )
 			{ dynamic_sidebar( 'footer-widget-area' );	}
-			else 
-			{  	$args=array(
-					'before_widget' => '<div class="col-md-3 col-sm-6 footer_widget_column">',
-					'after_widget' => '</div>',
-					'before_title' => '<h3 class="footer_widget_title">',
-					'after_title' => '</h3>');
-				$instance =array('title' => __('About','wallstreet'), 'text' => __('It is a long established fact that a read will be distracted by the readable cont of a page when looking at its layout. point of using Lorem Ipsum is that
-
-it has less normal distribution letters, as opposed to using content here.','wallstreet'));
-				the_widget('WP_Widget_Text',$instance,$args); 	
-				the_widget('WP_Widget_Pages','',$args); 
-				the_widget('WP_Widget_Archives','',$args);
-				the_widget('WP_Widget_Tag_Cloud','',$args);
-			} ?>
+		?>
 		</div>
         <div class="row">
 			<div class="col-md-12">

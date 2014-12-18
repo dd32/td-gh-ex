@@ -1,11 +1,4 @@
 <?php
-/**
-* @Theme Name	:	wallstreet
-* @file         :	theme_stup_data.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/theme_stup_data.php
-*/
 function theme_data_setup()
 {
 	$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
@@ -23,53 +16,53 @@ function theme_data_setup()
 			
 			//Featured Image Setting
 			'home_banner_enabled'=>'on',
-			'slider_title_one' => 'Clean & Fresh Theme',
-			'slider_title_two' => 'Welcome To Wallstreet',
-			'slider_description' => 'The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile...',
+			'slider_title_one' => __('Clean & Fresh Theme','wallstreet'),
+			'slider_title_two' => __('Welcome To Wallstreet','wallstreet'),
+			'slider_description' => __('The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile...','wallstreet'),
 			'slider_image' => $slider_image,
 			
 			// service
 			'service_section_enabled' => 'on',
 			
 			'service_image_one' => $service_image, 
-			'service_title_one'=> 'Product Designing',
-			'service_description_one' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
+			'service_title_one'=> __('Product Designing','wallstreet'),
+			'service_description_one' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			'service_image_two' => $service_image, 
-			'service_title_two'=> 'WordPress Themes',
-			'service_description_two' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
+			'service_title_two'=> __('WordPress Themes','wallstreet'),
+			'service_description_two' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			'service_image_three' => $service_image, 
-			'service_title_three'=> 'Responsive Designs',
-			'service_description_three' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
+			'service_title_three'=> __('Responsive Designs','wallstreet'),
+			'service_description_three' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			//portfolio
 			'portfolio_section_enabled' => 'on',
 			
-			'portfolio_title_one' => 'Wall Street Style',
-			'portfolio_description_one' => 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings.',
+			'portfolio_title_one' => __('Wall Street Style','wallstreet'),
+			'portfolio_description_one' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 			'portfolio_image_one' => $portfolio_image,
 			
-			'portfolio_title_two' => 'Wall Street Style',
-			'portfolio_description_two' => 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings.',
+			'portfolio_title_two' => __('Wall Street Style','wallstreet'),
+			'portfolio_description_two' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 			'portfolio_image_two' => $portfolio_image,
 			
-			'portfolio_title_three' => 'Wall Street Style',
-			'portfolio_description_three' => 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings.',
+			'portfolio_title_three' => __('Wall Street Style','wallstreet'),
+			'portfolio_description_three' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 			'portfolio_image_three' => $portfolio_image,
 			
-			'portfolio_title_four' => 'Wall Street Style',
-			'portfolio_description_four' => 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings.',
+			'portfolio_title_four' => __('Wall Street Style','wallstreet'),
+			'portfolio_description_four' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 			'portfolio_image_four' => $portfolio_image,
 			
 			// Head Titles
 			'contact_header_settings' => 'on',
 			'contact_phone_number' => '1-800-123-789',
 			'contact_email' => 'info@webriti.com',
-			'service_title' => 'Our Services',
-			'service_description' => 'We Offer Great Services to our Clients',
-			'portfolio_title' => 'Featured Portfolio Project',
-			'portfolio_description' => 'Most Popular of Our Works.',
+			'service_title' => __('Our Services','wallstreet'),
+			'service_description' => __('We Offer Great Services to our Clients','wallstreet'),
+			'portfolio_title' => __('Featured Portfolio Project','wallstreet'),
+			'portfolio_description' => __('Most Popular of Our Works.','wallstreet'),
 			
 			/** Social media links **/
 			'header_social_media_enabled'=>'on',			
@@ -82,7 +75,7 @@ function theme_data_setup()
 			
 			/** footer customization **/
 			'footer_customizations' => 'Copyright @ 2014 - WALL STREET. Designed by',
-			'created_by_webriti_text' => 'Webriti',
+			'created_by_webriti_text' => __('Webriti','wallstreet'),
 			'created_by_link' => 'http://webriti.com/',
 		);
 }

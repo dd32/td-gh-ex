@@ -52,7 +52,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 0.4.2
+1. Added text domain to untranslated strings.
+2. Removed the unused resource bootstrap.map.css
+3. Updated Pot file.
 @version 0.4.1
 1. Update all the default social links to #
 2. Add prefix to all the registered custom scripts.

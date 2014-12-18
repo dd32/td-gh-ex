@@ -1,13 +1,3 @@
-<?php
-/**
-* @Theme Name	:	wallstreet
-* @file         :	index-slider.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @license      :	license.txt
-* @filesource   :	wp-content/themes/wallstreet/index-slider.php
-*/
-?>
 <!-- wallstreet Main Slider --->
 <?php
 $current_options = get_option('wallstreet_lite_options');

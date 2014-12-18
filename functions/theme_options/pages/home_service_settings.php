@@ -34,17 +34,17 @@
 			$service_image = WEBRITI_TEMPLATE_DIR_URI . "/images/service.jpg";
 			$current_options['service_section_enabled']= 'on';
 
-			$current_options['service_title_one']='Product Designing';
-			$current_options['service_description_one'] ='Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.';
-			$current_options['service_image_one']= $service_image;
+			$current_options['service_image_one'] => $service_image, 
+			$current_options['service_title_one']=> __('Product Designing','wallstreet'),
+			$current_options['service_description_one'] => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
-			$current_options['service_title_two']='WordPress Themes';
-			$current_options['service_description_two'] ='Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.';
-			$current_options['service_image_two']= $service_image;
+			$current_options['service_image_two'] => $service_image, 
+			$current_options['service_title_two']=> __('WordPress Themes','wallstreet'),
+			$current_options['service_description_two'] => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
-			$current_options['service_title_three']='Responsive Designs';
-			$current_options['service_description_three'] ='Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.';
-			$current_options['service_image_three']= $service_image;
+			$current_options['service_image_three'] => $service_image, 
+			$current_options['service_title_three']=> __('Responsive Designs','wallstreet'),
+			$current_options['service_description_three'] => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			update_option('wallstreet_lite_options',$current_options);
 		}

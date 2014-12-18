@@ -20,7 +20,7 @@ function webriti_fallback_page_menu( $args = array() ) {
 	// Show Home in the menu
 	if ( ! empty($args['show_home']) ) {
 		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-			$text = 'Home';
+			$text = __('Home','wallstreet');
 		else
 			$text = $args['show_home'];
 		$class = '';

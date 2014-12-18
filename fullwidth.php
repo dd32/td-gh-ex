@@ -1,13 +1,3 @@
-<?php 
-/**
-* Template Name: fullwidth
-* @Theme Name	:	Wallstreet
-* @file         :	page.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/page.php
-*/
-?>
 <?php get_header(); ?>
 <!-- Page Title Section -->
 <div class="page-mycarousel">

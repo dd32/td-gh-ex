@@ -1,12 +1,4 @@
-<?php
-/*	@Theme Name	:	wallstreet
-* 	@file         :	search.php
-* 	@package      :	wallstreet
-* 	@author       :	Harish Lodha
-* 	@filesource   :	wp-content/themes/wallstreet/search.php
-*/
-get_header();
-?>
+<?php get_header(); ?>
 <!-- Page Title Section -->
 <div class="page-mycarousel">
 	<div class="page-title-col">
@@ -61,8 +53,8 @@ get_header();
 			</div>
 			<?php } ?>
 			<div class="blog-pagination">
-				<?php next_posts_link( 'Previous' ); ?>
-				<?php previous_posts_link( 'Next' ); ?>
+				<?php next_posts_link( __('Previous','wallstreet') ); ?>
+				<?php previous_posts_link( __('Next','wallstreet') ); ?>
 			</div>
 			<?php } else { ?>
 				<div class="search_error">

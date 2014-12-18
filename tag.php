@@ -1,12 +1,3 @@
-<?php 
-/**
-* @Theme Name	:	Wallstreet
-* @file         :	tag.php
-* @package      :	wallstreet
-* @author       :	Harish Lodha
-* @filesource   :	wp-content/themes/wallstreet/tag.php
-*/
-?>
 <?php get_header(); ?>
 
 <!-- Page Title Section -->
