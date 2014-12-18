@@ -89,7 +89,7 @@ function accesspress_parallax_setup_author() {
 add_action( 'wp', 'accesspress_parallax_setup_author' );
 
 //bxSlider Callback for do action
-function accesspresslite_bxslidercb(){
+function accesspress_bxslidercb(){
 		global $post;
 		$accesspress_parallax = of_get_option('parallax_section');
 		if(!empty($accesspress_parallax)) :
@@ -211,11 +211,11 @@ function accesspresslite_bxslidercb(){
 <?php
 }
 
-add_action('accesspresslite_bxslider','accesspresslite_bxslidercb', 10);
+add_action('accesspress_bxslider','accesspress_bxslidercb', 10);
 
 
 //add class for parallax
-function accesspres_is_parallax($class){
+function accesspress_is_parallax($class){
 	$is_parallax = of_get_option('enable_parallax');
 	if($is_parallax=='1'):
 		$class[] = "parallax-on"; 
@@ -223,7 +223,7 @@ function accesspres_is_parallax($class){
 	return $class;
 }
 
-add_filter('body_class','accesspres_is_parallax');
+add_filter('body_class','accesspress_is_parallax');
 
 
 //Dynamic styles on header

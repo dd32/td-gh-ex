@@ -86,6 +86,6 @@
 	<div id="content" class="site-content <?php echo $content_class; ?>">
 	<?php 
 	if(is_home() || is_front_page()) :
-		do_action('accesspresslite_bxslider'); 
+		do_action('accesspress_bxslider'); 
 	endif;
 	?>
