@@ -36,3 +36,9 @@ Version 1.2.3 (09-12-2014)
 i) Escaped $medium_featured_image in functions.php
 ii) Fixed scroll issue
 iii) Declare copyright and license information
+
+
+Version 1.2.4 (18-12-2014)
+i) all css and js file used minified to normal script.
+ii) remove bootstrap.min.css, bootstrap.min.js, html5shiv.min.js and respond.min.js file.
+iii) rename enscroll.min.js to enscroll.js
