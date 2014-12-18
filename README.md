@@ -2,7 +2,7 @@ Aventurine
 ===
 by [Kelly Dwan](http://redradar.net) and [Mel Choyce](http://choycedesign.com)
 
-Aventurine is a free WordPress theme...
+Aventurine puts the focus back on your content, with large type and bright colors. Responsive and accessibility-ready, your content can be easily available to your entire audience.
 
 ###Back to Basics
 
@@ -28,9 +28,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ####External resources:
 
+Fonts Josefin Sans by Santiago Orozco and Varela Round by Joe Prince from Google Fonts, SIL Open Font License, 1.1
+
 DoubleTapToGo by Osvaldas Valutis (MIT), http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 ### Changelog
+
+Version 0.1.1
+* Update Licenses
+* i18n-ify the "Read More" text
+* Rename sidebars with clearer names, and add descriptions
+* Update heading tags for better heirarchy
+* Add borders on text inputs for keyboard nav
+* Update POT file with new strings
 
 Version 0.1.0
 * First public release

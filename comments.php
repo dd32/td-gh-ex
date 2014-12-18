@@ -20,10 +20,11 @@ if ( post_password_required() )
 ?>
 
 <div id="comments" class="comments-area container">
-	<h1 class="comments-title"><?php _ex( 'Comments', 'section title', 'aventurine' ); ?></h1>
+	<h2 class="comments-title"><?php _ex( 'Comments', 'section title', 'aventurine' ); ?></h2>
 
 	<?php comment_form(array(
 		'title_reply' => __( 'Join the conversation', 'aventurine' ),
+		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.', 'aventurine' ) . '</p>',
 		'comment_notes_after' => '',
 		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'aventurine' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Comment', 'noun', 'aventurine' ) . '"></textarea></p>',
 	)); ?>
@@ -52,7 +53,7 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'aventurine' ); ?></h1>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'aventurine' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'aventurine' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'aventurine' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
