@@ -654,9 +654,11 @@ if ( ! class_exists( 'boosterPA_List_Table' ) ) {
             return sprintf( '<input type="checkbox" name="%1$s[]" value="%2$s" id="%3$s" />', $this->_args['singular'], $value, $item['sanitized_plugin'] );
         }
         /* Sets default message within the plugins table if no plugins */
-        public function no_items() {
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'booster' ), admin_url() );
-            echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
+        public function no_items() {        
+          
+         _e('No plugins to install or activate','booster'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','booster'). "</a>";
+
+		    echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
         }
         /* Output all the column information within the table.*/
         public function get_columns() {
@@ -1010,7 +1012,7 @@ function booster_load_bulk_installer() {
                 /* Sets the correct install strings for the installer skin to use. */
                 public function install_strings() {
                     $this->strings['no_package']          = __( 'Install package not available.', 'booster' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'booster' );
+                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'booster'), '<span class="code">', '</span>&#8230;');
                     $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'booster' );
                     $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'booster' );
                     $this->strings['process_failed']      = __( 'Plugin install failed.', 'booster' );
@@ -1066,7 +1068,6 @@ function booster_load_bulk_installer() {
                     // Default installation strings.
                     else {
                         $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'booster' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'booster' );
                         $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'booster' );
                         $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'booster' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'booster' ) . '</span><span class="hidden">' . __( 'Hide Details', 'booster' ) . '</span>.</a>';
                         $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'booster' );

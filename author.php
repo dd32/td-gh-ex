@@ -4,7 +4,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 no-padding">
-         <p class="booster-post-title">Author : <span class="booster-post-subtitle">All posts by <?php echo get_the_author();?></span></p>
+         <p class="booster-post-title"><?php _e('Author ','booster'); echo ":". __('All posts by ','booster'), get_the_author(); ?></p>        
       </div>
       <div class="col-md-6  col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">

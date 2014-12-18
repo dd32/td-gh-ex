@@ -10,10 +10,13 @@
     <div class="container no-padding">
       <div class="col-md-7 footer-margin-top footer-center no-padding">
 	  		<?php if(!empty($booster_options['footertext'])) { 
-						echo wp_filter_nohtml_kses($booster_options['footertext']).'. ';
-					}
-		    echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a> and <a href='http://fasterthemes.com/wordpress-themes/Booster' target='_blank'>Booster</a>.";
-			 ?>
+						echo wp_filter_nohtml_kses($booster_options['footertext']).'. ';						
+					}?>
+		    
+	<?php _e('Powered by','booster'); ?> <a href='http://wordpress.org' target='_blank'><?php _e('WordPress','booster'); ?></a>
+    <?php _e('and','booster'); ?><a href='http://fasterthemes.com/wordpress-themes/Booster' target='_blank'>
+    <?php _e('Booster','booster'); ?></a>
+			
       </div>
        <?php 
 			$booster_footer = array(

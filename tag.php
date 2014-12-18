@@ -3,9 +3,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 no-padding">
-          <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="booster-post-title">Tag : %s', 'booster' ), '<span class="booster-post-subtitle">' . single_tag_title( '', false ) . '</span></p>' );
-		endif; ?>
+          <?php if ( have_posts() ) : ?>
+	 		
+		 <?php _e( 'Tags', 'booster' ); echo ' : '. single_tag_title( '', false ) ?>
+		<?php endif; ?>
       </div>
       <div class="col-md-6  col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">

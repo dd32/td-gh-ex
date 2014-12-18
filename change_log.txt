@@ -49,4 +49,8 @@ Version	1.04
 	
 Version	1.05
     i) Fixed JS error which was appearing in admin panel. 
- 	ii) Removed screen_icon() found in the files class-tgm-plugin-activation.php and fasterthemes.php as it's deprecated. 
+ 	ii) Removed screen_icon() found in the files class-tgm-plugin-activation.php and fasterthemes.php as it's deprecated.
+Version 1.06 (17 Dec 2014)
+    i) Made theme translation-ready!
+    ii) Fix css issue
+ 

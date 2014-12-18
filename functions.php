@@ -135,8 +135,8 @@ function booster_enqueue()
 	wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css',array(),'','');
 	wp_enqueue_style('custom',get_template_directory_uri().'/css/custom.css',array(),'','');
 	wp_enqueue_style('style',get_stylesheet_uri(),array(),'','');
-	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'','');		
-	wp_enqueue_script('default',get_template_directory_uri().'/js/default.js');	
+	wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'','');	
+	wp_enqueue_script('default',get_template_directory_uri().'/js/default.js',array());		
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
 add_action('wp_enqueue_scripts', 'booster_enqueue');
@@ -157,8 +157,8 @@ function booster_custom_breadcrumbs() {
   $delimiter = '/'; // delimiter between crumbs
   $home = 'Home'; // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span>'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
+  $booster_before = '<span>'; // tag before the current crumb
+  $booster_after = '</span>'; // tag after the current crumb
 
   global $post;
   $homeLink = esc_url(home_url());
@@ -174,50 +174,51 @@ function booster_custom_breadcrumbs() {
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
       if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+     
+       echo $booster_before . _e('Archive by category','booster') .'"'. single_cat_title('', false) . '"' . $booster_after;
 
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+        echo $booster_before . _e('Search results for','booster').' "' . get_search_query() . '"' . $booster_before;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
+      echo $booster_before . get_the_time('d') . $booster_after;
 
     } elseif ( is_month() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
+      echo $booster_before . get_the_time('F') . $booster_after;
 
     } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
+      echo $booster_before . get_the_time('Y') . $booster_after;
 
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $booster_before . get_the_title() . $booster_after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
         if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
         echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        if ($showCurrent == 1) echo $booster_before . get_the_title() . $booster_after;
       }
 
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      echo $booster_before . $post_type->labels->singular_name . $booster_after;
 
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
       echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $booster_before . get_the_title() . $booster_after;
 
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+      if ($showCurrent == 1) echo $booster_before . get_the_title() . $booster_after;
 
     } elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
@@ -232,18 +233,19 @@ function booster_custom_breadcrumbs() {
         echo $breadcrumbs[$i];
         if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
       }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $booster_before . get_the_title() . $booster_after;
 
     } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+     
+      echo $booster_before . _e('Posts tagged','booster') .' "' . single_tag_title('', false) . '"' . $booster_before;
 
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      echo $booster_before . _e('Articles posted by','booster') . $booster_userdata->display_name . $booster_before;
 
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+          echo $booster_before . _e('Error 404','booster') . $booster_before;
     }
 
     if ( get_query_var('paged') ) {
@@ -262,11 +264,9 @@ function booster_custom_breadcrumbs() {
  *
  * Meta information for current post: categories, tags, permalink, author, and date.
  **/
-function booster_entry_meta() {
-
-	$booster_category_list = get_the_category_list( __( ', ', 'booster' ) );
-
-	$booster_tag_list = get_the_tag_list( '', __( ', ', 'booster' ) );
+function booster_entry_meta() {	
+	$booster_category_list = get_the_category_list() ? ' '. get_the_category_list(', ').' ' :'';	
+	$booster_tag_list = get_the_tag_list( ', ', 'booster');
 
 	$booster_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -281,14 +281,14 @@ function booster_entry_meta() {
 		get_the_author()
 	);
 
-
+	
 	if ( $booster_tag_list ) {
-		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
-	} elseif ( $booster_category_list ) {
-		$booster_utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
-	} else {
-		$booster_utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: '.get_comments_number().'.</div>', 'booster' );
-	}
+        $booster_utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'booster' );
+    } elseif ( $booster_category_list ) {
+        $booster_utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'booster' );
+    } else {
+        $booster_utility_text = __( 'Posted on : %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'booster' );
+    }
 
 	printf(
 		$booster_utility_text,
@@ -406,6 +406,60 @@ function booster_pagination($pages = '', $range = 1)
  */
  
 function booster_read_more( ) {
-return ' ..<br /><a href="'. get_permalink() . '">Read More...</a>';
+return ' ..<br /><a href="'. get_permalink()  .'" title="'.__('Read more','booster').'">'.__('Read more','booster').'</a>';
  }
 add_filter( 'excerpt_more', 'booster_read_more' ); 
+
+
+add_filter( 'comment_form_default_fields', 'booster_comment_placeholders' );
+/**
+* Change default fields, add placeholder and change type attributes.
+*
+* @param array $fields
+* @return array
+*/
+function booster_comment_placeholders( $fields )
+{
+$fields['author'] = str_replace(
+'<input',
+'<input placeholder="'
+/* Replace 'theme_text_domain' with your theme’s text domain.
+* I use _x() here to make your translators life easier. :)
+* See http://codex.wordpress.org/Function_Reference/_x
+*/
+. _x(
+'First Name',
+'comment form placeholder',
+'booster'
+)
+. '"',
+$fields['author']
+);
+$fields['email'] = str_replace(
+'<input',
+'<input id="email" name="email" type="text" placeholder="'
+. _x(
+'Email Id',
+'comment form placeholder',
+'booster'
+)
+. '"',
+$fields['email']
+);
+return $fields;
+}
+add_filter( 'comment_form_defaults', 'booster_textarea_insert' );
+function booster_textarea_insert( $fields )
+{
+$fields['comment_field'] = str_replace(
+'</textarea>',
+''. _x(
+'Comment',
+'comment form placeholder',
+'booster'
+)
+. ''. '</textarea>',
+$fields['comment_field']
+);
+return $fields;
+}

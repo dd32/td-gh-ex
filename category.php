@@ -8,8 +8,8 @@ get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
-      <div class="col-md-6  col-sm-6 no-padding">
-         <p class="booster-post-title">Category : <span class="booster-post-subtitle"><?php echo $category_name;?></span></p>
+      <div class="col-md-6  col-sm-6 no-padding">       
+         <p class="booster-post-title"><?php _e('Category','booster'); echo " :".single_cat_title( '', false ); ?></p>         
       </div>
       <div class="col-md-6  col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">

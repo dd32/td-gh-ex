@@ -3,7 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 no-padding">
-       <p class="booster-post-title"><?php printf( __( 'Search Results for : %s', 'booster' ), '<span>' . get_search_query() . '</span>' ); ?></p>
+       <p class="booster-post-title">
+		   <p class="booster-post-title"><?php _e( 'Search Results for', 'booster' ); echo ' : '. get_search_query(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">

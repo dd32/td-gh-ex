@@ -4,9 +4,10 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 no-padding">
-        <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="booster-post-title">Archives : %s', 'booster' ), '<span class="booster-post-subtitle">' . get_the_date('M-Y') . '</span></p>' );
-		endif; ?>
+        <?php if ( have_posts() ) : ?>      
+	 		 <p class="booster-post-title"><?php if ( have_posts() ) : _e('Archives','booster'); echo " : ". get_the_date('M-Y'); endif;?></p>
+	 		
+		<?php endif; ?>
       </div>
       <div class="col-md-6 col-sm-6 no-padding">
         <ol class="archive-breadcrumb  pull-right">

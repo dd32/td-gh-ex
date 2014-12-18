@@ -45,7 +45,7 @@
             <?php } ?>	
                 <div class="navbar-header pull-right">
                 	<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle toggle-top" type="button">
-                    	<span class="sr-only">Toggle navigation</span>
+                    	<span class="sr-only"><?php _e('Toggle navigation','booster') ?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
