@@ -123,8 +123,8 @@ function medium_scripts() {
 	if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']))
 	{
 	    // if IE<=8
-	    wp_enqueue_script('besty-respond', get_stylesheet_directory_uri() . '/js/respond.js',array('jquery'), '', true );
-	    wp_enqueue_script('besty-respond', get_stylesheet_directory_uri() . '/js/html5shiv.js',array('jquery'), '', true );
+	    wp_enqueue_script('medium-respond', get_stylesheet_directory_uri() . '/js/respond.js',array('jquery'), '', true );
+	    wp_enqueue_script('medium-html5shiv', get_stylesheet_directory_uri() . '/js/html5shiv.js',array('jquery'), '', true );
 	}
 	
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
