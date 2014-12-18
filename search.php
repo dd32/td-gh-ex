@@ -9,15 +9,15 @@ get_header(); ?>
 <div id="container">
 	<?php if (have_posts()) : ?>
 		<div id="content">
-        <h1 class="arc-post-title">Search Results</h1>
+        <h1 class="page-title fa-search-plus"><?php echo __('Search Results', 'spark'); ?></h1>
 		
 		<?php $counter = 0; ?>
 		<?php query_posts($query_string . "&posts_per_page=20"); ?>
 		<?php while (have_posts()) : the_post();
 			if($counter == 0) {
 				$numposts = $wp_query->found_posts; // count # of search results ?>
-				<h3 class="arc-src"><span>Search Term: </span><?php the_search_query(); ?></h3>
-				<h3 class="arc-src"><span>Number of Results: </span><?php echo $numposts; ?></h3><br />
+				<h3 class="arc-src"><span><?php echo __('Search Term:', 'spark');?> </span><?php the_search_query(); ?></h3>
+				<h3 class="arc-src"><span><?php echo __('Number of Results:', 'spark');?> </span><?php echo $numposts; ?></h3><br />
 				<?php } //endif ?>
 			
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -29,7 +29,7 @@ get_header(); ?>
  <?php spark_content(); ?>
  <div class="clear"> </div>
  <div class="up-bottom-border">
- 				<p class="postmetadata">Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php the_tags('<br />Tags: ', ', ', '<br />'); ?></p>
+ 				<p class="postmetadata"><?php echo __('Posted in', 'spark'); ?> <?php the_category(', ') ?> | <?php edit_post_link( __('Edit', 'spark'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'spark'), __('1 Comment &#187;', 'spark'), __('% Comments &#187;', 'spark')); ?> <?php the_tags('<br />'. __('Tags: ', 'spark'), ', ', '<br />'); ?></p>
  				</div></div></div>
 				
 		<?php $counter++; ?>
@@ -38,15 +38,15 @@ get_header(); ?>
 		</div>		
 		<?php get_sidebar(); ?>
         <?php else: ?>
-		<br /><br /><h1 class="page-title">Not Found</h1>
-<h3 class="arc-src"><span>Apologies, but the page you requested could not be found. Perhaps searching will help.</span></h3>
+		<br /><br /><h1 class="page-title"><?php echo __('Not Found', 'spark') ?></h1>
+	<h3 class="arc-src"><span><?php echo __('Apologies, but the page you requested could not be found. Perhaps searching will help.', 'spark') ?></span></h3>
 
-<?php get_search_form(); ?>
-<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p><br /><br />
+	<?php get_search_form(); ?>
+	<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php echo __('Or Return to the Home Page', 'spark') ?></a></p><br /><br />
 
-<h2 class="post-title-color">You can also Visit the Following. These are the Featured Contents</h2>
-<div class="content-ver-sep"></div><br />
-<?php get_template_part( 'featured-box' ); ?>
+	<h2 class="post-title-color"><?php echo __('You can also Visit the Following. These are the Featured Contents', 'spark') ?></h2>
+	<div class="content-ver-sep"></div><br />
+	<?php get_template_part( 'featured-box' ); ?>
 
 	<?php endif; ?>
 	

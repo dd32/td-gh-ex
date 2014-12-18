@@ -88,8 +88,8 @@ class Options_Framework_Admin {
             'mode' => 'submenu',
 
             // Submenu default settings
-            'page_title' =>  'SPARK Options',
-			'menu_title' =>  'SPARK Options',
+            'page_title' => __( 'SPARK Options', 'spark'   ),
+			'menu_title' => __( 'SPARK Options', 'spark'   ),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'options-framework',
             'parent_slug' => 'themes.php',
@@ -195,8 +195,8 @@ class Options_Framework_Admin {
 				<?php settings_fields( 'optionsframework' ); ?>
 				<?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
 				<div id="optionsframework-submit">
-					<input type="submit" class="button-primary" name="update" value="Save Options" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="Restore Defaults" onclick="return confirm( '<?php print esc_js(  'Click OK to reset. Any theme settings will be lost!' ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'spark'   ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'spark'   ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'spark'   ) ); ?>' );" />
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -227,7 +227,7 @@ class Options_Framework_Admin {
 		 */
 
 		if ( isset( $_POST['reset'] ) ) {
-			add_settings_error( 'options-framework', 'restore_defaults',  'Default options restored.', 'updated fade' );
+			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'spark'   ), 'updated fade' );
 			return $this->get_default_values();
 		}
 
@@ -281,7 +281,7 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options',  'Options saved.', 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'spark'   ), 'updated fade' );
 	}
 
 	/**

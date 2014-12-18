@@ -59,15 +59,15 @@ class Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . 'No file chosen' .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'spark'  ) .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
-				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' .  'Upload' . '" />' . "\n";
+				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'spark'   ) . '" />' . "\n";
 			} else {
-				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' .  'Remove' . '" />' . "\n";
+				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'spark'   ) . '" />' . "\n";
 			}
 		} else {
-			$output .= '<p><i>' .  'Upgrade your version of WordPress for full media support.' . '</i></p>';
+			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'spark'   ) . '</i></p>';
 		}
 
 		if ( $_desc != '' ) {
@@ -91,7 +91,7 @@ class Options_Framework_Media_Uploader {
 				$output .= '';
 
 				// Standard generic output if it's not an image.
-				$title =  'View File';
+				$title = __( 'View File', 'spark'   );
 				$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
 			}
 		}
@@ -115,8 +115,8 @@ class Options_Framework_Media_Uploader {
 		wp_register_script( 'of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ), Options_Framework::VERSION );
 		wp_enqueue_script( 'of-media-uploader' );
 		wp_localize_script( 'of-media-uploader', 'optionsframework_l10n', array(
-			'upload' =>  'Upload',
-			'remove' =>  'Remove'
+			'upload' => __( 'Upload', 'spark'   ),
+			'remove' => __( 'Remove', 'spark'   )
 		) );
 	}
 }

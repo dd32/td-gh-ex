@@ -1,7 +1,7 @@
 ----------------------------------
 SPARK
 ----------------------------------
-Version: 	1.1
+Version: 	1.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -29,4 +29,9 @@ Limitations: Main Menu width is fixed. So you should keep less menu items so tha
 Instructions:
 - You can set the Banner Image, Heading, Subheading, Featured Images, Staff Title, Staff Description and Staff Items from Appearance > SPARK Options
 
+
+
+Changelog 1.2
+-----------------------------
+- Made Translation Ready
 

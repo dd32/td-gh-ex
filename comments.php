@@ -10,10 +10,11 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number('No Comments', 'One Comment', '% Comments' );?> to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number(__('No Comments','spark'), __('One Comment','spark'), __('% Comments','spark') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments(); ?>
 	</ol>
+    
 	<div class="comment-nav">
 		<div class="floatleft">
 			<?php previous_comments_link() ?>
@@ -24,7 +25,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark">Comments are Closed</p>
+		<p class="watermark"><?php echo __('Comments are Closed', 'spark'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

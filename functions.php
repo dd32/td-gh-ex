@@ -20,11 +20,12 @@
 
 	function spark_setup() {
 //	Set the content width based on the theme's design and stylesheet.
+	load_theme_textdomain( 'spark', get_template_directory() . '/languages' );	
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 584;
 
 // 	Tell WordPress for the Feed Link
-	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
+	register_nav_menus( array( 'main-menu' => __('Main Menu', 'spark') ) );
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -110,12 +111,12 @@
 	
 	function spark_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More ...</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Read More...', 'spark').'</a>';
 	}
 	add_filter('excerpt_more', 'spark_excerpt_more');
 
 	// Content Type Showing
-	function spark_content() { the_content('<span class="read-more">Read More ...</span>'); }
+	function spark_content() { the_content('<span class="read-more">'.__('Read More...', 'spark').'</span>'); }
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function spark_page_menu_args( $args ) {
@@ -129,7 +130,7 @@
 	function spark_widgets_init() {
 
 	register_sidebar( array(
-		'name' => 'Primary Sidebar', 
+		'name' => __('Primary Sidebar','spark'), 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -138,7 +139,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Secondary Sidebar', 
+		'name' =>  __('Secondary Sidebar', 'spark'),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -147,9 +148,8 @@
 	) );
 	 
 	register_sidebar( array(
-		'name' =>  'Footer Area One', 
+		'name' => __('Footer Area One', 'spark'),
 		'id' => 'sidebar-3',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -157,9 +157,8 @@
 	) );
 	    
 	register_sidebar( array(
-		'name' =>  'Footer Area Two', 
+		'name' => __('Footer Area Two', 'spark'),
 		'id' => 'sidebar-4',
-		'description' =>  'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -167,9 +166,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area Three',
+		'name' => __('Footer Area Three','spark'),
 		'id' => 'sidebar-5',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -178,9 +176,8 @@
 	
 	
 	register_sidebar( array(
-		'name' => 'Footer Area Four', 
+		'name' =>  __('Footer Area Four', 'spark'),
 		'id' => 'sidebar-6',
-		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -195,7 +192,7 @@
 	add_filter('the_title', 'spark_title');
 	function spark_title($title) {
         if ( '' == $title ) {
-            return '(Untitled)';
+            return __('(Untitled)', 'spark');
         } else {
             return $title;
         }
