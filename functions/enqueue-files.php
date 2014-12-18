@@ -20,5 +20,7 @@ function top_mag_enqueue()
 	}		
 	wp_enqueue_script('default',get_template_directory_uri().'/js/default.js',array('jquery'));
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
+	if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']))
+		 wp_enqueue_script('respondminjs', get_template_directory_uri().'/js/respond.min.js',array('jquery'), '', true );
 }
 add_action('wp_enqueue_scripts', 'top_mag_enqueue');

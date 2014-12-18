@@ -12,7 +12,7 @@ function top_mag_setup() {
 	/*
 	 * Make topmag theme available for translation.
 	 */
-	load_theme_textdomain( 'top-mag' );
+	load_theme_textdomain( 'top-mag',get_template_directory_uri(),'/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', top_mag_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.

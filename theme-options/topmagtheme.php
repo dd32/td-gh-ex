@@ -1,15 +1,15 @@
 <?php
 function top_mag_theme_options_init(){
- register_setting( 'top_mag_options', 'topmag_theme_options','theme_options_validate');
+ register_setting( 'top_mag_options', 'topmag_theme_options','top_mag_options_validate');
 } 
 add_action( 'admin_init', 'top_mag_theme_options_init' );
-function theme_options_validate($input)
+function top_mag_options_validate($input)
 {
 	$input['breaking-news'] = sanitize_text_field( $input['breaking-news'] );
 	$input['breaking-news-category'] = sanitize_text_field( $input['breaking-news-category'] );
- 	$input['logo'] = esc_url_raw( $input['logo'] );
+ 	$input['logo'] = top_mag_image_validation(esc_url_raw( $input['logo'] ));
 	$input['logo-tagline'] = sanitize_text_field( $input['logo-tagline'] );
-	$input['favicon'] = esc_url_raw( $input['favicon'] );
+	$input['favicon'] = top_mag_image_validation(esc_url_raw( $input['favicon'] ));
 	
 	$input['footertext'] = sanitize_text_field( $input['footertext'] );
 	
@@ -22,13 +22,24 @@ function theme_options_validate($input)
 	$input['banneradslink'] = esc_url_raw( $input['banneradslink'] ); 
     return $input;
 }
+function top_mag_image_validation($top_mag_imge_url) {
+  $top_mag_filetype = wp_check_filetype($top_mag_imge_url);
+
+  $top_mag_supported_image = array('gif', 'jpg', 'jpeg', 'png', 'ico');
+
+  if (in_array($top_mag_filetype['ext'], $top_mag_supported_image)) {
+    return $top_mag_imge_url;
+  } else {
+    return '';
+  }
+}
+
 function top_mag_theme_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'topmagtheme_framework', get_template_directory_uri(). '/theme-options/css/topmagtheme_framework.css' ,false, '1.0.0');
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/topmagtheme-custom.js', array( 'jquery' ) );
 	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
-	wp_enqueue_script('media-uploader');
 }
 add_action( 'admin_enqueue_scripts', 'top_mag_theme_framework_load_scripts' );
 function top_mag_theme_framework_menu_settings() {
@@ -58,7 +69,7 @@ function top_mag_framework_page(){
     <div class="logo">
       <?php
 		$top_mag_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$top_mag_image."' alt='fasterthemes' /></a>";
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$top_mag_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -73,11 +84,11 @@ function top_mag_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
-            <li><a id="options-group-1-tab" class="nav-tab headersettings-tab" title="Header Settings" href="#options-group-1"><?php _e('Header Settings','top-mag') ?></a></li>
-            <li><a id="options-group-2-tab" class="nav-tab footersettings-tab" title="Footer Settings" href="#options-group-2"><?php _e('Footer Settings','top-mag') ?></a></li>
-            <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="Home Page Settings" href="#options-group-3"><?php _e('Home Page Settings','top-mag') ?></a></li>
-            <li><a id="options-group-4-tab" class="nav-tab bannersettings-tab" title="Banner Settings" href="#options-group-4"><?php _e('Banner Settings','top-mag') ?></a></li>
-            <li><a id="options-group-5-tab" class="nav-tab prosettings-tab" title="Pro Theme Settings" href="#options-group-5"><?php _e('PRO Theme Features','top-mag') ?></a></li>
+            <li><a id="options-group-1-tab" class="nav-tab headersettings-tab" title="<?php _e('Header Settings','top-mag') ?>" href="#options-group-1"><?php _e('Header Settings','top-mag') ?></a></li>
+            <li><a id="options-group-2-tab" class="nav-tab footersettings-tab" title="<?php _e('Footer Settings','top-mag') ?>" href="#options-group-2"><?php _e('Footer Settings','top-mag') ?></a></li>
+            <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings','top-mag') ?>" href="#options-group-3"><?php _e('Home Page Settings','top-mag') ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab bannersettings-tab" title="<?php _e('Banner Settings','top-mag') ?>" href="#options-group-4"><?php _e('Banner Settings','top-mag') ?></a></li>
+            <li><a id="options-group-5-tab" class="nav-tab prosettings-tab" title="<?php _e('PRO Theme Features','top-mag') ?>" href="#options-group-5"><?php _e('PRO Theme Features','top-mag') ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -122,7 +133,7 @@ function top_mag_framework_page(){
                             value="<?php if(!empty($top_mag_options['logo'])) { echo esc_url($top_mag_options['logo']); } ?>" placeholder="<?php _e('No file chosen','top-mag') ?>" />
                 <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','top-mag') ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($top_mag_options['logo'])) { echo "<img src='".esc_url($top_mag_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($top_mag_options['logo'])) { echo "<img src='".esc_url($top_mag_options['logo'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
               
@@ -148,7 +159,7 @@ function top_mag_framework_page(){
                             value="<?php if(!empty($top_mag_options['favicon'])) { echo esc_url($top_mag_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','top-mag') ?>" />
                   <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','top-mag') ?>" />
                   <div class="screenshot" id="favicon-image">
-                    <?php  if(!empty($top_mag_options['favicon'])) { echo "<img src='".esc_url($top_mag_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                    <?php  if(!empty($top_mag_options['favicon'])) { echo "<img src='".esc_url($top_mag_options['favicon'])."' /><a class='remove-image'></a>"; } ?>
                   </div>
                 </div>
                 
@@ -314,12 +325,4 @@ function top_mag_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','top-mag') ?></h2></div>
- <div class="newsletter"> 
-  <h1><?php _e('Subscribe with us','top-mag'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","top-mag"); ?>
-          
-        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','top-mag'); ?></a>
-        
-       </p> 
-</div>
 <?php } ?>

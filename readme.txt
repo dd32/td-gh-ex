@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.4.5
+Version: 1.4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Top Mag Theme, Copyright 2014 fasterthemes.com

@@ -6,16 +6,18 @@
 ?>
 <!-- footer -->
 <div class="col-md-12 footer-post"> 
+    <div class="row">
   <!-- Recent Posts -->
-  <div class="col-md-4 no-padding-left">
+  <div class="col-md-4">
     <?php if ( is_active_sidebar( 'footer-area-one' ) ) : dynamic_sidebar( 'footer-area-one' ); endif; ?>
   </div>
-  <div class="col-md-4 no-padding-left">
+  <div class="col-md-4">
     <?php if ( is_active_sidebar( 'footer-area-two' ) ) : dynamic_sidebar( 'footer-area-two' ); endif; ?>
   </div>
-  <div class="col-md-4 no-padding-left">
+  <div class="col-md-4">
     <?php if ( is_active_sidebar( 'footer-area-three' ) ) : dynamic_sidebar( 'footer-area-three' ); endif; ?>
   </div>
+    </div>
 </div>
 <footer>
   <div class="copyright col-lg-12">

@@ -25,9 +25,6 @@ $top_mag_options = get_option( 'topmag_theme_options' );
 <?php if(!empty($top_mag_options['favicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo esc_url($top_mag_options['favicon']);?>">
 <?php } ?>
-<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
 <?php wp_head(); ?>
 </head>
 
@@ -39,7 +36,7 @@ $top_mag_options = get_option( 'topmag_theme_options' );
     <div class="col-md-12 no-padding ">
       <div class="col-md-4 header-logo">
         <?php if(empty($top_mag_options['logo'])) { echo '<div class="top-mag-site-name"><a href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo('name').'</a></div>';  } else { ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($top_mag_options['logo']); ?>" alt="site logo" class="img-responsive" /></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($top_mag_options['logo']); ?>" alt="<?php _e('site logo','top-mag'); ?>" class="img-responsive" /></a>
         <?php } ?>
         <p class="top-mag-tagline">
           <?php if(!empty($top_mag_options['logo-tagline'])) { echo get_bloginfo('description'); } ?>

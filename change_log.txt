@@ -47,3 +47,8 @@ iii) Declare copyright and license information
 
 Version 1.4.5 (17th Dec 2014)
 i) Translation-Ready ready.
+
+Version 1.4.6 (18th Dec 2014)
+i) Set the folder in load_theme_textdomain.
+ii) Enqueued respond.min.js
+iii) Fix css issue

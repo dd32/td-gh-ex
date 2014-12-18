@@ -31,10 +31,12 @@ $top_mag_options = get_option( 'topmag_theme_options' );
             <?php
 				while ( $top_mag_slider_post->have_posts() ) { $top_mag_slider_post->the_post();
 				$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large');
+				if($top_mag_featured_image[0] != ''){
 			?>
             <div>
-                <img u="image" alt="slider image" src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>"   />
+                <img u="image" alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>"   />
             </div>
+            <?php } ?>
             <?php } ?>
         </div>
         
@@ -59,7 +61,7 @@ $top_mag_options = get_option( 'topmag_theme_options' );
     while ( $top_mag_recent_post->have_posts() ) { $top_mag_recent_post->the_post();
 	$top_mag_featured_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'medium');
 	?>
-          <div class="col-md-12 recent-posts clearfix item no-padding-left">
+          <div class="col-md-12 recent-posts clearfix item">
             <div class="blog-post">
               <div class="ImageWrapper chrome-fix">
 			  	<?php if($top_mag_featured_image[0] != '')  { ?>
