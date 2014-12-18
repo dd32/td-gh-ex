@@ -10,11 +10,11 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title">Author : <span class="redpro-post-subtitle">All posts by <?php echo get_the_author();?></span></p>
+        <p class="redpro-post-title"><?php _e('Author ','redpro'); echo ":". __('All posts by ','redpro'), get_the_author(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>">Home</a></li>
+          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro') ?></a></li>
           <li class="active"><a href="<?php echo site_url().'/author/'.get_the_author();?>"><?php echo get_the_author();?></a></li>
         </ol>
       </div>

@@ -16,11 +16,11 @@ get_header(); ?>
 		$category_name = $categories[0]->name;
 		$category_id = $categories[0]->cat_ID;
 	  ?>
-        <p class="redpro-post-title">Category : <span class="redpro-post-subtitle"><?php echo $category_name;?></span></p>
+        <p class="redpro-post-title"><?php _e('Category','redpro'); echo " :".single_cat_title( '', false ); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>">Home</a></li>
+          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro') ?></a></li>
           <li class="active"><a href="<?php echo get_category_link( $category_id );?>"><?php echo $category_name;?></a></li>
         </ol>
       </div>

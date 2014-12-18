@@ -17,12 +17,12 @@ get_header(); ?>
 		$archives_id = $archives[0]->cat_ID;
 	  ?>
         <?php if ( have_posts() ) : 
-	 		printf( __( '<p class="redpro-post-title">Archives : %s', 'redpro' ), '<span class="redpro-post-subtitle">' . get_the_date('M-Y') . '</span></p>' );
+	 		_e('Archives','redpro'); echo " : ". get_the_date('M-Y');
 		endif; ?>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>">Home</a></li>
+          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro') ?></a></li>
           <li class="active"><a href="<?php echo get_category_link( $archives_id );?>"><?php echo $archives_name;?></a></li>
         </ol>
       </div>

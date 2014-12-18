@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title">Blog :
+        <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
           <?php redpro_title() ?>
           </span></p>
@@ -35,7 +35,7 @@
                   </a></h5>
               </div>
               <div class="post-category"> </div>
-              <div class="post-author"> BY:
+              <div class="post-author"> <?php _e('BY','redpro'); echo " : "; ?>
                 <?php the_author_posts_link(); ?>
               </div>
             </div>

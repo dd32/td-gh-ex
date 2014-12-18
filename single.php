@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title">Blog :
+        <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
           <?php redpro_title() ?>
           </span></p>

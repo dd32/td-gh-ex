@@ -13,8 +13,8 @@ if ( ! isset( $content_width ) ) {
 function redpro_breadcrumbs() {
  echo '<li><a href="';
  //echo get_option('home');
- echo home_url(); 
- echo '">Home';
+ echo home_url();  
+  _e('Home','redpro');
  echo "</a></li>";
   if (is_category() || is_single()) {
    if(is_category())
@@ -38,7 +38,8 @@ function redpro_breadcrumbs() {
             echo the_title();
    echo "</li>";
   } elseif (is_search()) {
-            echo "<li class='active'>Search Results for... ";
+            echo "<li class='active'>";
+             _e('Search Results for...','redpro');
    echo '"<em>';
    echo the_search_query();
    echo '</em>"';
@@ -152,9 +153,9 @@ if ( ! function_exists( 'redpro_entry_meta' ) ) :
  **/
 function redpro_entry_meta() {
 
-	$category_list = get_the_category_list( __( ', ', 'redpro' ) );
+	$category_list = get_the_category_list( ', ', 'redpro');
 
-	$tag_list = get_the_tag_list( '', __( ', ', 'redpro' ) );
+	$tag_list = get_the_tag_list( ', ', 'redpro');
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -168,15 +169,15 @@ function redpro_entry_meta() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'redpro' ), get_the_author() ) ),
 		get_the_author()
 	);
-
-
+	
 	if ( $tag_list ) {
-		$utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'redpro' );
-	} elseif ( $category_list ) {
-		$utility_text = __( '<div class="post-category"> Posted in : %1$s  on %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'redpro' );
-	} else {
-		$utility_text = __( '<div class="post-category"> Posted on : %3$s </div><div class="post-author"> by : %4$s </div> <div class="post-comment"> Comments: <a href="#">'.get_comments_number().'</a>.</div>', 'redpro' );
-	}
+        $utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+    } elseif ( $category_list ) {
+        $utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+    } else {
+        $utility_text = __( 'Posted on : %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+    }
+
 
 	printf(
 		$utility_text,
@@ -264,7 +265,7 @@ add_filter('wp_list_categories', 'redpro_add_nav_class');
  * Replace Excerpt [...] with Read More
 **/
 function redpro_read_more( ) {
-return ' ... <a class="more" href="'. get_permalink( get_the_ID() ) . '">Read more</a>';
+return ' ... <a class="more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read more','redpro').'</a>';
  }
 add_filter( 'excerpt_more', 'redpro_read_more' ); 
 /**
@@ -351,3 +352,58 @@ $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="navbar-right menu-ommune"', $new_markup);
 return $new_markup; } //}
 add_filter('wp_page_menu', 'redpro_add_menuid');
+
+
+
+add_filter( 'comment_form_default_fields', 'redpro_comment_placeholders' );
+/**
+* Change default fields, add placeholder and change type attributes.
+*
+* @param array $fields
+* @return array
+*/
+function redpro_comment_placeholders( $fields )
+{
+$fields['author'] = str_replace(
+'<input',
+'<input placeholder="'
+/* Replace 'theme_text_domain' with your theme’s text domain.
+* I use _x() here to make your translators life easier. :)
+* See http://codex.wordpress.org/Function_Reference/_x
+*/
+. _x(
+'First Name',
+'comment form placeholder',
+'redpro'
+)
+. '"',
+$fields['author']
+);
+$fields['email'] = str_replace(
+'<input',
+'<input id="email" name="email" type="text" placeholder="'
+. _x(
+'Email Id',
+'comment form placeholder',
+'redpro'
+)
+. '"',
+$fields['email']
+);
+return $fields;
+}
+add_filter( 'comment_form_defaults', 'redpro_textarea_insert' );
+function redpro_textarea_insert( $fields )
+{
+$fields['comment_field'] = str_replace(
+'</textarea>',
+''. _x(
+'Comment',
+'comment form placeholder',
+'redpro'
+)
+. ''. '</textarea>',
+$fields['comment_field']
+);
+return $fields;
+}

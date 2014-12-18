@@ -12,7 +12,11 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-8 main">
         <header class="page-header">
-          <h1><?php printf( __( 'Search Results for: %s', 'redpro' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+          <h1>
+			 <?php _e( 'Search Results for', 'redpro' ); echo ' : '. get_search_query(); ?>
+			  
+			  
+			  </h1>
         </header>
         <?php if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -56,7 +60,10 @@ get_header(); ?>
         </article>
         <?php endwhile; 
 	  else:
-			echo'<h2>No Results Found</h2>';
+			echo'<h2>';
+			
+			 _e('No Results Found','redpro');
+			echo '</h2>';
 	  ?>
         <?php endif; ?>
         

@@ -26,8 +26,8 @@ function fasterthemes_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'fasterthemes_framework_load_scripts' );
 function fasterthemes_framework_menu_settings() {
 	$menu = array(
-				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('Theme Options', 'fastertheme_framework'),
+				'page_title' => __( 'FasterThemes Options', 'redpro'),
+				'menu_title' => __('Theme Options', 'redpro'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'fasterthemes_framework',
 				'callback' => 'fastertheme_framework_page'
@@ -50,7 +50,9 @@ function fastertheme_framework_page(){
 		endif; 
 ?>
 <div id="fasterthemes_framework-wrap" class="wrap">
-  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> <a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-2">Social Settings</a> </h2>
+  <h2 class="nav-tab-wrapper"> 
+	  <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1"><?php _e('Basic Settings','redpro') ?></a> 
+	  <a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-2"><?php _e('Social Settings','redpro') ?></a> </h2>
   <div id="fasterthemes_framework-metabox" class="metabox-holder">
     <div id="fasterthemes_framework" class="postbox"> 
       
@@ -63,55 +65,55 @@ function fastertheme_framework_page(){
         <!-------------- First group ----------------->
         
         <div id="options-group-1" class="group basicsettings">
-          <h3>Basic Settings</h3>
+          <h3><?php _e('Basic Settings','redpro') ?></h3>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Site Logo</h4>
+            <h4 class="heading"><?php _e('Site Logo','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="faster_theme_options[logo]" 
-                            value="<?php if(!empty($options['logo'])) { echo $options['logo']; } ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($options['logo'])) { echo $options['logo']; } ?>"placeholder="<?php _e('No file chosen','redpro') ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','redpro') ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($options['logo'])) { echo "<img src='".esc_url_raw($options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($options['logo'])) { echo "<img src='".esc_url_raw($options['logo'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
-              <div class="explain">Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.</div>
+              <div class="explain"><?php _e('Size of logo should be exactly 360x125px for best results. Leave blank to use text heading.','redpro') ?></div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Favicon</h4>
+            <h4 class="heading"><?php _e('Favicon','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="faster_theme_options[fevicon]" 
-                            value="<?php if(!empty($options['fevicon'])) { echo $options['fevicon']; } ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php if(!empty($options['fevicon'])) { echo $options['fevicon']; } ?>"placeholder="<?php _e('No file chosen','redpro') ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','redpro') ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($options['fevicon'])) { echo "<img src='".esc_url_raw($options['fevicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                  <?php if(!empty($options['fevicon'])) { echo "<img src='".esc_url_raw($options['fevicon'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
-              <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
+              <div class="explain"><?php _e('Size of fevicon should be exactly 32x32px for best results.','redpro') ?></div>
             </div>
           </div>
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Copyright Text</h4>
+            <h4 class="heading"><?php _e('Copyright Text','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php if(!empty($options['footertext']))echo wp_filter_nohtml_kses($options['footertext']); ?>">
               </div>
-              <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
+              <div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','redpro') ?></div>
             </div>
           </div>
           <div id="section-bloglayout" class="section section-radio">
-            <h4 class="heading">Blog Page Layout</h4>
+            <h4 class="heading"><?php _e('Blog Page Layout','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <select name="faster_theme_options[bloglayout]">
-                  <option value="left" <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'left') { ?> selected="selected" <?php }} ?>>Left Sidebar</option>
-                  <option value="right"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'right') { ?> selected="selected" <?php }} ?>>Right Sidebar</option>
-                  <option value="full"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'full') { ?> selected="selected" <?php }} ?>>Full Width</option>
+                  <option value="left" <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'left') { ?> selected="selected" <?php }} ?>><?php _e('Left Sidebar','redpro') ?></option>
+                  <option value="right"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'right') { ?> selected="selected" <?php }} ?>><?php _e('Right Sidebar','redpro') ?></option>
+                  <option value="full"  <?php if(!empty($options['bloglayout'])) { if($options['bloglayout'] == 'full') { ?> selected="selected" <?php }} ?>><?php _e('Full Width','redpro') ?></option>
                 </select>
               </div>
-              <div class="explain">Select Blog Page Layout.</div>
+              <div class="explain"><?php _e('Select Blog Page Layout.','redpro') ?></div>
             </div>
           </div>
         </div>
@@ -119,31 +121,31 @@ function fastertheme_framework_page(){
         <!-------------- Second group ----------------->
         
         <div id="options-group-2" class="group socialsettings">
-          <h3>Social Settings</h3>
+          <h3><?php _e('Social Settings','redpro') ?></h3>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Facebook</h4>
+            <h4 class="heading"><?php _e('Facebook','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="facebook" class="of-input" name="faster_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($options['fburl'])) { echo esc_url_raw($options['fburl']); } ?>" />
               </div>
-              <div class="explain">Facebook profile or page URL i.e. http://facebook.com/username/ </div>
+              <div class="explain"><?php _e('Facebook profile or page URL i.e. ','redpro'); ?>http://facebook.com/username/</div>
             </div>
           </div>
           <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">Twitter</h4>
+            <h4 class="heading"><?php _e('Twitter','redpro') ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="twitter" class="of-input" name="faster_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($options['twitter'])) { echo esc_url_raw($options['twitter']); } ?>" />
               </div>
-              <div class="explain">Twitter profile or page URL i.e. http://twitter.com/username/</div>
+               <div class="explain"><?php _e('Twitter profile or page URL i.e.','redpro'); ?> http://twitter.com/username/</div>
             </div>
           </div>
         </div>
         
         <!-------------- End group ----------------->
         
-        <div id="fasterthemes_framework-submit" class="section-submite"> <span>&copy; <a href="http://fasterthemes.com" target="_blank">fasterthemes.com</a></span> <span class="fb"> <a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span>
-          <input type="submit" class="button-primary" value="Save Options" />
+        <div id="fasterthemes_framework-submit" class="section-submite">
+          <input type="submit" class="button-primary" value="<?php _e('Save Options','redpro') ?>" />
           <div class="clear"></div>
         </div>
         
@@ -155,32 +157,8 @@ function fastertheme_framework_page(){
       
     </div>
     <!-- / #container --> 
-          <br />
-          <div id="section-title" class="section">
-
-            <!-- Begin MailChimp Signup Form -->
-            <div id="mc_embed_signup">
-            <form action="http://ommune.us2.list-manage.com/subscribe/post?u=9c754572be34858540694990b&amp;id=4ae2e7fd84" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <h2>Enter your email to join our mailing list and we’ll keep you updated on new themes as they’re
-released and our exclusive special offers.</h2>
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-            </label>
-                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-            </div>
-                <div id="mce-responses" class="clear">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;"><input type="text" name="b_9c754572be34858540694990b_4ae2e7fd84" value=""></div>
-                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </form>
-            </div>
-            <!--End mc_embed_signup-->
 
           </div>  
   </div>
-</div>
    
 <?php }
