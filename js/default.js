@@ -31,7 +31,7 @@ jQuery(document).ready(function(e) {
 	jQuery('.shidebar-control').click(function() {
 		var $container = jQuery('.masonry-container');
 		if (jQuery('.besty-sidebar').is(':visible')) {			
-			jQuery('.shidebar-control').animate({left:'96%'});
+			jQuery('.shidebar-control').animate({left:'95%'});
 			jQuery('.mini-content > div.col-md-9').attr('class', 'col-md-12');
 			jQuery('.shidebar-control').css({'background-position':'center -124px'});
 			jQuery('.mini-content').css({'min-height':(jQuery(document).height())}); 			

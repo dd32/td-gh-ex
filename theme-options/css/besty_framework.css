@@ -338,29 +338,6 @@
     margin:30px 42px 0 0;
     width: 188px;
 }
-.newsletter {
-    clear: both;
-    display: table;
-    float: right;
-    margin-right: 15%;
-    width: 60%;
-}
-.newsletter h1 {
-	border-bottom: 1px solid;
-    color: rgb(53, 75, 88);
-    display: table;
-    padding-bottom: 5px;
-}
-.newsletter > p {
-    color: rgb(53, 75, 88);
-    font-size: 16px;
-}
-.newsletter a {
-    color: rgb(53, 75, 88);
-}
-.newsletter a:hover {
-    color: #212121;
-}
 @media (max-width:992px){
 	.logo{
 		width:100%;

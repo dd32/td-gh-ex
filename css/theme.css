@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-@import url(//fonts.googleapis.com/css?family=Istok+Web);
 body{
 	font-family: 'Istok Web', sans-serif;
 	font-size:14px;
@@ -668,6 +667,11 @@ img{
 /*  Media screen for small device.
 /*
 /******************/
+@media (max-width: 1023px){
+    .shidebar-control{
+        display: none;
+    }
+}
 @media (max-width:768px){
 	.besty-comments .comment-content{
 		width:88%;
@@ -697,6 +701,9 @@ img{
 	.logo{
 		margin-bottom:0px;
 	}	
+        .besty-menu li a{
+            padding-left: 10px;
+        }
 	.besty-menu li ul{
 		position:relative;
 		display:block;
@@ -706,15 +713,13 @@ img{
 	}
 	.besty-menu ul ul {
 		padding-left:20px;
+                background-color: #ffffff;
 	}
 	.besty-menu li:hover > ul{
 		left:0px;		
 	}
 	.besty-menu ul ul:before{
 		content:'';
-	}
-	.besty-menu li ul li a{
-		background-color:#fafafa;
 	}
 	.besty-menu ul li.menu-item-has-children:after{
 		content:' ';
@@ -771,7 +776,7 @@ img{
 		margin:20px 0 19px;
 	}
 }
-@media only screen and (min-width:700px) and (max-width: 800px){
+@media only screen and (min-width:768px) and (max-width: 800px){
 	.besty-menu li ul{
 		left:110%;
 	}
