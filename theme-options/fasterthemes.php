@@ -90,10 +90,10 @@ function laurels_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
-            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1"><?php _e('Basic Settings','laurels'); ?></a></li>
-            <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-3"><?php _e('Social Settings','laurels'); ?></a></li>
-            <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="Homepage Settings" href="#options-group-2"> <?php _e('Home page Settings','laurels'); ?></a></li>
-            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4"><?php _e('PRO Theme Features','laurels'); ?></a></li>
+            <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="<?php _e('Basic Settings','laurels'); ?>" href="#options-group-1"><?php _e('Basic Settings','laurels'); ?></a></li>
+            <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="<?php _e('Social Settings','laurels'); ?>" href="#options-group-3"><?php _e('Social Settings','laurels'); ?></a></li>
+            <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home page Settings','laurels'); ?>" href="#options-group-2"> <?php _e('Home page Settings','laurels'); ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="<?php _e('PRO Theme Features','laurels'); ?>" href="#options-group-4"><?php _e('PRO Theme Features','laurels'); ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -115,7 +115,7 @@ function laurels_framework_page(){
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if(!empty($laurels_options['logo'])) { echo "<img src='".esc_url($laurels_options['logo'])."' />
-					  <a class='remove-image'>Remove</a>"; } ?>
+					  <a class='remove-image'></a>"; } ?>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ function laurels_framework_page(){
                             value="<?php if(!empty($laurels_options['favicon'])) { echo esc_url($laurels_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','laurels'); ?>" />
                   <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="favicon-image">
-                    <?php  if(!empty($laurels_options['favicon'])) { echo "<img src='".esc_url($laurels_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
+                    <?php  if(!empty($laurels_options['favicon'])) { echo "<img src='".esc_url($laurels_options['favicon'])."' /><a class='remove-image'></a>"; } ?>
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ function laurels_framework_page(){
                             value="<?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo esc_url($laurels_options['slider-img-'.$laurels_i]); } ?>" placeholder="<?php _e('No file chosen','placeholder'); ?>" />
                   <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="slider-img-<?php echo $laurels_i;?>">
-                    <?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo "<img src='".esc_url($laurels_options['slider-img-'.$laurels_i])."' /><a class='remove-image'>Remove</a>"; } ?>
+                    <?php if(!empty($laurels_options['slider-img-'.$laurels_i])) { echo "<img src='".esc_url($laurels_options['slider-img-'.$laurels_i])."' /><a class='remove-image'></a>"; } ?>
                   </div>
                 </div>
                 <div class="ft-control">
@@ -200,7 +200,7 @@ function laurels_framework_page(){
                             value="<?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo esc_url($laurels_options['home-icon-'.$laurels_section_i]); } ?>" placeholder="<?php _e('No file chosen','laurels'); ?>" />
                   <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','laurels'); ?>" />
                   <div class="screenshot" id="first-img-<?php echo $laurels_section_i;?>">
-                    <?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo "<img src='".esc_url($laurels_options['home-icon-'.$laurels_section_i])."' /><a class='remove-image'>Remove</a>"; } ?>
+                    <?php if(!empty($laurels_options['home-icon-'.$laurels_section_i])) { echo "<img src='".esc_url($laurels_options['home-icon-'.$laurels_section_i])."' /><a class='remove-image'></a>"; } ?>
                   </div>
                 </div>
                 <div class="ft-control">

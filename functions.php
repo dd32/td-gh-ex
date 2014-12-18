@@ -12,7 +12,7 @@ function laurels_setup() {
 	/*
 	 * Make laurels theme available for translation.
 	 */
-	load_theme_textdomain( 'laurels' );
+	load_theme_textdomain( 'laurels', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', laurels_font_url() ) );
 	add_theme_support( 'automatic-feed-links' );

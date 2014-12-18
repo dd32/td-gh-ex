@@ -327,14 +327,14 @@ margin: 0;
 }
 .row_img > p{	
 	background-image:url(../images/img-bg.png);
-	background-size:auto auto;
+	background-size: cover;
 	background-position:center center;
 	background-repeat:no-repeat;
     color: rgb(254, 254, 254);
     font-size: 22px;
     padding: 2px 0;
     position: absolute;
-    top: 28%;
+    top: 85px;
 	left:10%;
     width: 80%;	
 	text-transform: uppercase;

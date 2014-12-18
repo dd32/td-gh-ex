@@ -35,7 +35,7 @@
                 frame.close();
                 selector.find('.upload').val(attachment.attributes.url);
                 if (attachment.attributes.type == 'image') {
-                    selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image">Remove</a>').slideDown('fast');
+                    selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image"></a>').slideDown('fast');
                 }
                 selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button');
                 selector.find('.of-background-properties').slideDown();

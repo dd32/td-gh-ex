@@ -36,3 +36,8 @@ i). Added html5shiv.js , html5shiv.min.js , owl.carousel.min.js
 Version 1.1.6 (9-12-2014)
 i) Remove subcriber code in fasterthemes.php.
 ii) Declare copyright and license information.
+
+
+Version 1.1.7 (18-12-2014)
+i) Fix css issue
+ii) Provide the folder in load_theme_textdomain.
