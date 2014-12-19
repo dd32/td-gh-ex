@@ -1,11 +1,13 @@
 CHANGELOG
 =========
 
-OneColumn Version 2.7 - december 2014
+OneColumn Version 2.8 - december 2014
+- file functions: added title-tag
 - renamed .article into .main
 - file header: added #header-container
 - fixed style bug with widgettitle
 - few minor adjustments for better responsive layout
+- updated the reset stylesheet
 - adjusted styling of several tags
 - reordered and cleaned up files style and custom-editor-style
 - reordered php files
