@@ -1,10 +1,12 @@
 CHANGELOG
 =========
 
-DarkOrange Version 2.6 - december 2014
+DarkOrange Version 2.7 - december 2014
+- file functions: added title-tag
 - file header: renamed #pre-header and #header into #header-first and #header-second
 - file index and file page-full: removed .article
 - removed border right/left from home posts because of width issue
+- updated the reset stylesheet
 - adjusted styling of several tags
 - reordered and cleaned up files style and custom-editor-style
 - reordered php files

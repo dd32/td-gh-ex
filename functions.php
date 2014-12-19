@@ -19,6 +19,9 @@
 		array( 'primary' => __( 'Primary Navigation', 'darkorange' ), 
 	 	) ); 
 
+	// Add document title
+		add_theme_support( 'title-tag' );
+
 	// Add editor styles
 		add_editor_style( array( 'custom-editor-style.css' ) );
 
