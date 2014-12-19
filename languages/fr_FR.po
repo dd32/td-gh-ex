@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Medical v2.0\n"
+"Project-Id-Version: Medical v2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-28 21:59:01+0000\n"
