@@ -1,7 +1,9 @@
 CHANGELOG
 =========
 
-DarkElements version 2.0 - december 2014 
+DarkElements version 2.1 - december 2014
+- file functions: added title-tag
+- updated the reset stylesheet
 - fixed width of footer widgets
 - adjusted styling of several tags
 - reordered and cleaned up files style and custom-editor-style

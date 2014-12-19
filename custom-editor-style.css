@@ -12,8 +12,10 @@ em, img, q, small, strong, sub, sup, b, dl, dt, dd, ol, ul, li, table, caption, 
 	margin:0;
 	padding:0;
 	border:0;
+	font-family:inherit;
 	font-size:100%;
-	font:inherit;
+	font-style:inherit;
+	font-weight:inherit;
 	vertical-align:baseline;
 }
 
