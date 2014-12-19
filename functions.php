@@ -19,6 +19,9 @@
 		array( 'primary' => __( 'Primary Navigation', 'shipyard' ), 
 	 	) ); 
 
+	// Add document title
+		add_theme_support( 'title-tag' );
+
 	// Add editor styles
 		add_editor_style( array( 'custom-editor-style.css' ) );
 
@@ -73,18 +76,6 @@
 		echo '<![endif]-->'. "\n"; 
 		} 
 	add_action( 'wp_head', 'shipyard_html5' ); 
-
-
-// Add blogname to wp_title
-	function shipyard_wp_title( $title ) { 
-		global $page, $paged; 
-		if ( is_feed() ) 
-		return $title; 
-	
-		$filtered_title = $title . get_bloginfo( 'name' ); 
-			return $filtered_title; 
-	}
-	add_filter( 'wp_title', 'shipyard_wp_title' ); 
 
 
 // Enqueues scripts and styles for front-end
