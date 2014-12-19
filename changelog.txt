@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-GridBulletin version 1.9 - december 2014
+GridBulletin version 2.0 - december 2014
+- file functions: added title-tag
 - renamed .article and .article-full into .main and .main-full
+- updated the reset stylesheet
 - adjusted styling of several tags
 - reordered and cleaned up files style and custom-editor-style
 - reordered php files
