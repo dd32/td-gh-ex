@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tisho Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-20 01:02+0200\n"
-"PO-Revision-Date: 2014-12-20 01:02+0200\n"
+"POT-Creation-Date: 2014-12-20 01:14+0200\n"
+"PO-Revision-Date: 2014-12-20 01:14+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -114,11 +114,6 @@ msgstr "Изглежда, че не може да намерим това, ко�
 #: D:\tishonator.com\themes\free_themes\fgymm/functions.php:32
 msgid "primary menu"
 msgstr "основно меню"
-
-#: D:\tishonator.com\themes\free_themes\fgymm/functions.php:123
-#, php-format
-msgid "Page %s"
-msgstr "Страница  %s"
 
 #: D:\tishonator.com\themes\free_themes\fgymm/search.php:8
 #, php-format
@@ -1360,6 +1355,9 @@ msgstr "Прочетете повече"
 #: D:\tishonator.com\themes\free_themes\fgymm/inc/utilities.php:230
 msgid "Read More..."
 msgstr "Научи повече..."
+
+#~ msgid "Page %s"
+#~ msgstr "Страница  %s"
 
 #~ msgid "Color Schemes"
 #~ msgstr "Цветови Схеми"

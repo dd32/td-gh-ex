@@ -93,11 +93,6 @@ msgstr ""
 msgid "primary menu"
 msgstr ""
 
-#: functions.php:123
-#, php-format
-msgid "Page %s"
-msgstr ""
-
 #: search.php:8
 #, php-format
 msgid "You searched for \"%s\". Here are the results:"

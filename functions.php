@@ -71,6 +71,8 @@ function fgymm_setup() {
 					   'admin-head-callback'    => '',
 					   'admin-preview-callback' => '',
 					) );
+					
+	add_theme_support( "title-tag" );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -96,36 +98,6 @@ function fgymm_setup() {
 }
 endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
-
-
-function fgymm_wp_title_for_home( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-	
-	if ( $sep == '') {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'fgymm'), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'fgymm_wp_title_for_home', 10, 2 );
 
 function fgymm_post_classes( $classes ) {
 	if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) {
