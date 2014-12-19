@@ -1,10 +1,10 @@
 /*
 Theme Name: Beautiful
-Theme URI: http://wordpress.chakosh.ir/?theme=beautiful
+Theme URI: https://github.com/amirmasoud/Beautiful
 Author: AmirMasoud Sheidayi
 Author URI: http://chakosh.ir/
 Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail, use this theme for your arts and photos, NOTICE: This theme will not show thumbnails that are less than 480×480 Pixel
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready, buddypress
@@ -52,7 +52,9 @@ body {
 	color: #333;
 	padding: 0 15px 0 15px;
 	min-width: 450px;
+	z-index: +1;
 }
+
 a {
 	color: #333333;
 	text-decoration: none;
@@ -61,6 +63,7 @@ a {
 	-o-transition: all ease .3s;
 	transition: all ease .3s;
 }
+
 a:hover,
 a:active {
 	text-decoration: none;
@@ -74,10 +77,75 @@ a:active {
 
 }
 
-input[type="submit"] {
-	max-width: 25%;
+
+input {
+	width: auto !important;
+}
+
+input[type=checkbox], input[type=radio] {
+	width: 15px !important;
+	height: 15px !important;
+	margin: 0;
+	min-height: 15px;
+	padding: 0;
 	display: inline;
-	padding: 18px 15px;
+	box-shadow: 0 0 !important;
+}
+
+
+
+textarea {
+	max-width: 100%;
+	border: 5px solid #F4F2F2;
+	border-radius: 4px;
+}
+
+button, input[type="submit"], input[type="clear"], input[type="reset"], 
+.btn, .form-control {
+	border: 5px solid #F4F2F2;
+	border-radius: 4px;
+	height: auto;
+	box-shadow: 5px 5px #B2B2B2;
+
+	-webkit-transition: all ease .3s;
+	-moz-transition: all ease .3s;
+	-o-transition: all ease .3s;
+	transition: all ease .3s;
+}
+
+button:hover, input[type="submit"]:hover, input[type="clear"]:hover, input[type="reset"]:hover, 
+.btn:hover, , .form-control:hover {
+	border-radius: 10px;
+	border-color: #0DA0E0;
+	background-color: #FFF !important;
+	border-color: #F4F2F2;
+
+
+	-webkit-transition: all ease .3s;
+	-moz-transition: all ease .3s;
+	-o-transition: all ease .3s;
+	transition: all ease .3s;
+}
+
+button:active, input[type="submit"]:active, input[type="clear"]:active, input[type="reset"]:active, 
+.btn:active, .form-control:active {
+	transform: translate(0px,5px);
+	-o-transform: translate(0px,5px);
+	-ms-transform: translate(0px,5px);
+	-moz-transform: translate(0px,5px);
+	-webkit-transform: translate(0px,5px);
+
+	-webkit-transition: all ease .3s;
+	-moz-transition: all ease .3s;
+	-o-transition: all ease .3s;
+	transition: all ease .3s;
+}
+
+
+button:focus, input[type="submit"]:focus, input[type="clear"]:focus, input[type="reset"]:focus, 
+.btn:focus, .form-control:focus
+{
+	box-shadow: 0 0;
 }
 
 /* Support a widely-adopted but non-standard selector for text selection styles
@@ -353,7 +421,7 @@ header.row
 	font-weight: bold;
 	color: #DDD;
 	border-bottom: 1px solid #DDD;
-	padding: 15px 20px;
+	padding: 9px 20px;
 	background: rgba(255, 255, 255, 0.33);
 }
 header.row .col-md-8
@@ -367,7 +435,11 @@ header.row .col-md-8
 	height: 57px;
 	word-break: keep-all;
 	background-repeat: no-repeat;
-	overflow: auto;
+	display: inline-block;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden !important;
+	text-overflow: ellipsis;
 }
 
 .logo-left {
@@ -422,7 +494,7 @@ header.row .col-md-8
 .search-input
 {
 	border: 0;
-	width: 100%;
+	width: 100% !important;
 	padding: 14px;
 	background: #fff;
 	padding: 18px 10px;
@@ -446,42 +518,6 @@ header.row .col-md-8
 	cursor: pointer;
 }
 
-/*#searchform
-{
-	position: absolute;
-	left: 0;
-	right: 0;
-	padding: 0;
-	top: -200px;
-	z-index: +9999;
-	color: #DDD;
-	background: #FAFAFA;
-
-}
-.search-close
-{
-	padding-top: 18px;			
-}
-#searchform input
-{
-	border: 0;
-	width: 100%;
-	padding: 14px;
-	background: #fff;
-}
-#searchform input:focus
-{
-	outline: 0;
-	border-left: 1px solid #CCC;
-	color: #333;
-	text-shadow: 1px 1px 1px #FFF;
-}
-.menu:hover, .menu:focus,
-.search-form:hover, .search-form:focus,
-.search-close:hover,.search-close:focus {
-	color: #333;
-	cursor: pointer;
-}*/
 
 /**
  * 5.0 - Navigation
@@ -1082,39 +1118,38 @@ background: #FFF;
 	border-right: 1px solid #DDD;
 	padding-left: 0;
 }
+
 .comment-content
 {
 	padding: 20px 0;
 }
+
 .comment-notes, .form-allowed-tags
 {
 	display: none;
 }
+
 #respond
 {
 	margin: 50px 30px;
 }
-#respond input, #respond textarea
-{
-	width: 100%;
-	border: 1px solid #DDD;
-	color: #333;
-	padding: 18px 15px;
-	height: auto;
-}
 
 #author {
 	border-radius: 5px 0 0 0;
-	border-bottom: 0 !important;
+	width: 97% !important;
+	margin-right: 10px;
 }
 
 #email {
 	border-radius: 0 5px 0 0;
-	border-bottom: 0 !important;
+	width: 97% !important;
+	margin-left: 10px;
 }
 
 #url {
 	border-radius: 0 0 5px 5px;
+	width: 100% !important;
+	margin-top: 20px;
 }
 
 #respond textarea {
@@ -1124,7 +1159,6 @@ background: #FFF;
 
 #respond input:focus, #respond textarea:focus, #submit:focus
 {
-	box-shadow: 0 0 0 0;
 	outline: 0;
 }
 
@@ -1132,9 +1166,6 @@ background: #FFF;
 	padding: 7px;
 }
 
-#submit:hover {
-	border-bottom: 1px solid #333 !important;
-}
 #respond .form-group
 {
 	margin: 0;
@@ -1199,18 +1230,20 @@ background: #FFF;
 }
 aside.sidebar
 {
-	width: 0;
-	position: absolute;
+	width: 400px;
+	position: fixed;
 	padding: 12px 0px;
 	right: -400px;
 	border: 0;
 	background: #333;
 	z-index: +9999;
 	color: #FFF;
-	overflow: scroll;
+	overflow-y: scroll;
 	overflow-x: hidden;
-	min-height: 100%;
+	overflow: scroll;
+	height: 100%;
 	text-align: center;
+	margin-right: 0px;
 }
 
 aside.sidebar::-webkit-scrollbar {
@@ -1294,6 +1327,7 @@ aside.sidebar::-webkit-scrollbar {
 
 .widget a {
 	color: #fff;
+	display: block;
 }
 .widget a:hover {
 	color: #333;
@@ -1570,6 +1604,7 @@ footer#site-info {
 	color: #FFF;
 	padding: 20px;
 	border-top: 3px solid #555;
+	font-size: 12px;
 }
 footer#site-info a {
 	color: #FFF;

@@ -138,9 +138,14 @@ function beautiful_scripts() {
 	// Add bootstrap, used in the main stylesheet.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );	
 
+	// Add Animation.css
+	wp_enqueue_style( 'beautiful-animation', get_template_directory_uri() . '/css/animate.css');
+
+	// Sidebar scrollbar
+	wp_enqueue_style( 'perfect-scrollbar', get_template_directory_uri() . '/css/perfect-scrollbar.min.css');
+
 	// Load our main stylesheet.
 	wp_enqueue_style( 'beautiful-style', get_stylesheet_uri());
-	wp_enqueue_style( 'beautiful-animation', get_template_directory_uri() . '/css/animate.css');
 
 	// load comment reply script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -150,11 +155,11 @@ function beautiful_scripts() {
 	// load bootstrap js
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
 
-	// multi level menu
-	wp_enqueue_script( 'bootstrap-multi-level', get_template_directory_uri() . '/js/bootstrap-multi-level-menu.js', array( 'jquery' ) );
+	// load sidebar scrollbar js
+	wp_enqueue_script( 'perfect-scrollbar', get_template_directory_uri() . '/js/perfect-scrollbar.min.js', array( 'jquery' ) );
 
-	// load fittext js, for font size at front page
-	wp_enqueue_script( 'beautiful-fittext', get_template_directory_uri() . '/js/jquery.fittext.js');
+	// load TextFill js, for font size at front page
+	wp_enqueue_script( 'beautiful-fittext', get_template_directory_uri() . '/js/jquery.textfill.min.js');
 
 	// load our custom js
 	if( !is_rtl() )

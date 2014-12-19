@@ -45,3 +45,6 @@ bug fixes
 1.0.8
 bug fixes
 [show sidebar if it's not empty]
+
+1.0.9
+logo overflow fixed

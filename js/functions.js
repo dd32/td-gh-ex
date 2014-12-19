@@ -28,10 +28,10 @@ jQuery(document).ready(function($){
 	var closeMenu = function()
 	{
 
-		$("aside.sidebar").css({width: 0});
+		$("aside.sidebar").animate({right: "-400px"});
 		$(".close-menu").animate({top: "-120px"}, 300);
 		$(".open-menu").animate({top: 0}, 300);
-		$(".main-wrapper").animate({right: 0}, 300);
+		$(".main-wrapper").animate({right: 0});
 	}
 
 	/**
@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
 	 */
 	var openMenu = function()
 	{
-		$("aside.sidebar").css({width: "400px"});
+		$("aside.sidebar").animate({right: "0px"});
 		$(".open-menu").animate({top: "-120px"}, 300);
 		$(".close-menu").animate({top: 0}, 300);
 		$(".main-wrapper").animate({right: "400px"}, 300);
@@ -83,6 +83,9 @@ jQuery(document).ready(function($){
 
 	// main sidebar
 	$(".open-menu").click(function(){
+		$( window ).scroll(function() {
+			closeMenu();
+		});
 		closeSearch()
 		openMenu();
 	});
@@ -91,9 +94,7 @@ jQuery(document).ready(function($){
 	});
 
 	// calcute font size for post title in front page based on width and heigh of the box
-	// and length of the post title
-	// default font size = 20px
-	$(".box-caption h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '50px' })
+	$(".box-caption h1").fitText(2, { minFontSize: '20px', maxFontSize: '50px' })
 
 	// color boxes of front page
 	$('.content-area .blog-post:nth-child(1n) .box-caption').css({"background":"rgba(129, 162, 87, 0.9)"});
@@ -128,6 +129,5 @@ jQuery(document).ready(function($){
 	$(".blog-thumbnail img").removeAttr("width");
 	$(".blog-thumbnail img").removeAttr("height");
 
-
-
+	$('aside.sidebar').perfectScrollbar();
 });
