@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: LeftSide v1.7\n"
+"Project-Id-Version: LeftSide v1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-28 16:54:21+0000\n"
