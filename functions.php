@@ -71,18 +71,6 @@
 	add_action( 'after_setup_theme', 'darkorange_setup' ); 
 
 
-// Add blogname to wp_title
-	function darkorange_wp_title( $title ) { 
-		global $page, $paged; 
-		if ( is_feed() ) 
-		return $title; 
-	
-		$filtered_title = $title . get_bloginfo( 'name' ); 
-			return $filtered_title; 
-	}
-	add_filter( 'wp_title', 'darkorange_wp_title' ); 
-
-
 // Add html5 support for older IE version 
 	function darkorange_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
