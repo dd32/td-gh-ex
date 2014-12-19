@@ -1,7 +1,9 @@
 CHANGELOG
 =========
 
-MyKnowledgeBase version 1.7 - december 2014 
+MyKnowledgeBase version 1.8 - december 2014 
+- file functions: added title-tag
+- updated the reset stylesheet
 - adjusted styling of several tags
 - reordered and cleaned up files style and custom-editor-style
 - reordered php files
