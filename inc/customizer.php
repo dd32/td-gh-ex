@@ -55,6 +55,28 @@ function moesia_customize_register( $wp_customize ) {
             )
         )
     );
+    //Logo size
+    $wp_customize->add_setting(
+        'logo_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '100',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'logo_size', array(
+        'type'        => 'number',
+        'priority'    => 10,
+        'section'     => 'moesia_general',
+        'label'       => __('Logo size', 'moesia'),
+        'description' => __('Menu-content spacing will return to normal after you save &amp; exit the Customizer', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 300,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );    
 	//Favicon Upload
 	$wp_customize->add_setting(
 		'site_favicon',
@@ -72,7 +94,7 @@ function moesia_customize_register( $wp_customize ) {
 			   'type' 			=> 'image',
                'section'        => 'moesia_general',
                'settings'       => 'site_favicon',
-               'priority' => 10,
+               'priority' => 11,
             )
         )
     );
@@ -93,7 +115,7 @@ function moesia_customize_register( $wp_customize ) {
                'type'           => 'image',
                'section'        => 'moesia_general',
                'settings'       => 'apple_touch_144',
-               'priority'       => 11,
+               'priority'       => 12,
             )
         )
     );
@@ -114,7 +136,7 @@ function moesia_customize_register( $wp_customize ) {
                'type'           => 'image',
                'section'        => 'moesia_general',
                'settings'       => 'apple_touch_114',
-               'priority'       => 12,
+               'priority'       => 13,
             )
         )
     );
@@ -135,7 +157,7 @@ function moesia_customize_register( $wp_customize ) {
                'type'           => 'image',
                'section'        => 'moesia_general',
                'settings'       => 'apple_touch_72',
-               'priority'       => 13,
+               'priority'       => 14,
             )
         )
     );
@@ -156,7 +178,7 @@ function moesia_customize_register( $wp_customize ) {
                'type'           => 'image',
                'section'        => 'moesia_general',
                'settings'       => 'apple_touch_57',
-               'priority'       => 14,
+               'priority'       => 15,
             )
         )
     );
@@ -174,7 +196,7 @@ function moesia_customize_register( $wp_customize ) {
 			'type' => 'checkbox',
 			'label' => __('Check this box if you want to disable the custom scroller.', 'moesia'),
 			'section' => 'moesia_general',
-            'priority' => 15,			
+            'priority' => 16,			
 		)
 	);
     //Animations
@@ -191,7 +213,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box if you want to disable the animations.', 'moesia'),
             'section' => 'moesia_general',
-            'priority' => 16,           
+            'priority' => 17,           
         )
     );
     //Sidebar widgets
@@ -208,7 +230,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box to hide the sidebar widgets on screen widths below 1024px', 'moesia'),
             'section' => 'moesia_general',
-            'priority' => 17,           
+            'priority' => 18,           
         )
     ); 
     //Footer widgets
@@ -225,7 +247,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box to hide the footer widgets on screen widths below 1024px', 'moesia'),
             'section' => 'moesia_general',
-            'priority' => 18,           
+            'priority' => 19,           
         )
     );            
     //___Single posts___//
@@ -395,7 +417,28 @@ function moesia_customize_register( $wp_customize ) {
                'priority'       => 14,
             )
         )
-    );    
+    ); 
+    //Logo size
+    $wp_customize->add_setting(
+        'wlogo_size',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '200',
+            'transport'         => 'postMessage'
+        )       
+    );
+    $wp_customize->add_control( 'wlogo_size', array(
+        'type'        => 'number',
+        'priority'    => 15,
+        'section'     => 'moesia_header',
+        'label'       => __('Welcome logo size', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 500,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );        
    //Header description
 	$wp_customize->add_setting(
 	    'header_desc',
@@ -410,7 +453,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'Welcome message (not the site description)', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 15
+	        'priority' => 16
 	    )
 	);	
    //Header button text 
@@ -427,7 +470,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'The text for the call to action button', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 16
+	        'priority' => 17
 	    )
 	);
    //Header button link 
@@ -444,7 +487,7 @@ function moesia_customize_register( $wp_customize ) {
 	        'label' => __( 'The link for the call to action button', 'moesia' ),
 	        'section' => 'moesia_header',
 	        'type' => 'text',
-	        'priority' => 17
+	        'priority' => 18
 	    )
 	);
     //Activate
@@ -461,7 +504,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box if you want to disable the header image and text on all pages except the front page.', 'moesia'),
             'section' => 'moesia_header',
-            'priority' => 18,            
+            'priority' => 19,            
         )
     );
     //Overlay
@@ -478,7 +521,7 @@ function moesia_customize_register( $wp_customize ) {
             'type' => 'checkbox',
             'label' => __('Check this box if you want to disable the header overlay pattern.', 'moesia'),
             'section' => 'moesia_header',
-            'priority' => 19,            
+            'priority' => 20,            
         )
     );
     //Title color
@@ -498,7 +541,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Welcome title color', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_title_color',
-                'priority' => 20
+                'priority' => 21
             )
         )
     );    
@@ -519,7 +562,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Welcome message color', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_desc_color',
-                'priority' => 21
+                'priority' => 22
             )
         )
     );    
@@ -540,7 +583,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Button background', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_btn_bg',
-                'priority' => 22
+                'priority' => 23
             )
         )
     );   
@@ -561,7 +604,7 @@ function moesia_customize_register( $wp_customize ) {
                 'label' => __('Button box shadow', 'moesia'),
                 'section' => 'moesia_header',
                 'settings' => 'header_btn_bs',
-                'priority' => 23
+                'priority' => 24
             )
         )
     );     	

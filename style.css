@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.17
+Version: 1.18
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -1337,7 +1337,8 @@ Welcome area
 }
 .welcome-logo {
 	max-width: 200px;
-	margin-bottom: 30px;
+	display: block;
+	margin: 0 auto 30px;
 }
 .welcome-desc {
 	font-size: 28px;
@@ -1466,6 +1467,36 @@ Page Builder visual styles
 	}
 }
 /*--------------------------------------------------------------
+Center Services and Employees
+--------------------------------------------------------------*/
+.services-area,
+.employees-area {
+	text-align: center;
+}
+.service,
+.employee {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+	text-align: left;
+}
+.services-area .col-xs-6,
+.employees-area .col-xs-6 {
+		width: 49.5%;
+}
+@media (min-width: 768px) {
+	.services-area .col-sm-6,
+	.employees-area .col-sm-6 {
+		width: 49.5%;
+	}
+}
+@media (min-width: 992px) {
+	.services-area .col-md-4,
+	.employees-area .col-md-4 {
+		width: 33%;
+	}
+}
+/*--------------------------------------------------------------
 Responsive
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1025px) {	
@@ -1540,14 +1571,14 @@ Responsive
 	}
 	.service,
 	.employee {
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: 5px;
+		padding-right: 5px;
 	}		
 }
 @media only screen and (max-width: 499px) {
 	.project,
-	.service,
-	.employee,
+	.services-area .service,
+	.employees-area .employee,
 	.bq-text,
 	.bq-img {
 		width: 100%;		
@@ -1659,11 +1690,6 @@ Responsive
 	.top-bar {
 		position: relative !important;
 	}	
-}
-@media screen and (max-width: 320px) {
-	.menu-toggle {
-		margin: 0 auto;
-	}
 }
 @media screen and (max-width: 1024px) {
 	.has-banner:after,

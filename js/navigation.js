@@ -10,7 +10,7 @@
 	if ( ! container )
 		return;
 
-	button = container.getElementsByTagName( 'button' )[0];
+	button = document.getElementsByClassName( 'menu-toggle' )[0];
 	if ( 'undefined' === typeof button )
 		return;
 

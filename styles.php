@@ -331,6 +331,16 @@ function moesia_custom_styles($custom) {
 		$custom .= ".footer-widget-area, .site-footer { background-color: {$footer_bg}; }"."\n";
 	}		
 	
+	//Logos
+	$logo_size = get_theme_mod( 'logo_size' );
+	if ( get_theme_mod( 'logo_size' )) {
+		$custom .= ".site-logo { max-width:" . intval($logo_size) . "px; }"."\n";
+	}
+	$wlogo_size = get_theme_mod( 'wlogo_size' );
+	if ( get_theme_mod( 'wlogo_size' )) {
+		$custom .= ".welcome-logo { max-width:" . intval($wlogo_size) . "px; }"."\n";
+	}
+
 	//Fonts
 	$headings_font = esc_html(get_theme_mod('headings_fonts'));	
 	$body_font = esc_html(get_theme_mod('body_fonts'));	

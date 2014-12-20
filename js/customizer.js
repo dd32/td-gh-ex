@@ -333,7 +333,7 @@
 		value.bind( function( newval ) {
 			$('.footer-widget-area, .site-footer').css('background-color', newval );
 		} );
-	});
+	});		
 	// Font sizes
 	wp.customize('h1_size',function( value ) {
 		value.bind( function( newval ) {
@@ -380,4 +380,16 @@
             $('.main-navigation li').css('font-size', newval + 'px' );
         } );
     });	
+	//Logos
+	wp.customize('logo_size',function( value ) {
+		value.bind( function( newval ) {
+			$('.site-logo').css('max-width', newval + 'px' );
+		} );
+	});
+	//Logos
+	wp.customize('wlogo_size',function( value ) {
+		value.bind( function( newval ) {
+			$('.welcome-logo').css('max-width', newval + 'px' );
+		} );
+	}); 	  
 } )( jQuery );

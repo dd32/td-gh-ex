@@ -1,5 +1,13 @@
 Changelog
 
+17 Dec 2014 - 1.18
+--------------------------------------
+- switched to inline-block for services/employees to allow centering
+- new size option for site logo
+- new size option for welcome logo
+- layout fix when only welcome logo and button are set
+
+
 10 Dec 2014 - 1.17
 --------------------------------------
 - small CSS fixes
