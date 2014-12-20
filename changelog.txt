@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkOrange Version 2.9 - december 2014
+- fixed padding right/left in full width page
+- reordered file nav
+
 DarkOrange Version 2.8 - december 2014
 - file functions: added title-tag
 - file header: renamed #pre-header and #header into #header-first and #header-second
