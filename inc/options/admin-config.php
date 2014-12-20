@@ -488,6 +488,24 @@
                     'type' => 'divide',
                 );
 
+                $this->sections[] = array(
+                    'icon'   => 'el-icon-eye-open',
+                    'title'  => __( 'Theme Support', 'awaken' ),
+                    'desc'   => __( '<p class="description">Follow these links to get more details about Awaken WordPress Theme.</p>', 'redux-framework-demo' ),
+                    'fields' => array(
+
+                        array(
+                            'id'   => 'opt-info-field',
+                            'type' => 'info',
+                            'style' => 'success',
+                            'desc' => __( '<h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken" target="_blank">Theme Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/awaken-wordpress-theme-documentation" target="_blank">Theme Setup Guide</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken" target="_blank">Theme Demo</a></h4>', 'awaken' )
+                        ),
+                    ),
+                );
+
+                $this->sections[] = array(
+                    'type' => 'divide',
+                );
 
                 $this->sections[] = array(
                     'title'  => __( 'Import / Export', 'awaken' ),

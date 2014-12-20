@@ -10,11 +10,6 @@
 get_header(); ?>
 	
 	
-	<?php 
-		if ( $awaken_options['home-slider-activate'] == '1' ) {
-			awaken_featured_posts(); 
-		}
-	?>
 	<div class="amt-area">
 	<?php 
 		if( is_active_sidebar( 'magazine-1' ) ) {

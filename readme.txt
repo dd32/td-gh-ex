@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.0.4
+Version    : 1.0.5
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -129,3 +129,6 @@ Added a method to remove footer credit links.
 
 - Version 1.0.4
 Changed files calling method (__FILE__ to get_template_directory())
+
+- Version 1.0.4
+Changed slider locations.

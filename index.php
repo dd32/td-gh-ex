@@ -22,6 +22,7 @@ get_header(); ?>
 			<?php /* Start the Loop */ 
 				$counter = 0;
 			?>
+		
 			<div class="row">
 			<?php while ( have_posts() ) : the_post(); ?>
 

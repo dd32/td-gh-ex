@@ -95,3 +95,11 @@
 
 	<div id="content" class="site-content">
 		<div class="container">
+
+	<?php 
+		if ( is_front_page() ) {
+			if ( $awaken_options['home-slider-activate'] == '1' ) {
+				awaken_featured_posts(); 
+			}
+		}
+	?>

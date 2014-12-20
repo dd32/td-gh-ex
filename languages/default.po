@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: awaken.1.0.3\n"
-"POT-Creation-Date: 2014-11-07 21:58+0530\n"
-"PO-Revision-Date: 2014-11-07 21:59+0530\n"
+"Project-Id-Version: awaken 1.0.5\n"
+"POT-Creation-Date: 2014-12-20 13:50+0530\n"
+"PO-Revision-Date: 2014-12-20 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n;_x\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -44,16 +44,8 @@ msgstr ""
 msgid "Month"
 msgstr ""
 
-#: archive.php:50
-msgid "F Y"
-msgstr ""
-
 #: archive.php:55
 msgid "Year"
-msgstr ""
-
-#: archive.php:57
-msgid "Y"
 msgstr ""
 
 #: archive.php:61
@@ -206,10 +198,6 @@ msgstr ""
 msgid "Footer Right Sidebar"
 msgstr ""
 
-#: functions.php:253 functions.php:259 functions.php:265
-msgid "on"
-msgstr ""
-
 #: header.php:22
 msgid "Skip to content"
 msgstr ""
@@ -246,10 +234,6 @@ msgstr ""
 
 #: inc/template-tags.php:74
 msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:77 inc/template-tags.php:78
-msgid "%title"
 msgstr ""
 
 #: inc/options/admin-config.php:109
@@ -494,34 +478,54 @@ msgid "Youtube Link"
 msgstr ""
 
 #: inc/options/admin-config.php:493
-msgid "Import / Export"
+msgid "Theme Support"
 msgstr ""
 
 #: inc/options/admin-config.php:494
+msgid ""
+"<p class=\"description\">Follow these links to get more details about Awaken "
+"WordPress Theme.</p>"
+msgstr ""
+
+#: inc/options/admin-config.php:501
+msgid ""
+"<h4><a class=\"button-primary\" href=\"http://www.themezhut.com/themes/awaken"
+"\" target=\"_blank\">Theme Details</a></h4> <h4><a class=\"button-primary\" "
+"href=\"http://www.themezhut.com/awaken-wordpress-theme-documentation\" "
+"target=\"_blank\">Theme Setup Guide</a></h4> <h4><a class=\"button-primary\" "
+"href=\"http://www.themezhut.com/demo/awaken\" target=\"_blank\">Theme Demo</"
+"a></h4>"
+msgstr ""
+
+#: inc/options/admin-config.php:511
+msgid "Import / Export"
+msgstr ""
+
+#: inc/options/admin-config.php:512
 msgid "Import and Export your Redux Framework settings from file, text or URL."
 msgstr ""
 
-#: inc/options/admin-config.php:509
+#: inc/options/admin-config.php:527
 msgid "Theme Information"
 msgstr ""
 
-#: inc/options/admin-config.php:527
+#: inc/options/admin-config.php:545
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/options/admin-config.php:528 inc/options/admin-config.php:534
+#: inc/options/admin-config.php:546 inc/options/admin-config.php:552
 msgid "<p>This is the tab content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:533
+#: inc/options/admin-config.php:551
 msgid "Theme Information 2"
 msgstr ""
 
-#: inc/options/admin-config.php:538
+#: inc/options/admin-config.php:556
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:561 inc/options/admin-config.php:562
+#: inc/options/admin-config.php:579 inc/options/admin-config.php:580
 msgid "Awaken Options"
 msgstr ""
 
