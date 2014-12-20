@@ -320,7 +320,7 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 // Video responsive
 if(!function_exists('video_content_filter')) {
   function video_content_filter($content) {
-	$pattern = '/<iframe.*?src=".*?(vimeo|youtu|justin|ustream\.?be).*?".*?<\/iframe>/';
+	$pattern = '/<iframe.*?src=".*?(vimeo|justin|ustream|youtu\.?be).*?".*?<\/iframe>/';
 	preg_match_all($pattern, $content, $matches);
 	foreach ($matches[0] as $match) {
 	  $wrappedframe = '<div class="flex-video">' . $match . '</div>';

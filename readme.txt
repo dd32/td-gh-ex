@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.1
+Version: 1.2.2
 Requires at least: 3.0.1
-Tested up to: 4.0.1
+Tested up to: 4.1
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -61,6 +61,12 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.2 - 20.12.2014 =
+* Title is added on the Continue button reading the loop.
+* Css selector is added to the loop cover.
+* Link the author still meet the purpose.
+* The responsive video function resets.
 
 = 1.2.1 - 07.12.2014 =
 * Icons are added on date and author of the posts.

@@ -180,12 +180,12 @@
          </div><!-- .entry-meta -->
          <br/>
          <p><?php echo get_the_excerpt(); ?></p>
-         <a href="<?php the_permalink() ?>" class="btn btn-success"><?php echo __('Continue reading &raquo;&raquo;', 'athenea'); ?></a>
+         <a href="<?php the_permalink() ?>" class="btn btn-success" title="<?php echo get_the_title(); ?>"><?php echo __('Continue reading &raquo;&raquo;', 'athenea'); ?></a>
         </div><!-- #col-md-8 -->
       </div><!-- #entry-content -->
      </article><!-- #article -->
     </div><!-- #container -->
-    <div class="container"><hr style="margin-top:60px; margin-bottom:60px;"></div>
+    <div class="container"><hr class="mrgPost"></div>
 	<?php endwhile; ?>
     <div class="col-md-6 text-left"><?php previous_posts_link(); ?></div>
     <div class="col-md-6 text-right"><?php next_posts_link(); ?></div>
