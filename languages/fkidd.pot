@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fKidd Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 21:12+0200\n"
-"POT-Creation-Date: 2014-11-28 21:12+0200\n"
+"POT-Creation-Date: 2014-12-20 21:12+0200\n"
+"POT-Creation-Date: 2014-12-20 21:12+0200\n"
 "Last-Translator: Tihomir Ivanov <tihomirivanov84@gmail.com>\n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: 404.php:29
+#: 404.php:29 inc/theme-options.php:39
 msgid "Error 404: Not Found"
 msgstr ""
 
@@ -93,11 +93,6 @@ msgstr ""
 msgid "primary menu"
 msgstr ""
 
-#: functions.php:123
-#, php-format
-msgid "Page %s"
-msgstr ""
-
 #: search.php:8
 #, php-format
 msgid "You searched for \"%s\". Here are the results:"
@@ -143,358 +138,394 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/actions.php:53
+#: inc/actions.php:52
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: inc/actions.php:55
+#: inc/actions.php:54
 msgid "The sidebar widget area"
 msgstr ""
 
-#: inc/theme-options.php:20 inc/theme-options.php:21
+#: inc/actions.php:73
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/actions.php:79
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/theme-options.php:19 inc/theme-options.php:20
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:63
-msgid "General"
+#: inc/theme-options.php:40
+msgid "<p>Sorry. The page you are looking for does not exist.</p>"
 msgstr ""
 
-#: inc/theme-options.php:64
-msgid "Header"
+#: inc/theme-options.php:41
+msgid ""
+"<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
+"adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
+"aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: inc/theme-options.php:65
-msgid "Footer"
+#: inc/theme-options.php:43
+msgid ""
+"<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud "
+"exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a "
+"class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: inc/theme-options.php:66
-msgid "Home"
+#: inc/theme-options.php:45
+msgid ""
+"<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam "
+"epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at "
+"duo, mea ea ceteros constituam.</p><a class=\"btn\" title=\"Read more\" href="
+"\"#\">Read more</a>"
 msgstr ""
 
 #: inc/theme-options.php:67
-msgid "Slider"
+msgid "General"
 msgstr ""
 
 #: inc/theme-options.php:68
-msgid "Colors"
+msgid "Header"
 msgstr ""
 
 #: inc/theme-options.php:69
-msgid "Social"
+msgid "Footer"
 msgstr ""
 
 #: inc/theme-options.php:70
-msgid "Lightbox"
+msgid "Home"
 msgstr ""
 
 #: inc/theme-options.php:71
-msgid "Thumbnails"
+msgid "Slider"
 msgstr ""
 
 #: inc/theme-options.php:72
+msgid "Colors"
+msgstr ""
+
+#: inc/theme-options.php:73
+msgid "Social"
+msgstr ""
+
+#: inc/theme-options.php:74
+msgid "Lightbox"
+msgstr ""
+
+#: inc/theme-options.php:75
+msgid "Thumbnails"
+msgstr ""
+
+#: inc/theme-options.php:76
 msgid "Contacts"
 msgstr ""
 
-#: inc/theme-options.php:80
+#: inc/theme-options.php:84
 msgid "Theme settings updated successfully."
 msgstr ""
 
-#: inc/theme-options.php:95 inc/theme-options.php:115
-#: inc/theme-options.php:134 inc/theme-options.php:152
-#: inc/theme-options.php:196 inc/theme-options.php:241
-#: inc/theme-options.php:260 inc/theme-options.php:275
-#: inc/theme-options.php:291 inc/theme-options.php:319
+#: inc/theme-options.php:99 inc/theme-options.php:160
+#: inc/theme-options.php:223 inc/theme-options.php:266
+#: inc/theme-options.php:439 inc/theme-options.php:1133
+#: inc/theme-options.php:1171 inc/theme-options.php:1186
+#: inc/theme-options.php:1244 inc/theme-options.php:1402
 msgid "These options are available in the full version only."
 msgstr ""
 
-#: inc/theme-options.php:95 inc/theme-options.php:115
-#: inc/theme-options.php:134 inc/theme-options.php:152
-#: inc/theme-options.php:170 inc/theme-options.php:196
-#: inc/theme-options.php:241 inc/theme-options.php:260
-#: inc/theme-options.php:275 inc/theme-options.php:291
-#: inc/theme-options.php:319
+#: inc/theme-options.php:99 inc/theme-options.php:160
+#: inc/theme-options.php:223 inc/theme-options.php:266
+#: inc/theme-options.php:313 inc/theme-options.php:439
+#: inc/theme-options.php:1133 inc/theme-options.php:1171
+#: inc/theme-options.php:1186 inc/theme-options.php:1244
+#: inc/theme-options.php:1402
 msgid "Click Here"
 msgstr ""
 
-#: inc/theme-options.php:95 inc/theme-options.php:115
-#: inc/theme-options.php:134 inc/theme-options.php:152
-#: inc/theme-options.php:170 inc/theme-options.php:196
-#: inc/theme-options.php:241 inc/theme-options.php:260
-#: inc/theme-options.php:275 inc/theme-options.php:291
-#: inc/theme-options.php:319
+#: inc/theme-options.php:99 inc/theme-options.php:160
+#: inc/theme-options.php:223 inc/theme-options.php:266
+#: inc/theme-options.php:313 inc/theme-options.php:439
+#: inc/theme-options.php:1133 inc/theme-options.php:1171
+#: inc/theme-options.php:1186 inc/theme-options.php:1244
+#: inc/theme-options.php:1402
 msgid "to get the full version of tKidd theme."
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:105
 msgid "Website Layout"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:108
 msgid "Wide"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:109
 msgid "Boxed"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:111
 msgid "Select layout of your website"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:115
 msgid "Code before &lt;/header&gt; tag"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:116
 msgid "Custom html code, before the &lt;/head&gt; tag"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:119
 msgid "Code before &lt;/body&gt; tag"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:120
 msgid "Custom html code, before the &lt;/body&gt; tag"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:123
 msgid "Tracking Code"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:124
 msgid ""
 "Tracking code (i.e. Google Analytics). It will be added in the footer part "
 "of the website."
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:127
 msgid "Show Author Info After Single Posts"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:128
 msgid "Display author info box after single posts"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:131
 msgid "Show Social Sharing After Single Posts"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:132
 msgid "Display social sharing box after single posts"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:135
 msgid "Show Author Info After Single Pages"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:136
 msgid "Display author info box after single page"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:139
 msgid "Show Social Sharing After Single Pages"
 msgstr ""
 
-#: inc/theme-options.php:98
+#: inc/theme-options.php:140
 msgid "Display social sharing box after single pages"
 msgstr ""
 
-#: inc/theme-options.php:104 inc/theme-options.php:124
-#: inc/theme-options.php:143 inc/theme-options.php:158
-#: inc/theme-options.php:185 inc/theme-options.php:230
-#: inc/theme-options.php:251 inc/theme-options.php:266
-#: inc/theme-options.php:282 inc/theme-options.php:299
-#: inc/theme-options.php:311 inc/theme-options.php:324
+#: inc/theme-options.php:149 inc/theme-options.php:213
+#: inc/theme-options.php:257 inc/theme-options.php:301
+#: inc/theme-options.php:431 inc/theme-options.php:1122
+#: inc/theme-options.php:1162 inc/theme-options.php:1177
+#: inc/theme-options.php:1235 inc/theme-options.php:1382
+#: inc/theme-options.php:1394 inc/theme-options.php:1419
 msgid "Get tKidd Theme"
 msgstr ""
 
-#: inc/theme-options.php:104 inc/theme-options.php:124
-#: inc/theme-options.php:143 inc/theme-options.php:185
-#: inc/theme-options.php:251 inc/theme-options.php:311
+#: inc/theme-options.php:149 inc/theme-options.php:213
+#: inc/theme-options.php:257 inc/theme-options.php:431
+#: inc/theme-options.php:1162 inc/theme-options.php:1394
 msgid "Save Changes"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:166
 msgid "Logo Image Width"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:167
 msgid "Logo image width of your website"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:170
 msgid "Logo Image Height"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:171
 msgid "Logo image height of your website"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:174
 msgid "Header Phone"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:175
 msgid "Your phone to appear in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:178
 msgid "Header E-mail"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:179
 msgid "Your e-mail to appear in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:182
 msgid "Display Homepage Icon"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:183
 msgid "Display homepage icon in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118 inc/theme-options.php:137
+#: inc/theme-options.php:186 inc/theme-options.php:242
 msgid "Display Social Icons"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:187
 msgid "Display social icons in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:190
 msgid "Display Search Form"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:191
 msgid "Display search form in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118 inc/theme-options.php:137
+#: inc/theme-options.php:194 inc/theme-options.php:246
 msgid "Open Social Icons in a new window"
 msgstr ""
 
-#: inc/theme-options.php:118 inc/theme-options.php:137
+#: inc/theme-options.php:195 inc/theme-options.php:247
 msgid "Open social icons links in a new window"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:198
 msgid "Show Breadcrumb"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:199
 msgid "Show breadcrumb in the website header"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:202
 msgid "Page Header Background Image"
 msgstr ""
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:203
 msgid "Upload a custom breadcrumb background image for page header section."
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
+#: inc/theme-options.php:229 inc/theme-options.php:283
 msgid "Number of Columns"
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
-#: inc/theme-options.php:278
+#: inc/theme-options.php:232 inc/theme-options.php:286
+#: inc/theme-options.php:1199 inc/theme-options.php:1220
 msgid "none"
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
+#: inc/theme-options.php:233 inc/theme-options.php:287
 msgid "1"
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
+#: inc/theme-options.php:234 inc/theme-options.php:288
 msgid "2"
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
+#: inc/theme-options.php:235 inc/theme-options.php:289
 msgid "3"
 msgstr ""
 
-#: inc/theme-options.php:137 inc/theme-options.php:154
+#: inc/theme-options.php:236 inc/theme-options.php:290
 msgid "4"
 msgstr ""
 
-#: inc/theme-options.php:137
+#: inc/theme-options.php:238
 msgid "Select number of columns to display in the website footer"
 msgstr ""
 
-#: inc/theme-options.php:137
+#: inc/theme-options.php:243
 msgid "Display social icons in the website footer"
 msgstr ""
 
-#: inc/theme-options.php:149
+#: inc/theme-options.php:263
 msgid "Home Page Settings"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:271
 msgid "Display Slider"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:272
 msgid "Display slider in your website home page"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:275
 msgid "Display Latest Posts"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:276
 msgid "Display latest posts in your website home page"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:279
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:280
 msgid "Display sidebar in your website home page"
 msgstr ""
 
-#: inc/theme-options.php:154
+#: inc/theme-options.php:292
 msgid "Select number of columns to display in the website homepage"
 msgstr ""
 
-#: inc/theme-options.php:170
+#: inc/theme-options.php:313
 msgid "Full Slider options are available in the full version only."
 msgstr ""
 
-#: inc/theme-options.php:173
+#: inc/theme-options.php:319
 msgid "Display Slide #1"
 msgstr ""
 
-#: inc/theme-options.php:173
+#: inc/theme-options.php:320
 msgid "Display slide #1 in the slider"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:323 inc/theme-options.php:344
+#: inc/theme-options.php:365 inc/theme-options.php:386
+#: inc/theme-options.php:407
 #, php-format
 msgid "Slide #%s Title"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:324 inc/theme-options.php:345
+#: inc/theme-options.php:366 inc/theme-options.php:387
+#: inc/theme-options.php:408
 #, php-format
 msgid "Slide #%s Title in the slider"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:327 inc/theme-options.php:348
+#: inc/theme-options.php:369 inc/theme-options.php:390
+#: inc/theme-options.php:411
 #, php-format
 msgid "Slide #%s Text"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:328 inc/theme-options.php:349
+#: inc/theme-options.php:370 inc/theme-options.php:391
+#: inc/theme-options.php:412
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
@@ -502,719 +533,747 @@ msgid ""
 "consequat."
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:328 inc/theme-options.php:349
+#: inc/theme-options.php:370 inc/theme-options.php:391
+#: inc/theme-options.php:412
 #, php-format
 msgid "Slide #%s Text in the slider"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:331 inc/theme-options.php:352
+#: inc/theme-options.php:373 inc/theme-options.php:394
+#: inc/theme-options.php:415
 #, php-format
 msgid "Slide #%s URL"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177
+#: inc/theme-options.php:332 inc/theme-options.php:353
+#: inc/theme-options.php:374 inc/theme-options.php:395
+#: inc/theme-options.php:416
 #, php-format
 msgid "Slide #%s URL in the slider"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177 inc/theme-options.php:426
-#: inc/theme-options.php:450 inc/theme-options.php:475
+#: inc/theme-options.php:335 inc/theme-options.php:356
+#: inc/theme-options.php:377 inc/theme-options.php:398
+#: inc/theme-options.php:419 inc/theme-options.php:1521
+#: inc/theme-options.php:1545 inc/theme-options.php:1570
 #, php-format
 msgid "Slide #%s Background Image"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177 inc/theme-options.php:717
+#: inc/theme-options.php:336 inc/theme-options.php:357
+#: inc/theme-options.php:378 inc/theme-options.php:399
+#: inc/theme-options.php:420 inc/theme-options.php:1807
 msgid "Upload"
 msgstr ""
 
-#: inc/theme-options.php:173 inc/theme-options.php:174
-#: inc/theme-options.php:175 inc/theme-options.php:176
-#: inc/theme-options.php:177 inc/theme-options.php:420
-#: inc/theme-options.php:444 inc/theme-options.php:469
+#: inc/theme-options.php:336 inc/theme-options.php:357
+#: inc/theme-options.php:378 inc/theme-options.php:399
+#: inc/theme-options.php:420 inc/theme-options.php:1515
+#: inc/theme-options.php:1539 inc/theme-options.php:1564
 #, php-format
 msgid "Upload a custom Slide #%s Background image for the slider."
 msgstr ""
 
-#: inc/theme-options.php:174
+#: inc/theme-options.php:340
 msgid "Display Slide #2"
 msgstr ""
 
-#: inc/theme-options.php:174
+#: inc/theme-options.php:341
 msgid "Display slide #2 in the slider"
 msgstr ""
 
-#: inc/theme-options.php:175
+#: inc/theme-options.php:361
 msgid "Display Slide #3"
 msgstr ""
 
-#: inc/theme-options.php:175
+#: inc/theme-options.php:362
 msgid "Display slide #3 in the slider"
 msgstr ""
 
-#: inc/theme-options.php:176
+#: inc/theme-options.php:382
 msgid "Display Slide #4"
 msgstr ""
 
-#: inc/theme-options.php:176
+#: inc/theme-options.php:383
 msgid "Display slide #4 in the slider"
 msgstr ""
 
-#: inc/theme-options.php:177
+#: inc/theme-options.php:403
 msgid "Display Slide #5"
 msgstr ""
 
-#: inc/theme-options.php:177
+#: inc/theme-options.php:404
 msgid "Display slide #5 in the slider"
 msgstr ""
 
-#: inc/theme-options.php:193
+#: inc/theme-options.php:436
 msgid "Colors Settings"
 msgstr ""
 
-#: inc/theme-options.php:199
+#: inc/theme-options.php:445
 msgid "Content Background Color"
 msgstr ""
 
-#: inc/theme-options.php:200
+#: inc/theme-options.php:465
 msgid "The content background color of the website"
 msgstr ""
 
-#: inc/theme-options.php:200
+#: inc/theme-options.php:469
 msgid "Text Color"
 msgstr ""
 
-#: inc/theme-options.php:201
+#: inc/theme-options.php:489
 msgid "The text color of the website"
 msgstr ""
 
-#: inc/theme-options.php:201
+#: inc/theme-options.php:493
 msgid "Link Color"
 msgstr ""
 
-#: inc/theme-options.php:202
+#: inc/theme-options.php:513
 msgid "The links color of the website"
 msgstr ""
 
-#: inc/theme-options.php:202
+#: inc/theme-options.php:517
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:203
+#: inc/theme-options.php:537
 msgid "The links hover color of the website"
 msgstr ""
 
-#: inc/theme-options.php:203
+#: inc/theme-options.php:541
 msgid "Headings Color"
 msgstr ""
 
-#: inc/theme-options.php:204
+#: inc/theme-options.php:561
 msgid "The headings (h1, h2, h3) color of the website"
 msgstr ""
 
-#: inc/theme-options.php:204
+#: inc/theme-options.php:565
 msgid "Buttons Gradient Top Background Color"
 msgstr ""
 
-#: inc/theme-options.php:205
+#: inc/theme-options.php:585
 msgid "The buttons gradient top background color."
 msgstr ""
 
-#: inc/theme-options.php:205
+#: inc/theme-options.php:589
 msgid "Buttons Gradient Bottom Background Color"
 msgstr ""
 
-#: inc/theme-options.php:206
+#: inc/theme-options.php:609
 msgid "The buttons gradient bottom background color."
 msgstr ""
 
-#: inc/theme-options.php:206
+#: inc/theme-options.php:613
 msgid "Header Top Box Background Color"
 msgstr ""
 
-#: inc/theme-options.php:207
+#: inc/theme-options.php:633
 msgid "Color to appear in the website header top box background"
 msgstr ""
 
-#: inc/theme-options.php:207
+#: inc/theme-options.php:637
 msgid "Header Top Box Text Color"
 msgstr ""
 
-#: inc/theme-options.php:208
+#: inc/theme-options.php:657
 msgid "Color to appear in the website header top box text color"
 msgstr ""
 
-#: inc/theme-options.php:208
+#: inc/theme-options.php:661
 msgid "Header Top Box Link Color"
 msgstr ""
 
-#: inc/theme-options.php:209
+#: inc/theme-options.php:681
 msgid "Color to appear in the website header top box links colors"
 msgstr ""
 
-#: inc/theme-options.php:209
+#: inc/theme-options.php:685
 msgid "Header Top Box Link Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:210
+#: inc/theme-options.php:705
 msgid "Color to appear in the website header top box links colors on hover"
 msgstr ""
 
-#: inc/theme-options.php:210
+#: inc/theme-options.php:709
 msgid "Header top Box Sub-Content Background Color"
 msgstr ""
 
-#: inc/theme-options.php:211
+#: inc/theme-options.php:729
 msgid "Color to appear in the website header top box subcontent background"
 msgstr ""
 
-#: inc/theme-options.php:211
+#: inc/theme-options.php:733
 msgid "Header top Box Sub-Content Text Color"
 msgstr ""
 
-#: inc/theme-options.php:212
+#: inc/theme-options.php:753
 msgid "Color to appear in the website header top box subcontent text color"
 msgstr ""
 
-#: inc/theme-options.php:212
+#: inc/theme-options.php:757
 msgid "Header top Box Sub-Content Link Color"
 msgstr ""
 
-#: inc/theme-options.php:213
+#: inc/theme-options.php:777
 msgid "Color to appear in the website header top box subcontent links colors"
 msgstr ""
 
-#: inc/theme-options.php:213
+#: inc/theme-options.php:781
 msgid "Header top Sub-Content Box Link Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:214
+#: inc/theme-options.php:801
 msgid ""
 "Color to appear in the website header top box subcontent links colors on "
 "hover"
 msgstr ""
 
-#: inc/theme-options.php:214
+#: inc/theme-options.php:805
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/theme-options.php:215
+#: inc/theme-options.php:825
 msgid "Color to appear in the website header background"
 msgstr ""
 
-#: inc/theme-options.php:215
+#: inc/theme-options.php:829
 msgid "Page Header Text Color"
 msgstr ""
 
-#: inc/theme-options.php:216
+#: inc/theme-options.php:849
 msgid "Color to appear in the website page header text color"
 msgstr ""
 
-#: inc/theme-options.php:216
+#: inc/theme-options.php:853
 msgid "Page Header Link Color"
 msgstr ""
 
-#: inc/theme-options.php:217
+#: inc/theme-options.php:873
 msgid "Color to appear in the website page header link color"
 msgstr ""
 
-#: inc/theme-options.php:217
+#: inc/theme-options.php:877
 msgid "Page Header Link Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:218
+#: inc/theme-options.php:897
 msgid "Color to appear in the website page header link color on hover"
 msgstr ""
 
-#: inc/theme-options.php:218
+#: inc/theme-options.php:901
 msgid "Menu Text Color"
 msgstr ""
 
-#: inc/theme-options.php:219
+#: inc/theme-options.php:921
 msgid "Color to appear in the website main menu text"
 msgstr ""
 
-#: inc/theme-options.php:219
+#: inc/theme-options.php:925
 msgid "Menu Drop Down Border Color"
 msgstr ""
 
-#: inc/theme-options.php:220
+#: inc/theme-options.php:945
 msgid "Color to appear in the website main menu drop down border"
 msgstr ""
 
-#: inc/theme-options.php:220
+#: inc/theme-options.php:949
 msgid "Menu Drop Down Background Color"
 msgstr ""
 
-#: inc/theme-options.php:221
+#: inc/theme-options.php:969
 msgid "Background color to appear in the website main menu drop down"
 msgstr ""
 
-#: inc/theme-options.php:221
+#: inc/theme-options.php:973
 msgid "Menu Hover Background Color (Large Resolution)"
 msgstr ""
 
-#: inc/theme-options.php:222
+#: inc/theme-options.php:993
 msgid "Background color to appear in the website main menu on hover"
 msgstr ""
 
-#: inc/theme-options.php:222
+#: inc/theme-options.php:997
 msgid "Menu Text Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:223
+#: inc/theme-options.php:1017
 msgid "Color to appear in the website main menu text on hover"
 msgstr ""
 
-#: inc/theme-options.php:223
+#: inc/theme-options.php:1021
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/theme-options.php:224
+#: inc/theme-options.php:1041
 msgid "Color to appear in the website footer background"
 msgstr ""
 
-#: inc/theme-options.php:224
+#: inc/theme-options.php:1045
 msgid "Footer Text Color"
 msgstr ""
 
-#: inc/theme-options.php:225
+#: inc/theme-options.php:1065
 msgid "Color to appear in the website footer text"
 msgstr ""
 
-#: inc/theme-options.php:225
+#: inc/theme-options.php:1069
 msgid "Footer Link Color"
 msgstr ""
 
-#: inc/theme-options.php:226
+#: inc/theme-options.php:1089
 msgid "Color to appear in the website footer links"
 msgstr ""
 
-#: inc/theme-options.php:226
+#: inc/theme-options.php:1093
 msgid "Footer Link Hover Color"
 msgstr ""
 
-#: inc/theme-options.php:227
+#: inc/theme-options.php:1113
 msgid "Color to appear in the website footer links on hover"
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1140
 msgid "Twitter"
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1141
 msgid ""
 "Place your Twitter page url and the Twitter icon will appear. To remove it, "
 "just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1144
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1145
 msgid ""
 "Place your LinkedIn page url and the LinkedIn icon will appear. To remove "
 "it, just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1148
 msgid "Instagram"
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1149
 msgid ""
 "Place your Instagram page url and the Instagram icon will appear. To remove "
 "it, just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1152
 msgid "Tumblr"
 msgstr ""
 
-#: inc/theme-options.php:244
+#: inc/theme-options.php:1153
 msgid ""
 "Place your Tumblr page url and the Tumblr icon will appear. To remove it, "
 "just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:256
+#: inc/theme-options.php:1167
 msgid "Lightbox Settings"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox Functionality"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Globally Enable Lightbox functionality"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable on Home Page"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox on Home Page of your website"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable on Blog Index Page"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox on blog posts index page of your website"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable on Posts"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox on Posts"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable on Pages"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox on Pages"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable on Archive"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Enable Lightbox on Archive Pages (categories, tags, etc.)"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Group Items"
 msgstr ""
 
-#: inc/theme-options.php:263
+#: inc/theme-options.php:1174
 msgid "Group Items (for displaying as a slideshow)"
 msgstr ""
 
-#: inc/theme-options.php:271
+#: inc/theme-options.php:1182
 msgid "Thumbnails Settings"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1192
 msgid "Enable"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1192
 msgid "Thumbnails Functionality"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1193
 msgid "Globally Enable Thumbnails functionality"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1196
 msgid "Display Image Size in Index Pages"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1200 inc/theme-options.php:1221
 msgid "thumbnail"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1201 inc/theme-options.php:1222
 msgid "medium"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1202 inc/theme-options.php:1223
 msgid "large"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1203 inc/theme-options.php:1224
 msgid "full"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1205
 msgid "Select display thumbnail image size in Index Pages"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1209
 msgid "Link Thumbnails"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1210
 msgid "Link Thumbnails to Single Post URLs"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1213
 msgid "Display in Single Post"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1214
 msgid "Display Thumbnail in Single Post"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1217
 msgid "Display Image Size in Single Post"
 msgstr ""
 
-#: inc/theme-options.php:278
+#: inc/theme-options.php:1226
 msgid "Select display thumbnail image size in Single Post"
 msgstr ""
 
-#: inc/theme-options.php:287
+#: inc/theme-options.php:1240
 msgid "Contacts Settings"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1250
 msgid "Center Google Map Latitude"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1251
 msgid "The latitude of the center of the google map in contact pages."
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1254
 msgid "Center Google Map Longitude"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1255
 msgid "The longitude of the center of the google map in contact pages."
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1258 inc/theme-options.php:1282
+#: inc/theme-options.php:1306 inc/theme-options.php:1330
+#: inc/theme-options.php:1354
 #, php-format
 msgid "Office #%s Name"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1259 inc/theme-options.php:1283
+#: inc/theme-options.php:1307 inc/theme-options.php:1331
+#: inc/theme-options.php:1355
 #, php-format
 msgid "The display name of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1262 inc/theme-options.php:1286
+#: inc/theme-options.php:1310 inc/theme-options.php:1334
+#: inc/theme-options.php:1358
 #, php-format
 msgid "Office #%s Latitude"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1263 inc/theme-options.php:1287
+#: inc/theme-options.php:1311 inc/theme-options.php:1335
+#: inc/theme-options.php:1359
 #, php-format
 msgid "The latitude coordinate of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1266 inc/theme-options.php:1290
+#: inc/theme-options.php:1314 inc/theme-options.php:1338
+#: inc/theme-options.php:1362
 #, php-format
 msgid "Office #%s Longitude"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1267 inc/theme-options.php:1291
+#: inc/theme-options.php:1315 inc/theme-options.php:1339
+#: inc/theme-options.php:1363
 #, php-format
 msgid "The longitude coordinate of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1270 inc/theme-options.php:1294
+#: inc/theme-options.php:1318 inc/theme-options.php:1342
+#: inc/theme-options.php:1366
 #, php-format
 msgid "Office #%s Address"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1271 inc/theme-options.php:1295
+#: inc/theme-options.php:1319 inc/theme-options.php:1343
+#: inc/theme-options.php:1367
 #, php-format
 msgid "The address of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1274 inc/theme-options.php:1298
+#: inc/theme-options.php:1322 inc/theme-options.php:1346
+#: inc/theme-options.php:1370
 #, php-format
 msgid "Office #%s Phone"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1275 inc/theme-options.php:1299
+#: inc/theme-options.php:1323 inc/theme-options.php:1347
+#: inc/theme-options.php:1371
 #, php-format
 msgid "The phone of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1278 inc/theme-options.php:1302
+#: inc/theme-options.php:1326 inc/theme-options.php:1350
+#: inc/theme-options.php:1374
 #, php-format
 msgid "Office #%s Email"
 msgstr ""
 
-#: inc/theme-options.php:294
+#: inc/theme-options.php:1279 inc/theme-options.php:1303
+#: inc/theme-options.php:1327 inc/theme-options.php:1351
+#: inc/theme-options.php:1375
 #, php-format
 msgid "The email of office #%s"
 msgstr ""
 
-#: inc/theme-options.php:316
+#: inc/theme-options.php:1399
 msgid "WooCommerce Settings"
 msgstr ""
 
-#: inc/theme-options.php:321
+#: inc/theme-options.php:1408
 msgid "Display WooCommerce Sidebar"
 msgstr ""
 
-#: inc/theme-options.php:321
+#: inc/theme-options.php:1409
 msgid "Display WooCommerce sidebar in products pages"
 msgstr ""
 
-#: inc/theme-options.php:321
+#: inc/theme-options.php:1412
 msgid "Products per Page"
 msgstr ""
 
-#: inc/theme-options.php:321
+#: inc/theme-options.php:1413
 msgid "The number of products diplayed per page"
 msgstr ""
 
-#: inc/theme-options.php:340
+#: inc/theme-options.php:1435
 msgid "General Settings"
 msgstr ""
 
-#: inc/theme-options.php:347
+#: inc/theme-options.php:1442
 msgid "Favicon for your website"
 msgstr ""
 
-#: inc/theme-options.php:353
+#: inc/theme-options.php:1448
 msgid "Favicon"
 msgstr ""
 
-#: inc/theme-options.php:361
+#: inc/theme-options.php:1456
 msgid "Header Settings"
 msgstr ""
 
-#: inc/theme-options.php:368
+#: inc/theme-options.php:1463
 msgid "Upload a custom logo for your website."
 msgstr ""
 
-#: inc/theme-options.php:374
+#: inc/theme-options.php:1469
 msgid "Logo image"
 msgstr ""
 
-#: inc/theme-options.php:382
+#: inc/theme-options.php:1477
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/theme-options.php:388
+#: inc/theme-options.php:1483
 msgid "Your Copyright text to appear in the website footer"
 msgstr ""
 
-#: inc/theme-options.php:394
+#: inc/theme-options.php:1489
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/theme-options.php:402
+#: inc/theme-options.php:1497
 msgid "Slider Settings"
 msgstr ""
 
-#: inc/theme-options.php:408 inc/theme-options.php:432
-#: inc/theme-options.php:456
+#: inc/theme-options.php:1503 inc/theme-options.php:1527
+#: inc/theme-options.php:1551
 #, php-format
 msgid "Slide #%s content in the slider"
 msgstr ""
 
-#: inc/theme-options.php:414 inc/theme-options.php:438
-#: inc/theme-options.php:462
+#: inc/theme-options.php:1509 inc/theme-options.php:1533
+#: inc/theme-options.php:1557
 #, php-format
 msgid "Slide #%s Content"
 msgstr ""
 
-#: inc/theme-options.php:483
+#: inc/theme-options.php:1578
 msgid "Social Websites"
 msgstr ""
 
-#: inc/theme-options.php:489
+#: inc/theme-options.php:1584
 msgid ""
 "Place your Facebook page url and the Facebook icon will appear. To remove "
 "it, just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:495
+#: inc/theme-options.php:1590
 msgid "Facebook"
 msgstr ""
 
-#: inc/theme-options.php:501
+#: inc/theme-options.php:1596
 msgid ""
 "Place your Google+ page url and the Google+ icon will appear. To remove it, "
 "just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:507
+#: inc/theme-options.php:1602
 msgid "Google+"
 msgstr ""
 
-#: inc/theme-options.php:513
+#: inc/theme-options.php:1608
 msgid ""
 "Place your RSS Feeds page url and the RSS Feeds icon will appear. To remove "
 "it, just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:519
+#: inc/theme-options.php:1614
 msgid "RSS Feeds"
 msgstr ""
 
-#: inc/theme-options.php:525
+#: inc/theme-options.php:1620
 msgid ""
 "Place your YouTube channel page url and the YouTube channel icon will "
 "appear. To remove it, just leave it blank."
 msgstr ""
 
-#: inc/theme-options.php:531
+#: inc/theme-options.php:1626
 msgid "YouTube channel"
 msgstr ""
 
-#: inc/theme-options.php:539
+#: inc/theme-options.php:1634
 msgid "Error 404 Not Found Page Settings"
 msgstr ""
 
-#: inc/theme-options.php:546
+#: inc/theme-options.php:1641
 msgid "Upload a custom image for your 404 Not Found Page."
 msgstr ""
 
-#: inc/theme-options.php:552
+#: inc/theme-options.php:1647
 msgid "Image"
 msgstr ""
 
-#: inc/theme-options.php:559
+#: inc/theme-options.php:1654
 msgid "The Title to appear in the 404 Not Found Page"
 msgstr ""
 
-#: inc/theme-options.php:565
+#: inc/theme-options.php:1660
 msgid "Title"
 msgstr ""
 
-#: inc/theme-options.php:572
+#: inc/theme-options.php:1667
 msgid "The Content to appear in the 404 Not Found Page"
 msgstr ""
 
-#: inc/theme-options.php:578
+#: inc/theme-options.php:1673
 msgid "Content"
 msgstr ""
 
-#: inc/utilities.php:24
+#: inc/theme-options.php:1829
+msgid "Upload an image"
+msgstr ""
+
+#: inc/utilities.php:21
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: inc/utilities.php:30
+#: inc/utilities.php:27
 msgid "Follow us on Google+"
 msgstr ""
 
-#: inc/utilities.php:36
+#: inc/utilities.php:33
 msgid "Follow our RSS Feeds"
 msgstr ""
 
-#: inc/utilities.php:43
+#: inc/utilities.php:40
 msgid "Follow us on YouTube"
 msgstr ""
 
-#: inc/utilities.php:241
+#: inc/utilities.php:275
 msgid "Read More"
 msgstr ""
 
-#: inc/utilities.php:254
+#: inc/utilities.php:288
 msgid "Read More..."
 msgstr ""
