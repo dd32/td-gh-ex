@@ -1,7 +1,7 @@
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-AccessPress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
-AccessPress Lite is distributed under the terms of the GNU GPL v3
+AccessPress Parallax WordPress Theme, Copyright 2014 AccessPress Themes
+AccessPress Parallax is distributed under the terms of the GNU GPL v3
 
 
 Install Steps:
@@ -43,10 +43,18 @@ Fonts
     http://fontawesome.io/license/
     
     Roboto Slab
-    http://www.fontsquirrel.com/fonts/roboto-slab
+    http://www.google.com/fonts/specimen/Roboto+Slab
+    License: SIL Open Font License, 1.1
     
     Oxygen
-    http://www.fontsquirrel.com/fonts/oxygen
+    http://www.google.com/fonts/specimen/Oxygen
+    License: SIL Open Font License, 1.1
+
+-------------------------------------------
+Images
+    All the images used are from http://pixabay.com or and are fully GPL compatible.
+    http://pixabay.com/en/sunset-afterglow-landscape-208771/
+    https://unsplash.com/photos/tAKXap853rY/
 
 ---------------------------------------------
 
