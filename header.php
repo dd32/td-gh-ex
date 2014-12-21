@@ -17,7 +17,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(array('page-' . str_replace(' ','-', strtolower( wp_title('',false,'')) ) )); ?>>
+<body <?php body_class(); ?>>
 
 <div class="page-wrapper">
     <!-- BEGIN NAV -->
@@ -76,7 +76,10 @@
         </div>
     </nav>
     
-    <?php if ( get_header_image() ) : ?>
+    <?php 
+    // Load header image if set in theme customizer
+    if ( get_header_image() ) : 
+    ?>
         <header id="primary-header">
             <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
         </header>

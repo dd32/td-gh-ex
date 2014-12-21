@@ -1,0 +1,416 @@
+/* =Base styles
+-------------------------------------------------------------- */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+    
+
+
+/* #Global Transitions */
+
+/* =Structure
+-------------------------------------------------------------- */
+
+/* =Primary header
+-------------------------------------------------------------- */
+
+/* =Primary navigation
+-------------------------------------------------------------- */
+
+.primary-navigation #nav-spy {
+    float: left;
+}
+
+nav.primary-navigation ul {
+    float: left;
+}
+
+nav.primary-navigation ul li {
+    margin: 0 25px 0 0;
+}
+
+.nav .caret {
+    margin-right: 8px;
+	margin-left: auto;
+}
+
+/* dropdown stuff */
+
+/* =Logo
+-------------------------------------------------------------- */
+
+/* =Individual pages
+-------------------------------------------------------------- */
+
+.individual-page .col-md-8, 
+.individual-page .blog-sidebar {
+    text-align: right !important;
+}
+
+/* =Blog Section
+-------------------------------------------------------------- */
+
+/* post thumbnails */
+
+/* blog post */
+
+/* Quote Post formats */
+
+article.format-quote .quote-content, 
+.format-quote p {
+    text-align: right;
+}
+
+/* Image Post formats */
+
+/* Gallery Post formats */
+
+.featured-gallery li {
+    float: right;
+}
+
+.featured-gallery.responsive {
+    margin-right: 0;
+	margin-left: auto;
+}
+
+.featured-gallery-nav {
+    left: 0;
+	right: auto;
+}
+
+.featured-gallery-nav a {
+    float: left;
+}
+
+/* posts nav links */
+
+.nav-links a i {
+    right: 0px;
+	left: auto;
+}
+
+.nav-links-next a i {
+    left: 0;
+	right: auto;
+}
+
+.nav-links-prev a {
+    padding: 0 25px 0 0;
+}
+
+.nav-links-next a {
+    padding: 0 0 0 25px;
+    text-align: left;
+}
+
+/* post author */
+
+.post-author.styled-box {
+    padding-right: 110px;
+	padding-left: 0;
+}
+
+.post-author img.avatar {
+    right: 30px;
+	left: auto;
+}
+
+/* post-tags */
+
+/* gallery */
+
+/* comments */
+
+.comment-body {
+    padding: 0 50px 0 0;
+}
+
+.comment-metadata .edit-link {
+    margin-right: 8px;
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+	padding-left: 0;
+	margin-left: auto;
+	border-left: none;
+}
+
+ol.commentlist li div.vcard img.avatar {
+    right: 0;
+	left: auto;
+}
+
+ol.commentlist li ul {
+    margin:0 2em 1em 0;
+}
+
+ol.commentlist li div.reply {
+    left: 0;
+	right: auto;
+}
+
+h3 #cancel-comment-reply-link {
+    margin: 0 10px 0 0;
+}
+
+ol.commentlist li ul.children li.depth-2 {
+    margin:25px 10px 0 0;
+}
+
+ol.commentlist li ul.children li.depth-3 {
+    margin:25px 10px 0 0;
+}
+
+ol.commentlist li ul.children li.depth-4 {
+    margin:25px 10px 0 0;
+}
+
+/* sidebar */
+
+.widget_tag_cloud a, 
+.post-tags a {
+    float: right;
+    margin-left: 3px;
+	margin-right: auto;
+}
+
+/* category section */
+
+/* search box */
+
+.search-form button {
+    left: 0;
+	right: auto;
+}
+
+/* =404
+-------------------------------------------------------------- */
+
+.error404 h1 i {
+    margin: 0 0 30px 10px;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+
+.footer-right {
+    text-align: right;
+}
+
+/* =Preview spinner
+-------------------------------------------------------------- */
+
+#preview-area {
+    right: 50%;
+    margin-right: -75px;
+	left: auto;
+	margin-left: auto;
+}
+
+.dot1, .dot2 {
+    right: 50%;
+    margin-right: -12px;
+	left: auto;
+	margin-left: auto;
+}
+
+/* =Helper styles
+-------------------------------------------------------------- */
+
+.img-right, 
+.alignright {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.img-left, 
+.alignleft {
+    float: left;
+    margin: 0 20px 25px 0;
+}
+
+.assistive-text, 
+.screen-reader-text {
+    right: -9999px;
+	left: auto;
+}
+
+.footer-left .social-links {
+    text-align: left;
+}
+
+/* social links */
+
+ul.social-links.social-links-align-alignment-right {
+    text-align: right;
+}
+
+ul.social-links.social-links-align-alignment-right li {
+    margin-left: 10px;
+	margin-right: auto;
+}
+
+ul.social-links.social-links-align-alignment-left {
+    text-align: left;
+}
+
+ul.social-links.social-links-align-alignment-left li {
+    margin-right: 10px;
+	margin-left: auto;
+}
+
+.social-links li a {
+    margin: 0 0px 0 0;
+}
+
+.social-links li.style-block a {
+    text-align: right;
+}
+
+.social-links li.style-block a span {
+    margin: 0 5px 0 0;
+}
+
+/* address markup */
+
+.company-details i {
+    margin: 0 0 0 5px;
+}
+
+/* responsive embeds */
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    right: 0;
+	left: auto;
+}
+
+/* WP Playlist */
+
+.post .wp-playlist-item-length {
+    left: 0;
+	right: auto;
+}
+
+/* =Bootstrap overrides
+-------------------------------------------------------------- */
+
+/* bootstrap provides an awesome framework but we want our own look and feel. Override anything you need here */
+
+/* navbar */
+.container > .navbar-header, 
+.container-fluid > .navbar-header, 
+.container > .navbar-collapse, 
+.container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* buttons */
+
+.btn .fa-spinner {
+    margin-right: 8px;
+	margin-left: auto;
+}
+
+/* alerts */
+
+.alert-dismissable .close {
+    left: 0;
+	right: auto;
+}
+
+/* forms */
+
+/* blockquotes */
+
+blockquote {
+    border-right: 5px solid #3498DB;
+	border-left: none;
+}
+
+/* lists */
+/* we need to stop defualt styling on lists that use font awesome for icons.  */
+
+ul.font-awesome-list li {
+    padding: 0 25px 0 0;
+}
+
+ul.font-awesome-list li i {
+    right: 0;
+	left: auto;
+}
+
+ul, ol {
+    padding: 0 20px 0 0;
+}
+
+/* second level */
+
+/* third level */
+
+ul.list-group {
+    margin: 0 20px 40px 0;
+}
+
+/* tabs */
+
+/* accordions */
+
+/* hr */
+
+/* tables */
+
+/* definition lists */
+
+/* carousels / sliders */
+
+.carousel-control, 
+.carousel-control.left, 
+.carousel-control.right {
+    padding: 20px 15px 20px 20px;
+}
+
+.carousel-control.left {
+    padding: 20px 20px 20px 15px;
+}
+
+/* code */
+
+/* other */
+
+/* general helpers */
+
+@media (max-width: 979px) {
+
+}
+
+/* general structure */
+
+/* blog section */
+
+/* comments */
+
+ol.commentlist li div.vcard img.avatar {
+    margin: 0 0 10px 10px;
+}
+
+/* navigation */
+
+/* mobiles and small tablet (portrait) */
+
+@media (max-width: 767px) {
+
+
+}
+
+/* small screens */
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+
+}
+
+

@@ -39,6 +39,13 @@ Other icons and images are created by Themeora and licensed under GPL.
 Changelog
 --------------------------------------------------------------------------------
 
+v1.2.2
+- Tweak: Removed @import from custom-editor-style.css
+- Tweak: Added rtl.css
+- Tweak: Added rtl.css
+- Tweak: remove jquery enqueue
+- Tweak: specify dependency on jquery on relevent scripts
+
 v1.2.1
 
 - Tweak: added sanitize callbacks to all add_setting calls

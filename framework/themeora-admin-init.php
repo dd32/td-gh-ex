@@ -31,7 +31,7 @@ function themeora_admin_scripts() {
     wp_register_script('themeora-framework-admin', THEMEORA_FRAMEWORK_JS_URL . '/themeora-admin.js', array('jquery', 'wp-color-picker'));
 
     wp_enqueue_script('themeora-framework-admin');
-    wp_enqueue_script('jquery');
+    //wp_enqueue_script('jquery');
 }
 
 
