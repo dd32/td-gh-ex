@@ -41,3 +41,6 @@ ii) Declare copyright and license information.
 Version 1.1.7 (18-12-2014)
 i) Fix css issue
 ii) Provide the folder in load_theme_textdomain.
+
+Version 1.1.8 (21-12-2014)
+i) Fixed Text Domain

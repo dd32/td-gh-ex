@@ -17,11 +17,11 @@ $laurels_instance['title'];
 if(!empty($laurels_instance['post_number'])) { $laurels_instance['post_number']; } 
 ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'laurels_recentpostwidget'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'laurels'); ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($laurels_instance['title'])) { echo $laurels_instance['title']; } ?>" style="width:100%;" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'laurels_recentpostwidget'); ?></label>
+            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'laurels'); ?></label>
             <input id="<?php echo $this->get_field_id( 'post_number' ); ?>" name="<?php echo $this->get_field_name( 'post_number' ); ?>" value="<?php if(!empty($laurels_instance['post_number'])) { echo $laurels_instance['post_number']; } else { echo '5'; } ?>" style="width:100%;" />
         </p>
 <?php
