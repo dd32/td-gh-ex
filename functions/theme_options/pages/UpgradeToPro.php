@@ -44,7 +44,7 @@ line-height:1.8;
 	<div class="row tab_two">
 		<div class="span6" style="width:45%;margin-top: auto;margin-left:5%">
 			<h3><?php _e('All Browser Support','wallstreet');?></h3>
-			<p><?php _e('Theme supports all browsers.Like','wallstreet');?> </p><ul style="list-style-type: disc;margin-left:5%;font-size:15px"><li> IE 9 +</li><li> Google Chrome</li><li> Mozilla Firefox </li><li> Apple Safari</li></ul><p></p>
+			<p><?php _e('Theme supports all browsers.Like','wallstreet');?> </p><ul style="list-style-type: disc;margin-left:5%;font-size:15px"><li> <?php _e('IE 9 +','wallstreet');?></li><li> <?php _e('Google Chrome','wallstreet');?></li><li> <?php _e('Mozilla Firefox','wallstreet');?> </li><li> <?php _e('Apple Safari','wallstreet');?></li></ul><p></p>
 		</div>
 		<div class="span6" style="width:45%">
 			<img class="comp_img2" src="<?php  echo get_template_directory_uri(); ?>/functions/theme_options/images/browsericons1.png" alt="" style="width:100%"> 

@@ -24,9 +24,9 @@
 		{
 			$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
 			$current_options['home_banner_enabled']="on";
-			$current_options['slider_title_one']= 'Clean & Fresh Theme';
-			$current_options['slider_title_two']= 'Welcome To Wallstreet';
-			$current_options['slider_description']= 'The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile...';
+			$current_options['slider_title_one']= __('Clean & Fresh Theme','wallstreet');
+			$current_options['slider_title_two']= __('Welcome To Wallstreet','wallstreet');
+			$current_options['slider_description']= __('The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile...','wallstreet');
 			$current_options['slider_image']= $slider_image;
 			update_option('wallstreet_lite_options',$current_options);
 		}
@@ -40,8 +40,8 @@
 					<div class="webriti_settings_massage" id="webriti_settings_save_2_reset" ><?php _e('Options data successfully reset','wallstreet');?></div>
 				</td>
 				<td style="text-align:right;">
-					<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('2');">
-					<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('2')" >
+					<input class="reset-button btn" type="button" name="reset" value="<?php _e('Restore Defaults','wallstreet');?>" onclick="webriti_option_data_reset('2');">
+					<input class="btn btn-primary" type="button" value="<?php _e('Save Options','wallstreet');?>" onclick="webriti_option_data_save('2')" >
 				</td>
 				</tr>
 			</table>	
@@ -77,8 +77,8 @@
 
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_2" name="webriti_settings_save_2" />
-			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('2');">
-			<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('2')" >
+			<input class="reset-button btn" type="button" name="reset" value="<?php _e('Restore Defaults','wallstreet');?>" onclick="webriti_option_data_reset('2');">
+			<input class="btn btn-primary" type="button" value="<?php _e('Save Options','wallstreet');?>" onclick="webriti_option_data_save('2')" >
 		</div>
 	</form>
 </div>

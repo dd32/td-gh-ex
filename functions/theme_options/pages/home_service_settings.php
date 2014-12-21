@@ -58,8 +58,8 @@
 					<div class="webriti_settings_massage" id="webriti_settings_save_3_reset" ><?php _e('Options data successfully reset','wallstreet');?></div>
 				</td>
 				<td style="text-align:right;">
-					<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('3');">
-					<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
+					<input class="reset-button btn" type="button" name="reset" value="<?php _e('Restore Defaults','wallstreet');?>" onclick="webriti_option_data_reset('3');">
+					<input class="btn btn-primary" type="button" value="<?php _e('Save Options','wallstreet');?>" onclick="webriti_option_data_save('3')" >
 				</td>
 				</tr>
 			</table>	
@@ -134,8 +134,8 @@
 		
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_3" name="webriti_settings_save_3" />
-			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('3');">
-			<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
+			<input class="reset-button btn" type="button" name="reset" value="<?php _e('Restore Defaults','wallstreet');?>" onclick="webriti_option_data_reset('3');">
+			<input class="btn btn-primary" type="button" value="<?php _e('Save Options','wallstreet');?>" onclick="webriti_option_data_save('3')" >
 		</div>
 	</form>
 </div>

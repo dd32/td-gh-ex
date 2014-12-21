@@ -63,7 +63,7 @@
 		<div class="webriti-submenu" style="height:35px;">			
             <div class="webriti-submenu-links" style="margin-top:5px;">
 			<form method="POST">
-				<input type="submit" onclick="return confirm( 'Click OK to reset theme data. Theme settings will be lost!' );" value="Restore All Defaults" name="restore_all_defaults" id="restore_all_defaults" class="reset-button btn">
+				<input type="submit" onclick="return confirm( '<?php __('Click OK to reset theme data. Theme settings will be lost!','wallstreet');?> );" value="<?php _e('Restore All Defaults','wallstreet');?>" name="restore_all_defaults" id="restore_all_defaults" class="reset-button btn">
 			<form>
             </div><!-- webriti-submenu-links -->
         </div>

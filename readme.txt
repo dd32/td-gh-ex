@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 0.4.4
+1. Added translation ready tag.
 @version 0.4.3
 Removed translation-ready tag
 @version 0.4.2
