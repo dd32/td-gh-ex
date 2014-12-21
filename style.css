@@ -1,10 +1,10 @@
 /*
 Theme Name: Artikler
 Theme URI: http://jathemes.com/artikler-theme/
-Author: JAThemes Team
+Author: Jathemes Team
 Author URI: http://www.jathemes.com/
-Description: Artikler theme created and designed by JAThemes Team. Features include custom headers,custom background,theme options, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
-Version: 1.3.4.2
+Description: Artikler theme created and designed by jathemes Team. Features include custom headers,custom background,theme options, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
+Version: 1.3.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header,  rtl-language-support,theme-options,light
@@ -169,7 +169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 /********************Wrapper******************************/
 .wrapper{width:100%;display:block; /*border:1px solid;*/ clear:both; overflow:hidden;}
 /********************index-Content******************************/
-.site-content{float:left; width:728px; /*margin:0 10px;*/ /*border:1px solid;*/ overflow:hidden; border-top-left-radius:11px; border-top-right-radius:11px;}
+.site-content{float:left; width:728px; margin:0 0 12px; /*border:1px solid;*/ overflow:hidden; border-top-left-radius:11px; border-top-right-radius:11px;}
 #content{overflow:hidden; border:1px groove #ccc; border-top-left-radius:11px; border-top-right-radius:11px; background:#FFF;}
 .content-title{width:100%;  background: #fcfcfc; /* Old browsers */
 background: -moz-linear-gradient(top,  #fcfcfc 0%, #cecece 47%, #ffcfcfc 100%); /* FF3.6+ */
@@ -216,7 +216,7 @@ background: -ms-linear-gradient(top,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* I
 background: linear-gradient(to bottom,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
 border-bottom:3px solid #c0c0c0; padding:10px 10px 8px; font-size:24px; color:#333; border-top-left-radius:10px; border-top-right-radius:10px;}
-.widget{margin:0 0 20px 0; border:1px groove #ccc; /*padding:10px 0 10px 2px; */border-top-left-radius:11px; border-top-right-radius:11px; background:#e9e9e9;}
+.widget{margin:0 0 12px 0; border:1px groove #ccc; /*padding:10px 0 10px 2px; */border-top-left-radius:11px; border-top-right-radius:11px; background:#e9e9e9;}
 .widget ul{padding:5px 10px; list-style:none; text-transform:capitalize; margin:0;}
 .widget ul li{margin:0px 0 3px; }
 .widget ul li a{text-decoration:none; font-weight:900; font-size:14px; font-family: "Courier New", Courier, monospace,"Lucida Sans Unicode", "Lucida Grande", sans-serif; letter-spacing:1px; transition:1s;}

@@ -26,8 +26,9 @@ function register_and_build_fields() {
 	register_setting('theme_options', 'theme_options', 'validate_setting');
 	
 	add_settings_section('header_settings', 'Header Options', 'section_basic', __FILE__);
-	function section_basic() {} 
-		add_settings_field('logo_url', 'Logo Image (URL)', 'logo_url', __FILE__, 'header_settings'); 
+	function section_basic() {}
+		add_settings_field('favicon_url', 'Favicon (URL)', 'favicon_url', __FILE__, 'header_settings');
+		add_settings_field('logo_url', 'Logo Image (URL)', 'logo_url', __FILE__, 'header_settings');
 		
 	add_settings_section('footer_settings', 'Footer Options', 'section_footer', __FILE__);
 	function section_footer() {} 
@@ -41,10 +42,15 @@ add_action('admin_init', 'register_and_build_fields');
 function validate_setting($theme_options) {
 	return $theme_options; 
 } 
+function favicon_url() {
+	$options = get_option('theme_options'); 
+	echo "<input name='theme_options[favicon_url]' type='text' value='{$options['favicon_url']}' />";
+	print '<code>Recommend: Image must be 16x16 pixels or 32x32 pixels. </code>';
+}
 function logo_url() {
 	$options = get_option('theme_options'); 
 	echo "<input name='theme_options[logo_url]' type='text' value='{$options['logo_url']}' />";
-	print '<code>Recommend: 70px &gt; height of image </code>';
+	print '<code>Recommend: 70px &gt; height of image. </code>';
 } 
 function aboutus() {
 	$options = get_option('theme_options'); 

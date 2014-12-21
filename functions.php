@@ -1,6 +1,6 @@
 <?php
 /*
-	Theme Functions
+	Artikler Theme Functions
 */
 function artikler_theme_setup() {
 	global $content_width;
@@ -132,9 +132,9 @@ if ( ! function_exists( 'artikler_theme_entry_meta' ) ) :
 /* Meta information for current post: categories, tags, permalink, author, and date. */
 function artikler_theme_entry_meta() {
 
-	$categories_list = get_the_category_list( __( ', ', 'artikler' ) );
+	$categories_list = get_the_category_list( __( ' ', 'artikler' ) );
 
-	$tag_list = get_the_tag_list( '', __( ', ', 'artikler' ) );
+	$tag_list = get_the_tag_list( '', __( ' ', 'artikler' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -151,11 +151,11 @@ function artikler_theme_entry_meta() {
 
 	//1 = category, 2 = tag, 3 = the date and 4 = author's name.
 	if ( $tag_list ) {
-		$full_text = __( 'Category: %1$s | Tag: %2$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
+		$full_text = __( '<div class="dashicons dashicons-category"></div> %1$s <div class="dashicons dashicons-calendar"></div> %3$s <div class="dashicons dashicons-admin-users"></div><span class="by-author"> %4$s</span>.', 'artikler' );
 	} elseif ( $categories_list ) {
-		$full_text = __( 'Category: %1$s | Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
+		$full_text = __( '<div class="dashicons dashicons-category"></div> %1$s <div class="dashicons dashicons-calendar"></div> %3$s <div class="dashicons dashicons-admin-users"></div><span class="by-author"> %4$s</span>.', 'artikler' );
 	} else {
-		$full_text = __( 'Date: %3$s | <span class="by-author"> Author: %4$s</span>.', 'artikler' );
+		$full_text = __( '<div class="dashicons dashicons-calendar-alt"></div> %3$s <div class="dashicons dashicons-admin-users"></div><span class="by-author"> %4$s</span>.', 'artikler' );
 	}
 
 	printf(
@@ -313,14 +313,18 @@ function get_all_posts(){
                  <div class="post_expert_index">
                  <?php the_excerpt(); ?><br />
                  </div>
+                 <div class="content-post-content-meta">
+                 <div class="dashicons dashicons-admin-comments"></div>
                  <?php $com_num = get_comments_number( ); ?>
 				 <?php if( $com_num == 0 ): ?>
-                  <small class="content-comment_no"><?php _e( 'No Comment', 'artikler' ); ?></small>
+                  <small class="content-comment_no"><?php _e( '0', 'artikler' ); ?></small>
                  <?php elseif($com_num == 1): ?>
-                 <small class="content-comment_no"><?php _e( '1 Comment', 'artikler' ); ?></small>
+                 <small class="content-comment_no"><?php _e( '1', 'artikler' ); ?></small>
                  <?php else:  ?>
-                 <small class="content-comment_no"><?php echo $com_num . _e( 'Comments', 'artikler' );?></small>
+                 <small class="content-comment_no"><?php echo $com_num . _e( ' ', 'artikler' );?></small>
                  <?php endif; ?>
+				 <?php artikler_theme_entry_meta(); ?>
+                 </div>
                  
                  </div>
                  </div>
@@ -373,7 +377,12 @@ if(!is_admin()){
 		echo '</div>';
 	}
 }
-
+//@since 1.3.4
+/***Dashicons***/
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+function load_dashicons_front_end() {
+wp_enqueue_style( 'dashicons' );
+}
 //@since 1.3.4
 /***Footer Sidebar***/
 function sidebar_footer(){ ?>

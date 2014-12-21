@@ -1,11 +1,11 @@
 Theme Name : Artikler
 Version : 1.3.4.2
-Author : JAThemes Team
+Author : jathemes Team
 Author URI : http://www.jathemes.com/
 Theme URI : http://jathemes.com/artikler-theme/
 License : GNU General Public License v2 or later
 License : URIhttp://www.gnu.org/licenses/gpl-2.0.html
-Description : Artikler theme create and design by JAThemes Team. Features include color customizations options, custom headers,custom background, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
+Description : Artikler theme create and design by Jatheme Team. Features include color customizations options, custom headers,custom background, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jatheme.com/.
 Copyright © All Rights Reserved.
 Artikler is distributed under the terms of the GNU GPL
 Note : Html, Css, php and js are used in theme.
