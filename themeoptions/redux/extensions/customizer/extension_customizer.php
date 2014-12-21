@@ -63,6 +63,10 @@
                 if ( ( $pagenow !== "customize.php" && $pagenow !== "admin-ajax.php" && ! isset( $GLOBALS['wp_customize'] ) ) ) {
                     //return;
                 }
+                $datavasecheck = get_option('pinnacle');
+                if(empty($datavasecheck) || $datavasecheck == false ) {
+                    return;
+                }
 
                 $this->parent = $parent;
 
@@ -92,14 +96,14 @@
                         '_override_values'
                     ), 100 );
 
-                    if ( ! isset( $_POST['customized'] ) || $pagenow == "admin-ajax.php" ) {
+                    //if ( ! isset( $_POST['customized'] ) || $pagenow == "admin-ajax.php" ) {
                         if ( current_user_can( $this->parent->args['page_permissions'] ) ) {
                             add_action( 'customize_register', array(
                                 $this,
                                 '_register_customizer_controls'
                             ) ); // Create controls
                         }
-                    }
+                    //}
 
                     add_action( 'wp_head', array( $this, 'customize_preview_init' ) );
                 }

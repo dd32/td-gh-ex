@@ -51,6 +51,7 @@ jQuery(document).ready(function ($) {
 				}
 		});
 		$("a[rel^='lightbox']").magnificPopup({type:'image'});
+    $("a[data-rel^='lightbox']").magnificPopup({type:'image'});
 		$('.kad-light-gallery').each(function(){
 			$(this).find('a[rel^="lightbox"]').magnificPopup({
 				type: 'image',
@@ -62,6 +63,17 @@ jQuery(document).ready(function ($) {
 					}
 				});
 		});
+    $('.kad-light-gallery').each(function(){
+      $(this).find("a[data-rel^='lightbox']").magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled:true
+          },
+          image: {
+            titleSrc: 'title'
+          }
+        });
+    });
 		$('.kad-light-wp-gallery').each(function(){
 			$(this).find('a[rel^="lightbox"]').magnificPopup({
 				type: 'image',
@@ -75,7 +87,19 @@ jQuery(document).ready(function ($) {
 					}
 				});
 		});
-
+    $('.kad-light-wp-gallery').each(function(){
+      $(this).find("a[data-rel^='lightbox']").magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled:true
+          },
+          image: {
+            titleSrc: function(item) {
+            return item.el.find('img').attr('alt');
+            }
+          }
+        });
+    });
 	//Superfish Menu
 		$('ul.sf-menu').superfish({
 			delay:       200,                            // one second delay on mouseout
@@ -119,6 +143,100 @@ jQuery(document).ready(function ($) {
 			masonrycontainer.masonry({itemSelector: masonry_selector});
 		});
 	});
+		 //init carousel
+    jQuery('.initcaroufedsel').each(function(){
+     	  var container = jQuery(this);
+          var wcontainerclass = container.data('carousel-container'), 
+          cspeed = container.data('carousel-speed'), 
+          ctransition = container.data('carousel-transition'),
+          cauto = container.data('carousel-auto'),
+          carouselid = container.data('carousel-id'),
+          ss = container.data('carousel-ss'), 
+          xs = container.data('carousel-xs'),
+          sm = container.data('carousel-sm'),
+          md = container.data('carousel-md');
+          var wcontainer = jQuery(wcontainerclass);
+          function getUnitWidth() {var width;
+          if(jQuery(window).width() <= 540) {
+          width = wcontainer.width() / ss;
+          } else if(jQuery(window).width() <= 768) {
+          width = wcontainer.width() / xs;
+          } else if(jQuery(window).width() <= 990) {
+          width = wcontainer.width() / sm;
+          } else {
+          width = wcontainer.width() / md;
+          }
+          return width;
+          }
+
+          function setWidths() {
+          var unitWidth = getUnitWidth() -1;
+          container.children().css({ width: unitWidth });
+          }
+          setWidths();
+          function initCarousel() {
+          container.carouFredSel({
+            scroll: {items:1, easing: "swing", duration: ctransition, pauseOnHover : true}, 
+            auto: {play: cauto, timeoutDuration: cspeed},
+              prev: '#prevport-'+carouselid, next: '#nextport-'+carouselid, pagination: false, swipe: true, items: {visible: null}
+            });
+	      }
+	      container.imagesLoadedn( function(){
+          	initCarousel();
+      	});
+        	wcontainer.animate({'opacity' : 1});
+          	jQuery(window).on("debouncedresize", function( event ) {
+          		container.trigger("destroy");
+          		setWidths();
+          		initCarousel();
+          	});
+    });
+	 //init carouselslider
+    jQuery('.initcarouselslider').each(function(){
+     	  var container = jQuery(this);
+          var wcontainerclass = container.data('carousel-container'), 
+          cspeed = container.data('carousel-speed'), 
+          ctransition = container.data('carousel-transition'),
+          cauto = container.data('carousel-auto'),
+          carouselid = container.data('carousel-id'),
+          carheight = container.data('carousel-height'),
+          align = 'center';
+          var wcontainer = jQuery(wcontainerclass);
+
+          function setWidths() {
+            var unitWidth = container.width();
+            container.children().css({ width: unitWidth });
+              if(jQuery(window).width() <= 768) {
+                  carheight = null;
+                  container.children().css({ height: 'auto' });
+              }
+          }
+          setWidths();
+          function initCarouselslider() {
+            container.carouFredSel({
+              width: '100%',
+              height: carheight,
+              align: align,
+              auto: {play: cauto, timeoutDuration: cspeed},
+              scroll: {items : 1,easing: 'quadratic'},
+              items: {visible: 1,width: 'variable'},
+              prev: '#prevport-'+carouselid,
+              next: '#nextport-'+carouselid,
+              swipe: {onMouse: false,onTouch: true},
+            });
+	      }
+	      container.imagesLoadedn( function(){
+          	initCarouselslider();
+            wcontainer.animate({'opacity' : 1});
+            wcontainer.css({ height: 'auto' });
+            wcontainer.parent().removeClass('loading');
+      	});
+          	jQuery(window).on("debouncedresize", function( event ) {
+          		container.trigger("destroy");
+          		setWidths();
+          		initCarouselslider();
+          	});
+    });
 });
 if( isMobile.any() ) {
 jQuery(document).ready(function ($) {

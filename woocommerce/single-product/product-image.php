@@ -15,12 +15,9 @@ if(isset($pinnacle['product_simg_resize']) && $pinnacle['product_simg_resize'] =
 	$presizeimage = 0;
 } else {
 	$presizeimage = 1;
-		$productimgwidth = 456;
-		$productimgheight = $productimgwidth;	
-
+	$productimgwidth = 456;
+	$productimgheight = $productimgwidth;	
 }
-
-
 ?>
 <div class="images kad-light-gallery">
 	<div class="product_image postclass">
@@ -33,13 +30,13 @@ if(isset($pinnacle['product_simg_resize']) && $pinnacle['product_simg_resize'] =
 					$product_image_url = $product_image[0]; 
 					$image_url = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
 					if(empty($image_url)) {$image_url = $product_image_url;} 
-					$image = '<img width="'.$productimgwidth.'" height="'.$productimgheight.'" src="'.$image_url.'" class="attachment-shop_single wp-post-image" title="'.esc_attr( get_the_title( get_post_thumbnail_id() ) ).'">';
+					$image = '<img width="'.esc_attr($productimgwidth).'" height="'.esc_attr($productimgheight).'" src="'.esc_attr($image_url).'" class="attachment-shop_single wp-post-image" title="'.esc_attr( get_the_title( get_post_thumbnail_id() ) ).'">';
 			} else {
-			$image       		= get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
-				'title' => $image_title
-				) );
+				$image = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
+					'title' => $image_title
+					) );
 			}
-			$attachment_count   = count( $product->get_gallery_attachment_ids() );
+			$attachment_count = count( $product->get_gallery_attachment_ids() );
 
 			if ( $attachment_count > 0 ) {
 				$gallery = '[product-gallery]';
@@ -47,7 +44,7 @@ if(isset($pinnacle['product_simg_resize']) && $pinnacle['product_simg_resize'] =
 				$gallery = '';
 			}
 
-			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  rel="lightbox' . $gallery . '">%s</a>', $image_link, $image_title, $image ), $post->ID );
+			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  data-rel="lightbox">%s</a>', $image_link, $image_title, $image ), $post->ID );
 
 		} else {
 

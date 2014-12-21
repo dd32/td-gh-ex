@@ -2,7 +2,7 @@
 /**
  * Register sidebars and widgets
  */
-function kadence_sidebar_list() {
+function pinnacle_sidebar_list() {
   $all_sidebars=array(array('name'=>__('Primary Sidebar', 'pinnacle'), 'id'=>'sidebar-primary'));
   global $pinnacle; 
   if(isset($pinnacle['cust_sidebars'])) {
@@ -19,18 +19,18 @@ function kadence_sidebar_list() {
   $kad_sidebars = $all_sidebars;
   return $all_sidebars;
 }
-add_action('init', 'kadence_sidebar_list');
+add_action('init', 'pinnacle_sidebar_list');
 
-function kadence_register_sidebars(){
-  $the_sidebars = kadence_sidebar_list();
+function pinnacle_register_sidebars(){
+  $the_sidebars = pinnacle_sidebar_list();
   if (function_exists('register_sidebar')){
     foreach($the_sidebars as $side){
-      kadence_register_sidebar($side['name'], $side['id']);    
+      pinnacle_register_sidebar($side['name'], $side['id']);    
     }
 
   }
 }
-function kadence_register_sidebar($name, $id){
+function pinnacle_register_sidebar($name, $id){
   register_sidebar(array('name'=>$name,
     'id' => $id,
          'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
@@ -39,11 +39,11 @@ function kadence_register_sidebar($name, $id){
     'after_title' => '</h5>',
   ));
 }
-add_action('widgets_init', 'kadence_register_sidebars');
+add_action('widgets_init', 'pinnacle_register_sidebars');
 
-function kadence_widgets_init() {
+function pinnacle_widgets_init() {
     //Topbar 
-  if(kadence_display_topbar_widget()) {
+  if(pinnacle_display_topbar_widget()) {
   register_sidebar(array(
     'name'          => __('Topbar Widget', 'pinnacle'),
     'id'            => 'topbarright',
@@ -167,7 +167,7 @@ function kadence_widgets_init() {
   register_widget('kad_post_grid_widget');
   register_widget('kad_image_widget');
 }
-add_action('widgets_init', 'kadence_widgets_init');
+add_action('widgets_init', 'pinnacle_widgets_init');
 
 /**
  * Contact widget
@@ -222,14 +222,14 @@ class kad_contact_widget extends WP_Widget {
   ?>
     <div class="vcard">
       
-      <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo $instance['company']; ?></h5><?php endif;?>
-      <?php if(!empty($instance['name'])):?><p class="vcard-name"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
+      <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo esc_html($instance['company']); ?></h5><?php endif;?>
+      <?php if(!empty($instance['name'])):?><p class="vcard-name"><i class="icon-user"></i><?php echo esc_html($instance['name']); ?></p><?php endif;?>
       <?php if(!empty($instance['street_address']) || !empty($instance['locality']) || !empty($instance['region']) ):?>
-        <p class="vcard-address"><i class="icon-map-marker"></i><?php echo $instance['street_address']; ?>
-       <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>
+        <p class="vcard-address"><i class="icon-map-marker"></i><?php echo esc_html($instance['street_address']); ?>
+       <span><?php echo esc_html($instance['locality']); ?> <?php echo esc_html($instance['region']); ?> <?php echo esc_html($instance['postal_code']); ?></span></p>
      <?php endif;?>
-      <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo $instance['tel']; ?></p><?php endif;?>
-      <?php if(!empty($instance['fixedtel'])):?><p class="tel fixedtel"><i class="icon-phone"></i> <?php echo $instance['fixedtel']; ?></p><?php endif;?>
+      <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo esc_html($instance['tel']); ?></p><?php endif;?>
+      <?php if(!empty($instance['fixedtel'])):?><p class="tel fixedtel"><i class="icon-phone"></i> <?php echo esc_html($instance['fixedtel']); ?></p><?php endif;?>
       <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo antispambot($instance['email']);?>"><i class="icon-envelope"></i> <?php echo antispambot($instance['email']); ?></a></p> <?php endif;?>
     </div>
       <?php
@@ -241,41 +241,38 @@ class kad_contact_widget extends WP_Widget {
 
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
-  $instance['company'] = strip_tags($new_instance['company']);
-  $instance['name'] = strip_tags($new_instance['name']);
+    $instance['title']          = strip_tags($new_instance['title']);
+    $instance['company']        = strip_tags($new_instance['company']);
+    $instance['name']           = strip_tags($new_instance['name']);
     $instance['street_address'] = strip_tags($new_instance['street_address']);
-    $instance['locality'] = strip_tags($new_instance['locality']);
-    $instance['region'] = strip_tags($new_instance['region']);
-    $instance['postal_code'] = strip_tags($new_instance['postal_code']);
-    $instance['tel'] = strip_tags($new_instance['tel']);
-    $instance['fixedtel'] = strip_tags($new_instance['fixedtel']);
-    $instance['email'] = strip_tags($new_instance['email']);
+    $instance['locality']       = strip_tags($new_instance['locality']);
+    $instance['region']         = strip_tags($new_instance['region']);
+    $instance['postal_code']    = strip_tags($new_instance['postal_code']);
+    $instance['tel']            = strip_tags($new_instance['tel']);
+    $instance['fixedtel']       = strip_tags($new_instance['fixedtel']);
+    $instance['email']          = strip_tags($new_instance['email']);
     $this->flush_widget_cache();
-
     $alloptions = wp_cache_get('alloptions', 'options');
-    if (isset($alloptions['widget_kadence_contact'])) {
-      delete_option('widget_kadence_contact');
-    }
-
+      if (isset($alloptions['widget_kadence_contact'])) {
+          delete_option('widget_kadence_contact');
+      }
     return $instance;
   }
-
   function flush_widget_cache() {
-    wp_cache_delete('widget_kadence_contact', 'widget');
+      wp_cache_delete('widget_kadence_contact', 'widget');
   }
 
   function form($instance) {
-    $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
-    $company = isset($instance['company']) ? esc_attr($instance['company']) : '';
-  $name = isset($instance['name']) ? esc_attr($instance['name']) : '';
-  $street_address = isset($instance['street_address']) ? esc_attr($instance['street_address']) : '';
-    $locality = isset($instance['locality']) ? esc_attr($instance['locality']) : '';
-    $region = isset($instance['region']) ? esc_attr($instance['region']) : '';
-    $postal_code = isset($instance['postal_code']) ? esc_attr($instance['postal_code']) : '';
-    $tel = isset($instance['tel']) ? esc_attr($instance['tel']) : '';
-    $fixedtel = isset($instance['fixedtel']) ? esc_attr($instance['fixedtel']) : '';
-    $email = isset($instance['email']) ? esc_attr($instance['email']) : '';
+      $title          = isset($instance['title']) ? esc_attr($instance['title']) : '';
+      $company        = isset($instance['company']) ? esc_attr($instance['company']) : '';
+      $name           = isset($instance['name']) ? esc_attr($instance['name']) : '';
+      $street_address = isset($instance['street_address']) ? esc_attr($instance['street_address']) : '';
+      $locality       = isset($instance['locality']) ? esc_attr($instance['locality']) : '';
+      $region         = isset($instance['region']) ? esc_attr($instance['region']) : '';
+      $postal_code    = isset($instance['postal_code']) ? esc_attr($instance['postal_code']) : '';
+      $tel            = isset($instance['tel']) ? esc_attr($instance['tel']) : '';
+      $fixedtel       = isset($instance['fixedtel']) ? esc_attr($instance['fixedtel']) : '';
+      $email          = isset($instance['email']) ? esc_attr($instance['email']) : '';
   ?>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'pinnacle'); ?></label>
@@ -328,7 +325,6 @@ class kad_social_widget extends WP_Widget {
     $widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'pinnacle'));
     $this->WP_Widget('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_social';
-
     add_action('save_post', array(&$this, 'flush_widget_cache'));
     add_action('deleted_post', array(&$this, 'flush_widget_cache'));
     add_action('switch_theme', array(&$this, 'flush_widget_cache'));
@@ -354,18 +350,18 @@ class kad_social_widget extends WP_Widget {
     extract($args, EXTR_SKIP);
 
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-    if (!isset($instance['facebook'])) { $instance['facebook'] = ''; }
-    if (!isset($instance['twitter'])) { $instance['twitter'] = ''; }
+    if (!isset($instance['facebook']))  { $instance['facebook'] = ''; }
+    if (!isset($instance['twitter']))   { $instance['twitter'] = ''; }
     if (!isset($instance['instagram'])) { $instance['instagram'] = ''; }
-    if (!isset($instance['googleplus'])) { $instance['googleplus'] = ''; }
-    if (!isset($instance['flickr'])) { $instance['flickr'] = ''; }
-    if (!isset($instance['vimeo'])) { $instance['vimeo'] = ''; }
-    if (!isset($instance['youtube'])) { $instance['youtube'] = ''; }
+    if (!isset($instance['googleplus'])){ $instance['googleplus'] = ''; }
+    if (!isset($instance['flickr']))    { $instance['flickr'] = ''; }
+    if (!isset($instance['vimeo']))     { $instance['vimeo'] = ''; }
+    if (!isset($instance['youtube']))   { $instance['youtube'] = ''; }
     if (!isset($instance['pinterest'])) { $instance['pinterest'] = ''; }
-    if (!isset($instance['dribbble'])) { $instance['dribbble'] = ''; }
-    if (!isset($instance['linkedin'])) { $instance['linkedin'] = ''; }
-    if (!isset($instance['tumblr'])) { $instance['tumblr'] = ''; }
-    if (!isset($instance['vk'])) { $instance['vk'] = ''; }
+    if (!isset($instance['dribbble']))  { $instance['dribbble'] = ''; }
+    if (!isset($instance['linkedin']))  { $instance['linkedin'] = ''; }
+    if (!isset($instance['tumblr']))    { $instance['tumblr'] = ''; }
+    if (!isset($instance['vk']))        { $instance['vk'] = ''; }
 
     if (!isset($instance['rss'])) { $instance['rss'] = ''; }
 
@@ -401,20 +397,20 @@ class kad_social_widget extends WP_Widget {
 
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-     $instance['title'] = strip_tags($new_instance['title']);
-    $instance['facebook'] = strip_tags($new_instance['facebook']);
-    $instance['twitter'] = strip_tags($new_instance['twitter']);
-    $instance['instagram'] = strip_tags($new_instance['instagram']);
+     $instance['title']     = strip_tags($new_instance['title']);
+    $instance['facebook']   = strip_tags($new_instance['facebook']);
+    $instance['twitter']    = strip_tags($new_instance['twitter']);
+    $instance['instagram']  = strip_tags($new_instance['instagram']);
     $instance['googleplus'] = strip_tags($new_instance['googleplus']);
-    $instance['flickr'] = strip_tags($new_instance['flickr']);
-    $instance['vimeo'] = strip_tags($new_instance['vimeo']);
-    $instance['youtube'] = strip_tags($new_instance['youtube']);
-    $instance['pinterest'] = strip_tags($new_instance['pinterest']);
-    $instance['dribbble'] = strip_tags($new_instance['dribbble']);
-    $instance['linkedin'] = strip_tags($new_instance['linkedin']);
-    $instance['tumblr'] = strip_tags($new_instance['tumblr']);
-    $instance['vk'] = strip_tags($new_instance['vk']);
-    $instance['rss'] = strip_tags($new_instance['rss']);
+    $instance['flickr']     = strip_tags($new_instance['flickr']);
+    $instance['vimeo']      = strip_tags($new_instance['vimeo']);
+    $instance['youtube']    = strip_tags($new_instance['youtube']);
+    $instance['pinterest']  = strip_tags($new_instance['pinterest']);
+    $instance['dribbble']   = strip_tags($new_instance['dribbble']);
+    $instance['linkedin']   = strip_tags($new_instance['linkedin']);
+    $instance['tumblr']     = strip_tags($new_instance['tumblr']);
+    $instance['vk']         = strip_tags($new_instance['vk']);
+    $instance['rss']        = strip_tags($new_instance['rss']);
     $this->flush_widget_cache();
 
     $alloptions = wp_cache_get('alloptions', 'options');
@@ -430,20 +426,20 @@ class kad_social_widget extends WP_Widget {
   }
 
   function form($instance) {
-    $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
-    $facebook = isset($instance['facebook']) ? esc_attr($instance['facebook']) : '';
-    $twitter = isset($instance['twitter']) ? esc_attr($instance['twitter']) : '';
-    $instagram = isset($instance['instagram']) ? esc_attr($instance['instagram']) : '';
+    $title      = isset($instance['title']) ? esc_attr($instance['title']) : '';
+    $facebook   = isset($instance['facebook']) ? esc_attr($instance['facebook']) : '';
+    $twitter    = isset($instance['twitter']) ? esc_attr($instance['twitter']) : '';
+    $instagram  = isset($instance['instagram']) ? esc_attr($instance['instagram']) : '';
     $googleplus = isset($instance['googleplus']) ? esc_attr($instance['googleplus']) : '';
-    $flickr = isset($instance['flickr']) ? esc_attr($instance['flickr']) : '';
-    $vimeo = isset($instance['vimeo']) ? esc_attr($instance['vimeo']) : '';
-    $youtube = isset($instance['youtube']) ? esc_attr($instance['youtube']) : '';
-    $pinterest = isset($instance['pinterest']) ? esc_attr($instance['pinterest']) : '';
-    $dribbble = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
-    $linkedin = isset($instance['linkedin']) ? esc_attr($instance['linkedin']) : '';
-    $tumblr = isset($instance['tumblr']) ? esc_attr($instance['tumblr']) : '';
-    $vk = isset($instance['vk']) ? esc_attr($instance['vk']) : '';
-    $rss = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
+    $flickr     = isset($instance['flickr']) ? esc_attr($instance['flickr']) : '';
+    $vimeo      = isset($instance['vimeo']) ? esc_attr($instance['vimeo']) : '';
+    $youtube    = isset($instance['youtube']) ? esc_attr($instance['youtube']) : '';
+    $pinterest  = isset($instance['pinterest']) ? esc_attr($instance['pinterest']) : '';
+    $dribbble   = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
+    $linkedin   = isset($instance['linkedin']) ? esc_attr($instance['linkedin']) : '';
+    $tumblr     = isset($instance['tumblr']) ? esc_attr($instance['tumblr']) : '';
+    $vk         = isset($instance['vk']) ? esc_attr($instance['vk']) : '';
+    $rss        = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
   ?>
   <p>
       <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'pinnacle'); ?></label>
@@ -552,7 +548,7 @@ class kad_recent_posts_widget extends WP_Widget {
     <li class="clearfix postclass">
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_featimg">
           <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
-            the_post_thumbnail( 'widget-thumb' ); 
+            the_post_thumbnail( 'pinnacle_widget-thumb' ); 
           } else { 
             $image_url = pinnacle_img_placeholder_small();
             echo '<img width="60" height="60" src="'.$image_url.'" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
@@ -671,7 +667,7 @@ class kad_post_grid_widget extends WP_Widget {
           ?>        
           <div class="imagegrid-widget">
           <?php  while ($r->have_posts()) : $r->the_post(); ?>
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?>
+          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'pinnacle_widget-thumb' ); ?>
           </a>
                     <?php } ?>
           <?php endwhile; ?>
@@ -684,7 +680,7 @@ class kad_post_grid_widget extends WP_Widget {
             <div class="imagegrid-widget">
           <?php  while ($r->have_posts()) : $r->the_post(); ?>
           
-            <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?></a><?php } ?>
+            <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'pinnacle_widget-thumb' ); ?></a><?php } ?>
           <?php endwhile; ?>
           </div>
           <?php wp_reset_postdata(); endif;
@@ -786,7 +782,7 @@ class kad_image_widget extends WP_Widget{
         } else if(empty($instance['image_link_open']) || $instance['image_link_open'] == "lightbox") {
           $uselink = true;
           $link = esc_url($instance['image_uri']);
-          $linktype = 'rel="lightbox"';
+          $linktype = 'data-rel="lightbox"';
         } else if($instance['image_link_open'] == "_blank") {
           $uselink = true;
           if(!empty($instance['image_link'])) {$link = $instance['image_link'];} else {$link = esc_url($instance['image_uri']);}
@@ -799,10 +795,10 @@ class kad_image_widget extends WP_Widget{
     ?>
      <?php echo $before_widget; ?>
     <div class="kad_img_upload_widget">
-        <?php if($uselink == true) {echo '<a href="'.$link.'" '.$linktype.'>';} ?>
+        <?php if($uselink == true) {echo '<a href="'.esc_url($link).'" '.$linktype.'>';} ?>
         <img src="<?php echo esc_url($instance['image_uri']); ?>" />
         <?php if($uselink == true) {echo '</a>'; }?>
-        <?php if(!empty($instance['text'])) { ?> <p class="kadence_image_widget_caption"><?php echo $instance['text']; ?></p><?php }?>
+        <?php if(!empty($instance['text'])) { ?> <p class="kadence_image_widget_caption"><?php echo esc_html($instance['text']); ?></p><?php }?>
     </div>
 
     <?php echo $after_widget; ?>

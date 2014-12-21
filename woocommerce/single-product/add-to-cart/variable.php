@@ -14,7 +14,6 @@ global $woocommerce, $product, $post, $pinnacle;
 
 <?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
-
 <form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo $post->ID; ?>" data-product_variations="<?php echo esc_attr( json_encode( $available_variations ) ) ?>">
 	<?php if ( ! empty( $available_variations ) ) : ?>
 	<table class="variations" cellspacing="0">
@@ -23,7 +22,7 @@ global $woocommerce, $product, $post, $pinnacle;
 				<tr>
 					<td class="product_label"><label for="<?php echo sanitize_title($name); ?>"><?php echo wc_attribute_label( $name ); ?></label></td>
 					<td class="product_value"><select id="<?php echo esc_attr( sanitize_title($name) ); ?>" name="attribute_<?php echo sanitize_title($name); ?>" class="kad-select">
-						<option value=""><?php echo __( 'Choose an option', 'woocommerce' ) ?>&hellip;</option>
+						<option value=""><?php echo __( 'Choose an option', 'pinnacle' ) ?>&hellip;</option>
 						<?php
 							if ( is_array( $options ) ) {
 
@@ -71,7 +70,7 @@ global $woocommerce, $product, $post, $pinnacle;
 						?>
 					</select> <?php
 						if ( sizeof($attributes) == $loop )
-							echo '<div style="display:block"><a class="reset_variations" href="#reset">' . __( 'Clear selection', 'woocommerce' ) . '</a><div>';
+							echo '<div style="display:block"><a class="reset_variations" href="#reset">' . __( 'Clear selection', 'pinnacle' ) . '</a><div>';
 					?></td>
 				</tr>
 	        <?php endforeach;?>
@@ -103,7 +102,7 @@ global $woocommerce, $product, $post, $pinnacle;
 
 	<?php else : ?>
 
-		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
+		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'pinnacle' ); ?></p>
 
 	<?php endif; ?>
 

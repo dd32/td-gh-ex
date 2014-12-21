@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-10-20 14:32-0700\n"
-"PO-Revision-Date: 2014-10-20 14:35-0700\n"
+"POT-Creation-Date: 2014-12-20 21:49-0700\n"
+"PO-Revision-Date: 2014-12-20 21:51-0700\n"
 "Last-Translator: Serhio <588885@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -44,28 +44,30 @@ msgid ""
 "are looking for or use the search form below."
 msgstr ""
 
-#: ../archive.php:21 ../index.php:10 ../search.php:10
-#: ../taxonomy-portfolio-type.php:45
+#: ../archive.php:42 ../home.php:17 ../index.php:9 ../search.php:9
+#: ../taxonomy-portfolio-type.php:67
 msgid "Sorry, no results were found."
 msgstr "Приносим извинения, результаты не найдены."
 
-#: ../archive.php:64 ../front-page.php:111 ../index.php:25 ../search.php:31
-#: ../taxonomy-portfolio-type.php:108 ../template-blog-grid.php:57
-#: ../template-blog.php:60 ../template-portfolio-grid.php:144
+#: ../archive.php:82 ../front-page.php:122 ../home.php:38 ../index.php:24
+#: ../search.php:43 ../taxonomy-portfolio-type.php:154
+#: ../template-blog-grid.php:69 ../template-blog.php:85
+#: ../template-portfolio-grid.php:208
 msgid "&larr; Older posts"
 msgstr "&larr; Более старые посты"
 
-#: ../archive.php:65 ../front-page.php:112 ../index.php:26 ../search.php:32
-#: ../taxonomy-portfolio-type.php:109 ../template-blog-grid.php:58
-#: ../template-blog.php:61 ../template-portfolio-grid.php:145
+#: ../archive.php:83 ../front-page.php:123 ../home.php:39 ../index.php:25
+#: ../search.php:44 ../taxonomy-portfolio-type.php:155
+#: ../template-blog-grid.php:70 ../template-blog.php:86
+#: ../template-portfolio-grid.php:209
 msgid "Newer posts &rarr;"
 msgstr "Более свежие посты &rarr;"
 
-#: ../lib/authorbox.php:5
+#: ../lib/authorbox.php:6
 msgid "About Author"
 msgstr "Об авторе"
 
-#: ../lib/authorbox.php:6 ../lib/utils.php:11
+#: ../lib/authorbox.php:7 ../lib/utils.php:11
 #: ../themeoptions/theme_options.php:360
 msgid "Latest Posts"
 msgstr "Свежие посты"
@@ -325,8 +327,8 @@ msgstr "Все установки были завершены."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Устанавливаем плагин %1$s (%2$d/%3$d)"
 
-#: ../lib/cleanup.php:159 ../lib/custom.php:81
-#: ../templates/content-post-grid-carousel.php:25
+#: ../lib/cleanup.php:97 ../lib/custom.php:81
+#: ../templates/content-post-grid-carousel.php:42
 msgid "Read More"
 msgstr "Читать далее"
 
@@ -404,12 +406,8 @@ msgstr "Скачать"
 msgid "Clear"
 msgstr "Очистить"
 
-#: ../lib/cmb/init.php:259 ../lib/metaboxes.php:175 ../lib/metaboxes.php:186
-#: ../lib/metaboxes.php:219 ../lib/metaboxes.php:230 ../lib/metaboxes.php:418
-#: ../lib/metaboxes.php:435 ../lib/metaboxes.php:446 ../lib/metaboxes.php:603
-#: ../lib/metaboxes.php:614 ../lib/metaboxes.php:648 ../lib/metaboxes.php:676
-#: ../lib/metaboxes.php:687 ../lib/metaboxes.php:752
-#: ../themeoptions/redux/framework.php:2151
+#: ../lib/cmb/init.php:259 ../lib/metaboxes.php:226 ../lib/metaboxes.php:243
+#: ../lib/metaboxes.php:254 ../themeoptions/redux/framework.php:2153
 #: ../themeoptions/theme_options.php:768 ../themeoptions/theme_options.php:776
 #: ../themeoptions/theme_options.php:784
 msgid "Default"
@@ -434,15 +432,7 @@ msgstr "Выберите элемент"
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../lib/cmb_gallery_metabox.php:17
-msgid "Add/Edit Gallery"
-msgstr "Добавить/Редактировать галерею"
-
-#: ../lib/cmb_gallery_metabox.php:18
-msgid "Clear Gallery"
-msgstr "Очистить галерею"
-
-#: ../lib/comments.php:38 ../templates/comment.php:5
+#: ../lib/comments.php:38 ../templates/comment.php:11
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
@@ -451,7 +441,7 @@ msgstr "%1$s"
 msgid "| (Edit)"
 msgstr "| (Изменить)"
 
-#: ../lib/comments.php:49 ../templates/comment.php:11
+#: ../lib/comments.php:49 ../templates/comment.php:19
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации."
 
@@ -527,98 +517,41 @@ msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 "Пожалуйста, введите ваш Instagram адрес. (обязательно включайте http://)"
 
-#: ../lib/init.php:9
+#: ../lib/init.php:8
 msgid "Primary Navigation"
 msgstr "Основная навигация"
 
-#: ../lib/init.php:10
+#: ../lib/init.php:9
 msgid "Topbar Navigation"
 msgstr "Навигация для чердака"
 
-#: ../lib/init.php:11
+#: ../lib/init.php:10
 msgid "Footer Navigation"
 msgstr "Навигация для подвала"
 
-#: ../lib/metaboxes.php:62 ../lib/metaboxes.php:729 ../lib/metaboxes.php:858
-#: ../lib/metaboxes.php:911
+#: ../lib/metaboxes.php:49 ../lib/metaboxes.php:292 ../lib/metaboxes.php:345
 msgid "All"
 msgstr "Все"
 
-#: ../lib/metaboxes.php:77
+#: ../lib/metaboxes.php:65
 msgid "All Blog Posts"
 msgstr "Все посты блога"
 
-#: ../lib/metaboxes.php:157
-msgid "Page Title and Subtitle"
-msgstr "Заголовок и подзаголовок страницы"
-
-#: ../lib/metaboxes.php:164 ../lib/metaboxes.php:208
-msgid "Subtitle"
-msgstr "Подзаголовок"
-
-#: ../lib/metaboxes.php:165
-msgid "Subtitle will go below page title"
-msgstr "Подзаголовок, размещаемый под заголовком страницы"
-
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:214
-#, fuzzy
-msgid "Hide Page Title"
-msgstr "Заголовок страницы"
-
-#: ../lib/metaboxes.php:176 ../lib/metaboxes.php:220
-msgid "Show"
-msgstr ""
-
-#: ../lib/metaboxes.php:177 ../lib/metaboxes.php:221
-msgid "Hide"
-msgstr ""
-
-#: ../lib/metaboxes.php:181 ../lib/metaboxes.php:225
-#, fuzzy
-msgid "Page Title background behind Header"
-msgstr "Заголовок и подзаголовок страницы"
-
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:231
-#: ../themeoptions/theme_options.php:367
-#, fuzzy
-msgid "Place behind Header"
-msgstr "Оформить заказ"
-
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:232
-msgid "Don't place behind Header"
-msgstr ""
-
-#: ../lib/metaboxes.php:195
-#, fuzzy
-msgid "Post Title and Subtitle"
-msgstr "Заголовок и подзаголовок страницы"
-
-#: ../lib/metaboxes.php:202 ../lib/metaboxes.php:203
-#, fuzzy
-msgid "Post Header Title"
-msgstr "Стиль рамки"
-
-#: ../lib/metaboxes.php:209
-#, fuzzy
-msgid "Subtitle will go below post title"
-msgstr "Подзаголовок, размещаемый под заголовком страницы"
-
-#: ../lib/metaboxes.php:239
+#: ../lib/metaboxes.php:150
 #, fuzzy
 msgid "Standard Post Options"
 msgstr "Опции поста"
 
-#: ../lib/metaboxes.php:247 ../lib/metaboxes.php:288 ../lib/metaboxes.php:342
-#: ../lib/metaboxes.php:390
+#: ../lib/metaboxes.php:158 ../lib/metaboxes.php:199
 msgid "Post Summary"
 msgstr "Разместить краткое содержание"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:163
 #, fuzzy
 msgid "Standard Post Default"
 msgstr "Опции поста"
 
-#: ../lib/metaboxes.php:253 ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:164 ../lib/metaboxes.php:205
 #: ../themeoptions/theme_options.php:1496
 #: ../themeoptions/theme_options.php:1509
 #: ../themeoptions/theme_options.php:1530
@@ -626,7 +559,7 @@ msgstr "Опции поста"
 msgid "Text"
 msgstr "Текст"
 
-#: ../lib/metaboxes.php:254 ../lib/metaboxes.php:295
+#: ../lib/metaboxes.php:165 ../lib/metaboxes.php:206
 #: ../themeoptions/theme_options.php:1496
 #: ../themeoptions/theme_options.php:1509
 #: ../themeoptions/theme_options.php:1530
@@ -634,7 +567,7 @@ msgstr "Текст"
 msgid "Portrait Image"
 msgstr "Портретное изображение"
 
-#: ../lib/metaboxes.php:255 ../lib/metaboxes.php:296
+#: ../lib/metaboxes.php:166 ../lib/metaboxes.php:207
 #: ../themeoptions/theme_options.php:1496
 #: ../themeoptions/theme_options.php:1509
 #: ../themeoptions/theme_options.php:1530
@@ -642,27 +575,25 @@ msgstr "Портретное изображение"
 msgid "Landscape Image"
 msgstr "Пейзажное изображение"
 
-#: ../lib/metaboxes.php:262
+#: ../lib/metaboxes.php:173
 #, fuzzy
 msgid "Image Post Options"
 msgstr "Опции поста"
 
-#: ../lib/metaboxes.php:271
+#: ../lib/metaboxes.php:182
 msgid "Head Content"
 msgstr "Содержимое заголовка страницы"
 
-#: ../lib/metaboxes.php:276 ../lib/metaboxes.php:293
+#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:204
 #, fuzzy
 msgid "Image Post Default"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../lib/metaboxes.php:277 ../lib/metaboxes.php:489
-#: ../themeoptions/theme_options.php:1517
+#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1517
 msgid "Image"
 msgstr "Изображение"
 
-#: ../lib/metaboxes.php:278 ../lib/metaboxes.php:320 ../lib/metaboxes.php:374
-#: ../lib/metaboxes.php:493 ../themeoptions/theme_options.php:360
+#: ../lib/metaboxes.php:189 ../themeoptions/theme_options.php:360
 #: ../themeoptions/theme_options.php:519
 #: ../themeoptions/theme_options.php:1517
 #: ../themeoptions/theme_options.php:1538
@@ -670,12 +601,12 @@ msgstr "Изображение"
 msgid "None"
 msgstr "Никакие"
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:193
 #, fuzzy
 msgid "Max Image Width"
 msgstr "Максимальная ширина Изображения/Слайдера"
 
-#: ../lib/metaboxes.php:283
+#: ../lib/metaboxes.php:194
 #, fuzzy
 msgid ""
 "Default is: 848 or 1140 on fullwidth posts (Note: just input number, "
@@ -684,717 +615,117 @@ msgstr ""
 "По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> форматах  "
 "<b>(Внимание, просто введите значение, например: 650)</b>"
 
-#: ../lib/metaboxes.php:303
-#, fuzzy
-msgid "Gallery Post Options"
-msgstr "Опции поста"
-
-#: ../lib/metaboxes.php:312 ../lib/metaboxes.php:367
-#, fuzzy
-msgid "Post Head Content"
-msgstr "Содержимое заголовка страницы"
-
-#: ../lib/metaboxes.php:317 ../lib/metaboxes.php:347
-#, fuzzy
-msgid "Gallery Post Default"
-msgstr "Настройки записей блога по умолчанию"
-
-#: ../lib/metaboxes.php:318
-#, fuzzy
-msgid "Image Slider - (Flex Slider)"
-msgstr "Слайдер изображений"
-
-#: ../lib/metaboxes.php:319
-#, fuzzy
-msgid "Carousel Slider - (Caroufedsel Slider)"
-msgstr "Слайдер изображений"
-
-#: ../lib/metaboxes.php:324
-#, fuzzy
-msgid "Post Slider Gallery"
-msgstr "Галерея постов"
-
-#: ../lib/metaboxes.php:325
-#, fuzzy
-msgid "Add images for gallery here"
-msgstr "Добавить изображения в галерею"
-
-#: ../lib/metaboxes.php:330
-#, fuzzy
-msgid "Max Slider Height"
-msgstr "Максимальная высота Изображения/Слайдера"
-
-#: ../lib/metaboxes.php:331 ../lib/metaboxes.php:817
-#, fuzzy
-msgid "Default is: 400 (Note: just input number, example: 350)"
-msgstr ""
-"По умолчанию: 400 <b>(Внимание, просто введите значение, например: 350)</b>"
-
-#: ../lib/metaboxes.php:336
-#, fuzzy
-msgid "Max Slider Width"
-msgstr "Максимальная ширина Изображения/Слайдера"
-
-#: ../lib/metaboxes.php:337
-#, fuzzy
-msgid ""
-"Default is: 848 or 1140 on fullwidth posts (Note: just input number, "
-"example: 650, only applys to Image Slider)"
-msgstr ""
-"По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
-"введите значение, например: 650, не применяется для слайдера карусели)</b>"
-
-#: ../lib/metaboxes.php:348 ../lib/metaboxes.php:397
-#, fuzzy
-msgid "Portrait Image (feature image)"
-msgstr "Сладер портретных изображений"
-
-#: ../lib/metaboxes.php:349 ../lib/metaboxes.php:398
-#, fuzzy
-msgid "Landscape Image (feature image)"
-msgstr "Слайдер пейзажных изображений"
-
-#: ../lib/metaboxes.php:350
-msgid "Portrait Image Slider"
-msgstr "Сладер портретных изображений"
-
-#: ../lib/metaboxes.php:351
-msgid "Landscape Image Slider"
-msgstr "Слайдер пейзажных изображений"
-
-#: ../lib/metaboxes.php:358
-#, fuzzy
-msgid "Video Post Options"
-msgstr "Опции поста"
-
-#: ../lib/metaboxes.php:372 ../lib/metaboxes.php:395
-#, fuzzy
-msgid "Video Post Default"
-msgstr "Настройки записей блога по умолчанию"
-
-#: ../lib/metaboxes.php:373 ../lib/metaboxes.php:492 ../lib/metaboxes.php:800
-#: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1551
-#: ../themeoptions/theme_options.php:1559
-msgid "Video"
-msgstr "Видео"
-
-#: ../lib/metaboxes.php:378
-#, fuzzy
-msgid "Video Post embed code"
-msgstr "Код встраиваемого видео"
-
-#: ../lib/metaboxes.php:379
-#, fuzzy
-msgid ""
-"Place Embed Code Here, works with youtube, vimeo. (Use the featured image "
-"for screen shot)"
-msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
-
-#: ../lib/metaboxes.php:384
-#, fuzzy
-msgid "Max Video Width"
-msgstr "Максимальная ширина слайдера."
-
-#: ../lib/metaboxes.php:385
-#, fuzzy
-msgid ""
-"Default is: 848 or 1140 on fullwidth posts (Note: just input number, "
-"example: 650, does not apply to carousel slider)"
-msgstr ""
-"По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
-"введите значение, например: 650, не применяется для слайдера карусели)</b>"
-
-#: ../lib/metaboxes.php:396
-msgid "Video - (when possible)"
-msgstr ""
-
-#: ../lib/metaboxes.php:406
+#: ../lib/metaboxes.php:214
 msgid "Post Options"
 msgstr "Опции поста"
 
-#: ../lib/metaboxes.php:413 ../lib/metaboxes.php:643 ../lib/metaboxes.php:1058
+#: ../lib/metaboxes.php:221 ../lib/metaboxes.php:385
 msgid "Display Sidebar?"
 msgstr "Показать боковую панель?"
 
-#: ../lib/metaboxes.php:414 ../lib/metaboxes.php:644 ../lib/metaboxes.php:1059
+#: ../lib/metaboxes.php:222 ../lib/metaboxes.php:386
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Укажите, тип страницы: во всю ширину или с боковой панелью"
 
-#: ../lib/metaboxes.php:419 ../lib/metaboxes.php:437 ../lib/metaboxes.php:605
-#: ../lib/metaboxes.php:650 ../lib/metaboxes.php:957 ../lib/metaboxes.php:979
-#: ../lib/metaboxes.php:990 ../lib/metaboxes.php:1064
+#: ../lib/metaboxes.php:227 ../lib/metaboxes.php:245 ../lib/metaboxes.php:391
 #: ../themeoptions/theme_options.php:1319
 msgid "Yes"
 msgstr "Да"
 
-#: ../lib/metaboxes.php:420 ../lib/metaboxes.php:436 ../lib/metaboxes.php:447
-#: ../lib/metaboxes.php:604 ../lib/metaboxes.php:649 ../lib/metaboxes.php:958
-#: ../lib/metaboxes.php:980 ../lib/metaboxes.php:989 ../lib/metaboxes.php:1063
-#: ../themeoptions/theme_options.php:1319
+#: ../lib/metaboxes.php:228 ../lib/metaboxes.php:244 ../lib/metaboxes.php:255
+#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1319
 msgid "No"
 msgstr "Нет"
 
-#: ../lib/metaboxes.php:424 ../lib/metaboxes.php:654 ../lib/metaboxes.php:1068
+#: ../lib/metaboxes.php:232 ../lib/metaboxes.php:395
 msgid "Choose Sidebar"
 msgstr "Выберите боковую панель"
 
-#: ../lib/metaboxes.php:430
+#: ../lib/metaboxes.php:238
 msgid "Author Info"
 msgstr "Информация об авторе"
 
-#: ../lib/metaboxes.php:431
+#: ../lib/metaboxes.php:239
 msgid "Display an author info box?"
 msgstr "Отображать информацию об авторе?"
 
-#: ../lib/metaboxes.php:441
+#: ../lib/metaboxes.php:249
 msgid "Posts Carousel"
 msgstr "Карусель постов"
 
-#: ../lib/metaboxes.php:442
+#: ../lib/metaboxes.php:250
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Отображать карусель похожих или недавних постов?"
 
-#: ../lib/metaboxes.php:448 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1483
 msgid "Yes - Display Recent Posts"
 msgstr "Да - отображать недавние посты"
 
-#: ../lib/metaboxes.php:449 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1483
 msgid "Yes - Display Similar Posts"
 msgstr "Да - отображать похожие посты"
 
-#: ../lib/metaboxes.php:454 ../lib/metaboxes.php:592
+#: ../lib/metaboxes.php:262
 msgid "Carousel Title"
 msgstr "Заголовок карусели"
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:263
 msgid "ex. Similar Posts"
 msgstr "например, Похожие посты"
 
-#: ../lib/metaboxes.php:464
-msgid "Portfolio Post Options"
-msgstr "Опции поста портфолио"
-
-#: ../lib/metaboxes.php:472
-msgid "Project Layout"
-msgstr "Формат проекта"
-
-#: ../lib/metaboxes.php:477
-#, fuzzy
-msgid "Beside 40%"
-msgstr "Рядом"
-
-#: ../lib/metaboxes.php:478
-#, fuzzy
-msgid "Beside 33%"
-msgstr "Рядом"
-
-#: ../lib/metaboxes.php:479
-msgid "Above"
-msgstr "Сверху"
-
-#: ../lib/metaboxes.php:480
-msgid "Three Rows"
-msgstr "Три ряда"
-
-#: ../lib/metaboxes.php:484
-msgid "Project Options"
-msgstr "Опции проекта"
-
-#: ../lib/metaboxes.php:490 ../lib/metaboxes.php:798
-#: ../themeoptions/theme_options.php:1538
-#, fuzzy
-msgid "Image Slider (Flex Slider)"
-msgstr "Слайдер изображений"
-
-#: ../lib/metaboxes.php:491 ../lib/metaboxes.php:799
-#: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#, fuzzy
-msgid "Carousel Slider"
-msgstr "Заголовок карусели"
-
-#: ../lib/metaboxes.php:497
-#, fuzzy
-msgid "Portfolio Slider/Images"
-msgstr "Изображения для слайдера портфолио"
-
-#: ../lib/metaboxes.php:498
-#, fuzzy
-msgid "Add images for post here"
-msgstr "Добавить изображения в галерею"
-
-#: ../lib/metaboxes.php:503 ../lib/metaboxes.php:816
-msgid "Max Image/Slider Height"
-msgstr "Максимальная высота Изображения/Слайдера"
-
-#: ../lib/metaboxes.php:504
-#, fuzzy
-msgid "Default is: 450 (Note: just input number, example: 350)"
-msgstr ""
-"По умолчанию: 450 <b>(Внимание, просто введите значение, например: 350)</b>"
-
-#: ../lib/metaboxes.php:509 ../lib/metaboxes.php:822
-msgid "Max Image/Slider Width"
-msgstr "Максимальная ширина Изображения/Слайдера"
-
-#: ../lib/metaboxes.php:510
-#, fuzzy
-msgid ""
-"Default is: 670 or 1140 on above or three row layouts (Note: just input "
-"number, example: 650)"
-msgstr ""
-"По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> форматах  "
-"<b>(Внимание, просто введите значение, например: 650)</b>"
-
-#: ../lib/metaboxes.php:515
-msgid "Value 01 Title"
-msgstr "Название параметра 01"
-
-#: ../lib/metaboxes.php:516
-msgid "ex. Project Type:"
-msgstr "например: Тип проекта:"
-
-#: ../lib/metaboxes.php:521
-msgid "Value 01 Description"
-msgstr "Описание параметра 01"
-
-#: ../lib/metaboxes.php:522
-msgid "ex. Character Illustration"
-msgstr "например: Описание иллюстрации"
-
-#: ../lib/metaboxes.php:527
-msgid "Value 02 Title"
-msgstr "Название параметра 02"
-
-#: ../lib/metaboxes.php:528
-msgid "ex. Skills Needed:"
-msgstr "например: Требуемые навыки:"
-
-#: ../lib/metaboxes.php:533
-msgid "Value 02 Description"
-msgstr "Описание параметра 02"
-
-#: ../lib/metaboxes.php:534
-msgid "ex. Photoshop, Illustrator"
-msgstr "например: Фотошоп, Иллюстратор"
-
-#: ../lib/metaboxes.php:539
-msgid "Value 03 Title"
-msgstr "Название параметра 03"
-
-#: ../lib/metaboxes.php:540
-msgid "ex. Customer:"
-msgstr "например: Клиент:"
-
-#: ../lib/metaboxes.php:545
-msgid "Value 03 Description"
-msgstr "Описание параметра 03"
-
-#: ../lib/metaboxes.php:546
-msgid "ex. Example Inc"
-msgstr "например: Ромашка Инкорпорейтед"
-
-#: ../lib/metaboxes.php:551
-msgid "Value 04 Title"
-msgstr "Название параметра 04"
-
-#: ../lib/metaboxes.php:552
-msgid "ex. Project Year:"
-msgstr "например: Год проекта:"
-
-#: ../lib/metaboxes.php:557
-msgid "Value 04 Description"
-msgstr "Описание параметра 04"
-
-#: ../lib/metaboxes.php:558
-msgid "ex. 2013"
-msgstr "например: 2013"
-
-#: ../lib/metaboxes.php:563
-msgid "External Website"
-msgstr "Внешний сайт"
-
-#: ../lib/metaboxes.php:564
-msgid "ex. Website:"
-msgstr "например: Сайт:"
-
-#: ../lib/metaboxes.php:569
-msgid "Website Address"
-msgstr "Адрес сайта"
-
-#: ../lib/metaboxes.php:570
-msgid "ex. http://www.example.com"
-msgstr "например: https://www.example.com"
-
-#: ../lib/metaboxes.php:575
-msgid "If Video Project"
-msgstr "Видео-проект"
-
-#: ../lib/metaboxes.php:576 ../lib/metaboxes.php:829
-msgid "Place Embed Code Here, works with youtube, vimeo..."
-msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
-
-#: ../lib/metaboxes.php:585
-#, fuzzy
-msgid "Bottom Carousel Options"
-msgstr "Страница опций контактов"
-
-#: ../lib/metaboxes.php:593
-msgid "ex. Similar Projects"
-msgstr "например, Подобные проекты"
-
-#: ../lib/metaboxes.php:598
-#, fuzzy
-msgid "Bottom Portfolio Carousel"
-msgstr "Карусель портфолио"
-
-#: ../lib/metaboxes.php:599
-#, fuzzy
-msgid "Display a carousel with portfolio items below project?"
-msgstr "Отображать карусель с подобными элементами портфолио под проектом?"
-
-#: ../lib/metaboxes.php:609
-#, fuzzy
-msgid "Carousel Items"
-msgstr "Заголовок карусели"
-
-#: ../lib/metaboxes.php:615 ../themeoptions/theme_options.php:1327
-#, fuzzy
-msgid "All Portfolio Posts"
-msgstr "Опции поста портфолио"
-
-#: ../lib/metaboxes.php:616 ../themeoptions/theme_options.php:1327
-msgid "Only of same Portfolio Type"
-msgstr ""
-
-#: ../lib/metaboxes.php:620
-#, fuzzy
-msgid "Carousel Order"
-msgstr "Заголовок карусели"
-
-#: ../lib/metaboxes.php:625 ../lib/metaboxes.php:717
-#: ../themeoptions/theme_options.php:820
-msgid "Menu Order"
-msgstr "Порядок меню"
-
-#: ../lib/metaboxes.php:626 ../lib/metaboxes.php:718
-#: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:140
-#: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:205
-#: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:122
-#: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:168
-#: ../themeoptions/theme_options.php:820
-msgid "Title"
-msgstr "Заголовок"
-
-#: ../lib/metaboxes.php:627 ../lib/metaboxes.php:719
-#: ../themeoptions/theme_options.php:820
-msgid "Date"
-msgstr "Дата"
-
-#: ../lib/metaboxes.php:628 ../lib/metaboxes.php:720
-#: ../themeoptions/theme_options.php:820
-msgid "Random"
-msgstr "Случайно"
-
-#: ../lib/metaboxes.php:636
-#, fuzzy
-msgid "Product Sidebar Options"
-msgstr "Опции боковой панели"
-
-#: ../lib/metaboxes.php:663
-msgid "Portfolio Page Options"
-msgstr "Опции страницы Портфолио"
-
-#: ../lib/metaboxes.php:671
-#: ../themeoptions/redux/inc/fields/typography/field_typography.php:276
-msgid "Style"
-msgstr "Стиль"
-
-#: ../lib/metaboxes.php:677 ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
-#, fuzzy
-msgid "Post Boxes"
-msgstr "Опции поста"
-
-#: ../lib/metaboxes.php:678 ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
-msgid "Flat with Margin"
-msgstr ""
-
-#: ../lib/metaboxes.php:682
-#, fuzzy
-msgid "Hover Style"
-msgstr "Стиль рамки"
-
-#: ../lib/metaboxes.php:688 ../themeoptions/theme_options.php:776
-#, fuzzy
-msgid "Light"
-msgstr "Право"
-
-#: ../lib/metaboxes.php:689 ../themeoptions/theme_options.php:776
-msgid "Dark"
-msgstr ""
-
-#: ../lib/metaboxes.php:690 ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:1627
-msgid "Primary Color"
-msgstr "Основной цвет"
-
-#: ../lib/metaboxes.php:694
-msgid "Columns"
-msgstr "Колонки"
-
-#: ../lib/metaboxes.php:699 ../lib/metaboxes.php:935
-#: ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
-msgid "Four Column"
-msgstr "Четыре колонки"
-
-#: ../lib/metaboxes.php:700 ../lib/metaboxes.php:936
-#: ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
-msgid "Three Column"
-msgstr "Три колонки"
-
-#: ../lib/metaboxes.php:701 ../lib/metaboxes.php:937
-msgid "Two Column"
-msgstr "Две колонки"
-
-#: ../lib/metaboxes.php:702
-#, fuzzy
-msgid "Five Column"
-msgstr "Четыре колонки"
-
-#: ../lib/metaboxes.php:706
-msgid "Portfolio Work Types"
-msgstr "Виды работ портфолио"
-
-#: ../lib/metaboxes.php:712
-msgid "Order Items By"
-msgstr "Сортировать элементы по"
-
-#: ../lib/metaboxes.php:724
-msgid "Items per Page"
-msgstr "Элементов на страницу"
-
-#: ../lib/metaboxes.php:725
-msgid "How many portfolio items per page"
-msgstr "Количество элементов портфолио на одной странице"
-
-#: ../lib/metaboxes.php:747
-#, fuzzy
-msgid "Image Ratio?"
-msgstr "Ссыдка на изображение"
-
-#: ../lib/metaboxes.php:753 ../themeoptions/theme_options.php:784
-msgid "Square 1:1"
-msgstr ""
-
-#: ../lib/metaboxes.php:754 ../themeoptions/theme_options.php:784
-#, fuzzy
-msgid "Portrait 3:4"
-msgstr "Портретное изображение"
-
-#: ../lib/metaboxes.php:755 ../themeoptions/theme_options.php:784
-#, fuzzy
-msgid "Landscape 4:3"
-msgstr "Пейзажное изображение"
-
-#: ../lib/metaboxes.php:756 ../themeoptions/theme_options.php:784
-#, fuzzy
-msgid "Wide Landscape 4:2"
-msgstr "Пейзажное изображение"
-
-#: ../lib/metaboxes.php:760
-msgid "Display Item Work Types"
-msgstr "Отображать виды работ элемента"
-
-#: ../lib/metaboxes.php:766
-msgid "Display Item Excerpt"
-msgstr "Отображать выдержки описания элемента"
-
-#: ../lib/metaboxes.php:772
-#, fuzzy
-msgid "Add Lightbox link in each item"
-msgstr "Добавить ссылку Lightbox в правом верхнем углу каждого элемента"
-
-#: ../lib/metaboxes.php:782
-msgid "Feature Page Options"
-msgstr "Опции страницы свойств"
-
-#: ../lib/metaboxes.php:791
-#, fuzzy
-msgid "Header Options"
-msgstr "Настройки шрифтов заголовков"
-
-#: ../lib/metaboxes.php:792
-#, fuzzy
-msgid "If image slider make sure images uploaded are at-least 1170px wide."
-msgstr ""
-"Если собираетесь загрузить изображения для слайдера, убедитесь, что их "
-"ширина как минимум 1140 пикселей."
-
-#: ../lib/metaboxes.php:797 ../themeoptions/theme_options.php:204
-#: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-msgid "Page Title"
-msgstr "Заголовок страницы"
-
-#: ../lib/metaboxes.php:804 ../themeoptions/theme_options.php:417
-#: ../themeoptions/theme_options.php:570
-msgid "Slider Images"
-msgstr "Изображения слайдреа"
-
-#: ../lib/metaboxes.php:805
-msgid "Add for flex, carousel, and image carousel."
-msgstr ""
-
-#: ../lib/metaboxes.php:810
-#, fuzzy
-msgid "If Cyclone Slider"
-msgstr "Слайдер изображений"
-
-#: ../lib/metaboxes.php:811
-msgid ""
-"Paste Cyclone slider shortcode here (example: [cycloneslider id=\"slider1\"])"
-msgstr ""
-
-#: ../lib/metaboxes.php:823
-#, fuzzy
-msgid ""
-"Default is: 1140 on fullwidth posts (Note: just input number, example: 650, "
-"does not apply to Carousel slider)"
-msgstr ""
-"По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
-"введите значение, например: 650, не применяется для слайдера карусели)</b>"
-
-#: ../lib/metaboxes.php:828
-msgid "If Video Post"
-msgstr "Если видео-пост"
-
-#: ../lib/metaboxes.php:837
+#: ../lib/metaboxes.php:271
 msgid "Blog List Options"
 msgstr "Опции списка блогов"
 
-#: ../lib/metaboxes.php:846 ../lib/metaboxes.php:899
+#: ../lib/metaboxes.php:280 ../lib/metaboxes.php:333
 msgid "Blog Category"
 msgstr "Категория блога"
 
-#: ../lib/metaboxes.php:847 ../lib/metaboxes.php:900
+#: ../lib/metaboxes.php:281 ../lib/metaboxes.php:334
 msgid "Select all blog posts or a specific category to show"
 msgstr "Выберите все посты или категорию постов для отображения"
 
-#: ../lib/metaboxes.php:853 ../lib/metaboxes.php:906
+#: ../lib/metaboxes.php:287 ../lib/metaboxes.php:340
 msgid "How Many Posts Per Page"
 msgstr "Количество постов на странице"
 
-#: ../lib/metaboxes.php:877
+#: ../lib/metaboxes.php:311
 msgid "Display Post Content as:"
 msgstr "Отобразить содержимое поста как:"
 
-#: ../lib/metaboxes.php:882
+#: ../lib/metaboxes.php:316
 msgid "Summary"
 msgstr "Краткое содержание:"
 
-#: ../lib/metaboxes.php:883 ../themeoptions/theme_options.php:1695
+#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1695
 msgid "Full"
 msgstr "Полностью:"
 
-#: ../lib/metaboxes.php:890
+#: ../lib/metaboxes.php:324
 #, fuzzy
 msgid "Blog Grid Options"
 msgstr "Опции списка блогов"
 
-#: ../lib/metaboxes.php:930
+#: ../lib/metaboxes.php:364
 #, fuzzy
 msgid "Choose Column Layout:"
 msgstr "Столбец подвала 1"
 
-#: ../lib/metaboxes.php:943
-msgid "Contact Page Options"
-msgstr "Страница опций контактов"
+#: ../lib/metaboxes.php:369 ../themeoptions/theme_options.php:1013
+#: ../themeoptions/theme_options.php:1090
+msgid "Four Column"
+msgstr "Четыре колонки"
 
-#: ../lib/metaboxes.php:952
-msgid "Use Contact Form"
-msgstr "Использовать контактную форму"
+#: ../lib/metaboxes.php:370 ../themeoptions/theme_options.php:1013
+#: ../themeoptions/theme_options.php:1090
+msgid "Three Column"
+msgstr "Три колонки"
 
-#: ../lib/metaboxes.php:962
-msgid "Contact Form Title"
-msgstr "Заголовок контактной формы"
+#: ../lib/metaboxes.php:371
+msgid "Two Column"
+msgstr "Две колонки"
 
-#: ../lib/metaboxes.php:963
-msgid "ex. Send us an Email"
-msgstr "например, Отправьте нам сообщение по электронной почте"
-
-#: ../lib/metaboxes.php:968
-#, fuzzy
-msgid "Contact Form Email Recipient"
-msgstr "Адрес электронной почты для контактной формы"
-
-#: ../lib/metaboxes.php:969
-msgid "ex. joe@gmail.com"
-msgstr ""
-
-#: ../lib/metaboxes.php:974
-msgid "Use Simple Math Question"
-msgstr ""
-
-#: ../lib/metaboxes.php:984
-msgid "Use Map"
-msgstr "Использовать карту"
-
-#: ../lib/metaboxes.php:994
-msgid "Address"
-msgstr "Адрес"
-
-#: ../lib/metaboxes.php:995
-msgid "Enter your Location"
-msgstr "Введите ваше местоположение"
-
-#: ../lib/metaboxes.php:1000
-msgid "Map Type"
-msgstr "Тип карты"
-
-#: ../lib/metaboxes.php:1005
-msgid "ROADMAP"
-msgstr "ДОРОГИ"
-
-#: ../lib/metaboxes.php:1006
-msgid "HYBRID"
-msgstr "ГИБРИД"
-
-#: ../lib/metaboxes.php:1007
-msgid "TERRAIN"
-msgstr "МЕСТНОСТЬ"
-
-#: ../lib/metaboxes.php:1008
-msgid "SATELLITE"
-msgstr "СПУТНИК"
-
-#: ../lib/metaboxes.php:1012
-msgid "Map Zoom Level"
-msgstr "Масштаб"
-
-#: ../lib/metaboxes.php:1013
-msgid "A good place to start is 15"
-msgstr "Наболее подходящий начальный масштаб 15"
-
-#: ../lib/metaboxes.php:1018
-msgid "1 (World View)"
-msgstr "1 (Вид карты мира)"
-
-#: ../lib/metaboxes.php:1038
-msgid "21 (Street View)"
-msgstr "21 (Вид улиц)"
-
-#: ../lib/metaboxes.php:1042
-msgid "Map Height"
-msgstr "Высота карты"
-
-#: ../lib/metaboxes.php:1043
-msgid "Default is 300"
-msgstr "По умолчанию 300"
-
-#: ../lib/metaboxes.php:1050
+#: ../lib/metaboxes.php:377
 msgid "Sidebar Options"
 msgstr "Опции боковой панели"
 
@@ -1484,198 +815,198 @@ msgstr "Используйте это виджет для добавления V
 msgid "Pinnacle: Contact/Vcard"
 msgstr "Virtue: Кнтакт/Vcard"
 
-#: ../lib/widgets.php:281 ../lib/widgets.php:449 ../lib/widgets.php:607
-#: ../lib/widgets.php:749
+#: ../lib/widgets.php:278 ../lib/widgets.php:445 ../lib/widgets.php:603
+#: ../lib/widgets.php:745
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: ../lib/widgets.php:285
+#: ../lib/widgets.php:282
 msgid "Company Name:"
 msgstr "Название компании:"
 
-#: ../lib/widgets.php:289 ../template-contact.php:176
+#: ../lib/widgets.php:286
 msgid "Name:"
 msgstr "Имя:"
 
-#: ../lib/widgets.php:293
+#: ../lib/widgets.php:290
 msgid "Street Address:"
 msgstr "Адрес:"
 
-#: ../lib/widgets.php:297
+#: ../lib/widgets.php:294
 msgid "City/Locality:"
 msgstr "Город:"
 
-#: ../lib/widgets.php:301
+#: ../lib/widgets.php:298
 msgid "State/Region:"
 msgstr "Область/Регион:"
 
-#: ../lib/widgets.php:305
+#: ../lib/widgets.php:302
 msgid "Zipcode/Postal Code:"
 msgstr "Почтовый индекс:"
 
-#: ../lib/widgets.php:309
+#: ../lib/widgets.php:306
 #, fuzzy
 msgid "Mobile Telephone:"
 msgstr "Телефон:"
 
-#: ../lib/widgets.php:313
+#: ../lib/widgets.php:310
 #, fuzzy
 msgid "Fixed Telephone:"
 msgstr "Телефон:"
 
-#: ../lib/widgets.php:317 ../template-contact.php:185
+#: ../lib/widgets.php:314
 msgid "Email:"
 msgstr "Адрес эл.почты:"
 
-#: ../lib/widgets.php:328
+#: ../lib/widgets.php:325
 msgid "Simple way to add Social Icons"
 msgstr "Простой способ добавить иконки соцсетей:"
 
-#: ../lib/widgets.php:329
+#: ../lib/widgets.php:326
 #, fuzzy
 msgid "Pinnacle: Social Links"
 msgstr "Virtue: Ссылки соцсетей"
 
-#: ../lib/widgets.php:453
+#: ../lib/widgets.php:449
 msgid "Facebook:"
 msgstr "Facebook:"
 
-#: ../lib/widgets.php:457
+#: ../lib/widgets.php:453
 msgid "Twitter:"
 msgstr "Twitter:"
 
-#: ../lib/widgets.php:461
+#: ../lib/widgets.php:457
 msgid "Instagram:"
 msgstr "Instagram:"
 
-#: ../lib/widgets.php:465
+#: ../lib/widgets.php:461
 msgid "GooglePlus:"
 msgstr "GooglePlus:"
 
-#: ../lib/widgets.php:469
+#: ../lib/widgets.php:465
 msgid "Flickr:"
 msgstr "Flickr:"
 
-#: ../lib/widgets.php:473
+#: ../lib/widgets.php:469
 msgid "Vimeo:"
 msgstr "Vimeo:"
 
-#: ../lib/widgets.php:477
+#: ../lib/widgets.php:473
 msgid "Youtube:"
 msgstr "Youtube:"
 
-#: ../lib/widgets.php:481
+#: ../lib/widgets.php:477
 msgid "Pinterest:"
 msgstr "Pinterest:"
 
-#: ../lib/widgets.php:485
+#: ../lib/widgets.php:481
 msgid "Dribbble:"
 msgstr "Dribbble:"
 
-#: ../lib/widgets.php:489
+#: ../lib/widgets.php:485
 msgid "Linkedin:"
 msgstr "Linkedin:"
 
-#: ../lib/widgets.php:493
+#: ../lib/widgets.php:489
 msgid "Tumblr:"
 msgstr "Tumblr"
 
-#: ../lib/widgets.php:497
+#: ../lib/widgets.php:493
 msgid "VK:"
 msgstr "ВКонтакте:"
 
-#: ../lib/widgets.php:501
+#: ../lib/widgets.php:497
 msgid "RSS:"
 msgstr "RSS:"
 
-#: ../lib/widgets.php:515
+#: ../lib/widgets.php:511
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr "Показывает наиболее свежие поста на вашем сайте с миниатюрой"
 
-#: ../lib/widgets.php:516
+#: ../lib/widgets.php:512
 #, fuzzy
 msgid "Pinnacle: Recent Posts"
 msgstr "Virtue: свежие посты"
 
-#: ../lib/widgets.php:541 ../templates/recentblog-carousel.php:4
+#: ../lib/widgets.php:537 ../templates/recentblog-carousel.php:7
 msgid "Recent Posts"
 msgstr "Свежие посты"
 
-#: ../lib/widgets.php:610
+#: ../lib/widgets.php:606
 msgid "Number of posts to show:"
 msgstr "Количество отображаемых постов:"
 
-#: ../lib/widgets.php:613
+#: ../lib/widgets.php:609
 msgid "Limit to Catagory (Optional):"
 msgstr "Ограничить категорией (опция):"
 
-#: ../lib/widgets.php:627
+#: ../lib/widgets.php:623
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 "Это создаст таблицу изображений из свежих постов или элементов портфолио"
 
-#: ../lib/widgets.php:628
+#: ../lib/widgets.php:624
 #, fuzzy
 msgid "Pinnacle: Post Grid"
 msgstr "Virtue: таблица изображений"
 
-#: ../lib/widgets.php:752
+#: ../lib/widgets.php:748
 msgid "Grid Choice:"
 msgstr "Выбор таблицы:"
 
-#: ../lib/widgets.php:754
+#: ../lib/widgets.php:750
 msgid "Blog Posts"
 msgstr "Записи блога"
 
-#: ../lib/widgets.php:755
+#: ../lib/widgets.php:751
 msgid "Portfolio"
 msgstr "Порфолио"
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:754
 msgid "If Post - Choose Category (Optional):"
 msgstr "Если пост - выберите категорию (опция):"
 
-#: ../lib/widgets.php:761
+#: ../lib/widgets.php:757
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr "Если портфолио - выберите тип (опция):"
 
-#: ../lib/widgets.php:764
+#: ../lib/widgets.php:760
 msgid "Number of images to show:"
 msgstr "Количество отображаемых изображений:"
 
-#: ../lib/widgets.php:775
+#: ../lib/widgets.php:771
 msgid "This allows for an image and a simple about text."
 msgstr "Позволяет разместить изображение и краткое текстовое описание."
 
-#: ../lib/widgets.php:776
+#: ../lib/widgets.php:772
 #, fuzzy
 msgid "Pinnacle: Image"
 msgstr "Virtue: таблица изображений"
 
-#: ../lib/widgets.php:830
+#: ../lib/widgets.php:826
 #, fuzzy
 msgid "Lightbox"
 msgstr "Право"
 
-#: ../lib/widgets.php:831
+#: ../lib/widgets.php:827
 msgid "New Window"
 msgstr ""
 
-#: ../lib/widgets.php:832
+#: ../lib/widgets.php:828
 msgid "Same Window"
 msgstr ""
 
-#: ../lib/widgets.php:833
+#: ../lib/widgets.php:829
 #, fuzzy
 msgid "No Link"
 msgstr "Ссылка на иконку"
 
-#: ../lib/widgets.php:845
+#: ../lib/widgets.php:841
 msgid "Image URL"
 msgstr "Ссыдка на изображение"
 
-#: ../lib/widgets.php:847
+#: ../lib/widgets.php:843
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:159
 #: ../themeoptions/redux/inc/fields/background/field_background.php:314
@@ -1683,17 +1014,17 @@ msgstr "Ссыдка на изображение"
 msgid "Upload"
 msgstr "Загрузить"
 
-#: ../lib/widgets.php:850
+#: ../lib/widgets.php:846
 #, fuzzy
 msgid "Image opens in"
 msgstr "Настройки повторяемости изображения"
 
-#: ../lib/widgets.php:854
+#: ../lib/widgets.php:850
 #, fuzzy
 msgid "Image Link (optional)"
 msgstr "Настройки повторяемости изображения"
 
-#: ../lib/widgets.php:858
+#: ../lib/widgets.php:854
 msgid "Text/Caption (optional)"
 msgstr ""
 
@@ -1710,105 +1041,45 @@ msgstr "Искать:"
 msgid "Search"
 msgstr "Искать"
 
-#: ../taxonomy-portfolio-type.php:73 ../template-portfolio-grid.php:106
-#: ../templates/bottomportfolio-carousel.php:79
-#: ../templates/home/portfolio-carousel.php:114
+#: ../taxonomy-portfolio-type.php:103 ../template-portfolio-grid.php:155
+#: ../templates/bottomportfolio-carousel.php:138
+#: ../templates/home/portfolio-carousel.php:191
 #, fuzzy
 msgid "View details"
 msgstr "Скрыть подробности"
 
-#: ../template-blog-grid.php:46 ../template-blog.php:51
-#: ../templates/home/blog-home.php:30 ../templates/home/latest-slider.php:32
-#: ../templates/recentblog-carousel.php:24
-#: ../templates/similarblog-carousel.php:28
+#: ../template-blog-grid.php:58 ../template-blog.php:74
+#: ../templates/home/blog-home.php:51 ../templates/home/latest-slider.php:58
+#: ../templates/recentblog-carousel.php:39
+#: ../templates/similarblog-carousel.php:45
 msgid "Sorry, no blog entries found."
 msgstr "Приносим извинения, записи блога не найдены."
 
-#: ../template-contact.php:10
-#, fuzzy
-msgid "This field is required."
-msgstr "Это поле должно содержать корректную дату."
-
-#: ../template-contact.php:11
-#, fuzzy
-msgid "Please enter a valid email address."
-msgstr "Ведите действующий адрес электронной почты."
-
-#: ../template-contact.php:91
-msgid "Check your math."
-msgstr ""
-
-#: ../template-contact.php:96
-msgid "Please enter your name."
-msgstr "Пожалуйста, укажите свое имя."
-
-#: ../template-contact.php:103
-msgid "Please enter your email address."
-msgstr "Пожалуйста, укажите адрес своей электронной почты."
-
-#: ../template-contact.php:106
-msgid "You entered an invalid email address."
-msgstr "Вы ввели некорректный адрес электронной почты."
-
-#: ../template-contact.php:113
-msgid "Please enter a message."
-msgstr "Пожалуйста, введите текст сообщения."
-
-#: ../template-contact.php:130
-#, fuzzy
-msgid "Contact"
-msgstr " Контакт"
-
-#: ../template-contact.php:130 ../template-contact.php:132
-msgid "From"
-msgstr "От"
-
-#: ../template-contact.php:131 ../templates/comments.php:68
-msgid "Name"
-msgstr "Имя"
-
-#: ../template-contact.php:166
-msgid "Thanks, your email was sent successfully."
-msgstr "Спасибо, ваше сообщение успешно отправлено."
-
-#: ../template-contact.php:170
-msgid "Sorry, an error occured."
-msgstr "Извините, возникла ошибка."
-
-#: ../template-contact.php:191
-#, fuzzy
-msgid "Message:"
-msgstr "Сообщение:"
-
-#: ../template-contact.php:208
-msgid "Send Email"
-msgstr "Отправить сообщение"
-
-#: ../template-portfolio-grid.php:134
-#: ../templates/bottomportfolio-carousel.php:107
-#: ../templates/home/portfolio-carousel.php:141
+#: ../template-portfolio-grid.php:199
+#: ../templates/bottomportfolio-carousel.php:183
+#: ../templates/home/portfolio-carousel.php:236
 msgid "Sorry, no portfolio entries found."
 msgstr "Извините, записей портфолио не найдено."
 
-#: ../templates/account-sidebar.php:19
+#: ../templates/account-sidebar.php:18
 #, fuzzy
 msgid "Edit Account"
 msgstr "Моя запись"
 
-#: ../templates/account-sidebar.php:22
+#: ../templates/account-sidebar.php:21
 #, fuzzy
 msgid "Logout"
 msgstr "Логотип"
 
-#: ../templates/bottomportfolio-carousel.php:2
+#: ../templates/bottomportfolio-carousel.php:9
 msgid "Recent Projects"
 msgstr "Свежие проекты"
 
-#: ../templates/comment.php:7
+#: ../templates/comment.php:15
 msgid "(Edit)"
 msgstr "(Редактировать)"
 
-#: ../templates/comments.php:8
+#: ../templates/comments.php:9
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
@@ -1823,62 +1094,66 @@ msgstr "&larr; Более старые комментарии"
 msgid "Newer comments &rarr;"
 msgstr "Более свежие комментарии &rarr; "
 
-#: ../templates/comments.php:31 ../templates/comments.php:43
+#: ../templates/comments.php:34 ../templates/comments.php:51
 msgid "Comments are closed."
 msgstr "Добавление комментариев закрыто."
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:63
 msgid "Leave a Reply"
 msgstr "Оставить ответ"
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:63
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Оставить ответ на %s"
 
-#: ../templates/comments.php:57
+#: ../templates/comments.php:66
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 "Вы должны быть <a href=\"%s\">авторизованы</a>, чтобы оставлять комментарии."
 
-#: ../templates/comments.php:62
+#: ../templates/comments.php:71
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
 msgstr "Авторизован как <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
-#: ../templates/comments.php:63
+#: ../templates/comments.php:72
 msgid "Log out of this account"
 msgstr "Выйти из этой учетной записи"
 
-#: ../templates/comments.php:63
+#: ../templates/comments.php:72
 msgid "Log out &raquo;"
 msgstr "Выйти &raquo;"
 
-#: ../templates/comments.php:68 ../templates/comments.php:72
+#: ../templates/comments.php:77
+msgid "Name"
+msgstr "Имя"
+
+#: ../templates/comments.php:77 ../templates/comments.php:81
 msgid " <span>*</span>"
 msgstr " <span>*</span>"
 
-#: ../templates/comments.php:72
+#: ../templates/comments.php:81
 msgid "Email (will not be published)"
 msgstr "Эл.почта (не публикуется)"
 
-#: ../templates/comments.php:76
+#: ../templates/comments.php:85
 msgid "Website"
 msgstr "Сайт"
 
-#: ../templates/comments.php:81
+#: ../templates/comments.php:90
 msgid "Comment"
 msgstr "Коментарий"
 
-#: ../templates/comments.php:83
+#: ../templates/comments.php:92
 msgid "Submit Comment"
 msgstr "Добавить комментарий"
 
-#: ../templates/content-fullpost.php:170
-#: ../templates/content-fullpostfull.php:169
-#: ../templates/content-single.php:174
-#: ../templates/content-singleportfolio.php:219
+#: ../templates/content-fullpost.php:138
+#: ../templates/content-fullpostfull.php:138
+#: ../templates/content-single.php:144
+#: ../templates/content-singleportfolio.php:169
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -1886,28 +1161,28 @@ msgstr "Страницы:"
 msgid "by"
 msgstr "кем"
 
-#: ../templates/entry-meta-subhead.php:4
+#: ../templates/entry-meta-subhead.php:5
 #, fuzzy
 msgid "on"
 msgstr "Добавить иконку"
 
-#: ../templates/entry-meta-subhead.php:5
+#: ../templates/entry-meta-subhead.php:6
 msgid "with"
 msgstr ""
 
-#: ../templates/entry-meta.php:2
+#: ../templates/entry-meta.php:5
 msgid "By"
 msgstr "Кем"
 
-#: ../templates/header.php:52
+#: ../templates/header.php:72
 msgid "No menu assigned"
 msgstr ""
 
-#: ../templates/home/blog-home.php:3
+#: ../templates/home/blog-home.php:6
 msgid "Latest from the Blog"
 msgstr "Самое новое из блога"
 
-#: ../templates/similarblog-carousel.php:4
+#: ../templates/similarblog-carousel.php:6
 msgid "Similar Posts"
 msgstr "Подобные посты"
 
@@ -1939,6 +1214,14 @@ msgstr "Удалить иконку"
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:166
 msgid "URL"
 msgstr "URL"
+
+#: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:140
+#: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:205
+#: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:122
+#: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:168
+#: ../themeoptions/theme_options.php:820
+msgid "Title"
+msgstr "Заголовок"
 
 #: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:141
 #: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:207
@@ -2123,6 +1406,11 @@ msgstr ""
 "Выберите размер и стиль шрифта для текстового логотипа, если вы не "
 "используете графический логотип."
 
+#: ../themeoptions/theme_options.php:204 ../themeoptions/theme_options.php:360
+#: ../themeoptions/theme_options.php:519
+msgid "Page Title"
+msgstr "Заголовок страницы"
+
 #: ../themeoptions/theme_options.php:209
 #, fuzzy
 msgid "Show the page title by default"
@@ -2292,6 +1580,22 @@ msgstr ""
 msgid "Flex Slider"
 msgstr "Мобильный слайдер"
 
+#: ../themeoptions/theme_options.php:360
+#, fuzzy
+msgid "Carousel Slider"
+msgstr "Заголовок карусели"
+
+#: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
+#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1559
+msgid "Video"
+msgstr "Видео"
+
+#: ../themeoptions/theme_options.php:367
+#, fuzzy
+msgid "Place behind Header"
+msgstr "Оформить заказ"
+
 #: ../themeoptions/theme_options.php:368
 #, fuzzy
 msgid "This enabled the transparent header on the home page."
@@ -2321,6 +1625,10 @@ msgstr ""
 #, fuzzy
 msgid "Home Page Title Padding Bottom"
 msgstr "Низ"
+
+#: ../themeoptions/theme_options.php:417 ../themeoptions/theme_options.php:570
+msgid "Slider Images"
+msgstr "Изображения слайдреа"
 
 #: ../themeoptions/theme_options.php:418 ../themeoptions/theme_options.php:571
 msgid "Use large images for best results."
@@ -2401,7 +1709,8 @@ msgid "Home Mobile Slider"
 msgstr "Мобильный слайдер"
 
 #: ../themeoptions/theme_options.php:505
-msgid "Create a more lightweight home slider for your mobile visitors."
+#, fuzzy
+msgid "Create a different home slider for your mobile visitors."
 msgstr ""
 "Создайте более легкий слайдер домашней страницы для мобильной версии сайта."
 
@@ -2534,15 +1843,59 @@ msgstr "Укажите, сколько элементов размещается
 msgid "Portfolio Layout Style"
 msgstr "Стиль конфигурации сайта"
 
+#: ../themeoptions/theme_options.php:768
+#: ../themeoptions/theme_options.php:1241
+#, fuzzy
+msgid "Post Boxes"
+msgstr "Опции поста"
+
+#: ../themeoptions/theme_options.php:768
+#: ../themeoptions/theme_options.php:1241
+msgid "Flat with Margin"
+msgstr ""
+
 #: ../themeoptions/theme_options.php:775
 #, fuzzy
 msgid "Portfolio Hover Style"
 msgstr "Виды работ портфолио"
 
+#: ../themeoptions/theme_options.php:776
+#, fuzzy
+msgid "Light"
+msgstr "Право"
+
+#: ../themeoptions/theme_options.php:776
+msgid "Dark"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:776
+#: ../themeoptions/theme_options.php:1627
+msgid "Primary Color"
+msgstr "Основной цвет"
+
 #: ../themeoptions/theme_options.php:783
 #, fuzzy
 msgid "Portfolio Image Ratio"
 msgstr "Опции страницы Портфолио"
+
+#: ../themeoptions/theme_options.php:784
+msgid "Square 1:1"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:784
+#, fuzzy
+msgid "Portrait 3:4"
+msgstr "Портретное изображение"
+
+#: ../themeoptions/theme_options.php:784
+#, fuzzy
+msgid "Landscape 4:3"
+msgstr "Пейзажное изображение"
+
+#: ../themeoptions/theme_options.php:784
+#, fuzzy
+msgid "Wide Landscape 4:2"
+msgstr "Пейзажное изображение"
 
 #: ../themeoptions/theme_options.php:791
 msgid "Choose how many portfolio items are in carousel"
@@ -2579,6 +1932,18 @@ msgstr "Порядок сортировки элементов карусели"
 msgid "Choose how the portfolio items should be ordered in the carousel."
 msgstr ""
 "Выберите в каком порядке будут сортироваться элементы карусели портфолио"
+
+#: ../themeoptions/theme_options.php:820
+msgid "Menu Order"
+msgstr "Порядок меню"
+
+#: ../themeoptions/theme_options.php:820
+msgid "Date"
+msgstr "Дата"
+
+#: ../themeoptions/theme_options.php:820
+msgid "Random"
+msgstr "Случайно"
 
 #: ../themeoptions/theme_options.php:827
 #, fuzzy
@@ -3097,6 +2462,15 @@ msgstr "Карусель портфолио"
 msgid "Bottom Portfolio Carousel Items"
 msgstr "Карусель портфолио"
 
+#: ../themeoptions/theme_options.php:1327
+#, fuzzy
+msgid "All Portfolio Posts"
+msgstr "Опции поста портфолио"
+
+#: ../themeoptions/theme_options.php:1327
+msgid "Only of same Portfolio Type"
+msgstr ""
+
 #: ../themeoptions/theme_options.php:1334
 #, fuzzy
 msgid "Choose how many columns to show on recent portfolio carousel."
@@ -3314,6 +2688,11 @@ msgstr "Слайдер пейзажных изображений"
 #, fuzzy
 msgid "Single Gallery Post Head Content"
 msgstr "Настройки записей блога по умолчанию"
+
+#: ../themeoptions/theme_options.php:1538
+#, fuzzy
+msgid "Image Slider (Flex Slider)"
+msgstr "Слайдер изображений"
 
 #: ../themeoptions/theme_options.php:1538
 #, fuzzy
@@ -3704,17 +3083,459 @@ msgstr "Не активирован"
 msgid "Sale!"
 msgstr "Распродажа!"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:26
+#: ../woocommerce/single-product/add-to-cart/variable.php:25
 msgid "Choose an option"
 msgstr "Выберите вариант"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:74
+#: ../woocommerce/single-product/add-to-cart/variable.php:73
 msgid "Clear selection"
 msgstr "Очистить выбор"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:106
+#: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr "Этот товар на данный момент отсутствует и недоступен."
+
+#~ msgid "Add/Edit Gallery"
+#~ msgstr "Добавить/Редактировать галерею"
+
+#~ msgid "Clear Gallery"
+#~ msgstr "Очистить галерею"
+
+#~ msgid "Page Title and Subtitle"
+#~ msgstr "Заголовок и подзаголовок страницы"
+
+#~ msgid "Subtitle"
+#~ msgstr "Подзаголовок"
+
+#~ msgid "Subtitle will go below page title"
+#~ msgstr "Подзаголовок, размещаемый под заголовком страницы"
+
+#, fuzzy
+#~ msgid "Hide Page Title"
+#~ msgstr "Заголовок страницы"
+
+#, fuzzy
+#~ msgid "Page Title background behind Header"
+#~ msgstr "Заголовок и подзаголовок страницы"
+
+#, fuzzy
+#~ msgid "Post Title and Subtitle"
+#~ msgstr "Заголовок и подзаголовок страницы"
+
+#, fuzzy
+#~ msgid "Post Header Title"
+#~ msgstr "Стиль рамки"
+
+#, fuzzy
+#~ msgid "Subtitle will go below post title"
+#~ msgstr "Подзаголовок, размещаемый под заголовком страницы"
+
+#, fuzzy
+#~ msgid "Gallery Post Options"
+#~ msgstr "Опции поста"
+
+#, fuzzy
+#~ msgid "Post Head Content"
+#~ msgstr "Содержимое заголовка страницы"
+
+#, fuzzy
+#~ msgid "Gallery Post Default"
+#~ msgstr "Настройки записей блога по умолчанию"
+
+#, fuzzy
+#~ msgid "Image Slider - (Flex Slider)"
+#~ msgstr "Слайдер изображений"
+
+#, fuzzy
+#~ msgid "Carousel Slider - (Caroufedsel Slider)"
+#~ msgstr "Слайдер изображений"
+
+#, fuzzy
+#~ msgid "Post Slider Gallery"
+#~ msgstr "Галерея постов"
+
+#, fuzzy
+#~ msgid "Add images for gallery here"
+#~ msgstr "Добавить изображения в галерею"
+
+#, fuzzy
+#~ msgid "Max Slider Height"
+#~ msgstr "Максимальная высота Изображения/Слайдера"
+
+#, fuzzy
+#~ msgid "Default is: 400 (Note: just input number, example: 350)"
+#~ msgstr ""
+#~ "По умолчанию: 400 <b>(Внимание, просто введите значение, например: 350)</"
+#~ "b>"
+
+#, fuzzy
+#~ msgid "Max Slider Width"
+#~ msgstr "Максимальная ширина Изображения/Слайдера"
+
+#, fuzzy
+#~ msgid ""
+#~ "Default is: 848 or 1140 on fullwidth posts (Note: just input number, "
+#~ "example: 650, only applys to Image Slider)"
+#~ msgstr ""
+#~ "По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
+#~ "введите значение, например: 650, не применяется для слайдера карусели)</b>"
+
+#, fuzzy
+#~ msgid "Portrait Image (feature image)"
+#~ msgstr "Сладер портретных изображений"
+
+#, fuzzy
+#~ msgid "Landscape Image (feature image)"
+#~ msgstr "Слайдер пейзажных изображений"
+
+#~ msgid "Portrait Image Slider"
+#~ msgstr "Сладер портретных изображений"
+
+#~ msgid "Landscape Image Slider"
+#~ msgstr "Слайдер пейзажных изображений"
+
+#, fuzzy
+#~ msgid "Video Post Options"
+#~ msgstr "Опции поста"
+
+#, fuzzy
+#~ msgid "Video Post Default"
+#~ msgstr "Настройки записей блога по умолчанию"
+
+#, fuzzy
+#~ msgid "Video Post embed code"
+#~ msgstr "Код встраиваемого видео"
+
+#, fuzzy
+#~ msgid ""
+#~ "Place Embed Code Here, works with youtube, vimeo. (Use the featured image "
+#~ "for screen shot)"
+#~ msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
+
+#, fuzzy
+#~ msgid "Max Video Width"
+#~ msgstr "Максимальная ширина слайдера."
+
+#, fuzzy
+#~ msgid ""
+#~ "Default is: 848 or 1140 on fullwidth posts (Note: just input number, "
+#~ "example: 650, does not apply to carousel slider)"
+#~ msgstr ""
+#~ "По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
+#~ "введите значение, например: 650, не применяется для слайдера карусели)</b>"
+
+#~ msgid "Portfolio Post Options"
+#~ msgstr "Опции поста портфолио"
+
+#~ msgid "Project Layout"
+#~ msgstr "Формат проекта"
+
+#, fuzzy
+#~ msgid "Beside 40%"
+#~ msgstr "Рядом"
+
+#, fuzzy
+#~ msgid "Beside 33%"
+#~ msgstr "Рядом"
+
+#~ msgid "Above"
+#~ msgstr "Сверху"
+
+#~ msgid "Three Rows"
+#~ msgstr "Три ряда"
+
+#~ msgid "Project Options"
+#~ msgstr "Опции проекта"
+
+#, fuzzy
+#~ msgid "Portfolio Slider/Images"
+#~ msgstr "Изображения для слайдера портфолио"
+
+#, fuzzy
+#~ msgid "Add images for post here"
+#~ msgstr "Добавить изображения в галерею"
+
+#~ msgid "Max Image/Slider Height"
+#~ msgstr "Максимальная высота Изображения/Слайдера"
+
+#, fuzzy
+#~ msgid "Default is: 450 (Note: just input number, example: 350)"
+#~ msgstr ""
+#~ "По умолчанию: 450 <b>(Внимание, просто введите значение, например: 350)</"
+#~ "b>"
+
+#~ msgid "Max Image/Slider Width"
+#~ msgstr "Максимальная ширина Изображения/Слайдера"
+
+#, fuzzy
+#~ msgid ""
+#~ "Default is: 670 or 1140 on above or three row layouts (Note: just input "
+#~ "number, example: 650)"
+#~ msgstr ""
+#~ "По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> "
+#~ "форматах  <b>(Внимание, просто введите значение, например: 650)</b>"
+
+#~ msgid "Value 01 Title"
+#~ msgstr "Название параметра 01"
+
+#~ msgid "ex. Project Type:"
+#~ msgstr "например: Тип проекта:"
+
+#~ msgid "Value 01 Description"
+#~ msgstr "Описание параметра 01"
+
+#~ msgid "ex. Character Illustration"
+#~ msgstr "например: Описание иллюстрации"
+
+#~ msgid "Value 02 Title"
+#~ msgstr "Название параметра 02"
+
+#~ msgid "ex. Skills Needed:"
+#~ msgstr "например: Требуемые навыки:"
+
+#~ msgid "Value 02 Description"
+#~ msgstr "Описание параметра 02"
+
+#~ msgid "ex. Photoshop, Illustrator"
+#~ msgstr "например: Фотошоп, Иллюстратор"
+
+#~ msgid "Value 03 Title"
+#~ msgstr "Название параметра 03"
+
+#~ msgid "ex. Customer:"
+#~ msgstr "например: Клиент:"
+
+#~ msgid "Value 03 Description"
+#~ msgstr "Описание параметра 03"
+
+#~ msgid "ex. Example Inc"
+#~ msgstr "например: Ромашка Инкорпорейтед"
+
+#~ msgid "Value 04 Title"
+#~ msgstr "Название параметра 04"
+
+#~ msgid "ex. Project Year:"
+#~ msgstr "например: Год проекта:"
+
+#~ msgid "Value 04 Description"
+#~ msgstr "Описание параметра 04"
+
+#~ msgid "ex. 2013"
+#~ msgstr "например: 2013"
+
+#~ msgid "External Website"
+#~ msgstr "Внешний сайт"
+
+#~ msgid "ex. Website:"
+#~ msgstr "например: Сайт:"
+
+#~ msgid "Website Address"
+#~ msgstr "Адрес сайта"
+
+#~ msgid "ex. http://www.example.com"
+#~ msgstr "например: https://www.example.com"
+
+#~ msgid "If Video Project"
+#~ msgstr "Видео-проект"
+
+#~ msgid "Place Embed Code Here, works with youtube, vimeo..."
+#~ msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
+
+#, fuzzy
+#~ msgid "Bottom Carousel Options"
+#~ msgstr "Страница опций контактов"
+
+#~ msgid "ex. Similar Projects"
+#~ msgstr "например, Подобные проекты"
+
+#, fuzzy
+#~ msgid "Bottom Portfolio Carousel"
+#~ msgstr "Карусель портфолио"
+
+#, fuzzy
+#~ msgid "Display a carousel with portfolio items below project?"
+#~ msgstr "Отображать карусель с подобными элементами портфолио под проектом?"
+
+#, fuzzy
+#~ msgid "Carousel Items"
+#~ msgstr "Заголовок карусели"
+
+#, fuzzy
+#~ msgid "Carousel Order"
+#~ msgstr "Заголовок карусели"
+
+#, fuzzy
+#~ msgid "Product Sidebar Options"
+#~ msgstr "Опции боковой панели"
+
+#~ msgid "Portfolio Page Options"
+#~ msgstr "Опции страницы Портфолио"
+
+#~ msgid "Style"
+#~ msgstr "Стиль"
+
+#, fuzzy
+#~ msgid "Hover Style"
+#~ msgstr "Стиль рамки"
+
+#~ msgid "Columns"
+#~ msgstr "Колонки"
+
+#, fuzzy
+#~ msgid "Five Column"
+#~ msgstr "Четыре колонки"
+
+#~ msgid "Portfolio Work Types"
+#~ msgstr "Виды работ портфолио"
+
+#~ msgid "Order Items By"
+#~ msgstr "Сортировать элементы по"
+
+#~ msgid "Items per Page"
+#~ msgstr "Элементов на страницу"
+
+#~ msgid "How many portfolio items per page"
+#~ msgstr "Количество элементов портфолио на одной странице"
+
+#, fuzzy
+#~ msgid "Image Ratio?"
+#~ msgstr "Ссыдка на изображение"
+
+#~ msgid "Display Item Work Types"
+#~ msgstr "Отображать виды работ элемента"
+
+#~ msgid "Display Item Excerpt"
+#~ msgstr "Отображать выдержки описания элемента"
+
+#, fuzzy
+#~ msgid "Add Lightbox link in each item"
+#~ msgstr "Добавить ссылку Lightbox в правом верхнем углу каждого элемента"
+
+#~ msgid "Feature Page Options"
+#~ msgstr "Опции страницы свойств"
+
+#, fuzzy
+#~ msgid "Header Options"
+#~ msgstr "Настройки шрифтов заголовков"
+
+#, fuzzy
+#~ msgid "If image slider make sure images uploaded are at-least 1170px wide."
+#~ msgstr ""
+#~ "Если собираетесь загрузить изображения для слайдера, убедитесь, что их "
+#~ "ширина как минимум 1140 пикселей."
+
+#, fuzzy
+#~ msgid "If Cyclone Slider"
+#~ msgstr "Слайдер изображений"
+
+#, fuzzy
+#~ msgid ""
+#~ "Default is: 1140 on fullwidth posts (Note: just input number, example: "
+#~ "650, does not apply to Carousel slider)"
+#~ msgstr ""
+#~ "По умолчанию: 770 или 1170 для полноэкранных постов <b>(Внимание, просто "
+#~ "введите значение, например: 650, не применяется для слайдера карусели)</b>"
+
+#~ msgid "If Video Post"
+#~ msgstr "Если видео-пост"
+
+#~ msgid "Contact Page Options"
+#~ msgstr "Страница опций контактов"
+
+#~ msgid "Use Contact Form"
+#~ msgstr "Использовать контактную форму"
+
+#~ msgid "Contact Form Title"
+#~ msgstr "Заголовок контактной формы"
+
+#~ msgid "ex. Send us an Email"
+#~ msgstr "например, Отправьте нам сообщение по электронной почте"
+
+#, fuzzy
+#~ msgid "Contact Form Email Recipient"
+#~ msgstr "Адрес электронной почты для контактной формы"
+
+#~ msgid "Use Map"
+#~ msgstr "Использовать карту"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "Enter your Location"
+#~ msgstr "Введите ваше местоположение"
+
+#~ msgid "Map Type"
+#~ msgstr "Тип карты"
+
+#~ msgid "ROADMAP"
+#~ msgstr "ДОРОГИ"
+
+#~ msgid "HYBRID"
+#~ msgstr "ГИБРИД"
+
+#~ msgid "TERRAIN"
+#~ msgstr "МЕСТНОСТЬ"
+
+#~ msgid "SATELLITE"
+#~ msgstr "СПУТНИК"
+
+#~ msgid "Map Zoom Level"
+#~ msgstr "Масштаб"
+
+#~ msgid "A good place to start is 15"
+#~ msgstr "Наболее подходящий начальный масштаб 15"
+
+#~ msgid "1 (World View)"
+#~ msgstr "1 (Вид карты мира)"
+
+#~ msgid "21 (Street View)"
+#~ msgstr "21 (Вид улиц)"
+
+#~ msgid "Map Height"
+#~ msgstr "Высота карты"
+
+#~ msgid "Default is 300"
+#~ msgstr "По умолчанию 300"
+
+#, fuzzy
+#~ msgid "This field is required."
+#~ msgstr "Это поле должно содержать корректную дату."
+
+#, fuzzy
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Ведите действующий адрес электронной почты."
+
+#~ msgid "Please enter your name."
+#~ msgstr "Пожалуйста, укажите свое имя."
+
+#~ msgid "Please enter your email address."
+#~ msgstr "Пожалуйста, укажите адрес своей электронной почты."
+
+#~ msgid "You entered an invalid email address."
+#~ msgstr "Вы ввели некорректный адрес электронной почты."
+
+#~ msgid "Please enter a message."
+#~ msgstr "Пожалуйста, введите текст сообщения."
+
+#, fuzzy
+#~ msgid "Contact"
+#~ msgstr " Контакт"
+
+#~ msgid "From"
+#~ msgstr "От"
+
+#~ msgid "Thanks, your email was sent successfully."
+#~ msgstr "Спасибо, ваше сообщение успешно отправлено."
+
+#~ msgid "Sorry, an error occured."
+#~ msgstr "Извините, возникла ошибка."
+
+#, fuzzy
+#~ msgid "Message:"
+#~ msgstr "Сообщение:"
+
+#~ msgid "Send Email"
+#~ msgstr "Отправить сообщение"
 
 #, fuzzy
 #~ msgid "Search results for"

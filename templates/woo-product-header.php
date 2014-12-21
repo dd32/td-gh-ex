@@ -1,17 +1,20 @@
 
 <?php
-	 if(!kadence_hide_pagetitle()) { ?>
+	 if(!pinnacle_hide_pagetitle()) { ?>
 <?php } else { 
 	global $post, $pinnacle; 
 
-		$bsub = get_post_meta( $post->ID, '_kad_subtitle', true );
-		$post_header_title = get_post_meta( $post->ID, '_kad_post_header_title', true );
+		$bsub 				= get_post_meta( $post->ID, '_kad_subtitle', true );
+		$post_header_title 	= get_post_meta( $post->ID, '_kad_post_header_title', true );
 
-if(!empty($post_header_title)) {
-	$page_title_title = $post_header_title;
-} else {
-	if(isset($pinnacle['single_product_header_title']) && $pinnacle['single_product_header_title'] == 'custom') {
-		if(isset($pinnacle['product_header_title_text'])) {$page_title_title = $pinnacle['product_header_title_text']; } else { $page_title_title = '';}
+	if(!empty($post_header_title)) {
+		$page_title_title = $post_header_title;
+	} else {
+		if(isset($pinnacle['single_product_header_title']) && $pinnacle['single_product_header_title'] == 'custom') {
+			if(isset($pinnacle['product_header_title_text'])) {$page_title_title = $pinnacle['product_header_title_text']; 
+		} else { 
+			$page_title_title = '';
+		}
 		$bsub = $pinnacle['product_header_subtitle_text'];
 	} else if (isset($pinnacle['single_product_header_title']) && $pinnacle['single_product_header_title'] == 'posttitle') {
 		$page_title_title =  get_the_title();
@@ -26,8 +29,6 @@ if(!empty($post_header_title)) {
 	    }
 	}
 }
-
-
 ?>
 <div id="pageheader" class="titleclass">
 <div class="header-color-overlay"></div>
@@ -35,8 +36,8 @@ if(!empty($post_header_title)) {
 		<div class="page-header">
 			<div class="row">
 				<div class="col-md-12">
-				  	<h1 class="product_page_title entry-title"><?php echo $page_title_title; ?></h1>
-					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.$bsub.' </p>'; } ?>
+				  	<h1 class="product_page_title entry-title"><?php echo esc_html($page_title_title); ?></h1>
+					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.esc_html($bsub).' </p>'; } ?>
 				</div>
 			</div>
 		</div>

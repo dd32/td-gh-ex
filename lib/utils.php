@@ -3,7 +3,7 @@
 /**
  * Page titles
  */
-function kadence_title() {
+function pinnacle_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       echo get_the_title(get_option('page_for_posts', true));

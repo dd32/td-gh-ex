@@ -367,7 +367,7 @@ $this->sections[] = array(
             'title' => __('Place behind Header', 'pinnacle'),
             'subtitle'=> __('This enabled the transparent header on the home page.', 'pinnacle'),
             "default" => 1,
-            'required' => array('choose_home_header','=','pagetitle'), 
+            'required' => array('choose_home_header','=',array('flex','pagetitle')), 
             ),
         array(
             'id'=>'home_page_title',
@@ -437,7 +437,7 @@ $this->sections[] = array(
             "default"       => "1140",
             "min"       => "600",
             "step"      => "5",
-            "max"       => "1140",
+            "max"       => "1400",
             'required' => array('choose_home_header','=',array('flex','carousel','latest')),
             ), 
         array(

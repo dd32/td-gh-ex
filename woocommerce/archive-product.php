@@ -10,38 +10,31 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
- get_header();
- global $pinnacle, $woocommerce_loop;  
- if ( empty( $woocommerce_loop['columns'] ) )
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
- 
-			if (is_shop()) {
-						get_template_part('templates/shop/shop', 'page-header');
-			} else if(is_product_category()) {
-						get_template_part('templates/shop/shop', 'page-header');
-			 } else {
-			 	get_template_part('templates/shop/shop', 'page-header');
-			 }
-			 ?>
+ 	get_header();
+	 global $woocommerce_loop;  
+	if ( empty( $woocommerce_loop['columns'] ) ) {
+		$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+	}
+	
+	get_template_part('templates/shop/shop', 'page-header'); ?>
 
 		<div id="content" class="container">
-   		<div class="row">
-      <div class="main <?php echo kadence_main_class(); ?>" role="main">
+   			<div class="row">
+     			<div class="main <?php echo pinnacle_main_class(); ?>" role="main">
 
-      	<div class="kad-shop-top">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-6">
-						<?php woocommerce_result_count(); ?>
+			      	<div class="kad-shop-top">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<?php woocommerce_result_count(); ?>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<?php woocommerce_catalog_ordering(); ?>
+								</div>
+							</div>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6">
-					<?php woocommerce_catalog_ordering(); ?>
-					</div>
-				</div>
-		</div>
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : 
 
-			<?php
 				/**
 				 * woocommerce_before_shop_loop hook
 				 * @hooked woocommerce_result_count - 20
@@ -50,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 
-            <div class="clearfix <?php echo kadence_category_layout_css(); ?> rowtight product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
+            		<div class="clearfix <?php echo pinnacle_category_layout_css(); ?> rowtight product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
 
 			<?php woocommerce_product_loop_start(); ?>
 
@@ -71,14 +64,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				do_action( 'woocommerce_after_shop_loop' );
 			?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+				<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
-			<?php woocommerce_get_template( 'loop/no-products-found.php' ); ?>
+					<?php woocommerce_get_template( 'loop/no-products-found.php' ); ?>
 
-		<?php endif; ?>
-	</div>
-	<?php get_sidebar(); ?>
-	      </div><!-- /.row-->
-    </div><!-- /.content -->
+				<?php endif; ?>
+				</div>
+				<?php get_sidebar(); ?>
+	      	</div><!-- /.row-->
+   		</div><!-- /.content -->
   </div><!-- /.wrap -->
   <?php get_footer(); ?>

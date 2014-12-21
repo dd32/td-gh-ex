@@ -16,12 +16,12 @@
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'kadence_register_required_plugins' );
+add_action( 'tgmpa_register', 'pinnacle_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
  */
-function kadence_register_required_plugins() {
+function pinnacle_register_required_plugins() {
 
 	$plugins = array(
 		array(

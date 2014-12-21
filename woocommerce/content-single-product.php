@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <div itemscope itemtype="http://schema.org/Product" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
-		<div class="<?php echo $imagecontainer; ?> product-img-case">
+		<div class="<?php echo esc_attr($imagecontainer); ?> product-img-case">
 
 	<?php
 		/**
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 	</div>
-	<div class="<?php echo $productcontainer; ?> product-summary-case">
+	<div class="<?php echo esc_attr($productcontainer); ?> product-summary-case">
 	<div class="summary entry-summary postclass">
 
 		<?php

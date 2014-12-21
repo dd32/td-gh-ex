@@ -26,13 +26,13 @@ function pinnacle_img_placeholder_cat() {
 function pinnacle_img_placeholder_small() {
   return apply_filters('kadence_placeholder_image_small', get_template_directory_uri() . '/assets/img/post_standard-60x60.jpg');
 }
-function kad_lightbox_text() {
+function pinnacle_lightbox_text() {
   $loading_text = __('Loading...', 'pinnacle');
   $of_text = __('of', 'pinnacle');
   $error_text = __('The Image could not be loaded.','pinnacle');
   echo  '<script type="text/javascript">var light_error = "'.$error_text.'", light_of = "%curr% '.$of_text.' %total%", light_load = "'.$loading_text.'";</script>';
 }
-add_action('wp_head', 'kad_lightbox_text');
+add_action('wp_head', 'pinnacle_lightbox_text');
 
 
 function kt_hex2rgb($hex) {
@@ -54,7 +54,7 @@ function kt_hex2rgb($hex) {
 
 ///Page Navigation
 
-	function kad_wp_pagenavi() {
+function pinnacle_wp_pagination() {
   global $wp_query, $wp_rewrite;
   $pages = '';
   $max = $wp_query->max_num_pages;
@@ -107,7 +107,7 @@ function pinnacle_content($limit) {
     }
 // Adjacent Post Plus Plugin
 
-function get_adjacent_post_plus($r, $previous = true ) {
+function pinnacle_get_adjacent_post_plus($r, $previous = true ) {
   global $post, $wpdb;
 
   extract( $r, EXTR_SKIP );
@@ -306,8 +306,8 @@ function get_adjacent_post_plus($r, $previous = true ) {
  * @param array|string $args Optional. Override default arguments.
  * @return bool True if previous post link is found, otherwise false.
  */
-function previous_post_link_plus($args = '') {
-  return adjacent_post_link_plus($args, '&laquo; %link', true);
+function pinnacle_previous_post_link_plus($args = '') {
+  return pinnacle_adjacent_post_link_plus($args, '&laquo; %link', true);
 }
 
 /**
@@ -318,8 +318,8 @@ function previous_post_link_plus($args = '') {
  * @param array|string $args Optional. Override default arguments.
  * @return bool True if next post link is found, otherwise false.
  */
-function next_post_link_plus($args = '') {
-  return adjacent_post_link_plus($args, '%link &raquo;', false);
+function pinnacle_next_post_link_plus($args = '') {
+  return pinnacle_adjacent_post_link_plus($args, '%link &raquo;', false);
 }
 
 /**
@@ -333,7 +333,7 @@ function next_post_link_plus($args = '') {
  * @param bool $previous Optional, default is true. Whether display link to previous post.
  * @return bool True if next/previous post is found, otherwise false.
  */
-function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previous = true) {
+function pinnacle_adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previous = true) {
   $defaults = array(
     'order_by' => 'post_date', 'order_2nd' => 'post_date', 'meta_key' => '', 'post_type' => '',
     'loop' => false, 'end_post' => false, 'thumb' => false, 'max_length' => 0,
@@ -360,7 +360,7 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
     $posts = array();
     $posts[] = & get_post($GLOBALS['post']->post_parent);
   } else
-    $posts = get_adjacent_post_plus($r, $previous);
+    $posts = pinnacle_get_adjacent_post_plus($r, $previous);
 
 //  If there is no next/previous post, return false so themes may conditionally display inactive link text.
   if ( !$posts )
@@ -480,10 +480,10 @@ function adjacent_post_link_plus($args = '', $format = '%link &raquo;', $previou
 //REv Slider
 
 //User Addon
-add_action( 'show_user_profile', 'kt_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'kt_show_extra_profile_fields' );
+add_action( 'show_user_profile', 'pinnacle_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'pinnacle_show_extra_profile_fields' );
 
-function kt_show_extra_profile_fields( $user ) { ?>
+function pinnacle_show_extra_profile_fields( $user ) { ?>
 
 <h3>Extra profile information</h3>
 
@@ -560,10 +560,10 @@ function kt_show_extra_profile_fields( $user ) { ?>
   </tr>
 </table>
 <?php }
-add_action( 'personal_options_update', 'kt_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'kt_save_extra_profile_fields' );
+add_action( 'personal_options_update', 'pinnacle_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'pinnacle_save_extra_profile_fields' );
 
-function kt_save_extra_profile_fields( $user_id ) {
+function pinnacle_save_extra_profile_fields( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
   update_user_meta( $user_id, 'occupation', $_POST['occupation'] );

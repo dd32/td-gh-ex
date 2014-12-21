@@ -1,5 +1,4 @@
 
-
     Thank you for downloading Pinnacle Theme!
 
 -------------------------------------------------------
@@ -29,7 +28,7 @@ Pinnacle Theme Uses:
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
 * Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
-* Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
+* Custom Metaboxes and Fields for WordPress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
 * Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
 * Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
@@ -52,6 +51,13 @@ Pinnacle Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Pinnacle =
+
+= Version 1.0.6 = 
+* Fix/add some esc_*.
+* Move some inline scripts to main js file.
+* Remove contact template.
+* Remove metaboxes with gallery option.
+* Restructure all pages.
 
 = Version 1.0.5 = 
 * Remove mobile check.

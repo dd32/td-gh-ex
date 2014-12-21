@@ -14,18 +14,18 @@ get_header();
 ?>
 	<?php get_template_part('templates/woo', 'product-header'); ?>
 
-<div id="content" class="container">
-   		<div class="row">
-      <div class="main <?php echo kadence_main_class(); ?>" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
+        <div id="content" class="container">
+           	<div class="row">
+              <div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+          		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php woocommerce_get_template_part( 'content', 'single-product' ); ?>
+          			<?php woocommerce_get_template_part( 'content', 'single-product' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+          		<?php endwhile; // end of the loop. ?>
 
-</div>
-<?php get_sidebar(); ?>
-      </div><!-- /.row-->
-    </div><!-- /.content -->
-  </div><!-- /.wrap -->
-  <?php get_footer(); ?>
+              </div>
+              <?php get_sidebar(); ?>
+            </div><!-- /.row-->
+          </div><!-- /.content -->
+      </div><!-- /.wrap -->
+      <?php get_footer(); ?>

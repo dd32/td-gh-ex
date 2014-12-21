@@ -2,7 +2,7 @@
  /**
  * Manage output of wp_title()
  */
-function kadence_wp_title($title) {
+function pinnacle_wp_title($title) {
   if (is_feed()) {
     return $title;
   }
@@ -11,12 +11,12 @@ function kadence_wp_title($title) {
 
   return $title;
 }
-add_filter('wp_title', 'kadence_wp_title', 10);
+add_filter('wp_title', 'pinnacle_wp_title', 10);
 
 /**
  * Add body_class() classes
  */
-function kadence_body_class($classes) {
+function pinnacle_body_class($classes) {
   // Add post/page slug
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
@@ -24,40 +24,34 @@ function kadence_body_class($classes) {
 
   return $classes;
 }
-add_filter('body_class', 'kadence_body_class');
+add_filter('body_class', 'pinnacle_body_class');
 
 
 /**
  * Add class="thumbnail" to attachment items
  */
-function kadence_attachment_link_class($html) {
+function pinnacle_attachment_link_class($html) {
   $postid = get_the_ID();
   $html = str_replace('<a', '<a class="thumbnail"', $html);
   return $html;
 }
-add_filter('wp_get_attachment_link', 'kadence_attachment_link_class', 10, 1);
+add_filter('wp_get_attachment_link', 'pinnacle_attachment_link_class', 10, 1);
 
 
 /**
  * Add-rel-lighbox
  */
 
-add_filter('the_content', 'kad_addlightboxrel');
-function kad_addlightboxrel($content) {
+add_filter('the_content', 'pinnacle_addlightboxrel');
+function pinnacle_addlightboxrel($content) {
        global $post;
        $pattern ="/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-       $replacement = '<a$1href=$2$3.$4$5 rel="lightbox" $6>';
+       $replacement = '<a$1href=$2$3.$4$5 data-rel="lightbox" $6>';
        $content = preg_replace($pattern, $replacement, $content);
        return $content;
 }
 
-/**
- * Add Bootstrap thumbnail styling to images with captions
- * Use <figure> and <figcaption>
- *
- * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
- */
-function kadence_caption($output, $attr, $content) {
+function pinnacle_caption($output, $attr, $content) {
   if (is_feed()) {
     return $output;
   }
@@ -88,30 +82,29 @@ function kadence_caption($output, $attr, $content) {
 
   return $output;
 }
-add_filter('img_caption_shortcode', 'kadence_caption', 10, 3);
+add_filter('img_caption_shortcode', 'pinnacle_caption', 10, 3);
 
 
 
 /**
  * Clean up the_excerpt()
  */
-function kadence_excerpt_length($length) {
+function pinnacle_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }
-
-function kadence_excerpt_more($more) {
+add_filter('excerpt_length', 'pinnacle_excerpt_length');
+function pinnacle_excerpt_more($more) {
   $readmore =  __('Read More', 'pinnacle') ;
   return ' &hellip; <a href="' . get_permalink() . '">'. $readmore . '</a>';
 }
-add_filter('excerpt_length', 'kadence_excerpt_length');
-add_filter('excerpt_more', 'kadence_excerpt_more');
+add_filter('excerpt_more', 'pinnacle_excerpt_more');
 
 /**
  * Add additional classes onto widgets
  *
  * @link http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
  */
-function kadence_widget_first_last_classes($params) {
+function pinnacle_widget_first_last_classes($params) {
   global $my_widget_num;
 
   $this_id = $params[0]['id'];
@@ -143,5 +136,5 @@ function kadence_widget_first_last_classes($params) {
 
   return $params;
 }
-add_filter('dynamic_sidebar_params', 'kadence_widget_first_last_classes');
+add_filter('dynamic_sidebar_params', 'pinnacle_widget_first_last_classes');
 

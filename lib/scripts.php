@@ -4,7 +4,7 @@
  *
  */
 
-function kadence_scripts() {
+function pinnacle_scripts() {
   wp_enqueue_style('pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '105');
   global $pinnacle; if(isset($pinnacle['skin_stylesheet']) && !empty($pinnacle['skin_stylesheet'])) {$skin = $pinnacle['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('pinnacle_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
@@ -36,14 +36,14 @@ if (is_child_theme()) {
   }
 
 }
-add_action('wp_enqueue_scripts', 'kadence_scripts', 100);
+add_action('wp_enqueue_scripts', 'pinnacle_scripts', 100);
 
 /**
  * Add Respond.js for IE8 support of media queries
  */
-function kadence_ie_support_header() {
+function pinnacle_ie_support_header() {
     echo '<!--[if lt IE 9]>'. "\n";
     echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/vendor/respond.min.js' ) . '"></script>'. "\n";
     echo '<![endif]-->'. "\n";
 }
-add_action( 'wp_head', 'kadence_ie_support_header', 15 );
+add_action( 'wp_head', 'pinnacle_ie_support_header', 15 );

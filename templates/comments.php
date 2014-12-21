@@ -3,47 +3,56 @@
     return;
   }
   echo '<div id="post_comments"></div>';
- if (have_comments()) : ?>
-  <section id="comments">
-    <h3 class="sectiontitle"><?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'pinnacle'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
-
-    <ol class="media-list">
-      <?php wp_list_comments(array('walker' => new Kadence_Walker_Comment)); ?>
-    </ol>
-
-    <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
-    <nav>
-      <ul class="pager">
-        <?php if (get_previous_comments_link()) : ?>
-          <li class="previous"><?php previous_comments_link(__('&larr; Older comments', 'pinnacle')); ?></li>
-        <?php endif; ?>
-        <?php if (get_next_comments_link()) : ?>
-          <li class="next"><?php next_comments_link(__('Newer comments &rarr;', 'pinnacle')); ?></li>
-        <?php endif; ?>
-      </ul>
-    </nav>
-    <?php endif; ?>
-
-    <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-    <?php global $pinnacle; if(isset($pinnacle['close_comments'])) {$show_closed_comment = $pinnacle['close_comments']; } else {$show_closed_comment = 1;}
-    if($show_closed_comment == 1){ ?>
-    <div class="alert">
-      <?php _e('Comments are closed.', 'pinnacle'); ?>
-    </div>
-    <?php } else { } ?>
-    <?php endif; ?>
-  </section><!-- /#comments -->
+  if (have_comments()) : ?>
+    <section id="comments">
+      <h3 class="sectiontitle">
+        <?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'pinnacle'), number_format_i18n(get_comments_number()), get_the_title()); ?>
+      </h3>
+      <ol class="media-list">
+        <?php wp_list_comments(array('walker' => new Kadence_Walker_Comment)); ?>
+      </ol>
+      <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
+        <nav>
+          <ul class="pager">
+            <?php if (get_previous_comments_link()) : ?>
+              <li class="previous"><?php previous_comments_link(__('&larr; Older comments', 'pinnacle')); ?></li>
+            <?php endif; ?>
+            <?php if (get_next_comments_link()) : ?>
+              <li class="next"><?php next_comments_link(__('Newer comments &rarr;', 'pinnacle')); ?></li>
+            <?php endif; ?>
+          </ul>
+        </nav>
+      <?php endif; ?>
+      <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
+        <?php global $pinnacle; if(isset($pinnacle['close_comments'])) {
+            $show_closed_comment = $pinnacle['close_comments'];
+          } else {
+            $show_closed_comment = 1;
+          }
+        if($show_closed_comment == 1){ ?>
+          <div class="alert">
+            <?php _e('Comments are closed.', 'pinnacle'); ?>
+          </div>
+        <?php } else { 
+        } ?>
+      <?php endif; ?>
+    </section><!-- /#comments -->
 <?php endif; ?>
 
 <?php if (!have_comments() && !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-  <?php global $pinnacle; if(isset($pinnacle['close_comments'])) {$show_closed_comment = $pinnacle['close_comments']; } else {$show_closed_comment = 1;}
-    if($show_closed_comment == 1){ ?>
-  <section id="comments">
-    <div class="alert">
-      <?php _e('Comments are closed.', 'pinnacle'); ?>
-    </div>
-  </section><!-- /#comments -->
-  <?php } else { } ?>
+      <?php global $pinnacle; if(isset($pinnacle['close_comments'])) {
+        $show_closed_comment = $pinnacle['close_comments']; 
+      } else {
+        $show_closed_comment = 1;
+      }
+      if($show_closed_comment == 1){ ?>
+        <section id="comments">
+          <div class="alert">
+            <?php _e('Comments are closed.', 'pinnacle'); ?>
+          </div>
+        </section><!-- /#comments -->
+      <?php } else { 
+      } ?>
 <?php endif; ?>
 
 <?php if (comments_open()) : ?>
