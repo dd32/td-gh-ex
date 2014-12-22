@@ -47,3 +47,6 @@ i) Used minified js  to normal js.
 ii) Add respond.js bootstrap.js and bootstrap,css 
 iii) Remove respond.min.js, bootstrap.min.js and bootstrap.min.css
 iv) Enqueue respond.js file in enqueue-files.php
+
+Version: 1.1.5 (22 Dec 2014)
+i) Changed respond.min reference in functions.php
