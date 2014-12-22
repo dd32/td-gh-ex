@@ -7,6 +7,10 @@ Author URI: http://mwthemes.net
 
 Description: MW Small is responsive and customizable WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link.
 
+Demo: http://demo.mwthemes.net/mw-small/
+
+Settings > General > Date Format > Custom: j M Y
+
 Scripts:
 FlexSlider - GPLv2 License: https://github.com/woothemes/flexslider
 

@@ -12,10 +12,14 @@
 		<?php endif; ?>
 		
 		<div class="mw_title">
-			<div class="entry-time">
-				<span class="day"><?php the_time( 'j' ); ?></span>
-				<span class="month"><?php the_time( 'M' ); ?></span> /
-				<span class="year"><?php the_time( 'Y' ); ?></span>
+			<div class="entry-time">				
+				<?php if ( ('j M Y') == get_option( 'date_format' ) ) : ?>
+					<span class="day"><?php echo get_the_date('j'); ?></span>
+					<span class="month"><?php echo get_the_date('M'); ?></span> /
+					<span class="year"><?php echo get_the_date('Y'); ?></span>
+				<?php else : ?>
+					<span class="mw-date-format"><?php echo get_the_date(); ?></span>
+				<?php endif; ?>		
 			</div>
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<?php mwsmall_post_icon(); ?>

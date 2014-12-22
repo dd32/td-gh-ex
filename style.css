@@ -3,8 +3,8 @@ Theme Name: MW Small
 Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
 Author: MWThemes
 Author URI: http://mwthemes.net
-Description: MW Small is a minimalistic responsive and customizable WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer.
-Version: 1.0.2
+Description: MW Small is a minimalistic responsive and customizable WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. Demo: http://demo.mwthemes.net/mw-small/
+Version: 1.0.3
 Tags:  custom-header, white, blue, custom-background, custom-menu,  featured-images, flexible-header, light, post-formats, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -300,6 +300,7 @@ li > ol {
 img {
 	-ms-interpolation-mode: bicubic;
 	border: 0;
+	height: auto;
 	max-width: 100%;
 	vertical-align: middle;
 }
@@ -535,13 +536,14 @@ header nav {
     border: 1px solid #0099CC;
     color: #DDDDDD;
     font-size: 20px;
-    height: 36px;
-    line-height: 34px;
+    height: 32px;
+    line-height: 32px;
     margin-left: 4px;
     text-align: center;
-    width: 36px;
+    width: 32px;
 }
 
+.navbar-toggle:hover,
 .mw-go-top:hover,
 .top-icon i:hover {
     border: 1px solid #DDDDDD;
@@ -669,15 +671,14 @@ header .search-box-wrapper {
 }
 
 .navbar-toggle {
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgba(0, 0, 0, 0);
+	border: 1px solid #0099CC;
     border-radius: 0;
-	color: #FFFFFF;
+	color: #DDDDDD;
     float: right;
-    font-size: 29px;
-    margin: 0;
+    font-size: 26px;
+    margin: 10px 0 0 5px;
     outline: 0 none;
-    padding: 9px 10px;
+    padding: 0 8px;
     position: relative;
 }
 
@@ -804,10 +805,9 @@ article {
     font-style: normal;
     height: 100%;
 	line-height: 20px;
-    padding-top: 15px;
+    padding: 15px 10px 0;
     text-align: center;
     text-transform: capitalize;
-    width: 150px;
 }
 
 .entry-time span.day {
@@ -824,7 +824,7 @@ article {
 .entry-title {
     clear: none;
     float: left;
-	margin: 5px 5px 0 20px;
+	margin: 5px 5px 0 13px;
     padding: 0;
 }
 
@@ -913,7 +913,7 @@ article {
 	color: #FFFFFF;
     display: block;
     font-size: 20px;
-    margin: 20px 80px 0;
+    margin: 20px 100px 0 30px;
     position: relative;
     text-align: center;
 }
@@ -927,9 +927,10 @@ article {
 }
 
 .entry-header.post-quote img {
-    bottom: 0;
+	opacity: 0.4;
     position: absolute;
-    z-index: -1;
+    top: 0;
+    z-index: 0;
 }
 
 .entry-header.post-link .mw_title,
@@ -1417,22 +1418,43 @@ embed, iframe, object, video {
 }
 
 @media only screen and (max-width: 768px) {
+	.mw-date-format {
+		margin-top: 8px;
+	}
 	.entry-time {
-		width: 100px;
+		width: 80px;
+		padding-top: 5px;
+	}
+	.entry-title {
+		margin: 5px 5px 0 10px;
+	}
+	.entry-header.post-gallery .mw_title {
+		z-index: 2;
 	}
 	#secondary {
 		padding-top: 30px;
 	}
 	.format-video iframe, .format-video object, .format-video embed {
-		min-height: 300px;
+		height: auto;
+		min-height: 250px;
 		width: 100%;
 	}
 	.player .controls-wrapper .title {
 		display: none;
 	}
+	.hentry.format-link .entry-content {
+		margin-right: 90px;
+	}
+	.footer_info .f_left,
+	.footer_info .f_right {
+		text-align: center;
+	}
 }
 
 @media only screen and (max-width: 468px) {
+	.mw_header_image img {
+		min-height: 100px;
+	}
 	.entry-time {
 		display: none;
 	}
@@ -1446,5 +1468,12 @@ embed, iframe, object, video {
 	}	
 	.player .controls-wrapper .title {
 		display: none;
+	}
+	.hentry.format-link .entry-content {
+		margin-right: 90px;
+	}
+	.footer_info .f_left,
+	.footer_info .f_right {
+		text-align: center;
 	}
 }
