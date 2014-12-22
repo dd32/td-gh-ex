@@ -1,7 +1,9 @@
 CHANGELOG
 =========
 
-DarkOrange Version 2.9 - december 2014
+DarkOrange Version 3.0 - december 2014
+- file header: removed wp_title because of new title-tag
+- file functions: added backwards compatibility for WP 4.0 and older
 - fixed padding right/left in full width page
 - reordered file nav
 

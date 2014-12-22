@@ -11,14 +11,14 @@ jQuery(document).ready(function() {
 	// build <select> dropdown
 	jQuery("<select />").appendTo("div.nav-head");
 
-	//Create deafult option "Menu..."
+	// create deafult option "Menu..."
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",
 		"text": "Menu..."  
 	}).appendTo(".nav-head select");
 
-	//Populate
+	// populate
 	jQuery(".nav-head ul li a").each(function() {
 		var el = jQuery(this);
 
@@ -37,7 +37,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	//make links work 
+	// make links work 
 	jQuery(".nav-head select").change(function() { 
 		window.location = jQuery(this).find("option:selected").val();
 	});
