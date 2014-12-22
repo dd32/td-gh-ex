@@ -6,7 +6,7 @@
  */
 ?>
 
-	<div class="testimonial-listing clearfix">
+	<div class="testimonial-listing clearfix wow fadeInUp">
 	<?php 
 		$args = array(
 			'cat' => $category,

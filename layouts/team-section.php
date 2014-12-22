@@ -17,10 +17,13 @@
 		<div class="team-tab">
 			<div class="team-slider">
 			<?php 
-				while($query->have_posts()): $query->the_post();
+				$i = 0;
+                    while ($query->have_posts()): $query->the_post();
+                        $i = $i + 0.25;
+                        ?>
 			?>
 
-			<a id="team-<?php echo get_the_ID(); ?>" href="#" class="clearfix team-image">
+			<a id="team-<?php echo get_the_ID(); ?>" href="#" class="clearfix team-image wow fadeInLeft" data-wow-delay="<?php echo $i; ?>s">
 				<?php if(has_post_thumbnail()) : 
 				$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'thumbnail');
 				?>
@@ -46,7 +49,7 @@
 			);
 		$query = new WP_Query($args);
 		if($query->have_posts()): ?>
-		<div class="team-content">
+		<div class="team-content wow fadeIn" data-wow-delay="1.5s">
 		<?php 
 			while($query->have_posts()): $query->the_post();
 		?>

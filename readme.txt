@@ -36,6 +36,12 @@ JS Files
     jQuery Easing: MIT Licenses
     https://github.com/flesler/jquery.scrollTo
 
+    Parallax JS: MIT and GPL licenses
+    https://github.com/IanLunn/jQuery-Parallax/
+
+    WOw JS: MIT Licenses
+    https://github.com/matthieua/WOW
+
 
 -------------------------------------------
 Fonts
@@ -59,5 +65,12 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.1
+* Parallax background Effect added for blank Sections in Main page.
+* Wow animation effect added
+* Google JavaScript Maps API V3 added
+* Minor Changes in styles
+
+
 Version 1.0
 * Submitted theme for review in http://wordpress.org

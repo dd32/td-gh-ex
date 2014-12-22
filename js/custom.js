@@ -40,15 +40,15 @@ jQuery(document).ready(function($){
         speed: 1000,
         pause: 8000,
         pager:false,
-        nextText: '&#8250',
-        prevText: '&#8249'
+        nextText: '<i class="fa fa-angle-right"></i>',
+        prevText: '<i class="fa fa-angle-left"></i>'
     });
 
     $('.team-slider').bxSlider({
         auto:false,
         pager:false,
-        nextText: '&#8250',
-        prevText: '&#8249',
+        nextText: '<i class="fa fa-angle-right"></i>',
+        prevText: '<i class="fa fa-angle-left"></i>',
         moveSlides : 1,
         minSlides: 2,
         maxSlides: 7,
@@ -74,7 +74,12 @@ jQuery(document).ready(function($){
         $('.googlemap-content').hide();  
     });
     
+    var open = false;
     $('.googlemap-toggle').on('click', function(){
+        if(!open){
+        open = true;
+        initialize();
+        }
         $('.googlemap-content').slideToggle();
         $(this).toggleClass('active');
     });
@@ -95,4 +100,6 @@ jQuery(document).ready(function($){
     });
 
     $("#content").fitVids();
+
+    $('.blank_template').parallax('50%',0.4, true)
 });

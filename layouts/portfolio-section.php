@@ -15,10 +15,12 @@
 		$count_service = 0;
 		$query = new WP_Query($args);
 		if($query->have_posts()):
+			$i = 0;
 			while($query->have_posts()): $query->the_post();
+			$i = $i + 0.25;
 		?>
 
-		<a href="<?php the_permalink(); ?>" class="portfolio-list">
+		<a href="<?php the_permalink(); ?>" class="portfolio-list wow fadeInUp" data-wow-delay="<?php echo $i; ?>s">
 		<div class="portfolio-overlay"><span>+</span></div>
 			<div class="portfolio-image">
 			<?php if(has_post_thumbnail()) : 

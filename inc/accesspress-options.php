@@ -169,6 +169,13 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
+		'name' => __('Enable Animation', 'accesspress_parallax'),
+		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'id' => 'enable_animation',
+		'std' => '1',
+		'type' => 'checkbox');
+
+	$options[] = array(
 		'name' => __('Enable Responsive', 'accesspress_parallax'),
 		'desc' => __('Check To enable', 'accesspress_parallax'),
 		'id' => 'enable_responsive',
@@ -196,6 +203,26 @@ function optionsframework_options() {
 			'logo-side' => $imagepath . 'logo-side.jpg',
 			'logo-top' => $imagepath . 'logo-top.jpg')
 	);
+
+	$options[] = array(
+		'name' => __('Google Map', 'accesspress_parallax'),
+		'desc' => sprintf(__('To get Values of Latitude and Longitude by Location name, click on <a href="%s">http://www.latlong.net</a>', 'accesspress_parallax'),esc_url("http://www.latlong.net")),
+		'id' => 'latlng',
+		'type' => 'info');	
+
+	$options[] = array(
+		'name' => __('Enter the latitude', 'accesspress_parallax'),
+		'id' => 'map_latitude',
+		'std' => '27.695401',
+		'class' => 'mini',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Enter the longitude', 'accesspress_parallax'),
+		'id' => 'map_longitude',
+		'std' => '85.291604',
+		'class' => 'mini',
+		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('Parallax Settings', 'accesspress_parallax'),

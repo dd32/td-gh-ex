@@ -15,10 +15,12 @@
 		$count_service = 0;
 		$query = new WP_Query($args);
 		if($query->have_posts()):
+			$i = 0;
 			while($query->have_posts()): $query->the_post();
+				$i = $i + 0.25;
 		?>
 
-		<a href="<?php the_permalink(); ?>" class="blog-list">
+		<a href="<?php the_permalink(); ?>" class="blog-list wow fadeInDown" data-wow-delay="<?php echo $i; ?>s">
 			<div class="blog-image">
 			<?php if(has_post_thumbnail()) : 
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'portfolio-thumbnail'); ?>
@@ -31,7 +33,7 @@
 			<h3><?php the_title(); ?></h3>
 			<h4 class="posted-date"><i class="fa fa-calendar"></i><?php echo get_the_date(); ?></h4>
 				<?php echo accesspress_letter_count( get_the_excerpt(), 278 ); ?> <br />
-			<span>Read More &gt;&gt;</span>
+			<span>Read More&nbsp;&nbsp;<i class="fa fa-angle-right"></i></span>
 			</div>
 		</a>
 

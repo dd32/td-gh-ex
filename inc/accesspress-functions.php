@@ -245,6 +245,16 @@ function accesspress_header_styles_scripts(){
 	echo "</style>\n"; 
 
 	echo "<script>\n";
+	if(of_get_option('enable_animation') == '1' && is_front_page()) : ?>
+    jQuery(document).ready(function($){
+       wow = new WOW(
+        {
+          offset:  200 
+        }
+      )
+      wow.init();
+    });
+    <?php endif;
 	echo $custom_js;
 	echo "</script>\n";
 }
