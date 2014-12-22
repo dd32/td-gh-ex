@@ -4,7 +4,9 @@
  *
  * @package    Modern
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -   1) Required files
@@ -24,18 +26,18 @@
  */
 
 	//Main theme action hooks
-		locate_template( WM_INC_DIR . 'hooks.php', true );
+		locate_template( WM_INC_DIR . 'lib/hooks.php', true );
 
 	//Admin required files
 		if ( is_admin() ) {
 
 			//WP admin functionality
-				locate_template( WM_INC_DIR . 'admin.php', true );
+				locate_template( WM_INC_DIR . 'lib/admin.php', true );
 
 			//Plugins suggestions
 				if ( apply_filters( 'wmhook_enable_plugins_integration', true ) ) {
-					locate_template( WM_INC_DIR . 'class-tgm-plugin-activation.php', true );
-					locate_template( WM_INC_DIR . 'plugins.php',                     true );
+					locate_template( WM_INC_DIR . 'tgmpa/class-tgm-plugin-activation.php', true );
+					locate_template( WM_INC_DIR . 'tgmpa/plugins.php',                     true );
 				}
 
 		}
@@ -64,8 +66,7 @@
 			add_action( 'pre_get_posts', 'wm_home_query_ignore_sticky_posts' );
 		//Archives improvements
 			add_action( 'wp', 'wm_setup_author' );
-		//Generate post format media meta field on post save
-			add_action( 'save_post', 'wm_post_format_media' );
+
 
 
 
@@ -73,9 +74,7 @@
 	 * Filters
 	 */
 
-		//Meta title
-			add_filter( 'wp_title', 'wm_title', 10, 2 );
-		//HTML in widget title of default WordPress widgets
+		//HTML in widget title
 			add_filter( 'widget_title', 'wm_html_widget_title' );
 		//Table of contents
 			add_filter( 'the_content', 'wm_nextpage_table_of_contents', 10 );
@@ -92,6 +91,9 @@
 	 * Logo
 	 *
 	 * Supports Jetpack Site Logo module.
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_logo' ) ) {
 		function wm_logo() {
@@ -111,7 +113,7 @@
 					) );
 
 			//Preparing output
-				//Logo image (HiDPI ready)
+				//Logo image
 					if ( ! empty( $args['logo_image'] ) ) {
 
 						$img_id = ( is_numeric( $args['logo_image'] ) ) ? ( absint( $args['logo_image'] ) ) : ( wm_get_image_id_from_url( $args['logo_image'] ) );
@@ -120,7 +122,7 @@
 							$logo_url = wp_get_attachment_image_src( $img_id, 'full' );
 
 							$atts = (array) apply_filters( 'wmhook_wm_logo_image_atts', array(
-									'alt'   => esc_attr( sprintf( __( '%s logo', 'wm_domain' ), $blog_info['name'] ) ),
+									'alt'   => esc_attr( sprintf( _x( '%s logo', 'Site logo image "alt" HTML attribute text.', 'wm_domain' ), $blog_info['name'] ) ),
 									'title' => esc_attr( $args['title_att'] ),
 									'class' => '',
 								) );
@@ -169,47 +171,47 @@
 	/**
 	 * SEO website meta title
 	 *
+	 * Not needed since WordPress 4.1, that's why the add_filter()
+	 * is encapsulated in the conditional check.
+	 *
 	 * @param  string $title
 	 * @param  string $sep
 	 */
-	if ( ! function_exists( 'wm_title' ) ) {
-		function wm_title( $title, $sep ) {
-			//Helper variables
-				if ( ! $sep ) {
-					$sep = ' | ';
-				}
-				$sep   = apply_filters( 'wmhook_wm_title_sep', $sep );
-				$title = apply_filters( 'wmhook_wm_title_title', $title );
-				$desc  = apply_filters( 'wmhook_wm_title_desc', get_bloginfo( 'description', 'display' ) );
+	if ( ! function_exists( 'wm_title' ) && ! function_exists( '_wp_render_title_tag' ) ) {
 
+		function wm_title( $title, $sep ) {
 			//Requirements check
 				if ( is_feed() ) {
 					return $title;
 				}
 
+			//Helper variables
+				$sep = ' ' . trim( $sep ) . ' ';
+
 			//Preparing output
-				if ( ! is_front_page() ) {
-					$title .= $sep;
-				}
 				$title .= get_bloginfo( 'name', 'display' );
 
 				//Site description
 					if (
-							$desc
+							( $site_description = get_bloginfo( 'description', 'display' ) )
 							&& ( is_home() || is_front_page() )
 						) {
-						$title .= $sep . $desc;
+						$title .= $sep . $site_description;
 					}
 
 				//Pagination / parts
-					if ( wm_paginated_suffix() ) {
+					if ( wm_paginated_suffix() && ! is_404() ) {
 						$title .= $sep . wm_paginated_suffix();
 					}
 
 			//Output
-				return apply_filters( 'wmhook_wm_title_output', esc_attr( $title ) );
+				return esc_attr( $title );
 		}
+
+		add_filter( 'wp_title', 'wm_title', 10, 2 );
+
 	} // /wm_title
+
 
 
 
@@ -368,6 +370,9 @@
 	 * the first H2 heading in each post part.
 	 * Appends the output at the top and bottom of post content.
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $content
 	 */
 	if ( ! function_exists( 'wm_nextpage_table_of_contents' ) ) {
@@ -375,7 +380,8 @@
 			//Helper variables
 				global $page, $numpages, $multipage, $post;
 
-				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( __( '"%s" table of contents', 'wm_domain' ), get_the_title() ) );
+				//translators: %s will be replaced with parted post title. Copy it, do not translate.
+				$title_text = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title_text', sprintf( _x( '"%s" table of contents', 'Parted/paginated post table of content title.', 'wm_domain' ), get_the_title() ) );
 				$title      = apply_filters( 'wmhook_wm_nextpage_table_of_contents_title', '<h2 class="screen-reader-text">' . $title_text . '</h2>' );
 
 				//Requirements check
@@ -482,6 +488,10 @@
 	 * Post meta info
 	 *
 	 * hAtom microformats compatible. @link http://goo.gl/LHi4Dy
+	 * Supports ZillaLikes plugin. @link http://www.themezilla.com/plugins/zillalikes/
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 *
 	 * @param  array $args
 	 */
@@ -568,7 +578,7 @@
 									$replacements = array(
 											'{attributes}' => '',
 											'{class}'      => 'comments-link entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( __( 'Comments: %s', 'wm_domain' ), $helper ) ) . '">' . sprintf( __( '<span class="comments-title">Comments: </span>%s', 'wm_domain' ), '<span class="comments-count">' . $helper . '</span>' ) . '</a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . $element_id . '" title="' . esc_attr( sprintf( _x( 'Comments: %s', 'Number of comments in post meta.', 'wm_domain' ), $helper ) ) . '">' . sprintf( _x( '<span class="comments-title">Comments: </span>%s', 'Number of comments in post meta (keep the HTML tags).', 'wm_domain' ), '<span class="comments-count">' . $helper . '</span>' ) . '</a>',
 										);
 								}
 
@@ -599,7 +609,24 @@
 									$replacements = array(
 											'{attributes}' => '',
 											'{class}'      => 'entry-edit entry-meta-element',
-											'{content}'    => '<a href="' . esc_url( $helper ) . '" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '"><span>' . __( 'Edit', 'wm_domain' ) . '</span></a>',
+											'{content}'    => '<a href="' . esc_url( $helper ) . '" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '"><span>' . _x( 'Edit', 'Edit post link.', 'wm_domain' ) . '</span></a>',
+										);
+								}
+
+							break;
+							case 'likes':
+
+								if (
+										function_exists( 'zilla_likes' )
+										&& apply_filters( 'wmhook_wm_post_meta_enable_' . $meta, true, $args )
+									) {
+									global $zilla_likes;
+									$meta_output = $zilla_likes->do_likes();
+
+									$replacements = array(
+											'{attributes}' => '',
+											'{class}'      => 'entry-likes entry-meta-element',
+											'{content}'    => $meta_output,
 										);
 								}
 
@@ -615,7 +642,7 @@
 									$replacements = array(
 											'{attributes}' => wm_schema_org( 'url' ),
 											'{class}'      => 'entry-permalink entry-meta-element',
-											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
+											'{content}'    => '<a href="' . get_permalink( $args['post_id'] ) . '" title="' . esc_attr( sprintf( __( 'Permalink to "%s"', 'wm_domain' ), the_title_attribute( $the_title_attribute_args ) ) ) . '" rel="bookmark"><span>' . get_the_title( $args['post_id'] ) . '</span></a>',
 										);
 								}
 
@@ -668,6 +695,9 @@
 	/**
 	 * Paginated heading suffix
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $tag           Wrapper tag
 	 * @param  string $singular_only Display only on singular posts of specific type
 	 */
@@ -701,7 +731,7 @@
 
 			//Preparing output
 				if ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( __( '(page %s)', 'wm_domain' ), $paged ) . $tag[1];
+					$output = ' ' . $tag[0] . sprintf( _x( '(page %s)', 'Paginated content title suffix.', 'wm_domain' ), $paged ) . $tag[1];
 				}
 
 			//Output
@@ -737,337 +767,6 @@
 				return strpos( $post->post_content, '<!--more-->' );
 		}
 	} // /wm_has_more_tag
-
-
-
-	/**
-	 * Post formats
-	 */
-
-		/**
-		 * Get the post format media
-		 *
-		 * Supported post formats: audio, gallery, image, video.
-		 * Must be inside the loop.
-		 *
-		 * @param  string $format
-		 */
-		if ( ! function_exists( 'wm_get_post_format_media' ) ) {
-			function wm_get_post_format_media( $format = null ) {
-				//Helper variables
-					if ( empty( $format ) ) {
-						$format = get_post_format();
-					}
-
-				//Output
-					return wm_post_format_media( get_the_ID(), $format );
-			}
-		} // /wm_get_post_format_media
-
-
-
-			/**
-			 * Get/set the post format media
-			 *
-			 * If not set already, get the post media from the post content
-			 * and save it in a hidden post meta field. But, allow user to
-			 * bypass by setting a 'post_format_media' custom meta field.
-			 *
-			 * The function is triggered also on every post save to refresh
-			 * the hidden post media meta field.
-			 *
-			 * @param  int $post_id
-			 */
-			if ( ! function_exists( 'wm_post_format_media' ) ) {
-				function wm_post_format_media( $post_id = null, $format = null ) {
-					//Requirements check
-						if ( empty( $post_id ) ) {
-							$post_id = get_the_ID();
-						}
-						if ( empty( $post_id ) ) {
-							return false;
-						}
-
-					//Helper variables
-						$post_id = absint( $post_id );
-						$format  = ( empty( $format ) ) ? ( get_post_format( $post_id ) ) : ( $format );
-
-						//Allow users to set custom field first
-							$output = get_post_meta( $post_id, 'post_format_media', true );
-						//If no user custom field set, get the previously generated one
-							if ( empty( $output ) ) {
-								$output = get_post_meta( $post_id, '_wm_post_format_media', true );
-							}
-						//Premature output filtering
-							$output = apply_filters( 'wmhook_wm_post_format_media_output_premature', $output, $post_id, $format );
-
-						//Force refresh (regenerate and resave) the post media meta field
-							if (
-									//when forced
-									apply_filters( 'wmhook_wm_post_format_media_force_refresh', false, $post_id, $format )
-									//when no media saved
-									|| empty( $output )
-									//when saving post (no need for checking nonce as this can be triggered anywhere...)
-									|| (
-											is_admin()
-											&& current_user_can( 'edit_posts', $post_id )
-											&& ! wp_is_post_revision( $post_id )
-											&& isset( $_REQUEST )
-											&& ! empty( $_REQUEST )
-											&& isset( $_REQUEST['post_format'] )
-											&& ! empty( $_REQUEST['post_format'] )
-										)
-								) {
-								$output = '';
-							}
-
-						//Return if we have output
-							if ( $output ) {
-								return apply_filters( 'wmhook_wm_post_format_media_output', $output, $post_id, $format );
-							}
-
-					//Preparing output
-
-						/**
-						 * This is being triggered only when forced to refresh
-						 */
-
-							switch ( $format ) {
-								case 'audio':
-								case 'video':
-
-										$output = wm_get_post_media_audio_video( $post_id );
-
-								break;
-								case 'gallery':
-
-										$output = wm_get_post_media_gallery( $post_id );
-
-								break;
-								case 'image':
-
-										$output = wm_get_post_media_image( $post_id );
-
-								break;
-
-								default:
-								break;
-							} // /switch
-
-							//Filter the output
-								$output = apply_filters( 'wmhook_wm_post_format_media_output', $output, $post_id, $format );
-
-							//Save the post media meta field
-								update_post_meta( $post_id, '_wm_post_format_media', $output );
-
-					//Output
-						return $output;
-				}
-			} // /wm_post_format_media
-
-
-
-				/**
-				 * Get the post format media: audio, video
-				 *
-				 * Searches for media shortcode or URL in the post content.
-				 *
-				 * @param  int $post_id
-				 *
-				 * @return  Audio/video/playlist shortcode or oembed media URL.
-				 */
-				if ( ! function_exists( 'wm_get_post_media_audio_video' ) ) {
-					function wm_get_post_media_audio_video( $post_id ) {
-						//Requirements check
-							if ( empty( $post_id ) ) {
-								return;
-							}
-
-						//Helper variables
-							$output  = '';
-							$post    = get_post( $post_id );
-							$content = $post->post_content;
-							$pattern = ( 'video' == get_post_format( $post_id ) ) ? ( 'video|playlist|wpvideo' ) : ( 'audio|playlist' );
-
-						//Preparing output
-
-							/**
-							 * INFO:
-							 * preg_match() sufixes:
-							 * @link  http://php.net/manual/en/function.preg-match.php#102214
-							 * @link  http://php.net/manual/en/function.preg-match.php#111573
-							 */
-
-							//Search for the media
-								$pattern = '/\[(' . $pattern . ')(.*)\]/u';
-
-								preg_match( $pattern, strip_tags( $content ), $matches );
-
-								if ( isset( $matches[0] ) ) {
-
-									$output = trim( $matches[0] );
-
-									//If [playlist], use the first media
-									/*
-										if ( false !== strpos( $output, 'ids="' ) ) {
-											preg_match( '/ids="(.+?)"/', $output, $matches );
-
-											$output = explode( ',', str_replace( array( 'ids="', '"', ' ' ), '', $matches[0] ) );
-											$output = '[' . get_post_format() . ' src="' . wp_get_attachment_url( absint( $output[0] ) ) . '" /]';
-										}
-									*/
-
-								} elseif ( false !== strpos( $content, 'http' ) ) {
-
-									//If no prioritized shortcode found, look for oembed media URL
-										$pattern = '/(http|https)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/';
-
-										preg_match_all( $pattern, strip_tags( $content ), $matches );
-
-									//Return only the first URL which is actually oembed one
-										if ( isset( $matches[0] ) && is_array( $matches[0] ) ) {
-											$matches = array_unique( $matches[0] );
-
-											foreach ( $matches as $url ) {
-												if ( wp_oembed_get( esc_url( $url ) ) ) {
-													$output = $url;
-													break;
-												}
-											}
-										}
-
-								}
-
-						//Output
-							return apply_filters( 'wmhook_wm_get_post_media_audio_video_output', $output, $post_id );
-					}
-				} // /wm_get_post_media_audio_video
-
-
-
-				/**
-				 * Get the post format media: gallery
-				 *
-				 * Get images from the first [gallery] shortcode found in the post content
-				 * or get images attached to the post.
-				 *
-				 * @param  int $post_id
-				 *
-				 * @return  Gallery images IDs array.
-				 */
-				if ( ! function_exists( 'wm_get_post_media_gallery' ) ) {
-					function wm_get_post_media_gallery( $post_id ) {
-						//Requirements check
-							if ( empty( $post_id ) ) {
-								return;
-							}
-
-						//Helper variables
-							$output  = '';
-							$post    = get_post( $post_id );
-							$content = $post->post_content;
-
-						//Preparing output
-
-							/**
-							 * INFO:
-							 * preg_match() sufixes:
-							 * @link  http://php.net/manual/en/function.preg-match.php#102214
-							 * @link  http://php.net/manual/en/function.preg-match.php#111573
-							 */
-
-							//Search for the media
-								$pattern = '/\[gallery(.*)\]/u';
-
-								preg_match( $pattern, strip_tags( $content ), $matches );
-
-								//Get [gallery] shortcode parameters only
-									if ( isset( $matches[1] ) ) {
-										$output = trim( $matches[1] );
-									}
-
-							//Get image IDs array: from shortcode attribute or attached images
-								if ( false !== strpos( $output, 'ids="' ) ) {
-
-									preg_match( '/ids="(.+?)"/u', $output, $matches );
-
-									$output = explode( ',', str_replace( array( 'ids="', '"', ' ' ), '', $matches[0] ) );
-
-								} else {
-
-									$output = array_keys( (array) get_children( apply_filters( 'wmhook_wm_get_post_media_gallery_get_children_args', array(
-											'post_parent'    => $post_id,
-											'post_status'    => 'inherit',
-											'post_type'      => 'attachment',
-											'post_mime_type' => 'image',
-											'order'          => 'ASC',
-											'orderby'        => 'menu_order'
-										) ) ) );
-
-								}
-
-							//Make shure we output array if we have the images
-								if ( ! empty( $output ) ) {
-									$output = (array) $output;
-								}
-
-						//Output
-							return apply_filters( 'wmhook_wm_get_post_media_gallery_output', $output, $post_id );
-					}
-				} // /wm_get_post_media_gallery
-
-
-
-				/**
-				 * Get the post format media: image
-				 *
-				 * Searches for the image in the post content only if featured image not set.
-				 *
-				 * @param  int $post_id
-				 *
-				 * @return  Image ID (if it is uploaded image) or URL (for external images).
-				 */
-				if ( ! function_exists( 'wm_get_post_media_image' ) ) {
-					function wm_get_post_media_image( $post_id ) {
-						//Requirements check
-							if (
-									empty( $post_id )
-									|| has_post_thumbnail( $post_id )
-								) {
-								return;
-							}
-
-						//Helper variables
-							$output  = '';
-							$post    = get_post( $post_id );
-							$content = $post->post_content;
-
-						//Preparing output
-
-							/**
-							 * INFO:
-							 * preg_match() sufixes:
-							 * @link  http://php.net/manual/en/function.preg-match.php#example-4907
-							 */
-
-							//Search for the media
-								$pattern = '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i';
-
-								preg_match( $pattern, $content, $matches );
-
-								if ( isset( $matches[1] ) ) {
-									$output = trim( $matches[1] );
-								}
-
-							//Get the image ID if the image is uploaded, otherwise output the URL
-								if ( $image_id = wm_get_image_id_from_url( $output ) ) {
-									$output = $image_id;
-								}
-
-						//Output
-							return apply_filters( 'wmhook_wm_get_post_media_image_output', $output, $post_id );
-					}
-				} // /wm_get_post_media_image
 
 
 
@@ -1234,6 +933,9 @@
 	/**
 	 * Get Google Fonts link
 	 *
+	 * Returns a string such as:
+	 * //fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
+	 *
 	 * @param  array $fonts  Force particular fonts
 	 */
 	if ( ! function_exists( 'wm_google_fonts_url' ) ) {
@@ -1265,11 +967,6 @@
 							'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
 						), '//fonts.googleapis.com/css' );
 				}
-
-				/**
-				 * All of the above will return a string such as:
-				 * //fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
-				 */
 
 			//Output
 				return apply_filters( 'wmhook_wm_google_fonts_url_output', $output );
