@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/esteem/
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Esteem is a clean multipurpose responsive WordPress theme designed to fit business, portfolio, blogging or any type of site. The theme supports custom header, custom background, custom widgets, page templates and has built in options panel to configure primary color, site logo, slider, sidebar layout and 3 blog layout. It's also fully compatible with popular plugins like contact Form 7, WP PageNavi and Breadcrumb Navxt and is translation ready. Get free support at http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/esteem/.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats
@@ -306,7 +306,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
 	background-color: #2F343A;
 	transition: all 0.3s ease-out 0s;
-	
+
 }
 button:focus,
 html input[type="button"]:focus,
@@ -492,13 +492,13 @@ a:active {
 .main-navigation ul ul :hover > a {
 }
 .main-navigation ul ul a:hover {
-	
+
 }
 .main-navigation ul li:hover > ul {
 	display: block;
 }
 .main-navigation li.current_page_item > a,
-.main-navigation li.current-menu-item > a, 
+.main-navigation li.current-menu-item > a,
 .main-navigation li.current-menu-ancestor > a{
 	color: #ED564B;
 }
@@ -624,7 +624,7 @@ input[type="password"] {
     margin: 0 0 20px 20px;
 }
 
-/* =SEARCH WIDGET 
+/* =SEARCH WIDGET
 ----------------------------------------------- */
 #search-submit {
 	display: none;
@@ -657,7 +657,7 @@ input[type="password"] {
   font-style: normal;
 }
 
-/* =BODY 
+/* =BODY
 ----------------------------------------------- */
 body {
 	padding-top: 40px;
@@ -759,7 +759,7 @@ body {
 	padding-right: 0;
 }
 
-/* =FEATURED SLIDER 
+/* =FEATURED SLIDER
 ----------------------------------------------- */
 #slider-text-box {
 	color: #ffffff;
@@ -806,7 +806,7 @@ body {
     display: none;
 }
 
-/* =SLIDER CONTROLLERS 
+/* =SLIDER CONTROLLERS
 ----------------------------------------------- */
 #controllers {
     bottom: 15px;
@@ -961,7 +961,7 @@ body {
 	padding-top: 30px;
 }
 
-/* =2,3,4 COLUMNS 
+/* =2,3,4 COLUMNS
 ----------------------------------------------- */
 .tg-one-half { width: 48.46625%; }
 .tg-one-third { width: 31.288344%; }
@@ -1117,13 +1117,13 @@ body {
 /* =CALL TO ACTION WIDGET
 ----------------------------------------------- */
 .call-to-action {
-	width: 100%;	
+	width: 100%;
 	box-shadow: inset 0px 0px 4px 1px rgba(204,204,204,0.7);
 	background-color: #F7F7F7;
 }
 .call-to-action-text {
 	float: left;
-	width: 78%;	
+	width: 78%;
 }
 .call-to-action-text-inner-wrap {
 	padding: 11px 26px;
@@ -1437,7 +1437,7 @@ body {
 	color: #ED564B;
 }
 
-/* =SCROLL UP 
+/* =SCROLL UP
 ----------------------------------------------- */
 a#scroll-up {
 	bottom: 20px;

@@ -19,18 +19,18 @@ if ( ! function_exists( 'esteem_filter_wp_title' ) ) :
  */
 function esteem_filter_wp_title( $title ) {
 	global $page, $paged;
-	
+
 	// Get the Site Name
    $site_name = get_bloginfo( 'name' );
 
    // Get the Site Description
    $site_description = get_bloginfo( 'description' );
 
-   $filtered_title = ''; 
+   $filtered_title = '';
 
 	// For Homepage or Frontpage
-   if(  is_home() || is_front_page() ) {		
-		$filtered_title .= $site_name;	
+   if(  is_home() || is_front_page() ) {
+		$filtered_title .= $site_name;
 		if ( !empty( $site_description ) )  {
         	$filtered_title .= ' &#124; '. $site_description;
 		}
@@ -38,7 +38,7 @@ function esteem_filter_wp_title( $title ) {
 	elseif( is_feed() ) {
 		$filtered_title = '';
 	}
-	else{	
+	else{
 		$filtered_title = $title . $site_name;
 	}
 
@@ -46,7 +46,7 @@ function esteem_filter_wp_title( $title ) {
 	if( $paged >= 2 || $page >= 2 ) {
 		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'esteem' ), max( $paged, $page ) );
 	}
-	
+
 	// Return the modified title
    return $filtered_title;
 }
@@ -91,7 +91,7 @@ function esteem_slider() { ?>
 					<section id="featured-slider" class="<?php echo $classes; ?>">
 						<figure class="slider-image-wrap">
 							<img alt="<?php echo esc_attr( $esteem_slider_title ); ?>" src="<?php echo esc_url( $esteem_slider_image ); ?>">
-					    </figure>	
+					    </figure>
 					    <?php if( !empty( $esteem_slider_title ) || !empty( $esteem_slider_text ) ) { ?>
 						    <article id="slider-text-box">
 					    		<div class="inner-wrap">
@@ -104,7 +104,7 @@ function esteem_slider() { ?>
 							     		<?php } ?>
 							     	</div>
 							    </div>
-							</article>	
+							</article>
 						<?php } ?>
 					</section><!-- .featured-slider -->
 				<?php
@@ -115,7 +115,7 @@ function esteem_slider() { ?>
 		<nav id="controllers" class="clearfix">
 		</nav><!-- #controllers -->
 	</div><!-- .slider-cycle -->
-<?php   
+<?php
 }
 endif;
 
@@ -165,8 +165,12 @@ function esteem_header_title() {
 	elseif( is_search() ) {
 		$esteem_header_title = __( 'Search Results', 'esteem' );
 	}
-	elseif( is_page() || is_home()  ) {
+	elseif( is_page() ) {
 		$esteem_header_title = get_the_title();
+	}
+	elseif( is_home() ) {
+		$page_for_posts = get_option( 'page_for_posts' );
+		$esteem_header_title = get_the_title( $page_for_posts );
 	}
 	elseif( is_single()  ) {
 		$esteem_header_title = get_the_title();
@@ -191,11 +195,11 @@ if ( ! function_exists( 'esteem_breadcrumb' ) ) :
  */
 function esteem_breadcrumb() {
 	if( function_exists( 'bcn_display' ) ) {
-		echo '<div class="breadcrumb">'; 
-		echo '<span class="breadcrumb-title">'.__( 'You are here:', 'esteem' ).'</span>';           
-		bcn_display();               
-		echo '</div> <!-- .breadcrumb -->'; 
-	}   
+		echo '<div class="breadcrumb">';
+		echo '<span class="breadcrumb-title">'.__( 'You are here:', 'esteem' ).'</span>';
+		bcn_display();
+		echo '</div> <!-- .breadcrumb -->';
+	}
 }
 endif;
 ?>

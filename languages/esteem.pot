@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Esteem\n"
-"POT-Creation-Date: 2014-12-03 15:55+0545\n"
-"PO-Revision-Date: 2014-12-03 15:55+0545\n"
+"POT-Creation-Date: 2014-12-23 11:43+0545\n"
+"PO-Revision-Date: 2014-12-23 11:43+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/header-functions.php:195
+#: inc/header-functions.php:199
 msgid "You are here:"
 msgstr ""
 
@@ -470,6 +470,24 @@ msgstr ""
 #: navigation.php:43
 msgctxt "Next post link"
 msgid "&rarr;"
+msgstr ""
+
+#: no-results.php:16
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:25
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: options.php:28
