@@ -1082,46 +1082,15 @@ function accesspresslite_theme_options_page() {
 
 						<p><?php _e('We want to give "a little beautiful thing" - back to the community.
 						With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
-
+						<hr />
+						
 						<p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<hr />
-						<?php
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/')."'><img alt='AccessPress Pro' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-pro.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div>";
-
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-ray/')."'><img alt='AccessPress Ray' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-ray.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div></div>";
-
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-parallax/')."'><img alt='AccessPress Parallax' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-parallax.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div></div>";
-
-						$other_product .= "<div class='clearfix'></div>";
-
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-anonymous-post/')."'><img alt='AccessPress Anonymous Post' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-anonymous-post.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div>";
-
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-anonymous-post-premium/')."'><img alt='AccessPress Anonymous Post Pro' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-anonymous-post-pro.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div></div>";
-
-						$other_product .= "<div class='product'>";
-						$other_product .= "<a target='_blank' href='".esc_url('https://accesspressthemes.com/wordpress-plugins/accesspress-social-icons/')."'><img alt='AccessPress Social Icons' src='".get_template_directory_uri()."/inc/admin-panel/images/accesspress-social-icons.jpg'>";
-						$other_product .= "<div class='view-detail'>View Detail</div></a>";
-						$other_product .= "</div></div>";
-
-						$other_product .= "<div class='clearfix'></div>";
-						echo $other_product;
-						?>
+						
+						<h4><?php _e('Our other Products','accesspresslite'); ?></h4>
+						<p><?php _e('Themes - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/themes'); ?>"><?php echo esc_url('http://accesspressthemes.com/themes'); ?></a></p>
+						<p><?php _e('Plugins - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('http://accesspressthemes.com/plugins'); ?></a></p>
 						<hr />
 						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
