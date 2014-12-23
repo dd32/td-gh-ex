@@ -1,6 +1,4 @@
 /* Options Framework Admin Styles */
-
-
 .a1-themes{
 	background-color:#FFF;
 	border:1px solid #e5e5e5;
@@ -133,8 +131,6 @@
   border: 7px solid transparent;
   border-left: 7px solid #d3d2d2;
 }
-
-
 .a1-themes .heading {
     border: 1px solid #dfdfdf;	
 	background-color: #F1F1F1;
@@ -181,8 +177,8 @@
     padding-top: 15px;
     width: 96.7%;
 }
-
 .a1-themes input[type='text'],
+.a1-themes input[type='email'],
 .a1-themes textarea{
 	box-shadow: none;
     height: auto;
@@ -198,7 +194,6 @@
     margin-right: 30px;
     width: auto;
 }
-
 /*****/
 /*  Theme options style
 /*****/
@@ -223,11 +218,9 @@
     margin: 10px 3px;    
 	width: 100%;
 }
-
 /*****/
 /* Image Uploader
 /*****/
-
 .theme-tabs .upload{
 	float:left;
 	width:50%;
@@ -282,25 +275,12 @@
 .a1-footer ul{
 	margin:0px;
 }
-.a1-footer ul li{
-	display:inline-block;
-	margin:10px 5px;
-}
 .a1-footer .btn-save{
 	float: right;
     margin: 3px 0;
 }
 .a1-footer .btn-save .button-primary{
 	margin-right:20px;
-}
-
-.a1-footer a{
-	color:#FFF;
-	text-decoration:none;
-}
-.a1-footer img
-{
- vertical-align:middle;
 }
 .save-options{
 	background-color: rgba(0, 0, 0, 0.8);
@@ -422,7 +402,6 @@
 	border-radius: 10%;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);   
 }
-
 .theme-colors .ft-control {
 	width: 75px;	
 }
@@ -434,8 +413,7 @@
 	transition:all 0.5s ease-in-out 0s;
 	-webkit-transition:all 0.5s ease-in-out 0s;
 }
-.theme-colors .ft-control label:before { 
-	background-image: url("../images/color-shape.png");
+.theme-colors .ft-control label:before {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -451,11 +429,7 @@
 	transition:all 0.3s ease-in-out 0s;
 	-webkit-transition:all 0.3s ease-in-out 0s;
 }
-.theme-colors .ft-control input[type=radio]:checked + label:before{
-	background-image: url("../images/color-shape-select.png");
-	border-radius: 10%;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);   
-}
+
 .theme-background .ft-control{
 	height:120px;
 	width:120px;
@@ -475,7 +449,6 @@
 .theme-background .ft-control input[type="radio"]:checked + label{
 	opacity:0.7;
 }
-
 .theme-fonts .ft-control{
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin: 2px 3px;
@@ -520,29 +493,7 @@
 p.mail-condition{
 	font-size:11px;
 }
-.newsletter {
-    clear: both;
-    display: table;
-    float: right;
-    margin-right: 15%;
-    width: 60%;
-}
-.newsletter h1 {
-	border-bottom: 1px solid;
-    color: rgb(53, 75, 88);
-    display: table;
-    padding-bottom: 5px;
-}
-.newsletter > p {
-    color: rgb(53, 75, 88);
-    font-size: 16px;
-}
-.newsletter a {
-    color: rgb(53, 75, 88);
-}
-.newsletter a:hover {
-    color: #212121;
-}
+
 @media (max-width:992px){
 	.logo{
 		width:100%;

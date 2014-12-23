@@ -19,9 +19,7 @@ if ( post_password_required() )
     <ul>
 		<?php wp_list_comments( array( 'callback' => 'a1_comment', 'short_ping' => true) ); ?>
     </ul>
-    
 	<?php paginate_comments_links(); ?>    
 	<?php endif; // have_comments() ?>
 		<?php comment_form(); ?>
 </div><!-- #comments .comments-area -->
-

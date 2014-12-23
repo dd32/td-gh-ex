@@ -9,7 +9,7 @@ get_header(); ?>
   <div class="col-md-12 a1-breadcrumb">
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">
-    <h3><?php printf( __( 'Tag : %s', 'a1' ), ' ' . single_tag_title( '', false ));?></h3>
+    <h3><?php _e('Tag','a1'); echo':'. single_tag_title( '', false ); ?></h3>
       </div>
       <div class="col-md-6 col-sm-6 no-padding-lr right-part">
         <?php if(function_exists('a1_custom_breadcrumbs')) a1_custom_breadcrumbs(); ?>

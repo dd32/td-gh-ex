@@ -30,7 +30,7 @@ get_header();
             <div class="blog-content">
               <?php the_content();
 			wp_link_pages( array(
-		            'before'      => '<div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">' . __( 'Pages:', 'a1' ) . '',
+		            'before'      => '<div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">' . __( 'Pages', 'a1' ) . ':',
 		            'after'       => '</div>',
 		            'link_before' => '<span>',
 		            'link_after'  => '</span>',

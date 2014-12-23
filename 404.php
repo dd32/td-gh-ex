@@ -7,7 +7,7 @@ get_header(); ?>
  <div class="col-md-12 a1-breadcrumb">
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">
-        <h3><?php _e('404', 'a1'); ?></h3>
+        <h3><?php echo '404 -'; _e('Article Not Found', 'a1'); ?></h3>
       </div>
       <div class="col-md-6 col-sm-6 no-padding-lr right-part">
         <?php if(function_exists('a1_custom_breadcrumbs')) a1_custom_breadcrumbs(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
     <div class="row">	
       <div class="col-md-12 blog-article no-padding">
 		<h2><?php _e('Epic 404 - Article Not Found', 'a1'); ?></h2>
-		<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'a1' ); ?></p>
+		<p><?php _e( 'It looks like nothing was found at this location try a search', 'a1' ); ?>?</p>
 		<?php get_search_form(); ?>
       </div>
     </div>

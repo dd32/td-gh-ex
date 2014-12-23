@@ -1,3 +1,13 @@
 Version 1.0
-
 i)   Theme Submitted for approval
+Version 1.1
+i) Set Translation ready fuctions
+ii) Add email validation in theme options email filed
+
+
+Version 1.2 (12 Dec 2014)
+i) set new sanitization for image and text field.
+ii) Problem solved post and page update.
+
+Version 1.2.1 (23 Dec 2014)
+i) solve translation ready issue
