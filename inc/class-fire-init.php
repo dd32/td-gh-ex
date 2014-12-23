@@ -4,7 +4,7 @@
 * Adds theme supports using WP functions
 * Adds plugins compatibilities
 *
-* 
+*
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0
@@ -22,13 +22,15 @@ if ( ! class_exists( 'TC_init' ) ) :
       public $slider_size;
       public $skins;
       public $skin_color_map;
+      public $font_pairs;
+      public $font_selectors;
       public $fp_ids;
       public $socials;
       public $sidebar_widgets;
       public $footer_widgets;
       public $widgets;
       public $post_list_layout;
-      public $post_formats_with_no_header;
+      public $post_formats_with_no_heading;
       public $content_404;
       public $content_no_results;
       public $default_slides;
@@ -66,31 +68,32 @@ if ( ! class_exists( 'TC_init' ) ) :
                                             'metabox'       => __( 'No sidebars : full width layout' , 'customizr' ),
                                         ),
           );
-          
+
           //Default images sizes
           $this -> tc_thumb_size      = array('width' => 270 , 'height' => 250, 'crop' => true ); //size name : tc-thumb
           $this -> slider_full_size   = array('width' => 9999 , 'height' => 500, 'crop' => true ); //size name : slider-full
           $this -> slider_size        = array('width' => 1170 , 'height' => 500, 'crop' => true ); //size name : slider
 
           //Default skins array
-          $this -> skins              =  array( 
+          $this -> skins              =  array(
                 'blue.css'        =>  __( 'Blue' , 'customizr' ),
-                'blue2.css'       =>  __( 'Light blue ' , 'customizr' ),
-                'blue3.css'       =>  __( 'Green blue' , 'customizr'),
-                'green.css'       =>  __( 'Green' , 'customizr' ),
-                'green2.css'      =>  __( 'Light green' , 'customizr'),
-                'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
-                'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
-                'orange.css'      =>  __( 'Orange' , 'customizr' ),
-                'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
-                'red.css'         =>  __( 'Red' , 'customizr' ),
-                'red2.css'        =>  __( 'Flat red' , 'customizr' ),
-                'purple.css'      =>  __( 'Purple' , 'customizr' ),
-                'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
+                'black.css'       =>  __( 'Black' , 'customizr' ),
+                'black2.css'      =>  __( 'Flat black' , 'customizr' ),
                 'grey.css'        =>  __( 'Grey' , 'customizr' ),
                 'grey2.css'       =>  __( 'Ligth grey' , 'customizr' ),
-                'black.css'       =>  __( 'Black' , 'customizr' ),
-                'black2.css'      =>  __( 'Flat black' , 'customizr' )
+                'purple2.css'     =>  __( 'Flat purple' , 'customizr' ),
+                'purple.css'      =>  __( 'Purple' , 'customizr' ),
+                'red2.css'        =>  __( 'Flat red' , 'customizr' ),
+                'red.css'         =>  __( 'Red' , 'customizr' ),
+                'orange.css'      =>  __( 'Orange' , 'customizr' ),
+                'orange2.css'     =>  __( 'Flat orange' , 'customizr'),
+                'yellow.css'      =>  __( 'Yellow' , 'customizr' ),
+                'yellow2.css'     =>  __( 'Flat yellow' , 'customizr' ),
+                'green.css'       =>  __( 'Green' , 'customizr' ),
+                'green2.css'      =>  __( 'Light green' , 'customizr'),
+                'blue3.css'       =>  __( 'Green blue' , 'customizr'),
+                'blue2.css'       =>  __( 'Light blue ' , 'customizr' )
+
           );
 
           //Main skin color array
@@ -111,8 +114,72 @@ if ( ! class_exists( 'TC_init' ) ) :
                 'grey.css'        =>  '#5A5A5A',
                 'grey2.css'       =>  '#E4E4E4',
                 'black.css'       =>  '#000',
-                'black2.css'      =>  '#394143'               
+                'black2.css'      =>  '#394143'
           );
+
+          //Default fonts pairs
+          $this -> font_pairs             = array(
+            'gfont' => array(
+              'name'  => __('Google fonts pairs' , 'customizr'),
+              'list'  => apply_filters( 'tc_gfont_pairs' , array(
+                '_g_fjalla_cantarell'              => array( 'Fjalla One &amp; Cantarell' , 'Fjalla+One:400|Cantarell:400' ),
+                '_g_lobster_raleway'               => array( 'Lobster &amp; Raleway' , 'Lobster:400|Raleway' ),
+                '_g_alegreya_roboto'               => array( 'Alegreya &amp; Roboto' , 'Alegreya:700|Roboto' ),
+                '_g_lato_grand_hotel'              => array( 'Lato &amp; Grand Hotel', 'Lato:400|Grand+Hotel' ),
+                '_g_dosis_opensans'                => array( 'Dosis &amp; Open Sans' , 'Dosis:400|Open+Sans' ),
+                '_g_dancing_script_eb_garamond'    => array( 'Dancing Script &amp; EB Garamond' , 'Dancing+Script:700|EB+Garamond' ),
+                '_g_amatic_josephin'               => array( 'Amatic SC &amp; Josefin Sans' , 'Amatic+SC:700|Josefin+Sans:700' ),
+                '_g_oswald_droid'                  => array( 'Oswald &amp; Droid Serif' , 'Oswald:700|Droid+Serif:400' ),
+                '_g_playfair_alice'                => array( 'Playfair Display &amp; Alice' , 'Playfair+Display:700|Alice' ),
+                '_g_medula_abel'                   => array( 'Medula One &amp; Abel' , 'Medula+One:400|Abel' ),
+                '_g_coustard_leckerli'             => array( 'Coustard Ultra &amp; Leckerli One' , 'Coustard:900|Leckerli+One' ),
+                '_g_sacramento_alice'              => array( 'Sacramento &amp; Alice' , 'Sacramento:400|Alice' ),
+                '_g_squada_allerta'                => array( 'Squada One &amp; Allerta' , 'Squada+One:400|Allerta' ),
+                '_g_bitter_sourcesanspro'          => array( 'Bitter &amp; Source Sans Pro' , 'Bitter:400|Source+Sans+Pro' ),
+                '_g_montserrat_neuton'             => array( 'Montserrat &amp; Neuton' , 'Montserrat:400|Neuton' )
+              ) )
+            ),
+            'wsfont' => array(
+              'name'  => __('Web safe fonts pairs' , 'customizr'),
+              'list'  => apply_filters( 'tc_wsfont_pairs' , array(
+                'impact_palatino'               => array( 'Impact &amp; Palatino' , 'Impact,Charcoal,sans-serif|Palatino Linotype,Book Antiqua,Palatino,serif'),
+                'georgia_verdana'               => array( 'Georgia &amp; Verdana' , 'Georgia,Georgia,serif|Verdana,Geneva,sans-serif' ),
+                'tahoma_times'                  => array( 'Tahoma &amp; Times' , 'Tahoma,Geneva,sans-serif|Times New Roman,Times,serif'),
+                'lucida_courrier'               => array( 'Lucida &amp; Courrier' , 'Lucida Sans Unicode,Lucida Grande,sans-serif|Courier New,Courier New,Courier,monospace')
+              ) )
+            ),
+           'default' => array(
+            'name'  => __('Single fonts' , 'customizr'),
+            'list'  => apply_filters( 'tc_single_fonts' , array(
+                  '_g_cantarell'                  => array( 'Cantarell' , 'Cantarell:400|Cantarell:400' ),
+                  '_g_raleway'                    => array( 'Raleway' , 'Raleway|Raleway' ),
+                  '_g_roboto'                     => array( 'Roboto' , 'Roboto|Roboto' ),
+                  '_g_grand_hotel'                => array( 'Grand Hotel', 'Grand+Hotel|Grand+Hotel' ),
+                  '_g_opensans'                   => array( 'Open Sans' , 'Open+Sans|Open+Sans' ),
+                  '_g_script_eb_garamond'         => array( 'EB Garamond' , 'EB+Garamond|EB+Garamond' ),
+                  '_g_josephin'                   => array( 'Josefin Sans' , 'Josefin+Sans:700|Josefin+Sans:700' ),
+                  '_g_droid'                      => array( 'Droid Serif' , 'Droid+Serif:400|Droid+Serif:400' ),
+                  '_g_alice'                      => array( 'Alice' , 'Alice|Alice' ),
+                  '_g_abel'                       => array( 'Abel' , 'Abel|Abel' ),
+                  '_g_leckerli'                   => array( 'Leckerli One' , 'Leckerli+One|Leckerli+One' ),
+                  '_g_allerta'                    => array( 'Allerta' , 'Allerta|Allerta' ),
+                  '_g_sourcesanspro'              => array( 'Source Sans Pro' , 'Source+Sans+Pro|Source+Sans+Pro' ),
+                  '_g_neuton'                     => array( 'Neuton' , 'Neuton|Neuton' ),
+                  'helvetica_arial'               => array( 'Helvetica' , 'Helvetica Neue,Helvetica,Arial,sans-serif|Helvetica Neue,Helvetica,Arial,sans-serif' ),
+                  'palatino'                      => array( 'Palatino Linotype' , 'Palatino Linotype,Book Antiqua,Palatino,serif|Palatino Linotype,Book Antiqua,Palatino,serif' ),
+                  'verdana'                       => array( 'Verdana' , 'Verdana,Geneva,sans-serif|Verdana,Geneva,sans-serif' ),
+                  'time_new_roman'                => array( 'Times New Roman' , 'Times New Roman,Times,serif|Times New Roman,Times,serif' ),
+                  'courier_new'                   => array( 'Courier New' , 'Courier New,Courier New,Courier,monospace|Courier New,Courier New,Courier,monospace' )
+                )
+              )
+            )
+          );//end of font pairs
+
+          $this -> font_selectors     = array(
+            'titles' => implode(',' , apply_filters( 'tc-titles-font-selectors' , array('.site-title' , '.site-description', 'h1', 'h2', 'h3' ) ) ),
+            'body'   => implode(',' , apply_filters( 'tc-body-font-selectors' , array('body' , '.navbar .nav>li>a') ) )
+          );
+
 
           //Default featured pages ids
           $this -> fp_ids             = array( 'one' , 'two' , 'three' );
@@ -188,7 +255,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
 
           //Default sidebar widgets
-          $this -> sidebar_widgets    = array(   
+          $this -> sidebar_widgets    = array(
                                             'right'         => array(
                                                             'name'                 => __( 'Right Sidebar' , 'customizr' ),
                                                             'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
@@ -224,7 +291,7 @@ if ( ! class_exists( 'TC_init' ) ) :
           );
 
           //Defines post formats with no headers
-          $this -> post_formats_with_no_header   = array( 'aside' , 'status' , 'link' , 'quote' );
+          $this -> post_formats_with_no_heading   = array( 'aside' , 'status' , 'link' , 'quote' );
 
           //Default 404 content
           $this -> content_404        = array(
@@ -287,21 +354,21 @@ if ( ! class_exists( 'TC_init' ) ) :
 
           //Set image options set by user @since v3.2.0
           //! must be included in utils to be available in admin for plugins like regenerate thumbnails
-          add_action  ( 'after_setup_theme'                     , array( $this, 'tc_set_user_defined_settings'), 10 );
+          add_action ( 'after_setup_theme'                      , array( $this, 'tc_set_user_defined_settings'), 10 );
 
           //adds the text domain, various theme supports : editor style, automatic-feed-links, post formats, navigation menu, post-thumbnails
           add_action ( 'after_setup_theme'                      , array( $this , 'tc_customizr_setup' ), 20 );
 
           //adds various plugins compatibilty (Jetpack, Bbpress, Qtranslate, Woocommerce, ...)
           add_action ( 'after_setup_theme'                      , array( $this , 'tc_plugins_compatibility'), 30 );
-          
+
           //adds retina support for high resolution devices
           add_filter ( 'wp_generate_attachment_metadata'        , array( $this , 'tc_add_retina_support') , 10 , 2 );
           add_filter ( 'delete_attachment'                      , array( $this , 'tc_clean_retina_images') );
 
           //adds classes to body tag : fade effect on link hover, is_customizing. Since v3.2.0
           add_filter ('body_class'                              , array( $this , 'tc_set_body_classes') );
-      
+
       }//end of constructor
 
 
@@ -320,7 +387,7 @@ if ( ! class_exists( 'TC_init' ) ) :
         if ( isset ( $_options['tc_post_list_thumb_shape'] ) && false !== strpos(esc_attr( $_options['tc_post_list_thumb_shape'] ), 'rectangular') ) {
           $_user_height     = ! esc_attr( $_options['tc_post_list_thumb_shape'] ) ? '250' : esc_attr( $_options['tc_post_list_thumb_height'] );
           $_rectangular_size    = apply_filters(
-            'tc_rectangular_size' , 
+            'tc_rectangular_size' ,
             array( 'width' => '1170' , 'height' => $_user_height , 'crop' => true )
           );
           add_image_size( 'tc_rectangular_size' , $_rectangular_size['width'] , $_rectangular_size['height'], $_rectangular_size['crop'] );
@@ -337,7 +404,7 @@ if ( ! class_exists( 'TC_init' ) ) :
       /**
       * Set slider new image sizes
       * Callback of slider_full_size and slider_size filters
-      * 
+      *
       * @package Customizr
       * @since Customizr 3.2.0
       *
@@ -355,7 +422,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
       /**
        * Sets up theme defaults and registers the various WordPress features
-       * 
+       *
        *
        * @package Customizr
        * @since Customizr 1.0
@@ -396,6 +463,8 @@ if ( ! class_exists( 'TC_init' ) ) :
         add_theme_support( 'post-thumbnails' );
           //set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 
+        /* @since v3.2.3 see : https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/ */
+        add_theme_support( 'title-tag' );
         //remove theme support => generates notice in admin @todo fix-it!
          /* remove_theme_support( 'custom-background' );
           remove_theme_support( 'custom-header' );*/
@@ -423,9 +492,6 @@ if ( ! class_exists( 'TC_init' ) ) :
 
         //add help button to admin bar
         add_action ( 'wp_before_admin_bar_render'          , array( $this , 'tc_add_help_button' ));
-        
-        //add options link to admin bar
-        //add_action ( 'wp_before_admin_bar_render'   , array( $this , 'tc_add_admin_bar_options_menu' ));
       }
 
 
@@ -448,10 +514,10 @@ if ( ! class_exists( 'TC_init' ) ) :
         if ( defined( 'WPLANG' ) && ( 'ar' == WPLANG || 'he_IL' == WPLANG ) ) {
           $remote_path   = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL_CHILD .'inc/assets/css/rtl/' : $remote_path ;
           $remote_path   = ( !TC___::$instance -> tc_is_child() && file_exists(TC_BASE .'inc/assets/css/rtl/' . $skin) ) ? TC_BASE_URL .'inc/assets/css/rtl/' : $remote_path ;
-        } 
+        }
 
         //Defines the active skin and fallback to blue.css if needed
-        $tc_active_skin  = $remote_path ? $remote_path.$skin : TC_BASE_URL.'inc/assets/css/blue.css';
+        $tc_active_skin  = $remote_path ? $remote_path.$skin : TC_BASE_URL.'inc/assets/css/blue3.css';
         return apply_filters ( 'tc_active_skin' , $tc_active_skin );
       }
 
@@ -465,9 +531,9 @@ if ( ! class_exists( 'TC_init' ) ) :
      * @since Customizr 3.0.15
      */
       function tc_plugins_compatibility() {
-        
+
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        
+
         /* JETPACK */
         //adds compatibilty with the jetpack image carousel
         if ( current_theme_supports( 'jetpack' ) && is_plugin_active('jetpack/jetpack.php') ) {
@@ -499,18 +565,18 @@ if ( ! class_exists( 'TC_init' ) ) :
           function tc_bbpress_disable_post_navigation($bool) {
              return ( function_exists('is_bbpress') && is_bbpress() ) ? false : $bool;
           }
-          
+
           //disables post metas
           add_filter( 'tc_show_post_metas', 'tc_bbpress_disable_post_metas' );
           function tc_bbpress_disable_post_metas($bool) {
              return ( function_exists('is_bbpress') && is_bbpress() ) ? false : $bool;
           }
-        
+
         }//end if bbpress on
 
 
 
-        /* 
+        /*
         * QTranslate
         * Credits : @acub, http://websiter.ro
         */
@@ -566,7 +632,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
         /* Woocommerce */
         if ( current_theme_supports( 'woocommerce' ) && is_plugin_active('woocommerce/woocommerce.php') ) {
-          
+
           //unkooks the default woocommerce wrappersv and add customizr's content wrapper and action hooks
           remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
           remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -581,19 +647,19 @@ if ( ! class_exists( 'TC_init' ) ) :
                 <div id="main-wrapper" class="<?php echo tc__f( 'tc_main_wrapper_classes' , 'container' ) ?>">
 
                 <?php do_action( '__before_main_container' ); ##hook of the featured page (priority 10) and breadcrumb (priority 20)...and whatever you need! ?>
-                
+
                 <div class="container" role="main">
                     <div class="<?php echo tc__f( 'tc_column_content_wrapper_classes' , 'row column-content-wrapper' ) ?>">
 
                         <?php do_action( '__before_article_container'); ##hook of left sidebar?>
-                            
+
                             <div id="content" class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
-                                
+
                                 <?php do_action ('__before_loop');##hooks the header of the list of post : archive, search... ?>
               <?php
 
                 break;
-              
+
               case 'woocommerce_after_main_content':
 
               ?>
@@ -609,7 +675,7 @@ if ( ! class_exists( 'TC_init' ) ) :
                 <?php do_action( '__after_main_container' ); ?>
 
               </div><!--#main-wrapper"-->
-              
+
               <?php
                 break;
             }//end of switch on hook
@@ -659,7 +725,7 @@ if ( ! class_exists( 'TC_init' ) ) :
       function tc_custom_mtypes( $mimes ) {
         if (! apply_filters( 'tc_add_svg_mime_type' , true ) )
           return $mimes;
-        
+
         $mimes['svg']   = 'image/svg+xml';
         $mimes['svgz']  = 'image/svg+xml';
         return $mimes;
@@ -669,7 +735,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
       /**
      * This function handles the support for high resolution devices
-     * 
+     *
      * @hook wp_generate_attachment_metadata (10 ,2)
      * @package Customizr
      * @since Customizr 3.0.15
@@ -679,13 +745,21 @@ if ( ! class_exists( 'TC_init' ) ) :
         //checks if retina is enabled in options
         if ( 0 == tc__f( '__get_option' , 'tc_retina_support' ) )
           return $metadata;
-       
-        foreach ( $metadata as $key => $value ) {
-            if ( is_array( $value ) ) {
-                foreach ( $value as $image => $attr ) {
-                    if ( is_array( $attr ) )
-                        $this -> tc_create_retina_images( get_attached_file( $attachment_id ), $attr['width'], $attr['height'], true );
-                }
+
+        if ( ! is_array($metadata) )
+          return $metadata;
+
+        //Create the retina image for the main file
+        if ( is_array($metadata) && isset($metadata['width']) && isset($metadata['height']) )
+          $this -> tc_create_retina_images( get_attached_file( $attachment_id ), $metadata['width'], $metadata['height'] , false, $_is_intermediate = false );
+
+        //Create the retina images for each WP sizes
+        foreach ( $metadata as $key => $data ) {
+            if ( 'sizes' != $key )
+              continue;
+            foreach ( $data as $_size_name => $_attr ) {
+                if ( is_array( $_attr ) && isset($_attr['width']) && isset($_attr['height']) )
+                    $this -> tc_create_retina_images( get_attached_file( $attachment_id ), $_attr['width'], $_attr['height'], true, $_is_intermediate = true );
             }
         }
         return $metadata;
@@ -694,31 +768,35 @@ if ( ! class_exists( 'TC_init' ) ) :
 
 
       /**
-       * Creates retina-ready images
-       *
-       * @package Customizr
-       * @since Customizr 3.0.15
-       * @credits http://wp.tutsplus.com/author/chrisbavota/
-       */
-      function tc_create_retina_images( $file, $width, $height, $crop = false ) {
+      * Creates retina-ready images
+      *
+      * @package Customizr
+      * @since Customizr 3.0.15
+      * @credits http://wp.tutsplus.com/author/chrisbavota/
+      */
+      function tc_create_retina_images( $file, $width, $height, $crop = false , $_is_intermediate = true) {
+          $resized_file = wp_get_image_editor( $file );
+          if ( is_wp_error( $resized_file ) )
+            return false;
+
           if ( $width || $height ) {
-              $resized_file = wp_get_image_editor( $file );
-              if ( ! is_wp_error( $resized_file ) ) {
-                  $filename = $resized_file->generate_filename( $width . 'x' . $height . '@2x' );
-       
-                  $resized_file->resize( $width * 2, $height * 2, $crop );
-                  $resized_file->save( $filename );
-       
-                  $info = $resized_file->get_size();
-       
-                  return array(
-                      'file' => wp_basename( $filename ),
-                      'width' => $info['width'],
-                      'height' => $info['height'],
-                  );
-              }
+            $_suffix    = $_is_intermediate ? $width . 'x' . $height . '@2x' : '@2x';
+            $filename   = $resized_file -> generate_filename( $_suffix );
+            // if is not intermediate (main file name) => removes the "-" added by the generate_filename method
+            $filename   = ! $_is_intermediate ? str_replace('-@2x', '@2x', $filename) : $filename;
+
+            $resized_file -> resize( $width * 2, $height * 2, $crop );
+            $resized_file -> save( $filename );
+
+            $info = $resized_file -> get_size();
+
+            /*return array(
+                'file' => wp_basename( $filename ),
+                'width' => $info['width'],
+                'height' => $info['height'],
+            );*/
           }
-          return false;
+          //return false;
       }//end of function
 
 
@@ -726,7 +804,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
       /**
      * This function deletes the generated retina images if they exist
-     * 
+     *
      * @hook delete_attachment
      * @package Customizr
      * @since Customizr 3.0.15
@@ -740,7 +818,7 @@ if ( ! class_exists( 'TC_init' ) ) :
         $meta = wp_get_attachment_metadata( $attachment_id );
         if ( !isset( $meta['file']) )
           return;
-        
+
         $upload_dir = wp_upload_dir();
         $path = pathinfo( $meta['file'] );
         foreach ( $meta as $key => $value ) {
@@ -757,32 +835,10 @@ if ( ! class_exists( 'TC_init' ) ) :
 
 
 
-
-      /**
-      * Add WordPress customizer page to the admin bar menu.
-      * @package Customizr
-      * @since Customizr 1.0 
-      */
-      function tc_add_admin_bar_options_menu() {
-         if ( current_user_can( 'edit_theme_options' ) ) {
-           global $wp_admin_bar;
-           $wp_admin_bar->add_menu( array(
-               'parent'   => false,
-               'id'     => 'tc-customizr' ,
-               'title'    =>  __( 'Customiz\'it!' , 'customizr' ),
-               'href'     => admin_url( 'customize.php' ),
-               'meta'     => array(
-                 'title'    => __( 'Customize your website at any time!', 'customizr' ),
-                ),
-           ));
-         }
-      }
-
-
       /**
       * Add help button
       * @package Customizr
-      * @since Customizr 1.0 
+      * @since Customizr 1.0
       */
       function tc_add_help_button() {
          if ( current_user_can( 'edit_theme_options' ) ) {
@@ -803,16 +859,19 @@ if ( ! class_exists( 'TC_init' ) ) :
 
       /**
       * Add a class on the body element.
-      * 
+      *
       * @package Customizr
       * @since Customizr 3.2.0
       */
       function tc_set_body_classes( $_classes ) {
+        $_to_add = array();
         if ( 0 != esc_attr( tc__f( '__get_option' , 'tc_link_hover_effect' ) ) )
-          $_classes = array_merge( $_classes , array('tc-fade-hover-links') );
+          $_to_add[] = 'tc-fade-hover-links';
         if ( TC_utils::$instance -> tc_is_customizing() )
-          $_classes = array_merge( $_classes , array('is-customizing') );
-        return $_classes;
+          $_to_add[] = 'is-customizing';
+        if ( wp_is_mobile() )
+          $_to_add[] = 'tc-is-mobile';
+        return array_merge( $_classes , $_to_add );
       }
 
   }//end of class
