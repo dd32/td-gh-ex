@@ -11,3 +11,6 @@ ii) Problem solved post and page update.
 
 Version 1.2.1 (23 Dec 2014)
 i) solve translation ready issue
+
+Version 1.2.2 (23 Dec 2014)
+i) added .pot file

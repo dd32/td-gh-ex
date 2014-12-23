@@ -199,15 +199,15 @@ if (!function_exists('a1_entry_meta')) :
 		if(!empty($a1_options['entry-meta-tags'])) { $a1_tags_text = $a1_options['entry-meta-tags']; } else { $a1_tags_text = __('Tags','a1'); }
        $a1_date = sprintf('<li>'.$a1_on_text.' <a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></li>', esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))), esc_attr(get_the_time()), esc_attr(get_the_date('c')), esc_html(get_the_date('M d,Y'))       );
        
-       $a1_author = sprintf('<li>'.$a1_by_text.': <a href="%1$s" title="%2$s" >%3$s</a></li>', esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_attr(sprintf(__(' %s', 'a1'), ucwords(get_the_author()))), ucwords(get_the_author())
+       $a1_author = sprintf('<li>'.$a1_by_text.': <a href="%1$s" title="%2$s" >%3$s</a></li>', esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_attr(ucwords(get_the_author())), ucwords(get_the_author())
        );
        $a1_comment = sprintf('<li>'.$a1_comments_text.': %1$s', get_comments_number()
        );
 
 	
-       $a1_tag_list = sprintf('%1$s</li>', get_the_tag_list( '<li>'.$a1_tags_text.': ', __( ', ', 'a1' )));
+       $a1_tag_list = sprintf('%1$s</li>', get_the_tag_list( '<li>'.$a1_tags_text.': ', ' , ', __( '', 'a1' )));
     
-	$a1_category_list = sprintf('<li>'.$a1_in_text.': %1$s</li>', get_the_category_list(__(', ', 'a1')));
+	$a1_category_list = sprintf('<li>'.$a1_in_text.': %1$s</li>', get_the_category_list(' , ',__('', 'a1')));
        
        printf('%1$s %2$s %3$s %4$s %5$s', $a1_author, $a1_category_list, $a1_date, $a1_comment, $a1_tag_list);
    }
