@@ -1,5 +1,5 @@
 </div><!-- ends main -->
-        <footer class="site-footer"  role="complementary">
+<footer class="site-footer"  role="complementary">
     <section id="colophon">
                 <?php
                 if (is_active_sidebar('first-footer-widget-area') ||
@@ -12,14 +12,14 @@
                     <?php 
                      } 
                      ?>
-                </section><!-- ends colophon# -->
+    </section><!-- ends colophon# -->
         <section class="site-info" role="contentinfo">
             <div id="credit">
-	        <p>&copy; <?php echo date("Y"); echo " "; echo bloginfo('name'); ?></p>
-                <div class="site-info-right"><a href="#"> -Top- </a></div>
+	        <p>&copy; <?php echo date("Y"); echo esc_attr( " " ); echo esc_attr( bloginfo('name') ); ?></p>
+                <div class="site-info-right"><a href="#"><?php _e( ' -Top- ', 'betilu' ); ?></a></div>
             </div>
         </section>
-        </footer>
+</footer>
 <?php wp_footer(); ?>
 </body>
 </html>

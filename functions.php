@@ -7,12 +7,14 @@ function betilu_setup() {
         if ( !isset( $content_width  ) ) {
             $content_width  = 720;
     }
+    // allows themes to add document title tag to HTML <head>
+    add_theme_support( 'title-tag' );
     // custom editor style support
     add_editor_style( 'editor-style.css' );
   
     // This theme uses Featured Images (also known as post thumbnails)
     add_theme_support('post-thumbnails'); 
-    //set_post_thumbnail_size( 150, 150 );
+    set_post_thumbnail_size( 150, 150 );
 
     // Add default posts and comments RSS feed links to head
     add_theme_support('automatic-feed-links');

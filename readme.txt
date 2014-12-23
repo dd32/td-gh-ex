@@ -11,6 +11,28 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.5 =
+* fixed images in footer section
+* styled pagination for active link
+* fixed index template layout
+* fixed menu lists height
+* de-minfied shiv script
+* fixed default callbacks for background image
+* set post thumbnail size to fit excerpts better
+* fixed search page template sidebar positioning
+* fix comments form various divs
+* rescaled topr row navigation to accommodate overflow
+* fixed clear float issue in page template
+* fixed loop issue on home page to show first post
+* set home page lead article outside of home template
+* added theme support for title tag
+* added table styles
+* reformatted full-width template
+* added some missing translation text
+* removed callback inside of title tag in header
+* cleaned up margins on all pages
+* escaped all attributes and urls etc.
+* removed white space from bottom of several files
 = 1.4 =
 * changed some widget styles in footer widgets
 * added edit link inline to author link

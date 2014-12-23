@@ -32,7 +32,7 @@ get_header(); ?>
                         </article>
                      </section><!-- ends content-left --> 
             <?php endif; ?>
-                <div id="right-sidebar">
+                <div id="right-sidebar-absolute">
                 <?php get_sidebar(); ?>
                 </div> 
             </div><!-- ends content wide container -->

@@ -28,10 +28,10 @@ get_header(); ?>
                                
                     </div> <!-- ends post -->  
                 </section><!-- ends content-area-lead -->
-           
+
             <?php endwhile; ?>
-<?php betilu_numeric_posts_nav(); ?>
-<?php else: ?>
+                <?php betilu_numeric_posts_nav(); ?>
+                <?php else: ?>
                     <section class="content-area-left">
                         <article class="entry-lead">
                             <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
