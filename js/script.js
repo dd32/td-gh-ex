@@ -7,7 +7,7 @@ jQuery(document).ready(function(e) {
 	jQuery('.footer-column2 .menu').addClass('left-column');
 	jQuery('.footer-column3 .menu').addClass('left-column');
 	jQuery('.current-menu-item a').addClass('active');
-	jQuery('.jobile-nav .menu ul').addClass('jobile-menu');	
+	jQuery('.jobile-nav .menu ul, .navbar-collapse.collapse ul').addClass('jobile-menu');
 	jQuery('.jobile-nav .menu').addClass('navbar-collapse collapse no-padding-lr');
     jQuery('#post-sorting-option').change(function() {
         jQuery('#post-sorting-form').submit();

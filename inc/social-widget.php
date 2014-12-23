@@ -7,9 +7,9 @@ function jobile_social_widget() {
 class jobile_social_widget extends WP_Widget {
 
     function jobile_social_widget() {
-        $jobile_widget_ops = array( 'classname' => 'jobile_social', 'description' => __('A widget that displays social icon.', 'jobile_social') );      
+        $jobile_widget_ops = array( 'classname' => 'jobile_social', 'description' => __('A widget that displays social icon.', 'jobile') );      
         $jobile_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'jobile-social-widget' );       
-        $this->WP_Widget( 'jobile-social-widget', __('Jobial Social Icon', 'jobile_social'), $jobile_widget_ops, $jobile_control_ops );
+        $this->WP_Widget( 'jobile-social-widget', __('Jobial Social Icon', 'jobile'), $jobile_widget_ops, $jobile_control_ops );
     }   
     function widget( $jobile_social_args, $jobile_social_instance ) {
         extract( $jobile_social_args );
@@ -21,7 +21,7 @@ class jobile_social_widget extends WP_Widget {
         //Display widget
 ?> 
 <div class="social-icon">
-	<label><?php echo $jobile_social_instance['title']; ?></label>
+	<label><?php _e($jobile_social_instance['title'],'jobile'); ?></label>
     <ul>
         <?php if(!empty($jobile_social_instance['facebook'])) { ?><li><a href="<?php echo esc_url($jobile_social_instance['facebook']); ?>"><i class="social_facebook_circle fb"></i></a></li><?php } ?>
         <?php if(!empty($jobile_social_instance['twitter'])) { ?><li><a href="<?php echo esc_url($jobile_social_instance['twitter']); ?>"><i class="social_twitter_circle twitt"></i></a></li><?php } ?>
@@ -47,23 +47,23 @@ class jobile_social_widget extends WP_Widget {
     } function form( $jobile_social_instance ) {
 ?>
 <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:','jobile') ?></label>
     <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($jobile_social_instance['title'])) { echo $jobile_social_instance['title']; } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>">Facebook url:</label>
+    <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e('Facebook url:','jobile') ?></label>
     <input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php if(!empty($jobile_social_instance['facebook'])) { echo esc_url($jobile_social_instance['facebook']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter url:</label>
+    <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e('Twitter url:','jobile') ?></label>
     <input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php if(!empty($jobile_social_instance['twitter'])) { echo esc_url($jobile_social_instance['twitter']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>">Linkedin url:</label>
+    <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e('Linkedin url:','jobile') ?></label>
     <input id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" value="<?php if(!empty($jobile_social_instance['linkedin'])) { echo esc_url($jobile_social_instance['linkedin']); } ?>" style="width:100%;" />
 </p>
 <p>
-    <label for="<?php echo $this->get_field_id( 'google' ); ?>">Google+ url:</label>
+    <label for="<?php echo $this->get_field_id( 'google' ); ?>"><?php _e('Google+ url:','jobile') ?></label>
     <input id="<?php echo $this->get_field_id( 'google' ); ?>" name="<?php echo $this->get_field_name( 'google' ); ?>" value="<?php if(!empty($jobile_social_instance['google'])) { echo esc_url($jobile_social_instance['google']); } ?>" style="width:100%;" />
 </p>     
 <?php } } ?>

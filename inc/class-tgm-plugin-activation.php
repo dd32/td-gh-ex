@@ -639,10 +639,11 @@ if ( ! class_exists( 'jobilePA_List_Table' ) ) {
             return sprintf( '<input type="checkbox" name="%1$s[]" value="%2$s" id="%3$s" />', $this->_args['singular'], $value, $item['sanitized_plugin'] );
         }
         /* Sets default message within the plugins table if no plugins */
-        public function no_items() {
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'jobile' ), admin_url() );
-            echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
-        }
+        public function no_items() 
+		{
+			_e('No plugins to install or activate','jobile'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','jobile')."</a>";
+			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
+		}
         /* Output all the column information within the table.*/
         public function get_columns() {
             $columns = array(

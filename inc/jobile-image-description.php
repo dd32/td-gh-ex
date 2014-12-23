@@ -6,9 +6,9 @@ function jobile_image_widget() {
 class jobile_image_widget extends WP_Widget {
 
     function jobile_image_widget() {
-        $jobile_widget_ops = array( 'classname' => 'jobile_image', 'description' => __('A widget that displays the image and description.', 'jobile_image') );      
+        $jobile_widget_ops = array( 'classname' => 'jobile_image', 'description' => __('A widget that displays the image and description.', 'jobile') );      
         $jobile_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'jobile-image-widget' );       
-        $this->WP_Widget( 'jobile-image-widget', __('Jobile Image Description', 'jobile_image'), $jobile_widget_ops, $jobile_control_ops );
+        $this->WP_Widget( 'jobile-image-widget', __('Jobile Image Description', 'jobile'), $jobile_widget_ops, $jobile_control_ops );
     }  
     function widget( $jobile_image_args, $jobile_image_instance ) {
         extract( $jobile_image_args );
@@ -20,7 +20,7 @@ class jobile_image_widget extends WP_Widget {
 ?> 
       
 <img src="<?php if($jobile_image_instance['image']) { echo esc_url($jobile_image_instance['image']); } else { echo get_template_directory_uri().'/images/default-user.png'; } ?>"  class="img-responsive" width="87" height="23" alt="logo">
-<p><?php echo $jobile_image_instance['content']; ?></p>
+<p><?php _e($jobile_image_instance['content'],'jobile'); ?></p>
  
 <?php echo $after_widget; }
     //Update the widget   
@@ -33,13 +33,13 @@ class jobile_image_widget extends WP_Widget {
     }
     function form( $jobile_image_instance ) { ?>
     <p class="section">
-        <label for="<?php echo $this->get_field_id( 'image' ); ?>">Image:</label><br />
+        <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e('Image:','jobile') ?></label><br />
         <input id="<?php echo $this->get_field_id( 'image' ); ?>"  type="text" class="widefat jobile_media_url upload" name="<?php echo $this->get_field_name( 'image' ); ?>" value="<?php if(!empty($jobile_image_instance['image'])) { echo $jobile_image_instance['image']; } ?>" placeholder="No file chosen" style="width:75%;" />
-        <input id="jobile_image_uploader"  class="upload-button button" type="button" value="Upload" /><br /><br />
+        <input id="jobile_image_uploader"  class="upload-button button" type="button" value="<?php _e('Upload','jobile') ?>" /><br /><br />
 		<?php if(!empty($jobile_image_instance['image'])) { ?><img src="<?php echo esc_url($jobile_image_instance['image']); ?>" style='max-width:100%;' /><?php } ?>         
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'content' ); ?>">Content:</label>
-        <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { echo $jobile_image_instance['content']; } ?></textarea>
+        <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e('Content:','jobile') ?></label>
+        <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { _e($jobile_image_instance['content'],'jobile'); } ?></textarea>
     </p>  
 <?php }} ?>

@@ -8,7 +8,7 @@ function jobile_theme_register_plugins() {
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
          array(
-            'name'      => 'Faster Pagination',
+            'name'      => __('Faster Pagination','jobile'),
             'slug'      => 'faster-pagination',
             'required'  => false,
         ),
