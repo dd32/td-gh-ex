@@ -59,9 +59,6 @@ if ( ! function_exists( 'ascent_setup' ) ) :
 function ascent_setup() {
     global $cap, $content_width;
 
-    // This theme styles the visual editor with editor-style.css to match the theme style.
-    add_editor_style();
-
     /**
      * Add default posts and comments RSS feed links to head
     */
@@ -174,12 +171,11 @@ function ascent_scripts() {
     }
     
     wp_enqueue_script( 'ascent-smoothscroll', get_template_directory_uri() . '/includes/js/smoothscroll.js', array('jquery') );
-    wp_enqueue_script( 'ascent-swipebox', get_template_directory_uri() . '/includes/js/jquery.swipebox.min.js', array('jquery') );
+    wp_enqueue_script( 'ascent-swipebox', get_template_directory_uri() . '/includes/js/jquery.swipebox.js', array('jquery') );
     wp_enqueue_script( 'ascent-owl-carousel', get_template_directory_uri() . '/includes/js/owl.carousel.js', array('jquery') );   
     wp_enqueue_script( 'ascent-appear', get_template_directory_uri() . '/includes/js/jquery.appear.js', array('jquery') );
-    wp_enqueue_script( 'ascent-autosize', get_template_directory_uri() . '/includes/js/jquery.autosize.min.js', array('jquery') );
-    wp_enqueue_script( 'ascent-meanmenu', get_template_directory_uri() . '/includes/js/jquery.meanmenu.min.js', array('jquery') );
-    wp_enqueue_script( 'ascent-velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.min.js', array('jquery') );
+    wp_enqueue_script( 'ascent-meanmenu', get_template_directory_uri() . '/includes/js/jquery.meanmenu.js', array('jquery') );
+    wp_enqueue_script( 'ascent-velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.js', array('jquery') );
     wp_enqueue_script( 'ascent-appear-config', get_template_directory_uri() . '/includes/js/appear.config.js', array('jquery') );
     
     // Theme main js
