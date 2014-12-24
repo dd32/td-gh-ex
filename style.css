@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 2.5
+Version: 2.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -15,7 +15,8 @@ BlueGray is licensed under the GPL
 */
 
 
-/* RESET STYLESHEET 
+/* 
+RESET STYLESHEET 
 Source: http://meyerweb.com/eric/tools/css/reset
 Author: Eric Meyer
 Author URI: http://meyerweb.com/ 
@@ -38,7 +39,6 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	vertical-align:baseline;
 }
 
-/* RESET OF HTML AND HTML5 TAGS FOR OLDER BROWSERS */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
 	display:block;
 }

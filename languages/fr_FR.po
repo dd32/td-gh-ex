@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueGray v2.5\n"
+"Project-Id-Version: BlueGray v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-28 14:07:10+0000\n"
