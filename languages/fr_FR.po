@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v2.0\n"
+"Project-Id-Version: GridBulletin v2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-28 14:49:10+0000\n"

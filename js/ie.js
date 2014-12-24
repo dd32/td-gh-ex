@@ -1,5 +1,5 @@
 /*
- * ADD SUPPORT FOR HTML AND HTML5 TAGS IN IE8 AND OLDER
+ * ADD SUPPORT FOR HTML5 ELEMENTS IN IE8 AND OLDER
  */
 
 document.createElement('article'); 
