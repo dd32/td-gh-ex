@@ -129,13 +129,6 @@ $fields['comment_field']
 return $fields;
 }
 
-function multishop_add_ie_html5_shim () {
-	echo '<!--[if lt IE 9]>';
-	echo '<script src="' . get_template_directory_uri() . '/js/respond.js"></script>';
-	echo '<![endif]-->';
-}
-add_action('wp_head', 'multishop_add_ie_html5_shim'); 
-
 // now we set our cookie if we need to
 function multishop_sort_by_page($count) {
   if (isset($_COOKIE['shop_pageResults'])) { // if normal page load with cookie

@@ -15,13 +15,11 @@ function multishop_enqueue()
 	wp_enqueue_style('multishop-owl-carousel-css',get_template_directory_uri().'/css/owl.carousel.css',array(),'','');	
 	wp_enqueue_script('multishop-owl-carousel.min-js',get_template_directory_uri().'/js/owl.carousel.js',array('jquery'));
 	wp_enqueue_script('multishop-easyResponsiveTabs-js',get_template_directory_uri().'/js/easyResponsiveTabs.js',array('jquery'));
-	
-	if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']))
-	{
-	    // if IE<=8
-	    wp_enqueue_script('multishop-respond', get_stylesheet_directory_uri() . '/js/respond.js',array('jquery'), '', true );
-	    }
-	
-	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
+
+        global $is_IE;
+        if($is_IE)
+         wp_enqueue_script('multishop-respond', get_template_directory_uri().'/js/respond.js', array());
+
+        if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
 add_action('wp_enqueue_scripts', 'multishop_enqueue');

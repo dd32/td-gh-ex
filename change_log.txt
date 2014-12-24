@@ -49,4 +49,7 @@ iii) Remove respond.min.js, bootstrap.min.js and bootstrap.min.css
 iv) Enqueue respond.js file in enqueue-files.php
 
 Version: 1.1.5 (22 Dec 2014)
-i) Changed respond.min reference in functions.php
+i) Changed respond.js reference in functions.php
+
+Version: 1.1.6 (24 Dec 2014)
+i) Enqueue script respond.js only for ie in enqueue-files.php
