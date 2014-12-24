@@ -63,6 +63,10 @@
                 if ( ( $pagenow !== "customize.php" && $pagenow !== "admin-ajax.php" && ! isset( $GLOBALS['wp_customize'] ) ) ) {
                     //return;
                 }
+                $datavasecheck = get_option('virtue');
+                if(empty($datavasecheck) || $datavasecheck == false ) {
+                    return;
+                }
 
                 $this->parent = $parent;
 
@@ -86,21 +90,17 @@
 
 
                 if ( ! ( isset( $_POST['action'] ) || ( isset( $_POST['action'] ) && $_POST['action'] != "customize_save" ) ) ) {
-                    if(isset($this->parent->args['opt_name'])) {
+
                         add_action( "redux/options/{$this->parent->args['opt_name']}/options", array(
                             $this,
                             '_override_values'
                         ), 100 );
-                    }
 
-                    if ( ! isset( $_POST['customized'] ) || $pagenow == "admin-ajax.php" ) {
+                    //if ( ! isset( $_POST['customized'] ) || $pagenow == "admin-ajax.php" ) {
                         if ( current_user_can( $this->parent->args['page_permissions'] ) ) {
-                            add_action( 'customize_register', array(
-                                $this,
-                                '_register_customizer_controls'
-                            ) ); // Create controls
+                            add_action( 'customize_register', array($this, '_register_customizer_controls') ); // Create controls
                         }
-                    }
+                    //}
 
                     add_action( 'wp_head', array( $this, 'customize_preview_init' ) );
                 }

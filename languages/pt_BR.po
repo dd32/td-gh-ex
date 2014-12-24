@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virtue\n"
 "POT-Creation-Date: 2014-08-09 13:47-0700\n"
-"PO-Revision-Date: 2014-12-10 18:03-0700\n"
+"PO-Revision-Date: 2014-12-15 00:17-0700\n"
 "Last-Translator: Victor Debone <victor@debone.com.br>\n"
 "Language-Team: Victor Debone <victor@debone.com.br>\n"
 "Language: pt_BR\n"
@@ -2337,6 +2337,7 @@ msgid "Allow Comments on Portfolio Posts"
 msgstr "Permitir comentários nos Posts do Portfólio"
 
 #: ../themeoptions/options.php:1698
+#, fuzzy
 msgid "Turn on to allow Comments on Portfolio posts"
 msgstr "Ligue para permitir comentários nos posts do Portfólio"
 
@@ -2345,8 +2346,9 @@ msgid "Hide Image Border"
 msgstr "Esconder Borda da Imagem"
 
 #: ../themeoptions/options.php:1705
+#, fuzzy
 msgid "Choose to show or hide image border"
-msgstr "Escolha mostrar ou esconder a borda da imagem"
+msgstr "Escolha mostrar ou esconder a barra superior"
 
 #: ../themeoptions/options.php:1711
 #, fuzzy
@@ -2598,6 +2600,329 @@ msgstr ""
 msgid "Sale!"
 msgstr "Promoção!"
 
+#~ msgid "Use Simple Math Question"
+#~ msgstr "Usar questão simples de matemática"
+
+#~ msgid "Check your math."
+#~ msgstr "Verifique sua conta."
+
+#, fuzzy
+#~ msgid "1 Comment"
+#~ msgstr "Comentário"
+
+#, fuzzy
+#~ msgid "% Comments"
+#~ msgstr "Comentário"
+
+#, fuzzy
+#~ msgid "Comments are Closed"
+#~ msgstr "Comentários estão fechados."
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Opções de SEO"
+
+#, fuzzy
+#~ msgid "Please Wait"
+#~ msgstr "Por favor tente novamente"
+
+#, fuzzy
+#~ msgid "Reset Section"
+#~ msgstr "Descrição da Página"
+
+#, fuzzy
+#~ msgid "error(s) were found!"
+#~ msgstr "Desculpe, nenhum resultado foi encontrado."
+
+#, fuzzy
+#~ msgid "warning(s) were found!"
+#~ msgstr "Desculpe, nenhum resultado foi encontrado."
+
+#, fuzzy
+#~ msgid "Background Repeat"
+#~ msgstr "Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Background Clip"
+#~ msgstr "Cor do Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Background Origin"
+#~ msgstr "Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Background Size"
+#~ msgstr "Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Background Attachment"
+#~ msgstr "Imagem de Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Background Position"
+#~ msgstr "Posição da Imagem de Plano de Fundo"
+
+#, fuzzy
+#~ msgid "Add More"
+#~ msgstr "leia mais"
+
+#, fuzzy
+#~ msgid "Select an item"
+#~ msgstr "Escolha um arquivo"
+
+#~ msgid "On"
+#~ msgstr "Ligado"
+
+#~ msgid "Off"
+#~ msgstr "Desligado"
+
+#~ msgid "Font Family"
+#~ msgstr "Família da Fonte"
+
+#, fuzzy
+#~ msgid "Font family"
+#~ msgstr "Família da Fonte"
+
+#, fuzzy
+#~ msgid "Backup Font Family"
+#~ msgstr "Família da Fonte"
+
+#, fuzzy
+#~ msgid "Font style"
+#~ msgstr "Estilo do Ícone"
+
+#~ msgid "Style"
+#~ msgstr "Estilo"
+
+#, fuzzy
+#~ msgid "Font subsets"
+#~ msgstr "Estilo do Ícone"
+
+#, fuzzy
+#~ msgid "Font Subsets"
+#~ msgstr "Tamanho do Ícone"
+
+#, fuzzy
+#~ msgid "Subsets"
+#~ msgstr "Tamanho do Ícone"
+
+#, fuzzy
+#~ msgid "Font script"
+#~ msgstr "Família da Fonte"
+
+#, fuzzy
+#~ msgid "Text Align"
+#~ msgstr "Alinhamento"
+
+#, fuzzy
+#~ msgid "Font Variant"
+#~ msgstr "Família da Fonte"
+
+#, fuzzy
+#~ msgid "Text Decoration"
+#~ msgstr "Descrição da Página"
+
+#, fuzzy
+#~ msgid "Font Size"
+#~ msgstr "Tamanho do Ícone"
+
+#~ msgid "Size"
+#~ msgstr "Tamanho"
+
+#, fuzzy
+#~ msgid "Line Height"
+#~ msgstr "Altura do Vídeo"
+
+#, fuzzy
+#~ msgid "Height"
+#~ msgstr "Altura do Mapa"
+
+#, fuzzy
+#~ msgid "Word Spacing"
+#~ msgstr "Espaçamento Superior"
+
+#, fuzzy
+#~ msgid "Letter Spacing"
+#~ msgstr "Espaçamento da Esquerda"
+
+#~ msgid "Font Color"
+#~ msgstr "Cor da Fonte"
+
+#, fuzzy
+#~ msgid "Font color"
+#~ msgstr "Cor da Fonte"
+
+#, fuzzy
+#~ msgid "Standard Fonts"
+#~ msgstr "Padrão: de"
+
+#, fuzzy
+#~ msgid "Import / Export Options"
+#~ msgstr "Opções do Post do Portfólio"
+
+#, fuzzy
+#~ msgid "Import Options"
+#~ msgstr "Opções do Post"
+
+#, fuzzy
+#~ msgid "Import"
+#~ msgstr "Opções do Post"
+
+#, fuzzy
+#~ msgid "Export Options"
+#~ msgstr "Opções do Post"
+
+#, fuzzy
+#~ msgid "Copy"
+#~ msgstr "Sem link"
+
+#, fuzzy
+#~ msgid "Copy Link"
+#~ msgstr "Sem link"
+
+#, fuzzy
+#~ msgid "Import / Export"
+#~ msgstr "Opções do Post do Portfólio"
+
+#, fuzzy
+#~ msgid "This field must be a valid color value."
+#~ msgstr "Esse campo é obrigatório."
+
+#, fuzzy
+#~ msgid "This field must be a valid date."
+#~ msgstr "Esse campo é obrigatório."
+
+#, fuzzy
+#~ msgid "This field cannot be empty. Please provide a value."
+#~ msgstr "Esse campo é obrigatório."
+
+#~ msgid "Content Background Color"
+#~ msgstr "Cor de fundo do conteúdo"
+
+#~ msgid "Topbar Background Color"
+#~ msgstr "Cor de Fundo da Barra superior"
+
+#~ msgid "Header Background Color"
+#~ msgstr "Cor de Fundo do Cabeçalho"
+
+#, fuzzy
+#~ msgid "Secondary menu Background Color"
+#~ msgstr "Cor de fundo do menu secundário"
+
+#, fuzzy
+#~ msgid "Mobile Background Color"
+#~ msgstr "Cor de Fundo para o Menu Mobile"
+
+#~ msgid "Footer Background Color"
+#~ msgstr "Cor do Fundo do Rodapé"
+
+#~ msgid "Body Background Color"
+#~ msgstr "Cor do Plano de Fundo do Corpo"
+
+#, fuzzy
+#~ msgid "Allow Comments on Pages"
+#~ msgstr "Permitir comentários nos Posts do Portfólio"
+
+#, fuzzy
+#~ msgid "Turn on to allow comments on pages"
+#~ msgstr "Ligue para permitir comentários nos posts do Portfólio"
+
+#, fuzzy
+#~ msgid ""
+#~ "Choose to show or hide image border for images added in pages or posts"
+#~ msgstr "Escolha mostrar ou esconder a borda da imagem"
+
+#~ msgid "Calculate Shipping"
+#~ msgstr "Calcular frete"
+
+#~ msgid "Select a country&hellip;"
+#~ msgstr "Escolha um país &hellip;"
+
+#~ msgid "State / county"
+#~ msgstr "Estado / País"
+
+#~ msgid "Select a state&hellip;"
+#~ msgstr "Escolha um estado &hellip;"
+
+#~ msgid "City"
+#~ msgstr "Cidade"
+
+#~ msgid "Postcode / Zip"
+#~ msgstr "CEP"
+
+#~ msgid "Update Totals"
+#~ msgstr "Atualizar Total"
+
+#, fuzzy
+#~ msgid "Order ID"
+#~ msgstr "Ordenar por"
+
+#, fuzzy
+#~ msgid "Billing Email"
+#~ msgstr "Enviar email"
+
+#, fuzzy
+#~ msgid "Reviews"
+#~ msgstr "Aba de Avaliações"
+
+#, fuzzy
+#~ msgid "There are no reviews yet."
+#~ msgstr "Não existem opções anteriores"
+
+#, fuzzy
+#~ msgid "Add a review"
+#~ msgstr "Adicionar Novo"
+
+#, fuzzy
+#~ msgid "Email"
+#~ msgstr "Email:"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
+
+#, fuzzy
+#~ msgid "Your Rating"
+#~ msgstr "Seu carrinho"
+
+#, fuzzy
+#~ msgid "Rate&hellip;"
+#~ msgstr "Marcar/Desmarcar Todos"
+
+#, fuzzy
+#~ msgid "Your Review"
+#~ msgstr "Aba de Avaliações"
+
+#, fuzzy
+#~ msgid "Choose an option"
+#~ msgstr "Escolha um ícone"
+
+#, fuzzy
+#~ msgid "Clear selection"
+#~ msgstr "Descrição da Página"
+
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "Esse produto no momento está fora de estoque e não está disponível."
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Avaliado em %s de 5"
+
+#~ msgid "out of 5"
+#~ msgstr "de 5"
+
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s avaliação de cliente"
+#~ msgstr[1] "%s avaliações de clientes"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Avaliado em %d de 5"
+
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "O seu comentário está aguardando aprovação"
+
+#~ msgid "verified owner"
+#~ msgstr "Proprietário verificado"
+
 #~ msgid "Read More"
 #~ msgstr "leia mais"
 
@@ -2786,9 +3111,6 @@ msgstr "Promoção!"
 #~ msgid "Divider"
 #~ msgstr "Divisor"
 
-#~ msgid "Style"
-#~ msgstr "Estilo"
-
 #~ msgid "Line"
 #~ msgstr "Linha"
 
@@ -2797,9 +3119,6 @@ msgstr "Promoção!"
 
 #~ msgid "Gradient"
 #~ msgstr "Degradê"
-
-#~ msgid "Size"
-#~ msgstr "Tamanho"
 
 #~ msgid "Color"
 #~ msgstr "Cor"
@@ -2903,9 +3222,6 @@ msgstr "Promoção!"
 #~ msgid "Open Link In New Tab?"
 #~ msgstr "Abrir link em uma nova aba?"
 
-#~ msgid "Font Color"
-#~ msgstr "Cor da Fonte"
-
 #~ msgid "Button Color"
 #~ msgstr "Cor do Botão"
 
@@ -2920,9 +3236,6 @@ msgstr "Promoção!"
 
 #~ msgid "Small"
 #~ msgstr "Pequeno"
-
-#~ msgid "Font Family"
-#~ msgstr "Família da Fonte"
 
 #~ msgid "H1 Family"
 #~ msgstr "Família H1"
@@ -3330,9 +3643,6 @@ msgstr "Promoção!"
 #~ msgid "Choose Column Layout:"
 #~ msgstr "Escolha um Layout de Colunas:"
 
-#~ msgid "Use Simple Math Question"
-#~ msgstr "Usar questão simples de matemática"
-
 #~ msgid "Enter a Location"
 #~ msgstr "Insira um local"
 
@@ -3553,12 +3863,6 @@ msgstr "Promoção!"
 #~ msgid "6 Columns"
 #~ msgstr "6 Colunas"
 
-#~ msgid "Off"
-#~ msgstr "Desligado"
-
-#~ msgid "On"
-#~ msgstr "Ligado"
-
 #~ msgid "Add/Edit Gallery"
 #~ msgstr "Adicionar/Editar Galeria"
 
@@ -3777,12 +4081,6 @@ msgstr "Promoção!"
 
 #~ msgid "Image Upload - optional"
 #~ msgstr "Envio da Imagem - opcional"
-
-#~ msgid "Submit"
-#~ msgstr "Enviar"
-
-#~ msgid "Check your math."
-#~ msgstr "Verifique sua conta."
 
 #~ msgid "Please add testimonial content."
 #~ msgstr "Por favor insira conteúdo do depoimento."
@@ -4441,9 +4739,6 @@ msgstr "Promoção!"
 #~ msgid "Choose a Sidebar for your Category/Archive Pages"
 #~ msgstr "Escolha a barra lateral para as página de Arquivos/Categorias"
 
-#~ msgid "Content Background Color"
-#~ msgstr "Cor de fundo do conteúdo"
-
 #~ msgid "no-repeat"
 #~ msgstr "não-repetir"
 
@@ -4471,26 +4766,8 @@ msgstr "Promoção!"
 #~ msgid "bottom"
 #~ msgstr "inferior"
 
-#~ msgid "Topbar Background Color"
-#~ msgstr "Cor de Fundo da Barra superior"
-
-#~ msgid "Header Background Color"
-#~ msgstr "Cor de Fundo do Cabeçalho"
-
-#~ msgid "Secondary Menu Background Color"
-#~ msgstr "Cor de fundo do menu secundário"
-
-#~ msgid "Mobile Menu Background Color"
-#~ msgstr "Cor de Fundo para o Menu Mobile"
-
 #~ msgid "Feature Background"
 #~ msgstr "Plano de fundo do Destaque"
-
-#~ msgid "Footer Background Color"
-#~ msgstr "Cor do Fundo do Rodapé"
-
-#~ msgid "Body Background Color"
-#~ msgstr "Cor do Plano de Fundo do Corpo"
 
 #~ msgid "Hover and Active Font Color"
 #~ msgstr "Cor da Fonte ativa ou quando passar o mouse"
@@ -4891,27 +5168,6 @@ msgstr "Promoção!"
 #~ msgid "You may be interested in&hellip;"
 #~ msgstr "Você pode estar interessado em &hellip;"
 
-#~ msgid "Calculate Shipping"
-#~ msgstr "Calcular frete"
-
-#~ msgid "Select a country&hellip;"
-#~ msgstr "Escolha um país &hellip;"
-
-#~ msgid "State / county"
-#~ msgstr "Estado / País"
-
-#~ msgid "Select a state&hellip;"
-#~ msgstr "Escolha um estado &hellip;"
-
-#~ msgid "City"
-#~ msgstr "Cidade"
-
-#~ msgid "Postcode / Zip"
-#~ msgstr "CEP"
-
-#~ msgid "Update Totals"
-#~ msgstr "Atualizar Total"
-
 #~ msgid "Cart Discount"
 #~ msgstr "Desconto no carrinho"
 
@@ -4959,182 +5215,15 @@ msgstr "Promoção!"
 #~ msgid "Sold"
 #~ msgstr "Vendido"
 
-#~ msgid "This product is currently out of stock and unavailable."
-#~ msgstr "Esse produto no momento está fora de estoque e não está disponível."
-
-#~ msgid "Rated %s out of 5"
-#~ msgstr "Avaliado em %s de 5"
-
-#~ msgid "out of 5"
-#~ msgstr "de 5"
-
-#~ msgid "%s customer review"
-#~ msgid_plural "%s customer reviews"
-#~ msgstr[0] "%s avaliação de cliente"
-#~ msgstr[1] "%s avaliações de clientes"
-
 #~ msgid "Related Products"
 #~ msgstr "Produtos Relacionados"
-
-#~ msgid "Rated %d out of 5"
-#~ msgstr "Avaliado em %d de 5"
-
-#~ msgid "Your comment is awaiting approval"
-#~ msgstr "O seu comentário está aguardando aprovação"
-
-#~ msgid "verified owner"
-#~ msgstr "Proprietário verificado"
 
 #~ msgid "You may also like&hellip;"
 #~ msgstr "Você pode gostar também &hellip;"
 
 #, fuzzy
-#~ msgid "Options"
-#~ msgstr "Opções de SEO"
-
-#, fuzzy
-#~ msgid "Please Wait"
-#~ msgstr "Por favor tente novamente"
-
-#, fuzzy
-#~ msgid "Reset Section"
-#~ msgstr "Descrição da Página"
-
-#, fuzzy
-#~ msgid "error(s) were found!"
-#~ msgstr "Desculpe, nenhum resultado foi encontrado."
-
-#, fuzzy
-#~ msgid "warning(s) were found!"
-#~ msgstr "Desculpe, nenhum resultado foi encontrado."
-
-#, fuzzy
 #~ msgid "Options Object"
 #~ msgstr "Opções de SEO"
-
-#, fuzzy
-#~ msgid "Background Repeat"
-#~ msgstr "Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Background Clip"
-#~ msgstr "Cor do Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Background Origin"
-#~ msgstr "Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Background Size"
-#~ msgstr "Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Background Attachment"
-#~ msgstr "Imagem de Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Background Position"
-#~ msgstr "Posição da Imagem de Plano de Fundo"
-
-#, fuzzy
-#~ msgid "Add More"
-#~ msgstr "leia mais"
-
-#, fuzzy
-#~ msgid "Select an item"
-#~ msgstr "Escolha um arquivo"
-
-#, fuzzy
-#~ msgid "Font family"
-#~ msgstr "Família da Fonte"
-
-#, fuzzy
-#~ msgid "Backup Font Family"
-#~ msgstr "Família da Fonte"
-
-#, fuzzy
-#~ msgid "Font style"
-#~ msgstr "Estilo do Ícone"
-
-#, fuzzy
-#~ msgid "Font subsets"
-#~ msgstr "Estilo do Ícone"
-
-#, fuzzy
-#~ msgid "Font Subsets"
-#~ msgstr "Tamanho do Ícone"
-
-#, fuzzy
-#~ msgid "Font script"
-#~ msgstr "Família da Fonte"
-
-#, fuzzy
-#~ msgid "Text Align"
-#~ msgstr "Alinhamento"
-
-#, fuzzy
-#~ msgid "Font Variant"
-#~ msgstr "Família da Fonte"
-
-#, fuzzy
-#~ msgid "Text Decoration"
-#~ msgstr "Descrição da Página"
-
-#, fuzzy
-#~ msgid "Font Size"
-#~ msgstr "Tamanho do Ícone"
-
-#, fuzzy
-#~ msgid "Line Height"
-#~ msgstr "Altura do Vídeo"
-
-#, fuzzy
-#~ msgid "Height"
-#~ msgstr "Altura do Mapa"
-
-#, fuzzy
-#~ msgid "Word Spacing"
-#~ msgstr "Espaçamento Superior"
-
-#, fuzzy
-#~ msgid "Letter Spacing"
-#~ msgstr "Espaçamento da Esquerda"
-
-#, fuzzy
-#~ msgid "Font color"
-#~ msgstr "Cor da Fonte"
-
-#, fuzzy
-#~ msgid "Standard Fonts"
-#~ msgstr "Padrão: de"
-
-#, fuzzy
-#~ msgid "Import / Export Options"
-#~ msgstr "Opções do Post do Portfólio"
-
-#, fuzzy
-#~ msgid "Import Options"
-#~ msgstr "Opções do Post"
-
-#, fuzzy
-#~ msgid "Import"
-#~ msgstr "Opções do Post"
-
-#, fuzzy
-#~ msgid "Export Options"
-#~ msgstr "Opções do Post"
-
-#, fuzzy
-#~ msgid "Copy"
-#~ msgstr "Sem link"
-
-#, fuzzy
-#~ msgid "Copy Link"
-#~ msgstr "Sem link"
-
-#, fuzzy
-#~ msgid "Import / Export"
-#~ msgstr "Opções do Post do Portfólio"
 
 #, fuzzy
 #~ msgid "our documentation"
@@ -5147,18 +5236,6 @@ msgstr "Promoção!"
 #, fuzzy
 #~ msgid "Email address"
 #~ msgstr "um endereço mal-digitado"
-
-#, fuzzy
-#~ msgid "This field must be a valid color value."
-#~ msgstr "Esse campo é obrigatório."
-
-#, fuzzy
-#~ msgid "This field must be a valid date."
-#~ msgstr "Esse campo é obrigatório."
-
-#, fuzzy
-#~ msgid "This field cannot be empty. Please provide a value."
-#~ msgstr "Esse campo é obrigatório."
 
 #, fuzzy
 #~ msgid "Some Feature"
@@ -5215,46 +5292,6 @@ msgstr "Promoção!"
 #, fuzzy
 #~ msgid "View %s"
 #~ msgstr "Novo %s"
-
-#, fuzzy
-#~ msgid "Order ID"
-#~ msgstr "Ordenar por"
-
-#, fuzzy
-#~ msgid "Billing Email"
-#~ msgstr "Enviar email"
-
-#, fuzzy
-#~ msgid "Reviews"
-#~ msgstr "Aba de Avaliações"
-
-#, fuzzy
-#~ msgid "There are no reviews yet."
-#~ msgstr "Não existem opções anteriores"
-
-#, fuzzy
-#~ msgid "Add a review"
-#~ msgstr "Adicionar Novo"
-
-#, fuzzy
-#~ msgid "Email"
-#~ msgstr "Email:"
-
-#, fuzzy
-#~ msgid "Your Rating"
-#~ msgstr "Seu carrinho"
-
-#, fuzzy
-#~ msgid "Rate&hellip;"
-#~ msgstr "Marcar/Desmarcar Todos"
-
-#, fuzzy
-#~ msgid "Your Review"
-#~ msgstr "Aba de Avaliações"
-
-#, fuzzy
-#~ msgid "Choose an option"
-#~ msgstr "Escolha um ícone"
 
 #~ msgid "It is recomended that you leave this off."
 #~ msgstr "É recomendável você manter isso desligado."

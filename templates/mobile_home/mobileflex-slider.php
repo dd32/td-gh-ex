@@ -1,12 +1,12 @@
 <div class="sliderclass kad-mobile-slider">
    <?php  global $virtue; 
-         if(isset($virtue['mobile_slider_size'])) {$slideheight = $virtue['mobile_slider_size'];} else { $slideheight = 300; }
-        if(isset($virtue['mobile_slider_size_width'])) {$slidewidth = $virtue['mobile_slider_size_width'];} else { $slidewidth = 480; }
-        if(isset($virtue['mobile_slider_captions'])) { $captions = $virtue['mobile_slider_captions']; } else {$captions = '';}
-        if(isset($virtue['home_mobile_slider'])) {$slides = $virtue['home_mobile_slider']; } else {$slides = '';}
-                ?>
+          if(isset($virtue['mobile_slider_size'])) {$slideheight = $virtue['mobile_slider_size'];} else { $slideheight = 300; }
+          if(isset($virtue['mobile_slider_size_width'])) {$slidewidth = $virtue['mobile_slider_size_width'];} else { $slidewidth = 480; }
+          if(isset($virtue['mobile_slider_captions'])) { $captions = $virtue['mobile_slider_captions']; } else {$captions = '';}
+          if(isset($virtue['home_mobile_slider'])) {$slides = $virtue['home_mobile_slider']; } else {$slides = '';}
+                  ?>
 <div id="imageslider" class="container">
-                   <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
+                   <div id="mflex" class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
                        <ul class="slides">
                         <?php foreach ($slides as $slide) : 
                           if(!empty($slide['target']) && $slide['target'] == 1) {$target = '_blank';} else {$target = '_self';}
@@ -36,7 +36,7 @@
       ?>
       <script type="text/javascript">
             jQuery(window).load(function () {
-                jQuery('.flexslider').flexslider({
+                jQuery('#mflex').flexslider({
                     animation: "<?php echo $transtype ?>",
                     animationSpeed: <?php echo $transtime ?>,
                     slideshow: <?php echo $autoplay ?>,

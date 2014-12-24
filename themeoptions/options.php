@@ -32,12 +32,18 @@ if ( !class_exists( "Redux_Framework_Virtue_config" ) ) {
                 public function initSettings() {
 
                 load_theme_textdomain('virtue', get_template_directory() . '/languages');
-                  // Create the sections and fields
-                  $this->setSections();
-                  // Set the default arguments
-                  $this->setArguments();
-                  //add_filter('redux/options/'.$this->args['opt_name'].'/compiler', array( $this, 'compiler_action' ), 10, 2);
-                  $this->ReduxFramework = new ReduxFramework($this->sections, $this->args);
+                
+                // Set the default arguments
+                $this->setArguments();
+                
+                // Create the sections and fields
+                $this->setSections();
+
+                if ( ! isset( $this->args['opt_name'] ) ) { // No errors please
+                    return;
+                }
+
+                $this->ReduxFramework = new ReduxFramework($this->sections, $this->args);
                 }
 
                 public function setSections() {

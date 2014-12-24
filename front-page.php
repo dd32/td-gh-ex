@@ -2,14 +2,13 @@
 			if(isset($virtue['mobile_switch'])) {$mobile_slider = $virtue['mobile_switch']; } else { $mobile_slider = '0';}
 			if(isset($virtue['choose_slider'])) {$slider = $virtue['choose_slider'];} else {$slider = 'mock_flex';}
 			if($mobile_slider == '1') {
-		 		$slider = $virtue['choose_mobile_slider'];
-				if ($slider == "flex") {
+		 		$mslider = $virtue['choose_mobile_slider'];
+				if ($mslider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');
-				} else if ($slider == "video") {
+				} else if ($mslider == "video") {
 					get_template_part('templates/mobile_home/mobilevideo', 'block');
 				} 
 			}
-			
 			if ($slider == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 				}

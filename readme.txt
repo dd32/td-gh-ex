@@ -49,6 +49,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.3 =
+* Fix issue with live preview.
+* Small CSS changes.
+* Fix mobile slider issue.
+
 = Version: 2.3.2 =
 * Firefox Grid Styles.
 * Fix issue with live preview.

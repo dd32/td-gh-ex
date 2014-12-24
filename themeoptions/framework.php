@@ -301,10 +301,10 @@
 
                     // Internataionalization
                     $this->_internationalization();
-
                     // Register extra extensions
-                    $this->_register_extensions();
 
+                    $this->_register_extensions();
+                    
                     // Grab database values
                     $this->get_options();
 
