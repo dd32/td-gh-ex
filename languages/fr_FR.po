@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkElements v2.1\n"
+"Project-Id-Version: DarkElements v2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-11-24 22:47:43+0000\n"

@@ -70,7 +70,32 @@
 	add_action( 'after_setup_theme', 'darkelements_setup' ); 
 
 
-// Add html5 support for older IE version 
+// Add blogname to document title for WP 4.0 and older 
+function darkelements_wp_title( $title ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	return $title;
+}
+add_filter( 'wp_title', 'darkelements_wp_title' );
+
+
+// Add document title for WP 4.0 and older 
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function darkelements_render_title() {
+		?> 
+		<title><?php wp_title( '|', true, 'right' ); ?></title> 
+		<?php
+	}
+	add_action( 'wp_head', 'darkelements_render_title' );
+endif;
+
+
+// Add html5 support for IE 8 and older 
 	function darkelements_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 

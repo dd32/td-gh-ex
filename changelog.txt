@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 2.2 - december 2014
+- file header: removed wp_title because of new title-tag
+- file functions: added backwards compatibility for WP 4.0 and older
+- reordered file nav
+
 DarkElements version 2.1 - december 2014
 - file functions: added title-tag
 - updated the reset stylesheet
