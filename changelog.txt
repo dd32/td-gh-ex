@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 1.9 - december 2014
+- file header: removed wp_title because of new title-tag
+- file functions: added backwards compatibility for WP 4.0 and older
+- reordered file nav
+
 MyKnowledgeBase version 1.8 - december 2014 
 - file functions: added title-tag
 - updated the reset stylesheet

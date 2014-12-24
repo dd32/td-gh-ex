@@ -68,7 +68,32 @@
 	add_action( 'after_setup_theme', 'myknowledgebase_setup' ); 
 
 
-// Add html5 support for older IE version 
+// Add blogname to document title for WP 4.0 and older 
+function myknowledgebase_wp_title( $title ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	return $title;
+}
+add_filter( 'wp_title', 'myknowledgebase_wp_title' );
+
+
+// Add document title for WP 4.0 and older 
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function myknowledgebase_render_title() {
+		?> 
+		<title><?php wp_title( '|', true, 'right' ); ?></title> 
+		<?php
+	}
+	add_action( 'wp_head', 'myknowledgebase_render_title' );
+endif;
+
+
+// Add html5 support for IE 8 and older 
 	function myknowledgebase_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
