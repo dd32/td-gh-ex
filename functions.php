@@ -68,7 +68,32 @@
 	add_action( 'after_setup_theme', 'multicolors_setup' ); 
 
 
-// Add html5 support for older IE version 
+// Add blogname to document title for WP 4.0 and older 
+function multicolors_wp_title( $title ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	return $title;
+}
+add_filter( 'wp_title', 'multicolors_wp_title' );
+
+
+// Add document title for WP 4.0 and older 
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function multicolors_render_title() {
+		?> 
+		<title><?php wp_title( '|', true, 'right' ); ?></title> 
+		<?php
+	}
+	add_action( 'wp_head', 'multicolors_render_title' );
+endif;
+
+
+// Add html5 support for IE 8 and older 
 	function multicolors_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
@@ -131,7 +156,6 @@
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	) );
-
 
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Left', 'multicolors' ),
