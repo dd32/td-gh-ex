@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Jobile
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
@@ -2411,13 +2411,21 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	width: 100%;
 	margin-bottom:0px;
 }
-.post-comments {
+.post-comments,
+.jobile-comment-list li.comment{
     border: 1px solid #cbcbcb;
     float: right;
     margin-bottom: 15px;
     padding-bottom: 15px;
     width: 98%;
     list-style: none;
+    padding-top: 10px;
+}
+.comment-body .reply{
+    padding-left: 20px;
+}
+.comment-body {
+    margin-bottom: 15px;
 }
 .post-comments h1 {
     color: #181818;
@@ -2428,12 +2436,17 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .comment-content a {
     color: #181818;
 }
-.post-comments .avatar {
+.post-comments .avatar,
+.comment .avatar{
     border-radius: 50%;
 }
-.post-comments img {
+.post-comments img{
     float: left;
     margin: 10px 10px 0 -27px;
+}
+.comment img{
+    float: left;
+    margin: 10px 10px 0 -17px;
 }
 .comment-content {
     margin-left: 20px;

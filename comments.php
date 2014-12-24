@@ -12,9 +12,7 @@ if ( post_password_required() )
             <h2><span class="recent-posts-title"><?php echo get_comments_number(). __('Comments','jobile'); ?></span></h2>
          </div>
         <ul class="jobile-comment-list">
-        <?php 
-	    wp_list_comments( array( 'callback' => 'jobile_comment', 'short_ping' => true, 'style' => 'ul' ) );	   
-	?>
+        <?php wp_list_comments( array(  'short_ping' => true, 'style' => 'ul' ) );	 ?>
         </ul>
        <?php paginate_comments_links(); ?>     
 	<?php endif; // have_comments() ?>

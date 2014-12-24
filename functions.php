@@ -327,58 +327,6 @@ function jobile_excerpt_length($length) {
 
 add_filter('excerpt_length', 'jobile_excerpt_length', 999);
 
-if (!function_exists('jobile_comment')) :
-
-    /**
-     * Template for comments and pingbacks.
-     *
-     * To override this walker in a child theme without modifying the comments template
-     * simply create your own jobile_comment(), and that function will be used instead.
-     *
-     * Used as a callback by wp_list_comments() for displaying the comments.
-     *
-     */
-    function jobile_comment($comment, $jobile_args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	switch ($comment->comment_type) :
-	    case 'pingback' :
-	    case 'trackback' :
-		// Display trackbacks differently than normal comments.
-		?>
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		    <p>
-			<?php _e('Pingback:', 'jobile'); ?>
-			<?php comment_author_link(); ?>
-			<?php edit_comment_link(__('Edit', 'jobile'), '<span class="edit-link">', '</span>'); ?>
-		    </p>
-		</li>
-		<?php
-		break;
-	    default :
-		// Proceed with normal comments.
-		if ($comment->comment_approved == 1) {
-		    global $post;
-		    ?>
-		    <li <?php comment_class('col-md-12 no-padding-lr post-comments'); ?> id="li-comment-<?php comment_ID(); ?>">
-			<?php echo get_avatar(get_the_author_meta('ID'), '52'); ?>
-		        <article id="comment-<?php comment_ID(); ?>" class="comment-content">
-			    <?php printf('<h3 class="comment-author-title">%1$s</h3>', get_comment_author_link(), ( $comment->user_id === $post->post_author ) ? __('Post author ', 'jobile') : ''); ?>
-			    <div class="comment-metadata"><?php echo get_comment_date() . _e('at','jobile') . get_the_time(); ?></div>
-			<div class="comment-content"><?php comment_text(); ?></div>
-		    	<div class="reply-comment">
-				<?php echo comment_reply_link(array_merge($jobile_args, array('reply_text' => __('Reply', 'jobile'), 'after' => '', 'depth' => $depth, 'max_depth' => $jobile_args['max_depth']))); ?>
-		    	</div>
-		        </article>
-		    </li>
-		    <!-- #comment-## -->
-		    <?php
-		}
-		break;
-	endswitch; // end comment_type check
-    }
-
-endif;
-
 if (!function_exists('is_plugin_inactive')) {
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 }

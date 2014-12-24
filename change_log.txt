@@ -43,3 +43,6 @@ ii) set missing text domain.
 iii) change get_the_title() to the_title().
 iv) set iter_wrap in wp_nav_menu.
 v) set comment list in HTML5.
+
+Version: 1.1.7 (24 Dec 2014)
+1) comment list support with HTML5 and remove callback function.

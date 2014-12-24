@@ -290,6 +290,15 @@
 }
 }
 @media screen and (max-width:480px){
+    .comment-metadata{
+        margin-left: 20px;
+    }
+    .comments-area ul, .comments-area ol {
+    padding-left: 15px;
+}
+.comment-body {
+    padding-right: 10px;
+}
 /**section-top media**/
 .caption-over{
 	width:50%;
