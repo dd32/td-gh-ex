@@ -41,13 +41,19 @@ jQuery( document ).ready(function() {
 		}
 	});
 	
-	jQuery('#header-spacer').height(jQuery('#header-main-fixed').height());
-	
 	if (jQuery('#wpadminbar').length > 0) {
 	
-		jQuery('#header-main-fixed').css('top', jQuery('#wpadminbar').height() + 'px');
+		jQuery('#header-main').css('top', jQuery('#wpadminbar').height() + 'px');
 		jQuery('#wpadminbar').css('position', 'fixed');
 	}
+	
+	jQuery('#camera_wrap').camera({
+		height: '300px',
+		loader: 'bar',
+		pagination: true,
+		thumbnails: false,
+		time: 4500
+	});
 });
 
 function fmuzz_IsSmallResolution() {

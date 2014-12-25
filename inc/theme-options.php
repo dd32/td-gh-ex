@@ -35,6 +35,9 @@ function fmuzz_get_option_defaults() {
 
 	$defaults = array(
 		'social_rss' 	   		=> get_bloginfo( 'rss2_url' ),
+		'social_youtube'		=> '#', 
+		'social_googleplus'		=> '#',
+		'social_facebook'		=> '#',
 		'notfound_image'		=> get_stylesheet_directory_uri().'/images/404.png',
 		'notfound_title'		=> __( 'Error 404: Not Found', 'fmuzz' ),
 		'notfound_content'		=> __( '<p>Sorry. The page you are looking for does not exist.</p>', 'fmuzz' ),

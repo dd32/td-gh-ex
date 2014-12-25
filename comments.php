@@ -1,47 +1,54 @@
-    <?php
+<?php
+/**
+ * The template for displaying comments
+ *
+ * The area of the page that contains both current comments
+ * and the comment form.
+ *
+ * @package WordPress
+ * @subpackage fmuzz
+ */
 
 /*
-	 * If the current post is protected by a password and the visitor has not yet
-	 * entered the password we will return early without loading the comments.
-	 */
-	if ( post_password_required() ) {
-		return;
-	}
-     
-    // Do not delete these lines
-    if (!empty($_SERVER[ 'SCRIPT_FILENAME' ]) && 'comments.php' == basename($_SERVER[ 'SCRIPT_FILENAME' ]))
-		die (__( 'Please do not load this page directly. Thanks!', 'fmuzz' ));
-     
-    if ( post_password_required() ) : ?>
-		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'fmuzz' ); ?></p>
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+?>
+
+<?php if ( have_comments() ) : ?>
+    <h3 id="comments">
 		<?php
-		return;
-    endif;
-    ?>
-    <?php if ( have_comments() ) : ?>
-    <h3 id="comments"><?php comments_number(__( 'No Comments', 'fmuzz' ),
-											__( 'One Response', 'fmuzz' ),
-											__( '% Responses', 'fmuzz' ));?> <?php _e( 'to', 'fmuzz' ); ?> &#8220;<?php the_title(); ?>&#8221;
+			printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'fmuzz' ),
+				number_format_i18n( get_comments_number() ), get_the_title() );
+		?>
 	</h3>
     <ol class="commentlist">
-		<?php wp_list_comments( 'avatar_size=48' ); ?>
-    </ol>
+		<?php
+			wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 48,
+			) );
+		?>
+    </ol><!-- .commentlist -->
     <div class="comment-navigation">
 		<div class="alignleft"><?php previous_comments_link(); ?>
 		</div>
 		<div class="alignright"><?php next_comments_link(); ?>
 		</div>
-    </div>
-    <?php else : // this is displayed if there are no comments so far ?> 
-		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.', 'fmuzz' ); ?></p>
-		<?php endif; ?>
-    <?php endif; ?>
-     
-	<?php 
-		  $comments_args = array (
-							'comment_notes_before'	=>	'',
-							'comment_notes_after'	=>	'',
-						   );
+    </div><!-- .comment-navigation -->
 	
-		  comment_form( $comments_args ); ?>
+<?php endif; // have_comments() ?>
+
+<?php
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'fmuzz' ); ?></p>
+<?php endif; ?>
+     
+<?php comment_form(); ?>

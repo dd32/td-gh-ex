@@ -13,7 +13,7 @@ function fmuzz_load_scripts() {
 	$header_image = get_header_image();
 	if ( $header_image ) {
 
-		$custom_css = "#header-main-fixed {background-image:url('" . esc_attr( $header_image ) . "');filter:none !important;}";
+		$custom_css = "#header-main {background-image:url('" . esc_attr( $header_image ) . "');filter:none !important;}";
 	
 		wp_add_inline_style( 'fmuzz-style', $custom_css );
 	}

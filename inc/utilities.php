@@ -143,17 +143,7 @@ function fmuzz_display_slider() {
 <?php		} ?>
 	</div><!-- #camera_wrap -->
 	<script>
-		jQuery(function(){
-			jQuery('#camera_wrap').camera({
-				height: '300px',
-				loader: 'bar',
-				pagination: true,
-				
-				thumbnails: false,
-				imagePath: '<?php echo get_template_directory_uri() ?>/images/slider',
-				time: 4500
-			});
-		});
+		
 	</script>
 <?php 
 }
@@ -233,12 +223,74 @@ function fmuzz_the_content_single() {
 /**
  * Displays the Page Header Section including Page Title and Breadcrumb
  */
-function fmuzz_show_page_header_section() { ?>
+function fmuzz_show_page_header_section() {
+	global $paged, $page;
+
+	if ( is_single() || is_page() ) :
+        $title = single_post_title( '', false );
+
+	elseif ( is_home() ) :
+		if ( $paged >= 2 || $page >= 2 ) :
+			$title = sprintf( __( '%s - Page %s', 'fmuzz' ), single_post_title( '', false ), max( $paged, $page ) );	
+		else :
+			$title = single_post_title( '', false );	
+		endif;
+
+	elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+		$title = __( 'Asides', 'fmuzz' );
+
+	elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+		$title = __( 'Images', 'fmuzz' );
+
+	elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+		$title = __( 'Videos', 'fmuzz' );
+
+	elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
+		$title = __( 'Audio', 'fmuzz' );
+
+	elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+		$title = __( 'Quotes', 'fmuzz' );
+
+	elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+		$title = __( 'Links', 'fmuzz' );
+		
+	elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
+		$title = __( 'Galleries', 'fmuzz' );
+		
+	elseif ( is_tag() ) :
+		$title = sprintf( __( 'Tag Archives: %s', 'fmuzz' ), single_tag_title( '', false ) );
+
+	elseif ( is_category() ) :
+		$title = sprintf( __( 'Category Archives: %s', 'fmuzz' ), single_cat_title( '', false ) );
+		
+	elseif ( is_day() ) :
+		$title = sprintf( __( 'Daily Archives: %s', 'fmuzz' ), get_the_date() );
+
+	elseif ( is_month() ) :
+		$title = sprintf( __( 'Monthly Archives: %s', 'fmuzz' ),
+					get_the_date( _x( 'F Y', 'monthly archives date format', 'fmuzz' ) ) );
+
+	elseif ( is_year() ) :
+		$title = sprintf( __( 'Yearly Archives: %s', 'fmuzz' ),
+					get_the_date( _x( 'Y', 'yearly archives date format', 'fmuzz' )  ) );
+
+	elseif ( is_archive() ) :
+		$title = __( 'Archives', 'fmuzz' );
+		
+	elseif ( is_404() ) :
+		$title = __( 'Error 404: Not Found', 'fmuzz' );
+
+	else :
+		$title = wp_title('', false);
+
+	endif;
+
+ ?>
 
 	<section id="page-header">
 		<div id="page-header-content">
 
-			<h1><?php wp_title(''); ?></h1>
+			<h1><?php echo $title; ?></h1>
 
 			<div class="clear">
 			</div>
