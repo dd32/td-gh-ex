@@ -15,17 +15,17 @@ $blueplanet_options_defaults = array(
 		'feedburner_url'               => '',
 		'flg_enable_goto_top'          => '0',
 		'banner_background_color'      => '#00ADB3',
-		'search_placeholder'           => 'Search here...',
+		'search_placeholder'           => __( 'Search here...', 'blue-planet' ),
 		'flg_hide_search_box'          => '1',
 		'flg_hide_social_icons'        => '0',
 		'flg_enable_footer_widgets'    => '0',
 		'number_of_footer_widgets'     => '3',
-		'copyright_text'               => 'Copyright &copy; All Rights Reserved.',
+		'copyright_text'               => __( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
 		'flg_hide_powered_by'          => '1',
 		'flg_hide_footer_social_icons' => '0',
 		'default_layout'               => 'right-sidebar',
 		'content_layout'               => 'excerpt',
-		'read_more_text'               => 'Read more',
+		'read_more_text'               => __( 'Read more', 'blue-planet' ),
 		'excerpt_length'               => '50',
 		'slider_status'                => 'none',
 		'transition_effect'            => 'fade',
@@ -33,6 +33,7 @@ $blueplanet_options_defaults = array(
 		'slider_autoplay'              => '1',
 		'transition_delay'             => 4,
 		'transition_length'            => 1,
+		'main_slider_image'            => array(),
 		'slider_status_2'              => 'none',
 		'number_of_slides_2'           => 3,
 		'slider_category_2'            => '',
@@ -66,12 +67,46 @@ $blueplanet_options_defaults = array(
 		'social_digg'                  => '',
 );
 global $blueplanet_options_settings;
-$blueplanet_options_settings = blueplanet_options_set_defaults( $blueplanet_options_defaults );
+$blueplanet_options_settings = get_option( 'blueplanet_options' );
 
-function blueplanet_options_set_defaults( $blueplanet_options_defaults ) {
-	if(!get_option('blueplanet_options')){
-		add_option('blueplanet_options', $blueplanet_options_defaults);
+// $blueplanet_options_settings = blueplanet_options_set_defaults( $blueplanet_options_defaults );
+
+// function blueplanet_options_set_defaults( $blueplanet_options_defaults ) {
+// 	if(!get_option('blueplanet_options')){
+// 		add_option('blueplanet_options', $blueplanet_options_defaults);
+// 	}
+// 	$blueplanet_options_settings = array_merge( $blueplanet_options_defaults, (array) get_option( 'blueplanet_options', array() ) );
+// 	return $blueplanet_options_settings;
+// }
+
+function blueplanet_get_option( $key ){
+
+	global $blueplanet_options_settings;
+	global $blueplanet_options_defaults;
+
+	$output = '';
+
+	// Set default value first
+	if ( is_array( $blueplanet_options_defaults ) && isset( $blueplanet_options_defaults[$key] ) ) {
+		$output = $blueplanet_options_defaults[$key];
 	}
-	$blueplanet_options_settings = array_merge( $blueplanet_options_defaults, (array) get_option( 'blueplanet_options', array() ) );
-	return $blueplanet_options_settings;
+
+	// Has any value?
+	if ( is_array( $blueplanet_options_settings ) && isset( $blueplanet_options_settings[$key] ) ) {
+		$output = $blueplanet_options_settings[$key];
+	}
+
+	return $output;
+
+}
+
+function blueplanet_get_option_all(){
+
+	global $blueplanet_options_settings;
+	global $blueplanet_options_defaults;
+
+	$output = array();
+	$output = array_merge( $blueplanet_options_defaults, (array)$blueplanet_options_settings );
+	return $output;
+
 }

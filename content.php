@@ -4,8 +4,7 @@
  */
 ?>
 <?php
-global $blueplanet_options_settings;
-$bp_options = $blueplanet_options_settings;
+$content_layout = blueplanet_get_option('content_layout');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -25,7 +24,7 @@ $bp_options = $blueplanet_options_settings;
 	<?php else : ?>
 	<div class="entry-content">
 
-		<?php if('excerpt' == $bp_options['content_layout']  ) : ?>
+		<?php if( 'excerpt' == $content_layout ) : ?>
 				<?php if ( has_post_thumbnail()) : ?>
 				<div class="bp-thumbnail-wrapper">
 				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
@@ -37,7 +36,7 @@ $bp_options = $blueplanet_options_settings;
 
 
         <?php else:?>
-        	<?php if ( 'excerpt-thumb' == $bp_options['content_layout']  ): ?>
+        	<?php if ( 'excerpt-thumb' == $content_layout ): ?>
         		<div class="et-row row ">
         			<div class="et-row-left col-md-5 col-sm-5 col-xs-12">
 	        			<?php if ( has_post_thumbnail()) : ?>

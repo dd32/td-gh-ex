@@ -5,7 +5,7 @@
 Blue Planet is a beautiful and sleek theme for your awesome WordPress website. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7 and many more. It is also translation ready. If you need support with this theme, please go to http://wordpress.org/support/theme/blue-planet
 
 == Navigation ==
-Two menu positions are available. One is Primary menu. It is such designed that first priority would go to widget menu. If there is no menu in the widget area, selected menu will be displayed. Even menu is not selected, then default menu will be displayed provided by 'wp_page_menu()' function.   
+Two menu positions are available. One is Primary menu. It is such designed that first priority would go to widget menu. If there is no menu in the widget area, selected menu will be displayed. Even menu is not selected, then default menu will be displayed provided by 'wp_page_menu()' function.
 Another menu 'Footer Menu' is for the footer area.
 
 == Translation ==
@@ -20,6 +20,8 @@ Blue Planet is distributed under the terms of the GNU General Public License v3
 The exceptions to license are as follows:
 - Nivo Slider is released under the MIT license
 - jquery.meanmenu.js released by Chris Wharton (https://github.com/meanthemes/meanMenu)
+
+* The image used in screenshot of the theme is theme's author personal creation and is free for personal and commercial use.
 
 == Tags ==
 dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready
@@ -57,28 +59,3 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 - blue_planet_filter_excerpt_length()
 - blue_planet_filter_copyright_text_content()
 - blue_planet_filter_social_sites()
-
-== Changelog ==
-Version 1.0.8
-* Bug fix: front page issue of Main slider
-* Bug fix: Secondary slider invisible in front page when static page is set as front page
-* Bug fix: Skype button link  
-* Other minor bug fixes
-
-Version 1.0.7.3
-* Bug of header image fixed
-
-Version 1.0.7
-* Bug fixes
-* Filters added 
-* Child theme compatible
-
-Version 1.0.6
-* Bugfix: Child theme not working [URL modified for including parent CSS and JS files]
-
-Version 1.0.5
-* Theme live at WordPress.org
-
-Version 1.0.0
-* Initial Submission to WordPress.org
-

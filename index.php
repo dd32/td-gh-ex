@@ -12,10 +12,6 @@
  */
 
 get_header(); ?>
-<?php
-global $blueplanet_options_settings;
-$bp_options = $blueplanet_options_settings;
-?>
 
 	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
     <?php

@@ -7,10 +7,7 @@
  * @package Blue Planet
  */
 ?>
-<?php
-global $blueplanet_options_settings;
-$bp_options = $blueplanet_options_settings;
-?>
+
     <?php
     //
     do_action( 'blue_planet_before_content_close' );

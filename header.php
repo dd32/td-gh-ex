@@ -1,6 +1,4 @@
 <?php
-global $blueplanet_options_settings;
-$bp_options = $blueplanet_options_settings;
 /**
  * The Header for our theme.
  *
@@ -24,12 +22,6 @@ $bp_options = $blueplanet_options_settings;
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<?php  if( !empty( $bp_options['custom_favicon']  ) ) :?>
-<link rel="shortcut icon"
-href="<?php echo esc_url($bp_options['custom_favicon']); ?>" />
-<?php  endif;?>
-
  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
@@ -108,5 +100,3 @@ href="<?php echo esc_url($bp_options['custom_favicon']); ?>" />
     do_action( 'blue_planet_after_content_open' );
     //
     ?>
-
-

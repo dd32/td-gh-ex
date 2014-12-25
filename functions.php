@@ -10,13 +10,6 @@ define('BS_SHORT_NAME', 'bsk');
  * @package Blue Planet
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */
-}
-
 if ( ! function_exists( 'blue_planet_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -26,6 +19,14 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function blue_planet_setup() {
+
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+     */
+    global $content_width;
+    if ( ! isset( $content_width ) ) {
+    	$content_width = 730; /* pixels */
+    }
 
 	/*
 	 * Make theme available for translation.
@@ -39,8 +40,10 @@ function blue_planet_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
     // Add support for custom backgrounds
-	add_theme_support( 'custom-background' );
+    add_theme_support( 'custom-background' );
 
+    // Add support for title tag
+    add_theme_support( "title-tag" );
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
@@ -117,11 +120,11 @@ function blue_planet_widgets_init() {
         'after_title'   => '</h1>',
     ) );
 
-    //
-    global $blueplanet_options_settings;
-    $bp_options = $blueplanet_options_settings;
-    if( 1 == $bp_options['flg_enable_footer_widgets']){
-        $num_footer = $bp_options['number_of_footer_widgets'];
+    // Register footer widgets
+    $flg_enable_footer_widgets = blueplanet_get_option( 'flg_enable_footer_widgets' );
+    if( 1 == $flg_enable_footer_widgets){
+        $number_of_footer_widgets = blueplanet_get_option( 'number_of_footer_widgets' );
+        $num_footer = $number_of_footer_widgets;
 
         for($i = 1; $i <= $num_footer ;$i++){
             register_sidebar(array(
@@ -142,43 +145,44 @@ add_action( 'widgets_init', 'blue_planet_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function blue_planet_scripts() {
-    global $blueplanet_options_settings;
-    $bp_options = $blueplanet_options_settings;
+if ( ! function_exists( 'blue_planet_scripts' ) ):
 
-    wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
-    wp_enqueue_style( 'blue-planet-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'' );
+    function blue_planet_scripts() {
 
-        wp_enqueue_script('bootstrap-script',get_template_directory_uri().'/js/bootstrap.min.js', array('jquery'),'3.0.0', TRUE);
+        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
+        wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
+        wp_enqueue_style( 'blue-planet-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'' );
 
+    	wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script( 'blue-planet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+    	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    		wp_enqueue_script( 'comment-reply' );
+    	}
 
-	wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-    if( 'none' != $bp_options['slider_status'] || 'none' != $bp_options['slider_status_2']){
-        //nivo
-        wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
-        wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
-        wp_enqueue_script('nivo-slider-script',get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array('jquery'),'3.2', TRUE);
+      $slider_status = blueplanet_get_option('slider_status');
+      $slider_status_2 = blueplanet_get_option('slider_status_2');
+      if( 'none' != $slider_status || 'none' != $slider_status_2 ){
+          //nivo
+          wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
+          wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
+          wp_enqueue_script('nivo-slider-script',get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array('jquery'),'3.2', TRUE);
 
 
 
+      }
+
+      //meanmenu
+      wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
+      wp_enqueue_script('meanmenu-script',get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array('jquery'),'2.0.6', TRUE);
+
+
+
+      //theme custom
+      wp_enqueue_script('blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array('jquery'),'1.0.9', TRUE);
     }
 
-    //meanmenu
-    wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
-    wp_enqueue_script('meanmenu-script',get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array('jquery'),'2.0.6', TRUE);
+endif;
 
-
-
-    //theme custom
-    wp_enqueue_script('blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array('jquery'),'1.0', TRUE);
-}
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 
 /**
@@ -199,11 +203,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -75,8 +75,8 @@ remove_action('wp_head', 'wp_generator');
 if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 //Messgae to show in the Featured Image Meta box
 function blue_planet_featured_image_instruction( $content ) {
-    $content .= '<strong>Recommended image sizes</strong><br/>';
-    $content .= '<br/>Secondary Slider : 720px X 350px';
+    $content .= '<strong>'.__( 'Recommended image sizes', 'blue-planet' ).'</strong><br/>';
+    $content .= '<br/>'.__( 'Secondary Slider : 720px X 350px', 'blue-planet' );
     return $content;
 }
 endif; // blue_planet_featured_image_instruction
