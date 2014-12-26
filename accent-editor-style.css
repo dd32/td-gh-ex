@@ -3,14 +3,13 @@ TinyMCE editor styles
 --------------------------------------------------------------*/
 
 body.wp-autoresize {
-	max-width: 800px;
+	max-width: 730px;
 }
 
 .mceContentBody {
-	font-size: 18px;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
 	line-height: 1.6;
-	padding: 0 2%;
 }
 
 .mceContentBody h1,
@@ -20,44 +19,18 @@ body.wp-autoresize {
 .mceContentBody h5,
 .mceContentBody h6 {
 	clear: both;
-	font-family: 'Varela Round','Source Sans Pro', sans-serif;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-weight: normal;
 	line-height: 1.2;
-	margin-bottom: 4%;
 }
 
-.mceContentBody h1 {
-	font-size: 50px;
+.mceContentBody a {
+	color: #48a3a6;
+	text-decoration: none;
 }
 
-.mceContentBody .entry-title {
-	font-weight: bold;
-}
-
-.mceContentBody h2 {
-	font-size: 38px;
-}
-
-.mceContentBody .widget-title {
-	font-size: 24px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-}
-
-.mceContentBody h3 {
-	font-size: 32px;
-}
-
-.mceContentBody h4 {
-	font-size: 28px;
-}
-
-.mceContentBody h5 {
-	font-size: 24px;
-}
-
-.mceContentBody h6 {
-	font-size: 20px;
-	font-weight: bold;
+.mceContentBody a:hover {
+	text-decoration: underline;
 }
 
 .alignleft {

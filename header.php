@@ -23,7 +23,9 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accent' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner" >
-		<div class="header-image" style="background: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/header.jpg'; ?><?php endif; ?>) 50% 50%; width: 100%;">
+		<div class="header-image" style="background: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/header.jpg'; ?><?php endif; ?>); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
 			<div class="mobile-search">
 				<?php get_search_form(); ?>
 				<i class="fa fa-2x fa-times mobile-search-close"></i>

@@ -26,8 +26,8 @@ function accent_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'accent_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'fff',
-		'width'                  => 2000,
-		'height'                 => 360,
+		'width'                  => 1140,
+		'height'                 => 216,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'accent_header_style',
 		'admin-head-callback'    => 'accent_admin_header_style',

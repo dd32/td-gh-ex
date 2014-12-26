@@ -91,6 +91,14 @@ add_action( 'wp', 'accent_setup_author' );
 /* Google fonts URL */
 function accent_google_fonts_url() {
 	$accent_font_families = array();
+	
+	// The default Source Sans Pro & Varela Round fonts
+	if ( !is_admin() ) {
+        wp_register_style('accent-source-sans-pro', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,700,700italic', array(), false, 'all');
+        wp_enqueue_style('accent-source-sans-pro');
+		wp_register_style('accent-varela-round', 'http://fonts.googleapis.com/css?family=Varela+Round:400', array(), false, 'all');
+        wp_enqueue_style('accent-varela-round');
+    }
 
 	// Check if body font is not Source Sans Pro 
 	if ( 'Source Sans Pro' != get_theme_mod( 'body_font', 'Source Sans Pro' ) ) {

@@ -313,6 +313,17 @@ function accent_custom_css() {
 	.main-navigation a {
 		color: #d2d2d2;
 	}
+	.bypostauthor .comment-body {
+		border-left: 6px solid <?php echo get_theme_mod( 'links_color' ); ?>;
+	}
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="url"]:focus,
+	input[type="password"]:focus,
+	input[type="search"]:focus,
+	textarea:focus {
+		border: 1px solid <?php echo get_theme_mod( 'links_color' ); ?>;
+	}
 	</style>
 	<?php }
 	
