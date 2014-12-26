@@ -4,7 +4,7 @@ Theme URI: https://competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://competethemes.com
 Description: Ignite is a responsive blog theme. It includes logo tools, social media icons, a left- or right-sidebar layout, five fonts, custom background colors, and many additional display options. There is also a premium upgrade for Ignite called Ignite Plus. See our fully-setup live demo at http://www.competethemes.com/ignite-live-demo/
-Version: 1.41
+Version: 1.42
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -752,12 +752,6 @@ a img {
   .parent-icons .menu-item-has-children ul .menu-item-has-children > a:after {
     content: '\25B8';
   }
-}
-/* 900px */
-@media all and (min-width: 56.25em) {
-  .site-header {
-    padding: 0 7.407%;
-  }
 
   .site-header .social-media-icons {
     display: inline-block;
@@ -783,6 +777,12 @@ a img {
   }
   .site-header .social-media-icons.visible-top {
     visibility: visible;
+  }
+}
+/* 900px */
+@media all and (min-width: 56.25em) {
+  .site-header {
+    padding: 0 7.407%;
   }
 }
 /* 1000px */
