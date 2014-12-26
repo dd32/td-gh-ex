@@ -1,8 +1,9 @@
 /* Options Framework Admin Styles */
 
 #optionsframework {
-    max-width:840px;
+    width:760px;
     background:#fff;
+    float: left;
 }
 #optionsframework-wrap h2.nav-tab-wrapper{
 	padding: 10px 0 0;
@@ -318,16 +319,67 @@
 .theme-header .ak-socials p{
 	margin-top: 0;
 }
-#optionsframework .product{
-	background: #EEE;
-	padding: 10px;
-	border: 1px solid #CCC;
-	margin-bottom: 15px;
-	line-height: 1.5;
-}
-#optionsframework .logo-product{
+.update-banner{
 	float: left;
+	margin-left: 10px;
+	width: 300px;
 }
-#optionsframework .productext{
-	padding-left: 200px;
+.button-link {
+    background: none repeat scroll 0 0 #fff;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px;
+    text-align: center;
+}
+#optionsframework-metabox a {
+    box-shadow: none;
+}
+.any-question {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding: 15px 10px;
+    text-align: center;
+}
+.ap-popup-bg{
+	position: fixed;
+	background: #000;
+	background: rgba(0,0,0,0.4);
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}
+.ap-popup-wrapper{
+	position: fixed;
+	width: 340px;
+	left: 50%;
+	top:50%;
+	margin-left: -170px;
+	margin-top: -140px;
+	z-index: 99999999;
+	background: #FFF;
+	padding: 10px;
+}
+.ap-popup-close{
+	position: absolute;
+	right: -10px;
+	top:-10px;
+	background: #000;
+	height: 26px;
+	width: 26px;
+	text-align: center;
+	line-height: 26px;
+	color: #FFF;
+	font-size:20px;
+	cursor: pointer;
+}
+.ap-popup-wrapper h4{
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	margin: 2px 0 10px;
+	color: #E66432;
+	line-height:16px;
 }

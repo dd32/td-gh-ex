@@ -13,7 +13,8 @@
 	<footer id="colophon" class="site-footer">
 		<?php if(is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) :?>
 		<div class="top-footer footer-column-<?php echo accesspress_footer_count(); ?>">
-			<div class="mid-content clearfix">
+			<div class="mid-content">
+            <div class="top-footer-wrap clearfix">
 				<?php if(is_active_sidebar('footer-1')): ?>
 				<div class="footer-block">
 					<?php dynamic_sidebar('footer-1'); ?>
@@ -36,7 +37,8 @@
 				<div class="footer-block">
 					<?php dynamic_sidebar('footer-4'); ?>
 				</div>
-				<?php endif; ?>
+				<?php endif; ?> 
+            </div>
 			</div>
 		</div>
 		<?php endif; ?>

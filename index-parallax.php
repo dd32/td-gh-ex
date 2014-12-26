@@ -11,8 +11,6 @@
  * @package accesspress_parallax
  */
 
-get_header();
-
 	$sections = of_get_option('parallax_section');
 
 	if(!empty($sections)):
@@ -101,8 +99,8 @@ get_header();
 	<?php
 	endif; 
 	endforeach;
+    else:
+        get_template_part('demo');
 	endif;
 
 ?>
-
-<?php get_footer(); ?>

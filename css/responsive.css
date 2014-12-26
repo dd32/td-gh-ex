@@ -123,10 +123,7 @@ Responsive CSS
 		float: none;
 	}
 	.footer-column-4 .footer-block{
-		width: 49%;
-	}
-	.footer-column-4 .footer-block:nth-child(2n){
-		margin-right: 0; 
+		width: 48%;
 	}
 	.copy-right, .site-info{
 		float: none;
@@ -203,6 +200,9 @@ Responsive CSS
 	.team-content{
 		margin-top: 30px;
 	}
+    .top-footer .top-footer-wrap{
+        margin: 0;
+    }
 	.footer-block{
 		width: 100% !important;
 		margin: 0 0 15px !important;

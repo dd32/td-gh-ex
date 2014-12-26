@@ -41,6 +41,9 @@ JS Files
 
     WOw JS: MIT Licenses
     https://github.com/matthieua/WOW
+    
+    Smooth Scroll JS: MIT Licenses
+    https://gist.github.com/galambalazs/6477177/
 
 
 -------------------------------------------
@@ -48,9 +51,9 @@ Fonts
     Font Awesome: MIT and GPL licenses
     http://fontawesome.io/license/
     
-    Roboto Slab
-    http://www.google.com/fonts/specimen/Roboto+Slab
-    License: SIL Open Font License, 1.1
+    Roboto
+    http://www.google.com/fonts/specimen/Roboto
+    Apache License, version 2.0
     
     Oxygen
     http://www.google.com/fonts/specimen/Oxygen
@@ -58,19 +61,46 @@ Fonts
 
 -------------------------------------------
 Images
-    All the images used are from http://pixabay.com or and are fully GPL compatible.
+    All the images used are from http://pixabay.com and are fully GPL compatible.
     http://pixabay.com/en/sunset-afterglow-landscape-208771/
     https://unsplash.com/photos/tAKXap853rY/
+
+    Slider Image
+    http://www.pexels.com/photo/154/
+    http://www.pexels.com/photo/2170/
+
+
+    Background Image
+    http://www.pexels.com/photo/1883/
+    http://www.pexels.com/photo/2255/
+    http://www.pexels.com/photo/3578/
+    http://www.pexels.com/photo/3545/
+
+    Portfolio Image
+    http://www.pexels.com/photo/2059/
+    http://www.pexels.com/photo/2818/
+    http://www.pexels.com/photo/232/
+    http://www.pexels.com/photo/2242/
+    http://www.pexels.com/photo/2170/
+    http://www.pexels.com/photo/2886/
+    http://www.pexels.com/photo/3510/
+    http://www.pexels.com/photo/3521/
 
 ---------------------------------------------
 
 == Changelog ==
+Version 1.11
+* Smooth Scroll Js added for smooth scrolling in Chrome
+* ScreenShot Changed
+* Minor Changes in styles
+* Minor Bugs Fixed
+* Demo Content Added
+
 Version 1.1
 * Parallax background Effect added for blank Sections in Main page.
 * Wow animation effect added
 * Google JavaScript Maps API V3 added
 * Minor Changes in styles
-
 
 Version 1.0
 * Submitted theme for review in http://wordpress.org

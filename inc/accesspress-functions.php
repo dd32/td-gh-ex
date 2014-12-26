@@ -109,12 +109,12 @@ function accesspress_bxslidercb(){
 		$accesspress_enable_parallax = of_get_option('enable_parallax');
 		?>
 
-		<?php if( $accesspress_show_slider == "yes") : ?>
+		<?php if( $accesspress_show_slider == "yes" || empty($accesspress_show_slider)) : ?>
 		<section id="main-slider" class="full-screen-<?php echo $accesspress_slider_full_window; ?>">
 		
 		<div class="overlay"></div>
 
-		<?php if($accesspress_enable_parallax == 1): ?>
+		<?php if(!empty($accesspress_parallax_first_page)): ?>
 		<div class="next-page"><a href="#<?php echo $accesspress_parallax_first_page; ?>"></a></div>
 		<?php endif; ?>
 
@@ -130,7 +130,7 @@ function accesspress_bxslidercb(){
 					speed: '<?php echo $accesspress_slider_speed; ?>'
 				});
 
-				<?php if($accesspress_slider_full_window == "yes") : ?>
+				<?php if($accesspress_slider_full_window == "yes" && !empty($accesspress_slider_category)) : ?>
 				$(window).resize(function(){
 					var winHeight = $(window).height();
 					var headerHeight = $('#masthead').outerHeight();
@@ -155,7 +155,7 @@ function accesspress_bxslidercb(){
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
 					$image_url = "";
 					if($accesspress_slider_full_window == "yes") : 
-						$image_url =  "style = background-image:url(".$image[0].");";
+						$image_url =  "style = 'background-image:url(".$image[0].");'";
 				    endif;
 					?>
 					<div class="slides" <?php echo $image_url; ?>>
@@ -183,26 +183,28 @@ function accesspress_bxslidercb(){
             <div class="bx-slider">
 				<div class="slides">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
-                    <?php if($accesspress_show_caption == '1'): ?>
 					<div class="slider-caption">
 						<div class="mid-content">
-							<h1 class="caption-title">Learning from failure</h1>
-							<h2 class="caption-description">There are no secrets to success. It is the result of preparation, hard work, and learning from failure.</h2>
+							<h1 class="caption-title">Welcome to AccessPress Parallax!</h1>
+							<h2 class="caption-description">
+							<p>A full featured parallax theme – and its absolutely free!</p>
+							<p><a href="#">Read More</a></p>
+							</h2>
 						</div>
 					</div>
-                    <?php  endif; ?>
 				</div>
 						
 				<div class="slides">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
-                    <?php if($accesspress_show_caption == '1'): ?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">Key secret to Successful Business</h1>
-							<h2 class="caption-description">The secret of business is to know something that nobody else knows.</h2>
-						</div>
+							<h1 class="caption-title">Amazing multi-purpose parallax theme</h1>
+							<h2 class="caption-description">
+							<p>Travel, corporate, small biz, portfolio, agencies, photography, health, creative – useful for anyone and everyone</p>
+							<p><a href="#">Read More</a></p>
+							</h2>
+							</div>
 					</div>
-                    <?php  endif; ?>
 				</div>
 			</div>
 			<?php  endif; ?>
@@ -370,25 +372,4 @@ function accesspress_letter_count($content, $limit) {
 	}
 	return $limit_content;
 }
-
-
-function optionsframework_custom_scripts() { ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-
-	jQuery('#example_showhidden').click(function() {
-  		jQuery('#section-example_text_hidden').fadeToggle(400);
-	});
-
-	if (jQuery('#example_showhidden:checked').val() !== undefined) {
-		jQuery('#section-example_text_hidden').show();
-	}
-
-});
-</script>
-
-<?php
-}
-
-add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
+add_filter('widget_text', 'do_shortcode');

@@ -12,8 +12,7 @@
  */
 
 get_header(); ?>
-
-<?php if(of_get_option('enable_parallax') == 1): 
+<?php if(of_get_option('enable_parallax') == 1 || of_get_option('enable_parallax') == NUll): 
 	get_template_part('index','parallax');
 else: 
 ?>
@@ -31,7 +30,7 @@ else:
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content' );
 				?>
 
 			<?php endwhile; ?>
@@ -52,5 +51,4 @@ get_sidebar();
 endif;
 ?>
 </div>
-
 <?php get_footer(); ?>

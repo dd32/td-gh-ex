@@ -101,5 +101,14 @@ jQuery(document).ready(function($){
 
     $("#content").fitVids();
 
-    $('.blank_template').parallax('50%',0.4, true)
+    $(window).on('load',function(){
+        $('.blank_template').each(function(){
+        $(this).parallax('50%',0.4, true);
+        });
+        
+        $('.action_template').each(function(){
+        $(this).parallax('50%',0.3, true);
+        });
+    });
+    
 });

@@ -21,7 +21,6 @@
                     while ($query->have_posts()): $query->the_post();
                         $i = $i + 0.25;
                         ?>
-			?>
 
 			<a id="team-<?php echo get_the_ID(); ?>" href="#" class="clearfix team-image wow fadeInLeft" data-wow-delay="<?php echo $i; ?>s">
 				<?php if(has_post_thumbnail()) : 

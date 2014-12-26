@@ -98,35 +98,32 @@ function optionsframework_options() {
 	// Parallax Defaults
 	$parallax_defaults = NULL;
 
-	$about_content = "<p>".__('AccessPress Parallax - is a FREE WordPress theme by','accesspress_parallax')." <a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress_parallax')."</p>"; 
-    $about_content .= "<p>".__(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspress_parallax')."</p>";
-    $about_content .= "<p>".__('AccessPress Parallax is multi-purpose, is suitable for  travel, corporate, portfolio, photography, green thinking, nature, health, small biz, personal,  and any other creative and minimalistic style website, corporate, agencies, bloggers anyone and everyone. ','accesspress_parallax')."</p><br />";
+    $about_content = "<p>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ')."</p>"; 
+    $about_content .= "<p><a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress_parallax')."</p>"; 
+    
+    $about_content .= "<hr/>";
+    
     $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress_parallax')."</h4>";
-    $about_content .= "<div class='product clearfix'>";
-    $about_content .= "<div class='logo-product'>";
-	$about_content .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspresslite.png'>";
-	$about_content .= "</div>";
-	$about_content .= "<div class='productext'>";
-	$about_content .= __('AccessPress Lite - Free WordPress theme, available in WordPress.org','accesspress_parallax')."</br />";
-	$about_content .= __('See Demo ','accesspress_parallax')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-lite/')."'>".__('Here','accesspress_parallax')."</a>";
-	$about_content .= "</div>";
-    $about_content .= "</div>";
+    $about_content .=  __('Our Themes - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/themes</a>','https://accesspressthemes.com/themes'))."<br/><br />" ;
+    $about_content .= __('Our Plugins - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/plugins</a>','https://accesspressthemes.com/plugins'))."<br/><br />" ;
 
-    $about_content .= "<div class='product clearfix'>";
-    $about_content .= "<div class='logo-product'>";
-	$about_content .= "<img alt='AccessPress Lite' src='".get_template_directory_uri()."/images/accesspresspro.png'>";
-	$about_content .= "</div>";
-	$about_content .= "<div class='productext'>";
-	$about_content .= __('AccessPress Pro - Premium version of AccessPress lite','accesspress_parallax')."</br />";
-	$about_content .= __('See Demo ','accesspress_parallax')."<a target='_blank' href='".esc_url('http://accesspressthemes.com/wordpress-themes/accesspress_parallax-pro/')."'>".__('Here','accesspress_parallax')."</a>";
-	$about_content .= "</div>";
-    $about_content .= "</div><br/>";
+    $about_content .= "<hr/>";
 
     $about_content .= "<h4>".__('Get in touch','accesspress_parallax')."</h4>";
     $about_content .= __('If you have any question/feedback, please get in touch:','accesspress_parallax')."<br /><br />";
     $about_content .= __('General enquiries:','accesspress_parallax')." <a href='mailto:".esc_url('info@accesspressthemes.com')."'>info@accesspressthemes.com</a><br /><br />";
     $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:".esc_url('support@accesspressthemes.com')."'>support@accesspressthemes.com</a><br /><br />";
-    $about_content .= __('Sales:','accesspress_parallax')." <a href='mailto:".esc_url('sales@accesspressthemes.com')."'>sales@accesspressthemes.com</a><br/><br /><br />";
+    $about_content .= __('Sales:','accesspress_parallax')." <a href='mailto:".esc_url('sales@accesspressthemes.com')."'>sales@accesspressthemes.com</a><br/><br />";
+    
+    $about_content .= "<hr />";
+
+	$about_content .="<h4>".__('Get social','accesspress_parallax')."</h4>";
+
+	$about_content .="<p>".__('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspress_parallax')."</p>";
+
+    $about_content .="<p>".__('Like us on facebook:','accesspress_parallax')."</p>";
+	$about_content .='<iframe style="border: none; overflow: hidden; width: 740px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=740&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="740" height="230" frameborder="0" scrolling="no"></iframe>';	
+
 
 	// Pull all the categories into an array
 	$options_categories = array();
