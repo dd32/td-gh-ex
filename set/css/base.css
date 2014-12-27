@@ -270,28 +270,28 @@ td.fmi-heading-td {
     color: #858585;
 }
 
-.premium-albar-wrap {
+.premium-fmi-wrap {
     
 }
-.premium-albar-block {
+.premium-fmi-block {
     border-bottom: 1px solid #E2E2E2;
     margin: 0 0 40px;
     padding: 0 0 35px;
 }
-.premium-albar-block-left {
+.premium-fmi-block-left {
     width: 22%;
     float: left;
 }
-.premium-albar-block-left h6 {
+.premium-fmi-block-left h6 {
     margin: 0;
     padding: 10px 0 0;
     font-size: 14px;
 }
-.premium-albar-block-right {
+.premium-fmi-block-right {
     width: 78%;
     float: left;
 }
-.premium-albar-block-right img {
+.premium-fmi-block-right img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     max-width: 100%;
     height: auto;

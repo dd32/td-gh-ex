@@ -33,9 +33,19 @@ if (is_category()) {
 ?>
         </div>
 	<?php while(have_posts()):the_post(); ?>
+    
 		<?php get_template_part('content',get_post_format());?>
+        
 	<?php endwhile;?>
-	<?php fmi_page_nav( 'nav-below' ); ?>
+	
+			<?php
+				the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-arrow-left"></i>',
+					'next_text'          => '<i class="fa fa-arrow-right"></i>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'fmi' ) . ' </span>',
+				) );
+			?>
+    
 <?php else:?>
 	<?php get_template_part('content','none');?>
 <?php endif;?>

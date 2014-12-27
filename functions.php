@@ -57,7 +57,7 @@ function fmi_theme_widgets() {
 }
 add_action( 'widgets_init', 'fmi_theme_widgets' );
 
-function theme_styles(){
+function fmi_theme_styles(){
     $custom_css = '';
     if (fmi_theme_option( 'vs-custom-css' ) ) {
         $custom_css = fmi_theme_option( 'vs-custom-css' );
@@ -70,7 +70,7 @@ body{<?php echo ( $body_font ) ? $body_font : 'font-family: \'Open Sans\', sans-
 </style>
 <?php
 }
-add_action('wp_head', 'theme_styles', 11);
+add_action('wp_head', 'fmi_theme_styles', 11);
 
 require get_template_directory() . '/fun/base.php';
 require get_template_directory().'/set/settings.php';

@@ -24,6 +24,7 @@
 	</div></div>
 	
 	<div class="entry-meta2">
+    	<?php if ( is_sticky() && is_home() && ! is_paged() ) {printf( '<span class="sticky-post"><i class="fa fa-star"></i> %s</span>', __( 'Featured', 'fmi' ) );}?>
     	<?php if(get_the_category_list()):?><span><i class="fa fa-list"></i> <?php echo get_the_category_list(',');?></span><?php endif;?>
     	<?php if(get_the_tag_list()):?><span><i class="fa fa-tags"></i> <?php echo get_the_tag_list('',',','');?></span><?php endif;?>
 	</div>

@@ -1,14 +1,21 @@
-/*========= Fmi =========*/
-
+=== Fmi ===
 Theme Name: Fmi
 Theme URI: http://demo.forrss.com/fmi
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 3.0.1
 Tested up to: 4.0.1
 Author: Forrss
 Author URI: http://www.forrss.com
-License: GNU General Public License v3.0
+Tags: blue,white,two-columns,responsive-layout,custom-menu,theme-options,sticky-post
+License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl.html
--------------------------------------------------------
-Fmi WordPress Theme, Copyright 2014 Forrss.com
--------------------------------------------------------
+
+== Description ==
+Fmi is an elegant blog theme with responsive and easily customizable. Developed by Forrss.
+
+* Responsive Layout
+* Favicon Setting
+* Custom Body Font
+* Custom CSS
+* Social Links
+* The GPL v2.0 or later license. :) Use it to make something cool.

@@ -3,7 +3,7 @@
 <?php if(have_comments()):?>
 <div id="comments">
 	<ol class="comment-list">
-		<?php wp_list_comments(array('callback'=>'theme_comment'));?>
+		<?php wp_list_comments(array('callback'=>'fmi_theme_comment'));?>
 	</ol>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>

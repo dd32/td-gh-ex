@@ -5,7 +5,7 @@
     <div id="main">
 		<?php if ( have_posts() ) : ?>
             
-            <div class="page-header"><?php printf( __( 'Search Results for: %s', 'albar' ), '<span>' . get_search_query() . '</span>' ); ?></div>
+            <div class="page-header"><?php printf( __( 'Search Results for: %s', 'fmi' ), '<span>' . get_search_query() . '</span>' ); ?></div>
             
             <?php while ( have_posts() ) : the_post(); ?>
                 
@@ -13,7 +13,13 @@
                 
             <?php endwhile; ?>
             
-            <?php fmi_page_nav('page-nav-below');?>
+			<?php
+				the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-arrow-left"></i>',
+					'next_text'          => '<i class="fa fa-arrow-right"></i>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'fmi' ) . ' </span>',
+				) );
+			?>
             
         <?php else : ?>
             

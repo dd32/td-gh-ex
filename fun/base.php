@@ -1,5 +1,5 @@
 <?php
-function theme_comment($comment,$args,$depth){
+function fmi_theme_comment($comment,$args,$depth){
 	$GLOBALS['comment'] = $comment;
 	$args['avatar_size'] = 40;
 ?>
@@ -15,7 +15,7 @@ function theme_comment($comment,$args,$depth){
                 <?php edit_comment_link( __( 'Edit', 'fmi' ), '<span><i class="fa fa-edit"></i> ', '</span>' ); ?>
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'fmi' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.', 'fmi' ); ?></p>
 				<?php endif; ?>
 			</div>
 
@@ -28,23 +28,6 @@ function theme_comment($comment,$args,$depth){
 <?php
 }
 
-function fmi_page_nav( $nav_id ) {
-	global $wp_query, $post;
-	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )return;
-?>
-	<div role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-arrow-left"></i> Older posts', 'fmi' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-arrow-right"></i>', 'fmi' ) ); ?></div>
-		<?php endif; ?>
-		<div class="clear"></div>
-	</div>
-	<?php
-}
-
 function fmi_post_nav() {
 	global $post;
 	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -52,8 +35,8 @@ function fmi_post_nav() {
 	if ( ! $next && ! $previous ) return;
 
 	echo '<div role="navigation" id="nav-below" class="navigation-post">';
-	previous_post_link( '<div class="nav-previous">%link</div>', '<h3>Preview Post</h3>%title');
-	next_post_link( '<div class="nav-next">%link</div>', '<h3>Next Post</h3>%title'); 
+	previous_post_link( '<div class="nav-previous">%link</div>', '<h3>'.__('Previous Post','fmi').'</h3>%title');
+	next_post_link( '<div class="nav-next">%link</div>', '<h3>'.__('Next Post','fmi').'</h3>%title'); 
 	echo '<div class="clear"></div>';
 	echo '</div>';
 }

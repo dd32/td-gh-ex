@@ -358,77 +358,77 @@ class Theme_settings{
         $this->settings['vs-social-email'] = array(
             'section' => 'social',
             'title'   => __( 'Email Address','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-skype'] = array(
             'section' => 'social',
             'title'   => __( 'Skype','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-facebook'] = array(
             'section' => 'social',
             'title'   => __( 'Facebook','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-twitter'] = array(
             'section' => 'social',
             'title'   => __( 'Twitter','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-google-plus'] = array(
             'section' => 'social',
             'title'   => __( 'Google Plus','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-youtube'] = array(
             'section' => 'social',
             'title'   => __( 'YouTube','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-instagram'] = array(
             'section' => 'social',
             'title'   => __( 'Instagram','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-pinterest'] = array(
             'section' => 'social',
             'title'   => __( 'Pinterest','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-linkedin'] = array(
             'section' => 'social',
             'title'   => __( 'LinkedIn','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-tumblr'] = array(
             'section' => 'social',
             'title'   => __( 'Tumblr','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
         $this->settings['vs-social-flickr'] = array(
             'section' => 'social',
             'title'   => __( 'Flickr','fmi'),
-            'desc'    => __( '','fmi'),
+            'desc'    => '',
             'type'    => 'url',
             'std'     => ''
         );
@@ -437,21 +437,21 @@ class Theme_settings{
 //        $this->settings['vs-website-txt-address'] = array(
 //            'section' => 'website',
 //            'title'   => __( 'Address','fmi'),
-//            'desc'    => __( '','fmi'),
+//            'desc'    => '',
 //            'type'    => 'text',
 //            'std'     => 'Liberty Island, 10004 New York Harbor'
 //        );
 //        $this->settings['vs-website-txt-email'] = array(
 //            'section' => 'website',
 //            'title'   => __( 'Email Address','fmi'),
-//            'desc'    => __( '','fmi'),
+//            'desc'    => '',
 //            'type'    => 'text',
 //            'std'     => 'hello@nethemes.com'
 //        );
 //        $this->settings['vs-website-txt-phone'] = array(
 //            'section' => 'website',
 //            'title'   => __( 'Phone Number','fmi'),
-//            'desc'    => __( '','fmi'),
+//            'desc'    => '',
 //            'type'    => 'text',
 //            'std'     => '+1 123456789'
 //        );
