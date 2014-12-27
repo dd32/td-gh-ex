@@ -46,6 +46,10 @@ http://www.gratisography.com/pictures/46_1.jpg
 
 == Change Log ==
 
+Version 1.0.4
+1) Languages directory path fix
+2) Pro Version Price Change
+
 Version 1.0.3
 1) Text domain fix
 2) rtl.css removal

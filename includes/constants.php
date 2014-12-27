@@ -14,7 +14,7 @@
 	If not present, use parent theme's languages dir
 	*/
 	if ( ! defined( 'GREENR_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
-		define( 'GREENR_LANGUAGES_URL', GREENR_INCLUDES_URL . '/languages' );
+		define( 'GREENR_LANGUAGES_URL', GREENR_PARENT_URL . '/languages' );
 
 	if ( ! defined( 'GREENR_LANGUAGES_DIR' ) ) /** So we can predefine to child theme */
-		define( 'GREENR_LANGUAGES_DIR', GREENR_INCLUDES_DIR . '/languages' );
+		define( 'GREENR_LANGUAGES_DIR', GREENR_PARENT_DIR . '/languages' );
