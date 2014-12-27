@@ -23,7 +23,7 @@ if ( ! function_exists( 'greenr_setup' ) ) :
 function greenr_setup() {
 
 	// Makes theme translation ready
-	load_theme_textdomain( 'flaton', GREENR_LANGUAGES_DIR );
+	load_theme_textdomain( 'greenr', GREENR_LANGUAGES_DIR );
 	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );

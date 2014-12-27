@@ -7,7 +7,17 @@ are licensed under GPLv2
 3. This theme uses { Skeleton } set are licensed under the GPL-compatible MIT License
 4. This theme uses { Flexslider } which is licensed under GPLv2
 5. This theme uses { Font Awesome } which is licensed under GPL-compatible SIL Open Font License
-6. All images used in this theme is licensed under GPLv2 or later
+6. All images used in this theme is licensed under GPL-compatible CC0 License
+Taken from Unsplash, Pixabay and Gratisography
+
+https://ununsplash.imgix.net/46/bsrOzgDkQhGRKOVC7Era_9X6A3584.jpg?q=75&fm=jpg&s=7d91f92e93b8c17cffb7bc246ceb3d59
+https://unsplash.imgix.net/45/ZLSw0SXxThSrkXRIiCdT_DSC_0345.jpg?q=75&fm=jpg&s=7a623ea0574c010d25ee095d0c0bcaa2
+https://ununsplash.imgix.net/33/hBd6EPoQT2C8VQYv65ys_White%20Sands.jpg?q=75&fm=jpg&s=440edea0dacbf61ee20f8ff106573fb3
+https://unsplash.imgix.net/45/QDSMoAMTYaZoXpcwBjsL__DSC0104-1.jpg?q=75&fm=jpg&s=a23211f4c321462b631e8bc8978ca4af
+https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7beed3209d5d7fc2bf73c47a4da2e52
+
+http://pixabay.com/en/easter-easter-eggs-colorful-paint-3954/
+http://www.gratisography.com/pictures/46_1.jpg
 
 ======== Documentation =========
 
@@ -34,7 +44,11 @@ are licensed under GPLv2
 15. 'Client Logo Carousel' works same as 'Flex Slider Options'
 16. Other theme options are self explanatory.
 
-Change Logo
+== Change Log ==
+
+Version 1.0.3
+1) Text domain fix
+2) rtl.css removal
 
 Version 1.0.2
 1) Word Wrap fix
