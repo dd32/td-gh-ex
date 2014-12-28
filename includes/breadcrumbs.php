@@ -1,12 +1,10 @@
 <?php
 /**
-* WP Newsstream excerpt breadcrumb functionality
+* WP Newsstream breadcrumb functionality
 *
 */
-?>
 
-<?php
-if ( ! function_exists( 'wp_newsstream_breadcrumb' ) ) {
+if(!function_exists('wp_newsstream_breadcrumb')) {
 	function wp_newsstream_breadcrumb() {
 		global $post;
 		echo '<ul id="breadcrumbs">';
