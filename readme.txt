@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.32
+* Screenshot changed
+
 Version 2.30
 * Fontawesome Font Rendering bug fixed
 
