@@ -1,12 +1,26 @@
 == Changelog ==
 
+= 1.1 =
+* Added title tag via add theme support
+* Added Important links Section to Theme Customizer
+* Added Jetpack infinite scroll post per page to 9
+* Updated Theme description
+* Updated instructions and links in Readme.txt 
+* Bug Fixed: Navigation position in homepage
+* Bug Fixed: Image Size and styles
+* Bug Fixed: Spacing issues in style.css
+* Bug Fixed: Changed masonry columnWidth and gutter
+* Bug Fixed: Intro widget class and styles
+* Removed unnecessary layouts directory
+* Removed unnecessary files
+* Initial Release in Catchthemes.com
+
 = 1.0 =
 * Added create_footer hook
 * Changed footer codes
 * Changed theme description
 * Fixed Google Font issues
 * Fixed style issues
-* Initial Release in Catchthemes.com
 * Replaced typicons with genericons version 3.3
 
 = 0.1 =

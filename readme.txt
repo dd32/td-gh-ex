@@ -1,16 +1,15 @@
 === Create ===
 
-Contributors: Catch Themes Team and Emil Uzelac 
+Contributors: Catch Themes and Emil Uzelac 
 Tags: black, tan, white, light, dark, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
-Requires at least: 3.4
+Requires at least: 4.0
 Tested up to: 4.1
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
+Create WordPress Theme, Copyright 2012-2014 Catchthemes.com
+Create is distributed under the terms of the GNU General Public License v3 
 
 == Description ==
 
-Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3, Masonry and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
 
 * Responsive Layout
 * Custom Background
@@ -53,9 +52,10 @@ To create a custom menu, go to Appearance -> Menus in your dashboard.
 
 = How do I replace default page menu to custom menu? =
 
-Create theme will disablay page menu as the defult menu items. You can create custom menu and to replace this page menu with your custom menu items.
-1. Create a new Custom Menu, and assign it to the Primary Menu location.
+Create theme will display page menu as the default menu items. You can create custom menu and to replace this page menu with your custom menu items.
+1. Create a new Custom Menu through "Appearance => Menus" from your WordPress Dashboard
 2. You can now add in pages, custom links, category pages as per your need
+3. Then assign your custom menu location as "Primary Menu", from "Appearance => Customize => Navigation" or "Appearance => Menus => Manage Locations"
 
 = How do I add the social links to the social menu? =
 
@@ -67,19 +67,31 @@ Create theme allows you display links to your social media profiles, like Twitte
 
 Available icons: (Linking to any of the following sites will automatically display its icon in your social menu).
 
-* Facebook
-* Twitter
+* Codepen
+* Digg
 * Dribbble
-* Google Plus
-* Pinterest 
-* GitHub
-* Tumblr
-* YouTube
+* Dropbox
+* Facebook
 * Flickr
-* Vimeo
+* Foursquare
+* GitHub
+* Google+
 * Instagram
 * LinkedIn
-* Feed - add your feed URL
+* Email (mailto: links)
+* Pinterest
+* Pocket
+* PollDaddy
+* Reddit
+* RSS Feed (urls with /feed/)
+* Spotify
+* StumbleUpon
+* Tumblr
+* Twitch
+* Twitter
+* Vimeo
+* WordPress
+* YouTube
 
 
 = Widgets =
@@ -103,4 +115,4 @@ For detail instructions, check out theme instructions page at http://catchthemes
 
 == Change Log ==
 
-Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/create-change-log/
+Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/create-theme/

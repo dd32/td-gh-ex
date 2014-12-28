@@ -1,12 +1,13 @@
 # Copyright (C) 2014 Catch Themes
-# This file is distributed under the GNU General Public License v2 or later.
+# This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/create\n"
-"POT-Creation-Date: 2014-12-14 21:08+0545\n"
-"PO-Revision-Date: 2014-12-14 21:08+0545\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/create-"
+"free/\n"
+"POT-Creation-Date: 2014-12-29 00:24+0545\n"
+"PO-Revision-Date: 2014-12-29 00:24+0545\n"
+"Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -106,84 +107,128 @@ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 # @ create
-#: ../functions.php:60
+#: ../functions.php:63
 msgid "Primary Menu"
 msgstr ""
 
 # @ create
-#: ../functions.php:61
+#: ../functions.php:64
 msgid "Social Menu"
 msgstr ""
 
 # @ create
-#: ../functions.php:98
+#: ../functions.php:108
 msgid "Sidebar"
 msgstr ""
 
 # @ create
-#: ../functions.php:100
+#: ../functions.php:110
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
 # @ create
-#: ../functions.php:108
+#: ../functions.php:118
 msgid "Intro Widget"
 msgstr ""
 
 # @ create
-#: ../functions.php:110
+#: ../functions.php:120
 msgid "Additional widget that appears only on your default homepage."
 msgstr ""
 
 # @ create
-#: ../functions.php:129
+#: ../functions.php:140
 msgid "Your Name"
 msgstr ""
 
 # @ create
-#: ../functions.php:130
+#: ../functions.php:141
 msgid "E-mail"
 msgstr ""
 
 # @ create
-#: ../functions.php:131
+#: ../functions.php:142
 msgid "Website"
 msgstr ""
 
 # @ create
-#: ../functions.php:132
+#: ../functions.php:143
 msgid "Your Comment"
 msgstr ""
 
 # @ create
-#: ../functions.php:170
+#: ../functions.php:181
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr ""
 
 # @ create
-#: ../header.php:23
+#: ../header.php:22
 msgid "Skip to content"
 msgstr ""
 
 # @ create
-#: ../header.php:31
+#: ../header.php:30
 msgid "Menu"
 msgstr ""
 
+#: ../inc/customizer.php:26
+msgid "Theme Instructions"
+msgstr ""
+
+#: ../inc/customizer.php:30
+msgid "Support"
+msgstr ""
+
+#: ../inc/customizer.php:34
+msgid "Changelog"
+msgstr ""
+
+#: ../inc/customizer.php:38
+msgid "Donate Now"
+msgstr ""
+
+#: ../inc/customizer.php:42
+msgid "Review"
+msgstr ""
+
+#: ../inc/customizer.php:46
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/customizer.php:50
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/customizer.php:54
+msgid "Google+"
+msgstr ""
+
+#: ../inc/customizer.php:58
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/customizer.php:70 ../inc/customizer.php:81
+msgid "Important Links"
+msgstr ""
+
+#: ../inc/customizer.php:116
+msgid "Upgrade To Pro"
+msgstr ""
+
 # @ create
-#: ../inc/extras.php:73
+#: ../inc/extras.php:75
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/extras.php:178
+#: ../inc/extras.php:196
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: ../inc/extras.php:208
+#: ../inc/extras.php:226
 msgctxt "attribution"
 msgid "by"
 msgstr ""

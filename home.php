@@ -34,7 +34,9 @@ get_header(); ?>
 		<?php endif; ?>
         
         </main><!-- #main -->
+
+        <?php create_paging_nav(); ?>
+        
 	</div><!-- #primary -->
 
-<?php create_paging_nav(); ?>
 <?php get_footer(); ?>

@@ -44,13 +44,16 @@ function create_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Set default size.
-	set_post_thumbnail_size( 650, 490, true );
+	set_post_thumbnail_size( 650, 488, true );
 	
 	// Add default size for single pages.
 	add_image_size( 'create-single', '650', '9999', false );
 
 	// Add default size for homepage.
-	add_image_size( 'create-home', '240', '180', true );
+	add_image_size( 'create-home', '261', '196', true );
+
+	// Add default size for homepage.
+	add_image_size( 'create-header', '1024', '350', true );
 		
 	// Add default logo size for Jetpack.
 	add_image_size( 'create-site-logo', '300', '9999', false );
@@ -84,6 +87,13 @@ function create_setup() {
 		'default-repeat'      => 'no-repeat',
 		'default-image'       => '%s/images/default-background.jpg',
 	) ) );
+
+	/**
+	 * Setup title support for theme
+	 * Supported from WordPress version 4.1 onwards 
+	 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 */
+	add_theme_support( 'title-tag' );
 }
 endif; // create_setup
 add_action( 'after_setup_theme', 'create_setup' );
@@ -108,11 +118,12 @@ function create_widgets_init() {
 		'name'          => __( 'Intro Widget', 'create' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Additional widget that appears only on your default homepage.', 'create' ),
-		'before_widget' => '<aside id="%1$s" class="widget-intro %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
 }
 add_action( 'widgets_init', 'create_widgets_init' );
 
@@ -181,11 +192,6 @@ function create_admin_fonts() {
 	wp_enqueue_style( 'create-font', create_fonts_url(), array(), '1.0.0' );
 }
 add_action( 'admin_print_scripts-appearance_page_custom-header', 'create_admin_fonts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

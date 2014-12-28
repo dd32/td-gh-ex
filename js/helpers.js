@@ -10,8 +10,8 @@
 			$container.masonry ({
 				itemSelector: '.hentry',
 				isFitWidth: true,
-				columnWidth: 240,
-				gutter: 70
+				columnWidth: 261,
+				gutter: 60,
 			});
 
 			$container.find( '.hentry' ).animate( {

@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -27,7 +26,7 @@
     <div class="site-banner">
 		<div class="site-branding">
         
-		    <nav id="site-navigation" class="main-navigation" role="navigation">
+		    <nav id="site-navigation" class="main-navigation create-menu" role="navigation">
 			    <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'create' ); ?></button>
 			    <?php wp_nav_menu( array( 
 				    'theme_location' => 'primary' ) 
@@ -36,8 +35,10 @@
 		    </nav><!-- #site-navigation -->
         
             <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
+
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+
 		</div><!-- .site-branding -->
         
         <?php if ( has_nav_menu( 'social' ) ) : ?>
