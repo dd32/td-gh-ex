@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.18";
+$bfa_ata_version = "3.7.19";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -9,8 +9,14 @@ include_once (get_template_directory() . '/functions/bfa_theme_options.php');
 // Load options
 include_once (get_template_directory() . '/functions/bfa_get_options.php');
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
+
+
 // Sidebars:
-if ( function_exists('register_sidebar') ) {
+add_action( 'widgets_init', 'bfa_widgets_init' );
+function bfa_widgets_init() {
+
+	global $bfa_ata;
+
 	register_sidebar(array(
 		'name'=>'Left Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -56,7 +62,8 @@ if ( function_exists('register_sidebar') ) {
 			));
 		}
 	}
-} 
+}
+
 
 #global $bfa_ata;
 // Load functions
@@ -922,7 +929,7 @@ function bfa_is_pagetemplate_active($pagetemplate = '') {
 // add category nicenames in body and post class
 	function bfa_category_id_class($classes) {
 	    global $post;
-	    if (!is_archive()) {	
+	    if (is_single()) {	
 	    	foreach((get_the_category($post->ID)) as $category)
 	        	$classes[] = 'category-'.$category->slug;
 		}

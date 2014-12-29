@@ -343,8 +343,8 @@
 		$right_col = '';
 		$right_col2 = '';
 
-		if ( is_page() AND !is_front_page() AND !is_home() ) {
-
+		if (( is_page() AND !is_front_page() AND !is_home() ) 
+        OR (function_exists('is_bbpress')) )  {
 
 			if ($bfa_ata['left_col_pages_exclude'] != "") { 
 				$pages_exlude_left = explode(",", str_replace(" ", "", $bfa_ata['left_col_pages_exclude']));

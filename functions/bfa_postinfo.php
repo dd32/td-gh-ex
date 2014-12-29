@@ -292,7 +292,7 @@ function bfa_postinfo($postinfo_string) {
 					  $seperator = $category_linked_matches[2];
 					  }
 					else {$seperator = '';}
-					$categories_linked .= '<a class="'.$category->slug . '" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.$seperator.'</a>';
+					$categories_linked .= '<a class="'.$category->slug . '" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( $category->name ) . '">'.$category->cat_name.$seperator.'</a>';
 				}
 			}
 			ob_end_clean();

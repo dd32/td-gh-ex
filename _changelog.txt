@@ -1,3 +1,9 @@
+Changelog 3.7.19:
+- Fixed issue with the code added in 3.7.17 to show category names on <body> - it now work when the blog page is the front page.
+- added code to fix formatting errors when using BBPress
+- added code to handle captions used in galleries
+- bfa_meta_tags.php: Using wp_title filter 
+
 Changelog 3.7.18:
 - Fixed issue with the code added in 3.7.16 for rotating/fading header images
 - added code to eliminate some php warnings when using dynamic (new) widget areas 

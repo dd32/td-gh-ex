@@ -1845,6 +1845,7 @@ required as jQuery sets the height for caption'ed images too */
    	border: 0 none !important;
 	}
 	
+.wp-caption-text,	
 .wp-caption p.wp-caption-text {
 	<?php bfa_incl('image_caption_text') ?>
 	}
