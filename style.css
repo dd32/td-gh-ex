@@ -4,7 +4,7 @@ Theme URI: http://testbase.info/c/theme/wp/ascent/
 Author: Pitabas Behera
 Author URI: http://nettantra.com/
 Description: Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
@@ -20,8 +20,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* Import the font-awesome css */
 @import url(includes/font-awesome/css/font-awesome.css);
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
 /* This is a small security for too long strings titles */
 body {
@@ -43,7 +41,8 @@ a {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-a:hover {
+
+a:hover, a:focus {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -558,16 +557,16 @@ nav.main-menu ul > .current-menu-item > a {
 .main-content {
     padding: 60px 0;
 }
-.page-header h1.page-title,
+.page-header h1.entry-title,
 .page-header {
     margin-top: 0;
     border: none;
     padding-bottom: 0;
 }
-.page-title {
+.entry-title {
     font-weight: bold;
 }
-body.page .page-header h1.page-title {
+body.page .page-header h1.entry-title {
     padding-bottom: 10px;
 }
 
@@ -848,8 +847,15 @@ article.post {
 article.post .entry-content {
     padding-bottom: 10px;
 }
+.page-header .entry-title {
+    margin-top: 0;
+}
 .page-header .page-title {
     margin-top: 0;
+    font-size: 22px;
+}
+.page-header .page-title span {
+    font-weight: bold;
 }
 .entry-author {
     display: inline-block;

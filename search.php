@@ -12,7 +12,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
-			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'ascent' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+			<h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'ascent' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header><!-- .page-header -->
 
 		<?php // start the loop. ?>

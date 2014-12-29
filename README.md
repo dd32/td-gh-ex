@@ -82,6 +82,9 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.5
+- Remove 'rtl.css', add 'enqueue google fonts' and 'Changed to SEO structured data'
+
 ### Version 1.0.4
 - Remove 'add_editor_style' function, 'rtl-language-support' tag and remove Minify scripts.
 

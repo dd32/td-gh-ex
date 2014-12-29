@@ -15,7 +15,7 @@ get_header(); ?>
 		<h1 class="title large-text">404</h1>
 	    </header><!-- .page-header -->
 	    <div class="page-content">
-		<h2 class="page-title"><?php _e( 'Oops! Something went wrong here.', 'ascent' ); ?></h2>
+		<h1 class="entry-title"><?php _e( 'Oops! Something went wrong here.', 'ascent' ); ?></h1>
 		<p><?php _e( 'Nothing could be found at this location.', 'ascent' ); ?></p>
 		<p>Try going back to the <a href="<?php echo esc_url(home_url('/')); ?>"><strong><?php _e('Homepage','framework'); ?></strong></a>  instead? </p>
 	    </div><!-- .page-content -->

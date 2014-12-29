@@ -141,7 +141,8 @@ add_action( 'widgets_init', 'ascent_widgets_init' );
  * 
  */
 function ascent_scripts() {
-
+    $protocol = is_ssl() ? 'https' : 'http';
+    wp_enqueue_style('google-raleway', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
     // load bootstrap css
     wp_enqueue_style( 'ascent-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.css' );
 
