@@ -1,5 +1,4 @@
 <?php 
-# global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 if ( isset($bfa_ata_preview) OR $bfa_ata['javascript_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<script type="text/javascript">'; 
@@ -152,6 +151,35 @@ $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0
 	/* End IE6 */
 	}
 	
+	
+	
+	/* Since 3.7.8: Auto resize videos (embed and iframe elements) 
+	TODO: Parse parent's dimensions only once per layout column, not per video
+	*/
+	function bfa_resize_video() {
+		jQuery('embed, iframe').each( function() {
+			var video = jQuery(this),
+			videoWidth = video.attr('width'); // use the attr here, not width() or css()
+			videoParent = video.parent(),
+			videoParentWidth = parseFloat( videoParent.css( 'width' ) ),
+			videoParentBorder = parseFloat( videoParent.css( 'border-left-width' ) ) 
+										+  parseFloat( videoParent.css( 'border-right-width' ) ),
+			videoParentPadding = parseFloat( videoParent.css( 'padding-left' ) ) 
+										+  parseFloat( videoParent.css( 'padding-right' ) ),
+			maxWidth = videoParentWidth - videoParentBorder - videoParentPadding;
+
+			if( videoWidth > maxWidth ) {
+				var videoHeight = video.attr('height'),
+				videoMaxHeight = ( maxWidth / videoWidth * videoHeight );
+				video.attr({ width: maxWidth, height: videoMaxHeight });
+			} 
+
+		});	
+	}
+	bfa_resize_video();
+	jQuery(window).resize( bfa_resize_video );
+
+		
 <?php if ($bfa_ata['table_hover_rows'] == "Yes") { ?>
 	jQuery(".post table tr").
 		mouseover(function() {

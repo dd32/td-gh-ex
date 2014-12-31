@@ -1,4 +1,4 @@
-Wordpress Theme "Atahualpa" version 3.6.5
+Wordpress Theme "Atahualpa" 
 
 VISIT THE SUPPORT FORUMS AT http://forum.bytesforall.com/
 
@@ -8,13 +8,14 @@ UPGRADE:
 
 #####################################################################
 
-To Upgrade the theme
+To manually upgrade the theme
 -------------------------
 1) download the new version of the theme
-2) unzip the file)
-3) copy any images you have added in a prior release to the 'images/header' folder
-4) if you have added any other files (templates, icons) copy them to the same folder in the new version
-5) Make sure the Atahualpa folder is named with the version number i.e atahualpa344
+2) unzip the file
+3) copy any images you have added in a prior release to the 'images/header' folder. If using a different folder this step is not needed. 
+See the forums for directions.
+4) if you have added any other files (templates, icons) copy them to the same folder in the new version - unless you are using the method to store them elsewhere. See the forums for directions.
+5) Make sure the Atahualpa folder is named with the version number i.e atahualpa3712
 6) upload the folder to the 'wordpress/wp-contents/themes' folder at your host
 7) get on the backend of your site and go to Dashboard->Appearances->Themes and activate the new version
 8) all done
@@ -28,40 +29,29 @@ You can now check out the new version. If something is wrong, you can simply go 
 
 #####################################################################
 
-1. Extract the file "atahualpa353.zip", "atahualpa.zip" or similar 
+1. Extract the file "atahualpaXXX.zip", "atahualpa.zip" or similar 
 on your desktop computer, i.e. with WinZip or 7-zip
 
 This will create a directory named atahualpa (or atahualpaXX) with many 
 files and subdirectories. 
 
 From now on we'll call this directory "atahualpa" although it might be 
-"atahualpa34" or whatever for you. 
+"atahualpa3712" or whatever for you. 
 
 #####################################################################
 
-2. Upload the complete folder "atahualpa354" with all its contents to
+2. Upload the complete folder "atahualpa" with all its contents to
 your web hosting account to the directory
 /your wordpress-install/wp-content/themes/
 so the final destination of the "atahualpa" folder becomes:
-/your wordpress-install/wp-content/themes/atahualpa354/
+/your wordpress-install/wp-content/themes/atahualpa/
 You will need a "FTP Client" Software for this
 
 #####################################################################
 
 3. Activate Atahualpa by clicking on its name or screenshot at:
 
-WP 2.3 and older: 
-Your Blog -> Site Admin -> Presentation -> Themes
-
-WP 2.5 - 2.6: 
-Your Blog -> Site Admin -> Design -> Themes
-
-WP 2.7 and newer: 
 Your Blog -> Site Admin -> Appearance -> Themes
-
-From WP 2.5 on you'll have to click on "Activate [Theme Name]" 
-after you selected the theme. In older version the theme will be
-activated without this step.
 
 If you have no "Site Admin" link anywhere on your blog, try
 http://www.your-domain.com/wp-admin/
@@ -80,13 +70,6 @@ If the sidebars look empty, you may need to add widgets.
 
 5. Configure the theme at
 
-WP 2.3 and older: 
-Your Blog -> Site Admin -> Presentation -> Atahualpa Theme Options
-
-WP 2.5 - 2.6: 
-Your Blog -> Site Admin -> Design -> Atahualpa Theme Options
-
-WP 2.7 and newer: 
 Your Blog -> Site Admin -> Appearance -> Atahualpa Theme Options
 
 #####################################################################
@@ -110,20 +93,13 @@ A widget is a content block that you can drag and drop into one
 of the sidebars. All widgets, the 4 BFA widgets and the default 
 WordPress widgets, can be found at:
 
-WP 2.2 - 2.3: 
-Your Blog -> Site Admin -> Presentation -> Widgets
-
-WP 2.5 - 2.6: 
-Your Blog -> Site Admin -> Design -> Widgets
-
-WP 2.7 and newer: 
 Your Blog -> Site Admin -> Appearance -> Widgets
  
 #####################################################################
 
 7. OPTIONAL: Install additional plugins to enhance your blog
 
-Atahualpa3 should work with just about any plugin. Besides that it 
+Atahualpa should work with just about any plugin. Besides that it 
 has improved plug & play support for these plugins:
 
 WP-PageNavi
@@ -212,7 +188,7 @@ A relative path such as url(images/myimage.gif) will NOT work in the theme optio
 LICENSE:
 
     "Atahualpa" is a WordPress theme
-    Copyright (C) 2008-2009 Lmm Muenchen, BFA Webdesign (www.BytesForAll.com)
+    Copyright (C) 2008-2012 Lmm Muenchen, BFA Webdesign (www.BytesForAll.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

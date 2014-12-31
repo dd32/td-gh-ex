@@ -1,11 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php global $templateURI,  $homeURL; ?>
+<?php 
+	$templateURI = get_template_directory_uri(); 
+	$homeURL = get_home_url();  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php // if index.php or another page template (copied from index.php) was not used
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
+<?php global $post_id; ?>
+<title><?php wp_title(); ?></title>
 <?php if ( isset($bfa_ata['IEDocType']) ) { 
 switch ( $bfa_ata['IEDocType'] ) { 
 	case "None":
@@ -33,16 +37,38 @@ switch ( $bfa_ata['IEDocType'] ) {
 	default:
 		break;
 }} ?><?php bfa_meta_tags(); ?>
-<?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
+<?php 
+
+if ($bfa_ata['favicon_file'] != "") { 
+    if($bfa_ata['images_root'] == "atahualpa") {
+           $imgdir  = get_template_directory_uri() . '/images/favicon/';
+        } else {
+// at this point the images_root is 'wp-content'
+    		if(!isset($bfa_ata['ata_images_dir']) 
+    		OR ($bfa_ata['ata_images_dir'] == '') ) {	
+           		$imgdir  = content_url() . '/ata-images/';
+			} else {
+				$imgdir  = content_url() . '/' . $bfa_ata['ata_images_dir'] . '/';
+        	}
+    	}
+?><link rel="shortcut icon" href="<?php echo $imgdir. $bfa_ata['favicon_file']; ?>" />
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?><link rel="stylesheet" href="<?php echo $homeURL; ?>/?bfa_ata_file=css" type="text/css" media="all" /><?php } ?>
-<?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
+<?php if ( function_exists('wp_list_comments') AND is_singular() AND (comments_open( $post_id ))) { 	wp_enqueue_script( 'comment-reply' ); } ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?><?php bfa_incl('html_inserts_body_tag'); ?>>
 <?php bfa_incl('html_inserts_body_top'); ?>
+
+<?php if ($bfa_ata['full_width_header'] == "Yes") { ?>
+		<!-- Full Width Header -->
+		<div id="header" class="full-width">
+		<?php echo bfa_header_config(); ?>
+		</div>
+		<!-- / Full Width Header -->
+<?php } ?>
 <div id="wrapper">
 <div id="container">
 <table id="layout" border="0" cellspacing="0" cellpadding="0">
@@ -53,6 +79,9 @@ switch ( $bfa_ata['IEDocType'] ) {
 <?php if ( $right_col2 == "on" ) { ?><col class="colthree-inner" /><?php } ?>
 <?php if ( $right_col == "on" ) { ?><col class="colthree" /><?php } ?>
 </colgroup> 
+
+<?php if ($bfa_ata['full_width_header'] == "No") { ?>
+
 	<tr>
 
 		<!-- Header -->
@@ -64,7 +93,7 @@ switch ( $bfa_ata['IEDocType'] ) {
 		<!-- / Header -->
 
 	</tr>
-
+<?php } ?>
 	<!-- Main Body -->	
 	<tr id="bodyrow">
 
@@ -75,26 +104,31 @@ switch ( $bfa_ata['IEDocType'] ) {
 			<?php // Widgetize the Left Sidebar 
 			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Left Sidebar') ) : ?>
 		
-				<div class="widget widget_categories"><div class="widget-title">
-				<h3><?php _e('Categories','atahualpa'); ?></h3>
-				</div>
-				<ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
+				<div class="widget widget_categories">
+					<div class="widget-title">
+						<h3><?php _e('Categories','atahualpa'); ?></h3>
+					</div>
+					<ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
 				</div>
 				
-				<div class="widget widget_archive"><div class="widget-title">
-				<h3><?php _e('Archives','atahualpa'); ?></h3>
-				</div>
-				<ul><?php wp_get_archives('type=monthly'); ?></ul>
+				<div class="widget widget_archive">
+					<div class="widget-title">
+						<h3><?php _e('Archives','atahualpa'); ?></h3>
+					</div>
+					<ul><?php wp_get_archives('type=monthly'); ?></ul>
 				</div>
 
-				<div class="widget widget_text"><div class="widget-title">
-				<h3>A sample text widget</h3></div>
-				<div class="textwidget">
-				<p>Etiam pulvinar consectetur dolor sed malesuada. Ut convallis 
-				<a href="http://wordpress.org/">euismod dolor nec</a> pretium. Nunc ut tristique massa. </p>
-				<p>Nam sodales mi vitae dolor <em>ullamcorper et vulputate enim accumsan</em>. 
-				Morbi orci magna, tincidunt vitae molestie nec, molestie at mi. <strong>Nulla nulla lorem</strong>, 
-				suscipit in posuere in, interdum non magna. </p>
+				<div class="widget widget_text">
+					<div class="widget-title">
+						<h3>A sample text widget</h3>
+					</div>
+					<div class="textwidget">
+						<p>Etiam pulvinar consectetur dolor sed malesuada. Ut convallis 
+						<a href="http://wordpress.org/">euismod dolor nec</a> pretium. Nunc ut tristique massa. </p>
+						<p>Nam sodales mi vitae dolor <em>ullamcorper et vulputate enim accumsan</em>. 
+						Morbi orci magna, tincidunt vitae molestie nec, molestie at mi. <strong>Nulla nulla lorem</strong>, 
+						suscipit in posuere in, interdum non magna. </p>
+					</div>
 				</div>
 				
 			<?php endif; ?>

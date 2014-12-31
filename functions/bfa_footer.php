@@ -1,6 +1,6 @@
 <?php
 
-function footer_page_links($matches) {
+function bfa_footer_page_links($matches) {
 	$page_id = $matches[1];
 	$page_data = get_page($page_id, ARRAY_A);
 	$page_title = $page_data['post_title'];
@@ -11,12 +11,14 @@ function footer_page_links($matches) {
 
 function bfa_footer() {
 
-	global $bfa_ata, $post, $homeURL;
+	global $bfa_ata, $post;
+    $homeURL = get_home_url();  
+    
 	$footer_content = $bfa_ata['footer_style_content'];
 	
 	// page links
 	if ( strpos($footer_content,'%page') !== FALSE ) {
-		$footer_content = preg_replace_callback("|%page-(.*?)%|","footer_page_links",$footer_content);
+		$footer_content = preg_replace_callback("|%page-(.*?)%|","bfa_footer_page_links",$footer_content);
 	}
 
 	// home link
@@ -100,7 +102,7 @@ function bfa_footer() {
 	$footer_content = str_replace("%current-year%",  date('Y'), $footer_content);
 
 		// Parse widget areas:
-	$result = bfa_parse_widget_areas( footer_output($footer_content) );
+	$result = bfa_parse_widget_areas( bfa_footer_output($footer_content) );
 	
 	return $result;
 
