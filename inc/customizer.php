@@ -9,15 +9,6 @@
  * @since      1.0.0
  */
 
-// postMessage support for site title and description.
-add_action( 'customize_register', 'delivery_customize_register' );
-
-// Load javascript for the Customizer.
-add_action( 'customize_preview_init', 'delivery_customize_preview_js' );
-
-// Hook favicon into 'wp_head'.
-add_action( 'wp_head', 'delivery_favicon_output', 5 );
-
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -34,7 +25,7 @@ function delivery_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'delivery_settings',
 		array(
-			'title'    => __( 'Delivery Settings', 'delivery' ),
+			'title'    => __( 'Delivery Lite Settings', 'delivery' ),
 			'priority' => 150,
 		)
 	);
@@ -97,7 +88,28 @@ function delivery_customize_register( $wp_customize ) {
 			)
 		);
 
+	// Featured Posts setting.
+	$wp_customize->add_setting(
+		'delivery_featured_posts_num',
+		array(
+			'default'           => 4,
+			'sanitize_callback' => 'absint',
+			'capability'        => 'edit_theme_options'
+		)
+	);
+
+		// Featured Posts control.
+		$wp_customize->add_control(
+			'delivery_featured_posts_num_control',
+			array(
+				'label'    => esc_html__( 'Number of featured posts to show.', 'delivery' ),
+				'section'  => 'delivery_settings',
+				'settings' => 'delivery_featured_posts_num'
+			)
+		);
+
 }
+add_action( 'customize_register', 'delivery_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -105,8 +117,9 @@ function delivery_customize_register( $wp_customize ) {
  * @since 1.0.0
  */
 function delivery_customize_preview_js() {
-	wp_enqueue_script( 'delivery_customizer', trailingslashit( get_template_directory_uri() ) . 'assets/js/customizer.min.js', array( 'customize-preview' ), null, true );
+	wp_enqueue_script( 'delivery_customizer', trailingslashit( get_template_directory_uri() ) . 'assets/js/customizer.js', array( 'customize-preview' ), null, true );
 }
+add_action( 'customize_preview_init', 'delivery_customize_preview_js' );
 
 /**
  * Favicon output.
@@ -118,3 +131,4 @@ function delivery_favicon_output() {
 		echo '<link href="' . esc_url( get_theme_mod( 'delivery_favicon' ) ) . '" rel="icon">' . "\n";
 	}
 }
+add_action( 'wp_head', 'delivery_favicon_output', 5 );

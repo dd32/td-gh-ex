@@ -1,23 +1,10 @@
-<div id="secondary" class="widget-area widget-primary" role="complementary">
+<?php
+// Return early if no widget found.
+if ( ! is_active_sidebar( 'primary' ) ) {
+	return;
+}
+?>
 
-	<?php if ( ! dynamic_sidebar( 'primary' ) ) : ?>
-
-		<aside id="archives" class="widget">
-			<h1 class="widget-title"><?php _e( 'Archives', 'delivery' ); ?></h1>
-			<ul>
-				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-			</ul>
-		</aside>
-
-		<aside id="meta" class="widget">
-			<h1 class="widget-title"><?php _e( 'Meta', 'delivery' ); ?></h1>
-			<ul>
-				<?php wp_register(); ?>
-				<li><?php wp_loginout(); ?></li>
-				<?php wp_meta(); ?>
-			</ul>
-		</aside>
-
-	<?php endif; // end sidebar widget area ?>
-	
+<div id="secondary" class="widget-area widget-primary" role="complementary" aria-label="<?php echo esc_attr_x( 'Primary Sidebar', 'Sidebar aria label', 'delivery' ); ?>" <?php hybrid_attr( 'sidebar', 'primary' ); ?>>
+	<?php dynamic_sidebar( 'primary' ); ?>
 </div><!-- #secondary -->

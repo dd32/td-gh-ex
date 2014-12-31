@@ -3,14 +3,13 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php hybrid_attr( 'body' ); ?>>
 
 <div id="page" class="hfeed site">
 
@@ -19,7 +18,7 @@
 	<!-- Mobile navigation -->
 	<a href="#primary-navigation" class="mobile-menu"><div class="dashicons dashicons-menu"></div></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner" <?php hybrid_attr( 'header' ); ?>>
 		<div class="header-item">
 
 			<div class="site-branding">
@@ -35,4 +34,4 @@
 
 	<div id="content" class="site-content">
 
-		<?php get_sidebar( 'home' ); // Loads the sidebar-home.php template. ?>
+		<?php get_sidebar( 'secondary' ); // Loads the sidebar-secondary.php template. ?>
