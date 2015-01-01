@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
-Version: 2.0.4
+Version: 2.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -3655,6 +3655,21 @@ div.ibanner .da-img img {
 	font-size: 12px;
 }
 
+.content-area .tx-service .tx-service-icon span {
+	color: #3787be;
+	border-color:  #3787be;
+}
+
+.content-area .tx-service:hover .tx-service-icon span {
+	background-color: #3787be;
+}
+
+.content-area .tx-service .tx-service-icon span i {
+	color: #c44044;	
+}
+.content-area .tx-service:hover .tx-service-icon span i {
+	color: #FFFFFF;	
+}
 /**
  * 12.0 Media Queries
  * ----------------------------------------------------------------------------

@@ -170,6 +170,29 @@ class Options_Framework_Admin {
 	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
 	    </h2>
 
+        <div class="promo-2">
+        	<div class="promo-wrap">
+            	<a href="<?php esc_attr_e( 'http://templatesnext.org/itrans/', 'textdomain' ); ?>" target="_blank">i-create Demo</a>
+                <a href="<?php esc_attr_e( 'http://templatesnext.org/itrans/totorial/', 'textdomain' ); ?>">Documentation</a> 
+                <div class="donate">                
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="M2HN47K2MQHAN">
+                    <table>
+                    <tr><td><input type="hidden" name="on0" value="If you like my work, buy me">If you like my work, buy me</td></tr><tr><td><select name="os0">
+                        <option value="a cup of coffee">1 cup of coffee $10.00 USD</option>
+                        <option value="2 cup of coffee">2 cup of coffee $20.00 USD</option>
+                        <option value="3 cup of coffee">3 cup of coffee $30.00 USD</option>
+                    </select> </td></tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>                                             
+            </div>
+        </div>        
+
 	    <?php settings_errors( 'options-framework' ); ?>
 
 	    <div id="optionsframework-metabox" class="metabox-holder">

@@ -668,6 +668,14 @@ include get_template_directory() . '/inc/custom_functions.php';
 
 
 /*-----------------------------------------------------------------------------------*/
+/*	Metabox
+/*-----------------------------------------------------------------------------------*/ 
+
+include( get_template_directory() . '/inc/tnext-meta.php' );
+require_once( get_template_directory() . '/inc/meta-box/meta-box.php' );
+
+
+/*-----------------------------------------------------------------------------------*/
 /*	changing default Excerpt length 
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -723,7 +731,13 @@ function my_theme_register_required_plugins() {
             'name' => 'Breadcrumb NavXT', // The plugin name.
             'slug' => 'breadcrumb-navxt', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        )
+        ),
+         // This is an example of how to include a plugin from a private repo in your theme.
+        array(
+            'name' => 'TemplatesNext ToolKit', // The plugin name.
+            'slug' => 'templatesnext-toolkit', // The plugin slug (typically the folder name).
+            'required' => true, // If false, the plugin is only 'recommended' instead of required.
+        )		
 
     );
 

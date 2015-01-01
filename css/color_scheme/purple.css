@@ -214,3 +214,19 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link {
 .format-status {
 	background-color: #6f40c4;
 }
+
+.content-area .tx-service .tx-service-icon span {
+	color: #6f40c4;
+	border-color:  #6f40c4;
+}
+
+.content-area .tx-service:hover .tx-service-icon span {
+	background-color: #6f40c4;
+}
+
+.content-area .tx-service .tx-service-icon span i {
+	color: #6f40c4;	
+}
+.content-area .tx-service:hover .tx-service-icon span i {
+	color: #FFFFFF;	
+}
