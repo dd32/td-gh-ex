@@ -12,6 +12,8 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.7 =
+* fixed javascript name of html5shiv
 = 1.6 =
 * style changes to mid--bar
 * added dialouge to readme concerning lead-article posting
