@@ -4,7 +4,7 @@
 
 	Theme Name: Lovecraft
 	Theme URI: http://www.andersnoren.se/teman/lovecraft-wordpress-theme/
-	Version: 1.07
+	Version: 1.08
 	Description: Lovecraft is a beautiful two-column theme for bloggers. It features a responsive design, great typography, a full-width header image (which is replaced with the post thumbnail on single posts/pages), custom accent color support, custom logo support, editor style support, a Flickr widget, recent posts and recent comments widgets with thumbnails, and a full-width template. Included translations: Swedish/svenska.
 	Tags: gray, black, red, white, light, two-columns, right-sidebar, responsive-layout, custom-colors, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -316,7 +316,7 @@ body a,
 .mobile-search,
 .mobile-menu { display: none; }
 
-.navigation { border-top: 1px solid #eee; }
+.navigation { border-top: 1px solid #ddd; }
 
 .main-menu { 
 	text-align: center;
@@ -333,12 +333,13 @@ body a,
 .main-menu > li + li:before {
 	content: "/";
 	display: block;
-	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
 	font-weight: 700;
 	color: #bbb;
 	position: absolute;
 	top: 50%;
-	margin-top: -9px;
+	margin-top: -7px;
 	left: -25px;
 }
 
@@ -483,7 +484,7 @@ body a,
 .post {
 	display: block;
 	background: #fff;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	position: relative;
 }
 
@@ -577,7 +578,7 @@ body a,
 
 .post-meta {
 	margin-top: 20px;
-	border-top: 1px solid #eee;
+	border-top: 1px solid #ddd;
 	padding-top: 20px;
 }
 
@@ -673,11 +674,14 @@ body a,
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #666;
+	color: #444;
 	position: relative;
 }
 
 .post-tags a { margin-right: 8px; }
+
+.footer .tagcloud a { background: #eee; }
+.footer .tagcloud a:before { border-right-color: #eee; }
 
 .post-tags a:before,
 .tagcloud a:before {
@@ -707,7 +711,7 @@ body a,
 
 
 .post-navigation {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #ddd;
 	position: relative;
 }
 
@@ -723,7 +727,7 @@ body a,
 	display: block;
 	width: 1px;
 	height: 100%;
-	background: #eee;
+	background: #ddd;
 	position: absolute;
 	left: 50%;
 }
@@ -841,8 +845,8 @@ body a,
 }
 
 .post-content .more-link:hover {
-	border-color: #ca2017;
-	color: #ca2017;
+	background-color: #111;
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -988,7 +992,7 @@ code, kbd, pre {
 
 .post-content img {
 	padding: 5px;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 }
 
 .post-content .wp-caption { max-width: 100%; }
@@ -1023,11 +1027,11 @@ code, kbd, pre {
 
 .post-content .wp-caption-text,
 .post-content .gallery-caption {
-	margin: 8px auto 16px;
+	margin: 4px auto 16px;
 	font-family: 'Lato', Helvetica, sans-serif;
 	font-size: 0.9rem;
 	line-height: 160%; 
-	color: #666;
+	color: #444;
 	text-align: center;
 }
 
@@ -1082,7 +1086,7 @@ code, kbd, pre {
 
 .post-content fieldset {
 	padding: 25px;
-	border: 2px solid #eee;
+	border: 2px solid #ddd;
 	margin-bottom: 1em;
 }
 
@@ -1117,7 +1121,7 @@ code, kbd, pre {
 .post-content textarea {
 	width: 100%;
 	padding: 20px;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	font-size: 0.9em;
 	color: #111;
 	background: #fafafa;
@@ -1128,7 +1132,7 @@ code, kbd, pre {
 .post-content input[type="file"] {
 	padding: 10px;
 	background: #fafafa;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	border-radius: 3px;
 }
 
@@ -1191,7 +1195,7 @@ code, kbd, pre {
 /* -------------------------------------------------------------------------------- */
 
 
-.comments-container { border-top: 1px solid #eee; }
+.comments-container { border-top: 1px solid #ddd; }
 
 .comments-inner {
 	width: 629px;
@@ -1206,8 +1210,9 @@ code, kbd, pre {
 .comments-title-container,
 .comment-reply-title {
 	padding-bottom: 25px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
 	margin-bottom: 25px;
+	vertical-align: bottom;
 }
 
 .comments-title,
@@ -1223,16 +1228,16 @@ code, kbd, pre {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	position: absolute;
-	bottom: 28px;
+	bottom: 26px;
 	right: 0;
 }
 
 .comments-title-link a {
 	display: block;
-	color: #111;
-	padding-bottom: 2px;
-	border-bottom: 2px solid #ca2017;
+	color: #ca2017;
 }
+
+.comments-title-link a:hover { text-decoration: underline; }
 
 .no-comments { text-align: center; }
 
@@ -1261,7 +1266,7 @@ div.comment { margin-top: 25px; }
 .comment-inner {
 	margin-left: 80px;
 	padding: 25px;
-	background: #eee;
+	background: #F1F1F1;
 	border-radius: 6px;
 	position: relative;
 }
@@ -1282,18 +1287,15 @@ div.comment { margin-top: 25px; }
 	content: "";
 	display: block;
 	border: 10px solid transparent;
-	border-right-color: #eee;
+	border-right-color: #f1f1f1;
 	position: absolute;
 	top: 30px;
 	left: -20px;
 }
 
-.comment-header { margin-bottom: 25px; }
+.comment-header { margin-bottom: 20px; }
 
 .comment-header h4 {
-	padding-bottom: 10px;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 6px;
 	font-size: 1.1em;
 	font-weight: 700;
 }
@@ -1301,49 +1303,40 @@ div.comment { margin-top: 25px; }
 .comment-header h4 a { color: #111; }
 .comment-header h4 a:hover { color: #ca2017; }
 
+/* Comment Content */
+
+.comment-content p,
+.comment-content blockquote,
+.comment-content ul,
+.comment-content ol,
+.comment-content address,
+.comment-content dl,
+.comment-content pre {
+	line-height: 160%;
+	margin-bottom: 1em;
+}
+
 /* Comment Meta */
 
-.comment-meta p {
-	display: inline-block;
+.comment-meta { 
+	margin-top: 23px;
 	font-family: 'Lato', Helvetica, sans-serif;
 	font-size: 0.7em;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #888;
+	color: #777;
 }
 
-.comment-meta p + p:before {
-	content: "/";
-	margin: 0 10px 0 5px;
-	color: #aaa;
+.comment-meta a { color: #777; }
+
+.comment-meta .genericon {
+	margin-right: 3px;
+	position: relative;
+	top: -2px;
 }
 
-.comment-meta a { 
-	padding-bottom: 2px;
-	color: #888; 
-}
-
-/* Awaiting Moderation */
-
-.comment-awaiting-moderation {
-	margin-top: 20px;
-	text-align: center;
-}
-
-.comment-awaiting-moderation p {
-	display: inline;
-	padding-bottom: 1px;
-	border-bottom: 2px solid #eee;
-	font-family: 'Lato', Helvetica, sans-serif;
-	line-height: 200%;
-	font-size: 0.7em;
-	font-weight: 900;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	text-align: center;
-	color: #999;
-}
+.comment-meta .genericon-edit { margin-left: 12px; }
 
 
 /* Pingbacks & Tracksbacks ----------------------------------- */
@@ -1368,7 +1361,7 @@ div.comment { margin-top: 25px; }
 
 .pingbacklist li + li {
 	margin-top: 10px;
-	border-top: 1px solid #eee;
+	border-top: 1px solid #ddd;
 	padding-top: 10px;
 }
 
@@ -1379,11 +1372,7 @@ div.comment { margin-top: 25px; }
 /* Comment Navigation ---------------------------------------- */
 
 
-.comments-nav {
-	padding-top: 30px;
-	border-top: 1px solid #eee;
-	margin-top: 30px;
-}
+.comments-nav { margin-top: 30px; }
 
 .comments-nav a {
 	font-family: 'Lato', Helvetica, sans-serif;
@@ -1402,7 +1391,7 @@ div.comment { margin-top: 25px; }
 /* -------------------------------------------------------------------------------- */
 
 
-.respond-container { border-top: 1px solid #eee; }
+.respond-container { border-top: 1px solid #ddd; }
 
 .comment-respond {
 	width: 629px;
@@ -1432,7 +1421,6 @@ div.comment { margin-top: 25px; }
 }
 
 .comment-respond p { margin-bottom: 25px; }
-
 .comment-respond p:last-child { margin-bottom: 0; }
 
 .comment-form-author,
@@ -1457,7 +1445,7 @@ div.comment { margin-top: 25px; }
 	padding: 20px;
 	margin: 0;
 	background: #fafafa;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	font-family: 'Lato', Helvetica, sans-serif;
 	font-size: 1rem;
 	color: #111;
@@ -1511,6 +1499,7 @@ div.comment { margin-top: 25px; }
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	position: relative;
 }
 
 .commentlist #cancel-comment-reply-link:hover { text-decoration: underline; }
@@ -1829,24 +1818,6 @@ div.comment { margin-top: 25px; }
 .widget_rss li cite:before { content: "— "; }
 
 
-/* Widget Tag Cloud -------------------------------------- */
-
-
-.sidebar .tagcloud a { 
-	background: #EAEAEA; 
-	color: #666;
-}
-
-.sidebar .tagcloud a:before { border-right-color: #EAEAEA; }
-
-.sidebar .tagcloud a:hover { 
-	background: #ca2017; 
-	color: #fff;
-}
-
-.sidebar .tagcloud a:hover:before { border-right-color: #ca2017; }
-
-
 /* Widget Calendar --------------------------------------- */
 
 
@@ -2003,8 +1974,8 @@ div.comment { margin-top: 25px; }
 
 
 .footer { 
-	border-top: 1px solid #eee; 
-	border-bottom: 1px solid #eee;
+	border-top: 1px solid #ddd; 
+	border-bottom: 1px solid #ddd;
 }
 
 .footer .widgets {
@@ -2387,10 +2358,7 @@ div.comment { margin-top: 25px; }
 	.comment-inner { margin-left: 0; }
 	.comment-inner:before { content: none; }
 	
-	.comments-nav { 
-		padding-top: 15px; 
-		margin-top: 15px;
-	}
+	.comments-nav { margin-top: 20px; }
 	
 	
 	/* Respond --------------------------------------- */
@@ -2520,7 +2488,7 @@ div.comment { margin-top: 25px; }
 		padding: 20px 5%;
 	}
 	
-	.post-nav-next { border-top: 1px solid #eee; }
+	.post-nav-prev + .post-nav-next { border-top: 1px solid #ddd; }
 	
 	
 	/* Post Content --------------------------------------- */
@@ -2528,10 +2496,10 @@ div.comment { margin-top: 25px; }
 	
 	.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 { margin: 40px 0 20px; }
 	
-	.post-content h1 { font-size: 1.75em; }
-	.post-content h2 { font-size: 1.5em; }
-	.post-content h3 { font-size: 1.4em; }
-	.post-content h4 { font-size: 1.25em; }
+	.post-content h1 { font-size: 1.5em; }
+	.post-content h2 { font-size: 1.4em; }
+	.post-content h3 { font-size: 1.3em; }
+	.post-content h4 { font-size: 1.2em; }
 	.post-content h5 { font-size: 1.1em; }
 	
 	.post-content hr { margin: 40px auto; }
@@ -2588,6 +2556,8 @@ div.comment { margin-top: 25px; }
 	
 	/* Respond --------------------------------------- */
 	
+	
+	.comment-respond p { margin-bottom: 15px; }
 	
 	.comment-respond input[type="text"], 
 	.comment-respond textarea {
@@ -2651,9 +2621,15 @@ div.comment { margin-top: 25px; }
 	
 	.footer .widgets + .widgets,
 	.widget + .widget { 
-		padding-top: 10%; 
-		margin-top: 10%;
+		padding-top: 11%; 
+		margin-top: 11%;
 	}
+	
+	.footer .tagcloud a { background: #ddd; }
+	.footer .tagcloud a:before { border-right-color: #ddd; }
+	
+	.footer .tagcloud a:hover { background: #ca2017; }
+	.footer .tagcloud a:hover:before { border-right-color: #ca2017; }
 	
 	
 }
@@ -2673,12 +2649,28 @@ div.comment { margin-top: 25px; }
 	}
 	
 	
-	/* Post Content --------------------------------------- */
+	/* Post Content ---------------------------------- */
 	
 	
 	.post-content blockquote { padding: 20px; }
 	
 	.post-content blockquote:after { display: none; }
+	
+	
+	/* Comments -------------------------------------- */
+	
+	
+	.comments-title,
+	.comment-reply-title { font-size: 1.3em; }
+	
+	.comment-inner { padding: 15px; }
+	
+	.comment-header { margin-bottom: 15px; }
+	
+	.comment-meta { 
+		margin-top: 16px;
+		font-size: 0.65em; 
+	}
 		
 	
 	/* Credits --------------------------------------- */

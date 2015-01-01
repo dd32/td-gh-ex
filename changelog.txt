@@ -1,6 +1,13 @@
 *** Lovecraft changelog ***
 
 
+Version 1.08 (2014-01-01)
+------------------------- 
+- Dialed up the contrast in the design
+- Changed the layout of comments
+- Made minor changes to the Swedish translation
+
+
 Version 1.07 (2014-01-01)
 ------------------------- 
 - Added support for the aside post format (sorry, theme reviewer)

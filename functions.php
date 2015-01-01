@@ -243,7 +243,7 @@ function lovecraft_archive_navigation() {
 add_filter( 'the_content_more_link', 'lovecraft_modify_read_more_link' );
 
 function lovecraft_modify_read_more_link() {
-	return '<a class="more-link" href="' . get_permalink() . '">' . __('Read More...','lovecraft') . '</a>';
+	return '<a class="more-link" href="' . get_permalink() . '">' . __('Read More','lovecraft') . '</a>';
 }
 
 
@@ -353,21 +353,6 @@ function lovecraft_comment( $comment, $args, $depth ) {
 				<div class="comment-header">
 											
 					<h4><?php echo get_comment_author_link(); ?></h4>
-					
-					<div class="comment-meta">
-						<p><a class="comment-date-link" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" title="<?php echo get_comment_date() . ' at ' . get_comment_time(); ?>"><?php echo get_comment_date(get_option('date_format')) ?></a></p>
-						<?php 
-							comment_reply_link( array( 
-								'reply_text' 	=>  	__('Reply','lovecraft'),
-								'depth'			=> 		$depth, 
-								'max_depth' 	=> 		$args['max_depth'],
-								'before'		=>		'<p>',
-								'after'			=>		'</p>'
-								) 
-							); 
-						?>
-						<?php edit_comment_link( __( 'Edit', 'lovecraft' ), '<p>', '</p>' ); ?>
-					</div> <!-- /comment-meta -->
 				
 				</div> <!-- /comment-header -->
 				
@@ -377,13 +362,37 @@ function lovecraft_comment( $comment, $args, $depth ) {
 					
 				</div><!-- /comment-content -->
 				
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-				
-					<div class="comment-awaiting-moderation">
-						<p><?php _e( 'Your comment is awaiting moderation.', 'lovecraft' ); ?></p>
+				<div class="comment-meta">
+					
+					<div class="fleft">
+						<div class="genericon genericon-day"></div><a class="comment-date-link" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" title="<?php echo get_comment_date() . ' at ' . get_comment_time(); ?>"><?php echo get_comment_date(get_option('date_format')); ?></a>
+						<?php edit_comment_link( __( 'Edit', 'lovecraft' ), '<div class="genericon genericon-edit"></div>', '' ); ?>
 					</div>
 					
-				<?php endif; ?>
+					<?php if ( '0' == $comment->comment_approved ) : ?>
+				
+						<div class="comment-awaiting-moderation fright">
+							<div class="genericon genericon-show"></div><?php _e( 'Your comment is awaiting moderation.', 'lovecraft' ); ?>
+						</div>
+						
+					<?php else : ?>
+						
+						<?php 
+							comment_reply_link( array( 
+								'reply_text' 	=>  	__('Reply','lovecraft'),
+								'depth'			=> 		$depth, 
+								'max_depth' 	=> 		$args['max_depth'],
+								'before'		=>		'<div class="fright"><div class="genericon genericon-reply"></div>',
+								'after'			=>		'</div>'
+								) 
+							); 
+						?>
+					
+					<?php endif; ?>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- /comment-meta -->
 								
 			</div> <!-- /comment-inner -->
 										
@@ -484,15 +493,13 @@ class lovecraft_Customize {
 	           <?php self::lovecraft_generate_css('.post-content input[type="submit"]:hover', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.post-content input[type="button"]:hover', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.post-content input[type="reset"]:hover', 'background', 'accent_color'); ?>
-	           <?php self::lovecraft_generate_css('.post-content .more-link:hover', 'color', 'accent_color'); ?>
-	           <?php self::lovecraft_generate_css('.post-content .more-link:hover', 'border-color', 'accent_color'); ?>
 	           
 	           <?php self::lovecraft_generate_css('.post-content .page-links a:hover', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.post-tags a:hover', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.post-tags a:hover:before', 'border-right-color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.post-navigation h4 a:hover', 'color', 'accent_color'); ?>
 	           
-	           <?php self::lovecraft_generate_css('.comments-title-link a', 'border-bottom-color', 'accent_color'); ?>
+	           <?php self::lovecraft_generate_css('.comments-title-link a', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.comments .pingbacks li a:hover', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.comment-header h4 a:hover', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.bypostauthor .comment-author-icon', 'background', 'accent_color'); ?>
@@ -513,6 +520,8 @@ class lovecraft_Customize {
 	           <?php self::lovecraft_generate_css('#wp-calendar tfoot a:hover', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.widget .tagcloud a:hover', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.widget .tagcloud a:hover:before', 'border-right-color', 'accent_color'); ?>
+	           <?php self::lovecraft_generate_css('.footer .widget .tagcloud a:hover', 'background', 'accent_color'); ?>
+	           <?php self::lovecraft_generate_css('.footer .widget .tagcloud a:hover:before', 'border-right-color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.search-button:hover .genericon', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.wrapper .search-button:hover .genericon', 'color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.footer .search-button:hover .genericon', 'color', 'accent_color'); ?>

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Lovecraft v1.00\n"
+"Project-Id-Version: Lovecraft v1.08\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-12-30 14:42:45+0000\n"
+"PO-Revision-Date: 2015-01-01 18:17:04+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,8 +84,8 @@ msgstr "(Sida %s av %s)"
 #@ lovecraft
 msgid "Comment"
 msgid_plural "Comments"
-msgstr[0] "Kommentar"
-msgstr[1] "Kommentarer"
+msgstr[0] "kommentar"
+msgstr[1] "kommentarer"
 
 #: comments.php:24
 #@ lovecraft
@@ -96,18 +96,18 @@ msgstr "Skriv kommentar"
 #@ lovecraft
 msgid "Pingback"
 msgid_plural "Pingbacks"
-msgstr[0] "Pingback"
-msgstr[1] "Pingbacks"
+msgstr[0] "pingback"
+msgstr[1] "pingbacks"
 
 #: comments.php:65
-#: functions.php:199
+#: functions.php:216
 #: single.php:81
 #@ lovecraft
 msgid "Previous"
 msgstr "Föregående"
 
 #: comments.php:71
-#: functions.php:209
+#: functions.php:226
 #: single.php:94
 #@ lovecraft
 msgid "Next"
@@ -154,18 +154,19 @@ msgstr "Den"
 msgid "Sticky post"
 msgstr "Klistrat inlägg"
 
+#: content-aside.php:30
 #: content.php:36
 #: single.php:24
 #@ lovecraft
 msgid "In"
 msgstr "I"
 
-#: footer.php:33
+#: footer.php:37
 #@ lovecraft
 msgid "Powered by"
 msgstr "Drivs med"
 
-#: footer.php:33
+#: footer.php:37
 #@ lovecraft
 msgid "Theme by"
 msgstr "Tema av"
@@ -178,117 +179,112 @@ msgstr "Tema av"
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchar din sökning. Vänligen försök igen."
 
-#: functions.php:40
+#: functions.php:56
 #@ lovecraft
 msgid "Primary Menu"
 msgstr "Huvudmeny"
 
-#: functions.php:91
+#: functions.php:108
 #@ lovecraft
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:93
+#: functions.php:110
 #@ lovecraft
 msgid "Widgets in this area will be shown in the sidebar."
 msgstr "Widgets i det här utrymmet kommer att visas i den högra sidokolumnen."
 
-#: functions.php:100
+#: functions.php:117
 #@ lovecraft
 msgid "Footer One"
 msgstr "Sidfot 1"
 
-#: functions.php:102
+#: functions.php:119
 #@ lovecraft
 msgid "Widgets in this area will be shown in the left footer column."
 msgstr "Widgets i det här utrymmet kommer att visas i den vänstra kolumnen i sidfoten."
 
-#: functions.php:109
+#: functions.php:126
 #@ lovecraft
 msgid "Footer Two"
 msgstr "Sidfot 2"
 
-#: functions.php:111
+#: functions.php:128
 #@ lovecraft
 msgid "Widgets in this area will be shown in the middle footer column."
 msgstr "Widgets i det här utrymmet kommer att visas i mittenkolumnen i sidfoten."
 
-#: functions.php:118
+#: functions.php:135
 #@ lovecraft
 msgid "Footer Three"
 msgstr "Sidfot 3"
 
-#: functions.php:120
+#: functions.php:137
 #@ lovecraft
 msgid "Widgets in this area will be shown in the right footer column."
 msgstr "Widgets i det här utrymmet kommer att visas i den högra kolumnen i sidfoten."
 
-#: functions.php:171
+#: functions.php:188
 #, php-format
 #@ lovecraft
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: functions.php:189
+#: functions.php:206
 #: index.php:21
 #, php-format
 #@ lovecraft
 msgid "Page %s of %s"
 msgstr "Sida %s av %s"
 
-#: functions.php:229
-#@ lovecraft
-msgid "Read More..."
-msgstr "Läs mer..."
-
-#: functions.php:340
+#: functions.php:327
 #@ lovecraft
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:340
-#: functions.php:382
+#: functions.php:327
+#: functions.php:369
 #@ lovecraft
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:356
+#: functions.php:343
 #@ lovecraft
 msgid "Post author"
 msgstr "Inläggsförfattare"
 
-#: functions.php:374
+#: functions.php:382
 #@ lovecraft
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:396
+#: functions.php:375
 #@ lovecraft
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: functions.php:420
+#: functions.php:416
 #@ lovecraft
 msgid "Options for Lovecraft"
 msgstr "Inställningar för Lovecraft"
 
-#: functions.php:423
+#: functions.php:419
 #@ lovecraft
 msgid "Allows you to customize theme settings for Lovecraft."
 msgstr "Låter dig bestämma inställningar för Lovecraft."
 
-#: functions.php:428
-#: functions.php:463
+#: functions.php:424
+#: functions.php:460
 #@ lovecraft
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:430
+#: functions.php:426
 #@ lovecraft
 msgid "Upload a logo to replace the default site title in the header."
 msgstr "Ladda upp en logotyp som visas istället för webbplatstiteln i sidhuvudet."
 
-#: functions.php:455
+#: functions.php:452
 #@ lovecraft
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -386,4 +382,9 @@ msgstr "Visar de senaste blogginläggen."
 #@ lovecraft
 msgid "Number of posts to display"
 msgstr "Antal inlägg att visa"
+
+#: functions.php:246
+#@ lovecraft
+msgid "Read More"
+msgstr "Läs mer"
 
