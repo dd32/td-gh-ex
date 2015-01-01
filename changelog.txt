@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.05 (2014-01-01)
+------------------------- 
+- Improved the styling of the footer (last update before release, promise)
+
+
 Version 1.04 (2014-01-01)
 ------------------------- 
 - Fixed a bug in the title tag backwards compatibility code

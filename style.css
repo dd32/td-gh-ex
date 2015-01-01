@@ -4,7 +4,7 @@
 
 	Theme Name: Lovecraft
 	Theme URI: http://www.andersnoren.se/teman/lovecraft-wordpress-theme/
-	Version: 1.04
+	Version: 1.05
 	Description: Lovecraft is a beautiful two-column theme for bloggers. It features a responsive design, great typography, a full-width header image (which is replaced with the post thumbnail on single posts/pages), custom accent color support, custom logo support, editor style support, a Flickr widget, recent posts and recent comments widgets with thumbnails, and a full-width template. Included translations: Swedish/svenska.
 	Tags: gray, black, red, white, light, two-columns, right-sidebar, responsive-layout, custom-colors, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -2458,9 +2458,7 @@ div.comment { margin-top: 25px; }
 	.content { margin-top: 0; }
 	
 	.post { border: none; }
-	
-	.post:last-child { border-bottom: 1px solid #eee; }
-	
+		
 	.post + .post { 
 		margin-top: 0; 
 		border-top: 2px solid #eee;
@@ -2636,20 +2634,37 @@ div.comment { margin-top: 25px; }
 	.page-title h4 span { color: #666; }
 	
 	.archive-navigation { 
-		max-width: 90%; 
-		margin: 25px auto;
+		max-width: 100%; 
+		padding: 25px 5% 28px;
+		margin: 0;
+		border-top: 1px solid #ddd;
 		text-align: center;
+		background: #fff;
 	}
 	
 	.archive-navigation .fleft { display: none; }
 	
 	.archive-navigation .fright { float: none; }
 	
+	.archive-navigation p { font-size: 0.8em; }
+	
+	.archive-navigation p + p:before { margin: 0 12px; }
+	
 	
 	/* Footer --------------------------------------- */
 	
 	
-	.footer { padding: 40px 0; }
+	.footer { 
+		background: #fafafa;
+		border-top-color: #ddd;
+		padding: 10% 0; 
+	}
+	
+	.footer .widgets + .widgets,
+	.widget + .widget { 
+		padding-top: 10%; 
+		margin-top: 10%;
+	}
 	
 	
 }
