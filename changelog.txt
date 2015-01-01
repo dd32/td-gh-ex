@@ -1,0 +1,16 @@
+*** Lovecraft changelog ***
+
+
+Version 1.02 (2014-01-01)
+------------------------- 
+- Removed a misplaced comma in the theme meta information tags
+- Removed a add_shortcode function
+
+
+Version 1.01 (2014-01-01)
+------------------------- 
+- Added a sanitize_hex_color callback to the custom accent color control
+
+
+Version 1.00 (2014-01-01)
+------------------------- 
