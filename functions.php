@@ -8,6 +8,18 @@ function lovecraft_setup() {
 	// Automatic feed
 	add_theme_support( 'automatic-feed-links' );
 	
+	// Title tag
+	add_theme_support( 'title-tag' );
+	
+	// Title tag backwards compatibility
+	if ( ! function_exists( '_wp_render_title_tag' ) ) {
+		function lovecraft_theme_slug_render_title() { ?>
+			<title><?php wp_title('|', true, 'right'); ?></title>
+		<?php 
+		}
+	} 
+	add_action( 'wp_head', 'lovecraft_theme_slug_render_title' );	
+	
 	// Set content-width
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 629;

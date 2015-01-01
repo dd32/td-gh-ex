@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.03 (2014-01-01)
+------------------------- 
+- Added support for the new title tag theme feature
+
+
 Version 1.02 (2014-01-01)
 ------------------------- 
 - Removed a misplaced comma in the theme meta information tags
