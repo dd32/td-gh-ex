@@ -1,6 +1,13 @@
 *** Lovecraft changelog ***
 
 
+Version 1.06 (2014-01-01)
+------------------------- 
+- Improved the styling of comments
+- Added a missing element to the custom accent color function
+- Broke promise on making the last update the last update before release
+
+
 Version 1.05 (2014-01-01)
 ------------------------- 
 - Improved the styling of the footer (last update before release, promise)

@@ -4,7 +4,7 @@
 
 	Theme Name: Lovecraft
 	Theme URI: http://www.andersnoren.se/teman/lovecraft-wordpress-theme/
-	Version: 1.05
+	Version: 1.06
 	Description: Lovecraft is a beautiful two-column theme for bloggers. It features a responsive design, great typography, a full-width header image (which is replaced with the post thumbnail on single posts/pages), custom accent color support, custom logo support, editor style support, a Flickr widget, recent posts and recent comments widgets with thumbnails, and a full-width template. Included translations: Swedish/svenska.
 	Tags: gray, black, red, white, light, two-columns, right-sidebar, responsive-layout, custom-colors, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -1191,8 +1191,7 @@ code, kbd, pre {
 /* -------------------------------------------------------------------------------- */
 
 
-.comments-container { background: #eee; }
-.comments-container + .comments-container { border-top: 1px solid #ddd; }
+.comments-container { border-top: 1px solid #eee; }
 
 .comments-inner {
 	width: 629px;
@@ -1207,7 +1206,7 @@ code, kbd, pre {
 .comments-title-container,
 .comment-reply-title {
 	padding-bottom: 25px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 	margin-bottom: 25px;
 }
 
@@ -1262,7 +1261,7 @@ div.comment { margin-top: 25px; }
 .comment-inner {
 	margin-left: 80px;
 	padding: 25px;
-	background: #fff;
+	background: #eee;
 	border-radius: 6px;
 	position: relative;
 }
@@ -1283,7 +1282,7 @@ div.comment { margin-top: 25px; }
 	content: "";
 	display: block;
 	border: 10px solid transparent;
-	border-right-color: #fff;
+	border-right-color: #eee;
 	position: absolute;
 	top: 30px;
 	left: -20px;
@@ -1293,7 +1292,7 @@ div.comment { margin-top: 25px; }
 
 .comment-header h4 {
 	padding-bottom: 10px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
 	margin-bottom: 6px;
 	font-size: 1.1em;
 	font-weight: 700;
@@ -1311,18 +1310,18 @@ div.comment { margin-top: 25px; }
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #999;
+	color: #888;
 }
 
 .comment-meta p + p:before {
 	content: "/";
 	margin: 0 10px 0 5px;
-	color: #ccc;
+	color: #aaa;
 }
 
 .comment-meta a { 
 	padding-bottom: 2px;
-	color: #999; 
+	color: #888; 
 }
 
 /* Awaiting Moderation */
@@ -1369,7 +1368,7 @@ div.comment { margin-top: 25px; }
 
 .pingbacklist li + li {
 	margin-top: 10px;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #eee;
 	padding-top: 10px;
 }
 
@@ -1382,7 +1381,7 @@ div.comment { margin-top: 25px; }
 
 .comments-nav {
 	padding-top: 30px;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #eee;
 	margin-top: 30px;
 }
 
@@ -1411,8 +1410,6 @@ div.comment { margin-top: 25px; }
 	padding: 60px 0;
 	margin: 0 auto;
 }
-
-.comment-reply-title { border-bottom-color: #eee; }
 
 .comment-respond .logged-in-as { margin-bottom: 40px; }
 
@@ -1507,8 +1504,6 @@ div.comment { margin-top: 25px; }
 	max-width: 100%;
 }
 
-.commentlist .comment-reply-title { border-bottom-color: #ddd; }
-
 .commentlist #cancel-comment-reply-link {
 	margin-left: 3px;
 	font-family: 'Lato', Helvetica, sans-serif;
@@ -1519,12 +1514,6 @@ div.comment { margin-top: 25px; }
 }
 
 .commentlist #cancel-comment-reply-link:hover { text-decoration: underline; }
-
-.commentlist .comment-respond input[type="text"],
-.commentlist .comment-respond textarea {
-	background: #fff;
-	border-color: #ddd;
-}
 
 
 /* -------------------------------------------------------------------------------- */

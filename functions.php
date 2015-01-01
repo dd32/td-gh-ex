@@ -495,6 +495,7 @@ class lovecraft_Customize {
 	           <?php self::lovecraft_generate_css('.bypostauthor .comment-author-icon', 'background', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.form-submit #submit:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::lovecraft_generate_css('.comments-nav a:hover', 'color', 'accent_color'); ?>
+	           <?php self::lovecraft_generate_css('.pingbacks-title', 'border-bottom-color', 'accent_color'); ?>
 	           
 	           <?php self::lovecraft_generate_css('.archive-navigation a:hover', 'color', 'accent_color'); ?>
 				
