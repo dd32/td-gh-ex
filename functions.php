@@ -17,8 +17,8 @@ function lovecraft_setup() {
 			<title><?php wp_title('|', true, 'right'); ?></title>
 		<?php 
 		}
+		add_action( 'wp_head', 'lovecraft_theme_slug_render_title' );
 	} 
-	add_action( 'wp_head', 'lovecraft_theme_slug_render_title' );	
 	
 	// Set content-width
 	global $content_width;

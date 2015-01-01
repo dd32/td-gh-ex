@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.04 (2014-01-01)
+------------------------- 
+- Fixed a bug in the title tag backwards compatibility code
+
+
 Version 1.03 (2014-01-01)
 ------------------------- 
 - Added support for the new title tag theme feature
