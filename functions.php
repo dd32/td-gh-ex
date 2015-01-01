@@ -8,6 +8,9 @@ function lovecraft_setup() {
 	// Automatic feed
 	add_theme_support( 'automatic-feed-links' );
 	
+	// Add post formats
+	add_theme_support( 'post-formats', array( 'aside' ) );
+	
 	// Title tag
 	add_theme_support( 'title-tag' );
 	

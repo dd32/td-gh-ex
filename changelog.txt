@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.07 (2014-01-01)
+------------------------- 
+- Added support for the aside post format (sorry, theme reviewer)
+
+
 Version 1.06 (2014-01-01)
 ------------------------- 
 - Improved the styling of comments
