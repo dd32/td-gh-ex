@@ -8,9 +8,13 @@ Author: Larry Judd Oliver - tradesouthwest.com
 
 === About ===
 -! Lead article page must have at least three posts to use front page - home.php template.
+-! The content for each new page of posts will show the tenth article in progression of pagination as the lead-article in top lead-article box. You can create a feature article for the lead-article box by changing the post type and assigning it to that custom loop in the content-lead.php template.
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.6 =
+* style changes to mid--bar
+* added dialouge to readme concerning lead-article posting
 = 1.5 =
 * fixed images in footer section
 * styled pagination for active link

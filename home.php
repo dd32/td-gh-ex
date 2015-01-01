@@ -15,7 +15,7 @@ get_header(); ?>
                 <div id="text-one">
                     <?php echo esc_attr( $options['betilu_new_text'] ); ?>
                 </div>
-                    <p><?php echo esc_attr( date('l, F j, Y') ); ?></p>
+                    <p class="midbar-date"><?php echo esc_attr( date('l, F j, Y') ); ?></p>
             </div>                               
         </div> <!-- ends midbar --> 
             <div class="breaker">&nbsp;</div>
@@ -56,9 +56,10 @@ get_header(); ?>
                     <div class="midbar">
                         <?php $options = get_option( 'betilu_theme_options' ); ?>
                         <div class="text-add">
-                            <div id="text-one"><?php echo esc_attr( $options['betilu_new_text'] ); ?>
+                            <div id="text-one">
+                                <?php echo esc_attr( $options['betilu_new_text'] ); ?>
                             </div>
-                                <p><?php echo esc_attr( date('l, F j, Y') ); ?></p>
+                                <p class="midbar-date"><?php echo esc_attr( date('l, F j, Y') ); ?></p>
                         </div>
                     </div> <!-- ends midbar --> 
                         <div class="breaker"></div>

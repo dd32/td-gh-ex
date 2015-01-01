@@ -47,9 +47,10 @@ function betilu_add_theme_scripts() {
 
     // add ie conditional html5 shim to header
 function betilu_add_ie_html5_shim () {
-    echo '<!--[if lt IE 9]>';
-    echo '<script src="js/html5.js"></script>';
-    echo '<![endif]-->';
+      echo "<!--[if lt IE 9]>\n";
+        echo '<script src="', get_template_directory_uri() .'/js/html5shiv.js"></script>'."\n";
+        echo '<meta http-equiv="X-UA-Compatible" content="IE=9"/>'."\n";
+        echo "<![endif]-->\n";
 }
     add_action('wp_head', 'betilu_add_ie_html5_shim');
 
@@ -68,7 +69,6 @@ function betilu_add_ie_html5_shim () {
      */
     add_theme_support( 'custom-header' );
         $defaults = array(
-    
 	'default-image'          => get_template_directory_uri() . '/images/default-header.png',
 	'random-default'         => false,
  	'width'                  => 176,

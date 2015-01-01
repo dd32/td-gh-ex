@@ -2,9 +2,7 @@
 /*
  * single.php
  * @betilu
- * The single post template. Used when a single post is queried. 
- * For this and all other query templates, index.php is used if the query template is not present. 
- * 
+ * The single post template. Used when a single post is queried.  
  */    
 get_header(); ?>
 <div id="content-wide-page" role="main">
@@ -13,8 +11,10 @@ get_header(); ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
                 <div class="hgroup">
-                    <div class="entry-date"><a href="<?php the_permalink() ?>"><?php the_date(); ?></a></div>
-                    <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"<?php the_title(); ?></a></h1>
+                    <div class="entry-date">
+                        <a href="<?php the_permalink() ?>"><?php the_date(); ?></a>
+                    </div>
+                        <h1 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
                 </div>
                     <div class="metadata"> 
                         <p><span class="authorlinks"><?php the_author() ?> @ <?php the_time() ?> </span> 
