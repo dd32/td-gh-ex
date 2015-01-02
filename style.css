@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/. Available Translations: Russian, Norsk (Bokmål), Czech, French, Spanish, Lithuanian, Dutch, Traditional Chinese (Taiwan), Slovak, Catalan, Hungarian, German and Polish.
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, dark, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
@@ -775,6 +775,11 @@ li.default-menu {
 #featured-slider .slider-cycle {
 	position: relative;
 }
+.wide-978 #featured-slider .slider-cycle,
+.wide-1218 #featured-slider .slider-cycle {
+   max-width: 1600px;
+   margin: 0 auto;
+}
 #featured-slider .displayblock {
 	display: block;
 }
@@ -792,6 +797,12 @@ li.default-menu {
 	position: absolute;
 	left: 5%;
 	max-width: 40%;
+}
+.wide-978 #featured-slider .entry-container {
+   left: 13.8%;
+}
+.wide-1218 #featured-slider .entry-container {
+   left: 4.9%;
 }
 #featured-slider .entry-description-container {
 	background-color: #555555;
@@ -1793,6 +1804,22 @@ a#scroll-up:hover {
 
 /* =RESPONSIVE STRUCTURE
 ----------------------------------------------- */
+@media screen and (min-width: 1500px) {
+   .wide-978 #featured-slider .entry-container {
+      left: 17.6%;
+   }
+   .wide-1218 #featured-slider .entry-container {
+      left: 9.6%;
+   }
+}
+@media screen and (min-width: 1650px) {
+   .wide-978 #featured-slider .entry-container {
+      left: 19.45%;
+   }
+   .wide-1218 #featured-slider .entry-container {
+      left: 11.9%;
+   }
+}
 @media screen and (max-width: 1308px) {
 	#page {
 		width: 97%;

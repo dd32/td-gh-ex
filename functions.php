@@ -38,9 +38,12 @@ function spacious_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
- 
+
+   // Supporting title tag via add_theme_support (since WordPress 4.1)
+   add_theme_support( 'title-tag' );
+
 	// Registering navigation menus.
-	register_nav_menus( array(	
+	register_nav_menus( array(
 		'primary' 	=> 'Primary Menu',
 		'footer' 	=> 'Footer Menu'
 	) );
@@ -49,7 +52,7 @@ function spacious_setup() {
 	add_image_size( 'featured-blog-large', 750, 350, true );
 	add_image_size( 'featured-blog-medium', 270, 270, true );
 	add_image_size( 'featured', 642, 300, true );
-	add_image_size( 'featured-blog-medium-small', 230, 230, true );	
+	add_image_size( 'featured-blog-medium-small', 230, 230, true );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'spacious_custom_background_args', array(
@@ -62,12 +65,12 @@ function spacious_setup() {
 endif;
 
 /**
- * Define Directory Location Constants 
+ * Define Directory Location Constants
  */
 define( 'SPACIOUS_PARENT_DIR', get_template_directory() );
 define( 'SPACIOUS_CHILD_DIR', get_stylesheet_directory() );
 
-define( 'SPACIOUS_INCLUDES_DIR', SPACIOUS_PARENT_DIR. '/inc' );	
+define( 'SPACIOUS_INCLUDES_DIR', SPACIOUS_PARENT_DIR. '/inc' );
 define( 'SPACIOUS_CSS_DIR', SPACIOUS_PARENT_DIR . '/css' );
 define( 'SPACIOUS_JS_DIR', SPACIOUS_PARENT_DIR . '/js' );
 define( 'SPACIOUS_LANGUAGES_DIR', SPACIOUS_PARENT_DIR . '/languages' );
@@ -79,8 +82,8 @@ define( 'SPACIOUS_ADMIN_IMAGES_DIR', SPACIOUS_ADMIN_DIR . '/images' );
 define( 'SPACIOUS_ADMIN_CSS_DIR', SPACIOUS_ADMIN_DIR . '/css' );
 
 
-/** 
- * Define URL Location Constants 
+/**
+ * Define URL Location Constants
  */
 define( 'SPACIOUS_PARENT_URL', get_template_directory_uri() );
 define( 'SPACIOUS_CHILD_URL', get_stylesheet_directory_uri() );
@@ -101,7 +104,7 @@ require_once( SPACIOUS_INCLUDES_DIR . '/custom-header.php' );
 require_once( SPACIOUS_INCLUDES_DIR . '/functions.php' );
 require_once( SPACIOUS_INCLUDES_DIR . '/header-functions.php' );
 
-require_once( SPACIOUS_ADMIN_DIR . '/meta-boxes.php' );		
+require_once( SPACIOUS_ADMIN_DIR . '/meta-boxes.php' );
 
 /** Load Widgets and Widgetized Area */
 require_once( SPACIOUS_WIDGETS_DIR . '/widgets.php' );
