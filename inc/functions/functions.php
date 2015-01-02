@@ -65,6 +65,13 @@ function interface_scripts_styles_method() {
    wp_enqueue_style( 'google_fonts' );
 
 } 
+/****************************************************************************************/
+
+function interface_add_editor_styles() {
+	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=PT+Sans:400,700italic,700,400italic' );
+	add_editor_style( $font_url );
+}
+add_action( 'after_setup_theme', 'interface_add_editor_styles' );
 
 /****************************************************************************************/
 

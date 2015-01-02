@@ -61,6 +61,13 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.5 =
+ - Google font issue fixed 
+ - Footer credit link issue fixed
+ - Pot file updated
+ - Recommended title-tag function implemented for WordPress 4.1 and above
+
+
 = 1.4 =
  - Page title issue fixed
 

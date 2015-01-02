@@ -25,7 +25,6 @@
 		 * HOOKED_FUNCTION_NAME PRIORITY
 		 *
 		 * interface_add_meta_name 5
-		 * interface_title_show_name 10
 		 *
 		 */
 			//global $interface_theme_setting_value;

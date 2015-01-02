@@ -141,8 +141,11 @@ function interface_theme_options_add_theme_page() {
 <br/>
 <br/>
 <div class="donate-info"> <strong>
-  <?php _e( 'Hey! buy us a beer and we shall come with new features and update.', 'interface' ); ?>
+  <?php _e( 'Want to add bunch of additional features? Upgrade to Pro version!', 'interface' ); ?>
   </strong><br/>
+   <a href="<?php echo esc_url( 'http://themehorse.com/themes/interface-pro/' ); ?>" title="<?php esc_attr_e( 'Upgrade to Pro', 'interface' ); ?>" target="_blank" class="upgrade">
+    <?php _e( 'Upgrade to Pro', 'interface' ); ?>
+  </a>
   <a title="<?php esc_attr_e( 'Donate', 'interface' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank" class="donate">
   <?php _e( 'Donate', 'interface' ); ?>
   </a> <a title="<?php esc_attr_e( 'Review Interface', 'interface' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/interface' ); ?>" target="_blank" class="review">
@@ -156,9 +159,6 @@ function interface_theme_options_add_theme_page() {
   </a>
   <a href="<?php echo esc_url( 'http://themehorse.com/preview/interface/' ); ?>" title="<?php esc_attr_e( 'Interface Demo', 'interface' ); ?>" target="_blank" class="demo">
     <?php _e( 'View Demo', 'interface' ); ?>
-  </a>
-  <a href="<?php echo esc_url( 'http://themehorse.com/themes/interface-pro/' ); ?>" title="<?php esc_attr_e( 'Upgrade to Pro', 'interface' ); ?>" target="_blank" class="upgrade">
-    <?php _e( 'Upgrade to Pro', 'interface' ); ?>
   </a>
   <div id="social-share">
     <div class="fb-like" data-href="https://www.facebook.com/themehorse" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>

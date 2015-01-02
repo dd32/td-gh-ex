@@ -30,68 +30,6 @@ function interface_add_meta_name() {
 
 /****************************************************************************************/
 
-add_action( 'interface_title', 'interface_title_show_name', 10 );
-/**
- * Showing the title in the browser tab.
- * 
- * @uses wp_title() Display the title on the browser tab.
- */
-function interface_title_show_name() {
-?>
-<title>
-<?php
-		/**
-		 * Print the <title> tag based on what is being viewed.
-		 */
-		wp_title( '|', true, 'right' );
-		?>
-</title>
-<?php
-}
-
-add_filter( 'wp_title', 'interface_filter_wp_title' );
-/**
- * Modifying the Title
- *
- * Function tied to the wp_title filter hook.
- * @uses filter wp_title
- */
-function interface_filter_wp_title( $title ) {
-	global $page, $paged;
-	
-	// Get the Site Name
-   $site_name = get_bloginfo( 'name' );
-
-   // Get the Site Description
-   $site_description = get_bloginfo( 'description' );
-
-   $filtered_title = ''; 
-
-	// For Homepage or Frontpage
-   if(  is_home() || is_front_page() ) {		
-		$filtered_title .= $site_name;	
-		if ( !empty( $site_description ) )  {
-        	$filtered_title .= ' &#124; '. $site_description;
-		}
-   }
-	elseif( is_feed() ) {
-		$filtered_title = '';
-	}
-	else{	
-		$filtered_title = $title . $site_name;
-	}
-
-	// Add a page number if necessary:
-	if( $paged >= 2 || $page >= 2 ) {
-		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'interface' ), max( $paged, $page ) );
-	}
-	
-	// Return the modified title
-   return $filtered_title;
-}
-
-/****************************************************************************************/
-
 add_action( 'interface_links', 'interface_add_links', 10 );
 /**
  * Adding link to stylesheet file

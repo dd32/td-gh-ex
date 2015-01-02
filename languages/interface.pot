@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-12 16:27+0530\n"
-"PO-Revision-Date: 2014-11-12 16:27+0530\n"
+"POT-Creation-Date: 2014-12-29 12:55+0530\n"
+"PO-Revision-Date: 2014-12-29 12:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: Themehorse <support@themehorse.com>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:132
+#: functions.php:140
 msgid "Primary Menu"
 msgstr ""
 
@@ -93,51 +93,51 @@ msgid "http://themehorse.com/"
 msgstr ""
 
 #: inc/admin/theme-option.php:138
-#: inc/shortcodes/interface-shortcodes.php:61
+#: inc/footer_info/interface-footer_info.php:41
 msgid "Theme Horse"
 msgstr ""
 
 #: inc/admin/theme-option.php:144
-msgid "Hey! buy us a beer and we shall come with new features and update."
+msgid "Want to add bunch of additional features? Upgrade to Pro version!"
 msgstr ""
 
 #: inc/admin/theme-option.php:146
 #: inc/admin/theme-option.php:147
-msgid "Donate"
-msgstr ""
-
-#: inc/admin/theme-option.php:148
-msgid "Review Interface"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: inc/admin/theme-option.php:149
-msgid "Rate Interface"
+#: inc/admin/theme-option.php:150
+msgid "Donate"
 msgstr ""
 
 #: inc/admin/theme-option.php:151
-msgid "Interface Theme Instructions"
+msgid "Review Interface"
 msgstr ""
 
 #: inc/admin/theme-option.php:152
-msgid "Theme Instructions"
+msgid "Rate Interface"
 msgstr ""
 
 #: inc/admin/theme-option.php:154
+msgid "Interface Theme Instructions"
+msgstr ""
+
 #: inc/admin/theme-option.php:155
-msgid "Support Forum"
+msgid "Theme Instructions"
 msgstr ""
 
 #: inc/admin/theme-option.php:157
-msgid "Interface Demo"
-msgstr ""
-
 #: inc/admin/theme-option.php:158
-msgid "View Demo"
+msgid "Support Forum"
 msgstr ""
 
 #: inc/admin/theme-option.php:160
+msgid "Interface Demo"
+msgstr ""
+
 #: inc/admin/theme-option.php:161
-msgid "Upgrade to Pro"
+msgid "View Demo"
 msgstr ""
 
 #: inc/admin/theme-option.php:181
@@ -552,52 +552,52 @@ msgid "Enter your Address"
 msgstr ""
 
 #: inc/admin/theme-option.php:793
-#: inc/structure/header-extensions.php:278
+#: inc/structure/header-extensions.php:216
 msgid "Facebook"
 msgstr ""
 
 #: inc/admin/theme-option.php:794
-#: inc/structure/header-extensions.php:279
+#: inc/structure/header-extensions.php:217
 msgid "Twitter"
 msgstr ""
 
 #: inc/admin/theme-option.php:795
-#: inc/structure/header-extensions.php:280
+#: inc/structure/header-extensions.php:218
 msgid "Google Plus"
 msgstr ""
 
 #: inc/admin/theme-option.php:796
-#: inc/structure/header-extensions.php:281
+#: inc/structure/header-extensions.php:219
 msgid "Pinterest"
 msgstr ""
 
 #: inc/admin/theme-option.php:797
-#: inc/structure/header-extensions.php:282
+#: inc/structure/header-extensions.php:220
 msgid "Youtube"
 msgstr ""
 
 #: inc/admin/theme-option.php:798
-#: inc/structure/header-extensions.php:283
+#: inc/structure/header-extensions.php:221
 msgid "Vimeo"
 msgstr ""
 
 #: inc/admin/theme-option.php:799
-#: inc/structure/header-extensions.php:284
+#: inc/structure/header-extensions.php:222
 msgid "LinkedIn"
 msgstr ""
 
 #: inc/admin/theme-option.php:800
-#: inc/structure/header-extensions.php:285
+#: inc/structure/header-extensions.php:223
 msgid "Flickr"
 msgstr ""
 
 #: inc/admin/theme-option.php:801
-#: inc/structure/header-extensions.php:286
+#: inc/structure/header-extensions.php:224
 msgid "Tumblr"
 msgstr ""
 
 #: inc/admin/theme-option.php:802
-#: inc/structure/header-extensions.php:287
+#: inc/structure/header-extensions.php:225
 msgid "RSS"
 msgstr ""
 
@@ -605,12 +605,12 @@ msgstr ""
 msgid "Social Links"
 msgstr ""
 
-#: inc/functions/functions.php:317
-msgid "on"
+#: inc/footer_info/interface-footer_info.php:33
+msgid "WordPress"
 msgstr ""
 
-#: inc/shortcodes/interface-shortcodes.php:52
-msgid "WordPress"
+#: inc/functions/functions.php:324
+msgid "on"
 msgstr ""
 
 #: inc/structure/content-extensions.php:154
@@ -775,29 +775,24 @@ msgstr ""
 msgid "Powered by:"
 msgstr ""
 
-#: inc/structure/header-extensions.php:86
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: inc/structure/header-extensions.php:225
+#: inc/structure/header-extensions.php:163
 msgid "\" Call Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:235
+#: inc/structure/header-extensions.php:173
 msgid "\" Mail Us \""
 msgstr ""
 
-#: inc/structure/header-extensions.php:309
+#: inc/structure/header-extensions.php:247
 #, php-format
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: inc/structure/header-extensions.php:573
+#: inc/structure/header-extensions.php:519
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/structure/header-extensions.php:576
+#: inc/structure/header-extensions.php:522
 msgid "Search Results"
 msgstr ""
 
