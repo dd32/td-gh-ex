@@ -52,6 +52,9 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.1.8 = 
+* remove some code per theme review request.
+
 = Version 1.1.7 = 
 * Fix/add some esc_*.
 
