@@ -25,7 +25,7 @@
 			} ?>
 			    <div id="content" class="container homepagecontent">
 			   		<div class="row">
-			          	<div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+			          	<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
       					<?php if(isset($pinnacle['homepage_layout']['enabled'])) { 
       						$layout = $pinnacle['homepage_layout']['enabled']; 
       					} else {

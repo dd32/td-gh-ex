@@ -22,7 +22,7 @@ Template Name: Blog
    					$summery = 'normal'; $postclass = 'postlist';
    				} ?>
       
-      				<div class="main <?php echo pinnacle_main_class();?> <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
+      				<div class="main <?php echo esc_attr( pinnacle_main_class() );?> <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
       					
       					<?php get_template_part('templates/content', 'page');
       					$blog_category 	= get_post_meta( $post->ID, '_kad_blog_cat', true ); 

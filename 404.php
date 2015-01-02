@@ -3,7 +3,7 @@
 	
    		<div id="content" class="container">
    			<div class="row">
-      			<div class="main <?php echo pinnacle_main_class(); ?> kad_404_page" role="main">
+      			<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?> kad_404_page" role="main">
   					<h4 class="sectiontitle"><?php _e('Sorry, but the page you were trying to view does not exist.', 'pinnacle'); ?></h4>
 
 						<p><?php _e('It looks like this was the result of either:', 'pinnacle'); ?></p>

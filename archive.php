@@ -35,7 +35,7 @@
       } ?>
           <div id="content" class="container">
             <div class="row">
-              <div class="main <?php echo pinnacle_main_class(); ?>  <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
+              <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>  <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
 
                 <?php if (!have_posts()) : ?>
                     <div class="alert">

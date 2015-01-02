@@ -60,7 +60,7 @@
 		    ?> 
 		        <div id="content" class="container">
    					<div class="row">
-      					<div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+      					<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
 					      	<?php echo category_description(); ?> 
 					      	<?php if (!have_posts()) : ?>
 								<div class="alert">

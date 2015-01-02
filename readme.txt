@@ -52,7 +52,10 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
-= Version 1.0.6 = 
+= Version 1.1.7 = 
+* Fix/add some esc_*.
+
+= Version 1.1.6 = 
 * Fix/add some esc_*.
 * Move some inline scripts to main js file.
 * Remove contact template.

@@ -62,7 +62,7 @@
         } ?>
         <div id="content" class="container">
           <div class="row single-article">
-            <div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+            <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
               <?php while (have_posts()) : the_post(); ?>
                 <article <?php post_class('postclass'); ?>>
                   <?php if ($headcontent == 'flex') { ?>

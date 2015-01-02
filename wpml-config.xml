@@ -1,13 +1,9 @@
 <wpml-config>                             
     <custom-types>
         <custom-type translate="1">portfolio</custom-type>
-        <custom-type translate="1">staff</custom-type>
-        <custom-type translate="1">testimonial</custom-type>
     </custom-types>    
     <taxonomies>
         <taxonomy translate="1">portfolio-type</taxonomy>
-        <taxonomy translate="1">testimonial-group</taxonomy>
-        <taxonomy translate="1">staff-group</taxonomy>
     </taxonomies>    
     <admin-texts>
         <key name="pinnacle">

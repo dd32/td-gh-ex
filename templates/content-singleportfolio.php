@@ -54,7 +54,7 @@
 		 ?>
   <div id="content" class="container">
       <div class="row">
-        <div class="main <?php echo pinnacle_main_class(); ?> portfolio-single <?php echo esc_attr($layoutclass);?>" role="main">
+        <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?> portfolio-single <?php echo esc_attr($layoutclass);?>" role="main">
           <?php while (have_posts()) : the_post(); ?>		
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <div class="portfolio-postclass">

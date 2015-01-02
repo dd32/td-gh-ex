@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<div id="content" class="container">
    			<div class="row">
-     			<div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+     			<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
 
 			      	<div class="kad-shop-top">
 							<div class="row">
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 
-            		<div class="clearfix <?php echo pinnacle_category_layout_css(); ?> rowtight product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
+            		<div class="clearfix <?php echo esc_attr( pinnacle_category_layout_css() ); ?> rowtight product_category_padding"> <?php woocommerce_product_subcategories(); ?> </div>
 
 			<?php woocommerce_product_loop_start(); ?>
 

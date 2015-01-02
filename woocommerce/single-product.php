@@ -16,7 +16,7 @@ get_header();
 
         <div id="content" class="container">
            	<div class="row">
-              <div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+              <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
           		<?php while ( have_posts() ) : the_post(); ?>
 
           			<?php woocommerce_get_template_part( 'content', 'single-product' ); ?>

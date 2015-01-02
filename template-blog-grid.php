@@ -35,7 +35,7 @@ Template Name: Blog Grid
 						$blog_items = '-1';
 					} ?>
 
-		      	<div class="main <?php echo pinnacle_main_class();?>" role="main">
+		      	<div class="main <?php echo esc_attr( pinnacle_main_class() );?>" role="main">
 		      		<?php get_template_part('templates/content', 'page'); ?>
 
 		      		<div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".b_item">

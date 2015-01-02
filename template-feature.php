@@ -33,7 +33,7 @@ Template Name: Feature
 						} ?>
 					    <div id="content" class="container">
 					   		<div class="row">
-					     		<div class="main <?php echo pinnacle_main_class(); ?>" role="main">
+					     		<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
 					     		 	<div class="postclass pageclass clearfix">
 										<?php get_template_part('templates/content', 'page'); ?>
 									</div>
