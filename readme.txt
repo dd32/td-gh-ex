@@ -43,6 +43,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.8 =
+* Featured image hover icon bug fixed for category page.
+* Options Framework text domain changed.
+
 = Version 1.1.7 =
 * Posts Page title issue fixed.
 * Template part file added for no search result.
