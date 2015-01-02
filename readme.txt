@@ -1,4 +1,4 @@
-Aura WordPress Theme, Copyright 2013 Fimply
+Aura WordPress Theme, Copyright 2014 Fimply
 Aura is distributed under the terms of the GNU GPL
 
 
@@ -19,6 +19,9 @@ http://twitter.com/_Fimply
 Become a fan of us on Facebook!
 http://facebook.com/fimply.themes
 
+=== Images ===
+
+All images in Aura are licensed under the terms of the GNU GPL. 
 
 
 === SUPPORT ===

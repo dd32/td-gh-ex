@@ -10,7 +10,7 @@
 }
 
 #blogtitle {
-    margin:30px 0 0 0;
+    margin:50px 0 0 0;
 	font: 55px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	letter-spacing: 0.05em;
 	text-align: center;
@@ -20,13 +20,14 @@
 }
 
 #blogdescription {
-	font: 22px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin:5px 0 35px 0;
+	font: 22px Helvetica, Arial, sans-serif;
+	margin:35px auto 35px auto;
 	text-align: center;
+	width: 500px;
+	line-height: 140%;
 	word-break: break-word;
-	letter-spacing: .07em;
-	font-weight: 100;
-	color:#7e7e7e;
+	font-weight: 800;
+	color:#333333;
 }
 
 #top-bar {
@@ -36,6 +37,7 @@
 	padding: 30px;
 	color:#ffffff;
 }
+
 
 #theme {
 	border-radius: 5px;
