@@ -239,6 +239,18 @@ function optionsframework_options() {
         'std' => '&#169; 2014 Your company name',
         'type' => 'textarea');    
     
+    $options[] = array(
+        'name' => __('Favicon', 'options_framework_theme'),
+        'desc' => __('Choose a 16x16 px image for the favicon', 'options_framework_theme'),
+        'id' => 'sc_favicon',
+        'type' => 'upload');    
+    
+    $options[] = array(
+        'name' => __('Custom Script ( Google Analytics )', 'options_framework_theme'),
+        'id' => 'sc_custom_code',
+        'std' => '',
+        'type' => 'textarea');     
+    
     // ---------------------------------------------------------------------- Design
     $options[] = array(
         'name' => __('Design', 'options_framework_theme'),
@@ -363,13 +375,8 @@ function optionsframework_options() {
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
-    $options[] = array(
-        'name' => __('Slider Image Style', 'options_framework_theme'),
-        'desc' => __('How do you want the slider to show your images', 'options_framework_theme'),
-        'id' => 'sc_slider_style',
-        'std' => 'cover',
-        'type' => 'radio',
-        'options' => $slider_style);
+
+    
     $options[] = array(
         'name' => __('Slide #1', 'options_framework_theme'),
         'desc' => __('First Slide', 'options_framework_theme'),
@@ -456,6 +463,13 @@ function optionsframework_options() {
         'id' => 'sc_cta1_url',
         'std' => '',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Box #1 Button Text', 'options_framework_theme'),
+        'desc' => __('Set the text on the button', 'options_framework_theme'),
+        'id' => 'sc_cta1_button_text',
+        'std' => 'Click Here',
+        'type' => 'text');
     // box 2
     $options[] = array(
         'name' => __('Box #2 Title', 'options_framework_theme'),
@@ -486,7 +500,13 @@ function optionsframework_options() {
         'id' => 'sc_cta2_url',
         'std' => '',
         'type' => 'text');
-
+    
+    $options[] = array(
+        'name' => __('Box #2 Button Text', 'options_framework_theme'),
+        'desc' => __('Set the text on the button', 'options_framework_theme'),
+        'id' => 'sc_cta2_button_text',
+        'std' => 'Click Here',
+        'type' => 'text');
     //box3
     $options[] = array(
         'name' => __('Box #3 Title', 'options_framework_theme'),
@@ -517,7 +537,13 @@ function optionsframework_options() {
         'id' => 'sc_cta3_url',
         'std' => '',
         'type' => 'text');
-
+    
+    $options[] = array(
+        'name' => __('Box #3 Button Text', 'options_framework_theme'),
+        'desc' => __('Set the text on the button', 'options_framework_theme'),
+        'id' => 'sc_cta3_button_text',
+        'std' => 'Click Here',
+        'type' => 'text');
 
     /*------------------------------------------------------ Footer -----------*/
     $options[] = array(
@@ -749,33 +775,35 @@ function sc_avenue_options_display_sidebar() {
     <div class="width30 left ml2p">
 
         <div class="center">
-            <img class="smartcat-icon" src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/smartcat_wordpress.png"/>
+            <img class="smartcat-icon" src="<?php echo get_template_directory_uri() ; ?>/inc/images/smartcat.png"/>
         </div>
 
         <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/avenue/" target="_blank">
-                Instructions
-            </a>
-        </div>
-
-        <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/avenue/" target="_blank">
-                Support
+            <a href="https://wordpress.org/support/theme/avenue" target="_blank">
+                Support Forum
             </a>
         </div>    
 
         <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/avenue/" target="_blank">
-                View Avenue Icons
+            <a href="http://smartcatdesign.net/products/#.wordpress-themes" target="_blank">
+                More Themes
             </a>
-        </div>           
-        <p>Donations are extremely important. It takes a lot of time to create, modify and support a theme. As well as answer all your questions.</p>
-        <p>Please make a donation so I can afford to keep this theme 100% free</p>
+        </div>    
+        
+        <p>The Pro Version includes
+        <ol>
+            <li>An additional boxed template</li>
+            <li>up to 5 slides</li>
+            <li>3 additional theme skin colors (red, pink and light blue)</li>
+            <li>the option to remove the smartcat branding</li>
+        </ol>
+
         <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/donate/" target="_blank">
-                Donate
+            <a href="http://smartcatdesign.net/downloads/avenue/" target="_blank">
+                Upgrade to Pro Version
             </a>
-        </div>  
+        </div>
+
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
     </div>
 <?php } ?>

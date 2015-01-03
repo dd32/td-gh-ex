@@ -35,7 +35,7 @@
     text-align: center;
 }
 .sc-tab-option a{
-    background: #E3603E;
+    background: #178DC4;
     display: block;
     padding: 10px;
     color: #ffffff;
@@ -49,16 +49,14 @@
     text-shadow: 1px 1px #000;
 }
 .sc-tab-option a:hover{
-    background: #111111;
+    background: #313545;
 }
 
 .nav-tab-active:hover{
-    background: url('../../images/menu-bg.png');
+    /*background: url('../../images/menu-bg.png');*/
     
 }
-.nav-tab-active{
-    color: #E3603E !important;
-}
+
 
 h2.nav-tab-wrapper{
     border: 0;
@@ -86,16 +84,19 @@ h2 .nav-tab{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    background-image: url('../../images/menu-bg.png');
-    color: rgba(255,255,255,0.6);
+    /*background-image: url('../../images/menu-bg.png');*/
+    color: #fff;
     font-size: 14px;
     /*padding-top: 20px;*/
+    background: #313545;
 }
 h2 .nav-tab:hover{
-    color: #E3603E;
+    background: #178DC4;
+    color: #fff;
 }
-.nav-tab-active{
-    color: #E3603E;
+.nav-tab.nav-tab-active{
+    color: #fff;
+    background: #178DC4;
 }
 
 .nav-tab-wrapper{
@@ -105,12 +106,12 @@ h2 .nav-tab:hover{
     
 }
 #optionsframework h4.heading{
-    color: #A8A8A8;
+    color: #ffffff;
 }
 #optionsframework {
     width:70%;
     float: left;
-    background: url('../../images/menu-bg.png');
+    background: #313545;
     border: 0;
 }
 @media (max-width: 650px){
@@ -123,10 +124,10 @@ h2 .nav-tab:hover{
 }
 #optionsframework h3 {
 	cursor: default;
-	background:  url('../../images/menu-bg.png');
+        font-size: 20px;
+	/*background:  url('../../images/menu-bg.png');*/
 	border: 0;
         color: #ffffff;
-        font-size: 26px;
 }
 #optionsframework p {
 	margin-bottom:0;
@@ -159,8 +160,8 @@ h2 .nav-tab:hover{
 }
 #optionsframework .controls input[type=text] {
 	width:100%;
-        background: #404040;
-        color: #C2C2C2;
+        /*background: #404040;*/
+        /*color: #C2C2C2;*/
 }
 #optionsframework .controls input[type=text].wp-color-picker {
     width: 65px;
@@ -240,6 +241,8 @@ h2 .nav-tab:hover{
 	cursor:pointer;
 	float:left;
         padding: 3px;
+        width: 60px;
+        height: 60px;
 }
 #optionsframework .controls .of-radio-img-selected {
 	border:3px solid #ccc

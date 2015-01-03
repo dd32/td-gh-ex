@@ -104,6 +104,22 @@ function optionsframework_custom_scripts() { ?>
     <?php
 }
 
+
+function sc_smartcat_add_favicon(){
+    if( of_get_option( 'sc_favicon' ) ) :
+        echo '<link rel="shortcut icon" type="image/png" href="'. of_get_option( 'sc_favicon' ) . '"/>';
+    endif;
+}
+add_action('wp_head', 'sc_smartcat_add_favicon');
+
+function sc_smartcat_add_custom_code(){
+    if( of_get_option( 'sc_custom_code' ) ) :
+        echo '<script>' . esc_js( of_get_option( 'sc_custom_code' ) ) . '</script>';
+    endif;
+}
+add_action('wp_head', 'sc_smartcat_add_custom_code');
+
+
 add_action('wp_head', 'sc_avenue_css');
 function sc_avenue_css() {
     ?>
@@ -275,7 +291,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary">Click Here</a>
+                            <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta1_button_text', 'Click Here');  ?></a>
                         </p>                                
                     </div>                            
                 </div>
@@ -291,7 +307,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary">Click Here</a>
+                            <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta2_button_text', 'Click Here');  ?></a>
                         </p>                                
                     </div>                            
                 </div>
@@ -307,7 +323,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary">Click Here</a>
+                            <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta3_button_text', 'Click Here');  ?></a>
                         </p>
                     </div>                            
                 </div>
@@ -401,5 +417,8 @@ function sc_footer() {
     echo of_get_option('sc_footer_text');?>
     <br>
     <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
-    <a href="http://smartcatdesign.net/" rel="designer">Design by SmartCat</a>
+    <a href="http://smartcatdesign.net/" rel="designer">
+        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'; ?>" width="20px"/>
+        Design by SmartCat
+    </a>
 <?php }
