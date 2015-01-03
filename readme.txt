@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.0
+- Updated: blog article css updated to ensure white background - makes it easier for user to customize site.
+
 Version 1.5.9
 - Updated: URL Placeholder text added to dlider url field.
 
