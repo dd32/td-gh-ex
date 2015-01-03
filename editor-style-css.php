@@ -14,9 +14,9 @@
 
 function weaverx_mce_opt($opt) {
 	if (isset($_GET[$opt]))
-        return urldecode($_GET[$opt]);
+		return urldecode($_GET[$opt]);
 	else
-        return false;
+		return false;
 }
 
 header( 'Content-type: text/css' ); // gotta honor HTTP protocol for css
@@ -41,23 +41,23 @@ if (($val = weaverx_mce_opt('titlefont')) != '') {
    $table = weaverx_mce_opt('table');
 
 	if ($table == 'wide') {
-        echo(sprintf("table {border: 1px solid #e7e7e7;margin: 0 -1px 24px 0;text-align: left;width: 100%%;}
+		echo(sprintf("table {border: 1px solid #e7e7e7;margin: 0 -1px 24px 0;text-align: left;width: 100%%;}
 tr th, thead th {color: #888;font-size: 12px;font-weight: bold;line-height: 18px;padding: 9px 24px;}
 #content tr td {border-style:none; border-top: 1px solid #e7e7e7; padding: 6px 24px;}
 #content tr.odd td {background: #f2f7fc;}\n"));
 	} elseif ($table == 'bold') {
-        echo(sprintf("table {border: 2px solid #888;}
+		echo(sprintf("table {border: 2px solid #888;}
 tr th, thead th {font-weight: bold;}
 tr td {border: 1px solid #888;}\n"));
 	} elseif ($table == 'noborders') {
-        echo(sprintf("table {border-style:none;}
+		echo(sprintf("table {border-style:none;}
 tr th, thead th {font-weight: bold;border-bottom: 1px solid #888;background-color:transparent;}
 tr td {border-style:none;}\n"));
 	} elseif ($table == 'fullwidth') {
-        echo(sprintf("table {width:100%%;}
+		echo(sprintf("table {width:100%%;}
 tr th, thead th {font-weight:bold;}\n"));
 	} else	if ($table == 'plain') {
-        echo(sprintf(
+		echo(sprintf(
 "table {border: 1px solid #888;text-align:left;margin: 0 0 0 0;width:auto;}
 tr th, #content thead th {color: inherit;background:none;font-weight:normal;line-height:normal;padding:4px;}
 tr td {border: 1px solid #888; padding:4px;}\n"));

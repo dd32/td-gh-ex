@@ -15,9 +15,9 @@ weaverx_per_post_style();
 	if (!weaverx_compact_post()) {
 ?>
 		<header class="entry-header">
-        <?php
-            weaverx_entry_header( 'quote' );
-            weaverx_post_top_meta(); ?>
+		<?php
+			weaverx_entry_header( 'quote' );
+			weaverx_post_top_meta(); ?>
 		</header><!-- .entry-header -->
 
 		<?php
@@ -48,8 +48,8 @@ weaverx_per_post_style();
 		</footer><!--  -->
 <?php
 	} else {
-        weaverx_compact_link();
-        weaverx_edit_link();
+		weaverx_compact_link();
+		weaverx_edit_link();
 	}
 	weaverx_inject_area('postpostcontent');	// inject post comment body ?>
 	<div style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->

@@ -21,22 +21,22 @@ if (function_exists('weaverx_ts_pp_switch'))
 	weaverx_ts_pp_switch();
 
 function weaverx_header_widget_area( $where_now ) {
-    // 'top' => 'Top of Header'
+	// 'top' => 'Top of Header'
 	// 'after_header' => 'After Header Image'
 	// 'after_html' => 'After HTML Block'
-    // 'after_menu' => 'After Main Menu'
+	// 'after_menu' => 'After Main Menu'
 
-    $sb_position = weaverx_getopt_default('header_sb_position', 'top');
-    if ( $sb_position == $where_now && weaverx_has_widgetarea('header-widget-area') ) {
-        $p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
-        weaverx_clear_both('header_sb');
-        weaverx_put_widgetarea('header-widget-area', $p_class);
-        weaverx_clear_both('header-widget-area');
-    }
+	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
+	if ( $sb_position == $where_now && weaverx_has_widgetarea('header-widget-area') ) {
+		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+		//weaverx_clear_both('header_sb');
+		weaverx_put_widgetarea('header-widget-area', $p_class);
+		//weaverx_clear_both('header-widget-area');
+	}
 }
 
 function weaverx_add_ie_scripts() {
-    echo '<!--[if lt IE 9]>
+	echo '<!--[if lt IE 9]>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.min.js" type="text/javascript"></script>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->';
@@ -49,7 +49,7 @@ function weaverx_add_ie_scripts() {
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php
-    $viewport = "<meta name='viewport' content='width=device-width,initial-scale=1.0' />\n"; /* use full horizontal size on iPad */
+	$viewport = "<meta name='viewport' content='width=device-width,initial-scale=1.0' />\n"; /* use full horizontal size on iPad */
 	echo $viewport;
 ?>
 <title><?php		// ++++++ HEAD TITLE ++++++
@@ -60,36 +60,24 @@ function weaverx_add_ie_scripts() {
 <link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>" />
 <?php
 
-    // Only add style.css if a child theme
 
-    if ( true || is_child_theme() ) {  // don't bother with empty main style.css
+	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
+	// does not work because it can't add the test for < IE9. And you can't just include the code directly
+	// right here because it ends up before the .css enqueues. So we use a little trick as an action for
+	// wp_head which lets us put the code here, but have it emitted after the .css files.
 
-        $sheet_dev = get_stylesheet_directory_uri() . '/style.css';	// get style.css
-        $sheet = str_replace('.css', WEAVERX_MINIFY.'.css',$sheet_dev); // default sheet
-        $sheet_file = get_stylesheet_directory() . '/style' . WEAVERX_MINIFY . '.css';
-        if (! @file_exists($sheet_file))
-            $sheet = $sheet_dev;		            // no style.min.css available (need this check for child themes)
-
-        wp_enqueue_style( 'weaverx-root-style-sheet', $sheet, array('weaverx-style-sheet'), WEAVERX_VERSION, 'all');
-    }
-
-    // Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
-    // does not work because it can't add the test for < IE9. And you can't just include the code directly
-    // right here because it ends up before the .css enqueues. So we use a little trick as an action for
-    // wp_head which lets us put the code here, but have it emitted after the .css files.
-
-    add_action( 'wp_head', 'weaverx_add_ie_scripts' );
+	add_action( 'wp_head', 'weaverx_add_ie_scripts' );
 
 	// ++++ FAVICON - only if option has been set ++++
 	$icon = weaverx_getopt('_favicon_url');
 	if ($icon != '') {
-        $url = esc_url(apply_filters('weaverx_css',parse_url($icon,PHP_URL_PATH)));
-        echo "<link rel=\"shortcut icon\"  href=\"$url\" />\n";
+		$url = esc_url(apply_filters('weaverx_css',parse_url($icon,PHP_URL_PATH)));
+		echo "<link rel=\"shortcut icon\"  href=\"$url\" />\n";
 	}
 
 	do_action('weaverxplus_action','head');	// stuff like other style files...
 
-    // Fix IE8 scripts need to go after the CSS is loaded (at least for the respond script)
+	// Fix IE8 scripts need to go after the CSS is loaded (at least for the respond script)
 
 	wp_head();
 ?>
@@ -98,151 +86,154 @@ function weaverx_add_ie_scripts() {
 <body <?php body_class(); ?>>
 <a href="#page-bottom" id="page-top">&darr;</a> <!-- add custom CSS to use this page-bottom link -->
 <noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
-<?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.','weaver-xtreme'); ?></p></noscript><!-- displayed only if JavaScript disabled -->
+<?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.','weaver-xtreme' /*adm*/); ?></p></noscript><!-- displayed only if JavaScript disabled -->
 <?php
 
 	weaverx_inject_area('prewrapper');
 
-    weaverx_area_div( 'wrapper' );
+	weaverx_area_div( 'wrapper' );
 
-    weaverx_inject_area('fixedtop');	// inject fixed top
+	weaverx_inject_area('fixedtop');	// inject fixed top
 
 
-    /* header layout:
-     * #header
-     *    #top-menu
-     *    #branding
-     *        #site-title
-     *        #site-tagline
-     *    #header-html
-     *    #header-widget-area
-     *    #bottom-menu
-     */
+	/* header layout:
+	 * #header
+	 *    #top-menu
+	 *    #branding
+	 *        #site-title
+	 *        #site-tagline
+	 *    #header-html
+	 *    #header-widget-area
+	 *    #bottom-menu
+	 */
 
 	$hdr_class = ( weaverx_is_checked_page_opt('_pp_hide_header') ) ? 'hide' : '';
 
-    weaverx_clear_both('preheader');
-    weaverx_inject_area('preheader');	// inject pre-header HTML
-    weaverx_area_div( 'header',  $hdr_class );      // <div id='header'>
+	weaverx_clear_both('preheader');
+	weaverx_inject_area('preheader');	// inject pre-header HTML
+	weaverx_area_div( 'header',  $hdr_class );      // <div id='header'>
 
-    weaverx_inject_area('header');	// inject header HTML
+	weaverx_inject_area('header');	// inject header HTML
 
-    do_action('weaverx_nav', 'top');                // menus at top
+	do_action('weaverx_nav', 'top');                // menus at top
 
-    /* ======== HEADER WIDGET AREA ======== */
-    weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
+	/* ======== HEADER WIDGET AREA ======== */
+	weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
 
-    $title = esc_html( get_bloginfo( 'name', 'display' ) );
+	$title = esc_html( get_bloginfo( 'name', 'display' ) );
 ?>
 
 
 <header id="branding" role="banner">
 <?php
-    /* ======== SITE LOGO and TITLE ======== */
-    if ( weaverx_getopt('title_over_image') )
-        echo '<div id="title-over-image">' . "\n";
+	/* ======== SITE LOGO and TITLE ======== */
+	if ( weaverx_getopt('title_over_image') )
+		echo '<div id="title-over-image">' . "\n";
 
-    $h_class = '';
+	$h_class = '';
 
-    if ( weaverx_getopt('hide_site_title') != 'hide-none') {
-        $h_class = weaverx_getopt('hide_site_title');
-    }
+	if ( weaverx_getopt('hide_site_title') != 'hide-none') {
+		$h_class = weaverx_getopt('hide_site_title');
+	}
 
 ?>
-    <div id="title-tagline" class="clearfix" >
-        <h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-        <?php echo $title; ?></a></h1>
+	<div id="title-tagline" class="clearfix" >
+		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<?php echo $title; ?></a></h1>
 
-        <?php /* ======== SEARCH BOX ======== */
-        $hide_search = weaverx_getopt( 'header_search_hide');
-        if ( $hide_search != 'hide' ) { ?>
-            <div id="header-search" class="<?php echo $hide_search; ?>"><?php get_search_form(); ?></div><?php
-        }
-        $hide_tag = weaverx_getopt( 'hide_site_tagline' ); ?>
+		<?php /* ======== SEARCH BOX ======== */
+		$hide_search = weaverx_getopt( 'header_search_hide');
+		if ( $hide_search != 'hide' ) { ?>
+			<div id="header-search" class="<?php echo $hide_search; ?>"><?php get_search_form(); ?></div><?php
+		}
+		$hide_tag = weaverx_getopt( 'hide_site_tagline' ); ?>
 
-        <h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php bloginfo( 'description' ); ?></span></h2>
-        <?php get_template_part( 'templates/menu', 'header-mini' ); ?>
+		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php bloginfo( 'description' ); ?></span></h2>
+		<?php get_template_part( 'templates/menu', 'header-mini' ); ?>
 
-    </div><!-- /.title-tagline -->
+	</div><!-- /.title-tagline -->
 
 <?php
 
-    /* The Dynamic Headers shows headers on a per page basis - will also optionally add site link */
-    if (function_exists('show_media_header'))
-        show_media_header(); 			// Plugin support: **Dynamic Headers**
+	/* The Dynamic Headers shows headers on a per page basis - will also optionally add site link */
+	if (function_exists('show_media_header'))
+		show_media_header(); 			// Plugin support: **Dynamic Headers**
 
-    /* ======== HEADER IMAGE ======== */
-    global $weaverx_header;
-
-    if ( !( weaverx_is_checked_page_opt('_pp_hide_header_image') && !is_search() ) ) { // don't bother if hide per page
-
-        $h_hide = weaverx_getopt_default('hide_header_image', 'hide-none');
-
-        // really hide - don't need to have device download the image
-        $really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() )) ;
-
-        if ( $h_hide == 'hide-none' || $h_hide == 'hide')
-            $h_hide = 'class="header-image"';
-        else
-            $h_hide = ' class="header-image ' . $h_hide . '"';
+	weaverx_header_widget_area( 'before_header' );           // show header widget area if set to this position
 
 
-        if (  ! $really_hide  ) {
+	/* ======== HEADER IMAGE ======== */
+	global $weaverx_header;
 
-            echo("<div id=\"header-image\"" . $h_hide . ">\n");
+	if ( !( weaverx_is_checked_page_opt('_pp_hide_header_image') && !is_search() ) ) { // don't bother if hide per page
 
-            global $weaverx_header;
-            /* Check if this is a post or page, if it has a thumbnail,  and if it's a big one */
-            $page_type = ( is_single() ) ? 'post' : 'page';
-            if (    $GLOBALS['weaverx_page_who'] == 'blog'
-                ||  $GLOBALS['weaverx_page_is_archive']
-                ||  !weaverx_fi( $page_type, 'header-image' ) ) {
-                $hdr = get_header_image();
-                if ($hdr) {
-                    if ( weaverx_getopt('link_site_image') ) { ?>
+		$h_hide = weaverx_getopt_default('hide_header_image', 'hide-none');
+
+		// really hide - don't need to have device download the image
+		$really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() )) ;
+
+		if ( $h_hide == 'hide-none' || $h_hide == 'hide')
+			$h_hide = ' class="header-image"';
+		else
+			$h_hide = ' class="header-image ' . $h_hide . '"';
+
+
+		if (  ! $really_hide  ) {
+
+			echo("<div id=\"header-image\"" . $h_hide . ">\n");
+
+			global $weaverx_header;
+			/* Check if this is a post or page, if it has a thumbnail,  and if it's a big one */
+			$page_type = ( is_single() ) ? 'post' : 'page';
+			if (    $GLOBALS['weaverx_page_who'] == 'blog'
+				||  $GLOBALS['weaverx_page_is_archive']
+				||  !weaverx_fi( $page_type, 'header-image' ) ) {
+				$hdr = get_header_image();
+				if ($hdr) {
+					if ( weaverx_getopt('link_site_image') ) { ?>
 <a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                    <?php } ?>
-                <img src="<?php echo $hdr ?>"  alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
-                    weaverx_e_opt('link_site_image',"</a>\n");	/* need to close link */
-                } else {
-                    echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
-                }
-            }
+					<?php } ?>
+				<img src="<?php echo $hdr ?>"  alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
+					weaverx_e_opt('link_site_image',"</a>\n");	/* need to close link */
+				} else {
+					echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
+				}
+			}
 
-            echo("\t\t</div><!-- #header-image -->\n");
-        } // ! $really_hide
-    } /* end hide-header-image */
+			echo("\t\t</div><!-- #header-image -->\n");
+		} // ! $really_hide
+	} /* end hide-header-image */
 
-    if (weaverx_getopt('title_over_image') )
-        echo '</div><!--/#title-over-image -->' . "\n";
+	if (weaverx_getopt('title_over_image') )
+		echo '</div><!--/#title-over-image -->' . "\n";
 
-    weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
+	weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
 
-    /* ======== EXTRA HTML ======== */
+	/* ======== EXTRA HTML ======== */
 
-    $extra = weaverx_getopt('header_html_text');
+	$extra = weaverx_getopt('header_html_text');
 
-    $hide = weaverx_getopt_default('header_html_hide', 'hide-none');
-    if ($extra != '' && $hide != 'hide' ) {
-        $c_class = weaverx_area_class('header_html', 'not-pad', '-none', 'margin-none' );
-        ?>
-        <div id="header-html" class="<?php echo $c_class;?>">
-            <?php echo  do_shortcode($extra) ; ?>
-        </div> <!-- #header-html -->
-    <?php }
+	$hide = weaverx_getopt_default('header_html_hide', 'hide-none');
+	if ($extra != '' && $hide != 'hide' ) {
+		$c_class = weaverx_area_class('header_html', 'not-pad', '-none', 'margin-none' );
+		?>
+		<div id="header-html" class="<?php echo $c_class;?>">
+			<?php echo  do_shortcode($extra) ; ?>
+		</div> <!-- #header-html -->
+	<?php }
 
-    weaverx_header_widget_area( 'after_html' );           // show header widget area if set to this position
+	weaverx_header_widget_area( 'after_html' );           // show header widget area if set to this position
 
-    do_action('weaverxplus_action','header_area_bottom');
-    weaverx_clear_both('branding');
+	do_action('weaverxplus_action','header_area_bottom');
+	weaverx_clear_both('branding');
 
 ?>
 </header><!-- #branding -->
 <?php
 
-    /* ======== BOTTOM MENU ======== */
-    do_action('weaverx_nav', 'bottom');
+	/* ======== BOTTOM MENU ======== */
+	do_action('weaverx_nav', 'bottom');
 
-    weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
+	weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
 	echo "\n</div><div class='clear-header-end' style='clear:both;'></div><!-- #header -->\n";
 ?>

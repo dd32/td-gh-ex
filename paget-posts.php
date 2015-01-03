@@ -12,47 +12,47 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * Then output the infobar with the page breadcrumbs and the posts page-navi and the page buffer
  * Finally, start the new loop.
  */
-    $GLOBALS['weaverx_page_who'] = 'pwp';
-    $GLOBALS['weaverx_page_is_archive'] = false;    // need these for body class
-    get_header('pwp');
+	$GLOBALS['weaverx_page_who'] = 'pwp';
+	$GLOBALS['weaverx_page_is_archive'] = false;    // need these for body class
+	get_header('pwp');
 
-    // build infobar front part - replace get_template_part('infobar'); with local code
-    // we need to build it in a buffer
+	// build infobar front part - replace get_template_part('infobar'); with local code
+	// we need to build it in a buffer
 
-    weaverx_container_div( 'pwp' );       // #container
+	weaverx_container_div( 'pwp' );       // #container
 
-    $sb_layout = weaverx_sb_layout( 'blog' );
+	$sb_layout = weaverx_sb_layout( 'blog' );
 
-    get_template_part('templates/infobar');	// put the info bar
+	get_template_part('templates/infobar');	// put the info bar
 
-    weaverx_sidebar_before( $sb_layout, 'blog' );          // sidebars if top-stacking
+	weaverx_sidebar_before( $sb_layout, 'blog' );          // sidebars if top-stacking
 
-    $paged = weaverx_get_page();
+	$paged = weaverx_get_page();
 
-    // and next the content area.
+	// and next the content area.
 
-    echo '<div id="content" role="main" '. weaverx_content_class( $sb_layout, 'pwp', false ) . ">\n";
-    weaverx_inject_area( 'precontent' );
+	echo '<div id="content" role="main" '. weaverx_content_class( $sb_layout, 'pwp', false ) . ">\n";
+	weaverx_inject_area( 'precontent' );
 
-    weaverx_sb_precontent('blog');
+	weaverx_sb_precontent('blog');
 
-    weaverx_post_count_clear(); the_post();
+	weaverx_post_count_clear(); the_post();
 
-    if (!is_front_page()) {
-        $GLOBALS['weaverx_pwp_title'] = get_the_title();    // Make breadcrumbs work a bit better
-    }
-
-	if ($paged == 1) {	// only show on the first page
-        // If we have content for this page, let's display it.
-        if (get_the_content() != '' ||
-            (get_the_title() != '' && !weaverx_is_checked_page_opt('_pp_hide_page_title')) ) {
-            get_template_part( 'templates/content', 'page' );
-        } else {
-            weaverx_edit_link();
-        }
+	if (!is_front_page()) {
+		$GLOBALS['weaverx_pwp_title'] = get_the_title();    // Make breadcrumbs work a bit better
 	}
 
-    echo "\n<!-- PwP: End Page content -->\n";
+	if ($paged == 1) {	// only show on the first page
+		// If we have content for this page, let's display it.
+		if (get_the_content() != '' ||
+			(get_the_title() != '' && !weaverx_is_checked_page_opt('_pp_hide_page_title')) ) {
+			get_template_part( 'templates/content', 'page' );
+		} else {
+			weaverx_edit_link();
+		}
+	}
+
+	echo "\n<!-- PwP: End Page content -->\n";
 
 
 	// Now, the posts
@@ -66,22 +66,22 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		'paged' => $paged
 	);
 
-    $filter = weaverx_get_per_page_value( '_pp_post_filter' );      // ATW Show Posts filter
-    if ( function_exists( 'atw_showposts_installed' ) && $filter != '') {
-        $params = atw_posts_get_filter_params( $filter );
-        if ($params != '') {        // they specified a $filter arg, so use it and wipe out anything else...
-           $fargs = shortcode_parse_atts( $params );
-        } else {
-            $fargs = '';
-        }
+	$filter = weaverx_get_per_page_value( '_pp_post_filter' );      // ATW Show Posts filter
+	if ( function_exists( 'atw_showposts_installed' ) && $filter != '') {
+		$params = atw_posts_get_filter_params( $filter );
+		if ($params != '') {        // they specified a $filter arg, so use it and wipe out anything else...
+		   $fargs = shortcode_parse_atts( $params );
+		} else {
+			$fargs = '';
+		}
 
-        $qargs = atw_posts_get_qargs( $fargs, array() );
-        $wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query', $qargs));		// reuse $wp_query to make paging work
+		$qargs = atw_posts_get_qargs( $fargs, array() );
+		$wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query', $qargs));		// reuse $wp_query to make paging work
 
-    } else {
-        $args = weaverx_setup_post_args($args);	// setup custom fields for this page
-        $wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query',$args));		// reuse $wp_query to make paging work
-    }
+	} else {
+		$args = weaverx_setup_post_args($args);	// setup custom fields for this page
+		$wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query',$args));		// reuse $wp_query to make paging work
+	}
 
 
 	if ( have_posts() ) {				// same loop as index.php
@@ -96,28 +96,28 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		// manually add 'sticky' to the post's class. (1/11/12)
 
 		if (!weaverx_is_checked_page_opt('_pp_hide_sticky')
-            && (weaverx_get_per_page_value('_pp_category')
+			&& (weaverx_get_per_page_value('_pp_category')
 			|| weaverx_get_per_page_value('_pp_tag')
 		)) {	// move sticky posts when cat or tag filters?
 		// Put sticky posts at the top of the posts array
 		$sticky_posts = get_option('sticky_posts');
 		global $page;
-            if ($page <= 1 && is_array($sticky_posts) && !empty($sticky_posts)) {
-                $num_posts = count($wp_query->posts);
-                $sticky_offset = 0;
-                // Loop over posts and relocate stickies to the front.
-                for ( $i = 0; $i < $num_posts; $i++ ) {
-                    if ( in_array($wp_query->posts[$i]->ID, $sticky_posts) ) {
-                        $sticky_post = $wp_query->posts[$i];
-                        // Remove sticky from current position
-                        array_splice($wp_query->posts, $i, 1);
-                        // Move to front, after other stickies
-                        array_splice($wp_query->posts, $sticky_offset, 0, array($sticky_post));
-                        // Increment the sticky offset. The next sticky will be placed at this offset.
-                        $sticky_offset++;
-                    }
-                }
-            }
+			if ($page <= 1 && is_array($sticky_posts) && !empty($sticky_posts)) {
+				$num_posts = count($wp_query->posts);
+				$sticky_offset = 0;
+				// Loop over posts and relocate stickies to the front.
+				for ( $i = 0; $i < $num_posts; $i++ ) {
+					if ( in_array($wp_query->posts[$i]->ID, $sticky_posts) ) {
+						$sticky_post = $wp_query->posts[$i];
+						// Remove sticky from current position
+						array_splice($wp_query->posts, $i, 1);
+						// Move to front, after other stickies
+						array_splice($wp_query->posts, $sticky_offset, 0, array($sticky_post));
+						// Increment the sticky offset. The next sticky will be placed at this offset.
+						$sticky_offset++;
+					}
+				}
+			}
 		}
 
 		/* Start the Loop */
@@ -132,68 +132,68 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$col = 0;
 		$hide_n_posts = weaverx_get_per_page_value('_pp_hide_n_posts');
 		if ($hide_n_posts == '' || $hide_n_posts < 1 || $hide_n_posts > 100)
-            $hide_n_posts = 0;
+			$hide_n_posts = 0;
 
 		weaverx_post_count_clear();
 		while ( have_posts() ) {
-            the_post();
-            weaverx_post_count_bump();
+			the_post();
+			weaverx_post_count_bump();
 
-            if ( weaverx_post_count() <= $hide_n_posts ) {
-                global $page, $paged;
-                if ( !($paged >= 2 || $page >= 2) )
-                    continue;			// skip posting
-            }
+			if ( weaverx_post_count() <= $hide_n_posts ) {
+				global $page, $paged;
+				if ( !($paged >= 2 || $page >= 2) )
+					continue;			// skip posting
+			}
 
-            $weaverx_sticky = false;
+			$weaverx_sticky = false;
 
-            if (is_array($sticky_posts) && !empty($sticky_posts) && in_array( get_the_ID(), $sticky_posts )) {
-                $weaverx_sticky = true;
-            }
+			if (is_array($sticky_posts) && !empty($sticky_posts) && in_array( get_the_ID(), $sticky_posts )) {
+				$weaverx_sticky = true;
+			}
 
-            if ( (is_sticky() || $weaverx_sticky) && $sticky_one) {
-                get_template_part( 'templates/content', get_post_format() );
-            } else if ( $first_one ) {
-                get_template_part( 'templates/content', get_post_format() );
-                $first_one = false;
-            } else {
-                if (!$masonry_wrap) {
-                    $masonry_wrap = true;
-                    if (weaverx_masonry('begin-posts'))
-                        $num_cols = 1;		// force to 1 cols
-                }
-                weaverx_masonry('begin-post');	// wrap each post
-                switch ($num_cols) {
-                    case 1:
-                        get_template_part( 'templates/content', get_post_format() );
-                        $sticky_one = false;
-                        break;
-                    case 2:
-                        echo ('<div class="content-2-col clearfix">' . "\n");
-                        get_template_part( 'templates/content', get_post_format() );
-                        echo ("</div> <!-- content-2-col -->\n");
-                        $col++;
-                        if ( !($col % 2) ) {	// force stuff to be even
-                            echo "<div style=\"clear:left;\"></div>\n";
-                        }
-                        $sticky_one = false;
-                        break;
-                    case 3:
-                        echo ('<div class="content-3-col clearfix">' . "\n");
-                        get_template_part( 'templates/content', get_post_format() );
-                        echo ("</div> <!-- content-3-col -->\n");
-                        $col++;
-                        if ( !($col % 3) ) {	// force stuff to be even
-                            echo "<div style=\"clear:left;\"></div>\n";
-                        }
-                        $sticky_one = false;
-                        break;
-                    default:
-                        get_template_part( 'templates/content', get_post_format() );
-                        $sticky_one = false;
-                }	// end switch $num_cols
-                weaverx_masonry('end-post');
-            }
+			if ( (is_sticky() || $weaverx_sticky) && $sticky_one) {
+				get_template_part( 'templates/content', get_post_format() );
+			} else if ( $first_one ) {
+				get_template_part( 'templates/content', get_post_format() );
+				$first_one = false;
+			} else {
+				if (!$masonry_wrap) {
+					$masonry_wrap = true;
+					if (weaverx_masonry('begin-posts'))
+						$num_cols = 1;		// force to 1 cols
+				}
+				weaverx_masonry('begin-post');	// wrap each post
+				switch ($num_cols) {
+					case 1:
+						get_template_part( 'templates/content', get_post_format() );
+						$sticky_one = false;
+						break;
+					case 2:
+						echo ('<div class="content-2-col clearfix">' . "\n");
+						get_template_part( 'templates/content', get_post_format() );
+						echo ("</div> <!-- content-2-col -->\n");
+						$col++;
+						if ( !($col % 2) ) {	// force stuff to be even
+							echo "<div style=\"clear:left;\"></div>\n";
+						}
+						$sticky_one = false;
+						break;
+					case 3:
+						echo ('<div class="content-3-col clearfix">' . "\n");
+						get_template_part( 'templates/content', get_post_format() );
+						echo ("</div> <!-- content-3-col -->\n");
+						$col++;
+						if ( !($col % 3) ) {	// force stuff to be even
+							echo "<div style=\"clear:left;\"></div>\n";
+						}
+						$sticky_one = false;
+						break;
+					default:
+						get_template_part( 'templates/content', get_post_format() );
+						$sticky_one = false;
+				}	// end switch $num_cols
+				weaverx_masonry('end-post');
+			}
 		}	// end while have posts
 		weaverx_masonry('end-posts');
 		weaverx_content_nav( 'nav-below' );
@@ -202,16 +202,16 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	}
 		// every thing done, so allow comments?
 		// comments_template( '', true );
-        weaverx_sb_postcontent('blog');
+		weaverx_sb_postcontent('blog');
 ?>
 
 		</div><!-- #content -->
 <?php
 
 		//$wp_query = $old_query;
-        wp_reset_query();
-        wp_reset_postdata();	// need these so extra-menus work in rightsidebar and footer
-        weaverx_sidebar_after( $sb_layout, 'blog' );
+		wp_reset_query();
+		wp_reset_postdata();	// need these so extra-menus work in rightsidebar and footer
+		weaverx_sidebar_after( $sb_layout, 'blog' );
 ?>
 		<div class="clear-container-end" style="clear:both"></div></div><!-- /#container -->
 <?php

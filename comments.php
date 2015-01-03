@@ -35,15 +35,15 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 ?>
 
 <?php
-    $c_counts = get_comment_count(get_the_ID());
-    $c_count = $c_counts['approved'];
+	$c_counts = get_comment_count(get_the_ID());
+	$c_count = $c_counts['approved'];
 	if ( comments_open() || ( $c_count > 0 && ! weaverx_getopt_checked('hide_old_comments') ) ) {
-        echo("\t\t<hr class='comments-hr' />\n");
+		echo("\t\t<hr class='comments-hr' />\n");
 
-        echo '<div id="comments">';
-        weaverx_inject_area('precomments');
+		echo '<div id="comments">';
+		weaverx_inject_area('precomments');
 
-        $ct_class = ( $c_count < 1 ) ? ' class="no-comments-made"' : '';
+		$ct_class = ( $c_count < 1 ) ? ' class="no-comments-made"' : '';
 ?>
 		<header id="comments-title"<?php echo $ct_class;?>>
 		<h3><?php echo __('Comments','weaver-xtreme'); ?></h3>
@@ -82,13 +82,13 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	<?php
 
-        if ( comments_open() )
-            comment_form();
-        weaverx_inject_area('postcomments');
-        echo "</div><!-- #comments -->\n";
+		if ( comments_open() )
+			comment_form();
+		weaverx_inject_area('postcomments');
+		echo "</div><!-- #comments -->\n";
 
-    } else if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) {
-        /* If there are no comments and comments are closed, let's leave a little note, shall we?
+	} else if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) {
+		/* If there are no comments and comments are closed, let's leave a little note, shall we?
 		 * But we don't want the note on pages or post types that do not support comments.
 		 */
 	?>

@@ -5,5 +5,5 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * Default sidebar area used by some plugins - will default to right sidebar widget areas
  */
-    get_sidebar('right');
+	get_sidebar('right');
 ?>

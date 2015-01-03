@@ -14,22 +14,22 @@
  ************************************************************************************* */
 
 /* -------------------------
-    weaverx_hide_css, JavaScript specialized hide table row
+	weaverx_hide_css, JavaScript specialized hide table row
 */
 
 function weaverxBrowserWidth() {
-    // This is a cross-browser way to get the window width. We will use it in all script
-    // tht need the width to endure consistent treatement of the width.
-    var width = 768;
-    if( typeof( window.innerWidth ) == 'number' ) {
-        width = window.innerWidth;    //Non-IE
-    } else if( document.documentElement &&
-        ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
-        width = document.documentElement.clientWidth; //IE 6+ in 'standards compliant mode'
-    } else if ( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-        width = document.body.clientWidth;    //IE 4 compatible
-    }
-    return width;
+	// This is a cross-browser way to get the window width. We will use it in all script
+	// tht need the width to endure consistent treatement of the width.
+	var width = 768;
+	if( typeof( window.innerWidth ) == 'number' ) {
+		width = window.innerWidth;    //Non-IE
+	} else if( document.documentElement &&
+		( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		width = document.documentElement.clientWidth; //IE 6+ in 'standards compliant mode'
+	} else if ( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		width = document.body.clientWidth;    //IE 4 compatible
+	}
+	return width;
 }
 
 /**
@@ -168,17 +168,17 @@ function weaverxBrowserWidth() {
  * */
 
 if (!Object.create) {               // IE8 shim for Object.create
-    Object.create = (function(){
-        function F(){}
+	Object.create = (function(){
+		function F(){}
 
-        return function(o){
-            if (arguments.length != 1) {
-                throw new Error('Object.create implementation only accepts one parameter.');
-            }
-            F.prototype = o;
-            return new F()
-        }
-    })()
+		return function(o){
+			if (arguments.length != 1) {
+				throw new Error('Object.create implementation only accepts one parameter.');
+			}
+			F.prototype = o;
+			return new F()
+		}
+	})()
 };
 
 (function( $, window, undefined ) {
@@ -187,7 +187,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 	var Menu = {
 		options: {
 			mobileBreakpoint: 768,              // don't change this - corresponds to small-tablet/desktop split
-            hideToggle: false,                  // set to true if want a tablet sized vertical accordion menu
+			hideToggle: false,                  // set to true if want a tablet sized vertical accordion menu
 			toggleButtonID: 'menu-toggle-button',
 			hoverClass: 'menu-hover',
 			arrowClass: 'menu-arrows',
@@ -208,9 +208,9 @@ if (!Object.create) {               // IE8 shim for Object.create
 			mo = menu.options = $.extend( {}, menu.options, options );
 
 
-    // Check for device touch support.
-            // This code doesn't work for whatever reason - breaks iOS
-            // So, we will use the force Android to mobile
+	// Check for device touch support.
+			// This code doesn't work for whatever reason - breaks iOS
+			// So, we will use the force Android to mobile
 
 			//if ('ontouchstart' in document.documentElement ) {
 			//	menu.isTouch = true;
@@ -239,13 +239,13 @@ if (!Object.create) {               // IE8 shim for Object.create
 			// Initialize the mobile menu.
 			menu.toggleMobile();
 
-            // User resizeX lib to handle menu resizing
+			// User resizeX lib to handle menu resizing
 
-            $('#wrapper').resizeX(function() { menu.toggleMobile();});
+			$('#wrapper').resizeX(function() { menu.toggleMobile();});
 
 			/* original resizer via timer
 
-            // Throttle the resize event.
+			// Throttle the resize event.
 			$(window).on('resize', function() {
 				if ( doCallback ) {
 					doCallback = false;
@@ -256,7 +256,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 					}, 150 );
 				}
 			});
-            */
+			*/
 		},
 
 		/**
@@ -291,10 +291,10 @@ if (!Object.create) {               // IE8 shim for Object.create
 
 			// Automatically insert a toggle button icon - dashicon
 			if ( menu.toggleButton.length < 1 ) {
-                if ( !mo.hideToggle )
-                    menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu"></div>').find('#' + mo.toggleButtonID).hide();
-                else
-                    menu.toggleButton = menu.container.find('#' + mo.toggleButtonID).hide();
+				if ( !mo.hideToggle )
+					menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu"></div>').find('#' + mo.toggleButtonID).hide();
+				else
+					menu.toggleButton = menu.container.find('#' + mo.toggleButtonID).hide();
 			}
 
 			// Add listener to the menu toggle button.
@@ -309,14 +309,14 @@ if (!Object.create) {               // IE8 shim for Object.create
 		 */
 		toggleMobile: function() {
 			var mo = this.options,
-                width = 0;
-            width = weaverxBrowserWidth();
+				width = 0;
+			width = weaverxBrowserWidth();
 
 			// Check if viewport width is less than the mobile breakpoint setting and the mobile menu is not displayed yet.
 			if ( (width < mo.mobileBreakpoint) && !this.el.hasClass(mo.mobileClass) ) {
 				// Show the menu toggle button.
 				this.toggleButton.show();
-                //this.toggleButton.css('display', 'inline');
+				//this.toggleButton.css('display', 'inline');
 
 				// Add the mobile class to the menu element.
 				this.el.addClass(mo.mobileClass).addClass(mo.hideMobileClass).removeClass(mo.hoverClass);
@@ -361,7 +361,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 	 */
 	$.fn.thmfdnMenu = function( settings ) {
 		return this.each(function() {
-            var menu = Object.create(Menu);
+			var menu = Object.create(Menu);
 			menu.init( this, settings );
 		});
 	};
@@ -379,78 +379,78 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 
 (function($) {
-    /* Detect device in use  */
-    var weaverx_isTouch = ("ontouchstart" in window);
-    var weaverx_isIOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
-    var weaverx_touch_dropdown_menu_apply = weaverx_isTouch && ! weaverx_isIOS5;
-    var selector = 'li:has(ul) > a';                    // set these to work with weaver x
-    var selector_leaf = 'li li li:not(:has(ul)) > a';
+	/* Detect device in use  */
+	var weaverx_isTouch = ("ontouchstart" in window);
+	var weaverx_isIOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
+	var weaverx_touch_dropdown_menu_apply = weaverx_isTouch && ! weaverx_isIOS5;
+	var selector = 'li:has(ul) > a';                    // set these to work with weaver x
+	var selector_leaf = 'li li li:not(:has(ul)) > a';
 
 
-    /* Apply dropdown effect on first click */
-    if (weaverx_touch_dropdown_menu_apply && weaverxBrowserWidth() > 767) { // don't need if mobile menu
+	/* Apply dropdown effect on first click */
+	if (weaverx_touch_dropdown_menu_apply && weaverxBrowserWidth() > 767) { // don't need if mobile menu
 	$(document).ready(function(){
-	    $(selector).each(function() {
-            var $this = $(this);
+		$(selector).each(function() {
+			var $this = $(this);
 
-            // Fix for IE
-            $this.attr( 'aria-haspopup', true );
+			// Fix for IE
+			$this.attr( 'aria-haspopup', true );
 
-            // Initial setting to handle first click
-            $this.data('dataNoclick', false);
+			// Initial setting to handle first click
+			$this.data('dataNoclick', false);
 
-            // Touch Handler
-            $this.bind('touchstart', function() {
+			// Touch Handler
+			$this.bind('touchstart', function() {
 
-                var noclick = !($this.data('dataNoclick'));
-                $(selector).each(function(){
-                    $(this).data('dataNoclick', false);
-                });
-                $this.data('dataNoclick', noclick);
-                $this.focus();
-            }); // end touchstart
+				var noclick = !($this.data('dataNoclick'));
+				$(selector).each(function(){
+					$(this).data('dataNoclick', false);
+				});
+				$this.data('dataNoclick', noclick);
+				$this.focus();
+			}); // end touchstart
 
-            // Click Handler
-            $this.bind('click', function(event){
-                if ($this.data('dataNoclick')) {
-                    event.preventDefault();
-                }
-                $this.focus();
-            }); // end click
-	    }); // end each
+			// Click Handler
+			$this.bind('click', function(event){
+				if ($this.data('dataNoclick')) {
+					event.preventDefault();
+				}
+				$this.focus();
+			}); // end click
+		}); // end each
 
-	    // Fix for 3rd+ level menus not working in some circumstances
-	    $(selector_leaf).each(function(){
-            $(this).bind('touchstart', function(){
-                window.location = this.href;
-            }); // end touchstart
-	    }); // end each
+		// Fix for 3rd+ level menus not working in some circumstances
+		$(selector_leaf).each(function(){
+			$(this).bind('touchstart', function(){
+				window.location = this.href;
+			}); // end touchstart
+		}); // end each
 
 	}); // end ready
-    } //end if
+	} //end if
 })(jQuery); // end self-invoked wrapper function
 
 
 
 function weaverxOnResize() {
-    // this function is called on initial window load, and again on resizes
-    var width = 768;
-    width = weaverxBrowserWidth();
-    device = 'is-desktop';
+	// this function is called on initial window load, and again on resizes
+	var width = 768;
+	width = weaverxBrowserWidth();
+	device = 'is-desktop';
 
-    // do things when we resize
-    if ( width >= 768 ) {       // on the desktop
-        jQuery('body').removeClass("is-phone is-smalltablet is-mobile");
-        device = 'is-desktop';
-    } else if ( width > 580 ) { // small tablet
-        jQuery('body').removeClass("is-phone is-desktop");
-        device = 'is-smalltablet is-mobile';
-    } else {                    // phone
-        jQuery('body').removeClass("is-desktop is-smalltablet");
-        device = 'is-phone is-mobile';
-    }
-    jQuery('body').addClass(device);
-    jQuery('#monitor-device').html(device);
+	// do things when we resize
+	if ( width >= 768 ) {       // on the desktop
+		jQuery('body').removeClass("is-phone is-smalltablet is-mobile");
+		device = 'is-desktop';
+	} else if ( width > 580 ) { // small tablet
+		jQuery('body').removeClass("is-phone is-desktop");
+		device = 'is-smalltablet is-mobile';
+	} else {                    // phone
+		jQuery('body').removeClass("is-desktop is-smalltablet");
+		device = 'is-phone is-mobile';
+	}
+	jQuery('body').addClass(device);
+	jQuery('#monitor-device').html(device);
 
 };
 
@@ -460,11 +460,11 @@ jQuery(document).ready(weaverxOnResize);
 // handle mobile menus...
 
 jQuery(function($) {
-    $('.wrapper').resizeX(weaverxOnResize);
+	$('.wrapper').resizeX(weaverxOnResize);
 	$('#nav-primary .weaverx-theme-menu').thmfdnMenu({
-        toggleButtonID: 'primary-toggle-button'
+		toggleButtonID: 'primary-toggle-button'
 	});
-    $('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
-        toggleButtonID: 'secondary-toggle-button'
+	$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
+		toggleButtonID: 'secondary-toggle-button'
 	});
 });

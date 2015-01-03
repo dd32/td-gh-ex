@@ -22,7 +22,7 @@ function weaverx_do_admin() {
 	global $weaverx_opts_cache, $weaverx_main_options, $weaverx_main_opts_list;
 
 	if (!current_user_can('edit_theme_options'))
-        wp_die(__('No permission to access that page.','weaver-xtreme'));
+		wp_die(__('No permission to access that page.','weaver-xtreme' /*adm*/));
 
 	weaverx_admin_page_process_options();	// cess non-sapi options
 
@@ -30,9 +30,9 @@ function weaverx_do_admin() {
 ?>
 <div style="float:left;"><h2><?php echo WEAVERX_THEMEVERSION; ?> Options
 <?php if (function_exists('weaverxplus_plugin_installed')) {
-    echo '<span style="font-size:smaller;"> - ' .  __('Plus','weaver-xtreme') .
+	echo '<span style="font-size:smaller;"> - ' .  __('Plus','weaver-xtreme' /*adm*/) .
 '</span><span style="font-size:small;"> ('; echo WEAVER_XPLUS_VERSION; echo ')</span>';
-    }?>
+	}?>
 
 <?php if (is_child_theme()) echo " &mdash; " . wp_get_theme(); ?>
 
@@ -43,24 +43,23 @@ function weaverx_do_admin() {
 	//weaverx_check_theme();
 	weaverx_clear_messages();
 
-    if ( WEAVERX_SELF_HOST )
-        weaverx_check_version();           // check version RSS @@@@@@
+	weaverx_check_version();           // check version RSS @@@@@@
 
 	// print_r(get_option('weaverx_settings'));
-    weaverx_clear_both();
+	weaverx_clear_both();
 ?>
 
 <div id="tabwrap">
   <div id="taba-admin" class='yetii'>
 	<ul id="taba-admin-nav" class='yetii'>
-    <?php
-    weaverx_elink( '#tab_themes', __('Select from pre-defined subthemes','weaver-xtreme'), __('Weaver Xtreme Subthemes','weaver-xtreme'), $before='<li>', $after='</li>');
-    weaverx_elink( '#tab_main', __('Main options for most theme elements: site appearance, layout, header, menus, content, footer, fonts, more','weaver-xtreme'), __('Main Options','weaver-xtreme'), $before='<li>', $after='</li>');
-    weaverx_elink( '#tab_advanced', __('Advanced options: HTML, code, CSS insertion; page templates, background images, SEO, site options','weaver-xtreme'), __('Advanced Options','weaver-xtreme'), $before='<li>', $after='</li>');
-    weaverx_elink( '#tab_pro', __('Weaver Xtreme Theme Add-ons','weaver-xtreme'), __('Add-ons','weaver-xtreme'), $before='<li>', $after='</li>');
-    weaverx_elink( '#tab_saverestore', __('Save and Restore theme settings','weaver-xtreme'), __('Save/Restore','weaver-xtreme'), $before='<li>', $after='</li>');
-    weaverx_elink( '#tab_help', __('Table of Content links to Weaver Xtreme Help files','weaver-xtreme'), __('Help','weaver-xtreme'), $before='<li>', $after='</li>');
-    ?>
+	<?php
+	weaverx_elink( '#tab_themes', __('Select from pre-defined subthemes','weaver-xtreme' /*adm*/), __('Weaver Xtreme Subthemes','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	weaverx_elink( '#tab_main', __('Main options for most theme elements: site appearance, layout, header, menus, content, footer, fonts, more','weaver-xtreme' /*adm*/), __('Main Options','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	weaverx_elink( '#tab_advanced', __('Advanced options: HTML, code, CSS insertion; page templates, background images, SEO, site options','weaver-xtreme' /*adm*/), __('Advanced Options','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	weaverx_elink( '#tab_pro', __('Weaver Xtreme Theme Add-ons','weaver-xtreme' /*adm*/), __('Add-ons','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	weaverx_elink( '#tab_saverestore', __('Save and Restore theme settings','weaver-xtreme' /*adm*/), __('Save/Restore','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	weaverx_elink( '#tab_help', __('Table of Content links to Weaver Xtreme Help files','weaver-xtreme' /*adm*/), __('Help','weaver-xtreme' /*adm*/), $before='<li>', $after='</li>');
+	?>
 	</ul>
 
 <?php //  list is order specific - above and below must match ?>
@@ -135,11 +134,11 @@ function weaverx_admin_page_process_options() {
 
 	/* ====================================================== */
 
-    if (  !$processed && isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) {
-        add_settings_error('weaverx_settings', 'settings_updated', __('Saved','weaver-xtreme'), 'updated');
-        $vers = weaverx_getopt('style_version');
-        weaverx_setopt('style_version', $vers + 1 );
-    }
+	if (  !$processed && isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) {
+		add_settings_error('weaverx_settings', 'settings_updated', __('Saved','weaver-xtreme' /*adm*/), 'updated');
+		$vers = weaverx_getopt('style_version');
+		weaverx_setopt('style_version', $vers + 1 );
+	}
 
 	 weaverx_save_opts('Weaver Xtreme Admin');			/* FINALLY - SAVE ALL OPTIONS AND UPDATE CURRENT CSS FILE */
 
@@ -148,68 +147,69 @@ function weaverx_admin_page_process_options() {
 function weaverx_admin_admin() {
 ?>
 <div class="atw-option-header"><span style="color:black; padding:.2em;" class="dashicons dashicons-admin-generic"></span>
-<?php _e('Basic Administrative Options','weaver-xtreme'); ?>
+<?php _e('Basic Administrative Options','weaver-xtreme' /*adm*/); ?>
 <?php weaverx_help_link('help.html#AdminOptions','Help for Admin Options'); ?></div>
 
 <p>
-<?php _e('These options control some administrative options and appearance features.','weaver-xtreme'); ?>
+<?php _e('These options control some administrative options and appearance features.','weaver-xtreme' /*adm*/); ?>
 </p>
 
 <br />
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_donate'); ?>" id="hide_donate" <?php checked(weaverx_getopt_checked( '_hide_donate' )); ?> />
 	<?php _e('I\'ve Donated - <small>Thank you for donating to the Weaver Xtreme theme.
-This will hide the Donate button. Purchasing Weaver Xtreme Plus also hides the Donate button.</small> &diams;','weaver-xtreme'); ?>
-    </label><br /><br />
+This will hide the Donate button. Purchasing Weaver Xtreme Plus also hides the Donate button.</small> &diams;','weaver-xtreme' /*adm*/); ?>
+	</label><br /><br />
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_editor_style'); ?>" id="_hide_editor_style" <?php checked(weaverx_getopt_checked( '_hide_editor_style' )); ?> />
 <?php _e('Disable Page/Post Editor Styling - <small>Checking this box will disable the Weaver Xtreme subtheme based styling in the Page/Post editor.
-If you have a theme using transparent backgrounds, this option will likely improve the Post/Page editor visibility. &diams;</small>','weaver-xtreme'); ?></label><br />
+If you have a theme using transparent backgrounds, this option will likely improve the Post/Page editor visibility. &diams;</small>','weaver-xtreme' /*adm*/); ?></label><br />
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_auto_css_rules'); ?>" id="hide_auto_css_rules" <?php checked(weaverx_getopt_checked( '_hide_auto_css_rules' )); ?> />
-<?php _e('Don\'t auto-display CSS rules - <small>Checking this box will disable the auto-display of Main Option elements that have CSS settings.</small> &diams;','weaver-xtreme'); ?></label><br />
+<?php _e('Don\'t auto-display CSS rules - <small>Checking this box will disable the auto-display of Main Option elements that have CSS settings.</small> &diams;','weaver-xtreme' /*adm*/); ?></label><br />
 
 	<input name="<?php weaverx_sapi_main_name('_css_rows'); ?>" id="css_rows" type="text" style="width:30px;height:20px;" class="regular-text" value="<?php weaverx_esc_textarea(weaverx_getopt('_css_rows')); ?>" />
-<?php _e('lines - Set CSS+ text box height - <small>You can increase the default height of the CSS+ input area (1 to 25 lines).</small> &diams;','weaver-xtreme'); ?>
+<?php _e('lines - Set CSS+ text box height - <small>You can increase the default height of the CSS+ input area (1 to 25 lines).</small> &diams;','weaver-xtreme' /*adm*/); ?>
 <br />
  <br />
- <h3 class="atw-option-subheader"><?php _e('Per Page and Per Post Option Panels by Roles<','weaver-xtreme'); ?>/h3>
+ <h3 class="atw-option-subheader"><?php _e('Per Page and Per Post Option Panels by Roles<','weaver-xtreme' /*adm*/); ?>/h3>
  <p>
 <?php _e('Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
-You may selectively disable these options for other User Roles using the check boxes below.','weaver-xtreme'); ?>
+You may selectively disable these options for other User Roles using the check boxes below.','weaver-xtreme' /*adm*/); ?>
  </p>
 
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_mu_admin_per'); ?>" id="_hide_mu_admin_per" <?php checked(weaverx_getopt_checked( '_hide_mu_admin_per' )); ?> />
-    <?php _e('Hide Per Page/Post Options for MultiSite Admins','weaver-xtreme'); ?></label> &diams;<br />
+	<?php _e('Hide Per Page/Post Options for MultiSite Admins','weaver-xtreme' /*adm*/); ?></label> &diams;<br />
 	   <label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_editor_per'); ?>" id="_hide_editor_per" <?php checked(weaverx_getopt_checked( '_hide_editor_per' )); ?> />
-	<?php _e('Hide Per Page/Post Options for Editors','weaver-xtreme'); ?></label> &diams;<br />
+	<?php _e('Hide Per Page/Post Options for Editors','weaver-xtreme' /*adm*/); ?></label> &diams;<br />
 	   <label><input type="checkbox" name="<?php weaverx_sapi_main_name('_hide_author_per'); ?>" id="_hide_author_per" <?php checked(weaverx_getopt_checked( '_hide_author_per' )); ?> />
-	<?php _e('Hide Per Page/Post Options for Authors and Contributors','weaver-xtreme'); ?></label> &diams;<br />
-    <br />
-    <label><input type="checkbox" name="<?php weaverx_sapi_main_name('_show_per_post_all'); ?>" id="_hide_author_per" <?php checked(weaverx_getopt_checked( '_show_per_post_all' )); ?> />
-	<?php _e('Show Per Post Options for Custom Post Types &diams; - <small>Shows the Per Post options box on "Custom Post Type Editor" admin pages','weaver-xtreme'); ?></small>
-    </label>
+	<?php _e('Hide Per Page/Post Options for Authors and Contributors','weaver-xtreme' /*adm*/); ?></label> &diams;<br />
+	<br />
+	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_show_per_post_all'); ?>" id="_hide_author_per" <?php checked(weaverx_getopt_checked( '_show_per_post_all' )); ?> />
+	<?php _e('Show Per Post Options for Custom Post Types &diams; - <small>Shows the Per Post options box on "Custom Post Type Editor" admin pages','weaver-xtreme' /*adm*/); ?></small>
+	</label>
 <br />
 <br /><br />
-	<div class="atw-option-subheader"><?php _e('Theme Name and Description','weaver-xtreme'); ?></div>
+	<div class="atw-option-subheader"><?php _e('Theme Name and Description','weaver-xtreme' /*adm*/); ?></div>
 <p>
 <?php _e('You can change the name and description of your current settings if you would like to create a new theme
-theme file for sharing with others, or for you own identification.','weaver-xtreme'); ?>
+theme file for sharing with others, or for you own identification.','weaver-xtreme' /*adm*/); ?>
 </p>
-<?php _e('Theme Name:','weaver-xtreme'); ?> <input name="<?php weaverx_sapi_main_name('themename'); ?>" id="themename" value="<?php echo weaverx_getopt('themename'); ?>" />
+<?php _e('Theme Name:','weaver-xtreme' /*adm*/); ?> <input name="<?php weaverx_sapi_main_name('themename'); ?>" id="themename" value="<?php echo weaverx_getopt('themename'); ?>" />
 	<br />
-	<?php _e('Description:','weaver-xtreme'); ?>&nbsp;&nbsp;&nbsp; <textarea name="<?php weaverx_sapi_main_name('theme_description'); ?>" id="theme_description" rows=2 style="width: 350px"><?php echo(esc_textarea(weaverx_getopt('theme_description'))); ?></textarea>
+	<?php _e('Description:','weaver-xtreme' /*adm*/); ?>&nbsp;&nbsp;&nbsp;
+	<textarea name="<?php weaverx_sapi_main_name('theme_description'); ?>" id="theme_description" rows=2 style="width: 350px"><?php echo(esc_textarea(weaverx_getopt('theme_description'))); ?></textarea>
 <br />
 <br />
- <h3 class="atw-option-subheader"><?php _e('Subtheme Notes','weaver-xtreme'); ?></h3>
+ <h3 class="atw-option-subheader"><?php _e('Subtheme Notes','weaver-xtreme' /*adm*/); ?></h3>
  <p>
 <?php _e('This box may be used to keep notes and instructions about settings made for a custom subtheme.
-It will be saved in the both \'.wxt\' and \'.wxb\' settings files.','weaver-xtreme'); ?>
+It will be saved in the both \'.wxt\' and \'.wxb\' settings files.','weaver-xtreme' /*adm*/); ?>
  </p>
  <textarea name="<?php weaverx_sapi_main_name('subtheme_notes'); ?>" rows=8 style="width: 95%"><?php weaverx_esc_textarea(weaverx_getopt('subtheme_notes')); ?></textarea>
 <?php
-    do_action('weaverxplus_admin','admin_options');
+	do_action('weaverxplus_admin','admin_options');
 
 }
 /* ^^^^^ end weaverx_admin_page_process_options ^^^^^^ */

@@ -13,10 +13,10 @@ function weaverx_inject_area( $name ) {
 	$hide_front = 'hide_front_' . $name;
 	$hide_rest = 'hide_rest_' . $name;
 
-    if ( weaverx_getopt_checked( $hide_front ) && is_front_page() )
-        return;
-    if ( weaverx_getopt_checked( $hide_rest ) && !is_front_page() )
-        return;
+	if ( weaverx_getopt_checked( $hide_front ) && is_front_page() )
+		return;
+	if ( weaverx_getopt_checked( $hide_rest ) && !is_front_page() )
+		return;
 
 	$idinj = 'inject_' . $name;
 	$html = apply_filters('weaverx_inject_area', weaverx_getopt($area_name), $name);
@@ -30,7 +30,7 @@ function weaverx_inject_area( $name ) {
 			echo("\t<div class=\"$idinj\">\n");
 		if (!empty($html)) {	/* area insert defined? */
 			if (is_front_page()) {
-                weaverx_e_notopt($hide_front,  do_shortcode($html)  );
+				weaverx_e_notopt($hide_front,  do_shortcode($html)  );
 			} else  {
 				weaverx_e_notopt($hide_rest,  do_shortcode($html)  );
 			}
@@ -47,84 +47,90 @@ function weaverx_inject_area( $name ) {
 // >>>>> weaverx_area_class <<<<<
 function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '') {
 
-    $class = '';
+	$class = '';
 
-    $cols = weaverx_getopt_default( $area . '_cols_int', 1);
-    if ( $cols > 1 ) {
-        $l_smart = ' widget-smart-rm';
-        $m_smart = ' m-widget-smart-rm';
-        if ( weaverx_getopt( $area . '_no_widget_margins' ) ) {
-            $l_smart = '';
-            $m_smart = '';
-        }
-        $l_class = 'widget-cols-' . $cols;;
-        $m_class = ' m-widget-cols-2';
+	$cols = weaverx_getopt_default( $area . '_cols_int', 1);
+	if ( $cols > 1 ) {
+		$l_smart = ' widget-smart-rm';
+		$m_smart = ' m-widget-smart-rm';
+		if ( weaverx_getopt( $area . '_no_widget_margins' ) ) {
+			$l_smart = '';
+			$m_smart = '';
+		}
+		$l_class = 'widget-cols-' . $cols;;
+		$m_class = ' m-widget-cols-2';
 
-        if ( weaverx_getopt('_' . $area . '_lw_cols_list') != '') {
-            $l_class = '';
-            $l_smart = '';
-        }
+		if ( weaverx_getopt('_' . $area . '_lw_cols_list') != '') {
+			$l_class = '';
+			$l_smart = '';
+		}
 
-        if ( weaverx_getopt('_' . $area . '_mw_cols_list') != '') {
-            $m_class = '';
-            $m_smart = '';
-        }
+		if ( weaverx_getopt('_' . $area . '_mw_cols_list') != '') {
+			$m_class = '';
+			$m_smart = '';
+		}
 
-        $class = $l_class . $l_smart . $m_class . $m_smart;
-    }
+		$class = $l_class . $l_smart . $m_class . $m_smart;
+	}
 
-    // top/bottom margin
+	// top/bottom margin
 
-    // border
-    if ( weaverx_getopt( $area . '_border'))
-        $class .= ' border';
+	// border
+	if ( weaverx_getopt( $area . '_border'))
+		$class .= ' border';
 
-    // shadow
-    $val = weaverx_getopt( $area . '_shadow' );
-    if ( $val && $val != '-0' )
-        $class .= ' shadow' . $val;
+	// shadow
+	$val = weaverx_getopt( $area . '_shadow' );
+	if ( $val && $val != '-0' )
+		$class .= ' shadow' . $val;
 
-    // rounded
-    $val = weaverx_getopt( $area . '_rounded' );
-    if ( $val && $val != 'none' )
-        $class .= ' rounded' . $val;
+	// rounded
+	$val = weaverx_getopt( $area . '_rounded' );
+	if ( $val && $val != 'none' )
+		$class .= ' rounded' . $val;
 
-    // font-size
-    $val = weaverx_getopt( $area . '_font_size' );
-    if ( $val && $val != 'default' ) {
-        $class .= ' ' . $val;
-    }
+	// font-size
+	$val = weaverx_getopt( $area . '_font_size' );
+	if ( $val && $val != 'default' ) {
+		$class .= ' ' . $val;
+	}
 
-    // font-family
-    $val = weaverx_getopt( $area . '_font_family' );
-    if ( $val && $val != 'default' ) {
-        $class .= ' font-' . $val;
-    }
+	// font-family
+	$val = weaverx_getopt( $area . '_font_family' );
+	if ( $val && $val != 'default' ) {
+		$class .= ' font-' . $val;
+	}
 
-    $class .= weaverx_getopt( $area . '_bold') ? ' font-bold' : '';
-    $class .= weaverx_getopt( $area . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_getopt( $area . '_bold') ? ' font-bold' : '';
+	$class .= weaverx_getopt( $area . '_italic') ? ' font-italic' : '';
 
-    // hide
-    $val = weaverx_getopt( $area . '_hide' );
-    if ( $val && $val != 'hide-none' ) {
-        $class .= ' ' . $val;
-    }
+	// hide
+	$val = weaverx_getopt( $area . '_hide' );
+	if ( $val && $val != 'hide-none' ) {
+		$class .= ' ' . $val;
+	}
 
-    // align
-    $align = weaverx_getopt_default( $area . '_align', 'float-left' );
-    if ( $align != 'float-left')
-        $class .= ' ' . $align;
+	// align
+	$align = weaverx_getopt_default( $area . '_align', 'float-left' );
+	if ( $align != 'float-left')
+		$class .= ' ' . $align;
 
-    // add classes - !important - do these LAST so will override other classes
-    $val = weaverx_getopt( $area . '_add_class' );
-    if ( $val  ) {
-        $val = trim( $val );
-        str_replace( '.', '', $val );   // no .'s allowed, so kill them hoping it will fix user errors
-        str_replace(',', ' ', $val );   // and allow , separators instead of blanks
-        $class .= ' ' . trim($val);
-    }
+	// eq height
 
-    return trim($class);
+	if ( weaverx_getopt( $area . '_eq_widgets') ) {
+		$class .= ' widget-eq';
+	}
+
+	// add classes
+	$val = weaverx_getopt( $area . '_add_class' );
+	if ( $val  ) {
+		$val = trim( $val );
+		str_replace( '.', '', $val );   // no .'s allowed, so kill them hoping it will fix user errors
+		str_replace(',', ' ', $val );   // and allow , separators instead of blanks
+		$class .= ' ' . trim($val);
+	}
+
+	return trim($class);
 }
 //--
 
@@ -132,10 +138,10 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 // >>>>> weaverx_container_class <<<<<
 function weaverx_area_div( $who , $x_class = '' ) {
 
-    $c_class = $who . ' ' . weaverx_area_class( $who, 'not-pad', '', '' );
-    if ( $x_class )
-        $c_class .= ' ' . $x_class;
-    echo "\n" . '<div id="' . $who . '" class="' . trim($c_class) .'">';
+	$c_class = $who . ' ' . weaverx_area_class( $who, 'not-pad', '', '' );
+	if ( $x_class )
+		$c_class .= ' ' . $x_class;
+	echo "\n" . '<div id="' . $who . '" class="' . trim($c_class) .'">';
 }
 //--
 
@@ -143,15 +149,15 @@ function weaverx_area_div( $who , $x_class = '' ) {
 // >>>>> weaverx_container_class <<<<<
 function weaverx_container_class( $who, $extra = '' ) {
 
-    $class = $extra;
+	$class = $extra;
 
 	if ($class != '') $class .= ' relative';
 	else $class = 'relative';
 
-    $class .= ' '. weaverx_area_class('container', 'not-pad', '', '' );
+	$class .= ' '. weaverx_area_class('container', 'not-pad', '', '' );
 
 	$class = ' class="' . $class . '"';
-    echo ($class);
+	echo ($class);
 	return $class;
 }
 //--
@@ -161,9 +167,9 @@ function weaverx_container_class( $who, $extra = '' ) {
 function weaverx_container_div( $who ) {
 
 	$class = 'class="container container-' . $who . ' relative '
-             . weaverx_area_class('container', 'not-pad', '', '' ) . '"';
-    echo "\n" . '<div id="container" ' . $class . ">\n";
-    weaverx_inject_area('container_top');
+			 . weaverx_area_class('container', 'not-pad', '', '' ) . '"';
+	echo "\n" . '<div id="container" ' . $class . ">\n";
+	weaverx_inject_area('container_top');
 }
 //--
 
@@ -171,47 +177,47 @@ function weaverx_container_div( $who ) {
 // >>>>> weaverx_content_class <<<<<
 function weaverx_content_class( $sb_layout, $who, $echo = true ) {
 
-    $c_class = weaverx_area_class( 'content', 'pad', '-rbl', '' );
-    $smart = '';
-    if ( weaverx_getopt('content_smartmargin')) {
-        $smart = '-m';
-    }
+	$c_class = weaverx_area_class( 'content', 'pad', '-rbl', '' );
+	$smart = '';
+	if ( weaverx_getopt('content_smartmargin')) {
+		$smart = '-m';
+	}
 
-    $class = 'content ';
-    switch ( $sb_layout ) {
-        case 'right':
-        case 'right-top':
-            $l_content = 'l-content-rsb' . $smart;
-            $class .= $l_content . ' m-full s-full ' . $c_class;
-            break;
+	$class = 'content ';
+	switch ( $sb_layout ) {
+		case 'right':
+		case 'right-top':
+			$l_content = 'l-content-rsb' . $smart;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
+			break;
 
-        case 'left':
-        case 'left-top':
-            $l_content = 'l-content-lsb' . $smart;
-            $class .= $l_content . ' m-full s-full sb-float-right ' . $c_class;
-            break;
+		case 'left':
+		case 'left-top':
+			$l_content = 'l-content-lsb' . $smart;
+			$class .= $l_content . ' m-full s-full sb-float-right ' . $c_class;
+			break;
 
-        case 'split':
-            $l_content = 'l-content-ssb' . $smart;
-            $class .= $l_content . ' m-full s-full ' . $c_class;
-            break;
+		case 'split':
+			$l_content = 'l-content-ssb' . $smart;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
+			break;
 
-        case 'split-top':
-            $l_content = 'l-content-ssbs' . $smart;
-            $class .= $l_content . ' m-full s-full ' . $c_class;
-            break;
+		case 'split-top':
+			$l_content = 'l-content-ssbs' . $smart;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
+			break;
 
-        case 'one-column':
-            $l_content = 'l-content' . $smart;
-            $class .= $l_content  . ' ' . $c_class;
-            break;
-    }
+		case 'one-column':
+			$l_content = 'l-content' . $smart;
+			$class .= $l_content  . ' ' . $c_class;
+			break;
+	}
 
-    $class = ' class="' . trim($class) . '"';
-    if ( $echo )
-        echo $class;
+	$class = ' class="' . trim($class) . '"';
+	if ( $echo )
+		echo $class;
 
-    return $class;
+	return $class;
 }
 //--
 
@@ -219,83 +225,83 @@ function weaverx_content_class( $sb_layout, $who, $echo = true ) {
 // >>>>> weaverx_menu_class <<<<<
 function weaverx_menu_class( $who, $no_hide = false ) {
 
-    // for the main menu bar - submenus must be done via CSS...
+	// for the main menu bar - submenus must be done via CSS...
 
-    $class = '';
-    // font-size
-    $val = weaverx_getopt( $who . '_font_size' );
-    if ( $val && $val != 'default' ) {
-        $class .=  $val;
-    }
+	$class = '';
+	// font-size
+	$val = weaverx_getopt( $who . '_font_size' );
+	if ( $val && $val != 'default' ) {
+		$class .=  $val;
+	}
 
-    // font-family
-    $val = weaverx_getopt( $who . '_font_family' );
-    if ( $val && $val != 'default' ) {
-        $class .= ' font-' . $val;
-    }
+	// font-family
+	$val = weaverx_getopt( $who . '_font_family' );
+	if ( $val && $val != 'default' ) {
+		$class .= ' font-' . $val;
+	}
 
-    $class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
-    $class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
+	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
 
-    // border
-    if ( weaverx_getopt( $who . '_border'))
-        $class .= ' border';
+	// border
+	if ( weaverx_getopt( $who . '_border'))
+		$class .= ' border';
 
-    // shadow
-    $val = weaverx_getopt( $who . '_shadow' );
-    if ( $val && $val != '-0' )
-        $class .= ' shadow' . $val;
+	// shadow
+	$val = weaverx_getopt( $who . '_shadow' );
+	if ( $val && $val != '-0' )
+		$class .= ' shadow' . $val;
 
-    // rounded
-    $val = weaverx_getopt( $who . '_rounded' );
-    if ( $val && $val != 'none' )
-        $class .= ' rounded' . $val;
+	// rounded
+	$val = weaverx_getopt( $who . '_rounded' );
+	if ( $val && $val != 'none' )
+		$class .= ' rounded' . $val;
 
-    // hide - subject to override by [show_if]
-    $val = weaverx_getopt( $who . '_hide' );
-    if ( $val && $val != 'hide-none' && !$no_hide) {
-        $class .= ' ' . $val;
-    }
+	// hide - subject to override by [show_if]
+	$val = weaverx_getopt( $who . '_hide' );
+	if ( $val && $val != 'hide-none' && !$no_hide) {
+		$class .= ' ' . $val;
+	}
 
 
-    // add classes - !important - do these LAST so will override other classes
-    $val = weaverx_getopt( $who . '_add_class' );
-    if ( $val  ) {
-        $val = trim( $val );
-        str_replace( '.', '', $val );   // no .'s allowed, so kill them hoping it will fix user errors
-        str_replace(',', ' ', $val );   // and allow , separators instead of blanks
-        $class .= ' ' . trim($val);
-    }
+	// add classes - !important - do these LAST so will override other classes
+	$val = weaverx_getopt( $who . '_add_class' );
+	if ( $val  ) {
+		$val = trim( $val );
+		str_replace( '.', '', $val );   // no .'s allowed, so kill them hoping it will fix user errors
+		str_replace(',', ' ', $val );   // and allow , separators instead of blanks
+		$class .= ' ' . trim($val);
+	}
 
-    return trim($class);
+	return trim($class);
 }
 //--
 
 
 // >>>>> weaverx_page_lead <<<<<
 function weaverx_page_lead( $who , $archive = false ) {
-    // common lead in for all pages with infobar and top widget area
+	// common lead in for all pages with infobar and top widget area
 
-    $GLOBALS['weaverx_page_who'] = $who;
-    $GLOBALS['weaverx_page_is_archive'] = $archive;
+	$GLOBALS['weaverx_page_who'] = $who;
+	$GLOBALS['weaverx_page_is_archive'] = $archive;
 
-    get_header( $who );
+	get_header( $who );
 
-    if ( $archive )
-        $sb_layout = weaverx_sb_layout_archive( $who );
-    else
-        $sb_layout = weaverx_sb_layout( $who );
+	if ( $archive )
+		$sb_layout = weaverx_sb_layout_archive( $who );
+	else
+		$sb_layout = weaverx_sb_layout( $who );
 
-    weaverx_container_div( $who );       // #container
+	weaverx_container_div( $who );       // #container
 
-    get_template_part('templates/infobar');
+	get_template_part('templates/infobar');
 
-    weaverx_sidebar_before( $sb_layout, $who );          // sidebars if top-stacking
+	weaverx_sidebar_before( $sb_layout, $who );          // sidebars if top-stacking
 
-    echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
-    weaverx_inject_area( 'precontent' );
+	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
+	weaverx_inject_area( 'precontent' );
 
-    return $sb_layout;
+	return $sb_layout;
 }
 //--
 
@@ -303,12 +309,12 @@ function weaverx_page_lead( $who , $archive = false ) {
 // >>>>> weaverx_page_tail <<<<<
 function weaverx_page_tail( $who, $sb_layout ) {
 
-    echo "\n</div><!-- /#content -->\n";                // do not clear:both!
+	echo "\n</div><!-- /#content -->\n";                // do not clear:both!
 
-    weaverx_sidebar_after( $sb_layout, $who );          // sidebars after content
+	weaverx_sidebar_after( $sb_layout, $who );          // sidebars after content
 
-    echo "\n<div class='clear-container-end' style='clear:both;'></div></div><!-- /#container -->\n";
-    weaverx_get_footer( $who );
+	echo "\n<div class='clear-container-end' style='clear:both;'></div></div><!-- /#container -->\n";
+	weaverx_get_footer( $who );
 
 }
 //--
@@ -317,29 +323,29 @@ function weaverx_page_tail( $who, $sb_layout ) {
 // >>>>> weaverx_title_class <<<<<
 function weaverx_title_class( $who, $class_only = false, $front = '' ) {
 
-    $class = $front;
+	$class = $front;
 
-    // font-size
-    $val = weaverx_getopt( $who . '_font_size' );
-    if ( $val && $val != 'default' ) {
-        $class .=  ' ' . $val . '-title';
-    }
+	// font-size
+	$val = weaverx_getopt( $who . '_font_size' );
+	if ( $val && $val != 'default' ) {
+		$class .=  ' ' . $val . '-title';
+	}
 
-    // font-family
-    $val = weaverx_getopt( $who . '_font_family' );
-    if ( $val && $val != 'default' ) {
-        $class .= ' font-' . $val;
-    }
+	// font-family
+	$val = weaverx_getopt( $who . '_font_family' );
+	if ( $val && $val != 'default' ) {
+		$class .= ' font-' . $val;
+	}
 
-    $class .= weaverx_getopt( $who . '_normal') ? ' font-weight-normal' : '';
-    $class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_getopt( $who . '_normal') ? ' font-weight-normal' : '';
+	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
 
 
-    if ( $class ) {
-        return $class_only ? trim($class) : ' class="' . trim($class) . '"';
-    }
-    else
-        return '';
+	if ( $class ) {
+		return $class_only ? trim($class) : ' class="' . trim($class) . '"';
+	}
+	else
+		return '';
 
 }
 //--
@@ -347,30 +353,30 @@ function weaverx_title_class( $who, $class_only = false, $front = '' ) {
 
 // >>>>> weaverx_text_class <<<<<
 function weaverx_text_class( $who, $class_only = true ) {
-    // 'title' option used for plain text
-    $class = '';
-    // font-size
-    $val = weaverx_getopt( $who . '_font_size' );
-    if ( $val && $val != 'default' ) {
-        $class .=  $val;
-    }
+	// 'title' option used for plain text
+	$class = '';
+	// font-size
+	$val = weaverx_getopt( $who . '_font_size' );
+	if ( $val && $val != 'default' ) {
+		$class .=  $val;
+	}
 
-    // font-family
-    $val = weaverx_getopt( $who . '_font_family' );
-    if ( $val && $val != 'default' ) {
-        $class .= ' font-' . $val;
-    }
+	// font-family
+	$val = weaverx_getopt( $who . '_font_family' );
+	if ( $val && $val != 'default' ) {
+		$class .= ' font-' . $val;
+	}
 
-    $class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
+	$class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
 
-    $class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
 
 
-    if ( $class ) {
-        return $class_only ? ' ' . trim($class) : ' class="' . trim($class) . '"';
-    }
-    else
-        return '';
+	if ( $class ) {
+		return $class_only ? ' ' . trim($class) : ' class="' . trim($class) . '"';
+	}
+	else
+		return '';
 
 }
 //--
@@ -381,25 +387,25 @@ function weaverx_text_class( $who, $class_only = true ) {
 
 // >>>>> weaverx_sb_layout <<<<<
 function weaverx_sb_layout( $who ) {
-    // get sb layout for page-like content: 'layout_default', 'layout_page', 'layout_blog', 'layout_single'
-    //
-    // possible values: 'right', 'right-top', 'left', 'left-top', 'split', 'split-top', 'one-column'
+	// get sb layout for page-like content: 'layout_default', 'layout_page', 'layout_blog', 'layout_single'
+	//
+	// possible values: 'right', 'right-top', 'left', 'left-top', 'split', 'split-top', 'one-column'
 
-    $per_page = weaverx_get_per_page_value('_pp_page_layout');
+	$per_page = weaverx_get_per_page_value('_pp_page_layout');
 
-    if ( $who == '404' ) $who = 'search';   // sigh - they are the same layout
+	if ( $who == '404' ) $who = 'search';   // sigh - they are the same layout
 
-    $layout = ( $per_page ) ? $per_page : weaverx_getopt_default( 'layout_' . $who , 'default');
+	$layout = ( $per_page ) ? $per_page : weaverx_getopt_default( 'layout_' . $who , 'default');
 
-    // weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
+	// weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
 
-    if ( $layout == 'default' ) {
-        $layout = weaverx_getopt( 'layout_default' );
-        if ( !$layout )
-            $layout = 'right';  // fallback
-    }
+	if ( $layout == 'default' ) {
+		$layout = weaverx_getopt( 'layout_default' );
+		if ( !$layout )
+			$layout = 'right';  // fallback
+	}
 
-    return $layout;
+	return $layout;
 }
 //--
 
@@ -407,22 +413,22 @@ function weaverx_sb_layout( $who ) {
 
 // >>>>> weaverx_sb_layout_archive <<<<<
 function weaverx_sb_layout_archive( $who ) {
-    // get sb layout for archive-like content: 'layout_default_archive', 'layout_archive', 'layout_category', 'layout_tag'
-    //                                         'layout_author', 'layout_search', 'layout_image'
-    // same possible values
+	// get sb layout for archive-like content: 'layout_default_archive', 'layout_archive', 'layout_category', 'layout_tag'
+	//                                         'layout_author', 'layout_search', 'layout_image'
+	// same possible values
 
-    if ( $who == '404' ) $who = 'search';   // they are the same layout
+	if ( $who == '404' ) $who = 'search';   // they are the same layout
 
-    $layout = weaverx_getopt_default( 'layout_' . $who , 'default');
+	$layout = weaverx_getopt_default( 'layout_' . $who , 'default');
 
 
-    if ( $layout == 'default' ) {
-        $layout = weaverx_getopt( 'layout_default_archive' );
-        if ( !$layout )
-            $layout = 'one-column';  // fallback
-    }
+	if ( $layout == 'default' ) {
+		$layout = weaverx_getopt( 'layout_default_archive' );
+		if ( !$layout )
+			$layout = 'one-column';  // fallback
+	}
 
-    return $layout;
+	return $layout;
 }
 //---
 
@@ -431,18 +437,18 @@ function weaverx_sb_layout_archive( $who ) {
 // >>>>> weaverx_sidebar_before <<<<<
 function weaverx_sidebar_before( $sb_layout, $who ) {
 
-    switch ( $sb_layout ) {
+	switch ( $sb_layout ) {
 
-        case 'right-top':           // for "top" sidebars, emit the upper sidebar before the content
-        case 'split-top':
-        case 'left-top':
-            get_sidebar( $sb_layout );
-            break;
+		case 'right-top':           // for "top" sidebars, emit the upper sidebar before the content
+		case 'split-top':
+		case 'left-top':
+			get_sidebar( $sb_layout );
+			break;
 
-        default:
-            break;
+		default:
+			break;
 
-    }
+	}
 }
 //--
 
@@ -451,29 +457,29 @@ function weaverx_sidebar_before( $sb_layout, $who ) {
 // >>>>> weaverx_sidebar_after <<<<<
 function weaverx_sidebar_after( $sb_layout, $who ) {
 
-    switch ( $sb_layout ) {
+	switch ( $sb_layout ) {
 
-        case 'right':                       // for non-top sidebars, both upper and lower get emittend here together
-        case 'left':
-        case 'split':
-            get_sidebar( $sb_layout );
-            break;
+		case 'right':                       // for non-top sidebars, both upper and lower get emittend here together
+		case 'left':
+		case 'split':
+			get_sidebar( $sb_layout );
+			break;
 
-        case 'right-top':                   // for "top" sidebars, only the lower one gets emitted here
-            get_sidebar( 'bottom');
-            break;
+		case 'right-top':                   // for "top" sidebars, only the lower one gets emitted here
+			get_sidebar( 'bottom');
+			break;
 
-        case 'split-top':
-            get_sidebar( 'split-bottom');
-            break;
+		case 'split-top':
+			get_sidebar( 'split-bottom');
+			break;
 
-        case 'left-top':
-            get_sidebar( 'left-bottom');
-            break;
+		case 'left-top':
+			get_sidebar( 'left-bottom');
+			break;
 
-        default:    // 'one-column'
-            break;
-    }
+		default:    // 'one-column'
+			break;
+	}
 }
 //--
 
@@ -482,7 +488,7 @@ function weaverx_sidebar_after( $sb_layout, $who ) {
 if ( ! function_exists( 'weaverx_sb_precontent' ) ) {
 function weaverx_sb_precontent( $who ) {
 
-    $class = 'l-widget-area-top m-widget-area-top s-widget-area-top ' . weaverx_area_class( 'top', 'pad' );
+	$class = 'l-widget-area-top m-widget-area-top s-widget-area-top ' . weaverx_area_class( 'top', 'pad' );
 
 	weaverx_put_widgetarea('sitewide-top-widget-area', $class, 'top');	// sitewide top
 
@@ -508,7 +514,7 @@ function weaverx_sb_precontent( $who ) {
 				break;
 
 			case '404':
-            case 'image':
+			case 'image':
 			default:
 				break;
 		}
@@ -522,9 +528,9 @@ function weaverx_sb_precontent( $who ) {
 // >>>>> weaverx_sb_postcontent <<<<<
 function weaverx_sb_postcontent($who) {
 
-    weaverx_clear_both('sb-postcontent-' . $who);
+	weaverx_clear_both('sb-postcontent-' . $who);
 
-    $class = 'l-widget-area-bottom m-widget-area-bottom s-widget-area-bottom ' . weaverx_area_class( 'bottom', 'pad' );
+	$class = 'l-widget-area-bottom m-widget-area-bottom s-widget-area-bottom ' . weaverx_area_class( 'bottom', 'pad' );
 
 	if (!weaverx_is_checked_page_opt('_pp_bottom-widget-area')) {
 		switch ($who) {
@@ -546,7 +552,7 @@ function weaverx_sb_postcontent($who) {
 				break;
 
 			case 'image':
-            case '404':
+			case '404':
 			default:
 				break;
 		}
@@ -554,31 +560,30 @@ function weaverx_sb_postcontent($who) {
 
 	weaverx_put_widgetarea('sitewide-bottom-widget-area', $class, 'bottom');		// sitewide bottom
 
-    weaverx_clear_both('sitewide-bottom-widget-area');
+	weaverx_clear_both('sitewide-bottom-widget-area');
 }
 //--
 
 
 
 // >>>>> weaverx_put_widgetarea <<<<<
-function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '', $who = '' ) {
+function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') {
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-    if (weaverx_is_checked_page_opt('_pp_' . $area_name)) return;		// hide area option checked
+	if (weaverx_is_checked_page_opt('_pp_' . $area_name)) return;		// hide area option checked
 
-    unset( $GLOBALS['wvr_widget_number']);     // clear for each widget
-    $GLOBALS['wvr_widget_number'] = false;
+	unset( $GLOBALS['wvr_widget_number']);     // clear for each widget
+	$GLOBALS['wvr_widget_number'] = false;
 
+	if ($area != $area_name) {   // replacement area?
+		$class .= ' ' . $area;
+		weaverx_t_set('use_widget_area', $area_name);                   // save state for weaverx_add_widget_classes to use later
+	}
 
-    if ($area != $area_name) {   // replacement area?
-        $class .= ' ' . $area;
-        weaverx_t_set('use_widget_area', $area_name);                   // save state for weaverx_add_widget_classes to use later
-    }
-
-    if ( $area_class_name )
-        $class .= ' widget-area-' . $area_class_name;
-    $class = ' ' . $class;
+	if ( $area_class_name )
+		$class .= ' widget-area-' . $area_class_name;
+	$class = ' ' . $class;
 
 	if (is_active_sidebar($area)) { /* add top and bottom widget areas */
 
@@ -586,21 +591,22 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '', 
 		$success = dynamic_sidebar($area);
 		$content = ob_get_clean();
 		if ($success && $content) {
-
 ?>
 
 	<div id="<?php echo $area_name; ?>" class="widget-area<?php echo $class; ?>" role="complementary">
-        <?php
-        if ( $area_name == 'primary-widget-area')
-            weaverx_inject_area('presidebar');
-        echo($content) ;
-        weaverx_clear_both($area_name);
-        ?>
+		<?php
+		if ( $area_name == 'primary-widget-area')
+			weaverx_inject_area('presidebar');
+		echo($content) ;
+		weaverx_clear_both($area_name);
+		?>
 	</div><!-- <?php echo $area_name; ?> -->
-<?php
+	<?php
+		if ($area_class_name == 'top')
+			weaverx_clear_both($area_name);
 		}
 	}
-    weaverx_t_clear('use_widget_area'); // gotta do this
+	weaverx_t_clear('use_widget_area'); // gotta do this
 }
 //--
 
@@ -612,140 +618,139 @@ add_filter('dynamic_sidebar_params', 'weaverx_add_widget_classes');
  */
 function weaverx_add_widget_classes( $params ) {
 
-    global $wp_registered_widgets;
+	global $wp_registered_widgets;
 
-    $arr_registered_widgets = wp_get_sidebars_widgets();    // Get an array of ALL registered widgets
-    $sb_id = $params[0]['id'];                              // Get the id for the current sidebar we're processing
-    $widget_id = $params[0]['widget_id'];
+	$arr_registered_widgets = wp_get_sidebars_widgets();    // Get an array of ALL registered widgets
+	$sb_id = $params[0]['id'];                              // Get the id for the current sidebar we're processing
+	$widget_id = $params[0]['widget_id'];
 
-    // add first, last, even, and odd, and widget classes
+	// add first, last, even, and odd, and widget classes
 
-    $area_map = array('primary-widget-area'=>'primary','secondary-widget-area'=>'secondary',
-        'footer-widget-area'=>'footer',
-        'sitewide-top-widget-area'=>'top', 'page-top-widget-area'=>'top', 'postpages-widget-area'=>'top',
-        'blog-top-widget-area'=>'top',
-        'sitewide-bottom-widget-area'=>'bottom', 'page-bottom-widget-area'=>'bottom', 'blog-bottom-widget-area'=>'bottom',
-        'header-widget-area'=>'header_sb', 'footer-widget-area'=> 'footer_sb',
-        'primary' => 'primary', 'secondary' => 'secondary', 'widget' => 'widget',
-        'header' => 'header_sb', 'footer' => 'footer_sb',
-        'top' => 'top', 'bottom' => 'bottom'                // these to simplify [extra_widget_area]
-    );
+	$area_map = array('primary-widget-area'=>'primary','secondary-widget-area'=>'secondary',
+		'footer-widget-area'=>'footer',
+		'sitewide-top-widget-area'=>'top', 'page-top-widget-area'=>'top', 'postpages-widget-area'=>'top',
+		'blog-top-widget-area'=>'top',
+		'sitewide-bottom-widget-area'=>'bottom', 'page-bottom-widget-area'=>'bottom', 'blog-bottom-widget-area'=>'bottom',
+		'header-widget-area'=>'header_sb', 'footer-widget-area'=> 'footer_sb',
+		'primary' => 'primary', 'secondary' => 'secondary', 'widget' => 'widget',
+		'header' => 'header_sb', 'footer' => 'footer_sb',
+		'top' => 'top', 'bottom' => 'bottom'                // these to simplify [extra_widget_area]
+	);
 
-    $opt_name = 'widget';                       // default styling option name: widget-xxx
+	$opt_name = 'widget';                       // default styling option name: widget-xxx
 
-    $search_sb_id = $sb_id;
+	$search_sb_id = $sb_id;
 
-    if ( weaverx_t_get('use_widget_area') )    // map from replacement area or [extra_widget_area]
-        $search_sb_id = weaverx_t_get('use_widget_area');
+	if ( weaverx_t_get('use_widget_area') )    // map from replacement area or [extra_widget_area]
+		$search_sb_id = weaverx_t_get('use_widget_area');
 
-    foreach ($area_map as $area => $opt ) {     // need to find name to use for option values
-        if ( $search_sb_id == $area ) {
-            $opt_name = $opt;
-            break;
-        }
-    }
+	foreach ($area_map as $area => $opt ) {     // need to find name to use for option values
+		if ( $search_sb_id == $area ) {
+			$opt_name = $opt;
+			break;
+		}
+	}
 
-    $cols = weaverx_getopt_default( $opt_name . '_cols_int', 1);
-    if ( $cols > 8 )
-        $cols = 8;     // sanity check
+	$cols = weaverx_getopt_default( $opt_name . '_cols_int', 1);
+	if ( $cols > 8 )
+		$cols = 8;     // sanity check
 
-    $show_number = true;
-    $show_evenodd = true;
-
-
-    if ( !isset( $arr_registered_widgets[$sb_id] ) || !is_array( $arr_registered_widgets[$sb_id] ) ) {
-        return $params;
-    }
+	$show_number = true;
+	$show_evenodd = true;
 
 
-    if ( empty($GLOBALS['wvr_widget_number']) || !isset($GLOBALS['wvr_widget_number']) || !$GLOBALS['wvr_widget_number'] ) {  // global to keep track of which widget this is
-        $GLOBALS['wvr_widget_number'] = array();
-    }
-    if ( isset( $GLOBALS['wvr_widget_number'][$sb_id] ) ) {        // initialize or bump widget number
-        $GLOBALS['wvr_widget_number'][$sb_id]++;
-    } else {
-        $GLOBALS['wvr_widget_number'][$sb_id] = 1;
-    }
+	if ( !isset( $arr_registered_widgets[$sb_id] ) || !is_array( $arr_registered_widgets[$sb_id] ) ) {
+		return $params;
+	}
 
-    $is_sidebar = in_array( $sb_id,
-            array ('primary-widget-area', 'secondary-widget-area' ));        // this is a vertical widget
-    $no_smart = weaverx_getopt( $opt_name . '_no_widget_margins' );
+	if ( empty($GLOBALS['wvr_widget_number']) || !isset($GLOBALS['wvr_widget_number']) || !$GLOBALS['wvr_widget_number'] ) {  // global to keep track of which widget this is
+		$GLOBALS['wvr_widget_number'] = array();
+	}
+	if ( isset( $GLOBALS['wvr_widget_number'][$sb_id] ) ) {        // initialize or bump widget number
+		$GLOBALS['wvr_widget_number'][$sb_id]++;
+	} else {
+		$GLOBALS['wvr_widget_number'][$sb_id] = 1;
+	}
 
-    $is_vert = ( $cols == 1 );
+	$is_sidebar = in_array( $sb_id,
+			array ('primary-widget-area', 'secondary-widget-area' ));        // this is a vertical widget
+	$no_smart = weaverx_getopt( $opt_name . '_no_widget_margins' );
 
-    $per_row_tail = ( $is_vert || $no_smart ) ? ' ' : '-m ';
+	$is_vert = ( $cols == 1 );
 
-    $class = '';
+	$per_row_tail = ( $is_vert || $no_smart ) ? ' ' : '-m ';
 
-    $sides =  ( $is_sidebar ) ? '-b' : '-rb';
+	$class = '';
 
-    $cur_widget = $GLOBALS['wvr_widget_number'][$sb_id];
-    $widget_count = count( $arr_registered_widgets[$sb_id] );
+	$sides =  ( $is_sidebar ) ? '-b' : '-rb';
 
-    $first = ( $cur_widget == 1 );
-    $last = ( $cur_widget == $widget_count );
+	$cur_widget = $GLOBALS['wvr_widget_number'][$sb_id];
+	$widget_count = count( $arr_registered_widgets[$sb_id] );
 
-    $def_bottom = 'margin-bottom';
-    if ( $opt_name == 'header_sb' ) {
-        $def_bottom = 'no-margin-vertical ';
-    }
+	$first = ( $cur_widget == 1 );
+	$last = ( $cur_widget == $widget_count );
 
-    $area_class = weaverx_area_class( 'widget', 'not-pad', $sides, $def_bottom ) . ' ';
+	$def_bottom = 'margin-bottom';
+	if ( $opt_name == 'header_sb' ) {
+		$def_bottom = 'no-margin-vertical ';
+	}
 
-    if ($area_class)
-        $class .= $area_class;
+	$area_class = weaverx_area_class( 'widget', 'not-pad', $sides, $def_bottom ) . ' ';
 
-
-    if ( !$is_vert ) {
-        $class .= 'per-row-' . $cols . $per_row_tail;
-
-        $end_of_row = ( $cur_widget % $cols ) == 0;
-
-        if ( $widget_count > 1 && !$end_of_row && !$no_smart )
-            $class .= 'smart-rm ';
-
-        if ( $end_of_row )
-            $class .= 'end-of-row ';
-
-        if ( ($cur_widget % $cols) == 1 )
-            $class .= 'begin-of-row ';
-    }
-
-    $class .= 'widget-' . $GLOBALS['wvr_widget_number'][$sb_id] . ' ';
+	if ($area_class)
+		$class .= $area_class;
 
 
-    if ( $is_vert ) {
-        $widget_first = 'widget-first widget-first-vert ';
-        $widget_last = 'widget-last widget-last-vert ';
-    } else {
-        $widget_first = 'widget-first ';
-        $widget_last = 'widget-last ';
-    }
+	if ( !$is_vert ) {
+		$class .= 'per-row-' . $cols . $per_row_tail;
 
-    if ( $first ) {
-        $class .= $widget_first;
-    }
+		$end_of_row = ( $cur_widget % $cols ) == 0;
 
-    if ( $last ) {
-        $class .= $widget_last;
-    }
+		if ( $widget_count > 1 && !$end_of_row && !$no_smart )
+			$class .= 'smart-rm ';
 
-    if ( $show_evenodd ) {
-        $widget_even = 'widget-even ';
-        $widget_odd  = 'widget-odd ';
-        $class .= ( ( $cur_widget % 2 ) ? $widget_odd : $widget_even );
-    }
+		if ( $end_of_row )
+			$class .= 'end-of-row ';
 
-    // need no-margin-bottom if $cols > 1
+		if ( ($cur_widget % $cols) == 1 )
+			$class .= 'begin-of-row ';
+	}
 
-    $params[0]['before_widget'] = str_replace( '">', ' ' . trim($class) . '">', $params[0]['before_widget'] );
-
-    $title_class = weaverx_title_class( 'widget_title', true);
-    if ( $title_class )
-        $params[0]['before_title'] = str_replace( '">', ' ' . trim($title_class) . '">', $params[0]['before_title'] );
+	$class .= 'widget-' . $GLOBALS['wvr_widget_number'][$sb_id] . ' ';
 
 
-    return $params;
+	if ( $is_vert ) {
+		$widget_first = 'widget-first widget-first-vert ';
+		$widget_last = 'widget-last widget-last-vert ';
+	} else {
+		$widget_first = 'widget-first ';
+		$widget_last = 'widget-last ';
+	}
+
+	if ( $first ) {
+		$class .= $widget_first;
+	}
+
+	if ( $last ) {
+		$class .= $widget_last;
+	}
+
+	if ( $show_evenodd ) {
+		$widget_even = 'widget-even ';
+		$widget_odd  = 'widget-odd ';
+		$class .= ( ( $cur_widget % 2 ) ? $widget_odd : $widget_even );
+	}
+
+	// need no-margin-bottom if $cols > 1
+
+	$params[0]['before_widget'] = str_replace( '">', ' ' . trim($class) . '">', $params[0]['before_widget'] );
+
+	$title_class = weaverx_title_class( 'widget_title', true);
+	if ( $title_class )
+		$params[0]['before_title'] = str_replace( '">', ' ' . trim($title_class) . '">', $params[0]['before_title'] );
+
+
+	return $params;
 }
 //--
 
@@ -754,14 +759,14 @@ function weaverx_add_widget_classes( $params ) {
 // >>>>> weaverx_no_sidebars <<<<<
 function weaverx_no_sidebars( $class ) {
 ?>
-    <div id="primary-widget-area" class="widget-area <?php echo $class;?>" role="complementary">
+	<div id="primary-widget-area" class="widget-area <?php echo $class;?>" role="complementary">
 			<aside id="primary-widget-area" class="widget">
 		<h3 class="widget-title"><?php echo( 'Sidebar Area'); ?></h3>
 		<ul><li>
 <?php _e('<strong>Add Some Widgets!</strong><br /><small>This theme has been designed to be used with sidebars. <span style="color:red">This message will no longer be displayed after
 you add at least one widget to one of the Sidebar Widget Areas using the Appearance &rarr; Widgets control panel.</span>
 <br />You can also change the sidebar layout for this page using theme options.
-<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>','weaver-xtreme'); ?></li>
+<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>','weaver-xtreme' /*adm*/); ?></li>
 <li>
 <?php       wp_loginout(); ?>
 </li>
@@ -781,7 +786,7 @@ function weaverx_has_widgetarea( $area_name ) {
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
 	if (is_active_sidebar($area))
-        return true;
+		return true;
 	return false;
 }
 //--

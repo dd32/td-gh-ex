@@ -71,20 +71,20 @@ textarea {
 }
 
 #header-search {
-    float: right;
+	float: right;
 }
 
 #header-search .search-form {
 	position: absolute;
 	left: 10px;
-    right:auto;
+	right:auto;
 	top: 5px;
 }
 
 #nav-header-mini {
-    display:inline-block;
-    float: left;
-    margin:0 5px 0 0;
+	display:inline-block;
+	float: left;
+	margin:0 5px 0 0;
 }
 
 
@@ -96,8 +96,8 @@ textarea {
 }
 
 #infobar {
-    margin-left:1em;
-    margin-right:1em;
+	margin-left:1em;
+	margin-right:1em;
 }
 
 .menu-add {float:left;}
@@ -148,21 +148,21 @@ textarea {
 
 
 #author-info {
-    font-size:90%;
+	font-size:90%;
 	margin:1.5em;
 	padding:0 .5em 1em 0;
-    bordexr:1px solid green;
+	bordexr:1px solid green;
 }
 
 #author-avatar {
 	float: right;
-    margin:0;
-    padding:0 0 .5em 1em;
+	margin:0;
+	padding:0 0 .5em 1em;
 }
 
 
 #author-avatar img {	/* no setting available to change this... */
-    float:right;
+	float:right;
 	padding: 0;
 }
 
@@ -171,13 +171,13 @@ textarea {
 }
 
 #author-description {
-    margin-right:1em;
+	margin-right:1em;
 }
 
 /* Comments link */
 .comments-bubble a {
 	background-image: url(assets/css/icons/comment-bubble-rtl.png);
-    background-size:    28px 28px;
+	background-size:    28px 28px;
 	right: auto;
 	left: 0;
 }
@@ -235,13 +235,13 @@ textarea {
 ----------------------------------------------- */
 #site-info {
 	float: right;
-    padding-right:1em;
+	padding-right:1em;
 }
 
 #site-generator {
 	font-style: italic;
-    float: left;
-    padding-left:1em;
+	float: left;
+	padding-left:1em;
 }
 
 /* =Navigation
@@ -259,7 +259,7 @@ textarea {
 ----------------------------------------------- */
 #footer-widget-area .widget,
 #header-widget-area .widget {
-    float:right;
+	float:right;
 }
 
 .widget ul ul {
@@ -268,7 +268,7 @@ textarea {
 }
 
 .widget-horiz {
-    float: right;
+	float: right;
 }
 
 /* =Comments
@@ -277,7 +277,7 @@ textarea {
 .comment-reply-link {margin-right:3em;}
 
 .commentlist .comment-author .comment {
-    float: left;
+	float: left;
 }
 
 .commentlist li.comment .comment-author img.avatar {
@@ -286,7 +286,7 @@ textarea {
 	top:-10px;
 }
 .comments-bubble a {
-    float:left;
+	float:left;
 }
 
 #comments-title {	/* wii_comment_headings_color */

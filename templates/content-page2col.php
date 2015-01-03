@@ -18,7 +18,7 @@ $weaverx_cur_post_ID = get_the_ID();
 ?>
 	<div class="entry-content clearfix">
 <?php
-    weaverx_fi( 'page', 'content-top' );
+	weaverx_fi( 'page', 'content-top' );
 
 
 	$content = get_the_content('', FALSE,''); //arguments remove 'more' text
@@ -32,36 +32,36 @@ $weaverx_cur_post_ID = get_the_ID();
 
 
 	if ( $col_count > 1 ) {
-        for($i=0; $i < $col_count; $i++) {
-            // check to see if there is a final </p>, if not add it
-            if ( !preg_match('/<\/p>\s?$/', $columns[$i]) ) {
-                $columns[$i] .= '</p>';
-            }
-            // check to see if there is an appending </p>, if there is, remove
-            $columns[$i] = preg_replace('/^\s?<\/p>/', '', $columns[$i]);
-            // now add the div wrapper
-            if ((int)($i % 2) == 0) $coldiv = 'left'; else $coldiv = 'right';
-            if ($coldiv == 'right' && ($i+1) < $col_count) {
-                $break_cols ='<hr class="atw-2-col-divider"/>';
-            } else {
-                $break_cols = '';
-            }
-            $columns[$i] = '<div class="cf content-2-col-'.$coldiv.'">'.$columns[$i] .'</div>' . $break_cols ;
-        }
-        $content = join($columns, "\n");
+		for($i=0; $i < $col_count; $i++) {
+			// check to see if there is a final </p>, if not add it
+			if ( !preg_match('/<\/p>\s?$/', $columns[$i]) ) {
+				$columns[$i] .= '</p>';
+			}
+			// check to see if there is an appending </p>, if there is, remove
+			$columns[$i] = preg_replace('/^\s?<\/p>/', '', $columns[$i]);
+			// now add the div wrapper
+			if ((int)($i % 2) == 0) $coldiv = 'left'; else $coldiv = 'right';
+			if ($coldiv == 'right' && ($i+1) < $col_count) {
+				$break_cols ='<hr class="atw-2-col-divider"/>';
+			} else {
+				$break_cols = '';
+			}
+			$columns[$i] = '<div class="cf content-2-col-'.$coldiv.'">'.$columns[$i] .'</div>' . $break_cols ;
+		}
+		$content = join($columns, "\n");
 	} else {
 	// this page does not have dynamic columns
-        $content = wpautop($content);
+		$content = wpautop($content);
 	}
 	// remove any left over empty <p> tags
 	$content = str_replace('<p></p>', '', $content);
 	echo $content;
 
-    weaverx_fi( 'page', 'content-bottom' ); ?>
+	weaverx_fi( 'page', 'content-bottom' ); ?>
 
-    </div><div style="clear:both;"></div><!-- .entry-content -->
+	</div><div style="clear:both;"></div><!-- .entry-content -->
 	<footer class="entry-utility-page">
-    <?php weaverx_edit_link(); ?>
+	<?php weaverx_edit_link(); ?>
 	</footer><!-- .entry-utility-page -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

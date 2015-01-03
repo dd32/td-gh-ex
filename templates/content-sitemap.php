@@ -19,7 +19,7 @@ weaverx_fi( 'page', 'post-before' );
 
 	<div class="entry-content clearfix">
 
-    <?php weaverx_the_page_content( 'page' );
+	<?php weaverx_the_page_content( 'page' );
 
 	// sitemap specific code
 	echo("<div id=\"weaver-sitemap\">\n");
@@ -35,21 +35,21 @@ weaverx_fi( 'page', 'post-before' );
 		echo("<br /><h3>" . __('Categories','weaver-xtreme') . "</h3><ul class='xoxo sitemap-categories'>\n");
 		wp_list_categories(array('show_count' => true, 'use_desc_for_title' => true, 'title_li' => false));
 		echo("</ul>\n");
-    }
+	}
 
 
-    if ( ! weaverx_getopt( 'post_hide_tags' ) ) {
+	if ( ! weaverx_getopt( 'post_hide_tags' ) ) {
 
 		echo("<br /><h3>" . __('Tag Cloud','weaver-xtreme') . "</h3><ul class='xoxo sitemap-tag'>\n");
 		wp_tag_cloud(array('number' => 0));
 		echo("</ul>\n");
 	}
 
-    if ( ! weaverx_getopt( 'post_hide_author' ) ) {
+	if ( ! weaverx_getopt( 'post_hide_author' ) ) {
 		echo("<br /><h3>" . __('Authors','weaver-xtreme') ."</h3><ul class='xoxo sitemap-authors'>\n");
 		wp_list_authors(array('exclude_admin' => false, 'optioncount' => true, 'title_li' => false));
-        echo("</ul>\n");
-    }
+		echo("</ul>\n");
+	}
 
 	echo("</div><!-- weaver-sitemap -->\n");
 

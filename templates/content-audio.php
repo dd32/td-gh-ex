@@ -18,7 +18,7 @@ weaverx_per_post_style();
 	if (!weaverx_compact_post()) {
 ?>
 		<header class="entry-header">
-            <?php weaverx_entry_header( 'audio' ); ?>
+			<?php weaverx_entry_header( 'audio' ); ?>
 		</header><!-- .entry-header -->
 
 <?php

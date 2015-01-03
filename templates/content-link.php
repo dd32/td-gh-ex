@@ -39,8 +39,8 @@ weaverx_per_post_style();
 		weaverx_format_posted_on_footer('link');
 		weaverx_compact_link('check');
 	} else {
-        weaverx_compact_link();
-        weaverx_edit_link();
+		weaverx_compact_link();
+		weaverx_edit_link();
 	}
 ?>
 

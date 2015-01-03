@@ -18,19 +18,19 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','0.92');
+define ('WEAVERX_VERSION','0.95');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
 define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);
 define ('WEAVERX_MIN_WPVERSION','3.9');
 
 define ('WEAVERX_DEV_MODE', false);
-define ('WEAVERX_SELF_HOST', true);     // this will be used only until WP.org version approved
 
 if ( WEAVERX_DEV_MODE )
-    define ('WEAVERX_DEFAULT_THEME_FILE', 'none');
+	define ('WEAVERX_DEFAULT_THEME_FILE', 'none');
 else
-    define ('WEAVERX_DEFAULT_THEME_FILE', '/subthemes/ajax.wxt');
+	define ('WEAVERX_DEFAULT_THEME_FILE', '/subthemes/ajax.wxt');
+
 
 /* utility definitions - should not be edited */
 define ('WEAVERX_DEFAULT_THEME','ajax');

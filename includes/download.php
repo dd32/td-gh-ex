@@ -2,38 +2,38 @@
 // will down load current settings based on db setting
 // __ added - 12/11/14
 
-    $wp_root = dirname(__FILE__) .'/../../../../';
-    if(file_exists($wp_root . 'wp-load.php')) {
-        require_once($wp_root . "wp-load.php");
-    } else if(file_exists($wp_root . 'wp-config.php')) {
-        require_once($wp_root . "wp-config.php");
-    } else {
-            exit;
-    }
+	$wp_root = dirname(__FILE__) .'/../../../../';
+	if(file_exists($wp_root . 'wp-load.php')) {
+		require_once($wp_root . "wp-load.php");
+	} else if(file_exists($wp_root . 'wp-config.php')) {
+		require_once($wp_root . "wp-config.php");
+	} else {
+			exit;
+	}
 
 function weaverx_filter_strip_default( $var ) {
-    return strlen( $var ) && $var != 'default';
+	return strlen( $var ) && $var != 'default';
 }
 
-    @error_reporting(0);
+	@error_reporting(0);
 	$weaverx_is_theme = false;
 
-	if (isset($_REQUEST['_wpnonce']))
-        $nonce = $_REQUEST['_wpnonce'];
-	else if (isset($_REQUEST['_wpnoncet'])) {
-        $nonce = $_REQUEST['_wpnoncet'];
-        $weaverx_is_theme = true;
+	if (isset($_GET['_wpnonce']))
+		$nonce = $_GET['_wpnonce'];
+	else if (isset($_GET['_wpnoncet'])) {
+		$nonce = $_GET['_wpnoncet'];
+		$weaverx_is_theme = true;
 	}
 	else
-        $nonce = '';
+		$nonce = '';
 	if (! wp_verify_nonce($nonce, 'weaverx_download')) {
-        @header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-        wp_die(__('Sorry - download must be initiated from admin panel.','weaver-xtreme'));
+		@header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
+		wp_die(__('Sorry - download must be initiated from admin panel.','weaver-xtreme' /*adm*/));
 	}
 
 	if (headers_sent()) {
-        @header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-        wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.','weaver-xtreme'));
+		@header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
+		wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.','weaver-xtreme' /*adm*/));
 	}
 
 	$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
@@ -41,26 +41,26 @@ function weaverx_filter_strip_default( $var ) {
 
 	$weaverx_save = array();
 
-    // @@@@@@@  $weaverx_opts['style_version'] = '1';
+	// @@@@@@@  $weaverx_opts['style_version'] = '1';
 
-    $weaverx_opts = array_filter( $weaverx_opts,  'weaverx_filter_strip_default' );
+	$weaverx_opts = array_filter( $weaverx_opts,  'weaverx_filter_strip_default' );
 
-    unset( $weaverx_opts['wvrx_css_saved'] );
+	unset( $weaverx_opts['wvrx_css_saved'] );
 
 	$weaverx_save['weaverx_base'] = $weaverx_opts;
 
 	$a_pro = (function_exists('weaverxplus_plugin_installed')) ? '-plus' : '';
 
 	if ($weaverx_is_theme) {
-        $weaverx_header .= 'WXT-V01.00';
-        $weaverx_fn = 'weaverx-theme-settings' . $a_pro . '.wxt';
-        foreach ($weaverx_opts as $opt => $val) {
-            if ($opt[0] == '_')
-                $weaverx_save['weaverx_base'][$opt] = false;
-        }
+		$weaverx_header .= 'WXT-V01.00';
+		$weaverx_fn = 'weaverx-theme-settings' . $a_pro . '.wxt';
+		foreach ($weaverx_opts as $opt => $val) {
+			if ($opt[0] == '_')
+				$weaverx_save['weaverx_base'][$opt] = false;
+		}
 	} else {
-        $weaverx_header .= 'WXB-V01.00';			/* Save all settings: 10 byte header */
-        $weaverx_fn = 'weaverx-backup-settings' . $a_pro . '.wxb';
+		$weaverx_header .= 'WXB-V01.00';			/* Save all settings: 10 byte header */
+		$weaverx_fn = 'weaverx-backup-settings' . $a_pro . '.wxb';
 	}
 
 	$weaverx_settings = $weaverx_header . serialize($weaverx_save);	/* serialize full set of options right now */

@@ -14,8 +14,8 @@ function weaverx_f_file_access_fail($who = '') {
 	<p>Weaver Xtreme is unable to process a file access request. You may need proper FTP credentials set in
 	WordPress, or in your wp-config.php file. It is unusual to see this error. It may be displayed
 	after you move to a new host.</p>
-	<p>You may have to change the directory permissions on your web hosting server.</p>','weaver-xtreme'); ?>
-	<?php echo '<p>' . __('Diagnostics:','weaver-xtreme') . "{$who}</p>\n"; ?>
+	<p>You may have to change the directory permissions on your web hosting server.</p>','weaver-xtreme' /*adm*/); ?>
+	<?php echo '<p>' . __('Diagnostics:','weaver-xtreme' /*adm*/) . "{$who}</p>\n"; ?>
 	</div>
 <?php
 	return;
@@ -31,11 +31,11 @@ function weaverx_f_open($fn, $how) {
 	// 'php://output'
 	if ($fn == 'php://output' || $fn == 'echo')
 		return 'echo';
-    if ($fn == 'wvrx_css_saved') {
-        unset( $GLOBALS['wvrx_css_saved'] );
-        $GLOBALS['wvrx_css_saved'] = '';
-        return $fn;
-    }
+	if ($fn == 'wvrx_css_saved') {
+		unset( $GLOBALS['wvrx_css_saved'] );
+		$GLOBALS['wvrx_css_saved'] = '';
+		return $fn;
+	}
 	if (function_exists('weaverxplus_f_open'))
 		return weaverxplus_f_open( $fn, $how );
 	return false;
@@ -44,13 +44,13 @@ function weaverx_f_open($fn, $how) {
 function weaverx_f_write($fn,$data) {
 	if ($fn == 'php://output' || $fn == 'echo') {
 		echo $data;
-        return true;
+		return true;
 	} else if ($fn == 'wvrx_css_saved') {
-        $GLOBALS['wvrx_css_saved'] .= $data;
-    } else if (function_exists('weaverxplus_f_write'))
+		$GLOBALS['wvrx_css_saved'] .= $data;
+	} else if (function_exists('weaverxplus_f_write'))
 		return weaverxplus_f_write( $fn, $data);
 	else
-        return false;
+		return false;
 }
 
 function weaverx_f_close($fn) {
@@ -113,7 +113,7 @@ function weaverx_f_get_contents($fn) {
 
 // =========================== helper functions ===========================
 function weaverx_alert($msg) {
-	echo "<script> alert('" . $msg . "'); </script>";
+	echo "<script> alert('" . esc_html($msg) . "'); </script>";
 	// echo "<h1>*** $msg ***</h1>\n";
 }
 

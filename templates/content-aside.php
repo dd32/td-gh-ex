@@ -50,8 +50,8 @@ $do_excerpt = weaverx_do_excerpt();
 	<div class="atw-aside-margin" style="margin-bottom:20px;"></div>
 <?php
 	if (! weaverx_compact_post()) {
-        weaverx_format_posted_on_footer('aside');
-        weaverx_compact_link('check');
+		weaverx_format_posted_on_footer('aside');
+		weaverx_compact_link('check');
 	} else {
 		weaverx_compact_link();
 		weaverx_edit_link();

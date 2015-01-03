@@ -9,13 +9,13 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  */
 
 
-    $l_area = 'l-sb-right';
+	$l_area = 'l-sb-right';
 
-    $class = $l_area . ' m-full s-full l-flow-opposite ' . weaverx_area_class('primary', 'pad', '', 'margin-bottom');
+	$class = $l_area . ' m-full s-full l-flow-opposite ' . weaverx_area_class('primary', 'pad', '', 'margin-bottom');
 
-    if ( weaverx_has_widgetarea('primary-widget-area') ) {
-        weaverx_put_widgetarea( 'primary-widget-area', $class);
-    }
-    else if ( !weaverx_has_widgetarea('secondary-widget-area') )
-        weaverx_no_sidebars( $class );
+	if ( weaverx_has_widgetarea('primary-widget-area') ) {
+		weaverx_put_widgetarea( 'primary-widget-area', $class);
+	}
+	else if ( !weaverx_has_widgetarea('secondary-widget-area') )
+		weaverx_no_sidebars( $class );
 ?>

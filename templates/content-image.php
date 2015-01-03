@@ -22,7 +22,7 @@ if (weaverx_compact_post()) {
 	$content = do_shortcode(apply_filters( 'the_content', get_the_content('')));	// pick up wp 3.6 post format meta image
 	$the_image = weaverx_get_first_post_image($content);
 	if ($the_image == '') {
-        $the_image = $content; $use_link = false;
+		$the_image = $content; $use_link = false;
 	}
 ?>
 	<div class="entry-content clearfix">
@@ -32,7 +32,7 @@ if (weaverx_compact_post()) {
 	<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
 <?php
 	} else {
-        echo $the_image;
+		echo $the_image;
 	}
 	weaverx_compact_link('check');
 	weaverx_edit_link();

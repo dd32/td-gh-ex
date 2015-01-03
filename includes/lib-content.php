@@ -89,10 +89,10 @@ function weaverx_comments_popup_link() {
 	/* generate comment bubble for posts */
 	if ( (weaverx_getopt_checked('show_post_bubble') || weaverx_is_checked_post_opt('_show_post_bubble') )
 	&& comments_open() && ! post_password_required() ) {
-        echo '<span class="comments-link comments-bubble">';
+		echo '<span class="comments-link comments-bubble">';
 			comments_popup_link( '<span class="leave-reply">' . '&nbsp;' .
 			'</span>', _x( '1', 'comments number','weaver-xtreme'), _x( '%', 'comments number','weaver-xtreme') );
-        echo '</span>';
+		echo '</span>';
 	}
 }
 }
@@ -152,9 +152,9 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 
 if ( ! function_exists('weaverx_continue_reading_link') ) {
 function weaverx_continue_reading_link() {
-    /**
-     * Returns a "Continue Reading" link for excerpts
-     */
+	/**
+	 * Returns a "Continue Reading" link for excerpts
+	 */
 
 	$rep = weaverx_t_get('more_msg');
 	if (!$rep)
@@ -201,13 +201,13 @@ if ( ! function_exists( 'weaverx_entry_header' ) ) {
 function weaverx_entry_header( $format_title='', $do_excerpt = false ) {
 /* display entry header (title ) for posts */
 
-    $arg = ($do_excerpt) ? 'post_excerpt' : 'post_full';
+	$arg = ($do_excerpt) ? 'post_excerpt' : 'post_full';
 
-    weaverx_fi( $arg, 'title-before');
+	weaverx_fi( $arg, 'title-before');
 
-    $lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . '>';
+	$lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . '>';
 	if ( $format_title != ''  && ! weaverx_getopt( 'hide_post_format_icon' ) && ! weaverx_is_checked_post_opt('_pp_hide_post_format_label' ) ) {
-        $icon = "<span class=\"post-format-icon genericon genericon-{$format_title}\"></span>";
+		$icon = "<span class=\"post-format-icon genericon genericon-{$format_title}\"></span>";
 		$lead .=  $icon;
 	}
 
@@ -223,10 +223,10 @@ if ( ! function_exists( 'weaverx_post_title' ) ) {
 function weaverx_post_title($before='', $after='') {
 
 	if ( weaverx_is_checked_post_opt('_pp_hide_post_title') || weaverx_t_get('hide_title') )
-        return;
+		return;
 
 	echo($before);
-    $title = the_title('', '', false);
+	$title = the_title('', '', false);
 ?>
 	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaver-xtreme')),
 	   the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title;?></a>
@@ -321,10 +321,10 @@ if ( ! function_exists('weaverx_meta_info_class')) {
 function weaverx_meta_info_class( $who ) {
 	// 'post_hide_date', 'post_hide_author', 'post_hide_categories', 'hide_singleton_category', 'post_hide_tags'
 
-   	$class = 'meta-info-wrap';
+	$class = 'meta-info-wrap';
 
 	if (weaverx_getopt('post_hide_date')) {		// check for hide various elements
- 		$class .= ' post-hide-date';
+		$class .= ' post-hide-date';
 	}
 	if (weaverx_getopt('post_hide_author')) {		// check for hide various elements
 		$class .= ' post-hide-author';
@@ -343,13 +343,13 @@ function weaverx_meta_info_class( $who ) {
 	}
 
 	if ( $class != 'meta-info-wrap' || weaverx_getopt('post_icons') == 'fonticons' ||  weaverx_getopt('post_icons') == 'graphics' ) {
-        if ( weaverx_getopt('post_icons') != 'graphics' )
-            $class .= ' entry-meta-gicons ';
-        else
-            $class .= ' entry-meta-icons';
+		if ( weaverx_getopt('post_icons') != 'graphics' )
+			$class .= ' entry-meta-gicons ';
+		else
+			$class .= ' entry-meta-icons';
 	}
 
-    $class .= weaverx_text_class( $who, true );
+	$class .= weaverx_text_class( $who, true );
 
 
 	return 'class="' . trim( $class ) . '"';
@@ -380,7 +380,7 @@ function weaverx_posted_in($type='') {
 
 	if (weaverx_getopt_checked('post_info_hide_bottom')
 		|| weaverx_is_checked_post_opt('_pp_hide_bottom_post_meta')
-        || weaverx_is_checked_page_opt('_pp_hide_infobottom')
+		|| weaverx_is_checked_page_opt('_pp_hide_infobottom')
 		|| weaverx_t_get('hide_bottom_info')) {	// hide bottom?
 
 		weaverx_edit_link();
@@ -408,27 +408,27 @@ function weaverx_posted_in($type='') {
 		}
 
 
-        if ( $categories_list ) {
-            $cat_count = count( get_the_category() );
-            if ($cat_count < 2 && weaverx_getopt_checked('hide_singleton_category'))
-                $pi .= "\t\t\t<span class=\"cat-links post_hide-singleton-category\">\n";
-            else
-                $pi .="\t\t\t<span class=\"cat-links\">\n";
-            $pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
+		if ( $categories_list ) {
+			$cat_count = count( get_the_category() );
+			if ($cat_count < 2 && weaverx_getopt_checked('hide_singleton_category'))
+				$pi .= "\t\t\t<span class=\"cat-links post_hide-singleton-category\">\n";
+			else
+				$pi .="\t\t\t<span class=\"cat-links\">\n";
+			$pi .= sprintf( __( '<span class="%1$s">Posted in</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
 
-            $pi .="\t\t\t</span>\n";
+			$pi .="\t\t\t</span>\n";
 
-        } // End if categories
-    /* translators: used between list items, there is a space after the comma */
+		} // End if categories
+	/* translators: used between list items, there is a space after the comma */
 
-        if ($tags_list ) {
-            $pi .="\t\t\t<span class=\"tag-links\">\n";
-            $pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
-            $pi .= "\t\t\t</span>\n";
-        } // End if $tags_list
+		if ($tags_list ) {
+			$pi .="\t\t\t<span class=\"tag-links\">\n";
+			$pi .= sprintf( __( '<span class="%1$s">Tagged</span> %2$s','weaver-xtreme'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+			$pi .= "\t\t\t</span>\n";
+		} // End if $tags_list
 
-        $pi .= '<span class="permalink-icon"><a href="' .  esc_url( get_permalink()) . '" title="Permalink to ' . the_title_attribute(array('echo'=>false)) .
-                '" rel="bookmark">' .  __('permalink','weaver-xtreme') . '</a></span>';
+		$pi .= '<span class="permalink-icon"><a href="' .  esc_url( get_permalink()) . '" title="Permalink to ' . the_title_attribute(array('echo'=>false)) .
+				'" rel="bookmark">' .  __('permalink','weaver-xtreme') . '</a></span>';
 
 
 		$pi .= weaverx_edit_link('noecho');
@@ -492,18 +492,18 @@ function weaverx_posted_on($type='') {
 
 	if (weaverx_getopt_checked('post_info_hide_top')
 		|| weaverx_is_checked_post_opt('_pp_hide_top_post_meta')
-	|| weaverx_is_checked_page_opt('_pp_hide_infotop')
+		|| weaverx_is_checked_page_opt('_pp_hide_infotop')
 		|| weaverx_t_get('hide_top_info'))	{	// hide top?
 		return;
 	}
 
 	if (weaverx_is_checked_page_opt('_pp_hide_infotop')
 		&& ! weaverx_t_get('showposts')) {
-        return;
+		return;
 	}
 
 	$po = "<span " . weaverx_meta_info_class( 'post_info_top' ) . ">\n";
-    if  ( (weaverx_getopt_default('show_post_avatar', 'hide') == 'start')
+	if  ( (weaverx_getopt_default('show_post_avatar', 'hide') == 'start')
 			|| weaverx_is_checked_post_opt('_pp_show_post_avatar')
 			|| weaverx_t_get('show_avatar') ) {
 			$po .= '<span class="post-avatar post-avatar-start">';
@@ -521,9 +521,9 @@ function weaverx_posted_on($type='') {
 		esc_html( get_the_author() )
 	);
 
-    $po .= '<span class="updated">' . the_modified_date('F j, Y', '', '', false). '</span>';        // required for Google Structured Data
+	$po .= '<span class="updated">' . the_modified_date('F j, Y', '', '', false). '</span>';        // required for Google Structured Data
 
-    if  ( weaverx_getopt_default('show_post_avatar', 'hide') == 'end' ) {
+	if  ( weaverx_getopt_default('show_post_avatar', 'hide') == 'end' ) {
 			$po .= '<span class="post-avatar post-avatar-end">';
 			$po .= get_avatar( get_the_author_meta('user_email') ,weaverx_getopt_default('post_avatar_int',28),null,'avatar' );
 			$po .= '</span>';
@@ -541,10 +541,10 @@ function weaverx_post_top_meta( $type='' ) {
  * Prints HTML with meta information for the top meta line.
  */
 	// $type for single
-    echo "<div class=\"entry-meta \">\n";
+	echo "<div class=\"entry-meta \">\n";
 	weaverx_posted_on($type);
-    weaverx_comments_popup_link();
-    echo "</div><!-- /entry-meta -->\n";
+	weaverx_comments_popup_link();
+	echo "</div><!-- /entry-meta -->\n";
 }
 }
 //--
@@ -561,11 +561,11 @@ function weaverx_per_post_style() {
 		foreach ($rules as $rule) {
 			$rule = trim($rule);
 			if (strlen($rule) > 1)  {		// must have some content to the rule!
-                if ($rule[0] == '+')
-                    echo (substr($rule, 1) . "}\n");
-                else
-                    echo("$post_id $rule}\n");	// add the post id to the front of each rule
-            }
+				if ($rule[0] == '+')
+					echo (substr($rule, 1) . "}\n");
+				else
+					echo("$post_id $rule}\n");	// add the post id to the front of each rule
+			}
 		}
 		echo("</style>\n");
 	}
@@ -576,10 +576,10 @@ function weaverx_per_post_style() {
 
 function weaverx_archive_title( $title = '', $type, $extra = '') {
 	// The page title for archive-like pages
-    // $type is for type of the archive - could be used to show icon
+	// $type is for type of the archive - could be used to show icon
 
-    if ( ! $title )
-        $title = the_title( '', '', false );
+	if ( ! $title )
+		$title = the_title( '', '', false );
 ?>
 	<h1 class="page-title archive-title title-<?php echo $type . $extra; ?>"><span<?php echo weaverx_title_class( 'archive_title' ) . '>' . $title;?></span></h1>
 <?php
@@ -592,16 +592,16 @@ function weaverx_archive_title( $title = '', $type, $extra = '') {
 function weaverx_page_title( $title = '') {
 	// The page title
 
-    if ( ! $title )
-        $title = the_title( '', '', false );
-    if (!weaverx_is_checked_page_opt('_pp_hide_page_title')) {
+	if ( ! $title )
+		$title = the_title( '', '', false );
+	if (!weaverx_is_checked_page_opt('_pp_hide_page_title')) {
 ?>
 	<header class="page-header">
-    <?php weaverx_fi( 'page', 'title-before'); ?>
+	<?php weaverx_fi( 'page', 'title-before'); ?>
 	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title') . '>' . $title;?></h1>
 	</header><!-- .page-header -->
 <?php
-    }
+	}
 }
 //--
 
@@ -610,11 +610,11 @@ function weaverx_page_title( $title = '') {
 function weaverx_single_title( $title = '' ) {
 	// The page title for single view page
 
-    if ( ! $title )
-        $title = the_title( '', '', false );
+	if ( ! $title )
+		$title = the_title( '', '', false );
 ?>
 	<header class="page-header">
-    <?php weaverx_fi( 'post', 'title-before'); ?>
+	<?php weaverx_fi( 'post', 'title-before'); ?>
 	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ); ?>"><?php echo $title;?></h1>
 		<?php weaverx_post_top_meta('single'); ?>
 	</header><!-- .page-header -->
@@ -625,105 +625,105 @@ function weaverx_single_title( $title = '' ) {
 
 
 function weaverx_fi( $who, $where ) {
-    // Emit Featured Image depending on settings and who and where called from
+	// Emit Featured Image depending on settings and who and where called from
 
-    global $weaverx_cur_page_ID;
-    global $weaverx_cur_post_ID;
+	global $weaverx_cur_page_ID;
+	global $weaverx_cur_post_ID;
 
-    $hide = weaverx_getopt( $who . '_fi_hide');
+	$hide = weaverx_getopt( $who . '_fi_hide');
 
-    // weaverx_debug_comment('WEAVERX_FI(who=' . $who . ' where=' . $where . ' / page-id: ' . $weaverx_cur_page_ID . ' / post-id: ' . $weaverx_cur_post_ID);
+	// weaverx_debug_comment('WEAVERX_FI(who=' . $who . ' where=' . $where . ' / page-id: ' . $weaverx_cur_page_ID . ' / post-id: ' . $weaverx_cur_post_ID);
 
-    if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
-        return false;
+	if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
+		return false;
 
-    $show = '';
+	$show = '';
 
-    if ( $where != 'title_featured' &&
-        ( weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title'
-        ||  weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title_featured'
+	if ( $where != 'title_featured' &&
+		( weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title'
+		||  weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title_featured'
 		||  weaverx_t_get('show') == 'title'
 		||  weaverx_t_get('show') == 'title_featured'
-        )
+		)
 	   ) {
-        return false;
-    }  else  if ($where == 'title_featured') {
-        $show = $where;
-    }
+		return false;
+	}  else  if ($where == 'title_featured') {
+		$show = $where;
+	}
 
 
-    if ( !$show ) {
-        if ( $who == 'page' )
-            $show = weaverx_get_per_page_value( '_pp_fi_location');
-        else if ( $GLOBALS['weaverx_page_who'] == 'single' )
-            $show = weaverx_get_per_post_value( '_pp_fi_location');
-    }
+	if ( !$show ) {
+		if ( $who == 'page' )
+			$show = weaverx_get_per_page_value( '_pp_fi_location');
+		else if ( $GLOBALS['weaverx_page_who'] == 'single' )
+			$show = weaverx_get_per_post_value( '_pp_fi_location');
+	}
 
-    //  weaverx_debug_comment('Show PP: ' . $show );
+	//  weaverx_debug_comment('Show PP: ' . $show );
 
-    if ( !$show )
-        $show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
-    else if ( $show == 'hide' )
-        return false;
+	if ( !$show )
+		$show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
+	else if ( $show == 'hide' )
+		return false;
 
-    $show_post = ( $who == 'post' ) && ( $show == $where);
+	$show_post = ( $who == 'post' ) && ( $show == $where);
 
-    $align = ($where == 'title_featured') ? 'fi-alignleft' : weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
+	$align = ($where == 'title_featured') ? 'fi-alignleft' : weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
 
-    $before = '';
-    if ( $where == 'post-before' ) {
-        $align .= '-pb';    // need to be able to fixup alignment for small devices
-        $before = '<div class="clear-post-before" style="clear:both;"></div>';
-    }
+	$before = '';
+	if ( $where == 'post-before' ) {
+		$align .= '-pb';    // need to be able to fixup alignment for small devices
+		$before = '<div class="clear-post-before" style="clear:both;"></div>';
+	}
 
-    // weaverx_debug_comment( "weaverx_fi= show: $show align: $align" );
+	// weaverx_debug_comment( "weaverx_fi= show: $show align: $align" );
 
-    $fi_class = 'featured-image fi-' . $who . '-' . $where . ' ' . $hide . ' ' . $align; // construct fi class
+	$fi_class = 'featured-image fi-' . $who . '-' . $where . ' ' . $hide . ' ' . $align; // construct fi class
 
-    $attr = array('class' => $fi_class );
+	$attr = array('class' => $fi_class );
 
-    // add width if defined
+	// add width if defined
 
-    $w = weaverx_getopt( $who . '_fi_width' );
-    // weaverx_debug_comment('weaverx_fi width: ' . $w);
-    if ( $w )
-        $attr['style'] = 'width:' . $w . '%';
+	$w = weaverx_getopt( $who . '_fi_width' );
+	// weaverx_debug_comment('weaverx_fi width: ' . $w);
+	if ( $w )
+		$attr['style'] = 'width:' . $w . '%';
 
-    if ( $show == $where || $show_post ) {
-        if ( $show == 'header-image' ) {
-            the_post_thumbnail( 'full', $attr );
-            return true;
-        }
+	if ( $show == $where || $show_post ) {
+		if ( $show == 'header-image' ) {
+			the_post_thumbnail( 'full', $attr );
+			return true;
+		}
 
-        $size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
-        // weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);
-        if (get_post_thumbnail_id()) {
-            if ( ($href = weaverx_get_per_post_value( '_pp_fi_link' )) == '' ) {        // per page link override?
-                if ( $who == 'post_excerpt') {
-                    $href = esc_url( get_permalink() );
-                } else {
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
-                    $href = esc_url($image[0]);
-                }
-            }
+		$size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
+		// weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);
+		if (get_post_thumbnail_id()) {
+			if ( ($href = weaverx_get_per_post_value( '_pp_fi_link' )) == '' ) {        // per page link override?
+				if ( $who == 'post_excerpt') {
+					$href = esc_url( get_permalink() );
+				} else {
+					$image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
+					$href = esc_url($image[0]);
+				}
+			}
 
-            echo "\n{$before}<a href=\"{$href}\">";
-            the_post_thumbnail( $size, $attr );
-            echo "</a>\n";
-            return true;
-        }
-    }
+			echo "\n{$before}<a href=\"{$href}\">";
+			the_post_thumbnail( $size, $attr );
+			echo "</a>\n";
+			return true;
+		}
+	}
 
-    return false;
+	return false;
 }
 //--
 
 
 function weaverx_the_page_content( $who = '' ) {
 
-    weaverx_fi( $who, 'content-top' );
-    weaverx_the_contnt();
-    weaverx_fi( $who, 'content-bottom' );
+	weaverx_fi( $who, 'content-top' );
+	weaverx_the_contnt();
+	weaverx_fi( $who, 'content-bottom' );
 }
 //--
 
@@ -731,7 +731,7 @@ function weaverx_the_page_content( $who = '' ) {
 function weaverx_the_contnt(  ) {
 	if ( (weaverx_is_checked_page_opt('_pp_raw_html') && !weaverx_t_get('showposts')) || weaverx_is_checked_post_opt('_pp_raw_html') ) {
 		remove_filter ('the_content', 'wpautop');
-        remove_filter ('the_content', 'wptexturize');
+		remove_filter ('the_content', 'wptexturize');
 	}
 	the_content(weaverx_continue_reading_link());
 }
@@ -741,33 +741,33 @@ function weaverx_the_contnt(  ) {
 
 function weaverx_the_post_full() {
 
-    if ( weaverx_is_checked_post_opt( '_pp_force_post_excerpt' ) && ! weaverx_is_checked_post_opt( '_pp_force_post_full' ) ) {
-        // check both values - force_excerpt and force_full -  here to avoid recursion
-        weaverx_the_post_excerpt();
-        return;
-    }
+	if ( weaverx_is_checked_post_opt( '_pp_force_post_excerpt' ) && ! weaverx_is_checked_post_opt( '_pp_force_post_full' ) ) {
+		// check both values - force_excerpt and force_full -  here to avoid recursion
+		weaverx_the_post_excerpt();
+		return;
+	}
 
-    weaverx_fi( 'post_full', 'content-top' );
+	weaverx_fi( 'post_full', 'content-top' );
 
 	weaverx_the_contnt();
 
-    weaverx_fi( 'post_full', 'content-bottom' );
+	weaverx_fi( 'post_full', 'content-bottom' );
 }
 //--
 
 
 function weaverx_the_post_excerpt() {
 
-    if ( weaverx_is_checked_post_opt( '_pp_force_post_full' ) ) {
-        weaverx_the_post_full();
-        return;
-    }
+	if ( weaverx_is_checked_post_opt( '_pp_force_post_full' ) ) {
+		weaverx_the_post_full();
+		return;
+	}
 
-    weaverx_fi( 'post_excerpt', 'content-top' );
+	weaverx_fi( 'post_excerpt', 'content-top' );
 
 	the_excerpt('more...');
 
-    weaverx_fi( 'post_excerpt', 'content-bottom' );
+	weaverx_fi( 'post_excerpt', 'content-bottom' );
 }
 //--
 
@@ -775,15 +775,15 @@ function weaverx_the_post_excerpt() {
 
 
 function weaverx_the_post_full_single() {
-    global $page;
+	global $page;
 
 	if ($page <= 1)
-        weaverx_fi( 'post', 'content-top' );
+		weaverx_fi( 'post', 'content-top' );
 
 	weaverx_the_contnt();
 
-    if ($page <= 1)
-        weaverx_fi( 'post', 'content-bottom' );
+	if ($page <= 1)
+		weaverx_fi( 'post', 'content-bottom' );
 }
 //--
 
@@ -792,22 +792,22 @@ function weaverx_the_post_full_single() {
 
 function weaverx_show_only_title() {
 
-    if ( ! weaverx_t_get( 'showposts' )
-          &&  ( weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title'
-                || weaverx_t_get('show') == 'title'
-              )
+	if ( ! weaverx_t_get( 'showposts' )
+		  &&  ( weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title'
+				|| weaverx_t_get('show') == 'title'
+			  )
 	   ) {
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	} else if ( ! weaverx_t_get( 'showposts' )
-          &&  (     weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title_featured'
-                || weaverx_t_get('show') == 'title_featured'
-              )
-        ) {
-        weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
+		  &&  (     weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title_featured'
+				|| weaverx_t_get('show') == 'title_featured'
+			  )
+		) {
+		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
 		echo "\t</article><!-- /#post -->\n";
 		return true;
-    }
+	}
 	return false;
 }
 //--
@@ -862,11 +862,11 @@ function weaverx_do_excerpt() {
 
 
 function weaverx_author_info() {
-    if ( get_the_author_meta( 'description' ) && !weaverx_getopt('hide_author_bio')) { // If a user has filled out their description, show a bio on their entries ?>
-        <div style="clear:both;"></div>
-        <div id="author-info">
-            <div id="author-description">
-                <div id="author-avatar">
+	if ( get_the_author_meta( 'description' ) && !weaverx_getopt('hide_author_bio')) { // If a user has filled out their description, show a bio on their entries ?>
+		<div style="clear:both;"></div>
+		<div id="author-info">
+			<div id="author-description">
+				<div id="author-avatar">
 				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'weaverx_author_bio_avatar_size', 75 ) ); ?>
 			</div><!-- #author-avatar -->
 				<p class="author-title"><?php printf( esc_attr__( 'About %s','weaver-xtreme'), get_the_author() ); ?></p>

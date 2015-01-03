@@ -32,7 +32,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 
 
 <header class="entry-header">
-    <?php wvrx_entry_header( true ); // compact header ?>
+	<?php wvrx_entry_header( true ); // compact header ?>
 </header><!-- .entry-header -->
 	<div class="entry-compact"> <!-- Compact Post -->
 	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaver-xtreme')),
@@ -49,9 +49,9 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-default ' . weaverx_post_class() ); ?>><!-- POST: standard -->
 <header class="entry-header">
 <?php
-    weaverx_entry_header( '', $do_excerpt );
+	weaverx_entry_header( '', $do_excerpt );
 
-    weaverx_post_top_meta('');
+	weaverx_post_top_meta('');
 
 ?>
 </header><!-- .entry-header -->

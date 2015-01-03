@@ -36,25 +36,25 @@ function weaverx_getopt($opt) {
 	weaverx_opt_cache();
 
 	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
-        return false;
+		return false;
 	}
 	return $weaverx_opts_cache[$opt];
 }
 
 function weaverx_getopt_array($opt) {
 	$val = weaverx_getopt($opt);
-    if (!$val)
-        return array();
-    return unserialize($val);
+	if (!$val)
+		return array();
+	return unserialize($val);
 }
 
 
 function weaverx_getopt_default( $opt, $default=false ) {
-    $val = weaverx_getopt( $opt);
-    if ( (!$val && strlen($val) == 0) || $val == 'default' )
-        return $default;
-    else
-        return $val;
+	$val = weaverx_getopt( $opt);
+	if ( (!$val && strlen($val) == 0) || $val == 'default' )
+		return $default;
+	else
+		return $val;
 }
 
 function weaverx_getopt_checked($opt) {
@@ -62,7 +62,7 @@ function weaverx_getopt_checked($opt) {
 	weaverx_opt_cache();
 
 	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
-        return false;
+		return false;
 	}
 	if (!$weaverx_opts_cache[$opt]) return false;
 	return true;
@@ -76,7 +76,7 @@ function weaverx_setopt($opt, $val, $save = true) {
 
 	$weaverx_opts_cache[$opt] = $val;
 	if ($save)
-        weaverx_wpupdate_option('weaverx_settings',$weaverx_opts_cache);
+		weaverx_wpupdate_option('weaverx_settings',$weaverx_opts_cache);
 }
 
 function weaverx_setopt_array($opt, $val, $save = true) {
@@ -87,22 +87,22 @@ function weaverx_delete_all_options() {
 	global $weaverx_opts_cache;
 	$weaverx_opts_cache = false;
 	if (current_user_can( 'manage_options' ))
-        delete_option( apply_filters('weaverx_options','weaverx_settings') );
+		delete_option( apply_filters('weaverx_options','weaverx_settings') );
 }
 
 function weaverx_wpupdate_option( $name, $opts ) {
 	if (current_user_can( 'manage_options' )) {
-        $compressed = array_filter( $opts, 'weaverx_optlen'); // filter out all null options (strlen == 0)
-        $option = apply_filters('weaverx_options',$name);
-        update_option($option, $compressed);
+		$compressed = array_filter( $opts, 'weaverx_optlen'); // filter out all null options (strlen == 0)
+		$option = apply_filters('weaverx_options',$name);
+		update_option($option, $compressed);
 	}
 }
 
 function weaverx_optlen( $opt ) {
-    if ( ! is_array($opt) )     // opts can contain arrays
-        return strlen( $opt );
-    else
-        return 1;
+	if ( ! is_array($opt) )     // opts can contain arrays
+		return strlen( $opt );
+	else
+		return 1;
 }
 
 function weaverx_update_options($id) {
@@ -123,25 +123,25 @@ function weaverx_save_opts($who='', $bump = true) {
 	//$vers = weaverx_getopt('style_version');
 
 	if ($bump) {
-        //$vers = $vers ? $vers + 1 : 1;	// bump or init
+		//$vers = $vers ? $vers + 1 : 1;	// bump or init
 
-        // put the CSS into the DB
-        require_once(get_template_directory() . '/includes/generatecss.php');
-        unset( $GLOBALS['wvrx_css_saved'] );
-        $GLOBALS['wvrx_css_saved'] = '';
-        weaverx_f_write('wvrx_css_saved', '/* -wvrx_css- */');
-        weaverx_output_style('wvrx_css_saved');
-        weaverx_setopt('wvrx_css_saved', $GLOBALS['wvrx_css_saved'] );
-        unset( $GLOBALS['wvrx_css_saved'] );
-    }
+		// put the CSS into the DB
+		require_once(get_template_directory() . '/includes/generatecss.php');
+		unset( $GLOBALS['wvrx_css_saved'] );
+		$GLOBALS['wvrx_css_saved'] = '';
+		weaverx_f_write('wvrx_css_saved', '/* -wvrx_css- */');
+		weaverx_output_style('wvrx_css_saved');
+		weaverx_setopt('wvrx_css_saved', $GLOBALS['wvrx_css_saved'] );
+		unset( $GLOBALS['wvrx_css_saved'] );
+	}
 
-    weaverx_setopt('style_date', date('Y-m-d-H:i:s'), $bump);
+	weaverx_setopt('style_date', date('Y-m-d-H:i:s'), $bump);
 
 	//weaverx_setopt('style_version',$vers, $bump);	// update options, style version
 
 	if (weaverx_f_file_access_available()) {	// and now is the time to update the style file
-        require_once(get_template_directory() . '/includes/generatecss.php');
-        weaverx_fwrite_current_css();
+		require_once(get_template_directory() . '/includes/generatecss.php');
+		weaverx_fwrite_current_css();
 	}
 }
 
@@ -210,8 +210,8 @@ function weaverx_sapi_options_init() {
 
 function weaverx_validate_cb($in) {
 	// keep the definition in runtime, load as needed at admin time
-    require_once( get_template_directory() . '/includes/lib-admin.php' );
-    require_once( get_template_directory() . '/includes/lib-admin-part2.php' );
+	require_once( get_template_directory() . '/includes/lib-admin.php' );
+	require_once( get_template_directory() . '/includes/lib-admin-part2.php' );
 
 	return weaverx_validate_all_options($in);
 }
@@ -226,13 +226,13 @@ function weaverx_submitted($submit_name) {
 	$nonce_name = $submit_name.'_nonce';
 
 	if (isset($_POST[$submit_name])) {
-        if (isset($_POST[$nonce_name]) && wp_verify_nonce($_POST[$nonce_name],$nonce_act)) {
-            return true;
-        } else {
-            die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.','weaver-xtreme') . '(' . $submit_name . ')');
-        }
+		if (isset($_POST[$nonce_name]) && wp_verify_nonce($_POST[$nonce_name],$nonce_act)) {
+			return true;
+		} else {
+			die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.','weaver-xtreme' /*adm*/) . '(' . $submit_name . ')');
+		}
 	} else {
-        return false;
+		return false;
 	}
 }
 
@@ -255,7 +255,7 @@ function weaverx_get_page() {
 	}
 	$page = get_query_var( 'page' );
 	if ( $page > 1)
-        $paged = $page;
+		$paged = $page;
 	return $paged;
 }
 
@@ -279,13 +279,13 @@ function weaverx_setup_post_args($args) {
 
 	$author_name = weaverx_get_page_author();
 	if (!empty($author_name)) {
-        $nosp = str_replace(' ', '', $author_name);
-        $id_list=str_replace(',','',$nosp);
-        if (is_numeric($id_list)) {
-            $args['author'] = $author_name;
-        } else {
-            $args['author_name'] = $author_name;
-        }
+		$nosp = str_replace(' ', '', $author_name);
+		$id_list=str_replace(',','',$nosp);
+		if (is_numeric($id_list)) {
+			$args['author'] = $author_name;
+		} else {
+			$args['author_name'] = $author_name;
+		}
 	}
 
 	$posts_per_page = weaverx_get_page_posts_per();
@@ -293,7 +293,7 @@ function weaverx_setup_post_args($args) {
 
 	$post_type = weaverx_get_per_page_value('_pp_post_type');
 	if ($post_type)
-        $args['post_type'] = $post_type;
+		$args['post_type'] = $post_type;
 
 	if (weaverx_is_checked_page_opt('_pp_hide_sticky')) $args['ignore_sticky_posts'] = true;
 
@@ -326,9 +326,9 @@ function weaverx_cat_slugs_to_ids($cats) {
 	} else {
 		$cur_cat = get_category_by_slug($slug);
 		if ($cur_cat) {
-            $cat_id = $neg * (int)$cur_cat->cat_ID;
-            if ($cat_list == '') $cat_list = strval($cat_id);
-            else $cat_list .= ','.strval($cat_id);
+			$cat_id = $neg * (int)$cur_cat->cat_ID;
+			if ($cat_list == '') $cat_list = strval($cat_id);
+			else $cat_list .= ','.strval($cat_id);
 		}
 	}
 	}
@@ -354,7 +354,7 @@ function weaverx_get_page_orderby() {
 
 	if ($orderby == 'author' || $orderby == 'date' || $orderby == 'title' || $orderby == 'rand')
 		return $orderby;
-	weaverx_page_posts_error(__('orderby must be author, date, title, or rand. You used: ','weaver-xtreme'). $orderby);
+	weaverx_page_posts_error(__('orderby must be author, date, title, or rand. You used: ','weaver-xtreme' /*adm*/). $orderby);
 	return '';
 }
 
@@ -363,7 +363,7 @@ function weaverx_get_page_order() {
 	if (empty($order)) return '';
 	if ($order == 'ASC' || $order == 'DESC')
 		return $order;
-	weaverx_page_posts_error(__('order value must be ASC or DESC. You used: ','weaver-xtreme'). $order);
+	weaverx_page_posts_error(__('order value must be ASC or DESC. You used: ','weaver-xtreme' /*adm*/). $order);
 	return '';
 }
 
@@ -397,14 +397,14 @@ function weaverx_esc_textarea($text) {
 
 function weaverx_filter_head( $text ) {
 
-    $allowed_head_tags = array(
+	$allowed_head_tags = array(
 		'title' => array(),
-        'style' => array( 'media' => true, 'scoped' => true, 'type' => true ),
-        'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true, 'scheme' => true ),
-        'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true,  ),
-        'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true,  ),
-        'noscript' => array(),
-        'base' => array( 'href' => true, 'target' => true, )
+		'style' => array( 'media' => true, 'scoped' => true, 'type' => true ),
+		'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true, 'scheme' => true ),
+		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true,  ),
+		'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true,  ),
+		'noscript' => array(),
+		'base' => array( 'href' => true, 'target' => true, )
 		);
 
 	// restrict head code to valid stuff for <head>
@@ -413,9 +413,9 @@ function weaverx_filter_head( $text ) {
 	if ($noslash == '') return '';
 
 	if ( current_user_can('unfiltered_html') ) {
-        return wp_kses( $noslash, $allowed_head_tags);
+		return wp_kses( $noslash, $allowed_head_tags);
 	} else {
-        return ''; // wp_filter_post_kses() handles slashes
+		return ''; // wp_filter_post_kses() handles slashes
 	}
 }
 
@@ -432,23 +432,23 @@ function weaverx_filter_code( $text ) {
 	if ( current_user_can('unfiltered_html') ) {
 		return wp_check_invalid_utf8( $noslash );
 	} else {
-        return wp_filter_post_kses( $noslash ); // wp_filter_post_kses() handles slashes
+		return wp_filter_post_kses( $noslash ); // wp_filter_post_kses() handles slashes
 	}
 }
 
 function weaverx_echo_css( $css ) {
-    if ( is_multisite() ) {
-        // non-superadmins have some filtering on CSS - this will fix it.
-        $css = stripslashes($css);
-        $css = str_replace( array('&lt;','&gt;'), array('<','>'), $css);
-    }
-    echo $css;
+	if ( is_multisite() ) {
+		// non-superadmins have some filtering on CSS - this will fix it.
+		$css = stripslashes($css);
+		$css = str_replace( array('&lt;','&gt;'), array('<','>'), $css);
+	}
+	echo $css;
 }
 
 // # MISC ==============================================================
 function weaverx_media_lib_button($fillin = '') {
 ?>
-&nbsp;&larr;&nbsp;<a style='text-decoration:none;' title="<?php _e('Select image from Media Library. Click \'Insert into Post\' to paste url here.','weaver-xtreme'); ?>" alt="media" href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
+&nbsp;&larr;&nbsp;<a style='text-decoration:none;' title="<?php _e('Select image from Media Library. Click \'Insert into Post\' to paste url here.','weaver-xtreme' /*adm*/); ?>" alt="media" href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
 <?php
 }
 
@@ -487,13 +487,13 @@ function weaverx_post_class($hidecount = false) {
 	global $weaverx_sticky;
 
 	if ($weaverx_sticky)	// For page with posts - re-ordering sticky posts
-        $postclass = 'post-area sticky ';
+		$postclass = 'post-area sticky ';
 	else
-        $postclass = 'post-area  ';
+		$postclass = 'post-area  ';
 
 	if ($weaverx_cur_post_count != 0 && !$hidecount)
-        $postclass .= 'post-' . (($weaverx_cur_post_count % 2) ? 'odd' : 'even') . ' post-order-' . $weaverx_cur_post_count
-     .  ' ';
+		$postclass .= 'post-' . (($weaverx_cur_post_count % 2) ? 'odd' : 'even') . ' post-order-' . $weaverx_cur_post_count
+	 .  ' ';
 
 	return $postclass . weaverx_area_class('post', 'pad', '-tb', 'margin-bottom' );
 }
@@ -502,7 +502,7 @@ function weaverx_post_class($hidecount = false) {
 
 function weaverx_use_inline_css($css_file) {
 	return weaverx_getopt_checked('_inline_style') || !weaverx_f_file_access_available()
-        || !weaverx_f_exists($css_file);
+		|| !weaverx_f_exists($css_file);
 }
 
 
@@ -520,12 +520,28 @@ function weaverx_allow_multisite() {
 
 
 function weaverx_help_link($link, $info, $alt_label = '') {
-    /*. '<img class="entry-cat-img" src="' . esc_url($t_dir . 'assets/images/help-1.png') . '" style="position:relative; top:4px; padding-left:4px;" title="Click for help" alt="Click for help" /> */
-	$t_dir = weaverx_relative_url('');
-    if ( !$alt_label )
-        $alt_label = '<span style="color:red; vertical-align: middle; margin-left:.25em;" class="dashicons dashicons-editor-help"></span>';
+	/*. '<img class="entry-cat-img" src="' . esc_url($t_dir . 'assets/images/help-1.png') . '" style="position:relative; top:4px; padding-left:4px;" title="Click for help" alt="Click for help" /> */
 
-    echo '<a style="text-decoration:none;" href="' . esc_url($t_dir . 'help/' . $link) . '" target="_blank" title="' . $info . '">'
+	$t_dir = weaverx_relative_url('') . 'help/' . $link;
+
+	$alt_trans = $link;
+
+	$hash = strpos($alt_trans, '#');
+	if ( $hash !== false ) {
+		$alt_trans = substr( $alt_trans, 0, $hash ); // kill off any # anchor
+	}
+
+	$locale = apply_filters('theme_locale', get_locale(), 'weaver-xtreme');
+//weaverx_alert('ALT TRANS:' . WP_LANG_DIR . '/weaver-xtreme/' . $locale . '_' . $alt_trans );
+
+	if ( weaverx_f_exists(WP_LANG_DIR . '/weaver-xtreme/' . $locale . '_' . $alt_trans ) ) {	// works for default installation
+		$t_dir = content_url() . '/languages/weaver-xtreme/' . $locale . '_' . $link;
+	}
+
+	if ( !$alt_label )
+		$alt_label = '<span style="color:red; vertical-align: middle; margin-left:.25em;" class="dashicons dashicons-editor-help"></span>';
+
+	echo '<a style="text-decoration:none;" href="' . esc_url($t_dir) . '" target="_blank" title="' . $info . '">'
 		. $alt_label . '</a>';
 }
 
@@ -545,22 +561,22 @@ function weaverx_compact_post() {
 
 function weaverx_get_first_post_image($content='') {
 	if (has_post_thumbnail()) {
-        $img = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'medium' );
-        return '<img class="format-image-img" src="' . esc_url($img[0]) . '" "alt="post image" />';
+		$img = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'medium' );
+		return '<img class="format-image-img" src="' . esc_url($img[0]) . '" "alt="post image" />';
 	}
 
 	if ($content == '')
-        $content = do_shortcode(apply_filters( 'the_content', get_the_content('')));	// pick up wp 3.6 post format meta image
+		$content = do_shortcode(apply_filters( 'the_content', get_the_content('')));	// pick up wp 3.6 post format meta image
 	if (preg_match('/<img[^>]+>/i',$content, $images)) {	// grab <img>s
-        $src = '';
-        if (preg_match('/src="([^"]*)"/', $images[0], $srcs)) {
-            $src = $srcs[0];
-        } else if (preg_match("/src='([^']*)'/", $images[0], $srcs)) {
-            $src = $srcs[0];
-        }
-        return '<img class="format-image-img" ' . $src . 'alt="post image" />';
+		$src = '';
+		if (preg_match('/src="([^"]*)"/', $images[0], $srcs)) {
+			$src = $srcs[0];
+		} else if (preg_match("/src='([^']*)'/", $images[0], $srcs)) {
+			$src = $srcs[0];
+		}
+		return '<img class="format-image-img" ' . $src . 'alt="post image" />';
 	} else {
-        return '';
+		return '';
 	}
 }
 
@@ -568,7 +584,7 @@ function weaverx_get_first_post_image($content='') {
 
 function weaverx_compact_link($check = '') {
 	if ($check == 'check' && !weaverx_is_checked_post_opt('_pp_post_add_link'))
-        return;
+		return;
 
 	$link_img =  weaverx_relative_url('') . 'assets/images/expand.png';
 ?>
@@ -585,7 +601,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
  * Credit: Dimox
  *	http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
  */
-    $wrap = 'breadcrumbs';
+	$wrap = 'breadcrumbs';
 	$bc = '';
 
 	$containerBefore = '<span id="' . $wrap . '">';
@@ -602,164 +618,164 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	$currentLocationLink = '';
 	$crumbPagination = '';
 
-    if ( weaverx_getopt('menu_nohome')) {
-        $name = get_the_title(get_option( 'page_on_front' ));
-    } else {
-        $name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : __('Home','weaver-xtreme'); //text for the 'Home' link
-    }
+	if ( weaverx_getopt('menu_nohome')) {
+		$name = get_the_title(get_option( 'page_on_front' ));
+	} else {
+		$name = weaverx_getopt('info_home_label') ? weaverx_getopt('info_home_label') : __('Home','weaver-xtreme'); //text for the 'Home' link
+	}
 
 
 	global $post;
 
-    if ( $pwp ) {
-        $name = $pwp;
-    }
+	if ( $pwp ) {
+		$name = $pwp;
+	}
 
 	$bc = '';
 	// Output the Base Link
 	if ( is_front_page() ) {
-        $bc .= $currentBefore . $name . $currentAfter;
+		$bc .= $currentBefore . $name . $currentAfter;
 	} else {
-        $home = home_url('/');
-        $baseLink =  '<a href="' . esc_url($home) . '">' . $name . '</a>';
-        $bc .= $baseLink;
+		$home = home_url('/');
+		$baseLink =  '<a href="' . esc_url($home) . '">' . $name . '</a>';
+		$bc .= $baseLink;
 	}
 
 	// Define Category Hierarchy Crumbs for Category Archive
 	if ( is_category() ) {
-        global $wp_query;
-        if (is_object($wp_query->get_queried_object())) {
-            $cat_obj = $wp_query->get_queried_object();
-            $thisCat = $cat_obj->term_id;
-            $thisCat = get_category($thisCat);
-            $parentCat = get_category($thisCat->parent);
-            if ($thisCat->parent != 0) {
-                $hierarchy = ( $delimiter . __( 'Categories','weaver-xtreme') . ' ' . get_category_parents( $parentCat, TRUE, $delimiter ) );
-            } else {
-                $hierarchy = $delimiter . __( 'Categories','weaver-xtreme') . ' ';
-            }
-        } else {
-            $hierarchy = '';
-        }
-        // Set $currentLocation to the current category
-        $currentLocation = single_cat_title( '' , FALSE );
+		global $wp_query;
+		if (is_object($wp_query->get_queried_object())) {
+			$cat_obj = $wp_query->get_queried_object();
+			$thisCat = $cat_obj->term_id;
+			$thisCat = get_category($thisCat);
+			$parentCat = get_category($thisCat->parent);
+			if ($thisCat->parent != 0) {
+				$hierarchy = ( $delimiter . __( 'Categories','weaver-xtreme') . ' ' . get_category_parents( $parentCat, TRUE, $delimiter ) );
+			} else {
+				$hierarchy = $delimiter . __( 'Categories','weaver-xtreme') . ' ';
+			}
+		} else {
+			$hierarchy = '';
+		}
+		// Set $currentLocation to the current category
+		$currentLocation = single_cat_title( '' , FALSE );
 
 	}
 	// Define Crumbs for Day/Year/Month Date-based Archives
 	elseif ( is_date() ) {
-        // Define Year/Month Hierarchy Crumbs for Day Archive
-        if  ( is_day() ) {
-            $date_string = '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ';
-            $date_string .= $delimiter . ' ';
-            $currentLocation = get_the_time('d');
-        }
-        // Define Year Hierarchy Crumb for Month Archive
-        elseif ( is_month() ) {
-            $date_string = '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ';
-            $date_string .= $delimiter . ' ';
-            $currentLocation = get_the_time('F');
-        }
-        // Set CurrentLocation for Year Archive
-        elseif ( is_year() ) {
-            $date_string = '';
-            $currentLocation = get_the_time('Y');
-        }
-        $hierarchy = $delimiter . __( 'Published','weaver-xtreme') . ' ' . $date_string ;
+		// Define Year/Month Hierarchy Crumbs for Day Archive
+		if  ( is_day() ) {
+			$date_string = '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ' . '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ';
+			$date_string .= $delimiter . ' ';
+			$currentLocation = get_the_time('d');
+		}
+		// Define Year Hierarchy Crumb for Month Archive
+		elseif ( is_month() ) {
+			$date_string = '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ';
+			$date_string .= $delimiter . ' ';
+			$currentLocation = get_the_time('F');
+		}
+		// Set CurrentLocation for Year Archive
+		elseif ( is_year() ) {
+			$date_string = '';
+			$currentLocation = get_the_time('Y');
+		}
+		$hierarchy = $delimiter . __( 'Published','weaver-xtreme') . ' ' . $date_string ;
 	}
 	// Define Category Hierarchy Crumbs for Single Posts
 	elseif ( is_single() && !is_attachment() ) {
-        $cats = get_the_category();
-        if ($cats)
-            $cur_cat = $cats[0];
-        else
-            $cur_cat = '';
-        foreach ($cats as $cat) {
-            $children = get_categories( array ('parent' => $cat->term_id ));
-            if (count($children) == 0) {
-            $cur_cat = $cat;
-            break;
-            }
-        }
-        if ($cur_cat) {
-            $hierarchy = $delimiter . get_category_parents( $cur_cat, TRUE, $delimiter );
-        } else {
-            $hierarchy = $delimiter . '';
-        }
-            // Note: get_the_title() is filtered to output a
-            // default title if none is specified
-            $currentLocation = get_the_title();
+		$cats = get_the_category();
+		if ($cats)
+			$cur_cat = $cats[0];
+		else
+			$cur_cat = '';
+		foreach ($cats as $cat) {
+			$children = get_categories( array ('parent' => $cat->term_id ));
+			if (count($children) == 0) {
+			$cur_cat = $cat;
+			break;
+			}
+		}
+		if ($cur_cat) {
+			$hierarchy = $delimiter . get_category_parents( $cur_cat, TRUE, $delimiter );
+		} else {
+			$hierarchy = $delimiter . '';
+		}
+			// Note: get_the_title() is filtered to output a
+			// default title if none is specified
+			$currentLocation = get_the_title();
 	}
 	// Define Category and Parent Post Crumbs for Post Attachments
 	elseif ( is_attachment() ) {
-        $parent = get_post($post->post_parent);
-        $cat_parents = '';
-        if ( get_the_category($parent->ID) ) {
-            $cat = get_the_category($parent->ID);
-            $cat = $cat ? $cat[0] : '';
-            $cat_parents = get_category_parents( $cat, TRUE, $delimiter );
-        }
-        $hierarchy = $delimiter . $cat_parents . '<a href="' . esc_url(get_permalink($parent)) . '">' . $parent->post_title . '</a> ' . $delimiter;
-        // Note: Titles are forced for attachments; the
-        // filename will be used if none is specified
-        $currentLocation = get_the_title();
+		$parent = get_post($post->post_parent);
+		$cat_parents = '';
+		if ( get_the_category($parent->ID) ) {
+			$cat = get_the_category($parent->ID);
+			$cat = $cat ? $cat[0] : '';
+			$cat_parents = get_category_parents( $cat, TRUE, $delimiter );
+		}
+		$hierarchy = $delimiter . $cat_parents . '<a href="' . esc_url(get_permalink($parent)) . '">' . $parent->post_title . '</a> ' . $delimiter;
+		// Note: Titles are forced for attachments; the
+		// filename will be used if none is specified
+		$currentLocation = get_the_title();
 	}
 	// Define Current Location for Parent Pages
 	elseif ( ! is_front_page() && is_page() && ! $post->post_parent ) {
-        $hierarchy = $delimiter;
-        // Note: get_the_title() is filtered to output a
-        // default title if none is specified
-        $currentLocation = get_the_title();
+		$hierarchy = $delimiter;
+		// Note: get_the_title() is filtered to output a
+		// default title if none is specified
+		$currentLocation = get_the_title();
 	}
 	// Define Parent Page Hierarchy Crumbs for Child Pages
 	elseif ( ! is_front_page() && is_page() && $post->post_parent ) {
-        $parent_id  = $post->post_parent;
-        $breadcrumbs = array();
-        while ($parent_id) {
-            //$page = get_page($parent_id);
-            $page = get_post($parent_id);
-            $breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a>';
-            $parent_id  = $page->post_parent;
-        }
-        $breadcrumbs = array_reverse($breadcrumbs);
-        foreach ($breadcrumbs as $crumb) {
-            $hierarchy = $hierarchy . $delimiter . $crumb;
-        }
-        $hierarchy = $hierarchy . $delimiter;
-        // Note: get_the_title() is filtered to output a
-        // default title if none is specified
-        $currentLocation = get_the_title();
+		$parent_id  = $post->post_parent;
+		$breadcrumbs = array();
+		while ($parent_id) {
+			//$page = get_page($parent_id);
+			$page = get_post($parent_id);
+			$breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a>';
+			$parent_id  = $page->post_parent;
+		}
+		$breadcrumbs = array_reverse($breadcrumbs);
+		foreach ($breadcrumbs as $crumb) {
+			$hierarchy = $hierarchy . $delimiter . $crumb;
+		}
+		$hierarchy = $hierarchy . $delimiter;
+		// Note: get_the_title() is filtered to output a
+		// default title if none is specified
+		$currentLocation = get_the_title();
 	}
 	// Define current location for Search Results page
 	elseif ( is_search() ) {
-        $hierarchy = $delimiter . __('Search Results','weaver-xtreme') . ' ';
-        $currentLocation = get_search_query();
+		$hierarchy = $delimiter . __('Search Results','weaver-xtreme') . ' ';
+		$currentLocation = get_search_query();
 	}
 	// Define current location for Tag Archives
 	elseif ( is_tag() ) {
-        $hierarchy = $delimiter . __( 'Tags','weaver-xtreme') . ' ';
-        $currentLocation = single_tag_title( '' , FALSE );
+		$hierarchy = $delimiter . __( 'Tags','weaver-xtreme') . ' ';
+		$currentLocation = single_tag_title( '' , FALSE );
 	}
 	// Define current location for Author Archives
 	elseif ( is_author() ) {
-        $hierarchy = $delimiter . __( 'Author','weaver-xtreme') . ' ';
-        $currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
+		$hierarchy = $delimiter . __( 'Author','weaver-xtreme') . ' ';
+		$currentLocation = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
 	}
 	// Define current location for 404 Error page
 	elseif ( is_404() ) {
-        $hierarchy = $delimiter . __( '404','weaver-xtreme') . ' ';
-        $currentLocation = __( 'Page not found','weaver-xtreme');
+		$hierarchy = $delimiter . __( '404','weaver-xtreme') . ' ';
+		$currentLocation = __( 'Page not found','weaver-xtreme');
 	}
 	// Define current location for Post Format Archives
 	elseif ( get_post_format() && ! is_home() ) {
-        $hierarchy = $delimiter . __( 'Post Formats','weaver-xtreme') . ' ';
-        $currentLocation = get_post_format_string( get_post_format() ) . 's';
+		$hierarchy = $delimiter . __( 'Post Formats','weaver-xtreme') . ' ';
+		$currentLocation = get_post_format_string( get_post_format() ) . 's';
 	} else {
-        global $weavrex_pwp_title;
-        if ( isset( $GLOBALS['weaverx_pwp_title'] ) ) {
-            $currentLocation = $delimiter . $GLOBALS['weaverx_pwp_title'];
-        }
+		global $weavrex_pwp_title;
+		if ( isset( $GLOBALS['weaverx_pwp_title'] ) ) {
+			$currentLocation = $delimiter . $GLOBALS['weaverx_pwp_title'];
+		}
 
-    }
+	}
 
 // Build the Current Location Link markup
 	$currentLocationLink = $currentBefore . $currentLocation . $currentAfter;
@@ -768,12 +784,12 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 
 // Define pagination for paged Archive pages
 	if ( get_query_var('paged') && ! function_exists( 'wp_paginate' ) ) {
-        $crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('paged');
+		$crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('paged');
 	}
 
  // Define pagination for Paged Posts and Pages
 	if ( get_query_var('page') ) {
-        $crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('page') . ' ';
+		$crumbPagination = ' - ' . __('Page','weaver-xtreme') . ' ' . get_query_var('page') . ' ';
 	}
 
 // Output the resulting Breadcrumbs
@@ -783,10 +799,10 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 	$bc .= $crumbPagination; // Output page number, if Post or Page is paginated
 
 	if (is_rtl()) {
-        $list = explode($delimiter,$bc);	// split on the arrow
-        $list = array_reverse($list);
-        $larrow = '&larr;';
-        $bc = implode($larrow,$list);
+		$list = explode($delimiter,$bc);	// split on the arrow
+		$list = array_reverse($list);
+		$larrow = '&larr;';
+		$bc = implode($larrow,$list);
 	}
 	// Wrap crumbs
 	$bc = $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter;
@@ -806,11 +822,11 @@ function weaverx_get_paginate_archive_page_links( $type = 'plain', $endsize = 1,
  */
 	global $wp_query, $wp_rewrite;
 
-    if ( isset( $wp_query->query_vars['paged'] )) {
-        $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
-    } else {
-        $current = 1;
-    }
+	if ( isset( $wp_query->query_vars['paged'] )) {
+		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+	} else {
+		$current = 1;
+	}
 
 	// Sanitize input argument values
 	if ( ! in_array( $type, array( 'plain', 'list', 'array' ) ) ) $type = 'plain';
@@ -851,7 +867,7 @@ function weaverx_get_paginate_archive_page_links( $type = 'plain', $endsize = 1,
 // # OTHER UTILS ==============================================================
 
 function weaverx_debug_comment($msg) {
-    echo "\n<!-- *************************::: {$msg} ::: ********************** -->\n";
+	echo "\n<!-- *************************::: {$msg} ::: ********************** -->\n";
 }
 
 function weaverx_get_css_filename() {
@@ -875,19 +891,19 @@ function weaverx_get_footer($who) {
 //--
 
 function weaverx_generate_id() {
-    if ( !isset($GLOBALS['wvrx_gen_id']) )
-        $GLOBALS['wvrx_gen_id'] = 1;
-    else
-        $GLOBALS['wvrx_gen_id']++;
-    return $GLOBALS['wvrx_gen_id'];
+	if ( !isset($GLOBALS['wvrx_gen_id']) )
+		$GLOBALS['wvrx_gen_id'] = 1;
+	else
+		$GLOBALS['wvrx_gen_id']++;
+	return $GLOBALS['wvrx_gen_id'];
 }
 //--
 
 function weaverx_clear_both( $class = '' ) {
-    if ( $class )
-        echo '<div class="clear-' . $class . '" style="clear:both;"></div>';
-    else
-        echo '<div style="clear:both;"></div>';
+	if ( $class )
+		echo '<div class="clear-' . $class . '" style="clear:both;"></div>';
+	else
+		echo '<div style="clear:both;"></div>';
 }
 
 function weaverx_relative_url($subpath){
@@ -899,17 +915,17 @@ function weaverx_filter_css($css) {
 	// filter user added CSS for root relative file paths
 
 	if (strpos($css, '%template_directory%') !== false)
-        $css = str_replace('%template_directory%',
-            parse_url(trailingslashit(get_template_directory_uri()),PHP_URL_PATH) ,
-            $css);
+		$css = str_replace('%template_directory%',
+			parse_url(trailingslashit(get_template_directory_uri()),PHP_URL_PATH) ,
+			$css);
 	if (strpos($css, '%stylesheet_directory%') !== false)
-        $css = str_replace('%stylesheet_directory%',
-            parse_url(trailingslashit(get_stylesheet_directory_uri()),PHP_URL_PATH) ,
-            $css);
+		$css = str_replace('%stylesheet_directory%',
+			parse_url(trailingslashit(get_stylesheet_directory_uri()),PHP_URL_PATH) ,
+			$css);
 	if (strpos($css, '%addon_directory%') !== false)
-        $css = str_replace('%addon_directory%' ,
-            parse_url(trailingslashit(weaverx_f_uploads_base_url()) . 'weaverx-subthemes/addon-subthemes/',PHP_URL_PATH),
-            $css);
+		$css = str_replace('%addon_directory%' ,
+			parse_url(trailingslashit(weaverx_f_uploads_base_url()) . 'weaverx-subthemes/addon-subthemes/',PHP_URL_PATH),
+			$css);
 
 	return $css;
 }
@@ -957,34 +973,34 @@ function weaverx_masonry($act = false) {
 		$is_pt = true;
 	}
 	if (is_singular() && ! $is_pt) {	// don't emit anything for non-blog pages
-        return false;
+		return false;
 	}
 
 	$usem = weaverx_get_per_page_value('_pp_pwp_masonry');	// per page to override...
 	if ($usem < 2)
-        $usem = weaverx_getopt('masonry_cols');
+		$usem = weaverx_getopt('masonry_cols');
 	if ($usem < 2) {
-        return false;
+		return false;
 	}
 	switch ($act) {
-        case 'begin-posts':	// wrap all posts
-            echo '<div id="blog-posts" class="cf">';
-            break;
-        case 'begin-post' :	// wrap one post
-            global $weaverx_cur_post_ID;
-            $weaverx_cur_post_ID = get_the_ID();// we need to know now
-            if (weaverx_is_checked_post_opt('_pp_masonry_span2')) {	// span 2 columns
-                $usem .= '-span-2';
-            }
-            echo '<div class="cf blog-post blog-post-cols-' . $usem . '">';	// for masonry
-            break;
-        case 'end-post':	// end of one post
-            echo "</div> <!-- .blog-post -->\n";
-            break;
-        case 'end-posts':	// end of all posts
-            echo '</div> <!-- #blog-posts -->' . "\n";
-            break;
-        case 'invoke-code':
+		case 'begin-posts':	// wrap all posts
+			echo '<div id="blog-posts" class="cf">';
+			break;
+		case 'begin-post' :	// wrap one post
+			global $weaverx_cur_post_ID;
+			$weaverx_cur_post_ID = get_the_ID();// we need to know now
+			if (weaverx_is_checked_post_opt('_pp_masonry_span2')) {	// span 2 columns
+				$usem .= '-span-2';
+			}
+			echo '<div class="cf blog-post blog-post-cols-' . $usem . '">';	// for masonry
+			break;
+		case 'end-post':	// end of one post
+			echo "</div> <!-- .blog-post -->\n";
+			break;
+		case 'end-posts':	// end of all posts
+			echo '</div> <!-- #blog-posts -->' . "\n";
+			break;
+		case 'invoke-code':
 ?>
 <script type='text/javascript'>
 jQuery(function(){var $container=jQuery('#blog-posts');$container.imagesLoaded(function(){
@@ -992,12 +1008,12 @@ $container.masonry({itemSelector:'.blog-post'});});});
 jQuery(window).resize(function(){jQuery('#blog-posts').masonry({itemSelector:'.blog-post'});});
 </script>
 <?php
-            break;
+			break;
 
-        case 'enqueue-script':
-            wp_enqueue_script('jquery-masonry',null,array('jquery'),null,true);
+		case 'enqueue-script':
+			wp_enqueue_script('jquery-masonry',null,array('jquery'),null,true);
 
-            break;
+			break;
 	}	// end switch
 	return true;
 }
@@ -1009,9 +1025,9 @@ function weaverx_opt_cache() {
 
 	global $weaverx_opts_cache;
 
-    if (!$weaverx_opts_cache) {
-        $weaverx_opts_cache = apply_filters('weaverx_switch_theme',
-            get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
+	if (!$weaverx_opts_cache) {
+		$weaverx_opts_cache = apply_filters('weaverx_switch_theme',
+			get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
 	}
 }
 
