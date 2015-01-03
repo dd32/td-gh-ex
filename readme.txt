@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.3
+- Updated: Functions used to add additional image sizes are now child theme compatible. Allows user to override to fix rare http error.
+
 Version 1.1.2
 - Updated: URL Placeholder text added to dlider url field.
 - Updated: blog article css updated to ensure white background - makes it easier for user to customize site.
