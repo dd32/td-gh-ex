@@ -18,16 +18,16 @@ Manual installation:
 
 1. Upload the fMuzz folder to the /wp-content/themes/ directory
 
-Installation using “Add New Theme”
+Installation using 'Add New Theme'
 
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for ‘fMuzz’
-3. Click the ‘Install’ button to open the theme’s repository listing
-4. Click the ‘Install’ button
+2. Search for 'fMuzz'
+3. Click the 'Install' button to open the theme's repository listing
+4. Click the 'Install' button
 
 Activiation and Use
 
-1. Activate the Theme through the ‘Themes’ menu in WordPress
+1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Theme Options to change theme specific options
 
 == License ==
@@ -43,9 +43,11 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/headphones-earphones-audio-mp3-407190/
+*
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/microphone-recording-studio-music-482263/
+*
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/violin-old-instrument-string-143456/
 *
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
@@ -53,7 +55,7 @@ The exceptions to this license are as follows:
 * js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
 * js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/headphones-earphones-audio-mp3-407190/
 
 == Contacts ==
 

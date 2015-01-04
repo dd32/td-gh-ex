@@ -16,10 +16,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="body-content-wrapper">
-			<header id="header-main"
-				<?php if ( get_header_image() ) : ?>
-						style="background-image:url('<?php header_image(); ?>');filter:none !important;"			
-				<?php endif; ?>>
+			<header id="header-main">
 				<div id="header-content-wrapper">
 					<div id="header-top">
 						<?php fmuzz_show_header_top(); ?>
